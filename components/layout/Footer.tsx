@@ -11,7 +11,7 @@ export const Footer: React.FC = () => {
                             <img
                                 src="/images/brand/coday-wordmark.svg"
                                 alt="Coday"
-                                className="h-8 w-auto mb-6"
+                                className="h-16 w-auto mb-6"
                             />
                         </div>
                         <p className="text-sm text-gray-400 max-w-xs mb-6 font-medium">

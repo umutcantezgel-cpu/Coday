@@ -27,7 +27,7 @@ export const NavBar: React.FC = () => {
                         <img
                             src="/images/brand/coday-wordmark.svg"
                             alt="Coday"
-                            className="h-8 w-auto"
+                            className="h-16 w-auto"
                         />
                     </Link>
 
