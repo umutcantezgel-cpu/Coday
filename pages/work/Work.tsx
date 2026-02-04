@@ -20,14 +20,15 @@ const Work: React.FC = () => {
     const projects = [
         {
             id: 'batherm',
-            title: "Batherm GmbH",
-            client: "Batherm GmbH",
-            industry: "Handwerk & Sanitär",
+            title: "Batherm",
+            client: "Batherm",
+            industry: "Sanitär & Heizung",
             slug: "batherm",
-            image: "/images/portfolio/batherm-showcase.png",
-            excerpt: "Vom lokalen Handwerker zur digitalen Autorität. Ein Meisterwerk für meisterhafte Installationen.",
+            image: "/images/portfolio/batherm-real.png",
+            excerpt: "Vom lokalen Handwerk zur digitalen Autorität. Ein Meisterwerk für meisterhafte Installationen.",
             tags: ["Next.js", "Tailwind", "Local SEO"],
-            category: "development"
+            category: "development",
+            externalLink: "https://www.batherm.de"
         }
     ];
 
