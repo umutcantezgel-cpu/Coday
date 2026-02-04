@@ -1,62 +1,8 @@
 import React from 'react';
 import { OptimizedImage } from '../../shared/ui/OptimizedImage';
 
-const BLOG_POSTS = [
-    {
-        id: 1,
-        title: "Die 5 größten Fehler im Webdesign",
-        excerpt: "Viele Unternehmen verbrennen Geld mit Websites, die zwar schön aussehen, aber nicht konvertieren. Hier ist warum.",
-        category: "Webdesign",
-        readTime: "5 Min.",
-        image: "/images/services/website-builder-drag-drop-baukasten-elemente-webdesign.jpeg",
-        alt: "Website Builder Interface mit Drag & Drop Elementen"
-    },
-    {
-        id: 2,
-        title: "Daten lügen nicht: Business Intelligence",
-        excerpt: "Wie Sie mit korrekter Datenanalyse Ihre Entscheidungsprozesse revolutionieren und den Markt verstehen.",
-        category: "Analytics",
-        readTime: "7 Min.",
-        image: "/images/marketing/datenanalyse-business-intelligence-reporting-statistiken-auswertung.jpeg",
-        alt: "Business Intelligence Dashboard mit Analysen"
-    },
-    {
-        id: 3,
-        title: "Der perfekte Omni-Channel Mix",
-        excerpt: "Warum Sie Ihre Kunden überall dort abholen müssen, wo sie sich aufhalten – und wie das effizient geht.",
-        category: "Strategie",
-        readTime: "6 Min.",
-        image: "/images/marketing/omnichannel-marketing-hub-seo-social-content-strategie-vernetzt.jpeg",
-        alt: "Vernetzte Omnichannel Marketing Strategie"
-    },
-    {
-        id: 4,
-        title: "Social Media Secrets 2026",
-        excerpt: "Algorithmus-Updates, Content-Trends und wie man organische Reichweite heute noch aufbaut.",
-        category: "Social Media",
-        readTime: "4 Min.",
-        image: "/images/marketing/hand-smartphone-social-feed-herzen-likes-sprechblasen-kommentare-follower-12.jpeg",
-        alt: "Social Media Feed auf dem Smartphone"
-    },
-    {
-        id: 5,
-        title: "Email Marketing Automation",
-        excerpt: "Der unterschätzte Umsatz-Hebel: Wie Sie Bestandskunden automatisiert zu Fans machen.",
-        category: "Marketing",
-        readTime: "5 Min.",
-        image: "/images/marketing/email-marketing-kampagne-newsletter-zielgruppe-versand.jpeg",
-        alt: "E-Mail Marketing Kampagnen Planung"
-    },
-    {
-        id: 6,
-        title: "Video Content Excellence",
-        excerpt: "Warum Video King ist und wie Sie auch ohne Hollywood-Budget professionell produzieren.",
-        category: "Content",
-        readTime: "8 Min.",
-        image: "/images/marketing/video-content-streaming-plattform-play-button-multimedia.jpeg",
-        alt: "Video Content und Streaming Plattform"
-    }
-];
+import { Link } from 'react-router-dom';
+import { BLOG_POSTS } from '../../features/blog/model/data';
 
 const Blog: React.FC = () => {
     return (
@@ -73,11 +19,11 @@ const Blog: React.FC = () => {
 
                 {/* Featured Post */}
                 <div className="mb-16">
-                    <div className="relative rounded-3xl overflow-hidden shadow-2xl group cursor-pointer h-[500px]">
+                    <Link to={`/knowledge/blog/${BLOG_POSTS[6].slug}`} className="block relative rounded-3xl overflow-hidden shadow-2xl group cursor-pointer h-[500px]">
                         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10" />
                         <OptimizedImage
-                            src="/images/marketing/digital-transformation-zeitung-zu-smartphone-social-media-werbung-evolution.jpeg"
-                            alt="Digitale Transformation: Von der Zeitung zum Smartphone"
+                            src={BLOG_POSTS[6].image}
+                            alt={BLOG_POSTS[6].title}
                             className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                             priority
                         />
@@ -88,50 +34,52 @@ const Blog: React.FC = () => {
                                     Featured
                                 </span>
                                 <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-4 shadow-sm">
-                                    Warum "Standard" Websites tot sind: Die Ära der Hyper-Performance
+                                    {BLOG_POSTS[6].title}
                                 </h2>
                                 <div className="flex items-center space-x-4 text-slate-300">
-                                    <span className="text-sm font-medium">Lesezeit: 8 Min.</span>
+                                    <span className="text-sm font-medium">Lesezeit: {BLOG_POSTS[6].readTime}</span>
                                     <span className="text-slate-600">•</span>
-                                    <span className="text-sm font-medium">Veröffentlicht am 01.04.2026</span>
+                                    <span className="text-sm font-medium">Veröffentlicht am {BLOG_POSTS[6].date}</span>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </Link>
                 </div>
 
                 {/* Article Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                    {BLOG_POSTS.map((post) => (
-                        <article key={post.id} className="flex flex-col group cursor-pointer h-full">
-                            <div className="h-64 rounded-2xl bg-slate-100 mb-6 overflow-hidden relative shadow-md hover:shadow-xl transition-shadow duration-300">
-                                <OptimizedImage
-                                    src={post.image}
-                                    alt={post.alt}
-                                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                            </div>
+                    {BLOG_POSTS.slice(0, 6).map((post) => (
+                        <Link key={post.id} to={`/knowledge/blog/${post.slug}`} className="flex flex-col group cursor-pointer h-full">
+                            <article className="flex flex-col h-full">
+                                <div className="h-64 rounded-2xl bg-slate-100 mb-6 overflow-hidden relative shadow-md hover:shadow-xl transition-shadow duration-300">
+                                    <OptimizedImage
+                                        src={post.image}
+                                        alt={post.alt}
+                                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                                </div>
 
-                            <div className="flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-blue-600 mb-3">
-                                <span>{post.category}</span>
-                                <span className="text-slate-300">•</span>
-                                <span>{post.readTime}</span>
-                            </div>
+                                <div className="flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-blue-600 mb-3">
+                                    <span>{post.category}</span>
+                                    <span className="text-slate-300">•</span>
+                                    <span>{post.readTime}</span>
+                                </div>
 
-                            <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
-                                {post.title}
-                            </h3>
+                                <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                                    {post.title}
+                                </h3>
 
-                            <p className="text-slate-500 line-clamp-3 mb-4 flex-grow">
-                                {post.excerpt}
-                            </p>
+                                <p className="text-slate-500 line-clamp-3 mb-4 flex-grow">
+                                    {post.excerpt}
+                                </p>
 
-                            <span className="text-sm font-bold text-gray-900 flex items-center group-hover:translate-x-1 transition-transform mt-auto">
-                                Weiterlesen
-                                <span className="material-symbols-outlined text-sm ml-1">arrow_forward</span>
-                            </span>
-                        </article>
+                                <span className="text-sm font-bold text-gray-900 flex items-center group-hover:translate-x-1 transition-transform mt-auto">
+                                    Weiterlesen
+                                    <span className="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+                                </span>
+                            </article>
+                        </Link>
                     ))}
                 </div>
 

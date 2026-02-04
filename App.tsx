@@ -58,6 +58,7 @@ const UxAudit = lazy(() => import('./pages/services/design/UxAudit'));
 // Knowledge
 const Academy = lazy(() => import('./pages/knowledge/Academy'));
 const Blog = lazy(() => import('./pages/knowledge/Blog'));
+const BlogPost = lazy(() => import('./pages/knowledge/BlogPost'));
 const Newsletter = lazy(() => import('./pages/knowledge/Newsletter'));
 const Whitepapers = lazy(() => import('./pages/knowledge/Whitepapers'));
 
@@ -144,6 +145,7 @@ const App: React.FC = () => {
               {/* Knowledge Routes */}
               <Route path="/knowledge/academy" element={<Academy />} />
               <Route path="/knowledge/blog" element={<Blog />} />
+              <Route path="/knowledge/blog/:slug" element={<BlogPost />} />
               <Route path="/knowledge/newsletter" element={<Newsletter />} />
               <Route path="/knowledge/whitepapers" element={<Whitepapers />} />
 
