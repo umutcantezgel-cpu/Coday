@@ -1,0 +1,37 @@
+---
+title: "TechFlow Analytics"
+client: "TechFlow Inc."
+industry: "SaaS / B2B"
+services: ["Product Design", "Web App Dev", "Dashboard"]
+year: "2024"
+heroImage: "/images/portfolio/mockup-software-dashboard-analytics-saas-web-app-dark-mode.webp"
+excerpt: "Redesign einer komplexen Analytics-Plattform. Von 'Datengrab' zu 'Decision Cockpit'."
+tags: ["React", "D3.js", "Supabase"]
+---
+
+import { CaseStudyLayout } from '../../features/case-studies/ui/CaseStudyLayout';
+
+# Komplexität vereinfachen
+
+TechFlow hatte mächtige Daten, aber niemand nutzte sie. Das alte Dashboard war überladen, langsam und für Non-Techies unbedienbar. Ziel war ein "Apple-like" Erlebnis für Big Data.
+
+## Unsere Lösung
+
+Wir entwickelten ein **Modulares Dashboard-System**, das Nutzer selbst konfigurieren können. Der Fokus lag auf absoluter Klarheit und Performance bei großen Datensätzen.
+
+### Features
+
+-   **Echtzeit-Daten**: WebSocket-Anbindung für Live-Updates ohne Reload.
+-   **Draggable Widgets**: Personalisierbare Ansichten via Drag-and-Drop.
+-   **Dark Mode**: Augenfreundliches Design für Analysten, die 8h+ davor sitzen.
+
+> "Endlich verstehen unsere Kunden ihre eigenen Daten. Der Support-Aufwand ist um 80% gesunken."
+> — *Markus R., CTO*
+
+## Impact
+
+-   **User Retention**: +45% nach 3 Monaten
+-   **NPS Score**: Anstieg von 20 auf 72
+-   **Systemlast**: -30% durch effizienteres Data-Fetching
+
+export default ({ children }) => <CaseStudyLayout {...frontmatter}>{children}</CaseStudyLayout>

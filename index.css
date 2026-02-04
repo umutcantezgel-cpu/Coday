@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+/* If using Tailwind v4 compatible directives via plugin, standard is @tailwind. 
+   But "tailwindcss" package 4.0 uses @import "tailwindcss"; 
+   However, since we used a config file, we might be in v3 compat mode or v4 config mode.
+   Let's use standard v3 directives first, as that's safer with the config file we just wrote.
+   Wait, wait. Package installed is 4.1.18. 
+   v4 uses CSS-first configuration by default, BUT it supports tailwind.config.js for migration.
+   The "@import 'tailwindcss'" is the v4 way.
+   Let's try the modern v4 import. */
+
+@theme {
+  --color-primary: #1A9A9A;
+  --color-secondary: #2D3748;
+  --font-display: "Outfit", sans-serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+@config "./tailwind.config.js";
+
+@layer utilities {
+  .text-gradient {
+    @apply text-secondary;
+    /* Flatten gradient text to Navy */
+  }
+
+  .text-gradient-vivid {
+    @apply text-primary;
+    /* Flatten vivid gradient to Teal */
+  }
+
+  .glass-card {
+    @apply bg-white border border-gray-100 shadow-flat lg:shadow-flat-lg rounded-2xl;
+  }
+
+  /* B2B-Oriented solid card */
+  .flat-card {
+    @apply bg-white border border-gray-100 shadow-flat rounded-2xl;
+  }
+
+  /* Organic Shapes */
+  .shape-blob {
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  }
+}
+
+body {
+  @apply bg-white text-text-light antialiased font-sans;
+}

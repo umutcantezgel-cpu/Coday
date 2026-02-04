@@ -1,0 +1,39 @@
+---
+title: "Velvet & Vine"
+client: "Velvet & Vine Fashion"
+industry: "E-Commerce"
+services: ["Shopify Headless", "Migration", "CRO"]
+year: "2024"
+heroImage: "/images/portfolio/mockup-onlineshop-fashion-mode-boutique-kleidung-accessoires-schuhe.webp"
+excerpt: "Von Shopify Standard zu Headless Performance. Wie wir den Umsatz durch 0.5s Ladezeiten verdoppelten."
+tags: ["Next.js", "Shopify Plus", "Tailwind"]
+---
+
+import { CaseStudyLayout } from '../../features/case-studies/ui/CaseStudyLayout';
+
+# Das Problem: Wachstumsschmerzen
+
+Velvet & Vine wuchs schneller als ihr Theme erlaubte. Ladezeiten von über 4 Sekunden auf Mobile kosteten täglich Umsatz. Die Brand Identity ging im Standard-Layout unter.
+
+## Die Strategie
+
+Ein kompletter **Headless-Approach**. Wir behielten das robuste Shopify-Backend, ersetzten aber das Frontend durch einen ultraschnellen Next.js Store.
+
+### Technische Highlights
+
+1.  **Instant-Navigation**: Seitenwechsel in unter 100ms dank Prefetching.
+2.  **Optimierter Checkout**: Custom Cart-Drawer mit Echtzeit-Upselling.
+3.  **Mobile First**: Touch-optimierte UX, die sich wie eine Native App anfühlt.
+
+> "Unser Mobile-Traffic konvertiert jetzt doppelt so gut. Die Investition hat sich in 3 Monaten amortisiert."
+> — *Sarah L., CEO*
+
+## Die Ergebnisse
+
+| Metric | Vorher | Nachher |
+| :--- | :--- | :--- |
+| **LCP (Mobile)** | 4.2s | **0.8s** |
+| **Conversion Rate** | 1.8% | **3.6%** |
+| **Avg. Order Value** | 85€ | **112€** |
+
+export default ({ children }) => <CaseStudyLayout {...frontmatter}>{children}</CaseStudyLayout>
