@@ -110,7 +110,7 @@ export const CookieSettingsModal: React.FC = () => {
                                     </div>
                                     <p className="text-sm text-gray-500">{cat.description}</p>
                                 </div>
-                                <label className="relative inline-flex items-center cursor-pointer">
+                                <label className="relative inline-flex items-center cursor-pointer p-2 -m-2 min-h-[44px] min-w-[44px]">
                                     <input
                                         type="checkbox"
                                         checked={localPrefs[cat.key]}
@@ -119,8 +119,8 @@ export const CookieSettingsModal: React.FC = () => {
                                         className="sr-only peer"
                                     />
                                     <div className={`w-11 h-6 rounded-full transition-colors ${cat.required
-                                            ? 'bg-primary cursor-not-allowed'
-                                            : 'bg-gray-200 peer-checked:bg-primary'
+                                        ? 'bg-primary cursor-not-allowed'
+                                        : 'bg-gray-200 peer-checked:bg-primary'
                                         }`}>
                                         <div className={`absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform ${localPrefs[cat.key] ? 'translate-x-5' : 'translate-x-0'
                                             }`} />

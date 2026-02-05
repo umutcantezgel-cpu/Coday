@@ -5,6 +5,9 @@ interface OptimizedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> 
     alt: string;
     className?: string;
     priority?: boolean;
+    aspectRatio?: 'video' | 'square' | 'wide' | 'portrait';
+    srcSet?: string;
+    sizes?: string;
 }
 
 export const OptimizedImage: React.FC<OptimizedImageProps> = ({
@@ -12,13 +15,30 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
     alt,
     className = '',
     priority = false,
+    aspectRatio,
+    srcSet,
+    sizes,
     ...props
 }) => {
     const [isLoaded, setIsLoaded] = useState(false);
     const [hasError, setHasError] = useState(false);
 
+    // Dynamic aspect ratio container
+    const getAspectRatioClass = () => {
+        switch (aspectRatio) {
+            case 'video': return 'aspect-video';
+            case 'square': return 'aspect-square';
+            case 'wide': return 'aspect-[21/9]';
+            case 'portrait': return 'aspect-[3/4]';
+            default: return '';
+        }
+    };
+
     return (
-        <div className={`relative overflow-hidden bg-gray-100 ${className}`}>
+        <div
+            className={`relative overflow-hidden bg-gray-100 ${getAspectRatioClass()} ${className}`}
+            style={props.style}
+        >
             {!isLoaded && !hasError && (
                 <div className="absolute inset-0 flex items-center justify-center bg-gray-100 animate-pulse">
                     <span className="sr-only">Loading...</span>
@@ -27,6 +47,8 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
 
             <img
                 src={src}
+                srcSet={srcSet}
+                sizes={sizes}
                 alt={alt}
                 loading={priority ? 'eager' : 'lazy'}
                 decoding={priority ? 'sync' : 'async'}

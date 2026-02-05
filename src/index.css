@@ -80,4 +80,14 @@
 
 body {
   @apply bg-white text-text-light antialiased font-sans;
+  -webkit-tap-highlight-color: transparent;
+  /* Disable default gray tap highlight */
+}
+
+@layer utilities {
+
+  /* Global Touch Feedback */
+  .touch-feedback {
+    @apply transition-transform active:scale-95;
+  }
 }

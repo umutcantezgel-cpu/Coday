@@ -1,4 +1,6 @@
 import React from 'react';
+import { Input } from '../../components/shared/ui/Input';
+import { Button } from '../../components/shared/ui/Button';
 
 const Newsletter: React.FC = () => {
     return (
@@ -20,19 +22,21 @@ const Newsletter: React.FC = () => {
                     Tritt 10.000+ Gründern bei und erhalte wöchentlich die besten Strategien für digitales Wachstum direkt in dein Postfach. Kein Spam. Nur Mehrwert.
                 </p>
 
-                <form className="max-w-md mx-auto bg-white p-2 rounded-2xl shadow-xl border border-aurora-mist mb-8 flex">
-                    <input
+                <form className="max-w-md mx-auto bg-white p-2 rounded-2xl shadow-xl border border-aurora-mist mb-8 flex gap-2">
+                    <Input
                         type="email"
+                        inputmode="email"
                         placeholder="Deine beste E-Mail Adresse"
-                        className="flex-1 px-6 py-3 bg-transparent text-gray-900 placeholder-gray-400 focus:outline-none"
+                        className="bg-transparent border-0 focus:ring-0 px-4"
+                        wrapperClassName="flex-1 space-y-0"
                         required
                     />
-                    <button
+                    <Button
                         type="submit"
-                        className="bg-gray-900 hover:bg-gray-800 text-white font-bold px-6 py-3 rounded-xl transition-colors"
+                        className="rounded-xl px-6"
                     >
                         Anmelden
-                    </button>
+                    </Button>
                 </form>
 
                 <p className="text-sm text-slate-400">

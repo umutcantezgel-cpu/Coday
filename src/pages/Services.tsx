@@ -4,6 +4,8 @@ import { NavLink } from 'react-router-dom';
 import { OptimizedImage } from '../shared/ui/OptimizedImage';
 import { serviceImages } from '../data/serviceImages';
 import ScrollFloat from '../shared/ui/ScrollFloat';
+import { cn } from '../shared/lib/utils';
+import { baseButtonStyles, buttonVariants, buttonSizes } from '../components/shared/ui/Button';
 // Premium UI Components
 import RotatingText from '../shared/ui/RotatingText';
 import { MagicBento, BentoCard } from '../shared/ui/MagicBento';
@@ -138,9 +140,12 @@ const Services: React.FC = () => {
             {t('cta.ready')}
           </ScrollFloat>
           <GlareHover glareColor="#ffffff" glareOpacity={0.4} className="inline-block rounded-xl">
-            <NavLink to="/contact" className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl bg-gray-900 hover:bg-gray-800 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
+            <NavLink
+              to="/contact"
+              className={cn(baseButtonStyles, buttonVariants.primary, buttonSizes.lg, "hover:-translate-y-1")}
+            >
               {t('cta.button')}
-              <span className="material-symbols-outlined ms-2">arrow_forward</span>
+              <span className="material-symbols-outlined ms-2 rtl:rotate-180">arrow_forward</span>
             </NavLink>
           </GlareHover>
         </div>

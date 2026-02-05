@@ -2,6 +2,8 @@ import React, { useRef, useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, X, Minus, Send, Loader2 } from 'lucide-react';
 import { useChatStore } from './lib/chatStore';
+import { Input } from '../../components/shared/ui/Input';
+import { Button } from '../../components/shared/ui/Button';
 
 export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = false }) => {
     const {
@@ -160,26 +162,28 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
                         {/* Input */}
                         <form onSubmit={handleSubmit} className="p-3 bg-white border-t border-gray-100">
                             <div className="flex items-center gap-2">
-                                <input
+                                <Input
                                     ref={inputRef}
                                     type="text"
                                     value={inputValue}
                                     onChange={(e) => setInputValue(e.target.value)}
                                     placeholder="Schreiben Sie eine Nachricht..."
                                     disabled={isTyping}
-                                    className="flex-1 px-4 py-2.5 bg-gray-100 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-purple-500/50 disabled:opacity-50"
+                                    wrapperClassName="flex-1 space-y-0"
+                                    className="px-4 py-2.5 bg-gray-100 rounded-full border-0 focus:ring-2 focus:ring-purple-500/50 shadow-none"
                                 />
-                                <button
+                                <Button
                                     type="submit"
                                     disabled={!inputValue.trim() || isTyping}
-                                    className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg transition-shadow"
+                                    size="icon"
+                                    className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-none hover:shadow-lg p-0 flex items-center justify-center shrink-0"
                                 >
                                     {isTyping ? (
                                         <Loader2 className="w-4 h-4 animate-spin" />
                                     ) : (
                                         <Send className="w-4 h-4" />
                                     )}
-                                </button>
+                                </Button>
                             </div>
                         </form>
                     </motion.div>

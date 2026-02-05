@@ -43,7 +43,9 @@ export const UrlInputForm: React.FC = () => {
 
                         {/* Input */}
                         <input
-                            type="text"
+                            type="url"
+                            inputmode="url"
+                            autocomplete="url"
                             value={url}
                             onChange={(e) => setUrl(e.target.value)}
                             onFocus={() => setIsFocused(true)}

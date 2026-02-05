@@ -13,6 +13,8 @@ import { useTranslation } from 'react-i18next';
 import { ContactFormSchema } from '../../../shared/lib/validation/schemas';
 import { z } from 'zod';
 import { logValidationFailure } from '../../../shared/lib/security/logger';
+import { Input } from '../../../shared/ui/Input';
+import { Button } from '../../../shared/ui/Button';
 
 const ApplicationWizard: React.FC = () => {
     const { t } = useTranslation('contact');
@@ -194,46 +196,47 @@ const ApplicationWizard: React.FC = () => {
                         <button onClick={handleBack} className="text-sm text-gray-400 mb-6 flex items-center gap-1 hover:text-secondary"><span className="material-symbols-outlined text-sm rtl:rotate-180">arrow_back</span> {t('wizard.back')}</button>
                         <h3 className="text-2xl font-bold text-secondary mb-6">{t('wizard.step4.title')}</h3>
 
-                        <div className="space-y-4">
-                            <input
-                                type="text"
-                                placeholder={t('wizard.step4.name_placeholder')}
-                                autoComplete="name"
-                                className="w-full p-4 bg-gray-50 rounded-xl border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none"
-                                value={formData.name}
-                                onChange={(e) => updateData('name', e.target.value)}
-                            />
-                            <input
-                                type="email"
-                                placeholder={t('wizard.step4.email_placeholder')}
-                                autoComplete="email"
-                                className="w-full p-4 bg-gray-50 rounded-xl border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none"
-                                value={formData.email}
-                                onChange={(e) => updateData('email', e.target.value)}
-                            />
-                            <textarea
-                                placeholder={t('wizard.step4.message_placeholder')}
-                                rows={3}
-                                className="w-full p-4 bg-gray-50 rounded-xl border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none resize-none"
-                                value={formData.message}
-                                onChange={(e) => updateData('message', e.target.value)}
-                            />
+                        <Input
+                            label={t('wizard.step4.name_placeholder')}
+                            placeholder="Max Mustermann"
+                            autoComplete="name"
+                            value={formData.name}
+                            onChange={(e) => updateData('name', e.target.value)}
+                        />
+                        <Input
+                            type="email"
+                            inputmode="email"
+                            label={t('wizard.step4.email_placeholder')}
+                            placeholder="max@firma.de"
+                            autoComplete="email"
+                            value={formData.email}
+                            onChange={(e) => updateData('email', e.target.value)}
+                        />
+                        <textarea
+                            placeholder={t('wizard.step4.message_placeholder')}
+                            rows={3}
+                            className="w-full p-4 bg-white rounded-xl border border-gray-200 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none resize-none text-base"
+                            value={formData.message}
+                            onChange={(e) => updateData('message', e.target.value)}
+                        />
 
-                            <Magnet padding={50} magnetStrength={0.2}>
-                                <button
-                                    onClick={handleSubmit}
-                                    disabled={loading}
-                                    className="w-full py-4 bg-secondary text-white font-bold rounded-xl shadow-lg hover:bg-secondary/90 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
-                                >
-                                    {loading ? t('wizard.step4.sending') : t('wizard.step4.submit')}
-                                    <span className="material-symbols-outlined rtl:rotate-180">send</span>
-                                </button>
-                            </Magnet>
-                        </div>
+                        <Magnet padding={50} magnetStrength={0.2}>
+                            <Button
+                                onClick={handleSubmit}
+                                disabled={loading}
+                                isLoading={loading}
+                                className="w-full shadow-lg"
+                                size="lg"
+                                rightIcon={<span className="material-symbols-outlined rtl:rotate-180">send</span>}
+                            >
+                                {t('wizard.step4.submit')}
+                            </Button>
+                        </Magnet>
+                    </div>
                     </motion.div>
                 )}
-            </AnimatePresence>
-        </div>
+        </AnimatePresence>
+        </div >
     );
 };
 

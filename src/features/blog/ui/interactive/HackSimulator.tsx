@@ -119,7 +119,7 @@ export const HackSimulator: React.FC = () => {
                             onClick={() => { setActiveSystem('wordpress'); setLogs([]); setAttackProgress(0); }}
                             disabled={isRunning}
                             className={cn(
-                                "px-4 py-2 rounded-md transition-all flex items-center gap-2",
+                                "px-4 py-3 min-h-[44px] rounded-md transition-all flex items-center gap-2 font-medium text-sm",
                                 activeSystem === 'wordpress' ? "bg-red-500/20 text-red-400 border border-red-500/50" : "text-gray-500 hover:text-gray-300",
                                 isRunning && "opacity-50 cursor-not-allowed"
                             )}
@@ -130,7 +130,7 @@ export const HackSimulator: React.FC = () => {
                             onClick={() => { setActiveSystem('coday'); setLogs([]); setAttackProgress(0); }}
                             disabled={isRunning}
                             className={cn(
-                                "px-4 py-2 rounded-md transition-all flex items-center gap-2",
+                                "px-4 py-3 min-h-[44px] rounded-md transition-all flex items-center gap-2 font-medium text-sm",
                                 activeSystem === 'coday' ? "bg-green-500/20 text-green-400 border border-green-500/50" : "text-gray-500 hover:text-gray-300",
                                 isRunning && "opacity-50 cursor-not-allowed"
                             )}

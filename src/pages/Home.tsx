@@ -14,6 +14,8 @@ import SpotlightCard from '../shared/ui/SpotlightCard';
 import { MagicBento, BentoCard } from '../shared/ui/MagicBento';
 import LogoLoop from '../shared/ui/LogoLoop';
 import type { LogoItem } from '../shared/ui/LogoLoop';
+import { cn } from '../shared/lib/utils';
+import { baseButtonStyles, buttonVariants, buttonSizes } from '../components/shared/ui/Button';
 
 
 
@@ -58,7 +60,7 @@ const Home: React.FC = () => {
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             <NavLink
               to="/contact"
-              className="group relative inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-white rounded-full bg-primary hover:bg-opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 active:scale-95 active:shadow-sm overflow-hidden"
+              className={cn(baseButtonStyles, buttonVariants.primary, buttonSizes.lg, "group relative overflow-hidden transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 active:scale-95 active:shadow-sm")}
             >
               <span className="relative z-10 flex items-center">
                 {t('buttons.start_project', { ns: 'common' })}
@@ -70,7 +72,7 @@ const Home: React.FC = () => {
 
             <NavLink
               to="/work"
-              className="group inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-secondary bg-white rounded-full border border-gray-200 hover:border-primary/50 hover:bg-gray-50 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1 active:scale-95 active:shadow-sm"
+              className={cn(baseButtonStyles, buttonVariants.secondary, buttonSizes.lg, "group border border-gray-200 bg-white text-secondary hover:bg-gray-50 hover:border-primary/50 shadow-md hover:shadow-lg hover:-translate-y-1 active:scale-95 active:shadow-sm")}
             >
               {t('buttons.view_work', { ns: 'common' })}
             </NavLink>

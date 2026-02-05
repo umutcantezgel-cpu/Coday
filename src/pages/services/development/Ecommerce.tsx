@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import CountUp from '../../../components/shared/ui/CountUp';
 import BlurText from '../../../components/shared/ui/BlurText';
+import { Input } from '../../../components/shared/ui/Input';
 
 const Ecommerce: React.FC = () => {
     // ROI Calculator State
@@ -119,12 +120,14 @@ const Ecommerce: React.FC = () => {
                                             Von 100 Besuchern kaufen...
                                         </label>
                                         <div className="relative">
-                                            <input
+                                            <Input
                                                 type="number"
                                                 step="0.1"
+                                                inputMode="decimal"
                                                 value={conversionRate}
                                                 onChange={(e) => setConversionRate(parseFloat(e.target.value))}
-                                                className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white font-mono focus:border-primary focus:outline-none"
+                                                className="font-mono"
+                                                wrapperClassName="w-full"
                                             />
                                             <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">Personen</span>
                                         </div>
@@ -134,11 +137,13 @@ const Ecommerce: React.FC = () => {
                                             Durchschnittlicher Einkauf
                                         </label>
                                         <div className="relative">
-                                            <input
+                                            <Input
                                                 type="number"
+                                                inputMode="decimal"
                                                 value={avgOrderValue}
                                                 onChange={(e) => setAvgOrderValue(parseFloat(e.target.value))}
-                                                className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white font-mono focus:border-primary focus:outline-none"
+                                                className="font-mono"
+                                                wrapperClassName="w-full"
                                             />
                                             <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">€</span>
                                         </div>
