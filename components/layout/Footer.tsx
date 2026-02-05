@@ -8,7 +8,7 @@ export const Footer: React.FC = () => {
     return (
         <footer className="bg-secondary text-white border-t border-gray-800 pt-16 pb-8">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-8 mb-12">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-8 mb-12">
                     <div className="col-span-2 lg:col-span-1">
                         <div className="flex items-center space-x-2 mb-4">
                             <img

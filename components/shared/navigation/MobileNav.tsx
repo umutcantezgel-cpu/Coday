@@ -168,10 +168,10 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
                             <button
                                 ref={firstFocusableRef}
                                 onClick={onClose}
-                                className="p-2 rounded-full hover:bg-gray-100 transition-colors"
+                                className="p-4 -mr-2 rounded-full hover:bg-gray-100 transition-colors touch-target"
                                 aria-label="Close menu"
                             >
-                                <X size={20} className="text-gray-600" />
+                                <X size={24} className="text-gray-600" />
                             </button>
                         </div>
                     </div>
@@ -187,7 +187,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
                                     <Link
                                         to={item.href}
                                         onClick={onClose}
-                                        className="flex items-center justify-between py-4 text-lg font-bold text-gray-900 hover:text-primary transition-colors"
+                                        className="flex items-center justify-between py-4 text-lg font-bold text-gray-900 hover:text-primary active:text-primary active:scale-[0.98] transition-all"
                                     >
                                         {item.labelKey ? t(item.labelKey) : item.label}
                                     </Link>
@@ -217,7 +217,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
                                                         to={link.href}
                                                         onClick={onClose}
                                                         ref={(el) => { if (el) linksRef.current[idx * 10 + linkIdx] = el; }}
-                                                        className="flex items-center gap-3 p-3 rounded-xl bg-gray-50 hover:bg-primary/10 text-gray-800 font-medium transition-colors group"
+                                                        className="flex items-center gap-3 p-3 rounded-xl bg-gray-50 hover:bg-primary/10 active:bg-primary/20 text-gray-800 font-medium transition-colors group"
                                                     >
                                                         {link.icon && (
                                                             <div className="p-2 rounded-lg bg-white shadow-sm text-primary group-hover:bg-primary group-hover:text-white transition-colors">

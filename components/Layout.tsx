@@ -33,7 +33,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
       {/* Spacer for fixed nav */}
       <div className="h-24" />
 
-      <main className="flex-grow">
+      <main className="flex-grow pb-20 lg:pb-0">
         {children}
       </main>
 

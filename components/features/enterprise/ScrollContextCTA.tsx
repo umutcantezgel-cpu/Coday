@@ -30,7 +30,7 @@ export const ScrollContextCTA: React.FC = () => {
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: 100, opacity: 0 }}
                     transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                    className="fixed bottom-6 inset-x-0 mx-auto w-full max-w-sm md:max-w-md z-50 px-4"
+                    className="fixed bottom-6 inset-x-0 mx-auto w-full max-w-sm md:max-w-md z-50 px-4 hidden lg:block"
                 >
                     <div className="bg-secondary/90 backdrop-blur-xl border border-white/10 p-3 rounded-full shadow-2xl flex items-center justify-between pl-6">
                         <div className="flex flex-col">

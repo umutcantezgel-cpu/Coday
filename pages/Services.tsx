@@ -36,7 +36,7 @@ const Services: React.FC = () => {
   return (
     <div className="bg-background-light">
       {/* Header with Hero Image */}
-      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+      <section className="pt-12 pb-8 md:pt-24 md:pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-start">
             <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">{t('hero.label')}</span>
@@ -74,7 +74,7 @@ const Services: React.FC = () => {
       </section>
 
       {/* Categories Grid with MagicBento */}
-      <section className="pb-24 px-4 sm:px-6 lg:px-8">
+      <section className="pb-12 md:pb-24 px-4 sm:px-6 lg:px-8">
         <MagicBento columns={2} gap={32} className="max-w-7xl mx-auto">
           {categories.map((cat, index) => (
             <BentoCard
@@ -124,7 +124,7 @@ const Services: React.FC = () => {
       </section>
 
       {/* CTA with GlareHover */}
-      <section className="py-20 bg-white border-t border-gray-100">
+      <section className="py-12 md:py-20 bg-white border-t border-gray-100">
         <div className="max-w-5xl mx-auto px-4 text-center">
           <ScrollFloat
             animationDuration={0.8}

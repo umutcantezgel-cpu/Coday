@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense, lazy } from 'react';
 import BlurText from '../components/shared/ui/BlurText';
 import GradientText from '../components/shared/ui/GradientText';
-import ApplicationWizard from '../components/features/contact/ApplicationWizard';
+// import ApplicationWizard from '../components/features/contact/ApplicationWizard'; // Loaded lazily
 import AvailabilityGrid from '../components/features/contact/AvailabilityGrid';
 import InteractiveMap from '../shared/ui/InteractiveMap';
+
+const ApplicationWizard = lazy(() => import('../components/features/contact/ApplicationWizard'));
 
 import { useTranslation } from 'react-i18next';
 
@@ -19,7 +21,7 @@ const Contact: React.FC = () => {
             {/* Text Side */}
             <div>
               <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">{t('hero.badge')}</span>
-              <h1 className="font-display font-black text-4xl sm:text-6xl text-secondary mb-6 tracking-tight">
+              <h1 className="font-display font-black text-3xl sm:text-5xl lg:text-6xl text-secondary mb-6 tracking-tight">
                 <BlurText
                   text={t('hero.title_start')}
                   delay={100}
@@ -64,7 +66,9 @@ const Contact: React.FC = () => {
 
             {/* Wizard Application Form */}
             <div className="relative">
-              <ApplicationWizard />
+              <Suspense fallback={<div className="h-[600px] w-full bg-gray-50 rounded-3xl animate-pulse" />}>
+                <ApplicationWizard />
+              </Suspense>
 
               {/* Trust Indicators */}
               {/* Trust Indicators */}
@@ -95,7 +99,7 @@ const Contact: React.FC = () => {
       </section>
 
       {/* Contact Info & Map Section */}
-      <section className="py-24 bg-aurora-snow">
+      <section className="py-12 md:py-24 bg-aurora-snow">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-display font-bold text-3xl text-gray-900 mb-4">{t('location.title')}</h2>

@@ -4,33 +4,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
+
   <!-- SEO Meta Tags -->
   <title>Coday | Digitalagentur für Webdesign & Entwicklung</title>
-  <meta name="description" content="Coday ist Ihre Digitalagentur für maßgeschneidertes Webdesign, Entwicklung und SEO. Wir verwandeln Besucher in Kunden. Jetzt Projekt starten!" />
+  <meta name="description"
+    content="Coday ist Ihre Digitalagentur für maßgeschneidertes Webdesign, Entwicklung und SEO. Wir verwandeln Besucher in Kunden. Jetzt Projekt starten!" />
   <meta name="keywords" content="Webdesign, Webentwicklung, SEO, Digitalagentur, Next.js, React, Berlin" />
   <meta name="author" content="Coday" />
   <meta name="robots" content="index, follow" />
-  
+
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Coday" />
   <meta property="og:title" content="Coday | Digitalagentur für Webdesign & Entwicklung" />
-  <meta property="og:description" content="Wir bauen Websites, die verkaufen. Maßgeschneidertes Design, blitzschnelle Performance, messbare Ergebnisse." />
+  <meta property="og:description"
+    content="Wir bauen Websites, die verkaufen. Maßgeschneidertes Design, blitzschnelle Performance, messbare Ergebnisse." />
   <meta property="og:image" content="/images/og-image.jpg" />
   <meta property="og:url" content="https://coday.de" />
   <meta property="og:locale" content="de_DE" />
-  
+
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Coday | Digitalagentur" />
   <meta name="twitter:description" content="Websites, die verkaufen. Webdesign & Entwicklung aus Berlin." />
   <meta name="twitter:image" content="/images/og-image.jpg" />
-  
-  <!-- Favicon -->
+
+  <!-- PWA & Favicon -->
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#5227FF" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Coday" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  
+
   <!-- Canonical -->
   <link rel="canonical" href="https://coday.de" />
 
@@ -81,7 +88,7 @@
     }
   }
   </script>
-  
+
   <!-- Structured Data: LocalBusiness -->
   <script type="application/ld+json">
   {
@@ -111,6 +118,15 @@
 
 <body>
   <div id="root"></div>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(reg => console.log('SW registered:', reg))
+          .catch(err => console.log('SW registration failed:', err));
+      });
+    }
+  </script>
   <script type="module" src="/index.tsx"></script>
 </body>
 

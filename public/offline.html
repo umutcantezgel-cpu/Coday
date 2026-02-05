@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline | Coday</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background: #0F172A;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 1rem;
+            color: #5227FF;
+        }
+
+        p {
+            color: #94A3B8;
+            margin-bottom: 2rem;
+        }
+
+        button {
+            background: #5227FF;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 99px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Keine Verbindung</h1>
+    <p>Du bist aktuell offline. Überprüfe deine Internetverbindung.</p>
+    <button onclick="window.location.reload()">Nochmal versuchen</button>
+</body>
+
+</html>

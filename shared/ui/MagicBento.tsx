@@ -13,6 +13,7 @@ interface BentoCardProps {
     magnetStrength?: number;
     starCount?: number;
     starColor?: string;
+    allowOverflow?: boolean;
 }
 
 const BentoCard: React.FC<BentoCardProps> = ({
@@ -24,7 +25,8 @@ const BentoCard: React.FC<BentoCardProps> = ({
     tiltMax = 15,
     magnetStrength = 0.3,
     starCount = 50,
-    starColor = '#1A9A9A'
+    starColor = '#1A9A9A',
+    allowOverflow = false
 }) => {
     const cardRef = useRef<HTMLDivElement>(null);
     const innerRef = useRef<HTMLDivElement>(null);
@@ -120,7 +122,7 @@ const BentoCard: React.FC<BentoCardProps> = ({
     return (
         <div
             ref={cardRef}
-            className={`relative overflow-hidden rounded-2xl bg-white border border-gray-100 shadow-lg ${className}`}
+            className={`relative ${allowOverflow ? 'overflow-visible' : 'overflow-hidden'} rounded-2xl bg-white border border-gray-100 shadow-lg ${className}`}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             style={{ perspective: '1000px' }}

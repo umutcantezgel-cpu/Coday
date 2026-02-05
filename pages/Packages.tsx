@@ -108,19 +108,20 @@ const Packages: React.FC = () => {
                 </div>
 
                 {/* Package Cards with MagicBento */}
-                <MagicBento columns={3} gap={24} className="max-w-7xl mx-auto mb-20 items-start">
+                <MagicBento columns={3} gap={24} className="max-w-7xl mx-auto mb-20 pt-8 items-start">
                     {packages.map((pkg) => (
                         <BentoCard
                             key={pkg.id}
                             effect={pkg.popular ? 'glow' : 'spotlight'}
                             spotlightColor="rgba(26, 154, 154, 0.2)"
                             glowColor="rgba(59, 130, 246, 0.3)"
-                            className={`h-full bg-white relative ${pkg.popular ? 'border-primary ring-2 ring-primary/20 scale-105 z-10' : 'border-gray-200'}`}
+                            className={`h-full bg-white relative ${pkg.popular ? 'border-primary ring-2 ring-primary/20 z-10' : 'border-gray-200'}`}
+                            allowOverflow={pkg.popular}
                         >
-                            <div className={`p-8 h-full flex flex-col ${pkg.popular ? 'pt-10' : ''}`}>
+                            <div className={`p-8 h-full flex flex-col ${pkg.popular ? 'pt-16' : ''}`}>
                                 {pkg.popular && (
                                     <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                                        <span className="bg-primary text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wide shadow-lg">
+                                        <span className="bg-primary text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wide shadow-lg whitespace-nowrap">
                                             {t('packages.professional.badge')}
                                         </span>
                                     </div>

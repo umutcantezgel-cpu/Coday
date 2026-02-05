@@ -196,13 +196,17 @@ const ApplicationWizard: React.FC = () => {
 
                         <div className="space-y-4">
                             <input
-                                type="text" placeholder={t('wizard.step4.name_placeholder')}
+                                type="text"
+                                placeholder={t('wizard.step4.name_placeholder')}
+                                autoComplete="name"
                                 className="w-full p-4 bg-gray-50 rounded-xl border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none"
                                 value={formData.name}
                                 onChange={(e) => updateData('name', e.target.value)}
                             />
                             <input
-                                type="email" placeholder={t('wizard.step4.email_placeholder')}
+                                type="email"
+                                placeholder={t('wizard.step4.email_placeholder')}
+                                autoComplete="email"
                                 className="w-full p-4 bg-gray-50 rounded-xl border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none"
                                 value={formData.email}
                                 onChange={(e) => updateData('email', e.target.value)}

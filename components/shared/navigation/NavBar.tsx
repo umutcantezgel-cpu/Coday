@@ -6,6 +6,7 @@ import { useNavState } from './useNavState';
 import { MagneticButton } from '../ui/MagneticButton';
 import { Link } from 'react-router-dom';
 import { LanguageSwitcher } from '../LanguageSwitcher';
+import { BottomNav } from './BottomNav';
 
 export const NavBar: React.FC = () => {
     const { isVisible, isScrolled, isMobileOpen, toggleMobileMenu, closeMobileMenu } = useNavState();
@@ -59,6 +60,9 @@ export const NavBar: React.FC = () => {
                 isOpen={isMobileOpen}
                 onClose={closeMobileMenu}
             />
+
+            {/* POLLUX Mobile Bottom Nav */}
+            <BottomNav onOpenMenu={toggleMobileMenu} />
         </>
     );
 };

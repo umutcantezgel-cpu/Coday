@@ -12,7 +12,7 @@ export const NavToggle: React.FC<NavToggleProps> = ({ isOpen, toggle, color = 'c
             onClick={toggle}
             aria-label={isOpen ? "Menü schließen" : "Menü öffnen"}
             aria-expanded={isOpen}
-            className="group relative flex items-center justify-center w-12 h-12 rounded-full hover:bg-black/5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            className="group relative flex items-center justify-center w-12 h-12 rounded-full hover:bg-black/5 active:bg-black/10 active:scale-95 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             style={{ color }}
         >
             <div className="relative w-6 h-4">

@@ -30,7 +30,7 @@ const AgencyComparisonTable: React.FC = () => {
     ];
 
     return (
-        <section className="py-24 bg-secondary text-white relative overflow-hidden">
+        <section className="py-12 md:py-24 bg-secondary text-white relative overflow-hidden">
             {/* Background Decor */}
             <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[128px] pointer-events-none"></div>
             <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[128px] pointer-events-none"></div>
@@ -59,12 +59,12 @@ const AgencyComparisonTable: React.FC = () => {
                         <tbody>
                             {features.map((feature, index) => (
                                 <tr key={index} className="border-b border-gray-800 hover:bg-white/5 transition-colors">
-                                    <td className="py-8 px-4 font-mono text-sm text-gray-500 uppercase">{feature.name}</td>
-                                    <td className="py-8 px-4 text-gray-400 text-lg flex items-center">
+                                    <td className="py-4 md:py-8 px-4 font-mono text-sm text-gray-500 uppercase">{feature.name}</td>
+                                    <td className="py-4 md:py-8 px-4 text-gray-400 text-lg flex items-center">
                                         <span className="material-symbols-outlined text-gray-600 mr-3">close</span>
                                         {feature.old}
                                     </td>
-                                    <td className="py-8 px-4 text-white text-lg font-bold relative">
+                                    <td className="py-4 md:py-8 px-4 text-white text-lg font-bold relative">
                                         <div className="flex items-center">
                                             <span className="material-symbols-outlined text-primary mr-3 shadow-glow">check_circle</span>
                                             {feature.new}

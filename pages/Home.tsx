@@ -23,7 +23,7 @@ const Home: React.FC = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-40 lg:pt-48 lg:pb-60 overflow-hidden bg-background-light">
+      <section className="relative pt-20 pb-20 md:pt-32 md:pb-40 lg:pt-48 lg:pb-60 overflow-hidden bg-background-light">
         {/* Organic Background Shapes */}
         <div className="absolute top-0 end-0 -translate-y-1/4 translate-x-1/4 rtl:-translate-x-1/4 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[100px] pointer-events-none"></div>
         <div className="absolute bottom-0 start-0 translate-y-1/4 -translate-x-1/4 rtl:translate-x-1/4 w-[600px] h-[600px] bg-secondary/10 rounded-full blur-[80px] pointer-events-none animate-float"></div>
@@ -114,7 +114,7 @@ const Home: React.FC = () => {
       <AgencyComparisonTable />
 
       {/* Philosophy Section */}
-      <section className="py-24 bg-surface-light relative overflow-hidden">
+      <section className="py-12 md:py-24 bg-surface-light relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div>
@@ -152,7 +152,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Diversity / Carousel Section */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section className="py-12 md:py-24 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-5xl font-black text-secondary mb-12 uppercase tracking-tight">
             <BlurText
@@ -246,7 +246,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-24 bg-surface-light relative">
+      <section className="py-12 md:py-24 bg-surface-light relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="order-2 lg:order-1 relative">
