@@ -6,7 +6,20 @@ import { logValidationFailure, logSecurityEvent, SecurityEventType } from '../..
 // Initialize Resend with API Key from env
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export default async function handler(req: any, res: any) {
+// Minimal Vercel Request/Response interfaces to avoid 'any'
+interface VercelRequest {
+    method?: string;
+    body: any;
+    headers: Record<string, string | string[] | undefined>;
+    socket?: { remoteAddress?: string };
+}
+
+interface VercelResponse {
+    status: (code: number) => VercelResponse;
+    json: (body: any) => void;
+}
+
+export default async function handler(req: VercelRequest, res: VercelResponse) {
     if (req.method !== 'POST') {
         return res.status(405).json({ message: 'Method not allowed' });
     }
@@ -16,9 +29,12 @@ export default async function handler(req: any, res: any) {
         const validatedData = LeadApiSchema.parse(req.body);
         const { name, email, message, phone, project, source } = validatedData;
 
+        const senderEmail = process.env.SENDER_EMAIL || 'onboarding@resend.dev';
+        const recipientEmail = process.env.RECIPIENT_EMAIL || 'umut@codayweb.de';
+
         const { data, error } = await resend.emails.send({
-            from: 'Agency Domination <onboarding@resend.dev>', // Or your verified domain
-            to: ['umut@codayweb.de'],
+            from: `Agency Domination <${senderEmail}>`,
+            to: [recipientEmail],
             subject: `Neuer Lead von ${name}: ${project || 'Anfrage'}`,
             html: `
         <h1>Neue Anfrage erhalten</h1>
@@ -48,7 +64,7 @@ export default async function handler(req: any, res: any) {
             logValidationFailure(
                 'api/send-lead',
                 zodErrors.map((e: any) => ({ path: String(e.path[0]), message: e.message })),
-                req.headers['x-forwarded-for'] as string || req.socket?.remoteAddress
+                (req.headers['x-forwarded-for'] as string) || req.socket?.remoteAddress || 'unknown'
             );
             return res.status(400).json({ message: 'Validation failed', errors: zodErrors });
         }
