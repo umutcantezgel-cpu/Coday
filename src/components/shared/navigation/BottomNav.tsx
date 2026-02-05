@@ -51,6 +51,7 @@ export const BottomNav: React.FC<BottomNavProps> = ({ onOpenMenu }) => {
                             ${active ? 'text-primary' : 'text-gray-400 hover:text-gray-600'}
                             ${item.isPrimary ? '-mt-6' : ''}
                         `}
+                        aria-label={item.label}
                     >
                         {item.isPrimary ? (
                             <div className="w-14 h-14 bg-primary rounded-full shadow-lg shadow-primary/30 flex items-center justify-center text-white transform transition-transform active:scale-95">

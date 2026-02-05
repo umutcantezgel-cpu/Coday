@@ -4,6 +4,7 @@ import { NavBar } from './shared/navigation';
 import { ChatWidget } from '../widgets/chatbot';
 import { WhatsAppButton } from '../widgets/whatsapp';
 import { CookieConsentBanner, CookieSettingsModal } from '../widgets/cookie';
+import { Icon } from './shared/ui/Icon';
 
 const Footer = lazy(() => import('./layout/Footer'));
 
@@ -70,22 +71,28 @@ const MobileSection = ({ title, items, onItemClick }: { title: string, items: an
 
   return (
     <div>
+
+
       <button
         className="flex items-center justify-between w-full text-lg font-bold text-gray-400 mb-2"
         onClick={() => setIsOpen(!isOpen)}
+        aria-expanded={isOpen}
       >
         {title}
-        <span className={`material-symbols-outlined transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}>expand_more</span>
+        <Icon
+          name="expand_more"
+          className={`transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+        />
       </button>
       <div className={`space-y-4 pl-4 overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96 opacity-100 mt-2' : 'max-h-0 opacity-0'}`}>
         {items.map((item, i) => (
           <NavLink
             key={i}
             to={item.href}
-            className="flex items-center space-x-3 text-gray-700 p-2 rounded-lg active:bg-gray-50"
+            className="flex items-center space-x-3 text-gray-700 p-2 rounded-lg active:bg-gray-50 bg-transparent"
             onClick={onItemClick}
           >
-            <span className="material-symbols-outlined text-gray-400">{item.icon}</span>
+            <Icon name={item.icon || 'circle'} className="text-gray-400" />
             <span className="font-medium">{item.label}</span>
           </NavLink>
         ))}
