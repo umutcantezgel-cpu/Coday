@@ -58,7 +58,7 @@ const Home: React.FC = () => {
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             <NavLink
               to="/contact"
-              className="group relative inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-white rounded-full bg-primary hover:bg-opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 overflow-hidden"
+              className="group relative inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-white rounded-full bg-primary hover:bg-opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 active:scale-95 active:shadow-sm overflow-hidden"
             >
               <span className="relative z-10 flex items-center">
                 {t('buttons.start_project', { ns: 'common' })}
@@ -70,7 +70,7 @@ const Home: React.FC = () => {
 
             <NavLink
               to="/work"
-              className="group inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-secondary bg-white rounded-full border border-gray-200 hover:border-primary/50 hover:bg-gray-50 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1"
+              className="group inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-secondary bg-white rounded-full border border-gray-200 hover:border-primary/50 hover:bg-gray-50 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1 active:scale-95 active:shadow-sm"
             >
               {t('buttons.view_work', { ns: 'common' })}
             </NavLink>
@@ -165,7 +165,7 @@ const Home: React.FC = () => {
             <span className="text-primary">{t('industries.title_suffix')}</span>
           </h2>
 
-          <MagicBento columns={5} gap={16} className="max-w-6xl mx-auto">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             <Link to="/services/industries/handwerk" className="block h-full">
               <BentoCard effect="tilt" tiltMax={12} className="p-6 text-start h-full">
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
@@ -211,7 +211,7 @@ const Home: React.FC = () => {
                 <p className="text-sm text-slate-600">{t('industries.card_health.desc')}</p>
               </BentoCard>
             </Link>
-          </MagicBento>
+          </div>
         </div>
       </section>
 

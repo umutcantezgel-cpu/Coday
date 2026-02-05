@@ -1,12 +1,13 @@
 import React, { useState, Suspense, lazy } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { NavBar } from './shared/navigation';
-import { ChatWidget } from '../widgets/chatbot';
+// ChatWidget lazy loaded below
 import { WhatsAppButton } from '../widgets/whatsapp';
 import { CookieConsentBanner, CookieSettingsModal } from '../widgets/cookie';
 import { Icon } from './shared/ui/Icon';
 
 const Footer = lazy(() => import('./layout/Footer'));
+const ChatWidget = lazy(() => import('../widgets/chatbot').then(module => ({ default: module.ChatWidget })));
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -45,7 +46,9 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
       </Suspense>
 
       {/* AI Chatbot Widget */}
-      <ChatWidget />
+      <Suspense fallback={null}>
+        <ChatWidget />
+      </Suspense>
 
       {/* WhatsApp Button */}
       <WhatsAppButton />
