@@ -1,73 +1,58 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { OptimizedImage } from '../../shared/ui/OptimizedImage';
 
-const integrations = [
-    { name: 'Shopify', category: 'E-Commerce', icon: 'shopping_bag', color: 'bg-green-500' },
-    { name: 'Salesforce', category: 'CRM', icon: 'cloud', color: 'bg-blue-500' },
-    { name: 'Slack', category: 'Communication', icon: 'chat', color: 'bg-purple-500' },
-    { name: 'HubSpot', category: 'Marketing', icon: 'hub', color: 'bg-orange-500' },
-    { name: 'Stripe', category: 'Payments', icon: 'payments', color: 'bg-indigo-500' },
-    { name: 'Zapier', category: 'Automation', icon: 'bolt', color: 'bg-amber-500' },
+const PRODUCTS = [
+    { id: 1, title: "SEO Audit Template", price: "€199", image: "/images/marketing/seo-audit-analyse-optimierung-google-ranking.webp", alt: "SEO Audit" },
+    { id: 2, title: "Social Media Bundle", price: "€299", image: "/images/marketing/social-media-marketing-influencer-likes-shares-viral.webp", alt: "Social Media Bundle" },
+    { id: 3, title: "Agency Growth Kit", price: "€499", image: "/images/marketing/omnichannel-marketing-hub-seo-social-content-strategie-vernetzt.webp", alt: "Groth Kit" },
+    { id: 4, title: "Webflow Portfolio Theme", price: "€79", image: "/images/services/website-builder-drag-drop-baukasten-elemente-webdesign.webp", alt: "Portfolio Theme" },
+    { id: 5, title: "Contract Templates Pack", price: "€149", image: "/images/industries/anwaeltin.webp", alt: "Vertraege" },
+    { id: 6, title: "Lead Gen Masterclass", price: "€399", image: "/images/marketing/email-marketing-kampagne-newsletter-zielgruppe-versand.webp", alt: "Lead Gen" }
 ];
 
 const Marketplace: React.FC = () => {
     return (
-        <div className="pt-24 pb-24 min-h-screen bg-aurora-white">
+        <div className="bg-aurora-white min-h-screen pt-24 pb-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Header */}
                 <div className="text-center mb-16">
-                    <div className="inline-block py-1 px-3 rounded-full bg-blue-50 text-aurora-sapphire text-xs font-bold uppercase tracking-wider mb-6 border border-blue-100">
-                        Ecosystem
-                    </div>
-                    <h1 className="font-display font-black text-4xl sm:text-6xl mb-6 text-gray-900">
-                        Unser <span className="text-gradient-vivid">Marktplatz</span>
+                    <h1 className="font-display font-black text-5xl md:text-6xl text-gradient-vivid mb-6">
+                        Community Marktplatz
                     </h1>
-                    <p className="text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed">
-                        Erweitere deine Agency Domination Experience mit über 50+ Integrationen und Add-ons.
+                    <p className="text-xl text-slate-500 max-w-2xl mx-auto">
+                        Entdecke exklusive Services und Partner-Angebote für dein nächstes Projekt.
                     </p>
                 </div>
 
-                {/* Categories */}
-                <div className="flex flex-wrap justify-center gap-4 mb-16">
-                    {['Alle', 'E-Commerce', 'CRM', 'Marketing', 'Automation'].map((cat) => (
-                        <button key={cat} className="px-6 py-2 rounded-full bg-white border border-gray-200 text-slate-600 hover:border-blue-500 hover:text-blue-600 transition-all shadow-sm">
-                            {cat}
-                        </button>
-                    ))}
-                </div>
-
-                {/* Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {integrations.map((item) => (
-                        <div key={item.name} className="group relative bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-aurora-lg transition-all duration-300 hover:-translate-y-1">
-                            <div className={`w-12 h-12 ${item.color} rounded-xl flex items-center justify-center text-white mb-6 shadow-lg group-hover:scale-110 transition-transform`}>
-                                <span className="material-symbols-outlined">{item.icon}</span>
+                    {/* Marketplace Items */}
+                    {PRODUCTS.map((item) => (
+                        <div key={item.id} className="group relative bg-white rounded-2xl border border-aurora-mist overflow-hidden hover:shadow-xl hover:border-blue-200 transition-all duration-300 flex flex-col">
+                            <div className="h-48 relative overflow-hidden bg-slate-50">
+                                <OptimizedImage
+                                    src={item.image}
+                                    alt={item.alt}
+                                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                />
+                                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-gray-900 shadow-sm">
+                                    Popular
+                                </div>
                             </div>
-                            <div className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">{item.category}</div>
-                            <h3 className="font-display font-bold text-2xl mb-4 text-gray-900">{item.name}</h3>
-                            <p className="text-slate-500 mb-6 line-clamp-2">
-                                Nahtlose Integration für maximale Performance und Skalierbarkeit deiner Prozesse.
-                            </p>
-                            <NavLink to="#" className="inline-flex items-center text-aurora-sapphire font-bold hover:underline">
-                                Installieren <span className="material-symbols-outlined text-sm ml-1">arrow_forward</span>
-                            </NavLink>
+
+                            <div className="p-6 flex-1 flex flex-col">
+                                <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                                <p className="text-slate-500 mb-4 text-sm flex-1">
+                                    Professionelles Paket für direkten Einsatz. Inklusive Updates.
+                                </p>
+
+                                <div className="flex items-center justify-between mt-4 pt-4 border-t border-gray-100">
+                                    <span className="text-xl font-bold text-blue-600">{item.price}</span>
+                                    <button className="px-4 py-2 rounded-lg bg-gray-900 text-sm font-bold text-white hover:bg-gray-800 transition-colors">
+                                        Kaufen
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     ))}
-                </div>
-
-                {/* CTA */}
-                <div className="mt-24 p-12 rounded-3xl bg-gradient-ocean text-white text-center relative overflow-hidden">
-                    <div className="relative z-10">
-                        <h2 className="font-display font-bold text-3xl mb-4">Fehlt dir etwas?</h2>
-                        <p className="text-white/80 mb-8 max-w-xl mx-auto">
-                            Wir bauen ständig neue Integrationen. Sag uns, was du brauchst.
-                        </p>
-                        <button className="px-8 py-3 bg-white text-aurora-sapphire rounded-xl font-bold hover:bg-opacity-90 transition-all shadow-lg">
-                            Integration vorschlagen
-                        </button>
-                    </div>
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-                    <div className="absolute bottom-0 left-0 w-64 h-64 bg-black/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
                 </div>
             </div>
         </div>

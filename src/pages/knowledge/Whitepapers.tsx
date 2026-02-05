@@ -1,41 +1,84 @@
 import React from 'react';
+import { OptimizedImage } from '../../shared/ui/OptimizedImage';
 
-const papers = [
-    { title: 'The 2026 Agency Report', type: 'Report', pages: 45, image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40' },
-    { title: 'Ultimate SEO Checklist', type: 'Checklist', pages: 12, image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71' },
-    { title: 'Design Systems Guide', type: 'E-Book', pages: 80, image: 'https://images.unsplash.com/photo-1586717791821-3f44a5638d4f' },
+const WHITEPAPERS = [
+    {
+        id: 1,
+        title: "Der ultimative Web-Relaunch Guide 2026",
+        description: "Alles was du wissen musst, bevor du deine neue Website planst. Inklusive Checkliste und Budget-Planer.",
+        tag: "Guide",
+        image: "/images/marketing/marketing-strategie-planung-konzept-01.webp",
+        alt: "Strategie Planung Konzept",
+        fileUrl: "/documents/web-relaunch-guide-2026.pdf"
+    },
+    {
+        id: 2,
+        title: "SEO Domination: Ranking Faktoren",
+        description: "Die 200 wichtigsten Google Ranking Faktoren analysiert und priorisiert für lokales Business.",
+        tag: "Checkliste",
+        image: "/images/marketing/datenanalyse-business-intelligence-reporting-statistiken-auswertung.webp",
+        alt: "SEO Datenanalyse Report",
+        fileUrl: "/documents/seo-domination-guide-2026_1.pdf"
+    },
+    {
+        id: 3,
+        title: "Conversion Rate Optimierung (CRO)",
+        description: "Wie du Besucher in zahlende Kunden verwandelst. Psychologische Trigger und Layout-Hacks.",
+        tag: "Template",
+        image: "/images/marketing/email-marketing-kampagne-newsletter-zielgruppe-versand.webp",
+        alt: "Conversion Optimierung",
+        fileUrl: "/documents/cro-guide-2026.pdf"
+    }
 ];
 
 const Whitepapers: React.FC = () => {
     return (
-        <div className="pt-24 pb-24 min-h-screen bg-aurora-white">
+        <div className="bg-aurora-white min-h-screen pt-24 pb-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
-                    <h1 className="font-display font-black text-4xl sm:text-6xl mb-6 text-gray-900">
-                        Whitepapers & <span className="text-gradient-vivid">Guides</span>
+                    <h1 className="font-display font-black text-5xl md:text-6xl text-gradient-vivid mb-6">
+                        Ratgeber & Ressourcen
                     </h1>
                     <p className="text-xl text-slate-500 max-w-2xl mx-auto">
-                        Tiefgehendes Wissen zum Downloaden. Kostenlos für Mitglieder.
+                        Kostenlose Anleitungen, Checklisten und Vorlagen für deinen Erfolg.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {papers.map((paper) => (
-                        <div key={paper.title} className="bg-white p-2 rounded-3xl border border-gray-100 shadow-sm hover:shadow-aurora-lg transition-all group">
-                            <div className="bg-slate-50 rounded-2xl h-64 overflow-hidden relative mb-4">
-                                <img src={`${paper.image}?auto=format&fit=crop&w=500&q=80`} alt={paper.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
-                                <div className="absolute top-4 left-4 bg-black/80 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">
-                                    {paper.type}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    {WHITEPAPERS.map((paper) => (
+                        <div key={paper.id} className="flex flex-col bg-white rounded-2xl border border-aurora-mist overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
+                            <div className="h-64 relative overflow-hidden">
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10" />
+                                <OptimizedImage
+                                    src={paper.image}
+                                    alt={paper.alt}
+                                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                />
+                                <div className="absolute bottom-4 left-4 z-20">
+                                    <div className="w-12 h-16 bg-white shadow-lg rounded-sm transform -rotate-6 border border-gray-200 flex items-center justify-center">
+                                        <span className="text-[8px] font-bold text-gray-400 rotate-90">PDF</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div className="px-4 pb-4">
-                                <h3 className="font-display font-bold text-xl mb-2 text-gray-900">{paper.title}</h3>
-                                <div className="flex justify-between items-center text-sm text-slate-500">
-                                    <span>{paper.pages} Seiten PDF</span>
-                                    <button className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center group-hover:bg-black group-hover:text-white transition-all">
-                                        <span className="material-symbols-outlined">download</span>
-                                    </button>
-                                </div>
+
+                            <div className="p-8 flex-1 flex flex-col">
+                                <span className="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2">{paper.tag}</span>
+                                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                                    {paper.title}
+                                </h3>
+                                <p className="text-slate-500 mb-8 flex-1">
+                                    {paper.description}
+                                </p>
+
+                                <a
+                                    href={paper.fileUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-full py-4 rounded-xl border-2 border-slate-100 text-gray-900 font-bold hover:border-blue-500 hover:text-blue-600 transition-colors flex items-center justify-center group-hover:bg-blue-50"
+                                >
+                                    <span className="material-symbols-outlined mr-2">download</span>
+                                    Kostenlos herunterladen
+                                </a>
                             </div>
                         </div>
                     ))}
@@ -44,5 +87,4 @@ const Whitepapers: React.FC = () => {
         </div>
     );
 };
-
 export default Whitepapers;

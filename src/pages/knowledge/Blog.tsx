@@ -1,59 +1,134 @@
 import React from 'react';
+import { OptimizedImage } from '../../shared/ui/OptimizedImage';
 
-const posts = [
-    { title: 'The Future of Web Design in 2026', category: 'Design', date: '2 Tage her', image: 'https://images.unsplash.com/photo-1549421263-606bed6e3ceb' },
-    { title: 'How to scale your Agency to 1M', category: 'Business', date: '1 Woche her', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f' },
-    { title: 'Next.js 16 Features Explained', category: 'Tech', date: '2 Wochen her', image: 'https://images.unsplash.com/photo-1555099962-4199c345e5dd' },
-    { title: 'Why Performance matters for SEO', category: 'SEO', date: '3 Wochen her', image: 'https://images.unsplash.com/photo-1571721795195-ad9a3e6a88b0' },
-];
+import { Link } from 'react-router-dom';
+import { BLOG_POSTS } from '../../features/blog/model/data';
 
 const Blog: React.FC = () => {
     return (
-        <div className="pt-24 pb-24 min-h-screen bg-aurora-white">
+        <div className="bg-aurora-white min-h-screen pt-24 pb-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h1 className="font-display font-black text-4xl sm:text-6xl mb-12 text-gray-900 border-b border-gray-200 pb-8">
-                    Insights & <span className="text-gradient-vivid">Thoughts</span>
-                </h1>
-
-                {/* Featured */}
-                <div className="grid lg:grid-cols-2 gap-12 mb-24 items-center group cursor-pointer">
-                    <div className="overflow-hidden rounded-3xl h-[400px]">
-                        <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1200&q=80" alt="Featured" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                    </div>
-                    <div>
-                        <div className="inline-block py-1 px-3 rounded-full bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-wider mb-6"> Featured Story </div>
-                        <h2 className="font-display font-black text-3xl sm:text-4xl mb-6 text-gray-900 leading-tight group-hover:text-blue-600 transition-colors">
-                            Wie KI die Agenturlandschaft für immer verändert (und wie du profitierst).
-                        </h2>
-                        <p className="text-xl text-slate-500 mb-8 leading-relaxed">
-                            Eine tiefe Analyse der aktuellen Trends und warum jetzt der beste Zeitpunkt für Nischen-Agenturen ist.
-                        </p>
-                        <div className="flex items-center gap-4">
-                            <div className="w-10 h-10 rounded-full bg-gray-200"></div>
-                            <div className="text-sm">
-                                <div className="font-bold text-gray-900">Alex Storm</div>
-                                <div className="text-slate-500">5 min read</div>
-                            </div>
-                        </div>
-                    </div>
+                <div className="text-center mb-16">
+                    <h1 className="font-display font-black text-5xl md:text-6xl text-gradient-vivid mb-6">
+                        Blog & Insights
+                    </h1>
+                    <p className="text-xl text-slate-500 max-w-2xl mx-auto">
+                        Tiefgehende Analysen, Strategien und Neuigkeiten aus der Welt der digitalen Dominanz.
+                    </p>
                 </div>
 
-                {/* Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {posts.map((post) => (
-                        <div key={post.title} className="group cursor-pointer">
-                            <div className="h-48 rounded-2xl overflow-hidden mb-6 relative">
-                                <img src={`${post.image}?auto=format&fit=crop&w=400&q=80`} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-2 py-1 rounded text-xs font-bold uppercase tracking-wider text-gray-900">
-                                    {post.category}
+                {/* Featured Post */}
+                <div className="mb-16">
+                    <Link to={`/knowledge/blog/${BLOG_POSTS[6].slug}`} className="block relative rounded-3xl overflow-hidden shadow-2xl group cursor-pointer h-[500px]">
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10" />
+                        <OptimizedImage
+                            src={BLOG_POSTS[6].image}
+                            alt={BLOG_POSTS[6].title}
+                            className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                            priority
+                        />
+
+                        <div className="absolute inset-0 z-20 flex flex-col justify-end p-8 md:p-12">
+                            <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <span className="inline-block px-3 py-1 rounded-full bg-blue-600 text-white text-xs font-bold uppercase tracking-wider mb-4">
+                                    Highlight
+                                </span>
+                                <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-4 shadow-sm">
+                                    {BLOG_POSTS[6].title}
+                                </h2>
+                                <div className="flex items-center space-x-4 text-slate-300">
+                                    <span className="text-sm font-medium">Lesezeit: {BLOG_POSTS[6].readTime}</span>
+                                    <span className="text-slate-600">•</span>
+                                    <span className="text-sm font-medium">Veröffentlicht am {BLOG_POSTS[6].date}</span>
                                 </div>
                             </div>
-                            <div className="text-xs font-bold text-slate-400 mb-2">{post.date}</div>
-                            <h3 className="font-display font-bold text-xl leading-snug text-gray-900 group-hover:text-blue-600 transition-colors">
-                                {post.title}
-                            </h3>
                         </div>
+                    </Link>
+                </div>
+
+                {/* Article Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    {BLOG_POSTS.slice(0, 6).map((post) => (
+                        <Link key={post.id} to={`/knowledge/blog/${post.slug}`} className="flex flex-col group cursor-pointer h-full">
+                            <article className="flex flex-col h-full">
+                                <div className="h-64 rounded-2xl bg-slate-100 mb-6 overflow-hidden relative shadow-md hover:shadow-xl transition-shadow duration-300">
+                                    <OptimizedImage
+                                        src={post.image}
+                                        alt={post.alt}
+                                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                                </div>
+
+                                <div className="flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-blue-600 mb-3">
+                                    <span>{post.category}</span>
+                                    <span className="text-slate-300">•</span>
+                                    <span>{post.readTime}</span>
+                                </div>
+
+                                <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                                    {post.title}
+                                </h3>
+
+                                <p className="text-slate-500 line-clamp-3 mb-4 flex-grow">
+                                    {post.excerpt}
+                                </p>
+
+                                <span className="text-sm font-bold text-gray-900 flex items-center group-hover:translate-x-1 transition-transform mt-auto">
+                                    Weiterlesen
+                                    <span className="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+                                </span>
+                            </article>
+                        </Link>
                     ))}
+                </div>
+
+                {/* Social Proof / Newsletter Teaser */}
+                <div className="mt-24">
+                    <div className="bg-gray-900 rounded-3xl p-8 lg:p-12 relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-12">
+                        {/* Background Gradients */}
+                        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-[100px] pointer-events-none translate-x-1/2 -translate-y-1/2"></div>
+                        <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/20 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 translate-y-1/2"></div>
+
+                        <div className="relative z-10 lg:w-1/2">
+                            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">Community</span>
+                            <h2 className="font-display font-bold text-3xl md:text-4xl text-white mb-6">
+                                Schließen Sie sich <br /> 2.500+ Experten an.
+                            </h2>
+                            <p className="text-gray-400 text-lg mb-8 leading-relaxed">
+                                Erhalten Sie wöchentlich ausgewählte Strategien und Erkenntnisse direkt in Ihr Postfach. Keine Werbung, nur Mehrwert.
+                            </p>
+                            <div className="flex flex-col sm:flex-row gap-4">
+                                <input
+                                    type="email"
+                                    placeholder="Ihre E-Mail Adresse"
+                                    className="px-6 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary flex-grow"
+                                />
+                                <button className="px-8 py-4 rounded-xl bg-primary text-white font-bold hover:bg-primary-dark transition-colors shadow-lg hover:shadow-primary/50">
+                                    Anmelden
+                                </button>
+                            </div>
+                        </div>
+
+                        <div className="relative z-10 lg:w-5/12">
+                            <div className="relative aspect-square md:aspect-video lg:aspect-square rounded-2xl overflow-hidden shadow-2xl border border-gray-800 rotate-2 hover:rotate-0 transition-transform duration-500 group">
+                                <OptimizedImage
+                                    src="/images/services/drei-kunden-daumen-hoch-5-sterne-sprechblasen-bewertungen-zufrieden.webp"
+                                    alt="Zufriedene Community Mitglieder"
+                                    className="w-full h-full object-cover transform scale-100 group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100"
+                                />
+                                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900 to-transparent p-6">
+                                    <div className="flex items-center gap-2 mb-2">
+                                        <div className="flex text-yellow-500">
+                                            {[1, 2, 3, 4, 5].map(i => <span key={i} className="material-symbols-outlined text-sm fill-current">star</span>)}
+                                        </div>
+                                        <span className="text-white font-bold">4.9/5</span>
+                                    </div>
+                                    <p className="text-sm text-gray-300">"Der beste Marketing-Newsletter im DACH-Raum."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

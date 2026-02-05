@@ -1,62 +1,145 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { OptimizedImage } from '../../shared/ui/OptimizedImage';
+import { createPortal } from 'react-dom';
+import { X } from 'lucide-react';
 
-const courses = [
-    { title: 'Agency Scaling Masterclass', progress: 0, chapters: 12, duration: '6h 30m', image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f' },
-    { title: 'React Performance Pro', progress: 35, chapters: 8, duration: '4h 15m', image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee' },
-    { title: 'SEO Domination 2026', progress: 100, chapters: 5, duration: '3h', image: 'https://images.unsplash.com/photo-1571786256017-aee7a0c009b6' },
+const COURSES = [
+    {
+        id: 1,
+        title: "5 Fragen an Ihre Web-Agentur",
+        duration: "12:45",
+        tag: "STRATEGIE",
+        image: "/images/marketing/seo-audit-analyse-optimierung-google-ranking.webp",
+        videoSrc: "/videos/academy/5_Fragen_an_Ihre_Web-Agentur.mp4",
+        alt: "5 Fragen Agentur"
+    },
+    {
+        id: 2,
+        title: "Aus Besuchern werden Kunden",
+        duration: "18:20",
+        tag: "CONVERSION",
+        image: "/images/services/website-builder-drag-drop-baukasten-elemente-webdesign.webp",
+        videoSrc: "/videos/academy/Aus_Besuchern_werden_Kunden.mp4",
+        alt: "Conversion Optimierung"
+    },
+    {
+        id: 3,
+        title: "Die Ultimative SEO Strategie",
+        duration: "14:10",
+        tag: "SEO",
+        image: "/images/marketing/omnichannel-marketing-hub-seo-social-content-strategie-vernetzt.webp",
+        videoSrc: "/videos/academy/Die_Ultimative_SEO_Strategie.mp4",
+        alt: "SEO Strategie"
+    },
+    {
+        id: 4,
+        title: "Google Bewertungen Meistern",
+        duration: "09:30",
+        tag: "REPUTATION",
+        image: "/images/industries/handwerker-tablet.webp",
+        videoSrc: "/videos/academy/GOOGLE-BEWERTUNGEN_MEISTERN.mp4",
+        alt: "Google Bewertungen"
+    },
+    {
+        id: 5,
+        title: "So kommen Besucher auf deine Seite",
+        duration: "16:15",
+        tag: "TRAFFIC",
+        image: "/images/marketing/social-media-marketing-influencer-likes-shares-viral.webp",
+        videoSrc: "/videos/academy/SO_KOMMEN_BESUCHER_AUF_DEINE_SEITE.mp4",
+        alt: "Traffic Generierung"
+    },
+    {
+        id: 6,
+        title: "Was kostet eine Website wirklich?",
+        duration: "11:00",
+        tag: "BUDGET",
+        image: "/images/marketing/email-marketing-kampagne-newsletter-zielgruppe-versand.webp",
+        videoSrc: "/videos/academy/WAS_KOSTET_EINE_WEBSITE_WIRKLICH_.mp4",
+        alt: "Website Kosten"
+    },
+    {
+        id: 7,
+        title: "Website: Magnet oder Schreck?",
+        duration: "08:45",
+        tag: "DESIGN",
+        image: "/images/portfolio/mockup-website-fotograf-portfolio-hochzeit-portrait-business-event-galerie.webp",
+        videoSrc: "/videos/academy/Website__Magnet_oder_Schreck_.mp4",
+        alt: "Website Design Check"
+    }
 ];
 
 const Academy: React.FC = () => {
+    const { t } = useTranslation('knowledge');
+    const [selectedVideo, setSelectedVideo] = useState<typeof COURSES[0] | null>(null);
+
     return (
-        <div className="pt-24 pb-24 min-h-screen bg-aurora-white">
+        <div className="bg-aurora-white min-h-screen pt-24 pb-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
-                    <div className="inline-block py-1 px-3 rounded-full bg-orange-50 text-orange-600 text-xs font-bold uppercase tracking-wider mb-6 border border-orange-100">
-                        Education
-                    </div>
-                    <h1 className="font-display font-black text-4xl sm:text-6xl mb-6 text-gray-900">
-                        Academy <span className="text-gradient-vivid">Mastery</span>
+                    <h1 className="font-display font-black text-5xl md:text-6xl text-gradient-vivid mb-6">
+                        {t('academy.title')}
                     </h1>
                     <p className="text-xl text-slate-500 max-w-2xl mx-auto">
-                        Exklusives Wissen, direkt in die Praxis. Wähle deinen Lernpfad.
+                        {t('academy.subtitle')}
                     </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {courses.map((course) => (
-                        <div key={course.title} className="group bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-aurora-lg transition-all">
-                            <div className="h-48 overflow-hidden relative">
-                                <img src={`${course.image}?auto=format&fit=crop&w=600&q=80`} alt={course.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent"></div>
-                                <div className="absolute bottom-4 left-4 text-white">
-                                    <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider mb-1 opacity-90">
-                                        <span className="material-symbols-outlined text-sm">article</span> {course.chapters} Kapitel
-                                        <span className="w-1 h-1 bg-white rounded-full"></span>
-                                        <span>{course.duration}</span>
+                    {COURSES.map((course) => (
+                        <div
+                            key={course.id}
+                            className="group cursor-pointer"
+                            onClick={() => setSelectedVideo(course)}
+                        >
+                            <div className="relative aspect-video rounded-xl bg-slate-900 mb-4 overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300">
+                                <OptimizedImage
+                                    src={course.image}
+                                    alt={course.alt}
+                                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/60 to-purple-900/40 opacity-60 group-hover:opacity-40 transition-opacity" />
+                                <div className="absolute inset-0 flex items-center justify-center">
+                                    <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform ring-1 ring-white/50">
+                                        <span className="material-symbols-outlined text-white text-3xl">play_arrow</span>
                                     </div>
                                 </div>
                             </div>
-                            <div className="p-8">
-                                <h3 className="font-display font-bold text-xl mb-4 text-gray-900 line-clamp-2">{course.title}</h3>
 
-                                <div className="mb-6">
-                                    <div className="flex justify-between text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">
-                                        <span>Fortschritt</span>
-                                        <span>{course.progress}%</span>
-                                    </div>
-                                    <div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
-                                        <div className="h-full bg-gradient-vivid rounded-full" style={{ width: `${course.progress}%` }}></div>
-                                    </div>
-                                </div>
-
-                                <button className="w-full py-3 border border-gray-200 rounded-xl font-bold text-slate-600 hover:bg-gray-50 transition-all">
-                                    {course.progress > 0 ? 'Weiterlernen' : 'Starten'}
-                                </button>
+                            <div className="flex items-start space-x-3 mb-2">
+                                <span className="px-2 py-1 rounded bg-blue-50 text-blue-600 text-[10px] font-bold uppercase tracking-wider mt-1">
+                                    {course.tag}
+                                </span>
+                                <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors line-clamp-1">
+                                    {course.title}
+                                </h3>
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
+
+            {/* Video Modal */}
+            {selectedVideo && createPortal(
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md p-4 animate-in fade-in duration-300">
+                    <div className="relative w-full max-w-5xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10">
+                        <button
+                            onClick={() => setSelectedVideo(null)}
+                            className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/50 text-white hover:bg-white/20 transition-colors"
+                        >
+                            <X size={24} />
+                        </button>
+                        <video
+                            src={selectedVideo.videoSrc}
+                            controls
+                            autoPlay
+                            className="w-full h-full object-contain"
+                        />
+                    </div>
+                </div>,
+                document.body
+            )}
         </div>
     );
 };

@@ -18,7 +18,7 @@
   --font-sans: "Inter", sans-serif;
 }
 
-@config "./tailwind.config.js";
+@config "../tailwind.config.js";
 
 @layer utilities {
   .text-gradient {

@@ -4,6 +4,7 @@ import react from '@vitejs/plugin-react';
 import mdx from '@mdx-js/rollup';
 
 import Sitemap from 'vite-plugin-sitemap';
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
@@ -29,13 +30,36 @@ export default defineConfig(({ mode }) => {
       port: 3000,
       host: '0.0.0.0',
     },
+
+
     plugins: [
       { enforce: 'pre', ...mdx() },
       react(),
+      ViteImageOptimizer({
+        png: { quality: 80 },
+        jpeg: { quality: 80 },
+        jpg: { quality: 80 },
+        webp: { quality: 80, lossless: true },
+        avif: { quality: 80, lossless: true },
+        svg: {
+          multipass: true,
+          plugins: [
+            {
+              name: 'preset-default',
+              params: {
+                overrides: {
+                  removeViewBox: false,
+                  cleanupIds: false,
+                },
+              },
+            },
+          ],
+        },
+      }),
       Sitemap({
         hostname: 'https://coday.de',
         dynamicRoutes: routes,
-        generateRobotsTxt: false // We verify/create this manually or let plugin do it (we created one manually)
+        generateRobotsTxt: false
       })
     ],
     define: {
@@ -44,7 +68,7 @@ export default defineConfig(({ mode }) => {
     },
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, '.'),
+        '@': path.resolve(__dirname, './src'),
       }
     },
     build: {
