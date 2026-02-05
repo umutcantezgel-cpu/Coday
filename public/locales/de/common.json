@@ -128,6 +128,10 @@
         },
         "rights": "© {{year}} Coday"
     },
+    "hero": {
+        "title": "Blog & Insights",
+        "subtitle": "Tiefgehende Analysen, Strategien und Neuigkeiten aus der Welt der digitalen Dominanz."
+    },
     "scroll_cta": {
         "ready": "Bereit zu optimieren?",
         "dominate": "Dominieren Sie Ihren Markt.",

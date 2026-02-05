@@ -2,8 +2,8 @@ import React, { useState, Suspense, lazy } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { NavBar } from './shared/navigation';
 // ChatWidget lazy loaded below
-import { WhatsAppButton } from '../widgets/whatsapp';
 import { CookieConsentBanner, CookieSettingsModal } from '../widgets/cookie';
+import { FloatingActionMenu } from '../widgets/floating-menu/FloatingActionMenu';
 import { Icon } from './shared/ui/Icon';
 
 const Footer = lazy(() => import('./layout/Footer'));
@@ -47,13 +47,12 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
 
       {/* AI Chatbot Widget */}
       <Suspense fallback={null}>
-        <ChatWidget />
+        <ChatWidget hideTrigger={true} />
       </Suspense>
 
-      {/* WhatsApp Button */}
-      <WhatsAppButton />
+      {/* Unified Floating Menu */}
+      <FloatingActionMenu />
 
-      {/* Cookie Consent */}
       <CookieConsentBanner />
       <CookieSettingsModal />
     </div>

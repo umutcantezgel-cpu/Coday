@@ -1,0 +1,94 @@
+{
+    "readTime": "Read Time",
+    "publishedOn": "Published on",
+    "highlight": "Highlight",
+    "readMore": "Read more",
+    "backToOverview": "Back to Overview",
+    "loadingModule": "Loading Module...",
+    "interactiveComponent": "Interactive Component",
+    "relatedArticles": "You might also like",
+    "readArticle": "Read Article",
+    "shareTitle": "Worth reading",
+    "share": {
+        "twitter": "Share on Twitter",
+        "linkedin": "Share on LinkedIn",
+        "copy": "Copy Link",
+        "copied": "Copied!"
+    },
+    "community": {
+        "label": "Community",
+        "title": "Join 2,500+ <br /> Experts.",
+        "description": "Get curated strategies and insights delivered weekly to your inbox. No ads, just value.",
+        "emailPlaceholder": "Your Email Address",
+        "subscribe": "Subscribe",
+        "socialProof": "The best marketing newsletter in the DACH region."
+    },
+    "hackSimulator": {
+        "title": "Hacker Simulation",
+        "wordpress": "Target: WordPress",
+        "staticStack": "Target: Coday (Static)",
+        "ready": "System connected. Ready to scan.",
+        "start": "Run Exploit",
+        "targetWP": "Target: 192.168.1.1 (WP Core)",
+        "targetStatic": "Target: 192.168.1.5 (Static HTML)",
+        "reset": "Reset System",
+        "criticalFailure": "SYSTEM COMPROMISED",
+        "criticalDesc": "Admin access granted. Database exposed.",
+        "systemSecure": "ATTACK FAILED",
+        "secureDesc": "No executable endpoints found. System secure.",
+        "scanning": "Scanning...",
+        "idle": "Idle"
+    },
+    "speedComparison": {
+        "title": "Speed Comparison",
+        "wpLane": "Standard WordPress",
+        "customLane": "Coday Custom Solution",
+        "slow": "Slow (3.5s)",
+        "instant": "Instant (0.8s)",
+        "loading": "Loading...",
+        "rendering": "Rendering...",
+        "startTest": "Start Speed Test"
+    },
+    "aiCostGraph": {
+        "title": "Cost Efficiency: Staff vs. AI",
+        "staff": "Human Staff",
+        "ai": "AI System",
+        "scaleTitle": "Scalability Effect",
+        "scaleDesc": "AI costs remain stable while performance scales infinitely.",
+        "trapTitle": "The Linear Trap",
+        "trapDesc": "Costs rise linearly with performance. No leverage."
+    },
+    "seoTraffic": {
+        "title": "Topic Authority Growth",
+        "standard": "Standard SEO",
+        "coday": "Coday Strategy",
+        "linear": "Linear Growth",
+        "exponential": "Exponential Growth",
+        "descStandard": "Traditional keyword targeting yields slow, linear results.",
+        "descCoday": "Topic Clusters create authority compound effects."
+    },
+    "dataMaturity": {
+        "title": "Data Maturity Check",
+        "questionStep": "Question {{current}} of {{total}}",
+        "yourStatus": "Your Data Maturity",
+        "levels": [
+            "Data-Blind",
+            "Data-Tourist",
+            "Data-Analyst",
+            "Data-Dominator"
+        ],
+        "descriptions": [
+            "You are flying blind. Your marketing budget is a gamble.",
+            "You collect data but rarely use it for decisions.",
+            "You know what happens and optimize based on numbers.",
+            "Data is your unfair competitive advantage. Scaling is pure math."
+        ],
+        "recommendation": "Our Recommendation",
+        "retry": "Retry Test",
+        "bookAudit": "Book Audit"
+    },
+    "hero": {
+        "title": "Blog & Insights",
+        "subtitle": "In-depth analyses, strategies, and news from the world of digital domination."
+    }
+}

@@ -1,25 +1,50 @@
 import React, { useEffect } from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, Clock, User } from 'lucide-react';
-import { BLOG_POSTS } from '../../features/blog/model/data';
+import { getBlogPost, getBlogPosts } from '../../features/blog/model/data';
 import { OptimizedImage } from '../../shared/ui/OptimizedImage';
 import BlurText from '../../components/shared/ui/BlurText';
 import { Helmet } from 'react-helmet-async';
 import { BlockRenderer } from '../../features/blog/ui/BlockRenderer';
 import { ReadingProgress, TableOfContents } from '../../features/blog/ui/ImmersiveReader';
 import { RelatedArticles, ShareFAB } from '../../features/blog/ui/NavigationLoop';
+import { ReadingScore } from '../../features/blog/ui/ReadingScore';
+import { useTranslation } from 'react-i18next';
 
 const BlogPost: React.FC = () => {
     const { slug } = useParams<{ slug: string }>();
-    const post = BLOG_POSTS.find(p => p.slug === slug);
+    const { i18n, t } = useTranslation('blog');
 
-    // Scroll to top on mount
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [slug]);
+    // 1. Try finding the post in the current language
+    const post = getBlogPost(slug || '', i18n.language);
 
+    // 2. If not found, it might be a slug from another language (e.g. user utilized language switcher)
+    const currentLocale = i18n.language.startsWith('en') ? 'en' : 'de';
+    const otherLocale = currentLocale === 'en' ? 'de' : 'en';
+
+    // If we didn't find the post in the current locale, check the other locale
     if (!post) {
-        return <Navigate to="/knowledge" replace />;
+        console.log(`[BlogRedirect] Post not found for slug '${slug}' in locale '${currentLocale}'. Checking '${otherLocale}'...`);
+        const otherLangPost = getBlogPost(slug || '', otherLocale);
+
+        // If we found it in the other locale, find the corresponding post in the CURRENT locale by ID
+        if (otherLangPost) {
+            console.log(`[BlogRedirect] Found post in '${otherLocale}' (ID: ${otherLangPost.id}). Finding match in '${currentLocale}'...`);
+            const correctPost = getBlogPosts(currentLocale).find(p => String(p.id) === String(otherLangPost.id));
+            if (correctPost) {
+                console.log(`[BlogRedirect] Match found: '${correctPost.slug}'. Redirecting...`);
+                // Redirect to the correct slug for the current language
+                return <Navigate to={`/knowledge/blog/${correctPost.slug}`} replace />;
+            } else {
+                console.error(`[BlogRedirect] Match NOT found in '${currentLocale}' for ID ${otherLangPost.id}.`);
+            }
+        } else {
+            console.warn(`[BlogRedirect] Post not found in '${otherLocale}' either.`);
+        }
+
+        // If genuinely not found anywhere, go to overview
+        console.warn(`[BlogRedirect] Recovery failed. Redirecting to blog overview.`);
+        return <Navigate to="/knowledge/blog" replace />;
     }
 
     return (
@@ -34,11 +59,11 @@ const BlogPost: React.FC = () => {
             {/* Navigation Overlay */}
             <nav className="fixed top-24 left-4 z-40 md:left-8">
                 <Link
-                    to="/knowledge"
+                    to="/knowledge/blog"
                     className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-md border border-white/20 rounded-full text-secondary hover:bg-white hover:shadow-lg transition-all font-medium text-sm shadow-sm"
                 >
                     <ArrowLeft size={16} />
-                    <span className="hidden md:inline">Zurück zur Übersicht</span>
+                    <span className="hidden md:inline">{t('blog:backToOverview')}</span>
                 </Link>
             </nav>
 
@@ -111,8 +136,9 @@ const BlogPost: React.FC = () => {
                         </div>
                     </main>
 
-                    {/* Sidebar ToC */}
+                    {/* Sidebar ToC & Gamification */}
                     <aside className="hidden lg:block lg:col-span-4 sticky top-32">
+                        <ReadingScore currentPostId={post.id} />
                         <TableOfContents blocks={post.content} />
                     </aside>
                 </div>

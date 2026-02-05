@@ -1,5 +1,5 @@
 import React, { useEffect, Suspense, lazy } from 'react';
-import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { Layout } from './components/Layout';
 
 // Critical pages - loaded immediately
@@ -173,6 +173,7 @@ const App: React.FC = () => {
               <Route path="/pakete" element={<Packages />} />
 
               {/* Knowledge Routes */}
+              <Route path="/knowledge" element={<Navigate to="/knowledge/blog" replace />} />
               <Route path="/knowledge/academy" element={<Academy />} />
               <Route path="/knowledge/blog" element={<Blog />} />
               <Route path="/knowledge/blog/:slug" element={<BlogPost />} />

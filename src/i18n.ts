@@ -18,6 +18,9 @@ i18n
         fallbackLng: 'de',
         debug: import.meta.env.DEV, // Enable debug in development
 
+        ns: ['common', 'blog', 'form', 'footer', 'pricing', 'process', 'services', 'tools', 'values', 'work', 'industries', 'knowledge', 'legal', 'careers'],
+        defaultNS: 'common',
+
         interpolation: {
             escapeValue: false, // not needed for react as it escapes by default
         },

@@ -1,29 +1,39 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { OptimizedImage } from '../../shared/ui/OptimizedImage';
 
 import { Link } from 'react-router-dom';
-import { BLOG_POSTS } from '../../features/blog/model/data';
+import { getBlogPosts } from '../../features/blog/model/data';
+import { useTranslation } from 'react-i18next';
 
 const Blog: React.FC = () => {
+    const { i18n, t } = useTranslation('blog');
+    const posts = getBlogPosts(i18n.language);
+    const featuredPost = posts[6]; // Highlight post
+
     return (
         <div className="bg-aurora-white min-h-screen pt-24 pb-20">
+            <Helmet>
+                <title>{t('hero.title')} | Coday</title>
+                <meta name="description" content={t('hero.subtitle')} />
+            </Helmet>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <h1 className="font-display font-black text-5xl md:text-6xl text-gradient-vivid mb-6">
-                        Blog & Insights
+                        {t('hero.title')}
                     </h1>
                     <p className="text-xl text-slate-500 max-w-2xl mx-auto">
-                        Tiefgehende Analysen, Strategien und Neuigkeiten aus der Welt der digitalen Dominanz.
+                        {t('hero.subtitle')}
                     </p>
                 </div>
 
                 {/* Featured Post */}
                 <div className="mb-16">
-                    <Link to={`/knowledge/blog/${BLOG_POSTS[6].slug}`} className="block relative rounded-3xl overflow-hidden shadow-2xl group cursor-pointer h-[500px]">
+                    <Link to={`/knowledge/blog/${featuredPost.slug}`} className="block relative rounded-3xl overflow-hidden shadow-2xl group cursor-pointer h-[500px]">
                         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10" />
                         <OptimizedImage
-                            src={BLOG_POSTS[6].image}
-                            alt={BLOG_POSTS[6].title}
+                            src={featuredPost.image}
+                            alt={featuredPost.title}
                             className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                             priority
                         />
@@ -31,15 +41,15 @@ const Blog: React.FC = () => {
                         <div className="absolute inset-0 z-20 flex flex-col justify-end p-8 md:p-12">
                             <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                                 <span className="inline-block px-3 py-1 rounded-full bg-blue-600 text-white text-xs font-bold uppercase tracking-wider mb-4">
-                                    Highlight
+                                    {t('highlight')}
                                 </span>
                                 <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-4 shadow-sm">
-                                    {BLOG_POSTS[6].title}
+                                    {featuredPost.title}
                                 </h2>
                                 <div className="flex items-center space-x-4 text-slate-300">
-                                    <span className="text-sm font-medium">Lesezeit: {BLOG_POSTS[6].readTime}</span>
+                                    <span className="text-sm font-medium">{t('readTime')}: {featuredPost.readTime}</span>
                                     <span className="text-slate-600">•</span>
-                                    <span className="text-sm font-medium">Veröffentlicht am {BLOG_POSTS[6].date}</span>
+                                    <span className="text-sm font-medium">{t('publishedOn')} {featuredPost.date}</span>
                                 </div>
                             </div>
                         </div>
@@ -48,7 +58,7 @@ const Blog: React.FC = () => {
 
                 {/* Article Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                    {BLOG_POSTS.slice(0, 6).map((post) => (
+                    {posts.slice(0, 6).map((post) => (
                         <Link key={post.id} to={`/knowledge/blog/${post.slug}`} className="flex flex-col group cursor-pointer h-full">
                             <article className="flex flex-col h-full">
                                 <div className="h-64 rounded-2xl bg-slate-100 mb-6 overflow-hidden relative shadow-md hover:shadow-xl transition-shadow duration-300">
@@ -75,7 +85,7 @@ const Blog: React.FC = () => {
                                 </p>
 
                                 <span className="text-sm font-bold text-gray-900 flex items-center group-hover:translate-x-1 transition-transform mt-auto">
-                                    Weiterlesen
+                                    {t('readMore')}
                                     <span className="material-symbols-outlined text-sm ml-1">arrow_forward</span>
                                 </span>
                             </article>
@@ -91,21 +101,19 @@ const Blog: React.FC = () => {
                         <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/20 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 translate-y-1/2"></div>
 
                         <div className="relative z-10 lg:w-1/2">
-                            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">Community</span>
-                            <h2 className="font-display font-bold text-3xl md:text-4xl text-white mb-6">
-                                Schließen Sie sich <br /> 2.500+ Experten an.
-                            </h2>
+                            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">{t('community.label')}</span>
+                            <h2 className="font-display font-bold text-3xl md:text-4xl text-white mb-6" dangerouslySetInnerHTML={{ __html: t('community.title') }} />
                             <p className="text-gray-400 text-lg mb-8 leading-relaxed">
-                                Erhalten Sie wöchentlich ausgewählte Strategien und Erkenntnisse direkt in Ihr Postfach. Keine Werbung, nur Mehrwert.
+                                {t('community.description')}
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <input
                                     type="email"
-                                    placeholder="Ihre E-Mail Adresse"
+                                    placeholder={t('community.emailPlaceholder')}
                                     className="px-6 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary flex-grow"
                                 />
                                 <button className="px-8 py-4 rounded-xl bg-primary text-white font-bold hover:bg-primary-dark transition-colors shadow-lg hover:shadow-primary/50">
-                                    Anmelden
+                                    {t('community.subscribe')}
                                 </button>
                             </div>
                         </div>
@@ -124,7 +132,7 @@ const Blog: React.FC = () => {
                                         </div>
                                         <span className="text-white font-bold">4.9/5</span>
                                     </div>
-                                    <p className="text-sm text-gray-300">"Der beste Marketing-Newsletter im DACH-Raum."</p>
+                                    <p className="text-sm text-gray-300">"{t('community.socialProof')}"</p>
                                 </div>
                             </div>
                         </div>

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 
 import App from './App';
+import { GlobalErrorBoundary } from './components/shared/GlobalErrorBoundary';
 import './index.css';
 import './i18n'; // Initialize i18n
 
@@ -16,7 +17,11 @@ const root = ReactDOM.createRoot(rootElement);
 root.render(
   <React.StrictMode>
     <HelmetProvider>
-      <App />
+      <GlobalErrorBoundary>
+        <Suspense fallback={<div className="h-screen w-full flex items-center justify-center">Loading...</div>}>
+          <App />
+        </Suspense>
+      </GlobalErrorBoundary>
     </HelmetProvider>
   </React.StrictMode>
 );

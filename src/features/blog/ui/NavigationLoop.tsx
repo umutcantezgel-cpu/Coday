@@ -1,25 +1,29 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Share2, ArrowRight, Twitter, Linkedin, Copy, Check } from 'lucide-react';
-import { BLOG_POSTS } from '../model/data';
+import { getBlogPosts } from '../model/data';
 import { OptimizedImage } from '../../../shared/ui/OptimizedImage';
 import { motion, AnimatePresence } from 'motion/react';
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { useTranslation } from 'react-i18next';
 
 function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs));
 }
 
 export const RelatedArticles: React.FC<{ currentSlug: string; category: string }> = ({ currentSlug, category }) => {
+    const { i18n, t } = useTranslation('blog');
+    const allPosts = getBlogPosts(i18n.language);
+
     // Find up to 2 posts in the same category, excluding current
-    const related = BLOG_POSTS
+    const related = allPosts
         .filter(post => post.category === category && post.slug !== currentSlug)
         .slice(0, 2);
 
     // If not enough, fill with latest posts
     if (related.length < 2) {
-        const others = BLOG_POSTS
+        const others = allPosts
             .filter(post => post.slug !== currentSlug && !related.find(r => r.slug === post.slug))
             .slice(0, 2 - related.length);
         related.push(...others);
@@ -31,7 +35,7 @@ export const RelatedArticles: React.FC<{ currentSlug: string; category: string }
         <section className="py-20 border-t border-gray-100 bg-surface-light/30">
             <div className="container mx-auto px-4 max-w-4xl">
                 <h3 className="text-2xl font-display font-bold text-secondary mb-10">
-                    Das könnte Sie auch interessieren
+                    {t('relatedArticles')}
                 </h3>
                 <div className="grid md:grid-cols-2 gap-8">
                     {related.map((post) => (
@@ -56,7 +60,7 @@ export const RelatedArticles: React.FC<{ currentSlug: string; category: string }
                                         {post.title}
                                     </h4>
                                     <div className="flex items-center text-sm text-gray-400 font-medium group-hover:text-primary transition-colors">
-                                        Artikel lesen
+                                        {t('readArticle')}
                                         <ArrowRight size={14} className="ml-1 group-hover:translate-x-1 transition-transform" />
                                     </div>
                                 </div>
@@ -70,11 +74,12 @@ export const RelatedArticles: React.FC<{ currentSlug: string; category: string }
 };
 
 export const ShareFAB: React.FC<{ title: string; url: string }> = ({ title, url = window.location.href }) => {
+    const { t } = useTranslation('blog');
     const [isOpen, setIsOpen] = useState(false);
     const [copied, setCopied] = useState(false);
 
     const handleShare = (platform: 'twitter' | 'linkedin' | 'copy') => {
-        const text = `Lesenswert: "${title}"`;
+        const text = `${t('shareTitle')}: "${title}"`;
 
         if (platform === 'twitter') {
             window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
