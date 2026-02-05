@@ -107,8 +107,8 @@ const Packages: React.FC = () => {
                     </p>
                 </div>
 
-                {/* Package Cards with MagicBento */}
-                <MagicBento columns={3} gap={24} className="max-w-7xl mx-auto mb-20 pt-8 items-start">
+                {/* Package Cards with specific Grid instead of MagicBento for mobile responsiveness */}
+                <div className="max-w-7xl mx-auto mb-20 pt-8 items-start grid grid-cols-1 md:grid-cols-3 gap-6">
                     {packages.map((pkg) => (
                         <BentoCard
                             key={pkg.id}
@@ -180,7 +180,7 @@ const Packages: React.FC = () => {
                             </div>
                         </BentoCard>
                     ))}
-                </MagicBento>
+                </div>
 
                 {/* Comparison Section */}
                 <div className="bg-white rounded-3xl border border-gray-200 shadow-xl overflow-hidden mt-12">

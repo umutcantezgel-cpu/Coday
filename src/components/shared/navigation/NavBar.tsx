@@ -62,7 +62,7 @@ export const NavBar: React.FC = () => {
             />
 
             {/* POLLUX Mobile Bottom Nav */}
-            <BottomNav onOpenMenu={toggleMobileMenu} />
+            <BottomNav onOpenMenu={toggleMobileMenu} className={isMobileOpen ? 'hidden' : ''} />
         </>
     );
 };

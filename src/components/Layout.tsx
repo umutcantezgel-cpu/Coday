@@ -39,7 +39,9 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
       </main>
 
       <Suspense fallback={<div className="h-24 bg-secondary" />}>
-        <Footer />
+        <div className="pb-24 lg:pb-0">
+          <Footer />
+        </div>
       </Suspense>
 
       {/* AI Chatbot Widget */}

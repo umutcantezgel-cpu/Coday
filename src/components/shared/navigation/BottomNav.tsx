@@ -5,9 +5,10 @@ import { useTranslation } from 'react-i18next';
 
 interface BottomNavProps {
     onOpenMenu: () => void;
+    className?: string;
 }
 
-export const BottomNav: React.FC<BottomNavProps> = ({ onOpenMenu }) => {
+export const BottomNav: React.FC<BottomNavProps> = ({ onOpenMenu, className = '' }) => {
     const { t } = useTranslation('common');
     const location = useLocation();
 
@@ -39,7 +40,7 @@ export const BottomNav: React.FC<BottomNavProps> = ({ onOpenMenu }) => {
     ];
 
     return (
-        <nav className="fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-lg border-t border-gray-100 pb-safe z-[9990] lg:hidden shadow-[0_-5px_20px_rgba(0,0,0,0.03)]">
+        <nav className={`fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-lg border-t border-gray-100 pb-safe z-[9990] lg:hidden shadow-[0_-5px_20px_rgba(0,0,0,0.03)] ${className}`}>
             <div className="flex justify-around items-center h-[64px] px-2">
                 {navItems.map((item) => (
                     <NavLink
