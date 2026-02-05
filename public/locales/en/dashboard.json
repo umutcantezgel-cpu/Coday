@@ -1,0 +1,56 @@
+{
+    "header": {
+        "nav": {
+            "overview": "Overview",
+            "speed": "Speed",
+            "seo": "SEO",
+            "analytics": "Analytics"
+        },
+        "live": "Live Monitoring"
+    },
+    "hero": {
+        "title": "Speed Overview",
+        "desc": "Real-time analysis of your digital presence. Measuring speed, accessibility, and usability."
+    },
+    "score": {
+        "title": "Exceptional Speed Score",
+        "desc": "Your platform performs significantly better than the industry average. All load time metrics are in the optimal \"Good\" range.",
+        "button": "View Detailed Report",
+        "ranking": "Top 3%"
+    },
+    "metrics": {
+        "lcp": "Largest Contentful Paint",
+        "fid": "First Input Delay",
+        "cls": "Cumulative Layout Shift",
+        "good": "Good",
+        "target": "Target"
+    },
+    "comparison": {
+        "title": "Competitor Comparison",
+        "subtitle": "How you stack up against standard solutions",
+        "badge": "4x faster on average",
+        "headers": {
+            "metric": "Metric",
+            "us": "Coday",
+            "standard": "Standard WP Site",
+            "wix": "Wix / Squarespace"
+        },
+        "rows": {
+            "tti": "Time to Interactive",
+            "mobile": "Mobile Speed",
+            "tbt": "Total Blocking Time",
+            "seo": "SEO Indexing",
+            "seo_value": "Instant",
+            "seo_days": "Days",
+            "seo_weeks": "Weeks"
+        }
+    },
+    "cta": {
+        "title": "Ready for more optimization?",
+        "desc": "Unlock advanced insights and automated optimization tools with the Pro plan.",
+        "button": "Upgrade to Pro"
+    },
+    "footer": {
+        "copyright": "© 2024 Speed Overview. Powered by Aurora System."
+    }
+}

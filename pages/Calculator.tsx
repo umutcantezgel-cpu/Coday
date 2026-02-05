@@ -1,13 +1,19 @@
 import React, { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 import { useCalculatorStore } from '../features/calculator/model/store';
 import { ModuleCard } from '../features/calculator/ui/ModuleCard';
 import { CalculatorSummary } from '../features/calculator/ui/Summary';
 import { modules, categoryLabels, ModuleCategory } from '../data/modules';
+import StepIndicator from '../shared/ui/StepIndicator';
+import { ArrowRight } from 'lucide-react';
 
 const Calculator: React.FC = () => {
     const selectedModuleIds = useCalculatorStore(state => state.selectedModuleIds);
     const selectedPackageId = useCalculatorStore(state => state.selectedPackageId);
     const toggleModule = useCalculatorStore(state => state.toggleModule);
+    const setStep = useCalculatorStore(state => state.setStep);
+    const navigate = useNavigate();
 
     const [openCategories, setOpenCategories] = React.useState<Set<string>>(new Set(['basis']));
 
@@ -27,13 +33,20 @@ const Calculator: React.FC = () => {
     const allCategories: ModuleCategory[] = ['basis', 'commerce', 'design', 'function', 'tech', 'seo', 'support'];
     const categories = selectedPackageId ? allCategories.filter(c => c !== 'basis') : allCategories;
 
-    // Scroll to top on mount
+    // Set step on mount
     useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
+        setStep('calculator');
+    }, [setStep]);
+
+    const handleContinueToContact = () => {
+        setStep('contact');
+        navigate('/contact');
+    };
 
     return (
         <div className="bg-background-light pt-24 pb-20">
+            {/* Step Indicator */}
+            <StepIndicator currentStep="calculator" className="mb-8" />
             {/* Hero */}
             <section className="text-center px-4 mb-12 max-w-4xl mx-auto">
                 <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">Der Agentur-Konfigurator</span>
@@ -43,7 +56,7 @@ const Calculator: React.FC = () => {
                 <p className="text-xl text-gray-600">
                     {selectedPackageId
                         ? 'Erweitern Sie Ihr gewähltes Paket mit zusätzlichen Modulen.'
-                        : 'Wählen Sie aus 9 Kategorien. Von der Basis bis zur Enterprise-Lösung.'}
+                        : 'Wählen Sie aus 9 Kategorien. Von der Basis bis zur Profi-Lösung.'}
                 </p>
             </section>
 
@@ -116,6 +129,21 @@ const Calculator: React.FC = () => {
                             <CalculatorSummary />
                         </div>
                     </div>
+                </div>
+            </div>
+
+            {/* Continue to Contact CTA */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+                <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-3xl p-8 text-center border border-primary/10">
+                    <h3 className="font-display font-bold text-2xl text-gray-900 mb-2">Zufrieden mit Ihrer Konfiguration?</h3>
+                    <p className="text-gray-600 mb-6">Im nächsten Schritt senden Sie uns Ihre Anfrage.</p>
+                    <button
+                        onClick={handleContinueToContact}
+                        className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 uppercase tracking-wide"
+                    >
+                        Weiter zur Anfrage
+                        <ArrowRight size={20} />
+                    </button>
                 </div>
             </div>
         </div>

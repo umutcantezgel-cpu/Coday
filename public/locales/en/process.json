@@ -1,0 +1,63 @@
+{
+    "hero": {
+        "badge": "The Coday Standard",
+        "title_start": "No Chaos.",
+        "title_gradient": "Just Results.",
+        "desc": "We have systematized development. No guesswork, no hidden costs. A reliable process for your success."
+    },
+    "timeline": {
+        "steps": [
+            {
+                "title": "Discovery",
+                "desc": "We analyze your business, your competition, and your goals. No 'Out of the Box' talk."
+            },
+            {
+                "title": "Strategy & Wireframes",
+                "desc": "The blueprint is ready before the first pixel is set. We define the User Journey."
+            },
+            {
+                "title": "Design",
+                "desc": "Now it looks good. Visual identity, animations, and wow-effects."
+            },
+            {
+                "title": "Development",
+                "desc": "Clean Code. Extremely fast. Secure. We build on modern tech stack (Next.js)."
+            },
+            {
+                "title": "Launch & Growth",
+                "desc": "Go-Live is just the beginning. We optimize based on real user data."
+            }
+        ]
+    },
+    "transparency": {
+        "title": "No Black Box.",
+        "desc": "You know exactly what we are working on at all times. Full transparency via Trello, Slack, and weekly updates.",
+        "kanban": {
+            "title": "Live Status Board",
+            "desc": "Trello / Jira Access"
+        },
+        "chat": {
+            "title": "Direct Line",
+            "desc": "Slack / WhatsApp Channel",
+            "msg1": "Design update is online! 🚀",
+            "msg2": "Looks great! Approved."
+        }
+    },
+    "guarantee": {
+        "title": "Our Guarantee",
+        "items": [
+            {
+                "title": "Fixed Price",
+                "desc": "We work at a fixed price. No additional demands."
+            },
+            {
+                "title": "Deadline Guarantee",
+                "desc": "We guarantee the launch date contractually."
+            },
+            {
+                "title": "Bug-Free",
+                "desc": "30-day bug-fixing guarantee after launch included."
+            }
+        ]
+    }
+}

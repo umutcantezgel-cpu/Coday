@@ -1,0 +1,215 @@
+{
+    "impressum": {
+        "title": "Impressum",
+        "subtitle": "Angaben gemäß § 5 DDG",
+        "provider": {
+            "title": "Anbieter",
+            "name": "Umutcan Emre Tezgel",
+            "address": "Lessingstraße 4\n35578 Wetzlar\nDeutschland"
+        },
+        "contact": {
+            "title": "Kontakt",
+            "phone": "Telefon: ",
+            "email": "E-Mail: ",
+            "web": "Web: "
+        },
+        "representative": {
+            "title": "Vertreten durch",
+            "name": "Inhaber: Umutcan Emre Tezgel"
+        },
+        "profession": {
+            "title": "Berufsbezeichnung",
+            "desc": "Webdesigner / Einzelunternehmer"
+        },
+        "tax": {
+            "title": "Steuernummer",
+            "number": "039 874 00784"
+        },
+        "liability": {
+            "title": "Haftungs- und Schutzrechtshinweise",
+            "content": {
+                "title": "Haftung für Inhalte",
+                "desc": "Als Diensteanbieter sind wir gemäß § 7 Abs.1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich."
+            },
+            "images": {
+                "title": "Bildnachweise",
+                "desc": "Alle auf dieser Website verwendeten Bilder wurden selbst erstellt oder mithilfe von KI-Bildgeneratoren erzeugt. Die Urheberrechte liegen beim Betreiber dieser Website."
+            }
+        },
+        "toc": {
+            "anbieter": "Anbieter & Kontakt",
+            "vertreter": "Vertretung & Register",
+            "haftung": "Haftung & Urheberrecht"
+        }
+    },
+    "privacy": {
+        "title": "Datenschutz",
+        "subtitle": "erklärung",
+        "last_updated": "Letztes Update: {{date}}",
+        "intro": "Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Nachfolgend informieren wir Sie über die Erhebung, Verarbeitung und Nutzung Ihrer Daten gemäß der Datenschutz-Grundverordnung (DSGVO).",
+        "sections": {
+            "1": {
+                "title": "1. Name und Kontaktdaten des Verantwortlichen",
+                "content": "Diese Datenschutz-Information gilt für die Datenverarbeitung durch:"
+            },
+            "2": {
+                "title": "2. Erhebung und Speicherung personenbezogener Daten",
+                "a": {
+                    "title": "a) Beim Besuch der Website",
+                    "content": "Beim Aufrufen unserer Website werden durch den Browser automatisch Informationen an den Server gesendet. Diese werden temporär in Logfiles gespeichert:"
+                },
+                "b": {
+                    "title": "b) Bei Nutzung unseres Kontaktformulars",
+                    "content": "Bei Nutzung des Kontaktformulars erheben wir: Name, E-Mail-Adresse, Telefonnummer (optional), Ihre Nachricht."
+                },
+                "c": {
+                    "title": "c) Bei Nutzung des Website-Analyzers",
+                    "content": "Beim Website-Analyzer erheben wir: Die analysierte URL, E-Mail-Adresse (für Report-Zustellung), Analyseergebnisse werden temporär gespeichert."
+                },
+                "d": {
+                    "title": "d) Bei Nutzung des Chatbots (Jarvis)",
+                    "content": "Der Chatbot speichert Ihre Konversation lokal im Browser zur Bereitstellung der Chat-Funktionalität. Die Nachrichten werden zur Verarbeitung an externe KI-Dienste übermittelt (siehe Abschnitt 4)."
+                }
+            },
+            "3": {
+                "title": "3. Cookies",
+                "content": "Wir verwenden folgende Cookie-Kategorien:",
+                "necessary": {
+                    "title": "Notwendige Cookies",
+                    "desc": "Erforderlich für die Grundfunktionen der Website (Session, Cookie-Einstellungen)."
+                },
+                "functional": {
+                    "title": "Funktionale Cookies",
+                    "desc": "Speichern Ihre Präferenzen wie Chatbot-Verlauf (localStorage)."
+                },
+                "analytics": {
+                    "title": "Analyse-Cookies (optional)",
+                    "desc": "Google Analytics zur Verbesserung unserer Website - nur mit Ihrer Einwilligung."
+                },
+                "note": "Sie können Ihre Cookie-Einstellungen jederzeit über das Cookie-Banner anpassen."
+            },
+            "4": {
+                "title": "4. KI-Dienste und automatisierte Verarbeitung",
+                "note": "Hinweis: Unser KI-Assistent 'Jarvis' und der Website-Analyzer nutzen externe KI-Dienste zur Verarbeitung.",
+                "gemini": {
+                    "title": "a) Google Gemini API",
+                    "content": "Für den Chatbot und Website-Analyzer werden Ihre Anfragen an die Google Gemini API übermittelt. Verarbeitet werden: Ihre Chat-Nachrichten, Website-Inhalte bei Analyse. Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung durch Nutzung)."
+                },
+                "perplexity": {
+                    "title": "b) Perplexity API",
+                    "content": "Für erweiterte Suchanfragen wird die Perplexity API genutzt. Es werden ausschließlich die Suchanfragen übermittelt, keine personenbezogenen Daten."
+                },
+                "disclaimer": {
+                    "title": "c) Keine rechtliche/medizinische Beratung",
+                    "content": "KI-generierte Antworten dienen ausschließlich Informationszwecken und ersetzen keine professionelle Beratung. Wir übernehmen keine Haftung für Entscheidungen, die auf Basis von KI-Antworten getroffen werden."
+                }
+            },
+            "5": {
+                "title": "5. Auftragsverarbeiter und Drittanbieter",
+                "content": "Wir arbeiten mit folgenden Dienstleistern zusammen:"
+            },
+            "6": {
+                "title": "6. Betroffenenrechte",
+                "content": "Sie haben folgende Rechte bezüglich Ihrer personenbezogenen Daten:",
+                "contact": "Zur Ausübung Ihrer Rechte kontaktieren Sie uns unter:"
+            },
+            "7": {
+                "title": "7. Datensicherheit",
+                "content": "Wir verwenden TLS/SSL-Verschlüsselung für alle Datenübertragungen. Unsere Systeme werden regelmäßig aktualisiert und auf Sicherheitslücken überprüft. Der Zugriff auf personenbezogene Daten ist auf autorisierte Mitarbeiter beschränkt."
+            }
+        },
+        "toc": {
+            "verantwortlicher": "1. Verantwortlicher",
+            "erhebung": "2. Datenerfassung",
+            "cookies": "3. Cookies",
+            "ki_dienste": "4. KI-Dienste",
+            "auftragsverarbeiter": "5. Auftragsverarbeiter",
+            "rechte": "6. Betroffenenrechte",
+            "sicherheit": "7. Datensicherheit"
+        }
+    },
+    "terms": {
+        "title": "Allgemeine Geschäftsbedingungen",
+        "last_updated": "Stand: {{date}}",
+        "sections": {
+            "1": {
+                "title": "§ 1 Geltungsbereich",
+                "p1": "(1) Diese Allgemeinen Geschäftsbedingungen (nachfolgend „AGB\") von Umutcan Emre Tezgel...",
+                "p2": "(2) Abweichende Bedingungen des Kunden werden nicht anerkannt..."
+            },
+            "2": {
+                "title": "§ 2 Vertragsschluss",
+                "p1": "(1) Die auf der Website dargestellten Leistungsbeschreibungen...",
+                "p2": "(2) Durch Absenden einer Anfrage...",
+                "p3": "(3) Ein Vertrag kommt erst durch Unterzeichnung..."
+            },
+            "3": {
+                "title": "§ 3 Leistungen",
+                "p1": "(1) Der Anbieter erbringt Webdesign-...",
+                "p2": "(2) Die Anzahl der im Angebot vereinbarten Revisionsrunden ist bindend.",
+                "p3": "(3) Der Anbieter gewährt eine 30-tägige Fehlerbehebungs-Garantie..."
+            },
+            "4": {
+                "title": "§ 4 Preise & Festpreis-Garantie",
+                "p1": "(1) Festpreis-Garantie: Der im Angebot genannte Preis ist ein Festpreis.",
+                "p2": "(2) Zusätzliche Leistungen...",
+                "p3": "(3) Alle Preise verstehen sich als Nettopreise...",
+                "p4": "(4) Die Zahlung erfolgt in der Regel: 50% bei Auftragserteilung..."
+            },
+            "5": {
+                "title": "§ 5 KI-Dienste & Haftungsausschluss",
+                "note": "Wichtiger Hinweis: Der KI-Assistent nutzt automatisierte Systeme.",
+                "p1": "(1) Keine Beratung...",
+                "p2": "(2) Automatisch generierte Inhalte...",
+                "p3": "(3) Keine Garantie für Richtigkeit...",
+                "p4": "(4) Haftungsausschluss...",
+                "p5": "(5) Website-Analyzer..."
+            },
+            "6": {
+                "title": "§ 6 Allgemeine Haftung",
+                "p1": "(1) Der Anbieter haftet unbeschränkt...",
+                "p2": "(2) Bei leicht fahrlässiger Verletzung...",
+                "p3": "(3) Im Übrigen ist die Haftung ausgeschlossen."
+            },
+            "7": {
+                "title": "§ 7 Schlussbestimmungen",
+                "p1": "(1) Es gilt das Recht der Bundesrepublik Deutschland.",
+                "p2": "(2) Gerichtsstand ist Wetzlar...",
+                "p3": "(3) Sollten einzelne Bestimmungen unwirksam sein...",
+                "p4": "(4) Bei Fragen: "
+            }
+        },
+        "toc": {
+            "geltung": "§ 1 Geltungsbereich",
+            "vertrag": "§ 2 Vertragsschluss",
+            "leistung": "§ 3 Leistungen",
+            "preise": "§ 4 Preise",
+            "ki": "§ 5 KI-Dienste",
+            "haftung": "§ 6 Haftung",
+            "schluss": "§ 7 Schluss"
+        }
+    },
+    "disclaimer": {
+        "title": "KI-Disclaimer & Transparenz",
+        "intro": {
+            "title": "Nutzung von Künstlicher Intelligenz",
+            "content": "Bei Agency Domination nutzen wir fortschrittliche Technologien..."
+        },
+        "analysis": {
+            "title": "Website-Analyse",
+            "content": "Unser 'Website Analyzer' Tool verwendet die Google Gemini API..."
+        },
+        "content": {
+            "title": "Content-Erstellung & Code",
+            "content": "In der Entwicklung und Content-Erstellung können KI-Tools..."
+        },
+        "liability": {
+            "title": "Haftungsausschluss",
+            "content": "Obwohl wir bestrebt sind, die Genauigkeit von KI-generierten Inhalten sicherzustellen..."
+        },
+        "copyright": {
+            "title": "Urheberrecht & Datenschutz",
+            "content": "Wir respektieren das Urheberrecht..."
+        }
+    }
+}

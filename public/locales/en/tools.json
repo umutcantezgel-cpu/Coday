@@ -1,0 +1,65 @@
+{
+    "calculator": {
+        "hero": {
+            "badge": "The Agency Configurator",
+            "title_start": "Build Your",
+            "title_gradient": "Dream Agency.",
+            "desc_default": "Choose from 9 categories. From basic to pro solution.",
+            "desc_selected": "Extend your selected package with additional modules."
+        },
+        "labels": {
+            "selected": "selected",
+            "module": "Module",
+            "modules": "Modules"
+        },
+        "cta": {
+            "title": "Happy with your configuration?",
+            "desc": "Send us your inquiry in the next step.",
+            "button": "Continue to Inquiry"
+        }
+    },
+    "analyzer": {
+        "hero": {
+            "badge": "Free Website Audit",
+            "title_start": "How good is",
+            "title_gradient": "your website?",
+            "desc": "Let our AI agents analyze your website. Get a detailed report with scores, weaknesses, and concrete recommendations in 60 seconds."
+        },
+        "features": {
+            "title": "What we analyze",
+            "desc": "6 specialized AI agents check every aspect of your website.",
+            "items": {
+                "speed": {
+                    "title": "Speed",
+                    "desc": "Load time metrics, page rating, and optimization potential."
+                },
+                "seo": {
+                    "title": "SEO",
+                    "desc": "Page titles, headings, structured data, and keywords."
+                },
+                "security": {
+                    "title": "Security",
+                    "desc": "Encryption, security settings, and cookie protection."
+                },
+                "a11y": {
+                    "title": "Accessibility",
+                    "desc": "Accessibility, color contrast, and screen reader compatibility."
+                },
+                "ux": {
+                    "title": "Usability",
+                    "desc": "Mobile optimization, navigation, and call-to-actions."
+                },
+                "content": {
+                    "title": "Content",
+                    "desc": "Readability, UVP, and customer testimonials."
+                }
+            }
+        },
+        "trust": {
+            "free": "100% Free",
+            "private": "Data stays private",
+            "fast": "Results in 60 seconds",
+            "stats": "Over 500 websites analyzed • Avg. 12 improvement suggestions per audit"
+        }
+    }
+}

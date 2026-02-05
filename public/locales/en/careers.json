@@ -1,0 +1,102 @@
+{
+    "hero": {
+        "badge": "Join the Elite",
+        "title_start": "No 9-to-5.",
+        "title_gradient": "A Mission.",
+        "desc": "We are building Germany's best agency. We are not looking for employees. We are looking for comrades.",
+        "cta": "Open Positions"
+    },
+    "path": {
+        "title": "Your Growth is Our Goal.",
+        "desc": "With us, you won't stagnate. We have clear paths, transparent salaries, and push you to the limit.",
+        "selector_title": "Choose Your Path",
+        "tracks": {
+            "dev": "Engineering",
+            "design": "Design",
+            "growth": "Growth"
+        },
+        "levels": {
+            "dev": [
+                {
+                    "title": "Junior Dev",
+                    "desc": "You learn our standards."
+                },
+                {
+                    "title": "Senior Dev",
+                    "desc": "You take ownership of features."
+                },
+                {
+                    "title": "Tech Lead",
+                    "desc": "You build the next generation of Coday."
+                }
+            ],
+            "design": [
+                {
+                    "title": "UI Designer",
+                    "desc": "You pixel perfect interfaces."
+                },
+                {
+                    "title": "Product Designer",
+                    "desc": "You solve real user problems."
+                },
+                {
+                    "title": "Art Director",
+                    "desc": "You define the look of tomorrow."
+                }
+            ],
+            "growth": [
+                {
+                    "title": "Sales Rep",
+                    "desc": "You bring in deals."
+                },
+                {
+                    "title": "Account Exec",
+                    "desc": "You manage key accounts."
+                },
+                {
+                    "title": "Head of Growth",
+                    "desc": "You scale the agency."
+                }
+            ]
+        }
+    },
+    "perks": {
+        "title": "Why Coday?",
+        "desc": "We expect a lot. We give a lot.",
+        "items": [
+            {
+                "title": "Work from Anywhere",
+                "desc": "Bali or Berlin. We are 100% Remote-First."
+            },
+            {
+                "title": "Top Hardware",
+                "desc": "Latest MacBook Pro + 27\" 4K Monitor for your Home Office."
+            },
+            {
+                "title": "Learning Budget",
+                "desc": "2,000€ per year for courses, conferences, and books."
+            },
+            {
+                "title": "Team Retreats",
+                "desc": "Twice a year we fly away together. Work + Party."
+            },
+            {
+                "title": "Urban Sports",
+                "desc": "L & XL Membership fully paid."
+            },
+            {
+                "title": "Profit Share",
+                "desc": "When we win, you win. Annual bonus."
+            }
+        ]
+    },
+    "jobs": {
+        "title": "Open Positions",
+        "details": {
+            "type": "Remote (DE)",
+            "fulltime": "Full-time",
+            "parttime": "Part-time / Freelance"
+        },
+        "button": "Apply"
+    }
+}

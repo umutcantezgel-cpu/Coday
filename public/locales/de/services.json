@@ -1,0 +1,27 @@
+{
+    "hero": {
+        "label": "Fachgebiete",
+        "title": "Unsere Kernbereiche.",
+        "rotating": [
+            "Spezialisierte Lösungen für Ihren Erfolg.",
+            "Ihr Unternehmen digital an die Spitze.",
+            "Professioneller Code. Professionelles Design.",
+            "Von der Idee zur Marktführerschaft."
+        ]
+    },
+    "categories": {
+        "web_development": {
+            "title": "Web-Entwicklung",
+            "description": "Wir bauen schnelle und leistungsfähige Webseiten und Web-Anwendungen mit moderner Technik."
+        },
+        "web_design": {
+            "title": "Webdesign",
+            "description": "Preisgekröntes Design für beste Benutzerfreundlichkeit. Schönheit, die verkauft."
+        }
+    },
+    "cta": {
+        "more": "Mehr erfahren",
+        "ready": "Bereit für den nächsten Schritt?",
+        "button": "Projekt anfragen"
+    }
+}

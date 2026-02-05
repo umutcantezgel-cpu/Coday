@@ -5,6 +5,9 @@ import { BLOG_POSTS } from '../../features/blog/model/data';
 import { OptimizedImage } from '../../shared/ui/OptimizedImage';
 import BlurText from '../../components/shared/ui/BlurText';
 import { Helmet } from 'react-helmet-async';
+import { BlockRenderer } from '../../features/blog/ui/BlockRenderer';
+import { ReadingProgress, TableOfContents } from '../../features/blog/ui/ImmersiveReader';
+import { RelatedArticles, ShareFAB } from '../../features/blog/ui/NavigationLoop';
 
 const BlogPost: React.FC = () => {
     const { slug } = useParams<{ slug: string }>();
@@ -21,6 +24,8 @@ const BlogPost: React.FC = () => {
 
     return (
         <div className="bg-background-light min-h-screen pb-20">
+            <ReadingProgress />
+
             <Helmet>
                 <title>{post.title} | Coday Blog</title>
                 <meta name="description" content={post.excerpt} />
@@ -77,53 +82,44 @@ const BlogPost: React.FC = () => {
             </header>
 
             {/* Content Body */}
-            <main className="container mx-auto px-4 max-w-3xl -mt-12 relative z-30">
-                <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100">
-                    {/* Meta Data */}
-                    <div className="flex items-center justify-between border-b border-gray-100 pb-8 mb-8 text-sm text-gray-500">
-                        <div className="flex items-center gap-2">
-                            <span className="w-8 h-8 rounded-full bg-surface-light flex items-center justify-center text-primary">
-                                <User size={16} />
-                            </span>
-                            <span className="font-medium text-secondary">{post.author}</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                            <Calendar size={16} />
-                            <span>{post.date}</span>
-                        </div>
-                    </div>
+            <div className="container mx-auto px-4 -mt-12 relative z-30">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
-                    {/* Dynamic Sections */}
-                    <div className="prose prose-lg prose-slate prose-headings:font-display prose-headings:font-bold prose-headings:text-secondary prose-a:text-primary prose-img:rounded-2xl prose-img:shadow-lg">
-                        {post.content.map((section, index) => (
-                            <div key={index} className="mb-12 last:mb-0">
-                                {section.heading && (
-                                    <h2 className="text-3xl mb-6 text-gradient inline-block">{section.heading}</h2>
-                                )}
-                                <p className="mb-6 leading-relaxed text-gray-600">
-                                    {section.text}
-                                </p>
-                                {section.image && (
-                                    <figure className="my-8">
-                                        <OptimizedImage
-                                            src={section.image}
-                                            alt={section.imageAlt || ""}
-                                            className="w-full rounded-2xl shadow-lg border border-gray-100"
-                                        />
-                                        {section.imageAlt && (
-                                            <figcaption className="text-center text-sm text-gray-400 mt-2 italic">
-                                                {section.imageAlt}
-                                            </figcaption>
-                                        )}
-                                    </figure>
-                                )}
+                    {/* Main Article */}
+                    <main className="lg:col-span-8">
+                        <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100">
+                            {/* Meta Data */}
+                            <div className="flex items-center justify-between border-b border-gray-100 pb-8 mb-8 text-sm text-gray-500">
+                                <div className="flex items-center gap-2">
+                                    <span className="w-8 h-8 rounded-full bg-surface-light flex items-center justify-center text-primary">
+                                        <User size={16} />
+                                    </span>
+                                    <span className="font-medium text-secondary">{post.author}</span>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <Calendar size={16} />
+                                    <span>{post.date}</span>
+                                </div>
                             </div>
-                        ))}
-                    </div>
-                </div>
-            </main>
 
-            {/* Related/Footer CTA can go here */}
+                            {/* Dynamic Sections */}
+                            <div className="md:px-4">
+                                {post.content.map((block) => (
+                                    <BlockRenderer key={block.id} block={block} />
+                                ))}
+                            </div>
+                        </div>
+                    </main>
+
+                    {/* Sidebar ToC */}
+                    <aside className="hidden lg:block lg:col-span-4 sticky top-32">
+                        <TableOfContents blocks={post.content} />
+                    </aside>
+                </div>
+            </div>
+
+            <RelatedArticles currentSlug={post.slug} category={post.category} />
+            <ShareFAB title={post.title} url={window.location.href} />
         </div>
     );
 };

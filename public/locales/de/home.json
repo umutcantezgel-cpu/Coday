@@ -1,0 +1,63 @@
+{
+    "hero": {
+        "badge": "Grand Opening Special: 25% Rabatt",
+        "headline_prefix": "Wir bauen ihre",
+        "headline_gradient": "Digitalen Erfolg.",
+        "rotating": [
+            "Schnell. Skalierbar. Professionell.",
+            "Gewinnorientiert. Ergebnisorientiert.",
+            "Premium Design. Professioneller Code.",
+            "Keine Ausreden. Nur Ergebnisse."
+        ]
+    },
+    "stats": {
+        "load_time": "Ø Ladezeit",
+        "ownership": "Code-Eigentum",
+        "availability": "Erreichbarkeit",
+        "profit": "Gewinn",
+        "focused": "Fokussiert"
+    },
+    "philosophy": {
+        "traditional": "Traditionelle Agenturen",
+        "history": "Sind Geschichte.",
+        "text_overhead": "Sie bezahlen für Overhead, Meetings und ineffiziente Prozesse. Das alte Agenturmodell funktioniert nicht mehr für moderne KMUs.",
+        "standard": "Coday ist der neue Standard.",
+        "text_standard": "Wir kombinieren strategisches Design mit professioneller Programmierung. Keine Baukästen, keine Ausreden. Nur Ergebnisse, die Ihr Unternehmen voranbringen."
+    },
+    "industries": {
+        "title_prefix": "Wir digitalisieren",
+        "title_suffix": "Ihre Branche.",
+        "card_craft": {
+            "title": "Handwerk & Bau",
+            "desc": "Digitale Mitarbeitergewinnung und Projekt-Showcases."
+        },
+        "card_realestate": {
+            "title": "Immobilien",
+            "desc": "Hochwertige Exposé-Präsentationen und Kundenanfragen."
+        },
+        "card_shop": {
+            "title": "Online-Shop",
+            "desc": "Verkaufsstarke Shopsysteme."
+        },
+        "card_consulting": {
+            "title": "Beratung",
+            "desc": "Erstklassige Markenpositionierung."
+        },
+        "card_health": {
+            "title": "Gesundheit",
+            "desc": "Vertrauenswürdige Webauftritte."
+        }
+    },
+    "tech_stack": {
+        "label": "Technologie",
+        "title_prefix": "Professionelles",
+        "title_suffix": "Technologie-Paket"
+    },
+    "testimonials": {
+        "title_prefix": "Partner, die",
+        "title_suffix": "Uns Vertrauen.",
+        "text": "Vom lokalen Handwerksbetrieb bis zum Industrieunternehmen. Wir liefern Qualität, auf die Sie bauen können.",
+        "rating": "5.0 Sterne Bewertung",
+        "excellence": "Exzellenz als Standard."
+    }
+}

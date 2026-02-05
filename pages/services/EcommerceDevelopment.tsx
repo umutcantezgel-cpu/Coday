@@ -1,0 +1,60 @@
+import React from 'react';
+import BlurText from '../../components/shared/ui/BlurText';
+import GradientText from '../../components/shared/ui/GradientText';
+import { OptimizedImage } from '../../shared/ui/OptimizedImage';
+import { marketingImages } from '../../data/serviceImages'; // Fallback
+import RevenueUpliftSimulator from '../../components/features/ecommerce/RevenueUpliftSimulator';
+import HeadlessVsShopifyGrid from '../../components/features/ecommerce/HeadlessVsShopifyGrid';
+import ConversionFunnelMap from '../../components/features/ecommerce/ConversionFunnelMap';
+
+const EcommerceDevelopment: React.FC = () => {
+    return (
+        <div className="bg-background-light min-h-screen">
+            {/* Hero Section */}
+            <section className="relative pt-32 pb-24 px-4 overflow-hidden">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div className="text-center">
+                        <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">Online-Shop Entwicklung</span>
+                        <h1 className="font-display font-black text-5xl sm:text-7xl lg:text-8xl text-secondary mb-8 tracking-tight">
+                            <BlurText
+                                text="Shops die"
+                                delay={100}
+                                animateBy="words"
+                                direction="top"
+                                className="inline-block mr-4"
+                            />
+                            <GradientText colors={['#10B981', '#3B82F6', '#8B5CF6']} animationSpeed={4} className="inline-block">
+                                verkaufen.
+                            </GradientText>
+                        </h1>
+                        <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto mb-12">
+                            Keine Vorlagen. Keine Grenzen. Wir bauen schnelle Online-Shop-Systeme mit Next.js, die Ihre Verkaufsraten explodieren lassen.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Revenue Uplift - NEW HIGH COMPLEXITY SECTION */}
+            <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-24 -mt-12 relative z-20">
+                <RevenueUpliftSimulator />
+            </section>
+
+            {/* Architecture Grid - NEW HIGH COMPLEXITY SECTION */}
+            <section className="py-24 bg-surface-dark relative">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <HeadlessVsShopifyGrid />
+                </div>
+            </section>
+
+            {/* Funnel Map - NEW HIGH COMPLEXITY SECTION */}
+            <section className="py-24 bg-white relative">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <ConversionFunnelMap />
+                </div>
+            </section>
+
+        </div>
+    );
+};
+
+export default EcommerceDevelopment;

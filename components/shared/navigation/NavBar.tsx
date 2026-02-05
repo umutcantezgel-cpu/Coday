@@ -1,10 +1,11 @@
 import React from 'react';
-import { DesktopNav } from './DesktopNav';
+import { NavigationMenu } from './desktop/NavigationMenu';
 import { MobileNav } from './MobileNav';
 import { NavToggle } from './NavToggle';
 import { useNavState } from './useNavState';
 import { MagneticButton } from '../ui/MagneticButton';
 import { Link } from 'react-router-dom';
+import { LanguageSwitcher } from '../LanguageSwitcher';
 
 export const NavBar: React.FC = () => {
     const { isVisible, isScrolled, isMobileOpen, toggleMobileMenu, closeMobileMenu } = useNavState();
@@ -32,18 +33,16 @@ export const NavBar: React.FC = () => {
                     </Link>
 
                     {/* Desktop Navigation */}
-                    <DesktopNav />
+                    <div className="hidden lg:block">
+                        <NavigationMenu />
+                    </div>
 
                     {/* Actions & Mobile Toggle */}
                     <div className="flex items-center gap-2 z-50">
-                        <MagneticButton strength={0.4} className="hidden lg:block">
-                            <Link
-                                to="/contact"
-                                className="flex items-center justify-center px-6 py-2.5 bg-gray-900 text-white rounded-full font-bold text-sm hover:bg-black transition-colors"
-                            >
-                                Starten
-                            </Link>
-                        </MagneticButton>
+                        {/* Language Switcher */}
+                        <div className="hidden sm:block">
+                            <LanguageSwitcher />
+                        </div>
 
                         <div className="lg:hidden">
                             <NavToggle

@@ -1,0 +1,131 @@
+{
+    "page": {
+        "title": "Transparent Pricing",
+        "headline": "Three Packages. <0>Zero Surprises.</0>",
+        "subheadline": "Choose the package that fits your goals. All prices are fixed – no hidden costs."
+    },
+    "packages": {
+        "starter": {
+            "name": "Starter",
+            "tagline": "Perfect for starting out",
+            "cta": "Choose Starter"
+        },
+        "professional": {
+            "name": "Professional",
+            "tagline": "Our Bestseller",
+            "badge": "Most Popular",
+            "cta": "Choose Professional"
+        },
+        "enterprise": {
+            "name": "Enterprise",
+            "tagline": "Full Power",
+            "cta": "Request Enterprise"
+        }
+    },
+    "labels": {
+        "setup": "Setup"
+    },
+    "features": {
+        "starter": [
+            "3-5 Subpages",
+            "Professional Homepage",
+            "Optimized for all devices",
+            "Basic SEO",
+            "Security Certificate",
+            "3 Revision Rounds",
+            "Visitor Analytics Setup",
+            "30 Days Support"
+        ],
+        "professional": [
+            "7-10 Subpages",
+            "Content Management (Self-editable)",
+            "Advanced SEO",
+            "Speed Optimization",
+            "Blog Section",
+            "Contact Forms",
+            "5 Revision Rounds",
+            "Webspace Included",
+            "Support Optional"
+        ],
+        "enterprise": [
+            "Unlimited Pages",
+            "Custom Web Application",
+            "Online Shop Integration",
+            "API Development",
+            "Premium SEO & Ads",
+            "A/B Testing Setup",
+            "Dedicated Manager",
+            "Uptime Guarantee (Optional)",
+            "24/7 Support (Optional)"
+        ]
+    },
+    "not_included": {
+        "starter": [
+            "Content Management",
+            "Online Shop",
+            "Custom Functions"
+        ],
+        "professional": [
+            "Online Shop Functions",
+            "Custom App Development"
+        ]
+    },
+    "comparison": {
+        "title": "Package Comparison",
+        "headers": {
+            "feature": "Feature",
+            "starter": "Starter",
+            "professional": "Professional",
+            "enterprise": "Enterprise"
+        },
+        "rows": {
+            "pages": {
+                "label": "Pages",
+                "starter": "3-5",
+                "pro": "7-10",
+                "ent": "Unlimited"
+            },
+            "cms": {
+                "label": "CMS",
+                "starter": "—",
+                "pro": "✓",
+                "ent": "✓"
+            },
+            "seo": {
+                "label": "SEO",
+                "starter": "Basic",
+                "pro": "Advanced",
+                "ent": "Premium"
+            },
+            "support": {
+                "label": "Support/Maint.",
+                "starter": "30 Days",
+                "pro": "Optional",
+                "ent": "Optional"
+            },
+            "ecommerce": {
+                "label": "E-Commerce",
+                "starter": "—",
+                "pro": "—",
+                "ent": "✓"
+            },
+            "custom": {
+                "label": "Custom Dev",
+                "starter": "—",
+                "pro": "—",
+                "ent": "✓"
+            },
+            "revisions": {
+                "label": "Revisions",
+                "starter": "3",
+                "pro": "5",
+                "ent": "Unlimited"
+            }
+        }
+    },
+    "cta_section": {
+        "title": "Still unsure?",
+        "text": "Schedule a free consultation.",
+        "button": "Book Appointment"
+    }
+}

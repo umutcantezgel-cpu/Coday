@@ -1,0 +1,55 @@
+{
+    "academy": {
+        "title": "Academy",
+        "subtitle": "Become an expert in digital growth. Free courses for our community.",
+        "courses": {
+            "5_questions": {
+                "title": "5 Questions to Ask Your Web Agency",
+                "duration": "12:45",
+                "tag": "STRATEGY"
+            },
+            "visitors_customers": {
+                "title": "Converting Visitors into Customers",
+                "duration": "18:20",
+                "tag": "CONVERSION"
+            },
+            "seo_strategy": {
+                "title": "The Ultimate SEO Strategy",
+                "duration": "14:10",
+                "tag": "SEO"
+            },
+            "google_reviews": {
+                "title": "Mastering Google Reviews",
+                "duration": "09:30",
+                "tag": "REPUTATION"
+            },
+            "traffic": {
+                "title": "How to Drive Traffic to Your Site",
+                "duration": "16:15",
+                "tag": "TRAFFIC"
+            },
+            "website_cost": {
+                "title": "What Does a Website Really Cost?",
+                "duration": "11:00",
+                "tag": "BUDGET"
+            },
+            "website_appeal": {
+                "title": "Website: Magnet or Repellent?",
+                "duration": "08:45",
+                "tag": "DESIGN"
+            }
+        }
+    },
+    "blog": {
+        "title": "Blog & Insights",
+        "subtitle": "Deep dives, strategies and news from the digital world."
+    },
+    "newsletter": {
+        "title": "Newsletter",
+        "subtitle": "Weekly tips delivered directly to your inbox."
+    },
+    "whitepapers": {
+        "title": "Whitepapers & Guides",
+        "subtitle": "Detailed guides and checklists for your success."
+    }
+}

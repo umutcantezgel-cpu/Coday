@@ -1,0 +1,65 @@
+{
+    "calculator": {
+        "hero": {
+            "badge": "Der Agentur-Konfigurator",
+            "title_start": "Bauen Sie Ihre",
+            "title_gradient": "Traum-Agentur.",
+            "desc_default": "Wählen Sie aus 9 Kategorien. Von der Basis bis zur Profi-Lösung.",
+            "desc_selected": "Erweitern Sie Ihr gewähltes Paket mit zusätzlichen Modulen."
+        },
+        "labels": {
+            "selected": "ausgewählt",
+            "module": "Modul",
+            "modules": "Module"
+        },
+        "cta": {
+            "title": "Zufrieden mit Ihrer Konfiguration?",
+            "desc": "Im nächsten Schritt senden Sie uns Ihre Anfrage.",
+            "button": "Weiter zur Anfrage"
+        }
+    },
+    "analyzer": {
+        "hero": {
+            "badge": "Kostenloser Website-Audit",
+            "title_start": "Wie gut ist",
+            "title_gradient": "deine Website?",
+            "desc": "Lass unsere KI-Agenten deine Website analysieren. Erhalte in 60 Sekunden einen detaillierten Report mit Scores, Schwächen und konkreten Empfehlungen."
+        },
+        "features": {
+            "title": "Was wir analysieren",
+            "desc": "6 spezialisierte KI-Agenten prüfen jeden Aspekt deiner Website.",
+            "items": {
+                "speed": {
+                    "title": "Geschwindigkeit",
+                    "desc": "Ladezeit-Werte, Seitenbewertung und Optimierungspotenzial."
+                },
+                "seo": {
+                    "title": "Suchmaschinen",
+                    "desc": "Seitentitel, Überschriften, Strukturierte Daten und Schlüsselwörter."
+                },
+                "security": {
+                    "title": "Sicherheit",
+                    "desc": "Verschlüsselung, Sicherheitseinstellungen und Cookie-Schutz."
+                },
+                "a11y": {
+                    "title": "Barrierefreiheit",
+                    "desc": "Zugänglichkeit, Farbkontrast und Vorlese-Kompatibilität."
+                },
+                "ux": {
+                    "title": "Benutzerfreundlichkeit",
+                    "desc": "Smartphone-Optimierung, Navigation und Handlungsaufforderungen."
+                },
+                "content": {
+                    "title": "Inhalte",
+                    "desc": "Lesbarkeit, Alleinstellungsmerkmal und Kundenstimmen."
+                }
+            }
+        },
+        "trust": {
+            "free": "100% kostenlos",
+            "private": "Daten bleiben privat",
+            "fast": "Ergebnis in 60 Sekunden",
+            "stats": "Bereits über 500 Websites analysiert • Durchschnittlich 12 Verbesserungsvorschläge pro Audit"
+        }
+    }
+}

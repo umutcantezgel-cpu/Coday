@@ -1,6 +1,9 @@
 import React, { useState, Suspense, lazy } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { NavBar } from './shared/navigation';
+import { ChatWidget } from '../widgets/chatbot';
+import { WhatsAppButton } from '../widgets/whatsapp';
+import { CookieConsentBanner, CookieSettingsModal } from '../widgets/cookie';
 
 const Footer = lazy(() => import('./layout/Footer'));
 
@@ -19,8 +22,8 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="font-sans text-text-light bg-background-light min-h-screen flex flex-col">
       <Helmet>
-        <title>Coday | The Agency Killer</title>
-        <meta name="description" content="Wir töten Ineffizienz. High-End Webentwicklung & Design für Agenturen und Unternehmen." />
+        <title>Coday | Der Agentur-Killer</title>
+        <meta name="description" content="Wir beenden Ineffizienz. High-End Webentwicklung & Design für Agenturen und Unternehmen." />
         <meta name="theme-color" content="#5227FF" />
         <link rel="canonical" href={`https://coday.de${location.pathname}`} />
       </Helmet>
@@ -37,6 +40,16 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
       <Suspense fallback={<div className="h-24 bg-secondary" />}>
         <Footer />
       </Suspense>
+
+      {/* AI Chatbot Widget */}
+      <ChatWidget />
+
+      {/* WhatsApp Button */}
+      <WhatsAppButton />
+
+      {/* Cookie Consent */}
+      <CookieConsentBanner />
+      <CookieSettingsModal />
     </div>
   );
 };

@@ -1,0 +1,136 @@
+{
+    "welcome": "Willkommen bei Coday",
+    "loading": "Lade Sprache...",
+    "buttons": {
+        "start_project": "Projekt starten",
+        "view_work": "Referenzen",
+        "start": "Starten",
+        "close": "Schließen",
+        "menu": "Menü"
+    },
+    "nav": {
+        "services": {
+            "label": "Leistungen",
+            "web_development": {
+                "label": "Webentwicklung",
+                "desc": "Skalierbare Web-Apps & High-Performance Sites"
+            },
+            "web_design": {
+                "label": "Webdesign",
+                "desc": "Award-Winning UI/UX & Brand Identity"
+            },
+            "seo": {
+                "label": "SEO & Traffic",
+                "desc": "Top-Rankings & Organisches Wachstum"
+            },
+            "performance": {
+                "label": "Performance",
+                "desc": "Core Web Vitals & Speed Optimierung"
+            },
+            "enterprise": {
+                "label": "Enterprise Platforms",
+                "desc": "World-Class Portals & Systems"
+            },
+            "ecommerce": {
+                "label": "E-Commerce",
+                "desc": "Shops, die verkaufen (Shopify/Next.js)"
+            }
+        },
+        "industries": {
+            "label": "Branchen",
+            "craft": "Handwerk",
+            "real_estate": "Immobilien",
+            "gastronomy": "Gastronomie",
+            "health": "Gesundheit",
+            "service": "Dienstleistung",
+            "ecommerce": "E-Commerce"
+        },
+        "projects": {
+            "label": "Projekte",
+            "desc": "Unsere besten Kundenprojekte"
+        },
+        "academy": {
+            "label": "Academy",
+            "desc": "Kostenloses Wissen für deinen Erfolg",
+            "audit": {
+                "label": "Website-Audit",
+                "desc": "Kostenloser KI-Check"
+            },
+            "courses": {
+                "label": "Video Kurse",
+                "desc": "Lerne von Experten"
+            },
+            "blog": {
+                "label": "Blog & Insights",
+                "desc": "Deep Dives & News"
+            },
+            "newsletter": {
+                "label": "Newsletter",
+                "desc": "Wöchentliche Tipps"
+            },
+            "whitepapers": {
+                "label": "Whitepapers",
+                "desc": "Guides & Checklisten"
+            }
+        },
+        "about": {
+            "label": "Über Uns",
+            "desc": "Lernen Sie uns kennen",
+            "process": {
+                "label": "Unser Prozess",
+                "desc": "Wie wir arbeiten"
+            },
+            "contact": {
+                "label": "Kontakt",
+                "desc": "Sprechen Sie mit uns"
+            }
+        },
+        "career": {
+            "label": "Karriere",
+            "desc": "Werde Teil des Teams",
+            "overview": {
+                "label": "Übersicht",
+                "desc": "Join the Elite"
+            },
+            "jobs": {
+                "label": "Offene Stellen",
+                "desc": "Aktuelle Positionen"
+            },
+            "culture": {
+                "label": "Kultur",
+                "desc": "So arbeiten wir"
+            },
+            "benefits": {
+                "label": "Benefits",
+                "desc": "Was dich erwartet"
+            }
+        },
+        "legal": {
+            "agb": "AGB",
+            "privacy": "Datenschutz",
+            "imprint": "Impressum"
+        }
+    },
+    "footer": {
+        "slogan": "Wir töten Ineffizienz. Die letzte Agentur, die du je brauchen wirst.",
+        "trust": {
+            "title": "Resistance Member",
+            "desc": "Kämpfe gegen den Ballast."
+        },
+        "sections": {
+            "pricing": "Preise",
+            "knowledge": "Wissen",
+            "career": "Karriere"
+        },
+        "links": {
+            "packages": "Pakete",
+            "booking": "Termin buchen"
+        },
+        "rights": "© {{year}} Coday"
+    },
+    "scroll_cta": {
+        "ready": "Bereit zu optimieren?",
+        "dominate": "Dominieren Sie Ihren Markt.",
+        "book_audit": "Audit buchen"
+    }
+}

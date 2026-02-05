@@ -54,7 +54,7 @@ const CmsHeadless: React.FC = () => {
                         {[
                             { title: "Omnichannel", desc: "Ein Content-Hub für Website, App, Smartwatch und mehr." },
                             { title: "High Performance", desc: "Statische Generierung via Next.js für extrem schnelle Ladezeiten." },
-                            { title: "Sicherheit", desc: "Keine direkte Datenbank-Verbindung im Frontend. Minimierte Angriffsfläche." },
+                            { title: "Sicherheit", desc: "Keine direkte Datenbank-Verbindung im Frontend. Minimierte Risiken." },
                             { title: "Entwickler-Freundlich", desc: "Moderne API-first Ansätze ermöglichen schnellere Iterationen." },
                             { title: "Skalierbar", desc: "Wächst mit Ihren Anforderungen, ohne dass das System neu gebaut werden muss." },
                             { title: "Marketing Speed", desc: "Landingpages erstellen ohne Entwickler-Ressourcen." }

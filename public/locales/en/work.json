@@ -1,0 +1,53 @@
+{
+    "hero": {
+        "badge": "Case Study: Creative Impact",
+        "title_start": "DIGITAL",
+        "title_gradient": "EVOLUTION",
+        "desc": "How we reinvented digital branding for a mid-sized champion."
+    },
+    "results": {
+        "title": "The <0>Results</0>",
+        "desc": "By using the Aurora Design System and radically simplifying the user journey, we achieved significant improvements.",
+        "link": "Read Full Report",
+        "stats": {
+            "leads": {
+                "label": "Leads per Month",
+                "desc": "Increase in qualified inquiries through optimized conversion funnels."
+            },
+            "cpa": {
+                "label": "Cost per Acquisition",
+                "desc": "More efficient ad spend through precise targeting and high-performance landing pages."
+            },
+            "lcp": {
+                "label": "LCP (Load Time)",
+                "desc": "Lightning-fast performance thanks to static generation and optimized assets."
+            }
+        }
+    },
+    "testimonials": {
+        "title": "Project Feedback",
+        "desc": "What the team says about the collaboration.",
+        "items": [
+            {
+                "quote": "\"Working with Coday was a game changer for us. The new design is not only beautiful but performs incredibly well.\"",
+                "author": "Thomas Müller",
+                "role": "CEO, TechStart GmbH"
+            },
+            {
+                "quote": "\"Finally an agency that understands design and performance. The load times are phenomenal and the conversion rate speaks for itself.\"",
+                "author": "Sarah Weber",
+                "role": "Head of Marketing"
+            }
+        ]
+    },
+    "visual_identity": {
+        "badge": "Visual Identity",
+        "title": "Modern & Timeless",
+        "desc": "A design that builds trust while radiating innovation. We combined color psychology with cutting-edge web technology.",
+        "colors": {
+            "primary": "Primary",
+            "dark": "Dark",
+            "light": "Light"
+        }
+    }
+}

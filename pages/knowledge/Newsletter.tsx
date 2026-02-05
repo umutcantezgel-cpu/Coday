@@ -17,7 +17,7 @@ const Newsletter: React.FC = () => {
                     Der Insider Newsletter
                 </h1>
                 <p className="text-xl text-slate-500 mb-10 leading-relaxed max-w-2xl mx-auto">
-                    Tritt 10.000+ Gründern bei und erhalte wöchentlich die besten Strategien für digitales Wachstum direkt in dein Postfach. Kein Spam. Nur Value.
+                    Tritt 10.000+ Gründern bei und erhalte wöchentlich die besten Strategien für digitales Wachstum direkt in dein Postfach. Kein Spam. Nur Mehrwert.
                 </p>
 
                 <form className="max-w-md mx-auto bg-white p-2 rounded-2xl shadow-xl border border-aurora-mist mb-8 flex">

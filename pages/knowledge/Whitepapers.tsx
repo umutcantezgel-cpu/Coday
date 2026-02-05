@@ -8,7 +8,8 @@ const WHITEPAPERS = [
         description: "Alles was du wissen musst, bevor du deine neue Website planst. Inklusive Checkliste und Budget-Planer.",
         tag: "Guide",
         image: "/images/marketing/marketing-strategie-planung-konzept-01.webp",
-        alt: "Strategie Planung Konzept"
+        alt: "Strategie Planung Konzept",
+        fileUrl: "/documents/web-relaunch-guide-2026.pdf"
     },
     {
         id: 2,
@@ -16,7 +17,8 @@ const WHITEPAPERS = [
         description: "Die 200 wichtigsten Google Ranking Faktoren analysiert und priorisiert für lokales Business.",
         tag: "Checkliste",
         image: "/images/marketing/datenanalyse-business-intelligence-reporting-statistiken-auswertung.webp",
-        alt: "SEO Datenanalyse Report"
+        alt: "SEO Datenanalyse Report",
+        fileUrl: "/documents/seo-domination-guide-2026_1.pdf"
     },
     {
         id: 3,
@@ -24,7 +26,8 @@ const WHITEPAPERS = [
         description: "Wie du Besucher in zahlende Kunden verwandelst. Psychologische Trigger und Layout-Hacks.",
         tag: "Template",
         image: "/images/marketing/email-marketing-kampagne-newsletter-zielgruppe-versand.webp",
-        alt: "Conversion Optimierung"
+        alt: "Conversion Optimierung",
+        fileUrl: "/documents/cro-guide-2026.pdf"
     }
 ];
 
@@ -34,10 +37,10 @@ const Whitepapers: React.FC = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <h1 className="font-display font-black text-5xl md:text-6xl text-gradient-vivid mb-6">
-                        Whitepapers & Resources
+                        Ratgeber & Ressourcen
                     </h1>
                     <p className="text-xl text-slate-500 max-w-2xl mx-auto">
-                        Kostenlose Guides, Checklisten und Templates für deinen Erfolg.
+                        Kostenlose Anleitungen, Checklisten und Vorlagen für deinen Erfolg.
                     </p>
                 </div>
 
@@ -67,10 +70,15 @@ const Whitepapers: React.FC = () => {
                                     {paper.description}
                                 </p>
 
-                                <button className="w-full py-4 rounded-xl border-2 border-slate-100 text-gray-900 font-bold hover:border-blue-500 hover:text-blue-600 transition-colors flex items-center justify-center group-hover:bg-blue-50">
+                                <a
+                                    href={paper.fileUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-full py-4 rounded-xl border-2 border-slate-100 text-gray-900 font-bold hover:border-blue-500 hover:text-blue-600 transition-colors flex items-center justify-center group-hover:bg-blue-50"
+                                >
                                     <span className="material-symbols-outlined mr-2">download</span>
                                     Kostenlos herunterladen
-                                </button>
+                                </a>
                             </div>
                         </div>
                     ))}

@@ -4,9 +4,38 @@ import { Link } from 'react-router-dom';
 import BlurText from '../../../components/shared/ui/BlurText';
 import { OptimizedImage } from '../../../shared/ui/OptimizedImage';
 
+import { motion, useScroll, useTransform } from 'motion/react';
+import { useRef } from 'react';
+
+// Parallax Image Component
+const ParallaxHeroImage = ({ src, alt }: { src: string; alt: string }) => {
+    const ref = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        offset: ["start start", "end start"]
+    });
+    const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+    const scale = useTransform(scrollYProgress, [0, 1], [1.1, 1.2]);
+    const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
+    return (
+        <div ref={ref} className="absolute inset-0 z-0 overflow-hidden">
+            <motion.div style={{ y, scale, opacity }} className="relative w-full h-full">
+                <OptimizedImage
+                    src={src}
+                    alt={alt}
+                    className="w-full h-full object-cover"
+                    priority
+                />
+            </motion.div>
+        </div>
+    );
+};
+
 interface CaseStudyLayoutProps {
     title: string;
-    subtitle: string;
+    subtitle?: string;
+    excerpt?: string;
     client: string;
     industry: string;
     services: string[];
@@ -18,6 +47,7 @@ interface CaseStudyLayoutProps {
 export const CaseStudyLayout: React.FC<CaseStudyLayoutProps> = ({
     title,
     subtitle,
+    excerpt,
     client,
     industry,
     services,
@@ -25,6 +55,9 @@ export const CaseStudyLayout: React.FC<CaseStudyLayoutProps> = ({
     heroImage,
     children
 }) => {
+    // Handle fallback
+    const heroSubtitle = subtitle || excerpt || "";
+
     return (
         <div className="bg-background-light min-h-screen">
             {/* Navigation */}
@@ -36,23 +69,26 @@ export const CaseStudyLayout: React.FC<CaseStudyLayoutProps> = ({
             </nav>
 
             {/* Hero */}
-            <header className="relative h-[80vh] min-h-[600px] flex items-end pb-24 overflow-hidden">
+            <header className="relative h-screen min-h-[800px] flex items-end pb-32 overflow-hidden">
+                {/* Parallax Background */}
                 <div className="absolute inset-0 z-0">
-                    <OptimizedImage
-                        src={heroImage}
-                        alt={title}
-                        className="w-full h-full object-cover"
-                        priority
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background-light via-background-light/50 to-transparent z-10"></div>
+                    <ParallaxHeroImage src={heroImage} alt={title} />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background-light via-background-light/20 to-transparent z-10"></div>
+                    <div className="absolute inset-0 bg-secondary/10 z-10 mix-blend-multiply"></div>
                 </div>
 
                 <div className="container mx-auto px-4 z-20 relative">
-                    <div className="max-w-4xl">
-                        <span className="inline-block px-3 py-1 bg-primary/20 text-primary rounded-full text-xs font-bold uppercase tracking-wider mb-6 backdrop-blur-sm">
-                            {industry} Case Study
-                        </span>
-                        <h1 className="font-display font-black text-5xl md:text-7xl lg:text-8xl text-secondary mb-6 leading-tight">
+                    <div className="max-w-5xl">
+                        <div className="flex flex-wrap gap-4 mb-8">
+                            <span className="px-4 py-2 bg-white/10 text-white border border-white/20 rounded-full text-sm font-bold uppercase tracking-wider backdrop-blur-md">
+                                {industry}
+                            </span>
+                            <span className="px-4 py-2 bg-primary text-white rounded-full text-sm font-bold uppercase tracking-wider shadow-lg shadow-primary/30">
+                                {year}
+                            </span>
+                        </div>
+
+                        <h1 className="font-display font-black text-6xl md:text-8xl lg:text-9xl text-white mb-8 leading-[0.9] tracking-tight drop-shadow-lg">
                             <BlurText
                                 text={title}
                                 delay={100}
@@ -61,11 +97,22 @@ export const CaseStudyLayout: React.FC<CaseStudyLayoutProps> = ({
                                 className="block"
                             />
                         </h1>
-                        <p className="text-xl md:text-2xl text-text-slate max-w-2xl font-light">
-                            {subtitle}
+                        <p className="text-2xl md:text-3xl text-white/90 max-w-3xl font-light leading-relaxed drop-shadow-md">
+                            {heroSubtitle}
                         </p>
                     </div>
                 </div>
+
+                {/* Scroll Indicator */}
+                <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1, duration: 1, repeat: Infinity, repeatType: "reverse" }}
+                    className="absolute bottom-12 left-1/2 -translate-x-1/2 text-white/50 flex flex-col items-center gap-2 z-20"
+                >
+                    <span className="text-xs font-bold uppercase tracking-widest">Scroll</span>
+                    <div className="w-px h-12 bg-gradient-to-b from-white to-transparent"></div>
+                </motion.div>
             </header>
 
             {/* Meta Grid */}

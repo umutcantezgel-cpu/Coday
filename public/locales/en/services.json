@@ -1,0 +1,27 @@
+{
+    "hero": {
+        "label": "Expertise",
+        "title": "Our Core Areas.",
+        "rotating": [
+            "Specialized Solutions for Your Success.",
+            "Taking Your Business Digital to the Top.",
+            "Professional Code. Professional Design.",
+            "From Idea to Market Leadership."
+        ]
+    },
+    "categories": {
+        "web_development": {
+            "title": "Web Development",
+            "description": "We build fast and powerful websites and web applications with modern technology."
+        },
+        "web_design": {
+            "title": "Web Design",
+            "description": "Award-winning design for best usability. Beauty that sells."
+        }
+    },
+    "cta": {
+        "more": "Learn More",
+        "ready": "Ready for the next step?",
+        "button": "Request Project"
+    }
+}

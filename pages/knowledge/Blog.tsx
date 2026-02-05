@@ -13,7 +13,7 @@ const Blog: React.FC = () => {
                         Blog & Insights
                     </h1>
                     <p className="text-xl text-slate-500 max-w-2xl mx-auto">
-                        Tiefgehende Analysen, Strategien und News aus der Welt der digitalen Dominanz.
+                        Tiefgehende Analysen, Strategien und Neuigkeiten aus der Welt der digitalen Dominanz.
                     </p>
                 </div>
 
@@ -31,7 +31,7 @@ const Blog: React.FC = () => {
                         <div className="absolute inset-0 z-20 flex flex-col justify-end p-8 md:p-12">
                             <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                                 <span className="inline-block px-3 py-1 rounded-full bg-blue-600 text-white text-xs font-bold uppercase tracking-wider mb-4">
-                                    Featured
+                                    Highlight
                                 </span>
                                 <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-4 shadow-sm">
                                     {BLOG_POSTS[6].title}
@@ -96,7 +96,7 @@ const Blog: React.FC = () => {
                                 Schließen Sie sich <br /> 2.500+ Experten an.
                             </h2>
                             <p className="text-gray-400 text-lg mb-8 leading-relaxed">
-                                Erhalten Sie wöchentlich kuratierte Strategien und Insights direkt in Ihre Inbox. Keine Werbung, nur Mehrwert.
+                                Erhalten Sie wöchentlich ausgewählte Strategien und Erkenntnisse direkt in Ihr Postfach. Keine Werbung, nur Mehrwert.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <input

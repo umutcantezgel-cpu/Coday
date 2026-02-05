@@ -1,0 +1,56 @@
+{
+    "header": {
+        "nav": {
+            "overview": "Übersicht",
+            "speed": "Geschwindigkeit",
+            "seo": "Suchmaschinen",
+            "analytics": "Besucheranalyse"
+        },
+        "live": "Live-Überwachung"
+    },
+    "hero": {
+        "title": "Geschwindigkeits-Übersicht",
+        "desc": "Echtzeit-Analyse Ihres digitalen Auftritts. Messung von Geschwindigkeit, Zugänglichkeit und Benutzerfreundlichkeit."
+    },
+    "score": {
+        "title": "Außergewöhnlicher Geschwindigkeitswert",
+        "desc": "Ihre Plattform arbeitet deutlich besser als der Branchendurchschnitt. Alle Ladezeit-Werte liegen im optimalen \"Gut\"-Bereich.",
+        "button": "Detaillierten Bericht anzeigen",
+        "ranking": "Top 3%"
+    },
+    "metrics": {
+        "lcp": "Größte sichtbare Inhalte",
+        "fid": "Erste Reaktionszeit",
+        "cls": "Visuelle Stabilität",
+        "good": "Gut",
+        "target": "Ziel"
+    },
+    "comparison": {
+        "title": "Vergleich mit dem Wettbewerb",
+        "subtitle": "Wie Sie im Vergleich zu Standard-Lösungen abschneiden",
+        "badge": "4x schneller im Durchschnitt",
+        "headers": {
+            "metric": "Messwert",
+            "us": "Coday",
+            "standard": "Standard WP Site",
+            "wix": "Wix / Squarespace"
+        },
+        "rows": {
+            "tti": "Zeit bis Interaktion",
+            "mobile": "Mobile Geschwindigkeit",
+            "tbt": "Blockierungszeit",
+            "seo": "Suchmaschinen-Indexierung",
+            "seo_value": "Sofort",
+            "seo_days": "Tage",
+            "seo_weeks": "Wochen"
+        }
+    },
+    "cta": {
+        "title": "Bereit für weitere Optimierung?",
+        "desc": "Schalten Sie erweiterte Einblicke und automatische Optimierungswerkzeuge mit dem Profi-Paket frei.",
+        "button": "Auf Profi upgraden"
+    },
+    "footer": {
+        "copyright": "© 2024 Geschwindigkeits-Übersicht. Betrieben durch Aurora System."
+    }
+}

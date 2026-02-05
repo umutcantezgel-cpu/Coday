@@ -1,57 +1,80 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { OptimizedImage } from '../shared/ui/OptimizedImage';
 import AgencyComparisonTable from '../components/AgencyComparisonTable';
-import ClickSpark from '../components/shared/ui/ClickSpark';
 import GradientText from '../components/shared/ui/GradientText';
 import CountUp from '../components/shared/ui/CountUp';
-import Carousel from '../components/shared/ui/Carousel';
 import BlurText from '../components/shared/ui/BlurText';
+import ScrollFloat from '../shared/ui/ScrollFloat';
 import { MdConstruction, MdApartment, MdShoppingCart, MdLightbulb, MdHealthAndSafety } from 'react-icons/md';
-import ClientReferencesGrid from '../components/features/TeamGrid';
+// Premium UI Components
+import RotatingText from '../shared/ui/RotatingText';
+import SpotlightCard from '../shared/ui/SpotlightCard';
+import { MagicBento, BentoCard } from '../shared/ui/MagicBento';
+import LogoLoop from '../shared/ui/LogoLoop';
+import type { LogoItem } from '../shared/ui/LogoLoop';
+
+
 
 const Home: React.FC = () => {
+  const { t } = useTranslation(['home', 'common']);
+
   return (
     <>
       {/* Hero Section */}
       <section className="relative pt-32 pb-40 lg:pt-48 lg:pb-60 overflow-hidden bg-background-light">
         {/* Organic Background Shapes */}
-        <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[100px] pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-[600px] h-[600px] bg-secondary/10 rounded-full blur-[80px] pointer-events-none animate-float"></div>
+        <div className="absolute top-0 end-0 -translate-y-1/4 translate-x-1/4 rtl:-translate-x-1/4 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[100px] pointer-events-none"></div>
+        <div className="absolute bottom-0 start-0 translate-y-1/4 -translate-x-1/4 rtl:translate-x-1/4 w-[600px] h-[600px] bg-secondary/10 rounded-full blur-[80px] pointer-events-none animate-float"></div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-block mb-6 animate-fade-in-up">
             <span className="bg-white/80 backdrop-blur-md border border-white/50 text-secondary text-sm font-bold px-4 py-1.5 rounded-full shadow-lg flex items-center gap-2">
               <span className="bg-primary text-white rounded-full p-0.5"><span className="material-symbols-outlined text-[14px]">rocket_launch</span></span>
-              Grand Opening Special: 25% Rabatt
+              {t('hero.badge')}
             </span>
           </div>
           <h1 className="font-display font-black text-5xl sm:text-7xl lg:text-8xl tracking-tight leading-none mb-8 text-secondary uppercase drop-shadow-sm">
-            Wir bauen ihre<br className="hidden md:block" />
+            {t('hero.headline_prefix')}<br className="hidden md:block" />
             <GradientText
               colors={['#1A9A9A', '#2D3748', '#1A9A9A']}
               animationSpeed={8}
               showBorder={false}
               className="inline-block"
             >
-              Digitale Dominanz.
+              {t('hero.headline_gradient')}
             </GradientText>
           </h1>
-          <p className="text-xl sm:text-2xl font-light text-slate-700 max-w-3xl mx-auto leading-relaxed mb-12">
-            Schluss mit ineffizienten Agenturen. Wir liefern Software & Design, das Märkte erobert.
-            <span className="block mt-4 font-bold text-secondary">Schnell. Skalierbar. Professionell.</span>
-          </p>
-          <ClickSpark sparkColor="#1A9A9A" sparkSize={12} sparkRadius={30} sparkCount={8} duration={500}>
-            <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <NavLink to="/contact" className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white rounded-lg bg-primary hover:bg-opacity-90 transition-all shadow-flat hover:shadow-flat-lg uppercase tracking-wide">
-                Projekt starten
-                <span className="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
-              </NavLink>
-              <NavLink to="/work" className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-secondary bg-white/80 backdrop-blur-sm border border-gray-200 rounded-lg hover:bg-white transition-all shadow-flat hover:shadow-sm uppercase tracking-wide">
-                Referenzen
-              </NavLink>
-            </div>
-          </ClickSpark>
+          <div className="max-w-3xl mx-auto mb-12">
+            <RotatingText
+              texts={t('hero.rotating', { returnObjects: true }) as string[]}
+              rotationInterval={3000}
+              staggerFrom="first"
+              staggerDuration={0.03}
+              mainClassName="text-xl sm:text-2xl font-light text-slate-700 leading-relaxed justify-center"
+            />
+          </div>
+          <div className="flex flex-col sm:flex-row justify-center gap-6">
+            <NavLink
+              to="/contact"
+              className="group relative inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-white rounded-full bg-primary hover:bg-opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 overflow-hidden"
+            >
+              <span className="relative z-10 flex items-center">
+                {t('buttons.start_project', { ns: 'common' })}
+                <span className="material-symbols-outlined ms-2 text-xl group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform">arrow_forward</span>
+              </span>
+              {/* Subtle shine effect */}
+              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 pointer-events-none" />
+            </NavLink>
+
+            <NavLink
+              to="/work"
+              className="group inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-secondary bg-white rounded-full border border-gray-200 hover:border-primary/50 hover:bg-gray-50 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1"
+            >
+              {t('buttons.view_work', { ns: 'common' })}
+            </NavLink>
+          </div>
         </div>
       </section>
 
@@ -64,23 +87,23 @@ const Home: React.FC = () => {
                 <div className="font-display text-4xl lg:text-5xl font-bold text-secondary mb-2">
                   <CountUp from={0} to={0.5} duration={1.5} className="" />s
                 </div>
-                <div className="text-xs font-bold uppercase tracking-widest text-primary">Ø Ladezeit</div>
+                <div className="text-xs font-bold uppercase tracking-widest text-primary">{t('stats.load_time')}</div>
               </div>
               <div className="px-4 text-center">
                 <div className="font-display text-4xl lg:text-5xl font-bold text-secondary mb-2">
                   <CountUp from={0} to={100} duration={1.5} className="" />%
                 </div>
-                <div className="text-xs font-bold uppercase tracking-widest text-primary">Code-Eigentum</div>
+                <div className="text-xs font-bold uppercase tracking-widest text-primary">{t('stats.ownership')}</div>
               </div>
               <div className="px-4 text-center">
                 <div className="font-display text-4xl lg:text-5xl font-bold text-secondary mb-2">
                   <CountUp from={0} to={24} duration={1.5} className="" />h
                 </div>
-                <div className="text-xs font-bold uppercase tracking-widest text-primary">Support</div>
+                <div className="text-xs font-bold uppercase tracking-widest text-primary">{t('stats.availability')}</div>
               </div>
               <div className="px-4 text-center border-r-0">
-                <div className="font-display text-4xl lg:text-5xl font-bold text-secondary mb-2">ROI</div>
-                <div className="text-xs font-bold uppercase tracking-widest text-primary">Fokussiert</div>
+                <div className="font-display text-4xl lg:text-5xl font-bold text-secondary mb-2">{t('stats.profit')}</div>
+                <div className="text-xs font-bold uppercase tracking-widest text-primary">{t('stats.focused')}</div>
               </div>
             </div>
           </div>
@@ -97,20 +120,20 @@ const Home: React.FC = () => {
             <div>
               <h2 className="font-display font-black text-3xl lg:text-5xl mb-8 leading-tight text-secondary">
                 <BlurText
-                  text="Traditionelle Agenturen"
+                  text={t('philosophy.traditional')}
                   delay={100}
                   animateBy="words"
                   direction="top"
                   className="block"
                 />
-                <span className="text-primary">Sind Geschichte.</span>
+                <span className="text-primary">{t('philosophy.history')}</span>
               </h2>
               <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
                 <p>
-                  Sie bezahlen für Overhead, Meetings und ineffiziente Prozesse. Das alte Agenturmodell funktioniert nicht mehr für moderne KMUs.
+                  {t('philosophy.text_overhead')}
                 </p>
                 <p>
-                  <strong className="text-secondary font-bold">Coday ist der neue Standard.</strong> Wir kombinieren strategisches Design mit High-End Engineering. Keine Baukästen, keine Ausreden. Nur Ergebnisse, die Ihr Unternehmen voranbringen.
+                  <strong className="text-secondary font-bold">{t('philosophy.standard')}</strong> {t('philosophy.text_standard')}
                 </p>
               </div>
             </div>
@@ -133,69 +156,92 @@ const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-5xl font-black text-secondary mb-12 uppercase tracking-tight">
             <BlurText
-              text="Wir digitalisieren"
+              text={t('industries.title_prefix')}
               delay={80}
               animateBy="words"
               direction="bottom"
               className="inline"
             />{' '}
-            <span className="text-primary">Ihre Branche.</span>
+            <span className="text-primary">{t('industries.title_suffix')}</span>
           </h2>
 
-          <div className="flex justify-center items-center">
-            <Carousel
-              baseWidth={350}
-              autoplay={true}
-              autoplayDelay={4000}
-              loop={true}
-              pauseOnHover={true}
-              items={[
-                {
-                  id: 1,
-                  title: 'Handwerk & Bau',
-                  description: 'Digitale Mitarbeitergewinnung und Projekt-Showcases, die überzeugen.',
-                  icon: <MdConstruction size={24} />
-                },
-                {
-                  id: 2,
-                  title: 'Immobilien',
-                  description: 'Hochwertige Exposé-Präsentationen und Lead-Generierung für Makler.',
-                  icon: <MdApartment size={24} />
-                },
-                {
-                  id: 3,
-                  title: 'E-Commerce',
-                  description: 'Conversion-starke Shopsysteme, die Besucher zu Käufern machen.',
-                  icon: <MdShoppingCart size={24} />
-                },
-                {
-                  id: 4,
-                  title: 'Consulting',
-                  description: 'Positionierung als Experte durch erstklassiges Personal Branding.',
-                  icon: <MdLightbulb size={24} />
-                },
-                {
-                  id: 5,
-                  title: 'Gesundheitswesen',
-                  description: 'Vertrauenswürdige Webauftritte für Praxen und Kliniken.',
-                  icon: <MdHealthAndSafety size={24} />
-                }
-              ]}
-            />
-          </div>
+          <MagicBento columns={5} gap={16} className="max-w-6xl mx-auto">
+            <Link to="/services/industries/handwerk" className="block h-full">
+              <BentoCard effect="tilt" tiltMax={12} className="p-6 text-start h-full">
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
+                  <MdConstruction size={24} />
+                </div>
+                <h3 className="font-bold text-lg text-secondary mb-2">{t('industries.card_craft.title')}</h3>
+                <p className="text-sm text-slate-600">{t('industries.card_craft.desc')}</p>
+              </BentoCard>
+            </Link>
+            <Link to="/services/industries/immobilien" className="block h-full">
+              <BentoCard effect="glow" glowColor="rgba(26, 154, 154, 0.3)" className="p-6 text-start h-full">
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
+                  <MdApartment size={24} />
+                </div>
+                <h3 className="font-bold text-lg text-secondary mb-2">{t('industries.card_realestate.title')}</h3>
+                <p className="text-sm text-slate-600">{t('industries.card_realestate.desc')}</p>
+              </BentoCard>
+            </Link>
+            <Link to="/services/industries/e-commerce" className="block h-full">
+              <BentoCard effect="spotlight" spotlightColor="rgba(26, 154, 154, 0.15)" className="p-6 text-start h-full">
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
+                  <MdShoppingCart size={24} />
+                </div>
+                <h3 className="font-bold text-lg text-secondary mb-2">{t('industries.card_shop.title')}</h3>
+                <p className="text-sm text-slate-600">{t('industries.card_shop.desc')}</p>
+              </BentoCard>
+            </Link>
+            <Link to="/services/industries/dienstleistung" className="block h-full">
+              <BentoCard effect="tilt" tiltMax={12} className="p-6 text-start h-full">
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
+                  <MdLightbulb size={24} />
+                </div>
+                <h3 className="font-bold text-lg text-secondary mb-2">{t('industries.card_consulting.title')}</h3>
+                <p className="text-sm text-slate-600">{t('industries.card_consulting.desc')}</p>
+              </BentoCard>
+            </Link>
+            <Link to="/services/industries/gesundheit" className="block h-full">
+              <BentoCard effect="glow" glowColor="rgba(26, 154, 154, 0.3)" className="p-6 text-start h-full">
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
+                  <MdHealthAndSafety size={24} />
+                </div>
+                <h3 className="font-bold text-lg text-secondary mb-2">{t('industries.card_health.title')}</h3>
+                <p className="text-sm text-slate-600">{t('industries.card_health.desc')}</p>
+              </BentoCard>
+            </Link>
+          </MagicBento>
         </div>
       </section>
 
-      {/* Client References Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Tech Stack Section */}
+      <section className="py-16 bg-gray-50 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <span className="text-primary font-bold tracking-wider uppercase text-xs mb-2 block">Referenzen</span>
+            <span className="text-primary font-bold tracking-wider uppercase text-xs mb-2 block">{t('tech_stack.label')}</span>
             <h2 className="font-display font-bold text-2xl sm:text-3xl text-secondary">
-              Vertrauen von <span className="text-primary">über 50+ Unternehmen</span>
+              {t('tech_stack.title_prefix')} <span className="text-primary">{t('tech_stack.title_suffix')}</span>
             </h2>
           </div>
-          <ClientReferencesGrid />
+          <LogoLoop
+            logos={[
+              { node: <span className="font-bold text-secondary/60 text-xl">React</span> },
+              { node: <span className="font-bold text-secondary/60 text-xl">Next.js</span> },
+              { node: <span className="font-bold text-secondary/60 text-xl">TypeScript</span> },
+              { node: <span className="font-bold text-secondary/60 text-xl">Tailwind</span> },
+              { node: <span className="font-bold text-secondary/60 text-xl">Node.js</span> },
+              { node: <span className="font-bold text-secondary/60 text-xl">Supabase</span> },
+              { node: <span className="font-bold text-secondary/60 text-xl">Framer Motion</span> },
+              { node: <span className="font-bold text-secondary/60 text-xl">Vercel</span> },
+            ]}
+            speed={60}
+            direction="left"
+            logoHeight={32}
+            gap={80}
+            fadeOut={true}
+            pauseOnHover={true}
+          />
         </div>
       </section>
 
@@ -204,7 +250,7 @@ const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="order-2 lg:order-1 relative">
-              <div className="absolute top-0 left-0 w-24 h-24 bg-accent/20 rounded-full blur-xl -translate-x-1/2 -translate-y-1/2"></div>
+              <div className="absolute top-0 start-0 w-24 h-24 bg-accent/20 rounded-full blur-xl -translate-x-1/2 -translate-y-1/2 rtl:translate-x-1/2"></div>
               <OptimizedImage
                 src="/images/marketing/drei-kunden-daumen-hoch-5-sterne-sprechblasen-bewertungen-zufrieden.jpeg"
                 alt="Zufriedene Partner"
@@ -214,16 +260,16 @@ const Home: React.FC = () => {
             <div className="order-1 lg:order-2">
               <h2 className="font-display font-black text-3xl lg:text-5xl mb-8 text-secondary leading-tight">
                 <BlurText
-                  text="Partner, die"
+                  text={t('testimonials.title_prefix')}
                   delay={100}
                   animateBy="words"
                   direction="top"
                   className="block"
                 />
-                <span className="text-primary">Uns Vertrauen.</span>
+                <span className="text-primary">{t('testimonials.title_suffix')}</span>
               </h2>
               <p className="text-xl text-slate-600 mb-8 font-light">
-                Vom lokalen Handwerksbetrieb bis zum Industrieunternehmen. Wir liefern Qualität, auf die Sie bauen können.
+                {t('testimonials.text')}
               </p>
               <div className="flex items-center gap-6">
                 <div className="flex -space-x-4">
@@ -234,8 +280,8 @@ const Home: React.FC = () => {
                   ))}
                 </div>
                 <div className="text-sm font-bold text-secondary">
-                  5.0 Sterne Bewertung<br />
-                  <span className="text-primary font-normal">Exzellenz als Standard.</span>
+                  {t('testimonials.rating')}<br />
+                  <span className="text-primary font-normal">{t('testimonials.excellence')}</span>
                 </div>
               </div>
             </div>

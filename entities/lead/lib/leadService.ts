@@ -43,6 +43,19 @@ export async function submitLead(data: unknown): Promise<LeadSubmissionResult> {
         // Log for development
         console.log('📧 Lead submitted to Supabase:', insertedData);
 
+        // 📧 Send Email Notification
+        try {
+            await fetch('/api/send-lead', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(validatedData),
+            });
+            console.log('📧 Email notification sent.');
+        } catch (emailError) {
+            console.error('Failed to send email notification:', emailError);
+            // Don't fail the whole submission if email fails, just log it
+        }
+
         return {
             success: true,
             leadId: insertedData.id,

@@ -1,69 +1,79 @@
 import React from 'react';
-import { OptimizedImage } from '../../shared/ui/OptimizedImage';
+import BlurText from '../../components/shared/ui/BlurText';
+import GradientText from '../../components/shared/ui/GradientText';
+import ValuesDeck from '../../components/features/culture/ValuesDeck';
+import TeamGallery from '../../components/features/culture/TeamGallery';
 
 const Culture: React.FC = () => {
     return (
-        <div className="bg-aurora-white min-h-screen pt-24 pb-20">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-20">
-                    <h1 className="font-display font-black text-5xl md:text-6xl text-gradient-vivid mb-6">
-                        Unsere Kultur
+        <div className="bg-background-light min-h-screen">
+            {/* Hero Section */}
+            <section className="relative pt-32 pb-24 px-4 text-center">
+                <div className="max-w-4xl mx-auto relative z-10">
+                    <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">Die DNA</span>
+                    <h1 className="font-display font-black text-5xl sm:text-7xl text-secondary mb-6 tracking-tight">
+                        <BlurText
+                            text="Wir sind anders."
+                            delay={100}
+                            animateBy="words"
+                            direction="top"
+                            className="inline-block mr-4"
+                        />
+                        <br className="hidden md:block" />
+                        <GradientText colors={['#F59E0B', '#EF4444', '#EC4899']} animationSpeed={5} className="inline-block">
+                            Und das ist gut so.
+                        </GradientText>
                     </h1>
-                    <p className="text-xl text-slate-500 max-w-3xl mx-auto">
-                        Wir sind keine normale Agentur. Wir sind ein Performance-Kollektiv.
+                    <p className="text-2xl text-slate-600 leading-relaxed mb-8 max-w-2xl mx-auto">
+                        Keine Agentur wie jede andere. Wir sind ein Team aus Nerds, Designern und Strategen mit einem Ziel: Wir dominieren Märkte.
                     </p>
                 </div>
+            </section>
 
-                {/* Values Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24">
-                    <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-3xl p-10 text-white shadow-xl transform rotate-1">
-                        <span className="material-symbols-outlined text-5xl mb-6 opacity-80">speed</span>
-                        <h3 className="text-3xl font-bold mb-4">Speed is King</h3>
-                        <p className="text-blue-100 text-lg leading-relaxed">
-                            Wir hassen Warten. Wir liefern in Tagen, nicht Wochen. Wir optimieren auf Millisekunden. Geschwindigkeit ist unser Wettbewerbsvorteil.
-                        </p>
-                    </div>
+            {/* Values Section - NEW HIGH COMPLEXITY */}
+            <section className="py-24 bg-surface-dark overflow-hidden relative">
+                <div className="absolute inset-0 opacity-10 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
 
-                    <div className="bg-white rounded-3xl p-10 border border-aurora-mist shadow-lg transform -rotate-1 hover:rotate-0 transition-transform duration-300">
-                        <span className="material-symbols-outlined text-5xl mb-6 text-aurora-sapphire">diamond</span>
-                        <h3 className="text-3xl font-bold mb-4 text-gray-900">Premium Standard</h3>
-                        <p className="text-slate-500 text-lg leading-relaxed">
-                            "Gut genug" ist für uns eine Beleidigung. Wir liefern Pixel-Perfektion und technische Exzellenz. Jedes Mal. Ohne Ausnahme.
-                        </p>
-                    </div>
-
-                    <div className="bg-white rounded-3xl p-10 border border-aurora-mist shadow-lg transform rotate-1 hover:rotate-0 transition-transform duration-300">
-                        <span className="material-symbols-outlined text-5xl mb-6 text-aurora-sapphire">visibility_off</span>
-                        <h3 className="text-3xl font-bold mb-4 text-gray-900">Radikale Transparenz</h3>
-                        <p className="text-slate-500 text-lg leading-relaxed">
-                            Keine versteckten Kosten. Keine Bullshit-Buzzwords. Wir sagen Kunden und Kollegen immer die Wahrheit, auch wenn es weh tut.
-                        </p>
-                    </div>
-
-                    <div className="bg-slate-900 rounded-3xl p-10 text-white shadow-xl transform -rotate-1">
-                        <span className="material-symbols-outlined text-5xl mb-6 text-emerald-400">rocket_launch</span>
-                        <h3 className="text-3xl font-bold mb-4">Domination Mindset</h3>
-                        <p className="text-slate-300 text-lg leading-relaxed">
-                            Wir sind nicht hier, um teilzunehmen. Wir sind hier, um den Markt zu übernehmen. Wir denken groß und handeln entschlossen.
-                        </p>
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div className="grid lg:grid-cols-2 gap-16 items-center">
+                        <div className="order-2 lg:order-1">
+                            <ValuesDeck />
+                        </div>
+                        <div className="order-1 lg:order-2">
+                            <h2 className="font-display font-bold text-4xl text-white mb-6">Unsere Regeln.</h2>
+                            <p className="text-xl text-gray-400 mb-8">
+                                Kultur ist das, was passiert, wenn niemand hinschaut. Diese Prinzipien leiten jede Entscheidung, die wir treffen.
+                            </p>
+                            <ul className="space-y-4 text-gray-300">
+                                <li className="flex items-center gap-3">
+                                    <span className="text-green-500 material-symbols-outlined">check_circle</span>
+                                    <span>100% Fernarbeit, 100% Fokus</span>
+                                </li>
+                                <li className="flex items-center gap-3">
+                                    <span className="text-green-500 material-symbols-outlined">check_circle</span>
+                                    <span>Radikale Ehrlichkeit</span>
+                                </li>
+                                <li className="flex items-center gap-3">
+                                    <span className="text-green-500 material-symbols-outlined">check_circle</span>
+                                    <span>Ergebnisse statt Zeit absitzen</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+            </section>
 
-                {/* Team Photo Grid Placeholder */}
-                <div className="relative h-96 rounded-3xl overflow-hidden shadow-2xl group">
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10"></div>
-                    {/* We need OptimizedImage import here! */}
-                    <OptimizedImage
-                        src="/images/hero/team-buero-high-five-erfolg-feiern-banner-konfetti-ziel-erreicht-medaillen-wachstum.jpeg"
-                        alt="Unser Team feiert den Erfolg – High Five und Konfetti im Büro"
-                        className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute bottom-0 left-0 p-8 z-20 text-white">
-                        <h3 className="text-3xl font-bold mb-2">Unser Team</h3>
-                        <p className="text-lg text-gray-200">Gemeinsam dominieren wir den Markt. Jeden Tag.</p>
+            {/* Team Section */}
+            <section className="py-32 bg-white">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16">
+                        <h2 className="font-display font-bold text-4xl text-secondary mb-4">Die Köpfe dahinter</h2>
+                        <p className="text-slate-600">Menschen machen den Unterschied.</p>
                     </div>
+                    <TeamGallery />
                 </div>
-            </div>
+            </section>
+
         </div>
     );
 };

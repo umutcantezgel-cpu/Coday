@@ -1,23 +1,4 @@
-export interface BlogPostSection {
-    heading?: string;
-    text: string;
-    image?: string;
-    imageAlt?: string;
-}
-
-export interface BlogPost {
-    id: number;
-    title: string;
-    slug: string;
-    excerpt: string;
-    category: string;
-    readTime: string;
-    image: string;
-    alt: string;
-    author: string;
-    date: string;
-    content: BlogPostSection[];
-}
+import { BlogPost } from './types';
 
 export const BLOG_POSTS: BlogPost[] = [
     {
@@ -33,16 +14,34 @@ export const BLOG_POSTS: BlogPost[] = [
         date: "14. März 2026",
         content: [
             {
+                id: "b1-1",
+                type: "text",
                 heading: "1. Fehlende Mobile Optimierung",
-                text: "Über 60% des Traffics kommt heute über mobile Endgeräte. Eine Seite, die auf dem Smartphone nicht funktioniert, verliert den Großteil ihrer potenziellen Kunden noch bevor diese überhaupt den ersten Satz gelesen haben."
+                level: "h2",
+                content: "Über 60% des Traffics kommt heute über mobile Endgeräte. Eine Seite, die auf dem Smartphone nicht funktioniert, verliert den Großteil ihrer potenziellen Kunden noch bevor diese überhaupt den ersten Satz gelesen haben."
             },
             {
+                id: "b1-2",
+                type: "text",
                 heading: "2. Unklare Call-to-Actions (CTAs)",
-                text: "Der Besucher muss zu jeder Zeit wissen, was er als Nächstes tun soll. 'Hier klicken' reicht nicht. Nutzen Sie handlungsorientierte Aufforderungen wie 'Jetzt kostenloses Erstgespräch vereinbaren'."
+                level: "h2",
+                content: "Der Besucher muss zu jeder Zeit wissen, was er als Nächstes tun soll. 'Hier klicken' reicht nicht. Nutzen Sie handlungsorientierte Aufforderungen wie 'Jetzt kostenloses Erstgespräch vereinbaren'."
             },
             {
+                id: "b1-cta-1",
+                type: "cta",
+                title: "Lassen Sie Ihre Website auditieren",
+                description: "Finden Sie heraus, wo Sie Kunden verlieren.",
+                buttonText: "Kostenlosen Audit buchen",
+                href: "/contact",
+                variant: "primary"
+            },
+            {
+                id: "b1-3",
+                type: "text",
                 heading: "3. Zu lange Ladezeiten",
-                text: "Jede Sekunde Ladezeit kostet Sie 7% Conversion Rate. Optimieren Sie Bilder, nutzen Sie Caching und modernes Hosting, um blitzschnelle Erlebnisse zu garantieren."
+                level: "h2",
+                content: "Jede Sekunde Ladezeit kostet Sie 7% Conversion Rate. Optimieren Sie Bilder, nutzen Sie Caching und modernes Hosting, um blitzschnelle Erlebnisse zu garantieren."
             }
         ]
     },
@@ -59,12 +58,25 @@ export const BLOG_POSTS: BlogPost[] = [
         date: "10. März 2026",
         content: [
             {
+                id: "b2-1",
+                type: "text",
                 heading: "Daten als Gold des 21. Jahrhunderts",
-                text: "Ohne Daten fliegen Sie blind. Business Intelligence Tools helfen Ihnen, Muster zu erkennen, Kundenverhalten vorherzusagen und Budgets dort einzusetzen, wo sie den meisten ROI bringen."
+                level: "h2",
+                content: "Ohne Daten fliegen Sie blind. Business Intelligence Tools helfen Ihnen, Muster zu erkennen, Kundenverhalten vorherzusagen und Budgets dort einzusetzen, wo sie den meisten ROI bringen."
             },
             {
+                id: "b2-quote-1",
+                type: "quote",
+                text: "Wer nicht misst, kann nicht managen.",
+                author: "Peter Drucker",
+                variant: "gradient"
+            },
+            {
+                id: "b2-2",
+                type: "text",
                 heading: "Reporting vs. Analyse",
-                text: "Ein Report sagt Ihnen, was passiert ist. Eine Analyse sagt Ihnen, warum es passiert ist und was Sie tun können, um es zu wiederholen oder zu vermeiden."
+                level: "h2",
+                content: "Ein Report sagt Ihnen, was passiert ist. Eine Analyse sagt Ihnen, warum es passiert ist und was Sie tun können, um es zu wiederholen oder zu vermeiden."
             }
         ]
     },
@@ -81,8 +93,19 @@ export const BLOG_POSTS: BlogPost[] = [
         date: "05. März 2026",
         content: [
             {
+                id: "b3-1",
+                type: "text",
                 heading: "Konsistenz ist King",
-                text: "Ihre Marke muss auf Instagram genauso aussehen und klingen wie auf LinkedIn oder Ihrer Website. Ein Bruch in der Kommunikation verwirrt den Kunden und senkt das Vertrauen."
+                level: "h2",
+                content: "Ihre Marke muss auf Instagram genauso aussehen und klingen wie auf LinkedIn oder Ihrer Website. Ein Bruch in der Kommunikation verwirrt den Kunden und senkt das Vertrauen."
+            },
+            {
+                id: "b3-img-1",
+                type: "image",
+                src: "/images/marketing/omnichannel-marketing-hub-seo-social-content-strategie-vernetzt.jpeg",
+                alt: "Omnichannel Diagramm",
+                caption: "Ein integrierter Ansatz über alle Kanäle",
+                layout: "wide"
             }
         ]
     },
@@ -99,8 +122,11 @@ export const BLOG_POSTS: BlogPost[] = [
         date: "28. Februar 2026",
         content: [
             {
+                id: "b4-1",
+                type: "text",
                 heading: "Video First",
-                text: "Statische Bilder haben kaum noch organische Reichweite. Short-Form Video Content (Reels, TikToks, Shorts) ist der einzige Weg, um heute noch viral zu gehen ohne Ad-Budget."
+                level: "h2",
+                content: "Statische Bilder haben kaum noch organische Reichweite. Short-Form Video Content (Reels, TikToks, Shorts) ist der einzige Weg, um heute noch viral zu gehen ohne Ad-Budget."
             }
         ]
     },
@@ -117,8 +143,11 @@ export const BLOG_POSTS: BlogPost[] = [
         date: "20. Februar 2026",
         content: [
             {
+                id: "b5-1",
+                type: "text",
                 heading: "Personalisierung statt Gießkanne",
-                text: "Niemand liest mehr generische Newsletter. Nutzen Sie Tags und Segmente, um jedem Abonnenten genau die Inhalte zu schicken, die ihn interessieren."
+                level: "h2",
+                content: "Niemand liest mehr generische Newsletter. Nutzen Sie Tags und Segmente, um jedem Abonnenten genau die Inhalte zu schicken, die ihn interessieren."
             }
         ]
     },
@@ -135,8 +164,11 @@ export const BLOG_POSTS: BlogPost[] = [
         date: "15. Februar 2026",
         content: [
             {
+                id: "b6-1",
+                type: "text",
                 heading: "Authentizität schlägt Perfektion",
-                text: "Hochglanz-Imagefilme werden oft ignoriert. Authentische Einblicke, Behind-the-Scenes und ehrliche Experten-Talks bauen viel schneller Vertrauen auf."
+                level: "h2",
+                content: "Hochglanz-Imagefilme werden oft ignoriert. Authentische Einblicke, Behind-the-Scenes und ehrliche Experten-Talks bauen viel schneller Vertrauen auf."
             }
         ]
     },
@@ -153,9 +185,28 @@ export const BLOG_POSTS: BlogPost[] = [
         date: "01.04.2026",
         content: [
             {
+                id: "b7-1",
+                type: "text",
                 heading: "Performance ist ein Feature",
-                text: "Google bestraft langsame Seiten gnadenlos. Nutzer sind noch härter. Performance ist heute kein technisches Detail mehr, sondern ein zentrales Produkt-Feature."
+                level: "h2",
+                content: "Google bestraft langsame Seiten gnadenlos. Nutzer sind noch härter. Performance ist heute kein technisches Detail mehr, sondern ein zentrales Produkt-Feature."
+            },
+            {
+                id: "b7-code-1",
+                type: "code",
+                language: "javascript",
+                filename: "lazy-loading.js",
+                code: `// Modernes Lazy Loading
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      loadImage(entry.target);
+      observer.unobserve(entry.target);
+    }
+  });
+});`
             }
         ]
     }
 ];
+

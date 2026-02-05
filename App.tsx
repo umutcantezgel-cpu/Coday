@@ -24,13 +24,14 @@ const Terms = lazy(() => import('./pages/legal/Terms'));
 const CaseStudy = lazy(() => import('./pages/CaseStudy'));
 const Booking = lazy(() => import('./pages/Booking'));
 const Packages = lazy(() => import('./pages/Packages'));
-const Manifesto = lazy(() => import('./pages/Manifesto'));
+
 const Calculator = lazy(() => import('./pages/Calculator'));
 
 // Work
 const Work = lazy(() => import('./pages/work/Work'));
 const ProjectDetail = lazy(() => import('./pages/work/ProjectDetail'));
 const CreativeImpact = lazy(() => import('./content/case-studies/creative-impact.mdx'));
+const Batherm = lazy(() => import('./content/case-studies/batherm.mdx'));
 
 // Services - lazy loaded
 const WebDevelopment = lazy(() => import('./pages/services/WebDevelopment'));
@@ -40,14 +41,25 @@ const IndustryOverview = lazy(() => import('./pages/services/IndustryOverview'))
 const IndustryDetail = lazy(() => import('./pages/services/IndustryDetail'));
 const Seo = lazy(() => import('./pages/services/Seo'));
 const Performance = lazy(() => import('./pages/services/Performance'));
+const EnterpriseWeb = lazy(() => import('./pages/services/EnterpriseWeb'));
 
 // Dev Sub-Pages
+// const AppDevelopment = lazy(() => import('./pages/services/AppDevelopment')); // Deleted
+const EcommerceDevelopment = lazy(() => import('./pages/services/EcommerceDevelopment'));
+// Industries
+const Handwerk = lazy(() => import('./pages/industries/Handwerk'));
+const Immobilien = lazy(() => import('./pages/industries/Immobilien'));
+const Gastronomie = lazy(() => import('./pages/industries/Gastronomie'));
+const Gesundheit = lazy(() => import('./pages/industries/Gesundheit'));
+const Dienstleistung = lazy(() => import('./pages/industries/Dienstleistung'));
+const Retail = lazy(() => import('./pages/industries/Retail'));
+
 const Ecommerce = lazy(() => import('./pages/services/development/Ecommerce'));
 const WebApps = lazy(() => import('./pages/services/development/WebApps'));
 const HeadlessCms = lazy(() => import('./pages/services/development/HeadlessCms'));
 const ApiIntegration = lazy(() => import('./pages/services/development/ApiIntegration'));
 const Migration = lazy(() => import('./pages/services/development/Migration'));
-const MobilePwa = lazy(() => import('./pages/services/development/MobilePwa'));
+// const MobilePwa = lazy(() => import('./pages/services/development/MobilePwa')); // Merged into AppDevelopment
 
 // Design Sub-Pages
 const UiUx = lazy(() => import('./pages/services/design/UiUx'));
@@ -63,9 +75,13 @@ const Newsletter = lazy(() => import('./pages/knowledge/Newsletter'));
 const Whitepapers = lazy(() => import('./pages/knowledge/Whitepapers'));
 
 // Career
+const Careers = lazy(() => import('./pages/Careers'));
 const Jobs = lazy(() => import('./pages/career/Jobs'));
 const Culture = lazy(() => import('./pages/career/Culture'));
 const Benefits = lazy(() => import('./pages/career/Benefits'));
+
+// AI Tools
+const Analyzer = lazy(() => import('./pages/Analyzer'));
 
 // ScrollToTop component
 const ScrollToTop = () => {
@@ -107,13 +123,26 @@ const App: React.FC = () => {
               <Route path="/services/web-development/cms-headless" element={<HeadlessCms />} />
               <Route path="/services/web-development/api-integrations" element={<ApiIntegration />} />
               <Route path="/services/web-development/migration" element={<Migration />} />
-              <Route path="/services/web-development/mobile-pwa" element={<MobilePwa />} />
+              <Route path="/services/web-development/migration" element={<Migration />} />
+
+
+              {/* Main Service Pages */}
+              {/* Enterprise Web Route (Coming Soon) */}
+              <Route path="/services/enterprise-web" element={<EnterpriseWeb />} />
 
               {/* Web Design Sub-Services */}
               <Route path="/services/web-design/ui-ux" element={<UiUx />} />
               <Route path="/services/web-design/brand-identity" element={<BrandIdentity />} />
               <Route path="/services/web-design/design-systems" element={<DesignSystems />} />
               <Route path="/services/web-design/audit" element={<UxAudit />} />
+
+              {/* Industry Domination Routes */}
+              <Route path="/services/industries/handwerk" element={<Handwerk />} />
+              <Route path="/services/industries/immobilien" element={<Immobilien />} />
+              <Route path="/services/industries/gastronomie" element={<Gastronomie />} />
+              <Route path="/services/industries/gesundheit" element={<Gesundheit />} />
+              <Route path="/services/industries/dienstleistung" element={<Dienstleistung />} />
+              <Route path="/services/industries/e-commerce" element={<Retail />} />
 
               {/* Dynamic Service Detail Route (Fallback) */}
               <Route path="/services/:category/:slug" element={<ServiceDetail />} />
@@ -127,6 +156,7 @@ const App: React.FC = () => {
 
               {/* MDX Case Studies */}
               <Route path="/work/creative-impact" element={<CreativeImpact />} />
+              <Route path="/work/batherm" element={<Batherm />} />
 
               <Route path="/work/:slug" element={<ProjectDetail />} />
 
@@ -150,11 +180,14 @@ const App: React.FC = () => {
               <Route path="/knowledge/whitepapers" element={<Whitepapers />} />
 
               {/* Career Routes */}
+              <Route path="/career" element={<Careers />} />
+              <Route path="/careers" element={<Careers />} />
               <Route path="/career/jobs" element={<Jobs />} />
               <Route path="/career/culture" element={<Culture />} />
               <Route path="/career/benefits" element={<Benefits />} />
-
-              <Route path="/manifesto" element={<Manifesto />} />
+              {/* AI Tools */}
+              <Route path="/analyzer" element={<Analyzer />} />
+              <Route path="/website-audit" element={<Analyzer />} />
 
               <Route path="*" element={<NotFound />} />
             </Routes>

@@ -1,76 +1,136 @@
 import React from 'react';
 import { LegalLayout } from '../../components/LegalLayout';
 
+import { useTranslation } from 'react-i18next';
+
 const Terms: React.FC = () => {
+    const { t } = useTranslation('legal');
     const tocItems = [
-        { id: 'geltung', label: '§ 1 Geltungsbereich' },
-        { id: 'vertrag', label: '§ 2 Vertragsschluss' },
-        { id: 'leistung', label: '§ 3 Leistungen und Inhalte' },
-        { id: 'zahlung', label: '§ 4 Zahlungsbedingungen' },
-        { id: 'haftung', label: '§ 5 Haftung' },
-        { id: 'schluss', label: '§ 6 Schlussbestimmungen' },
+        { id: 'geltung', label: t('terms.toc.geltung') },
+        { id: 'vertrag', label: t('terms.toc.vertrag') },
+        { id: 'leistung', label: t('terms.toc.leistung') },
+        { id: 'preise', label: t('terms.toc.preise') },
+        { id: 'ki', label: t('terms.toc.ki') },
+        { id: 'haftung', label: t('terms.toc.haftung') },
+        { id: 'schluss', label: t('terms.toc.schluss') },
     ];
 
     return (
         <LegalLayout
-            title="Allgemeine Geschäftsbedingungen"
-            lastUpdated="Oktober 2023"
+            title={t('terms.title')}
+            lastUpdated={t('terms.last_updated', { date: '04.02.2026' })}
             tocItems={tocItems}
         >
             <section id="geltung" className="scroll-mt-32 mb-12">
-                <h2 className="font-display text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-100">§ 1 Geltungsbereich</h2>
+                <h2 className="font-display text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-100">{t('terms.sections.1.title')}</h2>
                 <p className="leading-relaxed text-gray-600 mb-4">
-                    (1) Diese Allgemeinen Geschäftsbedingungen (nachfolgend „AGB“) der Coday GmbH (nachfolgend „Anbieter“), gelten für alle Verträge über die Lieferung von Dienstleistungen, digitalen Inhalten und den Zugang zur Community, die ein Verbraucher oder Unternehmer (nachfolgend „Kunde“) mit dem Anbieter hinsichtlich der vom Anbieter auf seiner Website dargestellten Waren und Leistungen abschließt.
+                    {t('terms.sections.1.p1')}
                 </p>
                 <p className="leading-relaxed text-gray-600">
-                    (2) Hiermit wird der Einbeziehung von eigenen Bedingungen des Kunden widersprochen, es sei denn, es ist etwas anderes vereinbart.
+                    {t('terms.sections.1.p2')}
                 </p>
             </section>
 
             <section id="vertrag" className="scroll-mt-32 mb-12">
-                <h2 className="font-display text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-100">§ 2 Vertragsschluss</h2>
+                <h2 className="font-display text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-100">{t('terms.sections.2.title')}</h2>
                 <p className="leading-relaxed text-gray-600 mb-4">
-                    (1) Die im Online-Shop des Verkäufers enthaltenen Produktbeschreibungen stellen keine verbindlichen Angebote seitens des Verkäufers dar, sondern dienen zur Abgabe eines verbindlichen Angebots durch den Kunden.
+                    {t('terms.sections.2.p1')}
+                </p>
+                <p className="leading-relaxed text-gray-600 mb-4">
+                    {t('terms.sections.2.p2')}
                 </p>
                 <p className="leading-relaxed text-gray-600">
-                    (2) Der Kunde kann das Angebot über das in den Online-Shop des Verkäufers integrierte Online-Bestellformular abgeben. Dabei gibt der Kunde, nachdem er die ausgewählten Waren in den virtuellen Warenkorb gelegt und den elektronischen Bestellprozess durchlaufen hat, durch Klicken des den Bestellvorgang abschließenden Buttons ein rechtlich verbindliches Vertragsangebot in Bezug auf die im Warenkorb enthaltenen Waren ab.
+                    {t('terms.sections.2.p3')}
                 </p>
             </section>
 
             <section id="leistung" className="scroll-mt-32 mb-12">
-                <h2 className="font-display text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-100">§ 3 Leistungen und Inhalte</h2>
+                <h2 className="font-display text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-100">{t('terms.sections.3.title')}</h2>
                 <p className="leading-relaxed text-gray-600 mb-4">
-                    (1) Der Anbieter stellt dem Kunden Zugang zu einer digitalen Community-Plattform sowie diverse digitale Lerninhalte zur Verfügung. Der genaue Leistungsumfang ergibt sich aus der jeweiligen Produktbeschreibung auf der Webseite.
+                    {t('terms.sections.3.p1')}
+                </p>
+                <p className="leading-relaxed text-gray-600 mb-4">
+                    {t('terms.sections.3.p2')}
                 </p>
                 <p className="leading-relaxed text-gray-600">
-                    (2) Der Anbieter ist berechtigt, die Inhalte jederzeit zu aktualisieren, zu erweitern oder unwesentliche Bestandteile zu ändern, sofern dies den Kern der vereinbarten Leistung nicht berührt und für den Kunden zumutbar ist.
+                    {t('terms.sections.3.p3')}
                 </p>
             </section>
 
-            <section id="zahlung" className="scroll-mt-32 mb-12">
-                <h2 className="font-display text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-100">§ 4 Zahlungsbedingungen</h2>
+            <section id="preise" className="scroll-mt-32 mb-12">
+                <h2 className="font-display text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-100">{t('terms.sections.4.title')}</h2>
                 <p className="leading-relaxed text-gray-600 mb-4">
-                    (1) Sofern sich aus der Produktbeschreibung des Verkäufers nichts anderes ergibt, handelt es sich bei den angegebenen Preisen um Gesamtpreise, die die gesetzliche Umsatzsteuer enthalten. Gegebenenfalls zusätzlich anfallende Liefer- und Versandkosten werden in der jeweiligen Produktbeschreibung gesondert angegeben.
+                    {t('terms.sections.4.p1')}
+                </p>
+                <p className="leading-relaxed text-gray-600 mb-4">
+                    {t('terms.sections.4.p2')}
+                </p>
+                <p className="leading-relaxed text-gray-600 mb-4">
+                    {t('terms.sections.4.p3')}
                 </p>
                 <p className="leading-relaxed text-gray-600">
-                    (2) Bei Zahlungen aus Ländern außerhalb der Europäischen Union können im Einzelfall weitere Kosten anfallen, die der Verkäufer nicht zu vertreten hat und die vom Kunden zu tragen sind.
+                    {t('terms.sections.4.p4')}
+                </p>
+            </section>
+
+            <section id="ki" className="scroll-mt-32 mb-12">
+                <h2 className="font-display text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-100">{t('terms.sections.5.title')}</h2>
+
+                <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-6">
+                    <p className="text-amber-800 font-medium m-0">
+                        {t('terms.sections.5.note')}
+                    </p>
+                </div>
+
+                <p className="leading-relaxed text-gray-600 mb-4">
+                    {t('terms.sections.5.p1')}
+                </p>
+                <p className="leading-relaxed text-gray-600 mb-4">
+                    {t('terms.sections.5.p2')}
+                </p>
+                <p className="leading-relaxed text-gray-600 mb-4">
+                    {t('terms.sections.5.p3')}
+                </p>
+                <p className="leading-relaxed text-gray-600 mb-4">
+                    {t('terms.sections.5.p4')}
+                </p>
+                <ul className="list-disc pl-5 text-gray-600 space-y-2 mb-4">
+                    <li>{t('terms.sections.5.list.1', { defaultValue: 'Finanzielle Entscheidungen' })}</li>
+                    <li>{t('terms.sections.5.list.2', { defaultValue: 'Geschäftliche Strategien' })}</li>
+                    <li>{t('terms.sections.5.list.3', { defaultValue: 'Rechtliche Maßnahmen' })}</li>
+                    <li>{t('terms.sections.5.list.4', { defaultValue: 'Gesundheitsbezogene Entscheidungen' })}</li>
+                </ul>
+                <p className="leading-relaxed text-gray-600">
+                    {t('terms.sections.5.p5')}
                 </p>
             </section>
 
             <section id="haftung" className="scroll-mt-32 mb-12">
-                <h2 className="font-display text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-100">§ 5 Haftung</h2>
+                <h2 className="font-display text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-100">{t('terms.sections.6.title')}</h2>
+                <p className="leading-relaxed text-gray-600 mb-4">
+                    {t('terms.sections.6.p1')}
+                </p>
+                <p className="leading-relaxed text-gray-600 mb-4">
+                    {t('terms.sections.6.p2')}
+                </p>
                 <p className="leading-relaxed text-gray-600">
-                    Der Anbieter haftet unbeschränkt, soweit die Schadensursache auf Vorsatz oder grober Fahrlässigkeit beruht. Ferner haftet der Anbieter für die leicht fahrlässige Verletzung von wesentlichen Pflichten, deren Verletzung die Erreichung des Vertragszwecks gefährdet, oder für die Verletzung von Pflichten, deren Erfüllung die ordnungsgemäße Durchführung des Vertrages überhaupt erst ermöglicht und auf deren Einhaltung der Kunde regelmäßig vertraut.
+                    {t('terms.sections.6.p3')}
                 </p>
             </section>
 
             <section id="schluss" className="scroll-mt-32 mb-12">
-                <h2 className="font-display text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-100">§ 6 Schlussbestimmungen</h2>
+                <h2 className="font-display text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-100">{t('terms.sections.7.title')}</h2>
                 <p className="leading-relaxed text-gray-600 mb-4">
-                    (1) Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss der Gesetze über den internationalen Kauf beweglicher Sachen.
+                    {t('terms.sections.7.p1')}
+                </p>
+                <p className="leading-relaxed text-gray-600 mb-4">
+                    {t('terms.sections.7.p2')}
+                </p>
+                <p className="leading-relaxed text-gray-600 mb-4">
+                    {t('terms.sections.7.p3')}
                 </p>
                 <p className="leading-relaxed text-gray-600">
-                    (2) Ist der Kunde Kaufmann, juristische Person des öffentlichen Rechts oder öffentlich-rechtliches Sondervermögen, ist ausschließlicher Gerichtsstand für alle Streitigkeiten aus diesem Vertrag der Geschäftssitz des Anbieters. Dasselbe gilt, wenn der Kunde keinen allgemeinen Gerichtsstand in Deutschland oder der EU hat.
+                    {t('terms.sections.7.p4')} <a href="mailto:umut@codayweb.de" className="text-primary hover:underline">umut@codayweb.de</a>
                 </p>
             </section>
         </LegalLayout>

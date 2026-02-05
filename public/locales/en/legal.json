@@ -1,0 +1,215 @@
+{
+    "impressum": {
+        "title": "Imprint",
+        "subtitle": "Information according to § 5 DDG",
+        "provider": {
+            "title": "Provider",
+            "name": "Umutcan Emre Tezgel",
+            "address": "Lessingstraße 4\n35578 Wetzlar\nGermany"
+        },
+        "contact": {
+            "title": "Contact",
+            "phone": "Phone: ",
+            "email": "Email: ",
+            "web": "Web: "
+        },
+        "representative": {
+            "title": "Represented by",
+            "name": "Owner: Umutcan Emre Tezgel"
+        },
+        "profession": {
+            "title": "Job Title",
+            "desc": "Web Designer / Sole Proprietor"
+        },
+        "tax": {
+            "title": "Tax Number",
+            "number": "039 874 00784"
+        },
+        "liability": {
+            "title": "Liability & Copyright Notices",
+            "content": {
+                "title": "Liability for Content",
+                "desc": "As a service provider, we are responsible for our own content on these pages in accordance with general laws pursuant to § 7 Para.1 DDG."
+            },
+            "images": {
+                "title": "Image Credits",
+                "desc": "All images used on this website were created by us or generated using AI image generators. The copyright belongs to the operator of this website."
+            }
+        },
+        "toc": {
+            "anbieter": "Provider & Contact",
+            "vertreter": "Representation & Register",
+            "haftung": "Liability & Copyright"
+        }
+    },
+    "privacy": {
+        "title": "Privacy",
+        "subtitle": "Policy",
+        "last_updated": "Last Update: {{date}}",
+        "intro": "We take the protection of your personal data very seriously. Below we inform you about the collection, processing, and use of your data in accordance with the General Data Protection Regulation (GDPR).",
+        "sections": {
+            "1": {
+                "title": "1. Name and Contact Details of the Controller",
+                "content": "This privacy information applies to data processing by:"
+            },
+            "2": {
+                "title": "2. Collection and Storage of Personal Data",
+                "a": {
+                    "title": "a) When visiting the website",
+                    "content": "When calling up our website, information is automatically sent to the server by the browser. This is temporarily stored in log files:"
+                },
+                "b": {
+                    "title": "b) When using our contact form",
+                    "content": "When using the contact form, we collect: Name, email address, phone number (optional), your message."
+                },
+                "c": {
+                    "title": "c) When using the website analyzer",
+                    "content": "When using the website analyzer, we collect: The analyzed URL, email address (for report delivery), analysis results are temporarily stored."
+                },
+                "d": {
+                    "title": "d) When using the chatbot (Jarvis)",
+                    "content": "The chatbot stores your conversation locally in the browser to provide chat functionality. The messages are transmitted to external AI services for processing (see section 4)."
+                }
+            },
+            "3": {
+                "title": "3. Cookies",
+                "content": "We use the following cookie categories:",
+                "necessary": {
+                    "title": "Necessary Cookies",
+                    "desc": "Required for basic website functions (session, cookie settings)."
+                },
+                "functional": {
+                    "title": "Functional Cookies",
+                    "desc": "Save your preferences like chatbot history (localStorage)."
+                },
+                "analytics": {
+                    "title": "Analytics Cookies (optional)",
+                    "desc": "Google Analytics to improve our website - only with your consent."
+                },
+                "note": "You can adjust your cookie settings at any time via the cookie banner."
+            },
+            "4": {
+                "title": "4. AI Services and Automated Processing",
+                "note": "Note: Our AI assistant 'Jarvis' and the website analyzer use external AI services for processing.",
+                "gemini": {
+                    "title": "a) Google Gemini API",
+                    "content": "For the chatbot and website analyzer, your requests are transmitted to the Google Gemini API. Processed are: Your chat messages, website content during analysis. Legal basis: Art. 6 Para. 1 lit. a GDPR (Consent via use)."
+                },
+                "perplexity": {
+                    "title": "b) Perplexity API",
+                    "content": "The Perplexity API is used for advanced search queries. Only the search queries are transmitted, no personal data."
+                },
+                "disclaimer": {
+                    "title": "c) No Legal/Medical Advice",
+                    "content": "AI-generated answers are for informational purposes only and do not replace professional advice. We assume no liability for decisions made based on AI answers."
+                }
+            },
+            "5": {
+                "title": "5. Processors and Third-Party Providers",
+                "content": "We work with the following service providers:"
+            },
+            "6": {
+                "title": "6. Rights of Data Subjects",
+                "content": "You have the following rights regarding your personal data:",
+                "contact": "To exercise your rights, please contact us at:"
+            },
+            "7": {
+                "title": "7. Data Security",
+                "content": "We use TLS/SSL encryption for all data transmissions. Our systems are regularly updated and checked for security vulnerabilities. Access to personal data is restricted to authorized employees."
+            }
+        },
+        "toc": {
+            "verantwortlicher": "1. Controller",
+            "erhebung": "2. Data Collection",
+            "cookies": "3. Cookies",
+            "ki_dienste": "4. AI Services",
+            "auftragsverarbeiter": "5. Processors",
+            "rechte": "6. Rights",
+            "sicherheit": "7. Security"
+        }
+    },
+    "terms": {
+        "title": "General Terms and Conditions",
+        "last_updated": "As of: {{date}}",
+        "sections": {
+            "1": {
+                "title": "§ 1 Scope",
+                "p1": "(1) These General Terms and Conditions (hereinafter 'GTC') of Umutcan Emre Tezgel...",
+                "p2": "(2) Deviating conditions of the customer are not recognized..."
+            },
+            "2": {
+                "title": "§ 2 Conclusion of Contract",
+                "p1": "(1) The service descriptions...",
+                "p2": "(2) By sending a request...",
+                "p3": "(3) A contract is only concluded..."
+            },
+            "3": {
+                "title": "§ 3 Services",
+                "p1": "(1) The provider provides web design...",
+                "p2": "(2) The number of revision rounds...",
+                "p3": "(3) The provider grants a 30-day bug-fixing guarantee..."
+            },
+            "4": {
+                "title": "§ 4 Prices & Fixed Price Guarantee",
+                "p1": "(1) Fixed Price Guarantee: The price mentioned is fixed.",
+                "p2": "(2) Additional services...",
+                "p3": "(3) All prices are net prices...",
+                "p4": "(4) Payment is generally: 50% on order..."
+            },
+            "5": {
+                "title": "§ 5 AI Services & Disclaimer",
+                "note": "Important Note: The AI assistant uses automated systems.",
+                "p1": "(1) No Advice...",
+                "p2": "(2) Automatically Generated Content...",
+                "p3": "(3) No Guarantee...",
+                "p4": "(4) Liability Disclaimer...",
+                "p5": "(5) Website Analyzer..."
+            },
+            "6": {
+                "title": "§ 6 General Liability",
+                "p1": "(1) The provider is liable without limitation...",
+                "p2": "(2) In case of slight negligence...",
+                "p3": "(3) Otherwise liability is excluded."
+            },
+            "7": {
+                "title": "§ 7 Final Provisions",
+                "p1": "(1) The law of the Federal Republic of Germany applies.",
+                "p2": "(2) Place of jurisdiction is Wetzlar...",
+                "p3": "(3) Should individual provisions be invalid...",
+                "p4": "(4) For questions: "
+            }
+        },
+        "toc": {
+            "geltung": "§ 1 Scope",
+            "vertrag": "§ 2 Contract",
+            "leistung": "§ 3 Services",
+            "preise": "§ 4 Prices",
+            "ki": "§ 5 AI Services",
+            "haftung": "§ 6 Liability",
+            "schluss": "§ 7 Final"
+        }
+    },
+    "disclaimer": {
+        "title": "AI Disclaimer & Transparency",
+        "intro": {
+            "title": "Use of Artificial Intelligence",
+            "content": "At Agency Domination, we use advanced technologies..."
+        },
+        "analysis": {
+            "title": "Website Analysis",
+            "content": "Our 'Website Analyzer' tool uses the Google Gemini API..."
+        },
+        "content": {
+            "title": "Content Creation & Code",
+            "content": "AI tools can be used for support..."
+        },
+        "liability": {
+            "title": "Liability Disclaimer",
+            "content": "Although we strive for accuracy..."
+        },
+        "copyright": {
+            "title": "Copyright & Privacy",
+            "content": "We respect copyright..."
+        }
+    }
+}

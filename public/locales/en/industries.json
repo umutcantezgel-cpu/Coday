@@ -1,0 +1,71 @@
+{
+    "common": {
+        "cta_analysis": "Free Analysis",
+        "cta_contact": "Get in Touch",
+        "cta_more": "Learn More",
+        "features": {
+            "google_maps": "Google Maps Optimization",
+            "regional_pages": "Regional Landing Pages",
+            "review_management": "Automated Review Management"
+        }
+    },
+    "handwerk": {
+        "hero": {
+            "label": "Digitization for Craftsmen",
+            "title_1": "More Orders.",
+            "title_2": "Less Paperwork.",
+            "description": "We help roofers, plumbers, and electricians find the right employees and automatically pre-qualify dream customers."
+        },
+        "recruiting": {
+            "label": "Talent Acquisition",
+            "title": "Find Skilled Workers.",
+            "subtitle": "Without Recruiters.",
+            "description": "Good craftsmen aren't unemployed. They're on social media. We reach them where they spend their free time."
+        },
+        "local_seo": {
+            "label": "Local Visibility",
+            "title": "Be #1 in Your Region.",
+            "description": "When someone in your city searches for \"roofer\" or \"bathroom renovation\", you need to be at the top. Not somewhere on page 2."
+        }
+    },
+    "gastronomie": {
+        "hero": {
+            "label": "Digitization for Gastronomy",
+            "title_1": "More Guests.",
+            "title_2": "Less Stress.",
+            "description": "We help restaurants, cafés, and hotels optimize their online presence and automate reservations."
+        }
+    },
+    "immobilien": {
+        "hero": {
+            "label": "Digitization for Real Estate",
+            "title_1": "More Leads.",
+            "title_2": "Better Properties.",
+            "description": "We help real estate agents and developers digitally attract qualified buyers and sellers."
+        }
+    },
+    "gesundheit": {
+        "hero": {
+            "label": "Digitization for Healthcare",
+            "title_1": "More Patients.",
+            "title_2": "Less Administration.",
+            "description": "We help practices and clinics strengthen their digital presence and automate appointment bookings."
+        }
+    },
+    "dienstleistung": {
+        "hero": {
+            "label": "Digitization for Service Providers",
+            "title_1": "More Clients.",
+            "title_2": "Less Cold Calling.",
+            "description": "We help consultants, agencies, and freelancers showcase their expertise online and attract clients."
+        }
+    },
+    "retail": {
+        "hero": {
+            "label": "Digitization for Retail",
+            "title_1": "More Sales.",
+            "title_2": "Online and Offline.",
+            "description": "We help retailers connect their physical and digital presence."
+        }
+    }
+}

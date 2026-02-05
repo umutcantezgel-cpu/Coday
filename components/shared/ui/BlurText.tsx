@@ -1,5 +1,5 @@
 import React from 'react';
-import { m, Transition, Easing } from 'motion/react';
+import { motion, Transition, Easing } from 'motion/react';
 import { useEffect, useRef, useState, useMemo } from 'react';
 
 type BlurTextProps = {
@@ -101,7 +101,7 @@ const BlurText: React.FC<BlurTextProps> = ({
                 };
 
                 return (
-                    <m.span
+                    <motion.span
                         key={index}
                         initial={fromSnapshot}
                         animate={inView ? animateKeyframes : fromSnapshot}
@@ -114,7 +114,7 @@ const BlurText: React.FC<BlurTextProps> = ({
                     >
                         {segment === ' ' ? '\u00A0' : segment}
                         {animateBy === 'words' && index < elements.length - 1 && '\u00A0'}
-                    </m.span>
+                    </motion.span>
                 );
             })}
         </p>

@@ -11,7 +11,8 @@
    Let's try the modern v4 import. */
 
 @theme {
-  --color-primary: #1A9A9A;
+  --color-primary: #147a7a;
+  /* Darkened from #1A9A9A for WCAG AA constrast */
   --color-secondary: #2D3748;
   --font-display: "Outfit", sans-serif;
   --font-sans: "Inter", sans-serif;
@@ -42,6 +43,21 @@
   /* Organic Shapes */
   .shape-blob {
     border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  }
+
+  /* Mobile Touch Targets (POLLUX) - Min 44px */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px] flex items-center justify-center;
+  }
+
+  /* CTA in Thumb Zone - Bottom positioned on mobile */
+  .thumb-zone-cta {
+    @apply fixed bottom-4 left-4 right-4 z-50 md:static md:bottom-auto md:left-auto md:right-auto md:z-auto;
+  }
+
+  /* Skip link for accessibility */
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded-lg;
   }
 }
 

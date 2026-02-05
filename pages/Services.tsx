@@ -1,27 +1,35 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
 import { OptimizedImage } from '../shared/ui/OptimizedImage';
 import { serviceImages } from '../data/serviceImages';
-import BlurText from '../components/shared/ui/BlurText';
-import GradientText from '../components/shared/ui/GradientText';
+import ScrollFloat from '../shared/ui/ScrollFloat';
+// Premium UI Components
+import RotatingText from '../shared/ui/RotatingText';
+import { MagicBento, BentoCard } from '../shared/ui/MagicBento';
+import GlareHover from '../shared/ui/GlareHover';
 
 const Services: React.FC = () => {
+  const { t } = useTranslation(['services', 'common']);
+
   const categories = [
     {
       icon: "code",
-      title: "Web Development",
-      description: "Next.js, React & TypeScript. Wir bauen hochperformante Web-Applikationen, die skalieren.",
+      title: t('categories.web_development.title'),
+      description: t('categories.web_development.description'),
       link: "/services/web-development",
       color: "bg-blue-500",
-      imageKey: "development"
+      imageKey: "development",
+      effect: "spotlight" as const
     },
     {
       icon: "palette",
-      title: "Web Design",
-      description: "Award-winning UX/UI Design. Ästhetik, die Ihre Marke unvergesslich macht und konvertiert.",
+      title: t('categories.web_design.title'),
+      description: t('categories.web_design.description'),
       link: "/services/web-design",
       color: "bg-purple-500",
-      imageKey: "webdesign"
+      imageKey: "webdesign",
+      effect: "glow" as const
     }
   ];
 
@@ -30,28 +38,28 @@ const Services: React.FC = () => {
       {/* Header with Hero Image */}
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-          <div className="text-center lg:text-left">
-            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">Expertise</span>
-            <h1 className="font-display font-black text-4xl sm:text-6xl text-gray-900 mb-6">
-              <BlurText
-                text="Unsere"
-                delay={100}
-                animateBy="words"
-                direction="top"
-                className="block"
+          <div className="text-center lg:text-start">
+            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">{t('hero.label')}</span>
+            <ScrollFloat
+              animationDuration={0.8}
+              ease="back.out(1.7)"
+              scrollStart="top bottom"
+              scrollEnd="center center"
+              stagger={0.02}
+              containerClassName="!my-0 mb-4"
+              textClassName="font-display font-black text-4xl sm:text-6xl text-gray-900"
+            >
+              {t('hero.title')}
+            </ScrollFloat>
+            <div className="max-w-2xl">
+              <RotatingText
+                texts={t('hero.rotating', { returnObjects: true }) as string[]}
+                rotationInterval={3500}
+                staggerFrom="first"
+                staggerDuration={0.025}
+                mainClassName="text-xl text-gray-600 leading-relaxed"
               />
-              <GradientText
-                colors={['#1A9A9A', '#2D3748', '#1A9A9A']}
-                animationSpeed={8}
-                showBorder={false}
-                className="inline-block"
-              >
-                Service Pillars.
-              </GradientText>
-            </h1>
-            <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
-              Wir bieten spezialisierte Lösungen in vier Kernbereichen, um Ihr Unternehmen digital an die Spitze zu bringen.
-            </p>
+            </div>
           </div>
           <div className="relative hidden lg:block">
             <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-3xl transform rotate-2"></div>
@@ -65,64 +73,76 @@ const Services: React.FC = () => {
         </div>
       </section>
 
-      {/* Categories Grid */}
+      {/* Categories Grid with MagicBento */}
       <section className="pb-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
+        <MagicBento columns={2} gap={32} className="max-w-7xl mx-auto">
           {categories.map((cat, index) => (
-            <NavLink
+            <BentoCard
               key={index}
-              to={cat.link}
-              className="group relative bg-white rounded-3xl p-10 shadow-aurora border border-gray-100 overflow-hidden hover:shadow-aurora-lg transition-all duration-300 transform hover:-translate-y-1 block h-full"
+              effect={cat.effect}
+              spotlightColor="rgba(26, 154, 154, 0.15)"
+              glowColor="rgba(139, 92, 246, 0.3)"
+              className="h-full"
             >
-              {/* Decorative Background Image */}
-              <div className="absolute top-0 right-0 w-64 h-64 opacity-5 transform translate-x-12 -translate-y-12 group-hover:scale-110 group-hover:opacity-10 transition-all duration-500 rounded-bl-full overflow-hidden pointer-events-none">
-                {serviceImages[cat.imageKey || 'hero'] && (
-                  <OptimizedImage
-                    src={serviceImages[cat.imageKey || 'hero'].src}
-                    alt=""
-                    className="w-full h-full object-cover mix-blend-multiply"
-
-                  />
-                )}
-              </div>
-              <div className={`absolute top-0 right-0 w-32 h-32 ${cat.color} opacity-5 rounded-bl-full group-hover:scale-110 transition-transform duration-500`}></div>
-
-              <div className="relative z-10">
-                <div className={`w-16 h-16 ${cat.color} bg-opacity-10 rounded-2xl flex items-center justify-center text-${cat.color.replace('bg-', '')} mb-8 group-hover:scale-110 transition-transform duration-300`}>
-                  <span className="material-symbols-outlined text-3xl text-gray-900">{cat.icon}</span>
+              <NavLink
+                to={cat.link}
+                className="group relative p-10 block h-full"
+              >
+                {/* Decorative Background Image */}
+                <div className="absolute top-0 end-0 w-64 h-64 opacity-5 transform translate-x-12 rtl:-translate-x-12 -translate-y-12 group-hover:scale-110 group-hover:opacity-10 transition-all duration-500 rounded-bl-full rtl:rounded-br-full rtl:rounded-bl-none overflow-hidden pointer-events-none">
+                  {serviceImages[cat.imageKey || 'hero'] && (
+                    <OptimizedImage
+                      src={serviceImages[cat.imageKey || 'hero'].src}
+                      alt=""
+                      className="w-full h-full object-cover mix-blend-multiply"
+                    />
+                  )}
                 </div>
+                <div className={`absolute top-0 end-0 w-32 h-32 ${cat.color} opacity-5 rounded-bl-full rtl:rounded-br-full rtl:rounded-bl-none group-hover:scale-110 transition-transform duration-500`}></div>
 
-                <h3 className="font-display font-bold text-3xl text-gray-900 mb-4 group-hover:text-primary transition-colors">
-                  {cat.title}
-                </h3>
-                <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                  {cat.description}
-                </p>
+                <div className="relative z-10">
+                  <div className={`w-16 h-16 ${cat.color} bg-opacity-10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300`}>
+                    <span className="material-symbols-outlined text-3xl text-gray-900">{cat.icon}</span>
+                  </div>
 
-                <div className="flex items-center text-primary font-bold tracking-wide uppercase text-sm">
-                  Mehr erfahren
-                  <span className="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                  <h3 className="font-display font-bold text-3xl text-gray-900 mb-4 group-hover:text-primary transition-colors">
+                    {cat.title}
+                  </h3>
+                  <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                    {cat.description}
+                  </p>
+
+                  <div className="flex items-center text-primary font-bold tracking-wide uppercase text-sm">
+                    {t('cta.more')}
+                    <span className="material-symbols-outlined ms-2 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform">arrow_forward</span>
+                  </div>
                 </div>
-              </div>
-            </NavLink>
+              </NavLink>
+            </BentoCard>
           ))}
-        </div>
+        </MagicBento>
       </section>
 
-      {/* CTA */}
+      {/* CTA with GlareHover */}
       <section className="py-20 bg-white border-t border-gray-100">
         <div className="max-w-5xl mx-auto px-4 text-center">
-          <BlurText
-            text="Bereit für den nächsten Schritt?"
-            delay={80}
-            animateBy="words"
-            direction="bottom"
-            className="font-display font-bold text-3xl text-gray-900 mb-8 justify-center"
-          />
-          <NavLink to="/contact" className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl bg-gray-900 hover:bg-gray-800 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
-            Projekt anfragen
-            <span className="material-symbols-outlined ml-2">arrow_forward</span>
-          </NavLink>
+          <ScrollFloat
+            animationDuration={0.8}
+            ease="back.out(1.7)"
+            scrollStart="top bottom"
+            scrollEnd="center center"
+            stagger={0.02}
+            containerClassName="!my-0 mb-8"
+            textClassName="font-display font-bold text-3xl text-gray-900"
+          >
+            {t('cta.ready')}
+          </ScrollFloat>
+          <GlareHover glareColor="#ffffff" glareOpacity={0.4} className="inline-block rounded-xl">
+            <NavLink to="/contact" className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl bg-gray-900 hover:bg-gray-800 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
+              {t('cta.button')}
+              <span className="material-symbols-outlined ms-2">arrow_forward</span>
+            </NavLink>
+          </GlareHover>
         </div>
       </section>
     </div>
@@ -130,3 +150,4 @@ const Services: React.FC = () => {
 };
 
 export default Services;
+

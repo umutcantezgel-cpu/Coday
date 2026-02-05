@@ -1,7 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+import { useTranslation } from 'react-i18next';
+
 export const Footer: React.FC = () => {
+    const { t } = useTranslation('common');
     return (
         <footer className="bg-secondary text-white border-t border-gray-800 pt-16 pb-8">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -15,7 +18,7 @@ export const Footer: React.FC = () => {
                             />
                         </div>
                         <p className="text-sm text-gray-400 max-w-xs mb-6 font-medium">
-                            Wir töten Ineffizienz. Die letzte Agentur, die du je brauchen wirst.
+                            {t('footer.slogan')}
                         </p>
 
                         {/* Trust Visual */}
@@ -28,36 +31,36 @@ export const Footer: React.FC = () => {
                                 />
                             </div>
                             <div>
-                                <div className="text-xs font-bold text-white uppercase tracking-wider">Resistance Member</div>
-                                <div className="text-[10px] text-gray-400">Kämpfe gegen den Ballast.</div>
+                                <div className="text-xs font-bold text-white uppercase tracking-wider">{t('footer.trust.title')}</div>
+                                <div className="text-[10px] text-gray-400">{t('footer.trust.desc')}</div>
                             </div>
                         </div>
                     </div>
 
                     <div>
-                        <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">Preise</h4>
+                        <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">{t('footer.sections.pricing')}</h4>
                         <ul className="space-y-3">
-                            <li><NavLink to="/packages" className="text-sm text-gray-300 hover:text-primary transition-colors">Pakete</NavLink></li>
-                            <li><NavLink to="/booking" className="text-sm text-gray-300 hover:text-primary transition-colors">Termin buchen</NavLink></li>
+                            <li><NavLink to="/packages" className="text-sm text-gray-300 hover:text-primary transition-colors">{t('footer.links.packages')}</NavLink></li>
+                            <li><NavLink to="/booking" className="text-sm text-gray-300 hover:text-primary transition-colors">{t('footer.links.booking')}</NavLink></li>
                         </ul>
                     </div>
 
                     <div>
-                        <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">Wissen</h4>
+                        <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">{t('footer.sections.knowledge')}</h4>
                         <ul className="space-y-3">
-                            <li><NavLink to="/knowledge/academy" className="text-sm text-gray-300 hover:text-primary transition-colors">Academy</NavLink></li>
-                            <li><NavLink to="/knowledge/blog" className="text-sm text-gray-300 hover:text-primary transition-colors">Blog</NavLink></li>
-                            <li><NavLink to="/knowledge/newsletter" className="text-sm text-gray-300 hover:text-primary transition-colors">Newsletter</NavLink></li>
-                            <li><NavLink to="/knowledge/whitepapers" className="text-sm text-gray-300 hover:text-primary transition-colors">Whitepapers</NavLink></li>
+                            <li><NavLink to="/knowledge/academy" className="text-sm text-gray-300 hover:text-primary transition-colors">{t('nav.academy.label')}</NavLink></li>
+                            <li><NavLink to="/knowledge/blog" className="text-sm text-gray-300 hover:text-primary transition-colors">{t('nav.academy.blog.label')}</NavLink></li>
+                            <li><NavLink to="/knowledge/newsletter" className="text-sm text-gray-300 hover:text-primary transition-colors">{t('nav.academy.newsletter.label')}</NavLink></li>
+                            <li><NavLink to="/knowledge/whitepapers" className="text-sm text-gray-300 hover:text-primary transition-colors">{t('nav.academy.whitepapers.label')}</NavLink></li>
                         </ul>
                     </div>
 
                     <div>
-                        <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">Karriere</h4>
+                        <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">{t('footer.sections.career')}</h4>
                         <ul className="space-y-3">
-                            <li><NavLink to="/career/jobs" className="text-sm text-gray-300 hover:text-primary transition-colors">Jobs</NavLink></li>
-                            <li><NavLink to="/career/culture" className="text-sm text-gray-300 hover:text-primary transition-colors">Kultur</NavLink></li>
-                            <li><NavLink to="/career/benefits" className="text-sm text-gray-300 hover:text-primary transition-colors">Benefits</NavLink></li>
+                            <li><NavLink to="/career/jobs" className="text-sm text-gray-300 hover:text-primary transition-colors">{t('nav.career.jobs.label')}</NavLink></li>
+                            <li><NavLink to="/career/culture" className="text-sm text-gray-300 hover:text-primary transition-colors">{t('nav.career.culture.label')}</NavLink></li>
+                            <li><NavLink to="/career/benefits" className="text-sm text-gray-300 hover:text-primary transition-colors">{t('nav.career.benefits.label')}</NavLink></li>
                         </ul>
                     </div>
                 </div>
@@ -69,11 +72,11 @@ export const Footer: React.FC = () => {
                         <a href="#" className="hover:text-primary transition-colors"><i className="fa-brands fa-twitter"></i></a>
                         <a href="#" className="hover:text-primary transition-colors"><i className="fa-brands fa-linkedin-in"></i></a>
                     </div>
-                    <div className="text-xs text-gray-500 text-center md:text-right space-x-4">
-                        <NavLink to="/legal/agb" className="hover:text-white transition-colors">AGB</NavLink>
-                        <NavLink to="/legal/datenschutz" className="hover:text-white transition-colors">Datenschutz</NavLink>
-                        <NavLink to="/legal/impressum" className="hover:text-white transition-colors">Impressum</NavLink>
-                        <span>© 2026 Coday</span>
+                    <div className="text-xs text-gray-500 text-center md:text-end space-x-4">
+                        <NavLink to="/legal/agb" className="hover:text-white transition-colors">{t('nav.legal.agb')}</NavLink>
+                        <NavLink to="/legal/datenschutz" className="hover:text-white transition-colors">{t('nav.legal.privacy')}</NavLink>
+                        <NavLink to="/legal/impressum" className="hover:text-white transition-colors">{t('nav.legal.imprint')}</NavLink>
+                        <span>{t('footer.rights', { year: new Date().getFullYear() })}</span>
                     </div>
                 </div>
             </div>

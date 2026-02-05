@@ -5,9 +5,11 @@ import { modules, Module, ModuleCategory } from '../../../data/modules';
 interface CalculatorState {
     selectedModuleIds: Set<string>;
     selectedPackageId: string | null;
+    currentStep: 'packages' | 'calculator' | 'contact';
     selectPackage: (packageId: string) => void;
     toggleModule: (moduleId: string) => void;
     selectBasePackage: (moduleId: string) => void;
+    setStep: (step: 'packages' | 'calculator' | 'contact') => void;
     reset: () => void;
 
     // Computed (helper getters)
@@ -21,6 +23,7 @@ export const useCalculatorStore = create<CalculatorState>()(
         (set, get) => ({
             selectedModuleIds: new Set<string>(['basis-starter']), // Default validation
             selectedPackageId: null,
+            currentStep: 'packages' as const,
 
             selectPackage: (packageId) => {
                 const newSet = new Set<string>();
@@ -82,7 +85,9 @@ export const useCalculatorStore = create<CalculatorState>()(
 
             selectBasePackage: (moduleId) => get().toggleModule(moduleId),
 
-            reset: () => set({ selectedModuleIds: new Set(['basis-starter']), selectedPackageId: null }),
+            setStep: (step) => set({ currentStep: step }),
+
+            reset: () => set({ selectedModuleIds: new Set(['basis-starter']), selectedPackageId: null, currentStep: 'packages' }),
 
             getTotalOneTime: () => {
                 const { selectedModuleIds } = get();

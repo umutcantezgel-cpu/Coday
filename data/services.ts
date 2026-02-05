@@ -88,7 +88,7 @@ const techAdvantages = [
     },
     {
         title: "Security by Design",
-        description: "Sicherheit ist kein Feature, sondern Basis. DSGVO-konform, verschlüsselt und sicher vor Angriffen.",
+        description: "Sicherheit ist kein Feature, sondern Basis. DSGVO-konform, verschlüsselt und sicher vor Bedrohungen.",
         icon: "security"
     },
     {

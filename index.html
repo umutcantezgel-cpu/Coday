@@ -4,8 +4,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coday | The Agency Killer</title>
+  
+  <!-- SEO Meta Tags -->
+  <title>Coday | Digitalagentur für Webdesign & Entwicklung</title>
+  <meta name="description" content="Coday ist Ihre Digitalagentur für maßgeschneidertes Webdesign, Entwicklung und SEO. Wir verwandeln Besucher in Kunden. Jetzt Projekt starten!" />
+  <meta name="keywords" content="Webdesign, Webentwicklung, SEO, Digitalagentur, Next.js, React, Berlin" />
+  <meta name="author" content="Coday" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Coday" />
+  <meta property="og:title" content="Coday | Digitalagentur für Webdesign & Entwicklung" />
+  <meta property="og:description" content="Wir bauen Websites, die verkaufen. Maßgeschneidertes Design, blitzschnelle Performance, messbare Ergebnisse." />
+  <meta property="og:image" content="/images/og-image.jpg" />
+  <meta property="og:url" content="https://coday.de" />
+  <meta property="og:locale" content="de_DE" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Coday | Digitalagentur" />
+  <meta name="twitter:description" content="Websites, die verkaufen. Webdesign & Entwicklung aus Berlin." />
+  <meta name="twitter:image" content="/images/og-image.jpg" />
+  
+  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  
+  <!-- Canonical -->
+  <link rel="canonical" href="https://coday.de" />
 
   <!-- Preconnect to critical origins -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,6 +55,55 @@
 
   <!-- Main CSS -->
   <link rel="stylesheet" href="/index.css">
+
+  <!-- Structured Data: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Coday",
+    "url": "https://coday.de",
+    "logo": "https://coday.de/logo.svg",
+    "description": "Digitalagentur für Webdesign, Entwicklung und SEO",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Berlin",
+      "addressCountry": "DE"
+    },
+    "sameAs": [
+      "https://linkedin.com/company/coday",
+      "https://instagram.com/coday.de"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "email": "hello@coday.de"
+    }
+  }
+  </script>
+  
+  <!-- Structured Data: LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Coday Digitalagentur",
+    "image": "https://coday.de/images/og-image.jpg",
+    "url": "https://coday.de",
+    "priceRange": "€€€",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Berlin",
+      "addressCountry": "DE"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    }
+  }
+  </script>
 
   <!-- Plausible Analytics -->
   <script defer data-domain="coday.de" src="https://plausible.io/js/script.js"></script>

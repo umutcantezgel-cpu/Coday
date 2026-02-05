@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { OptimizedImage } from '../../shared/ui/OptimizedImage';
 import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
@@ -70,6 +71,7 @@ const COURSES = [
 ];
 
 const Academy: React.FC = () => {
+    const { t } = useTranslation('knowledge');
     const [selectedVideo, setSelectedVideo] = useState<typeof COURSES[0] | null>(null);
 
     return (
@@ -77,10 +79,10 @@ const Academy: React.FC = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <h1 className="font-display font-black text-5xl md:text-6xl text-gradient-vivid mb-6">
-                        Academy
+                        {t('academy.title')}
                     </h1>
                     <p className="text-xl text-slate-500 max-w-2xl mx-auto">
-                        Werde zum Experten für digitales Wachstum. Kostenlose Kurse für unsere Community.
+                        {t('academy.subtitle')}
                     </p>
                 </div>
 

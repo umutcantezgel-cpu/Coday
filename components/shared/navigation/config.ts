@@ -1,80 +1,125 @@
-export interface NavLink {
-    label: string;
-    href: string;
-    ariaLabel?: string;
-    description?: string; // For Mega Menu
-}
+import { Zap, Layout, BarChart, Code, Search, PenTool, Smartphone, Globe, Share2, Shield, Users, Trophy, Briefcase, Heart, Gift, MessageCircle, Flag, Workflow, Mail, CalendarCheck, Cpu } from 'lucide-react';
 
 export interface NavItem {
-    label: string;
-    bgColor: string;
-    textColor: string;
-    links: NavLink[];
+    label?: string; // Legacy support or direct string
+    labelKey?: string; // i18n key
+    href?: string;
+    description?: string;
+    descriptionKey?: string; // i18n key
+    links?: NavLinkItem[];
+    columns?: number;
 }
 
-export const navItems: NavItem[] = [
+export interface NavLinkItem {
+    label?: string;
+    labelKey?: string;
+    href: string;
+    description?: string;
+    descriptionKey?: string;
+    icon?: any;
+    isFeatured?: boolean;
+}
+
+export const NAV_ITEMS: NavItem[] = [
     {
-        label: "Leistungen",
-        bgColor: "#ffffff",
-        textColor: "#2D3748",
+        labelKey: "nav.services.label",
+        columns: 2,
         links: [
-            { label: "Web Entwicklung", href: "/services/web-development", description: "Moderne Tech-Stacks für maximale Performance." },
-            { label: "Web Design", href: "/services/web-design", description: "Award-Verdächtige UIs und Brand Experiences." },
-            { label: "E-Commerce", href: "/services/web-development/e-commerce", description: "Scalable Shops mit Shopify & Headless." },
-            { label: "Web Apps", href: "/services/web-development/web-apps", description: "Komplexe Applikationen, einfach bedienbar." },
-            { label: "UI/UX Design", href: "/services/web-design/ui-ux", description: "Nutzerzentrierte Interfaces, die konvertieren." },
-            { label: "Alle Leistungen", href: "/services", description: "Unser gesamtes Portfolio auf einen Blick." },
+            {
+                labelKey: "nav.services.web_development.label",
+                href: "/services/web-development",
+                descriptionKey: "nav.services.web_development.desc",
+                icon: Code,
+                isFeatured: true
+            },
+            {
+                labelKey: "nav.services.web_design.label",
+                href: "/services/web-design",
+                descriptionKey: "nav.services.web_design.desc",
+                icon: PenTool,
+                isFeatured: true
+            },
+            {
+                labelKey: "nav.services.seo.label",
+                href: "/services/seo",
+                descriptionKey: "nav.services.seo.desc",
+                icon: Search
+            },
+            {
+                labelKey: "nav.services.performance.label",
+                href: "/services/performance",
+                descriptionKey: "nav.services.performance.desc",
+                icon: Zap
+            },
+            {
+                labelKey: "nav.services.enterprise.label",
+                href: "/services/enterprise-web",
+                descriptionKey: "nav.services.enterprise.desc",
+                icon: Cpu
+            },
+            {
+                labelKey: "nav.services.ecommerce.label",
+                href: "/services/web-development/e-commerce",
+                descriptionKey: "nav.services.ecommerce.desc",
+                icon: Globe
+            }
         ]
     },
     {
-        label: "Projekte",
-        bgColor: "#F7FAFC",
-        textColor: "#2D3748",
+        labelKey: "nav.industries.label",
+        columns: 1,
         links: [
-            { label: "Case Studies", href: "/work", description: "Echte Ergebnisse aus der Praxis." },
-            { label: "Prozess", href: "/process", description: "Wie wir arbeiten und liefern." },
-            { label: "Kontakt", href: "/contact", description: "Starten wir Ihr nächstes Projekt." },
+            { labelKey: "nav.industries.craft", href: "/services/industries/handwerk", icon: Trophy },
+            { labelKey: "nav.industries.real_estate", href: "/services/industries/immobilien", icon: Layout },
+            { labelKey: "nav.industries.gastronomy", href: "/services/industries/gastronomie", icon: Users },
+            { labelKey: "nav.industries.health", href: "/services/industries/gesundheit", icon: Shield },
+            { labelKey: "nav.industries.service", href: "/services/industries/dienstleistung", icon: BarChart },
+            { labelKey: "nav.industries.ecommerce", href: "/services/industries/e-commerce", icon: Globe }
         ]
     },
     {
-        label: "Preise",
-        bgColor: "#E6FFFA",
-        textColor: "#2D3748",
+        labelKey: "nav.projects.label",
+        href: "/work",
+        descriptionKey: "nav.projects.desc"
+    },
+    {
+        labelKey: "nav.academy.label",
+        descriptionKey: "nav.academy.desc",
         links: [
-            { label: "Pakete", href: "/packages", description: "Transparente Festpreise für jeden Bedarf." },
-            { label: "Kalkulator", href: "/calculator", description: "Projektpreis in 2 Min berechnen." },
-            { label: "Termin buchen", href: "/booking", description: "Kostenloses Erstgespräch vereinbaren." },
+            { labelKey: "nav.academy.audit.label", href: "/analyzer", icon: BarChart, descriptionKey: "nav.academy.audit.desc", isFeatured: true },
+            { labelKey: "nav.academy.courses.label", href: "/knowledge/academy", icon: Zap, descriptionKey: "nav.academy.courses.desc" },
+            { labelKey: "nav.academy.blog.label", href: "/knowledge/blog", icon: PenTool, descriptionKey: "nav.academy.blog.desc" },
+            { labelKey: "nav.academy.newsletter.label", href: "/knowledge/newsletter", icon: Mail, descriptionKey: "nav.academy.newsletter.desc" },
+            { labelKey: "nav.academy.whitepapers.label", href: "/knowledge/whitepapers", icon: Share2, descriptionKey: "nav.academy.whitepapers.desc" }
         ]
     },
     {
-        label: "Wissen",
-        bgColor: "#F0FDFA",
-        textColor: "#2D3748",
+        labelKey: "nav.about.label",
+        descriptionKey: "nav.about.desc",
         links: [
-            { label: "Academy", href: "/knowledge/academy", description: "Lernen Sie von unseren Experten." },
-            { label: "Blog", href: "/knowledge/blog", description: "Deep Dives in Tech & Design." },
-            { label: "Newsletter", href: "/knowledge/newsletter", description: "Weekly Insights direkt ins Postfach." },
-            { label: "Whitepapers", href: "/knowledge/whitepapers", description: "Kostenlose Guides und Reports." },
+            { labelKey: "nav.about.process.label", href: "/process", icon: Workflow, descriptionKey: "nav.about.process.desc" },
+
+            { labelKey: "nav.about.contact.label", href: "/contact", icon: MessageCircle, descriptionKey: "nav.about.contact.desc" }
         ]
     },
     {
-        label: "Karriere",
-        bgColor: "#2D3748",
-        textColor: "#fff",
+        labelKey: "nav.career.label",
+        descriptionKey: "nav.career.desc",
         links: [
-            { label: "Jobs", href: "/career/jobs", description: "Werde Teil der Resistance." },
-            { label: "Kultur", href: "/career/culture", description: "Wie wir ticken und arbeiten." },
-            { label: "Benefits", href: "/career/benefits", description: "Was wir dir bieten." },
-        ]
-    },
-    {
-        label: "Rechtliches",
-        bgColor: "#1A202C",
-        textColor: "#fff",
-        links: [
-            { label: "AGB", href: "/legal/agb", description: "Das Kleingedruckte." },
-            { label: "Datenschutz", href: "/legal/datenschutz", description: "Ihre Daten sind sicher." },
-            { label: "Impressum", href: "/legal/impressum", description: "Rechtliche Informationen." },
+            { labelKey: "nav.career.overview.label", href: "/careers", icon: Trophy, descriptionKey: "nav.career.overview.desc" },
+            { labelKey: "nav.career.jobs.label", href: "/career/jobs", icon: Briefcase, descriptionKey: "nav.career.jobs.desc" },
+            { labelKey: "nav.career.culture.label", href: "/career/culture", icon: Heart, descriptionKey: "nav.career.culture.desc" },
+            { labelKey: "nav.career.benefits.label", href: "/career/benefits", icon: Gift, descriptionKey: "nav.career.benefits.desc" }
         ]
     }
 ];
+
+// CTA configuration for the "Starten" button
+export const NAV_CTA = {
+    label: "Starten",
+    href: "/packages",
+    icon: CalendarCheck
+};
+
+export const navItems = NAV_ITEMS;
+
