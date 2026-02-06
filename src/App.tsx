@@ -1,5 +1,5 @@
 import React, { useEffect, Suspense, lazy } from 'react';
-import { HashRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { Layout } from './widgets/layout/MainLayout';
 
 // Critical pages - loaded immediately
@@ -21,7 +21,7 @@ const Dashboard = lazy(() => import('./pages/Dashboard'));
 const Impressum = lazy(() => import('./pages/legal/Impressum'));
 const Privacy = lazy(() => import('./pages/legal/Privacy'));
 const Terms = lazy(() => import('./pages/legal/Terms'));
-const CaseStudy = lazy(() => import('./pages/CaseStudy'));
+
 const Booking = lazy(() => import('./pages/Booking'));
 const Packages = lazy(() => import('./pages/Packages'));
 
@@ -123,7 +123,7 @@ const App: React.FC = () => {
               <Route path="/services/web-development/cms-headless" element={<HeadlessCms />} />
               <Route path="/services/web-development/api-integrations" element={<ApiIntegration />} />
               <Route path="/services/web-development/migration" element={<Migration />} />
-              <Route path="/services/web-development/migration" element={<Migration />} />
+
 
 
               {/* Main Service Pages */}

@@ -164,18 +164,16 @@ export async function callGemini(
     const { model = 'gemini-2.0-flash', temperature = 0.7, maxTokens = 4096 } = options;
 
     const apiKey = geminiPool.getNextKey();
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+    // const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+    const url = '/api/ai-proxy';
 
     try {
         const response = await fetch(url, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                contents: [{ parts: [{ text: prompt }] }],
-                generationConfig: {
-                    temperature,
-                    maxOutputTokens: maxTokens,
-                },
+                messages: [{ parts: [{ text: prompt }] }],
+                model: model // Pass model to proxy
             }),
         });
 
