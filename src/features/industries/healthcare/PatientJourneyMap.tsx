@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Icon } from '@/shared/ui/Icon';
 
 const PatientJourneyMap: React.FC = () => {
     const [step, setStep] = useState(0);
@@ -59,7 +60,7 @@ const PatientJourneyMap: React.FC = () => {
                             style={{ top: `${idx * 25}%` }}
                             onClick={() => setStep(idx)}
                         >
-                            <span className="material-symbols-outlined">{s.icon}</span>
+                            <Icon name={s.icon} />
                         </div>
 
                         {/* Digital Side (Right) */}

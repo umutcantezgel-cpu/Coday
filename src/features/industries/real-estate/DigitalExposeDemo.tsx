@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 
 const DigitalExposeDemo: React.FC = () => {
     const [view, setView] = useState<'pdf' | 'web'>('web');

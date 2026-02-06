@@ -1,4 +1,5 @@
 import React from 'react';
+import { Icon } from '@/shared/ui/Icon';
 import { OptimizedImage } from '../../shared/ui/OptimizedImage';
 
 const WHITEPAPERS = [
@@ -76,7 +77,7 @@ const Whitepapers: React.FC = () => {
                                     rel="noopener noreferrer"
                                     className="w-full py-4 rounded-xl border-2 border-slate-100 text-gray-900 font-bold hover:border-blue-500 hover:text-blue-600 transition-colors flex items-center justify-center group-hover:bg-blue-50"
                                 >
-                                    <span className="material-symbols-outlined mr-2">download</span>
+                                    <Icon name="download" className="mr-2" />
                                     Kostenlos herunterladen
                                 </a>
                             </div>

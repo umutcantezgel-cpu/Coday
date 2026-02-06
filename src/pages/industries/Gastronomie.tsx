@@ -1,4 +1,5 @@
 import React from 'react';
+import { Icon } from '@/shared/ui/Icon';
 import BlurText from '../../shared/ui/BlurText';
 import GradientText from '../../shared/ui/GradientText';
 import TableBookingRoiVisualizer from '../../features/industries/gastronomie/TableBookingRoiVisualizer';
@@ -74,7 +75,7 @@ const Gastronomie: React.FC = () => {
                         ].map((item, idx) => (
                             <div key={idx} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
                                 <div className="w-12 h-12 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center mb-6">
-                                    <span className="material-symbols-outlined">{item.icon}</span>
+                                    <Icon name={item.icon} />
                                 </div>
                                 <h3 className="font-bold text-xl text-secondary mb-3">{item.title}</h3>
                                 <p className="text-slate-600">{item.desc}</p>

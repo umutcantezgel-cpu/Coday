@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { motion, useAnimation } from 'framer-motion';
+import { motion, useAnimation } from 'motion/react';
 
 interface MenuItemData {
     link: string;
@@ -74,7 +74,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
     const findClosestEdge = (mouseX: number, mouseY: number, width: number, height: number): 'top' | 'bottom' => {
         const topEdgeDist = Math.pow(mouseX - width / 2, 2) + Math.pow(mouseY, 2);
         const bottomEdgeDist = Math.pow(mouseX - width / 2, 2) + Math.pow(mouseY - height, 2);
-        return topEdgeDist < bottomEdgeDist ? 'top' : 'bottom';
+        return topEdgeDist <bottomEdgeDist ? 'top' : 'bottom';
     };
 
     useEffect(() => {

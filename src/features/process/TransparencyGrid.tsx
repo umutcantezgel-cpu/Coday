@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { useTranslation } from 'react-i18next';
+import { Icon } from '@/shared/ui/Icon';
 
 const TransparencyGrid: React.FC = () => {
     const { t } = useTranslation('process');
@@ -21,7 +22,7 @@ const TransparencyGrid: React.FC = () => {
                 <div className="bg-gray-800/50 backdrop-blur border border-white/10 rounded-2xl p-6 hover:bg-gray-800 transition-all group">
                     <div className="flex items-center gap-4 mb-6">
                         <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center text-blue-400">
-                            <span className="material-symbols-outlined">view_kanban</span>
+                            <Icon name="view_kanban" />
                         </div>
                         <div>
                             <h4 className="font-bold text-white text-lg">{t('transparency.kanban.title')}</h4>
@@ -38,7 +39,7 @@ const TransparencyGrid: React.FC = () => {
                             <div className="w-full h-16 bg-blue-500/20 rounded border border-blue-500/30"></div>
                         </div>
                         <div className="w-1/3 h-24 bg-white/5 rounded-lg p-2 flex items-center justify-center">
-                            <span className="text-green-500 material-symbols-outlined">check_circle</span>
+                            <Icon name="check_circle" className="text-green-500" />
                         </div>
                     </div>
                 </div>
@@ -47,7 +48,7 @@ const TransparencyGrid: React.FC = () => {
                 <div className="bg-gray-800/50 backdrop-blur border border-white/10 rounded-2xl p-6 hover:bg-gray-800 transition-all group">
                     <div className="flex items-center gap-4 mb-6">
                         <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center text-purple-400">
-                            <span className="material-symbols-outlined">forum</span>
+                            <Icon name="forum" />
                         </div>
                         <div>
                             <h4 className="font-bold text-white text-lg">Direct Line</h4>

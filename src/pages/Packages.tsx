@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { NavLink, useNavigate } from 'react-router-dom';
+import { Icon } from '@/shared/ui/Icon';
 import CountUp from '../shared/ui/CountUp';
 import GradientText from '../shared/ui/GradientText';
 import BlurText from '../shared/ui/BlurText';
@@ -152,13 +153,13 @@ const Packages: React.FC = () => {
                                 <div className="space-y-3 mb-8 flex-grow">
                                     {pkg.features.map((feature, idx) => (
                                         <div key={idx} className="flex items-start">
-                                            <span className="material-symbols-outlined text-emerald-500 text-lg mr-3 mt-0.5">check_circle</span>
+                                            <Icon name="check_circle" className="text-emerald-500 text-lg mr-3 mt-0.5" />
                                             <span className="text-gray-700 text-sm">{feature}</span>
                                         </div>
                                     ))}
                                     {pkg.notIncluded?.map((feature, idx) => (
                                         <div key={idx} className="flex items-start opacity-50">
-                                            <span className="material-symbols-outlined text-gray-300 text-lg mr-3 mt-0.5">cancel</span>
+                                            <Icon name="cancel" className="text-gray-300 text-lg mr-3 mt-0.5" />
                                             <span className="text-gray-400 text-sm line-through">{feature}</span>
                                         </div>
                                     ))}
@@ -174,7 +175,7 @@ const Packages: React.FC = () => {
                                             }`}
                                     >
                                         {pkg.cta}
-                                        <span className="material-symbols-outlined text-sm ml-2">arrow_forward</span>
+                                        <Icon name="arrow_forward" className="text-sm ml-2" />
                                     </button>
                                 </GlareHover>
                             </div>
@@ -237,7 +238,7 @@ const Packages: React.FC = () => {
                                 className="inline-flex items-center px-6 py-3 bg-primary text-white font-bold rounded-lg hover:bg-opacity-90 transition-all shadow-lg hover:shadow-xl"
                             >
                                 {t('cta_section.button')}
-                                <span className="material-symbols-outlined ml-2">calendar_month</span>
+                                <Icon name="calendar_month" className="ml-2" />
                             </NavLink>
                         </GlareHover>
                     </div>

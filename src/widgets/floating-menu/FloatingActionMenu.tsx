@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { MessageCircle, Share2, Phone, X, Linkedin, Instagram, Twitter, Facebook } from 'lucide-react';
 import { useChatStore } from '../chatbot/lib/chatStore';
 

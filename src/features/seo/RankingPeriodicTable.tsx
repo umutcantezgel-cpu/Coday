@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 
 interface Element {
     symbol: string;
@@ -93,7 +93,7 @@ const RankingPeriodicTable: React.FC = () => {
                                     <span className="text-xs font-bold px-2 py-1 rounded bg-white/10 text-white uppercase tracking-wider">{activeElement.category}</span>
                                     <div className="flex gap-0.5">
                                         {[...Array(3)].map((_, i) => (
-                                            <div key={i} className={`w-1.5 h-3 rounded-sm ${i < activeElement.score ? 'bg-primary' : 'bg-gray-700'}`}></div>
+                                            <div key={i} className={`w-1.5 h-3 rounded-sm ${i <activeElement.score ? 'bg-primary' : 'bg-gray-700'}`}></div>
                                         ))}
                                     </div>
                                     <span className="text-xs text-gray-400 ml-1">Importance</span>

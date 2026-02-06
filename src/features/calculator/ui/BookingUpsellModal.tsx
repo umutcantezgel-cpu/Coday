@@ -1,4 +1,5 @@
 import React from 'react';
+import { Icon } from '@/shared/ui/Icon';
 import { NavLink } from 'react-router-dom';
 
 interface BookingUpsellModalProps {
@@ -15,7 +16,7 @@ export const BookingUpsellModal: React.FC<BookingUpsellModalProps> = ({ isOpen, 
             <div className="relative bg-white rounded-3xl p-8 max-w-lg w-full shadow-2xl animate-in fade-in zoom-in duration-300">
                 <div className="text-center">
                     <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <span className="material-symbols-outlined text-3xl">check</span>
+                        <Icon name="check" className="text-3xl" />
                     </div>
 
                     <h3 className="font-display font-bold text-2xl text-gray-900 mb-2">

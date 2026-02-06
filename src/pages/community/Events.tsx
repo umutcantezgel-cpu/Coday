@@ -1,4 +1,6 @@
 import React from 'react';
+import { useState } from 'react';
+import { Icon } from '@/shared/ui/Icon';
 
 const Events: React.FC = () => {
     return (
@@ -28,7 +30,7 @@ const Events: React.FC = () => {
                                 <div className="inline-flex items-center space-x-2 mb-3">
                                     <span className="px-2 py-1 rounded bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-wider">Webinar</span>
                                     <span className="text-slate-400 text-xs flex items-center">
-                                        <span className="material-symbols-outlined text-[14px] mr-1">schedule</span>
+                                        <Icon name="schedule" className="text-[14px] mr-1" />
                                         14:00 - 15:30
                                     </span>
                                 </div>

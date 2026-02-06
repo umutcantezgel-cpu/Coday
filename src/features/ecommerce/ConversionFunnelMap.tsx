@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 
 const ConversionFunnelMap: React.FC = () => {
     const [hoveredStep, setHoveredStep] = useState<number | null>(null);
@@ -54,7 +54,7 @@ const ConversionFunnelMap: React.FC = () => {
                         </div>
 
                         {/* Dropoff connector lines */}
-                        {idx < steps.length - 1 && (
+                        {idx <steps.length - 1 && (
                             <div className="h-2 w-0.5 bg-gray-200 mx-auto"></div>
                         )}
                     </motion.div>

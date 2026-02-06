@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { Icon } from '@/shared/ui/Icon';
 
 const BeforeAfterReveal: React.FC = () => {
     const [sliderPosition, setSliderPosition] = useState(50);
@@ -96,7 +97,7 @@ const BeforeAfterReveal: React.FC = () => {
                 style={{ left: `${sliderPosition}%` }}
             >
                 <div className="w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center text-primary">
-                    <span className="material-symbols-outlined text-xl">code</span>
+                    <Icon name="code" className="text-xl" />
                 </div>
             </div>
 

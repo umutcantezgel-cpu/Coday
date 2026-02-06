@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams, NavLink, useNavigate } from 'react-router-dom';
+import { Icon } from '@/shared/ui/Icon';
 import { workData } from '../../data/work';
 
 const ProjectDetail: React.FC = () => {
@@ -51,7 +52,7 @@ const ProjectDetail: React.FC = () => {
                 {/* Hero Visual */}
                 <div className="relative rounded-3xl overflow-hidden aspect-video bg-surface-dark shadow-2xl mb-12 group">
                     <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-black flex items-center justify-center">
-                        <span className="material-symbols-outlined text-9xl text-white/10 group-hover:scale-110 transition-transform duration-1000">{project.thumbnail}</span>
+                        <Icon name={project.thumbnail} className="text-9xl text-white/10 group-hover:scale-110 transition-transform duration-1000" />
                     </div>
                     {/* Overlay Content */}
                     <div className="absolute bottom-8 left-8 right-8 grid grid-cols-3 gap-4">
@@ -109,7 +110,7 @@ const ProjectDetail: React.FC = () => {
                                 <ul className="space-y-3 mb-0">
                                     {project.challenge.list.map((item, i) => (
                                         <li key={i} className="flex items-start text-red-900 font-medium">
-                                            <span className="material-symbols-outlined mr-3 text-red-500">warning</span>
+                                            <Icon name="warning" className="mr-3 text-red-500" />
                                             {item}
                                         </li>
                                     ))}

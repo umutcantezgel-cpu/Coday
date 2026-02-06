@@ -12,6 +12,7 @@ export const ContactFormSchema = z.object({
 export const LeadApiSchema = ContactFormSchema.extend({
     source: z.string().optional(),
     phone: z.string().optional(),
+    company: z.string().optional(),
 });
 
 export type ContactFormValues = z.infer<typeof ContactFormSchema>;

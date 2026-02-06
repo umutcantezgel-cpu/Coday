@@ -1,4 +1,5 @@
 import React from 'react';
+import { Icon } from '@/shared/ui/Icon';
 import { motion, AnimatePresence } from 'motion/react';
 import { createPortal } from 'react-dom';
 
@@ -38,7 +39,7 @@ export const SuccessModal: React.FC<SuccessModalProps> = ({
                         <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-500 to-purple-600" />
 
                         <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <span className="material-symbols-outlined text-4xl text-green-600">check_circle</span>
+                            <Icon name="check_circle" className="text-4xl text-green-600" />
                         </div>
 
                         <h3 className="text-2xl font-bold text-gray-900 mb-4 font-display">{title}</h3>

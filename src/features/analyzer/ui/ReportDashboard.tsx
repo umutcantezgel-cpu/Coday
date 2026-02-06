@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { Download, Share2, Check, Mail, Calendar } from 'lucide-react';
 import { useAnalyzerStore } from '../model/store';
 import { ScoreCard } from './ScoreCard';
 import { UrgencyMeter } from './UrgencyMeter';
+import { Icon } from '@/shared/ui/Icon';
 import { generatePdfReport } from '../lib/pdfGenerator';
 import { EmailReportModal } from './EmailReportModal';
 // import { CalendlyModal } from './CalendlyModal'; // Deprecated
@@ -68,7 +69,7 @@ export const ReportDashboard: React.FC = () => {
         return (
             <div className="w-full max-w-4xl mx-auto px-4 py-32 text-center">
                 <div className="w-24 h-24 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <span className="material-symbols-outlined text-red-500 text-5xl">cloud_off</span>
+                    <Icon name="cloud_off" className="text-red-500 text-5xl" />
                 </div>
                 <h2 className="text-3xl font-bold text-gray-900 mb-2">Analyse fehlgeschlagen</h2>
 
@@ -161,7 +162,7 @@ export const ReportDashboard: React.FC = () => {
                 {/* Partial Failure Warning */}
                 {Object.values(result).some((val: any) => typeof val === 'object' && val?.score === -1) && (
                     <div className="max-w-xl mx-auto mb-8 bg-orange-50 border border-orange-200 rounded-xl p-4 flex items-center gap-3 text-left">
-                        <span className="material-symbols-outlined text-orange-500">warning</span>
+                        <Icon name="warning" className="text-orange-500" />
                         <div className="text-sm text-orange-800">
                             <strong>Teilweise fehlgeschlagen:</strong> Einige Agenten konnten die Website nicht analysieren (siehe unten). Der Gesamtscore basiert auf den verfügbaren Daten.
                         </div>
@@ -339,7 +340,7 @@ export const ReportDashboard: React.FC = () => {
                                     </div>
                                     <p className="text-gray-600 mb-3">{issue.description}</p>
                                     <div className="flex items-center gap-2 text-sm text-primary font-medium">
-                                        <span className="material-symbols-outlined text-base">lightbulb</span>
+                                        <Icon name="lightbulb" className="text-base" />
                                         <span>{issue.fix}</span>
                                     </div>
                                 </div>

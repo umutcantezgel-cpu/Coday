@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Lightbulb, Share2, CheckCircle } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { useTranslation } from 'react-i18next';
 
 export interface KeyTakeawayItem {

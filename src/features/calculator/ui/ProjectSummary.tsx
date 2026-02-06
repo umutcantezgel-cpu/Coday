@@ -1,4 +1,5 @@
 import React from 'react';
+import { Icon } from '@/shared/ui/Icon';
 import { useCalculatorStore } from '../model/store';
 import { modules } from '../../../data/modules';
 
@@ -16,7 +17,7 @@ export const ProjectSummary: React.FC = () => {
     return (
         <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-flat mb-8">
             <h3 className="font-bold text-gray-900 mb-4 flex items-center">
-                <span className="material-symbols-outlined mr-2 text-primary">inventory_2</span>
+                <Icon name="inventory_2" className="mr-2 text-primary" />
                 Ihre Konfiguration
             </h3>
 

@@ -1,5 +1,6 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
+import { Icon } from '@/shared/ui/Icon';
 
 import { useTranslation } from 'react-i18next';
 
@@ -31,7 +32,7 @@ const ProjectTimelineAnimation: React.FC = () => {
                             <div className="flex-1 text-center lg:text-start">
                                 <span className={`text-9xl font-black text-slate-100 absolute -top-10 -z-10 ${isEven ? 'left-0' : 'right-0'}`}>{step.phase}</span>
                                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-secondary text-white mb-6 shadow-xl">
-                                    <span className="material-symbols-outlined text-3xl">{step.icon}</span>
+                                    <Icon name={step.icon} className="text-3xl" />
                                 </div>
                                 <h3 className="font-display font-bold text-3xl text-secondary mb-4">{step.title}</h3>
                                 <p className="text-xl text-slate-500 leading-relaxed max-w-md">{step.desc}</p>

@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { Trophy, Star, Zap } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 
 export const ReadingScore: React.FC<{ currentPostId?: number }> = ({ currentPostId }) => {
     const [score, setScore] = useState(0);

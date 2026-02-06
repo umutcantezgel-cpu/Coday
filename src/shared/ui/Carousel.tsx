@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { m, PanInfo, useMotionValue, useTransform } from 'motion/react';
 import React, { JSX } from 'react';
-import { FiCircle, FiCode, FiFileText, FiLayers, FiLayout } from 'react-icons/fi';
+import { Icon } from './Icon';
 
 export interface CarouselItem {
     title: string;
@@ -25,31 +25,31 @@ const DEFAULT_ITEMS: CarouselItem[] = [
         title: 'Text Animations',
         description: 'Cool text animations for your projects.',
         id: 1,
-        icon: <FiFileText size={16} color="white" />
+        icon: <Icon name="file-text" className="w-4 h-4 text-white" />
     },
     {
         title: 'Animations',
         description: 'Smooth animations for your projects.',
         id: 2,
-        icon: <FiCircle size={16} color="white" />
+        icon: <Icon name="circle" className="w-4 h-4 text-white" />
     },
     {
         title: 'Components',
         description: 'Reusable components for your projects.',
         id: 3,
-        icon: <FiLayers size={16} color="white" />
+        icon: <Icon name="layers" className="w-4 h-4 text-white" />
     },
     {
         title: 'Backgrounds',
         description: 'Beautiful backgrounds and patterns for your projects.',
         id: 4,
-        icon: <FiLayout size={16} color="white" />
+        icon: <Icon name="layout" className="w-4 h-4 text-white" />
     },
     {
         title: 'Common UI',
         description: 'Common UI components are coming soon!',
         id: 5,
-        icon: <FiCode size={16} color="white" />
+        icon: <Icon name="code" className="w-4 h-4 text-white" />
     }
 ];
 

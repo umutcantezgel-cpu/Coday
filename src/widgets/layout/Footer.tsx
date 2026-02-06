@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { useTranslation } from 'react-i18next';
+import { Icon } from '@/shared/ui/Icon';
 
 export const Footer: React.FC = () => {
     const { t } = useTranslation('common');
@@ -67,10 +68,10 @@ export const Footer: React.FC = () => {
 
                 <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                     <div className="flex space-x-6 text-gray-400">
-                        <a href="#" className="hover:text-primary transition-colors"><i className="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" className="hover:text-primary transition-colors"><i className="fa-brands fa-instagram"></i></a>
-                        <a href="#" className="hover:text-primary transition-colors"><i className="fa-brands fa-twitter"></i></a>
-                        <a href="#" className="hover:text-primary transition-colors"><i className="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" className="hover:text-primary transition-colors"><Icon name="facebook" /></a>
+                        <a href="#" className="hover:text-primary transition-colors"><Icon name="instagram" /></a>
+                        <a href="#" className="hover:text-primary transition-colors"><Icon name="twitter" /></a>
+                        <a href="#" className="hover:text-primary transition-colors"><Icon name="linkedin" /></a>
                     </div>
                     <div className="text-xs text-gray-500 text-center md:text-end space-x-4">
                         <NavLink to="/legal/agb" className="hover:text-white transition-colors">{t('nav.legal.agb')}</NavLink>

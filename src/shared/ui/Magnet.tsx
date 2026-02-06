@@ -42,7 +42,7 @@ const Magnet: React.FC<MagnetProps> = ({
             const distX = Math.abs(centerX - e.clientX);
             const distY = Math.abs(centerY - e.clientY);
 
-            if (distX < width / 2 + padding && distY < height / 2 + padding) {
+            if (distX <width / 2 + padding && distY <height / 2 + padding) {
                 setIsActive(true);
                 const offsetX = (e.clientX - centerX) / magnetStrength;
                 const offsetY = (e.clientY - centerY) / magnetStrength;

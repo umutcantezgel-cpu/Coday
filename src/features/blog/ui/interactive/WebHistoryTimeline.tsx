@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { Monitor, Cpu, Layers, Zap } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useMemo } from 'react';

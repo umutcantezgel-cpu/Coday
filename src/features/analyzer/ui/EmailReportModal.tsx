@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { Mail, Send, X, CheckCircle, Loader2 } from 'lucide-react';
 import { sendEmailReport, isValidEmail } from '../lib/emailService';
 import type { AnalysisResult } from '../model/types';

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { Icon } from '@/shared/ui/Icon';
+import { motion, AnimatePresence } from 'motion/react';
 
 const OmnichannelStrategies: React.FC = () => {
     // Visualizing the connection between Online and Offline world
@@ -46,7 +47,7 @@ const OmnichannelStrategies: React.FC = () => {
                 <div className="flex justify-between w-full max-w-lg relative z-10">
                     {/* Store Node */}
                     <div className="w-24 h-24 bg-white rounded-2xl border border-blue-100 shadow-lg flex flex-col items-center justify-center">
-                        <span className="material-symbols-outlined text-4xl text-blue-600 mb-1">storefront</span>
+                        <Icon name="storefront" className="text-4xl text-blue-600 mb-1" />
                         <span className="text-[10px] text-blue-900 uppercase font-bold">Filiale</span>
                     </div>
 
@@ -75,7 +76,7 @@ const OmnichannelStrategies: React.FC = () => {
 
                     {/* Online Node */}
                     <div className="w-24 h-24 bg-white rounded-2xl border border-purple-100 shadow-lg flex flex-col items-center justify-center">
-                        <span className="material-symbols-outlined text-4xl text-purple-600 mb-1">devices</span>
+                        <Icon name="monitor_smartphone" className="text-4xl text-purple-600 mb-1" />
                         <span className="text-[10px] text-purple-900 uppercase font-bold">Online Shop</span>
                     </div>
                 </div>

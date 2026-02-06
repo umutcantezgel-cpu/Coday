@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { TrendingDown, User, Bot, Euro } from 'lucide-react';
 
 import { useTranslation } from 'react-i18next';

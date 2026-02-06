@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import { Icon } from '@/shared/ui/Icon';
 import { useCalculatorStore } from '../model/store';
 import { NavLink } from 'react-router-dom';
 import { modules } from '../../../data/modules';
@@ -71,7 +72,7 @@ export const CalculatorSummary: React.FC = () => {
             <div className="space-y-3">
                 <NavLink to="/contact" className="w-full py-4 bg-gray-900 text-white rounded-xl font-bold hover:bg-black transition-all shadow-lg hover:shadow-xl flex items-center justify-center transform hover:-translate-y-1">
                     Weiter zur Anfrage
-                    <span className="material-symbols-outlined ml-2">arrow_forward</span>
+                    <Icon name="arrow_forward" className="ml-2" />
                 </NavLink>
                 <div className="text-center">
                     <button className="text-xs text-gray-400 hover:text-gray-600 underline">
@@ -82,7 +83,7 @@ export const CalculatorSummary: React.FC = () => {
 
             <div className="mt-6 p-4 bg-primary/5 rounded-xl border border-primary/10">
                 <div className="flex items-center text-primary text-xs font-bold uppercase tracking-wider mb-1">
-                    <span className="material-symbols-outlined mr-1 text-sm">speed</span>
+                    <Icon name="speed" className="mr-1 text-sm" />
                     Garantie
                 </div>
                 <p className="text-xs text-gray-600 leading-relaxed">

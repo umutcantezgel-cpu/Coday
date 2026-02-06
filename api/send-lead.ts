@@ -1,23 +1,11 @@
 import { Resend } from 'resend';
-import { LeadApiSchema } from '../../shared/lib/validation/schemas';
+import { LeadApiSchema } from '../src/shared/lib/validation/schemas';
 import { z } from 'zod';
-import { logValidationFailure, logSecurityEvent, SecurityEventType } from '../../shared/lib/security/logger';
+import type { VercelRequest, VercelResponse } from '@vercel/node';
+import { logValidationFailure, logSecurityEvent, SecurityEventType } from '../src/shared/lib/security/logger';
 
 // Initialize Resend with API Key from env
 const resend = new Resend(process.env.RESEND_API_KEY);
-
-// Minimal Vercel Request/Response interfaces to avoid 'any'
-interface VercelRequest {
-    method?: string;
-    body: any;
-    headers: Record<string, string | string[] | undefined>;
-    socket?: { remoteAddress?: string };
-}
-
-interface VercelResponse {
-    status: (code: number) => VercelResponse;
-    json: (body: any) => void;
-}
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
     if (req.method !== 'POST') {
@@ -43,6 +31,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         <ul>
           <li><strong>Name:</strong> ${name}</li>
           <li><strong>Email:</strong> ${email}</li>
+          <li><strong>Firma:</strong> ${validatedData.company || 'Nicht angegeben'}</li>
           <li><strong>Telefon:</strong> ${phone || 'Nicht angegeben'}</li>
         </ul>
         <h2>Details</h2>

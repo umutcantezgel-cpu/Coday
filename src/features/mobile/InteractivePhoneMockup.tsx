@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
+import { Icon } from '@/shared/ui/Icon';
 
 const InteractivePhoneMockup: React.FC = () => {
     const [activeTab, setActiveTab] = useState<'home' | 'shop' | 'profile'>('home');
@@ -28,7 +29,7 @@ const InteractivePhoneMockup: React.FC = () => {
                             onClick={() => setIsDarkMode(!isDarkMode)}
                             className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${isDarkMode ? 'bg-white/10 text-yellow-400' : 'bg-gray-200 text-gray-600'}`}
                         >
-                            <span className="material-symbols-outlined text-sm">{isDarkMode ? 'light_mode' : 'dark_mode'}</span>
+                            <Icon name={isDarkMode ? 'light_mode' : 'dark_mode'} className="text-sm" />
                         </button>
                     </div>
 
@@ -65,14 +66,14 @@ const InteractivePhoneMockup: React.FC = () => {
                                 <div className="grid grid-cols-2 gap-4">
                                     <div className={`h-32 rounded-2xl p-4 ${isDarkMode ? 'bg-slate-800' : 'bg-white shadow-sm'}`}>
                                         <div className="w-8 h-8 rounded-lg bg-green-100 text-green-600 flex items-center justify-center mb-2">
-                                            <span className="material-symbols-outlined text-sm">trending_up</span>
+                                            <Icon name="trending_up" className="text-sm" />
                                         </div>
                                         <div className="text-sm font-bold">Analytics</div>
                                         <div className="text-xs opacity-50">+24%</div>
                                     </div>
                                     <div className={`h-32 rounded-2xl p-4 ${isDarkMode ? 'bg-slate-800' : 'bg-white shadow-sm'}`}>
                                         <div className="w-8 h-8 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center mb-2">
-                                            <span className="material-symbols-outlined text-sm">bolt</span>
+                                            <Icon name="bolt" className="text-sm" />
                                         </div>
                                         <div className="text-sm font-bold">Power</div>
                                         <div className="text-xs opacity-50">Active</div>
@@ -116,11 +117,11 @@ const InteractivePhoneMockup: React.FC = () => {
                                 <div className={`w-full rounded-2xl p-4 mb-4 ${isDarkMode ? 'bg-slate-800' : 'bg-white shadow-sm'}`}>
                                     <div className="flex justify-between items-center mb-4">
                                         <span className="text-sm font-bold">Settings</span>
-                                        <span className="material-symbols-outlined text-sm opacity-50">chevron_right</span>
+                                        <Icon name="chevron_right" className="text-sm opacity-50" />
                                     </div>
                                     <div className="flex justify-between items-center">
                                         <span className="text-sm font-bold">Privacy</span>
-                                        <span className="material-symbols-outlined text-sm opacity-50">chevron_right</span>
+                                        <Icon name="chevron_right" className="text-sm opacity-50" />
                                     </div>
                                 </div>
                             </motion.div>
@@ -132,13 +133,13 @@ const InteractivePhoneMockup: React.FC = () => {
                 {/* Bottom Navigation */}
                 <div className={`absolute bottom-0 w-full h-16 flex justify-around items-center z-50 px-4 pb-2 ${isDarkMode ? 'bg-slate-900 border-t border-slate-800' : 'bg-white border-t border-gray-100'}`}>
                     <button onClick={() => setActiveTab('home')} className={`flex flex-col items-center gap-1 ${activeTab === 'home' ? 'text-blue-500' : 'opacity-40'}`}>
-                        <span className="material-symbols-outlined text-xl">home</span>
+                        <Icon name="home" className="text-xl" />
                     </button>
                     <button onClick={() => setActiveTab('shop')} className={`flex flex-col items-center gap-1 ${activeTab === 'shop' ? 'text-blue-500' : 'opacity-40'}`}>
-                        <span className="material-symbols-outlined text-xl">shopping_bag</span>
+                        <Icon name="shopping_bag" className="text-xl" />
                     </button>
                     <button onClick={() => setActiveTab('profile')} className={`flex flex-col items-center gap-1 ${activeTab === 'profile' ? 'text-blue-500' : 'opacity-40'}`}>
-                        <span className="material-symbols-outlined text-xl">person</span>
+                        <Icon name="person" className="text-xl" />
                     </button>
 
                     {/* Home Indicator */}

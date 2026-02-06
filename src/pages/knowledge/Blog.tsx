@@ -1,4 +1,6 @@
-import React from 'react';
+
+import React, { useState } from 'react';
+import { Icon } from '@/shared/ui/Icon';
 import { Helmet } from 'react-helmet-async';
 import { OptimizedImage } from '../../shared/ui/OptimizedImage';
 
@@ -29,7 +31,7 @@ const Blog: React.FC = () => {
 
                 {/* Featured Post */}
                 <div className="mb-16">
-                    <Link to={`/knowledge/blog/${featuredPost.slug}`} className="block relative rounded-3xl overflow-hidden shadow-2xl group cursor-pointer h-[500px]">
+                    <Link to={`/ knowledge / blog / ${featuredPost.slug} `} className="block relative rounded-3xl overflow-hidden shadow-2xl group cursor-pointer h-[500px]">
                         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10" />
                         <OptimizedImage
                             src={featuredPost.image}
@@ -59,7 +61,7 @@ const Blog: React.FC = () => {
                 {/* Article Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                     {posts.slice(0, 6).map((post) => (
-                        <Link key={post.id} to={`/knowledge/blog/${post.slug}`} className="flex flex-col group cursor-pointer h-full">
+                        <Link key={post.id} to={`/ knowledge / blog / ${post.slug} `} className="flex flex-col group cursor-pointer h-full">
                             <article className="flex flex-col h-full">
                                 <div className="h-64 rounded-2xl bg-slate-100 mb-6 overflow-hidden relative shadow-md hover:shadow-xl transition-shadow duration-300">
                                     <OptimizedImage
@@ -86,7 +88,7 @@ const Blog: React.FC = () => {
 
                                 <span className="text-sm font-bold text-gray-900 flex items-center group-hover:translate-x-1 transition-transform mt-auto">
                                     {t('readMore')}
-                                    <span className="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+                                    <Icon name="arrow_forward" className="text-sm ml-1" />
                                 </span>
                             </article>
                         </Link>
@@ -121,14 +123,14 @@ const Blog: React.FC = () => {
                         <div className="relative z-10 lg:w-5/12">
                             <div className="relative aspect-square md:aspect-video lg:aspect-square rounded-2xl overflow-hidden shadow-2xl border border-gray-800 rotate-2 hover:rotate-0 transition-transform duration-500 group">
                                 <OptimizedImage
-                                    src="/images/services/drei-kunden-daumen-hoch-5-sterne-sprechblasen-bewertungen-zufrieden.webp"
+                                    src="/images/services/drei-kunden-reviews.webp"
                                     alt="Zufriedene Community Mitglieder"
                                     className="w-full h-full object-cover transform scale-100 group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100"
                                 />
                                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900 to-transparent p-6">
                                     <div className="flex items-center gap-2 mb-2">
                                         <div className="flex text-yellow-500">
-                                            {[1, 2, 3, 4, 5].map(i => <span key={i} className="material-symbols-outlined text-sm fill-current">star</span>)}
+                                            {[1, 2, 3, 4, 5].map(i => <Icon key={i} name="star" className="text-sm fill-current" />)}
                                         </div>
                                         <span className="text-white font-bold">4.9/5</span>
                                     </div>

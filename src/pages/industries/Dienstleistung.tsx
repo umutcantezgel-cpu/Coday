@@ -1,4 +1,5 @@
 import React from 'react';
+import { Icon } from '@/shared/ui/Icon';
 import BlurText from '../../shared/ui/BlurText';
 import GradientText from '../../shared/ui/GradientText';
 import ServiceFunnelVisualizer from '../../features/industries/services/ServiceFunnelVisualizer';
@@ -68,7 +69,7 @@ const Dienstleistung: React.FC = () => {
                             { icon: 'insights', title: 'Messbarer Erfolg', desc: 'Sehen Sie genau, wie viel Umsatz jeder Euro Werbebudget gebracht hat.' }
                         ].map((item, idx) => (
                             <div key={idx} className="p-8 border border-gray-100 rounded-2xl bg-white hover:shadow-xl transition-all">
-                                <span className="material-symbols-outlined text-4xl text-blue-600 mb-4">{item.icon}</span>
+                                <Icon name={item.icon} className="text-4xl text-blue-600 mb-4" />
                                 <h3 className="font-bold text-xl text-secondary mb-2">{item.title}</h3>
                                 <p className="text-slate-600">{item.desc}</p>
                             </div>

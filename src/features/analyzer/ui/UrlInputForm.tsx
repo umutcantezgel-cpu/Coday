@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { Search, Loader2, AlertCircle, CheckCircle } from 'lucide-react';
 import { useAnalyzerStore } from '../model/store';
+import { Icon } from '@/shared/ui/Icon';
 
 export const UrlInputForm: React.FC = () => {
     const { url, isValidUrl, status, error, setUrl, startAnalysis } = useAnalyzerStore();
@@ -99,7 +100,7 @@ export const UrlInputForm: React.FC = () => {
                         ) : (
                             <span className="flex items-center gap-2">
                                 <span>Jetzt analysieren</span>
-                                <span className="material-symbols-outlined text-xl">arrow_forward</span>
+                                <Icon name="arrow_forward" className="text-xl" />
                             </span>
                         )}
                     </button>

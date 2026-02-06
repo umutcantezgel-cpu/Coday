@@ -28,23 +28,39 @@ const MetaBalls: React.FC<MetaBallsProps> = ({
     const ballsRef = useRef<Array<{ x: number; y: number; vx: number; vy: number; size: number }>>([]);
     const animationRef = useRef<number>(0);
 
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const effectiveSpeed = prefersReducedMotion ? 0 : speed;
+
     const initBalls = useCallback((width: number, height: number) => {
         ballsRef.current = Array.from({ length: ballCount }, () => ({
             x: Math.random() * width,
             y: Math.random() * height,
-            vx: (Math.random() - 0.5) * 2 * speed,
-            vy: (Math.random() - 0.5) * 2 * speed,
+            vx: (Math.random() - 0.5) * 2 * effectiveSpeed,
+            vy: (Math.random() - 0.5) * 2 * effectiveSpeed,
             size: ballSize + Math.random() * ballSize * 0.5
         }));
-    }, [ballCount, ballSize, speed]);
+    }, [ballCount, ballSize, effectiveSpeed]);
 
     const drawMetaballs = useCallback(
         (ctx: CanvasRenderingContext2D, width: number, height: number) => {
             // Clear canvas
-            ctx.fillStyle = backgroundColor;
-            ctx.fillRect(0, 0, width, height);
+            ctx.clearRect(0, 0, width, height);
 
-            // Update ball positions
+            // Use CSS/Context filters for gooey effect: blur then threshold (contrast)
+            // Note: Context filter is standard in modern browsers
+            ctx.filter = 'blur(20px) contrast(20)';
+
+            // Background fill (if needed, but usually we want transparency for overlay)
+            // If backgroundColor is transparent, we leave it. 
+            // If we need a bg color, we should apply it to the container, not valid with contrast filter trick on same layer easily.
+            // Actually, for single layer gooey: draw white balls, apply filter. Colorize via composition or CSS.
+            // Simpler: Draw balls with solid color.
+
+            // To achieve the specific color, we can draw colored balls.
+            ctx.fillStyle = color;
+
+            // Update and draw balls
             ballsRef.current.forEach(ball => {
                 ball.x += ball.vx;
                 ball.y += ball.vy;
@@ -52,91 +68,36 @@ const MetaBalls: React.FC<MetaBallsProps> = ({
                 // Bounce off walls
                 if (ball.x < 0 || ball.x > width) ball.vx *= -1;
                 if (ball.y < 0 || ball.y > height) ball.vy *= -1;
+
+                ctx.beginPath();
+                ctx.arc(ball.x, ball.y, ball.size, 0, Math.PI * 2);
+                ctx.fill();
             });
 
-            // Create ImageData for metaball effect
-            const imageData = ctx.createImageData(width, height);
-            const data = imageData.data;
-
-            // Parse colors
-            const parseColor = (colorStr: string) => {
-                const canvas = document.createElement('canvas');
-                canvas.width = canvas.height = 1;
-                const tempCtx = canvas.getContext('2d');
-                if (!tempCtx) return { r: 0, g: 0, b: 0 };
-                tempCtx.fillStyle = colorStr;
-                tempCtx.fillRect(0, 0, 1, 1);
-                const imgData = tempCtx.getImageData(0, 0, 1, 1).data;
-                return { r: imgData[0], g: imgData[1], b: imgData[2] };
-            };
-
-            const ballColor = parseColor(color);
-            const cursorColor = parseColor(cursorBallColor);
-
-            // Sample every 2 pixels for performance
-            const step = 2;
-            for (let y = 0; y < height; y += step) {
-                for (let x = 0; x < width; x += step) {
-                    let sum = 0;
-                    let isCursor = false;
-
-                    // Add contribution from each ball
-                    ballsRef.current.forEach(ball => {
-                        const dx = x - ball.x;
-                        const dy = y - ball.y;
-                        const dist = Math.sqrt(dx * dx + dy * dy);
-                        if (dist > 0) {
-                            sum += (ball.size * ball.size) / (dist * dist);
-                        }
-                    });
-
-                    // Add contribution from cursor ball
-                    if (enableCursor && mouseRef.current.x >= 0) {
-                        const dx = x - mouseRef.current.x;
-                        const dy = y - mouseRef.current.y;
-                        const dist = Math.sqrt(dx * dx + dy * dy);
-                        if (dist > 0) {
-                            const cursorContrib = (cursorBallSize * cursorBallSize) / (dist * dist);
-                            if (cursorContrib > sum * 0.5) isCursor = true;
-                            sum += cursorContrib;
-                        }
-                    }
-
-                    // Threshold for metaball visibility
-                    const threshold = 1;
-                    if (sum > threshold) {
-                        const alpha = Math.min(255, (sum - threshold) * 100);
-                        const finalColor = isCursor ? cursorColor : ballColor;
-
-                        // Fill the stepped area
-                        for (let sy = 0; sy < step && y + sy < height; sy++) {
-                            for (let sx = 0; sx < step && x + sx < width; sx++) {
-                                const i = ((y + sy) * width + (x + sx)) * 4;
-                                data[i] = finalColor.r;
-                                data[i + 1] = finalColor.g;
-                                data[i + 2] = finalColor.b;
-                                data[i + 3] = alpha;
-                            }
-                        }
-                    }
-                }
+            // Draw cursor ball
+            if (enableCursor && mouseRef.current.x >= 0) {
+                ctx.fillStyle = cursorBallColor;
+                ctx.beginPath();
+                ctx.arc(mouseRef.current.x, mouseRef.current.y, cursorBallSize, 0, Math.PI * 2);
+                ctx.fill();
             }
-
-            ctx.putImageData(imageData, 0, 0);
         },
-        [color, backgroundColor, cursorBallColor, cursorBallSize, enableCursor]
+        [color, cursorBallColor, cursorBallSize, enableCursor]
     );
 
     useEffect(() => {
         const canvas = canvasRef.current;
         if (!canvas) return;
 
-        const ctx = canvas.getContext('2d');
+        const ctx = canvas.getContext('2d', { alpha: true });
         if (!ctx) return;
 
         const resizeCanvas = () => {
             const rect = canvas.parentElement?.getBoundingClientRect();
             if (rect) {
+                // Resize handling
+                // For 'contrast' filter to work well for gooey, we need high resolution or CSS filter.
+                // Using Canvas 2D filter API (Chrome/FF/Safari supported mostly)
                 canvas.width = rect.width;
                 canvas.height = rect.height;
                 if (ballsRef.current.length === 0) {
@@ -175,14 +136,17 @@ const MetaBalls: React.FC<MetaBallsProps> = ({
         mouseRef.current = { x: -1000, y: -1000 };
     }, []);
 
+    // Apply CSS filter as fallback or enhancement if ctx.filter isn't perfect
+    // But we are using ctx.filter above. 
     return (
-        <canvas
-            ref={canvasRef}
-            className={`w-full h-full ${className}`}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            style={{ display: 'block' }}
-        />
+        <div className={`relative w-full h-full overflow-hidden ${className}`} style={{ backgroundColor }}>
+            <canvas
+                ref={canvasRef}
+                className="w-full h-full block"
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
+            />
+        </div>
     );
 };
 

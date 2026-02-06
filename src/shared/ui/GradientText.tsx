@@ -48,7 +48,7 @@ export default function GradientText({
             const fullCycle = animationDuration * 2;
             const cycleTime = elapsedRef.current % fullCycle;
 
-            if (cycleTime < animationDuration) {
+            if (cycleTime <animationDuration) {
                 progress.set((cycleTime / animationDuration) * 100);
             } else {
                 progress.set(100 - ((cycleTime - animationDuration) / animationDuration) * 100);

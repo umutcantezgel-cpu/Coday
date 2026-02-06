@@ -17,7 +17,7 @@ const Dashboard: React.FC = () => {
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center space-x-3">
               <div className="text-primary text-3xl">
-                <i className="fa-brands fa-connectdevelop"></i>
+                <Icon name="code" className="text-secondary" />
               </div>
               <span className="font-display font-bold text-xl tracking-tight text-gray-900 dark:text-white">Coday</span>
             </div>
@@ -151,7 +151,7 @@ const Dashboard: React.FC = () => {
               <p className="text-sm text-gray-500">{t('comparison.subtitle')}</p>
             </div>
             <span className="text-sapphire font-bold text-sm bg-blue-50 px-3 py-1 rounded-full mt-2 sm:mt-0">
-              <i className="fa-solid fa-bolt mr-2"></i>{t('comparison.badge')}
+              <Icon name="bolt" className="mr-2" />{t('comparison.badge')}
             </span>
           </div>
           <div className="overflow-x-auto">
@@ -214,7 +214,7 @@ const Dashboard: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center space-x-2">
             <div className="text-primary text-xl">
-              <i className="fa-brands fa-connectdevelop"></i>
+              <Icon name="code" className="text-secondary" />
             </div>
             <span className="font-display font-bold text-base tracking-tight text-gray-900 dark:text-white">Coday</span>
           </div>
@@ -222,8 +222,8 @@ const Dashboard: React.FC = () => {
             {t('footer.copyright')}
           </div>
           <div className="flex space-x-4 text-gray-400">
-            <a href="#" className="hover:text-primary transition-colors"><i className="fa-brands fa-github"></i></a>
-            <a href="#" className="hover:text-primary transition-colors"><i className="fa-brands fa-twitter"></i></a>
+            <a href="#" className="hover:text-primary transition-colors"><Icon name="github" /></a>
+            <a href="#" className="hover:text-primary transition-colors"><Icon name="twitter" /></a>
           </div>
         </div>
       </footer>

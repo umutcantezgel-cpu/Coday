@@ -1,11 +1,10 @@
-import React, { useState, Suspense, lazy } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import React, { Suspense, lazy } from 'react';
+import { useLocation } from 'react-router-dom';
 import CardNav from '../navigation/CardNav';
 import { navItems } from '../navigation/config'; // Assumption: config exists
 // ChatWidget lazy loaded below
 import { CookieConsentBanner, CookieSettingsModal } from '../cookie';
 import { FloatingActionMenu } from '../floating-menu/FloatingActionMenu';
-import { Icon } from '../../shared/ui/Icon';
 
 const Footer = lazy(() => import('./Footer'));
 const ChatWidget = lazy(() => import('../chatbot').then(module => ({ default: module.ChatWidget })));
@@ -59,49 +58,3 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     </div>
   );
 };
-
-// Helper Components for Mobile Menu
-const MobileLink = ({ to, label, onClick }: { to: string, label: string, onClick: () => void }) => (
-  <NavLink
-    to={to}
-    className={({ isActive }) => `block text-2xl font-bold ${isActive ? 'text-primary' : 'text-gray-800'}`}
-    onClick={onClick}
-  >
-    {label}
-  </NavLink>
-);
-
-const MobileSection = ({ title, items, onItemClick }: { title: string, items: any[], onItemClick: () => void }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  return (
-    <div>
-
-
-      <button
-        className="flex items-center justify-between w-full text-lg font-bold text-gray-400 mb-2"
-        onClick={() => setIsOpen(!isOpen)}
-        aria-expanded={isOpen}
-      >
-        {title}
-        <Icon
-          name="expand_more"
-          className={`transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
-        />
-      </button>
-      <div className={`space-y-4 pl-4 overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96 opacity-100 mt-2' : 'max-h-0 opacity-0'}`}>
-        {items.map((item, i) => (
-          <NavLink
-            key={i}
-            to={item.href}
-            className="flex items-center space-x-3 text-gray-700 p-2 rounded-lg active:bg-gray-50 bg-transparent"
-            onClick={onItemClick}
-          >
-            <Icon name={item.icon || 'circle'} className="text-gray-400" />
-            <span className="font-medium">{item.label}</span>
-          </NavLink>
-        ))}
-      </div>
-    </div>
-  );
-}

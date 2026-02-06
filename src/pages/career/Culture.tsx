@@ -1,4 +1,5 @@
 import React from 'react';
+import { Icon } from '@/shared/ui/Icon';
 import BlurText from '../../shared/ui/BlurText';
 import GradientText from '../../shared/ui/GradientText';
 import ValuesDeck from '../../features/culture/ValuesDeck';
@@ -46,15 +47,15 @@ const Culture: React.FC = () => {
                             </p>
                             <ul className="space-y-4 text-gray-300">
                                 <li className="flex items-center gap-3">
-                                    <span className="text-green-500 material-symbols-outlined">check_circle</span>
+                                    <Icon name="check_circle" className="text-green-500" />
                                     <span>100% Fernarbeit, 100% Fokus</span>
                                 </li>
                                 <li className="flex items-center gap-3">
-                                    <span className="text-green-500 material-symbols-outlined">check_circle</span>
+                                    <Icon name="check_circle" className="text-green-500" />
                                     <span>Radikale Ehrlichkeit</span>
                                 </li>
                                 <li className="flex items-center gap-3">
-                                    <span className="text-green-500 material-symbols-outlined">check_circle</span>
+                                    <Icon name="check_circle" className="text-green-500" />
                                     <span>Ergebnisse statt Zeit absitzen</span>
                                 </li>
                             </ul>

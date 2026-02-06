@@ -1,5 +1,6 @@
 import React from 'react';
 import { Module } from '../../../data/modules';
+import { Icon } from '@/shared/ui/Icon';
 
 interface ModuleCardProps {
     module: Module;
@@ -32,7 +33,7 @@ export const ModuleCard: React.FC<ModuleCardProps> = ({ module, isSelected, onTo
             {/* Badges - Fix positioning */}
             {isIncluded && (
                 <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-emerald-500 text-white text-[10px] uppercase font-bold tracking-wider rounded-full shadow-md z-20 flex items-center gap-1">
-                    <span className="material-symbols-outlined text-[10px]">check</span> Inklusive
+                    <Icon name="check" className="text-[10px]" /> Inklusive
                 </span>
             )}
             {!isIncluded && module.isPopular && (
@@ -49,9 +50,9 @@ export const ModuleCard: React.FC<ModuleCardProps> = ({ module, isSelected, onTo
             {/* Header */}
             <div className="flex items-start justify-between mb-2 mt-1">
                 <div className={`p-2 rounded-lg transition-colors ${isIncluded ? 'bg-emerald-100 text-emerald-600' :
-                        isSelected ? 'bg-primary text-white' : 'bg-gray-100 text-gray-500 group-hover:bg-primary/10 group-hover:text-primary'
+                    isSelected ? 'bg-primary text-white' : 'bg-gray-100 text-gray-500 group-hover:bg-primary/10 group-hover:text-primary'
                     }`}>
-                    <span className="material-symbols-outlined text-xl">{module.icon}</span>
+                    <Icon name={module.icon} className="text-xl" />
                 </div>
                 <div className="text-right">
                     <div className="font-display font-bold text-lg text-gray-900">

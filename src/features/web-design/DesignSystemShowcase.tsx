@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { Icon } from '@/shared/ui/Icon';
+import { motion, AnimatePresence } from 'motion/react';
 
 const DesignSystemShowcase: React.FC = () => {
     const [theme, setTheme] = useState<'brand-a' | 'brand-b'>('brand-a');
@@ -69,7 +70,7 @@ const DesignSystemShowcase: React.FC = () => {
                     style={{ borderRadius: current.radius, boxShadow: theme === 'brand-a' ? '4px 4px 0px 0px rgba(0,0,0,1)' : '0 4px 6px -1px rgba(0, 0, 0, 0.1)' }}
                 >
                     <div className="w-12 h-12 mb-4 flex items-center justify-center rounded-full" style={{ backgroundColor: current.primary, color: theme === 'brand-a' ? 'black' : 'white' }}>
-                        <span className="material-symbols-outlined">star</span>
+                        <Icon name="star" />
                     </div>
                     <h4 className={`text-xl font-bold mb-2 ${current.textColor} ${current.font}`}>Feature Card</h4>
                     <p className={`text-sm mb-6 ${current.textColor} opacity-80`}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -112,7 +113,7 @@ const DesignSystemShowcase: React.FC = () => {
                             border: theme === 'brand-a' ? '2px solid black' : `1px solid ${current.primary}40`
                         }}
                     >
-                        <span className="material-symbols-outlined" style={{ color: theme === 'brand-a' ? 'black' : current.primary }}>info</span>
+                        <Icon name="info" style={{ color: theme === 'brand-a' ? 'black' : current.primary }} />
                         <span className={`text-sm font-bold ${current.textColor}`}>System Alert</span>
                     </motion.div>
 

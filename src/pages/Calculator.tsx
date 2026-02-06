@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Icon } from '@/shared/ui/Icon';
 import { useNavigate } from 'react-router-dom';
 import { useCalculatorStore } from '../features/calculator/model/store';
 import { ModuleCard } from '../features/calculator/ui/ModuleCard';
@@ -80,7 +81,7 @@ const Calculator: React.FC = () => {
                                     >
                                         <div className="flex items-center gap-4">
                                             <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${selectedCount > 0 ? 'bg-primary text-white' : 'bg-gray-100 text-gray-400'}`}>
-                                                {selectedCount > 0 ? selectedCount : <i className="fa-solid fa-chevron-right text-xs"></i>}
+                                                {selectedCount > 0 ? selectedCount : <Icon name="chevron_right" className="text-xs" />}
                                             </div>
                                             <div className="text-left">
                                                 <h2 className="font-display font-bold text-lg text-gray-900">
@@ -94,7 +95,7 @@ const Calculator: React.FC = () => {
                                             </div>
                                         </div>
                                         <div className={`transform transition-transform duration-300 text-gray-400 ${isOpen ? 'rotate-180' : ''}`}>
-                                            <i className="fa-solid fa-chevron-down"></i>
+                                            <Icon name="expand_more" />
                                         </div>
                                     </button>
 

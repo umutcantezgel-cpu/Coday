@@ -1,6 +1,7 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { CircularGauge } from './CircularGauge';
+import { Icon } from '@/shared/ui/Icon';
 
 interface ScoreCardProps {
     title: string;
@@ -49,7 +50,7 @@ export const ScoreCard: React.FC<ScoreCardProps> = ({
             <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
                     <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${score === -1 ? 'from-gray-400 to-gray-500' : color} flex items-center justify-center text-white`}>
-                        <span className="material-symbols-outlined text-xl">{icon}</span>
+                        <Icon name={icon} className="text-xl" />
                     </div>
                     <h3 className="font-bold text-gray-900">{title}</h3>
                 </div>
@@ -66,7 +67,7 @@ export const ScoreCard: React.FC<ScoreCardProps> = ({
                 <div className="flex-shrink-0">
                     {score === -1 ? (
                         <div className="w-16 h-16 rounded-full border-4 border-gray-200 flex items-center justify-center bg-white">
-                            <span className="material-symbols-outlined text-gray-400 text-2xl">error_outline</span>
+                            <Icon name="error_outline" className="text-gray-400 text-2xl" />
                         </div>
                     ) : (
                         <CircularGauge score={score} size={64} color={color} />
@@ -76,7 +77,7 @@ export const ScoreCard: React.FC<ScoreCardProps> = ({
 
             {/* Hover Arrow */}
             <div className="flex justify-end mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                <span className="material-symbols-outlined text-primary text-sm">arrow_forward</span>
+                <Icon name="arrow_forward" className="text-primary text-sm" />
             </div>
 
 

@@ -24,7 +24,7 @@ const StepIndicator: React.FC<StepIndicatorProps> = ({ currentStep, className = 
     return (
         <div className={`flex items-center justify-center ${className}`}>
             {steps.map((step, index) => {
-                const isCompleted = index < currentIndex;
+                const isCompleted = index <currentIndex;
                 const isCurrent = index === currentIndex;
                 const isUpcoming = index > currentIndex;
 
@@ -56,7 +56,7 @@ const StepIndicator: React.FC<StepIndicatorProps> = ({ currentStep, className = 
                         </div>
 
                         {/* Connector Line */}
-                        {index < steps.length - 1 && (
+                        {index <steps.length - 1 && (
                             <div className="w-16 sm:w-24 h-0.5 mx-2 relative">
                                 <div className="absolute inset-0 bg-gray-200 rounded-full" />
                                 <motion.div

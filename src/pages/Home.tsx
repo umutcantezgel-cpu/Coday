@@ -8,7 +8,7 @@ import GradientText from '../shared/ui/GradientText';
 import CountUp from '../shared/ui/CountUp';
 import BlurText from '../shared/ui/BlurText';
 import ScrollFloat from '../shared/ui/ScrollFloat';
-import { MdConstruction, MdApartment, MdShoppingCart, MdLightbulb, MdHealthAndSafety } from 'react-icons/md';
+// import { MdConstruction, MdApartment, MdShoppingCart, MdLightbulb, MdHealthAndSafety } from 'react-icons/md';
 // Premium UI Components
 import RotatingText from '../shared/ui/RotatingText';
 import SpotlightCard from '../shared/ui/SpotlightCard';
@@ -173,7 +173,7 @@ const Home: React.FC = () => {
             <Link to="/services/industries/handwerk" className="block h-full">
               <BentoCard effect="tilt" tiltMax={12} className="p-6 text-start h-full">
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
-                  <MdConstruction size={24} />
+                  <Icon name="construction" size="lg" className="text-primary" />
                 </div>
                 <h3 className="font-bold text-lg text-secondary mb-2">{t('industries.card_craft.title')}</h3>
                 <p className="text-sm text-slate-600">{t('industries.card_craft.desc')}</p>
@@ -182,7 +182,7 @@ const Home: React.FC = () => {
             <Link to="/services/industries/immobilien" className="block h-full">
               <BentoCard effect="glow" glowColor="rgba(26, 154, 154, 0.3)" className="p-6 text-start h-full">
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
-                  <MdApartment size={24} />
+                  <Icon name="apartment" size="lg" className="text-primary" />
                 </div>
                 <h3 className="font-bold text-lg text-secondary mb-2">{t('industries.card_realestate.title')}</h3>
                 <p className="text-sm text-slate-600">{t('industries.card_realestate.desc')}</p>
@@ -191,7 +191,7 @@ const Home: React.FC = () => {
             <Link to="/services/industries/e-commerce" className="block h-full">
               <BentoCard effect="spotlight" spotlightColor="rgba(26, 154, 154, 0.15)" className="p-6 text-start h-full">
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
-                  <MdShoppingCart size={24} />
+                  <Icon name="shopping_cart" size="lg" className="text-primary" />
                 </div>
                 <h3 className="font-bold text-lg text-secondary mb-2">{t('industries.card_shop.title')}</h3>
                 <p className="text-sm text-slate-600">{t('industries.card_shop.desc')}</p>
@@ -200,7 +200,7 @@ const Home: React.FC = () => {
             <Link to="/services/industries/dienstleistung" className="block h-full">
               <BentoCard effect="tilt" tiltMax={12} className="p-6 text-start h-full">
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
-                  <MdLightbulb size={24} />
+                  <Icon name="lightbulb" size="lg" className="text-primary" />
                 </div>
                 <h3 className="font-bold text-lg text-secondary mb-2">{t('industries.card_consulting.title')}</h3>
                 <p className="text-sm text-slate-600">{t('industries.card_consulting.desc')}</p>
@@ -209,7 +209,7 @@ const Home: React.FC = () => {
             <Link to="/services/industries/gesundheit" className="block h-full">
               <BentoCard effect="glow" glowColor="rgba(26, 154, 154, 0.3)" className="p-6 text-start h-full">
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
-                  <MdHealthAndSafety size={24} />
+                  <Icon name="health_and_safety" size="lg" className="text-primary" />
                 </div>
                 <h3 className="font-bold text-lg text-secondary mb-2">{t('industries.card_health.title')}</h3>
                 <p className="text-sm text-slate-600">{t('industries.card_health.desc')}</p>
@@ -256,7 +256,7 @@ const Home: React.FC = () => {
             <div className="order-2 lg:order-1 relative">
               <div className="absolute top-0 start-0 w-24 h-24 bg-accent/20 rounded-full blur-xl -translate-x-1/2 -translate-y-1/2 rtl:translate-x-1/2"></div>
               <OptimizedImage
-                src="/images/marketing/drei-kunden-daumen-hoch-5-sterne-sprechblasen-bewertungen-zufrieden.jpeg"
+                src="/images/marketing/drei-kunden-reviews.jpeg"
                 alt="Zufriedene Partner"
                 className="relative rounded-3xl shadow-flat-lg w-full bg-white p-2"
               />

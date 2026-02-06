@@ -1,4 +1,5 @@
 import React from 'react';
+import { Icon } from '@/shared/ui/Icon';
 import { useTranslation } from 'react-i18next';
 import BlurText from '../../shared/ui/BlurText';
 import GradientText from '../../shared/ui/GradientText';
@@ -85,15 +86,15 @@ const Handwerk: React.FC = () => {
                             </p>
                             <ul className="space-y-4 mb-8">
                                 <li className="flex items-center text-slate-700 font-bold">
-                                    <span className="material-symbols-outlined text-green-500 mr-3">check_circle</span>
+                                    <Icon name="check_circle" className="text-green-500 mr-3" />
                                     {t('common.features.google_maps')}
                                 </li>
                                 <li className="flex items-center text-slate-700 font-bold">
-                                    <span className="material-symbols-outlined text-green-500 mr-3">check_circle</span>
+                                    <Icon name="check_circle" className="text-green-500 mr-3" />
                                     {t('common.features.regional_pages')}
                                 </li>
                                 <li className="flex items-center text-slate-700 font-bold">
-                                    <span className="material-symbols-outlined text-green-500 mr-3">check_circle</span>
+                                    <Icon name="check_circle" className="text-green-500 mr-3" />
                                     {t('common.features.review_management')}
                                 </li>
                             </ul>

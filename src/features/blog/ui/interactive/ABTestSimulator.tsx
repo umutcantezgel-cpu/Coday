@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { Split, TrendingUp, Users, MousePointerClick, RefreshCw, Trophy } from 'lucide-react';
 import { clsx } from 'clsx';
 import { cn } from '@/shared/lib/utils';
@@ -55,7 +55,7 @@ export const ABTestSimulator: React.FC = () => {
                 // Add some noise (+/- 0.5%)
                 const noisyRate = currentRate + (Math.random() - 0.5);
 
-                if (Math.random() * 100 < noisyRate) {
+                if (Math.random() * 100 <noisyRate) {
                     setConversions(prev => prev + 1);
                 }
             }, 100 / simSpeed);

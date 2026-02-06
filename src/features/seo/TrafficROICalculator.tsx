@@ -1,118 +1,111 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { motion } from 'motion/react';
+import { BadgeEuro, Calculator, TrendingUp, Search } from 'lucide-react';
 
-const TrafficROICalculator: React.FC = () => {
-    const [visitors, setVisitors] = useState(1000);
-    const [conversionRate, setConversionRate] = useState(2.5);
-    const [leadValue, setLeadValue] = useState(500);
-    const [seoBoost, setSeoBoost] = useState(false);
+export const TrafficROICalculator: React.FC = () => {
+    const [traffic, setTraffic] = useState(5000);
+    const [conversion, setConversion] = useState(2.0);
+    const [aov, setAov] = useState(100);
 
-    const [currentRevenue, setCurrentRevenue] = useState(0);
-    const [potentialRevenue, setPotentialRevenue] = useState(0);
+    // SEO Logic: 
+    // Conservative Estimate: +50% Traffic in 12 Months
+    // Optimistic Estimate: +100% Traffic + 20% Conversion Improvement (better targeting)
 
-    useEffect(() => {
-        const calculate = () => {
-            const current = visitors * (conversionRate / 100) * leadValue;
-            // Conservative SEO Estimate: +200% traffic over 12 months in a good campaign
-            // But let's stay realistic for the toggle: +50% immediate impact visualized
-            const boostMultiplier = seoBoost ? 1.5 : 1;
-            const projectedVisitors = visitors * boostMultiplier;
-            const projectedRevenue = projectedVisitors * (conversionRate / 100) * leadValue;
+    const currentRevenue = traffic * (conversion / 100) * aov;
+    const projectedTraffic = traffic * 1.5; // +50%
+    const projectedRevenue = projectedTraffic * (conversion / 100) * aov;
 
-            setCurrentRevenue(Math.round(current));
-            setPotentialRevenue(Math.round(projectedRevenue));
-        };
-        calculate();
-    }, [visitors, conversionRate, leadValue, seoBoost]);
-
-    const formatCurrency = (val: number) => {
-        return new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(val);
-    };
+    // Annualized Growth
+    const annualGrowth = (projectedRevenue - currentRevenue) * 12;
 
     return (
-        <div className="bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden">
-            <div className="grid lg:grid-cols-2">
-                {/* Inputs */}
-                <div className="p-8 space-y-8 bg-gray-50/50">
+        <div className="w-full max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+            {/* Controls */}
+            <div className="bg-white p-8 rounded-3xl shadow-aurora border border-aurora-mist">
+                <div className="flex items-center gap-3 mb-8">
+                    <div className="p-3 bg-purple-50 text-purple-600 rounded-xl">
+                        <Search size={24} />
+                    </div>
                     <div>
-                        <h3 className="font-display font-bold text-2xl text-secondary mb-2">ROI Rechner</h3>
-                        <p className="text-slate-500 text-sm">Was ist ein Top-Ranking wert?</p>
-                    </div>
-
-                    <div className="space-y-6">
-                        <div>
-                            <div className="flex justify-between text-sm font-bold text-slate-700 mb-2">
-                                <label>Monatliche Besucher</label>
-                                <span>{visitors.toLocaleString()}</span>
-                            </div>
-                            <input
-                                type="range"
-                                min="100" max="50000" step="100"
-                                value={visitors}
-                                onChange={(e) => setVisitors(Number(e.target.value))}
-                                className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary"
-                            />
-                        </div>
-
-                        <div>
-                            <div className="flex justify-between text-sm font-bold text-slate-700 mb-2">
-                                <label>Conversion Rate (%)</label>
-                                <span>{conversionRate}%</span>
-                            </div>
-                            <input
-                                type="range"
-                                min="0.1" max="10" step="0.1"
-                                value={conversionRate}
-                                onChange={(e) => setConversionRate(Number(e.target.value))}
-                                className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary"
-                            />
-                        </div>
-
-                        <div>
-                            <div className="flex justify-between text-sm font-bold text-slate-700 mb-2">
-                                <label>Wert pro Lead (€)</label>
-                                <span>{leadValue} €</span>
-                            </div>
-                            <input
-                                type="number"
-                                value={leadValue}
-                                onChange={(e) => setLeadValue(Number(e.target.value))}
-                                className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all font-bold text-secondary"
-                            />
-                        </div>
-                    </div>
-
-                    <div className="flex items-center justify-between p-4 bg-white rounded-xl border border-gray-200 cursor-pointer hover:border-primary transition-colors" onClick={() => setSeoBoost(!seoBoost)}>
-                        <div className="flex items-center gap-3">
-                            <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors ${seoBoost ? 'bg-primary border-primary' : 'border-gray-300'}`}>
-                                {seoBoost && <span className="material-symbols-outlined text-white text-[14px]">check</span>}
-                            </div>
-                            <span className="font-bold text-secondary text-sm">SEO Growth Boost aktivieren (+50%)</span>
-                        </div>
+                        <h3 className="text-xl font-bold text-gray-900">SEO Potenzial Rechner</h3>
+                        <p className="text-sm text-slate-500">Basierend auf 50% Traffic-Wachstum</p>
                     </div>
                 </div>
 
-                {/* Output */}
-                <div className="bg-secondary p-8 text-white flex flex-col justify-center relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-[80px] -mr-16 -mt-16 pointer-events-none"></div>
+                <div className="space-y-6">
+                    <div>
+                        <label className="block text-sm font-bold text-gray-700 mb-2">Monatliche Besucher (Organisch)</label>
+                        <input
+                            type="range" min="500" max="50000" step="500"
+                            value={traffic} onChange={(e) => setTraffic(Number(e.target.value))}
+                            className="w-full accent-purple-600 h-2 bg-gray-100 rounded-lg appearance-none cursor-pointer"
+                        />
+                        <div className="text-right font-mono font-bold text-purple-600 mt-1">{traffic.toLocaleString()}</div>
+                    </div>
 
-                    <div className="relative z-10 text-center">
-                        <span className="text-primary font-bold uppercase tracking-wider text-xs mb-2 block">Potenzieller Umsatz / Monat</span>
-                        <div className="text-5xl sm:text-6xl font-display font-black mb-2 animate-in fade-in slide-in-from-bottom-4 transition-all duration-300">
-                            {formatCurrency(potentialRevenue)}
-                        </div>
-                        {seoBoost && (
-                            <div className="inline-flex items-center gap-1 bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-xs font-bold mb-8">
-                                <span className="material-symbols-outlined text-sm">trending_up</span>
-                                +{formatCurrency(potentialRevenue - (visitors * (conversionRate / 100) * leadValue))} durch SEO
-                            </div>
-                        )}
-                        {!seoBoost && <div className="h-8 mb-8"></div>}
+                    <div>
+                        <label className="block text-sm font-bold text-gray-700 mb-2">Conversion Rate (%)</label>
+                        <input
+                            type="range" min="0.5" max="10" step="0.1"
+                            value={conversion} onChange={(e) => setConversion(Number(e.target.value))}
+                            className="w-full accent-purple-600 h-2 bg-gray-100 rounded-lg appearance-none cursor-pointer"
+                        />
+                        <div className="text-right font-mono font-bold text-purple-600 mt-1">{conversion}%</div>
+                    </div>
 
-                        <p className="text-gray-400 text-sm max-w-xs mx-auto">
-                            SEO ist kein Kostenfaktor, sondern ein Investment. Ein Top-Ranking liefert Traffic, auch wenn Sie schlafen.
-                        </p>
+                    <div>
+                        <label className="block text-sm font-bold text-gray-700 mb-2">Warenkorbwert (€)</label>
+                        <input
+                            type="range" min="10" max="500" step="10"
+                            value={aov} onChange={(e) => setAov(Number(e.target.value))}
+                            className="w-full accent-purple-600 h-2 bg-gray-100 rounded-lg appearance-none cursor-pointer"
+                        />
+                        <div className="text-right font-mono font-bold text-purple-600 mt-1">{aov}€</div>
                     </div>
                 </div>
+            </div>
+
+            {/* Results */}
+            <div className="relative">
+                <motion.div
+                    initial={{ scale: 0.9, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    className="p-8 rounded-3xl bg-gray-900 text-white relative overflow-hidden"
+                >
+                    <div className="absolute top-0 right-0 p-32 bg-purple-600/30 blur-[100px] rounded-full -z-0"></div>
+
+                    <h3 className="text-2xl font-display font-light mb-8 opacity-80">Zusätzlicher Jahresumsatz</h3>
+
+                    <div className="flex items-baseline gap-2 mb-2">
+                        <span className="text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+                            +{Math.round(annualGrowth).toLocaleString()}€
+                        </span>
+                    </div>
+                    <div className="flex items-center gap-2 text-purple-300 text-sm font-bold uppercase tracking-wider mb-8">
+                        <TrendingUp size={16} />
+                        Durch SEO Optimierung
+                    </div>
+
+                    <div className="h-px bg-white/10 w-full mb-8"></div>
+
+                    <div className="flex items-center justify-between">
+                        <div>
+                            <div className="text-white/60 text-sm mb-1">Potenzieller Monatsumsatz</div>
+                            <div className="text-2xl font-bold flex items-center gap-2">
+                                <BadgeEuro className="text-green-400" />
+                                {Math.round(projectedRevenue).toLocaleString()}€
+                            </div>
+                        </div>
+                        <motion.div
+                            animate={{ scale: [1, 1.1, 1] }}
+                            transition={{ repeat: Infinity, duration: 2 }}
+                            className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center text-green-400"
+                        >
+                            <TrendingUp size={24} />
+                        </motion.div>
+                    </div>
+                </motion.div>
             </div>
         </div>
     );

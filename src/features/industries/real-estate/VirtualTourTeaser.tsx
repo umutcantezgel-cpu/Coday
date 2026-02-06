@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { motion, useAnimation } from 'framer-motion';
+import { Icon } from '@/shared/ui/Icon';
+import { motion, useAnimation } from 'motion/react';
 
 const VirtualTourTeaser: React.FC = () => {
     // Simulating a 360 viewer with a wider panoramic image moving on drag/auto
@@ -30,7 +31,7 @@ const VirtualTourTeaser: React.FC = () => {
 
                 <div className="flex gap-2">
                     <button className="w-10 h-10 rounded-full bg-white/10 backdrop-blur border border-white/20 flex items-center justify-center text-white hover:bg-white/20 pointer-events-auto">
-                        <span className="material-symbols-outlined">fullscreen</span>
+                        <Icon name="maximize" />
                     </button>
                 </div>
             </div>
@@ -69,7 +70,7 @@ const VirtualTourTeaser: React.FC = () => {
                 {/* Instructions */}
                 <div className={`absolute inset-0 flex items-center justify-center pointer-events-none transition-opacity duration-500 ${isDragging ? 'opacity-0' : 'opacity-100'}`}>
                     <div className="bg-black/30 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10 flex items-center gap-2 text-white text-sm">
-                        <span className="material-symbols-outlined">360</span>
+                        <Icon name="360" />
                         Drag to explore
                     </div>
                 </div>

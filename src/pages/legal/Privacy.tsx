@@ -18,7 +18,7 @@ const Privacy: React.FC = () => {
     return (
         <LegalLayout
             title={t('privacy.title')}
-            subtitle={<span className="text-primary">{t('privacy.subtitle')}</span>}
+            subtitle={t('privacy.subtitle')}
             lastUpdated={t('privacy.last_updated', { date: '04.02.2026' })}
             tocItems={tocItems}
         >

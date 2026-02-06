@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Icon } from '../shared/ui/Icon';
 
 const NotFound: React.FC = () => {
     return (
@@ -43,7 +44,7 @@ const NotFound: React.FC = () => {
                         to="/"
                         className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 border border-transparent text-base font-bold rounded-xl text-white bg-gradient-ocean hover:bg-opacity-90 shadow-aurora hover:shadow-aurora-lg transition-all transform hover:-translate-y-1 group"
                     >
-                        <i className="fa-solid fa-arrow-left mr-2 transition-transform group-hover:-translate-x-1"></i>
+                        <Icon name="arrow_left" className="mr-2 transition-transform group-hover:-translate-x-1" />
                         Zur Startseite
                     </Link>
                     <Link
@@ -51,7 +52,7 @@ const NotFound: React.FC = () => {
                         className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 border-2 border-slate-200 text-base font-bold rounded-xl text-slate-600 bg-white/50 backdrop-blur-sm hover:bg-white hover:border-primary/30 hover:text-primary transition-all shadow-sm hover:shadow-md"
                     >
                         Projekt konfigurieren
-                        <i className="fa-solid fa-gear ml-2 opacity-50"></i>
+                        <Icon name="settings" className="ml-2 opacity-50" />
                     </Link>
                 </div>
             </div>

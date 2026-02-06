@@ -1,4 +1,5 @@
 import React from 'react';
+import { Icon } from '@/shared/ui/Icon';
 
 interface InteractiveMapProps {
     className?: string;
@@ -48,7 +49,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
                 <div className="absolute bottom-4 left-4 right-4 md:right-auto md:max-w-sm bg-white/95 backdrop-blur-md rounded-xl p-4 shadow-lg border border-aurora-mist">
                     <div className="flex items-start gap-3">
                         <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <span className="material-symbols-outlined text-primary">location_on</span>
+                            <Icon name="location_on" className="text-primary" />
                         </div>
                         <div>
                             <h4 className="font-bold text-gray-900 mb-1">Coday Standort</h4>
@@ -63,7 +64,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
                                 className="text-primary text-sm font-medium hover:underline flex items-center gap-1"
                             >
                                 Route planen
-                                <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                                <Icon name="arrow_forward" className="text-sm" />
                             </a>
                         </div>
                     </div>

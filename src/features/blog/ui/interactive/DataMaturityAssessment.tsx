@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { CheckCircle2, AlertCircle, TrendingUp, BarChart3, Lock, Share2 } from 'lucide-react';
 import { cn } from '@/shared/lib/utils';
 import { useTranslation, Trans } from 'react-i18next';
@@ -120,7 +120,7 @@ export const DataMaturityAssessment: React.FC = () => {
         const newScore = score + points;
         setScore(newScore);
 
-        if (currentStep < QUESTIONS.length - 1) {
+        if (currentStep <QUESTIONS.length - 1) {
             setCurrentStep(prev => prev + 1);
         } else {
             setShowResult(true);

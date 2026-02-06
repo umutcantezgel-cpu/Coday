@@ -46,7 +46,7 @@ const CaseStudy: React.FC = () => {
                                 {t('results.desc')}
                             </p>
                             <a href="#" className="inline-flex items-center text-primary font-bold hover:underline">
-                                {t('results.link')} <i className="fa-solid fa-arrow-right ml-2"></i>
+                                {t('results.link')} <Icon name="arrow_right" className="ml-2" />
                             </a>
                         </div>
 

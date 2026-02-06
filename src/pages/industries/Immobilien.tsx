@@ -1,4 +1,6 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Icon } from '@/shared/ui/Icon';
 import BlurText from '../../shared/ui/BlurText';
 import GradientText from '../../shared/ui/GradientText';
 import VirtualTourTeaser from '../../features/industries/real-estate/VirtualTourTeaser';
@@ -77,8 +79,8 @@ const Immobilien: React.FC = () => {
                             { icon: 'alternate_email', title: 'Autom. Nachfassen', desc: 'E-Mail-Sequenzen für Interessenten, die noch nicht bereit sind.' }
                         ].map((item, idx) => (
                             <div key={idx} className="p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-xl transition-all border border-gray-100">
-                                <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6">
-                                    <span className="material-symbols-outlined">{item.icon}</span>
+                                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform duration-300">
+                                    <Icon name={item.icon} />
                                 </div>
                                 <h3 className="font-bold text-xl text-secondary mb-3">{item.title}</h3>
                                 <p className="text-slate-600">{item.desc}</p>

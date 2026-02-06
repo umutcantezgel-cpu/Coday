@@ -58,7 +58,7 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
     const isUpdatingRef = useRef(false);
 
     const calculateProgress = useCallback((scrollTop: number, start: number, end: number) => {
-        if (scrollTop < start) return 0;
+        if (scrollTop <start) return 0;
         if (scrollTop > end) return 1;
         return (scrollTop - start) / (end - start);
     }, []);
@@ -131,7 +131,7 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
             let blur = 0;
             if (blurAmount) {
                 let topCardIndex = 0;
-                for (let j = 0; j < cardsRef.current.length; j++) {
+                for (let j = 0; j <cardsRef.current.length; j++) {
                     const jCardTop = getElementOffset(cardsRef.current[j]);
                     const jTriggerStart = jCardTop - stackPositionPx - itemStackDistance * j;
                     if (scrollTop >= jTriggerStart) {
@@ -139,7 +139,7 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
                     }
                 }
 
-                if (i < topCardIndex) {
+                if (i <topCardIndex) {
                     const depthInStack = topCardIndex - i;
                     blur = Math.max(0, depthInStack * blurAmount);
                 }
@@ -279,7 +279,7 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
         const transformsCache = lastTransformsRef.current;
 
         cards.forEach((card, i) => {
-            if (i < cards.length - 1) {
+            if (i <cards.length - 1) {
                 card.style.marginBottom = `${itemDistance}px`;
             }
             card.style.willChange = 'transform, filter';

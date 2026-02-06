@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
+import { Icon } from '@/shared/ui/Icon';
 
 interface Feature {
     id: string;
@@ -63,7 +64,7 @@ const CodeQualitySimulator: React.FC = () => {
                         >
                             <div className="flex items-center gap-4">
                                 <div className={`w-10 h-10 rounded-lg flex items-center justify-center transition-colors ${feature.active ? 'bg-primary text-white' : 'bg-gray-100 text-gray-400'}`}>
-                                    <span className="material-symbols-outlined">{feature.icon}</span>
+                                    <Icon name={feature.icon} />
                                 </div>
                                 <div>
                                     <div className={`font-bold text-sm ${feature.active ? 'text-secondary' : 'text-gray-500'}`}>{feature.label}</div>
@@ -71,7 +72,7 @@ const CodeQualitySimulator: React.FC = () => {
                                 </div>
                             </div>
                             <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors ${feature.active ? 'border-primary bg-primary' : 'border-gray-200'}`}>
-                                {feature.active && <span className="material-symbols-outlined text-white text-xs">check</span>}
+                                {feature.active && <Icon name="check" className="text-white text-xs" />}
                             </div>
                         </div>
                     ))}

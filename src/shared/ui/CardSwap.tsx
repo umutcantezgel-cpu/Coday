@@ -8,7 +8,7 @@ import React, {
     useMemo,
     useState
 } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 
 export interface CardSwapProps {
     width?: number | string;

@@ -1,6 +1,7 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { useAnalyzerStore } from '../model/store';
+import { Icon } from '@/shared/ui/Icon';
 
 const AGENTS = [
     { id: 'performance', name: 'Performance', icon: 'speed', color: 'from-orange-500 to-red-500' },
@@ -76,17 +77,11 @@ export const AnalysisProgress: React.FC = () => {
                 `}
                             >
                                 {isCompleted ? (
-                                    <span className="material-symbols-outlined">check</span>
+                                    <Icon name="check" />
                                 ) : isActive ? (
-                                    <motion.span
-                                        className="material-symbols-outlined"
-                                        animate={{ rotate: 360 }}
-                                        transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
-                                    >
-                                        sync
-                                    </motion.span>
+                                    <Icon name="refresh_cw" className="animate-spin" />
                                 ) : (
-                                    <span className="material-symbols-outlined">{agent.icon}</span>
+                                    <Icon name={agent.icon} />
                                 )}
                             </div>
 

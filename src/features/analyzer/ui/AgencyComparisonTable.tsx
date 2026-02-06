@@ -1,4 +1,5 @@
 import React from 'react';
+import { Icon } from '@/shared/ui/Icon';
 
 const AgencyComparisonTable: React.FC = () => {
     const features = [
@@ -61,12 +62,12 @@ const AgencyComparisonTable: React.FC = () => {
                                 <tr key={index} className="border-b border-gray-800 hover:bg-white/5 transition-colors">
                                     <td className="py-4 md:py-8 px-4 font-mono text-sm text-gray-500 uppercase">{feature.name}</td>
                                     <td className="py-4 md:py-8 px-4 text-gray-400 text-lg flex items-center">
-                                        <span className="material-symbols-outlined text-gray-600 mr-3">close</span>
+                                        <Icon name="close" className="text-gray-600 mr-3" />
                                         {feature.old}
                                     </td>
                                     <td className="py-4 md:py-8 px-4 text-white text-lg font-bold relative">
                                         <div className="flex items-center">
-                                            <span className="material-symbols-outlined text-primary mr-3 shadow-glow">check_circle</span>
+                                            <Icon name="check_circle" className="text-primary mr-3 shadow-glow" />
                                             {feature.new}
                                         </div>
                                     </td>

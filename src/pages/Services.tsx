@@ -1,4 +1,5 @@
 import React from 'react';
+import { Icon } from '@/shared/ui/Icon';
 import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
 import { OptimizedImage } from '../shared/ui/OptimizedImage';
@@ -104,7 +105,7 @@ const Services: React.FC = () => {
 
                 <div className="relative z-10">
                   <div className={`w-16 h-16 ${cat.color} bg-opacity-10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300`}>
-                    <span className="material-symbols-outlined text-3xl text-gray-900">{cat.icon}</span>
+                    <Icon name={cat.icon} className="text-3xl text-gray-900" />
                   </div>
 
                   <h3 className="font-display font-bold text-3xl text-gray-900 mb-4 group-hover:text-primary transition-colors">
@@ -116,7 +117,7 @@ const Services: React.FC = () => {
 
                   <div className="flex items-center text-primary font-bold tracking-wide uppercase text-sm">
                     {t('cta.more')}
-                    <span className="material-symbols-outlined ms-2 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform">arrow_forward</span>
+                    <Icon name="arrow_forward" className="ms-2 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform" />
                   </div>
                 </div>
               </NavLink>
@@ -145,7 +146,7 @@ const Services: React.FC = () => {
               className={cn(baseButtonStyles, buttonVariants.primary, buttonSizes.lg, "hover:-translate-y-1")}
             >
               {t('cta.button')}
-              <span className="material-symbols-outlined ms-2 rtl:rotate-180">arrow_forward</span>
+              <Icon name="arrow_forward" className="ms-2 rtl:rotate-180" />
             </NavLink>
           </GlareHover>
         </div>

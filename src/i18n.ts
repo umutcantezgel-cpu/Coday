@@ -18,7 +18,7 @@ i18n
         fallbackLng: 'de',
         debug: import.meta.env.DEV, // Enable debug in development
 
-        ns: ['common', 'blog', 'form', 'footer', 'pricing', 'process', 'services', 'tools', 'values', 'work', 'industries', 'knowledge', 'legal', 'careers'],
+        ns: ['common', 'home', 'blog', 'form', 'footer', 'pricing', 'process', 'services', 'tools', 'values', 'work', 'industries', 'knowledge', 'legal', 'careers', 'contact', 'dashboard'],
         defaultNS: 'common',
 
         interpolation: {

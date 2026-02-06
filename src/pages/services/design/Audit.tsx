@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { Icon } from '@/shared/ui/Icon';
 
 const Audit: React.FC = () => {
     return (
@@ -9,7 +10,7 @@ const Audit: React.FC = () => {
                     <div className="text-center lg:text-left grid lg:grid-cols-2 gap-12 items-center">
                         <div>
                             <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-xl text-primary mb-6">
-                                <span className="material-symbols-outlined text-3xl">analytics</span>
+                                <Icon name="analytics" className="text-3xl" />
                             </div>
                             <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-gray-900 mb-6 leading-tight">
                                 UX & Tech <span className="text-primary">Audit.</span>

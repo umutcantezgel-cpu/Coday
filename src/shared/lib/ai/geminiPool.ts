@@ -78,7 +78,7 @@ class GeminiKeyPool {
         const now = Date.now();
         let attempts = 0;
 
-        while (attempts < this.keys.length) {
+        while (attempts <this.keys.length) {
             const keyHealth = this.keys[this.currentIndex];
 
             // Reset minute counter if needed
@@ -89,7 +89,7 @@ class GeminiKeyPool {
             }
 
             // Check if key is available
-            if (keyHealth.isHealthy && keyHealth.requestsThisMinute < RATE_LIMIT_PER_MINUTE) {
+            if (keyHealth.isHealthy && keyHealth.requestsThisMinute <RATE_LIMIT_PER_MINUTE) {
                 keyHealth.requestsThisMinute++;
                 keyHealth.lastUsed = now;
 

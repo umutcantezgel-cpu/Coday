@@ -1,5 +1,7 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
+
+import { COMPANY_CONFIG } from '../../shared/config/constants';
 
 interface WhatsAppButtonProps {
     phoneNumber?: string;
@@ -12,8 +14,8 @@ interface WhatsAppButtonProps {
  * Position: Bottom-left (to avoid conflict with chat button on right)
  */
 export const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
-    phoneNumber = '4917641195301',
-    message = 'Hallo, ich interessiere mich für Ihre Webdesign-Dienstleistungen.',
+    phoneNumber = COMPANY_CONFIG.phoneNumber,
+    message = COMPANY_CONFIG.whatsappMessage,
     className = '',
 }) => {
     const encodedMessage = encodeURIComponent(message);
@@ -24,8 +26,7 @@ export const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className={`fixed left-6 z-[10000] group ${className}`}
-            style={{ bottom: window.innerWidth < 768 ? '120px' : '1.5rem' }}
+            className={`fixed left-6 z-[10000] group bottom-[120px] md:bottom-6 ${className}`}
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 1, type: 'spring', stiffness: 200 }}

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
+import { Icon } from '@/shared/ui/Icon';
 
 const GearSetup: React.FC = () => {
     const [laptop, setLaptop] = useState<'mac' | 'win'>('mac');
@@ -25,7 +26,7 @@ const GearSetup: React.FC = () => {
     return (
         <div className="bg-surface-dark rounded-3xl p-8 lg:p-12 border border-white/10 overflow-hidden relative">
             <div className="absolute top-0 right-0 p-4 opacity-10 pointer-events-none">
-                <span className="material-symbols-outlined text-[300px] text-white">desktop_mac</span>
+                <Icon name="desktop_mac" className="text-[300px] text-white" />
             </div>
 
             <div className="relative z-10 grid lg:grid-cols-2 gap-12">
@@ -114,7 +115,7 @@ const GearSetup: React.FC = () => {
                             className="bg-white/5 p-4 rounded-xl flex items-center gap-4"
                         >
                             <div className="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center text-white">
-                                <span className="material-symbols-outlined text-2xl">laptop_mac</span>
+                                <Icon name="laptop_mac" className="text-2xl" />
                             </div>
                             <div>
                                 <h4 className="font-bold text-white">{equipment.laptops[laptop].name}</h4>
@@ -130,7 +131,7 @@ const GearSetup: React.FC = () => {
                             className="bg-white/5 p-4 rounded-xl flex items-center gap-4"
                         >
                             <div className="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center text-white">
-                                <span className="material-symbols-outlined text-2xl">screenshot_monitor</span>
+                                <Icon name="screenshot_monitor" className="text-2xl" />
                             </div>
                             <div>
                                 <h4 className="font-bold text-white">{equipment.monitors[monitor].name}</h4>
@@ -146,13 +147,15 @@ const GearSetup: React.FC = () => {
                             className="bg-white/5 p-4 rounded-xl flex items-center gap-4"
                         >
                             <div className="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center text-white">
-                                <span className="material-symbols-outlined text-2xl">headphones</span>
+                                <Icon name="headphones" className="text-2xl" />
                             </div>
                             <div>
                                 <h4 className="font-bold text-white">{equipment.audio[audio].name}</h4>
                                 <p className="text-gray-400 text-sm">{equipment.audio[audio].desc}</p>
                             </div>
                         </motion.div>
+
+
 
                         <div className="pt-8 border-t border-white/10 mt-4">
                             <div className="flex justify-between items-end">

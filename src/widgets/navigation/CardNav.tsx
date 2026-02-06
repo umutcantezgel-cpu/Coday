@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { GoArrowUpRight } from 'react-icons/go';
+import { motion } from 'motion/react';
+import { Icon } from '../../shared/ui/Icon';
 import { Link, useLocation } from 'react-router-dom';
 import './CardNav.css';
 
@@ -108,7 +108,7 @@ const CardNav: React.FC<CardNavProps> = ({
                         onClick={() => isOpen && setIsOpen(false)}
                         aria-label="Zur Startseite"
                     >
-                        <i className="fa-brands fa-connectdevelop logo-icon" aria-hidden="true" />
+                        <Icon name="code" className="logo-icon" />
                         <span className="logo-text">Coday</span>
                     </Link>
 
@@ -140,7 +140,7 @@ const CardNav: React.FC<CardNavProps> = ({
                                         aria-label={lnk.ariaLabel || lnk.label}
                                         onClick={() => setIsOpen(false)}
                                     >
-                                        <GoArrowUpRight aria-hidden="true" />
+                                        <Icon name="arrow-up-right" aria-hidden="true" />
                                         {lnk.label}
                                     </Link>
                                 ))}

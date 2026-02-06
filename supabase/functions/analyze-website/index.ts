@@ -111,7 +111,7 @@ function simplifyHtml(html: string): string {
     const scriptSrcs = html.match(/<script.*?src=".*?".*?>/gi) || []
 
     // Extract body content but remove generic scripts/styles block content
-    let bodyContent = html
+    const bodyContent = html
         .replace(/<script[\s\S]*?<\/script>/gi, '')
         .replace(/<style[\s\S]*?<\/style>/gi, '')
         .replace(/<!--[\s\S]*?-->/g, '')

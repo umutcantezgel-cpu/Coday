@@ -1,4 +1,5 @@
 import React from 'react';
+import { Icon } from '@/shared/ui/Icon';
 import { MagicBento, BentoCard } from '../../shared/ui/MagicBento';
 import GearSetup from '../../features/benefits/GearSetup';
 
@@ -39,7 +40,7 @@ const Benefits: React.FC = () => {
                         >
                             <div className="p-8 h-full flex flex-col items-start text-left">
                                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                                    <span className="material-symbols-outlined text-3xl text-aurora-sapphire">{benefit.icon}</span>
+                                    <Icon name={benefit.icon} className="text-3xl text-aurora-sapphire" />
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-900 mb-3 text-left">{benefit.title}</h3>
                                 <p className="text-slate-500 leading-relaxed text-left">

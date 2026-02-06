@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Icon } from '@/shared/ui/Icon';
 
 const RevenueUpliftSimulator: React.FC = () => {
     const [annualRevenue, setAnnualRevenue] = useState(500000);
@@ -84,7 +85,7 @@ const RevenueUpliftSimulator: React.FC = () => {
 
                         <button className="mt-8 px-6 py-3 bg-primary text-white font-bold rounded-xl shadow-lg hover:bg-primary/90 transition-all flex items-center justify-center gap-2 w-full sm:w-auto">
                             Strategiegespräch buchen
-                            <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                            <Icon name="arrow_forward" className="text-sm" />
                         </button>
                     </div>
                 </div>

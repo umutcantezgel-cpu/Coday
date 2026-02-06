@@ -1,4 +1,6 @@
 import React from 'react';
+import { useState } from 'react';
+import { Icon } from '@/shared/ui/Icon';
 
 const Calendar: React.FC = () => {
     const days = Array.from({ length: 35 }, (_, i) => i + 1);
@@ -17,10 +19,10 @@ const Calendar: React.FC = () => {
                         <h2 className="text-2xl font-bold text-gray-800">April 2026</h2>
                         <div className="flex space-x-2">
                             <button className="p-2 rounded-full hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-200 transition-all">
-                                <span className="material-symbols-outlined text-gray-500">chevron_left</span>
+                                <Icon name="chevron_left" className="text-gray-500" />
                             </button>
                             <button className="p-2 rounded-full hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-200 transition-all">
-                                <span className="material-symbols-outlined text-gray-500">chevron_right</span>
+                                <Icon name="chevron_right" className="text-gray-500" />
                             </button>
                         </div>
                     </div>

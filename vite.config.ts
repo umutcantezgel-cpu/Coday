@@ -73,13 +73,8 @@ export default defineConfig(({ mode }) => {
     build: {
       // Enable minification
       minify: 'terser',
-      terserOptions: {
-        compress: {
-          drop_console: true,
-          drop_debugger: true
-        }
-      },
-      // Code splitting strategy
+      outDir: 'dist',
+      sourcemap: true, // Enable source maps
       rollupOptions: {
         output: {
           manualChunks: {
@@ -89,6 +84,8 @@ export default defineConfig(({ mode }) => {
             'vendor-icons': ['lucide-react'],
             // Zustand state management
             'vendor-state': ['zustand'],
+            // Animation
+            'vendor-motion': ['motion/react'],
           },
           // Optimize chunk file names for caching
           chunkFileNames: 'assets/[name]-[hash].js',
@@ -99,7 +96,7 @@ export default defineConfig(({ mode }) => {
       // CSS optimization
       cssCodeSplit: true,
       // Source maps for production debugging
-      sourcemap: false,
+
       // Target modern browsers
       target: 'es2020',
       // Report compressed size
@@ -107,7 +104,7 @@ export default defineConfig(({ mode }) => {
     },
     // Optimize dependencies
     optimizeDeps: {
-      include: ['react', 'react-dom', 'react-router-dom', 'framer-motion', 'zustand', 'react-helmet-async']
+      include: ['react', 'react-dom', 'react-router-dom', 'motion/react', 'zustand', 'react-helmet-async']
     }
   };
 });

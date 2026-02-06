@@ -125,7 +125,31 @@ import {
     LayoutDashboard as Dashboard,
     Network as Lan,
     BarChart3 as Analytics,
-    FolderOpen
+    FolderOpen,
+    Kanban,
+    ArrowUpRight,
+    CloudOff,
+    AlertTriangle,
+    Store,
+    Laptop,
+    MonitorSmartphone,
+    WifiOff,
+    Image,
+    ArrowLeft,
+    Ruler,
+    Sparkles,
+    Key,
+    Accessibility,
+    FlaskConical,
+    Users as Group, // Mapping group to Users
+    DraftingCompass, // For architecture
+    ShieldCheck,
+    Cookie,
+    CalendarClock,
+    Heart,
+    ChevronLeft,
+    XCircle,
+    Store as Storefront,
 } from 'lucide-react';
 
 const iconMap: Record<string, React.ElementType> = {
@@ -158,7 +182,7 @@ const iconMap: Record<string, React.ElementType> = {
     'celebration': Celebration,
     'hub': HubIcon,
     'article': FileText,
-    'layers': Layers,
+
 
     // Tech / Services
     'code': Code,
@@ -189,7 +213,82 @@ const iconMap: Record<string, React.ElementType> = {
     'edit': Edit,
     'add': Plus,
     'delete': Trash,
-    'more_vert': MoreVertical
+    'more_vert': MoreVertical,
+
+    // Material Symbols Mappings
+    'view_kanban': Kanban,
+    'forum': MessageSquare,
+    'error': AlertCircle,
+    'error_outline': AlertCircle,
+    'cloud_off': CloudOff,
+    'warning': AlertTriangle,
+    'paid': DollarSign,
+    'store': Store,
+    'desktop_mac': Monitor,
+    'laptop_mac': Laptop,
+    'screenshot_monitor': MonitorSmartphone,
+    'headphones': Headphones,
+    'wifi': Wifi,
+    'wifi_off': WifiOff,
+    'image': Image,
+    'refresh': RefreshCw,
+    'light_mode': Sun,
+    'dark_mode': Moon,
+
+    'arrow_left': ArrowLeft,
+    'gear': Settings,
+    'location_on': MapPin,
+
+    // React Icons / FA fallback mappings (normalized names)
+
+
+    // NEW MAPPINGS for Mass Replacement
+    'travel_explore': Compass,
+    'architecture': DraftingCompass,
+    'cloud_done': Cloud, // Fallback to Cloud
+    'code_off': Code, // Fallback
+    'cleaning_services': Sparkles,
+    'key': Key,
+    'accessibility': Accessibility,
+    'science': FlaskConical,
+    'rule': Ruler,
+    'group': Group,
+    'person': User,
+    'loyalty': Heart,
+    'lock': Lock,
+    'verified_user': ShieldCheck,
+    'cookie': Cookie,
+    'calendar_clock': CalendarClock,
+    'sms': MessageSquare,
+    'reviews': Star,
+    'storefront': Storefront,
+    'cancel': XCircle,
+    'chevron_left': ChevronLeft,
+    'view_in_ar': Box,
+    'open_in_new': ExternalLink,
+    'inventory_2': Package,
+    'category': Layers,
+    '360': RefreshCw,
+    'assignment': FileText,
+
+    // Social & Brands
+    'github': Github,
+    'twitter': Twitter,
+    'facebook': Facebook,
+    'instagram': Instagram,
+    'linkedin': Linkedin,
+    'youtube': Youtube,
+    'twitch': Twitch,
+    'slack': Slack,
+    'meta': Meta,
+
+    // React Icons replacements
+    'circle': Circle,
+    'file-text': FileText,
+
+    'layout': Layout,
+    'arrow-up-right': ArrowUpRight, // Ensure this exists for CardNav
+    'bolt': Zap, // For fa-bolt
 };
 
 interface IconProps extends React.HTMLAttributes<HTMLSpanElement> {

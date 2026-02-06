@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { MessageCircle, X, Minus, Send, Loader2 } from 'lucide-react';
 import { useChatStore } from './lib/chatStore';
 import { Input } from '../../shared/ui/Input';
@@ -51,8 +51,7 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
                         animate={{ scale: 1, opacity: 1 }}
                         exit={{ scale: 0, opacity: 0 }}
                         onClick={toggleChat}
-                        className="fixed right-6 z-[10000] w-14 h-14 rounded-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white shadow-2xl hover:shadow-purple-500/25 transition-shadow flex items-center justify-center group"
-                        style={{ bottom: window.innerWidth < 768 ? '120px' : '1.5rem' }}
+                        className="fixed right-6 z-[10000] w-14 h-14 rounded-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white shadow-2xl hover:shadow-purple-500/25 transition-shadow flex items-center justify-center group bottom-[120px] md:bottom-6"
                     >
                         <MessageCircle className="w-6 h-6 group-hover:scale-110 transition-transform" />
 
@@ -77,8 +76,7 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 20, scale: 0.95 }}
                         transition={{ duration: 0.2 }}
-                        className="fixed right-6 z-[10000] w-[calc(100vw-3rem)] md:w-96 h-[500px] max-h-[calc(100vh-8rem)] bg-white rounded-2xl shadow-2xl border border-gray-100 flex flex-col overflow-hidden"
-                        style={{ bottom: window.innerWidth < 768 ? '120px' : '1.5rem' }}
+                        className="fixed right-6 z-[10000] w-[calc(100vw-3rem)] md:w-96 h-[500px] max-h-[calc(100vh-8rem)] bg-white rounded-2xl shadow-2xl border border-gray-100 flex flex-col overflow-hidden bottom-[120px] md:bottom-6"
                     >
                         {/* Header */}
                         <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 px-4 py-3 flex items-center justify-between">
@@ -193,4 +191,4 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
     );
 };
 
-export default ChatWidget;
+

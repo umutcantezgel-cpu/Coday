@@ -1,5 +1,6 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { Icon } from '@/shared/ui/Icon';
+import { motion } from 'motion/react';
 
 const PsychologyGrid: React.FC = () => {
     const laws = [
@@ -42,7 +43,7 @@ const PsychologyGrid: React.FC = () => {
                     className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-flat-lg transition-all group cursor-default"
                 >
                     <div className="w-12 h-12 rounded-xl mb-4 flex items-center justify-center text-white shadow-md transition-transform group-hover:scale-110" style={{ backgroundColor: law.color }}>
-                        <span className="material-symbols-outlined">{law.icon}</span>
+                        <Icon name={law.icon} />
                     </div>
                     <h4 className="font-bold text-lg text-secondary mb-2">{law.title}</h4>
                     <p className="text-slate-600 text-sm mb-4 leading-relaxed h-[60px]">{law.desc}</p>
