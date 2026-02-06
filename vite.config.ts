@@ -7,8 +7,6 @@ import Sitemap from 'vite-plugin-sitemap';
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 
 export default defineConfig(({ mode }) => {
-  const env = loadEnv(mode, '.', '');
-
   // Define routes for sitemap
   const routes = [
     '/',
@@ -22,7 +20,7 @@ export default defineConfig(({ mode }) => {
     '/contact',
     '/calculator',
     '/legal/impressum',
-    '/legal/datenschutz'
+    '/legal/datenschutz',
   ];
 
   return {
@@ -30,7 +28,6 @@ export default defineConfig(({ mode }) => {
       port: 3000,
       host: '0.0.0.0',
     },
-
 
     plugins: [
       { enforce: 'pre', ...mdx() },
@@ -59,8 +56,8 @@ export default defineConfig(({ mode }) => {
       Sitemap({
         hostname: 'https://coday.de',
         dynamicRoutes: routes,
-        generateRobotsTxt: false
-      })
+        generateRobotsTxt: false,
+      }),
     ],
     define: {
       // API Keys removed for security
@@ -68,13 +65,19 @@ export default defineConfig(({ mode }) => {
     resolve: {
       alias: {
         '@': path.resolve(__dirname, './src'),
-      }
+      },
     },
     build: {
       // Enable minification
       minify: 'terser',
+      terserOptions: {
+        compress: {
+          drop_console: true,
+          drop_debugger: true,
+        },
+      },
       outDir: 'dist',
-      sourcemap: true, // Enable source maps
+      sourcemap: false, // Disabled source maps for security
       rollupOptions: {
         output: {
           manualChunks: {
@@ -90,8 +93,8 @@ export default defineConfig(({ mode }) => {
           // Optimize chunk file names for caching
           chunkFileNames: 'assets/[name]-[hash].js',
           entryFileNames: 'assets/[name]-[hash].js',
-          assetFileNames: 'assets/[name]-[hash].[ext]'
-        }
+          assetFileNames: 'assets/[name]-[hash].[ext]',
+        },
       },
       // CSS optimization
       cssCodeSplit: true,
@@ -104,7 +107,14 @@ export default defineConfig(({ mode }) => {
     },
     // Optimize dependencies
     optimizeDeps: {
-      include: ['react', 'react-dom', 'react-router-dom', 'motion/react', 'zustand', 'react-helmet-async']
-    }
+      include: [
+        'react',
+        'react-dom',
+        'react-router-dom',
+        'motion/react',
+        'zustand',
+        'react-helmet-async',
+      ],
+    },
   };
 });

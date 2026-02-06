@@ -1,312 +1,332 @@
 /* CardNav - Optimized & Bug-Free */
 
 .card-nav-container {
-    position: fixed;
-    top: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100% - 2rem);
-    max-width: 1200px;
-    z-index: 9999;
-    /* Increased for proper layering */
-    box-sizing: border-box;
-    pointer-events: none;
-    /* Allow clicks to pass through, re-enable on nav */
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 2rem);
+  max-width: 1200px;
+  z-index: 9999;
+  /* Increased for proper layering */
+  box-sizing: border-box;
+  pointer-events: none;
+  /* Allow clicks to pass through, re-enable on nav */
 }
 
 .card-nav {
-    display: block;
-    height: 60px;
-    padding: 0;
-    background-color: rgba(255, 255, 255, 0.85);
-    /* More transparent */
-    backdrop-filter: blur(24px) saturate(180%);
-    /* Stronger blur & saturation */
-    -webkit-backdrop-filter: blur(24px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    /* Lighter border */
-    border-radius: 1rem;
-    box-shadow:
-        0 4px 24px -1px rgba(0, 0, 0, 0.1),
-        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
-    /* Inner glow */
-    position: relative;
-    overflow: hidden;
-    will-change: height;
-    pointer-events: auto;
-    /* Re-enable on nav itself */
+  display: block;
+  height: 60px;
+  padding: 0;
+  /* Premium Glassmorphism */
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+
+  /* Sophisticated Border & Shadow */
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 1.25rem;
+  /* Slightly rounder */
+  box-shadow:
+    0 8px 32px -4px rgba(0, 0, 0, 0.08),
+    /* Soft drop */ 0 2px 8px -2px rgba(0, 0, 0, 0.04),
+    /* Tight drop */ inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+  /* Inner ring */
+
+  position: relative;
+  overflow: hidden;
+  will-change: height, background-color;
+  pointer-events: auto;
+  transition:
+    box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.4s ease;
+}
+
+/* Hover state for the entire nav bar when closed */
+.card-nav:not(.open):hover {
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow:
+    0 12px 40px -8px rgba(0, 0, 0, 0.12),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.6);
 }
 
 .nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  z-index: 20;
 }
 
 .card-nav.open {
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
 }
 
 .card-nav-top {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 0.75rem 0 1.25rem;
-    z-index: 10;
-    background: inherit;
-    /* Ensures it stays above content during animations */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.75rem 0 1.25rem;
+  z-index: 10;
+  background: inherit;
+  /* Ensures it stays above content during animations */
 }
 
 /* Hamburger - Refined */
 .hamburger-menu {
-    height: 44px;
-    width: 44px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    gap: 5px;
-    border-radius: 0.5rem;
-    transition: background-color 0.2s ease;
+  height: 44px;
+  width: 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  gap: 5px;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s ease;
 }
 
 .hamburger-menu:hover {
-    background-color: rgba(0, 0, 0, 0.04);
+  background-color: rgba(0, 0, 0, 0.04);
 }
 
 .hamburger-menu:focus-visible {
-    outline: 2px solid #1A9A9A;
-    outline-offset: 2px;
+  outline: 2px solid #1a9a9a;
+  outline-offset: 2px;
 }
 
 .hamburger-line {
-    width: 22px;
-    height: 2px;
-    background-color: currentColor;
-    transition: transform 0.3s cubic-bezier(0.68, -0.6, 0.32, 1.6), opacity 0.15s ease;
-    transform-origin: center center;
-    border-radius: 2px;
+  width: 22px;
+  height: 2px;
+  background-color: currentColor;
+  transition:
+    transform 0.3s cubic-bezier(0.68, -0.6, 0.32, 1.6),
+    opacity 0.15s ease;
+  transform-origin: center center;
+  border-radius: 2px;
 }
 
 .hamburger-menu.open .hamburger-line:first-child {
-    transform: translateY(3.5px) rotate(45deg);
+  transform: translateY(3.5px) rotate(45deg);
 }
 
 .hamburger-menu.open .hamburger-line:last-child {
-    transform: translateY(-3.5px) rotate(-45deg);
+  transform: translateY(-3.5px) rotate(-45deg);
 }
 
 /* Logo */
 .logo-container {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    text-decoration: none;
-    transition: opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
 }
 
 .logo-container:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
 .logo-text {
-    font-weight: 800;
-    font-size: 1.15rem;
-    color: #1e293b;
-    letter-spacing: -0.03em;
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: #1e293b;
+  letter-spacing: -0.03em;
 }
 
 .logo-icon {
-    color: #1A9A9A;
-    font-size: 1.5rem;
-    margin-right: 0.4rem;
+  color: #1a9a9a;
+  font-size: 1.5rem;
+  margin-right: 0.4rem;
 }
 
 /* CTA Button */
 .card-nav-cta-button {
-    background-color: #1A9A9A;
-    color: white;
-    border: none;
-    border-radius: 0.625rem;
-    padding: 0 1.5rem;
-    height: 42px;
-    font-weight: 600;
-    font-size: 0.875rem;
-    cursor: pointer;
-    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    white-space: nowrap;
+  background-color: #1a9a9a;
+  color: white;
+  border: none;
+  border-radius: 0.625rem;
+  padding: 0 1.5rem;
+  height: 42px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
 .card-nav-cta-button:hover {
-    background-color: #168585;
-    transform: scale(1.02);
+  background-color: #168585;
+  transform: scale(1.02);
 }
 
 .card-nav-cta-button:active {
-    transform: scale(0.98);
+  transform: scale(0.98);
 }
 
 /* Content Area */
 .card-nav-content {
-    /* Removed absolute positioning to allow height: auto to work */
-    margin-top: 60px;
-    padding: 0.5rem;
-    display: flex;
-    align-items: stretch;
-    gap: 0.5rem;
-    visibility: hidden;
-    pointer-events: none;
-    z-index: 5;
-    min-height: 200px;
-    width: 100%;
+  /* Removed absolute positioning to allow height: auto to work */
+  margin-top: 60px;
+  padding: 0.5rem;
+  display: flex;
+  align-items: stretch;
+  gap: 0.5rem;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 5;
+  min-height: 200px;
+  width: 100%;
 }
 
 .card-nav.open .card-nav-content {
-    visibility: visible;
-    pointer-events: auto;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 /* Nav Cards */
 .nav-card {
-    flex: 1;
-    min-width: 0;
-    border-radius: 0.75rem;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    user-select: none;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    transition: box-shadow 0.25s ease, transform 0.25s ease;
+  flex: 1;
+  min-width: 0;
+  border-radius: 0.75rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  user-select: none;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition:
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
 }
 
 .nav-card:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transform: translateY(-2px);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px) scale(1.01);
+  /* Subtle scale */
 }
 
 .nav-card-label {
-    font-weight: 700;
-    font-size: 0.85rem;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-    opacity: 0.6;
-    margin-bottom: 0.75rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 0.75rem;
 }
 
 .nav-card-links {
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
 }
 
 .nav-card-link {
-    font-size: 0.875rem;
-    font-weight: 500;
-    cursor: pointer;
-    text-decoration: none;
-    color: inherit;
-    transition: opacity 0.15s ease, transform 0.15s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.25rem;
-    padding: 0.25rem 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0;
 }
 
 .nav-card-link:hover {
-    opacity: 0.75;
-    transform: translateX(2px);
+  opacity: 0.75;
+  transform: translateX(2px);
 }
 
 /* ============================================= */
 /* Mobile Styles - Critical Fixes               */
 /* ============================================= */
 @media (max-width: 768px) {
-    .card-nav-container {
-        width: calc(100% - 1.5rem);
-        top: 0.75rem;
-    }
+  .card-nav-container {
+    width: calc(100% - 1.5rem);
+    top: 0.75rem;
+  }
 
-    .card-nav {
-        border-radius: 0.875rem;
-    }
+  .card-nav {
+    border-radius: 0.875rem;
+  }
 
-    .card-nav-top {
-        padding: 0 0.65rem;
-    }
+  .card-nav-top {
+    padding: 0 0.65rem;
+  }
 
-    /* Mobile: Logo left, Hamburger right */
-    .hamburger-menu {
-        order: 2;
-        margin-left: auto;
-    }
+  /* Mobile: Logo left, Hamburger right */
+  .hamburger-menu {
+    order: 2;
+    margin-left: auto;
+  }
 
-    .logo-container {
-        position: static;
-        transform: none;
-        order: 1;
-    }
+  .logo-container {
+    position: static;
+    transform: none;
+    order: 1;
+  }
 
-    .card-nav-cta-button {
-        display: none;
-        /* Hidden on mobile */
-    }
+  .card-nav-cta-button {
+    display: none;
+    /* Hidden on mobile */
+  }
 
-    .card-nav-content {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0.5rem;
-        padding: 0.5rem;
-        min-height: auto;
-        overflow-y: auto;
-        max-height: calc(100vh - 100px);
-    }
+  .card-nav-content {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    min-height: auto;
+    overflow-y: auto;
+    max-height: calc(100vh - 100px);
+  }
 
-    .nav-card {
-        flex: 0 0 auto;
-        min-height: auto;
-        padding: 0.875rem;
-    }
+  .nav-card {
+    flex: 0 0 auto;
+    min-height: auto;
+    padding: 0.875rem;
+  }
 
-    .nav-card-label {
-        font-size: 0.8rem;
-        margin-bottom: 0.5rem;
-    }
+  .nav-card-label {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
 
-    .nav-card-links {
-        gap: 0.25rem;
-    }
+  .nav-card-links {
+    gap: 0.25rem;
+  }
 
-    .nav-card-link {
-        font-size: 0.9rem;
-        padding: 0.35rem 0;
-    }
+  .nav-card-link {
+    font-size: 0.9rem;
+    padding: 0.35rem 0;
+  }
 }
 
 /* Tablet adjustments */
 @media (min-width: 769px) and (max-width: 1024px) {
-    .nav-card {
-        padding: 0.75rem;
-    }
+  .nav-card {
+    padding: 0.75rem;
+  }
 
-    .nav-card-label {
-        font-size: 0.75rem;
-    }
+  .nav-card-label {
+    font-size: 0.75rem;
+  }
 
-    .nav-card-link {
-        font-size: 0.8rem;
-    }
+  .nav-card-link {
+    font-size: 0.8rem;
+  }
 }
