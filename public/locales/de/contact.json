@@ -1,105 +1,91 @@
 {
-    "hero": {
-        "badge": "Bewerbung",
-        "title_start": "Lassen Sie uns",
-        "title_gradient": "Großes bauen.",
-        "desc": "Wir arbeiten nicht mit jedem. Wir suchen Partner, die bereit für echtes Wachstum sind. Füllen Sie das Formular aus, um sich für eine kostenlose Beratung zu bewerben."
+  "hero": {
+    "badge": "Bewerbung",
+    "title_start": "Lassen Sie uns",
+    "title_gradient": "Großes bauen.",
+    "desc": "Wir arbeiten nicht mit jedem. Wir suchen Partner, die bereit für echtes Wachstum sind. Füllen Sie das Formular aus, um sich für eine kostenlose Beratung zu bewerben."
+  },
+  "features": {
+    "consult": {
+      "title": "Kostenlose Erstberatung",
+      "desc": "30 Minuten Experten-Analyse per Zoom."
     },
-    "features": {
-        "consult": {
-            "title": "Kostenlose Erstberatung",
-            "desc": "30 Minuten Experten-Analyse per Zoom."
-        },
-        "strategy": {
-            "title": "Strategie-Plan",
-            "desc": "Sie erhalten einen individuellen Fahrplan."
-        }
-    },
-    "wizard": {
-        "success": {
-            "title": "Bewerbung Erhalten!",
-            "message": "Wir haben deine Projektanfrage erhalten. Unser Team wird sich innerhalb von 24 Stunden bei dir melden."
-        },
-        "step1": {
-            "title": "Wobei können wir helfen?",
-            "options": [
-                "Webentwicklung",
-                "E-Commerce Shop",
-                "App Entwicklung",
-                "Individuelle Software"
-            ]
-        },
-        "step2": {
-            "title": "Welches Budget ist geplant?",
-            "options": [
-                "< 5.000 €",
-                "5.000 € - 15.000 €",
-                "15.000 € - 50.000 €",
-                "> 50.000 €"
-            ]
-        },
-        "step3": {
-            "title": "Wann soll es losgehen?",
-            "options": [
-                "So schnell wie möglich",
-                "In 1-2 Monaten",
-                "Dieses Jahr noch",
-                "Nur Recherche"
-            ]
-        },
-        "step4": {
-            "title": "Letzter Schritt.",
-            "name_placeholder": "Ihr Name",
-            "email_placeholder": "E-Mail Adresse",
-            "message_placeholder": "Erzählen Sie uns kurz von Ihrer Vision...",
-            "submit": "Bewerbung absenden",
-            "sending": "Sende..."
-        },
-        "back": "Zurück"
-    },
-    "availability": {
-        "title": "Verfügbarkeit {{month}}",
-        "booked": "Ausgebucht",
-        "free": "Verfügbar",
-        "tooltip_free": "Termin frei"
-    },
-    "trust": {
-        "google": "Google Partner",
-        "shopify": "Shopify Fachleute",
-        "facebook": "Facebook Geschäft"
-    },
-    "faq": {
-        "title": "Häufige Fragen",
-        "items": [
-            {
-                "q": "Wie schnell können wir starten?",
-                "a": "In der Regel innerhalb von 2-4 Wochen nach Vertragsabschluss."
-            },
-            {
-                "q": "Arbeiten Sie auch mit kleinen Budgets?",
-                "a": "Wir haben spezielle Pakete für Startups ab 5.000€. Darunter empfehlen wir DIY-Lösungen."
-            },
-            {
-                "q": "Bekomme ich einen festen Ansprechpartner?",
-                "a": "Ja. Sie haben einen dedizierten Projektmanager, der immer für Sie da ist."
-            }
-        ]
-    },
-    "location": {
-        "title": "Kontakt & Standort",
-        "desc": "Erreichen Sie uns direkt oder besuchen Sie uns in Wetzlar.",
-        "whatsapp": {
-            "label": "WhatsApp"
-        },
-        "phone": {
-            "label": "Telefon"
-        },
-        "email": {
-            "label": "E-Mail"
-        },
-        "address": {
-            "label": "Adresse",
-            "value": "Lessingstraße 4, 35578 Wetzlar"
-        }
+    "strategy": {
+      "title": "Strategie-Plan",
+      "desc": "Sie erhalten einen individuellen Fahrplan."
     }
+  },
+  "wizard": {
+    "success": {
+      "title": "Bewerbung Erhalten!",
+      "message": "Wir haben deine Projektanfrage erhalten. Unser Team wird sich innerhalb von 24 Stunden bei dir melden."
+    },
+    "step1": {
+      "title": "Wobei können wir helfen?",
+      "options": ["Webentwicklung", "E-Commerce Shop", "App Entwicklung", "Individuelle Software"]
+    },
+    "step2": {
+      "title": "Welches Budget ist geplant?",
+      "options": ["< 5.000 €", "5.000 € - 15.000 €", "15.000 € - 50.000 €", "> 50.000 €"]
+    },
+    "step3": {
+      "title": "Wann soll es losgehen?",
+      "options": ["So schnell wie möglich", "In 1-2 Monaten", "Dieses Jahr noch", "Nur Recherche"]
+    },
+    "step4": {
+      "title": "Letzter Schritt.",
+      "name_placeholder": "Ihr Name",
+      "email_placeholder": "E-Mail Adresse",
+      "message_placeholder": "Erzählen Sie uns kurz von Ihrer Vision...",
+      "submit": "Bewerbung absenden",
+      "sending": "Sende..."
+    },
+    "back": "Zurück"
+  },
+  "availability": {
+    "title": "Verfügbarkeit {{month}}",
+    "booked": "Ausgebucht",
+    "free": "Verfügbar",
+    "tooltip_free": "Termin frei"
+  },
+  "trust": {
+    "google": "Google Partner",
+    "shopify": "Shopify Fachleute",
+    "facebook": "Facebook Geschäft"
+  },
+  "faq": {
+    "title": "Häufige Fragen",
+    "items": [
+      {
+        "q": "Wie schnell können wir starten?",
+        "a": "In der Regel innerhalb von 2-4 Wochen nach Vertragsabschluss."
+      },
+      {
+        "q": "Arbeiten Sie auch mit kleinen Budgets?",
+        "a": "Wir haben spezielle Pakete für Startups ab 5.000€. Darunter empfehlen wir DIY-Lösungen."
+      },
+      {
+        "q": "Bekomme ich einen festen Ansprechpartner?",
+        "a": "Ja. Sie haben einen dedizierten Projektmanager, der immer für Sie da ist."
+      }
+    ]
+  },
+  "location": {
+    "title": "Kontakt & Standort",
+    "desc": "Erreichen Sie uns direkt oder besuchen Sie uns in Wetzlar.",
+    "whatsapp": {
+      "label": "WhatsApp",
+      "message": "Hallo,%20ich%20interessiere%20mich%20für%20Ihre%20Dienstleistungen."
+    },
+    "phone": {
+      "label": "Telefon"
+    },
+    "email": {
+      "label": "E-Mail"
+    },
+    "address": {
+      "label": "Adresse",
+      "value": "Lessingstraße 4, 35578 Wetzlar"
+    }
+  }
 }

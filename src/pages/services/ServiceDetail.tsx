@@ -1,325 +1,380 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, NavLink, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { LocalizedNavLink as NavLink } from '../../shared/ui/LocalizedLink';
 import { servicesData } from '../../data/services';
 import { OptimizedImage } from '../../shared/ui/OptimizedImage';
 import {
-    serviceImages,
-    appDevImages, appDevFeatureMapping,
-    brandingImages, brandingFeatureMapping
+  serviceImages,
+  appDevImages,
+  appDevFeatureMapping,
+  brandingImages,
+  brandingFeatureMapping,
 } from '../../data/serviceImages';
 import { Icon } from '../../shared/ui/Icon';
 
 const getServiceImage = (category?: string, slug?: string) => {
-    if (!category || !slug) return null;
+  if (!category || !slug) return null;
 
-    if (category === 'web-development') {
-        const key = appDevFeatureMapping[slug];
-        return key ? appDevImages[key] : null;
-    }
-    if (category === 'web-design') {
-        const key = brandingFeatureMapping[slug];
-        return key ? brandingImages[key] : null;
-    }
-    return null;
+  if (category === 'web-development') {
+    const key = appDevFeatureMapping[slug];
+    return key ? appDevImages[key] : null;
+  }
+  if (category === 'web-design') {
+    const key = brandingFeatureMapping[slug];
+    return key ? brandingImages[key] : null;
+  }
+  return null;
 };
 
 const ServiceDetail: React.FC = () => {
-    const { category, slug } = useParams<{ category: string; slug: string }>();
-    const navigate = useNavigate();
+  const { category, slug } = useParams<{ category: string; slug: string }>();
 
-    // Find the service data based on URL params
-    const serviceCategory = servicesData[category || ''];
-    const service = serviceCategory ? serviceCategory[slug || ''] : null;
+  // Find the service data based on URL params
+  const serviceCategory = servicesData[category || ''];
+  const service = serviceCategory ? serviceCategory[slug || ''] : null;
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [slug]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [slug]);
 
-    if (!service) {
-        return (
-            <div className="min-h-screen flex items-center justify-center bg-background-light">
-                <div className="text-center">
-                    <h1 className="text-2xl font-bold text-gray-900 mb-4">Service nicht gefunden</h1>
-                    <NavLink to="/services" className="text-primary hover:underline">Zurück zur Übersicht</NavLink>
-                </div>
-            </div>
-        );
-    }
-
-    const logos = [
-        "Uniklinik RWTH Aachen", "E.ON", "RWTH Aachen", "Forschungszentrum Jülich",
-        "AWO", "DLR", "Universität Bonn", "WZL", "BSH", "Trobolo", "Q-SURE", "LDK"
-    ];
-
+  if (!service) {
     return (
-        <div className="bg-background-light pt-24 pb-0">
-            {/* Breadcrumb */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
-                <div className="flex items-center text-sm text-gray-500">
-                    <NavLink to="/services" className="hover:text-primary transition-colors">Services</NavLink>
-                    <span className="mx-2">/</span>
-                    <NavLink to={`/services/${category}`} className="hover:text-primary transition-colors capitalize">
-                        {service.category}
-                    </NavLink>
-                    <span className="mx-2">/</span>
-                    <span className="text-primary font-medium">{service.title}</span>
-                </div>
+      <div className="min-h-screen flex items-center justify-center bg-background-light">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">Service nicht gefunden</h1>
+          <NavLink to="/services" className="text-primary hover:underline">
+            Zurück zur Übersicht
+          </NavLink>
+        </div>
+      </div>
+    );
+  }
+
+  const logos = [
+    'Uniklinik RWTH Aachen',
+    'E.ON',
+    'RWTH Aachen',
+    'Forschungszentrum Jülich',
+    'AWO',
+    'DLR',
+    'Universität Bonn',
+    'WZL',
+    'BSH',
+    'Trobolo',
+    'Q-SURE',
+    'LDK',
+  ];
+
+  return (
+    <div className="bg-background-light pt-24 pb-0">
+      {/* Breadcrumb */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+        <div className="flex items-center text-sm text-gray-500">
+          <NavLink to="/services" className="hover:text-primary transition-colors">
+            Services
+          </NavLink>
+          <span className="mx-2">/</span>
+          <NavLink
+            to={`/services/${category}`}
+            className="hover:text-primary transition-colors capitalize"
+          >
+            {service.category}
+          </NavLink>
+          <span className="mx-2">/</span>
+          <span className="text-primary font-medium">{service.title}</span>
+        </div>
+      </div>
+
+      {/* Hero Section */}
+      <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-20 text-center lg:text-left">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-xl text-primary mb-6">
+              <Icon name={service.icon} className="text-3xl" />
+            </div>
+            <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-gray-900 mb-6 leading-tight">
+              {service.title}
+            </h1>
+            <p className="text-xl text-gray-600 leading-relaxed mb-8">
+              {service.longDescription || service.description}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <NavLink
+                to="/contact"
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl bg-gray-900 hover:bg-gray-800 shadow-lg hover:shadow-xl transition-all match-hover-translate-y-1"
+              >
+                Beratungstermin vereinbaren
+                <Icon name="calendar_month" className="ml-2" />
+              </NavLink>
+            </div>
+          </div>
+
+          <div className="relative hidden lg:block">
+            {/* Abstract Visual */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full blur-3xl opacity-60"></div>
+            <div className="relative glass-card p-8 rounded-3xl border border-white/50 bg-white/60 backdrop-blur-xl shadow-glass">
+              <h3 className="font-display font-bold text-2xl text-gray-900 mb-6">Ihre Vorteile</h3>
+              <ul className="space-y-4">
+                {service.benefits.map((benefit, i) => (
+                  <li key={i} className="flex items-start">
+                    <Icon name="check_circle" className="text-primary mr-3 text-xl mt-0.5" />
+                    <span className="text-gray-700 font-medium">{benefit}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mobile Benefits (only if Process is NOT present, otherwise Advantages section handles it) */}
+      {!service.processSteps && (
+        <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-24 lg:hidden">
+          <div className="glass-card p-8 rounded-2xl bg-white shadow-aurora">
+            <h3 className="font-display font-bold text-2xl text-gray-900 mb-6">Ihre Vorteile</h3>
+            <ul className="space-y-4">
+              {service.benefits.map((benefit, i) => (
+                <li key={i} className="flex items-start">
+                  <Icon name="check_circle" className="text-primary mr-3 text-xl mt-0.5" />
+                  <span className="text-gray-700 font-medium">{benefit}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
+      {/* Trust / Logos Section (Only for Marketing for now or if enabled generally) */}
+      {service.processSteps && (
+        <section className="py-12 border-y border-gray-100 bg-white/50 mb-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-8">
+              Vertraut von führenden Unternehmen
+            </p>
+            <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+              {logos.map((logo, index) => (
+                <span
+                  key={index}
+                  className="text-lg font-bold font-display text-gray-400 hover:text-primary transition-colors cursor-default"
+                >
+                  {logo}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Process Section */}
+      {service.processSteps && (
+        <section className="bg-gray-900 text-white py-24 mb-24 overflow-hidden relative">
+          {/* Dynamic Background Visual */}
+          {slug && (
+            <div className="absolute inset-0 z-0 pointer-events-none opacity-20">
+              {/* Helper to resolve image based on category/slug - Rendered conditionally */}
+              {(() => {
+                // Simple logic to resolve image from our mappings
+                // We import these at the top level, but for cleaner JSX we can use a small inline lookup or helper function outside component
+                // For now, let's assume we pass the image ref via a helper function inside the component
+                const bgImage = getServiceImage(category, slug);
+                if (bgImage) {
+                  return (
+                    <OptimizedImage
+                      src={bgImage.src}
+                      alt=""
+                      className="w-full h-full object-cover mix-blend-overlay grayscale"
+                    />
+                  );
+                }
+                return null;
+              })()}
+            </div>
+          )}
+
+          {/* Background Blobs (preserved but pushed back) */}
+          <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
+            <div className="absolute inset-0 bg-gray-900/80"></div> {/* Darken overlay */}
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl mix-blend-screen animate-pulse-slow"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-3xl mix-blend-screen animate-pulse-slow delay-1000"></div>
+          </div>
+
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="text-center mb-20">
+              <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
+                Unser Prozess
+              </span>
+              <h2 className="font-display font-bold text-3xl sm:text-5xl mb-6">
+                In 5 Schritten zu <br /> messbarem Erfolg.
+              </h2>
             </div>
 
-            {/* Hero Section */}
-            <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-20 text-center lg:text-left">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="relative">
+              {/* Connecting Line (Desktop) */}
+              <div className="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-800 -translate-y-1/2"></div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-8">
+                {service.processSteps.map((step, index) => (
+                  <div key={index} className="relative group">
+                    <div className="flex flex-col items-center text-center">
+                      <div className="w-16 h-16 rounded-2xl bg-gray-800 border border-gray-700 flex items-center justify-center text-xl font-bold font-display mb-6 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300 shadow-lg relative z-10">
+                        {step.number}
+                      </div>
+                      <h3 className="text-xl font-bold mb-4 h-14 flex items-center justify-center">
+                        {step.title}
+                      </h3>
+                      <p className="text-sm text-gray-400 leading-relaxed">{step.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Advantages Section */}
+      {service.advantages && (
+        <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-24">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
+                Ihre Vorteile
+              </span>
+              <h2 className="font-display font-bold text-3xl sm:text-4xl text-gray-900 mb-6">
+                Wir denken in ROAS, <br /> nicht in Klicks.
+              </h2>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                Unsere Kunden entscheiden sich nicht für bunte Slides, sondern für ein Team, das
+                Marketing als Investition versteht. Wir denken in Ergebnissen, planen mit klaren
+                Zielen und liefern transparent.
+              </p>
+              <NavLink
+                to="/contact"
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl bg-gray-900 hover:bg-gray-800 shadow-lg hover:shadow-xl transition-all"
+              >
+                Kontakt aufnehmen
+              </NavLink>
+            </div>
+            <div className="grid sm:grid-cols-2 gap-6">
+              {service.advantages.map((adv, index) => (
+                <div
+                  key={index}
+                  className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+                >
+                  <Icon name={adv.icon} className="text-primary text-3xl mb-4" />
+                  <h3 className="font-bold text-gray-900 mb-2">{adv.title}</h3>
+                  <p className="text-sm text-gray-500 leading-relaxed">{adv.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Testimonials */}
+      {service.testimonials && (
+        <section className="bg-surface-light py-24 mb-24 border-y border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
+                Was unsere Kunden sagen
+              </span>
+              <h2 className="font-display font-bold text-3xl sm:text-4xl text-gray-900 mb-6">
+                Ergebnisse, die überzeugen.
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              {service.testimonials.map((t, i) => (
+                <div key={i} className="bg-white p-8 rounded-3xl shadow-aurora relative">
+                  <div className="text-primary text-4xl font-serif absolute top-6 right-8 opacity-20">
+                    "
+                  </div>
+                  <p className="text-gray-600 italic mb-8 relative z-10">"{t.text}"</p>
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-sm">
+                      {t.name.charAt(0)}
+                    </div>
                     <div>
-                        <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-xl text-primary mb-6">
-                            <Icon name={service.icon} className="text-3xl" />
-                        </div>
-                        <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-gray-900 mb-6 leading-tight">
-                            {service.title}
-                        </h1>
-                        <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                            {service.longDescription || service.description}
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                            <NavLink to="/contact" className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl bg-gray-900 hover:bg-gray-800 shadow-lg hover:shadow-xl transition-all match-hover-translate-y-1">
-                                Beratungstermin vereinbaren
-                                <Icon name="calendar_month" className="ml-2" />
-                            </NavLink>
-                        </div>
+                      <div className="font-bold text-gray-900 text-sm">{t.name}</div>
+                      <div className="text-xs text-gray-500">
+                        {t.role}, {t.company}
+                      </div>
                     </div>
-
-                    <div className="relative hidden lg:block">
-                        {/* Abstract Visual */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full blur-3xl opacity-60"></div>
-                        <div className="relative glass-card p-8 rounded-3xl border border-white/50 bg-white/60 backdrop-blur-xl shadow-glass">
-                            <h3 className="font-display font-bold text-2xl text-gray-900 mb-6">Ihre Vorteile</h3>
-                            <ul className="space-y-4">
-                                {service.benefits.map((benefit, i) => (
-                                    <li key={i} className="flex items-start">
-                                        <Icon name="check_circle" className="text-primary mr-3 text-xl mt-0.5" />
-                                        <span className="text-gray-700 font-medium">{benefit}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
+                  </div>
                 </div>
-            </section>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
-            {/* Mobile Benefits (only if Process is NOT present, otherwise Advantages section handles it) */}
-            {!service.processSteps && (
-                <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-24 lg:hidden">
-                    <div className="glass-card p-8 rounded-2xl bg-white shadow-aurora">
-                        <h3 className="font-display font-bold text-2xl text-gray-900 mb-6">Ihre Vorteile</h3>
-                        <ul className="space-y-4">
-                            {service.benefits.map((benefit, i) => (
-                                <li key={i} className="flex items-start">
-                                    <Icon name="check_circle" className="text-primary mr-3 text-xl mt-0.5" />
-                                    <span className="text-gray-700 font-medium">{benefit}</span>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </section>
-            )}
+      {/* FAQ */}
+      {service.faqs && (
+        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-32">
+          <div className="text-center mb-12">
+            <h2 className="font-display font-bold text-3xl text-gray-900 mb-4">
+              Häufige Fragen (FAQ)
+            </h2>
+            <p className="text-gray-600">
+              Wir arbeiten transparent. Hier sind Antworten auf die wichtigsten Fragen.
+            </p>
+          </div>
+          <div className="space-y-4">
+            {service.faqs.map((faq, index) => (
+              <FaqItem key={index} question={faq.question} answer={faq.answer} />
+            ))}
+          </div>
+        </section>
+      )}
 
+      {/* CTA Section */}
+      <section className="max-w-5xl mx-auto px-4 text-center pb-20">
+        <div className="glass-card p-12 rounded-3xl bg-surface-dark border border-gray-800 relative overflow-hidden group hover:border-gray-700 transition-colors">
+          <div className="absolute top-0 right-0 p-32 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-primary/20 transition-colors duration-500"></div>
 
-            {/* Trust / Logos Section (Only for Marketing for now or if enabled generally) */}
-            {service.processSteps && (
-                <section className="py-12 border-y border-gray-100 bg-white/50 mb-24">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                        <p className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-8">
-                            Vertraut von führenden Unternehmen
-                        </p>
-                        <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-                            {logos.map((logo, index) => (
-                                <span key={index} className="text-lg font-bold font-display text-gray-400 hover:text-primary transition-colors cursor-default">
-                                    {logo}
-                                </span>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-            )}
-
-            {/* Process Section */}
-            {service.processSteps && (
-                <section className="bg-gray-900 text-white py-24 mb-24 overflow-hidden relative">
-                    {/* Dynamic Background Visual */}
-                    {slug && (
-                        <div className="absolute inset-0 z-0 pointer-events-none opacity-20">
-                            {/* Helper to resolve image based on category/slug - Rendered conditionally */}
-                            {(() => {
-                                // Simple logic to resolve image from our mappings
-                                // We import these at the top level, but for cleaner JSX we can use a small inline lookup or helper function outside component
-                                // For now, let's assume we pass the image ref via a helper function inside the component
-                                const bgImage = getServiceImage(category, slug);
-                                if (bgImage) {
-                                    return (
-                                        <OptimizedImage
-                                            src={bgImage.src}
-                                            alt=""
-                                            className="w-full h-full object-cover mix-blend-overlay grayscale"
-                                        />
-                                    );
-                                }
-                                return null;
-                            })()}
-                        </div>
-                    )}
-
-                    {/* Background Blobs (preserved but pushed back) */}
-                    <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
-                        <div className="absolute inset-0 bg-gray-900/80"></div> {/* Darken overlay */}
-                        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl mix-blend-screen animate-pulse-slow"></div>
-                        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-3xl mix-blend-screen animate-pulse-slow delay-1000"></div>
-                    </div>
-
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                        <div className="text-center mb-20">
-                            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">Unser Prozess</span>
-                            <h2 className="font-display font-bold text-3xl sm:text-5xl mb-6">In 5 Schritten zu <br /> messbarem Erfolg.</h2>
-                        </div>
-
-                        <div className="relative">
-                            {/* Connecting Line (Desktop) */}
-                            <div className="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-800 -translate-y-1/2"></div>
-
-                            <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-8">
-                                {service.processSteps.map((step, index) => (
-                                    <div key={index} className="relative group">
-                                        <div className="flex flex-col items-center text-center">
-                                            <div className="w-16 h-16 rounded-2xl bg-gray-800 border border-gray-700 flex items-center justify-center text-xl font-bold font-display mb-6 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300 shadow-lg relative z-10">
-                                                {step.number}
-                                            </div>
-                                            <h3 className="text-xl font-bold mb-4 h-14 flex items-center justify-center">{step.title}</h3>
-                                            <p className="text-sm text-gray-400 leading-relaxed">
-                                                {step.description}
-                                            </p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            )}
-
-            {/* Advantages Section */}
-            {service.advantages && (
-                <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-24">
-                    <div className="grid lg:grid-cols-2 gap-16 items-center">
-                        <div>
-                            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">Ihre Vorteile</span>
-                            <h2 className="font-display font-bold text-3xl sm:text-4xl text-gray-900 mb-6">
-                                Wir denken in ROAS, <br /> nicht in Klicks.
-                            </h2>
-                            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                                Unsere Kunden entscheiden sich nicht für bunte Slides, sondern für ein Team, das Marketing als Investition versteht. Wir denken in Ergebnissen, planen mit klaren Zielen und liefern transparent.
-                            </p>
-                            <NavLink to="/contact" className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl bg-gray-900 hover:bg-gray-800 shadow-lg hover:shadow-xl transition-all">
-                                Kontakt aufnehmen
-                            </NavLink>
-                        </div>
-                        <div className="grid sm:grid-cols-2 gap-6">
-                            {service.advantages.map((adv, index) => (
-                                <div key={index} className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                                    <Icon name={adv.icon} className="text-primary text-3xl mb-4" />
-                                    <h3 className="font-bold text-gray-900 mb-2">{adv.title}</h3>
-                                    <p className="text-sm text-gray-500 leading-relaxed">
-                                        {adv.description}
-                                    </p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-            )}
-
-            {/* Testimonials */}
-            {service.testimonials && (
-                <section className="bg-surface-light py-24 mb-24 border-y border-gray-100">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <div className="text-center mb-16">
-                            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">Was unsere Kunden sagen</span>
-                            <h2 className="font-display font-bold text-3xl sm:text-4xl text-gray-900 mb-6">
-                                Ergebnisse, die überzeugen.
-                            </h2>
-                        </div>
-                        <div className="grid md:grid-cols-3 gap-8">
-                            {service.testimonials.map((t, i) => (
-                                <div key={i} className="bg-white p-8 rounded-3xl shadow-aurora relative">
-                                    <div className="text-primary text-4xl font-serif absolute top-6 right-8 opacity-20">"</div>
-                                    <p className="text-gray-600 italic mb-8 relative z-10">"{t.text}"</p>
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-sm">
-                                            {t.name.charAt(0)}
-                                        </div>
-                                        <div>
-                                            <div className="font-bold text-gray-900 text-sm">{t.name}</div>
-                                            <div className="text-xs text-gray-500">{t.role}, {t.company}</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-            )}
-
-            {/* FAQ */}
-            {service.faqs && (
-                <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-32">
-                    <div className="text-center mb-12">
-                        <h2 className="font-display font-bold text-3xl text-gray-900 mb-4">Häufige Fragen (FAQ)</h2>
-                        <p className="text-gray-600">Wir arbeiten transparent. Hier sind Antworten auf die wichtigsten Fragen.</p>
-                    </div>
-                    <div className="space-y-4">
-                        {service.faqs.map((faq, index) => (
-                            <FaqItem key={index} question={faq.question} answer={faq.answer} />
-                        ))}
-                    </div>
-                </section>
-            )}
-
-
-            {/* CTA Section */}
-            <section className="max-w-5xl mx-auto px-4 text-center pb-20">
-                <div className="glass-card p-12 rounded-3xl bg-surface-dark border border-gray-800 relative overflow-hidden group hover:border-gray-700 transition-colors">
-                    <div className="absolute top-0 right-0 p-32 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-primary/20 transition-colors duration-500"></div>
-
-                    <div className="relative z-10">
-                        <h2 className="font-display font-bold text-3xl text-white mb-6">Starten wir Ihr Projekt.</h2>
-                        <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
-                            Keine Standardlösungen. Wir entwickeln genau das, was Sie für Ihren Erfolg brauchen.
-                        </p>
-                        <NavLink to="/contact" className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-gray-900 rounded-xl bg-white hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
-                            Jetzt anfragen
-                            <Icon name="rocket_launch" className="ml-2" />
-                        </NavLink>
-                    </div>
-                </div>
-            </section>
+          <div className="relative z-10">
+            <h2 className="font-display font-bold text-3xl text-white mb-6">
+              Starten wir Ihr Projekt.
+            </h2>
+            <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
+              Keine Standardlösungen. Wir entwickeln genau das, was Sie für Ihren Erfolg brauchen.
+            </p>
+            <NavLink
+              to="/contact"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-gray-900 rounded-xl bg-white hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
+            >
+              Jetzt anfragen
+              <Icon name="rocket_launch" className="ml-2" />
+            </NavLink>
+          </div>
         </div>
-    );
+      </section>
+    </div>
+  );
 };
 
 const FaqItem: React.FC<{ question: string; answer: string }> = ({ question, answer }) => {
-    const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-    return (
-        <div className="border border-gray-200 rounded-xl bg-white overflow-hidden transition-all duration-300 hover:shadow-sm">
-            <button
-                onClick={() => setIsOpen(!isOpen)}
-                className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
-            >
-                <span className="font-bold text-gray-900 text-lg">{question}</span>
-                <Icon name="expand_more" className={`text-gray-400 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
-            </button>
-            <div className={`px-6 text-gray-600 leading-relaxed overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96 pb-6 opacity-100' : 'max-h-0 opacity-0'}`}>
-                {answer}
-            </div>
-        </div>
-    );
+  return (
+    <div className="border border-gray-200 rounded-xl bg-white overflow-hidden transition-all duration-300 hover:shadow-sm">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
+      >
+        <span className="font-bold text-gray-900 text-lg">{question}</span>
+        <Icon
+          name="expand_more"
+          className={`text-gray-400 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+        />
+      </button>
+      <div
+        className={`px-6 text-gray-600 leading-relaxed overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96 pb-6 opacity-100' : 'max-h-0 opacity-0'}`}
+      >
+        {answer}
+      </div>
+    </div>
+  );
 };
 
 export default ServiceDetail;

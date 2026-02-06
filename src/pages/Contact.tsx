@@ -18,10 +18,11 @@ const Contact: React.FC = () => {
       <section className="relative pt-32 pb-24 px-4 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
-
             {/* Text Side */}
             <div>
-              <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">{t('hero.badge')}</span>
+              <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
+                {t('hero.badge')}
+              </span>
               <h1 className="font-display font-black text-3xl sm:text-5xl lg:text-6xl text-secondary mb-6 tracking-tight">
                 <BlurText
                   text={t('hero.title_start')}
@@ -31,13 +32,15 @@ const Contact: React.FC = () => {
                   className="inline-block"
                 />
                 <br />
-                <GradientText colors={['#3B82F6', '#2563EB', '#1D4ED8']} animationSpeed={4} className="inline-block">
+                <GradientText
+                  colors={['#3B82F6', '#2563EB', '#1D4ED8']}
+                  animationSpeed={4}
+                  className="inline-block"
+                >
                   {t('hero.title_gradient')}
                 </GradientText>
               </h1>
-              <p className="text-xl text-slate-600 leading-relaxed mb-8">
-                {t('hero.desc')}
-              </p>
+              <p className="text-xl text-slate-600 leading-relaxed mb-8">{t('hero.desc')}</p>
 
               <div className="mb-12">
                 <AvailabilityGrid />
@@ -67,7 +70,9 @@ const Contact: React.FC = () => {
 
             {/* Wizard Application Form */}
             <div className="relative">
-              <Suspense fallback={<div className="h-[600px] w-full bg-gray-50 rounded-3xl animate-pulse" />}>
+              <Suspense
+                fallback={<div className="h-[600px] w-full bg-gray-50 rounded-3xl animate-pulse" />}
+              >
                 <ApplicationWizard />
               </Suspense>
 
@@ -89,12 +94,17 @@ const Contact: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <h2 className="font-display font-bold text-3xl text-secondary mb-12">{t('faq.title')}</h2>
           <div className="max-w-3xl mx-auto space-y-4 text-start">
-            {(t('faq.items', { returnObjects: true }) as Array<{ q: string; a: string }>).map((faq, idx) => (
-              <div key={idx} className="bg-white border border-gray-100 shadow-sm rounded-xl p-6 hover:shadow-md transition-all">
-                <h4 className="font-bold text-secondary mb-2 text-lg">{faq.q}</h4>
-                <p className="text-slate-600 leading-relaxed">{faq.a}</p>
-              </div>
-            ))}
+            {(t('faq.items', { returnObjects: true }) as Array<{ q: string; a: string }>).map(
+              (faq, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white border border-gray-100 shadow-sm rounded-xl p-6 hover:shadow-md transition-all"
+                >
+                  <h4 className="font-bold text-secondary mb-2 text-lg">{faq.q}</h4>
+                  <p className="text-slate-600 leading-relaxed">{faq.a}</p>
+                </div>
+              )
+            )}
           </div>
         </div>
       </section>
@@ -103,10 +113,10 @@ const Contact: React.FC = () => {
       <section className="py-12 md:py-24 bg-aurora-snow">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="font-display font-bold text-3xl text-gray-900 mb-4">{t('location.title')}</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              {t('location.desc')}
-            </p>
+            <h2 className="font-display font-bold text-3xl text-gray-900 mb-4">
+              {t('location.title')}
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">{t('location.desc')}</p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -114,7 +124,7 @@ const Contact: React.FC = () => {
             <div className="space-y-4">
               {/* WhatsApp */}
               <a
-                href="https://wa.me/4917641195301?text=Hallo,%20ich%20interessiere%20mich%20für%20Ihre%20Dienstleistungen."
+                href={`https://wa.me/4917641195301?text=${t('location.whatsapp.message')}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-5 bg-white rounded-xl border border-aurora-mist hover:shadow-lg transition-all group"
@@ -125,10 +135,15 @@ const Contact: React.FC = () => {
                   </svg>
                 </div>
                 <div className="flex-1 text-start">
-                  <strong className="block text-gray-900 group-hover:text-[#25D366] transition-colors">{t('location.whatsapp.label')}</strong>
+                  <strong className="block text-gray-900 group-hover:text-[#25D366] transition-colors">
+                    {t('location.whatsapp.label')}
+                  </strong>
                   <span className="text-sm text-gray-500">+49 176 41195301</span>
                 </div>
-                <Icon name="arrow_forward" className="text-gray-400 group-hover:text-[#25D366] group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-all" />
+                <Icon
+                  name="arrow_forward"
+                  className="text-gray-400 group-hover:text-[#25D366] group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-all"
+                />
               </a>
 
               {/* Phone */}
@@ -140,10 +155,15 @@ const Contact: React.FC = () => {
                   <Icon name="phone" className="text-primary" />
                 </div>
                 <div className="flex-1 text-start">
-                  <strong className="block text-gray-900 group-hover:text-primary transition-colors">{t('location.phone.label')}</strong>
+                  <strong className="block text-gray-900 group-hover:text-primary transition-colors">
+                    {t('location.phone.label')}
+                  </strong>
                   <span className="text-sm text-gray-500">+49 176 41195301</span>
                 </div>
-                <Icon name="arrow_forward" className="text-gray-400 group-hover:text-primary group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-all" />
+                <Icon
+                  name="arrow_forward"
+                  className="text-gray-400 group-hover:text-primary group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-all"
+                />
               </a>
 
               {/* Email */}
@@ -155,10 +175,15 @@ const Contact: React.FC = () => {
                   <Icon name="mail" className="text-purple-600" />
                 </div>
                 <div className="flex-1 text-start">
-                  <strong className="block text-gray-900 group-hover:text-purple-600 transition-colors">{t('location.email.label')}</strong>
+                  <strong className="block text-gray-900 group-hover:text-purple-600 transition-colors">
+                    {t('location.email.label')}
+                  </strong>
                   <span className="text-sm text-gray-500">umut@codayweb.de</span>
                 </div>
-                <Icon name="arrow_forward" className="text-gray-400 group-hover:text-purple-600 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-all" />
+                <Icon
+                  name="arrow_forward"
+                  className="text-gray-400 group-hover:text-purple-600 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-all"
+                />
               </a>
 
               {/* Address */}

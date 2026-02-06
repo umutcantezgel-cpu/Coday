@@ -1,27 +1,55 @@
 {
+  "hero": {
+    "label": "Fachgebiete",
+    "title": "Unsere Kernbereiche.",
+    "rotating": [
+      "Spezialisierte Lösungen für Ihren Erfolg.",
+      "Ihr Unternehmen digital an die Spitze.",
+      "Professioneller Code. Professionelles Design.",
+      "Von der Idee zur Marktführerschaft."
+    ]
+  },
+  "web_development_page": {
     "hero": {
-        "label": "Fachgebiete",
-        "title": "Unsere Kernbereiche.",
-        "rotating": [
-            "Spezialisierte Lösungen für Ihren Erfolg.",
-            "Ihr Unternehmen digital an die Spitze.",
-            "Professioneller Code. Professionelles Design.",
-            "Von der Idee zur Marktführerschaft."
-        ]
+      "label": "Technologie-Paket",
+      "title_anim": "Schnelle",
+      "title_static": "Web-Entwicklung.",
+      "description": "Wir bauen keine \"Homepages\", wir bauen digitale Vermögenswerte. Skalierbar, sicher und blitzschnell. Spezialisiert auf moderne Web-Anwendungen und komplexe Online-Shops."
     },
-    "categories": {
-        "web_development": {
-            "title": "Web-Entwicklung",
-            "description": "Wir bauen schnelle und leistungsfähige Webseiten und Web-Anwendungen mit moderner Technik."
-        },
-        "web_design": {
-            "title": "Webdesign",
-            "description": "Preisgekröntes Design für beste Benutzerfreundlichkeit. Schönheit, die verkauft."
-        }
-    },
-    "cta": {
-        "more": "Mehr erfahren",
-        "ready": "Bereit für den nächsten Schritt?",
-        "button": "Projekt anfragen"
+    "tech_stack": {
+      "title": "Professionelle Architektur",
+      "description": "Unser Technologie-Paket ist kein Zufall. Jedes Werkzeug wurde für maximale Geschwindigkeit, Skalierbarkeit und Suchmaschinen-Dominanz ausgewählt.",
+      "nextjs": {
+        "title": "Next.js 14",
+        "desc": "Serverseitiges Laden und statische Erzeugung für extrem schnelle Ladezeiten."
+      },
+      "typescript": {
+        "title": "TypeScript",
+        "desc": "Typsicherer Code, der Fehler verhindert bevor sie passieren."
+      },
+      "supabase": {
+        "title": "Supabase",
+        "desc": "Echtzeit-Datenbanken und Anmeldung. Skalierbar und quelloffen."
+      },
+      "tailwind": {
+        "title": "Tailwind CSS",
+        "desc": "Modernes Styling für minimale Datei-Größen."
+      }
     }
+  },
+  "categories": {
+    "web_development": {
+      "title": "Web-Entwicklung",
+      "description": "Wir bauen schnelle und leistungsfähige Webseiten und Web-Anwendungen mit moderner Technik."
+    },
+    "web_design": {
+      "title": "Webdesign",
+      "description": "Preisgekröntes Design für beste Benutzerfreundlichkeit. Schönheit, die verkauft."
+    }
+  },
+  "cta": {
+    "more": "Mehr erfahren",
+    "ready": "Bereit für den nächsten Schritt?",
+    "button": "Projekt anfragen"
+  }
 }

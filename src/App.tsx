@@ -1,6 +1,8 @@
 import React, { useEffect, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { Layout } from './widgets/layout/MainLayout';
+import { LanguageLayout } from './widgets/layout/LanguageLayout';
+import { RootRedirector } from './widgets/layout/RootRedirector';
 
 // Critical pages - loaded immediately
 import Home from './pages/Home';
@@ -44,7 +46,6 @@ const Performance = lazy(() => import('./pages/services/Performance'));
 const EnterpriseWeb = lazy(() => import('./pages/services/EnterpriseWeb'));
 
 // Dev Sub-Pages
-// const AppDevelopment = lazy(() => import('./pages/services/AppDevelopment')); // Deleted
 const EcommerceDevelopment = lazy(() => import('./pages/services/EcommerceDevelopment'));
 // Industries
 const Handwerk = lazy(() => import('./pages/industries/Handwerk'));
@@ -59,7 +60,6 @@ const WebApps = lazy(() => import('./pages/services/development/WebApps'));
 const HeadlessCms = lazy(() => import('./pages/services/development/HeadlessCms'));
 const ApiIntegration = lazy(() => import('./pages/services/development/ApiIntegration'));
 const Migration = lazy(() => import('./pages/services/development/Migration'));
-// const MobilePwa = lazy(() => import('./pages/services/development/MobilePwa')); // Merged into AppDevelopment
 
 // Design Sub-Pages
 const UiUx = lazy(() => import('./pages/services/design/UiUx'));
@@ -105,95 +105,100 @@ const App: React.FC = () => {
           <Layout>
             <Suspense fallback={<PageLoader />}>
               <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/services" element={<Services />} />
+                {/* Redirect Root to Language */}
+                <Route path="/" element={<RootRedirector />} />
 
-                {/* Industry Routes */}
-                <Route path="/services/industries" element={<IndustryOverview />} />
-                <Route path="/services/industries/:slug" element={<IndustryDetail />} />
+                {/* Wrapper for Language Routes */}
+                <Route path="/:lng" element={<LanguageLayout />}>
+                  <Route index element={<Home />} />
+                  <Route path="services" element={<Services />} />
 
-                {/* Pillars */}
-                <Route path="/services/web-development" element={<WebDevelopment />} />
-                <Route path="/services/web-design" element={<WebDesign />} />
-                <Route path="/services/seo" element={<Seo />} />
-                <Route path="/services/performance" element={<Performance />} />
+                  {/* Industry Routes */}
+                  <Route path="services/industries" element={<IndustryOverview />} />
+                  <Route path="services/industries/:slug" element={<IndustryDetail />} />
 
-                {/* Web Development Sub-Services */}
-                <Route path="/services/web-development/e-commerce" element={<Ecommerce />} />
-                <Route path="/services/web-development/web-apps" element={<WebApps />} />
-                <Route path="/services/web-development/cms-headless" element={<HeadlessCms />} />
-                <Route
-                  path="/services/web-development/api-integrations"
-                  element={<ApiIntegration />}
-                />
-                <Route path="/services/web-development/migration" element={<Migration />} />
+                  {/* Pillars */}
+                  <Route path="services/web-development" element={<WebDevelopment />} />
+                  <Route path="services/web-design" element={<WebDesign />} />
+                  <Route path="services/seo" element={<Seo />} />
+                  <Route path="services/performance" element={<Performance />} />
 
-                {/* Main Service Pages */}
-                {/* Enterprise Web Route (Coming Soon) */}
-                <Route path="/services/enterprise-web" element={<EnterpriseWeb />} />
+                  {/* Web Development Sub-Services */}
+                  <Route path="services/web-development/e-commerce" element={<Ecommerce />} />
+                  <Route path="services/web-development/web-apps" element={<WebApps />} />
+                  <Route path="services/web-development/cms-headless" element={<HeadlessCms />} />
+                  <Route
+                    path="services/web-development/api-integrations"
+                    element={<ApiIntegration />}
+                  />
+                  <Route path="services/web-development/migration" element={<Migration />} />
 
-                {/* Web Design Sub-Services */}
-                <Route path="/services/web-design/ui-ux" element={<UiUx />} />
-                <Route path="/services/web-design/brand-identity" element={<BrandIdentity />} />
-                <Route path="/services/web-design/design-systems" element={<DesignSystems />} />
-                <Route path="/services/web-design/audit" element={<UxAudit />} />
+                  {/* Main Service Pages */}
+                  <Route path="services/enterprise-web" element={<EnterpriseWeb />} />
 
-                {/* Industry Domination Routes */}
-                <Route path="/services/industries/handwerk" element={<Handwerk />} />
-                <Route path="/services/industries/immobilien" element={<Immobilien />} />
-                <Route path="/services/industries/gastronomie" element={<Gastronomie />} />
-                <Route path="/services/industries/gesundheit" element={<Gesundheit />} />
-                <Route path="/services/industries/dienstleistung" element={<Dienstleistung />} />
-                <Route path="/services/industries/e-commerce" element={<Retail />} />
+                  {/* Web Design Sub-Services */}
+                  <Route path="services/web-design/ui-ux" element={<UiUx />} />
+                  <Route path="services/web-design/brand-identity" element={<BrandIdentity />} />
+                  <Route path="services/web-design/design-systems" element={<DesignSystems />} />
+                  <Route path="services/web-design/audit" element={<UxAudit />} />
 
-                {/* Dynamic Service Detail Route (Fallback) */}
-                <Route path="/services/:category/:slug" element={<ServiceDetail />} />
+                  {/* Industry Domination Routes */}
+                  <Route path="services/industries/handwerk" element={<Handwerk />} />
+                  <Route path="services/industries/immobilien" element={<Immobilien />} />
+                  <Route path="services/industries/gastronomie" element={<Gastronomie />} />
+                  <Route path="services/industries/gesundheit" element={<Gesundheit />} />
+                  <Route path="services/industries/dienstleistung" element={<Dienstleistung />} />
+                  <Route path="services/industries/e-commerce" element={<Retail />} />
 
-                {/* Calculator */}
-                <Route path="/calculator" element={<Calculator />} />
-                <Route path="/preise" element={<Calculator />} />
+                  {/* Dynamic Service Detail Route (Fallback) */}
+                  <Route path="services/:category/:slug" element={<ServiceDetail />} />
 
-                {/* Work / Case Studies */}
-                <Route path="/work" element={<Work />} />
+                  {/* Calculator */}
+                  <Route path="calculator" element={<Calculator />} />
+                  <Route path="preise" element={<Calculator />} />
 
-                {/* MDX Case Studies */}
-                <Route path="/work/creative-impact" element={<CreativeImpact />} />
-                <Route path="/work/batherm" element={<Batherm />} />
+                  {/* Work / Case Studies */}
+                  <Route path="work" element={<Work />} />
 
-                <Route path="/work/:slug" element={<ProjectDetail />} />
+                  {/* MDX Case Studies */}
+                  <Route path="work/creative-impact" element={<CreativeImpact />} />
+                  <Route path="work/batherm" element={<Batherm />} />
 
-                <Route path="/process" element={<Process />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/legal/impressum" element={<Impressum />} />
-                <Route path="/legal/datenschutz" element={<Privacy />} />
-                <Route path="/legal/agb" element={<Terms />} />
-                <Route path="/dashboard" element={<Dashboard />} />
+                  <Route path="work/:slug" element={<ProjectDetail />} />
 
-                {/* Booking & Packages */}
-                <Route path="/booking" element={<Booking />} />
-                <Route path="/packages" element={<Packages />} />
-                <Route path="/pakete" element={<Packages />} />
+                  <Route path="process" element={<Process />} />
+                  <Route path="contact" element={<Contact />} />
+                  <Route path="legal/impressum" element={<Impressum />} />
+                  <Route path="legal/datenschutz" element={<Privacy />} />
+                  <Route path="legal/agb" element={<Terms />} />
+                  <Route path="dashboard" element={<Dashboard />} />
 
-                {/* Knowledge Routes */}
-                <Route path="/knowledge" element={<Navigate to="/knowledge/blog" replace />} />
-                <Route path="/knowledge/academy" element={<Academy />} />
-                <Route path="/academy" element={<Academy />} />
-                <Route path="/knowledge/blog" element={<Blog />} />
-                <Route path="/knowledge/blog/:slug" element={<BlogPost />} />
-                <Route path="/knowledge/newsletter" element={<Newsletter />} />
-                <Route path="/knowledge/whitepapers" element={<Whitepapers />} />
+                  {/* Booking & Packages */}
+                  <Route path="booking" element={<Booking />} />
+                  <Route path="packages" element={<Packages />} />
+                  <Route path="pakete" element={<Packages />} />
 
-                {/* Career Routes */}
-                <Route path="/career" element={<Careers />} />
-                <Route path="/careers" element={<Careers />} />
-                <Route path="/career/jobs" element={<Jobs />} />
-                <Route path="/career/culture" element={<Culture />} />
-                <Route path="/career/benefits" element={<Benefits />} />
-                {/* AI Tools */}
-                <Route path="/analyzer" element={<Analyzer />} />
-                <Route path="/website-audit" element={<Analyzer />} />
+                  {/* Knowledge Routes */}
+                  <Route path="knowledge" element={<Navigate to="blog" replace />} />
+                  <Route path="knowledge/academy" element={<Academy />} />
+                  <Route path="academy" element={<Academy />} />
+                  <Route path="knowledge/blog" element={<Blog />} />
+                  <Route path="knowledge/blog/:slug" element={<BlogPost />} />
+                  <Route path="knowledge/newsletter" element={<Newsletter />} />
+                  <Route path="knowledge/whitepapers" element={<Whitepapers />} />
 
-                <Route path="*" element={<NotFound />} />
+                  {/* Career Routes */}
+                  <Route path="career" element={<Careers />} />
+                  <Route path="careers" element={<Careers />} />
+                  <Route path="career/jobs" element={<Jobs />} />
+                  <Route path="career/culture" element={<Culture />} />
+                  <Route path="career/benefits" element={<Benefits />} />
+                  {/* AI Tools */}
+                  <Route path="analyzer" element={<Analyzer />} />
+                  <Route path="website-audit" element={<Analyzer />} />
+
+                  <Route path="*" element={<NotFound />} />
+                </Route>
               </Routes>
             </Suspense>
           </Layout>

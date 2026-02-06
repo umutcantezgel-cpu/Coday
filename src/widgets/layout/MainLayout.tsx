@@ -14,7 +14,7 @@ interface LayoutProps {
   children: React.ReactNode;
 }
 
-import { Helmet } from 'react-helmet-async';
+import { SeoHead } from '../../shared/ui/SeoHead';
 
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
   const location = useLocation();
@@ -24,15 +24,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   return (
     <div className="font-sans text-text-light bg-background-light min-h-screen flex flex-col">
-      <Helmet>
-        <title>Coday | Der Agentur-Killer</title>
-        <meta
-          name="description"
-          content="Wir beenden Ineffizienz. High-End Webentwicklung & Design für Agenturen und Unternehmen."
-        />
-        <meta name="theme-color" content="#5227FF" />
-        <link rel="canonical" href={`https://coday.de${location.pathname}`} />
-      </Helmet>
+      <SeoHead />
       {/* World Class Navigation */}
       <CardNav />
 

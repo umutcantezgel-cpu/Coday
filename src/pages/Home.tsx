@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { LocalizedNavLink as NavLink, LocalizedLink as Link } from '../shared/ui/LocalizedLink';
 import { ArrowRight, Rocket } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { OptimizedImage } from '../shared/ui/OptimizedImage';
@@ -19,8 +19,6 @@ import { cn } from '../shared/lib/utils';
 import { baseButtonStyles, buttonVariants, buttonSizes } from '../shared/ui/Button';
 import { Icon } from '../shared/ui/Icon';
 
-
-
 const Home: React.FC = () => {
   const { t } = useTranslation(['home', 'common']);
 
@@ -35,12 +33,15 @@ const Home: React.FC = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-block mb-6 animate-fade-in-up">
             <span className="bg-white/80 backdrop-blur-md border border-white/50 text-secondary text-sm font-bold px-4 py-1.5 rounded-full shadow-lg flex items-center gap-2">
-              <span className="bg-primary text-white rounded-full p-0.5"><Icon name="rocket_launch" className="text-[14px]" /></span>
+              <span className="bg-primary text-white rounded-full p-0.5">
+                <Icon name="rocket_launch" className="text-[14px]" />
+              </span>
               {t('hero.badge')}
             </span>
           </div>
           <h1 className="font-display font-black text-5xl sm:text-7xl lg:text-8xl tracking-tight leading-none mb-8 text-secondary uppercase drop-shadow-sm">
-            {t('hero.headline_prefix')}<br className="hidden md:block" />
+            {t('hero.headline_prefix')}
+            <br className="hidden md:block" />
             <GradientText
               colors={['#1A9A9A', '#2D3748', '#1A9A9A']}
               animationSpeed={8}
@@ -62,7 +63,12 @@ const Home: React.FC = () => {
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             <NavLink
               to="/contact"
-              className={cn(baseButtonStyles, buttonVariants.primary, buttonSizes.lg, "group relative overflow-hidden transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 active:scale-95 active:shadow-sm")}
+              className={cn(
+                baseButtonStyles,
+                buttonVariants.primary,
+                buttonSizes.lg,
+                'group relative overflow-hidden transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 active:scale-95 active:shadow-sm'
+              )}
             >
               <span className="relative z-10 flex items-center">
                 {t('buttons.start_project', { ns: 'common' })}
@@ -74,7 +80,12 @@ const Home: React.FC = () => {
 
             <NavLink
               to="/work"
-              className={cn(baseButtonStyles, buttonVariants.secondary, buttonSizes.lg, "group border border-gray-200 bg-white text-secondary hover:bg-gray-50 hover:border-primary/50 shadow-md hover:shadow-lg hover:-translate-y-1 active:scale-95 active:shadow-sm")}
+              className={cn(
+                baseButtonStyles,
+                buttonVariants.secondary,
+                buttonSizes.lg,
+                'group border border-gray-200 bg-white text-secondary hover:bg-gray-50 hover:border-primary/50 shadow-md hover:shadow-lg hover:-translate-y-1 active:scale-95 active:shadow-sm'
+              )}
             >
               {t('buttons.view_work', { ns: 'common' })}
             </NavLink>
@@ -89,25 +100,38 @@ const Home: React.FC = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-gray-100">
               <div className="px-4 text-center">
                 <div className="font-display text-4xl lg:text-5xl font-bold text-secondary mb-2">
-                  <CountUp from={0} to={0.5} duration={1.5} className="" />s
+                  <CountUp from={0} to={0.5} duration={1.5} className="" />
+                  {t('units.seconds', { ns: 'common' })}
                 </div>
-                <div className="text-xs font-bold uppercase tracking-widest text-primary">{t('stats.load_time')}</div>
+                <div className="text-xs font-bold uppercase tracking-widest text-primary">
+                  {t('stats.load_time')}
+                </div>
               </div>
               <div className="px-4 text-center">
                 <div className="font-display text-4xl lg:text-5xl font-bold text-secondary mb-2">
-                  <CountUp from={0} to={100} duration={1.5} className="" />%
+                  <CountUp from={0} to={100} duration={1.5} className="" />
+                  {t('units.percent', { ns: 'common' })}
                 </div>
-                <div className="text-xs font-bold uppercase tracking-widest text-primary">{t('stats.ownership')}</div>
+                <div className="text-xs font-bold uppercase tracking-widest text-primary">
+                  {t('stats.ownership')}
+                </div>
               </div>
               <div className="px-4 text-center">
                 <div className="font-display text-4xl lg:text-5xl font-bold text-secondary mb-2">
-                  <CountUp from={0} to={24} duration={1.5} className="" />h
+                  <CountUp from={0} to={24} duration={1.5} className="" />
+                  {t('units.hours', { ns: 'common' })}
                 </div>
-                <div className="text-xs font-bold uppercase tracking-widest text-primary">{t('stats.availability')}</div>
+                <div className="text-xs font-bold uppercase tracking-widest text-primary">
+                  {t('stats.availability')}
+                </div>
               </div>
               <div className="px-4 text-center border-r-0">
-                <div className="font-display text-4xl lg:text-5xl font-bold text-secondary mb-2">{t('stats.profit')}</div>
-                <div className="text-xs font-bold uppercase tracking-widest text-primary">{t('stats.focused')}</div>
+                <div className="font-display text-4xl lg:text-5xl font-bold text-secondary mb-2">
+                  {t('stats.profit')}
+                </div>
+                <div className="text-xs font-bold uppercase tracking-widest text-primary">
+                  {t('stats.focused')}
+                </div>
               </div>
             </div>
           </div>
@@ -133,11 +157,10 @@ const Home: React.FC = () => {
                 <span className="text-primary">{t('philosophy.history')}</span>
               </h2>
               <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
+                <p>{t('philosophy.text_overhead')}</p>
                 <p>
-                  {t('philosophy.text_overhead')}
-                </p>
-                <p>
-                  <strong className="text-secondary font-bold">{t('philosophy.standard')}</strong> {t('philosophy.text_standard')}
+                  <strong className="text-secondary font-bold">{t('philosophy.standard')}</strong>{' '}
+                  {t('philosophy.text_standard')}
                 </p>
               </div>
             </div>
@@ -175,25 +198,39 @@ const Home: React.FC = () => {
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
                   <Icon name="construction" size="lg" className="text-primary" />
                 </div>
-                <h3 className="font-bold text-lg text-secondary mb-2">{t('industries.card_craft.title')}</h3>
+                <h3 className="font-bold text-lg text-secondary mb-2">
+                  {t('industries.card_craft.title')}
+                </h3>
                 <p className="text-sm text-slate-600">{t('industries.card_craft.desc')}</p>
               </BentoCard>
             </Link>
             <Link to="/services/industries/immobilien" className="block h-full">
-              <BentoCard effect="glow" glowColor="rgba(26, 154, 154, 0.3)" className="p-6 text-start h-full">
+              <BentoCard
+                effect="glow"
+                glowColor="rgba(26, 154, 154, 0.3)"
+                className="p-6 text-start h-full"
+              >
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
                   <Icon name="apartment" size="lg" className="text-primary" />
                 </div>
-                <h3 className="font-bold text-lg text-secondary mb-2">{t('industries.card_realestate.title')}</h3>
+                <h3 className="font-bold text-lg text-secondary mb-2">
+                  {t('industries.card_realestate.title')}
+                </h3>
                 <p className="text-sm text-slate-600">{t('industries.card_realestate.desc')}</p>
               </BentoCard>
             </Link>
             <Link to="/services/industries/e-commerce" className="block h-full">
-              <BentoCard effect="spotlight" spotlightColor="rgba(26, 154, 154, 0.15)" className="p-6 text-start h-full">
+              <BentoCard
+                effect="spotlight"
+                spotlightColor="rgba(26, 154, 154, 0.15)"
+                className="p-6 text-start h-full"
+              >
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
                   <Icon name="shopping_cart" size="lg" className="text-primary" />
                 </div>
-                <h3 className="font-bold text-lg text-secondary mb-2">{t('industries.card_shop.title')}</h3>
+                <h3 className="font-bold text-lg text-secondary mb-2">
+                  {t('industries.card_shop.title')}
+                </h3>
                 <p className="text-sm text-slate-600">{t('industries.card_shop.desc')}</p>
               </BentoCard>
             </Link>
@@ -202,16 +239,24 @@ const Home: React.FC = () => {
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
                   <Icon name="lightbulb" size="lg" className="text-primary" />
                 </div>
-                <h3 className="font-bold text-lg text-secondary mb-2">{t('industries.card_consulting.title')}</h3>
+                <h3 className="font-bold text-lg text-secondary mb-2">
+                  {t('industries.card_consulting.title')}
+                </h3>
                 <p className="text-sm text-slate-600">{t('industries.card_consulting.desc')}</p>
               </BentoCard>
             </Link>
             <Link to="/services/industries/gesundheit" className="block h-full">
-              <BentoCard effect="glow" glowColor="rgba(26, 154, 154, 0.3)" className="p-6 text-start h-full">
+              <BentoCard
+                effect="glow"
+                glowColor="rgba(26, 154, 154, 0.3)"
+                className="p-6 text-start h-full"
+              >
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
                   <Icon name="health_and_safety" size="lg" className="text-primary" />
                 </div>
-                <h3 className="font-bold text-lg text-secondary mb-2">{t('industries.card_health.title')}</h3>
+                <h3 className="font-bold text-lg text-secondary mb-2">
+                  {t('industries.card_health.title')}
+                </h3>
                 <p className="text-sm text-slate-600">{t('industries.card_health.desc')}</p>
               </BentoCard>
             </Link>
@@ -223,9 +268,12 @@ const Home: React.FC = () => {
       <section className="py-16 bg-gray-50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <span className="text-primary font-bold tracking-wider uppercase text-xs mb-2 block">{t('tech_stack.label')}</span>
+            <span className="text-primary font-bold tracking-wider uppercase text-xs mb-2 block">
+              {t('tech_stack.label')}
+            </span>
             <h2 className="font-display font-bold text-2xl sm:text-3xl text-secondary">
-              {t('tech_stack.title_prefix')} <span className="text-primary">{t('tech_stack.title_suffix')}</span>
+              {t('tech_stack.title_prefix')}{' '}
+              <span className="text-primary">{t('tech_stack.title_suffix')}</span>
             </h2>
           </div>
           <LogoLoop
@@ -272,19 +320,21 @@ const Home: React.FC = () => {
                 />
                 <span className="text-primary">{t('testimonials.title_suffix')}</span>
               </h2>
-              <p className="text-xl text-slate-600 mb-8 font-light">
-                {t('testimonials.text')}
-              </p>
+              <p className="text-xl text-slate-600 mb-8 font-light">{t('testimonials.text')}</p>
               <div className="flex items-center gap-6">
                 <div className="flex -space-x-4">
                   {[1, 2, 3, 4].map((i) => (
-                    <div key={i} className="w-12 h-12 rounded-full bg-surface-dark border-2 border-white flex items-center justify-center text-xs font-bold text-secondary shadow-sm overflow-hidden">
+                    <div
+                      key={i}
+                      className="w-12 h-12 rounded-full bg-surface-dark border-2 border-white flex items-center justify-center text-xs font-bold text-secondary shadow-sm overflow-hidden"
+                    >
                       <Icon name="user" className="text-white w-6 h-6" />
                     </div>
                   ))}
                 </div>
                 <div className="text-sm font-bold text-secondary">
-                  {t('testimonials.rating')}<br />
+                  {t('testimonials.rating')}
+                  <br />
                   <span className="text-primary font-normal">{t('testimonials.excellence')}</span>
                 </div>
               </div>

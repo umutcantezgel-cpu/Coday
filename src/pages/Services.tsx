@@ -1,7 +1,7 @@
 import React from 'react';
 import { Icon } from '@/shared/ui/Icon';
 import { useTranslation } from 'react-i18next';
-import { NavLink } from 'react-router-dom';
+import { LocalizedNavLink as NavLink } from '../shared/ui/LocalizedLink';
 import { OptimizedImage } from '../shared/ui/OptimizedImage';
 import { serviceImages } from '../data/serviceImages';
 import ScrollFloat from '../shared/ui/ScrollFloat';
@@ -17,23 +17,23 @@ const Services: React.FC = () => {
 
   const categories = [
     {
-      icon: "code",
+      icon: 'code',
       title: t('categories.web_development.title'),
       description: t('categories.web_development.description'),
-      link: "/services/web-development",
-      color: "bg-blue-500",
-      imageKey: "development",
-      effect: "spotlight" as const
+      link: '/services/web-development',
+      color: 'bg-blue-500',
+      imageKey: 'development',
+      effect: 'spotlight' as const,
     },
     {
-      icon: "palette",
+      icon: 'palette',
       title: t('categories.web_design.title'),
       description: t('categories.web_design.description'),
-      link: "/services/web-design",
-      color: "bg-purple-500",
-      imageKey: "webdesign",
-      effect: "glow" as const
-    }
+      link: '/services/web-design',
+      color: 'bg-purple-500',
+      imageKey: 'webdesign',
+      effect: 'glow' as const,
+    },
   ];
 
   return (
@@ -42,7 +42,9 @@ const Services: React.FC = () => {
       <section className="pt-12 pb-8 md:pt-24 md:pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-start">
-            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">{t('hero.label')}</span>
+            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
+              {t('hero.label')}
+            </span>
             <ScrollFloat
               animationDuration={0.8}
               ease="back.out(1.7)"
@@ -87,10 +89,7 @@ const Services: React.FC = () => {
               glowColor="rgba(139, 92, 246, 0.3)"
               className="h-full"
             >
-              <NavLink
-                to={cat.link}
-                className="group relative p-10 block h-full"
-              >
+              <NavLink to={cat.link} className="group relative p-10 block h-full">
                 {/* Decorative Background Image */}
                 <div className="absolute top-0 end-0 w-64 h-64 opacity-5 transform translate-x-12 rtl:-translate-x-12 -translate-y-12 group-hover:scale-110 group-hover:opacity-10 transition-all duration-500 rounded-bl-full rtl:rounded-br-full rtl:rounded-bl-none overflow-hidden pointer-events-none">
                   {serviceImages[cat.imageKey || 'hero'] && (
@@ -101,23 +100,28 @@ const Services: React.FC = () => {
                     />
                   )}
                 </div>
-                <div className={`absolute top-0 end-0 w-32 h-32 ${cat.color} opacity-5 rounded-bl-full rtl:rounded-br-full rtl:rounded-bl-none group-hover:scale-110 transition-transform duration-500`}></div>
+                <div
+                  className={`absolute top-0 end-0 w-32 h-32 ${cat.color} opacity-5 rounded-bl-full rtl:rounded-br-full rtl:rounded-bl-none group-hover:scale-110 transition-transform duration-500`}
+                ></div>
 
                 <div className="relative z-10">
-                  <div className={`w-16 h-16 ${cat.color} bg-opacity-10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300`}>
+                  <div
+                    className={`w-16 h-16 ${cat.color} bg-opacity-10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300`}
+                  >
                     <Icon name={cat.icon} className="text-3xl text-gray-900" />
                   </div>
 
                   <h3 className="font-display font-bold text-3xl text-gray-900 mb-4 group-hover:text-primary transition-colors">
                     {cat.title}
                   </h3>
-                  <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                    {cat.description}
-                  </p>
+                  <p className="text-lg text-gray-600 mb-8 leading-relaxed">{cat.description}</p>
 
                   <div className="flex items-center text-primary font-bold tracking-wide uppercase text-sm">
                     {t('cta.more')}
-                    <Icon name="arrow_forward" className="ms-2 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform" />
+                    <Icon
+                      name="arrow_forward"
+                      className="ms-2 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform"
+                    />
                   </div>
                 </div>
               </NavLink>
@@ -143,7 +147,12 @@ const Services: React.FC = () => {
           <GlareHover glareColor="#ffffff" glareOpacity={0.4} className="inline-block rounded-xl">
             <NavLink
               to="/contact"
-              className={cn(baseButtonStyles, buttonVariants.primary, buttonSizes.lg, "hover:-translate-y-1")}
+              className={cn(
+                baseButtonStyles,
+                buttonVariants.primary,
+                buttonSizes.lg,
+                'hover:-translate-y-1'
+              )}
             >
               {t('cta.button')}
               <Icon name="arrow_forward" className="ms-2 rtl:rotate-180" />
@@ -156,4 +165,3 @@ const Services: React.FC = () => {
 };
 
 export default Services;
-

@@ -1,105 +1,91 @@
 {
-    "hero": {
-        "badge": "Application",
-        "title_start": "Let's build",
-        "title_gradient": "Something Big.",
-        "desc": "We don't work with everyone. We are looking for partners ready for real growth. Fill out the form to apply for a free consultation."
+  "hero": {
+    "badge": "Application",
+    "title_start": "Let's build",
+    "title_gradient": "Something Big.",
+    "desc": "We don't work with everyone. We are looking for partners ready for real growth. Fill out the form to apply for a free consultation."
+  },
+  "features": {
+    "consult": {
+      "title": "Free Initial Consultation",
+      "desc": "30-minute expert analysis via Zoom."
     },
-    "features": {
-        "consult": {
-            "title": "Free Initial Consultation",
-            "desc": "30-minute expert analysis via Zoom."
-        },
-        "strategy": {
-            "title": "Strategy Plan",
-            "desc": "You receive a custom roadmap."
-        }
-    },
-    "wizard": {
-        "success": {
-            "title": "Application Received!",
-            "message": "We have received your project inquiry. Our team will contact you within 24 hours."
-        },
-        "step1": {
-            "title": "How can we help?",
-            "options": [
-                "Web Development",
-                "E-Commerce Shop",
-                "App Development",
-                "Custom Software"
-            ]
-        },
-        "step2": {
-            "title": "What is the planned budget?",
-            "options": [
-                "< 5.000 €",
-                "5.000 € - 15.000 €",
-                "15.000 € - 50.000 €",
-                "> 50.000 €"
-            ]
-        },
-        "step3": {
-            "title": "When should we start?",
-            "options": [
-                "As soon as possible",
-                "In 1-2 months",
-                "This year",
-                "Research only"
-            ]
-        },
-        "step4": {
-            "title": "Final Step.",
-            "name_placeholder": "Your Name",
-            "email_placeholder": "Email Address",
-            "message_placeholder": "Tell us briefly about your vision...",
-            "submit": "Submit Application",
-            "sending": "Sending..."
-        },
-        "back": "Back"
-    },
-    "availability": {
-        "title": "Availability {{month}}",
-        "booked": "Fully Booked",
-        "free": "Available",
-        "tooltip_free": "Date available"
-    },
-    "trust": {
-        "google": "Google Partner",
-        "shopify": "Shopify Experts",
-        "facebook": "Facebook Business"
-    },
-    "faq": {
-        "title": "Frequently Asked Questions",
-        "items": [
-            {
-                "q": "How quickly can we start?",
-                "a": "Usually within 2-4 weeks after contract signing."
-            },
-            {
-                "q": "Do you work with small budgets?",
-                "a": "We have special packages for startups starting at €5,000. Below that, we recommend DIY solutions."
-            },
-            {
-                "q": "Do I get a dedicated contact person?",
-                "a": "Yes. You have a dedicated project manager who is always there for you."
-            }
-        ]
-    },
-    "location": {
-        "title": "Contact & Location",
-        "desc": "Reach us directly or visit us in Wetzlar.",
-        "whatsapp": {
-            "label": "WhatsApp"
-        },
-        "phone": {
-            "label": "Phone"
-        },
-        "email": {
-            "label": "Email"
-        },
-        "address": {
-            "label": "Address",
-            "value": "Lessingstraße 4, 35578 Wetzlar"
-        }
+    "strategy": {
+      "title": "Strategy Plan",
+      "desc": "You receive a custom roadmap."
     }
+  },
+  "wizard": {
+    "success": {
+      "title": "Application Received!",
+      "message": "We have received your project inquiry. Our team will contact you within 24 hours."
+    },
+    "step1": {
+      "title": "How can we help?",
+      "options": ["Web Development", "E-Commerce Shop", "App Development", "Custom Software"]
+    },
+    "step2": {
+      "title": "What is the planned budget?",
+      "options": ["< 5.000 €", "5.000 € - 15.000 €", "15.000 € - 50.000 €", "> 50.000 €"]
+    },
+    "step3": {
+      "title": "When should we start?",
+      "options": ["As soon as possible", "In 1-2 months", "This year", "Research only"]
+    },
+    "step4": {
+      "title": "Final Step.",
+      "name_placeholder": "Your Name",
+      "email_placeholder": "Email Address",
+      "message_placeholder": "Tell us briefly about your vision...",
+      "submit": "Submit Application",
+      "sending": "Sending..."
+    },
+    "back": "Back"
+  },
+  "availability": {
+    "title": "Availability {{month}}",
+    "booked": "Fully Booked",
+    "free": "Available",
+    "tooltip_free": "Date available"
+  },
+  "trust": {
+    "google": "Google Partner",
+    "shopify": "Shopify Experts",
+    "facebook": "Facebook Business"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "q": "How quickly can we start?",
+        "a": "Usually within 2-4 weeks after contract signing."
+      },
+      {
+        "q": "Do you work with small budgets?",
+        "a": "We have special packages for startups starting at €5,000. Below that, we recommend DIY solutions."
+      },
+      {
+        "q": "Do I get a dedicated contact person?",
+        "a": "Yes. You have a dedicated project manager who is always there for you."
+      }
+    ]
+  },
+  "location": {
+    "title": "Contact & Location",
+    "desc": "Reach us directly or visit us in Wetzlar.",
+    "whatsapp": {
+      "label": "WhatsApp",
+      "message": "Hello,%20I%20am%20interested%20in%20your%20services."
+    },
+    "phone": {
+      "label": "Phone"
+    },
+    "email": {
+      "label": "Email"
+    },
+    "address": {
+      "label": "Address",
+      "value": "Lessingstraße 4, 35578 Wetzlar"
+    }
+  }
 }

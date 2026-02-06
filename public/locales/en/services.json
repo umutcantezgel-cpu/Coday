@@ -1,27 +1,55 @@
 {
+  "hero": {
+    "label": "Expertise",
+    "title": "Our Core Areas.",
+    "rotating": [
+      "Specialized Solutions for Your Success.",
+      "Taking Your Business Digital to the Top.",
+      "Professional Code. Professional Design.",
+      "From Idea to Market Leadership."
+    ]
+  },
+  "web_development_page": {
     "hero": {
-        "label": "Expertise",
-        "title": "Our Core Areas.",
-        "rotating": [
-            "Specialized Solutions for Your Success.",
-            "Taking Your Business Digital to the Top.",
-            "Professional Code. Professional Design.",
-            "From Idea to Market Leadership."
-        ]
+      "label": "Technology Stack",
+      "title_anim": "Fast",
+      "title_static": "Web Development.",
+      "description": "We don't build \"homepages\", we build digital assets. Scalable, secure, and blazing fast. Specialized in modern web applications and complex online shops."
     },
-    "categories": {
-        "web_development": {
-            "title": "Web Development",
-            "description": "We build fast and powerful websites and web applications with modern technology."
-        },
-        "web_design": {
-            "title": "Web Design",
-            "description": "Award-winning design for best usability. Beauty that sells."
-        }
-    },
-    "cta": {
-        "more": "Learn More",
-        "ready": "Ready for the next step?",
-        "button": "Request Project"
+    "tech_stack": {
+      "title": "Professional Architecture",
+      "description": "Our technology stack is no accident. Every tool was selected for maximum speed, scalability, and search engine dominance.",
+      "nextjs": {
+        "title": "Next.js 14",
+        "desc": "Server-side rendering and static generation for extremely fast load times."
+      },
+      "typescript": {
+        "title": "TypeScript",
+        "desc": "Type-safe code that prevents errors before they happen."
+      },
+      "supabase": {
+        "title": "Supabase",
+        "desc": "Real-time databases and authentication. Scalable and open source."
+      },
+      "tailwind": {
+        "title": "Tailwind CSS",
+        "desc": "Modern styling for minimal file sizes."
+      }
     }
+  },
+  "categories": {
+    "web_development": {
+      "title": "Web Development",
+      "description": "We build fast and powerful websites and web applications with modern technology."
+    },
+    "web_design": {
+      "title": "Web Design",
+      "description": "Award-winning design for best usability. Beauty that sells."
+    }
+  },
+  "cta": {
+    "more": "Learn More",
+    "ready": "Ready for the next step?",
+    "button": "Request Project"
+  }
 }

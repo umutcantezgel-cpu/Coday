@@ -2,9 +2,11 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Icon } from '../../shared/ui/Icon';
 import { LanguageSwitcher } from './LanguageSwitcher';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { LocalizedLink as Link } from '../../shared/ui/LocalizedLink';
 import { useTranslation } from 'react-i18next';
 import { getNavItems, NavGroup, NavLink } from './config';
+import { MobileNavOverlay } from './MobileNavOverlay';
 import './CardNav.css';
 
 interface CardNavProps {
@@ -22,6 +24,7 @@ const CardNav: React.FC<CardNavProps> = ({
 }) => {
   const { t } = useTranslation('common');
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
   const location = useLocation();
   const navRef = useRef<HTMLDivElement>(null);
 
@@ -243,9 +246,8 @@ const CardNav: React.FC<CardNavProps> = ({
           <div className="md:hidden ml-2">
             <button
               className="mobile-menu-trigger"
-              onClick={() => {
-                /* Mobile menu logic would go here - simplified for compact task */
-              }}
+              onClick={() => setIsMobileOpen(true)}
+              aria-label="Open Menu"
             >
               <Icon name="menu" />
             </button>
@@ -253,8 +255,12 @@ const CardNav: React.FC<CardNavProps> = ({
         </div>
       </nav>
 
-      {/* Note: Mobile Menu overlay implementation glossed over for brevity in this specific interaction, 
-          focusing on the "Floating Pill" desktop request. Real implementation would re-use the Sidebar logic for mobile. */}
+      {/* Mobile Menu Overlay */}
+      <MobileNavOverlay
+        items={items}
+        isOpen={isMobileOpen}
+        onClose={() => setIsMobileOpen(false)}
+      />
     </div>
   );
 };

@@ -1,6 +1,11 @@
 {
   "welcome": "Welcome to Coday",
   "loading": "Loading language...",
+  "units": {
+    "seconds": "s",
+    "percent": "%",
+    "hours": "h"
+  },
   "buttons": {
     "start_project": "Start Project",
     "view_work": "View Work",

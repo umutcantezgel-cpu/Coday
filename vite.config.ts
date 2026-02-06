@@ -8,20 +8,51 @@ import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 
 export default defineConfig(({ mode }) => {
   // Define routes for sitemap
-  const routes = [
-    '/',
+  // Define specific routes
+  const baseRoutes = [
+    '', // Root
     '/services',
-    '/services/development/web-apps',
-    '/services/development/ecommerce',
-    '/services/design/ui-ux',
+    '/services/industries',
+    '/services/web-development',
+    '/services/web-design',
+    '/services/seo',
+    '/services/performance',
+    '/services/enterprise-web',
+    '/services/web-development/e-commerce',
+    '/services/web-development/web-apps',
+    '/services/web-development/cms-headless',
+    '/services/web-development/api-integrations',
+    '/services/web-development/migration',
+    '/services/web-design/ui-ux',
+    '/services/web-design/brand-identity',
+    '/services/web-design/design-systems',
+    '/services/web-design/audit',
     '/work',
+    '/work/creative-impact',
+    '/work/batherm',
     '/process',
     '/packages',
     '/contact',
     '/calculator',
     '/legal/impressum',
     '/legal/datenschutz',
+    '/legal/agb',
+    '/booking',
+    '/academy',
+    '/knowledge/blog',
+    '/knowledge/newsletter',
+    '/knowledge/whitepapers',
+    '/career',
+    '/career/jobs',
+    '/career/culture',
+    '/career/benefits',
+    '/analyzer',
   ];
+
+  const languages = ['de', 'en'];
+
+  // Generate all localized routes
+  const routes = languages.flatMap((lang) => baseRoutes.map((route) => `/${lang}${route}`));
 
   return {
     server: {

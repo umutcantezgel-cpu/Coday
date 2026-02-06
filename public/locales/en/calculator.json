@@ -1,0 +1,118 @@
+{
+  "hero": {
+    "label": "The Agency Configurator",
+    "title_1": "Build Your",
+    "title_2": "Dream Agency.",
+    "subtitle_packages": "Extend your selected package with additional modules.",
+    "subtitle_default": "Choose from 9 categories. From basic to professional solutions.",
+    "continue": "Continue to Inquiry",
+    "satisfied": "Satisfied with your configuration?",
+    "next_step": "Send us your inquiry in the next step."
+  },
+  "categories": {
+    "basis": "Project Basis",
+    "commerce": "E-Commerce",
+    "design": "Web Design",
+    "function": "Functionality",
+    "tech": "Advanced Tech",
+    "seo": "Technical SEO",
+    "support": "Operations & Maintenance"
+  },
+  "modules": {
+    "basis-starter": {
+      "name": "Starter Website",
+      "description": "High-Performance Landing Page (Next.js)"
+    },
+    "basis-business": {
+      "name": "Corporate Website",
+      "description": "Multi-page Corporate Presence (CMS)"
+    },
+    "basis-enterprise": {
+      "name": "Web Application",
+      "description": "Complex Web App with Custom Logic"
+    },
+    "commerce-starter": {
+      "name": "Shopify Setup",
+      "description": "Professional Shopify Store"
+    },
+    "commerce-headless": {
+      "name": "Headless Commerce",
+      "description": "Custom Frontend for Shopify/WooCommerce"
+    },
+    "design-ui": {
+      "name": "Premium UI Design",
+      "description": "Custom Screen Design (Figma)"
+    },
+    "design-system": {
+      "name": "Design System",
+      "description": "Reusable Component Library"
+    },
+    "design-motion": {
+      "name": "Motion Experience",
+      "description": "Advanced Animations & Transitions"
+    },
+    "func-cms": {
+      "name": "Headless CMS",
+      "description": "Content Management (Sanity/Strapi)"
+    },
+    "func-auth": {
+      "name": "User Auth & Profile",
+      "description": "Login, Registration, User Dashboard"
+    },
+    "func-api": {
+      "name": "API Integration",
+      "description": "External Service Integration (CRM, ERP)"
+    },
+    "tech-pwa": {
+      "name": "PWA Features",
+      "description": "Offline Support & Installability"
+    },
+    "tech-i18n": {
+      "name": "Internationalization",
+      "description": "Multi-language Support (i18n Setup)"
+    },
+    "seo-tech": {
+      "name": "Technical SEO Audit",
+      "description": "Structure, Schema.org, Core Web Vitals"
+    },
+    "seo-speed": {
+      "name": "Performance Max",
+      "description": "Load Time Optimization <1s"
+    },
+    "support-basic": {
+      "name": "Hosting & Maintenance",
+      "description": "Server Updates & Backups"
+    },
+    "support-pro": {
+      "name": "SLA Support",
+      "description": "24/7 Emergency Support & Development"
+    }
+  },
+  "card": {
+    "included": "Included",
+    "bestseller": "Bestseller",
+    "recommended": "Recommended",
+    "one_time": "One-time",
+    "monthly": "Monthly",
+    "status": {
+      "included": "Included in Package",
+      "selected": "Selected",
+      "add": "Add"
+    }
+  },
+  "summary": {
+    "title": "Your Package",
+    "empty": "Select modules...",
+    "one_time": "One-time",
+    "monthly": "Monthly",
+    "discount": "Discount activated",
+    "continue": "Continue to Inquiry",
+    "share": "Share Configuration",
+    "guarantee": {
+      "title": "Guarantee",
+      "text": "This setup guarantees a Google Lighthouse score of"
+    }
+  },
+  "module_count": "{{count}} module selected",
+  "module_count_plural": "{{count}} modules selected"
+}
