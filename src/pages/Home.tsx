@@ -278,8 +278,8 @@ const Home: React.FC = () => {
               <div className="flex items-center gap-6">
                 <div className="flex -space-x-4">
                   {[1, 2, 3, 4].map((i) => (
-                    <div key={i} className="w-12 h-12 rounded-full bg-surface-dark border-2 border-white flex items-center justify-center text-xs font-bold text-secondary shadow-sm">
-                      K
+                    <div key={i} className="w-12 h-12 rounded-full bg-surface-dark border-2 border-white flex items-center justify-center text-xs font-bold text-secondary shadow-sm overflow-hidden">
+                      <Icon name="user" className="text-white w-6 h-6" />
                     </div>
                   ))}
                 </div>

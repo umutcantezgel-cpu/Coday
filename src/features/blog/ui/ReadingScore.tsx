@@ -4,8 +4,6 @@ import { Trophy, Star, Zap } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 export const ReadingScore: React.FC<{ currentPostId?: number }> = ({ currentPostId }) => {
-    const [score, setScore] = useState(0);
-    const [level, setLevel] = useState("Agency Starter");
     const [readPosts, setReadPosts] = useState<number[]>([]);
 
     useEffect(() => {
@@ -14,27 +12,24 @@ export const ReadingScore: React.FC<{ currentPostId?: number }> = ({ currentPost
         const parsed = stored ? JSON.parse(stored) : [];
         setReadPosts(parsed);
 
-        // Calculate score (100 points per post)
-        const newScore = parsed.length * 100;
-        setScore(newScore);
-
-        // Determine level
-        if (newScore >= 500) setLevel("Agency Visionary");
-        else if (newScore >= 300) setLevel("Growth Hacker");
-        else if (newScore >= 100) setLevel("Digital Native");
-
         // Mark current as read if not already
         if (currentPostId && !parsed.includes(currentPostId)) {
             const timeout = setTimeout(() => {
                 const updated = [...parsed, currentPostId];
                 localStorage.setItem('coday_read_posts', JSON.stringify(updated));
                 setReadPosts(updated);
-                setScore(updated.length * 100);
             }, 10000); // Mark read after 10 seconds
 
             return () => clearTimeout(timeout);
         }
     }, [currentPostId]);
+
+    // Derived state
+    const score = readPosts.length * 100;
+    let level = "Agency Starter";
+    if (score >= 500) level = "Agency Visionary";
+    else if (score >= 300) level = "Growth Hacker";
+    else if (score >= 100) level = "Digital Native";
 
     const nextLevel =
         score < 100 ? 100 :

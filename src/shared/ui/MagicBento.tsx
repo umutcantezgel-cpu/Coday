@@ -145,7 +145,7 @@ const ParticleCard: React.FC<{
 }) => {
         const ref = useRef<HTMLDivElement>(null);
         const [isHovered, setIsHovered] = useState(false);
-        const [particles, setParticles] = useState<{ id: number; x: number; y: number }[]>([]);
+        const [particles, setParticles] = useState<{ id: number; x: number; y: number; jitterX: number; jitterY: number }[]>([]);
         const [ripples, setRipples] = useState<{ id: number; x: number; y: number; size: number }[]>([]);
 
         // Motion Values for Tilt & Magnetism
@@ -213,7 +213,9 @@ const ParticleCard: React.FC<{
                 const newParticle = {
                     id: Math.random(),
                     x: Math.random() * rect.width,
-                    y: Math.random() * rect.height
+                    y: Math.random() * rect.height,
+                    jitterX: (Math.random() - 0.5) * 50,
+                    jitterY: (Math.random() - 0.5) * 50
                 };
                 setParticles(prev => [...prev, newParticle]);
             }, 200);
@@ -244,7 +246,7 @@ const ParticleCard: React.FC<{
                         <motion.div
                             key={p.id}
                             initial={{ opacity: 0, scale: 0 }}
-                            animate={{ opacity: [0, 1, 0], scale: [0, 1, 0], x: p.x + (Math.random() - 0.5) * 50, y: p.y + (Math.random() - 0.5) * 50 }}
+                            animate={{ opacity: [0, 1, 0], scale: [0, 1, 0], x: p.x + p.jitterX, y: p.y + p.jitterY }}
                             exit={{ opacity: 0 }}
                             transition={{ duration: 2, ease: "easeInOut" }}
                             className="absolute w-1 h-1 rounded-full pointer-events-none"

@@ -18,17 +18,30 @@
     display: block;
     height: 60px;
     padding: 0;
-    background-color: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(0, 0, 0, 0.06);
+    background-color: rgba(255, 255, 255, 0.85);
+    /* More transparent */
+    backdrop-filter: blur(24px) saturate(180%);
+    /* Stronger blur & saturation */
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    /* Lighter border */
     border-radius: 1rem;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+    box-shadow:
+        0 4px 24px -1px rgba(0, 0, 0, 0.1),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+    /* Inner glow */
     position: relative;
     overflow: hidden;
     will-change: height;
     pointer-events: auto;
     /* Re-enable on nav itself */
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    z-index: 20;
 }
 
 .card-nav.open {
@@ -148,10 +161,8 @@
 
 /* Content Area */
 .card-nav-content {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 60px;
+    /* Removed absolute positioning to allow height: auto to work */
+    margin-top: 60px;
     padding: 0.5rem;
     display: flex;
     align-items: stretch;
@@ -160,6 +171,7 @@
     pointer-events: none;
     z-index: 5;
     min-height: 200px;
+    width: 100%;
 }
 
 .card-nav.open .card-nav-content {

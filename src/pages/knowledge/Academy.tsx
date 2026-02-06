@@ -103,7 +103,7 @@ const Academy: React.FC = () => {
                                 <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/60 to-purple-900/40 opacity-60 group-hover:opacity-40 transition-opacity" />
                                 <div className="absolute inset-0 flex items-center justify-center">
                                     <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform ring-1 ring-white/50">
-                                        <Icon name="play_arrow" className="text-white text-3xl" />
+                                        <Icon name="play" className="text-white text-3xl" />
                                     </div>
                                 </div>
                             </div>

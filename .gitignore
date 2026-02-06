@@ -30,3 +30,14 @@ dist-ssr
 *.sw?
 *.py
 npm_errors*.txt
+
+# Lighthouse Reports
+lighthouse-report*.json
+
+# Video Assets (Large files)
+videos/
+*.mp4
+
+# Build Artifacts
+.vercel
+.netlify

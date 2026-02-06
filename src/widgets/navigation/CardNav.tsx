@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Icon } from '../../shared/ui/Icon';
+import { LanguageSwitcher } from './LanguageSwitcher';
 import { Link, useLocation } from 'react-router-dom';
 import './CardNav.css';
 
@@ -112,14 +113,19 @@ const CardNav: React.FC<CardNavProps> = ({
                         <span className="logo-text">Coday</span>
                     </Link>
 
-                    <Link
-                        to="/contact"
-                        className="card-nav-cta-button"
-                        style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
-                        onClick={() => isOpen && setIsOpen(false)}
-                    >
-                        Schließ dich an
-                    </Link>
+                    <div className="nav-actions flex items-center gap-3">
+                        <React.Suspense fallback={<div className="w-10 h-10 rounded-full bg-slate-100/50 animate-pulse" />}>
+                            <LanguageSwitcher />
+                        </React.Suspense>
+                        <Link
+                            to="/contact"
+                            className="card-nav-cta-button"
+                            style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
+                            onClick={() => isOpen && setIsOpen(false)}
+                        >
+                            Schließ dich an
+                        </Link>
+                    </div>
                 </div>
 
                 <motion.div className="card-nav-content" aria-hidden={!isOpen}>

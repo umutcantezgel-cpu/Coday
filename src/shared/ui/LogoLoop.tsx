@@ -195,7 +195,7 @@ const LogoLoop = React.memo<LogoLoopProps>(
             if (!window.ResizeObserver) {
                 const handleResize = () => updateDimensions();
                 window.addEventListener('resize', handleResize);
-                updateDimensions();
+                requestAnimationFrame(() => updateDimensions());
                 return () => window.removeEventListener('resize', handleResize);
             }
 

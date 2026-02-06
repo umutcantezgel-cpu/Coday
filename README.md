@@ -3,7 +3,7 @@
 # ⚡️ AGENCY DOMINATION
 ### "The Market Eater"
 
-![Version](https://img.shields.io/badge/version-2.0.0-blueviolet?style=for-the-badge&logo=rocket)
+![Version](https://img.shields.io/badge/version-2.0.1-blueviolet?style=for-the-badge&logo=rocket)
 ![Stack](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)
 ![Styling](https://img.shields.io/badge/Tailwind-v4-06b6d4?style=for-the-badge&logo=tailwindcss)
 ![Architecture](https://img.shields.io/badge/FSD-Feature_Sliced-green?style=for-the-badge&logo=structure)

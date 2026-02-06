@@ -51,10 +51,14 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
       </Suspense>
 
       {/* Unified Floating Menu */}
-      <FloatingActionMenu />
+      <Suspense fallback={null}>
+        <FloatingActionMenu />
+      </Suspense>
 
-      <CookieConsentBanner />
-      <CookieSettingsModal />
+      <Suspense fallback={null}>
+        <CookieConsentBanner />
+        <CookieSettingsModal />
+      </Suspense>
     </div>
   );
 };

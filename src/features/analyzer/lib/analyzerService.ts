@@ -3,7 +3,7 @@
  * Handles website analysis using Supabase Edge Function (to avoid CORS issues)
  */
 
-import type { AnalysisResult } from '../../../features/analyzer/model/types';
+import type { AnalysisResult, ActionPlanStep, AgentIssue } from '../../../features/analyzer/model/types';
 import { supabase } from '@/shared/lib/supabase/client';
 
 // Get Supabase URL from env for Edge Functions (keep for direct fetch if needed, but client is better)
@@ -35,7 +35,7 @@ export async function scanWebsite(url: string): Promise<{ success: boolean; html
 /**
  * Step 2: Run a specific agent against the pre-fetched HTML
  */
-export async function analyzeAgent(agent: string, url: string, html: string): Promise<any> {
+export async function analyzeAgent<T = unknown>(agent: string, url: string, html: string): Promise<T> {
     const response = await fetch(`${SUPABASE_URL}/functions/v1/analyze-website`, {
         method: 'POST',
         headers: {
@@ -51,13 +51,13 @@ export async function analyzeAgent(agent: string, url: string, html: string): Pr
         throw new Error(data.error || `Agent ${agent} fehlgeschlagen`);
     }
 
-    return data;
+    return data as T;
 }
 
 /**
  * Step 3: Generate Action Plan (Optional, Post-Analysis)
  */
-export async function generateActionPlan(url: string, issues: any[]): Promise<any> {
+export async function generateActionPlan(url: string, issues: AgentIssue[]): Promise<ActionPlanStep[]> {
     const response = await fetch(`${SUPABASE_URL}/functions/v1/analyze-website`, {
         method: 'POST',
         headers: {

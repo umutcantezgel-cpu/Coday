@@ -1,5 +1,9 @@
 
-const API_KEY = "AIzaSyB5jP8OOs1FrVi92WAPk2fFLOmCBj34uxM"; // Using the first key from config for testing
+const API_KEY = process.env.GEMINI_API_KEY || "";
+if (!API_KEY) {
+    console.error("Please provide GEMINI_API_KEY env var");
+    process.exit(1);
+}
 
 async function testGemini() {
     const prompt = `

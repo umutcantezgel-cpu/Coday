@@ -27,10 +27,7 @@ const Magnet: React.FC<MagnetProps> = ({
     const magnetRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        if (disabled) {
-            setPosition({ x: 0, y: 0 });
-            return;
-        }
+        if (disabled) return;
 
         const handleMouseMove = (e: MouseEvent) => {
             if (!magnetRef.current) return;
@@ -42,7 +39,7 @@ const Magnet: React.FC<MagnetProps> = ({
             const distX = Math.abs(centerX - e.clientX);
             const distY = Math.abs(centerY - e.clientY);
 
-            if (distX <width / 2 + padding && distY <height / 2 + padding) {
+            if (distX < width / 2 + padding && distY < height / 2 + padding) {
                 setIsActive(true);
                 const offsetX = (e.clientX - centerX) / magnetStrength;
                 const offsetY = (e.clientY - centerY) / magnetStrength;
@@ -71,7 +68,7 @@ const Magnet: React.FC<MagnetProps> = ({
             <div
                 className={innerClassName}
                 style={{
-                    transform: `translate3d(${position.x}px, ${position.y}px, 0)`,
+                    transform: disabled ? 'translate3d(0, 0, 0)' : `translate3d(${position.x}px, ${position.y}px, 0)`,
                     transition: transitionStyle,
                     willChange: 'transform'
                 }}

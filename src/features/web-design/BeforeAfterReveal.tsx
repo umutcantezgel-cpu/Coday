@@ -29,6 +29,21 @@ const BeforeAfterReveal: React.FC = () => {
     const handleMouseDown = () => setIsDragging(true);
     const handleMouseUp = () => setIsDragging(false);
 
+    const [containerWidth, setContainerWidth] = useState(0);
+
+    useEffect(() => {
+        if (!containerRef.current) return;
+        const observer = new ResizeObserver((entries) => {
+            for (const entry of entries) {
+                setContainerWidth(entry.contentRect.width);
+            }
+        });
+        observer.observe(containerRef.current);
+        // Initial measurement
+        setContainerWidth(containerRef.current.clientWidth);
+        return () => observer.disconnect();
+    }, []);
+
     useEffect(() => {
         const handleGlobalMouseUp = () => setIsDragging(false);
         const handleGlobalMouseMove = (e: MouseEvent) => {
@@ -80,7 +95,7 @@ const BeforeAfterReveal: React.FC = () => {
                 className={`absolute inset-0 ${beforeFallback} flex items-center justify-center overflow-hidden border-r-4 border-white shadow-[10px_0_20px_rgba(0,0,0,0.2)]`}
                 style={{ width: `${sliderPosition}%` }}
             >
-                <div className="absolute inset-0 flex items-center justify-center w-full" style={{ width: containerRef.current ? containerRef.current.clientWidth : '100vw' }}> {/* Fix width to prevent squishing content */}
+                <div className="absolute inset-0 flex items-center justify-center w-full" style={{ width: containerWidth || '100vw' }}> {/* Fix width to prevent squishing content */}
                     <div className="text-center p-8 grayscale opacity-70">
                         <h3 className="text-4xl lg:text-5xl font-serif text-gray-500 mb-4">Old Agency</h3>
                         <p className="text-gray-500 text-lg">Standard Template</p>

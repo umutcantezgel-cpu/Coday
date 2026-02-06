@@ -150,6 +150,9 @@ import {
     ChevronLeft,
     XCircle,
     Store as Storefront,
+    Brush,
+    MousePointerClick,
+    Play,
 } from 'lucide-react';
 
 const iconMap: Record<string, React.ElementType> = {
@@ -289,6 +292,18 @@ const iconMap: Record<string, React.ElementType> = {
     'layout': Layout,
     'arrow-up-right': ArrowUpRight, // Ensure this exists for CardNav
     'bolt': Zap, // For fa-bolt
+
+    // Missing Icon Fixes
+    'layers': Layers,
+    'database': Database,
+    'brush': Brush,
+    'cloud': Cloud,
+    'shield': Shield,
+    'accessibility_new': Accessibility,
+    'touch_app': MousePointerClick,
+    'play_arrow': Play,
+    'play': Play,
+    'alert-triangle': AlertTriangle,
 };
 
 interface IconProps extends React.HTMLAttributes<HTMLSpanElement> {
