@@ -174,7 +174,7 @@ export const HackSimulator: React.FC = () => {
                                         log.level === 'success' && "text-green-400",
                                         log.level === 'error' && "text-red-500 font-bold"
                                     )}>
-                                        {log.activeSystem === 'coday' && log.level === 'error' ? log.message :
+                                        {activeSystem === 'coday' && log.level === 'error' ? log.message :
                                             log.message}
                                     </span>
                                 </motion.div>

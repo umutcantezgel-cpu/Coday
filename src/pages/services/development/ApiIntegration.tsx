@@ -1,6 +1,6 @@
 import React from 'react';
-import BlurText from '../../../components/shared/ui/BlurText';
-import GradientText from '../../../components/shared/ui/GradientText';
+import BlurText from '../../../shared/ui/BlurText';
+import GradientText from '../../../shared/ui/GradientText';
 
 const ApiIntegration: React.FC = () => {
     return (

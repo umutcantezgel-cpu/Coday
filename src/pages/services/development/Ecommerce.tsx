@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import CountUp from '../../../components/shared/ui/CountUp';
-import BlurText from '../../../components/shared/ui/BlurText';
-import { Input } from '../../../components/shared/ui/Input';
+import CountUp from '../../../shared/ui/CountUp';
+import BlurText from '../../../shared/ui/BlurText';
+import { Input } from '../../../shared/ui/Input';
+import { Icon } from '../../../shared/ui/Icon';
 
 const Ecommerce: React.FC = () => {
     // ROI Calculator State
@@ -24,7 +25,7 @@ const Ecommerce: React.FC = () => {
                     <div className="text-center lg:text-left grid lg:grid-cols-2 gap-12 items-center">
                         <div>
                             <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-xl text-primary mb-6">
-                                <span className="material-symbols-outlined text-3xl">shopping_cart</span>
+                                <Icon name="shopping_cart" className="text-3xl" />
                             </div>
                             <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-gray-900 mb-6 leading-tight">
                                 <BlurText
@@ -192,7 +193,7 @@ const Ecommerce: React.FC = () => {
                     <div className="bg-white p-8 rounded-3xl shadow-lg border-t-8 border-[#95BF47] relative overflow-hidden">
                         <div className="flex items-center gap-4 mb-6">
                             <div className="w-12 h-12 bg-[#95BF47]/20 rounded-xl flex items-center justify-center text-[#5E8E3E] font-bold text-xl">
-                                <span className="material-symbols-outlined">shopping_bag</span>
+                                <Icon name="shopping_bag" />
                             </div>
                             <h3 className="font-bold text-2xl text-gray-900">Shopify Plus</h3>
                         </div>
@@ -204,7 +205,7 @@ const Ecommerce: React.FC = () => {
                                 "Perfekt für DTC Brands bis 50M € Umsatz"
                             ].map((item, i) => (
                                 <li key={i} className="flex items-start text-gray-600 text-sm">
-                                    <span className="material-symbols-outlined text-green-500 mr-2 text-lg shrink-0">check</span>
+                                    <Icon name="check" className="text-green-500 mr-2 text-lg shrink-0" />
                                     {item}
                                 </li>
                             ))}
@@ -218,7 +219,7 @@ const Ecommerce: React.FC = () => {
                     <div className="bg-white p-8 rounded-3xl shadow-lg border-t-8 border-primary relative overflow-hidden">
                         <div className="flex items-center gap-4 mb-6">
                             <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary font-bold text-xl">
-                                <span className="material-symbols-outlined">code</span>
+                                <Icon name="code" />
                             </div>
                             <h3 className="font-bold text-2xl text-gray-900">Custom Headless</h3>
                         </div>
@@ -230,7 +231,7 @@ const Ecommerce: React.FC = () => {
                                 "Perfekt für B2B & komplexe Enterprise-Shops"
                             ].map((item, i) => (
                                 <li key={i} className="flex items-start text-gray-600 text-sm">
-                                    <span className="material-symbols-outlined text-green-500 mr-2 text-lg shrink-0">check</span>
+                                    <Icon name="check" className="text-green-500 mr-2 text-lg shrink-0" />
                                     {item}
                                 </li>
                             ))}
@@ -261,7 +262,7 @@ const Ecommerce: React.FC = () => {
                         ].map((feature, i) => (
                             <div key={i} className="p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-xl transition-all border border-gray-100 group">
                                 <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
-                                    <span className="material-symbols-outlined">{feature.icon}</span>
+                                    <Icon name={feature.icon} />
                                 </div>
                                 <h3 className="font-bold text-xl text-gray-900 mb-3">{feature.title}</h3>
                                 <p className="text-gray-600 leading-relaxed">{feature.desc}</p>
@@ -283,7 +284,7 @@ const Ecommerce: React.FC = () => {
                             <ul className="space-y-4">
                                 {['Shopify / Shopify Plus', 'WooCommerce', 'Next.js Commerce', 'Stripe & PayPal', 'Klaviyo Email Marketing'].map((item, i) => (
                                     <li key={i} className="flex items-center text-gray-700 font-medium">
-                                        <span className="material-symbols-outlined text-primary mr-3">check_circle</span>
+                                        <Icon name="check_circle" className="text-primary mr-3" />
                                         {item}
                                     </li>
                                 ))}

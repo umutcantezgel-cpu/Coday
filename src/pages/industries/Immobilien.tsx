@@ -1,9 +1,9 @@
 import React from 'react';
-import BlurText from '../../components/shared/ui/BlurText';
-import GradientText from '../../components/shared/ui/GradientText';
-import VirtualTourTeaser from '../../components/features/industries/real-estate/VirtualTourTeaser';
-import DigitalExposeDemo from '../../components/features/industries/real-estate/DigitalExposeDemo';
-import PropertyRoiCalculator from '../../components/features/industries/real-estate/PropertyRoiCalculator';
+import BlurText from '../../shared/ui/BlurText';
+import GradientText from '../../shared/ui/GradientText';
+import VirtualTourTeaser from '../../features/industries/real-estate/VirtualTourTeaser';
+import DigitalExposeDemo from '../../features/industries/real-estate/DigitalExposeDemo';
+import PropertyRoiCalculator from '../../features/industries/real-estate/PropertyRoiCalculator';
 
 const Immobilien: React.FC = () => {
     return (

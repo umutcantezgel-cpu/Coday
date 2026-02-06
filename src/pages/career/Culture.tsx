@@ -1,8 +1,8 @@
 import React from 'react';
-import BlurText from '../../components/shared/ui/BlurText';
-import GradientText from '../../components/shared/ui/GradientText';
-import ValuesDeck from '../../components/features/culture/ValuesDeck';
-import TeamGallery from '../../components/features/culture/TeamGallery';
+import BlurText from '../../shared/ui/BlurText';
+import GradientText from '../../shared/ui/GradientText';
+import ValuesDeck from '../../features/culture/ValuesDeck';
+import TeamGallery from '../../features/culture/TeamGallery';
 
 const Culture: React.FC = () => {
     return (

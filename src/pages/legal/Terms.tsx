@@ -1,5 +1,5 @@
 import React from 'react';
-import { LegalLayout } from '../../components/LegalLayout';
+import { LegalLayout } from '../../widgets/layout/LegalLayout';
 
 import { useTranslation } from 'react-i18next';
 

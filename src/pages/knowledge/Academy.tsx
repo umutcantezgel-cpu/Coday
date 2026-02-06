@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { OptimizedImage } from '../../shared/ui/OptimizedImage';
 import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
+import { Icon } from '../../shared/ui/Icon';
 
 const COURSES = [
     {
@@ -102,7 +103,7 @@ const Academy: React.FC = () => {
                                 <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/60 to-purple-900/40 opacity-60 group-hover:opacity-40 transition-opacity" />
                                 <div className="absolute inset-0 flex items-center justify-center">
                                     <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform ring-1 ring-white/50">
-                                        <span className="material-symbols-outlined text-white text-3xl">play_arrow</span>
+                                        <Icon name="play_arrow" className="text-white text-3xl" />
                                     </div>
                                 </div>
                             </div>

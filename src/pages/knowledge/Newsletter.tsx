@@ -1,6 +1,6 @@
 import React from 'react';
-import { Input } from '../../components/shared/ui/Input';
-import { Button } from '../../components/shared/ui/Button';
+import { Input } from '../../shared/ui/Input';
+import { Button } from '../../shared/ui/Button';
 
 const Newsletter: React.FC = () => {
     return (
@@ -25,7 +25,7 @@ const Newsletter: React.FC = () => {
                 <form className="max-w-md mx-auto bg-white p-2 rounded-2xl shadow-xl border border-aurora-mist mb-8 flex gap-2">
                     <Input
                         type="email"
-                        inputmode="email"
+                        inputMode="email"
                         placeholder="Deine beste E-Mail Adresse"
                         className="bg-transparent border-0 focus:ring-0 px-4"
                         wrapperClassName="flex-1 space-y-0"

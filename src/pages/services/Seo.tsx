@@ -1,10 +1,11 @@
 import React from 'react';
-import BlurText from '../../components/shared/ui/BlurText';
-import GradientText from '../../components/shared/ui/GradientText';
+import BlurText from '../../shared/ui/BlurText';
+import GradientText from '../../shared/ui/GradientText';
 import { OptimizedImage } from '../../shared/ui/OptimizedImage';
 import { marketingImages } from '../../data/serviceImages';
-import TrafficROICalculator from '../../components/features/seo/TrafficROICalculator';
-import RankingPeriodicTable from '../../components/features/seo/RankingPeriodicTable';
+import TrafficROICalculator from '../../features/seo/TrafficROICalculator';
+import RankingPeriodicTable from '../../features/seo/RankingPeriodicTable';
+import { Icon } from '../../shared/ui/Icon';
 
 const Seo: React.FC = () => {
     return (
@@ -84,7 +85,7 @@ const Seo: React.FC = () => {
                             <ul className="space-y-3">
                                 {['Ganzheitliche Strategie', 'Plattformübergreifendes Retargeting', 'Inhalts-Verteilung', 'Datengetriebene Erkenntnisse'].map((item, i) => (
                                     <li key={i} className="flex items-center text-secondary font-medium">
-                                        <span className="material-symbols-outlined text-primary mr-2">check_circle</span>
+                                        <Icon name="check_circle" className="text-primary mr-2" />
                                         {item}
                                     </li>
                                 ))}
@@ -95,21 +96,21 @@ const Seo: React.FC = () => {
                     <div className="grid md:grid-cols-3 gap-8">
                         <div className="p-8 bg-surface-light rounded-3xl border border-gray-100 hover:shadow-lg transition-all">
                             <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6">
-                                <span className="material-symbols-outlined">settings</span>
+                                <Icon name="settings" />
                             </div>
                             <h3 className="font-bold text-2xl mb-4 text-secondary">Technische Optimierung</h3>
                             <p className="text-slate-600">Ladezeit-Optimierung, Strukturierte Daten und Durchsuchbarkeit.</p>
                         </div>
                         <div className="p-8 bg-surface-light rounded-3xl border border-gray-100 hover:shadow-lg transition-all">
                             <div className="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center mb-6">
-                                <span className="material-symbols-outlined">description</span>
+                                <Icon name="description" />
                             </div>
                             <h3 className="font-bold text-2xl mb-4 text-secondary">Inhalts-Strategie</h3>
                             <p className="text-slate-600">Inhalte, die für Nutzer geschrieben sind und von Google geliebt werden.</p>
                         </div>
                         <div className="p-8 bg-surface-light rounded-3xl border border-gray-100 hover:shadow-lg transition-all">
                             <div className="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center mb-6">
-                                <span className="material-symbols-outlined">map</span>
+                                <Icon name="map" />
                             </div>
                             <h3 className="font-bold text-2xl mb-4 text-secondary">Regionale Dominanz</h3>
                             <p className="text-slate-600">Werden Sie zum Platzhirsch in Ihrer Region.</p>

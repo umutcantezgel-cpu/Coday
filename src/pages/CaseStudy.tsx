@@ -1,6 +1,7 @@
 import React from 'react';
-import CountUp from '../components/shared/ui/CountUp';
+import CountUp from '../shared/ui/CountUp';
 import { useTranslation } from 'react-i18next';
+import { Icon } from '../shared/ui/Icon';
 
 const CaseStudy: React.FC = () => {
     const { t } = useTranslation('work');
@@ -26,7 +27,7 @@ const CaseStudy: React.FC = () => {
                             {t('hero.desc')}
                         </p>
                         <div className="pt-8 animate-bounce">
-                            <span className="material-symbols-outlined text-white text-5xl opacity-80">keyboard_arrow_down</span>
+                            <Icon name="keyboard_arrow_down" className="text-white text-5xl opacity-80" />
                         </div>
                     </div>
                 </div>
@@ -97,7 +98,7 @@ const CaseStudy: React.FC = () => {
                         <div className="bg-white p-8 rounded-xl relative shadow-aurora-lg transform hover:-translate-y-1 transition-transform duration-300 border border-transparent hover:border-primary/20">
                             <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary/5 to-blue-50/5 pointer-events-none"></div>
                             <div className="relative z-10">
-                                <span className="material-symbols-outlined text-primary text-4xl mb-4 opacity-50">format_quote</span>
+                                <Icon name="format_quote" className="text-primary text-4xl mb-4 opacity-50" />
                                 <p className="text-lg md:text-xl font-medium text-gray-800 dark:text-gray-800 mb-6 italic leading-relaxed">
                                     {t('testimonials.items.0.quote')}
                                 </p>
@@ -115,7 +116,7 @@ const CaseStudy: React.FC = () => {
                         <div className="bg-white p-8 rounded-xl relative shadow-aurora-lg transform hover:-translate-y-1 transition-transform duration-300 md:translate-y-12 border border-transparent hover:border-primary/20">
                             <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary/5 to-blue-50/5 pointer-events-none"></div>
                             <div className="relative z-10">
-                                <span className="material-symbols-outlined text-primary text-4xl mb-4 opacity-50">format_quote</span>
+                                <Icon name="format_quote" className="text-primary text-4xl mb-4 opacity-50" />
                                 <p className="text-lg md:text-xl font-medium text-gray-800 dark:text-gray-800 mb-6 italic leading-relaxed">
                                     {t('testimonials.items.1.quote')}
                                 </p>

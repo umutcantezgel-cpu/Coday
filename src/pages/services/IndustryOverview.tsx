@@ -17,6 +17,7 @@ const iconMap: any = {
 
 import { industryHeroImages, industryFallbackImage } from '../../data/industryImages';
 import { OptimizedImage } from '../../shared/ui/OptimizedImage';
+import { Icon as UiIcon } from '../../shared/ui/Icon';
 
 const IndustryOverview: React.FC = () => {
     return (
@@ -65,7 +66,7 @@ const IndustryOverview: React.FC = () => {
                                     </p>
                                     <span className="text-primary font-bold flex items-center gap-2 mt-auto text-sm uppercase tracking-wide">
                                         Konzept ansehen
-                                        <span className="group-hover:translate-x-1 transition-transform material-symbols-outlined text-sm">arrow_forward</span>
+                                        <UiIcon name="arrow_forward" className="group-hover:translate-x-1 transition-transform text-sm" />
                                     </span>
                                 </div>
                             </Link>

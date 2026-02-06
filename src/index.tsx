@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 
 import App from './App';
-import { GlobalErrorBoundary } from './components/shared/GlobalErrorBoundary';
+import { GlobalErrorBoundary } from './shared/GlobalErrorBoundary';
 import './index.css';
 import './i18n'; // Initialize i18n
 

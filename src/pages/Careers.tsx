@@ -1,9 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import BlurText from '../components/shared/ui/BlurText';
-import GradientText from '../components/shared/ui/GradientText';
-import CareerPathBuilder from '../components/features/careers/CareerPathBuilder';
-import PerksGrid from '../components/features/careers/PerksGrid';
+import BlurText from '../shared/ui/BlurText';
+import GradientText from '../shared/ui/GradientText';
+import CareerPathBuilder from '../features/careers/CareerPathBuilder';
+import PerksGrid from '../features/careers/PerksGrid';
 
 const Careers: React.FC = () => {
     const { t } = useTranslation('careers');

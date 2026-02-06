@@ -1,9 +1,9 @@
 import React from 'react';
-import BlurText from '../../components/shared/ui/BlurText';
-import GradientText from '../../components/shared/ui/GradientText';
-import PatientJourneyMap from '../../components/features/industries/healthcare/PatientJourneyMap';
-import WaitingRoomRoiCalculator from '../../components/features/industries/healthcare/WaitingRoomRoiCalculator';
-import TrustBadgeGrid from '../../components/features/industries/healthcare/TrustBadgeGrid';
+import BlurText from '../../shared/ui/BlurText';
+import GradientText from '../../shared/ui/GradientText';
+import PatientJourneyMap from '../../features/industries/healthcare/PatientJourneyMap';
+import WaitingRoomRoiCalculator from '../../features/industries/healthcare/WaitingRoomRoiCalculator';
+import TrustBadgeGrid from '../../features/industries/healthcare/TrustBadgeGrid';
 
 const Gesundheit: React.FC = () => {
     return (

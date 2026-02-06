@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import BlurText from '../components/shared/ui/BlurText';
-import GradientText from '../components/shared/ui/GradientText';
+import BlurText from '../shared/ui/BlurText';
+import GradientText from '../shared/ui/GradientText';
 import {
     UrlInputForm,
     AnalysisProgress,
     ReportDashboard,
     useAnalyzerStore
 } from '../features/analyzer';
+import { Icon } from '../shared/ui/Icon';
 
 const Analyzer: React.FC = () => {
     const { t } = useTranslation('tools');
@@ -76,7 +77,7 @@ const Analyzer: React.FC = () => {
                                     className="group p-6 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-xl transition-all border border-gray-100"
                                 >
                                     <div className={`w - 12 h - 12 rounded - xl bg - gradient - to - br ${feature.color} flex items - center justify - center text - white mb - 4 group - hover: scale - 110 transition - transform`}>
-                                        <span className="material-symbols-outlined">{feature.icon}</span>
+                                        <Icon name={feature.icon} />
                                     </div>
                                     <h3 className="font-bold text-xl text-secondary mb-2">{feature.title}</h3>
                                     <p className="text-slate-600 text-sm">{feature.desc}</p>
@@ -93,15 +94,15 @@ const Analyzer: React.FC = () => {
                     <div className="max-w-4xl mx-auto px-4 text-center">
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-sm text-gray-500 mb-8">
                             <div className="flex items-center justify-center gap-2">
-                                <span className="material-symbols-outlined text-primary">check_circle</span>
+                                <Icon name="check_circle" className="text-primary" />
                                 <span>{t('analyzer.trust.free')}</span>
                             </div>
                             <div className="flex items-center justify-center gap-2">
-                                <span className="material-symbols-outlined text-primary">lock</span>
+                                <Icon name="lock" className="text-primary" />
                                 <span>{t('analyzer.trust.private')}</span>
                             </div>
                             <div className="flex items-center justify-center gap-2">
-                                <span className="material-symbols-outlined text-primary">bolt</span>
+                                <Icon name="bolt" className="text-primary" />
                                 <span>{t('analyzer.trust.fast')}</span>
                             </div>
                             <div className="hidden md:flex items-center justify-center gap-2 text-primary font-medium">

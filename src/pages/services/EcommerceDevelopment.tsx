@@ -1,11 +1,11 @@
 import React from 'react';
-import BlurText from '../../components/shared/ui/BlurText';
-import GradientText from '../../components/shared/ui/GradientText';
+import BlurText from '../../shared/ui/BlurText';
+import GradientText from '../../shared/ui/GradientText';
 import { OptimizedImage } from '../../shared/ui/OptimizedImage';
 import { marketingImages } from '../../data/serviceImages'; // Fallback
-import RevenueUpliftSimulator from '../../components/features/ecommerce/RevenueUpliftSimulator';
-import HeadlessVsShopifyGrid from '../../components/features/ecommerce/HeadlessVsShopifyGrid';
-import ConversionFunnelMap from '../../components/features/ecommerce/ConversionFunnelMap';
+import RevenueUpliftSimulator from '../../features/ecommerce/RevenueUpliftSimulator';
+import HeadlessVsShopifyGrid from '../../features/ecommerce/HeadlessVsShopifyGrid';
+import ConversionFunnelMap from '../../features/ecommerce/ConversionFunnelMap';
 
 const EcommerceDevelopment: React.FC = () => {
     return (

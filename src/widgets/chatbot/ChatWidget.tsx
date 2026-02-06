@@ -2,8 +2,8 @@ import React, { useRef, useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, X, Minus, Send, Loader2 } from 'lucide-react';
 import { useChatStore } from './lib/chatStore';
-import { Input } from '../../components/shared/ui/Input';
-import { Button } from '../../components/shared/ui/Button';
+import { Input } from '../../shared/ui/Input';
+import { Button } from '../../shared/ui/Button';
 
 export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = false }) => {
     const {

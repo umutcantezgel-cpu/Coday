@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import BlurText from '../../components/shared/ui/BlurText';
+import BlurText from '../../shared/ui/BlurText';
 import { CaseStudyCard } from '../../features/case-studies/ui/CaseStudyCard';
 
 const Work: React.FC = () => {

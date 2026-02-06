@@ -7,6 +7,7 @@ import {
     appDevImages, appDevFeatureMapping,
     brandingImages, brandingFeatureMapping
 } from '../../data/serviceImages';
+import { Icon } from '../../shared/ui/Icon';
 
 const getServiceImage = (category?: string, slug?: string) => {
     if (!category || !slug) return null;
@@ -70,7 +71,7 @@ const ServiceDetail: React.FC = () => {
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <div>
                         <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-xl text-primary mb-6">
-                            <span className="material-symbols-outlined text-3xl">{service.icon}</span>
+                            <Icon name={service.icon} className="text-3xl" />
                         </div>
                         <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-gray-900 mb-6 leading-tight">
                             {service.title}
@@ -81,7 +82,7 @@ const ServiceDetail: React.FC = () => {
                         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                             <NavLink to="/contact" className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl bg-gray-900 hover:bg-gray-800 shadow-lg hover:shadow-xl transition-all match-hover-translate-y-1">
                                 Beratungstermin vereinbaren
-                                <span className="material-symbols-outlined ml-2">calendar_month</span>
+                                <Icon name="calendar_month" className="ml-2" />
                             </NavLink>
                         </div>
                     </div>
@@ -94,7 +95,7 @@ const ServiceDetail: React.FC = () => {
                             <ul className="space-y-4">
                                 {service.benefits.map((benefit, i) => (
                                     <li key={i} className="flex items-start">
-                                        <span className="material-symbols-outlined text-primary mr-3 text-xl mt-0.5">check_circle</span>
+                                        <Icon name="check_circle" className="text-primary mr-3 text-xl mt-0.5" />
                                         <span className="text-gray-700 font-medium">{benefit}</span>
                                     </li>
                                 ))}
@@ -112,7 +113,7 @@ const ServiceDetail: React.FC = () => {
                         <ul className="space-y-4">
                             {service.benefits.map((benefit, i) => (
                                 <li key={i} className="flex items-start">
-                                    <span className="material-symbols-outlined text-primary mr-3 text-xl mt-0.5">check_circle</span>
+                                    <Icon name="check_circle" className="text-primary mr-3 text-xl mt-0.5" />
                                     <span className="text-gray-700 font-medium">{benefit}</span>
                                 </li>
                             ))}
@@ -222,7 +223,7 @@ const ServiceDetail: React.FC = () => {
                         <div className="grid sm:grid-cols-2 gap-6">
                             {service.advantages.map((adv, index) => (
                                 <div key={index} className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                                    <span className="material-symbols-outlined text-primary text-3xl mb-4">{adv.icon}</span>
+                                    <Icon name={adv.icon} className="text-primary text-3xl mb-4" />
                                     <h3 className="font-bold text-gray-900 mb-2">{adv.title}</h3>
                                     <p className="text-sm text-gray-500 leading-relaxed">
                                         {adv.description}
@@ -293,7 +294,7 @@ const ServiceDetail: React.FC = () => {
                         </p>
                         <NavLink to="/contact" className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-gray-900 rounded-xl bg-white hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
                             Jetzt anfragen
-                            <span className="material-symbols-outlined ml-2">rocket_launch</span>
+                            <Icon name="rocket_launch" className="ml-2" />
                         </NavLink>
                     </div>
                 </div>
@@ -312,9 +313,7 @@ const FaqItem: React.FC<{ question: string; answer: string }> = ({ question, ans
                 className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
             >
                 <span className="font-bold text-gray-900 text-lg">{question}</span>
-                <span className={`material-symbols-outlined text-gray-400 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
-                    expand_more
-                </span>
+                <Icon name="expand_more" className={`text-gray-400 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
             </button>
             <div className={`px-6 text-gray-600 leading-relaxed overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96 pb-6 opacity-100' : 'max-h-0 opacity-0'}`}>
                 {answer}

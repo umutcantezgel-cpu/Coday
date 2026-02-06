@@ -1,88 +1,71 @@
 import React, { useState } from 'react';
 
-interface OptimizedImageProps {
+interface OptimizedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
     src: string;
     alt: string;
     className?: string;
     priority?: boolean;
+    aspectRatio?: 'video' | 'square' | 'wide' | 'portrait';
+    srcSet?: string;
     sizes?: string;
-    responsive?: boolean;
 }
 
-/**
- * Optimized image component with WebP support and lazy loading.
- * Automatically generates WebP path from JPEG/PNG and uses picture element.
- */
 export const OptimizedImage: React.FC<OptimizedImageProps> = ({
     src,
     alt,
     className = '',
     priority = false,
-    sizes = '(max-width: 768px) 100vw, 50vw',
-    responsive = false // New prop to enable automatic srcset
+    aspectRatio,
+    srcSet,
+    sizes,
+    ...props
 }) => {
+    const [isLoaded, setIsLoaded] = useState(false);
     const [hasError, setHasError] = useState(false);
-    const [failedWebp, setFailedWebp] = useState(false);
 
-    // Generate WebP source path from original
-    const webpSrc = src.replace(/\.(jpeg|jpg|png)$/i, '.webp');
-
-    // Generate responsive srcset if enabled
-    const srcSet = responsive
-        ? `${webpSrc.replace('.webp', '-320w.webp')} 320w, 
-           ${webpSrc.replace('.webp', '-640w.webp')} 640w, 
-           ${webpSrc.replace('.webp', '-1024w.webp')} 1024w, 
-           ${webpSrc.replace('.webp', '-1920w.webp')} 1920w`
-        : webpSrc;
-
-    const handleError = () => {
-        if (!failedWebp) {
-            setFailedWebp(true);
-        } else {
-            setHasError(true);
+    // Dynamic aspect ratio container
+    const getAspectRatioClass = () => {
+        switch (aspectRatio) {
+            case 'video': return 'aspect-video';
+            case 'square': return 'aspect-square';
+            case 'wide': return 'aspect-[21/9]';
+            case 'portrait': return 'aspect-[3/4]';
+            default: return '';
         }
     };
 
-    if (hasError) {
-        return (
-            <div className={`${className} bg-gray-100 flex items-center justify-center`}>
-                <span className="text-gray-400 text-sm">Bild nicht gefunden</span>
-            </div>
-        );
-    }
-
-    if (failedWebp) {
-        // Fallback to simple img tag without picture source
-        return (
-            <img
-                src={src}
-                alt={alt}
-                className={className}
-                loading={priority ? 'eager' : 'lazy'}
-                decoding="async"
-                sizes={sizes}
-                onError={() => setHasError(true)}
-            />
-        );
-    }
-
     return (
-        <picture>
-            {/* WebP source - modern browsers will use this */}
-            <source srcSet={srcSet} type="image/webp" />
-            {/* Fallback to original format */}
+        <div
+            className={`relative overflow-hidden bg-gray-100 ${getAspectRatioClass()} ${className}`}
+            style={props.style}
+        >
+            {!isLoaded && !hasError && (
+                <div className="absolute inset-0 flex items-center justify-center bg-gray-100 animate-pulse">
+                    <span className="sr-only">Loading...</span>
+                </div>
+            )}
+
             <img
                 src={src}
-                alt={alt}
-                className={className}
-                loading={priority ? 'eager' : 'lazy'}
-                decoding="async"
+                srcSet={srcSet}
                 sizes={sizes}
-                onError={handleError}
+                alt={alt}
+                loading={priority ? 'eager' : 'lazy'}
+                decoding={priority ? 'sync' : 'async'}
+                onLoad={() => setIsLoaded(true)}
+                onError={() => setHasError(true)}
+                className={`
+                    w-full h-full object-cover transition-opacity duration-500 ease-in-out
+                    ${isLoaded ? 'opacity-100' : 'opacity-0'}
+                    ${className}
+                `}
+                {...props}
             />
-        </picture>
+            {hasError && (
+                <div className="absolute inset-0 flex items-center justify-center bg-gray-200 text-gray-400 text-xs">
+                    Image N/A
+                </div>
+            )}
+        </div>
     );
 };
-
-export default OptimizedImage;
-

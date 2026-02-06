@@ -1,8 +1,8 @@
 import React from 'react';
-import BlurText from '../components/shared/ui/BlurText';
-import GradientText from '../components/shared/ui/GradientText';
-import ProjectTimelineAnimation from '../components/features/process/ProjectTimelineAnimation';
-import TransparencyGrid from '../components/features/process/TransparencyGrid';
+import BlurText from '../shared/ui/BlurText';
+import GradientText from '../shared/ui/GradientText';
+import ProjectTimelineAnimation from '../features/process/ProjectTimelineAnimation';
+import TransparencyGrid from '../features/process/TransparencyGrid';
 
 import { useTranslation } from 'react-i18next';
 

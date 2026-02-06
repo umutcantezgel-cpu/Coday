@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import CountUp from '../components/shared/ui/CountUp';
+import CountUp from '../shared/ui/CountUp';
+import { Icon } from '../shared/ui/Icon';
 
 const Dashboard: React.FC = () => {
   const { t } = useTranslation('dashboard');
@@ -32,7 +33,7 @@ const Dashboard: React.FC = () => {
                 {t('header.live')}
               </div>
               <button className="p-2 rounded-full hover:bg-gray-100 transition-colors">
-                <span className="material-symbols-outlined text-gray-500">notifications</span>
+                <Icon name="notifications" className="text-gray-500" />
               </button>
               <div className="w-8 h-8 rounded-full bg-gradient-to-br from-gray-200 to-gray-300 overflow-hidden border border-white shadow-sm">
                 <img alt="User" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPUHzfvwK5NkBlj1-ORjNkivAs8gd3Eb5EXyvQ6jKBCOu5Zj1lSAyjtZpK36cGGEzVT107RyubOOVxST6NFVpoaUxgUIv3NYIhiKR0v1m1ACXU8lGGjdSRxBEaIqOmcwDOaDiEAuwN8yDJS2jDICKR0_ELXuaEqZBZZyNlrBEWlGEsCf114awQTeSi_Z86-zatCZzwz5A6AvU5VP4ipjs0d_Nr6sVAznFAquU4ii3w0j5zD6YJeA6jESorC7E8fsh8iYeioleoZvs" />
@@ -67,7 +68,7 @@ const Dashboard: React.FC = () => {
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
               <span className="font-display font-bold text-5xl text-gray-900"><CountUp from={0} to={97} duration={2} /><span className="text-2xl text-gray-400 font-normal">/100</span></span>
               <span className="text-sm font-medium text-emerald-600 mt-1 flex items-center bg-emerald-50 px-2 py-0.5 rounded-full">
-                <span className="material-symbols-outlined text-sm mr-1">trending_up</span> {t('score.ranking')}
+                <Icon name="trending_up" className="text-sm mr-1" /> {t('score.ranking')}
               </span>
             </div>
           </div>
@@ -88,12 +89,12 @@ const Dashboard: React.FC = () => {
                 <div className="text-3xl font-bold text-gray-900 mt-1"><CountUp from={0} to={0.8} duration={1.5} />s</div>
               </div>
               <div className="bg-emerald-100 text-emerald-700 p-2 rounded-lg">
-                <span className="material-symbols-outlined">speed</span>
+                <Icon name="speed" />
               </div>
             </div>
             <div className="flex items-center space-x-2">
               <span className="bg-emerald-100 text-emerald-700 text-xs font-bold px-2 py-1 rounded flex items-center">
-                <span className="material-symbols-outlined text-xs mr-1">check_circle</span> {t('metrics.good')}
+                <Icon name="check_circle" className="text-xs mr-1" /> {t('metrics.good')}
               </span>
               <span className="text-xs text-gray-400">{t('metrics.target')}: &lt; 2.5s</span>
             </div>
@@ -108,12 +109,12 @@ const Dashboard: React.FC = () => {
                 <div className="text-3xl font-bold text-gray-900 mt-1"><CountUp from={0} to={23} duration={1.5} />ms</div>
               </div>
               <div className="bg-emerald-100 text-emerald-700 p-2 rounded-lg">
-                <span className="material-symbols-outlined">touch_app</span>
+                <Icon name="touch_app" />
               </div>
             </div>
             <div className="flex items-center space-x-2">
               <span className="bg-emerald-100 text-emerald-700 text-xs font-bold px-2 py-1 rounded flex items-center">
-                <span className="material-symbols-outlined text-xs mr-1">check_circle</span> {t('metrics.good')}
+                <Icon name="check_circle" className="text-xs mr-1" /> {t('metrics.good')}
               </span>
               <span className="text-xs text-gray-400">{t('metrics.target')}: &lt; 100ms</span>
             </div>
@@ -128,12 +129,12 @@ const Dashboard: React.FC = () => {
                 <div className="text-3xl font-bold text-gray-900 mt-1"><CountUp from={0} to={0.02} duration={1.5} /></div>
               </div>
               <div className="bg-emerald-100 text-emerald-700 p-2 rounded-lg">
-                <span className="material-symbols-outlined">layers</span>
+                <Icon name="layers" />
               </div>
             </div>
             <div className="flex items-center space-x-2">
               <span className="bg-emerald-100 text-emerald-700 text-xs font-bold px-2 py-1 rounded flex items-center">
-                <span className="material-symbols-outlined text-xs mr-1">check_circle</span> {t('metrics.good')}
+                <Icon name="check_circle" className="text-xs mr-1" /> {t('metrics.good')}
               </span>
               <span className="text-xs text-gray-400">{t('metrics.target')}: &lt; 0.1</span>
             </div>

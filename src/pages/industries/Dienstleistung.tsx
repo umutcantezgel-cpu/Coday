@@ -1,9 +1,9 @@
 import React from 'react';
-import BlurText from '../../components/shared/ui/BlurText';
-import GradientText from '../../components/shared/ui/GradientText';
-import ServiceFunnelVisualizer from '../../components/features/industries/services/ServiceFunnelVisualizer';
-import LeadQualificationSimulator from '../../components/features/industries/services/LeadQualificationSimulator';
-import CrmIntegrationFlow from '../../components/features/industries/services/CrmIntegrationFlow';
+import BlurText from '../../shared/ui/BlurText';
+import GradientText from '../../shared/ui/GradientText';
+import ServiceFunnelVisualizer from '../../features/industries/services/ServiceFunnelVisualizer';
+import LeadQualificationSimulator from '../../features/industries/services/LeadQualificationSimulator';
+import CrmIntegrationFlow from '../../features/industries/services/CrmIntegrationFlow';
 
 const Dienstleistung: React.FC = () => {
     return (

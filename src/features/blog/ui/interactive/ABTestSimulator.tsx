@@ -232,7 +232,7 @@ export const ABTestSimulator: React.FC = () => {
                                         {/* Trust Elements (Only Variant B) */}
                                         {activeVariant === 'B' && (
                                             <motion.div
-                                                initial={{ opacity: 0 }} animate={{ opacity: 1 }} delay={0.2}
+                                                initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}
                                                 className="flex items-center gap-2 mt-4 text-[10px] text-gray-400"
                                             >
                                                 <div className="flex -space-x-2">

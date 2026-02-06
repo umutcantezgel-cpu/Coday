@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import CountUp from '../../../components/shared/ui/CountUp';
-import BlurText from '../../../components/shared/ui/BlurText';
+import CountUp from '../../../shared/ui/CountUp';
+import BlurText from '../../../shared/ui/BlurText';
 import { OptimizedImage } from '../../../shared/ui/OptimizedImage';
 import { appDevImages } from '../../../data/serviceImages';
+import { Icon } from '../../../shared/ui/Icon';
 
 const WebApps: React.FC = () => {
     const [scrolled, setScrolled] = useState(0);
@@ -24,7 +25,7 @@ const WebApps: React.FC = () => {
                     <div className="text-center lg:text-left grid lg:grid-cols-2 gap-12 items-center">
                         <div>
                             <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-xl text-primary mb-6">
-                                <span className="material-symbols-outlined text-3xl">layers</span>
+                                <Icon name="layers" className="text-3xl" />
                             </div>
                             <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-gray-900 mb-6 leading-tight">
                                 <BlurText
@@ -105,7 +106,7 @@ const WebApps: React.FC = () => {
                                 }}
                             >
                                 <div className={`w-16 h-16 rounded-2xl ${sat.color} text-white flex items-center justify-center shadow-lg border-2 border-white/20`}>
-                                    <span className="material-symbols-outlined text-2xl">{sat.icon}</span>
+                                    <Icon name={sat.icon} className="text-2xl" />
                                 </div>
                                 <span className="text-white font-bold text-sm bg-black/50 px-2 py-1 rounded backdrop-blur-sm">{sat.name}</span>
                                 {/* Connection Line to Center - Purely visual via SVG below */}
@@ -155,7 +156,7 @@ const WebApps: React.FC = () => {
                                 ].map((item, i) => (
                                     <li key={i} className="flex items-center text-gray-700 font-medium">
                                         <div className="w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center mr-3 shrink-0">
-                                            <span className="material-symbols-outlined text-sm font-bold">check</span>
+                                            <Icon name="check" className="text-sm font-bold" />
                                         </div>
                                         {item}
                                     </li>
@@ -170,7 +171,7 @@ const WebApps: React.FC = () => {
                                 { label: "24/7 Support", icon: "support_agent", color: "text-orange-600" }
                             ].map((badge, i) => (
                                 <div key={i} className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center justify-center text-center hover:scale-105 transition-transform">
-                                    <span className={`material-symbols-outlined text-4xl mb-3 ${badge.color}`}>{badge.icon}</span>
+                                    <Icon name={badge.icon} className={`text-4xl mb-3 ${badge.color}`} />
                                     <span className="font-bold text-gray-900">{badge.label}</span>
                                 </div>
                             ))}
@@ -198,7 +199,7 @@ const WebApps: React.FC = () => {
                         ].map((feature, i) => (
                             <div key={i} className="p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-xl transition-all border border-gray-100 group">
                                 <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
-                                    <span className="material-symbols-outlined">{feature.icon}</span>
+                                    <Icon name={feature.icon} />
                                 </div>
                                 <h3 className="font-bold text-xl text-gray-900 mb-3">{feature.title}</h3>
                                 <p className="text-gray-600 leading-relaxed">{feature.desc}</p>

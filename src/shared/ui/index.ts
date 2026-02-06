@@ -15,7 +15,7 @@ export { default as SpotlightCard } from './SpotlightCard';
 // Existing UI Components
 export { default as ExpandableSection } from './ExpandableSection';
 export { default as InteractiveQuiz } from './InteractiveQuiz';
-export { default as OptimizedImage } from './OptimizedImage';
+export { OptimizedImage } from './OptimizedImage';
 export { default as ScrollFloat } from './ScrollFloat';
 export { default as ScrollReveal } from './ScrollReveal';
 export { default as StepIndicator } from './StepIndicator';
@@ -24,4 +24,4 @@ export { default as Timeline } from './Timeline';
 
 // Type exports
 export type { LogoItem, LogoLoopProps } from './LogoLoop';
-export type { BentoEffect, BentoCardProps, MagicBentoProps } from './MagicBento';
+export type { BentoCardProps, BentoProps as MagicBentoProps } from './MagicBento';

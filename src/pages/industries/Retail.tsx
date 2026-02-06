@@ -1,9 +1,9 @@
 import React from 'react';
-import BlurText from '../../components/shared/ui/BlurText';
-import GradientText from '../../components/shared/ui/GradientText';
-import OmnichannelStrategies from '../../components/features/industries/retail/OmnichannelStrategies';
-import LoyaltyLoop from '../../components/features/industries/retail/LoyaltyLoop';
-import PosSyncDemo from '../../components/features/industries/retail/PosSyncDemo';
+import BlurText from '../../shared/ui/BlurText';
+import GradientText from '../../shared/ui/GradientText';
+import OmnichannelStrategies from '../../features/industries/retail/OmnichannelStrategies';
+import LoyaltyLoop from '../../features/industries/retail/LoyaltyLoop';
+import PosSyncDemo from '../../features/industries/retail/PosSyncDemo';
 
 const Retail: React.FC = () => {
     return (

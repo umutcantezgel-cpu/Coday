@@ -1,11 +1,12 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import { ArrowRight, Rocket } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { OptimizedImage } from '../shared/ui/OptimizedImage';
-import AgencyComparisonTable from '../components/AgencyComparisonTable';
-import GradientText from '../components/shared/ui/GradientText';
-import CountUp from '../components/shared/ui/CountUp';
-import BlurText from '../components/shared/ui/BlurText';
+import AgencyComparisonTable from '../features/analyzer/ui/AgencyComparisonTable';
+import GradientText from '../shared/ui/GradientText';
+import CountUp from '../shared/ui/CountUp';
+import BlurText from '../shared/ui/BlurText';
 import ScrollFloat from '../shared/ui/ScrollFloat';
 import { MdConstruction, MdApartment, MdShoppingCart, MdLightbulb, MdHealthAndSafety } from 'react-icons/md';
 // Premium UI Components
@@ -15,7 +16,8 @@ import { MagicBento, BentoCard } from '../shared/ui/MagicBento';
 import LogoLoop from '../shared/ui/LogoLoop';
 import type { LogoItem } from '../shared/ui/LogoLoop';
 import { cn } from '../shared/lib/utils';
-import { baseButtonStyles, buttonVariants, buttonSizes } from '../components/shared/ui/Button';
+import { baseButtonStyles, buttonVariants, buttonSizes } from '../shared/ui/Button';
+import { Icon } from '../shared/ui/Icon';
 
 
 
@@ -33,7 +35,7 @@ const Home: React.FC = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-block mb-6 animate-fade-in-up">
             <span className="bg-white/80 backdrop-blur-md border border-white/50 text-secondary text-sm font-bold px-4 py-1.5 rounded-full shadow-lg flex items-center gap-2">
-              <span className="bg-primary text-white rounded-full p-0.5"><span className="material-symbols-outlined text-[14px]">rocket_launch</span></span>
+              <span className="bg-primary text-white rounded-full p-0.5"><Icon name="rocket_launch" className="text-[14px]" /></span>
               {t('hero.badge')}
             </span>
           </div>
@@ -64,7 +66,7 @@ const Home: React.FC = () => {
             >
               <span className="relative z-10 flex items-center">
                 {t('buttons.start_project', { ns: 'common' })}
-                <span className="material-symbols-outlined ms-2 text-xl group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform">arrow_forward</span>
+                <ArrowRight className="ms-2 w-5 h-5 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform" />
               </span>
               {/* Subtle shine effect */}
               <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 pointer-events-none" />

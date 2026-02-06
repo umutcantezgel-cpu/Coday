@@ -22,17 +22,15 @@
 
 @layer utilities {
   .text-gradient {
-    @apply text-secondary;
-    /* Flatten gradient text to Navy */
+    @apply bg-gradient-text bg-clip-text text-transparent bg-[length:200%_auto];
   }
 
   .text-gradient-vivid {
-    @apply text-primary;
-    /* Flatten vivid gradient to Teal */
+    @apply bg-gradient-vivid bg-clip-text text-transparent;
   }
 
   .glass-card {
-    @apply bg-white border border-gray-100 shadow-flat lg:shadow-flat-lg rounded-2xl;
+    @apply backdrop-blur-xl bg-white/70 border border-white/40 shadow-glass rounded-2xl;
   }
 
   /* B2B-Oriented solid card */

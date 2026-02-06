@@ -1,12 +1,12 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import BlurText from '../../components/shared/ui/BlurText';
-import GradientText from '../../components/shared/ui/GradientText';
+import BlurText from '../../shared/ui/BlurText';
+import GradientText from '../../shared/ui/GradientText';
 import { OptimizedImage } from '../../shared/ui/OptimizedImage';
 import { serviceImages } from '../../data/serviceImages';
-import CraftsmanLeadCalculator from '../../components/features/industries/handwerk/CraftsmanLeadCalculator';
-import RecruitingFunnelDemo from '../../components/features/industries/handwerk/RecruitingFunnelDemo';
-import LocalDominanceMap from '../../components/features/industries/handwerk/LocalDominanceMap';
+import CraftsmanLeadCalculator from '../../features/industries/handwerk/CraftsmanLeadCalculator';
+import RecruitingFunnelDemo from '../../features/industries/handwerk/RecruitingFunnelDemo';
+import LocalDominanceMap from '../../features/industries/handwerk/LocalDominanceMap';
 
 const Handwerk: React.FC = () => {
     const { t } = useTranslation('industries');

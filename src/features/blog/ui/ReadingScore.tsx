@@ -85,7 +85,7 @@ export const ReadingScore: React.FC<{ currentPostId?: number }> = ({ currentPost
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0 }}
-                        delay={10}
+                        transition={{ delay: 10 }}
                         className="absolute inset-0 bg-green-500/90 flex flex-col items-center justify-center backdrop-blur-sm z-20"
                     >
                         <Zap className="text-white w-8 h-8 mb-2 animate-bounce" />

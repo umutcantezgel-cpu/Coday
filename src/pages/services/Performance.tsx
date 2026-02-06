@@ -1,10 +1,10 @@
 import React from 'react';
-import BlurText from '../../components/shared/ui/BlurText';
-import GradientText from '../../components/shared/ui/GradientText';
-import CountUp from '../../components/shared/ui/CountUp';
-import SpeedSimulator from '../../components/features/performance/SpeedSimulator';
-import LostRevenueCalc from '../../components/features/performance/LostRevenueCalc';
-import CoreWebVitalsChart from '../../components/features/performance/CoreWebVitalsChart';
+import BlurText from '../../shared/ui/BlurText';
+import GradientText from '../../shared/ui/GradientText';
+import CountUp from '../../shared/ui/CountUp';
+import SpeedSimulator from '../../features/performance/SpeedSimulator';
+import LostRevenueCalc from '../../features/performance/LostRevenueCalc';
+import CoreWebVitalsChart from '../../features/performance/CoreWebVitalsChart';
 
 const Performance: React.FC = () => {
     return (

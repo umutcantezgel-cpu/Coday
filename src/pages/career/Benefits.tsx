@@ -1,6 +1,6 @@
 import React from 'react';
 import { MagicBento, BentoCard } from '../../shared/ui/MagicBento';
-import GearSetup from '../../components/features/benefits/GearSetup';
+import GearSetup from '../../features/benefits/GearSetup';
 
 const Benefits: React.FC = () => {
     const benefits = [

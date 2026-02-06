@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import BlurText from '../../components/shared/ui/BlurText';
+import BlurText from '../../shared/ui/BlurText';
 import { servicesData } from '../../data/services';
 import { OptimizedImage } from '../../shared/ui/OptimizedImage';
 import { brandingImages } from '../../data/serviceImages';
-import DesignSystemShowcase from '../../components/features/web-design/DesignSystemShowcase';
-import PsychologyGrid from '../../components/features/web-design/PsychologyGrid';
-import BeforeAfterReveal from '../../components/features/web-design/BeforeAfterReveal';
+import DesignSystemShowcase from '../../features/web-design/DesignSystemShowcase';
+import PsychologyGrid from '../../features/web-design/PsychologyGrid';
+import BeforeAfterReveal from '../../features/web-design/BeforeAfterReveal';
+import { Icon } from '../../shared/ui/Icon';
 
 const WebDesign: React.FC = () => {
     // Fallback if key doesn't match perfectly, but it should be 'web-design'
@@ -66,7 +67,7 @@ const WebDesign: React.FC = () => {
                                 "Dark Mode & Multi-Brand Unterstützung"
                             ].map((item, i) => (
                                 <li key={i} className="flex items-center gap-3 text-slate-600 font-medium">
-                                    <span className="material-symbols-outlined text-primary">check_circle</span>
+                                    <Icon name="check_circle" className="text-primary" />
                                     {item}
                                 </li>
                             ))}
@@ -160,14 +161,14 @@ const WebDesign: React.FC = () => {
                         >
                             <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
                             <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors relative z-10">
-                                <span className="material-symbols-outlined">{feature.icon}</span>
+                                <Icon name={feature.icon} />
                             </div>
                             <h3 className="font-display font-bold text-xl text-secondary mb-3 group-hover:text-primary transition-colors relative z-10">{feature.title}</h3>
                             <p className="text-slate-600 leading-relaxed mb-4 relative z-10">
                                 {feature.description}
                             </p>
                             <div className="text-primary font-bold text-sm uppercase tracking-wide flex items-center opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0 relative z-10">
-                                Mehr erfahren <span className="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+                                Mehr erfahren <Icon name="arrow_forward" className="ml-1 text-sm" />
                             </div>
                         </NavLink>
                     ))}
@@ -183,7 +184,7 @@ const WebDesign: React.FC = () => {
                     </p>
                     <NavLink to="/contact" className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-primary rounded-xl bg-white hover:bg-gray-50 shadow-lg hover:shadow-xl transition-all">
                         Design anfragen
-                        <span className="material-symbols-outlined ml-2">palette</span>
+                        <Icon name="palette" className="ml-2" />
                     </NavLink>
                 </div>
             </section>

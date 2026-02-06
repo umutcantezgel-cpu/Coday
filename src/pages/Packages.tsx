@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { NavLink, useNavigate } from 'react-router-dom';
-import CountUp from '../components/shared/ui/CountUp';
-import GradientText from '../components/shared/ui/GradientText';
-import BlurText from '../components/shared/ui/BlurText';
+import CountUp from '../shared/ui/CountUp';
+import GradientText from '../shared/ui/GradientText';
+import BlurText from '../shared/ui/BlurText';
 import { useCalculatorStore } from '../features/calculator/model/store';
 import StepIndicator from '../shared/ui/StepIndicator';
 import { MagicBento, BentoCard } from '../shared/ui/MagicBento';

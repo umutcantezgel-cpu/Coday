@@ -3,7 +3,7 @@ import { useParams, Navigate, Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, Clock, User } from 'lucide-react';
 import { getBlogPost, getBlogPosts } from '../../features/blog/model/data';
 import { OptimizedImage } from '../../shared/ui/OptimizedImage';
-import BlurText from '../../components/shared/ui/BlurText';
+import BlurText from '../../shared/ui/BlurText';
 import { Helmet } from 'react-helmet-async';
 import { BlockRenderer } from '../../features/blog/ui/BlockRenderer';
 import { ReadingProgress, TableOfContents } from '../../features/blog/ui/ImmersiveReader';

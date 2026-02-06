@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Check, ArrowRight } from 'lucide-react';
-import BlurText from '../../../components/shared/ui/BlurText';
+import BlurText from '../../../shared/ui/BlurText';
 import ScrollFloat from '../../../shared/ui/ScrollFloat';
 import ScrollReveal from '../../../shared/ui/ScrollReveal';
 import { OptimizedImage } from '../../../shared/ui/OptimizedImage';

@@ -3,11 +3,11 @@ import { motion, useScroll, useTransform } from 'motion/react';
 import { Helmet } from 'react-helmet-async';
 import { ArrowRight, Cpu, Globe, Zap, BarChart, Shield, ChevronRight } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
-import { TechStackHologram } from '../../components/features/enterprise/TechStackHologram';
-import { Speedometer } from '../../components/features/enterprise/Speedometer';
-import { EdgeNetworkMap } from '../../components/features/enterprise/EdgeNetworkMap';
-import { ROICalculator } from '../../components/features/enterprise/ROICalculator';
-import { ScrollContextCTA } from '../../components/features/enterprise/ScrollContextCTA';
+import { TechStackHologram } from '../../features/enterprise/TechStackHologram';
+import { Speedometer } from '../../features/enterprise/Speedometer';
+import { EdgeNetworkMap } from '../../features/enterprise/EdgeNetworkMap';
+import { ROICalculator } from '../../features/enterprise/ROICalculator';
+import { ScrollContextCTA } from '../../features/enterprise/ScrollContextCTA';
 
 const EnterpriseWeb: React.FC = () => {
     const containerRef = useRef<HTMLDivElement>(null);

@@ -1,9 +1,9 @@
 import React from 'react';
-import BlurText from '../../components/shared/ui/BlurText';
-import GradientText from '../../components/shared/ui/GradientText';
-import TableBookingRoiVisualizer from '../../components/features/industries/gastronomie/TableBookingRoiVisualizer';
-import MenuEngineeringDemo from '../../components/features/industries/gastronomie/MenuEngineeringDemo';
-import ReservationFlowDemo from '../../components/features/industries/gastronomie/ReservationFlowDemo';
+import BlurText from '../../shared/ui/BlurText';
+import GradientText from '../../shared/ui/GradientText';
+import TableBookingRoiVisualizer from '../../features/industries/gastronomie/TableBookingRoiVisualizer';
+import MenuEngineeringDemo from '../../features/industries/gastronomie/MenuEngineeringDemo';
+import ReservationFlowDemo from '../../features/industries/gastronomie/ReservationFlowDemo';
 
 const Gastronomie: React.FC = () => {
     return (

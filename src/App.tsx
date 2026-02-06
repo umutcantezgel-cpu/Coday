@@ -1,6 +1,6 @@
 import React, { useEffect, Suspense, lazy } from 'react';
 import { HashRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
-import { Layout } from './components/Layout';
+import { Layout } from './widgets/layout/MainLayout';
 
 // Critical pages - loaded immediately
 import Home from './pages/Home';
@@ -175,6 +175,7 @@ const App: React.FC = () => {
               {/* Knowledge Routes */}
               <Route path="/knowledge" element={<Navigate to="/knowledge/blog" replace />} />
               <Route path="/knowledge/academy" element={<Academy />} />
+              <Route path="/academy" element={<Academy />} />
               <Route path="/knowledge/blog" element={<Blog />} />
               <Route path="/knowledge/blog/:slug" element={<BlogPost />} />
               <Route path="/knowledge/newsletter" element={<Newsletter />} />

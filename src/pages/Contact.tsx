@@ -1,13 +1,14 @@
 import React, { useState, Suspense, lazy } from 'react';
-import BlurText from '../components/shared/ui/BlurText';
-import GradientText from '../components/shared/ui/GradientText';
-// import ApplicationWizard from '../components/features/contact/ApplicationWizard'; // Loaded lazily
-import AvailabilityGrid from '../components/features/contact/AvailabilityGrid';
+import BlurText from '../shared/ui/BlurText';
+import GradientText from '../shared/ui/GradientText';
+// import ApplicationWizard from '../features/contact/ApplicationWizard'; // Loaded lazily
+import AvailabilityGrid from '../features/contact/AvailabilityGrid';
 import InteractiveMap from '../shared/ui/InteractiveMap';
 
-const ApplicationWizard = lazy(() => import('../components/features/contact/ApplicationWizard'));
+const ApplicationWizard = lazy(() => import('../features/contact/ApplicationWizard'));
 
 import { useTranslation } from 'react-i18next';
+import { Icon } from '../shared/ui/Icon';
 
 const Contact: React.FC = () => {
   const { t } = useTranslation('contact');
@@ -45,7 +46,7 @@ const Contact: React.FC = () => {
               <div className="space-y-6">
                 <div className="flex items-center gap-4 text-slate-600">
                   <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-gray-100 flex items-center justify-center text-primary">
-                    <span className="material-symbols-outlined">verified</span>
+                    <Icon name="verified" />
                   </div>
                   <div>
                     <strong className="block text-secondary">{t('features.consult.title')}</strong>
@@ -54,7 +55,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div className="flex items-center gap-4 text-slate-600">
                   <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-gray-100 flex items-center justify-center text-primary">
-                    <span className="material-symbols-outlined">rocket_launch</span>
+                    <Icon name="rocket_launch" />
                   </div>
                   <div>
                     <strong className="block text-secondary">{t('features.strategy.title')}</strong>
@@ -127,7 +128,7 @@ const Contact: React.FC = () => {
                   <strong className="block text-gray-900 group-hover:text-[#25D366] transition-colors">{t('location.whatsapp.label')}</strong>
                   <span className="text-sm text-gray-500">+49 176 41195301</span>
                 </div>
-                <span className="material-symbols-outlined text-gray-400 group-hover:text-[#25D366] group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-all">arrow_forward</span>
+                <Icon name="arrow_forward" className="text-gray-400 group-hover:text-[#25D366] group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-all" />
               </a>
 
               {/* Phone */}
@@ -136,13 +137,13 @@ const Contact: React.FC = () => {
                 className="flex items-center gap-4 p-5 bg-white rounded-xl border border-aurora-mist hover:shadow-lg transition-all group"
               >
                 <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <span className="material-symbols-outlined text-primary">phone</span>
+                  <Icon name="phone" className="text-primary" />
                 </div>
                 <div className="flex-1 text-start">
                   <strong className="block text-gray-900 group-hover:text-primary transition-colors">{t('location.phone.label')}</strong>
                   <span className="text-sm text-gray-500">+49 176 41195301</span>
                 </div>
-                <span className="material-symbols-outlined text-gray-400 group-hover:text-primary group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-all">arrow_forward</span>
+                <Icon name="arrow_forward" className="text-gray-400 group-hover:text-primary group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-all" />
               </a>
 
               {/* Email */}
@@ -151,19 +152,19 @@ const Contact: React.FC = () => {
                 className="flex items-center gap-4 p-5 bg-white rounded-xl border border-aurora-mist hover:shadow-lg transition-all group"
               >
                 <div className="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <span className="material-symbols-outlined text-purple-600">mail</span>
+                  <Icon name="mail" className="text-purple-600" />
                 </div>
                 <div className="flex-1 text-start">
                   <strong className="block text-gray-900 group-hover:text-purple-600 transition-colors">{t('location.email.label')}</strong>
                   <span className="text-sm text-gray-500">umut@codayweb.de</span>
                 </div>
-                <span className="material-symbols-outlined text-gray-400 group-hover:text-purple-600 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-all">arrow_forward</span>
+                <Icon name="arrow_forward" className="text-gray-400 group-hover:text-purple-600 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-all" />
               </a>
 
               {/* Address */}
               <div className="flex items-center gap-4 p-5 bg-white rounded-xl border border-aurora-mist">
                 <div className="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <span className="material-symbols-outlined text-orange-600">location_on</span>
+                  <Icon name="location_on" className="text-orange-600" />
                 </div>
                 <div className="flex-1 text-start">
                   <strong className="block text-gray-900">{t('location.address.label')}</strong>

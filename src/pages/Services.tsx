@@ -5,7 +5,7 @@ import { OptimizedImage } from '../shared/ui/OptimizedImage';
 import { serviceImages } from '../data/serviceImages';
 import ScrollFloat from '../shared/ui/ScrollFloat';
 import { cn } from '../shared/lib/utils';
-import { baseButtonStyles, buttonVariants, buttonSizes } from '../components/shared/ui/Button';
+import { baseButtonStyles, buttonVariants, buttonSizes } from '../shared/ui/Button';
 // Premium UI Components
 import RotatingText from '../shared/ui/RotatingText';
 import { MagicBento, BentoCard } from '../shared/ui/MagicBento';
