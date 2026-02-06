@@ -9,11 +9,16 @@ const ApplicationWizard = lazy(() => import('../features/contact/ApplicationWiza
 
 import { useTranslation } from 'react-i18next';
 import { Icon } from '../shared/ui/Icon';
+import { SeoHead } from '@/shared/ui/SeoHead';
 
 const Contact: React.FC = () => {
   const { t } = useTranslation('contact');
   return (
     <div className="bg-background-light min-h-screen">
+      <SeoHead
+        title={`${t('hero.title_start')} ${t('hero.title_gradient')} | Coday`}
+        description={t('hero.desc')}
+      />
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-4 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

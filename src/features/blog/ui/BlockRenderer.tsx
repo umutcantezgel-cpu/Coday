@@ -33,49 +33,49 @@ import { motion, useScroll, useTransform, useInView, AnimatePresence } from 'mot
 const ROI_Calculator = React.lazy(
   () =>
     import('./interactive/ROI_Calculator') as unknown as Promise<{
-      default: React.ComponentType<any>;
+      default: React.ComponentType<unknown>;
     }>
 );
 const SpeedComparison = React.lazy(
   () =>
     import('./interactive/SpeedComparison') as unknown as Promise<{
-      default: React.ComponentType<any>;
+      default: React.ComponentType<unknown>;
     }>
 );
 const DesignPsychologyPicker = React.lazy(
   () =>
     import('./interactive/DesignPsychologyPicker') as unknown as Promise<{
-      default: React.ComponentType<any>;
+      default: React.ComponentType<unknown>;
     }>
 );
 const SEOTrafficGraph = React.lazy(
   () =>
     import('./interactive/SEOTrafficGraph') as unknown as Promise<{
-      default: React.ComponentType<any>;
+      default: React.ComponentType<unknown>;
     }>
 );
 const MobileSimulator = React.lazy(
   () =>
     import('./interactive/MobileSimulator') as unknown as Promise<{
-      default: React.ComponentType<any>;
+      default: React.ComponentType<unknown>;
     }>
 );
 const DataMaturityAssessment = React.lazy(
   () =>
     import('./interactive/DataMaturityAssessment') as unknown as Promise<{
-      default: React.ComponentType<any>;
+      default: React.ComponentType<unknown>;
     }>
 );
 const HackSimulator = React.lazy(
   () =>
     import('./interactive/HackSimulator') as unknown as Promise<{
-      default: React.ComponentType<any>;
+      default: React.ComponentType<unknown>;
     }>
 );
 const ABTestSimulator = React.lazy(
   () =>
     import('./interactive/ABTestSimulator') as unknown as Promise<{
-      default: React.ComponentType<any>;
+      default: React.ComponentType<unknown>;
     }>
 );
 const VoiceDemo = React.lazy(
@@ -89,13 +89,13 @@ const AICostGraph = React.lazy(
 const WebHistoryTimeline = React.lazy(
   () =>
     import('./interactive/WebHistoryTimeline') as unknown as Promise<{
-      default: React.ComponentType<any>;
+      default: React.ComponentType<unknown>;
     }>
 );
 const AgencyCostCalculator = React.lazy(
   () =>
     import('./interactive/AgencyCostCalculator') as unknown as Promise<{
-      default: React.ComponentType<any>;
+      default: React.ComponentType<unknown>;
     }>
 );
 
@@ -113,7 +113,7 @@ function cn(...inputs: ClassValue[]) {
 const TextBlockRenderer: React.FC<{ block: TextBlock }> = ({ block }) => {
   const HeadingTag = block.level || 'h2';
   const id = block.heading ? slugify(block.heading) : undefined;
-  const { i18n, t } = useTranslation();
+  const { i18n } = useTranslation();
 
   // Glossary Injection Logic
   const renderContentWithGlossary = (text: string) => {
@@ -464,7 +464,10 @@ const AccordionItem: React.FC<{ title: string; content: string }> = ({ title, co
 
 const InteractiveBlockRenderer: React.FC<{ block: InteractiveBlock }> = ({ block }) => {
   const { t } = useTranslation('blog');
-  const COMPONENT_MAP: Record<string, React.LazyExoticComponent<any> | React.ComponentType<any>> = {
+  const COMPONENT_MAP: Record<
+    string,
+    React.LazyExoticComponent<any> | React.ComponentType<unknown>
+  > = {
     'roi-calculator': ROI_Calculator,
     'speed-test': SpeedComparison,
     'color-picker': DesignPsychologyPicker,

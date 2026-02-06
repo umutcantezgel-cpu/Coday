@@ -1,20 +1,22 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-/* If using Tailwind v4 compatible directives via plugin, standard is @tailwind. 
-   But "tailwindcss" package 4.0 uses @import "tailwindcss"; 
-   However, since we used a config file, we might be in v3 compat mode or v4 config mode.
-   Let's use standard v3 directives first, as that's safer with the config file we just wrote.
-   Wait, wait. Package installed is 4.1.18. 
-   v4 uses CSS-first configuration by default, BUT it supports tailwind.config.js for migration.
-   The "@import 'tailwindcss'" is the v4 way.
-   Let's try the modern v4 import. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 
 @theme {
   --color-primary: #147a7a;
   /* Darkened from #1A9A9A for WCAG AA constrast */
-  --color-secondary: #2D3748;
-  --font-display: "Outfit", sans-serif;
-  --font-sans: "Inter", sans-serif;
+  --color-secondary: #2d3748;
+  --font-display: 'Outfit', sans-serif;
+  --font-sans: 'Inter', sans-serif;
 }
 
 @config "../tailwind.config.js";
@@ -56,8 +58,6 @@
   .skip-link {
     @apply sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded-lg;
   }
-
-
 }
 
 body {
@@ -67,7 +67,6 @@ body {
 }
 
 @layer utilities {
-
   /* Global Touch Feedback */
   .touch-feedback {
     @apply transition-transform active:scale-95;

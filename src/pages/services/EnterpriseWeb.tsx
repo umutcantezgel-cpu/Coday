@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { Helmet } from 'react-helmet-async';
 import { ArrowRight, Cpu, Globe, Zap, BarChart, Shield, ChevronRight } from 'lucide-react';
@@ -10,6 +11,7 @@ import { ROICalculator } from '../../features/enterprise/ROICalculator';
 import { ScrollContextCTA } from '../../features/enterprise/ScrollContextCTA';
 
 const EnterpriseWeb: React.FC = () => {
+  const { t } = useTranslation('services');
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -43,20 +45,19 @@ const EnterpriseWeb: React.FC = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
             <span className="inline-block py-1 px-3 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs font-bold tracking-widest uppercase mb-6">
-              Beyond Standard
+              {t('enterprise_web_page.hero.badge')}
             </span>
 
             <h1 className="font-display font-black text-6xl md:text-8xl lg:text-9xl tracking-tight leading-none mb-8 text-secondary">
-              Websites,
+              {t('enterprise_web_page.hero.title_prefix')}
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-600">
-                die Märkte fressen.
+                {t('enterprise_web_page.hero.title_suffix')}
               </span>
             </h1>
 
             <p className="max-w-2xl mx-auto text-xl md:text-2xl text-slate-500 font-light leading-relaxed mb-12">
-              Keine Visitenkarten. Wir bauen digitale Waffensysteme für Unternehmen, die verlieren
-              nicht als Option sehen.
+              {t('enterprise_web_page.hero.description')}
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -65,7 +66,7 @@ const EnterpriseWeb: React.FC = () => {
                 className="group relative px-8 py-4 bg-secondary text-white rounded-full font-bold text-lg overflow-hidden transition-all hover:scale-105"
               >
                 <span className="relative z-10 flex items-center">
-                  Dominanz starten
+                  {t('enterprise_web_page.hero.cta_primary')}
                   <ArrowRight className="ms-2 w-5 h-5 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform" />
                 </span>
                 <div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -75,7 +76,7 @@ const EnterpriseWeb: React.FC = () => {
                 to="/work"
                 className="px-8 py-4 bg-white border border-slate-200 text-secondary rounded-full font-bold text-lg hover:bg-slate-50 transition-colors"
               >
-                Cases ansehen
+                {t('enterprise_web_page.hero.cta_secondary')}
               </NavLink>
             </div>
           </motion.div>
@@ -87,7 +88,7 @@ const EnterpriseWeb: React.FC = () => {
           className="absolute bottom-10 start-1/2 -translate-x-1/2 rtl:translate-x-1/2 flex flex-col items-center gap-2"
         >
           <span className="text-xs uppercase tracking-widest text-slate-400">
-            Scroll to Explore
+            {t('enterprise_web_page.hero.scroll_hint')}
           </span>
           <div className="w-[1px] h-12 bg-gradient-to-b from-primary to-transparent"></div>
         </motion.div>
@@ -99,11 +100,10 @@ const EnterpriseWeb: React.FC = () => {
           <div className="flex flex-col lg:flex-row items-end justify-between mb-20">
             <div className="max-w-2xl">
               <h2 className="font-display font-bold text-4xl md:text-6xl mb-6">
-                Speed is Authority.
+                {t('enterprise_web_page.speed_section.title')}
               </h2>
               <p className="text-xl text-slate-400">
-                Google hasst langsame Websites. Nutzer auch. Wir bauen auf Edge-Computing und
-                Next.js für Ladezeiten unter 500ms.
+                {t('enterprise_web_page.speed_section.description')}
               </p>
             </div>
             <div className="hidden lg:block">
@@ -123,10 +123,10 @@ const EnterpriseWeb: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-24">
             <h2 className="font-display font-bold text-4xl md:text-6xl text-secondary mb-6">
-              The Stack of Dominance
+              {t('enterprise_web_page.stack_section.title')}
             </h2>
             <p className="text-xl text-slate-500">
-              Kein WordPress-Spaghetti. Wir nutzen den Tech-Stack der Milliarden-Startups.
+              {t('enterprise_web_page.stack_section.description')}
             </p>
           </div>
 
@@ -141,14 +141,13 @@ const EnterpriseWeb: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <span className="text-primary font-bold tracking-widest uppercase text-xs">
-              The Cost of Slow
+              {t('enterprise_web_page.roi_section.label')}
             </span>
             <h2 className="font-display font-black text-4xl md:text-5xl mt-2 mb-6 text-secondary">
-              Performance = Revenue
+              {t('enterprise_web_page.roi_section.title')}
             </h2>
             <p className="text-xl text-slate-500 max-w-2xl mx-auto">
-              Die meisten Agenturen verkaufen "hübsches Design". Wir verkaufen messbares
-              Umsatzwachstum.
+              {t('enterprise_web_page.roi_section.description')}
             </p>
           </div>
 

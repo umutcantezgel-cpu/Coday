@@ -32,8 +32,8 @@ const Calculator = lazy(() => import('./pages/Calculator'));
 // Work
 const Work = lazy(() => import('./pages/work/Work'));
 const ProjectDetail = lazy(() => import('./pages/work/ProjectDetail'));
-const CreativeImpact = lazy(() => import('./content/case-studies/creative-impact.mdx'));
-const Batherm = lazy(() => import('./content/case-studies/batherm.mdx'));
+const CreativeImpact = lazy(() => import('./pages/work/case-studies/CreativeImpactWrapper'));
+const Batherm = lazy(() => import('./pages/work/case-studies/BathermWrapper'));
 
 // Services - lazy loaded
 const WebDevelopment = lazy(() => import('./pages/services/WebDevelopment'));
@@ -43,10 +43,10 @@ const IndustryOverview = lazy(() => import('./pages/services/IndustryOverview'))
 const IndustryDetail = lazy(() => import('./pages/services/IndustryDetail'));
 const Seo = lazy(() => import('./pages/services/Seo'));
 const Performance = lazy(() => import('./pages/services/Performance'));
+const GenericConsulting = lazy(() => import('./pages/services/Consulting'));
 const EnterpriseWeb = lazy(() => import('./pages/services/EnterpriseWeb'));
 
 // Dev Sub-Pages
-const EcommerceDevelopment = lazy(() => import('./pages/services/EcommerceDevelopment'));
 // Industries
 const Handwerk = lazy(() => import('./pages/industries/Handwerk'));
 const Immobilien = lazy(() => import('./pages/industries/Immobilien'));
@@ -121,7 +121,9 @@ const App: React.FC = () => {
                   <Route path="services/web-development" element={<WebDevelopment />} />
                   <Route path="services/web-design" element={<WebDesign />} />
                   <Route path="services/seo" element={<Seo />} />
+                  <Route path="services/seo" element={<Seo />} />
                   <Route path="services/performance" element={<Performance />} />
+                  <Route path="services/consulting" element={<GenericConsulting />} />
 
                   {/* Web Development Sub-Services */}
                   <Route path="services/web-development/e-commerce" element={<Ecommerce />} />

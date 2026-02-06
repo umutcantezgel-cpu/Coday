@@ -2,7 +2,7 @@
 
 ![Status](https://img.shields.io/badge/Status-Production_Ready-success?style=for-the-badge)
 ![Version](https://img.shields.io/badge/version-2.1.0-blueviolet?style=for-the-badge&logo=rocket)
-![Stack](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)
+![Stack](https://img.shields.io/badge/Stack-React_19_+_Vite-blue?style=for-the-badge&logo=react)
 ![Styling](https://img.shields.io/badge/Tailwind-v4-06b6d4?style=for-the-badge&logo=tailwindcss)
 
 <p align="center">

@@ -1,0 +1,43 @@
+{
+  "page": {
+    "title": "Starten Sie Ihre Transformation",
+    "subtitle": "Wählen Sie einen passenden Termin für Ihr unverbindliches Strategiegespräch. Keine externen Tools, keine Umwege."
+  },
+  "calendar": {
+    "step1": {
+      "title": "Wähle einen Termin",
+      "next": "Weiter"
+    },
+    "step2": {
+      "title": "Deine Daten",
+      "form": {
+        "name": {
+          "placeholder": "Name"
+        },
+        "email": {
+          "placeholder": "Email"
+        },
+        "phone": {
+          "placeholder": "Telefon (optional)"
+        },
+        "notes": {
+          "placeholder": "Notiz (optional)"
+        }
+      },
+      "buttons": {
+        "back": "Zurück",
+        "submit": "Termin Bestätigen",
+        "submitting": "Buche..."
+      }
+    },
+    "success": {
+      "title": "Buchung Bestätigt!",
+      "message": "Vielen Dank, {{name}}.<br />Wir haben Ihren Termin für den {{date}} um {{time}} reserviert. Eine Bestätigung wurde an {{email}} gesendet.",
+      "new_booking": "Neue Buchung"
+    },
+    "errors": {
+      "generic": "Ein unbekannter Fehler ist aufgetreten",
+      "failed": "Buchung fehlgeschlagen"
+    }
+  }
+}

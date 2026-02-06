@@ -1,53 +1,34 @@
 {
-    "hero": {
-        "badge": "Case Study: Creative Impact",
-        "title_start": "DIGITAL",
-        "title_gradient": "EVOLUTION",
-        "desc": "Wie wir für einen Mittelstands-Champion das digitale Branding neu erfunden haben."
+  "hero": {
+    "label": "Unser Portfolio",
+    "title": "Ausgewählte Arbeiten.",
+    "description": "Digitale Erlebnisse, die Marken transformieren. Design, das Nutzer begeistert. Programmcode, der Geschwindigkeit liefert."
+  },
+  "filter": {
+    "all": "Alle Projekte",
+    "design": "Design",
+    "development": "Entwicklung",
+    "marketing": "Marketing"
+  },
+  "project_detail": {
+    "not_found": "Projekt nicht gefunden",
+    "back_to_overview": "Zurück zur Übersicht",
+    "breadcrumb_projects": "Projekte",
+    "sidebar": {
+      "details": "Projekt-Details",
+      "service": "Service",
+      "period": "Zeitraum",
+      "result": "Ergebnis",
+      "interested_title": "Interessiert an ähnlichen Ergebnissen?",
+      "request_project": "Projekt anfragen"
     },
-    "results": {
-        "title": "Die <0>Ergebnisse</0>",
-        "desc": "Durch den Einsatz des Aurora Design Systems und einer radikalen Vereinfachung der User Journey konnten wir signifikante Verbesserungen erzielen.",
-        "link": "Vollen Report lesen",
-        "stats": {
-            "leads": {
-                "label": "Leads pro Monat",
-                "desc": "Steigerung der qualifizierten Anfragen durch optimierte Conversion-Funnel."
-            },
-            "cpa": {
-                "label": "Cost per Acquisition",
-                "desc": "Effizientere Ad-Ausgaben durch präzises Targeting und High-Performance Landingpages."
-            },
-            "lcp": {
-                "label": "LCP (Ladezeit)",
-                "desc": "Blitzschnelle Performance dank statischer Generierung und optimierter Assets."
-            }
-        }
-    },
-    "testimonials": {
-        "title": "Stimmen zum Projekt",
-        "desc": "Das sagt das Team über die Zusammenarbeit.",
-        "items": [
-            {
-                "quote": "\"Die Zusammenarbeit mit Coday war ein Gamechanger für uns. Das neue Design ist nicht nur schön, sondern performt unglaublich gut.\"",
-                "author": "Thomas Müller",
-                "role": "CEO, TechStart GmbH"
-            },
-            {
-                "quote": "\"Endlich eine Agentur, die Design und Performance versteht. Die Ladezeiten sind phänomenal und die Conversion-Rate spricht für sich.\"",
-                "author": "Sarah Weber",
-                "role": "Head of Marketing"
-            }
-        ]
-    },
-    "visual_identity": {
-        "badge": "Visual Identity",
-        "title": "Modern & Zeitlos",
-        "desc": "Ein Design, das Vertrauen schafft und gleichzeitig Innovation ausstrahlt. Wir haben Farbpsychologie mit modernster Web-Technologie verbunden.",
-        "colors": {
-            "primary": "Primary",
-            "dark": "Dark",
-            "light": "Light"
-        }
-    }
+    "challenge": "Die Herausforderung",
+    "approach": "Unser Ansatz",
+    "solution": "Die Lösung",
+    "results": "Die Ergebnisse"
+  },
+  "empty_state": {
+    "title": "Keine Projekte gefunden",
+    "desc": "Versuchen Sie einen anderen Filter oder schauen Sie später wieder vorbei."
+  }
 }

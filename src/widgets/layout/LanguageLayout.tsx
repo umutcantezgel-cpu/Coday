@@ -7,7 +7,6 @@ const SUPPORTED_LANGUAGES = ['de', 'en'];
 export const LanguageLayout: React.FC = () => {
   const { lng } = useParams<{ lng: string }>();
   const { i18n } = useTranslation();
-  const location = useLocation();
 
   useEffect(() => {
     console.log('[LanguageLayout] Effect', { lng, i18nLang: i18n.language });

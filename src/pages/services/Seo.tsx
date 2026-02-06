@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import BlurText from '../../shared/ui/BlurText';
 import GradientText from '../../shared/ui/GradientText';
 import { OptimizedImage } from '../../shared/ui/OptimizedImage';
@@ -8,6 +9,8 @@ import RankingPeriodicTable from '../../features/seo/RankingPeriodicTable';
 import { Icon } from '../../shared/ui/Icon';
 
 const Seo: React.FC = () => {
+  const { t } = useTranslation('services');
+
   return (
     <div className="bg-background-light min-h-screen">
       {/* Hero Section */}
@@ -16,11 +19,11 @@ const Seo: React.FC = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-start">
               <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
-                Suchmaschinen-Dominanz
+                {t('seo_page.hero.badge')}
               </span>
               <h1 className="font-display font-black text-5xl sm:text-7xl text-secondary mb-8 tracking-tight">
                 <BlurText
-                  text="Unsichtbar ist"
+                  text={t('seo_page.hero.title_prefix')}
                   delay={100}
                   animateBy="words"
                   direction="top"
@@ -31,12 +34,11 @@ const Seo: React.FC = () => {
                   animationSpeed={6}
                   className="block"
                 >
-                  irrelevant.
+                  {t('seo_page.hero.title_suffix')}
                 </GradientText>
               </h1>
               <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-12">
-                Wir bringen Sie nicht nur auf Seite 1. Wir sorgen dafür, dass Sie dort bleiben.
-                Technische Optimierung, Inhalts-Strategie und Aufbau von Autorität.
+                {t('seo_page.hero.description')}
               </p>
             </div>
             <div className="relative">
@@ -62,14 +64,13 @@ const Seo: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-12">
           <div>
             <span className="text-primary font-bold uppercase tracking-wider text-sm mb-4 block">
-              Die Wissenschaft der Suche
+              {t('seo_page.ranking_factors.badge')}
             </span>
-            <h2 className="font-display font-bold text-3xl sm:text-4xl text-secondary mb-6">
-              200+ Ranking-Faktoren. <br /> Wir kennen sie alle.
+            <h2 className="font-display font-bold text-3xl sm:text-4xl text-secondary mb-6 whitespace-pre-line">
+              {t('seo_page.ranking_factors.title')}
             </h2>
             <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-              Googles Such-Algorithmus ist kein Geheimnis, sondern Mathematik. Wir optimieren Ihre
-              Seite systematisch auf technische Exzellenz, Inhalts-Relevanz und Autorität.
+              {t('seo_page.ranking_factors.description')}
             </p>
           </div>
         </div>
@@ -89,24 +90,18 @@ const Seo: React.FC = () => {
             </div>
             <div className="order-1 md:order-2">
               <h2 className="font-display font-bold text-3xl sm:text-4xl text-secondary mb-6">
-                Gesamtheitliche Dominanz
+                {t('seo_page.dominance.title')}
               </h2>
-              <p className="text-lg text-slate-600 mb-6">
-                Suchmaschinen-Optimierung ist kein Silo. Wir vernetzen Ihre Suche mit sozialen
-                Medien, Inhalts-Marketing und bezahlter Werbung für maximale Sichtbarkeit.
-              </p>
+              <p className="text-lg text-slate-600 mb-6">{t('seo_page.dominance.description')}</p>
               <ul className="space-y-3">
-                {[
-                  'Ganzheitliche Strategie',
-                  'Plattformübergreifendes Retargeting',
-                  'Inhalts-Verteilung',
-                  'Datengetriebene Erkenntnisse',
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center text-secondary font-medium">
-                    <Icon name="check_circle" className="text-primary me-2" />
-                    {item}
-                  </li>
-                ))}
+                {(t('seo_page.dominance.items', { returnObjects: true }) as string[]).map(
+                  (item, i) => (
+                    <li key={i} className="flex items-center text-secondary font-medium">
+                      <Icon name="check_circle" className="text-primary me-2" />
+                      {item}
+                    </li>
+                  )
+                )}
               </ul>
             </div>
           </div>
@@ -116,26 +111,28 @@ const Seo: React.FC = () => {
               <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6">
                 <Icon name="settings" />
               </div>
-              <h3 className="font-bold text-2xl mb-4 text-secondary">Technische Optimierung</h3>
-              <p className="text-slate-600">
-                Ladezeit-Optimierung, Strukturierte Daten und Durchsuchbarkeit.
-              </p>
+              <h3 className="font-bold text-2xl mb-4 text-secondary">
+                {t('seo_page.dominance.cards.technical.title')}
+              </h3>
+              <p className="text-slate-600">{t('seo_page.dominance.cards.technical.desc')}</p>
             </div>
             <div className="p-8 bg-surface-light rounded-3xl border border-gray-100 hover:shadow-lg transition-all">
               <div className="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center mb-6">
                 <Icon name="description" />
               </div>
-              <h3 className="font-bold text-2xl mb-4 text-secondary">Inhalts-Strategie</h3>
-              <p className="text-slate-600">
-                Inhalte, die für Nutzer geschrieben sind und von Google geliebt werden.
-              </p>
+              <h3 className="font-bold text-2xl mb-4 text-secondary">
+                {t('seo_page.dominance.cards.content.title')}
+              </h3>
+              <p className="text-slate-600">{t('seo_page.dominance.cards.content.desc')}</p>
             </div>
             <div className="p-8 bg-surface-light rounded-3xl border border-gray-100 hover:shadow-lg transition-all">
               <div className="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center mb-6">
                 <Icon name="map" />
               </div>
-              <h3 className="font-bold text-2xl mb-4 text-secondary">Regionale Dominanz</h3>
-              <p className="text-slate-600">Werden Sie zum Platzhirsch in Ihrer Region.</p>
+              <h3 className="font-bold text-2xl mb-4 text-secondary">
+                {t('seo_page.dominance.cards.regional.title')}
+              </h3>
+              <p className="text-slate-600">{t('seo_page.dominance.cards.regional.desc')}</p>
             </div>
           </div>
         </div>

@@ -1,55 +1,59 @@
 {
-    "academy": {
-        "title": "Academy",
-        "subtitle": "Werde zum Experten für digitales Wachstum. Kostenlose Kurse für unsere Community.",
-        "courses": {
-            "5_questions": {
-                "title": "5 Fragen an Ihre Web-Agentur",
-                "duration": "12:45",
-                "tag": "STRATEGIE"
-            },
-            "visitors_customers": {
-                "title": "Aus Besuchern werden Kunden",
-                "duration": "18:20",
-                "tag": "CONVERSION"
-            },
-            "seo_strategy": {
-                "title": "Die Ultimative SEO Strategie",
-                "duration": "14:10",
-                "tag": "SEO"
-            },
-            "google_reviews": {
-                "title": "Google Bewertungen Meistern",
-                "duration": "09:30",
-                "tag": "REPUTATION"
-            },
-            "traffic": {
-                "title": "So kommen Besucher auf deine Seite",
-                "duration": "16:15",
-                "tag": "TRAFFIC"
-            },
-            "website_cost": {
-                "title": "Was kostet eine Website wirklich?",
-                "duration": "11:00",
-                "tag": "BUDGET"
-            },
-            "website_appeal": {
-                "title": "Website: Magnet oder Schreck?",
-                "duration": "08:45",
-                "tag": "DESIGN"
-            }
-        }
-    },
-    "blog": {
-        "title": "Blog & Insights",
-        "subtitle": "Deep Dives, Strategien und News aus der digitalen Welt."
-    },
-    "newsletter": {
-        "title": "Newsletter",
-        "subtitle": "Wöchentliche Tipps direkt in Ihr Postfach."
-    },
-    "whitepapers": {
-        "title": "Whitepapers & Guides",
-        "subtitle": "Detaillierte Guides und Checklisten für Ihren Erfolg."
+  "academy": {
+    "title": "Academy",
+    "subtitle": "Werde zum Experten für digitales Wachstum. Kostenlose Kurse für unsere Community.",
+    "courses": {
+      "5_questions": {
+        "title": "5 Fragen an Ihre Web-Agentur",
+        "duration": "12:45",
+        "tag": "STRATEGIE"
+      },
+      "visitors_customers": {
+        "title": "Aus Besuchern werden Kunden",
+        "duration": "18:20",
+        "tag": "CONVERSION"
+      },
+      "seo_strategy": {
+        "title": "Die Ultimative SEO Strategie",
+        "duration": "14:10",
+        "tag": "SEO"
+      },
+      "google_reviews": {
+        "title": "Google Bewertungen Meistern",
+        "duration": "09:30",
+        "tag": "REPUTATION"
+      },
+      "traffic": {
+        "title": "So kommen Besucher auf deine Seite",
+        "duration": "16:15",
+        "tag": "TRAFFIC"
+      },
+      "website_cost": {
+        "title": "Was kostet eine Website wirklich?",
+        "duration": "11:00",
+        "tag": "BUDGET"
+      },
+      "website_appeal": {
+        "title": "Website: Magnet oder Schreck?",
+        "duration": "08:45",
+        "tag": "DESIGN"
+      }
     }
+  },
+  "blog": {
+    "title": "Blog & Insights",
+    "subtitle": "Deep Dives, Strategien und News aus der digitalen Welt."
+  },
+  "newsletter": {
+    "title": "Der Insider Newsletter",
+    "subtitle": "Tritt 10.000+ Gründern bei und erhalte wöchentlich die besten Strategien für digitales Wachstum direkt in dein Postfach. Kein Spam. Nur Mehrwert.",
+    "emailPlaceholder": "Deine beste E-Mail Adresse",
+    "subscribe": "Anmelden",
+    "privacy": "Wir respektieren deine Privatsphäre. Abmeldung jederzeit möglich."
+  },
+  "whitepapers": {
+    "title": "Ratgeber & Ressourcen",
+    "subtitle": "Kostenlose Anleitungen, Checklisten und Vorlagen für deinen Erfolg.",
+    "download": "Kostenlos herunterladen"
+  }
 }

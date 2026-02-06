@@ -215,5 +215,12 @@
     "ready": "Ready to optimize?",
     "dominate": "Dominate your market.",
     "book_audit": "Book Audit"
+  },
+  "404": {
+    "title": "Page not found",
+    "desc": "Sorry, we couldn't find the page you're looking for. It might have been moved, deleted, or no longer exists.",
+    "home_button": "Back to Home",
+    "config_button": "Configure Project",
+    "help": "Need help?"
   }
 }

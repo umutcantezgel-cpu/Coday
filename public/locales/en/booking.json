@@ -1,0 +1,43 @@
+{
+  "page": {
+    "title": "Start Your Transformation",
+    "subtitle": "Choose a suitable time for your non-binding strategy call. No external tools, no detours."
+  },
+  "calendar": {
+    "step1": {
+      "title": "Select a Date",
+      "next": "Next"
+    },
+    "step2": {
+      "title": "Your Details",
+      "form": {
+        "name": {
+          "placeholder": "Name"
+        },
+        "email": {
+          "placeholder": "Email"
+        },
+        "phone": {
+          "placeholder": "Phone (optional)"
+        },
+        "notes": {
+          "placeholder": "Note (optional)"
+        }
+      },
+      "buttons": {
+        "back": "Back",
+        "submit": "Confirm Appointment",
+        "submitting": "Booking..."
+      }
+    },
+    "success": {
+      "title": "Booking Confirmed!",
+      "message": "Thank you, {{name}}.<br />We have reserved your appointment for {{date}} at {{time}}. A confirmation has been sent to {{email}}.",
+      "new_booking": "New Booking"
+    },
+    "errors": {
+      "generic": "An unknown error occurred",
+      "failed": "Booking failed"
+    }
+  }
+}

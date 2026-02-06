@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { LocalizedNavLink as NavLink } from '../../../../shared/ui/LocalizedLink';
+import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { LocalizedNavLink as NavLink } from '../../../shared/ui/LocalizedLink';
 import CountUp from '../../../shared/ui/CountUp';
 import BlurText from '../../../shared/ui/BlurText';
 import { Input } from '../../../shared/ui/Input';
 import { Icon } from '../../../shared/ui/Icon';
 
 const Ecommerce: React.FC = () => {
+  const { t } = useTranslation('services');
+
   // ROI Calculator State
   const [monthlyVisitors, setMonthlyVisitors] = useState(10000);
   const [conversionRate, setConversionRate] = useState(1.5);
@@ -29,30 +32,29 @@ const Ecommerce: React.FC = () => {
               </div>
               <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-gray-900 mb-6 leading-tight">
                 <BlurText
-                  text="E-Commerce, der"
+                  text={t('ecommerce_page.hero.title_anim')}
                   delay={100}
                   animateBy="words"
                   direction="top"
                   className="block"
                 />
-                <span className="text-primary">verkauft.</span>
+                <span className="text-primary">{t('ecommerce_page.hero.title_static')}</span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 max-w-lg">
-                Wir bauen High-Performance Shops mit Shopify und WooCommerce. Keine Standard-Themes,
-                sondern conversion-optimierte Verkaufsmaschinen.
+                {t('ecommerce_page.hero.description')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <NavLink
                   to="/contact"
                   className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl bg-gray-900 hover:bg-gray-800 shadow-lg hover:shadow-xl transition-all"
                 >
-                  Shop Projekt starten
+                  {t('ecommerce_page.hero.cta_primary')}
                 </NavLink>
                 <NavLink
                   to="/work"
                   className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-gray-900 rounded-xl bg-white border border-gray-200 hover:bg-gray-50 transition-all"
                 >
-                  Referenzen ansehen
+                  {t('ecommerce_page.hero.cta_secondary')}
                 </NavLink>
               </div>
             </div>
@@ -63,28 +65,35 @@ const Ecommerce: React.FC = () => {
                 <div className="space-y-6">
                   <div className="flex justify-between items-center border-b border-gray-100 pb-4">
                     <div>
-                      <div className="text-sm text-gray-500">Conversion Rate</div>
+                      <div className="text-sm text-gray-500">
+                        {t('ecommerce_page.stats.conversion_label')}
+                      </div>
                       <div className="text-2xl font-bold text-gray-900">
                         +<CountUp from={0} to={45} duration={1.5} />%
                       </div>
                     </div>
                     <div className="text-green-500 bg-green-50 px-2 py-1 rounded text-xs font-bold">
-                      ▲ vs. Vorjahr
+                      ▲ {t('ecommerce_page.stats.vs_prev_year')}
                     </div>
                   </div>
                   <div className="flex justify-between items-center border-b border-gray-100 pb-4">
                     <div>
-                      <div className="text-sm text-gray-500">Ladezeit</div>
+                      <div className="text-sm text-gray-500">
+                        {t('ecommerce_page.stats.load_time_label')}
+                      </div>
                       <div className="text-2xl font-bold text-gray-900">
                         <CountUp from={0} to={0.8} duration={1.5} />s
                       </div>
                     </div>
                     <div className="text-green-500 bg-green-50 px-2 py-1 rounded text-xs font-bold">
-                      Core Vitals: <CountUp from={0} to={100} duration={1.5} />
+                      {t('ecommerce_page.stats.core_vitals_label')}:{' '}
+                      <CountUp from={0} to={100} duration={1.5} />
                     </div>
                   </div>
                   <div>
-                    <div className="text-sm text-gray-500 mb-2">Technologie</div>
+                    <div className="text-sm text-gray-500 mb-2">
+                      {t('ecommerce_page.stats.tech_label')}
+                    </div>
                     <div className="flex gap-2">
                       <span className="px-3 py-1 bg-gray-100 rounded-full text-xs font-bold text-gray-600">
                         Shopify Plus
@@ -101,31 +110,30 @@ const Ecommerce: React.FC = () => {
         </div>
       </section>
 
-      {/* ROI Calculator - SIMPLIFIED FOR EVERYONE */}
+      {/* ROI Calculator */}
       <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-24">
         <div className="bg-secondary text-white rounded-3xl p-8 lg:p-12 shadow-2xl overflow-hidden relative">
-          {/* Background Glow */}
           <div className="absolute -top-[20%] -right-[10%] w-[600px] h-[600px] bg-primary/20 rounded-full blur-[100px] pointer-events-none"></div>
 
           <div className="grid lg:grid-cols-2 gap-16 relative z-10">
             <div>
               <span className="text-primary font-bold uppercase tracking-wider text-sm mb-4 block">
-                Umsatz-Rechner
+                {t('ecommerce_page.roi_calculator.label')}
               </span>
               <h2 className="font-display font-bold text-3xl sm:text-4xl mb-6">
-                Wie viel mehr kannst du verdienen?
+                {t('ecommerce_page.roi_calculator.title')}
               </h2>
               <p className="text-gray-400 mb-8 leading-relaxed">
-                Ein schnellerer Shop = mehr Käufer = mehr Umsatz. <br />
+                {t('ecommerce_page.roi_calculator.description')} <br />
                 <strong className="text-white">
-                  Gib deine Zahlen ein und sieh das Ergebnis sofort.
+                  {t('ecommerce_page.roi_calculator.instruction')}
                 </strong>
               </p>
 
               <div className="space-y-6">
                 <div>
                   <label className="text-sm text-gray-400 block mb-2 font-bold">
-                    Wie viele Besucher hast du pro Monat?
+                    {t('ecommerce_page.roi_calculator.visitors_label')}
                   </label>
                   <input
                     type="range"
@@ -137,13 +145,14 @@ const Ecommerce: React.FC = () => {
                     className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-primary"
                   />
                   <div className="text-right font-mono text-primary font-bold mt-1">
-                    {monthlyVisitors.toLocaleString()} Besucher
+                    {monthlyVisitors.toLocaleString()}{' '}
+                    {t('ecommerce_page.roi_calculator.visitors_unit')}
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="text-sm text-gray-400 block mb-2 font-bold">
-                      Von 100 Besuchern kaufen...
+                      {t('ecommerce_page.roi_calculator.conversion_label')}
                     </label>
                     <div className="relative">
                       <Input
@@ -156,13 +165,13 @@ const Ecommerce: React.FC = () => {
                         wrapperClassName="w-full"
                       />
                       <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">
-                        Personen
+                        {t('ecommerce_page.roi_calculator.conversion_unit')}
                       </span>
                     </div>
                   </div>
                   <div>
                     <label className="text-sm text-gray-400 block mb-2 font-bold">
-                      Durchschnittlicher Einkauf
+                      {t('ecommerce_page.roi_calculator.aov_label')}
                     </label>
                     <div className="relative">
                       <Input
@@ -184,18 +193,22 @@ const Ecommerce: React.FC = () => {
 
             <div className="bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-sm flex flex-col justify-center">
               <h3 className="text-xl font-bold mb-6 border-b border-white/10 pb-4">
-                Dein Ergebnis nach der Optimierung
+                {t('ecommerce_page.roi_calculator.result_title')}
               </h3>
 
               <div className="space-y-6">
                 <div className="flex justify-between items-end">
-                  <span className="text-gray-400 text-sm">Mehr Umsatz pro Monat</span>
+                  <span className="text-gray-400 text-sm">
+                    {t('ecommerce_page.roi_calculator.result_monthly')}
+                  </span>
                   <span className="text-2xl font-bold text-green-400 font-mono">
                     +<CountUp from={0} to={Math.round(monthlyIncrease)} duration={1} /> €
                   </span>
                 </div>
                 <div className="flex justify-between items-end">
-                  <span className="text-gray-400 text-sm">Mehr Umsatz pro Jahr</span>
+                  <span className="text-gray-400 text-sm">
+                    {t('ecommerce_page.roi_calculator.result_yearly')}
+                  </span>
                   <span className="text-4xl font-black text-primary font-mono">
                     +<CountUp from={0} to={Math.round(yearlyIncrease)} duration={1.5} /> €
                   </span>
@@ -203,22 +216,21 @@ const Ecommerce: React.FC = () => {
               </div>
 
               <div className="mt-8 pt-6 border-t border-white/10 text-xs text-gray-500 text-center">
-                So funktioniert's: Ein schnellerer Shop überzeugt mehr Besucher zu kaufen (+0.5%)
-                und sie geben im Schnitt mehr aus (+10%).
+                {t('ecommerce_page.roi_calculator.explanation')}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Shopify vs Custom - NEW HIGH COMPLEXITY SECTION */}
+      {/* Comparison */}
       <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-24">
         <div className="text-center mb-16">
           <h2 className="font-display font-bold text-3xl sm:text-4xl text-gray-900 mb-4">
-            Das richtige System wählen
+            {t('ecommerce_page.comparison.title')}
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Wir beraten technologie-agnostisch. Hier ein Vergleich unserer Top-Lösungen.
+            {t('ecommerce_page.comparison.description')}
           </p>
         </div>
 
@@ -229,15 +241,16 @@ const Ecommerce: React.FC = () => {
               <div className="w-12 h-12 bg-[#95BF47]/20 rounded-xl flex items-center justify-center text-[#5E8E3E] font-bold text-xl">
                 <Icon name="shopping_bag" />
               </div>
-              <h3 className="font-bold text-2xl text-gray-900">Shopify Plus</h3>
+              <h3 className="font-bold text-2xl text-gray-900">
+                {t('ecommerce_page.comparison.shopify.title')}
+              </h3>
             </div>
             <ul className="space-y-4 mb-8">
-              {[
-                'Beste Time-to-Market (Start in < 4 Wochen)',
-                'Wartungsfreies Hosting & Sicherheit',
-                'Riesiges App-Ökosystem',
-                'Perfekt für DTC Brands bis 50M € Umsatz',
-              ].map((item, i) => (
+              {(
+                (t('ecommerce_page.comparison.shopify.features', {
+                  returnObjects: true,
+                }) as string[]) || []
+              ).map((item, i) => (
                 <li key={i} className="flex items-start text-gray-600 text-sm">
                   <Icon name="check" className="text-green-500 mr-2 text-lg shrink-0" />
                   {item}
@@ -245,7 +258,7 @@ const Ecommerce: React.FC = () => {
               ))}
             </ul>
             <div className="mt-auto bg-gray-50 p-4 rounded-xl text-center text-sm font-bold text-gray-500">
-              Empfehlung für: Lifestyle Brands, Fashion, Startups
+              {t('ecommerce_page.comparison.shopify.recommendation')}
             </div>
           </div>
 
@@ -255,15 +268,16 @@ const Ecommerce: React.FC = () => {
               <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary font-bold text-xl">
                 <Icon name="code" />
               </div>
-              <h3 className="font-bold text-2xl text-gray-900">Custom Headless</h3>
+              <h3 className="font-bold text-2xl text-gray-900">
+                {t('ecommerce_page.comparison.custom.title')}
+              </h3>
             </div>
             <ul className="space-y-4 mb-8">
-              {[
-                'Maximale Performance (0.5s Load Time)',
-                'Völlige Freiheit im Frontend-Design',
-                'Komplexe Produktkonfiguratoren möglich',
-                'Perfekt für B2B & komplexe Enterprise-Shops',
-              ].map((item, i) => (
+              {(
+                (t('ecommerce_page.comparison.custom.features', {
+                  returnObjects: true,
+                }) as string[]) || []
+              ).map((item, i) => (
                 <li key={i} className="flex items-start text-gray-600 text-sm">
                   <Icon name="check" className="text-green-500 mr-2 text-lg shrink-0" />
                   {item}
@@ -271,7 +285,7 @@ const Ecommerce: React.FC = () => {
               ))}
             </ul>
             <div className="mt-auto bg-gray-50 p-4 rounded-xl text-center text-sm font-bold text-gray-500">
-              Empfehlung für: B2B, Hidden Champions, Individualisten
+              {t('ecommerce_page.comparison.custom.recommendation')}
             </div>
           </div>
         </div>
@@ -282,45 +296,38 @@ const Ecommerce: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="font-display font-bold text-3xl sm:text-4xl text-gray-900 mb-4">
-              Mehr als nur ein Online-Shop
+              {t('ecommerce_page.features.title')}
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Ein Shop muss nicht nur gut aussehen, er muss funktionieren. Wir fokussieren uns auf
-              die Metriken, die zählen.
+              {t('ecommerce_page.features.description')}
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: 'Shopify & Plus',
+                key: 'shopify_plus',
                 icon: 'storefront',
-                desc: 'Skalierbare Enterprise-Lösungen mit Shopify 2.0 und Hydrogen.',
               },
               {
-                title: 'Headless Commerce',
+                key: 'headless',
                 icon: 'hub',
-                desc: 'Maximale Performance und Flexibilität durch entkoppeltes Frontend.',
               },
               {
-                title: 'Performance First',
+                key: 'performance',
                 icon: 'speed',
-                desc: 'Rasante Ladezeiten für besseres Ranking und höhere Conversion.',
               },
               {
-                title: 'ERP Integration',
+                key: 'erp',
                 icon: 'sync_alt',
-                desc: 'Nahtlose Anbindung an SAP, Weclapp, Xentral und Co.',
               },
               {
-                title: 'Custom Checkout',
+                key: 'checkout',
                 icon: 'shopping_bag',
-                desc: 'Optimierter Checkout-Flow für weniger Kaufabbrüche.',
               },
               {
-                title: 'Mobile Optimized',
+                key: 'mobile',
                 icon: 'smartphone',
-                desc: 'Perfect Shopping Experience auf jedem Device.',
               },
             ].map((feature, i) => (
               <div
@@ -330,8 +337,12 @@ const Ecommerce: React.FC = () => {
                 <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
                   <Icon name={feature.icon} />
                 </div>
-                <h3 className="font-bold text-xl text-gray-900 mb-3">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{feature.desc}</p>
+                <h3 className="font-bold text-xl text-gray-900 mb-3">
+                  {t(`ecommerce_page.features.items.${feature.key}.title`)}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {t(`ecommerce_page.features.items.${feature.key}.desc`)}
+                </p>
               </div>
             ))}
           </div>
@@ -344,20 +355,15 @@ const Ecommerce: React.FC = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="font-display font-bold text-3xl sm:text-4xl text-gray-900 mb-6">
-                Unser Tech Stack
+                {t('ecommerce_page.tech_stack.title')}
               </h2>
               <p className="text-gray-600 mb-8 leading-relaxed">
-                Wir setzen auf bewährte Marktführer und modernste Headless-Technologien. Egal ob
-                Shopify für schnellen Go-to-Market oder Custom-Lösungen für komplexe Anforderungen.
+                {t('ecommerce_page.tech_stack.description')}
               </p>
               <ul className="space-y-4">
-                {[
-                  'Shopify / Shopify Plus',
-                  'WooCommerce',
-                  'Next.js Commerce',
-                  'Stripe & PayPal',
-                  'Klaviyo Email Marketing',
-                ].map((item, i) => (
+                {(
+                  (t('ecommerce_page.tech_stack.items', { returnObjects: true }) as string[]) || []
+                ).map((item, i) => (
                   <li key={i} className="flex items-center text-gray-700 font-medium">
                     <Icon name="check_circle" className="text-primary mr-3" />
                     {item}
@@ -387,16 +393,16 @@ const Ecommerce: React.FC = () => {
       <section className="py-24">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="font-display font-bold text-3xl sm:text-4xl text-gray-900 mb-6">
-            Bereit zu skalieren?
+            {t('ecommerce_page.cta_section.title')}
           </h2>
           <p className="text-xl text-gray-600 mb-8">
-            Lassen Sie uns Ihren Online-Shop auf das nächste Level heben.
+            {t('ecommerce_page.cta_section.description')}
           </p>
           <NavLink
             to="/contact"
             className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl bg-primary hover:bg-primary-dark shadow-lg hover:shadow-xl transition-all"
           >
-            Jetzt Beratung anfragen
+            {t('ecommerce_page.cta_section.button')}
           </NavLink>
         </div>
       </section>

@@ -11,6 +11,7 @@ import {
   brandingFeatureMapping,
 } from '../../data/serviceImages';
 import { Icon } from '../../shared/ui/Icon';
+import { useTranslation } from 'react-i18next';
 
 const getServiceImage = (category?: string, slug?: string) => {
   if (!category || !slug) return null;
@@ -30,6 +31,8 @@ const ServiceDetail: React.FC = () => {
   const { category, slug } = useParams<{ category: string; slug: string }>();
 
   // Find the service data based on URL params
+  const { t } = useTranslation('services');
+  const { t: tCommon } = useTranslation('common');
   const serviceCategory = servicesData[category || ''];
   const service = serviceCategory ? serviceCategory[slug || ''] : null;
 
@@ -41,9 +44,11 @@ const ServiceDetail: React.FC = () => {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background-light">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">Service nicht gefunden</h1>
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">
+            {t('generic_detail.not_found.title')}
+          </h1>
           <NavLink to="/services" className="text-primary hover:underline">
-            Zurück zur Übersicht
+            {t('generic_detail.not_found.link')}
           </NavLink>
         </div>
       </div>
@@ -71,7 +76,7 @@ const ServiceDetail: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
         <div className="flex items-center text-sm text-gray-500">
           <NavLink to="/services" className="hover:text-primary transition-colors">
-            Services
+            {tCommon('nav.services.label')}
           </NavLink>
           <span className="mx-2">/</span>
           <NavLink
@@ -103,7 +108,7 @@ const ServiceDetail: React.FC = () => {
                 to="/contact"
                 className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl bg-gray-900 hover:bg-gray-800 shadow-lg hover:shadow-xl transition-all match-hover-translate-y-1"
               >
-                Beratungstermin vereinbaren
+                {t('generic_detail.hero.consulting_btn')}
                 <Icon name="calendar_month" className="ml-2" />
               </NavLink>
             </div>
@@ -113,7 +118,9 @@ const ServiceDetail: React.FC = () => {
             {/* Abstract Visual */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full blur-3xl opacity-60"></div>
             <div className="relative glass-card p-8 rounded-3xl border border-white/50 bg-white/60 backdrop-blur-xl shadow-glass">
-              <h3 className="font-display font-bold text-2xl text-gray-900 mb-6">Ihre Vorteile</h3>
+              <h3 className="font-display font-bold text-2xl text-gray-900 mb-6">
+                {t('generic_detail.hero.benefits_title')}
+              </h3>
               <ul className="space-y-4">
                 {service.benefits.map((benefit, i) => (
                   <li key={i} className="flex items-start">
@@ -131,7 +138,9 @@ const ServiceDetail: React.FC = () => {
       {!service.processSteps && (
         <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-24 lg:hidden">
           <div className="glass-card p-8 rounded-2xl bg-white shadow-aurora">
-            <h3 className="font-display font-bold text-2xl text-gray-900 mb-6">Ihre Vorteile</h3>
+            <h3 className="font-display font-bold text-2xl text-gray-900 mb-6">
+              {t('generic_detail.hero.benefits_title')}
+            </h3>
             <ul className="space-y-4">
               {service.benefits.map((benefit, i) => (
                 <li key={i} className="flex items-start">
@@ -149,7 +158,7 @@ const ServiceDetail: React.FC = () => {
         <section className="py-12 border-y border-gray-100 bg-white/50 mb-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-8">
-              Vertraut von führenden Unternehmen
+              {t('generic_detail.trust.title')}
             </p>
             <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
               {logos.map((logo, index) => (
@@ -201,11 +210,12 @@ const ServiceDetail: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-20">
               <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
-                Unser Prozess
+                {t('generic_detail.process.label')}
               </span>
-              <h2 className="font-display font-bold text-3xl sm:text-5xl mb-6">
-                In 5 Schritten zu <br /> messbarem Erfolg.
-              </h2>
+              <h2
+                className="font-display font-bold text-3xl sm:text-5xl mb-6"
+                dangerouslySetInnerHTML={{ __html: t('generic_detail.process.title') }}
+              ></h2>
             </div>
 
             <div className="relative">
@@ -238,21 +248,20 @@ const ServiceDetail: React.FC = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
-                Ihre Vorteile
+                {t('generic_detail.advantages.label')}
               </span>
-              <h2 className="font-display font-bold text-3xl sm:text-4xl text-gray-900 mb-6">
-                Wir denken in ROAS, <br /> nicht in Klicks.
-              </h2>
+              <h2
+                className="font-display font-bold text-3xl sm:text-4xl text-gray-900 mb-6"
+                dangerouslySetInnerHTML={{ __html: t('generic_detail.advantages.title') }}
+              ></h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Unsere Kunden entscheiden sich nicht für bunte Slides, sondern für ein Team, das
-                Marketing als Investition versteht. Wir denken in Ergebnissen, planen mit klaren
-                Zielen und liefern transparent.
+                {t('generic_detail.advantages.desc')}
               </p>
               <NavLink
                 to="/contact"
                 className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl bg-gray-900 hover:bg-gray-800 shadow-lg hover:shadow-xl transition-all"
               >
-                Kontakt aufnehmen
+                {t('generic_detail.advantages.contact_btn')}
               </NavLink>
             </div>
             <div className="grid sm:grid-cols-2 gap-6">
@@ -277,10 +286,10 @@ const ServiceDetail: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
-                Was unsere Kunden sagen
+                {t('generic_detail.testimonials.label')}
               </span>
               <h2 className="font-display font-bold text-3xl sm:text-4xl text-gray-900 mb-6">
-                Ergebnisse, die überzeugen.
+                {t('generic_detail.testimonials.title')}
               </h2>
             </div>
             <div className="grid md:grid-cols-3 gap-8">
@@ -313,11 +322,9 @@ const ServiceDetail: React.FC = () => {
         <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-32">
           <div className="text-center mb-12">
             <h2 className="font-display font-bold text-3xl text-gray-900 mb-4">
-              Häufige Fragen (FAQ)
+              {t('generic_detail.faq.title')}
             </h2>
-            <p className="text-gray-600">
-              Wir arbeiten transparent. Hier sind Antworten auf die wichtigsten Fragen.
-            </p>
+            <p className="text-gray-600">{t('generic_detail.faq.desc')}</p>
           </div>
           <div className="space-y-4">
             {service.faqs.map((faq, index) => (
@@ -334,16 +341,16 @@ const ServiceDetail: React.FC = () => {
 
           <div className="relative z-10">
             <h2 className="font-display font-bold text-3xl text-white mb-6">
-              Starten wir Ihr Projekt.
+              {t('generic_detail.final_cta.title')}
             </h2>
             <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
-              Keine Standardlösungen. Wir entwickeln genau das, was Sie für Ihren Erfolg brauchen.
+              {t('generic_detail.final_cta.desc')}
             </p>
             <NavLink
               to="/contact"
               className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-gray-900 rounded-xl bg-white hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
             >
-              Jetzt anfragen
+              {t('generic_detail.final_cta.button')}
               <Icon name="rocket_launch" className="ml-2" />
             </NavLink>
           </div>

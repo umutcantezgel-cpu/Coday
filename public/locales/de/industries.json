@@ -1,71 +1,150 @@
 {
-    "common": {
-        "cta_analysis": "Kostenlose Analyse",
-        "cta_contact": "Kontakt aufnehmen",
-        "cta_more": "Mehr erfahren",
-        "features": {
-            "google_maps": "Google Maps Optimierung",
-            "regional_pages": "Regionale Landingpages",
-            "review_management": "Automatisches Bewertungs-Management"
-        }
-    },
-    "handwerk": {
-        "hero": {
-            "label": "Digitalisierung für Handwerker",
-            "title_1": "Mehr Aufträge.",
-            "title_2": "Weniger Büro.",
-            "description": "Wir helfen Dachdeckern, SHK-Betrieben und Elektrikern dabei, die richtigen Mitarbeiter zu finden und Wunschkunden automatisch vorzuqualifizieren."
-        },
-        "recruiting": {
-            "label": "Mitarbeitergewinnung",
-            "title": "Fachkräfte finden.",
-            "subtitle": "Ohne Personalvermittler.",
-            "description": "Gute Handwerker sind nicht arbeitslos. Sie sind auf Social Media. Wir holen sie dort ab, wo sie ihre Freizeit verbringen."
-        },
-        "local_seo": {
-            "label": "Lokale Sichtbarkeit",
-            "title": "Die Nr. 1 in Ihrer Region.",
-            "description": "Wenn jemand in Ihrer Stadt \"Dachdecker\" oder \"Badsanierung\" googelt, müssen Sie ganz oben stehen. Nicht irgendwo auf Seite 2."
-        }
-    },
-    "gastronomie": {
-        "hero": {
-            "label": "Digitalisierung für Gastronomie",
-            "title_1": "Mehr Gäste.",
-            "title_2": "Weniger Stress.",
-            "description": "Wir helfen Restaurants, Cafés und Hotels, ihre Online-Präsenz zu optimieren und Reservierungen zu automatisieren."
-        }
-    },
-    "immobilien": {
-        "hero": {
-            "label": "Digitalisierung für Immobilien",
-            "title_1": "Mehr Leads.",
-            "title_2": "Bessere Objekte.",
-            "description": "Wir helfen Maklern und Bauträgern, qualifizierte Käufer und Verkäufer digital anzuziehen."
-        }
-    },
-    "gesundheit": {
-        "hero": {
-            "label": "Digitalisierung für Gesundheit",
-            "title_1": "Mehr Patienten.",
-            "title_2": "Weniger Verwaltung.",
-            "description": "Wir helfen Praxen und Kliniken, ihre digitale Präsenz zu stärken und Terminbuchungen zu automatisieren."
-        }
-    },
-    "dienstleistung": {
-        "hero": {
-            "label": "Digitalisierung für Dienstleister",
-            "title_1": "Mehr Kunden.",
-            "title_2": "Weniger Akquise.",
-            "description": "Wir helfen Beratern, Agenturen und Freelancern, ihre Expertise online zu präsentieren und Kunden anzuziehen."
-        }
-    },
-    "retail": {
-        "hero": {
-            "label": "Digitalisierung für Retail",
-            "title_1": "Mehr Umsatz.",
-            "title_2": "Online und Offline.",
-            "description": "Wir helfen Einzelhändlern, ihre physische und digitale Präsenz zu verbinden."
-        }
+  "common": {
+    "cta_analysis": "Kostenlose Analyse",
+    "cta_contact": "Kontakt aufnehmen",
+    "cta_more": "Mehr erfahren",
+    "features": {
+      "google_maps": "Google Maps Optimierung",
+      "regional_pages": "Regionale Landingpages",
+      "review_management": "Automatisches Bewertungs-Management"
     }
+  },
+  "handwerk": {
+    "hero": {
+      "label": "Digitalisierung für Handwerker",
+      "title_1": "Mehr Aufträge.",
+      "title_2": "Weniger Büro.",
+      "description": "Wir helfen Dachdeckern, SHK-Betrieben und Elektrikern dabei, die richtigen Mitarbeiter zu finden und Wunschkunden automatisch vorzuqualifizieren."
+    },
+    "recruiting": {
+      "label": "Mitarbeitergewinnung",
+      "title": "Fachkräfte finden.",
+      "subtitle": "Ohne Personalvermittler.",
+      "description": "Gute Handwerker sind nicht arbeitslos. Sie sind auf Social Media. Wir holen sie dort ab, wo sie ihre Freizeit verbringen."
+    },
+    "local_seo": {
+      "label": "Lokale Sichtbarkeit",
+      "title": "Die Nr. 1 in Ihrer Region.",
+      "description": "Wenn jemand in Ihrer Stadt \"Dachdecker\" oder \"Badsanierung\" googelt, müssen Sie ganz oben stehen. Nicht irgendwo auf Seite 2."
+    }
+  },
+  "gastronomie": {
+    "hero": {
+      "label": "Digitalisierung für Gastronomie",
+      "title_1": "Mehr Gäste.",
+      "title_2": "Weniger Stress.",
+      "description": "Wir helfen Restaurants, Cafés und Hotels, ihre Online-Präsenz zu optimieren und Reservierungen zu automatisieren."
+    },
+    "features": {
+      "hero_tags": "Volle Tische.\nHöherer Umsatz.",
+      "hero_desc": "Wir verwandeln Ihre Webseite in eine Buchungsmaschine. Reduzieren Sie No-Shows und sparen Sie sich die hohen Provisionen der Lieferdienste.",
+      "cta_demo": "Demo-Termin vereinbaren",
+      "section_title": "Das digitale Gastronomie-System",
+      "section_subtitle": "Alles, was Sie für den modernen Betrieb brauchen.",
+      "grid": {
+        "menu": {
+          "title": "Digitale Speisekarte",
+          "desc": "Entlasten Sie Ihren Service. Gäste bestellen und zahlen direkt am Tisch per Smartphone."
+        },
+        "shop": {
+          "title": "Eigener Liefer-Shop",
+          "desc": "Schluss mit 30% Provision an Lieferando. Behalten Sie Ihre Marge."
+        },
+        "events": {
+          "title": "Event-Vermarktung",
+          "desc": "Automatisierte Seiten für Weihnachtsfeiern und Hochzeiten."
+        }
+      }
+    }
+  },
+  "immobilien": {
+    "hero": {
+      "label": "Digitalisierung für Immobilien",
+      "title_1": "Mehr Leads.",
+      "title_2": "Bessere Objekte.",
+      "description": "Wir helfen Maklern und Bauträgern, qualifizierte Käufer und Verkäufer digital anzuziehen."
+    },
+    "features": {
+      "virtual_tour": {
+        "title": "Immobilien verkaufen,\nbevor Sie besichtigen.",
+        "subtitle": "Sparen Sie sich den Besichtigungstourismus. Mit digitalen Exposés und virtuellen Touren filtern Sie Interessenten automatisch.",
+        "cta_demo": "Demo anfordern",
+        "disclaimer": "*Interaktives Beispiel einer 360° Tour Integration"
+      },
+      "expose": {
+        "label": "Marketing der Zukunft",
+        "title": "Das Ende des PDF-Anhangs.",
+        "description": "PDFs sind statisch. Web-Exposés leben. Begeistern Sie Eigentümer schon im Einkaufsgespräch mit modernster Technologie."
+      },
+      "grid": {
+        "staging": {
+          "title": "Virtuelles Staging",
+          "desc": "Leere Räume digital möblieren. Emotionen wecken ohne Möbel schleppen."
+        },
+        "login": {
+          "title": "Eigentümer-Login",
+          "desc": "Volle Transparenz für Ihre Auftraggeber. Live-Status aller Aktivitäten."
+        },
+        "followup": {
+          "title": "Autom. Nachfassen",
+          "desc": "E-Mail-Sequenzen für Interessenten, die noch nicht bereit sind."
+        }
+      }
+    }
+  },
+  "gesundheit": {
+    "hero": {
+      "label": "Digitalisierung für Gesundheit",
+      "title_1": "Mehr Patienten.",
+      "title_2": "Weniger Verwaltung.",
+      "description": "Wir helfen Praxen und Kliniken, ihre digitale Präsenz zu stärken und Terminbuchungen zu automatisieren."
+    },
+    "features": {
+      "hero_tags": "Weniger Verwaltung.\nMehr Zeit für Patienten.",
+      "hero_desc": "Entlasten Sie Ihr Praxis-Team durch digitale Anamnese, Online-Termine und automatisiertes Recall-Management. DSGVO-konform.",
+      "cta_analysis": "Praxis-Analyse starten",
+      "trust_title": "Sicherheit geht vor",
+      "trust_desc": "Medizinische Daten sind sensibel. Unsere Lösungen sind \"Made in Germany\" und rechtssicher."
+    }
+  },
+  "dienstleistung": {
+    "hero": {
+      "label": "Digitalisierung für Dienstleister",
+      "title_1": "Mehr Kunden.",
+      "title_2": "Weniger Akquise.",
+      "description": "Wir helfen Beratern, Agenturen und Freelancern, ihre Expertise online zu präsentieren und Kunden anzuziehen."
+    },
+    "features": {
+      "hero_tags": "Schluss mit Kaltakquise.\nSystematischer Erfolg.",
+      "hero_desc": "Wir bauen digitale Vertriebsmaschinen für Berater, Agenturen und Dienstleister. Von der ersten Anzeige bis zum Termin im Kalender – vollautomatisiert.",
+      "cta_funnel": "Funnel-Analyse anfordern",
+      "grid": {
+        "qual": {
+          "title": "Vorqualifizierung",
+          "desc": "Keine Zeitverschwendung mehr mit Kunden, die sich \"nur mal umschauen\" wollen."
+        },
+        "nurture": {
+          "title": "Autom. Pflege",
+          "desc": "Senden Sie relevante Fallstudien per E-Mail, bevor Sie überhaupt zum Hörer greifen."
+        },
+        "roi": {
+          "title": "Messbarer Erfolg",
+          "desc": "Sehen Sie genau, wie viel Umsatz jeder Euro Werbebudget gebracht hat."
+        }
+      }
+    }
+  },
+  "retail": {
+    "hero": {
+      "label": "Digitalisierung für Retail",
+      "title_1": "Mehr Umsatz.",
+      "title_2": "Online und Offline.",
+      "description": "Wir helfen Einzelhändlern, ihre physische und digitale Präsenz zu verbinden."
+    },
+    "features": {
+      "hero_tags": "Online & Offline.\nEndlich vereint.",
+      "hero_desc": "Verbinden Sie Ihre Filialen mit Ihrem Online-Shop. Echtzeit-Bestände, Click & Collect und ein Kundenerlebnis ohne Brüche.",
+      "cta_pos": "Kassen-Integration prüfen"
+    }
+  }
 }

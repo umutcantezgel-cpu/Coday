@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import BlurText from '../../shared/ui/BlurText';
 import GradientText from '../../shared/ui/GradientText';
 import CountUp from '../../shared/ui/CountUp';
@@ -7,17 +8,19 @@ import LostRevenueCalc from '../../features/performance/LostRevenueCalc';
 import CoreWebVitalsChart from '../../features/performance/CoreWebVitalsChart';
 
 const Performance: React.FC = () => {
+  const { t } = useTranslation('services');
+
   return (
     <div className="bg-background-light min-h-screen">
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-4 overflow-hidden">
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
-            Geschwindigkeits-Optimierung
+            {t('performance_page.hero.badge')}
           </span>
           <h1 className="font-display font-black text-5xl sm:text-7xl lg:text-8xl text-secondary mb-8 tracking-tight">
             <BlurText
-              text="Geschwindigkeit ist"
+              text={t('performance_page.hero.title_prefix')}
               delay={100}
               animateBy="words"
               direction="top"
@@ -28,12 +31,11 @@ const Performance: React.FC = () => {
               animationSpeed={3}
               className="inline-block"
             >
-              Umsatz.
+              {t('performance_page.hero.title_suffix')}
             </GradientText>
           </h1>
           <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto mb-12">
-            Jede Millisekunde zählt. Wir optimieren Ihre Ladezeiten für maximale Kundenabschlüsse
-            und Benutzerfreundlichkeit.
+            {t('performance_page.hero.description')}
           </p>
         </div>
       </section>
@@ -46,15 +48,15 @@ const Performance: React.FC = () => {
       <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-24">
         <div className="text-center mb-16">
           <span className="text-primary font-bold uppercase tracking-wider text-sm mb-4 block">
-            Google Ladezeit-Werte
+            {t('performance_page.google_values.badge')}
           </span>
           <h2 className="font-display font-bold text-3xl sm:text-4xl text-secondary mb-4">
-            Rankingfaktor Nr.1: Benutzerfreundlichkeit
+            {t('performance_page.google_values.title')}
           </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Google misst nicht nur Schlüsselwörter, sondern wie sich Ihre Seite <i>anfühlt</i>. Wir
-            optimieren alle 3 Ladezeit-Werte für beste Bewertungen.
-          </p>
+          <p
+            className="text-lg text-slate-600 max-w-2xl mx-auto"
+            dangerouslySetInnerHTML={{ __html: t('performance_page.google_values.description') }}
+          />
         </div>
         <CoreWebVitalsChart />
       </section>
@@ -71,24 +73,28 @@ const Performance: React.FC = () => {
               <CountUp from={0} to={99} duration={2} />%
             </div>
             <div className="uppercase tracking-widest text-sm text-gray-400">
-              Google Seitenbewertung
+              {t('performance_page.metrics.score')}
             </div>
           </div>
           <div>
             <div className="text-5xl font-black text-primary mb-2">
               <CountUp from={0} to={0.5} duration={2} />s
             </div>
-            <div className="uppercase tracking-widest text-sm text-gray-400">Ladezeit</div>
+            <div className="uppercase tracking-widest text-sm text-gray-400">
+              {t('performance_page.metrics.load_time')}
+            </div>
           </div>
           <div>
             <div className="text-5xl font-black text-primary mb-2">0</div>
             <div className="uppercase tracking-widest text-sm text-gray-400">
-              Visuelle Verschiebung
+              {t('performance_page.metrics.shift')}
             </div>
           </div>
           <div>
             <div className="text-5xl font-black text-primary mb-2">100%</div>
-            <div className="uppercase tracking-widest text-sm text-gray-400">Öko-Webspace</div>
+            <div className="uppercase tracking-widest text-sm text-gray-400">
+              {t('performance_page.metrics.eco')}
+            </div>
           </div>
         </div>
       </section>

@@ -41,3 +41,20 @@ videos/
 # Build Artifacts
 .vercel
 .netlify
+
+# Debug & Report Files
+head_debug.html
+lint_report.txt
+lint_output*.txt
+lint_final.txt
+typecheck_report.txt
+*.report.txt
+*.report.html
+mobile-audit-results/
+public/sw.js
+
+# Playwright
+playwright-report/
+test-results/
+blob-report/
+playwright/.cache/

@@ -1,6 +1,16 @@
 import React from 'react';
 import { LocalizedNavLink as NavLink, LocalizedLink as Link } from '../shared/ui/LocalizedLink';
-import { ArrowRight, Rocket } from 'lucide-react';
+import {
+  ArrowRight,
+  Rocket,
+  Construction,
+  Building2 as Apartment,
+  ShoppingCart,
+  Lightbulb,
+  HeartPulse as HealthAndSafety,
+  User,
+} from 'lucide-react';
+import { OptimizedIcon } from '../shared/ui/OptimizedIcon';
 import { useTranslation } from 'react-i18next';
 import { OptimizedImage } from '../shared/ui/OptimizedImage';
 import AgencyComparisonTable from '../features/analyzer/ui/AgencyComparisonTable';
@@ -17,7 +27,6 @@ import LogoLoop from '../shared/ui/LogoLoop';
 import type { LogoItem } from '../shared/ui/LogoLoop';
 import { cn } from '../shared/lib/utils';
 import { baseButtonStyles, buttonVariants, buttonSizes } from '../shared/ui/Button';
-import { Icon } from '../shared/ui/Icon';
 
 const Home: React.FC = () => {
   const { t } = useTranslation(['home', 'common']);
@@ -34,7 +43,7 @@ const Home: React.FC = () => {
           <div className="inline-block mb-6 animate-fade-in-up">
             <span className="bg-white/80 backdrop-blur-md border border-white/50 text-secondary text-sm font-bold px-4 py-1.5 rounded-full shadow-lg flex items-center gap-2">
               <span className="bg-primary text-white rounded-full p-0.5">
-                <Icon name="rocket_launch" className="text-[14px]" />
+                <OptimizedIcon icon={Rocket} size="sm" className="w-[14px] h-[14px]" />
               </span>
               {t('hero.badge')}
             </span>
@@ -196,7 +205,7 @@ const Home: React.FC = () => {
             <Link to="/services/industries/handwerk" className="block h-full">
               <BentoCard effect="tilt" tiltMax={12} className="p-6 text-start h-full">
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
-                  <Icon name="construction" size="lg" className="text-primary" />
+                  <OptimizedIcon icon={Construction} size="lg" className="text-primary" />
                 </div>
                 <h3 className="font-bold text-lg text-secondary mb-2">
                   {t('industries.card_craft.title')}
@@ -211,7 +220,7 @@ const Home: React.FC = () => {
                 className="p-6 text-start h-full"
               >
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
-                  <Icon name="apartment" size="lg" className="text-primary" />
+                  <OptimizedIcon icon={Apartment} size="lg" className="text-primary" />
                 </div>
                 <h3 className="font-bold text-lg text-secondary mb-2">
                   {t('industries.card_realestate.title')}
@@ -226,7 +235,7 @@ const Home: React.FC = () => {
                 className="p-6 text-start h-full"
               >
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
-                  <Icon name="shopping_cart" size="lg" className="text-primary" />
+                  <OptimizedIcon icon={ShoppingCart} size="lg" className="text-primary" />
                 </div>
                 <h3 className="font-bold text-lg text-secondary mb-2">
                   {t('industries.card_shop.title')}
@@ -237,7 +246,7 @@ const Home: React.FC = () => {
             <Link to="/services/industries/dienstleistung" className="block h-full">
               <BentoCard effect="tilt" tiltMax={12} className="p-6 text-start h-full">
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
-                  <Icon name="lightbulb" size="lg" className="text-primary" />
+                  <OptimizedIcon icon={Lightbulb} size="lg" className="text-primary" />
                 </div>
                 <h3 className="font-bold text-lg text-secondary mb-2">
                   {t('industries.card_consulting.title')}
@@ -252,7 +261,7 @@ const Home: React.FC = () => {
                 className="p-6 text-start h-full"
               >
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
-                  <Icon name="health_and_safety" size="lg" className="text-primary" />
+                  <OptimizedIcon icon={HealthAndSafety} size="lg" className="text-primary" />
                 </div>
                 <h3 className="font-bold text-lg text-secondary mb-2">
                   {t('industries.card_health.title')}
@@ -328,7 +337,7 @@ const Home: React.FC = () => {
                       key={i}
                       className="w-12 h-12 rounded-full bg-surface-dark border-2 border-white flex items-center justify-center text-xs font-bold text-secondary shadow-sm overflow-hidden"
                     >
-                      <Icon name="user" className="text-white w-6 h-6" />
+                      <OptimizedIcon icon={User} className="text-white w-6 h-6" />
                     </div>
                   ))}
                 </div>

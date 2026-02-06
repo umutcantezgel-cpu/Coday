@@ -1,8 +1,11 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { LocalizedNavLink as NavLink } from '../../../shared/ui/LocalizedLink';
 import { Icon } from '@/shared/ui/Icon';
 
 const BrandIdentity: React.FC = () => {
+  const { t } = useTranslation('services');
+
   return (
     <div className="bg-background-light font-sans text-text-light">
       <section className="relative pt-32 pb-20 overflow-hidden">
@@ -13,18 +16,18 @@ const BrandIdentity: React.FC = () => {
                 <Icon name="palette" className="text-3xl" />
               </div>
               <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-gray-900 mb-6 leading-tight">
-                Brand Identity <span className="text-primary">für B2B.</span>
+                {t('brand_identity_page.hero.title_prefix')}{' '}
+                <span className="text-primary">{t('brand_identity_page.hero.title_suffix')}</span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 max-w-lg">
-                Marken, im Gedächtnis bleiben. Wir entwickeln Corporate Identities, Logos und
-                Designsprachen speziell für digitale Touchpoints.
+                {t('brand_identity_page.hero.description')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <NavLink
                   to="/contact"
                   className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl bg-gray-900 hover:bg-gray-800 shadow-lg hover:shadow-xl transition-all"
                 >
-                  Branding anfragen
+                  {t('brand_identity_page.hero.cta')}
                 </NavLink>
               </div>
             </div>
@@ -42,27 +45,20 @@ const BrandIdentity: React.FC = () => {
 
       <section className="py-24 bg-white text-center">
         <div className="max-w-3xl mx-auto px-4">
-          <h2 className="font-display font-bold text-3xl mb-8">Digital-First Branding</h2>
+          <h2 className="font-display font-bold text-3xl mb-8">
+            {t('brand_identity_page.digital_branding.title')}
+          </h2>
           <p className="text-gray-600 mb-12">
-            Eine Marke muss heute vor allem auf dem Smartphone funktionieren. Wir denken nicht in
-            Briefpapier, sondern in Pixeln.
+            {t('brand_identity_page.digital_branding.description')}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <span className="px-6 py-2 bg-gray-100 rounded-full font-bold text-gray-700">
-              Logo Design
-            </span>
-            <span className="px-6 py-2 bg-gray-100 rounded-full font-bold text-gray-700">
-              Typography
-            </span>
-            <span className="px-6 py-2 bg-gray-100 rounded-full font-bold text-gray-700">
-              Color Palette
-            </span>
-            <span className="px-6 py-2 bg-gray-100 rounded-full font-bold text-gray-700">
-              Tone of Voice
-            </span>
-            <span className="px-6 py-2 bg-gray-100 rounded-full font-bold text-gray-700">
-              Social Assets
-            </span>
+            {(
+              t('brand_identity_page.digital_branding.tags', { returnObjects: true }) as string[]
+            ).map((tag, i) => (
+              <span key={i} className="px-6 py-2 bg-gray-100 rounded-full font-bold text-gray-700">
+                {tag}
+              </span>
+            ))}
           </div>
         </div>
       </section>

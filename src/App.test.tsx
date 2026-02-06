@@ -4,9 +4,10 @@ import App from './App';
 
 describe('App', () => {
   it('renders without crashing', () => {
-    // Basic smoke test - strictly checks if App component mounts
-    // Note: App contains routing and suspense, so shallow render check is tricky without wrapper
-    // For now, we just want to ensure Vitest environment runs
-    expect(true).toBe(true);
+    // We can't easily test the full App without mocking all providers (Supabase, etc.)
+    // But we can verify the test environment works
+    const { container } = render(<div>Test Environment Ready</div>);
+    expect(container).toBeTruthy();
+    expect(container.textContent).toContain('Test Environment Ready');
   });
 });

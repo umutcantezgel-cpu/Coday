@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { LocalizedNavLink as NavLink } from '../../../../shared/ui/LocalizedLink';
+import { useTranslation } from 'react-i18next';
+import { LocalizedNavLink as NavLink } from '../../../shared/ui/LocalizedLink';
 import CountUp from '../../../shared/ui/CountUp';
 import BlurText from '../../../shared/ui/BlurText';
 import { OptimizedImage } from '../../../shared/ui/OptimizedImage';
@@ -7,6 +8,7 @@ import { appDevImages } from '../../../data/serviceImages';
 import { Icon } from '../../../shared/ui/Icon';
 
 const WebApps: React.FC = () => {
+  const { t } = useTranslation('services');
   const [scrolled, setScrolled] = useState(0);
 
   useEffect(() => {
@@ -29,24 +31,23 @@ const WebApps: React.FC = () => {
               </div>
               <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-gray-900 mb-6 leading-tight">
                 <BlurText
-                  text="SaaS &"
+                  text={t('web_apps_page.hero.title_prefix')}
                   delay={100}
                   animateBy="words"
                   direction="top"
                   className="inline"
                 />{' '}
-                <span className="text-primary">Individuelle Software.</span>
+                <span className="text-primary">{t('web_apps_page.hero.title_suffix')}</span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 max-w-lg">
-                Wir entwickeln komplexe Webanwendungen, Dashboards und SaaS-Plattformen. Skalierbar,
-                sicher und user-freundlich.
+                {t('web_apps_page.hero.description')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <NavLink
                   to="/contact"
                   className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl bg-gray-900 hover:bg-gray-800 shadow-lg hover:shadow-xl transition-all"
                 >
-                  Projekt besprechen
+                  {t('web_apps_page.hero.cta')}
                 </NavLink>
               </div>
             </div>
@@ -80,14 +81,13 @@ const WebApps: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16 text-white">
             <span className="text-primary font-bold uppercase tracking-wider text-sm mb-4 block">
-              System Integration
+              {t('web_apps_page.integration_network.label')}
             </span>
             <h2 className="font-display font-bold text-3xl sm:text-4xl mb-6">
-              Wir verbinden Ihre Welt.
+              {t('web_apps_page.integration_network.title')}
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-              Keine Insel-Lösungen. Unsere Software spricht fließend mit Ihrer bestehenden
-              Infrastruktur. CRM, ERP, Payment oder AI.
+              {t('web_apps_page.integration_network.description')}
             </p>
           </div>
 
@@ -159,20 +159,16 @@ const WebApps: React.FC = () => {
         <div className="bg-white rounded-3xl border border-gray-200 shadow-xl p-8 lg:p-12">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="font-display font-bold text-3xl text-gray-900 mb-6">
-                Sicherheit ist kein Feature, <br /> sondern die Basis.
+              <h2 className="font-display font-bold text-3xl text-gray-900 mb-6 whitespace-pre-line">
+                {t('web_apps_page.security.title')}
               </h2>
               <p className="text-gray-600 leading-relaxed mb-8">
-                Individuelle Software verarbeitet oft sensible Daten. Wir garantieren höchste
-                Sicherheitsstandards und Datenschutzkonformität von Tag 1 an.
+                {t('web_apps_page.security.description')}
               </p>
               <ul className="space-y-4">
-                {[
-                  'DSGVO / GDPR Konformität by Design',
-                  'ISO 27001 zertifizierte Hosting-Partner (AWS/Vercel)',
-                  'End-to-End Verschlüsselung sensibler Daten',
-                  'Regelmäßige Penetration Tests',
-                ].map((item, i) => (
+                {(
+                  (t('web_apps_page.security.items', { returnObjects: true }) as string[]) || []
+                ).map((item, i) => (
                   <li key={i} className="flex items-center text-gray-700 font-medium">
                     <div className="w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center mr-3 shrink-0">
                       <Icon name="check" className="text-sm font-bold" />
@@ -184,17 +180,19 @@ const WebApps: React.FC = () => {
             </div>
             <div className="bg-gray-50 rounded-2xl p-8 grid grid-cols-2 gap-4">
               {[
-                { label: 'GDPR Ready', icon: 'verified_user', color: 'text-blue-600' },
-                { label: 'SSL Secure', icon: 'lock', color: 'text-green-600' },
-                { label: '99.9% Uptime', icon: 'cloud_done', color: 'text-purple-600' },
-                { label: '24/7 Support', icon: 'support_agent', color: 'text-orange-600' },
+                { key: 'gdpr', icon: 'verified_user', color: 'text-blue-600' },
+                { key: 'ssl', icon: 'lock', color: 'text-green-600' },
+                { key: 'uptime', icon: 'cloud_done', color: 'text-purple-600' },
+                { key: 'support', icon: 'support_agent', color: 'text-orange-600' },
               ].map((badge, i) => (
                 <div
                   key={i}
                   className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center justify-center text-center hover:scale-105 transition-transform"
                 >
                   <Icon name={badge.icon} className={`text-4xl mb-3 ${badge.color}`} />
-                  <span className="font-bold text-gray-900">{badge.label}</span>
+                  <span className="font-bold text-gray-900">
+                    {t(`web_apps_page.security.badges.${badge.key}`)}
+                  </span>
                 </div>
               ))}
             </div>
@@ -207,44 +205,38 @@ const WebApps: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="font-display font-bold text-3xl sm:text-4xl text-gray-900 mb-4">
-              Technologie, die mitwächst
+              {t('web_apps_page.features.title')}
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Vom MVP zum Enterprise-Produkt. Wir bauen Architektur, die hält.
+              {t('web_apps_page.features.description')}
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: 'SaaS Entwicklung',
+                key: 'saas',
                 icon: 'cloud',
-                desc: 'Multi-Tenant Architekturen für skalierbare Software-as-a-Service Produkte.',
               },
               {
-                title: 'Interne Tools',
+                key: 'internal_tools',
                 icon: 'build',
-                desc: 'Custom Dashboards und Tools für Ihre internen Prozesse.',
               },
               {
-                title: 'Progressive Web Apps',
+                key: 'pwa',
                 icon: 'phone_iphone',
-                desc: 'Native App Feeling im Browser, offline-fähig und schnell.',
               },
               {
-                title: 'Realtime Data',
+                key: 'realtime',
                 icon: 'bolt',
-                desc: 'Live-Updates via WebSockets für Chats, Notifications und Live-Tracking.',
               },
               {
-                title: 'Cloud Infrastructure',
+                key: 'cloud',
                 icon: 'dns',
-                desc: 'AWS, Vercel oder Google Cloud Setup für maximale Uptime.',
               },
               {
-                title: 'Sicherheit',
+                key: 'security',
                 icon: 'security',
-                desc: 'DSGVO-konform, verschlüsselt und sicher nach Industriestandards.',
               },
             ].map((feature, i) => (
               <div
@@ -254,8 +246,12 @@ const WebApps: React.FC = () => {
                 <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
                   <Icon name={feature.icon} />
                 </div>
-                <h3 className="font-bold text-xl text-gray-900 mb-3">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{feature.desc}</p>
+                <h3 className="font-bold text-xl text-gray-900 mb-3">
+                  {t(`web_apps_page.features.items.${feature.key}.title`)}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {t(`web_apps_page.features.items.${feature.key}.desc`)}
+                </p>
               </div>
             ))}
           </div>
@@ -266,14 +262,14 @@ const WebApps: React.FC = () => {
       <section className="py-24">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="font-display font-bold text-3xl sm:text-4xl text-gray-900 mb-6">
-            Haben Sie eine Vision?
+            {t('web_apps_page.cta_section.title')}
           </h2>
-          <p className="text-xl text-gray-600 mb-8">Wir bauen das technische Fundament dafür.</p>
+          <p className="text-xl text-gray-600 mb-8">{t('web_apps_page.cta_section.description')}</p>
           <NavLink
             to="/contact"
             className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl bg-primary hover:bg-primary-dark shadow-lg hover:shadow-xl transition-all"
           >
-            Entwickler-Team anfragen
+            {t('web_apps_page.cta_section.button')}
           </NavLink>
         </div>
       </section>

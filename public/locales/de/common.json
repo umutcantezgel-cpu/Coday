@@ -215,5 +215,12 @@
     "ready": "Bereit zu optimieren?",
     "dominate": "Dominieren Sie Ihren Markt.",
     "book_audit": "Audit buchen"
+  },
+  "404": {
+    "title": "Seite nicht gefunden",
+    "desc": "Entschuldigung, wir konnten die Seite, die Sie suchen, nicht finden. Sie wurde möglicherweise verschoben, gelöscht oder existiert nicht mehr.",
+    "home_button": "Zur Startseite",
+    "config_button": "Projekt konfigurieren",
+    "help": "Brauchen Sie Hilfe?"
   }
 }

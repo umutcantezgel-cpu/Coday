@@ -1,8 +1,11 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { LocalizedNavLink as NavLink } from '../../../shared/ui/LocalizedLink';
 import { Icon } from '@/shared/ui/Icon';
 
 const UiUx: React.FC = () => {
+  const { t } = useTranslation('services');
+
   return (
     <div className="bg-background-light font-sans text-text-light">
       <section className="relative pt-32 pb-20 overflow-hidden">
@@ -13,18 +16,18 @@ const UiUx: React.FC = () => {
                 <Icon name="design_services" className="text-3xl" />
               </div>
               <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-gray-900 mb-6 leading-tight">
-                UI/UX Design, das <span className="text-primary">fesselt.</span>
+                {t('ui_ux_page.hero.title_prefix')}{' '}
+                <span className="text-primary">{t('ui_ux_page.hero.title_suffix')}</span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 max-w-lg">
-                Wir gestalten digitale Erlebnisse, die Nutzer lieben und Konversionen treiben. Von
-                Wireframes bis zum High-Fidelity Prototyp.
+                {t('ui_ux_page.hero.description')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <NavLink
                   to="/contact"
                   className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl bg-gray-900 hover:bg-gray-800 shadow-lg hover:shadow-xl transition-all"
                 >
-                  Design anfragen
+                  {t('ui_ux_page.hero.cta')}
                 </NavLink>
               </div>
             </div>
@@ -54,18 +57,22 @@ const UiUx: React.FC = () => {
           <div className="grid md:grid-cols-3 gap-8 text-center text-gray-900">
             <div className="p-6">
               <span className="text-6xl font-black text-gray-100 block mb-4">01</span>
-              <h3 className="font-bold text-xl mb-2">Research</h3>
-              <p className="text-gray-500">Zielgruppenanalyse und User Journeys.</p>
+              <h3 className="font-bold text-xl mb-2">{t('ui_ux_page.process.research.title')}</h3>
+              <p className="text-gray-500">{t('ui_ux_page.process.research.desc')}</p>
             </div>
             <div className="p-6">
               <span className="text-6xl font-black text-gray-100 block mb-4">02</span>
-              <h3 className="font-bold text-xl mb-2">Wireframing</h3>
-              <p className="text-gray-500">Struktur und Layout ohne Ablenkung.</p>
+              <h3 className="font-bold text-xl mb-2">
+                {t('ui_ux_page.process.wireframing.title')}
+              </h3>
+              <p className="text-gray-500">{t('ui_ux_page.process.wireframing.desc')}</p>
             </div>
             <div className="p-6">
               <span className="text-6xl font-black text-gray-100 block mb-4">03</span>
-              <h3 className="font-bold text-xl mb-2">Prototyping</h3>
-              <p className="text-gray-500">Interaktive Designs in Figma.</p>
+              <h3 className="font-bold text-xl mb-2">
+                {t('ui_ux_page.process.prototyping.title')}
+              </h3>
+              <p className="text-gray-500">{t('ui_ux_page.process.prototyping.desc')}</p>
             </div>
           </div>
         </div>

@@ -51,5 +51,487 @@
     "more": "Mehr erfahren",
     "ready": "Bereit für den nächsten Schritt?",
     "button": "Projekt anfragen"
+  },
+  "ecommerce_page": {
+    "hero": {
+      "title_anim": "E-Commerce, der",
+      "title_static": "verkauft.",
+      "description": "Wir bauen High-Performance Shops mit Shopify und WooCommerce. Keine Standard-Themes, sondern conversion-optimierte Verkaufsmaschinen.",
+      "cta_primary": "Shop Projekt starten",
+      "cta_secondary": "Referenzen ansehen"
+    },
+    "stats": {
+      "conversion_label": "Conversion Rate",
+      "load_time_label": "Ladezeit",
+      "core_vitals_label": "Core Vitals",
+      "tech_label": "Technologie",
+      "vs_prev_year": "vs. Vorjahr"
+    },
+    "roi_calculator": {
+      "label": "Umsatz-Rechner",
+      "title": "Wie viel mehr kannst du verdienen?",
+      "description": "Ein schnellerer Shop = mehr Käufer = mehr Umsatz.",
+      "instruction": "Gib deine Zahlen ein und sieh das Ergebnis sofort.",
+      "visitors_label": "Wie viele Besucher hast du pro Monat?",
+      "visitors_unit": "Besucher",
+      "conversion_label": "Von 100 Besuchern kaufen...",
+      "conversion_unit": "Personen",
+      "aov_label": "Durchschnittlicher Einkauf",
+      "result_title": "Dein Ergebnis nach der Optimierung",
+      "result_monthly": "Mehr Umsatz pro Monat",
+      "result_yearly": "Mehr Umsatz pro Jahr",
+      "explanation": "So funktioniert's: Ein schnellerer Shop überzeugt mehr Besucher zu kaufen (+0.5%) und sie geben im Schnitt mehr aus (+10%)."
+    },
+    "comparison": {
+      "title": "Das richtige System wählen",
+      "description": "Wir beraten technologie-agnostisch. Hier ein Vergleich unserer Top-Lösungen.",
+      "shopify": {
+        "title": "Shopify Plus",
+        "features": [
+          "Beste Time-to-Market (Start in < 4 Wochen)",
+          "Wartungsfreies Hosting & Sicherheit",
+          "Riesiges App-Ökosystem",
+          "Perfekt für DTC Brands bis 50M € Umsatz"
+        ],
+        "recommendation": "Empfehlung für: Lifestyle Brands, Fashion, Startups"
+      },
+      "custom": {
+        "title": "Custom Headless",
+        "features": [
+          "Maximale Performance (0.5s Load Time)",
+          "Völlige Freiheit im Frontend-Design",
+          "Komplexe Produktkonfiguratoren möglich",
+          "Perfekt für B2B & komplexe Enterprise-Shops"
+        ],
+        "recommendation": "Empfehlung für: B2B, Hidden Champions, Individualisten"
+      }
+    },
+    "features": {
+      "title": "Mehr als nur ein Online-Shop",
+      "description": "Ein Shop muss nicht nur gut aussehen, er muss funktionieren. Wir fokussieren uns auf die Metriken, die zählen.",
+      "items": {
+        "shopify_plus": {
+          "title": "Shopify & Plus",
+          "desc": "Skalierbare Enterprise-Lösungen mit Shopify 2.0 und Hydrogen."
+        },
+        "headless": {
+          "title": "Headless Commerce",
+          "desc": "Maximale Performance und Flexibilität durch entkoppeltes Frontend."
+        },
+        "performance": {
+          "title": "Performance First",
+          "desc": "Rasante Ladezeiten für besseres Ranking und höhere Conversion."
+        },
+        "erp": {
+          "title": "ERP Integration",
+          "desc": "Nahtlose Anbindung an SAP, Weclapp, Xentral und Co."
+        },
+        "checkout": {
+          "title": "Custom Checkout",
+          "desc": "Optimierter Checkout-Flow für weniger Kaufabbrüche."
+        },
+        "mobile": {
+          "title": "Mobile Optimized",
+          "desc": "Perfect Shopping Experience auf jedem Device."
+        }
+      }
+    },
+    "tech_stack": {
+      "title": "Unser Tech Stack",
+      "description": "Wir setzen auf bewährte Marktführer und modernste Headless-Technologien. Egal ob Shopify für schnellen Go-to-Market oder Custom-Lösungen für komplexe Anforderungen.",
+      "items": [
+        "Shopify / Shopify Plus",
+        "WooCommerce",
+        "Next.js Commerce",
+        "Stripe & PayPal",
+        "Klaviyo Email Marketing"
+      ]
+    },
+    "cta_section": {
+      "title": "Bereit zu skalieren?",
+      "description": "Lassen Sie uns Ihren Online-Shop auf das nächste Level heben.",
+      "button": "Jetzt Beratung anfragen"
+    }
+  },
+  "headless_cms_page": {
+    "hero": {
+      "title_prefix": "Headless CMS &",
+      "title_suffix": "Content.",
+      "description": "Verwalten Sie Inhalte zentral, spielen Sie sie überall aus. Wir integrieren Contentful, Sanity und Strapi in moderne Frontends.",
+      "cta": "CMS Beratung erhalten"
+    },
+    "why_headless": {
+      "title": "Warum Headless?",
+      "description": "Trennen Sie Frontend vom Backend für maximale Flexibilität und Performance.",
+      "items": {
+        "omnichannel": {
+          "title": "Omnichannel",
+          "desc": "Ein Content-Hub für Website, App, Smartwatch und mehr."
+        },
+        "performance": {
+          "title": "High Performance",
+          "desc": "Statische Generierung via Next.js für extrem schnelle Ladezeiten."
+        },
+        "security": {
+          "title": "Sicherheit",
+          "desc": "Keine direkte Datenbank-Verbindung im Frontend. Minimierte Risiken."
+        },
+        "dev_friendly": {
+          "title": "Entwickler-Freundlich",
+          "desc": "Moderne API-first Ansätze ermöglichen schnellere Iterationen."
+        },
+        "scalable": {
+          "title": "Skalierbar",
+          "desc": "Wächst mit Ihren Anforderungen, ohne dass das System neu gebaut werden muss."
+        },
+        "marketing_speed": {
+          "title": "Marketing Speed",
+          "desc": "Landingpages erstellen ohne Entwickler-Ressourcen."
+        }
+      }
+    }
+  },
+  "web_apps_page": {
+    "hero": {
+      "title_prefix": "SaaS &",
+      "title_suffix": "Individuelle Software.",
+      "description": "Wir entwickeln komplexe Webanwendungen, Dashboards und SaaS-Plattformen. Skalierbar, sicher und user-freundlich.",
+      "cta": "Projekt besprechen"
+    },
+    "integration_network": {
+      "label": "System Integration",
+      "title": "Wir verbinden Ihre Welt.",
+      "description": "Keine Insel-Lösungen. Unsere Software spricht fließend mit Ihrer bestehenden Infrastruktur. CRM, ERP, Payment oder AI."
+    },
+    "security": {
+      "title": "Sicherheit ist kein Feature,\nsondern die Basis.",
+      "description": "Individuelle Software verarbeitet oft sensible Daten. Wir garantieren höchste Sicherheitsstandards und Datenschutzkonformität von Tag 1 an.",
+      "items": [
+        "DSGVO / GDPR Konformität by Design",
+        "ISO 27001 zertifizierte Hosting-Partner (AWS/Vercel)",
+        "End-to-End Verschlüsselung sensibler Daten",
+        "Regelmäßige Penetration Tests"
+      ],
+      "badges": {
+        "gdpr": "GDPR Ready",
+        "ssl": "SSL Secure",
+        "uptime": "99.9% Uptime",
+        "support": "24/7 Support"
+      }
+    },
+    "features": {
+      "title": "Technologie, die mitwächst",
+      "description": "Vom MVP zum Enterprise-Produkt. Wir bauen Architektur, die hält.",
+      "items": {
+        "saas": {
+          "title": "SaaS Entwicklung",
+          "desc": "Multi-Tenant Architekturen für skalierbare Software-as-a-Service Produkte."
+        },
+        "internal_tools": {
+          "title": "Interne Tools",
+          "desc": "Custom Dashboards und Tools für Ihre internen Prozesse."
+        },
+        "pwa": {
+          "title": "Progressive Web Apps",
+          "desc": "Native App Feeling im Browser, offline-fähig und schnell."
+        },
+        "realtime": {
+          "title": "Realtime Data",
+          "desc": "Live-Updates via WebSockets für Chats, Notifications und Live-Tracking."
+        },
+        "cloud": {
+          "title": "Cloud Infrastructure",
+          "desc": "AWS, Vercel oder Google Cloud Setup für maximale Uptime."
+        },
+        "security": {
+          "title": "Sicherheit",
+          "desc": "DSGVO-konform, verschlüsselt und sicher nach Industriestandards."
+        }
+      }
+    },
+    "cta_section": {
+      "title": "Haben Sie eine Vision?",
+      "description": "Wir bauen das technische Fundament dafür.",
+      "button": "Entwickler-Team anfragen"
+    }
+  },
+  "api_integration_page": {
+    "hero": {
+      "title_prefix": "API Integrationen &",
+      "title_suffix": "Automation.",
+      "description": "Wir verbinden Ihre Systemlandschaft. CRM, ERP, Payment oder Marketing-Tools – alles spielt nahtlos zusammen.",
+      "cta": "Integration anfragen"
+    }
+  },
+  "migration_page": {
+    "hero": {
+      "label": "Legacy Modernization",
+      "title_prefix": "Future",
+      "title_suffix": "Proof.",
+      "description": "Wir migrieren Ihre veralteten Monolithen zu modernen, skalierbaren Stack auf Basis von React und Next.js. Ohne Datenverlust."
+    }
+  },
+  "web_design_page": {
+    "hero": {
+      "label": "Design & Benutzerfreundlichkeit",
+      "title_prefix": "Preisgekröntes",
+      "title_suffix": "Webdesign.",
+      "description": "Design, das nicht nur gut aussieht, sondern verkauft. Wir verbinden Ästhetik mit Psychologie für digitale Erlebnisse, die im Kopf bleiben."
+    },
+    "design_system": {
+      "label": "Baustein-Design",
+      "title": "Wir designen Systeme, \nkeine Seiten.",
+      "description": "Ein Design-System ist die einzige Wahrheitsquelle für Ihre Marke. Es garantiert Einheitlichkeit über alle Kanäle hinweg und beschleunigt die Entwicklung neuer Funktionen um bis zu 300%.",
+      "items": [
+        "Skalierbare Design-Tokens (Farben, Spacing, Typo)",
+        "Wiederverwendbare Komponenten-Bibliothek",
+        "Barrierefreiheit (a11y) standardmäßig integriert",
+        "Dark Mode & Multi-Brand Unterstützung"
+      ]
+    },
+    "before_after": {
+      "label": "Hochwertige Umgestaltung",
+      "title": "Der Unterschied ist messbar.",
+      "description": "Sehen Sie selbst, wie wir aus einer veralteten 'Visitenkarte im Netz' eine schnelle Verkaufsmaschine machen."
+    },
+    "psychology": {
+      "label": "Verhaltens-Design",
+      "title": "Design, das im Kopf bleibt.",
+      "description": "Wir nutzen Prinzipien der Verhaltenspsychologie, um Nutzer intuitiv zu führen und Verkaufs-Hürden abzubauen."
+    },
+    "process": {
+      "title": "Der Weg zum perfekten Interface",
+      "description": "Wir überlassen nichts dem Zufall. Unser UX-Prozess basiert auf Daten, Nutzer-Feedback und iterativen Verbesserungen.",
+      "steps": {
+        "exploration": {
+          "title": "Erkundung",
+          "desc": "Nutzerforschung und Gespräche. Wir verstehen das 'Warum'."
+        },
+        "structure": {
+          "title": "Struktur",
+          "desc": "Grobe Skizzen ohne Ablenkung. Fokus auf Informationsarchitektur."
+        },
+        "visual": {
+          "title": "Visuelles Design",
+          "desc": "Detaillierte Oberfläche. Typografie, Farben und kleine Animationen."
+        },
+        "prototype": {
+          "title": "Prototyp",
+          "desc": "Klickbare Modelle. Testen mit echten Nutzern vor der Programmierung."
+        }
+      }
+    },
+    "cta_section": {
+      "title": "Wollen Sie aus der Masse herausstechen?",
+      "description": "08/15 Templates waren gestern. Wir designen Ihre digitale Identität.",
+      "button": "Design anfragen"
+    },
+    "services_grid": {
+      "ux_ui_design": {
+        "title": "UX/UI Design",
+        "description": "Markenerlebnis im Digitalen. Nutzerzentriertes Design, das Ihre Marke erlebbar macht."
+      },
+      "design_systems": {
+        "title": "Design Systems",
+        "description": "Konsistente Komponenten-Bibliotheken für skalierbare Produkte und schnelle Entwicklung."
+      },
+      "website_relaunch": {
+        "title": "Website Relaunch",
+        "description": "Von der Strategie bis zum neuen Design. Wir modernisieren Ihre Webpräsenz grundlegend."
+      }
+    }
+  },
+  "ui_ux_page": {
+    "hero": {
+      "badge": "Design Services",
+      "title_prefix": "UI/UX Design, das",
+      "title_suffix": "fesselt.",
+      "description": "Wir gestalten digitale Erlebnisse, die Nutzer lieben und Konversionen treiben. Von Wireframes bis zum High-Fidelity Prototyp.",
+      "cta": "Design anfragen"
+    },
+    "process": {
+      "research": {
+        "title": "Research",
+        "desc": "Zielgruppenanalyse und User Journeys."
+      },
+      "wireframing": {
+        "title": "Wireframing",
+        "desc": "Struktur und Layout ohne Ablenkung."
+      },
+      "prototyping": {
+        "title": "Prototyping",
+        "desc": "Interaktive Designs in Figma."
+      }
+    }
+  },
+  "brand_identity_page": {
+    "hero": {
+      "title_prefix": "Brand Identity",
+      "title_suffix": "für B2B.",
+      "description": "Marken, die im Gedächtnis bleiben. Wir entwickeln Corporate Identities, Logos und Designsprachen speziell für digitale Touchpoints.",
+      "cta": "Branding anfragen"
+    },
+    "digital_branding": {
+      "title": "Digital-First Branding",
+      "description": "Eine Marke muss heute vor allem auf dem Smartphone funktionieren. Wir denken nicht in Briefpapier, sondern in Pixeln.",
+      "tags": ["Logo Design", "Typography", "Color Palette", "Tone of Voice", "Social Assets"]
+    }
+  },
+  "design_systems_page": {
+    "hero": {
+      "badge": "Scalable UI",
+      "title_prefix": "Design that",
+      "title_suffix": "Scales.",
+      "description": "Konsistenz ist King. Wir entwickeln atomare Design Systeme, die Ihre Marke über alle Touchpoints hinweg einheitlich und effizient machen."
+    }
+  },
+  "ux_audit_page": {
+    "hero": {
+      "badge": "Research & Optimization",
+      "title_prefix": "Daten statt",
+      "title_suffix": "Bauchgefühl.",
+      "description": "Wir analysieren Ihre User Journeys, identifizieren Drop-offs und optimieren Ihre Conversion Rates basierend auf echten Nutzerdaten.",
+      "cta": "Audit buchen"
+    }
+  },
+  "seo_page": {
+    "hero": {
+      "badge": "Suchmaschinen-Dominanz",
+      "title_prefix": "Unsichtbar ist",
+      "title_suffix": "irrelevant.",
+      "description": "Wir bringen Sie nicht nur auf Seite 1. Wir sorgen dafür, dass Sie dort bleiben. Technische Optimierung, Inhalts-Strategie und Aufbau von Autorität."
+    },
+    "ranking_factors": {
+      "badge": "Die Wissenschaft der Suche",
+      "title": "200+ Ranking-Faktoren. \nWir kennen sie alle.",
+      "description": "Googles Such-Algorithmus ist kein Geheimnis, sondern Mathematik. Wir optimieren Ihre Seite systematisch auf technische Exzellenz, Inhalts-Relevanz und Autorität."
+    },
+    "dominance": {
+      "title": "Gesamtheitliche Dominanz",
+      "description": "Suchmaschinen-Optimierung ist kein Silo. Wir vernetzen Ihre Suche mit sozialen Medien, Inhalts-Marketing und bezahlter Werbung für maximale Sichtbarkeit.",
+      "items": [
+        "Ganzheitliche Strategie",
+        "Plattformübergreifendes Retargeting",
+        "Inhalts-Verteilung",
+        "Datengetriebene Erkenntnisse"
+      ],
+      "cards": {
+        "technical": {
+          "title": "Technische Optimierung",
+          "desc": "Ladezeit-Optimierung, Strukturierte Daten und Durchsuchbarkeit."
+        },
+        "content": {
+          "title": "Inhalts-Strategie",
+          "desc": "Inhalte, die für Nutzer geschrieben sind und von Google geliebt werden."
+        },
+        "regional": {
+          "title": "Regionale Dominanz",
+          "desc": "Werden Sie zum Platzhirsch in Ihrer Region."
+        }
+      }
+    }
+  },
+  "performance_page": {
+    "hero": {
+      "badge": "Geschwindigkeits-Optimierung",
+      "title_prefix": "Geschwindigkeit ist",
+      "title_suffix": "Umsatz.",
+      "description": "Jede Millisekunde zählt. Wir optimieren Ihre Ladezeiten für maximale Kundenabschlüsse und Benutzerfreundlichkeit."
+    },
+    "google_values": {
+      "badge": "Google Ladezeit-Werte",
+      "title": "Rankingfaktor Nr.1: Benutzerfreundlichkeit",
+      "description": "Google misst nicht nur Schlüsselwörter, sondern wie sich Ihre Seite <i>anfühlt</i>. Wir optimieren alle 3 Ladezeit-Werte für beste Bewertungen."
+    },
+    "metrics": {
+      "score": "Google Seitenbewertung",
+      "load_time": "Ladezeit",
+      "shift": "Visuelle Verschiebung",
+      "eco": "Öko-Webspace"
+    }
+  },
+  "consulting_page": {
+    "hero": {
+      "badge": "Digitale Strategie",
+      "title_prefix": "Klarheit in einer",
+      "title_suffix": "komplexen Welt.",
+      "description": "Technologie ändert sich täglich. Wir helfen Ihnen, den Überblick zu behalten und die richtigen Entscheidungen für Ihr Wachstum zu treffen.",
+      "cta": "Beratungstermin buchen"
+    },
+    "areas": {
+      "title": "Beratungsfelder",
+      "tech_stack": {
+        "title": "Tech Stack Evaluierung",
+        "desc": "Welche Technologie passt zu Ihren Zielen? Wir analysieren Ihre Anforderungen und empfehlen zukunftssichere Lösungen."
+      },
+      "digital_trans": {
+        "title": "Digitale Transformation",
+        "desc": "Prozesse digitalisieren und automatisieren. Von der Lead-Generierung bis zum Fulfillment."
+      },
+      "growth_hack": {
+        "title": "Growth Hacking",
+        "desc": "Datengetriebene Experimente für schnelles Wachstum. SEO, SEA und CRO in Synergie."
+      }
+    }
+  },
+  "enterprise_web_page": {
+    "hero": {
+      "badge": "Beyond Standard",
+      "title_prefix": "Websites,",
+      "title_suffix": "die Märkte fressen.",
+      "description": "Keine Visitenkarten. Wir bauen digitale Waffensysteme für Unternehmen, die verlieren nicht als Option sehen.",
+      "cta_primary": "Dominanz starten",
+      "cta_secondary": "Cases ansehen",
+      "scroll_hint": "Scroll to Explore"
+    },
+    "speed_section": {
+      "title": "Speed is Authority.",
+      "description": "Google hasst langsame Websites. Nutzer auch. Wir bauen auf Edge-Computing und Next.js für Ladezeiten unter 500ms."
+    },
+    "stack_section": {
+      "title": "The Stack of Dominance",
+      "description": "Kein WordPress-Spaghetti. Wir nutzen den Tech-Stack der Milliarden-Startups."
+    },
+    "roi_section": {
+      "label": "The Cost of Slow",
+      "title": "Performance = Revenue",
+      "description": "Die meisten Agenturen verkaufen 'hübsches Design'. Wir verkaufen messbares Umsatzwachstum."
+    }
+  },
+  "generic_detail": {
+    "not_found": {
+      "title": "Service nicht gefunden",
+      "link": "Zurück zur Übersicht"
+    },
+    "hero": {
+      "consulting_btn": "Beratungstermin vereinbaren",
+      "benefits_title": "Ihre Vorteile"
+    },
+    "trust": {
+      "title": "Vertraut von führenden Unternehmen"
+    },
+    "process": {
+      "label": "Unser Prozess",
+      "title": "In 5 Schritten zu <br /> messbarem Erfolg."
+    },
+    "advantages": {
+      "label": "Ihre Vorteile",
+      "title": "Wir denken in ROAS, <br /> nicht in Klicks.",
+      "desc": "Unsere Kunden entscheiden sich nicht für bunte Slides, sondern für ein Team, das Marketing als Investition versteht. Wir denken in Ergebnissen, planen mit klaren Zielen und liefern transparent.",
+      "contact_btn": "Kontakt aufnehmen"
+    },
+    "testimonials": {
+      "label": "Was unsere Kunden sagen",
+      "title": "Ergebnisse, die überzeugen."
+    },
+    "faq": {
+      "title": "Häufige Fragen (FAQ)",
+      "desc": "Wir arbeiten transparent. Hier sind Antworten auf die wichtigsten Fragen."
+    },
+    "final_cta": {
+      "title": "Starten wir Ihr Projekt.",
+      "desc": "Keine Standardlösungen. Wir entwickeln genau das, was Sie für Ihren Erfolg brauchen.",
+      "button": "Jetzt anfragen"
+    }
   }
 }

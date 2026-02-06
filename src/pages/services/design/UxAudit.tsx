@@ -1,32 +1,41 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import BlurText from '../../../shared/ui/BlurText';
 import GradientText from '../../../shared/ui/GradientText';
 
 const UxAudit: React.FC = () => {
-    return (
-        <div className="bg-background-light min-h-screen">
-            <section className="relative pt-32 pb-24 px-4 overflow-hidden">
-                <div className="max-w-7xl mx-auto text-center relative z-10">
-                    <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">Research & Optimization</span>
-                    <h1 className="font-display font-black text-5xl sm:text-7xl lg:text-8xl text-secondary mb-8 tracking-tight">
-                        <BlurText
-                            text="Daten statt"
-                            delay={100}
-                            animateBy="words"
-                            direction="top"
-                            className="inline-block mr-4"
-                        />
-                        <GradientText colors={['#F59E0B', '#EF4444', '#EC4899']} animationSpeed={6} className="inline-block">
-                            Bauchgefühl.
-                        </GradientText>
-                    </h1>
-                    <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto mb-12">
-                        Wir analysieren Ihre User Journeys, identifizieren Drop-offs und optimieren Ihre Conversion Rates basierend auf echten Nutzerdaten.
-                    </p>
-                </div>
-            </section>
+  const { t } = useTranslation('services');
+
+  return (
+    <div className="bg-background-light min-h-screen">
+      <section className="relative pt-32 pb-24 px-4 overflow-hidden">
+        <div className="max-w-7xl mx-auto text-center relative z-10">
+          <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
+            {t('ux_audit_page.hero.badge')}
+          </span>
+          <h1 className="font-display font-black text-5xl sm:text-7xl lg:text-8xl text-secondary mb-8 tracking-tight">
+            <BlurText
+              text={t('ux_audit_page.hero.title_prefix')}
+              delay={100}
+              animateBy="words"
+              direction="top"
+              className="inline-block mr-4"
+            />
+            <GradientText
+              colors={['#F59E0B', '#EF4444', '#EC4899']}
+              animationSpeed={6}
+              className="inline-block"
+            >
+              {t('ux_audit_page.hero.title_suffix')}
+            </GradientText>
+          </h1>
+          <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto mb-12">
+            {t('ux_audit_page.hero.description')}
+          </p>
         </div>
-    );
+      </section>
+    </div>
+  );
 };
 
 export default UxAudit;
