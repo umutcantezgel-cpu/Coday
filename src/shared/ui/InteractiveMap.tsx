@@ -25,7 +25,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
         <div className={`relative ${className}`}>
             {/* Map Container with Aurora styling */}
             <div
-                className="relative w-full rounded-2xl overflow-hidden shadow-lg border border-aurora-mist bg-aurora-cloud"
+                className="relative w-full rounded-2xl overflow-hidden shadow-lg border border-gray-200 bg-gray-50"
                 style={{ height }}
             >
                 {/* Google Maps Embed */}
@@ -46,7 +46,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
 
             {/* Info Box */}
             {showInfoBox && (
-                <div className="absolute bottom-4 left-4 right-4 md:right-auto md:max-w-sm bg-white/95 backdrop-blur-md rounded-xl p-4 shadow-lg border border-aurora-mist">
+                <div className="absolute bottom-4 left-4 right-4 md:right-auto md:max-w-sm bg-white/95 backdrop-blur-md rounded-xl p-4 shadow-lg border border-gray-200">
                     <div className="flex items-start gap-3">
                         <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                             <Icon name="location_on" className="text-primary" />

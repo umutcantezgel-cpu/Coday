@@ -1,4 +1,4 @@
-import React, { useState, Suspense, lazy } from 'react';
+import React, { Suspense, lazy } from 'react';
 import BlurText from '../shared/ui/BlurText';
 import GradientText from '../shared/ui/GradientText';
 // import ApplicationWizard from '../features/contact/ApplicationWizard'; // Loaded lazily

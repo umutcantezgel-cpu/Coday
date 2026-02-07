@@ -1,6 +1,6 @@
 
-import React, { useState, useEffect, useRef } from 'react';
-import { Mic, MicOff, MessageSquare, Sparkles, Volume2 } from 'lucide-react';
+import React, { useState } from 'react';
+import { Mic, MicOff, Sparkles, Volume2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { cn } from '@/shared/lib/utils';
 

@@ -12,10 +12,10 @@ const PRODUCTS = [
 
 const Marketplace: React.FC = () => {
     return (
-        <div className="bg-aurora-white min-h-screen pt-24 pb-20">
+        <div className="bg-background-light min-h-screen pt-24 pb-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
-                    <h1 className="font-display font-black text-5xl md:text-6xl text-gradient-vivid mb-6">
+                    <h1 className="font-display font-black text-5xl md:text-6xl text-gradient mb-6">
                         Community Marktplatz
                     </h1>
                     <p className="text-xl text-slate-500 max-w-2xl mx-auto">
@@ -26,7 +26,7 @@ const Marketplace: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {/* Marketplace Items */}
                     {PRODUCTS.map((item) => (
-                        <div key={item.id} className="group relative bg-white rounded-2xl border border-aurora-mist overflow-hidden hover:shadow-xl hover:border-blue-200 transition-all duration-300 flex flex-col">
+                        <div key={item.id} className="group relative bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl hover:border-blue-200 transition-all duration-300 flex flex-col">
                             <div className="h-48 relative overflow-hidden bg-slate-50">
                                 <OptimizedImage
                                     src={item.image}

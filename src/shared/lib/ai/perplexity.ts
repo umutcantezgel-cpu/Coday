@@ -4,7 +4,7 @@
  */
 
 const PERPLEXITY_API_KEY =
-  import.meta.env.PERPLEXITY_API_KEY || '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';
+  import.meta.env.PERPLEXITY_API_KEY || '';
 
 export interface PerplexityMessage {
   role: 'system' | 'user' | 'assistant';

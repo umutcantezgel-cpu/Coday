@@ -1,14 +1,12 @@
 import React, {
     Children,
-    cloneElement,
-    isValidElement,
     ReactElement,
     ReactNode,
     useEffect,
     useMemo,
     useState
 } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 
 export interface CardSwapProps {
     width?: number | string;

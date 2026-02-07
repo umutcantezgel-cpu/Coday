@@ -24,22 +24,19 @@ export const ModuleCard: React.FC<ModuleCardProps> = ({
       onClick={!disabled && !isIncluded ? onToggle : undefined}
       className={`
         relative p-4 rounded-xl border transition-all duration-300 flex flex-col h-full
-        ${
-          isIncluded
-            ? 'bg-emerald-50/50 border-emerald-200 cursor-default'
-            : !disabled
-              ? 'cursor-pointer group'
-              : ''
-        }
-        ${
-          isSelected && !isIncluded
-            ? 'bg-primary/5 border-primary shadow-aurora ring-1 ring-primary/20'
+        ${isIncluded
+          ? 'bg-emerald-50/50 border-emerald-200 cursor-default'
+          : !disabled
+            ? 'cursor-pointer group'
             : ''
         }
-        ${
-          !isSelected && !isIncluded && !disabled
-            ? 'bg-white border-gray-100 hover:border-primary/30 hover:shadow-lg'
-            : ''
+        ${isSelected && !isIncluded
+          ? 'bg-primary/5 border-primary shadow-md ring-1 ring-primary/20'
+          : ''
+        }
+        ${!isSelected && !isIncluded && !disabled
+          ? 'bg-white border-gray-100 hover:border-primary/30 hover:shadow-lg'
+          : ''
         }
         ${disabled ? 'opacity-50 cursor-not-allowed grayscale' : ''}
       `}
@@ -64,13 +61,12 @@ export const ModuleCard: React.FC<ModuleCardProps> = ({
       {/* Header */}
       <div className="flex items-start justify-between mb-2 mt-1">
         <div
-          className={`p-2 rounded-lg transition-colors ${
-            isIncluded
+          className={`p-2 rounded-lg transition-colors ${isIncluded
               ? 'bg-emerald-100 text-emerald-600'
               : isSelected
                 ? 'bg-primary text-white'
                 : 'bg-gray-100 text-gray-500 group-hover:bg-primary/10 group-hover:text-primary'
-          }`}
+            }`}
         >
           <Icon name={module.icon} className="text-xl" />
         </div>
@@ -98,13 +94,12 @@ export const ModuleCard: React.FC<ModuleCardProps> = ({
       <div
         className={`
                 mt-3 w-full py-1.5 rounded-md text-center text-xs font-bold transition-all
-                ${
-                  isIncluded
-                    ? 'bg-emerald-100 text-emerald-700'
-                    : isSelected
-                      ? 'bg-primary text-white'
-                      : 'bg-gray-50 text-gray-400 group-hover:bg-gray-100 group-hover:text-gray-900'
-                }
+                ${isIncluded
+            ? 'bg-emerald-100 text-emerald-700'
+            : isSelected
+              ? 'bg-primary text-white'
+              : 'bg-gray-50 text-gray-400 group-hover:bg-gray-100 group-hover:text-gray-900'
+          }
             `}
       >
         {isIncluded

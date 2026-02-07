@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Calculator, TrendingUp } from 'lucide-react';
+import { Calculator } from 'lucide-react';
 
 export const ROICalculator = () => {
     const [leads, setLeads] = useState(10);

@@ -21,12 +21,7 @@ export const ScoreCard: React.FC<ScoreCardProps> = ({
     onClick,
 }) => {
     // Determine score color
-    const getScoreColor = (score: number) => {
-        if (score === -1) return 'text-gray-400';
-        if (score >= 80) return 'text-green-500';
-        if (score >= 50) return 'text-yellow-500';
-        return 'text-red-500';
-    };
+
 
     const getScoreBg = (score: number) => {
         if (score === -1) return 'bg-gray-50 border-gray-200 border-dashed opacity-75';

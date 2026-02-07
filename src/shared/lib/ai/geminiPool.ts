@@ -54,7 +54,7 @@ const GEMINI_KEYS: string[] = [
 ];
 
 const RATE_LIMIT_PER_MINUTE = 60;
-const COOLDOWN_MS = 60000; // 1 minute cooldown for failed keys
+
 
 class GeminiKeyPool {
   private keys: KeyHealth[];
@@ -161,7 +161,7 @@ export async function callGemini(
     maxTokens?: number;
   } = {}
 ): Promise<string> {
-  const { model = 'gemini-2.0-flash', temperature = 0.7, maxTokens = 4096 } = options;
+  const { model = 'gemini-2.0-flash' } = options;
 
   const apiKey = geminiPool.getNextKey();
   // const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;

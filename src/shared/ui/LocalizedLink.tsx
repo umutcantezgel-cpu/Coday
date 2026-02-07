@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, LinkProps, NavLink, NavLinkProps, useLocation } from 'react-router-dom';
+import { Link, LinkProps, NavLink, NavLinkProps } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 /**

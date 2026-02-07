@@ -85,6 +85,7 @@ export const useAnalyzerStore = create<AnalyzerState>((set, get) => ({
       const scanData = await scanWebsite(url);
 
       // Initializing Result Object
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const partialResult: any = {
         id: crypto.randomUUID(),
         url: scanData.url,
@@ -99,6 +100,7 @@ export const useAnalyzerStore = create<AnalyzerState>((set, get) => ({
       }));
 
       // STEP 2: RUN AGENTS (In parallel structure but controlled)
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const results: Record<string, any> = {};
 
       const runSingleAgent = async (agentId: string) => {
@@ -107,6 +109,7 @@ export const useAnalyzerStore = create<AnalyzerState>((set, get) => ({
             progress: { ...state.progress, currentAgent: agentId },
           }));
 
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           const agentResult = await analyzeAgent<any>(agentId, scanData.url, scanData.html);
           if (agentResult.score === -1) {
             throw new Error(agentResult.error || 'Agent failed');
@@ -222,7 +225,7 @@ export const useAnalyzerStore = create<AnalyzerState>((set, get) => ({
       saveAuditResult(finalResult);
     } catch (error) {
       const msg = error instanceof Error ? error.message : 'Unbekannter Fehler';
-      let code: any = 'API_ERROR';
+      let code: AnalyzerState['errorCode'] = 'API_ERROR';
 
       if (msg.includes('fetch') || msg.includes('Network')) code = 'NETWORK_ERROR';
       if (msg.includes('Timeout') || msg.includes('504')) code = 'TIMEOUT';

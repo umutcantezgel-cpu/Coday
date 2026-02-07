@@ -22,6 +22,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
 }) => {
     const [isLoaded, setIsLoaded] = useState(false);
     const [hasError, setHasError] = useState(false);
+    const imgRef = React.useRef<HTMLImageElement>(null);
 
     // Dynamic aspect ratio container
     const getAspectRatioClass = () => {
@@ -46,6 +47,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
             )}
 
             <img
+                ref={imgRef}
                 src={src}
                 srcSet={srcSet}
                 sizes={sizes}
@@ -57,7 +59,6 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
                 className={`
                     w-full h-full object-cover transition-opacity duration-500 ease-in-out
                     ${isLoaded ? 'opacity-100' : 'opacity-0'}
-                    ${className}
                 `}
                 {...props}
             />

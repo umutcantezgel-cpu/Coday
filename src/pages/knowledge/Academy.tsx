@@ -12,10 +12,10 @@ const Academy: React.FC = () => {
   const currentLang = i18n.language as 'de' | 'en';
 
   return (
-    <div className="bg-aurora-white min-h-screen pt-24 pb-20">
+    <div className="bg-background-light min-h-screen pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h1 className="font-display font-black text-5xl md:text-6xl text-gradient-vivid mb-6">
+          <h1 className="font-display font-black text-5xl md:text-6xl text-gradient mb-6">
             {t('academy.title')}
           </h1>
           <p className="text-xl text-slate-500 max-w-2xl mx-auto">{t('academy.subtitle')}</p>

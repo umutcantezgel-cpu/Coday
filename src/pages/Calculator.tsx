@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { useCalculatorStore } from '../features/calculator/model/store';
 import { ModuleCard } from '../features/calculator/ui/ModuleCard';
 import { CalculatorSummary } from '../features/calculator/ui/Summary';
-import { modules, categoryLabels, ModuleCategory } from '../data/modules';
+import { modules, ModuleCategory } from '../data/modules';
 import StepIndicator from '../shared/ui/StepIndicator';
 import { ArrowRight } from 'lucide-react';
 

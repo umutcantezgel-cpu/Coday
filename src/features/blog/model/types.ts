@@ -109,7 +109,7 @@ export interface KeyTakeawaysBlock extends BaseBlock {
 export interface InteractiveBlock extends BaseBlock {
     type: 'interactive';
     component: 'roi-calculator' | 'speed-test' | 'quiz' | 'timeline' | 'mobile-simulator' | 'color-picker' | 'seo-graph' | 'traffic-estimator' | 'tech-stack-explorer' | 'data-maturity' | 'hack-simulator' | 'ab-test' | 'voice-demo' | 'ai-cost' | 'agency-calculator';
-    data?: Record<string, any>; // Flexible props for the specific component
+    data?: Record<string, unknown>; // Flexible props for the specific component
 }
 
 // Union Type

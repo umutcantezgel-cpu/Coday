@@ -104,7 +104,7 @@ export const getNavItems = (): NavItem[] => [
       {
         title: 'nav.work.featured.title',
         links: [
-          { label: 'nav.work.creative_impact', href: '/work/creative-impact' },
+
           { label: 'nav.work.batherm', href: '/work/batherm' },
         ],
       },

@@ -9,6 +9,7 @@ import ArchitectureVisualizer from '../../features/web-dev/ArchitectureVisualize
 import CodeQualitySimulator from '../../features/web-dev/CodeQualitySimulator';
 import SecurityGrid from '../../features/web-dev/SecurityGrid';
 import { Icon } from '../../shared/ui/Icon';
+import { SeoHead } from '../../shared/ui/SeoHead';
 
 const WebDevelopment: React.FC = () => {
   const { t } = useTranslation('services');
@@ -17,6 +18,10 @@ const WebDevelopment: React.FC = () => {
 
   return (
     <div className="bg-background-light pt-24 pb-16">
+      <SeoHead
+        title={`${t('web_development_page.hero.title_anim')} ${t('web_development_page.hero.title_static')} | Coday`}
+        description={t('web_development_page.hero.description')}
+      />
       {/* Hero Section */}
       <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-20 text-center lg:text-start">
         <div className="grid lg:grid-cols-2 gap-12 items-center">

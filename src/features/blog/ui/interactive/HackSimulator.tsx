@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Terminal, Shield, ShieldAlert, Lock, Unlock, Server, Database, Bug, RefreshCw } from 'lucide-react';
+import { Terminal, Shield, Lock, Unlock, Server, Database, Bug, RefreshCw } from 'lucide-react';
 import { cn } from '@/shared/lib/utils';
 import { useTranslation } from 'react-i18next';
 

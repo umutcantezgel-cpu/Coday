@@ -38,7 +38,7 @@ const Careers: React.FC = () => {
             </section>
 
             {/* Career Path - NEW HIGH COMPLEXITY */}
-            <section className="py-24 bg-aurora-white relative overflow-hidden">
+            <section className="py-24 bg-gray-50 relative overflow-hidden">
                 <div className="absolute inset-0 opacity-5 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

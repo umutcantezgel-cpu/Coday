@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Icon } from '@/shared/ui/Icon';
 import { Helmet } from 'react-helmet-async';
 import { OptimizedImage } from '../../shared/ui/OptimizedImage';
 
 import { Link } from 'react-router-dom';
 import { getBlogPosts } from '../../features/blog/model/data';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 
 const Blog: React.FC = () => {
   const { i18n, t } = useTranslation('blog');
@@ -14,14 +14,14 @@ const Blog: React.FC = () => {
   const featuredPost = posts.length > 6 ? posts[6] : posts.length > 0 ? posts[0] : null;
 
   return (
-    <div className="bg-aurora-white min-h-screen pt-24 pb-20">
+    <div className="bg-background-light min-h-screen pt-24 pb-20">
       <Helmet>
         <title>{t('hero.title')} | Coday</title>
         <meta name="description" content={t('hero.subtitle')} />
       </Helmet>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h1 className="font-display font-black text-5xl md:text-6xl text-gradient-vivid mb-6">
+          <h1 className="font-display font-black text-5xl md:text-6xl text-gradient mb-6">
             {t('hero.title')}
           </h1>
           <p className="text-xl text-slate-500 max-w-2xl mx-auto">{t('hero.subtitle')}</p>
@@ -115,10 +115,9 @@ const Blog: React.FC = () => {
               <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
                 {t('community.label')}
               </span>
-              <h2
-                className="font-display font-bold text-3xl md:text-4xl text-white mb-6"
-                dangerouslySetInnerHTML={{ __html: t('community.title') }}
-              />
+              <h2 className="font-display font-bold text-3xl md:text-4xl text-white mb-6">
+                <Trans i18nKey="community.title" components={{ br: <br /> }} />
+              </h2>
               <p className="text-gray-400 text-lg mb-8 leading-relaxed">
                 {t('community.description')}
               </p>

@@ -1,9 +1,9 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { CheckCircle2, AlertCircle, TrendingUp, BarChart3, Lock, Share2 } from 'lucide-react';
+import { CheckCircle2, TrendingUp, BarChart3, Lock } from 'lucide-react';
 import { cn } from '@/shared/lib/utils';
-import { useTranslation, Trans } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import { useMemo } from 'react';
 
 interface Question {
@@ -21,7 +21,7 @@ export const DataMaturityAssessment: React.FC = () => {
     const { t } = useTranslation();
     const [currentStep, setCurrentStep] = useState(0);
 
-    const QUESTIONS = useMemo(() => [
+    const QUESTIONS: Question[] = useMemo(() => [
         {
             id: 1,
             // Keeping German fallback or TODO: add keys
@@ -120,7 +120,7 @@ export const DataMaturityAssessment: React.FC = () => {
         const newScore = score + points;
         setScore(newScore);
 
-        if (currentStep <QUESTIONS.length - 1) {
+        if (currentStep < QUESTIONS.length - 1) {
             setCurrentStep(prev => prev + 1);
         } else {
             setShowResult(true);
@@ -141,24 +141,24 @@ export const DataMaturityAssessment: React.FC = () => {
 
     return (
         <div className="my-12 w-full max-w-3xl mx-auto font-sans">
-            <div className="bg-aurora-white border border-aurora-mist rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="p-6 md:p-8 bg-gradient-to-r from-aurora-sapphire/5 to-aurora-azalea/5 border-b border-aurora-mist">
+            <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="p-6 md:p-8 bg-gradient-to-r from-primary/5 to-purple-500/5 border-b border-gray-200">
                     <div className="flex items-center justify-between mb-4">
-                        <h3 className="text-xl md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-aurora-sapphire to-aurora-azalea flex items-center gap-2">
-                            <BarChart3 className="w-6 h-6 text-aurora-sapphire" />
+                        <h3 className="text-xl md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-500 flex items-center gap-2">
+                            <BarChart3 className="w-6 h-6 text-primary" />
                             {t('blog:dataMaturity.title')}
                         </h3>
                         {!showResult && (
-                            <span className="text-sm font-medium text-aurora-charcoal/60 bg-aurora-white px-3 py-1 rounded-full border border-aurora-mist">
+                            <span className="text-sm font-medium text-gray-900/60 bg-white px-3 py-1 rounded-full border border-gray-200">
                                 {t('blog:dataMaturity.questionStep', { current: currentStep + 1, total: QUESTIONS.length })}
                             </span>
                         )}
                     </div>
 
                     {!showResult && (
-                        <div className="w-full bg-aurora-mist/30 rounded-full h-2">
+                        <div className="w-full bg-gray-200/30 rounded-full h-2">
                             <motion.div
-                                className="bg-gradient-to-r from-aurora-sapphire to-aurora-azalea h-2 rounded-full"
+                                className="bg-gradient-to-r from-primary to-purple-500 h-2 rounded-full"
                                 initial={{ width: 0 }}
                                 animate={{ width: `${progress}%` }}
                                 transition={{ duration: 0.5 }}
@@ -177,7 +177,7 @@ export const DataMaturityAssessment: React.FC = () => {
                                 exit={{ opacity: 0, x: -20 }}
                                 transition={{ duration: 0.3 }}
                             >
-                                <h4 className="text-xl font-semibold text-aurora-charcoal mb-8 leading-relaxed">
+                                <h4 className="text-xl font-semibold text-gray-900 mb-8 leading-relaxed">
                                     {QUESTIONS[currentStep].text}
                                 </h4>
 
@@ -186,12 +186,12 @@ export const DataMaturityAssessment: React.FC = () => {
                                         <button
                                             key={index}
                                             onClick={() => handleAnswer(option.points)}
-                                            className="group p-4 text-left rounded-xl border border-aurora-mist hover:border-aurora-sapphire hover:bg-aurora-sapphire/5 transition-all duration-200 flex items-center justify-between"
+                                            className="group p-4 text-left rounded-xl border border-gray-200 hover:border-primary hover:bg-primary/5 transition-all duration-200 flex items-center justify-between"
                                         >
-                                            <span className="text-aurora-charcoal group-hover:text-aurora-sapphire transition-colors">
+                                            <span className="text-gray-900 group-hover:text-primary transition-colors">
                                                 {option.text}
                                             </span>
-                                            <CheckCircle2 className="w-5 h-5 opacity-0 group-hover:opacity-100 text-aurora-sapphire transition-all transform translate-x-2 group-hover:translate-x-0" />
+                                            <CheckCircle2 className="w-5 h-5 opacity-0 group-hover:opacity-100 text-primary transition-all transform translate-x-2 group-hover:translate-x-0" />
                                         </button>
                                     ))}
                                 </div>
@@ -212,7 +212,7 @@ export const DataMaturityAssessment: React.FC = () => {
                                     <TrendingUp className="w-10 h-10" />
                                 </div>
 
-                                <h4 className="text-2xl font-bold text-aurora-charcoal mb-2">
+                                <h4 className="text-2xl font-bold text-gray-900 mb-2">
                                     {t('blog:dataMaturity.yourStatus')}
                                 </h4>
                                 <div className={cn(
@@ -225,35 +225,35 @@ export const DataMaturityAssessment: React.FC = () => {
                                     {getResult().title}
                                 </div>
 
-                                <p className="text-lg text-aurora-charcoal/80 mb-8 max-w-lg mx-auto leading-relaxed">
+                                <p className="text-lg text-gray-900/80 mb-8 max-w-lg mx-auto leading-relaxed">
                                     {getResult().description}
                                 </p>
 
-                                <div className="bg-aurora-snow rounded-xl p-6 border border-aurora-mist text-left mb-8">
-                                    <h5 className="font-semibold text-aurora-charcoal mb-3 flex items-center gap-2">
-                                        <Lock className="w-4 h-4 text-aurora-sapphire" />
+                                <div className="bg-gray-50 rounded-xl p-6 border border-gray-200 text-left mb-8">
+                                    <h5 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                                        <Lock className="w-4 h-4 text-primary" />
                                         {t('blog:dataMaturity.recommendation')}
                                     </h5>
                                     <ul className="space-y-3">
                                         {score < 10 ? (
                                             <>
-                                                <li className="flex items-start gap-2 text-sm text-aurora-charcoal/80">
-                                                    <CheckCircle2 className="w-4 h-4 text-aurora-sapphire mt-0.5 flex-shrink-0" />
+                                                <li className="flex items-start gap-2 text-sm text-gray-900/80">
+                                                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                                                     Implementieren Sie sofort GDPR-konformes Server-Side Tracking.
                                                 </li>
-                                                <li className="flex items-start gap-2 text-sm text-aurora-charcoal/80">
-                                                    <CheckCircle2 className="w-4 h-4 text-aurora-sapphire mt-0.5 flex-shrink-0" />
+                                                <li className="flex items-start gap-2 text-sm text-gray-900/80">
+                                                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                                                     Definieren Sie KPI-Metriken, die echten Umsatz widerspiegeln.
                                                 </li>
                                             </>
                                         ) : (
                                             <>
-                                                <li className="flex items-start gap-2 text-sm text-aurora-charcoal/80">
-                                                    <CheckCircle2 className="w-4 h-4 text-aurora-sapphire mt-0.5 flex-shrink-0" />
+                                                <li className="flex items-start gap-2 text-sm text-gray-900/80">
+                                                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                                                     Nutzen Sie Predictive Analytics für Budget-Allokation.
                                                 </li>
-                                                <li className="flex items-start gap-2 text-sm text-aurora-charcoal/80">
-                                                    <CheckCircle2 className="w-4 h-4 text-aurora-sapphire mt-0.5 flex-shrink-0" />
+                                                <li className="flex items-start gap-2 text-sm text-gray-900/80">
+                                                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                                                     Automatisieren Sie Bidding-Strategien basierend auf CLV.
                                                 </li>
                                             </>
@@ -264,13 +264,13 @@ export const DataMaturityAssessment: React.FC = () => {
                                 <div className="flex justify-center gap-4">
                                     <button
                                         onClick={reset}
-                                        className="px-6 py-2 rounded-lg text-aurora-charcoal/60 hover:text-aurora-sapphire hover:bg-aurora-sapphire/5 transition-all"
+                                        className="px-6 py-2 rounded-lg text-gray-900/60 hover:text-primary hover:bg-primary/5 transition-all"
                                     >
                                         {t('blog:dataMaturity.retry')}
                                     </button>
                                     <a
                                         href="/contact"
-                                        className="px-6 py-2 rounded-lg bg-gradient-to-r from-aurora-sapphire to-aurora-azalea text-white font-medium hover:shadow-lg hover:opacity-90 transition-all flex items-center gap-2"
+                                        className="px-6 py-2 rounded-lg bg-gradient-to-r from-primary to-purple-500 text-white font-medium hover:shadow-lg hover:opacity-90 transition-all flex items-center gap-2"
                                     >
                                         {t('blog:dataMaturity.bookAudit')} <CheckCircle2 className="w-4 h-4" />
                                     </a>

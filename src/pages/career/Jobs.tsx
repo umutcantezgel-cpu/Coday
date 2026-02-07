@@ -6,8 +6,16 @@ import AnimatedList from '../../shared/ui/AnimatedList';
 import RotatingText from '../../shared/ui/RotatingText';
 
 const Jobs: React.FC = () => {
-  const { t, i18n } = useTranslation('careers');
-  const jobs = t('jobs.list', { returnObjects: true }) as any[];
+  const { t } = useTranslation('careers');
+  interface JobItem {
+    id: string;
+    type: string;
+    location: string;
+    title: string;
+    desc: string;
+    mailtoSubject: string;
+  }
+  const jobs = t('jobs.list', { returnObjects: true }) as JobItem[];
 
   const createMailtoLink = (subject: string) => {
     const body = `Hallo Coday-Team,%0D%0A%0D%0Aich bewerbe mich für die ausgeschriebene Stelle.%0D%0A%0D%0AMeine Unterlagen:%0D%0A- Lebenslauf (im Anhang)%0D%0A- Portfolio: [Link einfügen]%0D%0A%0D%0AMit freundlichen Grüßen`;

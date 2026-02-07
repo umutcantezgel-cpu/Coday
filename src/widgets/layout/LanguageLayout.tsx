@@ -1,15 +1,26 @@
 import React, { useEffect } from 'react';
-import { Outlet, useParams, Navigate, useLocation } from 'react-router-dom';
+import { Outlet, useParams, redirect, type LoaderFunctionArgs } from 'react-router';
 import { useTranslation } from 'react-i18next';
 
 const SUPPORTED_LANGUAGES = ['de', 'en'];
+
+// SSR-compatible loader for language validation
+export async function loader({ params }: LoaderFunctionArgs) {
+  const lng = params.lng;
+
+  // If language is invalid, redirect to 'de' on the server
+  if (!lng || !SUPPORTED_LANGUAGES.includes(lng)) {
+    throw redirect('/de', 302);
+  }
+
+  return { lng };
+}
 
 export const LanguageLayout: React.FC = () => {
   const { lng } = useParams<{ lng: string }>();
   const { i18n } = useTranslation();
 
   useEffect(() => {
-    console.log('[LanguageLayout] Effect', { lng, i18nLang: i18n.language });
     if (lng && SUPPORTED_LANGUAGES.includes(lng) && i18n.language !== lng) {
       i18n.changeLanguage(lng);
     }
@@ -22,11 +33,13 @@ export const LanguageLayout: React.FC = () => {
     }
   }, [lng, i18n]);
 
-  // Validate language
+  // The loader already validated the language, so we can safely render
+  // (keeping a runtime check for type safety)
   if (!lng || !SUPPORTED_LANGUAGES.includes(lng)) {
-    // Should generally be caught by router, but as a safeguard
-    return <Navigate to="/de" replace />;
+    return null; // Should never happen - loader redirects
   }
 
   return <Outlet />;
 };
+
+export default LanguageLayout;

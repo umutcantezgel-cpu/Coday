@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 const CraftsmanLeadCalculator: React.FC = () => {
   const [avgOrderValue, setAvgOrderValue] = useState(5000); // 5k for a small job?

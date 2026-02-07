@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { modules, Module, ModuleCategory } from '../../../data/modules';
+import { modules, Module } from '../../../data/modules';
 
 interface CalculatorState {
     selectedModuleIds: Set<string>;

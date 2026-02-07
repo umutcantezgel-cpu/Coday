@@ -1,13 +1,13 @@
 import React from 'react';
-import { useState } from 'react';
+
 import { Icon } from '@/shared/ui/Icon';
 
 const Events: React.FC = () => {
     return (
-        <div className="bg-aurora-white min-h-screen pt-24 pb-20">
+        <div className="bg-background-light min-h-screen pt-24 pb-20">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
-                    <h1 className="font-display font-black text-5xl md:text-6xl text-gradient-vivid mb-6">
+                    <h1 className="font-display font-black text-5xl md:text-6xl text-gradient mb-6">
                         Anstehende Events
                     </h1>
                     <p className="text-xl text-slate-500 max-w-2xl mx-auto">
@@ -17,7 +17,7 @@ const Events: React.FC = () => {
 
                 <div className="space-y-6">
                     {[1, 2, 3].map((item) => (
-                        <div key={item} className="flex flex-col md:flex-row bg-white rounded-2xl border border-aurora-mist overflow-hidden hover:shadow-lg transition-all duration-300">
+                        <div key={item} className="flex flex-col md:flex-row bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300">
                             <div className="md:w-1/3 bg-slate-100 relative h-48 md:h-auto">
                                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10" />
                                 <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-1 shadow-sm">

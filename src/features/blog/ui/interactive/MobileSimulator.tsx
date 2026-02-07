@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Smartphone, Monitor, Tablet, XCircle, CheckCircle } from 'lucide-react';
+import { Smartphone, Monitor, XCircle, CheckCircle } from 'lucide-react';
 import { clsx } from "clsx";
 import { useTranslation, Trans } from 'react-i18next';
 

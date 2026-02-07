@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
-import BlurText from '../shared/ui/BlurText';
 import GradientText from '../shared/ui/GradientText';
 import {
   UrlInputForm,
@@ -15,7 +14,7 @@ const Analyzer: React.FC = () => {
   const { status, result } = useAnalyzerStore();
 
   return (
-    <div className="bg-aurora-white min-h-screen">
+    <div className="bg-background-light min-h-screen">
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-4 overflow-hidden">
         {/* Background Gradients */}

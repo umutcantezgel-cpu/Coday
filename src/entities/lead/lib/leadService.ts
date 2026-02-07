@@ -1,4 +1,4 @@
-import { LeadSchema, type Lead, type StoredLead, type LeadSubmissionResult } from '../model/types';
+import { LeadSchema, type StoredLead, type LeadSubmissionResult } from '../model/types';
 
 
 
@@ -41,7 +41,7 @@ export async function submitLead(data: unknown): Promise<LeadSubmissionResult> {
         if (error) throw error;
 
         // Log for development
-        console.log('📧 Lead submitted to Supabase:', insertedData);
+        // console.log('📧 Lead submitted to Supabase');
 
         // 📧 Send Email Notification
         try {
@@ -50,7 +50,7 @@ export async function submitLead(data: unknown): Promise<LeadSubmissionResult> {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(validatedData),
             });
-            console.log('📧 Email notification sent.');
+            // console.log('📧 Email notification sent.');
         } catch (emailError) {
             console.error('Failed to send email notification:', emailError);
             // Don't fail the whole submission if email fails, just log it
@@ -94,6 +94,7 @@ export async function getLeads(): Promise<StoredLead[]> {
 
         // Map snake_case back to camelCase if necessary, or ensure types match.
         // For StoredLead, we expect camelCase.
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         return data.map((item: any) => ({
             id: item.id,
             createdAt: item.created_at,

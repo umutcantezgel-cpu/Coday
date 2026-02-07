@@ -12,7 +12,7 @@ export const CircularGauge: React.FC<CircularGaugeProps> = ({
     score,
     size = 60,
     strokeWidth = 6,
-    color
+    color: _color
 }) => {
     const center = size / 2;
     const radius = (size - strokeWidth) / 2;

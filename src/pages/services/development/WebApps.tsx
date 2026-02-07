@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { LocalizedNavLink as NavLink } from '../../../shared/ui/LocalizedLink';
-import CountUp from '../../../shared/ui/CountUp';
+
 import BlurText from '../../../shared/ui/BlurText';
 import { OptimizedImage } from '../../../shared/ui/OptimizedImage';
 import { appDevImages } from '../../../data/serviceImages';

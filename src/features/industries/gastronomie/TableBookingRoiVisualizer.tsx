@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 const TableBookingRoiVisualizer: React.FC = () => {
   const [coversPerDay, setCoversPerDay] = useState(60);

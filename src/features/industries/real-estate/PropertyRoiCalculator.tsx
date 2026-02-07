@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 const PropertyRoiCalculator: React.FC = () => {
     const [propertyValue, setPropertyValue] = useState(500000);
     const [commissionRate, setCommissionRate] = useState(3.57); // Standard DE with tax
-    const [salesSpeedBoost, setSalesSpeedBoost] = useState(20); // % faster
+    const [salesSpeedBoost] = useState(20); // % faster
 
     const commission = propertyValue * (commissionRate / 100);
 

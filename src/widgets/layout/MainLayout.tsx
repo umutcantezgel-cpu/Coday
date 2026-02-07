@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Outlet } from 'react-router-dom';
 import CardNav from '../navigation/CardNav';
 // ChatWidget lazy loaded below
 import { CookieConsentBanner, CookieSettingsModal } from '../cookie';
@@ -11,27 +11,27 @@ const ChatWidget = lazy(() =>
 );
 
 interface LayoutProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
-
-import { SeoHead } from '../../shared/ui/SeoHead';
 
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
   const location = useLocation();
   const isDashboard = location.pathname.startsWith('/dashboard');
 
-  if (isDashboard) return <>{children}</>;
+  if (isDashboard) return <>{children || <Outlet />}</>;
 
   return (
     <div className="font-sans text-text-light bg-background-light min-h-screen flex flex-col">
-      <SeoHead />
+      <a href="#main-content" className="skip-link">
+        Zum Hauptinhalt springen
+      </a>
       {/* World Class Navigation */}
       <CardNav />
 
       {/* Spacer for fixed nav */}
       <div className="h-24" />
 
-      <main className="flex-grow pb-20 lg:pb-0">{children}</main>
+      <main id="main-content" className="flex-grow pb-20 lg:pb-0">{children || <Outlet />}</main>
 
       <Suspense fallback={<div className="h-24 bg-secondary" />}>
         <div className="pb-24 lg:pb-0">
@@ -56,3 +56,5 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     </div>
   );
 };
+
+export default Layout;

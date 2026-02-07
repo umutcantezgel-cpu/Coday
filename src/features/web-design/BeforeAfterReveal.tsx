@@ -7,8 +7,7 @@ const BeforeAfterReveal: React.FC = () => {
     const containerRef = useRef<HTMLDivElement>(null);
 
     // Images (Using placeholders that fit the theme for now, ideally real assets)
-    const beforeImage = "/images/hero/old-website-blurred.jpg"; // Needs to be added or use fallback
-    const afterImage = "/images/hero/modern-website-mockup.jpg"; // Needs to be added or use fallback
+
 
     // Fallback gradients if images fail
     const beforeFallback = "bg-gradient-to-br from-gray-200 to-gray-300";

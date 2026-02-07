@@ -80,11 +80,11 @@ const ABTestSimulator = React.lazy(
 );
 const VoiceDemo = React.lazy(
   () =>
-    import('./interactive/VoiceDemo') as unknown as Promise<{ default: React.ComponentType<any> }>
+    import('./interactive/VoiceDemo') as unknown as Promise<{ default: React.ComponentType<unknown> }>
 );
 const AICostGraph = React.lazy(
   () =>
-    import('./interactive/AICostGraph') as unknown as Promise<{ default: React.ComponentType<any> }>
+    import('./interactive/AICostGraph') as unknown as Promise<{ default: React.ComponentType<unknown> }>
 );
 const WebHistoryTimeline = React.lazy(
   () =>
@@ -466,7 +466,7 @@ const InteractiveBlockRenderer: React.FC<{ block: InteractiveBlock }> = ({ block
   const { t } = useTranslation('blog');
   const COMPONENT_MAP: Record<
     string,
-    React.LazyExoticComponent<any> | React.ComponentType<unknown>
+    React.LazyExoticComponent<React.ComponentType<unknown>> | React.ComponentType<unknown>
   > = {
     'roi-calculator': ROI_Calculator,
     'speed-test': SpeedComparison,

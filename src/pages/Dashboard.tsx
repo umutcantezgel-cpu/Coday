@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import CountUp from '../shared/ui/CountUp';
 import { Icon } from '../shared/ui/Icon';
 
 const Dashboard: React.FC = () => {
   const { t } = useTranslation('dashboard');
-  const [score, setScore] = useState(0);
+  /* const [score, setScore] = useState(0); // Removed unused state */
   return (
     <div className="font-sans antialiased text-text-light dark:text-text-dark bg-background-light dark:bg-background-dark transition-colors duration-300 min-h-screen relative">
       <div className="fixed top-0 left-0 w-full h-96 -z-10 overflow-hidden pointer-events-none">
@@ -46,7 +46,7 @@ const Dashboard: React.FC = () => {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center mb-16 relative">
           <h1 className="font-display font-extrabold text-5xl sm:text-6xl mb-4 tracking-tight">
-            <span className="bg-clip-text text-transparent bg-gradient-vivid">{t('hero.title')}</span>
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600">{t('hero.title')}</span>
           </h1>
           <p className="text-lg text-gray-500 max-w-2xl mx-auto">
             {t('hero.desc')}
@@ -75,7 +75,7 @@ const Dashboard: React.FC = () => {
           <div className="max-w-md text-center md:text-left">
             <h2 className="text-2xl font-bold text-gray-900 mb-2">{t('score.title')}</h2>
             <p className="text-gray-600 mb-6">{t('score.desc')}</p>
-            <button className="bg-gradient-ocean text-white font-medium px-6 py-2.5 rounded-lg shadow-aurora hover:shadow-aurora-lg transition-all hover:-translate-y-0.5 text-sm">
+            <button className="bg-gradient-ocean text-white font-medium px-6 py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5 text-sm">
               {t('score.button')}
             </button>
           </div>

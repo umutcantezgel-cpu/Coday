@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { m, PanInfo, useMotionValue, useTransform } from 'motion/react';
+import { m, PanInfo, useMotionValue, useTransform, MotionValue, Transition } from 'motion/react';
 import React, { JSX } from 'react';
 import { Icon } from './Icon';
 
@@ -64,8 +64,8 @@ interface CarouselItemProps {
   itemWidth: number;
   round: boolean;
   trackItemOffset: number;
-  x: any;
-  transition: any;
+  x: MotionValue<number>;
+  transition: Transition;
 }
 
 const CarouselItem: React.FC<CarouselItemProps> = ({
@@ -88,11 +88,10 @@ const CarouselItem: React.FC<CarouselItemProps> = ({
   return (
     <m.div
       key={`${item?.id ?? index}-${index}`}
-      className={`relative shrink-0 flex flex-col ${
-        round
-          ? 'items-center justify-center text-center bg-surface-light border-0'
-          : 'items-start justify-between bg-white border border-gray-200 rounded-3xl shadow-sm hover:shadow-md transition-shadow'
-      } overflow-hidden cursor-grab active:cursor-grabbing`}
+      className={`relative shrink-0 flex flex-col ${round
+        ? 'items-center justify-center text-center bg-surface-light border-0'
+        : 'items-start justify-between bg-white border border-gray-200 rounded-3xl shadow-sm hover:shadow-md transition-shadow'
+        } overflow-hidden cursor-grab active:cursor-grabbing`}
       style={{
         width: itemWidth,
         height: round ? itemWidth : '100%',
@@ -250,11 +249,11 @@ export default function Carousel({
   const dragProps = loop
     ? {}
     : {
-        dragConstraints: {
-          left: -trackItemOffset * Math.max(itemsForRender.length - 1, 0),
-          right: 0,
-        },
-      };
+      dragConstraints: {
+        left: -trackItemOffset * Math.max(itemsForRender.length - 1, 0),
+        right: 0,
+      },
+    };
 
   const activeIndex =
     items.length === 0
@@ -266,11 +265,10 @@ export default function Carousel({
   return (
     <div
       ref={containerRef}
-      className={`relative overflow-hidden p-4 ${
-        round
-          ? 'rounded-full border border-gray-100'
-          : 'rounded-[2rem] border border-gray-100 bg-gray-50/50'
-      }`}
+      className={`relative overflow-hidden p-4 ${round
+        ? 'rounded-full border border-gray-100'
+        : 'rounded-[2rem] border border-gray-100 bg-gray-50/50'
+        }`}
       style={{
         width: `${baseWidth}px`,
         ...(round && { height: `${baseWidth}px` }),
@@ -313,15 +311,14 @@ export default function Carousel({
           {items.map((_, index) => (
             <m.div
               key={index}
-              className={`h-2 w-2 rounded-full cursor-pointer transition-colors duration-150 ${
-                activeIndex === index
-                  ? round
-                    ? 'bg-white'
-                    : 'bg-[#333333]'
-                  : round
-                    ? 'bg-[#555]'
-                    : 'bg-[rgba(51,51,51,0.4)]'
-              }`}
+              className={`h-2 w-2 rounded-full cursor-pointer transition-colors duration-150 ${activeIndex === index
+                ? round
+                  ? 'bg-white'
+                  : 'bg-[#333333]'
+                : round
+                  ? 'bg-[#555]'
+                  : 'bg-[rgba(51,51,51,0.4)]'
+                }`}
               animate={{
                 scale: activeIndex === index ? 1.2 : 1,
               }}

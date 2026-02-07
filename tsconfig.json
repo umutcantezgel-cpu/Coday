@@ -11,7 +11,9 @@
     ],
     "skipLibCheck": true,
     "types": [
-      "node"
+      "node",
+      "vite/client",
+      "@react-router/node"
     ],
     "moduleResolution": "bundler",
     "strict": true,

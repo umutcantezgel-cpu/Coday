@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Trophy, Star, Zap } from 'lucide-react';
+import { Trophy, Zap } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 export const ReadingScore: React.FC<{ currentPostId?: number }> = ({ currentPostId }) => {
@@ -7,7 +7,7 @@ export const ReadingScore: React.FC<{ currentPostId?: number }> = ({ currentPost
     try {
       const stored = localStorage.getItem('coday_read_posts');
       return stored ? JSON.parse(stored) : [];
-    } catch (e) {
+    } catch {
       return [];
     }
   });

@@ -1,15 +1,18 @@
 import React from 'react';
 import BlurText from '../../shared/ui/BlurText';
 import GradientText from '../../shared/ui/GradientText';
-import { OptimizedImage } from '../../shared/ui/OptimizedImage';
-import { marketingImages } from '../../data/serviceImages'; // Fallback
 import RevenueUpliftSimulator from '../../features/ecommerce/RevenueUpliftSimulator';
 import HeadlessVsShopifyGrid from '../../features/ecommerce/HeadlessVsShopifyGrid';
 import ConversionFunnelMap from '../../features/ecommerce/ConversionFunnelMap';
+import { SeoHead } from '../../shared/ui/SeoHead';
 
 const EcommerceDevelopment: React.FC = () => {
   return (
     <div className="bg-background-light min-h-screen">
+      <SeoHead
+        title="Online-Shop Entwicklung | Coday"
+        description="Online-Shops die verkaufen. High-End E-Commerce mit Next.js."
+      />
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-4 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

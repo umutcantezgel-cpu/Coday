@@ -1,20 +1,20 @@
 import React from 'react';
-import { useState } from 'react';
+
 import { Icon } from '@/shared/ui/Icon';
 
 const Calendar: React.FC = () => {
     const days = Array.from({ length: 35 }, (_, i) => i + 1);
 
     return (
-        <div className="bg-aurora-white min-h-screen pt-24 pb-20">
+        <div className="bg-background-light min-h-screen pt-24 pb-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12">
-                    <h1 className="font-display font-black text-5xl md:text-6xl text-gradient-vivid mb-6">
+                    <h1 className="font-display font-black text-5xl md:text-6xl text-gradient mb-6">
                         Community Kalender
                     </h1>
                 </div>
 
-                <div className="bg-white rounded-3xl border border-aurora-mist shadow-xl overflow-hidden">
+                <div className="bg-white rounded-3xl border border-gray-200 shadow-xl overflow-hidden">
                     <div className="p-6 md:p-8 border-b border-gray-100 flex items-center justify-between bg-slate-50/50">
                         <h2 className="text-2xl font-bold text-gray-800">April 2026</h2>
                         <div className="flex space-x-2">

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Search, Loader2, AlertCircle, CheckCircle } from 'lucide-react';
 import { useAnalyzerStore } from '../model/store';

@@ -3,6 +3,14 @@
  * Embeds Calendly scheduling widget for booking consultations
  */
 
+declare global {
+    interface Window {
+        Calendly: {
+            initPopupWidget: (options: { url: string }) => void;
+        };
+    }
+}
+
 // Calendly configuration
 const CALENDLY_URL = 'https://calendly.com/coday-beratung/30min';
 
@@ -42,8 +50,8 @@ export function openCalendlyPopup(options: CalendlyOptions = {}): void {
     }
 
     // Check if Calendly widget is loaded
-    if (typeof window !== 'undefined' && (window as any).Calendly) {
-        (window as any).Calendly.initPopupWidget({
+    if (typeof window !== 'undefined' && window.Calendly) {
+        window.Calendly.initPopupWidget({
             url: url.toString(),
         });
     } else {

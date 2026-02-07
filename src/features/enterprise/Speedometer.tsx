@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import { motion } from 'motion/react';
 import { Zap, Globe, Cpu } from 'lucide-react';
 
 export const Speedometer: React.FC = () => {
-    const controls = useAnimation();
     const [score, setScore] = useState(0);
 
     // Simulate "Live Test"
@@ -42,7 +41,7 @@ export const Speedometer: React.FC = () => {
                         whileInView={{ opacity: 1, scale: 1 }}
                         className="text-6xl font-black text-white font-display tracking-tighter"
                     >
-                        100
+                        {score}
                     </motion.div>
                     <span className="text-primary font-bold tracking-widest text-xs uppercase">Lighthouse Score</span>
                 </div>

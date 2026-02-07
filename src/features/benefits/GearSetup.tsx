@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import { Icon } from '@/shared/ui/Icon';
 
 const GearSetup: React.FC = () => {
@@ -68,7 +68,7 @@ const GearSetup: React.FC = () => {
                                 ].map((opt) => (
                                     <button
                                         key={opt.id}
-                                        onClick={() => setMonitor(opt.id as any)}
+                                        onClick={() => setMonitor(opt.id as 'ultra' | 'dual' | 'pro')}
                                         className={`p-3 rounded-lg border transition-all text-sm font-bold ${monitor === opt.id ? 'bg-primary/20 border-primary text-white' : 'bg-white/5 border-transparent text-gray-400 hover:bg-white/10'}`}
                                     >
                                         {opt.label}

@@ -107,7 +107,7 @@ const CardNav: React.FC<CardNavProps> = ({
         </Link>
 
         {/* Desktop Links (Center) */}
-        <div className="nav-pill-links hidden md:flex">
+        <div className="nav-pill-links hidden lg:flex">
           {items.map((item) => (
             <div
               key={item.label}
@@ -243,7 +243,7 @@ const CardNav: React.FC<CardNavProps> = ({
           </Link>
 
           {/* Mobile Hamburger (Visible only on mobile) */}
-          <div className="md:hidden ml-2">
+          <div className="lg:hidden ml-2">
             <button
               className="mobile-menu-trigger"
               onClick={() => setIsMobileOpen(true)}

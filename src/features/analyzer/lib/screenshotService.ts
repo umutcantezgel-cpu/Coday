@@ -21,7 +21,7 @@ interface ScreenshotOptions {
  */
 export async function captureScreenshot(
   url: string,
-  options: ScreenshotOptions = {}
+  _options: ScreenshotOptions = {}
 ): Promise<string | null> {
   // const {
   //    width = 1280,

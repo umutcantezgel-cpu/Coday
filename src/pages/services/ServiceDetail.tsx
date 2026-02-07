@@ -4,14 +4,14 @@ import { LocalizedNavLink as NavLink } from '../../shared/ui/LocalizedLink';
 import { servicesData } from '../../data/services';
 import { OptimizedImage } from '../../shared/ui/OptimizedImage';
 import {
-  serviceImages,
   appDevImages,
   appDevFeatureMapping,
   brandingImages,
   brandingFeatureMapping,
 } from '../../data/serviceImages';
 import { Icon } from '../../shared/ui/Icon';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
+import { SeoHead } from '../../shared/ui/SeoHead';
 
 const getServiceImage = (category?: string, slug?: string) => {
   if (!category || !slug) return null;
@@ -43,6 +43,7 @@ const ServiceDetail: React.FC = () => {
   if (!service) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background-light">
+        <SeoHead title="Service nicht gefunden | Coday" noIndex />
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-4">
             {t('generic_detail.not_found.title')}
@@ -72,6 +73,10 @@ const ServiceDetail: React.FC = () => {
 
   return (
     <div className="bg-background-light pt-24 pb-0">
+      <SeoHead
+        title={`${service.title} | Coday`}
+        description={service.description}
+      />
       {/* Breadcrumb */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
         <div className="flex items-center text-sm text-gray-500">
@@ -212,10 +217,9 @@ const ServiceDetail: React.FC = () => {
               <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
                 {t('generic_detail.process.label')}
               </span>
-              <h2
-                className="font-display font-bold text-3xl sm:text-5xl mb-6"
-                dangerouslySetInnerHTML={{ __html: t('generic_detail.process.title') }}
-              ></h2>
+              <h2 className="font-display font-bold text-3xl sm:text-5xl mb-6">
+                <Trans i18nKey="generic_detail.process.title" components={{ br: <br /> }} />
+              </h2>
             </div>
 
             <div className="relative">
@@ -250,10 +254,9 @@ const ServiceDetail: React.FC = () => {
               <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
                 {t('generic_detail.advantages.label')}
               </span>
-              <h2
-                className="font-display font-bold text-3xl sm:text-4xl text-gray-900 mb-6"
-                dangerouslySetInnerHTML={{ __html: t('generic_detail.advantages.title') }}
-              ></h2>
+              <h2 className="font-display font-bold text-3xl sm:text-4xl text-gray-900 mb-6">
+                <Trans i18nKey="generic_detail.advantages.title" components={{ br: <br /> }} />
+              </h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                 {t('generic_detail.advantages.desc')}
               </p>

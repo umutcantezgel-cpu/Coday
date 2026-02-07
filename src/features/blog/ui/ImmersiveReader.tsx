@@ -3,7 +3,7 @@ import { motion, useScroll, useSpring } from 'motion/react';
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { slugify } from '../lib/utils';
-import type { ContentBlock } from '../model/types';
+import type { ContentBlock, TextBlock } from '../model/types';
 
 function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs));
@@ -39,12 +39,15 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ blocks }) => {
     // Filter only blocks with headings
     const headings = blocks.filter(
         (b): b is ContentBlock & { heading: string } =>
-            b.type === 'text' && !!(b as any).heading
-    ).map((b: any) => ({
-        id: slugify(b.heading),
-        text: b.heading,
-        level: b.level || 'h2'
-    }));
+            b.type === 'text' && !!b.heading
+    ).map((b) => {
+        const textBlock = b as TextBlock;
+        return {
+            id: slugify(textBlock.heading || ''),
+            text: textBlock.heading || '',
+            level: textBlock.level || 'h2'
+        };
+    });
 
     useEffect(() => {
         const observer = new IntersectionObserver(

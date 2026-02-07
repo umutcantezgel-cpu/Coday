@@ -1,14 +1,14 @@
 import React, { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, useScroll, useTransform } from 'motion/react';
-import { Helmet } from 'react-helmet-async';
-import { ArrowRight, Cpu, Globe, Zap, BarChart, Shield, ChevronRight } from 'lucide-react';
+import { ArrowRight, Cpu } from 'lucide-react';
 import { LocalizedNavLink as NavLink } from '../../shared/ui/LocalizedLink';
 import { TechStackHologram } from '../../features/enterprise/TechStackHologram';
 import { Speedometer } from '../../features/enterprise/Speedometer';
 import { EdgeNetworkMap } from '../../features/enterprise/EdgeNetworkMap';
 import { ROICalculator } from '../../features/enterprise/ROICalculator';
 import { ScrollContextCTA } from '../../features/enterprise/ScrollContextCTA';
+import { SeoHead } from '../../shared/ui/SeoHead';
 
 const EnterpriseWeb: React.FC = () => {
   const { t } = useTranslation('services');
@@ -21,14 +21,11 @@ const EnterpriseWeb: React.FC = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
-    <div ref={containerRef} className="bg-aurora-white min-h-screen overflow-hidden">
-      <Helmet>
-        <title>Enterprise Web Platforms | Coday</title>
-        <meta
-          name="description"
-          content="Websites, die Märkte dominieren. High-End Webentwicklung für Marktführer. Next.js, Edge Computing, Global Scale."
-        />
-      </Helmet>
+    <div ref={containerRef} className="bg-background-light min-h-screen overflow-hidden">
+      <SeoHead
+        title="Enterprise Web Platforms | Coday"
+        description="Websites, die Märkte dominieren. High-End Webentwicklung für Marktführer. Next.js, Edge Computing, Global Scale."
+      />
 
       {/* HERO SECTION: The Singularity */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">

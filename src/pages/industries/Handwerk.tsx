@@ -3,8 +3,7 @@ import { Icon } from '@/shared/ui/Icon';
 import { useTranslation } from 'react-i18next';
 import BlurText from '../../shared/ui/BlurText';
 import GradientText from '../../shared/ui/GradientText';
-import { OptimizedImage } from '../../shared/ui/OptimizedImage';
-import { serviceImages } from '../../data/serviceImages';
+
 import CraftsmanLeadCalculator from '../../features/industries/handwerk/CraftsmanLeadCalculator';
 import RecruitingFunnelDemo from '../../features/industries/handwerk/RecruitingFunnelDemo';
 import LocalDominanceMap from '../../features/industries/handwerk/LocalDominanceMap';

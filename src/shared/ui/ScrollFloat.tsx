@@ -1,4 +1,4 @@
-import React, { useMemo, ReactNode, RefObject } from 'react';
+import React, { ReactNode, RefObject } from 'react';
 import { motion, Variants } from 'motion/react';
 
 interface ScrollFloatProps {
@@ -20,18 +20,35 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
     animationDuration = 1,
     stagger = 0.03
 }) => {
-    const splitText = useMemo(() => {
-        const text = typeof children === 'string' ? children : '';
-        return text.split('').map((char, index) => (
-            <motion.span
-                className="inline-block word"
-                key={index}
-                variants={itemVariants}
-            >
-                {char === ' ' ? '\u00A0' : char}
-            </motion.span>
-        ));
-    }, [children]);
+    const itemVariants: Variants = {
+        hidden: {
+            opacity: 0,
+            y: "120%",
+            scaleY: 2.3,
+            scaleX: 0.7,
+            transformOrigin: '50% 0%'
+        },
+        visible: {
+            opacity: 1,
+            y: 0,
+            scaleY: 1,
+            scaleX: 1,
+            transition: {
+                duration: animationDuration,
+                ease: "easeOut" // or custom bezier
+            }
+        }
+    };
+
+    const splitText = (typeof children === 'string' ? children : '').split('').map((char, index) => (
+        <motion.span
+            className="inline-block word"
+            key={index}
+            variants={itemVariants}
+        >
+            {char === ' ' ? '\u00A0' : char}
+        </motion.span>
+    ));
 
     const containerVariants: Variants = {
         hidden: {},
@@ -42,6 +59,8 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
             }
         }
     };
+
+
 
     return (
         <motion.h2
@@ -56,26 +75,6 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
             </span>
         </motion.h2>
     );
-};
-
-const itemVariants: Variants = {
-    hidden: {
-        opacity: 0,
-        y: "120%",
-        scaleY: 2.3,
-        scaleX: 0.7,
-        transformOrigin: '50% 0%'
-    },
-    visible: {
-        opacity: 1,
-        y: 0,
-        scaleY: 1,
-        scaleX: 1,
-        transition: {
-            duration: 1,
-            ease: "easeOut" // or custom bezier
-        }
-    }
 };
 
 export default ScrollFloat;

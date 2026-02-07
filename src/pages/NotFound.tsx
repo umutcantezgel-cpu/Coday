@@ -44,7 +44,7 @@ const NotFound: React.FC = () => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
           <Link
             to="/"
-            className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 border border-transparent text-base font-bold rounded-xl text-white bg-gradient-ocean hover:bg-opacity-90 shadow-aurora hover:shadow-aurora-lg transition-all transform hover:-translate-y-1 group"
+            className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 border border-transparent text-base font-bold rounded-xl text-white bg-gradient-ocean hover:bg-opacity-90 shadow-md hover:shadow-xl transition-all transform hover:-translate-y-1 group"
           >
             <Icon
               name="arrow_left"

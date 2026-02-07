@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState, useCallback } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from 'motion/react';
 import { createPortal } from 'react-dom';
 
@@ -119,8 +119,8 @@ const GlobalSpotlight: React.FC<{
                 left: smoothX,
                 top: smoothY,
                 opacity: smoothOpacity,
-                width: 800,
-                height: 800,
+                width: spotlightRadius * 2,
+                height: spotlightRadius * 2,
                 background: `radial-gradient(circle, rgba(${glowColor}, 0.15) 0%, rgba(${glowColor}, 0.08) 15%, rgba(${glowColor}, 0.04) 25%, rgba(${glowColor}, 0.02) 40%, transparent 70%)`
             }}
         />,
@@ -288,7 +288,7 @@ const ParticleCard: React.FC<{
     };
 
 export const MagicBento: React.FC<BentoProps> = ({
-    textAutoHide = true, enableStars = true, enableSpotlight = true, enableBorderGlow = true, disableAnimations = false,
+    textAutoHide = true, enableStars: _enableStars = true, enableSpotlight = true, enableBorderGlow = true, disableAnimations = false,
     spotlightRadius = DEFAULT_SPOTLIGHT_RADIUS, particleCount = DEFAULT_PARTICLE_COUNT, enableTilt = false,
     glowColor = DEFAULT_GLOW_COLOR, clickEffect = true, enableMagnetism = true, cards = defaultCardData,
     children, columns, gap = 12, className = ''

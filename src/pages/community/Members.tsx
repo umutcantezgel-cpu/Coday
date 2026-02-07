@@ -13,10 +13,10 @@ const Members: React.FC = () => {
     ];
 
     return (
-        <div className="bg-aurora-white min-h-screen pt-24 pb-20">
+        <div className="bg-background-light min-h-screen pt-24 pb-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
-                    <h1 className="font-display font-black text-5xl md:text-6xl text-gradient-vivid mb-6">
+                    <h1 className="font-display font-black text-5xl md:text-6xl text-gradient mb-6">
                         Community Mitglieder
                     </h1>
                     <p className="text-xl text-slate-500 max-w-2xl mx-auto">
@@ -26,7 +26,7 @@ const Members: React.FC = () => {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {members.map((member, i) => (
-                        <div key={i} className="group relative bg-white rounded-2xl border border-aurora-mist p-6 hover:shadow-lg transition-all duration-300 text-center">
+                        <div key={i} className="group relative bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-lg transition-all duration-300 text-center">
                             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-blue-50/30 opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl pointer-events-none" />
 
                             <div className="relative z-10">
@@ -39,7 +39,7 @@ const Members: React.FC = () => {
                                 </div>
 
                                 <h3 className="text-lg font-bold text-gray-900">{member.name}</h3>
-                                <p className="text-sm text-aurora-sapphire font-medium mb-4">{member.role}</p>
+                                <p className="text-sm text-primary font-medium mb-4">{member.role}</p>
 
                                 <button className="w-full py-2 rounded-lg bg-slate-50 text-slate-600 text-sm font-semibold hover:bg-blue-50 hover:text-blue-600 transition-colors">
                                     Vernetzen

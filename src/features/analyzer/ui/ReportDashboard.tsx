@@ -26,7 +26,7 @@ const CATEGORY_CONFIG = [
 
 export const ReportDashboard: React.FC = () => {
   const { result, resetAnalysis } = useAnalyzerStore();
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [, setSelectedCategory] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
   const [showEmailModal, setShowEmailModal] = useState(false);
   // const [showCalendlyModal, setShowCalendlyModal] = useState(false);
@@ -47,7 +47,7 @@ export const ReportDashboard: React.FC = () => {
           text: `Gesamtscore: ${result.overallScore}/100 - Schau dir den vollständigen Report an!`,
           url: shareUrl,
         });
-      } catch (_err) {
+      } catch {
         // User cancelled
       }
     } else {
@@ -165,7 +165,7 @@ export const ReportDashboard: React.FC = () => {
         )}
 
         {/* Partial Failure Warning */}
-        {Object.values(result).some((val: any) => typeof val === 'object' && val?.score === -1) && (
+        {Object.values(result).some((val: unknown) => typeof val === 'object' && (val as { score?: number })?.score === -1) && (
           <div className="max-w-xl mx-auto mb-8 bg-orange-50 border border-orange-200 rounded-xl p-4 flex items-center gap-3 text-left">
             <Icon name="warning" className="text-orange-500" />
             <div className="text-sm text-orange-800">
@@ -230,12 +230,11 @@ export const ReportDashboard: React.FC = () => {
             transition={{ delay: 0.5, type: 'spring', stiffness: 200 }}
             className={`
               inline-flex items-center justify-center w-40 h-40 rounded-full mb-6
-              ${
-                result.overallScore >= 80
-                  ? 'bg-gradient-to-br from-green-400 to-green-600'
-                  : result.overallScore >= 50
-                    ? 'bg-gradient-to-br from-yellow-400 to-orange-500'
-                    : 'bg-gradient-to-br from-red-400 to-red-600'
+              ${result.overallScore >= 80
+                ? 'bg-gradient-to-br from-green-400 to-green-600'
+                : result.overallScore >= 50
+                  ? 'bg-gradient-to-br from-yellow-400 to-orange-500'
+                  : 'bg-gradient-to-br from-red-400 to-red-600'
               }
               shadow-2xl
             `}
@@ -336,15 +335,14 @@ export const ReportDashboard: React.FC = () => {
                 <div
                   className={`
                   w-3 h-3 rounded-full mt-2 flex-shrink-0
-                  ${
-                    issue.severity === 'kritisch'
+                  ${issue.severity === 'kritisch'
                       ? 'bg-red-500'
                       : issue.severity === 'hoch'
                         ? 'bg-orange-500'
                         : issue.severity === 'mittel'
                           ? 'bg-yellow-500'
                           : 'bg-gray-400'
-                  }
+                    }
                 `}
                 />
                 <div className="flex-1">

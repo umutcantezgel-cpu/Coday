@@ -3,14 +3,8 @@
  * Maps project slugs to their corresponding mockup paths and alt-texts.
  */
 export const portfolioImages: Record<string, { src: string; alt: string }> = {
-    'fintech-platform': {
-        src: '/images/portfolio/mockup-website-anwaltskanzlei-kompetenzen-unternehmensrecht-familienrecht-team.jpeg',
-        alt: 'FinTech Platform Dashboard Mockup'
-    },
-    'fashion-commerce': {
-        src: '/images/portfolio/mockup-website-restaurant-speisekarte-vorspeisen-hauptgerichte-desserts-responsive.jpeg',
-        alt: 'Fashion Commerce Storefront Mockup'
-    },
+
+
     'saas-redesign': {
         src: '/images/portfolio/mockup-website-fitnessstudio-kursplan-yoga-preise-einzelstunde-abo-responsive.jpeg',
         alt: 'SaaS Dashboard UI Redesign'

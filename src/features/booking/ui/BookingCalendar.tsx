@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import { motion, AnimatePresence } from 'motion/react';
-import { createClient } from '@supabase/supabase-js';
-
 // Initialize Supabase Client (Frontend)
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
-const supabase = createClient(supabaseUrl, supabaseKey);
 
 interface BookingCalendarProps {
   className?: string;
@@ -92,7 +89,7 @@ const BookingCalendar = ({
   if (success) {
     return (
       <div
-        className={`p-8 bg-aurora-white rounded-2xl border border-aurora-mist text-center ${className}`}
+        className={`p-8 bg-gray-50 rounded-2xl border border-gray-200 text-center ${className}`}
       >
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
@@ -102,8 +99,8 @@ const BookingCalendar = ({
           <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-3xl">
             ✅
           </div>
-          <h3 className="text-2xl font-bold text-aurora-deep">{t('calendar.success.title')}</h3>
-          <p className="text-aurora-charcoal">
+          <h3 className="text-2xl font-bold text-gray-900">{t('calendar.success.title')}</h3>
+          <p className="text-gray-700">
             <Trans
               i18nKey="calendar.success.message"
               t={t}
@@ -118,7 +115,7 @@ const BookingCalendar = ({
           </p>
           <button
             onClick={() => window.location.reload()}
-            className="mt-6 px-6 py-2 bg-aurora-deep text-white rounded-full hover:bg-aurora-sapphire transition-colors"
+            className="mt-6 px-6 py-2 bg-gray-900 text-white rounded-full hover:bg-primary transition-colors"
           >
             {t('calendar.success.new_booking')}
           </button>
@@ -140,7 +137,7 @@ const BookingCalendar = ({
             exit={{ opacity: 0, x: 20 }}
             className="space-y-6"
           >
-            <h3 className="text-xl font-bold text-aurora-deep mb-4">{t('calendar.step1.title')}</h3>
+            <h3 className="text-xl font-bold text-gray-900 mb-4">{t('calendar.step1.title')}</h3>
 
             {/* Scrollable Dates */}
             <div className="flex gap-3 overflow-x-auto pb-4 no-scrollbar">
@@ -179,10 +176,9 @@ const BookingCalendar = ({
                     onClick={() => setSelectedTime(time)}
                     className={`
                       py-2 rounded-xl text-sm font-medium transition-all
-                      ${
-                        selectedTime === time
-                          ? 'bg-primary text-white shadow-lg shadow-primary/30'
-                          : 'bg-white border border-gray-100 hover:border-primary/50 text-gray-600'
+                      ${selectedTime === time
+                        ? 'bg-primary text-white shadow-lg shadow-primary/30'
+                        : 'bg-white border border-gray-100 hover:border-primary/50 text-gray-600'
                       }
                     `}
                   >
@@ -213,7 +209,7 @@ const BookingCalendar = ({
             className="space-y-4"
           >
             <div className="mb-6">
-              <h3 className="text-xl font-bold text-aurora-deep">{t('calendar.step2.title')}</h3>
+              <h3 className="text-xl font-bold text-gray-900">{t('calendar.step2.title')}</h3>
               <p className="text-sm text-gray-500">
                 {selectedDate?.toLocaleDateString(i18n.language === 'en' ? 'en-US' : 'de-DE', {
                   weekday: 'long',

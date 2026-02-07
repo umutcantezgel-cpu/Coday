@@ -86,7 +86,7 @@ export async function generateChatResponse(
     let webContext = '';
     if (needsWebSearch(lastMessage)) {
         try {
-            console.log('[Jarvis] Triggering web search for:', lastMessage);
+            // console.log('[Jarvis] Triggering web search for:', lastMessage);
             const searchResult = await searchWeb(lastMessage);
             if (searchResult?.content) {
                 webContext = `\n\nAktuelle Web-Recherche zu "${lastMessage}":\n${searchResult.content}`;

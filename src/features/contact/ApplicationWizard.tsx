@@ -87,16 +87,9 @@ export const ApplicationWizard: React.FC = () => {
           email: data.email,
           phone: data.phone,
           company: data.company,
-          message: data.message,
-          project: data.project,
-          budget: data.budget,
-          timeline: data.timeline,
-          source: 'wizard',
-          metadata: {
-            privacy_accepted: true,
-            user_agent: navigator.userAgent,
-          },
+          message: `${data.message}\n\nProject: ${data.project}\nBudget: ${data.budget}\nTimeline: ${data.timeline}\nSource: ApplicationWizard`,
         },
+
       ]);
 
       if (dbError) throw new Error(dbError.message);
@@ -113,9 +106,9 @@ export const ApplicationWizard: React.FC = () => {
       }
 
       setSuccess(true);
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error('Submission error:', err);
-      setError(err.message || t('wizard.error.submit'));
+      setError((err as Error).message || t('wizard.error.submit'));
     } finally {
       setIsSubmitting(false);
     }

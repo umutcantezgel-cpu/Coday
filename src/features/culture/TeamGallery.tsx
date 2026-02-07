@@ -1,10 +1,17 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
+interface TeamMember {
+  name: string;
+  role: string;
+  funfact: string;
+  funfact_title: string;
+}
+
 const TeamGallery: React.FC = () => {
   const { t } = useTranslation('careers');
-  // Using 'any' cast for simplicity since we store array of objects in JSON
-  const team = t('culture.team.members', { returnObjects: true }) as any[];
+
+  const team = t('culture.team.members', { returnObjects: true }) as TeamMember[];
 
   // Fallback if translation fails or returns string (should not happen if array is present)
   const teamMembers = Array.isArray(team) ? team : [];

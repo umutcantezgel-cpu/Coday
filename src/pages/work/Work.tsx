@@ -1,8 +1,9 @@
 import React, { useState, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import BlurText from '../../shared/ui/BlurText';
+
 import { CaseStudyCard } from '../../features/case-studies/ui/CaseStudyCard';
 import { workData } from '../../data/work';
+import { SeoHead } from '../../shared/ui/SeoHead';
 
 const Work: React.FC = () => {
   const { t, i18n } = useTranslation('work');
@@ -25,9 +26,7 @@ const Work: React.FC = () => {
     image:
       project.slug === 'batherm'
         ? '/images/portfolio/batherm-illustration.jpg'
-        : project.slug === 'creative-impact'
-          ? '/images/portfolio/mockup-website-fotograf-portfolio-hochzeit-portrait-business-event-galerie.webp'
-          : `/images/portfolio/${project.thumbnail}.jpg`,
+        : `/images/portfolio/${project.thumbnail}.jpg`,
     excerpt: project.content[currentLang].challenge.description,
     tags: project.content[currentLang].stats.map((s) => s.value),
     category: project.category, // internal category
@@ -46,6 +45,10 @@ const Work: React.FC = () => {
 
   return (
     <div className="bg-background-light min-h-screen">
+      <SeoHead
+        title={`${t('hero.title')} | Coday`}
+        description={t('hero.description')}
+      />
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
@@ -72,11 +75,10 @@ const Work: React.FC = () => {
             <button
               key={item.id}
               onClick={() => handleFilterChange(index)}
-              className={`px-6 py-3 rounded-full text-sm font-bold transition-colors ${
-                item.id === filter
-                  ? 'bg-primary text-white'
-                  : 'bg-white text-secondary hover:bg-gray-50 border border-gray-200'
-              }`}
+              className={`px-6 py-3 rounded-full text-sm font-bold transition-colors ${item.id === filter
+                ? 'bg-primary text-white'
+                : 'bg-white text-secondary hover:bg-gray-50 border border-gray-200'
+                }`}
             >
               {item.label}
             </button>

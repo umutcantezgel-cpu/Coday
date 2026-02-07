@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'motion/react';
-import { Split, TrendingUp, Users, MousePointerClick, RefreshCw, Trophy } from 'lucide-react';
+import { Split, Users, MousePointerClick, RefreshCw } from 'lucide-react';
 import { clsx } from 'clsx';
 import { cn } from '@/shared/lib/utils';
 
@@ -29,7 +29,7 @@ const VARIANTS: Record<'A' | 'B', Variant> = {
         name: 'Die Daten-Variante (Challenger)',
         description: 'Klarer Nutzen, starke Kontrastfarbe, "Ich"-fokussiert.',
         buttonText: 'Gratis Audit sichern',
-        buttonColor: 'bg-aurora-sapphire',
+        buttonColor: 'bg-primary',
         conversionRate: 4.8
     }
 };
@@ -40,7 +40,7 @@ export const ABTestSimulator: React.FC = () => {
     const [visitors, setVisitors] = useState(0);
     const [conversions, setConversions] = useState(0);
     const [isRunning, setIsRunning] = useState(false);
-    const [simSpeed, setSimSpeed] = useState(1);
+    const [simSpeed] = useState(1);
 
     // Simulation Logic
     useEffect(() => {
@@ -55,7 +55,7 @@ export const ABTestSimulator: React.FC = () => {
                 // Add some noise (+/- 0.5%)
                 const noisyRate = currentRate + (Math.random() - 0.5);
 
-                if (Math.random() * 100 <noisyRate) {
+                if (Math.random() * 100 < noisyRate) {
                     setConversions(prev => prev + 1);
                 }
             }, 100 / simSpeed);
@@ -65,7 +65,6 @@ export const ABTestSimulator: React.FC = () => {
     }, [isRunning, activeVariant, simSpeed]);
 
     const currentCR = visitors > 0 ? ((conversions / visitors) * 100).toFixed(2) : "0.00";
-    const uplift = activeVariant === 'B' ? "+300%" : "0%";
 
     const reset = () => {
         setIsRunning(false);
@@ -80,7 +79,7 @@ export const ABTestSimulator: React.FC = () => {
                 {/* Header */}
                 <div className="bg-gradient-to-r from-gray-900 to-gray-800 p-6 text-white flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                        <Split className="text-aurora-sapphire" />
+                        <Split className="text-primary" />
                         <div>
                             <h3 className="font-bold text-lg leading-tight">{t('blog:abTest.title')}</h3>
                             <p className="text-xs text-gray-400 font-mono">{t('blog:abTest.subtitle')}</p>
@@ -134,12 +133,12 @@ export const ABTestSimulator: React.FC = () => {
                                 className={clsx(
                                     "p-4 rounded-xl border text-left transition-all relative overflow-hidden group",
                                     activeVariant === variantId
-                                        ? "bg-white border-aurora-sapphire shadow-md ring-1 ring-aurora-sapphire/20"
+                                        ? "bg-white border-primary shadow-md ring-1 ring-primary/20"
                                         : "bg-white border-gray-200 hover:border-gray-300 opacity-70 hover:opacity-100"
                                 )}
                             >
                                 <div className="flex justify-between items-start mb-2">
-                                    <strong className={clsx("text-xl font-bold", activeVariant === variantId ? "text-aurora-sapphire" : "text-gray-400")}>
+                                    <strong className={clsx("text-xl font-bold", activeVariant === variantId ? "text-primary" : "text-gray-400")}>
                                         {variantId}
                                     </strong>
                                     {variantId === 'B' && <span className="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-0.5 rounded-full">OPTIMIZED</span>}

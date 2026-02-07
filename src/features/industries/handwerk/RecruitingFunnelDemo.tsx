@@ -57,9 +57,7 @@ const RecruitingFunnelDemo: React.FC = () => {
         }
     ];
 
-    const nextStep = () => {
-        setStep((prev) => (prev + 1) % steps.length);
-    };
+
 
     return (
         <div className="bg-white border border-gray-100 shadow-2xl rounded-3xl p-8 lg:p-12 relative overflow-hidden">

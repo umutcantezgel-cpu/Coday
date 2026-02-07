@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Calendar, Clock, User, CheckCircle } from 'lucide-react';
+import { Calendar, User, CheckCircle } from 'lucide-react';
 
 export const ReservationDemo = () => {
     const [step, setStep] = useState(1);

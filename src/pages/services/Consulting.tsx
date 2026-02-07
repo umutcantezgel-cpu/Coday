@@ -4,12 +4,17 @@ import { LocalizedNavLink as NavLink } from '../../shared/ui/LocalizedLink';
 import BlurText from '../../shared/ui/BlurText';
 import GradientText from '../../shared/ui/GradientText';
 import { Icon } from '../../shared/ui/Icon';
+import { SeoHead } from '../../shared/ui/SeoHead';
 
 const Consulting: React.FC = () => {
   const { t } = useTranslation('services');
 
   return (
     <div className="bg-background-light min-h-screen">
+      <SeoHead
+        title={`${t('consulting_page.hero.title_prefix')} ${t('consulting_page.hero.title_suffix')} | Coday`}
+        description={t('consulting_page.hero.description')}
+      />
       <section className="relative pt-32 pb-24 px-4 overflow-hidden">
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">

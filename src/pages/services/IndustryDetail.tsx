@@ -8,7 +8,8 @@ import {
   industryFallbackImage,
   industryGalleryImages,
 } from '../../data/industryImages';
-import { Building2, XCircle, CheckCircle, ArrowRight, ArrowLeft, Briefcase } from 'lucide-react';
+import { XCircle, CheckCircle, ArrowRight, ArrowLeft, Briefcase } from 'lucide-react';
+import { SeoHead } from '../../shared/ui/SeoHead';
 
 const IndustryDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -19,6 +20,7 @@ const IndustryDetail: React.FC = () => {
   if (!industry) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center pt-20">
+        <SeoHead title="Branche nicht gefunden | Coday" noIndex />
         <h1 className="text-3xl font-bold text-secondary mb-4">Branche nicht gefunden</h1>
         <Link to="/services/industries" className="text-primary hover:underline">
           Zurück zur Übersicht
@@ -28,11 +30,14 @@ const IndustryDetail: React.FC = () => {
   }
 
   // Use Building2 as the main icon since dynamic lookup requires full library
-  const MainIcon = Building2;
   const SafeIcon = Briefcase;
 
   return (
     <div className="bg-background-light min-h-screen pt-24">
+      <SeoHead
+        title={`${industry.title} | Coday`}
+        description={industry.hero.subheadline}
+      />
       {/* Navigation */}
       <div className="container mx-auto px-4 mb-8">
         <Link

@@ -1,11 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { motion, useInView, useSpring, useMotionValue } from 'motion/react';
-import { clsx, type ClassValue } from "clsx";
-import { twMerge } from "tailwind-merge";
-
-function cn(...inputs: ClassValue[]) {
-    return twMerge(clsx(inputs));
-}
+import { useInView, useSpring, useMotionValue } from 'motion/react';
 
 const AnimatedCounter = ({ value, prefix = "", suffix = "" }: { value: number, prefix?: string, suffix?: string }) => {
     const ref = useRef<HTMLSpanElement>(null);

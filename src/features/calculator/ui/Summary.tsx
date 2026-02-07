@@ -30,7 +30,7 @@ export const CalculatorSummary: React.FC = () => {
   const discountedOneTime = totalOneTime * (1 - discount / 100);
 
   return (
-    <div className="bg-white rounded-3xl border border-gray-100 shadow-aurora-lg p-6 lg:p-8 sticky top-24">
+    <div className="bg-white rounded-3xl border border-gray-100 shadow-lg p-6 lg:p-8 sticky top-24">
       <h3 className="font-display font-bold text-2xl text-gray-900 mb-6">{t('summary.title')}</h3>
 
       {/* Selected List - Scrollable */}

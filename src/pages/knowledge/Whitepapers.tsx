@@ -9,10 +9,10 @@ const Whitepapers: React.FC = () => {
   const currentLang = i18n.language as 'de' | 'en';
 
   return (
-    <div className="bg-aurora-white min-h-screen pt-24 pb-20">
+    <div className="bg-background-light min-h-screen pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h1 className="font-display font-black text-5xl md:text-6xl text-gradient-vivid mb-6">
+          <h1 className="font-display font-black text-5xl md:text-6xl text-gradient mb-6">
             {t('whitepapers.title')}
           </h1>
           <p className="text-xl text-slate-500 max-w-2xl mx-auto">{t('whitepapers.subtitle')}</p>
@@ -22,7 +22,7 @@ const Whitepapers: React.FC = () => {
           {whitepaperData.map((paper) => (
             <div
               key={paper.id}
-              className="flex flex-col bg-white rounded-2xl border border-aurora-mist overflow-hidden hover:shadow-xl transition-shadow duration-300 group"
+              className="flex flex-col bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl transition-shadow duration-300 group"
             >
               <div className="h-64 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10" />

@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
-  darkMode: 'class',
+
   theme: {
     extend: {
       colors: {
@@ -13,25 +13,24 @@ export default {
         'text-light': '#2D3748', // Navy
         'text-dark': '#718096', // Slate for body text
         'text-slate': '#64748B',
-        // Remap legacy aurora colors to new palette for safety
-        'aurora-charcoal': '#2D3748',
-        'aurora-deep': '#1A202C',
-        'aurora-sapphire': '#147a7a', // Synced with Primary
-        'aurora-azure': '#319795', // Teal-600
-        'aurora-success': '#147a7a',
         sapphire: '#147a7a',
+      },
+      zIndex: {
+        negative: '-1',
+        elevated: '10',
+        sticky: '50',
+        overlay: '100',
+        modal: '200',
+        popover: '300',
+        max: '9999',
       },
       backgroundImage: {
         'gradient-ocean': 'linear-gradient(135deg, #147a7a 0%, #1A9A9A 100%)',
         'gradient-text': 'linear-gradient(135deg, #1A202C 0%, #2D3748 100%)', // Default dark text gradient
-        'gradient-vivid': 'linear-gradient(135deg, #2563EB 0%, #9333EA 50%, #DB2777 100%)', // Blue-Violet-Pink (Aurora)
         'gradient-soft': 'linear-gradient(135deg, #EFF6FF 0%, #F5F3FF 100%)',
         'gradient-twilight': 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
-        'gradient-aurora': 'linear-gradient(135deg, #147a7a 0%, #2563EB 50%, #9333EA 100%)',
       },
       boxShadow: {
-        aurora: '0 1px 3px rgba(0,0,0,0.05)',
-        'aurora-lg': '0 4px 6px -1px rgba(0,0,0,0.05)',
         glass: '0 8px 32px 0 rgba(31, 38, 135, 0.07)',
         glow: '0 0 20px rgba(20, 122, 122, 0.15)', // Teal glow
         flat: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',

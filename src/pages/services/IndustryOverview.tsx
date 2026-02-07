@@ -10,9 +10,10 @@ import {
   ShoppingCart,
   Briefcase,
   Rocket,
+  LucideIcon,
 } from 'lucide-react';
 
-const iconMap: any = {
+const iconMap: Record<string, LucideIcon> = {
   hammer: Hammer,
   apartment: Building2,
   local_hospital: Stethoscope,
@@ -26,10 +27,15 @@ const iconMap: any = {
 import { industryHeroImages, industryFallbackImage } from '../../data/industryImages';
 import { OptimizedImage } from '../../shared/ui/OptimizedImage';
 import { Icon as UiIcon } from '../../shared/ui/Icon';
+import { SeoHead } from '../../shared/ui/SeoHead';
 
 const IndustryOverview: React.FC = () => {
   return (
     <div className="bg-background-light min-h-screen pt-24 pb-20">
+      <SeoHead
+        title="Branchenlösungen | Coday"
+        description="Jede Branche hat eigene Regeln. Wir kennen sie. Entdecken Sie unsere spezialisierten Konzepte für Ihren Erfolg."
+      />
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 max-w-2xl mx-auto">
           <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
@@ -53,7 +59,7 @@ const IndustryOverview: React.FC = () => {
               <Link
                 to={`/services/industries/${industry.slug}`}
                 key={industry.slug}
-                className="group block p-8 bg-white border border-gray-200 rounded-3xl shadow-aurora hover:shadow-aurora-lg transition-all duration-500 hover:-translate-y-2 relative overflow-hidden"
+                className="group block p-8 bg-white border border-gray-200 rounded-3xl shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 relative overflow-hidden"
               >
                 {/* Background Image */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none">

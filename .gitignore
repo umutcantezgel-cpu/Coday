@@ -46,6 +46,7 @@ videos/
 head_debug.html
 lint_report.txt
 lint_output*.txt
+lint_errors*.txt
 lint_final.txt
 typecheck_report.txt
 *.report.txt
@@ -58,3 +59,7 @@ playwright-report/
 test-results/
 blob-report/
 playwright/.cache/
+
+# React Router / Vite build artifacts
+.react-router
+build

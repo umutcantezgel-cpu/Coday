@@ -32,7 +32,7 @@ export const FloatingActionMenu: React.FC = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-[10000] flex flex-col items-end gap-4">
+    <div className="fixed bottom-6 right-6 z-max flex flex-col items-end gap-4">
       {/* Social Media Sub-Menu */}
       <AnimatePresence>
         {showSocials && isOpen && (
@@ -130,12 +130,11 @@ export const FloatingActionMenu: React.FC = () => {
       {/* Main Toggle Button */}
       <motion.button
         onClick={toggleMenu}
-        className={`w-16 h-16 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 z-[10001]
-                    ${
-                      isOpen
-                        ? 'bg-gray-900 text-white rotate-180'
-                        : 'bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white hover:scale-110'
-                    }`}
+        className={`w-16 h-16 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 z-max
+                    ${isOpen
+            ? 'bg-gray-900 text-white rotate-180'
+            : 'bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white hover:scale-110'
+          }`}
         whileTap={{ scale: 0.9 }}
       >
         {isOpen ? (

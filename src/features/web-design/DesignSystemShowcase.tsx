@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Icon } from '@/shared/ui/Icon';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 
 const DesignSystemShowcase: React.FC = () => {
     const [theme, setTheme] = useState<'brand-a' | 'brand-b'>('brand-a');

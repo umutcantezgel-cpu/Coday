@@ -37,16 +37,25 @@ export class GlobalErrorBoundary extends React.Component<Props, State> {
             if (this.props.fallback) {
                 return this.props.fallback;
             }
+
+            // Simple static translations to avoid dependencies during crashes
+            const isDe = typeof navigator !== 'undefined' && navigator.language.startsWith('de');
+            const texts = {
+                title: isDe ? 'Etwas ist schiefgelaufen' : 'Something went wrong',
+                desc: isDe ? 'Wir wurden benachrichtigt und arbeiten an einer Lösung.' : 'We have been notified and are working on a fix.',
+                reload: isDe ? 'Seite neu laden' : 'Reload page'
+            };
+
             return (
                 <div className="flex items-center justify-center min-h-screen bg-gray-50 text-center p-4">
                     <div className="bg-white p-8 rounded-2xl shadow-lg max-w-md w-full border border-gray-100">
-                        <h1 className="text-2xl font-bold text-gray-900 mb-4">Etwas ist schiefgelaufen</h1>
-                        <p className="text-gray-600 mb-6">Wir wurden benachrichtigt und arbeiten an einer Lösung.</p>
+                        <h1 className="text-2xl font-bold text-gray-900 mb-4">{texts.title}</h1>
+                        <p className="text-gray-600 mb-6">{texts.desc}</p>
                         <button
                             onClick={() => window.location.reload()}
                             className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition"
                         >
-                            Seite neu laden
+                            {texts.reload}
                         </button>
                     </div>
                 </div>

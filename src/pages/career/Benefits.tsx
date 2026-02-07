@@ -6,7 +6,12 @@ import { useTranslation } from 'react-i18next';
 
 const Benefits: React.FC = () => {
   const { t } = useTranslation('careers');
-  const benefits = t('benefits.items', { returnObjects: true }) as any[];
+  interface BenefitItem {
+    icon: string;
+    title: string;
+    text: string;
+  }
+  const benefits = t('benefits.items', { returnObjects: true }) as BenefitItem[];
 
   // Map correct effects to the benefits from JSON order if possible or hardcode based on index
   // Since we can't easily put function refs or constants in JSON, we might map them here.
@@ -19,14 +24,14 @@ const Benefits: React.FC = () => {
   }));
 
   return (
-    <div className="bg-aurora-white min-h-screen pt-32 pb-24">
+    <div className="bg-background-light min-h-screen pt-32 pb-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero */}
         <div className="text-center mb-16">
           <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
             {t('benefits.hero.badge')}
           </span>
-          <h1 className="font-display font-black text-5xl md:text-6xl text-gradient-vivid mb-6">
+          <h1 className="font-display font-black text-5xl md:text-6xl text-gradient mb-6">
             {t('benefits.hero.title')}
           </h1>
           <p className="text-xl text-slate-500 max-w-2xl mx-auto">{t('benefits.hero.desc')}</p>
@@ -44,7 +49,7 @@ const Benefits: React.FC = () => {
             >
               <div className="p-8 h-full flex flex-col items-start text-left">
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Icon name={benefit.icon} className="text-3xl text-aurora-sapphire" />
+                  <Icon name={benefit.icon} className="text-3xl text-primary" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3 text-left">{benefit.title}</h3>
                 <p className="text-slate-500 leading-relaxed text-left">{benefit.text}</p>

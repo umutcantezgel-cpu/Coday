@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 const WaitingRoomRoiCalculator: React.FC = () => {
     const [patientsPerDay, setPatientsPerDay] = useState(40);
     const [receptionMins, setReceptionMins] = useState(5); // Mins saved per patient by digital anamnesis
-    const [hourlyRate, setHourlyRate] = useState(25); // Cost of receptionist/MFA
+    const [hourlyRate] = useState(25); // Cost of receptionist/MFA
 
     // Savings per month (20 days)
     const savedHoursPerMonth = (patientsPerDay * receptionMins * 20) / 60;

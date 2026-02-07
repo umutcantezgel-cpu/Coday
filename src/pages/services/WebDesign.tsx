@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { LocalizedNavLink as NavLink } from '../../shared/ui/LocalizedLink';
 import BlurText from '../../shared/ui/BlurText';
@@ -9,6 +9,7 @@ import DesignSystemShowcase from '../../features/web-design/DesignSystemShowcase
 import PsychologyGrid from '../../features/web-design/PsychologyGrid';
 import BeforeAfterReveal from '../../features/web-design/BeforeAfterReveal';
 import { Icon } from '../../shared/ui/Icon';
+import { SeoHead } from '../../shared/ui/SeoHead';
 
 const WebDesign: React.FC = () => {
   const { t } = useTranslation('services');
@@ -16,11 +17,15 @@ const WebDesign: React.FC = () => {
   // Fallback if key doesn't match perfectly, but it should be 'web-design'
   const categoryData = servicesData['web-design'];
   // We will map over these but use translated strings
+  // We will map over these but use translated strings
   const features = Object.values(categoryData);
-  const [activeTab, setActiveTab] = useState<'typography' | 'color' | 'components'>('typography');
 
   return (
     <div className="bg-background-light pt-24 pb-16">
+      <SeoHead
+        title={`${t('web_design_page.hero.title_prefix')} ${t('web_design_page.hero.title_suffix')} | Coday`}
+        description={t('web_design_page.hero.description')}
+      />
       {/* Hero Section */}
       <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-20 text-center lg:text-start">
         <div className="grid lg:grid-cols-2 gap-12 items-center">

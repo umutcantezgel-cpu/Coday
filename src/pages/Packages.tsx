@@ -5,10 +5,10 @@ import { Icon } from '@/shared/ui/Icon';
 import { SeoHead } from '@/shared/ui/SeoHead';
 import CountUp from '../shared/ui/CountUp';
 import GradientText from '../shared/ui/GradientText';
-import BlurText from '../shared/ui/BlurText';
+
 import { useCalculatorStore } from '../features/calculator/model/store';
 import StepIndicator from '../shared/ui/StepIndicator';
-import { MagicBento, BentoCard } from '../shared/ui/MagicBento';
+import { BentoCard } from '../shared/ui/MagicBento';
 import GlareHover from '../shared/ui/GlareHover';
 
 interface Package {
@@ -87,7 +87,7 @@ const Packages: React.FC = () => {
   };
 
   return (
-    <div className="bg-aurora-white min-h-screen pt-24 pb-20">
+    <div className="bg-background-light min-h-screen pt-24 pb-20">
       <SeoHead title={`${t('page.title')} | Coday`} description={t('page.subheadline')} />
       {/* Step Indicator */}
       <StepIndicator currentStep="packages" className="mb-8" />
@@ -173,11 +173,10 @@ const Packages: React.FC = () => {
                 <GlareHover className="rounded-lg overflow-hidden">
                   <button
                     onClick={() => handleSelect(pkg.id)}
-                    className={`w-full py-4 px-6 font-bold text-sm uppercase tracking-wide transition-all duration-300 flex items-center justify-center ${
-                      pkg.popular
-                        ? 'bg-primary text-white hover:bg-opacity-90 shadow-lg hover:shadow-xl'
-                        : 'bg-gray-100 text-gray-900 hover:bg-primary hover:text-white'
-                    }`}
+                    className={`w-full py-4 px-6 font-bold text-sm uppercase tracking-wide transition-all duration-300 flex items-center justify-center ${pkg.popular
+                      ? 'bg-primary text-white hover:bg-opacity-90 shadow-lg hover:shadow-xl'
+                      : 'bg-gray-100 text-gray-900 hover:bg-primary hover:text-white'
+                      }`}
                   >
                     {pkg.cta}
                     <Icon name="arrow_forward" className="text-sm ml-2" />

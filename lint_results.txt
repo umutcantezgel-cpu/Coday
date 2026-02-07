@@ -1,0 +1,56 @@
+
+> coday@2.1.0 lint
+> eslint .
+
+
+/Users/umurey/agency-domination/src/entry.server.tsx
+   3:10  error  'isbot' is defined but never used                                              @typescript-eslint/no-unused-vars
+  15:5   error  'loadContext' is defined but never used. Allowed unused args must match /^_/u  @typescript-eslint/no-unused-vars
+  17:24  error  Promise executor functions should not be async                                 no-async-promise-executor
+  19:15  error  'userAgent' is assigned a value but never used                                 @typescript-eslint/no-unused-vars
+
+/Users/umurey/agency-domination/src/root.tsx
+  16:23  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+/Users/umurey/agency-domination/src/setupTests.ts
+  23:59  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/Users/umurey/agency-domination/src/shared/ui/Button.tsx
+   5:14  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+  12:14  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+/Users/umurey/agency-domination/src/shared/ui/GradientText.tsx
+  65:8  warning  React Hook useEffect has a missing dependency: 'progress'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+/Users/umurey/agency-domination/src/shared/ui/LocalizedLink.tsx
+  19:14  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+/Users/umurey/agency-domination/src/shared/ui/OptimizedImage.tsx
+  29:13  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/Users/umurey/agency-domination/src/shared/ui/OptimizedImage.tsx:29:13
+  27 |     useEffect(() => {
+  28 |         if (imgRef.current && imgRef.current.complete) {
+> 29 |             setIsLoaded(true);
+     |             ^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  30 |         }
+  31 |     }, []);
+  32 |  react-hooks/set-state-in-effect
+
+/Users/umurey/agency-domination/src/shared/ui/theme-provider.tsx
+  60:14  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+/Users/umurey/agency-domination/src/widgets/layout/LanguageLayout.tsx
+  8:23  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+/Users/umurey/agency-domination/src/widgets/layout/RootRedirector.tsx
+  5:23  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+✖ 14 problems (6 errors, 8 warnings)
+

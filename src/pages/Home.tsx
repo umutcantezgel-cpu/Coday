@@ -17,22 +17,27 @@ import AgencyComparisonTable from '../features/analyzer/ui/AgencyComparisonTable
 import GradientText from '../shared/ui/GradientText';
 import CountUp from '../shared/ui/CountUp';
 import BlurText from '../shared/ui/BlurText';
-import ScrollFloat from '../shared/ui/ScrollFloat';
+
 // import { MdConstruction, MdApartment, MdShoppingCart, MdLightbulb, MdHealthAndSafety } from 'react-icons/md';
 // Premium UI Components
 import RotatingText from '../shared/ui/RotatingText';
-import SpotlightCard from '../shared/ui/SpotlightCard';
-import { MagicBento, BentoCard } from '../shared/ui/MagicBento';
+import { BentoCard } from '../shared/ui/MagicBento';
 import LogoLoop from '../shared/ui/LogoLoop';
-import type { LogoItem } from '../shared/ui/LogoLoop';
+
 import { cn } from '../shared/lib/utils';
 import { baseButtonStyles, buttonVariants, buttonSizes } from '../shared/ui/Button';
+
+import { SeoHead } from '../shared/ui/SeoHead';
 
 const Home: React.FC = () => {
   const { t } = useTranslation(['home', 'common']);
 
   return (
     <>
+      <SeoHead
+        title={t('meta.title', { defaultValue: 'Coday | Der Agentur-Killer' })}
+        description={t('meta.description', { defaultValue: 'Wir beenden Ineffizienz. High-End Webentwicklung & Design für Agenturen und Unternehmen.' })}
+      />
       {/* Hero Section */}
       <section className="relative pt-20 pb-20 md:pt-32 md:pb-40 lg:pt-48 lg:pb-60 overflow-hidden bg-background-light">
         {/* Organic Background Shapes */}

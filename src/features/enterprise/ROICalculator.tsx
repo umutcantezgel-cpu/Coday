@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { BadgeEuro, Calculator, TrendingUp, AlertTriangle } from 'lucide-react';
 
@@ -20,7 +20,7 @@ export const ROICalculator: React.FC = () => {
         <div className="w-full max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
             {/* Controls */}
-            <div className="bg-white p-8 rounded-3xl shadow-aurora border border-aurora-mist">
+            <div className="bg-white p-8 rounded-3xl shadow-md border border-gray-200">
                 <div className="flex items-center gap-3 mb-8">
                     <div className="p-3 bg-blue-50 text-primary rounded-xl">
                         <Calculator size={24} />

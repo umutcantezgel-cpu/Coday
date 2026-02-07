@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
-import { useParams, NavLink, useNavigate } from 'react-router-dom';
+import { useParams, NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Icon } from '@/shared/ui/Icon';
 import { workData } from '../../data/work';
+import { SeoHead } from '../../shared/ui/SeoHead';
 
 const ProjectDetail: React.FC = () => {
   const { t, i18n } = useTranslation('work');
   const { slug } = useParams<{ slug: string }>();
-  const navigate = useNavigate();
 
   const currentLang = i18n.language as 'de' | 'en';
   const projectData = workData[slug || ''];
@@ -20,6 +20,7 @@ const ProjectDetail: React.FC = () => {
   if (!project || !projectData) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background-light">
+        <SeoHead title="Projekt nicht gefunden | Coday" noIndex />
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-4">{t('project_detail.not_found')}</h1>
           <NavLink to="/work" className="text-primary hover:underline">
@@ -32,6 +33,10 @@ const ProjectDetail: React.FC = () => {
 
   return (
     <div className="bg-background-light pt-24 pb-16">
+      <SeoHead
+        title={`${project.title} | Coday`}
+        description={project.subtitle}
+      />
       {/* Breadcrumb */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
         <div className="flex items-center text-sm text-gray-500">

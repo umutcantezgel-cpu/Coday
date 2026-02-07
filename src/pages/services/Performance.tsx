@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 import BlurText from '../../shared/ui/BlurText';
 import GradientText from '../../shared/ui/GradientText';
 import CountUp from '../../shared/ui/CountUp';
@@ -7,11 +7,17 @@ import SpeedSimulator from '../../features/performance/SpeedSimulator';
 import LostRevenueCalc from '../../features/performance/LostRevenueCalc';
 import CoreWebVitalsChart from '../../features/performance/CoreWebVitalsChart';
 
+import { SeoHead } from '../../shared/ui/SeoHead';
+
 const Performance: React.FC = () => {
   const { t } = useTranslation('services');
 
   return (
     <div className="bg-background-light min-h-screen">
+      <SeoHead
+        title={`${t('performance_page.hero.title_prefix')} ${t('performance_page.hero.title_suffix')} | Coday`}
+        description={t('performance_page.hero.description')}
+      />
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-4 overflow-hidden">
         <div className="max-w-7xl mx-auto text-center relative z-10">
@@ -53,10 +59,9 @@ const Performance: React.FC = () => {
           <h2 className="font-display font-bold text-3xl sm:text-4xl text-secondary mb-4">
             {t('performance_page.google_values.title')}
           </h2>
-          <p
-            className="text-lg text-slate-600 max-w-2xl mx-auto"
-            dangerouslySetInnerHTML={{ __html: t('performance_page.google_values.description') }}
-          />
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            <Trans i18nKey="performance_page.google_values.description" components={{ i: <i /> }} />
+          </p>
         </div>
         <CoreWebVitalsChart />
       </section>

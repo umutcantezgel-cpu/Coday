@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { motion, useMotionValue, useTransform, useSpring } from 'motion/react';
+import { motion, useMotionValue, useTransform } from 'motion/react';
 import { GripVertical } from 'lucide-react';
 import { OptimizedImage } from '../../../shared/ui/OptimizedImage';
 

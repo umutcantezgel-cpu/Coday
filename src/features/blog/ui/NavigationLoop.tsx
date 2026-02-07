@@ -4,13 +4,7 @@ import { Share2, ArrowRight, Twitter, Linkedin, Copy, Check } from 'lucide-react
 import { getBlogPosts } from '../model/data';
 import { OptimizedImage } from '../../../shared/ui/OptimizedImage';
 import { motion, AnimatePresence } from 'motion/react';
-import { clsx, type ClassValue } from "clsx";
-import { twMerge } from "tailwind-merge";
 import { useTranslation } from 'react-i18next';
-
-function cn(...inputs: ClassValue[]) {
-    return twMerge(clsx(inputs));
-}
 
 export const RelatedArticles: React.FC<{ currentSlug: string; category: string }> = ({ currentSlug, category }) => {
     const { i18n, t } = useTranslation('blog');

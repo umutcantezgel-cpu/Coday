@@ -105,7 +105,7 @@ export async function saveAuditResult(result: AnalysisResult): Promise<void> {
         if (error) {
             console.error('[Analyzer] Failed to save history:', error);
         } else {
-            console.log('[Analyzer] Analysis saved to history');
+            // console.log('[Analyzer] Analysis saved to history');
         }
     } catch (e) {
         console.error('[Analyzer] Save error:', e);

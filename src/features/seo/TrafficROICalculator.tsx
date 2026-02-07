@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { BadgeEuro, Calculator, TrendingUp, Search } from 'lucide-react';
+import { BadgeEuro, TrendingUp, Search } from 'lucide-react';
 
 export const TrafficROICalculator: React.FC = () => {
     const [traffic, setTraffic] = useState(5000);
@@ -22,7 +22,7 @@ export const TrafficROICalculator: React.FC = () => {
         <div className="w-full max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
             {/* Controls */}
-            <div className="bg-white p-8 rounded-3xl shadow-aurora border border-aurora-mist">
+            <div className="bg-white p-8 rounded-3xl shadow-md border border-gray-200">
                 <div className="flex items-center gap-3 mb-8">
                     <div className="p-3 bg-purple-50 text-purple-600 rounded-xl">
                         <Search size={24} />

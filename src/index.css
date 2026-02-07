@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   ::before,
   ::after {
@@ -26,9 +27,7 @@
     @apply bg-gradient-text bg-clip-text text-transparent bg-[length:200%_auto];
   }
 
-  .text-gradient-vivid {
-    @apply bg-gradient-vivid bg-clip-text text-transparent;
-  }
+
 
   .glass-card {
     @apply backdrop-blur-xl bg-white/70 border border-white/40 shadow-glass rounded-2xl;
@@ -67,8 +66,15 @@ body {
 }
 
 @layer utilities {
+
   /* Global Touch Feedback */
   .touch-feedback {
     @apply transition-transform active:scale-95;
+  }
+}
+
+@layer base {
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
   }
 }

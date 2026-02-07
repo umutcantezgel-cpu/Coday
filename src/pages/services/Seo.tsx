@@ -7,12 +7,17 @@ import { marketingImages } from '../../data/serviceImages';
 import TrafficROICalculator from '../../features/seo/TrafficROICalculator';
 import RankingPeriodicTable from '../../features/seo/RankingPeriodicTable';
 import { Icon } from '../../shared/ui/Icon';
+import { SeoHead } from '../../shared/ui/SeoHead';
 
 const Seo: React.FC = () => {
   const { t } = useTranslation('services');
 
   return (
     <div className="bg-background-light min-h-screen">
+      <SeoHead
+        title={`${t('seo_page.hero.title_prefix')} ${t('seo_page.hero.title_suffix')} | Coday`}
+        description={t('seo_page.hero.description')}
+      />
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-4 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
