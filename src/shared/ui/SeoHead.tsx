@@ -12,12 +12,12 @@ interface SeoHeadProps {
 
 const SUPPORTED_LANGUAGES = ['de', 'en'];
 const DEFAULT_LANGUAGE = 'de';
-const BASE_URL = 'https://coday.de';
+const BASE_URL = import.meta.env.VITE_SITE_URL || 'https://www.codayweb.de';
 
 export const SeoHead: React.FC<SeoHeadProps> = ({
   title = 'Coday | Der Agentur-Killer',
   description = 'Wir beenden Ineffizienz. High-End Webentwicklung & Design für Agenturen und Unternehmen.',
-  image = 'https://coday.de/images/og-image.jpg',
+  image = `${import.meta.env.VITE_SITE_URL || 'https://www.codayweb.de'}/images/og-image.jpg`,
   noIndex = false,
 }) => {
   const location = useLocation();
@@ -58,8 +58,6 @@ export const SeoHead: React.FC<SeoHeadProps> = ({
       href: getLocalizedUrl(DEFAULT_LANGUAGE),
     },
   ];
-
-
 
   // Manual Helmet workaround for links/meta removed. Using Helmet directly.
 

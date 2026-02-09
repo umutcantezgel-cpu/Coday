@@ -3,4 +3,4 @@ Allow: /
 Disallow: /api/
 Disallow: /dashboard/
 
-Sitemap: https://coday.de/sitemap.xml
+Sitemap: https://www.codayweb.de/sitemap.xml
