@@ -12,49 +12,17 @@ interface KeyHealth {
   minuteStart: number;
 }
 
-// All 37 Gemini API Keys
+// Load Gemini API Keys from environment variables only.
+// SECURITY: Never hardcode API keys — they must come from .env files (gitignored)
+// or server-side environment variables (Vercel/Supabase secrets).
+// Since this client calls /api/ai-proxy, keys are managed server-side.
+// This pool is kept for local dev where VITE_GEMINI_API_KEY_* vars are set in .env.
 const GEMINI_KEYS: string[] = [
-  import.meta.env.GEMINI_API_KEY_1 || 'AIzaSyB5jP8OOs1FrVi92WAPk2fFLOmCBj34uxM',
-  import.meta.env.GEMINI_API_KEY_2 || 'AIzaSyATlqP8wc6R-KxlObHQ5j552eMAVWRhzT8',
-  import.meta.env.GEMINI_API_KEY_3 || 'AIzaSyA6YLfD5BWoffpZWIqjCwKCV3Z7CPH6s70',
-  import.meta.env.GEMINI_API_KEY_4 || 'AIzaSyBOOgZvVkVLwXci_NS1lWmUHn7YAyDVArg',
-  import.meta.env.GEMINI_API_KEY_5 || 'AIzaSyDgMU7RNS5BoTGDhX6swdilwgR-wjSpnzY',
-  import.meta.env.GEMINI_API_KEY_6 || 'AIzaSyC_TrP13i17c4QX_yXKcNjc3sUwaWCjQeo',
-  import.meta.env.GEMINI_API_KEY_7 || 'AIzaSyDa_I0cvAUG4MoK6CbC5SVzhoRe_0BpDY0',
-  import.meta.env.GEMINI_API_KEY_8 || 'AIzaSyCtVYSnfR2y0POGTsqDh22kYbQ8im4At1Y',
-  import.meta.env.GEMINI_API_KEY_9 || 'AIzaSyBP7llBh4UaJJBlaKE70dqQARlpAAEpPnI',
-  import.meta.env.GEMINI_API_KEY_10 || 'AIzaSyBjfFy6XrZk7GXQXfsnqxOBX1mhC2efQ-w',
-  import.meta.env.GEMINI_API_KEY_11 || 'AIzaSyANlUSdAY1tLyoMYgZoaET1ycwr7aRnjWQ',
-  import.meta.env.GEMINI_API_KEY_12 || 'AIzaSyBQ09LB506s6ni-teGs2qQKyF7i9oQV_PI',
-  import.meta.env.GEMINI_API_KEY_13 || 'AIzaSyCV5FSe7fJZ7M9_A1rPxrxxG6orlNFITwE',
-  import.meta.env.GEMINI_API_KEY_14 || 'AIzaSyCFwKCLZzAtJ-mfFts9y-J0bP60ME81w6Q',
-  import.meta.env.GEMINI_API_KEY_15 || 'AIzaSyAaRD9lQFdkDVOkZ5kub1KD57z4iF6aX4Y',
-  import.meta.env.GEMINI_API_KEY_16 || 'AIzaSyCfNs7jF0yTamWZzMEv0XSynBmVHacqkr0',
-  import.meta.env.GEMINI_API_KEY_17 || 'AIzaSyCehrLOfXVM_jiCMwJJqHWnDSy66Qpxvkk',
-  import.meta.env.GEMINI_API_KEY_18 || 'AIzaSyCMPW9xPK1Z6dZ32p-hUeI8xptG3JyY_iw',
-  import.meta.env.GEMINI_API_KEY_19 || 'AIzaSyA58X47XuDI0p2SjE4C1RmZOxl9bbPhDos',
-  import.meta.env.GEMINI_API_KEY_20 || 'AIzaSyCwUJSuMXGN1uV_sLR1Koyogs_i2dWLVh4',
-  import.meta.env.GEMINI_API_KEY_21 || 'AIzaSyBAf6kadlEjeJsdUjmJffxPeYDqMc_wAa0',
-  import.meta.env.GEMINI_API_KEY_22 || 'AIzaSyAQOo6psp0cnGo24ttdGMZGxquevHnsGpI',
-  import.meta.env.GEMINI_API_KEY_23 || 'AIzaSyBVa122YSDvjOBCYRJGf7qjMAK1dWlf-lY',
-  import.meta.env.GEMINI_API_KEY_24 || 'AIzaSyDUgGAoQHmTF1r9ihWHnaWNm2rENqL23gA',
-  import.meta.env.GEMINI_API_KEY_25 || 'AIzaSyAIJgwD-7llPwXs_e_YGtSA5QKL7afD2Tk',
-  import.meta.env.GEMINI_API_KEY_26 || 'AIzaSyBt0GkM8txkGk7aYZhizkxQ542mmzOielU',
-  import.meta.env.GEMINI_API_KEY_27 || 'AIzaSyD7_SQfDE7C3A7rW0XwAy5tfVbOcM9QDeY',
-  import.meta.env.GEMINI_API_KEY_28 || 'AIzaSyCxfyIuxfP-am61gJ8P_97r4Cghfcgk5tc',
-  import.meta.env.GEMINI_API_KEY_29 || 'AIzaSyDRxNr2ssa4FvDrK3qGph40F14B-huzedg',
-  import.meta.env.GEMINI_API_KEY_30 || 'AIzaSyDvdlkYJcqUUfrlDRvqd9_tNXWL4dxEjoo',
-  import.meta.env.GEMINI_API_KEY_31 || 'AIzaSyAF_EsC4rMwp8jPdtGy2xhUqpegXZzpbHM',
-  import.meta.env.GEMINI_API_KEY_32 || 'AIzaSyBHumld8NYuy9jo77XGXcI-jZBJFCz4PsE',
-  import.meta.env.GEMINI_API_KEY_33 || 'AIzaSyCrs3sj3RoQj8OusrSWiBRk5G1Rqf1CWxI',
-  import.meta.env.GEMINI_API_KEY_34 || 'AIzaSyBpKx0JIj1Ok9Kd4LaeVG8GgB492oOFaek',
-  import.meta.env.GEMINI_API_KEY_35 || 'AIzaSyBInOMOXf97mOIZWM97rbLUlIUS1UCbw_4',
-  import.meta.env.GEMINI_API_KEY_36 || 'AIzaSyBtdCv8MV2TNjvJevFjQ6l64pReAAvOa9U',
-  import.meta.env.GEMINI_API_KEY_37 || 'AIzaSyAfXl4MNhIQMV63ExLfpynVlvv3s2w9GRc',
-];
+  import.meta.env.VITE_GEMINI_API_KEY,
+  ...Array.from({ length: 37 }, (_, i) => import.meta.env[`VITE_GEMINI_API_KEY_${i + 1}`]),
+].filter((key): key is string => typeof key === 'string' && key.length > 0);
 
 const RATE_LIMIT_PER_MINUTE = 60;
-
 
 class GeminiKeyPool {
   private keys: KeyHealth[];
