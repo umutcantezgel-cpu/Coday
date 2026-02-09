@@ -7,9 +7,9 @@
     "node": ">=20.0.0"
   },
   "scripts": {
-    "dev": "vite",
-    "start": "vite preview",
-    "build": "vite build && vite build --ssr && node scripts/generate-sitemap.js",
+    "dev": "react-router dev",
+    "start": "react-router-serve ./build/server/index.js",
+    "build": "react-router build && node scripts/generate-sitemap.js",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
@@ -36,6 +36,7 @@
     "@sentry/react": "^10.38.0",
     "@supabase/ssr": "^0.8.0",
     "@supabase/supabase-js": "^2.94.0",
+    "@vercel/react-router": "^1.2.5",
     "clsx": "^2.1.1",
     "i18next": "^25.8.3",
     "i18next-browser-languagedetector": "^8.2.0",
