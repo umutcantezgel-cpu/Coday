@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { MessageCircle, X, Minus, Send, Loader2 } from 'lucide-react';
+import { ChatCircle, X, Minus, PaperPlaneRight, CircleNotch } from '@phosphor-icons/react';
 import { useChatStore } from './lib/chatStore';
 import { Input } from '../../shared/ui/Input';
 import { Button } from '../../shared/ui/Button';
@@ -53,7 +53,7 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
                         onClick={toggleChat}
                         className="fixed right-6 z-max w-14 h-14 rounded-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white shadow-2xl hover:shadow-purple-500/25 transition-shadow flex items-center justify-center group bottom-[120px] md:bottom-6"
                     >
-                        <MessageCircle className="w-6 h-6 group-hover:scale-110 transition-transform" />
+                        <ChatCircle className="w-6 h-6 group-hover:scale-110 transition-transform" />
 
                         {/* Notification Badge */}
                         {messages.length > 0 && isMinimized && (
@@ -177,9 +177,9 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
                                     className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-none hover:shadow-lg p-0 flex items-center justify-center shrink-0"
                                 >
                                     {isTyping ? (
-                                        <Loader2 className="w-4 h-4 animate-spin" />
+                                        <CircleNotch className="w-4 h-4 animate-spin" />
                                     ) : (
-                                        <Send className="w-4 h-4" />
+                                        <PaperPlaneRight className="w-4 h-4" />
                                     )}
                                 </Button>
                             </div>

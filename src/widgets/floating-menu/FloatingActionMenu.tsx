@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
-  MessageCircle,
-  Share2,
+  ChatCircle,
+  ShareNetwork,
   Phone,
   X,
-  Linkedin,
-  Instagram,
-  Twitter,
-  Facebook,
-} from 'lucide-react';
+  LinkedinLogo,
+  InstagramLogo,
+  TwitterLogo,
+  FacebookLogo,
+} from '@phosphor-icons/react';
 import { useChatStore } from '../chatbot/lib/chatStore';
 
 export const FloatingActionMenu: React.FC = () => {
@@ -46,28 +46,28 @@ export const FloatingActionMenu: React.FC = () => {
               href="#"
               className="p-2 hover:bg-gray-50 rounded-xl text-[#0A66C2] transition-colors flex items-center gap-3 w-32"
             >
-              <Linkedin className="w-5 h-5" />
+              <LinkedinLogo className="w-5 h-5" />
               <span className="text-sm font-bold text-gray-700">LinkedIn</span>
             </a>
             <a
               href="#"
               className="p-2 hover:bg-gray-50 rounded-xl text-[#E4405F] transition-colors flex items-center gap-3 w-32"
             >
-              <Instagram className="w-5 h-5" />
+              <InstagramLogo className="w-5 h-5" />
               <span className="text-sm font-bold text-gray-700">Instagram</span>
             </a>
             <a
               href="#"
               className="p-2 hover:bg-gray-50 rounded-xl text-[#1DA1F2] transition-colors flex items-center gap-3 w-32"
             >
-              <Twitter className="w-5 h-5" />
+              <TwitterLogo className="w-5 h-5" />
               <span className="text-sm font-bold text-gray-700">Twitter</span>
             </a>
             <a
               href="#"
               className="p-2 hover:bg-gray-50 rounded-xl text-[#1877F2] transition-colors flex items-center gap-3 w-32"
             >
-              <Facebook className="w-5 h-5" />
+              <FacebookLogo className="w-5 h-5" />
               <span className="text-sm font-bold text-gray-700">Facebook</span>
             </a>
           </motion.div>
@@ -90,7 +90,7 @@ export const FloatingActionMenu: React.FC = () => {
               <span className="absolute right-full mr-4 bg-gray-900 text-white text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                 Social Media
               </span>
-              <Share2 className="w-6 h-6" />
+              <ShareNetwork className="w-6 h-6" />
             </motion.button>
 
             {/* WhatsApp Button */}
@@ -121,7 +121,7 @@ export const FloatingActionMenu: React.FC = () => {
               <span className="absolute right-full mr-4 bg-gray-900 text-white text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                 AI Assistant
               </span>
-              <MessageCircle className="w-6 h-6" />
+              <ChatCircle className="w-6 h-6" />
             </motion.button>
           </div>
         )}
@@ -141,7 +141,7 @@ export const FloatingActionMenu: React.FC = () => {
           <X className="w-8 h-8" />
         ) : (
           <div className="relative">
-            <MessageCircle className="w-8 h-8" />
+            <ChatCircle className="w-8 h-8" />
             <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-ping" />
             <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full" />
           </div>

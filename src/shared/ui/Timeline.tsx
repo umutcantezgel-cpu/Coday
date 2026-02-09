@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Check } from 'lucide-react';
+import { Check } from '@phosphor-icons/react';
 
 interface TimelineItem {
     week: string;

@@ -1,67 +1,67 @@
 {
-    "meta": {
-        "title": "Coday | Der Agentur-Killer",
-        "description": "Premium Webdesign & Performance-Marketing für moderne Unternehmen. Wir bauen Ihren digitalen Erfolg."
+  "hero": {
+    "badge": "Grand Opening Special: 25% Rabatt",
+    "headline_gradient": "Digitalen Erfolg.",
+    "headline_prefix": "Wir bauen Ihren",
+    "rotating": [
+      "Schnell. Skalierbar. Professionell.",
+      "Gewinnorientiert. Ergebnisorientiert.",
+      "Premium Design. Professioneller Code.",
+      "Keine Ausreden. Nur Ergebnisse."
+    ]
+  },
+  "industries": {
+    "card_consulting": {
+      "desc": "Erstklassige Markenpositionierung.",
+      "title": "Beratung"
     },
-    "hero": {
-        "badge": "Grand Opening Special: 25% Rabatt",
-        "headline_prefix": "Wir bauen ihre",
-        "headline_gradient": "Digitalen Erfolg.",
-        "rotating": [
-            "Schnell. Skalierbar. Professionell.",
-            "Gewinnorientiert. Ergebnisorientiert.",
-            "Premium Design. Professioneller Code.",
-            "Keine Ausreden. Nur Ergebnisse."
-        ]
+    "card_craft": {
+      "desc": "Digitale Mitarbeitergewinnung und Projekt-Showcases.",
+      "title": "Handwerk & Bau"
     },
-    "stats": {
-        "load_time": "Ø Ladezeit",
-        "ownership": "Code-Eigentum",
-        "availability": "Erreichbarkeit",
-        "profit": "Gewinn",
-        "focused": "Fokussiert"
+    "card_health": {
+      "desc": "Vertrauenswürdige Webauftritte.",
+      "title": "Gesundheit"
     },
-    "philosophy": {
-        "traditional": "Traditionelle Agenturen",
-        "history": "Sind Geschichte.",
-        "text_overhead": "Sie bezahlen für Overhead, Meetings und ineffiziente Prozesse. Das alte Agenturmodell funktioniert nicht mehr für moderne KMUs.",
-        "standard": "Coday ist der neue Standard.",
-        "text_standard": "Wir kombinieren strategisches Design mit professioneller Programmierung. Keine Baukästen, keine Ausreden. Nur Ergebnisse, die Ihr Unternehmen voranbringen."
+    "card_realestate": {
+      "desc": "Hochwertige Exposé-Präsentationen und Kundenanfragen.",
+      "title": "Immobilien"
     },
-    "industries": {
-        "title_prefix": "Wir digitalisieren",
-        "title_suffix": "Ihre Branche.",
-        "card_craft": {
-            "title": "Handwerk & Bau",
-            "desc": "Digitale Mitarbeitergewinnung und Projekt-Showcases."
-        },
-        "card_realestate": {
-            "title": "Immobilien",
-            "desc": "Hochwertige Exposé-Präsentationen und Kundenanfragen."
-        },
-        "card_shop": {
-            "title": "Online-Shop",
-            "desc": "Verkaufsstarke Shopsysteme."
-        },
-        "card_consulting": {
-            "title": "Beratung",
-            "desc": "Erstklassige Markenpositionierung."
-        },
-        "card_health": {
-            "title": "Gesundheit",
-            "desc": "Vertrauenswürdige Webauftritte."
-        }
+    "card_shop": {
+      "desc": "Verkaufsstarke Shopsysteme.",
+      "title": "Online-Shop"
     },
-    "tech_stack": {
-        "label": "Technologie",
-        "title_prefix": "Professionelles",
-        "title_suffix": "Technologie-Paket"
-    },
-    "testimonials": {
-        "title_prefix": "Partner, die",
-        "title_suffix": "Uns Vertrauen.",
-        "text": "Vom lokalen Handwerksbetrieb bis zum Industrieunternehmen. Wir liefern Qualität, auf die Sie bauen können.",
-        "rating": "5.0 Sterne Bewertung",
-        "excellence": "Exzellenz als Standard."
-    }
+    "title_prefix": "Wir digitalisieren",
+    "title_suffix": "Ihre Branche."
+  },
+  "meta": {
+    "description": "Premium Webdesign & Performance-Marketing für moderne Unternehmen. Wir bauen Ihren digitalen Erfolg.",
+    "title": "Coday | Der Agentur-Killer"
+  },
+  "philosophy": {
+    "history": "Sind Geschichte.",
+    "standard": "Coday ist der neue Standard.",
+    "text_overhead": "Sie bezahlen für Overhead, Meetings und ineffiziente Prozesse. Das alte Agenturmodell funktioniert nicht mehr für moderne KMUs.",
+    "text_standard": "Wir kombinieren strategisches Design mit professioneller Programmierung. Keine Baukästen, keine Ausreden. Nur Ergebnisse, die Ihr Unternehmen voranbringen.",
+    "traditional": "Traditionelle Agenturen"
+  },
+  "stats": {
+    "availability": "Erreichbarkeit",
+    "focused": "Fokussiert",
+    "load_time": "Ø Ladezeit",
+    "ownership": "Code-Eigentum",
+    "profit": "Gewinn"
+  },
+  "tech_stack": {
+    "label": "Technologie",
+    "title_prefix": "Professionelles",
+    "title_suffix": "Technologie-Paket"
+  },
+  "testimonials": {
+    "excellence": "Exzellenz als Standard.",
+    "rating": "5.0 Sterne Bewertung",
+    "text": "Vom lokalen Handwerksbetrieb bis zum Industrieunternehmen. Wir liefern Qualität, auf die Sie bauen können.",
+    "title_prefix": "Partner, die",
+    "title_suffix": "Uns Vertrauen."
+  }
 }

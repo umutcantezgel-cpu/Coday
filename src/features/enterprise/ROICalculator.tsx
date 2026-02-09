@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { BadgeEuro, Calculator, TrendingUp, AlertTriangle } from 'lucide-react';
+import { CurrencyEur, Calculator, TrendUp, Warning } from '@phosphor-icons/react';
 
 export const ROICalculator: React.FC = () => {
     const [traffic, setTraffic] = useState(10000);
@@ -81,7 +81,7 @@ export const ROICalculator: React.FC = () => {
                         </span>
                     </div>
                     <div className="flex items-center gap-2 text-red-300 text-sm font-bold uppercase tracking-wider mb-8">
-                        <AlertTriangle size={16} />
+                        <Warning size={16} />
                         Lost due to poor performance
                     </div>
 
@@ -91,7 +91,7 @@ export const ROICalculator: React.FC = () => {
                         <div>
                             <div className="text-white/60 text-sm mb-1">Potential Annual Rev</div>
                             <div className="text-2xl font-bold flex items-center gap-2">
-                                <BadgeEuro className="text-emerald-400" />
+                                <CurrencyEur className="text-emerald-400" />
                                 {(potentialRevenue * 12).toLocaleString()}€
                             </div>
                         </div>
@@ -100,7 +100,7 @@ export const ROICalculator: React.FC = () => {
                             transition={{ repeat: Infinity, duration: 2 }}
                             className="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400"
                         >
-                            <TrendingUp size={24} />
+                            <TrendUp size={24} />
                         </motion.div>
                     </div>
                 </motion.div>

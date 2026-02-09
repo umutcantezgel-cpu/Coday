@@ -21,7 +21,7 @@ export default [
             // Web Development Sub-Services
             route("services/web-development/e-commerce", "pages/services/development/Ecommerce.tsx"),
             route("services/web-development/web-apps", "pages/services/development/WebApps.tsx"),
-            route("services/web-development/cms-headless", "pages/services/development/HeadlessCms.tsx"),
+            route("services/web-development/headless-cms", "pages/services/development/HeadlessCms.tsx"),
             route("services/web-development/api-integrations", "pages/services/development/ApiIntegration.tsx"),
             route("services/web-development/migration", "pages/services/development/Migration.tsx"),
 
@@ -57,6 +57,7 @@ export default [
 
             route("process", "pages/Process.tsx"),
             route("contact", "pages/Contact.tsx"),
+            route("legal", "pages/legal/LegalHub.tsx"),
             route("legal/impressum", "pages/legal/Impressum.tsx"),
             route("legal/datenschutz", "pages/legal/Privacy.tsx"),
             route("legal/agb", "pages/legal/Terms.tsx"),
@@ -86,7 +87,10 @@ export default [
             route("analyzer", "pages/Analyzer.tsx"),
             route("website-audit", "pages/Analyzer.tsx", { id: "analyzer-audit" }),
 
-            route("*", "pages/NotFound.tsx")
+            route("*", "pages/NotFound.tsx"),
+
+            // Icon Preview
+            route("preview/icons", "pages/IconPreview.tsx")
         ])
     ])
 

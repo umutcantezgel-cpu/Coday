@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronDown, Sparkles } from 'lucide-react';
+import { CaretDown, Sparkle } from '@phosphor-icons/react';
 
 interface ExpandableSectionProps {
     title: string;
@@ -31,7 +31,7 @@ const ExpandableSection: React.FC<ExpandableSectionProps> = ({
             >
                 <div className="flex items-center gap-3">
                     {variant === 'highlight' && (
-                        <Sparkles className="text-primary" size={18} />
+                        <Sparkle className="text-primary" size={18} />
                     )}
                     <span className="font-bold text-secondary">{title}</span>
                 </div>
@@ -39,7 +39,7 @@ const ExpandableSection: React.FC<ExpandableSectionProps> = ({
                     animate={{ rotate: isOpen ? 180 : 0 }}
                     transition={{ duration: 0.2 }}
                 >
-                    <ChevronDown className="text-slate-400" size={20} />
+                    <CaretDown className="text-slate-400" size={20} />
                 </motion.div>
             </button>
 

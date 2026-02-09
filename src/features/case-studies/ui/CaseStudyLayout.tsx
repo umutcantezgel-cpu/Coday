@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeft, ArrowUpRight } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight } from '@phosphor-icons/react';
 import { Link } from 'react-router-dom';
 import BlurText from '../../../shared/ui/BlurText';
 import { OptimizedImage } from '../../../shared/ui/OptimizedImage';

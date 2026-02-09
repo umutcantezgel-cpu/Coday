@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
-import { ArrowLeft, Calendar, Clock, User } from 'lucide-react';
+import { ArrowLeft, CalendarBlank, Clock, User } from '@phosphor-icons/react';
 import { getBlogPost, getBlogPosts } from '../../features/blog/model/data';
 import { OptimizedImage } from '../../shared/ui/OptimizedImage';
 import BlurText from '../../shared/ui/BlurText';
@@ -122,7 +122,7 @@ const BlogPost: React.FC = () => {
                                     <span className="font-medium text-secondary">{post.author}</span>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <Calendar size={16} />
+                                    <CalendarBlank size={16} />
                                     <span>{post.date}</span>
                                 </div>
                             </div>

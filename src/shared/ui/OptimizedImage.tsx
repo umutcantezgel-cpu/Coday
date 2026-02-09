@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface OptimizedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
     src: string;
@@ -23,6 +23,13 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
     const [isLoaded, setIsLoaded] = useState(false);
     const [hasError, setHasError] = useState(false);
     const imgRef = React.useRef<HTMLImageElement>(null);
+
+    useEffect(() => {
+        if (imgRef.current && imgRef.current.complete) {
+            // eslint-disable-next-line react-hooks/exhaustive-deps
+            setIsLoaded(true);
+        }
+    }, []);
 
     // Dynamic aspect ratio container
     const getAspectRatioClass = () => {

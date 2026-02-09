@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { CheckCircle, XCircle, ArrowRight, RotateCcw } from 'lucide-react';
+import { CheckCircle, XCircle, ArrowRight, ArrowCounterClockwise } from '@phosphor-icons/react';
 
 interface QuizQuestion {
     question: string;
@@ -32,7 +32,7 @@ const InteractiveQuiz: React.FC<InteractiveQuizProps> = ({ title, questions, cla
     };
 
     const nextQuestion = () => {
-        if (currentQuestion <questions.length - 1) {
+        if (currentQuestion < questions.length - 1) {
             setCurrentQuestion(currentQuestion + 1);
             setSelectedAnswer(null);
             setShowResult(false);
@@ -128,7 +128,7 @@ const InteractiveQuiz: React.FC<InteractiveQuizProps> = ({ title, questions, cla
                                     onClick={nextQuestion}
                                     className="flex items-center gap-2 px-6 py-3 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition-colors"
                                 >
-                                    {currentQuestion <questions.length - 1 ? 'Nächste Frage' : 'Ergebnis anzeigen'}
+                                    {currentQuestion < questions.length - 1 ? 'Nächste Frage' : 'Ergebnis anzeigen'}
                                     <ArrowRight size={18} />
                                 </button>
                             </motion.div>
@@ -157,7 +157,7 @@ const InteractiveQuiz: React.FC<InteractiveQuizProps> = ({ title, questions, cla
                             onClick={restart}
                             className="flex items-center gap-2 px-6 py-3 bg-secondary text-white font-bold rounded-xl hover:bg-secondary/90 transition-colors mx-auto"
                         >
-                            <RotateCcw size={18} />
+                            <ArrowCounterClockwise size={18} />
                             Nochmal versuchen
                         </button>
                     </motion.div>

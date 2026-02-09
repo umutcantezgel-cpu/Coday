@@ -1,63 +1,63 @@
 {
-    "hero": {
-        "badge": "Der Coday-Standard",
-        "title_start": "Kein Chaos.",
-        "title_gradient": "Nur Ergebnisse.",
-        "desc": "Wir haben Entwicklung systematisiert. Kein Rätselraten, keine versteckten Kosten. Ein verlässlicher Prozess für Ihren Erfolg."
+  "guarantee": {
+    "items": [
+      {
+        "desc": "Wir arbeiten zum Festpreis. Nachforderungen gibt es bei uns nicht.",
+        "title": "Festpreis"
+      },
+      {
+        "desc": "Wir garantieren den Launch-Termin vertraglich.",
+        "title": "Termingarantie"
+      },
+      {
+        "desc": "30 Tage Fehlerbehebungs-Garantie nach Start inklusive.",
+        "title": "Fehlerfrei"
+      }
+    ],
+    "title": "Unsere Garantie"
+  },
+  "hero": {
+    "badge": "Der Coday-Standard",
+    "desc": "Wir haben Entwicklung systematisiert. Kein Rätselraten, keine versteckten Kosten. Ein verlässlicher Prozess für Ihren Erfolg.",
+    "title_gradient": "Nur Ergebnisse.",
+    "title_start": "Kein Chaos."
+  },
+  "timeline": {
+    "steps": [
+      {
+        "desc": "Wir analysieren Ihr Geschäft, Ihre Konkurrenz und Ihre Ziele. Kein 'Out of the Box' Bla-Bla.",
+        "title": "Discovery"
+      },
+      {
+        "desc": "Der Bauplan steht, bevor der erste Pixel gesetzt wird. Wir definieren die User Journey.",
+        "title": "Strategy & Wireframes"
+      },
+      {
+        "desc": "Jetzt wird es schön. Visuelle Identität, Animationen und Wow-Effekte.",
+        "title": "Design"
+      },
+      {
+        "desc": "Clean Code. Extrem schnell. Sicher. Wir bauen auf modernster Tech-Stack (Next.js).",
+        "title": "Development"
+      },
+      {
+        "desc": "Go-Live ist erst der Anfang. Wir optimieren basierend auf echten Nutzerdaten.",
+        "title": "Launch & Growth"
+      }
+    ]
+  },
+  "transparency": {
+    "chat": {
+      "desc": "Slack / WhatsApp Channel",
+      "msg1": "Design Update ist online! 🚀",
+      "msg2": "Sieht mega aus! Freigabe erteilt.",
+      "title": "Direct Line"
     },
-    "timeline": {
-        "steps": [
-            {
-                "title": "Discovery",
-                "desc": "Wir analysieren Ihr Geschäft, Ihre Konkurrenz und Ihre Ziele. Kein 'Out of the Box' Bla-Bla."
-            },
-            {
-                "title": "Strategy & Wireframes",
-                "desc": "Der Bauplan steht, bevor der erste Pixel gesetzt wird. Wir definieren die User Journey."
-            },
-            {
-                "title": "Design",
-                "desc": "Jetzt wird es schön. Visuelle Identität, Animationen und Wow-Effekte."
-            },
-            {
-                "title": "Development",
-                "desc": "Clean Code. Extrem schnell. Sicher. Wir bauen auf modernster Tech-Stack (Next.js)."
-            },
-            {
-                "title": "Launch & Growth",
-                "desc": "Go-Live ist erst der Anfang. Wir optimieren basierend auf echten Nutzerdaten."
-            }
-        ]
+    "desc": "Sie wissen zu jeder Zeit genau, woran wir arbeiten. Volle Transparenz über Trello, Slack und wöchentliche Updates.",
+    "kanban": {
+      "desc": "Trello / Jira Zugriff",
+      "title": "Live Status Board"
     },
-    "transparency": {
-        "title": "Keine Black Box.",
-        "desc": "Sie wissen zu jeder Zeit genau, woran wir arbeiten. Volle Transparenz über Trello, Slack und wöchentliche Updates.",
-        "kanban": {
-            "title": "Live Status Board",
-            "desc": "Trello / Jira Zugriff"
-        },
-        "chat": {
-            "title": "Direct Line",
-            "desc": "Slack / WhatsApp Channel",
-            "msg1": "Design Update ist online! 🚀",
-            "msg2": "Sieht mega aus! Freigabe erteilt."
-        }
-    },
-    "guarantee": {
-        "title": "Unsere Garantie",
-        "items": [
-            {
-                "title": "Festpreis",
-                "desc": "Wir arbeiten zum Festpreis. Nachforderungen gibt es bei uns nicht."
-            },
-            {
-                "title": "Termingarantie",
-                "desc": "Wir garantieren den Launch-Termin vertraglich."
-            },
-            {
-                "title": "Fehlerfrei",
-                "desc": "30 Tage Fehlerbehebungs-Garantie nach Start inklusive."
-            }
-        ]
-    }
+    "title": "Keine Black Box."
+  }
 }

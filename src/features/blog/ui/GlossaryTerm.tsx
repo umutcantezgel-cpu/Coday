@@ -1,7 +1,7 @@
 
 import React from 'react';
 import * as Tooltip from '@radix-ui/react-tooltip';
-import { Info } from 'lucide-react';
+import { Info } from '@phosphor-icons/react';
 
 interface GlossaryTermProps {
     term: string;

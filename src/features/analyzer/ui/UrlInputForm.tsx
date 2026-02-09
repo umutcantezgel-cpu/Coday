@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Search, Loader2, AlertCircle, CheckCircle } from 'lucide-react';
+import { MagnifyingGlass, CircleNotch, WarningCircle, CheckCircle } from '@phosphor-icons/react';
 import { useAnalyzerStore } from '../model/store';
 import { Icon } from '@/shared/ui/Icon';
 
@@ -39,7 +39,7 @@ export const UrlInputForm: React.FC = () => {
                     <div className="relative flex-1 flex items-center bg-white rounded-l-2xl">
                         {/* Icon */}
                         <div className="pl-6 pr-3">
-                            <Search className={`w-6 h-6 transition-colors ${isFocused ? 'text-primary' : 'text-gray-400'}`} />
+                            <MagnifyingGlass className={`w-6 h-6 transition-colors ${isFocused ? 'text-primary' : 'text-gray-400'}`} />
                         </div>
 
                         {/* Input */}
@@ -72,7 +72,7 @@ export const UrlInputForm: React.FC = () => {
                                     {isValidUrl ? (
                                         <CheckCircle className="w-5 h-5 text-green-500" />
                                     ) : (
-                                        <AlertCircle className="w-5 h-5 text-orange-400" />
+                                        <WarningCircle className="w-5 h-5 text-orange-400" />
                                     )}
                                 </motion.div>
                             )}
@@ -94,7 +94,7 @@ export const UrlInputForm: React.FC = () => {
                     >
                         {isLoading ? (
                             <span className="flex items-center gap-2">
-                                <Loader2 className="w-5 h-5 animate-spin" />
+                                <CircleNotch className="w-5 h-5 animate-spin" />
                                 <span>Analysiere...</span>
                             </span>
                         ) : (
@@ -115,7 +115,7 @@ export const UrlInputForm: React.FC = () => {
                             exit={{ opacity: 0, y: -10 }}
                             className="mt-4 p-4 bg-red-50 border border-red-200 rounded-xl flex items-center gap-3"
                         >
-                            <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0" />
+                            <WarningCircle className="w-5 h-5 text-red-500 flex-shrink-0" />
                             <p className="text-red-700 font-medium">{error}</p>
                         </motion.div>
                     )}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Calendar } from 'lucide-react';
+import { CalendarBlank } from '@phosphor-icons/react';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -41,7 +41,7 @@ export const ScrollContextCTA: React.FC = () => {
                             to="/booking"
                             className="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-full font-bold text-sm flex items-center gap-2 transition-colors"
                         >
-                            <Calendar size={16} />
+                            <CalendarBlank size={16} />
                             {t('scroll_cta.book_audit')}
                         </NavLink>
                     </div>

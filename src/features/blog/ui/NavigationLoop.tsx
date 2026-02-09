@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Share2, ArrowRight, Twitter, Linkedin, Copy, Check } from 'lucide-react';
+import { ShareNetwork, ArrowRight, TwitterLogo, LinkedinLogo, Copy, Check } from '@phosphor-icons/react';
 import { getBlogPosts } from '../model/data';
 import { OptimizedImage } from '../../../shared/ui/OptimizedImage';
 import { motion, AnimatePresence } from 'motion/react';
@@ -102,14 +102,14 @@ export const ShareFAB: React.FC<{ title: string; url: string }> = ({ title, url 
                             className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
                             aria-label="Share on Twitter"
                         >
-                            <Twitter size={20} />
+                            <TwitterLogo size={20} />
                         </button>
                         <button
                             onClick={() => handleShare('linkedin')}
                             className="w-12 h-12 bg-[#0077b5] text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
                             aria-label="Share on LinkedIn"
                         >
-                            <Linkedin size={20} />
+                            <LinkedinLogo size={20} />
                         </button>
                         <button
                             onClick={() => handleShare('copy')}
@@ -128,7 +128,7 @@ export const ShareFAB: React.FC<{ title: string; url: string }> = ({ title, url 
                 onClick={() => setIsOpen(!isOpen)}
                 className="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center shadow-xl shadow-primary/30 z-50"
             >
-                <Share2 size={24} />
+                <ShareNetwork size={24} />
             </motion.button>
         </div>
     );

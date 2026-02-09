@@ -1,270 +1,711 @@
 {
-  "impressum": {
-    "title": "Impressum",
-    "subtitle": "Angaben gemäß § 5 DDG",
-    "provider": {
-      "title": "Anbieter",
-      "name": "Umutcan Emre Tezgel",
-      "address": "Lessingstraße 4\n35578 Wetzlar\nDeutschland"
+  "common": {
+    "contact": "Kontaktieren Sie uns",
+    "contents": "Inhalt",
+    "download_pdf": "PDF herunterladen",
+    "legal_document": "Rechtliches Dokument"
+  },
+  "disclaimer": {
+    "analysis": {
+      "content": "__MISSING__",
+      "title": "__MISSING__"
     },
-    "contact": {
-      "title": "Kontakt",
-      "phone": "Telefon: ",
-      "email": "E-Mail: ",
-      "web": "Web: "
+    "content": {
+      "content": "__MISSING__",
+      "title": "__MISSING__"
     },
-    "representative": {
-      "title": "Vertreten durch",
-      "name": "Inhaber: Umutcan Emre Tezgel"
+    "copyright": {
+      "content": "__MISSING__",
+      "title": "__MISSING__"
     },
-    "profession": {
-      "title": "Berufsbezeichnung",
-      "desc": "Webdesigner / Einzelunternehmer"
-    },
-    "tax": {
-      "title": "Steuernummer",
-      "number": "039 874 00784"
+    "intro": {
+      "content": "__MISSING__",
+      "title": "__MISSING__"
     },
     "liability": {
-      "title": "Haftungs- und Schutzrechtshinweise",
+      "content": "__MISSING__",
+      "title": "__MISSING__"
+    },
+    "title": "__MISSING__"
+  },
+  "hub": {
+    "agb": {
+      "description": "__MISSING__",
+      "title": "__MISSING__"
+    },
+    "badge": "__MISSING__",
+    "cta": {
+      "button": "__MISSING__",
+      "description": "__MISSING__",
+      "title": "__MISSING__"
+    },
+    "features": {
+      "gdpr": {
+        "desc": "__MISSING__",
+        "title": "__MISSING__"
+      },
+      "transparent": {
+        "desc": "__MISSING__",
+        "title": "__MISSING__"
+      },
+      "updated": {
+        "desc": "__MISSING__",
+        "title": "__MISSING__"
+      }
+    },
+    "impressum": {
+      "description": "__MISSING__",
+      "title": "__MISSING__"
+    },
+    "privacy": {
+      "description": "__MISSING__",
+      "title": "__MISSING__"
+    },
+    "seo": {
+      "description": "__MISSING__",
+      "title": "__MISSING__"
+    },
+    "subtitle": "__MISSING__",
+    "title": "__MISSING__"
+  },
+  "impressum": {
+    "contact": {
+      "email_note": "Antwort innerhalb 24h",
+      "phone_note": "Mo-Fr: 9:00 - 18:00 Uhr",
+      "web_note": "Besuchen Sie uns online"
+    },
+    "cta": {
+      "text": "Wir freuen uns auf Ihre Nachricht.",
+      "title": "Haben Sie Fragen?"
+    },
+    "dispute": {
+      "p1": "Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.",
+      "p2": "Bei Fragen oder Anliegen bitten wir Sie, zunächst direkt mit uns Kontakt aufzunehmen. Wir sind stets bemüht, eine einvernehmliche Lösung zu finden."
+    },
+    "liability": {
       "content": {
-        "title": "Haftung für Inhalte",
-        "desc": "Als Diensteanbieter sind wir gemäß § 7 Abs.1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich."
+        "desc": "Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen.",
+        "title": "Haftung für Inhalte"
       },
       "images": {
-        "title": "Bildnachweise",
-        "desc": "Alle auf dieser Website verwendeten Bilder wurden selbst erstellt oder mithilfe von KI-Bildgeneratoren erzeugt. Die Urheberrechte liegen beim Betreiber dieser Website."
+        "desc": "Alle auf dieser Website verwendeten Inhalte (Texte, Bilder, Grafiken, Code) wurden selbst erstellt oder mithilfe von KI-Generatoren erzeugt. Die Urheberrechte liegen beim Betreiber dieser Website. Eine Vervielfältigung oder Verwendung bedarf der ausdrücklichen Zustimmung.",
+        "title": "Urheberrecht & Bildnachweise"
+      },
+      "links": {
+        "desc": "Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.",
+        "title": "Haftung für Links"
       }
     },
+    "mission": {
+      "quote": "\"Wir entwickeln digitale Lösungen, die nicht nur technisch überzeugen, sondern Menschen begeistern und Unternehmen erfolgreich machen.\""
+    },
+    "odr": {
+      "text": "Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:",
+      "title": "Online-Streitbeilegung"
+    },
+    "profession": {
+      "desc": "Webdesigner & Entwickler",
+      "title": "Berufsbezeichnung",
+      "type": "Freiberufliche Tätigkeit / Einzelunternehmer"
+    },
+    "provider": {
+      "address": "Lessingstraße 4\n35578 Wetzlar\nDeutschland",
+      "name": "Umutcan Emre Tezgel"
+    },
+    "registration": {
+      "note": "Als Einzelunternehmer ohne Kaufmannseigenschaft besteht keine Eintragungspflicht im Handelsregister.",
+      "title": "Handelsregister"
+    },
+    "representative": {
+      "name": "Umutcan Emre Tezgel",
+      "role": "Einzelunternehmer, vollumfänglich vertretungsberechtigt",
+      "title": "Inhaber & Geschäftsführer"
+    },
+    "sections": {
+      "haftung": {
+        "subtitle": "Rechtliche Hinweise",
+        "title": "Haftungs- und Urheberrechtshinweise"
+      },
+      "kontakt": {
+        "subtitle": "So erreichen Sie uns",
+        "title": "Kontaktinformationen"
+      },
+      "mission": {
+        "subtitle": "Wofür wir stehen",
+        "title": "Unsere Mission"
+      },
+      "qualifikation": {
+        "subtitle": "Expertise und Zertifizierungen",
+        "title": "Berufliche Qualifikationen"
+      },
+      "regulatorisch": {
+        "subtitle": "Steuer- und Handelsregister",
+        "title": "Regulatorische Angaben"
+      },
+      "streitbeilegung": {
+        "subtitle": "Alternative Konfliktlösung",
+        "title": "Streitbeilegung"
+      },
+      "unternehmen": {
+        "subtitle": "Der Anbieter dieser Website",
+        "title": "Unternehmensangaben"
+      },
+      "vertreter": {
+        "subtitle": "Gesetzlicher Vertreter",
+        "title": "Vertretungsberechtigte Person"
+      }
+    },
+    "skills": {
+      "ai": "KI-Integration",
+      "ai_desc": "Chatbots, AI-Assistenten, Automatisierung",
+      "backend": "Backend & DB",
+      "backend_desc": "Supabase, PostgreSQL, REST APIs, Serverless",
+      "design": "UI/UX Design",
+      "design_desc": "Figma, Adobe XD, User Research, Design Systems",
+      "security": "Security",
+      "security_desc": "DSGVO, SSL/TLS, sichere Authentifizierung",
+      "seo": "SEO & Marketing",
+      "seo_desc": "Suchmaschinenoptimierung, Content-Strategie, Analytics",
+      "webdev": "Webentwicklung",
+      "webdev_desc": "React, Next.js, TypeScript, Node.js, Tailwind CSS"
+    },
+    "subtitle": "Angaben gemäß § 5 DDG",
+    "summary": {
+      "1": "Einzelunternehmen mit Sitz in Wetzlar, Deutschland",
+      "2": "Spezialisiert auf Webdesign, Entwicklung & digitale Lösungen",
+      "3": "Direkter Kontakt per E-Mail, Telefon oder Kontaktformular",
+      "4": "DSGVO-konform und transparent",
+      "title": "Auf einen Blick"
+    },
+    "tax": {
+      "authority": "Finanzamt Wetzlar",
+      "number": "039 874 00784",
+      "title": "Steuernummer"
+    },
+    "title": "Impressum",
     "toc": {
-      "anbieter": "Anbieter & Kontakt",
-      "vertreter": "Vertretung & Register",
-      "haftung": "Haftung & Urheberrecht"
+      "haftung": "7. Haftungshinweise",
+      "kontakt": "3. Kontakt",
+      "mission": "6. Unsere Mission",
+      "qualifikation": "5. Qualifikationen",
+      "regulatorisch": "4. Regulatorische Angaben",
+      "streitbeilegung": "8. Streitbeilegung",
+      "unternehmen": "1. Unternehmensangaben",
+      "vertreter": "2. Vertretungsberechtigte"
+    },
+    "trading_as": "handelnd unter „Coday\"",
+    "ust": {
+      "note": "Kleinunternehmerregelung nach § 19 UStG",
+      "status": "Nicht vorhanden",
+      "title": "Umsatzsteuer-ID"
+    },
+    "values": {
+      "partnership": "Partnerschaft",
+      "partnership_desc": "Zusammenarbeit auf Augenhöhe",
+      "passion": "Leidenschaft",
+      "passion_desc": "Wir lieben, was wir tun",
+      "quality": "Qualität",
+      "quality_desc": "Höchste Standards, immer"
     }
   },
+  "nav": {
+    "impressum": "Impressum",
+    "privacy": "Datenschutz",
+    "terms": "AGB"
+  },
   "privacy": {
-    "title": "Datenschutz",
-    "subtitle": "erklärung",
-    "last_updated": "Letztes Update: {{date}}",
-    "intro": "Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Nachfolgend informieren wir Sie über die Erhebung, Verarbeitung und Nutzung Ihrer Daten gemäß der Datenschutz-Grundverordnung (DSGVO).",
-    "sections": {
-      "1": {
-        "title": "1. Name und Kontaktdaten des Verantwortlichen",
-        "content": "Diese Datenschutz-Information gilt für die Datenverarbeitung durch:"
+    "aenderungen": {
+      "p1": "Wir behalten uns vor, diese Datenschutzerklärung anzupassen, um sie an geänderte Rechtslagen oder Änderungen unserer Dienste anzupassen. Die aktuelle Version finden Sie stets auf dieser Seite.",
+      "p2": "Bei wesentlichen Änderungen werden wir Sie – soweit möglich – per E-Mail oder durch einen Hinweis auf unserer Website informieren."
+    },
+    "beschwerde": {
+      "authority": {
+        "title": "Zuständige Aufsichtsbehörde"
       },
-      "2": {
-        "title": "2. Erhebung und Speicherung personenbezogener Daten",
-        "a": {
-          "title": "a) Beim Besuch der Website",
-          "content": "Beim Aufrufen unserer Website werden durch den Browser automatisch Informationen an den Server gesendet. Diese werden temporär in Logfiles gespeichert:"
-        },
-        "b": {
-          "title": "b) Bei Nutzung unseres Kontaktformulars",
-          "content": "Bei Nutzung des Kontaktformulars erheben wir: Name, E-Mail-Adresse, Telefonnummer (optional), Ihre Nachricht."
-        },
-        "c": {
-          "title": "c) Bei Nutzung des Website-Analyzers",
-          "content": "Beim Website-Analyzer erheben wir: Die analysierte URL, E-Mail-Adresse (für Report-Zustellung), Analyseergebnisse werden temporär gespeichert."
-        },
-        "d": {
-          "title": "d) Bei Nutzung des Chatbots (Jarvis)",
-          "content": "Der Chatbot speichert Ihre Konversation lokal im Browser zur Bereitstellung der Chat-Funktionalität. Die Nachrichten werden zur Verarbeitung an externe KI-Dienste übermittelt (siehe Abschnitt 4)."
-        }
+      "p1": "Wenn Sie der Meinung sind, dass die Verarbeitung Ihrer Daten gegen Datenschutzrecht verstößt, haben Sie das Recht, sich bei einer Aufsichtsbehörde zu beschweren (Art. 77 DSGVO)."
+    },
+    "controller": {
+      "title": "Verantwortlicher"
+    },
+    "dataflow": {
+      "description": "Visualisierung des Datenflusses bei der Nutzung unserer Dienste"
+    },
+    "international": {
+      "adequacy": {
+        "desc": "Wo vorhanden, stützen wir uns auf Angemessenheitsbeschlüsse der EU-Kommission (z.B. für bestimmte US-Unternehmen).",
+        "title": "Angemessenheitsbeschlüsse"
       },
-      "3": {
-        "title": "3. Cookies",
-        "content": "Wir verwenden folgende Cookie-Kategorien:",
-        "necessary": {
-          "title": "Notwendige Cookies",
-          "desc": "Erforderlich für die Grundfunktionen der Website (Session, Cookie-Einstellungen)."
-        },
-        "functional": {
-          "title": "Funktionale Cookies",
-          "desc": "Speichern Ihre Präferenzen wie Chatbot-Verlauf (localStorage)."
-        },
-        "analytics": {
-          "title": "Analyse-Cookies (optional)",
-          "desc": "Google Analytics zur Verbesserung unserer Website - nur mit Ihrer Einwilligung."
-        },
-        "note": "Sie können Ihre Cookie-Einstellungen jederzeit über das Cookie-Banner anpassen."
-      },
-      "4": {
-        "title": "4. KI-Dienste und automatisierte Verarbeitung",
-        "note": "Hinweis: Unser KI-Assistent 'Jarvis' und der Website-Analyzer nutzen externe KI-Dienste zur Verarbeitung.",
-        "gemini": {
-          "title": "a) Google Gemini API",
-          "content": "Für den Chatbot und Website-Analyzer werden Ihre Anfragen an die Google Gemini API übermittelt. Verarbeitet werden: Ihre Chat-Nachrichten, Website-Inhalte bei Analyse. Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung durch Nutzung)."
-        },
-        "perplexity": {
-          "title": "b) Perplexity API",
-          "content": "Für erweiterte Suchanfragen wird die Perplexity API genutzt. Es werden ausschließlich die Suchanfragen übermittelt, keine personenbezogenen Daten."
-        },
-        "disclaimer": {
-          "title": "c) Keine rechtliche/medizinische Beratung",
-          "content": "KI-generierte Antworten dienen ausschließlich Informationszwecken und ersetzen keine professionelle Beratung. Wir übernehmen keine Haftung für Entscheidungen, die auf Basis von KI-Antworten getroffen werden."
-        }
-      },
-      "5": {
-        "title": "5. Auftragsverarbeiter und Drittanbieter",
-        "content": "Wir arbeiten mit folgenden Dienstleistern zusammen:",
-        "table": {
-          "headers": {
-            "provider": "Anbieter",
-            "purpose": "Zweck",
-            "location": "Standort"
-          },
-          "rows": {
-            "vercel": {
-              "provider": "Vercel Inc.",
-              "purpose": "Hosting",
-              "location": "USA (EU-Standardvertragsklauseln)"
-            },
-            "supabase": {
-              "provider": "Supabase Inc.",
-              "purpose": "Datenbank",
-              "location": "EU (Frankfurt)"
-            },
-            "google": {
-              "provider": "Google LLC",
-              "purpose": "Gemini API, Analytics",
-              "location": "USA (EU-Standardvertragsklauseln)"
-            },
-            "perplexity": {
-              "provider": "Perplexity AI",
-              "purpose": "Web-Suche",
-              "location": "USA"
-            }
-          }
-        }
-      },
-      "6": {
-        "title": "6. Betroffenenrechte",
-        "content": "Sie haben folgende Rechte bezüglich Ihrer personenbezogenen Daten:",
-        "rights": {
-          "art15": {
-            "title": "Art. 15",
-            "desc": "Auskunft über Ihre von uns verarbeiteten personenbezogenen Daten."
-          },
-          "art16": {
-            "title": "Art. 16",
-            "desc": "Berichtigung unrichtiger oder Vervollständigung Ihrer Daten."
-          },
-          "art17": {
-            "title": "Art. 17",
-            "desc": "Löschung Ihrer bei uns gespeicherten Daten ('Recht auf Vergessenwerden')."
-          },
-          "art18": {
-            "title": "Art. 18",
-            "desc": "Einschränkung der Verarbeitung Ihrer Daten."
-          },
-          "art20": {
-            "title": "Art. 20",
-            "desc": "Datenübertragbarkeit in einem gängigen Format."
-          },
-          "art21": {
-            "title": "Art. 21",
-            "desc": "Widerspruch gegen die Verarbeitung Ihrer Daten."
-          }
-        },
-        "contact": "Zur Ausübung Ihrer Rechte kontaktieren Sie uns unter:"
-      },
-      "7": {
-        "title": "7. Datensicherheit",
-        "content": "Wir verwenden TLS/SSL-Verschlüsselung für alle Datenübertragungen. Unsere Systeme werden regelmäßig aktualisiert und auf Sicherheitslücken überprüft. Der Zugriff auf personenbezogene Daten ist auf autorisierte Mitarbeiter beschränkt."
+      "p1": "Einige unserer Dienstleister haben ihren Sitz außerhalb der Europäischen Union, insbesondere in den USA. In diesen Fällen stellen wir durch geeignete Garantien sicher, dass Ihre Daten angemessen geschützt werden.",
+      "scc": {
+        "desc": "Mit Dienstleistern in Drittländern haben wir die von der EU-Kommission genehmigten Standardvertragsklauseln abgeschlossen.",
+        "title": "EU-Standardvertragsklauseln"
       }
     },
+    "intro": "Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Nachfolgend informieren wir Sie über die Erhebung, Verarbeitung und Nutzung Ihrer Daten gemäß der Datenschutz-Grundverordnung (DSGVO) und des Bundesdatenschutzgesetzes (BDSG).",
+    "ki": {
+      "disclaimer": {
+        "title": "Keine rechtliche/medizinische Beratung"
+      },
+      "note": "Wichtiger Hinweis"
+    },
+    "kontakt": {
+      "intro": "Bei Fragen zum Datenschutz oder zur Ausübung Ihrer Betroffenenrechte stehen wir Ihnen gerne zur Verfügung:"
+    },
+    "last_updated": "Letztes Update: {{date}}",
+    "principles": {
+      "lawfulness": "Rechtmäßigkeit",
+      "lawfulness_desc": "Jede Verarbeitung basiert auf einer gültigen Rechtsgrundlage (Einwilligung, Vertrag, berechtigtes Interesse).",
+      "minimization": "Datenminimierung",
+      "minimization_desc": "Wir erheben nur die Daten, die wir tatsächlich benötigen.",
+      "purpose": "Zweckbindung",
+      "purpose_desc": "Daten werden nur für festgelegte, eindeutige und legitime Zwecke erhoben.",
+      "transparency": "Transparenz",
+      "transparency_desc": "Sie werden umfassend über alle Verarbeitungsvorgänge informiert."
+    },
+    "processors": {
+      "google": {
+        "purpose": "Gemini API & Analytics"
+      },
+      "perplexity": {
+        "purpose": "KI-gestützte Web-Suche"
+      },
+      "supabase": {
+        "purpose": "Datenbank & Backend"
+      },
+      "vercel": {
+        "purpose": "Website-Hosting & CDN"
+      }
+    },
+    "retention": {
+      "analytics": "Analysedaten",
+      "analytics_desc": "Anonymisiert nach 26 Monaten",
+      "chat": "Chatbot-Konversationen",
+      "chat_desc": "Nur lokal im Browser, keine serverseitige Speicherung",
+      "contact": "Kontaktanfragen",
+      "contact_desc": "Nach Abschluss der Bearbeitung, max. 6 Monate",
+      "invoices": "Rechnungsdaten",
+      "invoices_desc": "10 Jahre (gesetzliche Aufbewahrungspflicht)",
+      "project": "Projektdaten",
+      "project_desc": "Für die Dauer des Projekts + 3 Jahre (Gewährleistung)",
+      "title": "Speicherfristen nach Datenart"
+    },
+    "rights": {
+      "art15": {
+        "desc": "Sie haben das Recht, Auskunft über Ihre gespeicherten personenbezogenen Daten zu erhalten.",
+        "title": "Auskunft"
+      },
+      "art16": {
+        "desc": "Sie können die Berichtigung unrichtiger oder Vervollständigung unvollständiger Daten verlangen.",
+        "title": "Berichtigung"
+      },
+      "art17": {
+        "desc": "Sie haben das \"Recht auf Vergessenwerden\" – Löschung Ihrer Daten auf Anfrage.",
+        "title": "Löschung"
+      },
+      "art18": {
+        "desc": "Sie können die Einschränkung der Verarbeitung Ihrer Daten verlangen.",
+        "title": "Einschränkung"
+      },
+      "art20": {
+        "desc": "Sie können Ihre Daten in einem gängigen, maschinenlesbaren Format erhalten.",
+        "title": "Datenübertragbarkeit"
+      },
+      "art21": {
+        "desc": "Sie können der Verarbeitung Ihrer Daten widersprechen, insbesondere bei Direktwerbung.",
+        "title": "Widerspruch"
+      },
+      "exercise": "Wie Sie Ihre Rechte ausüben:",
+      "exercise_desc": "Senden Sie uns eine E-Mail an",
+      "exercise_desc2": "mit dem Betreff \"Datenschutzanfrage\". Wir antworten innerhalb von 30 Tagen."
+    },
+    "sections": {
+      "2": {
+        "a": {
+          "content": "Beim Aufrufen unserer Website werden durch den Browser automatisch Informationen an den Server gesendet. Diese werden temporär in Logfiles gespeichert:",
+          "title": "Beim Besuch der Website"
+        },
+        "b": {
+          "content": "Bei Nutzung des Kontaktformulars erheben wir:",
+          "title": "Bei Nutzung des Kontaktformulars"
+        },
+        "c": {
+          "content": "Beim Website-Analyzer erheben wir:",
+          "title": "Bei Nutzung des Website-Analyzers"
+        },
+        "d": {
+          "content": "Der Chatbot speichert Ihre Konversation lokal im Browser zur Bereitstellung der Chat-Funktionalität.",
+          "title": "Bei Nutzung des Chatbots (Jarvis)"
+        },
+        "subtitle": "Welche Daten wir sammeln",
+        "title": "Erhebung personenbezogener Daten"
+      },
+      "3": {
+        "analytics": {
+          "desc": "Google Analytics zur Verbesserung unserer Website – nur mit Ihrer ausdrücklichen Einwilligung.",
+          "title": "Analyse-Cookies"
+        },
+        "content": "Wir verwenden Cookies, um unsere Website funktionsfähig zu halten und Ihre Nutzererfahrung zu verbessern. Sie können Ihre Cookie-Einstellungen jederzeit über unser Cookie-Banner anpassen.",
+        "functional": {
+          "desc": "Speichern Ihre Präferenzen wie Sprachauswahl und Chatbot-Verlauf (localStorage).",
+          "title": "Funktionale Cookies"
+        },
+        "necessary": {
+          "desc": "Erforderlich für die Grundfunktionen der Website (Session, Cookie-Einstellungen). Ohne diese funktioniert die Website nicht.",
+          "title": "Notwendige Cookies"
+        },
+        "note": "Sie können Ihre Cookie-Einstellungen jederzeit über das Cookie-Banner anpassen oder alle Cookies in Ihren Browsereinstellungen blockieren.",
+        "subtitle": "Wie wir Cookies einsetzen",
+        "title": "Cookies & Tracking-Technologien"
+      },
+      "4": {
+        "disclaimer": {
+          "content": "KI-generierte Antworten dienen ausschließlich Informationszwecken und ersetzen keine professionelle Beratung. Wir übernehmen keine Haftung für Entscheidungen, die auf Basis von KI-Antworten getroffen werden."
+        },
+        "gemini": {
+          "content": "Für den Chatbot und Website-Analyzer werden Ihre Anfragen an die Google Gemini API übermittelt.",
+          "title": "Google Gemini API"
+        },
+        "note": "Unser KI-Assistent \"Jarvis\" und der Website-Analyzer nutzen externe KI-Dienste zur Verarbeitung. Bei der Nutzung werden Ihre Eingaben an diese Dienste übermittelt.",
+        "perplexity": {
+          "content": "Für erweiterte Suchanfragen wird die Perplexity API genutzt.",
+          "title": "Perplexity API"
+        },
+        "subtitle": "Einsatz von Künstlicher Intelligenz",
+        "title": "KI-Dienste & Automatisierte Verarbeitung"
+      },
+      "5": {
+        "content": "Wir arbeiten mit sorgfältig ausgewählten Dienstleistern zusammen, die uns bei der Erbringung unserer Leistungen unterstützen. Mit allen Auftragsverarbeitern bestehen entsprechende Verträge nach Art. 28 DSGVO.",
+        "subtitle": "Mit wem wir zusammenarbeiten",
+        "title": "Auftragsverarbeiter & Drittanbieter"
+      },
+      "6": {
+        "content": "Sie haben umfassende Rechte bezüglich Ihrer personenbezogenen Daten. Zur Ausübung dieser Rechte kontaktieren Sie uns bitte unter umut@codayweb.de.",
+        "subtitle": "Ihre Rechte nach DSGVO",
+        "title": "Betroffenenrechte"
+      },
+      "7": {
+        "content": "Wir setzen umfangreiche technische und organisatorische Maßnahmen ein, um Ihre Daten zu schützen:",
+        "subtitle": "Technische und organisatorische Maßnahmen",
+        "title": "Datensicherheit"
+      },
+      "aenderungen": {
+        "subtitle": "Aktualisierungen und Versionierung",
+        "title": "Änderungen dieser Datenschutzerklärung"
+      },
+      "beschwerde": {
+        "subtitle": "Wenn Sie unzufrieden sind",
+        "title": "Beschwerderecht bei der Aufsichtsbehörde"
+      },
+      "datenfluss": {
+        "subtitle": "Wie Ihre Daten verarbeitet werden",
+        "title": "Datenfluss-Übersicht"
+      },
+      "grundsaetze": {
+        "subtitle": "Unsere Verpflichtungen nach DSGVO Art. 5",
+        "title": "Grundsätze der Datenverarbeitung"
+      },
+      "international": {
+        "subtitle": "Übermittlung in Drittländer",
+        "title": "Internationale Datenübertragung"
+      },
+      "kontakt": {
+        "subtitle": "Sprechen Sie uns an",
+        "title": "Kontakt & Datenschutzanfragen"
+      },
+      "praeambel": {
+        "subtitle": "Wer für Ihre Daten verantwortlich ist",
+        "title": "Präambel & Verantwortlicher"
+      },
+      "speicherung": {
+        "subtitle": "Wie lange wir Ihre Daten aufbewahren",
+        "title": "Datenspeicherung & Löschfristen"
+      }
+    },
+    "security": {
+      "access": "Zugriffskontrolle",
+      "access_desc": "Der Zugriff auf personenbezogene Daten ist streng begrenzt und protokolliert.",
+      "backup": "Backup",
+      "backup_desc": "Regelmäßige, verschlüsselte Backups zum Schutz vor Datenverlust.",
+      "encryption": "Verschlüsselung",
+      "encryption_desc": "TLS/SSL-Verschlüsselung für alle Datenübertragungen (HTTPS).",
+      "updates": "Regelmäßige Updates",
+      "updates_desc": "Unsere Systeme werden regelmäßig aktualisiert und auf Sicherheitslücken überprüft."
+    },
+    "speicherung": {
+      "intro": "Wir speichern Ihre Daten nur so lange, wie es für den jeweiligen Zweck erforderlich ist oder gesetzliche Aufbewahrungsfristen bestehen."
+    },
+    "subtitle": "Transparenter Umgang mit Ihren Daten",
+    "summary": {
+      "1": "DSGVO-konform: Wir verarbeiten Ihre Daten nach EU-Recht",
+      "2": "Kein Verkauf: Wir verkaufen Ihre Daten niemals an Dritte",
+      "3": "Transparenz: Sie wissen jederzeit, welche Daten wir haben",
+      "4": "Kontrolle: Sie können Ihre Daten jederzeit löschen lassen",
+      "5": "Sicherheit: Verschlüsselte Übertragung und sichere Speicherung",
+      "title": "Das Wichtigste auf einen Blick"
+    },
+    "title": "Datenschutzerklärung",
     "toc": {
-      "verantwortlicher": "1. Verantwortlicher",
-      "erhebung": "2. Datenerfassung",
-      "cookies": "3. Cookies",
-      "ki_dienste": "4. KI-Dienste",
-      "auftragsverarbeiter": "5. Auftragsverarbeiter",
-      "rechte": "6. Betroffenenrechte",
-      "sicherheit": "7. Datensicherheit"
+      "aenderungen": "12. Änderungen",
+      "beschwerde": "11. Beschwerderecht",
+      "cookies": "4. Cookies",
+      "datenfluss": "5. Datenfluss",
+      "drittanbieter": "7. Drittanbieter",
+      "erhebung": "3. Datenerhebung",
+      "grundsaetze": "2. Grundsätze",
+      "international": "8. Internationale Übertragung",
+      "ki_dienste": "6. KI-Dienste",
+      "kontakt": "14. Kontakt",
+      "praeambel": "1. Präambel",
+      "rechte": "10. Ihre Rechte",
+      "sicherheit": "13. Datensicherheit",
+      "speicherung": "9. Speicherfristen"
     }
   },
   "terms": {
-    "title": "Allgemeine Geschäftsbedingungen",
+    "definitions": {
+      "client": "Natürliche oder juristische Person, die Leistungen des Anbieters in Anspruch nimmt.",
+      "project": "Die im Angebot definierte Gesamtheit aller zu erbringenden Leistungen.",
+      "provider": "Umutcan Emre Tezgel, handelnd unter „Coday\", mit Sitz in Wetzlar.",
+      "revision": "Änderungsrunde zur Anpassung von Design oder Funktionalität nach Zwischenabnahme."
+    },
+    "eigentum": {
+      "code": {
+        "text": "Der Quellcode der entwickelten Website oder Applikation wird dem Auftraggeber bei Projektabschluss zur Verfügung gestellt, sofern nicht anders vereinbart.",
+        "title": "Quellcode"
+      },
+      "p1": "(1) Mit vollständiger Bezahlung gehen alle Nutzungsrechte an den erstellten Werken auf den Auftraggeber über. Dies umfasst das Recht zur unbeschränkten Nutzung für geschäftliche Zwecke.",
+      "p2": "(2) Das Urheberrecht verbleibt beim Anbieter. Der Anbieter behält sich vor, die erstellten Werke zu Referenzzwecken im eigenen Portfolio zu präsentieren, sofern keine Vertraulichkeitsvereinbarung besteht.",
+      "p3": "(3) Quelldateien (z.B. Design-Dateien in Figma, Sketch oder Adobe XD) werden nur übergeben, wenn dies ausdrücklich vereinbart wurde."
+    },
+    "festpreis": {
+      "guarantee": "Unsere Garantie",
+      "p1": "__MISSING__",
+      "p2": "__MISSING__",
+      "p3": "__MISSING__",
+      "text": "Der im Angebot genannte Preis ist ein verbindlicher Festpreis. Er ändert sich nicht, solange keine zusätzlichen Leistungen beauftragt werden, die über den ursprünglichen Leistungsumfang hinausgehen."
+    },
+    "gewaehrleistung": {
+      "browser": {
+        "text": "Websites werden für die aktuellen Versionen von Chrome, Firefox, Safari und Edge optimiert. Die Unterstützung älterer Browserversionen kann separat vereinbart werden.",
+        "title": "Browser-Kompatibilität"
+      },
+      "p1": "(1) Der Anbieter gewährleistet, dass die erbrachten Leistungen dem vereinbarten Funktionsumfang entsprechen und fachgerecht ausgeführt werden.",
+      "p2": "(2) Mängel sind dem Anbieter unverzüglich nach Entdeckung schriftlich mitzuteilen. Der Anbieter wird berechtigte Mängel im Rahmen der Nacherfüllung kostenlos beseitigen.",
+      "p3": "(3) Die Gewährleistungsfrist beträgt 12 Monate ab Projektübergabe, sofern nicht anders vereinbart."
+    },
+    "guarantee": {
+      "title": "30-Tage-Garantie"
+    },
+    "ki": {
+      "not_for": "KI-Antworten sind insbesondere nicht geeignet für:",
+      "note": "Wichtiger Hinweis"
+    },
+    "kuendigung": {
+      "cancellation": {
+        "text": "Bei Kündigung durch den Auftraggeber werden die bis dahin erbrachten Leistungen in Rechnung gestellt. Die Anzahlung (50%) ist nicht erstattungsfähig.",
+        "title": "Projektabbruch durch Auftraggeber"
+      },
+      "p1": "(1) Bei projektbezogenen Verträgen ist eine ordentliche Kündigung nicht vorgesehen. Der Vertrag endet mit Abschluss des Projekts.",
+      "p2": "(2) Bei Wartungs- oder Supportverträgen kann mit einer Frist von 30 Tagen zum Monatsende gekündigt werden.",
+      "p3": "(3) Das Recht zur außerordentlichen Kündigung aus wichtigem Grund bleibt unberührt."
+    },
     "last_updated": "Stand: {{date}}",
-    "sections": {
-      "1": {
-        "title": "§ 1 Geltungsbereich",
-        "p1": "(1) Diese Allgemeinen Geschäftsbedingungen (nachfolgend „AGB\") von Umutcan Emre Tezgel...",
-        "p2": "(2) Abweichende Bedingungen des Kunden werden nicht anerkannt..."
+    "mitwirkung": {
+      "content": {
+        "1": "Texte, Bilder, Logos in druckfähiger Qualität",
+        "2": "Zugangsdaten zu bestehenden Systemen (bei Bedarf)",
+        "3": "Styleguide oder Corporate Design Richtlinien (falls vorhanden)",
+        "title": "Inhalte & Materialien"
       },
-      "2": {
-        "title": "§ 2 Vertragsschluss",
-        "p1": "(1) Die auf der Website dargestellten Leistungsbeschreibungen...",
-        "p2": "(2) Durch Absenden einer Anfrage...",
-        "p3": "(3) Ein Vertrag kommt erst durch Unterzeichnung..."
+      "delay": {
+        "text": "Verzögerungen, die auf verspätete Zulieferung von Materialien oder fehlendes Feedback zurückzuführen sind, können den Projektzeitplan beeinflussen. Der Anbieter ist in diesem Fall nicht für Terminverzögerungen verantwortlich.",
+        "title": "Verzögerungen"
       },
-      "3": {
-        "title": "§ 3 Leistungen",
-        "p1": "(1) Der Anbieter erbringt Webdesign-...",
-        "p2": "(2) Die Anzahl der im Angebot vereinbarten Revisionsrunden ist bindend.",
-        "p3": "(3) Der Anbieter gewährt eine 30-tägige Fehlerbehebungs-Garantie..."
+      "feedback": {
+        "1": "Zeitnahe Rückmeldung zu Zwischenständen (idealerweise innerhalb von 5 Werktagen)",
+        "2": "Klare und konkrete Änderungswünsche",
+        "3": "Benennung eines Ansprechpartners für Rückfragen",
+        "title": "Feedback & Abnahmen"
       },
-      "4": {
-        "title": "§ 4 Preise & Festpreis-Garantie",
-        "p1": "(1) Festpreis-Garantie: Der im Angebot genannte Preis ist ein Festpreis.",
-        "p2": "(2) Zusätzliche Leistungen...",
-        "p3": "(3) Alle Preise verstehen sich als Nettopreise...",
-        "p4": "(4) Die Zahlung erfolgt in der Regel: 50% bei Auftragserteilung..."
-      },
-      "5": {
-        "title": "§ 5 KI-Dienste & Haftungsausschluss",
-        "note": "Wichtiger Hinweis: Der KI-Assistent nutzt automatisierte Systeme.",
-        "p1": "(1) Keine Beratung...",
-        "p2": "(2) Automatisch generierte Inhalte...",
-        "p3": "(3) Keine Garantie für Richtigkeit...",
-        "p4": "(4) Haftungsausschluss...",
-        "p5": "(5) Website-Analyzer..."
-      },
-      "6": {
-        "title": "§ 6 Allgemeine Haftung",
-        "p1": "(1) Der Anbieter haftet unbeschränkt...",
-        "p2": "(2) Bei leicht fahrlässiger Verletzung...",
-        "p3": "(3) Im Übrigen ist die Haftung ausgeschlossen."
-      },
-      "7": {
-        "title": "§ 7 Schlussbestimmungen",
-        "p1": "(1) Es gilt das Recht der Bundesrepublik Deutschland.",
-        "p2": "(2) Gerichtsstand ist Wetzlar...",
-        "p3": "(3) Sollten einzelne Bestimmungen unwirksam sein...",
-        "p4": "(4) Bei Fragen: "
+      "intro": "Der Auftraggeber stellt sicher, dass die für die Durchführung des Projekts erforderlichen Materialien und Informationen rechtzeitig zur Verfügung gestellt werden:"
+    },
+    "payment": {
+      "first": "bei Auftragserteilung / Vertragsunterzeichnung",
+      "second": "nach Fertigstellung und vor Übergabe"
+    },
+    "projektablauf": {
+      "communication": {
+        "1": "Der Auftraggeber erhält regelmäßige Updates über den Projektfortschritt per E-Mail.",
+        "2": "Zwischenstände werden über einen Staging-Link zur Verfügung gestellt.",
+        "3": "Feedback sollte idealerweise gesammelt und nicht in Einzelnachrichten übermittelt werden.",
+        "title": "Kommunikation während des Projekts"
       }
     },
+    "sections": {
+      "1": {
+        "p1": "(1) Diese Allgemeinen Geschäftsbedingungen (nachfolgend „AGB\") von Umutcan Emre Tezgel, Lessingstraße 4, 35578 Wetzlar (nachfolgend „Anbieter\"), gelten für alle Verträge über Webdesign-, Webentwicklungs- und digitale Dienstleistungen, die zwischen dem Anbieter und seinen Kunden (nachfolgend „Auftraggeber\") geschlossen werden.",
+        "p2": "(2) Maßgebend ist die zum Zeitpunkt des Vertragsschlusses gültige Fassung der AGB. Abweichende Geschäftsbedingungen des Auftraggebers werden nicht anerkannt, es sei denn, der Anbieter stimmt ihrer Geltung ausdrücklich schriftlich zu.",
+        "p3": "(3) Diese AGB gelten sowohl für Verbraucher als auch für Unternehmer im Sinne des § 14 BGB.",
+        "subtitle": "Anwendungsbereich dieser Bedingungen",
+        "title": "Geltungsbereich"
+      },
+      "2": {
+        "p1": "(1) Die auf der Website dargestellten Leistungsbeschreibungen und Preisangaben stellen kein verbindliches Angebot dar, sondern eine Aufforderung zur Abgabe eines Angebots (invitatio ad offerendum).",
+        "p2": "(2) Durch Absenden einer Projektanfrage über das Kontaktformular oder per E-Mail gibt der Auftraggeber ein unverbindliches Angebot ab.",
+        "p3": "(3) Ein Vertrag kommt erst durch die Unterzeichnung eines schriftlichen Angebots durch beide Parteien oder durch ausdrückliche schriftliche Annahme per E-Mail zustande.",
+        "p4": "(4) Der Anbieter speichert den Vertragstext und sendet dem Auftraggeber eine Bestätigung per E-Mail. Der Vertragstext ist für den Auftraggeber nach Vertragsschluss nicht mehr zugänglich außer auf Anfrage.",
+        "subtitle": "Wie ein Vertrag zustande kommt",
+        "title": "Vertragsschluss"
+      },
+      "3": {
+        "p1": "(1) Der Anbieter erbringt Webdesign-, Webentwicklungs- und digitale Marketingdienstleistungen gemäß dem individuellen Angebot. Dazu können gehören:",
+        "p2": "(2) Die Anzahl der im Angebot vereinbarten Revisionsrunden ist verbindlich. Standardmäßig sind bis zu drei (3) Revisionsrunden im Leistungsumfang enthalten.",
+        "p3": "Der Anbieter gewährt eine 30-tägige Fehlerbehebungs-Garantie ab Projektübergabe. Technische Fehler, die auf die Arbeit des Anbieters zurückzuführen sind, werden kostenlos behoben.",
+        "subtitle": "Was unsere Dienstleistungen umfassen",
+        "title": "Leistungsumfang"
+      },
+      "4": {
+        "p1": "(1) Alle im Angebot genannten Preise sind Nettopreise zuzüglich der gesetzlichen Mehrwertsteuer von derzeit 19%.",
+        "p2": "(2) Die Zahlung erfolgt in der Regel in zwei Raten:",
+        "p3": "(3) Bei größeren Projekten können abweichende Zahlungsmodalitäten (z.B. Dreiteilung) vereinbart werden.",
+        "p4": "(4) Rechnungen sind innerhalb von 14 Tagen nach Erhalt ohne Abzug zahlbar. Bei Zahlungsverzug werden Verzugszinsen in Höhe von 5 Prozentpunkten über dem Basiszinssatz berechnet.",
+        "subtitle": "Transparente Preisgestaltung",
+        "title": "Preise & Zahlungsbedingungen"
+      },
+      "5": {
+        "list": {
+          "1": "Finanzielle Entscheidungen",
+          "2": "Geschäftliche Strategien",
+          "3": "Rechtliche Maßnahmen",
+          "4": "Gesundheitsbezogene Entscheidungen"
+        },
+        "note": "Der auf dieser Website verfügbare KI-Assistent „Jarvis\" sowie der Website-Analyzer nutzen automatisierte Systeme zur Verarbeitung von Anfragen.",
+        "p1": "(1) Die KI-Dienste dienen ausschließlich zu Informationszwecken und stellen keine rechtliche, medizinische oder finanzielle Beratung dar.",
+        "p2": "(2) Automatisch generierte Inhalte wurden maschinell erstellt und können Fehler enthalten.",
+        "p3": "(3) Der Anbieter übernimmt keine Gewähr für die Richtigkeit, Vollständigkeit oder Aktualität der KI-generierten Informationen.",
+        "p4": "(4) Jegliche Haftung für Schäden, die aus der Nutzung von KI-generierten Inhalten entstehen, ist ausgeschlossen, soweit gesetzlich zulässig.",
+        "subtitle": "Nutzung von KI-Technologien",
+        "title": "KI-Dienste & Automatisierung"
+      },
+      "6": {
+        "p1": "(1) Der Anbieter haftet unbeschränkt bei Vorsatz und grober Fahrlässigkeit sowie für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit.",
+        "p2": "(2) Bei leicht fahrlässiger Verletzung wesentlicher Vertragspflichten (Kardinalpflichten) ist die Haftung auf den vertragstypischen, vorhersehbaren Schaden begrenzt.",
+        "p3": "(3) Eine weitergehende Haftung ist ausgeschlossen, soweit gesetzlich zulässig.",
+        "p4": "(4) Die Haftungsbeschränkungen gelten auch zugunsten der Erfüllungsgehilfen des Anbieters.",
+        "subtitle": "Umfang unserer Haftung",
+        "title": "Haftungsbeschränkung"
+      },
+      "7": {
+        "p1": "(1) Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts.",
+        "p2": "(2) Gerichtsstand für alle Streitigkeiten ist Wetzlar, sofern der Auftraggeber Kaufmann, juristische Person des öffentlichen Rechts oder öffentlich-rechtliches Sondervermögen ist.",
+        "p3": "(3) Sollten einzelne Bestimmungen dieser AGB ganz oder teilweise unwirksam sein oder werden, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt. An die Stelle der unwirksamen Bestimmung tritt die gesetzliche Regelung.",
+        "p4": "(4) Änderungen und Ergänzungen dieses Vertrages bedürfen der Schriftform. Dies gilt auch für die Aufhebung dieses Schriftformerfordernisses.",
+        "p5": "Bei Fragen zu diesen AGB kontaktieren Sie uns gerne:",
+        "subtitle": "Rechtliche Rahmenbedingungen",
+        "title": "Schlussbestimmungen"
+      },
+      "2_def": {
+        "subtitle": "Begriffserklärungen für diese AGB",
+        "title": "Definitionen"
+      },
+      "eigentum": {
+        "subtitle": "Rechte an den erstellten Werken",
+        "title": "Geistiges Eigentum & Urheberrecht"
+      },
+      "festpreis": {
+        "p1": "(1) Der Festpreis umfasst alle im Angebot definierten Leistungen, einschließlich der vereinbarten Revisionsrunden.",
+        "p2": "(2) Zusätzliche Leistungen, die über das ursprüngliche Angebot hinausgehen, werden separat angeboten und berechnet. Eine schriftliche Beauftragung ist erforderlich.",
+        "p3": "(3) Änderungen am Projektumfang durch den Auftraggeber können zu Preisanpassungen führen. Der Anbieter informiert hierüber vorab.",
+        "subtitle": "Keine versteckten Kosten",
+        "title": "Festpreis-Garantie"
+      },
+      "gewaehrleistung": {
+        "subtitle": "Unsere Qualitätsstandards",
+        "title": "Gewährleistung & Mängelansprüche"
+      },
+      "kuendigung": {
+        "subtitle": "Beendigung des Vertrags",
+        "title": "Kündigung & Rücktritt"
+      },
+      "mitwirkung": {
+        "list": {
+          "1": "Texte, Bilder, Logos in druckfähiger Qualität",
+          "2": "Zugangsdaten zu bestehenden Systemen (bei Bedarf)",
+          "3": "Styleguide oder Corporate Design Richtlinien (falls vorhanden)",
+          "4": "Finanzielle Entscheidungen",
+          "5": "Geschäftliche Strategien",
+          "6": "Rechtliche Maßnahmen",
+          "7": "Gesundheitsbezogene Entscheidungen"
+        },
+        "subtitle": "Für eine erfolgreiche Zusammenarbeit",
+        "title": "Mitwirkungspflichten des Auftraggebers"
+      },
+      "projektablauf": {
+        "intro": "Jedes Projekt durchläuft einen strukturierten Prozess, um höchste Qualität und transparente Kommunikation zu gewährleisten:",
+        "subtitle": "Typischer Ablauf eines Projekts",
+        "title": "Projektablauf & Meilensteine"
+      },
+      "vertraulichkeit": {
+        "subtitle": "Schutz sensibler Informationen",
+        "title": "Vertraulichkeit"
+      }
+    },
+    "services": {
+      "list": {
+        "1": "Konzeption und Design von Websites und Web-Applikationen",
+        "2": "Frontend- und Backend-Entwicklung",
+        "3": "Content-Erstellung und -Optimierung",
+        "4": "Suchmaschinenoptimierung (SEO)",
+        "5": "Hosting-Setup und technische Einrichtung",
+        "6": "Wartung und Support (nach Vereinbarung)"
+      }
+    },
+    "subtitle": "Transparente Bedingungen für eine erfolgreiche Zusammenarbeit",
+    "summary": {
+      "1": "Festpreis-Garantie: Der genannte Preis ist verbindlich",
+      "2": "30 Tage Fehlerbehebungs-Garantie nach Übergabe",
+      "3": "Bis zu 3 Revisionsrunden im Leistungsumfang enthalten",
+      "4": "Transparente Kommunikation während des gesamten Projekts",
+      "5": "Deutsches Recht, Gerichtsstand Wetzlar",
+      "title": "Das Wichtigste auf einen Blick"
+    },
+    "timeline": {
+      "contract": "Vertragsabschluss",
+      "contract_desc": "50% Anzahlung, Projektstart",
+      "design": "Design & Entwicklung",
+      "design_desc": "Iterative Entwicklung mit Zwischenabnahmen",
+      "handover": "Übergabe & Launch",
+      "handover_desc": "Finaler Launch, Schulung, 30 Tage Support",
+      "inquiry": "Anfrage & Erstgespräch",
+      "inquiry_desc": "Kostenlose Erstberatung und Projektbesprechung",
+      "offer": "Angebot erhalten",
+      "offer_desc": "Detailliertes Angebot mit Festpreis-Garantie",
+      "review": "Review & Revisionen",
+      "review_desc": "Bis zu 3 Revisionsrunden inklusive",
+      "title": "Projekt-Timeline"
+    },
+    "title": "Allgemeine Geschäftsbedingungen",
     "toc": {
-      "geltung": "§ 1 Geltungsbereich",
-      "vertrag": "§ 2 Vertragsschluss",
-      "leistung": "§ 3 Leistungen",
-      "preise": "§ 4 Preise",
-      "ki": "§ 5 KI-Dienste",
-      "haftung": "§ 6 Haftung",
-      "schluss": "§ 7 Schluss"
-    }
-  },
-  "disclaimer": {
-    "title": "KI-Disclaimer & Transparenz",
-    "intro": {
-      "title": "Nutzung von Künstlicher Intelligenz",
-      "content": "Bei Agency Domination nutzen wir fortschrittliche Technologien..."
+      "definitionen": "§2 Definitionen",
+      "eigentum": "§9 Geistiges Eigentum",
+      "festpreis": "§7 Festpreis-Garantie",
+      "geltung": "§1 Geltungsbereich",
+      "gewaehrleistung": "§11 Gewährleistung",
+      "haftung": "§12 Haftung",
+      "ki": "§10 KI-Dienste",
+      "kuendigung": "§14 Kündigung",
+      "leistung": "§4 Leistungsumfang",
+      "mitwirkung": "§8 Mitwirkungspflichten",
+      "preise": "§6 Preise",
+      "projektablauf": "§5 Projektablauf",
+      "schluss": "§15 Schlussbestimmungen",
+      "vertrag": "§3 Vertragsschluss",
+      "vertraulichkeit": "§13 Vertraulichkeit"
     },
-    "analysis": {
-      "title": "Website-Analyse",
-      "content": "Unser 'Website Analyzer' Tool verwendet die Google Gemini API..."
-    },
-    "content": {
-      "title": "Content-Erstellung & Code",
-      "content": "In der Entwicklung und Content-Erstellung können KI-Tools..."
-    },
-    "liability": {
-      "title": "Haftungsausschluss",
-      "content": "Obwohl wir bestrebt sind, die Genauigkeit von KI-generierten Inhalten sicherzustellen..."
-    },
-    "copyright": {
-      "title": "Urheberrecht & Datenschutz",
-      "content": "Wir respektieren das Urheberrecht..."
+    "vertraulichkeit": {
+      "p1": "(1) Beide Parteien verpflichten sich, alle im Rahmen der Zusammenarbeit erhaltenen vertraulichen Informationen geheim zu halten und nicht an Dritte weiterzugeben.",
+      "p2": "(2) Vertrauliche Informationen umfassen insbesondere Geschäftsgeheimnisse, Kundendaten, technische Details und unveröffentlichte Marketingstrategien.",
+      "p3": "(3) Diese Verpflichtung gilt auch nach Beendigung des Vertragsverhältnisses fort."
     }
   }
 }

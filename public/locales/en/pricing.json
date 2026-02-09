@@ -1,131 +1,131 @@
 {
-    "page": {
-        "title": "Transparent Pricing",
-        "headline": "Three Packages. <0>Zero Surprises.</0>",
-        "subheadline": "Choose the package that fits your goals. All prices are fixed – no hidden costs."
+  "comparison": {
+    "headers": {
+      "enterprise": "Enterprise",
+      "feature": "Feature",
+      "professional": "Professional",
+      "starter": "Starter"
     },
-    "packages": {
-        "starter": {
-            "name": "Starter",
-            "tagline": "Perfect for starting out",
-            "cta": "Choose Starter"
-        },
-        "professional": {
-            "name": "Professional",
-            "tagline": "Our Bestseller",
-            "badge": "Most Popular",
-            "cta": "Choose Professional"
-        },
-        "enterprise": {
-            "name": "Enterprise",
-            "tagline": "Full Power",
-            "cta": "Request Enterprise"
-        }
+    "rows": {
+      "cms": {
+        "ent": "✓",
+        "label": "CMS",
+        "pro": "✓",
+        "starter": "—"
+      },
+      "custom": {
+        "ent": "✓",
+        "label": "Custom Dev",
+        "pro": "—",
+        "starter": "—"
+      },
+      "ecommerce": {
+        "ent": "✓",
+        "label": "E-Commerce",
+        "pro": "—",
+        "starter": "—"
+      },
+      "pages": {
+        "ent": "Unlimited",
+        "label": "Pages",
+        "pro": "7-10",
+        "starter": "3-5"
+      },
+      "revisions": {
+        "ent": "Unlimited",
+        "label": "Revisions",
+        "pro": "5",
+        "starter": "3"
+      },
+      "seo": {
+        "ent": "Premium",
+        "label": "SEO",
+        "pro": "Advanced",
+        "starter": "Basic"
+      },
+      "support": {
+        "ent": "Optional",
+        "label": "Support/Maint.",
+        "pro": "Optional",
+        "starter": "30 Days"
+      }
     },
-    "labels": {
-        "setup": "Setup"
+    "title": "Package Comparison"
+  },
+  "cta_section": {
+    "button": "Book Appointment",
+    "text": "Schedule a free consultation.",
+    "title": "Still unsure?"
+  },
+  "features": {
+    "enterprise": [
+      "Unlimited Pages",
+      "Custom Web Application",
+      "Online Shop Integration",
+      "API Development",
+      "Premium SEO & Ads",
+      "A/B Testing Setup",
+      "Dedicated Manager",
+      "Uptime Guarantee (Optional)",
+      "24/7 Support (Optional)"
+    ],
+    "professional": [
+      "7-10 Subpages",
+      "Content Management (Self-editable)",
+      "Advanced SEO",
+      "Speed Optimization",
+      "Blog Section",
+      "Contact Forms",
+      "5 Revision Rounds",
+      "Webspace Included",
+      "Support Optional"
+    ],
+    "starter": [
+      "3-5 Subpages",
+      "Professional Homepage",
+      "Optimized for all devices",
+      "Basic SEO",
+      "Security Certificate",
+      "3 Revision Rounds",
+      "Visitor Analytics Setup",
+      "30 Days Support"
+    ]
+  },
+  "labels": {
+    "setup": "Setup"
+  },
+  "not_included": {
+    "professional": [
+      "Online Shop Functions",
+      "Custom App Development"
+    ],
+    "starter": [
+      "Content Management",
+      "Online Shop",
+      "Custom Functions"
+    ]
+  },
+  "packages": {
+    "enterprise": {
+      "cta": "Request Enterprise",
+      "name": "Enterprise",
+      "tagline": "Full Power"
     },
-    "features": {
-        "starter": [
-            "3-5 Subpages",
-            "Professional Homepage",
-            "Optimized for all devices",
-            "Basic SEO",
-            "Security Certificate",
-            "3 Revision Rounds",
-            "Visitor Analytics Setup",
-            "30 Days Support"
-        ],
-        "professional": [
-            "7-10 Subpages",
-            "Content Management (Self-editable)",
-            "Advanced SEO",
-            "Speed Optimization",
-            "Blog Section",
-            "Contact Forms",
-            "5 Revision Rounds",
-            "Webspace Included",
-            "Support Optional"
-        ],
-        "enterprise": [
-            "Unlimited Pages",
-            "Custom Web Application",
-            "Online Shop Integration",
-            "API Development",
-            "Premium SEO & Ads",
-            "A/B Testing Setup",
-            "Dedicated Manager",
-            "Uptime Guarantee (Optional)",
-            "24/7 Support (Optional)"
-        ]
+    "professional": {
+      "badge": "Most Popular",
+      "cta": "Choose Professional",
+      "name": "Professional",
+      "tagline": "Our Bestseller"
     },
-    "not_included": {
-        "starter": [
-            "Content Management",
-            "Online Shop",
-            "Custom Functions"
-        ],
-        "professional": [
-            "Online Shop Functions",
-            "Custom App Development"
-        ]
-    },
-    "comparison": {
-        "title": "Package Comparison",
-        "headers": {
-            "feature": "Feature",
-            "starter": "Starter",
-            "professional": "Professional",
-            "enterprise": "Enterprise"
-        },
-        "rows": {
-            "pages": {
-                "label": "Pages",
-                "starter": "3-5",
-                "pro": "7-10",
-                "ent": "Unlimited"
-            },
-            "cms": {
-                "label": "CMS",
-                "starter": "—",
-                "pro": "✓",
-                "ent": "✓"
-            },
-            "seo": {
-                "label": "SEO",
-                "starter": "Basic",
-                "pro": "Advanced",
-                "ent": "Premium"
-            },
-            "support": {
-                "label": "Support/Maint.",
-                "starter": "30 Days",
-                "pro": "Optional",
-                "ent": "Optional"
-            },
-            "ecommerce": {
-                "label": "E-Commerce",
-                "starter": "—",
-                "pro": "—",
-                "ent": "✓"
-            },
-            "custom": {
-                "label": "Custom Dev",
-                "starter": "—",
-                "pro": "—",
-                "ent": "✓"
-            },
-            "revisions": {
-                "label": "Revisions",
-                "starter": "3",
-                "pro": "5",
-                "ent": "Unlimited"
-            }
-        }
-    },
-    "cta_section": {
-        "title": "Still unsure?",
-        "text": "Schedule a free consultation.",
-        "button": "Book Appointment"
+    "starter": {
+      "cta": "Choose Starter",
+      "name": "Starter",
+      "tagline": "Perfect for starting out"
     }
+  },
+  "page": {
+    "headline": "Three Packages. <0>Zero Surprises.</0>",
+    "subheadline": "Choose the package that fits your goals. All prices are fixed – no hidden costs.",
+    "title": "Transparent Pricing"
+  }
 }

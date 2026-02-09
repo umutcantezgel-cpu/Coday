@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Calculator } from 'lucide-react';
+import { Calculator } from '@phosphor-icons/react';
 
 export const ROICalculator = () => {
     const [leads, setLeads] = useState(10);

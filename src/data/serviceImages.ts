@@ -32,7 +32,7 @@ export const serviceImages: Record<string, { src: string; alt: string }> = {
         alt: 'Online-Terminbuchung System mit Kalender und verfügbaren Zeitslots'
     },
     'bewertungen': {
-        src: '/images/marketing/drei-kunden-reviews.jpeg',
+        src: '/images/services/drei-kunden-reviews.webp',
         alt: 'Zufriedene Kunden geben positive 5-Sterne Bewertungen mit Daumen hoch'
     }
 };

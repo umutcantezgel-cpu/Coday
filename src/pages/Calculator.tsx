@@ -7,7 +7,7 @@ import { ModuleCard } from '../features/calculator/ui/ModuleCard';
 import { CalculatorSummary } from '../features/calculator/ui/Summary';
 import { modules, ModuleCategory } from '../data/modules';
 import StepIndicator from '../shared/ui/StepIndicator';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight } from '@phosphor-icons/react';
 
 const Calculator: React.FC = () => {
   const { t, i18n } = useTranslation('calculator');

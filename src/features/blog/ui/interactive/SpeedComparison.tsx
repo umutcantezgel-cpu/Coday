@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Zap, Server, Database } from 'lucide-react';
+import { Lightning, HardDrives, Database } from '@phosphor-icons/react';
 
 import { useTranslation } from 'react-i18next';
 
@@ -54,7 +54,7 @@ export const SpeedComparison: React.FC = () => {
 
             <div className="relative z-10">
                 <h3 className="text-2xl font-display font-bold text-white mb-8 flex items-center gap-3">
-                    <Zap className="text-yellow-400 fill-yellow-400" />
+                    <Lightning className="text-yellow-400 fill-yellow-400" />
                     {t('speedComparison.title')}
                 </h3>
 
@@ -79,7 +79,7 @@ export const SpeedComparison: React.FC = () => {
                     {/* Lane 2: Custom */}
                     <div>
                         <div className="flex justify-between text-sm text-gray-400 mb-2 font-mono">
-                            <span className="flex items-center gap-2 text-primary font-bold"><Server size={14} /> {t('speedComparison.customLane')}</span>
+                            <span className="flex items-center gap-2 text-primary font-bold"><HardDrives size={14} /> {t('speedComparison.customLane')}</span>
                             <span className="text-primary font-bold">{customProgress >= 100 ? t('speedComparison.instant') : t('speedComparison.loading')}</span>
                         </div>
                         <div className="h-4 bg-gray-800 rounded-full overflow-hidden relative">

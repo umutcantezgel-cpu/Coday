@@ -1,65 +1,65 @@
 {
-    "calculator": {
-        "hero": {
-            "badge": "Der Agentur-Konfigurator",
-            "title_start": "Bauen Sie Ihre",
-            "title_gradient": "Traum-Agentur.",
-            "desc_default": "Wählen Sie aus 9 Kategorien. Von der Basis bis zur Profi-Lösung.",
-            "desc_selected": "Erweitern Sie Ihr gewähltes Paket mit zusätzlichen Modulen."
+  "analyzer": {
+    "features": {
+      "desc": "6 spezialisierte KI-Agenten prüfen jeden Aspekt deiner Website.",
+      "items": {
+        "a11y": {
+          "desc": "Zugänglichkeit, Farbkontrast und Vorlese-Kompatibilität.",
+          "title": "Barrierefreiheit"
         },
-        "labels": {
-            "selected": "ausgewählt",
-            "module": "Modul",
-            "modules": "Module"
+        "content": {
+          "desc": "Lesbarkeit, Alleinstellungsmerkmal und Kundenstimmen.",
+          "title": "Inhalte"
         },
-        "cta": {
-            "title": "Zufrieden mit Ihrer Konfiguration?",
-            "desc": "Im nächsten Schritt senden Sie uns Ihre Anfrage.",
-            "button": "Weiter zur Anfrage"
+        "security": {
+          "desc": "Verschlüsselung, Sicherheitseinstellungen und Cookie-Schutz.",
+          "title": "Sicherheit"
+        },
+        "seo": {
+          "desc": "Seitentitel, Überschriften, Strukturierte Daten und Schlüsselwörter.",
+          "title": "Suchmaschinen"
+        },
+        "speed": {
+          "desc": "Ladezeit-Werte, Seitenbewertung und Optimierungspotenzial.",
+          "title": "Geschwindigkeit"
+        },
+        "ux": {
+          "desc": "Smartphone-Optimierung, Navigation und Handlungsaufforderungen.",
+          "title": "Benutzerfreundlichkeit"
         }
+      },
+      "title": "Was wir analysieren"
     },
-    "analyzer": {
-        "hero": {
-            "badge": "Kostenloser Website-Audit",
-            "title_start": "Wie gut ist",
-            "title_gradient": "deine Website?",
-            "desc": "Lass unsere KI-Agenten deine Website analysieren. Erhalte in 60 Sekunden einen detaillierten Report mit Scores, Schwächen und konkreten Empfehlungen."
-        },
-        "features": {
-            "title": "Was wir analysieren",
-            "desc": "6 spezialisierte KI-Agenten prüfen jeden Aspekt deiner Website.",
-            "items": {
-                "speed": {
-                    "title": "Geschwindigkeit",
-                    "desc": "Ladezeit-Werte, Seitenbewertung und Optimierungspotenzial."
-                },
-                "seo": {
-                    "title": "Suchmaschinen",
-                    "desc": "Seitentitel, Überschriften, Strukturierte Daten und Schlüsselwörter."
-                },
-                "security": {
-                    "title": "Sicherheit",
-                    "desc": "Verschlüsselung, Sicherheitseinstellungen und Cookie-Schutz."
-                },
-                "a11y": {
-                    "title": "Barrierefreiheit",
-                    "desc": "Zugänglichkeit, Farbkontrast und Vorlese-Kompatibilität."
-                },
-                "ux": {
-                    "title": "Benutzerfreundlichkeit",
-                    "desc": "Smartphone-Optimierung, Navigation und Handlungsaufforderungen."
-                },
-                "content": {
-                    "title": "Inhalte",
-                    "desc": "Lesbarkeit, Alleinstellungsmerkmal und Kundenstimmen."
-                }
-            }
-        },
-        "trust": {
-            "free": "100% kostenlos",
-            "private": "Daten bleiben privat",
-            "fast": "Ergebnis in 60 Sekunden",
-            "stats": "Bereits über 500 Websites analysiert • Durchschnittlich 12 Verbesserungsvorschläge pro Audit"
-        }
+    "hero": {
+      "badge": "Kostenloser Website-Audit",
+      "desc": "Lass unsere KI-Agenten deine Website analysieren. Erhalte in 60 Sekunden einen detaillierten Report mit Scores, Schwächen und konkreten Empfehlungen.",
+      "title_gradient": "deine Website?",
+      "title_start": "Wie gut ist"
+    },
+    "trust": {
+      "fast": "Ergebnis in 60 Sekunden",
+      "free": "100% kostenlos",
+      "private": "Daten bleiben privat",
+      "stats": "Bereits über 500 Websites analysiert • Durchschnittlich 12 Verbesserungsvorschläge pro Audit"
     }
+  },
+  "calculator": {
+    "cta": {
+      "button": "Weiter zur Anfrage",
+      "desc": "Im nächsten Schritt senden Sie uns Ihre Anfrage.",
+      "title": "Zufrieden mit Ihrer Konfiguration?"
+    },
+    "hero": {
+      "badge": "Der Agentur-Konfigurator",
+      "desc_default": "Wählen Sie aus 9 Kategorien. Von der Basis bis zur Profi-Lösung.",
+      "desc_selected": "Erweitern Sie Ihr gewähltes Paket mit zusätzlichen Modulen.",
+      "title_gradient": "Traum-Agentur.",
+      "title_start": "Bauen Sie Ihre"
+    },
+    "labels": {
+      "module": "Modul",
+      "modules": "Module",
+      "selected": "ausgewählt"
+    }
+  }
 }

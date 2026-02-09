@@ -1,63 +1,67 @@
 {
-    "hero": {
-        "badge": "Grand Opening Special: 25% Off",
-        "headline_prefix": "We build your",
-        "headline_gradient": "Digital Success.",
-        "rotating": [
-            "Fast. Scalable. Professional.",
-            "Profit-Oriented. Result-Driven.",
-            "Premium Design. Professional Code.",
-            "No Excuses. Just Results."
-        ]
+  "hero": {
+    "badge": "Grand Opening Special: 25% Off",
+    "headline_gradient": "Digital Success.",
+    "headline_prefix": "We build your",
+    "rotating": [
+      "Fast. Scalable. Professional.",
+      "Profit-Oriented. Result-Driven.",
+      "Premium Design. Professional Code.",
+      "No Excuses. Just Results."
+    ]
+  },
+  "industries": {
+    "card_consulting": {
+      "desc": "Premium brand positioning.",
+      "title": "Consulting"
     },
-    "stats": {
-        "load_time": "Ø Load Time",
-        "ownership": "Code Ownership",
-        "availability": "Availability",
-        "profit": "Profit",
-        "focused": "Focused"
+    "card_craft": {
+      "desc": "Digital recruiting and project showcases.",
+      "title": "Craft & Construction"
     },
-    "philosophy": {
-        "traditional": "Traditional Agencies",
-        "history": "Are History.",
-        "text_overhead": "You pay for overhead, meetings, and inefficient processes. The old agency model no longer works for modern SMEs.",
-        "standard": "Coday is the new Standard.",
-        "text_standard": "We combine strategic design with professional programming. No templates, no excuses. Only results that move your business forward."
+    "card_health": {
+      "desc": "Trustworthy web presence.",
+      "title": "Health"
     },
-    "industries": {
-        "title_prefix": "We digitize",
-        "title_suffix": "Your Industry.",
-        "card_craft": {
-            "title": "Craft & Construction",
-            "desc": "Digital recruiting and project showcases."
-        },
-        "card_realestate": {
-            "title": "Real Estate",
-            "desc": "High-quality exposé presentations and lead generation."
-        },
-        "card_shop": {
-            "title": "Online Shop",
-            "desc": "High-converting shop systems."
-        },
-        "card_consulting": {
-            "title": "Consulting",
-            "desc": "Premium brand positioning."
-        },
-        "card_health": {
-            "title": "Health",
-            "desc": "Trustworthy web presence."
-        }
+    "card_realestate": {
+      "desc": "High-quality exposé presentations and lead generation.",
+      "title": "Real Estate"
     },
-    "tech_stack": {
-        "label": "Technology",
-        "title_prefix": "Professional",
-        "title_suffix": "Technology Stack"
+    "card_shop": {
+      "desc": "High-converting shop systems.",
+      "title": "Online Shop"
     },
-    "testimonials": {
-        "title_prefix": "Partners who",
-        "title_suffix": "Trust Us.",
-        "text": "From local craft businesses to industrial companies. We deliver quality you can build on.",
-        "rating": "5.0 Star Rating",
-        "excellence": "Excellence as Standard."
-    }
+    "title_prefix": "We digitize",
+    "title_suffix": "Your Industry."
+  },
+  "meta": {
+    "description": "__MISSING__",
+    "title": "__MISSING__"
+  },
+  "philosophy": {
+    "history": "Are History.",
+    "standard": "Coday is the new Standard.",
+    "text_overhead": "You pay for overhead, meetings, and inefficient processes. The old agency model no longer works for modern SMEs.",
+    "text_standard": "We combine strategic design with professional programming. No templates, no excuses. Only results that move your business forward.",
+    "traditional": "Traditional Agencies"
+  },
+  "stats": {
+    "availability": "Availability",
+    "focused": "Focused",
+    "load_time": "Ø Load Time",
+    "ownership": "Code Ownership",
+    "profit": "Profit"
+  },
+  "tech_stack": {
+    "label": "Technology",
+    "title_prefix": "Professional",
+    "title_suffix": "Technology Stack"
+  },
+  "testimonials": {
+    "excellence": "Excellence as Standard.",
+    "rating": "5.0 Star Rating",
+    "text": "From local craft businesses to industrial companies. We deliver quality you can build on.",
+    "title_prefix": "Partners who",
+    "title_suffix": "Trust Us."
+  }
 }

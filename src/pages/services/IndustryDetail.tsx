@@ -8,7 +8,7 @@ import {
   industryFallbackImage,
   industryGalleryImages,
 } from '../../data/industryImages';
-import { XCircle, CheckCircle, ArrowRight, ArrowLeft, Briefcase } from 'lucide-react';
+import { XCircle, CheckCircle, ArrowRight, ArrowLeft, Briefcase } from '@phosphor-icons/react';
 import { SeoHead } from '../../shared/ui/SeoHead';
 
 const IndustryDetail: React.FC = () => {

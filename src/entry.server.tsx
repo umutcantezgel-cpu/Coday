@@ -1,5 +1,6 @@
 import { PassThrough } from "stream";
 import { createReadableStreamFromReadable } from "@react-router/node";
+import { isbot } from "isbot";
 import { renderToPipeableStream } from "react-dom/server";
 import { ServerRouter } from "react-router";
 import type { EntryContext } from "react-router";
@@ -11,58 +12,51 @@ export default function handleRequest(
     responseStatusCode: number,
     responseHeaders: Headers,
     routerContext: EntryContext,
-    _loadContext: unknown
+    loadContext: unknown
 ) {
-    return new Promise((resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
         let shellRendered = false;
+        const userAgent = request.headers.get("user-agent");
 
         // Simple language detection from URL
         const url = new URL(request.url);
         const lng = url.pathname.startsWith('/en') ? 'en' : 'de';
 
-        const startStreaming = async () => {
-            try {
-                const i18n = await createI18n(lng);
+        const i18n = await createI18n(lng);
 
-                const { pipe, abort } = renderToPipeableStream(
-                    <I18nextProvider i18n={i18n}>
-                        <ServerRouter context={routerContext} url={request.url} />
-                    </I18nextProvider>,
-                    {
-                        onShellReady() {
-                            shellRendered = true;
-                            const body = new PassThrough();
-                            const stream = createReadableStreamFromReadable(body);
+        const { pipe, abort } = renderToPipeableStream(
+            <I18nextProvider i18n={i18n}>
+                <ServerRouter context={routerContext} url={request.url} />
+            </I18nextProvider>,
+            {
+                onShellReady() {
+                    shellRendered = true;
+                    const body = new PassThrough();
+                    const stream = createReadableStreamFromReadable(body);
 
-                            responseHeaders.set("Content-Type", "text/html");
+                    responseHeaders.set("Content-Type", "text/html");
 
-                            resolve(
-                                new Response(stream, {
-                                    headers: responseHeaders,
-                                    status: responseStatusCode,
-                                })
-                            );
+                    resolve(
+                        new Response(stream, {
+                            headers: responseHeaders,
+                            status: responseStatusCode,
+                        })
+                    );
 
-                            pipe(body);
-                        },
-                        onShellError(error: unknown) {
-                            reject(error);
-                        },
-                        onError(error: unknown) {
-                            responseStatusCode = 500;
-                            if (shellRendered) {
-                                console.error(error);
-                            }
-                        },
+                    pipe(body);
+                },
+                onShellError(error: unknown) {
+                    reject(error);
+                },
+                onError(error: unknown) {
+                    responseStatusCode = 500;
+                    if (shellRendered) {
+                        console.error(error);
                     }
-                );
-
-                setTimeout(abort, 5000);
-            } catch (error) {
-                reject(error);
+                },
             }
-        };
+        );
 
-        startStreaming();
+        setTimeout(abort, 5000);
     });
 }

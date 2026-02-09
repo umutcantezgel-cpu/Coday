@@ -47,6 +47,7 @@ head_debug.html
 lint_report.txt
 lint_output*.txt
 lint_errors*.txt
+lint_errors*.txt
 lint_final.txt
 typecheck_report.txt
 *.report.txt

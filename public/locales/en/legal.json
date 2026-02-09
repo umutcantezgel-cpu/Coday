@@ -1,270 +1,711 @@
 {
-  "impressum": {
-    "title": "Imprint",
-    "subtitle": "Information according to § 5 DDG",
-    "provider": {
-      "title": "Provider",
-      "name": "Umutcan Emre Tezgel",
-      "address": "Lessingstraße 4\n35578 Wetzlar\nGermany"
+  "common": {
+    "contact": "Contact Us",
+    "contents": "Table of Contents",
+    "download_pdf": "Download PDF",
+    "legal_document": "Legal Document"
+  },
+  "disclaimer": {
+    "analysis": {
+      "content": "__MISSING__",
+      "title": "__MISSING__"
     },
-    "contact": {
-      "title": "Contact",
-      "phone": "Phone: ",
-      "email": "Email: ",
-      "web": "Web: "
+    "content": {
+      "content": "__MISSING__",
+      "title": "__MISSING__"
     },
-    "representative": {
-      "title": "Represented by",
-      "name": "Owner: Umutcan Emre Tezgel"
+    "copyright": {
+      "content": "__MISSING__",
+      "title": "__MISSING__"
     },
-    "profession": {
-      "title": "Job Title",
-      "desc": "Web Designer / Sole Proprietor"
-    },
-    "tax": {
-      "title": "Tax Number",
-      "number": "039 874 00784"
+    "intro": {
+      "content": "__MISSING__",
+      "title": "__MISSING__"
     },
     "liability": {
-      "title": "Liability & Copyright Notices",
+      "content": "__MISSING__",
+      "title": "__MISSING__"
+    },
+    "title": "__MISSING__"
+  },
+  "hub": {
+    "agb": {
+      "description": "__MISSING__",
+      "title": "__MISSING__"
+    },
+    "badge": "__MISSING__",
+    "cta": {
+      "button": "__MISSING__",
+      "description": "__MISSING__",
+      "title": "__MISSING__"
+    },
+    "features": {
+      "gdpr": {
+        "desc": "__MISSING__",
+        "title": "__MISSING__"
+      },
+      "transparent": {
+        "desc": "__MISSING__",
+        "title": "__MISSING__"
+      },
+      "updated": {
+        "desc": "__MISSING__",
+        "title": "__MISSING__"
+      }
+    },
+    "impressum": {
+      "description": "__MISSING__",
+      "title": "__MISSING__"
+    },
+    "privacy": {
+      "description": "__MISSING__",
+      "title": "__MISSING__"
+    },
+    "seo": {
+      "description": "__MISSING__",
+      "title": "__MISSING__"
+    },
+    "subtitle": "__MISSING__",
+    "title": "__MISSING__"
+  },
+  "impressum": {
+    "contact": {
+      "email_note": "Response within 24h",
+      "phone_note": "Mon-Fri: 9:00 AM - 6:00 PM",
+      "web_note": "Visit us online"
+    },
+    "cta": {
+      "text": "We look forward to your message.",
+      "title": "Have questions?"
+    },
+    "dispute": {
+      "p1": "We are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board.",
+      "p2": "If you have any questions or concerns, please contact us directly first. We always strive to find a mutually agreeable solution."
+    },
+    "liability": {
       "content": {
-        "title": "Liability for Content",
-        "desc": "As a service provider, we are responsible for our own content on these pages in accordance with general laws pursuant to § 7 Para.1 DDG."
+        "desc": "As a service provider, we are responsible for our own content on these pages in accordance with general laws pursuant to § 7 Para. 1 DDG. According to §§ 8 to 10 DDG, we are not obligated to monitor transmitted or stored third-party information.",
+        "title": "Liability for Content"
       },
       "images": {
-        "title": "Image Credits",
-        "desc": "All images used on this website were created by us or generated using AI image generators. The copyright belongs to the operator of this website."
+        "desc": "All content used on this website (text, images, graphics, code) was created by us or generated using AI generators. The copyright belongs to the operator of this website. Any duplication or use requires express consent.",
+        "title": "Copyright & Image Credits"
+      },
+      "links": {
+        "desc": "Our offer contains links to external third-party websites, over whose content we have no influence. Therefore, we cannot assume any liability for these external contents. The respective provider or operator of the pages is always responsible for the content of the linked pages.",
+        "title": "Liability for Links"
       }
     },
+    "mission": {
+      "quote": "“We develop digital solutions that not only convince technically but inspire people and make companies successful.”"
+    },
+    "odr": {
+      "text": "The European Commission provides a platform for Online Dispute Resolution (ODR):",
+      "title": "Online Dispute Resolution"
+    },
+    "profession": {
+      "desc": "Web Designer & Developer",
+      "title": "Job Title",
+      "type": "Freelance Activity / Sole Proprietorship"
+    },
+    "provider": {
+      "address": "Lessingstraße 4\n35578 Wetzlar\nGermany",
+      "name": "Umutcan Emre Tezgel"
+    },
+    "registration": {
+      "note": "As a sole proprietor without merchant status, there is no obligation to register in the commercial register.",
+      "title": "Commercial Register"
+    },
+    "representative": {
+      "name": "Umutcan Emre Tezgel",
+      "role": "Sole Proprietor, fully authorized representative",
+      "title": "Owner & Managing Director"
+    },
+    "sections": {
+      "haftung": {
+        "subtitle": "Legal Disclaimers",
+        "title": "Liability & Copyright Notices"
+      },
+      "kontakt": {
+        "subtitle": "How to reach us",
+        "title": "Contact Information"
+      },
+      "mission": {
+        "subtitle": "What we stand for",
+        "title": "Our Mission"
+      },
+      "qualifikation": {
+        "subtitle": "Expertise and Certifications",
+        "title": "Professional Qualifications"
+      },
+      "regulatorisch": {
+        "subtitle": "Tax and Commercial Register",
+        "title": "Regulatory Information"
+      },
+      "streitbeilegung": {
+        "subtitle": "Alternative Dispute Resolution",
+        "title": "Dispute Resolution"
+      },
+      "unternehmen": {
+        "subtitle": "The service provider of this website",
+        "title": "Company Information"
+      },
+      "vertreter": {
+        "subtitle": "Legal Representative",
+        "title": "Authorized Representative"
+      }
+    },
+    "skills": {
+      "ai": "AI Integration",
+      "ai_desc": "Chatbots, AI Assistants, Automation",
+      "backend": "Backend & DB",
+      "backend_desc": "Supabase, PostgreSQL, REST APIs, Serverless",
+      "design": "UI/UX Design",
+      "design_desc": "Figma, Adobe XD, User Research, Design Systems",
+      "security": "Security",
+      "security_desc": "GDPR, SSL/TLS, Secure Authentication",
+      "seo": "SEO & Marketing",
+      "seo_desc": "Search Engine Optimization, Content Strategy, Analytics",
+      "webdev": "Web Development",
+      "webdev_desc": "React, Next.js, TypeScript, Node.js, Tailwind CSS"
+    },
+    "subtitle": "Information according to § 5 DDG",
+    "summary": {
+      "1": "Sole proprietorship based in Wetzlar, Germany",
+      "2": "Specialized in Web Design, Development & Digital Solutions",
+      "3": "Direct contact via Email, Phone, or Contact Form",
+      "4": "GDPR compliant and transparent",
+      "title": "At a Glance"
+    },
+    "tax": {
+      "authority": "Tax Office Wetzlar",
+      "number": "039 874 00784",
+      "title": "Tax Number"
+    },
+    "title": "Imprint",
     "toc": {
-      "anbieter": "Provider & Contact",
-      "vertreter": "Representation & Register",
-      "haftung": "Liability & Copyright"
+      "haftung": "7. Liability",
+      "kontakt": "3. Contact",
+      "mission": "6. Our Mission",
+      "qualifikation": "5. Qualifications",
+      "regulatorisch": "4. Regulatories",
+      "streitbeilegung": "8. Dispute Resolution",
+      "unternehmen": "1. Company Information",
+      "vertreter": "2. Authorized Representative"
+    },
+    "trading_as": "trading as “Coday”",
+    "ust": {
+      "note": "Small business regulation according to § 19 UStG",
+      "status": "Not available",
+      "title": "VAT ID"
+    },
+    "values": {
+      "partnership": "Partnership",
+      "partnership_desc": "Cooperation at eye level",
+      "passion": "Passion",
+      "passion_desc": "We love what we do",
+      "quality": "Quality",
+      "quality_desc": "Highest standards, always"
     }
   },
+  "nav": {
+    "impressum": "Imprint",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  },
   "privacy": {
-    "title": "Privacy",
-    "subtitle": "Policy",
-    "last_updated": "Last Update: {{date}}",
-    "intro": "We take the protection of your personal data very seriously. Below we inform you about the collection, processing, and use of your data in accordance with the General Data Protection Regulation (GDPR).",
-    "sections": {
-      "1": {
-        "title": "1. Name and Contact Details of the Controller",
-        "content": "This privacy information applies to data processing by:"
+    "aenderungen": {
+      "p1": "We reserve the right to adapt this privacy policy to changed legal situations or changes to our services. The current version can always be found on this page.",
+      "p2": "In the event of significant changes, we will inform you – as far as possible – by email or through a notice on our website."
+    },
+    "beschwerde": {
+      "authority": {
+        "title": "Competent Supervisory Authority"
       },
-      "2": {
-        "title": "2. Collection and Storage of Personal Data",
-        "a": {
-          "title": "a) When visiting the website",
-          "content": "When calling up our website, information is automatically sent to the server by the browser. This is temporarily stored in log files:"
-        },
-        "b": {
-          "title": "b) When using our contact form",
-          "content": "When using the contact form, we collect: Name, email address, phone number (optional), your message."
-        },
-        "c": {
-          "title": "c) When using the website analyzer",
-          "content": "When using the website analyzer, we collect: The analyzed URL, email address (for report delivery), analysis results are temporarily stored."
-        },
-        "d": {
-          "title": "d) When using the chatbot (Jarvis)",
-          "content": "The chatbot stores your conversation locally in the browser to provide chat functionality. The messages are transmitted to external AI services for processing (see section 4)."
-        }
+      "p1": "If you believe that the processing of your data violates data protection law, you have the right to complain to a supervisory authority (Art. 77 GDPR)."
+    },
+    "controller": {
+      "title": "Controller"
+    },
+    "dataflow": {
+      "description": "Visualization of data flow when using our services"
+    },
+    "international": {
+      "adequacy": {
+        "desc": "Where available, we rely on adequacy decisions of the EU Commission (e.g., for certain US companies).",
+        "title": "Adequacy Decisions"
       },
-      "3": {
-        "title": "3. Cookies",
-        "content": "We use the following cookie categories:",
-        "necessary": {
-          "title": "Necessary Cookies",
-          "desc": "Required for basic website functions (session, cookie settings)."
-        },
-        "functional": {
-          "title": "Functional Cookies",
-          "desc": "Save your preferences like chatbot history (localStorage)."
-        },
-        "analytics": {
-          "title": "Analytics Cookies (optional)",
-          "desc": "Google Analytics to improve our website - only with your consent."
-        },
-        "note": "You can adjust your cookie settings at any time via the cookie banner."
-      },
-      "4": {
-        "title": "4. AI Services and Automated Processing",
-        "note": "Note: Our AI assistant 'Jarvis' and the website analyzer use external AI services for processing.",
-        "gemini": {
-          "title": "a) Google Gemini API",
-          "content": "For the chatbot and website analyzer, your requests are transmitted to the Google Gemini API. Processed are: Your chat messages, website content during analysis. Legal basis: Art. 6 Para. 1 lit. a GDPR (Consent via use)."
-        },
-        "perplexity": {
-          "title": "b) Perplexity API",
-          "content": "The Perplexity API is used for advanced search queries. Only the search queries are transmitted, no personal data."
-        },
-        "disclaimer": {
-          "title": "c) No Legal/Medical Advice",
-          "content": "AI-generated answers are for informational purposes only and do not replace professional advice. We assume no liability for decisions made based on AI answers."
-        }
-      },
-      "5": {
-        "title": "5. Processors and Third-Party Providers",
-        "content": "We work with the following service providers:",
-        "table": {
-          "headers": {
-            "provider": "Provider",
-            "purpose": "Purpose",
-            "location": "Location"
-          },
-          "rows": {
-            "vercel": {
-              "provider": "Vercel Inc.",
-              "purpose": "Hosting",
-              "location": "USA (EU Standard Contractual Clauses)"
-            },
-            "supabase": {
-              "provider": "Supabase Inc.",
-              "purpose": "Database",
-              "location": "EU (Frankfurt)"
-            },
-            "google": {
-              "provider": "Google LLC",
-              "purpose": "Gemini API, Analytics",
-              "location": "USA (EU Standard Contractual Clauses)"
-            },
-            "perplexity": {
-              "provider": "Perplexity AI",
-              "purpose": "Web Search",
-              "location": "USA"
-            }
-          }
-        }
-      },
-      "6": {
-        "title": "6. Rights of Data Subjects",
-        "content": "You have the following rights regarding your personal data:",
-        "rights": {
-          "art15": {
-            "title": "Art. 15",
-            "desc": "Information about your personal data processed by us."
-          },
-          "art16": {
-            "title": "Art. 16",
-            "desc": "Correction of incorrect or completion of your data."
-          },
-          "art17": {
-            "title": "Art. 17",
-            "desc": "Deletion of your data stored by us ('Right to be Forgotten')."
-          },
-          "art18": {
-            "title": "Art. 18",
-            "desc": "Restriction of processing of your data."
-          },
-          "art20": {
-            "title": "Art. 20",
-            "desc": "Data portability in a common format."
-          },
-          "art21": {
-            "title": "Art. 21",
-            "desc": "Objection to the processing of your data."
-          }
-        },
-        "contact": "To exercise your rights, please contact us at:"
-      },
-      "7": {
-        "title": "7. Data Security",
-        "content": "We use TLS/SSL encryption for all data transmissions. Our systems are regularly updated and checked for security vulnerabilities. Access to personal data is restricted to authorized employees."
+      "p1": "Some of our service providers are located outside the European Union, specifically in the USA. In these cases, we ensure through appropriate guarantees that your data is adequately protected.",
+      "scc": {
+        "desc": "We have concluded Standard Contractual Clauses approved by the EU Commission with service providers in third countries.",
+        "title": "EU Standard Contractual Clauses"
       }
     },
+    "intro": "We take the protection of your personal data very seriously. Below we inform you about the collection, processing, and use of your data in accordance with the General Data Protection Regulation (GDPR) and the Federal Data Protection Act (BDSG).",
+    "ki": {
+      "disclaimer": {
+        "title": "No Legal/Medical Advice"
+      },
+      "note": "Important Note"
+    },
+    "kontakt": {
+      "intro": "If you have any questions about data protection or exercising your rights, we are happy to help:"
+    },
+    "last_updated": "Last Update: {{date}}",
+    "principles": {
+      "lawfulness": "Lawfulness",
+      "lawfulness_desc": "Every processing is based on a valid legal basis (consent, contract, legitimate interest).",
+      "minimization": "Data Minimization",
+      "minimization_desc": "We only collect the data we actually need.",
+      "purpose": "Purpose Limitation",
+      "purpose_desc": "Data is collected only for specified, explicit, and legitimate purposes.",
+      "transparency": "Transparency",
+      "transparency_desc": "You will be informed comprehensively about all processing operations."
+    },
+    "processors": {
+      "google": {
+        "purpose": "Gemini API & Analytics"
+      },
+      "perplexity": {
+        "purpose": "AI-supported Web Search"
+      },
+      "supabase": {
+        "purpose": "Database & Backend"
+      },
+      "vercel": {
+        "purpose": "Website Hosting & CDN"
+      }
+    },
+    "retention": {
+      "analytics": "Analytics Data",
+      "analytics_desc": "Anonymized after 26 months",
+      "chat": "Chatbot Conversations",
+      "chat_desc": "Only locally in browser, no server-side storage",
+      "contact": "Contact Inquiries",
+      "contact_desc": "After completion of processing, max. 6 months",
+      "invoices": "Invoice Data",
+      "invoices_desc": "10 years (statutory retention obligation)",
+      "project": "Project Data",
+      "project_desc": "For the duration of the project + 3 years (warranty)",
+      "title": "Retention Periods by Data Type"
+    },
+    "rights": {
+      "art15": {
+        "desc": "You have the right to obtain information about your personal data stored by us.",
+        "title": "Access"
+      },
+      "art16": {
+        "desc": "You can request the correction of incorrect or completion of your data.",
+        "title": "Rectification"
+      },
+      "art17": {
+        "desc": "You have the \"Right to be Forgotten\" – deletion of your data upon request.",
+        "title": "Erasure"
+      },
+      "art18": {
+        "desc": "You can request the restriction of processing of your data.",
+        "title": "Restriction"
+      },
+      "art20": {
+        "desc": "You can receive your data in a common, machine-readable format.",
+        "title": "Data Portability"
+      },
+      "art21": {
+        "desc": "You can object to the processing of your data, especially for direct marketing.",
+        "title": "Objection"
+      },
+      "exercise": "How to exercise your rights:",
+      "exercise_desc": "Send us an email to",
+      "exercise_desc2": "with the subject \"Privacy Inquiry\". We will reply within 30 days."
+    },
+    "sections": {
+      "2": {
+        "a": {
+          "content": "When visiting our website, information is automatically sent to the server by the browser. This is temporarily stored in log files:",
+          "title": "When visiting the website"
+        },
+        "b": {
+          "content": "When using the contact form, we collect:",
+          "title": "When using the contact form"
+        },
+        "c": {
+          "content": "For the Website Analyzer, we collect:",
+          "title": "When using the Website Analyzer"
+        },
+        "d": {
+          "content": "The chatbot stores your conversation locally in the browser to provide chat functionality.",
+          "title": "When using the Chatbot (Jarvis)"
+        },
+        "subtitle": "What data we collect",
+        "title": "Collection of Personal Data"
+      },
+      "3": {
+        "analytics": {
+          "desc": "Google Analytics to improve our website – only with your explicit consent.",
+          "title": "Analytics Cookies"
+        },
+        "content": "We use cookies to keep our website functional and improve your user experience. You can adjust your cookie settings at any time via our cookie banner.",
+        "functional": {
+          "desc": "Save your preferences like language selection and chatbot history (localStorage).",
+          "title": "Functional Cookies"
+        },
+        "necessary": {
+          "desc": "Required for basic website functions (session, cookie settings). The website will not function without these.",
+          "title": "Necessary Cookies"
+        },
+        "note": "You can adjust your cookie settings at any time via the cookie banner or block all cookies in your browser settings.",
+        "subtitle": "How we use cookies",
+        "title": "Cookies & Tracking Technologies"
+      },
+      "4": {
+        "disclaimer": {
+          "content": "AI-generated answers are for informational purposes only and do not replace professional advice. We assume no liability for decisions made based on AI answers."
+        },
+        "gemini": {
+          "content": "For the chatbot and Website Analyzer, your requests are transmitted to the Google Gemini API.",
+          "title": "Google Gemini API"
+        },
+        "note": "Our AI assistant 'Jarvis' and the Website Analyzer use external AI services for processing. Your inputs are transmitted to these services when used.",
+        "perplexity": {
+          "content": "The Perplexity API is used for advanced search queries.",
+          "title": "Perplexity API"
+        },
+        "subtitle": "Use of Artificial Intelligence",
+        "title": "AI Services & Automated Processing"
+      },
+      "5": {
+        "content": "We work with carefully selected service providers who support us in delivering our services. We have concluded Data Processing Agreements (DPA) according to Art. 28 GDPR with all processors.",
+        "subtitle": "Who we work with",
+        "title": "Processors & Third Parties"
+      },
+      "6": {
+        "content": "You have comprehensive rights regarding your personal data. To exercise these rights, please contact us at umut@codayweb.de.",
+        "subtitle": "Your rights under GDPR",
+        "title": "Data Subject Rights"
+      },
+      "7": {
+        "content": "We implement extensive technical and organizational measures to protect your data:",
+        "subtitle": "Technical and organizational measures",
+        "title": "Data Security"
+      },
+      "aenderungen": {
+        "subtitle": "Updates and Versioning",
+        "title": "Changes to this Privacy Policy"
+      },
+      "beschwerde": {
+        "subtitle": "If you are unsatisfied",
+        "title": "Right of Complaint to Supervisory Authority"
+      },
+      "datenfluss": {
+        "subtitle": "How your data is processed",
+        "title": "Data Flow Overview"
+      },
+      "grundsaetze": {
+        "subtitle": "Our obligations under GDPR Art. 5",
+        "title": "Principles of Data Processing"
+      },
+      "international": {
+        "subtitle": "Transfer to third countries",
+        "title": "International Data Transfer"
+      },
+      "kontakt": {
+        "subtitle": "Get in touch",
+        "title": "Contact & Privacy Inquiries"
+      },
+      "praeambel": {
+        "subtitle": "Who is responsible for your data",
+        "title": "Preamble & Controller"
+      },
+      "speicherung": {
+        "subtitle": "How long we keep your data",
+        "title": "Data Retention & Deletion Periods"
+      }
+    },
+    "security": {
+      "access": "Access Control",
+      "access_desc": "Access to personal data is strictly limited and logged.",
+      "backup": "Backup",
+      "backup_desc": "Regular, encrypted backups to protect against data loss.",
+      "encryption": "Encryption",
+      "encryption_desc": "TLS/SSL encryption for all data transmissions (HTTPS).",
+      "updates": "Regular Updates",
+      "updates_desc": "Our systems are regularly updated and checked for security vulnerabilities."
+    },
+    "speicherung": {
+      "intro": "We store your data only as long as necessary for the respective purpose or as required by statutory retention periods."
+    },
+    "subtitle": "Transparent handling of your data",
+    "summary": {
+      "1": "GDPR-compliant: We process your data according to EU law",
+      "2": "No Sale: We never sell your data to third parties",
+      "3": "Transparency: You always know what data we have",
+      "4": "Control: You can have your data deleted at any time",
+      "5": "Security: Encrypted transmission and secure storage",
+      "title": "At a Glance"
+    },
+    "title": "Privacy Policy",
     "toc": {
-      "verantwortlicher": "1. Controller",
-      "erhebung": "2. Data Collection",
-      "cookies": "3. Cookies",
-      "ki_dienste": "4. AI Services",
-      "auftragsverarbeiter": "5. Processors",
-      "rechte": "6. Rights",
-      "sicherheit": "7. Security"
+      "aenderungen": "12. Changes",
+      "beschwerde": "11. Right of Complaint",
+      "cookies": "4. Cookies",
+      "datenfluss": "5. Data Flow",
+      "drittanbieter": "7. Third Parties",
+      "erhebung": "3. Data Collection",
+      "grundsaetze": "2. Principles",
+      "international": "8. International Transfer",
+      "ki_dienste": "6. AI Services",
+      "kontakt": "14. Contact",
+      "praeambel": "1. Preamble",
+      "rechte": "10. Your Rights",
+      "sicherheit": "13. Data Security",
+      "speicherung": "9. Retention Periods"
     }
   },
   "terms": {
-    "title": "General Terms and Conditions",
+    "definitions": {
+      "client": "Natural or legal person who makes use of the Provider's services.",
+      "project": "The totality of all services to be provided as defined in the offer.",
+      "provider": "Umutcan Emre Tezgel, trading as “Coday”, based in Wetzlar.",
+      "revision": "Round of changes to adapt design or functionality after intermediate acceptance."
+    },
+    "eigentum": {
+      "code": {
+        "text": "The source code of the developed website or application is made available to the Client upon project completion, unless otherwise agreed.",
+        "title": "Source Code"
+      },
+      "p1": "(1) Upon full payment, all usage rights to the created works pass to the Client. This includes the right to unlimited use for business purposes.",
+      "p2": "(2) The copyright remains with the Provider. The Provider reserves the right to present the created works for reference purposes in their own portfolio, provided no confidentiality agreement exists.",
+      "p3": "(3) Source files (e.g. Design files in Figma, Sketch or Adobe XD) are only handed over if expressly agreed."
+    },
+    "festpreis": {
+      "guarantee": "Our Guarantee",
+      "p1": "__MISSING__",
+      "p2": "__MISSING__",
+      "p3": "__MISSING__",
+      "text": "The price mentioned in the offer is a binding fixed price. It does not change as long as no additional services are commissioned that go beyond the original scope of services."
+    },
+    "gewaehrleistung": {
+      "browser": {
+        "text": "Websites are optimized for current versions of Chrome, Firefox, Safari, and Edge. Support for older browser versions can be agreed separately.",
+        "title": "Browser Compatibility"
+      },
+      "p1": "(1) The Provider warrants that the services provided correspond to the agreed functional scope and are carried out professionally.",
+      "p2": "(2) Defects must be reported to the Provider in writing immediately after discovery. The Provider will remedy justified defects free of charge within the scope of subsequent performance.",
+      "p3": "(3) The warranty period is 12 months from project handover, unless otherwise agreed."
+    },
+    "guarantee": {
+      "title": "30-Day Guarantee"
+    },
+    "ki": {
+      "not_for": "AI answers are particularly not suitable for:",
+      "note": "Important Note"
+    },
+    "kuendigung": {
+      "cancellation": {
+        "text": "In case of termination by the Client, the services provided up to that point will be invoiced. The deposit (50%) is non-refundable.",
+        "title": "Project cancellation by Client"
+      },
+      "p1": "(1) For project-based contracts, ordinary termination is not provided for. The contract ends with the completion of the project.",
+      "p2": "(2) For maintenance or support contracts, termination is possible with a notice period of 30 days to the end of the month.",
+      "p3": "(3) The right to extraordinary termination for good cause remains unaffected."
+    },
     "last_updated": "As of: {{date}}",
-    "sections": {
-      "1": {
-        "title": "§ 1 Scope",
-        "p1": "(1) These General Terms and Conditions (hereinafter 'GTC') of Umutcan Emre Tezgel...",
-        "p2": "(2) Deviating conditions of the customer are not recognized..."
+    "mitwirkung": {
+      "content": {
+        "1": "Texts, images, logos in printable quality",
+        "2": "Access data to existing systems (if needed)",
+        "3": "Styleguide or Corporate Design guidelines (if available)",
+        "title": "Content & Materials"
       },
-      "2": {
-        "title": "§ 2 Conclusion of Contract",
-        "p1": "(1) The service descriptions...",
-        "p2": "(2) By sending a request...",
-        "p3": "(3) A contract is only concluded..."
+      "delay": {
+        "text": "Delays attributed to late delivery of materials or missing feedback can influence the project schedule. The Provider is not responsible for deadline delays in this case.",
+        "title": "Delays"
       },
-      "3": {
-        "title": "§ 3 Services",
-        "p1": "(1) The provider provides web design...",
-        "p2": "(2) The number of revision rounds...",
-        "p3": "(3) The provider grants a 30-day bug-fixing guarantee..."
+      "feedback": {
+        "1": "Prompt feedback on intermediate statuses (ideally within 5 working days)",
+        "2": "Clear and concrete change requests",
+        "3": "Naming of a contact person for queries",
+        "title": "Feedback & Acceptances"
       },
-      "4": {
-        "title": "§ 4 Prices & Fixed Price Guarantee",
-        "p1": "(1) Fixed Price Guarantee: The price mentioned is fixed.",
-        "p2": "(2) Additional services...",
-        "p3": "(3) All prices are net prices...",
-        "p4": "(4) Payment is generally: 50% on order..."
-      },
-      "5": {
-        "title": "§ 5 AI Services & Disclaimer",
-        "note": "Important Note: The AI assistant uses automated systems.",
-        "p1": "(1) No Advice...",
-        "p2": "(2) Automatically Generated Content...",
-        "p3": "(3) No Guarantee...",
-        "p4": "(4) Liability Disclaimer...",
-        "p5": "(5) Website Analyzer..."
-      },
-      "6": {
-        "title": "§ 6 General Liability",
-        "p1": "(1) The provider is liable without limitation...",
-        "p2": "(2) In case of slight negligence...",
-        "p3": "(3) Otherwise liability is excluded."
-      },
-      "7": {
-        "title": "§ 7 Final Provisions",
-        "p1": "(1) The law of the Federal Republic of Germany applies.",
-        "p2": "(2) Place of jurisdiction is Wetzlar...",
-        "p3": "(3) Should individual provisions be invalid...",
-        "p4": "(4) For questions: "
+      "intro": "The Client ensures that the materials and information required for the execution of the project are provided in good time:"
+    },
+    "payment": {
+      "first": "upon order placement / contract signing",
+      "second": "after completion and before handover"
+    },
+    "projektablauf": {
+      "communication": {
+        "1": "The Client receives regular updates on project progress via email.",
+        "2": "Intermediate statuses are made available via a staging link.",
+        "3": "Feedback should ideally be collected and not sent in individual messages.",
+        "title": "Communication during the project"
       }
     },
+    "sections": {
+      "1": {
+        "p1": "(1) These General Terms and Conditions (hereinafter “GTC”) of Umutcan Emre Tezgel, Lessingstraße 4, 35578 Wetzlar (hereinafter “Provider”), apply to all contracts for web design, web development, and digital services concluded between the Provider and its customers (hereinafter “Client”).",
+        "p2": "(2) The version of the GTC valid at the time of the conclusion of the contract is decisive. Deviating terms and conditions of the Client are not recognized unless the Provider expressly agrees to their validity in writing.",
+        "p3": "(3) These GTC apply to both consumers and entrepreneurs within the meaning of § 14 BGB.",
+        "subtitle": "Scope of application of these terms",
+        "title": "Scope"
+      },
+      "2": {
+        "p1": "(1) The service descriptions and price information presented on the website in the offer do not constitute a binding offer, but an invitation to submit an offer (invitatio ad offerendum).",
+        "p2": "(2) By sending a project inquiry via the contact form or by email, the Client submits a non-binding offer.",
+        "p3": "(3) A contract is only concluded by the signing of a written offer by both parties or by express written acceptance via email.",
+        "p4": "(4) The Provider stores the contract text and sends the Client a confirmation by email. The contract text is no longer accessible to the Client after conclusion of the contract, except upon request.",
+        "subtitle": "How a contract is formed",
+        "title": "Conclusion of Contract"
+      },
+      "3": {
+        "p1": "(1) The Provider provides web design, web development, and digital marketing services according to the individual offer. This may include:",
+        "p2": "(2) The number of revision rounds agreed in the offer is binding. Standardly, up to three (3) revision rounds are included in the scope of services.",
+        "p3": "The Provider grants a 30-day bug-fixing guarantee from project handover. Technical errors attributable to the Provider's work will be remedied free of charge.",
+        "subtitle": "What our services include",
+        "title": "Scope of Services"
+      },
+      "4": {
+        "p1": "(1) All prices mentioned in the offer are net prices plus the statutory VAT of currently 19%.",
+        "p2": "(2) Payment is generally made in two installments:",
+        "p3": "(3) For larger projects, deviating payment modalities (e.g., three installments) can be agreed upon.",
+        "p4": "(4) Invoices are payable within 14 days of receipt without deduction. In case of default of payment, default interest of 5 percentage points above the base rate will be charged.",
+        "subtitle": "Transparent Pricing",
+        "title": "Prices & Payment Conditions"
+      },
+      "5": {
+        "list": {
+          "1": "Financial Decisions",
+          "2": "Business Strategies",
+          "3": "Legal Measures",
+          "4": "Health-related Decisions"
+        },
+        "note": "The AI assistant “Jarvis” available on this website and the Website Analyzer use automated systems to process requests.",
+        "p1": "(1) The AI services serve exclusively for information purposes and do not constitute legal, medical, or financial advice.",
+        "p2": "(2) Automatically generated content was created by machine and may contain errors.",
+        "p3": "(3) The Provider assumes no liability for the accuracy, completeness, or timeliness of the AI-generated information.",
+        "p4": "(4) Any liability for damages resulting from the use of AI-generated content is excluded to the extent permitted by law.",
+        "subtitle": "Use of AI Technologies",
+        "title": "AI Services & Automation"
+      },
+      "6": {
+        "p1": "(1) The Provider is liable without limitation in cases of intent and gross negligence as well as for damages from injury to life, body, or health.",
+        "p2": "(2) In case of slight negligence of essential contractual obligations (cardinal obligations), liability is limited to the typical, foreseeable damage.",
+        "p3": "(3) Any further liability is excluded to the extent permitted by law.",
+        "p4": "(4) The limitations of liability also apply in favor of the vicarious agents of the Provider.",
+        "subtitle": "Scope of our liability",
+        "title": "Limitation of Liability"
+      },
+      "7": {
+        "p1": "(1) The law of the Federal Republic of Germany applies, excluding the UN Sales Convention.",
+        "p2": "(2) The place of jurisdiction for all disputes is Wetzlar, provided the Client is a merchant, a legal entity under public law, or a special fund under public law.",
+        "p3": "(3) Should individual provisions of these GTC be or become invalid in whole or in part, the validity of the remaining provisions remains unaffected. The invalid provision shall be replaced by the statutory regulation.",
+        "p4": "(4) Amendments and supplements to this contract require the written form. This also applies to the waiver of this written form requirement.",
+        "p5": "If you have questions about these GTC, please contact us:",
+        "subtitle": "Legal Framework",
+        "title": "Final Provisions"
+      },
+      "2_def": {
+        "subtitle": "Explanation of terms for these GTC",
+        "title": "Definitions"
+      },
+      "eigentum": {
+        "subtitle": "Rights to created works",
+        "title": "Intellectual Property & Copyright"
+      },
+      "festpreis": {
+        "p1": "(1) The fixed price covers all services defined in the offer, including the agreed revision rounds.",
+        "p2": "(2) Additional services exceeding the original offer will be offered and charged separately. Written commissioning is required.",
+        "p3": "(3) Changes to the project scope by the Client may lead to price adjustments. The Provider will inform about this in advance.",
+        "subtitle": "No hidden costs",
+        "title": "Fixed Price Guarantee"
+      },
+      "gewaehrleistung": {
+        "subtitle": "Our Quality Standards",
+        "title": "Warranty & Defects"
+      },
+      "kuendigung": {
+        "subtitle": "Ending the contract",
+        "title": "Termination & Resignation"
+      },
+      "mitwirkung": {
+        "list": {
+          "1": "Texts, images, logos in printable quality",
+          "2": "Access data to existing systems (if needed)",
+          "3": "Styleguide or Corporate Design guidelines (if available)",
+          "4": "Financial Decisions",
+          "5": "Business Strategies",
+          "6": "Legal Measures",
+          "7": "Health-related Decisions"
+        },
+        "subtitle": "For successful cooperation",
+        "title": "Client Cooperation Duties"
+      },
+      "projektablauf": {
+        "intro": "Every project goes through a structured process to ensure highest quality and transparent communication:",
+        "subtitle": "Typical project flow",
+        "title": "Project Process & Milestones"
+      },
+      "vertraulichkeit": {
+        "subtitle": "Protection of sensitive information",
+        "title": "Confidentiality"
+      }
+    },
+    "services": {
+      "list": {
+        "1": "Concept and Design of Websites and Web Applications",
+        "2": "Frontend and Backend Development",
+        "3": "Content Creation and Optimization",
+        "4": "Search Engine Optimization (SEO)",
+        "5": "Hosting Setup and Technical Configuration",
+        "6": "Maintenance and Support (by agreement)"
+      }
+    },
+    "subtitle": "Transparent conditions for successful cooperation",
+    "summary": {
+      "1": "Fixed Price Guarantee: The stated price is binding",
+      "2": "30-Day Bug-Fixing Guarantee after Handover",
+      "3": "Up to 3 Revision Rounds included in the scope",
+      "4": "Transparent Communication throughout the project",
+      "5": "German Law, Place of Jurisdiction Wetzlar",
+      "title": "At a Glance"
+    },
+    "timeline": {
+      "contract": "Conclusion of Contract",
+      "contract_desc": "50% deposit, Project Start",
+      "design": "Design & Development",
+      "design_desc": "Iterative development with intermediate acceptances",
+      "handover": "Handover & Launch",
+      "handover_desc": "Final Launch, Training, 30 Days Support",
+      "inquiry": "Inquiry & Initial Meeting",
+      "inquiry_desc": "Free initial consultation and project discussion",
+      "offer": "Receive Offer",
+      "offer_desc": "Detailed offer with Fixed Price Guarantee",
+      "review": "Review & Revisions",
+      "review_desc": "Up to 3 revision rounds included",
+      "title": "Project Timeline"
+    },
+    "title": "General Terms and Conditions",
     "toc": {
-      "geltung": "§ 1 Scope",
-      "vertrag": "§ 2 Contract",
-      "leistung": "§ 3 Services",
-      "preise": "§ 4 Prices",
-      "ki": "§ 5 AI Services",
-      "haftung": "§ 6 Liability",
-      "schluss": "§ 7 Final"
-    }
-  },
-  "disclaimer": {
-    "title": "AI Disclaimer & Transparency",
-    "intro": {
-      "title": "Use of Artificial Intelligence",
-      "content": "At Agency Domination, we use advanced technologies..."
+      "definitionen": "§2 Definitions",
+      "eigentum": "§9 Intellectual Property",
+      "festpreis": "§7 Fixed Price Guarantee",
+      "geltung": "§1 Scope",
+      "gewaehrleistung": "§11 Warranty",
+      "haftung": "§12 Liability",
+      "ki": "§10 AI Services",
+      "kuendigung": "§14 Termination",
+      "leistung": "§4 Scope of Services",
+      "mitwirkung": "§8 Cooperation Duties",
+      "preise": "§6 Prices",
+      "projektablauf": "§5 Project Process",
+      "schluss": "§15 Final Provisions",
+      "vertrag": "§3 Conclusion of Contract",
+      "vertraulichkeit": "§13 Confidentiality"
     },
-    "analysis": {
-      "title": "Website Analysis",
-      "content": "Our 'Website Analyzer' tool uses the Google Gemini API..."
-    },
-    "content": {
-      "title": "Content Creation & Code",
-      "content": "AI tools can be used for support..."
-    },
-    "liability": {
-      "title": "Liability Disclaimer",
-      "content": "Although we strive for accuracy..."
-    },
-    "copyright": {
-      "title": "Copyright & Privacy",
-      "content": "We respect copyright..."
+    "vertraulichkeit": {
+      "p1": "(1) Both parties undertake to keep secret all confidential information received within the scope of cooperation and not to pass it on to third parties.",
+      "p2": "(2) Confidential information includes in particular trade secrets, customer data, technical details, and unpublished marketing strategies.",
+      "p3": "(3) This obligation continues to apply after termination of the contractual relationship."
     }
   }
 }

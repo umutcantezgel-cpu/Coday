@@ -1,118 +1,120 @@
 {
-  "hero": {
-    "label": "Der Agentur-Konfigurator",
-    "title_1": "Bauen Sie Ihre",
-    "title_2": "Traum-Agentur.",
-    "subtitle_packages": "Erweitern Sie Ihr gewähltes Paket mit zusätzlichen Modulen.",
-    "subtitle_default": "Wählen Sie aus 9 Kategorien. Von der Basis bis zur Profi-Lösung.",
-    "continue": "Weiter zur Anfrage",
-    "satisfied": "Zufrieden mit Ihrer Konfiguration?",
-    "next_step": "Im nächsten Schritt senden Sie uns Ihre Anfrage."
+  "card": {
+    "bestseller": "Bestseller",
+    "included": "Inklusive",
+    "monthly": "Monatlich",
+    "one_time": "Einmalig",
+    "recommended": "Empfohlen",
+    "status": {
+      "add": "Hinzufügen",
+      "included": "Im Paket enthalten",
+      "selected": "Ausgewählt"
+    }
   },
   "categories": {
     "basis": "Projekt Basis",
     "commerce": "E-Commerce",
     "design": "Web Design",
     "function": "Funktionalität",
-    "tech": "Advanced Tech",
     "seo": "Technical SEO",
-    "support": "Betrieb & Wartung"
+    "support": "Betrieb & Wartung",
+    "tech": "Advanced Tech"
   },
+  "hero": {
+    "continue": "Weiter zur Anfrage",
+    "label": "Der Agentur-Konfigurator",
+    "next_step": "Im nächsten Schritt senden Sie uns Ihre Anfrage.",
+    "satisfied": "Zufrieden mit Ihrer Konfiguration?",
+    "subtitle_default": "Wählen Sie aus 9 Kategorien. Von der Basis bis zur Profi-Lösung.",
+    "subtitle_packages": "Erweitern Sie Ihr gewähltes Paket mit zusätzlichen Modulen.",
+    "title_1": "Bauen Sie Ihre",
+    "title_2": "Traum-Agentur."
+  },
+  "module_count": "{{count}} Modul ausgewählt",
+  "module_count_one": "__MISSING__",
+  "module_count_other": "__MISSING__",
+  "module_count_plural": "{{count}} Module ausgewählt",
   "modules": {
-    "basis-starter": {
-      "name": "Starter Website",
-      "description": "High-Performance Landing Page (Next.js)"
-    },
     "basis-business": {
-      "name": "Corporate Website",
-      "description": "Mehrseitige Unternehmens-Präsenz (CMS)"
+      "description": "Mehrseitige Unternehmens-Präsenz (CMS)",
+      "name": "Corporate Website"
     },
     "basis-enterprise": {
-      "name": "Web Application",
-      "description": "Komplexe Web-App mit Custom Logic"
+      "description": "Komplexe Web-App mit Custom Logic",
+      "name": "Web Application"
     },
-    "commerce-starter": {
-      "name": "Shopify Setup",
-      "description": "Professioneller Shopify Store"
+    "basis-starter": {
+      "description": "High-Performance Landing Page (Next.js)",
+      "name": "Starter Website"
     },
     "commerce-headless": {
-      "name": "Headless Commerce",
-      "description": "Custom Frontend für Shopify/WooCommerce"
+      "description": "Custom Frontend für Shopify/WooCommerce",
+      "name": "Headless Commerce"
     },
-    "design-ui": {
-      "name": "Premium UI Design",
-      "description": "Individuelles Screen-Design (Figma)"
-    },
-    "design-system": {
-      "name": "Design System",
-      "description": "Wiederverwendbare Komponenten-Bibliothek"
+    "commerce-starter": {
+      "description": "Professioneller Shopify Store",
+      "name": "Shopify Setup"
     },
     "design-motion": {
-      "name": "Motion Experience",
-      "description": "Advanced Animations & Transitions"
+      "description": "Advanced Animations & Transitions",
+      "name": "Motion Experience"
     },
-    "func-cms": {
-      "name": "Headless CMS",
-      "description": "Content Management (Sanity/Strapi)"
+    "design-system": {
+      "description": "Wiederverwendbare Komponenten-Bibliothek",
+      "name": "Design System"
     },
-    "func-auth": {
-      "name": "User Auth & Profil",
-      "description": "Login, Registrierung, User-Dashboard"
+    "design-ui": {
+      "description": "Individuelles Screen-Design (Figma)",
+      "name": "Premium UI Design"
     },
     "func-api": {
-      "name": "API Integration",
-      "description": "Anbindung externer Dienste (CRM, ERP)"
+      "description": "Anbindung externer Dienste (CRM, ERP)",
+      "name": "API Integration"
     },
-    "tech-pwa": {
-      "name": "PWA Features",
-      "description": "Offline-Support & Installability"
+    "func-auth": {
+      "description": "Login, Registrierung, User-Dashboard",
+      "name": "User Auth & Profil"
     },
-    "tech-i18n": {
-      "name": "Internationalization",
-      "description": "Mehrsprachigkeit (i18n Setup)"
-    },
-    "seo-tech": {
-      "name": "Technical SEO Audit",
-      "description": "Struktur, Schema.org, Core Web Vitals"
+    "func-cms": {
+      "description": "Content Management (Sanity/Strapi)",
+      "name": "Headless CMS"
     },
     "seo-speed": {
-      "name": "Performance Max",
-      "description": "Ladezeit-Optimierung auf <1s"
+      "description": "Ladezeit-Optimierung auf <1s",
+      "name": "Performance Max"
+    },
+    "seo-tech": {
+      "description": "Struktur, Schema.org, Core Web Vitals",
+      "name": "Technical SEO Audit"
     },
     "support-basic": {
-      "name": "Hosting & Wartung",
-      "description": "Server Updates & Backups"
+      "description": "Server Updates & Backups",
+      "name": "Hosting & Wartung"
     },
     "support-pro": {
-      "name": "SLA Support",
-      "description": "24/7 Notfall-Support & Weiterentwicklung"
-    }
-  },
-  "card": {
-    "included": "Inklusive",
-    "bestseller": "Bestseller",
-    "recommended": "Empfohlen",
-    "one_time": "Einmalig",
-    "monthly": "Monatlich",
-    "status": {
-      "included": "Im Paket enthalten",
-      "selected": "Ausgewählt",
-      "add": "Hinzufügen"
+      "description": "24/7 Notfall-Support & Weiterentwicklung",
+      "name": "SLA Support"
+    },
+    "tech-i18n": {
+      "description": "Mehrsprachigkeit (i18n Setup)",
+      "name": "Internationalization"
+    },
+    "tech-pwa": {
+      "description": "Offline-Support & Installability",
+      "name": "PWA Features"
     }
   },
   "summary": {
-    "title": "Ihr Paket",
-    "empty": "Wähle Module aus...",
-    "one_time": "Einmalig",
-    "monthly": "Monatlich",
-    "discount": "Rabatt aktiviert",
     "continue": "Weiter zur Anfrage",
-    "share": "Konfiguration teilen",
+    "discount": "Rabatt aktiviert",
+    "empty": "Wähle Module aus...",
     "guarantee": {
-      "title": "Garantie",
-      "text": "Dieses Setup garantiert einen Google Lighthouse Score von"
-    }
-  },
-  "module_count": "{{count}} Modul ausgewählt",
-  "module_count_plural": "{{count}} Module ausgewählt"
+      "text": "Dieses Setup garantiert einen Google Lighthouse Score von",
+      "title": "Garantie"
+    },
+    "monthly": "Monatlich",
+    "one_time": "Einmalig",
+    "share": "Konfiguration teilen",
+    "title": "Ihr Paket"
+  }
 }

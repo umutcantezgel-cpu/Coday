@@ -1,131 +1,131 @@
 {
-    "page": {
-        "title": "Transparente Preise",
-        "headline": "Drei Pakete. <0>Null Überraschungen.</0>",
-        "subheadline": "Wählen Sie das Paket, das zu Ihren Zielen passt. Alle Preise sind Festpreise – keine versteckten Kosten."
+  "comparison": {
+    "headers": {
+      "enterprise": "Enterprise",
+      "feature": "Feature",
+      "professional": "Professional",
+      "starter": "Starter"
     },
-    "packages": {
-        "starter": {
-            "name": "Einsteiger",
-            "tagline": "Perfekt für den Start",
-            "cta": "Einsteiger wählen"
-        },
-        "professional": {
-            "name": "Professionell",
-            "tagline": "Unser Bestseller",
-            "badge": "Beliebteste Wahl",
-            "cta": "Professionell wählen"
-        },
-        "enterprise": {
-            "name": "Profi-Lösung",
-            "tagline": "Volle Leistung",
-            "cta": "Großunternehmen anfragen"
-        }
+    "rows": {
+      "cms": {
+        "ent": "✓",
+        "label": "CMS",
+        "pro": "✓",
+        "starter": "—"
+      },
+      "custom": {
+        "ent": "✓",
+        "label": "Custom Development",
+        "pro": "—",
+        "starter": "—"
+      },
+      "ecommerce": {
+        "ent": "✓",
+        "label": "E-Commerce",
+        "pro": "—",
+        "starter": "—"
+      },
+      "pages": {
+        "ent": "Unbegrenzt",
+        "label": "Seiten",
+        "pro": "7-10",
+        "starter": "3-5"
+      },
+      "revisions": {
+        "ent": "Unbegrenzt",
+        "label": "Revisionen",
+        "pro": "5",
+        "starter": "3"
+      },
+      "seo": {
+        "ent": "Premium",
+        "label": "SEO",
+        "pro": "Erweitert",
+        "starter": "Basis"
+      },
+      "support": {
+        "ent": "Optional",
+        "label": "Support/Wartung",
+        "pro": "Optional",
+        "starter": "30 Tage"
+      }
     },
-    "labels": {
-        "setup": "Einrichtung"
+    "title": "Paket-Vergleich"
+  },
+  "cta_section": {
+    "button": "Termin buchen",
+    "text": "Vereinbaren Sie ein kostenloses Beratungsgespräch.",
+    "title": "Noch unsicher?"
+  },
+  "features": {
+    "enterprise": [
+      "Unbegrenzte Seiten",
+      "Maßgeschneiderte Web-Anwendung",
+      "Online-Shop Anbindung",
+      "Schnittstellen-Entwicklung",
+      "Premium Suchmaschinen- und Werbemaßnahmen",
+      "A/B-Test Einrichtung",
+      "Persönlicher Ansprechpartner",
+      "Verfügbarkeits-Garantie (Optional)",
+      "Rund-um-die-Uhr Unterstützung (Optional)"
+    ],
+    "professional": [
+      "7-10 Unterseiten",
+      "Inhaltsverwaltung (selbst bearbeitbar)",
+      "Erweiterte Suchmaschinenoptimierung",
+      "Geschwindigkeitsoptimierung",
+      "Blog-Bereich",
+      "Kontaktformulare",
+      "5 Änderungsrunden",
+      "Webspace inklusive",
+      "Unterstützung optional buchbar"
+    ],
+    "starter": [
+      "3-5 Unterseiten",
+      "Professionelle Startseite",
+      "Für alle Geräte optimiert",
+      "Basis-Suchmaschinenoptimierung",
+      "Sicherheitszertifikat",
+      "3 Änderungsrunden",
+      "Besucheranalyse eingerichtet",
+      "30 Tage Unterstützung"
+    ]
+  },
+  "labels": {
+    "setup": "Einrichtung"
+  },
+  "not_included": {
+    "professional": [
+      "Online-Shop Funktionen",
+      "Individuelle App-Entwicklung"
+    ],
+    "starter": [
+      "Inhaltsverwaltung",
+      "Online-Shop",
+      "Individuelle Funktionen"
+    ]
+  },
+  "packages": {
+    "enterprise": {
+      "cta": "Großunternehmen anfragen",
+      "name": "Profi-Lösung",
+      "tagline": "Volle Leistung"
     },
-    "features": {
-        "starter": [
-            "3-5 Unterseiten",
-            "Professionelle Startseite",
-            "Für alle Geräte optimiert",
-            "Basis-Suchmaschinenoptimierung",
-            "Sicherheitszertifikat",
-            "3 Änderungsrunden",
-            "Besucheranalyse eingerichtet",
-            "30 Tage Unterstützung"
-        ],
-        "professional": [
-            "7-10 Unterseiten",
-            "Inhaltsverwaltung (selbst bearbeitbar)",
-            "Erweiterte Suchmaschinenoptimierung",
-            "Geschwindigkeitsoptimierung",
-            "Blog-Bereich",
-            "Kontaktformulare",
-            "5 Änderungsrunden",
-            "Webspace inklusive",
-            "Unterstützung optional buchbar"
-        ],
-        "enterprise": [
-            "Unbegrenzte Seiten",
-            "Maßgeschneiderte Web-Anwendung",
-            "Online-Shop Anbindung",
-            "Schnittstellen-Entwicklung",
-            "Premium Suchmaschinen- und Werbemaßnahmen",
-            "A/B-Test Einrichtung",
-            "Persönlicher Ansprechpartner",
-            "Verfügbarkeits-Garantie (Optional)",
-            "Rund-um-die-Uhr Unterstützung (Optional)"
-        ]
+    "professional": {
+      "badge": "Beliebteste Wahl",
+      "cta": "Professionell wählen",
+      "name": "Professionell",
+      "tagline": "Unser Bestseller"
     },
-    "not_included": {
-        "starter": [
-            "Inhaltsverwaltung",
-            "Online-Shop",
-            "Individuelle Funktionen"
-        ],
-        "professional": [
-            "Online-Shop Funktionen",
-            "Individuelle App-Entwicklung"
-        ]
-    },
-    "comparison": {
-        "title": "Paket-Vergleich",
-        "headers": {
-            "feature": "Feature",
-            "starter": "Starter",
-            "professional": "Professional",
-            "enterprise": "Enterprise"
-        },
-        "rows": {
-            "pages": {
-                "label": "Seiten",
-                "starter": "3-5",
-                "pro": "7-10",
-                "ent": "Unbegrenzt"
-            },
-            "cms": {
-                "label": "CMS",
-                "starter": "—",
-                "pro": "✓",
-                "ent": "✓"
-            },
-            "seo": {
-                "label": "SEO",
-                "starter": "Basis",
-                "pro": "Erweitert",
-                "ent": "Premium"
-            },
-            "support": {
-                "label": "Support/Wartung",
-                "starter": "30 Tage",
-                "pro": "Optional",
-                "ent": "Optional"
-            },
-            "ecommerce": {
-                "label": "E-Commerce",
-                "starter": "—",
-                "pro": "—",
-                "ent": "✓"
-            },
-            "custom": {
-                "label": "Custom Development",
-                "starter": "—",
-                "pro": "—",
-                "ent": "✓"
-            },
-            "revisions": {
-                "label": "Revisionen",
-                "starter": "3",
-                "pro": "5",
-                "ent": "Unbegrenzt"
-            }
-        }
-    },
-    "cta_section": {
-        "title": "Noch unsicher?",
-        "text": "Vereinbaren Sie ein kostenloses Beratungsgespräch.",
-        "button": "Termin buchen"
+    "starter": {
+      "cta": "Einsteiger wählen",
+      "name": "Einsteiger",
+      "tagline": "Perfekt für den Start"
     }
+  },
+  "page": {
+    "headline": "Drei Pakete. <0>Null Überraschungen.</0>",
+    "subheadline": "Wählen Sie das Paket, das zu Ihren Zielen passt. Alle Preise sind Festpreise – keine versteckten Kosten.",
+    "title": "Transparente Preise"
+  }
 }

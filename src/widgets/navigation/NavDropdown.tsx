@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
-import { ChevronDown } from 'lucide-react';
+import { CaretDown } from '@phosphor-icons/react';
 import { Icon } from '../../shared/ui/Icon';
 
 interface DropdownItem {
@@ -36,7 +36,7 @@ export const NavDropdown: React.FC<NavDropdownProps> = ({ title, items }) => {
           ${isOpen ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'}`}
       >
         <span>{title}</span>
-        <ChevronDown
+        <CaretDown
           className={`w-4 h-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
         />
       </button>

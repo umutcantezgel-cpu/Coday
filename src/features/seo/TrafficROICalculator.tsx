@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { BadgeEuro, TrendingUp, Search } from 'lucide-react';
+import { CurrencyEur, TrendUp, MagnifyingGlass } from '@phosphor-icons/react';
 
 export const TrafficROICalculator: React.FC = () => {
     const [traffic, setTraffic] = useState(5000);
@@ -25,7 +25,7 @@ export const TrafficROICalculator: React.FC = () => {
             <div className="bg-white p-8 rounded-3xl shadow-md border border-gray-200">
                 <div className="flex items-center gap-3 mb-8">
                     <div className="p-3 bg-purple-50 text-purple-600 rounded-xl">
-                        <Search size={24} />
+                        <MagnifyingGlass size={24} />
                     </div>
                     <div>
                         <h3 className="text-xl font-bold text-gray-900">SEO Potenzial Rechner</h3>
@@ -83,7 +83,7 @@ export const TrafficROICalculator: React.FC = () => {
                         </span>
                     </div>
                     <div className="flex items-center gap-2 text-purple-300 text-sm font-bold uppercase tracking-wider mb-8">
-                        <TrendingUp size={16} />
+                        <TrendUp size={16} />
                         Durch SEO Optimierung
                     </div>
 
@@ -93,7 +93,7 @@ export const TrafficROICalculator: React.FC = () => {
                         <div>
                             <div className="text-white/60 text-sm mb-1">Potenzieller Monatsumsatz</div>
                             <div className="text-2xl font-bold flex items-center gap-2">
-                                <BadgeEuro className="text-green-400" />
+                                <CurrencyEur className="text-green-400" />
                                 {Math.round(projectedRevenue).toLocaleString()}€
                             </div>
                         </div>
@@ -102,7 +102,7 @@ export const TrafficROICalculator: React.FC = () => {
                             transition={{ repeat: Infinity, duration: 2 }}
                             className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center text-green-400"
                         >
-                            <TrendingUp size={24} />
+                            <TrendUp size={24} />
                         </motion.div>
                     </div>
                 </motion.div>

@@ -12,7 +12,7 @@ export const CODAY_KNOWLEDGE_BASE = {
     company: {
         name: 'Coday',
         tagline: 'The Agency Killer',
-        slogan: 'Wir bauen Ihre Digitalen Erfolg.',
+        slogan: 'Wir bauen Ihren Digitalen Erfolg.',
         mission: 'Coday ist der neue Standard. Wir kombinieren strategisches Design mit High-End Engineering. Keine Baukästen, keine Ausreden. Nur Ergebnisse, die Ihr Unternehmen voranbringen.',
         philosophy: 'Traditionelle Agenturen sind Geschichte. Sie bezahlen für Overhead, Meetings und ineffiziente Prozesse. Das alte Agenturmodell funktioniert nicht mehr für moderne KMUs.',
         differentiators: [

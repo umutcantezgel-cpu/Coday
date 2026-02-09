@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Monitor, Cpu, Layers, Zap } from 'lucide-react';
+import { Monitor, Cpu, Stack, Lightning } from '@phosphor-icons/react';
 import { useTranslation } from 'react-i18next';
 import { useMemo } from 'react';
 
@@ -32,7 +32,7 @@ export const WebHistoryTimeline: React.FC = () => {
         {
             year: 2010,
             title: t('blog:webHistory.eras.1.title'),
-            icon: Layers,
+            icon: Stack,
             description: t('blog:webHistory.eras.1.description'),
             agencyModel: t('blog:webHistory.eras.1.model'),
             overhead: t('blog:webHistory.eras.1.overhead')
@@ -40,7 +40,7 @@ export const WebHistoryTimeline: React.FC = () => {
         {
             year: 2018,
             title: t('blog:webHistory.eras.2.title'),
-            icon: Zap,
+            icon: Lightning,
             description: t('blog:webHistory.eras.2.description'),
             agencyModel: t('blog:webHistory.eras.2.model'),
             overhead: t('blog:webHistory.eras.2.overhead')

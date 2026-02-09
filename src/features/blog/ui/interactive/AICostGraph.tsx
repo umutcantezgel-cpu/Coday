@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { TrendingDown, User, Bot, Euro } from 'lucide-react';
+import { TrendDown, User, Robot, CurrencyEur } from '@phosphor-icons/react';
 
 import { useTranslation } from 'react-i18next';
 
@@ -18,7 +18,7 @@ export const AICostGraph: React.FC = () => {
     return (
         <div className="bg-white rounded-3xl p-8 shadow-2xl border border-gray-100 my-10 overflow-hidden relative">
             <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-                <Euro className="text-blue-600" />
+                <CurrencyEur className="text-blue-600" />
                 {t('aiCostGraph.title')}
             </h3>
 
@@ -34,7 +34,7 @@ export const AICostGraph: React.FC = () => {
                     onClick={() => setView('ai')}
                     className={`px-4 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-2 ${view === 'ai' ? 'bg-indigo-600 text-white shadow' : 'text-gray-500 hover:text-gray-700'}`}
                 >
-                    <Bot size={16} />
+                    <Robot size={16} />
                     {t('aiCostGraph.ai')}
                 </button>
             </div>
@@ -65,7 +65,7 @@ export const AICostGraph: React.FC = () => {
 
             <div className="mt-8 bg-indigo-50 rounded-xl p-4 border border-indigo-100 flex items-start gap-4">
                 <div className="bg-indigo-100 p-2 rounded-full text-indigo-700">
-                    <TrendingDown size={24} />
+                    <TrendDown size={24} />
                 </div>
                 <div>
                     <h4 className="font-bold text-indigo-800 mb-1">

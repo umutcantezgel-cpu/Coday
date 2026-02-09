@@ -1,412 +1,261 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { LocalizedNavLink as NavLink } from '../../../shared/ui/LocalizedLink';
-import CountUp from '../../../shared/ui/CountUp';
-import BlurText from '../../../shared/ui/BlurText';
-import { Input } from '../../../shared/ui/Input';
 import { Icon } from '../../../shared/ui/Icon';
+import { Button } from '../../../shared/ui/Button';
+import { OptimizedImage } from '../../../shared/ui/OptimizedImage';
+import { SeoHead } from '../../../shared/ui/SeoHead';
+import CountUp from '../../../shared/ui/CountUp';
+import GlareHover from '../../../shared/ui/GlareHover';
+import LogoLoop from '../../../shared/ui/LogoLoop';
 
 const Ecommerce: React.FC = () => {
   const { t } = useTranslation('services');
 
-  // ROI Calculator State
-  const [monthlyVisitors, setMonthlyVisitors] = useState(10000);
-  const [conversionRate, setConversionRate] = useState(1.5);
-  const [avgOrderValue, setAvgOrderValue] = useState(50);
-
-  // Derived values
-  const currentRevenue = monthlyVisitors * (conversionRate / 100) * avgOrderValue;
-  const optimizedRevenue = monthlyVisitors * ((conversionRate + 0.5) / 100) * (avgOrderValue * 1.1); // +0.5% CR, +10% AOV
-  const monthlyIncrease = optimizedRevenue - currentRevenue;
-  const yearlyIncrease = monthlyIncrease * 12;
-
   return (
-    <div className="bg-background-light font-sans text-text-light">
+    <>
+      <SeoHead
+        title="E-Commerce Development | Shopify & Next.js Experts"
+        description="High-performance online shops that convert. We build scalable e-commerce solutions with Shopify Plus, Hydrogen, and Next.js."
+      />
+
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center lg:text-left grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-xl text-primary mb-6">
-                <Icon name="shopping_cart" className="text-3xl" />
-              </div>
-              <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-gray-900 mb-6 leading-tight">
-                <BlurText
-                  text={t('ecommerce_page.hero.title_anim')}
-                  delay={100}
-                  animateBy="words"
-                  direction="top"
-                  className="block"
-                />
-                <span className="text-primary">{t('ecommerce_page.hero.title_static')}</span>
-              </h1>
-              <p className="text-xl text-gray-600 leading-relaxed mb-8 max-w-lg">
-                {t('ecommerce_page.hero.description')}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <NavLink
-                  to="/contact"
-                  className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl bg-gray-900 hover:bg-gray-800 shadow-lg hover:shadow-xl transition-all"
-                >
-                  {t('ecommerce_page.hero.cta_primary')}
-                </NavLink>
-                <NavLink
-                  to="/work"
-                  className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-gray-900 rounded-xl bg-white border border-gray-200 hover:bg-gray-50 transition-all"
-                >
-                  {t('ecommerce_page.hero.cta_secondary')}
-                </NavLink>
-              </div>
-            </div>
-            {/* Visual Placeholder */}
-            <div className="relative hidden lg:block">
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full blur-3xl opacity-60"></div>
-              <div className="relative glass-card p-8 rounded-3xl border border-white/50 bg-white/60 backdrop-blur-xl shadow-glass">
-                <div className="space-y-6">
-                  <div className="flex justify-between items-center border-b border-gray-100 pb-4">
-                    <div>
-                      <div className="text-sm text-gray-500">
-                        {t('ecommerce_page.stats.conversion_label')}
-                      </div>
-                      <div className="text-2xl font-bold text-gray-900">
-                        +<CountUp from={0} to={45} duration={1.5} />%
-                      </div>
-                    </div>
-                    <div className="text-green-500 bg-green-50 px-2 py-1 rounded text-xs font-bold">
-                      ▲ {t('ecommerce_page.stats.vs_prev_year')}
-                    </div>
-                  </div>
-                  <div className="flex justify-between items-center border-b border-gray-100 pb-4">
-                    <div>
-                      <div className="text-sm text-gray-500">
-                        {t('ecommerce_page.stats.load_time_label')}
-                      </div>
-                      <div className="text-2xl font-bold text-gray-900">
-                        <CountUp from={0} to={0.8} duration={1.5} />s
-                      </div>
-                    </div>
-                    <div className="text-green-500 bg-green-50 px-2 py-1 rounded text-xs font-bold">
-                      {t('ecommerce_page.stats.core_vitals_label')}:{' '}
-                      <CountUp from={0} to={100} duration={1.5} />
-                    </div>
-                  </div>
-                  <div>
-                    <div className="text-sm text-gray-500 mb-2">
-                      {t('ecommerce_page.stats.tech_label')}
-                    </div>
-                    <div className="flex gap-2">
-                      <span className="px-3 py-1 bg-gray-100 rounded-full text-xs font-bold text-gray-600">
-                        Shopify Plus
-                      </span>
-                      <span className="px-3 py-1 bg-gray-100 rounded-full text-xs font-bold text-gray-600">
-                        Hydrogen
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ROI Calculator */}
-      <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-24">
-        <div className="bg-secondary text-white rounded-3xl p-8 lg:p-12 shadow-2xl overflow-hidden relative">
-          <div className="absolute -top-[20%] -right-[10%] w-[600px] h-[600px] bg-primary/20 rounded-full blur-[100px] pointer-events-none"></div>
-
-          <div className="grid lg:grid-cols-2 gap-16 relative z-10">
-            <div>
-              <span className="text-primary font-bold uppercase tracking-wider text-sm mb-4 block">
-                {t('ecommerce_page.roi_calculator.label')}
-              </span>
-              <h2 className="font-display font-bold text-3xl sm:text-4xl mb-6">
-                {t('ecommerce_page.roi_calculator.title')}
-              </h2>
-              <p className="text-gray-400 mb-8 leading-relaxed">
-                {t('ecommerce_page.roi_calculator.description')} <br />
-                <strong className="text-white">
-                  {t('ecommerce_page.roi_calculator.instruction')}
-                </strong>
-              </p>
-
-              <div className="space-y-6">
-                <div>
-                  <label className="text-sm text-gray-400 block mb-2 font-bold">
-                    {t('ecommerce_page.roi_calculator.visitors_label')}
-                  </label>
-                  <input
-                    type="range"
-                    min="1000"
-                    max="100000"
-                    step="1000"
-                    value={monthlyVisitors}
-                    onChange={(e) => setMonthlyVisitors(parseInt(e.target.value))}
-                    className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-primary"
-                  />
-                  <div className="text-right font-mono text-primary font-bold mt-1">
-                    {monthlyVisitors.toLocaleString()}{' '}
-                    {t('ecommerce_page.roi_calculator.visitors_unit')}
-                  </div>
-                </div>
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label className="text-sm text-gray-400 block mb-2 font-bold">
-                      {t('ecommerce_page.roi_calculator.conversion_label')}
-                    </label>
-                    <div className="relative">
-                      <Input
-                        type="number"
-                        step="0.1"
-                        inputMode="decimal"
-                        value={conversionRate}
-                        onChange={(e) => setConversionRate(parseFloat(e.target.value))}
-                        className="font-mono"
-                        wrapperClassName="w-full"
-                      />
-                      <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">
-                        {t('ecommerce_page.roi_calculator.conversion_unit')}
-                      </span>
-                    </div>
-                  </div>
-                  <div>
-                    <label className="text-sm text-gray-400 block mb-2 font-bold">
-                      {t('ecommerce_page.roi_calculator.aov_label')}
-                    </label>
-                    <div className="relative">
-                      <Input
-                        type="number"
-                        inputMode="decimal"
-                        value={avgOrderValue}
-                        onChange={(e) => setAvgOrderValue(parseFloat(e.target.value))}
-                        className="font-mono"
-                        wrapperClassName="w-full"
-                      />
-                      <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">
-                        €
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-sm flex flex-col justify-center">
-              <h3 className="text-xl font-bold mb-6 border-b border-white/10 pb-4">
-                {t('ecommerce_page.roi_calculator.result_title')}
-              </h3>
-
-              <div className="space-y-6">
-                <div className="flex justify-between items-end">
-                  <span className="text-gray-400 text-sm">
-                    {t('ecommerce_page.roi_calculator.result_monthly')}
-                  </span>
-                  <span className="text-2xl font-bold text-green-400 font-mono">
-                    +<CountUp from={0} to={Math.round(monthlyIncrease)} duration={1} /> €
-                  </span>
-                </div>
-                <div className="flex justify-between items-end">
-                  <span className="text-gray-400 text-sm">
-                    {t('ecommerce_page.roi_calculator.result_yearly')}
-                  </span>
-                  <span className="text-4xl font-black text-primary font-mono">
-                    +<CountUp from={0} to={Math.round(yearlyIncrease)} duration={1.5} /> €
-                  </span>
-                </div>
-              </div>
-
-              <div className="mt-8 pt-6 border-t border-white/10 text-xs text-gray-500 text-center">
-                {t('ecommerce_page.roi_calculator.explanation')}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Comparison */}
-      <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-24">
-        <div className="text-center mb-16">
-          <h2 className="font-display font-bold text-3xl sm:text-4xl text-gray-900 mb-4">
-            {t('ecommerce_page.comparison.title')}
-          </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            {t('ecommerce_page.comparison.description')}
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Shopify Card */}
-          <div className="bg-white p-8 rounded-3xl shadow-lg border-t-8 border-[#95BF47] relative overflow-hidden">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 bg-[#95BF47]/20 rounded-xl flex items-center justify-center text-[#5E8E3E] font-bold text-xl">
-                <Icon name="shopping_bag" />
-              </div>
-              <h3 className="font-bold text-2xl text-gray-900">
-                {t('ecommerce_page.comparison.shopify.title')}
-              </h3>
-            </div>
-            <ul className="space-y-4 mb-8">
-              {(
-                (t('ecommerce_page.comparison.shopify.features', {
-                  returnObjects: true,
-                }) as string[]) || []
-              ).map((item, i) => (
-                <li key={i} className="flex items-start text-gray-600 text-sm">
-                  <Icon name="check" className="text-green-500 mr-2 text-lg shrink-0" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <div className="mt-auto bg-gray-50 p-4 rounded-xl text-center text-sm font-bold text-gray-500">
-              {t('ecommerce_page.comparison.shopify.recommendation')}
-            </div>
+      <section className="relative pt-32 pb-20 px-6 sm:px-8 lg:px-12 overflow-hidden bg-background-light">
+        <div className="max-w-7xl mx-auto text-center relative z-10">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 text-primary text-sm font-bold mb-8 border border-primary/10">
+            <Icon name="shopping_cart" className="w-4 h-4" />
+            <span>E-Commerce Experts</span>
           </div>
 
-          {/* Custom/Headless Card */}
-          <div className="bg-white p-8 rounded-3xl shadow-lg border-t-8 border-primary relative overflow-hidden">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary font-bold text-xl">
-                <Icon name="code" />
-              </div>
-              <h3 className="font-bold text-2xl text-gray-900">
-                {t('ecommerce_page.comparison.custom.title')}
-              </h3>
-            </div>
-            <ul className="space-y-4 mb-8">
-              {(
-                (t('ecommerce_page.comparison.custom.features', {
-                  returnObjects: true,
-                }) as string[]) || []
-              ).map((item, i) => (
-                <li key={i} className="flex items-start text-gray-600 text-sm">
-                  <Icon name="check" className="text-green-500 mr-2 text-lg shrink-0" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <div className="mt-auto bg-gray-50 p-4 rounded-xl text-center text-sm font-bold text-gray-500">
-              {t('ecommerce_page.comparison.custom.recommendation')}
-            </div>
-          </div>
-        </div>
-      </section>
+          <h1 className="font-display font-black text-5xl sm:text-7xl lg:text-8xl tracking-tight leading-[0.9] mb-8 text-secondary uppercase">
+            {t('ecommerce_page.hero.title_anim')}
+            <br />
+            <span className="text-primary">{t('ecommerce_page.hero.title_static')}</span>
+          </h1>
 
-      {/* Features Grid */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="font-display font-bold text-3xl sm:text-4xl text-gray-900 mb-4">
-              {t('ecommerce_page.features.title')}
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              {t('ecommerce_page.features.description')}
+          <div className="max-w-3xl mx-auto mb-12">
+            <p className="text-xl sm:text-2xl font-light text-slate-600 leading-relaxed">
+              {t('ecommerce_page.hero.description')}
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                key: 'shopify_plus',
-                icon: 'storefront',
-              },
-              {
-                key: 'headless',
-                icon: 'hub',
-              },
-              {
-                key: 'performance',
-                icon: 'speed',
-              },
-              {
-                key: 'erp',
-                icon: 'sync_alt',
-              },
-              {
-                key: 'checkout',
-                icon: 'shopping_bag',
-              },
-              {
-                key: 'mobile',
-                icon: 'smartphone',
-              },
-            ].map((feature, i) => (
-              <div
-                key={i}
-                className="p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-xl transition-all border border-gray-100 group"
-              >
-                <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
-                  <Icon name={feature.icon} />
-                </div>
-                <h3 className="font-bold text-xl text-gray-900 mb-3">
-                  {t(`ecommerce_page.features.items.${feature.key}.title`)}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {t(`ecommerce_page.features.items.${feature.key}.desc`)}
-                </p>
-              </div>
-            ))}
+          <div className="flex flex-col sm:flex-row justify-center gap-6">
+            <Button size="lg" variant="primary" rightIcon={<Icon name="arrow_right" />}>
+              {t('ecommerce_page.hero.cta_primary')}
+            </Button>
+            <Button size="lg" variant="outline" rightIcon={<Icon name="storefront" />}>
+              {t('ecommerce_page.hero.cta_secondary')}
+            </Button>
+          </div>
+        </div>
+
+        {/* Hero Visual */}
+        <div className="mt-20 relative max-w-6xl mx-auto perspective-1000">
+          <GlareHover className="rounded-2xl overflow-hidden shadow-2xl transform rotate-x-12">
+            <OptimizedImage
+              src="/images/services/ecommerce-dashboard-mockup.webp"
+              alt="E-Commerce Dashboard"
+              className="w-full h-auto"
+            />
+          </GlareHover>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-20 bg-slate-900 text-white">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+          <div>
+            <div className="text-5xl font-display font-bold text-primary mb-2">
+              <CountUp from={0} to={250} duration={2} className="" />%
+            </div>
+            <div className="text-sm uppercase tracking-widest text-slate-400">
+              {t('ecommerce_page.stats.conversion_label')}
+            </div>
+          </div>
+          <div>
+            <div className="text-5xl font-display font-bold text-primary mb-2">
+              <CountUp from={0} to={0.5} duration={2} className="" />s
+            </div>
+            <div className="text-sm uppercase tracking-widest text-slate-400">
+              {t('ecommerce_page.stats.load_time_label')}
+            </div>
+          </div>
+          <div>
+            <div className="text-5xl font-display font-bold text-primary mb-2">
+              <CountUp from={0} to={100} duration={2} className="" />
+            </div>
+            <div className="text-sm uppercase tracking-widest text-slate-400">
+              {t('ecommerce_page.stats.core_vitals_label')}
+            </div>
+          </div>
+          <div>
+            <div className="text-5xl font-display font-bold text-primary mb-2">
+              Top 1%
+            </div>
+            <div className="text-sm uppercase tracking-widest text-slate-400">
+              {t('ecommerce_page.stats.tech_label')}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Tech Stack */}
-      <section className="py-24 bg-surface-light border-y border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="font-display font-bold text-3xl sm:text-4xl text-gray-900 mb-6">
-                {t('ecommerce_page.tech_stack.title')}
-              </h2>
-              <p className="text-gray-600 mb-8 leading-relaxed">
-                {t('ecommerce_page.tech_stack.description')}
-              </p>
-              <ul className="space-y-4">
-                {(
-                  (t('ecommerce_page.tech_stack.items', { returnObjects: true }) as string[]) || []
-                ).map((item, i) => (
-                  <li key={i} className="flex items-center text-gray-700 font-medium">
-                    <Icon name="check_circle" className="text-primary mr-3" />
-                    {item}
+      {/* Comparison Section (Shopify vs Custom) */}
+      <section className="py-24 bg-surface-light">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-display font-bold mb-4">{t('ecommerce_page.comparison.title')}</h2>
+            <p className="text-xl text-slate-600">{t('ecommerce_page.comparison.description')}</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Shopify Card */}
+            <div className="bg-white p-8 rounded-3xl shadow-lg border border-slate-100 hover:shadow-xl transition-shadow">
+              <div className="w-16 h-16 bg-[#95BF47]/20 rounded-2xl flex items-center justify-center mb-6">
+                <Icon name="shopping_bag" className="text-3xl text-[#95BF47]" weight="fill" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">{t('ecommerce_page.comparison.shopify.title')}</h3>
+              <ul className="space-y-4 mb-8">
+                {(t('ecommerce_page.comparison.shopify.features', { returnObjects: true }) as string[]).map((feat, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <Icon name="check_circle" className="text-green-500 mt-1" weight="fill" />
+                    <span className="text-slate-600">{feat}</span>
                   </li>
                 ))}
               </ul>
+              <div className="p-4 bg-slate-50 rounded-xl text-sm font-semibold text-slate-700">
+                {t('ecommerce_page.comparison.shopify.recommendation')}
+              </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-white p-6 rounded-2xl shadow-sm flex items-center justify-center h-32 border border-gray-100 font-bold text-gray-400 text-xl">
-                Shopify
+
+            {/* Custom Headless Card */}
+            <div className="bg-slate-900 text-white p-8 rounded-3xl shadow-lg border border-slate-800 hover:shadow-2xl transition-shadow transform md:-translate-y-4">
+              <div className="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center mb-6">
+                <Icon name="code" className="text-3xl text-primary" weight="fill" />
               </div>
-              <div className="bg-white p-6 rounded-2xl shadow-sm flex items-center justify-center h-32 border border-gray-100 font-bold text-gray-400 text-xl">
-                WooCommerce
-              </div>
-              <div className="bg-white p-6 rounded-2xl shadow-sm flex items-center justify-center h-32 border border-gray-100 font-bold text-gray-400 text-xl">
-                React
-              </div>
-              <div className="bg-white p-6 rounded-2xl shadow-sm flex items-center justify-center h-32 border border-gray-100 font-bold text-gray-400 text-xl">
-                Stripe
+              <h3 className="text-2xl font-bold mb-4">{t('ecommerce_page.comparison.custom.title')}</h3>
+              <ul className="space-y-4 mb-8">
+                {(t('ecommerce_page.comparison.custom.features', { returnObjects: true }) as string[]).map((feat, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <Icon name="check_circle" className="text-primary mt-1" weight="fill" />
+                    <span className="text-slate-300">{feat}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="p-4 bg-slate-800 rounded-xl text-sm font-semibold text-primary-light">
+                {t('ecommerce_page.comparison.custom.recommendation')}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-24">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="font-display font-bold text-3xl sm:text-4xl text-gray-900 mb-6">
-            {t('ecommerce_page.cta_section.title')}
+      {/* Tech Stack Logo Loop */}
+      <section className="py-16 bg-white border-y border-slate-100">
+        <div className="max-w-7xl mx-auto px-6 mb-8 text-center">
+          <span className="uppercase tracking-widest text-xs font-bold text-slate-400">Powering Next-Gen Commerce</span>
+        </div>
+        <LogoLoop
+          logos={[
+            { node: <span className="text-2xl font-bold text-slate-400">Shopify Plus</span> },
+            { node: <span className="text-2xl font-bold text-slate-400">Hydrogen</span> },
+            { node: <span className="text-2xl font-bold text-slate-400">Next.js Commerce</span> },
+            { node: <span className="text-2xl font-bold text-slate-400">Sanity.io</span> },
+            { node: <span className="text-2xl font-bold text-slate-400">Stripe</span> },
+            { node: <span className="text-2xl font-bold text-slate-400">Algolia</span> },
+            { node: <span className="text-2xl font-bold text-slate-400">Klaviyo</span> },
+            { node: <span className="text-2xl font-bold text-slate-400">Recharge</span> },
+          ]}
+          speed={40}
+        />
+      </section>
+
+      {/* ROI Calculator Section (Mockup for now, fully interactive later if needed) */}
+      <section className="py-24 bg-gradient-to-br from-slate-900 to-slate-800 text-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
+
+        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+          <div className="inline-block px-4 py-1 rounded-full bg-primary/20 text-primary font-bold text-sm mb-6">
+            {t('ecommerce_page.roi_calculator.label')}
+          </div>
+          <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
+            {t('ecommerce_page.roi_calculator.title')}
           </h2>
-          <p className="text-xl text-gray-600 mb-8">
-            {t('ecommerce_page.cta_section.description')}
+          <p className="text-xl text-slate-300 mb-12">
+            {t('ecommerce_page.roi_calculator.description')}
           </p>
-          <NavLink
-            to="/contact"
-            className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl bg-primary hover:bg-primary-dark shadow-lg hover:shadow-xl transition-all"
-          >
-            {t('ecommerce_page.cta_section.button')}
-          </NavLink>
+
+          {/* Simple Visual Calculator Placeholder */}
+          <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl p-8 md:p-12 text-left">
+            <div className="grid md:grid-cols-3 gap-8 mb-12">
+              <div>
+                <label className="block text-sm font-bold text-slate-400 mb-2 uppercase tracking-wide">Monthly Visitors</label>
+                <div className="text-4xl font-mono font-bold text-white">50,000</div>
+                <input type="range" className="w-full mt-4 accent-primary" />
+              </div>
+              <div>
+                <label className="block text-sm font-bold text-slate-400 mb-2 uppercase tracking-wide">Conversion Rate</label>
+                <div className="text-4xl font-mono font-bold text-primary">2.5%</div>
+                <div className="text-xs text-green-400 mt-1 flex items-center gap-1">
+                  <Icon name="trending_up" weight="bold" /> +0.8% with Coday
+                </div>
+              </div>
+              <div>
+                <label className="block text-sm font-bold text-slate-400 mb-2 uppercase tracking-wide">Avg. Order Value</label>
+                <div className="text-4xl font-mono font-bold text-white">€85</div>
+              </div>
+            </div>
+
+            <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
+              <div>
+                <div className="text-sm text-slate-400 mb-1">Estimated Monthly Revenue Increase</div>
+                <div className="text-5xl font-display font-bold text-green-400">+ €34,000</div>
+              </div>
+              <Button size="lg" variant="primary" className="w-full md:w-auto">
+                Get Your Audit
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
-    </div>
+
+      {/* FAQ Section */}
+      <section className="py-24 bg-background-light">
+        <div className="max-w-3xl mx-auto px-6">
+          <h2 className="text-3xl font-bold mb-12 text-center">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            <div className="bg-white p-6 rounded-xl shadow-sm cursor-pointer hover:shadow-md transition-shadow">
+              <h3 className="font-bold text-lg mb-2">How long does a typical shop migration take?</h3>
+              <p className="text-slate-600">For Shopify Plus migrations, we typically need 4-8 weeks depending on data complexity.</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl shadow-sm cursor-pointer hover:shadow-md transition-shadow">
+              <h3 className="font-bold text-lg mb-2">Do you handle ERP integrations?</h3>
+              <p className="text-slate-600">Yes, we are experts in connecting SAP, Microsoft Dynamics, and Weclapp to Shopify and custom frontends.</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl shadow-sm cursor-pointer hover:shadow-md transition-shadow">
+              <h3 className="font-bold text-lg mb-2">What about SEO during migration?</h3>
+              <p className="text-slate-600">We guarantee zero traffic loss. Our migration protocols include comprehensive redirect maps and SEO monitoring.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-24 relative overflow-hidden bg-slate-900 text-white text-center">
+        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
+        <div className="max-w-4xl mx-auto px-6 relative z-10">
+          <h2 className="text-5xl md:text-6xl font-display font-black mb-8 uppercase">
+            {t('ecommerce_page.cta_section.title')}
+          </h2>
+          <p className="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
+            {t('ecommerce_page.cta_section.description')}
+          </p>
+          <div className="flex justify-center gap-4">
+            <Button size="lg" variant="primary" className="px-12 py-6 text-lg">
+              {t('ecommerce_page.cta_section.button')}
+            </Button>
+          </div>
+        </div>
+      </section>
+    </>
   );
 };
 

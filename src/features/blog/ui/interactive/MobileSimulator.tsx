@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Smartphone, Monitor, XCircle, CheckCircle } from 'lucide-react';
+import { DeviceMobile, Monitor, XCircle, CheckCircle } from '@phosphor-icons/react';
 import { clsx } from "clsx";
 import { useTranslation, Trans } from 'react-i18next';
 
@@ -11,11 +11,11 @@ export const MobileSimulator: React.FC = () => {
     return (
         <div className="my-12 bg-gray-900 rounded-3xl p-8 border border-gray-800 shadow-2xl overflow-hidden relative">
             <div className="absolute top-0 right-0 p-4 opacity-10">
-                <Smartphone size={120} className="text-white" />
+                <DeviceMobile size={120} className="text-white" />
             </div>
 
             <h3 className="text-2xl font-bold text-white mb-6 relative z-10 flex items-center gap-3">
-                <Smartphone className="text-blue-500" />
+                <DeviceMobile className="text-blue-500" />
                 {t('blog:mobileSimulator.title')}
             </h3>
 
@@ -103,7 +103,7 @@ export const MobileSimulator: React.FC = () => {
 
             <div className="mt-6 flex justify-center text-sm text-gray-400">
                 <button onClick={() => setDevice(d => d === 'mobile' ? 'desktop' : 'mobile')} className="flex items-center gap-2 hover:text-white transition-colors">
-                    {device === 'mobile' ? <Monitor size={16} /> : <Smartphone size={16} />}
+                    {device === 'mobile' ? <Monitor size={16} /> : <DeviceMobile size={16} />}
                     {device === 'mobile' ? t('blog:mobileSimulator.switchToDesktop') : t('blog:mobileSimulator.switchToMobile')} {t('blog:mobileSimulator.view')}
                 </button>
             </div>

@@ -1,0 +1,144 @@
+
+> coday@2.1.0 build
+> react-router build && node scripts/generate-sitemap.js
+
+vite v6.4.1 building for production...
+transforming...
+✓ 1846 modules transformed.
+✗ Build failed in 752ms
+[vite:build-import-analysis] [plugin vite:build-import-analysis] src/content/case-studies/batherm.de.mdx (24:4): Failed to parse source for import analysis because the content contains invalid JS syntax. If you are using JSX, make sure to name the file with the .jsx or .tsx extension.
+file: /Users/umurey/agency-domination/src/content/case-studies/batherm.de.mdx:24:4
+
+22: <a href="https://www.batherm.de" target="_blank" rel="noopener noreferrer" className="inline-block bg-primary text-wh...
+23:   🌐 Website besuchen (batherm.de)
+24: </a>
+        ^
+25: 
+26: Batherm steht seit über 20 Jahren für handwerkliche Exzellenz im Bereich Sanitär, Heizung und Klima. Als zertifiziert...
+
+    at getRollupError (file:///Users/umurey/agency-domination/node_modules/rollup/dist/es/shared/parseAst.js:402:41)
+    at error (file:///Users/umurey/agency-domination/node_modules/rollup/dist/es/shared/parseAst.js:398:42)
+    at Object.error (file:///Users/umurey/agency-domination/node_modules/rollup/dist/es/shared/node-entry.js:22226:20)
+    at Object.error (file:///Users/umurey/agency-domination/node_modules/rollup/dist/es/shared/node-entry.js:21275:42)
+    at Object.handler (file:///Users/umurey/agency-domination/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:45418:16) {
+  pos: 1128,
+  loc: {
+    column: 4,
+    file: '/Users/umurey/agency-domination/src/content/case-studies/batherm.de.mdx',
+    line: 24
+  },
+  frame: '22: <a href="https://www.batherm.de" target="_blank" rel="noopener noreferrer" className="inline-block bg-primary text-wh...\n' +
+    '23:   🌐 Website besuchen (batherm.de)\n' +
+    '24: </a>\n' +
+    '        ^\n' +
+    '25: \n' +
+    '26: Batherm steht seit über 20 Jahren für handwerkliche Exzellenz im Bereich Sanitär, Heizung und Klima. Als zertifiziert...',
+  id: '/Users/umurey/agency-domination/src/content/case-studies/batherm.de.mdx',
+  hook: 'transform',
+  code: 'PLUGIN_ERROR',
+  plugin: 'vite:build-import-analysis',
+  watchFiles: [
+    '/Users/umurey/agency-domination/src/root.tsx',
+    '/Users/umurey/agency-domination/src/entry.client.tsx',
+    '/Users/umurey/agency-domination/src/widgets/layout/MainLayout.tsx',
+    '/Users/umurey/agency-domination/src/pages/Services.tsx',
+    '/Users/umurey/agency-domination/src/pages/services/IndustryOverview.tsx',
+    '/Users/umurey/agency-domination/src/pages/Home.tsx',
+    '/Users/umurey/agency-domination/src/pages/services/IndustryDetail.tsx',
+    '/Users/umurey/agency-domination/src/pages/services/WebDevelopment.tsx',
+    '/Users/umurey/agency-domination/src/pages/services/Seo.tsx',
+    '/Users/umurey/agency-domination/src/pages/services/Performance.tsx',
+    '/Users/umurey/agency-domination/src/pages/services/WebDesign.tsx',
+    '/Users/umurey/agency-domination/src/pages/services/Consulting.tsx',
+    '/Users/umurey/agency-domination/src/pages/services/development/WebApps.tsx',
+    '/Users/umurey/agency-domination/src/pages/services/development/HeadlessCms.tsx',
+    '/Users/umurey/agency-domination/src/pages/services/development/ApiIntegration.tsx',
+    '/Users/umurey/agency-domination/src/pages/services/development/Ecommerce.tsx',
+    '/Users/umurey/agency-domination/src/pages/services/development/Migration.tsx',
+    '/Users/umurey/agency-domination/src/pages/services/EnterpriseWeb.tsx',
+    '/Users/umurey/agency-domination/src/pages/services/design/UiUx.tsx',
+    '/Users/umurey/agency-domination/src/pages/services/design/BrandIdentity.tsx',
+    '/Users/umurey/agency-domination/src/widgets/layout/LanguageLayout.tsx',
+    '/Users/umurey/agency-domination/src/pages/services/design/UxAudit.tsx',
+    '/Users/umurey/agency-domination/src/pages/industries/Gastronomie.tsx',
+    '/Users/umurey/agency-domination/src/pages/industries/Handwerk.tsx',
+    '/Users/umurey/agency-domination/src/pages/industries/Immobilien.tsx',
+    '/Users/umurey/agency-domination/src/pages/industries/Gesundheit.tsx',
+    '/Users/umurey/agency-domination/src/pages/services/design/DesignSystems.tsx',
+    '/Users/umurey/agency-domination/src/pages/industries/Dienstleistung.tsx',
+    '/Users/umurey/agency-domination/src/pages/services/ServiceDetail.tsx',
+    '/Users/umurey/agency-domination/src/widgets/layout/RootRedirector.tsx',
+    '/Users/umurey/agency-domination/src/pages/industries/Retail.tsx',
+    '/Users/umurey/agency-domination/src/pages/Calculator.tsx',
+    '/Users/umurey/agency-domination/src/pages/work/case-studies/BathermWrapper.tsx',
+    '/Users/umurey/agency-domination/src/pages/Process.tsx',
+    '/Users/umurey/agency-domination/src/pages/work/ProjectDetail.tsx',
+    '/Users/umurey/agency-domination/src/pages/work/Work.tsx',
+    '/Users/umurey/agency-domination/src/pages/Contact.tsx',
+    '/Users/umurey/agency-domination/src/pages/legal/Impressum.tsx',
+    '/Users/umurey/agency-domination/src/pages/legal/Privacy.tsx',
+    '/Users/umurey/agency-domination/src/pages/legal/Terms.tsx',
+    '/Users/umurey/agency-domination/src/pages/Dashboard.tsx',
+    '/Users/umurey/agency-domination/src/pages/Booking.tsx',
+    '/Users/umurey/agency-domination/src/pages/Packages.tsx',
+    '/Users/umurey/agency-domination/src/pages/knowledge/BlogPost.tsx',
+    '/Users/umurey/agency-domination/src/pages/knowledge/Academy.tsx',
+    '/Users/umurey/agency-domination/src/pages/knowledge/Blog.tsx',
+    '/Users/umurey/agency-domination/src/pages/knowledge/Newsletter.tsx',
+    '/Users/umurey/agency-domination/src/pages/Careers.tsx',
+    '/Users/umurey/agency-domination/src/pages/career/Culture.tsx',
+    '/Users/umurey/agency-domination/src/pages/knowledge/Whitepapers.tsx',
+    '/Users/umurey/agency-domination/src/pages/career/Jobs.tsx',
+    '/Users/umurey/agency-domination/src/pages/career/Benefits.tsx',
+    '/Users/umurey/agency-domination/src/pages/Analyzer.tsx',
+    '/Users/umurey/agency-domination/src/pages/NotFound.tsx',
+    '/Users/umurey/agency-domination/package.json',
+    '/Users/umurey/agency-domination/src/i18n.ts',
+    '/Users/umurey/agency-domination/node_modules/react/jsx-runtime.js',
+    '/Users/umurey/agency-domination/node_modules/react/index.js',
+    '/Users/umurey/agency-domination/node_modules/react-dom/client.js',
+    '/Users/umurey/agency-domination/node_modules/@sentry/react/build/esm/index.js',
+    '/Users/umurey/agency-domination/node_modules/react-router/dist/development/dom-export.mjs',
+    '/Users/umurey/agency-domination/src/data/industryImages.ts',
+    '/Users/umurey/agency-domination/src/data/industries.ts',
+    '/Users/umurey/agency-domination/src/shared/ui/OptimizedImage.tsx',
+    '/Users/umurey/agency-domination/src/shared/ui/LocalizedLink.tsx',
+    '/Users/umurey/agency-domination/src/shared/ui/SeoHead.tsx',
+    '/Users/umurey/agency-domination/node_modules/react-router/dist/development/index.mjs',
+    '/Users/umurey/agency-domination/src/shared/ui/Icon.tsx',
+    '/Users/umurey/agency-domination/node_modules/lucide-react/dist/esm/lucide-react.js',
+    '/Users/umurey/agency-domination/src/shared/ui/BlurText.tsx',
+    '/Users/umurey/agency-domination/src/shared/ui/GradientText.tsx',
+    '/Users/umurey/agency-domination/src/features/careers/CareerPathBuilder.tsx',
+    '/Users/umurey/agency-domination/src/features/careers/PerksGrid.tsx',
+    '/Users/umurey/agency-domination/node_modules/react-i18next/dist/es/index.js',
+    '/Users/umurey/agency-domination/src/data/serviceImages.ts',
+    '/Users/umurey/agency-domination/src/shared/ui/Button.tsx',
+    '/Users/umurey/agency-domination/src/shared/ui/ScrollFloat.tsx',
+    '/Users/umurey/agency-domination/src/shared/ui/RotatingText.tsx',
+    '/Users/umurey/agency-domination/src/shared/ui/GlareHover.tsx',
+    '/Users/umurey/agency-domination/src/shared/ui/MagicBento.tsx',
+    '/Users/umurey/agency-domination/src/shared/lib/utils.ts',
+    '/Users/umurey/agency-domination/src/features/seo/RankingPeriodicTable.tsx',
+    '/Users/umurey/agency-domination/src/features/seo/TrafficROICalculator.tsx',
+    '/Users/umurey/agency-domination/node_modules/react/cjs/react.production.js',
+    '/Users/umurey/agency-domination/node_modules/react/cjs/react-jsx-runtime.production.js',
+    '/Users/umurey/agency-domination/node_modules/@sentry/react/build/esm/error.js',
+    '/Users/umurey/agency-domination/node_modules/@sentry/react/build/esm/profiler.js',
+    '/Users/umurey/agency-domination/node_modules/@sentry/react/build/esm/sdk.js',
+    '/Users/umurey/agency-domination/node_modules/@sentry/react/build/esm/errorboundary.js',
+    '/Users/umurey/agency-domination/node_modules/@sentry/react/build/esm/tanstackrouter.js',
+    '/Users/umurey/agency-domination/node_modules/@sentry/react/build/esm/redux.js',
+    '/Users/umurey/agency-domination/node_modules/@sentry/react/build/esm/reactrouterv3.js',
+    '/Users/umurey/agency-domination/node_modules/@sentry/react/build/esm/reactrouterv6.js',
+    '/Users/umurey/agency-domination/node_modules/@sentry/react/build/esm/reactrouter.js',
+    '/Users/umurey/agency-domination/node_modules/@sentry/react/build/esm/reactrouterv7.js',
+    '/Users/umurey/agency-domination/node_modules/@sentry/browser/build/npm/esm/prod/index.js',
+    '/Users/umurey/agency-domination/node_modules/react-dom/cjs/react-dom-client.production.js',
+    '/Users/umurey/agency-domination/node_modules/react-dom/index.js',
+    '/Users/umurey/agency-domination/node_modules/react-router/dist/development/chunk-JZWAC4HX.mjs',
+    '/Users/umurey/agency-domination/node_modules/react-router/dist/development/chunk-4LKRSAEJ.mjs',
+    ... 1707 more items
+  ],
+  Symbol(augmented): true
+}

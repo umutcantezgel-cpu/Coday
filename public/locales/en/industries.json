@@ -9,142 +9,142 @@
       "review_management": "Automated Review Management"
     }
   },
-  "handwerk": {
+  "dienstleistung": {
+    "features": {
+      "cta_funnel": "Request Funnel Analysis",
+      "grid": {
+        "nurture": {
+          "desc": "Send relevant case studies via email before you even pick up the phone.",
+          "title": "Auto Nurture"
+        },
+        "qual": {
+          "desc": "No more wasting time with customers who are just \"looking around\".",
+          "title": "Pre-qualification"
+        },
+        "roi": {
+          "desc": "See exactly how much revenue every Euro of ad budget has generated.",
+          "title": "Measurable Success"
+        }
+      },
+      "hero_desc": "We build digital sales machines for consultants, agencies, and service providers. From the first ad to the appointment in the calendar – fully automated.",
+      "hero_tags": "Stop Cold Calling.\nSystematic Success."
+    },
     "hero": {
-      "label": "Digitization for Craftsmen",
-      "title_1": "More Orders.",
-      "title_2": "Less Paperwork.",
-      "description": "We help roofers, plumbers, and electricians find the right employees and automatically pre-qualify dream customers."
-    },
-    "recruiting": {
-      "label": "Talent Acquisition",
-      "title": "Find Skilled Workers.",
-      "subtitle": "Without Recruiters.",
-      "description": "Good craftsmen aren't unemployed. They're on social media. We reach them where they spend their free time."
-    },
-    "local_seo": {
-      "label": "Local Visibility",
-      "title": "Be #1 in Your Region.",
-      "description": "When someone in your city searches for \"roofer\" or \"bathroom renovation\", you need to be at the top. Not somewhere on page 2."
+      "description": "We help consultants, agencies, and freelancers showcase their expertise online and attract clients.",
+      "label": "Digitization for Service Providers",
+      "title_1": "More Clients.",
+      "title_2": "Less Cold Calling."
     }
   },
   "gastronomie": {
-    "hero": {
-      "label": "Digitization for Gastronomy",
-      "title_1": "More Guests.",
-      "title_2": "Less Stress.",
-      "description": "We help restaurants, cafés, and hotels optimize their online presence and automate reservations."
-    },
     "features": {
-      "hero_tags": "Full Tables.\nHigher Revenue.",
-      "hero_desc": "We turn your website into a booking machine. Reduce no-shows and save on high delivery service commissions.",
       "cta_demo": "Schedule Demo",
-      "section_title": "The Digital Gastronomy System",
-      "section_subtitle": "Everything you need for modern operations.",
       "grid": {
+        "events": {
+          "desc": "Automated pages for Christmas parties and weddings.",
+          "title": "Event Marketing"
+        },
         "menu": {
-          "title": "Digital Menu",
-          "desc": "Relieve your service staff. Guests order and pay directly at the table via smartphone."
+          "desc": "Relieve your service staff. Guests order and pay directly at the table via smartphone.",
+          "title": "Digital Menu"
         },
         "shop": {
-          "title": "Own Delivery Shop",
-          "desc": "Stop paying 30% commission. Keep your margin."
-        },
-        "events": {
-          "title": "Event Marketing",
-          "desc": "Automated pages for Christmas parties and weddings."
+          "desc": "Stop paying 30% commission. Keep your margin.",
+          "title": "Own Delivery Shop"
         }
-      }
-    }
-  },
-  "immobilien": {
-    "hero": {
-      "label": "Digitization for Real Estate",
-      "title_1": "More Leads.",
-      "title_2": "Better Properties.",
-      "description": "We help real estate agents and developers digitally attract qualified buyers and sellers."
+      },
+      "hero_desc": "We turn your website into a booking machine. Reduce no-shows and save on high delivery service commissions.",
+      "hero_tags": "Full Tables.\nHigher Revenue.",
+      "section_subtitle": "Everything you need for modern operations.",
+      "section_title": "The Digital Gastronomy System"
     },
-    "features": {
-      "virtual_tour": {
-        "title": "Sell properties,\nbefore you show them.",
-        "subtitle": "Save yourself the sightseeing tourism. With digital exposés and virtual tours, you filter interested parties automatically.",
-        "cta_demo": "Request Demo",
-        "disclaimer": "*Interactive example of a 360° tour integration"
-      },
-      "expose": {
-        "label": "Marketing of the Future",
-        "title": "The End of the PDF Attachment.",
-        "description": "PDFs are static. Web exposés live. Impress owners already in the purchasing conversation with state-of-the-art technology."
-      },
-      "grid": {
-        "staging": {
-          "title": "Virtual Staging",
-          "desc": "Furnish empty rooms digitally. Arouse emotions without hauling furniture."
-        },
-        "login": {
-          "title": "Owner Login",
-          "desc": "Full transparency for your clients. Live status of all activities."
-        },
-        "followup": {
-          "title": "Autom. Follow-up",
-          "desc": "Email sequences for prospects who are not yet ready."
-        }
-      }
+    "hero": {
+      "description": "We help restaurants, cafés, and hotels optimize their online presence and automate reservations.",
+      "label": "Digitization for Gastronomy",
+      "title_1": "More Guests.",
+      "title_2": "Less Stress."
     }
   },
   "gesundheit": {
+    "features": {
+      "cta_analysis": "Start Practice Analysis",
+      "hero_desc": "Relieve your practice team with digital anamnesis, online appointments, and automated recall management. GDPR compliant.",
+      "hero_tags": "Less Administration.\nMore Time for Patients.",
+      "trust_desc": "Medical data is sensitive. Our solutions are secure and compliant.",
+      "trust_title": "Security First"
+    },
     "hero": {
+      "description": "We help practices and clinics strengthen their digital presence and automate appointment bookings.",
       "label": "Digitization for Healthcare",
       "title_1": "More Patients.",
-      "title_2": "Less Administration.",
-      "description": "We help practices and clinics strengthen their digital presence and automate appointment bookings."
-    },
-    "features": {
-      "hero_tags": "Less Administration.\nMore Time for Patients.",
-      "hero_desc": "Relieve your practice team with digital anamnesis, online appointments, and automated recall management. GDPR compliant.",
-      "cta_analysis": "Start Practice Analysis",
-      "trust_title": "Security First",
-      "trust_desc": "Medical data is sensitive. Our solutions are secure and compliant."
+      "title_2": "Less Administration."
     }
   },
-  "dienstleistung": {
+  "handwerk": {
     "hero": {
-      "label": "Digitization for Service Providers",
-      "title_1": "More Clients.",
-      "title_2": "Less Cold Calling.",
-      "description": "We help consultants, agencies, and freelancers showcase their expertise online and attract clients."
+      "description": "We help roofers, plumbers, and electricians find the right employees and automatically pre-qualify dream customers.",
+      "label": "Digitization for Craftsmen",
+      "title_1": "More Orders.",
+      "title_2": "Less Paperwork."
     },
+    "local_seo": {
+      "description": "When someone in your city searches for \"roofer\" or \"bathroom renovation\", you need to be at the top. Not somewhere on page 2.",
+      "label": "Local Visibility",
+      "title": "Be #1 in Your Region."
+    },
+    "recruiting": {
+      "description": "Good craftsmen aren't unemployed. They're on social media. We reach them where they spend their free time.",
+      "label": "Talent Acquisition",
+      "subtitle": "Without Recruiters.",
+      "title": "Find Skilled Workers."
+    }
+  },
+  "immobilien": {
     "features": {
-      "hero_tags": "Stop Cold Calling.\nSystematic Success.",
-      "hero_desc": "We build digital sales machines for consultants, agencies, and service providers. From the first ad to the appointment in the calendar – fully automated.",
-      "cta_funnel": "Request Funnel Analysis",
+      "expose": {
+        "description": "PDFs are static. Web exposés live. Impress owners already in the purchasing conversation with state-of-the-art technology.",
+        "label": "Marketing of the Future",
+        "title": "The End of the PDF Attachment."
+      },
       "grid": {
-        "qual": {
-          "title": "Pre-qualification",
-          "desc": "No more wasting time with customers who are just \"looking around\"."
+        "followup": {
+          "desc": "Email sequences for prospects who are not yet ready.",
+          "title": "Autom. Follow-up"
         },
-        "nurture": {
-          "title": "Auto Nurture",
-          "desc": "Send relevant case studies via email before you even pick up the phone."
+        "login": {
+          "desc": "Full transparency for your clients. Live status of all activities.",
+          "title": "Owner Login"
         },
-        "roi": {
-          "title": "Measurable Success",
-          "desc": "See exactly how much revenue every Euro of ad budget has generated."
+        "staging": {
+          "desc": "Furnish empty rooms digitally. Arouse emotions without hauling furniture.",
+          "title": "Virtual Staging"
         }
+      },
+      "virtual_tour": {
+        "cta_demo": "Request Demo",
+        "disclaimer": "*Interactive example of a 360° tour integration",
+        "subtitle": "Save yourself the sightseeing tourism. With digital exposés and virtual tours, you filter interested parties automatically.",
+        "title": "Sell properties,\nbefore you show them."
       }
+    },
+    "hero": {
+      "description": "We help real estate agents and developers digitally attract qualified buyers and sellers.",
+      "label": "Digitization for Real Estate",
+      "title_1": "More Leads.",
+      "title_2": "Better Properties."
     }
   },
   "retail": {
+    "features": {
+      "cta_pos": "Check POS Integration",
+      "hero_desc": "Connect your branches with your online shop. Real-time inventory, Click & Collect, and a seamless customer experience.",
+      "hero_tags": "Online & Offline.\nFinally United."
+    },
     "hero": {
+      "description": "We help retailers connect their physical and digital presence.",
       "label": "Digitization for Retail",
       "title_1": "More Sales.",
-      "title_2": "Online and Offline.",
-      "description": "We help retailers connect their physical and digital presence."
-    },
-    "features": {
-      "hero_tags": "Online & Offline.\nFinally United.",
-      "hero_desc": "Connect your branches with your online shop. Real-time inventory, Click & Collect, and a seamless customer experience.",
-      "cta_pos": "Check POS Integration"
+      "title_2": "Online and Offline."
     }
   }
 }

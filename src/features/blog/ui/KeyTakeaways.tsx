@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Lightbulb, Share2, CheckCircle } from 'lucide-react';
+import { Lightbulb, ShareNetwork, CheckCircle } from '@phosphor-icons/react';
 import { motion } from 'motion/react';
 import { useTranslation } from 'react-i18next';
 
@@ -64,7 +64,7 @@ export const KeyTakeaways: React.FC<KeyTakeawaysProps> = ({
                                 className="shrink-0 opacity-0 group-hover:opacity-100 transition-opacity p-2 text-gray-400 hover:text-blue-400 hover:bg-blue-50 rounded-full"
                                 title="Auf Twitter teilen"
                             >
-                                <Share2 size={16} />
+                                <ShareNetwork size={16} />
                             </button>
                         </motion.div>
                     ))}

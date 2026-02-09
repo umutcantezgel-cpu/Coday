@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Terminal, Shield, Lock, Unlock, Server, Database, Bug, RefreshCw } from 'lucide-react';
+import { TerminalWindow, Shield, Lock, LockOpen, HardDrives, Database, Bug, ArrowsClockwise } from '@phosphor-icons/react';
 import { cn } from '@/shared/lib/utils';
 import { useTranslation } from 'react-i18next';
 
@@ -110,7 +110,7 @@ export const HackSimulator: React.FC = () => {
                 {/* Header */}
                 <div className="bg-[#2d2d2d] p-4 flex flex-col md:flex-row items-center justify-between gap-4 border-b border-gray-700">
                     <div className="flex items-center gap-2">
-                        <Terminal className="text-gray-400 w-5 h-5" />
+                        <TerminalWindow className="text-gray-400 w-5 h-5" />
                         <span className="text-gray-200 font-bold">{t('hackSimulator.title')}</span>
                     </div>
 
@@ -135,7 +135,7 @@ export const HackSimulator: React.FC = () => {
                                 isRunning && "opacity-50 cursor-not-allowed"
                             )}
                         >
-                            <Server className="w-4 h-4" /> {t('hackSimulator.staticStack')}
+                            <HardDrives className="w-4 h-4" /> {t('hackSimulator.staticStack')}
                         </button>
                     </div>
                 </div>
@@ -200,7 +200,7 @@ export const HackSimulator: React.FC = () => {
                                     className="text-center z-10"
                                 >
                                     <div className="w-24 h-24 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-red-500 animate-pulse">
-                                        <Unlock className="w-12 h-12 text-red-500" />
+                                        <LockOpen className="w-12 h-12 text-red-500" />
                                     </div>
                                     <h3 className="text-red-500 font-bold text-xl mb-2">{t('hackSimulator.criticalFailure')}</h3>
                                     <p className="text-gray-400 text-xs">{t('hackSimulator.criticalDesc')}</p>
@@ -250,7 +250,7 @@ export const HackSimulator: React.FC = () => {
 
             <div className="mt-4 flex justify-between text-xs text-gray-500">
                 <span>{activeSystem === 'wordpress' ? t('hackSimulator.targetWP') : t('hackSimulator.targetStatic')}</span>
-                {logs.length > 0 && <button onClick={() => setLogs([])} className="hover:text-white flex items-center gap-1"><RefreshCw className="w-3 h-3" /> {t('hackSimulator.reset')}</button>}
+                {logs.length > 0 && <button onClick={() => setLogs([])} className="hover:text-white flex items-center gap-1"><ArrowsClockwise className="w-3 h-3" /> {t('hackSimulator.reset')}</button>}
             </div>
         </div>
     );

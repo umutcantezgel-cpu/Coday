@@ -1,13 +1,13 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Cpu, Database, Zap, Globe, Layers, Shield } from 'lucide-react';
+import { Cpu, Database, Lightning, Globe, Stack, Shield } from '@phosphor-icons/react';
 
 const technologies = [
     { name: "Next.js 14", icon: Cpu, color: "text-white", bg: "bg-black" },
     { name: "Supabase", icon: Database, color: "text-emerald-400", bg: "bg-emerald-900/50" },
-    { name: "Tailwind", icon: Zap, color: "text-cyan-400", bg: "bg-cyan-900/50" },
+    { name: "Tailwind", icon: Lightning, color: "text-cyan-400", bg: "bg-cyan-900/50" },
     { name: "Edge Network", icon: Globe, color: "text-blue-400", bg: "bg-blue-900/50" },
-    { name: "TypeScript", icon: Layers, color: "text-blue-500", bg: "bg-blue-900/20" },
+    { name: "TypeScript", icon: Stack, color: "text-blue-500", bg: "bg-blue-900/20" },
     { name: "Auth", icon: Shield, color: "text-green-400", bg: "bg-green-900/20" },
 ];
 

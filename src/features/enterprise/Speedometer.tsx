@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
-import { Zap, Globe, Cpu } from 'lucide-react';
+import { Lightning, Globe, Cpu } from '@phosphor-icons/react';
 
 export const Speedometer: React.FC = () => {
     const [score, setScore] = useState(0);
@@ -50,7 +50,7 @@ export const Speedometer: React.FC = () => {
             {/* Live Metrics Grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {[
-                    { label: "First Contentful Paint", val: "0.2s", icon: Zap, color: "text-emerald-400" },
+                    { label: "First Contentful Paint", val: "0.2s", icon: Lightning, color: "text-emerald-400" },
                     { label: "Global Request Latency", val: "45ms", icon: Globe, color: "text-blue-400" },
                     { label: "Time to Interactive", val: "0s", icon: Cpu, color: "text-cyan-400" },
                 ].map((stat, i) => (

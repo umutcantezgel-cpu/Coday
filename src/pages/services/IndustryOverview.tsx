@@ -2,18 +2,17 @@ import React from 'react';
 import { LocalizedLink as Link } from '../../shared/ui/LocalizedLink';
 import { industriesData } from '../../data/industries';
 import {
-  Building2,
+  Buildings as Building2,
   Hammer,
   Stethoscope,
-  Scale,
-  Utensils,
+  Scales as Scale,
+  ForkKnife as Utensils,
   ShoppingCart,
   Briefcase,
-  Rocket,
-  LucideIcon,
-} from 'lucide-react';
+  RocketLaunch as Rocket,
+} from '@phosphor-icons/react';
 
-const iconMap: Record<string, LucideIcon> = {
+const iconMap: Record<string, React.ElementType> = {
   hammer: Hammer,
   apartment: Building2,
   local_hospital: Stethoscope,

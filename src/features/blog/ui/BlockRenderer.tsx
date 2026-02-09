@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import {
   ArrowRight,
   Terminal,
-  Quote as QuoteIcon,
+  Quotes as QuoteIcon,
   CheckSquare,
   Plus,
   Minus,
-  ArrowRightLeft,
-} from 'lucide-react';
+  ArrowsLeftRight,
+} from '@phosphor-icons/react';
 import { OptimizedImage } from '../../../shared/ui/OptimizedImage';
 import type {
   ContentBlock,
@@ -360,7 +360,7 @@ const ComparisonBlockRenderer: React.FC<{ block: ComparisonBlock }> = ({ block }
                 item.isHighlight ? 'text-primary' : 'text-gray-700'
               )}
             >
-              {item.isHighlight && <ArrowRightLeft size={20} className="text-primary" />}
+              {item.isHighlight && <ArrowsLeftRight size={20} className="text-primary" />}
               {item.title}
             </h4>
             <ul className="space-y-3">

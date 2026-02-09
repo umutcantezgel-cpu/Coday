@@ -7,8 +7,11 @@ import { Icon } from '@/shared/ui/Icon';
 export const Footer: React.FC = () => {
   const { t } = useTranslation('common');
   return (
-    <footer className="bg-secondary text-white border-t border-gray-800 pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-secondary text-white border-t border-gray-800 pt-16 pb-8 relative overflow-hidden">
+      {/* Bright Blur Effect for Logo Visibility - Scaled up for full top-left coverage */}
+      <div className="absolute top-0 left-0 w-[900px] h-[900px] bg-white/10 blur-[160px] rounded-full -translate-x-1/3 -translate-y-1/3 pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-8 mb-12">
           <div className="col-span-2 lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">

@@ -1,9 +1,8 @@
 import React from 'react';
-import { LucideIcon } from 'lucide-react';
 import { cn } from '@/shared/lib/utils';
 
 export interface OptimizedIconProps extends React.HTMLAttributes<HTMLSpanElement> {
-  icon: LucideIcon;
+  icon: React.ElementType;
   label?: string;
   className?: string;
   size?: 'sm' | 'md' | 'lg' | 'xl';

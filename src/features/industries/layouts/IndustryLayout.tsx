@@ -2,7 +2,7 @@ import React from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Check, ArrowRight } from 'lucide-react';
+import { ArrowLeft, Check, ArrowRight } from '@phosphor-icons/react';
 import ScrollFloat from '../../../shared/ui/ScrollFloat';
 import ScrollReveal from '../../../shared/ui/ScrollReveal';
 import { OptimizedImage } from '../../../shared/ui/OptimizedImage';

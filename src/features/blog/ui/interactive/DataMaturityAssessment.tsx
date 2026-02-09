@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { CheckCircle2, TrendingUp, BarChart3, Lock } from 'lucide-react';
+import { CheckCircle, TrendUp, ChartBar, Lock } from '@phosphor-icons/react';
 import { cn } from '@/shared/lib/utils';
 import { useTranslation } from 'react-i18next';
 import { useMemo } from 'react';
@@ -145,7 +145,7 @@ export const DataMaturityAssessment: React.FC = () => {
                 <div className="p-6 md:p-8 bg-gradient-to-r from-primary/5 to-purple-500/5 border-b border-gray-200">
                     <div className="flex items-center justify-between mb-4">
                         <h3 className="text-xl md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-500 flex items-center gap-2">
-                            <BarChart3 className="w-6 h-6 text-primary" />
+                            <ChartBar className="w-6 h-6 text-primary" />
                             {t('blog:dataMaturity.title')}
                         </h3>
                         {!showResult && (
@@ -191,7 +191,7 @@ export const DataMaturityAssessment: React.FC = () => {
                                             <span className="text-gray-900 group-hover:text-primary transition-colors">
                                                 {option.text}
                                             </span>
-                                            <CheckCircle2 className="w-5 h-5 opacity-0 group-hover:opacity-100 text-primary transition-all transform translate-x-2 group-hover:translate-x-0" />
+                                            <CheckCircle className="w-5 h-5 opacity-0 group-hover:opacity-100 text-primary transition-all transform translate-x-2 group-hover:translate-x-0" />
                                         </button>
                                     ))}
                                 </div>
@@ -209,7 +209,7 @@ export const DataMaturityAssessment: React.FC = () => {
                                     getResult().bg,
                                     getResult().color
                                 )}>
-                                    <TrendingUp className="w-10 h-10" />
+                                    <TrendUp className="w-10 h-10" />
                                 </div>
 
                                 <h4 className="text-2xl font-bold text-gray-900 mb-2">
@@ -238,22 +238,22 @@ export const DataMaturityAssessment: React.FC = () => {
                                         {score < 10 ? (
                                             <>
                                                 <li className="flex items-start gap-2 text-sm text-gray-900/80">
-                                                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                                                    <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                                                     Implementieren Sie sofort GDPR-konformes Server-Side Tracking.
                                                 </li>
                                                 <li className="flex items-start gap-2 text-sm text-gray-900/80">
-                                                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                                                    <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                                                     Definieren Sie KPI-Metriken, die echten Umsatz widerspiegeln.
                                                 </li>
                                             </>
                                         ) : (
                                             <>
                                                 <li className="flex items-start gap-2 text-sm text-gray-900/80">
-                                                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                                                    <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                                                     Nutzen Sie Predictive Analytics für Budget-Allokation.
                                                 </li>
                                                 <li className="flex items-start gap-2 text-sm text-gray-900/80">
-                                                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                                                    <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                                                     Automatisieren Sie Bidding-Strategien basierend auf CLV.
                                                 </li>
                                             </>
@@ -272,7 +272,7 @@ export const DataMaturityAssessment: React.FC = () => {
                                         href="/contact"
                                         className="px-6 py-2 rounded-lg bg-gradient-to-r from-primary to-purple-500 text-white font-medium hover:shadow-lg hover:opacity-90 transition-all flex items-center gap-2"
                                     >
-                                        {t('blog:dataMaturity.bookAudit')} <CheckCircle2 className="w-4 h-4" />
+                                        {t('blog:dataMaturity.bookAudit')} <CheckCircle className="w-4 h-4" />
                                     </a>
                                 </div>
                             </motion.div>

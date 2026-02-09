@@ -1,56 +1,81 @@
 {
-    "header": {
-        "nav": {
-            "overview": "Overview",
-            "speed": "Speed",
-            "seo": "SEO",
-            "analytics": "Analytics"
-        },
-        "live": "Live Monitoring"
+  "comparison": {
+    "badge": "4x faster on average",
+    "headers": {
+      "metric": "Metric",
+      "standard": "Standard WP Site",
+      "us": "Coday",
+      "wix": "Wix / Squarespace"
     },
-    "hero": {
-        "title": "Speed Overview",
-        "desc": "Real-time analysis of your digital presence. Measuring speed, accessibility, and usability."
+    "rows": {
+      "mobile": "Mobile Speed",
+      "seo": "SEO Indexing",
+      "seo_days": "Days",
+      "seo_value": "Instant",
+      "seo_weeks": "Weeks",
+      "tbt": "Total Blocking Time",
+      "tti": "Time to Interactive"
     },
-    "score": {
-        "title": "Exceptional Speed Score",
-        "desc": "Your platform performs significantly better than the industry average. All load time metrics are in the optimal \"Good\" range.",
-        "button": "View Detailed Report",
-        "ranking": "Top 3%"
+    "subtitle": "How you stack up against standard solutions",
+    "title": "Competitor Comparison"
+  },
+  "cta": {
+    "button": "Book Free Consultation",
+    "desc": "Let's take your project to the next level together. Transparency and performance are just a click away.",
+    "title": "Ready for the next step?"
+  },
+  "features": {
+    "docs": {
+      "desc": "Instant access to all contracts, invoices, and strategy documents in one secure place.",
+      "title": "Document Hub"
     },
-    "metrics": {
-        "lcp": "Largest Contentful Paint",
-        "fid": "First Input Delay",
-        "cls": "Cumulative Layout Shift",
-        "good": "Good",
-        "target": "Target"
+    "headline": "Why top brands work with us",
+    "realtime": {
+      "desc": "Watch your campaigns perform live. No more waiting for monthly reports.",
+      "title": "Real-time Analytics"
     },
-    "comparison": {
-        "title": "Competitor Comparison",
-        "subtitle": "How you stack up against standard solutions",
-        "badge": "4x faster on average",
-        "headers": {
-            "metric": "Metric",
-            "us": "Coday",
-            "standard": "Standard WP Site",
-            "wix": "Wix / Squarespace"
-        },
-        "rows": {
-            "tti": "Time to Interactive",
-            "mobile": "Mobile Speed",
-            "tbt": "Total Blocking Time",
-            "seo": "SEO Indexing",
-            "seo_value": "Instant",
-            "seo_days": "Days",
-            "seo_weeks": "Weeks"
-        }
-    },
-    "cta": {
-        "title": "Ready for more optimization?",
-        "desc": "Unlock advanced insights and automated optimization tools with the Pro plan.",
-        "button": "Upgrade to Pro"
-    },
-    "footer": {
-        "copyright": "© 2024 Speed Overview. Powered by Aurora System."
+    "subheadline": "We don't just deliver results. We prove them.",
+    "tracking": {
+      "desc": "Full transparency on tasks, timelines, and milestones. Know exactly what we're working on.",
+      "title": "Project Tracking"
     }
+  },
+  "footer": {
+    "copyright": "© 2024 Speed Overview. Powered by Aurora System."
+  },
+  "header": {
+    "live": "Live Monitoring",
+    "nav": {
+      "analytics": "Analytics",
+      "overview": "Overview",
+      "seo": "SEO",
+      "speed": "Speed"
+    }
+  },
+  "hero": {
+    "badge": "Premium Reporting Standard",
+    "cta": {
+      "primary": "Start Your Project",
+      "secondary": "View Sample Report"
+    },
+    "desc": "Stop guessing. Start knowing. We provide detailed performance insights, real-time analytics, and transparent project tracking for every client.",
+    "title": "Transparency meets Control."
+  },
+  "meta": {
+    "desc": "Your personal area for project insights, analytics, and progress tracking.",
+    "title": "Client Dashboard | Coday"
+  },
+  "metrics": {
+    "cls": "Cumulative Layout Shift",
+    "fid": "First Input Delay",
+    "good": "Good",
+    "lcp": "Largest Contentful Paint",
+    "target": "Target"
+  },
+  "score": {
+    "button": "View Detailed Report",
+    "desc": "Your platform performs significantly better than the industry average. All load time metrics are in the optimal \"Good\" range.",
+    "ranking": "Top 3%",
+    "title": "Exceptional Speed Score"
+  }
 }

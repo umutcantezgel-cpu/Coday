@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Mic, MicOff, Sparkles, Volume2 } from 'lucide-react';
+import { Microphone, MicrophoneSlash, Sparkle, SpeakerHigh } from '@phosphor-icons/react';
 import { motion, AnimatePresence } from 'motion/react';
 import { cn } from '@/shared/lib/utils';
 
@@ -62,7 +62,7 @@ export const VoiceDemo: React.FC = () => {
 
                     <div className="text-center mb-8">
                         <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-purple-500/20">
-                            <Sparkles className="text-white w-8 h-8" />
+                            <Sparkle className="text-white w-8 h-8" />
                         </div>
                         <h3 className="text-xl font-bold text-white mb-1">{t('blog:voiceDemo.title')}</h3>
                         <p className="text-gray-400 text-sm">{t('blog:voiceDemo.subtitle')}</p>
@@ -90,7 +90,7 @@ export const VoiceDemo: React.FC = () => {
                                     className="flex justify-start items-start gap-3"
                                 >
                                     <div className="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center shrink-0">
-                                        <Volume2 size={14} className="text-white" />
+                                        <SpeakerHigh size={14} className="text-white" />
                                     </div>
                                     <div className="bg-indigo-900/50 border border-indigo-500/30 text-indigo-100 px-4 py-3 rounded-2xl rounded-tl-sm max-w-[80%] text-sm shadow-sm backdrop-blur-sm">
                                         {response}
@@ -118,10 +118,10 @@ export const VoiceDemo: React.FC = () => {
                         {isListening ? (
                             <>
                                 <span className="absolute inset-0 rounded-full border-2 border-red-400 opacity-50 animate-ping"></span>
-                                <MicOff className="text-white w-8 h-8" />
+                                <MicrophoneSlash className="text-white w-8 h-8" />
                             </>
                         ) : (
-                            <Mic className="text-white w-8 h-8" />
+                            <Microphone className="text-white w-8 h-8" />
                         )}
                     </button>
 

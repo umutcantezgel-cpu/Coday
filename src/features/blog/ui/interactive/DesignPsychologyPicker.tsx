@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Palette, MousePointer2 } from 'lucide-react';
+import { Palette, CursorClick } from '@phosphor-icons/react';
 import { clsx } from 'clsx';
 import { useTranslation } from 'react-i18next';
 
@@ -57,7 +57,7 @@ export const DesignPsychologyPicker: React.FC = () => {
                         style={{ backgroundColor: selectedColor.hex, boxShadow: `0 20px 25px -5px ${selectedColor.hex}66` }}
                     >
                         {t('blog:designPsychology.buyNow')}
-                        <MousePointer2 size={20} />
+                        <CursorClick size={20} />
                     </button>
 
                     <div className="mt-12 text-center max-w-sm">

@@ -1,97 +1,225 @@
 {
-    "readTime": "Lesezeit",
-    "publishedOn": "Veröffentlicht am",
-    "highlight": "Highlight",
-    "readMore": "Weiterlesen",
-    "backToOverview": "Zurück zur Übersicht",
-    "loadingModule": "Lade Modul...",
-    "interactiveComponent": "Interaktives Element",
-    "relatedArticles": "Das könnte Sie auch interessieren",
-    "readArticle": "Artikel lesen",
-    "shareTitle": "Lesenswert",
-    "share": {
-        "twitter": "Auf Twitter teilen",
-        "linkedin": "Auf LinkedIn teilen",
-        "copy": "Link kopieren",
-        "copied": "Kopiert!"
+  "abTest": {
+    "metrics": {
+      "conversions": "__MISSING__",
+      "header": "__MISSING__",
+      "rate": "__MISSING__",
+      "visitors": "__MISSING__"
     },
-    "community": {
-        "label": "Community",
-        "title": "Schließen Sie sich <br /> 2.500+ Experten an.",
-        "description": "Erhalten Sie wöchentlich ausgewählte Strategien und Erkenntnisse direkt in Ihr Postfach. Keine Werbung, nur Mehrwert.",
-        "emailPlaceholder": "Ihre E-Mail Adresse",
-        "subscribe": "Anmelden",
-        "socialProof": "Der beste Marketing-Newsletter im DACH-Raum."
+    "selectVariant": "__MISSING__",
+    "start": "__MISSING__",
+    "stop": "__MISSING__",
+    "subtitle": "__MISSING__",
+    "title": "__MISSING__",
+    "variantA": {
+      "button": "__MISSING__",
+      "copy": "__MISSING__",
+      "description": "__MISSING__",
+      "headline": "__MISSING__",
+      "name": "__MISSING__"
     },
-    "hackSimulator": {
-        "title": "Hacker Simulation",
-        "wordpress": "Ziel: WordPress",
-        "staticStack": "Ziel: Coday (Statisch)",
-        "ready": "System verbunden. Bereit zum Scan.",
-        "start": "Exploit starten",
-        "targetWP": "Ziel: 192.168.1.1 (WP Core)",
-        "targetStatic": "Ziel: 192.168.1.5 (Static HTML)",
-        "reset": "System neustarten",
-        "criticalFailure": "SYSTEM KOMPROMITTIERT",
-        "criticalDesc": "Admin-Zugriff gewährt. Datenbank exponiert.",
-        "systemSecure": "ANGRIFF GESCHEITERT",
-        "secureDesc": "Keine ausführbaren Endpunkte gefunden. System sicher.",
-        "scanning": "Scanne...",
-        "idle": "Bereit"
-    },
-    "speedComparison": {
-        "title": "Geschwindigkeits-Vergleich",
-        "wpLane": "Standard WordPress",
-        "customLane": "Coday Custom Solution",
-        "slow": "Langsam (3.5s)",
-        "instant": "Sofort (0.8s)",
-        "loading": "Lädt...",
-        "rendering": "Rendert...",
-        "startTest": "Test Starten"
-    },
-    "aiCostGraph": {
-        "title": "Kosteneffizienz: Personal vs. KI",
-        "staff": "Menschliches Personal",
-        "ai": "KI-System",
-        "scaleTitle": "Skalierbarkeits-Effekt",
-        "scaleDesc": "KI-Kosten bleiben stabil, während die Leistung unendlich skaliert.",
-        "trapTitle": "Die Lineare Falle",
-        "trapDesc": "Kosten steigen linear mit der Leistung. Kein Hebel.",
-        "yLabel": "Kosten (k€)",
-        "xLabel": "Monate",
-        "efficiency": "Effizienz"
-    },
-    "seoTraffic": {
-        "title": "Wachstum der Themen-Autorität",
-        "standard": "Standard SEO",
-        "coday": "Coday Strategie",
-        "linear": "Lineares Wachstum",
-        "exponential": "Exponentielles Wachstum",
-        "descStandard": "Herkömmliches Keyword-Targeting bringt langsame, lineare Ergebnisse.",
-        "descCoday": "Themen-Cluster erzeugen Zinseszins-Effekte bei der Autorität."
-    },
-    "dataMaturity": {
-        "title": "Daten-Reifegrad Check",
-        "questionStep": "Frage {{current}} von {{total}}",
-        "yourStatus": "Ihr Daten-Reifegrad",
-        "levels": [
-            "Daten-Blind",
-            "Daten-Besucher",
-            "Daten-Versteher",
-            "Daten-Dominator"
-        ],
-        "descriptions": [
-            "Sie fliegen blind. Ihr Marketing-Budget ist ein Glücksspiel.",
-            "Sie sammeln Daten, nutzen sie aber kaum für Entscheidungen.",
-            "Sie wissen was passiert und optimieren basierend auf Zahlen.",
-            "Daten sind Ihr unfairer Wettbewerbsvorteil. Skalierung ist reine Mathematik."
-        ],
-        "recommendation": "Unsere Empfehlung",
-        "retry": "Test wiederholen",
-        "bookAudit": "Audit buchen"
-    },
-    "hero": {
-        "title": "Blog & Insights",
-        "subtitle": "Tiefgehende Analysen, Strategien und Neuigkeiten aus der Welt der digitalen Dominanz."
+    "variantB": {
+      "button": "__MISSING__",
+      "copy": "__MISSING__",
+      "description": "__MISSING__",
+      "headline": "__MISSING__",
+      "name": "__MISSING__",
+      "trust": "__MISSING__"
     }
+  },
+  "aiCostGraph": {
+    "ai": "KI-System",
+    "efficiency": "Effizienz",
+    "scaleDesc": "KI-Kosten bleiben stabil, während die Leistung unendlich skaliert.",
+    "scaleTitle": "Skalierbarkeits-Effekt",
+    "staff": "Menschliches Personal",
+    "title": "Kosteneffizienz: Personal vs. KI",
+    "trapDesc": "Kosten steigen linear mit der Leistung. Kein Hebel.",
+    "trapTitle": "Die Lineare Falle",
+    "xLabel": "Monate",
+    "yLabel": "Kosten (k€)"
+  },
+  "backToOverview": "Zurück zur Übersicht",
+  "community": {
+    "description": "Erhalten Sie wöchentlich ausgewählte Strategien und Erkenntnisse direkt in Ihr Postfach. Keine Werbung, nur Mehrwert.",
+    "emailPlaceholder": "Ihre E-Mail Adresse",
+    "label": "Community",
+    "socialProof": "Der beste Marketing-Newsletter im DACH-Raum.",
+    "subscribe": "Anmelden",
+    "title": "Schließen Sie sich <br /> 2.500+ Experten an."
+  },
+  "dataMaturity": {
+    "bookAudit": "Audit buchen",
+    "descriptions": {
+      "0": "Sie fliegen blind. Ihr Marketing-Budget ist ein Glücksspiel.",
+      "1": "Sie sammeln Daten, nutzen sie aber kaum für Entscheidungen.",
+      "2": "Sie wissen was passiert und optimieren basierend auf Zahlen.",
+      "3": "Daten sind Ihr unfairer Wettbewerbsvorteil. Skalierung ist reine Mathematik."
+    },
+    "levels": {
+      "0": "Daten-Blind",
+      "1": "Daten-Besucher",
+      "2": "Daten-Versteher",
+      "3": "Daten-Dominator"
+    },
+    "questionStep": "Frage {{current}} von {{total}}",
+    "recommendation": "Unsere Empfehlung",
+    "retry": "Test wiederholen",
+    "title": "Daten-Reifegrad Check",
+    "yourStatus": "Ihr Daten-Reifegrad"
+  },
+  "designPsychology": {
+    "buyNow": "__MISSING__",
+    "colors": {
+      "black": {
+        "name": "__MISSING__",
+        "text": "__MISSING__"
+      },
+      "blue": {
+        "name": "__MISSING__",
+        "text": "__MISSING__"
+      },
+      "green": {
+        "name": "__MISSING__",
+        "text": "__MISSING__"
+      },
+      "red": {
+        "name": "__MISSING__",
+        "text": "__MISSING__"
+      }
+    },
+    "perception": "__MISSING__",
+    "subtitle": "__MISSING__",
+    "title": "__MISSING__"
+  },
+  "hackSimulator": {
+    "criticalDesc": "Admin-Zugriff gewährt. Datenbank exponiert.",
+    "criticalFailure": "SYSTEM KOMPROMITTIERT",
+    "idle": "Bereit",
+    "ready": "System verbunden. Bereit zum Scan.",
+    "reset": "System neustarten",
+    "scanning": "Scanne...",
+    "secureDesc": "Keine ausführbaren Endpunkte gefunden. System sicher.",
+    "start": "Exploit starten",
+    "staticStack": "Ziel: Coday (Statisch)",
+    "systemSecure": "ANGRIFF GESCHEITERT",
+    "targetStatic": "Ziel: 192.168.1.5 (Static HTML)",
+    "targetWP": "Ziel: 192.168.1.1 (WP Core)",
+    "title": "Hacker Simulation",
+    "wordpress": "Ziel: WordPress"
+  },
+  "hero": {
+    "subtitle": "Tiefgehende Analysen, Strategien und Neuigkeiten aus der Welt der digitalen Dominanz.",
+    "title": "Blog & Insights"
+  },
+  "highlight": "Highlight",
+  "interactiveComponent": "Interaktives Element",
+  "keyTakeaways": {
+    "title": "__MISSING__"
+  },
+  "loadingModule": "Lade Modul...",
+  "mobileSimulator": {
+    "badMode": "__MISSING__",
+    "fake": {
+      "clickMore": "__MISSING__",
+      "headline": "__MISSING__",
+      "logo": "__MISSING__",
+      "menu": "__MISSING__",
+      "readMore": "__MISSING__",
+      "serving": "__MISSING__",
+      "startNow": "__MISSING__",
+      "subheadline": "__MISSING__",
+      "thumbZone": "__MISSING__",
+      "welcome": "__MISSING__"
+    },
+    "goodMode": "__MISSING__",
+    "switchToDesktop": "__MISSING__",
+    "switchToMobile": "__MISSING__",
+    "title": "__MISSING__",
+    "view": "__MISSING__"
+  },
+  "publishedOn": "Veröffentlicht am",
+  "readArticle": "Artikel lesen",
+  "readMore": "Weiterlesen",
+  "readTime": "Lesezeit",
+  "relatedArticles": "Das könnte Sie auch interessieren",
+  "seoTraffic": {
+    "coday": "Coday Strategie",
+    "descCoday": "Themen-Cluster erzeugen Zinseszins-Effekte bei der Autorität.",
+    "descStandard": "Herkömmliches Keyword-Targeting bringt langsame, lineare Ergebnisse.",
+    "exponential": "Exponentielles Wachstum",
+    "linear": "Lineares Wachstum",
+    "standard": "Standard SEO",
+    "title": "Wachstum der Themen-Autorität"
+  },
+  "share": {
+    "copied": "Kopiert!",
+    "copy": "Link kopieren",
+    "linkedin": "Auf LinkedIn teilen",
+    "twitter": "Auf Twitter teilen"
+  },
+  "shareTitle": "Lesenswert",
+  "speedComparison": {
+    "customLane": "Coday Custom Solution",
+    "instant": "Sofort (0.8s)",
+    "loading": "Lädt...",
+    "rendering": "Rendert...",
+    "slow": "Langsam (3.5s)",
+    "startTest": "Test Starten",
+    "title": "Geschwindigkeits-Vergleich",
+    "wpLane": "Standard WordPress"
+  },
+  "voiceDemo": {
+    "listening": "__MISSING__",
+    "steps": {
+      "0": {
+        "ai": "__MISSING__",
+        "user": "__MISSING__"
+      },
+      "1": {
+        "ai": "__MISSING__",
+        "user": "__MISSING__"
+      },
+      "2": {
+        "ai": "__MISSING__",
+        "user": "__MISSING__"
+      }
+    },
+    "subtitle": "__MISSING__",
+    "tapToSpeak": "__MISSING__",
+    "title": "__MISSING__"
+  },
+  "webHistory": {
+    "columns": {
+      "model": "__MISSING__",
+      "overhead": "__MISSING__"
+    },
+    "eras": {
+      "0": {
+        "description": "__MISSING__",
+        "model": "__MISSING__",
+        "overhead": "__MISSING__",
+        "title": "__MISSING__"
+      },
+      "1": {
+        "description": "__MISSING__",
+        "model": "__MISSING__",
+        "overhead": "__MISSING__",
+        "title": "__MISSING__"
+      },
+      "2": {
+        "description": "__MISSING__",
+        "model": "__MISSING__",
+        "overhead": "__MISSING__",
+        "title": "__MISSING__"
+      },
+      "3": {
+        "description": "__MISSING__",
+        "model": "__MISSING__",
+        "overhead": "__MISSING__",
+        "title": "__MISSING__"
+      }
+    },
+    "title": "__MISSING__"
+  }
 }

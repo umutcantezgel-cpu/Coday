@@ -2,14 +2,14 @@ import React from 'react';
 import { LocalizedNavLink as NavLink, LocalizedLink as Link } from '../shared/ui/LocalizedLink';
 import {
   ArrowRight,
-  Rocket,
-  Construction,
-  Building2 as Apartment,
+  RocketLaunch as Rocket,
+  Barricade as Construction,
+  Buildings as Apartment,
   ShoppingCart,
   Lightbulb,
-  HeartPulse as HealthAndSafety,
+  Heartbeat as HealthAndSafety,
   User,
-} from 'lucide-react';
+} from '@phosphor-icons/react';
 import { OptimizedIcon } from '../shared/ui/OptimizedIcon';
 import { useTranslation } from 'react-i18next';
 import { OptimizedImage } from '../shared/ui/OptimizedImage';
@@ -318,7 +318,7 @@ const Home: React.FC = () => {
             <div className="order-2 lg:order-1 relative">
               <div className="absolute top-0 start-0 w-24 h-24 bg-accent/20 rounded-full blur-xl -translate-x-1/2 -translate-y-1/2 rtl:translate-x-1/2"></div>
               <OptimizedImage
-                src="/images/marketing/drei-kunden-reviews.jpeg"
+                src="/images/services/drei-kunden-reviews.webp"
                 alt="Zufriedene Partner"
                 className="relative rounded-3xl shadow-flat-lg w-full bg-white p-2"
               />

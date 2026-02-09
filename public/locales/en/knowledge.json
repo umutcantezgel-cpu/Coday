@@ -1,59 +1,59 @@
 {
   "academy": {
-    "title": "Academy",
-    "subtitle": "Become an expert in digital growth. Free courses for our community.",
     "courses": {
       "5_questions": {
-        "title": "5 Questions to Ask Your Web Agency",
         "duration": "12:45",
-        "tag": "STRATEGY"
-      },
-      "visitors_customers": {
-        "title": "Converting Visitors into Customers",
-        "duration": "18:20",
-        "tag": "CONVERSION"
-      },
-      "seo_strategy": {
-        "title": "The Ultimate SEO Strategy",
-        "duration": "14:10",
-        "tag": "SEO"
+        "tag": "STRATEGY",
+        "title": "5 Questions to Ask Your Web Agency"
       },
       "google_reviews": {
-        "title": "Mastering Google Reviews",
         "duration": "09:30",
-        "tag": "REPUTATION"
+        "tag": "REPUTATION",
+        "title": "Mastering Google Reviews"
+      },
+      "seo_strategy": {
+        "duration": "14:10",
+        "tag": "SEO",
+        "title": "The Ultimate SEO Strategy"
       },
       "traffic": {
-        "title": "How to Drive Traffic to Your Site",
         "duration": "16:15",
-        "tag": "TRAFFIC"
+        "tag": "TRAFFIC",
+        "title": "How to Drive Traffic to Your Site"
       },
-      "website_cost": {
-        "title": "What Does a Website Really Cost?",
-        "duration": "11:00",
-        "tag": "BUDGET"
+      "visitors_customers": {
+        "duration": "18:20",
+        "tag": "CONVERSION",
+        "title": "Converting Visitors into Customers"
       },
       "website_appeal": {
-        "title": "Website: Magnet or Repellent?",
         "duration": "08:45",
-        "tag": "DESIGN"
+        "tag": "DESIGN",
+        "title": "Website: Magnet or Repellent?"
+      },
+      "website_cost": {
+        "duration": "11:00",
+        "tag": "BUDGET",
+        "title": "What Does a Website Really Cost?"
       }
-    }
+    },
+    "subtitle": "Become an expert in digital growth. Free courses for our community.",
+    "title": "Academy"
   },
   "blog": {
-    "title": "Blog & Insights",
-    "subtitle": "Deep dives, strategies and news from the digital world."
+    "subtitle": "Deep dives, strategies and news from the digital world.",
+    "title": "Blog & Insights"
   },
   "newsletter": {
-    "title": "The Insider Newsletter",
-    "subtitle": "Join 10,000+ founders and get the best digital growth strategies delivered weekly to your inbox. No spam. Just value.",
     "emailPlaceholder": "Your best email address",
+    "privacy": "We respect your privacy. Unsubscribe at any time.",
     "subscribe": "Subscribe",
-    "privacy": "We respect your privacy. Unsubscribe at any time."
+    "subtitle": "Join 10,000+ founders and get the best digital growth strategies delivered weekly to your inbox. No spam. Just value.",
+    "title": "The Insider Newsletter"
   },
   "whitepapers": {
-    "title": "Guides & Resources",
+    "download": "Download for Free",
     "subtitle": "Free guides, checklists, and templates for your success.",
-    "download": "Download for Free"
+    "title": "Guides & Resources"
   }
 }

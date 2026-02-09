@@ -1,56 +1,81 @@
 {
-    "header": {
-        "nav": {
-            "overview": "Übersicht",
-            "speed": "Geschwindigkeit",
-            "seo": "Suchmaschinen",
-            "analytics": "Besucheranalyse"
-        },
-        "live": "Live-Überwachung"
+  "comparison": {
+    "badge": "4x schneller im Durchschnitt",
+    "headers": {
+      "metric": "Messwert",
+      "standard": "Standard WP Site",
+      "us": "Coday",
+      "wix": "Wix / Squarespace"
     },
-    "hero": {
-        "title": "Geschwindigkeits-Übersicht",
-        "desc": "Echtzeit-Analyse Ihres digitalen Auftritts. Messung von Geschwindigkeit, Zugänglichkeit und Benutzerfreundlichkeit."
+    "rows": {
+      "mobile": "Mobile Geschwindigkeit",
+      "seo": "Suchmaschinen-Indexierung",
+      "seo_days": "Tage",
+      "seo_value": "Sofort",
+      "seo_weeks": "Wochen",
+      "tbt": "Blockierungszeit",
+      "tti": "Zeit bis Interaktion"
     },
-    "score": {
-        "title": "Außergewöhnlicher Geschwindigkeitswert",
-        "desc": "Ihre Plattform arbeitet deutlich besser als der Branchendurchschnitt. Alle Ladezeit-Werte liegen im optimalen \"Gut\"-Bereich.",
-        "button": "Detaillierten Bericht anzeigen",
-        "ranking": "Top 3%"
+    "subtitle": "Wie Sie im Vergleich zu Standard-Lösungen abschneiden",
+    "title": "Vergleich mit dem Wettbewerb"
+  },
+  "cta": {
+    "button": "Kostenloses Erstgespräch",
+    "desc": "Lassen Sie uns gemeinsam Ihr Projekt auf das nächste Level heben. Transparenz und Leistung sind nur einen Klick entfernt.",
+    "title": "Bereit für den nächsten Schritt?"
+  },
+  "features": {
+    "docs": {
+      "desc": "Sofortiger Zugriff auf alle Verträge, Rechnungen und Dokumente an einem sicheren Ort.",
+      "title": "Dokumenten-Hub"
     },
-    "metrics": {
-        "lcp": "Größte sichtbare Inhalte",
-        "fid": "Erste Reaktionszeit",
-        "cls": "Visuelle Stabilität",
-        "good": "Gut",
-        "target": "Ziel"
+    "headline": "Warum Top-Marken mit uns arbeiten",
+    "realtime": {
+      "desc": "Beobachten Sie Ihre Kampagnen live. Kein Warten mehr auf monatliche Berichte.",
+      "title": "Echtzeit-Analysen"
     },
-    "comparison": {
-        "title": "Vergleich mit dem Wettbewerb",
-        "subtitle": "Wie Sie im Vergleich zu Standard-Lösungen abschneiden",
-        "badge": "4x schneller im Durchschnitt",
-        "headers": {
-            "metric": "Messwert",
-            "us": "Coday",
-            "standard": "Standard WP Site",
-            "wix": "Wix / Squarespace"
-        },
-        "rows": {
-            "tti": "Zeit bis Interaktion",
-            "mobile": "Mobile Geschwindigkeit",
-            "tbt": "Blockierungszeit",
-            "seo": "Suchmaschinen-Indexierung",
-            "seo_value": "Sofort",
-            "seo_days": "Tage",
-            "seo_weeks": "Wochen"
-        }
-    },
-    "cta": {
-        "title": "Bereit für weitere Optimierung?",
-        "desc": "Schalten Sie erweiterte Einblicke und automatische Optimierungswerkzeuge mit dem Profi-Paket frei.",
-        "button": "Auf Profi upgraden"
-    },
-    "footer": {
-        "copyright": "© 2024 Geschwindigkeits-Übersicht. Betrieben durch Aurora System."
+    "subheadline": "Wir liefern nicht nur Ergebnisse. Wir beweisen sie.",
+    "tracking": {
+      "desc": "Volle Transparenz über Aufgaben, Zeitpläne und Meilensteine. Wissen Sie genau, woran wir arbeiten.",
+      "title": "Projekt-Tracking"
     }
+  },
+  "footer": {
+    "copyright": "© 2024 Geschwindigkeits-Übersicht. Betrieben durch Aurora System."
+  },
+  "header": {
+    "live": "Live-Überwachung",
+    "nav": {
+      "analytics": "Besucheranalyse",
+      "overview": "Übersicht",
+      "seo": "Suchmaschinen",
+      "speed": "Geschwindigkeit"
+    }
+  },
+  "hero": {
+    "badge": "Premium Reporting Standard",
+    "cta": {
+      "primary": "Projekt starten",
+      "secondary": "Beispiel-Bericht ansehen"
+    },
+    "desc": "Hören Sie auf zu raten. Fangen Sie an zu wissen. Wir bieten detaillierte Leistungseinblicke, Echtzeit-Analysen und transparentes Projekt-Tracking für jeden Kunden.",
+    "title": "Transparenz trifft Kontrolle."
+  },
+  "meta": {
+    "desc": "Ihr persönlicher Bereich für Projektereinblicke, Analysen und Fortschrittsverfolgung.",
+    "title": "Kunden-Dashboard | Coday"
+  },
+  "metrics": {
+    "cls": "Visuelle Stabilität",
+    "fid": "Erste Reaktionszeit",
+    "good": "Gut",
+    "lcp": "Größte sichtbare Inhalte",
+    "target": "Ziel"
+  },
+  "score": {
+    "button": "Detaillierten Bericht anzeigen",
+    "desc": "Ihre Plattform arbeitet deutlich besser als der Branchendurchschnitt. Alle Ladezeit-Werte liegen im optimalen \"Gut\"-Bereich.",
+    "ranking": "Top 3%",
+    "title": "Außergewöhnlicher Geschwindigkeitswert"
+  }
 }

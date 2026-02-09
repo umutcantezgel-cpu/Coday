@@ -1,43 +1,43 @@
 {
-  "page": {
-    "title": "Start Your Transformation",
-    "subtitle": "Choose a suitable time for your non-binding strategy call. No external tools, no detours."
-  },
   "calendar": {
+    "errors": {
+      "failed": "Booking failed",
+      "generic": "An unknown error occurred"
+    },
     "step1": {
-      "title": "Select a Date",
-      "next": "Next"
+      "next": "Next",
+      "title": "Select a Date"
     },
     "step2": {
-      "title": "Your Details",
-      "form": {
-        "name": {
-          "placeholder": "Name"
-        },
-        "email": {
-          "placeholder": "Email"
-        },
-        "phone": {
-          "placeholder": "Phone (optional)"
-        },
-        "notes": {
-          "placeholder": "Note (optional)"
-        }
-      },
       "buttons": {
         "back": "Back",
         "submit": "Confirm Appointment",
         "submitting": "Booking..."
-      }
+      },
+      "form": {
+        "email": {
+          "placeholder": "Email"
+        },
+        "name": {
+          "placeholder": "Name"
+        },
+        "notes": {
+          "placeholder": "Note (optional)"
+        },
+        "phone": {
+          "placeholder": "Phone (optional)"
+        }
+      },
+      "title": "Your Details"
     },
     "success": {
-      "title": "Booking Confirmed!",
       "message": "Thank you, {{name}}.<br />We have reserved your appointment for {{date}} at {{time}}. A confirmation has been sent to {{email}}.",
-      "new_booking": "New Booking"
-    },
-    "errors": {
-      "generic": "An unknown error occurred",
-      "failed": "Booking failed"
+      "new_booking": "New Booking",
+      "title": "Booking Confirmed!"
     }
+  },
+  "page": {
+    "subtitle": "Choose a suitable time for your non-binding strategy call. No external tools, no detours.",
+    "title": "Start Your Transformation"
   }
 }

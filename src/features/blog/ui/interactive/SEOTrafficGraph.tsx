@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { BarChart, ArrowUpRight } from 'lucide-react';
+import { ChartBar, ArrowUpRight } from '@phosphor-icons/react';
 
 import { useTranslation } from 'react-i18next';
 
@@ -16,7 +16,7 @@ export const SEOTrafficGraph: React.FC = () => {
     return (
         <div className="bg-white rounded-3xl p-8 shadow-2xl border border-gray-100 my-10 overflow-hidden relative">
             <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-                <BarChart className="text-green-600" />
+                <ChartBar className="text-green-600" />
                 {t('seoTraffic.title')}
             </h3>
 
@@ -55,8 +55,8 @@ export const SEOTrafficGraph: React.FC = () => {
                             animate={{ height: `${(value / (view === 'coday' ? 320 : 22)) * 100}%` }}
                             transition={{ type: 'spring', stiffness: 100, damping: 20, delay: index * 0.05 }}
                             className={`w-full rounded-t-sm relative transition-all duration-300 ${view === 'coday'
-                                    ? 'bg-gradient-to-t from-emerald-600 to-emerald-400 group-hover:from-emerald-500 group-hover:to-emerald-300 shadow-[0_0_15px_rgba(16,185,129,0.3)]'
-                                    : 'bg-gradient-to-t from-gray-400 to-gray-300 group-hover:from-gray-300 group-hover:to-gray-200'
+                                ? 'bg-gradient-to-t from-emerald-600 to-emerald-400 group-hover:from-emerald-500 group-hover:to-emerald-300 shadow-[0_0_15px_rgba(16,185,129,0.3)]'
+                                : 'bg-gradient-to-t from-gray-400 to-gray-300 group-hover:from-gray-300 group-hover:to-gray-200'
                                 }`}
                         >
                             {/* Value Tooltip */}

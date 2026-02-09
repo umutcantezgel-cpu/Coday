@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, useScroll, useTransform } from 'motion/react';
-import { ArrowRight, Cpu } from 'lucide-react';
+import { ArrowRight, Cpu } from '@phosphor-icons/react';
 import { LocalizedNavLink as NavLink } from '../../shared/ui/LocalizedLink';
 import { TechStackHologram } from '../../features/enterprise/TechStackHologram';
 import { Speedometer } from '../../features/enterprise/Speedometer';

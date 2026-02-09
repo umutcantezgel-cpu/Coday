@@ -1,5 +1,5 @@
 import React from 'react';
-import { Loader2 } from 'lucide-react';
+import { CircleNotch } from '@phosphor-icons/react';
 import { cn } from '@/shared/lib/utils'; // Assuming this exists, based on project norms. If not, will fix.
 
 export const buttonVariants = {
@@ -46,7 +46,7 @@ export const Button: React.FC<ButtonProps> = ({
             {...props}
         >
             {isLoading ? (
-                <Loader2 className="w-5 h-5 animate-spin mr-2" />
+                <CircleNotch className="w-5 h-5 animate-spin mr-2" />
             ) : leftIcon ? (
                 <span className="mr-2">{leftIcon}</span>
             ) : null}

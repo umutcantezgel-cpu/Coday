@@ -1,241 +1,246 @@
 {
-  "hero": {
-    "badge": "Join the Elite",
-    "title_start": "Kein 9-to-5.",
-    "title_gradient": "Eine Mission.",
-    "desc": "Wir bauen Deutschlands beste Agentur. Wir suchen keine Mitarbeiter. Wir suchen Mitstreiter.",
-    "cta": "Offene Stellen"
-  },
-  "path": {
-    "title": "Dein Wachstum ist unser Ziel.",
-    "desc": "Bei uns stagnierst du nicht. Wir haben klare Pfade, transparente Gehälter und pushen dich ans Limit.",
-    "selector_title": "Wähle deinen Pfad",
-    "tracks": {
-      "dev": "Engineering",
-      "design": "Design",
-      "growth": "Growth"
+  "benefits": {
+    "hero": {
+      "badge": "Vorteile & Extras",
+      "desc": "Wir fordern viel, aber wir geben auch viel zurück. Unsere Benefits sind darauf ausgelegt, dir den Rücken freizuhalten.",
+      "title": "Mehr als nur Gehalt."
     },
-    "levels": {
-      "dev": [
-        {
-          "title": "Junior Dev",
-          "desc": "Du lernst unsere Standards."
-        },
-        {
-          "title": "Senior Dev",
-          "desc": "Du übernimmst Verantwortung für Features."
-        },
-        {
-          "title": "Tech Lead",
-          "desc": "Du baust die nächste Generation von Coday."
-        }
-      ],
-      "design": [
-        {
-          "title": "UI Designer",
-          "desc": "Du pixel-perfectest Interfaces."
-        },
-        {
-          "title": "Product Designer",
-          "desc": "Du löst echte Nutzerprobleme."
-        },
-        {
-          "title": "Art Director",
-          "desc": "Du definierst den Look von morgen."
-        }
-      ],
-      "growth": [
-        {
-          "title": "Sales Rep",
-          "desc": "Du bringst Deals rein."
-        },
-        {
-          "title": "Account Exec",
-          "desc": "Du betreust Key Accounts."
-        },
-        {
-          "title": "Head of Growth",
-          "desc": "Du skalierst die Agentur."
-        }
-      ]
-    }
-  },
-  "perks": {
-    "title": "Warum Coday?",
-    "desc": "Wir fordern viel. Wir geben viel.",
     "items": [
       {
-        "title": "Work from Anywhere",
-        "desc": "Bali oder Berlin. Wir sind 100% Remote-First."
+        "icon": "laptop_mac",
+        "text": "Neuestes MacBook Pro, 4K Monitor und Noise-Cancelling Kopfhörer deiner Wahl.",
+        "title": "Top Ausstattung"
       },
       {
-        "title": "Top Hardware",
-        "desc": "Neuestes MacBook Pro + 27\" 4K Monitor für dein Home Office."
+        "icon": "home",
+        "text": "Arbeite von wo du willst. Wir finanzieren dein Heimbüro oder Co-Working Platz.",
+        "title": "Überall arbeiten"
       },
       {
-        "title": "Learning Budget",
-        "desc": "2.000€ pro Jahr für Kurse, Konferenzen und Bücher."
+        "icon": "flight_takeoff",
+        "text": "2x im Jahr fliegt das ganze Team an einen sonnigen Ort zum Arbeiten und Feiern.",
+        "title": "Arbeits-Reisen"
       },
       {
-        "title": "Team Retreats",
-        "desc": "Zweimal im Jahr fliegen wir gemeinsam weg. Work + Party."
+        "icon": "payments",
+        "text": "Wir zahlen Spitzen-Gehälter für Spitzen-Talente. Inklusive Unternehmensbeteiligung.",
+        "title": "Top Gehalt"
       },
       {
-        "title": "Urban Sports",
-        "desc": "L & XL Mitgliedschaft komplett bezahlt."
+        "icon": "school",
+        "text": "€2.000 pro Jahr für Kurse, Konferenzen und Bücher. Deine Entwicklung ist uns wichtig.",
+        "title": "Weiterbildung"
       },
       {
-        "title": "Profit Share",
-        "desc": "Wenn wir gewinnen, gewinnst du. Jährlicher Bonus."
+        "icon": "fitness_center",
+        "text": "Sport-Mitgliedschaft und monatlicher Gesundheits-Bonus.",
+        "title": "Gesundheit"
       }
     ]
-  },
-  "jobs": {
-    "title": "Offene Stellen",
-    "details": {
-      "type": "Remote (DE)",
-      "fulltime": "Vollzeit",
-      "parttime": "Teilzeit / Freelance"
-    },
-    "button": "Bewerben",
-    "no_jobs": {
-      "title": "Keine passende Stelle dabei?",
-      "desc": "Wir suchen immer nach außergewöhnlichen Talenten. Schick uns deine Initiativbewerbung und erzähl uns, wie du uns helfen kannst erfolgreich zu sein.",
-      "button": "Initiativ bewerben"
-    },
-    "list": [
-      {
-        "id": 1,
-        "title": "Erfahrener Oberflächen-Entwickler (React/Next.js)",
-        "type": "Vollzeit",
-        "location": "Fernarbeit",
-        "desc": "Baue schnelle Benutzeroberflächen und gestalte unser Design-System Aurora mit. Du liebst Pixel-Perfektion?",
-        "mailtoSubject": "Bewerbung als Oberflächen-Entwickler"
-      },
-      {
-        "id": 2,
-        "title": "Benutzerfreundlichkeits-Designer (Figma/Animation)",
-        "type": "Vollzeit",
-        "location": "Fernarbeit",
-        "desc": "Erstelle visuelle Erlebnisse, die begeistern. Von Skizzen bis zu animierten Prototypen.",
-        "mailtoSubject": "Bewerbung als Designer"
-      },
-      {
-        "id": 3,
-        "title": "Wachstums-Marketingleiter",
-        "type": "Vollzeit",
-        "location": "Fernarbeit",
-        "desc": "Skaliere unsere Reichweite und optimiere Verkaufstrichter. Datengetrieben und kreativ.",
-        "mailtoSubject": "Bewerbung als Wachstums-Marketingleiter"
-      }
-    ],
-    "hero_title_prefix": "Werde Teil der",
-    "hero_rotating": ["Zukunft.", "Revolution.", "Innovation.", "Elite."],
-    "hero_desc": "Wir eliminieren die Ineffizienz der Agenturwelt. Keine Politik. Nur Code, Wachstum und Erfolg.",
-    "culture_badge": "Unsere Kultur"
   },
   "culture": {
     "hero": {
       "badge": "Die DNA",
-      "title_start": "Wir sind anders.",
+      "desc": "Keine Agentur wie jede andere. Wir sind ein Team aus Nerds, Designern und Strategen mit einem Ziel: Wir dominieren Märkte.",
       "title_gradient": "Und das ist gut so.",
-      "desc": "Keine Agentur wie jede andere. Wir sind ein Team aus Nerds, Designern und Strategen mit einem Ziel: Wir dominieren Märkte."
+      "title_start": "Wir sind anders."
+    },
+    "team": {
+      "desc": "Menschen machen den Unterschied.",
+      "members": [
+        {
+          "funfact": "Kaffee & Red Bull",
+          "funfact_title": "Tech Stack:",
+          "name": "Alex Admin",
+          "role": "Gründer"
+        },
+        {
+          "funfact": "Verkauft Eis an Eskimos",
+          "funfact_title": "Superkraft:",
+          "name": "Sarah Sales",
+          "role": "Head of Growth"
+        },
+        {
+          "funfact": "Vim Konfigurationen",
+          "funfact_title": "Hobby:",
+          "name": "Mike Maker",
+          "role": "Lead Dev"
+        },
+        {
+          "funfact": "Pixel Perfect",
+          "funfact_title": "Stil:",
+          "name": "Lisa Lens",
+          "role": "Art Director"
+        }
+      ],
+      "title": "Die Köpfe dahinter"
     },
     "values": {
-      "title": "Unsere Regeln.",
       "desc": "Kultur ist das, was passiert, wenn niemand hinschaut. Diese Prinzipien leiten jede Entscheidung, die wir treffen.",
       "items": [
         "100% Fernarbeit, 100% Fokus",
         "Radikale Ehrlichkeit",
         "Ergebnisse statt Zeit absitzen"
-      ]
+      ],
+      "title": "Unsere Regeln."
     },
     "values_deck": {
-      "ownership": {
-        "title": "Extreme Ownership",
-        "desc": "Keine Ausreden. Wir übernehmen volle Verantwortung für das Ergebnis. Wenn etwas schiefgeht, fixen wir es. Punkt."
-      },
-      "truth": {
-        "title": "Radical Truth",
-        "desc": "Wir sagen, was Sache ist. Auch wenn es weh tut. Ehrliches Feedback ist der einzige Weg zu Exzellenz."
-      },
       "deep_work": {
-        "title": "Deep Work",
-        "desc": "Kein Multitasking. Keine ständigen Meetings. Wir blocken Zeit für tiefe, konzentrierte Arbeit."
+        "desc": "Kein Multitasking. Keine ständigen Meetings. Wir blocken Zeit für tiefe, konzentrierte Arbeit.",
+        "title": "Deep Work"
+      },
+      "ownership": {
+        "desc": "Keine Ausreden. Wir übernehmen volle Verantwortung für das Ergebnis. Wenn etwas schiefgeht, fixen wir es. Punkt.",
+        "title": "Extreme Ownership"
       },
       "speed": {
-        "title": "Speed wins",
-        "desc": "Perfektion ist der Feind von Fertig. Wir shippen schnell und iterieren basierend auf echten Daten."
+        "desc": "Perfektion ist der Feind von Fertig. Wir shippen schnell und iterieren basierend auf echten Daten.",
+        "title": "Speed wins"
+      },
+      "truth": {
+        "desc": "Wir sagen, was Sache ist. Auch wenn es weh tut. Ehrliches Feedback ist der einzige Weg zu Exzellenz.",
+        "title": "Radical Truth"
       }
-    },
-    "team": {
-      "title": "Die Köpfe dahinter",
-      "desc": "Menschen machen den Unterschied.",
-      "members": [
-        {
-          "name": "Alex Admin",
-          "role": "Gründer",
-          "funfact_title": "Tech Stack:",
-          "funfact": "Kaffee & Red Bull"
-        },
-        {
-          "name": "Sarah Sales",
-          "role": "Head of Growth",
-          "funfact_title": "Superkraft:",
-          "funfact": "Verkauft Eis an Eskimos"
-        },
-        {
-          "name": "Mike Maker",
-          "role": "Lead Dev",
-          "funfact_title": "Hobby:",
-          "funfact": "Vim Konfigurationen"
-        },
-        {
-          "name": "Lisa Lens",
-          "role": "Art Director",
-          "funfact_title": "Stil:",
-          "funfact": "Pixel Perfect"
-        }
-      ]
     }
   },
-  "benefits": {
-    "hero": {
-      "badge": "Vorteile & Extras",
-      "title": "Mehr als nur Gehalt.",
-      "desc": "Wir fordern viel, aber wir geben auch viel zurück. Unsere Benefits sind darauf ausgelegt, dir den Rücken freizuhalten."
+  "hero": {
+    "badge": "Join the Elite",
+    "cta": "Offene Stellen",
+    "desc": "Wir bauen Deutschlands beste Agentur. Wir suchen keine Mitarbeiter. Wir suchen Mitstreiter.",
+    "title_gradient": "Eine Mission.",
+    "title_start": "Kein 9-to-5."
+  },
+  "jobs": {
+    "button": "Bewerben",
+    "culture_badge": "Unsere Kultur",
+    "details": {
+      "fulltime": "Vollzeit",
+      "parttime": "Teilzeit / Freelance",
+      "type": "Remote (DE)"
     },
+    "hero_desc": "Wir eliminieren die Ineffizienz der Agenturwelt. Keine Politik. Nur Code, Wachstum und Erfolg.",
+    "hero_rotating": [
+      "Zukunft.",
+      "Revolution.",
+      "Innovation.",
+      "Elite."
+    ],
+    "hero_title_prefix": "Werde Teil der",
+    "list": [
+      {
+        "desc": "Baue schnelle Benutzeroberflächen und gestalte unser Design-System Aurora mit. Du liebst Pixel-Perfektion?",
+        "id": 1,
+        "location": "Fernarbeit",
+        "mailtoSubject": "Bewerbung als Oberflächen-Entwickler",
+        "title": "Erfahrener Oberflächen-Entwickler (React/Next.js)",
+        "type": "Vollzeit"
+      },
+      {
+        "desc": "Erstelle visuelle Erlebnisse, die begeistern. Von Skizzen bis zu animierten Prototypen.",
+        "id": 2,
+        "location": "Fernarbeit",
+        "mailtoSubject": "Bewerbung als Designer",
+        "title": "Benutzerfreundlichkeits-Designer (Figma/Animation)",
+        "type": "Vollzeit"
+      },
+      {
+        "desc": "Skaliere unsere Reichweite und optimiere Verkaufstrichter. Datengetrieben und kreativ.",
+        "id": 3,
+        "location": "Fernarbeit",
+        "mailtoSubject": "Bewerbung als Wachstums-Marketingleiter",
+        "title": "Wachstums-Marketingleiter",
+        "type": "Vollzeit"
+      }
+    ],
+    "no_jobs": {
+      "button": "Initiativ bewerben",
+      "desc": "Wir suchen immer nach außergewöhnlichen Talenten. Schick uns deine Initiativbewerbung und erzähl uns, wie du uns helfen kannst erfolgreich zu sein.",
+      "title": "Keine passende Stelle dabei?"
+    },
+    "title": "Offene Stellen"
+  },
+  "path": {
+    "desc": "Bei uns stagnierst du nicht. Wir haben klare Pfade, transparente Gehälter und pushen dich ans Limit.",
+    "levels": {
+      "design": [
+        {
+          "desc": "Du pixel-perfectest Interfaces.",
+          "title": "UI Designer"
+        },
+        {
+          "desc": "Du löst echte Nutzerprobleme.",
+          "title": "Product Designer"
+        },
+        {
+          "desc": "Du definierst den Look von morgen.",
+          "title": "Art Director"
+        }
+      ],
+      "dev": [
+        {
+          "desc": "Du lernst unsere Standards.",
+          "title": "Junior Dev"
+        },
+        {
+          "desc": "Du übernimmst Verantwortung für Features.",
+          "title": "Senior Dev"
+        },
+        {
+          "desc": "Du baust die nächste Generation von Coday.",
+          "title": "Tech Lead"
+        }
+      ],
+      "growth": [
+        {
+          "desc": "Du bringst Deals rein.",
+          "title": "Sales Rep"
+        },
+        {
+          "desc": "Du betreust Key Accounts.",
+          "title": "Account Exec"
+        },
+        {
+          "desc": "Du skalierst die Agentur.",
+          "title": "Head of Growth"
+        }
+      ]
+    },
+    "selector_title": "Wähle deinen Pfad",
+    "title": "Dein Wachstum ist unser Ziel.",
+    "tracks": {
+      "design": "Design",
+      "dev": "Engineering",
+      "growth": "Growth"
+    }
+  },
+  "perks": {
+    "desc": "Wir fordern viel. Wir geben viel.",
     "items": [
       {
-        "icon": "laptop_mac",
-        "title": "Top Ausstattung",
-        "text": "Neuestes MacBook Pro, 4K Monitor und Noise-Cancelling Kopfhörer deiner Wahl."
+        "desc": "Bali oder Berlin. Wir sind 100% Remote-First.",
+        "title": "Work from Anywhere"
       },
       {
-        "icon": "home",
-        "title": "Überall arbeiten",
-        "text": "Arbeite von wo du willst. Wir finanzieren dein Heimbüro oder Co-Working Platz."
+        "desc": "Neuestes MacBook Pro + 27\" 4K Monitor für dein Home Office.",
+        "title": "Top Hardware"
       },
       {
-        "icon": "flight_takeoff",
-        "title": "Arbeits-Reisen",
-        "text": "2x im Jahr fliegt das ganze Team an einen sonnigen Ort zum Arbeiten und Feiern."
+        "desc": "2.000€ pro Jahr für Kurse, Konferenzen und Bücher.",
+        "title": "Learning Budget"
       },
       {
-        "icon": "payments",
-        "title": "Top Gehalt",
-        "text": "Wir zahlen Spitzen-Gehälter für Spitzen-Talente. Inklusive Unternehmensbeteiligung."
+        "desc": "Zweimal im Jahr fliegen wir gemeinsam weg. Work + Party.",
+        "title": "Team Retreats"
       },
       {
-        "icon": "school",
-        "title": "Weiterbildung",
-        "text": "€2.000 pro Jahr für Kurse, Konferenzen und Bücher. Deine Entwicklung ist uns wichtig."
+        "desc": "L & XL Mitgliedschaft komplett bezahlt.",
+        "title": "Urban Sports"
       },
       {
-        "icon": "fitness_center",
-        "title": "Gesundheit",
-        "text": "Sport-Mitgliedschaft und monatlicher Gesundheits-Bonus."
+        "desc": "Wenn wir gewinnen, gewinnst du. Jährlicher Bonus.",
+        "title": "Profit Share"
       }
-    ]
+    ],
+    "title": "Warum Coday?"
   }
 }

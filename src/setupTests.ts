@@ -1,4 +1,5 @@
 import { vi } from 'vitest';
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import '@testing-library/jest-dom';
 
 // Mock IntersectionObserver
@@ -20,7 +21,7 @@ class IntersectionObserverMock {
 }
 
 vi.stubGlobal('IntersectionObserver', IntersectionObserverMock);
-window.IntersectionObserver = IntersectionObserverMock as unknown as typeof IntersectionObserver;
+window.IntersectionObserver = IntersectionObserverMock as any;
 
 // Mock matchMedia
 Object.defineProperty(window, 'matchMedia', {

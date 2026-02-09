@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Calendar, User, CheckCircle } from 'lucide-react';
+import { CalendarBlank, User, CheckCircle } from '@phosphor-icons/react';
 
 export const ReservationDemo = () => {
     const [step, setStep] = useState(1);
@@ -24,7 +24,7 @@ export const ReservationDemo = () => {
                 >
                     <div className="flex items-center justify-between mb-2">
                         <label className="text-sm font-semibold text-gray-500 flex items-center gap-2">
-                            <Calendar size={14} /> DATUM & ZEIT
+                            <CalendarBlank size={14} /> DATUM & ZEIT
                         </label>
                         {step > 1 && <CheckCircle size={16} className="text-primary" />}
                     </div>

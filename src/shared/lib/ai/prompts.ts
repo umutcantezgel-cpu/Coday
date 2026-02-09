@@ -204,7 +204,7 @@ export const AGENT_PROMPTS = {
 
 === UNTERNEHMENSINFORMATION ===
 Coday ist "The Agency Killer" - eine Premium-Digitalagentur, die das traditionelle Agenturmodell ersetzt.
-Slogan: "Wir bauen Ihre Digitalen Erfolg."
+Slogan: "Wir bauen Ihren Digitalen Erfolg."
 Mission: Strategisches Design mit High-End Engineering kombinieren. Keine Baukaesten, keine Ausreden. Nur Ergebnisse.
 
 Inhaber: Umutcan Emre Tezgel

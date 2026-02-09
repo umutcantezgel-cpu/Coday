@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'motion/react';
-import { Split, Users, MousePointerClick, RefreshCw } from 'lucide-react';
+import { SplitHorizontal, Users, CursorClick, ArrowsClockwise } from '@phosphor-icons/react';
 import { clsx } from 'clsx';
 import { cn } from '@/shared/lib/utils';
 
@@ -79,7 +79,7 @@ export const ABTestSimulator: React.FC = () => {
                 {/* Header */}
                 <div className="bg-gradient-to-r from-gray-900 to-gray-800 p-6 text-white flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                        <Split className="text-primary" />
+                        <SplitHorizontal className="text-primary" />
                         <div>
                             <h3 className="font-bold text-lg leading-tight">{t('blog:abTest.title')}</h3>
                             <p className="text-xs text-gray-400 font-mono">{t('blog:abTest.subtitle')}</p>
@@ -91,7 +91,7 @@ export const ABTestSimulator: React.FC = () => {
                                 onClick={() => setIsRunning(true)}
                                 className="px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg text-sm font-bold transition-all flex items-center gap-2"
                             >
-                                <RefreshCw className="w-4 h-4" /> {t('blog:abTest.start')}
+                                <ArrowsClockwise className="w-4 h-4" /> {t('blog:abTest.start')}
                             </button>
                         ) : (
                             <button
@@ -106,7 +106,7 @@ export const ABTestSimulator: React.FC = () => {
                             className="p-2 hover:bg-white/10 rounded-lg transition-colors"
                             title="Reset"
                         >
-                            <RefreshCw className="w-4 h-4" />
+                            <ArrowsClockwise className="w-4 h-4" />
                         </button>
                     </div>
                 </div>
@@ -160,7 +160,7 @@ export const ABTestSimulator: React.FC = () => {
                                     <span className="font-mono font-bold text-gray-900">{visitors.toLocaleString()}</span>
                                 </div>
                                 <div className="flex justify-between items-center">
-                                    <span className="text-gray-600 text-sm flex items-center gap-2"><MousePointerClick className="w-4 h-4" /> {t('blog:abTest.metrics.conversions')}</span>
+                                    <span className="text-gray-600 text-sm flex items-center gap-2"><CursorClick className="w-4 h-4" /> {t('blog:abTest.metrics.conversions')}</span>
                                     <span className="font-mono font-bold text-gray-900">{conversions.toLocaleString()}</span>
                                 </div>
                                 <div className="flex justify-between items-center pt-2 border-t border-gray-100">

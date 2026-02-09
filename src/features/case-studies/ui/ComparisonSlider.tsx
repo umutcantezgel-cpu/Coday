@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, useMotionValue, useTransform } from 'motion/react';
-import { GripVertical } from 'lucide-react';
+import { DotsSixVertical } from '@phosphor-icons/react';
 import { OptimizedImage } from '../../../shared/ui/OptimizedImage';
 
 interface ComparisonSliderProps {
@@ -76,7 +76,7 @@ export const ComparisonSlider: React.FC<ComparisonSliderProps> = ({
                     className="absolute top-0 bottom-0 w-1 bg-white z-40 cursor-ew-resize flex items-center justify-center group"
                 >
                     <div className="w-10 h-10 bg-white rounded-full shadow-xl flex items-center justify-center text-secondary group-hover:scale-110 transition-transform group-active:scale-95">
-                        <GripVertical size={20} />
+                        <DotsSixVertical size={20} />
                     </div>
                 </motion.div>
             </div>

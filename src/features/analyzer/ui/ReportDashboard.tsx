@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Download, Share2, Check, Mail, Calendar } from 'lucide-react';
+import { DownloadSimple, ShareNetwork, Check, Envelope, CalendarBlank } from '@phosphor-icons/react';
 import { useAnalyzerStore } from '../model/store';
 import { ScoreCard } from './ScoreCard';
 import { UrgencyMeter } from './UrgencyMeter';
@@ -181,7 +181,7 @@ export const ReportDashboard: React.FC = () => {
             onClick={handleDownloadPdf}
             className="flex items-center gap-2 px-5 py-2.5 bg-white border border-gray-200 rounded-xl font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-300 transition-all shadow-sm"
           >
-            <Download className="w-4 h-4" />
+            <DownloadSimple className="w-4 h-4" />
             <span>PDF Export</span>
           </button>
           <button
@@ -195,7 +195,7 @@ export const ReportDashboard: React.FC = () => {
               </>
             ) : (
               <>
-                <Share2 className="w-4 h-4" />
+                <ShareNetwork className="w-4 h-4" />
                 <span>Teilen</span>
               </>
             )}
@@ -204,7 +204,7 @@ export const ReportDashboard: React.FC = () => {
             onClick={() => setShowEmailModal(true)}
             className="flex items-center gap-2 px-5 py-2.5 bg-white border border-gray-200 rounded-xl font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-300 transition-all shadow-sm"
           >
-            <Mail className="w-4 h-4" />
+            <Envelope className="w-4 h-4" />
             <span>E-Mail</span>
           </button>
         </div>
@@ -450,7 +450,7 @@ export const ReportDashboard: React.FC = () => {
             onClick={() => window.open('/booking', '_blank')}
             className="flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary font-bold rounded-xl hover:bg-blue-50 transition-colors shadow-lg"
           >
-            <Calendar className="w-5 h-5" />
+            <CalendarBlank className="w-5 h-5" />
             <span>Beratung buchen</span>
           </button>
           <button

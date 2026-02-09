@@ -1,143 +1,248 @@
 {
-  "hero": {
-    "label": "Expertise",
-    "title": "Our Core Areas.",
-    "rotating": [
-      "Specialized Solutions for Your Success.",
-      "Taking Your Business Digital to the Top.",
-      "Professional Code. Professional Design.",
-      "From Idea to Market Leadership."
-    ]
-  },
-  "web_development_page": {
-    "hero": {
-      "label": "Technology Stack",
-      "title_anim": "Fast",
-      "title_static": "Web Development.",
-      "description": "We don't build \"homepages\", we build digital assets. Scalable, secure, and blazing fast. Specialized in modern web applications and complex online shops."
+  "api_integration_page": {
+    "connectivity": {
+      "description": "Whether REST, GraphQL, SOAP, or Webhooks. We connect everything that has an interface.",
+      "title": "We speak every language.",
+      "tools": [
+        "Salesforce",
+        "HubSpot",
+        "Pipedrive",
+        "Shopify",
+        "WooCommerce",
+        "Magento",
+        "Stripe",
+        "PayPal",
+        "Klarna",
+        "Xero",
+        "Quickbooks",
+        "Datev",
+        "Slack",
+        "Teams",
+        "Discord",
+        "OpenAI",
+        "Anthropic",
+        "DeepL"
+      ]
     },
-    "tech_stack": {
-      "title": "Professional Architecture",
-      "description": "Our technology stack is no accident. Every tool was selected for maximum speed, scalability, and search engine dominance.",
-      "nextjs": {
-        "title": "Next.js 14",
-        "desc": "Server-side rendering and static generation for extremely fast load times."
+    "faq": {
+      "items": [
+        {
+          "a": "Often yes. If no API exists, we build middleware or use RPA (Robotic Process Automation) to scrape data.",
+          "q": "Can you connect legacy systems?"
+        },
+        {
+          "a": "We integrate robust error handling and monitoring. If an interface fails, you are notified immediately and data is cached.",
+          "q": "What happens on errors?"
+        },
+        {
+          "a": "We use OAuth2, encrypted transmission, and strictly adhere to GDPR regulations. Your data never leaves the tunnel unsecured.",
+          "q": "How secure is the data?"
+        }
+      ],
+      "title": "Common API Questions"
+    },
+    "hero": {
+      "cta": "Request Integration",
+      "description": "We connect your system landscape. CRM, ERP, Payment, or Marketing tools – everything works seamlessly together.",
+      "title_prefix": "API Integrations &",
+      "title_suffix": "Automation."
+    },
+    "why_automate": {
+      "description": "Stop manual data entry. Let machines do the work.",
+      "items": {
+        "efficiency": {
+          "desc": "Save hundreds of hours of manual work every month.",
+          "title": "Efficiency"
+        },
+        "errors": {
+          "desc": "No more copy-paste errors. Data is always correct.",
+          "title": "Zero Errors"
+        },
+        "speed": {
+          "desc": "Data is available in all systems in real-time.",
+          "title": "Real-time Speed"
+        }
       },
-      "typescript": {
-        "title": "TypeScript",
-        "desc": "Type-safe code that prevents errors before they happen."
-      },
-      "supabase": {
-        "title": "Supabase",
-        "desc": "Real-time databases and authentication. Scalable and open source."
-      },
-      "tailwind": {
-        "title": "Tailwind CSS",
-        "desc": "Modern styling for minimal file sizes."
-      }
+      "title": "Why Automate?"
+    }
+  },
+  "brand_identity_page": {
+    "deliverables": {
+      "items": "__MISSING__",
+      "title": "__MISSING__"
+    },
+    "digital_branding": {
+      "description": "Today, a brand must work primarily on smartphones. We don't think in letterheads, but in pixels.",
+      "tags": [
+        "Logo Design",
+        "Typography",
+        "Color Palette",
+        "Tone of Voice",
+        "Social Assets"
+      ],
+      "title": "Digital-First Branding"
+    },
+    "hero": {
+      "cta": "Request Branding",
+      "description": "Brands that stick. We develop corporate identities, logos, and design languages specifically for digital touchpoints.",
+      "title_prefix": "Brand Identity",
+      "title_suffix": "for B2B."
+    },
+    "process": {
+      "steps": "__MISSING__",
+      "title": "__MISSING__"
     }
   },
   "categories": {
-    "web_development": {
-      "title": "Web Development",
-      "description": "We build fast and powerful websites and web applications with modern technology."
-    },
     "web_design": {
-      "title": "Web Design",
-      "description": "Award-winning design for best usability. Beauty that sells."
+      "description": "Award-winning design for best usability. Beauty that sells.",
+      "title": "Web Design"
+    },
+    "web_development": {
+      "description": "We build fast and powerful websites and web applications with modern technology.",
+      "title": "Web Development"
+    }
+  },
+  "consulting_page": {
+    "areas": {
+      "digital_trans": {
+        "desc": "Digitize and automate processes. From lead generation to fulfillment.",
+        "title": "Digital Transformation"
+      },
+      "growth_hack": {
+        "desc": "Data-driven experiments for rapid growth. SEO, SEA, and CRO in synergy.",
+        "title": "Growth Hacking"
+      },
+      "tech_stack": {
+        "desc": "Which technology fits your goals? We analyze your requirements and recommend future-proof solutions.",
+        "title": "Tech Stack Evaluation"
+      },
+      "title": "Consulting Areas"
+    },
+    "hero": {
+      "badge": "Digital Strategy",
+      "cta": "Book Consultation",
+      "description": "Technology changes daily. We help you stay on top and make the right decisions for your growth.",
+      "title_prefix": "Clarity in a",
+      "title_suffix": "Complex World."
     }
   },
   "cta": {
+    "button": "Request Project",
     "more": "Learn More",
-    "ready": "Ready for the next step?",
-    "button": "Request Project"
+    "ready": "Ready for the next step?"
+  },
+  "design_systems_page": {
+    "benefits": {
+      "items": "__MISSING__",
+      "title": "__MISSING__"
+    },
+    "components": {
+      "items": "__MISSING__",
+      "title": "__MISSING__"
+    },
+    "hero": {
+      "badge": "Scalable UI",
+      "cta": "__MISSING__",
+      "description": "Consistency is King. We develop atomic design systems that make your brand uniform and efficient across all touchpoints.",
+      "title_prefix": "Design that",
+      "title_suffix": "Scales."
+    },
+    "workflow": {
+      "description": "__MISSING__",
+      "title": "__MISSING__"
+    }
   },
   "ecommerce_page": {
-    "hero": {
-      "title_anim": "E-Commerce that",
-      "title_static": "sells.",
-      "description": "We build high-performance shops with Shopify and WooCommerce. No standard themes, but conversion-optimized sales machines.",
-      "cta_primary": "Start Shop Project",
-      "cta_secondary": "View References"
-    },
-    "stats": {
-      "conversion_label": "Conversion Rate",
-      "load_time_label": "Load Time",
-      "core_vitals_label": "Core Vitals",
-      "tech_label": "Technology",
-      "vs_prev_year": "vs. Last Year"
-    },
-    "roi_calculator": {
-      "label": "Revenue Calculator",
-      "title": "How much more can you earn?",
-      "description": "A faster shop = more buyers = more revenue.",
-      "instruction": "Enter your numbers and see the result instantly.",
-      "visitors_label": "How many monthly visitors?",
-      "visitors_unit": "Visitors",
-      "conversion_label": "Out of 100 visitors...",
-      "conversion_unit": "People buy",
-      "aov_label": "Average Order Value",
-      "result_title": "Your result after optimization",
-      "result_monthly": "More Monthly Revenue",
-      "result_yearly": "More Yearly Revenue",
-      "explanation": "How it works: A faster shop convinces more visitors to buy (+0.5%) and they spend more on average (+10%)."
-    },
     "comparison": {
-      "title": "Choose the Right System",
-      "description": "We advise technology-agnostically. Here is a comparison of our top solutions.",
-      "shopify": {
-        "title": "Shopify Plus",
-        "features": [
-          "Best Time-to-Market (Start in < 4 weeks)",
-          "Maintenance-free Hosting & Security",
-          "Huge App Ecosystem",
-          "Perfect for DTC Brands up to €50M Revenue"
-        ],
-        "recommendation": "Recommended for: Lifestyle Brands, Fashion, Startups"
-      },
       "custom": {
-        "title": "Custom Headless",
         "features": [
           "Maximum Performance (0.5s Load Time)",
           "Complete Freedom in Frontend Design",
           "Complex Product Configurators Possible",
           "Perfect for B2B & Complex Enterprise Shops"
         ],
-        "recommendation": "Recommended for: B2B, Hidden Champions, Individualists"
-      }
+        "recommendation": "Recommended for: B2B, Hidden Champions, Individualists",
+        "title": "Custom Headless"
+      },
+      "description": "We advise technology-agnostically. Here is a comparison of our top solutions.",
+      "shopify": {
+        "features": [
+          "Best Time-to-Market (Start in < 4 weeks)",
+          "Maintenance-free Hosting & Security",
+          "Huge App Ecosystem",
+          "Perfect for DTC Brands up to €50M Revenue"
+        ],
+        "recommendation": "Recommended for: Lifestyle Brands, Fashion, Startups",
+        "title": "Shopify Plus"
+      },
+      "title": "Choose the Right System"
+    },
+    "cta_section": {
+      "button": "Request Consultation",
+      "description": "Let's take your online shop to the next level.",
+      "title": "Ready to Scale?"
     },
     "features": {
-      "title": "More than just an Online Shop",
       "description": "A shop doesn't just have to look good, it has to work. We focus on the metrics that count.",
       "items": {
-        "shopify_plus": {
-          "title": "Shopify & Plus",
-          "desc": "Scalable enterprise solutions with Shopify 2.0 and Hydrogen."
-        },
-        "headless": {
-          "title": "Headless Commerce",
-          "desc": "Maximum performance and flexibility through decoupled frontend."
-        },
-        "performance": {
-          "title": "Performance First",
-          "desc": "Blazing fast load times for better ranking and higher conversion."
+        "checkout": {
+          "desc": "Optimized checkout flow for fewer abandoned carts.",
+          "title": "Custom Checkout"
         },
         "erp": {
-          "title": "ERP Integration",
-          "desc": "Seamless connection to SAP, Weclapp, Xentral and Co."
+          "desc": "Seamless connection to SAP, Weclapp, Xentral and Co.",
+          "title": "ERP Integration"
         },
-        "checkout": {
-          "title": "Custom Checkout",
-          "desc": "Optimized checkout flow for fewer abandoned carts."
+        "headless": {
+          "desc": "Maximum performance and flexibility through decoupled frontend.",
+          "title": "Headless Commerce"
         },
         "mobile": {
-          "title": "Mobile Optimized",
-          "desc": "Perfect shopping experience on every device."
+          "desc": "Perfect shopping experience on every device.",
+          "title": "Mobile Optimized"
+        },
+        "performance": {
+          "desc": "Blazing fast load times for better ranking and higher conversion.",
+          "title": "Performance First"
+        },
+        "shopify_plus": {
+          "desc": "Scalable enterprise solutions with Shopify 2.0 and Hydrogen.",
+          "title": "Shopify & Plus"
         }
-      }
+      },
+      "title": "More than just an Online Shop"
+    },
+    "hero": {
+      "cta_primary": "Start Shop Project",
+      "cta_secondary": "View References",
+      "description": "We build high-performance shops with Shopify and WooCommerce. No standard themes, but conversion-optimized sales machines.",
+      "title_anim": "E-Commerce that",
+      "title_static": "sells."
+    },
+    "roi_calculator": {
+      "aov_label": "Average Order Value",
+      "conversion_label": "Out of 100 visitors...",
+      "conversion_unit": "People buy",
+      "description": "A faster shop = more buyers = more revenue.",
+      "explanation": "How it works: A faster shop convinces more visitors to buy (+0.5%) and they spend more on average (+10%).",
+      "instruction": "Enter your numbers and see the result instantly.",
+      "label": "Revenue Calculator",
+      "result_monthly": "More Monthly Revenue",
+      "result_title": "Your result after optimization",
+      "result_yearly": "More Yearly Revenue",
+      "title": "How much more can you earn?",
+      "visitors_label": "How many monthly visitors?",
+      "visitors_unit": "Visitors"
+    },
+    "stats": {
+      "conversion_label": "Conversion Rate",
+      "core_vitals_label": "Core Vitals",
+      "load_time_label": "Load Time",
+      "tech_label": "Technology",
+      "vs_prev_year": "vs. Last Year"
     },
     "tech_stack": {
-      "title": "Our Tech Stack",
       "description": "We rely on proven market leaders and modern headless technologies. Whether Shopify for fast go-to-market or custom solutions for complex requirements.",
       "items": [
         "Shopify / Shopify Plus",
@@ -145,269 +250,274 @@
         "Next.js Commerce",
         "Stripe & PayPal",
         "Klaviyo Email Marketing"
-      ]
+      ],
+      "title": "Our Tech Stack"
+    }
+  },
+  "enterprise_web_page": {
+    "hero": {
+      "badge": "Beyond Standard",
+      "cta_primary": "Start Dominance",
+      "cta_secondary": "View Cases",
+      "description": "No business cards. We build digital weapon systems for companies that don't see losing as an option.",
+      "scroll_hint": "Scroll to Explore",
+      "title_prefix": "Websites,",
+      "title_suffix": "that eat markets."
     },
-    "cta_section": {
-      "title": "Ready to Scale?",
-      "description": "Let's take your online shop to the next level.",
-      "button": "Request Consultation"
+    "roi_section": {
+      "description": "Most agencies sell 'pretty design'. We sell measurable revenue growth.",
+      "label": "The Cost of Slow",
+      "title": "Performance = Revenue"
+    },
+    "speed_section": {
+      "description": "Google hates slow websites. Users do too. We build on Edge Computing and Next.js for load times under 500ms.",
+      "title": "Speed is Authority."
+    },
+    "stack_section": {
+      "description": "No WordPress spaghetti. We use the tech stack of billion-dollar startups.",
+      "title": "The Stack of Dominance"
+    }
+  },
+  "generic_detail": {
+    "advantages": {
+      "contact_btn": "Get in Touch",
+      "desc": "Our clients don't choose colorful slides, they choose a team that understands marketing as an investment. We think in results, plan with clear goals, and deliver transparently.",
+      "label": "Your Benefits",
+      "title": "We think in ROAS, <br /> not in clicks."
+    },
+    "faq": {
+      "desc": "We work transparently. Here are answers to the most important questions.",
+      "title": "Frequently Asked Questions (FAQ)"
+    },
+    "final_cta": {
+      "button": "Inquire Now",
+      "desc": "No standard solutions. We develop exactly what you need for your success.",
+      "title": "Let's start your project."
+    },
+    "hero": {
+      "benefits_title": "Your Benefits",
+      "consulting_btn": "Schedule Consultation"
+    },
+    "not_found": {
+      "link": "Back to Overview",
+      "title": "Service not found"
+    },
+    "process": {
+      "label": "Our Process",
+      "title": "Measurable success <br /> in 5 steps."
+    },
+    "testimonials": {
+      "label": "What our clients say",
+      "title": "Results that convince."
+    },
+    "trust": {
+      "title": "Trusted by leading companies"
     }
   },
   "headless_cms_page": {
+    "cms_comparison": {
+      "contentful": {
+        "badge": "Enterprise Choice",
+        "desc": "The Enterprise Standard. Robust, proven, and perfect for large organizations with strict workflows."
+      },
+      "description": "We partner with leading Headless Systems. We find the right tool for your use case.",
+      "sanity": {
+        "badge": "Best for Customization",
+        "desc": "Our top choice for maximum flexibility. Real-time collaboration and 'Content Lake' architecture."
+      },
+      "strapi": {
+        "badge": "Open Source",
+        "desc": "Open Source and Self-Hosted. Full data control and no license costs for the Community Edition."
+      },
+      "title": "The Best Tools on the Market"
+    },
+    "faq": {
+      "items": [
+        {
+          "a": "Initially often yes, but TCO is often lower in the long run due to less maintenance, fewer plugins, and fewer security vulnerabilities.",
+          "q": "Is Headless more expensive than WordPress?"
+        },
+        {
+          "a": "Yes. We write migration scripts to transfer your content from WordPress, Typo3, or Drupal losslessly to the new CMS.",
+          "q": "Can we keep our old data?"
+        },
+        {
+          "a": "Modern Headless setups offer Live Preview. You see changes immediately, even before publishing.",
+          "q": "What about preview?"
+        }
+      ],
+      "title": "Frequently Asked Questions about Headless"
+    },
     "hero": {
-      "title_prefix": "Headless CMS &",
-      "title_suffix": "Content.",
+      "cta": "Get CMS Consultation",
       "description": "Manage content centrally, deliver it everywhere. We integrate Contentful, Sanity, and Strapi into modern frontends.",
-      "cta": "Get CMS Consultation"
+      "title_prefix": "Headless CMS &",
+      "title_suffix": "Content."
     },
     "why_headless": {
-      "title": "Why Headless?",
       "description": "Separate frontend from backend for maximum flexibility and performance.",
       "items": {
-        "omnichannel": {
-          "title": "Omnichannel",
-          "desc": "One content hub for website, app, smartwatch, and more."
-        },
-        "performance": {
-          "title": "High Performance",
-          "desc": "Static generation via Next.js for extremely fast load times."
-        },
-        "security": {
-          "title": "Security",
-          "desc": "No direct database connection in the frontend. Minimized risks."
-        },
         "dev_friendly": {
-          "title": "Developer Friendly",
-          "desc": "Modern API-first approaches enable faster iterations."
-        },
-        "scalable": {
-          "title": "Scalable",
-          "desc": "Grows with your requirements without rebuilding the system."
+          "desc": "Modern API-first approaches enable faster iterations.",
+          "title": "Developer Friendly"
         },
         "marketing_speed": {
-          "title": "Marketing Speed",
-          "desc": "Create landing pages without developer resources."
-        }
-      }
-    }
-  },
-  "web_apps_page": {
-    "hero": {
-      "title_prefix": "SaaS &",
-      "title_suffix": "Custom Software.",
-      "description": "We develop complex web applications, dashboards, and SaaS platforms. Scalable, secure, and user-friendly.",
-      "cta": "Discuss Project"
-    },
-    "integration_network": {
-      "label": "System Integration",
-      "title": "We Connect Your World.",
-      "description": "No island solutions. Our software speaks fluently with your existing infrastructure. CRM, ERP, Payment, or AI."
-    },
-    "security": {
-      "title": "Security is not a feature,\nbut the foundation.",
-      "description": "Custom software often processes sensitive data. We guarantee the highest security standards and data protection compliance from day 1.",
-      "items": [
-        "GDPR Compliance by Design",
-        "ISO 27001 Certified Hosting Partners (AWS/Vercel)",
-        "End-to-End Encryption of Sensitive Data",
-        "Regular Penetration Tests"
-      ],
-      "badges": {
-        "gdpr": "GDPR Ready",
-        "ssl": "SSL Secure",
-        "uptime": "99.9% Uptime",
-        "support": "24/7 Support"
-      }
-    },
-    "features": {
-      "title": "Technology that Grows",
-      "description": "From MVP to Enterprise product. We build architecture that lasts.",
-      "items": {
-        "saas": {
-          "title": "SaaS Development",
-          "desc": "Multi-tenant architectures for scalable Software-as-a-Service products."
+          "desc": "Create landing pages without developer resources.",
+          "title": "Marketing Speed"
         },
-        "internal_tools": {
-          "title": "Internal Tools",
-          "desc": "Custom dashboards and tools for your internal processes."
+        "omnichannel": {
+          "desc": "One content hub for website, app, smartwatch, and more.",
+          "title": "Omnichannel"
         },
-        "pwa": {
-          "title": "Progressive Web Apps",
-          "desc": "Native app feeling in the browser, offline-capable, and fast."
+        "performance": {
+          "desc": "Static generation via Next.js for extremely fast load times.",
+          "title": "High Performance"
         },
-        "realtime": {
-          "title": "Realtime Data",
-          "desc": "Live updates via WebSockets for chats, notifications, and live tracking."
-        },
-        "cloud": {
-          "title": "Cloud Infrastructure",
-          "desc": "AWS, Vercel, or Google Cloud setup for maximum uptime."
+        "scalable": {
+          "desc": "Grows with your requirements without rebuilding the system.",
+          "title": "Scalable"
         },
         "security": {
-          "title": "Security",
-          "desc": "GDPR compliant, encrypted, and secure according to industry standards."
+          "desc": "No direct database connection in the frontend. Minimized risks.",
+          "title": "Security"
         }
-      }
-    },
-    "cta_section": {
-      "title": "Do you have a vision?",
-      "description": "We build the technical foundation for it.",
-      "button": "Request Developer Team"
+      },
+      "title": "Why Headless?"
     }
   },
-  "api_integration_page": {
-    "hero": {
-      "title_prefix": "API Integrations &",
-      "title_suffix": "Automation.",
-      "description": "We connect your system landscape. CRM, ERP, Payment, or Marketing tools – everything works seamlessly together.",
-      "cta": "Request Integration"
-    }
+  "hero": {
+    "label": "Expertise",
+    "rotating": [
+      "Specialized Solutions for Your Success.",
+      "Taking Your Business Digital to the Top.",
+      "Professional Code. Professional Design.",
+      "From Idea to Market Leadership."
+    ],
+    "title": "Our Core Areas."
   },
   "migration_page": {
+    "before_after": {
+      "after": {
+        "items": [
+          "React / Next.js Architecture",
+          "Load times < 0.5s",
+          "Perfect Google Score (95+)",
+          "Easy to extend & maintain"
+        ],
+        "label": "After Migration"
+      },
+      "before": {
+        "items": [
+          "Monolithic Architecture",
+          "Slow load times (> 3s)",
+          "Security holes & plugin chaos",
+          "Hard to scale"
+        ],
+        "label": "Before Status"
+      },
+      "description": "Don't let legacy systems slow you down. We modernize your stack.",
+      "title": "Transformation Results"
+    },
+    "faq": {
+      "items": [
+        {
+          "a": "It depends on the complexity, but usually between 4 to 12 weeks for a complete migration.",
+          "q": "How long does a migration take?"
+        },
+        {
+          "a": "No. We run both systems in parallel and switch DNS only when the new system is perfect.",
+          "q": "Is there downtime?"
+        },
+        {
+          "a": "Yes. We migrate all your content, images, and users securely to the new database.",
+          "q": "Do I lose my data?"
+        }
+      ],
+      "title": "Migration FAQ"
+    },
     "hero": {
+      "cta": "Start Migration",
+      "description": "We migrate your outdated monoliths to a modern, scalable stack based on React and Next.js. Without data loss.",
       "label": "Legacy Modernization",
       "title_prefix": "Future",
-      "title_suffix": "Proof.",
-      "description": "We migrate your outdated monoliths to a modern, scalable stack based on React and Next.js. Without data loss."
-    }
-  },
-  "web_design_page": {
-    "hero": {
-      "label": "Design & Usability",
-      "title_prefix": "Award-Winning",
-      "title_suffix": "Web Design.",
-      "description": "Design that not only looks good but sells. We combine aesthetics with psychology for digital experiences that stick."
-    },
-    "design_system": {
-      "label": "Modular Design",
-      "title": "We design systems, \nnot pages.",
-      "description": "A design system is the single source of truth for your brand. It guarantees consistency across all channels and accelerates feature development by up to 300%.",
-      "items": [
-        "Scalable Design Tokens (Colors, Spacing, Typography)",
-        "Reusable Component Library",
-        "Accessibility (a11y) integrated by default",
-        "Dark Mode & Multi-Brand Support"
-      ]
-    },
-    "before_after": {
-      "label": "Premium Transformation",
-      "title": "The difference is measurable.",
-      "description": "See for yourself how we turn an outdated 'digital business card' into a fast sales machine."
-    },
-    "psychology": {
-      "label": "Behavioral Design",
-      "title": "Design that sticks.",
-      "description": "We use principles of behavioral psychology to intuitively guide users and remove sales barriers."
+      "title_suffix": "Proof."
     },
     "process": {
-      "title": "The Path to the Perfect Interface",
-      "description": "We leave nothing to chance. Our UX process is based on data, user feedback, and iterative improvements.",
-      "steps": {
-        "exploration": {
-          "title": "Exploration",
-          "desc": "User research and interviews. We understand the 'Why'."
+      "description": "A safe path to modern architecture in 4 steps.",
+      "steps": [
+        {
+          "desc": "We analyze your current stack and data structure.",
+          "title": "Analysis"
         },
-        "structure": {
-          "title": "Structure",
-          "desc": "Rough sketches without distractions. Focus on information architecture."
+        {
+          "desc": "We design the new architecture and data model.",
+          "title": "Planning"
         },
-        "visual": {
-          "title": "Visual Design",
-          "desc": "Detailed interface. Typography, colors, and micro-animations."
+        {
+          "desc": "Automated migration of content and assets.",
+          "title": "Data Migration"
         },
-        "prototype": {
-          "title": "Prototype",
-          "desc": "Clickable models. Testing with real users before coding."
+        {
+          "desc": "Switching to the new system with zero downtime.",
+          "title": "Launch"
         }
-      }
+      ],
+      "title": "The Migration Process"
     },
-    "cta_section": {
-      "title": "Do you want to stand out?",
-      "description": "Standard templates are history. We design your digital identity.",
-      "button": "Request Design"
-    },
-    "services_grid": {
-      "ux_ui_design": {
-        "title": "UX/UI Design",
-        "description": "Digital brand experience. User-centric design that makes your brand tangible."
-      },
-      "design_systems": {
-        "title": "Design Systems",
-        "description": "Consistent component libraries for scalable products and rapid development."
-      },
-      "website_relaunch": {
-        "title": "Website Relaunch",
-        "description": "From strategy to new design. We fundamentally modernize your web presence."
-      }
+    "technologies": {
+      "description": "We specialize in migrating from these legacy systems to the modern web.",
+      "from": [
+        "WordPress",
+        "Typo3",
+        "Drupal",
+        "Joomla",
+        "Magento 1"
+      ],
+      "title": "Supported Technologies",
+      "to": [
+        "Next.js",
+        "React",
+        "Supabase",
+        "Vercel",
+        "Sanity"
+      ]
     }
   },
-  "ui_ux_page": {
-    "hero": {
-      "badge": "Design Services",
-      "title_prefix": "UI/UX Design that",
-      "title_suffix": "captivates.",
-      "description": "We create digital experiences that users love and drive conversions. From wireframes to high-fidelity prototypes.",
-      "cta": "Request Design"
+  "performance_page": {
+    "google_values": {
+      "badge": "Google Speed Metrics",
+      "description": "Google doesn't just measure keywords, but how your site <i>feels</i>. We optimize all 3 Core Web Vitals for best ratings.",
+      "title": "Ranking Factor No.1: User Experience"
     },
-    "process": {
-      "research": {
-        "title": "Research",
-        "desc": "Audience analysis and user journeys."
-      },
-      "wireframing": {
-        "title": "Wireframing",
-        "desc": "Structure and layout without distraction."
-      },
-      "prototyping": {
-        "title": "Prototyping",
-        "desc": "Interactive designs in Figma."
-      }
-    }
-  },
-  "brand_identity_page": {
     "hero": {
-      "title_prefix": "Brand Identity",
-      "title_suffix": "for B2B.",
-      "description": "Brands that stick. We develop corporate identities, logos, and design languages specifically for digital touchpoints.",
-      "cta": "Request Branding"
+      "badge": "Speed Optimization",
+      "description": "Every millisecond counts. We optimize your load times for maximum customer conversions and user friendliness.",
+      "title_prefix": "Speed is",
+      "title_suffix": "Revenue."
     },
-    "digital_branding": {
-      "title": "Digital-First Branding",
-      "description": "Today, a brand must work primarily on smartphones. We don't think in letterheads, but in pixels.",
-      "tags": ["Logo Design", "Typography", "Color Palette", "Tone of Voice", "Social Assets"]
-    }
-  },
-  "design_systems_page": {
-    "hero": {
-      "badge": "Scalable UI",
-      "title_prefix": "Design that",
-      "title_suffix": "Scales.",
-      "description": "Consistency is King. We develop atomic design systems that make your brand uniform and efficient across all touchpoints."
-    }
-  },
-  "ux_audit_page": {
-    "hero": {
-      "badge": "Research & Optimization",
-      "title_prefix": "Data instead of",
-      "title_suffix": "Gut Feeling.",
-      "description": "We analyze your user journeys, identify drop-offs, and optimize your conversion rates based on real user data.",
-      "cta": "Book Audit"
+    "metrics": {
+      "eco": "Eco Webspace",
+      "load_time": "Load Time",
+      "score": "Google Page Score",
+      "shift": "Visual Shift"
     }
   },
   "seo_page": {
-    "hero": {
-      "badge": "Search Engine Dominance",
-      "title_prefix": "Invisible is",
-      "title_suffix": "Irrelevant.",
-      "description": "We don't just get you to page 1. We keep you there. Technical optimization, content strategy, and authority building."
-    },
-    "ranking_factors": {
-      "badge": "The Science of Search",
-      "title": "200+ Ranking Factors. \nWe know them all.",
-      "description": "Google's search algorithm is not a secret, it's mathematics. We systematically optimize your site for technical excellence, content relevance, and authority."
-    },
     "dominance": {
-      "title": "Holistic Dominance",
+      "cards": {
+        "content": {
+          "desc": "Content written for users and loved by Google.",
+          "title": "Content Strategy"
+        },
+        "regional": {
+          "desc": "Become the top dog in your region.",
+          "title": "Regional Dominance"
+        },
+        "technical": {
+          "desc": "Load time optimization, structured data, and crawlability.",
+          "title": "Technical Optimization"
+        }
+      },
       "description": "Search engine optimization is not a silo. We connect your search with social media, content marketing, and paid advertising for maximum visibility.",
       "items": [
         "Holistic Strategy",
@@ -415,123 +525,239 @@
         "Content Distribution",
         "Data-Driven Insights"
       ],
-      "cards": {
-        "technical": {
-          "title": "Technical Optimization",
-          "desc": "Load time optimization, structured data, and crawlability."
-        },
-        "content": {
-          "title": "Content Strategy",
-          "desc": "Content written for users and loved by Google."
-        },
-        "regional": {
-          "title": "Regional Dominance",
-          "desc": "Become the top dog in your region."
-        }
-      }
-    }
-  },
-  "performance_page": {
-    "hero": {
-      "badge": "Speed Optimization",
-      "title_prefix": "Speed is",
-      "title_suffix": "Revenue.",
-      "description": "Every millisecond counts. We optimize your load times for maximum customer conversions and user friendliness."
-    },
-    "google_values": {
-      "badge": "Google Speed Metrics",
-      "title": "Ranking Factor No.1: User Experience",
-      "description": "Google doesn't just measure keywords, but how your site <i>feels</i>. We optimize all 3 Core Web Vitals for best ratings."
-    },
-    "metrics": {
-      "score": "Google Page Score",
-      "load_time": "Load Time",
-      "shift": "Visual Shift",
-      "eco": "Eco Webspace"
-    }
-  },
-  "consulting_page": {
-    "hero": {
-      "badge": "Digital Strategy",
-      "title_prefix": "Clarity in a",
-      "title_suffix": "Complex World.",
-      "description": "Technology changes daily. We help you stay on top and make the right decisions for your growth.",
-      "cta": "Book Consultation"
-    },
-    "areas": {
-      "title": "Consulting Areas",
-      "tech_stack": {
-        "title": "Tech Stack Evaluation",
-        "desc": "Which technology fits your goals? We analyze your requirements and recommend future-proof solutions."
-      },
-      "digital_trans": {
-        "title": "Digital Transformation",
-        "desc": "Digitize and automate processes. From lead generation to fulfillment."
-      },
-      "growth_hack": {
-        "title": "Growth Hacking",
-        "desc": "Data-driven experiments for rapid growth. SEO, SEA, and CRO in synergy."
-      }
-    }
-  },
-  "enterprise_web_page": {
-    "hero": {
-      "badge": "Beyond Standard",
-      "title_prefix": "Websites,",
-      "title_suffix": "that eat markets.",
-      "description": "No business cards. We build digital weapon systems for companies that don't see losing as an option.",
-      "cta_primary": "Start Dominance",
-      "cta_secondary": "View Cases",
-      "scroll_hint": "Scroll to Explore"
-    },
-    "speed_section": {
-      "title": "Speed is Authority.",
-      "description": "Google hates slow websites. Users do too. We build on Edge Computing and Next.js for load times under 500ms."
-    },
-    "stack_section": {
-      "title": "The Stack of Dominance",
-      "description": "No WordPress spaghetti. We use the tech stack of billion-dollar startups."
-    },
-    "roi_section": {
-      "label": "The Cost of Slow",
-      "title": "Performance = Revenue",
-      "description": "Most agencies sell 'pretty design'. We sell measurable revenue growth."
-    }
-  },
-  "generic_detail": {
-    "not_found": {
-      "title": "Service not found",
-      "link": "Back to Overview"
+      "title": "Holistic Dominance"
     },
     "hero": {
-      "consulting_btn": "Schedule Consultation",
-      "benefits_title": "Your Benefits"
+      "badge": "Search Engine Dominance",
+      "description": "We don't just get you to page 1. We keep you there. Technical optimization, content strategy, and authority building.",
+      "title_prefix": "Invisible is",
+      "title_suffix": "Irrelevant."
     },
-    "trust": {
-      "title": "Trusted by leading companies"
-    },
-    "process": {
-      "label": "Our Process",
-      "title": "Measurable success <br /> in 5 steps."
-    },
-    "advantages": {
-      "label": "Your Benefits",
-      "title": "We think in ROAS, <br /> not in clicks.",
-      "desc": "Our clients don't choose colorful slides, they choose a team that understands marketing as an investment. We think in results, plan with clear goals, and deliver transparently.",
-      "contact_btn": "Get in Touch"
-    },
-    "testimonials": {
-      "label": "What our clients say",
-      "title": "Results that convince."
+    "ranking_factors": {
+      "badge": "The Science of Search",
+      "description": "Google's search algorithm is not a secret, it's mathematics. We systematically optimize your site for technical excellence, content relevance, and authority.",
+      "title": "200+ Ranking Factors. \nWe know them all."
+    }
+  },
+  "ui_ux_page": {
+    "deliverables": {
+      "items": "__MISSING__",
+      "title": "__MISSING__"
     },
     "faq": {
-      "title": "Frequently Asked Questions (FAQ)",
-      "desc": "We work transparently. Here are answers to the most important questions."
+      "items": "__MISSING__",
+      "title": "__MISSING__"
     },
-    "final_cta": {
-      "title": "Let's start your project.",
-      "desc": "No standard solutions. We develop exactly what you need for your success.",
-      "button": "Inquire Now"
+    "hero": {
+      "badge": "Design Services",
+      "cta": "Request Design",
+      "description": "We create digital experiences that users love and drive conversions. From wireframes to high-fidelity prototypes.",
+      "title_prefix": "UI/UX Design that",
+      "title_suffix": "captivates."
+    },
+    "process": {
+      "description": "__MISSING__",
+      "prototyping": {
+        "desc": "Interactive designs in Figma.",
+        "title": "Prototyping"
+      },
+      "research": {
+        "desc": "Audience analysis and user journeys.",
+        "title": "Research"
+      },
+      "steps": "__MISSING__",
+      "title": "__MISSING__",
+      "wireframing": {
+        "desc": "Structure and layout without distraction.",
+        "title": "Wireframing"
+      }
+    },
+    "psychology": {
+      "description": "__MISSING__",
+      "items": "__MISSING__",
+      "title": "__MISSING__"
+    }
+  },
+  "ux_audit_page": {
+    "deliverables": {
+      "items": "__MISSING__",
+      "title": "__MISSING__"
+    },
+    "hero": {
+      "badge": "Research & Optimization",
+      "cta": "Book Audit",
+      "description": "We analyze your user journeys, identify drop-offs, and optimize your conversion rates based on real user data.",
+      "title_prefix": "Data instead of",
+      "title_suffix": "Gut Feeling."
+    },
+    "stats": {
+      "conversion_label": "__MISSING__"
+    },
+    "what_we_analyze": {
+      "items": "__MISSING__",
+      "title": "__MISSING__"
+    }
+  },
+  "web_apps_page": {
+    "cta_section": {
+      "button": "Request Developer Team",
+      "description": "We build the technical foundation for it.",
+      "title": "Do you have a vision?"
+    },
+    "features": {
+      "description": "From MVP to Enterprise product. We build architecture that lasts.",
+      "items": {
+        "cloud": {
+          "desc": "AWS, Vercel, or Google Cloud setup for maximum uptime.",
+          "title": "Cloud Infrastructure"
+        },
+        "internal_tools": {
+          "desc": "Custom dashboards and tools for your internal processes.",
+          "title": "Internal Tools"
+        },
+        "pwa": {
+          "desc": "Native app feeling in the browser, offline-capable, and fast.",
+          "title": "Progressive Web Apps"
+        },
+        "realtime": {
+          "desc": "Live updates via WebSockets for chats, notifications, and live tracking.",
+          "title": "Realtime Data"
+        },
+        "saas": {
+          "desc": "Multi-tenant architectures for scalable Software-as-a-Service products.",
+          "title": "SaaS Development"
+        },
+        "security": {
+          "desc": "GDPR compliant, encrypted, and secure according to industry standards.",
+          "title": "Security"
+        }
+      },
+      "title": "Technology that Grows"
+    },
+    "hero": {
+      "cta": "Discuss Project",
+      "description": "We develop complex web applications, dashboards, and SaaS platforms. Scalable, secure, and user-friendly.",
+      "title_prefix": "SaaS &",
+      "title_suffix": "Custom Software."
+    },
+    "integration_network": {
+      "description": "No island solutions. Our software speaks fluently with your existing infrastructure. CRM, ERP, Payment, or AI.",
+      "label": "System Integration",
+      "title": "We Connect Your World."
+    },
+    "security": {
+      "badges": {
+        "gdpr": "GDPR Ready",
+        "ssl": "SSL Secure",
+        "support": "24/7 Support",
+        "uptime": "99.9% Uptime"
+      },
+      "description": "Custom software often processes sensitive data. We guarantee the highest security standards and data protection compliance from day 1.",
+      "items": [
+        "GDPR Compliance by Design",
+        "ISO 27001 Certified Hosting Partners (AWS/Vercel)",
+        "End-to-End Encryption of Sensitive Data",
+        "Regular Penetration Tests"
+      ],
+      "title": "Security is not a feature,\nbut the foundation."
+    }
+  },
+  "web_design_page": {
+    "before_after": {
+      "description": "See for yourself how we turn an outdated 'digital business card' into a fast sales machine.",
+      "label": "Premium Transformation",
+      "title": "The difference is measurable."
+    },
+    "cta_section": {
+      "button": "Request Design",
+      "description": "Standard templates are history. We design your digital identity.",
+      "title": "Do you want to stand out?"
+    },
+    "design_system": {
+      "description": "A design system is the single source of truth for your brand. It guarantees consistency across all channels and accelerates feature development by up to 300%.",
+      "items": [
+        "Scalable Design Tokens (Colors, Spacing, Typography)",
+        "Reusable Component Library",
+        "Accessibility (a11y) integrated by default",
+        "Dark Mode & Multi-Brand Support"
+      ],
+      "label": "Modular Design",
+      "title": "We design systems, \nnot pages."
+    },
+    "hero": {
+      "description": "Design that not only looks good but sells. We combine aesthetics with psychology for digital experiences that stick.",
+      "label": "Design & Usability",
+      "title_prefix": "Award-Winning",
+      "title_suffix": "Web Design."
+    },
+    "process": {
+      "description": "We leave nothing to chance. Our UX process is based on data, user feedback, and iterative improvements.",
+      "steps": {
+        "exploration": {
+          "desc": "User research and interviews. We understand the 'Why'.",
+          "title": "Exploration"
+        },
+        "prototype": {
+          "desc": "Clickable models. Testing with real users before coding.",
+          "title": "Prototype"
+        },
+        "structure": {
+          "desc": "Rough sketches without distractions. Focus on information architecture.",
+          "title": "Structure"
+        },
+        "visual": {
+          "desc": "Detailed interface. Typography, colors, and micro-animations.",
+          "title": "Visual Design"
+        }
+      },
+      "title": "The Path to the Perfect Interface"
+    },
+    "psychology": {
+      "description": "We use principles of behavioral psychology to intuitively guide users and remove sales barriers.",
+      "label": "Behavioral Design",
+      "title": "Design that sticks."
+    },
+    "services_grid": {
+      "design_systems": {
+        "description": "Consistent component libraries for scalable products and rapid development.",
+        "title": "Design Systems"
+      },
+      "ux_ui_design": {
+        "description": "Digital brand experience. User-centric design that makes your brand tangible.",
+        "title": "UX/UI Design"
+      },
+      "website_relaunch": {
+        "description": "From strategy to new design. We fundamentally modernize your web presence.",
+        "title": "Website Relaunch"
+      }
+    }
+  },
+  "web_development_page": {
+    "hero": {
+      "description": "We don't build \"homepages\", we build digital assets. Scalable, secure, and blazing fast. Specialized in modern web applications and complex online shops.",
+      "label": "Technology Stack",
+      "title_anim": "Fast",
+      "title_static": "Web Development."
+    },
+    "tech_stack": {
+      "description": "Our technology stack is no accident. Every tool was selected for maximum speed, scalability, and search engine dominance.",
+      "nextjs": {
+        "desc": "Server-side rendering and static generation for extremely fast load times.",
+        "title": "Next.js 14"
+      },
+      "supabase": {
+        "desc": "Real-time databases and authentication. Scalable and open source.",
+        "title": "Supabase"
+      },
+      "tailwind": {
+        "desc": "Modern styling for minimal file sizes.",
+        "title": "Tailwind CSS"
+      },
+      "title": "Professional Architecture",
+      "typescript": {
+        "desc": "Type-safe code that prevents errors before they happen.",
+        "title": "TypeScript"
+      }
     }
   }
 }

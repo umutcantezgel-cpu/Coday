@@ -1,8 +1,7 @@
 {
-  "hero": {
-    "label": "Unser Portfolio",
-    "title": "Ausgewählte Arbeiten.",
-    "description": "Digitale Erlebnisse, die Marken transformieren. Design, das Nutzer begeistert. Programmcode, der Geschwindigkeit liefert."
+  "empty_state": {
+    "desc": "Versuchen Sie einen anderen Filter oder schauen Sie später wieder vorbei.",
+    "title": "Keine Projekte gefunden"
   },
   "filter": {
     "all": "Alle Projekte",
@@ -10,25 +9,75 @@
     "development": "Entwicklung",
     "marketing": "Marketing"
   },
+  "hero": {
+    "badge": "__MISSING__",
+    "desc": "__MISSING__",
+    "description": "Digitale Erlebnisse, die Marken transformieren. Design, das Nutzer begeistert. Programmcode, der Geschwindigkeit liefert.",
+    "label": "Unser Portfolio",
+    "title": "Ausgewählte Arbeiten.",
+    "title_gradient": "__MISSING__",
+    "title_start": "__MISSING__"
+  },
   "project_detail": {
-    "not_found": "Projekt nicht gefunden",
+    "approach": "Unser Ansatz",
     "back_to_overview": "Zurück zur Übersicht",
     "breadcrumb_projects": "Projekte",
+    "challenge": "Die Herausforderung",
+    "not_found": "Projekt nicht gefunden",
+    "results": "Die Ergebnisse",
     "sidebar": {
       "details": "Projekt-Details",
-      "service": "Service",
-      "period": "Zeitraum",
-      "result": "Ergebnis",
       "interested_title": "Interessiert an ähnlichen Ergebnissen?",
-      "request_project": "Projekt anfragen"
+      "period": "Zeitraum",
+      "request_project": "Projekt anfragen",
+      "result": "Ergebnis",
+      "service": "Service"
     },
-    "challenge": "Die Herausforderung",
-    "approach": "Unser Ansatz",
-    "solution": "Die Lösung",
-    "results": "Die Ergebnisse"
+    "solution": "Die Lösung"
   },
-  "empty_state": {
-    "title": "Keine Projekte gefunden",
-    "desc": "Versuchen Sie einen anderen Filter oder schauen Sie später wieder vorbei."
+  "results": {
+    "desc": "__MISSING__",
+    "link": "__MISSING__",
+    "stats": {
+      "cpa": {
+        "desc": "__MISSING__",
+        "label": "__MISSING__"
+      },
+      "lcp": {
+        "desc": "__MISSING__",
+        "label": "__MISSING__"
+      },
+      "leads": {
+        "desc": "__MISSING__",
+        "label": "__MISSING__"
+      }
+    },
+    "title": "__MISSING__"
+  },
+  "testimonials": {
+    "desc": "__MISSING__",
+    "items": {
+      "0": {
+        "author": "__MISSING__",
+        "quote": "__MISSING__",
+        "role": "__MISSING__"
+      },
+      "1": {
+        "author": "__MISSING__",
+        "quote": "__MISSING__",
+        "role": "__MISSING__"
+      }
+    },
+    "title": "__MISSING__"
+  },
+  "visual_identity": {
+    "badge": "__MISSING__",
+    "colors": {
+      "dark": "__MISSING__",
+      "light": "__MISSING__",
+      "primary": "__MISSING__"
+    },
+    "desc": "__MISSING__",
+    "title": "__MISSING__"
   }
 }

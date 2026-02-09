@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Trophy, Zap } from 'lucide-react';
+import { Trophy, Lightning } from '@phosphor-icons/react';
 import { motion, AnimatePresence } from 'motion/react';
 
 export const ReadingScore: React.FC<{ currentPostId?: number }> = ({ currentPostId }) => {
@@ -83,7 +83,7 @@ export const ReadingScore: React.FC<{ currentPostId?: number }> = ({ currentPost
             transition={{ delay: 10 }}
             className="absolute inset-0 bg-green-500/90 flex flex-col items-center justify-center backdrop-blur-sm z-20"
           >
-            <Zap className="text-white w-8 h-8 mb-2 animate-bounce" />
+            <Lightning className="text-white w-8 h-8 mb-2 animate-bounce" />
             <span className="font-bold text-lg">+100 XP</span>
             <span className="text-xs">Article Completed!</span>
           </motion.div>

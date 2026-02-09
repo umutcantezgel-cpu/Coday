@@ -1,226 +1,262 @@
 {
-  "welcome": "Willkommen bei Coday",
-  "loading": "Lade Sprache...",
-  "units": {
-    "seconds": "Sek.",
-    "percent": "%",
-    "hours": "Std."
+  "404": {
+    "config_button": "Projekt konfigurieren",
+    "desc": "Entschuldigung, wir konnten die Seite, die Sie suchen, nicht finden. Sie wurde möglicherweise verschoben, gelöscht oder existiert nicht mehr.",
+    "help": "Brauchen Sie Hilfe?",
+    "home_button": "Zur Startseite",
+    "title": "Seite nicht gefunden"
   },
   "buttons": {
-    "start_project": "Projekt starten",
-    "view_work": "Referenzen",
-    "start": "Starten",
     "close": "Schließen",
-    "menu": "Menü"
+    "menu": "Menü",
+    "start": "Starten",
+    "start_project": "Projekt starten",
+    "view_work": "Referenzen"
   },
+  "footer": {
+    "links": {
+      "booking": "Termin buchen",
+      "packages": "Pakete"
+    },
+    "rights": "© {{year}} Coday",
+    "sections": {
+      "career": "Karriere",
+      "knowledge": "Wissen",
+      "pricing": "Preise"
+    },
+    "slogan": "Wir töten Ineffizienz. Die letzte Agentur, die du je brauchen wirst.",
+    "trust": {
+      "desc": "Kämpfe gegen den Ballast.",
+      "title": "Resistance Member"
+    }
+  },
+  "generic_detail": {
+    "advantages": {
+      "contact_btn": "__MISSING__",
+      "desc": "__MISSING__",
+      "label": "__MISSING__",
+      "title": "__MISSING__"
+    },
+    "faq": {
+      "desc": "__MISSING__",
+      "title": "__MISSING__"
+    },
+    "final_cta": {
+      "button": "__MISSING__",
+      "desc": "__MISSING__",
+      "title": "__MISSING__"
+    },
+    "hero": {
+      "benefits_title": "__MISSING__",
+      "consulting_btn": "__MISSING__"
+    },
+    "not_found": {
+      "link": "__MISSING__",
+      "title": "__MISSING__"
+    },
+    "process": {
+      "label": "__MISSING__",
+      "title": "__MISSING__"
+    },
+    "testimonials": {
+      "label": "__MISSING__",
+      "title": "__MISSING__"
+    },
+    "trust": {
+      "title": "__MISSING__"
+    }
+  },
+  "hero": {
+    "subtitle": "Tiefgehende Analysen, Strategien und Neuigkeiten aus der Welt der digitalen Dominanz.",
+    "title": "Blog & Insights"
+  },
+  "loading": "Lade Sprache...",
   "nav": {
-    "services": {
-      "label": "Leistungen",
-      "development": {
-        "title": "Entwicklung"
+    "about": {
+      "contact": {
+        "desc": "Termin buchen",
+        "label": "Kontakt"
       },
-      "design": {
-        "title": "Design"
-      },
-      "growth": {
-        "title": "Wachstum"
-      },
-      "web_development": {
-        "label": "Webentwicklung",
-        "desc": "Schnell & Skalierbar"
-      },
-      "web_apps": {
-        "label": "Web Applikationen"
-      },
-      "cms": {
-        "label": "Headless CMS"
-      },
-      "api": {
-        "label": "API Integrationen"
-      },
-      "migration": {
-        "label": "Migrationen"
-      },
-      "web_design": {
-        "label": "Webdesign",
-        "desc": "UI/UX & Branding"
-      },
-      "ui_ux": {
-        "label": "UI/UX Design"
-      },
-      "brand": {
-        "label": "Brand Identity"
-      },
-      "design_systems": {
-        "label": "Design Systeme"
-      },
-      "audit": {
-        "label": "UX Audit"
-      },
-      "seo": {
-        "label": "SEO & Traffic",
-        "desc": "Rankings & Wachstum"
-      },
-      "performance": {
-        "label": "Performance",
-        "desc": "Top Speed & Vitals"
-      },
-      "consulting": {
-        "label": "Beratung"
-      },
-      "enterprise": {
-        "label": "Enterprise Platforms",
-        "desc": "Portale & Systeme"
-      },
-      "ecommerce": {
-        "label": "E-Commerce",
-        "desc": "Shops mit Umsatz"
+      "desc": "Die Agentur",
+      "label": "Über Uns",
+      "process": {
+        "desc": "Unser Workflow",
+        "label": "Unser Prozess"
       }
-    },
-    "industries": {
-      "label": "Branchen",
-      "all": "Alle Branchen",
-      "craft": "Handwerk",
-      "real_estate": "Immobilien",
-      "gastronomy": "Gastronomie",
-      "health": "Gesundheit",
-      "service": "Dienstleistung",
-      "ecommerce": "E-Commerce"
-    },
-    "work": {
-      "label": "Referenzen",
-      "featured": {
-        "title": "Highlights"
-      },
-      "all": {
-        "title": "Portfolio"
-      },
-      "creative_impact": "Creative Impact",
-      "batherm": "Batherm",
-      "view_all": "Alle Projekte"
-    },
-    "resources": {
-      "label": "Ressourcen",
-      "knowledge": {
-        "title": "Wissen"
-      },
-      "tools": {
-        "title": "Tools"
-      },
-      "calculator": "Preisrechner",
-      "dashboard": "Kunden-Dashboard"
-    },
-    "projects": {
-      "label": "Projekte",
-      "desc": "Unsere Besten"
     },
     "academy": {
-      "label": "Academy",
-      "desc": "Wissen & Erfolg",
       "audit": {
-        "label": "Website-Audit",
-        "desc": "Gratis KI-Check"
-      },
-      "courses": {
-        "label": "Video Kurse",
-        "desc": "Experten-Wissen"
+        "desc": "Gratis KI-Check",
+        "label": "Website-Audit"
       },
       "blog": {
-        "label": "Blog & Insights",
-        "desc": "News & Trends"
+        "desc": "News & Trends",
+        "label": "Blog & Insights"
       },
+      "courses": {
+        "desc": "Experten-Wissen",
+        "label": "Video Kurse"
+      },
+      "desc": "Wissen & Erfolg",
+      "label": "Academy",
       "newsletter": {
-        "label": "Newsletter",
-        "desc": "Wöchentliche Tipps"
+        "desc": "Wöchentliche Tipps",
+        "label": "Newsletter"
       },
       "whitepapers": {
-        "label": "Whitepapers",
-        "desc": "Guides & PDFs"
+        "desc": "Guides & PDFs",
+        "label": "Whitepapers"
       }
-    },
-    "about": {
-      "label": "Über Uns",
-      "desc": "Die Agentur",
-      "process": {
-        "label": "Unser Prozess",
-        "desc": "Unser Workflow"
-      },
-      "contact": {
-        "label": "Kontakt",
-        "desc": "Termin buchen"
-      }
-    },
-    "company": {
-      "label": "Unternehmen",
-      "agency": "Die Agentur",
-      "career": "Karriere",
-      "legal": "Rechtliches",
-      "about": "Über Uns",
-      "action": "Starten"
     },
     "booking": {
       "label": "Termin buchen"
     },
-    "packages": {
-      "label": "Pakete"
-    },
     "career": {
-      "label": "Karriere",
-      "desc": "Werde Teil des Teams",
-      "overview": {
-        "label": "Übersicht",
-        "desc": "Join the Elite"
-      },
-      "jobs": {
-        "label": "Offene Stellen",
-        "desc": "Aktuelle Positionen"
+      "benefits": {
+        "desc": "Was dich erwartet",
+        "label": "Benefits"
       },
       "culture": {
-        "label": "Kultur",
-        "desc": "So arbeiten wir"
+        "desc": "So arbeiten wir",
+        "label": "Kultur"
       },
-      "benefits": {
-        "label": "Benefits",
-        "desc": "Was dich erwartet"
+      "desc": "Werde Teil des Teams",
+      "jobs": {
+        "desc": "Aktuelle Positionen",
+        "label": "Offene Stellen"
+      },
+      "label": "Karriere",
+      "overview": {
+        "desc": "Join the Elite",
+        "label": "Übersicht"
       }
+    },
+    "company": {
+      "about": "Über Uns",
+      "action": "Starten",
+      "agency": "Die Agentur",
+      "career": "Karriere",
+      "label": "Unternehmen",
+      "legal": "Rechtliches"
+    },
+    "industries": {
+      "all": "Alle Branchen",
+      "craft": "Handwerk",
+      "ecommerce": "E-Commerce",
+      "gastronomy": "Gastronomie",
+      "health": "Gesundheit",
+      "label": "Branchen",
+      "real_estate": "Immobilien",
+      "service": "Dienstleistung"
     },
     "legal": {
       "agb": "AGB",
-      "privacy": "Datenschutz",
-      "imprint": "Impressum"
+      "imprint": "Impressum",
+      "privacy": "Datenschutz"
+    },
+    "packages": {
+      "label": "Pakete"
+    },
+    "projects": {
+      "desc": "Unsere Besten",
+      "label": "Projekte"
+    },
+    "resources": {
+      "calculator": "Preisrechner",
+      "dashboard": "Kunden-Dashboard",
+      "knowledge": {
+        "title": "Wissen"
+      },
+      "label": "Ressourcen",
+      "tools": {
+        "title": "Tools"
+      }
+    },
+    "services": {
+      "api": {
+        "label": "API Integrationen"
+      },
+      "audit": {
+        "label": "UX Audit"
+      },
+      "brand": {
+        "label": "Brand Identity"
+      },
+      "cms": {
+        "label": "Headless CMS"
+      },
+      "consulting": {
+        "label": "Beratung"
+      },
+      "design": {
+        "title": "Design"
+      },
+      "design_systems": {
+        "label": "Design Systeme"
+      },
+      "development": {
+        "title": "Entwicklung"
+      },
+      "ecommerce": {
+        "desc": "Shops mit Umsatz",
+        "label": "E-Commerce"
+      },
+      "enterprise": {
+        "desc": "Portale & Systeme",
+        "label": "Enterprise Platforms"
+      },
+      "growth": {
+        "title": "Wachstum"
+      },
+      "label": "Leistungen",
+      "migration": {
+        "label": "Migrationen"
+      },
+      "performance": {
+        "desc": "Top Speed & Vitals",
+        "label": "Performance"
+      },
+      "seo": {
+        "desc": "Rankings & Wachstum",
+        "label": "SEO & Traffic"
+      },
+      "ui_ux": {
+        "label": "UI/UX Design"
+      },
+      "web_apps": {
+        "label": "Web Applikationen"
+      },
+      "web_design": {
+        "desc": "UI/UX & Branding",
+        "label": "Webdesign"
+      },
+      "web_development": {
+        "desc": "Schnell & Skalierbar",
+        "label": "Webentwicklung"
+      }
+    },
+    "work": {
+      "all": {
+        "title": "Portfolio"
+      },
+      "batherm": "Batherm",
+      "creative_impact": "Creative Impact",
+      "featured": {
+        "title": "Highlights"
+      },
+      "label": "Referenzen",
+      "view_all": "Alle Projekte"
     }
   },
-  "footer": {
-    "slogan": "Wir töten Ineffizienz. Die letzte Agentur, die du je brauchen wirst.",
-    "trust": {
-      "title": "Resistance Member",
-      "desc": "Kämpfe gegen den Ballast."
-    },
-    "sections": {
-      "pricing": "Preise",
-      "knowledge": "Wissen",
-      "career": "Karriere"
-    },
-    "links": {
-      "packages": "Pakete",
-      "booking": "Termin buchen"
-    },
-    "rights": "© {{year}} Coday"
-  },
-  "hero": {
-    "title": "Blog & Insights",
-    "subtitle": "Tiefgehende Analysen, Strategien und Neuigkeiten aus der Welt der digitalen Dominanz."
-  },
   "scroll_cta": {
-    "ready": "Bereit zu optimieren?",
+    "book_audit": "Audit buchen",
     "dominate": "Dominieren Sie Ihren Markt.",
-    "book_audit": "Audit buchen"
+    "ready": "Bereit zu optimieren?"
   },
-  "404": {
-    "title": "Seite nicht gefunden",
-    "desc": "Entschuldigung, wir konnten die Seite, die Sie suchen, nicht finden. Sie wurde möglicherweise verschoben, gelöscht oder existiert nicht mehr.",
-    "home_button": "Zur Startseite",
-    "config_button": "Projekt konfigurieren",
-    "help": "Brauchen Sie Hilfe?"
-  }
+  "units": {
+    "hours": "Std.",
+    "percent": "%",
+    "seconds": "Sek."
+  },
+  "welcome": "Willkommen bei Coday"
 }

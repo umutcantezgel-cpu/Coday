@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Calendar, User, ShieldCheck } from 'lucide-react';
+import { CalendarBlank, User, ShieldCheck } from '@phosphor-icons/react';
 
 export const AppointmentFlow = () => {
     return (
@@ -32,7 +32,7 @@ export const AppointmentFlow = () => {
                     className="flex gap-6 items-start"
                 >
                     <div className="w-16 h-16 rounded-2xl bg-white shadow-lg flex items-center justify-center text-primary z-10 relative border border-gray-100">
-                        <Calendar size={24} />
+                        <CalendarBlank size={24} />
                     </div>
                     <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex-1">
                         <h4 className="font-bold text-lg mb-1">Terminfindung</h4>

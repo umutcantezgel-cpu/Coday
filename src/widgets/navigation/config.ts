@@ -37,7 +37,7 @@ export const getNavItems = (): NavItem[] => [
             href: '/services/web-development/e-commerce',
             desc: 'nav.services.ecommerce.desc',
           },
-          { label: 'nav.services.cms.label', href: '/services/web-development/cms-headless' },
+          { label: 'nav.services.cms.label', href: '/services/web-development/headless-cms' },
           { label: 'nav.services.api.label', href: '/services/web-development/api-integrations' },
           { label: 'nav.services.migration.label', href: '/services/web-development/migration' },
           {

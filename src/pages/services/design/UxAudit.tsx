@@ -1,18 +1,34 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Icon } from '../../../shared/ui/Icon';
+import { Button } from '../../../shared/ui/Button';
+import { SeoHead } from '../../../shared/ui/SeoHead';
 import BlurText from '../../../shared/ui/BlurText';
 import GradientText from '../../../shared/ui/GradientText';
+import CountUp from '../../../shared/ui/CountUp';
+import { motion } from 'framer-motion';
 
 const UxAudit: React.FC = () => {
   const { t } = useTranslation('services');
 
+  const analysisItems = t('ux_audit_page.what_we_analyze.items', { returnObjects: true }) as { title: string; desc: string }[];
+  const deliverables = t('ux_audit_page.deliverables.items', { returnObjects: true }) as string[];
+
   return (
-    <div className="bg-background-light min-h-screen">
-      <section className="relative pt-32 pb-24 px-4 overflow-hidden">
+    <>
+      <SeoHead
+        title="UX Audit | Data-Driven Conversion Optimization"
+        description="We analyze your user journeys, identify drop-offs, and optimize conversion rates based on real user data."
+      />
+
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-24 px-6 overflow-hidden bg-background-light">
         <div className="max-w-7xl mx-auto text-center relative z-10">
-          <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
-            {t('ux_audit_page.hero.badge')}
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-50 text-orange-600 text-sm font-bold mb-8 border border-orange-100">
+            <Icon name="analytics" className="w-4 h-4" />
+            <span>{t('ux_audit_page.hero.badge')}</span>
           </span>
+
           <h1 className="font-display font-black text-5xl sm:text-7xl lg:text-8xl text-secondary mb-8 tracking-tight">
             <BlurText
               text={t('ux_audit_page.hero.title_prefix')}
@@ -32,9 +48,75 @@ const UxAudit: React.FC = () => {
           <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto mb-12">
             {t('ux_audit_page.hero.description')}
           </p>
+          <Button size="lg" variant="primary" rightIcon={<Icon name="arrow_right" />}>
+            {t('ux_audit_page.hero.cta')}
+          </Button>
         </div>
       </section>
-    </div>
+
+      {/* Stats Banner */}
+      <section className="py-16 bg-orange-500 text-white">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <div className="text-6xl font-black mb-4">
+            <CountUp from={0} to={35} duration={2} />%
+          </div>
+          <div className="text-xl font-medium text-orange-100">
+            {t('ux_audit_page.stats.conversion_label')}
+          </div>
+        </div>
+      </section>
+
+      {/* What We Analyze */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-4xl font-display font-bold mb-16 text-center">{t('ux_audit_page.what_we_analyze.title')}</h2>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {analysisItems.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-slate-50 border border-slate-100 rounded-2xl p-6"
+              >
+                <div className="w-12 h-12 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center mb-4">
+                  <Icon name="query_stats" className="text-2xl" />
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
+                <p className="text-slate-600 text-sm">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Deliverables Section */}
+      <section className="py-24 bg-slate-900 text-white">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="text-4xl font-display font-bold mb-12 text-center">{t('ux_audit_page.deliverables.title')}</h2>
+
+          <div className="grid md:grid-cols-2 gap-4">
+            {deliverables.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+                className="flex items-center gap-4 p-5 bg-slate-800 border border-slate-700 rounded-xl"
+              >
+                <div className="w-8 h-8 rounded-lg bg-orange-500/20 text-orange-400 flex items-center justify-center flex-shrink-0">
+                  <Icon name="description" />
+                </div>
+                <span className="font-medium">{item}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
   );
 };
 

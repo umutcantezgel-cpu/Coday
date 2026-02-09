@@ -2,6 +2,7 @@ import { redirect, type LoaderFunctionArgs } from 'react-router';
 
 const SUPPORTED_LANGUAGES = ['de', 'en'];
 
+// eslint-disable-next-line react-refresh/only-export-components
 export async function loader({ request }: LoaderFunctionArgs) {
   // Get Accept-Language header for language detection
   const acceptLanguage = request.headers.get('Accept-Language') || '';

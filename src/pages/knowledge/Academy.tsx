@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { OptimizedImage } from '../../shared/ui/OptimizedImage';
 import { createPortal } from 'react-dom';
-import { X } from 'lucide-react';
+import { X } from '@phosphor-icons/react';
 import { Icon } from '../../shared/ui/Icon';
 import { academyData, Course } from '../../data/academy';
 
