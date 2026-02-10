@@ -65,6 +65,8 @@ export const SeoHead: React.FC<SeoHeadProps> = ({
     <Helmet htmlAttributes={{ lang: currentLang, dir: i18n.dir(currentLang) }}>
       <title>{title}</title>
       <meta name="description" content={description} />
+      {/* Google Search Console Verification */}
+      <meta name="google-site-verification" content="qkqa8A5TESjhVg1kESd65TRfn9HBiSMrMnNBTXAoOko" />
 
       {/* Canonical & Hreflang */}
       {links.map((link, index) => (
