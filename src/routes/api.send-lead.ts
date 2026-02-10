@@ -32,7 +32,7 @@ export async function action({ request }: { request: Request }) {
     const resend = new Resend(RESEND_API_KEY);
 
     const emailResult = await resend.emails.send({
-      from: 'Coday Leads <noreply@codayweb.de>',
+      from: 'Coday Leads <noreply@send.codayweb.de>',
       to: ['umut@codayweb.de'],
       subject: `Neue Anfrage: ${data.name} - ${data.projectType || 'Allgemein'}`,
       html: `
