@@ -10,30 +10,54 @@ const routes = [
   '/',
   '/services',
   '/services/industries',
+  // Pillars
   '/services/web-development',
   '/services/web-design',
   '/services/seo',
   '/services/performance',
   '/services/consulting',
   '/services/enterprise-web',
+  // Web Development Sub-Services
+  '/services/web-development/e-commerce',
+  '/services/web-development/web-apps',
+  '/services/web-development/headless-cms',
+  '/services/web-development/api-integrations',
+  '/services/web-development/migration',
+  // Web Design Sub-Services
+  '/services/web-design/ui-ux',
+  '/services/web-design/brand-identity',
+  '/services/web-design/design-systems',
+  '/services/web-design/audit',
+  // Industries
+  '/services/industries/handwerk',
+  '/services/industries/immobilien',
+  '/services/industries/gastronomie',
+  '/services/industries/gesundheit',
+  '/services/industries/dienstleistung',
+  '/services/industries/e-commerce',
+  // Core
   '/work',
   '/process',
   '/contact',
-  '/legal/impressum',
-  '/legal/datenschutz',
-  '/legal/agb',
-  '/dashboard',
+  '/calculator',
   '/booking',
   '/packages',
+  '/analyzer',
+  // Knowledge
   '/knowledge/academy',
   '/knowledge/blog',
   '/knowledge/newsletter',
   '/knowledge/whitepapers',
+  // Career
   '/career',
   '/career/jobs',
   '/career/culture',
   '/career/benefits',
-  '/analyzer',
+  // Legal
+  '/legal/impressum',
+  '/legal/datenschutz',
+  '/legal/agb',
+  '/dashboard',
 ];
 
 const locales = ['de', 'en'];
