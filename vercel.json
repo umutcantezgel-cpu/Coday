@@ -1,18 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "installCommand": "npm install --legacy-peer-deps",
-  "functions": {
-    "api/*.ts": {
-      "memory": 256,
-      "maxDuration": 30
-    }
-  },
-  "rewrites": [
-    {
-      "source": "/((?!api/).*)",
-      "destination": "/"
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",
