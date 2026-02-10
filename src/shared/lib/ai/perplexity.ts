@@ -3,8 +3,7 @@
  * Used for web search capabilities in the chatbot
  */
 
-const PERPLEXITY_API_KEY =
-  import.meta.env.PERPLEXITY_API_KEY || '';
+// API key is now handled server-side via /api/perplexity-proxy
 
 export interface PerplexityMessage {
   role: 'system' | 'user' | 'assistant';
@@ -43,22 +42,22 @@ export async function callPerplexity(
     searchDomainFilter = [],
   } = options;
 
-  const url = 'https://api.perplexity.ai/chat/completions';
+  const url = '/api/perplexity-proxy';
 
   try {
     const response = await fetch(url, {
       method: 'POST',
       headers: {
-        Authorization: `Bearer ${PERPLEXITY_API_KEY}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         model,
         messages,
         temperature,
-        max_tokens: maxTokens,
+        maxTokens, // Frontend naming convention
+        max_tokens: maxTokens, // API naming convention compatibility
+        searchDomainFilter,
         search_domain_filter: searchDomainFilter.length > 0 ? searchDomainFilter : undefined,
-        return_citations: true,
       }),
     });
 
