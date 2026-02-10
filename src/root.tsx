@@ -1,78 +1,81 @@
 import {
-    Links,
-    Meta,
-    Outlet,
-    Scripts,
-    ScrollRestoration,
-    isRouteErrorResponse,
-    useLoaderData,
-    type LoaderFunctionArgs,
-} from "react-router";
-import "./index.css";
+  Links,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+  isRouteErrorResponse,
+  useLoaderData,
+  type LoaderFunctionArgs,
+} from 'react-router';
+import './index.css';
 import { LazyMotion, domAnimation, MotionConfig } from 'motion/react';
-import React from "react";
+import React from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 
 export async function loader({ request }: LoaderFunctionArgs) {
-    const url = new URL(request.url);
-    // Simple detection: check start of path
-    const lng = url.pathname.startsWith('/en') ? 'en' : 'de';
-    return { lng };
+  const url = new URL(request.url);
+  // Simple detection: check start of path
+  const lng = url.pathname.startsWith('/en') ? 'en' : 'de';
+  return { lng };
 }
 
 export function Layout({ children }: { children: React.ReactNode }) {
-    const data = useLoaderData<typeof loader>();
-    const lang = data?.lng || 'de';
+  const data = useLoaderData<typeof loader>();
+  const lang = data?.lng || 'de';
 
-    return (
-        <html lang={lang} dir="ltr">
-            <head>
-                <meta charSet="utf-8" />
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <Meta />
-                <Links />
-            </head>
-            <body>
-                <HelmetProvider>
-                    <MotionConfig reducedMotion="user">
-                        <LazyMotion features={domAnimation}>
-                            {children}
-                        </LazyMotion>
-                    </MotionConfig>
-                </HelmetProvider>
-                <ScrollRestoration />
-                <Scripts />
-            </body>
-        </html>
-    );
+  return (
+    <html lang={lang} dir="ltr">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <Meta />
+        <Links />
+        {/* Fallback Font for Icons */}
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        />
+      </head>
+      <body>
+        <HelmetProvider>
+          <MotionConfig reducedMotion="user">
+            <LazyMotion features={domAnimation}>{children}</LazyMotion>
+          </MotionConfig>
+        </HelmetProvider>
+        <ScrollRestoration />
+        <Scripts />
+      </body>
+    </html>
+  );
 }
 
 export default function App() {
-    return <Outlet />;
+  return <Outlet />;
 }
 
 export function ErrorBoundary({ error }: { error: unknown }) {
-    let message = "Oops!";
-    let details = "An unexpected error occurred.";
-    let stack: string | undefined;
+  let message = 'Oops!';
+  let details = 'An unexpected error occurred.';
+  let stack: string | undefined;
 
-    if (isRouteErrorResponse(error)) {
-        message = error.status === 404 ? "404" : "Error";
-        details = error.statusText || details;
-    } else if (import.meta.env.DEV && error && error instanceof Error) {
-        details = error.message;
-        stack = error.stack;
-    }
+  if (isRouteErrorResponse(error)) {
+    message = error.status === 404 ? '404' : 'Error';
+    details = error.statusText || details;
+  } else if (import.meta.env.DEV && error && error instanceof Error) {
+    details = error.message;
+    stack = error.stack;
+  }
 
-    return (
-        <main className="pt-16 p-4 container mx-auto">
-            <h1>{message}</h1>
-            <p>{details}</p>
-            {stack && (
-                <pre className="w-full p-4 overflow-x-auto">
-                    <code>{stack}</code>
-                </pre>
-            )}
-        </main>
-    );
+  return (
+    <main className="pt-16 p-4 container mx-auto">
+      <h1>{message}</h1>
+      <p>{details}</p>
+      {stack && (
+        <pre className="w-full p-4 overflow-x-auto">
+          <code>{stack}</code>
+        </pre>
+      )}
+    </main>
+  );
 }
