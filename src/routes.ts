@@ -1,10 +1,12 @@
 import { type RouteConfig, index, layout, route } from '@react-router/dev/routes';
 
 export default [
-  // API Resource Routes (no UI, server-side only)
-  route('api/ai-proxy', 'routes/api.ai-proxy.ts'),
-  route('api/perplexity-proxy', 'routes/api.perplexity-proxy.ts'),
-  route('api/send-lead', 'routes/api.send-lead.ts'),
+  // API Resource Routes (server-side only)
+  route('api', 'routes/ApiRoot.tsx', [
+    route('ai-proxy', 'routes/api.ai-proxy.ts'),
+    route('perplexity-proxy', 'routes/api.perplexity-proxy.ts'),
+    route('send-lead', 'routes/api.send-lead.ts'),
+  ]),
 
   route('/', 'widgets/layout/RootRedirector.tsx'),
   route(':lng', 'widgets/layout/LanguageLayout.tsx', [
