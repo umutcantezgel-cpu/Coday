@@ -453,7 +453,8 @@ export const ApplicationWizard: React.FC = () => {
   return (
     <div className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
       {/* Progress Bar */}
-      <div className="bg-gray-50 px-8 py-4 border-b border-gray-100 flex items-center justify-between">
+      {/* Progress Bar */}
+      <div className="bg-gray-50 px-4 md:px-8 py-4 border-b border-gray-100 flex items-center justify-between">
         <div className="flex gap-2">
           {STEPS.map((step, idx) => (
             <div key={step.id} className="flex items-center gap-2">
@@ -481,7 +482,7 @@ export const ApplicationWizard: React.FC = () => {
         </div>
       </div>
 
-      <form onSubmit={handleSubmit(onSubmit)} className="p-8">
+      <form onSubmit={handleSubmit(onSubmit)} className="p-4 md:p-8">
         <AnimatePresence mode="wait">
           {getCurrentStepContent()}
 

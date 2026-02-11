@@ -38,18 +38,18 @@ const StepIndicator: React.FC<StepIndicatorProps> = ({ currentStep, className = 
                 initial={{ scale: 0.8 }}
                 animate={{ scale: isCurrent ? 1.1 : 1 }}
                 className={`
-                  w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm
+                  w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center font-bold text-xs md:text-sm
                   transition-all duration-300
                   ${isCompleted ? 'bg-primary text-white' : ''}
-                  ${isCurrent ? 'bg-primary text-white ring-4 ring-primary/20' : ''}
+                  ${isCurrent ? 'bg-primary text-white ring-2 md:ring-4 ring-primary/20' : ''}
                   ${isUpcoming ? 'bg-gray-100 text-gray-400 border-2 border-gray-200' : ''}
                 `}
               >
-                {isCompleted ? <Check size={18} /> : index + 1}
+                {isCompleted ? <Check size={14} className="md:w-[18px] md:h-[18px]" /> : index + 1}
               </motion.div>
               <span
                 className={`
-                text-xs mt-2 font-medium whitespace-nowrap
+                text-[10px] md:text-xs mt-1 md:mt-2 font-medium whitespace-nowrap
                 ${isCurrent ? 'text-primary' : ''}
                 ${isCompleted ? 'text-gray-600' : ''}
                 ${isUpcoming ? 'text-gray-400' : ''}
@@ -61,7 +61,7 @@ const StepIndicator: React.FC<StepIndicatorProps> = ({ currentStep, className = 
 
             {/* Connector Line */}
             {index < steps.length - 1 && (
-              <div className="w-16 sm:w-24 h-0.5 mx-2 relative">
+              <div className="w-8 sm:w-16 md:w-24 h-0.5 mx-1 md:mx-2 relative self-start mt-4 md:mt-5">
                 <div className="absolute inset-0 bg-gray-200 rounded-full" />
                 <motion.div
                   initial={{ width: 0 }}

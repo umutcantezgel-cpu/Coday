@@ -19,7 +19,7 @@ interface CardNavProps {
 
 const CardNav: React.FC<CardNavProps> = ({
   className = '',
-  buttonBgColor = '#1A9A9A',
+  buttonBgColor = '#137A7A', // Darker Teal for >4.5:1 contrast
   buttonTextColor = '#fff',
 }) => {
   const { t } = useTranslation('common');
@@ -236,7 +236,7 @@ const CardNav: React.FC<CardNavProps> = ({
           <Link
             to="/packages"
             className="nav-pill-cta hidden sm:flex"
-            style={{ backgroundColor: '#D69E2E', color: '#fff' }}
+            style={{ backgroundColor: '#B7791F', color: '#fff' }} // Darker Gold for >3:1 contrast against white text (large) or 4.5:1 norm
           >
             <span>{t('nav.packages.label', { defaultValue: 'Pakete' })}</span>
             <Icon name="arrow-right" className="cta-arrow" />

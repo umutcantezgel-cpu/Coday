@@ -11,6 +11,7 @@ import { Icon } from '../shared/ui/Icon';
 import { SeoHead } from '@/shared/ui/SeoHead';
 import { useCalculatorStore } from '../features/calculator/model/store';
 import StepIndicator from '../shared/ui/StepIndicator';
+import { MobileContactLayout } from '../features/contact/ui/MobileContactLayout';
 
 const Contact: React.FC = () => {
   const { t } = useTranslation('contact');
@@ -34,84 +35,99 @@ const Contact: React.FC = () => {
 
       {/* Step Indicator - only shown when coming from package flow */}
       {hasPackage && (
-        <div className="pt-24 pb-0">
+        <div className="pt-20 md:pt-24 pb-4">
           <StepIndicator currentStep="contact" className="mb-0" />
         </div>
       )}
 
-      {/* Hero Section */}
-      <section className={`relative ${hasPackage ? 'pt-12' : 'pt-32'} pb-24 px-4 overflow-hidden`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
-            {/* Text Side */}
-            <div>
-              <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
-                {t('hero.badge')}
-              </span>
-              <h1 className="font-display font-black text-3xl sm:text-5xl lg:text-6xl text-secondary mb-6 tracking-tight">
-                <BlurText
-                  text={t('hero.title_start')}
-                  delay={100}
-                  animateBy="words"
-                  direction="top"
-                  className="inline-block"
-                />
-                <br />
-                <GradientText
-                  colors={['#3B82F6', '#2563EB', '#1D4ED8']}
-                  animationSpeed={4}
-                  className="inline-block"
+      {/* Mobile Layout (Tabbed) */}
+      <div className="lg:hidden mt-20">
+        <MobileContactLayout />
+      </div>
+
+      {/* Desktop Layout (Original Split) */}
+      <div className="hidden lg:block">
+        <section
+          className={`relative ${hasPackage ? 'pt-6 md:pt-12' : 'pt-24 md:pt-32'} pb-32 md:pb-24 px-4 overflow-hidden`}
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+              {/* Text Side */}
+              <div>
+                <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
+                  {t('hero.badge')}
+                </span>
+                <h1 className="font-display font-black text-3xl sm:text-5xl lg:text-6xl text-secondary mb-6 tracking-tight">
+                  <BlurText
+                    text={t('hero.title_start')}
+                    delay={100}
+                    animateBy="words"
+                    direction="top"
+                    className="inline-block"
+                  />
+                  <br />
+                  <GradientText
+                    colors={['#3B82F6', '#2563EB', '#1D4ED8']}
+                    animationSpeed={4}
+                    className="inline-block"
+                  >
+                    {t('hero.title_gradient')}
+                  </GradientText>
+                </h1>
+                <p className="text-xl text-slate-600 leading-relaxed mb-8">{t('hero.desc')}</p>
+
+                <div className="mb-12">
+                  <BookingCalendar />
+                </div>
+
+                <div className="space-y-6">
+                  <div className="flex items-center gap-4 text-slate-600">
+                    <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-gray-100 flex items-center justify-center text-primary">
+                      <Icon name="verified" />
+                    </div>
+                    <div>
+                      <strong className="block text-secondary">
+                        {t('features.consult.title')}
+                      </strong>
+                      <span className="text-sm">{t('features.consult.desc')}</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4 text-slate-600">
+                    <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-gray-100 flex items-center justify-center text-primary">
+                      <Icon name="rocket_launch" />
+                    </div>
+                    <div>
+                      <strong className="block text-secondary">
+                        {t('features.strategy.title')}
+                      </strong>
+                      <span className="text-sm">{t('features.strategy.desc')}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Wizard Application Form */}
+              <div className="relative">
+                <Suspense
+                  fallback={
+                    <div className="h-[600px] w-full bg-gray-50 rounded-3xl animate-pulse" />
+                  }
                 >
-                  {t('hero.title_gradient')}
-                </GradientText>
-              </h1>
-              <p className="text-xl text-slate-600 leading-relaxed mb-8">{t('hero.desc')}</p>
+                  <ApplicationWizard />
+                </Suspense>
 
-              <div className="mb-12">
-                <BookingCalendar />
-              </div>
-
-              <div className="space-y-6">
-                <div className="flex items-center gap-4 text-slate-600">
-                  <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-gray-100 flex items-center justify-center text-primary">
-                    <Icon name="verified" />
-                  </div>
-                  <div>
-                    <strong className="block text-secondary">{t('features.consult.title')}</strong>
-                    <span className="text-sm">{t('features.consult.desc')}</span>
-                  </div>
+                {/* Trust Indicators */}
+                <div className="mt-8 flex justify-center gap-8 grayscale opacity-50">
+                  {/* Mock Logos */}
+                  <span className="font-bold text-slate-400">{t('trust.google')}</span>
+                  <span className="font-bold text-slate-400">{t('trust.shopify')}</span>
+                  <span className="font-bold text-slate-400">{t('trust.facebook')}</span>
                 </div>
-                <div className="flex items-center gap-4 text-slate-600">
-                  <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-gray-100 flex items-center justify-center text-primary">
-                    <Icon name="rocket_launch" />
-                  </div>
-                  <div>
-                    <strong className="block text-secondary">{t('features.strategy.title')}</strong>
-                    <span className="text-sm">{t('features.strategy.desc')}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Wizard Application Form */}
-            <div className="relative">
-              <Suspense
-                fallback={<div className="h-[600px] w-full bg-gray-50 rounded-3xl animate-pulse" />}
-              >
-                <ApplicationWizard />
-              </Suspense>
-
-              {/* Trust Indicators */}
-              <div className="mt-8 flex justify-center gap-8 grayscale opacity-50">
-                {/* Mock Logos */}
-                <span className="font-bold text-slate-400">{t('trust.google')}</span>
-                <span className="font-bold text-slate-400">{t('trust.shopify')}</span>
-                <span className="font-bold text-slate-400">{t('trust.facebook')}</span>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       <section className="py-24 bg-gray-50 text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-5 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>

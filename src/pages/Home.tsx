@@ -13,16 +13,19 @@ import {
 import { OptimizedIcon } from '../shared/ui/OptimizedIcon';
 import { useTranslation } from 'react-i18next';
 import { OptimizedImage } from '../shared/ui/OptimizedImage';
-import AgencyComparisonTable from '../features/analyzer/ui/AgencyComparisonTable';
 import GradientText from '../shared/ui/GradientText';
 import CountUp from '../shared/ui/CountUp';
 import BlurText from '../shared/ui/BlurText';
 
-// import { MdConstruction, MdApartment, MdShoppingCart, MdLightbulb, MdHealthAndSafety } from 'react-icons/md';
 // Premium UI Components
 import RotatingText from '../shared/ui/RotatingText';
 import { BentoCard } from '../shared/ui/MagicBento';
 import LogoLoop from '../shared/ui/LogoLoop';
+
+// Lazy load heavy components
+const AgencyComparisonTable = React.lazy(
+  () => import('../features/analyzer/ui/AgencyComparisonTable')
+);
 
 import { cn } from '../shared/lib/utils';
 import { baseButtonStyles, buttonVariants, buttonSizes } from '../shared/ui/Button';
@@ -159,7 +162,9 @@ const Home: React.FC = () => {
       </section>
 
       {/* Comparison Section */}
-      <AgencyComparisonTable />
+      <React.Suspense fallback={<div className="h-96" />}>
+        <AgencyComparisonTable />
+      </React.Suspense>
 
       {/* Philosophy Section */}
       <section className="py-12 md:py-24 bg-surface-light relative overflow-hidden">

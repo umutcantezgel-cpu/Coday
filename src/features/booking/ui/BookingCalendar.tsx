@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { useTranslation, Trans } from 'react-i18next';
 import { motion, AnimatePresence } from 'motion/react';
 // Initialize Supabase Client (Frontend)
@@ -31,6 +32,14 @@ const BookingCalendar = ({
   const [bookedSlots, setBookedSlots] = useState<Set<string>>(new Set());
   const [fetchingSlots, setFetchingSlots] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Generate next 14 days
   const today = new Date();
@@ -158,7 +167,7 @@ const BookingCalendar = ({
 
   return (
     <div
-      className={`p-6 bg-white/50 backdrop-blur-sm rounded-3xl border border-white/20 shadow-xl ${className}`}
+      className={`p-4 md:p-6 bg-white/50 backdrop-blur-sm rounded-3xl border border-white/20 shadow-xl ${className}`}
     >
       <AnimatePresence mode="wait">
         {step === 1 && (
@@ -171,28 +180,32 @@ const BookingCalendar = ({
           >
             <h3 className="text-xl font-bold text-gray-900 mb-4">{t('calendar.step1.title')}</h3>
 
-            {/* Scrollable Dates */}
-            <div className="flex gap-3 overflow-x-auto pb-4 no-scrollbar">
-              {dates.map((date) => {
-                const isSelected = selectedDate?.toDateString() === date.toDateString();
-                return (
-                  <button
-                    key={date.toISOString()}
-                    onClick={() => handleDateSelect(date)}
-                    className={`
-                      flex-shrink-0 w-20 h-24 rounded-2xl flex flex-col items-center justify-center gap-1 transition-all
+            {/* Scrollable Dates with Fade Mask */}
+            <div className="relative">
+              <div className="flex gap-3 overflow-x-auto pb-4 no-scrollbar scroll-smooth snap-x">
+                {dates.map((date) => {
+                  const isSelected = selectedDate?.toDateString() === date.toDateString();
+                  return (
+                    <button
+                      key={date.toISOString()}
+                      onClick={() => handleDateSelect(date)}
+                      className={`
+                      flex-shrink-0 w-16 md:w-20 h-20 md:h-24 rounded-2xl flex flex-col items-center justify-center gap-1 transition-all
                       border ${isSelected ? 'border-primary bg-primary/10 text-primary scale-105' : 'border-gray-100 hover:border-primary/50 text-gray-500'}
                     `}
-                  >
-                    <span className="text-sm font-medium">
-                      {date.toLocaleDateString(i18n.language === 'en' ? 'en-US' : 'de-DE', {
-                        weekday: 'short',
-                      })}
-                    </span>
-                    <span className="text-2xl font-bold">{date.getDate()}</span>
-                  </button>
-                );
-              })}
+                    >
+                      <span className="text-sm font-medium">
+                        {date.toLocaleDateString(i18n.language === 'en' ? 'en-US' : 'de-DE', {
+                          weekday: 'short',
+                        })}
+                      </span>
+                      <span className="text-2xl font-bold">{date.getDate()}</span>
+                    </button>
+                  );
+                })}
+              </div>
+              {/* Fade Overlay for Scroll Hint */}
+              <div className="absolute right-0 top-0 bottom-4 w-12 bg-gradient-to-l from-white to-transparent pointer-events-none md:hidden" />
             </div>
 
             {/* Time Slots */}
@@ -200,7 +213,7 @@ const BookingCalendar = ({
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="grid grid-cols-3 gap-3"
+                className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3"
               >
                 {fetchingSlots ? (
                   <div className="col-span-3 text-center py-4 text-gray-400 text-sm">
@@ -234,13 +247,50 @@ const BookingCalendar = ({
             )}
 
             <div className="flex justify-end pt-4">
+              {/* Desktop Button */}
               <button
                 disabled={!selectedDate || !selectedTime}
                 onClick={nextStep}
-                className="px-6 py-2 bg-black text-white rounded-full font-medium disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-800 transition-colors"
+                className="hidden md:block px-8 py-3 bg-black text-white rounded-full font-medium disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-800 transition-colors shadow-lg"
               >
                 {t('calendar.step1.next')}
               </button>
+
+              {/* Mobile Sticky Button (Portal) */}
+              {isMobile &&
+                createPortal(
+                  <AnimatePresence>
+                    {selectedDate && selectedTime && (
+                      <motion.div
+                        initial={{ y: 100, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        exit={{ y: 100, opacity: 0 }}
+                        className="fixed bottom-6 left-4 right-4 z-50 pointer-events-none"
+                      >
+                        <button
+                          onClick={nextStep}
+                          className="w-full py-4 bg-black text-white rounded-2xl font-bold text-lg shadow-2xl pointer-events-auto flex items-center justify-center gap-2 active:scale-95 transition-transform"
+                        >
+                          {t('calendar.step1.next')}
+                          <svg
+                            className="w-5 h-5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={3}
+                              d="M14 5l7 7m0 0l-7 7m7-7H3"
+                            />
+                          </svg>
+                        </button>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>,
+                  document.body
+                )}
             </div>
           </motion.div>
         )}

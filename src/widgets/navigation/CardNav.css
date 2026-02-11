@@ -428,6 +428,15 @@
     margin-right: 0;
   }
 
+  .nav-pill-cta {
+    display: none !important;
+  }
+
+  /* Hide Language Switcher on mobile (first child of actions) */
+  .nav-pill-actions > :first-child {
+    display: none !important;
+  }
+
   .nav-pill-actions {
     margin-left: auto;
     border-left: none;
@@ -436,7 +445,19 @@
 
   .nav-pill-cta span {
     display: none;
-    /* Icon only on small screens? Or keep text */
+    /* Hide text on mobile (Icon only if we showed buttons, but we hide buttons now) */
+  }
+
+  /* 
+   * Note: The buttons themselves are hidden via utility classes (hidden sm:flex) in TSX.
+   * If they were visible, we'd want them small. But per Phase 9, we are hiding them.
+   * Keeping this clean.
+   */
+
+  .logo-text {
+    display: block;
+    /* Show logo text again? Or keep hidden for ultra-minimalism? Let's keep it visible if space allows, or hide if needed. With buttons gone, logo text serves as brand anchor. */
+    font-size: 1rem;
   }
 }
 

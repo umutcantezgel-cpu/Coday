@@ -30,6 +30,8 @@ export const Footer: React.FC = () => {
                   src="/images/hero/business-handshake-partnerschaft-tuer-offen-zusammenarbeit-vertrauen.webp"
                   alt="Partnerschaft"
                   className="w-full h-full object-cover"
+                  width={48}
+                  height={48}
                 />
               </div>
               <div>
@@ -42,9 +44,9 @@ export const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">
+            <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">
               {t('footer.sections.pricing')}
-            </h4>
+            </h3>
             <ul className="space-y-3">
               <li>
                 <NavLink
@@ -66,9 +68,9 @@ export const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">
+            <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">
               {t('footer.sections.knowledge')}
-            </h4>
+            </h3>
             <ul className="space-y-3">
               <li>
                 <NavLink
@@ -106,9 +108,9 @@ export const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">
+            <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">
               {t('footer.sections.career')}
-            </h4>
+            </h3>
             <ul className="space-y-3">
               <li>
                 <NavLink
