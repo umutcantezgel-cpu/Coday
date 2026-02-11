@@ -30,74 +30,67 @@ import { twMerge } from 'tailwind-merge';
 import { motion, useScroll, useTransform, useInView, AnimatePresence } from 'motion/react';
 
 // Interactive Components (Lazy Loaded)
-const ROI_Calculator = React.lazy(
-  () =>
-    import('./interactive/ROI_Calculator') as unknown as Promise<{
-      default: React.ComponentType<unknown>;
-    }>
-);
-const SpeedComparison = React.lazy(
-  () =>
-    import('./interactive/SpeedComparison') as unknown as Promise<{
-      default: React.ComponentType<unknown>;
-    }>
-);
-const DesignPsychologyPicker = React.lazy(
-  () =>
-    import('./interactive/DesignPsychologyPicker') as unknown as Promise<{
-      default: React.ComponentType<unknown>;
-    }>
-);
-const SEOTrafficGraph = React.lazy(
-  () =>
-    import('./interactive/SEOTrafficGraph') as unknown as Promise<{
-      default: React.ComponentType<unknown>;
-    }>
-);
-const MobileSimulator = React.lazy(
-  () =>
-    import('./interactive/MobileSimulator') as unknown as Promise<{
-      default: React.ComponentType<unknown>;
-    }>
-);
-const DataMaturityAssessment = React.lazy(
-  () =>
-    import('./interactive/DataMaturityAssessment') as unknown as Promise<{
-      default: React.ComponentType<unknown>;
-    }>
-);
-const HackSimulator = React.lazy(
-  () =>
-    import('./interactive/HackSimulator') as unknown as Promise<{
-      default: React.ComponentType<unknown>;
-    }>
-);
-const ABTestSimulator = React.lazy(
-  () =>
-    import('./interactive/ABTestSimulator') as unknown as Promise<{
-      default: React.ComponentType<unknown>;
-    }>
-);
-const VoiceDemo = React.lazy(
-  () =>
-    import('./interactive/VoiceDemo') as unknown as Promise<{ default: React.ComponentType<unknown> }>
-);
-const AICostGraph = React.lazy(
-  () =>
-    import('./interactive/AICostGraph') as unknown as Promise<{ default: React.ComponentType<unknown> }>
-);
-const WebHistoryTimeline = React.lazy(
-  () =>
-    import('./interactive/WebHistoryTimeline') as unknown as Promise<{
-      default: React.ComponentType<unknown>;
-    }>
-);
-const AgencyCostCalculator = React.lazy(
-  () =>
-    import('./interactive/AgencyCostCalculator') as unknown as Promise<{
-      default: React.ComponentType<unknown>;
-    }>
-);
+// Interactive Components (Lazy Loaded)
+/* eslint-disable @typescript-eslint/no-explicit-any */
+const ROI_Calculator = React.lazy(() =>
+  import('./interactive/ROI_Calculator').then((m) => ({
+    default: (m as any).ROI_Calculator || m.default,
+  }))
+) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
+const SpeedComparison = React.lazy(() =>
+  import('./interactive/SpeedComparison').then((m) => ({
+    default: (m as any).SpeedComparison || m.default,
+  }))
+) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
+const DesignPsychologyPicker = React.lazy(() =>
+  import('./interactive/DesignPsychologyPicker').then((m) => ({
+    default: (m as any).DesignPsychologyPicker || m.default,
+  }))
+) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
+const SEOTrafficGraph = React.lazy(() =>
+  import('./interactive/SEOTrafficGraph').then((m) => ({
+    default: (m as any).SEOTrafficGraph || m.default,
+  }))
+) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
+const MobileSimulator = React.lazy(() =>
+  import('./interactive/MobileSimulator').then((m) => ({
+    default: (m as any).MobileSimulator || m.default,
+  }))
+) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
+const DataMaturityAssessment = React.lazy(() =>
+  import('./interactive/DataMaturityAssessment').then((m) => ({
+    default: (m as any).DataMaturityAssessment || m.default,
+  }))
+) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
+const HackSimulator = React.lazy(() =>
+  import('./interactive/HackSimulator').then((m) => ({
+    default: (m as any).HackSimulator || m.default,
+  }))
+) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
+const ABTestSimulator = React.lazy(() =>
+  import('./interactive/ABTestSimulator').then((m) => ({
+    default: (m as any).ABTestSimulator || m.default,
+  }))
+) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
+const VoiceDemo = React.lazy(() =>
+  import('./interactive/VoiceDemo').then((m) => ({ default: (m as any).VoiceDemo || m.default }))
+) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
+const AICostGraph = React.lazy(() =>
+  import('./interactive/AICostGraph').then((m) => ({
+    default: (m as any).AICostGraph || m.default,
+  }))
+) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
+const WebHistoryTimeline = React.lazy(() =>
+  import('./interactive/WebHistoryTimeline').then((m) => ({
+    default: (m as any).WebHistoryTimeline || m.default,
+  }))
+) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
+const AgencyCostCalculator = React.lazy(() =>
+  import('./interactive/AgencyCostCalculator').then((m) => ({
+    default: (m as any).AgencyCostCalculator || m.default,
+  }))
+) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
+/* eslint-enable @typescript-eslint/no-explicit-any */
 
 import { KeyTakeaways } from './KeyTakeaways';
 import { GlossaryTerm } from './GlossaryTerm';

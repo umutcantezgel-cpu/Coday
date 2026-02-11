@@ -1,11 +1,10 @@
-import { reactRouter } from "@react-router/dev/vite";
-import autoprefixer from "autoprefixer";
-import tailwindcss from "@tailwindcss/postcss";
-import { defineConfig } from "vite";
-import tsconfigPaths from "vite-tsconfig-paths";
+import { reactRouter } from '@react-router/dev/vite';
+import autoprefixer from 'autoprefixer';
+import tailwindcss from '@tailwindcss/postcss';
+import { defineConfig } from 'vite';
+import tsconfigPaths from 'vite-tsconfig-paths';
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import mdx from '@mdx-js/rollup';
-
 
 export default defineConfig({
   css: {
@@ -58,6 +57,6 @@ export default defineConfig({
         drop_debugger: true,
       },
     },
-    target: 'es2020',
+    target: 'es2022',
   },
 });

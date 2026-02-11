@@ -32,6 +32,7 @@ export const Footer: React.FC = () => {
                   className="w-full h-full object-cover"
                   width={48}
                   height={48}
+                  loading="lazy"
                 />
               </div>
               <div>
@@ -142,16 +143,32 @@ export const Footer: React.FC = () => {
 
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex gap-6 text-gray-400">
-            <a href="#" className="hover:text-primary transition-colors">
+            <a
+              href="#"
+              className="hover:text-primary transition-colors"
+              aria-label="Besuchen Sie uns auf Facebook"
+            >
               <Icon name="facebook" />
             </a>
-            <a href="#" className="hover:text-primary transition-colors">
+            <a
+              href="#"
+              className="hover:text-primary transition-colors"
+              aria-label="Besuchen Sie uns auf Instagram"
+            >
               <Icon name="instagram" />
             </a>
-            <a href="#" className="hover:text-primary transition-colors">
+            <a
+              href="#"
+              className="hover:text-primary transition-colors"
+              aria-label="Besuchen Sie uns auf Twitter"
+            >
               <Icon name="twitter" />
             </a>
-            <a href="#" className="hover:text-primary transition-colors">
+            <a
+              href="#"
+              className="hover:text-primary transition-colors"
+              aria-label="Besuchen Sie uns auf LinkedIn"
+            >
               <Icon name="linkedin" />
             </a>
           </div>

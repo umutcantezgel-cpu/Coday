@@ -40,7 +40,7 @@ export const getLocalizedPath = (path: string, lng: string) => {
 export const LocalizedLink: React.FC<LinkProps> = ({ to, children, ...props }) => {
   const lng = useCurrentLanguage();
   const localizedTo = typeof to === 'string' ? getLocalizedPath(to, lng) : to;
-  console.log(`[LocalizedLink] Input: ${to}, Lang: ${lng}, Output: ${localizedTo}`);
+  // console.log removed
 
   return (
     <Link to={localizedTo} {...props}>

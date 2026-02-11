@@ -45,6 +45,7 @@ export const FloatingActionMenu: React.FC = () => {
             <a
               href="#"
               className="p-2 hover:bg-gray-50 rounded-xl text-[#0A66C2] transition-colors flex items-center gap-3 w-32"
+              aria-label="Besuchen Sie uns auf LinkedIn"
             >
               <LinkedinLogo className="w-5 h-5" />
               <span className="text-sm font-bold text-gray-700">LinkedIn</span>
@@ -52,6 +53,7 @@ export const FloatingActionMenu: React.FC = () => {
             <a
               href="#"
               className="p-2 hover:bg-gray-50 rounded-xl text-[#E4405F] transition-colors flex items-center gap-3 w-32"
+              aria-label="Besuchen Sie uns auf Instagram"
             >
               <InstagramLogo className="w-5 h-5" />
               <span className="text-sm font-bold text-gray-700">Instagram</span>
@@ -59,6 +61,7 @@ export const FloatingActionMenu: React.FC = () => {
             <a
               href="#"
               className="p-2 hover:bg-gray-50 rounded-xl text-[#1DA1F2] transition-colors flex items-center gap-3 w-32"
+              aria-label="Besuchen Sie uns auf Twitter"
             >
               <TwitterLogo className="w-5 h-5" />
               <span className="text-sm font-bold text-gray-700">Twitter</span>
@@ -66,6 +69,7 @@ export const FloatingActionMenu: React.FC = () => {
             <a
               href="#"
               className="p-2 hover:bg-gray-50 rounded-xl text-[#1877F2] transition-colors flex items-center gap-3 w-32"
+              aria-label="Besuchen Sie uns auf Facebook"
             >
               <FacebookLogo className="w-5 h-5" />
               <span className="text-sm font-bold text-gray-700">Facebook</span>
@@ -86,6 +90,7 @@ export const FloatingActionMenu: React.FC = () => {
               transition={{ delay: 0.1 }}
               onClick={handleSocialClick}
               className="bg-white text-gray-800 p-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all flex items-center gap-3 group relative"
+              aria-label="Social Media anzeigen"
             >
               <span className="absolute right-full mr-4 bg-gray-900 text-white text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                 Social Media
@@ -103,6 +108,7 @@ export const FloatingActionMenu: React.FC = () => {
               exit={{ opacity: 0, y: 20, scale: 0.8 }}
               transition={{ delay: 0.05 }}
               className="bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all flex items-center gap-3 group relative"
+              aria-label="WhatsApp öffnen"
             >
               <span className="absolute right-full mr-4 bg-gray-900 text-white text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                 WhatsApp
@@ -117,6 +123,7 @@ export const FloatingActionMenu: React.FC = () => {
               exit={{ opacity: 0, y: 20, scale: 0.8 }}
               onClick={handleChatClick}
               className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all flex items-center gap-3 group relative"
+              aria-label="AI Assistant öffnen"
             >
               <span className="absolute right-full mr-4 bg-gray-900 text-white text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                 AI Assistant
@@ -131,11 +138,13 @@ export const FloatingActionMenu: React.FC = () => {
       <motion.button
         onClick={toggleMenu}
         className={`w-16 h-16 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 z-max
-                    ${isOpen
-            ? 'bg-gray-900 text-white rotate-180'
-            : 'bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white hover:scale-110'
-          }`}
+                    ${
+                      isOpen
+                        ? 'bg-gray-900 text-white rotate-180'
+                        : 'bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white hover:scale-110'
+                    }`}
         whileTap={{ scale: 0.9 }}
+        aria-label={isOpen ? 'Menü schließen' : 'Menü öffnen'}
       >
         {isOpen ? (
           <X className="w-8 h-8" />

@@ -289,17 +289,26 @@ export const ApplicationWizard: React.FC = () => {
       <h3 className="text-xl font-bold text-gray-900">{t('wizard.step1.title')}</h3>
 
       {/* Project Type */}
-      <div className="space-y-2">
-        <label className="text-sm font-medium text-gray-700">
+      <div className="space-y-2" role="radiogroup" aria-labelledby="project-type-label">
+        <label id="project-type-label" className="text-sm font-medium text-gray-700">
           {t('wizard.step1.project_type.label')}
         </label>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {['webdesign', 'webapp', 'ecommerce', 'audit'].map((type) => (
             <div
               key={type}
+              role="radio"
+              aria-checked={watch('project') === type}
+              tabIndex={0}
               onClick={() => setValue('project', type)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  setValue('project', type);
+                }
+              }}
               className={`
-                p-4 rounded-xl border-2 cursor-pointer transition-all flex items-center gap-3
+                p-4 rounded-xl border-2 cursor-pointer transition-all flex items-center gap-3 outline-none focus:ring-2 focus:ring-primary focus:border-primary
                 ${watch('project') === type ? 'border-primary bg-blue-50/50' : 'border-gray-100 hover:border-gray-200'}
               `}
             >
@@ -332,10 +341,11 @@ export const ApplicationWizard: React.FC = () => {
       <h3 className="text-xl font-bold text-gray-900">{t('wizard.step2.title')}</h3>
       {renderPackageSummary()}
       <div className="space-y-2">
-        <label className="text-sm font-medium text-gray-700">
+        <label htmlFor="wizard-message" className="text-sm font-medium text-gray-700">
           {t('wizard.step2.requirements.label')}
         </label>
         <textarea
+          id="wizard-message"
           {...register('message')}
           rows={6}
           className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-blue-100 outline-none transition-all resize-none"
@@ -361,10 +371,11 @@ export const ApplicationWizard: React.FC = () => {
 
       <div className="grid sm:grid-cols-2 gap-4">
         <div className="space-y-2">
-          <label className="text-sm font-medium text-gray-700">
+          <label htmlFor="wizard-name" className="text-sm font-medium text-gray-700">
             {t('wizard.step3.name.label')}
           </label>
           <input
+            id="wizard-name"
             {...register('name')}
             className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-blue-100 outline-none transition-all"
             placeholder={t('wizard.step3.name.placeholder')}
@@ -372,10 +383,11 @@ export const ApplicationWizard: React.FC = () => {
           {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
         </div>
         <div className="space-y-2">
-          <label className="text-sm font-medium text-gray-700">
+          <label htmlFor="wizard-company" className="text-sm font-medium text-gray-700">
             {t('wizard.step3.company.label')}
           </label>
           <input
+            id="wizard-company"
             {...register('company')}
             className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-blue-100 outline-none transition-all"
             placeholder={t('wizard.step3.company.placeholder')}
@@ -385,10 +397,11 @@ export const ApplicationWizard: React.FC = () => {
 
       <div className="grid sm:grid-cols-2 gap-4">
         <div className="space-y-2">
-          <label className="text-sm font-medium text-gray-700">
+          <label htmlFor="wizard-email" className="text-sm font-medium text-gray-700">
             {t('wizard.step3.email.label')}
           </label>
           <input
+            id="wizard-email"
             {...register('email')}
             type="email"
             className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-blue-100 outline-none transition-all"
@@ -397,10 +410,11 @@ export const ApplicationWizard: React.FC = () => {
           {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
         </div>
         <div className="space-y-2">
-          <label className="text-sm font-medium text-gray-700">
+          <label htmlFor="wizard-phone" className="text-sm font-medium text-gray-700">
             {t('wizard.step3.phone.label')}
           </label>
           <input
+            id="wizard-phone"
             {...register('phone')}
             className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-blue-100 outline-none transition-all"
             placeholder={t('wizard.step3.phone.placeholder')}

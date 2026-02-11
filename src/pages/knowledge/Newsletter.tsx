@@ -59,11 +59,15 @@ const Newsletter: React.FC = () => {
             <p>Du hast dich erfolgreich angemeldet.</p>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="max-w-md mx-auto bg-white p-2 rounded-2xl shadow-xl border border-gray-200 mb-8 flex gap-2">
+          <form
+            onSubmit={handleSubmit}
+            className="max-w-md mx-auto bg-white p-2 rounded-2xl shadow-xl border border-gray-200 mb-8 flex gap-2"
+          >
             <Input
               type="email"
               inputMode="email"
               placeholder={t('newsletter.emailPlaceholder')}
+              aria-label={t('newsletter.emailPlaceholder')}
               className="bg-transparent border-0 focus:ring-0 px-4"
               wrapperClassName="flex-1 space-y-0"
               required
@@ -72,13 +76,19 @@ const Newsletter: React.FC = () => {
               disabled={status === 'loading'}
             />
             <Button type="submit" className="rounded-xl px-6" disabled={status === 'loading'}>
-              {status === 'loading' ? <Icon name="loader" className="animate-spin" /> : t('newsletter.subscribe')}
+              {status === 'loading' ? (
+                <Icon name="loader" className="animate-spin" />
+              ) : (
+                t('newsletter.subscribe')
+              )}
             </Button>
           </form>
         )}
 
         {status === 'error' && (
-          <p className="text-red-500 text-sm mb-4">Ein Fehler ist aufgetreten. Bitte versuche es später erneut.</p>
+          <p className="text-red-500 text-sm mb-4">
+            Ein Fehler ist aufgetreten. Bitte versuche es später erneut.
+          </p>
         )}
 
         <p className="text-sm text-slate-400">{t('newsletter.privacy')}</p>

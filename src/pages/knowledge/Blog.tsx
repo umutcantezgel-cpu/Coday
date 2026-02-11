@@ -3,7 +3,7 @@ import { Icon } from '@/shared/ui/Icon';
 import { Helmet } from 'react-helmet-async';
 import { OptimizedImage } from '../../shared/ui/OptimizedImage';
 
-import { Link } from 'react-router-dom';
+import { LocalizedLink as Link } from '@/shared/ui/LocalizedLink';
 import { getBlogPosts } from '../../features/blog/model/data';
 import { useTranslation, Trans } from 'react-i18next';
 
@@ -70,7 +70,7 @@ const Blog: React.FC = () => {
           {posts.slice(0, 6).map((post) => (
             <Link
               key={post.id}
-              to={`/ knowledge / blog / ${post.slug} `}
+              to={`/knowledge/blog/${post.slug}`}
               className="flex flex-col group cursor-pointer h-full"
             >
               <article className="flex flex-col h-full">

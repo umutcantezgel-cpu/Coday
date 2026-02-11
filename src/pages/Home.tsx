@@ -197,6 +197,9 @@ const Home: React.FC = () => {
                 alt="Vertrauensvolle Zusammenarbeit"
                 className="relative rounded-[2rem] shadow-flat-lg bg-white p-2 transform -rotate-2 hover:rotate-0 transition-all duration-500 w-full"
                 priority
+                width={1920}
+                height={1072}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
               />
             </div>
           </div>
