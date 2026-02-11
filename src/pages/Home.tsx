@@ -199,7 +199,7 @@ const Home: React.FC = () => {
                 loading="lazy"
                 width={640}
                 height={358}
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 75vw, 50vw"
+                sizes="(max-width: 400px) 100vw, (max-width: 640px) 640px, (max-width: 1024px) 75vw, 50vw"
                 srcSet="/images/hero/business-handshake-partnerschaft-tuer-offen-zusammenarbeit-vertrauen-320w.webp 320w, /images/hero/business-handshake-partnerschaft-tuer-offen-zusammenarbeit-vertrauen-640w.webp 640w, /images/hero/business-handshake-partnerschaft-tuer-offen-zusammenarbeit-vertrauen-1024w.webp 1024w"
               />
             </div>

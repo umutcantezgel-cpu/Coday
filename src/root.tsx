@@ -53,11 +53,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
           #main-content { min-height: 100vh; display: flex; flex-direction: column; }
           /* Critical Nav Placeholder */
           .nav-shell { height: 80px; width: 100%; position: fixed; top: 0; z-index: 50; }
+          /* Reset to prevent major shifts */
+          * { box-sizing: border-box; margin: 0; padding: 0; }
+          html { -webkit-text-size-adjust: 100%; tab-size: 4; font-family: 'Inter', sans-serif; line-height: 1.5; }
         `,
           }}
         />
         <Meta />
-        <Links />
+        {/* Links moved to body to prevent render blocking */}
         {/* Favicon */}
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         {/* Preload Critical Fonts (Inter Latin + Outfit Latin) to prevent FOIT/layout shifts */}
@@ -87,6 +90,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           </MotionConfig>
         </HelmetProvider>
         <ScrollRestoration />
+        <Links />
         <Scripts />
       </body>
     </html>
