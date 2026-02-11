@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { LocalizedNavLink as NavLink } from '@/shared/ui/LocalizedLink';
 import { motion } from 'motion/react';
 import { Icon } from '@/shared/ui/Icon';
 import { SeoHead } from '@/shared/ui/SeoHead';
