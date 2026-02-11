@@ -14,9 +14,8 @@ dist-ssr
 
 # Environment Variables
 .env
-.env.production
-.env.development
-.env.test
+.env.*
+!.env.example
 
 # Editor directories and files
 .vscode/*
@@ -28,6 +27,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Orphaned fix/build scripts
 *.py
 npm_errors*.txt
 
@@ -46,7 +47,6 @@ videos/
 head_debug.html
 lint_report.txt
 lint_output*.txt
-lint_errors*.txt
 lint_errors*.txt
 lint_final.txt
 typecheck_report.txt

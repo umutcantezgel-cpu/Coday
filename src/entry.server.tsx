@@ -7,22 +7,20 @@ import type { EntryContext } from "react-router";
 import { createI18n } from "./i18n.server";
 import { I18nextProvider } from "react-i18next";
 
-export default function handleRequest(
+export default async function handleRequest(
     request: Request,
     responseStatusCode: number,
     responseHeaders: Headers,
     routerContext: EntryContext,
-    loadContext: unknown
+    _loadContext: unknown
 ) {
-    return new Promise(async (resolve, reject) => {
+    // Simple language detection from URL
+    const url = new URL(request.url);
+    const lng = url.pathname.startsWith('/en') ? 'en' : 'de';
+    const i18n = await createI18n(lng);
+
+    return new Promise((resolve, reject) => {
         let shellRendered = false;
-        const userAgent = request.headers.get("user-agent");
-
-        // Simple language detection from URL
-        const url = new URL(request.url);
-        const lng = url.pathname.startsWith('/en') ? 'en' : 'de';
-
-        const i18n = await createI18n(lng);
 
         const { pipe, abort } = renderToPipeableStream(
             <I18nextProvider i18n={i18n}>
