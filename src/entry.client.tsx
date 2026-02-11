@@ -2,19 +2,21 @@ import { HydratedRouter } from 'react-router/dom';
 import './i18n';
 import { startTransition, StrictMode } from 'react';
 import { hydrateRoot } from 'react-dom/client';
-import * as Sentry from '@sentry/react';
 
-if (import.meta.env.VITE_SENTRY_DSN) {
-  Sentry.init({
-    dsn: import.meta.env.VITE_SENTRY_DSN,
-    integrations: [Sentry.browserTracingIntegration(), Sentry.replayIntegration()],
-    // Tracing — low rate in production to avoid performance overhead
-    tracesSampleRate: import.meta.env.DEV ? 1.0 : 0.1,
-    // Session Replay
-    replaysSessionSampleRate: import.meta.env.DEV ? 1.0 : 0.05,
-    replaysOnErrorSampleRate: 1.0,
+// Lazy-init Sentry after hydration to reduce main-thread blocking
+const initSentry = () => {
+  if (!import.meta.env.VITE_SENTRY_DSN) return;
+
+  import('@sentry/react').then((Sentry) => {
+    Sentry.init({
+      dsn: import.meta.env.VITE_SENTRY_DSN,
+      integrations: [Sentry.browserTracingIntegration()],
+      tracesSampleRate: import.meta.env.DEV ? 1.0 : 0.1,
+      replaysSessionSampleRate: 0,
+      replaysOnErrorSampleRate: 1.0,
+    });
   });
-}
+};
 
 startTransition(() => {
   hydrateRoot(
@@ -23,13 +25,18 @@ startTransition(() => {
       <HydratedRouter />
     </StrictMode>,
     {
-      onRecoverableError: (error) => {
-        // Log the error to Sentry but don't crash
-        console.error('Hydration failed, attempting recovery:', error);
-        if (import.meta.env.VITE_SENTRY_DSN) {
-          Sentry.captureException(error);
-        }
+      onRecoverableError: () => {
+        // Silently recover from hydration mismatches
       },
     }
   );
 });
+
+// Initialize Sentry after hydration is complete
+if (typeof window !== 'undefined') {
+  if ('requestIdleCallback' in window) {
+    window.requestIdleCallback(initSentry);
+  } else {
+    setTimeout(initSentry, 2000);
+  }
+}
