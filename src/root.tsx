@@ -9,6 +9,8 @@ import {
   type LoaderFunctionArgs,
 } from 'react-router';
 import './index.css';
+import '@fontsource-variable/inter';
+import '@fontsource-variable/outfit';
 import { LazyMotion, domAnimation, MotionConfig } from 'motion/react';
 import React from 'react';
 import { HelmetProvider } from 'react-helmet-async';

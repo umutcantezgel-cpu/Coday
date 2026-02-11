@@ -162,7 +162,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Comparison Section */}
-      <React.Suspense fallback={<div className="h-96" />}>
+      <React.Suspense fallback={<div className="h-[600px]" />}>
         <AgencyComparisonTable />
       </React.Suspense>
 
@@ -196,11 +196,11 @@ const Home: React.FC = () => {
                 src="/images/hero/business-handshake-partnerschaft-tuer-offen-zusammenarbeit-vertrauen.webp"
                 alt="Vertrauensvolle Zusammenarbeit"
                 className="relative rounded-[2rem] shadow-flat-lg bg-white p-2 transform -rotate-2 hover:rotate-0 transition-all duration-500 w-full"
-                priority
+                loading="lazy"
                 width={1920}
                 height={1072}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                fetchPriority="high"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 75vw, 50vw"
+                srcSet="/images/hero/business-handshake-partnerschaft-tuer-offen-zusammenarbeit-vertrauen-640w.webp 640w, /images/hero/business-handshake-partnerschaft-tuer-offen-zusammenarbeit-vertrauen-1024w.webp 1024w, /images/hero/business-handshake-partnerschaft-tuer-offen-zusammenarbeit-vertrauen-1920w.webp 1920w"
               />
             </div>
           </div>
@@ -305,7 +305,7 @@ const Home: React.FC = () => {
               <span className="text-primary">{t('tech_stack.title_suffix')}</span>
             </h2>
           </div>
-          <React.Suspense fallback={<div className="h-32" />}>
+          <React.Suspense fallback={<div className="h-16" />}>
             <LogoLoop
               logos={[
                 { node: <span className="font-bold text-secondary/60 text-xl">React</span> },
@@ -343,6 +343,7 @@ const Home: React.FC = () => {
                 width={637}
                 height={356}
                 sizes="(max-width: 768px) 100vw, 640px"
+                srcSet="/images/services/drei-kunden-reviews-320w.webp 320w, /images/services/drei-kunden-reviews-640w.webp 640w, /images/services/drei-kunden-reviews.webp 1200w"
               />
             </div>
             <div className="order-1 lg:order-2">
