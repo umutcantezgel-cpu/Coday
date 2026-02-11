@@ -38,7 +38,7 @@ export async function action({ request }: { request: Request }) {
 
   try {
     const { messages, model } = await request.json();
-    const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+    const GEMINI_API_KEY = process.env.GEMINI_API_KEY || process.env.VITE_GEMINI_API_KEY;
 
     if (!GEMINI_API_KEY) {
       return new Response(JSON.stringify({ error: 'Gemini API key not configured' }), {

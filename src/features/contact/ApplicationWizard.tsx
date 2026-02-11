@@ -146,19 +146,25 @@ export const ApplicationWizard: React.FC = () => {
 
       if (dbError) throw new Error(dbError.message);
 
-      // 2. Send Email via API
-      const response = await fetch('/api/send-lead', {
+      // 2. Send Email via Supabase Function (Edge)
+      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+      const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+      const response = await fetch(`${supabaseUrl}/functions/v1/send-lead`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${supabaseKey}`,
+        },
         body: JSON.stringify({
           ...data,
           message: fullMessage,
-          project: data.project || getPackageName(), // Frontend sends 'project'
+          project: data.project || getPackageName(),
         }),
       });
 
       if (!response.ok) {
-        console.warn('Email sending failed, but lead saved to DB.');
+        console.warn('Email sending failed (Edge function error), but lead saved to DB.');
       }
 
       setSuccess(true);

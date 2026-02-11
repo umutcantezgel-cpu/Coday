@@ -59,16 +59,17 @@ export async function action({ request }: { request: Request }) {
     }
     const data = parsed.data;
 
-    const RESEND_API_KEY = process.env.RESEND_API_KEY;
+    const RESEND_API_KEY = process.env.RESEND_API_KEY || process.env.VITE_RESEND_API_KEY;
 
     if (!RESEND_API_KEY) {
-      console.warn('RESEND_API_KEY missing - skipping email send.');
+      console.error('RESEND_API_KEY missing in environment variables.');
       return new Response(
         JSON.stringify({
-          success: true,
-          message: 'Lead saved (Email skipped - Config missing)',
+          success: false,
+          error: 'Configuration Error',
+          details: 'Email service not configured (Missing RESEND_API_KEY).',
         }),
-        { status: 200, headers: { 'Content-Type': 'application/json' } }
+        { status: 500, headers: { 'Content-Type': 'application/json' } }
       );
     }
 
@@ -103,12 +104,9 @@ export async function action({ request }: { request: Request }) {
     });
   } catch (error) {
     console.error('Send lead error:', error);
-    return new Response(
-      JSON.stringify({ success: false, error: 'Email sending failed' }),
-      {
-        status: 500,
-        headers: { 'Content-Type': 'application/json' },
-      }
-    );
+    return new Response(JSON.stringify({ success: false, error: 'Email sending failed' }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' },
+    });
   }
 }
