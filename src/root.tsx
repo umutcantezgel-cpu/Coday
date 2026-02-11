@@ -46,17 +46,42 @@ export function Layout({ children }: { children: React.ReactNode }) {
             frame-src 'self' https://*.google.com;
           "
         />
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+          body { background-color: #f8fafc; color: #0f172a; font-family: 'Inter', sans-serif; }
+          #main-content { min-height: 100vh; display: flex; flex-direction: column; }
+          /* Critical Nav Placeholder */
+          .nav-shell { height: 80px; width: 100%; position: fixed; top: 0; z-index: 50; }
+        `,
+          }}
+        />
         <Meta />
         <Links />
         {/* Favicon */}
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        {/* Preload Critical Fonts (Inter Latin + Outfit Latin) to prevent FOIT/layout shifts */}
+        <link
+          rel="preload"
+          href="/assets/inter-latin-wght-normal-Dx4kXJAl.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/assets/outfit-latin-wght-normal-Bc-8i84L.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
         <GoogleAnalytics />
       </head>
       <body>
         <SkipLink />
         <HelmetProvider>
           <MotionConfig reducedMotion="user">
-            <LazyMotion features={domAnimation}>
+            <LazyMotion features={domAnimation} strict>
               <div id="main-content">{children}</div>
             </LazyMotion>
           </MotionConfig>
