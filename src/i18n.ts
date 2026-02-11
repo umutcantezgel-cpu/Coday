@@ -19,24 +19,16 @@ i18n
     supportedLngs: ['de', 'en'],
     debug: import.meta.env.DEV, // Enable debug in development
 
-    ns: [
-      'common',
-      'home',
-      'blog',
-      'form',
-      'pricing',
-      'process',
-      'services',
-      'tools',
-      'work',
-      'industries',
-      'knowledge',
-      'legal',
-      'careers',
-      'contact',
-      'dashboard',
-    ],
+    // Only load essential namespaces eagerly — others load on demand
+    ns: ['common', 'home'],
     defaultNS: 'common',
+
+    // Prevent loading ALL languages upfront
+    preload: false,
+    partialBundledLanguages: true,
+
+    // Load namespaces on demand when useTranslation('ns') is called
+    load: 'currentOnly',
 
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default

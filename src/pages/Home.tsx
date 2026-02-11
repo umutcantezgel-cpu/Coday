@@ -337,13 +337,13 @@ const Home: React.FC = () => {
             <div className="order-2 lg:order-1 relative">
               <div className="absolute top-0 start-0 w-24 h-24 bg-accent/20 rounded-full blur-xl -translate-x-1/2 -translate-y-1/2 rtl:translate-x-1/2"></div>
               <OptimizedImage
-                src="/images/services/drei-kunden-reviews.webp"
+                src="/images/services/drei-kunden-reviews-640w.webp"
                 alt="Zufriedene Partner"
                 className="relative rounded-3xl shadow-flat-lg w-full bg-white p-2"
                 width={637}
                 height={356}
                 sizes="(max-width: 768px) 100vw, 640px"
-                srcSet="/images/services/drei-kunden-reviews-320w.webp 320w, /images/services/drei-kunden-reviews-640w.webp 640w, /images/services/drei-kunden-reviews.webp 1200w"
+                srcSet="/images/services/drei-kunden-reviews-320w.webp 320w, /images/services/drei-kunden-reviews-640w.webp 640w"
               />
             </div>
             <div className="order-1 lg:order-2">

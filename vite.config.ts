@@ -57,6 +57,6 @@ export default defineConfig({
         drop_debugger: true,
       },
     },
-    target: 'es2022',
+    target: 'esnext',
   },
 });

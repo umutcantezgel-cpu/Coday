@@ -39,7 +39,7 @@ const AgencyComparisonTable: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight mb-6">
-            Traditionell vs. <span className="text-[#22b8b8]">Coday</span>
+            Traditionell vs. <span className="text-[#5ce0e0]">Coday</span>
           </h2>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
             Hör auf für Ineffizienz zu bezahlen. Wähle das Protokoll, das gewinnt.
@@ -57,7 +57,7 @@ const AgencyComparisonTable: React.FC = () => {
                   Traditionelle Agentur
                 </th>
                 <th className="py-6 px-4 text-xl font-black text-white w-1/3">
-                  <span className="inline-block py-1 px-3 rounded bg-[#22b8b8]/20 text-[#22b8b8] text-sm align-middle mr-2">
+                  <span className="inline-block py-1 px-3 rounded bg-[#5ce0e0]/20 text-[#5ce0e0] text-sm align-middle mr-2">
                     Coday
                   </span>
                 </th>
