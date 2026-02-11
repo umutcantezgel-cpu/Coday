@@ -20,9 +20,9 @@ import BlurText from '../shared/ui/BlurText';
 // Premium UI Components
 import RotatingText from '../shared/ui/RotatingText';
 import { BentoCard } from '../shared/ui/MagicBento';
-import LogoLoop from '../shared/ui/LogoLoop';
 
 // Lazy load heavy components
+const LogoLoop = React.lazy(() => import('../shared/ui/LogoLoop'));
 const AgencyComparisonTable = React.lazy(
   () => import('../features/analyzer/ui/AgencyComparisonTable')
 );
@@ -181,7 +181,7 @@ const Home: React.FC = () => {
                 />
                 <span className="text-primary">{t('philosophy.history')}</span>
               </h2>
-              <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
+              <div className="space-y-6 text-lg text-slate-700 leading-relaxed">
                 <p>{t('philosophy.text_overhead')}</p>
                 <p>
                   <strong className="text-secondary font-bold">{t('philosophy.standard')}</strong>{' '}
@@ -200,6 +200,7 @@ const Home: React.FC = () => {
                 width={1920}
                 height={1072}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                fetchPriority="high"
               />
             </div>
           </div>
@@ -304,24 +305,28 @@ const Home: React.FC = () => {
               <span className="text-primary">{t('tech_stack.title_suffix')}</span>
             </h2>
           </div>
-          <LogoLoop
-            logos={[
-              { node: <span className="font-bold text-secondary/60 text-xl">React</span> },
-              { node: <span className="font-bold text-secondary/60 text-xl">Next.js</span> },
-              { node: <span className="font-bold text-secondary/60 text-xl">TypeScript</span> },
-              { node: <span className="font-bold text-secondary/60 text-xl">Tailwind</span> },
-              { node: <span className="font-bold text-secondary/60 text-xl">Node.js</span> },
-              { node: <span className="font-bold text-secondary/60 text-xl">Supabase</span> },
-              { node: <span className="font-bold text-secondary/60 text-xl">Framer Motion</span> },
-              { node: <span className="font-bold text-secondary/60 text-xl">Vercel</span> },
-            ]}
-            speed={60}
-            direction="left"
-            logoHeight={32}
-            gap={80}
-            fadeOut={true}
-            pauseOnHover={true}
-          />
+          <React.Suspense fallback={<div className="h-32" />}>
+            <LogoLoop
+              logos={[
+                { node: <span className="font-bold text-secondary/60 text-xl">React</span> },
+                { node: <span className="font-bold text-secondary/60 text-xl">Next.js</span> },
+                { node: <span className="font-bold text-secondary/60 text-xl">TypeScript</span> },
+                { node: <span className="font-bold text-secondary/60 text-xl">Tailwind</span> },
+                { node: <span className="font-bold text-secondary/60 text-xl">Node.js</span> },
+                { node: <span className="font-bold text-secondary/60 text-xl">Supabase</span> },
+                {
+                  node: <span className="font-bold text-secondary/60 text-xl">Framer Motion</span>,
+                },
+                { node: <span className="font-bold text-secondary/60 text-xl">Vercel</span> },
+              ]}
+              speed={60}
+              direction="left"
+              logoHeight={32}
+              gap={80}
+              fadeOut={true}
+              pauseOnHover={true}
+            />
+          </React.Suspense>
         </div>
       </section>
 
@@ -335,6 +340,9 @@ const Home: React.FC = () => {
                 src="/images/services/drei-kunden-reviews.webp"
                 alt="Zufriedene Partner"
                 className="relative rounded-3xl shadow-flat-lg w-full bg-white p-2"
+                width={637}
+                height={356}
+                sizes="(max-width: 768px) 100vw, 640px"
               />
             </div>
             <div className="order-1 lg:order-2">

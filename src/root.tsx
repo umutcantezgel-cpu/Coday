@@ -37,7 +37,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           content="
             default-src 'self';
             script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googletagmanager.com https://*.google-analytics.com https://*.sentry.io blob:;
-            connect-src 'self' https://*.supabase.co https://*.sentry.io https://*.googleapis.com https://*.google-analytics.com https://*.googletagmanager.com;
+            connect-src 'self' https://*.supabase.co https://*.sentry.io https://o4510841678200832.ingest.de.sentry.io https://*.googleapis.com https://*.google-analytics.com https://*.googletagmanager.com;
             style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
             img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com https://assets.vercel.com blob:;
             font-src 'self' data: https://fonts.gstatic.com;
@@ -61,6 +61,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
           crossOrigin="anonymous"
         />
+        <GoogleAnalytics />
       </head>
       <body>
         <SkipLink />
@@ -73,7 +74,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
         </HelmetProvider>
         <ScrollRestoration />
         <Scripts />
-        <GoogleAnalytics />
         <CookieConsentBanner />
       </body>
     </html>
