@@ -8,6 +8,10 @@ interface OptimizedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> 
     aspectRatio?: 'video' | 'square' | 'wide' | 'portrait';
     srcSet?: string;
     sizes?: string;
+    /** Explicit width for CLS prevention — defaults based on aspectRatio */
+    width?: number;
+    /** Explicit height for CLS prevention — defaults based on aspectRatio */
+    height?: number;
 }
 
 export const OptimizedImage: React.FC<OptimizedImageProps> = ({

@@ -25,8 +25,8 @@ const Work: React.FC = () => {
     industry: project.content[currentLang].category,
     image:
       project.slug === 'batherm'
-        ? '/images/portfolio/batherm-illustration.jpg'
-        : `/images/portfolio/${project.thumbnail}.jpg`,
+        ? '/images/portfolio/batherm-illustration.webp'
+        : `/images/portfolio/${project.thumbnail}.webp`,
     excerpt: project.content[currentLang].challenge.description,
     tags: project.content[currentLang].stats.map((s) => s.value),
     category: project.category, // internal category

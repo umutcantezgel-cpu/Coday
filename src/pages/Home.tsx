@@ -188,7 +188,7 @@ const Home: React.FC = () => {
               {/* Organic shape backdrop */}
               <div className="absolute inset-0 bg-primary/10 rounded-[2rem] transform rotate-3 scale-95"></div>
               <OptimizedImage
-                src="/images/hero/business-handshake-partnerschaft-tuer-offen-zusammenarbeit-vertrauen.jpeg"
+                src="/images/hero/business-handshake-partnerschaft-tuer-offen-zusammenarbeit-vertrauen.webp"
                 alt="Vertrauensvolle Zusammenarbeit"
                 className="relative rounded-[2rem] shadow-flat-lg bg-white p-2 transform -rotate-2 hover:rotate-0 transition-all duration-500 w-full"
                 priority

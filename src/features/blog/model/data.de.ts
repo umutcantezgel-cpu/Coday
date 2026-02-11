@@ -874,7 +874,7 @@ export const BLOG_POSTS: BlogPost[] = [
         excerpt: "Warum zahlen Sie monatliche Retainer für Leistungen, die eine AI in Sekunden erledigt? Wir packen aus: Die schmutzigen Geheimnisse der Branche und warum die Zukunft 'Hybrid' gehört.",
         category: "Industry Disruption",
         readTime: "18 Min.",
-        image: "/images/marketing/digital-marketing-metrics-dashboard-tablet-analysis.jpeg",
+        image: "/images/marketing/digital-marketing-metrics-dashboard-tablet-analysis.webp",
         alt: "Disruption der Werbebranche",
         author: "Coday Founder",
         date: "20. April 2026",

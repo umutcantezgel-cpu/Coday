@@ -17,7 +17,7 @@ export const clientReferences: ClientReference[] = [
         name: 'Sarah Weber',
         company: 'Weber Consulting',
         industry: 'Unternehmensberatung',
-        image: '/images/team/ceo.jpeg',
+        image: '/images/team/ceo.webp',
         quote: 'Unsere neue Website hat die Anfragen verdreifacht.'
     },
     {
@@ -25,7 +25,7 @@ export const clientReferences: ClientReference[] = [
         name: 'Michael Schneider',
         company: 'TechVentures GmbH',
         industry: 'IT & Software',
-        image: '/images/team/cto.jpeg',
+        image: '/images/team/cto.webp',
         quote: 'Endlich eine Agentur, die versteht, was wir brauchen.'
     },
     {
@@ -33,7 +33,7 @@ export const clientReferences: ClientReference[] = [
         name: 'Anna Müller',
         company: 'Growth Marketing AG',
         industry: 'Marketing',
-        image: '/images/team/marketing-lead.jpeg',
+        image: '/images/team/marketing-lead.webp',
         quote: 'Die beste Investition in unser digitales Wachstum.'
     },
     {
@@ -41,7 +41,7 @@ export const clientReferences: ClientReference[] = [
         name: 'Lisa Schmidt',
         company: 'DesignStudio Berlin',
         industry: 'Kreativagentur',
-        image: '/images/team/design-lead.jpeg',
+        image: '/images/team/design-lead.webp',
         quote: 'Professionell, schnell und auf den Punkt.'
     },
     {
@@ -49,7 +49,7 @@ export const clientReferences: ClientReference[] = [
         name: 'Tom Fischer',
         company: 'Fischer Handwerk',
         industry: 'Handwerk & Bau',
-        image: '/images/team/tech-lead.jpeg',
+        image: '/images/team/tech-lead.webp',
         quote: 'Jetzt kommen die Kunden zu uns, nicht umgekehrt.'
     },
     {
@@ -57,7 +57,7 @@ export const clientReferences: ClientReference[] = [
         name: 'Klaus Bergmann',
         company: 'Bergmann Immobilien',
         industry: 'Immobilien',
-        image: '/images/team/advisor.jpeg',
+        image: '/images/team/advisor.webp',
         quote: 'Unsere Exposés sehen jetzt erstklassig aus.'
     }
 ];

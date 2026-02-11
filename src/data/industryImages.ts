@@ -4,35 +4,35 @@
  */
 export const industryHeroImages: Record<string, { src: string; alt: string }> = {
     'handwerk-bau': {
-        src: '/images/industries/handwerker-hero.jpeg',
+        src: '/images/industries/handwerker-hero.webp',
         alt: 'Handwerker in Arbeitskleidung mit professionellem Werkzeug im Einsatz'
     },
     'immobilien-makler': {
-        src: '/images/industries/immobilien-hero.jpeg',
+        src: '/images/industries/immobilien-hero.webp',
         alt: 'Architekt plant modernes Gebäude am CAD-System mit 3D-Modell'
     },
     'aerzte-gesundheit': {
-        src: '/images/industries/aerzte-hero.jpeg',
+        src: '/images/industries/aerzte-hero.webp',
         alt: 'Apothekerin im weißen Kittel berät Kunden am Bildschirm mit Medikamentenregalen'
     },
     'gastronomie-hotellerie': {
-        src: '/images/industries/gastronomie-hero.jpeg',
+        src: '/images/industries/gastronomie-hero.webp',
         alt: 'Gastronom begrüßt herzlich Gäste am Restauranteingang mit Menütafel'
     },
     'ecommerce-retail': {
-        src: '/images/industries/lokales-geschaeft-inhaber-schaufenster-laden.jpeg',
+        src: '/images/industries/lokales-geschaeft-inhaber-schaufenster-laden.webp',
         alt: 'Lokaler Geschäftsinhaber vor seinem Schaufenster freut sich auf Kunden'
     },
     'anwaelte-kanzleien': {
-        src: '/images/industries/anwaelte-hero.jpeg',
+        src: '/images/industries/anwaelte-hero.webp',
         alt: 'Professionelle Kanzlei-Beratung mit Dokumenten und Analysen'
     },
     'unternehmensberatung': {
-        src: '/images/industries/finanzberatung-gespraech-planung-investition.jpeg',
+        src: '/images/industries/finanzberatung-gespraech-planung-investition.webp',
         alt: 'Unternehmensberater im Kundengespräch mit Investitionsplanung'
     },
     'startups-tech': {
-        src: '/images/industries/it-techniker.jpeg',
+        src: '/images/industries/it-techniker.webp',
         alt: 'IT-Experte erklärt Netzwerk-Infrastruktur und Server-Lösungen'
     }
 };
@@ -41,7 +41,7 @@ export const industryHeroImages: Record<string, { src: string; alt: string }> = 
  * Fallback image for industries without specific illustration.
  */
 export const industryFallbackImage = {
-    src: '/images/industries/altstadt-lokale-geschaefte-standort-regional-suche.jpeg',
+    src: '/images/industries/altstadt-lokale-geschaefte-standort-regional-suche.webp',
     alt: 'Altstadt mit lokalen Geschäften und digitalem Standort-Pin'
 };
 
@@ -51,54 +51,54 @@ export const industryFallbackImage = {
  */
 export const industryGalleryImages: Record<string, { src: string; alt: string }[]> = {
     'handwerk-bau': [
-        { src: '/images/industries/dachdecker.jpeg', alt: 'Dachdecker bei der Arbeit auf einem Hausdach mit Tablet' },
-        { src: '/images/industries/elektriker.jpeg', alt: 'Elektriker prüft Sicherungskasten mit modernem Messgerät' },
-        { src: '/images/industries/maler.jpeg', alt: 'Maler streicht Wand in frischer Farbe' },
-        { src: '/images/industries/tischler.jpeg', alt: 'Tischler bearbeitet Holz in der Werkstatt' },
-        { src: '/images/industries/klimatechniker.jpeg', alt: 'Klimatechniker wartet Klimaanlage auf dem Dach' },
-        { src: '/images/industries/gaertner.jpeg', alt: 'Gärtner pflegt Außenanlage eines Einfamilienhauses' },
-        { src: '/images/industries/landschaftsgaertner.jpeg', alt: 'Landschaftsgärtner bei der Grünpflege' },
-        { src: '/images/industries/pooltechniker.jpeg', alt: 'Pooltechniker prüft Wasserqualität' },
-        { src: '/images/industries/kaminkehrer.jpeg', alt: 'Schornsteinfeger bei der Arbeit' }, // Fallback if exists? Removed from script, check path validity. Removed for safety.
-        { src: '/images/industries/kfz.jpeg', alt: 'KFZ-Mechaniker in moderner Werkstatt mit Diagnose-Computer' },
-        { src: '/images/industries/waschmaschine.jpeg', alt: 'Techniker repariert Haushaltsgerät vor Ort' }
+        { src: '/images/industries/dachdecker.webp', alt: 'Dachdecker bei der Arbeit auf einem Hausdach mit Tablet' },
+        { src: '/images/industries/elektriker.webp', alt: 'Elektriker prüft Sicherungskasten mit modernem Messgerät' },
+        { src: '/images/industries/maler.webp', alt: 'Maler streicht Wand in frischer Farbe' },
+        { src: '/images/industries/tischler.webp', alt: 'Tischler bearbeitet Holz in der Werkstatt' },
+        { src: '/images/industries/klimatechniker.webp', alt: 'Klimatechniker wartet Klimaanlage auf dem Dach' },
+        { src: '/images/industries/gaertner.webp', alt: 'Gärtner pflegt Außenanlage eines Einfamilienhauses' },
+        { src: '/images/industries/landschaftsgaertner.webp', alt: 'Landschaftsgärtner bei der Grünpflege' },
+        { src: '/images/industries/pooltechniker.webp', alt: 'Pooltechniker prüft Wasserqualität' },
+        { src: '/images/industries/kaminkehrer.webp', alt: 'Schornsteinfeger bei der Arbeit' }, // Fallback if exists? Removed from script, check path validity. Removed for safety.
+        { src: '/images/industries/kfz.webp', alt: 'KFZ-Mechaniker in moderner Werkstatt mit Diagnose-Computer' },
+        { src: '/images/industries/waschmaschine.webp', alt: 'Techniker repariert Haushaltsgerät vor Ort' }
     ],
     'ecommerce-retail': [
-        { src: '/images/industries/baecker.jpeg', alt: 'Bäcker präsentiert frische Backwaren vor dem Laden' },
-        { src: '/images/industries/florist-laden.jpeg', alt: 'Blick in einen modernen Blumenladen' },
-        { src: '/images/industries/florist-arbeit.jpeg', alt: 'Floristin bindet einen frischen Blumenstrauß' },
-        { src: '/images/industries/buchhandlung-raum.jpeg', alt: 'Gemütliche Buchhandlung mit Leseecke' },
-        { src: '/images/industries/buchhandlung-kunde.jpeg', alt: 'Kunde stöbert in Büchern' },
-        { src: '/images/industries/geschenk-verkaeuferin.jpeg', alt: 'Freundliche Verkäuferin in einer Geschenkboutique' },
-        { src: '/images/industries/geschenk-laden.jpeg', alt: 'Sortiment einer stilvollen Boutique' },
-        { src: '/images/industries/einzelhandel-general.jpeg', alt: 'Beratung im Einzelhandel' },
+        { src: '/images/industries/baecker.webp', alt: 'Bäcker präsentiert frische Backwaren vor dem Laden' },
+        { src: '/images/industries/florist-laden.webp', alt: 'Blick in einen modernen Blumenladen' },
+        { src: '/images/industries/florist-arbeit.webp', alt: 'Floristin bindet einen frischen Blumenstrauß' },
+        { src: '/images/industries/buchhandlung-raum.webp', alt: 'Gemütliche Buchhandlung mit Leseecke' },
+        { src: '/images/industries/buchhandlung-kunde.webp', alt: 'Kunde stöbert in Büchern' },
+        { src: '/images/industries/geschenk-verkaeuferin.webp', alt: 'Freundliche Verkäuferin in einer Geschenkboutique' },
+        { src: '/images/industries/geschenk-laden.webp', alt: 'Sortiment einer stilvollen Boutique' },
+        { src: '/images/industries/einzelhandel-general.webp', alt: 'Beratung im Einzelhandel' },
         // Adding generic local services here as they fit "Local Business" vibe
-        { src: '/images/industries/friseur.jpeg', alt: 'Friseur bedient Kundin im modernen Salon' },
-        { src: '/images/industries/hundesalon.jpeg', alt: 'Professionelle Tierpflege im Hundesalon' }
+        { src: '/images/industries/friseur.webp', alt: 'Friseur bedient Kundin im modernen Salon' },
+        { src: '/images/industries/hundesalon.webp', alt: 'Professionelle Tierpflege im Hundesalon' }
     ],
     'aerzte-gesundheit': [
-        { src: '/images/industries/apotheke-tablet.jpeg', alt: 'Beratung in der Apotheke mit Tablet' },
-        { src: '/images/industries/apotheke-kittel.jpeg', alt: 'Apothekerin erklärt Medikation' },
+        { src: '/images/industries/apotheke-tablet.webp', alt: 'Beratung in der Apotheke mit Tablet' },
+        { src: '/images/industries/apotheke-kittel.webp', alt: 'Apothekerin erklärt Medikation' },
         // Add more health if available? currently only 2 specific ones.
     ],
     'gastronomie-hotellerie': [
-        { src: '/images/industries/gastronom-schuerze-willkommen-restaurant-eingang-menuetafel-terrasse-gaeste.jpeg', alt: 'Einladender Eingangsbereich eines Restaurants' },
-        { src: '/images/industries/baecker.jpeg', alt: 'Frische Backwaren für das Frühstücksbuffet' }, // Reusing baker
+        { src: '/images/industries/gastronom-schuerze-willkommen-restaurant-eingang-menuetafel-terrasse-gaeste.webp', alt: 'Einladender Eingangsbereich eines Restaurants' },
+        { src: '/images/industries/baecker.webp', alt: 'Frische Backwaren für das Frühstücksbuffet' }, // Reusing baker
     ],
     'startups-tech': [
-        { src: '/images/industries/it-techniker.jpeg', alt: 'IT-Infrastruktur und Server-Wartung' },
-        { src: '/images/industries/it-beratung.jpeg', alt: 'Beratung zu Software und Hardware' },
+        { src: '/images/industries/it-techniker.webp', alt: 'IT-Infrastruktur und Server-Wartung' },
+        { src: '/images/industries/it-beratung.webp', alt: 'Beratung zu Software und Hardware' },
     ],
     'unternehmensberatung': [
-        { src: '/images/industries/buchhalterin.jpeg', alt: 'Detaillierte Finanzanalyse am Computer' },
-        { src: '/images/industries/steuerberaterin.jpeg', alt: 'Steuerberatung und Aktenführung' },
+        { src: '/images/industries/buchhalterin.webp', alt: 'Detaillierte Finanzanalyse am Computer' },
+        { src: '/images/industries/steuerberaterin.webp', alt: 'Steuerberatung und Aktenführung' },
     ],
     // Dienstleistungen (Service) / Miscellaneous
     'dienstleistung-service': [
-        { src: '/images/industries/reinigung.jpeg', alt: 'Professionelle Gebäudereinigung' },
-        { src: '/images/industries/fotograf.jpeg', alt: 'Fotograf im Studio-Setting' },
-        { src: '/images/industries/fotostudio.jpeg', alt: 'Equipment in einem Fotostudio' },
-        { src: '/images/industries/tanzstudio.jpeg', alt: 'Training im Tanzstudio' },
-        { src: '/images/industries/tanzschule.jpeg', alt: 'Tanzkurs in Aktion' },
+        { src: '/images/industries/reinigung.webp', alt: 'Professionelle Gebäudereinigung' },
+        { src: '/images/industries/fotograf.webp', alt: 'Fotograf im Studio-Setting' },
+        { src: '/images/industries/fotostudio.webp', alt: 'Equipment in einem Fotostudio' },
+        { src: '/images/industries/tanzstudio.webp', alt: 'Training im Tanzstudio' },
+        { src: '/images/industries/tanzschule.webp', alt: 'Tanzkurs in Aktion' },
     ]
 };
