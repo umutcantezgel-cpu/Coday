@@ -62,37 +62,50 @@ const routes = [
 
 const locales = ['de', 'en'];
 
+function generateHreflangLinks(route) {
+  const urlPath = route === '/' ? '' : route;
+  return locales
+    .map(
+      (lang) =>
+        `      <xhtml:link rel="alternate" hreflang="${lang}" href="${HOSTNAME}/${lang}${urlPath}" />`
+    )
+    .concat(
+      `      <xhtml:link rel="alternate" hreflang="x-default" href="${HOSTNAME}/de${urlPath}" />`
+    )
+    .join('\n');
+}
+
 function generateSitemap() {
-  const urls = routes.flatMap((route) =>
+  const urlEntries = routes.flatMap((route) =>
     locales.map((lang) => {
-      const langPrefix = `/${lang}`;
       const urlPath = route === '/' ? '' : route;
-      return `${HOSTNAME}${langPrefix}${urlPath}`;
+      const loc = `${HOSTNAME}/${lang}${urlPath}`;
+      const isHome = route === '/';
+      const priority = isHome ? '1.0' : '0.8';
+
+      return `  <url>
+    <loc>${loc}</loc>
+    <changefreq>weekly</changefreq>
+    <priority>${priority}</priority>
+${generateHreflangLinks(route)}
+  </url>`;
     })
   );
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls
-  .map(
-    (url) => `  <url>
-    <loc>${url}</loc>
-    <changefreq>weekly</changefreq>
-    <priority>${url.endsWith('/de') || url.endsWith('/en') ? '1.0' : '0.8'}</priority>
-  </url>`
-  )
-  .join('\n')}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+${urlEntries.join('\n')}
 </urlset>`;
 
   if (!fs.existsSync(BUILD_DIR)) {
-    console.error(`Build directory not found: ${BUILD_DIR}`);
-    // Create it if missing (e.g. testing script)
     fs.mkdirSync(BUILD_DIR, { recursive: true });
   }
 
   const sitemapPath = path.join(BUILD_DIR, 'sitemap.xml');
   fs.writeFileSync(sitemapPath, xml);
-  console.log(`✅ Sitemap generated at ${sitemapPath}`);
+  console.log(`✅ Sitemap generated at ${sitemapPath} (${routes.length * locales.length} URLs with hreflang)`);
 }
 
 generateSitemap();
+

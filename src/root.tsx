@@ -12,6 +12,7 @@ import './index.css';
 import { LazyMotion, domAnimation, MotionConfig } from 'motion/react';
 import React from 'react';
 import { HelmetProvider } from 'react-helmet-async';
+import { SkipLink } from './shared/ui/SkipLink';
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const url = new URL(request.url);
@@ -47,9 +48,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
         />
       </head>
       <body>
+        <SkipLink />
         <HelmetProvider>
           <MotionConfig reducedMotion="user">
-            <LazyMotion features={domAnimation}>{children}</LazyMotion>
+            <LazyMotion features={domAnimation}>
+              <div id="main-content">{children}</div>
+            </LazyMotion>
           </MotionConfig>
         </HelmetProvider>
         <ScrollRestoration />
