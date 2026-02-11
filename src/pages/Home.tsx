@@ -193,14 +193,14 @@ const Home: React.FC = () => {
               {/* Organic shape backdrop */}
               <div className="absolute inset-0 bg-primary/10 rounded-[2rem] transform rotate-3 scale-95"></div>
               <OptimizedImage
-                src="/images/hero/business-handshake-partnerschaft-tuer-offen-zusammenarbeit-vertrauen.webp"
+                src="/images/hero/business-handshake-partnerschaft-tuer-offen-zusammenarbeit-vertrauen-640w.webp"
                 alt="Vertrauensvolle Zusammenarbeit"
                 className="relative rounded-[2rem] shadow-flat-lg bg-white p-2 transform -rotate-2 hover:rotate-0 transition-all duration-500 w-full"
                 loading="lazy"
-                width={1920}
-                height={1072}
+                width={640}
+                height={358}
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 75vw, 50vw"
-                srcSet="/images/hero/business-handshake-partnerschaft-tuer-offen-zusammenarbeit-vertrauen-640w.webp 640w, /images/hero/business-handshake-partnerschaft-tuer-offen-zusammenarbeit-vertrauen-1024w.webp 1024w, /images/hero/business-handshake-partnerschaft-tuer-offen-zusammenarbeit-vertrauen-1920w.webp 1920w"
+                srcSet="/images/hero/business-handshake-partnerschaft-tuer-offen-zusammenarbeit-vertrauen-320w.webp 320w, /images/hero/business-handshake-partnerschaft-tuer-offen-zusammenarbeit-vertrauen-640w.webp 640w, /images/hero/business-handshake-partnerschaft-tuer-offen-zusammenarbeit-vertrauen-1024w.webp 1024w"
               />
             </div>
           </div>

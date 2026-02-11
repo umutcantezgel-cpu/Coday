@@ -2,13 +2,14 @@ import React, { Suspense, lazy } from 'react';
 import { useLocation, Outlet } from 'react-router-dom';
 import CardNav from '../navigation/CardNav';
 // ChatWidget lazy loaded below
-import { CookieConsentBanner, CookieSettingsModal } from '../cookie';
+// CookieConsentBanner lazy loaded below
 import { FloatingActionMenu } from '../floating-menu/FloatingActionMenu';
 
 const Footer = lazy(() => import('./Footer'));
 const ChatWidget = lazy(() =>
   import('../chatbot').then((module) => ({ default: module.ChatWidget }))
 );
+const CookieConsentBanner = lazy(() => import('../cookie/CookieConsentBanner'));
 
 interface LayoutProps {
   children?: React.ReactNode;
@@ -31,7 +32,9 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
       {/* Spacer for fixed nav */}
       <div className="h-24" />
 
-      <main id="main-content" className="flex-grow pb-20 lg:pb-0">{children || <Outlet />}</main>
+      <main id="main-content" className="flex-grow pb-20 lg:pb-0">
+        {children || <Outlet />}
+      </main>
 
       <Suspense fallback={<div className="h-24 bg-secondary" />}>
         <div className="pb-24 lg:pb-0">
@@ -51,7 +54,6 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
 
       <Suspense fallback={null}>
         <CookieConsentBanner />
-        <CookieSettingsModal />
       </Suspense>
     </div>
   );

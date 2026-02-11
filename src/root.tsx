@@ -16,7 +16,6 @@ import React from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { SkipLink } from './shared/ui/SkipLink';
 import { GoogleAnalytics } from './shared/lib/analytics/GoogleAnalytics';
-import { CookieConsentBanner } from './widgets/cookie/CookieConsentBanner';
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const url = new URL(request.url);
@@ -64,7 +63,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
         </HelmetProvider>
         <ScrollRestoration />
         <Scripts />
-        <CookieConsentBanner />
       </body>
     </html>
   );
