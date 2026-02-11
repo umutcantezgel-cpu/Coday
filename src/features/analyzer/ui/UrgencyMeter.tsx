@@ -42,7 +42,14 @@ export const UrgencyMeter: React.FC<UrgencyMeterProps> = ({ score }) => {
 
       {/* Gauge Graphic */}
       <div className="relative w-full max-w-[220px] h-[110px] flex justify-center overflow-hidden mb-2 z-10">
-        <svg width="220" height="120" viewBox="0 0 220 120" className="overflow-visible">
+        <svg
+          width="220"
+          height="120"
+          viewBox="0 0 220 120"
+          className="overflow-visible"
+          role="img"
+          aria-label={`Dringlichkeitsscore: ${Math.round(score)} von 100`}
+        >
           {/* Background Track (Grey) */}
           <path
             d="M 30 110 A 80 80 0 0 1 190 110"
