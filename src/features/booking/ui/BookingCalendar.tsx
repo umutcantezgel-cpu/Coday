@@ -28,6 +28,8 @@ const BookingCalendar = ({
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [bookedSlots, setBookedSlots] = useState<Set<string>>(new Set());
+  const [fetchingSlots, setFetchingSlots] = useState(false);
   const [success, setSuccess] = useState(false);
 
   // Generate next 14 days
@@ -38,9 +40,41 @@ const BookingCalendar = ({
     return d;
   });
 
+  // Fetch availability when date is selected
+  React.useEffect(() => {
+    if (!selectedDate) return;
+
+    const fetchAvailability = async () => {
+      setFetchingSlots(true);
+      const dateStr = selectedDate.toISOString().split('T')[0];
+      try {
+        const res = await fetch(
+          `${supabaseUrl}/functions/v1/book-appointment?start=${dateStr}&end=${dateStr}`,
+          {
+            headers: {
+              Authorization: `Bearer ${supabaseKey}`,
+            },
+          }
+        );
+        if (res.ok) {
+          const data = await res.json();
+          const slots = new Set(data.bookings.map((b: { time_slot: string }) => b.time_slot));
+          setBookedSlots(slots as Set<string>);
+        }
+      } catch (error) {
+        console.error('Failed to fetch availability', error);
+      } finally {
+        setFetchingSlots(false);
+      }
+    };
+
+    fetchAvailability();
+  }, [selectedDate]);
+
   const handleDateSelect = (date: Date) => {
     setSelectedDate(date);
     setSelectedTime(null);
+    setBookedSlots(new Set()); // Reset while fetching
   };
 
   const handleBook = async (e: React.FormEvent) => {
@@ -88,9 +122,7 @@ const BookingCalendar = ({
 
   if (success) {
     return (
-      <div
-        className={`p-8 bg-gray-50 rounded-2xl border border-gray-200 text-center ${className}`}
-      >
+      <div className={`p-8 bg-gray-50 rounded-2xl border border-gray-200 text-center ${className}`}>
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -170,21 +202,34 @@ const BookingCalendar = ({
                 animate={{ opacity: 1, y: 0 }}
                 className="grid grid-cols-3 gap-3"
               >
-                {TIME_SLOTS.map((time) => (
-                  <button
-                    key={time}
-                    onClick={() => setSelectedTime(time)}
-                    className={`
-                      py-2 rounded-xl text-sm font-medium transition-all
-                      ${selectedTime === time
-                        ? 'bg-primary text-white shadow-lg shadow-primary/30'
-                        : 'bg-white border border-gray-100 hover:border-primary/50 text-gray-600'
-                      }
-                    `}
-                  >
-                    {time}
-                  </button>
-                ))}
+                {fetchingSlots ? (
+                  <div className="col-span-3 text-center py-4 text-gray-400 text-sm">
+                    Loading slots...
+                  </div>
+                ) : (
+                  TIME_SLOTS.map((time) => {
+                    const isBooked = bookedSlots.has(time);
+                    return (
+                      <button
+                        key={time}
+                        onClick={() => !isBooked && setSelectedTime(time)}
+                        disabled={isBooked}
+                        className={`
+                          py-2 rounded-xl text-sm font-medium transition-all
+                          ${
+                            selectedTime === time
+                              ? 'bg-primary text-white shadow-lg shadow-primary/30'
+                              : isBooked
+                                ? 'bg-gray-100 text-gray-300 cursor-not-allowed line-through'
+                                : 'bg-white border border-gray-100 hover:border-primary/50 text-gray-600'
+                          }
+                        `}
+                      >
+                        {time}
+                      </button>
+                    );
+                  })
+                )}
               </motion.div>
             )}
 

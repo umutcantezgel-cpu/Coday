@@ -1,83 +1,61 @@
 {
-  "empty_state": {
-    "desc": "Try a different filter or check back later.",
-    "title": "No Projects Found"
-  },
-  "filter": {
-    "all": "All Projects",
-    "design": "Design",
-    "development": "Development",
-    "marketing": "Marketing"
-  },
   "hero": {
-    "badge": "__MISSING__",
-    "desc": "__MISSING__",
-    "description": "Digital experiences that transform brands. Design that delights users. Code that delivers speed.",
-    "label": "Our Portfolio",
-    "title": "Selected Works.",
-    "title_gradient": "__MISSING__",
-    "title_start": "__MISSING__"
-  },
-  "project_detail": {
-    "approach": "Our Approach",
-    "back_to_overview": "Back to Overview",
-    "breadcrumb_projects": "Projects",
-    "challenge": "The Challenge",
-    "not_found": "Project not found",
-    "results": "The Results",
-    "sidebar": {
-      "details": "Project Details",
-      "interested_title": "Interested in similar results?",
-      "period": "Period",
-      "request_project": "Request Project",
-      "result": "Result",
-      "service": "Service"
-    },
-    "solution": "The Solution"
+    "badge": "Our Work",
+    "desc": "Every project tells a story. Here are our latest success stories that speak for themselves.",
+    "title_gradient": "Results.",
+    "title_start": "Real"
   },
   "results": {
-    "desc": "__MISSING__",
-    "link": "__MISSING__",
+    "desc": "Measurable improvements that make a real business impact.",
+    "link": "View Full Case Study",
     "stats": {
       "cpa": {
-        "desc": "__MISSING__",
-        "label": "__MISSING__"
+        "desc": "Reduction through optimized funnels and smarter ad spend allocation.",
+        "label": "Lower CPA"
       },
       "lcp": {
-        "desc": "__MISSING__",
-        "label": "__MISSING__"
+        "desc": "Largest Contentful Paint optimized for instant page loads.",
+        "label": "LCP Score"
       },
       "leads": {
-        "desc": "__MISSING__",
-        "label": "__MISSING__"
+        "desc": "More qualified leads through conversion-optimized design and UX.",
+        "label": "More Leads"
       }
     },
-    "title": "__MISSING__"
+    "title": "The Numbers Speak"
   },
   "testimonials": {
-    "desc": "__MISSING__",
-    "items": {
-      "0": {
-        "author": "__MISSING__",
-        "quote": "__MISSING__",
-        "role": "__MISSING__"
+    "desc": "What our clients say about working with us.",
+    "items": [
+      {
+        "company": "TechVenture GmbH",
+        "name": "Sarah M.",
+        "role": "CEO",
+        "text": "Coday transformed our online presence completely. The results exceeded all our expectations."
       },
-      "1": {
-        "author": "__MISSING__",
-        "quote": "__MISSING__",
-        "role": "__MISSING__"
+      {
+        "company": "Digital Dynamics",
+        "name": "Thomas K.",
+        "role": "Marketing Director",
+        "text": "Finally an agency that delivers what they promise. Our conversion rate increased by 340% in just 3 months."
+      },
+      {
+        "company": "InnoScale AG",
+        "name": "Lisa B.",
+        "role": "Head of Digital",
+        "text": "The technical expertise and design quality are world-class. True partners, not just service providers."
       }
-    },
-    "title": "__MISSING__"
+    ],
+    "title": "Client Voices"
   },
   "visual_identity": {
-    "badge": "__MISSING__",
+    "badge": "Brand & Design",
     "colors": {
-      "dark": "__MISSING__",
-      "light": "__MISSING__",
-      "primary": "__MISSING__"
+      "dark": "Deep Space",
+      "light": "Moonlight",
+      "primary": "Electric Blue"
     },
-    "desc": "__MISSING__",
-    "title": "__MISSING__"
+    "desc": "Every pixel has a purpose. Our design language combines premium aesthetics with maximum usability.",
+    "title": "Visual Identity"
   }
 }

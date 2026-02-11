@@ -86,8 +86,8 @@
     "validation": {
       "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
       "min_length": "Mindestens {{count}} Zeichen erforderlich",
-      "min_length_one": "__MISSING__",
-      "min_length_other": "__MISSING__",
+      "min_length_one": "Mindestens {{count}} Zeichen erforderlich",
+      "min_length_other": "Mindestens {{count}} Zeichen erforderlich",
       "privacy": "Bitte akzeptieren Sie die Datenschutzbestimmungen",
       "required": "Dieses Feld ist erforderlich"
     }

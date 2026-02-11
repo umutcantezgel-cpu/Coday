@@ -134,7 +134,7 @@ const Calculator: React.FC = () => {
                               (selectedPackageId === 'starter' &&
                                 ['basis-starter'].includes(module.id)) ||
                               (selectedPackageId === 'professional' &&
-                                ['basis-business', 'func-cms'].includes(module.id)) ||
+                                ['basis-business'].includes(module.id)) ||
                               (selectedPackageId === 'enterprise' &&
                                 ['basis-enterprise', 'commerce-headless', 'func-auth'].includes(
                                   module.id
@@ -144,6 +144,10 @@ const Calculator: React.FC = () => {
                             disabled={
                               module.dependencies &&
                               !module.dependencies.every((dep) => selectedModuleIds.has(dep))
+                            }
+                            isRecommended={
+                              module.isRecommended ||
+                              (selectedPackageId === 'professional' && module.id === 'func-cms')
                             }
                           />
                         ))}

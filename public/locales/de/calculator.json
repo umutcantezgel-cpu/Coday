@@ -31,76 +31,93 @@
     "title_2": "Traum-Agentur."
   },
   "module_count": "{{count}} Modul ausgewählt",
-  "module_count_one": "__MISSING__",
-  "module_count_other": "__MISSING__",
+  "module_count_one": "{{count}} Modul ausgewählt",
+  "module_count_other": "{{count}} Module ausgewählt",
   "module_count_plural": "{{count}} Module ausgewählt",
   "modules": {
     "basis-business": {
       "description": "Mehrseitige Unternehmens-Präsenz (CMS)",
+      "learn_more": "Die klassische Unternehmenswebseite mit mehreren Unterseiten (Über uns, Leistungen, Kontakt). Perfekt, um Ihr Unternehmen, Ihre Dienstleistungen und Ihr Team ausführlich vorzustellen und Vertrauen aufzubauen.",
       "name": "Corporate Website"
     },
     "basis-enterprise": {
       "description": "Komplexe Web-App mit Custom Logic",
+      "learn_more": "Für komplexe Anforderungen: Wir entwickeln individuelle Softwarelösungen mit Benutzer-Logins, Datenbanken und speziellen Funktionen, die exakt auf Ihre Geschäftsprozesse zugeschnitten sind.",
       "name": "Web Application"
     },
     "basis-starter": {
       "description": "High-Performance Landing Page (Next.js)",
+      "learn_more": "Eine blitzschnelle 'One-Pager' Webseite, ideal für Kampagnen, Produktlaunches oder Startups. Technisch optimiert für maximale Conversion und sofortige Sichtbarkeit.",
       "name": "Starter Website"
     },
     "commerce-headless": {
       "description": "Custom Frontend für Shopify/WooCommerce",
+      "learn_more": "Die Königsklasse des E-Commerce. Wir trennen das Design (Frontend) von der Technik (Shopify/WooCommerce), um einzigartige Einkaufserlebnisse ohne Design-Limitationen zu schaffen.",
       "name": "Headless Commerce"
     },
     "commerce-starter": {
       "description": "Professioneller Shopify Store",
+      "learn_more": "Ein fertig eingerichteter Shopify-Shop. Starten Sie den Verkauf Ihrer Produkte mit einem professionellen Theme, optimiertem Checkout und allen nötigen Rechtstexten in wenigen Tagen.",
       "name": "Shopify Setup"
     },
     "design-motion": {
       "description": "Advanced Animations & Transitions",
+      "learn_more": "Bringen Sie Leben in Ihre Seite. Hochwertige Animationen, sanftes Scrollen und nahtlose Übergänge fesseln den Nutzer und führen ihn intuitiv durch Ihre Inhalte.",
       "name": "Motion Experience"
     },
     "design-system": {
       "description": "Wiederverwendbare Komponenten-Bibliothek",
+      "learn_more": "Sorgt für Konsistenz und spart Zeit: Wir entwickeln eine Bibliothek wiederverwendbarer Komponenten (Buttons, Inputs, Cards), die das Design einheitlich hält und zukünftige Erweiterungen beschleunigt.",
       "name": "Design System"
     },
     "design-ui": {
       "description": "Individuelles Screen-Design (Figma)",
+      "learn_more": "Ein Design, das genau zu Ihrer Marke passt. Wir erstellen individuelle Layouts in Figma, bevor wir eine Zeile Code schreiben, damit die Optik zu 100% Ihren Vorstellungen entspricht.",
       "name": "Premium UI Design"
     },
     "func-api": {
       "description": "Anbindung externer Dienste (CRM, ERP)",
+      "learn_more": "Verbinden Sie Ihre Webseite mit anderen Tools. Wir sorgen dafür, dass Daten automatisch zwischen Ihrer Seite und Ihrem CRM, ERP oder Newsletter-Tool fließen.",
       "name": "API Integration"
     },
     "func-auth": {
       "description": "Login, Registrierung, User-Dashboard",
+      "learn_more": "Lassen Sie Nutzer sich registrieren und einloggen. Notwendig für Kundenportale, geschützte Bereiche, Dashboards oder Membership-Seiten.",
       "name": "User Auth & Profil"
     },
     "func-cms": {
       "description": "Content Management (Sanity/Strapi)",
+      "learn_more": "Ändern Sie Texte und Bilder kinderleicht selbst. Wir integrieren ein modernes Content Management System (Sanity oder Strapi), das Sie und Ihr Team ohne Programmierkenntnisse bedienen können.",
       "name": "Headless CMS"
     },
     "seo-speed": {
       "description": "Ladezeit-Optimierung auf <1s",
+      "learn_more": "Geschwindigkeit ist Geld. Wir tunen die Performance so weit, dass die Seite in unter einer Sekunde lädt – das freut Nutzer und wird von Google mit besserem Ranking belohnt.",
       "name": "Performance Max"
     },
     "seo-tech": {
       "description": "Struktur, Schema.org, Core Web Vitals",
+      "learn_more": "Das Fundament für Google-Erfolg. Wir optimieren die technische Struktur, Metadaten und Schemata Ihrer Seite, damit Suchmaschinen Ihre Inhalte perfekt verstehen und indexieren.",
       "name": "Technical SEO Audit"
     },
     "support-basic": {
       "description": "Server Updates & Backups",
+      "learn_more": "Wir kümmern uns um die Technik. Monatliche Updates, tägliche Backups und Server-Wartung garantieren, dass Ihre Seite immer sicher und erreichbar bleibt.",
       "name": "Hosting & Wartung"
     },
     "support-pro": {
       "description": "24/7 Notfall-Support & Weiterentwicklung",
+      "learn_more": "Ihr technischer Partner auf Abruf. Wir bieten schnelle Hilfe bei Problemen und unterstützen Sie kontinuierlich bei der Weiterentwicklung Ihrer Plattform.",
       "name": "SLA Support"
     },
     "tech-i18n": {
       "description": "Mehrsprachigkeit (i18n Setup)",
+      "learn_more": "Erreichen Sie internationale Kunden. Wir strukturieren die Seite so, dass sie beliebig viele Sprachen unterstützt und Inhalte einfach übersetzt werden können.",
       "name": "Internationalization"
     },
     "tech-pwa": {
       "description": "Offline-Support & Installability",
+      "learn_more": "Macht Ihre Webseite zur App. Nutzer können sie auf dem Homescreen installieren und (teilweise) offline nutzen – für ein App-ähnliches Erlebnis im Browser.",
       "name": "PWA Features"
     }
   },

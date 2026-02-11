@@ -34,7 +34,7 @@ export async function action({ request }: { request: Request }) {
     const emailResult = await resend.emails.send({
       from: 'Coday Leads <onboarding@resend.dev>',
       to: ['umut@codayweb.de'],
-      subject: `Neue Anfrage: ${data.name} - ${data.projectType || 'Allgemein'}`,
+      subject: `Neue Anfrage: ${data.name} - ${data.project || data.projectType || 'Allgemein'}`,
       html: `
         <h2>Neue Anfrage über codayweb.de</h2>
         <table style="border-collapse: collapse; width: 100%;">
@@ -42,10 +42,10 @@ export async function action({ request }: { request: Request }) {
           <tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Email</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${data.email || '-'}</td></tr>
           <tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Telefon</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${data.phone || '-'}</td></tr>
           <tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Firma</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${data.company || '-'}</td></tr>
-          <tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Projektart</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${data.projectType || '-'}</td></tr>
+          <tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Projektart</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${data.project || data.projectType || '-'}</td></tr>
           <tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Budget</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${data.budget || '-'}</td></tr>
           <tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Zeitplan</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${data.timeline || '-'}</td></tr>
-          <tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Nachricht</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${data.message || '-'}</td></tr>
+          <tr><td style="padding: 8px; border: 1px solid #ddd; vertical-align: top;"><strong>Nachricht</strong></td><td style="padding: 8px; border: 1px solid #ddd; white-space: pre-wrap;">${data.message || '-'}</td></tr>
         </table>
       `,
     });

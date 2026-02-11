@@ -113,7 +113,6 @@ import {
   MagnifyingGlassPlus,
   BookOpen,
   Handshake,
-  Clock as TimerClock,
   Copyright,
   Target,
   FunnelSimple,
@@ -158,6 +157,7 @@ import {
   MinusCircle,
   ArrowDown,
   Watch,
+  CircleNotch,
 } from '@phosphor-icons/react';
 
 const iconMap: Record<string, React.ElementType> = {
@@ -412,6 +412,10 @@ const iconMap: Record<string, React.ElementType> = {
   watch: Watch,
   share_network: ShareNetwork,
   shield_check: ShieldCheck,
+
+  // Missing Contact Page Icons
+  send: PaperPlaneTilt,
+  loader: CircleNotch,
 };
 
 interface IconProps extends React.HTMLAttributes<HTMLSpanElement> {
@@ -422,7 +426,14 @@ interface IconProps extends React.HTMLAttributes<HTMLSpanElement> {
   weight?: 'thin' | 'light' | 'regular' | 'bold' | 'fill' | 'duotone';
 }
 
-export const Icon: React.FC<IconProps> = ({ name, label, className, size, weight = 'regular', ...props }) => {
+export const Icon: React.FC<IconProps> = ({
+  name,
+  label,
+  className,
+  size,
+  weight = 'regular',
+  ...props
+}) => {
   const sizeClasses = {
     sm: 'w-4 h-4',
     md: 'w-6 h-6',

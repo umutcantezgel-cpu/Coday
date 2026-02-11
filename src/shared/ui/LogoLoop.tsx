@@ -73,6 +73,18 @@ const LogoLoop = React.memo<LogoLoopProps>(
     const [seqHeight, setSeqHeight] = useState<number>(0);
     const [copyCount, setCopyCount] = useState<number>(ANIMATION_CONFIG.MIN_COPIES);
     const [isHovered, setIsHovered] = useState<boolean>(false);
+    const [isVisible, setIsVisible] = useState<boolean>(true);
+
+    // Pause rAF when off-screen to save CPU
+    useEffect(() => {
+      const el = containerRef.current;
+      if (!el) return;
+      const observer = new IntersectionObserver(([entry]) => setIsVisible(entry.isIntersecting), {
+        threshold: 0,
+      });
+      observer.observe(el);
+      return () => observer.disconnect();
+    }, []);
 
     const effectiveHoverSpeed = useMemo(() => {
       if (hoverSpeed !== undefined) return hoverSpeed;
@@ -160,6 +172,12 @@ const LogoLoop = React.memo<LogoLoopProps>(
         };
       }
 
+      if (!isVisible) {
+        return () => {
+          lastTimestampRef.current = null;
+        };
+      }
+
       const animate = (timestamp: number) => {
         if (lastTimestampRef.current === null) {
           lastTimestampRef.current = timestamp;
@@ -197,7 +215,15 @@ const LogoLoop = React.memo<LogoLoopProps>(
         }
         lastTimestampRef.current = null;
       };
-    }, [targetVelocity, seqWidth, seqHeight, isHovered, effectiveHoverSpeed, isVertical]);
+    }, [
+      targetVelocity,
+      seqWidth,
+      seqHeight,
+      isHovered,
+      effectiveHoverSpeed,
+      isVertical,
+      isVisible,
+    ]);
 
     // Resize observer
     useEffect(() => {

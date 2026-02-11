@@ -68,18 +68,19 @@
   },
   "brand_identity_page": {
     "deliverables": {
-      "items": "__MISSING__",
-      "title": "__MISSING__"
+      "items": [
+        "Complete Logo Suite (Primary, Secondary, Icon)",
+        "Brand Style Guide (PDF + Figma)",
+        "Color Palette & Typography System",
+        "Social Media Templates",
+        "Business Card & Stationery Design",
+        "Brand Voice & Messaging Framework"
+      ],
+      "title": "What You Get"
     },
     "digital_branding": {
       "description": "Today, a brand must work primarily on smartphones. We don't think in letterheads, but in pixels.",
-      "tags": [
-        "Logo Design",
-        "Typography",
-        "Color Palette",
-        "Tone of Voice",
-        "Social Assets"
-      ],
+      "tags": ["Logo Design", "Typography", "Color Palette", "Tone of Voice", "Social Assets"],
       "title": "Digital-First Branding"
     },
     "hero": {
@@ -89,8 +90,25 @@
       "title_suffix": "for B2B."
     },
     "process": {
-      "steps": "__MISSING__",
-      "title": "__MISSING__"
+      "steps": [
+        {
+          "desc": "We analyze your market, competitors, and target audience.",
+          "title": "Discovery"
+        },
+        {
+          "desc": "We define your brand strategy, positioning, and messaging.",
+          "title": "Strategy"
+        },
+        {
+          "desc": "We create logo concepts, color palettes, and typography.",
+          "title": "Design"
+        },
+        {
+          "desc": "We deliver a complete brand guide and all assets.",
+          "title": "Delivery"
+        }
+      ],
+      "title": "Our Branding Process"
     }
   },
   "categories": {
@@ -134,23 +152,49 @@
   },
   "design_systems_page": {
     "benefits": {
-      "items": "__MISSING__",
-      "title": "__MISSING__"
+      "items": [
+        {
+          "desc": "Every team member uses the same components.",
+          "title": "Consistency"
+        },
+        {
+          "desc": "Build new features 3x faster with reusable components.",
+          "title": "Speed"
+        },
+        {
+          "desc": "New developers are productive from day one.",
+          "title": "Onboarding"
+        },
+        {
+          "desc": "Scale your product without design debt.",
+          "title": "Scalability"
+        }
+      ],
+      "title": "Why a Design System?"
     },
     "components": {
-      "items": "__MISSING__",
-      "title": "__MISSING__"
+      "items": [
+        "Buttons & CTAs",
+        "Navigation & Menus",
+        "Forms & Inputs",
+        "Cards & Containers",
+        "Modals & Overlays",
+        "Typography Scale",
+        "Icon Library",
+        "Spacing & Layout Grid"
+      ],
+      "title": "Core Components"
     },
     "hero": {
       "badge": "Scalable UI",
-      "cta": "__MISSING__",
+      "cta": "Request Design System",
       "description": "Consistency is King. We develop atomic design systems that make your brand uniform and efficient across all touchpoints.",
       "title_prefix": "Design that",
       "title_suffix": "Scales."
     },
     "workflow": {
-      "description": "__MISSING__",
-      "title": "__MISSING__"
+      "description": "From audit to implementation – we build design systems that your team actually uses.",
+      "title": "Our Design System Workflow"
     }
   },
   "ecommerce_page": {
@@ -466,21 +510,9 @@
     },
     "technologies": {
       "description": "We specialize in migrating from these legacy systems to the modern web.",
-      "from": [
-        "WordPress",
-        "Typo3",
-        "Drupal",
-        "Joomla",
-        "Magento 1"
-      ],
+      "from": ["WordPress", "Typo3", "Drupal", "Joomla", "Magento 1"],
       "title": "Supported Technologies",
-      "to": [
-        "Next.js",
-        "React",
-        "Supabase",
-        "Vercel",
-        "Sanity"
-      ]
+      "to": ["Next.js", "React", "Supabase", "Vercel", "Sanity"]
     }
   },
   "performance_page": {
@@ -541,12 +573,32 @@
   },
   "ui_ux_page": {
     "deliverables": {
-      "items": "__MISSING__",
-      "title": "__MISSING__"
+      "items": [
+        "User Research Report",
+        "Wireframes (Low & High Fidelity)",
+        "Interactive Figma Prototypes",
+        "UI Design System & Components",
+        "Usability Test Results",
+        "Developer Handoff Documentation"
+      ],
+      "title": "What You Get"
     },
     "faq": {
-      "items": "__MISSING__",
-      "title": "__MISSING__"
+      "items": [
+        {
+          "q": "How long does a UI/UX project take?",
+          "a": "Depending on complexity, between 4 and 12 weeks. We work in sprints with regular feedback loops."
+        },
+        {
+          "q": "Do you also implement the design?",
+          "a": "Yes! We offer end-to-end service from design to development. Your design is pixel-perfectly implemented."
+        },
+        {
+          "q": "What tools do you use?",
+          "a": "We work primarily with Figma for design, Hotjar for analytics, and Maze for usability testing."
+        }
+      ],
+      "title": "Design FAQ"
     },
     "hero": {
       "badge": "Design Services",
@@ -556,7 +608,7 @@
       "title_suffix": "captivates."
     },
     "process": {
-      "description": "__MISSING__",
+      "description": "Our proven design process ensures we build the right thing, beautifully.",
       "prototyping": {
         "desc": "Interactive designs in Figma.",
         "title": "Prototyping"
@@ -565,23 +617,64 @@
         "desc": "Audience analysis and user journeys.",
         "title": "Research"
       },
-      "steps": "__MISSING__",
-      "title": "__MISSING__",
+      "steps": [
+        {
+          "desc": "We understand your users, goals, and competitive landscape.",
+          "title": "Research & Discovery"
+        },
+        {
+          "desc": "Low-fidelity wireframes to define structure and flow.",
+          "title": "Wireframing"
+        },
+        {
+          "desc": "High-fidelity interactive prototypes in Figma.",
+          "title": "Prototyping"
+        },
+        {
+          "desc": "Testing with real users and data-driven refinements.",
+          "title": "Testing & Iteration"
+        }
+      ],
+      "title": "Our Design Process",
       "wireframing": {
         "desc": "Structure and layout without distraction.",
         "title": "Wireframing"
       }
     },
     "psychology": {
-      "description": "__MISSING__",
-      "items": "__MISSING__",
-      "title": "__MISSING__"
+      "description": "We apply principles from behavioral science to create interfaces that feel intuitive and drive action.",
+      "items": [
+        {
+          "desc": "Users mimic the behavior of others. Testimonials and social proof drive conversions.",
+          "title": "Social Proof"
+        },
+        {
+          "desc": "Reducing choices and friction increases completion rates.",
+          "title": "Cognitive Load"
+        },
+        {
+          "desc": "Strategic placement of elements guides user attention.",
+          "title": "Visual Hierarchy"
+        },
+        {
+          "desc": "Color, typography, and spacing create emotional responses.",
+          "title": "Emotional Design"
+        }
+      ],
+      "title": "Design Psychology"
     }
   },
   "ux_audit_page": {
     "deliverables": {
-      "items": "__MISSING__",
-      "title": "__MISSING__"
+      "items": [
+        "Comprehensive UX Audit Report (40+ pages)",
+        "Heatmap & Click Analysis",
+        "User Flow Optimization Map",
+        "Priority Action Items with Expected Impact",
+        "Competitive UX Benchmarking",
+        "30-min Results Presentation"
+      ],
+      "title": "What You Get"
     },
     "hero": {
       "badge": "Research & Optimization",
@@ -591,11 +684,28 @@
       "title_suffix": "Gut Feeling."
     },
     "stats": {
-      "conversion_label": "__MISSING__"
+      "conversion_label": "Avg. Conversion Increase"
     },
     "what_we_analyze": {
-      "items": "__MISSING__",
-      "title": "__MISSING__"
+      "items": [
+        {
+          "desc": "Where users come from and where they drop off.",
+          "title": "User Flows"
+        },
+        {
+          "desc": "Form completion rates, error patterns, and friction points.",
+          "title": "Form Analytics"
+        },
+        {
+          "desc": "Page load speed, Core Web Vitals, and technical bottlenecks.",
+          "title": "Performance"
+        },
+        {
+          "desc": "Mobile vs. desktop behavior patterns and device-specific issues.",
+          "title": "Device Analysis"
+        }
+      ],
+      "title": "What We Analyze"
     }
   },
   "web_apps_page": {

@@ -11,6 +11,7 @@
     "menu": "Menü",
     "start": "Starten",
     "start_project": "Projekt starten",
+    "contact": "Kontakt aufnehmen",
     "view_work": "Referenzen"
   },
   "footer": {
@@ -32,38 +33,38 @@
   },
   "generic_detail": {
     "advantages": {
-      "contact_btn": "__MISSING__",
-      "desc": "__MISSING__",
-      "label": "__MISSING__",
-      "title": "__MISSING__"
+      "contact_btn": "Kontakt aufnehmen",
+      "desc": "Unsere Kunden entscheiden sich nicht für bunte Slides, sondern für ein Team, das Marketing als Investition versteht. Wir denken in Ergebnissen, planen mit klaren Zielen und liefern transparent.",
+      "label": "Ihre Vorteile",
+      "title": "Wir denken in ROAS, <br /> nicht in Klicks."
     },
     "faq": {
-      "desc": "__MISSING__",
-      "title": "__MISSING__"
+      "desc": "Wir arbeiten transparent. Hier sind Antworten auf die wichtigsten Fragen.",
+      "title": "Häufige Fragen (FAQ)"
     },
     "final_cta": {
-      "button": "__MISSING__",
-      "desc": "__MISSING__",
-      "title": "__MISSING__"
+      "button": "Jetzt anfragen",
+      "desc": "Keine Standardlösungen. Wir entwickeln genau das, was Sie für Ihren Erfolg brauchen.",
+      "title": "Starten wir Ihr Projekt."
     },
     "hero": {
-      "benefits_title": "__MISSING__",
-      "consulting_btn": "__MISSING__"
+      "benefits_title": "Ihre Vorteile",
+      "consulting_btn": "Beratungstermin vereinbaren"
     },
     "not_found": {
-      "link": "__MISSING__",
-      "title": "__MISSING__"
+      "link": "Zurück zur Übersicht",
+      "title": "Service nicht gefunden"
     },
     "process": {
-      "label": "__MISSING__",
-      "title": "__MISSING__"
+      "label": "Unser Prozess",
+      "title": "In 5 Schritten zu <br /> messbarem Erfolg."
     },
     "testimonials": {
-      "label": "__MISSING__",
-      "title": "__MISSING__"
+      "label": "Was unsere Kunden sagen",
+      "title": "Ergebnisse, die überzeugen."
     },
     "trust": {
-      "title": "__MISSING__"
+      "title": "Vertraut von führenden Unternehmen"
     }
   },
   "hero": {
@@ -111,6 +112,7 @@
     "booking": {
       "label": "Termin buchen"
     },
+    "cta_booking": "Termin",
     "career": {
       "benefits": {
         "desc": "Was dich erwartet",
@@ -258,5 +260,14 @@
     "percent": "%",
     "seconds": "Sek."
   },
-  "welcome": "Willkommen bei Coday"
+  "welcome": "Willkommen bei Coday",
+  "steps": {
+    "packages": "Paket wählen",
+    "calculator": "Konfigurieren",
+    "contact": "Anfrage"
+  },
+  "announcement": {
+    "text": "Grand Opening: 25% Rabatt auf alle Projekte!",
+    "cta": "Angebot sichern →"
+  }
 }

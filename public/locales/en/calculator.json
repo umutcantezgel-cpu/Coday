@@ -31,76 +31,93 @@
     "title_2": "Dream Agency."
   },
   "module_count": "{{count}} module selected",
-  "module_count_one": "__MISSING__",
-  "module_count_other": "__MISSING__",
+  "module_count_one": "{{count}} module selected",
+  "module_count_other": "{{count}} modules selected",
   "module_count_plural": "{{count}} modules selected",
   "modules": {
     "basis-business": {
       "description": "Multi-page Corporate Presence (CMS)",
+      "learn_more": "The classic corporate website with multiple subpages (About Us, Services, Contact). Perfect for presenting your company, services, and team in detail to build trust.",
       "name": "Corporate Website"
     },
     "basis-enterprise": {
       "description": "Complex Web App with Custom Logic",
+      "learn_more": "For complex requirements: We develop individual software solutions with user logins, databases, and special functions tailored exactly to your business processes.",
       "name": "Web Application"
     },
     "basis-starter": {
       "description": "High-Performance Landing Page (Next.js)",
+      "learn_more": "A lightning-fast 'one-pager' website, ideal for campaigns, product launches, or startups. Technically optimized for maximum conversion and immediate visibility.",
       "name": "Starter Website"
     },
     "commerce-headless": {
       "description": "Custom Frontend for Shopify/WooCommerce",
+      "learn_more": "The top tier of e-commerce. We separate design (frontend) from technology (Shopify/WooCommerce) to create unique shopping experiences without design limitations.",
       "name": "Headless Commerce"
     },
     "commerce-starter": {
       "description": "Professional Shopify Store",
+      "learn_more": "A fully set up Shopify store. Start selling your products with a professional theme, optimized checkout, and all necessary legal texts in just a few days.",
       "name": "Shopify Setup"
     },
     "design-motion": {
       "description": "Advanced Animations & Transitions",
+      "learn_more": "Bring your site to life. High-quality animations, smooth scrolling, and seamless transitions captivate users and guide them intuitively through your content.",
       "name": "Motion Experience"
     },
     "design-system": {
       "description": "Reusable Component Library",
+      "learn_more": "Ensures consistency and saves time: We develop a library of reusable components (buttons, inputs, cards) that keeps the design uniform and accelerates future expansions.",
       "name": "Design System"
     },
     "design-ui": {
       "description": "Custom Screen Design (Figma)",
+      "learn_more": "A design that fits your brand perfectly. We create individual layouts in Figma before writing a single line of code to ensure the look matches your vision 100%.",
       "name": "Premium UI Design"
     },
     "func-api": {
       "description": "External Service Integration (CRM, ERP)",
+      "learn_more": "Connect your website with other tools. We ensure data flows automatically between your site and your CRM, ERP, or newsletter tool.",
       "name": "API Integration"
     },
     "func-auth": {
       "description": "Login, Registration, User Dashboard",
+      "learn_more": "Let users register and log in. Necessary for customer portals, protected areas, dashboards, or membership sites.",
       "name": "User Auth & Profile"
     },
     "func-cms": {
       "description": "Content Management (Sanity/Strapi)",
+      "learn_more": "Change text and images yourself easily. We integrate a modern Content Management System (Sanity or Strapi) that you and your team can operate without coding skills.",
       "name": "Headless CMS"
     },
     "seo-speed": {
       "description": "Load Time Optimization <1s",
+      "learn_more": "Speed is money. We tune performance so the site loads in under a second – users enjoy it, and Google rewards it with better rankings.",
       "name": "Performance Max"
     },
     "seo-tech": {
       "description": "Structure, Schema.org, Core Web Vitals",
+      "learn_more": "The foundation for Google success. We optimize technical structure, metadata, and schemas so search engines understand and index your content perfectly.",
       "name": "Technical SEO Audit"
     },
     "support-basic": {
       "description": "Server Updates & Backups",
+      "learn_more": "We take care of the tech. Monthly updates, daily backups, and server maintenance ensure your site always stays secure and accessible.",
       "name": "Hosting & Maintenance"
     },
     "support-pro": {
       "description": "24/7 Emergency Support & Development",
+      "learn_more": "Your technical partner on demand. We provide fast help with problems and continuously support the further development of your platform.",
       "name": "SLA Support"
     },
     "tech-i18n": {
       "description": "Multi-language Support (i18n Setup)",
+      "learn_more": "Reach international customers. We structure the site to support any number of languages and make content easy to translate.",
       "name": "Internationalization"
     },
     "tech-pwa": {
       "description": "Offline Support & Installability",
+      "learn_more": "Turns your website into an app. Users can install it on their homescreen and use it (partially) offline – for an app-like experience in the browser.",
       "name": "PWA Features"
     }
   },

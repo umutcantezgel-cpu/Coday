@@ -8,6 +8,7 @@ import { modules } from '../../../data/modules';
 export const CalculatorSummary: React.FC = () => {
   const { t } = useTranslation('calculator');
   const selectedModuleIds = useCalculatorStore((state) => state.selectedModuleIds);
+  const getPackageName = useCalculatorStore((state) => state.getPackageName);
 
   const selectedModules = useMemo(() => {
     return modules.filter((m) => selectedModuleIds.has(m.id));
@@ -29,9 +30,22 @@ export const CalculatorSummary: React.FC = () => {
   const discount = totalOneTime > 500000 ? 5 : 0;
   const discountedOneTime = totalOneTime * (1 - discount / 100);
 
+  const packageName = getPackageName();
+
   return (
     <div className="bg-white rounded-3xl border border-gray-100 shadow-lg p-6 lg:p-8 sticky top-24">
-      <h3 className="font-display font-bold text-2xl text-gray-900 mb-6">{t('summary.title')}</h3>
+      <h3 className="font-display font-bold text-2xl text-gray-900 mb-4">{t('summary.title')}</h3>
+
+      {/* Package Badge */}
+      {packageName && (
+        <div className="mb-4 p-3 bg-primary/5 rounded-xl border border-primary/10 flex items-center gap-2">
+          <Icon name="check_circle" className="text-primary" />
+          <span className="text-sm font-bold text-gray-900">
+            {t('summary.package', { defaultValue: 'Paket' })}:
+          </span>
+          <span className="text-sm font-bold text-primary">{packageName}</span>
+        </div>
+      )}
 
       {/* Selected List - Scrollable */}
       <div className="max-h-[40vh] overflow-y-auto pr-2 mb-6 space-y-3 custom-scrollbar">
@@ -78,10 +92,10 @@ export const CalculatorSummary: React.FC = () => {
       <div className="space-y-3">
         <NavLink
           to="/contact"
-          className="w-full py-4 bg-gray-900 text-white rounded-xl font-bold hover:bg-black transition-all shadow-lg hover:shadow-xl flex items-center justify-center transform hover:-translate-y-1"
+          className="w-full py-4 bg-primary text-white rounded-xl font-bold hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/25 flex items-center justify-center transform hover:-translate-y-1 text-lg animate-pulse hover:animate-none"
         >
           {t('summary.continue')}
-          <Icon name="arrow_forward" className="ml-2" />
+          <Icon name="arrow_forward" className="ml-2 text-lg" />
         </NavLink>
         <div className="text-center">
           <button className="text-xs text-gray-400 hover:text-gray-600 underline">

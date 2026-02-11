@@ -52,6 +52,12 @@
     },
     "title": "Package Comparison"
   },
+  "trust": {
+    "google_partner": "Google Partner",
+    "satisfaction": "100% Satisfaction",
+    "performance": "PageSpeed 95+",
+    "support": "24/7 Support"
+  },
   "cta_section": {
     "button": "Book Appointment",
     "text": "Schedule a free consultation.",
@@ -92,18 +98,13 @@
     ]
   },
   "labels": {
-    "setup": "Setup"
+    "setup": "Setup",
+    "monthly": "/month",
+    "delivery": "~{{days}} days delivery"
   },
   "not_included": {
-    "professional": [
-      "Online Shop Functions",
-      "Custom App Development"
-    ],
-    "starter": [
-      "Content Management",
-      "Online Shop",
-      "Custom Functions"
-    ]
+    "professional": ["Online Shop Functions", "Custom App Development"],
+    "starter": ["Content Management", "Online Shop", "Custom Functions"]
   },
   "packages": {
     "enterprise": {

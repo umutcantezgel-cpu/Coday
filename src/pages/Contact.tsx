@@ -1,7 +1,6 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, useEffect } from 'react';
 import BlurText from '../shared/ui/BlurText';
 import GradientText from '../shared/ui/GradientText';
-// import ApplicationWizard from '../features/contact/ApplicationWizard'; // Loaded lazily
 import AvailabilityGrid from '../features/contact/AvailabilityGrid';
 import InteractiveMap from '../shared/ui/InteractiveMap';
 
@@ -10,17 +9,38 @@ const ApplicationWizard = lazy(() => import('../features/contact/ApplicationWiza
 import { useTranslation } from 'react-i18next';
 import { Icon } from '../shared/ui/Icon';
 import { SeoHead } from '@/shared/ui/SeoHead';
+import { useCalculatorStore } from '../features/calculator/model/store';
+import StepIndicator from '../shared/ui/StepIndicator';
 
 const Contact: React.FC = () => {
   const { t } = useTranslation('contact');
+  const selectedPackageId = useCalculatorStore((state) => state.selectedPackageId);
+  const setStep = useCalculatorStore((state) => state.setStep);
+  const hasPackage = !!selectedPackageId;
+
+  // Set step when arriving from flow
+  useEffect(() => {
+    if (hasPackage) {
+      setStep('contact');
+    }
+  }, [hasPackage, setStep]);
+
   return (
     <div className="bg-background-light min-h-screen">
       <SeoHead
         title={`${t('hero.title_start')} ${t('hero.title_gradient')} | Coday`}
         description={t('hero.desc')}
       />
+
+      {/* Step Indicator - only shown when coming from package flow */}
+      {hasPackage && (
+        <div className="pt-24 pb-0">
+          <StepIndicator currentStep="contact" className="mb-0" />
+        </div>
+      )}
+
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 px-4 overflow-hidden">
+      <section className={`relative ${hasPackage ? 'pt-12' : 'pt-32'} pb-24 px-4 overflow-hidden`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             {/* Text Side */}
@@ -81,7 +101,6 @@ const Contact: React.FC = () => {
                 <ApplicationWizard />
               </Suspense>
 
-              {/* Trust Indicators */}
               {/* Trust Indicators */}
               <div className="mt-8 flex justify-center gap-8 grayscale opacity-50">
                 {/* Mock Logos */}

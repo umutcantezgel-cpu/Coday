@@ -1,30 +1,30 @@
 {
   "abTest": {
     "metrics": {
-      "conversions": "__MISSING__",
-      "header": "__MISSING__",
-      "rate": "__MISSING__",
-      "visitors": "__MISSING__"
+      "conversions": "Conversions",
+      "header": "Live Metrics",
+      "rate": "Conversion Rate",
+      "visitors": "Visitors"
     },
-    "selectVariant": "__MISSING__",
-    "start": "__MISSING__",
-    "stop": "__MISSING__",
-    "subtitle": "__MISSING__",
-    "title": "__MISSING__",
+    "selectVariant": "Select a variant to preview",
+    "start": "Start Test",
+    "stop": "Stop Test",
+    "subtitle": "See how small changes can dramatically impact conversion rates.",
+    "title": "A/B Test Simulator",
     "variantA": {
-      "button": "__MISSING__",
-      "copy": "__MISSING__",
-      "description": "__MISSING__",
-      "headline": "__MISSING__",
-      "name": "__MISSING__"
+      "button": "Learn More",
+      "copy": "We offer a wide range of services for your business needs.",
+      "description": "Generic messaging without clear value proposition",
+      "headline": "Welcome to Our Agency",
+      "name": "Control (Generic)"
     },
     "variantB": {
-      "button": "__MISSING__",
-      "copy": "__MISSING__",
-      "description": "__MISSING__",
-      "headline": "__MISSING__",
-      "name": "__MISSING__",
-      "trust": "__MISSING__"
+      "button": "Get Your Free Audit",
+      "copy": "Join 200+ companies that increased revenue by 40% in 90 days.",
+      "description": "Specific, benefit-driven messaging with social proof",
+      "headline": "Dominate Your Market in 90 Days",
+      "name": "Optimized (Specific)",
+      "trust": "Trusted by 200+ companies"
     }
   },
   "aiCostGraph": {
@@ -66,28 +66,28 @@
     "yourStatus": "Your Data Maturity"
   },
   "designPsychology": {
-    "buyNow": "__MISSING__",
+    "buyNow": "Buy Now",
     "colors": {
       "black": {
-        "name": "__MISSING__",
-        "text": "__MISSING__"
+        "name": "Black",
+        "text": "Luxury, exclusivity, and premium quality."
       },
       "blue": {
-        "name": "__MISSING__",
-        "text": "__MISSING__"
+        "name": "Blue",
+        "text": "Trust, security, and professionalism."
       },
       "green": {
-        "name": "__MISSING__",
-        "text": "__MISSING__"
+        "name": "Green",
+        "text": "Growth, health, and sustainability."
       },
       "red": {
-        "name": "__MISSING__",
-        "text": "__MISSING__"
+        "name": "Red",
+        "text": "Urgency, passion, and energy."
       }
     },
-    "perception": "__MISSING__",
-    "subtitle": "__MISSING__",
-    "title": "__MISSING__"
+    "perception": "How colors influence purchasing decisions",
+    "subtitle": "See how different colors trigger different emotions and buying behaviors.",
+    "title": "Color Psychology in Design"
   },
   "hackSimulator": {
     "criticalDesc": "Admin access granted. Database exposed.",
@@ -112,28 +112,28 @@
   "highlight": "Highlight",
   "interactiveComponent": "Interactive Component",
   "keyTakeaways": {
-    "title": "__MISSING__"
+    "title": "Key Takeaways"
   },
   "loadingModule": "Loading Module...",
   "mobileSimulator": {
-    "badMode": "__MISSING__",
+    "badMode": "Bad UX",
     "fake": {
-      "clickMore": "__MISSING__",
-      "headline": "__MISSING__",
-      "logo": "__MISSING__",
-      "menu": "__MISSING__",
-      "readMore": "__MISSING__",
-      "serving": "__MISSING__",
-      "startNow": "__MISSING__",
-      "subheadline": "__MISSING__",
-      "thumbZone": "__MISSING__",
-      "welcome": "__MISSING__"
+      "clickMore": "Click for more...",
+      "headline": "Premium Agency Solutions",
+      "logo": "Agency Pro",
+      "menu": "Menu",
+      "readMore": "Read More",
+      "serving": "Serving clients worldwide",
+      "startNow": "Start Now",
+      "subheadline": "We create stunning digital experiences",
+      "thumbZone": "Thumb Zone",
+      "welcome": "Welcome"
     },
-    "goodMode": "__MISSING__",
-    "switchToDesktop": "__MISSING__",
-    "switchToMobile": "__MISSING__",
-    "title": "__MISSING__",
-    "view": "__MISSING__"
+    "goodMode": "Good UX",
+    "switchToDesktop": "Switch to Desktop",
+    "switchToMobile": "Switch to Mobile",
+    "title": "Mobile UX Simulator",
+    "view": "View"
   },
   "publishedOn": "Published on",
   "readArticle": "Read Article",
@@ -167,56 +167,56 @@
     "wpLane": "Standard WordPress"
   },
   "voiceDemo": {
-    "listening": "__MISSING__",
+    "listening": "Listening...",
     "steps": {
       "0": {
-        "ai": "__MISSING__",
-        "user": "__MISSING__"
+        "ai": "Hello! I'm your AI assistant. How can I help you today?",
+        "user": "Hey, I need a new website for my business."
       },
       "1": {
-        "ai": "__MISSING__",
-        "user": "__MISSING__"
+        "ai": "Great choice! I can build you a high-performance Next.js site with blazing-fast load times. What industry are you in?",
+        "user": "I run a craft brewery in Munich."
       },
       "2": {
-        "ai": "__MISSING__",
-        "user": "__MISSING__"
+        "ai": "Perfect! I'll create a premium design with an online shop, event calendar, and brewery tour booking system. Want me to start?",
+        "user": "That sounds amazing. Let's do it!"
       }
     },
-    "subtitle": "__MISSING__",
-    "tapToSpeak": "__MISSING__",
-    "title": "__MISSING__"
+    "subtitle": "Experience how AI-powered voice interfaces can transform customer interactions.",
+    "tapToSpeak": "Tap to speak",
+    "title": "Voice Search Demo"
   },
   "webHistory": {
     "columns": {
-      "model": "__MISSING__",
-      "overhead": "__MISSING__"
+      "model": "Business Model",
+      "overhead": "Technical Overhead"
     },
     "eras": {
       "0": {
-        "description": "__MISSING__",
-        "model": "__MISSING__",
-        "overhead": "__MISSING__",
-        "title": "__MISSING__"
+        "description": "Simple HTML pages, no interactivity. The digital business card era.",
+        "model": "Static Websites",
+        "overhead": "Minimal",
+        "title": "Web 1.0 (1995–2004)"
       },
       "1": {
-        "description": "__MISSING__",
-        "model": "__MISSING__",
-        "overhead": "__MISSING__",
-        "title": "__MISSING__"
+        "description": "CMS platforms like WordPress democratized web publishing but added bloat.",
+        "model": "Templates & Plugins",
+        "overhead": "Medium",
+        "title": "CMS Era (2004–2015)"
       },
       "2": {
-        "description": "__MISSING__",
-        "model": "__MISSING__",
-        "overhead": "__MISSING__",
-        "title": "__MISSING__"
+        "description": "JavaScript frameworks enabled rich applications but increased complexity.",
+        "model": "SaaS & Subscriptions",
+        "overhead": "High",
+        "title": "SPA Era (2015–2022)"
       },
       "3": {
-        "description": "__MISSING__",
-        "model": "__MISSING__",
-        "overhead": "__MISSING__",
-        "title": "__MISSING__"
+        "description": "Edge computing, AI-driven development, and serverless architectures. Maximum performance.",
+        "model": "Performance-as-a-Service",
+        "overhead": "Optimized",
+        "title": "Edge & AI Era (2022+)"
       }
     },
-    "title": "__MISSING__"
+    "title": "Evolution of the Web"
   }
 }

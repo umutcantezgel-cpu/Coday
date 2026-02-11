@@ -11,6 +11,7 @@
     "menu": "Menu",
     "start": "Start",
     "start_project": "Start Project",
+    "contact": "Contact Us",
     "view_work": "View Work"
   },
   "footer": {
@@ -32,38 +33,38 @@
   },
   "generic_detail": {
     "advantages": {
-      "contact_btn": "__MISSING__",
-      "desc": "__MISSING__",
-      "label": "__MISSING__",
-      "title": "__MISSING__"
+      "contact_btn": "Get in Touch",
+      "desc": "Our clients don't choose colorful slides, they choose a team that understands marketing as an investment. We think in results, plan with clear goals, and deliver transparently.",
+      "label": "Your Benefits",
+      "title": "We think in ROAS, <br /> not in clicks."
     },
     "faq": {
-      "desc": "__MISSING__",
-      "title": "__MISSING__"
+      "desc": "We work transparently. Here are answers to the most important questions.",
+      "title": "Frequently Asked Questions (FAQ)"
     },
     "final_cta": {
-      "button": "__MISSING__",
-      "desc": "__MISSING__",
-      "title": "__MISSING__"
+      "button": "Inquire Now",
+      "desc": "No standard solutions. We develop exactly what you need for your success.",
+      "title": "Let's start your project."
     },
     "hero": {
-      "benefits_title": "__MISSING__",
-      "consulting_btn": "__MISSING__"
+      "benefits_title": "Your Benefits",
+      "consulting_btn": "Schedule Consultation"
     },
     "not_found": {
-      "link": "__MISSING__",
-      "title": "__MISSING__"
+      "link": "Back to Overview",
+      "title": "Service not found"
     },
     "process": {
-      "label": "__MISSING__",
-      "title": "__MISSING__"
+      "label": "Our Process",
+      "title": "Measurable success <br /> in 5 steps."
     },
     "testimonials": {
-      "label": "__MISSING__",
-      "title": "__MISSING__"
+      "label": "What our clients say",
+      "title": "Results that convince."
     },
     "trust": {
-      "title": "__MISSING__"
+      "title": "Trusted by leading companies"
     }
   },
   "hero": {
@@ -111,6 +112,7 @@
     "booking": {
       "label": "Book Appointment"
     },
+    "cta_booking": "Book",
     "career": {
       "benefits": {
         "desc": "What Expects You",
@@ -258,5 +260,14 @@
     "percent": "%",
     "seconds": "s"
   },
-  "welcome": "Welcome to Coday"
+  "welcome": "Welcome to Coday",
+  "steps": {
+    "packages": "Choose Package",
+    "calculator": "Configure",
+    "contact": "Request"
+  },
+  "announcement": {
+    "text": "Grand Opening: 25% discount on all projects!",
+    "cta": "Secure offer →"
+  }
 }

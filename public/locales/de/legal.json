@@ -7,66 +7,66 @@
   },
   "disclaimer": {
     "analysis": {
-      "content": "__MISSING__",
-      "title": "__MISSING__"
+      "content": "Die von unserem Website-Analyzer und unseren KI-Tools generierten Analysen, Berichte und Bewertungen dienen ausschließlich zu Informationszwecken. Sie werden automatisch erstellt und können Ungenauigkeiten enthalten. Für geschäftskritische Entscheidungen empfehlen wir die Beratung durch einen qualifizierten Fachmann.",
+      "title": "Webanalyse & KI-generierte Inhalte"
     },
     "content": {
-      "content": "__MISSING__",
-      "title": "__MISSING__"
+      "content": "Alle Informationen auf dieser Website wurden sorgfältig geprüft. Für die Richtigkeit, Vollständigkeit und Aktualität der bereitgestellten Informationen kann jedoch keine Gewähr übernommen werden. Haftungsansprüche gegen den Autor, die sich auf materielle oder immaterielle Schäden beziehen, die durch die Nutzung oder Nichtnutzung der bereitgestellten Informationen verursacht wurden, sind grundsätzlich ausgeschlossen.",
+      "title": "Haftung für Inhalte"
     },
     "copyright": {
-      "content": "__MISSING__",
-      "title": "__MISSING__"
+      "content": "Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem Urheberrecht. Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.",
+      "title": "Urheberrecht"
     },
     "intro": {
-      "content": "__MISSING__",
-      "title": "__MISSING__"
+      "content": "Dieser Haftungsausschluss gilt für alle Inhalte auf der Website codayweb.de, betrieben von Umutcan Emre Tezgel (Coday). Durch die Nutzung dieser Website stimmen Sie diesem Haftungsausschluss zu.",
+      "title": "Allgemeiner Haftungsausschluss"
     },
     "liability": {
-      "content": "__MISSING__",
-      "title": "__MISSING__"
+      "content": "Unsere Website enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.",
+      "title": "Haftung für Links"
     },
-    "title": "__MISSING__"
+    "title": "Haftungsausschluss"
   },
   "hub": {
     "agb": {
-      "description": "__MISSING__",
-      "title": "__MISSING__"
+      "description": "Unsere Bedingungen für eine transparente und faire Zusammenarbeit. Festpreise, klare Leistungen und keine versteckten Kosten.",
+      "title": "AGB"
     },
-    "badge": "__MISSING__",
+    "badge": "Rechtliches",
     "cta": {
-      "button": "__MISSING__",
-      "description": "__MISSING__",
-      "title": "__MISSING__"
+      "button": "Kontakt aufnehmen",
+      "description": "Haben Sie Fragen zum Datenschutz, zu unseren AGB oder zu rechtlichen Angelegenheiten? Wir helfen Ihnen gerne weiter.",
+      "title": "Fragen? Kontaktieren Sie uns."
     },
     "features": {
       "gdpr": {
-        "desc": "__MISSING__",
-        "title": "__MISSING__"
+        "desc": "Alle unsere Prozesse sind DSGVO-konform. Ihr Datenschutz hat für uns oberste Priorität.",
+        "title": "DSGVO-konform"
       },
       "transparent": {
-        "desc": "__MISSING__",
-        "title": "__MISSING__"
+        "desc": "Klare und verständliche Dokumente ohne Juristendeutsch.",
+        "title": "Transparent"
       },
       "updated": {
-        "desc": "__MISSING__",
-        "title": "__MISSING__"
+        "desc": "Unsere rechtlichen Dokumente werden regelmäßig überprüft und aktuell gehalten.",
+        "title": "Immer aktuell"
       }
     },
     "impressum": {
-      "description": "__MISSING__",
-      "title": "__MISSING__"
+      "description": "Unternehmensangaben, Kontaktdaten und rechtliche Verantwortlichkeit gemäß § 5 DDG.",
+      "title": "Impressum"
     },
     "privacy": {
-      "description": "__MISSING__",
-      "title": "__MISSING__"
+      "description": "Wie wir mit Ihren Daten umgehen. Transparent, DSGVO-konform und stets in Ihrem Interesse.",
+      "title": "Datenschutz"
     },
     "seo": {
-      "description": "__MISSING__",
-      "title": "__MISSING__"
+      "description": "Rechtliche Informationen, Datenschutz, Impressum und AGB von Coday Web Design & Entwicklung.",
+      "title": "Rechtliches – Coday"
     },
-    "subtitle": "__MISSING__",
-    "title": "__MISSING__"
+    "subtitle": "Transparenz ist die Grundlage von Vertrauen. Hier finden Sie alle rechtlichen Dokumente.",
+    "title": "Rechtliches"
   },
   "impressum": {
     "contact": {
@@ -479,9 +479,9 @@
     },
     "festpreis": {
       "guarantee": "Unsere Garantie",
-      "p1": "__MISSING__",
-      "p2": "__MISSING__",
-      "p3": "__MISSING__",
+      "p1": "(1) Der Festpreis umfasst alle im Angebot definierten Leistungen, einschließlich der vereinbarten Revisionsrunden.",
+      "p2": "(2) Zusätzliche Leistungen, die über das ursprüngliche Angebot hinausgehen, werden separat angeboten und berechnet. Eine schriftliche Beauftragung ist erforderlich.",
+      "p3": "(3) Änderungen am Projektumfang durch den Auftraggeber können zu Preisanpassungen führen. Der Anbieter wird hierüber vorab informieren.",
       "text": "Der im Angebot genannte Preis ist ein verbindlicher Festpreis. Er ändert sich nicht, solange keine zusätzlichen Leistungen beauftragt werden, die über den ursprünglichen Leistungsumfang hinausgehen."
     },
     "gewaehrleistung": {

@@ -36,7 +36,10 @@ const Home: React.FC = () => {
     <>
       <SeoHead
         title={t('meta.title', { defaultValue: 'Coday | Der Agentur-Killer' })}
-        description={t('meta.description', { defaultValue: 'Wir beenden Ineffizienz. High-End Webentwicklung & Design für Agenturen und Unternehmen.' })}
+        description={t('meta.description', {
+          defaultValue:
+            'Wir beenden Ineffizienz. High-End Webentwicklung & Design für Agenturen und Unternehmen.',
+        })}
       />
       {/* Hero Section */}
       <section className="relative pt-20 pb-20 md:pt-32 md:pb-40 lg:pt-48 lg:pb-60 overflow-hidden bg-background-light">
@@ -76,7 +79,7 @@ const Home: React.FC = () => {
           </div>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             <NavLink
-              to="/contact"
+              to="/packages"
               className={cn(
                 baseButtonStyles,
                 buttonVariants.primary,
@@ -93,7 +96,7 @@ const Home: React.FC = () => {
             </NavLink>
 
             <NavLink
-              to="/work"
+              to="/contact"
               className={cn(
                 baseButtonStyles,
                 buttonVariants.secondary,
@@ -101,7 +104,10 @@ const Home: React.FC = () => {
                 'group border border-gray-200 bg-white text-secondary hover:bg-gray-50 hover:border-primary/50 shadow-md hover:shadow-lg hover:-translate-y-1 active:scale-95 active:shadow-sm'
               )}
             >
-              {t('buttons.view_work', { ns: 'common' })}
+              {t('buttons.contact', {
+                ns: 'common',
+                defaultValue: t('buttons.view_work', { ns: 'common' }),
+              })}
             </NavLink>
           </div>
         </div>

@@ -1,30 +1,30 @@
 {
   "abTest": {
     "metrics": {
-      "conversions": "__MISSING__",
-      "header": "__MISSING__",
-      "rate": "__MISSING__",
-      "visitors": "__MISSING__"
+      "conversions": "Konversionen",
+      "header": "Live-Kennzahlen",
+      "rate": "Konversionsrate",
+      "visitors": "Besucher"
     },
-    "selectVariant": "__MISSING__",
-    "start": "__MISSING__",
-    "stop": "__MISSING__",
-    "subtitle": "__MISSING__",
-    "title": "__MISSING__",
+    "selectVariant": "Wählen Sie eine Variante zur Vorschau",
+    "start": "Test starten",
+    "stop": "Test stoppen",
+    "subtitle": "Sehen Sie, wie kleine Änderungen die Konversionsrate drastisch beeinflussen können.",
+    "title": "A/B Test Simulator",
     "variantA": {
-      "button": "__MISSING__",
-      "copy": "__MISSING__",
-      "description": "__MISSING__",
-      "headline": "__MISSING__",
-      "name": "__MISSING__"
+      "button": "Mehr erfahren",
+      "copy": "Wir bieten ein breites Spektrum an Dienstleistungen für Ihre Geschäftsanforderungen.",
+      "description": "Generische Botschaft ohne klares Wertversprechen",
+      "headline": "Willkommen bei unserer Agentur",
+      "name": "Kontrolle (Generisch)"
     },
     "variantB": {
-      "button": "__MISSING__",
-      "copy": "__MISSING__",
-      "description": "__MISSING__",
-      "headline": "__MISSING__",
-      "name": "__MISSING__",
-      "trust": "__MISSING__"
+      "button": "Kostenloses Audit sichern",
+      "copy": "Schließen Sie sich 200+ Unternehmen an, die ihren Umsatz in 90 Tagen um 40% steigerten.",
+      "description": "Spezifische, nutzenorientierte Botschaft mit Social Proof",
+      "headline": "Dominieren Sie Ihren Markt in 90 Tagen",
+      "name": "Optimiert (Spezifisch)",
+      "trust": "Vertraut von 200+ Unternehmen"
     }
   },
   "aiCostGraph": {
@@ -69,28 +69,28 @@
     "yourStatus": "Ihr Daten-Reifegrad"
   },
   "designPsychology": {
-    "buyNow": "__MISSING__",
+    "buyNow": "Jetzt kaufen",
     "colors": {
       "black": {
-        "name": "__MISSING__",
-        "text": "__MISSING__"
+        "name": "Schwarz",
+        "text": "Luxus, Exklusivität und Premium-Qualität."
       },
       "blue": {
-        "name": "__MISSING__",
-        "text": "__MISSING__"
+        "name": "Blau",
+        "text": "Vertrauen, Sicherheit und Professionalität."
       },
       "green": {
-        "name": "__MISSING__",
-        "text": "__MISSING__"
+        "name": "Grün",
+        "text": "Wachstum, Gesundheit und Nachhaltigkeit."
       },
       "red": {
-        "name": "__MISSING__",
-        "text": "__MISSING__"
+        "name": "Rot",
+        "text": "Dringlichkeit, Leidenschaft und Energie."
       }
     },
-    "perception": "__MISSING__",
-    "subtitle": "__MISSING__",
-    "title": "__MISSING__"
+    "perception": "Wie Farben Kaufentscheidungen beeinflussen",
+    "subtitle": "Sehen Sie, wie verschiedene Farben unterschiedliche Emotionen und Kaufverhalten auslösen.",
+    "title": "Farbpsychologie im Design"
   },
   "hackSimulator": {
     "criticalDesc": "Admin-Zugriff gewährt. Datenbank exponiert.",
@@ -115,28 +115,28 @@
   "highlight": "Highlight",
   "interactiveComponent": "Interaktives Element",
   "keyTakeaways": {
-    "title": "__MISSING__"
+    "title": "Kernaussagen"
   },
   "loadingModule": "Lade Modul...",
   "mobileSimulator": {
-    "badMode": "__MISSING__",
+    "badMode": "Schlechte UX",
     "fake": {
-      "clickMore": "__MISSING__",
-      "headline": "__MISSING__",
-      "logo": "__MISSING__",
-      "menu": "__MISSING__",
-      "readMore": "__MISSING__",
-      "serving": "__MISSING__",
-      "startNow": "__MISSING__",
-      "subheadline": "__MISSING__",
-      "thumbZone": "__MISSING__",
-      "welcome": "__MISSING__"
+      "clickMore": "Klicken für mehr...",
+      "headline": "Premium Agentur-Lösungen",
+      "logo": "Agency Pro",
+      "menu": "Menü",
+      "readMore": "Weiterlesen",
+      "serving": "Weltweit für Kunden im Einsatz",
+      "startNow": "Jetzt starten",
+      "subheadline": "Wir schaffen beeindruckende digitale Erlebnisse",
+      "thumbZone": "Daumenzone",
+      "welcome": "Willkommen"
     },
-    "goodMode": "__MISSING__",
-    "switchToDesktop": "__MISSING__",
-    "switchToMobile": "__MISSING__",
-    "title": "__MISSING__",
-    "view": "__MISSING__"
+    "goodMode": "Gute UX",
+    "switchToDesktop": "Zu Desktop wechseln",
+    "switchToMobile": "Zu Mobil wechseln",
+    "title": "Mobile UX Simulator",
+    "view": "Ansicht"
   },
   "publishedOn": "Veröffentlicht am",
   "readArticle": "Artikel lesen",
@@ -170,56 +170,56 @@
     "wpLane": "Standard WordPress"
   },
   "voiceDemo": {
-    "listening": "__MISSING__",
+    "listening": "Zuhören...",
     "steps": {
       "0": {
-        "ai": "__MISSING__",
-        "user": "__MISSING__"
+        "ai": "Hallo! Ich bin Ihr KI-Assistent. Wie kann ich Ihnen heute helfen?",
+        "user": "Hey, ich brauche eine neue Website für mein Unternehmen."
       },
       "1": {
-        "ai": "__MISSING__",
-        "user": "__MISSING__"
+        "ai": "Großartige Wahl! Ich kann Ihnen eine High-Performance Next.js-Seite mit blitzschnellen Ladezeiten bauen. In welcher Branche sind Sie?",
+        "user": "Ich betreibe eine Craft-Brauerei in München."
       },
       "2": {
-        "ai": "__MISSING__",
-        "user": "__MISSING__"
+        "ai": "Perfekt! Ich erstelle ein Premium-Design mit Online-Shop, Eventkalender und Brauereibesichtigungs-Buchungssystem. Soll ich loslegen?",
+        "user": "Das klingt fantastisch. Los geht's!"
       }
     },
-    "subtitle": "__MISSING__",
-    "tapToSpeak": "__MISSING__",
-    "title": "__MISSING__"
+    "subtitle": "Erleben Sie, wie KI-gesteuerte Sprachschnittstellen die Kundeninteraktion transformieren können.",
+    "tapToSpeak": "Zum Sprechen tippen",
+    "title": "Sprachsuche Demo"
   },
   "webHistory": {
     "columns": {
-      "model": "__MISSING__",
-      "overhead": "__MISSING__"
+      "model": "Geschäftsmodell",
+      "overhead": "Technischer Aufwand"
     },
     "eras": {
       "0": {
-        "description": "__MISSING__",
-        "model": "__MISSING__",
-        "overhead": "__MISSING__",
-        "title": "__MISSING__"
+        "description": "Einfache HTML-Seiten, keine Interaktivität. Die Ära der digitalen Visitenkarte.",
+        "model": "Statische Websites",
+        "overhead": "Minimal",
+        "title": "Web 1.0 (1995–2004)"
       },
       "1": {
-        "description": "__MISSING__",
-        "model": "__MISSING__",
-        "overhead": "__MISSING__",
-        "title": "__MISSING__"
+        "description": "CMS-Plattformen wie WordPress demokratisierten das Web-Publishing, fügten aber Ballast hinzu.",
+        "model": "Templates & Plugins",
+        "overhead": "Mittel",
+        "title": "CMS-Ära (2004–2015)"
       },
       "2": {
-        "description": "__MISSING__",
-        "model": "__MISSING__",
-        "overhead": "__MISSING__",
-        "title": "__MISSING__"
+        "description": "JavaScript-Frameworks ermöglichten reichhaltige Anwendungen, erhöhten aber die Komplexität.",
+        "model": "SaaS & Abonnements",
+        "overhead": "Hoch",
+        "title": "SPA-Ära (2015–2022)"
       },
       "3": {
-        "description": "__MISSING__",
-        "model": "__MISSING__",
-        "overhead": "__MISSING__",
-        "title": "__MISSING__"
+        "description": "Edge Computing, KI-gestützte Entwicklung und Serverless-Architekturen. Maximale Performance.",
+        "model": "Performance-as-a-Service",
+        "overhead": "Optimiert",
+        "title": "Edge & KI-Ära (2022+)"
       }
     },
-    "title": "__MISSING__"
+    "title": "Evolution des Web"
   }
 }

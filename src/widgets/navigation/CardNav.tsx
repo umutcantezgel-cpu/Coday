@@ -234,11 +234,20 @@ const CardNav: React.FC<CardNavProps> = ({
           </React.Suspense>
 
           <Link
+            to="/packages"
+            className="nav-pill-cta hidden sm:flex"
+            style={{ backgroundColor: '#D69E2E', color: '#fff' }}
+          >
+            <span>{t('nav.packages.label', { defaultValue: 'Pakete' })}</span>
+            <Icon name="arrow-right" className="cta-arrow" />
+          </Link>
+
+          <Link
             to="/contact"
             className="nav-pill-cta"
             style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
           >
-            <span>Termin</span>
+            <span>{t('nav.cta_booking', { defaultValue: 'Termin' })}</span>
             <Icon name="arrow-right" className="cta-arrow" />
           </Link>
 

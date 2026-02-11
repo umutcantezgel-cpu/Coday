@@ -52,6 +52,12 @@
     },
     "title": "Paket-Vergleich"
   },
+  "trust": {
+    "google_partner": "Google Partner",
+    "satisfaction": "100% Zufriedenheit",
+    "performance": "PageSpeed 95+",
+    "support": "24/7 Support"
+  },
   "cta_section": {
     "button": "Termin buchen",
     "text": "Vereinbaren Sie ein kostenloses Beratungsgespräch.",
@@ -92,18 +98,13 @@
     ]
   },
   "labels": {
-    "setup": "Einrichtung"
+    "setup": "Einrichtung",
+    "monthly": "/Monat",
+    "delivery": "Lieferung in ~{{days}} Tagen"
   },
   "not_included": {
-    "professional": [
-      "Online-Shop Funktionen",
-      "Individuelle App-Entwicklung"
-    ],
-    "starter": [
-      "Inhaltsverwaltung",
-      "Online-Shop",
-      "Individuelle Funktionen"
-    ]
+    "professional": ["Online-Shop Funktionen", "Individuelle App-Entwicklung"],
+    "starter": ["Inhaltsverwaltung", "Online-Shop", "Individuelle Funktionen"]
   },
   "packages": {
     "enterprise": {

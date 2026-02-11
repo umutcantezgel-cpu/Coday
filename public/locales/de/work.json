@@ -1,83 +1,61 @@
 {
-  "empty_state": {
-    "desc": "Versuchen Sie einen anderen Filter oder schauen Sie später wieder vorbei.",
-    "title": "Keine Projekte gefunden"
-  },
-  "filter": {
-    "all": "Alle Projekte",
-    "design": "Design",
-    "development": "Entwicklung",
-    "marketing": "Marketing"
-  },
   "hero": {
-    "badge": "__MISSING__",
-    "desc": "__MISSING__",
-    "description": "Digitale Erlebnisse, die Marken transformieren. Design, das Nutzer begeistert. Programmcode, der Geschwindigkeit liefert.",
-    "label": "Unser Portfolio",
-    "title": "Ausgewählte Arbeiten.",
-    "title_gradient": "__MISSING__",
-    "title_start": "__MISSING__"
-  },
-  "project_detail": {
-    "approach": "Unser Ansatz",
-    "back_to_overview": "Zurück zur Übersicht",
-    "breadcrumb_projects": "Projekte",
-    "challenge": "Die Herausforderung",
-    "not_found": "Projekt nicht gefunden",
-    "results": "Die Ergebnisse",
-    "sidebar": {
-      "details": "Projekt-Details",
-      "interested_title": "Interessiert an ähnlichen Ergebnissen?",
-      "period": "Zeitraum",
-      "request_project": "Projekt anfragen",
-      "result": "Ergebnis",
-      "service": "Service"
-    },
-    "solution": "Die Lösung"
+    "badge": "Unsere Arbeit",
+    "desc": "Jedes Projekt erzählt eine Geschichte. Hier sind unsere neuesten Erfolgsgeschichten, die für sich sprechen.",
+    "title_gradient": "Ergebnisse.",
+    "title_start": "Echte"
   },
   "results": {
-    "desc": "__MISSING__",
-    "link": "__MISSING__",
+    "desc": "Messbare Verbesserungen, die einen echten geschäftlichen Unterschied machen.",
+    "link": "Vollständige Fallstudie ansehen",
     "stats": {
       "cpa": {
-        "desc": "__MISSING__",
-        "label": "__MISSING__"
+        "desc": "Reduktion durch optimierte Funnels und intelligentere Werbebudget-Verteilung.",
+        "label": "Niedrigerer CPA"
       },
       "lcp": {
-        "desc": "__MISSING__",
-        "label": "__MISSING__"
+        "desc": "Largest Contentful Paint optimiert für sofortige Seitenladezeiten.",
+        "label": "LCP Score"
       },
       "leads": {
-        "desc": "__MISSING__",
-        "label": "__MISSING__"
+        "desc": "Mehr qualifizierte Leads durch konversionoptimiertes Design und UX.",
+        "label": "Mehr Leads"
       }
     },
-    "title": "__MISSING__"
+    "title": "Die Zahlen sprechen"
   },
   "testimonials": {
-    "desc": "__MISSING__",
-    "items": {
-      "0": {
-        "author": "__MISSING__",
-        "quote": "__MISSING__",
-        "role": "__MISSING__"
+    "desc": "Was unsere Kunden über die Zusammenarbeit mit uns sagen.",
+    "items": [
+      {
+        "company": "TechVenture GmbH",
+        "name": "Sarah M.",
+        "role": "Geschäftsführerin",
+        "text": "Coday hat unsere Online-Präsenz komplett transformiert. Die Ergebnisse haben alle unsere Erwartungen übertroffen."
       },
-      "1": {
-        "author": "__MISSING__",
-        "quote": "__MISSING__",
-        "role": "__MISSING__"
+      {
+        "company": "Digital Dynamics",
+        "name": "Thomas K.",
+        "role": "Marketing-Leiter",
+        "text": "Endlich eine Agentur, die hält was sie verspricht. Unsere Konversionsrate stieg in nur 3 Monaten um 340%."
+      },
+      {
+        "company": "InnoScale AG",
+        "name": "Lisa B.",
+        "role": "Head of Digital",
+        "text": "Die technische Expertise und Designqualität sind Weltklasse. Echte Partner, nicht nur Dienstleister."
       }
-    },
-    "title": "__MISSING__"
+    ],
+    "title": "Kundenstimmen"
   },
   "visual_identity": {
-    "badge": "__MISSING__",
+    "badge": "Marke & Design",
     "colors": {
-      "dark": "__MISSING__",
-      "light": "__MISSING__",
-      "primary": "__MISSING__"
+      "dark": "Deep Space",
+      "light": "Mondlicht",
+      "primary": "Electric Blue"
     },
-    "desc": "__MISSING__",
-    "title": "__MISSING__"
+    "desc": "Jeder Pixel hat einen Zweck. Unsere Designsprache verbindet Premium-Ästhetik mit maximaler Benutzerfreundlichkeit.",
+    "title": "Visuelle Identität"
   }
 }
