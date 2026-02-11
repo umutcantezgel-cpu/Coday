@@ -1,7 +1,7 @@
 import React, { Suspense, lazy, useEffect } from 'react';
 import BlurText from '../shared/ui/BlurText';
 import GradientText from '../shared/ui/GradientText';
-import AvailabilityGrid from '../features/contact/AvailabilityGrid';
+import BookingCalendar from '../features/booking/ui/BookingCalendar';
 import InteractiveMap from '../shared/ui/InteractiveMap';
 
 const ApplicationWizard = lazy(() => import('../features/contact/ApplicationWizard'));
@@ -68,7 +68,7 @@ const Contact: React.FC = () => {
               <p className="text-xl text-slate-600 leading-relaxed mb-8">{t('hero.desc')}</p>
 
               <div className="mb-12">
-                <AvailabilityGrid />
+                <BookingCalendar />
               </div>
 
               <div className="space-y-6">
