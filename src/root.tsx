@@ -79,6 +79,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           crossOrigin="anonymous"
         />
         <GoogleAnalytics />
+        <Links />
       </head>
       <body>
         <SkipLink />
@@ -90,7 +91,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
           </MotionConfig>
         </HelmetProvider>
         <ScrollRestoration />
-        <Links />
         <Scripts />
       </body>
     </html>
