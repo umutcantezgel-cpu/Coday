@@ -8,7 +8,7 @@ import {
   useLoaderData,
   type LoaderFunctionArgs,
 } from 'react-router';
-import styles from './index.css?inline';
+import './index.css';
 import '@fontsource-variable/inter';
 import '@fontsource-variable/outfit';
 import { LazyMotion, domAnimation, MotionConfig } from 'motion/react';
@@ -49,18 +49,18 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <style
           dangerouslySetInnerHTML={{
             __html: `
-          ${styles}
-          /* Reset & Shell */
           body { background-color: #f8fafc; color: #0f172a; font-family: 'Inter', sans-serif; }
           #main-content { min-height: 100vh; display: flex; flex-direction: column; }
+          /* Critical Nav Placeholder */
           .nav-shell { height: 80px; width: 100%; position: fixed; top: 0; z-index: 50; }
+          /* Reset to prevent major shifts */
           * { box-sizing: border-box; margin: 0; padding: 0; }
           html { -webkit-text-size-adjust: 100%; tab-size: 4; font-family: 'Inter', sans-serif; line-height: 1.5; }
         `,
           }}
         />
         <Meta />
-        {/* Links moved to body to prevent render blocking */}
+        <Links />
         {/* Favicon */}
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         {/* Preload Critical Fonts (Inter Latin + Outfit Latin) to prevent FOIT/layout shifts */}
@@ -79,7 +79,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
           crossOrigin="anonymous"
         />
         <GoogleAnalytics />
-        <Links />
       </head>
       <body>
         <SkipLink />

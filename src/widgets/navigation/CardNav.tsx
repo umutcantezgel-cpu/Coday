@@ -7,6 +7,7 @@ import { LocalizedLink as Link } from '../../shared/ui/LocalizedLink';
 import { useTranslation } from 'react-i18next';
 import { getNavItems } from './config';
 import { MobileNavOverlay } from './MobileNavOverlay';
+import './CardNav.css';
 
 interface CardNavProps {
   className?: string;
