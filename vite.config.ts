@@ -61,5 +61,6 @@ export default defineConfig({
     modulePreload: {
       polyfill: false,
     },
+    cssCodeSplit: false,
   },
 });
