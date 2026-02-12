@@ -3,14 +3,6 @@ import { initReactI18next } from 'react-i18next';
 import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
-// Extend window interface for SSR hydration
-declare global {
-  interface Window {
-    initialI18nStore?: Record<string, Record<string, unknown>>;
-    initialLanguage?: string;
-  }
-}
-
 i18n
   // load translation using http -> see /public/locales
   // learn more: https://github.com/i18next/i18next-http-backend
@@ -50,9 +42,6 @@ i18n
       order: ['path', 'localStorage', 'navigator'],
       lookupFromPathIndex: 0,
     },
-    // Hydrate from server-injected store if available
-    resources: (typeof window !== 'undefined' && window.initialI18nStore) || undefined,
-    lng: (typeof window !== 'undefined' && window.initialLanguage) || undefined,
   });
 
 i18n.on('languageChanged', (lng) => {

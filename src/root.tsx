@@ -9,12 +9,11 @@ import {
   type LoaderFunctionArgs,
 } from 'react-router';
 import styles from './index.css?inline';
-import interStyles from '@fontsource-variable/inter/index.css?inline';
-import outfitStyles from '@fontsource-variable/outfit/index.css?inline';
+import '@fontsource-variable/inter';
+import '@fontsource-variable/outfit';
 import { LazyMotion, domAnimation, MotionConfig } from 'motion/react';
 import React from 'react';
 import { HelmetProvider } from 'react-helmet-async';
-import { useTranslation } from 'react-i18next';
 import { SkipLink } from './shared/ui/SkipLink';
 import { GoogleAnalytics } from './shared/lib/analytics/GoogleAnalytics';
 
@@ -28,7 +27,6 @@ export async function loader({ request }: LoaderFunctionArgs) {
 export function Layout({ children }: { children: React.ReactNode }) {
   const data = useLoaderData<typeof loader>();
   const lang = data?.lng || 'de';
-  const { i18n } = useTranslation();
 
   return (
     <html lang={lang} dir="ltr">
@@ -51,8 +49,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <style
           dangerouslySetInnerHTML={{
             __html: `
-          ${interStyles}
-          ${outfitStyles}
           ${styles}
           /* Reset & Shell */
           body { background-color: #f8fafc; color: #0f172a; font-family: 'Inter', sans-serif; }
@@ -61,11 +57,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
           * { box-sizing: border-box; margin: 0; padding: 0; }
           html { -webkit-text-size-adjust: 100%; tab-size: 4; font-family: 'Inter', sans-serif; line-height: 1.5; }
         `,
-          }}
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.initialI18nStore = ${JSON.stringify(i18n.store.data)}; window.initialLanguage = '${i18n.language}';`,
           }}
         />
         <Meta />

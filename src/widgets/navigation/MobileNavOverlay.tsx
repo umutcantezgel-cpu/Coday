@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { Icon } from '../../shared/ui/Icon';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { NavItem } from './config';
-import './CardNav.css';
+// CardNav.css removed
 
 interface MobileNavOverlayProps {
   items: NavItem[];
