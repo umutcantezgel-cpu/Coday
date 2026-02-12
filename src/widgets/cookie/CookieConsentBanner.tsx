@@ -57,13 +57,13 @@ export const CookieConsentBanner: React.FC = () => {
                   <h3 className="text-lg font-bold text-gray-900 mb-2">
                     Privatsphäre-Einstellungen
                   </h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                  <p className="text-sm text-gray-700 leading-relaxed">
                     Wir verwenden Cookies und ähnliche Technologien, um Ihr Erlebnis zu verbessern,
                     Leistung zu messen und personalisierte Inhalte anzuzeigen. Einige sind
                     essenziell, andere helfen uns, diese Website und Ihre Erfahrung zu verbessern.
                   </p>
                 </div>
-                <div className="flex flex-wrap gap-4 text-xs text-gray-500 justify-center lg:justify-start">
+                <div className="flex flex-wrap gap-4 text-xs text-gray-600 justify-center lg:justify-start">
                   <Link to="/legal/privacy" className="hover:text-primary underline">
                     Datenschutzerklärung
                   </Link>
