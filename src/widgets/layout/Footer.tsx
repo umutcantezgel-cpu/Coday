@@ -19,17 +19,15 @@ export const Footer: React.FC = () => {
                 src="/images/brand/coday-wordmark.svg"
                 alt="Coday"
                 className="h-16 w-auto mb-6"
-                width={112}
-                height={64}
               />
             </div>
-            <p className="text-sm text-gray-300 max-w-xs mb-6 font-medium">{t('footer.slogan')}</p>
+            <p className="text-sm text-gray-400 max-w-xs mb-6 font-medium">{t('footer.slogan')}</p>
 
             {/* Trust Visual */}
             <div className="flex items-center gap-3 bg-white/5 p-3 rounded-xl border border-white/10 max-w-xs">
               <div className="w-12 h-12 rounded-lg overflow-hidden flex-shrink-0 bg-white">
                 <img
-                  src="/images/hero/business-handshake-partnerschaft-tuer-offen-zusammenarbeit-vertrauen-320w.webp"
+                  src="/images/hero/business-handshake-partnerschaft-tuer-offen-zusammenarbeit-vertrauen.webp"
                   alt="Partnerschaft"
                   className="w-full h-full object-cover"
                   width={48}
@@ -41,13 +39,13 @@ export const Footer: React.FC = () => {
                 <div className="text-xs font-bold text-white uppercase tracking-wider">
                   {t('footer.trust.title')}
                 </div>
-                <div className="text-[10px] text-gray-300">{t('footer.trust.desc')}</div>
+                <div className="text-[10px] text-gray-400">{t('footer.trust.desc')}</div>
               </div>
             </div>
           </div>
 
           <div>
-            <h3 className="text-xs font-bold text-gray-300 uppercase tracking-wider mb-4">
+            <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">
               {t('footer.sections.pricing')}
             </h3>
             <ul className="space-y-3">
@@ -71,7 +69,7 @@ export const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h3 className="text-xs font-bold text-gray-300 uppercase tracking-wider mb-4">
+            <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">
               {t('footer.sections.knowledge')}
             </h3>
             <ul className="space-y-3">
@@ -111,7 +109,7 @@ export const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h3 className="text-xs font-bold text-gray-300 uppercase tracking-wider mb-4">
+            <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">
               {t('footer.sections.career')}
             </h3>
             <ul className="space-y-3">
@@ -174,7 +172,7 @@ export const Footer: React.FC = () => {
               <Icon name="linkedin" />
             </a>
           </div>
-          <div className="flex flex-wrap justify-center md:justify-end gap-x-4 gap-y-2 text-xs text-gray-300">
+          <div className="flex flex-wrap justify-center md:justify-end gap-x-4 gap-y-2 text-xs text-gray-500">
             <NavLink to="/legal/agb" className="hover:text-white transition-colors">
               {t('nav.legal.agb')}
             </NavLink>

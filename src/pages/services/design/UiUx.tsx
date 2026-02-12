@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { LocalizedNavLink as NavLink } from '../../../shared/ui/LocalizedLink';
 import { Icon } from '../../../shared/ui/Icon';
 import { Button } from '../../../shared/ui/Button';
 import { SeoHead } from '../../../shared/ui/SeoHead';
@@ -11,8 +10,14 @@ import { motion } from 'framer-motion';
 const UiUx: React.FC = () => {
   const { t } = useTranslation('services');
 
-  const processSteps = t('ui_ux_page.process.steps', { returnObjects: true }) as { title: string; desc: string }[];
-  const psychologyItems = t('ui_ux_page.psychology.items', { returnObjects: true }) as { title: string; desc: string }[];
+  const processSteps = t('ui_ux_page.process.steps', { returnObjects: true }) as {
+    title: string;
+    desc: string;
+  }[];
+  const psychologyItems = t('ui_ux_page.psychology.items', { returnObjects: true }) as {
+    title: string;
+    desc: string;
+  }[];
   const deliverables = t('ui_ux_page.deliverables.items', { returnObjects: true }) as string[];
   const faqItems = t('ui_ux_page.faq.items', { returnObjects: true }) as { q: string; a: string }[];
 
@@ -85,7 +90,9 @@ const UiUx: React.FC = () => {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-display font-bold mb-4">{t('ui_ux_page.process.title')}</h2>
+            <h2 className="text-4xl font-display font-bold mb-4">
+              {t('ui_ux_page.process.title')}
+            </h2>
             <p className="text-xl text-slate-600">{t('ui_ux_page.process.description')}</p>
           </div>
 
@@ -116,7 +123,9 @@ const UiUx: React.FC = () => {
       <section className="py-24 bg-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-display font-bold mb-4">{t('ui_ux_page.psychology.title')}</h2>
+            <h2 className="text-4xl font-display font-bold mb-4">
+              {t('ui_ux_page.psychology.title')}
+            </h2>
             <p className="text-xl text-slate-400">{t('ui_ux_page.psychology.description')}</p>
           </div>
 
@@ -137,10 +146,15 @@ const UiUx: React.FC = () => {
       {/* Deliverables Section */}
       <section className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-display font-bold mb-12">{t('ui_ux_page.deliverables.title')}</h2>
+          <h2 className="text-3xl font-display font-bold mb-12">
+            {t('ui_ux_page.deliverables.title')}
+          </h2>
           <div className="flex flex-wrap justify-center gap-4">
             {deliverables.map((item, i) => (
-              <span key={i} className="px-6 py-3 bg-pink-50 text-pink-700 rounded-full font-bold border border-pink-100">
+              <span
+                key={i}
+                className="px-6 py-3 bg-pink-50 text-pink-700 rounded-full font-bold border border-pink-100"
+              >
                 {item}
               </span>
             ))}

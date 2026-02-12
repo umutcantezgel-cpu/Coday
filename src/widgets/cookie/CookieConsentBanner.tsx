@@ -13,7 +13,7 @@ export const CookieConsentBanner: React.FC = () => {
   useEffect(() => {
     // Check store state instead of raw localStorage for consistency
     if (!hasConsented) {
-      const timer = setTimeout(() => setIsVisible(true), 7000);
+      const timer = setTimeout(() => setIsVisible(true), 1500);
       return () => clearTimeout(timer);
     } else if (isVisible) {
       // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -57,19 +57,13 @@ export const CookieConsentBanner: React.FC = () => {
                   <h3 className="text-lg font-bold text-gray-900 mb-2">
                     Privatsphäre-Einstellungen
                   </h3>
-                  <div className="text-sm text-gray-700 leading-relaxed flex flex-wrap gap-1">
-                    <span>Wir verwenden Cookies</span>
-                    <span>und ähnliche Technologien,</span>
-                    <span>um Ihr Erlebnis zu verbessern,</span>
-                    <span>Leistung zu messen</span>
-                    <span>und personalisierte Inhalte anzuzeigen.</span>
-                    <span>Einige sind essenziell,</span>
-                    <span>andere helfen uns,</span>
-                    <span>diese Website und Ihre Erfahrung</span>
-                    <span>zu verbessern.</span>
-                  </div>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Wir verwenden Cookies und ähnliche Technologien, um Ihr Erlebnis zu verbessern,
+                    Leistung zu messen und personalisierte Inhalte anzuzeigen. Einige sind
+                    essenziell, andere helfen uns, diese Website und Ihre Erfahrung zu verbessern.
+                  </p>
                 </div>
-                <div className="flex flex-wrap gap-4 text-xs text-gray-600 justify-center lg:justify-start">
+                <div className="flex flex-wrap gap-4 text-xs text-gray-500 justify-center lg:justify-start">
                   <Link to="/legal/privacy" className="hover:text-primary underline">
                     Datenschutzerklärung
                   </Link>

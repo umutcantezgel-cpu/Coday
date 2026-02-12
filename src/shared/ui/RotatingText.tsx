@@ -54,7 +54,7 @@ const RotatingText = forwardRef<RotatingTextRef, RotatingTextProps>(
     {
       texts,
       transition = { type: 'spring', damping: 25, stiffness: 300 },
-      initial = false,
+      initial = { opacity: 0, filter: 'blur(8px)' },
       animate = { opacity: 1, filter: 'blur(0px)' },
       exit = { opacity: 0, filter: 'blur(8px)' },
       animatePresenceMode = 'wait',

@@ -32,9 +32,8 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
 
   useEffect(() => {
     if (imgRef.current && imgRef.current.complete) {
-      // Avoid synchronous setState warning by pushing to next tick
-      const timer = setTimeout(() => setIsLoaded(true), 0);
-      return () => clearTimeout(timer);
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setIsLoaded(true);
     }
   }, []);
 

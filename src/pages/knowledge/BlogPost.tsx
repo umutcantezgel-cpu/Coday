@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams, Navigate } from 'react-router-dom';
-import { LocalizedLink as Link, getLocalizedPath } from '../../shared/ui/LocalizedLink';
+import { LocalizedLink as Link } from '../../shared/ui/LocalizedLink';
+import { getLocalizedPath } from '../../shared/lib/navigation';
 import { ArrowLeft, CalendarBlank, Clock, User } from '@phosphor-icons/react';
 import { getBlogPost, getBlogPosts } from '../../features/blog/model/data';
 import { OptimizedImage } from '../../shared/ui/OptimizedImage';

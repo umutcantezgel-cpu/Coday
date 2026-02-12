@@ -32,40 +32,6 @@ function detectTechStack(html: string): string[] {
   return [...new Set(stack)];
 }
 
-function extractJson(text: string): string {
-  try {
-    // Remove markdown code blocks if present
-    let clean = text
-      .replace(/```json/gi, '')
-      .replace(/```/g, '')
-      .trim();
-
-    // Find the first outer brace or bracket
-    const firstBrace = clean.indexOf('{');
-    const firstBracket = clean.indexOf('[');
-
-    let start = -1;
-    let end = -1;
-
-    // Determine if we are looking for an object or array
-    if (firstBrace !== -1 && (firstBracket === -1 || firstBrace < firstBracket)) {
-      start = firstBrace;
-      end = clean.lastIndexOf('}');
-    } else if (firstBracket !== -1) {
-      start = firstBracket;
-      end = clean.lastIndexOf(']');
-    }
-
-    if (start !== -1 && end !== -1 && end > start) {
-      return clean.substring(start, end + 1);
-    }
-
-    return clean;
-  } catch (e) {
-    return text;
-  }
-}
-
 // Agent prompts for website analysis
 // ADAPTED FOR SPA/METADATA FALLBACK
 const AGENT_PROMPTS: Record<string, string> = {
@@ -340,7 +306,10 @@ ANTWORTE NUR MIT DIESEM STRICTEN JSON FORMAT:
     }
 
     // Clean cleanup of potential markdown
-    const cleanedText = extractJson(text);
+    const cleanedText = text
+      .replace(/```json/g, '')
+      .replace(/```/g, '')
+      .trim();
 
     try {
       const parsedRaw = JSON.parse(cleanedText);
@@ -502,7 +471,10 @@ serve(async (req: Request) => {
       const text = await callGemini(prompt, 'planner');
 
       // Parse JSON with basic cleanup
-      const cleanedText = extractJson(text);
+      const cleanedText = text
+        .replace(/```json/g, '')
+        .replace(/```/g, '')
+        .trim();
       const plan = JSON.parse(cleanedText);
 
       return new Response(JSON.stringify(plan), {

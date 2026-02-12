@@ -7,7 +7,6 @@ type BlurTextProps = {
   delay?: number;
   className?: string;
   animateBy?: 'words' | 'letters';
-  direction?: 'top' | 'bottom';
   threshold?: number;
   rootMargin?: string;
   animationFrom?: Record<string, string | number>;
@@ -35,7 +34,6 @@ const BlurText: React.FC<BlurTextProps> = ({
   delay = 200,
   className = '',
   animateBy = 'words',
-  direction = 'top',
   threshold = 0.1,
   rootMargin = '0px',
   animationFrom,
@@ -63,7 +61,7 @@ const BlurText: React.FC<BlurTextProps> = ({
     return () => observer.disconnect();
   }, [threshold, rootMargin]);
 
-  const defaultFrom = useMemo(() => ({ filter: 'blur(10px)', opacity: 0 }), [direction]);
+  const defaultFrom = useMemo(() => ({ filter: 'blur(10px)', opacity: 0 }), []);
 
   const defaultTo = useMemo(
     () => [
@@ -73,7 +71,7 @@ const BlurText: React.FC<BlurTextProps> = ({
       },
       { filter: 'blur(0px)', opacity: 1 },
     ],
-    [direction]
+    []
   );
 
   const fromSnapshot = animationFrom ?? defaultFrom;
@@ -89,7 +87,7 @@ const BlurText: React.FC<BlurTextProps> = ({
     <span
       ref={ref}
       className={`blur-text ${className}`}
-      style={{ display: 'inline-block', verticalAlign: 'bottom' }}
+      style={{ display: 'inline-flex', flexWrap: 'wrap', alignItems: 'baseline' }}
     >
       {elements.map((segment, index) => {
         const animateKeyframes = buildKeyframes(fromSnapshot, toSnapshots);

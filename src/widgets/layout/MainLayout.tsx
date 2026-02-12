@@ -2,14 +2,13 @@ import React, { Suspense, lazy } from 'react';
 import { useLocation, Outlet } from 'react-router-dom';
 import CardNav from '../navigation/CardNav';
 // ChatWidget lazy loaded below
-// CookieConsentBanner lazy loaded below
+import { CookieConsentBanner, CookieSettingsModal } from '../cookie';
 import { FloatingActionMenu } from '../floating-menu/FloatingActionMenu';
 
 const Footer = lazy(() => import('./Footer'));
 const ChatWidget = lazy(() =>
   import('../chatbot').then((module) => ({ default: module.ChatWidget }))
 );
-const CookieConsentBanner = lazy(() => import('../cookie/CookieConsentBanner'));
 
 interface LayoutProps {
   children?: React.ReactNode;
@@ -54,8 +53,8 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
 
       <Suspense fallback={null}>
         <CookieConsentBanner />
+        <CookieSettingsModal />
       </Suspense>
-      {/* Force Rebuild v2 */}
     </div>
   );
 };

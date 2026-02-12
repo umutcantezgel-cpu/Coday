@@ -15,20 +15,28 @@ i18n
   // init i18next
   // for all options read: https://www.i18next.com/overview/configuration-options
   .init({
-    fallbackLng: false,
+    fallbackLng: 'de',
     supportedLngs: ['de', 'en'],
     debug: import.meta.env.DEV, // Enable debug in development
 
-    // Only load essential namespaces eagerly — others load on demand
-    ns: ['common', 'home'],
+    ns: [
+      'common',
+      'home',
+      'blog',
+      'form',
+      'pricing',
+      'process',
+      'services',
+      'tools',
+      'work',
+      'industries',
+      'knowledge',
+      'legal',
+      'careers',
+      'contact',
+      'dashboard',
+    ],
     defaultNS: 'common',
-
-    // Prevent loading ALL languages upfront
-    preload: false,
-    partialBundledLanguages: true,
-
-    // Load namespaces on demand when useTranslation('ns') is called
-    load: 'currentOnly',
 
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default

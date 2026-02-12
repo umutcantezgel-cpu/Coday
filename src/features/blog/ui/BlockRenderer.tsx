@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import {
@@ -31,7 +32,6 @@ import { motion, useScroll, useTransform, useInView, AnimatePresence } from 'mot
 
 // Interactive Components (Lazy Loaded)
 // Interactive Components (Lazy Loaded)
-/* eslint-disable @typescript-eslint/no-explicit-any */
 const ROI_Calculator = React.lazy(() =>
   import('./interactive/ROI_Calculator').then((m) => ({
     default: (m as any).ROI_Calculator || m.default,
@@ -90,7 +90,6 @@ const AgencyCostCalculator = React.lazy(() =>
     default: (m as any).AgencyCostCalculator || m.default,
   }))
 ) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
-/* eslint-enable @typescript-eslint/no-explicit-any */
 
 import { KeyTakeaways } from './KeyTakeaways';
 import { GlossaryTerm } from './GlossaryTerm';

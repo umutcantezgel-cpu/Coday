@@ -57,10 +57,6 @@ export default defineConfig({
         drop_debugger: true,
       },
     },
-    target: 'esnext',
-    modulePreload: {
-      polyfill: false,
-    },
-    cssCodeSplit: false,
+    target: 'es2022',
   },
 });

@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { LocalizedNavLink as NavLink } from '../../../shared/ui/LocalizedLink';
 import { Icon } from '../../../shared/ui/Icon';
 import { Button } from '../../../shared/ui/Button';
 import { SeoHead } from '../../../shared/ui/SeoHead';
@@ -12,8 +11,13 @@ const BrandIdentity: React.FC = () => {
   const { t } = useTranslation('services');
 
   const tags = t('brand_identity_page.digital_branding.tags', { returnObjects: true }) as string[];
-  const processSteps = t('brand_identity_page.process.steps', { returnObjects: true }) as { title: string; desc: string }[];
-  const deliverables = t('brand_identity_page.deliverables.items', { returnObjects: true }) as string[];
+  const processSteps = t('brand_identity_page.process.steps', { returnObjects: true }) as {
+    title: string;
+    desc: string;
+  }[];
+  const deliverables = t('brand_identity_page.deliverables.items', {
+    returnObjects: true,
+  }) as string[];
 
   return (
     <>
@@ -73,7 +77,10 @@ const BrandIdentity: React.FC = () => {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             {tags.map((tag, i) => (
-              <span key={i} className="px-6 py-3 bg-purple-50 text-purple-700 rounded-full font-bold border border-purple-100">
+              <span
+                key={i}
+                className="px-6 py-3 bg-purple-50 text-purple-700 rounded-full font-bold border border-purple-100"
+              >
                 {tag}
               </span>
             ))}
@@ -84,7 +91,9 @@ const BrandIdentity: React.FC = () => {
       {/* Process Section */}
       <section className="py-24 bg-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl font-display font-bold mb-16 text-center">{t('brand_identity_page.process.title')}</h2>
+          <h2 className="text-4xl font-display font-bold mb-16 text-center">
+            {t('brand_identity_page.process.title')}
+          </h2>
 
           <div className="grid md:grid-cols-4 gap-6">
             {processSteps.map((step, i) => (
@@ -110,7 +119,9 @@ const BrandIdentity: React.FC = () => {
       {/* Deliverables Section */}
       <section className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-display font-bold mb-12">{t('brand_identity_page.deliverables.title')}</h2>
+          <h2 className="text-3xl font-display font-bold mb-12">
+            {t('brand_identity_page.deliverables.title')}
+          </h2>
           <div className="grid md:grid-cols-3 gap-4">
             {deliverables.map((item, i) => (
               <div key={i} className="flex items-center gap-3 p-4 bg-slate-50 rounded-xl">

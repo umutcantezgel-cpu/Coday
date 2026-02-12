@@ -13,21 +13,22 @@ import {
 import { OptimizedIcon } from '../shared/ui/OptimizedIcon';
 import { useTranslation } from 'react-i18next';
 import { OptimizedImage } from '../shared/ui/OptimizedImage';
+import GradientText from '../shared/ui/GradientText';
 import CountUp from '../shared/ui/CountUp';
 import BlurText from '../shared/ui/BlurText';
 
 // Premium UI Components
 import RotatingText from '../shared/ui/RotatingText';
 import { BentoCard } from '../shared/ui/MagicBento';
+import LogoLoop from '../shared/ui/LogoLoop';
 
 // Lazy load heavy components
-const LogoLoop = React.lazy(() => import('../shared/ui/LogoLoop'));
 const AgencyComparisonTable = React.lazy(
   () => import('../features/analyzer/ui/AgencyComparisonTable')
 );
 
 import { cn } from '../shared/lib/utils';
-import { baseButtonStyles, buttonVariants, buttonSizes } from '../shared/ui/Button';
+import { baseButtonStyles, buttonVariants, buttonSizes } from '../shared/ui/ButtonStyles';
 
 import { SeoHead } from '../shared/ui/SeoHead';
 
@@ -61,9 +62,14 @@ const Home: React.FC = () => {
           <h1 className="font-display font-black text-5xl sm:text-7xl lg:text-8xl tracking-tight leading-none mb-8 text-secondary uppercase drop-shadow-sm">
             {t('hero.headline_prefix')}
             <br className="hidden md:block" />
-            <span className="inline-block bg-gradient-to-r from-[#1A9A9A] via-[#2D3748] to-[#1A9A9A] bg-[length:200%_auto] animate-gradient text-transparent bg-clip-text">
+            <GradientText
+              colors={['#1A9A9A', '#2D3748', '#1A9A9A']}
+              animationSpeed={8}
+              showBorder={false}
+              className="inline-block"
+            >
               {t('hero.headline_gradient')}
-            </span>
+            </GradientText>
           </h1>
           <div className="max-w-3xl mx-auto mb-12">
             <RotatingText
@@ -156,7 +162,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Comparison Section */}
-      <React.Suspense fallback={<div className="h-[600px]" />}>
+      <React.Suspense fallback={<div className="h-96" />}>
         <AgencyComparisonTable />
       </React.Suspense>
 
@@ -175,7 +181,7 @@ const Home: React.FC = () => {
                 />
                 <span className="text-primary">{t('philosophy.history')}</span>
               </h2>
-              <div className="space-y-6 text-lg text-slate-700 leading-relaxed">
+              <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
                 <p>{t('philosophy.text_overhead')}</p>
                 <p>
                   <strong className="text-secondary font-bold">{t('philosophy.standard')}</strong>{' '}
@@ -187,14 +193,13 @@ const Home: React.FC = () => {
               {/* Organic shape backdrop */}
               <div className="absolute inset-0 bg-primary/10 rounded-[2rem] transform rotate-3 scale-95"></div>
               <OptimizedImage
-                src="/images/hero/business-handshake-partnerschaft-tuer-offen-zusammenarbeit-vertrauen-640w.webp"
+                src="/images/hero/business-handshake-partnerschaft-tuer-offen-zusammenarbeit-vertrauen.webp"
                 alt="Vertrauensvolle Zusammenarbeit"
                 className="relative rounded-[2rem] shadow-flat-lg bg-white p-2 transform -rotate-2 hover:rotate-0 transition-all duration-500 w-full"
-                loading="lazy"
-                width={640}
-                height={358}
-                sizes="(max-width: 400px) 100vw, (max-width: 640px) 640px, (max-width: 1024px) 75vw, 50vw"
-                srcSet="/images/hero/business-handshake-partnerschaft-tuer-offen-zusammenarbeit-vertrauen-320w.webp 320w, /images/hero/business-handshake-partnerschaft-tuer-offen-zusammenarbeit-vertrauen-640w.webp 640w, /images/hero/business-handshake-partnerschaft-tuer-offen-zusammenarbeit-vertrauen-1024w.webp 1024w"
+                priority
+                width={1920}
+                height={1072}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
               />
             </div>
           </div>
@@ -299,28 +304,24 @@ const Home: React.FC = () => {
               <span className="text-primary">{t('tech_stack.title_suffix')}</span>
             </h2>
           </div>
-          <React.Suspense fallback={<div className="h-16" />}>
-            <LogoLoop
-              logos={[
-                { node: <span className="font-bold text-secondary/60 text-xl">React</span> },
-                { node: <span className="font-bold text-secondary/60 text-xl">Next.js</span> },
-                { node: <span className="font-bold text-secondary/60 text-xl">TypeScript</span> },
-                { node: <span className="font-bold text-secondary/60 text-xl">Tailwind</span> },
-                { node: <span className="font-bold text-secondary/60 text-xl">Node.js</span> },
-                { node: <span className="font-bold text-secondary/60 text-xl">Supabase</span> },
-                {
-                  node: <span className="font-bold text-secondary/60 text-xl">Framer Motion</span>,
-                },
-                { node: <span className="font-bold text-secondary/60 text-xl">Vercel</span> },
-              ]}
-              speed={60}
-              direction="left"
-              logoHeight={32}
-              gap={80}
-              fadeOut={true}
-              pauseOnHover={true}
-            />
-          </React.Suspense>
+          <LogoLoop
+            logos={[
+              { node: <span className="font-bold text-secondary/60 text-xl">React</span> },
+              { node: <span className="font-bold text-secondary/60 text-xl">Next.js</span> },
+              { node: <span className="font-bold text-secondary/60 text-xl">TypeScript</span> },
+              { node: <span className="font-bold text-secondary/60 text-xl">Tailwind</span> },
+              { node: <span className="font-bold text-secondary/60 text-xl">Node.js</span> },
+              { node: <span className="font-bold text-secondary/60 text-xl">Supabase</span> },
+              { node: <span className="font-bold text-secondary/60 text-xl">Framer Motion</span> },
+              { node: <span className="font-bold text-secondary/60 text-xl">Vercel</span> },
+            ]}
+            speed={60}
+            direction="left"
+            logoHeight={32}
+            gap={80}
+            fadeOut={true}
+            pauseOnHover={true}
+          />
         </div>
       </section>
 
@@ -331,13 +332,9 @@ const Home: React.FC = () => {
             <div className="order-2 lg:order-1 relative">
               <div className="absolute top-0 start-0 w-24 h-24 bg-accent/20 rounded-full blur-xl -translate-x-1/2 -translate-y-1/2 rtl:translate-x-1/2"></div>
               <OptimizedImage
-                src="/images/services/drei-kunden-reviews-640w.webp"
+                src="/images/services/drei-kunden-reviews.webp"
                 alt="Zufriedene Partner"
                 className="relative rounded-3xl shadow-flat-lg w-full bg-white p-2"
-                width={637}
-                height={356}
-                sizes="(max-width: 768px) 100vw, 640px"
-                srcSet="/images/services/drei-kunden-reviews-320w.webp 320w, /images/services/drei-kunden-reviews-640w.webp 640w"
               />
             </div>
             <div className="order-1 lg:order-2">
