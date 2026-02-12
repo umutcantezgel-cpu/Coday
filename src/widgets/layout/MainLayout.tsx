@@ -55,6 +55,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
       <Suspense fallback={null}>
         <CookieConsentBanner />
       </Suspense>
+      {/* Force Rebuild v2 */}
     </div>
   );
 };
