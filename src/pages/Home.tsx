@@ -13,7 +13,6 @@ import {
 import { OptimizedIcon } from '../shared/ui/OptimizedIcon';
 import { useTranslation } from 'react-i18next';
 import { OptimizedImage } from '../shared/ui/OptimizedImage';
-import GradientText from '../shared/ui/GradientText';
 import CountUp from '../shared/ui/CountUp';
 import BlurText from '../shared/ui/BlurText';
 
@@ -62,14 +61,9 @@ const Home: React.FC = () => {
           <h1 className="font-display font-black text-5xl sm:text-7xl lg:text-8xl tracking-tight leading-none mb-8 text-secondary uppercase drop-shadow-sm">
             {t('hero.headline_prefix')}
             <br className="hidden md:block" />
-            <GradientText
-              colors={['#1A9A9A', '#2D3748', '#1A9A9A']}
-              animationSpeed={8}
-              showBorder={false}
-              className="inline-block"
-            >
+            <span className="inline-block bg-gradient-to-r from-[#1A9A9A] via-[#2D3748] to-[#1A9A9A] bg-[length:200%_auto] animate-gradient text-transparent bg-clip-text">
               {t('hero.headline_gradient')}
-            </GradientText>
+            </span>
           </h1>
           <div className="max-w-3xl mx-auto mb-12">
             <RotatingText
