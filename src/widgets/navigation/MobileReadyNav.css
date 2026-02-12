@@ -53,25 +53,12 @@
   letter-spacing: -0.02em;
 }
 
-.nav-desktop-container-nuclear {
+.nav-desktop-links {
   display: none !important;
 }
 
 @media (min-width: 1024px) {
-  .nav-desktop-container-nuclear {
-    display: flex !important;
-    align-items: center;
-    gap: 0.25rem;
-  }
-}
-
-.nav-sections-desktop {
-  display: none !important;
-  /* Force hide on mobile by default with extreme prejudice */
-}
-
-@media (min-width: 1024px) {
-  .nav-sections-desktop {
+  .nav-desktop-links {
     display: flex !important;
     align-items: center;
     gap: 0.25rem;
@@ -295,6 +282,8 @@ body.mobile-nav-open #fab-container {
 .mobile-overlay-container {
   position: fixed;
   inset: 0;
+  height: 100dvh;
+  /* Fallback and dynamic height */
   z-index: 9999;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);

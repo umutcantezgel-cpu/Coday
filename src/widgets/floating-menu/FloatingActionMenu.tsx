@@ -32,7 +32,10 @@ export const FloatingActionMenu: React.FC = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-max flex flex-col items-end gap-4">
+    <div
+      id="fab-container"
+      className="floating-action-menu fixed bottom-6 right-6 z-max flex flex-col items-end gap-4"
+    >
       {/* Social Media Sub-Menu */}
       <AnimatePresence>
         {showSocials && isOpen && (

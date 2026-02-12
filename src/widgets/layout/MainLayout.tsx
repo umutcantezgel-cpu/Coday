@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import { useLocation, Outlet } from 'react-router-dom';
-import CardNav from '../navigation/CardNav';
+import MobileReadyNav from '../navigation/MobileReadyNav';
 // ChatWidget lazy loaded below
 import { CookieConsentBanner, CookieSettingsModal } from '../cookie';
 import { FloatingActionMenu } from '../floating-menu/FloatingActionMenu';
@@ -25,8 +25,8 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
       <a href="#main-content" className="skip-link">
         Zum Hauptinhalt springen
       </a>
-      {/* World Class Navigation */}
-      <CardNav />
+      {/* World Class Navigation (Mobile Ready) */}
+      <MobileReadyNav />
 
       {/* Spacer for fixed nav */}
       <div className="h-24" />

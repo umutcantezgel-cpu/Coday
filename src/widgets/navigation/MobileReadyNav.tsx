@@ -7,7 +7,7 @@ import { LocalizedLink as Link } from '../../shared/ui/LocalizedLink';
 import { useTranslation } from 'react-i18next';
 import { getNavItems } from './config';
 import { MobileNavOverlay } from './MobileNavOverlay';
-import './CardNav.css';
+import './MobileReadyNav.css';
 
 interface CardNavProps {
   className?: string;
@@ -17,7 +17,7 @@ interface CardNavProps {
   buttonTextColor?: string;
 }
 
-const CardNav: React.FC<CardNavProps> = ({
+const MobileReadyNav: React.FC<CardNavProps> = ({
   className = '',
   buttonBgColor = '#137A7A', // Darker Teal for >4.5:1 contrast
   buttonTextColor = '#fff',
@@ -92,7 +92,7 @@ const CardNav: React.FC<CardNavProps> = ({
       y: -10,
       scale: 0.95,
       filter: 'blur(10px)',
-      transition: { duration: 0.15 },
+      transition: { duration: 1.15 },
     },
   };
 
@@ -107,7 +107,7 @@ const CardNav: React.FC<CardNavProps> = ({
         </Link>
 
         {/* Desktop Links (Center) */}
-        <div className="nav-desktop-container-nuclear">
+        <div className="nav-desktop-links hidden lg:flex">
           {items.map((item) => (
             <div
               key={item.label}
@@ -277,4 +277,4 @@ const CardNav: React.FC<CardNavProps> = ({
   );
 };
 
-export default CardNav;
+export default MobileReadyNav;
