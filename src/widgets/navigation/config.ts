@@ -103,10 +103,7 @@ export const getNavItems = (): NavItem[] => [
     groups: [
       {
         title: 'nav.work.featured.title',
-        links: [
-
-          { label: 'nav.work.batherm', href: '/work/batherm' },
-        ],
+        links: [{ label: 'nav.work.batherm', href: 'https://www.batherm.de' }],
       },
       {
         title: 'nav.work.all.title',

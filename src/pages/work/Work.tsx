@@ -30,7 +30,7 @@ const Work: React.FC = () => {
     excerpt: project.content[currentLang].challenge.description,
     tags: project.content[currentLang].stats.map((s) => s.value),
     category: project.category, // internal category
-    externalLink: `/work/${project.slug}`,
+    externalLink: project.liveUrl || `/work/${project.slug}`,
   }));
 
   const filteredProjects =
@@ -45,10 +45,7 @@ const Work: React.FC = () => {
 
   return (
     <div className="bg-background-light min-h-screen">
-      <SeoHead
-        title={`${t('hero.title')} | Coday`}
-        description={t('hero.description')}
-      />
+      <SeoHead title={`${t('hero.title')} | Coday`} description={t('hero.description')} />
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
@@ -75,10 +72,11 @@ const Work: React.FC = () => {
             <button
               key={item.id}
               onClick={() => handleFilterChange(index)}
-              className={`px-6 py-3 rounded-full text-sm font-bold transition-colors ${item.id === filter
-                ? 'bg-primary text-white'
-                : 'bg-white text-secondary hover:bg-gray-50 border border-gray-200'
-                }`}
+              className={`px-6 py-3 rounded-full text-sm font-bold transition-colors ${
+                item.id === filter
+                  ? 'bg-primary text-white'
+                  : 'bg-white text-secondary hover:bg-gray-50 border border-gray-200'
+              }`}
             >
               {item.label}
             </button>

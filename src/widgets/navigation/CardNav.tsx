@@ -182,24 +182,37 @@ const CardNav: React.FC<CardNavProps> = ({
                                   <div className="dropdown-group-title">{t(activeGroup.title)}</div>
                                 )}
 
-                                {activeGroup.links.map((link, i) => (
-                                  <Link
-                                    key={i}
-                                    to={link.href}
-                                    className="dropdown-link-item group"
-                                    onClick={() => setActiveCategory(null)}
-                                  >
-                                    <div className="link-icon-wrapper">
-                                      <Icon name="arrow-up-right" className="link-arrow" />
-                                    </div>
-                                    <div className="link-text">
-                                      <span className="link-label">{t(link.label)}</span>
-                                      {link.desc && (
-                                        <span className="link-desc">{t(link.desc)}</span>
-                                      )}
-                                    </div>
-                                  </Link>
-                                ))}
+                                {activeGroup.links.map((link, i) => {
+                                  const isExternal = link.href.startsWith('http');
+                                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                                  const LinkComponent = (isExternal ? 'a' : Link) as any;
+                                  const linkProps = isExternal
+                                    ? {
+                                        href: link.href,
+                                        target: '_blank',
+                                        rel: 'noopener noreferrer',
+                                      }
+                                    : { to: link.href };
+
+                                  return (
+                                    <LinkComponent
+                                      key={i}
+                                      {...linkProps}
+                                      className="dropdown-link-item group"
+                                      onClick={() => setActiveCategory(null)}
+                                    >
+                                      <div className="link-icon-wrapper">
+                                        <Icon name="arrow-up-right" className="link-arrow" />
+                                      </div>
+                                      <div className="link-text">
+                                        <span className="link-label">{t(link.label)}</span>
+                                        {link.desc && (
+                                          <span className="link-desc">{t(link.desc)}</span>
+                                        )}
+                                      </div>
+                                    </LinkComponent>
+                                  );
+                                })}
                               </div>
                             );
                           })()

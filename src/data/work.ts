@@ -48,10 +48,10 @@ export interface Project {
     de: ProjectContent;
     en: ProjectContent;
   };
+  liveUrl?: string;
 }
 
 export const workData: Record<string, Project> = {
-
   // Add other projects similarly...
 
   // ... Simplified for other entries to save context window, but structure is clear
@@ -59,6 +59,7 @@ export const workData: Record<string, Project> = {
     slug: 'batherm',
     category: 'development',
     thumbnail: 'plumbing',
+    liveUrl: 'https://www.batherm.de',
     heroImage: 'bg-surface-dark',
     content: {
       de: {
@@ -117,5 +118,4 @@ export const workData: Record<string, Project> = {
       },
     },
   },
-
 };

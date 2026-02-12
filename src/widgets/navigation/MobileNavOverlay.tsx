@@ -161,23 +161,36 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
                                   </h4>
                                 )}
                                 <div className="space-y-1">
-                                  {group.links.map((link) => (
-                                    <Link
-                                      key={link.href}
-                                      to={link.href}
-                                      className="mobile-link-item"
-                                      onClick={onClose}
-                                    >
-                                      <span className="font-medium text-slate-700">
-                                        {t(link.label)}
-                                      </span>
-                                      {link.desc && (
-                                        <span className="text-xs text-slate-500 line-clamp-1">
-                                          {t(link.desc)}
+                                  {group.links.map((link) => {
+                                    const isExternal = link.href.startsWith('http');
+                                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                                    const LinkComponent = (isExternal ? 'a' : Link) as any;
+                                    const linkProps = isExternal
+                                      ? {
+                                          href: link.href,
+                                          target: '_blank',
+                                          rel: 'noopener noreferrer',
+                                        }
+                                      : { to: link.href };
+
+                                    return (
+                                      <LinkComponent
+                                        key={link.href}
+                                        {...linkProps}
+                                        className="mobile-link-item"
+                                        onClick={onClose}
+                                      >
+                                        <span className="font-medium text-slate-700">
+                                          {t(link.label)}
                                         </span>
-                                      )}
-                                    </Link>
-                                  ))}
+                                        {link.desc && (
+                                          <span className="text-xs text-slate-500 line-clamp-1">
+                                            {t(link.desc)}
+                                          </span>
+                                        )}
+                                      </LinkComponent>
+                                    );
+                                  })}
                                 </div>
                               </div>
                             ))
