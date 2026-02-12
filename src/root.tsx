@@ -8,6 +8,8 @@ import {
   useLoaderData,
   type LoaderFunctionArgs,
 } from 'react-router';
+import '@fontsource-variable/inter';
+import '@fontsource-variable/outfit';
 import './index.css';
 import { LazyMotion, domAnimation, MotionConfig } from 'motion/react';
 import React from 'react';

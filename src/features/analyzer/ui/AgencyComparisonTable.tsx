@@ -73,12 +73,16 @@ const AgencyComparisonTable: React.FC = () => {
                     {feature.name}
                   </td>
                   <td className="py-4 md:py-8 px-4 text-gray-400 text-lg flex items-center">
-                    <Icon name="close" className="text-gray-600 mr-3" />
+                    <Icon name="close" size="md" className="text-gray-600 mr-3 flex-shrink-0" />
                     {feature.old}
                   </td>
                   <td className="py-4 md:py-8 px-4 text-white text-lg font-bold relative">
                     <div className="flex items-center">
-                      <Icon name="check_circle" className="text-primary mr-3 shadow-glow" />
+                      <Icon
+                        name="check_circle"
+                        size="md"
+                        className="text-primary mr-3 shadow-glow flex-shrink-0"
+                      />
                       {feature.new}
                     </div>
                   </td>

@@ -124,7 +124,7 @@ serve(async (req) => {
           const resend = new resendModule.Resend(resendApiKey);
           await resend.emails.send({
             from: 'Coday Booking <onboarding@resend.dev>',
-            to: ['umut@codayweb.de'], // Sandbox: Only verified email allowed
+            to: ['umut@codayweb.de', email], // Send to admin and user
             subject: `Terminbestätigung: ${date} um ${time_slot}`,
             html: `
                             <h2>Termin bestätigt!</h2>

@@ -60,8 +60,7 @@ const Home: React.FC = () => {
             </span>
           </div>
           <h1 className="font-display font-black text-5xl sm:text-7xl lg:text-8xl tracking-tight leading-none mb-8 text-secondary uppercase drop-shadow-sm">
-            {t('hero.headline_prefix')}
-            <br className="hidden md:block" />
+            {t('hero.headline_prefix')} <br className="hidden md:block" />
             <GradientText
               colors={['#1A9A9A', '#2D3748', '#1A9A9A']}
               animationSpeed={8}
@@ -176,9 +175,8 @@ const Home: React.FC = () => {
                   text={t('philosophy.traditional')}
                   delay={100}
                   animateBy="words"
-                  direction="top"
                   className="block"
-                />
+                />{' '}
                 <span className="text-primary">{t('philosophy.history')}</span>
               </h2>
               <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
@@ -214,7 +212,6 @@ const Home: React.FC = () => {
               text={t('industries.title_prefix')}
               delay={80}
               animateBy="words"
-              direction="bottom"
               className="inline"
             />{' '}
             <span className="text-primary">{t('industries.title_suffix')}</span>
@@ -224,7 +221,7 @@ const Home: React.FC = () => {
             <Link to="/services/industries/handwerk" className="block h-full">
               <BentoCard effect="tilt" tiltMax={12} className="p-6 text-start h-full">
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
-                  <OptimizedIcon icon={Construction} size="lg" className="text-primary" />
+                  <OptimizedIcon icon={Construction} size="xl" className="text-primary" />
                 </div>
                 <h3 className="font-bold text-lg text-secondary mb-2">
                   {t('industries.card_craft.title')}
@@ -239,7 +236,7 @@ const Home: React.FC = () => {
                 className="p-6 text-start h-full"
               >
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
-                  <OptimizedIcon icon={Apartment} size="lg" className="text-primary" />
+                  <OptimizedIcon icon={Apartment} size="xl" className="text-primary" />
                 </div>
                 <h3 className="font-bold text-lg text-secondary mb-2">
                   {t('industries.card_realestate.title')}
@@ -254,7 +251,7 @@ const Home: React.FC = () => {
                 className="p-6 text-start h-full"
               >
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
-                  <OptimizedIcon icon={ShoppingCart} size="lg" className="text-primary" />
+                  <OptimizedIcon icon={ShoppingCart} size="xl" className="text-primary" />
                 </div>
                 <h3 className="font-bold text-lg text-secondary mb-2">
                   {t('industries.card_shop.title')}
@@ -265,7 +262,7 @@ const Home: React.FC = () => {
             <Link to="/services/industries/dienstleistung" className="block h-full">
               <BentoCard effect="tilt" tiltMax={12} className="p-6 text-start h-full">
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
-                  <OptimizedIcon icon={Lightbulb} size="lg" className="text-primary" />
+                  <OptimizedIcon icon={Lightbulb} size="xl" className="text-primary" />
                 </div>
                 <h3 className="font-bold text-lg text-secondary mb-2">
                   {t('industries.card_consulting.title')}
@@ -280,7 +277,7 @@ const Home: React.FC = () => {
                 className="p-6 text-start h-full"
               >
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
-                  <OptimizedIcon icon={HealthAndSafety} size="lg" className="text-primary" />
+                  <OptimizedIcon icon={HealthAndSafety} size="xl" className="text-primary" />
                 </div>
                 <h3 className="font-bold text-lg text-secondary mb-2">
                   {t('industries.card_health.title')}
@@ -343,9 +340,8 @@ const Home: React.FC = () => {
                   text={t('testimonials.title_prefix')}
                   delay={100}
                   animateBy="words"
-                  direction="top"
                   className="block"
-                />
+                />{' '}
                 <span className="text-primary">{t('testimonials.title_suffix')}</span>
               </h2>
               <p className="text-xl text-slate-600 mb-8 font-light">{t('testimonials.text')}</p>

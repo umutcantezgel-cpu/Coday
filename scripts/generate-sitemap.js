@@ -3,10 +3,33 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const BUILD_DIR = path.resolve(__dirname, '../build/client');
+const ROOT_DIR = path.resolve(__dirname, '..');
+const BUILD_DIR = path.resolve(ROOT_DIR, 'build/client');
 const HOSTNAME = process.env.VITE_SITE_URL || 'https://www.codayweb.de';
 
-const routes = [
+// --- Helper to extract slugs from TS files (simple regex parsing) ---
+function extractSlugs(filePath, pattern) {
+  try {
+    const content = fs.readFileSync(path.resolve(ROOT_DIR, filePath), 'utf-8');
+    const matches = [...content.matchAll(pattern)];
+    return matches.map((m) => m[1]);
+  } catch (error) {
+    console.warn(`⚠️ Could not read or parse ${filePath}:`, error.message);
+    return [];
+  }
+}
+
+// Data Sources
+const blogSlugs = extractSlugs('src/features/blog/model/data.de.ts', /slug:\s*["']([^"']+)["']/g);
+const workSlugs = extractSlugs('src/data/work.ts', /slug:\s*["']([^"']+)["']/g);
+const industrySlugs = extractSlugs('src/data/industries.ts', /slug:\s*["']([^"']+)["']/g);
+
+console.log(
+  `Found ${blogSlugs.length} blog posts, ${workSlugs.length} case studies, ${industrySlugs.length} industries.`
+);
+
+// Static Routes (synced with routes.ts)
+const staticRoutes = [
   '/',
   '/services',
   '/services/industries',
@@ -28,13 +51,8 @@ const routes = [
   '/services/web-design/brand-identity',
   '/services/web-design/design-systems',
   '/services/web-design/audit',
-  // Industries
-  '/services/industries/handwerk',
-  '/services/industries/immobilien',
-  '/services/industries/gastronomie',
-  '/services/industries/gesundheit',
-  '/services/industries/dienstleistung',
-  '/services/industries/e-commerce',
+  // Industries (Overview + Static if any, though most are dynamic now)
+  // ... specific industry routes from routes.ts are handled via dynamic slugs if they match data
   // Core
   '/work',
   '/process',
@@ -58,7 +76,18 @@ const routes = [
   '/legal/datenschutz',
   '/legal/agb',
   '/dashboard',
+  // Misc
+  '/preview/icons',
 ];
+
+// Generate Dynamic Routes
+const dynamicRoutes = [
+  ...blogSlugs.map((slug) => `/knowledge/blog/${slug}`),
+  ...workSlugs.map((slug) => `/work/${slug}`),
+  ...industrySlugs.map((slug) => `/services/industries/${slug}`),
+];
+
+const allRoutes = [...new Set([...staticRoutes, ...dynamicRoutes])];
 
 const locales = ['de', 'en'];
 
@@ -76,7 +105,7 @@ function generateHreflangLinks(route) {
 }
 
 function generateSitemap() {
-  const urlEntries = routes.flatMap((route) =>
+  const urlEntries = allRoutes.flatMap((route) =>
     locales.map((lang) => {
       const urlPath = route === '/' ? '' : route;
       const loc = `${HOSTNAME}/${lang}${urlPath}`;
@@ -104,8 +133,14 @@ ${urlEntries.join('\n')}
 
   const sitemapPath = path.join(BUILD_DIR, 'sitemap.xml');
   fs.writeFileSync(sitemapPath, xml);
-  console.log(`✅ Sitemap generated at ${sitemapPath} (${routes.length * locales.length} URLs with hreflang)`);
+  console.log(
+    `✅ Sitemap generated at ${sitemapPath} (${allRoutes.length} distinct routes, ${allRoutes.length * locales.length} URLs with hreflang)`
+  );
+
+  // Also write to public dir for local dev verification
+  const publicPath = path.resolve(ROOT_DIR, 'public/sitemap.xml');
+  fs.writeFileSync(publicPath, xml);
+  console.log(`✅ Copy written to ${publicPath}`);
 }
 
 generateSitemap();
-
