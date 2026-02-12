@@ -13,7 +13,7 @@ export const CookieConsentBanner: React.FC = () => {
   useEffect(() => {
     // Check store state instead of raw localStorage for consistency
     if (!hasConsented) {
-      const timer = setTimeout(() => setIsVisible(true), 1500);
+      const timer = setTimeout(() => setIsVisible(true), 0);
       return () => clearTimeout(timer);
     } else if (isVisible) {
       // eslint-disable-next-line react-hooks/set-state-in-effect
