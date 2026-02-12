@@ -40,7 +40,7 @@ serve(async (req) => {
 
       const emailResult = await resend.emails.send({
         from: 'Coday Contact <onboarding@resend.dev>',
-        to: ['umut@codayweb.de', 'umut.yildirim@coday.de'], // Fallback to multiple emails
+        to: ['umut@codayweb.de'], // Sandbox: Only verified email allowed
         subject: `Neue Anfrage: ${name} (${project || 'Allgemein'})`,
         html: `
           <h2>Neue Kontaktanfrage</h2>
