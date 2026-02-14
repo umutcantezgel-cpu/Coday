@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Icon } from '../../../shared/ui/Icon';
+import { OptimizedIcon } from '../../../shared/ui/OptimizedIcon';
+import { ChartBar, ArrowRight, MagnifyingGlass, FileText } from '@phosphor-icons/react';
 import { Button } from '../../../shared/ui/Button';
 import { SeoHead } from '../../../shared/ui/SeoHead';
 import BlurText from '../../../shared/ui/BlurText';
@@ -11,7 +12,10 @@ import { motion } from 'framer-motion';
 const UxAudit: React.FC = () => {
   const { t } = useTranslation('services');
 
-  const analysisItems = t('ux_audit_page.what_we_analyze.items', { returnObjects: true }) as { title: string; desc: string }[];
+  const analysisItems = t('ux_audit_page.what_we_analyze.items', { returnObjects: true }) as {
+    title: string;
+    desc: string;
+  }[];
   const deliverables = t('ux_audit_page.deliverables.items', { returnObjects: true }) as string[];
 
   return (
@@ -25,7 +29,7 @@ const UxAudit: React.FC = () => {
       <section className="relative pt-32 pb-24 px-6 overflow-hidden bg-background-light">
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-50 text-orange-600 text-sm font-bold mb-8 border border-orange-100">
-            <Icon name="analytics" className="w-4 h-4" />
+            <OptimizedIcon icon={ChartBar} className="w-4 h-4" />
             <span>{t('ux_audit_page.hero.badge')}</span>
           </span>
 
@@ -34,7 +38,6 @@ const UxAudit: React.FC = () => {
               text={t('ux_audit_page.hero.title_prefix')}
               delay={100}
               animateBy="words"
-              direction="top"
               className="inline-block mr-4"
             />
             <GradientText
@@ -48,7 +51,7 @@ const UxAudit: React.FC = () => {
           <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto mb-12">
             {t('ux_audit_page.hero.description')}
           </p>
-          <Button size="lg" variant="primary" rightIcon={<Icon name="arrow_right" />}>
+          <Button size="lg" variant="primary" rightIcon={<OptimizedIcon icon={ArrowRight} />}>
             {t('ux_audit_page.hero.cta')}
           </Button>
         </div>
@@ -69,7 +72,9 @@ const UxAudit: React.FC = () => {
       {/* What We Analyze */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl font-display font-bold mb-16 text-center">{t('ux_audit_page.what_we_analyze.title')}</h2>
+          <h2 className="text-4xl font-display font-bold mb-16 text-center">
+            {t('ux_audit_page.what_we_analyze.title')}
+          </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {analysisItems.map((item, i) => (
@@ -82,7 +87,7 @@ const UxAudit: React.FC = () => {
                 className="bg-slate-50 border border-slate-100 rounded-2xl p-6"
               >
                 <div className="w-12 h-12 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center mb-4">
-                  <Icon name="query_stats" className="text-2xl" />
+                  <OptimizedIcon icon={MagnifyingGlass} className="text-2xl" />
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
                 <p className="text-slate-600 text-sm">{item.desc}</p>
@@ -95,7 +100,9 @@ const UxAudit: React.FC = () => {
       {/* Deliverables Section */}
       <section className="py-24 bg-slate-900 text-white">
         <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-4xl font-display font-bold mb-12 text-center">{t('ux_audit_page.deliverables.title')}</h2>
+          <h2 className="text-4xl font-display font-bold mb-12 text-center">
+            {t('ux_audit_page.deliverables.title')}
+          </h2>
 
           <div className="grid md:grid-cols-2 gap-4">
             {deliverables.map((item, i) => (
@@ -108,7 +115,7 @@ const UxAudit: React.FC = () => {
                 className="flex items-center gap-4 p-5 bg-slate-800 border border-slate-700 rounded-xl"
               >
                 <div className="w-8 h-8 rounded-lg bg-orange-500/20 text-orange-400 flex items-center justify-center flex-shrink-0">
-                  <Icon name="description" />
+                  <OptimizedIcon icon={FileText} />
                 </div>
                 <span className="font-medium">{item}</span>
               </motion.div>

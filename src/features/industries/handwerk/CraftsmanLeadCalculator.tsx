@@ -13,15 +13,19 @@ const CraftsmanLeadCalculator: React.FC = () => {
   return (
     <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
       <div className="bg-secondary p-6 text-white text-center">
-        <h3 className="font-display font-bold text-xl">{t('handwerk-bau.features.calculator.title')}</h3>
+        <h3 className="font-display font-bold text-xl">
+          {t('handwerk-bau.features.calculator.title')}
+        </h3>
         <p className="text-sm opacity-80">{t('handwerk-bau.features.calculator.subtitle')}</p>
       </div>
 
       <div className="p-8 space-y-8">
         <div>
           <div className="flex justify-between text-sm font-bold text-slate-700 mb-2">
-            <label htmlFor="avgOrderValue">{t('handwerk-bau.features.calculator.labels.order_value')}</label>
-            <span>{formatCurrency(avgOrderValue / 100 * 100, 'EUR', i18n.language)}</span>
+            <label htmlFor="avgOrderValue">
+              {t('handwerk-bau.features.calculator.labels.order_value')}
+            </label>
+            <span>{formatCurrency((avgOrderValue / 100) * 100, 'EUR', i18n.language)}</span>
           </div>
           <input
             id="avgOrderValue"
@@ -41,7 +45,9 @@ const CraftsmanLeadCalculator: React.FC = () => {
 
         <div>
           <div className="flex justify-between text-sm font-bold text-slate-700 mb-2">
-            <label htmlFor="monthlyLeads">{t('handwerk-bau.features.calculator.labels.leads')}</label>
+            <label htmlFor="monthlyLeads">
+              {t('handwerk-bau.features.calculator.labels.leads')}
+            </label>
             <span>{monthlyLeads} Leads</span>
           </div>
           <input
@@ -58,7 +64,9 @@ const CraftsmanLeadCalculator: React.FC = () => {
 
         <div>
           <div className="flex justify-between text-sm font-bold text-slate-700 mb-2">
-            <label htmlFor="closeRate">{t('handwerk-bau.features.calculator.labels.close_rate')}</label>
+            <label htmlFor="closeRate">
+              {t('handwerk-bau.features.calculator.labels.close_rate')}
+            </label>
             <span>{closeRate}%</span>
           </div>
           <input
@@ -80,7 +88,9 @@ const CraftsmanLeadCalculator: React.FC = () => {
           <span className="text-green-600 font-bold uppercase tracking-wider text-xs block mb-1">
             {t('handwerk-bau.features.calculator.labels.revenue_month')}
           </span>
-          <div className="text-4xl font-black text-green-700">{formatCurrency(revenue / 100 * 100, 'EUR', i18n.language)}</div>
+          <div className="text-4xl font-black text-green-700">
+            {formatCurrency((revenue / 100) * 100, 'EUR', i18n.language)}
+          </div>
         </div>
       </div>
     </div>

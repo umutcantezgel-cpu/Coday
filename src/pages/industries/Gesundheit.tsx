@@ -1,7 +1,11 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { SeoHead } from '@/shared/ui/SeoHead';
 import BlurText from '../../shared/ui/BlurText';
 import GradientText from '../../shared/ui/GradientText';
+import { OptimizedImage } from '@/shared/ui/OptimizedImage';
+import { IMAGES } from '@/shared/config/images';
+
 import PatientJourneyMap from '../../features/industries/healthcare/PatientJourneyMap';
 import WaitingRoomRoiCalculator from '../../features/industries/healthcare/WaitingRoomRoiCalculator';
 import TrustBadgeGrid from '../../features/industries/healthcare/TrustBadgeGrid';
@@ -11,20 +15,42 @@ const Gesundheit: React.FC = () => {
 
   return (
     <div className="bg-background-light min-h-screen">
+      <SeoHead
+        title="Software für das Gesundheitswesen & E-Health | Coday"
+        description={t('aerzte-gesundheit.hero.subheadline')}
+        pageType="service"
+        schemaData={{
+          service: {
+            name: `${t('aerzte-gesundheit.hero.headline')}`,
+            description: t('aerzte-gesundheit.hero.subheadline'),
+            serviceType: 'Healthcare Software Development',
+          },
+        }}
+      />
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-4 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <OptimizedImage
+            src={IMAGES.industries.healthcare.hero}
+            alt="Medical professional with digital tools"
+            className="w-full h-full object-cover opacity-10"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background-light via-white/50 to-background-light" />
+        </div>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
-                {t('gesundheit.hero.label')}
+              <span className="text-primary font-bold tracking-wider uppercase text-sm mb-6 block">
+                {t('aerzte-gesundheit.title')}
               </span>
               <h1 className="font-display font-black text-4xl sm:text-6xl text-secondary mb-6 tracking-tight">
                 <BlurText
-                  text={t('gesundheit.features.hero_tags').split('\n')[0]}
+                  text={t('aerzte-gesundheit.hero.headline')}
                   delay={100}
                   animateBy="words"
-                  direction="top"
                   className="inline-block mr-3"
                 />
                 <br />
@@ -33,15 +59,17 @@ const Gesundheit: React.FC = () => {
                   animationSpeed={4}
                   className="inline-block"
                 >
-                  {t('gesundheit.features.hero_tags').split('\n')[1]}
+                  {t('aerzte-gesundheit.hero.subheadline')}
                 </GradientText>
               </h1>
-              <p className="text-xl text-slate-600 leading-relaxed mb-8">
-                {t('gesundheit.features.hero_desc')}
+              <p className="text-xl text-slate-600 leading-relaxed mb-8 max-w-xl">
+                {t('aerzte-gesundheit.hero.subheadline')}
               </p>
               <div className="flex gap-4 mb-12">
                 <button className="bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:bg-secondary/90 transition-colors">
-                  {t('gesundheit.features.cta_analysis')}
+                  {t('aerzte-gesundheit.customFeatures.service_funnel.steps.leads', {
+                    defaultValue: 'Anfrage starten',
+                  })}
                 </button>
               </div>
             </div>
@@ -65,9 +93,11 @@ const Gesundheit: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="font-display font-bold text-3xl text-secondary mb-4">
-              {t('gesundheit.features.trust_title')}
+              {t('aerzte-gesundheit.solutions.team_vorstellung.title')}
             </h2>
-            <p className="text-slate-600">{t('gesundheit.features.trust_desc')}</p>
+            <p className="text-slate-600">
+              {t('aerzte-gesundheit.solutions.team_vorstellung.description')}
+            </p>
           </div>
 
           <TrustBadgeGrid />

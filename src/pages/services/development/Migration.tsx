@@ -1,7 +1,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Icon } from '../../../shared/ui/Icon';
+import { OptimizedIcon } from '../../../shared/ui/OptimizedIcon';
+import {
+  RocketLaunch,
+  ArrowRight,
+  X,
+  MinusCircle,
+  Check,
+  CheckCircle,
+  ArrowDown,
+} from '@phosphor-icons/react';
 import { Button } from '../../../shared/ui/Button';
 import { SeoHead } from '../../../shared/ui/SeoHead';
 import BlurText from '../../../shared/ui/BlurText';
@@ -14,8 +23,10 @@ const Migration: React.FC = () => {
 
   const processSteps = (t('migration_page.process.steps', { returnObjects: true }) as any[]) || [];
   const faqItems = (t('migration_page.faq.items', { returnObjects: true }) as any[]) || [];
-  const beforeItems = (t('migration_page.before_after.before.items', { returnObjects: true }) as any[]) || [];
-  const afterItems = (t('migration_page.before_after.after.items', { returnObjects: true }) as any[]) || [];
+  const beforeItems =
+    (t('migration_page.before_after.before.items', { returnObjects: true }) as any[]) || [];
+  const afterItems =
+    (t('migration_page.before_after.after.items', { returnObjects: true }) as any[]) || [];
   const fromTech = (t('migration_page.technologies.from', { returnObjects: true }) as any[]) || [];
   const toTech = (t('migration_page.technologies.to', { returnObjects: true }) as any[]) || [];
 
@@ -38,7 +49,7 @@ const Migration: React.FC = () => {
       <section className="relative pt-32 pb-24 px-6 overflow-hidden bg-background-light">
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-50 text-purple-600 text-sm font-bold mb-8 border border-purple-100">
-            <Icon name="rocket_launch" className="w-4 h-4" />
+            <OptimizedIcon icon={RocketLaunch} className="w-4 h-4" />
             <span>{t('migration_page.hero.label')}</span>
           </span>
 
@@ -47,7 +58,6 @@ const Migration: React.FC = () => {
               text={t('migration_page.hero.title_prefix')}
               delay={100}
               animateBy="words"
-              direction="top"
               className="inline-block mr-4"
             />
             <GradientText
@@ -61,7 +71,7 @@ const Migration: React.FC = () => {
           <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto mb-12">
             {t('migration_page.hero.description')}
           </p>
-          <Button size="lg" variant="primary" rightIcon={<Icon name="arrow_right" />}>
+          <Button size="lg" variant="primary" rightIcon={<OptimizedIcon icon={ArrowRight} />}>
             {t('migration_page.hero.cta')}
           </Button>
         </div>
@@ -71,7 +81,9 @@ const Migration: React.FC = () => {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-display font-bold mb-4">{t('migration_page.before_after.title')}</h2>
+            <h2 className="text-4xl font-display font-bold mb-4">
+              {t('migration_page.before_after.title')}
+            </h2>
             <p className="text-xl text-slate-600">{t('migration_page.before_after.description')}</p>
           </div>
 
@@ -80,14 +92,20 @@ const Migration: React.FC = () => {
             <div className="bg-red-50 border border-red-200 rounded-3xl p-8">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center">
-                  <Icon name="x" className="text-red-500 text-xl" weight="bold" />
+                  <OptimizedIcon icon={X} className="text-red-500 text-xl" weight="bold" />
                 </div>
-                <h3 className="text-xl font-bold text-red-700">{t('migration_page.before_after.before.label')}</h3>
+                <h3 className="text-xl font-bold text-red-700">
+                  {t('migration_page.before_after.before.label')}
+                </h3>
               </div>
               <ul className="space-y-4">
                 {safeBeforeItems.map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <Icon name="minus_circle" className="text-red-400 mt-1 flex-shrink-0" weight="fill" />
+                    <OptimizedIcon
+                      icon={MinusCircle}
+                      className="text-red-400 mt-1 flex-shrink-0"
+                      weight="fill"
+                    />
                     <span className="text-red-800">{item}</span>
                   </li>
                 ))}
@@ -98,14 +116,20 @@ const Migration: React.FC = () => {
             <div className="bg-green-50 border border-green-200 rounded-3xl p-8 transform md:translate-y-8">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-full bg-green-500/10 flex items-center justify-center">
-                  <Icon name="check" className="text-green-500 text-xl" weight="bold" />
+                  <OptimizedIcon icon={Check} className="text-green-500 text-xl" weight="bold" />
                 </div>
-                <h3 className="text-xl font-bold text-green-700">{t('migration_page.before_after.after.label')}</h3>
+                <h3 className="text-xl font-bold text-green-700">
+                  {t('migration_page.before_after.after.label')}
+                </h3>
               </div>
               <ul className="space-y-4">
                 {safeAfterItems.map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <Icon name="check_circle" className="text-green-500 mt-1 flex-shrink-0" weight="fill" />
+                    <OptimizedIcon
+                      icon={CheckCircle}
+                      className="text-green-500 mt-1 flex-shrink-0"
+                      weight="fill"
+                    />
                     <span className="text-green-800">{item}</span>
                   </li>
                 ))}
@@ -119,7 +143,9 @@ const Migration: React.FC = () => {
       <section className="py-24 bg-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-display font-bold mb-4">{t('migration_page.process.title')}</h2>
+            <h2 className="text-4xl font-display font-bold mb-4">
+              {t('migration_page.process.title')}
+            </h2>
             <p className="text-xl text-slate-400">{t('migration_page.process.description')}</p>
           </div>
 
@@ -153,7 +179,9 @@ const Migration: React.FC = () => {
       {/* Supported Technologies */}
       <section className="py-20 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 mb-12 text-center">
-          <h2 className="text-3xl font-display font-bold mb-4">{t('migration_page.technologies.title')}</h2>
+          <h2 className="text-3xl font-display font-bold mb-4">
+            {t('migration_page.technologies.title')}
+          </h2>
           <p className="text-lg text-slate-600">{t('migration_page.technologies.description')}</p>
         </div>
 
@@ -166,11 +194,11 @@ const Migration: React.FC = () => {
                 <div className="px-6 py-3 bg-red-50 border border-red-100 rounded-full mx-2 whitespace-nowrap">
                   <span className="font-bold text-red-600">{tech}</span>
                 </div>
-              )
+              ),
             }))}
           />
           <div className="text-center py-4">
-            <Icon name="arrow_down" className="text-3xl text-slate-400 animate-bounce" />
+            <OptimizedIcon icon={ArrowDown} className="text-3xl text-slate-400 animate-bounce" />
           </div>
           <LogoLoop
             speed={30}
@@ -180,7 +208,7 @@ const Migration: React.FC = () => {
                 <div className="px-6 py-3 bg-green-50 border border-green-100 rounded-full mx-2 whitespace-nowrap">
                   <span className="font-bold text-green-600">{tech}</span>
                 </div>
-              )
+              ),
             }))}
           />
         </div>

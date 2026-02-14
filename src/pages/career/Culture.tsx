@@ -1,10 +1,12 @@
 import React from 'react';
-import { Icon } from '@/shared/ui/Icon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
+import { CheckCircle } from '@phosphor-icons/react';
 import BlurText from '../../shared/ui/BlurText';
 import GradientText from '../../shared/ui/GradientText';
 import ValuesDeck from '../../features/culture/ValuesDeck';
 import TeamGallery from '../../features/culture/TeamGallery';
 import { useTranslation } from 'react-i18next';
+import { SeoHead } from '@/shared/ui/SeoHead';
 
 const Culture: React.FC = () => {
   const { t } = useTranslation('careers');
@@ -12,6 +14,10 @@ const Culture: React.FC = () => {
 
   return (
     <div className="bg-background-light min-h-screen">
+      <SeoHead
+        title={`${t('culture.hero.title_start')} ${t('culture.hero.title_gradient')} | Coday Culture`}
+        description={t('culture.hero.desc')}
+      />
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-4 text-center">
         <div className="max-w-4xl mx-auto relative z-10">
@@ -23,7 +29,6 @@ const Culture: React.FC = () => {
               text={t('culture.hero.title_start')}
               delay={100}
               animateBy="words"
-              direction="top"
               className="inline-block mr-4"
             />
             <br className="hidden md:block" />
@@ -58,7 +63,7 @@ const Culture: React.FC = () => {
               <ul className="space-y-4 text-gray-300">
                 {values.map((val, i) => (
                   <li key={i} className="flex items-center gap-3">
-                    <Icon name="check_circle" className="text-green-500" />
+                    <OptimizedIcon icon={CheckCircle} className="text-green-500" />
                     <span>{val}</span>
                   </li>
                 ))}

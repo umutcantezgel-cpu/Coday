@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Icon } from '@/shared/ui/Icon';
+import { Globe } from '@phosphor-icons/react';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'motion/react';
 
@@ -31,18 +32,14 @@ export const LanguageSwitcher: React.FC = () => {
 
   return (
     <motion.button
-      className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100/50 hover:bg-slate-100 text-slate-600 hover:text-slate-900 border border-slate-200/50 hover:border-slate-300 transition-all focus:outline-none focus:ring-2 focus:ring-primary/20"
+      className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100/50 hover:bg-slate-100 text-slate-600 hover:text-slate-900 border border-slate-200/50 hover:border-slate-300 transition-all focus:outline-none focus:ring-2 focus:ring-primary/20 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
       onClick={toggleLanguage}
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
-      aria-label={
-        i18n.language === 'de'
-          ? 'Switch to English'
-          : 'Auf Deutsch wechseln'
-      }
+      aria-label={i18n.language === 'de' ? 'Switch to English' : 'Auf Deutsch wechseln'}
       title="Switch Language"
     >
-      <Icon name="globe" className="w-4 h-4 opacity-70" />
+      <OptimizedIcon icon={Globe} className="w-4 h-4 opacity-70" />
       <span className="font-bold text-xs uppercase tracking-wider">
         {i18n.language === 'de' ? 'DE' : 'EN'}
       </span>

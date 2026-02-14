@@ -1,9 +1,18 @@
 import React, { useEffect } from 'react';
 import { useParams, NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Icon } from '@/shared/ui/Icon';
-import { workData } from '../../data/work';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
+import { Wrench, House, Heartbeat, Warning } from '@phosphor-icons/react';
+import { OptimizedImage } from '@/shared/ui/OptimizedImage';
+import { workData } from '@/shared/data/work';
 import { SeoHead } from '../../shared/ui/SeoHead';
+
+const iconMap: Record<string, React.ElementType> = {
+  handyman: Wrench,
+  house: House,
+  heartbeat: Heartbeat,
+  warning: Warning,
+};
 
 const ProjectDetail: React.FC = () => {
   const { t, i18n } = useTranslation('work');
@@ -33,10 +42,7 @@ const ProjectDetail: React.FC = () => {
 
   return (
     <div className="bg-background-light pt-24 pb-16">
-      <SeoHead
-        title={`${project.title} | Coday`}
-        description={project.subtitle}
-      />
+      <SeoHead title={`${project.title} | Coday`} description={project.subtitle} />
       {/* Breadcrumb */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
         <div className="flex items-center text-sm text-gray-500">
@@ -63,8 +69,8 @@ const ProjectDetail: React.FC = () => {
         {/* Hero Visual */}
         <div className="relative rounded-3xl overflow-hidden aspect-video bg-surface-dark shadow-2xl mb-12 group">
           <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-black flex items-center justify-center">
-            <Icon
-              name={projectData.thumbnail}
+            <OptimizedIcon
+              icon={iconMap[projectData.thumbnail] || Wrench}
               className="text-9xl text-white/10 group-hover:scale-110 transition-transform duration-1000"
             />
           </div>
@@ -136,7 +142,7 @@ const ProjectDetail: React.FC = () => {
                 <ul className="space-y-3 mb-0">
                   {project.challenge.list.map((item, i) => (
                     <li key={i} className="flex items-start text-red-900 font-medium">
-                      <Icon name="warning" className="mr-3 text-red-500" />
+                      <OptimizedIcon icon={Warning} className="mr-3 text-red-500" />
                       {item}
                     </li>
                   ))}
@@ -174,6 +180,32 @@ const ProjectDetail: React.FC = () => {
                   </div>
                 ))}
               </div>
+            </div>
+
+            {/* Solution */}
+            <div>
+              <h2 className="font-display font-bold text-3xl text-gray-900 mb-6">
+                {project.solution.title}
+              </h2>
+              <p className="text-gray-600 leading-relaxed mb-8 text-lg">
+                {project.solution.description}
+              </p>
+              {project.solution.images && project.solution.images.length > 0 && (
+                <div className="grid md:grid-cols-2 gap-6">
+                  {project.solution.images.map((img, i) => (
+                    <div
+                      key={i}
+                      className="rounded-2xl overflow-hidden shadow-lg border border-gray-100 group"
+                    >
+                      <OptimizedImage
+                        src={img}
+                        alt={`${project.title} Solution ${i + 1}`}
+                        className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* Results */}

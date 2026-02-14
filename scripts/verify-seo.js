@@ -76,7 +76,7 @@ async function verifyUrl(browser, path, expectedLang) {
     // If we navigated to /en, we expect to stay there.
 
     // SeoHead uses standard logic.
-    const expectedCanonical = `https://coday.de${path.replace(/\/$/, '')}`; // simplified
+    const expectedCanonical = `https://www.codayweb.de${path.replace(/\/$/, '')}`; // simplified
 
     if (!canonical) {
       console.error(`[FAIL] Canonical tag missing.`);

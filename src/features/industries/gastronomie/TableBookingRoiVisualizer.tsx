@@ -18,15 +18,21 @@ const TableBookingRoiVisualizer: React.FC = () => {
   return (
     <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
       <div className="bg-secondary p-6 text-white text-center">
-        <h3 className="font-display font-bold text-xl">{t('gastronomie-hotellerie.features.roi_visualizer.title')}</h3>
-        <p className="text-sm opacity-80">{t('gastronomie-hotellerie.features.roi_visualizer.subtitle')}</p>
+        <h3 className="font-display font-bold text-xl">
+          {t('gastronomie-hotellerie.features.roi_visualizer.title')}
+        </h3>
+        <p className="text-sm opacity-80">
+          {t('gastronomie-hotellerie.features.roi_visualizer.subtitle')}
+        </p>
       </div>
 
       <div className="grid lg:grid-cols-2">
         <div className="p-8 space-y-8 bg-gray-50/50">
           <div>
             <div className="flex justify-between text-sm font-bold text-slate-700 mb-2">
-              <label htmlFor="coversPerDay">{t('gastronomie-hotellerie.features.roi_visualizer.labels.covers')}</label>
+              <label htmlFor="coversPerDay">
+                {t('gastronomie-hotellerie.features.roi_visualizer.labels.covers')}
+              </label>
               <span>{coversPerDay}</span>
             </div>
             <input
@@ -43,7 +49,9 @@ const TableBookingRoiVisualizer: React.FC = () => {
 
           <div>
             <div className="flex justify-between text-sm font-bold text-slate-700 mb-2">
-              <label htmlFor="avgCheck">{t('gastronomie-hotellerie.features.roi_visualizer.labels.avg_check')}</label>
+              <label htmlFor="avgCheck">
+                {t('gastronomie-hotellerie.features.roi_visualizer.labels.avg_check')}
+              </label>
               <span>{avgCheck}€</span>
             </div>
             <input
@@ -60,7 +68,9 @@ const TableBookingRoiVisualizer: React.FC = () => {
 
           <div>
             <div className="flex justify-between text-sm font-bold text-slate-700 mb-2">
-              <label htmlFor="noShowRate">{t('gastronomie-hotellerie.features.roi_visualizer.labels.no_show_rate')}</label>
+              <label htmlFor="noShowRate">
+                {t('gastronomie-hotellerie.features.roi_visualizer.labels.no_show_rate')}
+              </label>
               <span>{noShowRate}%</span>
             </div>
             <input
@@ -99,7 +109,9 @@ const TableBookingRoiVisualizer: React.FC = () => {
             <span className="text-5xl font-black text-green-600">
               {formatCurrency(recoveredRevenue * 12, 'EUR', i18n.language)}
             </span>
-            <p className="text-xs text-gray-500 mt-2">{t('gastronomie-hotellerie.features.roi_visualizer.results.context')}</p>
+            <p className="text-xs text-gray-500 mt-2">
+              {t('gastronomie-hotellerie.features.roi_visualizer.results.context')}
+            </p>
           </div>
 
           <button className="w-full bg-primary text-white font-bold py-3 rounded-xl shadow-lg hover:bg-primary/90 transition-all">

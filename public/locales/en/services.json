@@ -1,4 +1,73 @@
 {
+  "images": {
+    "overview": {
+      "hero": {
+        "alt": "Digital Services and Service Excellence"
+      },
+      "development": {
+        "alt": "Professional Web Development and Software Engineering"
+      },
+      "webdesign": {
+        "alt": "Creative Web Design and User Experience"
+      },
+      "seo": {
+        "alt": "Search Engine Optimization and Visibility"
+      },
+      "marketing": {
+        "alt": "Omnichannel Marketing Hub with connected SEO and Social Media Strategy"
+      },
+      "gmb": {
+        "alt": "Google My Business Optimization with 5-star rating on smartphone"
+      },
+      "terminbuchung": {
+        "alt": "Online Appointment Booking System with calendar and available time slots"
+      },
+      "bewertungen": {
+        "alt": "Satisfied customers giving positive 5-star ratings with thumbs up"
+      }
+    },
+    "web_dev": {
+      "hero": {
+        "alt": "Modern Website Builder and Development Environment"
+      },
+      "solutions": {
+        "alt": "Responsive B2B Web Solutions on various devices"
+      }
+    },
+    "app_dev": {
+      "hero": {
+        "alt": "Mobile App Calendar Dashboard and User Interface"
+      },
+      "consulting": {
+        "alt": "IT Consulting and Support"
+      },
+      "workflow": {
+        "alt": "App Design Wireframes and User Flow Concepts"
+      },
+      "webdesign": {
+        "alt": "Interface Design and Development"
+      }
+    },
+    "branding": {
+      "hero": {
+        "alt": "Architecture office as a metaphor for brand building"
+      },
+      "visuals": {
+        "alt": "Professional Photography and Visualization"
+      },
+      "strategy": {
+        "alt": "Strategic Brand Planning"
+      }
+    },
+    "marketing": {
+      "hero": {
+        "alt": "Strategic Marketing Planning and SEO Analysis"
+      },
+      "omnichannel": {
+        "alt": "Omnichannel Marketing Hub"
+      }
+    }
+  },
   "api_integration_page": {
     "connectivity": {
       "description": "Whether REST, GraphQL, SOAP, or Webhooks. We connect everything that has an interface.",
@@ -57,6 +126,10 @@
         "errors": {
           "desc": "No more copy-paste errors. Data is always correct.",
           "title": "Zero Errors"
+        },
+        "scalability": {
+          "desc": "Whether 10 or 10,000 transactions a day - your processes hold up.",
+          "title": "Scalability"
         },
         "speed": {
           "desc": "Data is available in all systems in real-time.",
@@ -198,6 +271,10 @@
     }
   },
   "ecommerce_page": {
+    "meta": {
+      "title": "E-Commerce Development | Shopify & Next.js Experts",
+      "description": "High-Performance Online Shops that sell. Scalable E-Commerce solutions with Shopify Plus, Hydrogen and Next.js."
+    },
     "comparison": {
       "custom": {
         "features": [
@@ -266,8 +343,14 @@
     },
     "roi_calculator": {
       "aov_label": "Average Order Value",
-      "conversion_label": "Out of 100 visitors...",
+      "conversion_label": "Conversion Rate",
       "conversion_unit": "People buy",
+      "metric_visitors": "Visitors / Month",
+      "metric_conversion": "Conversion Rate",
+      "metric_aov": "Ø Order Value",
+      "increase_note": "+0.8% by Coday",
+      "result_label": "Estimated Revenue Increase",
+      "cta_button": "Request Audit",
       "description": "A faster shop = more buyers = more revenue.",
       "explanation": "How it works: A faster shop convinces more visitors to buy (+0.5%) and they spend more on average (+10%).",
       "instruction": "Enter your numbers and see the result instantly.",
@@ -278,6 +361,26 @@
       "title": "How much more can you earn?",
       "visitors_label": "How many monthly visitors?",
       "visitors_unit": "Visitors"
+    },
+    "logo_loop": {
+      "title": "Powering Next-Gen Commerce"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "q": "How long does a shop migration take?",
+          "a": "For Shopify Plus migrations, we typically need 4-8 weeks, depending on data complexity."
+        },
+        {
+          "q": "Do you handle ERP integrations?",
+          "a": "Yes, we are experts in connecting SAP, Microsoft Dynamics, and Weclapp to Shopify and Custom Frontends."
+        },
+        {
+          "q": "What about SEO during migration?",
+          "a": "We guarantee zero traffic loss. Our migration protocols include comprehensive redirect maps and SEO monitoring."
+        }
+      ]
     },
     "stats": {
       "conversion_label": "Conversion Rate",
@@ -362,16 +465,19 @@
     "cms_comparison": {
       "contentful": {
         "badge": "Enterprise Choice",
-        "desc": "The Enterprise Standard. Robust, proven, and perfect for large organizations with strict workflows."
+        "desc": "The Enterprise Standard. Robust, proven, and perfect for large organizations with strict workflows.",
+        "title": "Contentful"
       },
       "description": "We partner with leading Headless Systems. We find the right tool for your use case.",
       "sanity": {
         "badge": "Best for Customization",
-        "desc": "Our top choice for maximum flexibility. Real-time collaboration and 'Content Lake' architecture."
+        "desc": "Our top choice for maximum flexibility. Real-time collaboration and 'Content Lake' architecture.",
+        "title": "Sanity.io"
       },
       "strapi": {
         "badge": "Open Source",
-        "desc": "Open Source and Self-Hosted. Full data control and no license costs for the Community Edition."
+        "desc": "Open Source and Self-Hosted. Full data control and no license costs for the Community Edition.",
+        "title": "Strapi"
       },
       "title": "The Best Tools on the Market"
     },
@@ -394,9 +500,15 @@
     },
     "hero": {
       "cta": "Get CMS Consultation",
-      "description": "Manage content centrally, deliver it everywhere. We integrate Contentful, Sanity, and Strapi into modern frontends.",
+      "description": "Manage content centrally, deliver it everywhere. We integrate Contentful, Sanity, and Strapi in modern frontends.",
       "title_prefix": "Headless CMS &",
       "title_suffix": "Content."
+    },
+    "process_visual": {
+      "label": "The Headless Architecture",
+      "step_1": "CMS (Content)",
+      "step_2": "API (Connection)",
+      "step_3": "Frontend (Design)"
     },
     "why_headless": {
       "description": "Separate frontend from backend for maximum flexibility and performance.",
@@ -510,9 +622,17 @@
     },
     "technologies": {
       "description": "We specialize in migrating from these legacy systems to the modern web.",
-      "from": ["WordPress", "Typo3", "Drupal", "Joomla", "Magento 1"],
+      "from": [
+        "WordPress",
+        "Typo3",
+        "Drupal",
+        "Joomla",
+        "Magento 1",
+        "Custom PHP",
+        "Java Monoliths"
+      ],
       "title": "Supported Technologies",
-      "to": ["Next.js", "React", "Supabase", "Vercel", "Sanity"]
+      "to": ["Next.js", "React", "Node.js", "Supabase", "Headless CMS", "Vercel Edge"]
     }
   },
   "performance_page": {
@@ -572,6 +692,10 @@
     }
   },
   "ui_ux_page": {
+    "meta": {
+      "title": "UI/UX Design | User-Centric Digital Experiences",
+      "description": "We design digital experiences users love. From Wireframes to High-Fidelity Prototypes – we create interfaces that convert."
+    },
     "deliverables": {
       "items": [
         "User Research Report",
@@ -684,6 +808,7 @@
       "title_suffix": "Gut Feeling."
     },
     "stats": {
+      "avg_conversion_lift": "+35%",
       "conversion_label": "Avg. Conversion Increase"
     },
     "what_we_analyze": {
@@ -842,21 +967,298 @@
       }
     }
   },
+  "services_data": {
+    "shared": {
+      "tech_process": [
+        {
+          "number": "01",
+          "title": "Discovery & Architecture",
+          "description": "We analyze your requirements, choose the optimal tech stack (Next.js, Node.js, Supabase) and design a scalable system architecture."
+        },
+        {
+          "number": "02",
+          "title": "UX/UI Design Phase",
+          "description": "Before we write a single line of code, we visualize the user experience. Wireframes, prototypes and high-fidelity designs ensure clarity."
+        },
+        {
+          "number": "03",
+          "title": "Agile Development",
+          "description": "We develop in short sprints with regular updates. You see progress live and can give feedback early."
+        },
+        {
+          "number": "04",
+          "title": "Quality Assurance",
+          "description": "Automated tests, code reviews and performance audits ensure your application runs error-free and blazing fast."
+        },
+        {
+          "number": "05",
+          "title": "Deployment & Scaling",
+          "description": "We bring your application live (Vercel/AWS) and provide necessary monitoring to keep it stable even with high user numbers."
+        }
+      ],
+      "design_process": [
+        {
+          "number": "01",
+          "title": "Research & Strategy",
+          "description": "We understand your brand, users, and goals. We analyze competitors and define the visual direction."
+        },
+        {
+          "number": "02",
+          "title": "Wireframing & UX",
+          "description": "We develop the structure and flow of your website. Focus on usability and conversion rate optimization."
+        },
+        {
+          "number": "03",
+          "title": "Visual Design (UI)",
+          "description": "We design the interface with modern tools (Figma). Pixel-perfect, aesthetic and in line with your branding."
+        },
+        {
+          "number": "04",
+          "title": "Prototyping & Animation",
+          "description": "We bring the design to life. Interactive prototypes and micro-animations show how the site will feel."
+        },
+        {
+          "number": "05",
+          "title": "Design System & Handoff",
+          "description": "We document all components in a Design System and prepare everything for seamless development."
+        }
+      ],
+      "tech_advantages": [
+        {
+          "icon": "lightning",
+          "title": "High Performance",
+          "description": "Load times under 1 second and perfect Lighthouse Score are our standard, not the goal."
+        },
+        {
+          "icon": "chart_bar",
+          "title": "Scalability First",
+          "description": "We build architectures that grow with your success. From 100 to 100,000 users without redevelopment."
+        },
+        {
+          "icon": "stack",
+          "title": "Modern Tech Stack",
+          "description": "We rely on Next.js, React, TypeScript and Tailwind – the gold standard of modern web development."
+        },
+        {
+          "icon": "shield_check",
+          "title": "Security by Design",
+          "description": "Security is not a feature, but a foundation. GDPR-compliant, encrypted and safe from threats."
+        },
+        {
+          "icon": "code",
+          "title": "Transparent Code",
+          "description": "No vendor lock-in. You receive clean, well-documented code that belongs to you."
+        },
+        {
+          "icon": "users",
+          "title": "Experienced Team",
+          "description": "Your project is implemented by senior developers who love complex challenges."
+        }
+      ],
+      "design_advantages": [
+        {
+          "icon": "user",
+          "title": "User-Centric",
+          "description": "Design that works. We put the user in the center for intuitive experiences."
+        },
+        {
+          "icon": "sparkle",
+          "title": "Modern Aesthetics",
+          "description": "We design interfaces that thrill. State-of-the-art design that positions your brand as premium."
+        },
+        {
+          "icon": "target",
+          "title": "Conversion-Optimized",
+          "description": "Beauty alone is not enough. Our designs guide the user specifically to action."
+        },
+        {
+          "icon": "monitor",
+          "title": "Responsive First",
+          "description": "Perfect display on all devices. From smartphone to 4K monitor."
+        },
+        {
+          "icon": "squares_four",
+          "title": "Design Systems",
+          "description": "Consistency and scalability through modular design systems."
+        },
+        {
+          "icon": "film_strip",
+          "title": "Motion Design",
+          "description": "Interaction and feedback through subtle animations enhance the experience."
+        }
+      ],
+      "tech_testimonials": [
+        {
+          "company": "Trobolo GmbH",
+          "name": "Malek Arab",
+          "role": "CEO",
+          "text": "Top Performance and very high technical competence in WordPress Development and Webhosting. We are 100% satisfied."
+        },
+        {
+          "company": "Automate365 GmbH",
+          "name": "Andreas Ahlert",
+          "role": "CEO",
+          "text": "Coday has taken our website to the next level! With an eye for detail and understanding of latest trends."
+        },
+        {
+          "company": "Licht Technik GmbH",
+          "name": "Niklas Bünning",
+          "role": "QM & Sales",
+          "text": "The Performance Hosting for the new website runs stably and offers good load times. The website is reliably maintained full-service."
+        },
+        {
+          "company": "Q-SURE projects GmbH",
+          "name": "Felix Faustmann",
+          "role": "CEO",
+          "text": "Very good cooperation, very good result. Even after Go-Live, support was excellent."
+        }
+      ],
+      "standard_faqs": [
+        {
+          "question": "What tech stack do you use?",
+          "answer": "We primarily use Next.js, React, TypeScript and Tailwind CSS. For databases we use Supabase (PostgreSQL) and for CMS solutions headless systems like Sanity or Strapi."
+        },
+        {
+          "question": "How long does a web project take?",
+          "answer": "That depends heavily on the scope. A corporate website takes approx. 4-8 weeks, more complex web apps or e-commerce solutions 3-6 months."
+        },
+        {
+          "question": "Do you also offer hosting?",
+          "answer": "We set up hosting infrastructures (mostly Vercel or AWS) that run in your name. We take care of setup, maintenance and scaling."
+        },
+        {
+          "question": "How much does a website cost with you?",
+          "answer": "Our projects typically start from €10,000. For complex web apps or shops we are usually between €25,000 and €50,000."
+        }
+      ]
+    },
+    "web-development": {
+      "react-nextjs-agentur": {
+        "title": "React & Next.js Development",
+        "description": "We build scalable frontends with modern frameworks for maximum performance and user experience.",
+        "long_description": "In modern web development, speed and user friendliness are crucial. With React and Next.js we rely on the industry standard for performant, scalable and maintainable web applications. We develop tailored solutions that combine technical excellence with outstanding design.",
+        "benefits": [
+          "Blazing fast load times",
+          "SEO-optimized Server-Side Rendering",
+          "Scalable component architecture",
+          "Future-proof technology"
+        ]
+      },
+      "e-commerce-shops": {
+        "title": "E-Commerce & Shops",
+        "description": "High-Performance Online Shops with Shopify or Custom Headless solutions for maximum conversion.",
+        "long_description": "We develop online shops that don't just look good, but sell. Whether Shopify Plus or Headless Commerce with Shopify Hydrogen – we build shopping experiences your customers love and increase your revenue.",
+        "benefits": [
+          "Optimized Checkout Funnel",
+          "Headless Commerce Architecture",
+          "ERP Integration",
+          "High-Performance Frontend"
+        ]
+      },
+      "full-stack-entwicklung": {
+        "title": "Full-Stack Web Apps",
+        "description": "Robust backends and APIs with Node.js, TypeScript and Edge Computing solutions.",
+        "long_description": "A strong frontend needs a powerful backend. We develop secure and scalable server architectures, APIs and databases that form the backbone of your digital products.",
+        "benefits": [
+          "High-performance APIs",
+          "Secure data processing",
+          "Real-time functionalities",
+          "Seamless integrations"
+        ]
+      },
+      "cloud-infrastructure": {
+        "title": "Cloud Infrastructure",
+        "description": "High-Performance Hosting and Deployment on Vercel or AWS for global availability.",
+        "long_description": "The right cloud strategy decides speed and availability. We rely on Serverless architectures and Edge Networks to deliver your content worldwide in milliseconds.",
+        "benefits": [
+          "Global availability",
+          "Automatic scaling",
+          "DDoS protection",
+          "Cost-efficient architecture"
+        ]
+      }
+    },
+    "web-design": {
+      "ux-ui-design": {
+        "title": "UX/UI Design",
+        "description": "Digital brand experience. User-centric design that makes your brand tangible.",
+        "long_description": "Your digital presence is often the first touchpoint. We translate your brand into digital interfaces that are not only functional but make your brand identity palpable with every click.",
+        "benefits": [
+          "Brand-compliant interfaces",
+          "Intuitive user journeys",
+          "Emotional digital experiences",
+          "Conversion-focused"
+        ]
+      },
+      "design-systems": {
+        "title": "Design Systems",
+        "description": "Consistent component libraries for scalable products and fast development.",
+        "long_description": "A Design System is the Single Source of Truth for your product. We develop modular component systems that ensure consistency and accelerate development.",
+        "benefits": ["Consistent UI", "Faster development", "Simplified maintenance", "Scalability"]
+      },
+      "website-relaunch": {
+        "title": "Website Relaunch",
+        "description": "From strategy to new design. We fundamentally modernize your web presence.",
+        "long_description": "Outdated websites cost revenue and reputation. We accompany your relaunch holistically: Strategy, UX concept, design and technical implementation from a single source.",
+        "benefits": [
+          "Modern Look & Feel",
+          "Optimized User Experience",
+          "Mobile First",
+          "SEO Relaunch Support"
+        ]
+      }
+    },
+    "growth": {
+      "seo-optimization": {
+        "title": "SEO & Traffic",
+        "description": "Maximum visibility in search engines. We bring your site to the top and ensure quality traffic.",
+        "long_description": "Being found is everything. With data-driven SEO strategy, technical optimization and high-quality content we ensure your target group finds you exactly when they search for you.",
+        "benefits": [
+          "Top rankings locally & globally",
+          "More qualified leads",
+          "Sustainable growth",
+          "Visibility ahead of competition"
+        ]
+      },
+      "performance-optimization": {
+        "title": "Performance",
+        "description": "High-Speed optimization for better User Experience, higher Conversion Rates and Top Google Rankings.",
+        "long_description": "Speed is a feature. Slow websites lose customers. We analyze and optimize your entire infrastructure for load times in the millisecond range.",
+        "benefits": [
+          "Better Conversion Rates",
+          "Lower Bounce Rates",
+          "Better Google Ranking",
+          "Satisfied Users"
+        ]
+      },
+      "digital-consulting": {
+        "title": "Consulting & Strategy",
+        "description": "Strategic consulting for your digital transformation. Tech stack, processes and growth.",
+        "long_description": "The digital world is complex. We give you orientation. From selecting the right technologies to optimizing your digital business processes.",
+        "benefits": [
+          "Clear Roadmap",
+          "Avoidance of bad investments",
+          "Neutral technology advice",
+          "Focus on Business Value"
+        ]
+      }
+    }
+  },
   "web_development_page": {
     "hero": {
-      "description": "We don't build \"homepages\", we build digital assets. Scalable, secure, and blazing fast. Specialized in modern web applications and complex online shops.",
+      "description": "We don't build \"Homepages\", we build digital assets. Scalable, secure and blazing fast. Specialized in modern web apps and complex online shops.",
       "label": "Technology Stack",
       "title_anim": "Fast",
       "title_static": "Web Development."
     },
     "tech_stack": {
-      "description": "Our technology stack is no accident. Every tool was selected for maximum speed, scalability, and search engine dominance.",
+      "description": "Our technology stack is no coincidence. Every tool was chosen for maximum speed, scalability, and search engine dominance.",
       "nextjs": {
-        "desc": "Server-side rendering and static generation for extremely fast load times.",
+        "desc": "Server-Side Rendering and static generation for extremely fast load times.",
         "title": "Next.js 14"
       },
       "supabase": {
-        "desc": "Real-time databases and authentication. Scalable and open source.",
+        "desc": "Real-time databases and authentication. Scalable and Open Source.",
         "title": "Supabase"
       },
       "tailwind": {
@@ -868,6 +1270,194 @@
         "desc": "Type-safe code that prevents errors before they happen.",
         "title": "TypeScript"
       }
+    },
+    "performance": {
+      "label": "Load Time Metrics",
+      "title": "Speed is Revenue. <br /> We optimize every millisecond.",
+      "description": "Google punishes slow sites. Users abandon them. Our architectures are optimized for top scores.",
+      "metrics": {
+        "lcp": {
+          "label": "Largest Contentful Paint",
+          "value": "0.8s"
+        },
+        "fid": {
+          "label": "First Input Delay",
+          "value": "12ms"
+        },
+        "cls": {
+          "label": "Visual Stability",
+          "value": "0.00"
+        }
+      },
+      "visual": {
+        "score_label": "Speed Score"
+      }
+    },
+    "architecture": {
+      "label": "Architecture",
+      "title": "Decoupled. Serverless. <br /> Limitless.",
+      "description": "We rely on modern decoupled architecture. Data is separated from design. Result: Infinite flexibility and maximum security.",
+      "list": [
+        "Global content caching (<50ms)",
+        "No direct DB access from browser",
+        "Static generation for instant load",
+        "Auto image optimization & lazy loading"
+      ],
+      "visualizer": {
+        "cms": {
+          "label": "Headless CMS",
+          "desc": "Sanity / Supabase",
+          "details": "Structured Content Lake"
+        },
+        "build": {
+          "label": "Build System",
+          "desc": "Next.js / CI/CD",
+          "details": "Static & Server Side Generation"
+        },
+        "edge": {
+          "label": "Edge Network",
+          "desc": "Vercel / CDN",
+          "details": "Global Distribution <50ms"
+        },
+        "user": {
+          "label": "End User",
+          "desc": "Browser / Device",
+          "details": "Instant Interaction"
+        },
+        "footer": "Modern Headless Architecture Flow"
+      }
+    },
+    "comparison": {
+      "label": "Tech Comparison",
+      "title": "Why Next.js vs. WordPress?",
+      "headers": {
+        "feature": "Feature",
+        "wordpress": "Wordpress / Builders",
+        "coday": "Coday Next.js Stack"
+      },
+      "rows": [
+        {
+          "feat": "Load Time",
+          "bad": "2.5s - 5.0s",
+          "good": "< 0.8s"
+        },
+        {
+          "feat": "Security",
+          "bad": "Plugin Vulnerabilities",
+          "good": "Static & Server-side Security"
+        },
+        {
+          "feat": "Scalability",
+          "bad": "Limited by Server/DB",
+          "good": "Global Edge Network"
+        },
+        {
+          "feat": "Maintenance",
+          "bad": "Constant Updates Required",
+          "good": "Automated Deployment"
+        },
+        {
+          "feat": "SEO",
+          "bad": "Basic Features",
+          "good": "Technical SEO Dominance"
+        }
+      ]
+    },
+    "security": {
+      "title": "Professional Security Standards",
+      "items": {
+        "owasp": {
+          "title": "OWASP Top 10",
+          "value": "Protected"
+        },
+        "ssl": {
+          "title": "SSL/TLS",
+          "value": "Top Grade A+"
+        },
+        "ddos": {
+          "title": "DDoS Protection",
+          "value": "Edge Layer"
+        },
+        "sql": {
+          "title": "SQL Injection",
+          "value": "Impossible"
+        },
+        "xss": {
+          "title": "XSS Attacks",
+          "value": "Sanitized"
+        },
+        "csrf": {
+          "title": "CSRF Tokens",
+          "value": "Auto-Handled"
+        }
+      }
+    },
+    "process": {
+      "label": "The Process",
+      "title": "Clean Code. <br /> No Compromises.",
+      "description": "We write code that remains maintainable in 3 years. Type-Safe, tested, and documented.",
+      "steps": [
+        {
+          "title": "Architecture & Tech Pack",
+          "desc": "Next.js, TypeScript, Supabase"
+        },
+        {
+          "title": "Components & Design",
+          "desc": "Atomic Design System"
+        },
+        {
+          "title": "Speed Optimization",
+          "desc": "Core Web Vitals Optimization"
+        },
+        {
+          "title": "Automated Testing",
+          "desc": "CI/CD & Unit Tests"
+        }
+      ],
+      "simulator": {
+        "title": "Code Quality Simulator",
+        "subtitle": "What makes software maintainable? Toggle the modules.",
+        "features": {
+          "ts": {
+            "label": "TypeScript Strict",
+            "desc": "Prevents runtime errors"
+          },
+          "test": {
+            "label": "Unit Tests",
+            "desc": "Catches regressions"
+          },
+          "ci": {
+            "label": "CI/CD Pipeline",
+            "desc": "Automated deployment"
+          },
+          "lint": {
+            "label": "ESLint / Prettier",
+            "desc": "Consistent code style"
+          },
+          "review": {
+            "label": "Code Reviews",
+            "desc": "Knowledge sharing"
+          }
+        },
+        "messages": {
+          "unstable": "Project is unstable. High Risk.",
+          "risky": "Project is unstable. High Bug Risk.",
+          "stable": "Basic Stability Reached.",
+          "good": "Good Quality. Maintainable.",
+          "enterprise": "Enterprise Grade. Max Scalability."
+        },
+        "status_label": "Stability",
+        "project_status": "Project Status",
+        "mission_accomplished": "Mission Accomplished"
+      },
+      "code_snippet": {
+        "loading_comment": "// Fast Loading"
+      }
+    },
+    "cta": {
+      "title": "Ready for real speed?",
+      "description": "No Builders. No Bloat. Just code that sells.",
+      "button": "Request Dev Team"
     }
   }
 }

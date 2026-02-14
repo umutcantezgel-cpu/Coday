@@ -1,0 +1,121 @@
+{
+  "hero": {
+    "badge": "Coday Strategy Lab",
+    "title_start": "Software ist kein Code.",
+    "title_end": "Software ist Vermögen.",
+    "subtitle": "Wir transformieren Ihre vagen Anforderungen in eine glasklare Architektur. Bevor die erste Zeile Code geschrieben wird.",
+    "cta_primary": "Termin buchen",
+    "cta_secondary": "Reifegrad testen"
+  },
+  "diagnostic": {
+    "title": "Der Coday Reifegrad-Check",
+    "subtitle": "Nicht jede Agentur passt zu jedem gnadenlosen Anspruch. Finden Sie heraus, was Sie wirklich brauchen.",
+    "start_btn": "Analyse starten",
+    "questions": {
+      "q1": {
+        "text": "Wie steht es um Ihre Spezifikation?",
+        "options": {
+          "a": "Wir haben eine vage Idee.",
+          "b": "Wir haben Wireframes und User Stories.",
+          "c": "Wir haben ein detailliertes Lastenheft."
+        }
+      },
+      "q2": {
+        "text": "Welche Rolle spielt Software für Ihren Umsatz?",
+        "options": {
+          "a": "Support-Funktion (Internes Tool).",
+          "b": "Wichtiger Kanal (E-Commerce).",
+          "c": "Das Kernprodukt (SaaS / Platform)."
+        }
+      },
+      "q3": {
+        "text": "Wie hoch ist Ihr technisches internes Know-how?",
+        "options": {
+          "a": "Kein technisches Team vorhanden.",
+          "b": "CTO vorhanden, aber keine Entwickler.",
+          "c": "Vollständiges Dev-Team vorhanden."
+        }
+      },
+      "q4": {
+        "text": "Was ist Ihr primäres Ziel?",
+        "options": {
+          "a": "Schnellstmöglich online gehen (MVP).",
+          "b": "Skalierbarkeit und Sicherheit.",
+          "c": "Marktführerschaft durch Innovation."
+        }
+      }
+    },
+    "results": {
+      "strategy": {
+        "title": "Empfehlung: Strategy Workshop",
+        "description": "Sie haben Visionen, aber keinen Plan. Code wäre jetzt Geldverschwendung. Wir müssen erst die Architektur definieren.",
+        "action": "Strategy Call buchen"
+      },
+      "hybrid": {
+        "title": "Empfehlung: Hybrid Consulting",
+        "description": "Sie wissen wohin, aber nicht wie. Wir liefern den CTO-as-a-Service und das Core-Team.",
+        "action": "Projekt anfragen"
+      },
+      "execution": {
+        "title": "Empfehlung: High-Performance Dev Team",
+        "description": "Sie sind bereit. Ihr Plan ist solide. Wir liefern die schnellste Umsetzung am Markt.",
+        "action": "Entwickler buchen"
+      }
+    }
+  },
+  "methodology": {
+    "title": "Der Coday Blueprint",
+    "subtitle": "Unser Prozess eliminiert das Risiko von 'Spaghetti-Code' und 'Budget-Explosionen'.",
+    "steps": {
+      "1": {
+        "title": "Discovery",
+        "desc": "Wir brechen das Geschäftsmodell auf."
+      },
+      "2": {
+        "title": "Architecture",
+        "desc": "Wir planen Systemgrenzen und Datenflüsse."
+      },
+      "3": {
+        "title": "Prototyping",
+        "desc": "Validierung ohne teures Coding."
+      },
+      "4": {
+        "title": "Production",
+        "desc": "Code, der beim ersten Mal funktioniert."
+      },
+      "5": {
+        "title": "Asset",
+        "desc": "Software, die den Firmenwert steigert."
+      }
+    }
+  },
+  "matrix": {
+    "rows": {
+      "focus": {
+        "label": "Fokus",
+        "bad": "Ticket Abarbeitung",
+        "good": "Business Outcome"
+      },
+      "architecture": {
+        "label": "Architektur",
+        "bad": "Gewachsenes Chaos",
+        "good": "Skalierbare Module"
+      },
+      "speed": {
+        "label": "Geschwindigkeit",
+        "bad": "Schneller Start (Tech Debt)",
+        "good": "Schnelles Scaling (Asset)"
+      },
+      "cost": {
+        "label": "Kosten",
+        "bad": "Stundensätze & Nachforderungen",
+        "good": "Investment in Value"
+      }
+    }
+  },
+  "booking": {
+    "title": "Genug Theorie.",
+    "subtitle": "Sprechen Sie direkt mit einem Senior Architect, nicht mit einem Sales-Manager.",
+    "cta": "Termin auswählen"
+  }
+}

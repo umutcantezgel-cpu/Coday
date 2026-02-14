@@ -1,6 +1,18 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { SeoHead } from '@/shared/ui/SeoHead';
-import { Icon } from '@/shared/ui/Icon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
+import {
+  Gavel,
+  Shield,
+  Buildings,
+  Clock,
+  FileText,
+  CalendarCheck,
+  Code,
+  List,
+  CaretLeft,
+  EnvelopeSimple,
+} from '@phosphor-icons/react';
 import { useTranslation } from 'react-i18next';
 import { LocalizedNavLink as NavLink } from '@/shared/ui/LocalizedLink';
 import { motion, AnimatePresence } from 'motion/react';
@@ -8,7 +20,7 @@ import { motion, AnimatePresence } from 'motion/react';
 interface TocItem {
   id: string;
   label: string;
-  icon?: string;
+  icon?: React.ElementType;
 }
 
 interface LegalLayoutV2Props {
@@ -22,9 +34,9 @@ interface LegalLayoutV2Props {
 }
 
 const legalPages = [
-  { key: 'terms', path: '/legal/agb', icon: 'gavel', labelKey: 'nav.terms' },
-  { key: 'privacy', path: '/legal/datenschutz', icon: 'shield', labelKey: 'nav.privacy' },
-  { key: 'impressum', path: '/legal/impressum', icon: 'business', labelKey: 'nav.impressum' },
+  { key: 'terms', path: '/legal/agb', icon: Gavel, labelKey: 'nav.terms' },
+  { key: 'privacy', path: '/legal/datenschutz', icon: Shield, labelKey: 'nav.privacy' },
+  { key: 'impressum', path: '/legal/impressum', icon: Buildings, labelKey: 'nav.impressum' },
 ];
 
 export const LegalLayoutV2: React.FC<LegalLayoutV2Props> = ({
@@ -111,7 +123,7 @@ export const LegalLayoutV2: React.FC<LegalLayoutV2Props> = ({
                         : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
                     }`}
                 >
-                  <Icon name={page.icon!} className="w-4 h-4" />
+                  <OptimizedIcon icon={page.icon} className="w-4 h-4" />
                   <span className="hidden sm:inline">
                     {t(page.labelKey, { defaultValue: page.key })}
                   </span>
@@ -121,14 +133,14 @@ export const LegalLayoutV2: React.FC<LegalLayoutV2Props> = ({
 
             <div className="flex items-center gap-4 text-sm text-gray-500">
               <span className="hidden md:flex items-center gap-1.5">
-                <Icon name="clock" className="w-4 h-4" />
+                <OptimizedIcon icon={Clock} className="w-4 h-4" />
                 {estimatedReadTime} min
               </span>
               <button
                 onClick={() => window.print()}
                 className="flex items-center gap-1.5 hover:text-gray-900 transition-colors"
               >
-                <Icon name="file-text" className="w-4 h-4" />
+                <OptimizedIcon icon={FileText} className="w-4 h-4" />
                 <span className="hidden sm:inline">PDF</span>
               </button>
             </div>
@@ -146,13 +158,9 @@ export const LegalLayoutV2: React.FC<LegalLayoutV2Props> = ({
               transition={{ duration: 0.5 }}
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium mb-6">
-                <Icon
-                  name={
-                    pageType === 'terms'
-                      ? 'description'
-                      : pageType === 'privacy'
-                        ? 'shield'
-                        : 'business'
+                <OptimizedIcon
+                  icon={
+                    pageType === 'terms' ? FileText : pageType === 'privacy' ? Shield : Buildings
                   }
                   className="w-4 h-4"
                 />
@@ -170,13 +178,13 @@ export const LegalLayoutV2: React.FC<LegalLayoutV2Props> = ({
               <div className="flex items-center justify-center gap-4 text-sm text-slate-500">
                 {lastUpdated && (
                   <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm border border-gray-100">
-                    <Icon name="calendar_clock" className="w-4 h-4" />
+                    <OptimizedIcon icon={CalendarCheck} className="w-4 h-4" />
                     <span>{lastUpdated}</span>
                   </div>
                 )}
                 {version && (
                   <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm border border-gray-100">
-                    <Icon name="code" className="w-4 h-4" />
+                    <OptimizedIcon icon={Code} className="w-4 h-4" />
                     <span>v{version}</span>
                   </div>
                 )}
@@ -190,7 +198,7 @@ export const LegalLayoutV2: React.FC<LegalLayoutV2Props> = ({
               <aside className="hidden lg:block sticky top-36">
                 <nav className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6">
                   <h3 className="font-bold text-sm uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-2">
-                    <Icon name="menu" className="w-4 h-4" />
+                    <OptimizedIcon icon={List} className="w-4 h-4" />
                     {t('common.contents', { defaultValue: 'Contents' })}
                   </h3>
                   <div className="space-y-1">
@@ -205,7 +213,9 @@ export const LegalLayoutV2: React.FC<LegalLayoutV2Props> = ({
                               : 'text-slate-600 hover:text-primary hover:bg-primary/5 border-l-2 border-transparent'
                           }`}
                       >
-                        {item.icon && <Icon name={item.icon} className="w-4 h-4 flex-shrink-0" />}
+                        {item.icon && (
+                          <OptimizedIcon icon={item.icon} className="w-4 h-4 flex-shrink-0" />
+                        )}
                         <span className="truncate">{item.label}</span>
                       </a>
                     ))}
@@ -217,14 +227,14 @@ export const LegalLayoutV2: React.FC<LegalLayoutV2Props> = ({
                       onClick={() => window.print()}
                       className="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
                     >
-                      <Icon name="file-text" className="w-4 h-4" />
+                      <OptimizedIcon icon={FileText} className="w-4 h-4" />
                       {t('common.download_pdf', { defaultValue: 'Download PDF' })}
                     </button>
                     <a
                       href="mailto:umut@codayweb.de?subject=Legal Question"
                       className="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
                     >
-                      <Icon name="mail" className="w-4 h-4" />
+                      <OptimizedIcon icon={EnvelopeSimple} className="w-4 h-4" />
                       {t('common.contact', { defaultValue: 'Contact Us' })}
                     </a>
                   </div>
@@ -256,7 +266,7 @@ export const LegalLayoutV2: React.FC<LegalLayoutV2Props> = ({
             onClick={scrollToTop}
             className="fixed bottom-8 right-8 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center hover:bg-primary/90 transition-colors z-40"
           >
-            <Icon name="chevron_left" className="w-5 h-5 rotate-90" />
+            <OptimizedIcon icon={CaretLeft} className="w-5 h-5 rotate-90" />
           </motion.button>
         )}
       </AnimatePresence>

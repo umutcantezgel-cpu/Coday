@@ -6,12 +6,12 @@ import { ArrowLeft, CalendarBlank, Clock, User } from '@phosphor-icons/react';
 import { getBlogPost, getBlogPosts } from '../../features/blog/model/data';
 import { OptimizedImage } from '../../shared/ui/OptimizedImage';
 import BlurText from '../../shared/ui/BlurText';
-import { Helmet } from 'react-helmet-async';
 import { BlockRenderer } from '../../features/blog/ui/BlockRenderer';
 import { ReadingProgress, TableOfContents } from '../../features/blog/ui/ImmersiveReader';
 import { RelatedArticles, ShareFAB } from '../../features/blog/ui/NavigationLoop';
 import { ReadingScore } from '../../features/blog/ui/ReadingScore';
 import { useTranslation } from 'react-i18next';
+import { SeoHead } from '@/shared/ui/SeoHead';
 
 const BlogPost: React.FC = () => {
   const { slug: rawSlug } = useParams<{ slug: string }>();
@@ -32,18 +32,37 @@ const BlogPost: React.FC = () => {
   const currentLocale = i18n.language.startsWith('en') ? 'en' : 'de';
   const otherLocale = currentLocale === 'en' ? 'de' : 'en';
 
-  // If we didn't find the post in the current locale, check the other locale
-  // If we didn't find the post in the current locale, check the other locale
+  // Find the alternate language post for SEO
+
+  const otherPost = React.useMemo(() => {
+    if (!post) return null;
+    const otherLangPosts = getBlogPosts(otherLocale);
+    return otherLangPosts.find((p) => String(p.id) === String(post.id));
+  }, [post, otherLocale]);
+
+  const alternateLinks = React.useMemo(() => {
+    if (!otherPost) return undefined;
+
+    // Construct absolute URL for the alternate link
+    const BASE_URL = import.meta.env.VITE_SITE_URL || 'https://www.codayweb.de';
+    const path = getLocalizedPath(`/knowledge/blog/${otherPost.slug}`, otherLocale);
+
+    return [
+      {
+        hreflang: otherLocale,
+        href: `${BASE_URL}${path}`,
+      },
+    ];
+  }, [otherPost, otherLocale]);
+
   if (!post) {
     const otherLangPost = getBlogPost(slug || '', otherLocale);
 
-    // If we found it in the other locale, find the corresponding post in the CURRENT locale by ID
     if (otherLangPost) {
       const correctPost = getBlogPosts(currentLocale).find(
         (p) => String(p.id) === String(otherLangPost.id)
       );
       if (correctPost) {
-        // Redirect to the correct slug for the current language
         return (
           <Navigate
             to={getLocalizedPath(`/knowledge/blog/${correctPost.slug}`, i18n.language)}
@@ -52,8 +71,6 @@ const BlogPost: React.FC = () => {
         );
       }
     }
-
-    // If genuinely not found anywhere, go to overview
     return <Navigate to={getLocalizedPath('/knowledge/blog', i18n.language)} replace />;
   }
 
@@ -61,10 +78,22 @@ const BlogPost: React.FC = () => {
     <div className="bg-background-light min-h-screen pb-20">
       <ReadingProgress />
 
-      <Helmet>
-        <title>{post.title} | Coday Blog</title>
-        <meta name="description" content={post.excerpt} />
-      </Helmet>
+      <SeoHead
+        title={`${post.title} | Coday Blog`}
+        description={post.excerpt}
+        image={post.image}
+        pageType="article"
+        alternateLinks={alternateLinks}
+        schemaData={{
+          article: {
+            headline: post.title,
+            image: post.image,
+            datePublished: new Date().toISOString(), // Fallback as date isn't ISO. Ideally should parse post.date
+            author: post.author,
+            description: post.excerpt,
+          },
+        }}
+      />
 
       {/* Navigation Overlay */}
       <nav className="fixed top-24 left-4 z-40 md:left-8">
@@ -101,13 +130,7 @@ const BlogPost: React.FC = () => {
           </div>
 
           <h1 className="font-display font-black text-4xl md:text-6xl text-secondary mb-6 leading-tight drop-shadow-sm">
-            <BlurText
-              text={post.title}
-              delay={50}
-              animateBy="words"
-              direction="top"
-              className="block"
-            />
+            <BlurText text={post.title} delay={50} animateBy="words" className="block" />
           </h1>
 
           <p className="text-xl md:text-2xl text-text-slate font-light leading-relaxed drop-shadow-sm bg-white/30 backdrop-blur-sm p-4 rounded-xl inline-block border border-white/40">

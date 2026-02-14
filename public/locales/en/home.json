@@ -38,6 +38,10 @@
     "description": "Coday – The last agency you'll ever need. Web Design, Development & Digital Solutions from Wetzlar. Award-winning UI/UX, blazing-fast Next.js apps, and data-driven SEO strategies.",
     "title": "Coday | Web Design & Development Agency – We Kill Inefficiency"
   },
+  "images": {
+    "trust_collaboration": "Trusting Collaboration",
+    "satisfied_partners": "Satisfied Partners"
+  },
   "philosophy": {
     "history": "Are History.",
     "standard": "Coday is the new Standard.",
@@ -50,7 +54,10 @@
     "focused": "Focused",
     "load_time": "Ø Load Time",
     "ownership": "Code Ownership",
-    "profit": "Profit"
+    "profit": "Profit",
+    "seconds": "Seconds",
+    "percent": "Percent",
+    "hours": "Hours"
   },
   "tech_stack": {
     "label": "Technology",
@@ -63,5 +70,40 @@
     "text": "From local craft businesses to industrial companies. We deliver quality you can build on.",
     "title_prefix": "Partners who",
     "title_suffix": "Trust Us."
+  },
+  "comparison": {
+    "title_prefix": "Traditional vs.",
+    "subtitle": "Stop paying for inefficiency. Choose the protocol that wins.",
+    "columns": {
+      "metric": "Metric",
+      "agency": "Traditional Agency"
+    },
+    "features": {
+      "speed": {
+        "name": "Speed",
+        "old": "Weeks or Months (Bloated)",
+        "new": "Days or Weeks (The Coday Protocol)"
+      },
+      "pricing": {
+        "name": "Pricing Model",
+        "old": "Hourly Rates & Hidden Costs",
+        "new": "Flat Rate & Transparent"
+      },
+      "tech": {
+        "name": "Technology",
+        "old": "WordPress / Builders (Slow)",
+        "new": "Next.js / React (Instant)"
+      },
+      "rights": {
+        "name": "Rights",
+        "old": "Vendor Lock-in",
+        "new": "100% Code Ownership"
+      },
+      "contact": {
+        "name": "Contact",
+        "old": "Account Manager (Middleman)",
+        "new": "Direct Developer Access"
+      }
+    }
   }
 }

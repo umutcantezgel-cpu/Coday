@@ -1,5 +1,6 @@
 import { HydratedRouter } from 'react-router/dom';
-import './i18n';
+import i18n from './i18n';
+import { I18nextProvider } from 'react-i18next';
 import { startTransition, StrictMode } from 'react';
 import { hydrateRoot } from 'react-dom/client';
 import * as Sentry from '@sentry/react';
@@ -20,7 +21,9 @@ startTransition(() => {
   hydrateRoot(
     document,
     <StrictMode>
-      <HydratedRouter />
+      <I18nextProvider i18n={i18n}>
+        <HydratedRouter />
+      </I18nextProvider>
     </StrictMode>
   );
 });

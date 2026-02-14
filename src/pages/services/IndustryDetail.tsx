@@ -1,18 +1,45 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { LocalizedLink as Link } from '../../shared/ui/LocalizedLink';
-import { industriesData } from '../../data/industries';
+import { industriesData } from '@/shared/data/industries';
 import { OptimizedImage } from '../../shared/ui/OptimizedImage';
 import {
   industryHeroImages,
   industryFallbackImage,
   industryGalleryImages,
-} from '../../data/industryImages';
-import { XCircle, CheckCircle, ArrowRight, ArrowLeft, Briefcase } from '@phosphor-icons/react';
+} from '@/shared/data/industryImages';
+import {
+  XCircle,
+  CheckCircle,
+  ArrowRight,
+  ArrowLeft,
+  Hammer,
+  Buildings,
+  FirstAid,
+  Gavel,
+  ForkKnife,
+  ShoppingCart,
+  Briefcase,
+  RocketLaunch,
+} from '@phosphor-icons/react';
+import { OptimizedIcon } from '../../shared/ui/OptimizedIcon';
 import { SeoHead } from '../../shared/ui/SeoHead';
+
+const iconMap: Record<string, React.ElementType> = {
+  hammer: Hammer,
+  apartment: Buildings,
+  local_hospital: FirstAid,
+  gavel: Gavel,
+  restaurant: ForkKnife,
+  shopping_cart: ShoppingCart,
+  business_center: Briefcase,
+  rocket_launch: RocketLaunch,
+};
 
 const IndustryDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
+  const { t } = useTranslation('industries');
   const industry = slug ? industriesData[slug] : undefined;
   const heroImage =
     slug && industryHeroImages[slug] ? industryHeroImages[slug] : industryFallbackImage;
@@ -20,24 +47,18 @@ const IndustryDetail: React.FC = () => {
   if (!industry) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center pt-20">
-        <SeoHead title="Branche nicht gefunden | Coday" noIndex />
-        <h1 className="text-3xl font-bold text-secondary mb-4">Branche nicht gefunden</h1>
+        <SeoHead title={t('detail.not_found.meta_title')} noIndex />
+        <h1 className="text-3xl font-bold text-secondary mb-4">{t('detail.not_found.title')}</h1>
         <Link to="/services/industries" className="text-primary hover:underline">
-          Zurück zur Übersicht
+          {t('detail.not_found.link')}
         </Link>
       </div>
     );
   }
 
-  // Use Building2 as the main icon since dynamic lookup requires full library
-  const SafeIcon = Briefcase;
-
   return (
     <div className="bg-background-light min-h-screen pt-24">
-      <SeoHead
-        title={`${industry.title} | Coday`}
-        description={industry.hero.subheadline}
-      />
+      <SeoHead title={`${t(industry.title)} | Coday`} description={t(industry.hero.subheadline)} />
       {/* Navigation */}
       <div className="container mx-auto px-4 mb-8">
         <Link
@@ -45,7 +66,7 @@ const IndustryDetail: React.FC = () => {
           className="inline-flex items-center text-text-slate hover:text-primary transition-colors"
         >
           <ArrowLeft size={16} className="mr-2" />
-          Alle Branchen
+          {t('detail.nav.back')}
         </Link>
       </div>
 
@@ -54,27 +75,27 @@ const IndustryDetail: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="max-w-xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary font-semibold text-sm mb-6">
-              <SafeIcon size={16} />
-              <span>{industry.title}</span>
+              <OptimizedIcon icon={iconMap[industry.icon] || Buildings} className="w-4 h-4" />
+              <span>{t(industry.title)}</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-secondary mb-6 leading-tight">
-              {industry.hero.headline}
+              {t(industry.hero.headline)}
             </h1>
             <p className="text-xl text-text-light max-w-2xl leading-relaxed mb-8">
-              {industry.hero.subheadline}
+              {t(industry.hero.subheadline)}
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
                 to="/contact"
                 className="px-8 py-3 bg-primary text-white font-bold rounded-lg hover:bg-opacity-90 transition-all shadow-flat hover:translate-y-[-2px]"
               >
-                Gespräch vereinbaren
+                {t('detail.hero.cta_primary')}
               </Link>
               <Link
                 to="/calculator"
                 className="px-8 py-3 bg-white text-secondary border border-gray-200 font-bold rounded-lg hover:border-primary hover:text-primary transition-all shadow-sm"
               >
-                Preise kalkulieren
+                {t('detail.hero.cta_secondary')}
               </Link>
             </div>
           </div>
@@ -94,7 +115,7 @@ const IndustryDetail: React.FC = () => {
       <section className="bg-white py-20 border-y border-gray-100">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-secondary mb-12 text-center">
-            Kennen Sie diese Herausforderungen?
+            {t('detail.challenges.title')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {industry.challenges.map((challenge, idx) => (
@@ -106,9 +127,9 @@ const IndustryDetail: React.FC = () => {
                   <XCircle size={64} className="text-red-500" />
                 </div>
                 <h3 className="text-xl font-bold text-secondary mb-3 relative z-10">
-                  {challenge.title}
+                  {t(challenge.title)}
                 </h3>
-                <p className="text-text-light relative z-10">{challenge.description}</p>
+                <p className="text-text-light relative z-10">{t(challenge.description)}</p>
               </div>
             ))}
           </div>
@@ -120,12 +141,9 @@ const IndustryDetail: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-secondary mb-4">
-              Unsere Lösung für {industry.title}
+              {t('detail.solutions.title', { industry: t(industry.title) })}
             </h2>
-            <p className="text-text-light max-w-2xl mx-auto">
-              Wir entwickeln nicht nur Webseiten, sondern digitale Vertriebsmitarbeiter, die genau
-              auf Ihre Branche zugeschnitten sind.
-            </p>
+            <p className="text-text-light max-w-2xl mx-auto">{t('detail.solutions.description')}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -137,8 +155,8 @@ const IndustryDetail: React.FC = () => {
                 <div className="mb-4 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
                   <CheckCircle size={24} />
                 </div>
-                <h3 className="text-xl font-bold text-secondary mb-2">{sol.title}</h3>
-                <p className="text-text-light">{sol.description}</p>
+                <h3 className="text-xl font-bold text-secondary mb-2">{t(sol.title)}</h3>
+                <p className="text-text-light">{t(sol.description)}</p>
               </div>
             ))}
           </div>
@@ -150,9 +168,11 @@ const IndustryDetail: React.FC = () => {
         <section className="py-20 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-secondary mb-4">Branchen-Einblicke</h2>
+              <h2 className="text-3xl font-bold text-secondary mb-4">
+                {t('detail.gallery.title')}
+              </h2>
               <p className="text-text-light max-w-2xl mx-auto">
-                Professionelle Visualisierung für {industry.title}.
+                {t('detail.gallery.description', { industry: t(industry.title) })}
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -183,14 +203,16 @@ const IndustryDetail: React.FC = () => {
         <div className="container mx-auto px-8">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
             <div>
-              <h2 className="text-3xl font-bold mb-2">Spezial-Features</h2>
-              <p className="text-gray-400">Exklusive Module für {industry.title}</p>
+              <h2 className="text-3xl font-bold mb-2">{t('detail.features.title')}</h2>
+              <p className="text-gray-400">
+                {t('detail.features.subtitle', { industry: t(industry.title) })}
+              </p>
             </div>
             <Link
               to="/contact"
               className="mt-4 md:mt-0 inline-flex items-center gap-2 text-primary hover:text-white transition-colors"
             >
-              Beratung anfordern <ArrowRight size={20} />
+              {t('detail.features.cta')} <ArrowRight size={20} />
             </Link>
           </div>
 
@@ -200,8 +222,8 @@ const IndustryDetail: React.FC = () => {
                 key={idx}
                 className="bg-white/5 p-6 rounded-xl border border-white/10 hover:bg-white/10 transition-colors"
               >
-                <h4 className="font-bold text-lg mb-2 text-primary">{feat.title}</h4>
-                <p className="text-gray-300 text-sm">{feat.description}</p>
+                <h4 className="font-bold text-lg mb-2 text-primary">{t(feat.title)}</h4>
+                <p className="text-gray-300 text-sm">{t(feat.description)}</p>
               </div>
             ))}
           </div>
@@ -211,7 +233,7 @@ const IndustryDetail: React.FC = () => {
       {/* Cross-Pollination / Related Industries */}
       <section className="py-20 border-t border-gray-100">
         <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold text-secondary mb-8">Weitere Branchen entdecken</h2>
+          <h2 className="text-2xl font-bold text-secondary mb-8">{t('detail.related.title')}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {Object.values(industriesData)
               .filter((ind) => ind.slug !== slug) // Exclude current
@@ -232,10 +254,10 @@ const IndustryDetail: React.FC = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                     <div className="absolute bottom-0 left-0 p-6">
                       <h3 className="text-xl font-bold text-white mb-1 group-hover:text-primary transition-colors">
-                        {relIndustry.title}
+                        {t(relIndustry.title)}
                       </h3>
                       <span className="text-sm text-gray-300 group-hover:text-white transition-colors flex items-center gap-2">
-                        Mehr erfahren <ArrowRight size={14} />
+                        {t('detail.related.link')} <ArrowRight size={14} />
                       </span>
                     </div>
                   </Link>

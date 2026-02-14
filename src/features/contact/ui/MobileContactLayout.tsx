@@ -67,7 +67,9 @@ export const MobileContactLayout: React.FC = () => {
           <div className="absolute top-0 right-0 p-4 opacity-10">
             <Icon name="format_quote" className="text-4xl text-primary w-8 h-8" weight="fill" />
           </div>
-          <p className="text-gray-600 italic mb-4 relative z-10 text-sm">"{t('testimonial.text')}"</p>
+          <p className="text-gray-600 italic mb-4 relative z-10 text-sm">
+            "{t('testimonial.text')}"
+          </p>
           <div className="flex items-center gap-3 relative z-10">
             <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-xs shadow-sm">
               {t('testimonial.author').charAt(0)}
@@ -77,7 +79,9 @@ export const MobileContactLayout: React.FC = () => {
               <div className="text-[10px] text-gray-500">{t('testimonial.role')}</div>
             </div>
             <div className="ml-auto flex text-yellow-400 text-[10px] gap-0.5">
-              {[1, 2, 3, 4, 5].map(i => <Icon key={i} name="star" weight="fill" className="w-2.5 h-2.5" />)}
+              {[1, 2, 3, 4, 5].map((i) => (
+                <Icon key={i} name="star" weight="fill" className="w-2.5 h-2.5" />
+              ))}
             </div>
           </div>
         </div>
@@ -132,6 +136,5 @@ export const MobileContactLayout: React.FC = () => {
         </div>
       </div>
     </div>
-
   );
 };

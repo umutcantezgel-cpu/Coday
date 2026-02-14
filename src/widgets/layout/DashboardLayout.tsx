@@ -1,6 +1,17 @@
 import React from 'react';
 import { SeoHead } from '@/shared/ui/SeoHead';
-import { Icon } from '@/shared/ui/Icon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
+import {
+  ShareNetwork,
+  SquaresFour,
+  ChartBar,
+  Gear,
+  Plus,
+  House,
+  Palette,
+  Info,
+  FolderOpen,
+} from '@phosphor-icons/react';
 
 const DashboardLayout: React.FC = () => {
   // ...
@@ -8,7 +19,7 @@ const DashboardLayout: React.FC = () => {
     <div className="flex h-screen bg-gray-50 overflow-hidden">
       <SeoHead title="Coday Admin" noIndex={true} />
       <div className="flex items-center gap-2 text-primary font-bold">
-        <Icon name="hub" />
+        <OptimizedIcon icon={ShareNetwork} />
         <span>Agency Admin</span>
       </div>
 
@@ -17,28 +28,28 @@ const DashboardLayout: React.FC = () => {
           href="#"
           className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-50 rounded-lg"
         >
-          <Icon name="dashboard" size="sm" className="text-[20px]" />
+          <OptimizedIcon icon={SquaresFour} size="sm" className="text-[20px]" />
           Dashboard
         </a>
         <a
           href="#"
           className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-primary bg-primary/5 rounded-lg"
         >
-          <Icon name="lan" size="sm" className="text-[20px]" />
+          <OptimizedIcon icon={ShareNetwork} size="sm" className="text-[20px]" />
           Sitemap & URLs
         </a>
         <a
           href="#"
           className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-50 rounded-lg"
         >
-          <Icon name="analytics" size="sm" className="text-[20px]" />
+          <OptimizedIcon icon={ChartBar} size="sm" className="text-[20px]" />
           Performance
         </a>
         <a
           href="#"
           className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-50 rounded-lg"
         >
-          <Icon name="settings" size="sm" className="text-[20px]" />
+          <OptimizedIcon icon={Gear} size="sm" className="text-[20px]" />
           Settings
         </a>
       </nav>
@@ -48,7 +59,7 @@ const DashboardLayout: React.FC = () => {
       <header className="h-16 bg-white border-b border-gray-200 flex items-center justify-between px-6">
         <h1 className="text-lg font-bold text-gray-900">System-Architektur & URLs</h1>
         <button className="bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-primary/90">
-          <Icon name="add" className="text-sm" />
+          <OptimizedIcon icon={Plus} className="text-sm" />
           Add New URL
         </button>
       </header>
@@ -59,28 +70,28 @@ const DashboardLayout: React.FC = () => {
         <div className="flex justify-between items-start mb-3">
           <div className="flex gap-3">
             <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600">
-              <Icon name="home" className="text-sm" />
+              <OptimizedIcon icon={House} className="text-sm" />
             </div>
             {/* ... */}
             {/* Node Services */}
             <div className="w-64 bg-white rounded-xl shadow-lg border border-gray-200 p-4 relative">
               {/* ... */}
               <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600">
-                <Icon name="design_services" className="text-sm" />
+                <OptimizedIcon icon={Palette} className="text-sm" />
               </div>
               {/* ... */}
               {/* Node About */}
               <div className="w-64 bg-white rounded-xl shadow-lg border border-gray-200 p-4 relative">
                 {/* ... */}
                 <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center text-orange-600">
-                  <Icon name="info" className="text-sm" />
+                  <OptimizedIcon icon={Info} className="text-sm" />
                 </div>
                 {/* ... */}
                 {/* Node Work */}
                 <div className="w-64 bg-white rounded-xl shadow-lg border border-gray-200 p-4 relative">
                   {/* ... */}
                   <div className="w-8 h-8 bg-teal-100 rounded-lg flex items-center justify-center text-teal-600">
-                    <Icon name="folder_open" className="text-sm" />
+                    <OptimizedIcon icon={FolderOpen} className="text-sm" />
                   </div>
                   <div>
                     <h4 className="text-sm font-bold text-gray-900">Work</h4>

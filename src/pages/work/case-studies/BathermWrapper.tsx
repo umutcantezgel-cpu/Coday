@@ -1,8 +1,8 @@
 import React, { Suspense, lazy } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const BathermDe = lazy(() => import('../../../content/case-studies/batherm.de.mdx'));
-const BathermEn = lazy(() => import('../../../content/case-studies/batherm.en.mdx'));
+const BathermDe = lazy(() => import('@/shared/content/case-studies/batherm.de.mdx'));
+const BathermEn = lazy(() => import('@/shared/content/case-studies/batherm.en.mdx'));
 
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center">

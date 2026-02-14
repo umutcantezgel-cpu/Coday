@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useCookieStore } from './lib/cookieStore';
-import { Icon } from '@/shared/ui/Icon';
+import { useCookieStore } from '@/shared/lib/cookieStore';
+import { X } from '@phosphor-icons/react';
+import { OptimizedIcon } from '../../shared/ui/OptimizedIcon';
+import { useFocusTrap } from '../../shared/hooks/useFocusTrap';
 
 interface CookieSettingsModalProps {
   isOpen: boolean;
@@ -12,6 +14,7 @@ interface CookieSettingsModalProps {
 const CookieSettingsModal: React.FC<CookieSettingsModalProps> = ({ isOpen, onClose, onSave }) => {
   const { t } = useTranslation('common');
   const { preferences, savePreferences } = useCookieStore();
+  const containerRef = useFocusTrap(isOpen);
 
   // Local state to manage checkboxes before saving
   const [localPreferences, setLocalPreferences] = useState(preferences);
@@ -33,7 +36,10 @@ const CookieSettingsModal: React.FC<CookieSettingsModalProps> = ({ isOpen, onClo
 
   return (
     <div className="fixed inset-0 z-[105] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
-      <div className="bg-white rounded-2xl shadow-xl w-full max-w-lg overflow-hidden animate-in fade-in zoom-in duration-200">
+      <div
+        ref={containerRef}
+        className="bg-white rounded-2xl shadow-xl w-full max-w-lg overflow-hidden animate-in fade-in zoom-in duration-200"
+      >
         <div className="flex items-center justify-between p-6 border-b border-gray-100">
           <h2 className="text-xl font-bold text-gray-900">
             {t('cookie.settings.title', 'Cookie Einstellungen')}
@@ -42,7 +48,7 @@ const CookieSettingsModal: React.FC<CookieSettingsModalProps> = ({ isOpen, onClo
             onClick={onClose}
             className="p-2 hover:bg-gray-100 rounded-full transition-colors"
           >
-            <Icon name="close" className="text-gray-500" />
+            <OptimizedIcon icon={X} className="text-gray-500" />
           </button>
         </div>
 

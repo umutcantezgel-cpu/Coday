@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { LocalizedLink as Link } from '../../shared/ui/LocalizedLink';
 import { useTranslation } from 'react-i18next';
-import { Icon } from '../../shared/ui/Icon';
+import { OptimizedIcon } from '../../shared/ui/OptimizedIcon';
+import { Code, X, CaretDown, ArrowRight } from '@phosphor-icons/react';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { NavItem } from './config';
 import './MobileReadyNav.css';
+import { useFocusTrap } from '../../shared/hooks/useFocusTrap';
 
 interface MobileNavOverlayProps {
   items: NavItem[];
@@ -16,6 +18,7 @@ interface MobileNavOverlayProps {
 export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpen, onClose }) => {
   const { t } = useTranslation('common');
   const [expandedItem, setExpandedItem] = useState<string | null>(null);
+  const containerRef = useFocusTrap(isOpen);
 
   const toggleItem = (label: string) => {
     setExpandedItem(expandedItem === label ? null : label);
@@ -85,11 +88,11 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
     open: { opacity: 1, y: 0, transition: { duration: 0.3 } },
     closed: { opacity: 0, y: 15, transition: { duration: 0.3 } },
   };
-
   return (
     <AnimatePresence mode="wait">
       {isOpen && (
         <motion.div
+          ref={containerRef}
           className="mobile-overlay-container"
           initial="closed"
           animate="open"
@@ -100,7 +103,7 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
           {/* Header (Mimics Navbar) */}
           <div className="mobile-header">
             <Link to="/" className="mobile-logo" onClick={onClose}>
-              <Icon name="code" className="w-6 h-6 text-slate-900" />
+              <OptimizedIcon icon={Code} className="w-6 h-6 text-slate-900" />
               <span className="font-bold text-xl text-slate-900">Coday</span>
             </Link>
             <button
@@ -108,7 +111,7 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
               className="mobile-close-btn"
               aria-label={t('nav.close', { defaultValue: 'Close Menu' })}
             >
-              <Icon name="x" className="w-8 h-8 text-slate-900" />
+              <OptimizedIcon icon={X} className="w-8 h-8 text-slate-900" />
             </button>
           </div>
 
@@ -134,8 +137,8 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
                     <span className="text-xl font-bold tracking-tight text-slate-900">
                       {t(item.label)}
                     </span>
-                    <Icon
-                      name="chevron-down"
+                    <OptimizedIcon
+                      icon={CaretDown}
                       className={`w-5 h-5 transition-transform duration-300 ${
                         expandedItem === item.label ? 'rotate-180 text-primary' : 'text-slate-400'
                       }`}
@@ -231,7 +234,7 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
                 onClick={onClose}
               >
                 <span>{t('nav.cta_booking', { defaultValue: 'Termin buchen' })}</span>
-                <Icon name="arrow-right" className="w-5 h-5" />
+                <OptimizedIcon icon={ArrowRight} className="w-5 h-5" />
               </Link>
             </div>
           </div>

@@ -1,14 +1,54 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { LocalizedNavLink as NavLink } from '../../shared/ui/LocalizedLink';
-import { servicesData } from '../../data/services';
+import { servicesData } from '@/shared/data/services';
 import { OptimizedImage } from '../../shared/ui/OptimizedImage';
-import { webDevImages } from '../../data/serviceImages';
+import { webDevImages } from '@/shared/data/serviceImages';
 import BlurText from '../../shared/ui/BlurText';
 import ArchitectureVisualizer from '../../features/web-dev/ArchitectureVisualizer';
 import CodeQualitySimulator from '../../features/web-dev/CodeQualitySimulator';
 import SecurityGrid from '../../features/web-dev/SecurityGrid';
-import { Icon } from '../../shared/ui/Icon';
+import { RelevantFAQs } from '../../features/faq/ui/RelevantFAQs';
+import { OptimizedIcon } from '../../shared/ui/OptimizedIcon';
+import {
+  Stack,
+  Code,
+  Database,
+  PaintBrush,
+  ArrowRight,
+  RocketLaunch,
+  CheckCircle,
+  ShoppingCart,
+  Cloud,
+  Palette,
+  SquaresFour,
+  MagnifyingGlass,
+  Gauge,
+  Lightbulb,
+  Lightning,
+  ChartBar,
+  ShieldCheck,
+  Users,
+} from '@phosphor-icons/react';
+
+const iconMap: Record<string, React.ElementType> = {
+  layers: Stack,
+  code: Code,
+  database: Database,
+  brush: PaintBrush,
+  shopping_cart: ShoppingCart,
+  cloud: Cloud,
+  palette: Palette,
+  widgets: SquaresFour,
+  rocket: RocketLaunch,
+  search: MagnifyingGlass,
+  speed: Gauge,
+  lightbulb: Lightbulb,
+  lightning: Lightning,
+  chart_bar: ChartBar,
+  shield_check: ShieldCheck,
+  users: Users,
+};
 import { SeoHead } from '../../shared/ui/SeoHead';
 
 const WebDevelopment: React.FC = () => {
@@ -34,7 +74,6 @@ const WebDevelopment: React.FC = () => {
                 text={t('web_development_page.hero.title_anim')}
                 delay={100}
                 animateBy="words"
-                direction="top"
                 className="block"
               />
               <span className="text-primary">{t('web_development_page.hero.title_static')}</span>
@@ -47,7 +86,7 @@ const WebDevelopment: React.FC = () => {
             <div className="absolute inset-0 bg-primary/10 rounded-3xl transform rotate-2 scale-105"></div>
             <OptimizedImage
               src={webDevImages.hero.src}
-              alt={webDevImages.hero.alt}
+              alt={t(webDevImages.hero.alt)}
               className="relative rounded-3xl shadow-flat-lg w-full transform -rotate-1 hover:rotate-0 transition-all duration-500 bg-white p-2"
               priority
             />
@@ -78,7 +117,7 @@ const WebDevelopment: React.FC = () => {
               className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all"
             >
               <div className="w-12 h-12 bg-surface-light rounded-xl flex items-center justify-center text-primary mb-4">
-                <Icon name={tech.icon} />
+                <OptimizedIcon icon={iconMap[tech.icon] || Code} />
               </div>
               <h3 className="font-bold text-lg text-secondary mb-2">
                 {t(`web_development_page.tech_stack.${tech.key}.title`)}
@@ -102,16 +141,17 @@ const WebDevelopment: React.FC = () => {
             >
               <div className="absolute top-0 end-0 w-32 h-32 bg-secondary/5 rounded-bl-full -me-8 -mt-8 transition-transform group-hover:scale-110"></div>
               <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors relative z-10">
-                <Icon name={feature.icon} />
+                <OptimizedIcon icon={iconMap[feature.icon] || Code} />
               </div>
               <h3 className="font-display font-bold text-xl text-secondary mb-3 group-hover:text-primary transition-colors relative z-10">
-                {feature.title}
+                {t(feature.titleKey)}
               </h3>
               <p className="text-slate-600 leading-relaxed mb-4 relative z-10">
-                {feature.description}
+                {t(feature.descriptionKey)}
               </p>
               <div className="text-primary font-bold text-sm uppercase tracking-wide flex items-center opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0 relative z-10">
-                Mehr erfahren <Icon name="arrow_forward" className="ms-1 text-sm" />
+                {t('actions.read_more', 'Mehr erfahren')}{' '}
+                <OptimizedIcon icon={ArrowRight} className="ms-1 text-sm" />
               </div>
             </NavLink>
           ))}
@@ -119,28 +159,42 @@ const WebDevelopment: React.FC = () => {
       </section>
 
       {/* Performance Metrics Visual - NEW HIGH COMPLEXITY SECTION */}
-      {/* Performance Metrics Visual - NEW HIGH COMPLEXITY SECTION */}
       <section className="bg-gray-50 py-24 mb-24 relative overflow-hidden">
         <div className="absolute top-0 end-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] pointer-events-none"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <span className="text-primary font-bold uppercase tracking-wider text-sm mb-4 block">
-                Ladezeit-Werte
+                {t('web_development_page.performance.label')}
               </span>
               <h2 className="font-display font-bold text-3xl sm:text-4xl text-secondary mb-6">
-                Geschwindigkeit ist Umsatz. <br /> Wir optimieren jede Millisekunde.
+                <BlurText
+                  text={t('web_development_page.performance.title')}
+                  delay={100}
+                  animateBy="words"
+                />
               </h2>
               <p className="text-slate-600 text-lg mb-8 leading-relaxed">
-                Google bestraft langsame Seiten. Nutzer verlassen sie. Unsere Architekturen sind auf
-                beste Bewertungen optimiert.
+                {t('web_development_page.performance.description')}
               </p>
 
               <div className="space-y-6">
                 {[
-                  { label: 'Größte sichtbare Inhalte', val: '0.8s', bar: 'w-[95%]' },
-                  { label: 'Erste Reaktionszeit', val: '12ms', bar: 'w-[98%]' },
-                  { label: 'Visuelle Stabilität', val: '0.00', bar: 'w-[100%]' },
+                  {
+                    label: t('web_development_page.performance.metrics.lcp.label'),
+                    val: t('web_development_page.performance.metrics.lcp.value'),
+                    bar: 'w-[95%]',
+                  },
+                  {
+                    label: t('web_development_page.performance.metrics.fid.label'),
+                    val: t('web_development_page.performance.metrics.fid.value'),
+                    bar: 'w-[98%]',
+                  },
+                  {
+                    label: t('web_development_page.performance.metrics.cls.label'),
+                    val: t('web_development_page.performance.metrics.cls.value'),
+                    bar: 'w-[100%]',
+                  },
                 ].map((metric, idx) => (
                   <div key={idx}>
                     <div className="flex justify-between text-sm font-bold text-secondary mb-2">
@@ -184,7 +238,7 @@ const WebDevelopment: React.FC = () => {
                     <span className="absolute text-5xl font-black text-secondary">100</span>
                   </div>
                   <p className="text-slate-500 font-bold uppercase tracking-widest text-sm">
-                    Geschwindigkeitswert
+                    {t('web_development_page.performance.visual.score_label')}
                   </p>
                 </div>
               </div>
@@ -198,27 +252,32 @@ const WebDevelopment: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <span className="text-primary font-bold uppercase tracking-wider text-sm mb-4 block">
-              Architektur
+              {t('web_development_page.architecture.label')}
             </span>
             <h2 className="font-display font-bold text-3xl sm:text-4xl text-secondary mb-6">
-              Entkoppelt. Serverlos. <br /> Grenzenlos.
+              <BlurText
+                text={t('web_development_page.architecture.title')}
+                delay={100}
+                animateBy="words"
+              />
             </h2>
             <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-              Wir setzen auf eine moderne entkoppelte Architektur. Die Daten sind vom Design
-              getrennt. Das Ergebnis: Unendliche Flexibilität und maximale Sicherheit.
+              {t('web_development_page.architecture.description')}
             </p>
             <ul className="space-y-4 mb-8">
-              {[
-                'Inhalte werden weltweit im Netzwerk zwischengespeichert (<50ms)',
-                'Keine direkten Datenbank-Zugriffe vom Browser',
-                'Statische Erzeugung für sofortiges Laden',
-                'Automatische Bild-Optimierung und verzögertes Laden',
-              ].map((item, i) => (
-                <li key={i} className="flex items-center gap-3 text-slate-600 font-medium">
-                  <Icon name="check_circle" className="text-primary" />
-                  {item}
-                </li>
-              ))}
+              {(() => {
+                const list = t('web_development_page.architecture.list', {
+                  returnObjects: true,
+                }) as string[];
+                return Array.isArray(list)
+                  ? list.map((item: string, i: number) => (
+                      <li key={i} className="flex items-center gap-3 text-slate-600 font-medium">
+                        <OptimizedIcon icon={CheckCircle} className="text-primary" />
+                        {item}
+                      </li>
+                    ))
+                  : null;
+              })()}
             </ul>
           </div>
           <ArchitectureVisualizer />
@@ -230,61 +289,46 @@ const WebDevelopment: React.FC = () => {
         <div className="bg-white rounded-3xl border border-gray-200 shadow-xl overflow-hidden">
           <div className="p-8 border-b border-gray-100 bg-gray-50 text-center">
             <span className="text-primary font-bold text-sm uppercase tracking-wider block mb-2">
-              Technologie-Vergleich
+              {t('web_development_page.comparison.label')}
             </span>
             <h2 className="font-display font-bold text-3xl text-gray-900">
-              Warum Next.js vs. WordPress?
+              {t('web_development_page.comparison.title')}
             </h2>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
                 <tr className="border-b border-gray-100">
-                  <th className="p-6 text-left text-sm font-semibold text-gray-500 w-1/3">
-                    Funktion
+                  <th className="p-6 text-start text-sm font-semibold text-gray-500 w-1/3">
+                    {t('web_development_page.comparison.headers.feature')}
                   </th>
                   <th className="p-6 text-center text-sm font-bold text-gray-900 w-1/3 bg-gray-50">
-                    Wordpress / Baukasten
+                    {t('web_development_page.comparison.headers.wordpress')}
                   </th>
                   <th className="p-6 text-center text-sm font-bold text-white bg-secondary w-1/3">
-                    Coday Next.js Stack
+                    {t('web_development_page.comparison.headers.coday')}
                   </th>
                 </tr>
               </thead>
               <tbody>
-                {[
-                  { feat: 'Ladezeit', bad: '2.5s - 5.0s', good: '< 0.8s' },
-                  {
-                    feat: 'Sicherheit',
-                    bad: 'Erweiterungs-Sicherheitslücken',
-                    good: 'Statische und serverseitige Sicherheit',
-                  },
-                  {
-                    feat: 'Skalierbarkeit',
-                    bad: 'Begrenzt durch Server/Datenbank',
-                    good: 'Weltweites Netzwerk',
-                  },
-                  {
-                    feat: 'Wartung',
-                    bad: 'Ständige Aktualisierungen nötig',
-                    good: 'Automatisierte Veröffentlichung',
-                  },
-                  {
-                    feat: 'Suchmaschinen',
-                    bad: 'Basis-Funktionen',
-                    good: 'Technische Suchmaschinen-Dominanz',
-                  },
-                ].map((row, idx) => (
-                  <tr key={idx} className="border-b border-gray-50 hover:bg-gray-50/30">
-                    <td className="p-6 text-sm font-bold text-gray-700">{row.feat}</td>
-                    <td className="p-6 text-center text-sm text-gray-500 bg-gray-50/50">
-                      {row.bad}
-                    </td>
-                    <td className="p-6 text-center text-sm text-primary font-bold bg-secondary/5 border-l border-r border-gray-100">
-                      {row.good}
-                    </td>
-                  </tr>
-                ))}
+                {(() => {
+                  const rows = t('web_development_page.comparison.rows', {
+                    returnObjects: true,
+                  }) as { feat: string; bad: string; good: string }[];
+                  return Array.isArray(rows)
+                    ? rows.map((row: { feat: string; bad: string; good: string }, idx: number) => (
+                        <tr key={idx} className="border-b border-gray-50 hover:bg-gray-50/30">
+                          <td className="p-6 text-sm font-bold text-gray-700">{row.feat}</td>
+                          <td className="p-6 text-center text-sm text-gray-500 bg-gray-50/50">
+                            {row.bad}
+                          </td>
+                          <td className="p-6 text-center text-sm text-primary font-bold bg-secondary/5 border-s border-e border-gray-100">
+                            {row.good}
+                          </td>
+                        </tr>
+                      ))
+                    : null;
+                })()}
               </tbody>
             </table>
           </div>
@@ -293,7 +337,7 @@ const WebDevelopment: React.FC = () => {
         {/* Security Grid Insertion */}
         <div className="mt-16 text-center">
           <h3 className="font-display font-bold text-2xl text-secondary mb-8">
-            Professionelle Sicherheitsstandards
+            {t('web_development_page.security.title')}
           </h3>
           <SecurityGrid />
         </div>
@@ -305,39 +349,38 @@ const WebDevelopment: React.FC = () => {
           <div className="relative z-10 grid md:grid-cols-2 gap-12 items-center">
             <div>
               <span className="text-primary font-bold uppercase tracking-wider text-sm mb-2 block">
-                Der Prozess
+                {t('web_development_page.process.label')}
               </span>
               <h2 className="font-display font-bold text-3xl sm:text-4xl text-secondary mb-6">
-                Sauberer Code. <br /> Keine Kompromisse.
+                <BlurText
+                  text={t('web_development_page.process.title')}
+                  delay={100}
+                  animateBy="words"
+                />
               </h2>
               <p className="text-lg text-slate-600 mb-8">
-                Wir schreiben Code, der auch in 3 Jahren noch wartbar ist. Type-Safe, getestet und
-                dokumentiert.
+                {t('web_development_page.process.description')}
               </p>
 
               <ul className="space-y-4 mb-8">
-                {[
-                  {
-                    title: 'Architektur und Technologie-Paket',
-                    desc: 'Next.js, TypeScript, Supabase',
-                  },
-                  { title: 'Komponenten und Design', desc: 'Baustein-Design-System' },
-                  { title: 'Geschwindigkeitsoptimierung', desc: 'Ladezeit-Werte Optimierung' },
-                  {
-                    title: 'Automatisches Testen',
-                    desc: 'Automatisierte Veröffentlichung und Tests',
-                  },
-                ].map((step, idx) => (
-                  <li key={idx} className="flex items-start">
-                    <div className="w-8 h-8 rounded-full bg-white border border-gray-200 flex items-center justify-center text-primary font-bold me-4 mt-1 shrink-0 shadow-sm">
-                      {idx + 1}
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-secondary">{step.title}</h4>
-                      <p className="text-sm text-slate-500">{step.desc}</p>
-                    </div>
-                  </li>
-                ))}
+                {(() => {
+                  const steps = t('web_development_page.process.steps', {
+                    returnObjects: true,
+                  }) as { title: string; desc: string }[];
+                  return Array.isArray(steps)
+                    ? steps.map((step: { title: string; desc: string }, idx: number) => (
+                        <li key={idx} className="flex items-start">
+                          <div className="w-8 h-8 rounded-full bg-white border border-gray-200 flex items-center justify-center text-primary font-bold me-4 mt-1 shrink-0 shadow-sm">
+                            {idx + 1}
+                          </div>
+                          <div>
+                            <h4 className="font-bold text-secondary">{step.title}</h4>
+                            <p className="text-sm text-slate-500">{step.desc}</p>
+                          </div>
+                        </li>
+                      ))
+                    : null;
+                })()}
               </ul>
 
               <CodeQualitySimulator />
@@ -353,7 +396,10 @@ const WebDevelopment: React.FC = () => {
                   <span className="text-primary">useState</span>(null);
                   <br />
                   <br />
-                  &nbsp;&nbsp;<span className="text-slate-500">// Schnelles Laden</span>
+                  &nbsp;&nbsp;
+                  <span className="text-slate-500">
+                    {t('web_development_page.process.code_snippet.loading_comment')}
+                  </span>
                   <br />
                   &nbsp;&nbsp;<span className="text-accent">return</span> (<br />
                   &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span className="text-green-400">Suspense</span>{' '}
@@ -376,21 +422,24 @@ const WebDevelopment: React.FC = () => {
         </div>
       </section>
 
+      {/* Relevant FAQs */}
+      <RelevantFAQs serviceId="web-development" />
+
       {/* CTA */}
       <section className="max-w-5xl mx-auto px-4 text-center">
         <div className="bg-primary rounded-3xl p-12 shadow-flat-lg text-white">
           <h2 className="font-display font-bold text-3xl mb-6">
-            Bereit für echte Geschwindigkeit?
+            {t('web_development_page.cta.title')}
           </h2>
           <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-            Kein Baukasten. Kein Ballast. Nur Code, der verkauft.
+            {t('web_development_page.cta.description')}
           </p>
           <NavLink
             to="/contact"
             className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-primary rounded-xl bg-white hover:bg-gray-50 shadow-lg hover:shadow-xl transition-all"
           >
-            Entwickler-Team anfragen
-            <Icon name="rocket_launch" className="ms-2" />
+            {t('web_development_page.cta.button')}
+            <OptimizedIcon icon={RocketLaunch} className="ms-2" />
           </NavLink>
         </div>
       </section>

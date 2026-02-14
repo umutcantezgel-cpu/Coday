@@ -2,12 +2,21 @@ import React, { Suspense, lazy, useEffect } from 'react';
 import BlurText from '../shared/ui/BlurText';
 import GradientText from '../shared/ui/GradientText';
 import BookingCalendar from '../features/booking/ui/BookingCalendar';
-import InteractiveMap from '../shared/ui/InteractiveMap';
-
+const InteractiveMap = lazy(() => import('../shared/ui/InteractiveMap'));
 const ApplicationWizard = lazy(() => import('../features/contact/ApplicationWizard'));
 
 import { useTranslation } from 'react-i18next';
-import { Icon } from '../shared/ui/Icon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
+import {
+  ShieldCheck,
+  RocketLaunch,
+  Quotes,
+  Star,
+  ArrowRight,
+  Phone,
+  Envelope,
+  MapPin,
+} from '@phosphor-icons/react';
 import { SeoHead } from '@/shared/ui/SeoHead';
 import { useCalculatorStore } from '../features/calculator/model/store';
 import StepIndicator from '../shared/ui/StepIndicator';
@@ -62,7 +71,6 @@ const Contact: React.FC = () => {
                     text={t('hero.title_start')}
                     delay={100}
                     animateBy="words"
-                    direction="top"
                     className="inline-block"
                   />
                   <br />
@@ -83,7 +91,7 @@ const Contact: React.FC = () => {
                 <div className="space-y-6">
                   <div className="flex items-center gap-4 text-slate-600">
                     <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-gray-100 flex items-center justify-center text-primary">
-                      <Icon name="verified" />
+                      <OptimizedIcon icon={ShieldCheck} />
                     </div>
                     <div>
                       <strong className="block text-secondary">
@@ -94,7 +102,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div className="flex items-center gap-4 text-slate-600">
                     <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-gray-100 flex items-center justify-center text-primary">
-                      <Icon name="rocket_launch" />
+                      <OptimizedIcon icon={RocketLaunch} />
                     </div>
                     <div>
                       <strong className="block text-secondary">
@@ -116,12 +124,34 @@ const Contact: React.FC = () => {
                   <ApplicationWizard />
                 </Suspense>
 
-                {/* Trust Indicators */}
-                <div className="mt-8 flex justify-center gap-8 grayscale opacity-50">
-                  {/* Mock Logos */}
-                  <span className="font-bold text-slate-400">{t('trust.google')}</span>
-                  <span className="font-bold text-slate-400">{t('trust.shopify')}</span>
-                  <span className="font-bold text-slate-400">{t('trust.facebook')}</span>
+                {/* Trust Indicators - Testimonial */}
+                <div className="mt-8 bg-white p-6 rounded-2xl shadow-sm border border-gray-100 relative overflow-hidden">
+                  <div className="absolute top-0 end-0 p-4 opacity-10">
+                    <OptimizedIcon
+                      icon={Quotes}
+                      className="text-4xl text-primary w-8 h-8"
+                      weight="fill"
+                    />
+                  </div>
+                  <p className="text-gray-600 italic mb-4 relative z-10 font-medium">
+                    "{t('testimonial.text')}"
+                  </p>
+                  <div className="flex items-center gap-3 relative z-10">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-sm shadow-sm">
+                      {t('testimonial.author').charAt(0)}
+                    </div>
+                    <div>
+                      <div className="font-bold text-gray-900 text-sm">
+                        {t('testimonial.author')}
+                      </div>
+                      <div className="text-xs text-gray-500">{t('testimonial.role')}</div>
+                    </div>
+                    <div className="ms-auto flex text-yellow-400 text-xs gap-0.5">
+                      {[1, 2, 3, 4, 5].map((i) => (
+                        <OptimizedIcon key={i} icon={Star} weight="fill" className="w-3 h-3" />
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -180,8 +210,8 @@ const Contact: React.FC = () => {
                   </strong>
                   <span className="text-sm text-gray-500">+49 176 41195301</span>
                 </div>
-                <Icon
-                  name="arrow_forward"
+                <OptimizedIcon
+                  icon={ArrowRight}
                   className="text-gray-400 group-hover:text-[#25D366] group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-all"
                 />
               </a>
@@ -192,7 +222,7 @@ const Contact: React.FC = () => {
                 className="flex items-center gap-4 p-5 bg-white rounded-xl border border-aurora-mist hover:shadow-lg transition-all group"
               >
                 <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Icon name="phone" className="text-primary" />
+                  <OptimizedIcon icon={Phone} className="text-primary" />
                 </div>
                 <div className="flex-1 text-start">
                   <strong className="block text-gray-900 group-hover:text-primary transition-colors">
@@ -200,8 +230,8 @@ const Contact: React.FC = () => {
                   </strong>
                   <span className="text-sm text-gray-500">+49 176 41195301</span>
                 </div>
-                <Icon
-                  name="arrow_forward"
+                <OptimizedIcon
+                  icon={ArrowRight}
                   className="text-gray-400 group-hover:text-primary group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-all"
                 />
               </a>
@@ -212,7 +242,7 @@ const Contact: React.FC = () => {
                 className="flex items-center gap-4 p-5 bg-white rounded-xl border border-aurora-mist hover:shadow-lg transition-all group"
               >
                 <div className="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Icon name="mail" className="text-purple-600" />
+                  <OptimizedIcon icon={Envelope} className="text-purple-600" />
                 </div>
                 <div className="flex-1 text-start">
                   <strong className="block text-gray-900 group-hover:text-purple-600 transition-colors">
@@ -220,8 +250,8 @@ const Contact: React.FC = () => {
                   </strong>
                   <span className="text-sm text-gray-500">umut@codayweb.de</span>
                 </div>
-                <Icon
-                  name="arrow_forward"
+                <OptimizedIcon
+                  icon={ArrowRight}
                   className="text-gray-400 group-hover:text-purple-600 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-all"
                 />
               </a>
@@ -229,7 +259,7 @@ const Contact: React.FC = () => {
               {/* Address */}
               <div className="flex items-center gap-4 p-5 bg-white rounded-xl border border-aurora-mist">
                 <div className="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Icon name="location_on" className="text-orange-600" />
+                  <OptimizedIcon icon={MapPin} className="text-orange-600" />
                 </div>
                 <div className="flex-1 text-start">
                   <strong className="block text-gray-900">{t('location.address.label')}</strong>
@@ -239,7 +269,11 @@ const Contact: React.FC = () => {
             </div>
 
             {/* Map */}
-            <InteractiveMap height="450px" />
+            <Suspense
+              fallback={<div className="h-[450px] w-full bg-gray-100 rounded-xl animate-pulse" />}
+            >
+              <InteractiveMap height="450px" />
+            </Suspense>
           </div>
         </div>
       </section>

@@ -73,7 +73,11 @@ export const getNavItems = (): NavItem[] => [
             href: '/services/performance',
             desc: 'nav.services.performance.desc',
           },
-          { label: 'nav.services.consulting.label', href: '/contact' },
+          {
+            label: 'nav.services.consulting.label',
+            href: '/beratung',
+            desc: 'nav.services.consulting.desc',
+          },
         ],
       },
     ],
@@ -86,12 +90,14 @@ export const getNavItems = (): NavItem[] => [
       {
         title: 'nav.industries.all',
         links: [
+          { label: 'nav.industries.overview', href: '/services/industries' },
           { label: 'nav.industries.real_estate', href: '/services/industries/immobilien' },
           { label: 'nav.industries.health', href: '/services/industries/gesundheit' },
           { label: 'nav.industries.craft', href: '/services/industries/handwerk' },
           { label: 'nav.industries.gastronomy', href: '/services/industries/gastronomie' },
           { label: 'nav.industries.ecommerce', href: '/services/industries/e-commerce' },
           { label: 'nav.industries.service', href: '/services/industries/dienstleistung' },
+          { label: 'nav.industries.public', href: '/oeffentliche-auftraege' },
         ],
       },
     ],
@@ -123,6 +129,11 @@ export const getNavItems = (): NavItem[] => [
             label: 'nav.academy.blog.label',
             href: '/knowledge/blog',
             desc: 'nav.academy.blog.desc',
+          },
+          {
+            label: 'nav.resources.knowledge.faq.label',
+            href: '/knowledge/faq',
+            desc: 'nav.resources.knowledge.faq.desc',
           },
           {
             label: 'nav.academy.whitepapers.label',
@@ -183,6 +194,7 @@ export const getNavItems = (): NavItem[] => [
       {
         title: 'nav.company.legal',
         links: [
+          { label: 'nav.legal.hub', href: '/legal' },
           { label: 'nav.legal.imprint', href: '/legal/impressum' },
           { label: 'nav.legal.privacy', href: '/legal/datenschutz' },
           { label: 'nav.legal.agb', href: '/legal/agb' },

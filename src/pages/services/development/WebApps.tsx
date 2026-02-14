@@ -4,8 +4,45 @@ import { LocalizedNavLink as NavLink } from '../../../shared/ui/LocalizedLink';
 
 import BlurText from '../../../shared/ui/BlurText';
 import { OptimizedImage } from '../../../shared/ui/OptimizedImage';
-import { appDevImages } from '../../../data/serviceImages';
-import { Icon } from '../../../shared/ui/Icon';
+import { appDevImages } from '@/shared/data/serviceImages';
+import { OptimizedIcon } from '../../../shared/ui/OptimizedIcon';
+import {
+  Stack,
+  CreditCard,
+  Robot,
+  Cloud,
+  HardDrives,
+  Envelope,
+  FileText,
+  Check,
+  ShieldCheck,
+  Lock,
+  CloudCheck,
+  Headset,
+  Wrench,
+  DeviceMobile,
+  Lightning,
+  SecurityCamera,
+} from '@phosphor-icons/react';
+
+const iconMap: Record<string, React.ElementType> = {
+  layers: Stack,
+  payments: CreditCard,
+  smart_toy: Robot,
+  cloud: Cloud,
+  dns: HardDrives,
+  mail: Envelope,
+  description: FileText,
+  check: Check,
+  verified_user: ShieldCheck,
+  lock: Lock,
+  cloud_done: CloudCheck,
+  support_agent: Headset,
+  build: Wrench,
+  phone_iphone: DeviceMobile,
+  bolt: Lightning,
+  security: SecurityCamera,
+};
 
 const WebApps: React.FC = () => {
   const { t } = useTranslation('services');
@@ -27,14 +64,13 @@ const WebApps: React.FC = () => {
           <div className="text-center lg:text-left grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-xl text-primary mb-6">
-                <Icon name="layers" className="text-3xl" />
+                <OptimizedIcon icon={Stack} className="text-3xl" />
               </div>
               <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-gray-900 mb-6 leading-tight">
                 <BlurText
                   text={t('web_apps_page.hero.title_prefix')}
                   delay={100}
                   animateBy="words"
-                  direction="top"
                   className="inline"
                 />{' '}
                 <span className="text-primary">{t('web_apps_page.hero.title_suffix')}</span>
@@ -55,8 +91,8 @@ const WebApps: React.FC = () => {
             <div className="relative hidden lg:block">
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-br from-indigo-500/10 to-primary/10 rounded-full blur-3xl opacity-60"></div>
               <OptimizedImage
-                src={appDevImages.hero.src}
-                alt={appDevImages.hero.alt}
+                src={appDevImages.hero?.src || ''}
+                alt={appDevImages.hero ? t(appDevImages.hero.alt) : ''}
                 className="relative rounded-2xl shadow-xl w-full rotate-2 hover:rotate-0 transition-transform duration-500 bg-white p-2"
                 priority
               />
@@ -122,7 +158,7 @@ const WebApps: React.FC = () => {
                 <div
                   className={`w-16 h-16 rounded-2xl ${sat.color} text-white flex items-center justify-center shadow-lg border-2 border-white/20`}
                 >
-                  <Icon name={sat.icon} className="text-2xl" />
+                  <OptimizedIcon icon={iconMap[sat.icon] || Cloud} className="text-2xl" />
                 </div>
                 <span className="text-white font-bold text-sm bg-black/50 px-2 py-1 rounded backdrop-blur-sm">
                   {sat.name}
@@ -171,7 +207,7 @@ const WebApps: React.FC = () => {
                 ).map((item, i) => (
                   <li key={i} className="flex items-center text-gray-700 font-medium">
                     <div className="w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center mr-3 shrink-0">
-                      <Icon name="check" className="text-sm font-bold" />
+                      <OptimizedIcon icon={Check} className="text-sm font-bold" />
                     </div>
                     {item}
                   </li>
@@ -189,7 +225,10 @@ const WebApps: React.FC = () => {
                   key={i}
                   className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center justify-center text-center hover:scale-105 transition-transform"
                 >
-                  <Icon name={badge.icon} className={`text-4xl mb-3 ${badge.color}`} />
+                  <OptimizedIcon
+                    icon={iconMap[badge.icon] || ShieldCheck}
+                    className={`text-4xl mb-3 ${badge.color}`}
+                  />
                   <span className="font-bold text-gray-900">
                     {t(`web_apps_page.security.badges.${badge.key}`)}
                   </span>
@@ -244,7 +283,7 @@ const WebApps: React.FC = () => {
                 className="p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-xl transition-all border border-gray-100 group"
               >
                 <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
-                  <Icon name={feature.icon} />
+                  <OptimizedIcon icon={iconMap[feature.icon] || Cloud} />
                 </div>
                 <h3 className="font-bold text-xl text-gray-900 mb-3">
                   {t(`web_apps_page.features.items.${feature.key}.title`)}

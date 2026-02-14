@@ -3,7 +3,14 @@
     "contact": "Contact Us",
     "contents": "Table of Contents",
     "download_pdf": "Download PDF",
-    "legal_document": "Legal Document"
+    "legal_document": "Legal Document",
+    "labels": {
+      "email": "Email",
+      "phone": "Phone",
+      "website": "Website",
+      "response_time": "Response Time",
+      "response_time_value": "Within 30 days"
+    }
   },
   "disclaimer": {
     "analysis": {
@@ -466,7 +473,11 @@
       "client": "Natural or legal person who makes use of the Provider's services.",
       "project": "The totality of all services to be provided as defined in the offer.",
       "provider": "Umutcan Emre Tezgel, trading as “Coday”, based in Wetzlar.",
-      "revision": "Round of changes to adapt design or functionality after intermediate acceptance."
+      "revision": "Round of changes to adapt design or functionality after intermediate acceptance.",
+      "provider_title": "Provider",
+      "client_title": "Client",
+      "project_title": "Project",
+      "revision_title": "Revision"
     },
     "eigentum": {
       "code": {
@@ -531,7 +542,9 @@
     },
     "payment": {
       "first": "upon order placement / contract signing",
-      "second": "after completion and before handover"
+      "second": "after completion and before handover",
+      "first_title": "1. Installment",
+      "second_title": "2. Installment"
     },
     "projektablauf": {
       "communication": {

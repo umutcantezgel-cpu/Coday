@@ -2,7 +2,16 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { useAnalyzerStore } from '../model/store';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { Lightning, MagnifyingGlass, Shield, Wheelchair, Palette, FileText, Check, ArrowsClockwise } from '@phosphor-icons/react';
+import {
+  Lightning,
+  MagnifyingGlass,
+  Shield,
+  Wheelchair,
+  Palette,
+  FileText,
+  Check,
+  ArrowsClockwise,
+} from '@phosphor-icons/react';
 import { staggerContainer, fadeUpVariants, STAGGER, TRANSITION } from '@/shared/lib/motion';
 import { useTranslation } from 'react-i18next';
 
@@ -11,9 +20,24 @@ export const AnalysisProgress: React.FC = () => {
   const { t } = useTranslation('analyzer');
 
   const AGENTS = [
-    { id: 'performance', name: t('agents.performance'), icon: Lightning, color: 'from-orange-500 to-red-500' },
-    { id: 'seo', name: t('agents.seo'), icon: MagnifyingGlass, color: 'from-green-500 to-emerald-500' },
-    { id: 'security', name: t('agents.security'), icon: Shield, color: 'from-blue-500 to-cyan-500' },
+    {
+      id: 'performance',
+      name: t('agents.performance'),
+      icon: Lightning,
+      color: 'from-orange-500 to-red-500',
+    },
+    {
+      id: 'seo',
+      name: t('agents.seo'),
+      icon: MagnifyingGlass,
+      color: 'from-green-500 to-emerald-500',
+    },
+    {
+      id: 'security',
+      name: t('agents.security'),
+      icon: Shield,
+      color: 'from-blue-500 to-cyan-500',
+    },
     {
       id: 'accessibility',
       name: t('agents.accessibility'),
@@ -21,7 +45,12 @@ export const AnalysisProgress: React.FC = () => {
       color: 'from-purple-500 to-violet-500',
     },
     { id: 'ux', name: t('agents.ux'), icon: Palette, color: 'from-pink-500 to-rose-500' },
-    { id: 'content', name: t('agents.content'), icon: FileText, color: 'from-yellow-500 to-amber-500' },
+    {
+      id: 'content',
+      name: t('agents.content'),
+      icon: FileText,
+      color: 'from-yellow-500 to-amber-500',
+    },
   ];
 
   if (status !== 'analyzing' && status !== 'validating') {
@@ -67,11 +96,12 @@ export const AnalysisProgress: React.FC = () => {
               className={`
                 relative p-4 rounded-2xl border-2 text-center
                 transition-all duration-300
-                ${isCompleted
-                  ? 'border-green-500 bg-green-50'
-                  : isActive
-                    ? 'border-primary bg-primary/5 animate-pulse'
-                    : 'border-gray-200 bg-white'
+                ${
+                  isCompleted
+                    ? 'border-green-500 bg-green-50'
+                    : isActive
+                      ? 'border-primary bg-primary/5 animate-pulse'
+                      : 'border-gray-200 bg-white'
                 }
               `}
             >
@@ -79,11 +109,12 @@ export const AnalysisProgress: React.FC = () => {
               <div
                 className={`
                   w-12 h-12 mx-auto mb-3 rounded-xl flex items-center justify-center
-                  ${isCompleted
-                    ? 'bg-green-500 text-white'
-                    : isActive
-                      ? `bg-gradient-to-br ${agent.color} text-white`
-                      : 'bg-gray-100 text-gray-400'
+                  ${
+                    isCompleted
+                      ? 'bg-green-500 text-white'
+                      : isActive
+                        ? `bg-gradient-to-br ${agent.color} text-white`
+                        : 'bg-gray-100 text-gray-400'
                   }
                 `}
               >
@@ -129,7 +160,9 @@ export const AnalysisProgress: React.FC = () => {
         className="text-center text-gray-500 mt-8"
       >
         {progress.currentAgent
-          ? t('progress.agent_analyzing', { agent: AGENTS.find((a) => a.id === progress.currentAgent)?.name || 'Agent' })
+          ? t('progress.agent_analyzing', {
+              agent: AGENTS.find((a) => a.id === progress.currentAgent)?.name || 'Agent',
+            })
           : t('progress.connection_establishing')}
       </motion.p>
     </div>

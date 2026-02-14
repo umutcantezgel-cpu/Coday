@@ -1,6 +1,21 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { DownloadSimple, ShareNetwork, Check, Envelope, CalendarBlank, Lightning, MagnifyingGlass, Shield, Wheelchair, Palette, FileText, CloudSlash, Warning, Lightbulb } from '@phosphor-icons/react';
+import {
+  DownloadSimple,
+  ShareNetwork,
+  Check,
+  Envelope,
+  CalendarBlank,
+  Lightning,
+  MagnifyingGlass,
+  Shield,
+  Wheelchair,
+  Palette,
+  FileText,
+  CloudSlash,
+  Warning,
+  Lightbulb,
+} from '@phosphor-icons/react';
 import { useAnalyzerStore } from '../model/store';
 import { ScoreCard } from './ScoreCard';
 import { UrgencyMeter } from './UrgencyMeter';
@@ -22,9 +37,24 @@ export const ReportDashboard: React.FC = () => {
   const { isRtl } = useRtl();
 
   const CATEGORY_CONFIG = [
-    { key: 'performance', title: t('agents.performance'), icon: Lightning, color: 'from-orange-500 to-red-500' },
-    { key: 'seo', title: t('agents.seo'), icon: MagnifyingGlass, color: 'from-green-500 to-emerald-500' },
-    { key: 'security', title: t('agents.security'), icon: Shield, color: 'from-blue-500 to-cyan-500' },
+    {
+      key: 'performance',
+      title: t('agents.performance'),
+      icon: Lightning,
+      color: 'from-orange-500 to-red-500',
+    },
+    {
+      key: 'seo',
+      title: t('agents.seo'),
+      icon: MagnifyingGlass,
+      color: 'from-green-500 to-emerald-500',
+    },
+    {
+      key: 'security',
+      title: t('agents.security'),
+      icon: Shield,
+      color: 'from-blue-500 to-cyan-500',
+    },
     {
       key: 'accessibility',
       title: t('agents.accessibility'),
@@ -32,7 +62,12 @@ export const ReportDashboard: React.FC = () => {
       color: 'from-purple-500 to-violet-500',
     },
     { key: 'ux', title: t('agents.ux'), icon: Palette, color: 'from-pink-500 to-rose-500' },
-    { key: 'content', title: t('agents.content'), icon: FileText, color: 'from-yellow-500 to-amber-500' },
+    {
+      key: 'content',
+      title: t('agents.content'),
+      icon: FileText,
+      color: 'from-yellow-500 to-amber-500',
+    },
   ] as const;
 
   if (!result) return null;
@@ -151,8 +186,10 @@ export const ReportDashboard: React.FC = () => {
         </h1>
         <p className="text-xl text-gray-500 mb-2">{result.domain}</p>
         <p className="text-sm text-gray-400 mb-6">
-          {t('dashboard.analyzed_on', { date: new Date(result.analyzedAt).toLocaleDateString('de-DE') })} •{' '}
-          {result.duration}ms
+          {t('dashboard.analyzed_on', {
+            date: new Date(result.analyzedAt).toLocaleDateString('de-DE'),
+          })}{' '}
+          • {result.duration}ms
         </p>
 
         {/* Tech Stack Badges */}
@@ -170,11 +207,14 @@ export const ReportDashboard: React.FC = () => {
         )}
 
         {/* Partial Failure Warning */}
-        {Object.values(result).some((val: unknown) => typeof val === 'object' && (val as { score?: number })?.score === -1) && (
+        {Object.values(result).some(
+          (val: unknown) => typeof val === 'object' && (val as { score?: number })?.score === -1
+        ) && (
           <div className="max-w-xl mx-auto mb-8 bg-orange-50 border border-orange-200 rounded-xl p-4 flex items-center gap-3 text-left">
             <OptimizedIcon icon={Warning} className="text-orange-500" />
             <div className="text-sm text-orange-800">
-              <strong>{t('dashboard.partial_failure')}</strong> {t('dashboard.partial_failure_desc')}
+              <strong>{t('dashboard.partial_failure')}</strong>{' '}
+              {t('dashboard.partial_failure_desc')}
             </div>
           </div>
         )}
@@ -234,11 +274,12 @@ export const ReportDashboard: React.FC = () => {
             transition={{ delay: 0.5, type: 'spring', stiffness: 200 }}
             className={`
               inline-flex items-center justify-center w-40 h-40 rounded-full mb-6
-              ${result.overallScore >= 80
-                ? 'bg-gradient-to-br from-green-400 to-green-600'
-                : result.overallScore >= 50
-                  ? 'bg-gradient-to-br from-yellow-400 to-orange-500'
-                  : 'bg-gradient-to-br from-red-400 to-red-600'
+              ${
+                result.overallScore >= 80
+                  ? 'bg-gradient-to-br from-green-400 to-green-600'
+                  : result.overallScore >= 50
+                    ? 'bg-gradient-to-br from-yellow-400 to-orange-500'
+                    : 'bg-gradient-to-br from-red-400 to-red-600'
               }
               shadow-2xl
             `}
@@ -314,7 +355,14 @@ export const ReportDashboard: React.FC = () => {
                 niedrig: 'bg-gray-100 text-gray-700',
               };
 
-              const severityKey = severity === 'kritisch' ? 'critical' : severity === 'hoch' ? 'high' : severity === 'mittel' ? 'medium' : 'low';
+              const severityKey =
+                severity === 'kritisch'
+                  ? 'critical'
+                  : severity === 'hoch'
+                    ? 'high'
+                    : severity === 'mittel'
+                      ? 'medium'
+                      : 'low';
 
               return (
                 <span
@@ -341,14 +389,15 @@ export const ReportDashboard: React.FC = () => {
                 <div
                   className={`
                       w-3 h-3 rounded-full mt-2 flex-shrink-0
-                      ${issue.severity === 'kritisch'
-                      ? 'bg-red-500'
-                      : issue.severity === 'hoch'
-                        ? 'bg-orange-500'
-                        : issue.severity === 'mittel'
-                          ? 'bg-yellow-500'
-                          : 'bg-gray-400'
-                    }
+                      ${
+                        issue.severity === 'kritisch'
+                          ? 'bg-red-500'
+                          : issue.severity === 'hoch'
+                            ? 'bg-orange-500'
+                            : issue.severity === 'mittel'
+                              ? 'bg-yellow-500'
+                              : 'bg-gray-400'
+                      }
                     `}
                 />
                 <div className="flex-1">
@@ -424,9 +473,7 @@ export const ReportDashboard: React.FC = () => {
           </div>
         ) : (
           <div className="bg-gray-50 rounded-2xl p-8 text-center border border-dashed border-gray-300">
-            <p className="text-gray-500 mb-4">
-              {t('dashboard.plan_placeholder')}
-            </p>
+            <p className="text-gray-500 mb-4">{t('dashboard.plan_placeholder')}</p>
             <button
               onClick={() => useAnalyzerStore.getState().generatePlan()}
               className="bg-primary text-white px-6 py-2 rounded-lg font-bold shadow hover:bg-blue-700 transition-all"
@@ -444,12 +491,8 @@ export const ReportDashboard: React.FC = () => {
         transition={{ delay: 1 }}
         className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-3xl p-12 text-center text-white"
       >
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          {t('dashboard.cta_title')}
-        </h2>
-        <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-          {t('dashboard.cta_desc')}
-        </p>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('dashboard.cta_title')}</h2>
+        <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">{t('dashboard.cta_desc')}</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button
             onClick={() => window.open('/booking', '_blank')}

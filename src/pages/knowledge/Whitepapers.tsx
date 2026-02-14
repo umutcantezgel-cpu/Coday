@@ -1,7 +1,8 @@
 import React from 'react';
-import { Icon } from '@/shared/ui/Icon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
+import { DownloadSimple } from '@phosphor-icons/react';
 import { OptimizedImage } from '../../shared/ui/OptimizedImage';
-import { whitepaperData } from '../../data/whitepapers';
+import { whitepaperData } from '@/shared/data/whitepapers';
 import { useTranslation } from 'react-i18next';
 
 const Whitepapers: React.FC = () => {
@@ -55,7 +56,7 @@ const Whitepapers: React.FC = () => {
                   rel="noopener noreferrer"
                   className="w-full py-4 rounded-xl border-2 border-slate-100 text-gray-900 font-bold hover:border-blue-500 hover:text-blue-600 transition-colors flex items-center justify-center group-hover:bg-blue-50"
                 >
-                  <Icon name="download" className="mr-2" />
+                  <OptimizedIcon icon={DownloadSimple} className="mr-2" />
                   {t('whitepapers.download')}
                 </a>
               </div>

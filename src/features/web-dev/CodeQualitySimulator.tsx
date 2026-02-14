@@ -70,9 +70,7 @@ const CodeQualitySimulator: React.FC = () => {
   else message = t('web_development_page.process.simulator.messages.enterprise');
 
   const toggleFeature = (id: string) => {
-    setActiveIds((prev) =>
-      prev.includes(id) ? prev.filter((i) => i !== id) : [...prev, id]
-    );
+    setActiveIds((prev) => (prev.includes(id) ? prev.filter((i) => i !== id) : [...prev, id]));
   };
 
   const getScoreColor = (s: number) => {
@@ -154,7 +152,9 @@ const CodeQualitySimulator: React.FC = () => {
               >
                 {score}%
               </motion.span>
-              <span className="text-xs uppercase font-bold text-gray-400">{t('web_development_page.process.simulator.status_label')}</span>
+              <span className="text-xs uppercase font-bold text-gray-400">
+                {t('web_development_page.process.simulator.status_label')}
+              </span>
             </div>
           </div>
 
@@ -167,7 +167,9 @@ const CodeQualitySimulator: React.FC = () => {
               className="text-center"
             >
               <div className="font-bold text-lg mb-1" style={{ color: getScoreColor(score) }}>
-                {score >= 100 ? t('web_development_page.process.simulator.mission_accomplished') : t('web_development_page.process.simulator.project_status')}
+                {score >= 100
+                  ? t('web_development_page.process.simulator.mission_accomplished')
+                  : t('web_development_page.process.simulator.project_status')}
               </div>
               <p className="text-slate-500 text-sm max-w-xs">{message}</p>
             </motion.div>

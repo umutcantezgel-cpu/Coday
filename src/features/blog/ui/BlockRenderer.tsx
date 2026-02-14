@@ -73,7 +73,9 @@ const ABTestSimulator = React.lazy(() =>
   }))
 ) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
 const VoiceDemo = React.lazy(() =>
-  import('./interactive/VoiceDemo').then((m) => ({ default: (m as any).VoiceDemo || (m as any).default }))
+  import('./interactive/VoiceDemo').then((m) => ({
+    default: (m as any).VoiceDemo || (m as any).default,
+  }))
 ) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
 const AICostGraph = React.lazy(() =>
   import('./interactive/AICostGraph').then((m) => ({
@@ -532,7 +534,7 @@ const InteractiveBlockRenderer: React.FC<{ block: InteractiveBlock }> = ({ block
     'ai-cost': AICostGraph,
     timeline: WebHistoryTimeline,
     'agency-calculator': AgencyCostCalculator,
-    'quiz': SoulReader,
+    quiz: SoulReader,
     'latency-calculator': LatencyCostCalculator,
     'sovereignty-checklist': SovereigntyChecklist,
     'contrast-analyzer': ContrastRatioAnalyzer,

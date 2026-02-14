@@ -1,6 +1,7 @@
 import React from 'react';
 import { OptimizedImage } from '../../shared/ui/OptimizedImage';
 import { useTranslation } from 'react-i18next';
+import { SeoHead } from '@/shared/ui/SeoHead';
 // Premium UI Components
 import AnimatedList from '../../shared/ui/AnimatedList';
 import RotatingText from '../../shared/ui/RotatingText';
@@ -24,6 +25,19 @@ const Jobs: React.FC = () => {
 
   return (
     <div className="bg-aurora-white min-h-screen pt-24 pb-20">
+      <SeoHead
+        title={`${t('jobs.hero_title_prefix')} | Coday Careers`}
+        description={t('jobs.hero_desc')}
+        pageType="job"
+        schemaData={{
+          jobs: jobs.map((job) => ({
+            title: job.title,
+            description: job.desc,
+            location: job.location,
+            type: job.type,
+          })),
+        }}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 relative">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[500px] bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-3xl opacity-30 pointer-events-none -z-10"></div>

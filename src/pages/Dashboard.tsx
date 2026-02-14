@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Icon } from '../shared/ui/Icon';
+import { OptimizedIcon } from '../shared/ui/OptimizedIcon';
+import { ChartBar, Kanban, FileText, ArrowRight, TrendUp } from '@phosphor-icons/react';
 import { SeoHead } from '../shared/ui/SeoHead';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { Button } from '../shared/ui/Button';
@@ -8,23 +9,23 @@ import { Button } from '../shared/ui/Button';
 // Marketing Features
 const features = [
   {
-    icon: 'chart_bar',
+    icon: ChartBar,
     title: 'features.realtime.title',
     desc: 'features.realtime.desc',
-    color: 'from-blue-400 to-cyan-400'
+    color: 'from-blue-400 to-cyan-400',
   },
   {
-    icon: 'kanban',
+    icon: Kanban,
     title: 'features.tracking.title',
     desc: 'features.tracking.desc',
-    color: 'from-purple-400 to-pink-400'
+    color: 'from-purple-400 to-pink-400',
   },
   {
-    icon: 'description',
+    icon: FileText,
     title: 'features.docs.title',
     desc: 'features.docs.desc',
-    color: 'from-emerald-400 to-teal-400'
-  }
+    color: 'from-emerald-400 to-teal-400',
+  },
 ];
 
 // Mock Dashboard Component for Visuals
@@ -62,14 +63,19 @@ const MockDashboardVisual = () => (
             ))}
           </div>
           {/* Overlay Text */}
-          <div className="absolute top-4 left-4 font-mono text-xs text-slate-400">TRAFFIC ANALYZER_V2</div>
+          <div className="absolute top-4 left-4 font-mono text-xs text-slate-400">
+            TRAFFIC ANALYZER_V2
+          </div>
         </div>
       </div>
 
       {/* Stats Column */}
       <div className="space-y-4">
         {[1, 2, 3].map((_, i) => (
-          <div key={i} className="h-20 rounded-xl bg-slate-50 dark:bg-slate-800/50 p-4 border border-slate-100 dark:border-slate-700/50">
+          <div
+            key={i}
+            className="h-20 rounded-xl bg-slate-50 dark:bg-slate-800/50 p-4 border border-slate-100 dark:border-slate-700/50"
+          >
             <div className="w-8 h-8 rounded-lg bg-slate-200 dark:bg-slate-700 mb-2" />
             <div className="w-16 h-3 rounded bg-slate-200 dark:bg-slate-700" />
           </div>
@@ -87,7 +93,10 @@ const Dashboard: React.FC = () => {
   const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
 
   return (
-    <div className="min-h-screen bg-background-light dark:bg-background-dark font-sans overflow-hidden" ref={scrollRef}>
+    <div
+      className="min-h-screen bg-background-light dark:bg-background-dark font-sans overflow-hidden"
+      ref={scrollRef}
+    >
       <SeoHead
         title={t('meta.title', 'Kunden-Dashboard | Coday')}
         description={t('meta.desc', 'Ihr Projekt-Status auf einen Blick.')}
@@ -95,7 +104,6 @@ const Dashboard: React.FC = () => {
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6 sm:px-8 lg:px-12 max-w-7xl mx-auto flex flex-col items-center text-center">
-
         {/* Background Elements */}
         <div className="absolute top-0 inset-x-0 h-[600px] bg-gradient-radial from-primary/10 via-transparent to-transparent opacity-50 pointer-events-none" />
 
@@ -126,7 +134,10 @@ const Dashboard: React.FC = () => {
           transition={{ delay: 0.2 }}
           className="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mb-10 leading-relaxed"
         >
-          {t('hero.desc', 'Stop guessing. Start knowing. Our client dashboard gives you 24/7 access to your project status, real-time analytics, and all assets.')}
+          {t(
+            'hero.desc',
+            'Stop guessing. Start knowing. Our client dashboard gives you 24/7 access to your project status, real-time analytics, and all assets.'
+          )}
         </motion.p>
 
         <motion.div
@@ -135,12 +146,15 @@ const Dashboard: React.FC = () => {
           transition={{ delay: 0.3 }}
           className="flex flex-wrap gap-4 justify-center"
         >
-          <Button size="lg" variant="primary" rightIcon={<Icon name="arrow_right" className="w-4 h-4" />}>
+          <Button
+            size="lg"
+            variant="primary"
+            rightIcon={<OptimizedIcon icon={ArrowRight} className="w-4 h-4" />}
+          >
             {t('hero.cta.primary', 'Start Your Project')}
           </Button>
           {/* Login button removed as per request */}
         </motion.div>
-
       </section>
 
       {/* Visual Showcase */}
@@ -158,12 +172,12 @@ const Dashboard: React.FC = () => {
           {/* Floating Highlights */}
           <motion.div
             animate={{ y: [0, -10, 0] }}
-            transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+            transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
             className="absolute -right-8 top-12 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-xl border border-slate-100 dark:border-slate-700"
           >
             <div className="flex items-center gap-3">
               <div className="p-2 bg-green-100 dark:bg-green-900/30 text-green-600 rounded-lg">
-                <Icon name="trending_up" weight="bold" />
+                <OptimizedIcon icon={TrendUp} weight="bold" />
               </div>
               <div>
                 <div className="text-xs text-slate-500">Conversion Rate</div>
@@ -182,7 +196,7 @@ const Dashboard: React.FC = () => {
               {t('features.headline', 'Why top brands work with us')}
             </h2>
             <p className="text-slate-600 dark:text-slate-400">
-              {t('features.subheadline', 'We don\'t just deliver results. We prove them.')}
+              {t('features.subheadline', "We don't just deliver results. We prove them.")}
             </p>
           </div>
 
@@ -196,15 +210,15 @@ const Dashboard: React.FC = () => {
                 viewport={{ once: true }}
                 className="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700/50 hover:shadow-lg transition-shadow group"
               >
-                <div className={`w-12 h-12 rounded-xl mb-6 flex items-center justify-center bg-gradient-to-br ${f.color} text-white shadow-lg`}>
-                  <Icon name={f.icon} size="lg" weight="fill" />
+                <div
+                  className={`w-12 h-12 rounded-xl mb-6 flex items-center justify-center bg-gradient-to-br ${f.color} text-white shadow-lg`}
+                >
+                  <OptimizedIcon icon={f.icon} size="lg" weight="fill" />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">
                   {t(f.title)}
                 </h3>
-                <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                  {t(f.desc)}
-                </p>
+                <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{t(f.desc)}</p>
               </motion.div>
             ))}
           </div>
@@ -222,15 +236,17 @@ const Dashboard: React.FC = () => {
           <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
             {t('cta.desc', 'Join the hundreds of companies growing with our data-driven approach.')}
           </p>
-          <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-slate-100">
+          <Button
+            size="lg"
+            variant="secondary"
+            className="bg-white text-primary hover:bg-slate-100"
+          >
             {t('cta.button', 'Start Project Now')}
           </Button>
         </div>
       </section>
-
     </div>
   );
 };
 
 export default Dashboard;
-

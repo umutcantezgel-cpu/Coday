@@ -12,7 +12,14 @@
     "start": "Starten",
     "start_project": "Projekt starten",
     "contact": "Kontakt aufnehmen",
-    "view_work": "Referenzen"
+    "view_work": "Referenzen",
+    "cta_analysis": "Potenzial-Analyse starten"
+  },
+  "cta": {
+    "sticky": {
+      "label": "Bereit?",
+      "text": "Lass uns starten"
+    }
   },
   "footer": {
     "links": {
@@ -143,15 +150,18 @@
     },
     "industries": {
       "all": "Alle Branchen",
+      "overview": "Übersicht",
       "craft": "Handwerk",
       "ecommerce": "E-Commerce",
       "gastronomy": "Gastronomie",
       "health": "Gesundheit",
       "label": "Branchen",
       "real_estate": "Immobilien",
-      "service": "Dienstleistung"
+      "service": "Dienstleistung",
+      "public": "Öffentliche Aufträge"
     },
     "legal": {
+      "hub": "Übersicht",
       "agb": "AGB",
       "imprint": "Impressum",
       "privacy": "Datenschutz"
@@ -167,6 +177,10 @@
       "calculator": "Preisrechner",
       "dashboard": "Kunden-Dashboard",
       "knowledge": {
+        "faq": {
+          "desc": "Häufige Fragen",
+          "label": "FAQ"
+        },
         "title": "Wissen"
       },
       "label": "Ressourcen",
@@ -188,6 +202,7 @@
         "label": "Headless CMS"
       },
       "consulting": {
+        "desc": "Strategie & Architektur",
         "label": "Beratung"
       },
       "design": {
@@ -265,6 +280,13 @@
     "packages": "Paket wählen",
     "calculator": "Konfigurieren",
     "contact": "Anfrage"
+  },
+  "social": {
+    "visit": "Besuchen Sie uns auf {{platform}}",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn"
   },
   "announcement": {
     "text": "Grand Opening: 25% Rabatt auf alle Projekte!",

@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Icon } from '@/shared/ui/Icon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
+import { Confetti as Celebration } from '@phosphor-icons/react';
 import { useTranslation } from 'react-i18next';
 
 const AnnouncementBar: React.FC = () => {
@@ -10,7 +11,7 @@ const AnnouncementBar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
         <div className="flex items-center justify-center gap-4 text-sm font-medium">
           <span className="flex items-center">
-            <Icon name="celebration" className="text-lg mr-2" />
+            <OptimizedIcon icon={Celebration} className="text-lg mr-2" />
             {t('announcement.text', {
               defaultValue: 'Grand Opening: 25% Rabatt auf alle Projekte!',
             })}

@@ -3,10 +3,11 @@ import { useTranslation } from 'react-i18next';
 import BlurText from '../../shared/ui/BlurText';
 import GradientText from '../../shared/ui/GradientText';
 import { OptimizedImage } from '../../shared/ui/OptimizedImage';
-import { marketingImages } from '../../data/serviceImages';
+import { marketingImages } from '@/shared/data/serviceImages';
 import TrafficROICalculator from '../../features/seo/TrafficROICalculator';
 import RankingPeriodicTable from '../../features/seo/RankingPeriodicTable';
-import { Icon } from '../../shared/ui/Icon';
+import { OptimizedIcon } from '../../shared/ui/OptimizedIcon';
+import { CheckCircle, Gear, FileText, MapPin } from '@phosphor-icons/react';
 import { SeoHead } from '../../shared/ui/SeoHead';
 
 const Seo: React.FC = () => {
@@ -31,7 +32,6 @@ const Seo: React.FC = () => {
                   text={t('seo_page.hero.title_prefix')}
                   delay={100}
                   animateBy="words"
-                  direction="top"
                   className="block"
                 />
                 <GradientText
@@ -50,7 +50,7 @@ const Seo: React.FC = () => {
               <div className="absolute inset-0 bg-primary/10 rounded-3xl transform -rotate-2 scale-105"></div>
               <OptimizedImage
                 src={marketingImages.hero.src}
-                alt={marketingImages.hero.alt}
+                alt={t(marketingImages.hero.alt)}
                 className="relative rounded-3xl shadow-flat-lg w-full transform rotate-1 hover:rotate-0 transition-all duration-500 bg-white p-2"
                 priority
               />
@@ -89,7 +89,7 @@ const Seo: React.FC = () => {
               <div className="absolute top-0 end-0 w-32 h-32 bg-secondary/5 rounded-full blur-2xl"></div>
               <OptimizedImage
                 src={marketingImages.omnichannel.src}
-                alt={marketingImages.omnichannel.alt}
+                alt={t(marketingImages.omnichannel.alt)}
                 className="relative rounded-3xl shadow-lg w-full border border-gray-100"
               />
             </div>
@@ -102,7 +102,7 @@ const Seo: React.FC = () => {
                 {(t('seo_page.dominance.items', { returnObjects: true }) as string[]).map(
                   (item, i) => (
                     <li key={i} className="flex items-center text-secondary font-medium">
-                      <Icon name="check_circle" className="text-primary me-2" />
+                      <OptimizedIcon icon={CheckCircle} className="text-primary me-2" />
                       {item}
                     </li>
                   )
@@ -114,7 +114,7 @@ const Seo: React.FC = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="p-8 bg-surface-light rounded-3xl border border-gray-100 hover:shadow-lg transition-all">
               <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6">
-                <Icon name="settings" />
+                <OptimizedIcon icon={Gear} />
               </div>
               <h3 className="font-bold text-2xl mb-4 text-secondary">
                 {t('seo_page.dominance.cards.technical.title')}
@@ -123,7 +123,7 @@ const Seo: React.FC = () => {
             </div>
             <div className="p-8 bg-surface-light rounded-3xl border border-gray-100 hover:shadow-lg transition-all">
               <div className="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center mb-6">
-                <Icon name="description" />
+                <OptimizedIcon icon={FileText} />
               </div>
               <h3 className="font-bold text-2xl mb-4 text-secondary">
                 {t('seo_page.dominance.cards.content.title')}
@@ -132,7 +132,7 @@ const Seo: React.FC = () => {
             </div>
             <div className="p-8 bg-surface-light rounded-3xl border border-gray-100 hover:shadow-lg transition-all">
               <div className="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center mb-6">
-                <Icon name="map" />
+                <OptimizedIcon icon={MapPin} />
               </div>
               <h3 className="font-bold text-2xl mb-4 text-secondary">
                 {t('seo_page.dominance.cards.regional.title')}

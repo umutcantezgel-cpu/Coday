@@ -29,12 +29,15 @@
   },
   "aiCostGraph": {
     "ai": "AI System",
+    "efficiency": "Efficiency",
     "scaleDesc": "AI costs remain stable while performance scales infinitely.",
     "scaleTitle": "Scalability Effect",
     "staff": "Human Staff",
     "title": "Cost Efficiency: Staff vs. AI",
     "trapDesc": "Costs rise linearly with performance. No leverage.",
-    "trapTitle": "The Linear Trap"
+    "trapTitle": "The Linear Trap",
+    "xLabel": "Performance Output",
+    "yLabel": "Total Cost"
   },
   "backToOverview": "Back to Overview",
   "community": {
@@ -42,6 +45,7 @@
     "emailPlaceholder": "Your Email Address",
     "label": "Community",
     "socialProof": "The best marketing newsletter in the DACH region.",
+    "socialProofAlt": "Satisfied Community Members",
     "subscribe": "Subscribe",
     "title": "Join 2,500+ <br /> Experts."
   },

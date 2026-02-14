@@ -3,14 +3,26 @@ import { motion } from 'motion/react';
 import { staggerContainer, fadeUpVariants, STAGGER, TRANSITION } from '@/shared/lib/motion';
 import { useTranslation } from 'react-i18next';
 import { LocalizedLink } from '@/shared/ui/LocalizedLink';
-import { Icon } from '@/shared/ui/Icon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { SeoHead } from '@/shared/ui/SeoHead';
+import {
+  Gavel,
+  Shield,
+  Buildings,
+  List,
+  Clock,
+  ArrowRight,
+  SealCheck,
+  Eye,
+  ArrowsClockwise,
+  EnvelopeSimple,
+} from '@phosphor-icons/react';
 
 interface LegalCardProps {
   title: string;
   description: string;
   href: string;
-  icon: string;
+  icon: React.ElementType;
   color: 'primary' | 'blue' | 'green' | 'purple';
   sections: number;
   readTime: string;
@@ -20,7 +32,7 @@ const LegalCard: React.FC<LegalCardProps> = ({
   title,
   description,
   href,
-  icon,
+  icon: IconComp,
   color,
   sections,
   readTime,
@@ -47,23 +59,23 @@ const LegalCard: React.FC<LegalCardProps> = ({
           <div
             className={`w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 ${colorClasses[color].split(' ').slice(0, 2).join(' ')}`}
           >
-            <Icon name={icon} className="w-7 h-7" />
+            <OptimizedIcon icon={IconComp} className="w-7 h-7" />
           </div>
           <div className="flex-1">
             <h3 className="font-display font-bold text-xl text-secondary mb-2">{title}</h3>
             <p className="text-gray-600 leading-relaxed mb-4">{description}</p>
             <div className="flex items-center gap-4 text-sm text-gray-500">
               <span className="flex items-center gap-1">
-                <Icon name="list" className="w-4 h-4" />
+                <OptimizedIcon icon={List} className="w-4 h-4" />
                 {sections} Abschnitte
               </span>
               <span className="flex items-center gap-1">
-                <Icon name="schedule" className="w-4 h-4" />
+                <OptimizedIcon icon={Clock} className="w-4 h-4" />
                 {readTime} Lesezeit
               </span>
             </div>
           </div>
-          <Icon name="arrow_forward" className="w-5 h-5 text-gray-400" />
+          <OptimizedIcon icon={ArrowRight} className="w-5 h-5 text-gray-400" />
         </div>
       </LocalizedLink>
     </motion.div>
@@ -81,7 +93,7 @@ const LegalHub: React.FC = () => {
           'Unsere Vertragsbedingungen für Webdesign, Entwicklung und digitale Dienstleistungen – transparent und fair.',
       }),
       href: '/legal/agb',
-      icon: 'gavel',
+      icon: Gavel,
       color: 'primary',
       sections: 15,
       readTime: '12 Min',
@@ -93,7 +105,7 @@ const LegalHub: React.FC = () => {
           'Wie wir mit Ihren Daten umgehen – DSGVO-konform, transparent und mit Fokus auf Ihre Rechte.',
       }),
       href: '/legal/datenschutz',
-      icon: 'shield',
+      icon: Shield,
       color: 'blue',
       sections: 14,
       readTime: '15 Min',
@@ -105,7 +117,7 @@ const LegalHub: React.FC = () => {
           'Alle Angaben zum Anbieter dieser Website nach § 5 DDG – wer wir sind und wie Sie uns erreichen.',
       }),
       href: '/legal/impressum',
-      icon: 'business',
+      icon: Buildings,
       color: 'green',
       sections: 8,
       readTime: '5 Min',
@@ -133,7 +145,7 @@ const LegalHub: React.FC = () => {
               className="text-center mb-16"
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-medium text-sm mb-6">
-                <Icon name="verified" className="w-4 h-4" />
+                <OptimizedIcon icon={SealCheck} className="w-4 h-4" />
                 {t('hub.badge', { defaultValue: 'DSGVO-konform & transparent' })}
               </div>
               <h1 className="font-display font-black text-4xl md:text-5xl text-secondary mb-4">
@@ -169,7 +181,7 @@ const LegalHub: React.FC = () => {
               className="mt-12 grid md:grid-cols-3 gap-4"
             >
               <div className="bg-white rounded-xl border border-gray-100 p-5 text-center">
-                <Icon name="verified" className="w-8 h-8 text-green-500 mx-auto mb-2" />
+                <OptimizedIcon icon={SealCheck} className="w-8 h-8 text-green-500 mx-auto mb-2" />
                 <h4 className="font-bold text-gray-900 mb-1">
                   {t('hub.features.gdpr.title', { defaultValue: 'DSGVO-konform' })}
                 </h4>
@@ -178,7 +190,7 @@ const LegalHub: React.FC = () => {
                 </p>
               </div>
               <div className="bg-white rounded-xl border border-gray-100 p-5 text-center">
-                <Icon name="visibility" className="w-8 h-8 text-blue-500 mx-auto mb-2" />
+                <OptimizedIcon icon={Eye} className="w-8 h-8 text-blue-500 mx-auto mb-2" />
                 <h4 className="font-bold text-gray-900 mb-1">
                   {t('hub.features.transparent.title', { defaultValue: 'Transparent' })}
                 </h4>
@@ -189,7 +201,10 @@ const LegalHub: React.FC = () => {
                 </p>
               </div>
               <div className="bg-white rounded-xl border border-gray-100 p-5 text-center">
-                <Icon name="update" className="w-8 h-8 text-purple-500 mx-auto mb-2" />
+                <OptimizedIcon
+                  icon={ArrowsClockwise}
+                  className="w-8 h-8 text-purple-500 mx-auto mb-2"
+                />
                 <h4 className="font-bold text-gray-900 mb-1">
                   {t('hub.features.updated.title', { defaultValue: 'Aktuell' })}
                 </h4>
@@ -220,7 +235,7 @@ const LegalHub: React.FC = () => {
                 to="/contact"
                 className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-xl font-medium hover:bg-primary/90 transition-colors"
               >
-                <Icon name="mail" className="w-5 h-5" />
+                <OptimizedIcon icon={EnvelopeSimple} className="w-5 h-5" />
                 {t('hub.cta.button', { defaultValue: 'Kontakt aufnehmen' })}
               </LocalizedLink>
             </motion.div>

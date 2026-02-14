@@ -8,6 +8,28 @@ import {
   LegalTimeline,
   LegalSectionHeader,
 } from '@/shared/ui/LegalComponents';
+import {
+  FileText,
+  Books,
+  Handshake,
+  Wrench,
+  Stack,
+  CurrencyEur,
+  SealCheck,
+  Users,
+  Copyright,
+  Robot,
+  ShieldCheck,
+  Shield,
+  Lock,
+  Prohibit,
+  Gavel,
+  ChatCircle,
+  Code,
+  Pencil,
+  RocketLaunch,
+  Browsers,
+} from '@phosphor-icons/react';
 import { useTranslation } from 'react-i18next';
 
 const Terms: React.FC = () => {
@@ -17,69 +39,73 @@ const Terms: React.FC = () => {
     {
       id: 'geltung',
       label: t('terms.toc.geltung', { defaultValue: '§1 Geltungsbereich' }),
-      icon: 'description',
+      icon: FileText,
     },
     {
       id: 'definitionen',
       label: t('terms.toc.definitionen', { defaultValue: '§2 Definitionen' }),
-      icon: 'book',
+      icon: Books,
     },
     {
       id: 'vertrag',
       label: t('terms.toc.vertrag', { defaultValue: '§3 Vertragsschluss' }),
-      icon: 'handshake',
+      icon: Handshake,
     },
     {
       id: 'leistung',
       label: t('terms.toc.leistung', { defaultValue: '§4 Leistungsumfang' }),
-      icon: 'build',
+      icon: Wrench,
     },
     {
       id: 'projektablauf',
       label: t('terms.toc.projektablauf', { defaultValue: '§5 Projektablauf' }),
-      icon: 'timeline',
+      icon: Stack,
     },
-    { id: 'preise', label: t('terms.toc.preise', { defaultValue: '§6 Preise' }), icon: 'payments' },
+    {
+      id: 'preise',
+      label: t('terms.toc.preise', { defaultValue: '§6 Preise' }),
+      icon: CurrencyEur,
+    },
     {
       id: 'festpreis',
       label: t('terms.toc.festpreis', { defaultValue: '§7 Festpreis-Garantie' }),
-      icon: 'verified',
+      icon: SealCheck,
     },
     {
       id: 'mitwirkung',
       label: t('terms.toc.mitwirkung', { defaultValue: '§8 Mitwirkungspflichten' }),
-      icon: 'group',
+      icon: Users,
     },
     {
       id: 'eigentum',
       label: t('terms.toc.eigentum', { defaultValue: '§9 Geistiges Eigentum' }),
-      icon: 'copyright',
+      icon: Copyright,
     },
-    { id: 'ki', label: t('terms.toc.ki', { defaultValue: '§10 KI-Dienste' }), icon: 'smart_toy' },
+    { id: 'ki', label: t('terms.toc.ki', { defaultValue: '§10 KI-Dienste' }), icon: Robot },
     {
       id: 'gewaehrleistung',
       label: t('terms.toc.gewaehrleistung', { defaultValue: '§11 Gewährleistung' }),
-      icon: 'security',
+      icon: ShieldCheck,
     },
     {
       id: 'haftung',
       label: t('terms.toc.haftung', { defaultValue: '§12 Haftung' }),
-      icon: 'shield',
+      icon: Shield,
     },
     {
       id: 'vertraulichkeit',
       label: t('terms.toc.vertraulichkeit', { defaultValue: '§13 Vertraulichkeit' }),
-      icon: 'lock',
+      icon: Lock,
     },
     {
       id: 'kuendigung',
       label: t('terms.toc.kuendigung', { defaultValue: '§14 Kündigung' }),
-      icon: 'cancel',
+      icon: Prohibit,
     },
     {
       id: 'schluss',
       label: t('terms.toc.schluss', { defaultValue: '§15 Schlussbestimmungen' }),
-      icon: 'gavel',
+      icon: Gavel,
     },
   ];
 
@@ -89,7 +115,7 @@ const Terms: React.FC = () => {
       description: t('terms.timeline.inquiry_desc', {
         defaultValue: 'Kostenlose Erstberatung und Projektbesprechung',
       }),
-      icon: 'chat',
+      icon: ChatCircle,
       status: 'completed' as const,
     },
     {
@@ -97,7 +123,7 @@ const Terms: React.FC = () => {
       description: t('terms.timeline.offer_desc', {
         defaultValue: 'Detailliertes Angebot mit Festpreis-Garantie',
       }),
-      icon: 'description',
+      icon: FileText,
       status: 'completed' as const,
     },
     {
@@ -105,7 +131,7 @@ const Terms: React.FC = () => {
       description: t('terms.timeline.contract_desc', {
         defaultValue: '50% Anzahlung, Projektstart',
       }),
-      icon: 'handshake',
+      icon: Handshake,
       status: 'current' as const,
     },
     {
@@ -113,7 +139,7 @@ const Terms: React.FC = () => {
       description: t('terms.timeline.design_desc', {
         defaultValue: 'Iterative Entwicklung mit Zwischenabnahmen',
       }),
-      icon: 'code',
+      icon: Code,
       status: 'upcoming' as const,
     },
     {
@@ -121,7 +147,7 @@ const Terms: React.FC = () => {
       description: t('terms.timeline.review_desc', {
         defaultValue: 'Bis zu 3 Revisionsrunden inklusive',
       }),
-      icon: 'edit',
+      icon: Pencil,
       status: 'upcoming' as const,
     },
     {
@@ -129,7 +155,7 @@ const Terms: React.FC = () => {
       description: t('terms.timeline.handover_desc', {
         defaultValue: 'Finaler Launch, Schulung, 30 Tage Support',
       }),
-      icon: 'rocket',
+      icon: RocketLaunch,
       status: 'upcoming' as const,
     },
   ];
@@ -207,24 +233,36 @@ const Terms: React.FC = () => {
         />
 
         <div className="grid md:grid-cols-2 gap-4 mb-6">
-          <LegalInfoCard title="Anbieter" icon="person">
+          <LegalInfoCard
+            title={t('terms.definitions.provider_title', { defaultValue: 'Anbieter' })}
+            icon={Users}
+          >
             {t('terms.definitions.provider', {
               defaultValue: 'Umutcan Emre Tezgel, handelnd unter „Coday", mit Sitz in Wetzlar.',
             })}
           </LegalInfoCard>
-          <LegalInfoCard title="Auftraggeber" icon="group">
+          <LegalInfoCard
+            title={t('terms.definitions.client_title', { defaultValue: 'Auftraggeber' })}
+            icon={Users}
+          >
             {t('terms.definitions.client', {
               defaultValue:
                 'Natürliche oder juristische Person, die Leistungen des Anbieters in Anspruch nimmt.',
             })}
           </LegalInfoCard>
-          <LegalInfoCard title="Projekt" icon="folder">
+          <LegalInfoCard
+            title={t('terms.definitions.project_title', { defaultValue: 'Projekt' })}
+            icon={Books}
+          >
             {t('terms.definitions.project', {
               defaultValue:
                 'Die im Angebot definierte Gesamtheit aller zu erbringenden Leistungen.',
             })}
           </LegalInfoCard>
-          <LegalInfoCard title="Revision" icon="edit">
+          <LegalInfoCard
+            title={t('terms.definitions.revision_title', { defaultValue: 'Revision' })}
+            icon={Pencil}
+          >
             {t('terms.definitions.revision', {
               defaultValue:
                 'Änderungsrunde zur Anpassung von Design oder Funktionalität nach Zwischenabnahme.',
@@ -401,13 +439,21 @@ const Terms: React.FC = () => {
         </p>
 
         <div className="grid md:grid-cols-2 gap-4 mb-6">
-          <LegalInfoCard title="1. Rate" icon="payments" variant="highlight">
+          <LegalInfoCard
+            title={t('terms.payment.first_title', { defaultValue: '1. Rate' })}
+            icon={CurrencyEur}
+            variant="highlight"
+          >
             <strong>50%</strong>{' '}
             {t('terms.payment.first', {
               defaultValue: 'bei Auftragserteilung / Vertragsunterzeichnung',
             })}
           </LegalInfoCard>
-          <LegalInfoCard title="2. Rate" icon="payments" variant="highlight">
+          <LegalInfoCard
+            title={t('terms.payment.second_title', { defaultValue: '2. Rate' })}
+            icon={CurrencyEur}
+            variant="highlight"
+          >
             <strong>50%</strong>{' '}
             {t('terms.payment.second', { defaultValue: 'nach Fertigstellung und vor Übergabe' })}
           </LegalInfoCard>
@@ -580,7 +626,7 @@ const Terms: React.FC = () => {
 
         <LegalInfoCard
           title={t('terms.eigentum.code.title', { defaultValue: 'Quellcode' })}
-          icon="code"
+          icon={Code}
           variant="highlight"
         >
           {t('terms.eigentum.code.text', {
@@ -681,7 +727,7 @@ const Terms: React.FC = () => {
           title={t('terms.gewaehrleistung.browser.title', {
             defaultValue: 'Browser-Kompatibilität',
           })}
-          icon="browser"
+          icon={Browsers}
         >
           {t('terms.gewaehrleistung.browser.text', {
             defaultValue:

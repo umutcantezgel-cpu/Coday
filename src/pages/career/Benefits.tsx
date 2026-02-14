@@ -1,8 +1,18 @@
 import React from 'react';
-import { Icon } from '@/shared/ui/Icon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { MagicBento, BentoCard } from '../../shared/ui/MagicBento';
 import GearSetup from '../../features/benefits/GearSetup';
 import { useTranslation } from 'react-i18next';
+import { SeoHead } from '@/shared/ui/SeoHead';
+import {
+  RocketLaunch,
+  Heart,
+  ChartBar,
+  Users,
+  Lightning,
+  Globe,
+  WarningCircle,
+} from '@phosphor-icons/react';
 
 const Benefits: React.FC = () => {
   const { t } = useTranslation('careers');
@@ -12,6 +22,16 @@ const Benefits: React.FC = () => {
     text: string;
   }
   const benefits = t('benefits.items', { returnObjects: true }) as BenefitItem[];
+
+  const iconMap: Record<string, React.ElementType> = {
+    rocket_launch: RocketLaunch,
+    heart: Heart,
+    chart_bar: ChartBar,
+    users: Users,
+    lightning: Lightning,
+    globe: Globe,
+    // Add more mappings as needed based on translation keys
+  };
 
   // Map correct effects to the benefits from JSON order if possible or hardcode based on index
   // Since we can't easily put function refs or constants in JSON, we might map them here.
@@ -25,6 +45,10 @@ const Benefits: React.FC = () => {
 
   return (
     <div className="bg-background-light min-h-screen pt-32 pb-24">
+      <SeoHead
+        title={`${t('benefits.hero.title')} | Coday Benefits`}
+        description={t('benefits.hero.desc')}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero */}
         <div className="text-center mb-16">
@@ -49,7 +73,10 @@ const Benefits: React.FC = () => {
             >
               <div className="p-8 h-full flex flex-col items-start text-left">
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Icon name={benefit.icon} className="text-3xl text-primary" />
+                  <OptimizedIcon
+                    icon={iconMap[benefit.icon] || WarningCircle}
+                    className="text-3xl text-primary"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3 text-left">{benefit.title}</h3>
                 <p className="text-slate-500 leading-relaxed text-left">{benefit.text}</p>

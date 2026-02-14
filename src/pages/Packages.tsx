@@ -3,7 +3,18 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { LocalizedNavLink as NavLink } from '@/shared/ui/LocalizedLink';
 import { motion } from 'motion/react';
-import { Icon } from '@/shared/ui/Icon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
+import {
+  Clock,
+  ArrowsClockwise,
+  CheckCircle,
+  MinusCircle,
+  ArrowRight,
+  ShieldCheck,
+  Gauge,
+  Headset,
+  Calendar,
+} from '@phosphor-icons/react';
 import { SeoHead } from '@/shared/ui/SeoHead';
 import CountUp from '../shared/ui/CountUp';
 import GradientText from '../shared/ui/GradientText';
@@ -219,7 +230,7 @@ const Packages: React.FC = () => {
 
                       {/* Delivery Pill */}
                       <div className="inline-flex items-center gap-1.5 bg-primary/10 text-primary text-xs font-medium px-3 py-1.5 rounded-full">
-                        <Icon name="schedule" className="text-sm" />
+                        <OptimizedIcon icon={Clock} className="text-sm" />
                         <span>
                           {t('labels.delivery', {
                             days: pkg.deliveryDays,
@@ -234,7 +245,7 @@ const Packages: React.FC = () => {
 
                     {/* Monthly Badge */}
                     <div className="flex items-center justify-center gap-2 mb-6">
-                      <Icon name="autorenew" className="text-sm text-gray-500" />
+                      <OptimizedIcon icon={ArrowsClockwise} className="text-sm text-gray-500" />
                       <span className="text-gray-400 text-xs">
                         + {formatPrice(pkg.monthlyPrice)}
                         {t('labels.monthly', { defaultValue: '/Monat' })}
@@ -245,8 +256,8 @@ const Packages: React.FC = () => {
                     <div className="space-y-3 mb-8 flex-grow">
                       {pkg.features.map((feature, idx) => (
                         <div key={idx} className="flex items-start gap-3">
-                          <Icon
-                            name="check_circle"
+                          <OptimizedIcon
+                            icon={CheckCircle}
                             className={`text-base mt-0.5 flex-shrink-0 ${pkg.popular ? 'text-primary' : 'text-primary/70'}`}
                           />
                           <span className="text-gray-300 text-sm leading-relaxed">{feature}</span>
@@ -254,8 +265,8 @@ const Packages: React.FC = () => {
                       ))}
                       {pkg.notIncluded?.map((feature, idx) => (
                         <div key={`ni-${idx}`} className="flex items-start gap-3 opacity-40">
-                          <Icon
-                            name="remove_circle_outline"
+                          <OptimizedIcon
+                            icon={MinusCircle}
                             className="text-base text-gray-600 mt-0.5 flex-shrink-0"
                           />
                           <span className="text-gray-500 text-sm line-through leading-relaxed">
@@ -279,7 +290,7 @@ const Packages: React.FC = () => {
                       `}
                     >
                       {pkg.cta}
-                      <Icon name="arrow_forward" className="text-sm" />
+                      <OptimizedIcon icon={ArrowRight} className="text-sm" />
                     </button>
                   </div>
                 </div>
@@ -296,21 +307,21 @@ const Packages: React.FC = () => {
           >
             {[
               {
-                icon: 'verified',
+                icon: ShieldCheck,
                 label: t('trust.google_partner', { defaultValue: 'Google Partner' }),
               },
               {
-                icon: 'shield',
+                icon: ShieldCheck, // Using ShieldCheck for satisfaction too as placeholder or imported localized icon
                 label: t('trust.satisfaction', { defaultValue: '100% Zufriedenheit' }),
               },
-              { icon: 'speed', label: t('trust.performance', { defaultValue: 'PageSpeed 95+' }) },
+              { icon: Gauge, label: t('trust.performance', { defaultValue: 'PageSpeed 95+' }) },
               {
-                icon: 'support_agent',
+                icon: Headset,
                 label: t('trust.support', { defaultValue: '24/7 Support' }),
               },
             ].map((badge, idx) => (
               <div key={idx} className="flex items-center gap-2 text-gray-400">
-                <Icon name={badge.icon} className="text-lg text-primary/60" />
+                <OptimizedIcon icon={badge.icon} className="text-lg text-primary/60" />
                 <span className="text-xs font-medium tracking-wide">{badge.label}</span>
               </div>
             ))}
@@ -432,7 +443,7 @@ const Packages: React.FC = () => {
                 className="inline-flex items-center px-8 py-3.5 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 duration-300"
               >
                 {t('cta_section.button')}
-                <Icon name="calendar_month" className="ml-2" />
+                <OptimizedIcon icon={Calendar} className="ml-2" />
               </NavLink>
             </div>
           </motion.div>

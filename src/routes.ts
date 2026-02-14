@@ -23,7 +23,7 @@ export default [
       route('services/web-design', 'pages/services/WebDesign.tsx'),
       route('services/seo', 'pages/services/Seo.tsx'),
       route('services/performance', 'pages/services/Performance.tsx'),
-      route('services/consulting', 'pages/services/Consulting.tsx'),
+      route('beratung', 'pages/services/Consulting.tsx'),
 
       // Web Development Sub-Services
       route('services/web-development/e-commerce', 'pages/services/development/Ecommerce.tsx'),
@@ -51,6 +51,7 @@ export default [
       route('services/industries/gesundheit', 'pages/industries/Gesundheit.tsx'),
       route('services/industries/dienstleistung', 'pages/industries/Dienstleistung.tsx'),
       route('services/industries/e-commerce', 'pages/industries/Retail.tsx'),
+      route('oeffentliche-auftraege', 'pages/industries/PublicSector.tsx'),
 
       // Dynamic Service Detail Route (Fallback)
       route('services/:category/:slug', 'pages/services/ServiceDetail.tsx'),
@@ -85,6 +86,7 @@ export default [
       route('knowledge/blog/:slug', 'pages/knowledge/BlogPost.tsx'),
       route('knowledge/newsletter', 'pages/knowledge/Newsletter.tsx'),
       route('knowledge/whitepapers', 'pages/knowledge/Whitepapers.tsx'),
+      route('knowledge/faq', 'pages/knowledge/FAQ.tsx'),
 
       // Career Routes
       route('career', 'pages/Careers.tsx'),

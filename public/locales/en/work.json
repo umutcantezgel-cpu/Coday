@@ -1,9 +1,34 @@
 {
   "hero": {
-    "badge": "Our Work",
-    "desc": "Every project tells a story. Here are our latest success stories that speak for themselves.",
-    "title_gradient": "Results.",
-    "title_start": "Real"
+    "title": "We Build Digital Monuments",
+    "description": "Not just websites. We build economic weapons for brands that want to dominate.",
+    "label": "Evidence of Excellence"
+  },
+  "sections": {
+    "in_progress": {
+      "title": "The Lab / In Progress",
+      "subtitle": "Live builds deploying in real-time."
+    },
+    "case_studies": {
+      "title": "Selected Works"
+    },
+    "templates": {
+      "title": "The Vault",
+      "subtitle": "Production-ready templates optimized for speed and conversion."
+    }
+  },
+  "actions": {
+    "view_live": "View Live Build"
+  },
+  "filter": {
+    "all": "All",
+    "design": "Design",
+    "development": "Development",
+    "marketing": "Marketing"
+  },
+  "empty_state": {
+    "title": "No projects found",
+    "desc": "Try another filter or check back later."
   },
   "results": {
     "desc": "Measurable improvements that make a real business impact.",
@@ -57,5 +82,29 @@
     },
     "desc": "Every pixel has a purpose. Our design language combines premium aesthetics with maximum usability.",
     "title": "Visual Identity"
+  },
+  "project_detail": {
+    "not_found": "Project not found",
+    "back_to_overview": "Back to overview",
+    "breadcrumb_projects": "Projects",
+    "sidebar": {
+      "client": "Client",
+      "industry": "Industry",
+      "services": "Services",
+      "year": "Year",
+      "details": "Project Details",
+      "service": "Service",
+      "period": "Period",
+      "result": "Result",
+      "interested_title": "Interested in similar results?",
+      "request_project": "Request Project"
+    },
+    "cta": {
+      "title": "Ready for the next step?",
+      "button": "Request Project"
+    },
+    "challenge": "The Challenge",
+    "approach": "Our Approach",
+    "results": "Results"
   }
 }

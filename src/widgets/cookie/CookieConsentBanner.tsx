@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Icon } from '@/shared/ui/Icon';
+import { Cookie } from '@phosphor-icons/react';
+import { OptimizedIcon } from '../../shared/ui/OptimizedIcon';
 import { Link } from 'react-router-dom';
-import { useCookieStore } from './lib/cookieStore';
+import { useCookieStore } from '@/shared/lib/cookieStore';
 import CookieSettingsModal from './CookieSettingsModal';
 
 export const CookieConsentBanner: React.FC = () => {
@@ -19,6 +20,7 @@ export const CookieConsentBanner: React.FC = () => {
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsVisible(false);
     }
+    return undefined;
   }, [hasConsented, isVisible]);
 
   const handleAcceptAll = () => {
@@ -50,7 +52,7 @@ export const CookieConsentBanner: React.FC = () => {
           >
             <div className="bg-white/95 backdrop-blur-xl border border-white/20 shadow-2xl rounded-2xl p-6 md:p-8 flex flex-col lg:flex-row gap-6 items-center lg:items-start text-center lg:text-left ring-1 ring-black/5">
               <div className="p-3 bg-primary/10 rounded-xl text-primary shrink-0">
-                <Icon name="cookie" className="w-8 h-8" />
+                <OptimizedIcon icon={Cookie} className="w-8 h-8" />
               </div>
               <div className="flex-1 space-y-4">
                 <div>

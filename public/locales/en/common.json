@@ -14,6 +14,12 @@
     "contact": "Contact Us",
     "view_work": "View Work"
   },
+  "cta": {
+    "sticky": {
+      "label": "Ready?",
+      "text": "Let's start"
+    }
+  },
   "footer": {
     "links": {
       "booking": "Book Appointment",
@@ -143,15 +149,18 @@
     },
     "industries": {
       "all": "All Industries",
+      "overview": "Overview",
       "craft": "Craft & Construction",
       "ecommerce": "E-Commerce",
       "gastronomy": "Gastronomy",
       "health": "Health",
       "label": "Industries",
       "real_estate": "Real Estate",
-      "service": "Services"
+      "service": "Services",
+      "public": "Public Sector"
     },
     "legal": {
+      "hub": "Overview",
       "agb": "Terms",
       "imprint": "Imprint",
       "privacy": "Privacy"
@@ -167,6 +176,10 @@
       "calculator": "Price Calculator",
       "dashboard": "Client Dashboard",
       "knowledge": {
+        "faq": {
+          "desc": "Common Questions",
+          "label": "FAQ"
+        },
         "title": "Knowledge"
       },
       "label": "Resources",
@@ -188,6 +201,7 @@
         "label": "Headless CMS"
       },
       "consulting": {
+        "desc": "Strategy & Architecture",
         "label": "Consulting"
       },
       "design": {
@@ -265,6 +279,13 @@
     "packages": "Choose Package",
     "calculator": "Configure",
     "contact": "Request"
+  },
+  "social": {
+    "visit": "Visit us on {{platform}}",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn"
   },
   "announcement": {
     "text": "Grand Opening: 25% discount on all projects!",

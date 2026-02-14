@@ -4,6 +4,7 @@
       "failed": "Buchung fehlgeschlagen",
       "generic": "Ein unbekannter Fehler ist aufgetreten"
     },
+    "loading": "Lade verfügbare Zeiten...",
     "step1": {
       "next": "Weiter",
       "title": "Wähle einen Termin"

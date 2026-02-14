@@ -377,6 +377,8 @@ body.mobile-nav-open #fab-container {
   text-decoration: none;
   border-radius: 0.75rem;
   transition: background 0.2s;
+  min-height: 44px;
+  justify-content: center;
 }
 
 .mobile-link-item:active {

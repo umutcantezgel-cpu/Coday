@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Icon } from '@/shared/ui/Icon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
+import { CaretRight, CaretDown } from '@phosphor-icons/react';
 import { useNavigate } from 'react-router-dom';
 import { useCalculatorStore } from '../features/calculator/model/store';
 import { ModuleCard } from '../features/calculator/ui/ModuleCard';
 import { CalculatorSummary } from '../features/calculator/ui/Summary';
-import { modules, ModuleCategory } from '../data/modules';
+import { modules, ModuleCategory } from '@/shared/data/modules';
 import StepIndicator from '../shared/ui/StepIndicator';
 import { ArrowRight } from '@phosphor-icons/react';
 
@@ -99,7 +100,7 @@ const Calculator: React.FC = () => {
                         {selectedCount > 0 ? (
                           selectedCount
                         ) : (
-                          <Icon name="chevron_right" className="text-xs" />
+                          <OptimizedIcon icon={CaretRight} className="text-xs" />
                         )}
                       </div>
                       <div className="text-left">
@@ -116,7 +117,7 @@ const Calculator: React.FC = () => {
                     <div
                       className={`transform transition-transform duration-300 text-gray-400 ${isOpen ? 'rotate-180' : ''}`}
                     >
-                      <Icon name="expand_more" />
+                      <OptimizedIcon icon={CaretDown} />
                     </div>
                   </button>
 

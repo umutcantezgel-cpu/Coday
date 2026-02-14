@@ -1,9 +1,12 @@
 import React, { useState, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { CaseStudyCard } from '../../features/case-studies/ui/CaseStudyCard';
-import { workData } from '../../data/work';
+import { workData, Project } from '@/shared/data/work';
 import { SeoHead } from '../../shared/ui/SeoHead';
+import { WorkHero } from '@/features/work/components/WorkHero';
+import { InProgressSection } from '@/features/work/components/InProgressSection';
+import { TemplateVault } from '@/features/work/components/TemplateVault';
+import { CaseStudyCard } from '../../features/case-studies/ui/CaseStudyCard';
 
 const Work: React.FC = () => {
   const { t, i18n } = useTranslation('work');
@@ -16,25 +19,38 @@ const Work: React.FC = () => {
 
   const currentLang = i18n.language as 'de' | 'en';
 
-  // Map workData to project array
-  const projects = Object.values(workData).map((project) => ({
-    id: project.slug,
-    slug: project.slug,
-    title: project.content[currentLang].title,
-    client: project.content[currentLang].subtitle, // Mapping subtitle to client for card display
-    industry: project.content[currentLang].category,
-    image:
-      project.slug === 'batherm'
-        ? '/images/portfolio/batherm-illustration.webp'
-        : `/images/portfolio/${project.thumbnail}.webp`,
-    excerpt: project.content[currentLang].challenge.description,
-    tags: project.content[currentLang].stats.map((s) => s.value),
-    category: project.category, // internal category
-    externalLink: project.liveUrl || `/work/${project.slug}`,
-  }));
+  // Categorize projects
+  const allProjects = Object.values(workData);
+  const inProgressProjects = allProjects.filter((p) => p.type === 'in_progress');
+  const templateProjects = allProjects.filter((p) => p.type === 'template');
 
-  const filteredProjects =
-    filter === 'all' ? projects : projects.filter((p) => p.category === filter);
+  // Case Studies (Filtered)
+  const caseStudies = allProjects.filter((p) => p.type !== 'in_progress' && p.type !== 'template');
+
+  // Map for display
+  const mapProjectToCard = (p: Project) => ({
+    id: p.slug,
+    slug: p.slug,
+    title: p.content[currentLang].title,
+    client: p.content[currentLang].subtitle,
+    industry: p.content[currentLang].category,
+    image:
+      p.slug === 'batherm'
+        ? '/images/portfolio/batherm-illustration.webp'
+        : `/images/portfolio/${p.thumbnail}.webp`,
+    excerpt:
+      p.content[currentLang].challenge.description || p.content[currentLang].solution.description,
+    tags: p.content[currentLang].stats.map((s) => s.value),
+    category: p.category,
+    externalLink: p.liveUrl || `/work/${p.slug}`,
+    type: p.type,
+    completion: p.completion,
+  });
+
+  const filteredCaseStudies =
+    filter === 'all'
+      ? caseStudies.map(mapProjectToCard)
+      : caseStudies.filter((p) => p.category === filter).map(mapProjectToCard);
 
   const categories = [
     { label: t('filter.all'), id: 'all' },
@@ -46,72 +62,72 @@ const Work: React.FC = () => {
   return (
     <div className="bg-background-light min-h-screen">
       <SeoHead title={`${t('hero.title')} | Coday`} description={t('hero.description')} />
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl">
-            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
-              {t('hero.label')}
-            </span>
-            <h1 className="font-display font-black text-5xl md:text-7xl lg:text-8xl text-secondary leading-tight mb-6">
-              {t('hero.title')}
-            </h1>
-            <div className="max-w-2xl">
-              <p className="text-xl md:text-2xl text-text-slate font-light leading-relaxed">
-                {t('hero.description')}
-              </p>
+
+      {/* 1. Hero */}
+      <WorkHero />
+
+      {/* 2. In Progress (The Lab) */}
+      <InProgressSection projects={inProgressProjects} />
+
+      {/* 3. Featured Case Studies */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="mb-16 text-center">
+            <h2 className="text-4xl font-bold text-slate-900 mb-6">
+              {t('sections.case_studies.title', 'Selected Works')}
+            </h2>
+
+            {/* Filter */}
+            <div className="flex flex-wrap justify-center gap-4">
+              {categories.map((item, index) => (
+                <button
+                  key={item.id}
+                  onClick={() => handleFilterChange(index)}
+                  className={`px-6 py-2 rounded-full text-sm font-bold transition-all ${
+                    item.id === filter
+                      ? 'bg-slate-900 text-white shadow-lg scale-105'
+                      : 'bg-slate-100 text-slate-500 hover:bg-slate-200'
+                  }`}
+                >
+                  {item.label}
+                </button>
+              ))}
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Static Filter Nav */}
-      <section className="container mx-auto px-4 mb-16">
-        <div className="flex flex-wrap gap-4">
-          {categories.map((item, index) => (
-            <button
-              key={item.id}
-              onClick={() => handleFilterChange(index)}
-              className={`px-6 py-3 rounded-full text-sm font-bold transition-colors ${
-                item.id === filter
-                  ? 'bg-primary text-white'
-                  : 'bg-white text-secondary hover:bg-gray-50 border border-gray-200'
-              }`}
-            >
-              {item.label}
-            </button>
-          ))}
-        </div>
-      </section>
-
-      {/* Projects Grid */}
-      {filteredProjects.length > 0 ? (
-        <section className="container mx-auto px-4 pb-32">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project) => (
+            {filteredCaseStudies.map((project) => (
               <div key={project.id} className="h-full">
-                <div className="h-full bg-white rounded-3xl border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                  <CaseStudyCard {...project} />
-                </div>
+                <CaseStudyCard {...project} />
               </div>
             ))}
           </div>
-        </section>
-      ) : (
-        <section className="container mx-auto px-4 pb-32 text-center">
-          <div className="bg-white rounded-3xl p-12 border border-gray-100 shadow-sm max-w-2xl mx-auto">
-            <p className="text-xl text-gray-500 font-medium mb-4">
-              {t('empty_state.title', 'Keine Projekte gefunden')}
-            </p>
-            <p className="text-gray-400">
-              {t(
-                'empty_state.desc',
-                'Versuchen Sie einen anderen Filter oder schauen Sie später wieder vorbei.'
-              )}
-            </p>
-          </div>
-        </section>
-      )}
+        </div>
+      </section>
+
+      {/* 4. Templates (The Vault) */}
+      <TemplateVault projects={templateProjects} />
+
+      {/* 5. Booking CTA (Deep Trust) */}
+      <section className="py-24 bg-slate-900 border-t border-slate-800">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">
+            {t('sections.booking.title', 'Want results like these?')}
+          </h2>
+          <p className="text-xl text-slate-400 max-w-2xl mx-auto mb-10">
+            {t(
+              'sections.booking.subtitle',
+              'Stop guessing. Start dominating. Book a strategy call today.'
+            )}
+          </p>
+          <a
+            href="/beratung"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-white rounded-full font-bold text-lg hover:bg-primary-dark transition-colors shadow-lg shadow-primary/25"
+          >
+            {t('sections.booking.cta', 'Book Strategy Session')}
+          </a>
+        </div>
+      </section>
     </div>
   );
 };

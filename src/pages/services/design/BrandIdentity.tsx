@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Icon } from '../../../shared/ui/Icon';
+import { OptimizedIcon } from '../../../shared/ui/OptimizedIcon';
+import { ArrowRight, CheckCircle } from '@phosphor-icons/react';
 import { Button } from '../../../shared/ui/Button';
 import { SeoHead } from '../../../shared/ui/SeoHead';
 import BlurText from '../../../shared/ui/BlurText';
@@ -29,14 +30,14 @@ const BrandIdentity: React.FC = () => {
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-6 overflow-hidden bg-background-light">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-          <div className="text-center lg:text-left">
+          <div className="text-center lg:text-start">
             <h1 className="font-display font-black text-5xl sm:text-6xl lg:text-7xl text-secondary mb-8 tracking-tight">
               <BlurText
                 text={t('brand_identity_page.hero.title_prefix')}
                 delay={100}
                 animateBy="words"
                 direction="top"
-                className="inline-block mr-3"
+                className="inline-block me-3"
               />
               <GradientText
                 colors={['#8B5CF6', '#A78BFA', '#C4B5FD']}
@@ -49,7 +50,7 @@ const BrandIdentity: React.FC = () => {
             <p className="text-xl text-slate-600 leading-relaxed max-w-xl mb-10">
               {t('brand_identity_page.hero.description')}
             </p>
-            <Button size="lg" variant="primary" rightIcon={<Icon name="arrow_right" />}>
+            <Button size="lg" variant="primary" rightIcon={<OptimizedIcon icon={ArrowRight} />}>
               {t('brand_identity_page.hero.cta')}
             </Button>
           </div>
@@ -57,10 +58,10 @@ const BrandIdentity: React.FC = () => {
           {/* Hero Visual - Color Palette Grid */}
           <div className="relative hidden lg:block">
             <div className="grid grid-cols-2 gap-4">
-              <div className="h-32 bg-secondary rounded-br-3xl rounded-tl-lg shadow-lg" />
-              <div className="h-32 bg-primary rounded-bl-3xl rounded-tr-lg shadow-lg" />
-              <div className="h-32 bg-gradient-to-br from-purple-400 to-pink-400 rounded-tr-3xl rounded-bl-lg shadow-lg" />
-              <div className="h-32 bg-slate-800 rounded-tl-3xl rounded-br-lg shadow-lg" />
+              <div className="h-32 bg-secondary rounded-be-3xl rounded-ts-lg shadow-lg" />
+              <div className="h-32 bg-primary rounded-bs-3xl rounded-te-lg shadow-lg" />
+              <div className="h-32 bg-gradient-to-br from-purple-400 to-pink-400 rounded-te-3xl rounded-bs-lg shadow-lg" />
+              <div className="h-32 bg-slate-800 rounded-ts-3xl rounded-be-lg shadow-lg" />
             </div>
           </div>
         </div>
@@ -125,7 +126,7 @@ const BrandIdentity: React.FC = () => {
           <div className="grid md:grid-cols-3 gap-4">
             {deliverables.map((item, i) => (
               <div key={i} className="flex items-center gap-3 p-4 bg-slate-50 rounded-xl">
-                <Icon name="check_circle" className="text-green-500" weight="fill" />
+                <OptimizedIcon icon={CheckCircle} className="text-green-500" weight="fill" />
                 <span className="font-medium text-slate-700">{item}</span>
               </div>
             ))}

@@ -52,14 +52,14 @@ export const ApplicationWizard: React.FC = () => {
     () =>
       hasPackage
         ? [
-          { id: 'details', title: t('wizard.steps.details') },
-          { id: 'contact', title: t('wizard.steps.contact') },
-        ]
+            { id: 'details', title: t('wizard.steps.details') },
+            { id: 'contact', title: t('wizard.steps.contact') },
+          ]
         : [
-          { id: 'scope', title: t('wizard.steps.scope') },
-          { id: 'details', title: t('wizard.steps.details') },
-          { id: 'contact', title: t('wizard.steps.contact') },
-        ],
+            { id: 'scope', title: t('wizard.steps.scope') },
+            { id: 'details', title: t('wizard.steps.details') },
+            { id: 'contact', title: t('wizard.steps.contact') },
+          ],
     [t, hasPackage]
   );
 
@@ -275,7 +275,9 @@ export const ApplicationWizard: React.FC = () => {
             {t('wizard.package_summary.total', { defaultValue: 'Gesamt' })}
           </span>
           <div className="text-right">
-            <span className="text-gray-900">{formatCurrency(totalOneTime / 100, 'EUR', locale)}</span>
+            <span className="text-gray-900">
+              {formatCurrency(totalOneTime / 100, 'EUR', locale)}
+            </span>
             {totalMonthly > 0 && (
               <span className="text-gray-500 font-normal text-xs ml-2">
                 + {formatCurrency(totalMonthly / 100, 'EUR', locale)}/mo
@@ -316,7 +318,12 @@ export const ApplicationWizard: React.FC = () => {
       </h3>
 
       {/* Project Type */}
-      <div className="space-y-2" role="radiogroup" aria-labelledby="project-type-label" aria-describedby={errors.project ? "error-project" : undefined}>
+      <div
+        className="space-y-2"
+        role="radiogroup"
+        aria-labelledby="project-type-label"
+        aria-describedby={errors.project ? 'error-project' : undefined}
+      >
         <label id="project-type-label" className="text-sm font-medium text-gray-700">
           {t('wizard.step1.project_type.label')}
         </label>
@@ -326,7 +333,9 @@ export const ApplicationWizard: React.FC = () => {
               key={type}
               role="radio"
               aria-checked={watch('project') === type}
-              tabIndex={watch('project') === type || (!watch('project') && type === 'webdesign') ? 0 : -1}
+              tabIndex={
+                watch('project') === type || (!watch('project') && type === 'webdesign') ? 0 : -1
+              }
               onClick={() => setValue('project', type)}
               onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
@@ -336,7 +345,7 @@ export const ApplicationWizard: React.FC = () => {
                 // Basic arrow key navigation support
                 if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
                   // Logic to move to next would require ref management, staying simple for now with TAB support
-                  // For full accessible radio group, we'd need a ref map. 
+                  // For full accessible radio group, we'd need a ref map.
                   // Given constraints, ensuring at least one is focusable (Roving Tabindex) is key.
                 }
               }}
@@ -358,9 +367,13 @@ export const ApplicationWizard: React.FC = () => {
             </div>
           ))}
         </div>
-        {errors.project && <p id="error-project" className="text-red-500 text-sm">{errors.project.message}</p>}
+        {errors.project && (
+          <p id="error-project" className="text-red-500 text-sm">
+            {errors.project.message}
+          </p>
+        )}
       </div>
-    </motion.div >
+    </motion.div>
   );
 
   const renderDetailsStep = () => (
@@ -393,12 +406,16 @@ export const ApplicationWizard: React.FC = () => {
         <textarea
           id="wizard-message"
           {...register('message')}
-          aria-describedby={errors.message ? "error-message" : undefined}
+          aria-describedby={errors.message ? 'error-message' : undefined}
           rows={6}
           className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-blue-100 outline-none transition-all resize-none"
           placeholder={t('wizard.step2.requirements.placeholder')}
         ></textarea>
-        {errors.message && <p id="error-message" className="text-red-500 text-sm">{errors.message.message}</p>}
+        {errors.message && (
+          <p id="error-message" className="text-red-500 text-sm">
+            {errors.message.message}
+          </p>
+        )}
         <p className="text-xs text-gray-500 text-right">
           {watch('message')?.length || 0} {t('wizard.step2.chars')}
         </p>
@@ -438,12 +455,16 @@ export const ApplicationWizard: React.FC = () => {
           <input
             id="wizard-name"
             {...register('name')}
-            aria-describedby={errors.name ? "error-name" : undefined}
+            aria-describedby={errors.name ? 'error-name' : undefined}
             className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-blue-100 outline-none transition-all"
             placeholder={t('wizard.step3.name.placeholder')}
             autoComplete="name"
           />
-          {errors.name && <p id="error-name" className="text-red-500 text-sm">{errors.name.message}</p>}
+          {errors.name && (
+            <p id="error-name" className="text-red-500 text-sm">
+              {errors.name.message}
+            </p>
+          )}
         </div>
         <div className="space-y-2">
           <label htmlFor="wizard-company" className="text-sm font-medium text-gray-700">
@@ -468,13 +489,17 @@ export const ApplicationWizard: React.FC = () => {
             id="wizard-email"
             {...register('email')}
             type="email"
-            aria-describedby={errors.email ? "error-email" : undefined}
+            aria-describedby={errors.email ? 'error-email' : undefined}
             className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-blue-100 outline-none transition-all"
             placeholder={t('wizard.step3.email.placeholder')}
             autoComplete="email"
             inputMode="email"
           />
-          {errors.email && <p id="error-email" className="text-red-500 text-sm">{errors.email.message}</p>}
+          {errors.email && (
+            <p id="error-email" className="text-red-500 text-sm">
+              {errors.email.message}
+            </p>
+          )}
         </div>
         <div className="space-y-2">
           <label htmlFor="wizard-phone" className="text-sm font-medium text-gray-700">

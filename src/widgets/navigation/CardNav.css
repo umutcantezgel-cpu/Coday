@@ -10,9 +10,13 @@
   max-width: 1200px;
   display: flex;
   justify-content: center;
+  pointer-events: none;
+  /* Allow clicks through the container */
 }
 
 .nav-pill {
+  pointer-events: auto;
+  /* Restore clicks on the nav itself */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -132,6 +136,7 @@ body.mobile-nav-open #fab-container {
   z-index: 60;
   border-radius: 1.5rem;
   width: max-content;
+  pointer-events: auto;
 }
 
 .dropdown-inner {

@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { OptimizedImage } from '../../shared/ui/OptimizedImage';
 import { createPortal } from 'react-dom';
-import { X } from '@phosphor-icons/react';
-import { Icon } from '../../shared/ui/Icon';
-import { academyData, Course } from '../../data/academy';
+import { X, Play } from '@phosphor-icons/react';
+import { OptimizedIcon } from '../../shared/ui/OptimizedIcon';
+import { academyData, Course } from '@/shared/data/academy';
 
 const Academy: React.FC = () => {
   const { t, i18n } = useTranslation('knowledge');
@@ -37,7 +37,7 @@ const Academy: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/60 to-purple-900/40 opacity-60 group-hover:opacity-40 transition-opacity" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform ring-1 ring-white/50">
-                    <Icon name="play" className="text-white text-3xl" />
+                    <OptimizedIcon icon={Play} className="text-white text-3xl" weight="fill" />
                   </div>
                 </div>
               </div>

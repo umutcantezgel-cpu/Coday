@@ -1,6 +1,15 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Icon } from '../../../shared/ui/Icon';
+import { OptimizedIcon } from '../../../shared/ui/OptimizedIcon';
+import {
+  ShoppingCart,
+  ArrowRight,
+  Storefront,
+  ShoppingBag,
+  CheckCircle,
+  Code,
+  TrendUp,
+} from '@phosphor-icons/react';
 import { Button } from '../../../shared/ui/Button';
 import { OptimizedImage } from '../../../shared/ui/OptimizedImage';
 import { SeoHead } from '../../../shared/ui/SeoHead';
@@ -14,16 +23,16 @@ const Ecommerce: React.FC = () => {
   return (
     <>
       <SeoHead
-        title="E-Commerce Development | Shopify & Next.js Experts"
-        description="High-performance online shops that convert. We build scalable e-commerce solutions with Shopify Plus, Hydrogen, and Next.js."
+        title={t('ecommerce_page.meta.title')}
+        description={t('ecommerce_page.meta.description')}
       />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6 sm:px-8 lg:px-12 overflow-hidden bg-background-light">
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 text-primary text-sm font-bold mb-8 border border-primary/10">
-            <Icon name="shopping_cart" className="w-4 h-4" />
-            <span>E-Commerce Experts</span>
+            <OptimizedIcon icon={ShoppingCart} className="w-4 h-4" />
+            <span>{t('ecommerce_page.hero.badge')}</span>
           </div>
 
           <h1 className="font-display font-black text-5xl sm:text-7xl lg:text-8xl tracking-tight leading-[0.9] mb-8 text-secondary uppercase">
@@ -39,10 +48,10 @@ const Ecommerce: React.FC = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row justify-center gap-6">
-            <Button size="lg" variant="primary" rightIcon={<Icon name="arrow_right" />}>
+            <Button size="lg" variant="primary" rightIcon={<OptimizedIcon icon={ArrowRight} />}>
               {t('ecommerce_page.hero.cta_primary')}
             </Button>
-            <Button size="lg" variant="outline" rightIcon={<Icon name="storefront" />}>
+            <Button size="lg" variant="outline" rightIcon={<OptimizedIcon icon={Storefront} />}>
               {t('ecommerce_page.hero.cta_secondary')}
             </Button>
           </div>
@@ -53,7 +62,7 @@ const Ecommerce: React.FC = () => {
           <GlareHover className="rounded-2xl overflow-hidden shadow-2xl transform rotate-x-12">
             <OptimizedImage
               src="/images/services/ecommerce-dashboard-mockup.webp"
-              alt="E-Commerce Dashboard"
+              alt={t('ecommerce_page.meta.title')}
               className="w-full h-auto"
             />
           </GlareHover>
@@ -88,9 +97,7 @@ const Ecommerce: React.FC = () => {
             </div>
           </div>
           <div>
-            <div className="text-5xl font-display font-bold text-primary mb-2">
-              Top 1%
-            </div>
+            <div className="text-5xl font-display font-bold text-primary mb-2">Top 1%</div>
             <div className="text-sm uppercase tracking-widest text-slate-400">
               {t('ecommerce_page.stats.tech_label')}
             </div>
@@ -102,7 +109,9 @@ const Ecommerce: React.FC = () => {
       <section className="py-24 bg-surface-light">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-display font-bold mb-4">{t('ecommerce_page.comparison.title')}</h2>
+            <h2 className="text-4xl font-display font-bold mb-4">
+              {t('ecommerce_page.comparison.title')}
+            </h2>
             <p className="text-xl text-slate-600">{t('ecommerce_page.comparison.description')}</p>
           </div>
 
@@ -110,13 +119,27 @@ const Ecommerce: React.FC = () => {
             {/* Shopify Card */}
             <div className="bg-white p-8 rounded-3xl shadow-lg border border-slate-100 hover:shadow-xl transition-shadow">
               <div className="w-16 h-16 bg-[#95BF47]/20 rounded-2xl flex items-center justify-center mb-6">
-                <Icon name="shopping_bag" className="text-3xl text-[#95BF47]" weight="fill" />
+                <OptimizedIcon
+                  icon={ShoppingBag}
+                  className="text-3xl text-[#95BF47]"
+                  weight="fill"
+                />
               </div>
-              <h3 className="text-2xl font-bold mb-4">{t('ecommerce_page.comparison.shopify.title')}</h3>
+              <h3 className="text-2xl font-bold mb-4">
+                {t('ecommerce_page.comparison.shopify.title')}
+              </h3>
               <ul className="space-y-4 mb-8">
-                {(t('ecommerce_page.comparison.shopify.features', { returnObjects: true }) as string[]).map((feat, i) => (
+                {(
+                  t('ecommerce_page.comparison.shopify.features', {
+                    returnObjects: true,
+                  }) as string[]
+                ).map((feat, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <Icon name="check_circle" className="text-green-500 mt-1" weight="fill" />
+                    <OptimizedIcon
+                      icon={CheckCircle}
+                      className="text-green-500 mt-1"
+                      weight="fill"
+                    />
                     <span className="text-slate-600">{feat}</span>
                   </li>
                 ))}
@@ -129,13 +152,19 @@ const Ecommerce: React.FC = () => {
             {/* Custom Headless Card */}
             <div className="bg-slate-900 text-white p-8 rounded-3xl shadow-lg border border-slate-800 hover:shadow-2xl transition-shadow transform md:-translate-y-4">
               <div className="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center mb-6">
-                <Icon name="code" className="text-3xl text-primary" weight="fill" />
+                <OptimizedIcon icon={Code} className="text-3xl text-primary" weight="fill" />
               </div>
-              <h3 className="text-2xl font-bold mb-4">{t('ecommerce_page.comparison.custom.title')}</h3>
+              <h3 className="text-2xl font-bold mb-4">
+                {t('ecommerce_page.comparison.custom.title')}
+              </h3>
               <ul className="space-y-4 mb-8">
-                {(t('ecommerce_page.comparison.custom.features', { returnObjects: true }) as string[]).map((feat, i) => (
+                {(
+                  t('ecommerce_page.comparison.custom.features', {
+                    returnObjects: true,
+                  }) as string[]
+                ).map((feat, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <Icon name="check_circle" className="text-primary mt-1" weight="fill" />
+                    <OptimizedIcon icon={CheckCircle} className="text-primary mt-1" weight="fill" />
                     <span className="text-slate-300">{feat}</span>
                   </li>
                 ))}
@@ -151,7 +180,9 @@ const Ecommerce: React.FC = () => {
       {/* Tech Stack Logo Loop */}
       <section className="py-16 bg-white border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-6 mb-8 text-center">
-          <span className="uppercase tracking-widest text-xs font-bold text-slate-400">Powering Next-Gen Commerce</span>
+          <span className="uppercase tracking-widest text-xs font-bold text-slate-400">
+            {t('ecommerce_page.logo_loop.title')}
+          </span>
         </div>
         <LogoLoop
           logos={[
@@ -168,9 +199,9 @@ const Ecommerce: React.FC = () => {
         />
       </section>
 
-      {/* ROI Calculator Section (Mockup for now, fully interactive later if needed) */}
+      {/* ROI Calculator Section */}
       <section className="py-24 bg-gradient-to-br from-slate-900 to-slate-800 text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute top-0 end-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
 
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <div className="inline-block px-4 py-1 rounded-full bg-primary/20 text-primary font-bold text-sm mb-6">
@@ -184,33 +215,42 @@ const Ecommerce: React.FC = () => {
           </p>
 
           {/* Simple Visual Calculator Placeholder */}
-          <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl p-8 md:p-12 text-left">
+          <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl p-8 md:p-12 text-start">
             <div className="grid md:grid-cols-3 gap-8 mb-12">
               <div>
-                <label className="block text-sm font-bold text-slate-400 mb-2 uppercase tracking-wide">Monthly Visitors</label>
+                <label className="block text-sm font-bold text-slate-400 mb-2 uppercase tracking-wide">
+                  {t('ecommerce_page.roi_calculator.metric_visitors')}
+                </label>
                 <div className="text-4xl font-mono font-bold text-white">50,000</div>
                 <input type="range" className="w-full mt-4 accent-primary" />
               </div>
               <div>
-                <label className="block text-sm font-bold text-slate-400 mb-2 uppercase tracking-wide">Conversion Rate</label>
+                <label className="block text-sm font-bold text-slate-400 mb-2 uppercase tracking-wide">
+                  {t('ecommerce_page.roi_calculator.metric_conversion')}
+                </label>
                 <div className="text-4xl font-mono font-bold text-primary">2.5%</div>
                 <div className="text-xs text-green-400 mt-1 flex items-center gap-1">
-                  <Icon name="trending_up" weight="bold" /> +0.8% with Coday
+                  <OptimizedIcon icon={TrendUp} weight="bold" />{' '}
+                  {t('ecommerce_page.roi_calculator.increase_note')}
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-bold text-slate-400 mb-2 uppercase tracking-wide">Avg. Order Value</label>
+                <label className="block text-sm font-bold text-slate-400 mb-2 uppercase tracking-wide">
+                  {t('ecommerce_page.roi_calculator.metric_aov')}
+                </label>
                 <div className="text-4xl font-mono font-bold text-white">€85</div>
               </div>
             </div>
 
             <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
-                <div className="text-sm text-slate-400 mb-1">Estimated Monthly Revenue Increase</div>
+                <div className="text-sm text-slate-400 mb-1">
+                  {t('ecommerce_page.roi_calculator.result_monthly')}
+                </div>
                 <div className="text-5xl font-display font-bold text-green-400">+ €34,000</div>
               </div>
               <Button size="lg" variant="primary" className="w-full md:w-auto">
-                Get Your Audit
+                {t('ecommerce_page.roi_calculator.cta_button')}
               </Button>
             </div>
           </div>
@@ -220,20 +260,22 @@ const Ecommerce: React.FC = () => {
       {/* FAQ Section */}
       <section className="py-24 bg-background-light">
         <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-12 text-center">Frequently Asked Questions</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center">{t('ecommerce_page.faq.title')}</h2>
           <div className="space-y-4">
-            <div className="bg-white p-6 rounded-xl shadow-sm cursor-pointer hover:shadow-md transition-shadow">
-              <h3 className="font-bold text-lg mb-2">How long does a typical shop migration take?</h3>
-              <p className="text-slate-600">For Shopify Plus migrations, we typically need 4-8 weeks depending on data complexity.</p>
-            </div>
-            <div className="bg-white p-6 rounded-xl shadow-sm cursor-pointer hover:shadow-md transition-shadow">
-              <h3 className="font-bold text-lg mb-2">Do you handle ERP integrations?</h3>
-              <p className="text-slate-600">Yes, we are experts in connecting SAP, Microsoft Dynamics, and Weclapp to Shopify and custom frontends.</p>
-            </div>
-            <div className="bg-white p-6 rounded-xl shadow-sm cursor-pointer hover:shadow-md transition-shadow">
-              <h3 className="font-bold text-lg mb-2">What about SEO during migration?</h3>
-              <p className="text-slate-600">We guarantee zero traffic loss. Our migration protocols include comprehensive redirect maps and SEO monitoring.</p>
-            </div>
+            {(
+              t('ecommerce_page.faq.items', { returnObjects: true }) as Array<{
+                q: string;
+                a: string;
+              }>
+            ).map((item, idx) => (
+              <div
+                key={idx}
+                className="bg-white p-6 rounded-xl shadow-sm cursor-pointer hover:shadow-md transition-shadow"
+              >
+                <h3 className="font-bold text-lg mb-2">{item.q}</h3>
+                <p className="text-slate-600">{item.a}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

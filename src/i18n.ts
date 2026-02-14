@@ -18,6 +18,7 @@ i18n
     fallbackLng: 'de',
     supportedLngs: ['de', 'en'],
     debug: import.meta.env.DEV, // Enable debug in development
+    // resources: (window as any).initialI18nStore, // Hydrate from server (Removed to fix dynamic loading)
 
     ns: [
       'common',

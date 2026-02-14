@@ -38,6 +38,10 @@
     "description": "Premium Webdesign & Performance-Marketing für moderne Unternehmen. Wir bauen Ihren digitalen Erfolg.",
     "title": "Coday | Der Agentur-Killer"
   },
+  "images": {
+    "trust_collaboration": "Vertrauensvolle Zusammenarbeit",
+    "satisfied_partners": "Zufriedene Partner"
+  },
   "philosophy": {
     "history": "Sind Geschichte.",
     "standard": "Coday ist der neue Standard.",
@@ -50,7 +54,10 @@
     "focused": "Fokussiert",
     "load_time": "Ø Ladezeit",
     "ownership": "Code-Eigentum",
-    "profit": "Gewinn"
+    "profit": "Gewinn",
+    "seconds": "Sek.",
+    "percent": "%",
+    "hours": "Std."
   },
   "tech_stack": {
     "label": "Technologie",
@@ -63,5 +70,40 @@
     "text": "Vom lokalen Handwerksbetrieb bis zum Industrieunternehmen. Wir liefern Qualität, auf die Sie bauen können.",
     "title_prefix": "Partner, die",
     "title_suffix": "Uns Vertrauen."
+  },
+  "comparison": {
+    "title_prefix": "Traditionell vs.",
+    "subtitle": "Hör auf für Ineffizienz zu bezahlen. Wähle das Protokoll, das gewinnt.",
+    "columns": {
+      "metric": "Metrik",
+      "agency": "Traditionelle Agentur"
+    },
+    "features": {
+      "speed": {
+        "name": "Geschwindigkeit",
+        "old": "Wochen oder Monate (Aufgebläht)",
+        "new": "Tage oder Wochen (Das Coday Protokoll)"
+      },
+      "pricing": {
+        "name": "Preismodell",
+        "old": "Stundensätze & Versteckte Kosten",
+        "new": "Flat Rate & Transparent"
+      },
+      "tech": {
+        "name": "Technologie",
+        "old": "WordPress / Baukästen (Langsam)",
+        "new": "Next.js / React (Instant)"
+      },
+      "rights": {
+        "name": "Rechte",
+        "old": "Vendor Lock-in",
+        "new": "100% Code-Eigentum"
+      },
+      "contact": {
+        "name": "Kontakt",
+        "old": "Account Manager (Mittelsmann)",
+        "new": "Direkter Entwickler-Zugang"
+      }
+    }
   }
 }

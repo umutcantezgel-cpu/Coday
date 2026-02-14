@@ -7,7 +7,17 @@ import {
   ReportDashboard,
   useAnalyzerStore,
 } from '../features/analyzer';
-import { Icon } from '../shared/ui/Icon';
+import {
+  Lightning,
+  MagnifyingGlass,
+  Shield,
+  Wheelchair,
+  CursorClick,
+  FileText,
+  CheckCircle,
+  Lock,
+} from '@phosphor-icons/react';
+import { OptimizedIcon } from '../shared/ui/OptimizedIcon';
 
 const Analyzer: React.FC = () => {
   const { t } = useTranslation('tools');
@@ -69,37 +79,37 @@ const Analyzer: React.FC = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  icon: 'speed',
+                  icon: Lightning,
                   title: t('analyzer.features.items.speed.title'),
                   desc: t('analyzer.features.items.speed.desc'),
                   color: 'from-orange-500 to-red-500',
                 },
                 {
-                  icon: 'search',
+                  icon: MagnifyingGlass,
                   title: t('analyzer.features.items.seo.title'),
                   desc: t('analyzer.features.items.seo.desc'),
                   color: 'from-green-500 to-emerald-500',
                 },
                 {
-                  icon: 'security',
+                  icon: Shield,
                   title: t('analyzer.features.items.security.title'),
                   desc: t('analyzer.features.items.security.desc'),
                   color: 'from-blue-500 to-cyan-500',
                 },
                 {
-                  icon: 'accessibility_new',
+                  icon: Wheelchair,
                   title: t('analyzer.features.items.a11y.title'),
                   desc: t('analyzer.features.items.a11y.desc'),
                   color: 'from-purple-500 to-violet-500',
                 },
                 {
-                  icon: 'touch_app',
+                  icon: CursorClick,
                   title: t('analyzer.features.items.ux.title'),
                   desc: t('analyzer.features.items.ux.desc'),
                   color: 'from-pink-500 to-rose-500',
                 },
                 {
-                  icon: 'article',
+                  icon: FileText,
                   title: t('analyzer.features.items.content.title'),
                   desc: t('analyzer.features.items.content.desc'),
                   color: 'from-yellow-500 to-amber-500',
@@ -112,7 +122,7 @@ const Analyzer: React.FC = () => {
                   <div
                     className={`w - 12 h - 12 rounded - xl bg - gradient - to - br ${feature.color} flex items - center justify - center text - white mb - 4 group - hover: scale - 110 transition - transform`}
                   >
-                    <Icon name={feature.icon} />
+                    <OptimizedIcon icon={feature.icon} />
                   </div>
                   <h3 className="font-bold text-xl text-secondary mb-2">{feature.title}</h3>
                   <p className="text-slate-600 text-sm">{feature.desc}</p>
@@ -129,15 +139,15 @@ const Analyzer: React.FC = () => {
           <div className="max-w-4xl mx-auto px-4 text-center">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-sm text-gray-500 mb-8">
               <div className="flex items-center justify-center gap-2">
-                <Icon name="check_circle" className="text-primary" />
+                <OptimizedIcon icon={CheckCircle} className="text-primary" />
                 <span>{t('analyzer.trust.free')}</span>
               </div>
               <div className="flex items-center justify-center gap-2">
-                <Icon name="lock" className="text-primary" />
+                <OptimizedIcon icon={Lock} className="text-primary" />
                 <span>{t('analyzer.trust.private')}</span>
               </div>
               <div className="flex items-center justify-center gap-2">
-                <Icon name="bolt" className="text-primary" />
+                <OptimizedIcon icon={Lightning} className="text-primary" />
                 <span>{t('analyzer.trust.fast')}</span>
               </div>
               <div className="hidden md:flex items-center justify-center gap-2 text-primary font-medium">

@@ -1,9 +1,10 @@
 import React from 'react';
-import { Icon } from '@/shared/ui/Icon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
+import { Code, Palette, ArrowRight } from '@phosphor-icons/react';
 import { useTranslation } from 'react-i18next';
 import { LocalizedNavLink as NavLink } from '../shared/ui/LocalizedLink';
 import { OptimizedImage } from '../shared/ui/OptimizedImage';
-import { serviceImages } from '../data/serviceImages';
+import { serviceImages } from '@/shared/data/serviceImages';
 import ScrollFloat from '../shared/ui/ScrollFloat';
 import { cn } from '../shared/lib/utils';
 import { baseButtonStyles, buttonVariants, buttonSizes } from '../shared/ui/ButtonStyles';
@@ -17,7 +18,7 @@ const Services: React.FC = () => {
 
   const categories = [
     {
-      icon: 'code',
+      icon: Code,
       title: t('categories.web_development.title'),
       description: t('categories.web_development.description'),
       link: '/services/web-development',
@@ -26,7 +27,7 @@ const Services: React.FC = () => {
       effect: 'spotlight' as const,
     },
     {
-      icon: 'palette',
+      icon: Palette,
       title: t('categories.web_design.title'),
       description: t('categories.web_design.description'),
       link: '/services/web-design',
@@ -52,7 +53,7 @@ const Services: React.FC = () => {
               scrollEnd="center center"
               stagger={0.02}
               containerClassName="!my-0 mb-4"
-              textClassName="font-display font-black text-4xl sm:text-6xl text-gray-900"
+              textClassName="font-display font-black text-4xl sm:text-6xl text-secondary"
             >
               {t('hero.title')}
             </ScrollFloat>
@@ -62,7 +63,7 @@ const Services: React.FC = () => {
                 rotationInterval={3500}
                 staggerFrom="first"
                 staggerDuration={0.025}
-                mainClassName="text-xl text-gray-600 leading-relaxed"
+                mainClassName="text-xl text-slate-600 leading-relaxed"
               />
             </div>
           </div>
@@ -70,8 +71,8 @@ const Services: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-3xl transform rotate-2"></div>
             <OptimizedImage
               src={serviceImages.hero.src}
-              alt={serviceImages.hero.alt}
-              className="relative rounded-3xl shadow-2xl w-full transform -rotate-1 hover:rotate-0 transition-all duration-500"
+              alt={t(serviceImages.hero.alt)}
+              className="relative rounded-3xl shadow-flat-lg w-full transform -rotate-1 hover:rotate-0 transition-all duration-500"
               priority
             />
           </div>
@@ -85,7 +86,7 @@ const Services: React.FC = () => {
             <BentoCard
               key={index}
               effect={cat.effect}
-              spotlightColor="rgba(26, 154, 154, 0.15)"
+              spotlightColor="rgba(20, 122, 122, 0.15)"
               glowColor="rgba(139, 92, 246, 0.3)"
               className="h-full"
             >
@@ -108,18 +109,18 @@ const Services: React.FC = () => {
                   <div
                     className={`w-16 h-16 ${cat.color} bg-opacity-10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300`}
                   >
-                    <Icon name={cat.icon} className="text-3xl text-gray-900" />
+                    <OptimizedIcon icon={cat.icon} className="text-3xl text-secondary" />
                   </div>
 
-                  <h3 className="font-display font-bold text-3xl text-gray-900 mb-4 group-hover:text-primary transition-colors">
+                  <h3 className="font-display font-bold text-3xl text-secondary mb-4 group-hover:text-primary transition-colors">
                     {cat.title}
                   </h3>
-                  <p className="text-lg text-gray-600 mb-8 leading-relaxed">{cat.description}</p>
+                  <p className="text-lg text-slate-600 mb-8 leading-relaxed">{cat.description}</p>
 
                   <div className="flex items-center text-primary font-bold tracking-wide uppercase text-sm">
                     {t('cta.more')}
-                    <Icon
-                      name="arrow_forward"
+                    <OptimizedIcon
+                      icon={ArrowRight}
                       className="ms-2 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform"
                     />
                   </div>
@@ -140,22 +141,17 @@ const Services: React.FC = () => {
             scrollEnd="center center"
             stagger={0.02}
             containerClassName="!my-0 mb-8"
-            textClassName="font-display font-bold text-3xl text-gray-900"
+            textClassName="font-display font-bold text-3xl text-secondary"
           >
             {t('cta.ready')}
           </ScrollFloat>
           <GlareHover glareColor="#ffffff" glareOpacity={0.4} className="inline-block rounded-xl">
             <NavLink
               to="/contact"
-              className={cn(
-                baseButtonStyles,
-                buttonVariants.primary,
-                buttonSizes.lg,
-                'hover:-translate-y-1'
-              )}
+              className={cn(baseButtonStyles, buttonVariants.primary, buttonSizes.lg)}
             >
               {t('cta.button')}
-              <Icon name="arrow_forward" className="ms-2 rtl:rotate-180" />
+              <OptimizedIcon icon={ArrowRight} className="ms-2 rtl:rotate-180" />
             </NavLink>
           </GlareHover>
         </div>

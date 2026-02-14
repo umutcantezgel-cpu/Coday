@@ -1,0 +1,19 @@
+{
+  "hero": {
+    "title": "Häufig gestellte Fragen",
+    "subtitle": "Alles, was Sie wissen müssen – über unseren Prozess, Preise und Technologie."
+  },
+  "search": {
+    "placeholder": "Suche nach effizienten Lösungen...",
+    "no_results": "Wir haben keine passende Antwort gefunden.",
+    "clear": "Suche löschen"
+  },
+  "categories": {
+    "all": "Alle Fragen"
+  },
+  "cta": {
+    "title": "Noch Fragen?",
+    "text": "Nicht gefunden, wonach Sie suchen? Sprechen wir direkt.",
+    "button": "Kontakt aufnehmen"
+  }
+}

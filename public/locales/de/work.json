@@ -1,9 +1,22 @@
 {
   "hero": {
     "badge": "Unsere Arbeit",
+    "label": "Unsere Arbeit",
     "desc": "Jedes Projekt erzählt eine Geschichte. Hier sind unsere neuesten Erfolgsgeschichten, die für sich sprechen.",
+    "description": "Jedes Projekt erzählt eine Geschichte. Hier sind unsere neuesten Erfolgsgeschichten, die für sich sprechen.",
     "title_gradient": "Ergebnisse.",
-    "title_start": "Echte"
+    "title_start": "Echte",
+    "title": "Echte Ergebnisse."
+  },
+  "filter": {
+    "all": "Alle",
+    "design": "Design",
+    "development": "Entwicklung",
+    "marketing": "Marketing"
+  },
+  "empty_state": {
+    "title": "Keine Projekte gefunden",
+    "desc": "Versuchen Sie einen anderen Filter oder schauen Sie später wieder vorbei."
   },
   "results": {
     "desc": "Messbare Verbesserungen, die einen echten geschäftlichen Unterschied machen.",
@@ -57,5 +70,50 @@
     },
     "desc": "Jeder Pixel hat einen Zweck. Unsere Designsprache verbindet Premium-Ästhetik mit maximaler Benutzerfreundlichkeit.",
     "title": "Visuelle Identität"
+  },
+  "project_detail": {
+    "not_found": "Projekt nicht gefunden",
+    "back_to_overview": "Zurück zur Übersicht",
+    "breadcrumb_projects": "Projekte",
+    "sidebar": {
+      "client": "Kunde",
+      "industry": "Branche",
+      "services": "Leistungen",
+      "year": "Jahr",
+      "details": "Projektdetails",
+      "service": "Leistung",
+      "period": "Zeitraum",
+      "result": "Ergebnis",
+      "interested_title": "Interessiert an ähnlichen Ergebnissen?",
+      "request_project": "Projekt anfragen"
+    },
+    "hero": {
+      "title": "Wir erschaffen digitale Monumente",
+      "description": "Keine einfachen Websites. Wir bauen ökonomische Waffen für Marken, die dominieren wollen.",
+      "label": "Evidence of Excellence"
+    },
+    "sections": {
+      "in_progress": {
+        "title": "Das Labor / In Progress",
+        "subtitle": "Live-Builds, die in Echtzeit entstehen."
+      },
+      "case_studies": {
+        "title": "Ausgewählte Arbeiten"
+      },
+      "templates": {
+        "title": "Der Safe",
+        "subtitle": "Produktionsreife Templates, optimiert für Speed und Conversion."
+      }
+    },
+    "actions": {
+      "view_live": "Live Build ansehen"
+    },
+    "cta": {
+      "title": "Bereit für den nächsten Schritt?",
+      "button": "Projekt anfragen"
+    },
+    "challenge": "Die Herausforderung",
+    "approach": "Unser Ansatz",
+    "results": "Ergebnisse"
   }
 }

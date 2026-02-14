@@ -1,12 +1,12 @@
 import React, { useState, useRef, useId } from 'react';
 import { NavLink } from 'react-router-dom';
 import { CaretDown } from '@phosphor-icons/react';
-import { Icon } from '../../shared/ui/Icon';
+import { OptimizedIcon } from '../../shared/ui/OptimizedIcon';
 
 interface DropdownItem {
   label: string;
   href: string;
-  icon?: string;
+  icon?: React.ElementType;
 }
 
 interface NavDropdownProps {
@@ -79,8 +79,8 @@ export const NavDropdown: React.FC<NavDropdownProps> = ({ title, items }) => {
               onClick={() => setIsOpen(false)}
             >
               {item.icon && (
-                <Icon
-                  name={item.icon}
+                <OptimizedIcon
+                  icon={item.icon}
                   className={`text-[20px] ${item.href === window.location.pathname ? 'text-blue-600' : 'text-slate-400 group-hover:text-blue-500'}`}
                 />
               )}

@@ -18,11 +18,14 @@ export function generatePdfReport(result: AnalysisResult, t: TFunction): void {
   }
 
   const urgencyLevel = getUrgencyLevel(result.urgencyScore, t);
-  const analysisDate = new Date(result.analyzedAt).toLocaleDateString(t('language') === 'en' ? 'en-US' : 'de-DE', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
+  const analysisDate = new Date(result.analyzedAt).toLocaleDateString(
+    t('language') === 'en' ? 'en-US' : 'de-DE',
+    {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    }
+  );
 
   const html = `
 <!DOCTYPE html>
@@ -259,17 +262,22 @@ function generateCategoryCards(result: AnalysisResult, t: TFunction): string {
     { name: t('agents.content'), data: result.content },
   ];
 
-  return categories.map(cat => `
+  return categories
+    .map(
+      (cat) => `
     <div class="category-card">
       <div class="category-name">${cat.name}</div>
       <div class="category-score">${cat.data?.score ?? 'N/A'}/100</div>
       <div class="category-summary">${cat.data?.summary ?? ''}</div>
     </div>
-  `).join('');
+  `
+    )
+    .join('');
 }
 
 function generateIssues(result: AnalysisResult, t: TFunction): string {
-  const allIssues: Array<{ severity: string; title: string; description: string; fix: string }> = [];
+  const allIssues: Array<{ severity: string; title: string; description: string; fix: string }> =
+    [];
 
   const categories = ['performance', 'seo', 'security', 'accessibility', 'ux', 'content'] as const;
 
@@ -291,35 +299,56 @@ function generateIssues(result: AnalysisResult, t: TFunction): string {
   allIssues.sort((a, b) => {
     // Simple mapping if needed, else assumes existing logic works for the data we have.
     // We might need to ensure severity matching
-    return (severityOrder[a.severity as keyof typeof severityOrder] ?? 4) -
+    return (
+      (severityOrder[a.severity as keyof typeof severityOrder] ?? 4) -
       (severityOrder[b.severity as keyof typeof severityOrder] ?? 4)
+    );
   });
 
   if (allIssues.length === 0) {
     return `<p style="color: #22c55e;">${t('pdf.no_issues')}</p>`;
   }
 
-  return allIssues.slice(0, 10).map(issue => {
-    // Map severity to color style directly since classes might not work with localized keys if they don't match CSS
-    let severityColor = '#22c55e'; // default low
-    let severityBg = '#f0fdf4';
+  return allIssues
+    .slice(0, 10)
+    .map((issue) => {
+      // Map severity to color style directly since classes might not work with localized keys if they don't match CSS
+      let severityColor = '#22c55e'; // default low
+      let severityBg = '#f0fdf4';
 
-    switch (issue.severity) {
-      case 'kritisch': case 'critical': severityColor = '#dc2626'; severityBg = '#fef2f2'; break;
-      case 'hoch': case 'high': severityColor = '#f97316'; severityBg = '#fff7ed'; break;
-      case 'mittel': case 'medium': severityColor = '#eab308'; severityBg = '#fefce8'; break;
-    }
+      switch (issue.severity) {
+        case 'kritisch':
+        case 'critical':
+          severityColor = '#dc2626';
+          severityBg = '#fef2f2';
+          break;
+        case 'hoch':
+        case 'high':
+          severityColor = '#f97316';
+          severityBg = '#fff7ed';
+          break;
+        case 'mittel':
+        case 'medium':
+          severityColor = '#eab308';
+          severityBg = '#fefce8';
+          break;
+      }
 
-    const severityLabel = t(`severity.${issue.severity === 'kritisch' ? 'critical' : issue.severity === 'hoch' ? 'high' : issue.severity === 'mittel' ? 'medium' : 'low'}`, { defaultValue: issue.severity });
+      const severityLabel = t(
+        `severity.${issue.severity === 'kritisch' ? 'critical' : issue.severity === 'hoch' ? 'high' : issue.severity === 'mittel' ? 'medium' : 'low'}`,
+        { defaultValue: issue.severity }
+      );
 
-    return `
+      return `
     <div class="issue" style="border-left-color: ${severityColor}">
       <span class="issue-severity" style="background: ${severityBg}; color: ${severityColor}">${severityLabel.toUpperCase()}</span>
       <div class="issue-title">${issue.title}</div>
       <div class="issue-description">${issue.description}</div>
       <div class="issue-fix">💡 ${issue.fix}</div>
     </div>
-  `}).join('');
+  `;
+    })
+    .join('');
 }
 
 export default { generatePdfReport };

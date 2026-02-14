@@ -1,150 +1,767 @@
 {
-  "common": {
-    "cta_analysis": "Free Analysis",
-    "cta_contact": "Get in Touch",
-    "cta_more": "Learn More",
-    "features": {
-      "google_maps": "Google Maps Optimization",
-      "regional_pages": "Regional Landing Pages",
-      "review_management": "Automated Review Management"
+  "overview": {
+    "label": "Our Expertise",
+    "title": "Industry Solutions",
+    "description": "Every industry has its own rules. We know them. Discover our specialized concepts for your success.",
+    "cta": "View Concept",
+    "meta": {
+      "title": "Industry Solutions | Coday",
+      "description": "Every industry has its own rules. We know them. Discover our specialized concepts for your success."
     }
   },
-  "dienstleistung": {
-    "features": {
-      "cta_funnel": "Request Funnel Analysis",
-      "grid": {
-        "nurture": {
-          "desc": "Send relevant case studies via email before you even pick up the phone.",
-          "title": "Auto Nurture"
-        },
-        "qual": {
-          "desc": "No more wasting time with customers who are just \"looking around\".",
-          "title": "Pre-qualification"
-        },
-        "roi": {
-          "desc": "See exactly how much revenue every Euro of ad budget has generated.",
-          "title": "Measurable Success"
-        }
-      },
-      "hero_desc": "We build digital sales machines for consultants, agencies, and service providers. From the first ad to the appointment in the calendar – fully automated.",
-      "hero_tags": "Stop Cold Calling.\nSystematic Success."
+  "detail": {
+    "not_found": {
+      "title": "Industry not found",
+      "link": "Back to Overview",
+      "meta_title": "Industry not found | Coday"
+    },
+    "nav": {
+      "back": "All Industries"
     },
     "hero": {
-      "description": "We help consultants, agencies, and freelancers showcase their expertise online and attract clients.",
-      "label": "Digitization for Service Providers",
-      "title_1": "More Clients.",
-      "title_2": "Less Cold Calling."
-    }
-  },
-  "gastronomie": {
+      "cta_primary": "Schedule Consultation",
+      "cta_secondary": "Calculate Prices"
+    },
+    "challenges": {
+      "title": "Do you know these challenges?"
+    },
+    "solutions": {
+      "title": "Our Solution for {{industry}}",
+      "description": "We don’t just develop websites, but digital sales representatives tailored exactly to your industry."
+    },
+    "gallery": {
+      "title": "Industry Insights",
+      "description": "Professional visualization for {{industry}}."
+    },
     "features": {
-      "cta_demo": "Schedule Demo",
-      "grid": {
-        "events": {
-          "desc": "Automated pages for Christmas parties and weddings.",
-          "title": "Event Marketing"
-        },
-        "menu": {
-          "desc": "Relieve your service staff. Guests order and pay directly at the table via smartphone.",
-          "title": "Digital Menu"
-        },
-        "shop": {
-          "desc": "Stop paying 30% commission. Keep your margin.",
-          "title": "Own Delivery Shop"
-        }
-      },
-      "hero_desc": "We turn your website into a booking machine. Reduce no-shows and save on high delivery service commissions.",
-      "hero_tags": "Full Tables.\nHigher Revenue.",
-      "section_subtitle": "Everything you need for modern operations.",
-      "section_title": "The Digital Gastronomy System"
+      "title": "Special Features",
+      "subtitle": "Exclusive modules for {{industry}}",
+      "cta": "Request Consultation"
     },
-    "hero": {
-      "description": "We help restaurants, cafés, and hotels optimize their online presence and automate reservations.",
-      "label": "Digitization for Gastronomy",
-      "title_1": "More Guests.",
-      "title_2": "Less Stress."
+    "related": {
+      "title": "Discover More Industries",
+      "link": "Learn More"
     }
   },
-  "gesundheit": {
-    "features": {
-      "cta_analysis": "Start Practice Analysis",
-      "hero_desc": "Relieve your practice team with digital anamnesis, online appointments, and automated recall management. GDPR compliant.",
-      "hero_tags": "Less Administration.\nMore Time for Patients.",
-      "trust_desc": "Medical data is sensitive. Our solutions are secure and compliant.",
-      "trust_title": "Security First"
-    },
+  "handwerk-bau": {
+    "title": "Craft & Construction",
     "hero": {
-      "description": "We help practices and clinics strengthen their digital presence and automate appointment bookings.",
-      "label": "Digitization for Healthcare",
-      "title_1": "More Patients.",
-      "title_2": "Less Administration."
-    }
-  },
-  "handwerk": {
-    "hero": {
-      "description": "We help roofers, plumbers, and electricians find the right employees and automatically pre-qualify dream customers.",
-      "label": "Digitization for Craftsmen",
-      "title_1": "More Orders.",
-      "title_2": "Less Paperwork."
+      "headline": "Digital Dominance for Your Craft",
+      "subheadline": "More qualified employees and lucrative orders through a website that reflects your quality."
     },
-    "local_seo": {
-      "description": "When someone in your city searches for \"roofer\" or \"bathroom renovation\", you need to be at the top. Not somewhere on page 2.",
-      "label": "Local Visibility",
-      "title": "Be #1 in Your Region."
-    },
-    "recruiting": {
-      "description": "Good craftsmen aren't unemployed. They're on social media. We reach them where they spend their free time.",
-      "label": "Talent Acquisition",
-      "subtitle": "Without Recruiters.",
-      "title": "Find Skilled Workers."
-    }
-  },
-  "immobilien": {
-    "features": {
-      "expose": {
-        "description": "PDFs are static. Web exposés live. Impress owners already in the purchasing conversation with state-of-the-art technology.",
-        "label": "Marketing of the Future",
-        "title": "The End of the PDF Attachment."
+    "challenges": {
+      "fachkraftemangel": {
+        "title": "Skills Shortage",
+        "description": "Difficulty finding qualified journeymen and masters."
       },
-      "grid": {
-        "followup": {
-          "desc": "Email sequences for prospects who are not yet ready.",
-          "title": "Autom. Follow-up"
-        },
-        "login": {
-          "desc": "Full transparency for your clients. Live status of all activities.",
-          "title": "Owner Login"
-        },
-        "staging": {
-          "desc": "Furnish empty rooms digitally. Arouse emotions without hauling furniture.",
-          "title": "Virtual Staging"
-        }
+      "falsche_anfragen": {
+        "title": "Wrong Inquiries",
+        "description": "Too many price inquiries or orders that don't fit your profile."
       },
-      "virtual_tour": {
-        "cta_demo": "Request Demo",
-        "disclaimer": "*Interactive example of a 360° tour integration",
-        "subtitle": "Save yourself the sightseeing tourism. With digital exposés and virtual tours, you filter interested parties automatically.",
-        "title": "Sell properties,\nbefore you show them."
+      "veralteter_auftritt": {
+        "title": "Outdated Appearance",
+        "description": "The website does not reflect the high quality of your work."
       }
     },
-    "hero": {
-      "description": "We help real estate agents and developers digitally attract qualified buyers and sellers.",
-      "label": "Digitization for Real Estate",
-      "title_1": "More Leads.",
-      "title_2": "Better Properties."
+    "solutions": {
+      "mitarbeiter_funnel": {
+        "title": "Employee Funnel",
+        "description": "Automated application processes that pre-qualify candidates."
+      },
+      "projekt_showcase": {
+        "title": "Project Showcase",
+        "description": "High-quality galleries of your best references that build trust."
+      },
+      "lokale_seo": {
+        "title": "Local SEO",
+        "description": "Be found when people search for your services in your region."
+      }
+    },
+    "customFeatures": {
+      "projekt_kalkulator": {
+        "title": "Project Calculator",
+        "description": "Interactive tools for initial price estimates (optional for customers)."
+      },
+      "terminbuchung": {
+        "title": "Appointment Booking",
+        "description": "Direct interface for initial consultations or measurement appointments."
+      },
+      "cms_referenzen": {
+        "title": "CMS for References",
+        "description": "Easy upload of new construction site images via smartphone."
+      }
+    },
+    "features": {
+      "local_dominance": {
+        "label": "Local Visibility",
+        "title": "Regional Dominance",
+        "description": "Dominate your catchment area on Google.",
+        "labels": {
+          "your_business": "Your Business"
+        },
+        "stats": {
+          "radius": "Radius",
+          "ranking": "Ranking",
+          "market_share": "Market Share"
+        }
+      },
+      "calculator": {
+        "title": "Revenue Potential Calculator",
+        "subtitle": "What are qualified inquiries worth to you?",
+        "labels": {
+          "order_value": "Avg. Order Value",
+          "repair": "Repair (€500)",
+          "sanitation": "Full Renovation (€50k)",
+          "leads": "Inquiries per Month",
+          "close_rate": "Closing Rate (Digitally Pre-qualified)",
+          "revenue_month": "Possible Additional Revenue / Month"
+        },
+        "disclaimer": "*Through pre-qualification in the form, the rate often increases from 10% to 30%+."
+      },
+      "recruiting": {
+        "label": "Recruiting",
+        "title": "Find Employees on Autopilot.",
+        "subtitle": "Find Qualified Professionals",
+        "description": "No more CVs by mail. We build you a digital application process that pre-qualifies candidates and delivers only the 'pearls' to your inbox.",
+        "steps": {
+          "ad": {
+            "title": "Social Media Ad",
+            "desc": "The professional sees your ad on Instagram/Facebook.",
+            "mockup": {
+              "company": "Your Company",
+              "photo": "Photo: Team at work",
+              "cta": "Apply Now"
+            }
+          },
+          "quiz": {
+            "title": "60-Second Quiz",
+            "desc": "Query: Driving license? Experience? Availability?",
+            "mockup": {
+              "question": "Do you have a Class B driving license?",
+              "yes": "Yes, logical",
+              "no": "No"
+            }
+          },
+          "appointment": {
+            "title": "Automatic Appointment",
+            "desc": "Qualified applicants book a phone call directly.",
+            "mockup": {
+              "title": "Select Appointment"
+            }
+          }
+        }
+      },
+      "map": {
+        "tooltip": "Your Business: Dominant in the Region"
+      }
     }
   },
-  "retail": {
-    "features": {
-      "cta_pos": "Check POS Integration",
-      "hero_desc": "Connect your branches with your online shop. Real-time inventory, Click & Collect, and a seamless customer experience.",
-      "hero_tags": "Online & Offline.\nFinally United."
-    },
+  "immobilien-makler": {
+    "title": "Real Estate & Agents",
     "hero": {
-      "description": "We help retailers connect their physical and digital presence.",
-      "label": "Digitization for Retail",
-      "title_1": "More Sales.",
-      "title_2": "Online and Offline."
+      "headline": "Exclusive Properties, Exclusively Presented",
+      "subheadline": "Convince owners and buyers with a digital presence that radiates competence and class."
+    },
+    "challenges": {
+      "objektakquise": {
+        "title": "Property Acquisition",
+        "description": "Convincing owners to give you the sole mandate."
+      },
+      "vergleichbarkeit": {
+        "title": "Comparability",
+        "description": "Standing out from the crowd of agents in the region."
+      },
+      "mobile_darstellung": {
+        "title": "Mobile Presentation",
+        "description": "Exposés must look perfect on smartphones."
+      }
+    },
+    "solutions": {
+      "digitales_expose": {
+        "title": "Digital Exposé",
+        "description": "Interactive landing pages for top properties instead of boring PDFs."
+      },
+      "eigentuemer_flow": {
+        "title": "Owner Flow",
+        "description": "Valuation funnel for generating leads from sellers."
+      },
+      "branding": {
+        "title": "Branding",
+        "description": "A design that conveys seriousness and market knowledge."
+      }
+    },
+    "customFeatures": {
+      "immobilien_bewertungstool": {
+        "title": "Property Valuation Tool",
+        "description": "Lead magnet for owners on your site."
+      },
+      "virtuelle_touren": {
+        "title": "Virtual Tours",
+        "description": "Integration of 360-degree tours."
+      },
+      "objekt_filter": {
+        "title": "Property Filter",
+        "description": "Quick search for dream properties."
+      }
+    },
+    "features": {
+      "virtual_tour": {
+        "demo_label": "Live Demo",
+        "title": "Penthouse HafenCity",
+        "hotspots": {
+          "kitchen": "Kitchen (Bulthaup)",
+          "terrace": "Roof Terrace"
+        },
+        "drag_hint": "Drag to explore",
+        "rooms": {
+          "living": "Living",
+          "bath": "Bath",
+          "kitchen": "Kitchen"
+        },
+        "cta": "Request Tour",
+        "disclaimer": "Interact with the tour to see details."
+      },
+      "expose_section": {
+        "label": "Next-Level Presentation",
+        "title": "The Exposé of the Future",
+        "description": "Impress owners with innovative marketing."
+      },
+      "grid": {
+        "staging": {
+          "title": "Virtual Staging",
+          "desc": "Show potential, not empty rooms."
+        },
+        "login": {
+          "title": "Client Login",
+          "desc": "Exclusive areas for VIP clients."
+        },
+        "followup": {
+          "title": "Auto-Followup",
+          "desc": "Stay top of mind with leads."
+        }
+      },
+      "expose_demo": {
+        "title": "Exposé Evolution",
+        "subtitle": "Why customers hate PDF attachments and love web exposés.",
+        "toggles": {
+          "pdf": "Old School (PDF)",
+          "web": "Next Gen (Web)"
+        },
+        "pdf_view": {
+          "image_alt": "Static Image",
+          "warning": "Not mobile optimized. \nMust be downloaded."
+        },
+        "web_view": {
+          "badge": "Property Film",
+          "title": "Lakeside Villa",
+          "cta_tour": "Start 360° Tour",
+          "cta_share": "Share Exposé",
+          "stats": {
+            "area": "240m²",
+            "area_label": "Living Area",
+            "rooms": "5",
+            "rooms_label": "Rooms"
+          }
+        }
+      },
+      "roi_calculator": {
+        "label": "Make more money",
+        "title": "Commission Check",
+        "labels": {
+          "property_value": "Property Value",
+          "commission_rate": "Your Commission (incl. VAT)"
+        },
+        "results": {
+          "revenue_per_deal": "Revenue per Deal",
+          "turbo_sale": "Turbo Sale",
+          "turbo_sub": "via Web Exposé",
+          "time_saved": "-{{percent}}% Time",
+          "impact": "Sell 5 houses in the time of 4."
+        },
+        "cta": "Request Realtor Package"
+      }
+    }
+  },
+  "aerzte-gesundheit": {
+    "title": "Doctors & Healthcare",
+    "hero": {
+      "headline": "Trust Begins Before the First Appointment",
+      "subheadline": "Relieve your practice team and attract the right patients through modern digital processes."
+    },
+    "challenges": {
+      "telefon_ueberlastung": {
+        "title": "Telephone Overload",
+        "description": "The phone never stops ringing, appointment scheduling takes up a lot of time."
+      },
+      "sichtbarkeit": {
+        "title": "Visibility",
+        "description": "Not optimally placed on Google Maps and in search."
+      },
+      "vertrauensaufbau": {
+        "title": "Building Trust",
+        "description": "New patients are unsure about services and specializations."
+      }
+    },
+    "solutions": {
+      "online_terminbuchung": {
+        "title": "Online Appointment Booking",
+        "description": "Seamless integration (Doctolib, Jameda, or Custom) for relief."
+      },
+      "leistungs_darstellung": {
+        "title": "Service Presentation",
+        "description": "Understandable explanation of IGeL services and special areas."
+      },
+      "team_vorstellung": {
+        "title": "Team Introduction",
+        "description": "Sympathetic practice branding creates closeness before the visit."
+      }
+    },
+    "customFeatures": {
+      "digitaler_anamnesebogen": {
+        "title": "Digital Anamnesis Form",
+        "description": "Patients fill out data securely at home."
+      },
+      "recall_system": {
+        "title": "Recall System",
+        "description": "Automated reminders for check-ups."
+      },
+      "rezept_bestellung": {
+        "title": "Prescription Order",
+        "description": "Module for follow-up prescription requests."
+      },
+      "service_funnel": {
+        "title": "Service Funnel",
+        "description": "Visual representation of your offer process.",
+        "steps": {
+          "traffic": "Website Visitors",
+          "leads": "Qualified Inquiries",
+          "clients": "Won Clients"
+        },
+        "insight": "Automated pre-qualification saves up to 80% time in sales."
+      },
+      "lead_qualifizierung": {
+        "title": "Prescription Order",
+        "description": "Module for follow-up prescription requests."
+      }
+    },
+    "features": {
+      "patient_journey": {
+        "title": "The Digital Patient Journey",
+        "click_hint": "Click on steps to see the difference",
+        "steps": {
+          "symptom": {
+            "title": "Symptom & Search",
+            "desc": "Patient notices symptoms and seeks advice.",
+            "analog": "Asks friends, searches vaguely, finds outdated websites.",
+            "digital": "Finds your practice immediately via SEO. Sees competence & trust."
+          },
+          "pre_visit": {
+            "title": "Contact",
+            "desc": "First touchpoint with your practice.",
+            "analog": "Calls, stuck on hold, sends emails that get ignored.",
+            "digital": "Books online in 60 sec. Receives digital anamnesis beforehand."
+          },
+          "visit": {
+            "title": "Practice Visit",
+            "desc": "The actual appointment.",
+            "analog": "Long wait, filling forms at reception, stress.",
+            "digital": "QR-Code Check-in. Doctor has all data. Focus on treatment."
+          },
+          "follow_up": {
+            "title": "Follow-up",
+            "desc": "Retention and next steps",
+            "analog": "Patient is forgotten. No recall. Reviews random.",
+            "digital": "Auto-recall for checkups. Satisfaction survey via SMS."
+          }
+        },
+        "labels": {
+          "analog": "Analog (Yesterday)",
+          "digital": "Digital (Tomorrow)"
+        }
+      },
+      "roi_calculator": {
+        "label": "Efficiency Calculator",
+        "title": "Waiting Room ROI",
+        "labels": {
+          "patients_per_day": "Patients per Day",
+          "time_saved": "Time Saved per Patient (Min)"
+        },
+        "time_saved_note": "Through digital anamnesis & online booking",
+        "results": {
+          "time_gained": "Time Gained",
+          "savings": "Savings",
+          "per_month": "per Month"
+        },
+        "impact": "More time for medicine, less for bureaucracy."
+      }
+    }
+  },
+  "anwaelte-kanzleien": {
+    "title": "Lawyers & Law Firms",
+    "hero": {
+      "headline": "Legally Secure Client Acquisition",
+      "subheadline": "Position your law firm as the first point of contact for your areas of specialization."
+    },
+    "challenges": {
+      "mandanten_qualitaet": {
+        "title": "Client Quality",
+        "description": "Inquiries that do not fit the field of expertise or fee structure."
+      },
+      "konservatives_image": {
+        "title": "Conservative Image",
+        "description": "Outdated web design looks dusty instead of competent."
+      },
+      "content_pflege": {
+        "title": "Content Maintenance",
+        "description": "Current judgments and news are not published."
+      }
+    },
+    "solutions": {
+      "mandats_anfrage": {
+        "title": "Mandate Inquiry",
+        "description": "Structured forms for preliminary examination of the facts."
+      },
+      "expertise_showcase": {
+        "title": "Expertise Showcase",
+        "description": "Content that proves your competence in niches."
+      },
+      "modernes_serioeses_design": {
+        "title": "Modern Serious Design",
+        "description": "The perfect balance between tradition and modernity."
+      }
+    },
+    "customFeatures": {
+      "kostenrechner": {
+        "title": "Cost Calculator",
+        "description": "Transparency for standard cases (e.g., divorce, fines)."
+      },
+      "download_center": {
+        "title": "Download Center",
+        "description": "Provision of powers of attorney and information sheets."
+      },
+      "blog_system": {
+        "title": "Blog System",
+        "description": "Easy publishing of legal updates."
+      }
+    }
+  },
+  "gastronomie-hotellerie": {
+    "title": "Gastronomy & Hospitality",
+    "hero": {
+      "headline": "Taste Begins with the First Click",
+      "subheadline": "Turn website visitors into guests. Make them crave your service."
+    },
+    "challenges": {
+      "hohe_provisionen": {
+        "title": "High Commissions",
+        "description": "Dependence on delivery services and booking portals."
+      },
+      "personalmangel": {
+        "title": "Staff Shortage",
+        "description": "Difficult search for service and kitchen staff."
+      },
+      "veraltete_karten": {
+        "title": "Outdated Menus",
+        "description": "Menus on the website are often outdated PDFs."
+      }
+    },
+    "solutions": {
+      "direktbuchung": {
+        "title": "Direct Booking",
+        "description": "Commission-free table and room reservation."
+      },
+      "event_marketing": {
+        "title": "Event Marketing",
+        "description": "Promote events and promotions effectively."
+      },
+      "visual_storytelling": {
+        "title": "Visual Storytelling",
+        "description": "High-quality images and videos that convey the ambiance."
+      }
+    },
+    "customFeatures": {
+      "digitale_speisekarte": {
+        "title": "Digital Menu",
+        "description": "Easily changeable, filterable by allergens."
+      },
+      "gutschein_shop": {
+        "title": "Voucher Shop",
+        "description": "Additional revenue through online sale of vouchers."
+      },
+      "bewerber_video_integration": {
+        "title": "Applicant Video Integration",
+        "description": "Job page with atmosphere."
+      }
+    },
+    "features": {
+      "title": "Special Features",
+      "subtitle": "Digital Tools for More Revenue",
+      "cta": "Schedule Appointment",
+      "roi_visualizer": {
+        "title": "Table Occupancy Calculator",
+        "subtitle": "How much revenue are you losing to no-shows?",
+        "labels": {
+          "covers": "Guests per Day",
+          "avg_check": "Average Check",
+          "no_show_rate": "No-Show Rate"
+        },
+        "disclaimer": "*Industry standard is 10-20% without reminder systems.",
+        "results": {
+          "loss": "Annual Loss",
+          "recovered": "Recoverable Potential",
+          "context": "through automated reminders (SMS/Email)"
+        },
+        "cta": "Reduce No-Shows"
+      },
+      "menu_engineering": {
+        "title": "Menu Engineering",
+        "description": "Optimize your menu for maximum contribution margin through psychological design.",
+        "toggles": {
+          "paper": "Classic (PDF)",
+          "digital": "Smart (Digital)"
+        },
+        "paper_view": {
+          "title": "Menu",
+          "items": {
+            "steak": "Rump Steak",
+            "schnitzel": "Wiener Schnitzel",
+            "salad": "Mixed Salad"
+          },
+          "disclaimer": "Static, no images, hard to read."
+        },
+        "digital_view": {
+          "title": "Steak Selection",
+          "description": "Juicy Rump Steak from the lava stone grill.",
+          "cta_add": "+ Add",
+          "upsell": {
+            "label": "Pairs with:",
+            "item": "Primitivo '21 (0.2l)"
+          }
+        }
+      }
+    }
+  },
+  "ecommerce-retail": {
+    "title": "E-Commerce & Retail",
+    "hero": {
+      "headline": "From Visitor to Regular Customer",
+      "subheadline": "Scalable online shops and retail experiences that sell."
+    },
+    "challenges": {
+      "warenkorb_abbrueche": {
+        "title": "Cart Abandonment",
+        "description": "Customers drop off shortly before purchase."
+      },
+      "performance": {
+        "title": "Performance",
+        "description": "Slow load times cost revenue, especially on mobile."
+      },
+      "marken_erlebnis": {
+        "title": "Brand Experience",
+        "description": "The shop looks like every other standard template."
+      }
+    },
+    "solutions": {
+      "high_speed_frontend": {
+        "title": "High-Speed Frontend",
+        "description": "Next.js solutions for lightning-fast shopping."
+      },
+      "conversion_optimierung": {
+        "title": "Conversion Optimization",
+        "description": "UX design that psychologically leads the user to purchase."
+      },
+      "omnichannel": {
+        "title": "Omnichannel",
+        "description": "Connection of online shop and local store."
+      }
+    },
+    "customFeatures": {
+      "produkt_konfigurator": {
+        "title": "Product Configurator",
+        "description": "Visualize customizable products live."
+      },
+      "cross_selling_module": {
+        "title": "Cross-Selling Module",
+        "description": "Intelligent recommendations in the cart."
+      },
+      "loyalty_integration": {
+        "title": "Loyalty Integration",
+        "description": "Collecting points and customer retention."
+      }
+    },
+    "features": {
+      "omnichannel": {
+        "title": "Connected Worlds",
+        "strategies": {
+          "click-collect": {
+            "title": "Click & Collect",
+            "desc": "Buy online, pick up in store."
+          },
+          "ship-from-store": {
+            "title": "Ship from Store",
+            "desc": "Use stores as fulfillment centers."
+          },
+          "endless-aisle": {
+            "title": "Endless Aisle",
+            "desc": "Order out-of-stock items in store."
+          }
+        },
+        "nodes": {
+          "store": "Store",
+          "online": "Online Shop"
+        }
+      },
+      "loyalty_loop": {
+        "title": "Loyalty Loop",
+        "description": "Automatic rewards for loyal customers.",
+        "steps": {
+          "buy": "Buy",
+          "points": "Earn Points",
+          "redeem": "Redeem Reward",
+          "repeat": "Repeat"
+        }
+      },
+      "pos_sync": {
+        "title": "Real-Time Sync",
+        "labels": {
+          "store": "Point of Sale",
+          "online": "Online Store",
+          "stock": "Stock Level"
+        },
+        "actions": {
+          "sold": "Sold in Store",
+          "update": "Syncing...",
+          "add_to_cart": "Add to Cart"
+        }
+      }
+    }
+  },
+  "unternehmensberatung": {
+    "title": "Management Consulting",
+    "hero": {
+      "headline": "Make Expertise Visible",
+      "subheadline": "Win high-ticket clients by positioning yourself as a thought leader."
+    },
+    "challenges": {
+      "erklaerungsbedarf": {
+        "title": "Need for Explanation",
+        "description": "Complex services are hard to grasp."
+      },
+      "vertrauen": {
+        "title": "Trust",
+        "description": "Long sales cycles require a lot of trust building."
+      },
+      "differenzierung": {
+        "title": "Differentiation",
+        "description": "Differentiation from 'black sheep' in the coaching market."
+      }
+    },
+    "solutions": {
+      "whitepaper_funnels": {
+        "title": "Whitepaper Funnels",
+        "description": "Lead generation through high-quality content."
+      },
+      "case_studies": {
+        "title": "Case Studies",
+        "description": "In-depth success stories instead of superficial logos."
+      },
+      "webinare": {
+        "title": "Webinars",
+        "description": "Integration of video content and live events."
+      }
+    },
+    "customFeatures": {
+      "termin_kalender": {
+        "title": "Appointment Calendar",
+        "description": "Book qualified initial consultations directly."
+      },
+      "podcast_integration": {
+        "title": "Podcast Integration",
+        "description": "Audio content directly on the site."
+      },
+      "mitgliederbereich": {
+        "title": "Member Area",
+        "description": "Exclusive content for clients."
+      }
+    },
+    "features": {
+      "lead_simulator": {
+        "title": "The 'Gatekeeper'",
+        "description": "Set when a customer is interesting for you. Our system filters out the rest automatically.",
+        "filter_label": "Minimum Budget Filter",
+        "table_headers": {
+          "inbox": "Incoming Inquiry",
+          "status": "Status"
+        },
+        "status_labels": {
+          "accept": "Accept",
+          "reject": "Auto-Decline"
+        },
+        "budget_label": "Budget: "
+      },
+      "crm_flow": {
+        "title": "Tech-Stack Integration",
+        "description": "We connect your website directly to your CRM. No more manual data entry."
+      },
+      "service_funnel": {
+        "title": "Funnel Analysis",
+        "description": "Visualize where your visitors drop off.",
+        "steps": {
+          "traffic": "Visitors",
+          "leads": "Inquiries",
+          "clients": "Clients"
+        },
+        "insight": "Your biggest lever is the conversion from visitor to inquiry."
+      }
+    }
+  },
+  "startups-tech": {
+    "title": "Startups & Tech",
+    "hero": {
+      "headline": "Scale fast, look global",
+      "subheadline": "Websites for tech companies that convince investors and early adopters."
+    },
+    "challenges": {
+      "time_to_market": {
+        "title": "Time-to-Market",
+        "description": "The website needs to be ready yesterday."
+      },
+      "talent_war": {
+        "title": "Talent War",
+        "description": "Attractiveness for top developers must be high."
+      },
+      "internationalisierung": {
+        "title": "Internationalization",
+        "description": "Multilingualism and global alignment from day 1."
+      }
+    },
+    "solutions": {
+      "skalierbare_tech_stacks": {
+        "title": "Scalable Tech Stacks",
+        "description": "React/Next.js basis that grows with you."
+      },
+      "modernstes_design": {
+        "title": "State-of-the-art Design",
+        "description": "Look & Feel like in Silicon Valley."
+      },
+      "investor_relations": {
+        "title": "Investor Relations",
+        "description": "Areas specifically for investors and press."
+      }
+    },
+    "customFeatures": {
+      "saas_integration": {
+        "title": "SaaS Integration",
+        "description": "Seamless transition from marketing site to app."
+      },
+      "dark_mode": {
+        "title": "Dark Mode",
+        "description": "Popular with tech target groups."
+      },
+      "mehrsprachigkeit": {
+        "title": "Multilingualism (i18n)",
+        "description": "Automatic language detection and switch."
+      }
     }
   }
 }

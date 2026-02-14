@@ -1,17 +1,72 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { LocalizedNavLink as NavLink } from '../../shared/ui/LocalizedLink';
-import { servicesData } from '../../data/services';
+import { servicesData } from '@/shared/data/services';
 import { OptimizedImage } from '../../shared/ui/OptimizedImage';
 import {
   appDevImages,
   appDevFeatureMapping,
   brandingImages,
   brandingFeatureMapping,
-} from '../../data/serviceImages';
-import { Icon } from '../../shared/ui/Icon';
+} from '@/shared/data/serviceImages';
+import { OptimizedIcon } from '../../shared/ui/OptimizedIcon';
 import { useTranslation, Trans } from 'react-i18next';
 import { SeoHead } from '../../shared/ui/SeoHead';
+import { StickyCTA } from '../../shared/ui/StickyCTA';
+import {
+  Lightning,
+  ChartBar,
+  Stack,
+  ShieldCheck,
+  Code,
+  Users,
+  User,
+  Sparkle,
+  Target,
+  Monitor,
+  SquaresFour,
+  FilmStrip,
+  ShoppingCart,
+  Cloud,
+  Palette,
+  RocketLaunch,
+  MagnifyingGlass,
+  Gauge,
+  Lightbulb,
+  Calendar as CalendarIcon,
+  CheckCircle,
+  CaretDown,
+  Stack as Layers,
+} from '@phosphor-icons/react';
+
+const iconMap: Record<string, React.ElementType> = {
+  lightning: Lightning,
+  chart_bar: ChartBar,
+  stack: Stack,
+  shield_check: ShieldCheck,
+  code: Code,
+  users: Users,
+  user: User,
+  sparkle: Sparkle,
+  target: Target,
+  monitor: Monitor,
+  squares_four: SquaresFour,
+  film_strip: FilmStrip,
+  shopping_cart: ShoppingCart,
+  layers: Layers,
+  cloud: Cloud,
+  palette: Palette,
+  widgets: SquaresFour,
+  rocket: RocketLaunch,
+  search: MagnifyingGlass,
+  speed: Gauge,
+  lightbulb: Lightbulb,
+  calendar_month: CalendarIcon,
+  check_circle: CheckCircle,
+  rocket_launch: RocketLaunch,
+  expand_more: CaretDown,
+  check: CheckCircle, // Fallback for 'check'
+};
 
 const getServiceImage = (category?: string, slug?: string) => {
   if (!category || !slug) return null;
@@ -71,12 +126,37 @@ const ServiceDetail: React.FC = () => {
     'LDK',
   ];
 
+  // Fetch translated arrays
+  const benefits = t(service.benefitsKey, { returnObjects: true }) as string[];
+  const processSteps = service.processStepsKey
+    ? (t(service.processStepsKey, { returnObjects: true }) as {
+        number: string;
+        title: string;
+        description: string;
+      }[])
+    : [];
+  const advantages = service.advantagesKey
+    ? (t(service.advantagesKey, { returnObjects: true }) as {
+        title: string;
+        description: string;
+        icon: string;
+      }[])
+    : [];
+  const testimonials = service.testimonialsKey
+    ? (t(service.testimonialsKey, { returnObjects: true }) as {
+        company: string;
+        name: string;
+        role: string;
+        text: string;
+      }[])
+    : [];
+  const faqs = service.faqsKey
+    ? (t(service.faqsKey, { returnObjects: true }) as { question: string; answer: string }[])
+    : [];
+
   return (
     <div className="bg-background-light pt-24 pb-0">
-      <SeoHead
-        title={`${service.title} | Coday`}
-        description={service.description}
-      />
+      <SeoHead title={`${t(service.titleKey)} | Coday`} description={t(service.descriptionKey)} />
       {/* Breadcrumb */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
         <div className="flex items-center text-sm text-gray-500">
@@ -91,22 +171,22 @@ const ServiceDetail: React.FC = () => {
             {service.category}
           </NavLink>
           <span className="mx-2">/</span>
-          <span className="text-primary font-medium">{service.title}</span>
+          <span className="text-primary font-medium">{t(service.titleKey)}</span>
         </div>
       </div>
 
       {/* Hero Section */}
-      <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-20 text-center lg:text-left">
+      <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-12 lg:mb-20 text-center lg:text-left">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-xl text-primary mb-6">
-              <Icon name={service.icon} className="text-3xl" />
+              <OptimizedIcon icon={iconMap[service.icon] || Code} className="text-3xl" />
             </div>
             <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-gray-900 mb-6 leading-tight">
-              {service.title}
+              {t(service.titleKey)}
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed mb-8">
-              {service.longDescription || service.description}
+              {t(service.longDescriptionKey)}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <NavLink
@@ -114,7 +194,7 @@ const ServiceDetail: React.FC = () => {
                 className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl bg-gray-900 hover:bg-gray-800 shadow-lg hover:shadow-xl transition-all match-hover-translate-y-1"
               >
                 {t('generic_detail.hero.consulting_btn')}
-                <Icon name="calendar_month" className="ml-2" />
+                <OptimizedIcon icon={CalendarIcon} className="ml-2" />
               </NavLink>
             </div>
           </div>
@@ -127,9 +207,12 @@ const ServiceDetail: React.FC = () => {
                 {t('generic_detail.hero.benefits_title')}
               </h3>
               <ul className="space-y-4">
-                {service.benefits.map((benefit, i) => (
+                {benefits.map((benefit, i) => (
                   <li key={i} className="flex items-start">
-                    <Icon name="check_circle" className="text-primary mr-3 text-xl mt-0.5" />
+                    <OptimizedIcon
+                      icon={CheckCircle}
+                      className="text-primary mr-3 text-xl mt-0.5"
+                    />
                     <span className="text-gray-700 font-medium">{benefit}</span>
                   </li>
                 ))}
@@ -140,16 +223,16 @@ const ServiceDetail: React.FC = () => {
       </section>
 
       {/* Mobile Benefits (only if Process is NOT present, otherwise Advantages section handles it) */}
-      {!service.processSteps && (
-        <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-24 lg:hidden">
+      {!service.processStepsKey && (
+        <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-12 lg:mb-24 lg:hidden">
           <div className="glass-card p-8 rounded-2xl bg-white shadow-aurora">
             <h3 className="font-display font-bold text-2xl text-gray-900 mb-6">
               {t('generic_detail.hero.benefits_title')}
             </h3>
             <ul className="space-y-4">
-              {service.benefits.map((benefit, i) => (
+              {benefits.map((benefit, i) => (
                 <li key={i} className="flex items-start">
-                  <Icon name="check_circle" className="text-primary mr-3 text-xl mt-0.5" />
+                  <OptimizedIcon icon={CheckCircle} className="text-primary mr-3 text-xl mt-0.5" />
                   <span className="text-gray-700 font-medium">{benefit}</span>
                 </li>
               ))}
@@ -158,29 +241,27 @@ const ServiceDetail: React.FC = () => {
         </section>
       )}
 
-      {/* Trust / Logos Section (Only for Marketing for now or if enabled generally) */}
-      {service.processSteps && (
-        <section className="py-12 border-y border-gray-100 bg-white/50 mb-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-8">
-              {t('generic_detail.trust.title')}
-            </p>
-            <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-              {logos.map((logo, index) => (
-                <span
-                  key={index}
-                  className="text-lg font-bold font-display text-gray-400 hover:text-primary transition-colors cursor-default"
-                >
-                  {logo}
-                </span>
-              ))}
-            </div>
+      {/* Trust / Logos Section */}
+      <section className="py-12 border-y border-gray-100 bg-white/50 mb-12 lg:mb-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-8">
+            {t('generic_detail.trust.title')}
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+            {logos.map((logo, index) => (
+              <span
+                key={index}
+                className="text-lg font-bold font-display text-gray-400 hover:text-primary transition-colors cursor-default"
+              >
+                {logo}
+              </span>
+            ))}
           </div>
-        </section>
-      )}
+        </div>
+      </section>
 
       {/* Process Section */}
-      {service.processSteps && (
+      {service.processStepsKey && (
         <section className="bg-gray-900 text-white py-24 mb-24 overflow-hidden relative">
           {/* Dynamic Background Visual */}
           {slug && (
@@ -188,8 +269,6 @@ const ServiceDetail: React.FC = () => {
               {/* Helper to resolve image based on category/slug - Rendered conditionally */}
               {(() => {
                 // Simple logic to resolve image from our mappings
-                // We import these at the top level, but for cleaner JSX we can use a small inline lookup or helper function outside component
-                // For now, let's assume we pass the image ref via a helper function inside the component
                 const bgImage = getServiceImage(category, slug);
                 if (bgImage) {
                   return (
@@ -227,7 +306,7 @@ const ServiceDetail: React.FC = () => {
               <div className="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-800 -translate-y-1/2"></div>
 
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-8">
-                {service.processSteps.map((step, index) => (
+                {processSteps.map((step, index) => (
                   <div key={index} className="relative group">
                     <div className="flex flex-col items-center text-center">
                       <div className="w-16 h-16 rounded-2xl bg-gray-800 border border-gray-700 flex items-center justify-center text-xl font-bold font-display mb-6 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300 shadow-lg relative z-10">
@@ -247,7 +326,7 @@ const ServiceDetail: React.FC = () => {
       )}
 
       {/* Advantages Section */}
-      {service.advantages && (
+      {service.advantagesKey && (
         <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-24">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -268,12 +347,15 @@ const ServiceDetail: React.FC = () => {
               </NavLink>
             </div>
             <div className="grid sm:grid-cols-2 gap-6">
-              {service.advantages.map((adv, index) => (
+              {advantages.map((adv, index) => (
                 <div
                   key={index}
                   className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
                 >
-                  <Icon name={adv.icon} className="text-primary text-3xl mb-4" />
+                  <OptimizedIcon
+                    icon={iconMap[adv.icon] || Code}
+                    className="text-primary text-3xl mb-4"
+                  />
                   <h3 className="font-bold text-gray-900 mb-2">{adv.title}</h3>
                   <p className="text-sm text-gray-500 leading-relaxed">{adv.description}</p>
                 </div>
@@ -284,7 +366,7 @@ const ServiceDetail: React.FC = () => {
       )}
 
       {/* Testimonials */}
-      {service.testimonials && (
+      {service.testimonialsKey && (
         <section className="bg-surface-light py-24 mb-24 border-y border-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
@@ -296,7 +378,7 @@ const ServiceDetail: React.FC = () => {
               </h2>
             </div>
             <div className="grid md:grid-cols-3 gap-8">
-              {service.testimonials.map((t, i) => (
+              {testimonials.map((t, i) => (
                 <div key={i} className="bg-white p-8 rounded-3xl shadow-aurora relative">
                   <div className="text-primary text-4xl font-serif absolute top-6 right-8 opacity-20">
                     "
@@ -321,7 +403,7 @@ const ServiceDetail: React.FC = () => {
       )}
 
       {/* FAQ */}
-      {service.faqs && (
+      {service.faqsKey && (
         <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-32">
           <div className="text-center mb-12">
             <h2 className="font-display font-bold text-3xl text-gray-900 mb-4">
@@ -330,7 +412,7 @@ const ServiceDetail: React.FC = () => {
             <p className="text-gray-600">{t('generic_detail.faq.desc')}</p>
           </div>
           <div className="space-y-4">
-            {service.faqs.map((faq, index) => (
+            {faqs.map((faq, index) => (
               <FaqItem key={index} question={faq.question} answer={faq.answer} />
             ))}
           </div>
@@ -354,11 +436,12 @@ const ServiceDetail: React.FC = () => {
               className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-gray-900 rounded-xl bg-white hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
             >
               {t('generic_detail.final_cta.button')}
-              <Icon name="rocket_launch" className="ml-2" />
+              <OptimizedIcon icon={RocketLaunch} className="ml-2" />
             </NavLink>
           </div>
         </div>
       </section>
+      <StickyCTA />
     </div>
   );
 };
@@ -373,8 +456,8 @@ const FaqItem: React.FC<{ question: string; answer: string }> = ({ question, ans
         className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
       >
         <span className="font-bold text-gray-900 text-lg">{question}</span>
-        <Icon
-          name="expand_more"
+        <OptimizedIcon
+          icon={CaretDown}
           className={`text-gray-400 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
         />
       </button>

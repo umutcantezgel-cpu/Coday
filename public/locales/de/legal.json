@@ -3,7 +3,14 @@
     "contact": "Kontaktieren Sie uns",
     "contents": "Inhalt",
     "download_pdf": "PDF herunterladen",
-    "legal_document": "Rechtliches Dokument"
+    "legal_document": "Rechtliches Dokument",
+    "labels": {
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "website": "Website",
+      "response_time": "Antwortzeit",
+      "response_time_value": "Innerhalb von 30 Tagen"
+    }
   },
   "disclaimer": {
     "analysis": {
@@ -466,7 +473,11 @@
       "client": "Natürliche oder juristische Person, die Leistungen des Anbieters in Anspruch nimmt.",
       "project": "Die im Angebot definierte Gesamtheit aller zu erbringenden Leistungen.",
       "provider": "Umutcan Emre Tezgel, handelnd unter „Coday\", mit Sitz in Wetzlar.",
-      "revision": "Änderungsrunde zur Anpassung von Design oder Funktionalität nach Zwischenabnahme."
+      "revision": "Änderungsrunde zur Anpassung von Design oder Funktionalität nach Zwischenabnahme.",
+      "provider_title": "Anbieter",
+      "client_title": "Auftraggeber",
+      "project_title": "Projekt",
+      "revision_title": "Revision"
     },
     "eigentum": {
       "code": {
@@ -531,7 +542,9 @@
     },
     "payment": {
       "first": "bei Auftragserteilung / Vertragsunterzeichnung",
-      "second": "nach Fertigstellung und vor Übergabe"
+      "second": "nach Fertigstellung und vor Übergabe",
+      "first_title": "1. Rate",
+      "second_title": "2. Rate"
     },
     "projektablauf": {
       "communication": {

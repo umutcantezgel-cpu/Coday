@@ -3,7 +3,9 @@ import { Input } from '../../shared/ui/Input';
 import { Button } from '../../shared/ui/Button';
 import { useTranslation } from 'react-i18next';
 import { supabase } from '@/shared/lib/supabase/client';
-import { Icon } from '@/shared/ui/Icon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
+import { CheckCircle, CircleNotch } from '@phosphor-icons/react';
+import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 
 const Newsletter: React.FC = () => {
   const { t } = useTranslation('knowledge');
@@ -37,7 +39,7 @@ const Newsletter: React.FC = () => {
     <div className="bg-background-light min-h-screen pt-24 pb-20 flex flex-col items-center justify-center">
       <div className="max-w-4xl w-full px-4 sm:px-6 lg:px-8 text-center">
         <div className="relative w-full max-w-lg mx-auto aspect-video mb-12 rounded-3xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-all duration-500">
-          <img
+          <OptimizedImage
             src="/images/marketing/email-marketing-kampagne-newsletter-zielgruppe-versand.webp"
             alt="Newsletter"
             className="w-full h-full object-cover"
@@ -54,7 +56,7 @@ const Newsletter: React.FC = () => {
 
         {status === 'success' ? (
           <div className="max-w-md mx-auto bg-green-50 p-6 rounded-2xl border border-green-100 mb-8 flex flex-col items-center text-green-700 animate-in fade-in zoom-in duration-300">
-            <Icon name="check_circle" className="w-12 h-12 mb-2 text-green-500" />
+            <OptimizedIcon icon={CheckCircle} className="w-12 h-12 mb-2 text-green-500" />
             <h3 className="font-bold text-lg">Vielen Dank!</h3>
             <p>Du hast dich erfolgreich angemeldet.</p>
           </div>
@@ -77,7 +79,7 @@ const Newsletter: React.FC = () => {
             />
             <Button type="submit" className="rounded-xl px-6" disabled={status === 'loading'}>
               {status === 'loading' ? (
-                <Icon name="loader" className="animate-spin" />
+                <OptimizedIcon icon={CircleNotch} className="animate-spin" />
               ) : (
                 t('newsletter.subscribe')
               )}
@@ -86,7 +88,7 @@ const Newsletter: React.FC = () => {
         )}
 
         {status === 'error' && (
-          <p className="text-red-500 text-sm mb-4">
+          <p role="alert" className="text-red-500 text-sm mb-4">
             Ein Fehler ist aufgetreten. Bitte versuche es später erneut.
           </p>
         )}

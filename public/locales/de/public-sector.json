@@ -1,0 +1,214 @@
+{
+  "meta": {
+    "title": "Öffentliche Aufträge | Digitaler Staat | Coday",
+    "description": "Digitale Souveränität & Barrierefreiheit für den öffentlichen Dienst. Rechtssichere Softwarelösungen nach EVB-IT. ISO 27001 & BITV 2.0 konform."
+  },
+  "hero": {
+    "headline": "Digitale Souveränität",
+    "subline": "Rechtssichere & barrierefreie Lösungen für die öffentliche Verwaltung.",
+    "cta": "Ausschreibung besprechen",
+    "badge": "BITV 2.0 & DSGVO Konform"
+  },
+  "trust": {
+    "bitv": "Barrierefrei nach BITV 2.0",
+    "dsgvo": "Serverstandort Deutschland",
+    "iso": "ISO 27001 Sicherheit",
+    "opensource": "Public Money, Public Code"
+  },
+  "pricing": {
+    "title": "Transparente Kostenkalkulation",
+    "disclaimer": "Keine Pauschalpreise. Wir kalkulieren exakt nach Ihren Leistungsbeschreibungen (EVB-IT/Lastenheft).",
+    "process": {
+      "analysis": "Bedarfsanalyse",
+      "spec": "Lastenheft",
+      "calc": "Kalkulation",
+      "offer": "Angebot"
+    }
+  },
+  "services": {
+    "title": "Leistungsspektrum",
+    "headline": "Digitale Verwaltung neu gedacht.",
+    "subline": "Von der Antragstellung bis zum Bescheid: Wir digitalisieren Prozesse durchgängig, medienbruchfrei und nutzerzentriert (OZG-konform).",
+    "items": {
+      "portals": {
+        "title": "Bürgerportale & OZG",
+        "desc": "Barrierefreie Frontends für Bürgerdienste. Integration von BundID und Nutzerkonten."
+      },
+      "internal": {
+        "title": "Fachverfahren",
+        "desc": "Effiziente interne Tools für Sachbearbeiter. Automatisierte Workflows und E-Akten Anbindung."
+      },
+      "smartcity": {
+        "title": "Smart City & IoT",
+        "desc": "Vernetzte Infrastruktur und Open Data Plattformen für die Stadt der Zukunft."
+      }
+    }
+  },
+  "tech_stack": {
+    "title": "Technologische Souveränität",
+    "headline": "Open Source First. Kein Vendor Lock-in.",
+    "description": "Wir setzen auf bewährte Open Source Technologien, die Ihnen volle Kontrolle über Ihre Daten und Infrastruktur garantieren. Auditierbar, sicher und lizenzkostenfrei.",
+    "items": {
+      "kubernetes": {
+        "title": "Container Orchestration",
+        "tech": "Kubernetes / K8s",
+        "desc": "Skalierbare Microservices-Architekturen mit strikter Network Policies Isolierung. BSI-konforme Deployments."
+      },
+      "iam": {
+        "title": "Identity & Access",
+        "tech": "Keycloak / BundID",
+        "desc": "Zentrales Identitätsmanagement mit OIDC/SAML Anbindung. Unterstützung für FIDO2 und eIDAS-Authentifizierung."
+      },
+      "chat": {
+        "title": "Sichere Kommunikation",
+        "tech": "Matrix / Element",
+        "desc": "Ende-zu-Ende verschlüsselte Echtzeitkommunikation. Föderiert und unabhängig von US-Cloud-Anbietern."
+      },
+      "hosting": {
+        "title": "Serverstandort",
+        "tech": "DE / EU-Only",
+        "desc": "Hosting in ISO 27001 zertifizierten Rechenzentren in Deutschland (z.B. Hetzner, T-Systems). Air-Gapped Option verfügbar."
+      }
+    }
+  },
+  "ozg": {
+    "title": "OZG 2.0 Reifegrad",
+    "headline": "Vom Papierantrag zum 'Once-Only' Prinzip.",
+    "description": "Wir begleiten Sie durch alle Stufen der OZG-Umsetzung. Unser Ziel ist Stufe 4: Die vollständige Dunkelverarbeitung.",
+    "steps": {
+      "info": {
+        "title": "Stufe 1: Information",
+        "desc": "Barrierefreie Bereitstellung aller Informationen (BITV 2.0). Leichte Sprache und Gebärdensprache-Integration."
+      },
+      "interaction": {
+        "title": "Stufe 2: Interaktion",
+        "desc": "Download von Formularen und Kontaktaufnahme. Intelligente Chatbots zur Bürgerunterstützung."
+      },
+      "transaction": {
+        "title": "Stufe 3: Transaktion",
+        "desc": "Vollständige digitale Antragstellung mit eID / BundID Integration. Ende-zu-Ende verschlüsselter Datentransfer."
+      },
+      "transformation": {
+        "title": "Stufe 4: Transformation",
+        "desc": "Medienbruchfreie Prozesskette. Registerabruf statt Nachweispflicht (Once-Only). Automatisierte Bescheiderstellung."
+      }
+    }
+  },
+  "pricing_reality": {
+    "title": "Vergaberecht & Kosten",
+    "headline": "Warum Pauschalpreise im öffentlichen Dienst scheitern.",
+    "description": "Öffentliche Aufträge erfordern EVB-IT Konformität und Preisindikation auf Basis von Leistungsbeschreibungen. Pauschalangebote führen oft zu nachträglichen Kostenexplosionen oder Vergaberechtsverstößen.",
+    "table": {
+      "col_criteria": "Kriterium",
+      "col_agencies": "Klassische Agentur",
+      "col_coday": "Coday Public Sector",
+      "rows": [
+        {
+          "criteria": "Kalkulationsbasis",
+          "agency": "Geschätzte Pauschale (Blackbox)",
+          "coday": "Transparente Tagessätze (EVB-IT Dienstvertrag)"
+        },
+        {
+          "criteria": "Leistungsumfang",
+          "agency": "Starr / Begrenzte Korrekturschleifen",
+          "coday": "Agil nach Lastenheft / User Stories"
+        },
+        {
+          "criteria": "Nutzungsrechte",
+          "agency": "Oft eingeschränkt (Lizenzgebühren)",
+          "coday": "Uneingeschränkt (Open Source / Public Code)"
+        },
+        {
+          "criteria": "Sicherheit",
+          "agency": "Standard-Hosting",
+          "coday": "ISO 27001 / BSI-Grundschutz Konform"
+        }
+      ]
+    }
+  },
+  "wizard": {
+    "title": "Vergabe-Assistent",
+    "headline": "Welches Verfahren passt zu Ihrem Projekt?",
+    "description": "Finden Sie in 3 Klicks die richtige Vergabeart für Ihr IT-Vorhaben. Basierend auf aktuellen Schwellenwerten (Stand 2024).",
+    "steps": {
+      "budget": {
+        "question": "Wie hoch ist das geschätzte Auftragsvolumen (netto)?",
+        "options": {
+          "low": "Unter 5.000 €",
+          "mid": "5.000 € - 221.000 €",
+          "high": "Über 221.000 €"
+        }
+      },
+      "type": {
+        "question": "Um welche Art von Leistung handelt es sich?",
+        "options": {
+          "service": "IT-Dienstleistung / Entwicklung",
+          "license": "Software-Lizenzkauf"
+        }
+      }
+    },
+    "results": {
+      "direct": {
+        "title": "Direktauftrag möglich",
+        "badge": "Unbürokratisch",
+        "desc": "Bis zu dieser Grenze können Sie oft formfrei beauftragen. Ideal für PoCs, Workshops oder kleine Module.",
+        "action": "Jetzt Angebot anfordern"
+      },
+      "uvgo": {
+        "title": "Verhandlungsvergabe (UVgO)",
+        "badge": "National",
+        "desc": "Ein flexibler Wettbewerb ist notwendig. Wir unterstützen Sie bei der Erstellung der Leistungsbeschreibung für die Verhandlungsvergabe.",
+        "action": "Unterstützung anfragen"
+      },
+      "vgv": {
+        "title": "EU-Ausschreibung (VgV)",
+        "badge": "Europaweit",
+        "desc": "Das Projekt überschreitet den Schwellenwert. Ein komplexes VgV-Verfahren ist nötig. Wir bieten Erfahrung mit E-Vergabe Plattformen.",
+        "action": "Bieterverfahren besprechen"
+      }
+    }
+  },
+  "downloads": {
+    "title": "Vorlagen & Hilfsmittel",
+    "lastenheft": {
+      "title": "Muster-Lastenheft für IT-Vergaben",
+      "desc": "Sparen Sie Zeit mit unserer EVB-IT konformen Vorlage für Software-Entwicklung.",
+      "button": "PDF Herunterladen (Muster)",
+      "file_info": "PDF, 2.4 MB • Stand 2024"
+    },
+    "checklist": {
+      "title": "Checkliste: OZG-Reifegrad",
+      "desc": "Überprüfen Sie, wo Ihre Behörde aktuell steht und was für Level 4 fehlt.",
+      "button": "Checkliste öffnen",
+      "file_info": "Interaktives PDF"
+    }
+  },
+  "request_quote": {
+    "title": "Vergabeverfahren starten",
+    "fields": {
+      "authority": "Behörde / Amt",
+      "year": {
+        "label": "Haushaltsjahr",
+        "options": {
+          "2024": "2024 (Dringend)",
+          "2025": "2025 (Planung)",
+          "later": "2026+"
+        }
+      },
+      "type": {
+        "label": "Verfahrensart",
+        "options": {
+          "direct": "Direktauftrag (< 221k€)",
+          "uvgo": "Verhandlungsvergabe (UVgO)",
+          "vgv": "EU-Verfahren (VgV)",
+          "open": "Offenes Verfahren"
+        }
+      }
+    },
+    "cta": "Rückruf anfordern"
+  },
+  "contact": {
+    "title": "Projektanfrage für Behörden",
+    "upload_label": "Lastenheft hochladen (PDF)"
+  }
+}

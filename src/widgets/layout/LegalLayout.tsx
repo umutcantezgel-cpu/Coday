@@ -1,6 +1,7 @@
 import React from 'react';
 import { SeoHead } from '@/shared/ui/SeoHead';
-import { Icon } from '@/shared/ui/Icon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
+import { Clock } from '@phosphor-icons/react';
 
 interface TocItem {
   id: string;
@@ -37,7 +38,7 @@ export const LegalLayout: React.FC<LegalLayoutProps> = ({
           {subtitle && <div className="text-xl text-slate-600 mb-6">{subtitle}</div>}
           {lastUpdated && (
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full text-sm text-slate-500 shadow-sm border border-gray-100">
-              <Icon name="clock" className="w-4 h-4" />
+              <OptimizedIcon icon={Clock} className="w-4 h-4" />
               <span>{lastUpdated}</span>
             </div>
           )}

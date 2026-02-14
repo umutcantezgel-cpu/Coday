@@ -4,6 +4,7 @@
       "failed": "Booking failed",
       "generic": "An unknown error occurred"
     },
+    "loading": "Loading available slots...",
     "step1": {
       "next": "Next",
       "title": "Select a Date"

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Icon } from '../../../shared/ui/Icon';
+import { OptimizedIcon } from '../../../shared/ui/OptimizedIcon';
+import { PenNib, ArrowRight, Brain } from '@phosphor-icons/react';
 import { Button } from '../../../shared/ui/Button';
 import { SeoHead } from '../../../shared/ui/SeoHead';
 import BlurText from '../../../shared/ui/BlurText';
@@ -23,17 +24,14 @@ const UiUx: React.FC = () => {
 
   return (
     <>
-      <SeoHead
-        title="UI/UX Design | User-Centered Digital Experiences"
-        description="We design digital experiences users love. From wireframes to high-fidelity prototypes, we create interfaces that drive conversions."
-      />
+      <SeoHead title={t('ui_ux_page.meta.title')} description={t('ui_ux_page.meta.description')} />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-6 overflow-hidden bg-background-light">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-          <div className="text-center lg:text-left">
+          <div className="text-center lg:text-start">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pink-50 text-pink-600 text-sm font-bold mb-8 border border-pink-100">
-              <Icon name="design_services" className="w-4 h-4" />
+              <OptimizedIcon icon={PenNib} className="w-4 h-4" />
               <span>{t('ui_ux_page.hero.badge')}</span>
             </span>
 
@@ -42,8 +40,7 @@ const UiUx: React.FC = () => {
                 text={t('ui_ux_page.hero.title_prefix')}
                 delay={100}
                 animateBy="words"
-                direction="top"
-                className="inline-block mr-3"
+                className="inline-block me-3"
               />
               <GradientText
                 colors={['#EC4899', '#F472B6', '#F9A8D4']}
@@ -56,7 +53,7 @@ const UiUx: React.FC = () => {
             <p className="text-xl text-slate-600 leading-relaxed max-w-xl mb-10">
               {t('ui_ux_page.hero.description')}
             </p>
-            <Button size="lg" variant="primary" rightIcon={<Icon name="arrow_right" />}>
+            <Button size="lg" variant="primary" rightIcon={<OptimizedIcon icon={ArrowRight} />}>
               {t('ui_ux_page.hero.cta')}
             </Button>
           </div>
@@ -106,7 +103,7 @@ const UiUx: React.FC = () => {
                 transition={{ delay: i * 0.1 }}
                 className="relative"
               >
-                <div className="text-7xl font-black text-slate-100 absolute -top-4 -left-2 select-none">
+                <div className="text-7xl font-black text-slate-100 absolute -top-4 -start-2 select-none">
                   {String(i + 1).padStart(2, '0')}
                 </div>
                 <div className="relative pt-12">
@@ -133,7 +130,7 @@ const UiUx: React.FC = () => {
             {psychologyItems.map((item, i) => (
               <div key={i} className="bg-slate-800 border border-slate-700 rounded-2xl p-6">
                 <div className="w-12 h-12 rounded-xl bg-pink-500/20 text-pink-400 flex items-center justify-center mb-4">
-                  <Icon name="psychology" className="text-2xl" />
+                  <OptimizedIcon icon={Brain} className="text-2xl" />
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
                 <p className="text-slate-400 text-sm">{item.desc}</p>

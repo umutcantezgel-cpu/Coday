@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Icon } from '../../shared/ui/Icon';
+import { OptimizedIcon } from '../../shared/ui/OptimizedIcon';
+import { Code, CaretDown, ArrowUpRight, ArrowRight, List, X } from '@phosphor-icons/react';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { useLocation } from 'react-router-dom';
 import { LocalizedLink as Link } from '../../shared/ui/LocalizedLink';
@@ -53,9 +54,18 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
         setActiveCategory(null);
       }
     };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setActiveCategory(null);
+      }
+    };
+
     document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('keydown', handleKeyDown);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleKeyDown);
     };
   }, []);
 
@@ -97,12 +107,12 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
   };
 
   return (
-    <div className={`card-nav-container ${className}`} ref={navRef}>
+    <header className={`card-nav-container ${className}`} ref={navRef}>
       {/* Floating Pill */}
       <nav className="nav-pill" aria-label="Hauptnavigation">
         {/* Logo */}
         <Link to="/" className="nav-pill-logo" aria-label="Zur Startseite">
-          <Icon name="code" className="logo-icon" />
+          <OptimizedIcon icon={Code} className="logo-icon" />
           <span className="logo-text">Coday</span>
         </Link>
 
@@ -118,10 +128,11 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
               <button
                 className={`nav-pill-link ${activeCategory === item.label ? 'active' : ''}`}
                 aria-expanded={activeCategory === item.label}
+                onClick={() => setActiveCategory(activeCategory === item.label ? null : item.label)}
               >
                 {t(item.label)}
-                <Icon
-                  name="chevron-down"
+                <OptimizedIcon
+                  icon={CaretDown}
                   className={`nav-chevron ${activeCategory === item.label ? 'rotate' : ''}`}
                 />
               </button>
@@ -190,7 +201,7 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
                                     onClick={() => setActiveCategory(null)}
                                   >
                                     <div className="link-icon-wrapper">
-                                      <Icon name="arrow-up-right" className="link-arrow" />
+                                      <OptimizedIcon icon={ArrowUpRight} className="link-arrow" />
                                     </div>
                                     <div className="link-text">
                                       <span className="link-label">{t(link.label)}</span>
@@ -241,7 +252,7 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
               style={{ backgroundColor: '#B7791F', color: '#fff' }}
             >
               <span>{t('nav.packages.label', { defaultValue: 'Pakete' })}</span>
-              <Icon name="arrow-right" className="cta-arrow" />
+              <OptimizedIcon icon={ArrowRight} className="cta-arrow" />
             </Link>
 
             <Link
@@ -250,7 +261,7 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
               style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
             >
               <span>{t('nav.cta_booking', { defaultValue: 'Termin' })}</span>
-              <Icon name="arrow-right" className="cta-arrow" />
+              <OptimizedIcon icon={ArrowRight} className="cta-arrow" />
             </Link>
           </div>
 
@@ -261,7 +272,7 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
               onClick={() => setIsMobileOpen(true)}
               aria-label={isMobileOpen ? 'Close Menu' : 'Open Menu'}
             >
-              <Icon name={isMobileOpen ? 'x' : 'menu'} className="w-6 h-6" />
+              <OptimizedIcon icon={isMobileOpen ? X : List} className="w-6 h-6" />
             </button>
           </div>
         </div>
@@ -273,7 +284,7 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
         isOpen={isMobileOpen}
         onClose={() => setIsMobileOpen(false)}
       />
-    </div>
+    </header>
   );
 };
 

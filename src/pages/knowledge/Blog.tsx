@@ -1,11 +1,12 @@
 import React from 'react';
-import { Icon } from '@/shared/ui/Icon';
-import { Helmet } from 'react-helmet-async';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
+import { ArrowRight, Star } from '@phosphor-icons/react';
 import { OptimizedImage } from '../../shared/ui/OptimizedImage';
 
 import { LocalizedLink as Link } from '@/shared/ui/LocalizedLink';
 import { getBlogPosts } from '../../features/blog/model/data';
 import { useTranslation, Trans } from 'react-i18next';
+import { SeoHead } from '@/shared/ui/SeoHead';
 
 const Blog: React.FC = () => {
   const { i18n, t } = useTranslation('blog');
@@ -15,10 +16,7 @@ const Blog: React.FC = () => {
 
   return (
     <div className="bg-background-light min-h-screen pt-24 pb-20">
-      <Helmet>
-        <title>{t('hero.title')} | Coday</title>
-        <meta name="description" content={t('hero.subtitle')} />
-      </Helmet>
+      <SeoHead title={`${t('hero.title')} | Coday`} description={t('hero.subtitle')} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h1 className="font-display font-black text-5xl md:text-6xl text-gradient mb-6">
@@ -67,7 +65,7 @@ const Blog: React.FC = () => {
 
         {/* Article Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {posts.slice(0, 6).map((post) => (
+          {posts.map((post) => (
             <Link
               key={post.id}
               to={`/knowledge/blog/${post.slug}`}
@@ -97,7 +95,7 @@ const Blog: React.FC = () => {
 
                 <span className="text-sm font-bold text-gray-900 flex items-center group-hover:translate-x-1 transition-transform mt-auto">
                   {t('readMore')}
-                  <Icon name="arrow_forward" className="text-sm ml-1" />
+                  <OptimizedIcon icon={ArrowRight} className="text-sm ml-1" />
                 </span>
               </article>
             </Link>
@@ -137,14 +135,19 @@ const Blog: React.FC = () => {
               <div className="relative aspect-square md:aspect-video lg:aspect-square rounded-2xl overflow-hidden shadow-2xl border border-gray-800 rotate-2 hover:rotate-0 transition-transform duration-500 group">
                 <OptimizedImage
                   src="/images/services/drei-kunden-reviews.webp"
-                  alt="Zufriedene Community Mitglieder"
+                  alt={t('community.socialProofAlt')}
                   className="w-full h-full object-cover transform scale-100 group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900 to-transparent p-6">
                   <div className="flex items-center gap-2 mb-2">
                     <div className="flex text-yellow-500">
                       {[1, 2, 3, 4, 5].map((i) => (
-                        <Icon key={i} name="star" className="text-sm fill-current" />
+                        <OptimizedIcon
+                          key={i}
+                          icon={Star}
+                          className="text-sm fill-current"
+                          weight="fill"
+                        />
                       ))}
                     </div>
                     <span className="text-white font-bold">4.9/5</span>

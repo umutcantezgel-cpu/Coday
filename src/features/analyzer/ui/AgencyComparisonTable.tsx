@@ -44,16 +44,17 @@ const AgencyComparisonTable: React.FC = () => {
           <h2 className="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight mb-6">
             {t('comparison.title_prefix')} <span className="text-primary">Coday</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            {t('comparison.subtitle')}
-          </p>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">{t('comparison.subtitle')}</p>
         </div>
 
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="border-b border-gray-700">
-                <th scope="col" className="py-6 px-4 text-sm font-bold text-gray-400 uppercase tracking-widest w-1/4">
+                <th
+                  scope="col"
+                  className="py-6 px-4 text-sm font-bold text-gray-400 uppercase tracking-widest w-1/4"
+                >
                   {t('comparison.columns.metric')}
                 </th>
                 <th scope="col" className="py-6 px-4 text-xl font-bold text-gray-400 w-1/3">
@@ -72,7 +73,10 @@ const AgencyComparisonTable: React.FC = () => {
                   key={index}
                   className="border-b border-gray-800 hover:bg-white/5 transition-colors"
                 >
-                  <th scope="row" className="py-4 md:py-8 px-4 font-mono text-sm text-gray-500 uppercase text-left">
+                  <th
+                    scope="row"
+                    className="py-4 md:py-8 px-4 font-mono text-sm text-gray-500 uppercase text-left"
+                  >
                     {feature.name}
                   </th>
                   <td className="py-4 md:py-8 px-4 text-gray-400 text-lg flex items-center">

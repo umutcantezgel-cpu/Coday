@@ -1,0 +1,19 @@
+{
+  "hero": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about our process, pricing, and philosophy."
+  },
+  "search": {
+    "placeholder": "Search for efficient solutions...",
+    "no_results": "No questions found matching your search.",
+    "clear": "Clear search"
+  },
+  "categories": {
+    "all": "All Questions"
+  },
+  "cta": {
+    "title": "Still have questions?",
+    "text": "Can't find the answer you're looking for? Let's talk directly.",
+    "button": "Contact Us"
+  }
+}

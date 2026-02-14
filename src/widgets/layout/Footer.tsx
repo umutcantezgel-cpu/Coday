@@ -2,20 +2,22 @@ import React from 'react';
 import { LocalizedNavLink as NavLink } from '../../shared/ui/LocalizedLink';
 
 import { useTranslation } from 'react-i18next';
-import { Icon } from '@/shared/ui/Icon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
+import { OptimizedImage } from '@/shared/ui/OptimizedImage';
+import { FacebookLogo, InstagramLogo, TwitterLogo, LinkedinLogo } from '@phosphor-icons/react';
 
 export const Footer: React.FC = () => {
   const { t } = useTranslation('common');
   return (
     <footer className="bg-secondary text-white border-t border-gray-800 pt-16 pb-8 relative overflow-hidden">
       {/* Bright Blur Effect for Logo Visibility - Scaled up for full top-left coverage */}
-      <div className="absolute top-0 left-0 w-[900px] h-[900px] bg-white/10 blur-[160px] rounded-full -translate-x-1/3 -translate-y-1/3 pointer-events-none" />
+      <div className="absolute top-0 start-0 w-[900px] h-[900px] bg-white/10 blur-[160px] rounded-full -translate-x-1/3 -translate-y-1/3 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-8 mb-12">
           <div className="col-span-2 lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <img
+              <OptimizedImage
                 src="/images/brand/coday-wordmark.svg"
                 alt="Coday"
                 className="h-16 w-auto mb-6"
@@ -26,13 +28,13 @@ export const Footer: React.FC = () => {
             {/* Trust Visual */}
             <div className="flex items-center gap-3 bg-white/5 p-3 rounded-xl border border-white/10 max-w-xs">
               <div className="w-12 h-12 rounded-lg overflow-hidden flex-shrink-0 bg-white">
-                <img
+                <OptimizedImage
                   src="/images/hero/business-handshake-partnerschaft-tuer-offen-zusammenarbeit-vertrauen.webp"
                   alt="Partnerschaft"
                   className="w-full h-full object-cover"
                   width={48}
                   height={48}
-                  loading="lazy"
+                  priority={false}
                 />
               </div>
               <div>
@@ -63,6 +65,14 @@ export const Footer: React.FC = () => {
                   className="text-sm text-gray-300 hover:text-primary transition-colors"
                 >
                   {t('footer.links.booking')}
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/oeffentliche-auftraege"
+                  className="text-sm text-blue-400 hover:text-blue-300 transition-colors font-medium"
+                >
+                  {t('nav.industries.public')}
                 </NavLink>
               </li>
             </ul>
@@ -146,30 +156,30 @@ export const Footer: React.FC = () => {
             <a
               href="#"
               className="hover:text-primary transition-colors"
-              aria-label="Besuchen Sie uns auf Facebook"
+              aria-label={t('social.visit', { platform: 'Facebook' })}
             >
-              <Icon name="facebook" />
+              <OptimizedIcon icon={FacebookLogo} />
             </a>
             <a
               href="#"
               className="hover:text-primary transition-colors"
-              aria-label="Besuchen Sie uns auf Instagram"
+              aria-label={t('social.visit', { platform: 'Instagram' })}
             >
-              <Icon name="instagram" />
+              <OptimizedIcon icon={InstagramLogo} />
             </a>
             <a
               href="#"
               className="hover:text-primary transition-colors"
-              aria-label="Besuchen Sie uns auf Twitter"
+              aria-label={t('social.visit', { platform: 'Twitter' })}
             >
-              <Icon name="twitter" />
+              <OptimizedIcon icon={TwitterLogo} />
             </a>
             <a
               href="#"
               className="hover:text-primary transition-colors"
-              aria-label="Besuchen Sie uns auf LinkedIn"
+              aria-label={t('social.visit', { platform: 'LinkedIn' })}
             >
-              <Icon name="linkedin" />
+              <OptimizedIcon icon={LinkedinLogo} />
             </a>
           </div>
           <div className="flex flex-wrap justify-center md:justify-end gap-x-4 gap-y-2 text-xs text-gray-500">

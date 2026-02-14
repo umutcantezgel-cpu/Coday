@@ -1,0 +1,121 @@
+{
+  "hero": {
+    "badge": "Coday Strategy Lab",
+    "title_start": "Software is not Code.",
+    "title_end": "Software is an Asset.",
+    "subtitle": "We transform vague requirements into crystal-clear architecture. Before a single line of code is written.",
+    "cta_primary": "Book Session",
+    "cta_secondary": "Check Readiness"
+  },
+  "diagnostic": {
+    "title": "The Coday Readiness Check",
+    "subtitle": "Not every agency fits every ruthless ambition. Find out what you really need.",
+    "start_btn": "Start Analysis",
+    "questions": {
+      "q1": {
+        "text": "What is the status of your specification?",
+        "options": {
+          "a": "We have a vague idea.",
+          "b": "We have wireframes and user stories.",
+          "c": "We have a detailed technical spec."
+        }
+      },
+      "q2": {
+        "text": "What role does software play for your revenue?",
+        "options": {
+          "a": "Support function (Internal tool).",
+          "b": "Important channel (E-Commerce).",
+          "c": "The Core Product (SaaS / Platform)."
+        }
+      },
+      "q3": {
+        "text": "What is your internal technical know-how?",
+        "options": {
+          "a": "No technical team.",
+          "b": "CTO presents, but no developers.",
+          "c": "Full dev team present."
+        }
+      },
+      "q4": {
+        "text": "What is your primary goal?",
+        "options": {
+          "a": "Go live ASAP (MVP).",
+          "b": "Scalability and Security.",
+          "c": "Market leadership through innovation."
+        }
+      }
+    },
+    "results": {
+      "strategy": {
+        "title": "Recommendation: Strategy Workshop",
+        "description": "You have vision, but no plan. Coding now would be waste. We must define architecture first.",
+        "action": "Book Strategy Call"
+      },
+      "hybrid": {
+        "title": "Recommendation: Hybrid Consulting",
+        "description": "You know where, but not how. We provide CTO-as-a-Service and the Core Team.",
+        "action": "Request Project"
+      },
+      "execution": {
+        "title": "Recommendation: High-Performance Dev Team",
+        "description": "You are ready. Your plan is solid. We deliver the fastest execution on the market.",
+        "action": "Book Developers"
+      }
+    }
+  },
+  "methodology": {
+    "title": "The Coday Blueprint",
+    "subtitle": "Our process eliminates the risk of 'Spaghetti Code' and 'Budget Explosions'.",
+    "steps": {
+      "1": {
+        "title": "Discovery",
+        "desc": "We break down the business model."
+      },
+      "2": {
+        "title": "Architecture",
+        "desc": "We plan system boundaries and data flows."
+      },
+      "3": {
+        "title": "Prototyping",
+        "desc": "Validation without expensive coding."
+      },
+      "4": {
+        "title": "Production",
+        "desc": "Code that works the first time."
+      },
+      "5": {
+        "title": "Asset",
+        "desc": "Software that increases company value."
+      }
+    }
+  },
+  "matrix": {
+    "rows": {
+      "focus": {
+        "label": "Fokus",
+        "bad": "Cleaning Tickets",
+        "good": "Business Outcome"
+      },
+      "architecture": {
+        "label": "Architektur",
+        "bad": "Grown Chaos",
+        "good": "Scalable Modules"
+      },
+      "speed": {
+        "label": "Geschwindigkeit",
+        "bad": "Fast Start (Tech Debt)",
+        "good": "Fast Scaling (Asset)"
+      },
+      "cost": {
+        "label": "Kosten",
+        "bad": "Hourly Rates & Change Requests",
+        "good": "Investment in Value"
+      }
+    }
+  },
+  "booking": {
+    "title": "Enough Theory.",
+    "subtitle": "Speak directly with a Senior Architect, not a Sales Manager.",
+    "cta": "Select Time"
+  }
+}

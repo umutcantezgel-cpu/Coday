@@ -1,0 +1,235 @@
+{
+  "input": {
+    "placeholder": "www.deine-website.de",
+    "analyze_button": "Jetzt analysieren",
+    "analyzing": "Analysiere...",
+    "helper_text_start": "Gib die URL deiner Website ein und erhalte innerhalb von 60 Sekunden einen",
+    "helper_text_highlight": "kostenlosen Audit-Report",
+    "error_invalid_email": "Bitte gib eine gültige E-Mail-Adresse ein."
+  },
+  "progress": {
+    "analyzing": "Analyse läuft...",
+    "connection_establishing": "Verbindung zur Website wird hergestellt...",
+    "agent_analyzing": "{{agent}} analysiert deine Website..."
+  },
+  "agents": {
+    "performance": "Performance",
+    "seo": "SEO",
+    "security": "Sicherheit",
+    "accessibility": "Barrierefreiheit",
+    "ux": "UX/Design",
+    "content": "Content"
+  },
+  "modal": {
+    "success_title": "E-Mail geöffnet!",
+    "success_message": "Dein E-Mail-Programm sollte sich geöffnet haben.",
+    "title": "Report per E-Mail",
+    "subtitle": "Sende den Report an deine E-Mail",
+    "label_name": "Name (optional)",
+    "placeholder_name": "Dein Name",
+    "label_email": "E-Mail-Adresse *",
+    "placeholder_email": "deine@email.de",
+    "button_sending": "Wird gesendet...",
+    "button_send": "Report senden",
+    "privacy_note": "Wir speichern deine E-Mail-Adresse nicht.",
+    "error_sending": "Fehler beim Senden"
+  },
+  "dashboard": {
+    "analysis_failed": "Analyse fehlgeschlagen",
+    "error_timeout": "Die Analyse hat zu lange gedauert. Die Website antwortet langsam.",
+    "error_network": "Verbindung fehlgeschlagen. Bitte prüfe deine Internetverbindung.",
+    "error_agents": "Unsere KI-Agenten konnten die Website nicht erreichen. Das passiert manchmal bei Firewalls oder Timeouts.",
+    "button_test_server": "Server testen 📡",
+    "button_retry": "Erneut versuchen",
+    "button_demo": "Demo-Daten laden (Vorschau)",
+    "server_alive": "Server ist erreichbar! Versuche es erneut.",
+    "server_dead": "Server antwortet nicht. Bitte Deployment prüfen.",
+    "analysis_complete": "Analyse abgeschlossen",
+    "your_audit": "Dein Website-Audit",
+    "analyzed_on": "Analysiert am {{date}}",
+    "partial_failure": "Teilweise fehlgeschlagen:",
+    "partial_failure_desc": "Einige Agenten konnten die Website nicht analysieren (siehe unten). Der Gesamtscore basiert auf den verfügbaren Daten.",
+    "button_pdf": "PDF Export",
+    "button_share": "Teilen",
+    "button_copied": "Kopiert!",
+    "button_email": "E-Mail",
+    "overall_score": "Gesamtbewertung",
+    "score_good": "Gut! Deine Website ist solide aufgestellt.",
+    "score_ok": "Verbesserungspotenzial vorhanden.",
+    "score_bad": "Dringender Handlungsbedarf!",
+    "detail_analysis": "Detailauswertung",
+    "found_issues": "Gefundene Probleme",
+    "more_issues": "+{{count}} weitere Probleme gefunden",
+    "action_plan": "Dein Maßnahmenplan",
+    "generate_plan": "Plan jetzt generieren",
+    "generate_ai_plan": "KI-Plan generieren ✨",
+    "plan_placeholder": "Erstelle einen konkreten Schritt-für-Schritt Plan basierend auf deinen Ergebnissen.",
+    "cta_title": "Bereit, deine Website zu optimieren?",
+    "cta_desc": "Unsere Experten helfen dir, alle gefundenen Probleme zu beheben. Kostenlose Erstberatung, keine versteckten Kosten.",
+    "button_book": "Beratung buchen",
+    "button_new_analysis": "Neue Analyse starten"
+  },
+  "urgency": {
+    "unavailable": "Dringlichkeits-Komponente nicht verfügbar (Score: {{score}})"
+  },
+  "score_card": {
+    "failed": "Analyse fehlgeschlagen (Timeout/Error)",
+    "waiting": "Warte auf Analyse..."
+  },
+  "email": {
+    "subject": "Website-Analyse Report: {{domain}}",
+    "body_greeting": "Hallo {{name}},",
+    "body_intro": "Hier ist dein Website-Analyse Report für {{domain}}.",
+    "body_score": "Gesamtscore: {{score}}/100",
+    "body_urgency": "Dringlichkeit: {{score}}/100",
+    "body_link": "Vollständiger Report: {{url}}",
+    "signature": "Mit freundlichen Grüßen,\nDas Coday Team\n\n---\nCoday Digital | The Agency Killer\nkontakt@coday.de | coday.de",
+    "error_unknown": "Unbekannter Fehler"
+  },
+  "pdf": {
+    "alert_popup": "Bitte erlaube Pop-ups für diese Seite um den PDF-Report zu generieren.",
+    "title": "Website-Analyse: {{domain}}",
+    "overall_score": "Gesamtscore",
+    "urgency": "Dringlichkeit: {{label}}",
+    "categories_title": "Kategorien im Überblick",
+    "issues_title": "Identifizierte Probleme",
+    "no_issues": "Keine kritischen Probleme gefunden! 🎉",
+    "consultation_title": "🚀 Kostenloses Beratungsgespräch",
+    "consultation_text": "Lassen Sie uns gemeinsam Ihre Website optimieren. Buchen Sie jetzt Ihr kostenloses 30-Minuten-Gespräch.",
+    "footer_rights": "© {{year}} Coday Digital | coday.de",
+    "footer_generated": "Dieser Report wurde automatisch durch KI-Analyse generiert."
+  },
+  "severity": {
+    "critical": "kritisch",
+    "high": "hoch",
+    "medium": "mittel",
+    "low": "niedrig"
+  },
+  "demo": {
+    "performance": {
+      "summary": "Die Ladezeiten sind kritisch. LCP liegt bei >4.5s durch unkomprimierte Bilder.",
+      "lcp_status": "schlecht",
+      "fid_status": "schlecht",
+      "cls_status": "mittel",
+      "ttfb_status": "mittel",
+      "issues": [
+        {
+          "title": "Bilder nicht optimiert",
+          "description": "3 Bilder sind >2MB groß. Das verlangsamt die Seite massiv.",
+          "fix": "WebP Format nutzen"
+        },
+        {
+          "title": "Server antwortet langsam",
+          "description": "TTFB ist mit 1.2s zu hoch.",
+          "fix": "Caching aktivieren"
+        }
+      ]
+    },
+    "seo": {
+      "summary": "Grundlagen sind da, aber wichtige Keywords im Title fehlen.",
+      "checks": {
+        "metaTitle": {
+          "quality": "mittel"
+        },
+        "metaDescription": {
+          "quality": "schlecht"
+        },
+        "h1": {
+          "quality": "schlecht"
+        }
+      },
+      "issues": [
+        {
+          "title": "Meta-Description zu kurz",
+          "description": "Nur 3 Wörter. Klickrate verschenkt.",
+          "fix": "USP integrieren"
+        },
+        {
+          "title": "H1 ist nichtssagend",
+          "description": "\"Willkommen\" ist kein Ranking-Keyword.",
+          "fix": "Keyword in H1 nutzen"
+        }
+      ]
+    },
+    "security": {
+      "summary": "Sicherheitsrisiko! Kein HTTPS und veraltete Software.",
+      "issues": [
+        {
+          "title": "Kein HTTPS",
+          "description": "Daten werden unverschlüsselt übertragen.",
+          "fix": "SSL Zertifikat installieren"
+        },
+        {
+          "title": "WordPress Version veraltet",
+          "description": "Version 5.8 hat bekannte Lücken.",
+          "fix": "Auf 6.x updaten"
+        }
+      ]
+    },
+    "accessibility": {
+      "summary": "Gute Zugänglichkeit, Kontraste passen meistens.",
+      "checks": {
+        "ariaLabels": "gut"
+      },
+      "issues": [
+        {
+          "title": "Leichter Kontrastfehler",
+          "description": "Grau auf Weiß im Footer schwer lesbar.",
+          "fix": "Farbe abdunkeln"
+        }
+      ]
+    },
+    "ux": {
+      "summary": "Mobilansicht bricht, Buttons sind zu klein.",
+      "checks": {
+        "navigation": "mittel",
+        "cta": "schlecht",
+        "visualHierarchy": "mittel"
+      },
+      "issues": [
+        {
+          "title": "Nicht Mobile-Optimiert",
+          "description": "User müssen zoomen um Texte zu lesen.",
+          "fix": "Responsive CSS prüfen"
+        },
+        {
+          "title": "CTA kaum sichtbar",
+          "description": "Button hebt sich farblich nicht ab.",
+          "fix": "Akzentfarbe nutzen"
+        }
+      ]
+    },
+    "content": {
+      "summary": "Texte sind okay, aber wenig überzeugend.",
+      "checks": {
+        "headline": "mittel",
+        "readability": {
+          "grade": "10. Klasse",
+          "quality": "gut"
+        },
+        "ctaText": "schlecht"
+      },
+      "issues": [
+        {
+          "title": "Kein Social Proof",
+          "description": "Keine Kundenstimmen oder Logos.",
+          "fix": "Testimonials einfügen"
+        }
+      ]
+    },
+    "actionPlan": [
+      {
+        "title": "HTTPS aktivieren",
+        "description": "SSL Zertifikat installieren um Abmahnungen zu vermeiden."
+      },
+      {
+        "title": "Bilder komprimieren",
+        "description": "Alle Bilder in Next-Gen Formate wandeln."
+      },
+      {
+        "title": "Verkaufsstarke H1",
+        "description": "Klare Positionierung statt \"Willkommen\"."
+      }
+    ]
+  }
+}

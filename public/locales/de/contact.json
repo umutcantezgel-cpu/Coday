@@ -62,33 +62,23 @@
     "google": "Google Partner",
     "shopify": "Shopify Fachleute"
   },
+  "testimonial": {
+    "text": "Die Zusammenarbeit war von Anfang an professionell. Das Endergebnis hat unsere Erwartungen weit übertroffen.",
+    "author": "Michael Weber",
+    "role": "Marketing Leiter, ImmoScout24"
+  },
   "wizard": {
     "back": "Zurück",
     "step1": {
-      "options": [
-        "Webentwicklung",
-        "E-Commerce Shop",
-        "App Entwicklung",
-        "Individuelle Software"
-      ],
+      "options": ["Webentwicklung", "E-Commerce Shop", "App Entwicklung", "Individuelle Software"],
       "title": "Wobei können wir helfen?"
     },
     "step2": {
-      "options": [
-        "< 5.000 €",
-        "5.000 € - 15.000 €",
-        "15.000 € - 50.000 €",
-        "> 50.000 €"
-      ],
+      "options": ["< 5.000 €", "5.000 € - 15.000 €", "15.000 € - 50.000 €", "> 50.000 €"],
       "title": "Welches Budget ist geplant?"
     },
     "step3": {
-      "options": [
-        "So schnell wie möglich",
-        "In 1-2 Monaten",
-        "Dieses Jahr noch",
-        "Nur Recherche"
-      ],
+      "options": ["So schnell wie möglich", "In 1-2 Monaten", "Dieses Jahr noch", "Nur Recherche"],
       "title": "Wann soll es losgehen?"
     },
     "step4": {
@@ -103,5 +93,14 @@
       "message": "Wir haben deine Projektanfrage erhalten. Unser Team wird sich innerhalb von 24 Stunden bei dir melden.",
       "title": "Bewerbung Erhalten!"
     }
+  },
+  "mobile": {
+    "tabs": {
+      "booking": "Termin buchen",
+      "contact": "Nachricht"
+    },
+    "booking_intro": "Wählen Sie einen passenden Termin für ein unverbindliches Erstgespräch.",
+    "contact_title": "Projekt anfragen",
+    "contact_intro": "Erzählen Sie uns von Ihrem Vorhaben. Wir melden uns binnen 24h."
   }
 }

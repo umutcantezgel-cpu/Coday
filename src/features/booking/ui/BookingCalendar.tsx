@@ -229,11 +229,12 @@ const BookingCalendar = ({
                         disabled={isBooked}
                         className={`
                           py-2 rounded-xl text-sm font-medium transition-all
-                          ${selectedTime === time
-                            ? 'bg-primary text-white shadow-lg shadow-primary/30'
-                            : isBooked
-                              ? 'bg-gray-100 text-gray-300 cursor-not-allowed line-through'
-                              : 'bg-white border border-gray-100 hover:border-primary/50 text-gray-600'
+                          ${
+                            selectedTime === time
+                              ? 'bg-primary text-white shadow-lg shadow-primary/30'
+                              : isBooked
+                                ? 'bg-gray-100 text-gray-300 cursor-not-allowed line-through'
+                                : 'bg-white border border-gray-100 hover:border-primary/50 text-gray-600'
                           }
                         `}
                       >
@@ -353,7 +354,9 @@ const BookingCalendar = ({
               />
 
               {error && (
-                <div role="alert" className="p-3 bg-red-50 text-red-600 rounded-lg text-sm">{error}</div>
+                <div role="alert" className="p-3 bg-red-50 text-red-600 rounded-lg text-sm">
+                  {error}
+                </div>
               )}
 
               <div className="flex justify-between pt-4">

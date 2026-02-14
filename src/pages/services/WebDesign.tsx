@@ -2,13 +2,20 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { LocalizedNavLink as NavLink } from '../../shared/ui/LocalizedLink';
 import BlurText from '../../shared/ui/BlurText';
-import { servicesData } from '../../data/services';
+import { servicesData } from '@/shared/data/services';
 import { OptimizedImage } from '../../shared/ui/OptimizedImage';
-import { brandingImages } from '../../data/serviceImages';
+import { brandingImages } from '@/shared/data/serviceImages';
 import DesignSystemShowcase from '../../features/web-design/DesignSystemShowcase';
 import PsychologyGrid from '../../features/web-design/PsychologyGrid';
 import BeforeAfterReveal from '../../features/web-design/BeforeAfterReveal';
-import { Icon } from '../../shared/ui/Icon';
+import { OptimizedIcon } from '../../shared/ui/OptimizedIcon';
+import { Palette, SquaresFour, RocketLaunch, CheckCircle, ArrowRight } from '@phosphor-icons/react';
+
+const iconMap: Record<string, React.ElementType> = {
+  palette: Palette,
+  widgets: SquaresFour,
+  rocket: RocketLaunch,
+};
 import { SeoHead } from '../../shared/ui/SeoHead';
 
 const WebDesign: React.FC = () => {
@@ -18,7 +25,7 @@ const WebDesign: React.FC = () => {
   const categoryData = servicesData['web-design'];
   // We will map over these but use translated strings
   // We will map over these but use translated strings
-  const features = Object.values(categoryData);
+  const features = categoryData ? Object.values(categoryData) : [];
 
   return (
     <div className="bg-background-light pt-24 pb-16">
@@ -38,7 +45,6 @@ const WebDesign: React.FC = () => {
                 text={t('web_design_page.hero.title_prefix')}
                 delay={100}
                 animateBy="words"
-                direction="top"
                 className="block"
               />
               <span className="text-primary">{t('web_design_page.hero.title_suffix')}</span>
@@ -50,8 +56,8 @@ const WebDesign: React.FC = () => {
           <div className="relative hidden lg:block">
             <div className="absolute inset-0 bg-primary/10 rounded-[2rem] transform rotate-3 scale-95"></div>
             <OptimizedImage
-              src={brandingImages.hero.src}
-              alt={brandingImages.hero.alt}
+              src={brandingImages.hero?.src || ''}
+              alt={brandingImages.hero?.alt || ''}
               className="relative rounded-[2rem] shadow-flat-lg w-full transform -rotate-2 hover:rotate-0 transition-all duration-500 bg-white p-2"
               priority
             />
@@ -76,7 +82,7 @@ const WebDesign: React.FC = () => {
               {(t('web_design_page.design_system.items', { returnObjects: true }) as string[]).map(
                 (item, i) => (
                   <li key={i} className="flex items-center gap-3 text-slate-600 font-medium">
-                    <Icon name="check_circle" className="text-primary" />
+                    <OptimizedIcon icon={CheckCircle} className="text-primary" />
                     {item}
                   </li>
                 )
@@ -189,7 +195,7 @@ const WebDesign: React.FC = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => {
             // Map the feature slug to the translation key
-            const serviceKey = feature.slug.replace(/-/g, '_');
+
             return (
               <NavLink
                 key={index}
@@ -198,19 +204,17 @@ const WebDesign: React.FC = () => {
               >
                 <div className="absolute top-0 end-0 w-32 h-32 bg-secondary/5 rounded-bl-full -me-8 -mt-8 transition-transform group-hover:scale-110"></div>
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors relative z-10">
-                  <Icon name={feature.icon} />
+                  <OptimizedIcon icon={iconMap[feature.icon] || Palette} />
                 </div>
                 <h3 className="font-display font-bold text-xl text-secondary mb-3 group-hover:text-primary transition-colors relative z-10">
-                  {t(`web_design_page.services_grid.${serviceKey}.title`, feature.title)}
+                  {t(feature.titleKey)}
                 </h3>
                 <p className="text-slate-600 leading-relaxed mb-4 relative z-10">
-                  {t(
-                    `web_design_page.services_grid.${serviceKey}.description`,
-                    feature.description
-                  )}
+                  {t(feature.descriptionKey)}
                 </p>
                 <div className="text-primary font-bold text-sm uppercase tracking-wide flex items-center opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0 relative z-10">
-                  Mehr erfahren <Icon name="arrow_forward" className="ms-1 text-sm" />
+                  {t('actions.read_more', 'Mehr erfahren')}{' '}
+                  <OptimizedIcon icon={ArrowRight} className="ms-1 text-sm" />
                 </div>
               </NavLink>
             );
@@ -232,7 +236,7 @@ const WebDesign: React.FC = () => {
             className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-primary rounded-xl bg-white hover:bg-gray-50 shadow-lg hover:shadow-xl transition-all"
           >
             {t('web_design_page.cta_section.button')}
-            <Icon name="palette" className="ms-2" />
+            <OptimizedIcon icon={Palette} className="ms-2" />
           </NavLink>
         </div>
       </section>
