@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { staggerContainer, scaleUpVariants, STAGGER, TRANSITION } from '@/shared/lib/motion';
+import { OptimizedImage } from './OptimizedImage';
 
 interface TechItem {
   name: string;
@@ -40,7 +41,11 @@ const TechStackGrid: React.FC<TechStackGridProps> = ({ items, className = '' }) 
           {/* Icon */}
           <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">
             {item.icon.startsWith('http') ? (
-              <img src={item.icon} alt={item.name} className="w-10 h-10 object-contain" />
+              <OptimizedImage
+                src={item.icon}
+                alt={item.name}
+                className="w-10 h-10 object-contain"
+              />
             ) : (
               <span>{item.icon}</span>
             )}

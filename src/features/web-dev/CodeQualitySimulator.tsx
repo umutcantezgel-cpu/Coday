@@ -1,71 +1,78 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'motion/react';
-import { Icon } from '@/shared/ui/Icon';
 
-interface Feature {
+import { Code, Flask, RocketLaunch, Ruler, Users, Check } from '@phosphor-icons/react';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
+
+interface FeatureDef {
   id: string;
   label: string;
   impact: number;
   desc: string;
-  active: boolean;
-  icon: string;
+  icon: React.ElementType;
 }
 
 const CodeQualitySimulator: React.FC = () => {
-  const [features, setFeatures] = useState<Feature[]>([
+  const { t } = useTranslation('services');
+  const [activeIds, setActiveIds] = useState<string[]>([]);
+
+  const featureDefs: FeatureDef[] = [
     {
       id: 'ts',
-      label: 'TypeScript Strict',
+      label: t('web_development_page.process.simulator.features.ts.label'),
       impact: 20,
-      desc: 'Prevents runtime errors',
-      active: false,
-      icon: 'code',
+      desc: t('web_development_page.process.simulator.features.ts.desc'),
+      icon: Code,
     },
     {
       id: 'test',
-      label: 'Unit Tests',
+      label: t('web_development_page.process.simulator.features.test.label'),
       impact: 15,
-      desc: 'Catches regressions',
-      active: false,
-      icon: 'science',
+      desc: t('web_development_page.process.simulator.features.test.desc'),
+      icon: Flask,
     },
     {
       id: 'ci',
-      label: 'CI/CD Pipeline',
+      label: t('web_development_page.process.simulator.features.ci.label'),
       impact: 10,
-      desc: 'Automated deployment',
-      active: false,
-      icon: 'rocket_launch',
+      desc: t('web_development_page.process.simulator.features.ci.desc'),
+      icon: RocketLaunch,
     },
     {
       id: 'lint',
-      label: 'ESLint / Prettier',
+      label: t('web_development_page.process.simulator.features.lint.label'),
       impact: 10,
-      desc: 'Consistent code style',
-      active: false,
-      icon: 'rule',
+      desc: t('web_development_page.process.simulator.features.lint.desc'),
+      icon: Ruler,
     },
     {
       id: 'review',
-      label: 'Code Reviews',
+      label: t('web_development_page.process.simulator.features.review.label'),
       impact: 5,
-      desc: 'Knowledge sharing',
-      active: false,
-      icon: 'group',
+      desc: t('web_development_page.process.simulator.features.review.desc'),
+      icon: Users,
     },
-  ]);
+  ];
+
+  const features = featureDefs.map((def) => ({
+    ...def,
+    active: activeIds.includes(def.id),
+  }));
 
   const activeImpact = features.reduce((acc, feat) => (feat.active ? acc + feat.impact : acc), 0);
   const score = 40 + activeImpact;
 
-  let message = 'Projekt ist instabil. Hohes Risiko.';
-  if (score < 60) message = 'Projekt ist instabil. Hohes Bug-Risiko.';
-  else if (score < 80) message = 'Basis-Stabilität erreicht. Verbesserbar.';
-  else if (score < 100) message = 'Gute Qualität. Wartbar.';
-  else message = 'Enterprise Grade. Maximale Skalierbarkeit.';
+  let message = t('web_development_page.process.simulator.messages.unstable');
+  if (score < 60) message = t('web_development_page.process.simulator.messages.risky');
+  else if (score < 80) message = t('web_development_page.process.simulator.messages.stable');
+  else if (score < 100) message = t('web_development_page.process.simulator.messages.good');
+  else message = t('web_development_page.process.simulator.messages.enterprise');
 
   const toggleFeature = (id: string) => {
-    setFeatures(features.map((f) => (f.id === id ? { ...f, active: !f.active } : f)));
+    setActiveIds((prev) =>
+      prev.includes(id) ? prev.filter((i) => i !== id) : [...prev, id]
+    );
   };
 
   const getScoreColor = (s: number) => {
@@ -79,10 +86,10 @@ const CodeQualitySimulator: React.FC = () => {
     <div className="w-full bg-white rounded-3xl border border-gray-100 shadow-flat-lg overflow-hidden">
       <div className="p-8 border-b border-gray-100">
         <h3 className="font-display font-bold text-2xl text-secondary mb-2">
-          Code Quality Simulator
+          {t('web_development_page.process.simulator.title')}
         </h3>
         <p className="text-slate-500 text-sm">
-          Was macht Software wirklich wartbar? Aktiviere die Module.
+          {t('web_development_page.process.simulator.subtitle')}
         </p>
       </div>
 
@@ -99,7 +106,7 @@ const CodeQualitySimulator: React.FC = () => {
                 <div
                   className={`w-10 h-10 rounded-lg flex items-center justify-center transition-colors ${feature.active ? 'bg-primary text-white' : 'bg-gray-100 text-gray-400'}`}
                 >
-                  <Icon name={feature.icon} />
+                  <OptimizedIcon icon={feature.icon} />
                 </div>
                 <div>
                   <div
@@ -113,7 +120,7 @@ const CodeQualitySimulator: React.FC = () => {
               <div
                 className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors ${feature.active ? 'border-primary bg-primary' : 'border-gray-200'}`}
               >
-                {feature.active && <Icon name="check" className="text-white text-xs" />}
+                {feature.active && <OptimizedIcon icon={Check} className="text-white text-xs" />}
               </div>
             </div>
           ))}
@@ -147,7 +154,7 @@ const CodeQualitySimulator: React.FC = () => {
               >
                 {score}%
               </motion.span>
-              <span className="text-xs uppercase font-bold text-gray-400">Stability</span>
+              <span className="text-xs uppercase font-bold text-gray-400">{t('web_development_page.process.simulator.status_label')}</span>
             </div>
           </div>
 
@@ -160,7 +167,7 @@ const CodeQualitySimulator: React.FC = () => {
               className="text-center"
             >
               <div className="font-bold text-lg mb-1" style={{ color: getScoreColor(score) }}>
-                {score >= 100 ? 'Mission Accomplished' : 'Project Status'}
+                {score >= 100 ? t('web_development_page.process.simulator.mission_accomplished') : t('web_development_page.process.simulator.project_status')}
               </div>
               <p className="text-slate-500 text-sm max-w-xs">{message}</p>
             </motion.div>

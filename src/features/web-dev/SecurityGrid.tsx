@@ -1,14 +1,48 @@
 import React from 'react';
-import { Icon } from '@/shared/ui/Icon';
+import { useTranslation } from 'react-i18next';
+import { Shield, Lock, CloudCheck, Code, Sparkle, Key } from '@phosphor-icons/react';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 
 const SecurityGrid: React.FC = () => {
+    const { t } = useTranslation('services');
+
     const securityItems = [
-        { title: 'OWASP Top 10', value: 'Protected', icon: 'shield', color: '#10B981' },
-        { title: 'SSL/TLS', value: 'Top Grade A+', icon: 'lock', color: '#10B981' },
-        { title: 'DDoS Protection', value: 'Edge Layer', icon: 'cloud_done', color: '#3B82F6' },
-        { title: 'SQL Injection', value: 'Impossible', icon: 'code_off', color: '#8B5CF6' },
-        { title: 'XSS Attacks', value: 'Sanitized', icon: 'cleaning_services', color: '#F59E0B' },
-        { title: 'CSRF Tokens', value: 'Auto-Handled', icon: 'key', color: '#EC4899' },
+        {
+            title: t('web_development_page.security.items.owasp.title'),
+            value: t('web_development_page.security.items.owasp.value'),
+            icon: Shield,
+            color: '#10B981'
+        },
+        {
+            title: t('web_development_page.security.items.ssl.title'),
+            value: t('web_development_page.security.items.ssl.value'),
+            icon: Lock,
+            color: '#10B981'
+        },
+        {
+            title: t('web_development_page.security.items.ddos.title'),
+            value: t('web_development_page.security.items.ddos.value'),
+            icon: CloudCheck,
+            color: '#3B82F6'
+        },
+        {
+            title: t('web_development_page.security.items.sql.title'),
+            value: t('web_development_page.security.items.sql.value'),
+            icon: Code,
+            color: '#8B5CF6'
+        },
+        {
+            title: t('web_development_page.security.items.xss.title'),
+            value: t('web_development_page.security.items.xss.value'),
+            icon: Sparkle,
+            color: '#F59E0B'
+        },
+        {
+            title: t('web_development_page.security.items.csrf.title'),
+            value: t('web_development_page.security.items.csrf.value'),
+            icon: Key,
+            color: '#EC4899'
+        },
     ];
 
     return (
@@ -16,7 +50,7 @@ const SecurityGrid: React.FC = () => {
             {securityItems.map((item, index) => (
                 <div key={index} className="bg-surface-dark border border-white/5 rounded-xl p-4 text-center hover:bg-white/5 transition-colors group cursor-default">
                     <div className="w-10 h-10 mx-auto rounded-full bg-white/5 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                        <Icon name={item.icon} className="text-xl" style={{ color: item.color }} />
+                        <OptimizedIcon icon={item.icon} className="text-xl" style={{ color: item.color }} />
                     </div>
                     <div className="text-gray-400 text-xs uppercase tracking-wider mb-1">{item.title}</div>
                     <div className="text-white font-bold text-sm">{item.value}</div>

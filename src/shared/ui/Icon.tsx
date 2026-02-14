@@ -158,7 +158,26 @@ import {
   ArrowDown,
   Watch,
   CircleNotch,
+  Quotes,
 } from '@phosphor-icons/react';
+import { useRtl } from '@/shared/hooks/useRtl';
+
+const FLIPPABLE_ICONS = [
+  'arrow_right',
+  'arrow_left',
+  'chevron_right',
+  'chevron_left',
+  'caret_right',
+  'caret_left',
+  'arrow_forward',
+  'arrow_back',
+  'arrow_up_right',
+  'send',
+  'logout',
+  'login',
+  'undo',
+  'redo',
+];
 
 const iconMap: Record<string, React.ElementType> = {
   // Arrow / Navigation
@@ -416,6 +435,8 @@ const iconMap: Record<string, React.ElementType> = {
   // Missing Contact Page Icons
   send: PaperPlaneTilt,
   loader: CircleNotch,
+  quotes: Quotes,
+  format_quote: Quotes,
 };
 
 interface IconProps extends React.HTMLAttributes<HTMLSpanElement> {
@@ -434,6 +455,7 @@ export const Icon: React.FC<IconProps> = ({
   weight = 'regular',
   ...props
 }) => {
+  const { isRtl } = useRtl();
   const sizeClasses = {
     sm: 'w-4 h-4',
     md: 'w-6 h-6',
@@ -452,8 +474,13 @@ export const Icon: React.FC<IconProps> = ({
           size && sizeClasses[size],
           className
         )}
+        style={{
+          transform: isRtl && FLIPPABLE_ICONS.includes(nameKey) ? 'scaleX(-1)' : undefined,
+          ...props.style,
+        }}
         role={label ? 'img' : undefined}
         aria-label={label}
+        aria-hidden={!label}
         {...props}
       >
         <PhosphorIcon className="w-full h-full" weight={weight} />
@@ -461,21 +488,19 @@ export const Icon: React.FC<IconProps> = ({
     );
   }
 
-  // Fallback if no mapping found (helps verify missing icons)
   return (
     <span
       className={cn(
-        'material-symbols-outlined select-none text-red-500',
+        'inline-flex items-center justify-center select-none text-red-500',
         size && sizeClasses[size],
         className
       )}
       role={label ? 'img' : undefined}
-      aria-label={label}
-      aria-hidden={!label}
+      aria-label={label || `Missing icon: ${name}`}
       title={`Missing Icon: ${name}`}
       {...props}
     >
-      {name}
+      <WarningCircle className="w-full h-full" />
     </span>
   );
 };

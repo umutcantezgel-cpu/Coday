@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { OptimizedImage } from './OptimizedImage';
 
 export type LogoItem =
   | {
@@ -309,7 +310,7 @@ const LogoLoop = React.memo<LogoLoopProps>(
             {(item as { node: React.ReactNode }).node}
           </span>
         ) : (
-          <img
+          <OptimizedImage
             className={cx(
               'h-[var(--logoloop-logoHeight)] w-auto block object-contain',
               '[-webkit-user-drag:none] pointer-events-none',
@@ -320,8 +321,8 @@ const LogoLoop = React.memo<LogoLoopProps>(
             src={(item as { src: string }).src}
             alt={(item as { alt?: string }).alt ?? ''}
             title={(item as { title?: string }).title}
-            loading="lazy"
-            decoding="async"
+            // loading="lazy" is handled by OptimizedImage defaults if not priority
+            // decoding="async" is handled by OptimizedImage
             draggable={false}
           />
         );

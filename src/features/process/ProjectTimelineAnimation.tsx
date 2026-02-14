@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Icon } from '@/shared/ui/Icon';
+import { Globe, Buildings, Palette, Code, RocketLaunch } from '@phosphor-icons/react';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 
 import { useTranslation } from 'react-i18next';
 
@@ -9,7 +10,7 @@ const ProjectTimelineAnimation: React.FC = () => {
     const steps = (t('timeline.steps', { returnObjects: true }) as Array<{ title: string; desc: string }>).map((step, idx) => ({
         ...step,
         phase: `0${idx + 1}`,
-        icon: ['travel_explore', 'architecture', 'palette', 'code', 'rocket_launch'][idx]
+        icon: [Globe, Buildings, Palette, Code, RocketLaunch][idx]
     }));
 
     return (
@@ -30,9 +31,9 @@ const ProjectTimelineAnimation: React.FC = () => {
                         >
                             {/* Content Side */}
                             <div className="flex-1 text-center lg:text-start">
-                                <span className={`text-9xl font-black text-slate-100 absolute -top-10 -z-10 ${isEven ? 'left-0' : 'right-0'}`}>{step.phase}</span>
+                                <span className={`text-9xl font-black text-slate-100 absolute -top-10 -z-10 ${isEven ? 'start-0' : 'end-0'}`}>{step.phase}</span>
                                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-secondary text-white mb-6 shadow-xl">
-                                    <Icon name={step.icon} className="text-3xl" />
+                                    <OptimizedIcon icon={step.icon} className="text-3xl" />
                                 </div>
                                 <h3 className="font-display font-bold text-3xl text-secondary mb-4">{step.title}</h3>
                                 <p className="text-xl text-slate-500 leading-relaxed max-w-md">{step.desc}</p>

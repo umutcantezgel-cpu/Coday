@@ -1,0 +1,328 @@
+export const frontmatter = {
+  title: "TechFlow Analytics",
+  client: "TechFlow Inc.",
+  industry: "SaaS / B2B",
+  services: ["Product Design", "Web App Dev", "Dashboard"],
+  year: "2024",
+  heroImage: "/images/portfolio/mockup-software-dashboard-analytics-saas-web-app-dark-mode.webp",
+  excerpt: "Redesign einer komplexen Analytics-Plattform. Von 'Datengrab' zu 'Decision Cockpit'.",
+  tags: ["React", "D3.js", "Supabase"]
+};
+
+import { CaseStudyLayout } from '@/features/case-studies/ui/CaseStudyLayout';
+import { ResultMetrics } from '@/features/case-studies/ui/ResultMetrics';
+import { ComparisonSlider } from '@/features/case-studies/ui/ComparisonSlider';
+import Timeline from '@/shared/ui/Timeline';
+import TechStackGrid from '@/shared/ui/TechStackGrid';
+import InteractiveQuiz from '@/shared/ui/InteractiveQuiz';
+import ExpandableSection from '@/shared/ui/ExpandableSection';
+
+# Vom Datengrab zum Decision Cockpit
+
+TechFlow Analytics ist eine B2B-Plattform, die Unternehmen hilft, ihre Geschäftsdaten zu verstehen. Mit über 50.000 aktiven Nutzern und Petabytes an verarbeiteten Daten ist es eines der führenden Analytics-Tools im DACH-Raum.
+
+**Das Problem: Niemand nutzte die Daten. Das Dashboard war zu komplex, zu langsam und für normale Mitarbeiter unbedienbar.**
+
+Unsere Mission: Ein "Apple-like" Erlebnis für Big Data schaffen.
+
+---
+
+## 🔍 Die Ausgangslage: Mächtig, aber unbenutzbar
+
+TechFlow hatte alle Daten, die ein Unternehmen braucht. Marketing-Metriken, Verkaufszahlen, Kundendaten, Produktanalysen – alles war da. Aber es blieb ungenutzt.
+
+### Die User Research enthüllte erschreckende Probleme
+
+Wir interviewten 25 Nutzer unterschiedlicher Hierarchieebenen. Die Ergebnisse waren eindeutig:
+
+**Von den CEOs:**
+> "Ich öffne TechFlow einmal pro Quartal, wenn mein Team mir die Zahlen zeigt. Selbst nutzen kann ich es nicht."
+
+**Von den Marketing-Managern:**
+> "Ich weiß, dass die Daten da sind. Aber ich brauche 30 Minuten, um einen einfachen Report zu erstellen. Dann kopiere ich alles in Excel."
+
+**Von den Analysten:**
+> "Das Tool kann alles. Aber die Lernkurve ist brutal. Neue Kollegen brauchen Wochen, bis sie produktiv sind."
+
+### Die quantitativen Daten
+
+| Metrik | TechFlow (alt) | Industrie-Benchmark |
+| :--- | :--- | :--- |
+| **Time-to-First-Insight** | 8.5 Min | 2 Min |
+| **Feature-Adoption** | 12% | 45% |
+| **Wöchentliche Active User** | 34% | 65% |
+| **Support-Tickets/User/Monat** | 2.4 | 0.6 |
+
+<ExpandableSection title="Was bedeuten diese Metriken?" variant="highlight">
+  **Time-to-First-Insight**: Wie lange braucht ein Nutzer, um nach dem Login eine relevante Information zu finden? 8.5 Minuten ist katastrophal – Nutzer geben vorher auf.
+  
+  **Feature-Adoption**: Welcher Anteil der verfügbaren Features wird tatsächlich genutzt? 12% zeigt, dass 88% der Entwicklungsarbeit quasi verschwendet ist.
+  
+  **Wöchentliche Active User**: Welcher Anteil der registrierten Nutzer nutzt das Tool mindestens einmal pro Woche? Je niedriger, desto höher das Churn-Risiko.
+  
+  **Support-Tickets**: Wie oft brauchen Nutzer Hilfe? 2.4 pro Monat ist ein klares Zeichen für schlechte UX.
+</ExpandableSection>
+
+---
+
+## 💡 Die Vision: Clarity as a Feature
+
+Unser Ansatz war radikal: **Weniger ist exponentiell mehr.**
+
+Statt weitere Features hinzuzufügen, würden wir die Komplexität drastisch reduzieren. Jedes Element musste seine Daseinsberechtigung beweisen.
+
+### Die drei Design-Prinzipien
+
+**1. Progressive Disclosure**
+
+Nutzer sehen nur, was sie gerade brauchen. Fortgeschrittene Optionen sind da – aber versteckt, bis sie relevant werden.
+
+**2. Selbsterklärende Oberfläche**
+
+Keine Tooltips, die erklären, was ein Button tut. Wenn ein Button eine Erklärung braucht, ist er falsch designed.
+
+**3. Snappy Feedback**
+
+Jede Aktion bekommt sofortige visuelle Bestätigung. Loading-States werden proaktiv kommuniziert. Keine ungewissen Wartezeiten.
+
+---
+
+## 🛠️ Technische Architektur
+
+<TechStackGrid items={[
+  { name: "React 18", icon: "⚛️", description: "Component-basiertes UI mit Concurrent Features", color: "#61DAFB" },
+  { name: "D3.js", icon: "📊", description: "Leistungsstarke Data Visualizations", color: "#F9A03C" },
+  { name: "Supabase", icon: "🔋", description: "Real-time Backend & Auth", color: "#3ECF8E" },
+  { name: "TanStack Query", icon: "🔄", description: "Intelligentes Server-State Management", color: "#FF4154" },
+  { name: "Zustand", icon: "🐻", description: "Lightweight Client State", color: "#433D3C" },
+  { name: "Radix UI", icon: "🎨", description: "Accessible Primitive Components", color: "#111111" },
+  { name: "Framer Motion", icon: "✨", description: "Flüssige Mikroanimationen", color: "#FF0066" },
+  { name: "Vitest", icon: "🧪", description: "Blitzschnelles Unit Testing", color: "#729B1B" }
+]} />
+
+### Real-Time Architecture
+
+Das neue Dashboard musste Echtzeitdaten liefern – ohne Page-Reloads, ohne manuelle Updates:
+
+<ExpandableSection title="Real-Time Stack Deep Dive">
+  **WebSocket-Verbindung via Supabase Realtime:**
+  
+  Jedes Dashboard-Widget abonniert relevante Datenkanäle. Änderungen in der Datenbank werden in < 100ms auf allen verbundenen Clients reflektiert.
+  
+  ```typescript
+  // Beispiel: Live-Subscription für Sales-Daten
+  const { data } = useSupabaseRealtime('sales', {
+    filter: 'created_at.gte.now()-interval 24 hours',
+    onUpdate: (newData) => updateChart(newData)
+  });
+  ```
+  
+  **Optimistic Updates:**
+  
+  Wenn ein Nutzer etwas ändert, zeigen wir das Ergebnis sofort – bevor der Server bestätigt. Falls etwas schiefgeht, rollen wir zurück. Das fühlt sich instantan an.
+  
+  **Intelligentes Caching:**
+  
+  TanStack Query cached alle API-Responses und invalidiert sie intelligent. Wiederholte Requests werden aus dem Cache bedient, während im Hintergrund frische Daten geladen werden.
+</ExpandableSection>
+
+### Data Visualization Strategy
+
+Die Charts waren der Kern des Produkts. Wir entwickelten eine eigene Chart-Bibliothek auf D3.js-Basis:
+
+**Warum nicht Chart.js oder Recharts?**
+- Maximale Kontrolle über jedes Pixel
+- Konsistente Animationen mit dem Rest der UI
+- Performance-Optimierungen für große Datensätze
+- Barrierefreiheit von Grund auf eingebaut
+
+---
+
+## 📅 Der Entwicklungsprozess
+
+<Timeline items={[
+  { week: "W1-2", title: "Research", description: "User Interviews, Datenanalyse, Competitor Audit", completed: true },
+  { week: "W3-4", title: "Konzept", description: "IA-Neustrukturierung, Wireframes, Prototypen", completed: true },
+  { week: "W5-6", title: "Design", description: "Visual Design, Design System, Dark Mode", completed: true },
+  { week: "W7-10", title: "Development", description: "Core-Features, Chart-Bibliothek, Real-Time", completed: true },
+  { week: "W11", title: "Testing", description: "User Testing, Bug Fixes, Performance", completed: true },
+  { week: "W12", title: "Rollout", description: "Phased Rollout, Monitoring, Feedback-Loop", completed: true }
+]} />
+
+### Woche 1-2: Deep User Research
+
+Wir führten kontextuelle Interviews durch – nicht in Meeting-Räumen, sondern direkt am Arbeitsplatz der Nutzer. Wir beobachteten, wie sie TechFlow im Alltag nutzen (oder eben nicht).
+
+**Key Insights:**
+- Die meisten Nutzer nutzten nur 3 von 47 Features
+- "Favoriten" wurden nie genutzt, obwohl sie prominent platziert waren  
+- Der Export-Button wurde täglich geklickt – er war 4 Klicks entfernt
+
+### Woche 3-4: Radical Simplification
+
+Basierend auf der Nutzungsanalyse strukturierten wir die Informationsarchitektur komplett um:
+
+**Vorher:** 7 Hauptnavigationspunkte mit je 5-8 Unterseiten (= 47 Seiten)
+
+**Nachher:** 4 Hauptbereiche, jeder mit kontextabhängigen Sub-Views (= 12 Kernseiten)
+
+Die Reduktion um 75% war initially schmerzhaft für das Product-Team. Aber die Nutzungsdaten rechtfertigten es vollständig.
+
+### Woche 5-6: Dark Mode First
+
+Eine ungewöhnliche Entscheidung: Wir designten zuerst für Dark Mode.
+
+**Warum?**
+- 73% der Power-User nutzten TechFlow im Dark Mode
+- Analysten arbeiten oft stundenlang mit dem Dashboard
+- Dark Mode zwingt zu klareren Kontrasten und saubererer Hierarchie
+
+<ExpandableSection title="Dark Mode Design Learnings">
+  **Regel 1: Nie pures Schwarz (#000000)**
+  
+  Wir nutzen ein tiefes Anthrazit (#0D0D0F) statt reinem Schwarz. Das ist angenehmer für die Augen und ermöglicht Schatten-Hierarchien.
+  
+  **Regel 2: Weniger Farben, mehr Abstufungen**
+  
+  Im Dark Mode funktionieren bunte Elemente intensiver. Wir reduzierten die Farbpalette und nutzten stattdessen mehr Graustufen für Hierarchie.
+  
+  **Regel 3: Elevation durch Helligkeit**
+  
+  Im Light Mode erzeugen wir Tiefe durch Schatten. Im Dark Mode durch hellere Hintergründe. Cards sind leicht heller als der Hintergrund.
+</ExpandableSection>
+
+---
+
+## ✨ Feature Highlights
+
+### Drag-and-Drop Dashboard Builder
+
+Nutzer können ihr persönliches Dashboard selbst gestalten:
+
+- **Widget-Bibliothek**: Vordefinierte Visualisierungen zum Reinziehen
+- **Smart Resizing**: Widgets passen sich automatisch an
+- **Vorlagen**: "CMO Dashboard", "Sales Overview", etc.
+- **Sharing**: Dashboards können mit dem Team geteilt werden
+
+### AI-Powered Insights
+
+TechFlow schlägt proaktiv Erkenntnisse vor:
+
+> "📈 Dein Website-Traffic ist diese Woche 34% höher als üblich. Hauptquelle: LinkedIn-Kampagne vom 15.03."
+
+Die AI analysiert Anomalien und präsentiert sie in menschlicher Sprache – direkt auf dem Dashboard.
+
+### Keyboard-First Navigation
+
+Für Power-User haben wir umfassende Keyboard-Shortcuts implementiert:
+
+- `⌘ + K`: Command Palette (wie Spotlight/Alfred)
+- `⌘ + E`: Quick Export
+- `⌘ + D`: Dashboard wechseln
+- `⌘ + ?`: Shortcut-Übersicht
+
+---
+
+## 📊 Ergebnisse nach 6 Monaten
+
+<ResultMetrics metrics={[
+    { value: 45, label: "User Retention", prefix: "+", suffix: "%" },
+    { value: 72, label: "NPS Score", prefix: "", suffix: "" },
+    { value: 80, label: "Support-Tickets", prefix: "-", suffix: "%" },
+    { value: 30, label: "Systemlast", prefix: "-", suffix: "%" }
+]} />
+
+### Detaillierte KPIs
+
+| Metrik | Vorher | Nachher | Veränderung |
+| :--- | :--- | :--- | :--- |
+| **Time-to-First-Insight** | 8.5 Min | **1.2 Min** | -86% |
+| **Feature-Adoption** | 12% | **38%** | +217% |
+| **Wöchentliche Active User** | 34% | **71%** | +109% |
+| **Support-Tickets/User/Monat** | 2.4 | **0.5** | -79% |
+| **User Onboarding Time** | 2 Wochen | **2 Tage** | -86% |
+| **NPS Score** | 20 | **72** | +260% |
+
+### Business Impact
+
+Die UX-Verbesserungen hatten direkte Auswirkungen auf das Geschäft:
+
+- **Churn Rate**: -35% (weniger Kündigungen)
+- **Upsell Rate**: +42% (mehr Nutzer steigen auf Premium um)
+- **Customer Acquisition Cost**: -28% (weniger Demos nötig, Self-Service funktioniert)
+
+---
+
+## 💬 Was der Kunde sagt
+
+> "Endlich verstehen unsere Kunden ihre eigenen Daten. Der Support-Aufwand ist um 80% gesunken – das allein hat unserer Personalplanung massiv geholfen."
+> — *Markus R., CTO TechFlow*
+
+> "Wir hatten Angst vor dem Redesign. Änderungen in einem etablierten Produkt sind riskant. Aber das Ergebnis spricht für sich: Unsere Nutzer lieben die neue Version."
+> — *Lisa M., Head of Product*
+
+---
+
+## 🧠 Dashboard Design Quiz
+
+<InteractiveQuiz 
+  title="UX für Data Products"
+  questions={[
+    {
+      question: "Was bedeutet 'Cognitive Load' im UX-Kontext?",
+      options: ["CPU-Auslastung des Browsers", "Die geistige Anstrengung, die eine Oberfläche erfordert", "Die Ladezeit einer Seite", "Die Datenmenge einer Visualisierung"],
+      correctIndex: 1,
+      explanation: "Cognitive Load bezeichnet die geistige Kapazität, die ein Nutzer braucht, um eine Oberfläche zu verstehen und zu bedienen. Gutes UX minimiert diese Last."
+    },
+    {
+      question: "Warum sind Real-Time-Updates für Dashboards wichtig?",
+      options: ["Sie sehen modern aus", "Nutzer treffen bessere Entscheidungen mit aktuellen Daten", "Sie sparen Serverkosten", "Google bevorzugt sie im Ranking"],
+      correctIndex: 1,
+      explanation: "Veraltete Daten führen zu falschen Entscheidungen. Bei zeitkritischen Metriken (z.B. Server-Status oder Live-Sales) ist Echtzeit essentiell."
+    },
+    {
+      question: "Was ist 'Progressive Disclosure' und warum ist es wichtig?",
+      options: ["Ein Animationsprinzip für Ladebalken", "Schrittweises Zeigen von Informationen je nach Kontext", "Ein Datenschutz-Konzept", "Eine Chart-Bibliothek"],
+      correctIndex: 1,
+      explanation: "Progressive Disclosure bedeutet, nicht alles auf einmal zu zeigen. Einfache Optionen zuerst, fortgeschrittene Funktionen werden erst bei Bedarf sichtbar. Das reduziert Overwhelm."
+    },
+    {
+      question: "Wie hoch sollte der Kontrast für barrierefreie Texte mindestens sein?",
+      options: ["2:1", "4.5:1", "10:1", "21:1"],
+      correctIndex: 1,
+      explanation: "WCAG AA fordert einen Kontrast von mindestens 4.5:1 für normalen Text und 3:1 für großen Text. Das stellt Lesbarkeit für Menschen mit Seheinschränkungen sicher."
+    }
+  ]}
+/>
+
+---
+
+## 🎯 Lessons Learned
+
+**1. Subtraction is harder than Addition**
+
+Es ist einfach, Features hinzuzufügen. Aber zu entscheiden, was weggelassen wird, erfordert tiefes Nutzerverständnis und Mut.
+
+**2. Performance ist UX**
+
+Ein Dashboard kann noch so schön sein – wenn es ruckelt, werden Nutzer es nicht lieben. 60fps war unser Mindeststandard.
+
+**3. Dark Mode früh einplanen**
+
+Dark Mode nachträglich hinzuzufügen ist schmerzhaft. Von Anfang an mitzudenken spart Zeit und führt zu besseren Farbentscheidungen.
+
+**4. Dogfooding works**
+
+Wir nutzten das Dashboard selbst für unser Projekt-Tracking. Jeder Bug, den wir sahen, wurde sofort gefixt.
+
+---
+
+## 🚀 Fazit
+
+Das TechFlow-Projekt zeigt: **Komplexe Daten brauchen nicht komplexe Interfaces.** Die größte Herausforderung war nicht das Hinzufügen von Features, sondern das Weglassen.
+
+Das Ergebnis: Eine Plattform, die Daten endlich für alle zugänglich macht – nicht nur für Analysten mit Excel-Hintergrund.
+
+Haben Sie ein Daten-Tool, das niemand benutzt? Lassen Sie uns darüber sprechen, wie wir das ändern können.
+
+export default ({ children }) => <CaseStudyLayout {...frontmatter}>{children}</CaseStudyLayout>

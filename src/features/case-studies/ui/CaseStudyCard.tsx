@@ -12,6 +12,8 @@ export interface CaseStudyCardProps {
     image: string;
     tags: string[];
     externalLink?: string;
+    type?: 'case_study' | 'in_progress' | 'template';
+    completion?: number;
 }
 
 const CaseStudyInnerContent: React.FC<Pick<CaseStudyCardProps, 'title' | 'client' | 'industry' | 'image' | 'tags' | 'excerpt'>> = ({

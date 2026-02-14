@@ -35,14 +35,14 @@ export const Button: React.FC<ButtonProps> = ({
       {...props}
     >
       {isLoading ? (
-        <CircleNotch className="w-5 h-5 animate-spin mr-2" />
+        <CircleNotch className="w-5 h-5 animate-spin me-2" />
       ) : leftIcon ? (
-        <span className="mr-2">{leftIcon}</span>
+        <span className="me-2">{leftIcon}</span>
       ) : null}
 
       {children}
 
-      {!isLoading && rightIcon && <span className="ml-2">{rightIcon}</span>}
+      {!isLoading && rightIcon && <span className="ms-2">{rightIcon}</span>}
     </button>
   );
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { JsonLd } from './JsonLd';
+import { JsonLd, SchemaData } from './JsonLd';
 
 interface BreadcrumbItem {
   name: string;
@@ -17,7 +17,13 @@ interface SeoHeadProps {
   /** Optional breadcrumbs for JSON-LD BreadcrumbList */
   breadcrumbs?: BreadcrumbItem[];
   /** Page type for JSON-LD schema selection */
-  pageType?: 'home' | 'service' | 'contact' | 'article' | 'default';
+  pageType?: 'home' | 'service' | 'contact' | 'article' | 'job' | 'default';
+  /** Optional image URL to preload for LCP optimization */
+  preloadImage?: string;
+  /** Schema data passed to JsonLd */
+  schemaData?: SchemaData;
+  /** Optional override for alternate language links (hreflang) */
+  alternateLinks?: { hreflang: string; href: string }[];
 }
 
 const SUPPORTED_LANGUAGES = ['de', 'en'];
@@ -31,6 +37,9 @@ export const SeoHead: React.FC<SeoHeadProps> = ({
   noIndex = false,
   breadcrumbs,
   pageType = 'default',
+  preloadImage,
+  schemaData,
+  ...props
 }) => {
   const location = useLocation();
   const { i18n } = useTranslation();
@@ -56,18 +65,30 @@ export const SeoHead: React.FC<SeoHeadProps> = ({
 
   const canonicalUrl = `${BASE_URL}${location.pathname}`;
 
+  // Default links based on current path (assumes same slug)
+  const defaultLinks = SUPPORTED_LANGUAGES.map((lang) => ({
+    rel: 'alternate',
+    hreflang: lang,
+    href: getLocalizedUrl(lang),
+  }));
+
+  // Merge default links with provided alternateLinks
+  // If alternateLinks provides a link for a lang, use it instead of default
+  const mergedLinks = defaultLinks.map((link) => {
+    const customLink = props.alternateLinks?.find((l) => l.hreflang === link.hreflang);
+    return customLink ? { ...link, href: customLink.href } : link;
+  });
+
   const links: { rel: string; href: string; hreflang?: string }[] = [
     { rel: 'canonical', href: canonicalUrl },
-    ...SUPPORTED_LANGUAGES.map((lang) => ({
-      rel: 'alternate',
-      hreflang: lang,
-      href: getLocalizedUrl(lang),
-    })),
-    // Add x-default
+    ...mergedLinks,
+    // Add x-default (usually points to default lang version)
     {
       rel: 'alternate',
       hreflang: 'x-default',
-      href: getLocalizedUrl(DEFAULT_LANGUAGE),
+      href:
+        mergedLinks.find((l) => l.hreflang === DEFAULT_LANGUAGE)?.href ||
+        getLocalizedUrl(DEFAULT_LANGUAGE),
     },
   ];
 
@@ -79,7 +100,21 @@ export const SeoHead: React.FC<SeoHeadProps> = ({
         <title>{title}</title>
         <meta name="description" content={description} />
         {/* Google Search Console Verification */}
-        <meta name="google-site-verification" content="qkqa8A5TESjhVg1kESd65TRfn9HBiSMrMnNBTXAoOko" />
+        <meta
+          name="google-site-verification"
+          content="qkqa8A5TESjhVg1kESd65TRfn9HBiSMrMnNBTXAoOko"
+        />
+
+        {/* LCP Optimization */}
+        {preloadImage && (
+          <link
+            rel="preload"
+            as="image"
+            href={preloadImage}
+            // @ts-expect-error - fetchPriority is standard but React types might complain
+            fetchpriority="high"
+          />
+        )}
 
         {/* Canonical & Hreflang */}
         {links.map((link, index) => (
@@ -102,7 +137,12 @@ export const SeoHead: React.FC<SeoHeadProps> = ({
 
         {noIndex && <meta name="robots" content="noindex, follow" />}
       </Helmet>
-      <JsonLd pageUrl={canonicalUrl} breadcrumbs={breadcrumbs} pageType={pageType} />
+      <JsonLd
+        pageUrl={canonicalUrl}
+        breadcrumbs={breadcrumbs}
+        pageType={pageType}
+        data={schemaData}
+      />
     </>
   );
 };

@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { CurrencyEur, TrendUp, MagnifyingGlass } from '@phosphor-icons/react';
+import { useTranslation } from 'react-i18next';
+import { formatCurrency, formatNumber } from '../../shared/utils/formatters';
 
 export const TrafficROICalculator: React.FC = () => {
+    const { i18n } = useTranslation();
+    // Use the current language from i18n instance
+    const locale = i18n.language;
+
     const [traffic, setTraffic] = useState(5000);
     const [conversion, setConversion] = useState(2.0);
     const [aov, setAov] = useState(100);
@@ -35,33 +41,42 @@ export const TrafficROICalculator: React.FC = () => {
 
                 <div className="space-y-6">
                     <div>
-                        <label className="block text-sm font-bold text-gray-700 mb-2">Monatliche Besucher (Organisch)</label>
+                        <label htmlFor="traffic" className="block text-sm font-bold text-gray-700 mb-2">Monatliche Besucher (Organisch)</label>
                         <input
+                            id="traffic"
                             type="range" min="500" max="50000" step="500"
                             value={traffic} onChange={(e) => setTraffic(Number(e.target.value))}
                             className="w-full accent-purple-600 h-2 bg-gray-100 rounded-lg appearance-none cursor-pointer"
                         />
-                        <div className="text-right font-mono font-bold text-purple-600 mt-1">{traffic.toLocaleString()}</div>
+                        <div className="text-end font-mono font-bold text-purple-600 mt-1">
+                            {formatNumber(traffic, locale)}
+                        </div>
                     </div>
 
                     <div>
-                        <label className="block text-sm font-bold text-gray-700 mb-2">Conversion Rate (%)</label>
+                        <label htmlFor="conversion" className="block text-sm font-bold text-gray-700 mb-2">Conversion Rate (%)</label>
                         <input
+                            id="conversion"
                             type="range" min="0.5" max="10" step="0.1"
                             value={conversion} onChange={(e) => setConversion(Number(e.target.value))}
                             className="w-full accent-purple-600 h-2 bg-gray-100 rounded-lg appearance-none cursor-pointer"
                         />
-                        <div className="text-right font-mono font-bold text-purple-600 mt-1">{conversion}%</div>
+                        <div className="text-end font-mono font-bold text-purple-600 mt-1">
+                            {formatNumber(conversion, locale, { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%
+                        </div>
                     </div>
 
                     <div>
-                        <label className="block text-sm font-bold text-gray-700 mb-2">Warenkorbwert (€)</label>
+                        <label htmlFor="aov" className="block text-sm font-bold text-gray-700 mb-2">Warenkorbwert (€)</label>
                         <input
+                            id="aov"
                             type="range" min="10" max="500" step="10"
                             value={aov} onChange={(e) => setAov(Number(e.target.value))}
                             className="w-full accent-purple-600 h-2 bg-gray-100 rounded-lg appearance-none cursor-pointer"
                         />
-                        <div className="text-right font-mono font-bold text-purple-600 mt-1">{aov}€</div>
+                        <div className="text-end font-mono font-bold text-purple-600 mt-1">
+                            {formatCurrency(aov, 'EUR', locale)}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -73,13 +88,13 @@ export const TrafficROICalculator: React.FC = () => {
                     whileInView={{ scale: 1, opacity: 1 }}
                     className="p-8 rounded-3xl bg-gray-900 text-white relative overflow-hidden"
                 >
-                    <div className="absolute top-0 right-0 p-32 bg-purple-600/30 blur-[100px] rounded-full -z-0"></div>
+                    <div className="absolute top-0 end-0 p-32 bg-purple-600/30 blur-[100px] rounded-full -z-0"></div>
 
                     <h3 className="text-2xl font-display font-light mb-8 opacity-80">Zusätzlicher Jahresumsatz</h3>
 
                     <div className="flex items-baseline gap-2 mb-2">
                         <span className="text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                            +{Math.round(annualGrowth).toLocaleString()}€
+                            +{formatCurrency(Math.round(annualGrowth), 'EUR', locale)}
                         </span>
                     </div>
                     <div className="flex items-center gap-2 text-purple-300 text-sm font-bold uppercase tracking-wider mb-8">
@@ -94,7 +109,7 @@ export const TrafficROICalculator: React.FC = () => {
                             <div className="text-white/60 text-sm mb-1">Potenzieller Monatsumsatz</div>
                             <div className="text-2xl font-bold flex items-center gap-2">
                                 <CurrencyEur className="text-green-400" />
-                                {Math.round(projectedRevenue).toLocaleString()}€
+                                {formatCurrency(Math.round(projectedRevenue), 'EUR', locale)}
                             </div>
                         </div>
                         <motion.div

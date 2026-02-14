@@ -1,140 +1,90 @@
-# ⚡️ CODAY | The "Market Eater"
+# Coday | The Anti-Agency Agency Website
 
-![Status](https://img.shields.io/badge/Status-Production_Ready-success?style=for-the-badge)
-![Version](https://img.shields.io/badge/version-2.1.0-blueviolet?style=for-the-badge&logo=rocket)
-![Stack](https://img.shields.io/badge/Stack-React_19_+_Vite-blue?style=for-the-badge&logo=react)
-![Styling](https://img.shields.io/badge/Tailwind-v4-06b6d4?style=for-the-badge&logo=tailwindcss)
+![License](https://img.shields.io/badge/license-Private-red.svg)
+![Status](https://img.shields.io/badge/status-Production--Ready-success.svg)
+![Stack](https://img.shields.io/badge/stack-React%20%7C%20Vite%20%7C%20TypeScript-blue.svg)
 
-<p align="center">
-  <strong>High-Performance. Anti-AI Aesthetic. Pure Domination.</strong><br>
-  Built for agencies that refuse to be average.
-</p>
+> **"We kill inefficiency."**
+> A high-performance, design-driven corporate website built to dominate the digital agency market.
 
----
+## ⚡ Tech Stack
 
-## 💎 Manifesto
+This project leverages a modern, cutting-edge stack focused on performance, SEO, and developer experience.
 
-**Coday** is a conversion weapon. It rejects the sterile, generic "SaaS" look in favor of a **visceral, high-voltage aesthetic**.
+- **Core:** [React 18](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/), [Vite](https://vitejs.dev/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/) (v4), PostCSS
+- **Animation:** [Motion](https://motion.dev/) (Framer Motion)
+- **Routing:** [React Router v7](https://reactrouter.com/)
+- **Internationalization:** [i18next](https://www.i18next.com/) (en/de)
+- **SEO:** [React Helmet Async](https://github.com/staylor/react-helmet-async)
+- **Icons:** [Phosphor Icons](https://phosphoricons.com/)
 
-- **Radical Transparency:** Calculators and real data over marketing fluff.
-- **Visceral Interactions:** Every click feels physical.
-- **Speed as a Feature:** Sub-second load times are the baseline.
+## 🏗️ Project Structure
 
----
-
-## 🏗 System Architecture (FSD)
-
-We utilize **Feature-Sliced Design (FSD)** to ensure maintainability at scale.
-
-```mermaid
-graph TD
-    A[App Layer] --> B[Widgets Layer]
-    B --> C[Features Layer]
-    C --> D[Entities Layer]
-    D --> E[Shared Layer]
-```
-
-### 📂 Directory Structure
-
-| Layer        | Path            | Purpose                                                 |
-| :----------- | :-------------- | :------------------------------------------------------ |
-| **App**      | `src/App.tsx`   | Global providers, routing, and entry logic.             |
-| **Pages**    | `src/pages/`    | Composition of widgets to form routes (Home, Services). |
-| **Widgets**  | `src/widgets/`  | Self-contained big UI blocks (`CardNav`, `Footer`).     |
-| **Features** | `src/features/` | User interactions (`Calculator`, `ContactForm`).        |
-| **Entities** | `src/entities/` | Business models (`BlogPost`, `ServiceCard`).            |
-| **Shared**   | `src/shared/`   | Reusable primitives (`Button`, `Icon`) and utils.       |
-
----
-
-## ⚡️ Tech Stack
-
-### Core
-
-- **Framework:** `React 19` + `Vite 6` (Build tool)
-- **Language:** `TypeScript 5.8` (Strict Mode)
-- **Styling:** `Tailwind CSS 4` + `CSS Modules` (CardNav)
-- **State:** `Zustand 5` (Global Store) + `React Context`
-
-### Backend & Integrations
-
-- **Database:** `Supabase` (PostgreSQL)
-- **Email:** `Resend` (Transactional Emails)
-- **Maps:** `Google Maps API` (Custom Dark Theme)
-- **CMS (Blog):** `MDX` (Markdown with React Components)
-
----
-
-## 💻 Setup Guide
-
-### 1. Prerequisites
-
-- Node.js v20+
-- npm or pnpm
-
-### 2. Installation
+The project follows a **Feature-Sliced Design** inspired architecture to ensure scalability and maintainability.
 
 ```bash
-git clone https://github.com/umutcantezgel-cpu/Coday.git
-cd Coday
+src/
+├── app/                # App-wide providers and entry points
+├── features/           # Business logic and feature-specific components
+│   ├── blog/           # Interactive blog components
+│   ├── calculator/     # Pricing estimators
+│   └── navigation/     # Complex navigation logic
+├── pages/              # Route components (page-level composition)
+├── shared/             # Reusable UI components and utilities
+│   ├── ui/             # Atomic components (Buttons, Inputs, etc.)
+│   └── lib/            # Helper functions and hooks
+├── widgets/            # Complex composed UI blocks (Footer, Layouts)
+└── routes.ts           # Central routing configuration
+```
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm or pnpm
+
+### Installation
+
+```bash
+# Clone the repository
+git clone <repository-url>
+
+# Install dependencies
 npm install
 ```
 
-### 3. Environment Variables
+### Development
 
-Create `.env.local`:
-
-```env
-# Supabase (Database & Auth)
-VITE_SUPABASE_URL=your_project_url
-VITE_SUPABASE_ANON_KEY=your_anon_key
-
-# Google Maps (Contact Page)
-VITE_GOOGLE_MAPS_API_KEY=your_maps_key
-
-# Resend (Email)
-VITE_RESEND_API_KEY=your_resend_key
-```
-
-### 4. Run Development Server
+Start the local development server:
 
 ```bash
 npm run dev
-# Server starts at http://localhost:4173
+# Server running at http://localhost:3000
 ```
 
----
+### Production Build
 
-## 🚀 Deployment (Vercel)
+Create a production-ready build:
 
-This project is optimized for **Vercel**.
+```bash
+npm run build
+npm run preview
+```
 
-1.  **Connect Repo:** Import the GitHub repository to Vercel.
-2.  **Build Settings:**
-    - Framework Preset: `Vite`
-    - Build Command: `npm run build`
-    - Output Directory: `dist`
-3.  **Environment Variables:** Copy all vars from `.env.local` to Vercel Project Settings.
-4.  **Deploy:** Click "Deploy".
+## 🌍 Localization
 
-### Post-Deployment Verification
+The project supports **English (en)** and **German (de)**.
 
-After deploying, always check:
+- Translation files are located in `public/locales/{lang}/{namespace}.json`.
+- The app automatically detects user language preference.
 
-- [ ] **Icons:** Ensure no missing icons (check console for 404s).
-- [ ] **Navigation:** Verify the "Dynamic Island" expands/collapses smoothly.
-- [ ] **Forms:** Test the Contact Form submission (check Resend logs).
+## 🤝 Contributing
 
----
+Please read [CONTRIBUTING.md](./CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
 
-## 🎨 Design System: "Aurora"
+## 📄 License
 
-- **Primary Color:** Deep Teal `#147a7a`
-- **Surface:** Glassmorphism (`backdrop-filter: blur(20px)`)
-- **Typography:** `Outfit` (Headings) + `Inter` (Body)
-
----
-
-<p align="center">
-  Built with ❤️ & ⚡️ by <strong>Agency Domination Team</strong>.
-</p>
+Copyright © 2026 Coday. All rights reserved.
+Private repository. Unauthorized copying or distribution is strictly prohibited.

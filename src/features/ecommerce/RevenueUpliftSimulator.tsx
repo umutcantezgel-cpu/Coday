@@ -31,10 +31,11 @@ const RevenueUpliftSimulator: React.FC = () => {
           <div className="space-y-6">
             <div>
               <div className="flex justify-between text-sm font-bold text-slate-700 mb-2">
-                <label>Jahresumsatz E-Commerce</label>
+                <label htmlFor="annualRevenue">Jahresumsatz E-Commerce</label>
                 <span>{formatCurrency(annualRevenue)}</span>
               </div>
               <input
+                id="annualRevenue"
                 type="range"
                 min="100000"
                 max="5000000"
@@ -47,12 +48,13 @@ const RevenueUpliftSimulator: React.FC = () => {
 
             <div>
               <div className="flex justify-between text-sm font-bold text-slate-700 mb-2">
-                <label>Aktuelle Ladezeit (Mobile)</label>
+                <label htmlFor="currentLoadTime">Aktuelle Ladezeit (Mobile)</label>
                 <span className={currentLoadTime > 2.5 ? 'text-red-500' : 'text-yellow-500'}>
                   {currentLoadTime}s
                 </span>
               </div>
               <input
+                id="currentLoadTime"
                 type="range"
                 min="1.0"
                 max="8.0"

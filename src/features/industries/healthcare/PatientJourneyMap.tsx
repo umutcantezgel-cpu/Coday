@@ -1,43 +1,53 @@
 import React, { useState } from 'react';
-import { Icon } from '@/shared/ui/Icon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
+import { MagnifyingGlass, FileText, Clock, FirstAid } from '@phosphor-icons/react';
+import { useTranslation } from 'react-i18next';
 
 const PatientJourneyMap: React.FC = () => {
+    const { t } = useTranslation('industries');
     const [step, setStep] = useState(0);
+
+    const iconMap: Record<string, React.ElementType> = {
+        search: MagnifyingGlass,
+        edit_document: FileText,
+        schedule: Clock,
+        healing: FirstAid,
+    };
 
     const steps = [
         {
-            title: "Symptom & Google",
-            desc: "Patient googelt 'Hautarzt München' am Wochenende.",
-            analog: "Findet veraltete Website ohne Öffnungszeiten. Ruft Montag an (besetzt).",
-            digital: "Findet top-optimierte Seite. Bucht Termin direkt online für Dienstag.",
+            title: t('aerzte-gesundheit.features.patient_journey.steps.symptom.title'),
+            desc: t('aerzte-gesundheit.features.patient_journey.steps.symptom.desc'),
+            analog: t('aerzte-gesundheit.features.patient_journey.steps.symptom.analog'),
+            digital: t('aerzte-gesundheit.features.patient_journey.steps.symptom.digital'),
             icon: "search"
         },
         {
-            title: "Vor dem Termin",
-            desc: "Die Datenerfassung (Anamnese).",
-            analog: "Patient kommt 15min früher, füllt Papierbogen aus (unleserlich).",
-            digital: "Erhält SMS mit Link. Füllt Anamnese bequem zuhause am Handy aus.",
+            title: t('aerzte-gesundheit.features.patient_journey.steps.pre_visit.title'),
+            desc: t('aerzte-gesundheit.features.patient_journey.steps.pre_visit.desc'),
+            analog: t('aerzte-gesundheit.features.patient_journey.steps.pre_visit.analog'),
+            digital: t('aerzte-gesundheit.features.patient_journey.steps.pre_visit.digital'),
             icon: "edit_document"
         },
         {
-            title: "Der Besuch",
-            desc: "Empfang und Wartezeit.",
-            analog: "Wartezeit, da Daten übertragen werden müssen. Stress am Empfang.",
-            digital: "Daten sind schon im System. Arzt hat alles gelesen. 0min Wartezeit.",
+            title: t('aerzte-gesundheit.features.patient_journey.steps.visit.title'),
+            desc: t('aerzte-gesundheit.features.patient_journey.steps.visit.desc'),
+            analog: t('aerzte-gesundheit.features.patient_journey.steps.visit.analog'),
+            digital: t('aerzte-gesundheit.features.patient_journey.steps.visit.digital'),
             icon: "schedule"
         },
         {
-            title: "Nachsorge",
-            desc: "Rezepte und Feedback.",
-            analog: "Patient ruft für Folgerezept an. Niemand geht ran.",
-            digital: "Rezept per App bestellt. Automatische 'Gute Besserung' Mail mit Feedback-Link.",
+            title: t('aerzte-gesundheit.features.patient_journey.steps.follow_up.title'),
+            desc: t('aerzte-gesundheit.features.patient_journey.steps.follow_up.desc'),
+            analog: t('aerzte-gesundheit.features.patient_journey.steps.follow_up.analog'),
+            digital: t('aerzte-gesundheit.features.patient_journey.steps.follow_up.digital'),
             icon: "healing"
         }
     ];
 
     return (
         <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 lg:p-12">
-            <h3 className="font-display font-bold text-2xl text-secondary mb-12 text-center">Die digitale Patientenreise</h3>
+            <h3 className="font-display font-bold text-2xl text-secondary mb-12 text-center">{t('aerzte-gesundheit.features.patient_journey.title')}</h3>
 
             <div className="grid lg:grid-cols-2 gap-12 relative">
                 {/* Timeline Line */}
@@ -46,9 +56,9 @@ const PatientJourneyMap: React.FC = () => {
                 {steps.map((s, idx) => (
                     <React.Fragment key={idx}>
                         {/* Analog Side (Left) */}
-                        <div className={`lg:text-right ${step === idx ? 'opacity-100' : 'opacity-40'} transition-opacity`}>
+                        <div className={`lg:text-end ${step === idx ? 'opacity-100' : 'opacity-40'} transition-opacity`}>
                             <h4 className="font-bold text-red-500 mb-2 flex items-center justify-end gap-2">
-                                <span className="text-xs bg-red-100 px-2 py-1 rounded-full uppercase">Analog</span>
+                                <span className="text-xs bg-red-100 px-2 py-1 rounded-full uppercase">{t('aerzte-gesundheit.features.patient_journey.labels.analog')}</span>
                                 {s.title}
                             </h4>
                             <p className="text-sm text-slate-500">{s.analog}</p>
@@ -60,13 +70,13 @@ const PatientJourneyMap: React.FC = () => {
                             style={{ top: `${idx * 25}%` }}
                             onClick={() => setStep(idx)}
                         >
-                            <Icon name={s.icon} />
+                            <OptimizedIcon icon={iconMap[s.icon] || MagnifyingGlass} />
                         </div>
 
                         {/* Digital Side (Right) */}
                         <div className={`${step === idx ? 'opacity-100' : 'opacity-40'} transition-opacity`}>
                             <h4 className="font-bold text-green-600 mb-2 flex items-center gap-2">
-                                <span className="text-xs bg-green-100 px-2 py-1 rounded-full uppercase">Digital</span>
+                                <span className="text-xs bg-green-100 px-2 py-1 rounded-full uppercase">{t('aerzte-gesundheit.features.patient_journey.labels.digital')}</span>
                                 {s.title}
                             </h4>
                             <p className="text-sm text-slate-500">{s.digital}</p>
@@ -77,7 +87,7 @@ const PatientJourneyMap: React.FC = () => {
 
             <div className="mt-12 text-center">
                 <p className="text-xs text-slate-400 mb-4">
-                    Klicken Sie auf die Schritte, um Details zu sehen.
+                    {t('aerzte-gesundheit.features.patient_journey.click_hint')}
                 </p>
             </div>
         </div>

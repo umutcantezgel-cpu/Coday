@@ -1,7 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import { useInView, useSpring, useMotionValue } from 'motion/react';
+import { useTranslation } from 'react-i18next';
+import { formatNumber } from '@/shared/utils/formatters';
 
 const AnimatedCounter = ({ value, prefix = "", suffix = "" }: { value: number, prefix?: string, suffix?: string }) => {
+    const { i18n } = useTranslation();
+    const locale = i18n.language;
     const ref = useRef<HTMLSpanElement>(null);
     const motionValue = useMotionValue(0);
     const springValue = useSpring(motionValue, { damping: 30, stiffness: 100 });
@@ -17,10 +21,10 @@ const AnimatedCounter = ({ value, prefix = "", suffix = "" }: { value: number, p
         return springValue.on("change", (latest) => {
             if (ref.current) {
                 // Format with local separator if needed, simple for now
-                ref.current.textContent = Math.floor(latest).toLocaleString();
+                ref.current.textContent = formatNumber(Math.floor(latest), locale);
             }
         });
-    }, [springValue]);
+    }, [springValue, locale]);
 
     return (
         <div className="flex items-baseline justify-center gap-1">

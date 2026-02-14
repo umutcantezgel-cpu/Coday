@@ -1,7 +1,4 @@
-/**
- * Email Report Service
- * Sends analysis reports via email using a backend API
- */
+import type { TFunction } from 'i18next';
 
 interface EmailReportData {
     recipientEmail: string;
@@ -10,6 +7,7 @@ interface EmailReportData {
     domain: string;
     overallScore: number;
     urgencyScore: number;
+    t: TFunction;
 }
 
 /**
@@ -19,24 +17,20 @@ export async function sendEmailReport(data: EmailReportData): Promise<{ success:
     try {
         // In production, this would call a backend API endpoint
         // For now, we'll use a mailto fallback
+        const { t } = data;
 
-        const subject = encodeURIComponent(`Website-Analyse Report: ${data.domain}`);
+        const subject = encodeURIComponent(t('email.subject', { domain: data.domain }));
         const body = encodeURIComponent(`
-Hallo ${data.recipientName},
+${t('email.body_greeting', { name: data.recipientName })}
 
-Hier ist dein Website-Analyse Report für ${data.domain}.
+${t('email.body_intro', { domain: data.domain })}
 
-Gesamtscore: ${data.overallScore}/100
-Dringlichkeit: ${data.urgencyScore}/100
+${t('email.body_score', { score: data.overallScore })}
+${t('email.body_urgency', { score: data.urgencyScore })}
 
-Vollständiger Report: ${data.reportUrl}
+${t('email.body_link', { url: data.reportUrl })}
 
-Mit freundlichen Grüßen,
-Das Coday Team
-
----
-Coday Digital | The Agency Killer
-kontakt@coday.de | coday.de
+${t('email.signature')}
     `.trim());
 
         // Open mailto link as fallback
@@ -50,7 +44,8 @@ kontakt@coday.de | coday.de
         console.error('[EmailReport] Send failed:', error);
         return {
             success: false,
-            error: error instanceof Error ? error.message : 'Unbekannter Fehler'
+            // We can't use t here easily if it fails before t is available, but data.t should be available
+            error: error instanceof Error ? error.message : 'Unknown Error'
         };
     }
 }

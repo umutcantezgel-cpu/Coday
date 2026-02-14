@@ -6,6 +6,7 @@ export interface OptimizedIconProps extends React.HTMLAttributes<HTMLSpanElement
   label?: string;
   className?: string;
   size?: 'sm' | 'md' | 'lg' | 'xl';
+  weight?: 'thin' | 'light' | 'regular' | 'bold' | 'fill' | 'duotone';
 }
 
 export const OptimizedIcon: React.FC<OptimizedIconProps> = ({
@@ -13,6 +14,7 @@ export const OptimizedIcon: React.FC<OptimizedIconProps> = ({
   label,
   className,
   size = 'md',
+  weight,
   ...props
 }) => {
   const sizeClasses = {
@@ -31,9 +33,10 @@ export const OptimizedIcon: React.FC<OptimizedIconProps> = ({
       )}
       role={label ? 'img' : undefined}
       aria-label={label}
+      aria-hidden={!label}
       {...props}
     >
-      <Icon className="w-full h-full" />
+      <Icon className="w-full h-full" weight={weight} />
     </span>
   );
 };

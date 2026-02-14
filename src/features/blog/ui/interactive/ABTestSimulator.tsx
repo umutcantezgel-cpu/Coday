@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { SplitHorizontal, Users, CursorClick, ArrowsClockwise } from '@phosphor-icons/react';
 import { clsx } from 'clsx';
 import { cn } from '@/shared/lib/utils';
+import { formatNumber } from '@/shared/utils/formatters';
 
 interface Variant {
     id: 'A' | 'B';
@@ -35,7 +36,8 @@ const VARIANTS: Record<'A' | 'B', Variant> = {
 };
 
 export const ABTestSimulator: React.FC = () => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+    const locale = i18n.language;
     const [activeVariant, setActiveVariant] = useState<'A' | 'B'>('A');
     const [visitors, setVisitors] = useState(0);
     const [conversions, setConversions] = useState(0);
@@ -157,11 +159,11 @@ export const ABTestSimulator: React.FC = () => {
                             <div className="space-y-4">
                                 <div className="flex justify-between items-center">
                                     <span className="text-gray-600 text-sm flex items-center gap-2"><Users className="w-4 h-4" /> {t('blog:abTest.metrics.visitors')}</span>
-                                    <span className="font-mono font-bold text-gray-900">{visitors.toLocaleString()}</span>
+                                    <span className="font-mono font-bold text-gray-900">{formatNumber(visitors, locale)}</span>
                                 </div>
                                 <div className="flex justify-between items-center">
                                     <span className="text-gray-600 text-sm flex items-center gap-2"><CursorClick className="w-4 h-4" /> {t('blog:abTest.metrics.conversions')}</span>
-                                    <span className="font-mono font-bold text-gray-900">{conversions.toLocaleString()}</span>
+                                    <span className="font-mono font-bold text-gray-900">{formatNumber(conversions, locale)}</span>
                                 </div>
                                 <div className="flex justify-between items-center pt-2 border-t border-gray-100">
                                     <span className="text-gray-800 font-bold text-sm">{t('blog:abTest.metrics.rate')}</span>

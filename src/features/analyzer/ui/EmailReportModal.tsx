@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Envelope, PaperPlaneRight, X, CheckCircle, CircleNotch } from '@phosphor-icons/react';
 import { sendEmailReport, isValidEmail } from '../lib/emailService';
 import type { AnalysisResult } from '../model/types';
+import { useTranslation } from 'react-i18next';
 
 interface EmailReportModalProps {
     isOpen: boolean;
@@ -20,12 +21,13 @@ export const EmailReportModal: React.FC<EmailReportModalProps> = ({
     const [isSending, setIsSending] = useState(false);
     const [isSent, setIsSent] = useState(false);
     const [error, setError] = useState<string | null>(null);
+    const { t } = useTranslation('analyzer');
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
         if (!isValidEmail(email)) {
-            setError('Bitte gib eine gültige E-Mail-Adresse ein.');
+            setError(t('input.error_invalid_email', { defaultValue: 'Bitte gib eine gültige E-Mail-Adresse ein.' }));
             return;
         }
 
@@ -41,6 +43,7 @@ export const EmailReportModal: React.FC<EmailReportModalProps> = ({
             domain: result.domain,
             overallScore: result.overallScore,
             urgencyScore: result.urgencyScore,
+            t,
         });
 
         setIsSending(false);
@@ -54,7 +57,7 @@ export const EmailReportModal: React.FC<EmailReportModalProps> = ({
                 setName('');
             }, 2000);
         } else {
-            setError(sendResult.error || 'Fehler beim Senden');
+            setError(sendResult.error || t('modal.error_sending'));
         }
     };
 
@@ -84,8 +87,8 @@ export const EmailReportModal: React.FC<EmailReportModalProps> = ({
                                 >
                                     <CheckCircle className="w-8 h-8 text-green-600" />
                                 </motion.div>
-                                <h3 className="text-xl font-bold text-gray-900 mb-2">E-Mail geöffnet!</h3>
-                                <p className="text-gray-600">Dein E-Mail-Programm sollte sich geöffnet haben.</p>
+                                <h3 className="text-xl font-bold text-gray-900 mb-2">{t('modal.success_title')}</h3>
+                                <p className="text-gray-600">{t('modal.success_message')}</p>
                             </div>
                         ) : (
                             <>
@@ -95,8 +98,8 @@ export const EmailReportModal: React.FC<EmailReportModalProps> = ({
                                             <Envelope className="w-5 h-5 text-blue-600" />
                                         </div>
                                         <div>
-                                            <h3 className="font-bold text-gray-900">Report per E-Mail</h3>
-                                            <p className="text-sm text-gray-500">Sende den Report an deine E-Mail</p>
+                                            <h3 className="font-bold text-gray-900">{t('modal.title')}</h3>
+                                            <p className="text-sm text-gray-500">{t('modal.subtitle')}</p>
                                         </div>
                                     </div>
                                     <button
@@ -110,26 +113,26 @@ export const EmailReportModal: React.FC<EmailReportModalProps> = ({
                                 <form onSubmit={handleSubmit} className="space-y-4">
                                     <div>
                                         <label className="block text-sm font-medium text-gray-700 mb-1">
-                                            Name (optional)
+                                            {t('modal.label_name')}
                                         </label>
                                         <input
                                             type="text"
                                             value={name}
                                             onChange={(e) => setName(e.target.value)}
-                                            placeholder="Dein Name"
+                                            placeholder={t('modal.placeholder_name')}
                                             className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all"
                                         />
                                     </div>
 
                                     <div>
                                         <label className="block text-sm font-medium text-gray-700 mb-1">
-                                            E-Mail-Adresse *
+                                            {t('modal.label_email')}
                                         </label>
                                         <input
                                             type="email"
                                             value={email}
                                             onChange={(e) => setEmail(e.target.value)}
-                                            placeholder="deine@email.de"
+                                            placeholder={t('modal.placeholder_email')}
                                             required
                                             className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all"
                                         />
@@ -147,19 +150,19 @@ export const EmailReportModal: React.FC<EmailReportModalProps> = ({
                                         {isSending ? (
                                             <>
                                                 <CircleNotch className="w-5 h-5 animate-spin" />
-                                                <span>Wird gesendet...</span>
+                                                <span>{t('modal.button_sending')}</span>
                                             </>
                                         ) : (
                                             <>
                                                 <PaperPlaneRight className="w-5 h-5" />
-                                                <span>Report senden</span>
+                                                <span>{t('modal.button_send')}</span>
                                             </>
                                         )}
                                     </button>
                                 </form>
 
                                 <p className="text-xs text-gray-400 text-center mt-4">
-                                    Wir speichern deine E-Mail-Adresse nicht.
+                                    {t('modal.privacy_note')}
                                 </p>
                             </>
                         )}

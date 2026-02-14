@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { CurrencyEur, Calculator, TrendUp, Warning } from '@phosphor-icons/react';
+import { useTranslation } from 'react-i18next';
+import { formatCurrency, formatNumber } from '../../shared/utils/formatters';
 
 export const ROICalculator: React.FC = () => {
+    const { i18n } = useTranslation();
+    const locale = i18n.language;
+
     const [traffic, setTraffic] = useState(10000);
     const [conversion, setConversion] = useState(2.5);
     const [aov, setAov] = useState(75);
@@ -39,7 +44,9 @@ export const ROICalculator: React.FC = () => {
                             value={traffic} onChange={(e) => setTraffic(Number(e.target.value))}
                             className="w-full accent-primary h-2 bg-gray-100 rounded-lg appearance-none cursor-pointer"
                         />
-                        <div className="text-right font-mono font-bold text-primary mt-1">{traffic.toLocaleString()}</div>
+                        <div className="text-end font-mono font-bold text-primary mt-1">
+                            {formatNumber(traffic, locale)}
+                        </div>
                     </div>
 
                     <div>
@@ -49,7 +56,9 @@ export const ROICalculator: React.FC = () => {
                             value={conversion} onChange={(e) => setConversion(Number(e.target.value))}
                             className="w-full accent-primary h-2 bg-gray-100 rounded-lg appearance-none cursor-pointer"
                         />
-                        <div className="text-right font-mono font-bold text-primary mt-1">{conversion}%</div>
+                        <div className="text-end font-mono font-bold text-primary mt-1">
+                            {formatNumber(conversion, locale, { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%
+                        </div>
                     </div>
 
                     <div>
@@ -59,7 +68,9 @@ export const ROICalculator: React.FC = () => {
                             value={aov} onChange={(e) => setAov(Number(e.target.value))}
                             className="w-full accent-primary h-2 bg-gray-100 rounded-lg appearance-none cursor-pointer"
                         />
-                        <div className="text-right font-mono font-bold text-primary mt-1">{aov}€</div>
+                        <div className="text-end font-mono font-bold text-primary mt-1">
+                            {formatCurrency(aov, 'EUR', locale)}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -71,13 +82,13 @@ export const ROICalculator: React.FC = () => {
                     whileInView={{ scale: 1, opacity: 1 }}
                     className="p-8 rounded-3xl bg-secondary text-white relative overflow-hidden"
                 >
-                    <div className="absolute top-0 right-0 p-32 bg-primary/20 blur-[100px] rounded-full -z-0"></div>
+                    <div className="absolute top-0 end-0 p-32 bg-primary/20 blur-[100px] rounded-full -z-0"></div>
 
                     <h3 className="text-2xl font-display font-light mb-8 opacity-80">Annual Revenue Leak</h3>
 
                     <div className="flex items-baseline gap-2 mb-2">
                         <span className="text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400">
-                            {Math.round(annualLoss).toLocaleString()}€
+                            {formatCurrency(Math.round(annualLoss), 'EUR', locale)}
                         </span>
                     </div>
                     <div className="flex items-center gap-2 text-red-300 text-sm font-bold uppercase tracking-wider mb-8">
@@ -92,7 +103,7 @@ export const ROICalculator: React.FC = () => {
                             <div className="text-white/60 text-sm mb-1">Potential Annual Rev</div>
                             <div className="text-2xl font-bold flex items-center gap-2">
                                 <CurrencyEur className="text-emerald-400" />
-                                {(potentialRevenue * 12).toLocaleString()}€
+                                {formatCurrency(Math.round(potentialRevenue * 12), 'EUR', locale)}
                             </div>
                         </div>
                         <motion.div

@@ -803,14 +803,96 @@ export const BLOG_POSTS: BlogPost[] = [
             }
         ]
     },
+
     {
         id: 10,
+        title: "The 'Anti-AI' Manifesto: Why Imperfection is the New Luxury",
+        slug: "anti-ai-manifesto-human-design",
+        excerpt: "In a world flooded with sterile AI-generated content, human flaw is the ultimate status symbol. We explore why 'Soul' cannot be prompted and why the future belongs to the imperfect.",
+        category: "Philosophy",
+        readTime: "12 min.",
+        image: "/images/marketing/hand-smartphone-social-feed-herzen-likes-sprechblasen-kommentare-follower-12.webp",
+        alt: "Abstract human art vs AI pattern",
+        author: "Coday Founder",
+        date: "May 1, 2026",
+        content: [
+            {
+                id: "intro-manifesto",
+                type: "text",
+                heading: "The Flood of Mediocrity",
+                level: "h2",
+                content: "Open LinkedIn. Scroll through Instagram. Look at the latest landing pages. Do you feel it? The fatigue. Everything looks... okay. \n\nAI has democratized 'average'. Anyone can now create a 'good' logo, a 'good' text, and a 'good' website in seconds. But when 'good' becomes free, 'good' becomes worthless.\n\nIn an ocean of synthetic perfection, the only thing that stands out is the one thing AI cannot fake: Humanity. Flaws. Friction. Soul."
+            },
+            {
+                id: "interactive-soul-reader",
+                type: "interactive",
+                component: "quiz",
+                data: {
+                    mode: "human-vs-ai",
+                    title: "The Turing Test for Design",
+                    description: "Can you spot the human soul? Guess which design was made by a human."
+                }
+            },
+            {
+                id: "text-uncanny-valley",
+                type: "text",
+                heading: "The 'Uncanny Valley' of Web Design",
+                level: "h2",
+                content: "You know this feeling from robotics: If a robot looks *almost* human but not quite, it creates a feeling of unease. The same happens now with brands.\n\nWe subconsciously detect AI-generated copy ('In today's digital landscape...'). We smell the Midjourney-gloss on stock photos. It creates distance. We don't trust it. \n\n**The Counter-Trend:** 'Anti-AI' Aesthetic. Raw, brutalist, asymmetrical, grainy. Designs that scream 'A human touched this'."
+            },
+            {
+                id: "comparison-ai-human",
+                type: "comparison",
+                variant: "versus",
+                items: [
+                    {
+                        title: "AI Design (The Commodity)",
+                        points: ["Perfectly symmetrical", "Generic 'Corporate Memphis' art", "Polite, robotic copy", "Predictable layouts"]
+                    },
+                    {
+                        title: "Human Design (The Luxury)",
+                        points: ["Intentional asymmetry", "Hand-drawn / Photography", "Opinionated, edgy copy", "Unexpected interactions"],
+                        isHighlight: true
+                    }
+                ]
+            },
+            {
+                id: "chapter-friction",
+                type: "text",
+                heading: "Why Friction is Good (Sometimes)",
+                level: "h2",
+                content: "AI optimizes for efficiency. It wants to remove all friction. But friction is where memory happens. \n\nA vinyl record has friction. You have to take it out, clean it, place the needle. It crackles. Is Spotify more efficient? Yes. Is it more emotional? No.\n\nWe build websites with 'positive friction'. Interactions that require a moment of pause. Animations that surprise. We don't just want users to convert. We want them to *feel*."
+            },
+            {
+                id: "checklist-soul",
+                type: "checklist",
+                title: "The 'Soul' Audit",
+                items: [
+                    { text: "Photography is real (no stock, no AI)", checked: true },
+                    { text: "Copy sounds like you talk (not like ChatGPT)", checked: true },
+                    { text: "Micro-interactions surprise the user", checked: true },
+                    { text: "Design breaks at least one 'Best Practice' rule intentionally", checked: true }
+                ]
+            },
+            {
+                id: "cta-manifesto",
+                type: "cta",
+                title: "Be Unapologetically Human",
+                description: "We build brands that have a pulse. Let's create something that an algorithm could never dream of.",
+                buttonText: "Start the Rebellion",
+                href: "/contact",
+                variant: "primary"
+            }
+        ]
+    },
+    {
+        id: 11,
         title: "The 'Agency Killer': Why the Classic Agency Model is Dead",
         slug: "agency-killer-model",
         excerpt: "Why do you pay monthly retainers for services that an AI does in seconds? We reveal: The dirty secrets of the industry and why the future belongs to 'Hybrid'.",
         category: "Industry Disruption",
         readTime: "18 min.",
-        image: "/images/marketing/digital-marketing-metrics-dashboard-tablet-analysis.webp",
+        image: "/images/services/dienstleistung-service-illustration-01.webp",
         alt: "Disruption of the Advertising Industry",
         author: "Coday Founder",
         date: "April 20, 2026",
@@ -889,6 +971,512 @@ export const BLOG_POSTS: BlogPost[] = [
                 buttonText: "Strategy Call",
                 href: "/contact",
                 variant: "primary"
+            }
+        ]
+    },
+    {
+        id: 12,
+        title: "Speed = Revenue: The High Cost of Latency",
+        slug: "high-performance-web-vitals",
+        excerpt: "Milliseconds cost millions. We analyze why Core Web Vitals are the most important KPI for 2026 and how to calculate your 'Latency Tax'.",
+        category: "Performance",
+        readTime: "15 min.",
+        image: "/images/marketing/seo-audit-analyse-optimierung-google-ranking.webp",
+        alt: "High Performance Analytics Dashboard",
+        author: "Coday Lead Dev",
+        date: "May 15, 2026",
+        content: [
+            {
+                id: "intro-speed",
+                type: "text",
+                heading: "The 100ms Rule",
+                level: "h2",
+                content: "Amazon discovered it 10 years ago: Every 100ms of latency cost them 1% in sales. Today, users are even more impatient.\n\nIf your site takes longer than 3 seconds to load, 53% of mobile users leave. They don't come back. Speed is not a 'nice to have'. It is the foundation of your revenue."
+            },
+            {
+                id: "interactive-latency-calc",
+                type: "interactive",
+                component: "latency-calculator",
+                data: {}
+            },
+            {
+                id: "text-cwv",
+                type: "text",
+                heading: "Core Web Vitals: The New SEO Gold Standard",
+                level: "h2",
+                content: "Google isn't guessing anymore. With Core Web Vitals (CWV), they measure exactly how annoying your site is.\n\n* **LCP (Largest Contentful Paint):** How fast does the main content load?\n* **INP (Interaction to Next Paint):** Does the site freeze when I click?\n* **CLS (Cumulative Layout Shift):** Does content jump around while reading?\n\nFail these, and you disappear from Search."
+            },
+            {
+                id: "checklist-performance",
+                type: "checklist",
+                title: "The Performance Audit",
+                items: [
+                    { text: "Images are WebP/AVIF and lazy-loaded", checked: true },
+                    { text: "Font files are subsets and preloaded", checked: true },
+                    { text: "JavaScript is minimized and deferred", checked: true },
+                    { text: "Server Response Time (TTFB) is under 200ms", checked: true }
+                ]
+            },
+            {
+                id: "quote-speed",
+                type: "quote",
+                text: "Performance is the most under-valued asset in the digital portfolio.",
+                author: "Google Webmaster Central",
+                variant: "gradient"
+            }
+        ]
+    },
+    {
+        id: 13,
+        title: "Digital Sovereignty: Why the US Cloud Act is a Ticking Time Bomb",
+        slug: "digital-sovereignty-public-sector",
+        excerpt: "For the public sector and Critical Infrastructure, 'Cloud First' often means 'America First'. We explain why Digital Sovereignty is the only viable strategy for 2026.",
+        category: "Government",
+        readTime: "20 min.",
+        image: "/images/services/online-praesenz-digitale-sichtbarkeit-internet-marketing.webp",
+        alt: "European Data Shield Protection",
+        author: "Coday Policy",
+        date: "June 2, 2026",
+        content: [
+            {
+                id: "intro-sovereignty",
+                type: "text",
+                heading: "The Illusion of Control",
+                level: "h2",
+                content: "You think your data is safe because your server is in Frankfurt. But if that server belongs to AWS, Azure, or Google, you are wrong.\n\nThe **US Cloud Act** forces American companies to hand over data to US authorities, even if that data is stored in the EU. For German authorities and critical infrastructure, this is an unacceptable risk."
+            },
+            {
+                id: "interactive-sovereignty-check",
+                type: "interactive",
+                component: "sovereignty-checklist",
+                data: {}
+            },
+            {
+                id: "text-solutions",
+                type: "text",
+                heading: "The Path to Independence",
+                level: "h2",
+                content: "Digital Sovereignty doesn't mean building everything yourself. It means controlling dependencies.\n\nWe build on **Open Source** and **European Infrastructure** (Hetzner, Scaleway, Telekom Cloud). No black boxes. No vendor lock-in."
+            },
+            {
+                id: "comparison-hosting",
+                type: "comparison",
+                variant: "versus",
+                items: [
+                    {
+                        title: "US Hyperscalers (AWS/Azure)",
+                        points: ["US Cloud Act applies", "Vendor Lock-in", "Opaque pricing", "Data monetization risk"]
+                    },
+                    {
+                        title: "Sovereign Cloud (Coday Stack)",
+                        points: ["GDPR compliant by design", "Open Source based", "Predictable costs", "100% Data Ownership"],
+                        isHighlight: true
+                    }
+                ]
+            },
+            {
+                id: "quote-sovereignty",
+                type: "quote",
+                text: "He who does not own his infrastructure does not own his digital future.",
+                author: "Digital Minister (Fictional)",
+                variant: "large"
+            }
+        ]
+    },
+    {
+        id: 14,
+        title: "The Psychology of Dark Mode: Why It Feels Expensive",
+        slug: "psychology-of-dark-mode",
+        excerpt: "Dark Mode is more than a toggle. It changes how we perceive value. We explore the physics of light, OLED screens, and why premium brands love the dark.",
+        category: "Design",
+        readTime: "14 min.",
+        image: "/images/marketing/video-content-streaming-plattform-play-button-multimedia.webp",
+        alt: "Dark Mode UI Elements",
+        author: "Coday Design Team",
+        date: "June 20, 2026",
+        content: [
+            {
+                id: "intro-dark",
+                type: "text",
+                heading: "The Physics of Luxury",
+                level: "h2",
+                content: "Walk into an Apple Store. Walk into a luxury jewelry shop. What do you see? Black backgrounds. Directed lighting.\n\nDarkness creates focus. It eliminates distraction. On OLED screens, black isn't a color—it's the absence of light. It saves battery and signals 'Premium'."
+            },
+            {
+                id: "text-contrast",
+                type: "text",
+                heading: "The Contrast Trap",
+                level: "h2",
+                content: "The biggest mistake designers make: Using pure black (#000000) and pure white (#FFFFFF). This creates 'halation' (blurring) for users with astigmatism.\n\n**Professional Dark Mode** uses Dark Grays (#121212) and desaturated text colors. Test your contrast here:"
+            },
+            {
+                id: "interactive-contrast",
+                type: "interactive",
+                component: "contrast-analyzer",
+                data: {}
+            },
+            {
+                id: "comparison-dark",
+                type: "comparison",
+                variant: "pros-cons",
+                items: [
+                    {
+                        title: "Amateur Dark Mode",
+                        points: ["Pure Black Backgrounds", "Saturated Colors (Accessibility fail)", "Shadows invisible"]
+                    },
+                    {
+                        title: "Pro Dark Mode (Coday Style)",
+                        points: ["Elevation via Lighter Grays", "Desaturated Accents", "Adequate Contrast Ratios"],
+                        isHighlight: true
+                    }
+                ]
+            },
+            {
+                id: "key-takeaway-dark",
+                type: "key-takeaways",
+                title: "Dark Mode Rules",
+                items: [
+                    { text: "Never use pure black (#000000 for backgrounds)", icon: "check" },
+                    { text: "Avoid saturated colors on text (vibration)", icon: "bulb" },
+                    { text: "Use elevation (lighter grays) instead of shadows", icon: "star" }
+                ]
+            }
+        ]
+    },
+    {
+        id: 15,
+        title: "Headless CMS vs. WordPress: The True Cost of 'Free'",
+        slug: "headless-cms-vs-wordpress",
+        excerpt: "WordPress is free, but it's expensive. Headless is expensive, but it's cheap. We break down the Total Cost of Ownership (TCO) over 3 years.",
+        category: "Tech Stack",
+        readTime: "18 min.",
+        image: "/images/services/website-builder-drag-drop-baukasten-elemente-webdesign.webp",
+        alt: "CMS Architecture Diagram",
+        author: "Coday Tech Lead",
+        date: "July 5, 2026",
+        content: [
+            {
+                id: "intro-cms",
+                type: "text",
+                heading: "The Monolith is Dead",
+                level: "h2",
+                content: "WordPress powers 40% of the web. It is also the #1 target for hackers. It is slow. It is bloated. It is a monolith in a microservices world.\n\nHeadless CMS (Sanity, Contentful, Strapi) decouples content from code. It allows you to ship omnichannel content to Web, App, and Watch from one source."
+            },
+            {
+                id: "interactive-tco",
+                type: "interactive",
+                component: "tco-calculator",
+                data: {}
+            },
+            {
+                id: "text-scaling",
+                type: "text",
+                heading: "The Hidden Cost of Scale",
+                level: "h2",
+                content: "WordPress plugins are technical debt with interest. Every plugin slows down your DB query. Every update breaks a template.\n\nWith Headless, you pay for the API. You specifically build the frontend. No bloat. No 'Plugin Hell'. Just pure, raw performance."
+            },
+            {
+                id: "comparison-cms",
+                type: "comparison",
+                variant: "versus",
+                items: [
+                    {
+                        title: "WordPress (Monolith)",
+                        points: ["Security Nightmares (SQL Injection)", "Slow by default (PHP rendering)", "Plugin dependency hell"]
+                    },
+                    {
+                        title: "Headless (Modern Stack)",
+                        points: ["Static Site Generation (Instant Load)", "Zero-Day Exploit Immunity", "Omnichannel Content Delivery"],
+                        isHighlight: true
+                    }
+                ]
+            },
+            {
+                id: "quote-cms",
+                type: "quote",
+                text: "Using WordPress for an Enterprise App is like using Excel as a Database. You can do it, but you shouldn't.",
+                author: "CTO of a Fortune 500 Company",
+                variant: "gradient"
+            }
+        ]
+    },
+    {
+        id: 16,
+        title: "Enterprise Security: Why ISO 27001 is the Minimum Viable Product",
+        slug: "enterprise-security-standards",
+        excerpt: "Security is not a feature, it's a state of mind. We analyze why 'GDPR Compliant' is not enough and how to build a fortress.",
+        category: "Security",
+        readTime: "25 min.",
+        image: "/images/marketing/datenanalyse-business-intelligence-reporting-statistiken-auswertung.webp",
+        alt: "Cybersecurity Shield Visualization",
+        author: "Coday SecOps",
+        date: "July 20, 2026",
+        content: [
+            {
+                id: "intro-sec",
+                type: "text",
+                heading: "The Cost of a Breach",
+                level: "h2",
+                content: "The average cost of a data breach in 2026 is €4.5 Million. For small agencies, it's a death sentence.\n\nMost agencies transfer data via Slack, store passwords in Excel, and have no off-site backups. This is negligence."
+            },
+            {
+                id: "interactive-gap",
+                type: "interactive",
+                component: "security-gap-wizard",
+                data: {}
+            },
+            {
+                id: "text-iso",
+                type: "text",
+                heading: "The ISO 27001 Gold Standard",
+                level: "h2",
+                content: "ISO 27001 is not just paperwork. It is a rigorous framework for Information Security Management (ISMS).\n\nIt forces you to classify assets, assess risks, and implement controls. At Coday, every commit is signed, every database is encrypted at rest, and every employee key is rotated monthly."
+            },
+            {
+                id: "checklist-sec",
+                type: "checklist",
+                title: "The Hardening Checklist",
+                items: [
+                    { text: "Hardware Keys (YubiKey) for all Admin Access", checked: true },
+                    { text: "Content Security Policy (CSP) Headers strictly enforced", checked: true },
+                    { text: "WAF (Web Application Firewall) with Rate Limiting", checked: true },
+                    { text: "Automated Dependabot Security Updates", checked: true }
+                ]
+            },
+            {
+                id: "quote-sec",
+                type: "quote",
+                text: "Amateurs hack systems. Professionals hack people. Social engineering is the #1 vector.",
+                author: "Kevin Mitnick (Legacy)",
+                variant: "large"
+            }
+        ]
+    },
+    {
+        id: 17,
+        title: "Digital Government: Why OZG 2.0 is Failing (and How to Fix It)",
+        slug: "ozg-citizen-experience",
+        excerpt: "Germany's Online Access Act (OZG) promised a digital revolution. Instead, we got PDF forms. We analyze the UX failures of the public sector.",
+        category: "Government",
+        readTime: "12 min.",
+        image: "/images/portfolio/mockup-website-immobilienagentur-real-estate-listings-preise-berlin.webp",
+        alt: "Digital Citizen ID Card",
+        author: "Coday Public Sector",
+        date: "August 2, 2026",
+        content: [
+            {
+                id: "intro-ozg",
+                type: "text",
+                heading: "The Paper Tiger",
+                level: "h2",
+                content: "Billions of Euros spent. Thousands of committees. Result: You still have to print out a PDF to apply for a parking permit.\n\nThe problem isn't technology. It's the mindset. We digitize bureaucracy instead of rethinking processes."
+            },
+            {
+                id: "interactive-ozg",
+                type: "interactive",
+                component: "ozg-readiness",
+                data: {}
+            },
+            {
+                id: "text-ux",
+                type: "text",
+                heading: "Citizen Experience First",
+                level: "h2",
+                content: "A digital application shouldn't look like a tax form. It should look like Airbnb.\n\n* **BundID Integration:** Single Sign-On for all services.\n* **Once-Only Principle:** Never ask for data the state already has.\n* **Mobile First:** Because nobody owns a scanner anymore."
+            },
+            {
+                id: "comparison-ozg",
+                type: "comparison",
+                variant: "pros-cons",
+                items: [
+                    {
+                        title: "Current State (OZG 1.0)",
+                        points: ["PDF Forms online", "Decentralized Chaos", "No Mobile Optimization"]
+                    },
+                    {
+                        title: "Future State (Coday Vision)",
+                        points: ["Fully Automated Workflows", "AI-Assisted Filling", "Proactive Government Services"],
+                        isHighlight: true
+                    }
+                ]
+            },
+            {
+                id: "quote-ozg",
+                type: "quote",
+                text: "The best government interface is no interface.",
+                author: "Estonian CIO (Inspiration)",
+                variant: "gradient"
+            }
+        ]
+    },
+    {
+        id: 18,
+        title: "The Death of the Cookie: Why Your Marketing Data is Wrong",
+        slug: "death-of-third-party-cookies",
+        excerpt: "AdBlockers, iOS 14.5, and GDPR have killed the cookie. We show you why 40% of your conversions are missing and how Server-Side Tracking saves them.",
+        category: "MarTech",
+        readTime: "15 min.",
+        image: "/images/marketing/email-marketing-kampagne-newsletter-zielgruppe-versand.webp",
+        alt: "Data Privacy Shield Visualization",
+        author: "Coday Analytics",
+        date: "August 15, 2026",
+        content: [
+            {
+                id: "intro-cookie",
+                type: "text",
+                heading: "The Signal Loss Crisis",
+                level: "h2",
+                content: "If you rely on the Meta Pixel or Google Analytics 4 (Client-Side), you are flying blind. iOS 17 strips tracking parameters. AdBlockers block scripts. Chrome is phasing out cookies."
+            },
+            {
+                id: "interactive-tracking",
+                type: "interactive",
+                component: "tracking-simulator",
+                data: {}
+            },
+            {
+                id: "text-capi",
+                type: "text",
+                heading: "The Solution: Server-Side Tracking (CAPI)",
+                level: "h2",
+                content: "Instead of relying on the user's browser (which lies to you), Coday implements Server-Side Tracking. We send events directly from your server to Meta/Google. 100% accuracy. Zero dependence on cookies."
+            },
+            {
+                id: "comparison-cookie",
+                type: "comparison",
+                variant: "versus",
+                items: [
+                    {
+                        title: "Client-Side (Pixel)",
+                        points: ["Blocked by AdBlockers", "Blocked by Safari/iOS", "Data expire after 7 days"]
+                    },
+                    {
+                        title: "Server-Side (CAPI)",
+                        points: ["Unblockable", "100% Signal Integrity", "Permanent Data Retention"],
+                        isHighlight: true
+                    }
+                ]
+            },
+            {
+                id: "quote-cookie",
+                type: "quote",
+                text: "Data is the new oil. But most companies are leaking it all over the floor.",
+                author: "Coday Principal Data Engineer",
+                variant: "gradient"
+            }
+        ]
+    },
+    {
+        id: 19,
+        title: "Design Systems at Scale: How We Manage 100+ Brands Without Going Insane",
+        slug: "design-systems-at-scale",
+        excerpt: "Building one website is easy. Maintaining 100 is a nightmare. Learn how we use Atomic Design and Tokenization to keep our sanity.",
+        category: "Design",
+        readTime: "14 min.",
+        image: "/images/services/dienstleistung-service-illustration-04.webp",
+        alt: "Design System Tokens Visualization",
+        author: "Coday Design Lead",
+        date: "September 1, 2026",
+        content: [
+            {
+                id: "intro-ds",
+                type: "text",
+                heading: "The Consistency Trap",
+                level: "h2",
+                content: "Every project starts clean. Then the client asks for 'just one small change'. Suddenly, you have 50 shades of blue and 12 different button radiuses.\n\nA Design System is not a UI Kit. It is a contract between Design and Code."
+            },
+            {
+                id: "interactive-config",
+                type: "interactive",
+                component: "component-configurator",
+                data: {}
+            },
+            {
+                id: "text-tokens",
+                type: "text",
+                heading: "Tokenization is Key",
+                level: "h2",
+                content: "We don't hardcode hex values. We use semantic tokens. `bg-primary-500` means nothing. `bg-action-primary` means everything.\n\nThis allows us to rebrand an entire enterprise application in 5 minutes by changing a single JSON file."
+            },
+            {
+                id: "comparison-ds",
+                type: "comparison",
+                variant: "versus",
+                items: [
+                    {
+                        title: "Ad-Hoc Design",
+                        points: ["Inconsistent UI", "Slow Development", "Nightmare to Refactor"]
+                    },
+                    {
+                        title: "Systematic Design",
+                        points: ["Pixel-Perfect Consistency", "Rapid Prototyping", "Automated Documentation"],
+                        isHighlight: true
+                    }
+                ]
+            },
+            {
+                id: "quote-ds",
+                type: "quote",
+                text: "If you can't document it, you haven't designed it.",
+                author: "Brad Frost (Atomic Design)",
+                variant: "large"
+            }
+        ]
+    },
+    {
+        id: 20,
+        title: "The Future of E-Commerce: Why Your Shop is Leaking Money",
+        slug: "future-of-ecommerce-cro",
+        excerpt: "Traffic is expensive. Conversion is cheap. We explain why a 0.5% lift in Conversion Rate is worth more than doubling your ad budget.",
+        category: "E-Commerce",
+        readTime: "10 min.",
+        image: "/images/marketing/omnichannel-marketing-hub-seo-social-content-strategie-vernetzt.webp",
+        alt: "E-Commerce Funnel Visualization",
+        author: "Coday Growth Lead",
+        date: "September 10, 2026",
+        content: [
+            {
+                id: "intro-cro",
+                type: "text",
+                heading: "The Traffic Trap",
+                level: "h2",
+                content: "Most shops spend 80% of their budget on Ads and 0% on User Experience (UX). This is like pouring water into a leaking bucket.\n\nOptimizing your Conversion Rate (CRO) is the highest ROI activity you can do."
+            },
+            {
+                id: "interactive-roi",
+                type: "interactive",
+                component: "roi-estimator",
+                data: {}
+            },
+            {
+                id: "text-ux-ecom",
+                type: "text",
+                heading: "Friction Kills Sales",
+                level: "h2",
+                content: "Every second of load time costs you 7% in conversions. Every extra form field costs you 10%. Every confusing button costs you a customer.\n\nModern E-Commerce is not about 'features'. It's about removing barriers."
+            },
+            {
+                id: "comparison-cro",
+                type: "comparison",
+                variant: "versus",
+                items: [
+                    {
+                        title: "Traditional Shop",
+                        points: ["Generic Template", "Slow Checkout", "Popups everywhere"]
+                    },
+                    {
+                        title: "High-Performance Shop",
+                        points: ["Headless & Instant", "One-Click Checkout", "Personalized Experience"],
+                        isHighlight: true
+                    }
+                ]
+            },
+            {
+                id: "quote-cro",
+                type: "quote",
+                text: "Amazon didn't win because they had better products. They won because they had One-Click Buy.",
+                author: "Jeff Bezos (Legacy)",
+                variant: "gradient"
             }
         ]
     }

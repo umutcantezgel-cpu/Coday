@@ -70,6 +70,7 @@ const BeforeAfterReveal: React.FC = () => {
     return (
         <div
             ref={containerRef}
+            dir="ltr"
             className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] rounded-3xl overflow-hidden cursor-ew-resize select-none shadow-flat-lg border border-gray-100"
             onMouseMove={(e) => !isDragging && handleMove(e)} // Optional: Hover move
             onTouchMove={handleMove}
@@ -116,10 +117,10 @@ const BeforeAfterReveal: React.FC = () => {
             </div>
 
             {/* Labels */}
-            <div className="absolute top-4 left-4 bg-black/50 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider z-10">
+            <div className="absolute top-4 start-4 bg-black/50 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider z-10">
                 Vorher (Standard)
             </div>
-            <div className="absolute top-4 right-4 bg-primary/80 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider z-10">
+            <div className="absolute top-4 end-4 bg-primary/80 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider z-10">
                 Nachher (Premium)
             </div>
 

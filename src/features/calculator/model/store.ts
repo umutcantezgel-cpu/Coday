@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { modules, Module } from '../../../data/modules';
+import { modules, Module } from '@/shared/data/modules';
+import { formatCurrency } from '@/shared/utils/formatters';
 
 interface CalculatorState {
   selectedModuleIds: Set<string>;
@@ -140,9 +141,9 @@ export const useCalculatorStore = create<CalculatorState>()(
         if (selectedMods.length > 0) {
           text += `Module: ${selectedMods.map((m) => m.name).join(', ')}\n`;
         }
-        text += `Einmalig: ${(totalOneTime / 100).toLocaleString('de-DE')} €`;
+        text += `Einmalig: ${formatCurrency(totalOneTime / 100, 'EUR')}`;
         if (totalMonthly > 0) {
-          text += ` | Monatlich: ${(totalMonthly / 100).toLocaleString('de-DE')} €`;
+          text += ` | Monatlich: ${formatCurrency(totalMonthly / 100, 'EUR')}`;
         }
         return text;
       },

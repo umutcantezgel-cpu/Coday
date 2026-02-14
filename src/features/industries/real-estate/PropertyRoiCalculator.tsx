@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { formatCurrency } from '@/shared/utils/formatters';
 
 const PropertyRoiCalculator: React.FC = () => {
+    const { t, i18n } = useTranslation('industries');
     const [propertyValue, setPropertyValue] = useState(500000);
     const [commissionRate, setCommissionRate] = useState(3.57); // Standard DE with tax
     const [salesSpeedBoost] = useState(20); // % faster
@@ -14,17 +17,18 @@ const PropertyRoiCalculator: React.FC = () => {
     return (
         <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 space-y-8">
             <div className="text-center">
-                <span className="text-primary font-bold uppercase tracking-wider text-xs block mb-1">Make more money</span>
-                <h3 className="font-display font-bold text-2xl text-secondary">Provisions-Check</h3>
+                <span className="text-primary font-bold uppercase tracking-wider text-xs block mb-1">{t('immobilien-makler.features.roi_calculator.label')}</span>
+                <h3 className="font-display font-bold text-2xl text-secondary">{t('immobilien-makler.features.roi_calculator.title')}</h3>
             </div>
 
             <div className="space-y-6">
                 <div>
                     <div className="flex justify-between text-sm font-bold text-slate-700 mb-2">
-                        <label>Immobilienwert</label>
-                        <span>{new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(propertyValue)}</span>
+                        <label htmlFor="propertyValue">{t('immobilien-makler.features.roi_calculator.labels.property_value')}</label>
+                        <span>{formatCurrency(propertyValue / 100 * 100, 'EUR', i18n.language)}</span>
                     </div>
                     <input
+                        id="propertyValue"
                         type="range"
                         min="200000" max="2000000" step="50000"
                         value={propertyValue}
@@ -35,10 +39,11 @@ const PropertyRoiCalculator: React.FC = () => {
 
                 <div>
                     <div className="flex justify-between text-sm font-bold text-slate-700 mb-2">
-                        <label>Ihre Provision (inkl. MwSt)</label>
-                        <span>{commissionRate}%</span>
+                        <label htmlFor="commissionRate">{t('immobilien-makler.features.roi_calculator.labels.commission_rate')}</label>
+                        <span>{new Intl.NumberFormat(i18n.language, { maximumFractionDigits: 2 }).format(commissionRate)}%</span>
                     </div>
                     <input
+                        id="commissionRate"
                         type="range"
                         min="1" max="7.14" step="0.01"
                         value={commissionRate}
@@ -50,25 +55,25 @@ const PropertyRoiCalculator: React.FC = () => {
 
             <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
                 <div className="flex justify-between items-center mb-4">
-                    <span className="text-gray-500 font-medium">Umsatz pro Deal</span>
-                    <span className="text-xl font-bold text-secondary">{new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(commission)}</span>
+                    <span className="text-gray-500 font-medium">{t('immobilien-makler.features.roi_calculator.results.revenue_per_deal')}</span>
+                    <span className="text-xl font-bold text-secondary">{formatCurrency(commission / 100 * 100, 'EUR', i18n.language)}</span>
                 </div>
                 <div className="h-px bg-gray-200 w-full mb-4"></div>
 
                 <div className="flex justify-between items-center">
                     <div className="flex flex-col">
-                        <span className="text-green-600 font-bold">Turbo-Verkauf</span>
-                        <span className="text-xs text-green-700/70">durch Web-Exposé</span>
+                        <span className="text-green-600 font-bold">{t('immobilien-makler.features.roi_calculator.results.turbo_sale')}</span>
+                        <span className="text-xs text-green-700/70">{t('immobilien-makler.features.roi_calculator.results.turbo_sub')}</span>
                     </div>
-                    <span className="text-2xl font-black text-green-600">-{salesSpeedBoost}% Zeit</span>
+                    <span className="text-2xl font-black text-green-600">{t('immobilien-makler.features.roi_calculator.results.time_saved', { percent: salesSpeedBoost })}</span>
                 </div>
                 <p className="text-xs text-gray-400 mt-2 text-center">
-                    Verkaufen Sie 5 Häuser in der Zeit von 4.
+                    {t('immobilien-makler.features.roi_calculator.results.impact')}
                 </p>
             </div>
 
             <button className="w-full bg-secondary text-white font-bold py-4 rounded-xl shadow-lg hover:bg-secondary/90 transition-all">
-                Jetzt Makler-Paket anfragen
+                {t('immobilien-makler.features.roi_calculator.cta')}
             </button>
         </div>
     );

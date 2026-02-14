@@ -216,8 +216,8 @@ const BookingCalendar = ({
                 className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3"
               >
                 {fetchingSlots ? (
-                  <div className="col-span-3 text-center py-4 text-gray-400 text-sm">
-                    Loading slots...
+                  <div className="col-span-3 text-center py-4 text-gray-500 text-sm">
+                    {t('calendar.loading')}
                   </div>
                 ) : (
                   TIME_SLOTS.map((time) => {
@@ -229,12 +229,11 @@ const BookingCalendar = ({
                         disabled={isBooked}
                         className={`
                           py-2 rounded-xl text-sm font-medium transition-all
-                          ${
-                            selectedTime === time
-                              ? 'bg-primary text-white shadow-lg shadow-primary/30'
-                              : isBooked
-                                ? 'bg-gray-100 text-gray-300 cursor-not-allowed line-through'
-                                : 'bg-white border border-gray-100 hover:border-primary/50 text-gray-600'
+                          ${selectedTime === time
+                            ? 'bg-primary text-white shadow-lg shadow-primary/30'
+                            : isBooked
+                              ? 'bg-gray-100 text-gray-300 cursor-not-allowed line-through'
+                              : 'bg-white border border-gray-100 hover:border-primary/50 text-gray-600'
                           }
                         `}
                       >
@@ -323,6 +322,7 @@ const BookingCalendar = ({
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  aria-label={t('calendar.step2.form.name.placeholder')}
                   className="w-full p-3 rounded-xl bg-white border border-gray-100 focus:border-primary outline-none transition-colors"
                 />
                 <input
@@ -331,6 +331,7 @@ const BookingCalendar = ({
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  aria-label={t('calendar.step2.form.email.placeholder')}
                   className="w-full p-3 rounded-xl bg-white border border-gray-100 focus:border-primary outline-none transition-colors"
                 />
               </div>
@@ -339,6 +340,7 @@ const BookingCalendar = ({
                 placeholder={t('calendar.step2.form.phone.placeholder')}
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                aria-label={t('calendar.step2.form.phone.placeholder')}
                 className="w-full p-3 rounded-xl bg-white border border-gray-100 focus:border-primary outline-none transition-colors"
               />
               <textarea
@@ -346,11 +348,12 @@ const BookingCalendar = ({
                 rows={3}
                 value={formData.notes}
                 onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
+                aria-label={t('calendar.step2.form.notes.placeholder')}
                 className="w-full p-3 rounded-xl bg-white border border-gray-100 focus:border-primary outline-none transition-colors"
               />
 
               {error && (
-                <div className="p-3 bg-red-50 text-red-600 rounded-lg text-sm">{error}</div>
+                <div role="alert" className="p-3 bg-red-50 text-red-600 rounded-lg text-sm">{error}</div>
               )}
 
               <div className="flex justify-between pt-4">

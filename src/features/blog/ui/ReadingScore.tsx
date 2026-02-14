@@ -23,6 +23,7 @@ export const ReadingScore: React.FC<{ currentPostId?: number }> = ({ currentPost
 
       return () => clearTimeout(timeout);
     }
+    return undefined;
   }, [currentPostId, readPosts]);
 
   // Derived state

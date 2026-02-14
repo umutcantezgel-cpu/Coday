@@ -1,28 +1,16 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { DownloadSimple, ShareNetwork, Check, Envelope, CalendarBlank } from '@phosphor-icons/react';
+import { DownloadSimple, ShareNetwork, Check, Envelope, CalendarBlank, Lightning, MagnifyingGlass, Shield, Wheelchair, Palette, FileText, CloudSlash, Warning, Lightbulb } from '@phosphor-icons/react';
 import { useAnalyzerStore } from '../model/store';
 import { ScoreCard } from './ScoreCard';
 import { UrgencyMeter } from './UrgencyMeter';
-import { Icon } from '@/shared/ui/Icon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { generatePdfReport } from '../lib/pdfGenerator';
 import { EmailReportModal } from './EmailReportModal';
 // import { CalendlyModal } from './CalendlyModal'; // Deprecated
 import type { AgentIssue } from '../model/types';
-
-const CATEGORY_CONFIG = [
-  { key: 'performance', title: 'Performance', icon: 'speed', color: 'from-orange-500 to-red-500' },
-  { key: 'seo', title: 'SEO', icon: 'search', color: 'from-green-500 to-emerald-500' },
-  { key: 'security', title: 'Sicherheit', icon: 'shield', color: 'from-blue-500 to-cyan-500' },
-  {
-    key: 'accessibility',
-    title: 'Barrierefreiheit',
-    icon: 'accessibility',
-    color: 'from-purple-500 to-violet-500',
-  },
-  { key: 'ux', title: 'UX/Design', icon: 'palette', color: 'from-pink-500 to-rose-500' },
-  { key: 'content', title: 'Content', icon: 'article', color: 'from-yellow-500 to-amber-500' },
-] as const;
+import { useTranslation } from 'react-i18next';
+import { useRtl } from '@/shared/hooks/useRtl';
 
 export const ReportDashboard: React.FC = () => {
   const { result, resetAnalysis } = useAnalyzerStore();
@@ -30,11 +18,28 @@ export const ReportDashboard: React.FC = () => {
   const [copied, setCopied] = useState(false);
   const [showEmailModal, setShowEmailModal] = useState(false);
   // const [showCalendlyModal, setShowCalendlyModal] = useState(false);
+  const { t } = useTranslation('analyzer');
+  const { isRtl } = useRtl();
+
+  const CATEGORY_CONFIG = [
+    { key: 'performance', title: t('agents.performance'), icon: Lightning, color: 'from-orange-500 to-red-500' },
+    { key: 'seo', title: t('agents.seo'), icon: MagnifyingGlass, color: 'from-green-500 to-emerald-500' },
+    { key: 'security', title: t('agents.security'), icon: Shield, color: 'from-blue-500 to-cyan-500' },
+    {
+      key: 'accessibility',
+      title: t('agents.accessibility'),
+      icon: Wheelchair,
+      color: 'from-purple-500 to-violet-500',
+    },
+    { key: 'ux', title: t('agents.ux'), icon: Palette, color: 'from-pink-500 to-rose-500' },
+    { key: 'content', title: t('agents.content'), icon: FileText, color: 'from-yellow-500 to-amber-500' },
+  ] as const;
 
   if (!result) return null;
 
   const handleDownloadPdf = () => {
-    generatePdfReport(result);
+    if (!result) return;
+    generatePdfReport(result, t);
   };
 
   const handleShare = async () => {
@@ -74,16 +79,16 @@ export const ReportDashboard: React.FC = () => {
     return (
       <div className="w-full max-w-4xl mx-auto px-4 py-32 text-center">
         <div className="w-24 h-24 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-6">
-          <Icon name="cloud_off" className="text-red-500 text-5xl" />
+          <OptimizedIcon icon={CloudSlash} className="text-red-500 text-5xl" />
         </div>
-        <h2 className="text-3xl font-bold text-gray-900 mb-2">Analyse fehlgeschlagen</h2>
+        <h2 className="text-3xl font-bold text-gray-900 mb-2">{t('dashboard.analysis_failed')}</h2>
 
         <p className="text-gray-600 mb-6 max-w-md mx-auto">
           {useAnalyzerStore.getState().errorCode === 'TIMEOUT'
-            ? 'Die Analyse hat zu lange gedauert. Die Website antwortet langsam.'
+            ? t('dashboard.error_timeout')
             : useAnalyzerStore.getState().errorCode === 'NETWORK_ERROR'
-              ? 'Verbindung fehlgeschlagen. Bitte prüfe deine Internetverbindung.'
-              : 'Unsere KI-Agenten konnten die Website nicht erreichen. Das passiert manchmal bei Firewalls oder Timeouts.'}
+              ? t('dashboard.error_network')
+              : t('dashboard.error_agents')}
         </p>
 
         {/* Technical Error Detail */}
@@ -100,30 +105,30 @@ export const ReportDashboard: React.FC = () => {
             onClick={async () => {
               const isAlive = await useAnalyzerStore.getState().testConnection();
               if (isAlive) {
-                alert('Server ist erreichbar! Versuche es erneut.');
+                alert(t('dashboard.server_alive'));
                 resetAnalysis();
               } else {
-                alert('Server antwortet nicht. Bitte Deployment prüfen.');
+                alert(t('dashboard.server_dead'));
               }
             }}
             className="px-6 py-3 bg-gray-100 text-gray-700 font-bold rounded-xl hover:bg-gray-200 transition-colors"
           >
-            Server testen 📡
+            {t('dashboard.button_test_server')}
           </button>
           <button
             onClick={resetAnalysis}
             className="px-8 py-3 bg-primary text-white font-bold rounded-xl hover:bg-blue-700 transition-colors shadow-lg"
           >
-            Erneut versuchen
+            {t('dashboard.button_retry')}
           </button>
         </div>
 
         <div className="mt-8">
           <button
-            onClick={() => useAnalyzerStore.getState().loadDemoData()}
+            onClick={() => useAnalyzerStore.getState().loadDemoData(t)}
             className="text-sm text-gray-400 hover:text-gray-600 underline transition-colors"
           >
-            Demo-Daten laden (Vorschau)
+            {t('dashboard.button_demo')}
           </button>
         </div>
       </div>
@@ -139,14 +144,14 @@ export const ReportDashboard: React.FC = () => {
         className="text-center mb-16"
       >
         <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
-          Analyse abgeschlossen
+          {t('dashboard.analysis_complete')}
         </span>
         <h1 className="font-display font-black text-4xl md:text-6xl text-secondary mb-4">
-          Dein Website-Audit
+          {t('dashboard.your_audit')}
         </h1>
         <p className="text-xl text-gray-500 mb-2">{result.domain}</p>
         <p className="text-sm text-gray-400 mb-6">
-          Analysiert am {new Date(result.analyzedAt).toLocaleDateString('de-DE')} •{' '}
+          {t('dashboard.analyzed_on', { date: new Date(result.analyzedAt).toLocaleDateString('de-DE') })} •{' '}
           {result.duration}ms
         </p>
 
@@ -167,10 +172,9 @@ export const ReportDashboard: React.FC = () => {
         {/* Partial Failure Warning */}
         {Object.values(result).some((val: unknown) => typeof val === 'object' && (val as { score?: number })?.score === -1) && (
           <div className="max-w-xl mx-auto mb-8 bg-orange-50 border border-orange-200 rounded-xl p-4 flex items-center gap-3 text-left">
-            <Icon name="warning" className="text-orange-500" />
+            <OptimizedIcon icon={Warning} className="text-orange-500" />
             <div className="text-sm text-orange-800">
-              <strong>Teilweise fehlgeschlagen:</strong> Einige Agenten konnten die Website nicht
-              analysieren (siehe unten). Der Gesamtscore basiert auf den verfügbaren Daten.
+              <strong>{t('dashboard.partial_failure')}</strong> {t('dashboard.partial_failure_desc')}
             </div>
           </div>
         )}
@@ -182,7 +186,7 @@ export const ReportDashboard: React.FC = () => {
             className="flex items-center gap-2 px-5 py-2.5 bg-white border border-gray-200 rounded-xl font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-300 transition-all shadow-sm"
           >
             <DownloadSimple className="w-4 h-4" />
-            <span>PDF Export</span>
+            <span>{t('dashboard.button_pdf')}</span>
           </button>
           <button
             onClick={handleShare}
@@ -191,12 +195,12 @@ export const ReportDashboard: React.FC = () => {
             {copied ? (
               <>
                 <Check className="w-4 h-4 text-green-500" />
-                <span className="text-green-600">Kopiert!</span>
+                <span className="text-green-600">{t('dashboard.button_copied')}</span>
               </>
             ) : (
               <>
                 <ShareNetwork className="w-4 h-4" />
-                <span>Teilen</span>
+                <span>{t('dashboard.button_share')}</span>
               </>
             )}
           </button>
@@ -205,7 +209,7 @@ export const ReportDashboard: React.FC = () => {
             className="flex items-center gap-2 px-5 py-2.5 bg-white border border-gray-200 rounded-xl font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-300 transition-all shadow-sm"
           >
             <Envelope className="w-4 h-4" />
-            <span>E-Mail</span>
+            <span>{t('dashboard.button_email')}</span>
           </button>
         </div>
       </motion.div>
@@ -214,13 +218,13 @@ export const ReportDashboard: React.FC = () => {
       <div className="grid lg:grid-cols-2 gap-8 mb-16">
         {/* Overall Score */}
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
+          initial={{ opacity: 0, x: isRtl ? 20 : -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.2 }}
           className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 text-center"
         >
           <h3 className="text-lg font-bold text-gray-600 uppercase tracking-wider mb-6">
-            Gesamtbewertung
+            {t('dashboard.overall_score')}
           </h3>
 
           {/* Big Score */}
@@ -244,16 +248,16 @@ export const ReportDashboard: React.FC = () => {
 
           <p className="text-gray-500">
             {result.overallScore >= 80
-              ? 'Gut! Deine Website ist solide aufgestellt.'
+              ? t('dashboard.score_good')
               : result.overallScore >= 50
-                ? 'Verbesserungspotenzial vorhanden.'
-                : 'Dringender Handlungsbedarf!'}
+                ? t('dashboard.score_ok')
+                : t('dashboard.score_bad')}
           </p>
         </motion.div>
 
         {/* Urgency Meter */}
         <motion.div
-          initial={{ opacity: 0, x: 20 }}
+          initial={{ opacity: 0, x: isRtl ? -20 : 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.3 }}
         >
@@ -263,7 +267,7 @@ export const ReportDashboard: React.FC = () => {
 
       {/* Category Grid */}
       <div className="mb-16">
-        <h2 className="text-2xl font-bold text-gray-900 mb-8">Detailauswertung</h2>
+        <h2 className="text-2xl font-bold text-gray-900 mb-8">{t('dashboard.detail_analysis')}</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {CATEGORY_CONFIG.map((cat, index) => {
             const data = result[cat.key as keyof typeof result];
@@ -296,7 +300,7 @@ export const ReportDashboard: React.FC = () => {
       <div className="mb-16">
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-2xl font-bold text-gray-900">
-            Gefundene Probleme ({allIssues.length})
+            {t('dashboard.found_issues')} ({allIssues.length})
           </h2>
           <div className="flex gap-2">
             {['kritisch', 'hoch', 'mittel', 'niedrig'].map((severity) => {
@@ -310,12 +314,14 @@ export const ReportDashboard: React.FC = () => {
                 niedrig: 'bg-gray-100 text-gray-700',
               };
 
+              const severityKey = severity === 'kritisch' ? 'critical' : severity === 'hoch' ? 'high' : severity === 'mittel' ? 'medium' : 'low';
+
               return (
                 <span
                   key={severity}
                   className={`px-3 py-1 rounded-full text-sm font-bold ${colors[severity as keyof typeof colors]}`}
                 >
-                  {count} {severity}
+                  {count} {t(`severity.${severityKey}`, { defaultValue: severity })}
                 </span>
               );
             })}
@@ -326,7 +332,7 @@ export const ReportDashboard: React.FC = () => {
           {allIssues.slice(0, 10).map((issue, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, x: -20 }}
+              initial={{ opacity: 0, x: isRtl ? 20 : -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.6 + idx * 0.05 }}
               className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-lg transition-shadow"
@@ -334,8 +340,8 @@ export const ReportDashboard: React.FC = () => {
               <div className="flex items-start gap-4">
                 <div
                   className={`
-                  w-3 h-3 rounded-full mt-2 flex-shrink-0
-                  ${issue.severity === 'kritisch'
+                      w-3 h-3 rounded-full mt-2 flex-shrink-0
+                      ${issue.severity === 'kritisch'
                       ? 'bg-red-500'
                       : issue.severity === 'hoch'
                         ? 'bg-orange-500'
@@ -343,7 +349,7 @@ export const ReportDashboard: React.FC = () => {
                           ? 'bg-yellow-500'
                           : 'bg-gray-400'
                     }
-                `}
+                    `}
                 />
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-2">
@@ -354,7 +360,7 @@ export const ReportDashboard: React.FC = () => {
                   </div>
                   <p className="text-gray-600 mb-3">{issue.description}</p>
                   <div className="flex items-center gap-2 text-sm text-primary font-medium">
-                    <Icon name="lightbulb" className="text-base" />
+                    <OptimizedIcon icon={Lightbulb} className="text-base" />
                     <span>{issue.fix}</span>
                   </div>
                 </div>
@@ -365,7 +371,7 @@ export const ReportDashboard: React.FC = () => {
 
         {allIssues.length > 10 && (
           <p className="text-center text-gray-500 mt-6">
-            +{allIssues.length - 10} weitere Probleme gefunden
+            {t('dashboard.more_issues', { count: allIssues.length - 10 })}
           </p>
         )}
       </div>
@@ -373,13 +379,13 @@ export const ReportDashboard: React.FC = () => {
       {/* Action Plan Section */}
       <div className="mb-16">
         <div className="flex items-center justify-between mb-8">
-          <h2 className="text-2xl font-bold text-gray-900">Dein Maßnahmenplan</h2>
+          <h2 className="text-2xl font-bold text-gray-900">{t('dashboard.action_plan')}</h2>
           {!result.actionPlan && (
             <button
               onClick={() => useAnalyzerStore.getState().generatePlan()}
               className="text-sm font-bold text-primary hover:text-blue-700 transition-colors"
             >
-              Plan jetzt generieren
+              {t('dashboard.generate_plan')}
             </button>
           )}
         </div>
@@ -405,7 +411,7 @@ export const ReportDashboard: React.FC = () => {
                       </span>
                       <span
                         className={`text-xs px-2 py-1 rounded text-white uppercase font-bold
-                                                ${step.impact === 'hoch' ? 'bg-green-500' : 'bg-blue-400'}`}
+                                                    ${step.impact === 'hoch' ? 'bg-green-500' : 'bg-blue-400'}`}
                       >
                         Impact: {step.impact}
                       </span>
@@ -419,13 +425,13 @@ export const ReportDashboard: React.FC = () => {
         ) : (
           <div className="bg-gray-50 rounded-2xl p-8 text-center border border-dashed border-gray-300">
             <p className="text-gray-500 mb-4">
-              Erstelle einen konkreten Schritt-für-Schritt Plan basierend auf deinen Ergebnissen.
+              {t('dashboard.plan_placeholder')}
             </p>
             <button
               onClick={() => useAnalyzerStore.getState().generatePlan()}
               className="bg-primary text-white px-6 py-2 rounded-lg font-bold shadow hover:bg-blue-700 transition-all"
             >
-              KI-Plan generieren ✨
+              {t('dashboard.generate_ai_plan')}
             </button>
           </div>
         )}
@@ -439,11 +445,10 @@ export const ReportDashboard: React.FC = () => {
         className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-3xl p-12 text-center text-white"
       >
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          Bereit, deine Website zu optimieren?
+          {t('dashboard.cta_title')}
         </h2>
         <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-          Unsere Experten helfen dir, alle gefundenen Probleme zu beheben. Kostenlose Erstberatung,
-          keine versteckten Kosten.
+          {t('dashboard.cta_desc')}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button
@@ -451,13 +456,14 @@ export const ReportDashboard: React.FC = () => {
             className="flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary font-bold rounded-xl hover:bg-blue-50 transition-colors shadow-lg"
           >
             <CalendarBlank className="w-5 h-5" />
-            <span>Beratung buchen</span>
+            <span>{t('dashboard.button_book')}</span>
           </button>
+
           <button
             onClick={resetAnalysis}
             className="px-8 py-4 bg-white/10 text-white font-bold rounded-xl hover:bg-white/20 transition-colors border border-white/30"
           >
-            Neue Analyse starten
+            {t('dashboard.button_new_analysis')}
           </button>
         </div>
       </motion.div>

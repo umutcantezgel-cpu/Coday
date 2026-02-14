@@ -108,7 +108,7 @@ export interface KeyTakeawaysBlock extends BaseBlock {
 // Universal container for React interactive components
 export interface InteractiveBlock extends BaseBlock {
     type: 'interactive';
-    component: 'roi-calculator' | 'speed-test' | 'quiz' | 'timeline' | 'mobile-simulator' | 'color-picker' | 'seo-graph' | 'traffic-estimator' | 'tech-stack-explorer' | 'data-maturity' | 'hack-simulator' | 'ab-test' | 'voice-demo' | 'ai-cost' | 'agency-calculator';
+    component: 'roi-calculator' | 'speed-test' | 'quiz' | 'timeline' | 'mobile-simulator' | 'color-picker' | 'seo-graph' | 'traffic-estimator' | 'tech-stack-explorer' | 'data-maturity' | 'hack-simulator' | 'ab-test' | 'voice-demo' | 'ai-cost' | 'agency-calculator' | 'latency-calculator' | 'sovereignty-checklist' | 'contrast-analyzer' | 'tco-calculator' | 'security-gap-wizard' | 'ozg-readiness' | 'tracking-simulator' | 'component-configurator' | 'roi-estimator';
     data?: Record<string, unknown>; // Flexible props for the specific component
 }
 

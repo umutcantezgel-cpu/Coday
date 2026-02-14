@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Icon } from '@/shared/ui/Icon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
+import { Sun, Moon, TrendUp, Lightning, CaretRight, House, ShoppingBag, User } from '@phosphor-icons/react';
+import { useRtl } from '@/shared/hooks/useRtl';
 
 const InteractivePhoneMockup: React.FC = () => {
+    const { isRtl } = useRtl();
     const [activeTab, setActiveTab] = useState<'home' | 'shop' | 'profile'>('home');
     const [isDarkMode, setIsDarkMode] = useState(false);
 
@@ -29,7 +32,7 @@ const InteractivePhoneMockup: React.FC = () => {
                             onClick={() => setIsDarkMode(!isDarkMode)}
                             className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${isDarkMode ? 'bg-white/10 text-yellow-400' : 'bg-gray-200 text-gray-600'}`}
                         >
-                            <Icon name={isDarkMode ? 'light_mode' : 'dark_mode'} className="text-sm" />
+                            <OptimizedIcon icon={isDarkMode ? Sun : Moon} className="text-sm" />
                         </button>
                     </div>
 
@@ -37,9 +40,9 @@ const InteractivePhoneMockup: React.FC = () => {
                         {activeTab === 'home' && (
                             <motion.div
                                 key="home"
-                                initial={{ opacity: 0, x: 20 }}
+                                initial={{ opacity: 0, x: isRtl ? -20 : 20 }}
                                 animate={{ opacity: 1, x: 0 }}
-                                exit={{ opacity: 0, x: -20 }}
+                                exit={{ opacity: 0, x: isRtl ? 20 : -20 }}
                                 className="px-4 space-y-4"
                             >
                                 {/* Stories */}
@@ -56,7 +59,7 @@ const InteractivePhoneMockup: React.FC = () => {
 
                                 {/* Banner */}
                                 <div className="h-40 rounded-2xl bg-gradient-to-r from-blue-500 to-purple-600 shadow-lg text-white p-6 relative overflow-hidden">
-                                    <div className="absolute top-0 right-0 w-20 h-20 bg-white/20 rounded-full -mr-10 -mt-10"></div>
+                                    <div className="absolute top-0 end-0 w-20 h-20 bg-white/20 rounded-full -me-10 -mt-10"></div>
                                     <h3 className="font-bold text-lg mb-1 relative z-10">New Arrival</h3>
                                     <p className="text-xs opacity-80 mb-4 relative z-10">Check out the latest collection.</p>
                                     <button className="bg-white text-blue-600 px-4 py-1.5 rounded-lg text-xs font-bold shadow-sm relative z-10">Shop Now</button>
@@ -66,14 +69,14 @@ const InteractivePhoneMockup: React.FC = () => {
                                 <div className="grid grid-cols-2 gap-4">
                                     <div className={`h-32 rounded-2xl p-4 ${isDarkMode ? 'bg-slate-800' : 'bg-white shadow-sm'}`}>
                                         <div className="w-8 h-8 rounded-lg bg-green-100 text-green-600 flex items-center justify-center mb-2">
-                                            <Icon name="trending_up" className="text-sm" />
+                                            <OptimizedIcon icon={TrendUp} className="text-sm" />
                                         </div>
                                         <div className="text-sm font-bold">Analytics</div>
                                         <div className="text-xs opacity-50">+24%</div>
                                     </div>
                                     <div className={`h-32 rounded-2xl p-4 ${isDarkMode ? 'bg-slate-800' : 'bg-white shadow-sm'}`}>
                                         <div className="w-8 h-8 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center mb-2">
-                                            <Icon name="bolt" className="text-sm" />
+                                            <OptimizedIcon icon={Lightning} className="text-sm" />
                                         </div>
                                         <div className="text-sm font-bold">Power</div>
                                         <div className="text-xs opacity-50">Active</div>
@@ -117,11 +120,11 @@ const InteractivePhoneMockup: React.FC = () => {
                                 <div className={`w-full rounded-2xl p-4 mb-4 ${isDarkMode ? 'bg-slate-800' : 'bg-white shadow-sm'}`}>
                                     <div className="flex justify-between items-center mb-4">
                                         <span className="text-sm font-bold">Settings</span>
-                                        <Icon name="chevron_right" className="text-sm opacity-50" />
+                                        <OptimizedIcon icon={CaretRight} className="text-sm opacity-50" />
                                     </div>
                                     <div className="flex justify-between items-center">
                                         <span className="text-sm font-bold">Privacy</span>
-                                        <Icon name="chevron_right" className="text-sm opacity-50" />
+                                        <OptimizedIcon icon={CaretRight} className="text-sm opacity-50" />
                                     </div>
                                 </div>
                             </motion.div>
@@ -133,13 +136,13 @@ const InteractivePhoneMockup: React.FC = () => {
                 {/* Bottom Navigation */}
                 <div className={`absolute bottom-0 w-full h-16 flex justify-around items-center z-50 px-4 pb-2 ${isDarkMode ? 'bg-slate-900 border-t border-slate-800' : 'bg-white border-t border-gray-100'}`}>
                     <button onClick={() => setActiveTab('home')} className={`flex flex-col items-center gap-1 ${activeTab === 'home' ? 'text-blue-500' : 'opacity-40'}`}>
-                        <Icon name="home" className="text-xl" />
+                        <OptimizedIcon icon={House} className="text-xl" />
                     </button>
                     <button onClick={() => setActiveTab('shop')} className={`flex flex-col items-center gap-1 ${activeTab === 'shop' ? 'text-blue-500' : 'opacity-40'}`}>
-                        <Icon name="shopping_bag" className="text-xl" />
+                        <OptimizedIcon icon={ShoppingBag} className="text-xl" />
                     </button>
                     <button onClick={() => setActiveTab('profile')} className={`flex flex-col items-center gap-1 ${activeTab === 'profile' ? 'text-blue-500' : 'opacity-40'}`}>
-                        <Icon name="person" className="text-xl" />
+                        <OptimizedIcon icon={User} className="text-xl" />
                     </button>
 
                     {/* Home Indicator */}

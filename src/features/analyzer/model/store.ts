@@ -6,7 +6,8 @@ import {
   generateActionPlan,
   saveAuditResult,
 } from '../lib/analyzerService';
-import { DEMO_RESULT } from './demoData';
+import { getDemoResult } from './demoData';
+import { TFunction } from 'i18next';
 
 interface AnalyzerState {
   // Input State
@@ -29,7 +30,7 @@ interface AnalyzerState {
   setError: (error: string) => void;
   generatePlan: () => Promise<void>;
   testConnection: () => Promise<boolean>;
-  loadDemoData: () => void;
+  loadDemoData: (t: TFunction) => void;
 }
 
 const initialProgress: AnalysisProgress = {
@@ -330,11 +331,11 @@ export const useAnalyzerStore = create<AnalyzerState>((set, get) => ({
     }
   },
 
-  loadDemoData: () => {
+  loadDemoData: (t) => {
     set({
       status: 'completed',
       progress: { status: 'completed', progress: 100, completedAgents: [] },
-      result: DEMO_RESULT,
+      result: getDemoResult(t),
       error: null,
       errorCode: null,
     });

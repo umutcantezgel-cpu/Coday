@@ -18,7 +18,7 @@ const LostRevenueCalc: React.FC = () => {
   return (
     <div className="bg-surface-dark border border-white/10 rounded-3xl p-8 lg:p-12 relative overflow-hidden">
       {/* Background Glow */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-red-500/10 rounded-full blur-[80px] -mr-20 -mt-20 pointer-events-none"></div>
+      <div className="absolute top-0 end-0 w-96 h-96 bg-red-500/10 rounded-full blur-[80px] -me-20 -mt-20 pointer-events-none"></div>
 
       <div className="grid lg:grid-cols-2 gap-12 items-center relative z-10">
         <div className="space-y-8">
@@ -34,10 +34,11 @@ const LostRevenueCalc: React.FC = () => {
           <div className="space-y-6">
             <div>
               <div className="flex justify-between text-sm font-bold text-gray-300 mb-2">
-                <label>Monatlicher Umsatz</label>
+                <label htmlFor="monthlyRevenue">Monatlicher Umsatz</label>
                 <span>{formatCurrency(monthlyRevenue)}</span>
               </div>
               <input
+                id="monthlyRevenue"
                 type="range"
                 min="1000"
                 max="500000"
@@ -50,12 +51,13 @@ const LostRevenueCalc: React.FC = () => {
 
             <div>
               <div className="flex justify-between text-sm font-bold text-gray-300 mb-2">
-                <label>Aktuelle Ladezeit</label>
+                <label htmlFor="currentLoadTime">Aktuelle Ladezeit</label>
                 <span className={loadTime > 2 ? 'text-red-400' : 'text-green-400'}>
                   {loadTime}s
                 </span>
               </div>
               <input
+                id="currentLoadTime"
                 type="range"
                 min="0.5"
                 max="5.0"

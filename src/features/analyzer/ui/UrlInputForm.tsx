@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { MagnifyingGlass, CircleNotch, WarningCircle, CheckCircle } from '@phosphor-icons/react';
+import { MagnifyingGlass, CircleNotch, WarningCircle, CheckCircle, ArrowRight } from '@phosphor-icons/react';
 import { useAnalyzerStore } from '../model/store';
-import { Icon } from '@/shared/ui/Icon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
+import { useTranslation } from 'react-i18next';
 
 export const UrlInputForm: React.FC = () => {
     const { url, isValidUrl, status, error, setUrl, startAnalysis } = useAnalyzerStore();
     const [isFocused, setIsFocused] = useState(false);
+    const { t } = useTranslation('analyzer');
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -51,7 +53,7 @@ export const UrlInputForm: React.FC = () => {
                             onChange={(e) => setUrl(e.target.value)}
                             onFocus={() => setIsFocused(true)}
                             onBlur={() => setIsFocused(false)}
-                            placeholder="www.deine-website.de"
+                            placeholder={t('input.placeholder')}
                             className="
                 flex-1 py-5 pr-4 text-lg font-medium
                 placeholder:text-gray-400 text-gray-900
@@ -95,12 +97,12 @@ export const UrlInputForm: React.FC = () => {
                         {isLoading ? (
                             <span className="flex items-center gap-2">
                                 <CircleNotch className="w-5 h-5 animate-spin" />
-                                <span>Analysiere...</span>
+                                <span>{t('input.analyzing')}</span>
                             </span>
                         ) : (
                             <span className="flex items-center gap-2">
-                                <span>Jetzt analysieren</span>
-                                <Icon name="arrow_forward" className="text-xl" />
+                                <span>{t('input.analyze_button')}</span>
+                                <OptimizedIcon icon={ArrowRight} className="text-xl" />
                             </span>
                         )}
                     </button>
@@ -124,8 +126,8 @@ export const UrlInputForm: React.FC = () => {
 
             {/* Helper Text */}
             <p className="text-center text-gray-500 mt-6 text-sm">
-                Gib die URL deiner Website ein und erhalte innerhalb von 60 Sekunden einen
-                <span className="text-primary font-semibold"> kostenlosen Audit-Report</span>.
+                {t('input.helper_text_start')}{' '}
+                <span className="text-primary font-semibold"> {t('input.helper_text_highlight')}</span>.
             </p>
         </div>
     );

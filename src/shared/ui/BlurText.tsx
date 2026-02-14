@@ -14,6 +14,7 @@ type BlurTextProps = {
   easing?: Easing | Easing[];
   onAnimationComplete?: () => void;
   stepDuration?: number;
+  direction?: 'top' | 'bottom';
 };
 
 const buildKeyframes = (

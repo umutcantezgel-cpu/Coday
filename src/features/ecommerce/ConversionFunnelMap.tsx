@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
+import { useRtl } from '@/shared/hooks/useRtl';
 
 const ConversionFunnelMap: React.FC = () => {
+    const { isRtl } = useRtl();
     const [hoveredStep, setHoveredStep] = useState<number | null>(null);
 
     const steps = [
@@ -33,7 +35,7 @@ const ConversionFunnelMap: React.FC = () => {
                             style={{
                                 width: `${100 - (idx * 15)}%`,
                                 minWidth: '300px',
-                                background: `linear-gradient(to right, ${step.color}, #ffffff)`
+                                background: `linear-gradient(to ${isRtl ? 'left' : 'right'}, ${step.color}, #ffffff)`
                             }}
                         >
                             <span className="font-bold text-white drop-shadow-md">{step.name}</span>
@@ -42,19 +44,26 @@ const ConversionFunnelMap: React.FC = () => {
 
                         {/* Tooltip / Fix Reveal */}
                         <div
-                            className={`absolute left-full top-1/2 -translate-y-1/2 ml-4 w-64 bg-surface-dark text-white p-4 rounded-xl shadow-xl border border-gray-700 transition-all duration-300 ${hoveredStep === idx ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4 pointer-events-none'}`}
-                            style={{ zIndex: 20 }}
+                            className={`absolute top-1/2 -translate-y-1/2 w-64 bg-surface-dark text-white p-4 rounded-xl shadow-xl border border-gray-700 transition-all duration-300 z-20
+                                ${isRtl ? 'right-full mr-4' : 'left-full ml-4'}
+                                ${hoveredStep === idx
+                                    ? 'opacity-100 translate-x-0'
+                                    : `opacity-0 ${isRtl ? 'translate-x-4' : '-translate-x-4'} pointer-events-none`
+                                }
+                            `}
                         >
                             <div className="text-xs text-gray-400 uppercase font-bold mb-1">Optimization Strategy</div>
                             <div className="text-primary font-bold mb-1">{step.fix}</div>
                             <div className="text-xs text-gray-500">{step.drop}</div>
 
                             {/* Connector Arrow */}
-                            <div className="absolute top-1/2 right-full -mt-2 w-0 h-0 border-t-8 border-t-transparent border-r-8 border-r-surface-dark border-b-8 border-b-transparent"></div>
+                            <div className={`absolute top-1/2 -mt-2 w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-transparent
+                                ${isRtl ? 'left-full border-l-8 border-l-surface-dark' : 'right-full border-r-8 border-r-surface-dark'}
+                            `}></div>
                         </div>
 
                         {/* Dropoff connector lines */}
-                        {idx <steps.length - 1 && (
+                        {idx < steps.length - 1 && (
                             <div className="h-2 w-0.5 bg-gray-200 mx-auto"></div>
                         )}
                     </motion.div>

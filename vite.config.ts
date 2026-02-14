@@ -1,17 +1,13 @@
 import { reactRouter } from '@react-router/dev/vite';
-import autoprefixer from 'autoprefixer';
-import tailwindcss from '@tailwindcss/postcss';
 import { defineConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
+import viteCompression from 'vite-plugin-compression';
+import { VitePWA } from 'vite-plugin-pwa';
 import mdx from '@mdx-js/rollup';
+import { visualizer } from 'rollup-plugin-visualizer';
 
-export default defineConfig({
-  css: {
-    postcss: {
-      plugins: [tailwindcss, autoprefixer],
-    },
-  },
+export default defineConfig(({ isSsrBuild }) => ({
   plugins: [
     reactRouter(),
     { enforce: 'pre', ...mdx() },
@@ -37,17 +33,67 @@ export default defineConfig({
         ],
       },
     }),
+    viteCompression(),
+    VitePWA({
+      registerType: 'autoUpdate',
+      includeAssets: ['favicon.svg', 'robots.txt', 'apple-touch-icon.png'],
+      manifest: {
+        name: 'Coday | Agency Domination',
+        short_name: 'Coday',
+        description: 'Elite Web Development & Digital Performance Agency',
+        theme_color: '#1A9A9A',
+        background_color: '#ffffff',
+        display: 'standalone',
+        orientation: 'portrait',
+        icons: [
+          {
+            src: 'pwa-192.png',
+            sizes: '192x192',
+            type: 'image/png',
+          },
+          {
+            src: 'pwa-512.png',
+            sizes: '512x512',
+            type: 'image/png',
+          },
+          {
+            src: 'pwa-512.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'any maskable',
+          },
+        ],
+      },
+      workbox: {
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,avif,woff2}'],
+      },
+    }),
     // Sitemap plugin removed in favor of scripts/generate-sitemap.js
+    visualizer({
+      open: false,
+      gzipSize: true,
+      brotliSize: true,
+      filename: 'bundle-analysis.html',
+    }),
   ],
   server: {
     port: 3000,
     host: '0.0.0.0',
   },
   optimizeDeps: {
-    include: ['react-helmet-async'],
+    include: [
+      'react-helmet-async',
+      'motion/react',
+      'react-i18next',
+      'i18next',
+      'zustand',
+      'clsx',
+      'tailwind-merge',
+      '@phosphor-icons/react',
+    ],
   },
   ssr: {
-    noExternal: ['react-helmet-async'],
+    noExternal: ['react-helmet-async', 'motion/react', '@phosphor-icons/react'],
   },
   build: {
     minify: 'terser',
@@ -58,5 +104,22 @@ export default defineConfig({
       },
     },
     target: 'es2022',
+    rollupOptions: isSsrBuild
+      ? undefined
+      : {
+          output: {
+            manualChunks: {
+              vendor: ['react', 'react-dom', 'react-router-dom', 'react-helmet-async'],
+              animations: ['motion/react'],
+              i18n: [
+                'i18next',
+                'react-i18next',
+                'i18next-browser-languagedetector',
+                'i18next-http-backend',
+              ],
+              ui: ['clsx', 'tailwind-merge'],
+            },
+          },
+        },
   },
-});
+}));

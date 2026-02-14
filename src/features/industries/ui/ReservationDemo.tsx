@@ -7,7 +7,7 @@ export const ReservationDemo = () => {
 
     return (
         <div className="bg-surface-light rounded-3xl p-8 max-w-lg mx-auto shadow-2xl border border-white/20 overflow-hidden relative">
-            <div className="absolute top-0 left-0 w-full h-1 bg-primary"></div>
+            <div className="absolute top-0 inset-x-0 h-1 bg-primary"></div>
 
             <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
@@ -56,7 +56,7 @@ export const ReservationDemo = () => {
                     </div>
                     {step === 2 ? (
                         <div className="flex items-center gap-4 mt-2">
-                            <input type="range" min="1" max="10" className="w-full accent-primary" />
+                            <input type="range" min="1" max="10" className="w-full accent-primary" aria-label="Anzahl der Gäste" />
                             <span className="font-bold text-xl">2</span>
                         </div>
                     ) : (

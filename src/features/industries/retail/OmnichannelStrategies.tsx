@@ -1,32 +1,35 @@
 import React, { useState } from 'react';
-import { Icon } from '@/shared/ui/Icon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
+import { Storefront, Devices } from '@phosphor-icons/react';
 import { motion, AnimatePresence } from 'motion/react';
+import { useTranslation } from 'react-i18next';
 
 const OmnichannelStrategies: React.FC = () => {
+    const { t } = useTranslation('industries');
     // Visualizing the connection between Online and Offline world
     const [activeStrategy, setActiveStrategy] = useState<string>('click-collect');
 
-    const strategies = {
+    const strategies: Record<string, { title: string, desc: string, icon: string }> = {
         'click-collect': {
-            title: "Click & Collect",
-            desc: "Online kaufen, im Laden abholen. Spart Versand, bringt Upsell-Chancen.",
+            title: t('ecommerce-retail.features.omnichannel.strategies.click-collect.title'),
+            desc: t('ecommerce-retail.features.omnichannel.strategies.click-collect.desc'),
             icon: "shopping_bag"
         },
         'ship-from-store': {
-            title: "Ship from Store",
-            desc: "Nutzen Sie Ihre Filialen als Mini-Lager. Schnellere Lieferung, weniger Bestandsreste.",
+            title: t('ecommerce-retail.features.omnichannel.strategies.ship-from-store.title'),
+            desc: t('ecommerce-retail.features.omnichannel.strategies.ship-from-store.desc'),
             icon: "local_shipping"
         },
         'endless-aisle': {
-            title: "Endless Aisle",
-            desc: "Ware im Laden nicht da? Tablet zücken, online bestellen, nach Hause liefern.",
+            title: t('ecommerce-retail.features.omnichannel.strategies.endless-aisle.title'),
+            desc: t('ecommerce-retail.features.omnichannel.strategies.endless-aisle.desc'),
             icon: "tablet_mac"
         }
     };
 
     return (
         <div className="bg-white border border-gray-100 shadow-2xl rounded-3xl p-8 lg:p-12">
-            <h3 className="font-display font-bold text-2xl text-secondary mb-8 text-center">Unified Commerce</h3>
+            <h3 className="font-display font-bold text-2xl text-secondary mb-8 text-center">{t('ecommerce-retail.features.omnichannel.title')}</h3>
 
             <div className="flex flex-wrap justify-center gap-4 mb-12">
                 {Object.entries(strategies).map(([key, data]) => (
@@ -47,8 +50,8 @@ const OmnichannelStrategies: React.FC = () => {
                 <div className="flex justify-between w-full max-w-lg relative z-10">
                     {/* Store Node */}
                     <div className="w-24 h-24 bg-white rounded-2xl border border-blue-100 shadow-lg flex flex-col items-center justify-center">
-                        <Icon name="storefront" className="text-4xl text-blue-600 mb-1" />
-                        <span className="text-[10px] text-blue-900 uppercase font-bold">Filiale</span>
+                        <OptimizedIcon icon={Storefront} className="text-4xl text-blue-600 mb-1" />
+                        <span className="text-[10px] text-blue-900 uppercase font-bold">{t('ecommerce-retail.features.omnichannel.nodes.store')}</span>
                     </div>
 
                     {/* Animation Container */}
@@ -61,7 +64,7 @@ const OmnichannelStrategies: React.FC = () => {
                                 exit={{ opacity: 0, y: -10 }}
                                 className="absolute bg-white px-4 py-3 rounded-xl border border-gray-100 shadow-xl text-xs text-slate-600 text-center w-48 z-20"
                             >
-                                {strategies[activeStrategy as keyof typeof strategies].desc}
+                                {strategies[activeStrategy]?.desc}
                             </motion.div>
                         </AnimatePresence>
 
@@ -76,8 +79,8 @@ const OmnichannelStrategies: React.FC = () => {
 
                     {/* Online Node */}
                     <div className="w-24 h-24 bg-white rounded-2xl border border-purple-100 shadow-lg flex flex-col items-center justify-center">
-                        <Icon name="monitor_smartphone" className="text-4xl text-purple-600 mb-1" />
-                        <span className="text-[10px] text-purple-900 uppercase font-bold">Online Shop</span>
+                        <OptimizedIcon icon={Devices} className="text-4xl text-purple-600 mb-1" />
+                        <span className="text-[10px] text-purple-900 uppercase font-bold">{t('ecommerce-retail.features.omnichannel.nodes.online')}</span>
                     </div>
                 </div>
             </div>

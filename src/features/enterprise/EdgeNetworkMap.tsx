@@ -17,7 +17,7 @@ const locations = [
 export const EdgeNetworkMap: React.FC = () => {
     return (
         <div className="relative w-full aspect-video md:aspect-[2/1] bg-secondary/5 rounded-3xl border border-white/10 overflow-hidden flex items-center justify-center p-8">
-            <div className="absolute top-4 left-6 z-10">
+            <div className="absolute top-4 start-6 z-10">
                 <div className="text-xs font-bold text-primary uppercase tracking-widest mb-1">Global Edge Network</div>
                 <div className="text-2xl font-black text-secondary">Latency is the Enemy.</div>
             </div>

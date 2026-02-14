@@ -1,11 +1,13 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const CrmIntegrationFlow: React.FC = () => {
+    const { t } = useTranslation('industries');
     return (
         <div className="py-12">
             <div className="text-center mb-12">
-                <h3 className="font-display font-bold text-2xl text-secondary">Tech-Stack Integration</h3>
-                <p className="text-slate-500">Wir verbinden Ihre Webseite direkt mit Ihrem CRM. Keine manuelle Dateneingabe mehr.</p>
+                <h3 className="font-display font-bold text-2xl text-secondary">{t('unternehmensberatung.features.crm_flow.title')}</h3>
+                <p className="text-slate-500">{t('unternehmensberatung.features.crm_flow.description')}</p>
             </div>
 
             <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16 opacity-80 grayscale hover:grayscale-0 transition-all duration-500">

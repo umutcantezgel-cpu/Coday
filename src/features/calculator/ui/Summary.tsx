@@ -1,12 +1,15 @@
 import React, { useMemo } from 'react';
-import { Icon } from '@/shared/ui/Icon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
+import { CheckCircle, ArrowRight, Gauge } from '@phosphor-icons/react';
 import { useCalculatorStore } from '../model/store';
 import { useTranslation } from 'react-i18next';
 import { LocalizedNavLink as NavLink } from '@/shared/ui/LocalizedLink';
-import { modules } from '../../../data/modules';
+import { modules } from '@/shared/data/modules';
+import { formatCurrency } from '@/shared/utils/formatters';
 
 export const CalculatorSummary: React.FC = () => {
-  const { t } = useTranslation('calculator');
+  const { t, i18n } = useTranslation('calculator');
+  const locale = i18n.language;
   const selectedModuleIds = useCalculatorStore((state) => state.selectedModuleIds);
   const getPackageName = useCalculatorStore((state) => state.getPackageName);
 
@@ -39,7 +42,7 @@ export const CalculatorSummary: React.FC = () => {
       {/* Package Badge */}
       {packageName && (
         <div className="mb-4 p-3 bg-primary/5 rounded-xl border border-primary/10 flex items-center gap-2">
-          <Icon name="check_circle" className="text-primary" />
+          <OptimizedIcon icon={CheckCircle} className="text-primary" />
           <span className="text-sm font-bold text-gray-900">
             {t('summary.package', { defaultValue: 'Paket' })}:
           </span>
@@ -58,7 +61,7 @@ export const CalculatorSummary: React.FC = () => {
               {t(`modules.${module.id}.name`, module.name)}
             </span>
             <span className="text-gray-900 font-bold whitespace-nowrap">
-              {(module.priceInCents / 100).toLocaleString('de-DE')} €
+              {formatCurrency(module.priceInCents / 100, 'EUR', locale)}
             </span>
           </div>
         ))}
@@ -75,7 +78,7 @@ export const CalculatorSummary: React.FC = () => {
               </div>
             )}
             <div className="font-display font-black text-3xl text-gray-900 leading-none">
-              {(discountedOneTime / 100).toLocaleString('de-DE')} €
+              {formatCurrency(discountedOneTime / 100, 'EUR', locale)}
             </div>
           </div>
         </div>
@@ -84,7 +87,7 @@ export const CalculatorSummary: React.FC = () => {
         <div className="flex justify-between items-center text-sm">
           <span className="text-gray-600">{t('summary.monthly')}</span>
           <span className="font-bold text-gray-900">
-            {(totalMonthly / 100).toLocaleString('de-DE')} €
+            {formatCurrency(totalMonthly / 100, 'EUR', locale)}
           </span>
         </div>
       </div>
@@ -95,7 +98,7 @@ export const CalculatorSummary: React.FC = () => {
           className="w-full py-4 bg-primary text-white rounded-xl font-bold hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/25 flex items-center justify-center transform hover:-translate-y-1 text-lg animate-pulse hover:animate-none"
         >
           {t('summary.continue')}
-          <Icon name="arrow_forward" className="ml-2 text-lg" />
+          <OptimizedIcon icon={ArrowRight} className="ml-2 text-lg" />
         </NavLink>
         <div className="text-center">
           <button className="text-xs text-gray-400 hover:text-gray-600 underline">
@@ -106,7 +109,7 @@ export const CalculatorSummary: React.FC = () => {
 
       <div className="mt-6 p-4 bg-primary/5 rounded-xl border border-primary/10">
         <div className="flex items-center text-primary text-xs font-bold uppercase tracking-wider mb-1">
-          <Icon name="speed" className="mr-1 text-sm" />
+          <OptimizedIcon icon={Gauge} className="mr-1 text-sm" />
           {t('summary.guarantee.title')}
         </div>
         <p className="text-xs text-gray-600 leading-relaxed">

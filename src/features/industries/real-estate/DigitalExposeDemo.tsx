@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { useTranslation } from 'react-i18next';
 
 const DigitalExposeDemo: React.FC = () => {
+    const { t } = useTranslation('industries');
     const [view, setView] = useState<'pdf' | 'web'>('web');
 
     return (
         <div className="bg-surface-dark rounded-3xl p-8 lg:p-12">
             <div className="text-center mb-10">
-                <h3 className="font-display font-bold text-2xl text-white mb-2">Exposé Evolution</h3>
-                <p className="text-gray-400">Warum Kunden PDF-Anhänge hassen und Web-Exposés lieben.</p>
+                <h3 className="font-display font-bold text-2xl text-white mb-2">{t('immobilien-makler.features.expose_demo.title')}</h3>
+                <p className="text-gray-400">{t('immobilien-makler.features.expose_demo.subtitle')}</p>
             </div>
 
             {/* Toggle */}
@@ -18,13 +20,13 @@ const DigitalExposeDemo: React.FC = () => {
                         onClick={() => setView('pdf')}
                         className={`px-6 py-2 rounded-lg text-sm font-bold transition-all ${view === 'pdf' ? 'bg-white text-slate-900 shadow-lg' : 'text-gray-400 hover:text-white'}`}
                     >
-                        Old School (PDF)
+                        {t('immobilien-makler.features.expose_demo.toggles.pdf')}
                     </button>
                     <button
                         onClick={() => setView('web')}
                         className={`px-6 py-2 rounded-lg text-sm font-bold transition-all ${view === 'web' ? 'bg-primary text-white shadow-lg' : 'text-gray-400 hover:text-white'}`}
                     >
-                        Next Gen (Web)
+                        {t('immobilien-makler.features.expose_demo.toggles.web')}
                     </button>
                 </div>
             </div>
@@ -43,14 +45,14 @@ const DigitalExposeDemo: React.FC = () => {
                             {/* PDF Simulator */}
                             <div className="w-[300px] bg-white shadow-xl min-h-[400px] mb-4 p-6">
                                 <div className="h-4 w-3/4 bg-slate-800 mb-4"></div>
-                                <div className="h-32 w-full bg-slate-200 mb-4 flex items-center justify-center text-xs text-slate-400">Static Image</div>
+                                <div className="h-32 w-full bg-slate-200 mb-4 flex items-center justify-center text-xs text-slate-400">{t('immobilien-makler.features.expose_demo.pdf_view.image_alt')}</div>
                                 <div className="space-y-2">
                                     <div className="h-2 w-full bg-slate-100"></div>
                                     <div className="h-2 w-full bg-slate-100"></div>
                                     <div className="h-2 w-2/3 bg-slate-100"></div>
                                 </div>
                                 <div className="mt-8 border text-xs p-2 text-center text-red-500 border-red-200 bg-red-50">
-                                    Nicht mobil optimiert. <br />Muss heruntergeladen werden.
+                                    {t('immobilien-makler.features.expose_demo.pdf_view.warning').split('\n').map((line, i) => <React.Fragment key={i}>{line}<br /></React.Fragment>)}
                                 </div>
                             </div>
                         </motion.div>
@@ -74,7 +76,7 @@ const DigitalExposeDemo: React.FC = () => {
                                         transition={{ delay: 0.2 }}
                                         className="inline-block bg-primary/20 text-primary border border-primary/30 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4"
                                     >
-                                        Objektfilm
+                                        {t('immobilien-makler.features.expose_demo.web_view.badge')}
                                     </motion.div>
 
                                     <motion.h2
@@ -83,7 +85,7 @@ const DigitalExposeDemo: React.FC = () => {
                                         transition={{ delay: 0.3 }}
                                         className="text-4xl font-display font-black text-white mb-6"
                                     >
-                                        Villa am See
+                                        {t('immobilien-makler.features.expose_demo.web_view.title')}
                                     </motion.h2>
 
                                     <motion.div
@@ -93,22 +95,22 @@ const DigitalExposeDemo: React.FC = () => {
                                         className="flex gap-4"
                                     >
                                         <button className="bg-white text-slate-900 px-6 py-3 rounded-full font-bold hover:bg-gray-100 transition-colors">
-                                            360° Tour starten
+                                            {t('immobilien-makler.features.expose_demo.web_view.cta_tour')}
                                         </button>
                                         <button className="bg-white/10 text-white backdrop-blur border border-white/20 px-6 py-3 rounded-full font-bold hover:bg-white/20 transition-colors">
-                                            Exposé teilen
+                                            {t('immobilien-makler.features.expose_demo.web_view.cta_share')}
                                         </button>
                                     </motion.div>
 
                                     {/* Feature Badges */}
                                     <div className="absolute bottom-8 flex gap-8">
                                         <div className="text-center">
-                                            <div className="text-white font-black text-xl">240m²</div>
-                                            <div className="text-white/50 text-xs uppercase">Wohnfläche</div>
+                                            <div className="text-white font-black text-xl">{t('immobilien-makler.features.expose_demo.web_view.stats.area')}</div>
+                                            <div className="text-white/50 text-xs uppercase">{t('immobilien-makler.features.expose_demo.web_view.stats.area_label')}</div>
                                         </div>
                                         <div className="text-center">
-                                            <div className="text-white font-black text-xl">5</div>
-                                            <div className="text-white/50 text-xs uppercase">Zimmer</div>
+                                            <div className="text-white font-black text-xl">{t('immobilien-makler.features.expose_demo.web_view.stats.rooms')}</div>
+                                            <div className="text-white/50 text-xs uppercase">{t('immobilien-makler.features.expose_demo.web_view.stats.rooms_label')}</div>
                                         </div>
                                     </div>
                                 </div>

@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { m, PanInfo, useMotionValue, useTransform, MotionValue, Transition } from 'motion/react';
 import React, { JSX } from 'react';
 import { Icon } from './Icon';
+import { useRtl } from '@/shared/hooks/useRtl';
 
 export interface CarouselItem {
   title: string;
@@ -88,10 +89,11 @@ const CarouselItem: React.FC<CarouselItemProps> = ({
   return (
     <m.div
       key={`${item?.id ?? index}-${index}`}
-      className={`relative shrink-0 flex flex-col ${round
-        ? 'items-center justify-center text-center bg-surface-light border-0'
-        : 'items-start justify-between bg-white border border-gray-200 rounded-3xl shadow-sm hover:shadow-md transition-shadow'
-        } overflow-hidden cursor-grab active:cursor-grabbing`}
+      className={`relative shrink-0 flex flex-col ${
+        round
+          ? 'items-center justify-center text-center bg-surface-light border-0'
+          : 'items-start justify-between bg-white border border-gray-200 rounded-3xl shadow-sm hover:shadow-md transition-shadow'
+      } overflow-hidden cursor-grab active:cursor-grabbing`}
       style={{
         width: itemWidth,
         height: round ? itemWidth : '100%',
@@ -122,6 +124,7 @@ export default function Carousel({
   loop = false,
   round = false,
 }: CarouselProps): JSX.Element {
+  const { isRtl } = useRtl();
   const containerPadding = 16;
   const itemWidth = baseWidth - containerPadding * 2;
   const trackItemOffset = itemWidth + GAP;
@@ -150,11 +153,12 @@ export default function Carousel({
         container.removeEventListener('mouseleave', handleMouseLeave);
       };
     }
+    return undefined;
   }, [pauseOnHover]);
 
   useEffect(() => {
-    if (!autoplay || itemsForRender.length <= 1) return undefined;
-    if (pauseOnHover && isHovered) return undefined;
+    if (!autoplay || itemsForRender.length <= 1) return;
+    if (pauseOnHover && isHovered) return;
 
     const timer = setInterval(() => {
       setPosition((prev) => Math.min(prev + 1, itemsForRender.length - 1));
@@ -169,14 +173,14 @@ export default function Carousel({
     const timer = setTimeout(() => {
       setPosition((prev) => {
         if (prev !== startingPosition) {
-          x.set(-startingPosition * trackItemOffset);
+          x.set((isRtl ? 1 : -1) * startingPosition * trackItemOffset);
           return startingPosition;
         }
         return prev;
       });
     }, 0);
     return () => clearTimeout(timer);
-  }, [items.length, loop, trackItemOffset, x]);
+  }, [items.length, loop, trackItemOffset, x, isRtl]);
 
   useEffect(() => {
     if (!loop && position > itemsForRender.length - 1) {
@@ -186,6 +190,7 @@ export default function Carousel({
       }, 0);
       return () => clearTimeout(timer);
     }
+    return undefined;
   }, [itemsForRender.length, loop, position]);
 
   const effectiveTransition = isJumping ? { duration: 0 } : SPRING_OPTIONS;
@@ -205,7 +210,7 @@ export default function Carousel({
       setIsJumping(true);
       const target = 1;
       setPosition(target);
-      x.set(-target * trackItemOffset);
+      x.set((isRtl ? 1 : -1) * target * trackItemOffset);
       requestAnimationFrame(() => {
         setIsJumping(false);
         setIsAnimating(false);
@@ -217,7 +222,7 @@ export default function Carousel({
       setIsJumping(true);
       const target = items.length;
       setPosition(target);
-      x.set(-target * trackItemOffset);
+      x.set((isRtl ? 1 : -1) * target * trackItemOffset);
       requestAnimationFrame(() => {
         setIsJumping(false);
         setIsAnimating(false);
@@ -230,12 +235,15 @@ export default function Carousel({
 
   const handleDragEnd = (_: MouseEvent | TouchEvent | PointerEvent, info: PanInfo): void => {
     const { offset, velocity } = info;
-    const direction =
-      offset.x < -DRAG_BUFFER || velocity.x < -VELOCITY_THRESHOLD
-        ? 1
-        : offset.x > DRAG_BUFFER || velocity.x > VELOCITY_THRESHOLD
-          ? -1
-          : 0;
+    const isSwipeNext = isRtl
+      ? offset.x > DRAG_BUFFER || velocity.x > VELOCITY_THRESHOLD
+      : offset.x < -DRAG_BUFFER || velocity.x < -VELOCITY_THRESHOLD;
+
+    const isSwipePrev = isRtl
+      ? offset.x < -DRAG_BUFFER || velocity.x < -VELOCITY_THRESHOLD
+      : offset.x > DRAG_BUFFER || velocity.x > VELOCITY_THRESHOLD;
+
+    const direction = isSwipeNext ? 1 : isSwipePrev ? -1 : 0;
 
     if (direction === 0) return;
 
@@ -249,11 +257,16 @@ export default function Carousel({
   const dragProps = loop
     ? {}
     : {
-      dragConstraints: {
-        left: -trackItemOffset * Math.max(itemsForRender.length - 1, 0),
-        right: 0,
-      },
-    };
+        dragConstraints: isRtl
+          ? {
+              right: trackItemOffset * Math.max(itemsForRender.length - 1, 0),
+              left: 0,
+            }
+          : {
+              left: -trackItemOffset * Math.max(itemsForRender.length - 1, 0),
+              right: 0,
+            },
+      };
 
   const activeIndex =
     items.length === 0
@@ -265,10 +278,11 @@ export default function Carousel({
   return (
     <div
       ref={containerRef}
-      className={`relative overflow-hidden p-4 ${round
-        ? 'rounded-full border border-gray-100'
-        : 'rounded-[2rem] border border-gray-100 bg-gray-50/50'
-        }`}
+      className={`relative overflow-hidden p-4 ${
+        round
+          ? 'rounded-full border border-gray-100'
+          : 'rounded-[2rem] border border-gray-100 bg-gray-50/50'
+      }`}
       style={{
         width: `${baseWidth}px`,
         ...(round && { height: `${baseWidth}px` }),
@@ -286,7 +300,7 @@ export default function Carousel({
           x,
         }}
         onDragEnd={handleDragEnd}
-        animate={{ x: -(position * trackItemOffset) }}
+        animate={{ x: (isRtl ? 1 : -1) * (position * trackItemOffset) }}
         transition={effectiveTransition}
         onAnimationStart={handleAnimationStart}
         onAnimationComplete={handleAnimationComplete}
@@ -311,14 +325,15 @@ export default function Carousel({
           {items.map((_, index) => (
             <m.div
               key={index}
-              className={`h-2 w-2 rounded-full cursor-pointer transition-colors duration-150 ${activeIndex === index
-                ? round
-                  ? 'bg-white'
-                  : 'bg-[#333333]'
-                : round
-                  ? 'bg-[#555]'
-                  : 'bg-[rgba(51,51,51,0.4)]'
-                }`}
+              className={`h-2 w-2 rounded-full cursor-pointer transition-colors duration-150 ${
+                activeIndex === index
+                  ? round
+                    ? 'bg-white'
+                    : 'bg-[#333333]'
+                  : round
+                    ? 'bg-[#555]'
+                    : 'bg-[rgba(51,51,51,0.4)]'
+              }`}
               animate={{
                 scale: activeIndex === index ? 1.2 : 1,
               }}

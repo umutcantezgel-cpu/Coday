@@ -2,7 +2,7 @@ import React from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Check, ArrowRight } from '@phosphor-icons/react';
+import { Icon } from '@/shared/ui/Icon';
 import ScrollFloat from '../../../shared/ui/ScrollFloat';
 import ScrollReveal from '../../../shared/ui/ScrollReveal';
 import { OptimizedImage } from '../../../shared/ui/OptimizedImage';
@@ -87,7 +87,7 @@ export const IndustryLayout: React.FC<IndustryLayoutProps> = ({
         <div className="bg-background-light min-h-screen text-foreground">
             <nav className="fixed top-0 w-full z-50 p-6 mix-blend-difference text-white">
                 <Link to="/work" className="inline-flex items-center gap-2 hover:opacity-70 transition-opacity">
-                    <ArrowLeft size={20} />
+                    <Icon name="arrow_left" size="md" />
                     <span className="font-medium">Back</span>
                 </Link>
             </nav>
@@ -131,7 +131,7 @@ export const IndustryLayout: React.FC<IndustryLayoutProps> = ({
                         {solutions.map((sol, i) => (
                             <div key={i} className="flex gap-6 group">
                                 <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
-                                    <Check size={24} />
+                                    <Icon name="check" className="text-xl" />
                                 </div>
                                 <div>
                                     <h4 className="text-2xl font-bold mb-2">{sol.title}</h4>
@@ -153,7 +153,7 @@ export const IndustryLayout: React.FC<IndustryLayoutProps> = ({
                         to="/contact"
                         className="inline-flex items-center gap-4 bg-white text-primary px-8 py-4 rounded-full font-bold text-xl hover:scale-105 transition-transform"
                     >
-                        Strategiegespräch buchen <ArrowRight />
+                        Strategiegespräch buchen <Icon name="arrow_right" />
                     </Link>
                 </div>
                 <div className="absolute inset-0 bg-black/10 mix-blend-overlay"></div>

@@ -1,17 +1,20 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { CalendarBlank, User, ShieldCheck } from '@phosphor-icons/react';
+import { useRtl } from '@/shared/hooks/useRtl';
 
 export const AppointmentFlow = () => {
+    const { isRtl } = useRtl();
+
     return (
         <div className="relative max-w-2xl mx-auto">
             {/* Timeline Line */}
-            <div className="absolute left-8 top-0 bottom-0 w-px bg-primary/20"></div>
+            <div className="absolute start-8 top-0 bottom-0 w-px bg-primary/20"></div>
 
             <div className="space-y-8 relative">
                 {/* Step 1 */}
                 <motion.div
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={{ opacity: 0, x: isRtl ? 20 : -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     className="flex gap-6 items-start"
                 >
@@ -26,7 +29,7 @@ export const AppointmentFlow = () => {
 
                 {/* Step 2 */}
                 <motion.div
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={{ opacity: 0, x: isRtl ? 20 : -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.2 }}
                     className="flex gap-6 items-start"
@@ -42,7 +45,7 @@ export const AppointmentFlow = () => {
 
                 {/* Step 3 */}
                 <motion.div
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={{ opacity: 0, x: isRtl ? 20 : -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.4 }}
                     className="flex gap-6 items-start"

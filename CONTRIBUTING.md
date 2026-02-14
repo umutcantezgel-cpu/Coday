@@ -1,53 +1,45 @@
-# Contributing to Coday
+# 👷 Contributing to Coday
 
-We welcome contributions to **Coday**. Please follow these guidelines to ensure the project remains high-quality, performant, and maintainable.
+We follow a strict set of guidelines to ensure code quality and consistency.
 
-## 🛠 Development Standards
+## 🛠️ Development Workflow
 
-### "Green Build" Policy
+1.  **Branching:**
+    - `main` is stable/production.
+    - Create feature branches from `develop` (or `main` if `develop` doesn't match).
+    - Format: `feature/feature-name` or `fix/bug-description`.
 
-We enforce a strict **Green Build** policy. A Pull Request cannot be merged if:
+2.  **Commits:**
+    - Use Conventional Commits.
+    - `feat: add new calculator`
+    - `fix: resolve mobile menu overlap`
+    - `docs: update readme`
+    - `style: fix padding on hero`
+    - `refactor: optimize image loading`
 
-- ❌ Code does not compile (TypeScript errors).
-- ❌ Linter reports errors (`npm run lint` fails).
-- ❌ Tests fail (`npm run test` fails).
+3.  **Pull Requests:**
+    - Keep PRs small and focused.
+    - Add a description of what was changed and _why_.
+    - Include screenshots for UI changes.
 
-### Code Style
+## 🎨 Code Style
 
-- **TypeScript**: Use strict typing. Avoid `any` unless absolutely necessary (and documented).
-- **Tailwind**: Use utility classes over custom CSS. Use `index.css` only for global styles or complex animations.
-- **Imports**: Organize imports:
-  1. React/External Libs
-  2. Absolute imports (`@/...`)
-  3. Relative imports
+- **Prettier:** Run `npx prettier --write .` before committing.
+- **Imports:** Group imports:
+  1.  React / Library imports
+  2.  Features / Widgets
+  3.  Shared / UI
+  4.  Local styles / types
+- **Files:** Use PascalCase for React components (`MyComponent.tsx`) and camelCase for utilities (`myUtility.ts`).
 
-## 🏗 Project Structure (FSD)
+## 🧪 Testing
 
-We use [Feature-Sliced Design](https://feature-sliced.design/).
+- **Manual Verification:** Always test your changes in both Desktop and Mobile viewports.
+- **Localization:** Check that your changes work in both English and German. Do not hardcode text strings.
 
-- `src/app`: Providers, styles, global config.
-- `src/pages`: Routing components.
-- `src/widgets`: Compositional blocks (e.g., Header, Footer, Hero).
-- `src/features`: User actions (e.g., Auth, ThemeSwitcher).
-- `src/entities`: Business entities (e.g., User, Product).
-- `src/shared`: Reusable primitives (Buttons, Inputs, API).
+## 🚫 forbidden Patterns
 
-## 🚀 Workflow
-
-1.  **Clone**: `git clone ...`
-2.  **Install**: `npm install`
-3.  **Dev**: `npm run dev`
-4.  **Verify**: `npm run typecheck && npm run lint`
-
-## 📦 Commits
-
-Please use semantic commit messages:
-
-- `feat:` New feature
-- `fix:` Bug fix
-- `docs:` Documentation
-- `style:` Formatting (no logic change)
-- `refactor:` Code restructuring
-- `chore:` Maintenance
-
-Thank you for building with us!
+- ❌ `console.log` in production code.
+- ❌ Hardcoded secrets (API Keys).
+- ❌ Inline styles (Use Tailwind classes).
+- ❌ `any` type in TypeScript (unless absolutely necessary).

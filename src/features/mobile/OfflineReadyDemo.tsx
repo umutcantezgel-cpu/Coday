@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Icon } from '@/shared/ui/Icon';
+import { WifiHigh, WifiSlash, Image, CloudSlash, Info } from '@phosphor-icons/react';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 
 const OfflineReadyDemo: React.FC = () => {
     const [isOnline, setIsOnline] = useState(true);
@@ -18,7 +19,7 @@ const OfflineReadyDemo: React.FC = () => {
                     onClick={() => setIsOnline(!isOnline)}
                     className={`cursor-pointer px-4 py-2 rounded-full border flex items-center gap-2 transition-all ${isOnline ? 'bg-green-500/20 border-green-500 text-green-400' : 'bg-red-500/20 border-red-500 text-red-400'}`}
                 >
-                    <Icon name={isOnline ? 'wifi' : 'wifi_off'} className="text-lg" />
+                    <OptimizedIcon icon={isOnline ? WifiHigh : WifiSlash} className="text-lg" />
                     <span className="font-bold text-sm uppercase tracking-wider">{isOnline ? 'Internet On' : 'Offline Mode'}</span>
                 </div>
             </div>
@@ -27,17 +28,17 @@ const OfflineReadyDemo: React.FC = () => {
             <div className="grid lg:grid-cols-2 gap-8 relative z-10">
                 {/* Traditional App */}
                 <div className="bg-white/5 rounded-2xl p-6 border border-white/10 opacity-50 relative pointer-events-none">
-                    <span className="absolute top-4 left-4 text-xs font-bold uppercase tracking-wider text-gray-500">Traditional Web App</span>
+                    <span className="absolute top-4 start-4 text-xs font-bold uppercase tracking-wider text-gray-500">Traditional Web App</span>
 
                     <div className="mt-8 flex items-center justify-center h-48 bg-black/20 rounded-xl border border-white/5">
                         {isOnline ? (
                             <div className="text-center">
-                                <Icon name="image" className="text-4xl text-gray-400 mb-2" />
+                                <OptimizedIcon icon={Image} className="text-4xl text-gray-400 mb-2" />
                                 <p className="text-gray-500 text-sm">Content Loaded</p>
                             </div>
                         ) : (
                             <div className="text-center animate-pulse">
-                                <Icon name="cloud_off" className="text-4xl text-red-400 mb-2" />
+                                <OptimizedIcon icon={CloudSlash} className="text-4xl text-red-400 mb-2" />
                                 <p className="text-red-400 font-bold">No Internet Connection.</p>
                                 <p className="text-gray-500 text-xs mt-2">Dino Game starts...</p>
                             </div>
@@ -75,7 +76,7 @@ const OfflineReadyDemo: React.FC = () => {
                                     animate={{ opacity: 1, height: 'auto' }}
                                     className="bg-yellow-500/20 border border-yellow-500/50 p-3 rounded-lg flex items-center gap-3 text-yellow-200 text-xs"
                                 >
-                                    <Icon name="info" className="text-sm" />
+                                    <OptimizedIcon icon={Info} className="text-sm" />
                                     Sie sind offline, aber die App funktioniert weiter. Daten werden synchronisiert, sobald Sie wieder online sind.
                                 </motion.div>
                             )}

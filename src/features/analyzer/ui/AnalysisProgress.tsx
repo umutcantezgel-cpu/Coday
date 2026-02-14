@@ -1,25 +1,28 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { useAnalyzerStore } from '../model/store';
-import { Icon } from '@/shared/ui/Icon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
+import { Lightning, MagnifyingGlass, Shield, Wheelchair, Palette, FileText, Check, ArrowsClockwise } from '@phosphor-icons/react';
 import { staggerContainer, fadeUpVariants, STAGGER, TRANSITION } from '@/shared/lib/motion';
-
-const AGENTS = [
-  { id: 'performance', name: 'Performance', icon: 'speed', color: 'from-orange-500 to-red-500' },
-  { id: 'seo', name: 'SEO', icon: 'search', color: 'from-green-500 to-emerald-500' },
-  { id: 'security', name: 'Sicherheit', icon: 'shield', color: 'from-blue-500 to-cyan-500' },
-  {
-    id: 'accessibility',
-    name: 'Barrierefreiheit',
-    icon: 'accessibility',
-    color: 'from-purple-500 to-violet-500',
-  },
-  { id: 'ux', name: 'UX/Design', icon: 'palette', color: 'from-pink-500 to-rose-500' },
-  { id: 'content', name: 'Content', icon: 'article', color: 'from-yellow-500 to-amber-500' },
-];
+import { useTranslation } from 'react-i18next';
 
 export const AnalysisProgress: React.FC = () => {
   const { progress, status } = useAnalyzerStore();
+  const { t } = useTranslation('analyzer');
+
+  const AGENTS = [
+    { id: 'performance', name: t('agents.performance'), icon: Lightning, color: 'from-orange-500 to-red-500' },
+    { id: 'seo', name: t('agents.seo'), icon: MagnifyingGlass, color: 'from-green-500 to-emerald-500' },
+    { id: 'security', name: t('agents.security'), icon: Shield, color: 'from-blue-500 to-cyan-500' },
+    {
+      id: 'accessibility',
+      name: t('agents.accessibility'),
+      icon: Wheelchair,
+      color: 'from-purple-500 to-violet-500',
+    },
+    { id: 'ux', name: t('agents.ux'), icon: Palette, color: 'from-pink-500 to-rose-500' },
+    { id: 'content', name: t('agents.content'), icon: FileText, color: 'from-yellow-500 to-amber-500' },
+  ];
 
   if (status !== 'analyzing' && status !== 'validating') {
     return null;
@@ -31,7 +34,7 @@ export const AnalysisProgress: React.FC = () => {
       <div className="mb-12">
         <div className="flex justify-between items-center mb-3">
           <span className="text-sm font-bold text-gray-600 uppercase tracking-wider">
-            Analyse läuft...
+            {t('progress.analyzing')}
           </span>
           <span className="text-sm font-bold text-primary">{Math.round(progress.progress)}%</span>
         </div>
@@ -64,12 +67,11 @@ export const AnalysisProgress: React.FC = () => {
               className={`
                 relative p-4 rounded-2xl border-2 text-center
                 transition-all duration-300
-                ${
-                  isCompleted
-                    ? 'border-green-500 bg-green-50'
-                    : isActive
-                      ? 'border-primary bg-primary/5 animate-pulse'
-                      : 'border-gray-200 bg-white'
+                ${isCompleted
+                  ? 'border-green-500 bg-green-50'
+                  : isActive
+                    ? 'border-primary bg-primary/5 animate-pulse'
+                    : 'border-gray-200 bg-white'
                 }
               `}
             >
@@ -77,21 +79,20 @@ export const AnalysisProgress: React.FC = () => {
               <div
                 className={`
                   w-12 h-12 mx-auto mb-3 rounded-xl flex items-center justify-center
-                  ${
-                    isCompleted
-                      ? 'bg-green-500 text-white'
-                      : isActive
-                        ? `bg-gradient-to-br ${agent.color} text-white`
-                        : 'bg-gray-100 text-gray-400'
+                  ${isCompleted
+                    ? 'bg-green-500 text-white'
+                    : isActive
+                      ? `bg-gradient-to-br ${agent.color} text-white`
+                      : 'bg-gray-100 text-gray-400'
                   }
                 `}
               >
                 {isCompleted ? (
-                  <Icon name="check" />
+                  <OptimizedIcon icon={Check} />
                 ) : isActive ? (
-                  <Icon name="refresh_cw" className="animate-spin" />
+                  <OptimizedIcon icon={ArrowsClockwise} className="animate-spin" />
                 ) : (
-                  <Icon name={agent.icon} />
+                  <OptimizedIcon icon={agent.icon} />
                 )}
               </div>
 
@@ -128,8 +129,8 @@ export const AnalysisProgress: React.FC = () => {
         className="text-center text-gray-500 mt-8"
       >
         {progress.currentAgent
-          ? `${AGENTS.find((a) => a.id === progress.currentAgent)?.name || 'Agent'} analysiert deine Website...`
-          : 'Verbindung zur Website wird hergestellt...'}
+          ? t('progress.agent_analyzing', { agent: AGENTS.find((a) => a.id === progress.currentAgent)?.name || 'Agent' })
+          : t('progress.connection_establishing')}
       </motion.p>
     </div>
   );

@@ -1,9 +1,13 @@
 import React from 'react';
 import { Icon } from '@/shared/ui/Icon';
 import { useCalculatorStore } from '../model/store';
-import { modules } from '../../../data/modules';
+import { modules } from '@/shared/data/modules';
+import { useTranslation } from 'react-i18next';
+import { formatCurrency } from '@/shared/utils/formatters';
 
 export const ProjectSummary: React.FC = () => {
+    const { i18n } = useTranslation();
+    const locale = i18n.language;
     const selectedModuleIds = useCalculatorStore(state => state.selectedModuleIds);
     const selectedPackageId = useCalculatorStore(state => state.selectedPackageId);
 
@@ -34,7 +38,9 @@ export const ProjectSummary: React.FC = () => {
                 {selectedModules.map(m => (
                     <div key={m.id} className="flex justify-between text-sm">
                         <span className="text-gray-600">{m.name}</span>
-                        <span className="font-medium">{(m.priceInCents / 100).toLocaleString('de-DE')}€</span>
+                        <span className="font-medium">
+                            {formatCurrency(m.priceInCents / 100, 'EUR', locale)}
+                        </span>
                     </div>
                 ))}
             </div>
@@ -42,11 +48,15 @@ export const ProjectSummary: React.FC = () => {
             <div className="pt-4 border-t border-gray-100 bg-gray-50/50 -mx-6 -mb-6 p-6 rounded-b-2xl">
                 <div className="flex justify-between items-center mb-1">
                     <span className="text-gray-500 text-sm">Einmalig ca.</span>
-                    <span className="font-bold text-gray-900 text-lg">{(totalOneTime / 100).toLocaleString('de-DE')}€</span>
+                    <span className="font-bold text-gray-900 text-lg">
+                        {formatCurrency(totalOneTime / 100, 'EUR', locale)}
+                    </span>
                 </div>
                 <div className="flex justify-between items-center">
                     <span className="text-gray-500 text-sm">Monatlich ca.</span>
-                    <span className="font-bold text-gray-700">{(totalMonthly / 100).toLocaleString('de-DE')}€</span>
+                    <span className="font-bold text-gray-700">
+                        {formatCurrency(totalMonthly / 100, 'EUR', locale)}
+                    </span>
                 </div>
             </div>
         </div>

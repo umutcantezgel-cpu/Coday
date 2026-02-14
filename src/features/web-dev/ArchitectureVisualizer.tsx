@@ -1,43 +1,45 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion } from 'motion/react';
 import { STAGGER, DURATION } from '@/shared/lib/motion';
 
 const ArchitectureVisualizer: React.FC = () => {
   const [activeNode, setActiveNode] = useState<string | null>(null);
+  const { t } = useTranslation('services');
 
   const nodes = [
     {
       id: 'cms',
-      label: 'Headless CMS',
-      desc: 'Sanity / Supabase',
-      details: 'Structured Content Lake',
+      label: t('web_development_page.architecture.visualizer.cms.label'),
+      desc: t('web_development_page.architecture.visualizer.cms.desc'),
+      details: t('web_development_page.architecture.visualizer.cms.details'),
       x: 10,
       y: 50,
       color: '#EC4899', // Pink
     },
     {
       id: 'build',
-      label: 'Build System',
-      desc: 'Next.js / CI/CD',
-      details: 'Static & Server Side Generation',
+      label: t('web_development_page.architecture.visualizer.build.label'),
+      desc: t('web_development_page.architecture.visualizer.build.desc'),
+      details: t('web_development_page.architecture.visualizer.build.details'),
       x: 40,
       y: 50,
       color: '#1A9A9A', // Teal (Primary)
     },
     {
       id: 'edge',
-      label: 'Edge Network',
-      desc: 'Vercel / CDN',
-      details: 'Global Distribution <50ms',
+      label: t('web_development_page.architecture.visualizer.edge.label'),
+      desc: t('web_development_page.architecture.visualizer.edge.desc'),
+      details: t('web_development_page.architecture.visualizer.edge.details'),
       x: 70,
       y: 50,
       color: '#F59E0B', // Amber
     },
     {
       id: 'user',
-      label: 'End User',
-      desc: 'Browser / Device',
-      details: 'Instant Interaction',
+      label: t('web_development_page.architecture.visualizer.user.label'),
+      desc: t('web_development_page.architecture.visualizer.user.desc'),
+      details: t('web_development_page.architecture.visualizer.user.details'),
       x: 90,
       y: 50,
       color: '#3B82F6', // Blue
@@ -122,7 +124,7 @@ const ArchitectureVisualizer: React.FC = () => {
 
       <div className="absolute bottom-4 left-0 w-full text-center">
         <p className="text-gray-500 text-xs uppercase tracking-widest font-mono">
-          Modern Headless Architecture Flow
+          {t('web_development_page.architecture.visualizer.footer')}
         </p>
       </div>
     </div>

@@ -1,12 +1,14 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { CircularGauge } from './CircularGauge';
-import { Icon } from '@/shared/ui/Icon';
+import { WarningCircle, ArrowRight } from '@phosphor-icons/react';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
+import { useTranslation } from 'react-i18next';
 
 interface ScoreCardProps {
     title: string;
     score: number;
-    icon: string;
+    icon: React.ElementType;
     color: string;
     summary: string;
     onClick?: () => void;
@@ -20,9 +22,9 @@ export const ScoreCard: React.FC<ScoreCardProps> = ({
     summary,
     onClick,
 }) => {
+    const { t } = useTranslation('analyzer');
+
     // Determine score color
-
-
     const getScoreBg = (score: number) => {
         if (score === -1) return 'bg-gray-50 border-gray-200 border-dashed opacity-75';
         if (score >= 80) return 'bg-green-50 border-green-200';
@@ -45,7 +47,7 @@ export const ScoreCard: React.FC<ScoreCardProps> = ({
             <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
                     <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${score === -1 ? 'from-gray-400 to-gray-500' : color} flex items-center justify-center text-white`}>
-                        <Icon name={icon} className="text-xl" />
+                        <OptimizedIcon icon={icon} className="text-xl" />
                     </div>
                     <h3 className="font-bold text-gray-900">{title}</h3>
                 </div>
@@ -56,13 +58,13 @@ export const ScoreCard: React.FC<ScoreCardProps> = ({
             <div className="flex justify-between items-start mb-4">
                 <div className="flex-1 pr-4">
                     <p className="text-sm text-gray-600 line-clamp-3">
-                        {score === -1 ? "Analyse fehlgeschlagen (Timeout/Error)" : (summary || "Warte auf Analyse...")}
+                        {score === -1 ? t('score_card.failed') : (summary || t('score_card.waiting'))}
                     </p>
                 </div>
                 <div className="flex-shrink-0">
                     {score === -1 ? (
                         <div className="w-16 h-16 rounded-full border-4 border-gray-200 flex items-center justify-center bg-white">
-                            <Icon name="error_outline" className="text-gray-400 text-2xl" />
+                            <OptimizedIcon icon={WarningCircle} className="text-gray-400 text-2xl" />
                         </div>
                     ) : (
                         <CircularGauge score={score} size={64} color={color} />
@@ -72,7 +74,7 @@ export const ScoreCard: React.FC<ScoreCardProps> = ({
 
             {/* Hover Arrow */}
             <div className="flex justify-end mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                <Icon name="arrow_forward" className="text-primary text-sm" />
+                <OptimizedIcon icon={ArrowRight} className="text-primary text-sm" />
             </div>
 
 
