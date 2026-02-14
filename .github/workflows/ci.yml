@@ -2,28 +2,36 @@ name: CI
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main ]
   pull_request:
-    branches: [ main, master ]
+    branches: [ main ]
 
 jobs:
   validate:
+    name: Validate Codebase
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: npm ci
 
-      - name: Validate (Lint, Typecheck, Test)
-        run: npm run validate
+      - name: Linting
+        run: npm run lint
 
-      - name: Build
+      - name: Type Checking
+        run: npm run typecheck
+
+      - name: Test
+        run: npm run test:run
+
+      - name: Build Verification
         run: npm run build
