@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense, lazy } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useTranslation } from 'react-i18next';
 import BookingCalendar from '../../booking/ui/BookingCalendar';
-import ApplicationWizard from '../ApplicationWizard';
+const ApplicationWizard = lazy(() => import('../ApplicationWizard'));
 import { Icon } from '@/shared/ui/Icon';
 
 export const MobileContactLayout: React.FC = () => {
@@ -56,7 +56,13 @@ export const MobileContactLayout: React.FC = () => {
                   )}
                 </p>
               </div>
-              <ApplicationWizard />
+              <Suspense
+                fallback={
+                  <div className="h-[400px] w-full bg-gray-100 rounded-2xl animate-pulse" />
+                }
+              >
+                <ApplicationWizard />
+              </Suspense>
             </motion.div>
           )}
         </AnimatePresence>
