@@ -20,7 +20,7 @@ export const Footer: React.FC = () => {
               <OptimizedImage
                 src="/images/brand/coday-logo-footer.webp"
                 alt="Coday"
-                className="h-16 w-auto mb-6 !bg-transparent"
+                className="h-10 sm:h-16 w-auto mb-6 !bg-transparent"
               />
             </div>
             <p className="text-sm text-gray-400 max-w-xs mb-6 font-medium">{t('footer.slogan')}</p>
