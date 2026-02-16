@@ -13,7 +13,9 @@ const Process: React.FC = () => {
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-4 text-center">
         <div className="max-w-4xl mx-auto relative z-10">
-          <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">{t('hero.badge')}</span>
+          <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
+            {t('hero.badge')}
+          </span>
           <h1 className="font-display font-black text-5xl sm:text-7xl text-secondary mb-6 tracking-tight">
             <BlurText
               text={t('hero.title_start')}
@@ -23,7 +25,11 @@ const Process: React.FC = () => {
               className="inline-block mr-4"
             />
             <br className="hidden md:block" />
-            <GradientText colors={['#3B82F6', '#10B981', '#F59E0B']} animationSpeed={5} className="inline-block">
+            <GradientText
+              colors={['#3B82F6', '#10B981', '#F59E0B']}
+              animationSpeed={5}
+              className="inline-block"
+            >
               {t('hero.title_gradient')}
             </GradientText>
           </h1>
@@ -50,9 +56,15 @@ const Process: React.FC = () => {
       {/* Guarantee Section */}
       <section className="py-32 bg-gray-50 text-center">
         <div className="max-w-3xl mx-auto px-4">
-          <h2 className="font-display font-bold text-4xl text-secondary mb-8">{t('guarantee.title')}</h2>
+          <h2 className="font-display font-bold text-4xl text-secondary mb-8">
+            {t('guarantee.title')}
+          </h2>
           <div className="grid md:grid-cols-3 gap-8">
-            {(t('guarantee.items', { returnObjects: true }) as Array<{ title: string; desc: string }>).map((item, idx) => (
+            {(
+              (Array.isArray(t('guarantee.items', { returnObjects: true }))
+                ? t('guarantee.items', { returnObjects: true })
+                : []) as Array<{ title: string; desc: string }>
+            ).map((item, idx) => (
               <div key={idx} className="bg-white p-8 rounded-2xl shadow-sm">
                 <h3 className="font-bold text-xl mb-2">{item.title}</h3>
                 <p className="text-gray-500">{item.desc}</p>
@@ -61,7 +73,6 @@ const Process: React.FC = () => {
           </div>
         </div>
       </section>
-
     </div>
   );
 };

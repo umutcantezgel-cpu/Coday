@@ -3,7 +3,7 @@ import { initReactI18next } from 'react-i18next';
 
 // Bundle translations directly using Vite's glob import
 // This ensures they are available in the serverless function without depending on file system access
-const localeFiles = import.meta.glob('../public/locales/*/*.json', { eager: true });
+const localeFiles = import.meta.glob('/public/locales/*/*.json', { eager: true });
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const resources: Record<string, Record<string, any>> = {};
