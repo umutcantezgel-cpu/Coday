@@ -1090,20 +1090,10 @@
       <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/services/industries/startups-tech" />
   </url>
   <url>
-    <loc>https://www.codayweb.de/de/knowledge/blog/die-5-groessten-fehler-im-webdesign</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/knowledge/blog/die-5-groessten-fehler-im-webdesign" />
-      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/knowledge/blog/the-5-deadly-web-design-mistakes" />
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/knowledge/blog/die-5-groessten-fehler-im-webdesign" />
-  </url>
-  <url>
     <loc>https://www.codayweb.de/en/knowledge/blog/the-5-deadly-web-design-mistakes</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/knowledge/blog/die-5-groessten-fehler-im-webdesign" />
       <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/knowledge/blog/the-5-deadly-web-design-mistakes" />
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/knowledge/blog/die-5-groessten-fehler-im-webdesign" />
   </url>
   <url>
     <loc>https://www.codayweb.de/de/knowledge/blog/daten-luegen-nicht-business-intelligence</loc>
@@ -1241,10 +1231,163 @@
       <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/knowledge/blog/anti-ai-manifest-menschliches-design" />
   </url>
   <url>
-    <loc>https://www.codayweb.de/de/knowledge/blog/agentur-killer-modell</loc>
+    <loc>https://www.codayweb.de/de/knowledge/blog/hidden-roi-ux</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/knowledge/blog/agentur-killer-modell" />
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/knowledge/blog/agentur-killer-modell" />
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/knowledge/blog/hidden-roi-ux" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/knowledge/blog/agency-killer-model" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/knowledge/blog/hidden-roi-ux" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/en/knowledge/blog/agency-killer-model</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/knowledge/blog/hidden-roi-ux" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/knowledge/blog/agency-killer-model" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/knowledge/blog/hidden-roi-ux" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/de/knowledge/blog/security-gap</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/knowledge/blog/security-gap" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/knowledge/blog/high-performance-web-vitals" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/knowledge/blog/security-gap" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/en/knowledge/blog/high-performance-web-vitals</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/knowledge/blog/security-gap" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/knowledge/blog/high-performance-web-vitals" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/knowledge/blog/security-gap" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/de/knowledge/blog/ab-testing-myths</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/knowledge/blog/ab-testing-myths" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/knowledge/blog/digital-sovereignty-public-sector" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/knowledge/blog/ab-testing-myths" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/en/knowledge/blog/digital-sovereignty-public-sector</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/knowledge/blog/ab-testing-myths" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/knowledge/blog/digital-sovereignty-public-sector" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/knowledge/blog/ab-testing-myths" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/de/knowledge/blog/data-maturity</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/knowledge/blog/data-maturity" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/knowledge/blog/psychology-of-dark-mode" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/knowledge/blog/data-maturity" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/en/knowledge/blog/psychology-of-dark-mode</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/knowledge/blog/data-maturity" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/knowledge/blog/psychology-of-dark-mode" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/knowledge/blog/data-maturity" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/de/knowledge/blog/mobile-first-lie</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/knowledge/blog/mobile-first-lie" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/knowledge/blog/headless-cms-vs-wordpress" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/knowledge/blog/mobile-first-lie" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/en/knowledge/blog/headless-cms-vs-wordpress</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/knowledge/blog/mobile-first-lie" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/knowledge/blog/headless-cms-vs-wordpress" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/knowledge/blog/mobile-first-lie" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/de/knowledge/blog/agency-pricing-secrets</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/knowledge/blog/agency-pricing-secrets" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/knowledge/blog/enterprise-security-standards" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/knowledge/blog/agency-pricing-secrets" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/en/knowledge/blog/enterprise-security-standards</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/knowledge/blog/agency-pricing-secrets" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/knowledge/blog/enterprise-security-standards" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/knowledge/blog/agency-pricing-secrets" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/de/knowledge/blog/tech-sovereignty</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/knowledge/blog/tech-sovereignty" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/knowledge/blog/ozg-citizen-experience" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/knowledge/blog/tech-sovereignty" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/en/knowledge/blog/ozg-citizen-experience</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/knowledge/blog/tech-sovereignty" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/knowledge/blog/ozg-citizen-experience" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/knowledge/blog/tech-sovereignty" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/de/knowledge/blog/web-history-future</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/knowledge/blog/web-history-future" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/knowledge/blog/death-of-third-party-cookies" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/knowledge/blog/web-history-future" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/en/knowledge/blog/death-of-third-party-cookies</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/knowledge/blog/web-history-future" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/knowledge/blog/death-of-third-party-cookies" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/knowledge/blog/web-history-future" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/de/knowledge/blog/design-systems-at-scale</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/knowledge/blog/design-systems-at-scale" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/knowledge/blog/design-systems-at-scale" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/knowledge/blog/design-systems-at-scale" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/en/knowledge/blog/design-systems-at-scale</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/knowledge/blog/design-systems-at-scale" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/knowledge/blog/design-systems-at-scale" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/knowledge/blog/design-systems-at-scale" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/de/knowledge/blog/future-of-ecommerce-cro</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/knowledge/blog/future-of-ecommerce-cro" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/knowledge/blog/future-of-ecommerce-cro" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/knowledge/blog/future-of-ecommerce-cro" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/en/knowledge/blog/future-of-ecommerce-cro</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/knowledge/blog/future-of-ecommerce-cro" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/knowledge/blog/future-of-ecommerce-cro" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/knowledge/blog/future-of-ecommerce-cro" />
   </url>
 </urlset>

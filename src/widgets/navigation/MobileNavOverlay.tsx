@@ -7,6 +7,7 @@ import { Code, X, CaretDown, ArrowRight } from '@phosphor-icons/react';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { NavItem } from './config';
 import './MobileReadyNav.css';
+
 import { useFocusTrap } from '../../shared/hooks/useFocusTrap';
 
 interface MobileNavOverlayProps {
@@ -106,13 +107,14 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
               <OptimizedIcon icon={Code} className="w-6 h-6 text-slate-900" />
               <span className="font-bold text-xl text-slate-900">Coday</span>
             </Link>
-            <button
+            <motion.button
               onClick={onClose}
               className="mobile-close-btn"
               aria-label={t('nav.close', { defaultValue: 'Close Menu' })}
+              whileTap={{ scale: 0.9 }}
             >
               <OptimizedIcon icon={X} className="w-8 h-8 text-slate-900" />
-            </button>
+            </motion.button>
           </div>
 
           {/* Scrollable Content */}
@@ -129,10 +131,11 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
                   className="mobile-group-wrapper"
                   variants={itemVariants}
                 >
-                  <button
+                  <motion.button
                     className={`mobile-accordion-trigger ${expandedItem === item.label ? 'active' : ''}`}
                     onClick={() => toggleItem(item.label)}
                     aria-expanded={expandedItem === item.label}
+                    whileTap={{ scale: 0.98 }}
                   >
                     <span className="text-xl font-bold tracking-tight text-slate-900">
                       {t(item.label)}
@@ -143,7 +146,7 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
                         expandedItem === item.label ? 'rotate-180 text-primary' : 'text-slate-400'
                       }`}
                     />
-                  </button>
+                  </motion.button>
 
                   <AnimatePresence initial={false}>
                     {expandedItem === item.label && (

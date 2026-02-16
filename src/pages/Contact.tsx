@@ -40,6 +40,7 @@ const Contact: React.FC = () => {
       <SeoHead
         title={`${t('hero.title_start')} ${t('hero.title_gradient')} | Coday`}
         description={t('hero.desc')}
+        pageType="contact"
       />
 
       {/* Step Indicator - only shown when coming from package flow */}

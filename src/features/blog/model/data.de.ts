@@ -2,7 +2,87 @@ import { BlogPost } from './types';
 
 export const BLOG_POSTS: BlogPost[] = [
   {
-    id: 1,
+    id: 10,
+    title: 'High-Performance Web Vitals: Warum Millisekunden Millionen kosten',
+    slug: 'high-performance-web-vitals',
+    excerpt:
+      'Niemand wartet mehr als 3 Sekunden. Wir zeigen, wie Sie LCP, CLS und INP optimieren und warum Google schnelle Websites mit Top-Rankings belohnt.',
+    category: 'Web Performance',
+    readTime: '10 Min.',
+    image: '/images/blog/performance-web-vitals-dashboard.webp',
+    alt: 'High Speed Performance Dashboard',
+    author: 'Coday Engineering',
+    date: '22. Mai 2026',
+    content: [
+      {
+        id: 'intro',
+        type: 'text',
+        heading: 'Schnelligkeit ist keine Option, sondern eine Pflicht',
+        level: 'h2',
+        content:
+          'Das Internet hat unsere Geduld getötet. Die Toleranzgrenze für das Laden einer Website liegt heute bei unter 2,5 Sekunden. Alles darüber existiert für den durchschnittlichen Nutzer nicht.\n\nAmazon hat es vorgemacht: 100ms Ladeverzögerung kosten 1% Umsatz. Das klingt wenig, aber rechnen wir das mal auf Ihr Geschäft hoch.',
+      },
+      {
+        id: 'interactive-calculator',
+        type: 'interactive',
+        component: 'latency-calculator',
+        data: {},
+      },
+      {
+        id: 'analysis-calc',
+        type: 'text',
+        heading: 'Die Core Web Vitals erklärt',
+        level: 'h2',
+        content:
+          "Google misst die Qualität Ihrer Website nicht nach 'Gefühl', sondern nach harten Metriken. Diese drei Werte entscheiden über Ihr Ranking:",
+      },
+      {
+        id: 'accordion-vitals',
+        type: 'accordion',
+        items: [
+          {
+            title: 'LCP (Largest Contentful Paint)',
+            content:
+              '**Messung:** Wie lange dauert es, bis das *größte* Element (meist Bild oder Headline) sichtbar ist.\n**Ziel:** Unter 2,5 Sekunden.\n**Optimierung:** Bilder komprimieren (WebP), Server in der Nähe des Nutzers (CDN), Caching.',
+          },
+          {
+            title: 'CLS (Cumulative Layout Shift)',
+            content:
+              '**Messung:** Wie sehr springt das Layout während des Ladens herum?\n**Ziel:** Unter 0,1.\n**Optimierung:** Bilder und Ads brauchen feste Größenangaben (width/height). Keine Inhalte dynamisch nachladen, die den Text verschieben.',
+          },
+          {
+            title: 'INP (Interaction to Next Paint)',
+            content:
+              '**Messung:** Wie schnell reagiert die Seite auf Klick oder Tastatur?\n**Ziel:** Unter 200ms.\n**Optimierung:** Weniger JavaScript. Den Main-Thread nicht blockieren.',
+          },
+        ],
+      },
+      {
+        id: 'checklist-optimization',
+        type: 'checklist',
+        title: 'Performance Checklist für Entwickler',
+        items: [
+          { text: 'Bilder in WebP/AVIF konvertiert', checked: true },
+          { text: 'Lazy Loading für Bilder unterhalb des Folds', checked: true },
+          { text: 'CSS/JS minifiziert und komprimiert (Brotli/Gzip)', checked: true },
+          { text: 'CDN (Cloudflare/Vercel) aktiv', checked: true },
+          { text: 'Preloading für wichtige Fonts', checked: true },
+        ],
+      },
+      {
+        id: 'outro',
+        type: 'cta',
+        title: 'Ist Ihre Website zu langsam?',
+        description:
+          'Wir machen den Speed-Check. Kostenlos und unverbindlich. Wir finden die Bremsklötze.',
+        buttonText: 'Performance-Audit starten',
+        href: '/contact',
+        variant: 'primary',
+      },
+    ],
+  },
+  {
+    id: 8,
     title: 'Die 5 tödlichen Fehler im Webdesign (und wie man sie überlebt)',
     slug: 'die-5-groessten-fehler-im-webdesign',
     excerpt:
@@ -159,7 +239,72 @@ export const BLOG_POSTS: BlogPost[] = [
       },
     ],
   },
-  // ... Placeholder for remaining posts to be expanded in next steps
+  {
+    id: 9,
+    title: "Das Anti-AI Manifest: Warum 'perfektes' Design tot ist",
+    slug: 'anti-ai-manifest',
+    excerpt:
+      'KI-Generatoren fluten das Web mit glattgebügelten, seelenlosen Designs. Warum Imperfektion der neue Luxus ist und wie Sie sich vom Einheitsbrei abheben.',
+    category: 'Design Philosophy',
+    readTime: '8 Min.',
+    image: '/images/blog/anti-ai-design-manifesto-hero.webp',
+    alt: 'Brutalistisches Webdesign mit Neon-Akzenten',
+    author: 'Coday Design Team',
+    date: '15. Mai 2026',
+    content: [
+      {
+        id: 'intro',
+        type: 'text',
+        heading: 'Die Rache des Analogen',
+        level: 'h2',
+        content:
+          "Wir leben in einer Ära der synthetischen Perfektion. Midjourney malt Bilder ohne Pinselstrich. ChatGPT schreibt Texte ohne Ecken und Kanten. Web-Baukästen spucken Layouts aus, die alle gleich aussehen.\\n\\nDoch etwas Interessantes passiert: Je mehr 'perfekten' AI-Content wir sehen, desto weniger vertrauen wir ihm. Unser Gehirn hat gelernt, den 'AI-Glanz' als billig und generisch zu filtern. Wahre Premium-Marken gehen jetzt den entgegengesetzten Weg.",
+      },
+      {
+        id: 'interactive-blind-test',
+        type: 'interactive',
+        component: 'blind-test',
+        data: {},
+      },
+      {
+        id: 'analysis-blind-test',
+        type: 'text',
+        heading: "Warum das 'hässlichere' Design gewinnt",
+        level: 'h2',
+        content:
+          "Haben Sie oben abgestimmt? Die meisten Nutzer wählen das Design, das Ecken und Kanten hat. Warum? Weil es *menschlich* wirkt.\\n\\n**Das Uncanny Valley des Webdesigns:**\\nWenn eine Website zu glatt, zu symmetrisch und zu 'stock-foto-lastig' ist, schrillt unser innerer Alarm. 'Hier versucht mir jemand etwas zu verkaufen, ohne Arbeit zu investieren.'\\n\\nLuxus definiert sich heute über das Handwerkliche. Über den bewussten Bruch mit der Norm. Wir nennen das **'Anti-AI Aesthetics'**.",
+      },
+      {
+        id: 'quote-luxury',
+        type: 'quote',
+        text: 'In einer Welt voll von KI-Perfektion ist der menschliche Fehler das ultimative Statussymbol.',
+        author: 'Design Trend Report 2026',
+        variant: 'large',
+      },
+      {
+        id: 'checklist-anti-ai',
+        type: 'checklist',
+        title: 'Die 5 Säulen der Anti-AI Ästhetik',
+        items: [
+          { text: 'Brutalismus: Rohe Strukturen statt versteckter Raster', checked: true },
+          { text: 'Typografie: Custom Fonts statt Google Fonts Standard', checked: true },
+          { text: 'Motion: Physikalisch korrekte Animationen statt linearer Fades', checked: true },
+          { text: 'Textur: Noise & Grain statt flacher Vektoren', checked: true },
+          { text: 'Copywriting: Meinung & Haltung statt ChatGPT-Bla-Bla', checked: true },
+        ],
+      },
+      {
+        id: 'outro',
+        type: 'cta',
+        title: 'Zeigen Sie Charakter',
+        description:
+          'Ihre Marke ist einzigartig. Warum sollte Ihre Website aussehen wie die von allen anderen? Wir designen Unikate.',
+        buttonText: 'Design-Sprint anfragen',
+        href: '/contact',
+        variant: 'primary',
+      },
+    ],
+  },
   {
     id: 2,
     title: 'Daten lügen nicht: Warum Ihr Bauchgefühl Sie Millionen kostet',
@@ -1633,7 +1778,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: 'Tokenization ist der Schlüssel',
         level: 'h2',
         content:
-          'Wir hardcoden keine Hex-Werte. Wir nutzen semantische Tokens. `bg-primary-500` bedeutet nichts. `bg-action-primary` bedeutet alles.\n\nDas erlaubt uns, eine komplette Enterprise-Anwendung in 5 Minuten umzubranden, indem wir eine einzige JSON Datei ändern.',
+          'Wir hardcoden keine Hex-Werte. Wir nutzen semantische Tokens. `bg - primary - 500` bedeutet nichts. `bg - action - primary` bedeutet alles.\n\nDas erlaubt uns, eine komplette Enterprise-Anwendung in 5 Minuten umzubranden, indem wir eine einzige JSON Datei ändern.',
       },
       {
         id: 'comparison-ds',
@@ -1721,6 +1866,302 @@ export const BLOG_POSTS: BlogPost[] = [
         text: 'Amazon hat nicht gewonnen, weil sie bessere Produkte hatten. Sie haben gewonnen, weil sie One-Click Buy hatten.',
         author: 'Jeff Bezos (Legacy)',
         variant: 'gradient',
+      },
+    ],
+  },
+  {
+    id: 11,
+    title: 'Der unsichtbare ROI: Warum UX Design mehr bringt als Marketing',
+    slug: 'hidden-roi-ux',
+    excerpt:
+      "Jeder Euro in UX bringt 100 Euro zurück. Wir beweisen es mit unserem Echtzeit-Rechner. Schluss mit 'hübsch machen', her mit Umsatz.",
+    category: 'Conversion Rate Optimization',
+    readTime: '7 Min.',
+    image: '/images/blog/roi-ux-dashboard.webp',
+    alt: 'Futuristisches Dashboard mit steigenden grünen Graphen',
+    author: 'Coday Strategy',
+    date: '28. Mai 2026',
+    content: [
+      {
+        id: 'intro-roi',
+        type: 'text',
+        heading: 'Design ist kein Kostenfaktor, sondern ein Multiplikator',
+        level: 'h2',
+        content:
+          'Marketing bringt Leute zur Tür. UX Design entscheidet, ob sie eintreten und kaufen. Die meisten Unternehmen pumpen Millionen in Ads, leiten den Traffic aber auf eine Seite, die so benutzerunfreundlich ist wie ein Behördenformular.\n\nEine Studie von Forrester Research zeigt: Jeder Dollar, der in UX investiert wird, bringt bis zu 100 Dollar zurück. Das ist kein Voodoo, das ist Mathematik.',
+      },
+      {
+        id: 'interactive-roi',
+        type: 'interactive',
+        component: 'roi-estimator',
+        data: {},
+      },
+      {
+        id: 'outro-roi',
+        type: 'text',
+        heading: 'Der Zinseszins-Effekt von guter UX',
+        level: 'h2',
+        content:
+          'Kleine Verbesserungen haben massive Auswirkungen. Eine Conversion-Rate-Steigerung von 1% auf 1.5% bedeutet nicht 0.5% mehr Umsatz. Es bedeutet 50% mehr Umsatz – bei gleichem Marketingbudget.',
+      },
+    ],
+  },
+  {
+    id: 12,
+    title: 'Die Sicherheits-Lücke: Wie Open Source Ihr Business gefährdet',
+    slug: 'security-gap',
+    excerpt:
+      'WordPress ist das beliebteste CMS der Welt – und das unsicherste. Simulieren Sie einen Hack und sehen Sie, wie schnell Ihre Daten weg sein können.',
+    category: 'Cybersecurity',
+    readTime: '9 Min.',
+    image: '/images/blog/security-hack-simulation.webp',
+    alt: 'Dunkler Bildschirm mit rotem Code und Warnhinweisen',
+    author: 'Coday Security',
+    date: '02. Juni 2026',
+    content: [
+      {
+        id: 'intro-sec',
+        type: 'text',
+        heading: 'Ihr CMS ist ein offenes Buch',
+        level: 'h2',
+        content:
+          'Open Source ist großartig für Hobby-Entwickler. Für Enterprise-Lösungen ist es ein Risiko. Wenn der Quellcode öffentlich ist, sind es auch die Sicherheitslücken.\n\n90% aller gehackten CMS-Websites laufen auf WordPress. Warum? Weil Hacker faul sind. Sie greifen das an, was alle nutzen.',
+      },
+      {
+        id: 'interactive-hack',
+        type: 'interactive',
+        component: 'hack-simulator',
+        data: {},
+      },
+      {
+        id: 'outro-sec',
+        type: 'text',
+        heading: 'Security by Obskurität reicht nicht',
+        level: 'h2',
+        content:
+          'Wir setzen auf statische Generierung und Headless-Architekturen. Wo keine Datenbank direkt am Internet hängt, kann auch keine SQL-Injection stattfinden. So einfach ist das.',
+      },
+    ],
+  },
+  {
+    id: 13,
+    title: 'A/B Testing Lügen: Warum 90% aller Tests statistischer Müll sind',
+    slug: 'ab-testing-myths',
+    excerpt:
+      'Sie testen rote gegen blaue Buttons? Süß. Lernen Sie, wie man echte Hypothesen validiert und warum Ihre bisherigen Tests Zeitverschwendung waren.',
+    category: 'Data Science',
+    readTime: '11 Min.',
+    image: '/images/blog/ab-testing-lab.webp',
+    alt: 'Wissenschaftliches Labor mit zwei Reagenzgläsern',
+    author: 'Coday Data',
+    date: '08. Juni 2026',
+    content: [
+      {
+        id: 'intro-ab',
+        type: 'text',
+        heading: 'Hören Sie auf zu raten',
+        level: 'h2',
+        content:
+          "Die meisten 'A/B-Tests' sind keine Tests, sondern Glücksspiel. Ohne statistische Signifikanz sind Ihre Ergebnisse wertlos. Sie könnten genauso gut eine Münze werfen.\n\nEin guter Test braucht Volumen, Zeit und eine klare Hypothese. Alles andere ist 'Optimierungstheater'.",
+      },
+      {
+        id: 'interactive-ab',
+        type: 'interactive',
+        component: 'ab-test',
+        data: {},
+      },
+      {
+        id: 'outro-ab',
+        type: 'text',
+        heading: 'Testen Sie Strategien, nicht Pixel',
+        level: 'h2',
+        content:
+          'Ob der Button rot oder grün ist, ist egal. Testen Sie das Angebot. Testen Sie die Headline. Testen Sie den Preis. Das bewegt den Hebel.',
+      },
+    ],
+  },
+  {
+    id: 14,
+    title: 'Daten-Reife: Vom Bauchgefühl zur algorithmischen Dominanz',
+    slug: 'data-maturity',
+    excerpt:
+      "Wo stehen Sie auf der Daten-Evolutionsleiter? Machen Sie den Test und erfahren Sie, wie Sie vom 'Daten-Blinden' zum 'Daten-Dominator' werden.",
+    category: 'Business Intelligence',
+    readTime: '6 Min.',
+    image: '/images/blog/data-maturity-chart.webp',
+    alt: 'Evolutionsdiagramm von Datenstrukturen',
+    author: 'Coday Intelligence',
+    date: '14. Juni 2026',
+    content: [
+      {
+        id: 'intro-data',
+        type: 'text',
+        heading: 'Daten sind das neue Öl (aber nur raffiniert)',
+        level: 'h2',
+        content:
+          'Jedes Unternehmen sammelt Daten. Aber nur 5% nutzen sie, um aktiv die Zukunft zu gestalten. Der Rest schaut in den Rückspiegel (Reporting) statt durch die Windschutzscheibe (Prediction).',
+      },
+      {
+        id: 'interactive-data',
+        type: 'interactive',
+        component: 'data-maturity',
+        data: {},
+      },
+      {
+        id: 'outro-data',
+        type: 'text',
+        heading: 'Level Up',
+        level: 'h2',
+        content:
+          'Um von Level 2 auf Level 4 zu kommen, brauchen Sie keine teurere Software. Sie brauchen eine bessere Fragen-Kultur.',
+      },
+    ],
+  },
+  {
+    id: 15,
+    title: 'Mobile First ist tot. Lang lebe Mobile Only.',
+    slug: 'mobile-first-lie',
+    excerpt:
+      "Desktop-Traffic ist ein Relikt. Sehen Sie in unserem Simulator, wie Ihre 'responsive' Website auf einem iPhone SE wirklich aussieht (und warum Sie Kunden verlieren).",
+    category: 'Mobile UX',
+    readTime: '8 Min.',
+    image: '/images/blog/mobile-only-lifestyle.webp',
+    alt: 'Menschenmenge die nur auf Smartphones schaut',
+    author: 'Coday UX',
+    date: '20. Juni 2026',
+    content: [
+      {
+        id: 'intro-mobile',
+        type: 'text',
+        heading: 'Der Desktop ist für Ersteller, Mobile ist für Konsumenten',
+        level: 'h2',
+        content:
+          "Wir designen Websites auf 27-Zoll-4K-Monitoren für Nutzer, die sie auf 5-Zoll-Screens im Bus bedienen. Das ist absurd.\n\n'Responsive' reicht nicht mehr. Wir müssen 'Adaptive' denken. Elemente müssen nicht nur kleiner werden, sie müssen sich verändern.",
+      },
+      {
+        id: 'interactive-mobile',
+        type: 'interactive',
+        component: 'mobile-simulator',
+        data: {},
+      },
+      {
+        id: 'outro-mobile',
+        type: 'text',
+        heading: 'Daumen-Ergonomie',
+        level: 'h2',
+        content:
+          'Die wichtigste Zone auf dem Bildschirm ist unten rechts. Wenn Ihr wichtigster Button oben links ist, hassen Ihre Nutzer Sie (unterbewusst).',
+      },
+    ],
+  },
+  {
+    id: 16,
+    title: 'Die Agentur-Preis-Lüge: Was Sie wirklich für Ihren Retainer bekommen',
+    slug: 'agency-pricing-secrets',
+    excerpt:
+      "Zahlen Sie für Leistung oder für den Kicker-Tisch der Agentur? Unser Rechner enthüllt den wahren 'Overhead' klassischer Agenturen.",
+    category: 'Agency Secrets',
+    readTime: '12 Min.',
+    image: '/images/blog/agency-pricing-exposed.webp',
+    alt: 'Röntgenbild einer Rechnung',
+    author: 'Coday Insider',
+    date: '25. Juni 2026',
+    content: [
+      {
+        id: 'intro-price',
+        type: 'text',
+        heading: 'Der Wasserkopf frisst Ihr Budget',
+        level: 'h2',
+        content:
+          'Traditionelle Agenturen haben ein Problem: Sie müssen teure Büros in Innenstadtlage und Heerscharen von Account Managern bezahlen. Wer zahlt das? Sie.\n\nWir bei Coday sind dezentral, automatisiert und effizient. Ihr Geld fließt in Code, nicht in Mietverträge.',
+      },
+      {
+        id: 'interactive-price',
+        type: 'interactive',
+        component: 'agency-calculator',
+        data: {},
+      },
+      {
+        id: 'outro-price',
+        type: 'text',
+        heading: 'Zahlen Sie für Output, nicht für Stunden',
+        level: 'h2',
+        content:
+          'Stundenabrechnung ist ein Interessenkonflikt. Die Agentur will langsam sein, Sie wollen schnell sein. Wir arbeiten wertbasiert oder mit fixen Sprints.',
+      },
+    ],
+  },
+  {
+    id: 17,
+    title: 'Digitale Souveränität: Gehören Ihre Daten wirklich Ihnen?',
+    slug: 'tech-sovereignty',
+    excerpt:
+      'Cloud-Lock-in ist die moderne Sklaverei. Prüfen Sie mit unserer Checkliste, wie abhängig Sie von US-Tech-Giganten sind.',
+    category: 'Tech Policy',
+    readTime: '10 Min.',
+    image: '/images/blog/digital-sovereignty-shield.webp',
+    alt: 'Schutzschild aus Datenströmen',
+    author: 'Coday Legal',
+    date: '30. Juni 2026',
+    content: [
+      {
+        id: 'intro-sov',
+        type: 'text',
+        heading: 'Mietnomaden im eigenen Haus',
+        level: 'h2',
+        content:
+          'Wenn Sie Ihre Website auf Wix oder Squarespace bauen, gehört sie nicht Ihnen. Sie mieten sie nur. Wenn der Anbieter die Preise erhöht oder Sie sperrt, sind Sie raus.\n\nEchte Souveränität bedeutet: Ihr Code, Ihre Datenbank, Ihr Server.',
+      },
+      {
+        id: 'interactive-sov',
+        type: 'interactive',
+        component: 'sovereignty-checklist',
+        data: {},
+      },
+      {
+        id: 'outro-sov',
+        type: 'text',
+        heading: 'Open Standards sind die einzige Versicherung',
+        level: 'h2',
+        content:
+          'Setzen Sie auf React, SQL, Git. Technologien, die niemandem gehören und die jeder Entwickler versteht.',
+      },
+    ],
+  },
+  {
+    id: 18,
+    title: 'Web 4.0: Die Geschichte der Zukunft',
+    slug: 'web-history-future',
+    excerpt:
+      'Von Web 1.0 (Read) zu Web 3.0 (Own) zu Web 4.0 (Symbiosis). Eine interaktive Zeitreise durch die Evolution des Internets.',
+    category: 'Futurism',
+    readTime: '15 Min.',
+    image: '/images/blog/web-history-timeline.webp',
+    alt: 'Zeitstrahl der Webtechnologie in Neon',
+    author: 'Coday Future Lab',
+    date: '05. Juli 2026',
+    content: [
+      {
+        id: 'intro-hist',
+        type: 'text',
+        heading: 'Wer die Vergangenheit nicht kennt...',
+        level: 'h2',
+        content:
+          '...kann die Zukunft nicht coden. Das Web hat sich radikal gewandelt. Wir stehen kurz vor dem nächsten Sprung: Dem räumlichen, KI-gestützten Web.',
+      },
+      {
+        id: 'interactive-hist',
+        type: 'interactive',
+        component: 'timeline',
+        data: {},
+      },
+      {
+        id: 'outro-hist',
+        type: 'text',
+        heading: 'Bereit für die nächste Welle?',
+        level: 'h2',
+        content:
+          'Die Technologien von morgen werden heute gebaut. Seien Sie Early Adopter, kein Late Boomer.',
       },
     ],
   },

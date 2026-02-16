@@ -1,176 +1,151 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
-import { CurrencyDollar, Timer, TrendDown, Warning } from '@phosphor-icons/react';
-import { clsx } from 'clsx';
+import { Calculator, Warning, Trophy } from '@phosphor-icons/react';
+import { cn } from '@/shared/lib/utils';
 
-export const LatencyCostCalculator: React.FC = () => {
-  const [visitors, setVisitors] = useState(50000);
-  const [conversionRate, setConversionRate] = useState(2.5);
-  const [aov, setAov] = useState(75); // Average Order Value
-  const [loadTime, setLoadTime] = useState(3.5);
+const LatencyCostCalculator: React.FC = () => {
+  const [monthlyRevenue, setMonthlyRevenue] = useState(50000);
+  const [loadTime, setLoadTime] = useState(2.5); // seconds
 
-  // Benchmarks (Amazon/Google stats)
-  // 1s delay = 7% reduction in conversions
-  // Let's assume ideal load time is 1.0s. Every 0.1s above that is a penalty.
+  // Amazon's metric: 100ms latency = 1% revenue loss
+  // So 1s delay = 10% loss (simplified model for impact demonstration)
+  // Baseline is considered 0.8s (instant feel)
 
-  const calculateLoss = () => {
-    if (loadTime <= 1) return 0;
+  const { lostPercentage, lostRevenue } = useMemo(() => {
+    const baseline = 0.8;
+    const delay = Math.max(0, loadTime - baseline);
+    const percentage = Math.min(100, delay * 10);
+    const lost = monthlyRevenue * (percentage / 100);
+    return { lostPercentage: percentage, lostRevenue: lost };
+  }, [monthlyRevenue, loadTime]);
 
-    // Simple model: 7% drop per second of delay
-    const delaySeconds = loadTime - 1;
-    const conversionPenalty = delaySeconds * 0.07;
-
-    // Cap penalty at reasonable amount (e.g., 90% loss if site takes 15s)
-    const effectivePenalty = Math.min(conversionPenalty, 0.9);
-
-    const projectedRevenue = visitors * (conversionRate / 100) * aov;
-    const lostRevenue = projectedRevenue / (1 - effectivePenalty) - projectedRevenue;
-
-    return Math.round(lostRevenue);
+  const formatCurrency = (val: number) => {
+    return new Intl.NumberFormat('de-DE', {
+      style: 'currency',
+      currency: 'EUR',
+      maximumFractionDigits: 0,
+    }).format(val);
   };
 
-  const monthlyLoss = calculateLoss();
-  const yearlyLoss = monthlyLoss * 12;
-
-  // Visualizing the "Slow Site" vs "Fast Site"
-  const carPosition = Math.min(100, (1 / loadTime) * 100);
-
   return (
-    <div className="my-16 relative overflow-hidden rounded-[2.5rem] border border-gray-100 bg-white shadow-2xl">
-      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-orange-500/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
+    <div
+      className="my-16 scroll-mt-24 p-8 bg-white rounded-3xl border border-gray-100 shadow-xl"
+      id="latency-calculator"
+    >
+      <div className="flex items-center gap-4 mb-8">
+        <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+          <Calculator size={24} weight="bold" />
+        </div>
+        <div>
+          <h3 className="font-display font-bold text-2xl text-secondary">Der Ladezeit-Rechner</h3>
+          <p className="text-gray-500 text-sm">Basierend auf Amazon's Studie (100ms = 1% Umsatz)</p>
+        </div>
+      </div>
 
-      <div className="relative z-10 p-8 md:p-12">
-        <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-50 mb-6">
-            <Timer size={16} className="text-orange-600" />
-            <span className="text-xs font-bold tracking-widest uppercase text-orange-600">
-              Performance Audit
-            </span>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        {/* Inputs */}
+        <div className="space-y-8">
+          <div>
+            <label className="block text-sm font-bold text-gray-700 mb-2">
+              Monatlicher Online-Umsatz
+            </label>
+            <div className="relative">
+              <input
+                type="range"
+                min="1000"
+                max="500000"
+                step="1000"
+                value={monthlyRevenue}
+                onChange={(e) => setMonthlyRevenue(Number(e.target.value))}
+                className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary"
+              />
+              <div className="mt-2 flex justify-between text-sm text-gray-500 font-mono">
+                <span>1.000 €</span>
+                <span className="font-bold text-secondary text-lg">
+                  {formatCurrency(monthlyRevenue)}
+                </span>
+                <span>500k €</span>
+              </div>
+            </div>
           </div>
-          <h3 className="text-3xl md:text-4xl font-display font-bold text-secondary mb-4">
-            The High Cost of Slow Loading
-          </h3>
-          <p className="text-gray-600 max-w-lg mx-auto">
-            Amazon found that every 100ms of latency cost them 1% in sales. How much is your site
-            lagging?
-          </p>
+
+          <div>
+            <label className="block text-sm font-bold text-gray-700 mb-2">
+              Aktuelle Ladezeit (in Sekunden)
+            </label>
+            <div className="relative">
+              <input
+                type="range"
+                min="0.5"
+                max="8.0"
+                step="0.1"
+                value={loadTime}
+                onChange={(e) => setLoadTime(Number(e.target.value))}
+                className={cn(
+                  'w-full h-2 rounded-lg appearance-none cursor-pointer accent-primary',
+                  loadTime < 1.5 ? 'bg-green-100' : loadTime < 3 ? 'bg-yellow-100' : 'bg-red-100'
+                )}
+              />
+              <div className="mt-2 flex justify-between text-sm font-mono">
+                <span className="text-green-600">0.5s (Blitzschnell)</span>
+                <span
+                  className={cn(
+                    'font-bold text-lg',
+                    loadTime < 1.5
+                      ? 'text-green-600'
+                      : loadTime < 3
+                        ? 'text-yellow-600'
+                        : 'text-red-600'
+                  )}
+                >
+                  {loadTime}s
+                </span>
+                <span className="text-red-500">8.0s (Schnecke)</span>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          {/* Inputs */}
-          <div className="lg:col-span-7 space-y-8 bg-gray-50 p-8 rounded-3xl border border-gray-100">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-xs font-bold uppercase text-gray-400 mb-2">
-                  Monthly Visitors
-                </label>
-                <input
-                  type="number"
-                  value={visitors}
-                  onChange={(e) => setVisitors(Number(e.target.value))}
-                  className="w-full p-3 rounded-xl border border-gray-200 font-mono text-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
-                />
-              </div>
-              <div>
-                <label className="block text-xs font-bold uppercase text-gray-400 mb-2">
-                  Avg. Order Value (€)
-                </label>
-                <input
-                  type="number"
-                  value={aov}
-                  onChange={(e) => setAov(Number(e.target.value))}
-                  className="w-full p-3 rounded-xl border border-gray-200 font-mono text-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
-                />
-              </div>
-              <div>
-                <label className="block text-xs font-bold uppercase text-gray-400 mb-2">
-                  Conversion Rate (%)
-                </label>
-                <input
-                  type="number"
-                  step="0.1"
-                  value={conversionRate}
-                  onChange={(e) => setConversionRate(Number(e.target.value))}
-                  className="w-full p-3 rounded-xl border border-gray-200 font-mono text-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
-                />
-              </div>
-              <div>
-                <label className="block text-xs font-bold uppercase text-gray-400 mb-2">
-                  Current Load Time (s)
-                </label>
-                <input
-                  type="number"
-                  step="0.1"
-                  value={loadTime}
-                  onChange={(e) => setLoadTime(Number(e.target.value))}
-                  className={clsx(
-                    'w-full p-3 rounded-xl border border-gray-200 font-mono text-lg focus:ring-2 outline-none transition-colors',
-                    loadTime > 2.5
-                      ? 'focus:ring-red-400 bg-red-50 text-red-900'
-                      : 'focus:ring-green-400 bg-green-50 text-green-900'
-                  )}
-                />
-              </div>
-            </div>
+        {/* Results */}
+        <div className="bg-gray-50 rounded-2xl p-6 flex flex-col justify-center relative overflow-hidden">
+          {/* Background Pulse if High Loss */}
+          {lostPercentage > 20 && (
+            <div className="absolute inset-0 bg-red-500/5 animate-pulse pointer-events-none" />
+          )}
 
-            {/* Speed Visual */}
-            <div className="pt-4 border-t border-gray-200">
-              <p className="text-sm font-medium text-gray-500 mb-4">Speed Visualization</p>
-              <div className="h-4 bg-gray-200 rounded-full overflow-hidden relative">
-                {/* Competitor / Fast Site */}
-                <motion.div
-                  className="absolute top-0 bottom-0 bg-green-400 w-2 h-full rounded-full z-10 opacity-50"
-                  initial={{ left: 0 }}
-                  animate={{ left: '90%' }}
-                  transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
-                />
-                {/* Your Site */}
-                <motion.div
-                  className="absolute top-0 bottom-0 bg-red-500 w-2 h-full rounded-full z-20"
-                  initial={{ left: 0 }}
-                  animate={{ left: `${Math.max(10, 100 - loadTime * 10)}%` }} // Slower = less distance
-                  transition={{ duration: loadTime, repeat: Infinity, ease: 'linear' }}
-                />
-              </div>
-              <div className="flex justify-between mt-2 text-xs text-gray-400">
-                <span>Start</span>
-                <span>Finish (Conversion)</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Output */}
-          <div className="lg:col-span-5 flex flex-col justify-center">
-            <div className="bg-red-50 rounded-3xl p-8 border border-red-100 text-center relative overflow-hidden group">
-              <div className="absolute top-0 right-0 p-4 opacity-10">
-                <TrendDown size={120} className="text-red-500" />
-              </div>
-
-              <h4 className="text-red-800 font-bold mb-2 uppercase tracking-wide text-sm opacity-80">
-                Estimated Annual Loss
-              </h4>
-              <motion.div
-                initial={{ scale: 0.9 }}
-                animate={{ scale: 1 }}
-                key={yearlyLoss}
-                className="text-4xl md:text-5xl font-mono font-bold text-red-600 mb-4"
-              >
-                -{yearlyLoss.toLocaleString('de-DE')}€
-              </motion.div>
-
-              <p className="text-red-700/80 text-sm leading-relaxed mb-6">
-                {loadTime > 2
-                  ? `Your site takes ${loadTime}s. Amazon loads in <1s. You are losing approx. ${monthlyLoss.toLocaleString('de-DE')}€ every month simply because users get bored.`
-                  : 'Your speed is acceptable, but there is always room for optimization (e.g. INP or CLS metrics).'}
-              </p>
-
-              {loadTime > 1.5 && (
-                <div className="flex items-center gap-2 justify-center bg-white/50 p-3 rounded-lg text-red-700 text-sm font-bold border border-red-100/50">
-                  <Warning size={18} />
-                  <span>Action Required: Optimize Images & JS</span>
-                </div>
+          <div className="relative z-10 text-center">
+            <span className="text-gray-500 text-sm font-medium uppercase tracking-wider">
+              Jährliches Verbrennungs-Potenzial
+            </span>
+            <motion.div
+              key={lostRevenue}
+              initial={{ scale: 0.9, opacity: 0.8 }}
+              animate={{ scale: 1, opacity: 1 }}
+              className={cn(
+                'font-display font-black text-4xl md:text-5xl my-4',
+                lostRevenue > 0 ? 'text-red-500' : 'text-green-500'
               )}
-            </div>
+            >
+              {lostRevenue > 0 ? `-${formatCurrency(lostRevenue * 12)}` : '0,00 €'}
+            </motion.div>
+
+            {lostRevenue > 0 ? (
+              <div className="flex items-center justify-center gap-2 text-red-600 bg-red-100 py-2 px-4 rounded-full inline-flex mx-auto">
+                <Warning size={16} weight="fill" />
+                <span className="font-bold text-sm">
+                  Sie verlieren {lostPercentage.toFixed(1)}% Umsatz
+                </span>
+              </div>
+            ) : (
+              <div className="flex items-center justify-center gap-2 text-green-600 bg-green-100 py-2 px-4 rounded-full inline-flex mx-auto">
+                <Trophy size={16} weight="fill" />
+                <span className="font-bold text-sm">Perfekte Performance!</span>
+              </div>
+            )}
+
+            <p className="text-xs text-gray-400 mt-6 max-w-xs mx-auto">
+              *Berechnung: (Ladezeit - 0.8s) × 10% Conversion-Verlust pro Sekunde × Jahresumsatz.
+            </p>
           </div>
         </div>
       </div>

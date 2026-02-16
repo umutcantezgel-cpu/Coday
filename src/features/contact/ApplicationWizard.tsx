@@ -29,6 +29,7 @@ export const ApplicationWizard: React.FC = () => {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const stepHeadingRef = React.useRef<HTMLHeadingElement>(null);
+  const radioRefs = React.useRef<(HTMLDivElement | null)[]>([]);
 
   // Focus management for step changes
   useEffect(() => {
@@ -328,25 +329,39 @@ export const ApplicationWizard: React.FC = () => {
           {t('wizard.step1.project_type.label')}
         </label>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {['webdesign', 'webapp', 'ecommerce', 'audit'].map((type) => (
+          {['webdesign', 'webapp', 'ecommerce', 'audit'].map((type, index) => (
             <div
               key={type}
+              ref={(el) => {
+                radioRefs.current[index] = el;
+              }}
               role="radio"
               aria-checked={watch('project') === type}
-              tabIndex={
-                watch('project') === type || (!watch('project') && type === 'webdesign') ? 0 : -1
-              }
-              onClick={() => setValue('project', type)}
+              tabIndex={watch('project') === type || (!watch('project') && index === 0) ? 0 : -1}
+              onClick={() => {
+                setValue('project', type);
+                radioRefs.current[index]?.focus();
+              }}
               onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
                   e.preventDefault();
                   setValue('project', type);
                 }
-                // Basic arrow key navigation support
+
+                // Arrow Key Navigation
+                const total = 4; // 4 options
+                let nextIndex = index;
+
                 if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
-                  // Logic to move to next would require ref management, staying simple for now with TAB support
-                  // For full accessible radio group, we'd need a ref map.
-                  // Given constraints, ensuring at least one is focusable (Roving Tabindex) is key.
+                  e.preventDefault();
+                  nextIndex = (index + 1) % total;
+                  setValue('project', ['webdesign', 'webapp', 'ecommerce', 'audit'][nextIndex]);
+                  radioRefs.current[nextIndex]?.focus();
+                } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+                  e.preventDefault();
+                  nextIndex = (index - 1 + total) % total;
+                  setValue('project', ['webdesign', 'webapp', 'ecommerce', 'audit'][nextIndex]);
+                  radioRefs.current[nextIndex]?.focus();
                 }
               }}
               className={`

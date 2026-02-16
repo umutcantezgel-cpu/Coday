@@ -31,7 +31,7 @@ import { twMerge } from 'tailwind-merge';
 import { motion, useScroll, useTransform, useInView, AnimatePresence } from 'motion/react';
 
 // Interactive Components (Lazy Loaded)
-// Interactive Components (Lazy Loaded)
+
 const ROI_Calculator = React.lazy(() =>
   import('./interactive/ROI_Calculator').then((m) => ({
     default: (m as any).ROI_Calculator || (m as any).default,
@@ -150,6 +150,12 @@ const ComponentConfigurator = React.lazy(() =>
 const ROIEstimator = React.lazy(() =>
   import('./interactive/ROIEstimator').then((m) => ({
     default: (m as any).ROIEstimator || (m as any).default,
+  }))
+) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
+
+const BlindTestQuiz = React.lazy(() =>
+  import('./interactive/BlindTestQuiz').then((m) => ({
+    default: (m as any).BlindTestQuiz || (m as any).default,
   }))
 ) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
 
@@ -544,6 +550,7 @@ const InteractiveBlockRenderer: React.FC<{ block: InteractiveBlock }> = ({ block
     'tracking-simulator': TrackingSimulator,
     'component-configurator': ComponentConfigurator,
     'roi-estimator': ROIEstimator,
+    'blind-test': BlindTestQuiz,
   };
 
   const SpecificComponent = COMPONENT_MAP[block.component] || null;

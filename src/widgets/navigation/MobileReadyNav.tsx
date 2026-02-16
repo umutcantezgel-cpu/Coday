@@ -1,8 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+
 import { OptimizedIcon } from '../../shared/ui/OptimizedIcon';
-import { Code, CaretDown, ArrowUpRight, ArrowRight, List, X } from '@phosphor-icons/react';
+
+import { CaretDown, ArrowUpRight, ArrowRight, List, X } from '@phosphor-icons/react';
+import CodayLogo from '../../assets/images/coday_logo.svg';
 import { LanguageSwitcher } from './LanguageSwitcher';
+import { Magnetic } from '../../shared/ui/Magnetic';
+
 import { useLocation } from 'react-router-dom';
 import { LocalizedLink as Link } from '../../shared/ui/LocalizedLink';
 import { useTranslation } from 'react-i18next';
@@ -25,11 +30,45 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
 }) => {
   const { t } = useTranslation('common');
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
+
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+
+  // UX States
+  const [isVisible, setIsVisible] = useState(true);
+  const [isScrolled, setIsScrolled] = useState(false);
+  // Smart Scroll Logic - Native Implementation
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const previous = lastScrollY.current;
+
+      // Determine direction
+      if (currentScrollY > previous && currentScrollY > 150) {
+        setIsVisible(false); // Hide on scroll down
+      } else {
+        setIsVisible(true); // Show on scroll up
+      }
+
+      // Determine scrolled state (for transparency/blur)
+      if (currentScrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+  const lastScrollY = useRef(0);
+
   const location = useLocation();
   const navRef = useRef<HTMLDivElement>(null);
 
   // Get translated items
+
   const items = getNavItems();
 
   // Track active tabs for content inside dropdowns
@@ -109,11 +148,15 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
   return (
     <header className={`card-nav-container ${className}`} ref={navRef}>
       {/* Floating Pill */}
-      <nav className="nav-pill" aria-label="Hauptnavigation">
+      <motion.nav
+        className={`nav-pill ${isScrolled ? 'scrolled' : 'at-top'} ${!isVisible ? 'nav-hidden' : ''}`}
+        aria-label="Hauptnavigation"
+      >
         {/* Logo */}
+
         <Link to="/" className="nav-pill-logo" aria-label="Zur Startseite">
-          <OptimizedIcon icon={Code} className="logo-icon" />
-          <span className="logo-text">Coday</span>
+          <img src={CodayLogo} alt="Coday Logo" className="logo-icon w-12 h-12 object-contain" />
+          <span className="logo-text text-lg">Coday</span>
         </Link>
 
         {/* Desktop Links (Center) */}
@@ -125,17 +168,29 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
               onMouseEnter={() => handleMouseEnter(item.label)}
               onMouseLeave={handleMouseLeave}
             >
-              <button
-                className={`nav-pill-link ${activeCategory === item.label ? 'active' : ''}`}
-                aria-expanded={activeCategory === item.label}
-                onClick={() => setActiveCategory(activeCategory === item.label ? null : item.label)}
-              >
-                {t(item.label)}
-                <OptimizedIcon
-                  icon={CaretDown}
-                  className={`nav-chevron ${activeCategory === item.label ? 'rotate' : ''}`}
-                />
-              </button>
+              <Magnetic>
+                <button
+                  className={`nav-pill-link relative z-10 ${activeCategory === item.label ? 'active' : ''}`}
+                  aria-expanded={activeCategory === item.label}
+                  onClick={() =>
+                    setActiveCategory(activeCategory === item.label ? null : item.label)
+                  }
+                >
+                  {t(item.label)}
+                  <OptimizedIcon
+                    icon={CaretDown}
+                    className={`nav-chevron ${activeCategory === item.label ? 'rotate' : ''}`}
+                  />
+                  {activeCategory === item.label && (
+                    <motion.div
+                      layoutId="nav-pill-active"
+                      className="absolute inset-0 bg-slate-100 rounded-full -z-10"
+                      initial={false}
+                      transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+                    />
+                  )}
+                </button>
+              </Magnetic>
 
               {/* Focused Dropdown */}
               <AnimatePresence>
@@ -241,7 +296,7 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
         {/* Actions (Right) */}
         <div className="nav-pill-actions">
           {/* Desktop/Tablet Only Actions */}
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="nav-desktop-actions hidden lg:flex items-center gap-3">
             <React.Suspense fallback={null}>
               <LanguageSwitcher />
             </React.Suspense>
@@ -266,17 +321,21 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
           </div>
 
           {/* Mobile Hamburger (Visible only on mobile) */}
-          <div className="lg:hidden">
-            <button
+          <div className="lg:hidden flex items-center gap-3">
+            <React.Suspense fallback={null}>
+              <LanguageSwitcher />
+            </React.Suspense>
+            <motion.button
               className="mobile-menu-trigger"
               onClick={() => setIsMobileOpen(true)}
               aria-label={isMobileOpen ? 'Close Menu' : 'Open Menu'}
+              whileTap={{ scale: 0.9 }}
             >
               <OptimizedIcon icon={isMobileOpen ? X : List} className="w-6 h-6" />
-            </button>
+            </motion.button>
           </div>
         </div>
-      </nav>
+      </motion.nav>
 
       {/* Mobile Menu Overlay */}
       <MobileNavOverlay

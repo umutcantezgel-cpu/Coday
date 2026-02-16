@@ -143,7 +143,9 @@ export interface InteractiveBlock extends BaseBlock {
     | 'ozg-readiness'
     | 'tracking-simulator'
     | 'component-configurator'
-    | 'roi-estimator';
+    | 'roi-estimator'
+    | 'blind-test'
+    | 'latency-calculator';
   data?: Record<string, unknown>; // Flexible props for the specific component
 }
 

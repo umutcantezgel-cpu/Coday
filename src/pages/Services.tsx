@@ -13,6 +13,8 @@ import RotatingText from '../shared/ui/RotatingText';
 import { MagicBento, BentoCard } from '../shared/ui/MagicBento';
 import GlareHover from '../shared/ui/GlareHover';
 
+import { SeoHead } from '../shared/ui/SeoHead';
+
 const Services: React.FC = () => {
   const { t } = useTranslation(['services', 'common']);
 
@@ -39,6 +41,13 @@ const Services: React.FC = () => {
 
   return (
     <div className="bg-background-light">
+      <SeoHead
+        title={t('meta.title', { defaultValue: 'Unsere Leistungen | Coday' })}
+        description={t('meta.description', {
+          defaultValue: 'High-End Webentwicklung, Design & Strategie für Ihren digitalen Erfolg.',
+        })}
+        pageType="service"
+      />
       {/* Header with Hero Image */}
       <section className="pt-12 pb-8 md:pt-24 md:pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">

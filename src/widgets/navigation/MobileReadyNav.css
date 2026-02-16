@@ -18,17 +18,41 @@
   justify-content: space-between;
   gap: 1rem;
   padding: 0.5rem 0.75rem;
+  border-radius: 9999px;
+  border: 1px solid transparent;
+  /* Base border */
+  transition: all 0.3s ease;
+  /* Smooth transition for background/border */
+  width: auto;
+  max-width: 100%;
+}
+
+/* State: Hidden (Scroll Down) */
+.nav-pill.nav-hidden {
+  transform: translateY(-150%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* State: At the top (Hero) - More transparent */
+.nav-pill.at-top {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.01);
+}
+
+/* State: Scrolled - Solid/Glass */
+.nav-pill.scrolled {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 9999px;
+  border-color: rgba(255, 255, 255, 0.5);
   box-shadow:
     0 4px 6px -1px rgba(0, 0, 0, 0.05),
     0 2px 4px -1px rgba(0, 0, 0, 0.03),
     0 0 0 1px rgba(0, 0, 0, 0.02);
-  width: auto;
-  max-width: 100%;
 }
 
 .nav-pill-logo {
@@ -43,8 +67,8 @@
 }
 
 .logo-icon {
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 3rem;
+  height: 3rem;
   color: #0f172a;
 }
 
@@ -58,11 +82,16 @@
 }
 
 @media (min-width: 1024px) {
-  .nav-desktop-links {
+  .nav-desktop-links,
+  .nav-desktop-actions {
     display: flex !important;
     align-items: center;
     gap: 0.25rem;
   }
+}
+
+.nav-desktop-actions {
+  display: none;
 }
 
 /* Hide Floating Action Menu when mobile nav is open */
@@ -383,6 +412,7 @@ body.mobile-nav-open #fab-container {
 
 .mobile-link-item:active {
   background: rgba(0, 0, 0, 0.03);
+  transform: scale(0.98);
 }
 
 .mobile-footer-actions {
