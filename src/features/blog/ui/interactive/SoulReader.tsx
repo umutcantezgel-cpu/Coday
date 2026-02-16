@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { CheckCircle, XCircle, Confetti, HandPalm, Robot } from '@phosphor-icons/react';
+import { CheckCircle, HandPalm, Robot } from '@phosphor-icons/react';
 import { clsx } from 'clsx';
 import { OptimizedImage } from '../../../../shared/ui/OptimizedImage';
 
@@ -56,7 +56,7 @@ export const SoulReader: React.FC<SoulReaderProps> = ({ data }) => {
           {/* Human Option */}
           <QuizOption
             type="human"
-            image="/images/blog/anti-ai-human.png"
+            image="/images/blog/anti-ai-human.webp"
             label="Option A"
             hasVoted={hasVoted}
             isSelected={selected === 'human'}
@@ -67,7 +67,7 @@ export const SoulReader: React.FC<SoulReaderProps> = ({ data }) => {
           {/* AI Option */}
           <QuizOption
             type="ai"
-            image="/images/blog/anti-ai-artificial.png"
+            image="/images/blog/anti-ai-artificial.webp"
             label="Option B"
             hasVoted={hasVoted}
             isSelected={selected === 'ai'}
@@ -123,10 +123,25 @@ export const SoulReader: React.FC<SoulReaderProps> = ({ data }) => {
   );
 };
 
-const QuizOption = ({ type, image, label, hasVoted, isSelected, onSelect, isCorrect }: any) => {
+interface QuizOptionProps {
+  type: 'human' | 'ai';
+  image: string;
+  label: string;
+  hasVoted: boolean;
+  isSelected: boolean;
+  onSelect: () => void;
+  isCorrect: boolean;
+}
+
+const QuizOption: React.FC<QuizOptionProps> = ({
+  image,
+  label,
+  hasVoted,
+  isSelected,
+  onSelect,
+  isCorrect,
+}) => {
   const isRevealed = hasVoted;
-  const isWinner = isRevealed && isCorrect;
-  const isLoser = isRevealed && !isCorrect && isSelected;
 
   return (
     <button

@@ -18,7 +18,7 @@ export const Footer: React.FC = () => {
           <div className="col-span-2 lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <OptimizedImage
-                src="/images/brand/coday-logo-footer.png"
+                src="/images/brand/coday-logo-footer.webp"
                 alt="Coday"
                 className="h-16 w-auto mb-6 !bg-transparent"
               />
