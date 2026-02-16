@@ -165,8 +165,13 @@ const Contact: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <h2 className="font-display font-bold text-3xl text-secondary mb-12">{t('faq.title')}</h2>
           <div className="max-w-3xl mx-auto space-y-4 text-start">
-            {(t('faq.items', { returnObjects: true }) as Array<{ q: string; a: string }>).map(
-              (faq, idx) => (
+            {(
+              (Array.isArray(t('faq.items', { returnObjects: true }))
+                ? t('faq.items', { returnObjects: true })
+                : []) as Array<{ q: string; a: string }>
+            )
+              .filter((item) => typeof item === 'object' && item !== null)
+              .map((faq, idx) => (
                 <div
                   key={idx}
                   className="bg-white border border-gray-100 shadow-sm rounded-xl p-6 hover:shadow-md transition-all"
@@ -174,8 +179,7 @@ const Contact: React.FC = () => {
                   <h4 className="font-bold text-secondary mb-2 text-lg">{faq.q}</h4>
                   <p className="text-slate-600 leading-relaxed">{faq.a}</p>
                 </div>
-              )
-            )}
+              ))}
           </div>
         </div>
       </section>

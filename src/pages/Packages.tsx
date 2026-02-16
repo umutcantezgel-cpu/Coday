@@ -60,8 +60,12 @@ const Packages: React.FC = () => {
       setupPrice: 939,
       originalPrice: 1250,
       monthlyPrice: 49,
-      features: t('features.starter', { returnObjects: true }) as string[],
-      notIncluded: t('not_included.starter', { returnObjects: true }) as string[],
+      features: Array.isArray(t('features.starter', { returnObjects: true }))
+        ? (t('features.starter', { returnObjects: true }) as string[])
+        : [],
+      notIncluded: Array.isArray(t('not_included.starter', { returnObjects: true }))
+        ? (t('not_included.starter', { returnObjects: true }) as string[])
+        : [],
       cta: t('packages.starter.cta'),
       deliveryDays: 14,
       savings: 25,
@@ -74,8 +78,12 @@ const Packages: React.FC = () => {
       originalPrice: 2150,
       monthlyPrice: 99,
       popular: true,
-      features: t('features.professional', { returnObjects: true }) as string[],
-      notIncluded: t('not_included.professional', { returnObjects: true }) as string[],
+      features: Array.isArray(t('features.professional', { returnObjects: true }))
+        ? (t('features.professional', { returnObjects: true }) as string[])
+        : [],
+      notIncluded: Array.isArray(t('not_included.professional', { returnObjects: true }))
+        ? (t('not_included.professional', { returnObjects: true }) as string[])
+        : [],
       cta: t('packages.professional.cta'),
       deliveryDays: 21,
       savings: 25,
@@ -87,7 +95,9 @@ const Packages: React.FC = () => {
       setupPrice: 2219,
       originalPrice: 2950,
       monthlyPrice: 199,
-      features: t('features.enterprise', { returnObjects: true }) as string[],
+      features: Array.isArray(t('features.enterprise', { returnObjects: true }))
+        ? (t('features.enterprise', { returnObjects: true }) as string[])
+        : [],
       cta: t('packages.enterprise.cta'),
       deliveryDays: 30,
       savings: 25,
