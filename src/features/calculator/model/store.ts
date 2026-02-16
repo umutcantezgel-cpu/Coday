@@ -153,19 +153,34 @@ export const useCalculatorStore = create<CalculatorState>()(
       // Serilizing Set to Array for local storage
       storage: {
         getItem: (name) => {
+          if (typeof window === 'undefined') return null;
           const str = localStorage.getItem(name);
           if (!str) return null;
-          const { state } = JSON.parse(str);
-          return { ...state, selectedModuleIds: new Set(state.selectedModuleIds) };
+          try {
+            const { state } = JSON.parse(str);
+            return {
+              ...state,
+              selectedModuleIds: new Set(state.selectedModuleIds),
+            };
+          } catch {
+            return null;
+          }
         },
         setItem: (name, value) => {
+          if (typeof window === 'undefined') return;
           const serialized = {
             ...value,
-            state: { ...value.state, selectedModuleIds: Array.from(value.state.selectedModuleIds) },
+            state: {
+              ...value.state,
+              selectedModuleIds: Array.from(value.state.selectedModuleIds),
+            },
           };
           localStorage.setItem(name, JSON.stringify(serialized));
         },
-        removeItem: (name) => localStorage.removeItem(name),
+        removeItem: (name) => {
+          if (typeof window === 'undefined') return;
+          localStorage.removeItem(name);
+        },
       },
     }
   )

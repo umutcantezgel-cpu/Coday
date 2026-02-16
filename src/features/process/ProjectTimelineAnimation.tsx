@@ -7,8 +7,9 @@ import { useTranslation } from 'react-i18next';
 
 const ProjectTimelineAnimation: React.FC = () => {
   const { t } = useTranslation('process');
+  const timelineSteps = t('timeline.steps', { returnObjects: true });
   const steps = (
-    t('timeline.steps', { returnObjects: true }) as Array<{ title: string; desc: string }>
+    Array.isArray(timelineSteps) ? (timelineSteps as Array<{ title: string; desc: string }>) : []
   ).map((step, idx) => ({
     ...step,
     phase: `0${idx + 1}`,
