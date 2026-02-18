@@ -650,7 +650,7 @@ const Terms: React.FC = () => {
         >
           {t('terms.sections.5.note', {
             defaultValue:
-              'Der auf dieser Website verfügbare KI-Assistent „Jarvis" sowie der Website-Analyzer nutzen automatisierte Systeme zur Verarbeitung von Anfragen.',
+              'Der auf dieser Website verfügbare KI-Assistent „Codi" sowie der Website-Analyzer nutzen automatisierte Systeme zur Verarbeitung von Anfragen.',
           })}
         </LegalAlertBox>
 

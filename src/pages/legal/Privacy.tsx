@@ -423,7 +423,7 @@ const Privacy: React.FC = () => {
 
           <ExpandableClause
             title={t('privacy.sections.2.d.title', {
-              defaultValue: 'Bei Nutzung des Chatbots (Jarvis)',
+              defaultValue: 'Bei Nutzung des Chatbots (Codi)',
             })}
           >
             <p className="mb-3">
@@ -596,7 +596,7 @@ const Privacy: React.FC = () => {
         >
           {t('privacy.sections.4.note', {
             defaultValue:
-              'Unser KI-Assistent "Jarvis" und der Website-Analyzer nutzen externe KI-Dienste zur Verarbeitung. Bei der Nutzung werden Ihre Eingaben an diese Dienste übermittelt.',
+              'Unser KI-Assistent "Codi" und der Website-Analyzer nutzen externe KI-Dienste zur Verarbeitung. Bei der Nutzung werden Ihre Eingaben an diese Dienste übermittelt.',
           })}
         </LegalAlertBox>
 

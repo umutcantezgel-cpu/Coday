@@ -1,8 +1,8 @@
 /**
- * Coday Knowledge Base for Jarvis AI Assistant
+ * Coday Knowledge Base for Codi AI Assistant
  *
  * This file contains all company information extracted from the website
- * to provide Jarvis with comprehensive knowledge about Coday.
+ * to provide Codi with comprehensive knowledge about Coday.
  */
 
 export const CODAY_KNOWLEDGE_BASE = {

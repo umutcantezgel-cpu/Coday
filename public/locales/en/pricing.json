@@ -26,7 +26,7 @@
         "starter": "—"
       },
       "pages": {
-        "ent": "Unlimited",
+        "ent": "Up to 30",
         "label": "Pages",
         "pro": "7-10",
         "starter": "3-5"
@@ -65,7 +65,7 @@
   },
   "features": {
     "enterprise": [
-      "Unlimited Pages",
+      "Up to 30 Pages",
       "Custom Web Application",
       "Online Shop Integration",
       "API Development",
@@ -128,5 +128,11 @@
     "headline": "Three Packages. <0>Zero Surprises.</0>",
     "subheadline": "Choose the package that fits your goals. All prices are fixed – no hidden costs.",
     "title": "Transparent Pricing"
+  },
+  "custom": {
+    "title": "Bigger Project?",
+    "description": "For more complex requirements – e.g. over 30 pages, custom features, or special integrations – we'll gladly create a tailored quote for you.",
+    "cta": "Request Custom Quote",
+    "badge": "Custom"
   }
 }

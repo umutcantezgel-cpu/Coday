@@ -85,6 +85,9 @@ export const useAnalyzerStore = create<AnalyzerState>((set, get) => ({
       // STEP 1: SCAN (Fetch HTML)
       const scanData = await scanWebsite(url);
 
+      // Store scanned headers for the security agent
+      const scannedHeaders = scanData.headers || {};
+
       // Initializing Result Object
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const partialResult: any = {
@@ -111,7 +114,12 @@ export const useAnalyzerStore = create<AnalyzerState>((set, get) => ({
           }));
 
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          const agentResult = await analyzeAgent<any>(agentId, scanData.url, scanData.html);
+          const agentResult = await analyzeAgent<any>(
+            agentId,
+            scanData.url,
+            scanData.html,
+            agentId === 'security' ? scannedHeaders : undefined
+          );
           if (agentResult.score === -1) {
             throw new Error(agentResult.error || 'Agent failed');
           }
@@ -218,9 +226,6 @@ export const useAnalyzerStore = create<AnalyzerState>((set, get) => ({
         },
         result: finalResult,
       });
-
-      // Save to History (Fire and Forget)
-      saveAuditResult(finalResult);
 
       // Save to History (Fire and Forget)
       saveAuditResult(finalResult);

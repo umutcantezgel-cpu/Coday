@@ -308,6 +308,39 @@ const Packages: React.FC = () => {
             ))}
           </div>
 
+          {/* Custom Pricing Banner */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="mt-12 max-w-3xl mx-auto"
+          >
+            <div className="relative rounded-2xl overflow-hidden bg-white/[0.04] backdrop-blur-lg border border-white/[0.08] hover:border-primary/30 transition-all duration-500">
+              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent" />
+              <div className="p-8 lg:p-10 text-center">
+                <span className="inline-block bg-accent/20 text-accent text-[11px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-4">
+                  {t('custom.badge', { defaultValue: 'Individuell' })}
+                </span>
+                <h3 className="font-display font-bold text-2xl text-white mb-3">
+                  {t('custom.title', { defaultValue: 'Größeres Projekt?' })}
+                </h3>
+                <p className="text-gray-400 text-sm leading-relaxed max-w-xl mx-auto mb-6">
+                  {t('custom.description', {
+                    defaultValue:
+                      'Für komplexere Anforderungen erstellen wir Ihnen gerne ein maßgeschneidertes Angebot.',
+                  })}
+                </p>
+                <NavLink
+                  to="/booking"
+                  className="inline-flex items-center gap-2 px-8 py-3.5 bg-transparent border border-accent/40 text-accent font-bold rounded-xl hover:bg-accent/10 hover:border-accent/60 transition-all duration-300 hover:-translate-y-0.5"
+                >
+                  {t('custom.cta', { defaultValue: 'Individuelles Angebot anfragen' })}
+                  <OptimizedIcon icon={ArrowRight} className="text-sm" />
+                </NavLink>
+              </div>
+            </div>
+          </motion.div>
+
           {/* Trust Bar — compact inline */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}

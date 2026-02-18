@@ -1,6 +1,6 @@
 /**
- * Website Analyzer API Service
- * Handles website analysis using Supabase Edge Function (to avoid CORS issues)
+ * Website Analyzer API Service — v2.0
+ * Handles website analysis using Supabase Edge Function
  */
 
 import type {
@@ -10,18 +10,23 @@ import type {
 } from '../../../features/analyzer/model/types';
 import { supabase } from '@/shared/lib/supabase/client';
 
-// Get Supabase URL from env for Edge Functions (keep for direct fetch if needed, but client is better)
 const SUPABASE_URL =
   import.meta.env.VITE_SUPABASE_URL || import.meta.env.NEXT_PUBLIC_SUPABASE_URL || '';
 const SUPABASE_ANON_KEY =
   import.meta.env.VITE_SUPABASE_ANON_KEY || import.meta.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
 
 /**
- * Step 1: Scan the website (Fetch & Simplify HTML)
+ * Step 1: Scan the website — returns extracted content, headers, and tech stack
  */
 export async function scanWebsite(
   url: string
-): Promise<{ success: boolean; html: string; url: string; stack?: string[] }> {
+): Promise<{
+  success: boolean;
+  html: string;
+  url: string;
+  stack?: string[];
+  headers?: Record<string, string>;
+}> {
   const response = await fetch(`${SUPABASE_URL}/functions/v1/analyze-website`, {
     method: 'POST',
     headers: {
@@ -32,13 +37,12 @@ export async function scanWebsite(
   });
 
   if (!response.ok) {
-    let errorMsg = 'Scan failed';
+    let errorMsg = 'Scan fehlgeschlagen';
     try {
       const data = await response.json();
       errorMsg = data.error || errorMsg;
     } catch {
-      // JSON parse failed, use status text instead
-      errorMsg = `Service Error: ${response.status} ${response.statusText}`;
+      errorMsg = `Service Fehler: ${response.status} ${response.statusText}`;
     }
     throw new Error(errorMsg);
   }
@@ -48,20 +52,29 @@ export async function scanWebsite(
 }
 
 /**
- * Step 2: Run a specific agent against the pre-fetched HTML
+ * Step 2: Run a specific agent against the pre-fetched content
+ * Now accepts optional headers for the security agent
  */
 export async function analyzeAgent<T = unknown>(
   agent: string,
   url: string,
-  html: string
+  html: string,
+  headers?: Record<string, string>
 ): Promise<T> {
+  const body: Record<string, unknown> = { action: 'analyze', agent, url, html };
+
+  // Pass real HTTP headers to security agent for factual analysis
+  if (agent === 'security' && headers) {
+    body.headers = headers;
+  }
+
   const response = await fetch(`${SUPABASE_URL}/functions/v1/analyze-website`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
     },
-    body: JSON.stringify({ action: 'analyze', agent, url, html }),
+    body: JSON.stringify(body),
   });
 
   const data = await response.json();
@@ -74,7 +87,7 @@ export async function analyzeAgent<T = unknown>(
 }
 
 /**
- * Step 3: Generate Action Plan (Optional, Post-Analysis)
+ * Step 3: Generate Action Plan based on found issues
  */
 export async function generateActionPlan(
   url: string,
@@ -122,8 +135,6 @@ export async function saveAuditResult(result: AnalysisResult): Promise<void> {
 
     if (error) {
       console.error('[Analyzer] Failed to save history:', error);
-    } else {
-      // Log removed
     }
   } catch (e) {
     console.error('[Analyzer] Save error:', e);

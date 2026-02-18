@@ -341,7 +341,7 @@
         },
         "d": {
           "content": "The chatbot stores your conversation locally in the browser to provide chat functionality.",
-          "title": "When using the Chatbot (Jarvis)"
+          "title": "When using the Chatbot (Codi)"
         },
         "subtitle": "What data we collect",
         "title": "Collection of Personal Data"
@@ -372,7 +372,7 @@
           "content": "For the chatbot and Website Analyzer, your requests are transmitted to the Google Gemini API.",
           "title": "Google Gemini API"
         },
-        "note": "Our AI assistant 'Jarvis' and the Website Analyzer use external AI services for processing. Your inputs are transmitted to these services when used.",
+        "note": "Our AI assistant 'Codi' and the Website Analyzer use external AI services for processing. Your inputs are transmitted to these services when used.",
         "perplexity": {
           "content": "The Perplexity API is used for advanced search queries.",
           "title": "Perplexity API"
@@ -592,7 +592,7 @@
           "3": "Legal Measures",
           "4": "Health-related Decisions"
         },
-        "note": "The AI assistant “Jarvis” available on this website and the Website Analyzer use automated systems to process requests.",
+        "note": "The AI assistant “Codi” available on this website and the Website Analyzer use automated systems to process requests.",
         "p1": "(1) The AI services serve exclusively for information purposes and do not constitute legal, medical, or financial advice.",
         "p2": "(2) Automatically generated content was created by machine and may contain errors.",
         "p3": "(3) The Provider assumes no liability for the accuracy, completeness, or timeliness of the AI-generated information.",

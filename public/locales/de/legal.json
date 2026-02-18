@@ -341,7 +341,7 @@
         },
         "d": {
           "content": "Der Chatbot speichert Ihre Konversation lokal im Browser zur Bereitstellung der Chat-Funktionalität.",
-          "title": "Bei Nutzung des Chatbots (Jarvis)"
+          "title": "Bei Nutzung des Chatbots (Codi)"
         },
         "subtitle": "Welche Daten wir sammeln",
         "title": "Erhebung personenbezogener Daten"
@@ -372,7 +372,7 @@
           "content": "Für den Chatbot und Website-Analyzer werden Ihre Anfragen an die Google Gemini API übermittelt.",
           "title": "Google Gemini API"
         },
-        "note": "Unser KI-Assistent \"Jarvis\" und der Website-Analyzer nutzen externe KI-Dienste zur Verarbeitung. Bei der Nutzung werden Ihre Eingaben an diese Dienste übermittelt.",
+        "note": "Unser KI-Assistent \"Codi\" und der Website-Analyzer nutzen externe KI-Dienste zur Verarbeitung. Bei der Nutzung werden Ihre Eingaben an diese Dienste übermittelt.",
         "perplexity": {
           "content": "Für erweiterte Suchanfragen wird die Perplexity API genutzt.",
           "title": "Perplexity API"
@@ -592,7 +592,7 @@
           "3": "Rechtliche Maßnahmen",
           "4": "Gesundheitsbezogene Entscheidungen"
         },
-        "note": "Der auf dieser Website verfügbare KI-Assistent „Jarvis\" sowie der Website-Analyzer nutzen automatisierte Systeme zur Verarbeitung von Anfragen.",
+        "note": "Der auf dieser Website verfügbare KI-Assistent „Codi\" sowie der Website-Analyzer nutzen automatisierte Systeme zur Verarbeitung von Anfragen.",
         "p1": "(1) Die KI-Dienste dienen ausschließlich zu Informationszwecken und stellen keine rechtliche, medizinische oder finanzielle Beratung dar.",
         "p2": "(2) Automatisch generierte Inhalte wurden maschinell erstellt und können Fehler enthalten.",
         "p3": "(3) Der Anbieter übernimmt keine Gewähr für die Richtigkeit, Vollständigkeit oder Aktualität der KI-generierten Informationen.",

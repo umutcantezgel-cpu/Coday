@@ -119,7 +119,7 @@ export async function generateChatResponse(
         webContext = `\n\nAktuelle Web-Recherche zu "${lastMessage}":\n${searchResult.content}`;
       }
     } catch (error) {
-      console.error('[Jarvis] Web search failed:', error);
+      console.error('[Codi] Web search failed:', error);
     }
   }
 
@@ -162,17 +162,17 @@ Antworte jetzt als Berater auf die letzte Nachricht. Halte die Antwort kurz und 
 }
 
 /**
- * Generate a Jarvis greeting message
+ * Generate a Codi greeting message
  */
 export function getGreetingMessage(): string {
   const hour = new Date().getHours();
 
   if (hour < 12) {
-    return 'Guten Morgen. Ich bin Jarvis, Ihr digitaler Assistent bei Coday. Wie kann ich Ihnen heute behilflich sein?';
+    return 'Guten Morgen. Ich bin Codi, Ihr digitaler Assistent bei Coday. Wie kann ich Ihnen heute behilflich sein?';
   } else if (hour < 18) {
-    return 'Guten Tag. Ich bin Jarvis, Ihr digitaler Assistent bei Coday. Wie kann ich Ihnen weiterhelfen?';
+    return 'Guten Tag. Ich bin Codi, Ihr digitaler Assistent bei Coday. Wie kann ich Ihnen weiterhelfen?';
   } else {
-    return 'Guten Abend. Ich bin Jarvis, Ihr digitaler Assistent bei Coday. Haben Sie Fragen zu unseren Dienstleistungen?';
+    return 'Guten Abend. Ich bin Codi, Ihr digitaler Assistent bei Coday. Haben Sie Fragen zu unseren Dienstleistungen?';
   }
 }
 

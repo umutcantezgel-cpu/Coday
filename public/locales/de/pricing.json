@@ -26,7 +26,7 @@
         "starter": "—"
       },
       "pages": {
-        "ent": "Unbegrenzt",
+        "ent": "Bis zu 30",
         "label": "Seiten",
         "pro": "7-10",
         "starter": "3-5"
@@ -65,7 +65,7 @@
   },
   "features": {
     "enterprise": [
-      "Unbegrenzte Seiten",
+      "Bis zu 30 Seiten",
       "Maßgeschneiderte Web-Anwendung",
       "Online-Shop Anbindung",
       "Schnittstellen-Entwicklung",
@@ -128,5 +128,11 @@
     "headline": "Drei Pakete. <0>Null Überraschungen.</0>",
     "subheadline": "Wählen Sie das Paket, das zu Ihren Zielen passt. Alle Preise sind Festpreise – keine versteckten Kosten.",
     "title": "Transparente Preise"
+  },
+  "custom": {
+    "title": "Größeres Projekt?",
+    "description": "Für komplexere Anforderungen – z. B. über 30 Seiten, individuelle Funktionen oder spezielle Integrationen – erstellen wir Ihnen gerne ein maßgeschneidertes Angebot.",
+    "cta": "Individuelles Angebot anfragen",
+    "badge": "Individuell"
   }
 }
