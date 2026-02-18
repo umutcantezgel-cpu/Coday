@@ -18,14 +18,15 @@ const SUPABASE_ANON_KEY =
 /**
  * Step 1: Scan the website — returns extracted content, headers, and tech stack
  */
-export async function scanWebsite(
-  url: string
-): Promise<{
+export async function scanWebsite(url: string): Promise<{
   success: boolean;
   html: string;
+  rawHtml?: string;
   url: string;
   stack?: string[];
   headers?: Record<string, string>;
+  robotsTxt?: string | null;
+  sitemapXml?: string | null;
 }> {
   const response = await fetch(`${SUPABASE_URL}/functions/v1/analyze-website`, {
     method: 'POST',
@@ -59,13 +60,30 @@ export async function analyzeAgent<T = unknown>(
   agent: string,
   url: string,
   html: string,
-  headers?: Record<string, string>
+  headers?: Record<string, string>,
+  rawHtml?: string,
+  robotsTxt?: string | null,
+  sitemapXml?: string | null
 ): Promise<T> {
   const body: Record<string, unknown> = { action: 'analyze', agent, url, html };
 
-  // Pass real HTTP headers to security agent for factual analysis
-  if (agent === 'security' && headers) {
+  // Pass raw HTML for deterministic fact computation
+  if (rawHtml) {
+    body.rawHtml = rawHtml;
+  }
+
+  // Pass real HTTP headers for all agents (security uses them most)
+  if (headers) {
     body.headers = headers;
+  }
+
+  // Pass SEO files check results
+  if (typeof robotsTxt !== 'undefined') {
+    body.robotsTxt = robotsTxt;
+  }
+
+  if (typeof sitemapXml !== 'undefined') {
+    body.sitemapXml = sitemapXml;
   }
 
   const response = await fetch(`${SUPABASE_URL}/functions/v1/analyze-website`, {

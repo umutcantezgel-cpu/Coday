@@ -7,6 +7,7 @@ import {
   isRouteErrorResponse,
   useLoaderData,
   type LoaderFunctionArgs,
+  type MetaFunction,
 } from 'react-router';
 import '@fontsource-variable/inter';
 import '@fontsource-variable/outfit';
@@ -20,6 +21,28 @@ import { GoogleAnalytics } from './shared/lib/analytics/GoogleAnalytics';
 const CookieConsentBanner = React.lazy(() => import('./widgets/cookie/CookieConsentBanner'));
 
 // import { createI18n } from './i18n.server'; // Moved to dynamic import in loader
+
+export const meta: MetaFunction<typeof loader> = ({ data }) => {
+  const lang = data?.lng || 'de';
+  const title = 'Coday | Der Agentur-Killer';
+  const description =
+    'Wir beenden Ineffizienz. High-End Webentwicklung & Design für Agenturen und Unternehmen.';
+
+  return [
+    { title },
+    { name: 'description', content: description },
+    {
+      name: 'keywords',
+      content:
+        'Webentwicklung, Webdesign, Agentur, High-End, Performance, SEO, React, Next.js, Coday',
+    },
+    { property: 'og:title', content: title },
+    { property: 'og:description', content: description },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:site_name', content: 'Coday' },
+    { property: 'og:locale', content: lang === 'en' ? 'en_US' : 'de_DE' },
+  ];
+};
 
 // ... logic to be added
 // eslint-disable-next-line react-refresh/only-export-components
@@ -93,6 +116,31 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
         {/* Favicon */}
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        {/* Organization JSON-LD (SSR) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'Coday',
+              url: 'https://www.codayweb.de',
+              logo: 'https://www.codayweb.de/images/coday-logo.png',
+              sameAs: [
+                'https://www.linkedin.com/company/coday',
+                'https://twitter.com/coday',
+                'https://www.instagram.com/coday',
+              ],
+              contactPoint: {
+                '@type': 'ContactPoint',
+                telephone: '+49-123-456789',
+                contactType: 'customer service',
+                areaServed: 'DE',
+                availableLanguage: ['German', 'English'],
+              },
+            }),
+          }}
+        />
       </head>
       <body>
         <SkipLink />

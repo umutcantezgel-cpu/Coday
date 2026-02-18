@@ -1,3 +1,4 @@
+import { type MetaFunction } from 'react-router';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { SeoHead } from '../shared/ui/SeoHead';
@@ -15,6 +16,23 @@ import { TestimonialsSection } from '../widgets/home/TestimonialsSection';
 const AgencyComparisonTable = React.lazy(
   () => import('../features/analyzer/ui/AgencyComparisonTable')
 );
+
+export const meta: MetaFunction = ({ params }) => {
+  const lang = params.lng || 'de';
+  const isEn = lang === 'en';
+
+  const title = isEn ? 'Coday | The Agency Killer' : 'Coday | Der Agentur-Killer';
+  const description = isEn
+    ? 'We end inefficiency. High-End Web Development & Design for Agencies and Enterprises.'
+    : 'Wir beenden Ineffizienz. High-End Webentwicklung & Design für Agenturen und Unternehmen.';
+
+  return [
+    { title },
+    { name: 'description', content: description },
+    { property: 'og:title', content: title },
+    { property: 'og:description', content: description },
+  ];
+};
 
 const Home: React.FC = () => {
   const { t } = useTranslation(['home', 'common', 'services']);

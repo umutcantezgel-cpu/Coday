@@ -22,9 +22,6 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   return (
     <div className="font-sans text-text-light bg-background-light min-h-screen flex flex-col">
-      <a href="#main-content" className="skip-link">
-        Zum Hauptinhalt springen
-      </a>
       {/* World Class Navigation (Mobile Ready) */}
       <MobileReadyNav />
 

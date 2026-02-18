@@ -85,8 +85,9 @@ export const useAnalyzerStore = create<AnalyzerState>((set, get) => ({
       // STEP 1: SCAN (Fetch HTML)
       const scanData = await scanWebsite(url);
 
-      // Store scanned headers for the security agent
+      // Store scanned headers and rawHtml for agents
       const scannedHeaders = scanData.headers || {};
+      const scannedRawHtml = scanData.rawHtml || scanData.html;
 
       // Initializing Result Object
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -118,7 +119,10 @@ export const useAnalyzerStore = create<AnalyzerState>((set, get) => ({
             agentId,
             scanData.url,
             scanData.html,
-            agentId === 'security' ? scannedHeaders : undefined
+            scannedHeaders,
+            scannedRawHtml,
+            scanData.robotsTxt,
+            scanData.sitemapXml
           );
           if (agentResult.score === -1) {
             throw new Error(agentResult.error || 'Agent failed');
