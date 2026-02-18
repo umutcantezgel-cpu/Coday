@@ -461,8 +461,10 @@ function computeSecurityFacts(headers: Record<string, string>, url: string): Fac
   d.hasReferrerPolicy = !!headers['referrer-policy'];
   if (d.hasReferrerPolicy) score += 5;
 
-  d.hasPermissionsPolicy = !!headers['permissions-policy'] || !!headers['feature-policy'];
   if (d.hasPermissionsPolicy) score += 5;
+
+  d.hasXXssProtection = !!headers['x-xss-protection'];
+  if (d.hasXXssProtection) score += 5;
 
   d.serverLeak = !!headers['server'];
   d.serverValue = headers['server'] || '';
@@ -480,6 +482,7 @@ function computeSecurityFacts(headers: Record<string, string>, url: string): Fac
     `X-Content-Type-Options: ${d.hasXContentType ? 'JA ✓' : 'FEHLT ✗'}`,
     `Referrer-Policy: ${d.hasReferrerPolicy ? 'JA ✓' : 'FEHLT ✗'}`,
     `Permissions-Policy: ${d.hasPermissionsPolicy ? 'JA ✓' : 'FEHLT ✗'}`,
+    `X-XSS-Protection: ${d.hasXXssProtection ? 'JA ✓ (Legacy)' : 'Fehlt (Optional)'}`,
     `Server Header Leak: ${d.serverLeak ? `JA ✗ (${d.serverValue})` : 'Nein ✓'}`,
     `X-Powered-By Leak: ${d.poweredByLeak ? `JA ✗ (${d.poweredByValue})` : 'Nein ✓'}`,
   ].join('\n');
@@ -487,9 +490,24 @@ function computeSecurityFacts(headers: Record<string, string>, url: string): Fac
   return { baseScore: Math.max(0, Math.min(score, 90)), maxScore: 90, details: d, factBlock };
 }
 
-function computePerformanceFacts(html: string): FactResult {
+function computePerformanceFacts(html: string, ttfb: number = 0): FactResult {
   let score = 0;
-  const d: Record<string, unknown> = {};
+  const d: Record<string, any> = {};
+
+  // TTFB Scoring
+  d.ttfb = ttfb;
+  let ttfbRating = 'schlecht';
+  if (ttfb < 200) {
+    ttfbRating = 'exzellent';
+    score += 15;
+  } else if (ttfb < 600) {
+    ttfbRating = 'gut';
+    score += 10;
+  } else if (ttfb < 1000) {
+    ttfbRating = 'akzeptabel';
+    score += 5;
+  }
+  d.ttfbRating = ttfbRating;
 
   // Scripts analysis
   const scripts = html.match(/<script[^>]+src=["'][^"']+["'][^>]*>/gi) || [];
@@ -506,6 +524,18 @@ function computePerformanceFacts(html: string): FactResult {
   d.imgWithDims = withDims;
   d.imgDimsPct = imgs.length > 0 ? Math.round((withDims / imgs.length) * 100) : 100;
   score += Math.round(((d.imgDimsPct as number) / 100) * 10);
+
+  // Checks for CLS risk: Images without ANY dimensions
+  const clsRiskImgs = imgs.filter((i) => !/width=/i.test(i) && !/height=/i.test(i));
+  d.clsRiskCount = clsRiskImgs.length;
+  if (d.clsRiskCount > 0) score -= Math.min(10, d.clsRiskCount * 2);
+
+  // Lazy loading placement checklist (<3 images should NOT be lazy)
+  // Simple heuristic: check if first few img tags have loading="lazy"
+  const first3Imgs = imgs.slice(0, 3);
+  const badLazy = first3Imgs.filter((i) => /loading=["']lazy["']/i.test(i)).length;
+  d.badLazyCount = badLazy;
+  if (badLazy > 0) score -= 5;
 
   // Lazy loading
   const lazyImgs = imgs.filter((i) => /loading=["']lazy["']/i.test(i)).length;
@@ -558,9 +588,12 @@ function computePerformanceFacts(html: string): FactResult {
     `INLINE CSS: ${d.inlineCssBytes} Bytes`,
     `HTML-GRÖSSE: ${d.htmlKb} KB`,
     `FONT PRELOAD: ${d.fontPreload ? 'JA ✓' : 'NEIN'}`,
+    `TTFB: ${d.ttfb} ms (${d.ttfbRating})`,
+    `CLS RISK: ${d.clsRiskCount} Bilder ohne Maße`,
+    `LCP RISK: ${d.badLazyCount} Bilder Above-Fold mit loading=lazy`,
   ].join('\n');
 
-  return { baseScore: Math.max(0, Math.min(score, 85)), maxScore: 85, details: d, factBlock };
+  return { baseScore: Math.max(0, Math.min(score, 100)), maxScore: 100, details: d, factBlock };
 }
 
 function computeAccessibilityFacts(html: string): FactResult {
@@ -662,8 +695,34 @@ function computeUxFacts(html: string): FactResult {
   if (d.hasViewport) score += 15;
 
   // Navigation
-  const navElements = html.match(/<nav[^>]*>[\s\S]*?<\/nav>/gi) || [];
-  d.hasNav = navElements.length > 0;
+  // Navigation Detection (Tag -> Role -> Class -> ID)
+  const navTags = html.match(/<nav[^>]*>[\s\S]*?<\/nav>/gi) || [];
+  const rolesNav = html.match(/<[^>]+role=["']navigation["'][^>]*>[\s\S]*?<\/[^>]+>/gi) || [];
+  const classNav =
+    html.match(
+      /<[^>]+class=["'][^"']*(?:nav|menu|header-inner)[^"']*["'][^>]*>[\s\S]*?<\/[^>]+>/gi
+    ) || []; // Be careful with greedy regex, simplified here
+
+  // We prefer explicit <nav> or role="navigation"
+  let hasNav = navTags.length > 0 || rolesNav.length > 0;
+  let navMethod = navTags.length > 0 ? 'tag' : rolesNav.length > 0 ? 'role' : 'none';
+
+  // Fallback: Check if we have substantial links in a "header" or "nav" class container if no semantic tag
+  if (!hasNav) {
+    // Very rough check for class-based nav if semantic is missing
+    if (classNav.length > 0) {
+      hasNav = true;
+      navMethod = 'class (fallback)';
+    }
+  }
+
+  d.hasNav = hasNav;
+  d.navMethod = navMethod; // For AI prompt context
+
+  // Extract links specifically from the detected navigation area to be more precise
+  // This is hard with regex on raw HTML, so we stick to global heuristics but contextualized by the finding above
+  const navElements = [...navTags, ...rolesNav, ...classNav];
+
   const navLinks = navElements.flatMap((n) => n.match(/<a[^>]+>/gi) || []);
   d.navLinkCount = navLinks.length;
   if (d.hasNav) score += 10;
@@ -725,7 +784,11 @@ function computeUxFacts(html: string): FactResult {
   if (foundSocial.length >= 2) score += 5;
 
   // Footer
-  d.hasFooter = /<footer/i.test(html);
+  // Footer Detection
+  d.hasFooter =
+    /<footer/i.test(html) ||
+    /role=["']contentinfo["']/i.test(html) ||
+    /class=["'][^"']*footer[^"']*["']/i.test(html);
   if (d.hasFooter) score += 5;
 
   // Forms UX
@@ -735,8 +798,10 @@ function computeUxFacts(html: string): FactResult {
 
   const factBlock = [
     `VIEWPORT: ${d.hasViewport ? 'JA ✓ (Mobile-Ready)' : 'FEHLT ✗'}`,
-    `NAVIGATION: ${d.hasNav ? `JA ✓ (${d.navLinkCount} Links)` : 'KEINE <nav> gefunden'}`,
+    `VIEWPORT: ${d.hasViewport ? 'JA ✓ (Mobile-Ready)' : 'FEHLT ✗'}`,
+    `NAVIGATION: ${d.hasNav ? `JA ✓ (Methode: ${d.navMethod}, ${d.navLinkCount} Links)` : 'KEINE <nav>/role=navigation gefunden'}`,
     `CTA ELEMENTE: ${d.ctaCount} (Buttons: ${d.buttonCount}, CTA-Links: ${d.ctaLinkCount})`,
+
     `CTA BEISPIELE: ${(d.ctaExamples as string[]).length > 0 ? (d.ctaExamples as string[]).join(', ') : 'keine'}`,
     `TRUST SIGNALE: ${d.trustSignalCount} → ${(d.trustSignalTypes as string[]).join(', ') || 'keine'}`,
     `SOCIAL MEDIA: ${(d.socialLinks as string[]).join(', ') || 'keine'}`,
@@ -837,7 +902,8 @@ function computeFactsForAgent(
   url: string,
   visibleText: string,
   robotsTxt?: string | null,
-  sitemapXml?: string | null
+  sitemapXml?: string | null,
+  ttfb?: number
 ): FactResult | null {
   switch (agentId) {
     case 'seo':
@@ -845,7 +911,8 @@ function computeFactsForAgent(
     case 'security':
       return computeSecurityFacts(headers, url);
     case 'performance':
-      return computePerformanceFacts(html);
+      return computePerformanceFacts(html, ttfb || 0);
+
     case 'accessibility':
       return computeAccessibilityFacts(html);
     case 'ux':
@@ -858,11 +925,11 @@ function computeFactsForAgent(
 }
 
 // ─── FETCH WEBSITE WITH HEADERS ─────────────────────────
-// ─── FETCH WEBSITE WITH HEADERS ─────────────────────────
 interface FetchResult {
   html: string;
   headers: Record<string, string>;
   statusCode: number;
+  ttfb: number; // Time to First Byte in ms
   redirectUrl?: string;
   robotsTxt?: string | null;
   sitemapXml?: string | null;
@@ -873,6 +940,7 @@ async function fetchWebsite(url: string, includeExtraChecks = false): Promise<Fe
   const timeout = setTimeout(() => controller.abort(), 20000);
 
   try {
+    const start = performance.now();
     const fetchMain = fetch(url, {
       headers: {
         'User-Agent':
@@ -900,6 +968,9 @@ async function fetchWebsite(url: string, includeExtraChecks = false): Promise<Fe
       fetchRobots,
       fetchSitemap,
     ]);
+
+    const end = performance.now();
+    const ttfb = Math.round(end - start);
 
     if (!response.ok) {
       throw new Error(`HTTP ${response.status} ${response.statusText}`);
@@ -937,6 +1008,7 @@ async function fetchWebsite(url: string, includeExtraChecks = false): Promise<Fe
       html,
       headers: capturedHeaders,
       statusCode: response.status,
+      ttfb,
       redirectUrl: response.url !== url ? response.url : undefined,
       robotsTxt,
       sitemapXml,
@@ -1205,6 +1277,7 @@ const SecuritySchema = z
             xFrameOptions: z.boolean().catch(false),
             hsts: z.boolean().catch(false),
             xContentType: z.boolean().catch(false),
+            xXssProtection: z.boolean().catch(false),
           })
           .default({}),
         cookies: z
@@ -1322,7 +1395,7 @@ ANTWORTE AUSSCHLIESSLICH mit diesem JSON:
     "lcp": { "value": "geschätzt ~X.Xs", "status": "gut|mittel|schlecht" },
     "fid": { "value": "geschätzt ~Xms", "status": "gut|mittel|schlecht" },
     "cls": { "value": "geschätzt ~X.XX", "status": "gut|mittel|schlecht" },
-    "ttfb": { "value": "geschätzt ~Xms", "status": "gut|mittel|schlecht" }
+    "ttfb": { "value": "gemessen Xms", "status": "gut|mittel|schlecht" }
   },
   "issues": [
     { "severity": "kritisch|hoch|mittel|niedrig", "title": "Kurz", "description": "Konkret mit Zahlen aus FAKTEN", "fix": "Lösung" }
@@ -1332,6 +1405,7 @@ ANTWORTE AUSSCHLIESSLICH mit diesem JSON:
 
 REGELN:
 - scoreAdjustment MUSS zwischen -10 und +10 liegen
+- Bewerte TTFB: <200ms=exzellent, <600ms=gut, >1000ms=schlecht
 - Max 5 Issues, basierend auf den FAKTEN
 - KEINE generischen Tipps — nur was die Fakten belegen`,
 
@@ -1398,11 +1472,19 @@ ANTWORTE AUSSCHLIESSLICH mit diesem JSON:
       "csp": true/false,
       "xFrameOptions": true/false,
       "hsts": true/false,
-      "xContentType": true/false
+  "checks": {
+    "https": { "enabled": true/false, "valid": true/false },
+    "headers": {
+      "csp": true/false,
+      "xFrameOptions": true/false,
+      "hsts": true/false,
+      "xContentType": true/false,
+      "xXssProtection": true/false
     },
     "cookies": { "secure": true/false, "httpOnly": true/false }
   },
   "issues": [
+
     { "severity": "kritisch|hoch|mittel|niedrig", "title": "Kurz", "description": "Konkret", "fix": "Lösung" }
   ],
   "summary": "Max 2 Sätze."
@@ -1462,7 +1544,7 @@ ANTWORTE AUSSCHLIESSLICH mit diesem JSON:
   "adjustmentReason": "Warum Score angepasst",
   "checks": {
     "mobileResponsive": true/false,
-    "navigation": { "quality": "gut|mittel|schlecht", "depth": ZAHL },
+    "navigation": { "quality": "gut|mittel|schlecht", "depth": ZAHL, "method": "tag|role|class" },
     "cta": { "visible": true/false, "count": ZAHL, "quality": "gut|mittel|schlecht" },
     "trustSignals": { "count": ZAHL, "types": ["Typ1"] },
     "visualHierarchy": "gut|mittel|schlecht"
@@ -1475,6 +1557,7 @@ ANTWORTE AUSSCHLIESSLICH mit diesem JSON:
 
 REGELN:
 - scoreAdjustment zwischen -15 und +15
+- Beachte Nav-Erkennungsmethode (Tag > Role > Class)
 - Max 5 Issues`,
 
   content: `Du bist ein Conversion Copywriter.
@@ -1638,7 +1721,8 @@ async function runAgent(
       url,
       content,
       payload.robotsTxt,
-      payload.sitemapXml
+      payload.sitemapXml,
+      payload.ttfb // Pass TTFB explicitly
     );
     const baseScore = facts?.baseScore ?? 50;
     const maxScore = facts?.maxScore ?? 100;
@@ -1805,6 +1889,7 @@ serve(async (req: Request) => {
           url: fetchResult.redirectUrl || normalizedUrl,
           stack,
           headers: fetchResult.headers,
+          ttfb: fetchResult.ttfb,
           robotsTxt: fetchResult.robotsTxt,
           sitemapXml: fetchResult.sitemapXml,
         }),
