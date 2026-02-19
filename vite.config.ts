@@ -82,19 +82,10 @@ export default defineConfig(({ isSsrBuild }) => ({
     host: '0.0.0.0',
   },
   optimizeDeps: {
-    include: [
-      'react-helmet-async',
-      'motion/react',
-      'react-i18next',
-      'i18next',
-      'zustand',
-      'clsx',
-      'tailwind-merge',
-      '@phosphor-icons/react',
-    ],
+    include: ['react-i18next', 'i18next', 'zustand', 'clsx', 'tailwind-merge'],
   },
   ssr: {
-    noExternal: ['react-helmet-async', 'motion/react', '@phosphor-icons/react'],
+    noExternal: ['react-helmet-async', 'motion/react'],
   },
   build: {
     minify: 'terser',
@@ -111,6 +102,8 @@ export default defineConfig(({ isSsrBuild }) => ({
           output: {
             manualChunks: {
               vendor: ['react', 'react-dom', 'react-router-dom'],
+              motion: ['motion/react'],
+              helmet: ['react-helmet-async'],
               i18n: [
                 'i18next',
                 'react-i18next',

@@ -1,12 +1,31 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link as NavLink } from 'react-router-dom';
 import { ArrowRight, RocketLaunch as Rocket } from '@phosphor-icons/react';
 import { OptimizedIcon } from '../../shared/ui/OptimizedIcon';
 import GradientText from '../../shared/ui/GradientText';
-import RotatingText from '../../shared/ui/RotatingText';
 import { cn } from '../../shared/lib/utils';
 import { baseButtonStyles, buttonVariants, buttonSizes } from '../../shared/ui/ButtonStyles';
+
+// Lazy-load RotatingText (heavy: motion/react dependency) — only for desktop
+const RotatingText = React.lazy(() => import('../../shared/ui/RotatingText'));
+
+// Lightweight mobile text rotator — pure CSS, no motion/react
+const MobileRotatingText: React.FC<{ texts: string[] }> = ({ texts }) => {
+  const [index, setIndex] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setIndex((i) => (i + 1) % texts.length), 3000);
+    return () => clearInterval(id);
+  }, [texts.length]);
+  return (
+    <span
+      key={index}
+      className="inline-block animate-fade-in-up text-xl sm:text-2xl font-light text-slate-700 leading-relaxed"
+    >
+      {texts[index]}
+    </span>
+  );
+};
 
 export const HeroSection: React.FC = () => {
   const { t } = useTranslation(['home', 'common']);
@@ -38,13 +57,27 @@ export const HeroSection: React.FC = () => {
           </GradientText>
         </h1>
         <div className="max-w-3xl mx-auto mb-12 min-h-[60px] flex items-center justify-center">
-          <RotatingText
-            texts={t('hero.rotating', { returnObjects: true }) as string[]}
-            rotationInterval={3000}
-            staggerFrom="first"
-            staggerDuration={0.03}
-            mainClassName="text-xl sm:text-2xl font-light text-slate-700 leading-relaxed justify-center"
-          />
+          {/* Mobile: lightweight CSS crossfade | Desktop: full RotatingText */}
+          <span className="hidden md:inline-flex">
+            <React.Suspense
+              fallback={
+                <span className="text-xl sm:text-2xl font-light text-slate-700">
+                  {(t('hero.rotating', { returnObjects: true }) as string[])[0]}
+                </span>
+              }
+            >
+              <RotatingText
+                texts={t('hero.rotating', { returnObjects: true }) as string[]}
+                rotationInterval={3000}
+                staggerFrom="first"
+                staggerDuration={0.03}
+                mainClassName="text-xl sm:text-2xl font-light text-slate-700 leading-relaxed justify-center"
+              />
+            </React.Suspense>
+          </span>
+          <span className="md:hidden">
+            <MobileRotatingText texts={t('hero.rotating', { returnObjects: true }) as string[]} />
+          </span>
         </div>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
           <NavLink
