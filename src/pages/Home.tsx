@@ -5,24 +5,15 @@ import { SeoHead } from '../shared/ui/SeoHead';
 import LogoLoop from '../shared/ui/LogoLoop';
 import { TrustBar } from '../shared/ui/TrustBar';
 
-// FSD Widgets — only HeroSection eagerly loaded (above-the-fold)
+// All sections eagerly imported for SSR — server renders complete page HTML
+// Vite code-splits per route automatically, eager import ≠ same JS bundle
 import { HeroSection } from '../widgets/home/HeroSection';
+import { StatsSection } from '../widgets/home/StatsSection';
+import { PhilosophySection } from '../widgets/home/PhilosophySection';
+import { IndustriesGrid } from '../widgets/home/IndustriesGrid';
+import { TestimonialsSection } from '../widgets/home/TestimonialsSection';
 
-// Lazy load below-the-fold sections for performance
-const StatsSection = React.lazy(() =>
-  import('../widgets/home/StatsSection').then((m) => ({ default: m.StatsSection }))
-);
-const PhilosophySection = React.lazy(() =>
-  import('../widgets/home/PhilosophySection').then((m) => ({ default: m.PhilosophySection }))
-);
-const IndustriesGrid = React.lazy(() =>
-  import('../widgets/home/IndustriesGrid').then((m) => ({ default: m.IndustriesGrid }))
-);
-const TestimonialsSection = React.lazy(() =>
-  import('../widgets/home/TestimonialsSection').then((m) => ({ default: m.TestimonialsSection }))
-);
-
-// Lazy load heavy components
+// Only truly heavy non-critical component stays lazy
 const AgencyComparisonTable = React.lazy(
   () => import('../features/analyzer/ui/AgencyComparisonTable')
 );
@@ -63,22 +54,16 @@ const Home: React.FC = () => {
 
       <TrustBar />
 
-      <React.Suspense fallback={<div className="h-48" />}>
-        <StatsSection />
-      </React.Suspense>
+      <StatsSection />
 
       {/* Comparison Section */}
       <React.Suspense fallback={<div className="h-96" />}>
         <AgencyComparisonTable />
       </React.Suspense>
 
-      <React.Suspense fallback={<div className="h-48" />}>
-        <PhilosophySection />
-      </React.Suspense>
+      <PhilosophySection />
 
-      <React.Suspense fallback={<div className="h-48" />}>
-        <IndustriesGrid />
-      </React.Suspense>
+      <IndustriesGrid />
 
       {/* Tech Stack Section */}
       <section className="py-16 bg-gray-50 overflow-hidden">
@@ -113,9 +98,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <React.Suspense fallback={<div className="h-48" />}>
-        <TestimonialsSection />
-      </React.Suspense>
+      <TestimonialsSection />
     </>
   );
 };
