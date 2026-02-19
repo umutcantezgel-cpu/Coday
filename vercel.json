@@ -3,6 +3,24 @@
   "installCommand": "npm install --legacy-peer-deps",
   "headers": [
     {
+      "source": "/(de|en)/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, s-maxage=3600, stale-while-revalidate=86400"
+        }
+      ]
+    },
+    {
+      "source": "/(de|en)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, s-maxage=3600, stale-while-revalidate=86400"
+        }
+      ]
+    },
+    {
       "source": "/sw.js",
       "headers": [
         {
