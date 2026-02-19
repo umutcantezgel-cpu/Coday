@@ -28,7 +28,7 @@ export async function createI18n(lng: string) {
     fallbackLng: 'de',
     supportedLngs: ['de', 'en'],
     debug: false,
-    initImmediate: false,
+    initImmediate: false, // Important for SSR
     resources, // Use bundled resources
     ns: [
       'common',
@@ -51,6 +51,9 @@ export async function createI18n(lng: string) {
 
     interpolation: {
       escapeValue: false,
+    },
+    react: {
+      useSuspense: false, // Disable suspense on server to force sync render
     },
   });
 
