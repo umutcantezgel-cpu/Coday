@@ -46,7 +46,7 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 };
 
 // ... logic to be added
- 
+
 // Static import — avoid dynamic import() overhead on every SSR request
 import { createI18n } from './i18n.server';
 
@@ -103,6 +103,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"
+          fetchPriority="high"
         />
         <link
           rel="preload"
@@ -110,6 +111,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"
+          fetchPriority="high"
         />
 
         {/* Inlined @font-face — eliminates render-blocking fonts.css round-trip */}

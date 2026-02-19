@@ -3,18 +3,20 @@ import i18n from './i18n';
 import { I18nextProvider } from 'react-i18next';
 import { startTransition, StrictMode } from 'react';
 import { hydrateRoot } from 'react-dom/client';
-import * as Sentry from '@sentry/react';
 
-if (import.meta.env.VITE_SENTRY_DSN) {
-  Sentry.init({
-    dsn: import.meta.env.VITE_SENTRY_DSN,
-    integrations: [Sentry.browserTracingIntegration(), Sentry.replayIntegration()],
-    // Tracing — low rate in production to avoid performance overhead
-    tracesSampleRate: import.meta.env.DEV ? 1.0 : 0.1,
-    // Session Replay
-    replaysSessionSampleRate: import.meta.env.DEV ? 1.0 : 0.05,
-    replaysOnErrorSampleRate: 1.0,
-  });
+// Defer Sentry — load AFTER hydration to keep entry.client lean
+function initSentry() {
+  if (import.meta.env.VITE_SENTRY_DSN) {
+    import('@sentry/react').then((Sentry) => {
+      Sentry.init({
+        dsn: import.meta.env.VITE_SENTRY_DSN,
+        integrations: [Sentry.browserTracingIntegration(), Sentry.replayIntegration()],
+        tracesSampleRate: import.meta.env.DEV ? 1.0 : 0.1,
+        replaysSessionSampleRate: import.meta.env.DEV ? 1.0 : 0.05,
+        replaysOnErrorSampleRate: 1.0,
+      });
+    });
+  }
 }
 
 startTransition(() => {
@@ -27,3 +29,10 @@ startTransition(() => {
     </StrictMode>
   );
 });
+
+// Initialize Sentry after hydration, during idle time
+if (typeof requestIdleCallback !== 'undefined') {
+  requestIdleCallback(initSentry);
+} else {
+  setTimeout(initSentry, 3000);
+}
