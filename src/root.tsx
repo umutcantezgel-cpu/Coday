@@ -191,24 +191,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
 
-        {/* Global Styles - Loaded manually to ensure non-blocking behavior */}
-        {/* We use media="print" + onload strategy to defer loading until after first paint */}
-        <link rel="preload" href={styles} as="style" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-            var link = document.createElement('link');
-            link.rel = 'stylesheet';
-            link.href = '${styles}';
-            link.media = 'print';
-            link.onload = function() { this.media = 'all'; };
-            document.head.appendChild(link);
-            `,
-          }}
-        />
-        <noscript>
-          <link rel="stylesheet" href={styles} />
-        </noscript>
+        {/* Global Styles - Standard blocking load to prevent CLS */}
+        <link rel="stylesheet" href={styles} />
 
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
