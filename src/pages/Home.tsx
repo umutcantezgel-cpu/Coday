@@ -46,7 +46,6 @@ const Home: React.FC = () => {
           defaultValue:
             'Wir beenden Ineffizienz. High-End Webentwicklung & Design für Agenturen und Unternehmen.',
         })}
-        preloadImage="/images/hero/business-handshake-partnerschaft-tuer-offen-zusammenarbeit-vertrauen.webp"
         pageType="home"
       />
 
