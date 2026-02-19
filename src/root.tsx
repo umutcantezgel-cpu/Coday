@@ -170,6 +170,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {/* CSP set via vercel.json HTTP headers (more secure, smaller HTML) */}
         <Meta />
         <Links />
+        {/* Defer non-critical CSS — critical CSS is inlined above */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `document.querySelectorAll('link[rel="stylesheet"][href*="/assets/"]').forEach(function(l){l.media='print';l.onload=function(){l.media='all'}})`,
+          }}
+        />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
       <body>
