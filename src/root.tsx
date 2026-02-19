@@ -128,28 +128,22 @@ export function Layout({ children }: { children: React.ReactNode }) {
           }}
         />
 
-        {/* Defer analytics preconnect — not critical */}
-        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-
-        <meta
-          httpEquiv="Content-Security-Policy"
-          content="
-            default-src 'self';
-            script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googletagmanager.com https://*.google-analytics.com https://*.sentry.io blob:;
-            connect-src 'self' https://*.supabase.co https://*.sentry.io https://*.googleapis.com https://*.google-analytics.com https://*.googletagmanager.com;
-            style-src 'self' 'unsafe-inline';
-            img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com https://assets.vercel.com blob:;
-            font-src 'self' data:;
-            worker-src 'self' blob:;
-            frame-src 'self' https://*.google.com;
-          "
-        />
+        {/* CSP set via vercel.json HTTP headers (more secure, smaller HTML) */}
         <Meta />
         <Links />
-        {/* Favicon */}
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        {/* Organization JSON-LD (SSR) */}
+      </head>
+      <body>
+        <SkipLink />
+        <div id="main-content">{children}</div>
+        <ScrollRestoration />
+        <Scripts />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.initialI18nStore = ${JSON.stringify(data?.resources || {})};`,
+          }}
+        />
+        {/* JSON-LD in body — does not need to be in <head>, saves parsing time */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -172,17 +166,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 availableLanguage: ['German', 'English'],
               },
             }),
-          }}
-        />
-      </head>
-      <body>
-        <SkipLink />
-        <div id="main-content">{children}</div>
-        <ScrollRestoration />
-        <Scripts />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.initialI18nStore = ${JSON.stringify(data?.resources || {})};`,
           }}
         />
         <React.Suspense fallback={null}>

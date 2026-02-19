@@ -54,19 +54,27 @@ const Home: React.FC = () => {
 
       <TrustBar />
 
-      <StatsSection />
+      <div className="content-auto">
+        <StatsSection />
+      </div>
 
       {/* Comparison Section */}
-      <React.Suspense fallback={<div className="h-96" />}>
-        <AgencyComparisonTable />
-      </React.Suspense>
+      <div className="content-auto">
+        <React.Suspense fallback={<div className="h-96" />}>
+          <AgencyComparisonTable />
+        </React.Suspense>
+      </div>
 
-      <PhilosophySection />
+      <div className="content-auto">
+        <PhilosophySection />
+      </div>
 
-      <IndustriesGrid />
+      <div className="content-auto">
+        <IndustriesGrid />
+      </div>
 
       {/* Tech Stack Section */}
-      <section className="py-16 bg-gray-50 overflow-hidden">
+      <section className="content-auto py-16 bg-gray-50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <span className="text-primary font-bold tracking-wider uppercase text-xs mb-2 block">

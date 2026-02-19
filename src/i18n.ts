@@ -1,57 +1,76 @@
-import i18n from 'i18next';
+import i18n, { type Resource } from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import Backend from 'i18next-http-backend';
-import LanguageDetector from 'i18next-browser-languagedetector';
 
-i18n
-  // load translation using http -> see /public/locales
-  // learn more: https://github.com/i18next/i18next-http-backend
-  .use(Backend)
-  // detect user language
-  // learn more: https://github.com/i18next/i18next-browser-languageDetector
-  .use(LanguageDetector)
-  // pass the i18n instance to react-i18next.
-  .use(initReactI18next)
-  // init i18next
-  // for all options read: https://www.i18next.com/overview/configuration-options
-  .init({
-    fallbackLng: 'de',
-    supportedLngs: ['de', 'en'],
-    debug: import.meta.env.DEV, // Enable debug in development
-    // resources: (window as any).initialI18nStore, // Hydrate from server (Removed to fix dynamic loading)
+/**
+ * Lightweight i18n client — hydrates from SSR-provided translations.
+ *
+ * SSR injects `window.initialI18nStore` with all translations for the current
+ * language/page. The client hydrates from this data immediately, without
+ * importing the heavy http-backend (~15KB) or language-detector (~8KB).
+ *
+ * Language detection uses the `<html lang>` attribute set by SSR.
+ * Additional namespaces are loaded on-demand via deferred http-backend.
+ */
 
-    ns: [
-      'common',
-      'home',
-      'blog',
-      'form',
-      'pricing',
-      'process',
-      'services',
-      'tools',
-      'work',
-      'industries',
-      'knowledge',
-      'legal',
-      'careers',
-      'contact',
-      'dashboard',
-    ],
-    defaultNS: 'common',
+// Detect language from SSR-rendered <html lang="...">
+const ssrLang = typeof document !== 'undefined' ? document.documentElement.lang || 'de' : 'de';
 
-    interpolation: {
-      escapeValue: false, // not needed for react as it escapes by default
-    },
+// Hydrate from SSR-injected translations (set in root.tsx <body>)
+const ssrResources: Resource =
+  typeof window !== 'undefined' && (window as unknown as Record<string, unknown>).initialI18nStore
+    ? ((window as unknown as Record<string, unknown>).initialI18nStore as Resource)
+    : {};
 
-    backend: {
-      loadPath: '/locales/{{lng}}/{{ns}}.json',
-    },
+i18n.use(initReactI18next).init({
+  lng: ssrLang,
+  fallbackLng: 'de',
+  supportedLngs: ['de', 'en'],
+  debug: import.meta.env.DEV,
 
-    detection: {
-      order: ['path', 'localStorage', 'navigator'],
-      lookupFromPathIndex: 0,
-    },
+  // Hydrate from SSR-provided resources — no network request needed
+  resources: ssrResources,
+
+  ns: [
+    'common',
+    'home',
+    'blog',
+    'form',
+    'pricing',
+    'process',
+    'services',
+    'tools',
+    'work',
+    'industries',
+    'knowledge',
+    'legal',
+    'careers',
+    'contact',
+    'dashboard',
+  ],
+  defaultNS: 'common',
+
+  interpolation: {
+    escapeValue: false,
+  },
+});
+
+// Defer heavy plugins — load http-backend only when navigating to a new
+// language or namespace that isn't already in the SSR store
+if (typeof requestIdleCallback !== 'undefined') {
+  requestIdleCallback(() => {
+    import('i18next-http-backend').then((Backend) => {
+      i18n.use(Backend.default);
+      i18n.options.backend = { loadPath: '/locales/{{lng}}/{{ns}}.json' };
+    });
   });
+} else {
+  setTimeout(() => {
+    import('i18next-http-backend').then((Backend) => {
+      i18n.use(Backend.default);
+      i18n.options.backend = { loadPath: '/locales/{{lng}}/{{ns}}.json' };
+    });
+  }, 3000);
+}
 
 i18n.on('languageChanged', (lng) => {
   document.documentElement.lang = lng;

@@ -123,3 +123,9 @@ body {
     @apply outline-2 outline-offset-2 outline-primary;
   }
 }
+
+/* Below-fold rendering optimization: browser skips rendering until scrolled into view */
+.content-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+}

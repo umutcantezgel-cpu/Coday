@@ -10,6 +10,14 @@ interface GradientTextProps {
   direction?: 'horizontal' | 'vertical' | 'diagonal';
 }
 
+/**
+ * On mobile (< md breakpoint), the gradient is static — no animation.
+ * This avoids creating a compositing layer on the LCP H1 text element.
+ * On desktop, the gradient animates via `animate-gradient-xy`.
+ *
+ * Implementation: uses CSS `animation: none` on mobile via inline + Tailwind
+ * classes; the animation class only applies at md+ via `md:animate-gradient-xy`.
+ */
 export default function GradientText({
   children,
   className = '',
@@ -18,6 +26,9 @@ export default function GradientText({
   showBorder = false,
   direction: _direction = 'horizontal',
 }: GradientTextProps) {
+  // Mobile: 100% = static gradient position. Desktop: 200% = animated sweep.
+  // The JS `backgroundSize` always sets 200% — but CSS `animation: none` on
+  // mobile means the position never changes, so it's effectively static.
   const gradientStyle = {
     backgroundImage: `linear-gradient(to right, ${colors.join(', ')}, ${colors[0]})`,
     backgroundSize: '200% auto',
@@ -33,7 +44,7 @@ export default function GradientText({
     >
       {showBorder && (
         <div
-          className="absolute inset-0 z-0 pointer-events-none rounded-[1.25rem] animate-gradient-xy"
+          className="absolute inset-0 z-0 pointer-events-none rounded-[1.25rem] md:animate-gradient-xy"
           style={{
             ...gradientStyle,
             animationDuration: `${animationSpeed}s`,
@@ -52,7 +63,7 @@ export default function GradientText({
         </div>
       )}
       <div
-        className="inline-block relative z-2 text-transparent bg-clip-text animate-gradient-xy pb-1"
+        className="inline-block relative z-2 text-transparent bg-clip-text md:animate-gradient-xy pb-1"
         style={{
           ...gradientStyle,
           animationDuration: `${animationSpeed}s`,
