@@ -64,11 +64,31 @@ export async function loader({ request }: LoaderFunctionArgs) {
   };
 }
 
+import { useTranslation } from 'react-i18next';
+
 export function Layout({ children }: { children: React.ReactNode }) {
   const data = useLoaderData<typeof loader>();
+  const { i18n } = useTranslation();
   const lang = data?.lng || 'de';
   const currentUrl = data?.url ? new URL(data.url) : null;
   const path = currentUrl ? currentUrl.pathname : '';
+
+  // Hydrate i18n resources on client-side navigation
+  React.useEffect(() => {
+    if (data?.lng && data?.resources) {
+      const resources = data.resources[data.lng];
+      if (resources) {
+        Object.keys(resources).forEach((ns) => {
+          if (!i18n.hasResourceBundle(data.lng, ns)) {
+            i18n.addResourceBundle(data.lng, ns, resources[ns], true, true);
+          }
+        });
+      }
+      if (i18n.language !== data.lng) {
+        i18n.changeLanguage(data.lng);
+      }
+    }
+  }, [data, i18n]);
 
   // Basic Hreflang Logic (Assumes symmetric paths for now)
   // TODO: improved mapping for blog posts with different slugs if needed
