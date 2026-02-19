@@ -9,14 +9,17 @@ import {
   type LoaderFunctionArgs,
   type MetaFunction,
 } from 'react-router';
-import '@fontsource-variable/inter';
-import '@fontsource-variable/outfit';
+// Fonts loaded via <link rel="preload"> in <head> + public/fonts/fonts.css
+// Removed synchronous @fontsource-variable imports (render-blocking)
 import './index.css';
 import { LazyMotion, domAnimation, MotionConfig } from 'motion/react';
 import React from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { SkipLink } from './shared/ui/SkipLink';
-import { GoogleAnalytics } from './shared/lib/analytics/GoogleAnalytics';
+// Defer GoogleAnalytics to avoid blocking initial render
+const GoogleAnalytics = React.lazy(() =>
+  import('./shared/lib/analytics/GoogleAnalytics').then((m) => ({ default: m.GoogleAnalytics }))
+);
 // Lazy load non-critical widgets
 const CookieConsentBanner = React.lazy(() => import('./widgets/cookie/CookieConsentBanner'));
 
@@ -96,8 +99,26 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <link rel="alternate" hrefLang="x-default" href={`${domain}${getPathForLang('de')}`} />
 
         {/* Resource Hints */}
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://www.google-analytics.com" />
+        {/* Font Preloading — non-render-blocking */}
+        <link
+          rel="preload"
+          href="/fonts/inter-variable-latin.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/outfit-variable-latin.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link rel="stylesheet" href="/fonts/fonts.css" />
+
+        {/* Defer analytics preconnect — not critical */}
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
 
         <meta
           httpEquiv="Content-Security-Policy"
@@ -158,7 +179,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
             __html: `window.initialI18nStore = ${JSON.stringify(data?.resources || {})};`,
           }}
         />
-        <GoogleAnalytics />
+        <React.Suspense fallback={null}>
+          <GoogleAnalytics />
+        </React.Suspense>
         <React.Suspense fallback={null}>
           <CookieConsentBanner />
         </React.Suspense>

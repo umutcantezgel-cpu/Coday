@@ -5,12 +5,22 @@ import { SeoHead } from '../shared/ui/SeoHead';
 import LogoLoop from '../shared/ui/LogoLoop';
 import { TrustBar } from '../shared/ui/TrustBar';
 
-// FSD Widgets
+// FSD Widgets — only HeroSection eagerly loaded (above-the-fold)
 import { HeroSection } from '../widgets/home/HeroSection';
-import { StatsSection } from '../widgets/home/StatsSection';
-import { PhilosophySection } from '../widgets/home/PhilosophySection';
-import { IndustriesGrid } from '../widgets/home/IndustriesGrid';
-import { TestimonialsSection } from '../widgets/home/TestimonialsSection';
+
+// Lazy load below-the-fold sections for performance
+const StatsSection = React.lazy(() =>
+  import('../widgets/home/StatsSection').then((m) => ({ default: m.StatsSection }))
+);
+const PhilosophySection = React.lazy(() =>
+  import('../widgets/home/PhilosophySection').then((m) => ({ default: m.PhilosophySection }))
+);
+const IndustriesGrid = React.lazy(() =>
+  import('../widgets/home/IndustriesGrid').then((m) => ({ default: m.IndustriesGrid }))
+);
+const TestimonialsSection = React.lazy(() =>
+  import('../widgets/home/TestimonialsSection').then((m) => ({ default: m.TestimonialsSection }))
+);
 
 // Lazy load heavy components
 const AgencyComparisonTable = React.lazy(
@@ -53,16 +63,22 @@ const Home: React.FC = () => {
 
       <TrustBar />
 
-      <StatsSection />
+      <React.Suspense fallback={<div className="h-48" />}>
+        <StatsSection />
+      </React.Suspense>
 
       {/* Comparison Section */}
       <React.Suspense fallback={<div className="h-96" />}>
         <AgencyComparisonTable />
       </React.Suspense>
 
-      <PhilosophySection />
+      <React.Suspense fallback={<div className="h-48" />}>
+        <PhilosophySection />
+      </React.Suspense>
 
-      <IndustriesGrid />
+      <React.Suspense fallback={<div className="h-48" />}>
+        <IndustriesGrid />
+      </React.Suspense>
 
       {/* Tech Stack Section */}
       <section className="py-16 bg-gray-50 overflow-hidden">
@@ -97,7 +113,9 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <TestimonialsSection />
+      <React.Suspense fallback={<div className="h-48" />}>
+        <TestimonialsSection />
+      </React.Suspense>
     </>
   );
 };

@@ -33,7 +33,8 @@ export default defineConfig(({ isSsrBuild }) => ({
         ],
       },
     }),
-    viteCompression(),
+    viteCompression({ algorithm: 'gzip' }),
+    viteCompression({ algorithm: 'brotliCompress', ext: '.br' }),
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'robots.txt', 'apple-touch-icon.png'],
@@ -109,8 +110,7 @@ export default defineConfig(({ isSsrBuild }) => ({
       : {
           output: {
             manualChunks: {
-              vendor: ['react', 'react-dom', 'react-router-dom', 'react-helmet-async'],
-              animations: ['motion/react'],
+              vendor: ['react', 'react-dom', 'react-router-dom'],
               i18n: [
                 'i18next',
                 'react-i18next',

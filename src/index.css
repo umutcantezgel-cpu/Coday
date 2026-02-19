@@ -11,6 +11,25 @@
   }
 }
 
+/* Mobile Performance: disable GPU-heavy decorative effects */
+@media (max-width: 768px) {
+  .animate-float {
+    animation: none !important;
+  }
+
+  .animate-gradient-xy {
+    animation: none !important;
+    background-size: 100% 100% !important;
+  }
+
+  /* Reduce blur filter intensity on mobile (GPU expensive) */
+  [class*='blur-[100px]'],
+  [class*='blur-[80px]'] {
+    filter: none !important;
+    opacity: 0.06;
+  }
+}
+
 @theme {
   --color-primary: #147a7a;
   /* Darkened from #1A9A9A for WCAG AA constrast */
