@@ -16,8 +16,12 @@ export const TestimonialsSection: React.FC = () => {
             <div className="absolute top-0 start-0 w-24 h-24 bg-accent/20 rounded-full blur-xl -translate-x-1/2 -translate-y-1/2 rtl:translate-x-1/2"></div>
             <OptimizedImage
               src="/images/services/drei-kunden-reviews.webp"
+              srcSet="/images/services/drei-kunden-reviews-640.webp 640w, /images/services/drei-kunden-reviews-1024.webp 1024w, /images/services/drei-kunden-reviews.webp 1920w"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
               alt={t('images.satisfied_partners', { ns: 'home' })}
               className="relative rounded-3xl shadow-flat-lg w-full bg-white p-2"
+              width={640}
+              height={357}
             />
           </div>
           <div className="order-1 lg:order-2">

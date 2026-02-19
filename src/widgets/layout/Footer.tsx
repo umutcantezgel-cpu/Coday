@@ -29,7 +29,7 @@ export const Footer: React.FC = () => {
             <div className="flex items-center gap-3 bg-white/5 p-3 rounded-xl border border-white/10 max-w-xs">
               <div className="w-12 h-12 rounded-lg overflow-hidden flex-shrink-0 bg-white">
                 <OptimizedImage
-                  src="/images/hero/business-handshake-partnerschaft-tuer-offen-zusammenarbeit-vertrauen.webp"
+                  src="/images/hero/business-handshake-partnerschaft-tuer-offen-zusammenarbeit-vertrauen-small.webp"
                   alt="Partnerschaft"
                   className="w-full h-full object-cover"
                   width={48}

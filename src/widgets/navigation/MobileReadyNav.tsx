@@ -155,7 +155,12 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
         {/* Logo */}
 
         <Link to="/" className="nav-pill-logo" aria-label="Zur Startseite">
-          <img src={CodayLogo} alt="Coday Logo" className="logo-icon w-12 h-12 object-contain" />
+          <img
+            src={CodayLogo}
+            alt="Coday Logo"
+            className="logo-icon w-12 h-12 object-contain"
+            fetchPriority="high"
+          />
           <span className="logo-text text-lg">Coday</span>
         </Link>
 

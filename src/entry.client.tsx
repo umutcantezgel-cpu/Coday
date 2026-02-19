@@ -10,10 +10,8 @@ function initSentry() {
     import('@sentry/react').then((Sentry) => {
       Sentry.init({
         dsn: import.meta.env.VITE_SENTRY_DSN,
-        integrations: [Sentry.browserTracingIntegration(), Sentry.replayIntegration()],
+        integrations: [Sentry.browserTracingIntegration()],
         tracesSampleRate: import.meta.env.DEV ? 1.0 : 0.1,
-        replaysSessionSampleRate: import.meta.env.DEV ? 1.0 : 0.05,
-        replaysOnErrorSampleRate: 1.0,
       });
     });
   }

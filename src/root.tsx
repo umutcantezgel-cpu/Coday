@@ -11,7 +11,7 @@ import {
 } from 'react-router';
 // Fonts loaded via <link rel="preload"> in <head> + public/fonts/fonts.css
 // Removed synchronous @fontsource-variable imports (render-blocking)
-import './index.css';
+import styles from './index.css?url';
 import React from 'react';
 import { SkipLink } from './shared/ui/SkipLink';
 // Defer GoogleAnalytics to avoid blocking initial render
@@ -190,12 +190,26 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {/* CSP set via vercel.json HTTP headers (more secure, smaller HTML) */}
         <Meta />
         <Links />
-        {/* Defer non-critical CSS — critical CSS is inlined above */}
+
+        {/* Global Styles - Loaded manually to ensure non-blocking behavior */}
+        {/* We use media="print" + onload strategy to defer loading until after first paint */}
+        <link rel="preload" href={styles} as="style" />
         <script
           dangerouslySetInnerHTML={{
-            __html: `document.querySelectorAll('link[rel="stylesheet"][href*="/assets/"]').forEach(function(l){l.media='print';l.onload=function(){l.media='all'}})`,
+            __html: `
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = '${styles}';
+            link.media = 'print';
+            link.onload = function() { this.media = 'all'; };
+            document.head.appendChild(link);
+            `,
           }}
         />
+        <noscript>
+          <link rel="stylesheet" href={styles} />
+        </noscript>
+
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
       <body>
