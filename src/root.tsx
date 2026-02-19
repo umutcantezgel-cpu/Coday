@@ -128,6 +128,45 @@ export function Layout({ children }: { children: React.ReactNode }) {
           }}
         />
 
+        {/* Critical above-fold CSS — enables hero paint before full 215KB stylesheet loads */}
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+          *,::after,::before{box-sizing:border-box;border:0 solid}
+          body{margin:0;background:#fff;color:#2d3748;font-family:'Inter','Inter Fallback',sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+          .bg-background-light{background:linear-gradient(135deg,#f7fafc 0%,#edf2f7 100%)}
+          section{position:relative;overflow:hidden}
+          .max-w-7xl{max-width:80rem;margin-left:auto;margin-right:auto}
+          .text-center{text-align:center}
+          .font-display{font-family:'Outfit','Outfit Fallback',sans-serif}
+          .font-black{font-weight:900}
+          .uppercase{text-transform:uppercase}
+          .text-5xl{font-size:3rem;line-height:1}
+          .leading-none{line-height:1}
+          .tracking-tight{letter-spacing:-0.025em}
+          .text-secondary{color:#2d3748}
+          .mb-8{margin-bottom:2rem}
+          .mb-6{margin-bottom:1.5rem}
+          .inline-block{display:inline-block}
+          .px-4{padding-left:1rem;padding-right:1rem}
+          .pt-20{padding-top:5rem}
+          .pb-20{padding-bottom:5rem}
+          .z-10{z-index:10}
+          .relative{position:relative}
+          .flex{display:flex}
+          .items-center{align-items:center}
+          .justify-center{justify-content:center}
+          .gap-2{gap:0.5rem}
+          .text-sm{font-size:0.875rem;line-height:1.25rem}
+          .font-bold{font-weight:700}
+          .rounded-full{border-radius:9999px}
+          @media(min-width:640px){h1.font-display{font-size:4.5rem}}
+          @media(min-width:1024px){h1.font-display{font-size:6rem}}
+          @media(min-width:768px){section>.max-w-7xl{padding-top:8rem;padding-bottom:10rem}}
+        `,
+          }}
+        />
+
         {/* CSP set via vercel.json HTTP headers (more secure, smaller HTML) */}
         <Meta />
         <Links />
