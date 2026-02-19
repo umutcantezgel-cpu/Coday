@@ -321,7 +321,7 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
           </div>
 
           {/* Mobile Hamburger (Visible only on mobile) */}
-          <div className="lg:hidden flex items-center gap-3">
+          <div className="mobile-only-actions lg:hidden flex items-center gap-3">
             <React.Suspense fallback={null}>
               <LanguageSwitcher />
             </React.Suspense>

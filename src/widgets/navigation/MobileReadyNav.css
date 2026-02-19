@@ -101,6 +101,18 @@ body.mobile-nav-open #fab-container {
   pointer-events: none !important;
 }
 
+.mobile-only-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+@media (min-width: 1024px) {
+  .mobile-only-actions {
+    display: none !important;
+  }
+}
+
 .nav-item-wrapper {
   position: relative;
 }
