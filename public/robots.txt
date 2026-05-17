@@ -4,4 +4,54 @@ Disallow: /api/
 Disallow: /dashboard/
 Disallow: /preview/
 
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: AmazonBot
+Allow: /
+
+User-agent: AnthropicBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
 Sitemap: https://www.codayweb.de/sitemap.xml
+Sitemap: https://www.codayweb.de/llms.txt
+Sitemap: https://www.codayweb.de/ai.txt

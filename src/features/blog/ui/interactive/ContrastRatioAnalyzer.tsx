@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Eyeglasses, CheckCircle, XCircle, Info, Shuffle } from '@phosphor-icons/react';
 import { clsx } from 'clsx';
@@ -11,12 +11,12 @@ const getLuminance = (hex: string) => {
     v /= 255;
     return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
   });
-  return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+  return 0.2126 * (r ?? 0) + 0.7152 * (g ?? 0) + 0.0722 * (b ?? 0);
 };
 
 const hexToRgb = (hex: string) => {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  return result
+  return result && result[1] && result[2] && result[3]
     ? [parseInt(result[1], 16), parseInt(result[2], 16), parseInt(result[3], 16)]
     : null;
 };
@@ -32,12 +32,8 @@ const getContrastRatio = (color1: string, color2: string) => {
 export const ContrastRatioAnalyzer: React.FC = () => {
   const [textColor, setTextColor] = useState('#FFFFFF');
   const [bgColor, setBgColor] = useState('#111827'); // Gray-900
-  const [ratio, setRatio] = useState(0);
 
-  useEffect(() => {
-    const r = getContrastRatio(textColor, bgColor);
-    setRatio(parseFloat(r.toFixed(2)));
-  }, [textColor, bgColor]);
+  const ratio = parseFloat(getContrastRatio(textColor, bgColor).toFixed(2));
 
   const randomize = () => {
     const randomHex = () =>

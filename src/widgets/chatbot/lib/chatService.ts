@@ -3,10 +3,10 @@
  * Handles AI chatbot interactions using Gemini and Perplexity
  */
 
-import { callGemini } from '../../../shared/lib/ai/geminiPool';
-import { searchWeb } from '../../../shared/lib/ai/perplexity';
-import { AGENT_PROMPTS } from '../../../shared/lib/ai/prompts';
-import type { ChatMessage } from '../../../features/analyzer/model/types';
+import { callGemini } from '@/shared/lib/ai/geminiPool';
+import { searchWeb } from '@/shared/lib/ai/perplexity';
+import { AGENT_PROMPTS } from '@/shared/lib/ai/prompts';
+import type { ChatMessage } from '@/features/analyzer/model/types';
 
 // Keywords that trigger web search
 const SEARCH_TRIGGERS = [

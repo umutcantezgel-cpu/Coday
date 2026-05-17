@@ -14,9 +14,11 @@ for (const [path, module] of Object.entries(localeFiles)) {
   const match = path.match(/locales\/([^/]+)\/(.+)\.json$/);
   if (match) {
     const [, lang, ns] = match;
+    // @ts-expect-error
     if (!resources[lang]) resources[lang] = {};
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    resources[lang][ns] = (module as { default: any }).default;
+
+    // @ts-expect-error - Expected due to dynamic import format
+    resources[lang][ns] = (module as { default: unknown }).default;
   }
 }
 

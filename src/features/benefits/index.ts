@@ -1,1 +1,1 @@
-export { default as GearSetup } from './GearSetup';
+export { default as GearSetup } from '@/features/benefits/GearSetup';

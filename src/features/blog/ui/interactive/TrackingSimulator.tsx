@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
   Cookie,
@@ -12,11 +12,9 @@ import { clsx } from 'clsx';
 
 export const TrackingSimulator: React.FC = () => {
   const [mode, setMode] = useState<'client' | 'server'>('client');
-  const [isAnimating, setIsAnimating] = useState(false);
 
   const runSimulation = () => {
-    setIsAnimating(true);
-    setTimeout(() => setIsAnimating(false), 3000);
+    // Simulation trigger logic
   };
 
   return (

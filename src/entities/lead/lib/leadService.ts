@@ -1,4 +1,8 @@
-import { LeadSchema, type StoredLead, type LeadSubmissionResult } from '../model/types';
+import {
+  LeadSchema,
+  type StoredLead,
+  type LeadSubmissionResult,
+} from '@/entities/lead/model/types';
 
 /**
  * Submit a new lead (localStorage for MVP).
@@ -37,9 +41,6 @@ export async function submitLead(data: unknown): Promise<LeadSubmissionResult> {
 
     if (error) throw error;
 
-    // Log for development
-    // // console.log removed('📧 Lead submitted to Supabase');
-
     // 📧 Send Email Notification
     try {
       await fetch('/api/send-lead', {
@@ -47,7 +48,6 @@ export async function submitLead(data: unknown): Promise<LeadSubmissionResult> {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(validatedData),
       });
-      // // console.log removed('📧 Email notification sent.');
     } catch (emailError) {
       console.error('Failed to send email notification:', emailError);
       // Don't fail the whole submission if email fails, just log it

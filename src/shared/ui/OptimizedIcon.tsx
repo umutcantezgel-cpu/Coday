@@ -36,7 +36,7 @@ export const OptimizedIcon: React.FC<OptimizedIconProps> = ({
       aria-hidden={!label}
       {...props}
     >
-      <Icon className="w-full h-full" weight={weight} />
+      <Icon className="w-full h-full" weight={weight} aria-hidden="true" focusable="false" />
     </span>
   );
 };

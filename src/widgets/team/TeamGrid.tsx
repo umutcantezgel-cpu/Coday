@@ -1,5 +1,5 @@
 import React from 'react';
-import { OptimizedImage } from '../../shared/ui/OptimizedImage';
+import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import { clientReferences } from '@/shared/data/teamMembers';
 
 /**

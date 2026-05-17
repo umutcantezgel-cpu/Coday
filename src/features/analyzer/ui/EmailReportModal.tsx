@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Envelope, PaperPlaneRight, X, CheckCircle, CircleNotch } from '@phosphor-icons/react';
-import { sendEmailReport, isValidEmail } from '../lib/emailService';
-import type { AnalysisResult } from '../model/types';
+import { sendEmailReport, isValidEmail } from '@/features/analyzer/lib/emailService';
+import type { AnalysisResult } from '@/features/analyzer/model/types';
 import { useTranslation } from 'react-i18next';
 
 interface EmailReportModalProps {
@@ -18,6 +18,16 @@ export const EmailReportModal: React.FC<EmailReportModalProps> = ({ isOpen, onCl
   const [isSent, setIsSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const { t } = useTranslation('analyzer');
+
+  React.useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        onClose();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -77,6 +87,9 @@ export const EmailReportModal: React.FC<EmailReportModalProps> = ({ isOpen, onCl
             exit={{ scale: 0.95, opacity: 0 }}
             className="bg-white rounded-2xl p-6 w-full max-w-md shadow-2xl"
             onClick={(e) => e.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="email-modal-title"
           >
             {isSent ? (
               <div className="text-center py-8">
@@ -98,24 +111,31 @@ export const EmailReportModal: React.FC<EmailReportModalProps> = ({ isOpen, onCl
                       <Envelope className="w-5 h-5 text-blue-600" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-gray-900">{t('modal.title')}</h3>
+                      <h3 id="email-modal-title" className="font-bold text-gray-900">
+                        {t('modal.title')}
+                      </h3>
                       <p className="text-sm text-gray-500">{t('modal.subtitle')}</p>
                     </div>
                   </div>
                   <button
                     onClick={onClose}
-                    className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                    className="p-2 hover:bg-gray-100 rounded-full transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                    aria-label={t('modal.close') || 'Close modal'}
                   >
-                    <X className="w-5 h-5 text-gray-500" />
+                    <X className="w-5 h-5 text-gray-500" aria-hidden="true" />
                   </button>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                    <label
+                      htmlFor="email-modal-name"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
                       {t('modal.label_name')}
                     </label>
                     <input
+                      id="email-modal-name"
                       type="text"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
@@ -125,10 +145,14 @@ export const EmailReportModal: React.FC<EmailReportModalProps> = ({ isOpen, onCl
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                    <label
+                      htmlFor="email-modal-email"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
                       {t('modal.label_email')}
                     </label>
                     <input
+                      id="email-modal-email"
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}

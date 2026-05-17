@@ -63,7 +63,8 @@
   },
   "meta": {
     "desc": "Ihr persönlicher Bereich für Projektereinblicke, Analysen und Fortschrittsverfolgung.",
-    "title": "Kunden-Dashboard | Coday"
+    "title": "Kunden-Dashboard | Projektstatus & Analysen - Coday",
+    "description": "Exklusives Kunden-Dashboard von Coday. Verfolgen Sie live den Projektfortschritt, aktuelle Performance-Metriken und SEO-Rankings."
   },
   "metrics": {
     "cls": "Visuelle Stabilität",

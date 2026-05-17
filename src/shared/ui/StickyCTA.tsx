@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { LocalizedNavLink as NavLink } from './LocalizedLink';
-import { OptimizedIcon } from './OptimizedIcon';
+import { LocalizedNavLink as NavLink } from '@/shared/ui/LocalizedLink';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { RocketLaunch } from '@phosphor-icons/react';
 import { useTranslation } from 'react-i18next';
 

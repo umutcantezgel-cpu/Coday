@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { LocalizedLink as Link } from '../../shared/ui/LocalizedLink';
+import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
+import { LocalizedLink as Link } from '@/shared/ui/LocalizedLink';
 import { useTranslation } from 'react-i18next';
-import { OptimizedIcon } from '../../shared/ui/OptimizedIcon';
-import { Code, X, CaretDown, ArrowRight } from '@phosphor-icons/react';
-import { LanguageSwitcher } from './LanguageSwitcher';
-import { NavItem } from './config';
-import './MobileReadyNav.css';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
+import { CaretDown, ArrowRight } from '@phosphor-icons/react';
+import { LanguageSwitcher } from '@/widgets/navigation/LanguageSwitcher';
+import { NavItem } from '@/widgets/navigation/config';
+import '@/widgets/navigation/MobileReadyNav.css';
 
-import { useFocusTrap } from '../../shared/hooks/useFocusTrap';
+import { useFocusTrap } from '@/shared/hooks/useFocusTrap';
 
 interface MobileNavOverlayProps {
   items: NavItem[];
@@ -20,6 +20,7 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
   const { t } = useTranslation('common');
   const [expandedItem, setExpandedItem] = useState<string | null>(null);
   const containerRef = useFocusTrap(isOpen);
+  const shouldReduceMotion = useReducedMotion();
 
   const toggleItem = (label: string) => {
     setExpandedItem(expandedItem === label ? null : label);
@@ -28,9 +29,12 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
   // Lock body scroll and handle escape key
   useEffect(() => {
     if (isOpen) {
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
       document.body.style.overflow = 'hidden';
       document.body.classList.add('mobile-nav-open');
     } else {
+      document.body.style.paddingRight = '';
       document.body.style.overflow = '';
       document.body.classList.remove('mobile-nav-open');
     }
@@ -41,6 +45,7 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
     window.addEventListener('keydown', handleEsc);
 
     return () => {
+      document.body.style.paddingRight = '';
       document.body.style.overflow = '';
       document.body.classList.remove('mobile-nav-open');
       window.removeEventListener('keydown', handleEsc);
@@ -51,21 +56,30 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
   const overlayVariants = {
     closed: {
       opacity: 0,
-      y: '-100%',
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      transition: { duration: 0.3, ease: [0.33, 1, 0.68, 1] as any },
+      x: shouldReduceMotion ? 0 : '100%',
+
+      transition: {
+        duration: 0.4,
+        ease: [0.21, 0.47, 0.32, 0.98] as [number, number, number, number],
+      },
     },
     open: {
       opacity: 1,
-      y: 0,
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      transition: { duration: 0.4, ease: [0.33, 1, 0.68, 1] as any },
+      x: 0,
+
+      transition: {
+        duration: 0.5,
+        ease: [0.21, 0.47, 0.32, 0.98] as [number, number, number, number],
+      },
     },
     exit: {
       opacity: 0,
-      y: '-20%', // Slide up slightly on exit
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      transition: { duration: 0.3, ease: 'easeIn' as any },
+      x: shouldReduceMotion ? 0 : '100%',
+
+      transition: {
+        duration: 0.3,
+        ease: [0.21, 0.47, 0.32, 0.98] as [number, number, number, number],
+      },
     },
   };
 
@@ -73,21 +87,37 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
   const containerVariants = {
     open: {
       transition: {
-        staggerChildren: 0.05,
-        delayChildren: 0.1,
+        staggerChildren: 0.05, // 50ms Delay pro Item
+        delayChildren: 0.15,
       },
     },
     closed: {
       transition: {
-        staggerChildren: 0.05,
+        staggerChildren: 0.03,
         staggerDirection: -1,
       },
     },
   };
 
   const itemVariants = {
-    open: { opacity: 1, y: 0, transition: { duration: 0.3 } },
-    closed: { opacity: 0, y: 15, transition: { duration: 0.3 } },
+    open: {
+      opacity: 1,
+      y: 0,
+
+      transition: {
+        duration: 0.5,
+        ease: [0.21, 0.47, 0.32, 0.98] as [number, number, number, number],
+      },
+    },
+    closed: {
+      opacity: 0,
+      y: shouldReduceMotion ? 0 : 20,
+
+      transition: {
+        duration: 0.4,
+        ease: [0.21, 0.47, 0.32, 0.98] as [number, number, number, number],
+      },
+    },
   };
   return (
     <AnimatePresence mode="wait">
@@ -101,26 +131,11 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
           variants={overlayVariants}
           aria-hidden={!isOpen}
         >
-          {/* Header (Mimics Navbar) */}
-          <div className="mobile-header">
-            <Link to="/" className="mobile-logo" onClick={onClose}>
-              <OptimizedIcon icon={Code} className="w-6 h-6 text-slate-900" />
-              <span className="font-bold text-xl text-slate-900">Coday</span>
-            </Link>
-            <motion.button
-              onClick={onClose}
-              className="mobile-close-btn"
-              aria-label={t('nav.close', { defaultValue: 'Close Menu' })}
-              whileTap={{ scale: 0.9 }}
-            >
-              <OptimizedIcon icon={X} className="w-8 h-8 text-slate-900" />
-            </motion.button>
-          </div>
-
           {/* Scrollable Content */}
-          <div className="mobile-content-scroll">
-            <motion.div
+          <div className="mobile-content-scroll pt-24">
+            <motion.nav
               className="mobile-nav-list"
+              aria-label={t('nav.mobile.label', { defaultValue: 'Mobile Navigation' })}
               variants={containerVariants}
               initial="closed"
               animate="open"
@@ -137,13 +152,15 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
                     aria-expanded={expandedItem === item.label}
                     whileTap={{ scale: 0.98 }}
                   >
-                    <span className="text-xl font-bold tracking-tight text-slate-900">
+                    <span className="text-xl font-bold tracking-tight text-white">
                       {t(item.label)}
                     </span>
                     <OptimizedIcon
                       icon={CaretDown}
                       className={`w-5 h-5 transition-transform duration-300 ${
-                        expandedItem === item.label ? 'rotate-180 text-primary' : 'text-slate-400'
+                        expandedItem === item.label
+                          ? 'rotate-180 text-primary-400'
+                          : 'text-slate-400'
                       }`}
                     />
                   </motion.button>
@@ -162,15 +179,17 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
                             item.groups.map((group, idx) => (
                               <div key={idx} className="mb-6 last:mb-2">
                                 {item.groups!.length > 1 && (
-                                  <h4 className="text-xs uppercase tracking-wider text-slate-500 font-bold mb-3 pl-2 border-l-2 border-slate-200">
+                                  <h4 className="text-xs uppercase tracking-wider text-slate-400 font-bold mb-3 pl-2 border-l-2 border-slate-700">
                                     {t(group.title)}
                                   </h4>
                                 )}
                                 <div className="space-y-1">
                                   {group.links.map((link) => {
                                     const isExternal = link.href.startsWith('http');
-                                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                                    const LinkComponent = (isExternal ? 'a' : Link) as any;
+
+                                    const LinkComponent = (
+                                      isExternal ? 'a' : Link
+                                    ) as React.ElementType;
                                     const linkProps = isExternal
                                       ? {
                                           href: link.href,
@@ -186,11 +205,11 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
                                         className="mobile-link-item"
                                         onClick={onClose}
                                       >
-                                        <span className="font-medium text-slate-700">
+                                        <span className="font-medium text-slate-200">
                                           {t(link.label)}
                                         </span>
                                         {link.desc && (
-                                          <span className="text-xs text-slate-500 line-clamp-1">
+                                          <span className="text-xs text-slate-400 line-clamp-1">
                                             {t(link.desc)}
                                           </span>
                                         )}
@@ -209,7 +228,7 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
                                   className="mobile-link-item"
                                   onClick={onClose}
                                 >
-                                  <span className="font-medium text-slate-700">
+                                  <span className="font-medium text-slate-200">
                                     {t(link.label)}
                                   </span>
                                 </Link>
@@ -222,7 +241,7 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
                   </AnimatePresence>
                 </motion.div>
               ))}
-            </motion.div>
+            </motion.nav>
           </div>
 
           {/* Footer (Fixed at bottom) */}

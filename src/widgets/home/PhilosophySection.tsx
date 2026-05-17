@@ -1,16 +1,19 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { OptimizedImage } from '../../shared/ui/OptimizedImage';
-import BlurText from '../../shared/ui/BlurText';
+import { OptimizedImage } from '@/shared/ui/OptimizedImage';
+import BlurText from '@/shared/ui/BlurText';
+import { useIntersectionObserver } from '@/shared/hooks/useIntersectionObserver';
 
 export const PhilosophySection: React.FC = () => {
   const { t } = useTranslation(['home']);
+  const { ref: textRef, isVisible: isTextVisible } = useIntersectionObserver({ threshold: 0.1 });
+  const { ref: imageRef, isVisible: isImageVisible } = useIntersectionObserver({ threshold: 0.1 });
 
   return (
     <section className="py-12 md:py-24 bg-surface-light relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
-          <div>
+          <div ref={textRef} className={`reveal-left ${isTextVisible ? 'reveal-visible' : ''}`}>
             <h2 className="font-display font-black text-3xl lg:text-5xl mb-8 leading-tight text-secondary">
               <BlurText
                 text={t('philosophy.traditional')}
@@ -28,7 +31,10 @@ export const PhilosophySection: React.FC = () => {
               </p>
             </div>
           </div>
-          <div className="relative">
+          <div
+            ref={imageRef}
+            className={`relative reveal-scale ${isImageVisible ? 'reveal-visible stagger-2' : ''}`}
+          >
             {/* Organic shape backdrop */}
             <div className="absolute inset-0 bg-primary/10 rounded-[2rem] transform rotate-3 scale-95"></div>
             <OptimizedImage

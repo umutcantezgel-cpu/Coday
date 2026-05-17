@@ -4,7 +4,6 @@ import {
   Buildings,
   CaretRight,
   Check,
-  X,
   IdentificationCard,
   CreditCard,
   FileText,

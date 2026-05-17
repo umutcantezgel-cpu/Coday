@@ -24,14 +24,14 @@ export const LegalLayout: React.FC<LegalLayoutProps> = ({
   tocItems = [],
 }) => {
   return (
-    <div className="bg-background-light min-h-screen pt-24 pb-24">
+    <div className="bg-background-light min-h-dvh pt-24 pb-24">
       <SeoHead
         title={`${title} | Coday`}
         description={typeof subtitle === 'string' ? subtitle : title}
       />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <header className="mb-16 text-center">
+        <header role="banner" className="mb-16 text-center">
           <h1 className="font-display font-black text-4xl sm:text-5xl text-secondary mb-4">
             {title}
           </h1>
@@ -48,7 +48,7 @@ export const LegalLayout: React.FC<LegalLayoutProps> = ({
           {/* Table of Contents (Desktop Sticky) */}
           {tocItems.length > 0 && (
             <aside className="hidden lg:block sticky top-32">
-              <nav className="space-y-1">
+              <nav role="navigation" className="space-y-1">
                 <h3 className="font-bold text-sm uppercase tracking-wider text-slate-400 mb-4 px-3">
                   Inhalt
                 </h3>
@@ -67,6 +67,7 @@ export const LegalLayout: React.FC<LegalLayoutProps> = ({
 
           {/* Content */}
           <main
+            role="main"
             className={`prose prose-lg prose-slate max-w-none 
                         prose-headings:font-display prose-headings:font-bold prose-headings:text-secondary
                         prose-a:text-primary prose-a:no-underline hover:prose-a:underline

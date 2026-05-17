@@ -1,3 +1,3 @@
 // Chatbot Widget Exports
-export { ChatWidget } from './ChatWidget';
-export { useChatStore } from './lib/chatStore';
+export { ChatWidget } from '@/widgets/chatbot/ChatWidget';
+export { useChatStore } from '@/widgets/chatbot/lib/chatStore';

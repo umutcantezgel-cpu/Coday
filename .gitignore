@@ -16,6 +16,8 @@ dist-ssr
 .env
 .env.*
 !.env.example
+supabase/.env*
+!supabase/.env.example
 
 # Editor directories and files
 .vscode/*
@@ -34,6 +36,8 @@ npm_errors*.txt
 
 # Lighthouse Reports
 lighthouse-report*.json
+lighthouse-*.json
+lighthouse-reports/
 
 # Video Assets (Large files)
 videos/
@@ -46,10 +50,16 @@ bundle-analysis.html
 
 # Debug & Report Files
 head_debug.html
+test_html.html
+lint*.txt
 lint_report.txt
 lint_output*.txt
 lint_errors*.txt
 lint_final.txt
+eslint_output.txt
+tsc-errors.txt
+current_lint.txt
+build_output.log
 typecheck_report.txt
 *.report.txt
 *.report.html
@@ -65,3 +75,10 @@ playwright/.cache/
 # React Router / Vite build artifacts
 .react-router
 build
+
+# AI/Pipeline state files (ephemeral, not source of truth)
+.ai-*.md
+.expansion-state.md
+.pipeline-master-state.md
+.project-knowledge-base.md
+.upgrade-state.md

@@ -59,36 +59,48 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
     ...(width && height && !aspectRatio ? { aspectRatio: `${width} / ${height}` } : {}),
   };
 
+  // Generate modern format sources
+  const generateSource = (url: string, newExt: string) => {
+    return url.replace(/\.(png|jpe?g)$/gi, `.${newExt}`);
+  };
+
+  const avifSrcSet = srcSet ? generateSource(srcSet, 'avif') : generateSource(src, 'avif');
+  const webpSrcSet = srcSet ? generateSource(srcSet, 'webp') : generateSource(src, 'webp');
+
   return (
     <div
       className={`relative overflow-hidden bg-gray-100 ${getAspectRatioClass()} ${className}`}
       style={containerStyle}
     >
       {!isLoaded && !hasError && (
-        <div className="absolute inset-0 flex items-center justify-center bg-gray-100 animate-pulse">
+        <div className="absolute inset-0 flex items-center justify-center skeleton-shimmer">
           <span className="sr-only">Loading...</span>
         </div>
       )}
 
-      <img
-        ref={imgRef}
-        src={src}
-        srcSet={srcSet}
-        sizes={sizes}
-        alt={alt}
-        loading={priority ? 'eager' : 'lazy'}
-        decoding={priority ? 'sync' : 'async'}
-        fetchPriority={priority ? 'high' : 'auto'}
-        onLoad={() => setIsLoaded(true)}
-        onError={() => setHasError(true)}
-        className={`
-                    w-full h-full object-cover transition-opacity duration-500 ease-in-out
-                    ${isLoaded ? 'opacity-100' : 'opacity-0'}
-                `}
-        width={width}
-        height={height}
-        {...props}
-      />
+      <picture>
+        <source type="image/avif" srcSet={avifSrcSet} sizes={sizes} />
+        <source type="image/webp" srcSet={webpSrcSet} sizes={sizes} />
+        <img
+          ref={imgRef}
+          src={src}
+          srcSet={srcSet}
+          sizes={sizes}
+          alt={alt}
+          loading={priority ? 'eager' : 'lazy'}
+          decoding={priority ? 'sync' : 'async'}
+          fetchPriority={priority ? 'high' : 'auto'}
+          onLoad={() => setIsLoaded(true)}
+          onError={() => setHasError(true)}
+          className={`
+                      w-full h-full object-cover transition-opacity duration-500 ease-in-out
+                      ${isLoaded ? 'opacity-100' : 'opacity-0'}
+                  `}
+          width={width}
+          height={height}
+          {...props}
+        />
+      </picture>
       {hasError && (
         <div className="absolute inset-0 flex items-center justify-center bg-gray-200 text-gray-400 text-xs">
           Image N/A

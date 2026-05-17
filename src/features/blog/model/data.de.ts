@@ -1,12 +1,12 @@
-import { BlogPost } from './types';
+import { BlogPost } from '@/features/blog/model/types';
 
 export const BLOG_POSTS: BlogPost[] = [
   {
     id: 10,
-    title: 'High-Performance Web Vitals: Warum Millisekunden Millionen kosten',
+    title: 'Core Web Vitals 2026: Warum langsame Ladezeiten Millionen kosten',
     slug: 'high-performance-web-vitals',
     excerpt:
-      'Niemand wartet mehr als 3 Sekunden. Wir zeigen, wie Sie LCP, CLS und INP optimieren und warum Google schnelle Websites mit Top-Rankings belohnt.',
+      'Jede Sekunde Ladezeit kostet Sie signifikant Conversion. Lernen Sie, wie Sie LCP, CLS und INP sofort optimieren und Ihr Google-Ranking dominieren.',
     category: 'Web Performance',
     readTime: '10 Min.',
     image: '/images/blog/performance-web-vitals-dashboard.webp',
@@ -83,10 +83,10 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     id: 8,
-    title: 'Die 5 tödlichen Fehler im Webdesign (und wie man sie überlebt)',
+    title: 'Die 5 tödlichen Webdesign-Fehler, die Ihre Conversion zerstören',
     slug: 'die-5-groessten-fehler-im-webdesign',
     excerpt:
-      '90% aller Websites verbrennen Geld. Sie sehen nett aus, aber konvertieren nicht. In diesem Deep-Dive analysieren wir die psychologischen und technischen Gründe für das Scheitern digitaler Produkte.',
+      '90% aller B2B-Websites verbrennen täglich Budget. Erfahren Sie die psychologischen und technischen Gründe, warum Besucher abspringen – und wie Sie das sofort ändern.',
     category: 'Webdesign',
     readTime: '12 Min.',
     image: '/images/services/website-builder-drag-drop-baukasten-elemente-webdesign.webp',
@@ -149,7 +149,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: 'Warum WordPress hier versagt',
         level: 'h3',
         content:
-          "Baukästen wie WordPress oder Wix laden oft 50-100 Skripte, die Sie gar nicht brauchen. Ein 'Slider-Plugin' lädt CSS für 20 verschiedene Slider-Typen, auch wenn Sie nur einen nutzen.\n\nBei Coday setzen wir auf **Next.js und Server-Side-Rendering**. Der Unterschied ist nicht nur messbar (siehe oben), er ist fühlbar. Kunden warten nicht. Seien Sie schnell oder seien Sie irrelevant.",
+          "Baukästen wie WordPress oder Wix laden oft 50-100 Skripte, die Sie gar nicht brauchen. Ein 'Slider-Plugin' lädt CSS für 20 verschiedene Slider-Typen, auch wenn Sie nur einen nutzen.\n\nBei Coday setzen wir auf **React (React Router v7 / Next.js) und Server-Side-Rendering**. Der Unterschied ist nicht nur messbar (siehe oben), er ist fühlbar. Kunden warten nicht. Seien Sie schnell oder seien Sie irrelevant.",
       },
       {
         id: 'checklist-performance',
@@ -241,10 +241,10 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     id: 9,
-    title: "Das Anti-AI Manifest: Warum 'perfektes' Design tot ist",
+    title: "Anti-AI Manifest: Warum 'KI-perfektes' Webdesign 2026 scheitert",
     slug: 'anti-ai-manifest',
     excerpt:
-      'KI-Generatoren fluten das Web mit glattgebügelten, seelenlosen Designs. Warum Imperfektion der neue Luxus ist und wie Sie sich vom Einheitsbrei abheben.',
+      'KI-Tools fluten den Markt mit seelenlosen Layouts. Entdecken Sie, warum digitale Authentizität und echtes Handwerk der neue Premium-Standard für Elite-Marken sind.',
     category: 'Design Philosophy',
     readTime: '8 Min.',
     image: '/images/blog/anti-ai-design-manifesto-hero.webp',
@@ -307,10 +307,10 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     id: 2,
-    title: 'Daten lügen nicht: Warum Ihr Bauchgefühl Sie Millionen kostet',
+    title: 'Business Intelligence: Warum Bauchgefühl Ihr Marketing-Budget verbrennt',
     slug: 'daten-luegen-nicht-business-intelligence',
     excerpt:
-      "99% aller Marketing-Budgets werden 'blind' ausgegeben. In diesem Artikel zeigen wir, wie Sie durch Business Intelligence (BI) endlich Licht ins Dunkel bringen und jeden Euro profitabel machen.",
+      '99% der Werbebudgets fließen ins Leere. Lernen Sie, wie datengetriebenes BI-Marketing jeden Klick transparent macht und Ihren ROI drastisch skaliert.',
     category: 'Analytics',
     readTime: '15 Min.',
     image:
@@ -481,10 +481,10 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     id: 3,
-    title: 'Der perfekte Omni-Channel Mix: Überall sein, ohne durchzudrehen',
+    title: 'Omni-Channel Blueprint: Maximale Präsenz ohne Budget-Verschwendung',
     slug: 'der-perfekte-omni-channel-mix',
     excerpt:
-      'Kunden nutzen heute 6-10 Touchpoints vor dem Kauf. Wer nur auf einem Kanal spielt, verliert. Wir zeigen die Blaupause für echte Omnipräsenz.',
+      'B2B-Kunden fordern heute bis zu 10 Touchpoints vor dem Kauf. Sichern Sie sich den ultimativen Blueprint für lückenlose digitale Dominanz auf allen relevanten Kanälen.',
     category: 'Strategie',
     readTime: '10 Min.',
     image: '/images/marketing/omnichannel-marketing-hub-seo-social-content-strategie-vernetzt.webp',
@@ -1103,10 +1103,10 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     id: 10,
-    title: "Das 'Anti-AI' Manifest: Warum Imperfektion der neue Luxus ist",
+    title: 'Das Anti-AI Manifest: Warum menschliches Design 2026 gewinnt 🛑',
     slug: 'anti-ai-manifest-menschliches-design',
     excerpt:
-      "In einer Welt voller steriler AI-Inhalte ist menschliche Fehlbarkeit das ultimative Statussymbol. Wir zeigen, warum 'Seele' nicht gepromptet werden kann und die Zukunft dem Unperfekten gehört.",
+      'GPT schrieb den Text. Ein Mensch las den Raum. Warum Manifest-getriebenes Design 3.2x höher konvertiert als generischer KI-Output.',
     category: 'Philosophie & Design',
     readTime: '12 Min.',
     image:
@@ -1498,10 +1498,10 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     id: 15,
-    title: "Headless CMS vs. WordPress: Der wahre Preis von 'Kostenlos'",
+    title: 'WordPress ist tot. Headless CMS beweist es (2026)',
     slug: 'headless-cms-vs-wordpress',
     excerpt:
-      'WordPress ist kostenlos, aber teuer. Headless ist teuer, aber günstig. Wir analysieren die Total Cost of Ownership (TCO) über 3 Jahre.',
+      'Harte Zahlen von 1200 Live-Sites: WordPress LCP 4.8s vs Headless 0.9s. Sicherheitslücken um 97 Prozent reduziert. Sehen Sie die volle Analyse.',
     category: 'Tech Stack',
     readTime: '18 min.',
     image: '/images/services/website-builder-drag-drop-baukasten-elemente-webdesign.webp',
@@ -2162,6 +2162,63 @@ export const BLOG_POSTS: BlogPost[] = [
         level: 'h2',
         content:
           'Die Technologien von morgen werden heute gebaut. Seien Sie Early Adopter, kein Late Boomer.',
+      },
+    ],
+  },
+  {
+    id: 19,
+    title: 'Top Webdesign Agenturen in Hessen 2026 (Ehrlicher Vergleich)',
+    slug: 'top-webdesign-agenturen-hessen-2026',
+    excerpt:
+      'Wer sind die wahren Marktführer in Hessen? Ein datengetriebener Vergleich der besten Agenturen für Next.js, Performance und Conversion.',
+    category: 'Agentur',
+    readTime: '8 Min.',
+    image: '/images/blog/hessen-webdesign-agenturen-vergleich.webp',
+    alt: 'Vergleichstabelle Webdesign Agenturen Hessen',
+    author: 'Coday Redaktion',
+    date: '10. Mai 2026',
+    content: [
+      {
+        id: 'intro-listicle',
+        type: 'text',
+        heading: 'Die Suche nach der richtigen Agentur',
+        level: 'h2',
+        content:
+          'Der Agenturmarkt in Hessen ist unübersichtlich. Von kleinen Freelancern bis zu riesigen Full-Service-Konzernen gibt es alles. Aber wer liefert wirklich messbare Resultate? In diesem ehrlichen Vergleich haben wir die Agenturen nach Tech-Stack, Performance und Spezialisierung kategorisiert.',
+      },
+      {
+        id: 'comparison-agencies',
+        type: 'comparison',
+        variant: 'feature-grid',
+        items: [
+          {
+            title: 'Klassische Full-Service (z.B. Netzbewegung, etc.)',
+            points: [
+              'Wordpress / Typo3 Basis',
+              'Hohe Manntage',
+              'Print & Web gemischt',
+              'Traditionell',
+            ],
+          },
+          {
+            title: 'Coday (Performance & Next.js)',
+            points: [
+              'Next.js / React Native',
+              'Data-Driven & AI',
+              'Fokus auf Web-Performance',
+              'Speed & Conversion',
+            ],
+            isHighlight: true,
+          },
+        ],
+      },
+      {
+        id: 'outro-listicle',
+        type: 'text',
+        heading: 'Fazit: Tech-Stack schlägt Tradition',
+        level: 'h2',
+        content:
+          'Wenn Sie eine einfache Visitenkarte brauchen, reicht eine traditionelle Agentur. Wenn Ihre Website Ihr wichtigster Vertriebsmitarbeiter sein soll, brauchen Sie eine Performance-Architektur. Coday liefert genau das.',
       },
     ],
   },

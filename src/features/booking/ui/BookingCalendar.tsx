@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { useTranslation, Trans } from 'react-i18next';
 import { motion, AnimatePresence } from 'motion/react';
+import { Skeleton } from '@/shared/ui';
 // Initialize Supabase Client (Frontend)
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
@@ -216,9 +217,11 @@ const BookingCalendar = ({
                 className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3"
               >
                 {fetchingSlots ? (
-                  <div className="col-span-3 text-center py-4 text-gray-500 text-sm">
-                    {t('calendar.loading')}
-                  </div>
+                  <>
+                    {[...Array(6)].map((_, i) => (
+                      <Skeleton key={i} className="h-10 w-full rounded-xl" />
+                    ))}
+                  </>
                 ) : (
                   TIME_SLOTS.map((time) => {
                     const isBooked = bookedSlots.has(time);
@@ -277,6 +280,7 @@ const BookingCalendar = ({
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
+                            aria-hidden="true"
                           >
                             <path
                               strokeLinecap="round"
@@ -317,44 +321,97 @@ const BookingCalendar = ({
 
             <form onSubmit={handleBook} className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label
+                    htmlFor="booking-name"
+                    className="block text-sm font-medium text-gray-700 mb-1"
+                  >
+                    {t('calendar.step2.form.name.placeholder')}
+                    <span className="text-red-500 ml-0.5" aria-hidden="true">
+                      *
+                    </span>
+                  </label>
+                  <input
+                    id="booking-name"
+                    type="text"
+                    placeholder={t('calendar.step2.form.name.placeholder')}
+                    required
+                    aria-required="true"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    aria-invalid={!!error}
+                    aria-describedby={error ? 'booking-error' : undefined}
+                    className="w-full p-3 rounded-xl bg-white border border-gray-100 focus:border-primary outline-none transition-colors"
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="booking-email"
+                    className="block text-sm font-medium text-gray-700 mb-1"
+                  >
+                    {t('calendar.step2.form.email.placeholder')}
+                    <span className="text-red-500 ml-0.5" aria-hidden="true">
+                      *
+                    </span>
+                  </label>
+                  <input
+                    id="booking-email"
+                    type="email"
+                    placeholder={t('calendar.step2.form.email.placeholder')}
+                    required
+                    aria-required="true"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    aria-invalid={!!error}
+                    aria-describedby={error ? 'booking-error' : undefined}
+                    className="w-full p-3 rounded-xl bg-white border border-gray-100 focus:border-primary outline-none transition-colors"
+                  />
+                </div>
+              </div>
+              <div>
+                <label
+                  htmlFor="booking-phone"
+                  className="block text-sm font-medium text-gray-700 mb-1"
+                >
+                  {t('calendar.step2.form.phone.placeholder')}
+                </label>
                 <input
-                  type="text"
-                  placeholder={t('calendar.step2.form.name.placeholder')}
-                  required
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  aria-label={t('calendar.step2.form.name.placeholder')}
-                  className="w-full p-3 rounded-xl bg-white border border-gray-100 focus:border-primary outline-none transition-colors"
-                />
-                <input
-                  type="email"
-                  placeholder={t('calendar.step2.form.email.placeholder')}
-                  required
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  aria-label={t('calendar.step2.form.email.placeholder')}
+                  id="booking-phone"
+                  type="tel"
+                  placeholder={t('calendar.step2.form.phone.placeholder')}
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  aria-invalid={!!error}
+                  aria-describedby={error ? 'booking-error' : undefined}
                   className="w-full p-3 rounded-xl bg-white border border-gray-100 focus:border-primary outline-none transition-colors"
                 />
               </div>
-              <input
-                type="tel"
-                placeholder={t('calendar.step2.form.phone.placeholder')}
-                value={formData.phone}
-                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                aria-label={t('calendar.step2.form.phone.placeholder')}
-                className="w-full p-3 rounded-xl bg-white border border-gray-100 focus:border-primary outline-none transition-colors"
-              />
-              <textarea
-                placeholder={t('calendar.step2.form.notes.placeholder')}
-                rows={3}
-                value={formData.notes}
-                onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                aria-label={t('calendar.step2.form.notes.placeholder')}
-                className="w-full p-3 rounded-xl bg-white border border-gray-100 focus:border-primary outline-none transition-colors"
-              />
+              <div>
+                <label
+                  htmlFor="booking-notes"
+                  className="block text-sm font-medium text-gray-700 mb-1"
+                >
+                  {t('calendar.step2.form.notes.placeholder')}
+                </label>
+                <textarea
+                  id="booking-notes"
+                  placeholder={t('calendar.step2.form.notes.placeholder')}
+                  rows={3}
+                  value={formData.notes}
+                  onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
+                  aria-invalid={!!error}
+                  aria-describedby={error ? 'booking-error' : undefined}
+                  className="w-full p-3 rounded-xl bg-white border border-gray-100 focus:border-primary outline-none transition-colors"
+                />
+              </div>
 
               {error && (
-                <div role="alert" className="p-3 bg-red-50 text-red-600 rounded-lg text-sm">
+                <div
+                  id="booking-error"
+                  role="alert"
+                  aria-live="polite"
+                  className="p-3 bg-red-50 text-red-600 rounded-lg text-sm"
+                >
                   {error}
                 </div>
               )}

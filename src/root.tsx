@@ -11,17 +11,35 @@ import {
 } from 'react-router';
 // Fonts loaded via <link rel="preload"> in <head> + public/fonts/fonts.css
 // Removed synchronous @fontsource-variable imports (render-blocking)
-import styles from './index.css?url';
+import styles from '@/index.css?url';
 import React from 'react';
-import { SkipLink } from './shared/ui/SkipLink';
+import { SkipLink } from '@/shared/ui/SkipLink';
 // Defer GoogleAnalytics to avoid blocking initial render
 const GoogleAnalytics = React.lazy(() =>
-  import('./shared/lib/analytics/GoogleAnalytics').then((m) => ({ default: m.GoogleAnalytics }))
+  import('@/shared/lib/analytics/GoogleAnalytics').then((m) => ({ default: m.GoogleAnalytics }))
+);
+const PostHogAnalytics = React.lazy(() =>
+  import('@/shared/lib/analytics/PostHogAnalytics').then((m) => ({ default: m.PostHogAnalytics }))
+);
+const ClarityAnalytics = React.lazy(() =>
+  import('@/shared/lib/analytics/ClarityAnalytics').then((m) => ({ default: m.ClarityAnalytics }))
+);
+const MetaPixel = React.lazy(() =>
+  import('@/shared/lib/analytics/MetaPixel').then((m) => ({ default: m.MetaPixel }))
+);
+const LinkedInInsight = React.lazy(() =>
+  import('@/shared/lib/analytics/LinkedInInsight').then((m) => ({ default: m.LinkedInInsight }))
 );
 // Lazy load non-critical widgets
-const CookieConsentBanner = React.lazy(() => import('./widgets/cookie/CookieConsentBanner'));
-
-// import { createI18n } from './i18n.server'; // Moved to dynamic import in loader
+const CookieConsentBanner = React.lazy(() => import('@/widgets/cookie/CookieConsentBanner'));
+const CustomCursor = React.lazy(() =>
+  import('@/shared/ui/CustomCursor').then((m) => ({ default: m.CustomCursor }))
+);
+const GrowthBookProvider = React.lazy(() =>
+  import('@/shared/lib/experimentation/GrowthBookProvider').then((m) => ({
+    default: m.GrowthBookProvider,
+  }))
+);
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
   const lang = data?.lng || 'de';
@@ -35,7 +53,7 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
     {
       name: 'keywords',
       content:
-        'Webentwicklung, Webdesign, Agentur, High-End, Performance, SEO, React, Next.js, Coday',
+        'Webentwicklung, Webdesign, Agentur, High-End, Performance, SEO, React, React Router, Coday',
     },
     { property: 'og:title', content: title },
     { property: 'og:description', content: description },
@@ -44,22 +62,66 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
     { property: 'og:locale', content: lang === 'en' ? 'en_US' : 'de_DE' },
   ];
 };
-
-// ... logic to be added
-
 // Static import — avoid dynamic import() overhead on every SSR request
-import { createI18n } from './i18n.server';
+import { createI18n } from '@/i18n.server';
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const url = new URL(request.url);
   const lng = url.pathname.startsWith('/en') ? 'en' : 'de';
   const i18n = await createI18n(lng);
 
+  // Determine needed namespaces based on URL to avoid sending the entire 170KB dictionary
+  const path = url.pathname;
+  const neededNs = new Set(['common']);
+
+  if (path === '/' || path === '/de' || path === '/en' || path === '') {
+    ['home', 'services', 'process', 'work', 'industries', 'form'].forEach((n) => neededNs.add(n));
+  }
+  if (path.includes('/blog')) neededNs.add('blog');
+  if (path.includes('/services')) {
+    neededNs.add('services');
+    neededNs.add('knowledge');
+    neededNs.add('form');
+  }
+  if (path.includes('/work')) {
+    neededNs.add('work');
+    neededNs.add('form');
+  }
+  if (path.includes('/industries')) {
+    neededNs.add('industries');
+    neededNs.add('form');
+  }
+  if (path.includes('/tools')) {
+    neededNs.add('tools');
+    neededNs.add('form');
+  }
+  if (path.includes('/legal')) neededNs.add('legal');
+  if (path.includes('/pricing')) {
+    neededNs.add('pricing');
+    neededNs.add('form');
+  }
+  if (path.includes('/careers')) {
+    neededNs.add('careers');
+    neededNs.add('form');
+  }
+  if (path.includes('/contact')) {
+    neededNs.add('contact');
+    neededNs.add('form');
+  }
+  if (path.includes('/dashboard')) neededNs.add('dashboard');
+
+  const filteredResources: Record<string, unknown> = {};
+  for (const ns of neededNs) {
+    if (i18n.services.resourceStore.data[lng] && i18n.services.resourceStore.data[lng][ns]) {
+      filteredResources[ns] = i18n.services.resourceStore.data[lng][ns];
+    }
+  }
+
   return {
     lng,
     url: request.url,
     resources: {
-      [lng]: i18n.services.resourceStore.data[lng],
+      [lng]: filteredResources,
     },
   };
 }
@@ -70,8 +132,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const data = useLoaderData<typeof loader>();
   const { i18n } = useTranslation();
   const lang = data?.lng || 'de';
-  const currentUrl = data?.url ? new URL(data.url) : null;
-  const path = currentUrl ? currentUrl.pathname : '';
 
   // Hydrate i18n resources on client-side navigation
   React.useEffect(() => {
@@ -90,49 +150,22 @@ export function Layout({ children }: { children: React.ReactNode }) {
     }
   }, [data, i18n]);
 
-  // Basic Hreflang Logic (Assumes symmetric paths for now)
-  // TODO: improved mapping for blog posts with different slugs if needed
-  const getPathForLang = (l: string) => {
-    if (!path) return '';
-    const segments = path.split('/').filter(Boolean);
-    if (segments[0] === 'en' || segments[0] === 'de') {
-      segments[0] = l;
-    } else {
-      segments.unshift(l);
-    }
-    return '/' + segments.join('/');
-  };
-
-  const domain = 'https://www.codayweb.de'; // Replace with env var if possible
+  // Hreflang managed by SeoHead component per-page for maximum flexibility
 
   return (
-    <html lang={lang} dir={lang === 'ar' || lang === 'he' ? 'rtl' : 'ltr'}>
+    <html lang={lang} dir="ltr">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-        {/* SEO Tags */}
-        <link rel="canonical" href={`${domain}${path}`} />
-        <link rel="alternate" hrefLang="de" href={`${domain}${getPathForLang('de')}`} />
-        <link rel="alternate" hrefLang="en" href={`${domain}${getPathForLang('en')}`} />
-        <link rel="alternate" hrefLang="x-default" href={`${domain}${getPathForLang('de')}`} />
+        {/* Canonical + Hreflang managed by SeoHead component (avoids duplicate link tags) */}
 
-        {/* Font Preloading — non-render-blocking */}
-        <link
-          rel="preload"
-          href="/fonts/inter-variable-latin.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-          fetchPriority="high"
-        />
-        <link
-          rel="preload"
-          href="/fonts/outfit-variable-latin.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-          fetchPriority="high"
-        />
+        {/* Resource Hints — DNS prefetch + preconnect for critical origins */}
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+
+        {/* Font Preloading intentionally removed to avoid warnings, as inlined @font-face is sufficient */}
 
         {/* Inlined @font-face — eliminates render-blocking fonts.css round-trip */}
         <style
@@ -153,8 +186,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
           dangerouslySetInnerHTML={{
             __html: `
           *,::after,::before{box-sizing:border-box;border:0 solid}
-          body{margin:0;background:#fff;color:#2d3748;font-family:'Inter','Inter Fallback',sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-          .bg-background-light{background:linear-gradient(135deg,#f7fafc 0%,#edf2f7 100%)}
+          body{margin:0;background:var(--color-bg-primary);color:var(--color-text-primary);font-family:'Inter','Inter Fallback',sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+          .bg-background-light{background:var(--gradient-subtle)}
           section{position:relative;overflow:hidden}
           .max-w-7xl{max-width:80rem;margin-left:auto;margin-right:auto}
           .text-center{text-align:center}
@@ -164,7 +197,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           .text-5xl{font-size:3rem;line-height:1}
           .leading-none{line-height:1}
           .tracking-tight{letter-spacing:-0.025em}
-          .text-secondary{color:#2d3748}
+          .text-secondary{color:var(--color-text-secondary)}
           .mb-8{margin-bottom:2rem}
           .mb-6{margin-bottom:1.5rem}
           .inline-block{display:inline-block}
@@ -194,11 +227,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {/* Global Styles - Standard blocking load to prevent CLS */}
         <link rel="stylesheet" href={styles} />
 
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.ico" sizes="48x48" />
+        <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/manifest.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5227FF" />
+        <meta name="theme-color" content="#5227FF" />
       </head>
       <body>
         <SkipLink />
-        <div id="main-content">{children}</div>
+        {children}
         <ScrollRestoration />
         <Scripts />
         <script
@@ -206,33 +244,24 @@ export function Layout({ children }: { children: React.ReactNode }) {
             __html: `window.initialI18nStore = ${JSON.stringify(data?.resources || {})};`,
           }}
         />
-        {/* JSON-LD in body — does not need to be in <head>, saves parsing time */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'Organization',
-              name: 'Coday',
-              url: 'https://www.codayweb.de',
-              logo: 'https://www.codayweb.de/images/coday-logo.png',
-              sameAs: [
-                'https://www.linkedin.com/company/coday',
-                'https://twitter.com/coday',
-                'https://www.instagram.com/coday',
-              ],
-              contactPoint: {
-                '@type': 'ContactPoint',
-                telephone: '+49-123-456789',
-                contactType: 'customer service',
-                areaServed: 'DE',
-                availableLanguage: ['German', 'English'],
-              },
-            }),
-          }}
-        />
+        {/* Organization JSON-LD is rendered by JsonLd component (via SeoHead) on every page */}
         <React.Suspense fallback={null}>
           <GoogleAnalytics />
+        </React.Suspense>
+        <React.Suspense fallback={null}>
+          <PostHogAnalytics />
+        </React.Suspense>
+        <React.Suspense fallback={null}>
+          <ClarityAnalytics />
+        </React.Suspense>
+        <React.Suspense fallback={null}>
+          <MetaPixel />
+        </React.Suspense>
+        <React.Suspense fallback={null}>
+          <LinkedInInsight />
+        </React.Suspense>
+        <React.Suspense fallback={null}>
+          <CustomCursor />
         </React.Suspense>
         <React.Suspense fallback={null}>
           <CookieConsentBanner />
@@ -243,7 +272,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <React.Suspense fallback={<Outlet />}>
+      <GrowthBookProvider>
+        <Outlet />
+      </GrowthBookProvider>
+    </React.Suspense>
+  );
 }
 
 export function ErrorBoundary({ error }: { error: unknown }) {
@@ -260,7 +295,7 @@ export function ErrorBoundary({ error }: { error: unknown }) {
   }
 
   return (
-    <main className="pt-16 p-4 container mx-auto">
+    <main role="main" className="pt-16 p-4 container mx-auto">
       <h1>{message}</h1>
       <p>{details}</p>
       {stack && (

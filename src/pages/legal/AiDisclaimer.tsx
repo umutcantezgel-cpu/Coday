@@ -6,7 +6,7 @@ import { SeoHead } from '@/shared/ui/SeoHead';
 const AiDisclaimer = () => {
   const { t } = useTranslation('legal');
   return (
-    <div className="pt-24 pb-20 container mx-auto px-4 min-h-screen">
+    <div className="pt-24 pb-20 container mx-auto px-4 min-h-dvh">
       <SeoHead
         title={`${t('disclaimer.title')} | Coday`}
         description={t('disclaimer.intro.content').substring(0, 150) + '...'}

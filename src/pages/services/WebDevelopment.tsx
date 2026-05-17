@@ -1,15 +1,16 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { LocalizedNavLink as NavLink } from '../../shared/ui/LocalizedLink';
+import { LocalizedNavLink as NavLink } from '@/shared/ui/LocalizedLink';
 import { servicesData } from '@/shared/data/services';
-import { OptimizedImage } from '../../shared/ui/OptimizedImage';
+import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import { webDevImages } from '@/shared/data/serviceImages';
-import BlurText from '../../shared/ui/BlurText';
-import ArchitectureVisualizer from '../../features/web-dev/ArchitectureVisualizer';
-import CodeQualitySimulator from '../../features/web-dev/CodeQualitySimulator';
-import SecurityGrid from '../../features/web-dev/SecurityGrid';
-import { RelevantFAQs } from '../../features/faq/ui/RelevantFAQs';
-import { OptimizedIcon } from '../../shared/ui/OptimizedIcon';
+import BlurText from '@/shared/ui/BlurText';
+import ArchitectureVisualizer from '@/features/web-dev/ArchitectureVisualizer';
+import CodeQualitySimulator from '@/features/web-dev/CodeQualitySimulator';
+import SecurityGrid from '@/features/web-dev/SecurityGrid';
+import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
+import { TechStackShowcase, TechItem } from '@/widgets/services/TechStackShowcase';
 import {
   Stack,
   Code,
@@ -49,21 +50,56 @@ const iconMap: Record<string, React.ElementType> = {
   shield_check: ShieldCheck,
   users: Users,
 };
-import { SeoHead } from '../../shared/ui/SeoHead';
+import { SeoHead } from '@/shared/ui/SeoHead';
+import { TestimonialCard } from '@/shared/ui/TestimonialCard';
 
 const WebDevelopment: React.FC = () => {
-  const { t } = useTranslation('services');
+  const { t } = useTranslation(['services', 'common']);
   const categoryData = servicesData['web-development'];
+  // @ts-expect-error
   const features = Object.values(categoryData);
+
+  const webDevTechStack: TechItem[] = [
+    { name: 'Next.js', category: 'Frontend', iconNode: <OptimizedIcon icon={Stack} size="lg" /> },
+    { name: 'React', category: 'Frontend', iconNode: <OptimizedIcon icon={Code} size="lg" /> },
+    {
+      name: 'Tailwind CSS',
+      category: 'Frontend',
+      iconNode: <OptimizedIcon icon={PaintBrush} size="lg" />,
+    },
+    { name: 'TypeScript', category: 'Frontend', iconNode: <OptimizedIcon icon={Code} size="lg" /> },
+    { name: 'Node.js', category: 'Backend', iconNode: <OptimizedIcon icon={Database} size="lg" /> },
+    {
+      name: 'Supabase',
+      category: 'Backend',
+      iconNode: <OptimizedIcon icon={Database} size="lg" />,
+    },
+    {
+      name: 'PostgreSQL',
+      category: 'Backend',
+      iconNode: <OptimizedIcon icon={Database} size="lg" />,
+    },
+    { name: 'Sanity', category: 'CMS', iconNode: <OptimizedIcon icon={Stack} size="lg" /> },
+    { name: 'Vercel', category: 'Deployment', iconNode: <OptimizedIcon icon={Cloud} size="lg" /> },
+    { name: 'GitHub', category: 'Tools', iconNode: <OptimizedIcon icon={Code} size="lg" /> },
+  ];
 
   return (
     <div className="bg-background-light pt-24 pb-16">
       <SeoHead
-        title={`${t('web_development_page.hero.title_anim')} ${t('web_development_page.hero.title_static')} | Coday`}
-        description={t('web_development_page.hero.description')}
+        title={t('web_development_page.meta.title')}
+        description={t('web_development_page.meta.description')}
+        pageType="service"
+        schemaData={{
+          service: {
+            name: 'Web Development',
+            description: t('web_development_page.meta.description'),
+            serviceType: 'Web Development',
+          },
+        }}
       />
       {/* Hero Section */}
-      <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-20 text-center lg:text-start">
+      <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-24 text-center lg:text-start">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
@@ -85,8 +121,8 @@ const WebDevelopment: React.FC = () => {
           <div className="relative hidden lg:block">
             <div className="absolute inset-0 bg-primary/10 rounded-3xl transform rotate-2 scale-105"></div>
             <OptimizedImage
-              src={webDevImages.hero.src}
-              alt={t(webDevImages.hero.alt)}
+              src={webDevImages.hero!.src}
+              alt={t(webDevImages.hero!.alt)}
               className="relative rounded-3xl shadow-flat-lg w-full transform -rotate-1 hover:rotate-0 transition-all duration-500 bg-white p-2"
               priority
             />
@@ -94,45 +130,48 @@ const WebDevelopment: React.FC = () => {
         </div>
       </section>
 
-      {/* Deep-Dive Tech Stack - NEW HIGH COMPLEXITY SECTION */}
+      {/* Problem & Solution - NEW */}
       <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-24">
-        <div className="text-center mb-16">
-          <h2 className="font-display font-bold text-3xl sm:text-4xl text-secondary mb-4">
-            {t('web_development_page.tech_stack.title')}
-          </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            {t('web_development_page.tech_stack.description')}
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[
-            { key: 'nextjs', icon: 'layers' },
-            { key: 'typescript', icon: 'code' },
-            { key: 'supabase', icon: 'database' },
-            { key: 'tailwind', icon: 'brush' },
-          ].map((tech, idx) => (
-            <div
-              key={idx}
-              className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all"
-            >
-              <div className="w-12 h-12 bg-surface-light rounded-xl flex items-center justify-center text-primary mb-4">
-                <OptimizedIcon icon={iconMap[tech.icon] || Code} />
-              </div>
-              <h3 className="font-bold text-lg text-secondary mb-2">
-                {t(`web_development_page.tech_stack.${tech.key}.title`)}
-              </h3>
-              <p className="text-sm text-slate-600 leading-relaxed">
-                {t(`web_development_page.tech_stack.${tech.key}.desc`)}
-              </p>
-            </div>
-          ))}
+        <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+          {/* Problem */}
+          <div className="bg-white p-10 lg:p-12 rounded-3xl border border-red-100 shadow-flat relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-red-50 rounded-bl-full -mr-8 -mt-8 opacity-50 pointer-events-none"></div>
+            <span className="text-red-500 font-bold uppercase tracking-wider text-sm mb-4 block">
+              {t('web_development_page.problem.label')}
+            </span>
+            <h2 className="font-display font-bold text-3xl text-secondary mb-6">
+              {t('web_development_page.problem.title')}
+            </h2>
+            <p className="text-lg text-slate-600 leading-relaxed relative z-10">
+              {t('web_development_page.problem.description')}
+            </p>
+          </div>
+          {/* Solution */}
+          <div className="bg-primary/5 p-10 lg:p-12 rounded-3xl border border-primary/20 shadow-flat relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-bl-full -mr-8 -mt-8 opacity-50 pointer-events-none"></div>
+            <span className="text-primary font-bold uppercase tracking-wider text-sm mb-4 block">
+              {t('web_development_page.solution.label')}
+            </span>
+            <h2 className="font-display font-bold text-3xl text-secondary mb-6">
+              {t('web_development_page.solution.title')}
+            </h2>
+            <p className="text-lg text-slate-600 leading-relaxed relative z-10">
+              {t('web_development_page.solution.description')}
+            </p>
+          </div>
         </div>
       </section>
 
+      {/* Deep-Dive Tech Stack - REPLACED WITH TECHSTACKSHOWCASE */}
+      <TechStackShowcase
+        technologies={webDevTechStack}
+        title={t('web_development_page.tech_stack.title')}
+        subtitle={t('web_development_page.tech_stack.description')}
+      />
+
       {/* Features Grid */}
       <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-24">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
           {features.map((feature, index) => (
             <NavLink
               key={index}
@@ -219,7 +258,11 @@ const WebDevelopment: React.FC = () => {
               <div className="flex justify-center items-center h-[300px]">
                 <div className="text-center">
                   <div className="relative w-40 h-40 mx-auto flex items-center justify-center mb-4">
-                    <svg viewBox="0 0 36 36" className="w-full h-full transform -rotate-90">
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 36 36"
+                      className="w-full h-full transform -rotate-90"
+                    >
                       <path
                         d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
                         fill="none"
@@ -422,12 +465,61 @@ const WebDevelopment: React.FC = () => {
         </div>
       </section>
 
+      {/* Testimonial */}
+      <section className="px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto mb-24">
+        <TestimonialCard
+          quote="Die technische Kompetenz und Performance-Orientierung von Coday hat unsere Plattform auf ein neues Level gehoben. Ladezeiten wurden extrem minimiert und die Architektur ist jetzt komplett zukunftssicher aufgebaut. Ein echter Gamechanger für unser Team."
+          authorName="Sarah W."
+          authorPosition="CTO"
+          authorCompany="InnovateHealth"
+          rating={5}
+        />
+      </section>
+
       {/* Relevant FAQs */}
       <RelevantFAQs serviceId="web-development" />
 
+      {/* Case Study Teaser - NEW */}
+      <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-24">
+        <div className="bg-secondary text-[color:var(--color-text-inverse)] rounded-3xl p-10 lg:p-16 relative overflow-hidden flex flex-col md:flex-row items-center gap-12">
+          <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-primary via-transparent to-transparent"></div>
+          <div className="md:w-1/2 relative z-10">
+            <span className="text-primary font-bold uppercase tracking-wider text-sm mb-4 block">
+              {t('web_development_page.case_study.label')}
+            </span>
+            <h2 className="font-display font-bold text-3xl sm:text-4xl mb-6">
+              {t('web_development_page.case_study.title')}
+            </h2>
+            <p className="text-lg opacity-80 mb-8 leading-relaxed">
+              {t('web_development_page.case_study.description')}
+            </p>
+            <NavLink
+              to="/cases"
+              className="inline-flex items-center justify-center px-6 py-3 font-bold text-secondary rounded-xl bg-primary hover:bg-white transition-all shadow-glow"
+            >
+              {t('actions.read_more', 'Case Study ansehen')}
+              <OptimizedIcon icon={ArrowRight} className="ms-2" />
+            </NavLink>
+          </div>
+          <div className="md:w-1/2 relative z-10 w-full">
+            <div className="aspect-video bg-white/5 rounded-2xl border border-white/10 p-2 shadow-2xl backdrop-blur-sm transform rotate-2 hover:rotate-0 transition-transform duration-500 overflow-hidden">
+              {/* Replace with actual case study image if available */}
+              <div className="w-full h-full bg-slate-800 rounded-xl flex items-center justify-center">
+                <OptimizedIcon
+                  icon={ChartBar}
+                  size="xl"
+                  className="text-primary/50"
+                  weight="duotone"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="max-w-5xl mx-auto px-4 text-center">
-        <div className="bg-primary rounded-3xl p-12 shadow-flat-lg text-white">
+        <div className="bg-sapphire rounded-3xl p-12 shadow-flat-lg text-white">
           <h2 className="font-display font-bold text-3xl mb-6">
             {t('web_development_page.cta.title')}
           </h2>

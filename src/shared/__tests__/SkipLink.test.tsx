@@ -4,31 +4,31 @@ import React from 'react';
 
 // Mock useTranslation to avoid i18n setup issues
 vi.mock('react-i18next', () => ({
-    useTranslation: () => ({
-        i18n: { language: 'de' },
-        t: (key: string) => key,
-    }),
+  useTranslation: () => ({
+    i18n: { language: 'de' },
+    t: (key: string) => key,
+  }),
 }));
 
-import { SkipLink } from '../ui/SkipLink';
+import { SkipLink } from '@/shared/ui/SkipLink';
 
 describe('SkipLink', () => {
-    it('renders a skip link element with correct href', () => {
-        const { container } = render(<SkipLink />);
-        const link = container.querySelector('a[href="#main-content"]');
-        expect(link).not.toBeNull();
-    });
+  it('renders a skip link element with correct href', () => {
+    const { container } = render(<SkipLink />);
+    const link = container.querySelector('a[href="#main-content"]');
+    expect(link).not.toBeNull();
+  });
 
-    it('has German label when language is de', () => {
-        const { container } = render(<SkipLink />);
-        const link = container.querySelector('a');
-        expect(link).not.toBeNull();
-        expect(link?.textContent).toBe('Zum Hauptinhalt springen');
-    });
+  it('has German label when language is de', () => {
+    const { container } = render(<SkipLink />);
+    const link = container.querySelector('a');
+    expect(link).not.toBeNull();
+    expect(link?.textContent).toBe('Zum Hauptinhalt springen');
+  });
 
-    it('has sr-only class for visual hiding', () => {
-        const { container } = render(<SkipLink />);
-        const link = container.querySelector('a');
-        expect(link?.className).toContain('sr-only');
-    });
+  it('has sr-only class for visual hiding', () => {
+    const { container } = render(<SkipLink />);
+    const link = container.querySelector('a');
+    expect(link?.className).toContain('sr-only');
+  });
 });

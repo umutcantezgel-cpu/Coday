@@ -1,0 +1,27 @@
+# Google Search Console Disavow File
+# Domain: codayweb.de
+# Maintainer: Umutcan Tezgel (kontakt@codayweb.de)
+# Last reviewed: 2026-05-03
+# Review frequency: Monthly (1st of each month)
+#
+# This file lists domains and URLs that should be disavowed
+# via Google Search Console (https://search.google.com/search-console/disavow).
+#
+# Format:
+#   domain:example-spam.com    → Disavow all links from this domain
+#   https://spam.com/page      → Disavow a specific URL
+#
+# IMPORTANT: Only add confirmed spam/toxic links here.
+# Reference: GSC Link Report + Ahrefs Backlink Audit
+#
+# ── Review Process ──
+# 1. Export backlink profile from Ahrefs/GSC (monthly)
+# 2. Filter for: Casino, Porn, Auto-Directories, PBNs, Non-relevant foreign links
+# 3. Cross-reference with GSC "Links" report
+# 4. Add confirmed spam domains below
+# 5. Upload to GSC Disavow Tool
+# 6. Document in Phase-25 tracking sheet
+#
+# ── Current Disavow List ──
+# (Empty — will be populated during monthly reviews)
+#

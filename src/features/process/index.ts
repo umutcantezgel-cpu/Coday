@@ -1,1 +1,1 @@
-export { default as ProjectTimelineAnimation } from './ProjectTimelineAnimation';
+export { default as ProjectTimelineAnimation } from '@/features/process/ProjectTimelineAnimation';

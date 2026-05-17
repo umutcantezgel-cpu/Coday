@@ -1,10 +1,10 @@
 import React, { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { OptimizedIcon } from '../shared/ui/OptimizedIcon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { ChartBar, Kanban, FileText, ArrowRight, TrendUp } from '@phosphor-icons/react';
-import { SeoHead } from '../shared/ui/SeoHead';
+import { SeoHead } from '@/shared/ui/SeoHead';
 import { motion, useScroll, useTransform } from 'motion/react';
-import { Button } from '../shared/ui/Button';
+import { Button } from '@/shared/ui/Button';
 
 // Marketing Features
 const features = [
@@ -94,7 +94,7 @@ const Dashboard: React.FC = () => {
 
   return (
     <div
-      className="min-h-screen bg-background-light dark:bg-background-dark font-sans overflow-hidden"
+      className="min-h-dvh bg-background-light dark:bg-background-dark font-sans overflow-hidden"
       ref={scrollRef}
     >
       <SeoHead

@@ -1,16 +1,17 @@
 import React, { useState, Suspense, lazy } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useTranslation } from 'react-i18next';
-import BookingCalendar from '../../booking/ui/BookingCalendar';
-const ApplicationWizard = lazy(() => import('../ApplicationWizard'));
+import BookingCalendar from '@/features/booking/ui/BookingCalendar';
+const ApplicationWizard = lazy(() => import('@/features/contact/ApplicationWizard'));
 import { Icon } from '@/shared/ui/Icon';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 export const MobileContactLayout: React.FC = () => {
   const { t } = useTranslation('contact');
   const [activeTab, setActiveTab] = useState<'booking' | 'contact'>('booking');
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-20">
+    <div className="min-h-dvh bg-gray-50 pb-20">
       {/* Content Area */}
       <div className="px-4 py-6 pb-32">
         <AnimatePresence mode="wait">
@@ -56,11 +57,7 @@ export const MobileContactLayout: React.FC = () => {
                   )}
                 </p>
               </div>
-              <Suspense
-                fallback={
-                  <div className="h-[400px] w-full bg-gray-100 rounded-2xl animate-pulse" />
-                }
-              >
+              <Suspense fallback={<Skeleton className="h-[400px] w-full rounded-2xl" />}>
                 <ApplicationWizard />
               </Suspense>
             </motion.div>

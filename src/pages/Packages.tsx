@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { LocalizedNavLink as NavLink } from '@/shared/ui/LocalizedLink';
@@ -14,13 +14,15 @@ import {
   Gauge,
   Headset,
   Calendar,
+  CaretDown,
 } from '@phosphor-icons/react';
 import { SeoHead } from '@/shared/ui/SeoHead';
-import CountUp from '../shared/ui/CountUp';
-import GradientText from '../shared/ui/GradientText';
+import CountUp from '@/shared/ui/CountUp';
+import GradientText from '@/shared/ui/GradientText';
 
-import { useCalculatorStore } from '../features/calculator/model/store';
-import StepIndicator from '../shared/ui/StepIndicator';
+import { useCalculatorStore } from '@/features/calculator/model/store';
+import StepIndicator from '@/shared/ui/StepIndicator';
+import { Breadcrumbs } from '@/shared/ui/Breadcrumbs';
 
 interface Package {
   id: string;
@@ -42,6 +44,7 @@ const Packages: React.FC = () => {
   const selectPackage = useCalculatorStore((state) => state.selectPackage);
   const setStep = useCalculatorStore((state) => state.setStep);
   const navigate = useNavigate();
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat(i18n.language, {
@@ -57,9 +60,9 @@ const Packages: React.FC = () => {
       id: 'starter',
       name: t('packages.starter.name'),
       tagline: t('packages.starter.tagline'),
-      setupPrice: 939,
-      originalPrice: 1250,
-      monthlyPrice: 49,
+      setupPrice: 2000,
+      originalPrice: 2500,
+      monthlyPrice: 0,
       features: Array.isArray(t('features.starter', { returnObjects: true }))
         ? (t('features.starter', { returnObjects: true }) as string[])
         : [],
@@ -74,9 +77,9 @@ const Packages: React.FC = () => {
       id: 'professional',
       name: t('packages.professional.name'),
       tagline: t('packages.professional.tagline'),
-      setupPrice: 1619,
-      originalPrice: 2150,
-      monthlyPrice: 99,
+      setupPrice: 4000,
+      originalPrice: 5000,
+      monthlyPrice: 0,
       popular: true,
       features: Array.isArray(t('features.professional', { returnObjects: true }))
         ? (t('features.professional', { returnObjects: true }) as string[])
@@ -92,9 +95,9 @@ const Packages: React.FC = () => {
       id: 'enterprise',
       name: t('packages.enterprise.name'),
       tagline: t('packages.enterprise.tagline'),
-      setupPrice: 2219,
-      originalPrice: 2950,
-      monthlyPrice: 199,
+      setupPrice: 8000,
+      originalPrice: 10000,
+      monthlyPrice: 0,
       features: Array.isArray(t('features.enterprise', { returnObjects: true }))
         ? (t('features.enterprise', { returnObjects: true }) as string[])
         : [],
@@ -115,11 +118,31 @@ const Packages: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen">
-      <SeoHead title={`${t('page.title')} | Coday`} description={t('page.subheadline')} />
+    <div className="min-h-dvh">
+      <SeoHead
+        title={`${t('page.title')} | Coday`}
+        description={t('page.subheadline')}
+        breadcrumbs={[
+          { name: 'Home', url: 'https://www.codayweb.de' },
+          { name: t('page.title', 'Pakete'), url: 'https://www.codayweb.de/packages' },
+        ]}
+        schemaData={{
+          softwareApp: {
+            name: 'Coday Web Packages',
+            description:
+              'Professional web development packages with transparent pricing. Starter from 939€, Professional from 1619€, Enterprise from 2219€.',
+            applicationCategory: 'BusinessApplication',
+            operatingSystem: 'Web',
+            offers: { price: '939', priceCurrency: 'EUR' },
+          },
+        }}
+      />
 
       {/* Light Hero Section */}
       <div className="bg-background-light pt-24 pb-4">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-4">
+          <Breadcrumbs />
+        </div>
         <StepIndicator currentStep="packages" className="mb-8" />
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-8">
@@ -254,18 +277,20 @@ const Packages: React.FC = () => {
                     <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-6" />
 
                     {/* Monthly Badge */}
-                    <div className="flex items-center justify-center gap-2 mb-6">
-                      <OptimizedIcon icon={ArrowsClockwise} className="text-sm text-gray-500" />
-                      <span className="text-gray-400 text-xs">
-                        + {formatPrice(pkg.monthlyPrice)}
-                        {t('labels.monthly', { defaultValue: '/Monat' })}
-                      </span>
-                    </div>
+                    {pkg.monthlyPrice > 0 && (
+                      <div className="flex items-center justify-center gap-2 mb-6">
+                        <OptimizedIcon icon={ArrowsClockwise} className="text-sm text-gray-500" />
+                        <span className="text-gray-400 text-xs">
+                          + {formatPrice(pkg.monthlyPrice)}
+                          {t('labels.monthly', { defaultValue: '/Monat' })}
+                        </span>
+                      </div>
+                    )}
 
                     {/* Features */}
                     <div className="space-y-3 mb-8 flex-grow">
-                      {pkg.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-start gap-3">
+                      {pkg.features.map((feature, _idx) => (
+                        <div key={_idx} className="flex items-start gap-3">
                           <OptimizedIcon
                             icon={CheckCircle}
                             className={`text-base mt-0.5 flex-shrink-0 ${pkg.popular ? 'text-primary' : 'text-primary/70'}`}
@@ -273,8 +298,8 @@ const Packages: React.FC = () => {
                           <span className="text-gray-300 text-sm leading-relaxed">{feature}</span>
                         </div>
                       ))}
-                      {pkg.notIncluded?.map((feature, idx) => (
-                        <div key={`ni-${idx}`} className="flex items-start gap-3 opacity-40">
+                      {pkg.notIncluded?.map((feature, _idx) => (
+                        <div key={`ni-${_idx}`} className="flex items-start gap-3 opacity-40">
                           <OptimizedIcon
                             icon={MinusCircle}
                             className="text-base text-gray-600 mt-0.5 flex-shrink-0"
@@ -362,8 +387,8 @@ const Packages: React.FC = () => {
                 icon: Headset,
                 label: t('trust.support', { defaultValue: '24/7 Support' }),
               },
-            ].map((badge, idx) => (
-              <div key={idx} className="flex items-center gap-2 text-gray-400">
+            ].map((badge, _idx) => (
+              <div key={_idx} className="flex items-center gap-2 text-gray-400">
                 <OptimizedIcon icon={badge.icon} className="text-lg text-primary/60" />
                 <span className="text-xs font-medium tracking-wide">{badge.label}</span>
               </div>
@@ -450,9 +475,9 @@ const Packages: React.FC = () => {
                       t('comparison.rows.revisions.pro'),
                       t('comparison.rows.revisions.ent'),
                     ],
-                  ].map(([feature, starter, pro, enterprise], idx) => (
+                  ].map(([feature, starter, pro, enterprise], _idx) => (
                     <tr
-                      key={idx}
+                      key={_idx}
                       className="border-b border-gray-50 hover:bg-gray-50/50 transition-colors"
                     >
                       <td className="p-4 text-sm font-medium text-gray-700">{feature}</td>
@@ -465,6 +490,113 @@ const Packages: React.FC = () => {
                   ))}
                 </tbody>
               </table>
+            </div>
+          </motion.div>
+
+          {/* Retainer Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mt-24 mb-16 max-w-6xl mx-auto"
+          >
+            <div className="text-center mb-12">
+              <h2 className="font-display font-bold text-3xl text-gray-900 mb-4">
+                {t('retainers.title', { defaultValue: 'Support & Growth Retainer' })}
+              </h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                {t('retainers.description', {
+                  defaultValue:
+                    'Nachhaltiges Wachstum und kontinuierliche Optimierung nach dem Go-Live.',
+                })}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {['basic', 'growth', 'partnership'].map((level, _idx) => (
+                <div
+                  key={level}
+                  className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-shadow duration-300 flex flex-col"
+                >
+                  <h3 className="font-display font-bold text-xl text-gray-900 mb-2">
+                    {t(`retainers.${level}.name`)}
+                  </h3>
+                  <div className="font-display font-black text-3xl text-primary mb-6">
+                    {t(`retainers.${level}.price`)}{' '}
+                    <span className="text-lg text-gray-500 font-normal">
+                      € {t('labels.monthly')}
+                    </span>
+                  </div>
+                  <ul className="space-y-3 mb-8 flex-grow">
+                    {(Array.isArray(t(`retainers.${level}.features`, { returnObjects: true }))
+                      ? (t(`retainers.${level}.features`, { returnObjects: true }) as string[])
+                      : []
+                    ).map((feature, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <OptimizedIcon
+                          icon={CheckCircle}
+                          className="text-primary mt-1 flex-shrink-0"
+                        />
+                        <span className="text-gray-600 text-sm leading-relaxed">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <NavLink
+                    to="/booking"
+                    className="w-full py-3 px-6 rounded-xl font-bold text-sm text-center border-2 border-primary text-primary hover:bg-primary hover:text-white transition-colors duration-300"
+                  >
+                    {t('cta_section.button', { defaultValue: 'Termin buchen' })}
+                  </NavLink>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* FAQ Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mt-16 max-w-3xl mx-auto"
+          >
+            <h2 className="font-display font-bold text-2xl text-gray-900 text-center mb-8">
+              {t('faq.title', { defaultValue: 'Häufig gestellte Fragen' })}
+            </h2>
+            <div className="space-y-4">
+              {(Array.isArray(t('faq.items', { returnObjects: true }))
+                ? (t('faq.items', { returnObjects: true }) as Array<{
+                    question: string;
+                    answer: string;
+                  }>)
+                : []
+              ).map((item, _idx) => (
+                <div
+                  key={_idx}
+                  className="bg-white border border-gray-200 rounded-2xl overflow-hidden transition-all duration-300 shadow-sm hover:shadow-md"
+                >
+                  <button
+                    onClick={() => setOpenFaqIndex(openFaqIndex === _idx ? null : _idx)}
+                    className="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none"
+                  >
+                    <span className="font-bold text-gray-900 pr-4">{item.question}</span>
+                    <OptimizedIcon
+                      icon={CaretDown}
+                      className={`text-gray-400 transition-transform duration-300 flex-shrink-0 ${openFaqIndex === _idx ? 'rotate-180' : ''}`}
+                    />
+                  </button>
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                      openFaqIndex === _idx ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                    }`}
+                  >
+                    <div className="px-6 pb-5 pt-0 text-gray-600 text-sm leading-relaxed">
+                      {item.answer}
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </motion.div>
 

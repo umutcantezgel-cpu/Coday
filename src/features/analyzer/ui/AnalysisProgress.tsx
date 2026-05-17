@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { useAnalyzerStore } from '../model/store';
+import { useAnalyzerStore } from '@/features/analyzer/model/store';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import {
   Lightning,

@@ -1,3 +1,3 @@
 // Blog feature — barrel exports
-export * from './model/types';
-export * from './lib/utils';
+export * from '@/features/blog/model/types';
+export * from '@/features/blog/lib/utils';

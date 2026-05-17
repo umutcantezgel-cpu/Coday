@@ -137,6 +137,10 @@
         }
       },
       "title": "Why Automate?"
+    },
+    "meta": {
+      "title": "API Integration & System Connectivity | Coday Agency",
+      "description": "Seamless API integrations for CRM, ERP, Marketing, and Payment. We connect your software landscape for efficient, automated processes."
     }
   },
   "brand_identity_page": {
@@ -182,6 +186,10 @@
         }
       ],
       "title": "Our Branding Process"
+    },
+    "meta": {
+      "title": "Brand Identity & Logo Design for B2B | Coday",
+      "description": "We develop strong brand identities, corporate designs, and logos for digital touchpoints. Make your brand unmistakable."
     }
   },
   "categories": {
@@ -216,6 +224,10 @@
       "description": "Technology changes daily. We help you stay on top and make the right decisions for your growth.",
       "title_prefix": "Clarity in a",
       "title_suffix": "Complex World."
+    },
+    "meta": {
+      "title": "Digital Consulting & Strategy | Coday",
+      "description": "Strategic consulting for your digital transformation. Tech stack evaluation, process optimization, and data-driven growth hacking."
     }
   },
   "cta": {
@@ -268,6 +280,10 @@
     "workflow": {
       "description": "From audit to implementation – we build design systems that your team actually uses.",
       "title": "Our Design System Workflow"
+    },
+    "meta": {
+      "title": "Design Systems & UI Pattern Libraries | Coday",
+      "description": "Consistent, scalable design systems for efficient web development. We standardize your UI for faster iterations and brand fidelity."
     }
   },
   "ecommerce_page": {
@@ -335,6 +351,7 @@
       "title": "More than just an Online Shop"
     },
     "hero": {
+      "badge": "E-Commerce",
       "cta_primary": "Start Shop Project",
       "cta_secondary": "View References",
       "description": "We build high-performance shops with Shopify and WooCommerce. No standard themes, but conversion-optimized sales machines.",
@@ -423,6 +440,10 @@
     "stack_section": {
       "description": "No WordPress spaghetti. We use the tech stack of billion-dollar startups.",
       "title": "The Stack of Dominance"
+    },
+    "meta": {
+      "title": "Enterprise Web Development & Headless Architectures | Coday",
+      "description": "High-performance web solutions for enterprise clients. Scalable, secure, and extremely fast architectures for the corporate sector."
     }
   },
   "generic_detail": {
@@ -539,6 +560,10 @@
         }
       },
       "title": "Why Headless?"
+    },
+    "meta": {
+      "title": "Headless CMS Agency | Sanity, Contentful & Strapi",
+      "description": "Maximum flexibility with Headless CMS. We implement future-proof content management systems for omnichannel publishing."
     }
   },
   "hero": {
@@ -549,7 +574,8 @@
       "Professional Code. Professional Design.",
       "From Idea to Market Leadership."
     ],
-    "title": "Our Core Areas."
+    "title": "Web Development & SEO Agency | Services - Coday",
+    "description": "Our expertise: High-end web design, React & Next.js development, conversion rate optimization, and data-driven SEO strategies for maximum ROI."
   },
   "migration_page": {
     "before_after": {
@@ -633,6 +659,10 @@
       ],
       "title": "Supported Technologies",
       "to": ["Next.js", "React", "Node.js", "Supabase", "Headless CMS", "Vercel Edge"]
+    },
+    "meta": {
+      "title": "System Migration & Legacy Modernization | Coday",
+      "description": "Risk-free migration from legacy systems (WordPress, TYPO3) to modern Next.js stacks without losing SEO visibility."
     }
   },
   "performance_page": {
@@ -652,6 +682,10 @@
       "load_time": "Load Time",
       "score": "Google Page Score",
       "shift": "Visual Shift"
+    },
+    "meta": {
+      "title": "Pagespeed & Core Web Vitals Optimization | Coday",
+      "description": "We optimize your load times and Core Web Vitals for better Google rankings, higher conversion rates, and excellent user experience."
     }
   },
   "seo_page": {
@@ -689,6 +723,29 @@
       "badge": "The Science of Search",
       "description": "Google's search algorithm is not a secret, it's mathematics. We systematically optimize your site for technical excellence, content relevance, and authority.",
       "title": "200+ Ranking Factors. \nWe know them all."
+    },
+    "meta": {
+      "title": "SEO Agency & Search Engine Optimization | Coday",
+      "description": "Truly sustainable search engine optimization. Holistic strategies combining technical SEO, regional dominance, and excellent content."
+    },
+    "problem": {
+      "label": "The Challenge",
+      "title": "Invisibility is costing you clients every day",
+      "description": "A beautiful website generates no revenue if it cannot be found by your target audience. While you hope for referrals, your competitors are capturing actively searching customers on Google."
+    },
+    "solution": {
+      "label": "Our Solution",
+      "title": "Dominant visibility in search results",
+      "description": "We transform your website into a magnet for ready-to-buy customers. Through data-driven SEO strategies, we position you exactly where your target audience is searching for your services."
+    },
+    "case_study": {
+      "label": "Success Story",
+      "title": "How we increased organic inquiries by 340%",
+      "description": "Learn how we built regional dominance for a local service provider and significantly increased their revenue."
+    },
+    "tech_stack": {
+      "title": "Our SEO Tech Stack",
+      "description": "We rely on industry-leading enterprise tools for precise analytics, in-depth audits, and measurable success."
     }
   },
   "ui_ux_page": {
@@ -831,6 +888,10 @@
         }
       ],
       "title": "What We Analyze"
+    },
+    "meta": {
+      "title": "UX Audit & Conversion Rate Optimization | Coday",
+      "description": "We analyze your website for weaknesses. Data-driven UX audits to increase your conversion rate and improve user flow."
     }
   },
   "web_apps_page": {
@@ -895,6 +956,10 @@
         "Regular Penetration Tests"
       ],
       "title": "Security is not a feature,\nbut the foundation."
+    },
+    "meta": {
+      "title": "Web App & SaaS Development | Coday Agency",
+      "description": "Custom web applications, internal tools, and SaaS solutions. Secure, scalable, and built with modern cloud technologies."
     }
   },
   "web_design_page": {
@@ -965,6 +1030,29 @@
         "description": "From strategy to new design. We fundamentally modernize your web presence.",
         "title": "Website Relaunch"
       }
+    },
+    "meta": {
+      "title": "Web Design Agency & UI/UX Experts | Coday",
+      "description": "Award-winning web design that not only looks aesthetic but is proven to sell. Optimized interfaces for B2B and E-commerce."
+    },
+    "problem": {
+      "label": "The Problem",
+      "title": "A website that costs more than it earns",
+      "description": "Outdated design, slow loading times, and lack of mobile optimization deter potential customers within seconds. Your expertise is undermined by an unprofessional digital presence."
+    },
+    "solution": {
+      "label": "Our Solution",
+      "title": "High-Performance Web Design for maximum conversion",
+      "description": "We develop digital experiences that not only impress but convert. With psychologically sound UI/UX design and cutting-edge technology, we turn visitors into paying customers."
+    },
+    "case_study": {
+      "label": "Success Story",
+      "title": "From digital wasteland to industry leader",
+      "description": "See how a comprehensive relaunch tripled the conversion rate of a B2B company and revolutionized their brand perception."
+    },
+    "tech_stack": {
+      "title": "Our Design & Prototyping Stack",
+      "description": "We use cutting-edge design tools for pixel-perfect layouts, interactive prototypes, and smooth developer handoffs."
     }
   },
   "services_data": {
@@ -1087,32 +1175,7 @@
           "description": "Interaction and feedback through subtle animations enhance the experience."
         }
       ],
-      "tech_testimonials": [
-        {
-          "company": "Trobolo GmbH",
-          "name": "Malek Arab",
-          "role": "CEO",
-          "text": "Top Performance and very high technical competence in WordPress Development and Webhosting. We are 100% satisfied."
-        },
-        {
-          "company": "Automate365 GmbH",
-          "name": "Andreas Ahlert",
-          "role": "CEO",
-          "text": "Coday has taken our website to the next level! With an eye for detail and understanding of latest trends."
-        },
-        {
-          "company": "Licht Technik GmbH",
-          "name": "Niklas Bünning",
-          "role": "QM & Sales",
-          "text": "The Performance Hosting for the new website runs stably and offers good load times. The website is reliably maintained full-service."
-        },
-        {
-          "company": "Q-SURE projects GmbH",
-          "name": "Felix Faustmann",
-          "role": "CEO",
-          "text": "Very good cooperation, very good result. Even after Go-Live, support was excellent."
-        }
-      ],
+      "tech_testimonials": [],
       "standard_faqs": [
         {
           "question": "What tech stack do you use?",
@@ -1458,6 +1521,10 @@
       "title": "Ready for real speed?",
       "description": "No Builders. No Bloat. Just code that sells.",
       "button": "Request Dev Team"
+    },
+    "meta": {
+      "title": "Web Development Agency | React & Next.js Experts",
+      "description": "High-end web development with Next.js, React, and TypeScript. Fast, scalable, and secure websites that leave your competition behind."
     }
   }
 }

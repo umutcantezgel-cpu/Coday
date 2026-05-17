@@ -1,4 +1,4 @@
-import { FAQItem, FAQCategory } from './types';
+import { FAQItem, FAQCategory } from '@/features/faq/model/types';
 
 export const faqCategories: FAQCategory[] = [
   { id: 'general', title: 'Allgemein', icon: 'info' },
@@ -21,7 +21,7 @@ export const faqItems: FAQItem[] = [
     id: 'wordpress',
     question: 'Arbeiten Sie mit WordPress?',
     answer:
-      '**Nein.** Wir glauben, dass WordPress ein Sicherheitsrisiko und Performance-Flaschenhals für moderne Unternehmen ist. Wir bauen mit Next.js, React und Headless CMS (Sanity/Strapi), um 100/100 Performance-Scores und maximale Sicherheit zu garantieren.',
+      '**Nein.** Wir glauben, dass WordPress ein Sicherheitsrisiko und Performance-Flaschenhals für moderne Unternehmen ist. Wir bauen mit React (React Router v7 / Next.js) und Headless CMS (Sanity/Strapi), um 100/100 Performance-Scores und maximale Sicherheit zu garantieren.',
     category: 'tech',
     relatedServices: ['web-development'],
   },

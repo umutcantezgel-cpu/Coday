@@ -296,7 +296,6 @@ body.mobile-nav-open #fab-container {
   height: 1rem;
 }
 
-/* Mobile Navigation Overlay - New Implementation */
 .mobile-overlay-container {
   position: fixed;
   inset: 0;
@@ -306,6 +305,7 @@ body.mobile-nav-open #fab-container {
   -webkit-backdrop-filter: blur(20px);
   display: flex;
   flex-direction: column;
+  pointer-events: auto;
 }
 
 .mobile-header {

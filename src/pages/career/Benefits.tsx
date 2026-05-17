@@ -1,7 +1,7 @@
 import React from 'react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { MagicBento, BentoCard } from '../../shared/ui/MagicBento';
-import GearSetup from '../../features/benefits/GearSetup';
+import { MagicBento, BentoCard } from '@/shared/ui/MagicBento';
+import GearSetup from '@/features/benefits/GearSetup';
 import { useTranslation } from 'react-i18next';
 import { SeoHead } from '@/shared/ui/SeoHead';
 import {
@@ -44,7 +44,7 @@ const Benefits: React.FC = () => {
   }));
 
   return (
-    <div className="bg-background-light min-h-screen pt-32 pb-24">
+    <div className="bg-background-light min-h-dvh pt-32 pb-24">
       <SeoHead
         title={`${t('benefits.hero.title')} | Coday Benefits`}
         description={t('benefits.hero.desc')}

@@ -127,12 +127,64 @@
   "page": {
     "headline": "Drei Pakete. <0>Null Überraschungen.</0>",
     "subheadline": "Wählen Sie das Paket, das zu Ihren Zielen passt. Alle Preise sind Festpreise – keine versteckten Kosten.",
-    "title": "Transparente Preise"
+    "title": "Webdesign Preise & SEO Kosten | Pakete - Coday",
+    "description": "Transparente Webdesign Preise und SEO Pakete. Wir bieten 100% Festpreisgarantie für High-End Webentwicklung ohne versteckte Kosten. Jetzt anfragen!"
   },
   "custom": {
     "title": "Größeres Projekt?",
     "description": "Für komplexere Anforderungen – z. B. über 30 Seiten, individuelle Funktionen oder spezielle Integrationen – erstellen wir Ihnen gerne ein maßgeschneidertes Angebot.",
     "cta": "Individuelles Angebot anfragen",
     "badge": "Individuell"
+  },
+  "faq": {
+    "title": "Häufig gestellte Fragen",
+    "items": [
+      {
+        "question": "Warum Festpreis?",
+        "answer": "Wir glauben an Transparenz. Mit unseren Festpreisen haben Sie volle Planungssicherheit – keine versteckten Kosten, keine Nachforderungen. Sie wissen genau, was Sie bekommen und was es kostet."
+      },
+      {
+        "question": "Was, wenn ich mehr will?",
+        "answer": "Unsere Pakete decken die meisten Anforderungen ab. Wenn Sie zusätzliche Seiten, Funktionen oder spezielle Integrationen benötigen, können wir diese transparent und fair als Zusatzleistung kalkulieren oder ein individuelles Projekt aufsetzen."
+      },
+      {
+        "question": "Wie lange dauert die Umsetzung?",
+        "answer": "Je nach Paket liegt die Lieferzeit zwischen 2 und 4 Wochen. Wir arbeiten effizient mit bewährten Playbooks, damit Ihre neue Website schnell online gehen kann, ohne Kompromisse bei der Qualität."
+      }
+    ]
+  },
+  "retainers": {
+    "title": "Support & Growth Retainer",
+    "description": "Nachhaltiges Wachstum und kontinuierliche Optimierung nach dem Go-Live.",
+    "basic": {
+      "name": "Basic",
+      "price": "250",
+      "features": [
+        "Monatliches Analytics-Review",
+        "2h Support-Time",
+        "Security-Updates",
+        "Uptime-Monitoring"
+      ]
+    },
+    "growth": {
+      "name": "Growth",
+      "price": "500",
+      "features": [
+        "Alles aus Basic",
+        "2 Content-Updates pro Monat",
+        "1 A/B Experiment",
+        "5h Support-Time"
+      ]
+    },
+    "partnership": {
+      "name": "Partnership",
+      "price": "1.000",
+      "features": [
+        "Alles aus Growth",
+        "Priority-Support (24h SLA)",
+        "Quartalsweise CRO-Review",
+        "10h Dev-Zeit"
+      ]
+    }
   }
 }

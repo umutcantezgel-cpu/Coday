@@ -8,7 +8,7 @@ import {
   ShieldCheck,
   Cpu,
 } from '@phosphor-icons/react';
-import { OptimizedIcon } from '../../shared/ui/OptimizedIcon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { motion } from 'motion/react';
 
 export const TechSovereigntySection: React.FC = () => {

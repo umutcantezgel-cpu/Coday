@@ -1,7 +1,8 @@
 {
   "hero": {
-    "title": "Häufig gestellte Fragen",
-    "subtitle": "Alles, was Sie wissen müssen – über unseren Prozess, Preise und Technologie."
+    "title": "Agentur FAQ | Fragen zu Webdesign & SEO - Coday",
+    "subtitle": "Alles, was Sie wissen müssen – über unseren Prozess, Preise und Technologie.",
+    "description": "Häufig gestellte Fragen zu unseren Webdesign-Projekten, SEO-Strategien, Next.js Entwicklung und Preisen. Finden Sie alle Antworten direkt hier."
   },
   "search": {
     "placeholder": "Suche nach effizienten Lösungen...",

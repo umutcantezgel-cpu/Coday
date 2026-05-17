@@ -1,12 +1,13 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { OptimizedIcon } from '../../../shared/ui/OptimizedIcon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { ArrowRight, CheckCircle } from '@phosphor-icons/react';
-import { Button } from '../../../shared/ui/Button';
-import { SeoHead } from '../../../shared/ui/SeoHead';
-import BlurText from '../../../shared/ui/BlurText';
-import GradientText from '../../../shared/ui/GradientText';
-import { motion } from 'framer-motion';
+import { Button } from '@/shared/ui/Button';
+import { SeoHead } from '@/shared/ui/SeoHead';
+import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
+import BlurText from '@/shared/ui/BlurText';
+import GradientText from '@/shared/ui/GradientText';
+import { motion } from 'motion/react';
 
 const BrandIdentity: React.FC = () => {
   const { t } = useTranslation('services');
@@ -23,8 +24,8 @@ const BrandIdentity: React.FC = () => {
   return (
     <>
       <SeoHead
-        title="Brand Identity | Digital-First Corporate Design"
-        description="We create brands that stick. Corporate identities, logos, and design languages built for digital touchpoints."
+        title={t('brand_identity_page.meta.title')}
+        description={t('brand_identity_page.meta.description')}
       />
 
       {/* Hero Section */}
@@ -133,6 +134,7 @@ const BrandIdentity: React.FC = () => {
           </div>
         </div>
       </section>
+      <RelevantFAQs serviceId="brand-identity" className="mb-24" />
     </>
   );
 };

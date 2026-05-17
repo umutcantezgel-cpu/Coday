@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { OptimizedIcon } from '../../shared/ui/OptimizedIcon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { Code, CaretDown, ArrowUpRight, ArrowRight, List, X } from '@phosphor-icons/react';
-import { LanguageSwitcher } from './LanguageSwitcher';
+import { LanguageSwitcher } from '@/widgets/navigation/LanguageSwitcher';
 import { useLocation } from 'react-router-dom';
-import { LocalizedLink as Link } from '../../shared/ui/LocalizedLink';
+import { LocalizedLink as Link } from '@/shared/ui/LocalizedLink';
 import { useTranslation } from 'react-i18next';
-import { getNavItems } from './config';
-import { MobileNavOverlay } from './MobileNavOverlay';
-import './CardNav.css';
+import { getNavItems } from '@/widgets/navigation/config';
+import { MobileNavOverlay } from '@/widgets/navigation/MobileNavOverlay';
+import '@/widgets/navigation/CardNav.css';
 
 interface CardNavProps {
   className?: string;
@@ -20,8 +20,8 @@ interface CardNavProps {
 
 const CardNav: React.FC<CardNavProps> = ({
   className = '',
-  buttonBgColor = '#137A7A', // Darker Teal for >4.5:1 contrast
-  buttonTextColor = '#fff',
+  buttonBgColor = 'var(--color-primary-700)', // Semantic token from theme
+  buttonTextColor = 'var(--color-text-inverse)',
 }) => {
   const { t } = useTranslation('common');
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
@@ -108,10 +108,10 @@ const CardNav: React.FC<CardNavProps> = ({
     <div className={`card-nav-container ${className}`} ref={navRef}>
       {/* Floating Pill */}
       <nav className="nav-pill" aria-label="Hauptnavigation">
-        {/* Logo */}
-        <Link to="/" className="nav-pill-logo" aria-label="Zur Startseite">
-          <OptimizedIcon icon={Code} className="logo-icon" />
+        <Link to="/" className="nav-pill-logo" title="Zur Startseite">
+          <OptimizedIcon icon={Code} className="logo-icon" aria-hidden="true" />
           <span className="logo-text">Coday</span>
+          <span className="sr-only"> – Zur Startseite</span>
         </Link>
 
         {/* Desktop Links (Center) */}
@@ -186,14 +186,15 @@ const CardNav: React.FC<CardNavProps> = ({
                             return (
                               <div className="dropdown-links-grid">
                                 {/* Title if single group */}
-                                {item.groups.length === 1 && (
+                                {item.groups.length === 1 && activeGroup && (
                                   <div className="dropdown-group-title">{t(activeGroup.title)}</div>
                                 )}
 
-                                {activeGroup.links.map((link, i) => {
+                                {activeGroup?.links?.map((link, i) => {
                                   const isExternal = link.href.startsWith('http');
-                                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                                  const LinkComponent = (isExternal ? 'a' : Link) as any;
+                                  const LinkComponent = (
+                                    isExternal ? 'a' : Link
+                                  ) as React.ElementType;
                                   const linkProps = isExternal
                                     ? {
                                         href: link.href,
@@ -259,7 +260,10 @@ const CardNav: React.FC<CardNavProps> = ({
             <Link
               to="/packages"
               className="nav-pill-cta hidden xl:flex"
-              style={{ backgroundColor: '#B7791F', color: '#fff' }}
+              style={{
+                backgroundColor: 'var(--color-accent-700)',
+                color: 'var(--color-text-inverse)',
+              }}
             >
               <span>{t('nav.packages.label', { defaultValue: 'Pakete' })}</span>
               <OptimizedIcon icon={ArrowRight} className="cta-arrow" />
@@ -281,7 +285,7 @@ const CardNav: React.FC<CardNavProps> = ({
               <LanguageSwitcher />
             </React.Suspense>
             <button
-              className="mobile-menu-trigger"
+              className="mobile-menu-trigger p-2 min-w-[44px] min-h-[44px] flex items-center justify-center"
               onClick={() => setIsMobileOpen(true)}
               aria-label={isMobileOpen ? 'Close Menu' : 'Open Menu'}
             >

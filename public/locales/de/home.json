@@ -1,13 +1,14 @@
 {
   "hero": {
     "badge": "Grand Opening Special: 25% Rabatt",
-    "headline_gradient": "Digitalen Erfolg.",
-    "headline_prefix": "Wir bauen Ihren",
+    "headline_gradient": "Webdesign Agentur.",
+    "headline_prefix": "Ihre High-End",
+    "description": "Wir entwickeln maßgeschneiderte, blitzschnelle Enterprise-Webseiten mit Next.js und React – ganz ohne WordPress-Templates. Als Ihre Webdesign Agentur aus Wetzlar kombinieren wir High-End Webentwicklung mit datengetriebener SEO. Das Ergebnis: Minimale Ladezeiten, überragende User Experience und messbar mehr Umsatz für Ihr Unternehmen.",
     "rotating": [
-      "Schnell. Skalierbar. Professionell.",
-      "Gewinnorientiert. Ergebnisorientiert.",
-      "Premium Design. Professioneller Code.",
-      "Keine Ausreden. Nur Ergebnisse."
+      "Enterprise-Grade Performance.",
+      "Maximaler ROI. Skalierbares Wachstum.",
+      "Prämierte UX. Kompromissloser Code.",
+      "Kein Overhead. Nur Ergebnisse."
     ]
   },
   "industries": {
@@ -31,22 +32,22 @@
       "desc": "Verkaufsstarke Shopsysteme.",
       "title": "Online-Shop"
     },
-    "title_prefix": "Wir digitalisieren",
-    "title_suffix": "Ihre Branche."
+    "title_prefix": "Maßgeschneiderte Lösungen für",
+    "title_suffix": "Ihre Industrie."
   },
   "meta": {
-    "description": "Premium Webdesign & Performance-Marketing für moderne Unternehmen. Wir bauen Ihren digitalen Erfolg.",
-    "title": "Coday | Der Agentur-Killer"
+    "description": "Ihre Webdesign Agentur für digitale Dominanz. Wir bauen High-Performance Websites mit Next.js, prämierte UX/UI und skalierbare SEO-Strategien.",
+    "title": "Webdesign Agentur | High-End Webentwicklung & SEO - Coday"
   },
   "images": {
-    "trust_collaboration": "Vertrauensvolle Zusammenarbeit",
-    "satisfied_partners": "Zufriedene Partner"
+    "trust_collaboration": "Vertrauensvolle Zusammenarbeit mit Ihrer Webdesign Agentur Coday",
+    "satisfied_partners": "Zufriedene Partner der Webdesign Agentur Coday"
   },
   "philosophy": {
     "history": "Sind Geschichte.",
     "standard": "Coday ist der neue Standard.",
-    "text_overhead": "Sie bezahlen für Overhead, Meetings und ineffiziente Prozesse. Das alte Agenturmodell funktioniert nicht mehr für moderne KMUs.",
-    "text_standard": "Wir kombinieren strategisches Design mit professioneller Programmierung. Keine Baukästen, keine Ausreden. Nur Ergebnisse, die Ihr Unternehmen voranbringen.",
+    "text_overhead": "Traditionelle Agenturen berechnen Ihnen endlosen Overhead, zahllose Meetings und veraltete Prozesse. Das klassische Agenturmodell raubt Ihre wertvolle Zeit und Ihr Budget.",
+    "text_standard": "Coday ist die Antithese: Wir vereinen strategisches Design mit kompromisslos schnellem, maßgeschneidertem Code. Keine Baukästen. Keine Ausreden. Nur ein Ziel: Ihr maximales Wachstum.",
     "traditional": "Traditionelle Agenturen"
   },
   "stats": {
@@ -67,13 +68,36 @@
   "testimonials": {
     "excellence": "Exzellenz als Standard.",
     "rating": "5.0 Sterne Bewertung",
-    "text": "Vom lokalen Handwerksbetrieb bis zum Industrieunternehmen. Wir liefern Qualität, auf die Sie bauen können.",
-    "title_prefix": "Partner, die",
-    "title_suffix": "Uns Vertrauen."
+    "text": "Vom ambitionierten Mittelstand bis zum Enterprise-Konzern: Wir liefern digitale Exzellenz, auf die Sie sich bedingungslos verlassen können.",
+    "title_prefix": "Kunden, die",
+    "title_suffix": "Uns Vertrauen.",
+    "items": [
+      {
+        "quote": "Coday hat unsere Online-Präsenz auf ein neues Level gehoben. Die Performance der Website ist schlichtweg atemberaubend und unsere Conversion-Rates haben sich mehr als verdoppelt.",
+        "authorName": "Michael Weber",
+        "authorPosition": "Geschäftsführer",
+        "authorCompany": "TechVision GmbH",
+        "rating": 5
+      },
+      {
+        "quote": "Die Zusammenarbeit war von Tag 1 an professionell und ergebnisorientiert. Besonders beeindruckt hat uns die nahtlose Integration unserer komplexen Backend-Systeme in das neue Next.js Frontend.",
+        "authorName": "Sarah Müller",
+        "authorPosition": "CMO",
+        "authorCompany": "Digital pioneers",
+        "rating": 5
+      },
+      {
+        "quote": "Als E-Commerce Unternehmen ist Speed für uns entscheidend. Coday hat nicht nur unsere Core Web Vitals in den grünen Bereich gebracht, sondern auch eine Conversion-optimierte UX geschaffen.",
+        "authorName": "Jan Schmidt",
+        "authorPosition": "Head of E-Commerce",
+        "authorCompany": "RetailGroup DACH",
+        "rating": 5
+      }
+    ]
   },
   "comparison": {
     "title_prefix": "Traditionell vs.",
-    "subtitle": "Hör auf für Ineffizienz zu bezahlen. Wähle das Protokoll, das gewinnt.",
+    "subtitle": "Hören Sie auf, für Ineffizienz zu bezahlen. Wählen Sie die Agentur, die Ergebnisse liefert.",
     "columns": {
       "metric": "Metrik",
       "agency": "Traditionelle Agentur"
@@ -105,5 +129,34 @@
         "new": "Direkter Entwickler-Zugang"
       }
     }
+  },
+  "services": {
+    "label": "Unsere Leistungen",
+    "title_prefix": "Wir bieten",
+    "title_suffix": "Premium Services.",
+    "items": {
+      "web_dev": {
+        "title": "Web Development",
+        "description": "High-Performance Websites und Applikationen gebaut mit modernen Frameworks."
+      },
+      "web_design": {
+        "title": "UX/UI Design",
+        "description": "Konversionsoptimierte, nutzerzentrierte Designs für maximale Performance."
+      },
+      "growth": {
+        "title": "Digital Growth",
+        "description": "Datengestützte SEO und Performance-Strategien zur Skalierung Ihres Unternehmens."
+      }
+    },
+    "cta": "Alle Leistungen ansehen"
+  },
+  "logobar": {
+    "title": "Vertrauen schenken uns innovative Unternehmen"
+  },
+  "portfolio_teaser": {
+    "overline": "Bewiesene Ergebnisse",
+    "title": "Unsere Arbeit spricht für sich.",
+    "subtitle": "Keine Fließband-Templates. Nur handgefertigte High-Performance Plattformen, die Dominanz ausstrahlen.",
+    "cta": "Alle Case Studies"
   }
 }

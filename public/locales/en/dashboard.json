@@ -63,7 +63,8 @@
   },
   "meta": {
     "desc": "Your personal area for project insights, analytics, and progress tracking.",
-    "title": "Client Dashboard | Coday"
+    "title": "Client Dashboard | Project Status & Analytics - Coday",
+    "description": "Exclusive client dashboard by Coday. Track your web design project progress, live performance metrics, and SEO rankings in real-time."
   },
   "metrics": {
     "cls": "Cumulative Layout Shift",

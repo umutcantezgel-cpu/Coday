@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import {
@@ -10,7 +9,7 @@ import {
   Minus,
   ArrowsLeftRight,
 } from '@phosphor-icons/react';
-import { OptimizedImage } from '../../../shared/ui/OptimizedImage';
+import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import type {
   ContentBlock,
   TextBlock,
@@ -24,145 +23,150 @@ import type {
   AccordionBlock,
   InteractiveBlock,
   KeyTakeawaysBlock,
-} from '../model/types';
-import { slugify } from '../lib/utils';
+} from '@/features/blog/model/types';
+import { slugify } from '@/features/blog/lib/utils';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { motion, useScroll, useTransform, useInView, AnimatePresence } from 'motion/react';
 
+// Typed module resolution for lazy-loaded interactive widgets
+interface WidgetModule {
+  default?: React.ComponentType;
+  [key: string]: React.ComponentType | undefined;
+}
+
+type LazyWidget = React.LazyExoticComponent<React.ComponentType>;
+
+/** Resolve a named or default export from a dynamically imported widget module */
+function resolveDefault(m: WidgetModule, name: string): { default: React.ComponentType } {
+  const resolved = m[name] || m.default;
+  if (!resolved) throw new Error(`Widget module missing export: ${name}`);
+  return { default: resolved };
+}
+
 // Interactive Components (Lazy Loaded)
+const ROI_Calculator: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/ROI_Calculator').then((m) =>
+    resolveDefault(m as WidgetModule, 'ROI_Calculator')
+  )
+);
+const SpeedComparison: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/SpeedComparison').then((m) =>
+    resolveDefault(m as WidgetModule, 'SpeedComparison')
+  )
+);
+const DesignPsychologyPicker: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/DesignPsychologyPicker').then((m) =>
+    resolveDefault(m as WidgetModule, 'DesignPsychologyPicker')
+  )
+);
+const SEOTrafficGraph: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/SEOTrafficGraph').then((m) =>
+    resolveDefault(m as WidgetModule, 'SEOTrafficGraph')
+  )
+);
+const MobileSimulator: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/MobileSimulator').then((m) =>
+    resolveDefault(m as WidgetModule, 'MobileSimulator')
+  )
+);
+const DataMaturityAssessment: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/DataMaturityAssessment').then((m) =>
+    resolveDefault(m as WidgetModule, 'DataMaturityAssessment')
+  )
+);
+const HackSimulator: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/HackSimulator').then((m) =>
+    resolveDefault(m as WidgetModule, 'HackSimulator')
+  )
+);
+const ABTestSimulator: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/ABTestSimulator').then((m) =>
+    resolveDefault(m as WidgetModule, 'ABTestSimulator')
+  )
+);
+const VoiceDemo: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/VoiceDemo').then((m) =>
+    resolveDefault(m as WidgetModule, 'VoiceDemo')
+  )
+);
+const AICostGraph: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/AICostGraph').then((m) =>
+    resolveDefault(m as WidgetModule, 'AICostGraph')
+  )
+);
+const WebHistoryTimeline: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/WebHistoryTimeline').then((m) =>
+    resolveDefault(m as WidgetModule, 'WebHistoryTimeline')
+  )
+);
+const AgencyCostCalculator: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/AgencyCostCalculator').then((m) =>
+    resolveDefault(m as WidgetModule, 'AgencyCostCalculator')
+  )
+);
+const SoulReader: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/SoulReader').then((m) =>
+    resolveDefault(m as WidgetModule, 'SoulReader')
+  )
+);
+const LatencyCostCalculator: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/LatencyCostCalculator').then((m) =>
+    resolveDefault(m as WidgetModule, 'LatencyCostCalculator')
+  )
+);
+const SovereigntyChecklist: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/SovereigntyChecklist').then((m) =>
+    resolveDefault(m as WidgetModule, 'SovereigntyChecklist')
+  )
+);
+const ContrastRatioAnalyzer: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/ContrastRatioAnalyzer').then((m) =>
+    resolveDefault(m as WidgetModule, 'ContrastRatioAnalyzer')
+  )
+);
+const TCOCalculator: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/TCOCalculator').then((m) =>
+    resolveDefault(m as WidgetModule, 'TCOCalculator')
+  )
+);
+const SecurityGapWizard: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/SecurityGapWizard').then((m) =>
+    resolveDefault(m as WidgetModule, 'SecurityGapWizard')
+  )
+);
+const OZGReadiness: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/OZGReadiness').then((m) =>
+    resolveDefault(m as WidgetModule, 'OZGReadiness')
+  )
+);
+const TrackingSimulator: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/TrackingSimulator').then((m) =>
+    resolveDefault(m as WidgetModule, 'TrackingSimulator')
+  )
+);
+const ComponentConfigurator: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/ComponentConfigurator').then((m) =>
+    resolveDefault(m as WidgetModule, 'ComponentConfigurator')
+  )
+);
+const ROIEstimator: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/ROIEstimator').then((m) =>
+    resolveDefault(m as WidgetModule, 'ROIEstimator')
+  )
+);
+const BlindTestQuiz: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/BlindTestQuiz').then((m) =>
+    resolveDefault(m as WidgetModule, 'BlindTestQuiz')
+  )
+);
 
-const ROI_Calculator = React.lazy(() =>
-  import('./interactive/ROI_Calculator').then((m) => ({
-    default: (m as any).ROI_Calculator || (m as any).default,
-  }))
-) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
-const SpeedComparison = React.lazy(() =>
-  import('./interactive/SpeedComparison').then((m) => ({
-    default: (m as any).SpeedComparison || (m as any).default,
-  }))
-) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
-const DesignPsychologyPicker = React.lazy(() =>
-  import('./interactive/DesignPsychologyPicker').then((m) => ({
-    default: (m as any).DesignPsychologyPicker || (m as any).default,
-  }))
-) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
-const SEOTrafficGraph = React.lazy(() =>
-  import('./interactive/SEOTrafficGraph').then((m) => ({
-    default: (m as any).SEOTrafficGraph || (m as any).default,
-  }))
-) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
-const MobileSimulator = React.lazy(() =>
-  import('./interactive/MobileSimulator').then((m) => ({
-    default: (m as any).MobileSimulator || (m as any).default,
-  }))
-) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
-const DataMaturityAssessment = React.lazy(() =>
-  import('./interactive/DataMaturityAssessment').then((m) => ({
-    default: (m as any).DataMaturityAssessment || (m as any).default,
-  }))
-) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
-const HackSimulator = React.lazy(() =>
-  import('./interactive/HackSimulator').then((m) => ({
-    default: (m as any).HackSimulator || (m as any).default,
-  }))
-) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
-const ABTestSimulator = React.lazy(() =>
-  import('./interactive/ABTestSimulator').then((m) => ({
-    default: (m as any).ABTestSimulator || (m as any).default,
-  }))
-) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
-const VoiceDemo = React.lazy(() =>
-  import('./interactive/VoiceDemo').then((m) => ({
-    default: (m as any).VoiceDemo || (m as any).default,
-  }))
-) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
-const AICostGraph = React.lazy(() =>
-  import('./interactive/AICostGraph').then((m) => ({
-    default: (m as any).AICostGraph || (m as any).default,
-  }))
-) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
-const WebHistoryTimeline = React.lazy(() =>
-  import('./interactive/WebHistoryTimeline').then((m) => ({
-    default: (m as any).WebHistoryTimeline || (m as any).default,
-  }))
-) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
-const AgencyCostCalculator = React.lazy(() =>
-  import('./interactive/AgencyCostCalculator').then((m) => ({
-    default: (m as any).AgencyCostCalculator || (m as any).default,
-  }))
-) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
-
-const SoulReader = React.lazy(() =>
-  import('./interactive/SoulReader').then((m) => ({
-    default: (m as any).SoulReader || (m as any).default,
-  }))
-) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
-
-const LatencyCostCalculator = React.lazy(() =>
-  import('./interactive/LatencyCostCalculator').then((m) => ({
-    default: (m as any).LatencyCostCalculator || (m as any).default,
-  }))
-) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
-
-const SovereigntyChecklist = React.lazy(() =>
-  import('./interactive/SovereigntyChecklist').then((m) => ({
-    default: (m as any).SovereigntyChecklist || (m as any).default,
-  }))
-) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
-
-const ContrastRatioAnalyzer = React.lazy(() =>
-  import('./interactive/ContrastRatioAnalyzer').then((m) => ({
-    default: (m as any).ContrastRatioAnalyzer || (m as any).default,
-  }))
-) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
-
-const TCOCalculator = React.lazy(() =>
-  import('./interactive/TCOCalculator').then((m) => ({
-    default: (m as any).TCOCalculator || (m as any).default,
-  }))
-) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
-
-const SecurityGapWizard = React.lazy(() =>
-  import('./interactive/SecurityGapWizard').then((m) => ({
-    default: (m as any).SecurityGapWizard || (m as any).default,
-  }))
-) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
-
-const OZGReadiness = React.lazy(() =>
-  import('./interactive/OZGReadiness').then((m) => ({
-    default: (m as any).OZGReadiness || (m as any).default,
-  }))
-) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
-
-const TrackingSimulator = React.lazy(() =>
-  import('./interactive/TrackingSimulator').then((m) => ({
-    default: (m as any).TrackingSimulator || (m as any).default,
-  }))
-) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
-
-const ComponentConfigurator = React.lazy(() =>
-  import('./interactive/ComponentConfigurator').then((m) => ({
-    default: (m as any).ComponentConfigurator || (m as any).default,
-  }))
-) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
-
-const ROIEstimator = React.lazy(() =>
-  import('./interactive/ROIEstimator').then((m) => ({
-    default: (m as any).ROIEstimator || (m as any).default,
-  }))
-) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
-
-const BlindTestQuiz = React.lazy(() =>
-  import('./interactive/BlindTestQuiz').then((m) => ({
-    default: (m as any).BlindTestQuiz || (m as any).default,
-  }))
-) as unknown as React.LazyExoticComponent<React.ComponentType<unknown>>;
-
-import { KeyTakeaways } from './KeyTakeaways';
-import { GlossaryTerm } from './GlossaryTerm';
-import { getGlossaryTerms } from '../model/glossary';
+import { KeyTakeaways } from '@/features/blog/ui/KeyTakeaways';
+import { GlossaryTerm } from '@/features/blog/ui/GlossaryTerm';
+import { getGlossaryTerms } from '@/features/blog/model/glossary';
 import { useTranslation } from 'react-i18next';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -362,8 +366,8 @@ const CTABlockRenderer: React.FC<{ block: CTABlock }> = ({ block }) => {
 
 const CodeBlockRenderer: React.FC<{ block: CodeBlock }> = ({ block }) => {
   return (
-    <div className="my-10 rounded-2xl overflow-hidden bg-[#1e1e1e] shadow-2xl border border-gray-800 text-gray-300">
-      <div className="flex items-center justify-between px-4 py-3 bg-[#2d2d2d] border-b border-gray-700">
+    <div className="my-10 rounded-2xl overflow-hidden bg-neutral-900 shadow-2xl border border-neutral-800 text-neutral-300">
+      <div className="flex items-center justify-between px-4 py-3 bg-neutral-800 border-b border-neutral-700">
         <div className="flex items-center gap-2">
           <div className="flex gap-1.5">
             <div className="w-3 h-3 rounded-full bg-red-500/80" />
@@ -376,10 +380,21 @@ const CodeBlockRenderer: React.FC<{ block: CodeBlock }> = ({ block }) => {
         </div>
         <div className="text-xs font-mono text-gray-500 uppercase">{block.language}</div>
       </div>
-      <div className="p-5 overflow-x-auto">
-        <pre className="font-mono text-sm leading-relaxed">
-          <code>{block.code}</code>
-        </pre>
+      <div className="text-sm">
+        <SyntaxHighlighter
+          language={block.language || 'typescript'}
+          style={vscDarkPlus}
+          customStyle={{
+            margin: 0,
+            padding: '1.25rem',
+            background: 'transparent',
+            fontSize: '0.875rem',
+            lineHeight: '1.7',
+          }}
+          showLineNumbers={true}
+        >
+          {block.code}
+        </SyntaxHighlighter>
       </div>
     </div>
   );
@@ -526,7 +541,7 @@ const InteractiveBlockRenderer: React.FC<{ block: InteractiveBlock }> = ({ block
   const { t } = useTranslation('blog');
   const COMPONENT_MAP: Record<
     string,
-    React.LazyExoticComponent<React.ComponentType<unknown>> | React.ComponentType<unknown>
+    React.LazyExoticComponent<React.ComponentType> | React.ComponentType
   > = {
     'roi-calculator': ROI_Calculator,
     'speed-test': SpeedComparison,

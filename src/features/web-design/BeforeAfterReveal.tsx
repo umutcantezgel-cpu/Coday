@@ -16,7 +16,7 @@ const BeforeAfterReveal: React.FC = () => {
     if (!containerRef.current) return;
 
     const containerRect = containerRef.current.getBoundingClientRect();
-    const clientX = 'touches' in event ? event.touches[0].clientX : event.clientX;
+    const clientX = 'touches' in event ? event.touches[0]!.clientX : event.clientX;
 
     const relativeX = clientX - containerRect.left;
     const percentage = Math.min(Math.max((relativeX / containerRect.width) * 100, 0), 100);

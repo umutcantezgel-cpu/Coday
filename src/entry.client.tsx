@@ -1,8 +1,18 @@
 import { HydratedRouter } from 'react-router/dom';
-import i18n from './i18n';
+import i18n from '@/i18n';
 import { I18nextProvider } from 'react-i18next';
 import { startTransition, StrictMode } from 'react';
 import { hydrateRoot } from 'react-dom/client';
+import { initBotId } from 'botid/client/core';
+
+initBotId({
+  protect: [
+    {
+      path: '/api/send-lead',
+      method: 'POST',
+    },
+  ],
+});
 
 // Defer Sentry — load AFTER hydration to keep entry.client lean
 function initSentry() {
@@ -28,9 +38,5 @@ startTransition(() => {
   );
 });
 
-// Initialize Sentry after hydration, during idle time
-if (typeof requestIdleCallback !== 'undefined') {
-  requestIdleCallback(initSentry);
-} else {
-  setTimeout(initSentry, 3000);
-}
+// Initialize Sentry after hydration, with a delay to prioritize LCP and TTI
+setTimeout(initSentry, 5000);

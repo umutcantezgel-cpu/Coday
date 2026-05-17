@@ -4,8 +4,8 @@ import React from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { MemoryRouter } from 'react-router-dom';
 import { I18nextProvider } from 'react-i18next';
-import i18n from '../../i18n';
-import { SeoHead } from '../ui/SeoHead';
+import i18n from '@/i18n';
+import { SeoHead } from '@/shared/ui/SeoHead';
 
 // Wrapper with all providers needed for SeoHead
 function renderWithProviders(ui: React.ReactElement, { route = '/de' } = {}) {

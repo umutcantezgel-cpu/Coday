@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { JsonLd, SchemaData } from './JsonLd';
+import { JsonLd, SchemaData } from '@/shared/ui/JsonLd';
 
 interface BreadcrumbItem {
   name: string;
@@ -17,7 +17,7 @@ interface SeoHeadProps {
   /** Optional breadcrumbs for JSON-LD BreadcrumbList */
   breadcrumbs?: BreadcrumbItem[];
   /** Page type for JSON-LD schema selection */
-  pageType?: 'home' | 'service' | 'contact' | 'article' | 'job' | 'default';
+  pageType?: 'home' | 'service' | 'contact' | 'article' | 'job' | 'faq' | 'about' | 'default';
   /** Optional image URL to preload for LCP optimization */
   preloadImage?: string;
   /** Schema data passed to JsonLd */
@@ -48,6 +48,7 @@ export const SeoHead: React.FC<SeoHeadProps> = ({
   // Helper to get clean path without language prefix
   const getPathWithoutLang = (path: string) => {
     const segments = path.split('/').filter(Boolean);
+    // @ts-expect-error
     if (SUPPORTED_LANGUAGES.includes(segments[0])) {
       return '/' + segments.slice(1).join('/');
     }
@@ -122,12 +123,17 @@ export const SeoHead: React.FC<SeoHeadProps> = ({
         ))}
 
         {/* Open Graph */}
+        <meta property="og:site_name" content="Coday" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={image} />
+        <meta property="og:image:alt" content={title} />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:locale" content={currentLang === 'en' ? 'en_US' : 'de_DE'} />
+        <meta property="og:locale:alternate" content={currentLang === 'en' ? 'de_DE' : 'en_US'} />
         <meta property="og:type" content="website" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />

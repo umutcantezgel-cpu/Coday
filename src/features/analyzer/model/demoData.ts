@@ -1,5 +1,5 @@
 import type { TFunction } from 'i18next';
-import { AnalysisResult } from './types';
+import { AnalysisResult } from '@/features/analyzer/model/types';
 
 export const getDemoResult = (t: TFunction): AnalysisResult => ({
   id: 'demo-audit-123',
@@ -10,7 +10,8 @@ export const getDemoResult = (t: TFunction): AnalysisResult => ({
   analyzedAt: new Date().toISOString(),
   duration: 1240,
   techStack: ['WordPress', 'jQuery', 'Apache'],
-  screenshotUrl: 'https://via.placeholder.com/1200x630.png?text=Website+Preview',
+  screenshotUrl:
+    '/images/portfolio/mockup-website-immobilienagentur-real-estate-listings-preise-berlin.webp',
 
   performance: {
     score: 35,

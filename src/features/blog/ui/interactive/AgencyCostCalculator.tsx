@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import React, { useState } from 'react';
+import { motion } from 'motion/react';
 import { CurrencyDollar, Robot, User, Lightning, ArrowRight } from '@phosphor-icons/react';
-import { clsx } from 'clsx';
 import { Link } from 'react-router-dom';
 
 export const AgencyCostCalculator: React.FC = () => {
@@ -15,7 +14,6 @@ export const AgencyCostCalculator: React.FC = () => {
   // Let's say 40% of agency cost for the sake of the calculator demonstration.
   const codayCost = Math.round(agencyCost * 0.4);
   const savings = agencyCost - codayCost;
-  const savingsPercent = 60;
 
   return (
     <div className="my-16 relative overflow-hidden rounded-[2.5rem] border border-gray-100 bg-white shadow-2xl">

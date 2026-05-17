@@ -3,20 +3,21 @@ import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { CheckCircle } from '@phosphor-icons/react';
 import { useTranslation } from 'react-i18next';
 import { SeoHead } from '@/shared/ui/SeoHead';
-import BlurText from '../../shared/ui/BlurText';
-import GradientText from '../../shared/ui/GradientText';
+import BlurText from '@/shared/ui/BlurText';
+import GradientText from '@/shared/ui/GradientText';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import { IMAGES } from '@/shared/config/images';
 
-import CraftsmanLeadCalculator from '../../features/industries/handwerk/CraftsmanLeadCalculator';
-import RecruitingFunnelDemo from '../../features/industries/handwerk/RecruitingFunnelDemo';
-import LocalDominanceMap from '../../features/industries/handwerk/LocalDominanceMap';
+import CraftsmanLeadCalculator from '@/features/industries/handwerk/CraftsmanLeadCalculator';
+import RecruitingFunnelDemo from '@/features/industries/handwerk/RecruitingFunnelDemo';
+import LocalDominanceMap from '@/features/industries/handwerk/LocalDominanceMap';
+import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
 
 const Handwerk: React.FC = () => {
   const { t } = useTranslation(['industries', 'common']);
 
   return (
-    <div className="bg-background-light min-h-screen">
+    <div className="bg-background-light min-h-dvh">
       <SeoHead
         title={`${t('handwerk-bau.hero.title_1')} ${t('handwerk-bau.hero.title_2')} | Coday`}
         description={t('handwerk-bau.hero.description')}
@@ -139,6 +140,11 @@ const Handwerk: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <RelevantFAQs
+        serviceId={['web-development', 'seo']}
+        className="bg-gray-50 border-t border-gray-100"
+      />
     </div>
   );
 };

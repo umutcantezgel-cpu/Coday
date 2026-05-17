@@ -2,9 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'motion/react';
 import { MagnifyingGlass, CaretDown, X } from '@phosphor-icons/react';
-import { SeoHead } from '@/shared/ui/SeoHead';
 import { JsonLd } from '@/shared/ui/JsonLd';
-// import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { getFAQs, getFAQCategories } from '@/features/faq/model';
 import TroubleshooterWizard from '@/features/faq/ui/TroubleshooterWizard';
 
@@ -38,8 +36,7 @@ const FAQ = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background-light pt-24 pb-20">
-      <SeoHead title={`${t('hero.title')} | Coday`} description={t('hero.subtitle')} />
+    <div className="min-h-dvh bg-background-light pt-24 pb-20">
       <JsonLd
         pageType="faq"
         data={{
@@ -153,7 +150,7 @@ const FAQ = () => {
                 >
                   <button
                     onClick={() => toggleItem(faq.id)}
-                    className="w-full flex justify-between items-center p-6 text-left focus:outline-none"
+                    className="w-full flex justify-between items-center p-6 text-left focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:rounded-xl"
                   >
                     <span className="font-display font-bold text-lg text-slate-900 pr-8">
                       {faq.question}

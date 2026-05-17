@@ -18,20 +18,6 @@ export default defineConfig(({ isSsrBuild }) => ({
       jpg: { quality: 80 },
       webp: { quality: 80 },
       avif: { quality: 80 },
-      svg: {
-        multipass: true,
-        plugins: [
-          {
-            name: 'preset-default',
-            params: {
-              overrides: {
-                removeViewBox: false,
-                cleanupIds: false,
-              },
-            },
-          },
-        ],
-      },
     }),
     viteCompression({ algorithm: 'gzip' }),
     viteCompression({ algorithm: 'brotliCompress', ext: '.br' }),

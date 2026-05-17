@@ -1,1 +1,1 @@
-export { WhatsAppButton } from './WhatsAppButton';
+export { WhatsAppButton } from '@/widgets/whatsapp/WhatsAppButton';

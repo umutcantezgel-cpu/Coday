@@ -1,13 +1,14 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { OptimizedIcon } from '../../../shared/ui/OptimizedIcon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { ChartBar, ArrowRight, MagnifyingGlass, FileText } from '@phosphor-icons/react';
-import { Button } from '../../../shared/ui/Button';
-import { SeoHead } from '../../../shared/ui/SeoHead';
-import BlurText from '../../../shared/ui/BlurText';
-import GradientText from '../../../shared/ui/GradientText';
-import CountUp from '../../../shared/ui/CountUp';
-import { motion } from 'framer-motion';
+import { Button } from '@/shared/ui/Button';
+import { SeoHead } from '@/shared/ui/SeoHead';
+import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
+import BlurText from '@/shared/ui/BlurText';
+import GradientText from '@/shared/ui/GradientText';
+import CountUp from '@/shared/ui/CountUp';
+import { motion } from 'motion/react';
 
 const UxAudit: React.FC = () => {
   const { t } = useTranslation('services');
@@ -21,8 +22,8 @@ const UxAudit: React.FC = () => {
   return (
     <>
       <SeoHead
-        title="UX Audit | Data-Driven Conversion Optimization"
-        description="We analyze your user journeys, identify drop-offs, and optimize conversion rates based on real user data."
+        title={t('ux_audit_page.meta.title')}
+        description={t('ux_audit_page.meta.description')}
       />
 
       {/* Hero Section */}
@@ -123,6 +124,7 @@ const UxAudit: React.FC = () => {
           </div>
         </div>
       </section>
+      <RelevantFAQs serviceId="ux-audit" className="mb-24" />
     </>
   );
 };

@@ -1,1 +1,1 @@
-export { default as CareerPathBuilder } from './CareerPathBuilder';
+export { default as CareerPathBuilder } from '@/features/careers/CareerPathBuilder';

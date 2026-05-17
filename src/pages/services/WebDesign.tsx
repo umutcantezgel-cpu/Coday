@@ -1,25 +1,63 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { LocalizedNavLink as NavLink } from '../../shared/ui/LocalizedLink';
-import BlurText from '../../shared/ui/BlurText';
+import { LocalizedNavLink as NavLink } from '@/shared/ui/LocalizedLink';
+import BlurText from '@/shared/ui/BlurText';
 import { servicesData } from '@/shared/data/services';
-import { OptimizedImage } from '../../shared/ui/OptimizedImage';
+import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import { brandingImages } from '@/shared/data/serviceImages';
-import DesignSystemShowcase from '../../features/web-design/DesignSystemShowcase';
-import PsychologyGrid from '../../features/web-design/PsychologyGrid';
-import BeforeAfterReveal from '../../features/web-design/BeforeAfterReveal';
-import { OptimizedIcon } from '../../shared/ui/OptimizedIcon';
-import { Palette, SquaresFour, RocketLaunch, CheckCircle, ArrowRight } from '@phosphor-icons/react';
-
+import DesignSystemShowcase from '@/features/web-design/DesignSystemShowcase';
+import PsychologyGrid from '@/features/web-design/PsychologyGrid';
+import BeforeAfterReveal from '@/features/web-design/BeforeAfterReveal';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
+import {
+  Palette,
+  SquaresFour,
+  RocketLaunch,
+  CheckCircle,
+  ArrowRight,
+  PenNib,
+  MagicWand,
+} from '@phosphor-icons/react';
+import { TechStackShowcase, TechItem } from '@/widgets/services/TechStackShowcase';
 const iconMap: Record<string, React.ElementType> = {
   palette: Palette,
   widgets: SquaresFour,
   rocket: RocketLaunch,
 };
-import { SeoHead } from '../../shared/ui/SeoHead';
+import { SeoHead } from '@/shared/ui/SeoHead';
+import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
 
 const WebDesign: React.FC = () => {
   const { t } = useTranslation('services');
+
+  const webDesignTechStack: TechItem[] = [
+    { name: 'Figma', category: 'Design', iconNode: <OptimizedIcon icon={PenNib} size="lg" /> },
+    {
+      name: 'Framer',
+      category: 'Prototyping',
+      iconNode: <OptimizedIcon icon={MagicWand} size="lg" />,
+    },
+    {
+      name: 'Webflow',
+      category: 'Implementation',
+      iconNode: <OptimizedIcon icon={SquaresFour} size="lg" />,
+    },
+    {
+      name: 'Next.js',
+      category: 'Frontend',
+      iconNode: <OptimizedIcon icon={RocketLaunch} size="lg" />,
+    },
+    {
+      name: 'Tailwind CSS',
+      category: 'Styling',
+      iconNode: <OptimizedIcon icon={Palette} size="lg" />,
+    },
+    {
+      name: 'React',
+      category: 'Frontend',
+      iconNode: <OptimizedIcon icon={SquaresFour} size="lg" />,
+    },
+  ];
 
   // Fallback if key doesn't match perfectly, but it should be 'web-design'
   const categoryData = servicesData['web-design'];
@@ -30,14 +68,22 @@ const WebDesign: React.FC = () => {
   return (
     <div className="bg-background-light pt-24 pb-16">
       <SeoHead
-        title={`${t('web_design_page.hero.title_prefix')} ${t('web_design_page.hero.title_suffix')} | Coday`}
-        description={t('web_design_page.hero.description')}
+        title={t('web_design_page.meta.title')}
+        description={t('web_design_page.meta.description')}
+        pageType="service"
+        schemaData={{
+          service: {
+            name: 'Web Design',
+            description: t('web_design_page.meta.description'),
+            serviceType: 'Web Design',
+          },
+        }}
       />
       {/* Hero Section */}
       <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-20 text-center lg:text-start">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
+            <span className="text-sapphire font-bold tracking-wider uppercase text-sm mb-4 block">
               {t('web_design_page.hero.label')}
             </span>
             <h1 className="font-display font-black text-4xl sm:text-6xl text-secondary mb-6">
@@ -47,7 +93,7 @@ const WebDesign: React.FC = () => {
                 animateBy="words"
                 className="block"
               />
-              <span className="text-primary">{t('web_design_page.hero.title_suffix')}</span>
+              <span className="text-sapphire">{t('web_design_page.hero.title_suffix')}</span>
             </h1>
             <p className="text-xl text-slate-600 leading-relaxed max-w-3xl lg:mx-0 mx-auto">
               {t('web_design_page.hero.description')}
@@ -65,11 +111,43 @@ const WebDesign: React.FC = () => {
         </div>
       </section>
 
+      {/* Problem & Solution - NEW */}
+      <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-24">
+        <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+          {/* Problem */}
+          <div className="bg-white p-10 lg:p-12 rounded-3xl border border-red-100 shadow-flat relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-red-50 rounded-bl-full -mr-8 -mt-8 opacity-50 pointer-events-none"></div>
+            <span className="text-red-500 font-bold uppercase tracking-wider text-sm mb-4 block">
+              {t('web_design_page.problem.label')}
+            </span>
+            <h2 className="font-display font-bold text-3xl text-secondary mb-6">
+              {t('web_design_page.problem.title')}
+            </h2>
+            <p className="text-lg text-slate-600 leading-relaxed relative z-10">
+              {t('web_design_page.problem.description')}
+            </p>
+          </div>
+          {/* Solution */}
+          <div className="bg-primary/5 p-10 lg:p-12 rounded-3xl border border-primary/20 shadow-flat relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-bl-full -mr-8 -mt-8 opacity-50 pointer-events-none"></div>
+            <span className="text-sapphire font-bold uppercase tracking-wider text-sm mb-4 block">
+              {t('web_design_page.solution.label')}
+            </span>
+            <h2 className="font-display font-bold text-3xl text-secondary mb-6">
+              {t('web_design_page.solution.title')}
+            </h2>
+            <p className="text-lg text-slate-600 leading-relaxed relative z-10">
+              {t('web_design_page.solution.description')}
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Design System Showcase - NEW HIGH COMPLEXITY SECTION */}
       <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-24">
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
           <div>
-            <span className="text-primary font-bold uppercase tracking-wider text-sm mb-4 block">
+            <span className="text-sapphire font-bold uppercase tracking-wider text-sm mb-4 block">
               {t('web_design_page.design_system.label')}
             </span>
             <h2 className="font-display font-bold text-3xl sm:text-4xl text-secondary mb-6 whitespace-pre-line">
@@ -82,7 +160,7 @@ const WebDesign: React.FC = () => {
               {(t('web_design_page.design_system.items', { returnObjects: true }) as string[]).map(
                 (item, i) => (
                   <li key={i} className="flex items-center gap-3 text-slate-600 font-medium">
-                    <OptimizedIcon icon={CheckCircle} className="text-primary" />
+                    <OptimizedIcon icon={CheckCircle} className="text-sapphire" />
                     {item}
                   </li>
                 )
@@ -96,7 +174,7 @@ const WebDesign: React.FC = () => {
       {/* Before/After Visual - NEW HIGH COMPLEXITY SECTION */}
       <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-24">
         <div className="text-center mb-16">
-          <span className="text-primary font-bold uppercase tracking-wider text-sm mb-2 block">
+          <span className="text-sapphire font-bold uppercase tracking-wider text-sm mb-2 block">
             {t('web_design_page.before_after.label')}
           </span>
           <h2 className="font-display font-bold text-3xl sm:text-4xl text-secondary mb-4">
@@ -116,7 +194,7 @@ const WebDesign: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
             <div>
-              <span className="text-primary font-bold uppercase tracking-wider text-sm mb-4 block">
+              <span className="text-sapphire font-bold uppercase tracking-wider text-sm mb-4 block">
                 {t('web_design_page.psychology.label')}
               </span>
               <h2 className="font-display font-bold text-3xl sm:text-4xl text-secondary mb-6">
@@ -135,7 +213,7 @@ const WebDesign: React.FC = () => {
       {/* UX Process Timeline - EXISTING BUT REFINED */}
       <section className="bg-secondary py-24 mb-24 text-white overflow-hidden relative">
         {/* Background Grid */}
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-20"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
@@ -151,44 +229,36 @@ const WebDesign: React.FC = () => {
             {/* Connecting Line */}
             <div className="absolute top-1/2 left-0 w-full h-1 bg-white/10 -translate-y-1/2 hidden lg:block"></div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[
-                {
-                  step: '01',
-                  title: t('web_design_page.process.steps.exploration.title'),
-                  desc: t('web_design_page.process.steps.exploration.desc'),
-                },
-                {
-                  step: '02',
-                  title: t('web_design_page.process.steps.structure.title'),
-                  desc: t('web_design_page.process.steps.structure.desc'),
-                },
-                {
-                  step: '03',
-                  title: t('web_design_page.process.steps.visual.title'),
-                  desc: t('web_design_page.process.steps.visual.desc'),
-                },
-                {
-                  step: '04',
-                  title: t('web_design_page.process.steps.prototype.title'),
-                  desc: t('web_design_page.process.steps.prototype.desc'),
-                },
-              ].map((phase, idx) => (
+            <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
+              {(
+                t('services_data.shared.design_process', { returnObjects: true }) as {
+                  number: string;
+                  title: string;
+                  description: string;
+                }[]
+              ).map((phase, idx) => (
                 <div
                   key={idx}
                   className="relative bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors group"
                 >
                   <div className="absolute -top-6 start-8 bg-primary text-white font-bold text-xl w-12 h-12 rounded-xl flex items-center justify-center shadow-lg border-4 border-secondary group-hover:scale-110 transition-transform">
-                    {phase.step}
+                    {phase.number}
                   </div>
                   <h3 className="font-bold text-xl mt-4 mb-3">{phase.title}</h3>
-                  <p className="text-sm text-gray-400 leading-relaxed">{phase.desc}</p>
+                  <p className="text-sm text-gray-400 leading-relaxed">{phase.description}</p>
                 </div>
               ))}
             </div>
           </div>
         </div>
       </section>
+
+      {/* Tech Stack Showcase */}
+      <TechStackShowcase
+        technologies={webDesignTechStack}
+        title={t('web_design_page.tech_stack.title')}
+        subtitle={t('web_design_page.tech_stack.description')}
+      />
 
       {/* Features Grid */}
       <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-24">
@@ -203,16 +273,16 @@ const WebDesign: React.FC = () => {
                 className="bg-white p-8 rounded-2xl shadow-flat border border-gray-100 hover:shadow-flat-lg transition-all duration-300 group hover:-translate-y-1 block relative overflow-hidden h-full"
               >
                 <div className="absolute top-0 end-0 w-32 h-32 bg-secondary/5 rounded-bl-full -me-8 -mt-8 transition-transform group-hover:scale-110"></div>
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors relative z-10">
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-sapphire mb-6 group-hover:bg-sapphire group-hover:text-white transition-colors relative z-10">
                   <OptimizedIcon icon={iconMap[feature.icon] || Palette} />
                 </div>
-                <h3 className="font-display font-bold text-xl text-secondary mb-3 group-hover:text-primary transition-colors relative z-10">
+                <h3 className="font-display font-bold text-xl text-secondary mb-3 group-hover:text-sapphire transition-colors relative z-10">
                   {t(feature.titleKey)}
                 </h3>
                 <p className="text-slate-600 leading-relaxed mb-4 relative z-10">
                   {t(feature.descriptionKey)}
                 </p>
-                <div className="text-primary font-bold text-sm uppercase tracking-wide flex items-center opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0 relative z-10">
+                <div className="text-sapphire font-bold text-sm uppercase tracking-wide flex items-center opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0 relative z-10">
                   {t('actions.read_more', 'Mehr erfahren')}{' '}
                   <OptimizedIcon icon={ArrowRight} className="ms-1 text-sm" />
                 </div>
@@ -222,22 +292,44 @@ const WebDesign: React.FC = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="max-w-5xl mx-auto px-4 text-center">
-        <div className="bg-primary rounded-3xl p-12 shadow-flat-lg text-white">
-          <h2 className="font-display font-bold text-3xl mb-6">
-            {t('web_design_page.cta_section.title')}
-          </h2>
-          <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-            {t('web_design_page.cta_section.description')}
-          </p>
-          <NavLink
-            to="/contact"
-            className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-primary rounded-xl bg-white hover:bg-gray-50 shadow-lg hover:shadow-xl transition-all"
-          >
-            {t('web_design_page.cta_section.button')}
-            <OptimizedIcon icon={Palette} className="ms-2" />
-          </NavLink>
+      {/* Relevant FAQs */}
+      <RelevantFAQs serviceId="web-design" className="mb-24" />
+
+      {/* Case Study Teaser - NEW */}
+      <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-24">
+        <div className="bg-secondary text-white rounded-3xl p-10 lg:p-16 relative overflow-hidden flex flex-col md:flex-row items-center gap-12">
+          <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-primary via-transparent to-transparent"></div>
+          <div className="md:w-1/2 relative z-10">
+            <span className="text-primary font-bold uppercase tracking-wider text-sm mb-4 block">
+              {t('web_design_page.case_study.label')}
+            </span>
+            <h2 className="font-display font-bold text-3xl sm:text-4xl mb-6">
+              {t('web_design_page.case_study.title')}
+            </h2>
+            <p className="text-lg text-slate-300 mb-8 leading-relaxed">
+              {t('web_design_page.case_study.description')}
+            </p>
+            <NavLink
+              to="/cases"
+              className="inline-flex items-center justify-center px-6 py-3 font-bold text-secondary rounded-xl bg-primary hover:bg-white transition-all shadow-glow"
+            >
+              {t('actions.read_more', 'Case Study ansehen')}
+              <OptimizedIcon icon={ArrowRight} className="ms-2" />
+            </NavLink>
+          </div>
+          <div className="md:w-1/2 relative z-10 w-full">
+            <div className="aspect-video bg-white/5 rounded-2xl border border-white/10 p-2 shadow-2xl backdrop-blur-sm transform rotate-2 hover:rotate-0 transition-transform duration-500 overflow-hidden">
+              {/* Replace with actual case study image if available */}
+              <div className="w-full h-full bg-slate-800 rounded-xl flex items-center justify-center">
+                <OptimizedIcon
+                  icon={Palette}
+                  size="xl"
+                  className="text-primary/50"
+                  weight="duotone"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>

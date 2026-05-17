@@ -16,14 +16,13 @@ import {
   Warning,
   Lightbulb,
 } from '@phosphor-icons/react';
-import { useAnalyzerStore } from '../model/store';
-import { ScoreCard } from './ScoreCard';
-import { UrgencyMeter } from './UrgencyMeter';
+import { useAnalyzerStore } from '@/features/analyzer/model/store';
+import { ScoreCard } from '@/features/analyzer/ui/ScoreCard';
+import { UrgencyMeter } from '@/features/analyzer/ui/UrgencyMeter';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { generatePdfReport } from '../lib/pdfGenerator';
-import { EmailReportModal } from './EmailReportModal';
-// import { CalendlyModal } from './CalendlyModal'; // Deprecated
-import type { AgentIssue } from '../model/types';
+import { generatePdfReport } from '@/features/analyzer/lib/pdfGenerator';
+import { EmailReportModal } from '@/features/analyzer/ui/EmailReportModal';
+import type { AgentIssue } from '@/features/analyzer/model/types';
 import { useTranslation } from 'react-i18next';
 import { useRtl } from '@/shared/hooks/useRtl';
 
@@ -32,7 +31,6 @@ export const ReportDashboard: React.FC = () => {
   const [, setSelectedCategory] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
   const [showEmailModal, setShowEmailModal] = useState(false);
-  // const [showCalendlyModal, setShowCalendlyModal] = useState(false);
   const { t } = useTranslation('analyzer');
   const { isRtl } = useRtl();
 
@@ -517,7 +515,6 @@ export const ReportDashboard: React.FC = () => {
         onClose={() => setShowEmailModal(false)}
         result={result}
       />
-      {/* <CalendlyModal isOpen={showCalendlyModal} onClose={() => setShowCalendlyModal(false)} /> */}
     </div>
   );
 };

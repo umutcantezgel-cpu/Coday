@@ -35,6 +35,8 @@ function safeField(value: string | undefined): string {
   return escapeHtml(value || '-');
 }
 
+import { checkBotId } from 'botid/server';
+
 export async function action({ request }: { request: Request }) {
   if (request.method !== 'POST') {
     return new Response(JSON.stringify({ error: 'Method not allowed' }), {
@@ -44,6 +46,15 @@ export async function action({ request }: { request: Request }) {
   }
 
   try {
+    const verification = await checkBotId();
+
+    if (verification.isBot) {
+      return new Response(JSON.stringify({ error: 'Access denied: Bot detected' }), {
+        status: 403,
+        headers: { 'Content-Type': 'application/json' },
+      });
+    }
+
     const rawData = await request.json();
 
     // ── Validate Input ──

@@ -5,8 +5,8 @@
     "description": "Jede Branche hat eigene Regeln. Wir kennen sie. Entdecken Sie unsere spezialisierten Konzepte für Ihren Erfolg.",
     "cta": "Konzept ansehen",
     "meta": {
-      "title": "Branchenlösungen | Coday",
-      "description": "Jede Branche hat eigene Regeln. Wir kennen sie. Entdecken Sie unsere spezialisierten Konzepte für Ihren Erfolg."
+      "title": "Branchenlösungen | B2B Webdesign & E-Commerce - Coday",
+      "description": "Maßgeschneiderte Webdesign- und SEO-Konzepte für B2B, Industrie, E-Commerce und Dienstleister. Wir kennen die Regeln Ihrer Branche."
     }
   },
   "detail": {
@@ -321,17 +321,11 @@
         "title": "Digitaler Anamnesebogen",
         "description": "Patienten füllen Daten schon zuhause sicher aus."
       },
-      "service_funnel": {
-        "title": "Service-Funnel",
-        "description": "Visuelle Darstellung Ihres Angebotsprozesses.",
-        "steps": {
-          "traffic": "Website Besucher",
-          "leads": "Qualifizierte Anfragen",
-          "clients": "Gewonnene Mandanten"
-        },
-        "insight": "Automatisierte Vorqualifizierung spart bis zu 80% Zeit im Vertrieb."
+      "recall_system": {
+        "title": "Recall-System",
+        "description": "Automatische Erinnerungen an Vorsorgetermine."
       },
-      "lead_qualifizierung": {
+      "rezept_bestellung": {
         "title": "Rezept-Bestellung",
         "description": "Modul für Folgerezept-Anforderungen."
       }

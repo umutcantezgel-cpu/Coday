@@ -1,7 +1,7 @@
 import React, { useState, useRef, useId } from 'react';
 import { NavLink } from 'react-router-dom';
 import { CaretDown } from '@phosphor-icons/react';
-import { OptimizedIcon } from '../../shared/ui/OptimizedIcon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 
 interface DropdownItem {
   label: string;

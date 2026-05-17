@@ -1,7 +1,7 @@
 {
   "analyzer": {
     "features": {
-      "desc": "6 spezialisierte KI-Agenten prüfen jeden Aspekt deiner Website.",
+      "desc": "6 spezialisierte KI-Agenten prüfen jeden Aspekt Ihrer Website.",
       "items": {
         "a11y": {
           "desc": "Zugänglichkeit, Farbkontrast und Vorlese-Kompatibilität.",
@@ -32,8 +32,8 @@
     },
     "hero": {
       "badge": "Kostenloser Website-Audit",
-      "desc": "Lass unsere KI-Agenten deine Website analysieren. Erhalte in 60 Sekunden einen detaillierten Report mit Scores, Schwächen und konkreten Empfehlungen.",
-      "title_gradient": "deine Website?",
+      "desc": "Lassen Sie unsere KI-Agenten Ihre Website analysieren. Erhalten Sie in 60 Sekunden einen detaillierten Report mit Scores, Schwächen und konkreten Empfehlungen.",
+      "title_gradient": "Ihre Website?",
       "title_start": "Wie gut ist"
     },
     "trust": {

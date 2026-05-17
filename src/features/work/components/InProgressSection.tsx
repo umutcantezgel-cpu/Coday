@@ -1,8 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { ArrowRight, CircleNotch } from '@phosphor-icons/react';
-import { Project } from '../../../shared/data/work';
+import { Project } from '@/shared/data/work';
 
 interface InProgressSectionProps {
   projects: Project[];

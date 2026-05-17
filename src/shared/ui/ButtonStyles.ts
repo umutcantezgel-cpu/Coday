@@ -1,9 +1,12 @@
 export const buttonVariants: Record<string, string> = {
   primary:
-    'bg-primary text-white shadow-lg shadow-primary/25 hover:bg-primary-dark hover:shadow-xl',
-  secondary: 'bg-secondary text-white shadow-md hover:bg-secondary/90',
-  outline: 'border-2 border-primary/20 text-primary hover:bg-primary/5',
-  ghost: 'text-secondary hover:bg-gray-100',
+    'bg-primary-700 text-white shadow-md hover:bg-primary-800 hover:shadow-glow motion-safe:hover:scale-[1.03] motion-safe:active:scale-[0.98]',
+  secondary:
+    'bg-secondary-800 text-white shadow-md hover:bg-secondary-900 motion-safe:hover:scale-[1.02] motion-safe:active:scale-[0.98]',
+  outline:
+    'border-2 border-primary-700 text-primary-700 hover:bg-primary-700 hover:text-white motion-safe:hover:scale-[1.02] motion-safe:active:scale-[0.98] shadow-sm hover:shadow-glow',
+  ghost:
+    'text-secondary-600 hover:bg-secondary-100 hover:text-primary-600 motion-safe:active:scale-[0.98] relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:bg-primary-50 hover:before:translate-x-0 before:transition-transform before:duration-300 before:ease-out before:-z-10',
 };
 
 export const buttonSizes: Record<string, string> = {
@@ -15,4 +18,4 @@ export const buttonSizes: Record<string, string> = {
 };
 
 export const baseButtonStyles =
-  'inline-flex items-center justify-center rounded-xl font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/20 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95 hover:-translate-y-1 min-h-[44px] touch-manipulation';
+  'inline-flex items-center justify-center rounded-xl font-medium transition-all duration-300 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed motion-safe:active:scale-[0.98] motion-safe:hover:-translate-y-1 hover:shadow-md min-h-[44px] touch-manipulation isolate';

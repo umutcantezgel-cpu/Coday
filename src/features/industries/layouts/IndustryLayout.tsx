@@ -3,9 +3,9 @@ import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Icon } from '@/shared/ui/Icon';
-import ScrollFloat from '../../../shared/ui/ScrollFloat';
-import ScrollReveal from '../../../shared/ui/ScrollReveal';
-import { OptimizedImage } from '../../../shared/ui/OptimizedImage';
+import ScrollFloat from '@/shared/ui/ScrollFloat';
+import ScrollReveal from '@/shared/ui/ScrollReveal';
+import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 
 export interface IndustryLayoutProps {
   title: string;
@@ -37,7 +37,7 @@ const ParallaxHero = ({
   return (
     <div
       ref={ref}
-      className="relative h-screen min-h-[800px] flex items-center justify-center overflow-hidden"
+      className="relative h-dvh min-h-[800px] flex items-center justify-center overflow-hidden"
     >
       <motion.div style={{ y, opacity }} className="absolute inset-0 z-0">
         {video ? (
@@ -104,8 +104,11 @@ export const IndustryLayout: React.FC<IndustryLayoutProps> = ({
   children,
 }) => {
   return (
-    <div className="bg-background-light min-h-screen text-foreground">
-      <nav className="fixed top-0 w-full z-50 p-6 mix-blend-difference text-white">
+    <div className="bg-background-light min-h-dvh text-foreground">
+      <nav
+        role="navigation"
+        className="fixed top-0 w-full z-50 p-6 mix-blend-difference text-white"
+      >
         <Link
           to="/work"
           className="inline-flex items-center gap-2 hover:opacity-70 transition-opacity"
@@ -117,66 +120,68 @@ export const IndustryLayout: React.FC<IndustryLayoutProps> = ({
 
       <ParallaxHero image={heroImage} video={heroVideo} title={title} subtitle={subtitle} />
 
-      {/* Pain Points Section */}
-      <section className="py-24 bg-surface-light relative z-10">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 -mt-32">
-            {painPoints.map((point, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-gray-900/90 backdrop-blur-xl border border-white/10 p-8 rounded-3xl hover:bg-black transition-colors shadow-xl"
-              >
-                <h3 className="text-xl font-bold text-white mb-4">{point.title}</h3>
-                <p className="text-white/70">{point.description}</p>
-              </motion.div>
-            ))}
+      <main role="main">
+        {/* Pain Points Section */}
+        <section className="py-24 bg-surface-light relative z-10">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 -mt-32">
+              {painPoints.map((point, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                  className="bg-gray-900/90 backdrop-blur-xl border border-white/10 p-8 rounded-3xl hover:bg-black transition-colors shadow-xl"
+                >
+                  <h3 className="text-xl font-bold text-white mb-4">{point.title}</h3>
+                  <p className="text-white/70">{point.description}</p>
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Custom Interactive Module (Slider etc) */}
-      {children && <section className="py-24 overflow-hidden">{children}</section>}
+        {/* Custom Interactive Module (Slider etc) */}
+        {children && <section className="py-24 overflow-hidden">{children}</section>}
 
-      {/* Solutions/Features */}
-      <section className="py-24 bg-black text-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-16 text-center">
-            Die {title} Lösung
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {solutions.map((sol, i) => (
-              <div key={i} className="flex gap-6 group">
-                <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
-                  <Icon name="check" className="text-xl" />
+        {/* Solutions/Features */}
+        <section className="py-24 bg-black text-white">
+          <div className="container mx-auto px-4">
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-16 text-center">
+              Die {title} Lösung
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              {solutions.map((sol, i) => (
+                <div key={i} className="flex gap-6 group">
+                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
+                    <Icon name="check" className="text-xl" />
+                  </div>
+                  <div>
+                    <h4 className="text-2xl font-bold mb-2">{sol.title}</h4>
+                    <p className="text-white/60 leading-relaxed">{sol.description}</p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="text-2xl font-bold mb-2">{sol.title}</h4>
-                  <p className="text-white/60 leading-relaxed">{sol.description}</p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* CTA */}
-      <section className="py-32 bg-primary relative overflow-hidden">
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="text-5xl md:text-7xl font-display font-black text-white mb-8">
-            Dominate Your Market.
-          </h2>
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-4 bg-white text-primary px-8 py-4 rounded-full font-bold text-xl hover:scale-105 transition-transform"
-          >
-            Strategiegespräch buchen <Icon name="arrow_right" />
-          </Link>
-        </div>
-        <div className="absolute inset-0 bg-black/10 mix-blend-overlay"></div>
-      </section>
+        {/* CTA */}
+        <section className="py-32 bg-primary relative overflow-hidden">
+          <div className="container mx-auto px-4 text-center relative z-10">
+            <h2 className="text-5xl md:text-7xl font-display font-black text-white mb-8">
+              Dominate Your Market.
+            </h2>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-4 bg-white text-primary px-8 py-4 rounded-full font-bold text-xl hover:scale-105 transition-transform"
+            >
+              Strategiegespräch buchen <Icon name="arrow_right" />
+            </Link>
+          </div>
+          <div className="absolute inset-0 bg-black/10 mix-blend-overlay"></div>
+        </section>
+      </main>
     </div>
   );
 };

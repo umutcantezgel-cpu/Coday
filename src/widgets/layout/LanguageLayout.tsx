@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 const SUPPORTED_LANGUAGES = ['de', 'en'];
 
 // SSR-compatible loader for language validation
-// eslint-disable-next-line react-refresh/only-export-components
+
 export async function loader({ params }: LoaderFunctionArgs) {
   const lng = params.lng;
 

@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useTranslation } from 'react-i18next';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import {
   PaperPlaneRight,
   Buildings,
@@ -16,7 +16,7 @@ import {
   SpinnerGap,
 } from '@phosphor-icons/react';
 import { useSearchParams } from 'react-router-dom';
-import { OptimizedIcon } from '../../shared/ui/OptimizedIcon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { supabase } from '@/shared/lib/supabase/client';
 
 // Schema for Gov Inquiries
@@ -34,6 +34,7 @@ const GovContactSchema = z.object({
   year: z.enum(['2024', '2025', 'later']),
   type: z.enum(['direct', 'uvgo', 'vgv', 'open']),
   message: z.string().optional(),
+  honeypot: z.string().optional(),
 });
 
 type GovContactData = z.infer<typeof GovContactSchema>;
@@ -68,11 +69,17 @@ export const GovContactForm: React.FC = () => {
   React.useEffect(() => {
     const currentType = searchParams.get('type');
     if (currentType && ['direct', 'uvgo', 'vgv', 'open'].includes(currentType)) {
-      setValue('type', currentType as any);
+      setValue('type', currentType as GovContactData['type']);
     }
   }, [searchParams, setValue]);
 
   const onSubmit = async (data: GovContactData) => {
+    // Phase 19: Honeypot check for spam protection
+    if (data.honeypot) {
+      console.warn('Bot submission detected and prevented.');
+      return;
+    }
+
     setIsSubmitting(true);
     setError(null);
 
@@ -123,9 +130,13 @@ export const GovContactForm: React.FC = () => {
       });
 
       setSuccess(true);
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error('Submission error:', err);
-      setError(err.message || 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.');
+      const errorMsg =
+        err instanceof Error
+          ? err.message
+          : 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.';
+      setError(errorMsg);
     } finally {
       setIsSubmitting(false);
     }
@@ -171,57 +182,101 @@ export const GovContactForm: React.FC = () => {
       </div>
 
       <div className="space-y-6">
+        {/* Phase 19: Honeypot Field */}
+        <input
+          type="text"
+          {...register('honeypot')}
+          className="hidden"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+        />
+
         {/* Authority & Name */}
         <div className="grid md:grid-cols-2 gap-6">
           <div className="space-y-2">
-            <label className="text-sm font-bold text-slate-700 flex items-center gap-2">
+            <label
+              htmlFor="authority"
+              className="text-sm font-bold text-slate-700 flex items-center gap-2"
+            >
               <OptimizedIcon icon={Buildings} className="text-blue-500" />
               {t('request_quote.fields.authority')}
             </label>
             <input
+              id="authority"
               {...register('authority')}
+              aria-invalid={!!errors.authority}
+              aria-describedby={errors.authority ? 'error-authority' : undefined}
               className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all"
               placeholder="z.B. Stadtverwaltung Musterstadt"
             />
-            {errors.authority && <p className="text-red-500 text-xs">{errors.authority.message}</p>}
+            {errors.authority && (
+              <p id="error-authority" role="alert" className="text-red-500 text-xs">
+                {errors.authority.message}
+              </p>
+            )}
           </div>
 
           <div className="space-y-2">
-            <label className="text-sm font-bold text-slate-700 flex items-center gap-2">
+            <label
+              htmlFor="name"
+              className="text-sm font-bold text-slate-700 flex items-center gap-2"
+            >
               <OptimizedIcon icon={IdentificationCard} className="text-blue-500" />
               Ihr Name
             </label>
             <input
+              id="name"
               {...register('name')}
+              aria-invalid={!!errors.name}
+              aria-describedby={errors.name ? 'error-name' : undefined}
               className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all"
               placeholder="Vorname Nachname"
             />
-            {errors.name && <p className="text-red-500 text-xs">{errors.name.message}</p>}
+            {errors.name && (
+              <p id="error-name" role="alert" className="text-red-500 text-xs">
+                {errors.name.message}
+              </p>
+            )}
           </div>
         </div>
 
         {/* Contact Info */}
         <div className="grid md:grid-cols-2 gap-6">
           <div className="space-y-2">
-            <label className="text-sm font-bold text-slate-700 flex items-center gap-2">
+            <label
+              htmlFor="email"
+              className="text-sm font-bold text-slate-700 flex items-center gap-2"
+            >
               <OptimizedIcon icon={Envelope} className="text-blue-500" />
               Behörden E-Mail
             </label>
             <input
+              id="email"
               {...register('email')}
               type="email"
+              aria-invalid={!!errors.email}
+              aria-describedby={errors.email ? 'error-email' : undefined}
               className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all"
               placeholder="name@stadt.de"
             />
-            {errors.email && <p className="text-red-500 text-xs">{errors.email.message}</p>}
+            {errors.email && (
+              <p id="error-email" role="alert" className="text-red-500 text-xs">
+                {errors.email.message}
+              </p>
+            )}
           </div>
 
           <div className="space-y-2">
-            <label className="text-sm font-bold text-slate-700 flex items-center gap-2">
+            <label
+              htmlFor="phone"
+              className="text-sm font-bold text-slate-700 flex items-center gap-2"
+            >
               <OptimizedIcon icon={Phone} className="text-blue-500" />
               Telefon (Durchwahl)
             </label>
             <input
+              id="phone"
               {...register('phone')}
               type="tel"
               className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all"
@@ -233,11 +288,15 @@ export const GovContactForm: React.FC = () => {
         {/* Project Specifics */}
         <div className="grid md:grid-cols-2 gap-6 pt-4 border-t border-slate-100">
           <div className="space-y-2">
-            <label className="text-sm font-bold text-slate-700 flex items-center gap-2">
+            <label
+              htmlFor="year"
+              className="text-sm font-bold text-slate-700 flex items-center gap-2"
+            >
               <OptimizedIcon icon={CalendarCheck} className="text-blue-500" />
               {t('request_quote.fields.year.label')}
             </label>
             <select
+              id="year"
               {...register('year')}
               className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all bg-white"
             >
@@ -250,11 +309,15 @@ export const GovContactForm: React.FC = () => {
           </div>
 
           <div className="space-y-2">
-            <label className="text-sm font-bold text-slate-700 flex items-center gap-2">
+            <label
+              htmlFor="type"
+              className="text-sm font-bold text-slate-700 flex items-center gap-2"
+            >
               <OptimizedIcon icon={Gavel} className="text-blue-500" />
               {t('request_quote.fields.type.label')}
             </label>
             <select
+              id="type"
               {...register('type')}
               className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all bg-white"
             >
@@ -267,7 +330,15 @@ export const GovContactForm: React.FC = () => {
           </div>
         </div>
 
-        {error && <div className="p-4 bg-red-50 text-red-600 rounded-xl text-sm">{error}</div>}
+        {error && (
+          <div
+            role="alert"
+            aria-live="polite"
+            className="p-4 bg-red-50 text-red-600 rounded-xl text-sm"
+          >
+            {error}
+          </div>
+        )}
 
         <button
           type="submit"

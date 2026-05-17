@@ -1,2 +1,2 @@
-export { default as TeamGallery } from './TeamGallery';
-export { default as ValuesDeck } from './ValuesDeck';
+export { default as TeamGallery } from '@/features/culture/TeamGallery';
+export { default as ValuesDeck } from '@/features/culture/ValuesDeck';

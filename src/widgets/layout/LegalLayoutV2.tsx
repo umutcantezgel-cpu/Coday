@@ -65,11 +65,11 @@ export const LegalLayoutV2: React.FC<LegalLayoutV2Props> = ({
       // Update active section based on scroll position
       if (tocItems.length > 0) {
         for (let i = tocItems.length - 1; i >= 0; i--) {
-          const section = document.getElementById(tocItems[i].id);
+          const section = document.getElementById(tocItems[i]!.id);
           if (section) {
             const rect = section.getBoundingClientRect();
             if (rect.top <= 150) {
-              setActiveSection(tocItems[i].id);
+              setActiveSection(tocItems[i]!.id);
               break;
             }
           }
@@ -92,7 +92,7 @@ export const LegalLayoutV2: React.FC<LegalLayoutV2Props> = ({
   }, []);
 
   return (
-    <div className="bg-gradient-to-b from-slate-50 to-white min-h-screen">
+    <div className="bg-gradient-to-b from-slate-50 to-white min-h-dvh">
       <SeoHead
         title={`${title} | Coday`}
         description={typeof subtitle === 'string' ? subtitle : title}
@@ -111,7 +111,7 @@ export const LegalLayoutV2: React.FC<LegalLayoutV2Props> = ({
       <div className="bg-white/80 backdrop-blur-lg border-b border-gray-100 sticky top-0 z-40 pt-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14">
-            <nav className="flex items-center gap-1">
+            <nav role="navigation" className="flex items-center gap-1">
               {legalPages.map((page) => (
                 <NavLink
                   key={page.key}
@@ -151,7 +151,7 @@ export const LegalLayoutV2: React.FC<LegalLayoutV2Props> = ({
       <div className="pt-12 pb-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
-          <header className="mb-16 text-center">
+          <header role="banner" className="mb-16 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -196,7 +196,10 @@ export const LegalLayoutV2: React.FC<LegalLayoutV2Props> = ({
             {/* Table of Contents (Desktop Sticky) */}
             {tocItems.length > 0 && (
               <aside className="hidden lg:block sticky top-36">
-                <nav className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6">
+                <nav
+                  role="navigation"
+                  className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6"
+                >
                   <h3 className="font-bold text-sm uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-2">
                     <OptimizedIcon icon={List} className="w-4 h-4" />
                     {t('common.contents', { defaultValue: 'Contents' })}
@@ -244,6 +247,7 @@ export const LegalLayoutV2: React.FC<LegalLayoutV2Props> = ({
 
             {/* Content */}
             <main
+              role="main"
               className={`prose prose-lg prose-slate max-w-none 
                 prose-headings:font-display prose-headings:font-bold prose-headings:text-secondary
                 prose-a:text-primary prose-a:no-underline hover:prose-a:underline

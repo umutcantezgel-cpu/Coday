@@ -1,57 +1,72 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { User } from '@phosphor-icons/react';
-import { OptimizedIcon } from '../../shared/ui/OptimizedIcon';
-import { OptimizedImage } from '../../shared/ui/OptimizedImage';
-import BlurText from '../../shared/ui/BlurText';
+
+import BlurText from '@/shared/ui/BlurText';
+import { TestimonialBlock, TestimonialBlockProps } from '@/shared/ui';
+import { FadeInUp } from '@/shared/ui/MotionWrappers';
 
 export const TestimonialsSection: React.FC = () => {
   const { t } = useTranslation(['home']);
+  const testimonials = t('testimonials.items', { returnObjects: true }) as TestimonialBlockProps[];
 
   return (
-    <section className="py-12 md:py-24 bg-surface-light relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          <div className="order-2 lg:order-1 relative">
-            <div className="absolute top-0 start-0 w-24 h-24 bg-accent/20 rounded-full blur-xl -translate-x-1/2 -translate-y-1/2 rtl:translate-x-1/2"></div>
-            <OptimizedImage
-              src="/images/services/drei-kunden-reviews.webp"
-              srcSet="/images/services/drei-kunden-reviews-640.webp 640w, /images/services/drei-kunden-reviews-1024.webp 1024w, /images/services/drei-kunden-reviews.webp 1920w"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-              alt={t('images.satisfied_partners', { ns: 'home' })}
-              className="relative rounded-3xl shadow-flat-lg w-full bg-white p-2"
-              width={640}
-              height={357}
-            />
+    <section className="py-16 md:py-24 bg-surface-light relative overflow-hidden">
+      <div className="absolute top-0 start-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="font-display font-black text-4xl lg:text-5xl mb-6 text-secondary leading-tight">
+            <BlurText
+              text={t('testimonials.title_prefix')}
+              delay={100}
+              animateBy="words"
+              className="inline-block"
+            />{' '}
+            <span className="text-primary">{t('testimonials.title_suffix')}</span>
+          </h2>
+          <p className="text-xl text-slate-600 font-light">{t('testimonials.text')}</p>
+        </div>
+
+        {Array.isArray(testimonials) && testimonials.length > 0 && (
+          <div className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-8 -mx-4 px-4 sm:mx-0 sm:px-0 md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 md:overflow-visible">
+            {testimonials.map((testimonial, index) => (
+              <FadeInUp
+                key={index}
+                delay={index * 0.15}
+                duration={0.6}
+                className="snap-center shrink-0 w-[85vw] sm:w-[60vw] md:w-auto h-full"
+              >
+                <TestimonialBlock
+                  quote={testimonial.quote}
+                  authorName={testimonial.authorName}
+                  authorPosition={testimonial.authorPosition}
+                  authorCompany={testimonial.authorCompany}
+                  authorImageUrl={testimonial.authorImageUrl}
+                  companyLogoUrl={testimonial.companyLogoUrl}
+                  linkedInUrl={testimonial.linkedInUrl}
+                  rating={testimonial.rating}
+                  featured={index === 1}
+                />
+              </FadeInUp>
+            ))}
           </div>
-          <div className="order-1 lg:order-2">
-            <h2 className="font-display font-black text-3xl lg:text-5xl mb-8 text-secondary leading-tight">
-              <BlurText
-                text={t('testimonials.title_prefix')}
-                delay={100}
-                animateBy="words"
-                className="block"
-              />{' '}
-              <span className="text-primary">{t('testimonials.title_suffix')}</span>
-            </h2>
-            <p className="text-xl text-slate-600 mb-8 font-light">{t('testimonials.text')}</p>
-            <div className="flex items-center gap-6">
-              <div className="flex -space-x-4">
-                {[1, 2, 3, 4].map((i) => (
-                  <div
-                    key={i}
-                    className="w-12 h-12 rounded-full bg-surface-dark border-2 border-white flex items-center justify-center text-xs font-bold text-secondary shadow-sm overflow-hidden"
-                  >
-                    <OptimizedIcon icon={User} className="text-white w-6 h-6" />
-                  </div>
-                ))}
+        )}
+
+        <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-6">
+          <div className="flex -space-x-4">
+            {['S', 'M', 'J', 'P'].map((initial, i) => (
+              <div
+                key={i}
+                className="w-12 h-12 rounded-full bg-white border-2 border-surface-light flex items-center justify-center text-sm font-bold text-primary shadow-sm"
+              >
+                {initial}
               </div>
-              <div className="text-sm font-bold text-secondary">
-                {t('testimonials.rating')}
-                <br />
-                <span className="text-primary font-normal">{t('testimonials.excellence')}</span>
-              </div>
-            </div>
+            ))}
+          </div>
+          <div className="text-sm font-bold text-secondary text-center sm:text-left">
+            {t('testimonials.rating')}
+            <br />
+            <span className="text-sapphire font-normal">{t('testimonials.excellence')}</span>
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { OptimizedImage } from './OptimizedImage';
+import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 
 export type LogoItem =
   | {
@@ -80,6 +80,7 @@ const LogoLoop = React.memo<LogoLoopProps>(
     useEffect(() => {
       const el = containerRef.current;
       if (!el) return;
+      // @ts-expect-error
       const observer = new IntersectionObserver(([entry]) => setIsVisible(entry.isIntersecting), {
         threshold: 0,
       });
@@ -344,7 +345,7 @@ const LogoLoop = React.memo<LogoLoopProps>(
             href={itemHref}
             aria-label={itemAriaLabel || 'logo link'}
             target="_blank"
-            rel="noreferrer noopener"
+            rel="noopener noreferrer"
           >
             {content}
           </a>

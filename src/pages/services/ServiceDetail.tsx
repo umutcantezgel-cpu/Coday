@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { LocalizedNavLink as NavLink } from '../../shared/ui/LocalizedLink';
+import { LocalizedNavLink as NavLink } from '@/shared/ui/LocalizedLink';
 import { servicesData } from '@/shared/data/services';
-import { OptimizedImage } from '../../shared/ui/OptimizedImage';
+import { OptimizedImage } from '@/shared/ui/OptimizedImage';
+import { TestimonialCard } from '@/shared/ui/TestimonialCard';
 import {
   appDevImages,
   appDevFeatureMapping,
   brandingImages,
   brandingFeatureMapping,
 } from '@/shared/data/serviceImages';
-import { OptimizedIcon } from '../../shared/ui/OptimizedIcon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { useTranslation, Trans } from 'react-i18next';
-import { SeoHead } from '../../shared/ui/SeoHead';
-import { StickyCTA } from '../../shared/ui/StickyCTA';
+import { SeoHead } from '@/shared/ui/SeoHead';
+import { StickyCTA } from '@/shared/ui/StickyCTA';
 import {
   Lightning,
   ChartBar,
@@ -38,6 +39,8 @@ import {
   CaretDown,
   Stack as Layers,
 } from '@phosphor-icons/react';
+import LogoLoop from '@/shared/ui/LogoLoop';
+import { clientLogos } from '@/shared/data/clientLogos';
 
 const iconMap: Record<string, React.ElementType> = {
   lightning: Lightning,
@@ -97,34 +100,18 @@ const ServiceDetail: React.FC = () => {
 
   if (!service) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-background-light">
-        <SeoHead title="Service nicht gefunden | Coday" noIndex />
+      <div className="min-h-dvh flex items-center justify-center bg-background-light">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-4">
             {t('generic_detail.not_found.title')}
           </h1>
-          <NavLink to="/services" className="text-primary hover:underline">
+          <NavLink to="/services" className="text-sapphire hover:underline">
             {t('generic_detail.not_found.link')}
           </NavLink>
         </div>
       </div>
     );
   }
-
-  const logos = [
-    'Uniklinik RWTH Aachen',
-    'E.ON',
-    'RWTH Aachen',
-    'Forschungszentrum Jülich',
-    'AWO',
-    'DLR',
-    'Universität Bonn',
-    'WZL',
-    'BSH',
-    'Trobolo',
-    'Q-SURE',
-    'LDK',
-  ];
 
   // Fetch translated arrays
   const benefits = t(service.benefitsKey, { returnObjects: true }) as string[];
@@ -154,24 +141,47 @@ const ServiceDetail: React.FC = () => {
     ? (t(service.faqsKey, { returnObjects: true }) as { question: string; answer: string }[])
     : [];
 
+  const schemaData = {
+    service: {
+      name: t(service.titleKey),
+      description: t(service.descriptionKey),
+      serviceType:
+        category === 'web-development'
+          ? 'Web Development'
+          : category === 'web-design'
+            ? 'Web Design'
+            : 'Professional Service',
+    },
+    ...(faqs.length > 0 && {
+      faq: {
+        questions: faqs,
+      },
+    }),
+  };
+
   return (
     <div className="bg-background-light pt-24 pb-0">
-      <SeoHead title={`${t(service.titleKey)} | Coday`} description={t(service.descriptionKey)} />
+      <SeoHead
+        title={`${t(service.titleKey)} | Coday`}
+        description={t(service.descriptionKey)}
+        pageType="service"
+        schemaData={schemaData}
+      />
       {/* Breadcrumb */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
         <div className="flex items-center text-sm text-gray-500">
-          <NavLink to="/services" className="hover:text-primary transition-colors">
+          <NavLink to="/services" className="hover:text-sapphire transition-colors">
             {tCommon('nav.services.label')}
           </NavLink>
           <span className="mx-2">/</span>
           <NavLink
             to={`/services/${category}`}
-            className="hover:text-primary transition-colors capitalize"
+            className="hover:text-sapphire transition-colors capitalize"
           >
             {service.category}
           </NavLink>
           <span className="mx-2">/</span>
-          <span className="text-primary font-medium">{t(service.titleKey)}</span>
+          <span className="text-sapphire font-medium">{t(service.titleKey)}</span>
         </div>
       </div>
 
@@ -179,7 +189,7 @@ const ServiceDetail: React.FC = () => {
       <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-12 lg:mb-20 text-center lg:text-left">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-xl text-primary mb-6">
+            <div className="inline-flex items-center justify-center p-3 bg-sapphire/10 rounded-xl text-sapphire mb-6">
               <OptimizedIcon icon={iconMap[service.icon] || Code} className="text-3xl" />
             </div>
             <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-gray-900 mb-6 leading-tight">
@@ -211,7 +221,7 @@ const ServiceDetail: React.FC = () => {
                   <li key={i} className="flex items-start">
                     <OptimizedIcon
                       icon={CheckCircle}
-                      className="text-primary mr-3 text-xl mt-0.5"
+                      className="text-sapphire mr-3 text-xl mt-0.5"
                     />
                     <span className="text-gray-700 font-medium">{benefit}</span>
                   </li>
@@ -232,7 +242,7 @@ const ServiceDetail: React.FC = () => {
             <ul className="space-y-4">
               {benefits.map((benefit, i) => (
                 <li key={i} className="flex items-start">
-                  <OptimizedIcon icon={CheckCircle} className="text-primary mr-3 text-xl mt-0.5" />
+                  <OptimizedIcon icon={CheckCircle} className="text-sapphire mr-3 text-xl mt-0.5" />
                   <span className="text-gray-700 font-medium">{benefit}</span>
                 </li>
               ))}
@@ -242,21 +252,12 @@ const ServiceDetail: React.FC = () => {
       )}
 
       {/* Trust / Logos Section */}
-      <section className="py-12 border-y border-gray-100 bg-white/50 mb-12 lg:mb-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-8">
-            {t('generic_detail.trust.title')}
+      <section className="py-12 border-y border-gray-100 bg-white/50 mb-12 lg:mb-24 overflow-hidden">
+        <div className="w-full text-center">
+          <p className="text-sm font-semibold text-gray-600 uppercase tracking-wider mb-8">
+            {tCommon('generic_detail.trust.title')}
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-            {logos.map((logo, index) => (
-              <span
-                key={index}
-                className="text-lg font-bold font-display text-gray-400 hover:text-primary transition-colors cursor-default"
-              >
-                {logo}
-              </span>
-            ))}
-          </div>
+          <LogoLoop logos={clientLogos} speed={30} logoHeight={48} gap={64} pauseOnHover={true} />
         </div>
       </section>
 
@@ -330,7 +331,7 @@ const ServiceDetail: React.FC = () => {
         <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-24">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
+              <span className="text-sapphire font-bold tracking-wider uppercase text-sm mb-4 block">
                 {t('generic_detail.advantages.label')}
               </span>
               <h2 className="font-display font-bold text-3xl sm:text-4xl text-gray-900 mb-6">
@@ -354,7 +355,7 @@ const ServiceDetail: React.FC = () => {
                 >
                   <OptimizedIcon
                     icon={iconMap[adv.icon] || Code}
-                    className="text-primary text-3xl mb-4"
+                    className="text-sapphire text-3xl mb-4"
                   />
                   <h3 className="font-bold text-gray-900 mb-2">{adv.title}</h3>
                   <p className="text-sm text-gray-500 leading-relaxed">{adv.description}</p>
@@ -366,11 +367,11 @@ const ServiceDetail: React.FC = () => {
       )}
 
       {/* Testimonials */}
-      {service.testimonialsKey && (
+      {service.testimonialsKey && testimonials && testimonials.length > 0 && (
         <section className="bg-surface-light py-24 mb-24 border-y border-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
+              <span className="text-sapphire font-bold tracking-wider uppercase text-sm mb-4 block">
                 {t('generic_detail.testimonials.label')}
               </span>
               <h2 className="font-display font-bold text-3xl sm:text-4xl text-gray-900 mb-6">
@@ -379,22 +380,13 @@ const ServiceDetail: React.FC = () => {
             </div>
             <div className="grid md:grid-cols-3 gap-8">
               {testimonials.map((t, i) => (
-                <div key={i} className="bg-white p-8 rounded-3xl shadow-aurora relative">
-                  <div className="text-primary text-4xl font-serif absolute top-6 right-8 opacity-20">
-                    "
-                  </div>
-                  <p className="text-gray-600 italic mb-8 relative z-10">"{t.text}"</p>
-                  <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-sm">
-                      {t.name.charAt(0)}
-                    </div>
-                    <div>
-                      <div className="font-bold text-gray-900 text-sm">{t.name}</div>
-                      <div className="text-xs text-gray-500">
-                        {t.role}, {t.company}
-                      </div>
-                    </div>
-                  </div>
+                <div key={i} className="h-full">
+                  <TestimonialCard
+                    quote={t.text}
+                    authorName={t.name}
+                    authorPosition={t.role}
+                    authorCompany={t.company}
+                  />
                 </div>
               ))}
             </div>
@@ -421,7 +413,7 @@ const ServiceDetail: React.FC = () => {
 
       {/* CTA Section */}
       <section className="max-w-5xl mx-auto px-4 text-center pb-20">
-        <div className="glass-card p-12 rounded-3xl bg-surface-dark border border-gray-800 relative overflow-hidden group hover:border-gray-700 transition-colors">
+        <div className="glass-card p-12 rounded-3xl bg-secondary border border-gray-800 relative overflow-hidden group hover:border-gray-700 transition-colors">
           <div className="absolute top-0 right-0 p-32 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-primary/20 transition-colors duration-500"></div>
 
           <div className="relative z-10">
@@ -453,7 +445,7 @@ const FaqItem: React.FC<{ question: string; answer: string }> = ({ question, ans
     <div className="border border-gray-200 rounded-xl bg-white overflow-hidden transition-all duration-300 hover:shadow-sm">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
+        className="w-full flex items-center justify-between p-6 text-left focus-visible:ring-2 focus-visible:ring-primary focus-visible:rounded-xl"
       >
         <span className="font-bold text-gray-900 text-lg">{question}</span>
         <OptimizedIcon

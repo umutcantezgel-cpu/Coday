@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { LocalizedLink as Link } from '../../shared/ui/LocalizedLink';
+import { LocalizedLink as Link } from '@/shared/ui/LocalizedLink';
 import { industriesData } from '@/shared/data/industries';
 import {
   Buildings as Building2,
@@ -26,16 +26,14 @@ const iconMap: Record<string, React.ElementType> = {
 };
 
 import { industryHeroImages, industryFallbackImage } from '@/shared/data/industryImages';
-import { OptimizedImage } from '../../shared/ui/OptimizedImage';
-import { OptimizedIcon } from '../../shared/ui/OptimizedIcon';
-import { SeoHead } from '../../shared/ui/SeoHead';
+import { OptimizedImage } from '@/shared/ui/OptimizedImage';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 
 const IndustryOverview: React.FC = () => {
   const { t } = useTranslation('industries');
 
   return (
-    <div className="bg-background-light min-h-screen pt-24 pb-20">
-      <SeoHead title={t('overview.meta.title')} description={t('overview.meta.description')} />
+    <div className="bg-background-light min-h-dvh pt-24 pb-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 max-w-2xl mx-auto">
           <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">

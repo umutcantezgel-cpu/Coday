@@ -1,4 +1,4 @@
-import { FAQItem, FAQCategory } from './types';
+import { FAQItem, FAQCategory } from '@/features/faq/model/types';
 
 export const faqCategories: FAQCategory[] = [
   { id: 'general', title: 'General', icon: 'info' },
@@ -21,7 +21,7 @@ export const faqItems: FAQItem[] = [
     id: 'wordpress',
     question: 'Do you work with WordPress?',
     answer:
-      '**No.** We believe WordPress is a security risk and performance bottleneck for modern businesses. We build with Next.js, React, and Headless CMS (Sanity/Strapi) to ensure 100/100 performance scores and military-grade security.',
+      '**No.** We believe WordPress is a security risk and performance bottleneck for modern businesses. We build with React (React Router v7 / Next.js) and Headless CMS (Sanity/Strapi) to ensure 100/100 performance scores and military-grade security.',
     category: 'tech',
     relatedServices: ['web-development'],
   },

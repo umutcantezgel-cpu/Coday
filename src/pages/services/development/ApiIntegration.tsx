@@ -1,7 +1,6 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { OptimizedIcon } from '../../../shared/ui/OptimizedIcon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import {
   PlugsConnected,
   ArrowRight,
@@ -18,10 +17,16 @@ import {
   Lightning,
   CheckCircle,
 } from '@phosphor-icons/react';
-import { Button } from '../../../shared/ui/Button';
-import { SeoHead } from '../../../shared/ui/SeoHead';
-import { MagicBento, BentoCard } from '../../../shared/ui/MagicBento';
-import LogoLoop from '../../../shared/ui/LogoLoop';
+import { Button } from '@/shared/ui/Button';
+import { SeoHead } from '@/shared/ui/SeoHead';
+import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
+import { MagicBento, BentoCard } from '@/shared/ui/MagicBento';
+import LogoLoop from '@/shared/ui/LogoLoop';
+
+interface FaqItem {
+  q: string;
+  a: string;
+}
 
 const ApiIntegration: React.FC = () => {
   const { t } = useTranslation('services');
@@ -29,15 +34,15 @@ const ApiIntegration: React.FC = () => {
   return (
     <>
       <SeoHead
-        title="API Integration & Automation | Connect Your Systems"
-        description="Stop manual data entry. We connect your CRM, ERP, and Shop systems with custom API integrations and automated workflows."
+        title={t('api_integration_page.meta.title')}
+        description={t('api_integration_page.meta.description')}
       />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6 overflow-hidden bg-background-light">
         {/* Animated Background Mesh */}
         <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">
-          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <svg aria-hidden="true" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
                 <path
@@ -226,7 +231,8 @@ const ApiIntegration: React.FC = () => {
             speed={40}
             direction="left"
             logos={(
-              (t('api_integration_page.connectivity.tools', { returnObjects: true }) as any[]) || []
+              (t('api_integration_page.connectivity.tools', { returnObjects: true }) as string[]) ||
+              []
             ).map((tool) => ({
               node: (
                 <div className="flex items-center gap-2 px-6 py-3 bg-white rounded-full border border-slate-200 shadow-sm mx-2 whitespace-nowrap">
@@ -250,17 +256,18 @@ const ApiIntegration: React.FC = () => {
             {t('api_integration_page.faq.title')}
           </h2>
           <div className="space-y-6">
-            {((t('api_integration_page.faq.items', { returnObjects: true }) as any[]) || []).map(
-              (item, i) => (
-                <div key={i} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
-                  <h3 className="text-lg font-bold mb-3">{item.q}</h3>
-                  <p className="text-slate-600 leading-relaxed">{item.a}</p>
-                </div>
-              )
-            )}
+            {(
+              (t('api_integration_page.faq.items', { returnObjects: true }) as FaqItem[]) || []
+            ).map((item, i) => (
+              <div key={i} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                <h3 className="text-lg font-bold mb-3">{item.q}</h3>
+                <p className="text-slate-600 leading-relaxed">{item.a}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
+      <RelevantFAQs serviceId="api-integrations" className="mb-24" />
     </>
   );
 };

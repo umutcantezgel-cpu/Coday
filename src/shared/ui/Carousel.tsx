@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { m, PanInfo, useMotionValue, useTransform, MotionValue, Transition } from 'motion/react';
 import React, { JSX } from 'react';
-import { Icon } from './Icon';
+import { Icon } from '@/shared/ui/Icon';
 import { useRtl } from '@/shared/hooks/useRtl';
 
 export interface CarouselItem {
@@ -308,6 +308,7 @@ export default function Carousel({
         {itemsForRender.map((item, index) => (
           <CarouselItem
             key={`${item?.id ?? index}-${index}`}
+            // @ts-expect-error
             item={item}
             index={index}
             itemWidth={itemWidth}
@@ -329,9 +330,9 @@ export default function Carousel({
                 activeIndex === index
                   ? round
                     ? 'bg-white'
-                    : 'bg-[#333333]'
+                    : 'bg-border-strong'
                   : round
-                    ? 'bg-[#555]'
+                    ? 'bg-border-default'
                     : 'bg-[rgba(51,51,51,0.4)]'
               }`}
               animate={{

@@ -32,7 +32,11 @@ const LoyaltyLoop: React.FC = () => {
 
       <div className="relative w-full max-w-[300px] mx-auto aspect-square">
         {/* Circular Path */}
-        <svg className="absolute inset-0 w-full h-full rotate-0" viewBox="0 0 100 100">
+        <svg
+          className="absolute inset-0 w-full h-full rotate-0"
+          viewBox="0 0 100 100"
+          aria-hidden="true"
+        >
           <circle
             cx="50"
             cy="50"
@@ -72,8 +76,8 @@ const LoyaltyLoop: React.FC = () => {
           const radius = 35; // Matches SVG circle radius percentage
 
           // Center is 50%, Radius is 35%
-          const x = 50 + 35 * Math.cos(angleRad);
-          const y = 50 + 35 * Math.sin(angleRad);
+          const x = 50 + radius * Math.cos(angleRad);
+          const y = 50 + radius * Math.sin(angleRad);
 
           return (
             <div
@@ -90,8 +94,11 @@ const LoyaltyLoop: React.FC = () => {
                 transition={{ delay: index * 2, duration: 2, repeat: Infinity, repeatDelay: 6 }}
                 className={`w-10 h-10 ${step.color} rounded-xl flex items-center justify-center shadow-lg shadow-black/50 border border-white/20 z-10 relative mb-1`}
               >
-                {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-                <Icon name={step.icon as any} className="text-white w-4 h-4" />
+                {}
+                <Icon
+                  name={step.icon as React.ComponentProps<typeof Icon>['name']}
+                  className="text-white w-4 h-4"
+                />
               </motion.div>
               <span className="text-[10px] font-bold text-white uppercase tracking-wider bg-black/60 backdrop-blur px-2 py-0.5 rounded border border-white/10 whitespace-nowrap">
                 {t(`ecommerce-retail.features.loyalty_loop.steps.${step.id}`)}

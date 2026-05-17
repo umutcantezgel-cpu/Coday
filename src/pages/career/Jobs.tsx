@@ -1,10 +1,10 @@
 import React from 'react';
-import { OptimizedImage } from '../../shared/ui/OptimizedImage';
+import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import { useTranslation } from 'react-i18next';
 import { SeoHead } from '@/shared/ui/SeoHead';
 // Premium UI Components
-import AnimatedList from '../../shared/ui/AnimatedList';
-import RotatingText from '../../shared/ui/RotatingText';
+import AnimatedList from '@/shared/ui/AnimatedList';
+import RotatingText from '@/shared/ui/RotatingText';
 
 const Jobs: React.FC = () => {
   const { t } = useTranslation('careers');
@@ -24,7 +24,7 @@ const Jobs: React.FC = () => {
   };
 
   return (
-    <div className="bg-aurora-white min-h-screen pt-24 pb-20">
+    <div className="bg-aurora-white min-h-dvh pt-24 pb-20">
       <SeoHead
         title={`${t('jobs.hero_title_prefix')} | Coday Careers`}
         description={t('jobs.hero_desc')}

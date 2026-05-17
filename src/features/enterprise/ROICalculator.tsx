@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { CurrencyEur, Calculator, TrendUp, Warning } from '@phosphor-icons/react';
 import { useTranslation } from 'react-i18next';
-import { formatCurrency, formatNumber } from '../../shared/utils/formatters';
+import { formatCurrency, formatNumber } from '@/shared/utils/formatters';
 
 export const ROICalculator: React.FC = () => {
   const { i18n } = useTranslation();

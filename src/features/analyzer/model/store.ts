@@ -1,12 +1,16 @@
 import { create } from 'zustand';
-import type { AnalysisResult, AnalysisProgress, AnalysisStatus } from './types';
+import type {
+  AnalysisResult,
+  AnalysisProgress,
+  AnalysisStatus,
+} from '@/features/analyzer/model/types';
 import {
   scanWebsite,
   analyzeAgent,
   generateActionPlan,
   saveAuditResult,
-} from '../lib/analyzerService';
-import { getDemoResult } from './demoData';
+} from '@/features/analyzer/lib/analyzerService';
+import { getDemoResult } from '@/features/analyzer/model/demoData';
 import { TFunction } from 'i18next';
 
 interface AnalyzerState {

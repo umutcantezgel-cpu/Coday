@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { OptimizedIcon } from '../../../shared/ui/OptimizedIcon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import {
   Database,
   ArrowRight,
@@ -15,12 +15,13 @@ import {
   Code,
   Check,
 } from '@phosphor-icons/react';
-import { Button } from '../../../shared/ui/Button';
-import { SeoHead } from '../../../shared/ui/SeoHead';
-import { MagicBento, BentoCard } from '../../../shared/ui/MagicBento';
-import GlareHover from '../../../shared/ui/GlareHover';
-import LogoLoop from '../../../shared/ui/LogoLoop';
-import { motion } from 'framer-motion';
+import { Button } from '@/shared/ui/Button';
+import { SeoHead } from '@/shared/ui/SeoHead';
+import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
+import { MagicBento, BentoCard } from '@/shared/ui/MagicBento';
+import GlareHover from '@/shared/ui/GlareHover';
+import LogoLoop from '@/shared/ui/LogoLoop';
+import { motion } from 'motion/react';
 
 const HeadlessCms: React.FC = () => {
   const { t } = useTranslation('services');
@@ -28,8 +29,8 @@ const HeadlessCms: React.FC = () => {
   return (
     <>
       <SeoHead
-        title="Headless CMS Development | Sanity, Contentful & Strapi"
-        description="Future-proof your content. We build scalable Headless CMS architectures with Next.js that give you total freedom and blazing speed."
+        title={t('headless_cms_page.meta.title')}
+        description={t('headless_cms_page.meta.description')}
       />
 
       {/* Hero Section */}
@@ -44,7 +45,7 @@ const HeadlessCms: React.FC = () => {
             <h1 className="font-display font-black text-5xl sm:text-7xl text-secondary mb-8 leading-[0.9]">
               {t('headless_cms_page.hero.title_prefix')}
               <br />
-              <span className="text-primary">{t('headless_cms_page.hero.title_suffix')}</span>
+              <span className="text-sapphire">{t('headless_cms_page.hero.title_suffix')}</span>
             </h1>
 
             <p className="text-xl text-slate-600 leading-relaxed mb-10 max-w-lg">
@@ -72,7 +73,7 @@ const HeadlessCms: React.FC = () => {
               <div className="flex items-center justify-between relative">
                 {/* Source Node */}
                 <div className="w-24 h-24 bg-primary/20 rounded-2xl border border-primary/50 flex items-center justify-center relative z-10">
-                  <OptimizedIcon icon={FileText} className="text-4xl text-primary" />
+                  <OptimizedIcon icon={FileText} className="text-4xl text-sapphire" />
                   <div className="absolute -bottom-8 text-white font-bold text-sm">Sanity.io</div>
                 </div>
 
@@ -131,7 +132,7 @@ const HeadlessCms: React.FC = () => {
               description={t('headless_cms_page.why_headless.items.omnichannel.desc')}
             >
               <div className="absolute right-4 top-4 opacity-20">
-                <OptimizedIcon icon={ShareNetwork} className="text-6xl text-primary" />
+                <OptimizedIcon icon={ShareNetwork} className="text-6xl text-sapphire" />
               </div>
             </BentoCard>
             <BentoCard
@@ -180,7 +181,7 @@ const HeadlessCms: React.FC = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {/* Sanity */}
             <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition-all relative overflow-hidden group">
-              <div className="absolute top-0 right-0 bg-[#F03E2F]/10 text-[#F03E2F] text-xs font-bold px-3 py-1 rounded-bl-xl">
+              <div className="absolute top-0 right-0 bg-error/10 text-error text-xs font-bold px-3 py-1 rounded-bl-xl">
                 {t('headless_cms_page.cms_comparison.sanity.badge')}
               </div>
               <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">Sanity.io</h3>
@@ -291,6 +292,7 @@ const HeadlessCms: React.FC = () => {
           </div>
         </div>
       </section>
+      <RelevantFAQs serviceId="headless-cms" className="mb-24" />
     </>
   );
 };

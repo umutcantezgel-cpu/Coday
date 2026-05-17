@@ -1,3 +1,3 @@
-export * from './ui/CaseStudyLayout';
-export * from './ui/ComparisonSlider';
-export * from './ui/ResultMetrics';
+export * from '@/features/case-studies/ui/CaseStudyLayout';
+export * from '@/features/case-studies/ui/ComparisonSlider';
+export * from '@/features/case-studies/ui/ResultMetrics';

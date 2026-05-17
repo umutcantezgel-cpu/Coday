@@ -1,32 +1,44 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'motion/react';
-import { Helmet } from 'react-helmet-async';
+import { SeoHead } from '@/shared/ui/SeoHead';
 import { Brain, Handshake, ChartLineUp } from '@phosphor-icons/react';
-import { OptimizedIcon } from '../../shared/ui/OptimizedIcon';
-
-import { ConsultingReadiness } from '../../features/consulting/ConsultingReadiness';
-import { MethodologyGraph } from '../../features/consulting/MethodologyGraph';
-import { ProblemSolventMatrix } from '../../features/consulting/ProblemSolventMatrix';
-import BookingCalendar from '../../features/booking/ui/BookingCalendar';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
+import { ArrowRight } from '@phosphor-icons/react';
+import { Link } from 'react-router-dom';
+import { ConsultingReadiness } from '@/features/consulting/ConsultingReadiness';
+import { MethodologyGraph } from '@/features/consulting/MethodologyGraph';
+import { ProblemSolventMatrix } from '@/features/consulting/ProblemSolventMatrix';
+import BookingCalendar from '@/features/booking/ui/BookingCalendar';
+import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
 
 const Consulting: React.FC = () => {
   const { t } = useTranslation('consulting');
 
+  const consultingSchema = {
+    service: {
+      name: 'IT-Consulting & Strategie',
+      serviceType: 'Consulting',
+      description: t(
+        'meta.description',
+        'Wir transformieren Ihre Vision in skalierbare Software-Architektur. 5x mehr Tiefe, 5x mehr Erfolg.'
+      ) as string,
+    },
+  };
+
   return (
     <>
-      <Helmet>
-        <title>{t('meta.title', 'Strategische IT-Beratung | Coday')}</title>
-        <meta
-          name="description"
-          content={t(
-            'meta.description',
-            'Wir transformieren Ihre Vision in skalierbare Software-Architektur. 5x mehr Tiefe, 5x mehr Erfolg.'
-          )}
-        />
-      </Helmet>
+      <SeoHead
+        title={t('meta.title', 'Strategische IT-Beratung | Coday')}
+        description={t(
+          'meta.description',
+          'Wir transformieren Ihre Vision in skalierbare Software-Architektur. 5x mehr Tiefe, 5x mehr Erfolg.'
+        )}
+        schemaData={consultingSchema}
+        pageType="service"
+      />
 
-      <div className="min-h-screen bg-slate-50">
+      <div className="min-h-dvh bg-slate-50">
         {/* --- HERO SECTION --- */}
         <section className="relative min-h-[90vh] flex items-center justify-center bg-slate-900 text-white overflow-hidden pb-24 pt-32">
           {/* Background Grid */}
@@ -112,6 +124,50 @@ const Consulting: React.FC = () => {
             <ProblemSolventMatrix />
           </div>
         </motion.section>
+
+        {/* --- CASE STUDY TEASER --- */}
+        <section className="py-24 bg-slate-50 border-t border-slate-200/50">
+          <div className="max-w-5xl mx-auto px-4">
+            <div className="bg-white rounded-[2rem] p-8 md:p-16 shadow-[0_10px_40px_rgba(0,0,0,0.05)] border border-slate-100 flex flex-col md:flex-row items-center gap-12">
+              <div className="flex-1">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 mb-6 text-sm font-bold uppercase tracking-wide">
+                  {t('case_study.label', 'Consulting in Action')}
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                  {t('case_study.title', 'Von 0 auf Millionenbewertung.')}
+                </h2>
+                <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+                  {t(
+                    'case_study.description',
+                    'Wie wir durch präzise IT-Strategie und skalierbare Architektur das technische Fundament für einen erfolgreichen Exit gelegt haben.'
+                  )}
+                </p>
+                <Link
+                  to="/portfolio/tech-startup-exit"
+                  className="inline-flex items-center gap-2 text-blue-600 font-bold hover:text-blue-700 transition-colors group"
+                >
+                  Case Study ansehen
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+              <div className="flex-1 relative w-full aspect-square md:aspect-auto md:h-80 bg-slate-100 rounded-3xl overflow-hidden border border-slate-200">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 flex items-center justify-center">
+                  <div className="w-32 h-32 bg-white rounded-full shadow-lg flex items-center justify-center border border-slate-100">
+                    <ChartLineUp className="w-16 h-16 text-blue-500" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* --- Relevant FAQs --- */}
+        <section className="py-24 bg-slate-950 border-t border-slate-800/30">
+          <RelevantFAQs
+            serviceId="consulting"
+            className="text-white [&_h2]:text-white [&_span]:text-white [&_button]:bg-slate-900 [&_div.bg-white]:bg-slate-900 [&_div.bg-white]:border-slate-800"
+          />
+        </section>
 
         {/* --- BOOKING SECTION --- */}
         <section className="py-32 bg-blue-600 text-white relative overflow-hidden">

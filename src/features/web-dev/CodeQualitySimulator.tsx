@@ -127,7 +127,11 @@ const CodeQualitySimulator: React.FC = () => {
         {/* Visualizer */}
         <div className="p-8 flex flex-col items-center justify-center bg-white relative">
           <div className="relative w-48 h-48 mb-6">
-            <svg viewBox="0 0 100 100" className="transform -rotate-90 w-full h-full">
+            <svg
+              viewBox="0 0 100 100"
+              className="transform -rotate-90 w-full h-full"
+              aria-hidden="true"
+            >
               <circle cx="50" cy="50" r="45" fill="none" stroke="#f3f4f6" strokeWidth="8" />
               <motion.circle
                 cx="50"

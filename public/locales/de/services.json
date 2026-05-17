@@ -112,15 +112,15 @@
     },
     "hero": {
       "cta": "Integration anfragen",
-      "description": "Wir verbinden Ihre Systemlandschaft. CRM, ERP, Payment oder Marketing-Tools – alles spielt nahtlos zusammen.",
+      "description": "Wir vernetzen Ihre Enterprise-Systemlandschaft. CRM, ERP, Payment oder Marketing-Tools – für nahtlose, automatisierte Prozesse.",
       "title_prefix": "API Integrationen &",
       "title_suffix": "Automation."
     },
     "why_automate": {
-      "description": "Manuelle Datenübertragung kostet Zeit und nervt. Wir automatisieren Ihre Prozesse, damit Sie sich auf das Wesentliche konzentrieren können.",
+      "description": "Manuelle Datenübertragung kostet wertvolle Zeit und skaliert nicht. Wir automatisieren Ihre Prozesse, damit Sie sich auf strategisches Wachstum konzentrieren können.",
       "items": {
         "efficiency": {
-          "desc": "Sparen Sie hunderte Arbeitsstunden pro Monat durch automatisierte Workflows.",
+          "desc": "Reduzieren Sie operativen Overhead um hunderte Arbeitsstunden pro Monat durch automatisierte Workflows.",
           "title": "Maximale Effizienz"
         },
         "errors": {
@@ -137,6 +137,10 @@
         }
       },
       "title": "Schluss mit Copy & Paste."
+    },
+    "meta": {
+      "title": "API Integration & Systemanbindung | Coday Agentur",
+      "description": "Nahtlose API-Integrationen für CRM, ERP, Marketing und Payment. Wir verbinden Ihre Softwarelandschaft für effiziente und automatisierte Prozesse."
     }
   },
   "brand_identity_page": {
@@ -152,7 +156,7 @@
       "title": "Ihr Marken-Paket"
     },
     "digital_branding": {
-      "description": "Eine Marke muss heute vor allem auf dem Smartphone funktionieren. Wir denken nicht in Briefpapier, sondern in Pixeln.",
+      "description": "Eine moderne Marke muss an jedem digitalen Touchpoint performen. Wir denken nicht in Briefpapier, sondern in digitalen Ökosystemen.",
       "tags": ["Logo Design", "Typography", "Color Palette", "Tone of Voice", "Social Assets"],
       "title": "Digital-First Branding"
     },
@@ -182,6 +186,10 @@
         }
       ],
       "title": "Von der Idee zur Marke"
+    },
+    "meta": {
+      "title": "Brand Identity & Logo Design für B2B | Coday",
+      "description": "Wir entwickeln starke Markenidentitäten, Corporate Designs und Logos für digitale Touchpoints. Machen Sie Ihre Marke unverwechselbar."
     }
   },
   "categories": {
@@ -192,6 +200,10 @@
     "web_development": {
       "description": "Wir bauen schnelle und leistungsfähige Webseiten und Web-Anwendungen mit moderner Technik.",
       "title": "Web-Entwicklung"
+    },
+    "seo": {
+      "title": "Suchmaschinenoptimierung (SEO)",
+      "description": "Sichtbarkeit erhöhen und mehr organischen Traffic aufbauen."
     }
   },
   "consulting_page": {
@@ -216,6 +228,10 @@
       "description": "Technologie ändert sich täglich. Wir helfen Ihnen, den Überblick zu behalten und die richtigen Entscheidungen für Ihr Wachstum zu treffen.",
       "title_prefix": "Klarheit in einer",
       "title_suffix": "komplexen Welt."
+    },
+    "meta": {
+      "title": "Digital Consulting & Strategieberatung | Coday",
+      "description": "Strategische Beratung für Ihre digitale Transformation. Tech-Stack Evaluierung, Prozessoptimierung und datengetriebenes Growth Hacking."
     }
   },
   "cta": {
@@ -261,6 +277,10 @@
     "workflow": {
       "description": "Unsere Design Systems sind nicht nur hübsch, sie funktionieren. Nahtlose Übergabe von Figma zu React/Next.js.",
       "title": "Figma → Code"
+    },
+    "meta": {
+      "title": "Design Systems & UI Pattern Libraries | Coday",
+      "description": "Konsistente, skalierbare Design-Systeme für effiziente Web-Entwicklung. Wir standardisieren Ihre UI für schnellere Iterationen und markentreue."
     }
   },
   "ecommerce_page": {
@@ -279,7 +299,7 @@
         "recommendation": "Empfehlung für: B2B, Hidden Champions, Individualisten",
         "title": "Custom Headless"
       },
-      "description": "Wir beraten technologie-agnostisch. Hier ein Vergleich unserer Top-Lösungen.",
+      "description": "Wir beraten Sie technologie-agnostisch. Hier ein direkter Vergleich unserer Top-Lösungen.",
       "shopify": {
         "features": [
           "Beste Time-to-Market (Start in < 4 Wochen)",
@@ -298,7 +318,7 @@
       "title": "Bereit zu skalieren?"
     },
     "features": {
-      "description": "Ein Shop muss nicht nur gut aussehen, er muss funktionieren. Wir fokussieren uns auf die Metriken, die zählen.",
+      "description": "Ein Enterprise-Shop muss mehr können als nur gut aussehen. Wir fokussieren uns auf die Performance-Metriken, die Ihren Umsatz skalieren.",
       "items": {
         "checkout": {
           "desc": "Optimierter Checkout-Flow für weniger Kaufabbrüche.",
@@ -328,11 +348,12 @@
       "title": "Mehr als nur ein Online-Shop"
     },
     "hero": {
+      "badge": "E-Commerce",
       "cta_primary": "Shop Projekt starten",
       "cta_secondary": "Referenzen ansehen",
       "description": "Wir bauen High-Performance Shops mit Shopify und WooCommerce. Keine Standard-Themes, sondern conversion-optimierte Verkaufsmaschinen.",
-      "title_anim": "E-Commerce, der",
-      "title_static": "verkauft."
+      "title_anim": "Ihre ",
+      "title_static": "E-Commerce Agentur."
     },
     "roi_calculator": {
       "aov_label": "Durchschn. Warenkorb",
@@ -344,15 +365,15 @@
       "increase_note": "+0.8% durch Coday",
       "result_label": "Geschätztes Umsatz-Plus",
       "cta_button": "Audit anfordern",
-      "description": "Ein schnellerer Shop = mehr Käufer = mehr Umsatz.",
-      "explanation": "So funktioniert's: Ein schnellerer Shop überzeugt mehr Besucher zu kaufen (+0.5%) und sie geben im Schnitt mehr aus (+10%).",
-      "instruction": "Gib deine Zahlen ein und sieh das Ergebnis sofort.",
+      "description": "Ein hochperformanter Shop bedeutet höhere Conversion Rates und maximalen ROI.",
+      "explanation": "Das Prinzip ist simpel: Ein hochperformanter Shop konvertiert mehr Besucher (+0.5%) mit höheren Warenkorbwerten (+10%).",
+      "instruction": "Geben Sie Ihre aktuellen Zahlen ein und sehen Sie das ROI-Potenzial sofort.",
       "label": "Umsatz-Rechner",
       "result_monthly": "Mehr Umsatz pro Monat",
-      "result_title": "Dein Ergebnis nach der Optimierung",
+      "result_title": "Ihr Ergebnis nach der Optimierung",
       "result_yearly": "Mehr Umsatz pro Jahr",
-      "title": "Wie viel mehr kannst du verdienen?",
-      "visitors_label": "Wie viele Besucher hast du pro Monat?",
+      "title": "Wie viel Umsatzpotenzial lassen Sie liegen?",
+      "visitors_label": "Wie viele Besucher verzeichnen Sie pro Monat?",
       "visitors_unit": "Besucher"
     },
     "logo_loop": {
@@ -401,8 +422,8 @@
       "cta_secondary": "Cases ansehen",
       "description": "Keine Visitenkarten. Wir bauen digitale Waffensysteme für Unternehmen, die verlieren nicht als Option sehen.",
       "scroll_hint": "Scroll to Explore",
-      "title_prefix": "Websites,",
-      "title_suffix": "die Märkte fressen."
+      "title_prefix": "Enterprise Webentwicklung Agentur",
+      "title_suffix": "Websites, die Märkte fressen."
     },
     "roi_section": {
       "description": "Die meisten Agenturen verkaufen 'hübsches Design'. Wir verkaufen messbares Umsatzwachstum.",
@@ -416,6 +437,65 @@
     "stack_section": {
       "description": "Kein WordPress-Spaghetti. Wir nutzen den Tech-Stack der Milliarden-Startups.",
       "title": "The Stack of Dominance"
+    },
+    "matrix": {
+      "rows": {
+        "focus": {
+          "label": "Fokus",
+          "bad": "Bunte Templates & Themes",
+          "good": "Performance & Conversion"
+        },
+        "architecture": {
+          "label": "Architektur",
+          "bad": "Monolithisch & Träge",
+          "good": "Headless & Edge-Ready"
+        },
+        "speed": {
+          "label": "Geschwindigkeit",
+          "bad": "Ladezeiten > 3s",
+          "good": "Ladezeiten < 500ms"
+        },
+        "cost": {
+          "label": "Kosten",
+          "bad": "Laufende Wartung",
+          "good": "Skalierbares Asset"
+        }
+      }
+    },
+    "methodology": {
+      "title": "Unser Enterprise Prozess",
+      "subtitle": "Von der Konzeption bis zum globalen Deployment.",
+      "steps": {
+        "1": {
+          "title": "Discovery",
+          "desc": "Analyse der Geschäftsziele und Architekturplanung."
+        },
+        "2": {
+          "title": "Prototyping",
+          "desc": "UX/UI Design und High-Fidelity Klick-Dummies."
+        },
+        "3": {
+          "title": "Engineering",
+          "desc": "Agile Entwicklung mit Next.js und Edge-Technologien."
+        },
+        "4": {
+          "title": "QA & Testing",
+          "desc": "Automatisierte Tests für Sicherheit und Performance."
+        },
+        "5": {
+          "title": "Deployment",
+          "desc": "Globaler Rollout über Vercel Edge Network."
+        }
+      }
+    },
+    "case_study": {
+      "label": "Enterprise in Action",
+      "title": "10x Faster Time-to-Market.",
+      "description": "Wie wir durch Headless Commerce und eine moderne Next.js Architektur die Conversion-Rate eines Branchenführers um 40% gesteigert haben."
+    },
+    "meta": {
+      "title": "Enterprise Webentwicklung & Headless Architekturen | Coday",
+      "description": "High-Performance Web-Lösungen für Enterprise-Kunden. Skalierbare, sichere und extrem schnelle Architekturen für den Unternehmensbereich."
     }
   },
   "generic_detail": {
@@ -532,6 +612,10 @@
         }
       },
       "title": "Warum Headless?"
+    },
+    "meta": {
+      "title": "Headless CMS Agentur | Sanity, Contentful & Strapi",
+      "description": "Maximale Flexibilität mit Headless CMS. Wir implementieren zukunftssichere Content-Management-Systeme für Omnichannel-Publishing."
     }
   },
   "hero": {
@@ -542,7 +626,8 @@
       "Professioneller Code. Professionelles Design.",
       "Von der Idee zur Marktführerschaft."
     ],
-    "title": "Unsere Kernbereiche."
+    "title": "Webentwicklung & SEO Agentur | Leistungen - Coday",
+    "description": "Unsere Expertise: High-End Webdesign, React & Next.js Entwicklung, Conversion-Optimierung und datengetriebene SEO-Strategien für maximalen ROI."
   },
   "migration_page": {
     "before_after": {
@@ -626,6 +711,10 @@
       ],
       "title": "Wir sprechen Ihre Sprache.",
       "to": ["Next.js", "React", "Node.js", "Supabase", "Headless CMS", "Vercel Edge"]
+    },
+    "meta": {
+      "title": "System Migration & Legacy Modernization | Coday",
+      "description": "Risikofreie Migration von veralteten Systemen (WordPress, TYPO3) zu modernen Next.js Stacks ohne SEO-Verlust."
     }
   },
   "performance_page": {
@@ -637,14 +726,18 @@
     "hero": {
       "badge": "Geschwindigkeits-Optimierung",
       "description": "Jede Millisekunde zählt. Wir optimieren Ihre Ladezeiten für maximale Kundenabschlüsse und Benutzerfreundlichkeit.",
-      "title_prefix": "Geschwindigkeit ist",
-      "title_suffix": "Umsatz."
+      "title_prefix": "Pagespeed Optimierung Agentur",
+      "title_suffix": "Geschwindigkeit ist Umsatz."
     },
     "metrics": {
       "eco": "Öko-Webspace",
       "load_time": "Ladezeit",
       "score": "Google Seitenbewertung",
       "shift": "Visuelle Verschiebung"
+    },
+    "meta": {
+      "title": "Pagespeed & Core Web Vitals Optimierung | Coday",
+      "description": "Wir optimieren Ihre Ladezeiten und Core Web Vitals für bessere Google-Rankings, höhere Conversion-Rates und exzellente User Experience."
     }
   },
   "seo_page": {
@@ -675,13 +768,63 @@
     "hero": {
       "badge": "Suchmaschinen-Dominanz",
       "description": "Wir bringen Sie nicht nur auf Seite 1. Wir sorgen dafür, dass Sie dort bleiben. Technische Optimierung, Inhalts-Strategie und Aufbau von Autorität.",
-      "title_prefix": "Unsichtbar ist",
-      "title_suffix": "irrelevant."
+      "title_prefix": "Ihre High-End",
+      "title_suffix": "SEO Agentur."
     },
     "ranking_factors": {
       "badge": "Die Wissenschaft der Suche",
       "description": "Googles Such-Algorithmus ist kein Geheimnis, sondern Mathematik. Wir optimieren Ihre Seite systematisch auf technische Exzellenz, Inhalts-Relevanz und Autorität.",
       "title": "200+ Ranking-Faktoren. \nWir kennen sie alle."
+    },
+    "meta": {
+      "title": "SEO Agentur & Suchmaschinenoptimierung | Coday",
+      "description": "Wirklich nachhaltige Suchmaschinenoptimierung. Ganzheitliche Strategien aus technischem SEO, regionaler Dominanz und exzellentem Content."
+    },
+    "process": {
+      "title": "Unser SEO-Prozess",
+      "description": "Datengestützte Optimierung für messbare Resultate.",
+      "steps": {
+        "audit": {
+          "title": "Audit & Analyse",
+          "desc": "Tiefe technische Analyse und Keyword-Research."
+        },
+        "strategy": {
+          "title": "Strategie & Planung",
+          "desc": "Entwicklung einer Roadmap für Content und Technik."
+        },
+        "implementation": {
+          "title": "Umsetzung",
+          "desc": "OnPage-Optimierung und technisches SEO."
+        },
+        "monitoring": {
+          "title": "Monitoring & Linkaufbau",
+          "desc": "Laufende Überwachung und OffPage-Signale."
+        }
+      }
+    },
+    "cta_section": {
+      "title": "Bereit für mehr organischen Traffic?",
+      "description": "Lassen Sie uns Ihre Sichtbarkeit gemeinsam skalieren.",
+      "button": "Kostenloses SEO-Audit"
+    },
+    "problem": {
+      "label": "Die Herausforderung",
+      "title": "Unsichtbarkeit kostet Sie jeden Tag Kunden",
+      "description": "Eine schöne Website bringt keinen Umsatz, wenn sie von Ihrer Zielgruppe nicht gefunden wird. Während Sie auf Empfehlungen hoffen, greift Ihre Konkurrenz die aktiv suchenden Kunden bei Google ab."
+    },
+    "solution": {
+      "label": "Unsere Lösung",
+      "title": "Dominante Sichtbarkeit in den Suchergebnissen",
+      "description": "Wir verwandeln Ihre Website in einen Magneten für kaufbereite Kunden. Durch datengetriebene SEO-Strategien positionieren wir Sie genau dort, wo Ihre Zielgruppe nach Ihren Leistungen sucht."
+    },
+    "case_study": {
+      "label": "Success Story",
+      "title": "Wie wir die organischen Anfragen um 340% steigerten",
+      "description": "Erfahren Sie, wie wir für einen lokalen Dienstleister die regionale Dominanz aufgebaut und den Umsatz signifikant erhöht haben."
+    },
+    "tech_stack": {
+      "title": "Unser SEO Tech-Stack",
+      "description": "Wir setzen auf branchenführende Enterprise-Tools für präzise Analysen, tiefgreifende Audits und messbaren Erfolg."
     }
   },
   "ui_ux_page": {
@@ -807,6 +950,10 @@
         }
       ],
       "title": "Was wir analysieren"
+    },
+    "meta": {
+      "title": "UX Audit & Conversion Rate Optimierung | Coday",
+      "description": "Wir analysieren Ihre Website auf Schwachstellen. Datengetriebene UX Audits zur Steigerung Ihrer Conversion-Rate."
     }
   },
   "web_apps_page": {
@@ -816,7 +963,7 @@
       "title": "Haben Sie eine Vision?"
     },
     "features": {
-      "description": "Vom MVP zum Enterprise-Produkt. Wir bauen Architektur, die hält.",
+      "description": "Vom MVP zum Enterprise-Portal. Wir entwickeln Architekturen, die jeder Skalierung standhalten.",
       "items": {
         "cloud": {
           "desc": "AWS, Vercel oder Google Cloud Setup für maximale Uptime.",
@@ -871,6 +1018,10 @@
         "Regelmäßige Penetration Tests"
       ],
       "title": "Sicherheit ist kein Feature,\nsondern die Basis."
+    },
+    "meta": {
+      "title": "Web App & SaaS Entwicklung | Coday Agentur",
+      "description": "Individuelle Webanwendungen, interne Tools und SaaS-Lösungen. Sicher, skalierbar und entwickelt mit modernsten Cloud-Technologien."
     }
   },
   "web_design_page": {
@@ -882,7 +1033,7 @@
     "cta_section": {
       "button": "Design anfragen",
       "description": "08/15 Templates waren gestern. Wir designen Ihre digitale Identität.",
-      "title": "Wollen Sie aus der Masse herausstechen?"
+      "title": "Sind Sie bereit, sich vom Wettbewerb abzuheben?"
     },
     "design_system": {
       "description": "Ein Design-System ist die einzige Wahrheitsquelle für Ihre Marke. Es garantiert Einheitlichkeit über alle Kanäle hinweg und beschleunigt die Entwicklung neuer Funktionen um bis zu 300%.",
@@ -898,8 +1049,53 @@
     "hero": {
       "description": "Design, das nicht nur gut aussieht, sondern verkauft. Wir verbinden Ästhetik mit Psychologie für digitale Erlebnisse, die hängen bleiben.",
       "label": "Design & Usability",
-      "title_prefix": "Preisgekröntes",
-      "title_suffix": "Webdesign."
+      "title_prefix": "Preisgekrönte",
+      "title_suffix": "UX/UI Design Agentur."
+    },
+    "process": {
+      "description": "Wir überlassen nichts dem Zufall. Unser UX-Prozess basiert auf Daten, Nutzerfeedback und iterativen Verbesserungen.",
+      "title": "Der Weg zum perfekten Interface",
+      "steps": {
+        "exploration": {
+          "title": "Exploration & Strategie",
+          "desc": "Wir analysieren Ihre Zielgruppe und definieren die strategische Ausrichtung Ihres Designs."
+        },
+        "structure": {
+          "title": "Struktur & Wireframes",
+          "desc": "Wir erarbeiten das Informationsgerüst und die User-Journey für optimale Navigation."
+        },
+        "visual": {
+          "title": "Visual Design & UI",
+          "desc": "Ihre Marke wird durch ein modernes, conversion-starkes User Interface zum Leben erweckt."
+        },
+        "prototype": {
+          "title": "Prototyping & Testing",
+          "desc": "Wir validieren das Design durch interaktive Klick-Dummys vor der Entwicklung."
+        }
+      }
+    },
+    "meta": {
+      "title": "Webdesign Agentur & UI/UX Experten | Coday",
+      "description": "Preisgekröntes Webdesign, das nicht nur ästhetisch überzeugt, sondern nachweislich verkauft. Optimierte Interfaces für B2B und E-Commerce."
+    },
+    "problem": {
+      "label": "Das Problem",
+      "title": "Eine Website, die mehr kostet als sie einbringt",
+      "description": "Veraltetes Design, langsame Ladezeiten und fehlende mobile Optimierung schrecken potenzielle Kunden in den ersten Sekunden ab. Ihre Expertise wird durch einen unprofessionellen digitalen Auftritt untergraben."
+    },
+    "solution": {
+      "label": "Unsere Lösung",
+      "title": "High-Performance Webdesign für maximale Conversion",
+      "description": "Wir entwickeln digitale Erlebnisse, die nicht nur beeindrucken, sondern konvertieren. Mit psychologisch fundiertem UI/UX-Design und modernster Technologie machen wir Besucher zu zahlenden Kunden."
+    },
+    "case_study": {
+      "label": "Success Story",
+      "title": "Vom digitalen Niemandsland zum Branchenführer",
+      "description": "Sehen Sie, wie ein umfassender Relaunch die Conversion-Rate eines B2B-Unternehmens verdreifacht und die Markenwahrnehmung revolutioniert hat."
+    },
+    "tech_stack": {
+      "title": "Unser Design & Prototyping Stack",
+      "description": "Wir nutzen modernste Design-Tools für pixelgenaue Layouts, interaktive Prototypen und reibungslose Developer-Handoffs."
     }
   },
   "services_data": {
@@ -1022,32 +1218,7 @@
           "description": "Interaktion und Feedback durch subtile Animationen werten das Erlebnis auf."
         }
       ],
-      "tech_testimonials": [
-        {
-          "company": "Trobolo GmbH",
-          "name": "Malek Arab",
-          "role": "Geschäftsführer",
-          "text": "Top Performance und sehr hohe technische Kompetenz in Sachen WordPress Entwicklung und Webhosting. Wir sind zu 100% zufrieden."
-        },
-        {
-          "company": "Automate365 GmbH",
-          "name": "Andreas Ahlert",
-          "role": "Geschäftsführer",
-          "text": "Coday hat unsere Website auf das nächste Level gehoben! Mit einem Auge fürs Detail und Verständnis für neueste Trends."
-        },
-        {
-          "company": "Licht Technik GmbH",
-          "name": "Niklas Bünning",
-          "role": "QM & Vertrieb",
-          "text": "Das Performance Hosting für die neue Webseite läuft stabil und bietet gute Ladezeiten. Die Webseite wird zuverlässig Full-Service gewartet."
-        },
-        {
-          "company": "Q-SURE projects GmbH",
-          "name": "Felix Faustmann",
-          "role": "Geschäftsführer",
-          "text": "Sehr gute Zusammenarbeit, sehr gutes Ergebnis. Auch nach dem Go-Live war der Support hervorragend."
-        }
-      ],
+      "tech_testimonials": [],
       "standard_faqs": [
         {
           "question": "Welchen Tech-Stack nutzt ihr?",
@@ -1186,10 +1357,25 @@
   },
   "web_development_page": {
     "hero": {
-      "description": "Wir bauen keine \"Homepages\", wir bauen digitale Vermögenswerte. Skalierbar, sicher und rasend schnell. Spezialisiert auf moderne Webanwendungen und komplexe Online-Shops.",
+      "description": "Wir bauen keine einfachen \"Homepages\", wir entwickeln digitale Assets mit messbarem ROI. Skalierbar, sicher und rasend schnell. Spezialisiert auf moderne Webanwendungen und komplexe Online-Shops.",
       "label": "Technologie Stack",
-      "title_anim": "Schnelle",
-      "title_static": "Web-Entwicklung."
+      "title_anim": "Ihre ",
+      "title_static": "Webentwicklung Agentur."
+    },
+    "problem": {
+      "label": "Die Herausforderung",
+      "title": "Langsame Websites verbrennen bares Geld.",
+      "description": "Kennen Sie das? Ihre Website sieht zwar gut aus, aber sie lädt ewig. Kunden springen ab, bevor sie überhaupt Ihr Angebot sehen. Jede zusätzliche Sekunde Ladezeit kostet Sie Conversion, Google-Rankings und letztendlich Umsatz. Veraltete WordPress-Systeme und aufgeblähte Themes sind oft die versteckten Ursachen für eine schlechte Performance."
+    },
+    "solution": {
+      "label": "Die Lösung",
+      "title": "Headless Architektur & Next.js",
+      "description": "Wir setzen auf den modernen Tech-Stack, den auch die größten Tech-Unternehmen nutzen. Durch die Trennung von Frontend und Backend (Headless Architektur) und den Einsatz von statischer Generierung via Next.js garantieren wir Ladezeiten im Millisekundenbereich. Das bedeutet: Maximale Performance, höchste Sicherheit und ein unvergleichliches Nutzererlebnis, das Besucher zu Kunden macht."
+    },
+    "case_study": {
+      "label": "Erfolgsgeschichte",
+      "title": "Wie wir die Conversion-Rate verdoppelt haben.",
+      "description": "Sehen Sie sich an, wie wir durch einen kompletten Relaunch auf Basis von Next.js und einer Headless-Architektur die Ladezeiten unseres Kunden von 4,5 Sekunden auf unter 0,8 Sekunden reduzieren konnten – und damit den Umsatz messbar gesteigert haben."
     },
     "tech_stack": {
       "description": "Unser Technologie-Stack ist kein Zufall. Jedes Tool wurde für maximale Geschwindigkeit, Skalierbarkeit und Suchmaschinen-Dominanz ausgewählt.",
@@ -1398,6 +1584,10 @@
       "title": "Bereit für echte Geschwindigkeit?",
       "description": "Kein Baukasten. Kein Ballast. Nur Code, der verkauft.",
       "button": "Entwickler-Team anfragen"
+    },
+    "meta": {
+      "title": "Webentwicklung Agentur | React & Next.js Experten",
+      "description": "High-End Webentwicklung mit Next.js, React und TypeScript. Schnelle, skalierbare und sichere Websites, die Ihre Konkurrenz abhängen."
     }
   }
 }

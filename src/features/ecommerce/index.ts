@@ -1,2 +1,2 @@
-export { default as ConversionFunnelMap } from './ConversionFunnelMap';
-export { default as RevenueUpliftSimulator } from './RevenueUpliftSimulator';
+export { default as ConversionFunnelMap } from '@/features/ecommerce/ConversionFunnelMap';
+export { default as RevenueUpliftSimulator } from '@/features/ecommerce/RevenueUpliftSimulator';

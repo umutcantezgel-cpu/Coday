@@ -20,8 +20,8 @@ export interface NavItem {
 export const getNavItems = (): NavItem[] => [
   {
     label: 'nav.services.label',
-    bgColor: '#147a7a', // Teal-600 (Primary)
-    textColor: '#ffffff',
+    bgColor: 'var(--color-primary-700)', // Teal-600 (Primary)
+    textColor: 'var(--color-text-inverse)',
     groups: [
       {
         title: 'nav.services.development.title',
@@ -80,21 +80,17 @@ export const getNavItems = (): NavItem[] => [
           },
         ],
       },
-    ],
-  },
-  {
-    label: 'nav.industries.label',
-    bgColor: '#1E293B', // Slate-800
-    textColor: '#ffffff',
-    groups: [
       {
-        title: 'nav.industries.all',
+        title: 'nav.industries.label',
         links: [
           { label: 'nav.industries.overview', href: '/services/industries' },
-          { label: 'nav.industries.real_estate', href: '/services/industries/immobilien' },
-          { label: 'nav.industries.health', href: '/services/industries/gesundheit' },
-          { label: 'nav.industries.craft', href: '/services/industries/handwerk' },
-          { label: 'nav.industries.gastronomy', href: '/services/industries/gastronomie' },
+          { label: 'nav.industries.real_estate', href: '/services/industries/immobilien-makler' },
+          {
+            label: 'nav.industries.gastronomy',
+            href: '/services/industries/gastronomie-hotellerie',
+          },
+          { label: 'nav.industries.craft', href: '/services/industries/handwerk-bau' },
+          { label: 'nav.industries.tech', href: '/services/industries/startups-tech' },
           { label: 'nav.industries.ecommerce', href: '/services/industries/e-commerce' },
           { label: 'nav.industries.service', href: '/services/industries/dienstleistung' },
           { label: 'nav.industries.public', href: '/oeffentliche-auftraege' },
@@ -104,8 +100,8 @@ export const getNavItems = (): NavItem[] => [
   },
   {
     label: 'nav.work.label',
-    bgColor: '#0F172A', // Slate-900
-    textColor: '#ffffff',
+    bgColor: 'var(--color-secondary-900)', // Slate-900
+    textColor: 'var(--color-text-inverse)',
     groups: [
       {
         title: 'nav.work.featured.title',
@@ -164,13 +160,13 @@ export const getNavItems = (): NavItem[] => [
   },
   {
     label: 'nav.company.label',
-    bgColor: '#ffffff',
-    textColor: '#1A9A9A', // Primary Teal
+    bgColor: 'var(--color-bg-primary)',
+    textColor: 'var(--color-primary-600)', // Primary Teal
     groups: [
       {
         title: 'nav.company.agency',
         links: [
-          { label: 'nav.company.about', href: '/contact', desc: 'nav.about.desc' },
+          { label: 'nav.company.about', href: '/about', desc: 'nav.about.desc' },
           { label: 'nav.about.process.label', href: '/process', desc: 'nav.about.process.desc' },
         ],
       },

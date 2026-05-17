@@ -55,6 +55,12 @@
     "whatsapp": {
       "label": "WhatsApp",
       "message": "Hallo,%20ich%20interessiere%20mich%20für%20Ihre%20Dienstleistungen."
+    },
+    "hours": {
+      "label": "Erreichbarkeit"
+    },
+    "socials": {
+      "label": "Folgen Sie uns"
     }
   },
   "trust": {
@@ -90,7 +96,7 @@
       "title": "Letzter Schritt."
     },
     "success": {
-      "message": "Wir haben deine Projektanfrage erhalten. Unser Team wird sich innerhalb von 24 Stunden bei dir melden.",
+      "message": "Wir haben Ihre Projektanfrage erhalten. Unser Team wird sich innerhalb von 24 Stunden bei Ihnen melden.",
       "title": "Bewerbung Erhalten!"
     }
   },

@@ -1,12 +1,13 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { OptimizedIcon } from '../../../shared/ui/OptimizedIcon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { PenNib, ArrowRight, Brain } from '@phosphor-icons/react';
-import { Button } from '../../../shared/ui/Button';
-import { SeoHead } from '../../../shared/ui/SeoHead';
-import BlurText from '../../../shared/ui/BlurText';
-import GradientText from '../../../shared/ui/GradientText';
-import { motion } from 'framer-motion';
+import { Button } from '@/shared/ui/Button';
+import { SeoHead } from '@/shared/ui/SeoHead';
+import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
+import BlurText from '@/shared/ui/BlurText';
+import GradientText from '@/shared/ui/GradientText';
+import { motion } from 'motion/react';
 
 const UiUx: React.FC = () => {
   const { t } = useTranslation('services');
@@ -173,6 +174,7 @@ const UiUx: React.FC = () => {
           </div>
         </div>
       </section>
+      <RelevantFAQs serviceId="ui-ux" className="mb-24" />
     </>
   );
 };

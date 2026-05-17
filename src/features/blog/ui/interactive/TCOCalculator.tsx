@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { CurrencyDollar, ChartBar, Warning } from '@phosphor-icons/react';
+import { ChartBar, Warning } from '@phosphor-icons/react';
 import { clsx } from 'clsx';
 
 export const TCOCalculator: React.FC = () => {
@@ -25,8 +25,8 @@ export const TCOCalculator: React.FC = () => {
     devOps: 0,
   };
 
-  const calculateTotal = (costs: any) => {
-    const monthly = Object.values(costs).reduce((a: any, b: any) => a + b, 0) as number;
+  const calculateTotal = (costs: Record<string, number>) => {
+    const monthly = Object.values(costs).reduce((a, b) => a + b, 0);
     return monthly * 12 * years;
   };
 

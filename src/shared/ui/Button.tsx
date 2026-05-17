@@ -2,7 +2,7 @@ import React from 'react';
 import { CircleNotch } from '@phosphor-icons/react';
 import { cn } from '@/shared/lib/utils'; // Assuming this exists, based on project norms. If not, will fix.
 
-import { buttonVariants, buttonSizes, baseButtonStyles } from './ButtonStyles';
+import { buttonVariants, buttonSizes, baseButtonStyles } from '@/shared/ui/ButtonStyles';
 
 // Re-export for convenience if needed, but to fix the lint error we should avoid re-exporting if possible,
 // or re-export only if not also exporting a component.

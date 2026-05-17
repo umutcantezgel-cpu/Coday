@@ -1,24 +1,32 @@
 {
   "404": {
     "config_button": "Configure Project",
-    "desc": "Sorry, we couldn't find the page you're looking for. It might have been moved, deleted, or no longer exists.",
-    "help": "Need help?",
+    "desc": "The requested resource could not be found. The URL might have been changed or the content is no longer available.",
+    "help": "Need assistance?",
     "home_button": "Back to Home",
-    "title": "Page not found"
+    "title": "Resource not found (404)"
   },
   "buttons": {
     "close": "Close",
     "menu": "Menu",
     "start": "Start",
-    "start_project": "Start Project",
+    "start_project": "Initiate Project",
     "contact": "Contact Us",
-    "view_work": "View Work"
+    "view_work": "View References",
+    "cta_analysis": "Start Potential Analysis"
   },
   "cta": {
+    "more": "Learn more",
     "sticky": {
-      "label": "Ready?",
-      "text": "Let's start"
+      "label": "Ready to Scale?",
+      "text": "Request Audit"
     }
+  },
+  "global_cta": {
+    "title_prefix": "Ready for your",
+    "title_highlight": "next project?",
+    "subtitle": "Let's find out together how we can accelerate your digital growth. Free and without obligation.",
+    "button": "Start project"
   },
   "footer": {
     "links": {
@@ -28,8 +36,11 @@
     "rights": "© {{year}} Coday",
     "sections": {
       "career": "Career",
+      "contact": "Contact",
       "knowledge": "Knowledge",
-      "pricing": "Pricing"
+      "navigation": "Navigation",
+      "pricing": "Pricing",
+      "services": "Services"
     },
     "slogan": "We kill inefficiency. The last agency you'll ever need.",
     "trust": {
@@ -38,6 +49,9 @@
     }
   },
   "generic_detail": {
+    "trust": {
+      "title": "Trusted by leading companies"
+    },
     "advantages": {
       "contact_btn": "Get in Touch",
       "desc": "Our clients don't choose colorful slides, they choose a team that understands marketing as an investment. We think in results, plan with clear goals, and deliver transparently.",
@@ -79,6 +93,13 @@
   },
   "loading": "Loading language...",
   "nav": {
+    "main": {
+      "home": "Home",
+      "work": "Portfolio",
+      "process": "Process",
+      "pricing": "Pricing",
+      "contact": "Start Project"
+    },
     "about": {
       "contact": {
         "desc": "Talk to Us",
@@ -264,10 +285,13 @@
       "view_all": "View All Projects"
     }
   },
+  "logobar": {
+    "title": "Trusted by innovative companies"
+  },
   "scroll_cta": {
-    "book_audit": "Book Audit",
+    "book_audit": "Book Strategy Session",
     "dominate": "Dominate your market.",
-    "ready": "Ready to optimize?"
+    "ready": "Ready for exponential growth?"
   },
   "units": {
     "hours": "h",
@@ -276,9 +300,9 @@
   },
   "welcome": "Welcome to Coday",
   "steps": {
-    "packages": "Choose Package",
-    "calculator": "Configure",
-    "contact": "Request"
+    "packages": "Choose Solution",
+    "calculator": "Evaluate Project",
+    "contact": "Send Request"
   },
   "social": {
     "visit": "Visit us on {{platform}}",
@@ -288,7 +312,7 @@
     "linkedin": "LinkedIn"
   },
   "announcement": {
-    "text": "Grand Opening: 25% discount on all projects!",
-    "cta": "Secure offer →"
+    "text": "Enterprise Audit: Free potential analysis available for Q4.",
+    "cta": "Request Audit →"
   }
 }

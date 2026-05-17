@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { TrendUp, CurrencyDollar, Calculator, Bag } from '@phosphor-icons/react';
-import { clsx } from 'clsx';
+import { TrendUp, Calculator } from '@phosphor-icons/react';
 
 export const ROIEstimator: React.FC = () => {
   const [revenue, setRevenue] = useState(1000000);

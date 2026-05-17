@@ -1,17 +1,11 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'motion/react';
-import { XCircle, CheckCircle, Gavel, Scales } from '@phosphor-icons/react';
-import { OptimizedIcon } from '../../shared/ui/OptimizedIcon';
+import { XCircle, CheckCircle, Gavel } from '@phosphor-icons/react';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 
 export const PricingReality: React.FC = () => {
   const { t } = useTranslation('public-sector');
-
-  const rows = [
-    { key: 'criteria', icon: Scales },
-    { key: 'agency', icon: XCircle, color: 'text-red-400' },
-    { key: 'coday', icon: CheckCircle, color: 'text-emerald-400' },
-  ];
 
   return (
     <section className="py-24 bg-slate-50 border-t border-slate-200">

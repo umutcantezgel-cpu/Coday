@@ -8,8 +8,7 @@ import {
   ArrowsLeftRight,
   CheckCircle,
 } from '@phosphor-icons/react';
-import { OptimizedIcon } from '../../shared/ui/OptimizedIcon';
-import GradientText from '../../shared/ui/GradientText';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 
 export const OzgRoadmap: React.FC = () => {
   const { t } = useTranslation('public-sector');

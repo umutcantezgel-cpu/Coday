@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-// import { Helmet } from 'react-helmet-async';
 import { Link as NavLink } from 'react-router-dom';
 import {
   ShieldCheck,
@@ -11,25 +10,23 @@ import {
   Bank,
   LockKey,
 } from '@phosphor-icons/react';
-import { SeoHead } from '@/shared/ui/SeoHead';
 import { cn } from '@/shared/lib/utils';
 import GradientText from '@/shared/ui/GradientText';
 import { baseButtonStyles, buttonVariants, buttonSizes } from '@/shared/ui/ButtonStyles';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { TechSovereigntySection } from '../../features/gov/TechSovereigntySection';
-import { OzgRoadmap } from '../../features/gov/OzgRoadmap';
-import { PricingReality } from '../../features/gov/PricingReality';
-import { TenderWizard } from '../../features/gov/TenderWizard';
-import { DownloadArea } from '../../features/gov/DownloadArea';
-import { GovContactForm } from '../../features/gov/GovContactForm';
+import { TechSovereigntySection } from '@/features/gov/TechSovereigntySection';
+import { OzgRoadmap } from '@/features/gov/OzgRoadmap';
+import { PricingReality } from '@/features/gov/PricingReality';
+import { TenderWizard } from '@/features/gov/TenderWizard';
+import { DownloadArea } from '@/features/gov/DownloadArea';
+import { GovContactForm } from '@/features/gov/GovContactForm';
+import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
 
 const PublicSectorPage: React.FC = () => {
   const { t } = useTranslation('public-sector');
 
   return (
-    <div className="bg-background-light min-h-screen font-sans">
-      <SeoHead title={t('meta.title')} description={t('meta.description')} pageType="service" />
-
+    <div className="bg-background-light min-h-dvh font-sans">
       {/* --- HERO SECTION --- */}
       <section className="relative pt-32 pb-24 px-4 overflow-hidden bg-gradient-to-b from-slate-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
@@ -257,8 +254,11 @@ const PublicSectorPage: React.FC = () => {
           </div>
         </div>
       </section>
+      <RelevantFAQs
+        serviceId={['web-development', 'seo']}
+        className="bg-gray-50 border-t border-gray-100"
+      />
     </div>
   );
 };
-
 export default PublicSectorPage;

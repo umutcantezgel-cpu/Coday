@@ -16,37 +16,37 @@ import {
 const DashboardLayout: React.FC = () => {
   // ...
   return (
-    <div className="flex h-screen bg-gray-50 overflow-hidden">
+    <div className="flex h-dvh bg-gray-50 overflow-hidden">
       <SeoHead title="Coday Admin" noIndex={true} />
       <div className="flex items-center gap-2 text-primary font-bold">
         <OptimizedIcon icon={ShareNetwork} />
         <span>Agency Admin</span>
       </div>
 
-      <nav className="flex-1 px-4 py-6 space-y-1">
+      <nav role="navigation" className="flex-1 px-4 py-6 space-y-1">
         <a
-          href="#"
+          href="/contact"
           className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-50 rounded-lg"
         >
           <OptimizedIcon icon={SquaresFour} size="sm" className="text-[20px]" />
           Dashboard
         </a>
         <a
-          href="#"
+          href="/contact"
           className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-primary bg-primary/5 rounded-lg"
         >
           <OptimizedIcon icon={ShareNetwork} size="sm" className="text-[20px]" />
           Sitemap & URLs
         </a>
         <a
-          href="#"
+          href="/contact"
           className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-50 rounded-lg"
         >
           <OptimizedIcon icon={ChartBar} size="sm" className="text-[20px]" />
           Performance
         </a>
         <a
-          href="#"
+          href="/contact"
           className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-50 rounded-lg"
         >
           <OptimizedIcon icon={Gear} size="sm" className="text-[20px]" />
@@ -56,7 +56,10 @@ const DashboardLayout: React.FC = () => {
 
       {/* ... */}
       {/* Header */}
-      <header className="h-16 bg-white border-b border-gray-200 flex items-center justify-between px-6">
+      <header
+        role="banner"
+        className="h-16 bg-white border-b border-gray-200 flex items-center justify-between px-6"
+      >
         <h1 className="text-lg font-bold text-gray-900">System-Architektur & URLs</h1>
         <button className="bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-primary/90">
           <OptimizedIcon icon={Plus} className="text-sm" />

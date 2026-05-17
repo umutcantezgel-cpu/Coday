@@ -1,13 +1,14 @@
 {
   "hero": {
     "badge": "Grand Opening Special: 25% Off",
-    "headline_gradient": "Digital Success.",
-    "headline_prefix": "We build your",
+    "headline_gradient": "Performance Agency.",
+    "headline_prefix": "Your Enterprise",
+    "description": "We engineer custom, lightning-fast enterprise websites using Next.js and React – completely free of WordPress templates. As your premier web design agency, we combine high-end development with data-driven SEO. The result: minimal load times, superior user experience, and measurable revenue growth for your business.",
     "rotating": [
-      "Fast. Scalable. Professional.",
-      "Profit-Oriented. Result-Driven.",
-      "Premium Design. Professional Code.",
-      "No Excuses. Just Results."
+      "Enterprise-Grade Performance.",
+      "Maximum ROI. Scalable Growth.",
+      "Award-Winning UX. Uncompromising Code.",
+      "No Overhead. Just Results."
     ]
   },
   "industries": {
@@ -31,22 +32,22 @@
       "desc": "High-converting shop systems.",
       "title": "Online Shop"
     },
-    "title_prefix": "We digitize",
+    "title_prefix": "Tailored solutions for",
     "title_suffix": "Your Industry."
   },
   "meta": {
-    "description": "Coday – The last agency you'll ever need. Web Design, Development & Digital Solutions from Wetzlar. Award-winning UI/UX, blazing-fast Next.js apps, and data-driven SEO strategies.",
-    "title": "Coday | Web Design & Development Agency – We Kill Inefficiency"
+    "description": "Your web design agency for digital dominance. We build high-performance Next.js websites, award-winning UX/UI, and scalable SEO strategies.",
+    "title": "Web Design Agency | High-End Web Development & SEO - Coday"
   },
   "images": {
-    "trust_collaboration": "Trusting Collaboration",
-    "satisfied_partners": "Satisfied Partners"
+    "trust_collaboration": "Trusting Collaboration with your Web Design Agency Coday",
+    "satisfied_partners": "Satisfied Partners of the Web Design Agency Coday"
   },
   "philosophy": {
     "history": "Are History.",
     "standard": "Coday is the new Standard.",
-    "text_overhead": "You pay for overhead, meetings, and inefficient processes. The old agency model no longer works for modern SMEs.",
-    "text_standard": "We combine strategic design with professional programming. No templates, no excuses. Only results that move your business forward.",
+    "text_overhead": "Traditional agencies charge you for endless overhead, countless meetings, and outdated processes. The classic agency model wastes your valuable time and budget.",
+    "text_standard": "Coday is the antithesis: We combine strategic design with uncompromisingly fast, custom code. No templates. No excuses. Only one goal: your maximum growth.",
     "traditional": "Traditional Agencies"
   },
   "stats": {
@@ -67,13 +68,36 @@
   "testimonials": {
     "excellence": "Excellence as Standard.",
     "rating": "5.0 Star Rating",
-    "text": "From local craft businesses to industrial companies. We deliver quality you can build on.",
-    "title_prefix": "Partners who",
-    "title_suffix": "Trust Us."
+    "text": "From ambitious SMEs to enterprise corporations: We deliver digital excellence you can unconditionally rely on.",
+    "title_prefix": "Clients who",
+    "title_suffix": "Trust Us.",
+    "items": [
+      {
+        "quote": "Coday took our online presence to the next level. The website's performance is simply breathtaking, and our conversion rates have more than doubled.",
+        "authorName": "Michael Weber",
+        "authorPosition": "Managing Director",
+        "authorCompany": "TechVision GmbH",
+        "rating": 5
+      },
+      {
+        "quote": "The collaboration was professional and results-oriented from day one. We were particularly impressed by the seamless integration of our complex backend systems into the new Next.js frontend.",
+        "authorName": "Sarah Müller",
+        "authorPosition": "CMO",
+        "authorCompany": "Digital pioneers",
+        "rating": 5
+      },
+      {
+        "quote": "As an e-commerce company, speed is crucial for us. Coday not only got our Core Web Vitals into the green zone but also created a conversion-optimized UX.",
+        "authorName": "Jan Schmidt",
+        "authorPosition": "Head of E-Commerce",
+        "authorCompany": "RetailGroup DACH",
+        "rating": 5
+      }
+    ]
   },
   "comparison": {
     "title_prefix": "Traditional vs.",
-    "subtitle": "Stop paying for inefficiency. Choose the protocol that wins.",
+    "subtitle": "Stop paying for inefficiency. Choose the agency that delivers results.",
     "columns": {
       "metric": "Metric",
       "agency": "Traditional Agency"
@@ -105,5 +129,34 @@
         "new": "Direct Developer Access"
       }
     }
+  },
+  "services": {
+    "label": "Our Services",
+    "title_prefix": "We offer",
+    "title_suffix": "Premium Services.",
+    "items": {
+      "web_dev": {
+        "title": "Web Development",
+        "description": "High-performance websites and applications built with modern frameworks."
+      },
+      "web_design": {
+        "title": "UX/UI Design",
+        "description": "Conversion-optimized, user-centric designs for maximum performance."
+      },
+      "growth": {
+        "title": "Digital Growth",
+        "description": "Data-driven SEO and performance strategies to scale your enterprise."
+      }
+    },
+    "cta": "View all services"
+  },
+  "logobar": {
+    "title": "Trusted by innovative companies"
+  },
+  "portfolio_teaser": {
+    "overline": "Proven Results",
+    "title": "Our work speaks for itself.",
+    "subtitle": "No assembly-line templates. Only hand-crafted high-performance platforms that exude dominance.",
+    "cta": "All Case Studies"
   }
 }

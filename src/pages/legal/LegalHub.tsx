@@ -16,6 +16,7 @@ import {
   Eye,
   ArrowsClockwise,
   EnvelopeSimple,
+  Wheelchair,
 } from '@phosphor-icons/react';
 
 interface LegalCardProps {
@@ -122,6 +123,18 @@ const LegalHub: React.FC = () => {
       sections: 8,
       readTime: '5 Min',
     },
+    {
+      title: t('hub.accessibility.title', { defaultValue: 'Erklärung zur Barrierefreiheit' }),
+      description: t('hub.accessibility.description', {
+        defaultValue:
+          'Informationen zur Barrierefreiheit unserer digitalen Angebote gemäß BFSG 2025 und WCAG.',
+      }),
+      href: '/legal/barrierefreiheit',
+      icon: Wheelchair,
+      color: 'purple',
+      sections: 5,
+      readTime: '4 Min',
+    },
   ];
 
   return (
@@ -135,7 +148,7 @@ const LegalHub: React.FC = () => {
         noIndex={false}
       />
 
-      <div className="bg-gradient-to-b from-slate-50 to-white min-h-screen">
+      <div className="bg-gradient-to-b from-slate-50 to-white min-h-dvh">
         {/* Hero Section */}
         <section className="pt-32 pb-16">
           <div className="container mx-auto px-4 max-w-4xl">

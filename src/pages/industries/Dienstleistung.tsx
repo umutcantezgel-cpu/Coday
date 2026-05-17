@@ -3,11 +3,12 @@ import { useTranslation } from 'react-i18next';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { Funnel, PaperPlaneRight, ChartLineUp } from '@phosphor-icons/react';
 import { SeoHead } from '@/shared/ui/SeoHead';
-import BlurText from '../../shared/ui/BlurText';
-import GradientText from '../../shared/ui/GradientText';
-import ServiceFunnelVisualizer from '../../features/industries/services/ServiceFunnelVisualizer';
-import LeadQualificationSimulator from '../../features/industries/services/LeadQualificationSimulator';
-import CrmIntegrationFlow from '../../features/industries/services/CrmIntegrationFlow';
+import BlurText from '@/shared/ui/BlurText';
+import GradientText from '@/shared/ui/GradientText';
+import ServiceFunnelVisualizer from '@/features/industries/services/ServiceFunnelVisualizer';
+import LeadQualificationSimulator from '@/features/industries/services/LeadQualificationSimulator';
+import CrmIntegrationFlow from '@/features/industries/services/CrmIntegrationFlow';
+import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
 
 const iconMap: Record<string, React.ElementType> = {
   filter_alt: Funnel,
@@ -19,7 +20,7 @@ const Dienstleistung: React.FC = () => {
   const { t } = useTranslation('industries');
 
   return (
-    <div className="bg-background-light min-h-screen">
+    <div className="bg-background-light min-h-dvh">
       <SeoHead
         title="Dienstleistungen skalieren & automatisieren | Coday"
         description={t('unternehmensberatung.hero.subheadline')}
@@ -123,8 +124,11 @@ const Dienstleistung: React.FC = () => {
           </div>
         </div>
       </section>
+      <RelevantFAQs
+        serviceId={['web-development', 'seo']}
+        className="bg-gray-50 border-t border-gray-100"
+      />
     </div>
   );
 };
-
 export default Dienstleistung;

@@ -1,2 +1,2 @@
-export { default as InteractivePhoneMockup } from './InteractivePhoneMockup';
-export { default as OfflineReadyDemo } from './OfflineReadyDemo';
+export { default as InteractivePhoneMockup } from '@/features/mobile/InteractivePhoneMockup';
+export { default as OfflineReadyDemo } from '@/features/mobile/OfflineReadyDemo';

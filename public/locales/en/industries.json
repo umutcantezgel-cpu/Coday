@@ -5,8 +5,8 @@
     "description": "Every industry has its own rules. We know them. Discover our specialized concepts for your success.",
     "cta": "View Concept",
     "meta": {
-      "title": "Industry Solutions | Coday",
-      "description": "Every industry has its own rules. We know them. Discover our specialized concepts for your success."
+      "title": "Industry Solutions | B2B Web Design & E-Commerce - Coday",
+      "description": "Tailored web design and SEO concepts for B2B, industry, e-commerce, and service providers. We understand the specific rules of your industry."
     }
   },
   "detail": {
@@ -326,20 +326,6 @@
         "description": "Automated reminders for check-ups."
       },
       "rezept_bestellung": {
-        "title": "Prescription Order",
-        "description": "Module for follow-up prescription requests."
-      },
-      "service_funnel": {
-        "title": "Service Funnel",
-        "description": "Visual representation of your offer process.",
-        "steps": {
-          "traffic": "Website Visitors",
-          "leads": "Qualified Inquiries",
-          "clients": "Won Clients"
-        },
-        "insight": "Automated pre-qualification saves up to 80% time in sales."
-      },
-      "lead_qualifizierung": {
         "title": "Prescription Order",
         "description": "Module for follow-up prescription requests."
       }

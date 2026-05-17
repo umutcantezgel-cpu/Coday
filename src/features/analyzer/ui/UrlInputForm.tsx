@@ -7,7 +7,7 @@ import {
   CheckCircle,
   ArrowRight,
 } from '@phosphor-icons/react';
-import { useAnalyzerStore } from '../model/store';
+import { useAnalyzerStore } from '@/features/analyzer/model/store';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { useTranslation } from 'react-i18next';
 
@@ -51,6 +51,7 @@ export const UrlInputForm: React.FC = () => {
 
             {/* Input */}
             <input
+              id="analyzer-url-input"
               type="url"
               inputMode="url"
               autoComplete="url"
@@ -58,11 +59,14 @@ export const UrlInputForm: React.FC = () => {
               onChange={(e) => setUrl(e.target.value)}
               onFocus={() => setIsFocused(true)}
               onBlur={() => setIsFocused(false)}
+              aria-label={t('input.placeholder') || 'URL'}
+              aria-invalid={!!error}
+              aria-describedby={error ? 'analyzer-url-error' : undefined}
               placeholder={t('input.placeholder')}
               className="
                 flex-1 py-5 pr-4 text-lg font-medium
                 placeholder:text-gray-400 text-gray-900
-                focus:outline-none bg-transparent
+                bg-transparent
               "
               disabled={isLoading}
             />
@@ -118,6 +122,7 @@ export const UrlInputForm: React.FC = () => {
         <AnimatePresence>
           {error && (
             <motion.div
+              id="analyzer-url-error"
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}

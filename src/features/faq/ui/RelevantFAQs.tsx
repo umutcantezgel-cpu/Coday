@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { CaretDown } from '@phosphor-icons/react';
 import { motion, AnimatePresence } from 'motion/react';
-import { getFAQs } from '../model';
+import { getFAQs } from '@/features/faq/model';
 
 interface Props {
   serviceId: string | string[];
@@ -30,11 +30,28 @@ export const RelevantFAQs: React.FC<Props> = ({ serviceId, title, className = ''
     setOpenItem(openItem === id ? null : id);
   };
 
+  const schemaData = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: relevant.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br />'),
+      },
+    })),
+  };
+
   return (
     <section className={`py-16 ${className}`}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-display font-black text-slate-900 dark:text-white mb-10 text-center">
-          {title || t('hero.title')}
+          {title || t('generic_detail.faq.title', { ns: 'common' })}
         </h2>
         <div className="space-y-4">
           {relevant.map((faq) => (
@@ -48,7 +65,7 @@ export const RelevantFAQs: React.FC<Props> = ({ serviceId, title, className = ''
             >
               <button
                 onClick={() => toggleItem(faq.id)}
-                className="w-full flex justify-between items-center p-6 text-left focus:outline-none"
+                className="w-full flex justify-between items-center p-6 text-left focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:rounded-xl"
               >
                 <span className="font-display font-bold text-lg text-slate-900 dark:text-white pr-8">
                   {faq.question}

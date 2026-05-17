@@ -10,10 +10,14 @@ export default {
         'background-dark': '#F8FAFC', // Very Light Gray for contrast sections
         'surface-light': '#FFFFFF',
         'surface-dark': '#EDF2F7', // Light Gray
-        'text-light': '#2D3748', // Navy
-        'text-dark': '#718096', // Slate for body text
-        'text-slate': '#64748B',
-        sapphire: '#147a7a',
+        'text-light': '#1A202C', // Navy (AAA contrast)
+        'text-dark': '#334155', // Slate 700 for body text (AAA contrast)
+        'text-slate': '#334155', // Slate 700 (AAA contrast)
+        sapphire: '#0F5C5C', // Darker sapphire for AAA contrast
+        slate: {
+          400: '#cbd5e1', // Overridden to match slate-300 for WCAG AAA contrast on dark bg
+          500: '#94a3b8',
+        },
       },
       zIndex: {
         negative: '-1',
@@ -42,6 +46,7 @@ export default {
         'accordion-up': 'accordion-up 0.2s ease-out',
         float: 'float 6s ease-in-out infinite',
         'gradient-xy': 'gradient-xy 15s ease infinite',
+        shimmer: 'shimmer 1.5s infinite',
       },
       keyframes: {
         fadeIn: {
@@ -69,6 +74,9 @@ export default {
             'background-size': '200% 200%',
             'background-position': 'right center',
           },
+        },
+        shimmer: {
+          '100%': { transform: 'translateX(100%)' },
         },
       },
     },

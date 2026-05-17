@@ -1,7 +1,6 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { OptimizedIcon } from '../../../shared/ui/OptimizedIcon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import {
   RocketLaunch,
   ArrowRight,
@@ -11,24 +10,36 @@ import {
   CheckCircle,
   ArrowDown,
 } from '@phosphor-icons/react';
-import { Button } from '../../../shared/ui/Button';
-import { SeoHead } from '../../../shared/ui/SeoHead';
-import BlurText from '../../../shared/ui/BlurText';
-import GradientText from '../../../shared/ui/GradientText';
-import LogoLoop from '../../../shared/ui/LogoLoop';
-import { motion } from 'framer-motion';
+import { Button } from '@/shared/ui/Button';
+import { SeoHead } from '@/shared/ui/SeoHead';
+import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
+import BlurText from '@/shared/ui/BlurText';
+import GradientText from '@/shared/ui/GradientText';
+import LogoLoop from '@/shared/ui/LogoLoop';
+import { motion } from 'motion/react';
+
+interface ProcessStep {
+  title: string;
+  desc: string;
+}
+interface FaqItem {
+  q: string;
+  a: string;
+}
 
 const Migration: React.FC = () => {
   const { t } = useTranslation('services');
 
-  const processSteps = (t('migration_page.process.steps', { returnObjects: true }) as any[]) || [];
-  const faqItems = (t('migration_page.faq.items', { returnObjects: true }) as any[]) || [];
+  const processSteps =
+    (t('migration_page.process.steps', { returnObjects: true }) as ProcessStep[]) || [];
+  const faqItems = (t('migration_page.faq.items', { returnObjects: true }) as FaqItem[]) || [];
   const beforeItems =
-    (t('migration_page.before_after.before.items', { returnObjects: true }) as any[]) || [];
+    (t('migration_page.before_after.before.items', { returnObjects: true }) as string[]) || [];
   const afterItems =
-    (t('migration_page.before_after.after.items', { returnObjects: true }) as any[]) || [];
-  const fromTech = (t('migration_page.technologies.from', { returnObjects: true }) as any[]) || [];
-  const toTech = (t('migration_page.technologies.to', { returnObjects: true }) as any[]) || [];
+    (t('migration_page.before_after.after.items', { returnObjects: true }) as string[]) || [];
+  const fromTech =
+    (t('migration_page.technologies.from', { returnObjects: true }) as string[]) || [];
+  const toTech = (t('migration_page.technologies.to', { returnObjects: true }) as string[]) || [];
 
   // Safe access checks
   const safeProcessSteps = Array.isArray(processSteps) ? processSteps : [];
@@ -41,8 +52,8 @@ const Migration: React.FC = () => {
   return (
     <>
       <SeoHead
-        title="Legacy Migration | WordPress, TYPO3, Drupal to Next.js"
-        description="Migrate your legacy systems to modern, scalable architectures. We move WordPress, TYPO3, and Drupal to Next.js without data loss or SEO impact."
+        title={t('migration_page.meta.title')}
+        description={t('migration_page.meta.description')}
       />
 
       {/* Hero Section */}
@@ -53,7 +64,7 @@ const Migration: React.FC = () => {
             <span>{t('migration_page.hero.label')}</span>
           </span>
 
-          <h1 className="font-display font-black text-5xl sm:text-7xl lg:text-8xl text-secondary mb-8 tracking-tight">
+          <h1 className="font-display font-black text-5xl sm:text-7xl lg:text-8xl text-secondary mb-8 tracking-tight leading-[1.1]">
             <BlurText
               text={t('migration_page.hero.title_prefix')}
               delay={100}
@@ -63,7 +74,7 @@ const Migration: React.FC = () => {
             <GradientText
               colors={['#8B5CF6', '#7C3AED', '#6D28D9']}
               animationSpeed={6}
-              className="inline-block"
+              className="inline-block drop-shadow-sm [text-shadow:0_2px_10px_rgba(109,40,217,0.15)]"
             >
               {t('migration_page.hero.title_suffix')}
             </GradientText>
@@ -160,7 +171,7 @@ const Migration: React.FC = () => {
                 className="relative"
               >
                 <div className="bg-slate-800 border border-slate-700 rounded-2xl p-6 h-full">
-                  <div className="w-10 h-10 rounded-full bg-purple-500/20 text-purple-400 font-bold flex items-center justify-center mb-4 text-lg">
+                  <div className="w-10 h-10 rounded-full bg-purple-500/20 text-purple-300 font-bold flex items-center justify-center mb-4 text-lg">
                     {i + 1}
                   </div>
                   <h3 className="text-lg font-bold text-white mb-2">{step.title}</h3>
@@ -168,7 +179,7 @@ const Migration: React.FC = () => {
                 </div>
                 {/* Connector line (except for last) */}
                 {i < safeProcessSteps.length - 1 && (
-                  <div className="hidden md:block absolute top-1/2 -right-3 w-6 h-0.5 bg-slate-700 transform -translate-y-1/2" />
+                  <div className="hidden md:block absolute top-1/2 -right-3 w-6 h-0.5 bg-gradient-to-r from-slate-700 to-slate-500 transform -translate-y-1/2" />
                 )}
               </motion.div>
             ))}
@@ -191,8 +202,8 @@ const Migration: React.FC = () => {
             direction="right"
             logos={safeFromTech.map((tech) => ({
               node: (
-                <div className="px-6 py-3 bg-red-50 border border-red-100 rounded-full mx-2 whitespace-nowrap">
-                  <span className="font-bold text-red-600">{tech}</span>
+                <div className="px-6 py-3 bg-red-50 border border-red-100 rounded-full mx-2 whitespace-nowrap transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-red-100 cursor-default">
+                  <span className="font-bold text-red-800">{tech}</span>
                 </div>
               ),
             }))}
@@ -205,8 +216,8 @@ const Migration: React.FC = () => {
             direction="left"
             logos={safeToTech.map((tech) => ({
               node: (
-                <div className="px-6 py-3 bg-green-50 border border-green-100 rounded-full mx-2 whitespace-nowrap">
-                  <span className="font-bold text-green-600">{tech}</span>
+                <div className="px-6 py-3 bg-green-50 border border-green-100 rounded-full mx-2 whitespace-nowrap transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-green-100 cursor-default">
+                  <span className="font-bold text-green-800">{tech}</span>
                 </div>
               ),
             }))}
@@ -228,6 +239,7 @@ const Migration: React.FC = () => {
           </div>
         </div>
       </section>
+      <RelevantFAQs serviceId="migration" className="mb-24" />
     </>
   );
 };

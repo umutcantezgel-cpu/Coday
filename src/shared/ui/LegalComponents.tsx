@@ -13,7 +13,7 @@ import {
   MapPin,
   ArrowSquareOut,
 } from '@phosphor-icons/react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 
 // ============================================
 // LEGAL INFO CARD

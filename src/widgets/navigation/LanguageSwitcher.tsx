@@ -19,8 +19,8 @@ export const LanguageSwitcher: React.FC = () => {
     const segments = pathname.split('/').filter(Boolean);
 
     // Replace language segment
-    if (['de', 'en'].includes(segments[0])) {
-      segments[0] = newLang;
+    if (['de', 'en'].includes(segments[0]!)) {
+      segments[0]! = newLang;
     } else {
       // If no lang prefix (e.g. root), prepend
       segments.unshift(newLang);
@@ -32,11 +32,11 @@ export const LanguageSwitcher: React.FC = () => {
 
   return (
     <motion.button
-      className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100/50 hover:bg-slate-100 text-slate-600 hover:text-slate-900 border border-slate-200/50 hover:border-slate-300 transition-all focus:outline-none focus:ring-2 focus:ring-primary/20 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+      className="flex items-center gap-1.5 px-3 py-1.5 min-h-[44px] min-w-[44px] justify-center rounded-full bg-slate-100/50 backdrop-blur-md hover:bg-slate-100 text-slate-600 hover:text-slate-900 border border-slate-200/50 hover:border-slate-300 transition-all focus:ring-2 focus:ring-primary/20 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
       onClick={toggleLanguage}
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
-      aria-label={i18n.language === 'de' ? 'Switch to English' : 'Auf Deutsch wechseln'}
+      aria-label={i18n.language === 'de' ? 'DE – Switch to English' : 'EN – Auf Deutsch wechseln'}
       title="Switch Language"
     >
       <OptimizedIcon icon={Globe} className="w-4 h-4 opacity-70" />

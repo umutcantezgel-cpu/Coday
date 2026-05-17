@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { OptimizedIcon } from '../../../shared/ui/OptimizedIcon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import {
   ShoppingCart,
   ArrowRight,
@@ -10,12 +10,13 @@ import {
   Code,
   TrendUp,
 } from '@phosphor-icons/react';
-import { Button } from '../../../shared/ui/Button';
-import { OptimizedImage } from '../../../shared/ui/OptimizedImage';
-import { SeoHead } from '../../../shared/ui/SeoHead';
-import CountUp from '../../../shared/ui/CountUp';
-import GlareHover from '../../../shared/ui/GlareHover';
-import LogoLoop from '../../../shared/ui/LogoLoop';
+import { Button } from '@/shared/ui/Button';
+import { OptimizedImage } from '@/shared/ui/OptimizedImage';
+import { SeoHead } from '@/shared/ui/SeoHead';
+import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
+import CountUp from '@/shared/ui/CountUp';
+import GlareHover from '@/shared/ui/GlareHover';
+import LogoLoop from '@/shared/ui/LogoLoop';
 
 const Ecommerce: React.FC = () => {
   const { t } = useTranslation('services');
@@ -118,12 +119,8 @@ const Ecommerce: React.FC = () => {
           <div className="grid md:grid-cols-2 gap-8">
             {/* Shopify Card */}
             <div className="bg-white p-8 rounded-3xl shadow-lg border border-slate-100 hover:shadow-xl transition-shadow">
-              <div className="w-16 h-16 bg-[#95BF47]/20 rounded-2xl flex items-center justify-center mb-6">
-                <OptimizedIcon
-                  icon={ShoppingBag}
-                  className="text-3xl text-[#95BF47]"
-                  weight="fill"
-                />
+              <div className="w-16 h-16 bg-success/20 rounded-2xl flex items-center justify-center mb-6">
+                <OptimizedIcon icon={ShoppingBag} className="text-3xl text-success" weight="fill" />
               </div>
               <h3 className="text-2xl font-bold mb-4">
                 {t('ecommerce_page.comparison.shopify.title')}
@@ -280,23 +277,7 @@ const Ecommerce: React.FC = () => {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-24 relative overflow-hidden bg-slate-900 text-white text-center">
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
-        <div className="max-w-4xl mx-auto px-6 relative z-10">
-          <h2 className="text-5xl md:text-6xl font-display font-black mb-8 uppercase">
-            {t('ecommerce_page.cta_section.title')}
-          </h2>
-          <p className="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
-            {t('ecommerce_page.cta_section.description')}
-          </p>
-          <div className="flex justify-center gap-4">
-            <Button size="lg" variant="primary" className="px-12 py-6 text-lg">
-              {t('ecommerce_page.cta_section.button')}
-            </Button>
-          </div>
-        </div>
-      </section>
+      <RelevantFAQs serviceId="e-commerce" className="mb-24" />
     </>
   );
 };

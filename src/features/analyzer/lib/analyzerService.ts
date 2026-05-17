@@ -3,11 +3,7 @@
  * Handles website analysis using Supabase Edge Function
  */
 
-import type {
-  AnalysisResult,
-  ActionPlanStep,
-  AgentIssue,
-} from '../../../features/analyzer/model/types';
+import type { AnalysisResult, ActionPlanStep, AgentIssue } from '@/features/analyzer/model/types';
 import { supabase } from '@/shared/lib/supabase/client';
 
 const SUPABASE_URL =

@@ -3,14 +3,15 @@ import { useTranslation } from 'react-i18next';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { Cube, ShieldCheck, At } from '@phosphor-icons/react';
 import { SeoHead } from '@/shared/ui/SeoHead';
-import BlurText from '../../shared/ui/BlurText';
-import GradientText from '../../shared/ui/GradientText';
+import BlurText from '@/shared/ui/BlurText';
+import GradientText from '@/shared/ui/GradientText';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import { IMAGES } from '@/shared/config/images';
 
-import VirtualTourTeaser from '../../features/industries/real-estate/VirtualTourTeaser';
-import DigitalExposeDemo from '../../features/industries/real-estate/DigitalExposeDemo';
-import PropertyRoiCalculator from '../../features/industries/real-estate/PropertyRoiCalculator';
+import VirtualTourTeaser from '@/features/industries/real-estate/VirtualTourTeaser';
+import DigitalExposeDemo from '@/features/industries/real-estate/DigitalExposeDemo';
+import PropertyRoiCalculator from '@/features/industries/real-estate/PropertyRoiCalculator';
+import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
 
 const iconMap: Record<string, React.ElementType> = {
   view_in_ar: Cube,
@@ -22,7 +23,7 @@ const Immobilien: React.FC = () => {
   const { t } = useTranslation(['industries', 'common']);
 
   return (
-    <div className="bg-background-light min-h-screen">
+    <div className="bg-background-light min-h-dvh">
       <SeoHead
         title={`${t('immobilien-makler.title')} | Coday Real Estate`}
         description={t('immobilien-makler.hero.subheadline')}
@@ -146,8 +147,11 @@ const Immobilien: React.FC = () => {
           </div>
         </div>
       </section>
+      <RelevantFAQs
+        serviceId={['web-development', 'seo']}
+        className="bg-gray-50 border-t border-gray-100"
+      />
     </div>
   );
 };
-
 export default Immobilien;

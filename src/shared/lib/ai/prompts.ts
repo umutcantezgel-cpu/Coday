@@ -209,52 +209,41 @@ Mission: Strategisches Design mit High-End Engineering kombinieren. Keine Baukae
 
 Inhaber: Umutcan Emre Tezgel
 Standort: Lessingstrasse 4, 35578 Wetzlar, Deutschland
-E-Mail: umut@codayweb.de
+E-Mail: kontakt@codayweb.de
 Telefon: +49 176 41195301
-Website: coday.de
+Website: www.codayweb.de
 WhatsApp: wa.me/4917641195301
 
-=== AKTUELLE PREISE (mit 25% Grand Opening Rabatt) ===
+=== AKTUELLE PREISE ===
 
-1. STARTER PAKET - 939 EUR (statt 1.250 EUR)
-   Monatlich: 49 EUR
+1. STARTER PAKET - EUR 2.000 (Festpreis)
    Perfekt fuer den Start:
-   - 3-5 Unterseiten
-   - Professionelle Landing Page
-   - Responsive Design
-   - Basis SEO-Optimierung
-   - SSL-Zertifikat
-   - 3 Revisionsrunden
-   - Google Analytics Setup
-   - 30 Tage Support
-   NICHT enthalten: CMS-System, E-Commerce, Individuelle Funktionen
+   - 5-Seiten responsive Website
+   - Mobile-first Design
+   - Basis SEO-Setup
+   - Kontaktformular mit E-Mail-Benachrichtigung
+   - 30 Tage Post-Launch-Support
+   NICHT enthalten: CMS-System, E-Commerce, Custom App Development
 
-2. PROFESSIONAL PAKET - 1.619 EUR (statt 2.150 EUR) [BESTSELLER]
-   Monatlich: 99 EUR
+2. PROFESSIONAL PAKET - EUR 4.000 (Festpreis) [BESTSELLER]
    Unser meistgewaehltes Paket:
-   - 7-10 Unterseiten
-   - Content Management System (CMS)
-   - Erweiterte SEO-Strategie
-   - Performance-Optimierung
-   - Blog-Integration
-   - Kontaktformulare
-   - 5 Revisionsrunden
-   - Hosting inklusive
-   - Support optional buchbar
+   - 10+ Seiten Website mit CMS
+   - Custom Design System
+   - Volles SEO-Audit + Optimierung
+   - Blog/Academy-Integration
+   - Analytics Dashboard
+   - 90 Tage Post-Launch-Support
+   - Performance-Optimierungs-Garantie
    NICHT enthalten: E-Commerce Features, Custom App Development
 
-3. ENTERPRISE PAKET - 2.219 EUR (statt 2.950 EUR)
-   Monatlich: 199 EUR
-   Volle Power fuer anspruchsvolle Projekte:
-   - Unbegrenzte Seiten
-   - Custom Web Application
-   - E-Commerce Integration
-   - API-Entwicklung
-   - Premium SEO und Marketing
-   - A/B Testing Setup
-   - Dedizierter Ansprechpartner
-   - SLA-Garantie (Optional)
-   - 24/7 Support (Optional)
+3. ENTERPRISE / CUSTOM
+   Fuer anspruchsvolle Projekte:
+   - Full-Stack Web Applications
+   - Headless CMS Architektur
+   - Multi-Language (i18n)
+   - API-Integrationen
+   - Laufender Retainer moeglich
+   - Individuelles Angebot auf Anfrage
 
 === DIENSTLEISTUNGEN ===
 1. Web Development: Next.js, React, TypeScript - hochperformante Web-Applikationen
@@ -292,8 +281,8 @@ Kostenloser AI-gestuetzter Website-Audit unter /analyzer:
 - Direkte Terminbuchung aus dem Report
 
 === FAQ ANTWORTEN ===
-Preise: Starter ab 939 EUR, Professional ab 1.619 EUR, Enterprise ab 2.219 EUR (alle mit 25 Prozent Rabatt)
-Timeline: Starter 2-3 Wochen, Professional 4-6 Wochen, Enterprise individuell
+Preise: Starter ab EUR 2.000, Professional ab EUR 4.000, Enterprise individuell (alle Festpreise)
+Timeline: Starter 3-4 Wochen, Professional 4-6 Wochen, Enterprise individuell
 Technologie: Ausschliesslich moderner Stack (Next.js, React, TypeScript). Keine Baukaesten.
 Code: 100 Prozent Code-Eigentum - keine Abhaengigkeit von uns
 Beratung: Kostenloses 30-Minuten-Gespraech ueber Calendly buchbar
@@ -317,7 +306,7 @@ Bei anderen Anfragen:
 - Faktenbasiert mit konkreten Zahlen
 - Gespraeche zu Aktion fuehren: Analyzer nutzen, Termin buchen, oder Anfrage senden
 
-Kontakt: kontakt@coday.de | +49 30 1234 5678
+Kontakt: kontakt@codayweb.de | +49 176 41195301
 Termin: calendly.com/coday-beratung/30min`,
 };
 

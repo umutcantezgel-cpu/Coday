@@ -1,25 +1,32 @@
 {
   "404": {
     "config_button": "Projekt konfigurieren",
-    "desc": "Entschuldigung, wir konnten die Seite, die Sie suchen, nicht finden. Sie wurde möglicherweise verschoben, gelöscht oder existiert nicht mehr.",
-    "help": "Brauchen Sie Hilfe?",
-    "home_button": "Zur Startseite",
-    "title": "Seite nicht gefunden"
+    "desc": "Die angeforderte Ressource konnte nicht gefunden werden. Möglicherweise wurde die URL geändert oder der Inhalt ist nicht mehr verfügbar.",
+    "help": "Benötigen Sie Unterstützung?",
+    "home_button": "Zurück zur Startseite",
+    "title": "Ressource nicht gefunden (404)"
   },
   "buttons": {
     "close": "Schließen",
     "menu": "Menü",
     "start": "Starten",
-    "start_project": "Projekt starten",
+    "start_project": "Projekt initiieren",
     "contact": "Kontakt aufnehmen",
-    "view_work": "Referenzen",
+    "view_work": "Referenzen ansehen",
     "cta_analysis": "Potenzial-Analyse starten"
   },
   "cta": {
+    "more": "Mehr erfahren",
     "sticky": {
-      "label": "Bereit?",
-      "text": "Lass uns starten"
+      "label": "Bereit für Skalierung?",
+      "text": "Audit anfordern"
     }
+  },
+  "global_cta": {
+    "title_prefix": "Bereit für Ihr",
+    "title_highlight": "nächstes Projekt?",
+    "subtitle": "Lassen Sie uns gemeinsam herausfinden, wie wir Ihr digitales Wachstum beschleunigen können. Kostenlos und unverbindlich.",
+    "button": "Projekt starten"
   },
   "footer": {
     "links": {
@@ -29,16 +36,22 @@
     "rights": "© {{year}} Coday",
     "sections": {
       "career": "Karriere",
+      "contact": "Kontakt",
       "knowledge": "Wissen",
-      "pricing": "Preise"
+      "navigation": "Navigation",
+      "pricing": "Preise",
+      "services": "Services"
     },
-    "slogan": "Wir töten Ineffizienz. Die letzte Agentur, die du je brauchen wirst.",
+    "slogan": "Wir eliminieren Ineffizienz. Die letzte Web-Agentur, die Sie jemals beauftragen werden.",
     "trust": {
-      "desc": "Kämpfe gegen den Ballast.",
-      "title": "Resistance Member"
+      "desc": "Kämpfen Sie gegen digitalen Ballast.",
+      "title": "Ihr Strategiepartner"
     }
   },
   "generic_detail": {
+    "trust": {
+      "title": "Vertraut von führenden Unternehmen"
+    },
     "advantages": {
       "contact_btn": "Kontakt aufnehmen",
       "desc": "Unsere Kunden entscheiden sich nicht für bunte Slides, sondern für ein Team, das Marketing als Investition versteht. Wir denken in Ergebnissen, planen mit klaren Zielen und liefern transparent.",
@@ -80,6 +93,14 @@
   },
   "loading": "Lade Sprache...",
   "nav": {
+    "main": {
+      "home": "Startseite",
+      "work": "Portfolio",
+      "process": "Prozess",
+      "pricing": "Preise",
+      "contact": "Projekt starten",
+      "partnerschaft": "Partnerschaft"
+    },
     "about": {
       "contact": {
         "desc": "Termin buchen",
@@ -122,7 +143,7 @@
     "cta_booking": "Termin",
     "career": {
       "benefits": {
-        "desc": "Was dich erwartet",
+        "desc": "Was Sie erwartet",
         "label": "Benefits"
       },
       "culture": {
@@ -265,10 +286,13 @@
       "view_all": "Alle Projekte"
     }
   },
+  "logobar": {
+    "title": "Vertrauen schenken uns innovative Unternehmen"
+  },
   "scroll_cta": {
-    "book_audit": "Audit buchen",
+    "book_audit": "Strategiegespräch buchen",
     "dominate": "Dominieren Sie Ihren Markt.",
-    "ready": "Bereit zu optimieren?"
+    "ready": "Bereit für exponentielles Wachstum?"
   },
   "units": {
     "hours": "Std.",
@@ -277,9 +301,9 @@
   },
   "welcome": "Willkommen bei Coday",
   "steps": {
-    "packages": "Paket wählen",
-    "calculator": "Konfigurieren",
-    "contact": "Anfrage"
+    "packages": "Lösung wählen",
+    "calculator": "Projekt evaluieren",
+    "contact": "Anfrage senden"
   },
   "social": {
     "visit": "Besuchen Sie uns auf {{platform}}",
@@ -289,7 +313,7 @@
     "linkedin": "LinkedIn"
   },
   "announcement": {
-    "text": "Grand Opening: 25% Rabatt auf alle Projekte!",
-    "cta": "Angebot sichern →"
+    "text": "Enterprise-Audit: Kostenlose Potenzialanalyse für Q4 verfügbar.",
+    "cta": "Audit anfragen →"
   }
 }

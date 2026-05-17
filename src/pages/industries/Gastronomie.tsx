@@ -4,12 +4,13 @@ import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import { IMAGES } from '@/shared/config/images';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { QrCode, Moped, Confetti } from '@phosphor-icons/react';
-import BlurText from '../../shared/ui/BlurText';
+import BlurText from '@/shared/ui/BlurText';
 import { SeoHead } from '@/shared/ui/SeoHead';
-import GradientText from '../../shared/ui/GradientText';
-import TableBookingRoiVisualizer from '../../features/industries/gastronomie/TableBookingRoiVisualizer';
-import MenuEngineeringDemo from '../../features/industries/gastronomie/MenuEngineeringDemo';
-import ReservationFlowDemo from '../../features/industries/gastronomie/ReservationFlowDemo';
+import GradientText from '@/shared/ui/GradientText';
+import TableBookingRoiVisualizer from '@/features/industries/gastronomie/TableBookingRoiVisualizer';
+import MenuEngineeringDemo from '@/features/industries/gastronomie/MenuEngineeringDemo';
+import ReservationFlowDemo from '@/features/industries/gastronomie/ReservationFlowDemo';
+import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
 
 const iconMap: Record<string, React.ElementType> = {
   qr_code_2: QrCode,
@@ -21,7 +22,7 @@ const Gastronomie: React.FC = () => {
   const { t } = useTranslation('industries');
 
   return (
-    <div className="bg-background-light min-h-screen">
+    <div className="bg-background-light min-h-dvh">
       <SeoHead
         title="Digitale Lösungen für Gastronomie & Restaurants | Coday"
         description={t('gastronomie-hotellerie.hero.subheadline')}
@@ -142,8 +143,11 @@ const Gastronomie: React.FC = () => {
           </div>
         </div>
       </section>
+      <RelevantFAQs
+        serviceId={['web-development', 'seo']}
+        className="bg-gray-50 border-t border-gray-100"
+      />
     </div>
   );
 };
-
 export default Gastronomie;

@@ -6,7 +6,6 @@ import {
   UserSwitch,
   Database,
   ArrowRight,
-  CheckCircle,
   Warning,
   XCircle,
 } from '@phosphor-icons/react';
@@ -112,13 +111,17 @@ export const SecurityGapWizard: React.FC = () => {
               className="w-full max-w-lg"
             >
               <div className="mb-8 flex justify-center text-blue-600">
-                <currentQuestion.icon size={48} weight="duotone" />
+                {currentQuestion &&
+                  (() => {
+                    const Icon = currentQuestion.icon;
+                    return <Icon size={48} weight="duotone" />;
+                  })()}
               </div>
 
-              <h3 className="text-2xl font-bold text-gray-900 mb-8">{currentQuestion.question}</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-8">{currentQuestion!.question}</h3>
 
               <div className="space-y-3">
-                {currentQuestion.options.map((option, idx) => (
+                {currentQuestion!.options.map((option, idx) => (
                   <button
                     key={idx}
                     onClick={() => handleAnswer(option.score)}

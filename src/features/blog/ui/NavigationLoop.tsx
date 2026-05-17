@@ -8,8 +8,8 @@ import {
   Copy,
   Check,
 } from '@phosphor-icons/react';
-import { getBlogPosts } from '../model/data';
-import { OptimizedImage } from '../../../shared/ui/OptimizedImage';
+import { getBlogPosts } from '@/features/blog/model/data';
+import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import { motion, AnimatePresence } from 'motion/react';
 import { useTranslation } from 'react-i18next';
 
@@ -128,7 +128,7 @@ export const ShareFAB: React.FC<{ title: string; url: string }> = ({
             </button>
             <button
               onClick={() => handleShare('linkedin')}
-              className="w-12 h-12 bg-[#0077b5] text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+              className="w-12 h-12 bg-info text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
               aria-label="Share on LinkedIn"
             >
               <LinkedinLogo size={20} />

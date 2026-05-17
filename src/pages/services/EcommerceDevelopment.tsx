@@ -1,23 +1,38 @@
 import React from 'react';
-import BlurText from '../../shared/ui/BlurText';
-import GradientText from '../../shared/ui/GradientText';
-import RevenueUpliftSimulator from '../../features/ecommerce/RevenueUpliftSimulator';
-import HeadlessVsShopifyGrid from '../../features/ecommerce/HeadlessVsShopifyGrid';
-import ConversionFunnelMap from '../../features/ecommerce/ConversionFunnelMap';
-import { SeoHead } from '../../shared/ui/SeoHead';
+import { useTranslation } from 'react-i18next';
+import BlurText from '@/shared/ui/BlurText';
+import GradientText from '@/shared/ui/GradientText';
+import RevenueUpliftSimulator from '@/features/ecommerce/RevenueUpliftSimulator';
+import HeadlessVsShopifyGrid from '@/features/ecommerce/HeadlessVsShopifyGrid';
+import ConversionFunnelMap from '@/features/ecommerce/ConversionFunnelMap';
+import { SeoHead } from '@/shared/ui/SeoHead';
+import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
 
 const EcommerceDevelopment: React.FC = () => {
+  const { t } = useTranslation('services');
+  const ecommerceSchema = {
+    service: {
+      name: 'E-Commerce Entwicklung',
+      serviceType: 'Web Development',
+      description: t('ecommerce_page.meta.description'),
+      provider: {
+        name: 'Coday',
+      },
+    },
+  };
+
   return (
-    <div className="bg-background-light min-h-screen">
+    <div className="bg-background-light min-h-dvh">
       <SeoHead
-        title="Online-Shop Entwicklung | Coday"
-        description="Online-Shops die verkaufen. High-End E-Commerce mit Next.js."
+        title={t('ecommerce_page.meta.title')}
+        description={t('ecommerce_page.meta.description')}
+        schemaData={ecommerceSchema}
       />
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-4 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
-            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
+            <span className="text-sapphire font-bold tracking-wider uppercase text-sm mb-4 block">
               Online-Shop Entwicklung
             </span>
             <h1 className="font-display font-black text-5xl sm:text-7xl lg:text-8xl text-secondary mb-8 tracking-tight">
@@ -61,6 +76,11 @@ const EcommerceDevelopment: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ConversionFunnelMap />
         </div>
+      </section>
+
+      {/* Relevant FAQs */}
+      <section className="py-24 bg-surface-light">
+        <RelevantFAQs serviceId="web-development" />
       </section>
     </div>
   );

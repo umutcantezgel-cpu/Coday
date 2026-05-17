@@ -3,12 +3,14 @@ import { useTranslation } from 'react-i18next';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { CaretRight, CaretDown } from '@phosphor-icons/react';
 import { useNavigate } from 'react-router-dom';
-import { useCalculatorStore } from '../features/calculator/model/store';
-import { ModuleCard } from '../features/calculator/ui/ModuleCard';
-import { CalculatorSummary } from '../features/calculator/ui/Summary';
+import { useCalculatorStore } from '@/features/calculator/model/store';
+import { ModuleCard } from '@/features/calculator/ui/ModuleCard';
+import { CalculatorSummary } from '@/features/calculator/ui/Summary';
 import { modules, ModuleCategory } from '@/shared/data/modules';
-import StepIndicator from '../shared/ui/StepIndicator';
+import StepIndicator from '@/shared/ui/StepIndicator';
 import { ArrowRight } from '@phosphor-icons/react';
+import { SeoHead } from '@/shared/ui/SeoHead';
+import { useBreadcrumbs } from '@/shared/hooks/useBreadcrumbs';
 
 const Calculator: React.FC = () => {
   const { t, i18n } = useTranslation('calculator');
@@ -56,6 +58,24 @@ const Calculator: React.FC = () => {
 
   return (
     <div className="bg-background-light pt-24 pb-20">
+      <SeoHead
+        title={t('hero.title_1', 'Projekt-Konfigurator') + ' | Coday'}
+        description={t(
+          'hero.subtitle_default',
+          'Stellen Sie Ihr Web-Projekt modular zusammen und erhalten Sie eine transparente Kostenübersicht.'
+        )}
+        breadcrumbs={useBreadcrumbs()}
+        schemaData={{
+          softwareApp: {
+            name: 'Coday Projekt-Konfigurator',
+            description:
+              'Interactive web project cost calculator with modular configuration for web development projects.',
+            applicationCategory: 'BusinessApplication',
+            operatingSystem: 'Web',
+            offers: { price: '0', priceCurrency: 'EUR' },
+          },
+        }}
+      />
       {/* Step Indicator */}
       <StepIndicator currentStep="calculator" className="mb-8" />
       {/* Hero */}

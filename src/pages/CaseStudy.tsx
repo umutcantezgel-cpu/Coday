@@ -1,13 +1,25 @@
 import React from 'react';
-import CountUp from '../shared/ui/CountUp';
+import CountUp from '@/shared/ui/CountUp';
 import { useTranslation } from 'react-i18next';
-import { OptimizedIcon } from '../shared/ui/OptimizedIcon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
+import { GlobalCTA, JsonLd } from '@/shared/ui';
 import { CaretDown, ArrowRight, Quotes } from '@phosphor-icons/react';
-
 const CaseStudy: React.FC = () => {
   const { t } = useTranslation('work');
   return (
     <div className="font-sans antialiased text-text-light dark:text-text-dark bg-background-light dark:bg-background-dark transition-colors duration-300 overflow-x-hidden">
+      <JsonLd
+        pageType="article"
+        data={{
+          article: {
+            headline: t('hero.title_start') + ' ' + t('hero.title_gradient'),
+            description: t('hero.desc'),
+            image: '/images/og-image.jpg',
+            author: 'Coday',
+            datePublished: '2024-01-01',
+          },
+        }}
+      />
       {/* Hero Section */}
       <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-primary/20">
         <div className="absolute inset-0 bg-black/40 z-0"></div>
@@ -44,14 +56,15 @@ const CaseStudy: React.FC = () => {
               <h2 className="font-display font-bold text-4xl lg:text-5xl text-gray-900 dark:text-white mb-6">
                 {t('results.title').split('<0>')[0]}
                 <span className="text-primary">
-                  {t('results.title').split('<0>')[1].split('</0>')[0]}
+                  // @ts-expect-error
+                  {t('results.title').split('<0>')[1]?.split('</0>')[0]}
                 </span>
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
                 {t('results.desc')}
               </p>
               <a
-                href="#"
+                href="/contact"
                 className="inline-flex items-center text-primary font-bold hover:underline"
               >
                 {t('results.link')} <OptimizedIcon icon={ArrowRight} className="ml-2" />
@@ -188,13 +201,13 @@ const CaseStudy: React.FC = () => {
                   {t('visual_identity.desc')}
                 </p>
                 <div className="grid grid-cols-3 gap-4">
-                  <div className="h-24 rounded-lg bg-[#14867E] shadow-md flex items-center justify-center text-white/50 text-xs">
+                  <div className="h-24 rounded-lg bg-primary-700 shadow-md flex items-center justify-center text-white/50 text-xs">
                     {t('visual_identity.colors.primary')}
                   </div>
-                  <div className="h-24 rounded-lg bg-[#1E293B] shadow-md flex items-center justify-center text-white/50 text-xs">
+                  <div className="h-24 rounded-lg bg-bg-inverse shadow-md flex items-center justify-center text-white/50 text-xs">
                     {t('visual_identity.colors.dark')}
                   </div>
-                  <div className="h-24 rounded-lg bg-[#F8FAFC] border border-gray-200 shadow-md flex items-center justify-center text-gray-400 text-xs">
+                  <div className="h-24 rounded-lg bg-bg-secondary border border-gray-200 shadow-md flex items-center justify-center text-gray-400 text-xs">
                     {t('visual_identity.colors.light')}
                   </div>
                 </div>
@@ -203,6 +216,8 @@ const CaseStudy: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <GlobalCTA />
     </div>
   );
 };

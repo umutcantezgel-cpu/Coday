@@ -17,6 +17,8 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ) => {
     const generatedId = React.useId();
     const inputId = id || generatedId;
+    const errorId = `${inputId}-error`;
+    const helperId = `${inputId}-helper`;
 
     return (
       <div className={cn('w-full space-y-2', wrapperClassName)}>
@@ -36,13 +38,15 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           <input
             ref={ref}
             id={inputId}
+            aria-invalid={!!error}
+            aria-describedby={error ? errorId : helperText ? helperId : undefined}
             className={cn(
               // Base styles
               'w-full bg-white rounded-xl border border-gray-200 text-secondary placeholder:text-gray-400',
               // Mobile Optimization: 16px font to prevent zoom, 48px height
               'text-base h-[48px] px-4',
               // Transitions
-              'transition-all duration-200 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/20 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2',
+              'transition-all duration-200 focus:border-primary focus:ring-4 focus:ring-primary/20 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2',
               // Icon adjustments
               leftIcon && 'ps-11',
               rightIcon && 'pe-11',
@@ -61,9 +65,18 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
         </div>
 
         {error ? (
-          <p className="text-sm text-red-500 ms-1 flex items-center gap-1">{error}</p>
+          <p
+            id={errorId}
+            className="text-sm text-red-500 ms-1 flex items-center gap-1"
+            role="alert"
+            aria-live="polite"
+          >
+            {error}
+          </p>
         ) : helperText ? (
-          <p className="text-sm text-gray-500 ms-1">{helperText}</p>
+          <p id={helperId} className="text-sm text-gray-500 ms-1">
+            {helperText}
+          </p>
         ) : null}
       </div>
     );

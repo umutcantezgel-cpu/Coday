@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { CheckCircle, HandPalm, Robot } from '@phosphor-icons/react';
 import { clsx } from 'clsx';
-import { OptimizedImage } from '../../../../shared/ui/OptimizedImage';
+import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 
 interface SoulReaderProps {
   data?: {
@@ -144,11 +144,7 @@ const QuizOption: React.FC<QuizOptionProps> = ({
   const isRevealed = hasVoted;
 
   return (
-    <button
-      onClick={onSelect}
-      disabled={hasVoted}
-      className="group relative w-full text-left focus:outline-none"
-    >
+    <button onClick={onSelect} disabled={hasVoted} className="group relative w-full text-left">
       <div
         className={clsx(
           'relative aspect-square rounded-[2rem] overflow-hidden border-4 transition-all duration-500 shadow-2xl',

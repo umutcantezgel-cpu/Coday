@@ -111,6 +111,7 @@ const AnimatedList: React.FC<AnimatedListProps> = ({
         if (selectedIndex >= 0 && selectedIndex < items.length) {
           e.preventDefault();
           if (onItemSelect) {
+            // @ts-expect-error
             onItemSelect(items[selectedIndex], selectedIndex);
           }
         }

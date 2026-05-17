@@ -5,8 +5,25 @@ import { SeoHead } from '@/shared/ui/SeoHead';
 export default function Booking() {
   const { t } = useTranslation('booking');
   return (
-    <div className="pt-24 pb-20 container mx-auto px-4 min-h-screen">
-      <SeoHead title={`${t('page.title')} | Coday`} description={t('page.subtitle')} />
+    <div className="pt-24 pb-20 container mx-auto px-4 min-h-dvh">
+      <SeoHead
+        title={`${t('page.title')} | Coday`}
+        description={t('page.subtitle')}
+        breadcrumbs={[
+          { name: 'Home', url: 'https://www.codayweb.de' },
+          { name: t('page.title', 'Booking'), url: 'https://www.codayweb.de/booking' },
+        ]}
+        schemaData={{
+          softwareApp: {
+            name: 'Coday Booking System',
+            description:
+              'Online booking system for web development consultations and project kickoffs.',
+            applicationCategory: 'BusinessApplication',
+            operatingSystem: 'Web',
+            offers: { price: '0', priceCurrency: 'EUR' },
+          },
+        }}
+      />
       <h1 className="text-4xl font-black font-display mb-8 text-center bg-gradient-to-r from-aurora-deep to-aurora-sapphire bg-clip-text text-transparent">
         {t('page.title')}
       </h1>

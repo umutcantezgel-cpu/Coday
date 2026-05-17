@@ -80,6 +80,7 @@ const RotatingText = forwardRef<RotatingTextRef, RotatingTextProps>(
     };
 
     const elements = useMemo(() => {
+      // @ts-expect-error
       const currentText: string = texts[currentTextIndex];
       if (splitBy === 'characters') {
         const words = currentText.split(' ');

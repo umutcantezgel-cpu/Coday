@@ -1,6 +1,6 @@
 import React from 'react';
 import { Icon } from '@/shared/ui/Icon';
-import { useCalculatorStore } from '../model/store';
+import { useCalculatorStore } from '@/features/calculator/model/store';
 import { modules } from '@/shared/data/modules';
 import { useTranslation } from 'react-i18next';
 import { formatCurrency } from '@/shared/utils/formatters';

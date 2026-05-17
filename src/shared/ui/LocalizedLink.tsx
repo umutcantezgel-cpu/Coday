@@ -16,7 +16,6 @@ import { getLocalizedPath } from '@/shared/lib/navigation';
 export const LocalizedLink: React.FC<LinkProps> = ({ to, children, ...props }) => {
   const lng = useCurrentLanguage();
   const localizedTo = typeof to === 'string' ? getLocalizedPath(to, lng) : to;
-  // console.log removed
 
   return (
     <Link to={localizedTo} {...props}>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { DownloadSimple } from '@phosphor-icons/react';
-import { OptimizedImage } from '../../shared/ui/OptimizedImage';
+import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import { whitepaperData } from '@/shared/data/whitepapers';
 import { useTranslation } from 'react-i18next';
 
@@ -10,7 +10,7 @@ const Whitepapers: React.FC = () => {
   const currentLang = i18n.language as 'de' | 'en';
 
   return (
-    <div className="bg-background-light min-h-screen pt-24 pb-20">
+    <div className="bg-background-light min-h-dvh pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h1 className="font-display font-black text-5xl md:text-6xl text-gradient mb-6">

@@ -1,9 +1,9 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { LocalizedLink as Link } from '../../shared/ui/LocalizedLink';
+import { LocalizedLink as Link } from '@/shared/ui/LocalizedLink';
 import { industriesData } from '@/shared/data/industries';
-import { OptimizedImage } from '../../shared/ui/OptimizedImage';
+import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import {
   industryHeroImages,
   industryFallbackImage,
@@ -23,8 +23,8 @@ import {
   Briefcase,
   RocketLaunch,
 } from '@phosphor-icons/react';
-import { OptimizedIcon } from '../../shared/ui/OptimizedIcon';
-import { SeoHead } from '../../shared/ui/SeoHead';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
+import { SeoHead } from '@/shared/ui/SeoHead';
 
 const iconMap: Record<string, React.ElementType> = {
   hammer: Hammer,
@@ -46,7 +46,7 @@ const IndustryDetail: React.FC = () => {
 
   if (!industry) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center pt-20">
+      <div className="min-h-dvh flex flex-col items-center justify-center pt-20">
         <SeoHead title={t('detail.not_found.meta_title')} noIndex />
         <h1 className="text-3xl font-bold text-secondary mb-4">{t('detail.not_found.title')}</h1>
         <Link to="/services/industries" className="text-primary hover:underline">
@@ -57,8 +57,7 @@ const IndustryDetail: React.FC = () => {
   }
 
   return (
-    <div className="bg-background-light min-h-screen pt-24">
-      <SeoHead title={`${t(industry.title)} | Coday`} description={t(industry.hero.subheadline)} />
+    <div className="bg-background-light min-h-dvh pt-24">
       {/* Navigation */}
       <div className="container mx-auto px-4 mb-8">
         <Link

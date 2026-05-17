@@ -9,7 +9,7 @@ import {
   Trophy,
   ArrowRight,
 } from '@phosphor-icons/react';
-import { OptimizedIcon } from '../../shared/ui/OptimizedIcon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 
 const STEPS = [
   {
@@ -49,8 +49,16 @@ const STEPS = [
   },
 ];
 
-export const MethodologyGraph: React.FC = () => {
-  const { t } = useTranslation('consulting');
+export interface MethodologyGraphProps {
+  namespace?: string;
+  prefix?: string;
+}
+
+export const MethodologyGraph: React.FC<MethodologyGraphProps> = ({
+  namespace = 'consulting',
+  prefix = 'methodology',
+}) => {
+  const { t } = useTranslation(namespace);
 
   return (
     <div className="w-full max-w-6xl mx-auto py-12">
@@ -95,10 +103,10 @@ export const MethodologyGraph: React.FC = () => {
                   Step 0{step.id}
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-200 transition-colors">
-                  {t(`methodology.steps.${step.id}.title`)}
+                  {t(`${prefix}.steps.${step.id}.title`)}
                 </h3>
                 <p className="text-sm text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors">
-                  {t(`methodology.steps.${step.id}.desc`)}
+                  {t(`${prefix}.steps.${step.id}.desc`)}
                 </p>
               </div>
             </motion.div>

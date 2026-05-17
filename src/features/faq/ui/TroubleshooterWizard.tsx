@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { CaretRight, Check, ArrowRight } from '@phosphor-icons/react';
-import { useTranslation } from 'react-i18next';
 
 // Simple decision tree data (internal for now, could move to data.ts later)
 const steps = [
@@ -112,14 +111,13 @@ const results = {
 };
 
 const TroubleshooterWizard = () => {
-  const { t } = useTranslation(['faq']); // Should localized titles later
   const [history, setHistory] = useState<string[]>(['goal']);
   const [result, setResult] = useState<string | null>(null);
 
   const currentStepId = history[history.length - 1];
   const currentStep = steps.find((s) => s.id === currentStepId);
 
-  const handleSelect = (option: any) => {
+  const handleSelect = (option: { id: string; label: string; next?: string; result?: string }) => {
     if (option.result) {
       setResult(option.result);
     } else if (option.next) {

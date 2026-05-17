@@ -1,19 +1,21 @@
 import React from 'react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { Code, Palette, ArrowRight } from '@phosphor-icons/react';
+import { Code, Palette, RocketLaunch, ArrowRight } from '@phosphor-icons/react';
 import { useTranslation } from 'react-i18next';
-import { LocalizedNavLink as NavLink } from '../shared/ui/LocalizedLink';
-import { OptimizedImage } from '../shared/ui/OptimizedImage';
+import { LocalizedNavLink as NavLink } from '@/shared/ui/LocalizedLink';
+import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import { serviceImages } from '@/shared/data/serviceImages';
-import ScrollFloat from '../shared/ui/ScrollFloat';
-import { cn } from '../shared/lib/utils';
-import { baseButtonStyles, buttonVariants, buttonSizes } from '../shared/ui/ButtonStyles';
+import ScrollFloat from '@/shared/ui/ScrollFloat';
+import { cn } from '@/shared/lib/utils';
+import { baseButtonStyles, buttonVariants, buttonSizes } from '@/shared/ui/ButtonStyles';
 // Premium UI Components
-import RotatingText from '../shared/ui/RotatingText';
-import { MagicBento, BentoCard } from '../shared/ui/MagicBento';
-import GlareHover from '../shared/ui/GlareHover';
+import RotatingText from '@/shared/ui/RotatingText';
+import { MagicBento, BentoCard } from '@/shared/ui/MagicBento';
+import GlareHover from '@/shared/ui/GlareHover';
 
-import { SeoHead } from '../shared/ui/SeoHead';
+import { Breadcrumbs } from '@/shared/ui/Breadcrumbs';
+import { SeoHead } from '@/shared/ui/SeoHead';
+import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
 
 const Services: React.FC = () => {
   const { t } = useTranslation(['services', 'common']);
@@ -37,21 +39,44 @@ const Services: React.FC = () => {
       imageKey: 'webdesign',
       effect: 'glow' as const,
     },
+    {
+      icon: RocketLaunch,
+      title: t('categories.seo.title'),
+      description: t('categories.seo.description'),
+      link: '/services/seo',
+      color: 'bg-emerald-500',
+      imageKey: 'growth',
+      effect: 'spotlight' as const,
+    },
   ];
 
   return (
     <div className="bg-background-light">
       <SeoHead
-        title={t('meta.title', { defaultValue: 'Unsere Leistungen | Coday' })}
+        title={t('meta.title', { defaultValue: 'Unsere Leistungen in Wetzlar | Coday' })}
         description={t('meta.description', {
-          defaultValue: 'High-End Webentwicklung, Design & Strategie für Ihren digitalen Erfolg.',
+          defaultValue:
+            'High-End Webentwicklung, Design & Strategie aus Wetzlar, Hessen für Ihren digitalen Erfolg.',
         })}
         pageType="service"
+        schemaData={{
+          service: {
+            name: t('hero.title', { defaultValue: 'Webentwicklung & Design Wetzlar' }),
+            description: t('meta.description', {
+              defaultValue:
+                'High-End Webentwicklung, Design & Strategie aus Wetzlar, Hessen für Ihren digitalen Erfolg.',
+            }),
+            serviceType: 'Web Design and Development',
+          },
+        }}
       />
       {/* Header with Hero Image */}
       <section className="pt-12 pb-8 md:pt-24 md:pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-start">
+            <div className="mb-4 flex justify-center lg:justify-start">
+              <Breadcrumbs />
+            </div>
             <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
               {t('hero.label')}
             </span>
@@ -79,8 +104,8 @@ const Services: React.FC = () => {
           <div className="relative hidden lg:block">
             <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-3xl transform rotate-2"></div>
             <OptimizedImage
-              src={serviceImages.hero.src}
-              alt={t(serviceImages.hero.alt)}
+              src={serviceImages.hero!.src}
+              alt={t(serviceImages.hero!.alt)}
               className="relative rounded-3xl shadow-flat-lg w-full transform -rotate-1 hover:rotate-0 transition-all duration-500"
               priority
             />
@@ -89,56 +114,69 @@ const Services: React.FC = () => {
       </section>
 
       {/* Categories Grid with MagicBento */}
-      <section className="pb-12 md:pb-24 px-4 sm:px-6 lg:px-8">
-        <MagicBento columns={2} gap={32} className="max-w-7xl mx-auto">
+      <section className="pb-20 md:pb-32 px-4 sm:px-6 lg:px-8">
+        <MagicBento columns={3} gap={32} className="max-w-7xl mx-auto">
           {categories.map((cat, index) => (
             <BentoCard
               key={index}
               effect={cat.effect}
               spotlightColor="rgba(20, 122, 122, 0.15)"
               glowColor="rgba(139, 92, 246, 0.3)"
-              className="h-full"
+              className="h-full border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02] hover:border-primary/20 transition-all duration-500 ease-out bg-white rounded-2xl md:aspect-[1/1.618]"
             >
-              <NavLink to={cat.link} className="group relative p-10 block h-full">
+              <NavLink
+                to={cat.link}
+                className="group relative p-6 md:p-8 block h-full flex flex-col"
+              >
                 {/* Decorative Background Image */}
-                <div className="absolute top-0 end-0 w-64 h-64 opacity-5 transform translate-x-12 rtl:-translate-x-12 -translate-y-12 group-hover:scale-110 group-hover:opacity-10 transition-all duration-500 rounded-bl-full rtl:rounded-br-full rtl:rounded-bl-none overflow-hidden pointer-events-none">
+                <div className="absolute top-0 end-0 w-64 h-64 opacity-[0.02] transform translate-x-12 rtl:-translate-x-12 -translate-y-12 group-hover:scale-110 group-hover:opacity-[0.05] transition-all duration-700 rounded-bl-[100px] rtl:rounded-br-[100px] rtl:rounded-bl-none overflow-hidden pointer-events-none ease-out">
                   {serviceImages[cat.imageKey || 'hero'] && (
                     <OptimizedImage
-                      src={serviceImages[cat.imageKey || 'hero'].src}
+                      src={serviceImages[cat.imageKey || 'hero']!.src}
                       alt=""
                       className="w-full h-full object-cover mix-blend-multiply"
                     />
                   )}
                 </div>
                 <div
-                  className={`absolute top-0 end-0 w-32 h-32 ${cat.color} opacity-5 rounded-bl-full rtl:rounded-br-full rtl:rounded-bl-none group-hover:scale-110 transition-transform duration-500`}
+                  className={`absolute top-0 end-0 w-32 h-32 ${cat.color} opacity-[0.03] rounded-bl-[100px] rtl:rounded-br-[100px] rtl:rounded-bl-none transition-transform duration-700 ease-out group-hover:scale-[1.3] group-hover:opacity-[0.06]`}
                 ></div>
 
-                <div className="relative z-10">
+                <div className="relative z-10 flex-grow">
                   <div
-                    className={`w-16 h-16 ${cat.color} bg-opacity-10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300`}
+                    className={`w-14 h-14 ${cat.color} bg-opacity-10 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500 group-hover:scale-110 group-hover:bg-opacity-20 group-hover:-rotate-3 shadow-sm`}
                   >
-                    <OptimizedIcon icon={cat.icon} className="text-3xl text-secondary" />
-                  </div>
-
-                  <h3 className="font-display font-bold text-3xl text-secondary mb-4 group-hover:text-primary transition-colors">
-                    {cat.title}
-                  </h3>
-                  <p className="text-lg text-slate-600 mb-8 leading-relaxed">{cat.description}</p>
-
-                  <div className="flex items-center text-primary font-bold tracking-wide uppercase text-sm">
-                    {t('cta.more')}
                     <OptimizedIcon
-                      icon={ArrowRight}
-                      className="ms-2 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform"
+                      icon={cat.icon}
+                      weight="duotone"
+                      className={`text-3xl ${cat.color.replace('bg-', 'text-')}`}
                     />
                   </div>
+
+                  <h3 className="font-display font-bold text-xl md:text-2xl text-secondary mb-3 group-hover:text-primary transition-colors duration-300">
+                    {cat.title}
+                  </h3>
+                  <p className="text-base text-slate-600 mb-8 leading-[1.618]">{cat.description}</p>
+                </div>
+                <div className="flex items-center text-primary font-bold tracking-wide uppercase text-sm mt-auto transition-all duration-300 group-hover:tracking-wider">
+                  {t('cta.more')}
+                  <OptimizedIcon
+                    icon={ArrowRight}
+                    weight="bold"
+                    className="ms-3 group-hover:translate-x-2 rtl:group-hover:-translate-x-2 transition-transform duration-300 ease-out"
+                  />
                 </div>
               </NavLink>
             </BentoCard>
           ))}
         </MagicBento>
       </section>
+
+      {/* FAQs for Rich Snippets */}
+      <RelevantFAQs
+        serviceId={['web-development', 'web-design', 'seo']}
+        className="bg-gray-50 border-t border-gray-100"
+      />
 
       {/* CTA with GlareHover */}
       <section className="py-12 md:py-20 bg-white border-t border-gray-100">

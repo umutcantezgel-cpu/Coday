@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { LocalizedNavLink as NavLink } from '../../../shared/ui/LocalizedLink';
+import { LocalizedNavLink as NavLink } from '@/shared/ui/LocalizedLink';
 
-import BlurText from '../../../shared/ui/BlurText';
-import { OptimizedImage } from '../../../shared/ui/OptimizedImage';
+import BlurText from '@/shared/ui/BlurText';
+import { SeoHead } from '@/shared/ui/SeoHead';
+import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
+import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import { appDevImages } from '@/shared/data/serviceImages';
-import { OptimizedIcon } from '../../../shared/ui/OptimizedIcon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import {
   Stack,
   CreditCard,
@@ -58,12 +60,16 @@ const WebApps: React.FC = () => {
 
   return (
     <div className="bg-background-light font-sans text-text-light">
+      <SeoHead
+        title={t('web_apps_page.meta.title')}
+        description={t('web_apps_page.meta.description')}
+      />
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center lg:text-left grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-xl text-primary mb-6">
+              <div className="inline-flex items-center justify-center p-3 bg-sapphire/10 rounded-xl text-sapphire mb-6">
                 <OptimizedIcon icon={Stack} className="text-3xl" />
               </div>
               <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-gray-900 mb-6 leading-tight">
@@ -73,7 +79,7 @@ const WebApps: React.FC = () => {
                   animateBy="words"
                   className="inline"
                 />{' '}
-                <span className="text-primary">{t('web_apps_page.hero.title_suffix')}</span>
+                <span className="text-sapphire">{t('web_apps_page.hero.title_suffix')}</span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed mb-8 max-w-lg">
                 {t('web_apps_page.hero.description')}
@@ -104,7 +110,7 @@ const WebApps: React.FC = () => {
       {/* API Integration Network - NEW HIGH COMPLEXITY SECTION */}
       <section className="bg-secondary py-24 mb-24 overflow-hidden relative">
         {/* Neural Network Abstract Background */}
-        <div className="absolute inset-0 bg-[#0F172A]">
+        <div className="absolute inset-0 bg-bg-inverse">
           <div
             className="absolute inset-0 opacity-20"
             style={{
@@ -168,7 +174,10 @@ const WebApps: React.FC = () => {
             ))}
 
             {/* Connecting Lines SVG Layer */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none z-10 opacity-30">
+            <svg
+              aria-hidden="true"
+              className="absolute inset-0 w-full h-full pointer-events-none z-10 opacity-30"
+            >
               {[0, 60, 120, 180, 240, 300].map((angle, i) => (
                 <line
                   key={i}
@@ -282,7 +291,7 @@ const WebApps: React.FC = () => {
                 key={i}
                 className="p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-xl transition-all border border-gray-100 group"
               >
-                <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+                <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-sapphire mb-6 group-hover:scale-110 transition-transform">
                   <OptimizedIcon icon={iconMap[feature.icon] || Cloud} />
                 </div>
                 <h3 className="font-bold text-xl text-gray-900 mb-3">
@@ -297,21 +306,7 @@ const WebApps: React.FC = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-24">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="font-display font-bold text-3xl sm:text-4xl text-gray-900 mb-6">
-            {t('web_apps_page.cta_section.title')}
-          </h2>
-          <p className="text-xl text-gray-600 mb-8">{t('web_apps_page.cta_section.description')}</p>
-          <NavLink
-            to="/contact"
-            className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl bg-primary hover:bg-primary-dark shadow-lg hover:shadow-xl transition-all"
-          >
-            {t('web_apps_page.cta_section.button')}
-          </NavLink>
-        </div>
-      </section>
+      <RelevantFAQs serviceId="web-apps" className="mb-24" />
     </div>
   );
 };

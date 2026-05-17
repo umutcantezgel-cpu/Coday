@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { CheckCircle, ArrowRight, Gauge } from '@phosphor-icons/react';
-import { useCalculatorStore } from '../model/store';
+import { useCalculatorStore } from '@/features/calculator/model/store';
 import { useTranslation } from 'react-i18next';
 import { LocalizedNavLink as NavLink } from '@/shared/ui/LocalizedLink';
 import { modules } from '@/shared/data/modules';

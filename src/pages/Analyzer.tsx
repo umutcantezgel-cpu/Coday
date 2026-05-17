@@ -1,12 +1,12 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import GradientText from '../shared/ui/GradientText';
+import GradientText from '@/shared/ui/GradientText';
 import {
   UrlInputForm,
   AnalysisProgress,
   ReportDashboard,
   useAnalyzerStore,
-} from '../features/analyzer';
+} from '@/features/analyzer';
 import {
   Lightning,
   MagnifyingGlass,
@@ -17,14 +17,36 @@ import {
   CheckCircle,
   Lock,
 } from '@phosphor-icons/react';
-import { OptimizedIcon } from '../shared/ui/OptimizedIcon';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
+import { SeoHead } from '@/shared/ui/SeoHead';
 
 const Analyzer: React.FC = () => {
   const { t } = useTranslation('tools');
   const { status, result } = useAnalyzerStore();
 
   return (
-    <div className="bg-background-light min-h-screen">
+    <div className="bg-background-light min-h-dvh">
+      <SeoHead
+        title={`${t('analyzer.hero.badge', 'Website Analyzer')} | Coday`}
+        description={t(
+          'analyzer.hero.desc',
+          'Kostenloser Website-Check: Performance, SEO, Sicherheit und Barrierefreiheit in unter 60 Sekunden.'
+        )}
+        breadcrumbs={[
+          { name: 'Home', url: 'https://www.codayweb.de' },
+          { name: 'Analyzer', url: 'https://www.codayweb.de/analyzer' },
+        ]}
+        schemaData={{
+          softwareApp: {
+            name: 'Coday Website Analyzer',
+            description:
+              'Free website analysis tool for performance, SEO, security, and accessibility audits.',
+            applicationCategory: 'BusinessApplication',
+            operatingSystem: 'Web',
+            offers: { price: '0', priceCurrency: 'EUR' },
+          },
+        }}
+      />
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-4 overflow-hidden">
         {/* Background Gradients */}

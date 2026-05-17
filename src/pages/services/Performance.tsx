@@ -1,27 +1,40 @@
 import React from 'react';
 import { useTranslation, Trans } from 'react-i18next';
-import BlurText from '../../shared/ui/BlurText';
-import GradientText from '../../shared/ui/GradientText';
-import CountUp from '../../shared/ui/CountUp';
-import SpeedSimulator from '../../features/performance/SpeedSimulator';
-import LostRevenueCalc from '../../features/performance/LostRevenueCalc';
-import CoreWebVitalsChart from '../../features/performance/CoreWebVitalsChart';
+import BlurText from '@/shared/ui/BlurText';
+import GradientText from '@/shared/ui/GradientText';
+import CountUp from '@/shared/ui/CountUp';
+import SpeedSimulator from '@/features/performance/SpeedSimulator';
+import LostRevenueCalc from '@/features/performance/LostRevenueCalc';
+import CoreWebVitalsChart from '@/features/performance/CoreWebVitalsChart';
 
-import { SeoHead } from '../../shared/ui/SeoHead';
+import { SeoHead } from '@/shared/ui/SeoHead';
+import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
 
 const Performance: React.FC = () => {
   const { t } = useTranslation('services');
 
+  const performanceSchema = {
+    service: {
+      name: 'Web Performance Optimierung',
+      serviceType: 'Web Development',
+      description: t('performance_page.meta.description'),
+      provider: {
+        name: 'Coday',
+      },
+    },
+  };
+
   return (
-    <div className="bg-background-light min-h-screen">
+    <div className="bg-background-light min-h-dvh">
       <SeoHead
-        title={`${t('performance_page.hero.title_prefix')} ${t('performance_page.hero.title_suffix')} | Coday`}
-        description={t('performance_page.hero.description')}
+        title={t('performance_page.meta.title')}
+        description={t('performance_page.meta.description')}
+        schemaData={performanceSchema}
       />
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-4 overflow-hidden">
         <div className="max-w-7xl mx-auto text-center relative z-10">
-          <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
+          <span className="text-sapphire font-bold tracking-wider uppercase text-sm mb-4 block">
             {t('performance_page.hero.badge')}
           </span>
           <h1 className="font-display font-black text-5xl sm:text-7xl lg:text-8xl text-secondary mb-8 tracking-tight">
@@ -53,14 +66,18 @@ const Performance: React.FC = () => {
 
       <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-24">
         <div className="text-center mb-16">
-          <span className="text-primary font-bold uppercase tracking-wider text-sm mb-4 block">
+          <span className="text-sapphire font-bold uppercase tracking-wider text-sm mb-4 block">
             {t('performance_page.google_values.badge')}
           </span>
           <h2 className="font-display font-bold text-3xl sm:text-4xl text-secondary mb-4">
             {t('performance_page.google_values.title')}
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            <Trans i18nKey="performance_page.google_values.description" components={{ i: <i /> }} />
+            <Trans
+              t={t}
+              i18nKey="performance_page.google_values.description"
+              components={{ i: <i /> }}
+            />
           </p>
         </div>
         <CoreWebVitalsChart />
@@ -102,6 +119,11 @@ const Performance: React.FC = () => {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Relevant FAQs */}
+      <section className="py-24 bg-white">
+        <RelevantFAQs serviceId="web-development" />
       </section>
     </div>
   );

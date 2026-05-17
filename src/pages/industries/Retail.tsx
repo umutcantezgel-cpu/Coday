@@ -1,20 +1,21 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import BlurText from '../../shared/ui/BlurText';
+import BlurText from '@/shared/ui/BlurText';
 import { SeoHead } from '@/shared/ui/SeoHead';
-import GradientText from '../../shared/ui/GradientText';
+import GradientText from '@/shared/ui/GradientText';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import { IMAGES } from '@/shared/config/images';
 
-import OmnichannelStrategies from '../../features/industries/retail/OmnichannelStrategies';
-import LoyaltyLoop from '../../features/industries/retail/LoyaltyLoop';
-import PosSyncDemo from '../../features/industries/retail/PosSyncDemo';
+import OmnichannelStrategies from '@/features/industries/retail/OmnichannelStrategies';
+import LoyaltyLoop from '@/features/industries/retail/LoyaltyLoop';
+import PosSyncDemo from '@/features/industries/retail/PosSyncDemo';
+import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
 
 const Retail: React.FC = () => {
   const { t } = useTranslation('industries');
 
   return (
-    <div className="bg-background-light min-h-screen">
+    <div className="bg-background-light min-h-dvh">
       <SeoHead
         title={`${t('ecommerce-retail.hero.headline')} | Coday Retail`}
         description={t('ecommerce-retail.hero.subheadline')}
@@ -92,8 +93,11 @@ const Retail: React.FC = () => {
           <LoyaltyLoop />
         </div>
       </section>
+      <RelevantFAQs
+        serviceId={['web-development', 'seo']}
+        className="bg-gray-50 border-t border-gray-100"
+      />
     </div>
   );
 };
-
 export default Retail;

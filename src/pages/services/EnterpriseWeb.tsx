@@ -2,13 +2,18 @@ import React, { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { ArrowRight, Cpu } from '@phosphor-icons/react';
-import { LocalizedNavLink as NavLink } from '../../shared/ui/LocalizedLink';
-import { TechStackHologram } from '../../features/enterprise/TechStackHologram';
-import { Speedometer } from '../../features/enterprise/Speedometer';
-import { EdgeNetworkMap } from '../../features/enterprise/EdgeNetworkMap';
-import { ROICalculator } from '../../features/enterprise/ROICalculator';
-import { ScrollContextCTA } from '../../features/enterprise/ScrollContextCTA';
-import { SeoHead } from '../../shared/ui/SeoHead';
+import { LocalizedNavLink as NavLink } from '@/shared/ui/LocalizedLink';
+import { TechStackHologram } from '@/features/enterprise/TechStackHologram';
+import { Speedometer } from '@/features/enterprise/Speedometer';
+import { EdgeNetworkMap } from '@/features/enterprise/EdgeNetworkMap';
+import { ROICalculator } from '@/features/enterprise/ROICalculator';
+import { ScrollContextCTA } from '@/features/enterprise/ScrollContextCTA';
+import { SeoHead } from '@/shared/ui/SeoHead';
+import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
+import { ProblemSolventMatrix } from '@/features/consulting/ProblemSolventMatrix';
+import { MethodologyGraph } from '@/features/consulting/MethodologyGraph';
+import { ChartLineUp } from '@phosphor-icons/react';
+import { Link } from 'react-router-dom';
 
 const EnterpriseWeb: React.FC = () => {
   const { t } = useTranslation('services');
@@ -20,15 +25,27 @@ const EnterpriseWeb: React.FC = () => {
 
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
+  const enterpriseWebSchema = {
+    service: {
+      name: 'Enterprise Webentwicklung',
+      serviceType: 'Web Development',
+      description: t('enterprise_web_page.meta.description'),
+      provider: {
+        name: 'Coday',
+      },
+    },
+  };
+
   return (
-    <div ref={containerRef} className="bg-background-light min-h-screen overflow-hidden">
+    <div ref={containerRef} className="bg-background-light min-h-dvh overflow-hidden">
       <SeoHead
-        title="Enterprise Web Platforms | Coday"
-        description="Websites, die Märkte dominieren. High-End Webentwicklung für Marktführer. Next.js, Edge Computing, Global Scale."
+        title={t('enterprise_web_page.meta.title')}
+        description={t('enterprise_web_page.meta.description')}
+        schemaData={enterpriseWebSchema}
       />
 
       {/* HERO SECTION: The Singularity */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative h-dvh flex items-center justify-center overflow-hidden">
         {/* Abstract Background - "The Grid" */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
@@ -48,7 +65,7 @@ const EnterpriseWeb: React.FC = () => {
             <h1 className="font-display font-black text-6xl md:text-8xl lg:text-9xl tracking-tight leading-none mb-8 text-secondary">
               {t('enterprise_web_page.hero.title_prefix')}
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-600">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-sapphire to-blue-600">
                 {t('enterprise_web_page.hero.title_suffix')}
               </span>
             </h1>
@@ -66,7 +83,7 @@ const EnterpriseWeb: React.FC = () => {
                   {t('enterprise_web_page.hero.cta_primary')}
                   <ArrowRight className="ms-2 w-5 h-5 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform" />
                 </span>
-                <div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-sapphire opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </NavLink>
 
               <NavLink
@@ -137,7 +154,7 @@ const EnterpriseWeb: React.FC = () => {
       <section className="py-32 bg-slate-50 relative overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <span className="text-primary font-bold tracking-widest uppercase text-xs">
+            <span className="text-sapphire font-bold tracking-widest uppercase text-xs">
               {t('enterprise_web_page.roi_section.label')}
             </span>
             <h2 className="font-display font-black text-4xl md:text-5xl mt-2 mb-6 text-secondary">
@@ -150,6 +167,66 @@ const EnterpriseWeb: React.FC = () => {
 
           <ROICalculator />
         </div>
+      </section>
+
+      {/* --- METHODOLOGY --- */}
+      <section className="py-32 bg-slate-900 border-t border-slate-800/50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-24">
+            <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-500 mb-6">
+              {t('enterprise_web_page.methodology.title')}
+            </h2>
+            <p className="text-xl text-slate-400 max-w-2xl mx-auto">
+              {t('enterprise_web_page.methodology.subtitle')}
+            </p>
+          </div>
+          <MethodologyGraph namespace="services" prefix="enterprise_web_page.methodology" />
+        </div>
+      </section>
+
+      {/* --- MATRIX --- */}
+      <section className="py-24 bg-slate-900 border-t border-slate-800/30">
+        <div className="container mx-auto px-4">
+          <ProblemSolventMatrix namespace="services" prefix="enterprise_web_page.matrix.rows" />
+        </div>
+      </section>
+
+      {/* --- CASE STUDY TEASER --- */}
+      <section className="py-24 bg-slate-50 border-t border-slate-200/50">
+        <div className="container mx-auto px-4">
+          <div className="bg-white rounded-[2rem] p-8 md:p-16 shadow-[0_10px_40px_rgba(0,0,0,0.05)] border border-slate-100 flex flex-col md:flex-row items-center gap-12">
+            <div className="flex-1">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 mb-6 text-sm font-bold uppercase tracking-wide">
+                {t('enterprise_web_page.case_study.label')}
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                {t('enterprise_web_page.case_study.title')}
+              </h2>
+              <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+                {t('enterprise_web_page.case_study.description')}
+              </p>
+              <Link
+                to="/portfolio/ecommerce-replatforming"
+                className="inline-flex items-center gap-2 text-blue-600 font-bold hover:text-blue-700 transition-colors group"
+              >
+                Case Study ansehen
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+            <div className="flex-1 relative w-full aspect-square md:aspect-auto md:h-80 bg-slate-100 rounded-3xl overflow-hidden border border-slate-200">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 flex items-center justify-center">
+                <div className="w-32 h-32 bg-white rounded-full shadow-lg flex items-center justify-center border border-slate-100">
+                  <ChartLineUp className="w-16 h-16 text-blue-500" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Relevant FAQs */}
+      <section className="py-24 bg-white">
+        <RelevantFAQs serviceId="web-development" />
       </section>
 
       <ScrollContextCTA />

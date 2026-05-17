@@ -11,9 +11,7 @@ import {
   GlobeHemisphereWest,
 } from '@phosphor-icons/react';
 import { Link } from 'react-router-dom';
-import { OptimizedIcon } from '../../shared/ui/OptimizedIcon';
-// import { cn } from '../../shared/lib/utils';
-// import { baseButtonStyles, buttonVariants, buttonSizes } from '../../shared/ui/ButtonStyles';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 
 type WizardStep = 'budget' | 'type' | 'result';
 type BudgetOption = 'low' | 'mid' | 'high';
@@ -23,22 +21,19 @@ export const TenderWizard: React.FC = () => {
   const { t } = useTranslation('public-sector');
   const [step, setStep] = useState<WizardStep>('budget');
   const [budget, setBudget] = useState<BudgetOption | null>(null);
-  const [_projectType, setProjectType] = useState<TypeOption | null>(null);
 
   const handleBudgetSelect = (option: BudgetOption) => {
     setBudget(option);
     setStep('type');
   };
 
-  const handleTypeSelect = (option: TypeOption) => {
-    setProjectType(option);
+  const handleTypeSelect = (_option: TypeOption) => {
     setStep('result');
   };
 
   const resetWizard = () => {
     setStep('budget');
     setBudget(null);
-    setProjectType(null);
   };
 
   const getResultKey = () => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { FilePdf, DownloadSimple, CheckSquareOffset, ArrowRight } from '@phosphor-icons/react';
-import { OptimizedIcon } from '../../shared/ui/OptimizedIcon';
+import { FilePdf, DownloadSimple, CheckSquareOffset } from '@phosphor-icons/react';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { motion } from 'motion/react';
 
 export const DownloadArea: React.FC = () => {

@@ -1,15 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useTranslation } from 'react-i18next';
-import {
-  CheckCircle,
-  ArrowRight,
-  Brain,
-  Lightning,
-  CodeBlock,
-  CaretRight,
-} from '@phosphor-icons/react';
-import { OptimizedIcon } from '../../shared/ui/OptimizedIcon';
+import { CheckCircle, ArrowRight, Brain, Lightning, CodeBlock } from '@phosphor-icons/react';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 
 type QuestionKey = 'q1' | 'q2' | 'q3' | 'q4';
 type OptionKey = 'a' | 'b' | 'c';
@@ -39,7 +32,7 @@ export const ConsultingReadiness: React.FC = () => {
   const [finished, setFinished] = useState(false);
 
   const handleAnswer = (option: OptionKey) => {
-    const currentQ = QUESTIONS[currentStep].id;
+    const currentQ = QUESTIONS[currentStep]!.id;
     setAnswers((prev) => ({ ...prev, [currentQ]: option }));
 
     if (currentStep < QUESTIONS.length - 1) {
@@ -115,7 +108,7 @@ export const ConsultingReadiness: React.FC = () => {
               </div>
 
               <h3 className="text-2xl md:text-3xl font-bold mb-10 text-center">
-                {t(`diagnostic.questions.${QUESTIONS[currentStep].id}.text`)}
+                {t(`diagnostic.questions.${QUESTIONS[currentStep]!.id}.text`)}
               </h3>
 
               <div className="grid gap-4 md:grid-cols-3">
@@ -131,7 +124,7 @@ export const ConsultingReadiness: React.FC = () => {
                       </span>
                     </div>
                     <p className="text-slate-300 font-medium leading-snug">
-                      {t(`diagnostic.questions.${QUESTIONS[currentStep].id}.options.${opt}`)}
+                      {t(`diagnostic.questions.${QUESTIONS[currentStep]!.id}.options.${opt}`)}
                     </p>
                   </button>
                 ))}

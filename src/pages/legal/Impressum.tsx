@@ -1,5 +1,5 @@
 import React from 'react';
-import LegalLayoutV2 from '../../widgets/layout/LegalLayoutV2';
+import LegalLayoutV2 from '@/widgets/layout/LegalLayoutV2';
 import {
   LegalInfoCard,
   LegalAlertBox,

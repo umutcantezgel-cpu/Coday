@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { CircularGauge } from './CircularGauge';
+import { CircularGauge } from '@/features/analyzer/ui/CircularGauge';
 import { WarningCircle, ArrowRight } from '@phosphor-icons/react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { useTranslation } from 'react-i18next';

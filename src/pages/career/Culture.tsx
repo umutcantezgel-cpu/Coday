@@ -1,10 +1,10 @@
 import React from 'react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { CheckCircle } from '@phosphor-icons/react';
-import BlurText from '../../shared/ui/BlurText';
-import GradientText from '../../shared/ui/GradientText';
-import ValuesDeck from '../../features/culture/ValuesDeck';
-import TeamGallery from '../../features/culture/TeamGallery';
+import BlurText from '@/shared/ui/BlurText';
+import GradientText from '@/shared/ui/GradientText';
+import ValuesDeck from '@/features/culture/ValuesDeck';
+import TeamGallery from '@/features/culture/TeamGallery';
 import { useTranslation } from 'react-i18next';
 import { SeoHead } from '@/shared/ui/SeoHead';
 
@@ -13,7 +13,7 @@ const Culture: React.FC = () => {
   const values = t('culture.values.items', { returnObjects: true }) as string[];
 
   return (
-    <div className="bg-background-light min-h-screen">
+    <div className="bg-background-light min-h-dvh">
       <SeoHead
         title={`${t('culture.hero.title_start')} ${t('culture.hero.title_gradient')} | Coday Culture`}
         description={t('culture.hero.desc')}
@@ -48,7 +48,7 @@ const Culture: React.FC = () => {
 
       {/* Values Section - NEW HIGH COMPLEXITY */}
       <section className="py-24 bg-surface-dark overflow-hidden relative">
-        <div className="absolute inset-0 opacity-10 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
+        <div className="absolute inset-0 opacity-10 bg-[url('/noise.svg')]"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">

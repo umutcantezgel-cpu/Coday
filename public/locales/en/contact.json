@@ -55,6 +55,12 @@
     "whatsapp": {
       "label": "WhatsApp",
       "message": "Hello,%20I%20am%20interested%20in%20your%20services."
+    },
+    "hours": {
+      "label": "Working Hours"
+    },
+    "socials": {
+      "label": "Follow Us"
     }
   },
   "trust": {

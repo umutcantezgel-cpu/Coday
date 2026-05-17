@@ -2,22 +2,15 @@
  * Resource Route: /api/ai-proxy
  * Proxies requests to the Gemini API, keeping the key server-side.
  */
+import { z } from 'zod';
+import { createRateLimiter } from '@/shared/lib/rate-limiter';
 
-// Simple in-memory rate limiter
-const rateLimit = new Map<string, { count: number; resetAt: number }>();
-const RATE_LIMIT_MAX = 10;
-const RATE_LIMIT_WINDOW = 60_000;
+const limiter = createRateLimiter({ max: 10, windowMs: 60_000 });
 
-function isRateLimited(ip: string): boolean {
-  const now = Date.now();
-  const entry = rateLimit.get(ip);
-  if (!entry || now > entry.resetAt) {
-    rateLimit.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW });
-    return false;
-  }
-  entry.count++;
-  return entry.count > RATE_LIMIT_MAX;
-}
+const ProxySchema = z.object({
+  messages: z.array(z.unknown()).min(1),
+  model: z.string().max(100).optional(),
+});
 
 export async function action({ request }: { request: Request }) {
   if (request.method !== 'POST') {
@@ -29,7 +22,7 @@ export async function action({ request }: { request: Request }) {
 
   const clientIP = request.headers.get('x-forwarded-for')?.split(',')[0] || 'unknown';
 
-  if (isRateLimited(clientIP)) {
+  if (limiter.isRateLimited(clientIP)) {
     return new Response(JSON.stringify({ error: 'Too many requests. Please try again later.' }), {
       status: 429,
       headers: { 'Content-Type': 'application/json' },
@@ -37,7 +30,20 @@ export async function action({ request }: { request: Request }) {
   }
 
   try {
-    const { messages, model } = await request.json();
+    const rawBody = await request.json();
+    const parsed = ProxySchema.safeParse(rawBody);
+
+    if (!parsed.success) {
+      return new Response(
+        JSON.stringify({
+          error: 'Invalid request body',
+          details: parsed.error.flatten().fieldErrors,
+        }),
+        { status: 400, headers: { 'Content-Type': 'application/json' } }
+      );
+    }
+
+    const { messages, model } = parsed.data;
     const GEMINI_API_KEY = process.env.GEMINI_API_KEY || process.env.VITE_GEMINI_API_KEY;
 
     if (!GEMINI_API_KEY) {

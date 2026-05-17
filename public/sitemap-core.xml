@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.codayweb.de/de</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/en</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/de/services</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/services" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/services" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/services" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/en/services</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/services" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/services" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/services" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/de/work</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/work" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/work" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/work" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/en/work</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/work" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/work" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/work" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/de/process</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/process" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/process" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/process" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/en/process</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/process" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/process" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/process" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/de/contact</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/contact" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/contact" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/contact" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/en/contact</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/contact" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/contact" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/contact" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/de/calculator</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/calculator" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/calculator" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/calculator" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/en/calculator</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/calculator" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/calculator" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/calculator" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/de/booking</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/booking" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/booking" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/booking" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/en/booking</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/booking" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/booking" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/booking" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/de/packages</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/packages" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/packages" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/packages" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/en/packages</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/packages" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/packages" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/packages" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/de/analyzer</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/analyzer" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/analyzer" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/analyzer" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/en/analyzer</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/analyzer" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/analyzer" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/analyzer" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/de/knowledge/academy</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/knowledge/academy" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/knowledge/academy" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/knowledge/academy" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/en/knowledge/academy</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/knowledge/academy" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/knowledge/academy" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/knowledge/academy" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/de/knowledge/blog</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/knowledge/blog" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/knowledge/blog" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/knowledge/blog" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/en/knowledge/blog</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/knowledge/blog" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/knowledge/blog" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/knowledge/blog" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/de/knowledge/newsletter</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/knowledge/newsletter" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/knowledge/newsletter" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/knowledge/newsletter" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/en/knowledge/newsletter</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/knowledge/newsletter" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/knowledge/newsletter" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/knowledge/newsletter" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/de/knowledge/whitepapers</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/knowledge/whitepapers" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/knowledge/whitepapers" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/knowledge/whitepapers" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/en/knowledge/whitepapers</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/knowledge/whitepapers" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/knowledge/whitepapers" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/knowledge/whitepapers" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/de/career</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/career" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/career" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/career" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/en/career</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/career" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/career" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/career" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/de/career/jobs</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/career/jobs" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/career/jobs" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/career/jobs" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/en/career/jobs</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/career/jobs" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/career/jobs" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/career/jobs" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/de/career/culture</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/career/culture" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/career/culture" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/career/culture" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/en/career/culture</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/career/culture" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/career/culture" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/career/culture" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/de/career/benefits</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/career/benefits" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/career/benefits" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/career/benefits" />
+  </url>
+  <url>
+    <loc>https://www.codayweb.de/en/career/benefits</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/career/benefits" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.codayweb.de/en/career/benefits" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.codayweb.de/de/career/benefits" />
+  </url>
+</urlset>

@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useCookieStore } from '@/shared/lib/cookieStore';
 import { X } from '@phosphor-icons/react';
-import { OptimizedIcon } from '../../shared/ui/OptimizedIcon';
-import { useFocusTrap } from '../../shared/hooks/useFocusTrap';
+import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
+import { useFocusTrap } from '@/shared/hooks/useFocusTrap';
 
 interface CookieSettingsModalProps {
   isOpen: boolean;
@@ -25,7 +25,15 @@ const CookieSettingsModal: React.FC<CookieSettingsModalProps> = ({ isOpen, onClo
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setLocalPreferences(preferences);
     }
-  }, [isOpen, preferences]);
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        onClose();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, preferences, onClose]);
 
   const handleSave = () => {
     savePreferences(localPreferences);
@@ -38,17 +46,21 @@ const CookieSettingsModal: React.FC<CookieSettingsModalProps> = ({ isOpen, onClo
     <div className="fixed inset-0 z-[105] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
       <div
         ref={containerRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="cookie-settings-title"
         className="bg-white rounded-2xl shadow-xl w-full max-w-lg overflow-hidden animate-in fade-in zoom-in duration-200"
       >
         <div className="flex items-center justify-between p-6 border-b border-gray-100">
-          <h2 className="text-xl font-bold text-gray-900">
+          <h2 id="cookie-settings-title" className="text-xl font-bold text-gray-900">
             {t('cookie.settings.title', 'Cookie Einstellungen')}
           </h2>
           <button
             onClick={onClose}
-            className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+            className="p-2 hover:bg-gray-100 rounded-full transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            aria-label={t('common.close', 'Schließen') || 'Close'}
           >
-            <OptimizedIcon icon={X} className="text-gray-500" />
+            <OptimizedIcon icon={X} className="text-gray-500" aria-hidden="true" />
           </button>
         </div>
 
@@ -61,13 +73,17 @@ const CookieSettingsModal: React.FC<CookieSettingsModalProps> = ({ isOpen, onClo
             {/* Essential */}
             <div className="flex items-start gap-4">
               <input
+                id="cookie-essential"
                 type="checkbox"
                 checked={localPreferences.necessary}
                 disabled
                 className="mt-1 h-4 w-4 text-primary border-gray-300 rounded focus:ring-primary"
               />
               <div>
-                <label className="block text-sm font-medium text-gray-900">
+                <label
+                  htmlFor="cookie-essential"
+                  className="block text-sm font-medium text-gray-900"
+                >
                   {t('cookie.essential.title', 'Essenziell')}
                 </label>
                 <p className="text-xs text-gray-500">
@@ -79,6 +95,7 @@ const CookieSettingsModal: React.FC<CookieSettingsModalProps> = ({ isOpen, onClo
             {/* Analytics */}
             <div className="flex items-start gap-4">
               <input
+                id="cookie-analytics"
                 type="checkbox"
                 checked={localPreferences.analytics}
                 onChange={(e) =>
@@ -87,7 +104,10 @@ const CookieSettingsModal: React.FC<CookieSettingsModalProps> = ({ isOpen, onClo
                 className="mt-1 h-4 w-4 text-primary border-gray-300 rounded focus:ring-primary"
               />
               <div>
-                <label className="block text-sm font-medium text-gray-900">
+                <label
+                  htmlFor="cookie-analytics"
+                  className="block text-sm font-medium text-gray-900"
+                >
                   {t('cookie.analytics.title', 'Analyse')}
                 </label>
                 <p className="text-xs text-gray-500">
@@ -99,6 +119,7 @@ const CookieSettingsModal: React.FC<CookieSettingsModalProps> = ({ isOpen, onClo
             {/* Marketing */}
             <div className="flex items-start gap-4">
               <input
+                id="cookie-marketing"
                 type="checkbox"
                 checked={localPreferences.marketing}
                 onChange={(e) =>
@@ -107,7 +128,10 @@ const CookieSettingsModal: React.FC<CookieSettingsModalProps> = ({ isOpen, onClo
                 className="mt-1 h-4 w-4 text-primary border-gray-300 rounded focus:ring-primary"
               />
               <div>
-                <label className="block text-sm font-medium text-gray-900">
+                <label
+                  htmlFor="cookie-marketing"
+                  className="block text-sm font-medium text-gray-900"
+                >
                   {t('cookie.marketing.title', 'Marketing')}
                 </label>
                 <p className="text-xs text-gray-500">

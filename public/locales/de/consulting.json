@@ -1,7 +1,7 @@
 {
   "hero": {
     "badge": "Coday Strategy Lab",
-    "title_start": "Software ist kein Code.",
+    "title_start": "IT Consulting Agentur",
     "title_end": "Software ist Vermögen.",
     "subtitle": "Wir transformieren Ihre vagen Anforderungen in eine glasklare Architektur. Bevor die erste Zeile Code geschrieben wird.",
     "cta_primary": "Termin buchen",
@@ -112,6 +112,11 @@
         "good": "Investment in Value"
       }
     }
+  },
+  "case_study": {
+    "label": "Consulting in Action",
+    "title": "Von 0 auf Millionenbewertung.",
+    "description": "Wie wir durch präzise IT-Strategie und skalierbare Architektur das technische Fundament für einen erfolgreichen Exit gelegt haben."
   },
   "booking": {
     "title": "Genug Theorie.",

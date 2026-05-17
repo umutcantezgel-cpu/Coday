@@ -41,7 +41,7 @@ const MenuEngineeringDemo: React.FC = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0 }}
-                className="bg-[#fcf8e3] text-slate-800 p-8 shadow-xl w-64 h-80 rotate-1 font-serif relative"
+                className="bg-bg-accent text-slate-800 p-8 shadow-xl w-64 h-80 rotate-1 font-serif relative"
               >
                 <div className="text-center font-bold text-xl border-b border-slate-800 pb-2 mb-4">
                   {t('gastronomie-hotellerie.features.menu_engineering.paper_view.title')}

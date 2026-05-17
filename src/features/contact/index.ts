@@ -1,1 +1,1 @@
-export { default as ApplicationWizard } from './ApplicationWizard';
+export { default as ApplicationWizard } from '@/features/contact/ApplicationWizard';

@@ -1,7 +1,8 @@
 {
   "hero": {
-    "title": "Frequently Asked Questions",
-    "subtitle": "Everything you need to know about our process, pricing, and philosophy."
+    "title": "Agency FAQ | Questions on Web Design & SEO - Coday",
+    "subtitle": "Everything you need to know about our process, pricing, and philosophy.",
+    "description": "Frequently asked questions about our web design projects, SEO strategies, Next.js development, and fixed pricing. Find all your answers here."
   },
   "search": {
     "placeholder": "Search for efficient solutions...",

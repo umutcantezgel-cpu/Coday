@@ -19,7 +19,7 @@
       "traffic": {
         "duration": "16:15",
         "tag": "TRAFFIC",
-        "title": "So kommen Besucher auf deine Seite"
+        "title": "So kommen Besucher auf Ihre Seite"
       },
       "visitors_customers": {
         "duration": "18:20",
@@ -45,15 +45,15 @@
     "title": "Blog & Insights"
   },
   "newsletter": {
-    "emailPlaceholder": "Deine beste E-Mail Adresse",
-    "privacy": "Wir respektieren deine Privatsphäre. Abmeldung jederzeit möglich.",
+    "emailPlaceholder": "Ihre beste E-Mail Adresse",
+    "privacy": "Wir respektieren Ihre Privatsphäre. Abmeldung jederzeit möglich.",
     "subscribe": "Anmelden",
-    "subtitle": "Tritt 10.000+ Gründern bei und erhalte wöchentlich die besten Strategien für digitales Wachstum direkt in dein Postfach. Kein Spam. Nur Mehrwert.",
+    "subtitle": "Treten Sie 10.000+ Gründern bei und erhalten Sie wöchentlich die besten Strategien für digitales Wachstum direkt in Ihr Postfach. Kein Spam. Nur Mehrwert.",
     "title": "Der Insider Newsletter"
   },
   "whitepapers": {
     "download": "Kostenlos herunterladen",
-    "subtitle": "Kostenlose Anleitungen, Checklisten und Vorlagen für deinen Erfolg.",
+    "subtitle": "Kostenlose Anleitungen, Checklisten und Vorlagen für Ihren Erfolg.",
     "title": "Ratgeber & Ressourcen"
   }
 }

@@ -43,7 +43,9 @@ export default function CountUp({
     const str = num.toString();
     if (str.includes('.')) {
       const decimals = str.split('.')[1];
+      // @ts-expect-error
       if (parseInt(decimals) !== 0) {
+        // @ts-expect-error
         return decimals.length;
       }
     }

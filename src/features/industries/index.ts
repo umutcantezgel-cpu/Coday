@@ -1,9 +1,9 @@
 // Industries feature — barrel exports
 // Layouts
-export * from './layouts/IndustryLayout';
+export * from '@/features/industries/layouts/IndustryLayout';
 
 // UI
-export * from './ui/AppointmentFlow';
-export * from './ui/ProductShowcase';
-export * from './ui/ROICalculator';
-export * from './ui/ReservationDemo';
+export * from '@/features/industries/ui/AppointmentFlow';
+export * from '@/features/industries/ui/ProductShowcase';
+export * from '@/features/industries/ui/ROICalculator';
+export * from '@/features/industries/ui/ReservationDemo';

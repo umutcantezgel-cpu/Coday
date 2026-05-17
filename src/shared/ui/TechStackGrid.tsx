@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { staggerContainer, scaleUpVariants, STAGGER, TRANSITION } from '@/shared/lib/motion';
-import { OptimizedImage } from './OptimizedImage';
+import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 
 interface TechItem {
   name: string;

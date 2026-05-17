@@ -127,12 +127,64 @@
   "page": {
     "headline": "Three Packages. <0>Zero Surprises.</0>",
     "subheadline": "Choose the package that fits your goals. All prices are fixed – no hidden costs.",
-    "title": "Transparent Pricing"
+    "title": "Web Design Pricing & SEO Costs | Packages - Coday",
+    "description": "Transparent web design pricing and SEO packages. We offer a 100% fixed price guarantee for high-end web development with no hidden costs."
   },
   "custom": {
     "title": "Bigger Project?",
     "description": "For more complex requirements – e.g. over 30 pages, custom features, or special integrations – we'll gladly create a tailored quote for you.",
     "cta": "Request Custom Quote",
     "badge": "Custom"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "question": "Why fixed pricing?",
+        "answer": "We believe in transparency. Our fixed prices give you full planning security – no hidden costs, no subsequent demands. You know exactly what you get and what it costs."
+      },
+      {
+        "question": "What if I need more?",
+        "answer": "Our packages cover most requirements. If you need additional pages, features, or special integrations, we can calculate these transparently and fairly as an add-on or set up a custom project."
+      },
+      {
+        "question": "How long does the implementation take?",
+        "answer": "Depending on the package, the delivery time is between 2 and 4 weeks. We work efficiently with proven playbooks so your new website can go live quickly, without compromising on quality."
+      }
+    ]
+  },
+  "retainers": {
+    "title": "Support & Growth Retainer",
+    "description": "Sustainable growth and continuous optimization after go-live.",
+    "basic": {
+      "name": "Basic",
+      "price": "250",
+      "features": [
+        "Monthly Analytics Review",
+        "2h Support Time",
+        "Security Updates",
+        "Uptime Monitoring"
+      ]
+    },
+    "growth": {
+      "name": "Growth",
+      "price": "500",
+      "features": [
+        "Everything in Basic",
+        "2 Content Updates per month",
+        "1 A/B Experiment",
+        "5h Support Time"
+      ]
+    },
+    "partnership": {
+      "name": "Partnership",
+      "price": "1,000",
+      "features": [
+        "Everything in Growth",
+        "Priority Support (24h SLA)",
+        "Quarterly CRO Review",
+        "10h Dev Time"
+      ]
+    }
   }
 }

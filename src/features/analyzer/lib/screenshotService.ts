@@ -5,9 +5,6 @@
  * For client-side, we use html2canvas or an external API
  */
 
-// Screenshot API configuration (using external service)
-// const SCREENSHOT_API = 'https://api.screenshotmachine.com';
-
 interface ScreenshotOptions {
   width?: number;
   height?: number;
@@ -23,13 +20,6 @@ export async function captureScreenshot(
   url: string,
   _options: ScreenshotOptions = {}
 ): Promise<string | null> {
-  // const {
-  //    width = 1280,
-  //    height = 800,
-  //    fullPage = false,
-  //    format = 'png',
-  // } = options;
-
   try {
     // Option 1: Use Google PageSpeed Insights screenshot (free)
     const pagespeedUrl = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${encodeURIComponent(url)}&strategy=desktop&category=performance`;

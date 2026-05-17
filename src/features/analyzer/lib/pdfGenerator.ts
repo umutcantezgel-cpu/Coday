@@ -3,7 +3,7 @@
  * Generates downloadable PDF reports from analysis results
  */
 
-import type { AnalysisResult } from '../model/types';
+import type { AnalysisResult } from '@/features/analyzer/model/types';
 import type { TFunction } from 'i18next';
 
 /**

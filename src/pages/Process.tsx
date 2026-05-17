@@ -1,15 +1,16 @@
 import React from 'react';
-import BlurText from '../shared/ui/BlurText';
-import GradientText from '../shared/ui/GradientText';
-import ProjectTimelineAnimation from '../features/process/ProjectTimelineAnimation';
-import TransparencyGrid from '../features/process/TransparencyGrid';
+import BlurText from '@/shared/ui/BlurText';
+import GradientText from '@/shared/ui/GradientText';
+import ProjectTimelineAnimation from '@/features/process/ProjectTimelineAnimation';
+import TransparencyGrid from '@/features/process/TransparencyGrid';
+import { GlobalCTA } from '@/shared/ui';
 
 import { useTranslation } from 'react-i18next';
 
 const Process: React.FC = () => {
   const { t } = useTranslation('process');
   return (
-    <div className="bg-background-light min-h-screen">
+    <div className="bg-background-light min-h-dvh">
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-4 text-center">
         <div className="max-w-4xl mx-auto relative z-10">
@@ -73,6 +74,8 @@ const Process: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <GlobalCTA />
     </div>
   );
 };

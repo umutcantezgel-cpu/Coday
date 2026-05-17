@@ -1,13 +1,57 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "installCommand": "npm install --legacy-peer-deps",
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "(?!www\\.)codayweb\\.de"
+        }
+      ],
+      "destination": "https://www.codayweb.de/$1",
+      "permanent": true
+    }
+  ],
   "headers": [
+    {
+      "source": "/llms.txt",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, s-maxage=3600, stale-while-revalidate=86400"
+        },
+        {
+          "key": "Vary",
+          "value": "Accept"
+        }
+      ]
+    },
+    {
+      "source": "/llms-full.txt",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, s-maxage=86400, stale-while-revalidate=604800"
+        },
+        {
+          "key": "Vary",
+          "value": "Accept"
+        }
+      ]
+    },
     {
       "source": "/(de|en)/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
           "value": "public, s-maxage=3600, stale-while-revalidate=86400"
+        },
+        {
+          "key": "Vary",
+          "value": "Accept, User-Agent"
         }
       ]
     },
@@ -17,6 +61,10 @@
         {
           "key": "Cache-Control",
           "value": "public, s-maxage=3600, stale-while-revalidate=86400"
+        },
+        {
+          "key": "Vary",
+          "value": "Accept, User-Agent"
         }
       ]
     },
@@ -81,7 +129,15 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://maps.googleapis.com https://*.sentry.io; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://*.supabase.co https://generativelanguage.googleapis.com https://api.resend.com https://www.google-analytics.com https://*.sentry.io https://*.googletagmanager.com; worker-src 'self' blob:; frame-src 'self' https://calendly.com https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self';"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://maps.googleapis.com https://*.sentry.io; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://*.supabase.co https://generativelanguage.googleapis.com https://api.resend.com https://www.google-analytics.com https://*.sentry.io https://*.googletagmanager.com; worker-src 'self' blob:; frame-src 'self' https://calendly.com https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self';"
+        },
+        {
+          "key": "Cross-Origin-Opener-Policy",
+          "value": "same-origin"
+        },
+        {
+          "key": "Cross-Origin-Resource-Policy",
+          "value": "same-origin"
         }
       ]
     }

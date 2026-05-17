@@ -27,7 +27,11 @@ export const EdgeNetworkMap: React.FC = () => {
       {/* Simulated Map Container - Using simple dots for abstract map to avoid heavy SVG assets */}
       <div className="relative w-full h-full max-w-4xl max-h-[500px]">
         {/* World Map Outline (Simplified/Abstract) */}
-        <svg className="w-full h-full absolute inset-0 opacity-10" viewBox="0 0 200 100">
+        <svg
+          className="w-full h-full absolute inset-0 opacity-10"
+          viewBox="0 0 200 100"
+          aria-hidden="true"
+        >
           <path
             d="M20,30 Q50,10 80,30 T150,30"
             fill="none"
@@ -60,7 +64,7 @@ export const EdgeNetworkMap: React.FC = () => {
         ))}
 
         {/* Connection Lines (Frankfurt Hub) */}
-        <svg className="absolute inset-0 w-full h-full pointer-events-none">
+        <svg className="absolute inset-0 w-full h-full pointer-events-none" aria-hidden="true">
           {locations.map((loc, i) => {
             if (loc.name === 'Frankfurt') return null;
             const frankfurt = locations.find((l) => l.name === 'Frankfurt')!;

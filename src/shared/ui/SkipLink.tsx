@@ -17,7 +17,7 @@ export const SkipLink: React.FC = () => {
         focus:fixed focus:top-4 focus:left-4 focus:z-[9999]
         focus:px-4 focus:py-2 focus:rounded-lg
         focus:bg-white focus:text-gray-900 focus:shadow-lg focus:ring-2 focus:ring-primary focus:ring-offset-2
-        focus:outline-none
+        
         font-medium text-sm
         transition-all
       "

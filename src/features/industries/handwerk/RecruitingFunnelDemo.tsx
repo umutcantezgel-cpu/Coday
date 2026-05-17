@@ -131,7 +131,7 @@ const RecruitingFunnelDemo: React.FC = () => {
               <div className="w-[280px] h-[550px] bg-slate-900 rounded-[2.5rem] border-[8px] border-slate-900 shadow-2xl relative overflow-hidden">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-black rounded-b-xl z-20"></div>
                 <div className="w-full h-full bg-gray-50 flex items-center justify-center p-4">
-                  {steps[step].visual}
+                  {steps[step]!.visual}
                 </div>
               </div>
             </motion.div>
