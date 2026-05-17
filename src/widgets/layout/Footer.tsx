@@ -119,6 +119,22 @@ export const Footer: React.FC = () => {
                   {t('nav.main.partnerschaft', { defaultValue: 'Partner-Programm' })}
                 </NavLink>
               </li>
+              <li>
+                <NavLink
+                  to="/calculator"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors"
+                >
+                  {t('nav.resources.calculator', { defaultValue: 'Preis-Rechner' })}
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/career"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors"
+                >
+                  {t('nav.career.label', { defaultValue: 'Karriere' })}
+                </NavLink>
+              </li>
             </ul>
           </nav>
 
@@ -158,6 +174,38 @@ export const Footer: React.FC = () => {
                   className="text-sm text-gray-300 hover:text-primary transition-colors"
                 >
                   {t('nav.services.ecommerce.label', { defaultValue: 'E-Commerce' })}
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/services/web-development/api-integrations"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors"
+                >
+                  {t('nav.services.api.label', { defaultValue: 'API-Integrationen' })}
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/services/web-development/full-stack-entwicklung"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors"
+                >
+                  {t('nav.services.fullstack.label', { defaultValue: 'Full-Stack Entwicklung' })}
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/oeffentliche-auftraege"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors"
+                >
+                  {t('nav.industries.public', { defaultValue: 'Öffentliche Aufträge' })}
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/services/industries/startups-tech"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors"
+                >
+                  {t('nav.industries.tech', { defaultValue: 'Tech Startups' })}
                 </NavLink>
               </li>
             </ul>

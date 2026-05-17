@@ -45,6 +45,9 @@ export const SeoHead: React.FC<SeoHeadProps> = ({
   const { i18n } = useTranslation();
   const currentLang = i18n.language;
 
+  // Global override: Always noindex English pages to save crawl budget
+  const effectiveNoIndex = noIndex || currentLang === 'en';
+
   // Helper to get clean path without language prefix
   const getPathWithoutLang = (path: string) => {
     const segments = path.split('/').filter(Boolean);
@@ -145,7 +148,7 @@ export const SeoHead: React.FC<SeoHeadProps> = ({
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={image} />
 
-        {noIndex && <meta name="robots" content="noindex, follow" />}
+        {effectiveNoIndex && <meta name="robots" content="noindex, follow" />}
       </Helmet>
       <JsonLd
         pageUrl={canonicalUrl}
