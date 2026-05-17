@@ -8,7 +8,6 @@ const NextJsMigration: React.FC = () => {
       <SeoHead
         title="Next.js Migration & Relaunch | High-Performance von Coday"
         description="Wechseln Sie zu Next.js für unübertroffene Geschwindigkeit, bessere SEO und zukunftssichere Architektur. Ihr Experte für Next.js Migrationen."
-        noIndex={true}
         pageType="service"
       />
 

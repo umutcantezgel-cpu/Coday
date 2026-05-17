@@ -12,7 +12,6 @@ const LocalWetzlar: React.FC = () => {
       <SeoHead
         title="Webdesign Wetzlar | High-Performance Websites von Coday"
         description="Premium Webdesign und Entwicklung in Wetzlar. Wir bauen Websites, die verkaufen. Sichern Sie sich jetzt Ihr kostenloses Audit."
-        noIndex={true}
         pageType="service"
       />
 
