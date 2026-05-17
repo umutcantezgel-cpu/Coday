@@ -227,11 +227,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {/* Global Styles - Standard blocking load to prevent CLS */}
         <link rel="stylesheet" href={styles} />
 
-        <link rel="icon" href="/favicon.ico" sizes="48x48" />
-        <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.png" type="image/png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.webmanifest" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5227FF" />
         <meta name="theme-color" content="#5227FF" />
       </head>
       <body>
