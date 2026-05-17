@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 @config "../tailwind.config.js";
+@custom-variant dark (&:is(.NEVER_ACTIVE_DARK_MODE *));
 
 @theme {
   /* ═══ TIER 1: PRIMITIVE COLORS ═══ */
@@ -218,63 +219,7 @@
   --text-tiny: clamp(0.75rem, 0.2vw + 0.7rem, 0.875rem);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg-primary: var(--color-secondary-950);
-    --color-bg-secondary: var(--color-secondary-900);
-    --color-bg-tertiary: var(--color-secondary-800);
-    --color-bg-inverse: var(--color-neutral-50);
-    --color-bg-accent: var(--color-primary-900);
-    --color-bg-muted: var(--color-secondary-800);
-
-    --color-text-primary: var(--color-neutral-50);
-    --color-text-secondary: var(--color-neutral-300);
-    --color-text-tertiary: var(--color-neutral-400);
-    --color-text-inverse: var(--color-secondary-900);
-    --color-text-link: var(--color-primary-400);
-    --color-text-accent: var(--color-accent-400);
-
-    --color-border-default: var(--color-secondary-800);
-    --color-border-strong: var(--color-secondary-700);
-    --color-border-subtle: var(--color-secondary-900);
-
-    --color-button-primary-bg: var(--color-primary-600);
-    --color-button-primary-hover: var(--color-primary-500);
-
-    --color-primary: var(--color-primary-400);
-    --color-secondary: var(--color-neutral-50);
-
-    --shadow-glow: 0 0 20px rgba(45, 212, 191, 0.2);
-  }
-}
-
-[data-theme='dark'] {
-  --color-bg-primary: var(--color-secondary-950);
-  --color-bg-secondary: var(--color-secondary-900);
-  --color-bg-tertiary: var(--color-secondary-800);
-  --color-bg-inverse: var(--color-neutral-50);
-  --color-bg-accent: var(--color-primary-900);
-  --color-bg-muted: var(--color-secondary-800);
-
-  --color-text-primary: var(--color-neutral-50);
-  --color-text-secondary: var(--color-neutral-300);
-  --color-text-tertiary: var(--color-neutral-400);
-  --color-text-inverse: var(--color-secondary-900);
-  --color-text-link: var(--color-primary-400);
-  --color-text-accent: var(--color-accent-400);
-
-  --color-border-default: var(--color-secondary-800);
-  --color-border-strong: var(--color-secondary-700);
-  --color-border-subtle: var(--color-secondary-900);
-
-  --color-button-primary-bg: var(--color-primary-600);
-  --color-button-primary-hover: var(--color-primary-500);
-
-  --color-primary: var(--color-primary-400);
-  --color-secondary: var(--color-neutral-50);
-
-  --shadow-glow: 0 0 20px rgba(45, 212, 191, 0.2);
-}
+/* Dark mode explicitly removed to force light mode only */
 
 @layer utilities {
   .text-gradient {
