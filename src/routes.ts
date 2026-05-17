@@ -43,6 +43,12 @@ export default [
       // Main Service Pages
       route('services/enterprise-web', 'pages/services/EnterpriseWeb.tsx'),
 
+      // Alias for Soft 404 fix
+      route('services/development/web-development', 'pages/services/WebDevelopment.tsx', {
+        id: 'alias-web-dev',
+      }),
+      route('services/seo/local-seo', 'pages/services/Seo.tsx', { id: 'alias-local-seo' }),
+
       // Web Design Sub-Services
       route('services/web-design/ui-ux', 'pages/services/design/UiUx.tsx'),
       route('services/web-design/brand-identity', 'pages/services/design/BrandIdentity.tsx'),
@@ -60,6 +66,9 @@ export default [
 
       // Local SEO Programmatic Routes
       route('webagentur-:city', 'pages/local/CityPage.tsx'),
+
+      // AI Hub (Alias for Soft 404 fix)
+      route('ai', 'pages/Analyzer.tsx', { id: 'alias-ai-hub' }),
 
       // AI Cost Breakdown Routes
       route('ai/kosten/:branche', 'pages/ai/AiCostPage.tsx'),
@@ -122,12 +131,19 @@ export default [
 
       // Paid Media Landing Pages (noIndex)
       route('angebot-wetzlar-webdesign', 'pages/landingpages/LocalWetzlar.tsx'),
+      route('landingpages/local-wetzlar', 'pages/landingpages/LocalWetzlar.tsx', {
+        id: 'alias-lp-wetzlar',
+      }),
       route('next-js-migration', 'pages/landingpages/NextJsMigration.tsx'),
+      route('landingpages/nextjs-migration', 'pages/landingpages/NextJsMigration.tsx', {
+        id: 'alias-lp-nextjs',
+      }),
 
       // Knowledge Routes
       route('knowledge/academy', 'pages/knowledge/Academy.tsx'),
       route('academy', 'pages/knowledge/Academy.tsx', { id: 'academy-root' }),
       route('knowledge/blog', 'pages/knowledge/Blog.tsx'),
+      route('blog', 'pages/knowledge/Blog.tsx', { id: 'alias-blog' }),
       route('knowledge/blog/:slug', 'pages/knowledge/BlogPost.tsx'),
       route('knowledge/newsletter', 'pages/knowledge/Newsletter.tsx'),
       route('knowledge/whitepapers', 'pages/knowledge/Whitepapers.tsx'),
