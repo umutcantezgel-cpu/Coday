@@ -6,7 +6,11 @@ import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import { useTranslation } from 'react-i18next';
 import { SeoHead } from '@/shared/ui/SeoHead';
 
-const NotFound: React.FC = () => {
+export function loader() {
+  throw new Response('Not Found', { status: 404 });
+}
+
+export function ErrorBoundary() {
   const { t } = useTranslation('common');
   return (
     <>
@@ -73,6 +77,8 @@ const NotFound: React.FC = () => {
       </div>
     </>
   );
-};
+}
 
-export default NotFound;
+export default function NotFound() {
+  return <ErrorBoundary />;
+}

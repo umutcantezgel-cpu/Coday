@@ -64,7 +64,11 @@ export const SeoHead: React.FC<SeoHeadProps> = ({
     return `${BASE_URL}/${lang}${path}`;
   };
 
-  const canonicalUrl = `${BASE_URL}${location.pathname}`;
+  // Ensure canonical URL has no trailing slash (unless root) to prevent duplicate content indexing
+  const rawPath = location.pathname;
+  const canonicalPath =
+    rawPath.length > 1 && rawPath.endsWith('/') ? rawPath.slice(0, -1) : rawPath;
+  const canonicalUrl = `${BASE_URL}${canonicalPath}`;
 
   // Default links based on current path (assumes same slug)
   const defaultLinks = SUPPORTED_LANGUAGES.map((lang) => ({
