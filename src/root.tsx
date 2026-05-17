@@ -77,30 +77,37 @@ export async function loader({ request }: LoaderFunctionArgs) {
   if (path === '/' || path === '/de' || path === '/en' || path === '') {
     ['home', 'services', 'process', 'work', 'industries', 'form'].forEach((n) => neededNs.add(n));
   }
-  if (path.includes('/blog')) neededNs.add('blog');
-  if (path.includes('/services')) {
+
+  if (path.match(/\/(services|beratung|web-|angebot-wetzlar|next-js-migration)/)) {
     neededNs.add('services');
     neededNs.add('knowledge');
     neededNs.add('form');
   }
-  if (path.includes('/work')) {
+  if (path.match(/\/(beratung|consulting)/)) neededNs.add('consulting');
+  if (path.match(/\/(work|cases)/)) {
     neededNs.add('work');
     neededNs.add('form');
   }
-  if (path.includes('/industries')) {
+  if (
+    path.match(
+      /\/(industries|handwerk|immobilien|gastronomie|gesundheit|dienstleistung|e-commerce|oeffentliche-auftraege)/
+    )
+  ) {
     neededNs.add('industries');
     neededNs.add('form');
+    if (path.includes('oeffentliche')) neededNs.add('public-sector');
   }
-  if (path.includes('/tools')) {
+  if (path.match(/\/(tools|ai|analyzer|website-audit)/)) {
     neededNs.add('tools');
+    neededNs.add('analyzer');
     neededNs.add('form');
   }
-  if (path.includes('/legal')) neededNs.add('legal');
-  if (path.includes('/pricing')) {
+  if (path.match(/\/(legal|impressum|datenschutz|agb|barrierefreiheit)/)) neededNs.add('legal');
+  if (path.match(/\/(pricing|preise|pakete|packages)/)) {
     neededNs.add('pricing');
     neededNs.add('form');
   }
-  if (path.includes('/careers')) {
+  if (path.match(/\/(career|jobs|culture)/)) {
     neededNs.add('careers');
     neededNs.add('form');
   }
@@ -109,6 +116,17 @@ export async function loader({ request }: LoaderFunctionArgs) {
     neededNs.add('form');
   }
   if (path.includes('/dashboard')) neededNs.add('dashboard');
+  if (path.match(/\/(calculator|rechner)/)) neededNs.add('calculator');
+  if (path.match(/\/(booking|angebot)/)) {
+    neededNs.add('booking');
+    neededNs.add('form');
+  }
+  if (path.match(/\/(knowledge|academy|faq|newsletter|whitepaper|blog)/)) {
+    neededNs.add('knowledge');
+    if (path.includes('faq')) neededNs.add('faq');
+    if (path.includes('blog')) neededNs.add('blog');
+  }
+  if (path.match(/\/(process|prozess)/)) neededNs.add('process');
 
   const filteredResources: Record<string, unknown> = {};
   for (const ns of neededNs) {
