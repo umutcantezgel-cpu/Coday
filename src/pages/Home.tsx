@@ -3,20 +3,35 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { SeoHead } from '@/shared/ui/SeoHead';
 import LogoLoop from '@/shared/ui/LogoLoop';
+import { HeroSection } from '@/widgets/home/HeroSection';
 import { TrustBar } from '@/shared/ui/TrustBar';
 import { TrustBadges } from '@/shared/ui/TrustBadges';
 import { Skeleton } from '@/shared/ui';
 
-// All sections eagerly imported for SSR — server renders complete page HTML
-// Vite code-splits per route automatically, eager import ≠ same JS bundle
-import { HeroSection } from '@/widgets/home/HeroSection';
-import { StatsSection } from '@/widgets/home/StatsSection';
-import { PhilosophySection } from '@/widgets/home/PhilosophySection';
-import { ServicesSection } from '@/widgets/home/ServicesSection';
-import { IndustriesGrid } from '@/widgets/home/IndustriesGrid';
-import { TestimonialsSection } from '@/widgets/home/TestimonialsSection';
-import { PortfolioTeaserSection } from '@/widgets/home/PortfolioTeaserSection';
-import { LogoBarSection } from '@/widgets/home/LogoBarSection';
+// Lazy load below-the-fold sections to drastically reduce initial JS and TBT
+const StatsSection = React.lazy(() =>
+  import('@/widgets/home/StatsSection').then((m) => ({ default: m.StatsSection }))
+);
+const PhilosophySection = React.lazy(() =>
+  import('@/widgets/home/PhilosophySection').then((m) => ({ default: m.PhilosophySection }))
+);
+const ServicesSection = React.lazy(() =>
+  import('@/widgets/home/ServicesSection').then((m) => ({ default: m.ServicesSection }))
+);
+const IndustriesGrid = React.lazy(() =>
+  import('@/widgets/home/IndustriesGrid').then((m) => ({ default: m.IndustriesGrid }))
+);
+const TestimonialsSection = React.lazy(() =>
+  import('@/widgets/home/TestimonialsSection').then((m) => ({ default: m.TestimonialsSection }))
+);
+const PortfolioTeaserSection = React.lazy(() =>
+  import('@/widgets/home/PortfolioTeaserSection').then((m) => ({
+    default: m.PortfolioTeaserSection,
+  }))
+);
+const LogoBarSection = React.lazy(() =>
+  import('@/widgets/home/LogoBarSection').then((m) => ({ default: m.LogoBarSection }))
+);
 
 // Only truly heavy non-critical component stays lazy
 const AgencyComparisonTable = React.lazy(
@@ -62,10 +77,14 @@ const Home: React.FC = () => {
 
       <TrustBar />
 
-      <LogoBarSection />
+      <React.Suspense fallback={<div className="min-h-[200px]" />}>
+        <LogoBarSection />
+      </React.Suspense>
 
       <div className="content-auto">
-        <StatsSection />
+        <React.Suspense fallback={<div className="min-h-[400px]" />}>
+          <StatsSection />
+        </React.Suspense>
       </div>
 
       {/* Comparison Section */}
@@ -78,19 +97,27 @@ const Home: React.FC = () => {
       </div>
 
       <div className="content-auto">
-        <PhilosophySection />
+        <React.Suspense fallback={<div className="min-h-[400px]" />}>
+          <PhilosophySection />
+        </React.Suspense>
       </div>
 
       <div className="content-auto">
-        <ServicesSection />
+        <React.Suspense fallback={<div className="min-h-[400px]" />}>
+          <ServicesSection />
+        </React.Suspense>
       </div>
 
       <div className="content-auto">
-        <PortfolioTeaserSection />
+        <React.Suspense fallback={<div className="min-h-[400px]" />}>
+          <PortfolioTeaserSection />
+        </React.Suspense>
       </div>
 
       <div className="content-auto">
-        <IndustriesGrid />
+        <React.Suspense fallback={<div className="min-h-[400px]" />}>
+          <IndustriesGrid />
+        </React.Suspense>
       </div>
 
       {/* Tech Stack Section */}
@@ -129,7 +156,9 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <TestimonialsSection />
+      <React.Suspense fallback={<div className="min-h-[400px]" />}>
+        <TestimonialsSection />
+      </React.Suspense>
 
       <section className="content-auto py-12 sm:py-16 bg-white border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

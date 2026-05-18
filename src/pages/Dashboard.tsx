@@ -30,15 +30,15 @@ const features = [
 
 // Mock Dashboard Component for Visuals
 const MockDashboardVisual = () => (
-  <div className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden">
+  <div className="rounded-2xl bg-white  border border-slate-200  shadow-2xl overflow-hidden">
     {/* Mock Header */}
-    <div className="h-12 border-b border-slate-200 dark:border-slate-800 flex items-center px-4 gap-4 justify-between">
+    <div className="h-12 border-b border-slate-200  flex items-center px-4 gap-4 justify-between">
       <div className="flex gap-2">
         <div className="w-3 h-3 rounded-full bg-red-400" />
         <div className="w-3 h-3 rounded-full bg-yellow-400" />
         <div className="w-3 h-3 rounded-full bg-green-400" />
       </div>
-      <div className="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-[10px] font-mono text-slate-400">
+      <div className="px-3 py-1 rounded-full bg-slate-100  text-[10px] font-mono text-slate-400">
         DEMO_VIEW_ONLY
       </div>
     </div>
@@ -47,7 +47,7 @@ const MockDashboardVisual = () => (
     <div className="p-6 grid grid-cols-3 gap-6">
       {/* Chart Area */}
       <div className="col-span-2 space-y-4">
-        <div className="h-64 rounded-xl bg-slate-50 dark:bg-slate-800/50 p-4 relative overflow-hidden group">
+        <div className="h-64 rounded-xl bg-slate-50  p-4 relative overflow-hidden group">
           <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-primary/10 to-transparent" />
           <div className="absolute bottom-4 left-4 right-4 h-32 flex items-end justify-between gap-2">
             {[40, 65, 45, 80, 55, 90, 75].map((h, i) => (
@@ -72,12 +72,9 @@ const MockDashboardVisual = () => (
       {/* Stats Column */}
       <div className="space-y-4">
         {[1, 2, 3].map((_, i) => (
-          <div
-            key={i}
-            className="h-20 rounded-xl bg-slate-50 dark:bg-slate-800/50 p-4 border border-slate-100 dark:border-slate-700/50"
-          >
-            <div className="w-8 h-8 rounded-lg bg-slate-200 dark:bg-slate-700 mb-2" />
-            <div className="w-16 h-3 rounded bg-slate-200 dark:bg-slate-700" />
+          <div key={i} className="h-20 rounded-xl bg-slate-50  p-4 border border-slate-100 ">
+            <div className="w-8 h-8 rounded-lg bg-slate-200  mb-2" />
+            <div className="w-16 h-3 rounded bg-slate-200 " />
           </div>
         ))}
       </div>
@@ -93,10 +90,7 @@ const Dashboard: React.FC = () => {
   const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
 
   return (
-    <div
-      className="min-h-dvh bg-background-light dark:bg-background-dark font-sans overflow-hidden"
-      ref={scrollRef}
-    >
+    <div className="min-h-dvh bg-background-light  font-sans overflow-hidden" ref={scrollRef}>
       <SeoHead
         title={t('meta.title', 'Kunden-Dashboard | Coday')}
         description={t('meta.desc', 'Ihr Projekt-Status auf einen Blick.')}
@@ -123,7 +117,7 @@ const Dashboard: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="text-5xl md:text-7xl font-display font-bold text-slate-900 dark:text-white mb-6 tracking-tight"
+          className="text-5xl md:text-7xl font-display font-bold text-slate-900  mb-6 tracking-tight"
         >
           {t('hero.title', 'Transparency meets Control.')}
         </motion.h1>
@@ -132,7 +126,7 @@ const Dashboard: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mb-10 leading-relaxed"
+          className="text-xl text-slate-600  max-w-2xl mb-10 leading-relaxed"
         >
           {t(
             'hero.desc',
@@ -173,15 +167,15 @@ const Dashboard: React.FC = () => {
           <motion.div
             animate={{ y: [0, -10, 0] }}
             transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
-            className="absolute -right-8 top-12 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-xl border border-slate-100 dark:border-slate-700"
+            className="absolute -right-8 top-12 bg-white  p-4 rounded-xl shadow-xl border border-slate-100 "
           >
             <div className="flex items-center gap-3">
-              <div className="p-2 bg-green-100 dark:bg-green-900/30 text-green-600 rounded-lg">
+              <div className="p-2 bg-green-100  text-green-600 rounded-lg">
                 <OptimizedIcon icon={TrendUp} weight="bold" />
               </div>
               <div>
                 <div className="text-xs text-slate-500">Conversion Rate</div>
-                <div className="font-bold text-slate-900 dark:text-white">+124.5%</div>
+                <div className="font-bold text-slate-900 ">+124.5%</div>
               </div>
             </div>
           </motion.div>
@@ -189,13 +183,13 @@ const Dashboard: React.FC = () => {
       </section>
 
       {/* Benefits Grid */}
-      <section className="py-24 bg-slate-50 dark:bg-slate-900/50">
+      <section className="py-24 bg-slate-50 ">
         <div className="max-w-7xl mx-auto px-6 sm:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl font-display font-bold text-slate-900 dark:text-white mb-4">
+            <h2 className="text-3xl font-display font-bold text-slate-900  mb-4">
               {t('features.headline', 'Why top brands work with us')}
             </h2>
-            <p className="text-slate-600 dark:text-slate-400">
+            <p className="text-slate-600 ">
               {t('features.subheadline', "We don't just deliver results. We prove them.")}
             </p>
           </div>
@@ -208,17 +202,15 @@ const Dashboard: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700/50 hover:shadow-lg transition-shadow group"
+                className="bg-white  p-8 rounded-2xl shadow-sm border border-slate-100  hover:shadow-lg transition-shadow group"
               >
                 <div
                   className={`w-12 h-12 rounded-xl mb-6 flex items-center justify-center bg-gradient-to-br ${f.color} text-white shadow-lg`}
                 >
                   <OptimizedIcon icon={f.icon} size="lg" weight="fill" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">
-                  {t(f.title)}
-                </h3>
-                <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{t(f.desc)}</p>
+                <h3 className="text-xl font-bold text-slate-900  mb-3">{t(f.title)}</h3>
+                <p className="text-slate-600  leading-relaxed">{t(f.desc)}</p>
               </motion.div>
             ))}
           </div>

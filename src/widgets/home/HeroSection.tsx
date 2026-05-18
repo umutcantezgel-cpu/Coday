@@ -7,9 +7,9 @@ import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import GradientText from '@/shared/ui/GradientText';
 import { cn } from '@/shared/lib/utils';
 import { baseButtonStyles, buttonVariants, buttonSizes } from '@/shared/ui/ButtonStyles';
-import MetaBalls from '@/shared/ui/MetaBalls';
 
-// Lazy-load RotatingText (heavy: motion/react dependency) — only for desktop
+// Lazy-load heavy animations
+const MetaBalls = React.lazy(() => import('@/shared/ui/MetaBalls'));
 const RotatingText = React.lazy(() => import('@/shared/ui/RotatingText'));
 
 // Lightweight mobile text rotator — pure CSS, no motion/react
@@ -51,7 +51,7 @@ export const HeroSection: React.FC = () => {
           {/* CONTENT COLUMN (61.8% -> md:col-span-7) */}
           <div className="md:col-span-7 text-left flex flex-col justify-center relative z-10 before:absolute before:-inset-8 before:bg-bg-primary/40 before:backdrop-blur-md before:rounded-[3rem] before:-z-10 before:hidden md:before:block">
             <div className="inline-flex mb-6 relative">
-              <span className="bg-white/90 dark:bg-black/60 backdrop-blur-xl border border-black/10 dark:border-white/20 text-text-primary text-sm font-semibold px-4 py-1.5 rounded-full shadow-sm flex items-center gap-2">
+              <span className="bg-white/90  backdrop-blur-xl border border-black/10  text-text-primary text-sm font-semibold px-4 py-1.5 rounded-full shadow-sm flex items-center gap-2">
                 <span className="bg-primary-600 text-white rounded-full p-0.5">
                   <OptimizedIcon icon={Rocket} size="sm" className="w-[14px] h-[14px]" />
                 </span>
@@ -70,7 +70,7 @@ export const HeroSection: React.FC = () => {
                 ]}
                 animationSpeed={8}
                 showBorder={false}
-                className="inline-block [filter:drop-shadow(0_4px_12px_rgba(0,0,0,0.15))] [text-shadow:0_2px_15px_rgba(13,148,136,0.25)] dark:[filter:drop-shadow(0_4px_12px_rgba(255,255,255,0.15))] dark:[text-shadow:0_2px_15px_rgba(13,148,136,0.4)]"
+                className="inline-block [filter:drop-shadow(0_4px_12px_rgba(0,0,0,0.15))] [text-shadow:0_2px_15px_rgba(13,148,136,0.25)] :drop-shadow(0_4px_12px_rgba(255,255,255,0.15))] :0_2px_15px_rgba(13,148,136,0.4)]"
               >
                 {t('hero.headline_gradient')}
               </GradientText>
@@ -139,7 +139,7 @@ export const HeroSection: React.FC = () => {
                   baseButtonStyles,
                   buttonVariants.secondary,
                   buttonSizes.lg,
-                  'group border border-border-strong bg-white/60 dark:bg-black/60 backdrop-blur-md text-text-primary hover:bg-white/90 dark:hover:bg-black/90 shadow-sm hover:shadow-md hover:-translate-y-0.5 active:scale-95 min-h-[56px] px-8 focus-visible:ring-4 focus-visible:ring-border-strong/50 transition-all'
+                  'group border border-border-strong bg-white/60  backdrop-blur-md text-text-primary hover:bg-white/90 :bg-black/90 shadow-sm hover:shadow-md hover:-translate-y-0.5 active:scale-95 min-h-[56px] px-8 focus-visible:ring-4 focus-visible:ring-border-strong/50 transition-all'
                 )}
               >
                 <span className="font-semibold text-lg">
@@ -156,21 +156,23 @@ export const HeroSection: React.FC = () => {
           <div className="md:col-span-5 h-[400px] md:h-[600px] relative w-full flex items-center justify-center opacity-90 hover:opacity-100 transition-opacity duration-700">
             {/* Organic MetaBalls Animation */}
             <div className="absolute inset-0 z-0 scale-110 md:scale-125">
-              <MetaBalls
-                color="var(--color-primary-600)"
-                cursorBallColor="var(--color-accent-500)"
-                ballCount={5}
-                speed={1.2}
-                enableCursor={true}
-                className="opacity-70 dark:opacity-50"
-              />
+              <React.Suspense fallback={null}>
+                <MetaBalls
+                  color="var(--color-primary-600)"
+                  cursorBallColor="var(--color-accent-500)"
+                  ballCount={5}
+                  speed={1.2}
+                  enableCursor={true}
+                  className="opacity-70 "
+                />
+              </React.Suspense>
             </div>
             {/* Glassmorphism Overlay Element (Optional anchor for visual weight) */}
-            <div className="relative z-10 w-48 h-48 md:w-64 md:h-64 rounded-full border border-white/20 dark:border-black/20 bg-white/10 dark:bg-black/10 backdrop-blur-xl shadow-2xl flex items-center justify-center animate-float">
+            <div className="relative z-10 w-48 h-48 md:w-64 md:h-64 rounded-full border border-white/20  bg-white/10  backdrop-blur-xl shadow-2xl flex items-center justify-center animate-float">
               <OptimizedIcon
                 icon={Rocket}
                 weight="duotone"
-                className="w-20 h-20 md:w-28 md:h-28 text-primary-700 dark:text-primary-400 drop-shadow-md"
+                className="w-20 h-20 md:w-28 md:h-28 text-primary-700  drop-shadow-md"
               />
             </div>
           </div>

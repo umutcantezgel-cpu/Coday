@@ -26,7 +26,7 @@ const DEFAULT_BADGES: TrustBadge[] = [
     icon: Code,
     title: 'Vercel Agency Partner',
     description: 'Offizieller Entwicklungspartner',
-    color: 'text-black dark:text-white',
+    color: 'text-black ',
   },
   {
     id: 'dsgvo',

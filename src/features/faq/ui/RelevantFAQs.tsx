@@ -50,24 +50,24 @@ export const RelevantFAQs: React.FC<Props> = ({ serviceId, title, className = ''
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-display font-black text-slate-900 dark:text-white mb-10 text-center">
+        <h2 className="text-3xl font-display font-black text-slate-900  mb-10 text-center">
           {title || t('generic_detail.faq.title', { ns: 'common' })}
         </h2>
         <div className="space-y-4">
           {relevant.map((faq) => (
             <motion.div
               key={faq.id}
-              className={`bg-white dark:bg-slate-800 rounded-2xl border transition-colors overflow-hidden ${
+              className={`bg-white  rounded-2xl border transition-colors overflow-hidden ${
                 openItem === faq.id
                   ? 'border-blue-500 shadow-md ring-1 ring-blue-500'
-                  : 'border-slate-200 dark:border-slate-700 hover:border-blue-300'
+                  : 'border-slate-200  hover:border-blue-300'
               }`}
             >
               <button
                 onClick={() => toggleItem(faq.id)}
                 className="w-full flex justify-between items-center p-6 text-left focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:rounded-xl"
               >
-                <span className="font-display font-bold text-lg text-slate-900 dark:text-white pr-8">
+                <span className="font-display font-bold text-lg text-slate-900  pr-8">
                   {faq.question}
                 </span>
                 <CaretDown
@@ -84,7 +84,7 @@ export const RelevantFAQs: React.FC<Props> = ({ serviceId, title, className = ''
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3, ease: 'easeInOut' }}
                   >
-                    <div className="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed prose prose-blue dark:prose-invert max-w-none">
+                    <div className="px-6 pb-6 text-slate-600  leading-relaxed prose prose-blue  max-w-none">
                       <div
                         dangerouslySetInnerHTML={{
                           __html: faq.answer
@@ -100,10 +100,7 @@ export const RelevantFAQs: React.FC<Props> = ({ serviceId, title, className = ''
           ))}
         </div>
         <div className="mt-10 text-center">
-          <a
-            href="/knowledge/faq"
-            className="text-blue-600 dark:text-blue-400 font-bold hover:underline"
-          >
+          <a href="/knowledge/faq" className="text-blue-600  font-bold hover:underline">
             {t('categories.all')} →
           </a>
         </div>

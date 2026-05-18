@@ -14,6 +14,7 @@ import {
 import styles from '@/index.css?url';
 import React from 'react';
 import { SkipLink } from '@/shared/ui/SkipLink';
+import { DelayedRender } from '@/shared/ui/DelayedRender';
 // Defer GoogleAnalytics to avoid blocking initial render
 const GoogleAnalytics = React.lazy(() =>
   import('@/shared/lib/analytics/GoogleAnalytics').then((m) => ({ default: m.GoogleAnalytics }))
@@ -82,6 +83,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
     neededNs.add('services');
     neededNs.add('knowledge');
     neededNs.add('form');
+    neededNs.add('faq');
   }
   if (path.match(/\/(beratung|consulting)/)) neededNs.add('consulting');
   if (path.match(/\/(work|cases)/)) {
@@ -183,7 +185,21 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
-        {/* Font Preloading intentionally removed to avoid warnings, as inlined @font-face is sufficient */}
+        {/* Font Preloading — critical for LCP optimization */}
+        <link
+          rel="preload"
+          href="/fonts/inter-variable-latin.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/outfit-variable-latin.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
 
         {/* Inlined @font-face — eliminates render-blocking fonts.css round-trip */}
         <style
@@ -261,24 +277,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
           }}
         />
         {/* Organization JSON-LD is rendered by JsonLd component (via SeoHead) on every page */}
-        <React.Suspense fallback={null}>
-          <GoogleAnalytics />
-        </React.Suspense>
-        <React.Suspense fallback={null}>
-          <PostHogAnalytics />
-        </React.Suspense>
-        <React.Suspense fallback={null}>
-          <ClarityAnalytics />
-        </React.Suspense>
-        <React.Suspense fallback={null}>
-          <MetaPixel />
-        </React.Suspense>
-        <React.Suspense fallback={null}>
-          <LinkedInInsight />
-        </React.Suspense>
-        <React.Suspense fallback={null}>
-          <CustomCursor />
-        </React.Suspense>
+        <DelayedRender>
+          <React.Suspense fallback={null}>
+            <GoogleAnalytics />
+            <PostHogAnalytics />
+            <ClarityAnalytics />
+            <MetaPixel />
+            <LinkedInInsight />
+            <CustomCursor />
+          </React.Suspense>
+        </DelayedRender>
         <React.Suspense fallback={null}>
           <CookieConsentBanner />
         </React.Suspense>

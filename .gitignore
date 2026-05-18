@@ -82,3 +82,4 @@ build
 .pipeline-master-state.md
 .project-knowledge-base.md
 .upgrade-state.md
+.env*.local

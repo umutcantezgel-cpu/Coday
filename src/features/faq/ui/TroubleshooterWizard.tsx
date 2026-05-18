@@ -131,10 +131,10 @@ const TroubleshooterWizard = () => {
   };
 
   return (
-    <div className="bg-slate-50 dark:bg-slate-900 rounded-3xl p-8 md:p-12 relative overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl max-w-4xl mx-auto my-16">
+    <div className="bg-slate-50  rounded-3xl p-8 md:p-12 relative overflow-hidden border border-slate-200  shadow-xl max-w-4xl mx-auto my-16">
       <div className="relative z-10">
         <div className="flex justify-between items-center mb-8">
-          <h2 className="text-2xl font-bold font-display text-slate-900 dark:text-white">
+          <h2 className="text-2xl font-bold font-display text-slate-900 ">
             {result ? 'Our Recommendation' : 'Not sure where to start?'}
           </h2>
           {history.length > 1 && !result && (
@@ -164,18 +164,16 @@ const TroubleshooterWizard = () => {
               exit={{ opacity: 0, x: -20 }}
               className="space-y-6"
             >
-              <h3 className="text-xl text-slate-700 dark:text-slate-300 font-medium">
-                {currentStep.question}
-              </h3>
+              <h3 className="text-xl text-slate-700  font-medium">{currentStep.question}</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {currentStep.options.map((opt) => (
                   <button
                     key={opt.id}
                     onClick={() => handleSelect(opt)}
-                    className="text-left px-6 py-4 rounded-xl bg-white dark:bg-slate-800 border-2 border-transparent hover:border-blue-500 hover:shadow-lg transition-all group"
+                    className="text-left px-6 py-4 rounded-xl bg-white  border-2 border-transparent hover:border-blue-500 hover:shadow-lg transition-all group"
                   >
                     <div className="flex items-center justify-between">
-                      <span className="font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                      <span className="font-bold text-slate-900  group-hover:text-blue-600 :text-blue-400 transition-colors">
                         {opt.label}
                       </span>
                       <CaretRight className="w-5 h-5 text-slate-300 group-hover:text-blue-500 transition-colors" />
@@ -191,13 +189,13 @@ const TroubleshooterWizard = () => {
               animate={{ opacity: 1, scale: 1 }}
               className="text-center py-8"
             >
-              <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Check className="w-8 h-8 text-green-600 dark:text-green-400" />
+              <div className="w-16 h-16 bg-green-100  rounded-full flex items-center justify-center mx-auto mb-6">
+                <Check className="w-8 h-8 text-green-600 " />
               </div>
-              <h3 className="text-3xl font-bold font-display text-slate-900 dark:text-white mb-2">
+              <h3 className="text-3xl font-bold font-display text-slate-900  mb-2">
                 {results[result as keyof typeof results].title}
               </h3>
-              <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 max-w-lg mx-auto">
+              <p className="text-lg text-slate-600  mb-8 max-w-lg mx-auto">
                 {results[result as keyof typeof results].desc}
               </p>
               <a

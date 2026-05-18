@@ -5,12 +5,8 @@ import { servicesData } from '@/shared/data/services';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import { webDevImages } from '@/shared/data/serviceImages';
 import BlurText from '@/shared/ui/BlurText';
-import ArchitectureVisualizer from '@/features/web-dev/ArchitectureVisualizer';
-import CodeQualitySimulator from '@/features/web-dev/CodeQualitySimulator';
-import SecurityGrid from '@/features/web-dev/SecurityGrid';
-import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { TechStackShowcase, TechItem } from '@/widgets/services/TechStackShowcase';
+import { TechItem } from '@/widgets/services/TechStackShowcase';
 import {
   Stack,
   Code,
@@ -51,7 +47,22 @@ const iconMap: Record<string, React.ElementType> = {
   users: Users,
 };
 import { SeoHead } from '@/shared/ui/SeoHead';
-import { TestimonialCard } from '@/shared/ui/TestimonialCard';
+
+// Lazy load below-the-fold components
+const ArchitectureVisualizer = React.lazy(
+  () => import('@/features/web-dev/ArchitectureVisualizer')
+);
+const CodeQualitySimulator = React.lazy(() => import('@/features/web-dev/CodeQualitySimulator'));
+const SecurityGrid = React.lazy(() => import('@/features/web-dev/SecurityGrid'));
+const RelevantFAQs = React.lazy(() =>
+  import('@/features/faq/ui/RelevantFAQs').then((m) => ({ default: m.RelevantFAQs }))
+);
+const TechStackShowcase = React.lazy(() =>
+  import('@/widgets/services/TechStackShowcase').then((m) => ({ default: m.TechStackShowcase }))
+);
+const TestimonialCard = React.lazy(() =>
+  import('@/shared/ui/TestimonialCard').then((m) => ({ default: m.TestimonialCard }))
+);
 
 const WebDevelopment: React.FC = () => {
   const { t } = useTranslation(['services', 'common']);
@@ -162,12 +173,14 @@ const WebDevelopment: React.FC = () => {
         </div>
       </section>
 
-      {/* Deep-Dive Tech Stack - REPLACED WITH TECHSTACKSHOWCASE */}
-      <TechStackShowcase
-        technologies={webDevTechStack}
-        title={t('web_development_page.tech_stack.title')}
-        subtitle={t('web_development_page.tech_stack.description')}
-      />
+      {/* Deep-Dive Tech Stack */}
+      <React.Suspense fallback={<div className="min-h-[400px]" />}>
+        <TechStackShowcase
+          technologies={webDevTechStack}
+          title={t('web_development_page.tech_stack.title')}
+          subtitle={t('web_development_page.tech_stack.description')}
+        />
+      </React.Suspense>
 
       {/* Features Grid */}
       <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-24">
@@ -323,7 +336,9 @@ const WebDevelopment: React.FC = () => {
               })()}
             </ul>
           </div>
-          <ArchitectureVisualizer />
+          <React.Suspense fallback={<div className="min-h-[300px]" />}>
+            <ArchitectureVisualizer />
+          </React.Suspense>
         </div>
       </section>
 
@@ -382,7 +397,9 @@ const WebDevelopment: React.FC = () => {
           <h3 className="font-display font-bold text-2xl text-secondary mb-8">
             {t('web_development_page.security.title')}
           </h3>
-          <SecurityGrid />
+          <React.Suspense fallback={<div className="min-h-[200px]" />}>
+            <SecurityGrid />
+          </React.Suspense>
         </div>
       </section>
 
@@ -426,7 +443,9 @@ const WebDevelopment: React.FC = () => {
                 })()}
               </ul>
 
-              <CodeQualitySimulator />
+              <React.Suspense fallback={<div className="min-h-[200px]" />}>
+                <CodeQualitySimulator />
+              </React.Suspense>
             </div>
             <div className="hidden md:block relative ps-12">
               {/* Decorative Code Snippet */}
@@ -467,17 +486,21 @@ const WebDevelopment: React.FC = () => {
 
       {/* Testimonial */}
       <section className="px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto mb-24">
-        <TestimonialCard
-          quote="Die technische Kompetenz und Performance-Orientierung von Coday hat unsere Plattform auf ein neues Level gehoben. Ladezeiten wurden extrem minimiert und die Architektur ist jetzt komplett zukunftssicher aufgebaut. Ein echter Gamechanger für unser Team."
-          authorName="Sarah W."
-          authorPosition="CTO"
-          authorCompany="InnovateHealth"
-          rating={5}
-        />
+        <React.Suspense fallback={<div className="min-h-[200px]" />}>
+          <TestimonialCard
+            quote="Die technische Kompetenz und Performance-Orientierung von Coday hat unsere Plattform auf ein neues Level gehoben. Ladezeiten wurden extrem minimiert und die Architektur ist jetzt komplett zukunftssicher aufgebaut. Ein echter Gamechanger für unser Team."
+            authorName="Sarah W."
+            authorPosition="CTO"
+            authorCompany="InnovateHealth"
+            rating={5}
+          />
+        </React.Suspense>
       </section>
 
       {/* Relevant FAQs */}
-      <RelevantFAQs serviceId="web-development" />
+      <React.Suspense fallback={<div className="min-h-[200px]" />}>
+        <RelevantFAQs serviceId="web-development" />
+      </React.Suspense>
 
       {/* Case Study Teaser - NEW */}
       <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-24">

@@ -7,7 +7,7 @@ import { CaretDown, ArrowRight, Quotes } from '@phosphor-icons/react';
 const CaseStudy: React.FC = () => {
   const { t } = useTranslation('work');
   return (
-    <div className="font-sans antialiased text-text-light dark:text-text-dark bg-background-light dark:bg-background-dark transition-colors duration-300 overflow-x-hidden">
+    <div className="font-sans antialiased text-text-light  bg-background-light  transition-colors duration-300 overflow-x-hidden">
       <JsonLd
         pageType="article"
         data={{
@@ -48,21 +48,19 @@ const CaseStudy: React.FC = () => {
       </section>
 
       {/* Results Section */}
-      <section className="py-24 lg:py-32 bg-background-light dark:bg-background-dark relative overflow-hidden">
-        <div className="absolute top-0 right-0 -translate-y-1/2 w-[800px] h-[800px] bg-gray-100 dark:bg-gray-800/50 rounded-full blur-3xl -z-10"></div>
+      <section className="py-24 lg:py-32 bg-background-light  relative overflow-hidden">
+        <div className="absolute top-0 right-0 -translate-y-1/2 w-[800px] h-[800px] bg-gray-100  rounded-full blur-3xl -z-10"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-4 sticky top-32">
-              <h2 className="font-display font-bold text-4xl lg:text-5xl text-gray-900 dark:text-white mb-6">
+              <h2 className="font-display font-bold text-4xl lg:text-5xl text-gray-900  mb-6">
                 {t('results.title').split('<0>')[0]}
                 <span className="text-primary">
                   // @ts-expect-error
                   {t('results.title').split('<0>')[1]?.split('</0>')[0]}
                 </span>
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
-                {t('results.desc')}
-              </p>
+              <p className="text-lg text-gray-600  leading-relaxed mb-8">{t('results.desc')}</p>
               <a
                 href="/contact"
                 className="inline-flex items-center text-primary font-bold hover:underline"
@@ -75,10 +73,10 @@ const CaseStudy: React.FC = () => {
               <div className="group relative">
                 <div className="absolute -left-8 -top-8 w-24 h-24 bg-primary/10 rounded-full blur-xl group-hover:bg-primary/20 transition-colors"></div>
                 <div className="relative z-10">
-                  <span className="font-display font-black text-8xl md:text-9xl text-gray-900 dark:text-white tracking-tighter block mb-2 transition-transform duration-300 group-hover:scale-105 group-hover:-translate-y-2 origin-left">
+                  <span className="font-display font-black text-8xl md:text-9xl text-gray-900  tracking-tighter block mb-2 transition-transform duration-300 group-hover:scale-105 group-hover:-translate-y-2 origin-left">
                     +<CountUp from={0} to={291} duration={2} />%
                   </span>
-                  <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-2">
+                  <h3 className="text-2xl font-bold text-gray-800  mb-2">
                     {t('results.stats.leads.label')}
                   </h3>
                   <p className="text-gray-500 max-w-md">{t('results.stats.leads.desc')}</p>
@@ -88,10 +86,10 @@ const CaseStudy: React.FC = () => {
               <div className="group relative lg:pl-24">
                 <div className="absolute left-16 top-0 w-32 h-32 bg-blue-400/10 rounded-full blur-xl group-hover:bg-blue-400/20 transition-colors"></div>
                 <div className="relative z-10">
-                  <span className="font-display font-black text-8xl md:text-9xl text-gray-900 dark:text-white tracking-tighter block mb-2 transition-transform duration-300 group-hover:scale-105 group-hover:-translate-y-2 origin-left">
+                  <span className="font-display font-black text-8xl md:text-9xl text-gray-900  tracking-tighter block mb-2 transition-transform duration-300 group-hover:scale-105 group-hover:-translate-y-2 origin-left">
                     -<CountUp from={0} to={45} duration={2} />%
                   </span>
-                  <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-2">
+                  <h3 className="text-2xl font-bold text-gray-800  mb-2">
                     {t('results.stats.cpa.label')}
                   </h3>
                   <p className="text-gray-500 max-w-md">{t('results.stats.cpa.desc')}</p>
@@ -101,10 +99,10 @@ const CaseStudy: React.FC = () => {
               <div className="group relative">
                 <div className="absolute -right-8 top-1/2 w-40 h-40 bg-purple-400/10 rounded-full blur-xl group-hover:bg-purple-400/20 transition-colors"></div>
                 <div className="relative z-10">
-                  <span className="font-display font-black text-8xl md:text-9xl text-gray-900 dark:text-white tracking-tighter block mb-2 transition-transform duration-300 group-hover:scale-105 group-hover:-translate-y-2 origin-left">
+                  <span className="font-display font-black text-8xl md:text-9xl text-gray-900  tracking-tighter block mb-2 transition-transform duration-300 group-hover:scale-105 group-hover:-translate-y-2 origin-left">
                     <CountUp from={0} to={0.8} duration={2} />s
                   </span>
-                  <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-2">
+                  <h3 className="text-2xl font-bold text-gray-800  mb-2">
                     {t('results.stats.lcp.label')}
                   </h3>
                   <p className="text-gray-500 max-w-md">{t('results.stats.lcp.desc')}</p>
@@ -116,14 +114,14 @@ const CaseStudy: React.FC = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 bg-white dark:bg-surface-dark relative">
+      <section className="py-24 bg-white  relative">
         <div className="absolute top-1/2 left-0 -translate-y-1/2 w-full h-full overflow-hidden pointer-events-none">
           <div className="absolute top-10 right-[10%] w-20 h-20 bg-yellow-400/10 rounded-full blur-2xl"></div>
           <div className="absolute bottom-10 left-[5%] w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="font-display font-bold text-3xl md:text-4xl mb-4 text-gray-900 dark:text-white">
+            <h2 className="font-display font-bold text-3xl md:text-4xl mb-4 text-gray-900 ">
               {t('testimonials.title')}
             </h2>
             <p className="text-gray-500">{t('testimonials.desc')}</p>
@@ -134,16 +132,16 @@ const CaseStudy: React.FC = () => {
               <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary/5 to-blue-50/5 pointer-events-none"></div>
               <div className="relative z-10">
                 <OptimizedIcon icon={Quotes} className="text-primary text-4xl mb-4 opacity-50" />
-                <p className="text-lg md:text-xl font-medium text-gray-800 dark:text-gray-800 mb-6 italic leading-relaxed">
+                <p className="text-lg md:text-xl font-medium text-gray-800  mb-6 italic leading-relaxed">
                   {t('testimonials.items.0.quote')}
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-gray-200 border-2 border-primary"></div>
                   <div>
-                    <h4 className="font-bold text-gray-900 dark:text-gray-900 text-sm">
+                    <h4 className="font-bold text-gray-900  text-sm">
                       {t('testimonials.items.0.author')}
                     </h4>
-                    <p className="text-xs text-gray-500 dark:text-gray-600 uppercase tracking-wide">
+                    <p className="text-xs text-gray-500  uppercase tracking-wide">
                       {t('testimonials.items.0.role')}
                     </p>
                   </div>
@@ -156,16 +154,16 @@ const CaseStudy: React.FC = () => {
               <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary/5 to-blue-50/5 pointer-events-none"></div>
               <div className="relative z-10">
                 <OptimizedIcon icon={Quotes} className="text-primary text-4xl mb-4 opacity-50" />
-                <p className="text-lg md:text-xl font-medium text-gray-800 dark:text-gray-800 mb-6 italic leading-relaxed">
+                <p className="text-lg md:text-xl font-medium text-gray-800  mb-6 italic leading-relaxed">
                   {t('testimonials.items.1.quote')}
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-gray-200 border-2 border-primary"></div>
                   <div>
-                    <h4 className="font-bold text-gray-900 dark:text-gray-900 text-sm">
+                    <h4 className="font-bold text-gray-900  text-sm">
                       {t('testimonials.items.1.author')}
                     </h4>
-                    <p className="text-xs text-gray-500 dark:text-gray-600 uppercase tracking-wide">
+                    <p className="text-xs text-gray-500  uppercase tracking-wide">
                       {t('testimonials.items.1.role')}
                     </p>
                   </div>
@@ -177,15 +175,15 @@ const CaseStudy: React.FC = () => {
       </section>
 
       {/* Visual Identity */}
-      <section className="py-32 bg-background-light dark:bg-background-dark relative overflow-hidden">
+      <section className="py-32 bg-background-light  relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-surface-light dark:bg-surface-dark rounded-3xl p-8 lg:p-16 shadow-2xl relative z-10 border border-gray-100 dark:border-gray-700">
+          <div className="bg-surface-light  rounded-3xl p-8 lg:p-16 shadow-2xl relative z-10 border border-gray-100 ">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="order-2 lg:order-1">
                 <div className="relative">
                   <div className="absolute -top-10 -left-10 w-40 h-40 bg-teal-200/50 rounded-full blur-3xl"></div>
                   <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-purple-200/50 rounded-full blur-3xl"></div>
-                  <div className="relative z-10 rounded-xl shadow-xl transform rotate-2 hover:rotate-0 transition-all duration-500 border border-gray-200 dark:border-gray-600 bg-gray-200 h-64 w-full flex items-center justify-center text-gray-400">
+                  <div className="relative z-10 rounded-xl shadow-xl transform rotate-2 hover:rotate-0 transition-all duration-500 border border-gray-200  bg-gray-200 h-64 w-full flex items-center justify-center text-gray-400">
                     Project Dashboard Image
                   </div>
                 </div>
@@ -194,12 +192,10 @@ const CaseStudy: React.FC = () => {
                 <span className="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">
                   {t('visual_identity.badge')}
                 </span>
-                <h2 className="font-display font-bold text-4xl lg:text-5xl text-gray-900 dark:text-white mb-6">
+                <h2 className="font-display font-bold text-4xl lg:text-5xl text-gray-900  mb-6">
                   {t('visual_identity.title')}
                 </h2>
-                <p className="text-gray-600 dark:text-gray-300 text-lg mb-8">
-                  {t('visual_identity.desc')}
-                </p>
+                <p className="text-gray-600  text-lg mb-8">{t('visual_identity.desc')}</p>
                 <div className="grid grid-cols-3 gap-4">
                   <div className="h-24 rounded-lg bg-primary-700 shadow-md flex items-center justify-center text-white/50 text-xs">
                     {t('visual_identity.colors.primary')}

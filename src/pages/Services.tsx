@@ -11,11 +11,14 @@ import { baseButtonStyles, buttonVariants, buttonSizes } from '@/shared/ui/Butto
 // Premium UI Components
 import RotatingText from '@/shared/ui/RotatingText';
 import { MagicBento, BentoCard } from '@/shared/ui/MagicBento';
-import GlareHover from '@/shared/ui/GlareHover';
-
 import { Breadcrumbs } from '@/shared/ui/Breadcrumbs';
 import { SeoHead } from '@/shared/ui/SeoHead';
-import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
+
+// Lazy load heavy components below the fold
+const GlareHover = React.lazy(() => import('@/shared/ui/GlareHover'));
+const RelevantFAQs = React.lazy(() =>
+  import('@/features/faq/ui/RelevantFAQs').then((m) => ({ default: m.RelevantFAQs }))
+);
 
 const Services: React.FC = () => {
   const { t } = useTranslation(['services', 'common']);
@@ -173,10 +176,12 @@ const Services: React.FC = () => {
       </section>
 
       {/* FAQs for Rich Snippets */}
-      <RelevantFAQs
-        serviceId={['web-development', 'web-design', 'seo']}
-        className="bg-gray-50 border-t border-gray-100"
-      />
+      <React.Suspense fallback={<div className="min-h-[200px]" />}>
+        <RelevantFAQs
+          serviceId={['web-development', 'web-design', 'seo']}
+          className="bg-gray-50 border-t border-gray-100"
+        />
+      </React.Suspense>
 
       {/* CTA with GlareHover */}
       <section className="py-12 md:py-20 bg-white border-t border-gray-100">
@@ -192,15 +197,21 @@ const Services: React.FC = () => {
           >
             {t('cta.ready')}
           </ScrollFloat>
-          <GlareHover glareColor="#ffffff" glareOpacity={0.4} className="inline-block rounded-xl">
-            <NavLink
-              to="/contact"
-              className={cn(baseButtonStyles, buttonVariants.primary, buttonSizes.lg)}
-            >
-              {t('cta.button')}
-              <OptimizedIcon icon={ArrowRight} className="ms-2 rtl:rotate-180" />
-            </NavLink>
-          </GlareHover>
+          <React.Suspense
+            fallback={
+              <div className="h-14 w-40 bg-gray-200 rounded-xl animate-pulse inline-block" />
+            }
+          >
+            <GlareHover glareColor="#ffffff" glareOpacity={0.4} className="inline-block rounded-xl">
+              <NavLink
+                to="/contact"
+                className={cn(baseButtonStyles, buttonVariants.primary, buttonSizes.lg)}
+              >
+                {t('cta.button')}
+                <OptimizedIcon icon={ArrowRight} className="ms-2 rtl:rotate-180" />
+              </NavLink>
+            </GlareHover>
+          </React.Suspense>
         </div>
       </section>
     </div>

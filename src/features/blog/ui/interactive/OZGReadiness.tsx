@@ -95,7 +95,7 @@ export const OZGReadiness: React.FC = () => {
             ))}
           </div>
 
-          <div className="dark:bg-gray-900 bg-gray-50 rounded-3xl p-8 flex flex-col justify-between">
+          <div className=" bg-gray-50 rounded-3xl p-8 flex flex-col justify-between">
             <div>
               <p className="text-xs font-bold text-gray-400 uppercase mb-6">Maturity Level</p>
               <div className="space-y-6 relative">
