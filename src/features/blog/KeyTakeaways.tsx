@@ -1,5 +1,5 @@
 import React from 'react';
-import { Lightbulb, CheckCircle } from '@phosphor-icons/react';
+import { Lightbulb, CheckCircle } from '@phosphor-icons/react/dist/ssr';
 import { motion } from 'motion/react';
 
 export interface KeyTakeaway {

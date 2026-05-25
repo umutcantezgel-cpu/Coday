@@ -1,8 +1,8 @@
-import { useTranslation } from 'react-i18next';
+import { useLocale } from 'next-intl';
 
 export const useRtl = () => {
-  const { i18n } = useTranslation();
-  const isRtl = i18n.dir() === 'rtl';
+  const locale = useLocale();
+  const isRtl = ['ar', 'he', 'fa', 'ur'].includes(locale);
 
   return {
     isRtl,

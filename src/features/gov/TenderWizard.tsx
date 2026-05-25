@@ -1,5 +1,6 @@
+"use client";
 import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from 'motion/react';
 import {
   MagicWand,
@@ -9,8 +10,8 @@ import {
   FileText,
   Buildings,
   GlobeHemisphereWest,
-} from '@phosphor-icons/react';
-import { Link } from 'react-router-dom';
+} from '@phosphor-icons/react/dist/ssr';
+import Link from 'next/link';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 
 type WizardStep = 'budget' | 'type' | 'result';
@@ -18,7 +19,7 @@ type BudgetOption = 'low' | 'mid' | 'high';
 type TypeOption = 'service' | 'license';
 
 export const TenderWizard: React.FC = () => {
-  const { t } = useTranslation('public-sector');
+  const t = useTranslations('public-sector');
   const [step, setStep] = useState<WizardStep>('budget');
   const [budget, setBudget] = useState<BudgetOption | null>(null);
 
@@ -58,7 +59,7 @@ export const TenderWizard: React.FC = () => {
   const ResultIcon = getResultIcon();
 
   return (
-    <section className="py-24 bg-slate-900 border-t border-slate-800 relative overflow-hidden">
+    <section className="py-[var(--space-section)] bg-slate-900 border-t border-slate-800 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-900/20 to-transparent pointer-events-none" />
 
@@ -170,7 +171,7 @@ export const TenderWizard: React.FC = () => {
                     Neu starten
                   </button>
                   <Link
-                    to={`?type=${resultKey}#contact`}
+                    href={`?type=${resultKey}#contact`}
                     className="bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-8 rounded-lg transition-colors flex items-center justify-center gap-2"
                   >
                     {t(`wizard.results.${resultKey}.action`)}

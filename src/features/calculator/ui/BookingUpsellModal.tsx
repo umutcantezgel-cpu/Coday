@@ -1,6 +1,7 @@
+"use client";
 import React from 'react';
 import { Icon } from '@/shared/ui/Icon';
-import { NavLink } from 'react-router-dom';
+import Link from 'next/link';
 
 interface BookingUpsellModalProps {
   isOpen: boolean;
@@ -50,12 +51,12 @@ export const BookingUpsellModal: React.FC<BookingUpsellModalProps> = ({ isOpen, 
           </p>
 
           <div className="space-y-3">
-            <NavLink
-              to="/booking"
+            <Link
+              href="/booking"
               className="block w-full py-4 bg-primary text-white rounded-xl font-bold hover:bg-opacity-90 transition-all shadow-lg hover:shadow-xl uppercase tracking-wide"
             >
               Termin jetzt buchen
-            </NavLink>
+            </Link>
 
             <button
               onClick={onClose}

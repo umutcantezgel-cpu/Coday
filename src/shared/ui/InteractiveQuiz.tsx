@@ -1,6 +1,7 @@
+"use client";
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { CheckCircle, XCircle, ArrowRight, ArrowCounterClockwise } from '@phosphor-icons/react';
+import { CheckCircle, XCircle, ArrowRight, ArrowCounterClockwise } from '@phosphor-icons/react/dist/ssr';
 import { useRtl } from '@/shared/hooks/useRtl';
 
 interface QuizQuestion {
@@ -83,10 +84,8 @@ const InteractiveQuiz: React.FC<InteractiveQuizProps> = ({ title, questions, cla
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: isRtl ? 20 : -20 }}
           >
-            // @ts-expect-error
             <p className="text-lg font-medium text-secondary mb-6">{current?.question}</p>
             <div className="space-y-3">
-              // @ts-expect-error
               {current?.options?.map((option, index) => {
                 const isCorrect = index === current.correctIndex;
                 const isSelected = index === selectedAnswer;
@@ -133,7 +132,6 @@ const InteractiveQuiz: React.FC<InteractiveQuizProps> = ({ title, questions, cla
                 className="mt-6"
               >
                 <p className="text-sm text-slate-600 bg-white p-4 rounded-xl border border-gray-100 mb-4">
-                  // @ts-expect-error 💡 {current?.explanation}
                 </p>
                 <button
                   onClick={nextQuestion}

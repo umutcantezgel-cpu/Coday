@@ -33,7 +33,7 @@
       "booking": "Termin buchen",
       "packages": "Pakete"
     },
-    "rights": "© {{year}} Coday",
+    "rights": "© {year} Coday",
     "sections": {
       "career": "Karriere",
       "contact": "Kontakt",
@@ -179,7 +179,8 @@
       "label": "Branchen",
       "real_estate": "Immobilien",
       "service": "Dienstleistung",
-      "public": "Öffentliche Aufträge"
+      "public": "Öffentliche Aufträge",
+      "tech": "Tech Startups"
     },
     "legal": {
       "hub": "Übersicht",
@@ -264,6 +265,9 @@
       "web_apps": {
         "label": "Web Applikationen"
       },
+      "fullstack": {
+        "label": "Full-Stack Entwicklung"
+      },
       "web_design": {
         "desc": "UI/UX & Branding",
         "label": "Webdesign"
@@ -306,7 +310,7 @@
     "contact": "Anfrage senden"
   },
   "social": {
-    "visit": "Besuchen Sie uns auf {{platform}}",
+    "visit": "Besuchen Sie uns auf {platform}",
     "facebook": "Facebook",
     "instagram": "Instagram",
     "twitter": "Twitter",

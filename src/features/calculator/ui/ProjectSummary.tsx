@@ -2,12 +2,11 @@ import React from 'react';
 import { Icon } from '@/shared/ui/Icon';
 import { useCalculatorStore } from '@/features/calculator/model/store';
 import { modules } from '@/shared/data/modules';
-import { useTranslation } from 'react-i18next';
+import { useLocale } from 'next-intl';
 import { formatCurrency } from '@/shared/utils/formatters';
 
 export const ProjectSummary: React.FC = () => {
-  const { i18n } = useTranslation();
-  const locale = i18n.language;
+  const locale = useLocale();
   const selectedModuleIds = useCalculatorStore((state) => state.selectedModuleIds);
   const selectedPackageId = useCalculatorStore((state) => state.selectedPackageId);
 

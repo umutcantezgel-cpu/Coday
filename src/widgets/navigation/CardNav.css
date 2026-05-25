@@ -107,6 +107,7 @@ body.mobile-nav-open #fab-container {
   display: flex;
   align-items: center;
   gap: 0.25rem;
+  min-height: 44px;
 }
 
 .nav-pill-link:hover,
@@ -230,6 +231,7 @@ body.mobile-nav-open #fab-container {
   transition: all 0.2s;
   text-decoration: none;
   background: transparent;
+  min-height: 44px;
 }
 
 .dropdown-link-item:hover {
@@ -284,6 +286,7 @@ body.mobile-nav-open #fab-container {
   transition:
     transform 0.2s,
     box-shadow 0.2s;
+  min-height: 44px;
 }
 
 .nav-pill-cta:hover {
@@ -393,6 +396,8 @@ body.mobile-nav-open #fab-container {
   text-decoration: none;
   border-radius: 0.75rem;
   transition: background 0.2s;
+  min-height: 44px;
+  justify-content: center;
 }
 
 .mobile-link-item:active {

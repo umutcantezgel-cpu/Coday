@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from 'react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import {
@@ -12,7 +13,7 @@ import {
   Cloud,
   MapPin,
   ArrowSquareOut,
-} from '@phosphor-icons/react';
+} from '@phosphor-icons/react/dist/ssr';
 import { motion, AnimatePresence } from 'motion/react';
 
 // ============================================

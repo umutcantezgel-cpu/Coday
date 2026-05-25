@@ -1,5 +1,6 @@
+"use client";
 import React from 'react';
-import { Star, Quotes } from '@phosphor-icons/react';
+import { Star, Quotes } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { useIntersectionObserver } from '@/shared/hooks/useIntersectionObserver';
@@ -33,7 +34,7 @@ export const TestimonialCard: React.FC<TestimonialProps> = ({
     <div
       ref={ref as React.RefObject<HTMLDivElement>}
       style={{ animationDelay: `${delay}ms` }}
-      className={`relative bg-white rounded-2xl p-8 shadow-flat-md overflow-hidden h-full flex flex-col transition-all duration-500 ease-out motion-safe:hover:-translate-y-1 hover:shadow-lg ${
+      className={`relative flat-card overflow-hidden h-full flex flex-col p-8 motion-safe:hover:-translate-y-1 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       } ${className}`}
     >

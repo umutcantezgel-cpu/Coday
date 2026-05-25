@@ -3,6 +3,12 @@ import type {
   AnalysisResult,
   AnalysisProgress,
   AnalysisStatus,
+  PerformanceResult,
+  SeoResult,
+  SecurityResult,
+  AccessibilityResult,
+  UxResult,
+  ContentResult
 } from '@/features/analyzer/model/types';
 import {
   scanWebsite,
@@ -11,7 +17,28 @@ import {
   saveAuditResult,
 } from '@/features/analyzer/lib/analyzerService';
 import { getDemoResult } from '@/features/analyzer/model/demoData';
-import { TFunction } from 'i18next';
+import type { useTranslations } from 'next-intl';
+
+type AnalyzerTranslator = ReturnType<typeof useTranslations<'analyzer'>>;
+
+
+type AgentResultsMap = {
+  performance: PerformanceResult;
+  seo: SeoResult;
+  security: SecurityResult;
+  accessibility: AccessibilityResult;
+  ux: UxResult;
+  content: ContentResult;
+};
+
+const DEFAULT_RESULTS: AgentResultsMap = {
+  performance: { score: 0, issues: [], summary: 'Fehlgeschlagen', metrics: { lcp: { value: '0s', status: 'schlecht' }, fid: { value: '0ms', status: 'schlecht' }, cls: { value: '0', status: 'schlecht' }, ttfb: { value: '0ms', status: 'schlecht' } } },
+  seo: { score: 0, issues: [], summary: 'Fehlgeschlagen', checks: { metaTitle: { found: false, value: '', quality: 'schlecht' }, metaDescription: { found: false, value: '', quality: 'schlecht' }, h1: { count: 0, values: [], quality: 'schlecht' }, images: { total: 0, withAlt: 0, percentage: 0 }, internalLinks: 0, schemaMarkup: false } },
+  security: { score: 0, issues: [], summary: 'Fehlgeschlagen', checks: { https: { enabled: false, valid: false }, headers: { csp: false, xFrameOptions: false, hsts: false, xContentType: false }, cookies: { secure: false, httpOnly: false } } },
+  accessibility: { score: 0, issues: [], summary: 'Fehlgeschlagen', wcagLevel: 'nicht erfüllt', checks: { colorContrast: { passed: 0, failed: 0 }, keyboardNav: false, ariaLabels: { used: false, quality: 'schlecht' }, formLabels: { total: 0, labeled: 0 } } },
+  ux: { score: 0, issues: [], summary: 'Fehlgeschlagen', checks: { mobileResponsive: false, navigation: { quality: 'schlecht', depth: 0 }, cta: { visible: false, count: 0, quality: 'schlecht' }, trustSignals: { count: 0, types: [] }, visualHierarchy: 'schlecht' } },
+  content: { score: 0, issues: [], summary: 'Fehlgeschlagen', checks: { headline: { quality: 'schlecht', hasUVP: false }, readability: { score: 0, gradeLevel: '', quality: 'schlecht' }, socialProof: { found: false, types: [] }, ctaText: { quality: 'schlecht', examples: [] }, freshness: 'unbekannt' } },
+};
 
 interface AnalyzerState {
   // Input State
@@ -34,7 +61,7 @@ interface AnalyzerState {
   setError: (error: string) => void;
   generatePlan: () => Promise<void>;
   testConnection: () => Promise<boolean>;
-  loadDemoData: (t: TFunction) => void;
+  loadDemoData: (t: AnalyzerTranslator) => void;
 }
 
 const initialProgress: AnalysisProgress = {
@@ -94,8 +121,7 @@ export const useAnalyzerStore = create<AnalyzerState>((set, get) => ({
       const scannedRawHtml = scanData.rawHtml || scanData.html;
 
       // Initializing Result Object
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const partialResult: any = {
+      const partialResult = {
         id: crypto.randomUUID(),
         url: scanData.url,
         analyzedAt: new Date().toISOString(),
@@ -109,17 +135,15 @@ export const useAnalyzerStore = create<AnalyzerState>((set, get) => ({
       }));
 
       // STEP 2: RUN AGENTS (In parallel structure but controlled)
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const results: Record<string, any> = {};
+      const results: Partial<AgentResultsMap> = {};
 
-      const runSingleAgent = async (agentId: string) => {
+      const runSingleAgent = async <K extends keyof AgentResultsMap>(agentId: K) => {
         try {
           set((state) => ({
             progress: { ...state.progress, currentAgent: agentId },
           }));
 
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          const agentResult = await analyzeAgent<any>(
+          const agentResult = await analyzeAgent<AgentResultsMap[K] & { error?: string }>(
             agentId,
             scanData.url,
             scanData.html,
@@ -128,10 +152,11 @@ export const useAnalyzerStore = create<AnalyzerState>((set, get) => ({
             scanData.robotsTxt,
             scanData.sitemapXml
           );
-          if (agentResult.score === -1) {
-            throw new Error(agentResult.error || 'Agent failed');
+          const resultToCheck = agentResult as { score: number; error?: string };
+          if (resultToCheck.score === -1) {
+            throw new Error(resultToCheck.error || 'Agent failed');
           }
-          results[agentId] = agentResult;
+          Object.assign(results, { [agentId]: agentResult });
 
           set((state) => {
             const completed = [...state.progress.completedAgents, agentId];
@@ -149,11 +174,9 @@ export const useAnalyzerStore = create<AnalyzerState>((set, get) => ({
           // Capture the first error we see to help debugging
           set({ error: err instanceof Error ? err.message : String(err) });
 
-          results[agentId] = {
-            score: 0,
-            summary: 'Analyse fehlgeschlagen due to connection error.',
-            issues: [],
-          };
+          Object.assign(results, {
+            [agentId]: DEFAULT_RESULTS[agentId]
+          });
         }
       };
 
@@ -193,7 +216,7 @@ export const useAnalyzerStore = create<AnalyzerState>((set, get) => ({
       let totalWeight = 0;
 
       for (const [id, weight] of Object.entries(weights)) {
-        const agentResult = results[id];
+        const agentResult = results[id as keyof typeof results];
         // Ignore failed agents (score -1) for the average
         if (agentResult && agentResult.score >= 0) {
           overallScore += agentResult.score * weight;
@@ -216,12 +239,21 @@ export const useAnalyzerStore = create<AnalyzerState>((set, get) => ({
       if ((results['security']?.score || 0) < 50) urgencyScore += 15;
       if ((results['performance']?.score || 0) < 40) urgencyScore += 10;
 
-      const finalResult = {
-        ...partialResult,
-        ...results,
+      const finalResult: AnalysisResult = {
+        id: partialResult.id,
+        url: partialResult.url,
+        domain: new URL(scanData.url).hostname,
+        analyzedAt: partialResult.analyzedAt,
         overallScore: Math.round(overallScore),
         urgencyScore: Math.min(100, Math.round(urgencyScore)),
-        domain: new URL(scanData.url).hostname,
+        duration: 0,
+        techStack: partialResult.techStack,
+        performance: results.performance || DEFAULT_RESULTS.performance,
+        seo: results.seo || DEFAULT_RESULTS.seo,
+        security: results.security || DEFAULT_RESULTS.security,
+        accessibility: results.accessibility || DEFAULT_RESULTS.accessibility,
+        ux: results.ux || DEFAULT_RESULTS.ux,
+        content: results.content || DEFAULT_RESULTS.content,
       };
 
       set({
@@ -319,8 +351,8 @@ export const useAnalyzerStore = create<AnalyzerState>((set, get) => ({
     try {
       // We use the same scanWebsite function structure but with 'ping' action
       // Since scanWebsite is typed, we'll just do a direct fetch here to be safe and simple
-      const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || '';
-      const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
+      const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+      const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
 
       const response = await fetch(`${SUPABASE_URL}/functions/v1/analyze-website`, {
         method: 'POST',
@@ -354,5 +386,6 @@ export const useAnalyzerStore = create<AnalyzerState>((set, get) => ({
     });
   },
 }));
+
 
 export default useAnalyzerStore;

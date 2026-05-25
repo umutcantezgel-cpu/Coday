@@ -1,8 +1,9 @@
+"use client";
 
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Monitor, Cpu, Stack, Lightning } from '@phosphor-icons/react';
-import { useTranslation } from 'react-i18next';
+import { Monitor, Cpu, Stack, Lightning } from '@phosphor-icons/react/dist/ssr';
+import { useTranslations } from 'next-intl';
 import { useMemo } from 'react';
 
 interface Era {
@@ -17,7 +18,7 @@ interface Era {
 
 
 export const WebHistoryTimeline: React.FC = () => {
-    const { t } = useTranslation();
+    const t = useTranslations();
     const [selectedEra, setSelectedEra] = useState<number>(3); // Default to 2026
 
     const eras: Era[] = useMemo(() => [

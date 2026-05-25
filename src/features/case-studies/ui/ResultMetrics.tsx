@@ -1,6 +1,7 @@
+"use client";
 import React, { useEffect, useRef } from 'react';
 import { useInView, useSpring, useMotionValue } from 'motion/react';
-import { useTranslation } from 'react-i18next';
+import { useLocale } from 'next-intl';
 import { formatNumber } from '@/shared/utils/formatters';
 
 const AnimatedCounter = ({
@@ -12,8 +13,7 @@ const AnimatedCounter = ({
   prefix?: string;
   suffix?: string;
 }) => {
-  const { i18n } = useTranslation();
-  const locale = i18n.language;
+  const locale = useLocale();
   const ref = useRef<HTMLSpanElement>(null);
   const motionValue = useMotionValue(0);
   const springValue = useSpring(motionValue, { damping: 30, stiffness: 100 });
@@ -57,7 +57,7 @@ export interface MetricItem {
 
 export const ResultMetrics: React.FC<{ metrics: MetricItem[] }> = ({ metrics }) => {
   return (
-    <section className="my-24">
+    <section className="py-[var(--space-section)] my-24">
       <div className="bg-surface-light rounded-[2.5rem] p-12 md:p-20 border border-white/50 shadow-xl relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute top-0 right-0 p-12 opacity-5">

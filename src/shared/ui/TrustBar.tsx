@@ -1,13 +1,13 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 import LogoLoop from '@/shared/ui/LogoLoop';
 import { clientLogos } from '@/shared/data/clientLogos';
 
 export const TrustBar: React.FC = () => {
-  const { t } = useTranslation('common');
+  const t = useTranslations('common');
 
   return (
-    <section className="py-12 border-y border-gray-100 bg-white/50 relative overflow-hidden">
+    <section className="py-[var(--space-section)] border-y border-gray-100 bg-white/50 relative overflow-hidden">
       {/* Background Blur Effect */}
       <div className="absolute inset-0 bg-white/40 backdrop-blur-sm z-0"></div>
       <div className="w-full text-center relative z-10">

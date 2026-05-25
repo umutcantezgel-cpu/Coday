@@ -1,5 +1,6 @@
+"use client";
 import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations, useLocale } from 'next-intl';
 import { formatCurrency } from '@/shared/utils/formatters';
 
 type Lead = {
@@ -10,7 +11,8 @@ type Lead = {
 };
 
 const LeadQualificationSimulator: React.FC = () => {
-  const { t, i18n } = useTranslation('industries');
+  const t = useTranslations('industries');
+  const locale = useLocale();
   // Interactive demo where you set filters and see "trash" leads disappear
   const [minBudget, setMinBudget] = useState(2000);
 
@@ -36,7 +38,7 @@ const LeadQualificationSimulator: React.FC = () => {
       <div className="mb-12 bg-gray-50 p-6 rounded-2xl border border-gray-100">
         <div className="flex justify-between font-bold text-slate-700 mb-2">
           <label>{t('unternehmensberatung.features.lead_simulator.filter_label')}</label>
-          <span className="text-primary">{formatCurrency(minBudget, 'EUR', i18n.language)}</span>
+          <span className="text-primary">{formatCurrency(minBudget, 'EUR', locale)}</span>
         </div>
         <input
           type="range"

@@ -1,11 +1,12 @@
+"use client";
 import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 import { motion } from 'motion/react';
 import { STAGGER, DURATION } from '@/shared/lib/motion';
 
 const ArchitectureVisualizer: React.FC = () => {
   const [activeNode, setActiveNode] = useState<string | null>(null);
-  const { t } = useTranslation('services');
+  const t = useTranslations('services');
 
   const nodes = [
     {

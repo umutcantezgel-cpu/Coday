@@ -1,0 +1,29 @@
+import fs from 'fs/promises';
+import { getRequestConfig } from 'next-intl/server';
+import path from 'path';
+import { routing } from './routing';
+
+export default getRequestConfig(async ({ requestLocale }) => {
+  let locale = await requestLocale;
+  
+  if (!locale || !(routing.locales as readonly string[]).includes(locale)) {
+    locale = routing.defaultLocale;
+  }
+  
+  const localeDir = path.join(process.cwd(), `public/locales/${locale}`);
+  const files = await fs.readdir(localeDir);
+  const messages: Record<string, import('next-intl').AbstractIntlMessages> = {};
+  
+  for (const file of files) {
+    if (file.endsWith('.json')) {
+      const ns = file.replace('.json', '');
+      const content = await fs.readFile(path.join(localeDir, file), 'utf-8');
+      messages[ns] = JSON.parse(content) as import('next-intl').AbstractIntlMessages;
+    }
+  }
+
+  return {
+    locale,
+    messages
+  };
+});

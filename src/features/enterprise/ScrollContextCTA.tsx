@@ -1,12 +1,13 @@
+"use client";
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { CalendarBlank } from '@phosphor-icons/react';
-import { NavLink } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+import { CalendarBlank } from '@phosphor-icons/react/dist/ssr';
+import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 export const ScrollContextCTA: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const { t } = useTranslation('common');
+  const t = useTranslations('common');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,13 +40,13 @@ export const ScrollContextCTA: React.FC = () => {
               </span>
               <span className="text-sm font-bold text-white">{t('scroll_cta.dominate')}</span>
             </div>
-            <NavLink
-              to="/booking"
+            <Link
+              href="/booking"
               className="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-full font-bold text-sm flex items-center gap-2 transition-colors"
             >
               <CalendarBlank size={16} />
               {t('scroll_cta.book_audit')}
-            </NavLink>
+            </Link>
           </div>
         </motion.div>
       )}

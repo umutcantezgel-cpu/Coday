@@ -1,6 +1,7 @@
+"use client";
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { CaretRight, Check, ArrowRight } from '@phosphor-icons/react';
+import { CaretRight, Check, ArrowRight } from '@phosphor-icons/react/dist/ssr';
 
 // Simple decision tree data (internal for now, could move to data.ts later)
 const steps = [
@@ -86,7 +87,7 @@ const results = {
   automation: {
     title: 'Process Automation',
     desc: 'Connect your tools and stop manual work.',
-    link: '/services/web-development/api-integrations',
+    link: '/services/development/api-integration',
   },
   headless: {
     title: 'Headless CMS Migration',

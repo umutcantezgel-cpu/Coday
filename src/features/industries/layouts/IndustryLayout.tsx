@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '@/i18n/navigation';
 import { Icon } from '@/shared/ui/Icon';
 import ScrollFloat from '@/shared/ui/ScrollFloat';
 import ScrollReveal from '@/shared/ui/ScrollReveal';
@@ -39,7 +39,7 @@ const ParallaxHero = ({
       ref={ref}
       className="relative h-dvh min-h-[800px] flex items-center justify-center overflow-hidden"
     >
-      <motion.div style={{ y, opacity }} className="absolute inset-0 z-0">
+      <motion.div style={{ y, opacity, willChange: 'transform, opacity', transform: 'translateZ(0)' }} className="absolute inset-0 z-0 transform-gpu">
         {video ? (
           <video
             src={video}
@@ -110,7 +110,7 @@ export const IndustryLayout: React.FC<IndustryLayoutProps> = ({
         className="fixed top-0 w-full z-50 p-6 mix-blend-difference text-white"
       >
         <Link
-          to="/work"
+          href="/work"
           className="inline-flex items-center gap-2 hover:opacity-70 transition-opacity"
         >
           <Icon name="arrow_left" size="md" />
@@ -122,7 +122,7 @@ export const IndustryLayout: React.FC<IndustryLayoutProps> = ({
 
       <main role="main">
         {/* Pain Points Section */}
-        <section className="py-24 bg-surface-light relative z-10">
+        <section className="py-[var(--space-section)] bg-surface-light relative z-10">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 -mt-32">
               {painPoints.map((point, i) => (
@@ -142,10 +142,10 @@ export const IndustryLayout: React.FC<IndustryLayoutProps> = ({
         </section>
 
         {/* Custom Interactive Module (Slider etc) */}
-        {children && <section className="py-24 overflow-hidden">{children}</section>}
+        {children && <section className="py-[var(--space-section)] overflow-hidden">{children}</section>}
 
         {/* Solutions/Features */}
-        <section className="py-24 bg-black text-white">
+        <section className="py-[var(--space-section)] bg-black text-white">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-16 text-center">
               Die {title} Lösung
@@ -167,13 +167,13 @@ export const IndustryLayout: React.FC<IndustryLayoutProps> = ({
         </section>
 
         {/* CTA */}
-        <section className="py-32 bg-primary relative overflow-hidden">
+        <section className="py-[var(--space-section)] bg-primary relative overflow-hidden">
           <div className="container mx-auto px-4 text-center relative z-10">
             <h2 className="text-5xl md:text-7xl font-display font-black text-white mb-8">
               Dominate Your Market.
             </h2>
             <Link
-              to="/contact"
+              href="/contact"
               className="inline-flex items-center gap-4 bg-white text-primary px-8 py-4 rounded-full font-bold text-xl hover:scale-105 transition-transform"
             >
               Strategiegespräch buchen <Icon name="arrow_right" />

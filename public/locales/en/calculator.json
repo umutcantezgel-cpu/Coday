@@ -30,10 +30,10 @@
     "title_1": "Build Your",
     "title_2": "Dream Agency."
   },
-  "module_count": "{{count}} module selected",
-  "module_count_one": "{{count}} module selected",
-  "module_count_other": "{{count}} modules selected",
-  "module_count_plural": "{{count}} modules selected",
+  "module_count": "{count} module selected",
+  "module_count_one": "{count} module selected",
+  "module_count_other": "{count} modules selected",
+  "module_count_plural": "{count} modules selected",
   "modules": {
     "basis-business": {
       "description": "Multi-page Corporate Presence (CMS)",

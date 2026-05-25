@@ -1,5 +1,6 @@
+"use client";
 import React, { useEffect, useState } from 'react';
-import { Trophy, Lightning } from '@phosphor-icons/react';
+import { Trophy, Lightning } from '@phosphor-icons/react/dist/ssr';
 import { motion, AnimatePresence } from 'motion/react';
 
 export const ReadingScore: React.FC<{ currentPostId?: number }> = ({ currentPostId }) => {

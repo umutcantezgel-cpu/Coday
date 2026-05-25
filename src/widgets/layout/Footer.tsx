@@ -1,16 +1,16 @@
 import React from 'react';
-import { LocalizedNavLink as NavLink } from '@/shared/ui/LocalizedLink';
+import { Link } from '@/i18n/navigation';
 
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
-import { FacebookLogo, InstagramLogo, TwitterLogo, LinkedinLogo } from '@phosphor-icons/react';
-import { LogoLoop } from '@/shared/ui';
+import { FacebookLogo, InstagramLogo, TwitterLogo, LinkedinLogo } from '@phosphor-icons/react/dist/ssr';
+import LogoLoop from '@/shared/ui/LogoLoop';
 import { TrustBadges } from '@/shared/ui/TrustBadges';
 import { clientLogos } from '@/shared/data/clientLogos';
 
 export const Footer: React.FC = () => {
-  const { t } = useTranslation('common');
+  const t = useTranslations('common');
   return (
     <footer
       className="bg-secondary text-white border-t border-gray-800 pt-16 pb-8 relative overflow-hidden"
@@ -30,7 +30,7 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-8 mb-12 w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-5 gap-8 mb-12 w-full">
           {/* Col 1: Logo & Agency Description */}
           <div className="col-span-2 lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
@@ -72,68 +72,68 @@ export const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-3">
               <li>
-                <NavLink
-                  to="/"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors"
+                <Link
+                  href="/"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
                 >
                   {t('nav.main.home', { defaultValue: 'Startseite' })}
-                </NavLink>
+                </Link>
               </li>
               <li>
-                <NavLink
-                  to="/work"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors"
+                <Link
+                  href="/work"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
                 >
                   {t('nav.main.work', { defaultValue: 'Portfolio' })}
-                </NavLink>
+                </Link>
               </li>
               <li>
-                <NavLink
-                  to="/about"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors"
+                <Link
+                  href="/about"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
                 >
                   {t('nav.company.about', { defaultValue: 'Über uns' })}
-                </NavLink>
+                </Link>
               </li>
               <li>
-                <NavLink
-                  to="/process"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors"
+                <Link
+                  href="/process"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
                 >
                   {t('nav.main.process', { defaultValue: 'Prozess' })}
-                </NavLink>
+                </Link>
               </li>
               <li>
-                <NavLink
-                  to="/pricing"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors"
+                <Link
+                  href="/pricing"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
                 >
                   {t('nav.main.pricing', { defaultValue: 'Preise' })}
-                </NavLink>
+                </Link>
               </li>
               <li>
-                <NavLink
-                  to="/partnerschaft"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors"
+                <Link
+                  href="/partnerschaft"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
                 >
                   {t('nav.main.partnerschaft', { defaultValue: 'Partner-Programm' })}
-                </NavLink>
+                </Link>
               </li>
               <li>
-                <NavLink
-                  to="/calculator"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors"
+                <Link
+                  href="/calculator"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
                 >
                   {t('nav.resources.calculator', { defaultValue: 'Preis-Rechner' })}
-                </NavLink>
+                </Link>
               </li>
               <li>
-                <NavLink
-                  to="/career"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors"
+                <Link
+                  href="/career"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
                 >
                   {t('nav.career.label', { defaultValue: 'Karriere' })}
-                </NavLink>
+                </Link>
               </li>
             </ul>
           </nav>
@@ -145,102 +145,136 @@ export const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-3">
               <li>
-                <NavLink
-                  to="/services/web-development"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors"
+                <Link
+                  href="/services/web-development"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
                 >
                   {t('nav.services.web_development.label', { defaultValue: 'Webentwicklung' })}
-                </NavLink>
+                </Link>
               </li>
               <li>
-                <NavLink
-                  to="/services/ui-ux-design"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors"
+                <Link
+                  href="/services/design/ui-ux"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
                 >
                   {t('nav.services.ui_ux.label', { defaultValue: 'UI/UX Design' })}
-                </NavLink>
+                </Link>
               </li>
               <li>
-                <NavLink
-                  to="/services/seo"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors"
+                <Link
+                  href="/services/seo"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
                 >
                   {t('nav.services.seo.label', { defaultValue: 'SEO Optimierung' })}
-                </NavLink>
+                </Link>
               </li>
               <li>
-                <NavLink
-                  to="/services/ecommerce"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors"
+                <Link
+                  href="/services/ecommerce-development"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
                 >
                   {t('nav.services.ecommerce.label', { defaultValue: 'E-Commerce' })}
-                </NavLink>
+                </Link>
               </li>
               <li>
-                <NavLink
-                  to="/services/web-development/api-integrations"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors"
+                <Link
+                  href="/services/development/api-integration"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
                 >
                   {t('nav.services.api.label', { defaultValue: 'API-Integrationen' })}
-                </NavLink>
+                </Link>
               </li>
               <li>
-                <NavLink
-                  to="/services/web-development/full-stack-entwicklung"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors"
+                <Link
+                  href="/services/web-development/full-stack-entwicklung"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
                 >
                   {t('nav.services.fullstack.label', { defaultValue: 'Full-Stack Entwicklung' })}
-                </NavLink>
+                </Link>
               </li>
               <li>
-                <NavLink
-                  to="/oeffentliche-auftraege"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors"
+                <Link
+                  href="/oeffentliche-auftraege"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
                 >
                   {t('nav.industries.public', { defaultValue: 'Öffentliche Aufträge' })}
-                </NavLink>
+                </Link>
               </li>
               <li>
-                <NavLink
-                  to="/services/industries/startups-tech"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors"
+                <Link
+                  href="/services/industries/startups-tech"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
                 >
                   {t('nav.industries.tech', { defaultValue: 'Tech Startups' })}
-                </NavLink>
+                </Link>
               </li>
             </ul>
           </nav>
 
-          {/* Col 4: Direct Contact details */}
+          {/* Col 4: Regionales (SEO) */}
+          <nav aria-label={t('footer.sections.regional', { defaultValue: 'Regionales' })}>
+            <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">
+              {t('footer.sections.regional', { defaultValue: 'Standorte & Branchen' })}
+            </h3>
+            <ul className="space-y-3">
+              <li>
+                <Link href="/standorte/hessen" className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]">
+                  Webdesign Hessen
+                </Link>
+              </li>
+              <li>
+                <Link href="/standorte/wetzlar" className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]">
+                  Webagentur Wetzlar
+                </Link>
+              </li>
+              <li>
+                <Link href="/branchen/arzt/wetzlar" className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]">
+                  Praxis-Website Wetzlar
+                </Link>
+              </li>
+              <li>
+                <Link href="/branchen/arzt/giessen" className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]">
+                  Praxis-Website Gießen
+                </Link>
+              </li>
+              <li>
+                <Link href="/branchen/handwerker/wetzlar" className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]">
+                  Handwerker Wetzlar
+                </Link>
+              </li>
+            </ul>
+          </nav>
+
+          {/* Col 5: Direct Contact details */}
           <div>
             <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">
               {t('footer.sections.contact', { defaultValue: 'Kontakt' })}
             </h3>
             <ul className="space-y-3 mb-6 text-sm text-gray-300">
               <li>
-                <a href="mailto:umut@codayweb.de" className="hover:text-primary transition-colors">
+                <a href="mailto:umut@codayweb.de" className="hover:text-primary transition-colors inline-flex items-center min-h-[44px]">
                   umut@codayweb.de
                 </a>
               </li>
               <li>
-                <a href="tel:+4917641195301" className="hover:text-primary transition-colors">
+                <a href="tel:+4917641195301" className="hover:text-primary transition-colors inline-flex items-center min-h-[44px]">
                   +49 176 41195301
                 </a>
               </li>
               <li className="pt-2 text-gray-400">
-                Coday Digital Agency
+                Coday
                 <br />
                 Wetzlar, Deutschland
                 <br />
                 (Remote weltweit)
               </li>
             </ul>
-            <NavLink
-              to="/contact"
-              className="inline-block px-6 py-2 bg-primary/20 text-blue-400 border border-primary/30 rounded-lg text-sm font-bold hover:bg-primary hover:text-white transition-all"
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center min-h-[44px] px-6 bg-primary/20 text-blue-400 border border-primary/30 rounded-lg text-sm font-bold hover:bg-primary hover:text-white transition-all"
             >
               {t('nav.main.contact', { defaultValue: 'Projekt starten' })}
-            </NavLink>
+            </Link>
           </div>
         </div>
 
@@ -256,28 +290,28 @@ export const Footer: React.FC = () => {
           <nav aria-label="Soziale Medien" className="flex gap-6 text-gray-400">
             <a
               href="/contact"
-              className="hover:text-primary transition-colors"
+              className="hover:text-primary transition-colors p-3 -m-3 inline-flex items-center justify-center min-h-[44px] min-w-[44px]"
               aria-label={t('social.visit', { platform: 'Facebook' })}
             >
               <OptimizedIcon icon={FacebookLogo} />
             </a>
             <a
               href="/contact"
-              className="hover:text-primary transition-colors"
+              className="hover:text-primary transition-colors p-3 -m-3 inline-flex items-center justify-center min-h-[44px] min-w-[44px]"
               aria-label={t('social.visit', { platform: 'Instagram' })}
             >
               <OptimizedIcon icon={InstagramLogo} />
             </a>
             <a
               href="/contact"
-              className="hover:text-primary transition-colors"
+              className="hover:text-primary transition-colors p-3 -m-3 inline-flex items-center justify-center min-h-[44px] min-w-[44px]"
               aria-label={t('social.visit', { platform: 'Twitter' })}
             >
               <OptimizedIcon icon={TwitterLogo} />
             </a>
             <a
               href="/contact"
-              className="hover:text-primary transition-colors"
+              className="hover:text-primary transition-colors p-3 -m-3 inline-flex items-center justify-center min-h-[44px] min-w-[44px]"
               aria-label={t('social.visit', { platform: 'LinkedIn' })}
             >
               <OptimizedIcon icon={LinkedinLogo} />
@@ -287,15 +321,15 @@ export const Footer: React.FC = () => {
             aria-label="Rechtliche Informationen"
             className="flex flex-wrap justify-center md:justify-end gap-x-4 gap-y-2 text-xs text-gray-400"
           >
-            <NavLink to="/legal/agb" className="hover:text-white transition-colors">
+            <Link href="/legal/agb" className="hover:text-white transition-colors inline-flex items-center min-h-[44px]">
               {t('nav.legal.agb')}
-            </NavLink>
-            <NavLink to="/legal/datenschutz" className="hover:text-white transition-colors">
+            </Link>
+            <Link href="/legal/datenschutz" className="hover:text-white transition-colors inline-flex items-center min-h-[44px]">
               {t('nav.legal.privacy')}
-            </NavLink>
-            <NavLink to="/legal/impressum" className="hover:text-white transition-colors">
+            </Link>
+            <Link href="/legal/impressum" className="hover:text-white transition-colors inline-flex items-center min-h-[44px]">
               {t('nav.legal.imprint')}
-            </NavLink>
+            </Link>
             <span>{t('footer.rights', { year: new Date().getFullYear() })}</span>
           </nav>
         </div>

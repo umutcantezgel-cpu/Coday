@@ -157,10 +157,13 @@ export const useCalculatorStore = create<CalculatorState>()(
           const str = localStorage.getItem(name);
           if (!str) return null;
           try {
-            const { state } = JSON.parse(str);
+            const parsed = JSON.parse(str);
             return {
-              ...state,
-              selectedModuleIds: new Set(state.selectedModuleIds),
+              ...parsed,
+              state: {
+                ...parsed.state,
+                selectedModuleIds: new Set(parsed.state.selectedModuleIds),
+              },
             };
           } catch {
             return null;

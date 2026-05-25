@@ -1,8 +1,10 @@
+"use client";
 import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { usePathname, useSearchParams } from 'next/navigation';
+import Script from 'next/script';
 import { useCookieStore } from '@/shared/lib/cookieStore';
 
-const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID;
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 declare global {
   interface Window {
@@ -12,41 +14,41 @@ declare global {
 }
 
 export const GoogleAnalytics: React.FC = () => {
-  const location = useLocation();
+  const pathname = usePathname() || "";
+  const searchParams = useSearchParams();
   const { preferences: consent } = useCookieStore();
 
   useEffect(() => {
-    // Only initialize if analytics consent is granted and ID exists
-    if (!consent.analytics || !GA_MEASUREMENT_ID) return;
-
-    // Load the script if not already loaded
-    if (!document.querySelector(`script[src*="googletagmanager.com/gtag/js"]`)) {
-      const script = document.createElement('script');
-      script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-      script.async = true;
-      document.head.appendChild(script);
-
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = function (...args: unknown[]) {
-        window.dataLayer.push(args);
-      };
-
-      window.gtag('js', new Date());
-      window.gtag('config', GA_MEASUREMENT_ID, {
-        page_path: location.pathname + location.search,
-        anonymize_ip: true, // GDPR compliance
-      });
-    }
-  }, [consent.analytics, location]);
-
-  // Track page views on route change
-  useEffect(() => {
-    if (!consent.analytics || !GA_MEASUREMENT_ID || !window.gtag) return;
+    if (!consent.analytics || !GA_MEASUREMENT_ID || typeof window === 'undefined' || !window.gtag) return;
 
     window.gtag('config', GA_MEASUREMENT_ID, {
-      page_path: location.pathname + location.search,
+      page_path: (pathname || "") + (searchParams?.toString() ? `?${searchParams?.toString()}` : ""),
     });
-  }, [location, consent.analytics]);
+  }, [pathname, searchParams, consent.analytics]);
 
-  return null;
+  if (!consent.analytics || !GA_MEASUREMENT_ID) return null;
+
+  return (
+    <>
+      <Script
+        strategy="lazyOnload"
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+      />
+      <Script
+        id="google-analytics"
+        strategy="lazyOnload"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}', {
+              page_path: window.location.pathname,
+              anonymize_ip: true,
+            });
+          `,
+        }}
+      />
+    </>
+  );
 };

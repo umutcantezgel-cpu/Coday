@@ -1,5 +1,6 @@
+"use client";
 import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations, useLocale } from 'next-intl';
 import { Module } from '@/shared/data/modules';
 import { Icon } from '@/shared/ui/Icon';
 import { AnimatePresence, motion } from 'motion/react';
@@ -22,8 +23,8 @@ export const ModuleCard: React.FC<ModuleCardProps> = ({
   isIncluded = false,
   isRecommended = false,
 }) => {
-  const { t, i18n } = useTranslation('calculator');
-  const locale = i18n.language;
+  const t = useTranslations('calculator');
+  const locale = useLocale();
   const [showDetails, setShowDetails] = useState(false);
 
   const handleToggleDetails = (e: React.MouseEvent) => {
@@ -99,10 +100,10 @@ export const ModuleCard: React.FC<ModuleCardProps> = ({
       {/* Content */}
       <div className="flex-grow">
         <h3 className="font-display font-bold text-base text-gray-900 mb-1">
-          {t(`modules.${module.id}.name`, module.name)}
+          {t(`modules.${module.id}.name`)}
         </h3>
         <p className="text-xs text-gray-600 leading-relaxed mb-3">
-          {t(`modules.${module.id}.description`, module.description)}
+          {t(`modules.${module.id}.description`)}
         </p>
 
         {/* Learn More Toggle */}
@@ -125,7 +126,7 @@ export const ModuleCard: React.FC<ModuleCardProps> = ({
               className="overflow-hidden"
             >
               <div className="text-xs text-gray-500 bg-gray-50 p-3 rounded-lg border border-gray-100 mb-2 leading-relaxed">
-                {t(`modules.${module.id}.learn_more`, { defaultValue: module.description })}
+                {t(`modules.${module.id}.learn_more`)}
               </div>
             </motion.div>
           )}

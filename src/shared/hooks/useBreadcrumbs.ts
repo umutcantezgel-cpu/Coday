@@ -1,5 +1,7 @@
-import { useLocation } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+"use client";
+
+import { usePathname } from 'next/navigation';
+import { useLocale } from 'next-intl';
 
 const BASE_URL = 'https://www.codayweb.de';
 
@@ -11,14 +13,18 @@ const SEGMENT_LABELS: Record<string, Record<string, string>> = {
   de: {
     services: 'Leistungen',
     'web-development': 'Webentwicklung',
+    development: 'Entwicklung',
     'web-design': 'Webdesign',
+    design: 'Design',
     seo: 'SEO',
     performance: 'Performance',
     'enterprise-web': 'Enterprise Web',
     'e-commerce': 'E-Commerce',
+    'ecommerce-development': 'E-Commerce',
     'web-apps': 'Web Apps',
     'headless-cms': 'Headless CMS',
     'api-integrations': 'API-Integrationen',
+    'api-integration': 'API-Integrationen',
     migration: 'Migration',
     'ui-ux': 'UI/UX Design',
     'brand-identity': 'Brand Identity',
@@ -64,14 +70,18 @@ const SEGMENT_LABELS: Record<string, Record<string, string>> = {
   en: {
     services: 'Services',
     'web-development': 'Web Development',
+    development: 'Development',
     'web-design': 'Web Design',
+    design: 'Design',
     seo: 'SEO',
     performance: 'Performance',
     'enterprise-web': 'Enterprise Web',
     'e-commerce': 'E-Commerce',
+    'ecommerce-development': 'E-Commerce',
     'web-apps': 'Web Apps',
     'headless-cms': 'Headless CMS',
     'api-integrations': 'API Integrations',
+    'api-integration': 'API Integrations',
     migration: 'Migration',
     'ui-ux': 'UI/UX Design',
     'brand-identity': 'Brand Identity',
@@ -133,12 +143,11 @@ export interface BreadcrumbItem {
  * Automatically strips the language prefix and resolves labels.
  */
 export function useBreadcrumbs(overrideLabel?: string): BreadcrumbItem[] {
-  const location = useLocation();
-  const { i18n } = useTranslation();
-  const lang = i18n.language.startsWith('en') ? 'en' : 'de';
+  const pathname = usePathname() || '';
+  const lang = useLocale().startsWith('en') ? 'en' : 'de';
   const labels = SEGMENT_LABELS[lang] || SEGMENT_LABELS.de;
 
-  const segments = location.pathname.split('/').filter(Boolean);
+  const segments = pathname.split('/').filter(Boolean);
 
   // Remove language prefix
   const langPrefix = segments[0];

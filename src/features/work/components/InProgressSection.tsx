@@ -1,7 +1,7 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations, useLocale } from 'next-intl';
 import { motion } from 'motion/react';
-import { ArrowRight, CircleNotch } from '@phosphor-icons/react';
+import { ArrowRight, CircleNotch } from '@phosphor-icons/react/dist/ssr';
 import { Project } from '@/shared/data/work';
 
 interface InProgressSectionProps {
@@ -9,22 +9,23 @@ interface InProgressSectionProps {
 }
 
 export const InProgressSection: React.FC<InProgressSectionProps> = ({ projects }) => {
-  const { t, i18n } = useTranslation('work');
-  const currentLang = i18n.language as 'de' | 'en';
+  const t = useTranslations('work');
+  const locale = useLocale();
+  const currentLang = locale as 'de' | 'en';
 
   if (projects.length === 0) return null;
 
   return (
-    <section className="py-24 bg-slate-900 border-y border-slate-800/50">
+    <section className="py-[var(--space-section)] bg-slate-900 border-y border-slate-800/50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between mb-12">
           <div>
             <h2 className="text-2xl font-bold text-white flex items-center gap-3">
               <span className="w-3 h-3 bg-emerald-500 rounded-full animate-pulse" />
-              {t('sections.in_progress.title', 'The Lab / In Progress')}
+              {t('sections.in_progress.title')}
             </h2>
             <p className="text-slate-400 mt-2">
-              {t('sections.in_progress.subtitle', 'Live builds deploying in real-time.')}
+              {t('sections.in_progress.subtitle')}
             </p>
           </div>
         </div>
@@ -69,7 +70,7 @@ export const InProgressSection: React.FC<InProgressSectionProps> = ({ projects }
               </div>
 
               <div className="flex items-center text-xs font-bold text-emerald-500 uppercase tracking-wider group-hover:translate-x-2 transition-transform">
-                <span>{t('actions.view_live', 'View Build')}</span>
+                <span>{t('actions.view_live')}</span>
                 <ArrowRight className="ml-2 w-3 h-3" />
               </div>
             </motion.a>

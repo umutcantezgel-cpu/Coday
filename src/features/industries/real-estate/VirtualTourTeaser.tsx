@@ -1,10 +1,11 @@
+"use client";
 import React, { useState, useRef, useEffect } from 'react';
 import { Icon } from '@/shared/ui/Icon';
 import { motion, useAnimation } from 'motion/react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 const VirtualTourTeaser: React.FC = () => {
-  const { t } = useTranslation('industries');
+  const t = useTranslations('industries');
   // Simulating a 360 viewer with a wider panoramic image moving on drag/auto
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);

@@ -1,11 +1,12 @@
+"use client";
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { useTranslation, Trans } from 'react-i18next';
+import { useTranslations, useLocale } from 'next-intl';
 import { motion, AnimatePresence } from 'motion/react';
-import { Skeleton } from '@/shared/ui';
+import { Skeleton } from '@/shared/ui/Skeleton';
 // Initialize Supabase Client (Frontend)
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
 interface BookingCalendarProps {
   className?: string;
@@ -18,7 +19,8 @@ const BookingCalendar = ({
   className,
   initialServiceType = 'consultation',
 }: BookingCalendarProps) => {
-  const { t, i18n } = useTranslation('booking');
+  const t = useTranslations('booking');
+  const locale = useLocale();
   const [step, setStep] = useState<number>(1);
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
@@ -143,17 +145,13 @@ const BookingCalendar = ({
           </div>
           <h3 className="text-2xl font-bold text-gray-900">{t('calendar.success.title')}</h3>
           <p className="text-gray-700">
-            <Trans
-              i18nKey="calendar.success.message"
-              t={t}
-              values={{
-                name: formData.name,
-                date: selectedDate?.toLocaleDateString(i18n.language === 'en' ? 'en-US' : 'de-DE'),
-                time: selectedTime,
-                email: formData.email,
-              }}
-              components={{ br: <br /> }}
-            />
+            {t.rich('calendar.success.message', {
+              name: formData.name,
+              date: selectedDate?.toLocaleDateString(locale === 'en' ? 'en-US' : 'de-DE') || '',
+              time: selectedTime || '',
+              email: formData.email,
+              br: () => <br />,
+            })}
           </p>
           <button
             onClick={() => window.location.reload()}
@@ -196,7 +194,7 @@ const BookingCalendar = ({
                     `}
                     >
                       <span className="text-sm font-medium">
-                        {date.toLocaleDateString(i18n.language === 'en' ? 'en-US' : 'de-DE', {
+                        {date.toLocaleDateString(locale === 'en' ? 'en-US' : 'de-DE', {
                           weekday: 'short',
                         })}
                       </span>
@@ -310,7 +308,7 @@ const BookingCalendar = ({
             <div className="mb-6">
               <h3 className="text-xl font-bold text-gray-900">{t('calendar.step2.title')}</h3>
               <p className="text-sm text-gray-500">
-                {selectedDate?.toLocaleDateString(i18n.language === 'en' ? 'en-US' : 'de-DE', {
+                {selectedDate?.toLocaleDateString(locale === 'en' ? 'en-US' : 'de-DE', {
                   weekday: 'long',
                   day: 'numeric',
                   month: 'long',

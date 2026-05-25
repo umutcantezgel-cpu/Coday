@@ -1,13 +1,14 @@
+"use client";
 import React, { useState, Suspense, lazy } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 import BookingCalendar from '@/features/booking/ui/BookingCalendar';
 const ApplicationWizard = lazy(() => import('@/features/contact/ApplicationWizard'));
 import { Icon } from '@/shared/ui/Icon';
 import { Skeleton } from '@/shared/ui/Skeleton';
 
 export const MobileContactLayout: React.FC = () => {
-  const { t } = useTranslation('contact');
+  const t = useTranslations('contact');
   const [activeTab, setActiveTab] = useState<'booking' | 'contact'>('booking');
 
   return (
@@ -29,8 +30,7 @@ export const MobileContactLayout: React.FC = () => {
                 </h1>
                 <p className="text-slate-600">
                   {t(
-                    'mobile.booking_intro',
-                    'Wählen Sie einen passenden Termin für ein unverbindliches Erstgespräch.'
+                    'mobile.booking_intro'
                   )}
                 </p>
               </div>
@@ -48,12 +48,11 @@ export const MobileContactLayout: React.FC = () => {
             >
               <div className="mb-6">
                 <h1 className="font-display font-bold text-2xl text-secondary mb-2">
-                  {t('mobile.contact_title', 'Projekt anfragen')}
+                  {t('mobile.contact_title')}
                 </h1>
                 <p className="text-slate-600">
                   {t(
-                    'mobile.contact_intro',
-                    'Erzählen Sie uns von Ihrem Vorhaben. Wir melden uns binnen 24h.'
+                    'mobile.contact_intro'
                   )}
                 </p>
               </div>
@@ -112,7 +111,7 @@ export const MobileContactLayout: React.FC = () => {
               name="calendar_today"
               className={`text-xl mb-0.5 ${activeTab === 'booking' ? 'text-primary' : 'text-slate-400'}`}
             />
-            <span className="relative z-10">{t('mobile.tabs.booking', 'Termin')}</span>
+            <span className="relative z-10">{t('mobile.tabs.booking')}</span>
           </button>
 
           <button
@@ -134,7 +133,7 @@ export const MobileContactLayout: React.FC = () => {
               name="mail"
               className={`text-xl mb-0.5 ${activeTab === 'contact' ? 'text-purple-600' : 'text-slate-400'}`}
             />
-            <span className="relative z-10">{t('mobile.tabs.contact', 'Anfrage')}</span>
+            <span className="relative z-10">{t('mobile.tabs.contact')}</span>
           </button>
         </div>
       </div>

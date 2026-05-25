@@ -1,8 +1,9 @@
+"use client";
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 import { motion } from 'motion/react';
 import {
   PaperPlaneRight,
@@ -14,10 +15,10 @@ import {
   Phone,
   CheckCircle,
   SpinnerGap,
-} from '@phosphor-icons/react';
-import { useSearchParams } from 'react-router-dom';
+} from '@phosphor-icons/react/dist/ssr';
+import { useSearchParams } from 'next/navigation';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { supabase } from '@/shared/lib/supabase/client';
+import { saveLeadInternalAction } from '@/features/contact/actions/saveLeadInternal';
 
 // Schema for Gov Inquiries
 const GovContactSchema = z.object({
@@ -40,14 +41,14 @@ const GovContactSchema = z.object({
 type GovContactData = z.infer<typeof GovContactSchema>;
 
 export const GovContactForm: React.FC = () => {
-  const { t } = useTranslation('public-sector');
+  const t = useTranslations('public-sector');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [searchParams] = useSearchParams();
+  const searchParams = useSearchParams();
 
   // Get type from URL search params safely
-  const typeParam = searchParams.get('type');
+  const typeParam = searchParams?.get('type') ?? null;
   const defaultType = (
     typeParam && ['direct', 'uvgo', 'vgv', 'open'].includes(typeParam) ? typeParam : 'uvgo'
   ) as 'direct' | 'uvgo' | 'vgv' | 'open';
@@ -67,7 +68,7 @@ export const GovContactForm: React.FC = () => {
 
   // Sync form whenever URL param changes
   React.useEffect(() => {
-    const currentType = searchParams.get('type');
+    const currentType = searchParams?.get('type') ?? null;
     if (currentType && ['direct', 'uvgo', 'vgv', 'open'].includes(currentType)) {
       setValue('type', currentType as GovContactData['type']);
     }
@@ -96,38 +97,38 @@ export const GovContactForm: React.FC = () => {
             ${data.message || 'Keine zusätzliche Nachricht'}
             `;
 
-      // 1. Insert into Supabase
-      const { error: dbError } = await supabase.from('leads').insert([
-        {
-          name: data.name,
-          email: data.email,
-          phone: data.phone,
-          company: data.authority,
-          message: fullMessage,
-          source: 'Public Sector Page',
-        },
-      ]);
+      // 1. Insert into Supabase via Server Action
+      const result = await saveLeadInternalAction({
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        company: data.authority,
+        message: fullMessage,
+        source: 'Public Sector Page',
+      });
 
-      if (dbError) throw new Error(dbError.message);
+      if (!result.success) throw new Error(result.error || 'Unknown error saving lead');
 
       // 2. Trigger Edge Function (fire-and-forget for UI speed, or await if critical)
       // Re-using existing endpoint
-      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-      const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+      const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-      await fetch(`${supabaseUrl}/functions/v1/send-lead`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${supabaseKey}`,
-        },
-        body: JSON.stringify({
-          ...data,
-          company: data.authority,
-          message: fullMessage,
-          project: 'Public Sector Inquiry',
-        }),
-      });
+      if (supabaseUrl && supabaseKey) {
+        fetch(`${supabaseUrl}/functions/v1/send-lead`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${supabaseKey}`,
+          },
+          body: JSON.stringify({
+            ...data,
+            company: data.authority,
+            message: fullMessage,
+            project: 'Public Sector Inquiry',
+          }),
+        }).catch(err => console.error('Edge function error:', err));
+      }
 
       setSuccess(true);
     } catch (err: unknown) {

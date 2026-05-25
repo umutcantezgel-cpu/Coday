@@ -1,8 +1,9 @@
+"use client";
 import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from 'motion/react';
 
-import { Code, Flask, RocketLaunch, Ruler, Users, Check } from '@phosphor-icons/react';
+import { Code, Flask, RocketLaunch, Ruler, Users, Check } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 
 interface FeatureDef {
@@ -14,7 +15,7 @@ interface FeatureDef {
 }
 
 const CodeQualitySimulator: React.FC = () => {
-  const { t } = useTranslation('services');
+  const t = useTranslations('services');
   const [activeIds, setActiveIds] = useState<string[]>([]);
 
   const featureDefs: FeatureDef[] = [

@@ -1,16 +1,37 @@
+
+
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 import BlurText from '@/shared/ui/BlurText';
-import { TestimonialBlock, TestimonialBlockProps } from '@/shared/ui';
-import { FadeInUp } from '@/shared/ui/MotionWrappers';
+import { TestimonialBlock } from '@/shared/ui/TestimonialBlock';
+import dynamic from 'next/dynamic';
+const FadeInUp = dynamic(() => import('@/shared/ui/MotionWrappers').then(m => m.FadeInUp));
 
 export const TestimonialsSection: React.FC = () => {
-  const { t } = useTranslation(['home']);
-  const testimonials = t('testimonials.items', { returnObjects: true }) as TestimonialBlockProps[];
+  const t = useTranslations('home');
+  // Note: next-intl supports .raw() to get objects/arrays from the JSON
+  const items = t.raw('testimonials.items') as Array<{
+    quote: string;
+    authorName: string;
+    authorPosition: string;
+    authorImageUrl?: string;
+    authorCompany?: string;
+  }>;
+  
+  const testimonials = items.map((item) => ({
+    quote: item.quote,
+    authorName: item.authorName,
+    authorPosition: item.authorPosition,
+    authorImageUrl: item.authorImageUrl,
+    authorCompany: item.authorCompany,
+    companyLogoUrl: undefined,
+    linkedInUrl: undefined,
+    rating: 5,
+  }));
 
   return (
-    <section className="py-16 md:py-24 bg-surface-light relative overflow-hidden">
+    <section className="py-[var(--space-section)] bg-surface-light relative overflow-hidden">
       <div className="absolute top-0 start-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

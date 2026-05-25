@@ -1,14 +1,16 @@
+"use client";
+
 import React from 'react';
-import { Warning } from '@phosphor-icons/react';
+import { Warning } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 export interface UrgencyMeterProps {
   score: number;
 }
 
 export const UrgencyMeter: React.FC<UrgencyMeterProps> = ({ score }) => {
-  const { t } = useTranslation('analyzer');
+  const t = useTranslations('analyzer');
 
   return (
     <div className="p-4 border border-dashed border-gray-300 rounded-lg bg-gray-50 text-center">

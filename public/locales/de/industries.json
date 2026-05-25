@@ -26,16 +26,16 @@
       "title": "Kennen Sie diese Herausforderungen?"
     },
     "solutions": {
-      "title": "Unsere Lösung für {{industry}}",
+      "title": "Unsere Lösung für {industry}",
       "description": "Wir entwickeln nicht nur Webseiten, sondern digitale Vertriebsmitarbeiter, die genau auf Ihre Branche zugeschnitten sind."
     },
     "gallery": {
       "title": "Branchen-Einblicke",
-      "description": "Professionelle Visualisierung für {{industry}}."
+      "description": "Professionelle Visualisierung für {industry}."
     },
     "features": {
       "title": "Spezial-Features",
-      "subtitle": "Exklusive Module für {{industry}}",
+      "subtitle": "Exklusive Module für {industry}",
       "cta": "Beratung anfordern"
     },
     "related": {
@@ -275,7 +275,7 @@
           "revenue_per_deal": "Umsatz pro Deal",
           "turbo_sale": "Turbo-Verkauf",
           "turbo_sub": "durch Web-Exposé",
-          "time_saved": "-{{percent}}% Zeit",
+          "time_saved": "-{percent}% Zeit",
           "impact": "Verkaufen Sie 5 Häuser in der Zeit von 4."
         },
         "cta": "Jetzt Makler-Paket anfragen"

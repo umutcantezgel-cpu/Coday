@@ -1,15 +1,18 @@
+
+
 import React from 'react';
-import { useTranslation } from 'react-i18next';
-import { motion } from 'motion/react';
-import { LocalizedNavLink as NavLink } from '@/shared/ui/LocalizedLink';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import BlurText from '@/shared/ui/BlurText';
 import { MagicBento, BentoCard } from '@/shared/ui/MagicBento';
-import { FadeInUp } from '@/shared/ui/MotionWrappers';
-import { Code, Palette, RocketLaunch, ArrowRight } from '@phosphor-icons/react';
+import dynamic from 'next/dynamic';
+const FadeInUp = dynamic(() => import('@/shared/ui/MotionWrappers').then(m => m.FadeInUp));
+import { Code, Palette, RocketLaunch, ArrowRight } from '@phosphor-icons/react/dist/ssr';
 
 export const ServicesSection: React.FC = () => {
-  const { t } = useTranslation(['home', 'common']);
+  const t = useTranslations('home');
+  const tCommon = useTranslations('common');
 
   const services = [
     {
@@ -36,21 +39,18 @@ export const ServicesSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 md:py-32 bg-background-light relative overflow-hidden">
+    <section className="py-[var(--space-section)] bg-background-light relative overflow-hidden">
       <div className="absolute top-0 end-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] pointer-events-none -translate-y-1/2 translate-x-1/4"></div>
       <div className="absolute bottom-0 start-0 w-[600px] h-[600px] bg-teal-500/5 rounded-full blur-[100px] pointer-events-none translate-y-1/3 -translate-x-1/3"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center lg:text-start mb-20 max-w-3xl">
-          <motion.span
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-primary font-bold uppercase tracking-[0.2em] text-sm mb-5 block"
+          <FadeInUp
+            duration={0.5}
+            className="text-primary font-bold uppercase tracking-[0.2em] text-sm mb-5 inline-block"
           >
             {t('services.label', { defaultValue: 'Unsere Leistungen' })}
-          </motion.span>
+          </FadeInUp>
           <h2 className="font-display font-black text-4xl sm:text-5xl md:text-6xl text-secondary mb-8 leading-[1.1]">
             <BlurText
               text={t('services.title_prefix', { defaultValue: 'Wir bieten' })}
@@ -73,9 +73,9 @@ export const ServicesSection: React.FC = () => {
                 glowColor="rgba(139, 92, 246, 0.3)"
                 className="h-full border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02] hover:border-primary/20 transition-all duration-500 ease-out bg-white rounded-2xl md:aspect-[1/1.618]"
               >
-                <NavLink
-                  to={service.link}
-                  className="group relative p-6 md:p-8 block h-full flex flex-col"
+                <Link
+                  href={service.link}
+                  className="group relative p-6 md:p-8 flex flex-col h-full"
                 >
                   <div
                     className={`absolute top-0 end-0 w-32 h-32 ${service.color} opacity-[0.03] rounded-bl-[100px] rtl:rounded-br-[100px] rtl:rounded-bl-none transition-transform duration-700 ease-out group-hover:scale-[1.3] group-hover:opacity-[0.06]`}
@@ -103,14 +103,14 @@ export const ServicesSection: React.FC = () => {
                   </div>
 
                   <div className="flex items-center text-primary font-bold tracking-wide uppercase text-sm mt-auto transition-all duration-300 group-hover:tracking-wider">
-                    {t('cta.more', { ns: 'common', defaultValue: 'Mehr erfahren' })}
+                    {tCommon('cta.more', { defaultValue: 'Mehr erfahren' })}
                     <OptimizedIcon
                       icon={ArrowRight}
                       weight="bold"
                       className="ms-3 group-hover:translate-x-2 rtl:group-hover:-translate-x-2 transition-transform duration-300 ease-out"
                     />
                   </div>
-                </NavLink>
+                </Link>
               </BentoCard>
             </FadeInUp>
           ))}

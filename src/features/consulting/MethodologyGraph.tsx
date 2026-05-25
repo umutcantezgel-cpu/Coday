@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 import {
   MagnifyingGlass,
   Blueprint,
@@ -8,7 +8,7 @@ import {
   RocketLaunch,
   Trophy,
   ArrowRight,
-} from '@phosphor-icons/react';
+} from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 
 const STEPS = [
@@ -58,7 +58,7 @@ export const MethodologyGraph: React.FC<MethodologyGraphProps> = ({
   namespace = 'consulting',
   prefix = 'methodology',
 }) => {
-  const { t } = useTranslation(namespace);
+  const t = useTranslations(namespace);
 
   return (
     <div className="w-full max-w-6xl mx-auto py-12">

@@ -1,3 +1,4 @@
+"use client";
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 
@@ -80,7 +81,6 @@ const LogoLoop = React.memo<LogoLoopProps>(
     useEffect(() => {
       const el = containerRef.current;
       if (!el) return;
-      // @ts-expect-error
       const observer = new IntersectionObserver(([entry]) => setIsVisible(entry.isIntersecting), {
         threshold: 0,
       });

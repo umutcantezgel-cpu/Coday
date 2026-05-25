@@ -1,10 +1,11 @@
+"use client";
 import React, { useState } from 'react';
-import { DeviceMobile, Monitor, XCircle, CheckCircle } from '@phosphor-icons/react';
+import { DeviceMobile, Monitor, XCircle, CheckCircle } from '@phosphor-icons/react/dist/ssr';
 import { clsx } from "clsx";
-import { useTranslation, Trans } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 export const MobileSimulator: React.FC = () => {
-    const { t } = useTranslation();
+    const t = useTranslations();
     const [mode, setMode] = useState<'bad' | 'good'>('bad');
     const [device, setDevice] = useState<'mobile' | 'desktop'>('mobile');
 
@@ -66,7 +67,7 @@ export const MobileSimulator: React.FC = () => {
                                 </div>
                             ) : (
                                 <div className="space-y-6 flex flex-col items-center">
-                                    <h1 className="text-2xl font-black text-slate-900 leading-none"><Trans i18nKey="blog:mobileSimulator.fake.headline" components={{ span: <span className="text-blue-600" /> }} /></h1>
+                                    <h1 className="text-2xl font-black text-slate-900 leading-none">{t.rich('mobileSimulator.fake.headline', { span: (chunks) => <span className="text-blue-600">{chunks}</span> })}</h1>
                                     <p className="text-sm text-slate-600 font-medium">{t('blog:mobileSimulator.fake.subheadline')}</p>
                                     <button className="w-full py-3 bg-blue-600 text-white font-bold rounded-xl shadow-lg shadow-blue-200 active:scale-95 transition-transform">
                                         {t('blog:mobileSimulator.fake.startNow')}

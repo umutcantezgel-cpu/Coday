@@ -1,12 +1,13 @@
+"use client";
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { ChartBar, ArrowUpRight } from '@phosphor-icons/react';
+import { ChartBar, ArrowUpRight } from '@phosphor-icons/react/dist/ssr';
 import { EASING, STAGGER } from '@/shared/lib/motion';
 
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 export const SEOTrafficGraph: React.FC = () => {
-  const { t } = useTranslation('blog');
+  const t = useTranslations('blog');
   const [view, setView] = useState<'standard' | 'coday'>('standard');
 
   const dataStandard = [10, 12, 11, 13, 14, 15, 14, 16, 17, 18, 19, 20];

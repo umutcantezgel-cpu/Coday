@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 interface TeamMember {
   name: string;
@@ -9,9 +9,9 @@ interface TeamMember {
 }
 
 const TeamGallery: React.FC = () => {
-  const { t } = useTranslation('careers');
+  const t = useTranslations('careers');
 
-  const team = t('culture.team.members', { returnObjects: true }) as TeamMember[];
+  const team = t.raw('culture.team.members') as TeamMember[];
 
   // Fallback if translation fails or returns string (should not happen if array is present)
   const teamMembers = Array.isArray(team) ? team : [];

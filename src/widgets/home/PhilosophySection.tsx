@@ -1,19 +1,18 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import BlurText from '@/shared/ui/BlurText';
-import { useIntersectionObserver } from '@/shared/hooks/useIntersectionObserver';
+import dynamic from 'next/dynamic';
+const FadeInUp = dynamic(() => import('@/shared/ui/MotionWrappers').then(m => m.FadeInUp));
 
 export const PhilosophySection: React.FC = () => {
-  const { t } = useTranslation(['home']);
-  const { ref: textRef, isVisible: isTextVisible } = useIntersectionObserver({ threshold: 0.1 });
-  const { ref: imageRef, isVisible: isImageVisible } = useIntersectionObserver({ threshold: 0.1 });
+  const t = useTranslations('home');
 
   return (
-    <section className="py-12 md:py-24 bg-surface-light relative overflow-hidden">
+    <section className="py-[var(--space-section)] bg-surface-light relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
-          <div ref={textRef} className={`reveal-left ${isTextVisible ? 'reveal-visible' : ''}`}>
+          <FadeInUp className="text-left">
             <h2 className="font-display font-black text-3xl lg:text-5xl mb-8 leading-tight text-secondary">
               <BlurText
                 text={t('philosophy.traditional')}
@@ -30,21 +29,18 @@ export const PhilosophySection: React.FC = () => {
                 {t('philosophy.text_standard')}
               </p>
             </div>
-          </div>
-          <div
-            ref={imageRef}
-            className={`relative reveal-scale ${isImageVisible ? 'reveal-visible stagger-2' : ''}`}
-          >
+          </FadeInUp>
+          <FadeInUp className="relative">
             {/* Organic shape backdrop */}
             <div className="absolute inset-0 bg-primary/10 rounded-[2rem] transform rotate-3 scale-95"></div>
             <OptimizedImage
               src="/images/hero/business-handshake-partnerschaft-tuer-offen-zusammenarbeit-vertrauen-small.webp"
               alt={t('images.trust_collaboration', { ns: 'home' })}
-              className="relative rounded-[2rem] shadow-flat-lg bg-white p-2 transform -rotate-2 hover:rotate-0 transition-all duration-500 w-full max-w-[150px]"
+              className="relative rounded-[2rem] shadow-flat-lg bg-white p-2 transform -rotate-2 hover:rotate-0 transition-all duration-500 w-full max-w-[150px] mx-auto lg:mx-0"
               width={96}
               height={96}
             />
-          </div>
+          </FadeInUp>
         </div>
       </div>
     </section>

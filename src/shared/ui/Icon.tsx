@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { cn } from '@/shared/lib/utils';
 import {
@@ -159,7 +161,7 @@ import {
   Watch,
   CircleNotch,
   Quotes,
-} from '@phosphor-icons/react';
+} from '@phosphor-icons/react/dist/ssr';
 import { useRtl } from '@/shared/hooks/useRtl';
 
 const FLIPPABLE_ICONS = [

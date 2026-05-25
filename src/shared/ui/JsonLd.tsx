@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 
 /**
  * Schema.org JSON-LD structured data for Coday.
@@ -707,8 +706,9 @@ export const JsonLd: React.FC<JsonLdProps> = ({
   };
 
   return (
-    <Helmet>
-      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-    </Helmet>
+    <script 
+      type="application/ld+json" 
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} 
+    />
   );
 };

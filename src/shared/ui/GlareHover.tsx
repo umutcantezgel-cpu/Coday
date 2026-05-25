@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useRef } from 'react';
 
 interface GlareHoverProps {
@@ -41,11 +43,8 @@ const GlareHover: React.FC<GlareHoverProps> = ({
     const b = parseInt(hex.slice(4, 6), 16);
     rgba = `rgba(${r}, ${g}, ${b}, ${glareOpacity})`;
   } else if (/^[\dA-Fa-f]{3}$/.test(hex)) {
-    // @ts-expect-error
     const r = parseInt(hex[0] + hex[0], 16);
-    // @ts-expect-error
     const g = parseInt(hex[1] + hex[1], 16);
-    // @ts-expect-error
     const b = parseInt(hex[2] + hex[2], 16);
     rgba = `rgba(${r}, ${g}, ${b}, ${glareOpacity})`;
   }

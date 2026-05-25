@@ -1,0 +1,138 @@
+import type { Metadata } from 'next';
+import { getLocalBusinessSchema, getProfessionalServiceSchema } from '@/lib/schema';
+import { generatePageMetadata } from '@/lib/metadata';
+import { Skeleton } from '@/shared/ui/Skeleton';
+import { TrustBadges } from '@/shared/ui/TrustBadges';
+import { TrustBar } from '@/shared/ui/TrustBar';
+import { HeroSection } from '@/widgets/home/HeroSection';
+import { headers } from 'next/headers';
+import Script from 'next/script';
+import React from 'react';
+
+import dynamic from 'next/dynamic';
+
+const LogoLoop = dynamic(() => import('@/shared/ui/LogoLoop'), { ssr: true });
+
+const StatsSection = dynamic(() => import('@/widgets/home/StatsSection').then((mod) => mod.StatsSection), { ssr: true });
+const PhilosophySection = dynamic(() => import('@/widgets/home/PhilosophySection').then((mod) => mod.PhilosophySection), { ssr: true });
+const ServicesSection = dynamic(() => import('@/widgets/home/ServicesSection').then((mod) => mod.ServicesSection), { ssr: true });
+const IndustriesGrid = dynamic(() => import('@/widgets/home/IndustriesGrid').then((mod) => mod.IndustriesGrid), { ssr: true });
+const TestimonialsSection = dynamic(() => import('@/widgets/home/TestimonialsSection').then((mod) => mod.TestimonialsSection), { ssr: true });
+const PortfolioTeaserSection = dynamic(() => import('@/widgets/home/PortfolioTeaserSection').then((mod) => mod.PortfolioTeaserSection), { ssr: true });
+const AgencyComparisonTable = dynamic(() => import('@/features/analyzer/ui/AgencyComparisonTable'), { ssr: true });
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  if (locale === 'en') {
+    return generatePageMetadata({
+      title: 'High-End Web Development with AI Precision',
+      description:
+        'AI-augmented web development from Wetzlar. React, TypeScript, Headless CMS. Fixed prices from €2,000.',
+      path: '/en',
+      type: 'money',
+    });
+  }
+  return generatePageMetadata({
+    title: 'High-End Webentwicklung mit AI-Präzision',
+    description:
+      'AI-augmented Webentwicklung aus Wetzlar. React, TypeScript, Headless CMS. Festpreise ab 2.000 €.',
+    path: '/de',
+    type: 'money',
+  });
+}
+
+export default async function HomePage() {
+  const nonce = (await headers()).get('x-nonce') ?? '';
+  const serviceSchema = getProfessionalServiceSchema();
+  const localSchema = getLocalBusinessSchema();
+
+  return (
+    <main>
+      <Script
+        id="schema-local-service"
+        type="application/ld+json"
+        nonce={nonce}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([serviceSchema, localSchema]) }}
+      />
+
+      <HeroSection />
+
+      <TrustBar />
+
+      <div>
+        <React.Suspense fallback={<div className="min-h-[400px]" />}>
+          <StatsSection />
+        </React.Suspense>
+      </div>
+
+      <div>
+        <React.Suspense fallback={<Skeleton className="h-96 w-full max-w-7xl mx-auto rounded-3xl" />}>
+          <AgencyComparisonTable />
+        </React.Suspense>
+      </div>
+
+      <div>
+        <React.Suspense fallback={<div className="min-h-[400px]" />}>
+          <PhilosophySection />
+        </React.Suspense>
+      </div>
+
+      <div>
+        <React.Suspense fallback={<div className="min-h-[400px]" />}>
+          <ServicesSection />
+        </React.Suspense>
+      </div>
+
+      <div>
+        <React.Suspense fallback={<div className="min-h-[400px]" />}>
+          <PortfolioTeaserSection />
+        </React.Suspense>
+      </div>
+
+      <div>
+        <React.Suspense fallback={<div className="min-h-[400px]" />}>
+          <IndustriesGrid />
+        </React.Suspense>
+      </div>
+
+      <section aria-labelledby="tech-stack-heading" className="py-[var(--space-section)] bg-gray-50 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <span className="text-sapphire font-bold tracking-wider uppercase text-xs mb-2 block">
+              Core Tech Stack
+            </span>
+            <h2 id="tech-stack-heading" className="font-display font-bold text-2xl sm:text-3xl text-secondary">
+              High-End Architektur <span className="text-sapphire">für kompromisslose Performance</span>
+            </h2>
+          </div>
+          <LogoLoop
+            logos={[
+              { node: <span className="font-bold text-secondary/80 text-xl">React 19</span> },
+              { node: <span className="font-bold text-secondary/80 text-xl">Next.js 15</span> },
+              { node: <span className="font-bold text-secondary/80 text-xl">TypeScript</span> },
+              { node: <span className="font-bold text-secondary/80 text-xl">Tailwind v4</span> },
+              { node: <span className="font-bold text-secondary/80 text-xl">Sanity CMS</span> },
+              { node: <span className="font-bold text-secondary/80 text-xl">Supabase</span> },
+              { node: <span className="font-bold text-secondary/80 text-xl">Vercel</span> },
+            ]}
+            speed={60}
+            direction="left"
+            logoHeight={32}
+            gap={80}
+            fadeOut={true}
+            pauseOnHover={true}
+          />
+        </div>
+      </section>
+
+      <React.Suspense fallback={<div className="min-h-[400px]" />}>
+        <TestimonialsSection />
+      </React.Suspense>
+
+    </main>
+  );
+}

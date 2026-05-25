@@ -3,7 +3,7 @@
     "booked": "Fully Booked",
     "desc": "Check back soon for updated consultation slots.",
     "free": "Available",
-    "title": "Availability {{month}}",
+    "title": "Availability {month}",
     "tooltip_free": "Date available"
   },
   "faq": {

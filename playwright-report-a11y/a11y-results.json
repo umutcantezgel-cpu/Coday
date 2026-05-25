@@ -1,0 +1,1203 @@
+{
+  "config": {
+    "configFile": "/Users/umurey/agency-domination/e2e/a11y-audit/a11y.config.ts",
+    "rootDir": "/Users/umurey/agency-domination/e2e/a11y-audit",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {},
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/umurey/agency-domination/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/umurey/agency-domination/e2e/a11y-audit",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/umurey/agency-domination/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/umurey/agency-domination/e2e/a11y-audit",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/umurey/agency-domination/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "Mobile Chrome",
+        "name": "Mobile Chrome",
+        "testDir": "/Users/umurey/agency-domination/e2e/a11y-audit",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "html",
+        {
+          "outputFolder": "../../playwright-report-a11y"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "../../playwright-report-a11y/a11y-results.json"
+        }
+      ],
+      [
+        "list",
+        null
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.60.0",
+    "workers": 7,
+    "webServer": {
+      "command": "npm run build && PORT=4201 npm run start",
+      "url": "http://localhost:4201",
+      "reuseExistingServer": true,
+      "timeout": 180000
+    }
+  },
+  "suites": [
+    {
+      "title": "a11y.spec.ts",
+      "file": "a11y.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "WCAG 2.2 AA Accessibility Audit",
+          "file": "a11y.spec.ts",
+          "line": 17,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Should not have any automatically detectable accessibility issues on /",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-bdef54c4897e0351046b",
+              "file": "a11y.spec.ts",
+              "line": 27,
+              "column": 5
+            },
+            {
+              "title": "Custom WCAG 2.2 Focus Not Obscured Test on /",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-081908e63acd755a10df",
+              "file": "a11y.spec.ts",
+              "line": 46,
+              "column": 5
+            },
+            {
+              "title": "Target Size Minimum (WCAG 2.2) on /",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-be130e7adc0e7435bc50",
+              "file": "a11y.spec.ts",
+              "line": 81,
+              "column": 5
+            },
+            {
+              "title": "Should not have any automatically detectable accessibility issues on /contact",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-a4c13b4b96374deacae3",
+              "file": "a11y.spec.ts",
+              "line": 27,
+              "column": 5
+            },
+            {
+              "title": "Custom WCAG 2.2 Focus Not Obscured Test on /contact",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-0a6cd1c068b191a192a3",
+              "file": "a11y.spec.ts",
+              "line": 46,
+              "column": 5
+            },
+            {
+              "title": "Target Size Minimum (WCAG 2.2) on /contact",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-488c4eff120e21705c0c",
+              "file": "a11y.spec.ts",
+              "line": 81,
+              "column": 5
+            },
+            {
+              "title": "Should not have any automatically detectable accessibility issues on /about",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-ab52999ec677f9607c9a",
+              "file": "a11y.spec.ts",
+              "line": 27,
+              "column": 5
+            },
+            {
+              "title": "Custom WCAG 2.2 Focus Not Obscured Test on /about",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-bca1ce8e0a477e157f99",
+              "file": "a11y.spec.ts",
+              "line": 46,
+              "column": 5
+            },
+            {
+              "title": "Target Size Minimum (WCAG 2.2) on /about",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-a1629e08d5a6d4f2a07a",
+              "file": "a11y.spec.ts",
+              "line": 81,
+              "column": 5
+            },
+            {
+              "title": "Should not have any automatically detectable accessibility issues on /services",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-fd2923fc834bae99a1ae",
+              "file": "a11y.spec.ts",
+              "line": 27,
+              "column": 5
+            },
+            {
+              "title": "Custom WCAG 2.2 Focus Not Obscured Test on /services",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-d0ee245e0be8bd4a39e2",
+              "file": "a11y.spec.ts",
+              "line": 46,
+              "column": 5
+            },
+            {
+              "title": "Target Size Minimum (WCAG 2.2) on /services",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-3db66f2207c80a1db7d2",
+              "file": "a11y.spec.ts",
+              "line": 81,
+              "column": 5
+            },
+            {
+              "title": "Should not have any automatically detectable accessibility issues on /standorte/wetzlar",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-350bd73116e751b89794",
+              "file": "a11y.spec.ts",
+              "line": 27,
+              "column": 5
+            },
+            {
+              "title": "Custom WCAG 2.2 Focus Not Obscured Test on /standorte/wetzlar",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-45cfa503120ad7904064",
+              "file": "a11y.spec.ts",
+              "line": 46,
+              "column": 5
+            },
+            {
+              "title": "Target Size Minimum (WCAG 2.2) on /standorte/wetzlar",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-7834c6c8a9e7763eb9c8",
+              "file": "a11y.spec.ts",
+              "line": 81,
+              "column": 5
+            },
+            {
+              "title": "Should not have any automatically detectable accessibility issues on /standorte/hessen",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-d745550197e119b48f73",
+              "file": "a11y.spec.ts",
+              "line": 27,
+              "column": 5
+            },
+            {
+              "title": "Custom WCAG 2.2 Focus Not Obscured Test on /standorte/hessen",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-29515a613e02393fc8ff",
+              "file": "a11y.spec.ts",
+              "line": 46,
+              "column": 5
+            },
+            {
+              "title": "Target Size Minimum (WCAG 2.2) on /standorte/hessen",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-1aa504134d6984e15f29",
+              "file": "a11y.spec.ts",
+              "line": 81,
+              "column": 5
+            },
+            {
+              "title": "Should not have any automatically detectable accessibility issues on /",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-30554f706329a8a185d3",
+              "file": "a11y.spec.ts",
+              "line": 27,
+              "column": 5
+            },
+            {
+              "title": "Custom WCAG 2.2 Focus Not Obscured Test on /",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-f2e0c72ffd2ae59e0f74",
+              "file": "a11y.spec.ts",
+              "line": 46,
+              "column": 5
+            },
+            {
+              "title": "Target Size Minimum (WCAG 2.2) on /",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-9fad150dd57c602dbbca",
+              "file": "a11y.spec.ts",
+              "line": 81,
+              "column": 5
+            },
+            {
+              "title": "Should not have any automatically detectable accessibility issues on /contact",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-3b31b3030439b926774b",
+              "file": "a11y.spec.ts",
+              "line": 27,
+              "column": 5
+            },
+            {
+              "title": "Custom WCAG 2.2 Focus Not Obscured Test on /contact",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-13569e482fb838f10ed1",
+              "file": "a11y.spec.ts",
+              "line": 46,
+              "column": 5
+            },
+            {
+              "title": "Target Size Minimum (WCAG 2.2) on /contact",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-7c04d3d1683bb257ebde",
+              "file": "a11y.spec.ts",
+              "line": 81,
+              "column": 5
+            },
+            {
+              "title": "Should not have any automatically detectable accessibility issues on /about",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-7f045705c7707ab933ee",
+              "file": "a11y.spec.ts",
+              "line": 27,
+              "column": 5
+            },
+            {
+              "title": "Custom WCAG 2.2 Focus Not Obscured Test on /about",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-9989fd79a72e4c9491cf",
+              "file": "a11y.spec.ts",
+              "line": 46,
+              "column": 5
+            },
+            {
+              "title": "Target Size Minimum (WCAG 2.2) on /about",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-dcd06372118ea5eae665",
+              "file": "a11y.spec.ts",
+              "line": 81,
+              "column": 5
+            },
+            {
+              "title": "Should not have any automatically detectable accessibility issues on /services",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-c0bcf6ea953eedd98960",
+              "file": "a11y.spec.ts",
+              "line": 27,
+              "column": 5
+            },
+            {
+              "title": "Custom WCAG 2.2 Focus Not Obscured Test on /services",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-7e1c76274376a2270b6b",
+              "file": "a11y.spec.ts",
+              "line": 46,
+              "column": 5
+            },
+            {
+              "title": "Target Size Minimum (WCAG 2.2) on /services",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-869c79da09c2ed48c235",
+              "file": "a11y.spec.ts",
+              "line": 81,
+              "column": 5
+            },
+            {
+              "title": "Should not have any automatically detectable accessibility issues on /standorte/wetzlar",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-5d11c3f7d195fc6fb1bd",
+              "file": "a11y.spec.ts",
+              "line": 27,
+              "column": 5
+            },
+            {
+              "title": "Custom WCAG 2.2 Focus Not Obscured Test on /standorte/wetzlar",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-8d2c4db5197ce4750eb3",
+              "file": "a11y.spec.ts",
+              "line": 46,
+              "column": 5
+            },
+            {
+              "title": "Target Size Minimum (WCAG 2.2) on /standorte/wetzlar",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-7e2e711f7bf95ff27037",
+              "file": "a11y.spec.ts",
+              "line": 81,
+              "column": 5
+            },
+            {
+              "title": "Should not have any automatically detectable accessibility issues on /standorte/hessen",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-62f9d4a77666393aa6d5",
+              "file": "a11y.spec.ts",
+              "line": 27,
+              "column": 5
+            },
+            {
+              "title": "Custom WCAG 2.2 Focus Not Obscured Test on /standorte/hessen",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-8d660c70c73b1ce71d48",
+              "file": "a11y.spec.ts",
+              "line": 46,
+              "column": 5
+            },
+            {
+              "title": "Target Size Minimum (WCAG 2.2) on /standorte/hessen",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-bdaada5db01b5ec3f735",
+              "file": "a11y.spec.ts",
+              "line": 81,
+              "column": 5
+            },
+            {
+              "title": "Should not have any automatically detectable accessibility issues on /",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-620d5210a45531ad981b",
+              "file": "a11y.spec.ts",
+              "line": 27,
+              "column": 5
+            },
+            {
+              "title": "Custom WCAG 2.2 Focus Not Obscured Test on /",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-5c2df612ba288ff67570",
+              "file": "a11y.spec.ts",
+              "line": 46,
+              "column": 5
+            },
+            {
+              "title": "Target Size Minimum (WCAG 2.2) on /",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-daffd88c0fc8e7964d9d",
+              "file": "a11y.spec.ts",
+              "line": 81,
+              "column": 5
+            },
+            {
+              "title": "Should not have any automatically detectable accessibility issues on /contact",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-32073805501327cbda0a",
+              "file": "a11y.spec.ts",
+              "line": 27,
+              "column": 5
+            },
+            {
+              "title": "Custom WCAG 2.2 Focus Not Obscured Test on /contact",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-8243175ab50b59f46d72",
+              "file": "a11y.spec.ts",
+              "line": 46,
+              "column": 5
+            },
+            {
+              "title": "Target Size Minimum (WCAG 2.2) on /contact",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-bc374dab5b052157e222",
+              "file": "a11y.spec.ts",
+              "line": 81,
+              "column": 5
+            },
+            {
+              "title": "Should not have any automatically detectable accessibility issues on /about",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-725df765c3c2fc1698a2",
+              "file": "a11y.spec.ts",
+              "line": 27,
+              "column": 5
+            },
+            {
+              "title": "Custom WCAG 2.2 Focus Not Obscured Test on /about",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-a1ee6f1abeb7dd0f92d4",
+              "file": "a11y.spec.ts",
+              "line": 46,
+              "column": 5
+            },
+            {
+              "title": "Target Size Minimum (WCAG 2.2) on /about",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-e93ffb52f1bd4068dbee",
+              "file": "a11y.spec.ts",
+              "line": 81,
+              "column": 5
+            },
+            {
+              "title": "Should not have any automatically detectable accessibility issues on /services",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-e9ffc40dbbe9849eae46",
+              "file": "a11y.spec.ts",
+              "line": 27,
+              "column": 5
+            },
+            {
+              "title": "Custom WCAG 2.2 Focus Not Obscured Test on /services",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-380c75a3424235866fef",
+              "file": "a11y.spec.ts",
+              "line": 46,
+              "column": 5
+            },
+            {
+              "title": "Target Size Minimum (WCAG 2.2) on /services",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-6814242b87c211c2ed3b",
+              "file": "a11y.spec.ts",
+              "line": 81,
+              "column": 5
+            },
+            {
+              "title": "Should not have any automatically detectable accessibility issues on /standorte/wetzlar",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-ae0d71ca86c4e02de7d1",
+              "file": "a11y.spec.ts",
+              "line": 27,
+              "column": 5
+            },
+            {
+              "title": "Custom WCAG 2.2 Focus Not Obscured Test on /standorte/wetzlar",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-e37d657856991bab7850",
+              "file": "a11y.spec.ts",
+              "line": 46,
+              "column": 5
+            },
+            {
+              "title": "Target Size Minimum (WCAG 2.2) on /standorte/wetzlar",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-4fcb2d9ec8fc19edb4fa",
+              "file": "a11y.spec.ts",
+              "line": 81,
+              "column": 5
+            },
+            {
+              "title": "Should not have any automatically detectable accessibility issues on /standorte/hessen",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-688110270004bd251402",
+              "file": "a11y.spec.ts",
+              "line": 27,
+              "column": 5
+            },
+            {
+              "title": "Custom WCAG 2.2 Focus Not Obscured Test on /standorte/hessen",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-9a7bca185fcccc333bf1",
+              "file": "a11y.spec.ts",
+              "line": 46,
+              "column": 5
+            },
+            {
+              "title": "Target Size Minimum (WCAG 2.2) on /standorte/hessen",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "aa3ad05f8c0e05077efb-a830ae3b7f92067b9b8f",
+              "file": "a11y.spec.ts",
+              "line": 81,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-05-24T01:27:01.778Z",
+    "duration": 40.25200000000001,
+    "expected": 0,
+    "skipped": 54,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

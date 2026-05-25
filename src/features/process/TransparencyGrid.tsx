@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { useTranslation } from 'react-i18next';
-import { Kanban, CheckCircle, Chat } from '@phosphor-icons/react';
+import { useTranslations } from 'next-intl';
+import { Kanban, CheckCircle, Chat } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 
 const TransparencyGrid: React.FC = () => {
-  const { t } = useTranslation('process');
+  const t = useTranslations('process');
   return (
     <div className="bg-surface-dark rounded-3xl p-8 lg:p-16 relative overflow-hidden">
       {/* Background Grid */}

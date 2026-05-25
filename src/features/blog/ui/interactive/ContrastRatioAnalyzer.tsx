@@ -1,6 +1,7 @@
+"use client";
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Eyeglasses, CheckCircle, XCircle, Info, Shuffle } from '@phosphor-icons/react';
+import { Eyeglasses, CheckCircle, XCircle, Info, Shuffle } from '@phosphor-icons/react/dist/ssr';
 import { clsx } from 'clsx';
 
 // Helper to calculate relative luminance

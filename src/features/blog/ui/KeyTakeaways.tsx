@@ -1,8 +1,9 @@
+"use client";
 
 import React from 'react';
-import { Lightbulb, ShareNetwork, CheckCircle } from '@phosphor-icons/react';
+import { Lightbulb, ShareNetwork, CheckCircle } from '@phosphor-icons/react/dist/ssr';
 import { motion } from 'motion/react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 export interface KeyTakeawayItem {
     text: string;
@@ -18,7 +19,7 @@ export const KeyTakeaways: React.FC<KeyTakeawaysProps> = ({
     title,
     items
 }) => {
-    const { t } = useTranslation();
+    const t = useTranslations();
     const displayTitle = title || t('blog:keyTakeaways.title');
 
     const handleShare = (text: string) => {

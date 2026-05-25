@@ -1,6 +1,5 @@
-import React from 'react';
-import { motion, Transition, Easing } from 'motion/react';
-import { useEffect, useRef, useState, useMemo } from 'react';
+"use client";
+import React, { useEffect, useRef, useState } from 'react';
 
 type BlurTextProps = {
   text?: string;
@@ -11,38 +10,19 @@ type BlurTextProps = {
   rootMargin?: string;
   animationFrom?: Record<string, string | number>;
   animationTo?: Array<Record<string, string | number>>;
-  easing?: Easing | Easing[];
+  easing?: any;
   onAnimationComplete?: () => void;
   stepDuration?: number;
   direction?: 'top' | 'bottom';
 };
 
-const buildKeyframes = (
-  from: Record<string, string | number>,
-  steps: Array<Record<string, string | number>>
-): Record<string, Array<string | number>> => {
-  const keys = new Set<string>([...Object.keys(from), ...steps.flatMap((s) => Object.keys(s))]);
-
-  const keyframes: Record<string, Array<string | number>> = {};
-  keys.forEach((k) => {
-    // @ts-expect-error
-    keyframes[k] = [from[k], ...steps.map((s) => s[k])];
-  });
-  return keyframes;
-};
-
 const BlurText: React.FC<BlurTextProps> = ({
   text = '',
-  delay = 200,
+  delay = 80,
   className = '',
   animateBy = 'words',
   threshold = 0.1,
   rootMargin = '0px',
-  animationFrom,
-  animationTo,
-  easing = (t: number) => t,
-  onAnimationComplete,
-  stepDuration = 0.35,
 }) => {
   const elements = animateBy === 'words' ? text.split(' ') : text.split('');
   const [inView, setInView] = useState(false);
@@ -52,7 +32,6 @@ const BlurText: React.FC<BlurTextProps> = ({
     if (!ref.current) return;
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // @ts-expect-error
         if (entry.isIntersecting) {
           setInView(true);
           observer.unobserve(ref.current as Element);
@@ -64,61 +43,20 @@ const BlurText: React.FC<BlurTextProps> = ({
     return () => observer.disconnect();
   }, [threshold, rootMargin]);
 
-  const defaultFrom = useMemo(() => ({ filter: 'blur(10px)', opacity: 0 }), []);
-
-  const defaultTo = useMemo(
-    () => [
-      {
-        filter: 'blur(5px)',
-        opacity: 0.5,
-      },
-      { filter: 'blur(0px)', opacity: 1 },
-    ],
-    []
-  );
-
-  const fromSnapshot = animationFrom ?? defaultFrom;
-  const toSnapshots = animationTo ?? defaultTo;
-
-  const stepCount = toSnapshots.length + 1;
-  const totalDuration = stepDuration * (stepCount - 1);
-  const times = Array.from({ length: stepCount }, (_, i) =>
-    stepCount === 1 ? 0 : i / (stepCount - 1)
-  );
-
   return (
-    <span
-      ref={ref}
-      className={`blur-text ${className}`}
-      style={{ display: 'inline-flex', flexWrap: 'wrap', alignItems: 'baseline' }}
-    >
-      {elements.map((segment, index) => {
-        const animateKeyframes = buildKeyframes(fromSnapshot, toSnapshots);
-
-        const spanTransition: Transition = {
-          duration: totalDuration,
-          times,
-          delay: (index * delay) / 1000,
-          ease: easing,
-        };
-
-        return (
-          <motion.span
-            key={index}
-            initial={fromSnapshot}
-            animate={inView ? animateKeyframes : fromSnapshot}
-            transition={spanTransition}
-            onAnimationComplete={onAnimationComplete}
-            style={{
-              display: 'inline-block',
-              willChange: 'transform, filter, opacity',
-            }}
-          >
-            {segment === ' ' ? '\u00A0' : segment}
-            {animateBy === 'words' && index < elements.length - 1 && '\u00A0'}
-          </motion.span>
-        );
-      })}
+    <span ref={ref} className={`inline-flex flex-wrap items-baseline ${className}`}>
+      {elements.map((segment, index) => (
+        <span
+          key={index}
+          className={`inline-block transition-all duration-700 ease-out motion-reduce:transition-none motion-reduce:opacity-100 motion-reduce:blur-0 ${
+            inView ? 'opacity-100 blur-0 translate-y-0' : 'opacity-0 blur-[10px] translate-y-2'
+          }`}
+          style={{ transitionDelay: `${(index * delay) / 1000}s` }}
+        >
+          {segment === ' ' ? '\u00A0' : segment}
+          {animateBy === 'words' && index < elements.length - 1 && '\u00A0'}
+        </span>
+      ))}
     </span>
   );
 };

@@ -1,0 +1,52 @@
+name: WCAG 2.2 AA Accessibility Audit
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '0 2 * * *' # Run nightly at 2 AM
+
+jobs:
+  a11y-audit:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Use Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps chromium
+      
+    - name: Build Next.js App
+      run: npm run build
+      
+    - name: Start Next.js App
+      run: npm run start &
+      env:
+        PORT: 3000
+        
+    - name: Wait for server to be ready
+      run: npx wait-on http://localhost:3000
+      
+    - name: Run Playwright WCAG Audit
+      run: npx playwright test e2e/a11y-audit/a11y.spec.ts --project=chromium
+      env:
+        PLAYWRIGHT_TEST_BASE_URL: http://localhost:3000
+        
+    - name: Upload Axe Reports
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: axe-reports
+        path: e2e/a11y-audit/reports/
+        retention-days: 30

@@ -1,8 +1,8 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 const ServiceFunnelVisualizer: React.FC = () => {
-  const { t } = useTranslation('industries');
+  const t = useTranslations('industries');
 
   return (
     <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 relative overflow-hidden">

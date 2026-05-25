@@ -1,0 +1,12 @@
+{
+  "notFound": {
+    "title": "Seite nicht gefunden",
+    "description": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
+    "backToHome": "Zur Startseite"
+  },
+  "serverError": {
+    "title": "Etwas ist schiefgelaufen",
+    "description": "Wir wurden benachrichtigt und arbeiten an einer Lösung.",
+    "tryAgain": "Erneut versuchen"
+  }
+}

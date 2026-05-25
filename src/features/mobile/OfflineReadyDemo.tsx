@@ -1,6 +1,7 @@
+"use client";
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { WifiHigh, WifiSlash, Image, CloudSlash, Info } from '@phosphor-icons/react';
+import { WifiHigh, WifiSlash, Image, CloudSlash, Info } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 
 const OfflineReadyDemo: React.FC = () => {

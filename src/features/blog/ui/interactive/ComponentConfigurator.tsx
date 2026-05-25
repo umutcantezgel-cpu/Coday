@@ -1,6 +1,7 @@
+"use client";
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Palette, CornersOut, ArrowsOut, Check } from '@phosphor-icons/react';
+import { Palette, CornersOut, ArrowsOut, Check } from '@phosphor-icons/react/dist/ssr';
 import { clsx } from 'clsx';
 
 export const ComponentConfigurator: React.FC = () => {

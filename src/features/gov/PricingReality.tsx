@@ -1,14 +1,14 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 import { motion } from 'motion/react';
-import { XCircle, CheckCircle, Gavel } from '@phosphor-icons/react';
+import { XCircle, CheckCircle, Gavel } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 
 export const PricingReality: React.FC = () => {
-  const { t } = useTranslation('public-sector');
+  const t = useTranslations('public-sector');
 
   return (
-    <section className="py-24 bg-slate-50 border-t border-slate-200">
+    <section className="py-[var(--space-section)] bg-slate-50 border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-rose-600 font-bold tracking-wider uppercase text-sm">

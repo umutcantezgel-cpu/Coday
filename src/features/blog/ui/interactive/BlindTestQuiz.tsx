@@ -1,6 +1,7 @@
+"use client";
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Trophy, Warning } from '@phosphor-icons/react';
+import { Trophy, Warning } from '@phosphor-icons/react/dist/ssr';
 import { cn } from '@/shared/lib/utils';
 
 interface VotingOption {

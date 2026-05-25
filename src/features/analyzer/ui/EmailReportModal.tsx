@@ -1,9 +1,10 @@
+"use client";
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Envelope, PaperPlaneRight, X, CheckCircle, CircleNotch } from '@phosphor-icons/react';
+import { Envelope, PaperPlaneRight, X, CheckCircle, CircleNotch } from '@phosphor-icons/react/dist/ssr';
 import { sendEmailReport, isValidEmail } from '@/features/analyzer/lib/emailService';
 import type { AnalysisResult } from '@/features/analyzer/model/types';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 interface EmailReportModalProps {
   isOpen: boolean;
@@ -17,7 +18,7 @@ export const EmailReportModal: React.FC<EmailReportModalProps> = ({ isOpen, onCl
   const [isSending, setIsSending] = useState(false);
   const [isSent, setIsSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const { t } = useTranslation('analyzer');
+  const t = useTranslations('analyzer');
 
   React.useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { CalendarBlank, User, ShieldCheck } from '@phosphor-icons/react';
+import { CalendarBlank, User, ShieldCheck } from '@phosphor-icons/react/dist/ssr';
 import { useRtl } from '@/shared/hooks/useRtl';
 
 export const AppointmentFlow = () => {

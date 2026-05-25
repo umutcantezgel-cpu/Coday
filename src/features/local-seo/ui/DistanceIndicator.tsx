@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, NavigationArrow } from '@phosphor-icons/react';
+import { MapPin, NavigationArrow } from '@phosphor-icons/react/dist/ssr';
 import { CityData } from '@/features/local-seo/model/cities';
 
 export const DistanceIndicator: React.FC<{ city: CityData }> = ({ city }) => {

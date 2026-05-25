@@ -1,7 +1,8 @@
+"use client";
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { CurrencyDollar, Robot, User, Lightning, ArrowRight } from '@phosphor-icons/react';
-import { Link } from 'react-router-dom';
+import { CurrencyDollar, Robot, User, Lightning, ArrowRight } from '@phosphor-icons/react/dist/ssr';
+import Link from 'next/link';
 
 export const AgencyCostCalculator: React.FC = () => {
   const [hourlyRate, setHourlyRate] = useState(150);
@@ -164,7 +165,7 @@ export const AgencyCostCalculator: React.FC = () => {
             </motion.div>
 
             <Link
-              to="/contact"
+              href="/contact"
               className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-gray-900 text-white font-bold hover:bg-gray-800 transition-colors"
             >
               Stop Burning Money <ArrowRight />

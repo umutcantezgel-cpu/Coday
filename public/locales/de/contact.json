@@ -3,7 +3,7 @@
     "booked": "Ausgebucht",
     "desc": "Schauen Sie bald wieder vorbei für aktualisierte Termine.",
     "free": "Verfügbar",
-    "title": "Verfügbarkeit {{month}}",
+    "title": "Verfügbarkeit {month}",
     "tooltip_free": "Termin frei"
   },
   "faq": {

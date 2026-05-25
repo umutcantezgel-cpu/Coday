@@ -258,7 +258,7 @@
     "kontakt": {
       "intro": "Bei Fragen zum Datenschutz oder zur Ausübung Ihrer Betroffenenrechte stehen wir Ihnen gerne zur Verfügung:"
     },
-    "last_updated": "Letztes Update: {{date}}",
+    "last_updated": "Letztes Update: {date}",
     "principles": {
       "lawfulness": "Rechtmäßigkeit",
       "lawfulness_desc": "Jede Verarbeitung basiert auf einer gültigen Rechtsgrundlage (Einwilligung, Vertrag, berechtigtes Interesse).",
@@ -520,7 +520,7 @@
       "p2": "(2) Bei Wartungs- oder Supportverträgen kann mit einer Frist von 30 Tagen zum Monatsende gekündigt werden.",
       "p3": "(3) Das Recht zur außerordentlichen Kündigung aus wichtigem Grund bleibt unberührt."
     },
-    "last_updated": "Stand: {{date}}",
+    "last_updated": "Stand: {date}",
     "mitwirkung": {
       "content": {
         "1": "Texte, Bilder, Logos in druckfähiger Qualität",

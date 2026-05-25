@@ -1,61 +1,52 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 import { motion } from 'motion/react';
-import { Lightning, Code, Cube } from '@phosphor-icons/react';
+import { Lightning, Code, Cube } from '@phosphor-icons/react/dist/ssr';
+import Typography from '@/shared/ui/Typography';
 
 export const WorkHero: React.FC = () => {
-  const { t } = useTranslation('work');
+  const t = useTranslations('work');
 
   return (
-    <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-slate-950">
+    <section className="py-[var(--space-section)] relative overflow-hidden bg-bg-inverse text-text-inverse">
       {/* Background Noise/Grid */}
-      <div className="absolute inset-0 bg-[url('/noise.png')] opacity-20 mix-blend-overlay pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 pointer-events-none" />
+      <div className="absolute inset-0 opacity-20 mix-blend-overlay pointer-events-none" style={{ backgroundImage: "url('/noise.png')" }} />
+      <div className="absolute inset-0 bg-gradient-to-b from-bg-inverse via-bg-inverse/90 to-bg-inverse pointer-events-none" />
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-5xl mx-auto text-center">
+      <div className="container mx-auto px-4 relative z-10 flex flex-col items-center">
+        <div className="max-w-[var(--container-narrow)] mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 mb-8 backdrop-blur-md"
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-900/50 border border-primary-500/30 text-primary-300 mb-8 backdrop-blur-md"
           >
             <Lightning className="w-4 h-4" weight="fill" />
             <span className="text-xs font-bold tracking-widest uppercase">
-              {t('hero.label', 'Evidence of Excellence')}
+              {t('hero.label')}
             </span>
           </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="font-display font-black text-5xl md:text-7xl lg:text-8xl text-white leading-tight mb-8"
-          >
+          <Typography variant="display" className="mb-8 reveal reveal-visible">
             {t('hero.title')}
-          </motion.h1>
+          </Typography>
 
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="text-xl md:text-2xl text-slate-400 font-light leading-relaxed max-w-3xl mx-auto mb-12"
-          >
+          <Typography variant="lead" className="mb-12 text-text-tertiary stagger-1 reveal reveal-visible">
             {t('hero.description')}
-          </motion.p>
+          </Typography>
 
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.4 }}
-            className="flex flex-wrap justify-center gap-8 text-slate-500"
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="flex flex-wrap justify-center gap-8 text-text-tertiary"
           >
             <div className="flex items-center gap-2">
-              <Cube className="w-5 h-5 text-blue-500" />
+              <Cube className="w-5 h-5 text-primary-400" />
               <span className="text-sm font-mono">12+ Live Projects</span>
             </div>
             <div className="flex items-center gap-2">
-              <Code className="w-5 h-5 text-emerald-500" />
+              <Code className="w-5 h-5 text-success" />
               <span className="text-sm font-mono">5 In-Progress</span>
             </div>
           </motion.div>

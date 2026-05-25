@@ -1,3 +1,5 @@
+ 
+"use client";
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import {
@@ -15,7 +17,7 @@ import {
   CloudSlash,
   Warning,
   Lightbulb,
-} from '@phosphor-icons/react';
+} from '@phosphor-icons/react/dist/ssr';
 import { useAnalyzerStore } from '@/features/analyzer/model/store';
 import { ScoreCard } from '@/features/analyzer/ui/ScoreCard';
 import { UrgencyMeter } from '@/features/analyzer/ui/UrgencyMeter';
@@ -23,7 +25,7 @@ import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { generatePdfReport } from '@/features/analyzer/lib/pdfGenerator';
 import { EmailReportModal } from '@/features/analyzer/ui/EmailReportModal';
 import type { AgentIssue } from '@/features/analyzer/model/types';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 import { useRtl } from '@/shared/hooks/useRtl';
 
 export const ReportDashboard: React.FC = () => {
@@ -31,7 +33,7 @@ export const ReportDashboard: React.FC = () => {
   const [, setSelectedCategory] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
   const [showEmailModal, setShowEmailModal] = useState(false);
-  const { t } = useTranslation('analyzer');
+  const t = useTranslations('analyzer');
   const { isRtl } = useRtl();
 
   const CATEGORY_CONFIG = [
@@ -520,3 +522,4 @@ export const ReportDashboard: React.FC = () => {
 };
 
 export default ReportDashboard;
+

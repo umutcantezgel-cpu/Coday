@@ -1,13 +1,13 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Globe, Buildings, Palette, Code, RocketLaunch } from '@phosphor-icons/react';
+import { Globe, Buildings, Palette, Code, RocketLaunch } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 const ProjectTimelineAnimation: React.FC = () => {
-  const { t } = useTranslation('process');
-  const timelineSteps = t('timeline.steps', { returnObjects: true });
+  const t = useTranslations('process');
+  const timelineSteps = t.raw('timeline.steps');
   const steps = (
     Array.isArray(timelineSteps) ? (timelineSteps as Array<{ title: string; desc: string }>) : []
   ).map((step, idx) => ({
@@ -40,7 +40,6 @@ const ProjectTimelineAnimation: React.FC = () => {
                   {step.phase}
                 </span>
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-secondary text-white mb-6 shadow-xl">
-                  // @ts-expect-error
                   {step.icon && <OptimizedIcon icon={step.icon} className="text-3xl" />}
                 </div>
                 <h3 className="font-display font-bold text-3xl text-secondary mb-4">

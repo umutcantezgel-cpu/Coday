@@ -1,10 +1,11 @@
+"use client";
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 import { Icon } from '@/shared/ui/Icon';
 
 const PosSyncDemo: React.FC = () => {
-  const { t } = useTranslation('industries');
+  const t = useTranslations('industries');
   const [stock, setStock] = useState(12);
   const [justSold, setJustSold] = useState(false);
 

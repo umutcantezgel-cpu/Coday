@@ -1,10 +1,11 @@
+"use client";
 import React, { useState } from 'react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { MagnifyingGlass, FileText, Clock, FirstAid } from '@phosphor-icons/react';
-import { useTranslation } from 'react-i18next';
+import { MagnifyingGlass, FileText, Clock, FirstAid } from '@phosphor-icons/react/dist/ssr';
+import { useTranslations } from 'next-intl';
 
 const PatientJourneyMap: React.FC = () => {
-  const { t } = useTranslation('industries');
+  const t = useTranslations('industries');
   const [step, setStep] = useState(0);
 
   const iconMap: Record<string, React.ElementType> = {

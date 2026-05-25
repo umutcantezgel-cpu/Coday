@@ -1,11 +1,12 @@
+"use client";
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Lightning, HardDrives, Database } from '@phosphor-icons/react';
+import { Lightning, HardDrives, Database } from '@phosphor-icons/react/dist/ssr';
 
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 export const SpeedComparison: React.FC = () => {
-  const { t } = useTranslation('blog');
+  const t = useTranslations('blog');
   const [isRunning, setIsRunning] = useState(false);
 
   // 0 = idle, 1 = running, 2 = finished
@@ -50,7 +51,7 @@ export const SpeedComparison: React.FC = () => {
   return (
     <div className="bg-bg-inverse rounded-2xl p-8 shadow-2xl border border-gray-800 my-10 overflow-hidden relative">
       {/* Grid Background */}
-      <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-20"></div>
+      <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "url(/noise.svg)" }}></div>
 
       <div className="relative z-10">
         <h3 className="text-2xl font-display font-bold text-white mb-8 flex items-center gap-3">

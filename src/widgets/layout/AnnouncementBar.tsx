@@ -1,11 +1,11 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from '@/i18n/navigation';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { Confetti as Celebration } from '@phosphor-icons/react';
-import { useTranslation } from 'react-i18next';
+import { Confetti as Celebration } from '@phosphor-icons/react/dist/ssr';
+import { useTranslations } from 'next-intl';
 
 const AnnouncementBar: React.FC = () => {
-  const { t } = useTranslation('common');
+  const t = useTranslations('common');
   return (
     <div className="bg-primary text-white relative z-sticky">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
@@ -16,12 +16,12 @@ const AnnouncementBar: React.FC = () => {
               defaultValue: 'Grand Opening: 25% Rabatt auf alle Projekte!',
             })}
           </span>
-          <NavLink
-            to="/packages"
+          <Link
+            href="/packages"
             className="bg-white/20 hover:bg-white/30 text-white px-3 py-0.5 rounded-full text-xs font-bold transition-colors"
           >
             {t('announcement.cta', { defaultValue: 'Angebot sichern →' })}
-          </NavLink>
+          </Link>
         </div>
       </div>
     </div>

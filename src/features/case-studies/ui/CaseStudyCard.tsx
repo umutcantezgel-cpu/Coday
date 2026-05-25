@@ -1,7 +1,7 @@
 import React from 'react';
-import { ArrowUpRight } from '@phosphor-icons/react';
-import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+import { ArrowUpRight } from '@phosphor-icons/react/dist/ssr';
+import { Link } from '@/i18n/navigation';
+import { useLocale } from 'next-intl';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import { Project } from '@/shared/data/work';
 
@@ -11,8 +11,8 @@ export interface CaseStudyCardProps {
 }
 
 export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ project }) => {
-  const { i18n } = useTranslation();
-  const currentLang = i18n.language as 'de' | 'en';
+  const locale = useLocale();
+  const currentLang = locale as 'de' | 'en';
 
   // Extract content based on language
   const content = project.content[currentLang] || project.content['de'];
@@ -26,13 +26,13 @@ export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ project }) => {
   const image = content.solution?.images?.[0] || '/images/brand/coday-full.webp';
 
   const innerContent = (
-    <article className="group relative rounded-3xl overflow-hidden shadow-flat h-[400px] flex flex-col hover:-translate-y-1 hover:scale-[1.02] hover:shadow-glow transition-all duration-500 ease-out cursor-pointer w-full">
+    <article className="group relative rounded-3xl overflow-hidden shadow-md h-[400px] flex flex-col hover:-translate-y-1 hover:scale-[1.02] hover:shadow-glow transition-all duration-slow ease-out cursor-pointer w-full">
       {/* Background Image */}
       <div className="absolute inset-0">
         <OptimizedImage
           src={image}
           alt={content.solution?.imageAlts?.[0] || `Case Study: ${title} - ${industry}`}
-          className="w-full h-full object-cover transform group-hover:scale-[1.04] transition-transform duration-700 ease-out"
+          className="w-full h-full object-cover transform group-hover:scale-[1.04] transition-transform duration-slower ease-out"
         />
       </div>
 
@@ -70,14 +70,14 @@ export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ project }) => {
 
   if (project.liveUrl) {
     return (
-      <Link to={`/work/${project.slug}`} className="group block h-full">
+      <Link href={`/work/${project.slug}`} className="group block h-full">
         {innerContent}
       </Link>
     );
   }
 
   return (
-    <Link to={`/work/${project.slug}`} className="group block h-full">
+    <Link href={`/work/${project.slug}`} className="group block h-full">
       {innerContent}
     </Link>
   );

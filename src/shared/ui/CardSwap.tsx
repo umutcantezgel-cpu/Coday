@@ -1,3 +1,4 @@
+"use client";
 import React, { Children, ReactElement, ReactNode, useEffect, useMemo, useState } from 'react';
 import { motion } from 'motion/react';
 
@@ -52,7 +53,6 @@ const CardSwap: React.FC<CardSwapProps> = ({
     const interval = setInterval(() => {
       if (pauseOnHover && isPaused) return;
 
-      // @ts-expect-error
       setOrder((prev) => {
         const [front, ...rest] = prev;
         return [...rest, front];
@@ -80,7 +80,6 @@ const CardSwap: React.FC<CardSwapProps> = ({
 
           return (
             <motion.div
-              // @ts-expect-error
               key={child.key || childIndex} // Key must track the content, not the position
               layoutId={`card-${childIndex}`} // layoutId helps Framer track across reorders -> actually causing constraints here maybe?
               // Just simpler animate props
@@ -98,18 +97,15 @@ const CardSwap: React.FC<CardSwapProps> = ({
                 stiffness: 120,
                 damping: 20,
               }}
-              // @ts-expect-error
               className={`absolute top-1/2 left-1/2 rounded-xl border border-white bg-black [transform-style:preserve-3d] [backface-visibility:hidden] ${child.props.customClass ?? ''} ${child.props.className ?? ''}`.trim()}
               style={{
                 width: '100%',
                 height: '100%',
                 marginLeft: '-50%', // Centering replacement
                 marginTop: '-50%',
-                // @ts-expect-error
                 ...child.props.style,
               }}
               onClick={(e) => {
-                // @ts-expect-error
                 child.props.onClick?.(e as React.MouseEvent<HTMLDivElement>);
                 onCardClick?.(childIndex);
               }}

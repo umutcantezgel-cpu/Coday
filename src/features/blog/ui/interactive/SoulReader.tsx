@@ -1,6 +1,7 @@
+"use client";
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { CheckCircle, HandPalm, Robot } from '@phosphor-icons/react';
+import { CheckCircle, HandPalm, Robot } from '@phosphor-icons/react/dist/ssr';
 import { clsx } from 'clsx';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 

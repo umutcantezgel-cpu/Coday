@@ -1,7 +1,8 @@
+"use client";
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { useTranslation } from 'react-i18next';
-import { CheckCircle, ArrowRight, Brain, Lightning, CodeBlock } from '@phosphor-icons/react';
+import { useTranslations } from 'next-intl';
+import { CheckCircle, ArrowRight, Brain, Lightning, CodeBlock } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 
 type QuestionKey = 'q1' | 'q2' | 'q3' | 'q4';
@@ -20,7 +21,7 @@ const QUESTIONS: Question[] = [
 ];
 
 export const ConsultingReadiness: React.FC = () => {
-  const { t } = useTranslation('consulting');
+  const t = useTranslations('consulting');
   const [started, setStarted] = useState(false);
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState<Record<QuestionKey, OptionKey | null>>({

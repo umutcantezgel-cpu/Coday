@@ -1,11 +1,12 @@
+"use client";
 import React, { useState } from 'react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { Storefront, Devices } from '@phosphor-icons/react';
+import { Storefront, Devices } from '@phosphor-icons/react/dist/ssr';
 import { motion, AnimatePresence } from 'motion/react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 const OmnichannelStrategies: React.FC = () => {
-  const { t } = useTranslation('industries');
+  const t = useTranslations('industries');
   // Visualizing the connection between Online and Offline world
   const [activeStrategy, setActiveStrategy] = useState<string>('click-collect');
 

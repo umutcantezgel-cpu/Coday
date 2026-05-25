@@ -1,0 +1,61 @@
+name: WCAG 2.2 AA Audit
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '0 2 * * 1' # Runs every Monday at 2:00 AM
+
+jobs:
+  a11y-audit:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
+
+    - name: Build Next.js app
+      run: npm run build
+
+    - name: Run WCAG 2.2 AA Playwright Tests
+      run: npm run test:a11y:ci
+      continue-on-error: true # So we can upload the report even if it fails
+
+    - name: Run Pa11y CI (Baseline check)
+      run: npx pa11y-ci
+      continue-on-error: true
+
+    - name: Run Lighthouse CI (Accessibility Score)
+      run: npm install -g @lhci/cli@0.13.x && lhci autorun --collect.settings.onlyCategories=accessibility
+      continue-on-error: true
+
+    - name: Upload Playwright Report
+      uses: actions/upload-artifact@v4
+      with:
+        name: playwright-a11y-report
+        path: playwright-report-a11y/
+        retention-days: 14
+
+    - name: Notify Slack on Failure (Optional)
+      if: failure() && github.ref == 'refs/heads/main'
+      uses: 8398a7/action-slack@v3
+      with:
+        status: ${{ job.status }}
+        fields: repo,message,commit,author,action,eventName,ref,workflow
+        text: "🚨 WCAG 2.2 AA Accessibility Regression detected on main branch!"
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}

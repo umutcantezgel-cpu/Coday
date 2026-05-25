@@ -1,119 +1,38 @@
-import {
-  LeadSchema,
-  type StoredLead,
-  type LeadSubmissionResult,
-} from '@/entities/lead/model/types';
+
+
+import { type StoredLead, type LeadSubmissionResult } from '@/entities/lead/model/types';
+import { submitLeadAction, getLeadsAction, updateLeadStatusAction } from '@/entities/lead/actions/leadActions';
+import { cache } from 'react';
 
 /**
- * Submit a new lead (localStorage for MVP).
- * In production, this would POST to a backend API.
+ * Submit a new lead.
  */
 export async function submitLead(data: unknown): Promise<LeadSubmissionResult> {
-  try {
-    // Validate with Zod
-    const validatedData = LeadSchema.parse(data);
-
-    // Dynamically import Supabase client to avoid initialization issues during SSR/build
-    const { supabase } = await import('@/shared/lib/supabase/client');
-
-    // Insert into Supabase
-    const { data: insertedData, error } = await supabase
-      .from('leads')
-      .insert({
-        name: validatedData.name,
-        email: validatedData.email,
-        phone: validatedData.phone,
-        company: validatedData.company,
-        project: validatedData.project,
-        message: validatedData.message,
-        budget: validatedData.budget,
-        timeline: validatedData.timeline,
-        source: validatedData.source,
-        // Map camelCase to snake_case for DB
-        selected_module_ids: validatedData.selectedModuleIds,
-        selected_package_id: validatedData.selectedPackageId,
-        total_one_time_cents: validatedData.totalOneTimeCents,
-        total_monthly_cents: validatedData.totalMonthlyCents,
-        status: 'new',
-      })
-      .select()
-      .single();
-
-    if (error) throw error;
-
-    // 📧 Send Email Notification
+  const result = await submitLeadAction(data);
+  
+  // Keep the email notification trigger here or move it fully to action.
+  // Since we are refactoring, we'll keep the frontend call if it's there, but we can rely on the action.
+  if (result.success) {
     try {
       await fetch('/api/send-lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(validatedData),
+        body: JSON.stringify(data),
       });
     } catch (emailError) {
       console.error('Failed to send email notification:', emailError);
-      // Don't fail the whole submission if email fails, just log it
     }
-
-    return {
-      success: true,
-      leadId: insertedData.id,
-    };
-  } catch (error) {
-    console.error('Lead submission error:', error);
-
-    if (error instanceof Error) {
-      return {
-        success: false,
-        error: error.message,
-      };
-    }
-
-    return {
-      success: false,
-      error: 'Ein unbekannter Fehler ist aufgetreten.',
-    };
   }
+
+  return result;
 }
 
 /**
  * Get all stored leads from Supabase.
  */
-export async function getLeads(): Promise<StoredLead[]> {
-  try {
-    const { supabase } = await import('@/shared/lib/supabase/client');
-
-    const { data, error } = await supabase
-      .from('leads')
-      .select('*')
-      .order('created_at', { ascending: false });
-
-    if (error) throw error;
-
-    // Map snake_case back to camelCase if necessary, or ensure types match.
-    // For StoredLead, we expect camelCase.
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    return data.map((item: any) => ({
-      id: item.id,
-      createdAt: item.created_at,
-      status: item.status,
-      name: item.name,
-      email: item.email,
-      phone: item.phone,
-      company: item.company,
-      project: item.project,
-      message: item.message,
-      budget: item.budget,
-      timeline: item.timeline,
-      source: item.source,
-      selectedModuleIds: item.selected_module_ids,
-      selectedPackageId: item.selected_package_id,
-      totalOneTimeCents: item.total_one_time_cents,
-      totalMonthlyCents: item.total_monthly_cents,
-    })) as StoredLead[];
-  } catch (error) {
-    console.error('Error fetching leads:', error);
-    return [];
-  }
-}
+export const getLeads = cache(async (): Promise<StoredLead[]> => {
+  return await getLeadsAction();
+});
 
 /**
  * Update lead status in Supabase.
@@ -122,15 +41,5 @@ export async function updateLeadStatus(
   leadId: string,
   status: StoredLead['status']
 ): Promise<boolean> {
-  try {
-    const { supabase } = await import('@/shared/lib/supabase/client');
-
-    const { error } = await supabase.from('leads').update({ status }).eq('id', leadId);
-
-    if (error) throw error;
-    return true;
-  } catch (error) {
-    console.error('Error updating lead status:', error);
-    return false;
-  }
+  return await updateLeadStatusAction(leadId, status);
 }

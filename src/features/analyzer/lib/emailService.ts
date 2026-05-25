@@ -1,5 +1,3 @@
-import type { TFunction } from 'i18next';
-
 interface EmailReportData {
   recipientEmail: string;
   recipientName: string;
@@ -7,7 +5,7 @@ interface EmailReportData {
   domain: string;
   overallScore: number;
   urgencyScore: number;
-  t: TFunction;
+  t: (key: string, options?: Record<string, string | number>) => string;
 }
 
 /**

@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect } from 'react';
 
 interface OptimizedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
@@ -32,8 +33,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
 
   useEffect(() => {
     if (imgRef.current && imgRef.current.complete) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      setIsLoaded(true);
+      setTimeout(() => setIsLoaded(true), 0);
     }
   }, []);
 
@@ -72,7 +72,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
       className={`relative overflow-hidden bg-gray-100 ${getAspectRatioClass()} ${className}`}
       style={containerStyle}
     >
-      {!isLoaded && !hasError && (
+      {!isLoaded && !hasError && !priority && (
         <div className="absolute inset-0 flex items-center justify-center skeleton-shimmer">
           <span className="sr-only">Loading...</span>
         </div>
@@ -93,8 +93,9 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
           onLoad={() => setIsLoaded(true)}
           onError={() => setHasError(true)}
           className={`
-                      w-full h-full object-cover transition-opacity duration-500 ease-in-out
-                      ${isLoaded ? 'opacity-100' : 'opacity-0'}
+                      w-full h-full object-cover 
+                      ${priority ? '' : 'transition-opacity duration-500 ease-in-out'}
+                      ${priority || isLoaded ? 'opacity-100' : 'opacity-0'}
                   `}
           width={width}
           height={height}

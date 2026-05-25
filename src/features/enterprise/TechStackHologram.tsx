@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Cpu, Database, Lightning, Globe, Stack, Shield } from '@phosphor-icons/react';
+import { Cpu, Database, Lightning, Globe, Stack, Shield } from '@phosphor-icons/react/dist/ssr';
 
 const technologies = [
   { name: 'React Router v7', icon: Cpu, color: 'text-white', bg: 'bg-black' },

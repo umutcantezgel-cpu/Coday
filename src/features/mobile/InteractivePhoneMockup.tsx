@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
@@ -10,7 +11,7 @@ import {
   House,
   ShoppingBag,
   User,
-} from '@phosphor-icons/react';
+} from '@phosphor-icons/react/dist/ssr';
 import { useRtl } from '@/shared/hooks/useRtl';
 
 const InteractivePhoneMockup: React.FC = () => {

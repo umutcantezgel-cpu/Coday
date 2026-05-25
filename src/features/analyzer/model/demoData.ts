@@ -1,7 +1,9 @@
-import type { TFunction } from 'i18next';
 import { AnalysisResult } from '@/features/analyzer/model/types';
+import type { useTranslations } from 'next-intl';
 
-export const getDemoResult = (t: TFunction): AnalysisResult => ({
+type AnalyzerTranslator = ReturnType<typeof useTranslations<'analyzer'>>;
+
+export const getDemoResult = (t: AnalyzerTranslator): AnalysisResult => ({
   id: 'demo-audit-123',
   url: 'https://example-agency.com',
   domain: 'example-agency.com',

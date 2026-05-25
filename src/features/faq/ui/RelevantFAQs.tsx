@@ -1,6 +1,7 @@
+"use client";
 import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { CaretDown } from '@phosphor-icons/react';
+import { useTranslations, useLocale } from 'next-intl';
+import { CaretDown } from '@phosphor-icons/react/dist/ssr';
 import { motion, AnimatePresence } from 'motion/react';
 import { getFAQs } from '@/features/faq/model';
 
@@ -11,8 +12,10 @@ interface Props {
 }
 
 export const RelevantFAQs: React.FC<Props> = ({ serviceId, title, className = '' }) => {
-  const { t, i18n } = useTranslation(['faq', 'common']);
-  const faqs = getFAQs(i18n.language);
+  const t = useTranslations('faq');
+  const tCommon = useTranslations('common');
+  const locale = useLocale();
+  const faqs = getFAQs(locale);
   const [openItem, setOpenItem] = useState<string | null>(null);
 
   const relevant = faqs
@@ -51,7 +54,7 @@ export const RelevantFAQs: React.FC<Props> = ({ serviceId, title, className = ''
       />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-display font-black text-slate-900  mb-10 text-center">
-          {title || t('generic_detail.faq.title', { ns: 'common' })}
+          {title || tCommon('generic_detail.faq.title')}
         </h2>
         <div className="space-y-4">
           {relevant.map((faq) => (

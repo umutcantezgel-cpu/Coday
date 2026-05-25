@@ -1,5 +1,5 @@
 import React from 'react';
-import { CircleNotch } from '@phosphor-icons/react';
+import { CircleNotch } from '@phosphor-icons/react/dist/ssr';
 import { cn } from '@/shared/lib/utils'; // Assuming this exists, based on project norms. If not, will fix.
 
 import { buttonVariants, buttonSizes, baseButtonStyles } from '@/shared/ui/ButtonStyles';

@@ -1,6 +1,5 @@
 import * as cheerio from 'cheerio';
 import TurndownService from 'turndown';
-// @ts-expect-error — turndown-plugin-gfm has no type declarations
 import { gfm } from 'turndown-plugin-gfm';
 
 const BASE_URL = 'https://www.codayweb.de';
@@ -42,7 +41,7 @@ export function convertHtmlToMarkdown(html: string, originalUrlPath: string): st
   // Forms, charts, calculators, iframes, select, video, audio
   $('form, iframe, .rechner, .chart, select, video, audio').each((_, el) => {
     const $el = $(el);
-    const tagName = el.tagName.toLowerCase();
+    const tagName = (el as any).tagName?.toLowerCase() || 'element';
     const name = $el.attr('aria-label') || $el.attr('title') || tagName;
     const fallbackText = `\n> **Interaktive Komponente:** ${name}. Im reinen Textformat nicht ausführbar. Siehe Original: ${BASE_URL}${originalUrlPath}\n`;
     $el.replaceWith(fallbackText);

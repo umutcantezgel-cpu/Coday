@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { CheckCircle } from '@phosphor-icons/react';
+import { CheckCircle } from '@phosphor-icons/react/dist/ssr';
 
 export interface ProcessStep {
   title: string;
@@ -17,7 +17,7 @@ interface ProcessTimelineProps {
 
 export const ProcessTimeline: React.FC<ProcessTimelineProps> = ({ steps, title, subtitle }) => {
   return (
-    <section className="py-20 md:py-32 bg-white relative overflow-hidden">
+    <section className="py-[var(--space-section)] bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16 max-w-3xl mx-auto">
           {subtitle && (

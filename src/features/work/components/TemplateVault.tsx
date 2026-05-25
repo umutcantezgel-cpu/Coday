@@ -1,7 +1,7 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations, useLocale } from 'next-intl';
 import { motion } from 'motion/react';
-import { Copy, Eye } from '@phosphor-icons/react';
+import { Copy, Eye } from '@phosphor-icons/react/dist/ssr';
 import { Project } from '@/shared/data/work';
 
 interface TemplateVaultProps {
@@ -9,23 +9,21 @@ interface TemplateVaultProps {
 }
 
 export const TemplateVault: React.FC<TemplateVaultProps> = ({ projects }) => {
-  const { t, i18n } = useTranslation('work');
-  const currentLang = i18n.language as 'de' | 'en';
+  const t = useTranslations('work');
+  const locale = useLocale();
+  const currentLang = locale as 'de' | 'en';
 
   if (projects.length === 0) return null;
 
   return (
-    <section className="py-24 bg-slate-50">
+    <section className="py-[var(--space-section)] bg-slate-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-            {t('sections.templates.title', 'The Vault')}
+            {t('sections.templates.title')}
           </h2>
           <p className="text-xl text-slate-500 max-w-2xl mx-auto">
-            {t(
-              'sections.templates.subtitle',
-              'Production-ready templates optimized for speed and conversion.'
-            )}
+            {t('sections.templates.subtitle')}
           </p>
         </div>
 

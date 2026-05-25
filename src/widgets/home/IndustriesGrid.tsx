@@ -1,20 +1,23 @@
+
+
 import React from 'react';
-import { useTranslation } from 'react-i18next';
-import { motion } from 'motion/react';
-import { LocalizedLink as Link } from '@/shared/ui/LocalizedLink';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
+import dynamic from 'next/dynamic';
+const FadeInUp = dynamic(() => import('@/shared/ui/MotionWrappers').then(m => m.FadeInUp));
 import {
   Barricade as Construction,
   Buildings as Apartment,
   ShoppingCart,
   Lightbulb,
   Heartbeat as HealthAndSafety,
-} from '@phosphor-icons/react';
+} from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import BlurText from '@/shared/ui/BlurText';
 import { BentoCard } from '@/shared/ui/MagicBento';
 
 export const IndustriesGrid: React.FC = () => {
-  const { t } = useTranslation(['home']);
+  const t = useTranslations('home');
 
   const industries = [
     {
@@ -55,7 +58,7 @@ export const IndustriesGrid: React.FC = () => {
   ];
 
   return (
-    <section className="py-12 md:py-24 bg-white relative overflow-hidden">
+    <section className="py-[var(--space-section)] bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl lg:text-5xl font-black text-secondary mb-12 uppercase tracking-tight">
           <BlurText
@@ -69,15 +72,13 @@ export const IndustriesGrid: React.FC = () => {
 
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
           {industries.map((ind, index) => (
-            <motion.div
+            <FadeInUp
               key={ind.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+              duration={0.6}
+              delay={index * 0.1}
               className="h-full"
             >
-              <Link to={ind.link} className="block h-full">
+              <Link href={ind.link} className="block h-full">
                 <BentoCard
                   effect={ind.effect}
                   tiltMax={ind.tiltMax}
@@ -94,7 +95,7 @@ export const IndustriesGrid: React.FC = () => {
                   <p className="text-sm text-slate-600">{t(`industries.card_${ind.id}.desc`)}</p>
                 </BentoCard>
               </Link>
-            </motion.div>
+            </FadeInUp>
           ))}
         </div>
       </div>

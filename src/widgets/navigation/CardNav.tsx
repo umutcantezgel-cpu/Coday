@@ -1,11 +1,12 @@
+"use client";
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { Code, CaretDown, ArrowUpRight, ArrowRight, List, X } from '@phosphor-icons/react';
+import { Code, CaretDown, ArrowUpRight, ArrowRight, List, X } from '@phosphor-icons/react/dist/ssr';
 import { LanguageSwitcher } from '@/widgets/navigation/LanguageSwitcher';
-import { useLocation } from 'react-router-dom';
-import { LocalizedLink as Link } from '@/shared/ui/LocalizedLink';
-import { useTranslation } from 'react-i18next';
+import { usePathname } from '@/i18n/navigation';
+import { Link } from '@/i18n/navigation';
+import { useTranslations } from 'next-intl';
 import { getNavItems } from '@/widgets/navigation/config';
 import { MobileNavOverlay } from '@/widgets/navigation/MobileNavOverlay';
 import '@/widgets/navigation/CardNav.css';
@@ -23,10 +24,10 @@ const CardNav: React.FC<CardNavProps> = ({
   buttonBgColor = 'var(--color-primary-700)', // Semantic token from theme
   buttonTextColor = 'var(--color-text-inverse)',
 }) => {
-  const { t } = useTranslation('common');
+  const t = useTranslations('common');
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
   const navRef = useRef<HTMLDivElement>(null);
 
   // Get translated items
@@ -45,7 +46,7 @@ const CardNav: React.FC<CardNavProps> = ({
   useEffect(() => {
     const timer = setTimeout(() => setActiveCategory(null), 0);
     return () => clearTimeout(timer);
-  }, [location.pathname]);
+  }, [pathname]);
 
   // Handle outside click to close
   useEffect(() => {
@@ -108,7 +109,7 @@ const CardNav: React.FC<CardNavProps> = ({
     <div className={`card-nav-container ${className}`} ref={navRef}>
       {/* Floating Pill */}
       <nav className="nav-pill" aria-label="Hauptnavigation">
-        <Link to="/" className="nav-pill-logo" title="Zur Startseite">
+        <Link href="/" className="nav-pill-logo" title="Zur Startseite">
           <OptimizedIcon icon={Code} className="logo-icon" aria-hidden="true" />
           <span className="logo-text">Coday</span>
           <span className="sr-only"> – Zur Startseite</span>
@@ -201,7 +202,7 @@ const CardNav: React.FC<CardNavProps> = ({
                                         target: '_blank',
                                         rel: 'noopener noreferrer',
                                       }
-                                    : { to: link.href };
+                                    : { href: link.href };
 
                                   return (
                                     <LinkComponent
@@ -229,9 +230,9 @@ const CardNav: React.FC<CardNavProps> = ({
                           // No groups (fallback)
                           <div className="dropdown-links-grid">
                             {item.links?.map((link, i) => (
-                              <Link
-                                key={i}
-                                to={link.href}
+                                <Link
+                                  key={i}
+                                  href={link.href}
                                 className="dropdown-link-item"
                                 onClick={() => setActiveCategory(null)}
                               >
@@ -258,7 +259,7 @@ const CardNav: React.FC<CardNavProps> = ({
             </React.Suspense>
 
             <Link
-              to="/packages"
+              href="/packages"
               className="nav-pill-cta hidden xl:flex"
               style={{
                 backgroundColor: 'var(--color-accent-700)',
@@ -270,7 +271,7 @@ const CardNav: React.FC<CardNavProps> = ({
             </Link>
 
             <Link
-              to="/contact"
+              href="/contact"
               className="nav-pill-cta"
               style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
             >

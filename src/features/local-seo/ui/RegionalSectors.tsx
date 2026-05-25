@@ -1,10 +1,10 @@
 import React from 'react';
-import { Buildings, Factory, Wrench } from '@phosphor-icons/react';
+import { Buildings, Factory, Wrench } from '@phosphor-icons/react/dist/ssr';
 import { CityData } from '@/features/local-seo/model/cities';
 
 export const RegionalSectors: React.FC<{ city: CityData }> = ({ city }) => {
   return (
-    <section className="py-20 bg-secondary">
+    <section className="py-[var(--space-section)] bg-secondary">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">

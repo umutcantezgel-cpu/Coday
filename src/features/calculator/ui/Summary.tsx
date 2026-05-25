@@ -1,15 +1,15 @@
 import React, { useMemo } from 'react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { CheckCircle, ArrowRight, Gauge } from '@phosphor-icons/react';
+import { CheckCircle, ArrowRight, Gauge } from '@phosphor-icons/react/dist/ssr';
 import { useCalculatorStore } from '@/features/calculator/model/store';
-import { useTranslation } from 'react-i18next';
-import { LocalizedNavLink as NavLink } from '@/shared/ui/LocalizedLink';
+import { useTranslations, useLocale } from 'next-intl';
+import { Link as NavLink } from '@/i18n/navigation';
 import { modules } from '@/shared/data/modules';
 import { formatCurrency } from '@/shared/utils/formatters';
 
 export const CalculatorSummary: React.FC = () => {
-  const { t, i18n } = useTranslation('calculator');
-  const locale = i18n.language;
+  const t = useTranslations('calculator');
+  const locale = useLocale();
   const selectedModuleIds = useCalculatorStore((state) => state.selectedModuleIds);
   const getPackageName = useCalculatorStore((state) => state.getPackageName);
 
@@ -44,7 +44,7 @@ export const CalculatorSummary: React.FC = () => {
         <div className="mb-4 p-3 bg-primary/5 rounded-xl border border-primary/10 flex items-center gap-2">
           <OptimizedIcon icon={CheckCircle} className="text-primary" />
           <span className="text-sm font-bold text-gray-900">
-            {t('summary.package', { defaultValue: 'Paket' })}:
+            {t('summary.package')}:
           </span>
           <span className="text-sm font-bold text-primary">{packageName}</span>
         </div>
@@ -58,7 +58,7 @@ export const CalculatorSummary: React.FC = () => {
         {selectedModules.map((module) => (
           <div key={module.id} className="flex justify-between items-start text-sm">
             <span className="text-gray-700 font-medium">
-              {t(`modules.${module.id}.name`, module.name)}
+              {t(`modules.${module.id}.name`)}
             </span>
             <span className="text-gray-900 font-bold whitespace-nowrap">
               {formatCurrency(module.priceInCents / 100, 'EUR', locale)}
@@ -94,7 +94,7 @@ export const CalculatorSummary: React.FC = () => {
 
       <div className="space-y-3">
         <NavLink
-          to="/contact"
+          href="/contact"
           className="w-full py-4 bg-primary text-white rounded-xl font-bold hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/25 flex items-center justify-center transform hover:-translate-y-1 text-lg animate-pulse hover:animate-none"
         >
           {t('summary.continue')}

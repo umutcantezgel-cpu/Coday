@@ -1,7 +1,8 @@
+"use client";
 import React from 'react';
 import { motion } from 'motion/react';
-import { Check } from '@phosphor-icons/react';
-import { useTranslation } from 'react-i18next';
+import { Check } from '@phosphor-icons/react/dist/ssr';
+import { useTranslations } from 'next-intl';
 
 interface Step {
   id: string;
@@ -16,7 +17,7 @@ interface StepIndicatorProps {
 }
 
 const StepIndicator: React.FC<StepIndicatorProps> = ({ currentStep, className = '' }) => {
-  const { t } = useTranslation('common');
+  const t = useTranslations('common');
   const steps: Step[] = stepIds.map((id) => ({
     id,
     label: t(`steps.${id}`),

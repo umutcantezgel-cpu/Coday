@@ -1,12 +1,13 @@
+"use client";
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { TrendDown, User, Robot, CurrencyEur } from '@phosphor-icons/react';
+import { TrendDown, User, Robot, CurrencyEur } from '@phosphor-icons/react/dist/ssr';
 import { EASING, STAGGER } from '@/shared/lib/motion';
 
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 export const AICostGraph: React.FC = () => {
-  const { t } = useTranslation('blog');
+  const t = useTranslations('blog');
   const [view, setView] = useState<'staff' | 'ai'>('staff');
 
   // Cost accumulation over 12 months (in k€)

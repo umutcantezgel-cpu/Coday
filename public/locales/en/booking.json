@@ -32,7 +32,7 @@
       "title": "Your Details"
     },
     "success": {
-      "message": "Thank you, {{name}}.<br />We have reserved your appointment for {{date}} at {{time}}. A confirmation has been sent to {{email}}.",
+      "message": "Thank you, {name}.<br />We have reserved your appointment for {date} at {time}. A confirmation has been sent to {email}.",
       "new_booking": "New Booking",
       "title": "Booking Confirmed!"
     }

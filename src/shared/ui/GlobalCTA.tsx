@@ -1,9 +1,10 @@
+"use client";
 import React from 'react';
 import { motion } from 'motion/react';
-import { useTranslation } from 'react-i18next';
-import { LocalizedLink as Link } from '@/shared/ui/LocalizedLink';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { ArrowRight, RocketLaunch } from '@phosphor-icons/react';
+import { ArrowRight, RocketLaunch } from '@phosphor-icons/react/dist/ssr';
 import GradientText from '@/shared/ui/GradientText';
 
 interface GlobalCTAProps {
@@ -19,15 +20,15 @@ export const GlobalCTA: React.FC<GlobalCTAProps> = ({
   buttonText,
   buttonLink = '/contact',
 }) => {
-  const { t } = useTranslation('common');
+  const t = useTranslations('common');
 
   return (
-    <section className="py-24 relative overflow-hidden bg-secondary text-white">
+    <section className="py-[var(--space-section)] relative overflow-hidden bg-secondary text-white">
       {/* Background Effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-[50%] -right-[10%] w-[70%] h-[70%] rounded-full bg-primary/20 blur-[120px] mix-blend-screen" />
         <div className="absolute -bottom-[50%] -left-[10%] w-[60%] h-[60%] rounded-full bg-blue-600/20 blur-[120px] mix-blend-screen" />
-        <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-10 mix-blend-overlay"></div>
+        <div className="absolute inset-0 opacity-10 mix-blend-overlay" style={{ backgroundImage: "url(/noise.svg)" }}></div>
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
@@ -57,7 +58,7 @@ export const GlobalCTA: React.FC<GlobalCTAProps> = ({
           </p>
 
           <Link
-            to={buttonLink}
+            href={buttonLink}
             className="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all duration-200 bg-primary border border-transparent rounded-full hover:bg-blue-700 hover:shadow-[0_0_40px_rgba(37,99,235,0.4)] focus:ring-2 focus:ring-offset-2 focus:ring-primary focus:ring-offset-secondary overflow-hidden"
           >
             {/* Hover Glare Effect */}

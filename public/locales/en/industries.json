@@ -26,16 +26,16 @@
       "title": "Do you know these challenges?"
     },
     "solutions": {
-      "title": "Our Solution for {{industry}}",
+      "title": "Our Solution for {industry}",
       "description": "We don’t just develop websites, but digital sales representatives tailored exactly to your industry."
     },
     "gallery": {
       "title": "Industry Insights",
-      "description": "Professional visualization for {{industry}}."
+      "description": "Professional visualization for {industry}."
     },
     "features": {
       "title": "Special Features",
-      "subtitle": "Exclusive modules for {{industry}}",
+      "subtitle": "Exclusive modules for {industry}",
       "cta": "Request Consultation"
     },
     "related": {
@@ -275,7 +275,7 @@
           "revenue_per_deal": "Revenue per Deal",
           "turbo_sale": "Turbo Sale",
           "turbo_sub": "via Web Exposé",
-          "time_saved": "-{{percent}}% Time",
+          "time_saved": "-{percent}% Time",
           "impact": "Sell 5 houses in the time of 4."
         },
         "cta": "Request Realtor Package"

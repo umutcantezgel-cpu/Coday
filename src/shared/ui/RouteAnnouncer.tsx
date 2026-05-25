@@ -1,5 +1,6 @@
+"use client";
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { usePathname } from 'next/navigation';
 
 /**
  * Announces route changes to screen readers via an aria-live region.
@@ -9,7 +10,7 @@ import { useLocation } from 'react-router-dom';
  * @example Place once in the root layout: <RouteAnnouncer />
  */
 export const RouteAnnouncer: React.FC = () => {
-  const location = useLocation();
+  const pathname = usePathname();
   const [announcement, setAnnouncement] = useState('');
 
   useEffect(() => {
@@ -20,7 +21,7 @@ export const RouteAnnouncer: React.FC = () => {
     }, 100);
 
     return () => clearTimeout(timer);
-  }, [location.pathname]);
+  }, [pathname]);
 
   return (
     <div role="status" aria-live="assertive" aria-atomic="true" className="sr-only">

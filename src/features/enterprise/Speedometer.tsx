@@ -1,6 +1,7 @@
+"use client";
 import React, { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
-import { Lightning, Globe, Cpu } from '@phosphor-icons/react';
+import { Lightning, Globe, Cpu } from '@phosphor-icons/react/dist/ssr';
 
 export const Speedometer: React.FC = () => {
     const [score, setScore] = useState(0);

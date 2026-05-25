@@ -4,12 +4,9 @@ import { AnimatedCounter } from '@/shared/ui/AnimatedCounter';
 
 /* ═══ Real client names from portfolio ═══ */
 const clients = [
-  'Prestige Residences',
   'Batherm',
-  'FitFlow',
   'MS-Schlüsseldienst',
-  'Leica Welt',
-  'GastroHub',
+  'Lindener Ratsstuben',
 ];
 
 const metrics = [

@@ -1,8 +1,9 @@
+"use client";
 import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 const WaitingRoomRoiCalculator: React.FC = () => {
-  const { t } = useTranslation('industries');
+  const t = useTranslations('industries');
   const [patientsPerDay, setPatientsPerDay] = useState(40);
   const [receptionMins, setReceptionMins] = useState(5); // Mins saved per patient by digital anamnesis
   const [hourlyRate] = useState(25); // Cost of receptionist/MFA

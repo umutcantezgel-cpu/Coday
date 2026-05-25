@@ -100,7 +100,7 @@
   "labels": {
     "setup": "Setup",
     "monthly": "/month",
-    "delivery": "~{{days}} days delivery"
+    "delivery": "~{days} days delivery"
   },
   "not_included": {
     "professional": ["Online Shop Functions", "Custom App Development"],

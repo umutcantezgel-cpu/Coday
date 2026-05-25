@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
@@ -9,9 +10,9 @@ import {
   Database,
   Bug,
   ArrowsClockwise,
-} from '@phosphor-icons/react';
+} from '@phosphor-icons/react/dist/ssr';
 import { cn } from '@/shared/lib/utils';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 type SystemType = 'wordpress' | 'coday';
 type LogLevel = 'info' | 'warning' | 'error' | 'success';
@@ -24,7 +25,7 @@ interface LogEntry {
 }
 
 export const HackSimulator: React.FC = () => {
-  const { t } = useTranslation('blog');
+  const t = useTranslations('blog');
 
   const WP_LOGS = [
     { msg: 'Scanning target 192.168.1.1...', level: 'info' },
@@ -260,7 +261,7 @@ export const HackSimulator: React.FC = () => {
 
             {/* Matrix Background Effect */}
             {activeSystem === 'coday' && isSecure && (
-              <div className="absolute inset-0 bg-[url('https://media.giphy.com/media/A06UFEx8jxEwU/giphy.gif')] opacity-5 mix-blend-screen pointer-events-none bg-cover" />
+              <div className="absolute inset-0 opacity-5 mix-blend-screen pointer-events-none bg-cover" style={{ backgroundImage: "url('https://media.giphy.com/media/A06UFEx8jxEwU/giphy.gif')" }} />
             )}
             {activeSystem === 'wordpress' && isCompromised && (
               <div className="absolute inset-0 bg-red-900/10 pointer-events-none mix-blend-overlay animate-pulse" />

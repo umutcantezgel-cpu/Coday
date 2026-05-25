@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 import { motion } from 'motion/react';
 import {
   Info,
@@ -7,11 +7,11 @@ import {
   IdentificationCard,
   ArrowsLeftRight,
   CheckCircle,
-} from '@phosphor-icons/react';
+} from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 
 export const OzgRoadmap: React.FC = () => {
-  const { t } = useTranslation('public-sector');
+  const t = useTranslations('public-sector');
 
   const steps = [
     { key: 'info', icon: Info, color: 'text-blue-500', bg: 'bg-blue-50' },
@@ -26,7 +26,7 @@ export const OzgRoadmap: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-[var(--space-section)] bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <span className="text-slate-500 font-mono text-sm uppercase tracking-widest">

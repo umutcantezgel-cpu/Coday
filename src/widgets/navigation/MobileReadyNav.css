@@ -190,6 +190,7 @@ body.mobile-nav-open #fab-container {
   align-items: center;
   gap: 0.25rem;
   position: relative;
+  min-height: 44px;
 }
 
 .nav-pill-link::after {
@@ -328,6 +329,7 @@ body.mobile-nav-open #fab-container {
   transition: all 0.2s;
   text-decoration: none;
   background: transparent;
+  min-height: 44px;
 }
 
 .dropdown-link-item:hover {
@@ -382,6 +384,7 @@ body.mobile-nav-open #fab-container {
   transition:
     transform 0.2s,
     box-shadow 0.2s;
+  min-height: 44px;
 }
 
 .nav-pill-cta:hover {

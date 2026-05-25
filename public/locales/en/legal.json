@@ -258,7 +258,7 @@
     "kontakt": {
       "intro": "If you have any questions about data protection or exercising your rights, we are happy to help:"
     },
-    "last_updated": "Last Update: {{date}}",
+    "last_updated": "Last Update: {date}",
     "principles": {
       "lawfulness": "Lawfulness",
       "lawfulness_desc": "Every processing is based on a valid legal basis (consent, contract, legitimate interest).",
@@ -520,7 +520,7 @@
       "p2": "(2) For maintenance or support contracts, termination is possible with a notice period of 30 days to the end of the month.",
       "p3": "(3) The right to extraordinary termination for good cause remains unaffected."
     },
-    "last_updated": "As of: {{date}}",
+    "last_updated": "As of: {date}",
     "mitwirkung": {
       "content": {
         "1": "Texts, images, logos in printable quality",

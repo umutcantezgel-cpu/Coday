@@ -30,10 +30,10 @@
     "title_1": "Bauen Sie Ihre",
     "title_2": "Traum-Agentur."
   },
-  "module_count": "{{count}} Modul ausgewählt",
-  "module_count_one": "{{count}} Modul ausgewählt",
-  "module_count_other": "{{count}} Module ausgewählt",
-  "module_count_plural": "{{count}} Module ausgewählt",
+  "module_count": "{count} Modul ausgewählt",
+  "module_count_one": "{count} Modul ausgewählt",
+  "module_count_other": "{count} Module ausgewählt",
+  "module_count_plural": "{count} Module ausgewählt",
   "modules": {
     "basis-business": {
       "description": "Mehrseitige Unternehmens-Präsenz (CMS)",

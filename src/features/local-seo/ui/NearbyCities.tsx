@@ -1,7 +1,7 @@
 import React from 'react';
-import { LocalizedLink as Link } from '@/shared/ui/LocalizedLink';
+import { Link } from '@/i18n/navigation';
 import { getNearbyCities } from '@/features/local-seo/model/cities';
-import { ArrowRight } from '@phosphor-icons/react';
+import { ArrowRight } from '@phosphor-icons/react/dist/ssr';
 
 export const NearbyCities: React.FC<{ currentSlug: string }> = ({ currentSlug }) => {
   const nearby = getNearbyCities(currentSlug, 6);
@@ -9,7 +9,7 @@ export const NearbyCities: React.FC<{ currentSlug: string }> = ({ currentSlug })
   if (nearby.length === 0) return null;
 
   return (
-    <section className="py-16 bg-secondary border-t border-white/10">
+    <section className="py-[var(--space-section)] bg-secondary border-t border-white/10">
       <div className="container mx-auto px-4">
         <h3 className="text-2xl font-bold text-white mb-8 text-center">
           Digitale Exzellenz in der gesamten Region
@@ -19,7 +19,7 @@ export const NearbyCities: React.FC<{ currentSlug: string }> = ({ currentSlug })
           {nearby.map((city) => (
             <Link
               key={city.slug}
-              to={`/webagentur-${city.slug}`}
+              href={`/webagentur-${city.slug}`}
               className="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-primary/50 transition-all group"
             >
               <div>

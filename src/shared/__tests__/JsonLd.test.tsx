@@ -1,26 +1,21 @@
 import { describe, it, expect } from 'vitest';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { HelmetProvider } from 'react-helmet-async';
 import { JsonLd } from '@/shared/ui/JsonLd';
-
-function renderWithHelmet(ui: React.ReactElement) {
-  return render(<HelmetProvider>{ui}</HelmetProvider>);
-}
 
 describe('JsonLd', () => {
   it('renders Organization and WebSite schemas by default', () => {
-    const { container } = renderWithHelmet(<JsonLd />);
+    const { container } = render(<JsonLd />);
     expect(container).toBeDefined();
   });
 
   it('renders LocalBusiness for home pageType', () => {
-    const { container } = renderWithHelmet(<JsonLd pageType="home" />);
+    const { container } = render(<JsonLd pageType="home" />);
     expect(container).toBeDefined();
   });
 
   it('renders LocalBusiness for contact pageType', () => {
-    const { container } = renderWithHelmet(<JsonLd pageType="contact" />);
+    const { container } = render(<JsonLd pageType="contact" />);
     expect(container).toBeDefined();
   });
 
@@ -30,12 +25,12 @@ describe('JsonLd', () => {
       { name: 'Services', url: 'https://www.codayweb.de/de/services' },
       { name: 'Web Design', url: 'https://www.codayweb.de/de/services/web-design' },
     ];
-    const { container } = renderWithHelmet(<JsonLd breadcrumbs={breadcrumbs} />);
+    const { container } = render(<JsonLd breadcrumbs={breadcrumbs} />);
     expect(container).toBeDefined();
   });
 
   it('does not render LocalBusiness for service pageType', () => {
-    const { container } = renderWithHelmet(<JsonLd pageType="service" />);
+    const { container } = render(<JsonLd pageType="service" />);
     expect(container).toBeDefined();
   });
 });

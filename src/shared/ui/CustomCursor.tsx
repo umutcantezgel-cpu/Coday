@@ -1,5 +1,27 @@
-import React, { useEffect, useState } from 'react';
+"use client";
+import React, { useEffect, useState, useSyncExternalStore } from 'react';
 import { motion, useMotionValue, useSpring } from 'motion/react';
+
+const subscribeToMediaQueries = (callback: () => void) => {
+  const pointerQuery = window.matchMedia('(pointer: fine)');
+  const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  pointerQuery.addEventListener('change', callback);
+  motionQuery.addEventListener('change', callback);
+
+  return () => {
+    pointerQuery.removeEventListener('change', callback);
+    motionQuery.removeEventListener('change', callback);
+  };
+};
+
+const getMediaQuerySnapshot = () => {
+  const pointerQuery = window.matchMedia('(pointer: fine)');
+  const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+  return pointerQuery.matches && !motionQuery.matches;
+};
+
+const getServerSnapshot = () => false;
 
 export const CustomCursor: React.FC = () => {
   // Use MotionValues to bypass React render cycle for 60fps performance
@@ -13,38 +35,7 @@ export const CustomCursor: React.FC = () => {
 
   const [isHovering, setIsHovering] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const [isDesktop, setIsDesktop] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return (
-        window.matchMedia('(pointer: fine)').matches &&
-        !window.matchMedia('(prefers-reduced-motion: reduce)').matches
-      );
-    }
-    return true;
-  });
-
-  useEffect(() => {
-    // Only enable on devices with a fine pointer (e.g., mouse, not touch)
-    const pointerQuery = window.matchMedia('(pointer: fine)');
-    // Check for reduced motion preference
-    const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-
-    const handlePointerChange = (e: MediaQueryListEvent) => {
-      setIsDesktop(e.matches && !motionQuery.matches);
-    };
-
-    const handleMotionChange = (e: MediaQueryListEvent) => {
-      setIsDesktop(pointerQuery.matches && !e.matches);
-    };
-
-    pointerQuery.addEventListener('change', handlePointerChange);
-    motionQuery.addEventListener('change', handleMotionChange);
-
-    return () => {
-      pointerQuery.removeEventListener('change', handlePointerChange);
-      motionQuery.removeEventListener('change', handleMotionChange);
-    };
-  }, []);
+  const isDesktop = useSyncExternalStore(subscribeToMediaQueries, getMediaQuerySnapshot, getServerSnapshot);
 
   useEffect(() => {
     if (!isDesktop) return;

@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { motion } from 'motion/react';
 import { useAnalyzerStore } from '@/features/analyzer/model/store';
@@ -11,13 +13,13 @@ import {
   FileText,
   Check,
   ArrowsClockwise,
-} from '@phosphor-icons/react';
+} from '@phosphor-icons/react/dist/ssr';
 import { staggerContainer, fadeUpVariants, STAGGER, TRANSITION } from '@/shared/lib/motion';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 export const AnalysisProgress: React.FC = () => {
   const { progress, status } = useAnalyzerStore();
-  const { t } = useTranslation('analyzer');
+  const t = useTranslations('analyzer');
 
   const AGENTS = [
     {

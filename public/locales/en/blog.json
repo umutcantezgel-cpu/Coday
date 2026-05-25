@@ -63,7 +63,7 @@
       "2": "Data-Analyst",
       "3": "Data-Dominator"
     },
-    "questionStep": "Question {{current}} of {{total}}",
+    "questionStep": "Question {current} of {total}",
     "recommendation": "Our Recommendation",
     "retry": "Retry Test",
     "title": "Data Maturity Check",

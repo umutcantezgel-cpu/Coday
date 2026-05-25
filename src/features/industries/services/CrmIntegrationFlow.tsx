@@ -1,8 +1,8 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 const CrmIntegrationFlow: React.FC = () => {
-  const { t } = useTranslation('industries');
+  const t = useTranslations('industries');
   return (
     <div className="py-12">
       <div className="text-center mb-12">

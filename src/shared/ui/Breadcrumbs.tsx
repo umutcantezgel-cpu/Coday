@@ -1,19 +1,21 @@
+"use client";
+
 import React from 'react';
-import { useLocation } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
-import { LocalizedLink as Link } from '@/shared/ui/LocalizedLink';
+import { usePathname } from 'next/navigation';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { CaretRight, House } from '@phosphor-icons/react';
+import { CaretRight, House } from '@phosphor-icons/react/dist/ssr';
 
 interface BreadcrumbsProps {
   className?: string;
 }
 
 export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ className = '' }) => {
-  const { t } = useTranslation('common');
-  const location = useLocation();
+  const t = useTranslations('common');
+  const pathname = usePathname() || '';
 
-  const pathnames = location.pathname.split('/').filter((x) => x);
+  const pathnames = pathname.split('/').filter((x) => x);
 
   // If we are at the root, don't show breadcrumbs
   if (pathnames.length === 0) {
@@ -45,7 +47,7 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ className = '' }) => {
       <ol className="flex items-center space-x-2">
         <li>
           <Link
-            to="/"
+            href="/"
             className="text-slate-500 hover:text-primary transition-colors flex items-center"
             aria-label="Home"
           >
@@ -70,7 +72,7 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ className = '' }) => {
                   {translatedLabel}
                 </span>
               ) : (
-                <Link to={to} className="text-slate-500 hover:text-primary transition-colors">
+                <Link href={to} className="text-slate-500 hover:text-primary transition-colors">
                   {translatedLabel}
                 </Link>
               )}

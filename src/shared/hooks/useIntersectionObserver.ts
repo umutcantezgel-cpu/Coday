@@ -1,3 +1,5 @@
+"use client";
+"use client";
 import { useEffect, useRef, useState } from 'react';
 
 interface UseIntersectionObserverProps {
@@ -27,7 +29,6 @@ export function useIntersectionObserver({
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // @ts-expect-error
         if (entry.isIntersecting) {
           setIsVisible(true);
           if (triggerOnce) {

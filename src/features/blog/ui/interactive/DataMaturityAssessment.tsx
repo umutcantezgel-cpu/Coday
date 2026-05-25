@@ -1,8 +1,9 @@
+"use client";
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { CheckCircle, TrendUp, ChartBar, Lock } from '@phosphor-icons/react';
+import { CheckCircle, TrendUp, ChartBar, Lock } from '@phosphor-icons/react/dist/ssr';
 import { cn } from '@/shared/lib/utils';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 import { useMemo } from 'react';
 
 interface Question {
@@ -15,7 +16,7 @@ interface Question {
 }
 
 export const DataMaturityAssessment: React.FC = () => {
-  const { t } = useTranslation();
+  const t = useTranslations('blog.dataMaturity');
   const [currentStep, setCurrentStep] = useState(0);
 
   const QUESTIONS: Question[] = useMemo(
@@ -72,44 +73,32 @@ export const DataMaturityAssessment: React.FC = () => {
     () => [
       {
         minDetails: 0,
-        title: `Level 1: ${t('blog:dataMaturity.levels.0', 'Daten-Blind')}`,
-        description: t(
-          'blog:dataMaturity.descriptions.0',
-          'Sie fliegen blind. Ihr Marketing-Budget ist ein Glücksspiel.'
-        ),
+        title: `Level 1: ${t('levels.0')}`,
+        description: t('descriptions.0'),
         color: 'text-red-500',
         bg: 'bg-red-500/10',
         border: 'border-red-500/20',
       },
       {
         minDetails: 6,
-        title: `Level 2: ${t('blog:dataMaturity.levels.1', 'Daten-Besucher')}`,
-        description: t(
-          'blog:dataMaturity.descriptions.1',
-          'Sie sammeln Daten, nutzen sie aber kaum für Entscheidungen.'
-        ),
+        title: `Level 2: ${t('levels.1')}`,
+        description: t('descriptions.1'),
         color: 'text-orange-500',
         bg: 'bg-orange-500/10',
         border: 'border-orange-500/20',
       },
       {
         minDetails: 10,
-        title: `Level 3: ${t('blog:dataMaturity.levels.2', 'Daten-Versteher')}`,
-        description: t(
-          'blog:dataMaturity.descriptions.2',
-          'Sie wissen was passiert und optimieren basierend auf Zahlen.'
-        ),
+        title: `Level 3: ${t('levels.2')}`,
+        description: t('descriptions.2'),
         color: 'text-blue-500',
         bg: 'bg-blue-500/10',
         border: 'border-blue-500/20',
       },
       {
         minDetails: 14,
-        title: `Level 4: ${t('blog:dataMaturity.levels.3', 'Daten-Dominator')}`,
-        description: t(
-          'blog:dataMaturity.descriptions.3',
-          'Daten sind Ihr unfairer Wettbewerbsvorteil. Skalierung ist reine Mathematik.'
-        ),
+        title: `Level 4: ${t('levels.3')}`,
+        description: t('descriptions.3'),
         color: 'text-green-500',
         bg: 'bg-green-500/10',
         border: 'border-green-500/20',
@@ -150,11 +139,11 @@ export const DataMaturityAssessment: React.FC = () => {
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-xl md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-500 flex items-center gap-2">
               <ChartBar className="w-6 h-6 text-primary" />
-              {t('blog:dataMaturity.title')}
+              {t('title')}
             </h3>
             {!showResult && (
               <span className="text-sm font-medium text-gray-900/60 bg-white px-3 py-1 rounded-full border border-gray-200">
-                {t('blog:dataMaturity.questionStep', {
+                {t('questionStep', {
                   current: currentStep + 1,
                   total: QUESTIONS.length,
                 })}
@@ -222,7 +211,7 @@ export const DataMaturityAssessment: React.FC = () => {
                 </div>
 
                 <h4 className="text-2xl font-bold text-gray-900 mb-2">
-                  {t('blog:dataMaturity.yourStatus')}
+                  {t('yourStatus')}
                 </h4>
                 <div
                   className={cn(
@@ -246,7 +235,7 @@ export const DataMaturityAssessment: React.FC = () => {
                 <div className="bg-gray-50 rounded-xl p-6 border border-gray-200 text-left mb-8">
                   <h5 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                     <Lock className="w-4 h-4 text-primary" />
-                    {t('blog:dataMaturity.recommendation')}
+                    {t('recommendation')}
                   </h5>
                   <ul className="space-y-3">
                     {score < 10 ? (
@@ -280,13 +269,13 @@ export const DataMaturityAssessment: React.FC = () => {
                     onClick={reset}
                     className="px-6 py-2 rounded-lg text-gray-900/60 hover:text-primary hover:bg-primary/5 transition-all"
                   >
-                    {t('blog:dataMaturity.retry')}
+                    {t('retry')}
                   </button>
                   <a
                     href="/contact"
                     className="px-6 py-2 rounded-lg bg-gradient-to-r from-primary to-purple-500 text-white font-medium hover:shadow-lg hover:opacity-90 transition-all flex items-center gap-2"
                   >
-                    {t('blog:dataMaturity.bookAudit')} <CheckCircle className="w-4 h-4" />
+                    {t('bookAudit')} <CheckCircle className="w-4 h-4" />
                   </a>
                 </div>
               </motion.div>

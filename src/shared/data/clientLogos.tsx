@@ -1,6 +1,6 @@
 import React from 'react';
 import { LogoItem } from '@/shared/ui/LogoLoop';
-import { Drop, Key, ForkKnife } from '@phosphor-icons/react';
+import { Drop, Key, ForkKnife } from '@phosphor-icons/react/dist/ssr';
 
 // Wir nutzen die Phosphor-Icons, um die realen Portfolio-Kunden
 // im Design-System-konformen Stil darzustellen, da reine Text-Platzhalter nicht zulässig sind.

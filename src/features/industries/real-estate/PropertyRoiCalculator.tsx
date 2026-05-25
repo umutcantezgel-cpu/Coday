@@ -1,9 +1,11 @@
+"use client";
 import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations, useLocale } from 'next-intl';
 import { formatCurrency } from '@/shared/utils/formatters';
 
 const PropertyRoiCalculator: React.FC = () => {
-  const { t, i18n } = useTranslation('industries');
+  const t = useTranslations('industries');
+  const locale = useLocale();
   const [propertyValue, setPropertyValue] = useState(500000);
   const [commissionRate, setCommissionRate] = useState(3.57); // Standard DE with tax
   const [salesSpeedBoost] = useState(20); // % faster
@@ -31,7 +33,7 @@ const PropertyRoiCalculator: React.FC = () => {
             <label htmlFor="propertyValue">
               {t('immobilien-makler.features.roi_calculator.labels.property_value')}
             </label>
-            <span>{formatCurrency((propertyValue / 100) * 100, 'EUR', i18n.language)}</span>
+            <span>{formatCurrency((propertyValue / 100) * 100, 'EUR', locale)}</span>
           </div>
           <input
             id="propertyValue"
@@ -51,7 +53,7 @@ const PropertyRoiCalculator: React.FC = () => {
               {t('immobilien-makler.features.roi_calculator.labels.commission_rate')}
             </label>
             <span>
-              {new Intl.NumberFormat(i18n.language, { maximumFractionDigits: 2 }).format(
+              {new Intl.NumberFormat(locale, { maximumFractionDigits: 2 }).format(
                 commissionRate
               )}
               %
@@ -76,7 +78,7 @@ const PropertyRoiCalculator: React.FC = () => {
             {t('immobilien-makler.features.roi_calculator.results.revenue_per_deal')}
           </span>
           <span className="text-xl font-bold text-secondary">
-            {formatCurrency((commission / 100) * 100, 'EUR', i18n.language)}
+            {formatCurrency((commission / 100) * 100, 'EUR', locale)}
           </span>
         </div>
         <div className="h-px bg-gray-200 w-full mb-4"></div>

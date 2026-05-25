@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useLayoutEffect, useRef, useCallback } from 'react';
 import type { ReactNode } from 'react';
 import Lenis from 'lenis';
@@ -135,7 +137,6 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
       if (blurAmount) {
         let topCardIndex = 0;
         for (let j = 0; j < cardsRef.current.length; j++) {
-          // @ts-expect-error
           const jCardTop = getElementOffset(cardsRef.current[j]);
           const jTriggerStart = jCardTop - stackPositionPx - itemStackDistance * j;
           if (scrollTop >= jTriggerStart) {
@@ -168,13 +169,9 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
       const lastTransform = lastTransformsRef.current.get(i);
       const hasChanged =
         !lastTransform ||
-        // @ts-expect-error
         Math.abs(lastTransform.translateY - newTransform.translateY) > 0.1 ||
-        // @ts-expect-error
         Math.abs(lastTransform.scale - newTransform.scale) > 0.001 ||
-        // @ts-expect-error
         Math.abs(lastTransform.rotation - newTransform.rotation) > 0.1 ||
-        // @ts-expect-error
         Math.abs(lastTransform.blur - newTransform.blur) > 0.1;
 
       if (hasChanged) {
@@ -229,8 +226,6 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
         infinite: false,
         wheelMultiplier: 1,
         lerp: 0.1,
-        syncTouch: true,
-        syncTouchLerp: 0.075,
       });
 
       lenis.on('scroll', handleScroll);
@@ -258,8 +253,6 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
         gestureOrientation: 'vertical',
         wheelMultiplier: 1,
         lerp: 0.1,
-        syncTouch: true,
-        syncTouchLerp: 0.075,
       });
 
       lenis.on('scroll', handleScroll);

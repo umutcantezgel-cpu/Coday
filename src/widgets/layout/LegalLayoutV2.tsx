@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect, useMemo } from 'react';
 import { SeoHead } from '@/shared/ui/SeoHead';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
@@ -12,9 +13,9 @@ import {
   List,
   CaretLeft,
   EnvelopeSimple,
-} from '@phosphor-icons/react';
-import { useTranslation } from 'react-i18next';
-import { LocalizedNavLink as NavLink } from '@/shared/ui/LocalizedLink';
+} from '@phosphor-icons/react/dist/ssr';
+import { useTranslations } from 'next-intl';
+import { Link as NavLink } from '@/i18n/navigation';
 import { motion, AnimatePresence } from 'motion/react';
 
 interface TocItem {
@@ -48,7 +49,7 @@ export const LegalLayoutV2: React.FC<LegalLayoutV2Props> = ({
   pageType,
   version = '2.0',
 }) => {
-  const { t } = useTranslation('legal');
+  const t = useTranslations('legal');
   const [activeSection, setActiveSection] = useState<string>('');
   const [readProgress, setReadProgress] = useState(0);
   const [showBackToTop, setShowBackToTop] = useState(false);
@@ -115,7 +116,7 @@ export const LegalLayoutV2: React.FC<LegalLayoutV2Props> = ({
               {legalPages.map((page) => (
                 <NavLink
                   key={page.key}
-                  to={page.path}
+                  href={page.path}
                   className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all
                     ${
                       pageType === page.key

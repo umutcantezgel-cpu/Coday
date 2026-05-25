@@ -1,10 +1,10 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
-import { Shield, Lock, CloudCheck, Code, Sparkle, Key } from '@phosphor-icons/react';
+import { useTranslations } from 'next-intl';
+import { Shield, Lock, CloudCheck, Code, Sparkle, Key } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 
 const SecurityGrid: React.FC = () => {
-  const { t } = useTranslation('services');
+  const t = useTranslations('services');
 
   const securityItems = [
     {

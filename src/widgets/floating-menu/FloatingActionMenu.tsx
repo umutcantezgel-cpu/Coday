@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
@@ -9,7 +10,7 @@ import {
   InstagramLogo,
   TwitterLogo,
   FacebookLogo,
-} from '@phosphor-icons/react';
+} from '@phosphor-icons/react/dist/ssr';
 import { useChatStore } from '@/widgets/chatbot/lib/chatStore';
 
 export const FloatingActionMenu: React.FC = () => {
@@ -34,7 +35,8 @@ export const FloatingActionMenu: React.FC = () => {
   return (
     <div
       id="fab-container"
-      className="floating-action-menu fixed bottom-6 right-6 z-max flex flex-col items-end gap-4"
+      className="floating-action-menu fixed bottom-6 right-6 z-max flex flex-col items-end gap-4 will-change-transform transform-gpu"
+      style={{ transform: 'translateZ(0)' }}
     >
       {/* Social Media Sub-Menu */}
       <AnimatePresence>
@@ -43,6 +45,7 @@ export const FloatingActionMenu: React.FC = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 20 }}
+            style={{ willChange: 'transform, opacity' }}
             className="absolute bottom-full right-16 mb-2 bg-white rounded-2xl shadow-xl p-3 flex flex-col gap-3 border border-gray-100"
           >
             <a
@@ -140,6 +143,7 @@ export const FloatingActionMenu: React.FC = () => {
       {/* Main Toggle Button */}
       <motion.button
         onClick={toggleMenu}
+        style={{ willChange: 'transform' }}
         className={`w-16 h-16 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 z-max
                     ${
                       isOpen

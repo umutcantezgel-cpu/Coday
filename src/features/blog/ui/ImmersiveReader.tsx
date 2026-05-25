@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useSpring } from 'motion/react';
 import { clsx, type ClassValue } from 'clsx';
@@ -9,7 +10,7 @@ function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-import { List, X } from '@phosphor-icons/react';
+import { List, X } from '@phosphor-icons/react/dist/ssr';
 import { AnimatePresence } from 'motion/react';
 
 // --- Reading Progress Component ---

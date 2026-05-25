@@ -1,9 +1,8 @@
-import { useTranslation } from 'react-i18next';
+import { useLocale } from 'next-intl';
 import { useCallback } from 'react';
 
 export const useFormat = () => {
-    const { i18n } = useTranslation();
-    const locale = i18n.language;
+    const locale = useLocale();
 
     const formatCurrency = useCallback((amount: number, currency = 'EUR') => {
         return new Intl.NumberFormat(locale, {

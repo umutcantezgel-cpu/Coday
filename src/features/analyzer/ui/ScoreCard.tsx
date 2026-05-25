@@ -1,9 +1,11 @@
+"use client";
+
 import React from 'react';
 import { motion } from 'motion/react';
 import { CircularGauge } from '@/features/analyzer/ui/CircularGauge';
-import { WarningCircle, ArrowRight } from '@phosphor-icons/react';
+import { WarningCircle, ArrowRight } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 interface ScoreCardProps {
   title: string;
@@ -22,7 +24,7 @@ export const ScoreCard: React.FC<ScoreCardProps> = ({
   summary,
   onClick,
 }) => {
-  const { t } = useTranslation('analyzer');
+  const t = useTranslations('analyzer');
 
   // Determine score color
   const getScoreBg = (score: number) => {

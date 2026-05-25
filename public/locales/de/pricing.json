@@ -100,7 +100,7 @@
   "labels": {
     "setup": "Einrichtung",
     "monthly": "/Monat",
-    "delivery": "Lieferung in ~{{days}} Tagen"
+    "delivery": "Lieferung in ~{days} Tagen"
   },
   "not_included": {
     "professional": ["Online-Shop Funktionen", "Individuelle App-Entwicklung"],

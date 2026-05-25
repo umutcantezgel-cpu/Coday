@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
@@ -7,7 +8,7 @@ import {
   ShieldCheck,
   ArrowRight,
   User,
-} from '@phosphor-icons/react';
+} from '@phosphor-icons/react/dist/ssr';
 import { clsx } from 'clsx';
 
 export const TrackingSimulator: React.FC = () => {
@@ -109,7 +110,7 @@ export const TrackingSimulator: React.FC = () => {
 
         {/* Visualization Area */}
         <div className="relative h-32 bg-gray-900 rounded-2xl overflow-hidden flex items-center px-8 border border-gray-800">
-          <div className="absolute inset-0 bg-[url('/images/grid.svg')] opacity-10" />
+          <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "url(/images/grid.svg)" }} />
 
           {/* User */}
           <div className="relative z-10 flex flex-col items-center gap-2 text-white">

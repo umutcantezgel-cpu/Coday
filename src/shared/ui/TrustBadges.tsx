@@ -1,7 +1,7 @@
 import React from 'react';
-import { ShieldCheck, LockKey, CheckCircle, Code } from '@phosphor-icons/react';
+import { LockKey, CheckCircle } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { useIntersectionObserver } from '@/shared/hooks/useIntersectionObserver';
+import { FadeInUp } from '@/shared/ui/MotionWrappers';
 
 export interface TrustBadge {
   id: string;
@@ -14,21 +14,6 @@ export interface TrustBadge {
 
 const DEFAULT_BADGES: TrustBadge[] = [
   {
-    id: 'proven-expert',
-    icon: CheckCircle,
-    title: 'Top Dienstleister 2024',
-    description: '100% Empfehlungsrate auf ProvenExpert',
-    url: 'https://www.provenexpert.com/coday-gmbh/',
-    color: 'text-green-500',
-  },
-  {
-    id: 'vercel',
-    icon: Code,
-    title: 'Vercel Agency Partner',
-    description: 'Offizieller Entwicklungspartner',
-    color: 'text-black ',
-  },
-  {
     id: 'dsgvo',
     icon: LockKey,
     title: 'DSGVO Konform',
@@ -36,11 +21,11 @@ const DEFAULT_BADGES: TrustBadge[] = [
     color: 'text-blue-500',
   },
   {
-    id: 'wcag',
-    icon: ShieldCheck,
-    title: 'Barrierefrei (WCAG AA)',
-    description: 'Zertifizierte Accessibility',
-    color: 'text-purple-500',
+    id: 'vercel',
+    icon: CheckCircle, // or Lightning/Rocket if preferred
+    title: 'Vercel Edge Network',
+    description: 'Global verteilt für maximale Geschwindigkeit',
+    color: 'text-black dark:text-white',
   },
 ];
 
@@ -57,8 +42,6 @@ export const TrustBadges: React.FC<TrustBadgesProps> = ({
   align = 'center',
   layout = 'row',
 }) => {
-  const { ref, isVisible } = useIntersectionObserver({ triggerOnce: true, threshold: 0.1 });
-
   const getAlignmentClass = () => {
     switch (align) {
       case 'left':
@@ -80,7 +63,6 @@ export const TrustBadges: React.FC<TrustBadgesProps> = ({
 
   return (
     <div
-      ref={ref as React.RefObject<HTMLDivElement>}
       className={`w-full ${className}`}
       aria-label="Vertrauenssiegel und Zertifikate"
     >
@@ -100,31 +82,25 @@ export const TrustBadges: React.FC<TrustBadgesProps> = ({
             </>
           );
 
-          const wrapperClass = `group flex flex-col items-center p-4 rounded-xl hover:bg-surface-light/50 transition-colors duration-300 motion-safe:transition-all ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-          }`;
-
-          const style = { transitionDelay: `${index * 100}ms` };
-
-          if (badge.url) {
-            return (
-              <a
-                key={badge.id}
-                href={badge.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={wrapperClass}
-                style={style}
-              >
-                <BadgeContent />
-              </a>
-            );
-          }
+          const wrapperClass = `group flex flex-col items-center p-4 rounded-xl hover:bg-surface-light/50 transition-colors duration-300 w-full h-full`;
 
           return (
-            <div key={badge.id} className={wrapperClass} style={style}>
-              <BadgeContent />
-            </div>
+            <FadeInUp key={badge.id} delay={index * 0.1}>
+              {badge.url ? (
+                <a
+                  href={badge.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={wrapperClass}
+                >
+                  <BadgeContent />
+                </a>
+              ) : (
+                <div className={wrapperClass}>
+                  <BadgeContent />
+                </div>
+              )}
+            </FadeInUp>
           );
         })}
       </div>

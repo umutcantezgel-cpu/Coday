@@ -154,7 +154,7 @@ export const CODAY_KNOWLEDGE_BASE = {
     ecommerce: {
       name: 'E-Commerce Development',
       description: 'Conversion-starke Shopsysteme für erfolgreichen Online-Handel.',
-      url: '/services/ecommerce',
+      url: '/services/ecommerce-development',
     },
     appDevelopment: {
       name: 'App Development',

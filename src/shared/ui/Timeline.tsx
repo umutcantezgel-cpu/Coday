@@ -1,6 +1,7 @@
+"use client";
 import React from 'react';
 import { motion } from 'motion/react';
-import { Check } from '@phosphor-icons/react';
+import { Check } from '@phosphor-icons/react/dist/ssr';
 import { staggerContainer, fadeUpVariants, STAGGER, TRANSITION } from '@/shared/lib/motion';
 
 interface TimelineItem {

@@ -1,10 +1,11 @@
+"use client";
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { m, PanInfo, useMotionValue, useTransform, MotionValue, Transition } from 'motion/react';
 import React, { JSX } from 'react';
 import { Icon } from '@/shared/ui/Icon';
 import { useRtl } from '@/shared/hooks/useRtl';
 
-export interface CarouselItem {
+export interface CarouselItemData {
   title: string;
   description: string;
   id: number;
@@ -12,7 +13,7 @@ export interface CarouselItem {
 }
 
 export interface CarouselProps {
-  items?: CarouselItem[];
+  items?: CarouselItemData[];
   baseWidth?: number;
   autoplay?: boolean;
   autoplayDelay?: number;
@@ -21,7 +22,7 @@ export interface CarouselProps {
   round?: boolean;
 }
 
-const DEFAULT_ITEMS: CarouselItem[] = [
+const DEFAULT_ITEMS: CarouselItemData[] = [
   {
     title: 'Text Animations',
     description: 'Cool text animations for your projects.',
@@ -60,7 +61,7 @@ const GAP = 16;
 const SPRING_OPTIONS = { type: 'spring' as const, stiffness: 300, damping: 30 };
 
 interface CarouselItemProps {
-  item: CarouselItem;
+  item: CarouselItemData;
   index: number;
   itemWidth: number;
   round: boolean;
@@ -69,7 +70,7 @@ interface CarouselItemProps {
   transition: Transition;
 }
 
-const CarouselItem: React.FC<CarouselItemProps> = ({
+const CarouselItemComponent: React.FC<CarouselItemProps> = ({
   item,
   index,
   itemWidth,
@@ -306,9 +307,8 @@ export default function Carousel({
         onAnimationComplete={handleAnimationComplete}
       >
         {itemsForRender.map((item, index) => (
-          <CarouselItem
+          <CarouselItemComponent
             key={`${item?.id ?? index}-${index}`}
-            // @ts-expect-error
             item={item}
             index={index}
             itemWidth={itemWidth}

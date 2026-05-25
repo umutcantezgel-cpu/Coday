@@ -1,7 +1,8 @@
+"use client";
 import React, { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 import { useCookieStore } from '@/shared/lib/cookieStore';
-import { X } from '@phosphor-icons/react';
+import { X } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { useFocusTrap } from '@/shared/hooks/useFocusTrap';
 
@@ -12,20 +13,23 @@ interface CookieSettingsModalProps {
 }
 
 const CookieSettingsModal: React.FC<CookieSettingsModalProps> = ({ isOpen, onClose, onSave }) => {
-  const { t } = useTranslation('common');
+  const t = useTranslations('common');
   const { preferences, savePreferences } = useCookieStore();
   const containerRef = useFocusTrap(isOpen);
 
   // Local state to manage checkboxes before saving
   const [localPreferences, setLocalPreferences] = useState(preferences);
+  const [prevIsOpen, setPrevIsOpen] = useState(isOpen);
 
-  // Sync local state when modal opens
-  useEffect(() => {
+  if (isOpen !== prevIsOpen) {
+    setPrevIsOpen(isOpen);
     if (isOpen) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
       setLocalPreferences(preferences);
     }
+  }
 
+  // Handle escape key
+  useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && isOpen) {
         onClose();
@@ -33,7 +37,7 @@ const CookieSettingsModal: React.FC<CookieSettingsModalProps> = ({ isOpen, onClo
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen, preferences, onClose]);
+  }, [isOpen, onClose]);
 
   const handleSave = () => {
     savePreferences(localPreferences);
@@ -53,12 +57,12 @@ const CookieSettingsModal: React.FC<CookieSettingsModalProps> = ({ isOpen, onClo
       >
         <div className="flex items-center justify-between p-6 border-b border-gray-100">
           <h2 id="cookie-settings-title" className="text-xl font-bold text-gray-900">
-            {t('cookie.settings.title', 'Cookie Einstellungen')}
+            {t('cookie.settings.title')}
           </h2>
           <button
             onClick={onClose}
             className="p-2 hover:bg-gray-100 rounded-full transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-            aria-label={t('common.close', 'Schließen') || 'Close'}
+            aria-label={t('common.close')}
           >
             <OptimizedIcon icon={X} className="text-gray-500" aria-hidden="true" />
           </button>
@@ -66,7 +70,7 @@ const CookieSettingsModal: React.FC<CookieSettingsModalProps> = ({ isOpen, onClo
 
         <div className="p-6 space-y-6">
           <p className="text-gray-600 text-sm">
-            {t('cookie.settings.desc', 'Verwalten Sie hier Ihre Cookie-Präferenzen.')}
+            {t('cookie.settings.desc')}
           </p>
 
           <div className="space-y-4">
@@ -84,10 +88,10 @@ const CookieSettingsModal: React.FC<CookieSettingsModalProps> = ({ isOpen, onClo
                   htmlFor="cookie-essential"
                   className="block text-sm font-medium text-gray-900"
                 >
-                  {t('cookie.essential.title', 'Essenziell')}
+                  {t('cookie.essential.title')}
                 </label>
                 <p className="text-xs text-gray-500">
-                  {t('cookie.essential.desc', 'Erforderlich für die Grundfunktionen der Website.')}
+                  {t('cookie.essential.desc')}
                 </p>
               </div>
             </div>
@@ -108,10 +112,10 @@ const CookieSettingsModal: React.FC<CookieSettingsModalProps> = ({ isOpen, onClo
                   htmlFor="cookie-analytics"
                   className="block text-sm font-medium text-gray-900"
                 >
-                  {t('cookie.analytics.title', 'Analyse')}
+                  {t('cookie.analytics.title')}
                 </label>
                 <p className="text-xs text-gray-500">
-                  {t('cookie.analytics.desc', 'Hilft uns, unsere Website zu verbessern.')}
+                  {t('cookie.analytics.desc')}
                 </p>
               </div>
             </div>
@@ -132,10 +136,10 @@ const CookieSettingsModal: React.FC<CookieSettingsModalProps> = ({ isOpen, onClo
                   htmlFor="cookie-marketing"
                   className="block text-sm font-medium text-gray-900"
                 >
-                  {t('cookie.marketing.title', 'Marketing')}
+                  {t('cookie.marketing.title')}
                 </label>
                 <p className="text-xs text-gray-500">
-                  {t('cookie.marketing.desc', 'Wird für personalisierte Werbung verwendet.')}
+                  {t('cookie.marketing.desc')}
                 </p>
               </div>
             </div>
@@ -147,13 +151,13 @@ const CookieSettingsModal: React.FC<CookieSettingsModalProps> = ({ isOpen, onClo
             onClick={onClose}
             className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
           >
-            {t('common.cancel', 'Abbrechen')}
+            {t('common.cancel')}
           </button>
           <button
             onClick={handleSave}
             className="px-4 py-2 text-sm font-medium text-white bg-primary rounded-lg hover:bg-primary-dark transition-colors"
           >
-            {t('common.save', 'Einstellungen speichern')}
+            {t('common.save')}
           </button>
         </div>
       </div>

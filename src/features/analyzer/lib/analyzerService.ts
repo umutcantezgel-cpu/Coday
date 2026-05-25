@@ -4,12 +4,12 @@
  */
 
 import type { AnalysisResult, ActionPlanStep, AgentIssue } from '@/features/analyzer/model/types';
-import { supabase } from '@/shared/lib/supabase/client';
+import { saveAuditResultAction } from '@/features/analyzer/actions/saveAudit';
 
 const SUPABASE_URL =
-  import.meta.env.VITE_SUPABASE_URL || import.meta.env.NEXT_PUBLIC_SUPABASE_URL || '';
+  process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL || '';
 const SUPABASE_ANON_KEY =
-  import.meta.env.VITE_SUPABASE_ANON_KEY || import.meta.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
 
 /**
  * Step 1: Scan the website — returns extracted content, headers, and tech stack
@@ -130,25 +130,9 @@ export async function generateActionPlan(
  */
 export async function saveAuditResult(result: AnalysisResult): Promise<void> {
   try {
-    const { error } = await supabase.from('website_audits').insert({
-      url: result.url,
-      domain: result.domain,
-      overall_score: result.overallScore,
-      urgency_score: result.urgencyScore,
-      performance_data: result.performance,
-      seo_data: result.seo,
-      security_data: result.security,
-      accessibility_data: result.accessibility,
-      ux_data: result.ux,
-      content_data: result.content,
-      status: 'completed',
-      analysis_duration_ms: result.duration,
-      screenshot_url: result.screenshotUrl,
-      tech_stack: result.techStack || [],
-    });
-
-    if (error) {
-      console.error('[Analyzer] Failed to save history:', error);
+    const res = await saveAuditResultAction(result);
+    if (!res.success) {
+      console.error('[Analyzer] Failed to save history:', res.error);
     }
   } catch (e) {
     console.error('[Analyzer] Save error:', e);

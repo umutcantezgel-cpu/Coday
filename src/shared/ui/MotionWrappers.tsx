@@ -1,5 +1,33 @@
-import React, { ReactNode } from 'react';
-import { motion, Variants, useReducedMotion } from 'motion/react';
+"use client";
+
+import React, { ReactNode, useEffect, useRef, useState } from 'react';
+
+// Custom hook to detect when an element enters the viewport
+function useInView(ref: React.RefObject<HTMLElement | null>, once: boolean = true, margin: string = '-10%') {
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          if (once) observer.unobserve(el);
+        } else if (!once) {
+          setIsInView(false);
+        }
+      },
+      { rootMargin: margin }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [once, margin, ref]);
+
+  return isInView;
+}
 
 interface MotionWrapperProps {
   children: ReactNode;
@@ -18,32 +46,18 @@ export const FadeInUp: React.FC<MotionWrapperProps> = ({
   once = true,
   layout = false,
 }) => {
-  const shouldReduceMotion = useReducedMotion();
-
-  const variants: Variants = {
-    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: shouldReduceMotion ? 0 : duration,
-        delay: shouldReduceMotion ? 0 : delay,
-        ease: 'easeOut',
-      },
-    },
-  };
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, once, '-10%');
 
   return (
-    <motion.div
-      className={className}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once, margin: '-10%' }}
-      variants={variants}
-      layout={layout as boolean | 'position' | 'size'}
+    <div
+      ref={ref}
+      data-in-view={isInView}
+      className={`transition-all ease-out opacity-0 translate-y-[30px] data-[in-view=true]:opacity-100 data-[in-view=true]:translate-y-0 motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none transform-gpu will-change-transform ${className}`}
+      style={{ transitionDuration: `${duration}s`, transitionDelay: `${delay}s` }}
     >
       {children}
-    </motion.div>
+    </div>
   );
 };
 
@@ -55,60 +69,45 @@ export const ScaleIn: React.FC<MotionWrapperProps> = ({
   once = true,
   layout = false,
 }) => {
-  const shouldReduceMotion = useReducedMotion();
-
-  const variants: Variants = {
-    hidden: { opacity: 0, scale: shouldReduceMotion ? 1 : 0.95 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: shouldReduceMotion ? 0 : duration,
-        delay: shouldReduceMotion ? 0 : delay,
-        ease: 'easeOut',
-      },
-    },
-  };
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, once, '-10%');
 
   return (
-    <motion.div
-      className={className}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once, margin: '-10%' }}
-      variants={variants}
-      layout={layout as boolean | 'position' | 'size'}
+    <div
+      ref={ref}
+      data-in-view={isInView}
+      className={`transition-all ease-out opacity-0 scale-95 data-[in-view=true]:opacity-100 data-[in-view=true]:scale-100 motion-reduce:scale-100 motion-reduce:opacity-100 motion-reduce:transition-none transform-gpu will-change-transform ${className}`}
+      style={{ transitionDuration: `${duration}s`, transitionDelay: `${delay}s` }}
     >
       {children}
-    </motion.div>
+    </div>
   );
 };
 
 export const StaggerContainer: React.FC<
   Omit<MotionWrapperProps, 'delay' | 'duration'> & { staggerDelay?: number }
 > = ({ children, className = '', once = true, staggerDelay = 0.1 }) => {
-  const shouldReduceMotion = useReducedMotion();
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, once, '-10%');
 
-  const variants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: shouldReduceMotion ? 0 : staggerDelay,
-      },
-    },
-  };
+  useEffect(() => {
+    if (ref.current) {
+      const items = ref.current.querySelectorAll('.stagger-item');
+      items.forEach((item, index) => {
+        (item as HTMLElement).style.transitionDelay = `${index * staggerDelay}s`;
+      });
+    }
+  }, [staggerDelay]);
 
   return (
-    <motion.div
-      className={className}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once, margin: '-10%' }}
-      variants={variants}
+    <div
+      ref={ref}
+      data-in-view={isInView}
+      className={`group/stagger transition-opacity opacity-0 data-[in-view=true]:opacity-100 motion-reduce:opacity-100 motion-reduce:transition-none ${className}`}
+      style={{ transitionDuration: '0.3s' }}
     >
       {children}
-    </motion.div>
+    </div>
   );
 };
 
@@ -116,23 +115,12 @@ export const StaggerItem: React.FC<{ children: ReactNode; className?: string }> 
   children,
   className = '',
 }) => {
-  const shouldReduceMotion = useReducedMotion();
-
-  const variants: Variants = {
-    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: shouldReduceMotion ? 0 : 0.5,
-        ease: 'easeOut',
-      },
-    },
-  };
-
   return (
-    <motion.div className={className} variants={variants}>
+    <div 
+      className={`stagger-item transition-all ease-out opacity-0 translate-y-[20px] group-data-[in-view=true]/stagger:opacity-100 group-data-[in-view=true]/stagger:translate-y-0 motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none transform-gpu will-change-transform ${className}`}
+      style={{ transitionDuration: '0.5s' }}
+    >
       {children}
-    </motion.div>
+    </div>
   );
 };

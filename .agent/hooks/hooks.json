@@ -1,0 +1,93 @@
+{
+  "version": "1.0",
+  "hooks": [
+    {
+      "name": "block-main-branch-commits",
+      "trigger": "before_git_commit",
+      "condition": {
+        "branch": "main"
+      },
+      "action": "deny",
+      "message": "Direct commits to main are forbidden. Switch to a feature branch first."
+    },
+    {
+      "name": "block-force-push",
+      "trigger": "before_git_push",
+      "condition": {
+        "flags_include": ["--force", "-f"]
+      },
+      "action": "deny",
+      "message": "Force push is not allowed. Use --force-with-lease and explain why first."
+    },
+    {
+      "name": "warn-on-env-modification",
+      "trigger": "before_file_write",
+      "condition": {
+        "path_matches": "\\.env.*"
+      },
+      "action": "require_confirmation",
+      "message": "About to modify env file. Are secrets being touched?"
+    },
+    {
+      "name": "block-package-json-without-discussion",
+      "trigger": "before_file_write",
+      "condition": {
+        "path_matches": "package\\.json$"
+      },
+      "action": "require_confirmation",
+      "message": "Modifying package.json. Confirm dependency change was discussed."
+    },
+    {
+      "name": "block-destructive-rm",
+      "trigger": "before_shell_command",
+      "condition": {
+        "command_matches": "rm\\s+-rf"
+      },
+      "action": "deny",
+      "message": "rm -rf is forbidden. Use git rm or move to /trash/ folder instead."
+    },
+    {
+      "name": "verify-after-significant-change",
+      "trigger": "after_batch_write",
+      "condition": {
+        "files_changed_min": 5
+      },
+      "action": "run_command",
+      "command": "npm run typecheck && npm run lint"
+    },
+    {
+      "name": "block-production-db-mutations",
+      "trigger": "before_shell_command",
+      "condition": {
+        "command_matches": "(supabase|psql).*production",
+        "command_contains_any": ["DROP", "DELETE", "TRUNCATE", "UPDATE"]
+      },
+      "action": "deny",
+      "message": "Production database mutations are forbidden via agent. User must run manually."
+    },
+    {
+      "name": "log-all-network-requests",
+      "trigger": "before_network_request",
+      "condition": {},
+      "action": "log",
+      "log_path": ".agent/logs/network-{date}.log"
+    },
+    {
+      "name": "limit-tokens-per-task",
+      "trigger": "task_start",
+      "condition": {},
+      "action": "set_budget",
+      "max_tokens": 500000,
+      "on_exceed": "pause_and_ask"
+    },
+    {
+      "name": "sanity-readonly-default",
+      "trigger": "before_sanity_mutation",
+      "condition": {
+        "dataset": "production"
+      },
+      "action": "require_confirmation",
+      "message": "About to mutate Sanity production. Confirm intent."
+    }
+  ]
+}

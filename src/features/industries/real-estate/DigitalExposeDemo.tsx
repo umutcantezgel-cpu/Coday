@@ -1,9 +1,10 @@
+"use client";
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 const DigitalExposeDemo: React.FC = () => {
-  const { t } = useTranslation('industries');
+  const t = useTranslations('industries');
   const [view, setView] = useState<'pdf' | 'web'>('web');
 
   return (
@@ -58,7 +59,7 @@ const DigitalExposeDemo: React.FC = () => {
                 <div className="mt-8 border text-xs p-2 text-center text-red-500 border-red-200 bg-red-50">
                   {t('immobilien-makler.features.expose_demo.pdf_view.warning')
                     .split('\n')
-                    .map((line, i) => (
+                    .map((line: string, i: number) => (
                       <React.Fragment key={i}>
                         {line}
                         <br />

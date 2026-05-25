@@ -1,12 +1,13 @@
+"use client";
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { LocalizedNavLink as NavLink } from '@/shared/ui/LocalizedLink';
+import { Link as NavLink } from '@/i18n/navigation';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { RocketLaunch } from '@phosphor-icons/react';
-import { useTranslation } from 'react-i18next';
+import { RocketLaunch } from '@phosphor-icons/react/dist/ssr';
+import { useTranslations } from 'next-intl';
 
 export const StickyCTA: React.FC = () => {
-  const { t } = useTranslation('common');
+  const t = useTranslations('common');
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -31,14 +32,14 @@ export const StickyCTA: React.FC = () => {
           <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-aurora border border-white/50 p-3 pointer-events-auto flex items-center justify-between gap-4">
             <div className="flex-1">
               <span className="text-xs font-bold text-primary uppercase tracking-wider block mb-0.5">
-                {t('cta.sticky.label', 'Bereit?')}
+                {t('cta.sticky.label')}
               </span>
               <span className="text-sm font-bold text-secondary leading-tight block">
-                {t('cta.sticky.text', 'Lass uns starten')}
+                {t('cta.sticky.text')}
               </span>
             </div>
             <NavLink
-              to="/contact"
+              href="/contact"
               className="bg-gray-900 text-white px-5 py-3 rounded-xl font-bold text-sm hover:bg-black transition-colors flex items-center gap-2 shadow-lg"
             >
               {t('buttons.start_project')}

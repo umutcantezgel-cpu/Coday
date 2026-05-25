@@ -1,12 +1,12 @@
+"use client";
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { CurrencyEur, Calculator, TrendUp, Warning } from '@phosphor-icons/react';
-import { useTranslation } from 'react-i18next';
+import { CurrencyEur, Calculator, TrendUp, Warning } from '@phosphor-icons/react/dist/ssr';
+import { useLocale } from 'next-intl';
 import { formatCurrency, formatNumber } from '@/shared/utils/formatters';
 
 export const ROICalculator: React.FC = () => {
-  const { i18n } = useTranslation();
-  const locale = i18n.language;
+  const locale = useLocale();
 
   const [traffic, setTraffic] = useState(10000);
   const [conversion, setConversion] = useState(2.5);

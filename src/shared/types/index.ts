@@ -16,11 +16,9 @@ export type { Project, ProjectContent, ProjectType } from '@/shared/data/work';
 export type { ClientReference } from '@/shared/data/teamMembers';
 
 // ─── Blog ────────────────────────────────────────────────────────────────────
-// eslint-disable-next-line import/no-restricted-paths
 export type { BlogPost } from '@/features/blog/model/types';
 
 // ─── FAQ ─────────────────────────────────────────────────────────────────────
-// eslint-disable-next-line import/no-restricted-paths
 export type { FAQItem, FAQCategory } from '@/features/faq/model/types';
 
 // ─── Company Info (NEW — SEQ-02) ─────────────────────────────────────────────

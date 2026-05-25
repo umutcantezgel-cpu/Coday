@@ -1,6 +1,7 @@
+"use client";
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, useMotionValue, useTransform } from 'motion/react';
-import { DotsSixVertical } from '@phosphor-icons/react';
+import { DotsSixVertical } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 
 interface ComparisonSliderProps {

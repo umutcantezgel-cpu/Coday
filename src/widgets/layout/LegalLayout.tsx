@@ -1,7 +1,7 @@
 import React from 'react';
 import { SeoHead } from '@/shared/ui/SeoHead';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { Clock } from '@phosphor-icons/react';
+import { Clock } from '@phosphor-icons/react/dist/ssr';
 
 interface TocItem {
   id: string;

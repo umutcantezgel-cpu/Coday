@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 import { Icon } from '@/shared/ui/Icon';
 
 const LoyaltyLoop: React.FC = () => {
-  const { t } = useTranslation('industries');
+  const t = useTranslations('industries');
 
   const steps = [
     { id: 'buy', icon: 'shopping-bag', color: 'bg-primary' },

@@ -1,7 +1,8 @@
+"use client";
+
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
-import { useLocation } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+import { usePathname } from 'next/navigation';
+import { useLocale } from 'next-intl';
 import { JsonLd, SchemaData } from '@/shared/ui/JsonLd';
 
 interface BreadcrumbItem {
@@ -28,12 +29,12 @@ interface SeoHeadProps {
 
 const SUPPORTED_LANGUAGES = ['de', 'en'];
 const DEFAULT_LANGUAGE = 'de';
-const BASE_URL = import.meta.env.VITE_SITE_URL || 'https://www.codayweb.de';
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.codayweb.de';
 
 export const SeoHead: React.FC<SeoHeadProps> = ({
   title = 'Coday | Der Agentur-Killer',
   description = 'Wir beenden Ineffizienz. High-End Webentwicklung & Design für Agenturen und Unternehmen.',
-  image = `${import.meta.env.VITE_SITE_URL || 'https://www.codayweb.de'}/images/og-image.jpg`,
+  image = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.codayweb.de'}/images/og-image.jpg`,
   noIndex = false,
   breadcrumbs,
   pageType = 'default',
@@ -41,9 +42,8 @@ export const SeoHead: React.FC<SeoHeadProps> = ({
   schemaData,
   ...props
 }) => {
-  const location = useLocation();
-  const { i18n } = useTranslation();
-  const currentLang = i18n.language;
+  const currentPathname = usePathname() || '';
+  const currentLang = useLocale();
 
   // Global override: Always noindex English pages to save crawl budget
   const effectiveNoIndex = noIndex || currentLang === 'en';
@@ -51,14 +51,13 @@ export const SeoHead: React.FC<SeoHeadProps> = ({
   // Helper to get clean path without language prefix
   const getPathWithoutLang = (path: string) => {
     const segments = path.split('/').filter(Boolean);
-    // @ts-expect-error
     if (SUPPORTED_LANGUAGES.includes(segments[0])) {
       return '/' + segments.slice(1).join('/');
     }
     return path === '/' ? '/' : path;
   };
 
-  const cleanPath = getPathWithoutLang(location.pathname);
+  const cleanPath = getPathWithoutLang(currentPathname);
 
   // Generate URLs
   const getLocalizedUrl = (lang: string) => {
@@ -68,7 +67,7 @@ export const SeoHead: React.FC<SeoHeadProps> = ({
   };
 
   // Ensure canonical URL has no trailing slash (unless root) to prevent duplicate content indexing
-  const rawPath = location.pathname;
+  const rawPath = currentPathname;
   const canonicalPath =
     rawPath.length > 1 && rawPath.endsWith('/') ? rawPath.slice(0, -1) : rawPath;
   const canonicalUrl = `${BASE_URL}${canonicalPath}`;
@@ -104,7 +103,7 @@ export const SeoHead: React.FC<SeoHeadProps> = ({
 
   return (
     <>
-      <Helmet htmlAttributes={{ lang: currentLang, dir: i18n.dir(currentLang) }}>
+    <>
         <title>{title}</title>
         <meta name="description" content={description} />
         {/* Google Search Console Verification */}
@@ -119,8 +118,7 @@ export const SeoHead: React.FC<SeoHeadProps> = ({
             rel="preload"
             as="image"
             href={preloadImage}
-            // @ts-expect-error - fetchPriority is standard but React types might complain
-            fetchpriority="high"
+            fetchPriority="high"
           />
         )}
 
@@ -149,7 +147,7 @@ export const SeoHead: React.FC<SeoHeadProps> = ({
         <meta name="twitter:image" content={image} />
 
         {effectiveNoIndex && <meta name="robots" content="noindex, follow" />}
-      </Helmet>
+      </>
       <JsonLd
         pageUrl={canonicalUrl}
         breadcrumbs={breadcrumbs}

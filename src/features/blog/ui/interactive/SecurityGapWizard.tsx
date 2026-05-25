@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
@@ -8,7 +9,7 @@ import {
   ArrowRight,
   Warning,
   XCircle,
-} from '@phosphor-icons/react';
+} from '@phosphor-icons/react/dist/ssr';
 import { clsx } from 'clsx';
 
 const QUESTIONS = [

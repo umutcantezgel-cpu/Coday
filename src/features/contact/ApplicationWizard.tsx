@@ -1,11 +1,12 @@
+"use client";
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Icon } from '@/shared/ui/Icon';
-import { supabase } from '@/shared/lib/supabase/client';
-import { useTranslation } from 'react-i18next';
+import { saveLeadInternalAction } from '@/features/contact/actions/saveLeadInternal';
+import { useTranslations, useLocale } from 'next-intl';
 import { useCalculatorStore } from '@/features/calculator/model/store';
 import { formatCurrency } from '@/shared/utils/formatters';
 import { InlineWidget, useCalendlyEventListener } from 'react-calendly';
@@ -22,8 +23,8 @@ type WizardFormData = {
 };
 
 export const ApplicationWizard: React.FC = () => {
-  const { t, i18n } = useTranslation('form');
-  const locale = i18n.language;
+  const t = useTranslations('form');
+  const locale = useLocale();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -44,19 +45,19 @@ export const ApplicationWizard: React.FC = () => {
       .string()
       .optional()
       .refine((val) => hasPackage || (val && val.trim().length > 0), {
-        message: t('wizard.validation.required', { defaultValue: 'Erforderlich' }),
+        message: t('wizard.validation.required'),
       }),
-    name: z.string().min(2, { message: t('wizard.validation.min_length', { count: 2 }) }),
+    name: z.string().min(2, { message: t('wizard.validation.min_length') }),
     email: z
       .string()
       .email({
-        message: t('wizard.validation.email', { defaultValue: 'Ungültige E-Mail-Adresse' }),
+        message: t('wizard.validation.email'),
       }),
     phone: z.string().optional(),
     message: z.string().optional(),
     website: z.string().optional(), // honeypot
     privacy: z.boolean().refine((val) => val === true, {
-      message: t('wizard.validation.privacy', { defaultValue: 'Zustimmung erforderlich' }),
+      message: t('wizard.validation.privacy'),
     }),
   });
 
@@ -118,16 +119,14 @@ export const ApplicationWizard: React.FC = () => {
 
       const dbMessage = `${fullMessage}\n\nProject: ${data.project || getPackageName() || 'N/A'}\nSource: ${hasPackage ? 'Package Flow' : 'Simplified Contact'}`;
 
-      const { error: dbError } = await supabase.from('leads').insert([
-        {
-          name: data.name,
-          email: data.email,
-          phone: data.phone,
-          message: dbMessage,
-        },
-      ]);
+      const result = await saveLeadInternalAction({
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        message: dbMessage,
+      });
 
-      if (dbError) throw new Error(dbError.message);
+      if (!result.success) throw new Error(result.error || 'Unknown error');
 
       trackEvent('form_submit', { event_category: 'lead_form' });
 
@@ -164,7 +163,7 @@ export const ApplicationWizard: React.FC = () => {
           <div className="flex items-center gap-2">
             <Icon name="check_circle" className="text-primary" />
             <span className="font-bold text-gray-900">
-              {t('wizard.package_summary.title', { defaultValue: 'Ihre Auswahl' })}
+              {t('wizard.package_summary.title')}
             </span>
           </div>
           <span className="text-xs bg-primary/10 text-primary font-bold px-3 py-1 rounded-full">
@@ -183,13 +182,13 @@ export const ApplicationWizard: React.FC = () => {
           {selectedModules.length > 5 && (
             <p className="text-xs text-gray-500">
               +{selectedModules.length - 5}{' '}
-              {t('wizard.package_summary.more', { defaultValue: 'weitere Module' })}
+              {t('wizard.package_summary.more')}
             </p>
           )}
         </div>
         <div className="mt-3 pt-3 border-t border-primary/10 flex justify-between font-bold text-sm">
           <span className="text-gray-700">
-            {t('wizard.package_summary.total', { defaultValue: 'Gesamt' })}
+            {t('wizard.package_summary.total')}
           </span>
           <div className="text-right">
             <span className="text-gray-900">
@@ -220,14 +219,10 @@ export const ApplicationWizard: React.FC = () => {
         className="bg-white rounded-3xl p-6 md:p-12 text-center shadow-xl border border-gray-100"
       >
         <h3 className="text-2xl font-bold text-gray-900 mb-2">
-          {t('wizard.success.calendly_title', {
-            defaultValue: 'Fast geschafft! Wählen Sie Ihren Termin',
-          })}
+          {t('wizard.success.calendly_title')}
         </h3>
         <p className="text-gray-600 mb-8">
-          {t('wizard.success.calendly_desc', {
-            defaultValue: 'Wählen Sie einen passenden Termin für das kostenlose Strategiegespräch.',
-          })}
+          {t('wizard.success.calendly_desc')}
         </p>
         <div className="w-full rounded-2xl overflow-hidden border border-gray-100 bg-gray-50 mb-8">
           <InlineWidget
@@ -283,14 +278,11 @@ export const ApplicationWizard: React.FC = () => {
       <div className="bg-gray-50 px-4 md:px-8 py-6 border-b border-gray-100">
         <h3 className="text-xl font-bold text-gray-900">
           {hasPackage
-            ? t('wizard.title_package', { defaultValue: 'Unverbindliche Anfrage' })
-            : t('wizard.title_direct', { defaultValue: 'Kostenloses Erstgespräch anfragen' })}
+            ? t('wizard.title_package')
+            : t('wizard.title_direct')}
         </h3>
         <p className="text-sm text-gray-500 mt-1">
-          {t('wizard.subtitle', {
-            defaultValue:
-              'Hinterlassen Sie Ihre Kontaktdaten und wir melden uns zeitnah bei Ihnen.',
-          })}
+          {t('wizard.subtitle')}
         </p>
       </div>
 
@@ -309,7 +301,7 @@ export const ApplicationWizard: React.FC = () => {
         {!hasPackage && (
           <div className="space-y-2" role="radiogroup" aria-labelledby="project-type-label">
             <label id="project-type-label" className="text-sm font-medium text-gray-700">
-              {t('wizard.step1.project_type.label', { defaultValue: 'Worum geht es?' })}
+              {t('wizard.step1.project_type.label')}
             </label>
             <select
               {...register('project')}
@@ -320,27 +312,19 @@ export const ApplicationWizard: React.FC = () => {
               }`}
             >
               <option value="">
-                {t('wizard.step1.project_type.placeholder', { defaultValue: 'Bitte wählen...' })}
+                {t('wizard.step1.project_type.placeholder')}
               </option>
               <option value="webdesign">
-                {t('wizard.step1.project_type.options.webdesign', {
-                  defaultValue: 'Webdesign & Branding',
-                })}
+                {t('wizard.step1.project_type.options.webdesign')}
               </option>
               <option value="webapp">
-                {t('wizard.step1.project_type.options.webapp', {
-                  defaultValue: 'Web-Applikation / Portal',
-                })}
+                {t('wizard.step1.project_type.options.webapp')}
               </option>
               <option value="ecommerce">
-                {t('wizard.step1.project_type.options.ecommerce', {
-                  defaultValue: 'E-Commerce Lösung',
-                })}
+                {t('wizard.step1.project_type.options.ecommerce')}
               </option>
               <option value="audit">
-                {t('wizard.step1.project_type.options.audit', {
-                  defaultValue: 'Performance & SEO Audit',
-                })}
+                {t('wizard.step1.project_type.options.audit')}
               </option>
             </select>
             {errors.project && (
@@ -355,7 +339,7 @@ export const ApplicationWizard: React.FC = () => {
         <div className="grid sm:grid-cols-2 gap-4">
           <div className="space-y-2">
             <label htmlFor="wizard-name" className="text-sm font-medium text-gray-700">
-              {t('wizard.step3.name.label', { defaultValue: 'Name' })}
+              {t('wizard.step3.name.label')}
             </label>
             <input
               id="wizard-name"
@@ -365,7 +349,7 @@ export const ApplicationWizard: React.FC = () => {
                   ? 'border-red-500 ring-1 ring-red-500 bg-red-50/10'
                   : 'border-gray-200 focus:border-primary focus:ring-2 focus:ring-blue-100'
               }`}
-              placeholder={t('wizard.step3.name.placeholder', { defaultValue: 'Ihr Name' })}
+              placeholder={t('wizard.step3.name.placeholder')}
               autoComplete="name"
             />
             {errors.name && (
@@ -377,7 +361,7 @@ export const ApplicationWizard: React.FC = () => {
           </div>
           <div className="space-y-2">
             <label htmlFor="wizard-email" className="text-sm font-medium text-gray-700">
-              {t('wizard.step3.email.label', { defaultValue: 'E-Mail' })}
+              {t('wizard.step3.email.label')}
             </label>
             <input
               id="wizard-email"
@@ -388,9 +372,7 @@ export const ApplicationWizard: React.FC = () => {
                   ? 'border-red-500 ring-1 ring-red-500 bg-red-50/10'
                   : 'border-gray-200 focus:border-primary focus:ring-2 focus:ring-blue-100'
               }`}
-              placeholder={t('wizard.step3.email.placeholder', {
-                defaultValue: 'Ihre E-Mail-Adresse',
-              })}
+              placeholder={t('wizard.step3.email.placeholder')}
               autoComplete="email"
               inputMode="email"
             />
@@ -406,29 +388,27 @@ export const ApplicationWizard: React.FC = () => {
         <div className="grid sm:grid-cols-2 gap-4">
           <div className="space-y-2">
             <label htmlFor="wizard-phone" className="text-sm font-medium text-gray-700">
-              {t('wizard.step3.phone.label', { defaultValue: 'Telefon (optional)' })}
+              {t('wizard.step3.phone.label')}
             </label>
             <input
               id="wizard-phone"
               {...register('phone')}
               type="tel"
               className="w-full px-4 py-3 min-h-[48px] rounded-xl border border-gray-200 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-blue-100"
-              placeholder={t('wizard.step3.phone.placeholder', { defaultValue: '+49 ...' })}
+              placeholder={t('wizard.step3.phone.placeholder')}
               autoComplete="tel"
             />
           </div>
           <div className="space-y-2">
             <label htmlFor="wizard-message" className="text-sm font-medium text-gray-700">
-              {t('wizard.step3.message.label', { defaultValue: 'Nachricht (optional)' })}
+              {t('wizard.step3.message.label')}
             </label>
             <textarea
               id="wizard-message"
               {...register('message')}
               rows={2}
               className="w-full px-4 py-3 min-h-[48px] rounded-xl border border-gray-200 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-blue-100"
-              placeholder={t('wizard.step3.message.placeholder', {
-                defaultValue: 'Wie können wir Ihnen helfen?',
-              })}
+              placeholder={t('wizard.step3.message.placeholder')}
             />
           </div>
         </div>
@@ -441,9 +421,7 @@ export const ApplicationWizard: React.FC = () => {
               className="mt-1 w-4 h-4 text-primary rounded border-gray-300 focus:ring-primary"
             />
             <span className="text-sm text-gray-500">
-              {t('wizard.step3.privacy.label', {
-                defaultValue: 'Ich stimme der Datenschutzerklärung zu.',
-              })}
+              {t('wizard.step3.privacy.label')}
             </span>
           </label>
           {errors.privacy && (
@@ -473,13 +451,11 @@ export const ApplicationWizard: React.FC = () => {
             {isSubmitting ? (
               <>
                 <Icon name="loader" className="animate-spin" size="sm" />
-                {t('wizard.buttons.submitting', { defaultValue: 'Wird gesendet...' })}
+                {t('wizard.buttons.submitting')}
               </>
             ) : (
               <>
-                {t('wizard.buttons.submit_next', {
-                  defaultValue: 'Anfrage senden & Termin wählen',
-                })}
+                {t('wizard.buttons.submit_next')}
                 <Icon name="calendar_today" size="sm" />
               </>
             )}

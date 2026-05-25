@@ -1,7 +1,8 @@
+"use client";
 import React, { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations, useLocale } from 'next-intl';
 import { motion, AnimatePresence } from 'motion/react';
-import { SplitHorizontal, Users, CursorClick, ArrowsClockwise } from '@phosphor-icons/react';
+import { SplitHorizontal, Users, CursorClick, ArrowsClockwise } from '@phosphor-icons/react/dist/ssr';
 import { clsx } from 'clsx';
 import { cn } from '@/shared/lib/utils';
 import { formatNumber } from '@/shared/utils/formatters';
@@ -35,8 +36,8 @@ const VARIANTS: Record<'A' | 'B', Variant> = {
 };
 
 export const ABTestSimulator: React.FC = () => {
-  const { t, i18n } = useTranslation();
-  const locale = i18n.language;
+  const t = useTranslations();
+  const locale = useLocale();
   const [activeVariant, setActiveVariant] = useState<'A' | 'B'>('A');
   const [visitors, setVisitors] = useState(0);
   const [conversions, setConversions] = useState(0);
@@ -81,8 +82,8 @@ export const ABTestSimulator: React.FC = () => {
           <div className="flex items-center gap-3">
             <SplitHorizontal className="text-primary" />
             <div>
-              <h3 className="font-bold text-lg leading-tight">{t('blog:abTest.title')}</h3>
-              <p className="text-xs text-gray-400 font-mono">{t('blog:abTest.subtitle')}</p>
+              <h3 className="font-bold text-lg leading-tight">{t('blog.abTest.title')}</h3>
+              <p className="text-xs text-gray-400 font-mono">{t('blog.abTest.subtitle')}</p>
             </div>
           </div>
           <div className="flex items-center gap-2">
@@ -91,14 +92,14 @@ export const ABTestSimulator: React.FC = () => {
                 onClick={() => setIsRunning(true)}
                 className="px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg text-sm font-bold transition-all flex items-center gap-2"
               >
-                <ArrowsClockwise className="w-4 h-4" /> {t('blog:abTest.start')}
+                <ArrowsClockwise className="w-4 h-4" /> {t('blog.abTest.start')}
               </button>
             ) : (
               <button
                 onClick={() => setIsRunning(false)}
                 className="px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg text-sm font-bold transition-all"
               >
-                {t('blog:abTest.stop')}
+                {t('blog.abTest.stop')}
               </button>
             )}
             <button
@@ -115,7 +116,7 @@ export const ABTestSimulator: React.FC = () => {
           {/* Controls Side */}
           <div className="w-full md:w-1/3 bg-gray-50 p-6 border-r border-gray-100 flex flex-col gap-4">
             <h4 className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-2">
-              {t('blog:abTest.selectVariant')}
+              {t('blog.abTest.selectVariant')}
             </h4>
 
             {(['A', 'B'] as const).map((variantId) => (
@@ -155,25 +156,25 @@ export const ABTestSimulator: React.FC = () => {
                 </div>
                 <div className="text-sm font-medium text-gray-800 mb-1">
                   {variantId === 'A'
-                    ? t('blog:abTest.variantA.name')
-                    : t('blog:abTest.variantB.name')}
+                    ? t('blog.abTest.variantA.name')
+                    : t('blog.abTest.variantB.name')}
                 </div>
                 <div className="text-xs text-gray-500 leading-snug">
                   {variantId === 'A'
-                    ? t('blog:abTest.variantA.description')
-                    : t('blog:abTest.variantB.description')}
+                    ? t('blog.abTest.variantA.description')
+                    : t('blog.abTest.variantB.description')}
                 </div>
               </button>
             ))}
 
             <div className="mt-auto pt-6 border-t border-gray-200">
               <h4 className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-4">
-                {t('blog:abTest.metrics.header')}
+                {t('blog.abTest.metrics.header')}
               </h4>
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
                   <span className="text-gray-600 text-sm flex items-center gap-2">
-                    <Users className="w-4 h-4" /> {t('blog:abTest.metrics.visitors')}
+                    <Users className="w-4 h-4" /> {t('blog.abTest.metrics.visitors')}
                   </span>
                   <span className="font-mono font-bold text-gray-900">
                     {formatNumber(visitors, locale)}
@@ -181,7 +182,7 @@ export const ABTestSimulator: React.FC = () => {
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-gray-600 text-sm flex items-center gap-2">
-                    <CursorClick className="w-4 h-4" /> {t('blog:abTest.metrics.conversions')}
+                    <CursorClick className="w-4 h-4" /> {t('blog.abTest.metrics.conversions')}
                   </span>
                   <span className="font-mono font-bold text-gray-900">
                     {formatNumber(conversions, locale)}
@@ -189,7 +190,7 @@ export const ABTestSimulator: React.FC = () => {
                 </div>
                 <div className="flex justify-between items-center pt-2 border-t border-gray-100">
                   <span className="text-gray-800 font-bold text-sm">
-                    {t('blog:abTest.metrics.rate')}
+                    {t('blog.abTest.metrics.rate')}
                   </span>
                   <span
                     className={clsx(
@@ -242,15 +243,15 @@ export const ABTestSimulator: React.FC = () => {
                       )}
                     >
                       {activeVariant === 'A'
-                        ? t('blog:abTest.variantA.headline')
-                        : t('blog:abTest.variantB.headline')}
+                        ? t('blog.abTest.variantA.headline')
+                        : t('blog.abTest.variantB.headline')}
                     </h3>
 
                     {/* Copy */}
                     <p className="text-sm text-gray-500 mb-8 leading-relaxed">
                       {activeVariant === 'A'
-                        ? t('blog:abTest.variantA.copy')
-                        : t('blog:abTest.variantB.copy')}
+                        ? t('blog.abTest.variantA.copy')
+                        : t('blog.abTest.variantB.copy')}
                     </p>
 
                     {/* Button */}
@@ -261,8 +262,8 @@ export const ABTestSimulator: React.FC = () => {
                       )}
                     >
                       {activeVariant === 'A'
-                        ? t('blog:abTest.variantA.button')
-                        : t('blog:abTest.variantB.button')}
+                        ? t('blog.abTest.variantA.button')
+                        : t('blog.abTest.variantB.button')}
                     </button>
 
                     {/* Trust Elements (Only Variant B) */}
@@ -281,7 +282,7 @@ export const ABTestSimulator: React.FC = () => {
                             ></div>
                           ))}
                         </div>
-                        <span>{t('blog:abTest.variantB.trust')}</span>
+                        <span>{t('blog.abTest.variantB.trust')}</span>
                       </motion.div>
                     )}
                   </motion.div>

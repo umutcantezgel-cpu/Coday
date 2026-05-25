@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useRef, useCallback } from 'react';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 

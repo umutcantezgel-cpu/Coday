@@ -1,9 +1,11 @@
+"use client";
 import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations, useLocale } from 'next-intl';
 import { formatCurrency } from '@/shared/utils/formatters';
 
 const CraftsmanLeadCalculator: React.FC = () => {
-  const { t, i18n } = useTranslation('industries');
+  const t = useTranslations('industries');
+  const locale = useLocale();
   const [avgOrderValue, setAvgOrderValue] = useState(5000); // 5k for a small job?
   const [monthlyLeads, setMonthlyLeads] = useState(10);
   const [closeRate, setCloseRate] = useState(20);
@@ -25,7 +27,7 @@ const CraftsmanLeadCalculator: React.FC = () => {
             <label htmlFor="avgOrderValue">
               {t('handwerk-bau.features.calculator.labels.order_value')}
             </label>
-            <span>{formatCurrency((avgOrderValue / 100) * 100, 'EUR', i18n.language)}</span>
+            <span>{formatCurrency((avgOrderValue / 100) * 100, 'EUR', locale)}</span>
           </div>
           <input
             id="avgOrderValue"
@@ -89,7 +91,7 @@ const CraftsmanLeadCalculator: React.FC = () => {
             {t('handwerk-bau.features.calculator.labels.revenue_month')}
           </span>
           <div className="text-4xl font-black text-green-700">
-            {formatCurrency((revenue / 100) * 100, 'EUR', i18n.language)}
+            {formatCurrency((revenue / 100) * 100, 'EUR', locale)}
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 import { motion } from 'motion/react';
 import {
   XCircle,
@@ -9,7 +9,7 @@ import {
   Clock,
   ShieldWarning,
   Trophy,
-} from '@phosphor-icons/react';
+} from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 
 export interface ProblemSolventMatrixProps {
@@ -21,7 +21,7 @@ export const ProblemSolventMatrix: React.FC<ProblemSolventMatrixProps> = ({
   namespace = 'consulting',
   prefix = 'matrix.rows',
 }) => {
-  const { t } = useTranslation(namespace);
+  const t = useTranslations(namespace);
 
   const ROWS = [
     {
@@ -84,7 +84,7 @@ export const ProblemSolventMatrix: React.FC<ProblemSolventMatrixProps> = ({
                 <OptimizedIcon icon={row.icon} className="w-5 h-5" />
               </div>
               <span className="font-bold text-slate-200">
-                {t(`${prefix}.${row.id}.label`, row.id.toUpperCase())}
+                {t(`${prefix}.${row.id}.label`)}
               </span>
             </div>
 
@@ -95,7 +95,7 @@ export const ProblemSolventMatrix: React.FC<ProblemSolventMatrixProps> = ({
                 className="w-5 h-5 text-red-500/50 group-hover:text-red-500 transition-colors shrink-0"
               />
               <span className="text-slate-400 group-hover:text-red-200 transition-colors text-sm md:text-base">
-                {t(`${prefix}.${row.id}.bad`, row.bad)}
+                {t(`${prefix}.${row.id}.bad`)}
               </span>
             </div>
 
@@ -106,7 +106,7 @@ export const ProblemSolventMatrix: React.FC<ProblemSolventMatrixProps> = ({
                 className="w-5 h-5 text-blue-500 shrink-0 shadow-lg shadow-blue-500/20"
               />
               <span className="text-white font-medium text-sm md:text-base">
-                {t(`${prefix}.${row.id}.good`, row.good)}
+                {t(`${prefix}.${row.id}.good`)}
               </span>
             </div>
           </motion.div>

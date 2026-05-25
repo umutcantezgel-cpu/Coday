@@ -1,9 +1,10 @@
+"use client";
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
-import { LocalizedLink as Link } from '@/shared/ui/LocalizedLink';
-import { useTranslation } from 'react-i18next';
+import { Link } from '@/i18n/navigation';
+import { useTranslations } from 'next-intl';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { CaretDown, ArrowRight } from '@phosphor-icons/react';
+import { CaretDown, ArrowRight } from '@phosphor-icons/react/dist/ssr';
 import { LanguageSwitcher } from '@/widgets/navigation/LanguageSwitcher';
 import { NavItem } from '@/widgets/navigation/config';
 import '@/widgets/navigation/MobileReadyNav.css';
@@ -17,7 +18,7 @@ interface MobileNavOverlayProps {
 }
 
 export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpen, onClose }) => {
-  const { t } = useTranslation('common');
+  const t = useTranslations('common');
   const [expandedItem, setExpandedItem] = useState<string | null>(null);
   const containerRef = useFocusTrap(isOpen);
   const shouldReduceMotion = useReducedMotion();
@@ -30,12 +31,18 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
   useEffect(() => {
     if (isOpen) {
       const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      document.documentElement.style.overflow = 'hidden';
+      document.documentElement.style.overscrollBehavior = 'none';
       document.body.style.paddingRight = `${scrollbarWidth}px`;
       document.body.style.overflow = 'hidden';
+      document.body.style.overscrollBehavior = 'none';
       document.body.classList.add('mobile-nav-open');
     } else {
+      document.documentElement.style.overflow = '';
+      document.documentElement.style.overscrollBehavior = '';
       document.body.style.paddingRight = '';
       document.body.style.overflow = '';
+      document.body.style.overscrollBehavior = '';
       document.body.classList.remove('mobile-nav-open');
     }
 
@@ -45,8 +52,11 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
     window.addEventListener('keydown', handleEsc);
 
     return () => {
+      document.documentElement.style.overflow = '';
+      document.documentElement.style.overscrollBehavior = '';
       document.body.style.paddingRight = '';
       document.body.style.overflow = '';
+      document.body.style.overscrollBehavior = '';
       document.body.classList.remove('mobile-nav-open');
       window.removeEventListener('keydown', handleEsc);
     };
@@ -196,7 +206,7 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
                                           target: '_blank',
                                           rel: 'noopener noreferrer',
                                         }
-                                      : { to: link.href };
+                                      : { href: link.href };
 
                                     return (
                                       <LinkComponent
@@ -221,18 +231,32 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
                             ))
                           ) : (
                             <div className="space-y-1">
-                              {item.links?.map((link) => (
-                                <Link
-                                  key={link.href}
-                                  to={link.href}
-                                  className="mobile-link-item"
-                                  onClick={onClose}
-                                >
-                                  <span className="font-medium text-slate-200">
-                                    {t(link.label)}
-                                  </span>
-                                </Link>
-                              ))}
+                              {item.links?.map((link) => {
+                                const isExternal = link.href.startsWith('http');
+                                const LinkComponent = (
+                                  isExternal ? 'a' : Link
+                                ) as React.ElementType;
+                                const linkProps = isExternal
+                                  ? {
+                                      href: link.href,
+                                      target: '_blank',
+                                      rel: 'noopener noreferrer',
+                                    }
+                                  : { href: link.href };
+
+                                return (
+                                  <LinkComponent
+                                    key={link.href}
+                                    {...linkProps}
+                                    className="mobile-link-item"
+                                    onClick={onClose}
+                                  >
+                                    <span className="font-medium text-slate-200">
+                                      {t(link.label)}
+                                    </span>
+                                  </LinkComponent>
+                                );
+                              })}
                             </div>
                           )}
                         </div>
@@ -251,7 +275,7 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
                 <LanguageSwitcher />
               </div>
               <Link
-                to="/contact"
+                href="/contact"
                 className="flex-1 flex items-center justify-center gap-2 bg-slate-900 text-white py-3.5 rounded-xl font-semibold active:scale-[0.98] transition-transform"
                 onClick={onClose}
               >

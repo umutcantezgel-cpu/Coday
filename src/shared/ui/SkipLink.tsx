@@ -1,13 +1,15 @@
+"use client";
+
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useLocale } from 'next-intl';
 
 /**
  * Accessibility skip-link. Allows keyboard users to jump directly to #main-content.
  * Visible only when focused (screen-reader and keyboard-only friendly).
  */
 export const SkipLink: React.FC = () => {
-  const { i18n } = useTranslation();
-  const label = i18n.language === 'en' ? 'Skip to main content' : 'Zum Hauptinhalt springen';
+  const locale = useLocale();
+  const label = locale === 'en' ? 'Skip to main content' : 'Zum Hauptinhalt springen';
 
   return (
     <a

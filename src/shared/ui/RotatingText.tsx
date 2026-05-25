@@ -1,3 +1,4 @@
+"use client";
 import React, {
   forwardRef,
   useCallback,
@@ -80,7 +81,6 @@ const RotatingText = forwardRef<RotatingTextRef, RotatingTextProps>(
     };
 
     const elements = useMemo(() => {
-      // @ts-expect-error
       const currentText: string = texts[currentTextIndex];
       if (splitBy === 'characters') {
         const words = currentText.split(' ');
@@ -236,7 +236,8 @@ const RotatingText = forwardRef<RotatingTextRef, RotatingTextProps>(
                           array.reduce((sum, word) => sum + word.characters.length, 0)
                         ),
                       }}
-                      className={cn('inline-block', elementLevelClassName)}
+                      className={cn('inline-block transform-gpu', elementLevelClassName)}
+                      style={{ willChange: 'transform, filter, opacity' }}
                     >
                       {char}
                     </motion.span>

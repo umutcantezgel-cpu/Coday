@@ -2,12 +2,10 @@ import { describe, it, expect, vi } from 'vitest';
 import { render } from '@testing-library/react';
 import React from 'react';
 
-// Mock useTranslation to avoid i18n setup issues
-vi.mock('react-i18next', () => ({
-  useTranslation: () => ({
-    i18n: { language: 'de' },
-    t: (key: string) => key,
-  }),
+// Mock useTranslations to avoid i18n setup issues
+vi.mock('next-intl', () => ({
+  useTranslations: () => (key: string) => key,
+  useLocale: () => 'de',
 }));
 
 import { SkipLink } from '@/shared/ui/SkipLink';

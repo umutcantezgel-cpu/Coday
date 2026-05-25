@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useMediaQuery } from './useMediaQuery';
 
 /**
  * SEQ-14: Hook that detects user's reduced-motion preference.
@@ -11,23 +11,5 @@ import { useState, useEffect } from 'react';
  * const animationDuration = prefersReduced ? 0 : DURATION.default;
  */
 export function useReducedMotion(): boolean {
-  const [prefersReduced, setPrefersReduced] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    }
-    return false;
-  });
-
-  useEffect(() => {
-    const mql = window.matchMedia('(prefers-reduced-motion: reduce)');
-
-    const handler = (event: MediaQueryListEvent) => {
-      setPrefersReduced(event.matches);
-    };
-
-    mql.addEventListener('change', handler);
-    return () => mql.removeEventListener('change', handler);
-  }, []);
-
-  return prefersReduced;
+  return useMediaQuery('(prefers-reduced-motion: reduce)');
 }

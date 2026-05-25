@@ -1,7 +1,8 @@
+"use client";
 import React, { useState, useEffect } from 'react';
-import { Cookie } from '@phosphor-icons/react';
+import { Cookie } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { useCookieStore } from '@/shared/lib/cookieStore';
 import CookieSettingsModal from '@/widgets/cookie/CookieSettingsModal';
 
@@ -16,8 +17,7 @@ export const CookieConsentBanner: React.FC = () => {
       // Use requestAnimationFrame to avoid hydration mismatch without artificial delays
       requestAnimationFrame(() => setIsVisible(true));
     } else if (isVisible) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      setIsVisible(false);
+      setTimeout(() => setIsVisible(false), 0);
     }
   }, [hasConsented, isVisible]);
 
@@ -41,7 +41,7 @@ export const CookieConsentBanner: React.FC = () => {
 
   return (
     <>
-      <div
+      <div aria-label="Cookie Banner" role="dialog"
         className={`fixed bottom-4 left-4 right-4 z-[100] max-w-4xl mx-auto transition-all duration-500 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0 pointer-events-none'}`}
       >
         <div className="bg-white/95 backdrop-blur-xl border border-white/20 shadow-2xl rounded-2xl p-6 md:p-8 flex flex-col lg:flex-row gap-6 items-center lg:items-start text-center lg:text-left ring-1 ring-black/5">
@@ -58,10 +58,10 @@ export const CookieConsentBanner: React.FC = () => {
               </p>
             </div>
             <div className="flex flex-wrap gap-4 text-xs text-gray-500 justify-center lg:justify-start">
-              <Link to="/legal/privacy" className="hover:text-primary underline">
+              <Link href="/legal/privacy" className="hover:text-primary underline">
                 Datenschutzerklärung
               </Link>
-              <Link to="/legal/imprint" className="hover:text-primary underline">
+              <Link href="/legal/imprint" className="hover:text-primary underline">
                 Impressum
               </Link>
             </div>

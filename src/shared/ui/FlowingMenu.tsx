@@ -1,3 +1,4 @@
+"use client";
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useAnimation } from 'motion/react';
 import { useRtl } from '@/shared/hooks/useRtl';

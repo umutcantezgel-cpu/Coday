@@ -33,7 +33,7 @@
       "booking": "Book Appointment",
       "packages": "Packages"
     },
-    "rights": "© {{year}} Coday",
+    "rights": "© {year} Coday",
     "sections": {
       "career": "Career",
       "contact": "Contact",
@@ -305,7 +305,7 @@
     "contact": "Send Request"
   },
   "social": {
-    "visit": "Visit us on {{platform}}",
+    "visit": "Visit us on {platform}",
     "facebook": "Facebook",
     "instagram": "Instagram",
     "twitter": "Twitter",

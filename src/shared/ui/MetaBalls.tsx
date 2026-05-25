@@ -1,3 +1,4 @@
+"use client";
 import React, { useRef, useEffect, useCallback, useState } from 'react';
 
 interface MetaBallsProps {
@@ -103,7 +104,6 @@ const MetaBalls: React.FC<MetaBallsProps> = ({
     if (!container) return;
 
     const observer = new IntersectionObserver(
-      // @ts-expect-error
       ([entry]) => setIsVisible(entry.isIntersecting),
       { threshold: 0.01 }
     );

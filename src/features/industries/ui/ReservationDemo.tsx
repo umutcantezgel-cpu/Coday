@@ -1,6 +1,7 @@
+"use client";
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { CalendarBlank, User, CheckCircle } from '@phosphor-icons/react';
+import { CalendarBlank, User, CheckCircle } from '@phosphor-icons/react/dist/ssr';
 
 export const ReservationDemo = () => {
   const [step, setStep] = useState(1);

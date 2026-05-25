@@ -1,11 +1,12 @@
+"use client";
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 const ValuesDeck: React.FC = () => {
   const [index, setIndex] = useState(0);
 
-  const { t } = useTranslation('careers');
+  const t = useTranslations('careers');
 
   // We need to reconstruct the array because the translation file just has the string list for items,
   // but the component expects objects with title, desc, color.
@@ -22,35 +23,23 @@ const ValuesDeck: React.FC = () => {
 
   const values = [
     {
-      title: t('culture.values_deck.ownership.title', 'Extreme Ownership'),
-      desc: t(
-        'culture.values_deck.ownership.desc',
-        'Keine Ausreden. Wir übernehmen volle Verantwortung für das Ergebnis. Wenn etwas schiefgeht, fixen wir es. Punkt.'
-      ),
+      title: t('culture.values_deck.ownership.title'),
+      desc: t('culture.values_deck.ownership.desc'),
       color: 'bg-blue-600',
     },
     {
-      title: t('culture.values_deck.truth.title', 'Radical Truth'),
-      desc: t(
-        'culture.values_deck.truth.desc',
-        'Wir sagen, was Sache ist. Auch wenn es weh tut. Ehrliches Feedback ist der einzige Weg zu Exzellenz.'
-      ),
+      title: t('culture.values_deck.truth.title'),
+      desc: t('culture.values_deck.truth.desc'),
       color: 'bg-purple-600',
     },
     {
-      title: t('culture.values_deck.deep_work.title', 'Deep Work'),
-      desc: t(
-        'culture.values_deck.deep_work.desc',
-        'Kein Multitasking. Keine ständigen Meetings. Wir blocken Zeit für tiefe, konzentrierte Arbeit.'
-      ),
+      title: t('culture.values_deck.deep_work.title'),
+      desc: t('culture.values_deck.deep_work.desc'),
       color: 'bg-emerald-600',
     },
     {
-      title: t('culture.values_deck.speed.title', 'Speed wins'),
-      desc: t(
-        'culture.values_deck.speed.desc',
-        'Perfektion ist der Feind von Fertig. Wir shippen schnell und iterieren basierend auf echten Daten.'
-      ),
+      title: t('culture.values_deck.speed.title'),
+      desc: t('culture.values_deck.speed.desc'),
       color: 'bg-orange-600',
     },
   ];

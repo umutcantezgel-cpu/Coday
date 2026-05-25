@@ -1,0 +1,271 @@
+{
+  "common": {
+    "skipLink": "Zum Hauptinhalt springen",
+    "logobar": {
+      "title": "Vertrauen schenken uns"
+    },
+    "nav": {
+      "main": {
+        "home": "Startseite",
+        "work": "Portfolio",
+        "process": "Prozess",
+        "pricing": "Preise",
+        "partnerschaft": "Partner-Programm",
+        "contact": "Projekt starten"
+      },
+      "company": {
+        "about": "Über uns"
+      },
+      "resources": {
+        "calculator": "Preis-Rechner"
+      },
+      "career": {
+        "label": "Karriere"
+      },
+      "services": {
+        "web_development": {
+          "label": "Webentwicklung"
+        },
+        "ui_ux": {
+          "label": "UI/UX Design"
+        },
+        "seo": {
+          "label": "SEO Optimierung"
+        },
+        "ecommerce": {
+          "label": "E-Commerce"
+        },
+        "api": {
+          "label": "API-Integrationen"
+        },
+        "fullstack": {
+          "label": "Full-Stack Entwicklung"
+        }
+      },
+      "industries": {
+        "public": "Öffentliche Aufträge",
+        "tech": "Tech Startups"
+      },
+      "legal": {
+        "agb": "AGB",
+        "privacy": "Datenschutz",
+        "imprint": "Impressum"
+      }
+    },
+    "footer": {
+      "slogan": "High-End Webentwicklung mit KI-Präzision aus Hessen.",
+      "trust": {
+        "title": "Coday Web",
+        "desc": "Premium Agency"
+      },
+      "sections": {
+        "navigation": "Navigation",
+        "services": "Services",
+        "regional": "Standorte & Branchen",
+        "contact": "Kontakt"
+      },
+      "rights": "© {year} Coday"
+    },
+    "de": "Deutsch",
+    "en": "Englisch"
+  },
+  "metadata": {
+    "title": "Coday — AI-augmented Web Agency aus Wetzlar",
+    "description": "AI-augmented Webentwicklung aus Wetzlar. React, TypeScript, Headless CMS."
+  },
+  "nav": {
+    "home": "Startseite",
+    "about": "Über uns",
+    "services": "Services",
+    "work": "Referenzen",
+    "pricing": "Preise",
+    "contact": "Kontakt",
+    "blog": "Blog"
+  },
+  "home": {
+    "hero": {
+      "title": "AI-augmented Webentwicklung",
+      "subtitle": "High-End Websites mit React, TypeScript und Headless CMS. Festpreise ab 2.000 €.",
+      "cta": "Projekt starten"
+    }
+  },
+  "footer": {
+    "company": "Coday · Einzelunternehmen",
+    "address": "Lessingstraße 4, 35578 Wetzlar",
+    "rights": "© {year} Coday"
+  },
+  "blog": {
+    "dataMaturity": {
+      "title": "Daten-Maturitäts-Check",
+      "questionStep": "Frage {current} von {total}",
+      "levels": [
+        "Blindflug",
+        "Basis-Tracking",
+        "Erweitertes Tracking",
+        "Data-Driven"
+      ],
+      "descriptions": [
+        "Sie verlassen sich stark auf Ihr Bauchgefühl. Ohne saubere Datenstruktur ist es schwer zu skalieren.",
+        "Sie haben erste Tracking-Lösungen im Einsatz, schöpfen das Potenzial für Automatisierung aber nicht aus.",
+        "Sie nutzen Daten aktiv, könnten aber mit prädiktiven Modellen noch effizienter skalieren.",
+        "Ihr Marketing ist hochgradig datengetrieben. Sie sind bereit für AI-gestützte Skalierung."
+      ],
+      "yourStatus": "Ihr aktueller Status:",
+      "recommendation": "Unsere Empfehlung",
+      "retry": "Test wiederholen",
+      "bookAudit": "Audit anfragen"
+    }
+  },
+  "faq": {
+    "hero": {
+      "title": "Häufig gestellte Fragen",
+      "subtitle": "Finden Sie schnelle Antworten auf Ihre Fragen."
+    },
+    "search": {
+      "placeholder": "Suchen...",
+      "no_results": "Keine Ergebnisse gefunden",
+      "clear": "Suche zurücksetzen"
+    },
+    "cta": {
+      "title": "Haben Sie noch Fragen?",
+      "text": "Kontaktieren Sie uns für weitere Informationen.",
+      "button": "Kontakt aufnehmen"
+    },
+    "categories": {
+      "all": "Alle Kategorien"
+    }
+  },
+  "knowledge": {
+    "academy": {
+      "title": "Academy",
+      "subtitle": "Lernen Sie von den Besten."
+    },
+    "newsletter": {
+      "title": "Newsletter",
+      "subtitle": "Bleiben Sie auf dem Laufenden.",
+      "emailPlaceholder": "Ihre E-Mail-Adresse",
+      "subscribe": "Abonnieren"
+    }
+  },
+  "work": {
+    "sections": {
+      "in_progress": {
+        "title": "In Bearbeitung",
+        "subtitle": "Dinge, die wir derzeit bauen."
+      },
+      "templates": {
+        "title": "Vorlagen",
+        "subtitle": "Gebrauchsfertige Vorlagen"
+      }
+    },
+    "actions": {
+      "view_live": "Live ansehen"
+    },
+    "hero": {
+      "label": "Unsere Arbeit",
+      "title": "Fallstudien",
+      "description": "Hier ist, was wir gebaut haben."
+    }
+  },
+  "social": {
+    "visit": "Besuchen Sie uns auf {platform}"
+  },
+  "error": {
+    "notFound": {
+      "title": "Seite nicht gefunden",
+      "description": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
+      "backToHome": "Zur Startseite"
+    },
+    "serverError": {
+      "title": "Etwas ist schiefgelaufen",
+      "description": "Wir wurden benachrichtigt und arbeiten an einer Lösung.",
+      "tryAgain": "Erneut versuchen"
+    }
+  },
+  "careers": {
+    "jobs": {
+      "hero_title_prefix": "Wir suchen",
+      "culture_badge": "Teamkultur",
+      "hero_rotating": [
+        "Entwickler",
+        "Designer",
+        "Talente"
+      ],
+      "hero_desc": "Werde Teil unseres Teams und gestalte die digitale Zukunft.",
+      "list": [
+        {
+          "id": "1",
+          "type": "Vollzeit",
+          "location": "Wetzlar / Remote",
+          "title": "Senior Frontend Developer",
+          "desc": "Wir suchen einen erfahrenen Frontend-Entwickler mit React und Next.js Erfahrung.",
+          "mailtoSubject": "Bewerbung als Senior Frontend Developer"
+        }
+      ],
+      "button": "Jetzt bewerben",
+      "no_jobs": {
+        "title": "Keine passende Stelle dabei?",
+        "desc": "Wir sind immer auf der Suche nach Talenten. Bewirb dich initiativ!",
+        "button": "Initiativbewerbung"
+      }
+    },
+    "culture": {
+      "hero": {
+        "title_start": "Unsere",
+        "title_gradient": "Kultur",
+        "desc": "Wir arbeiten mit Leidenschaft, Transparenz und Innovation.",
+        "badge": "Über uns"
+      },
+      "values": {
+        "title": "Unsere Werte",
+        "desc": "Das ist uns wichtig.",
+        "items": [
+          "Transparenz in jedem Schritt",
+          "Höchste Code-Qualität",
+          "Echte Partnerschaften"
+        ]
+      },
+      "team": {
+        "title": "Das Team",
+        "desc": "Lerne die Menschen hinter Coday kennen."
+      }
+    },
+    "benefits": {
+      "hero": {
+        "badge": "Vorteile",
+        "title": "Deine Benefits bei Coday",
+        "desc": "Wir bieten dir mehr als nur einen Arbeitsplatz."
+      },
+      "items": [
+        {
+          "icon": "rocket_launch",
+          "title": "Weiterentwicklung",
+          "text": "Stetiges Lernen."
+        },
+        {
+          "icon": "heart",
+          "title": "Gesundheit",
+          "text": "Wir kümmern uns um deine Gesundheit."
+        },
+        {
+          "icon": "users",
+          "title": "Tolles Team",
+          "text": "Wir arbeiten zusammen an spannenden Projekten."
+        }
+      ]
+    }
+  },
+  "services": {
+    "meta": {
+      "title": "Unsere Leistungen in Wetzlar | Coday",
+      "description": "High-End Webentwicklung, Design & Strategie aus Wetzlar, Hessen für Ihren digitalen Erfolg."
+    },
+    "hero": {
+      "rotatingTexts": [
+        "Web-Design",
+        "Web-Entwicklung",
+        "SEO"
+      ]
+    }
+  }
+}

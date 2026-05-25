@@ -1,0 +1,12 @@
+[
+  {
+    "path": ".next/static/chunks/**/*.js",
+    "limit": "250 kB",
+    "name": "Total App JS (Globale Chunks)"
+  },
+  {
+    "path": ".next/static/chunks/app/**/page-*.js",
+    "limit": "100 kB",
+    "name": "First Load JS pro Route"
+  }
+]

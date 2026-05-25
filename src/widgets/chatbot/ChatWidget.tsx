@@ -1,6 +1,7 @@
+"use client";
 import React, { useRef, useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChatCircle, X, Minus, PaperPlaneRight, CircleNotch } from '@phosphor-icons/react';
+import { ChatCircle, X, Minus, PaperPlaneRight, CircleNotch } from '@phosphor-icons/react/dist/ssr';
 import { useChatStore } from '@/widgets/chatbot/lib/chatStore';
 import { Input } from '@/shared/ui/Input';
 import { Button } from '@/shared/ui/Button';

@@ -1,36 +1,49 @@
+// force cache bust
+"use client";
+
 import React from 'react';
-import { Link, LinkProps, NavLink, NavLinkProps } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+import NextLink from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useLocale } from 'next-intl';
+import { getLocalizedPath } from '@/shared/lib/navigation';
+
+export interface LinkProps extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'> {
+  to: string;
+}
+
+export interface NavLinkProps extends Omit<LinkProps, 'className'> {
+  className?: string | ((props: { isActive: boolean }) => string);
+}
 
 /**
  * Helper to get the current language from the URL or i18n instance.
  */
 const useCurrentLanguage = () => {
-  const { i18n } = useTranslation();
-  // Fallback to i18n language, or 'de'
-  return i18n.language || 'de';
+  return useLocale() || 'de';
 };
-
-import { getLocalizedPath } from '@/shared/lib/navigation';
 
 export const LocalizedLink: React.FC<LinkProps> = ({ to, children, ...props }) => {
   const lng = useCurrentLanguage();
   const localizedTo = typeof to === 'string' ? getLocalizedPath(to, lng) : to;
 
   return (
-    <Link to={localizedTo} {...props}>
+    <NextLink href={localizedTo} {...props}>
       {children}
-    </Link>
+    </NextLink>
   );
 };
 
-export const LocalizedNavLink: React.FC<NavLinkProps> = ({ to, children, ...props }) => {
+export const LocalizedNavLink: React.FC<NavLinkProps> = ({ to, children, className, ...props }) => {
   const lng = useCurrentLanguage();
   const localizedTo = typeof to === 'string' ? getLocalizedPath(to, lng) : to;
+  const pathname = usePathname();
+  const isActive = pathname === localizedTo;
+
+  const combinedClassName = typeof className === 'function' ? className({ isActive }) : className;
 
   return (
-    <NavLink to={localizedTo} {...props}>
+    <NextLink href={localizedTo} className={combinedClassName} {...props}>
       {children}
-    </NavLink>
+    </NextLink>
   );
 };

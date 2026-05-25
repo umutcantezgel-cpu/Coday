@@ -1,9 +1,9 @@
+"use client";
 import React from 'react';
-import { Star, Quotes, LinkedinLogo } from '@phosphor-icons/react';
+import { Star, Quotes, LinkedinLogo } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { useIntersectionObserver } from '@/shared/hooks/useIntersectionObserver';
-import { Helmet } from 'react-helmet-async';
 
 export interface TestimonialBlockProps {
   quote: string;
@@ -60,9 +60,10 @@ export const TestimonialBlock: React.FC<TestimonialBlockProps> = ({
 
   return (
     <>
-      <Helmet>
-        <script type="application/ld+json">{JSON.stringify(reviewSchema)}</script>
-      </Helmet>
+      <script 
+        type="application/ld+json" 
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} 
+      />
       <div
         ref={ref as React.RefObject<HTMLDivElement>}
         style={{ animationDelay: `${delay}ms` }}

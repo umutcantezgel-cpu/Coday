@@ -1,16 +1,18 @@
+
 /**
  * PDF Report Generator
  * Generates downloadable PDF reports from analysis results
  */
 
 import type { AnalysisResult } from '@/features/analyzer/model/types';
-import type { TFunction } from 'i18next';
+
+export type TranslationFunction = (key: string, values?: Record<string, string | number>) => string;
 
 /**
  * Generate a PDF report from analysis results
  * Uses browser's print functionality for clean PDF generation
  */
-export function generatePdfReport(result: AnalysisResult, t: TFunction): void {
+export function generatePdfReport(result: AnalysisResult, t: TranslationFunction): void {
   const printWindow = window.open('', '_blank');
   if (!printWindow) {
     alert(t('pdf.alert_popup'));
@@ -47,12 +49,12 @@ export function generatePdfReport(result: AnalysisResult, t: TFunction): void {
       text-align: center;
       margin-bottom: 40px;
       padding-bottom: 20px;
-      border-bottom: 3px solid #5227FF;
+      border-bottom: 3px solid var(--color-brand-500);
     }
     .logo {
       font-size: 28px;
       font-weight: 800;
-      background: linear-gradient(135deg, #5227FF 0%, #8B5CF6 50%, #EC4899 100%);
+      background: linear-gradient(135deg, var(--color-brand-500) 0%, #8B5CF6 50%, #EC4899 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-bottom: 10px;
@@ -74,7 +76,7 @@ export function generatePdfReport(result: AnalysisResult, t: TFunction): void {
     .score-value {
       font-size: 48px;
       font-weight: 800;
-      color: #5227FF;
+      color: var(--color-brand-500);
     }
     .score-label {
       font-size: 14px;
@@ -104,7 +106,7 @@ export function generatePdfReport(result: AnalysisResult, t: TFunction): void {
       padding: 20px;
       background: #f8f9fa;
       border-radius: 12px;
-      border-left: 4px solid #5227FF;
+      border-left: 4px solid var(--color-brand-500);
     }
     .category-name {
       font-weight: 600;
@@ -113,7 +115,7 @@ export function generatePdfReport(result: AnalysisResult, t: TFunction): void {
     .category-score {
       font-size: 24px;
       font-weight: 700;
-      color: #5227FF;
+      color: var(--color-brand-500);
     }
     .category-summary {
       font-size: 13px;
@@ -162,7 +164,7 @@ export function generatePdfReport(result: AnalysisResult, t: TFunction): void {
     }
     .issue-fix {
       font-size: 13px;
-      color: #5227FF;
+      color: var(--color-brand-500);
       margin-top: 8px;
       font-style: italic;
     }
@@ -178,7 +180,7 @@ export function generatePdfReport(result: AnalysisResult, t: TFunction): void {
     .cta {
       margin-top: 30px;
       padding: 20px;
-      background: linear-gradient(135deg, #5227FF 0%, #8B5CF6 100%);
+      background: linear-gradient(135deg, var(--color-brand-500) 0%, #8B5CF6 100%);
       color: white;
       text-align: center;
       border-radius: 12px;
@@ -245,14 +247,14 @@ export function generatePdfReport(result: AnalysisResult, t: TFunction): void {
   printWindow.document.close();
 }
 
-function getUrgencyLevel(score: number, t: TFunction): { label: string; color: string } {
+function getUrgencyLevel(score: number, t: TranslationFunction): { label: string; color: string } {
   if (score >= 80) return { label: t('severity.critical'), color: '#dc2626' };
   if (score >= 60) return { label: t('severity.high'), color: '#f97316' };
   if (score >= 40) return { label: t('severity.medium'), color: '#eab308' };
   return { label: t('severity.low'), color: '#22c55e' };
 }
 
-function generateCategoryCards(result: AnalysisResult, t: TFunction): string {
+function generateCategoryCards(result: AnalysisResult, t: TranslationFunction): string {
   const categories = [
     { name: t('agents.performance'), data: result.performance },
     { name: t('agents.seo'), data: result.seo },
@@ -275,7 +277,7 @@ function generateCategoryCards(result: AnalysisResult, t: TFunction): string {
     .join('');
 }
 
-function generateIssues(result: AnalysisResult, t: TFunction): string {
+function generateIssues(result: AnalysisResult, t: TranslationFunction): string {
   const allIssues: Array<{ severity: string; title: string; description: string; fix: string }> =
     [];
 

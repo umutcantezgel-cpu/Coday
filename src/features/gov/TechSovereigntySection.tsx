@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 import {
   // LockKey,
   Cloud,
@@ -7,12 +7,12 @@ import {
   ChatCircleDots,
   ShieldCheck,
   Cpu,
-} from '@phosphor-icons/react';
+} from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { motion } from 'motion/react';
 
 export const TechSovereigntySection: React.FC = () => {
-  const { t } = useTranslation('public-sector');
+  const t = useTranslations('public-sector');
 
   const items = [
     {
@@ -46,7 +46,7 @@ export const TechSovereigntySection: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 bg-slate-900 border-t border-slate-800 relative overflow-hidden">
+    <section className="py-[var(--space-section)] bg-slate-900 border-t border-slate-800 relative overflow-hidden">
       {/* Background Tech Pattern */}
       <div className="absolute inset-0 opacity-5 pointer-events-none">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,_rgba(14,165,233,0.1),transparent_70%)]" />

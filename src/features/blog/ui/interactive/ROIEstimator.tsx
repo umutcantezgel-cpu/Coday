@@ -1,6 +1,7 @@
+"use client";
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { TrendUp, Calculator } from '@phosphor-icons/react';
+import { TrendUp, Calculator } from '@phosphor-icons/react/dist/ssr';
 
 export const ROIEstimator: React.FC = () => {
   const [revenue, setRevenue] = useState(1000000);

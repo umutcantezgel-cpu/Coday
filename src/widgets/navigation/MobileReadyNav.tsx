@@ -1,19 +1,24 @@
+"use client";
 import React, { useState, useEffect, useRef } from 'react';
-import { motion } from 'motion/react';
 
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 
-import { CaretDown, ArrowUpRight, ArrowRight } from '@phosphor-icons/react';
+import { CaretDown, ArrowUpRight, ArrowRight } from '@phosphor-icons/react/dist/ssr';
 import CodayLogo from '@/assets/images/coday_logo.svg';
+import Image from 'next/image';
 import { LanguageSwitcher } from '@/widgets/navigation/LanguageSwitcher';
-import { Magnetic } from '@/shared/ui/Magnetic';
 
-import { useLocation } from 'react-router-dom';
-import { LocalizedLink as Link } from '@/shared/ui/LocalizedLink';
-import { useTranslation } from 'react-i18next';
+import { Link } from '@/i18n/navigation';
+import { usePathname } from '@/i18n/navigation';
+import { useTranslations } from 'next-intl';
 import { getNavItems } from '@/widgets/navigation/config';
-import { MobileNavOverlay } from '@/widgets/navigation/MobileNavOverlay';
+import { NavDropdown } from '@/widgets/navigation/NavDropdown';
+import dynamic from 'next/dynamic';
 import '@/widgets/navigation/MobileReadyNav.css';
+
+const MobileNavOverlay = dynamic(() => import('@/widgets/navigation/MobileNavOverlay').then((m) => m.MobileNavOverlay), {
+  ssr: false,
+});
 
 interface CardNavProps {
   className?: string;
@@ -28,7 +33,7 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
   buttonBgColor = 'var(--color-primary-700)', // Semantic token from theme
   buttonTextColor = 'var(--color-text-inverse)',
 }) => {
-  const { t } = useTranslation('common');
+  const t = useTranslations('common');
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
   const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -36,8 +41,18 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
   // UX States
   const [isVisible, setIsVisible] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
+  const lastScrollY = useRef(typeof window !== 'undefined' ? window.scrollY : 0);
+
   // Smart Scroll Logic - Native Implementation
   useEffect(() => {
+    // Initialize state properly on mount (e.g. if loaded midway down the page)
+    lastScrollY.current = window.scrollY;
+    
+    // Defer the initial state update to avoid cascading render warning
+    requestAnimationFrame(() => {
+      if (window.scrollY > 50) setIsScrolled(true);
+    });
+
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       const previous = lastScrollY.current;
@@ -60,11 +75,13 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
-  const lastScrollY = useRef(0);
 
-  const location = useLocation();
+  const pathname = usePathname();
   const navRef = useRef<HTMLDivElement>(null);
 
   // Get translated items
@@ -87,7 +104,7 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
       setIsMobileOpen(false);
     }, 0);
     return () => clearTimeout(timer);
-  }, [location.pathname]);
+  }, [pathname]);
 
   // Handle outside click to close
   useEffect(() => {
@@ -134,13 +151,13 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
         className={`nav-pill ${isScrolled ? 'scrolled' : 'at-top'} ${!isVisible ? 'nav-hidden' : ''}`}
         aria-label="Hauptnavigation"
       >
-        <Link to="/" className="nav-pill-logo" title="Zur Startseite">
-          <img
+        <Link href="/" className="nav-pill-logo" title="Zur Startseite">
+          <Image
             src={CodayLogo}
             alt=""
             aria-hidden="true"
             className="logo-icon w-12 h-12 object-contain"
-            fetchPriority="high"
+            priority={true}
           />
           <span className="logo-text text-lg">Coday</span>
           <span className="sr-only"> – Zur Startseite</span>
@@ -155,7 +172,6 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
               onMouseEnter={() => handleMouseEnter(item.label)}
               onMouseLeave={handleMouseLeave}
             >
-              <Magnetic>
                 <button
                   className={`nav-pill-link relative z-10 ${activeCategory === item.label ? 'active bg-slate-100' : 'hover:bg-slate-50'}`}
                   aria-expanded={activeCategory === item.label}
@@ -169,7 +185,6 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
                     className={`nav-chevron ${activeCategory === item.label ? 'rotate' : ''}`}
                   />
                 </button>
-              </Magnetic>
 
               {/* Focused Dropdown */}
               <div
@@ -223,7 +238,7 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
                             {activeGroup!.links.map((link, i) => (
                               <Link
                                 key={i}
-                                to={link.href}
+                                href={link.href}
                                 className="dropdown-link-item group"
                                 onClick={() => setActiveCategory(null)}
                               >
@@ -245,7 +260,7 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
                         {item.links?.map((link, i) => (
                           <Link
                             key={i}
-                            to={link.href}
+                            href={link.href}
                             className="dropdown-link-item"
                             onClick={() => setActiveCategory(null)}
                           >
@@ -265,12 +280,24 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
         <div className="nav-pill-actions">
           {/* Desktop/Tablet Only Actions */}
           <div className="nav-desktop-actions hidden lg:flex items-center gap-3">
+            <NavDropdown 
+              title="Lokales" 
+              items={[
+                { label: 'Hessen Übersicht', href: '/standorte/hessen' },
+                { label: 'Agentur Wetzlar', href: '/standorte/wetzlar' },
+                { label: 'Arzt in Wetzlar', href: '/branchen/arzt/wetzlar' },
+                { label: 'Arzt in Gießen', href: '/branchen/arzt/giessen' },
+                { label: 'Handwerker in Wetzlar', href: '/branchen/handwerker/wetzlar' },
+                { label: 'Datenschutz', href: '/legal/datenschutz' },
+                { label: 'Impressum', href: '/legal/impressum' }
+              ]} 
+            />
             <React.Suspense fallback={null}>
               <LanguageSwitcher />
             </React.Suspense>
 
             <Link
-              to="/packages"
+              href="/packages"
               className="nav-pill-cta hidden xl:flex"
               style={{
                 backgroundColor: 'var(--color-accent-700)',
@@ -282,7 +309,7 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
             </Link>
 
             <Link
-              to="/contact"
+              href="/contact"
               className="nav-pill-cta"
               style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
             >
@@ -296,19 +323,18 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
             <React.Suspense fallback={null}>
               <LanguageSwitcher />
             </React.Suspense>
-            <motion.button
-              className={`mobile-menu-trigger p-2 min-w-[44px] min-h-[44px] flex items-center justify-center ${isMobileOpen ? 'is-open' : ''}`}
+            <button
+              className={`mobile-menu-trigger p-2 min-w-[44px] min-h-[44px] flex items-center justify-center active:scale-[0.9] transition-transform ${isMobileOpen ? 'is-open' : ''}`}
               onClick={() => setIsMobileOpen(!isMobileOpen)}
               aria-label={isMobileOpen ? 'Close Menu' : 'Open Menu'}
               aria-expanded={isMobileOpen}
-              whileTap={{ scale: 0.9 }}
             >
               <div className="hamburger-icon">
                 <span className="hamburger-line"></span>
                 <span className="hamburger-line"></span>
                 <span className="hamburger-line"></span>
               </div>
-            </motion.button>
+            </button>
           </div>
         </div>
       </nav>

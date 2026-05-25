@@ -63,7 +63,7 @@
       "2": "Daten-Versteher",
       "3": "Daten-Dominator"
     },
-    "questionStep": "Frage {{current}} von {{total}}",
+    "questionStep": "Frage {current} von {total}",
     "recommendation": "Unsere Empfehlung",
     "retry": "Test wiederholen",
     "title": "Daten-Reifegrad Check",

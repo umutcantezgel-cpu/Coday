@@ -1,9 +1,9 @@
 import React from 'react';
-import { ArrowLeft, ArrowUpRight } from '@phosphor-icons/react';
-import { Link } from 'react-router-dom';
+import { ArrowLeft, ArrowUpRight } from '@phosphor-icons/react/dist/ssr';
+import Link from 'next/link';
 import BlurText from '@/shared/ui/BlurText';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef } from 'react';
@@ -51,7 +51,7 @@ export const CaseStudyLayout: React.FC<CaseStudyLayoutProps> = ({
   heroImage,
   children,
 }) => {
-  const { t } = useTranslation('work');
+  const t = useTranslations('work');
   // Handle fallback
   const heroSubtitle = subtitle || excerpt || '';
 
@@ -60,7 +60,7 @@ export const CaseStudyLayout: React.FC<CaseStudyLayoutProps> = ({
       {/* Navigation */}
       <nav role="navigation" className="absolute top-0 w-full z-50 p-6 md:p-8">
         <Link
-          to="/work"
+          href="/work"
           className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white hover:bg-white/20 transition-all font-medium text-sm"
         >
           <ArrowLeft size={16} />
@@ -114,7 +114,7 @@ export const CaseStudyLayout: React.FC<CaseStudyLayoutProps> = ({
 
       <main role="main">
         {/* Meta Grid */}
-        <section className="container mx-auto px-4 -mt-12 relative z-30 mb-24">
+        <section className="py-[var(--space-section)] container mx-auto px-4 -mt-12 relative z-30 mb-24">
           <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-xl border border-gray-100 grid grid-cols-2 md:grid-cols-4 gap-8">
             <div>
               <h3 className="text-sm uppercase font-bold text-gray-400 mb-2 tracking-wider">
@@ -153,14 +153,14 @@ export const CaseStudyLayout: React.FC<CaseStudyLayoutProps> = ({
         </article>
 
         {/* Next Project CTA */}
-        <section className="bg-secondary text-white py-32 relative overflow-hidden">
+        <section className="py-[var(--space-section)] bg-secondary text-white relative overflow-hidden">
           <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/5 blur-3xl rounded-full translate-x-1/3"></div>
           <div className="container mx-auto px-4 relative z-10 text-center">
             <h2 className="font-display font-black text-4xl md:text-6xl mb-8">
               {t('project_detail.cta.title')}
             </h2>
             <Link
-              to="/contact"
+              href="/contact"
               className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-white rounded-xl font-bold text-lg hover:shadow-glow hover:-translate-y-1 transition-all"
             >
               <span>{t('project_detail.cta.button')}</span>

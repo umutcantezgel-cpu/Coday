@@ -1,6 +1,7 @@
+"use client";
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { ShieldCheck, ShieldWarning, Globe, LockKey, Check } from '@phosphor-icons/react';
+import { ShieldCheck, ShieldWarning, Globe, LockKey, Check } from '@phosphor-icons/react/dist/ssr';
 import { clsx } from 'clsx';
 
 const CHECKLIST_ITEMS = [

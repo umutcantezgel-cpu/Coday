@@ -1,0 +1,87 @@
+<USER_REQUEST>
+
+<role>
+You are a senior full-stack engineer specialized in Next.js 15 App Router,
+TypeScript, Sanity v3 (CMS), Supabase, and Vercel deployment. You are
+performing a comprehensive repair of the codayweb.de codebase based on a
+detailed audit that identified critical issues across SEO, trust signals,
+performance, structured data, accessibility, and security.
+
+You work for Umutcan Emre Tezgel, solo founder of Coday — a one-person
+headless web agency in Wetzlar, Germany. He is not a developer team. He
+reviews your work between phases. Your goal is to deliver verifiable fixes
+without breaking anything.
+</role>
+
+<context>
+Project: agency-domination (codayweb.de)
+Stack: Next.js 15 App Router, React 19, TypeScript strict, TailwindCSS 4,
+       Sanity v3, Supabase, Vercel Edge
+Owner: Umutcan Emre Tezgel (Einzelunternehmen, Kleinunternehmer §19 UStG)
+Address: Lessingstraße 4, 35578 Wetzlar
+Live domain: https://codayweb.de
+Positioning: "AI-augmented craftsmanship" — solo founder orchestrating
+             multiple AI models, NOT an anti-AI agency
+Real client references (verified):
+  - Batherm
+  - MS Schlüsseldienst Wetzlar (wetzlar-schluesseldienst.de)
+  - Lindener Ratsstuben (lindener-ratsstuben.de)
+</context>
+
+<hard_rules>
+These rules are absolute. Violating them ends the task immediately.
+
+1. NEVER push to main. Work only on the current feature branch.
+2. NEVER run `git commit` or `git push` without explicit user approval per phase.
+3. NEVER delete files. Move them to /trash/{original-path}/ instead.
+4. NEVER modify .env files. If env changes needed, output the diff and ask.
+5. NEVER modify package.json dependencies without explicit confirmation.
+6. NEVER run database mutations against production Sanity or Supabase.
+7. NEVER add fictional content (fake names, fake logos, fake testimonials).
+8. NEVER make claims about partnerships (Vercel, Google) without proof URL.
+9. NEVER use `as any` or `// @ts-ignore` to suppress errors — fix them.
+10. STOP after each phase and wait for user review. Do not con
+<truncated 35057 bytes>
+e git pushes** — nur lokale Commits, du pusht selbst
+- **Keine Vercel-Deployments** — Deployment-Plan generiert, du führst aus
+- **Keine neuen Dependencies ohne Frage** — Stack bleibt stabil
+- **Keine Stack-Migrationen** (Vite→Next.js ist vorausgesetzt abgeschlossen)
+- **Keine Content-Neuerstellung** — nur Säuberung; Cornerstone-Cluster und Lokal-Pages separat (siehe Implementation-Prompts-Library)
+
+## Was dieser Prompt voraussetzt
+
+- ✅ Next.js 15 App Router läuft (Migration aus letzter Session abgeschlossen)
+- ✅ Sanity v3 ist verbunden
+- ✅ Supabase ist konfiguriert
+- ✅ Git-Repo mit Branch-Berechtigungen
+- ✅ Backup vorhanden
+- ✅ Node 20+ und npm-Befehle funktionieren
+- ✅ AGENTS.md im Repo-Root mit Solo-Founder-Kontext
+
+Wenn eine dieser Voraussetzungen fehlt: vorher klären, sonst stoppt der Agent früh.
+
+---
+
+## Schluss-Hinweis
+
+Dieser Master-Prompt deckt **alle Audit-Findings** aus den vorherigen Dokumenten konsolidiert ab. Er ist bewusst restriktiv (viele "do not" Regeln, viele Stopp-Punkte) — das ist Feature, nicht Bug. Bei einer Solo-Operation ist die größte Gefahr nicht zu langsame Ausführung, sondern unkontrollierter Schaden.
+
+Nach erfolgreichem Durchlauf hast du:
+- Saubere Indexierung
+- Glaubwürdige Solo-Founder-Erzählung ohne Rechtsrisiken
+- Vollständige Schema-Layer für SEO + GEO
+- Performance-Budget eingehalten
+- Security A+
+- WCAG 2.2 AA
+- Master-Report als Dokumentation
+- Deployment-Plan zur kontrollierten Veröffentlichung
+
+Das ist die solide Basis, auf der dann die Wachstums-Phasen (Backlinks, Content-Cluster, Conversion-Optimierung aus dem 20-Wochen-Plan) aufsetzen.
+
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-05-24T04:34:24-07:00.
+</ADDITIONAL_METADATA>
+<USER_SETTINGS_CHANGE>
+The user changed setting `Model Selection` from None to Gemini 3.1 Pro (High). No need to comment on this change if the user doesn't ask about it. If reporting what model you are, please use a human readable name instead of the exact string.
+</USER_SETTINGS_CHANGE>

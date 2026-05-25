@@ -1,48 +1,32 @@
+"use client";
 import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { Globe } from '@phosphor-icons/react';
+import { usePathname, useRouter } from '@/i18n/navigation';
+import { useLocale } from 'next-intl';
+import { Globe } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { useTranslation } from 'react-i18next';
-import { motion } from 'motion/react';
 
 export const LanguageSwitcher: React.FC = () => {
-  const { i18n } = useTranslation();
-  const location = useLocation();
-  const navigate = useNavigate();
+  const locale = useLocale();
+  const pathname = usePathname();
+  const router = useRouter();
 
   const toggleLanguage = () => {
-    const currentLang = i18n.language;
-    const newLang = currentLang === 'de' ? 'en' : 'de';
-
-    // Get current path segments
-    const pathname = location.pathname;
-    const segments = pathname.split('/').filter(Boolean);
-
-    // Replace language segment
-    if (['de', 'en'].includes(segments[0]!)) {
-      segments[0]! = newLang;
-    } else {
-      // If no lang prefix (e.g. root), prepend
-      segments.unshift(newLang);
-    }
-
-    const newPath = '/' + segments.join('/');
-    navigate(newPath);
+    const newLang = locale === 'de' ? 'en' : 'de';
+    // router.replace with new locale keeps the same pathname conceptually but navigates to new locale
+    router.replace(pathname, { locale: newLang });
   };
 
   return (
-    <motion.button
-      className="flex items-center gap-1.5 px-3 py-1.5 min-h-[44px] min-w-[44px] justify-center rounded-full bg-slate-100/50 backdrop-blur-md hover:bg-slate-100 text-slate-600 hover:text-slate-900 border border-slate-200/50 hover:border-slate-300 transition-all focus:ring-2 focus:ring-primary/20 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+    <button
+      className="flex items-center gap-1.5 px-3 py-1.5 min-h-[44px] min-w-[44px] justify-center rounded-full bg-slate-100/50 backdrop-blur-md hover:bg-slate-100 text-slate-600 hover:text-slate-900 border border-slate-200/50 hover:border-slate-300 transition-all hover:scale-[1.02] active:scale-[0.98] focus:ring-2 focus:ring-primary/20 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
       onClick={toggleLanguage}
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
-      aria-label={i18n.language === 'de' ? 'DE – Switch to English' : 'EN – Auf Deutsch wechseln'}
+      aria-label={locale === 'de' ? 'DE – Switch to English' : 'EN – Auf Deutsch wechseln'}
       title="Switch Language"
     >
       <OptimizedIcon icon={Globe} className="w-4 h-4 opacity-70" />
       <span className="font-bold text-xs uppercase tracking-wider">
-        {i18n.language === 'de' ? 'DE' : 'EN'}
+        {locale === 'de' ? 'DE' : 'EN'}
       </span>
-    </motion.button>
+    </button>
   );
 };

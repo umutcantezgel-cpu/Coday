@@ -1,0 +1,51 @@
+name: Accessibility (a11y) Bug
+description: Melde einen Verstoß gegen die WCAG 2.2 AA Richtlinien
+labels: ["a11y", "bug"]
+body:
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: Wie kritisch ist dieses Problem für die Nutzbarkeit?
+      options:
+        - Critical (Blockiert die Hauptfunktion, z.B. Checkout nicht möglich per Tastatur)
+        - Serious (Starke Einschränkung, aber es gibt Workarounds)
+        - Moderate (Störend, z.B. schlechter Kontrast, der lesbar bleibt)
+        - Minor (Kleine Unschönheit, Best-Practice Violation)
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Betroffene URL(s) oder Komponente
+      placeholder: z.B. /contact oder HeroSection.tsx
+    validations:
+      required: true
+  - type: input
+    id: wcag_reference
+    attributes:
+      label: WCAG 2.2 Referenz
+      description: Welche Regel wird verletzt?
+      placeholder: z.B. 2.4.11 Focus Not Obscured (Minimum) oder 2.5.8 Target Size
+    validations:
+      required: false
+  - type: textarea
+    id: description
+    attributes:
+      label: Beschreibung des Fehlers
+      description: Was passiert und warum ist es ein Problem? (Gerne Screenreader-Output kopieren)
+      placeholder: |
+        Bei Nutzung von VoiceOver auf der /services Seite wird der Button "Mehr erfahren" nur als "Button" vorgelesen. Der Kontext fehlt.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance Criteria
+      description: Was muss erfüllt sein, damit das Ticket geschlossen werden kann?
+      value: |
+        - [ ] Der Fehler wird von `@axe-core` nicht mehr gemeldet
+        - [ ] Manueller Test mit Screenreader ist erfolgreich
+        - [ ] Tastatur-Fokus ist sichtbar
+    validations:
+      required: true

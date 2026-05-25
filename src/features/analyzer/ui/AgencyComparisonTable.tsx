@@ -1,9 +1,10 @@
+
 import React from 'react';
-import { Icon } from '@/shared/ui/Icon';
-import { useTranslation } from 'react-i18next';
+import { X, CheckCircle } from '@phosphor-icons/react/dist/ssr';
+import { useTranslations } from 'next-intl';
 
 const AgencyComparisonTable: React.FC = () => {
-  const { t } = useTranslation('home');
+  const t = useTranslations('home');
 
   const features = [
     {
@@ -34,7 +35,7 @@ const AgencyComparisonTable: React.FC = () => {
   ];
 
   return (
-    <section className="py-12 md:py-24 bg-slate-900 text-white relative overflow-hidden">
+    <section className="py-[var(--space-section)] bg-slate-900 text-white relative overflow-hidden">
       {/* Background Decor */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[128px] pointer-events-none"></div>
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[128px] pointer-events-none"></div>
@@ -80,14 +81,14 @@ const AgencyComparisonTable: React.FC = () => {
                     {feature.name}
                   </th>
                   <td className="py-4 md:py-8 px-4 text-slate-300 text-lg flex items-center">
-                    <Icon name="close" size="md" className="text-slate-500 mr-3 flex-shrink-0" />
+                    <X size={24} className="text-slate-500 mr-3 flex-shrink-0" />
                     {feature.old}
                   </td>
                   <td className="py-4 md:py-8 px-4 text-white text-lg font-bold relative">
                     <div className="flex items-center">
-                      <Icon
-                        name="check_circle"
-                        size="md"
+                      <CheckCircle
+                        size={24}
+                        weight="fill"
                         className="text-primary mr-3 shadow-glow flex-shrink-0"
                       />
                       {feature.new}

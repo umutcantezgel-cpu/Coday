@@ -1,10 +1,11 @@
+"use client";
 import React, { useState } from 'react';
-import { Palette, CursorClick } from '@phosphor-icons/react';
+import { Palette, CursorClick } from '@phosphor-icons/react/dist/ssr';
 import { clsx } from 'clsx';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 export const DesignPsychologyPicker: React.FC = () => {
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   const COLORS = [
     {

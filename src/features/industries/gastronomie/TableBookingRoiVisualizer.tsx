@@ -1,9 +1,11 @@
+"use client";
 import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations, useLocale } from 'next-intl';
 import { formatCurrency } from '@/shared/utils/formatters';
 
 const TableBookingRoiVisualizer: React.FC = () => {
-  const { t, i18n } = useTranslation('industries');
+  const t = useTranslations('industries');
+  const locale = useLocale();
   const [coversPerDay, setCoversPerDay] = useState(60);
   const [avgCheck, setAvgCheck] = useState(45);
   const [noShowRate, setNoShowRate] = useState(15);
@@ -95,7 +97,7 @@ const TableBookingRoiVisualizer: React.FC = () => {
               {t('gastronomie-hotellerie.features.roi_visualizer.results.loss')}
             </span>
             <span className="text-3xl font-black text-red-600 line-through decoration-red-400/50 decoration-2">
-              {formatCurrency(lostRevenue * 12, 'EUR', i18n.language)}
+              {formatCurrency(lostRevenue * 12, 'EUR', locale)}
             </span>
           </div>
 
@@ -107,7 +109,7 @@ const TableBookingRoiVisualizer: React.FC = () => {
               {t('gastronomie-hotellerie.features.roi_visualizer.results.recovered')}
             </span>
             <span className="text-5xl font-black text-green-600">
-              {formatCurrency(recoveredRevenue * 12, 'EUR', i18n.language)}
+              {formatCurrency(recoveredRevenue * 12, 'EUR', locale)}
             </span>
             <p className="text-xs text-gray-500 mt-2">
               {t('gastronomie-hotellerie.features.roi_visualizer.results.context')}

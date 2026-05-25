@@ -83,3 +83,11 @@ build
 .project-knowledge-base.md
 .upgrade-state.md
 .env*.local
+
+# Next.js
+.next
+.next_bak
+.next-build
+
+# AI Agents
+.agents

@@ -1,3 +1,5 @@
+"use client";
+
 import React, { ReactNode, RefObject } from 'react';
 import { motion, Variants } from 'motion/react';
 
@@ -42,7 +44,8 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
 
     const splitText = (typeof children === 'string' ? children : '').split('').map((char, index) => (
         <motion.span
-            className="inline-block word"
+            className="inline-block word transform-gpu"
+            style={{ willChange: 'transform, opacity' }}
             key={index}
             variants={itemVariants}
         >

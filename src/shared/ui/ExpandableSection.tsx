@@ -1,6 +1,7 @@
+"use client";
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { CaretDown, Sparkle } from '@phosphor-icons/react';
+import { CaretDown, Sparkle } from '@phosphor-icons/react/dist/ssr';
 
 interface ExpandableSectionProps {
     title: string;

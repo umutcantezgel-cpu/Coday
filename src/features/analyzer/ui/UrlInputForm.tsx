@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
@@ -6,15 +7,15 @@ import {
   WarningCircle,
   CheckCircle,
   ArrowRight,
-} from '@phosphor-icons/react';
+} from '@phosphor-icons/react/dist/ssr';
 import { useAnalyzerStore } from '@/features/analyzer/model/store';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 export const UrlInputForm: React.FC = () => {
   const { url, isValidUrl, status, error, setUrl, startAnalysis } = useAnalyzerStore();
   const [isFocused, setIsFocused] = useState(false);
-  const { t } = useTranslation('analyzer');
+  const t = useTranslations('analyzer');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

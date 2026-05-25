@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useRef } from 'react';
 import { motion, useInView, useSpring, useTransform, useReducedMotion } from 'motion/react';
 
@@ -27,7 +28,6 @@ const parseValue = (val: string | number) => {
   }
 
   const num = parseFloat(numStr.replace(',', '.'));
-  // @ts-expect-error
   const decimals = numStr.includes('.') ? numStr.split('.')[1].length : 0;
 
   return { prefix, num, suffix, isAnimatable: true, decimals };

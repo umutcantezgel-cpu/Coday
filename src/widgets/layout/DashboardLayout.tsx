@@ -11,7 +11,7 @@ import {
   Palette,
   Info,
   FolderOpen,
-} from '@phosphor-icons/react';
+} from '@phosphor-icons/react/dist/ssr';
 
 const DashboardLayout: React.FC = () => {
   // ...
@@ -28,28 +28,28 @@ const DashboardLayout: React.FC = () => {
           href="/contact"
           className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-50 rounded-lg"
         >
-          <OptimizedIcon icon={SquaresFour} size="sm" className="text-[20px]" />
+          <OptimizedIcon icon={SquaresFour} size="sm" className="text-xl" />
           Dashboard
         </a>
         <a
           href="/contact"
           className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-primary bg-primary/5 rounded-lg"
         >
-          <OptimizedIcon icon={ShareNetwork} size="sm" className="text-[20px]" />
+          <OptimizedIcon icon={ShareNetwork} size="sm" className="text-xl" />
           Sitemap & URLs
         </a>
         <a
           href="/contact"
           className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-50 rounded-lg"
         >
-          <OptimizedIcon icon={ChartBar} size="sm" className="text-[20px]" />
+          <OptimizedIcon icon={ChartBar} size="sm" className="text-xl" />
           Performance
         </a>
         <a
           href="/contact"
           className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-50 rounded-lg"
         >
-          <OptimizedIcon icon={Gear} size="sm" className="text-[20px]" />
+          <OptimizedIcon icon={Gear} size="sm" className="text-xl" />
           Settings
         </a>
       </nav>

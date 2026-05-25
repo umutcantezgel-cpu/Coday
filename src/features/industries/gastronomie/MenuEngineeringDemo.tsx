@@ -1,9 +1,10 @@
+"use client";
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 const MenuEngineeringDemo: React.FC = () => {
-  const { t } = useTranslation('industries');
+  const t = useTranslations('industries');
   const [mode, setMode] = useState<'paper' | 'digital'>('digital');
 
   return (

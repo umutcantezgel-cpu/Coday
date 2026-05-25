@@ -71,29 +71,7 @@
     "text": "Vom ambitionierten Mittelstand bis zum Enterprise-Konzern: Wir liefern digitale Exzellenz, auf die Sie sich bedingungslos verlassen können.",
     "title_prefix": "Kunden, die",
     "title_suffix": "Uns Vertrauen.",
-    "items": [
-      {
-        "quote": "Coday hat unsere Online-Präsenz auf ein neues Level gehoben. Die Performance der Website ist schlichtweg atemberaubend und unsere Conversion-Rates haben sich mehr als verdoppelt.",
-        "authorName": "Michael Weber",
-        "authorPosition": "Geschäftsführer",
-        "authorCompany": "TechVision GmbH",
-        "rating": 5
-      },
-      {
-        "quote": "Die Zusammenarbeit war von Tag 1 an professionell und ergebnisorientiert. Besonders beeindruckt hat uns die nahtlose Integration unserer komplexen Backend-Systeme in das neue Next.js Frontend.",
-        "authorName": "Sarah Müller",
-        "authorPosition": "CMO",
-        "authorCompany": "Digital pioneers",
-        "rating": 5
-      },
-      {
-        "quote": "Als E-Commerce Unternehmen ist Speed für uns entscheidend. Coday hat nicht nur unsere Core Web Vitals in den grünen Bereich gebracht, sondern auch eine Conversion-optimierte UX geschaffen.",
-        "authorName": "Jan Schmidt",
-        "authorPosition": "Head of E-Commerce",
-        "authorCompany": "RetailGroup DACH",
-        "rating": 5
-      }
-    ]
+    "items": []
   },
   "comparison": {
     "title_prefix": "Traditionell vs.",

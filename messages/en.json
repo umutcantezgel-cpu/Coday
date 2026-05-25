@@ -1,0 +1,271 @@
+{
+  "common": {
+    "skipLink": "Skip to main content",
+    "logobar": {
+      "title": "Trusted by"
+    },
+    "nav": {
+      "main": {
+        "home": "Home",
+        "work": "Work",
+        "process": "Process",
+        "pricing": "Pricing",
+        "partnerschaft": "Partner Program",
+        "contact": "Start Project"
+      },
+      "company": {
+        "about": "About"
+      },
+      "resources": {
+        "calculator": "Pricing Calculator"
+      },
+      "career": {
+        "label": "Careers"
+      },
+      "services": {
+        "web_development": {
+          "label": "Web Development"
+        },
+        "ui_ux": {
+          "label": "UI/UX Design"
+        },
+        "seo": {
+          "label": "SEO Optimization"
+        },
+        "ecommerce": {
+          "label": "E-Commerce"
+        },
+        "api": {
+          "label": "API Integrations"
+        },
+        "fullstack": {
+          "label": "Full-Stack Development"
+        }
+      },
+      "industries": {
+        "public": "Public Sector",
+        "tech": "Tech Startups"
+      },
+      "legal": {
+        "agb": "Terms",
+        "privacy": "Privacy",
+        "imprint": "Imprint"
+      }
+    },
+    "footer": {
+      "slogan": "High-End Web Development with AI Precision from Hesse.",
+      "trust": {
+        "title": "Coday Web",
+        "desc": "Premium Agency"
+      },
+      "sections": {
+        "navigation": "Navigation",
+        "services": "Services",
+        "regional": "Locations & Industries",
+        "contact": "Contact"
+      },
+      "rights": "© {year} Coday"
+    },
+    "de": "German",
+    "en": "English"
+  },
+  "metadata": {
+    "title": "Coday — AI-Augmented Web Agency from Wetzlar",
+    "description": "AI-augmented web development from Wetzlar, Germany. React, TypeScript, Headless CMS."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "work": "Work",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "blog": "Blog"
+  },
+  "home": {
+    "hero": {
+      "title": "AI-Augmented Web Development",
+      "subtitle": "High-end websites with React, TypeScript, and Headless CMS. Fixed pricing from €2,000.",
+      "cta": "Start Project"
+    }
+  },
+  "footer": {
+    "company": "Coday · Sole Proprietorship",
+    "address": "Lessingstraße 4, 35578 Wetzlar, Germany",
+    "rights": "© {year} Coday"
+  },
+  "blog": {
+    "dataMaturity": {
+      "title": "Data Maturity Check",
+      "questionStep": "Question {current} of {total}",
+      "levels": [
+        "Flying Blind",
+        "Basic Tracking",
+        "Advanced Tracking",
+        "Data-Driven"
+      ],
+      "descriptions": [
+        "You rely heavily on gut feeling. Without a solid data structure, scaling is difficult.",
+        "You have initial tracking solutions in place, but aren't fully utilizing automation potential.",
+        "You actively use data, but could scale even more efficiently with predictive models.",
+        "Your marketing is highly data-driven. You are ready for AI-powered scaling."
+      ],
+      "yourStatus": "Your current status:",
+      "recommendation": "Our recommendation",
+      "retry": "Retry Test",
+      "bookAudit": "Request Audit"
+    }
+  },
+  "faq": {
+    "hero": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Find quick answers to your questions."
+    },
+    "search": {
+      "placeholder": "Search...",
+      "no_results": "No results found",
+      "clear": "Clear search"
+    },
+    "cta": {
+      "title": "Still have questions?",
+      "text": "Contact us for more information.",
+      "button": "Contact Us"
+    },
+    "categories": {
+      "all": "All Categories"
+    }
+  },
+  "knowledge": {
+    "academy": {
+      "title": "Academy",
+      "subtitle": "Learn from the best."
+    },
+    "newsletter": {
+      "title": "Newsletter",
+      "subtitle": "Stay up to date.",
+      "emailPlaceholder": "Your email address",
+      "subscribe": "Subscribe"
+    }
+  },
+  "work": {
+    "sections": {
+      "in_progress": {
+        "title": "In Progress",
+        "subtitle": "Things we are currently building."
+      },
+      "templates": {
+        "title": "Templates",
+        "subtitle": "Ready-to-use templates"
+      }
+    },
+    "actions": {
+      "view_live": "View Live"
+    },
+    "hero": {
+      "label": "Our Work",
+      "title": "Case Studies",
+      "description": "Here is what we have built."
+    }
+  },
+  "social": {
+    "visit": "Visit us on {platform}"
+  },
+  "error": {
+    "notFound": {
+      "title": "Page not found",
+      "description": "The page you are looking for doesn't exist or has been moved.",
+      "backToHome": "Back to Home"
+    },
+    "serverError": {
+      "title": "Something went wrong",
+      "description": "We have been notified and are working on a fix.",
+      "tryAgain": "Try Again"
+    }
+  },
+  "careers": {
+    "jobs": {
+      "hero_title_prefix": "We are hiring",
+      "culture_badge": "Culture",
+      "hero_rotating": [
+        "Developers",
+        "Designers",
+        "Talents"
+      ],
+      "hero_desc": "Join our team and shape the digital future.",
+      "list": [
+        {
+          "id": "1",
+          "type": "Full-time",
+          "location": "Wetzlar / Remote",
+          "title": "Senior Frontend Developer",
+          "desc": "We are looking for an experienced frontend developer with React and Next.js experience.",
+          "mailtoSubject": "Application for Senior Frontend Developer"
+        }
+      ],
+      "button": "Apply now",
+      "no_jobs": {
+        "title": "No suitable position?",
+        "desc": "We are always looking for talents. Send us an unsolicited application!",
+        "button": "Unsolicited Application"
+      }
+    },
+    "culture": {
+      "hero": {
+        "title_start": "Our",
+        "title_gradient": "Culture",
+        "desc": "We work with passion, transparency, and innovation.",
+        "badge": "About us"
+      },
+      "values": {
+        "title": "Our Values",
+        "desc": "This is what matters to us.",
+        "items": [
+          "Transparency in every step",
+          "Highest code quality",
+          "True partnerships"
+        ]
+      },
+      "team": {
+        "title": "The Team",
+        "desc": "Meet the people behind Coday."
+      }
+    },
+    "benefits": {
+      "hero": {
+        "badge": "Benefits",
+        "title": "Your Benefits at Coday",
+        "desc": "We offer more than just a job."
+      },
+      "items": [
+        {
+          "icon": "rocket_launch",
+          "title": "Growth",
+          "text": "Continuous learning."
+        },
+        {
+          "icon": "heart",
+          "title": "Health",
+          "text": "We care about your health."
+        },
+        {
+          "icon": "users",
+          "title": "Great Team",
+          "text": "We work together on exciting projects."
+        }
+      ]
+    }
+  },
+  "services": {
+    "meta": {
+      "title": "Our Services in Wetzlar | Coday",
+      "description": "High-End Web Development, Design & Strategy from Wetzlar, Hesse for your digital success."
+    },
+    "hero": {
+      "rotatingTexts": [
+        "Web Design",
+        "Web Development",
+        "SEO"
+      ]
+    }
+  }
+}

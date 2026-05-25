@@ -1,6 +1,7 @@
+"use client";
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Desktop, Laptop, Monitor, Headphones } from '@phosphor-icons/react';
+import { Desktop, Laptop, Monitor, Headphones } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 
 const GearSetup: React.FC = () => {

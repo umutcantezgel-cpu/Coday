@@ -9,7 +9,7 @@
     "error": {
       "submit": "An error occurred. Please try again."
     },
-    "progress": "Step {{current}} of {{total}}",
+    "progress": "Step {current} of {total}",
     "step1": {
       "budget": {
         "label": "Budget Range",
@@ -85,9 +85,9 @@
     },
     "validation": {
       "email": "Please enter a valid email address",
-      "min_length": "At least {{count}} characters required",
-      "min_length_one": "At least {{count}} character required",
-      "min_length_other": "At least {{count}} characters required",
+      "min_length": "At least {count} characters required",
+      "min_length_one": "At least {count} character required",
+      "min_length_other": "At least {count} characters required",
       "privacy": "Please accept the privacy policy",
       "required": "This field is required"
     }

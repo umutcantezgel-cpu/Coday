@@ -1,6 +1,7 @@
+"use client";
 import React, { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
-import { Calculator, Warning, Trophy } from '@phosphor-icons/react';
+import { Calculator, Warning, Trophy } from '@phosphor-icons/react/dist/ssr';
 import { cn } from '@/shared/lib/utils';
 
 const LatencyCostCalculator: React.FC = () => {

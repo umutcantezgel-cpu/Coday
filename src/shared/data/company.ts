@@ -7,7 +7,7 @@ import type { CompanyInfo } from '@/shared/types';
 /** Coday company information. Used by Impressum, Footer, JSON-LD, etc. */
 export const companyInfo: CompanyInfo = {
   name: 'Coday',
-  legalName: 'Coday UG (haftungsbeschränkt)',
+  legalName: 'Umutcan Emre Tezgel (Coday)',
   address: 'Lessingstraße 4',
   city: 'Wetzlar',
   zip: '35578',
@@ -15,7 +15,7 @@ export const companyInfo: CompanyInfo = {
   phone: '+49 176 41195301',
   email: 'kontakt@codayweb.de',
   foundedYear: 2024,
-  employeeCount: 3,
+  employeeCount: 1,
   certifications: ['DSGVO Compliant'],
   socialMedia: {
     linkedin: 'https://www.linkedin.com/company/coday',
