@@ -76,13 +76,13 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/services/web-development/:slug*',
-        destination: '/services/development/:slug*',
+        source: '/services/web-development/:slug+',
+        destination: '/services/development/:slug+',
         permanent: true,
       },
       {
-        source: '/:locale(de|en)/services/web-development/:slug*',
-        destination: '/:locale/services/development/:slug*',
+        source: '/:locale(de|en)/services/web-development/:slug+',
+        destination: '/:locale/services/development/:slug+',
         permanent: true,
       },
       {
