@@ -37,7 +37,9 @@
   },
   "exclude": [
     "supabase",
-    "node_modules"
+    "node_modules",
+    "sanity.config.ts",
+    "sanity.cli.ts"
   ],
   "include": [
     "next-env.d.ts",
