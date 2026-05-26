@@ -1,3 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100">
-  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="40" fill="#147a7a">Coday</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1a9e9e"/>
+      <stop offset="100%" stop-color="#0f6363"/>
+    </linearGradient>
+  </defs>
+  <path d="M310 96C198.5 96 108 186.5 108 298s90.5 202 202 202c55.8 0 106.3-22.7 142.8-59.3 7.8-7.8 7.8-20.5 0-28.3s-20.5-7.8-28.3 0C393.3 443.7 353.5 460 310 460c-89.4 0-162-72.6-162-162s72.6-162 162-162c43.5 0 83.3 16.3 114.5 47.5 7.8 7.8 20.5 7.8 28.3 0s7.8-20.5 0-28.3C416.3 118.7 365.8 96 310 96z" fill="url(#g)"/>
 </svg>
