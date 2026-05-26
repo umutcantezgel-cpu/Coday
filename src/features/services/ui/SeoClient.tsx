@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import dynamic from 'next/dynamic';
 import { useTranslations } from 'next-intl';
@@ -182,14 +182,15 @@ export function SeoClient() {
               </h2>
               <p className="text-lg text-slate-600 mb-6">{t('seo_page.dominance.description')}</p>
               <ul className="space-y-3">
-                {(Array.isArray(t.raw('seo_page.dominance.items')) ? (t.raw('seo_page.dominance.items') as string[]) : []).map(
-                  (item, i) => (
-                    <li key={i} className="flex items-center text-secondary font-medium">
-                      <OptimizedIcon icon={CheckCircle} className="text-sapphire me-2" />
-                      {item}
-                    </li>
-                  )
-                )}
+                {(Array.isArray(t.raw('seo_page.dominance.items'))
+                  ? (t.raw('seo_page.dominance.items') as string[])
+                  : []
+                ).map((item, i) => (
+                  <li key={i} className="flex items-center text-secondary font-medium">
+                    <OptimizedIcon icon={CheckCircle} className="text-sapphire me-2" />
+                    {item}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -317,7 +318,7 @@ export function SeoClient() {
               {t('seo_page.case_study.description')}
             </p>
             <NavLink
-              href="/cases"
+              href="/work"
               className="inline-flex items-center justify-center px-6 py-3 font-bold text-secondary rounded-xl bg-primary hover:bg-white transition-all shadow-glow"
             >
               {t('actions.read_more')}
@@ -341,5 +342,4 @@ export function SeoClient() {
       </section>
     </div>
   );
-};
-
+}

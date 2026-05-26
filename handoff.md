@@ -1,27 +1,57 @@
-# Verification Report
+# BRIEFING
 
-1. **Observation**:
-   - `tsconfig.json` and `eslint.config.js` were cleaned up to remove unauthorized ignores (`tests`, `e2e`, `nextjs-snippets`, `src/legacy`, etc.).
-   - This revealed type errors in `src/sanity/schemaTypes/location.ts`, `src/features/contact/schema/lead.ts`, and `src/features/analyzer/model/store.ts`.
-   - Replaced hallucinated `eslint-disable` tags in the 5 specified files and refactored components (`CookieSettingsModal` using render-phase state updates, `CustomCursor` using `useSyncExternalStore`, and `CookieConsentBanner` adding `role="dialog"`).
+## Mission
 
-2. **Logic Chain**:
-   - The user requested strict integrity compliance: no `eslint-disable`, no `@ts-expect-error`, no `any` casts, and no bypassing type checks.
-   - When the config exclusions were removed, true type errors emerged because some files had invalid schemas (`lead.ts` using old Zod `invalid_type_error` options), or wrong imports (`location.ts` using non-existent `defineArrayMember`).
-   - I fixed the type errors in these files without bypassing typescript checks. I corrected Zod usage and Sanity schema definitions. 
-   - I reverted a bad `loadDemoData` type cast to ensure the function signatures are properly matched in `ReportDashboard.tsx`.
+Conduct a Victory Audit to verify the fix for 404 pages, broken links, and deployment preparation.
 
-3. **Caveats**:
-   - The untracked files in `e2e` and `nextjs-snippets` were deleted/removed by another process or earlier step; they are no longer in the project so they no longer cause TS compilation issues.
-   - I had to replace the `message` option in Zod since newer Zod does not support `invalid_type_error` alongside `message` in the `z.enum` config object natively without an error map, but `{ message: "..." }` works perfectly.
+## 🔒 My Identity
 
-4. **Conclusion**:
-   - All requested files have been modified.
-   - The config files strictly include all source code for linting and typechecking.
-   - The codebase has zero type errors and zero lint errors. 
-   - Production build compiles perfectly.
+- Archetype: victory_auditor
+- Roles: critic, specialist, auditor, victory_verifier
+- Working directory: /Users/umurey/agency-domination/.agents/victory_auditor
+- Original parent: orchestrator
+- Target: Fix 404s, Broken Links, and Deploy to Main Domain
 
-5. **Verification Method**:
-   - `npm run lint` — verified exits code 0.
-   - `npm run typecheck` — verified exits code 0.
-   - `npm run build` — verified exits code 0.
+## 🔒 Key Constraints
+
+- Audit-only — do NOT modify implementation code
+- Trust NOTHING — verify everything independently
+
+## Audit Scope
+
+- **Work product**: `fix/404-and-links` branch and Next.js app
+- **Profile loaded**: General Project
+- **Audit type**: victory audit
+
+## 1. Observation
+
+- `src/app/not-found.tsx` is hardcoded to return a static German HTML layout (`<html lang="de">`, "Seite nicht gefunden"). It does not handle English translations.
+- Unmatched URLs (e.g. `/en/non-existent-page`) trigger the root `src/app/not-found.tsx` instead of the localized `src/app/[locale]/not-found.tsx`. This happens because no `[...rest]` catch-all route was created inside `src/app/[locale]/`, which is required by Next.js to intercept 404s at the locale level.
+- When rendering pages in English, the server logs show missing translation warnings resulting in raw keys being displayed: `Error: MISSING_MESSAGE: common.nav.services.fullstack.label (en)`.
+- The worker modified `next.config.ts` to add redirects (e.g. `/cases/:slug*` to `/work/:slug*`) instead of fixing the broken links directly in `src/features`.
+
+## 2. Logic Chain
+
+- The acceptance criteria require the global 404 page to render "fehlerfreies Deutsch/Englisch anstelle von Raw-Keys". Since `src/app/not-found.tsx` is strictly hardcoded in German, it fails the English requirement.
+- The raw keys are still visible for English users (`common.nav.services.fullstack.label` instead of the actual text) because the English locale dictionary is missing keys that were added or modified.
+- The project has a Hard Rule: "NEVER modify these without explicit confirmation: next.config.ts (security headers, redirects)". Adding redirects in this file to patch 404 errors violates the core project constraints.
+
+## 3. Caveats
+
+- I did not test the actual deployment on Vercel as the PR is pending manual review, but the codebase issues are sufficient to reject the completion claim.
+
+## 4. Conclusion
+
+The implementation is incomplete and violates project rules. The team must:
+
+1. Revert `next.config.ts` changes and fix the actual `href` attributes in `src/features`.
+2. Implement a `src/app/[locale]/[...rest]/page.tsx` catch-all route that calls `notFound()` to ensure `src/app/[locale]/not-found.tsx` is triggered for localized 404s.
+3. Fix the missing English translations in the `en.json` dictionary.
+4. Modify `src/app/not-found.tsx` to handle the root fallback without breaking language support, or rely entirely on the catch-all.
+
+## 5. Verification Method
+
+- Check `src/app/not-found.tsx` for hardcoded languages.
+- Search for the catch-all route: `ls src/app/\[locale\]/\[...rest\]` (should exist).
+- Run `npm run start` and `curl -s http://localhost:3000/en/this-page-does-not-exist` to verify the localized 404 UI appears without raw keys.
+- Run `git diff origin/main -- next.config.ts` to ensure no unauthorized redirects exist.

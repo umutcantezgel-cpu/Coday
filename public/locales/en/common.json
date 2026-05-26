@@ -99,7 +99,8 @@
       "work": "Portfolio",
       "process": "Process",
       "pricing": "Pricing",
-      "contact": "Start Project"
+      "contact": "Start Project",
+      "partnerschaft": "Partnership"
     },
     "about": {
       "contact": {
@@ -179,7 +180,8 @@
       "label": "Industries",
       "real_estate": "Real Estate",
       "service": "Services",
-      "public": "Public Sector"
+      "public": "Public Sector",
+      "tech": "Tech Startups"
     },
     "legal": {
       "hub": "Overview",
@@ -263,6 +265,9 @@
       },
       "web_apps": {
         "label": "Web Applications"
+      },
+      "fullstack": {
+        "label": "Full-Stack Development"
       },
       "web_design": {
         "desc": "Award-Winning UI/UX & Brand Identity",

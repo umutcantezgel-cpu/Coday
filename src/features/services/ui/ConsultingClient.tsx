@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import dynamic from 'next/dynamic';
 import { useTranslations } from 'next-intl';
@@ -136,7 +136,7 @@ export function ConsultingClient() {
                   {t('case_study.description')}
                 </p>
                 <Link
-                  href="/portfolio/tech-startup-exit"
+                  href="/work/tech-startup-exit"
                   className="inline-flex items-center gap-2 text-blue-600 font-bold hover:text-blue-700 transition-colors group"
                 >
                   Case Study ansehen
@@ -184,6 +184,4 @@ export function ConsultingClient() {
       </div>
     </>
   );
-};
-
-
+}

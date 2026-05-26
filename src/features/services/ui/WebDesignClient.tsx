@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import dynamic from 'next/dynamic';
 import { useTranslations } from 'next-intl';
@@ -159,14 +159,12 @@ export function WebDesignClient() {
               {t('web_design_page.design_system.description')}
             </p>
             <ul className="space-y-4 mb-8">
-              {(t.raw('web_design_page.design_system.items') as string[]).map(
-                (item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-slate-600 font-medium">
-                    <OptimizedIcon icon={CheckCircle} className="text-sapphire" />
-                    {item}
-                  </li>
-                )
-              )}
+              {(t.raw('web_design_page.design_system.items') as string[]).map((item, i) => (
+                <li key={i} className="flex items-center gap-3 text-slate-600 font-medium">
+                  <OptimizedIcon icon={CheckCircle} className="text-sapphire" />
+                  {item}
+                </li>
+              ))}
             </ul>
           </div>
           <DesignSystemShowcase />
@@ -312,7 +310,7 @@ export function WebDesignClient() {
               {t('web_design_page.case_study.description')}
             </p>
             <NavLink
-              href="/cases"
+              href="/work"
               className="inline-flex items-center justify-center px-6 py-3 font-bold text-secondary rounded-xl bg-primary hover:bg-white transition-all shadow-glow"
             >
               {t('actions.read_more')}
@@ -336,6 +334,4 @@ export function WebDesignClient() {
       </section>
     </div>
   );
-};
-
-
+}

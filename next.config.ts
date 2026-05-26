@@ -35,66 +35,6 @@ const nextConfig: NextConfig = {
         destination: '/work',
         permanent: true,
       },
-      {
-        source: '/kontakt',
-        destination: '/contact',
-        permanent: true,
-      },
-      {
-        source: '/:locale(de|en)/kontakt',
-        destination: '/:locale/contact',
-        permanent: true,
-      },
-      {
-        source: '/beratung',
-        destination: '/booking',
-        permanent: true,
-      },
-      {
-        source: '/:locale(de|en)/beratung',
-        destination: '/:locale/booking',
-        permanent: true,
-      },
-      {
-        source: '/oeffentliche-auftraege',
-        destination: '/branchen/public-sector',
-        permanent: true,
-      },
-      {
-        source: '/:locale(de|en)/oeffentliche-auftraege',
-        destination: '/:locale/branchen/public-sector',
-        permanent: true,
-      },
-      {
-        source: '/services/marketing',
-        destination: '/services/seo',
-        permanent: true,
-      },
-      {
-        source: '/:locale(de|en)/services/marketing',
-        destination: '/:locale/services/seo',
-        permanent: true,
-      },
-      {
-        source: '/services/web-development/:slug*',
-        destination: '/services/development/:slug*',
-        permanent: true,
-      },
-      {
-        source: '/:locale(de|en)/services/web-development/:slug*',
-        destination: '/:locale/services/development/:slug*',
-        permanent: true,
-      },
-      {
-        source: '/services/web-design/audit',
-        destination: '/services/design/ux-audit',
-        permanent: true,
-      },
-      {
-        source: '/:locale(de|en)/services/web-design/audit',
-        destination: '/:locale/services/design/ux-audit',
-        permanent: true,
-      },
     ];
   },
   async headers() {
