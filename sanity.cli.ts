@@ -6,4 +6,7 @@ export default defineCliConfig({
     dataset: 'production',
   },
   studioHost: 'coday-cms',
+  deployment: {
+    appId: 'tac5vwamplgho89f6qaq2zmq',
+  },
 });
