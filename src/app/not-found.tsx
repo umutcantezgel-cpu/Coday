@@ -1,6 +1,8 @@
+import { routing } from '@/i18n/routing';
+
 export default function GlobalNotFound() {
   return (
-    <html lang="de">
+    <html lang={routing.defaultLocale}>
       <body>
         <div
           style={{
@@ -13,9 +15,9 @@ export default function GlobalNotFound() {
           }}
         >
           <h1 style={{ fontSize: '4rem', fontWeight: 'bold', marginBottom: '1rem' }}>404</h1>
-          <h2 style={{ fontSize: '1.5rem', marginBottom: '2rem' }}>Seite nicht gefunden</h2>
+          <h2 style={{ fontSize: '1.5rem', marginBottom: '2rem' }}>Page Not Found</h2>
           <a
-            href="/de"
+            href={`/${routing.defaultLocale}`}
             style={{
               padding: '0.75rem 1.5rem',
               backgroundColor: '#000',
@@ -24,7 +26,7 @@ export default function GlobalNotFound() {
               textDecoration: 'none',
             }}
           >
-            Zur Startseite
+            Return to Home
           </a>
         </div>
       </body>
