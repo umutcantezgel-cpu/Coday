@@ -26,7 +26,7 @@ import {
 import { TechStackShowcase, TechItem } from '@/widgets/services/TechStackShowcase';
 import { SeoHead } from '@/shared/ui/SeoHead';
 import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
-import { TestimonialCard } from '@/shared/ui/TestimonialCard';
+
 
 export function SeoClient() {
   const t = useTranslations('services');

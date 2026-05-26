@@ -30,7 +30,7 @@ export const HeroSection: React.FC = () => {
       <div className="relative z-10 w-full max-w-[var(--container-narrow)] mx-auto px-4 sm:px-6 flex flex-col items-center">
 
         {/* LCP Element: Hero Headline */}
-        <Typography variant="display" className="mb-6 text-text-primary uppercase drop-shadow-sm opacity-0 animate-fade-in-up [animation-delay:100ms] break-words sm:break-normal transform-gpu will-change-transform">
+        <Typography variant="display" className="mb-6 text-text-primary uppercase drop-shadow-sm break-words sm:break-normal">
           {t('hero.headline_prefix')} <br className="hidden sm:block" />
           <GradientText
             colors={[

@@ -1,19 +1,27 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import Image from 'next/image';
 
-interface OptimizedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
+interface OptimizedImageProps {
   src: string;
   alt: string;
   className?: string;
   priority?: boolean;
   aspectRatio?: 'video' | 'square' | 'wide' | 'portrait';
+  /** @deprecated — next/image handles srcSet automatically */
   srcSet?: string;
   sizes?: string;
-  /** Explicit width for CLS prevention — defaults based on aspectRatio */
+  /** Explicit width for layout — required by next/image for static images */
   width?: number;
-  /** Explicit height for CLS prevention — defaults based on aspectRatio */
+  /** Explicit height for layout — required by next/image for static images */
   height?: number;
+  style?: React.CSSProperties;
+  title?: string;
+  draggable?: boolean;
 }
+
+// Default sizes attribute for responsive images when none is provided
+const DEFAULT_SIZES = '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw';
 
 export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   src,
@@ -21,21 +29,13 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   className = '',
   priority = false,
   aspectRatio,
-  srcSet,
   sizes,
   width,
   height,
-  ...props
+  style,
+  // srcSet is accepted but ignored — next/image generates its own
 }) => {
-  const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
-  const imgRef = React.useRef<HTMLImageElement>(null);
-
-  useEffect(() => {
-    if (imgRef.current && imgRef.current.complete) {
-      setTimeout(() => setIsLoaded(true), 0);
-    }
-  }, []);
 
   // Dynamic aspect ratio container
   const getAspectRatioClass = () => {
@@ -53,60 +53,66 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
     }
   };
 
-  // Calculate inline aspect ratio if width/height provided and no preset aspect ratio
+  // Container style with inline aspect ratio if width/height provided
   const containerStyle: React.CSSProperties = {
-    ...props.style,
+    ...style,
     ...(width && height && !aspectRatio ? { aspectRatio: `${width} / ${height}` } : {}),
   };
 
-  // Generate modern format sources
-  const generateSource = (url: string, newExt: string) => {
-    return url.replace(/\.(png|jpe?g)$/gi, `.${newExt}`);
-  };
+  // Determine if we should use fill mode (no explicit dimensions, or has aspect ratio)
+  const useFill = !width || !height || !!aspectRatio;
 
-  const avifSrcSet = srcSet ? generateSource(srcSet, 'avif') : generateSource(src, 'avif');
-  const webpSrcSet = srcSet ? generateSource(srcSet, 'webp') : generateSource(src, 'webp');
+  // Skip SVGs — next/image can't optimize them, serve directly
+  const isSvg = src.endsWith('.svg');
+
+  if (isSvg) {
+    return (
+      <div
+        className={`relative overflow-hidden ${getAspectRatioClass()} ${className}`}
+        style={containerStyle}
+      >
+        <img
+          src={src}
+          alt={alt}
+          className="w-full h-full object-cover"
+          loading={priority ? 'eager' : 'lazy'}
+          width={width}
+          height={height}
+        />
+      </div>
+    );
+  }
+
+  if (hasError) {
+    return (
+      <div
+        className={`relative overflow-hidden bg-gray-200 ${getAspectRatioClass()} ${className}`}
+        style={containerStyle}
+      >
+        <div className="absolute inset-0 flex items-center justify-center text-gray-400 text-xs">
+          Image N/A
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div
-      className={`relative overflow-hidden bg-gray-100 ${getAspectRatioClass()} ${className}`}
+      className={`relative overflow-hidden ${getAspectRatioClass()} ${className}`}
       style={containerStyle}
     >
-      {!isLoaded && !hasError && !priority && (
-        <div className="absolute inset-0 flex items-center justify-center skeleton-shimmer">
-          <span className="sr-only">Loading...</span>
-        </div>
-      )}
-
-      <picture>
-        <source type="image/avif" srcSet={avifSrcSet} sizes={sizes} />
-        <source type="image/webp" srcSet={webpSrcSet} sizes={sizes} />
-        <img
-          ref={imgRef}
-          src={src}
-          srcSet={srcSet}
-          sizes={sizes}
-          alt={alt}
-          loading={priority ? 'eager' : 'lazy'}
-          decoding={priority ? 'sync' : 'async'}
-          fetchPriority={priority ? 'high' : 'auto'}
-          onLoad={() => setIsLoaded(true)}
-          onError={() => setHasError(true)}
-          className={`
-                      w-full h-full object-cover 
-                      ${priority ? '' : 'transition-opacity duration-500 ease-in-out'}
-                      ${priority || isLoaded ? 'opacity-100' : 'opacity-0'}
-                  `}
-          width={width}
-          height={height}
-          {...props}
-        />
-      </picture>
-      {hasError && (
-        <div className="absolute inset-0 flex items-center justify-center bg-gray-200 text-gray-400 text-xs">
-          Image N/A
-        </div>
-      )}
+      <Image
+        src={src}
+        alt={alt}
+        {...(useFill
+          ? { fill: true, className: 'object-cover' }
+          : { width, height, className: 'w-full h-full object-cover' }
+        )}
+        sizes={sizes || DEFAULT_SIZES}
+        priority={priority}
+        quality={80}
+        onError={() => setHasError(true)}
+      />
     </div>
   );
 };
