@@ -13,7 +13,7 @@ const AnnouncementBar: React.FC = () => {
           <span className="flex items-center">
             <OptimizedIcon icon={Celebration} className="text-lg mr-2" />
             {t('announcement.text', {
-              defaultValue: 'Grand Opening: 25% Rabatt auf alle Projekte!',
+              defaultValue: 'Enterprise-Audit: Kostenlose Potenzialanalyse verfügbar.',
             })}
           </span>
           <Link

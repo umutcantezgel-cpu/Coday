@@ -52,14 +52,13 @@ export const CODAY_KNOWLEDGE_BASE = {
   },
 
   // ============================================================
-  // PREISPAKETE (AKTUELL MIT 25% RABATT)
+  // PREISPAKETE
   // ============================================================
   packages: {
     starter: {
       name: 'Starter',
       tagline: 'Perfekt für den Start',
-      setupPrice: 939, // Euro (rabattiert von 1250)
-      originalPrice: 1250,
+      setupPrice: 1250,
       monthlyPrice: 49,
       features: [
         '3-5 Unterseiten',
@@ -76,8 +75,7 @@ export const CODAY_KNOWLEDGE_BASE = {
     professional: {
       name: 'Professional',
       tagline: 'Unser Bestseller',
-      setupPrice: 1619, // Euro (rabattiert von 2150)
-      originalPrice: 2150,
+      setupPrice: 2150,
       monthlyPrice: 99,
       popular: true,
       features: [
@@ -96,8 +94,7 @@ export const CODAY_KNOWLEDGE_BASE = {
     enterprise: {
       name: 'Enterprise',
       tagline: 'Volle Power',
-      setupPrice: 2219, // Euro (rabattiert von 2950)
-      originalPrice: 2950,
+      setupPrice: 2950,
       monthlyPrice: 199,
       features: [
         'Unbegrenzte Seiten',
@@ -253,23 +250,13 @@ export const CODAY_KNOWLEDGE_BASE = {
     ],
   },
 
-  // ============================================================
-  // AKTUELLE ANGEBOTE
-  // ============================================================
-  currentOffers: {
-    grandOpening: {
-      name: 'Grand Opening Special',
-      discount: '25% Rabatt',
-      description: 'Auf alle Pakete für begrenzte Zeit.',
-    },
-  },
 
   // ============================================================
   // FAQ ANTWORTEN
   // ============================================================
   faq: {
     pricing:
-      'Unsere Websites starten ab 939 EUR (Starter-Paket mit 25% Rabatt). Das meistgewählte Professional-Paket kostet 1.619 EUR. E-Commerce und Enterprise-Lösungen ab 2.219 EUR.',
+      'Unsere Websites starten ab 1.250 EUR (Starter-Paket). Das meistgewählte Professional-Paket kostet 2.150 EUR. E-Commerce und Enterprise-Lösungen ab 2.950 EUR.',
     timeline:
       'Je nach Paket und Komplexität: Starter in 2-3 Wochen, Professional in 4-6 Wochen, Enterprise individuell nach Projektumfang.',
     technology:

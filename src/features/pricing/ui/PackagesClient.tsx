@@ -65,8 +65,7 @@ const Packages: React.FC = () => {
       id: 'starter',
       name: t('packages.starter.name'),
       tagline: t('packages.starter.tagline'),
-      setupPrice: 2000,
-      originalPrice: 2500,
+      setupPrice: 2500,
       monthlyPrice: 0,
       features: Array.isArray(t.raw('packages.starter.features'))
         ? (t.raw('packages.starter.features') as string[])
@@ -76,14 +75,12 @@ const Packages: React.FC = () => {
         : [],
       cta: t('packages.starter.cta'),
       deliveryDays: 14,
-      savings: 25,
     },
     {
       id: 'professional',
       name: t('packages.professional.name'),
       tagline: t('packages.professional.tagline'),
-      setupPrice: 4000,
-      originalPrice: 5000,
+      setupPrice: 5000,
       monthlyPrice: 0,
       popular: true,
       features: Array.isArray(t.raw('packages.professional.features'))
@@ -94,21 +91,18 @@ const Packages: React.FC = () => {
         : [],
       cta: t('packages.professional.cta'),
       deliveryDays: 21,
-      savings: 25,
     },
     {
       id: 'enterprise',
       name: t('packages.enterprise.name'),
       tagline: t('packages.enterprise.tagline'),
-      setupPrice: 8000,
-      originalPrice: 10000,
+      setupPrice: 10000,
       monthlyPrice: 0,
       features: Array.isArray(t.raw('packages.enterprise.features'))
         ? (t.raw('packages.enterprise.features') as string[])
         : [],
       cta: t('packages.enterprise.cta'),
       deliveryDays: 30,
-      savings: 25,
     },
   ];
 
@@ -135,10 +129,10 @@ const Packages: React.FC = () => {
           softwareApp: {
             name: 'Coday Web Packages',
             description:
-              'Professional web development packages with transparent pricing. Starter from 939€, Professional from 1619€, Enterprise from 2219€.',
+              'Professional web development packages with transparent pricing. Starter from 2.500€, Professional from 5.000€, Enterprise from 10.000€.',
             applicationCategory: 'BusinessApplication',
             operatingSystem: 'Web',
-            offers: { price: '939', priceCurrency: 'EUR' },
+            offers: { price: '2500', priceCurrency: 'EUR' },
           },
         }}
       />
