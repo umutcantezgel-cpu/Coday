@@ -6,7 +6,7 @@ import { getMessages } from 'next-intl/server';
 import { Inter } from 'next/font/google';
 import { headers } from 'next/headers';
 import { draftMode } from 'next/headers';
-import Script from 'next/script';
+
 import '../globals.css';
 
 import { routing } from '@/i18n/routing';
@@ -84,18 +84,19 @@ export default async function RootLayout({
           <MetaPixel />
           <LinkedInInsight />
           <ClarityAnalytics />
-          <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="lazyOnload" />
+
           {(await draftMode()).isEnabled && (
             <>
               <div className="bg-blue-600 text-white text-center py-1 text-sm font-medium">
-                Draft Mode Enabled <a href="/api/draft-mode/disable" className="underline hover:text-blue-100 ml-2">Disable</a>
+                Draft Mode Enabled{' '}
+                <a href="/api/draft-mode/disable" className="underline hover:text-blue-100 ml-2">
+                  Disable
+                </a>
               </div>
             </>
           )}
           <div className="flex flex-col min-h-screen">
-            <MainLayout>
-              {children}
-            </MainLayout>
+            <MainLayout>{children}</MainLayout>
           </div>
         </NextIntlClientProvider>
       </body>

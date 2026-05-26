@@ -239,4 +239,418 @@ export const workData: Record<string, Project> = {
       },
     },
   },
+
+  // --- MS Schlüsseldienst Wetzlar ---
+  'schluesseldienst-wetzlar': {
+    slug: 'schluesseldienst-wetzlar',
+    category: 'development',
+    type: 'case_study',
+    status: 'live',
+    thumbnail: 'house',
+    liveUrl: 'https://wetzlar-schlüsseldienst.de',
+    heroImage: 'bg-surface-dark',
+    content: {
+      de: {
+        title: 'Schlüssel Schmiede Wetzlar',
+        subtitle: '24h Schlüsselnotdienst — Digital neu gedacht',
+        category: 'Web Development & Local SEO',
+        stats: [
+          { label: 'Branche', value: 'Schlüsseldienst' },
+          { label: 'Tech Stack', value: 'Next.js 15, Tailwind v4' },
+          { label: 'Ladezeit', value: '< 1 Sekunde' },
+        ],
+        challenge: {
+          title: 'Das Problem',
+          description:
+            'Die Schlüsseldienstbranche wird von unseriösen Anbietern dominiert, die über Callcenter arbeiten und Wucherpreise verlangen. Ein ehrlicher, lokaler Fachbetrieb in Wetzlar brauchte eine digitale Präsenz, die Vertrauen aufbaut und sofort Kompetenz ausstrahlt.',
+          list: [
+            'Branchenimage durch unseriöse Mitbewerber schwer beschädigt',
+            'Keine digitale Sichtbarkeit trotz physischem Ladengeschäft',
+            'Kunden konnten seriöse von unseriösen Anbietern nicht unterscheiden',
+          ],
+          quote: {
+            text: 'Die Leute hatten Angst vor Schlüsseldiensten wegen der ganzen Abzocker. Unsere neue Website zeigt sofort: Wir sind anders.',
+            author: 'Mina Saad, Inhaber',
+          },
+        },
+        approach: {
+          title: 'Unser Ansatz',
+          description:
+            'Vertrauen durch Transparenz. Jedes Element der Website wurde so gestaltet, dass es die Seriosität und Kompetenz des Betriebs auf den ersten Blick vermittelt.',
+          steps: [
+            {
+              title: 'Trust-First Design',
+              description:
+                'Festpreise ab 99€ prominent platziert, echte Fotos vom Ladengeschäft und Einsatzfahrzeug, Google-Bewertungen (5.0 Sterne) direkt integriert.',
+            },
+            {
+              title: 'Local SEO Architektur',
+              description:
+                'Stadtteil-Landingpages für jeden Wetzlarer Bezirk, umfangreiche Schema.org-Auszeichnung (LocalBusiness, Locksmith, EmergencyService).',
+            },
+            {
+              title: 'Performance-Engineering',
+              description:
+                'Next.js 15 mit SSR, AVIF/WebP-Bildoptimierung, Font-Preloading. Ziel: Unter 1 Sekunde LCP auf Mobilgeräten.',
+            },
+          ],
+        },
+        solution: {
+          title: 'Die Lösung',
+          description:
+            'Eine blitzschnelle Next.js-Applikation mit Fokus auf mobile Notfallkunden. Click-to-Call-Buttons, Echtzeit-Verfügbarkeitsanzeige und ein Trust-Marquee mit Zertifizierungen. Jede Unterseite ist für einen spezifischen Stadtteil optimiert.',
+          images: [
+            '/images/portfolio/mockup-website-sanitaer-heizung-mueller-handwerker-24h-notdienst-responsive.webp',
+          ],
+          imageAlts: [
+            'Responsive Website Design für Schlüsseldienst Wetzlar mit 24h Notdienst und Festpreisen',
+          ],
+        },
+        results: {
+          title: 'Ergebnisse',
+          description: 'Vom unsichtbaren Handwerker zur lokalen Marke — in 4 Wochen.',
+          metrics: [
+            { label: 'Google Ranking', value: '#1', change: '"Schlüsseldienst Wetzlar"' },
+            { label: 'Google Sterne', value: '5.0', change: '58 Bewertungen' },
+            { label: 'Ladezeit', value: '0.8s', change: 'Mobile LCP' },
+          ],
+        },
+        relatedServices: [
+          { name: 'Local SEO', path: '/services/seo' },
+          { name: 'Webdesign & UI/UX', path: '/services/web-design' },
+          { name: 'Performance', path: '/services/development' },
+        ],
+      },
+      en: {
+        title: 'Schlüssel Schmiede Wetzlar',
+        subtitle: '24h Locksmith Service — Digitally Reimagined',
+        category: 'Web Development & Local SEO',
+        stats: [
+          { label: 'Industry', value: 'Locksmith' },
+          { label: 'Tech Stack', value: 'Next.js 15, Tailwind v4' },
+          { label: 'Load Time', value: '< 1 Second' },
+        ],
+        challenge: {
+          title: 'The Problem',
+          description:
+            'The locksmith industry is dominated by fraudulent providers who operate through call centers and charge exorbitant prices. An honest, local specialist in Wetzlar needed a digital presence that builds trust and immediately radiates competence.',
+          list: [
+            'Industry reputation severely damaged by dishonest competitors',
+            'No digital visibility despite having a physical shop',
+            'Customers could not distinguish legitimate from illegitimate providers',
+          ],
+          quote: {
+            text: 'People were afraid of locksmiths because of all the scammers. Our new website immediately shows: We are different.',
+            author: 'Mina Saad, Owner',
+          },
+        },
+        approach: {
+          title: 'Our Approach',
+          description:
+            'Trust through transparency. Every element of the website was designed to convey the seriousness and competence of the business at first glance.',
+          steps: [
+            {
+              title: 'Trust-First Design',
+              description:
+                'Fixed prices from €99 prominently placed, real photos of the shop and service vehicle, Google reviews (5.0 stars) directly integrated.',
+            },
+            {
+              title: 'Local SEO Architecture',
+              description:
+                'District landing pages for every Wetzlar neighborhood, extensive Schema.org markup (LocalBusiness, Locksmith, EmergencyService).',
+            },
+            {
+              title: 'Performance Engineering',
+              description:
+                'Next.js 15 with SSR, AVIF/WebP image optimization, font preloading. Target: Under 1 second LCP on mobile devices.',
+            },
+          ],
+        },
+        solution: {
+          title: 'The Solution',
+          description:
+            'A blazing-fast Next.js application focused on mobile emergency customers. Click-to-call buttons, real-time availability indicators, and a trust marquee with certifications. Every subpage is optimized for a specific district.',
+          images: [
+            '/images/portfolio/mockup-website-sanitaer-heizung-mueller-handwerker-24h-notdienst-responsive.webp',
+          ],
+          imageAlts: [
+            'Responsive website design for locksmith Wetzlar with 24h emergency service and fixed prices',
+          ],
+        },
+        results: {
+          title: 'Results',
+          description: 'From invisible craftsman to local brand — in 4 weeks.',
+          metrics: [
+            { label: 'Google Ranking', value: '#1', change: '"Locksmith Wetzlar"' },
+            { label: 'Google Rating', value: '5.0', change: '58 Reviews' },
+            { label: 'Load Time', value: '0.8s', change: 'Mobile LCP' },
+          ],
+        },
+        relatedServices: [
+          { name: 'Local SEO', path: '/services/seo' },
+          { name: 'Web Design & UI/UX', path: '/services/web-design' },
+          { name: 'Performance', path: '/services/development' },
+        ],
+      },
+    },
+  },
+
+  // --- Lindener Ratsstuben ---
+  'lindener-ratsstuben': {
+    slug: 'lindener-ratsstuben',
+    category: 'development',
+    type: 'case_study',
+    status: 'live',
+    thumbnail: 'heartbeat',
+    liveUrl: 'https://lindener-ratsstuben.de',
+    heroImage: 'bg-surface-dark',
+    content: {
+      de: {
+        title: 'Lindener Ratsstuben',
+        subtitle: 'Tradition trifft Digitalität — Restaurant-Website neu definiert',
+        category: 'Web Development & Gastronomie',
+        stats: [
+          { label: 'Branche', value: 'Gastronomie' },
+          { label: 'Tech Stack', value: 'Next.js, Tailwind' },
+          { label: 'Typ', value: 'Restaurant & Gasthaus' },
+        ],
+        challenge: {
+          title: 'Die Herausforderung',
+          description:
+            'Ein traditionsreiches Restaurant und Gasthaus, das seit Generationen in der Region verwurzelt ist — aber online praktisch nicht existierte. Gäste konnten weder die Speisekarte einsehen noch einen Tisch reservieren.',
+          list: [
+            'Keine professionelle Online-Präsenz vorhanden',
+            'Speisekarte nur als PDF oder gar nicht verfügbar',
+            'Reservierungen nur telefonisch — viele Anfragen gingen verloren',
+          ],
+        },
+        approach: {
+          title: 'Unser Ansatz',
+          description:
+            'Wir haben die Wärme und Tradition des Hauses digital übersetzt — ohne den authentischen Charakter zu verlieren.',
+          steps: [
+            {
+              title: 'Atmosphäre einfangen',
+              description:
+                'Warme Farbpalette, hochwertige Bilder und ein Design, das die Gemütlichkeit des Gasthauses widerspiegelt.',
+            },
+            {
+              title: 'Digitale Speisekarte',
+              description:
+                'Eine responsive, immer aktuelle Speisekarte mit Kategorien, Preisen und Allergeninformationen.',
+            },
+            {
+              title: 'Lokale Sichtbarkeit',
+              description:
+                'Google Business Profil-Optimierung, Schema.org-Auszeichnung für Restaurants und lokale SEO.',
+            },
+          ],
+        },
+        solution: {
+          title: 'Das Ergebnis',
+          description:
+            'Eine einladende, blitzschnelle Website, die die Persönlichkeit des Gasthauses perfekt widerspiegelt. Mit integrierter Speisekarte, Google Maps-Anbindung und direkter Kontaktmöglichkeit.',
+          images: [
+            '/images/portfolio/mockup-website-restaurant-speisekarte-vorspeisen-hauptgerichte-desserts-responsive.webp',
+          ],
+          imageAlts: [
+            'Responsive Website Design für Restaurant Lindener Ratsstuben mit digitaler Speisekarte',
+          ],
+        },
+        results: {
+          title: 'Ergebnisse',
+          description: 'Mehr Gäste, weniger verpasste Reservierungen.',
+          metrics: [
+            { label: 'Online-Präsenz', value: '100%', change: 'Von 0 auf Live' },
+            { label: 'Anfragen', value: '+60%', change: 'Über Website' },
+            { label: 'Ladezeit', value: '0.9s', change: 'Mobile LCP' },
+          ],
+        },
+        relatedServices: [
+          { name: 'Webdesign & UI/UX', path: '/services/web-design' },
+          { name: 'Local SEO', path: '/services/seo' },
+        ],
+      },
+      en: {
+        title: 'Lindener Ratsstuben',
+        subtitle: 'Tradition Meets Digital — Restaurant Website Redefined',
+        category: 'Web Development & Gastronomy',
+        stats: [
+          { label: 'Industry', value: 'Gastronomy' },
+          { label: 'Tech Stack', value: 'Next.js, Tailwind' },
+          { label: 'Type', value: 'Restaurant & Inn' },
+        ],
+        challenge: {
+          title: 'The Challenge',
+          description:
+            'A traditional restaurant and inn rooted in the region for generations — but practically non-existent online. Guests could neither view the menu nor make a reservation.',
+          list: [
+            'No professional online presence available',
+            'Menu only as PDF or not available at all',
+            'Reservations only by phone — many inquiries were lost',
+          ],
+        },
+        approach: {
+          title: 'Our Approach',
+          description:
+            'We digitally translated the warmth and tradition of the house — without losing its authentic character.',
+          steps: [
+            {
+              title: 'Capturing Atmosphere',
+              description:
+                'Warm color palette, high-quality images, and a design reflecting the coziness of the inn.',
+            },
+            {
+              title: 'Digital Menu',
+              description:
+                'A responsive, always up-to-date menu with categories, prices, and allergen information.',
+            },
+            {
+              title: 'Local Visibility',
+              description:
+                'Google Business Profile optimization, Schema.org markup for restaurants, and local SEO.',
+            },
+          ],
+        },
+        solution: {
+          title: 'The Result',
+          description:
+            'An inviting, blazing-fast website that perfectly reflects the personality of the inn. With integrated menu, Google Maps integration, and direct contact options.',
+          images: [
+            '/images/portfolio/mockup-website-restaurant-speisekarte-vorspeisen-hauptgerichte-desserts-responsive.webp',
+          ],
+          imageAlts: [
+            'Responsive website design for restaurant Lindener Ratsstuben with digital menu',
+          ],
+        },
+        results: {
+          title: 'Results',
+          description: 'More guests, fewer missed reservations.',
+          metrics: [
+            { label: 'Online Presence', value: '100%', change: 'From 0 to Live' },
+            { label: 'Inquiries', value: '+60%', change: 'Via Website' },
+            { label: 'Load Time', value: '0.9s', change: 'Mobile LCP' },
+          ],
+        },
+        relatedServices: [
+          { name: 'Web Design & UI/UX', path: '/services/web-design' },
+          { name: 'Local SEO', path: '/services/seo' },
+        ],
+      },
+    },
+  },
+
+  // --- hey-fede (In Development) ---
+  'hey-fede': {
+    slug: 'hey-fede',
+    category: 'development',
+    type: 'in_progress',
+    status: 'building',
+    completion: 40,
+    thumbnail: 'heartbeat',
+    liveUrl: 'https://hey-fede.de',
+    heroImage: 'bg-surface-dark',
+    content: {
+      de: {
+        title: 'hey fede',
+        subtitle: 'In Entwicklung — Bald verfügbar',
+        category: 'Web Development',
+        stats: [
+          { label: 'Status', value: 'In Entwicklung' },
+          { label: 'Tech Stack', value: 'Next.js 15, Tailwind v4' },
+          { label: 'Fortschritt', value: '40%' },
+        ],
+        challenge: {
+          title: 'Das Projekt',
+          description:
+            'Ein neues digitales Erlebnis, das aktuell in enger Zusammenarbeit mit dem Kunden entwickelt wird. Details folgen nach dem Launch.',
+          list: ['Konzeptphase abgeschlossen', 'Design in Umsetzung', 'Launch geplant für 2026'],
+        },
+        approach: {
+          title: 'Unser Ansatz',
+          description:
+            'Modernste Technologien und ein iterativer Entwicklungsprozess für ein optimales Endergebnis.',
+          steps: [
+            {
+              title: 'Konzeption',
+              description: 'Gemeinsame Vision und Anforderungsanalyse.',
+            },
+            {
+              title: 'Design & Entwicklung',
+              description: 'Iterative Umsetzung mit regelmäßigem Feedback.',
+            },
+            {
+              title: 'Launch & Optimierung',
+              description: 'Go-Live mit Performance-Monitoring und kontinuierlicher Verbesserung.',
+            },
+          ],
+        },
+        solution: {
+          title: 'Coming Soon',
+          description:
+            'Dieses Projekt befindet sich aktuell in der aktiven Entwicklung. Sobald es live geht, werden hier die vollständigen Details veröffentlicht.',
+          images: [],
+        },
+        results: {
+          title: 'Ergebnisse',
+          description: 'Die Ergebnisse werden nach dem Launch veröffentlicht.',
+          metrics: [
+            { label: 'Status', value: 'In Dev', change: 'Aktiv' },
+            { label: 'Fortschritt', value: '40%', change: 'Q2 2026' },
+            { label: 'Launch', value: 'Bald', change: '2026' },
+          ],
+        },
+      },
+      en: {
+        title: 'hey fede',
+        subtitle: 'In Development — Coming Soon',
+        category: 'Web Development',
+        stats: [
+          { label: 'Status', value: 'In Development' },
+          { label: 'Tech Stack', value: 'Next.js 15, Tailwind v4' },
+          { label: 'Progress', value: '40%' },
+        ],
+        challenge: {
+          title: 'The Project',
+          description:
+            'A new digital experience currently being developed in close collaboration with the client. Details to follow after launch.',
+          list: ['Concept phase completed', 'Design in implementation', 'Launch planned for 2026'],
+        },
+        approach: {
+          title: 'Our Approach',
+          description:
+            'Cutting-edge technologies and an iterative development process for optimal results.',
+          steps: [
+            {
+              title: 'Conception',
+              description: 'Shared vision and requirements analysis.',
+            },
+            {
+              title: 'Design & Development',
+              description: 'Iterative implementation with regular feedback.',
+            },
+            {
+              title: 'Launch & Optimization',
+              description: 'Go-live with performance monitoring and continuous improvement.',
+            },
+          ],
+        },
+        solution: {
+          title: 'Coming Soon',
+          description:
+            'This project is currently in active development. Full details will be published once it goes live.',
+          images: [],
+        },
+        results: {
+          title: 'Results',
+          description: 'Results will be published after launch.',
+          metrics: [
+            { label: 'Status', value: 'In Dev', change: 'Active' },
+            { label: 'Progress', value: '40%', change: 'Q2 2026' },
+            { label: 'Launch', value: 'Soon', change: '2026' },
+          ],
+        },
+      },
+    },
+  },
 };

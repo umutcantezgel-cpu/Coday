@@ -17,6 +17,14 @@ const nextConfig: NextConfig = {
     ],
   },
   reactStrictMode: true,
+  experimental: {
+    optimizePackageImports: [
+      '@phosphor-icons/react',
+      '@phosphor-icons/react/dist/ssr',
+      'motion',
+      'motion/react',
+    ],
+  },
   async redirects() {
     return [
       {
