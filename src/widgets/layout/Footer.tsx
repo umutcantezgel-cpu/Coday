@@ -4,7 +4,12 @@ import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
-import { FacebookLogo, InstagramLogo, TwitterLogo, LinkedinLogo } from '@phosphor-icons/react/dist/ssr';
+import {
+  FacebookLogo,
+  InstagramLogo,
+  TwitterLogo,
+  LinkedinLogo,
+} from '@phosphor-icons/react/dist/ssr';
 import LogoLoop from '@/shared/ui/LogoLoop';
 import { TrustBadges } from '@/shared/ui/TrustBadges';
 import { clientLogos } from '@/shared/data/clientLogos';
@@ -186,7 +191,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  href="/services/web-development/full-stack-entwicklung"
+                  href="/services/web-development"
                   className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
                 >
                   {t('nav.services.fullstack.label', { defaultValue: 'Full-Stack Entwicklung' })}
@@ -194,7 +199,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  href="/oeffentliche-auftraege"
+                  href="/branchen/public-sector"
                   className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
                 >
                   {t('nav.industries.public', { defaultValue: 'Öffentliche Aufträge' })}
@@ -202,7 +207,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  href="/services/industries/startups-tech"
+                  href="/branchen/startups-tech"
                   className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
                 >
                   {t('nav.industries.tech', { defaultValue: 'Tech Startups' })}
@@ -218,27 +223,42 @@ export const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/standorte/hessen" className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]">
+                <Link
+                  href="/standorte/hessen"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
+                >
                   Webdesign Hessen
                 </Link>
               </li>
               <li>
-                <Link href="/standorte/wetzlar" className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]">
+                <Link
+                  href="/standorte/wetzlar"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
+                >
                   Webagentur Wetzlar
                 </Link>
               </li>
               <li>
-                <Link href="/branchen/arzt/wetzlar" className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]">
+                <Link
+                  href="/branchen/gesundheit"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
+                >
                   Praxis-Website Wetzlar
                 </Link>
               </li>
               <li>
-                <Link href="/branchen/arzt/giessen" className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]">
+                <Link
+                  href="/branchen/gesundheit"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
+                >
                   Praxis-Website Gießen
                 </Link>
               </li>
               <li>
-                <Link href="/branchen/handwerker/wetzlar" className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]">
+                <Link
+                  href="/branchen/handwerk"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
+                >
                   Handwerker Wetzlar
                 </Link>
               </li>
@@ -252,12 +272,18 @@ export const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-3 mb-6 text-sm text-gray-300">
               <li>
-                <a href="mailto:umut@codayweb.de" className="hover:text-primary transition-colors inline-flex items-center min-h-[44px]">
+                <a
+                  href="mailto:umut@codayweb.de"
+                  className="hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
+                >
                   umut@codayweb.de
                 </a>
               </li>
               <li>
-                <a href="tel:+4917641195301" className="hover:text-primary transition-colors inline-flex items-center min-h-[44px]">
+                <a
+                  href="tel:+4917641195301"
+                  className="hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
+                >
                   +49 176 41195301
                 </a>
               </li>
@@ -321,13 +347,22 @@ export const Footer: React.FC = () => {
             aria-label="Rechtliche Informationen"
             className="flex flex-wrap justify-center md:justify-end gap-x-4 gap-y-2 text-xs text-gray-400"
           >
-            <Link href="/legal/agb" className="hover:text-white transition-colors inline-flex items-center min-h-[44px]">
+            <Link
+              href="/legal/agb"
+              className="hover:text-white transition-colors inline-flex items-center min-h-[44px]"
+            >
               {t('nav.legal.agb')}
             </Link>
-            <Link href="/legal/datenschutz" className="hover:text-white transition-colors inline-flex items-center min-h-[44px]">
+            <Link
+              href="/legal/datenschutz"
+              className="hover:text-white transition-colors inline-flex items-center min-h-[44px]"
+            >
               {t('nav.legal.privacy')}
             </Link>
-            <Link href="/legal/impressum" className="hover:text-white transition-colors inline-flex items-center min-h-[44px]">
+            <Link
+              href="/legal/impressum"
+              className="hover:text-white transition-colors inline-flex items-center min-h-[44px]"
+            >
               {t('nav.legal.imprint')}
             </Link>
             <span>{t('footer.rights', { year: new Date().getFullYear() })}</span>
