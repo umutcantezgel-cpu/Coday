@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 import { useParams } from 'next/navigation';
@@ -20,6 +20,7 @@ import {
   ChartBar,
 } from '@phosphor-icons/react';
 import { Breadcrumbs } from '@/shared/ui/Breadcrumbs';
+import { Link } from '@/i18n/navigation';
 
 export async function loader({ params }: { params: { slug: string } }) {
   const data = getAiTripleBySlug(params.slug);
@@ -246,12 +247,12 @@ export default function TriplePage() {
                 Nutzen Sie unsere bewährte Infrastruktur, um Ihre digitale Präsenz im Bereich{' '}
                 {tripleData.service} auf das nächste Level zu heben.
               </p>
-              <a
-                href="/kontakt"
+              <Link
+                href="/contact"
                 className="flex items-center justify-center w-full py-4 bg-primary hover:bg-primary-dark text-white rounded-xl font-bold transition-colors"
               >
                 Strategiegespräch anfragen
-              </a>
+              </Link>
               <p className="text-center text-sm text-slate-400 mt-4">
                 Kostenlose Potenzialanalyse für {tripleData.city}
               </p>

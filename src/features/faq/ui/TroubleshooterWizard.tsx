@@ -1,7 +1,8 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { CaretRight, Check, ArrowRight } from '@phosphor-icons/react/dist/ssr';
+import { Link } from '@/i18n/navigation';
 
 // Simple decision tree data (internal for now, could move to data.ts later)
 const steps = [
@@ -57,7 +58,7 @@ const results = {
   cro: {
     title: 'Conversion Optimization',
     desc: "You don't need more traffic, you need better conversion.",
-    link: '/services/marketing',
+    link: '/services/seo',
   },
   seo: {
     title: 'SEO Strategy',
@@ -67,12 +68,12 @@ const results = {
   marketing: {
     title: 'Growth Marketing',
     desc: 'A holistic strategy to diversify your acquisition channels.',
-    link: '/services/marketing',
+    link: '/services/seo',
   },
   strategy: {
     title: 'Digital Consulting',
     desc: "Let's validate your idea before you build it.",
-    link: '/beratung',
+    link: '/booking',
   },
   dev: {
     title: 'Web/App Development',
@@ -82,7 +83,7 @@ const results = {
   'ai-support': {
     title: 'AI Integration',
     desc: 'Automate support with custom AI agents.',
-    link: '/services/web-development/web-apps',
+    link: '/services/development/web-apps',
   },
   automation: {
     title: 'Process Automation',
@@ -92,7 +93,7 @@ const results = {
   headless: {
     title: 'Headless CMS Migration',
     desc: 'Empower your marketing team with a modern CMS.',
-    link: '/services/web-development/headless-cms',
+    link: '/services/development/headless-cms',
   },
   performance: {
     title: 'Performance Audit',
@@ -107,7 +108,7 @@ const results = {
   'ux-audit': {
     title: 'UX/UI Audit',
     desc: 'Identify friction points and improve usability.',
-    link: '/services/web-design/audit',
+    link: '/services/design/ux-audit',
   },
 };
 
@@ -199,12 +200,12 @@ const TroubleshooterWizard = () => {
               <p className="text-lg text-slate-600  mb-8 max-w-lg mx-auto">
                 {results[result as keyof typeof results].desc}
               </p>
-              <a
+              <Link
                 href={results[result as keyof typeof results].link}
                 className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-all hover:scale-105 shadow-lg shadow-blue-500/30"
               >
                 Explore Solution <ArrowRight className="w-5 h-5" />
-              </a>
+              </Link>
             </motion.div>
           ) : null}
         </AnimatePresence>

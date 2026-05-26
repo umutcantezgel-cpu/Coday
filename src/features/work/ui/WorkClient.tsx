@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { useState, useCallback } from 'react';
 import { useTranslations } from 'next-intl';
@@ -10,6 +10,7 @@ import { WorkHero } from '@/features/work/components/WorkHero';
 import { InProgressSection } from '@/features/work/components/InProgressSection';
 import { TemplateVault } from '@/features/work/components/TemplateVault';
 import { CaseStudyCard } from '@/features/case-studies/ui/CaseStudyCard';
+import { Link } from '@/i18n/navigation';
 
 const Work: React.FC = () => {
   const t = useTranslations('work');
@@ -17,7 +18,7 @@ const Work: React.FC = () => {
 
   const handleFilterChange = useCallback((index: number) => {
     const filters = ['all', 'design', 'development', 'marketing'];
-    
+
     setFilter(filters[index]);
   }, []);
 
@@ -122,12 +123,12 @@ const Work: React.FC = () => {
           <p className="text-xl text-slate-400 max-w-2xl mx-auto mb-10">
             {t('sections.booking.subtitle')}
           </p>
-          <a
-            href="/beratung"
+          <Link
+            href="/booking"
             className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-white rounded-full font-bold text-lg hover:bg-primary-dark transition-colors shadow-lg shadow-primary/25"
           >
             Jetzt anfragen
-          </a>
+          </Link>
         </div>
       </section>
     </div>
