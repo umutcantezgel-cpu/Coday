@@ -65,6 +65,36 @@ const nextConfig: NextConfig = {
         destination: '/:locale/branchen/public-sector',
         permanent: true,
       },
+      {
+        source: '/services/marketing',
+        destination: '/services/seo',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/services/marketing',
+        destination: '/:locale/services/seo',
+        permanent: true,
+      },
+      {
+        source: '/services/web-development/:slug*',
+        destination: '/services/development/:slug*',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/services/web-development/:slug*',
+        destination: '/:locale/services/development/:slug*',
+        permanent: true,
+      },
+      {
+        source: '/services/web-design/audit',
+        destination: '/services/design/ux-audit',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/services/web-design/audit',
+        destination: '/:locale/services/design/ux-audit',
+        permanent: true,
+      },
     ];
   },
   async headers() {
