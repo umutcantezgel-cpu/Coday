@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
-import { ArrowRight, RocketLaunch as Rocket } from '@phosphor-icons/react/dist/ssr';
+import { ArrowRight } from '@phosphor-icons/react/dist/ssr';
 import GradientText from '@/shared/ui/GradientText';
 import { cn } from '@/shared/lib/utils';
 import { baseButtonStyles, buttonVariants, buttonSizes } from '@/shared/ui/ButtonStyles';
@@ -28,15 +28,6 @@ export const HeroSection: React.FC = () => {
       ></div>
 
       <div className="relative z-10 w-full max-w-[var(--container-narrow)] mx-auto px-4 sm:px-6 flex flex-col items-center">
-        
-        <div className="inline-flex mb-8 opacity-0 animate-fade-in-up transform-gpu will-change-transform">
-          <span className="bg-bg-secondary border border-border-default text-text-primary text-sm font-semibold px-4 py-1.5 rounded-full shadow-sm flex items-center gap-2">
-            <span className="bg-primary-600 text-white rounded-full p-0.5 inline-flex items-center justify-center select-none w-4 h-4">
-              <Rocket className="w-[14px] h-[14px]" aria-hidden="true" focusable="false" />
-            </span>
-            {t('hero.badge')}
-          </span>
-        </div>
 
         {/* LCP Element: Hero Headline */}
         <Typography variant="display" className="mb-6 text-text-primary uppercase drop-shadow-sm opacity-0 animate-fade-in-up [animation-delay:100ms] break-words sm:break-normal transform-gpu will-change-transform">
