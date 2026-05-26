@@ -1,9 +1,9 @@
-'use client';
+
 
 import React from 'react';
+import { WarningCircle } from '@phosphor-icons/react/dist/ssr';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import { WarningCircle } from '@phosphor-icons/react';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -22,11 +22,9 @@ export default function GlobalNotFound() {
             </div>
             <h1 className="text-6xl md:text-7xl font-bold mb-4 tracking-tight drop-shadow-sm">404</h1>
             <h2 className="text-xl md:text-2xl font-semibold mb-6">Seite nicht gefunden</h2>
-            
             <p className="text-text-secondary mb-10 leading-relaxed max-w-sm mx-auto">
               Die gesuchte Seite existiert nicht oder wurde verschoben.
             </p>
-            
             <a 
               href="/de" 
               className="inline-flex items-center justify-center rounded-xl font-medium transition-all duration-300 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 bg-primary-700 text-white shadow-md hover:bg-primary-800 min-h-[48px] px-8"
