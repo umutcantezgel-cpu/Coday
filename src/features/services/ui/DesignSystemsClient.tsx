@@ -12,7 +12,7 @@ import GradientText from '@/shared/ui/GradientText';
 import { motion } from 'motion/react';
 
 export function DesignSystemsClient() {
-  const t = useTranslations();
+  const t = useTranslations('services');
 
   const benefits = t.raw('design_systems_page.benefits.items') as {
     title: string;

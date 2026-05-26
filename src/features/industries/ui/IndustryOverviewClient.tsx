@@ -32,7 +32,7 @@ import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 
 export function IndustryOverviewClient() {
-  const t = useTranslations();
+  const t = useTranslations('industries');
 
   return (
     <div className="bg-background-light min-h-dvh pt-24 pb-20">

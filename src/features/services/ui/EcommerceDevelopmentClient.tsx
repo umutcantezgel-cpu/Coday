@@ -11,7 +11,7 @@ import { SeoHead } from '@/shared/ui/SeoHead';
 import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
 
 export function EcommerceDevelopmentClient() {
-  const t = useTranslations();
+  const t = useTranslations('services');
   const ecommerceSchema = {
     service: {
       name: 'E-Commerce Entwicklung',

@@ -59,7 +59,7 @@ const TechStackShowcase = dynamic(() => import('@/widgets/services/TechStackShow
 const TestimonialCard = dynamic(() => import('@/shared/ui/TestimonialCard').then(mod => mod.TestimonialCard));
 
 export function WebDevelopmentClient() {
-  const t = useTranslations();
+  const t = useTranslations('services');
   const categoryData = servicesData['web-development'];
   const features = Object.values(categoryData);
 

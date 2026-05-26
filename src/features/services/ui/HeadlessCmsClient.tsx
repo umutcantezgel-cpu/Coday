@@ -25,7 +25,7 @@ import LogoLoop from '@/shared/ui/LogoLoop';
 import { motion } from 'motion/react';
 
 export function HeadlessCmsClient() {
-  const t = useTranslations();
+  const t = useTranslations('services');
 
   return (
     <>

@@ -30,7 +30,7 @@ import { SeoHead } from '@/shared/ui/SeoHead';
 import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
 
 export function WebDesignClient() {
-  const t = useTranslations();
+  const t = useTranslations('services');
 
   const webDesignTechStack: TechItem[] = [
     { name: 'Figma', category: 'Design', iconNode: <OptimizedIcon icon={PenNib} size="lg" /> },

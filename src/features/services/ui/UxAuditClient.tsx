@@ -13,7 +13,7 @@ import CountUp from '@/shared/ui/CountUp';
 import { motion } from 'motion/react';
 
 export function UxAuditClient() {
-  const t = useTranslations();
+  const t = useTranslations('services');
 
   const analysisItems = t.raw('ux_audit_page.what_we_analyze.items') as {
     title: string;

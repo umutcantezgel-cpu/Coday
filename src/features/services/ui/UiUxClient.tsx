@@ -12,7 +12,7 @@ import GradientText from '@/shared/ui/GradientText';
 import { motion } from 'motion/react';
 
 export function UiUxClient() {
-  const t = useTranslations();
+  const t = useTranslations('services');
 
   const processSteps = t.raw('ui_ux_page.process.steps') as {
     title: string;

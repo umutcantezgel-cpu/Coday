@@ -15,7 +15,7 @@ import BookingCalendar from '@/features/booking/ui/BookingCalendar';
 import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
 
 export function ConsultingClient() {
-  const t = useTranslations();
+  const t = useTranslations('services');
 
   const consultingSchema = {
     service: {

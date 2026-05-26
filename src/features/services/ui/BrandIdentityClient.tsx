@@ -12,7 +12,7 @@ import GradientText from '@/shared/ui/GradientText';
 import { motion } from 'motion/react';
 
 export function BrandIdentityClient() {
-  const t = useTranslations();
+  const t = useTranslations('services');
 
   const tags = t.raw('brand_identity_page.digital_branding.tags') as string[];
   const processSteps = t.raw('brand_identity_page.process.steps') as {

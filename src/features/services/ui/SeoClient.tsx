@@ -29,7 +29,7 @@ import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
 import { TestimonialCard } from '@/shared/ui/TestimonialCard';
 
 export function SeoClient() {
-  const t = useTranslations();
+  const t = useTranslations('services');
 
   const seoTechStack: TechItem[] = [
     {

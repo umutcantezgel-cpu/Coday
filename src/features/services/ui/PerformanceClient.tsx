@@ -13,7 +13,7 @@ import { SeoHead } from '@/shared/ui/SeoHead';
 import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
 
 export function PerformanceClient() {
-  const t = useTranslations();
+  const t = useTranslations('services');
 
   const performanceSchema = {
     service: {

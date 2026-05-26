@@ -30,7 +30,7 @@ interface FaqItem {
 }
 
 export function MigrationClient() {
-  const t = useTranslations();
+  const t = useTranslations('services');
 
   const processSteps =
     (t.raw('migration_page.process.steps') as ProcessStep[]) || [];

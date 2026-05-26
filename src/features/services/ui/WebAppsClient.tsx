@@ -49,7 +49,7 @@ const iconMap: Record<string, React.ElementType> = {
 };
 
 export function WebAppsClient() {
-  const t = useTranslations();
+  const t = useTranslations('services');
   const [scrolled, setScrolled] = useState(0);
 
   useEffect(() => {

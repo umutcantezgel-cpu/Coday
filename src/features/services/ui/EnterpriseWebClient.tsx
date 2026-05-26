@@ -18,7 +18,7 @@ import { ChartLineUp } from '@phosphor-icons/react';
 import { Link } from '@/i18n/navigation';
 
 export function EnterpriseWebClient() {
-  const t = useTranslations();
+  const t = useTranslations('services');
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,

@@ -40,7 +40,7 @@ const iconMap: Record<string, React.ElementType> = {
 
 export function IndustryDetailClient() {
   const { industry: slug } = useParams<{ industry: string }>();
-  const t = useTranslations();
+  const t = useTranslations('industries');
   const industry = slug ? industriesData[slug] : undefined;
   const heroImage =
     slug && industryHeroImages[slug] ? industryHeroImages[slug] : industryFallbackImage;

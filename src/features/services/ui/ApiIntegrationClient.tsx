@@ -31,7 +31,7 @@ interface FaqItem {
 }
 
 export function ApiIntegrationClient() {
-  const t = useTranslations();
+  const t = useTranslations('services');
 
   return (
     <>
