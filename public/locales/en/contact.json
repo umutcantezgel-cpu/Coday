@@ -69,22 +69,37 @@
     "shopify": "Shopify Experts"
   },
   "testimonial": {
-    "text": "The collaboration was professional from the start. The final result far exceeded our expectations.",
-    "author": "Michael Weber",
-    "role": "Head of Marketing, ImmoScout24"
+    "text": "Professional implementation with direct access to the developer. This is how web development should work.",
+    "author": "Batherm",
+    "role": "Heating & Plumbing, Wetzlar"
   },
   "wizard": {
     "back": "Back",
     "step1": {
-      "options": ["Web Development", "E-Commerce Shop", "App Development", "Custom Software"],
+      "options": [
+        "Web Development",
+        "E-Commerce Shop",
+        "App Development",
+        "Custom Software"
+      ],
       "title": "How can we help?"
     },
     "step2": {
-      "options": ["< 5.000 €", "5.000 € - 15.000 €", "15.000 € - 50.000 €", "> 50.000 €"],
+      "options": [
+        "< 5.000 €",
+        "5.000 € - 15.000 €",
+        "15.000 € - 50.000 €",
+        "> 50.000 €"
+      ],
       "title": "What is the planned budget?"
     },
     "step3": {
-      "options": ["As soon as possible", "In 1-2 months", "This year", "Research only"],
+      "options": [
+        "As soon as possible",
+        "In 1-2 months",
+        "This year",
+        "Research only"
+      ],
       "title": "When should we start?"
     },
     "step4": {

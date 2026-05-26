@@ -276,7 +276,7 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
               </div>
               <Link
                 href="/contact"
-                className="flex-1 flex items-center justify-center gap-2 bg-slate-900 text-white py-3.5 rounded-xl font-semibold active:scale-[0.98] transition-transform"
+                className="flex-1 flex items-center justify-center gap-2 bg-primary text-white py-3.5 rounded-xl font-semibold active:scale-[0.98] transition-transform shadow-lg shadow-primary/25"
                 onClick={onClose}
               >
                 <span>{t('nav.cta_booking', { defaultValue: 'Termin buchen' })}</span>

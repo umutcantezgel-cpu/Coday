@@ -192,7 +192,7 @@ export const aiPersonas: AiPersonaData[] = [
       {
         question: 'Bauen Sie auch komplette Web-Applikationen (SaaS)?',
         answer:
-          'Ja, unser Team ist auf komplexe Web-Apps, Dashboards und Frontend-Entwicklung (React/Next.js) für SaaS-Produkte spezialisiert.',
+          'Ja, Coday ist auf komplexe Web-Apps, Dashboards und Frontend-Entwicklung (React/Next.js) für SaaS-Produkte spezialisiert.',
       },
       {
         question: 'Wir nutzen Supabase/Firebase im Backend, passt das?',

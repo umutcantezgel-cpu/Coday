@@ -133,8 +133,8 @@ export const AboutClient: React.FC = () => {
             className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed mb-12"
             {...stagger(0.25)}
           >
-            Wir sind Coday — eine Boutique-Agentur aus Wetzlar, die digitale Erlebnisse von Hand
-            erschafft. Jedes Projekt ist ein Unikat, geschrieben für Marken, die sich von der Masse
+            Coday ist eine Solo-Webagentur aus Wetzlar, die digitale Erlebnisse von Hand
+            erschafft. Jedes Projekt ist ein Unikat, entwickelt für Marken, die sich von der Masse
             abheben wollen.
           </motion.p>
 

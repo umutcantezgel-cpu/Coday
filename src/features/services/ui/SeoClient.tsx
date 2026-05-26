@@ -233,16 +233,7 @@ export function SeoClient() {
         subtitle={t('seo_page.tech_stack.description')}
       />
 
-      {/* Testimonial */}
-      <section className="px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto mb-24">
-        <TestimonialCard
-          quote="Seit Coday unsere SEO-Strategie übernommen hat, verzeichnen wir nicht nur deutlich mehr organischen Traffic, sondern auch wesentlich qualifiziertere Leads. Der ROI dieser Kampagne hat unsere Erwartungen weit übertroffen."
-          authorName="Thomas M."
-          authorPosition="Geschäftsführer"
-          authorCompany="EcoSolutions GmbH"
-          rating={5}
-        />
-      </section>
+
 
       {/* Relevant FAQs */}
       <RelevantFAQs serviceId="seo" className="mb-24" />
