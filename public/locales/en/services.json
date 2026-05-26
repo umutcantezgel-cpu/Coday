@@ -157,7 +157,13 @@
     },
     "digital_branding": {
       "description": "Today, a brand must work primarily on smartphones. We don't think in letterheads, but in pixels.",
-      "tags": ["Logo Design", "Typography", "Color Palette", "Tone of Voice", "Social Assets"],
+      "tags": [
+        "Logo Design",
+        "Typography",
+        "Color Palette",
+        "Tone of Voice",
+        "Social Assets"
+      ],
       "title": "Digital-First Branding"
     },
     "hero": {
@@ -658,7 +664,14 @@
         "Java Monoliths"
       ],
       "title": "Supported Technologies",
-      "to": ["Next.js", "React", "Node.js", "Supabase", "Headless CMS", "Vercel Edge"]
+      "to": [
+        "Next.js",
+        "React",
+        "Node.js",
+        "Supabase",
+        "Headless CMS",
+        "Vercel Edge"
+      ]
     },
     "meta": {
       "title": "System Migration & Legacy Modernization | Coday",
@@ -1257,7 +1270,12 @@
         "title": "Design Systems",
         "description": "Consistent component libraries for scalable products and fast development.",
         "long_description": "A Design System is the Single Source of Truth for your product. We develop modular component systems that ensure consistency and accelerate development.",
-        "benefits": ["Consistent UI", "Faster development", "Simplified maintenance", "Scalability"]
+        "benefits": [
+          "Consistent UI",
+          "Faster development",
+          "Simplified maintenance",
+          "Scalability"
+        ]
       },
       "website-relaunch": {
         "title": "Website Relaunch",
@@ -1526,5 +1544,10 @@
       "title": "Web Development Agency | React & Next.js Experts",
       "description": "High-end web development with Next.js, React, and TypeScript. Fast, scalable, and secure websites that leave your competition behind."
     }
+  },
+  "actions": {
+    "read_more": "Read more",
+    "contact": "Get in touch",
+    "learn_more": "View details"
   }
 }

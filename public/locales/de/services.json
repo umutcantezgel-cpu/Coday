@@ -157,7 +157,13 @@
     },
     "digital_branding": {
       "description": "Eine moderne Marke muss an jedem digitalen Touchpoint performen. Wir denken nicht in Briefpapier, sondern in digitalen Ökosystemen.",
-      "tags": ["Logo Design", "Typography", "Color Palette", "Tone of Voice", "Social Assets"],
+      "tags": [
+        "Logo Design",
+        "Typography",
+        "Color Palette",
+        "Tone of Voice",
+        "Social Assets"
+      ],
       "title": "Digital-First Branding"
     },
     "hero": {
@@ -710,7 +716,14 @@
         "Java Monolithen"
       ],
       "title": "Wir sprechen Ihre Sprache.",
-      "to": ["Next.js", "React", "Node.js", "Supabase", "Headless CMS", "Vercel Edge"]
+      "to": [
+        "Next.js",
+        "React",
+        "Node.js",
+        "Supabase",
+        "Headless CMS",
+        "Vercel Edge"
+      ]
     },
     "meta": {
       "title": "System Migration & Legacy Modernization | Coday",
@@ -1096,6 +1109,11 @@
     "tech_stack": {
       "title": "Unser Design & Prototyping Stack",
       "description": "Wir nutzen modernste Design-Tools für pixelgenaue Layouts, interaktive Prototypen und reibungslose Developer-Handoffs."
+    },
+    "psychology": {
+      "label": "Neuro-Design",
+      "title": "Die Psychologie hinter großartigem Design",
+      "description": "Jedes Designelement ist bewusst gewählt, um Ihre Zielgruppe emotional anzusprechen und zu überzeugen."
     }
   },
   "services_data": {
@@ -1589,5 +1607,10 @@
       "title": "Webentwicklung Agentur | React & Next.js Experten",
       "description": "High-End Webentwicklung mit Next.js, React und TypeScript. Schnelle, skalierbare und sichere Websites, die Ihre Konkurrenz abhängen."
     }
+  },
+  "actions": {
+    "read_more": "Mehr erfahren",
+    "contact": "Kontakt aufnehmen",
+    "learn_more": "Details ansehen"
   }
 }

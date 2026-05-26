@@ -83,9 +83,6 @@
     "testimonials": {
       "label": "What our clients say",
       "title": "Results that convince."
-    },
-    "trust": {
-      "title": "Trusted by leading companies"
     }
   },
   "hero": {
@@ -99,7 +96,8 @@
       "work": "Portfolio",
       "process": "Process",
       "pricing": "Pricing",
-      "contact": "Start Project"
+      "contact": "Start Project",
+      "partnerschaft": "Partnership"
     },
     "about": {
       "contact": {
@@ -179,7 +177,8 @@
       "label": "Industries",
       "real_estate": "Real Estate",
       "service": "Services",
-      "public": "Public Sector"
+      "public": "Public Sector",
+      "tech": "Tech Startups"
     },
     "legal": {
       "hub": "Overview",
@@ -271,6 +270,9 @@
       "web_development": {
         "desc": "Scalable Web Apps & High-Performance Sites",
         "label": "Web Development"
+      },
+      "fullstack": {
+        "label": "Full-Stack Development"
       }
     },
     "work": {
