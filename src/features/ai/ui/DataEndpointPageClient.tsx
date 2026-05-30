@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 import { useParams } from 'next/navigation';
@@ -11,7 +11,8 @@ import { aiDataEndpoints } from '@/shared/data/ai-data-endpoints';
 import { Download, FileCsv, FileText, Database, ShieldCheck } from '@phosphor-icons/react';
 
 export default function DataEndpointPage() {
-  const { dataset } = useParams();
+  const params = useParams();
+  const dataset = params?.dataset as string;
   const endpoint = aiDataEndpoints.find((d) => d.slug === dataset);
 
   if (!endpoint) {

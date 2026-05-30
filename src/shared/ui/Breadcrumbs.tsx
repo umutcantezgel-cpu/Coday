@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 import { usePathname } from 'next/navigation';
@@ -37,6 +37,7 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ className = '' }) => {
       seo: 'nav.services.seo.label',
       performance: 'nav.services.performance.label',
       blog: 'nav.academy.blog.label',
+      pricing: 'nav.main.pricing',
     };
 
     return mappings[pathSegment] || pathSegment;

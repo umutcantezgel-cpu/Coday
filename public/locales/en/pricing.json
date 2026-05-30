@@ -186,5 +186,38 @@
         "10h Dev Time"
       ]
     }
+  },
+  "value_prop": {
+    "title": "Warum Next.js? Warum ab 2.500€?",
+    "description": "Ihre Website ist kein simples Aushängeschild mehr – sie ist Ihr stärkster, vollautomatisierter Vertriebsmitarbeiter. Eine Investition in Performance ist eine Investition in messbaren Umsatz.",
+    "points": [
+      {
+        "title": "Millisekunden-Ladezeiten",
+        "description": "53% der Nutzer springen ab, wenn eine Seite länger als 3 Sekunden lädt. Unsere Headless-Architekturen garantieren Ladezeiten im Millisekundenbereich."
+      },
+      {
+        "title": "Maximale Conversion",
+        "description": "Jede Sekunde Verzögerung kostet Sie 7% an Conversion. Ein 100/100 Google Lighthouse-Score bedeutet ein reibungsloses Nutzererlebnis und signifikant mehr Anfragen."
+      },
+      {
+        "title": "Local SEO Dominanz",
+        "description": "Mit strukturierten Daten (JSON-LD) und Entity-Based SEO katapultieren wir Ihr lokales Geschäft (Wetzlar & Hessen) an die Spitze des Google Local Packs."
+      }
+    ]
+  },
+  "trust_section": {
+    "title": "Ergebnisse, die für sich sprechen",
+    "references": [
+      {
+        "name": "Batherm (Wetzlar)",
+        "metric": "+240%",
+        "label": "Mehr qualifizierte B2B-Anfragen im ersten Quartal nach Relaunch"
+      },
+      {
+        "name": "Lindener Ratsstuben",
+        "metric": "< 0.8s",
+        "label": "Ladezeit (LCP) im 99. Perzentil, massiver Boost bei Google Maps"
+      }
+    ]
   }
 }

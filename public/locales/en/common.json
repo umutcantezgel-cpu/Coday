@@ -286,6 +286,9 @@
       },
       "label": "Work",
       "view_all": "View All Projects"
+    },
+    "mobile": {
+      "label": "Menü"
     }
   },
   "logobar": {
@@ -317,5 +320,11 @@
   "announcement": {
     "text": "Enterprise Audit: Free potential analysis available for Q4.",
     "cta": "Request Audit →"
-  }
+  },
+  "actions": {
+    "read_more": "Mehr erfahren"
+  },
+  "de": "Deutsch",
+  "en": "English",
+  "about": "Über uns"
 }

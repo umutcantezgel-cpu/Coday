@@ -114,6 +114,22 @@
     },
     "challenge": "Die Herausforderung",
     "approach": "Unser Ansatz",
-    "results": "Ergebnisse"
+    "results": "Ergebnisse",
+    "cta_title": "Ähnliches Projekt?",
+    "cta_desc": "Lassen Sie uns über Ihre Vision sprechen.",
+    "cta_button": "Projekt anfragen"
+  },
+  "sections": {
+    "in_progress": {
+      "title": "In Arbeit",
+      "subtitle": "Aktuelle Projekte in Entwicklung."
+    },
+    "templates": {
+      "title": "Templates",
+      "subtitle": "Startklare Lösungen."
+    }
+  },
+  "actions": {
+    "view_live": "Live ansehen"
   }
 }

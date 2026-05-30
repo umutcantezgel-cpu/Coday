@@ -117,5 +117,10 @@
     "title": "Enough Theory.",
     "subtitle": "Speak directly with a Senior Architect, not a Sales Manager.",
     "cta": "Select Time"
+  },
+  "case_study": {
+    "label": "Consulting in Action",
+    "title": "Von 0 auf Millionenbewertung.",
+    "description": "Wie wir durch präzise IT-Strategie und skalierbare Architektur das technische Fundament für einen erfolgreichen Exit gelegt haben."
   }
 }

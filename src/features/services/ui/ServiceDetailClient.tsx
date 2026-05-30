@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import dynamic from 'next/dynamic';
 import { useParams } from 'next/navigation';
@@ -88,7 +88,9 @@ const getServiceImage = (category?: string, slug?: string) => {
 };
 
 export function ServiceDetailClient() {
-  const { category, slug } = useParams<{ category: string; slug: string }>();
+  const params = useParams();
+  const category = params?.category as string;
+  const slug = params?.slug as string;
 
   // Find the service data based on URL params
   const t = useTranslations('services');
@@ -163,7 +165,6 @@ export function ServiceDetailClient() {
 
   return (
     <div className="bg-background-light pt-24 pb-0">
-
       {/* Breadcrumb */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
         <div className="flex items-center text-sm text-gray-500">
@@ -295,7 +296,7 @@ export function ServiceDetailClient() {
                 {t('generic_detail.process.label')}
               </span>
               <h2 className="font-display font-bold text-3xl sm:text-5xl mb-6">
-                {t.rich("generic_detail.process.title", { br: () => <br /> })}
+                {t.rich('generic_detail.process.title', { br: () => <br /> })}
               </h2>
             </div>
 
@@ -332,7 +333,7 @@ export function ServiceDetailClient() {
                 {t('generic_detail.advantages.label')}
               </span>
               <h2 className="font-display font-bold text-3xl sm:text-4xl text-gray-900 mb-6">
-                {t.rich("generic_detail.advantages.title", { br: () => <br /> })}
+                {t.rich('generic_detail.advantages.title', { br: () => <br /> })}
               </h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                 {t('generic_detail.advantages.desc')}
@@ -433,7 +434,7 @@ export function ServiceDetailClient() {
       <StickyCTA />
     </div>
   );
-};
+}
 
 const FaqItem: React.FC<{ question: string; answer: string }> = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -458,5 +459,3 @@ const FaqItem: React.FC<{ question: string; answer: string }> = ({ question, ans
     </div>
   );
 };
-
-

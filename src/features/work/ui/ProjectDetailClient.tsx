@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { useEffect } from 'react';
 import { Link as NavLink } from '@/i18n/navigation';
@@ -25,7 +25,8 @@ const iconMap: Record<string, React.ElementType> = {
 const ProjectDetail: React.FC = () => {
   const t = useTranslations('work');
   const locale = useLocale();
-  const { slug } = useParams<{ slug: string }>();
+  const params = useParams();
+  const slug = params?.slug as string;
 
   const currentLang = locale as 'de' | 'en';
   const projectData = workData[slug || ''];
@@ -213,9 +214,7 @@ const ProjectDetail: React.FC = () => {
               {/* Related Services */}
               {project.relatedServices && project.relatedServices.length > 0 && (
                 <div className="mt-8 pt-6 border-t border-gray-100">
-                  <h4 className="font-display font-bold text-lg mb-4">
-                    {t('')}
-                  </h4>
+                  <h4 className="font-display font-bold text-lg mb-4">{t('')}</h4>
                   <ul className="space-y-2">
                     {project.relatedServices.map((service, idx) => (
                       <li key={idx}>
@@ -432,9 +431,7 @@ const ProjectDetail: React.FC = () => {
                   viewport={{ once: true, margin: '-50px' }}
                   transition={{ duration: 0.5 }}
                 >
-                  <h2 className="font-display font-bold text-3xl text-gray-900 mb-6">
-                    {t('')}
-                  </h2>
+                  <h2 className="font-display font-bold text-3xl text-gray-900 mb-6">{t('')}</h2>
 
                   {project.beforeAfter.beforeImage && project.beforeAfter.afterImage ? (
                     <BeforeAfterSlider

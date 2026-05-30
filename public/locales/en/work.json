@@ -2,7 +2,11 @@
   "hero": {
     "title": "Web Design Portfolio | Case Studies & Projects - Coday",
     "description": "Explore our web design portfolio and SEO case studies. We build digital economic weapons for brands that want to dominate their industry.",
-    "label": "Evidence of Excellence"
+    "label": "Evidence of Excellence",
+    "badge": "Unsere Arbeit",
+    "desc": "Jedes Projekt erzählt eine Geschichte. Hier sind unsere neuesten Erfolgsgeschichten, die für sich sprechen.",
+    "title_gradient": "Ergebnisse.",
+    "title_start": "Echte"
   },
   "sections": {
     "in_progress": {
@@ -105,6 +109,30 @@
     },
     "challenge": "The Challenge",
     "approach": "Our Approach",
-    "results": "Results"
+    "results": "Results",
+    "hero": {
+      "title": "Wir erschaffen digitale Monumente",
+      "description": "Keine einfachen Websites. Wir bauen ökonomische Waffen für Marken, die dominieren wollen.",
+      "label": "Evidence of Excellence"
+    },
+    "sections": {
+      "in_progress": {
+        "title": "Das Labor / In Progress",
+        "subtitle": "Live-Builds, die in Echtzeit entstehen."
+      },
+      "case_studies": {
+        "title": "Ausgewählte Arbeiten"
+      },
+      "templates": {
+        "title": "Der Safe",
+        "subtitle": "Produktionsreife Templates, optimiert für Speed und Conversion."
+      }
+    },
+    "actions": {
+      "view_live": "Live Build ansehen"
+    },
+    "cta_title": "Ähnliches Projekt?",
+    "cta_desc": "Lassen Sie uns über Ihre Vision sprechen.",
+    "cta_button": "Projekt anfragen"
   }
 }

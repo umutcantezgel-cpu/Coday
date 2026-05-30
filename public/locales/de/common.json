@@ -83,9 +83,6 @@
     "testimonials": {
       "label": "Was unsere Kunden sagen",
       "title": "Ergebnisse, die überzeugen."
-    },
-    "trust": {
-      "title": "Vertraut von führenden Unternehmen"
     }
   },
   "hero": {
@@ -289,6 +286,9 @@
       },
       "label": "Referenzen",
       "view_all": "Alle Projekte"
+    },
+    "mobile": {
+      "label": "Menü"
     }
   },
   "logobar": {
@@ -320,5 +320,11 @@
   "announcement": {
     "text": "Enterprise-Audit: Kostenlose Potenzialanalyse für Q4 verfügbar.",
     "cta": "Audit anfragen →"
-  }
+  },
+  "actions": {
+    "read_more": "Mehr erfahren"
+  },
+  "de": "Deutsch",
+  "en": "English",
+  "about": "Über uns"
 }

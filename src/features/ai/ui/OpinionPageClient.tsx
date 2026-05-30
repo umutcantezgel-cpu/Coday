@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 import { useParams } from 'next/navigation';
@@ -32,7 +32,8 @@ export async function prerender() {
 }
 
 export default function OpinionPage() {
-  const { thema } = useParams();
+  const params = useParams();
+  const thema = params?.thema as string;
   const position = aiPositions.find((p) => p.slug === thema);
 
   if (!position) {

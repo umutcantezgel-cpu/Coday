@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 import { useParams } from 'next/navigation';
@@ -40,8 +40,9 @@ export async function prerender() {
 }
 
 export default function AiCostPage() {
-  const { branche } = useParams();
-  const costData = getAiCostBySlug(typeof branche === 'string' ? branche : (branche?.[0] || ''));
+  const params = useParams();
+  const branche = params?.branche as string;
+  const costData = getAiCostBySlug(typeof branche === 'string' ? branche : branche?.[0] || '');
 
   if (!costData) {
     return <div>Branche nicht gefunden</div>;

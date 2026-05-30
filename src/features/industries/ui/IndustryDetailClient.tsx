@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React from 'react';
 import dynamic from 'next/dynamic';
 import { useParams } from 'next/navigation';
@@ -39,7 +39,8 @@ const iconMap: Record<string, React.ElementType> = {
 };
 
 export function IndustryDetailClient() {
-  const { industry: slug } = useParams<{ industry: string }>();
+  const params = useParams();
+  const slug = params?.industry as string;
   const t = useTranslations('industries');
   const industry = slug ? industriesData[slug] : undefined;
   const heroImage =
@@ -267,6 +268,4 @@ export function IndustryDetailClient() {
       </section>
     </div>
   );
-};
-
-
+}

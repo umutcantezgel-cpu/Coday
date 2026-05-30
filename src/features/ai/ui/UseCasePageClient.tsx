@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 import { useParams } from 'next/navigation';
@@ -35,7 +35,8 @@ export async function prerender() {
 }
 
 export default function UseCasePage() {
-  const { scenario } = useParams();
+  const params = useParams();
+  const scenario = params?.scenario as string;
   const slugStr = Array.isArray(scenario) ? scenario[0] : scenario;
   const useCase = getUseCaseBySlug(slugStr || '');
 

@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 import { useParams } from 'next/navigation';
@@ -40,8 +40,11 @@ export async function prerender() {
 }
 
 export default function PersonaPage() {
-  const { persona } = useParams();
-  const personaData = getAiPersonaBySlug(typeof persona === 'string' ? persona : (persona?.[0] || ''));
+  const params = useParams();
+  const persona = params?.persona as string;
+  const personaData = getAiPersonaBySlug(
+    typeof persona === 'string' ? persona : persona?.[0] || ''
+  );
 
   if (!personaData) {
     return <div>Daten nicht gefunden</div>;

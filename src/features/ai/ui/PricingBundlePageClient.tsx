@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { useState } from 'react';
 import { useParams } from 'next/navigation';
@@ -67,7 +67,8 @@ const FaqItem = ({ question, answer }: { question: string; answer: string }) => 
 };
 
 export default function PricingBundlePage() {
-  const { bundle } = useParams();
+  const params = useParams();
+  const bundle = params?.bundle as string;
   const pricingData = aiPricingBundles.find((b) => b.slug === bundle);
 
   if (!pricingData) {

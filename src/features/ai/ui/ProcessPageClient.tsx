@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 import { Link } from '@/i18n/navigation';
@@ -44,7 +44,8 @@ export async function prerender() {
 }
 
 export default function ProcessPage() {
-  const { schritt } = useParams();
+  const params = useParams();
+  const schritt = params?.schritt as string;
   const processData = aiProcesses.find((p) => p.slug === schritt);
 
   if (!processData) {

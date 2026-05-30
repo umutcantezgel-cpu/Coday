@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { useEffect, useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
@@ -67,11 +67,11 @@ const Packages: React.FC = () => {
       tagline: t('packages.starter.tagline'),
       setupPrice: 2500,
       monthlyPrice: 0,
-      features: Array.isArray(t.raw('packages.starter.features'))
-        ? (t.raw('packages.starter.features') as string[])
+      features: Array.isArray(t.raw('features.starter'))
+        ? (t.raw('features.starter') as string[])
         : [],
-      notIncluded: Array.isArray(t.raw('packages.starter.notIncluded'))
-        ? (t.raw('packages.starter.notIncluded') as string[])
+      notIncluded: Array.isArray(t.raw('not_included.starter'))
+        ? (t.raw('not_included.starter') as string[])
         : [],
       cta: t('packages.starter.cta'),
       deliveryDays: 14,
@@ -83,11 +83,11 @@ const Packages: React.FC = () => {
       setupPrice: 5000,
       monthlyPrice: 0,
       popular: true,
-      features: Array.isArray(t.raw('packages.professional.features'))
-        ? (t.raw('packages.professional.features') as string[])
+      features: Array.isArray(t.raw('features.professional'))
+        ? (t.raw('features.professional') as string[])
         : [],
-      notIncluded: Array.isArray(t.raw('packages.professional.notIncluded'))
-        ? (t.raw('packages.professional.notIncluded') as string[])
+      notIncluded: Array.isArray(t.raw('not_included.professional'))
+        ? (t.raw('not_included.professional') as string[])
         : [],
       cta: t('packages.professional.cta'),
       deliveryDays: 21,
@@ -98,8 +98,8 @@ const Packages: React.FC = () => {
       tagline: t('packages.enterprise.tagline'),
       setupPrice: 10000,
       monthlyPrice: 0,
-      features: Array.isArray(t.raw('packages.enterprise.features'))
-        ? (t.raw('packages.enterprise.features') as string[])
+      features: Array.isArray(t.raw('features.enterprise'))
+        ? (t.raw('features.enterprise') as string[])
         : [],
       cta: t('packages.enterprise.cta'),
       deliveryDays: 30,
@@ -159,14 +159,14 @@ const Packages: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-display font-black text-4xl sm:text-5xl md:text-6xl text-gray-900 mb-6"
           >
-            {t('page.headline').split('<0>')[0]}
+            {t.raw('page.headline').split('<0>')[0]}
             <GradientText
               colors={['#1A9A9A', '#D69E2E', '#1A9A9A']}
               animationSpeed={8}
               showBorder={false}
               className="inline-block"
             >
-              {t('page.headline').split('<0>')[1]?.split('</0>')[0]}
+              {t.raw('page.headline').split('<0>')[1]?.split('</0>')[0]}
             </GradientText>
           </motion.h1>
           <motion.p
@@ -177,6 +177,35 @@ const Packages: React.FC = () => {
           >
             {t('page.subheadline')}
           </motion.p>
+        </div>
+      </div>
+
+      {/* Value Proposition Section */}
+      <div className="bg-white py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="font-display font-bold text-3xl md:text-4xl text-gray-900 mb-6">
+              {t('value_prop.title')}
+            </h2>
+            <p className="text-lg text-gray-600">{t('value_prop.description')}</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {(Array.isArray(t.raw('value_prop.points'))
+              ? (t.raw('value_prop.points') as any[])
+              : []
+            ).map((point, idx) => (
+              <div
+                key={idx}
+                className="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow duration-300"
+              >
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                  <OptimizedIcon icon={CheckCircle} className="text-2xl text-primary" />
+                </div>
+                <h3 className="font-display font-bold text-xl text-gray-900 mb-3">{point.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{point.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -331,6 +360,42 @@ const Packages: React.FC = () => {
               </motion.div>
             ))}
           </div>
+
+          {/* Local Trust & References Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-20 max-w-5xl mx-auto"
+          >
+            <div className="text-center mb-10">
+              <h3 className="font-display font-bold text-2xl text-white/90">
+                {t('trust_section.title')}
+              </h3>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {(Array.isArray(t.raw('trust_section.references'))
+                ? (t.raw('trust_section.references') as any[])
+                : []
+              ).map((ref, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white/[0.04] backdrop-blur-lg border border-white/[0.08] rounded-2xl p-8 flex items-center gap-6 hover:bg-white/[0.07] transition-colors duration-300"
+                >
+                  <div className="flex-shrink-0">
+                    <span className="font-display font-black text-4xl text-primary">
+                      {ref.metric}
+                    </span>
+                  </div>
+                  <div>
+                    <p className="text-white font-bold text-lg mb-1">{ref.name}</p>
+                    <p className="text-gray-400 text-sm leading-relaxed">{ref.label}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
 
           {/* Custom Pricing Banner */}
           <motion.div
@@ -528,8 +593,8 @@ const Packages: React.FC = () => {
                     </span>
                   </div>
                   <ul className="space-y-3 mb-8 flex-grow">
-                    {(Array.isArray(t.raw('retainers.features'))
-                      ? (t.raw('retainers.features') as string[])
+                    {(Array.isArray(t.raw(`retainers.${level}.features`))
+                      ? (t.raw(`retainers.${level}.features`) as string[])
                       : []
                     ).map((feature, i) => (
                       <li key={i} className="flex items-start gap-3">

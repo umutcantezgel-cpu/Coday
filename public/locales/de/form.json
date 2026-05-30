@@ -4,7 +4,8 @@
       "back": "Zurück",
       "next": "Weiter",
       "submit": "Absenden",
-      "submitting": "Wird gesendet..."
+      "submitting": "Wird gesendet...",
+      "submit_next": "Weiter"
     },
     "error": {
       "submit": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut."
@@ -28,7 +29,8 @@
           "ecommerce": "E-Commerce",
           "webapp": "Web Applikation",
           "webdesign": "Webdesign & Relaunch"
-        }
+        },
+        "placeholder": "Bitte wählen"
       },
       "timeline": {
         "label": "Zeitplan",
@@ -71,7 +73,11 @@
         "hint": "Hinweis: Diese Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen.",
         "label": "Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Zuordnung für eventuelle Rückfragen dauerhaft gespeichert werden."
       },
-      "title": "Ihre Kontaktdaten"
+      "title": "Ihre Kontaktdaten",
+      "message": {
+        "label": "Ihre Nachricht",
+        "placeholder": "Beschreiben Sie kurz Ihr Projekt..."
+      }
     },
     "steps": {
       "contact": "Kontakt",
@@ -90,6 +96,31 @@
       "min_length_other": "Mindestens {count} Zeichen erforderlich",
       "privacy": "Bitte akzeptieren Sie die Datenschutzbestimmungen",
       "required": "Dieses Feld ist erforderlich"
+    },
+    "title_direct": "Schildern Sie Ihr Projekt",
+    "subtitle": "Wir melden uns innerhalb von 24 Stunden."
+  },
+  "cookie": {
+    "settings": {
+      "title": "Cookie Einstellungen",
+      "desc": "Wir nutzen Cookies für Analytics."
+    },
+    "essential": {
+      "title": "Essenziell",
+      "desc": "Notwendig für die Webseite."
+    },
+    "analytics": {
+      "title": "Analytics",
+      "desc": "Für anonyme Statistiken."
+    },
+    "marketing": {
+      "title": "Marketing",
+      "desc": "Für personalisierte Werbung."
     }
+  },
+  "common": {
+    "cancel": "Abbrechen",
+    "save": "Speichern",
+    "close": "Schließen"
   }
 }

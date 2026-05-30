@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 import { useParams } from 'next/navigation';
@@ -17,7 +17,8 @@ import { useTranslations, useLocale } from 'next-intl';
 import { SeoHead } from '@/shared/ui/SeoHead';
 
 const BlogPost: React.FC = () => {
-  const { slug: rawSlug } = useParams<{ slug: string }>();
+  const params = useParams();
+  const rawSlug = params?.slug as string;
   const locale = useLocale();
   const t = useTranslations('blog');
   const router = useRouter();
@@ -112,9 +113,7 @@ const BlogPost: React.FC = () => {
           className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-md border border-white/20 rounded-full text-secondary hover:bg-white hover:shadow-lg transition-all font-medium text-sm shadow-sm"
         >
           <ArrowLeft size={16} />
-          <span className="hidden md:inline">
-            {t('blog:backToOverview')}
-          </span>
+          <span className="hidden md:inline">{t('blog:backToOverview')}</span>
         </Link>
       </nav>
 
@@ -165,9 +164,7 @@ const BlogPost: React.FC = () => {
                   </div>
                   <div>
                     <span className="font-bold text-secondary block text-base">{post.author}</span>
-                    <span className="text-xs text-slate-400">
-                      {t('authorRole')}
-                    </span>
+                    <span className="text-xs text-slate-400">{t('authorRole')}</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-2 bg-slate-50 px-4 py-2 rounded-xl">
@@ -193,12 +190,8 @@ const BlogPost: React.FC = () => {
                 <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
                 <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
                   <div>
-                    <h4 className="text-2xl font-bold text-secondary mb-2">
-                      {t('cta.title')}
-                    </h4>
-                    <p className="text-slate-600">
-                      {t('cta.desc')}
-                    </p>
+                    <h4 className="text-2xl font-bold text-secondary mb-2">{t('cta.title')}</h4>
+                    <p className="text-slate-600">{t('cta.desc')}</p>
                   </div>
                   <Link
                     href="/contact"
@@ -217,9 +210,7 @@ const BlogPost: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="text-xl font-bold text-secondary mb-2">{post.author}</h4>
-                  <p className="text-slate-500 mb-4 leading-relaxed">
-                    {t('authorDesc')}
-                  </p>
+                  <p className="text-slate-500 mb-4 leading-relaxed">{t('authorDesc')}</p>
                   <Link
                     href="/about"
                     className="text-primary font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all"

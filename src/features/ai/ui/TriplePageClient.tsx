@@ -48,7 +48,8 @@ export async function prerender() {
 }
 
 export default function TriplePage() {
-  const { slug } = useParams();
+  const params = useParams();
+  const slug = params?.slug as string;
   const slugStr = Array.isArray(slug) ? slug[0] : slug;
   const tripleData = getAiTripleBySlug(slugStr || '');
 

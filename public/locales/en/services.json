@@ -157,13 +157,7 @@
     },
     "digital_branding": {
       "description": "Today, a brand must work primarily on smartphones. We don't think in letterheads, but in pixels.",
-      "tags": [
-        "Logo Design",
-        "Typography",
-        "Color Palette",
-        "Tone of Voice",
-        "Social Assets"
-      ],
+      "tags": ["Logo Design", "Typography", "Color Palette", "Tone of Voice", "Social Assets"],
       "title": "Digital-First Branding"
     },
     "hero": {
@@ -206,6 +200,10 @@
     "web_development": {
       "description": "We build fast and powerful websites and web applications with modern technology.",
       "title": "Web Development"
+    },
+    "seo": {
+      "title": "Suchmaschinenoptimierung (SEO)",
+      "description": "Sichtbarkeit erhöhen und mehr organischen Traffic aufbauen."
     }
   },
   "consulting_page": {
@@ -450,6 +448,61 @@
     "meta": {
       "title": "Enterprise Web Development & Headless Architectures | Coday",
       "description": "High-performance web solutions for enterprise clients. Scalable, secure, and extremely fast architectures for the corporate sector."
+    },
+    "matrix": {
+      "rows": {
+        "focus": {
+          "label": "Fokus",
+          "bad": "Bunte Templates & Themes",
+          "good": "Performance & Conversion"
+        },
+        "architecture": {
+          "label": "Architektur",
+          "bad": "Monolithisch & Träge",
+          "good": "Headless & Edge-Ready"
+        },
+        "speed": {
+          "label": "Geschwindigkeit",
+          "bad": "Ladezeiten > 3s",
+          "good": "Ladezeiten < 500ms"
+        },
+        "cost": {
+          "label": "Kosten",
+          "bad": "Laufende Wartung",
+          "good": "Skalierbares Asset"
+        }
+      }
+    },
+    "methodology": {
+      "title": "Unser Enterprise Prozess",
+      "subtitle": "Von der Konzeption bis zum globalen Deployment.",
+      "steps": {
+        "1": {
+          "title": "Discovery",
+          "desc": "Analyse der Geschäftsziele und Architekturplanung."
+        },
+        "2": {
+          "title": "Prototyping",
+          "desc": "UX/UI Design und High-Fidelity Klick-Dummies."
+        },
+        "3": {
+          "title": "Engineering",
+          "desc": "Agile Entwicklung mit Next.js und Edge-Technologien."
+        },
+        "4": {
+          "title": "QA & Testing",
+          "desc": "Automatisierte Tests für Sicherheit und Performance."
+        },
+        "5": {
+          "title": "Deployment",
+          "desc": "Globaler Rollout über Vercel Edge Network."
+        }
+      }
+    },
+    "case_study": {
+      "label": "Enterprise in Action",
+      "title": "10x Faster Time-to-Market.",
+      "description": "Wie wir durch Headless Commerce und eine moderne Next.js Architektur die Conversion-Rate eines Branchenführers um 40% gesteigert haben."
     }
   },
   "generic_detail": {
@@ -664,14 +717,7 @@
         "Java Monoliths"
       ],
       "title": "Supported Technologies",
-      "to": [
-        "Next.js",
-        "React",
-        "Node.js",
-        "Supabase",
-        "Headless CMS",
-        "Vercel Edge"
-      ]
+      "to": ["Next.js", "React", "Node.js", "Supabase", "Headless CMS", "Vercel Edge"]
     },
     "meta": {
       "title": "System Migration & Legacy Modernization | Coday",
@@ -759,6 +805,33 @@
     "tech_stack": {
       "title": "Our SEO Tech Stack",
       "description": "We rely on industry-leading enterprise tools for precise analytics, in-depth audits, and measurable success."
+    },
+    "process": {
+      "title": "Unser SEO-Prozess",
+      "description": "Datengestützte Optimierung für messbare Resultate.",
+      "steps": {
+        "audit": {
+          "title": "Audit & Analyse",
+          "desc": "Tiefe technische Analyse und Keyword-Research."
+        },
+        "strategy": {
+          "title": "Strategie & Planung",
+          "desc": "Entwicklung einer Roadmap für Content und Technik."
+        },
+        "implementation": {
+          "title": "Umsetzung",
+          "desc": "OnPage-Optimierung und technisches SEO."
+        },
+        "monitoring": {
+          "title": "Monitoring & Linkaufbau",
+          "desc": "Laufende Überwachung und OffPage-Signale."
+        }
+      }
+    },
+    "cta_section": {
+      "title": "Bereit für mehr organischen Traffic?",
+      "description": "Lassen Sie uns Ihre Sichtbarkeit gemeinsam skalieren.",
+      "button": "Kostenloses SEO-Audit"
     }
   },
   "ui_ux_page": {
@@ -1270,12 +1343,7 @@
         "title": "Design Systems",
         "description": "Consistent component libraries for scalable products and fast development.",
         "long_description": "A Design System is the Single Source of Truth for your product. We develop modular component systems that ensure consistency and accelerate development.",
-        "benefits": [
-          "Consistent UI",
-          "Faster development",
-          "Simplified maintenance",
-          "Scalability"
-        ]
+        "benefits": ["Consistent UI", "Faster development", "Simplified maintenance", "Scalability"]
       },
       "website-relaunch": {
         "title": "Website Relaunch",
@@ -1543,11 +1611,30 @@
     "meta": {
       "title": "Web Development Agency | React & Next.js Experts",
       "description": "High-end web development with Next.js, React, and TypeScript. Fast, scalable, and secure websites that leave your competition behind."
+    },
+    "problem": {
+      "label": "Das Problem",
+      "title": "Langsame Webseiten kosten Geld.",
+      "description": "Nutzer springen ab, wenn Ihre Seite länger als 3 Sekunden lädt."
+    },
+    "solution": {
+      "label": "Die Lösung",
+      "title": "High-Performance Architekturen.",
+      "description": "Wir nutzen Edge-Networks und Next.js für millisekunden-schnelle Ladezeiten."
+    },
+    "case_study": {
+      "label": "Erfolgsgeschichte",
+      "title": "Wie wir die Conversion-Rate verdoppelt haben.",
+      "description": "Sehen Sie sich an, wie wir durch einen kompletten Relaunch auf Basis von Next.js und einer Headless-Architektur die Ladezeiten unseres Kunden von 4,5 Sekunden auf unter 0,8 Sekunden reduzieren konnten – und damit den Umsatz messbar gesteigert haben."
     }
   },
   "actions": {
     "read_more": "Read more",
     "contact": "Get in touch",
     "learn_more": "View details"
+  },
+  "meta": {
+    "title": "Unsere Webdesign & SEO Services | Coday",
+    "description": "Hochleistungs-Webentwicklung, lokales SEO und skalierbare Architekturen für kleine und mittelständische Unternehmen aus Wetzlar."
   }
 }

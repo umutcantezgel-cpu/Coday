@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 import { useParams } from 'next/navigation';
@@ -11,7 +11,8 @@ import { aiReviewAggregates } from '@/shared/data/ai-review-aggregates';
 import { Star, Quotes, ArrowRight, SealCheck } from '@phosphor-icons/react';
 
 export default function ReviewAggregatePage() {
-  const { quelle } = useParams();
+  const params = useParams();
+  const quelle = params?.quelle as string;
   const aggregate = aiReviewAggregates.find((r) => r.slug === quelle);
 
   if (!aggregate) {

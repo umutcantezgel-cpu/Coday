@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { useTranslations, useLocale } from 'next-intl';
@@ -143,7 +143,7 @@ const BookingCalendar = ({
           <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-3xl">
             ✅
           </div>
-          <h3 className="text-2xl font-bold text-gray-900">{t('calendar.success.title')}</h3>
+          <h2 className="text-2xl font-bold text-gray-900">{t('calendar.success.title')}</h2>
           <p className="text-gray-700">
             {t.rich('calendar.success.message', {
               name: formData.name,
