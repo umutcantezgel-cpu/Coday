@@ -98,3 +98,98 @@ Ensure the resulting UI/UX meets high-end agency standards and feels premium, re
 ### Console & Build
 - [ ] No React hydration mismatches appear in the browser console during local development.
 - [ ] The Next.js production build (`npm run build`) completes successfully without any CSS module or Tailwind configuration errors.
+
+## Follow-up — 2026-05-30T23:16:34Z
+
+# Teamwork Project Prompt — Draft
+
+> Status: Step 9 — Ready for launch
+> Goal: Refactor all components
+
+Vollständige und systematische Aufwertung jeder einzelnen bestehenden Komponente des Coday Next.js 15 Projekts.
+
+Working directory: /Users/umurey/agency-domination
+Integrity mode: development
+
+## Requirements
+
+### R1. Primitive & Layout Komponenten (Agent A & B)
+Überarbeite alle primitiven (Button, Input, Badge, Icon) und Layout-Komponenten (Card, Grid, Container, Divider). Setze die Interaktionsschicht gemäß emil-design-eng Protokoll (z.B. Button hover/active States, Card Hover-Effekte) um. 
+
+### R2. Navigation & Overlay Komponenten (Agent C & D)
+Überarbeite Navigations- (Navbar, Sidebar, Breadcrumb, Tabs) und Overlay-Komponenten (Modal, Drawer, Popover, Tooltip, Toast). Beachte Modal Focus-Traps und Scroll-Locks sowie konsistente Entrance/Exit Animationen.
+
+### R3. Feedback Komponenten (Agent E)
+Überarbeite Feedback-Komponenten (Alert, Progress, Skeleton, Spinner). Integriere ARIA-Attribute und reduziere Motion wo angebracht.
+
+### R4. Standardisiertes Komponenten-Protokoll anwenden
+Führe für JEDE Komponente das folgende Protokoll aus:
+- a11y-debugging: Semantik, ARIA, Focus, Keyboard, Tap Targets.
+- chrome-devtools: Layout Shifts, Memory Leaks, CSS Performance.
+- emil-design-eng: Korrekte easings, transition durations, states.
+
+## Acceptance Criteria
+
+### Implementierung
+- [ ] Alle definierten Varianten implementiert (primary, secondary, etc.).
+- [ ] Alle Zustände implementiert und visuell korrekt (default, hover, focus, active, disabled, success, error).
+- [ ] Alle Design Tokens verwendet, absolut keine hartkodierten Farb- oder Spacing-Werte.
+- [ ] TypeScript Interface oder PropTypes vollständig.
+- [ ] JSDoc für alle Props vorhanden.
+- [ ] Mindestens drei Verwendungsbeispiele dokumentiert.
+
+### Accessibility & Performance
+- [ ] Alle ARIA-Attribute korrekt und vollständig.
+- [ ] Keyboard-Navigation vollständig unterstützt (Tab-Reihenfolge, Focus-Ring sichtbar).
+- [ ] Reduced Motion Abfragen (@media prefers-reduced-motion) implementiert.
+
+### Validierung & Dokumentation
+- [ ] Screenshot-Dokumentation für Desktop und Mobile in allen Zuständen liegt in `.antigravity/components/[KOMPONENTENNAME]-documentation.md` vor.
+- [ ] Component Inventory unter `.antigravity/components/inventory.md` ist für alle Komponenten aktualisiert und auf "vollständig" gesetzt.
+## 2026-05-31T19:03:45Z
+
+# Teamwork Project Prompt — Draft
+
+> Status: Launched
+> Goal: Craft prompt → get user approval → delegate to teamwork_preview
+
+Implementiere ein vollständiges, kohärentes und performantes Animations- und Interaktionssystem für das Coday Projekt. Jede Interaktion muss einen klaren Zweck haben, die Nutzerwahrnehmung unterstützen und darf keine Performance-Einbußen verursachen.
+
+Working directory: ~/agency-domination
+Integrity mode: development
+
+## Requirements
+
+### R1. Performance Baseline
+Verwende `chrome-devtools`, um die FPS, Layout-Trigger (width, height, top, left), Paint-Trigger (box-shadow, border-radius) und GPU-Speichernutzung der aktuellen Animationen zu messen. Exportiere die Ergebnisse nach `.antigravity/motion/performance-baseline.md`.
+
+### R2. Accessibility Audit
+Verwende `a11y-debugging`, um bestehende Animationen auf `prefers-reduced-motion`-Konformität zu prüfen. Stelle sicher, dass keine Animationen länger als 5s ohne Pause laufen, keine blinkenden Elemente existieren und keine vestibulären Störungen ausgelöst werden können. Exportiere den Befund nach `.antigravity/motion/a11y-audit.md`.
+
+### R3. Implementierung: Component Motion
+Setze das Motion-System basierend auf den Emil Kowalski Prinzipien (Zweckgebunden, Subtil, Performant, Konsistent) um. Implementiere die exakten Animations-Spezifikationen für Buttons (inkl. hover, focus, active, loading, success, error), Navigation (Underlines, Drawer, Dropdowns), Inputs (Float-Label, Shake-Error), Cards, Modals, Tooltips, Toasts und Accordions gemäß Phase 2 des Auftrags.
+
+### R4. Implementierung: Seiten-Übergänge
+Implementiere spezifische Transitionen für Page-Routes: Same-Level (fade out 150ms/in 200ms), Deeper-Level (slide-right-in), Back-Navigation (slide-left-in) und Modal-Navigation. Nutze den `browser` Subagent zur Verifikation.
+
+### R5. Implementierung: Scroll-Animationen
+Implementiere Scroll-Animationen ausschließlich über die Intersection Observer API (Threshold: 0.15, rootMargin: 0px 0px -50px 0px). Animiere ausschließlich `transform` und `opacity`. Nutze staggered Listen (60ms Delay, Max 400ms). Schließe Header, Footer, Formulare, Tabellen und Hauptinhalte explizit davon aus.
+
+### R6. Finale Verifikation (Performance, A11y, Visuell)
+Verifiziere mit `chrome-devtools`, dass alle Animationen bei 60fps ohne Layout-Trigger laufen. Verifiziere mit `a11y-debugging`, dass bei Reduced-Motion alle `duration-*` auf 0.01ms gesetzt sind. Führe mit dem `browser` Subagent einen finalen visuellen Test durch (Standard, Reduced-Motion, Slow-Motion).
+
+## Acceptance Criteria
+
+### Baseline & Audits
+- [ ] `.antigravity/motion/performance-baseline.md` existiert und dokumentiert die FPS, Layout/Paint-Trigger und Compositor-Eigenschaften.
+- [ ] `.antigravity/motion/a11y-audit.md` existiert und listet alle Accessibility-Probleme vor der Überarbeitung.
+
+### Code-Implementierung
+- [ ] Kein einziges interaktives Element existiert ohne definierten Interaktionszustand.
+- [ ] Scroll-Animationen triggern keine Layout-Paints und verwenden keinen `scroll`-Event-Listener, sondern nur Intersection Observer.
+- [ ] Navigation, Footer und Hauptinhalte sind von Scroll-Animationen ausgenommen.
+- [ ] Reduced-Motion ist global und strikt implementiert (Zeiten auf 0.01ms reduziert).
+
+### Performance & Validation
+- [ ] Keine Animation verursacht Layout-Triggers (width, height, margin, padding, top, left).
+- [ ] Die visuellen Tests durch den `browser` Agenten (Same-Level, Deeper-Level, Back) sind bestätigt.

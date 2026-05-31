@@ -1,4 +1,0 @@
-@import "tailwindcss";
-.test {
-  @apply hover:bg-red-500;
-}

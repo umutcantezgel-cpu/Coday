@@ -4,7 +4,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 
 export function PageTransitionWrapper({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
+  const pathname = usePathname() || '';
   const [transitionClass, setTransitionClass] = useState('animate-fade-in');
   const prevPathRef = useRef<string>(pathname);
 
