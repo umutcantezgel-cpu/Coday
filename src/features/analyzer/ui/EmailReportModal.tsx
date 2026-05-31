@@ -1,7 +1,13 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Envelope, PaperPlaneRight, X, CheckCircle, CircleNotch } from '@phosphor-icons/react/dist/ssr';
+import {
+  Envelope,
+  PaperPlaneRight,
+  X,
+  CheckCircle,
+  CircleNotch,
+} from '@phosphor-icons/react/dist/ssr';
 import { sendEmailReport, isValidEmail } from '@/features/analyzer/lib/emailService';
 import type { AnalysisResult } from '@/features/analyzer/model/types';
 import { useTranslations } from 'next-intl';
@@ -120,7 +126,7 @@ export const EmailReportModal: React.FC<EmailReportModalProps> = ({ isOpen, onCl
                   </div>
                   <button
                     onClick={onClose}
-                    className="p-2 hover:bg-gray-100 rounded-full transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                    className="active:scale-[0.97] p-2 hover:bg-gray-100 rounded-full transition-colors motion-reduce:duration-[0.01ms] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
                     aria-label={t('modal.close') || 'Close modal'}
                   >
                     <X className="w-5 h-5 text-gray-500" aria-hidden="true" />
@@ -141,7 +147,7 @@ export const EmailReportModal: React.FC<EmailReportModalProps> = ({ isOpen, onCl
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder={t('modal.placeholder_name')}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all motion-reduce:duration-[0.01ms]"
                     />
                   </div>
 
@@ -159,7 +165,7 @@ export const EmailReportModal: React.FC<EmailReportModalProps> = ({ isOpen, onCl
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder={t('modal.placeholder_email')}
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all motion-reduce:duration-[0.01ms]"
                     />
                   </div>
 
@@ -168,11 +174,11 @@ export const EmailReportModal: React.FC<EmailReportModalProps> = ({ isOpen, onCl
                   <button
                     type="submit"
                     disabled={isSending}
-                    className="w-full py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all disabled:opacity-50 flex items-center justify-center gap-2"
+                    className="active:scale-[0.97] w-full py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all motion-reduce:duration-[0.01ms] disabled:opacity-50 flex items-center justify-center gap-2"
                   >
                     {isSending ? (
                       <>
-                        <CircleNotch className="w-5 h-5 animate-spin" />
+                        <CircleNotch className="w-5 h-5 animate-spin motion-reduce:animate-none" />
                         <span>{t('modal.button_sending')}</span>
                       </>
                     ) : (

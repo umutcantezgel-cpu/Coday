@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 
@@ -22,7 +22,7 @@ const Events: React.FC = () => {
           {[1, 2, 3].map((item) => (
             <div
               key={item}
-              className="flex flex-col md:flex-row bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300"
+              className="flex flex-col md:flex-row bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg transition-all motion-reduce:duration-[0.01ms] duration-300"
             >
               <div className="md:w-1/3 bg-slate-100 relative h-48 md:h-auto">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10" />
@@ -53,7 +53,7 @@ const Events: React.FC = () => {
                   und Automatisierung.
                 </p>
 
-                <button className="self-start px-6 py-3 rounded-xl bg-gradient-ocean text-white font-bold text-sm shadow-md hover:shadow-lg hover:opacity-90 transition-all">
+                <button className="active:scale-[0.97] self-start px-6 py-3 rounded-xl bg-gradient-ocean text-white font-bold text-sm shadow-md hover:shadow-lg hover:opacity-90 transition-all motion-reduce:duration-[0.01ms]">
                   Jetzt anmelden
                 </button>
               </div>

@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useSpring } from 'motion/react';
 import { clsx, type ClassValue } from 'clsx';
@@ -11,7 +11,6 @@ function cn(...inputs: ClassValue[]) {
 }
 
 import { List, X } from '@phosphor-icons/react/dist/ssr';
-import { AnimatePresence } from 'motion/react';
 
 // --- Reading Progress Component ---
 
@@ -81,7 +80,7 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ blocks, isMobi
       <div className="mb-8 border border-gray-100 rounded-2xl bg-white shadow-sm overflow-hidden">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="w-full flex items-center justify-between p-4 font-display font-bold text-secondary text-sm uppercase tracking-wider bg-gray-50/50 hover:bg-gray-50 transition-colors"
+          className="active:scale-[0.97] w-full flex items-center justify-between p-4 font-display font-bold text-secondary text-sm uppercase tracking-wider bg-gray-50/50 hover:bg-gray-50 transition-colors motion-reduce:duration-[0.01ms]"
         >
           <div className="flex items-center gap-2">
             <List size={18} className="text-primary" />
@@ -93,41 +92,34 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ blocks, isMobi
             <span className="text-xs text-primary font-medium">Anzeigen</span>
           )}
         </button>
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: 'auto', opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              className="overflow-hidden"
-            >
-              <ul className="p-4 space-y-3 text-sm border-t border-gray-100 bg-white">
-                {headings.map((heading) => (
-                  <li key={heading.id}>
-                    <a
-                      href={`#${heading.id}`}
-                      className={cn(
-                        'block py-1 transition-all duration-200 hover:text-primary',
-                        activeId === heading.id
-                          ? 'text-primary font-bold pl-3 border-l-2 border-primary'
-                          : 'text-gray-600 pl-3 border-l-2 border-transparent'
-                      )}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        document.getElementById(heading.id)?.scrollIntoView({
-                          behavior: 'smooth',
-                        });
-                        setIsOpen(false);
-                      }}
-                    >
-                      {heading.text}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        {isOpen && (
+          <div className="overflow-hidden">
+            <ul className="p-4 space-y-3 text-sm border-t border-gray-100 bg-white">
+              {headings.map((heading) => (
+                <li key={heading.id}>
+                  <a
+                    href={`#${heading.id}`}
+                    className={cn(
+                      'block py-1 transition-all motion-reduce:duration-[0.01ms] duration-200 hover:text-primary',
+                      activeId === heading.id
+                        ? 'text-primary font-bold pl-3 border-l-2 border-primary'
+                        : 'text-gray-600 pl-3 border-l-2 border-transparent'
+                    )}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.getElementById(heading.id)?.scrollIntoView({
+                        behavior: 'smooth',
+                      });
+                      setIsOpen(false);
+                    }}
+                  >
+                    {heading.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     );
   }
@@ -143,7 +135,7 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ blocks, isMobi
             <a
               href={`#${heading.id}`}
               className={cn(
-                'block pl-4 py-1 border-l-2 transition-all duration-200 hover:text-primary',
+                'block pl-4 py-1 border-l-2 transition-all motion-reduce:duration-[0.01ms] duration-200 hover:text-primary',
                 activeId === heading.id
                   ? 'border-primary text-primary font-medium'
                   : 'border-transparent text-gray-500 hover:border-gray-300'

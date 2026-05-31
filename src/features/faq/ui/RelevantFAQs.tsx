@@ -1,8 +1,8 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { CaretDown } from '@phosphor-icons/react/dist/ssr';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import { getFAQs } from '@/features/faq/model';
 
 interface Props {
@@ -60,7 +60,7 @@ export const RelevantFAQs: React.FC<Props> = ({ serviceId, title, className = ''
           {relevant.map((faq) => (
             <motion.div
               key={faq.id}
-              className={`bg-white  rounded-2xl border transition-colors overflow-hidden ${
+              className={`bg-white  rounded-2xl border transition-colors motion-reduce:duration-[0.01ms] overflow-hidden ${
                 openItem === faq.id
                   ? 'border-blue-500 shadow-md ring-1 ring-blue-500'
                   : 'border-slate-200  hover:border-blue-300'
@@ -68,37 +68,28 @@ export const RelevantFAQs: React.FC<Props> = ({ serviceId, title, className = ''
             >
               <button
                 onClick={() => toggleItem(faq.id)}
-                className="w-full flex justify-between items-center p-6 text-left focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:rounded-xl"
+                className="active:scale-[0.97] w-full flex justify-between items-center p-6 text-left focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:rounded-xl"
               >
                 <span className="font-display font-bold text-lg text-slate-900  pr-8">
                   {faq.question}
                 </span>
                 <CaretDown
-                  className={`h-5 w-5 text-slate-500 transition-transform duration-300 ${
+                  className={`h-5 w-5 text-slate-500 transition-transform motion-reduce:duration-[0.01ms] duration-300 ${
                     openItem === faq.id ? 'rotate-180 text-blue-500' : ''
                   }`}
                 />
               </button>
-              <AnimatePresence>
-                {openItem === faq.id && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: 'easeInOut' }}
-                  >
-                    <div className="px-6 pb-6 text-slate-600  leading-relaxed prose prose-blue  max-w-none">
-                      <div
-                        dangerouslySetInnerHTML={{
-                          __html: faq.answer
-                            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                            .replace(/\n/g, '<br />'),
-                        }}
-                      />
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              {openItem === faq.id && (
+                <div className="px-6 pb-6 text-slate-600  leading-relaxed prose prose-blue  max-w-none">
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: faq.answer
+                        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                        .replace(/\n/g, '<br />'),
+                    }}
+                  />
+                </div>
+              )}
             </motion.div>
           ))}
         </div>

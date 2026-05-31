@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import {
@@ -69,7 +69,8 @@ export const OZGReadiness: React.FC = () => {
                 key={m.id}
                 onClick={() => toggleModule(m.id)}
                 className={clsx(
-                  'w-full p-4 rounded-xl border flex items-center justify-between transition-all',
+                  'active:scale-[0.97]',
+                  'w-full p-4 rounded-xl border flex items-center justify-between transition-all motion-reduce:duration-[0.01ms]',
                   activeModules.includes(m.id)
                     ? 'border-blue-500 bg-blue-50 text-blue-900 shadow-sm'
                     : 'border-gray-200 hover:border-gray-300 text-gray-600'
@@ -121,7 +122,7 @@ export const OZGReadiness: React.FC = () => {
                       />
                       <div
                         className={clsx(
-                          'transition-opacity',
+                          'transition-opacity motion-reduce:duration-[0.01ms]',
                           isActive ? 'opacity-100' : 'opacity-40'
                         )}
                       >

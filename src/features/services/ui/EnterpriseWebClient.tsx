@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import dynamic from 'next/dynamic';
 import { useTranslations } from 'next-intl';
@@ -79,18 +79,18 @@ export function EnterpriseWebClient() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <NavLink
                 href="/booking"
-                className="group relative px-8 py-4 bg-secondary text-white rounded-full font-bold text-lg overflow-hidden transition-all hover:scale-105"
+                className="group relative px-8 py-4 bg-secondary text-white rounded-full font-bold text-lg overflow-hidden transition-all motion-reduce:duration-[0.01ms] hover:scale-105"
               >
                 <span className="relative z-10 flex items-center">
                   {t('enterprise_web_page.hero.cta_primary')}
-                  <ArrowRight className="ms-2 w-5 h-5 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform" />
+                  <ArrowRight className="ms-2 w-5 h-5 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform motion-reduce:duration-[0.01ms]" />
                 </span>
-                <div className="absolute inset-0 bg-sapphire opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-sapphire opacity-0 group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms] duration-300" />
               </NavLink>
 
               <NavLink
                 href="/work"
-                className="px-8 py-4 bg-white border border-slate-200 text-secondary rounded-full font-bold text-lg hover:bg-slate-50 transition-colors"
+                className="px-8 py-4 bg-white border border-slate-200 text-secondary rounded-full font-bold text-lg hover:bg-slate-50 transition-colors motion-reduce:duration-[0.01ms]"
               >
                 {t('enterprise_web_page.hero.cta_secondary')}
               </NavLink>
@@ -209,10 +209,10 @@ export function EnterpriseWebClient() {
               </p>
               <Link
                 href="/portfolio/ecommerce-replatforming"
-                className="inline-flex items-center gap-2 text-blue-600 font-bold hover:text-blue-700 transition-colors group"
+                className="inline-flex items-center gap-2 text-blue-600 font-bold hover:text-blue-700 transition-colors motion-reduce:duration-[0.01ms] group"
               >
                 Case Study ansehen
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform motion-reduce:duration-[0.01ms]" />
               </Link>
             </div>
             <div className="flex-1 relative w-full aspect-square md:aspect-auto md:h-80 bg-slate-100 rounded-3xl overflow-hidden border border-slate-200">
@@ -234,6 +234,4 @@ export function EnterpriseWebClient() {
       <ScrollContextCTA />
     </div>
   );
-};
-
-
+}

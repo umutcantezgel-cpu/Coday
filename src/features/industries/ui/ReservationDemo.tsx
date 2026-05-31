@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { CalendarBlank, User, CheckCircle } from '@phosphor-icons/react/dist/ssr';
@@ -11,7 +11,7 @@ export const ReservationDemo = () => {
       <div className="absolute top-0 inset-x-0 h-1 bg-primary"></div>
 
       <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-        <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+        <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse motion-reduce:animate-none"></span>
         Tisch reservieren
       </h3>
 
@@ -20,7 +20,7 @@ export const ReservationDemo = () => {
         <motion.div
           initial={{ opacity: 0.5 }}
           animate={{ opacity: step >= 1 ? 1 : 0.5 }}
-          className={`p-4 rounded-xl transition-colors ${step === 1 ? 'bg-white shadow-sm' : 'bg-transparent'}`}
+          className={`p-4 rounded-xl transition-colors motion-reduce:duration-[0.01ms] ${step === 1 ? 'bg-white shadow-sm' : 'bg-transparent'}`}
           onClick={() => setStep(1)}
         >
           <div className="flex items-center justify-between mb-2">
@@ -34,7 +34,7 @@ export const ReservationDemo = () => {
               {['He', 'Mo', 'Fr'].map((day, i) => (
                 <button
                   key={i}
-                  className="text-sm py-2 rounded-lg border border-gray-200 hover:border-primary hover:text-primary transition-colors"
+                  className="active:scale-[0.97] text-sm py-2 rounded-lg border border-gray-200 hover:border-primary hover:text-primary transition-colors motion-reduce:duration-[0.01ms]"
                 >
                   {day}
                 </button>
@@ -49,7 +49,7 @@ export const ReservationDemo = () => {
         <motion.div
           initial={{ opacity: 0.5 }}
           animate={{ opacity: step >= 2 ? 1 : 0.5 }}
-          className={`p-4 rounded-xl transition-colors ${step === 2 ? 'bg-white shadow-sm' : 'bg-transparent'}`}
+          className={`p-4 rounded-xl transition-colors motion-reduce:duration-[0.01ms] ${step === 2 ? 'bg-white shadow-sm' : 'bg-transparent'}`}
           onClick={() => setStep(2)}
         >
           <div className="flex items-center justify-between mb-2">
@@ -77,7 +77,7 @@ export const ReservationDemo = () => {
         {/* Confirm Button */}
         <button
           onClick={() => setStep((s) => (s < 3 ? s + 1 : 1))}
-          className="w-full bg-primary text-white py-4 rounded-xl font-bold hover:bg-primary-dark transition-colors mt-4 flex items-center justify-center gap-2"
+          className="active:scale-[0.97] w-full bg-primary text-white py-4 rounded-xl font-bold hover:bg-primary-dark transition-colors motion-reduce:duration-[0.01ms] mt-4 flex items-center justify-center gap-2"
         >
           {step === 3 ? 'Reservierung bestätigt!' : 'Weiter'}
         </button>

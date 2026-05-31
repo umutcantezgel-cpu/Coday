@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useEffect, useState } from 'react';
 import { Trophy, Lightning } from '@phosphor-icons/react/dist/ssr';
 import { motion, AnimatePresence } from 'motion/react';
@@ -41,7 +41,7 @@ export const ReadingScore: React.FC<{ currentPostId?: number }> = ({ currentPost
   return (
     <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-6 text-white shadow-xl mb-8 relative overflow-hidden group">
       {/* Glossy effect */}
-      <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-10 translate-x-10 blur-2xl group-hover:bg-white/10 transition-colors"></div>
+      <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-10 translate-x-10 blur-2xl group-hover:bg-white/10 transition-colors motion-reduce:duration-[0.01ms]"></div>
 
       <div className="relative z-10">
         <div className="flex items-center justify-between mb-2">
@@ -85,7 +85,7 @@ export const ReadingScore: React.FC<{ currentPostId?: number }> = ({ currentPost
             transition={{ delay: 10 }}
             className="absolute inset-0 bg-green-500/90 flex flex-col items-center justify-center backdrop-blur-sm z-20"
           >
-            <Lightning className="text-white w-8 h-8 mb-2 animate-bounce" />
+            <Lightning className="text-white w-8 h-8 mb-2 animate-bounce motion-reduce:animate-none" />
             <span className="font-bold text-lg">+100 XP</span>
             <span className="text-xs">Article Completed!</span>
           </motion.div>

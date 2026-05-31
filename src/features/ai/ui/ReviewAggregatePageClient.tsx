@@ -100,7 +100,7 @@ export default function ReviewAggregatePage() {
           {aggregate.topReviews.map((review, idx) => (
             <div
               key={idx}
-              className="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow relative"
+              className="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow motion-reduce:duration-[0.01ms] relative"
             >
               <Quotes
                 weight="fill"
@@ -130,10 +130,13 @@ export default function ReviewAggregatePage() {
             href={aggregate.sourceUrl}
             target="_blank"
             rel="noreferrer noopener"
-            className="inline-flex items-center justify-center gap-3 bg-slate-900 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-primary transition-colors group shadow-lg shadow-slate-200"
+            className="inline-flex items-center justify-center gap-3 bg-slate-900 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-primary transition-colors motion-reduce:duration-[0.01ms] group shadow-lg shadow-slate-200"
           >
             Read All Reviews on {aggregate.platformName}
-            <ArrowRight weight="bold" className="group-hover:translate-x-1 transition-transform" />
+            <ArrowRight
+              weight="bold"
+              className="group-hover:translate-x-1 transition-transform motion-reduce:duration-[0.01ms]"
+            />
           </a>
           <p className="text-sm text-slate-500 mt-4">
             Last synced: {new Date(aggregate.lastSynced).toLocaleDateString()}

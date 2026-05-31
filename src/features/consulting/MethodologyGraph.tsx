@@ -80,13 +80,13 @@ export const MethodologyGraph: React.FC<MethodologyGraphProps> = ({
               <div
                 className={`w-20 h-20 mx-auto rounded-2xl flex items-center justify-center mb-6 
                                 ${step.bg} ${step.border} border-2 backdrop-blur-sm 
-                                transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] z-10 relative bg-slate-900`}
+                                transition-all motion-reduce:duration-[0.01ms] duration-300 group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] z-10 relative bg-slate-900`}
               >
                 <OptimizedIcon icon={step.icon} className={`w-8 h-8 ${step.color}`} />
 
                 {/* Pulse Effect */}
                 <div
-                  className={`absolute inset-0 rounded-2xl ${step.bg} animate-ping opacity-0 group-hover:opacity-50 transition-opacity`}
+                  className={`absolute inset-0 rounded-2xl ${step.bg} animate-ping opacity-0 group-hover:opacity-50 transition-opacity motion-reduce:duration-[0.01ms] motion-reduce:animate-none`}
                 />
               </div>
 
@@ -102,10 +102,10 @@ export const MethodologyGraph: React.FC<MethodologyGraphProps> = ({
                 <div className="inline-block px-2 py-1 rounded text-[10px] font-mono text-slate-500 bg-slate-800 mb-3 uppercase tracking-wider">
                   Step 0{step.id}
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-200 transition-colors">
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-200 transition-colors motion-reduce:duration-[0.01ms]">
                   {t(`${prefix}.steps.${step.id}.title`)}
                 </h3>
-                <p className="text-sm text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors">
+                <p className="text-sm text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors motion-reduce:duration-[0.01ms]">
                   {t(`${prefix}.steps.${step.id}.desc`)}
                 </p>
               </div>

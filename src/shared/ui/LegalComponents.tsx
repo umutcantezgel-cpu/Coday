@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import {
@@ -139,7 +139,7 @@ export const ExpandableClause: React.FC<ExpandableClauseProps> = ({
     <div className="border border-gray-100 rounded-xl overflow-hidden not-prose">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between px-5 py-4 bg-slate-50 hover:bg-slate-100 transition-colors text-left"
+        className="w-full flex items-center justify-between px-5 py-4 bg-slate-50 hover:bg-slate-100 transition-colors motion-reduce:duration-[0.01ms] text-left"
       >
         <span className="font-medium text-gray-900">{title}</span>
         <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.2 }}>
@@ -149,9 +149,9 @@ export const ExpandableClause: React.FC<ExpandableClauseProps> = ({
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3 }}
           >
             <div className="px-5 py-4 text-gray-600 text-sm leading-relaxed border-t border-gray-100">
@@ -300,7 +300,7 @@ export const DataProcessorCard: React.FC<DataProcessorCardProps> = ({
   privacyUrl,
 }) => {
   return (
-    <div className="bg-white rounded-xl border border-gray-100 p-5 hover:shadow-md transition-shadow not-prose">
+    <div className="bg-white rounded-xl border border-gray-100 p-5 hover:shadow-md transition-shadow motion-reduce:duration-[0.01ms] not-prose">
       <div className="flex items-start gap-4">
         <div className="w-12 h-12 bg-slate-50 rounded-xl flex items-center justify-center flex-shrink-0">
           <OptimizedIcon icon={icon} className="w-6 h-6 text-gray-600" />

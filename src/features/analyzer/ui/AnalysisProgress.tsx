@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 import { motion } from 'motion/react';
@@ -97,12 +97,12 @@ export const AnalysisProgress: React.FC = () => {
               transition={TRANSITION.reveal}
               className={`
                 relative p-4 rounded-2xl border-2 text-center
-                transition-all duration-300
+                transition-all motion-reduce:duration-[0.01ms] duration-300
                 ${
                   isCompleted
                     ? 'border-green-500 bg-green-50'
                     : isActive
-                      ? 'border-primary bg-primary/5 animate-pulse'
+                      ? 'border-primary bg-primary/5 animate-pulse motion-reduce:animate-none'
                       : 'border-gray-200 bg-white'
                 }
               `}
@@ -123,7 +123,10 @@ export const AnalysisProgress: React.FC = () => {
                 {isCompleted ? (
                   <OptimizedIcon icon={Check} />
                 ) : isActive ? (
-                  <OptimizedIcon icon={ArrowsClockwise} className="animate-spin" />
+                  <OptimizedIcon
+                    icon={ArrowsClockwise}
+                    className="animate-spin motion-reduce:animate-none"
+                  />
                 ) : (
                   <OptimizedIcon icon={agent.icon} />
                 )}
@@ -146,7 +149,7 @@ export const AnalysisProgress: React.FC = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   className="absolute -top-2 -right-2 w-6 h-6 bg-primary rounded-full flex items-center justify-center"
                 >
-                  <div className="w-2 h-2 bg-white rounded-full animate-ping" />
+                  <div className="w-2 h-2 bg-white rounded-full animate-ping motion-reduce:animate-none" />
                 </motion.div>
               )}
             </motion.div>

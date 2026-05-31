@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import dynamic from 'next/dynamic';
 import { useTranslations } from 'next-intl';
@@ -50,19 +50,29 @@ const iconMap: Record<string, React.ElementType> = {
 
 export function WebAppsClient() {
   const t = useTranslations('services');
-  const [scrolled, setScrolled] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const el = sectionRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px',
+      }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
   }, []);
 
   return (
     <div className="bg-background-light font-sans text-text-light">
-      
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -86,7 +96,7 @@ export function WebAppsClient() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <NavLink
                   href="/contact"
-                  className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl bg-gray-900 hover:bg-gray-800 shadow-lg hover:shadow-xl transition-all"
+                  className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl bg-gray-900 hover:bg-gray-800 shadow-lg hover:shadow-xl transition-all motion-reduce:duration-[0.01ms]"
                 >
                   {t('web_apps_page.hero.cta')}
                 </NavLink>
@@ -98,7 +108,7 @@ export function WebAppsClient() {
               <OptimizedImage
                 src={appDevImages.hero?.src || ''}
                 alt={appDevImages.hero ? t(appDevImages.hero.alt) : ''}
-                className="relative rounded-2xl shadow-xl w-full rotate-2 hover:rotate-0 transition-transform duration-500 bg-white p-2"
+                className="relative rounded-2xl shadow-xl w-full rotate-2 hover:rotate-0 transition-transform motion-reduce:duration-[0.01ms] duration-500 bg-white p-2"
                 priority
               />
             </div>
@@ -107,7 +117,7 @@ export function WebAppsClient() {
       </section>
 
       {/* API Integration Network - NEW HIGH COMPLEXITY SECTION */}
-      <section className="bg-secondary py-24 mb-24 overflow-hidden relative">
+      <section ref={sectionRef} className="bg-secondary py-24 mb-24 overflow-hidden relative">
         {/* Neural Network Abstract Background */}
         <div className="absolute inset-0 bg-bg-inverse">
           <div
@@ -134,7 +144,7 @@ export function WebAppsClient() {
 
           <div className="relative h-[500px] flex items-center justify-center">
             {/* Central Hub */}
-            <div className="w-32 h-32 bg-white rounded-full flex items-center justify-center shadow-[0_0_50px_rgba(255,255,255,0.2)] z-20 relative animate-pulse">
+            <div className="w-32 h-32 bg-white rounded-full flex items-center justify-center shadow-[0_0_50px_rgba(255,255,255,0.2)] z-20 relative animate-pulse motion-reduce:animate-none">
               <span className="font-bold text-secondary text-center leading-tight">
                 Coday
                 <br />
@@ -155,9 +165,13 @@ export function WebAppsClient() {
             ].map((sat, i) => (
               <div
                 key={i}
-                className="absolute flex flex-col items-center gap-2 transition-transform duration-[10s] ease-linear"
+                className="absolute flex flex-col items-center gap-2 transition-all motion-reduce:duration-[0.01ms] duration-[1500ms] ease-out"
                 style={{
-                  transform: `rotate(${sat.angle + scrolled * 0.1}deg) translate(${sat.dist}px) rotate(-${sat.angle + scrolled * 0.1}deg)`,
+                  transform: isVisible
+                    ? `rotate(${sat.angle}deg) translate(${sat.dist}px) rotate(-${sat.angle}deg)`
+                    : `rotate(${sat.angle}deg) translate(0px) rotate(-${sat.angle}deg)`,
+                  opacity: isVisible ? 1 : 0,
+                  willChange: 'transform, opacity',
                 }}
               >
                 <div
@@ -168,7 +182,6 @@ export function WebAppsClient() {
                 <span className="text-white font-bold text-sm bg-black/50 px-2 py-1 rounded backdrop-blur-sm">
                   {sat.name}
                 </span>
-                {/* Connection Line to Center - Purely visual via SVG below */}
               </div>
             ))}
 
@@ -187,9 +200,14 @@ export function WebAppsClient() {
                   stroke="white"
                   strokeWidth="2"
                   strokeDasharray="5,5"
+                  className="transition-all motion-reduce:duration-[0.01ms] duration-[1500ms] ease-out"
                   style={{
-                    transform: `rotate(${angle + scrolled * 0.1}deg) translateX(180px)`,
+                    transform: isVisible
+                      ? `rotate(${angle}deg) translateX(180px)`
+                      : `rotate(${angle}deg) translateX(0px)`,
+                    opacity: isVisible ? 1 : 0,
                     transformOrigin: '50% 50%',
+                    willChange: 'transform, opacity',
                   }}
                 />
               ))}
@@ -210,9 +228,7 @@ export function WebAppsClient() {
                 {t('web_apps_page.security.description')}
               </p>
               <ul className="space-y-4">
-                {(
-                  (t.raw('web_apps_page.security.items') as string[]) || []
-                ).map((item, i) => (
+                {((t.raw('web_apps_page.security.items') as string[]) || []).map((item, i) => (
                   <li key={i} className="flex items-center text-gray-700 font-medium">
                     <div className="w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center mr-3 shrink-0">
                       <OptimizedIcon icon={Check} className="text-sm font-bold" />
@@ -231,7 +247,7 @@ export function WebAppsClient() {
               ].map((badge, i) => (
                 <div
                   key={i}
-                  className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center justify-center text-center hover:scale-105 transition-transform"
+                  className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center justify-center text-center hover:scale-105 transition-transform motion-reduce:duration-[0.01ms]"
                 >
                   <OptimizedIcon
                     icon={iconMap[badge.icon] || ShieldCheck}
@@ -288,9 +304,9 @@ export function WebAppsClient() {
             ].map((feature, i) => (
               <div
                 key={i}
-                className="p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-xl transition-all border border-gray-100 group"
+                className="p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-xl transition-all motion-reduce:duration-[0.01ms] border border-gray-100 group"
               >
-                <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-sapphire mb-6 group-hover:scale-110 transition-transform">
+                <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-sapphire mb-6 group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms]">
                   <OptimizedIcon icon={iconMap[feature.icon] || Cloud} />
                 </div>
                 <h3 className="font-bold text-xl text-gray-900 mb-3">
@@ -308,6 +324,4 @@ export function WebAppsClient() {
       <RelevantFAQs serviceId="web-apps" className="mb-24" />
     </div>
   );
-};
-
-
+}

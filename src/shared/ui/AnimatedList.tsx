@@ -1,5 +1,5 @@
-"use client";
-"use client";
+'use client';
+'use client';
 import React, {
   useRef,
   useState,
@@ -178,11 +178,11 @@ const AnimatedList: React.FC<AnimatedListProps> = ({
       {showGradients && (items.length > 0 || React.Children.count(children) > 3) && (
         <>
           <div
-            className="absolute top-0 left-0 right-0 h-[50px] bg-gradient-to-b from-white to-transparent pointer-events-none transition-opacity duration-300 ease"
+            className="absolute top-0 left-0 right-0 h-[50px] bg-gradient-to-b from-white to-transparent pointer-events-none transition-opacity motion-reduce:duration-[0.01ms] duration-300 ease"
             style={{ opacity: topGradientOpacity }}
           />
           <div
-            className="absolute bottom-0 left-0 right-0 h-[50px] bg-gradient-to-t from-white to-transparent pointer-events-none transition-opacity duration-300 ease"
+            className="absolute bottom-0 left-0 right-0 h-[50px] bg-gradient-to-t from-white to-transparent pointer-events-none transition-opacity motion-reduce:duration-[0.01ms] duration-300 ease"
             style={{ opacity: bottomGradientOpacity }}
           />
         </>

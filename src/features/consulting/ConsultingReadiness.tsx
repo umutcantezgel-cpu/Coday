@@ -1,8 +1,14 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useTranslations } from 'next-intl';
-import { CheckCircle, ArrowRight, Brain, Lightning, CodeBlock } from '@phosphor-icons/react/dist/ssr';
+import {
+  CheckCircle,
+  ArrowRight,
+  Brain,
+  Lightning,
+  CodeBlock,
+} from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 
 type QuestionKey = 'q1' | 'q2' | 'q3' | 'q4';
@@ -80,7 +86,7 @@ export const ConsultingReadiness: React.FC = () => {
               </p>
               <button
                 onClick={() => setStarted(true)}
-                className="px-8 py-4 bg-white text-slate-900 font-bold rounded-xl hover:bg-blue-50 transition-colors flex items-center gap-2 mx-auto text-lg"
+                className="active:scale-[0.97] px-8 py-4 bg-white text-slate-900 font-bold rounded-xl hover:bg-blue-50 transition-colors motion-reduce:duration-[0.01ms] flex items-center gap-2 mx-auto text-lg"
               >
                 {t('diagnostic.start_btn')}
                 <OptimizedIcon icon={ArrowRight} className="w-5 h-5" />
@@ -102,7 +108,7 @@ export const ConsultingReadiness: React.FC = () => {
                 </span>
                 <div className="h-1 bg-slate-800 rounded-full flex-1 mx-4">
                   <div
-                    className="h-full bg-blue-500 rounded-full transition-all duration-500"
+                    className="h-full bg-blue-500 rounded-full transition-all motion-reduce:duration-[0.01ms] duration-500"
                     style={{ width: `${((currentStep + 1) / QUESTIONS.length) * 100}%` }}
                   />
                 </div>
@@ -117,7 +123,7 @@ export const ConsultingReadiness: React.FC = () => {
                   <button
                     key={opt}
                     onClick={() => handleAnswer(opt)}
-                    className="p-6 rounded-xl bg-slate-800 border-2 border-slate-700 hover:border-blue-500 hover:bg-slate-750 transition-all text-left group"
+                    className="active:scale-[0.97] p-6 rounded-xl bg-slate-800 border-2 border-slate-700 hover:border-blue-500 hover:bg-slate-750 transition-all motion-reduce:duration-[0.01ms] text-left group"
                   >
                     <div className="w-8 h-8 rounded-full border border-slate-600 bg-slate-900 flex items-center justify-center mb-4 group-hover:border-blue-500 group-hover:bg-blue-500/10">
                       <span className="text-xs font-mono text-slate-400 group-hover:text-blue-400">
@@ -151,7 +157,7 @@ export const ConsultingReadiness: React.FC = () => {
               </p>
 
               <div className="flex flex-col md:flex-row gap-4 justify-center">
-                <button className="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl shadow-lg shadow-blue-900/50 flex items-center justify-center gap-2">
+                <button className="active:scale-[0.97] px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl shadow-lg shadow-blue-900/50 flex items-center justify-center gap-2">
                   <OptimizedIcon icon={CheckCircle} className="w-5 h-5" />
                   {t(`diagnostic.results.${resultKey}.action`)}
                 </button>
@@ -162,7 +168,7 @@ export const ConsultingReadiness: React.FC = () => {
                     setCurrentStep(0);
                     setAnswers({ q1: null, q2: null, q3: null, q4: null });
                   }}
-                  className="px-8 py-4 bg-transparent border border-slate-600 text-slate-300 hover:text-white hover:border-white font-bold rounded-xl transition-all"
+                  className="active:scale-[0.97] px-8 py-4 bg-transparent border border-slate-600 text-slate-300 hover:text-white hover:border-white font-bold rounded-xl transition-all motion-reduce:duration-[0.01ms]"
                 >
                   Neustarten
                 </button>

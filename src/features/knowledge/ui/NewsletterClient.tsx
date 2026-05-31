@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { useState } from 'react';
 import { Input } from '@/shared/ui/Input';
@@ -40,7 +40,7 @@ const Newsletter: React.FC = () => {
   return (
     <div className="bg-background-light min-h-dvh pt-24 pb-20 flex flex-col items-center justify-center">
       <div className="max-w-4xl w-full px-4 sm:px-6 lg:px-8 text-center">
-        <div className="relative w-full max-w-lg mx-auto aspect-video mb-12 rounded-3xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-all duration-500">
+        <div className="relative w-full max-w-lg mx-auto aspect-video mb-12 rounded-3xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-all motion-reduce:duration-[0.01ms] duration-500">
           <OptimizedImage
             src="/images/marketing/email-marketing-kampagne-newsletter-zielgruppe-versand.webp"
             alt="Newsletter"
@@ -57,7 +57,7 @@ const Newsletter: React.FC = () => {
         </p>
 
         {status === 'success' ? (
-          <div className="max-w-md mx-auto bg-green-50 p-6 rounded-2xl border border-green-100 mb-8 flex flex-col items-center text-green-700 animate-in fade-in zoom-in duration-300">
+          <div className="max-w-md mx-auto bg-green-50 p-6 rounded-2xl border border-green-100 mb-8 flex flex-col items-center text-green-700 animate-in fade-in zoom-in duration-300 motion-reduce:animate-none">
             <OptimizedIcon icon={CheckCircle} className="w-12 h-12 mb-2 text-green-500" />
             <h3 className="font-bold text-lg">Vielen Dank!</h3>
             <p>Du hast dich erfolgreich angemeldet.</p>
@@ -95,7 +95,10 @@ const Newsletter: React.FC = () => {
                 disabled={status === 'loading' || !acceptedPrivacy}
               >
                 {status === 'loading' ? (
-                  <OptimizedIcon icon={CircleNotch} className="animate-spin" />
+                  <OptimizedIcon
+                    icon={CircleNotch}
+                    className="animate-spin motion-reduce:animate-none"
+                  />
                 ) : (
                   t('newsletter.subscribe')
                 )}

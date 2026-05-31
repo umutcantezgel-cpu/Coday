@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import dynamic from 'next/dynamic';
 import { useTranslations } from 'next-intl';
@@ -106,7 +106,7 @@ export function WebDesignClient() {
             <OptimizedImage
               src={brandingImages.hero?.src || ''}
               alt={brandingImages.hero?.alt || ''}
-              className="relative rounded-[2rem] shadow-flat-lg w-full transform -rotate-2 hover:rotate-0 transition-all duration-500 bg-white p-2"
+              className="relative rounded-[2rem] shadow-flat-lg w-full transform -rotate-2 hover:rotate-0 transition-all motion-reduce:duration-[0.01ms] duration-500 bg-white p-2"
               priority
             />
           </div>
@@ -159,14 +159,12 @@ export function WebDesignClient() {
               {t('web_design_page.design_system.description')}
             </p>
             <ul className="space-y-4 mb-8">
-              {(t.raw('web_design_page.design_system.items') as string[]).map(
-                (item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-slate-600 font-medium">
-                    <OptimizedIcon icon={CheckCircle} className="text-sapphire" />
-                    {item}
-                  </li>
-                )
-              )}
+              {(t.raw('web_design_page.design_system.items') as string[]).map((item, i) => (
+                <li key={i} className="flex items-center gap-3 text-slate-600 font-medium">
+                  <OptimizedIcon icon={CheckCircle} className="text-sapphire" />
+                  {item}
+                </li>
+              ))}
             </ul>
           </div>
           <DesignSystemShowcase />
@@ -241,9 +239,9 @@ export function WebDesignClient() {
               ).map((phase, idx) => (
                 <div
                   key={idx}
-                  className="relative bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors group"
+                  className="relative bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors motion-reduce:duration-[0.01ms] group"
                 >
-                  <div className="absolute -top-6 start-8 bg-primary text-white font-bold text-xl w-12 h-12 rounded-xl flex items-center justify-center shadow-lg border-4 border-secondary group-hover:scale-110 transition-transform">
+                  <div className="absolute -top-6 start-8 bg-primary text-white font-bold text-xl w-12 h-12 rounded-xl flex items-center justify-center shadow-lg border-4 border-secondary group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms]">
                     {phase.number}
                   </div>
                   <h3 className="font-bold text-xl mt-4 mb-3">{phase.title}</h3>
@@ -272,19 +270,19 @@ export function WebDesignClient() {
               <NavLink
                 key={index}
                 href={`/services/web-design/${feature.slug}`}
-                className="bg-white p-8 rounded-2xl shadow-flat border border-gray-100 hover:shadow-flat-lg transition-all duration-300 group hover:-translate-y-1 block relative overflow-hidden h-full"
+                className="bg-white p-8 rounded-2xl shadow-flat border border-gray-100 hover:shadow-flat-lg transition-all motion-reduce:duration-[0.01ms] duration-300 group hover:-translate-y-1 block relative overflow-hidden h-full"
               >
-                <div className="absolute top-0 end-0 w-32 h-32 bg-secondary/5 rounded-bl-full -me-8 -mt-8 transition-transform group-hover:scale-110"></div>
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-sapphire mb-6 group-hover:bg-sapphire group-hover:text-white transition-colors relative z-10">
+                <div className="absolute top-0 end-0 w-32 h-32 bg-secondary/5 rounded-bl-full -me-8 -mt-8 transition-transform motion-reduce:duration-[0.01ms] group-hover:scale-110"></div>
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-sapphire mb-6 group-hover:bg-sapphire group-hover:text-white transition-colors motion-reduce:duration-[0.01ms] relative z-10">
                   <OptimizedIcon icon={iconMap[feature.icon] || Palette} />
                 </div>
-                <h3 className="font-display font-bold text-xl text-secondary mb-3 group-hover:text-sapphire transition-colors relative z-10">
+                <h3 className="font-display font-bold text-xl text-secondary mb-3 group-hover:text-sapphire transition-colors motion-reduce:duration-[0.01ms] relative z-10">
                   {t(feature.titleKey)}
                 </h3>
                 <p className="text-slate-600 leading-relaxed mb-4 relative z-10">
                   {t(feature.descriptionKey)}
                 </p>
-                <div className="text-sapphire font-bold text-sm uppercase tracking-wide flex items-center opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0 relative z-10">
+                <div className="text-sapphire font-bold text-sm uppercase tracking-wide flex items-center opacity-0 group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms] transform translate-y-2 group-hover:translate-y-0 relative z-10">
                   {t('actions.read_more')}{' '}
                   <OptimizedIcon icon={ArrowRight} className="ms-1 text-sm" />
                 </div>
@@ -313,14 +311,14 @@ export function WebDesignClient() {
             </p>
             <NavLink
               href="/cases"
-              className="inline-flex items-center justify-center px-6 py-3 font-bold text-secondary rounded-xl bg-primary hover:bg-white transition-all shadow-glow"
+              className="inline-flex items-center justify-center px-6 py-3 font-bold text-secondary rounded-xl bg-primary hover:bg-white transition-all motion-reduce:duration-[0.01ms] shadow-glow"
             >
               {t('actions.read_more')}
               <OptimizedIcon icon={ArrowRight} className="ms-2" />
             </NavLink>
           </div>
           <div className="md:w-1/2 relative z-10 w-full">
-            <div className="aspect-video bg-white/5 rounded-2xl border border-white/10 p-2 shadow-2xl backdrop-blur-sm transform rotate-2 hover:rotate-0 transition-transform duration-500 overflow-hidden">
+            <div className="aspect-video bg-white/5 rounded-2xl border border-white/10 p-2 shadow-2xl backdrop-blur-sm transform rotate-2 hover:rotate-0 transition-transform motion-reduce:duration-[0.01ms] duration-500 overflow-hidden">
               {/* Replace with actual case study image if available */}
               <div className="w-full h-full bg-slate-800 rounded-xl flex items-center justify-center">
                 <OptimizedIcon
@@ -336,6 +334,4 @@ export function WebDesignClient() {
       </section>
     </div>
   );
-};
-
-
+}

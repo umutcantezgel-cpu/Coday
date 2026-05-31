@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useRef, useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChatCircle, X, Minus, PaperPlaneRight, CircleNotch } from '@phosphor-icons/react/dist/ssr';
@@ -45,9 +45,9 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
             onClick={toggleChat}
-            className="fixed right-6 z-max w-14 h-14 rounded-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white shadow-2xl hover:shadow-purple-500/25 transition-shadow flex items-center justify-center group bottom-[120px] md:bottom-6"
+            className="fixed right-6 z-max w-14 h-14 rounded-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white shadow-2xl hover:shadow-purple-500/25 transition-shadow motion-reduce:duration-[0.01ms] flex items-center justify-center group bottom-[120px] md:bottom-6"
           >
-            <ChatCircle className="w-6 h-6 group-hover:scale-110 transition-transform" />
+            <ChatCircle className="w-6 h-6 group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms]" />
 
             {/* Notification Badge */}
             {messages.length > 0 && isMinimized && (
@@ -57,7 +57,7 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
             )}
 
             {/* Pulse Animation */}
-            <span className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 animate-ping opacity-25" />
+            <span className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 animate-ping opacity-25 motion-reduce:animate-none" />
           </motion.button>
         )}
       </AnimatePresence>
@@ -86,13 +86,13 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
               <div className="flex items-center gap-2">
                 <button
                   onClick={minimizeChat}
-                  className="p-1.5 rounded-full hover:bg-white/20 transition-colors text-white"
+                  className="p-1.5 rounded-full hover:bg-white/20 transition-colors motion-reduce:duration-[0.01ms] text-white"
                 >
                   <Minus className="w-4 h-4" />
                 </button>
                 <button
                   onClick={toggleChat}
-                  className="p-1.5 rounded-full hover:bg-white/20 transition-colors text-white"
+                  className="p-1.5 rounded-full hover:bg-white/20 transition-colors motion-reduce:duration-[0.01ms] text-white"
                 >
                   <X className="w-4 h-4" />
                 </button>
@@ -143,15 +143,15 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
                   <div className="bg-white px-4 py-3 rounded-2xl rounded-bl-md border border-gray-100 shadow-sm">
                     <div className="flex gap-1">
                       <span
-                        className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
+                        className="w-2 h-2 bg-gray-400 rounded-full animate-bounce motion-reduce:animate-none"
                         style={{ animationDelay: '0ms' }}
                       />
                       <span
-                        className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
+                        className="w-2 h-2 bg-gray-400 rounded-full animate-bounce motion-reduce:animate-none"
                         style={{ animationDelay: '150ms' }}
                       />
                       <span
-                        className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
+                        className="w-2 h-2 bg-gray-400 rounded-full animate-bounce motion-reduce:animate-none"
                         style={{ animationDelay: '300ms' }}
                       />
                     </div>
@@ -184,7 +184,7 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
                   className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-none hover:shadow-lg p-0 flex items-center justify-center shrink-0"
                 >
                   {isTyping ? (
-                    <CircleNotch className="w-4 h-4 animate-spin" />
+                    <CircleNotch className="w-4 h-4 animate-spin motion-reduce:animate-none" />
                   ) : (
                     <PaperPlaneRight className="w-4 h-4" />
                   )}

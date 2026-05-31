@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useTranslations } from 'next-intl';
@@ -24,7 +24,7 @@ const RecruitingFunnelDemo: React.FC = () => {
           </div>
           <div className="h-2 w-3/4 bg-gray-200 rounded mb-1"></div>
           <div className="h-2 w-1/2 bg-gray-200 rounded mb-3"></div>
-          <button className="w-full bg-blue-500 text-white text-xs font-bold py-2 rounded">
+          <button className="active:scale-[0.97] w-full bg-blue-500 text-white text-xs font-bold py-2 rounded">
             {t('handwerk-bau.features.recruiting.steps.ad.mockup.cta')}
           </button>
         </div>
@@ -42,10 +42,10 @@ const RecruitingFunnelDemo: React.FC = () => {
             {t('handwerk-bau.features.recruiting.steps.quiz.mockup.question')}
           </div>
           <div className="space-y-2">
-            <button className="w-full bg-primary/10 text-primary text-xs font-bold py-2 rounded hover:bg-primary/20">
+            <button className="active:scale-[0.97] w-full bg-primary/10 text-primary text-xs font-bold py-2 rounded hover:bg-primary/20">
               {t('handwerk-bau.features.recruiting.steps.quiz.mockup.yes')}
             </button>
-            <button className="w-full bg-gray-50 text-gray-500 text-xs font-bold py-2 rounded">
+            <button className="active:scale-[0.97] w-full bg-gray-50 text-gray-500 text-xs font-bold py-2 rounded">
               {t('handwerk-bau.features.recruiting.steps.quiz.mockup.no')}
             </button>
           </div>
@@ -96,7 +96,7 @@ const RecruitingFunnelDemo: React.FC = () => {
               <div
                 key={idx}
                 onClick={() => setStep(idx)}
-                className={`flex items-start gap-4 p-4 rounded-xl cursor-pointer transition-all ${step === idx ? 'bg-primary/5 border border-primary/20' : 'hover:bg-gray-50 border border-transparent'}`}
+                className={`flex items-start gap-4 p-4 rounded-xl cursor-pointer transition-all motion-reduce:duration-[0.01ms] ${step === idx ? 'bg-primary/5 border border-primary/20' : 'hover:bg-gray-50 border border-transparent'}`}
               >
                 <div
                   className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${step === idx ? 'bg-primary text-white' : 'bg-gray-100 text-gray-500'}`}

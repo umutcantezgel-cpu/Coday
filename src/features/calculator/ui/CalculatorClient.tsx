@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { useEffect } from 'react';
 import { useTranslations } from 'next-intl';
@@ -108,11 +108,11 @@ const Calculator: React.FC = () => {
               return (
                 <div
                   key={category}
-                  className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-300"
+                  className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all motion-reduce:duration-[0.01ms] duration-300"
                 >
                   <button
                     onClick={() => toggleCategory(category)}
-                    className="w-full px-6 py-5 flex items-center justify-between hover:bg-gray-50 transition-colors"
+                    className="active:scale-[0.97] w-full px-6 py-5 flex items-center justify-between hover:bg-gray-50 transition-colors motion-reduce:duration-[0.01ms]"
                   >
                     <div className="flex items-center gap-4">
                       <div
@@ -136,15 +136,13 @@ const Calculator: React.FC = () => {
                       </div>
                     </div>
                     <div
-                      className={`transform transition-transform duration-300 text-gray-400 ${isOpen ? 'rotate-180' : ''}`}
+                      className={`transform transition-transform motion-reduce:duration-[0.01ms] duration-300 text-gray-400 ${isOpen ? 'rotate-180' : ''}`}
                     >
                       <OptimizedIcon icon={CaretDown} />
                     </div>
                   </button>
 
-                  <div
-                    className={`transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}`}
-                  >
+                  <div className={isOpen ? 'block' : 'hidden'}>
                     <div className="p-6 pt-0 border-t border-gray-50 bg-gray-50/30">
                       <div className="grid md:grid-cols-2 gap-4 mt-6">
                         {categoryModules.map((module) => (
@@ -199,7 +197,7 @@ const Calculator: React.FC = () => {
           <p className="text-gray-600 mb-6">{t('hero.next_step')}</p>
           <button
             onClick={handleContinueToContact}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 uppercase tracking-wide"
+            className="active:scale-[0.97] inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all motion-reduce:duration-[0.01ms] duration-300 uppercase tracking-wide"
           >
             {t('hero.continue')}
             <ArrowRight size={20} />

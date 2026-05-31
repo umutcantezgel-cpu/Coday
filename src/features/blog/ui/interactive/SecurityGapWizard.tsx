@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
@@ -126,14 +126,14 @@ export const SecurityGapWizard: React.FC = () => {
                   <button
                     key={idx}
                     onClick={() => handleAnswer(option.score)}
-                    className="w-full p-4 rounded-xl border border-gray-200 hover:border-blue-500 hover:bg-blue-50 transition-all text-left flex items-center justify-between group"
+                    className="active:scale-[0.97] w-full p-4 rounded-xl border border-gray-200 hover:border-blue-500 hover:bg-blue-50 transition-all motion-reduce:duration-[0.01ms] text-left flex items-center justify-between group"
                   >
                     <span className="font-medium text-gray-700 group-hover:text-blue-900">
                       {option.label}
                     </span>
                     <ArrowRight
                       size={16}
-                      className="opacity-0 group-hover:opacity-100 transition-opacity text-blue-600"
+                      className="opacity-0 group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms] text-blue-600"
                     />
                   </button>
                 ))}
@@ -193,7 +193,7 @@ export const SecurityGapWizard: React.FC = () => {
                   setScores([]);
                   setShowResult(false);
                 }}
-                className="text-gray-400 hover:text-gray-900 text-sm font-medium underline decoration-gray-300 underline-offset-4"
+                className="active:scale-[0.97] text-gray-400 hover:text-gray-900 text-sm font-medium underline decoration-gray-300 underline-offset-4"
               >
                 Restart Assessment
               </button>

@@ -1,7 +1,12 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { CheckCircle, XCircle, ArrowRight, ArrowCounterClockwise } from '@phosphor-icons/react/dist/ssr';
+import {
+  CheckCircle,
+  XCircle,
+  ArrowRight,
+  ArrowCounterClockwise,
+} from '@phosphor-icons/react/dist/ssr';
 import { useRtl } from '@/shared/hooks/useRtl';
 
 interface QuizQuestion {
@@ -96,7 +101,7 @@ const InteractiveQuiz: React.FC<InteractiveQuizProps> = ({ title, questions, cla
                     onClick={() => handleAnswer(index)}
                     disabled={selectedAnswer !== null}
                     className={`
-                      w-full text-start p-4 rounded-xl border-2 transition-all
+                      w-full text-start p-4 rounded-xl border-2 transition-all motion-reduce:duration-[0.01ms]
                       ${
                         selectedAnswer === null
                           ? 'border-gray-200 hover:border-primary hover:bg-primary/5 cursor-pointer'
@@ -131,11 +136,10 @@ const InteractiveQuiz: React.FC<InteractiveQuizProps> = ({ title, questions, cla
                 animate={{ opacity: 1, y: 0 }}
                 className="mt-6"
               >
-                <p className="text-sm text-slate-600 bg-white p-4 rounded-xl border border-gray-100 mb-4">
-                </p>
+                <p className="text-sm text-slate-600 bg-white p-4 rounded-xl border border-gray-100 mb-4"></p>
                 <button
                   onClick={nextQuestion}
-                  className="flex items-center gap-2 px-6 py-3 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition-colors"
+                  className="flex items-center gap-2 px-6 py-3 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition-colors motion-reduce:duration-[0.01ms]"
                 >
                   {currentQuestion < questions.length - 1 ? 'Nächste Frage' : 'Ergebnis anzeigen'}
                   <ArrowRight size={18} />
@@ -164,7 +168,7 @@ const InteractiveQuiz: React.FC<InteractiveQuizProps> = ({ title, questions, cla
             </p>
             <button
               onClick={restart}
-              className="flex items-center gap-2 px-6 py-3 bg-secondary text-white font-bold rounded-xl hover:bg-secondary/90 transition-colors mx-auto"
+              className="flex items-center gap-2 px-6 py-3 bg-secondary text-white font-bold rounded-xl hover:bg-secondary/90 transition-colors motion-reduce:duration-[0.01ms] mx-auto"
             >
               <ArrowCounterClockwise size={18} />
               Nochmal versuchen

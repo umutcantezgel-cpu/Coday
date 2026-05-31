@@ -56,7 +56,7 @@ export const LegalLayout: React.FC<LegalLayoutProps> = ({
                   <a
                     key={item.id}
                     href={`#${item.id}`}
-                    className="block px-3 py-2 text-sm text-slate-600 hover:text-primary hover:bg-primary/5 rounded-lg transition-colors border-l-2 border-transparent hover:border-primary"
+                    className="block px-3 py-2 text-sm text-slate-600 hover:text-primary hover:bg-primary/5 rounded-lg transition-colors motion-reduce:duration-[0.01ms] border-l-2 border-transparent hover:border-primary"
                   >
                     {item.label}
                   </a>

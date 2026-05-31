@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 
@@ -305,7 +305,7 @@ const LogoLoop = React.memo<LogoLoopProps>(
               'inline-flex items-center',
               'motion-reduce:transition-none',
               scaleOnHover &&
-                'transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover/item:scale-120'
+                'transition-transform motion-reduce:duration-[0.01ms] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover/item:scale-120'
             )}
           >
             {(item as { node: React.ReactNode }).node}
@@ -317,7 +317,7 @@ const LogoLoop = React.memo<LogoLoopProps>(
               '[-webkit-user-drag:none] pointer-events-none',
               'motion-reduce:transition-none',
               scaleOnHover &&
-                'transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover/item:scale-120'
+                'transition-transform motion-reduce:duration-[0.01ms] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover/item:scale-120'
             )}
             src={(item as { src: string }).src}
             alt={(item as { alt?: string }).alt ?? ''}
@@ -338,7 +338,7 @@ const LogoLoop = React.memo<LogoLoopProps>(
           <a
             className={cx(
               'inline-flex items-center no-underline rounded',
-              'transition-opacity duration-200 ease-linear',
+              'transition-opacity motion-reduce:duration-[0.01ms] duration-200 ease-linear',
               'hover:opacity-80',
               'focus-visible:outline focus-visible:outline-current focus-visible:outline-offset-2'
             )}

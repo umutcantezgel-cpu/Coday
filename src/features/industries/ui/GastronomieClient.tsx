@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 import { useTranslations } from 'next-intl';
@@ -76,7 +76,7 @@ const Gastronomie: React.FC = () => {
                 {t('gastronomie-hotellerie.hero.subheadline')}
               </p>
               <div className="flex gap-4 mb-12">
-                <button className="bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:bg-secondary/90 transition-colors">
+                <button className="active:scale-[0.97] bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:bg-secondary/90 transition-colors motion-reduce:duration-[0.01ms]">
                   {t('gastronomie-hotellerie.features.cta', { defaultValue: 'Termin vereinbaren' })}
                 </button>
               </div>
@@ -133,7 +133,7 @@ const Gastronomie: React.FC = () => {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all"
+                className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all motion-reduce:duration-[0.01ms]"
               >
                 <div className="w-12 h-12 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center mb-6">
                   <OptimizedIcon icon={iconMap[item.icon] || Confetti} />

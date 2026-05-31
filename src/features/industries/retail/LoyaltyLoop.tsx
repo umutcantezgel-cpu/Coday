@@ -111,7 +111,7 @@ const LoyaltyLoop: React.FC = () => {
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <div className="w-20 h-20 bg-surface-dark border border-white/10 rounded-full flex items-center justify-center shadow-2xl relative z-0">
             <Icon name="users" className="text-primary w-8 h-8 opacity-50" />
-            <div className="absolute inset-0 rounded-full border border-primary/20 animate-pulse"></div>
+            <div className="absolute inset-0 rounded-full border border-primary/20 animate-pulse motion-reduce:animate-none"></div>
           </div>
         </div>
       </div>

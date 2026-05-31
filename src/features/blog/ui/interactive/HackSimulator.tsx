@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
@@ -133,7 +133,8 @@ export const HackSimulator: React.FC = () => {
               }}
               disabled={isRunning}
               className={cn(
-                'px-4 py-3 min-h-[44px] rounded-md transition-all flex items-center gap-2 font-medium text-sm',
+                'active:scale-[0.97]',
+                'px-4 py-3 min-h-[44px] rounded-md transition-all motion-reduce:duration-[0.01ms] flex items-center gap-2 font-medium text-sm',
                 activeSystem === 'wordpress'
                   ? 'bg-red-500/20 text-red-400 border border-red-500/50'
                   : 'text-gray-500 hover:text-gray-300',
@@ -150,7 +151,8 @@ export const HackSimulator: React.FC = () => {
               }}
               disabled={isRunning}
               className={cn(
-                'px-4 py-3 min-h-[44px] rounded-md transition-all flex items-center gap-2 font-medium text-sm',
+                'active:scale-[0.97]',
+                'px-4 py-3 min-h-[44px] rounded-md transition-all motion-reduce:duration-[0.01ms] flex items-center gap-2 font-medium text-sm',
                 activeSystem === 'coday'
                   ? 'bg-green-500/20 text-green-400 border border-green-500/50'
                   : 'text-gray-500 hover:text-gray-300',
@@ -175,7 +177,7 @@ export const HackSimulator: React.FC = () => {
                 <p>{t('hackSimulator.ready')}</p>
                 <button
                   onClick={startSimulation}
-                  className="px-6 py-3 bg-white text-black font-bold rounded hover:bg-gray-200 transition-colors flex items-center gap-2"
+                  className="active:scale-[0.97] px-6 py-3 bg-white text-black font-bold rounded hover:bg-gray-200 transition-colors motion-reduce:duration-[0.01ms] flex items-center gap-2"
                 >
                   <Bug className="w-4 h-4" /> {t('hackSimulator.start')}
                 </button>
@@ -226,7 +228,7 @@ export const HackSimulator: React.FC = () => {
                   animate={{ scale: 1, opacity: 1 }}
                   className="text-center z-10"
                 >
-                  <div className="w-24 h-24 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-red-500 animate-pulse">
+                  <div className="w-24 h-24 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-red-500 animate-pulse motion-reduce:animate-none">
                     <LockOpen className="w-12 h-12 text-red-500" />
                   </div>
                   <h3 className="text-red-500 font-bold text-xl mb-2">
@@ -261,10 +263,15 @@ export const HackSimulator: React.FC = () => {
 
             {/* Matrix Background Effect */}
             {activeSystem === 'coday' && isSecure && (
-              <div className="absolute inset-0 opacity-5 mix-blend-screen pointer-events-none bg-cover" style={{ backgroundImage: "url('https://media.giphy.com/media/A06UFEx8jxEwU/giphy.gif')" }} />
+              <div
+                className="absolute inset-0 opacity-5 mix-blend-screen pointer-events-none bg-cover"
+                style={{
+                  backgroundImage: "url('https://media.giphy.com/media/A06UFEx8jxEwU/giphy.gif')",
+                }}
+              />
             )}
             {activeSystem === 'wordpress' && isCompromised && (
-              <div className="absolute inset-0 bg-red-900/10 pointer-events-none mix-blend-overlay animate-pulse" />
+              <div className="absolute inset-0 bg-red-900/10 pointer-events-none mix-blend-overlay animate-pulse motion-reduce:animate-none" />
             )}
           </div>
         </div>
@@ -272,7 +279,10 @@ export const HackSimulator: React.FC = () => {
         {/* Progress Bar */}
         <div className="h-1 bg-gray-800 w-full">
           <motion.div
-            className={cn('h-full transition-all duration-300', getStatusColor())}
+            className={cn(
+              'h-full transition-all motion-reduce:duration-[0.01ms] duration-300',
+              getStatusColor()
+            )}
             style={{ width: `${attackProgress}%` }}
           />
         </div>
@@ -285,7 +295,10 @@ export const HackSimulator: React.FC = () => {
             : t('hackSimulator.targetStatic')}
         </span>
         {logs.length > 0 && (
-          <button onClick={() => setLogs([])} className="hover:text-white flex items-center gap-1">
+          <button
+            onClick={() => setLogs([])}
+            className="active:scale-[0.97] hover:text-white flex items-center gap-1"
+          >
             <ArrowsClockwise className="w-3 h-3" /> {t('hackSimulator.reset')}
           </button>
         )}

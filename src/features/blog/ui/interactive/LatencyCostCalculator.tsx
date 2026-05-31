@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
 import { Calculator, Warning, Trophy } from '@phosphor-icons/react/dist/ssr';
@@ -111,7 +111,7 @@ const LatencyCostCalculator: React.FC = () => {
         <div className="bg-gray-50 rounded-2xl p-6 flex flex-col justify-center relative overflow-hidden">
           {/* Background Pulse if High Loss */}
           {lostPercentage > 20 && (
-            <div className="absolute inset-0 bg-red-500/5 animate-pulse pointer-events-none" />
+            <div className="absolute inset-0 bg-red-500/5 animate-pulse pointer-events-none motion-reduce:animate-none" />
           )}
 
           <div className="relative z-10 text-center">

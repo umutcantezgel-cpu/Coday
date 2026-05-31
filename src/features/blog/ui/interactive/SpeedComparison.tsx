@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Lightning, HardDrives, Database } from '@phosphor-icons/react/dist/ssr';
@@ -51,7 +51,10 @@ export const SpeedComparison: React.FC = () => {
   return (
     <div className="bg-bg-inverse rounded-2xl p-8 shadow-2xl border border-gray-800 my-10 overflow-hidden relative">
       {/* Grid Background */}
-      <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "url(/noise.svg)" }}></div>
+      <div
+        className="absolute inset-0 opacity-20"
+        style={{ backgroundImage: 'url(/noise.svg)' }}
+      ></div>
 
       <div className="relative z-10">
         <h3 className="text-2xl font-display font-bold text-white mb-8 flex items-center gap-3">
@@ -108,7 +111,7 @@ export const SpeedComparison: React.FC = () => {
           <button
             onClick={startRace}
             disabled={isRunning}
-            className="px-8 py-3 bg-white text-black font-bold rounded-full hover:scale-105 active:scale-95 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-white/20"
+            className="px-8 py-3 bg-white text-black font-bold rounded-full hover:scale-105 active:scale-[0.97] transition-all motion-reduce:duration-[0.01ms] disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-white/20"
           >
             {isRunning ? t('speedComparison.rendering') : t('speedComparison.startTest')}
           </button>

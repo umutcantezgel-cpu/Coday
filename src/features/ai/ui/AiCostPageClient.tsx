@@ -157,7 +157,7 @@ export default function AiCostPage() {
                 {costData.breakdown.map((item, idx) => (
                   <li
                     key={idx}
-                    className="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-slate-50 transition-colors"
+                    className="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-slate-50 transition-colors motion-reduce:duration-[0.01ms]"
                   >
                     <div className="font-semibold text-secondary">{item.item}</div>
                     <div className="text-slate-600 font-mono bg-slate-100 px-4 py-1.5 rounded-lg whitespace-nowrap">
@@ -208,7 +208,7 @@ export default function AiCostPage() {
                   {faq.question}
                   <OptimizedIcon
                     icon={CaretDown}
-                    className="w-5 h-5 text-slate-400 group-open:-rotate-180 transition-transform duration-300"
+                    className="w-5 h-5 text-slate-400 group-open:-rotate-180 transition-transform motion-reduce:duration-[0.01ms] duration-300"
                   />
                 </summary>
                 <div className="p-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100">

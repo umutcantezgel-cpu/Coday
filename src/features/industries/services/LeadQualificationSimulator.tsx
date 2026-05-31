@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { formatCurrency } from '@/shared/utils/formatters';
@@ -63,7 +63,7 @@ const LeadQualificationSimulator: React.FC = () => {
           return (
             <div
               key={idx}
-              className={`flex justify-between items-center p-3 rounded-lg border transition-all ${isQualified ? 'bg-green-50 border-green-100' : 'bg-gray-50 border-gray-100 opacity-50 grayscale'}`}
+              className={`flex justify-between items-center p-3 rounded-lg border transition-all motion-reduce:duration-[0.01ms] ${isQualified ? 'bg-green-50 border-green-100' : 'bg-gray-50 border-gray-100 opacity-50 grayscale'}`}
             >
               <div>
                 <div className="font-bold text-slate-800">{lead.name}</div>

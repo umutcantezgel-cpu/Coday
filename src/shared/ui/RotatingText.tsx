@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, {
   forwardRef,
   useCallback,
@@ -29,7 +29,7 @@ export interface RotatingTextRef {
 
 export interface RotatingTextProps extends Omit<
   React.ComponentPropsWithoutRef<typeof motion.span>,
-  'children' | 'transition' | 'initial' | 'animate' | 'exit'
+  'children' | 'transition motion-reduce:duration-[0.01ms]' | 'initial' | 'animate' | 'exit'
 > {
   texts: string[];
   transition?: Transition;

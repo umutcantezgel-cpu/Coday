@@ -30,16 +30,16 @@ const TechStackGrid: React.FC<TechStackGridProps> = ({ items, className = '' }) 
           variants={scaleUpVariants}
           transition={TRANSITION.reveal}
           whileHover={{ y: -4, scale: 1.02 }}
-          className="group relative bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-lg transition-all cursor-pointer overflow-hidden"
+          className="group relative bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-lg transition-all motion-reduce:duration-[0.01ms] cursor-pointer overflow-hidden"
         >
           {/* Background glow */}
           <div
-            className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity"
+            className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity motion-reduce:duration-[0.01ms]"
             style={{ backgroundColor: item.color || '#1A9A9A' }}
           />
 
           {/* Icon */}
-          <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">
+          <div className="text-4xl mb-3 group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms]">
             {item.icon.startsWith('http') ? (
               <OptimizedImage
                 src={item.icon}
@@ -52,7 +52,7 @@ const TechStackGrid: React.FC<TechStackGridProps> = ({ items, className = '' }) 
           </div>
 
           {/* Name */}
-          <h4 className="font-bold text-secondary text-sm mb-1 group-hover:text-primary transition-colors">
+          <h4 className="font-bold text-secondary text-sm mb-1 group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms]">
             {item.name}
           </h4>
 

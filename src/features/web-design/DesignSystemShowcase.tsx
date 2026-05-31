@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
 import { Icon } from '@/shared/ui/Icon';
 import { motion } from 'motion/react';
@@ -47,13 +47,13 @@ const DesignSystemShowcase: React.FC = () => {
         <div className="bg-white p-1 rounded-xl border border-gray-200 flex gap-1">
           <button
             onClick={() => setTheme('brand-a')}
-            className={`px-4 py-2 rounded-lg text-sm font-bold transition-all ${theme === 'brand-a' ? 'bg-gray-900 text-white shadow-md' : 'text-gray-500 hover:bg-gray-50'}`}
+            className={`active:scale-[0.97] px-4 py-2 rounded-lg text-sm font-bold transition-all motion-reduce:duration-[0.01ms] ${theme === 'brand-a' ? 'bg-gray-900 text-white shadow-md' : 'text-gray-500 hover:bg-gray-50'}`}
           >
             Playful
           </button>
           <button
             onClick={() => setTheme('brand-b')}
-            className={`px-4 py-2 rounded-lg text-sm font-bold transition-all ${theme === 'brand-b' ? 'bg-gray-900 text-white shadow-md' : 'text-gray-500 hover:bg-gray-50'}`}
+            className={`active:scale-[0.97] px-4 py-2 rounded-lg text-sm font-bold transition-all motion-reduce:duration-[0.01ms] ${theme === 'brand-b' ? 'bg-gray-900 text-white shadow-md' : 'text-gray-500 hover:bg-gray-50'}`}
           >
             Enterprise
           </button>
@@ -62,7 +62,7 @@ const DesignSystemShowcase: React.FC = () => {
 
       <motion.div
         layout
-        className={`grid md:grid-cols-2 gap-8 p-8 rounded-2xl transition-colors duration-500 ${current.bg} border border-gray-200/50`}
+        className={`grid md:grid-cols-2 gap-8 p-8 rounded-2xl transition-colors motion-reduce:duration-[0.01ms] duration-500 ${current.bg} border border-gray-200/50`}
       >
         {/* Card Component */}
         <motion.div
@@ -92,7 +92,7 @@ const DesignSystemShowcase: React.FC = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
           <button
-            className={`px-6 py-2 font-bold transition-transform active:scale-95 ${current.buttonText}`}
+            className={`active:scale-[0.97] px-6 py-2 font-bold transition-transform motion-reduce:duration-[0.01ms] ${current.buttonText}`}
             style={{
               backgroundColor: current.secondary,
               borderRadius: current.radius,
@@ -111,7 +111,7 @@ const DesignSystemShowcase: React.FC = () => {
               layout
               type="text"
               placeholder="hello@example.com"
-              className={`w-full px-4 py-3 outline-none transition-all focus:ring-2`}
+              className={`w-full px-4 py-3 outline-none transition-all motion-reduce:duration-[0.01ms] focus:ring-2`}
               style={{
                 borderRadius: current.radius,
                 border:
@@ -140,7 +140,7 @@ const DesignSystemShowcase: React.FC = () => {
           {/* Toggle Switch */}
           <div className="flex items-center gap-3">
             <div
-              className={`w-12 h-6 rounded-full relative transition-colors duration-300`}
+              className={`w-12 h-6 rounded-full relative transition-colors motion-reduce:duration-[0.01ms] duration-300`}
               style={{
                 backgroundColor: current.secondary,
                 border: theme === 'brand-a' ? '2px solid black' : 'none',

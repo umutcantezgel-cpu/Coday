@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
@@ -31,9 +31,9 @@ const Members: React.FC = () => {
           {members.map((member, i) => (
             <div
               key={i}
-              className="group relative bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-lg transition-all duration-300 text-center"
+              className="group relative bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-lg transition-all motion-reduce:duration-[0.01ms] duration-300 text-center"
             >
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-blue-50/30 opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-blue-50/30 opacity-0 group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms] rounded-2xl pointer-events-none" />
 
               <div className="relative z-10">
                 <div className="w-24 h-24 mx-auto rounded-full p-1 bg-gradient-to-br from-blue-400 to-purple-500 mb-4">
@@ -47,7 +47,7 @@ const Members: React.FC = () => {
                 <h3 className="text-lg font-bold text-gray-900">{member.name}</h3>
                 <p className="text-sm text-primary font-medium mb-4">{member.role}</p>
 
-                <button className="w-full py-2 rounded-lg bg-slate-50 text-slate-600 text-sm font-semibold hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                <button className="active:scale-[0.97] w-full py-2 rounded-lg bg-slate-50 text-slate-600 text-sm font-semibold hover:bg-blue-50 hover:text-blue-600 transition-colors motion-reduce:duration-[0.01ms]">
                   Vernetzen
                 </button>
               </div>

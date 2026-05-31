@@ -49,7 +49,7 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ className = '' }) => {
         <li>
           <Link
             href="/"
-            className="text-slate-500 hover:text-primary transition-colors flex items-center"
+            className="text-slate-500 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] flex items-center"
             aria-label="Home"
           >
             <OptimizedIcon icon={House} className="w-4 h-4" />
@@ -73,7 +73,10 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ className = '' }) => {
                   {translatedLabel}
                 </span>
               ) : (
-                <Link href={to} className="text-slate-500 hover:text-primary transition-colors">
+                <Link
+                  href={to}
+                  className="text-slate-500 hover:text-primary transition-colors motion-reduce:duration-[0.01ms]"
+                >
                   {translatedLabel}
                 </Link>
               )}

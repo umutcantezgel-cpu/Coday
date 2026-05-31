@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { Suspense, lazy, useEffect } from 'react';
 import BlurText from '@/shared/ui/BlurText';
@@ -99,9 +99,9 @@ export const ContactClient: React.FC = () => {
                   <div className="grid gap-6">
                     <a
                       href="mailto:umut@codayweb.de"
-                      className="flex items-start gap-4 text-slate-600 hover:text-primary transition-colors group"
+                      className="flex items-start gap-4 text-slate-600 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] group"
                     >
-                      <div className="w-10 h-10 bg-purple-50 rounded-lg flex items-center justify-center text-purple-600 group-hover:scale-110 transition-transform flex-shrink-0">
+                      <div className="w-10 h-10 bg-purple-50 rounded-lg flex items-center justify-center text-purple-600 group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms] flex-shrink-0">
                         <OptimizedIcon icon={Envelope} />
                       </div>
                       <div>
@@ -114,9 +114,9 @@ export const ContactClient: React.FC = () => {
 
                     <a
                       href="tel:+4917641195301"
-                      className="flex items-start gap-4 text-slate-600 hover:text-primary transition-colors group"
+                      className="flex items-start gap-4 text-slate-600 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] group"
                     >
-                      <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center text-primary group-hover:scale-110 transition-transform flex-shrink-0">
+                      <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center text-primary group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms] flex-shrink-0">
                         <OptimizedIcon icon={Phone} />
                       </div>
                       <div>
@@ -166,19 +166,19 @@ export const ContactClient: React.FC = () => {
                       <div className="flex gap-3">
                         <a
                           href="/contact"
-                          className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors"
+                          className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors motion-reduce:duration-[0.01ms]"
                         >
                           <OptimizedIcon icon={InstagramLogo} />
                         </a>
                         <a
                           href="/contact"
-                          className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors"
+                          className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors motion-reduce:duration-[0.01ms]"
                         >
                           <OptimizedIcon icon={LinkedinLogo} />
                         </a>
                         <a
                           href="/contact"
-                          className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors"
+                          className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors motion-reduce:duration-[0.01ms]"
                         >
                           <OptimizedIcon icon={FacebookLogo} />
                         </a>
@@ -193,7 +193,9 @@ export const ContactClient: React.FC = () => {
                 {/* Logo Bar Above Form */}
                 <div className="w-full overflow-hidden bg-white/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-100 shadow-sm">
                   <p className="text-center text-xs font-bold uppercase tracking-widest text-slate-400 mb-6">
-                    {t('logobar.title', { fallback: 'Vertrauen schenken uns innovative Unternehmen'})}
+                    {t('logobar.title', {
+                      fallback: 'Vertrauen schenken uns innovative Unternehmen',
+                    })}
                   </p>
                   <LogoLoop
                     logos={clientLogos}
@@ -247,7 +249,7 @@ export const ContactClient: React.FC = () => {
                 href={`https://wa.me/4917641195301?text=${t('location.whatsapp.message')}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 p-5 bg-white rounded-xl border border-aurora-mist hover:shadow-lg transition-all group"
+                className="flex items-center gap-4 p-5 bg-white rounded-xl border border-aurora-mist hover:shadow-lg transition-all motion-reduce:duration-[0.01ms] group"
               >
                 <div className="w-12 h-12 bg-success/10 rounded-xl flex items-center justify-center flex-shrink-0">
                   <svg
@@ -260,54 +262,54 @@ export const ContactClient: React.FC = () => {
                   </svg>
                 </div>
                 <div className="flex-1 text-start">
-                  <strong className="block text-gray-900 group-hover:text-success transition-colors">
+                  <strong className="block text-gray-900 group-hover:text-success transition-colors motion-reduce:duration-[0.01ms]">
                     {t('location.whatsapp.label')}
                   </strong>
                   <span className="text-sm text-gray-500">+49 176 41195301</span>
                 </div>
                 <OptimizedIcon
                   icon={ArrowRight}
-                  className="text-gray-400 group-hover:text-success group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-all"
+                  className="text-gray-400 group-hover:text-success group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-all motion-reduce:duration-[0.01ms]"
                 />
               </a>
 
               {/* Phone */}
               <a
                 href="tel:+4917641195301"
-                className="flex items-center gap-4 p-5 bg-white rounded-xl border border-aurora-mist hover:shadow-lg transition-all group"
+                className="flex items-center gap-4 p-5 bg-white rounded-xl border border-aurora-mist hover:shadow-lg transition-all motion-reduce:duration-[0.01ms] group"
               >
                 <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center flex-shrink-0">
                   <OptimizedIcon icon={Phone} className="text-primary" />
                 </div>
                 <div className="flex-1 text-start">
-                  <strong className="block text-gray-900 group-hover:text-primary transition-colors">
+                  <strong className="block text-gray-900 group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms]">
                     {t('location.phone.label')}
                   </strong>
                   <span className="text-sm text-gray-500">+49 176 41195301</span>
                 </div>
                 <OptimizedIcon
                   icon={ArrowRight}
-                  className="text-gray-400 group-hover:text-primary group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-all"
+                  className="text-gray-400 group-hover:text-primary group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-all motion-reduce:duration-[0.01ms]"
                 />
               </a>
 
               {/* Email */}
               <a
                 href="mailto:umut@codayweb.de"
-                className="flex items-center gap-4 p-5 bg-white rounded-xl border border-aurora-mist hover:shadow-lg transition-all group"
+                className="flex items-center gap-4 p-5 bg-white rounded-xl border border-aurora-mist hover:shadow-lg transition-all motion-reduce:duration-[0.01ms] group"
               >
                 <div className="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center flex-shrink-0">
                   <OptimizedIcon icon={Envelope} className="text-purple-600" />
                 </div>
                 <div className="flex-1 text-start">
-                  <strong className="block text-gray-900 group-hover:text-purple-600 transition-colors">
+                  <strong className="block text-gray-900 group-hover:text-purple-600 transition-colors motion-reduce:duration-[0.01ms]">
                     {t('location.email.label')}
                   </strong>
                   <span className="text-sm text-gray-500">umut@codayweb.de</span>
                 </div>
                 <OptimizedIcon
                   icon={ArrowRight}
-                  className="text-gray-400 group-hover:text-purple-600 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-all"
+                  className="text-gray-400 group-hover:text-purple-600 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-all motion-reduce:duration-[0.01ms]"
                 />
               </a>
 

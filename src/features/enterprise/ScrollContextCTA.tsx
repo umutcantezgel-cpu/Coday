@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { CalendarBlank } from '@phosphor-icons/react/dist/ssr';
@@ -42,7 +42,7 @@ export const ScrollContextCTA: React.FC = () => {
             </div>
             <Link
               href="/booking"
-              className="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-full font-bold text-sm flex items-center gap-2 transition-colors"
+              className="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-full font-bold text-sm flex items-center gap-2 transition-colors motion-reduce:duration-[0.01ms]"
             >
               <CalendarBlank size={16} />
               {t('scroll_cta.book_audit')}

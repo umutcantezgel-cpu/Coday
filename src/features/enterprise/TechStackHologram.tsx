@@ -21,7 +21,7 @@ export const TechStackHologram: React.FC = () => {
         className="relative w-64 h-64 transform-style-3d"
       >
         {/* Core Sphere */}
-        <div className="absolute inset-0 m-auto w-32 h-32 rounded-full bg-gradient-to-br from-primary to-blue-600 blur-xl opacity-50 animate-pulse" />
+        <div className="absolute inset-0 m-auto w-32 h-32 rounded-full bg-gradient-to-br from-primary to-blue-600 blur-xl opacity-50 animate-pulse motion-reduce:animate-none" />
 
         {technologies.map((tech, i) => {
           const angle = (i / technologies.length) * 360;

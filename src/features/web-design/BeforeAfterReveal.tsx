@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState, useRef, useEffect } from 'react';
 import { Icon } from '@/shared/ui/Icon';
 
@@ -86,7 +86,7 @@ const BeforeAfterReveal: React.FC = () => {
           <p className="text-white/90 text-lg font-bold">Conversion-Optimized</p>
 
           {/* Mock UI Elements floating */}
-          <div className="absolute top-10 right-10 w-24 h-24 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 animate-pulse"></div>
+          <div className="absolute top-10 right-10 w-24 h-24 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 animate-pulse motion-reduce:animate-none"></div>
           <div className="absolute bottom-10 left-10 w-32 h-16 bg-white/10 backdrop-blur-md rounded-full border border-white/20"></div>
         </div>
       </div>

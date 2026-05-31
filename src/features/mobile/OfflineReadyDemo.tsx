@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { WifiHigh, WifiSlash, Image, CloudSlash, Info } from '@phosphor-icons/react/dist/ssr';
@@ -20,7 +20,7 @@ const OfflineReadyDemo: React.FC = () => {
 
         <div
           onClick={() => setIsOnline(!isOnline)}
-          className={`cursor-pointer px-4 py-2 rounded-full border flex items-center gap-2 transition-all ${isOnline ? 'bg-green-500/20 border-green-500 text-green-400' : 'bg-red-500/20 border-red-500 text-red-400'}`}
+          className={`cursor-pointer px-4 py-2 rounded-full border flex items-center gap-2 transition-all motion-reduce:duration-[0.01ms] ${isOnline ? 'bg-green-500/20 border-green-500 text-green-400' : 'bg-red-500/20 border-red-500 text-red-400'}`}
         >
           <OptimizedIcon icon={isOnline ? WifiHigh : WifiSlash} className="text-lg" />
           <span className="font-bold text-sm uppercase tracking-wider">
@@ -44,7 +44,7 @@ const OfflineReadyDemo: React.FC = () => {
                 <p className="text-gray-500 text-sm">Content Loaded</p>
               </div>
             ) : (
-              <div className="text-center animate-pulse">
+              <div className="text-center animate-pulse motion-reduce:animate-none">
                 <OptimizedIcon icon={CloudSlash} className="text-4xl text-red-400 mb-2" />
                 <p className="text-red-400 font-bold">No Internet Connection.</p>
                 <p className="text-gray-500 text-xs mt-2">Dino Game starts...</p>
@@ -55,7 +55,7 @@ const OfflineReadyDemo: React.FC = () => {
 
         {/* Our PWA */}
         <div
-          className={`bg-gradient-to-br from-primary/20 to-secondary rounded-2xl p-6 border transition-all ${isOnline ? 'border-primary/50 shadow-lg shadow-primary/10' : 'border-white/20 grayscale'}`}
+          className={`bg-gradient-to-br from-primary/20 to-secondary rounded-2xl p-6 border transition-all motion-reduce:duration-[0.01ms] ${isOnline ? 'border-primary/50 shadow-lg shadow-primary/10' : 'border-white/20 grayscale'}`}
         >
           <span className="flex items-center gap-2 mb-8">
             <span className="text-xs font-bold uppercase tracking-wider text-primary">
@@ -83,8 +83,8 @@ const OfflineReadyDemo: React.FC = () => {
             <AnimatePresence>
               {!isOnline && (
                 <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
                   className="bg-yellow-500/20 border border-yellow-500/50 p-3 rounded-lg flex items-center gap-3 text-yellow-200 text-xs"
                 >
                   <OptimizedIcon icon={Info} className="text-sm" />

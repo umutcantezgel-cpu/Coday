@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { useState, useMemo } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
@@ -81,7 +81,7 @@ const FAQ = () => {
           </div>
           <input
             type="text"
-            className="block w-full pl-12 pr-12 py-4 bg-white border border-slate-200 rounded-2xl text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent shadow-lg text-lg transition-shadow"
+            className="block w-full pl-12 pr-12 py-4 bg-white border border-slate-200 rounded-2xl text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent shadow-lg text-lg transition-shadow motion-reduce:duration-[0.01ms]"
             placeholder={t('search.placeholder')}
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
@@ -89,7 +89,7 @@ const FAQ = () => {
           {searchTerm && (
             <button
               onClick={() => setSearchTerm('')}
-              className="absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-slate-600"
+              className="active:scale-[0.97] absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-slate-600"
             >
               <X className="h-5 w-5" />
             </button>
@@ -107,7 +107,7 @@ const FAQ = () => {
         <div className="flex justify-center space-x-2 min-w-max pb-2">
           <button
             onClick={() => handleCategoryClick('all')}
-            className={`px-6 py-2 rounded-full text-sm font-bold transition-all ${
+            className={`active:scale-[0.97] px-6 py-2 rounded-full text-sm font-bold transition-all motion-reduce:duration-[0.01ms] ${
               selectedCategory === 'all'
                 ? 'bg-blue-600 text-white shadow-md'
                 : 'bg-white text-slate-600 hover:bg-slate-50 border border-slate-200'
@@ -119,7 +119,7 @@ const FAQ = () => {
             <button
               key={cat.id}
               onClick={() => handleCategoryClick(cat.id)}
-              className={`px-6 py-2 rounded-full text-sm font-bold transition-all flex items-center gap-2 ${
+              className={`active:scale-[0.97] px-6 py-2 rounded-full text-sm font-bold transition-all motion-reduce:duration-[0.01ms] flex items-center gap-2 ${
                 selectedCategory === cat.id
                   ? 'bg-blue-600 text-white shadow-md'
                   : 'bg-white text-slate-600 hover:bg-slate-50 border border-slate-200'
@@ -145,7 +145,7 @@ const FAQ = () => {
                 <motion.div
                   key={faq.id}
                   layoutId={faq.id}
-                  className={`bg-white rounded-2xl border transition-colors overflow-hidden ${
+                  className={`bg-white rounded-2xl border transition-colors motion-reduce:duration-[0.01ms] overflow-hidden ${
                     openItem === faq.id
                       ? 'border-blue-500 shadow-md ring-1 ring-blue-500'
                       : 'border-slate-200 hover:border-blue-300'
@@ -153,13 +153,13 @@ const FAQ = () => {
                 >
                   <button
                     onClick={() => toggleItem(faq.id)}
-                    className="w-full flex justify-between items-center p-6 text-left focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:rounded-xl"
+                    className="active:scale-[0.97] w-full flex justify-between items-center p-6 text-left focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:rounded-xl"
                   >
                     <span className="font-display font-bold text-lg text-slate-900 pr-8">
                       {faq.question}
                     </span>
                     <CaretDown
-                      className={`h-5 w-5 text-slate-500 transition-transform duration-300 ${
+                      className={`h-5 w-5 text-slate-500 transition-transform motion-reduce:duration-[0.01ms] duration-300 ${
                         openItem === faq.id ? 'rotate-180 text-blue-500' : ''
                       }`}
                     />
@@ -167,10 +167,10 @@ const FAQ = () => {
                   <AnimatePresence>
                     {openItem === faq.id && (
                       <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: 'easeInOut' }}
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.2, ease: 'easeOut' }}
                       >
                         <div className="px-6 pb-6 text-slate-600 leading-relaxed prose prose-blue max-w-none">
                           {/* Simple markdown rendering or just text with line breaks */}
@@ -201,7 +201,7 @@ const FAQ = () => {
               <p className="text-slate-500">{t('cta.text')}</p>
               <button
                 onClick={() => setSearchTerm('')}
-                className="mt-4 text-blue-600 font-bold hover:underline"
+                className="active:scale-[0.97] mt-4 text-blue-600 font-bold hover:underline"
               >
                 {t('search.clear')}
               </button>
@@ -218,7 +218,7 @@ const FAQ = () => {
             <p className="text-blue-100 text-lg mb-8 max-w-xl mx-auto">{t('cta.text')}</p>
             <a
               href="/contact"
-              className="inline-block bg-white text-blue-600 font-bold py-3 px-8 rounded-full hover:bg-blue-50 transition-colors"
+              className="inline-block bg-white text-blue-600 font-bold py-3 px-8 rounded-full hover:bg-blue-50 transition-colors motion-reduce:duration-[0.01ms]"
             >
               {t('cta.button')}
             </a>

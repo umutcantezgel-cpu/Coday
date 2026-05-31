@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React from 'react';
 import dynamic from 'next/dynamic';
 import { useTranslations } from 'next-intl';
@@ -56,23 +56,23 @@ export function IndustryOverviewClient() {
               <Link
                 href={`/branchen/${industry.slug}`}
                 key={industry.slug}
-                className="group block p-8 bg-white border border-gray-200 rounded-3xl shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 relative overflow-hidden"
+                className="group block p-8 bg-white border border-gray-200 rounded-3xl shadow-md hover:shadow-xl transition-all motion-reduce:duration-[0.01ms] duration-500 hover:-translate-y-2 relative overflow-hidden"
               >
                 {/* Background Image */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none">
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity motion-reduce:duration-[0.01ms] duration-500 pointer-events-none">
                   <OptimizedImage
                     src={image.src}
                     alt=""
-                    className="w-full h-full object-cover grayscale mix-blend-multiply transform scale-100 group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-full object-cover grayscale mix-blend-multiply transform scale-100 group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms] duration-700"
                   />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-br from-white via-white/80 to-transparent opacity-100 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-br from-white via-white/80 to-transparent opacity-100 group-hover:opacity-90 transition-opacity motion-reduce:duration-[0.01ms] duration-500 pointer-events-none" />
 
                 <div className="relative z-10 flex flex-col h-full">
-                  <div className="mb-6 p-4 bg-primary/10 w-fit rounded-2xl group-hover:bg-primary group-hover:text-white transition-colors duration-300 text-primary shadow-sm">
+                  <div className="mb-6 p-4 bg-primary/10 w-fit rounded-2xl group-hover:bg-primary group-hover:text-white transition-colors motion-reduce:duration-[0.01ms] duration-300 text-primary shadow-sm">
                     <Icon size={32} />
                   </div>
-                  <h3 className="text-2xl font-bold font-display text-secondary mb-3 group-hover:text-primary transition-colors">
+                  <h3 className="text-2xl font-bold font-display text-secondary mb-3 group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms]">
                     {t(industry.title)}
                   </h3>
                   <p className="text-text-light mb-8 flex-grow leading-relaxed">
@@ -82,7 +82,7 @@ export function IndustryOverviewClient() {
                     {t('overview.cta')}
                     <OptimizedIcon
                       icon={ArrowRight}
-                      className="group-hover:translate-x-1 transition-transform text-sm"
+                      className="group-hover:translate-x-1 transition-transform motion-reduce:duration-[0.01ms] text-sm"
                     />
                   </span>
                 </div>
@@ -93,6 +93,4 @@ export function IndustryOverviewClient() {
       </div>
     </div>
   );
-};
-
-
+}

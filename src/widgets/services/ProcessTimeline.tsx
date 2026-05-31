@@ -52,7 +52,7 @@ export const ProcessTimeline: React.FC<ProcessTimelineProps> = ({ steps, title, 
                 {/* Content */}
                 <div className="w-full md:w-1/2 pl-24 md:pl-0 md:px-12 flex flex-col">
                   <div
-                    className={`bg-white p-8 rounded-2xl shadow-flat border border-gray-100 hover:shadow-glow transition-all duration-300 hover:-translate-y-1 ${
+                    className={`bg-white p-8 rounded-2xl shadow-flat border border-gray-100 hover:shadow-glow transition-all motion-reduce:duration-[0.01ms] duration-300 hover:-translate-y-1 ${
                       isEven ? 'md:text-left' : 'md:text-right'
                     }`}
                   >

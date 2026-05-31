@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useTranslations } from 'next-intl';
@@ -21,13 +21,13 @@ const DigitalExposeDemo: React.FC = () => {
         <div className="bg-white/10 p-1 rounded-xl flex gap-1">
           <button
             onClick={() => setView('pdf')}
-            className={`px-6 py-2 rounded-lg text-sm font-bold transition-all ${view === 'pdf' ? 'bg-white text-slate-900 shadow-lg' : 'text-gray-400 hover:text-white'}`}
+            className={`active:scale-[0.97] px-6 py-2 rounded-lg text-sm font-bold transition-all motion-reduce:duration-[0.01ms] ${view === 'pdf' ? 'bg-white text-slate-900 shadow-lg' : 'text-gray-400 hover:text-white'}`}
           >
             {t('immobilien-makler.features.expose_demo.toggles.pdf')}
           </button>
           <button
             onClick={() => setView('web')}
-            className={`px-6 py-2 rounded-lg text-sm font-bold transition-all ${view === 'web' ? 'bg-primary text-white shadow-lg' : 'text-gray-400 hover:text-white'}`}
+            className={`active:scale-[0.97] px-6 py-2 rounded-lg text-sm font-bold transition-all motion-reduce:duration-[0.01ms] ${view === 'web' ? 'bg-primary text-white shadow-lg' : 'text-gray-400 hover:text-white'}`}
           >
             {t('immobilien-makler.features.expose_demo.toggles.web')}
           </button>
@@ -113,10 +113,10 @@ const DigitalExposeDemo: React.FC = () => {
                     transition={{ delay: 0.4 }}
                     className="flex gap-4"
                   >
-                    <button className="bg-white text-slate-900 px-6 py-3 rounded-full font-bold hover:bg-gray-100 transition-colors">
+                    <button className="active:scale-[0.97] bg-white text-slate-900 px-6 py-3 rounded-full font-bold hover:bg-gray-100 transition-colors motion-reduce:duration-[0.01ms]">
                       {t('immobilien-makler.features.expose_demo.web_view.cta_tour')}
                     </button>
-                    <button className="bg-white/10 text-white backdrop-blur border border-white/20 px-6 py-3 rounded-full font-bold hover:bg-white/20 transition-colors">
+                    <button className="active:scale-[0.97] bg-white/10 text-white backdrop-blur border border-white/20 px-6 py-3 rounded-full font-bold hover:bg-white/20 transition-colors motion-reduce:duration-[0.01ms]">
                       {t('immobilien-makler.features.expose_demo.web_view.cta_share')}
                     </button>
                   </motion.div>

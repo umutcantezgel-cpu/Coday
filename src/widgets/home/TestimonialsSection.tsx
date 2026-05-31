@@ -1,12 +1,10 @@
-
-
 import React from 'react';
 import { useTranslations } from 'next-intl';
 
 import BlurText from '@/shared/ui/BlurText';
 import { TestimonialBlock } from '@/shared/ui/TestimonialBlock';
 import dynamic from 'next/dynamic';
-const FadeInUp = dynamic(() => import('@/shared/ui/MotionWrappers').then(m => m.FadeInUp));
+import { FadeInUp } from '@/shared/ui/MotionWrappers';
 
 export const TestimonialsSection: React.FC = () => {
   const t = useTranslations('home');
@@ -18,7 +16,7 @@ export const TestimonialsSection: React.FC = () => {
     authorImageUrl?: string;
     authorCompany?: string;
   }>;
-  
+
   const testimonials = items.map((item) => ({
     quote: item.quote,
     authorName: item.authorName,

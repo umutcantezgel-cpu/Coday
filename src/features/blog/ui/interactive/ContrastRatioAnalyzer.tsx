@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Eyeglasses, CheckCircle, XCircle, Info, Shuffle } from '@phosphor-icons/react/dist/ssr';
@@ -117,7 +117,7 @@ export const ContrastRatioAnalyzer: React.FC = () => {
 
             <button
               onClick={randomize}
-              className="w-full py-3 flex items-center justify-center gap-2 bg-white border border-gray-200 rounded-xl hover:bg-gray-100 transition-colors font-medium text-gray-600"
+              className="active:scale-[0.97] w-full py-3 flex items-center justify-center gap-2 bg-white border border-gray-200 rounded-xl hover:bg-gray-100 transition-colors motion-reduce:duration-[0.01ms] font-medium text-gray-600"
             >
               <Shuffle size={18} /> Randomize
             </button>

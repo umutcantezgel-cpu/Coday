@@ -215,7 +215,7 @@ export default function ProcessPage() {
           {processData.previousStep ? (
             <Link
               href={`/ai/prozess/${processData.previousStep}`}
-              className="flex items-center gap-3 bg-white border border-slate-200 px-6 py-4 rounded-2xl hover:border-primary hover:text-primary transition-colors flex-1"
+              className="flex items-center gap-3 bg-white border border-slate-200 px-6 py-4 rounded-2xl hover:border-primary hover:text-primary transition-colors motion-reduce:duration-[0.01ms] flex-1"
             >
               <OptimizedIcon icon={CaretLeft} className="w-6 h-6 shrink-0" />
               <div>
@@ -234,7 +234,7 @@ export default function ProcessPage() {
           {processData.nextStep ? (
             <Link
               href={`/ai/prozess/${processData.nextStep}`}
-              className="flex items-center justify-end text-right gap-3 bg-white border border-slate-200 px-6 py-4 rounded-2xl hover:border-primary hover:text-primary transition-colors flex-1"
+              className="flex items-center justify-end text-right gap-3 bg-white border border-slate-200 px-6 py-4 rounded-2xl hover:border-primary hover:text-primary transition-colors motion-reduce:duration-[0.01ms] flex-1"
             >
               <div>
                 <p className="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">

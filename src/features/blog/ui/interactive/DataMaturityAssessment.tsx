@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { CheckCircle, TrendUp, ChartBar, Lock } from '@phosphor-icons/react/dist/ssr';
@@ -134,7 +134,7 @@ export const DataMaturityAssessment: React.FC = () => {
 
   return (
     <div className="my-12 w-full max-w-3xl mx-auto font-sans">
-      <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+      <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow motion-reduce:duration-[0.01ms] duration-300">
         <div className="p-6 md:p-8 bg-gradient-to-r from-primary/5 to-purple-500/5 border-b border-gray-200">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-xl md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-500 flex items-center gap-2">
@@ -182,12 +182,12 @@ export const DataMaturityAssessment: React.FC = () => {
                     <button
                       key={index}
                       onClick={() => handleAnswer(option.points)}
-                      className="group p-4 text-left rounded-xl border border-gray-200 hover:border-primary hover:bg-primary/5 transition-all duration-200 flex items-center justify-between"
+                      className="active:scale-[0.97] group p-4 text-left rounded-xl border border-gray-200 hover:border-primary hover:bg-primary/5 transition-all motion-reduce:duration-[0.01ms] duration-200 flex items-center justify-between"
                     >
-                      <span className="text-gray-900 group-hover:text-primary transition-colors">
+                      <span className="text-gray-900 group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms]">
                         {option.text}
                       </span>
-                      <CheckCircle className="w-5 h-5 opacity-0 group-hover:opacity-100 text-primary transition-all transform translate-x-2 group-hover:translate-x-0" />
+                      <CheckCircle className="w-5 h-5 opacity-0 group-hover:opacity-100 text-primary transition-all motion-reduce:duration-[0.01ms] transform translate-x-2 group-hover:translate-x-0" />
                     </button>
                   ))}
                 </div>
@@ -210,9 +210,7 @@ export const DataMaturityAssessment: React.FC = () => {
                   <TrendUp className="w-10 h-10" />
                 </div>
 
-                <h4 className="text-2xl font-bold text-gray-900 mb-2">
-                  {t('yourStatus')}
-                </h4>
+                <h4 className="text-2xl font-bold text-gray-900 mb-2">{t('yourStatus')}</h4>
                 <div
                   className={cn(
                     'text-3xl font-black mb-4 bg-clip-text text-transparent bg-gradient-to-r',
@@ -267,13 +265,13 @@ export const DataMaturityAssessment: React.FC = () => {
                 <div className="flex justify-center gap-4">
                   <button
                     onClick={reset}
-                    className="px-6 py-2 rounded-lg text-gray-900/60 hover:text-primary hover:bg-primary/5 transition-all"
+                    className="active:scale-[0.97] px-6 py-2 rounded-lg text-gray-900/60 hover:text-primary hover:bg-primary/5 transition-all motion-reduce:duration-[0.01ms]"
                   >
                     {t('retry')}
                   </button>
                   <a
                     href="/contact"
-                    className="px-6 py-2 rounded-lg bg-gradient-to-r from-primary to-purple-500 text-white font-medium hover:shadow-lg hover:opacity-90 transition-all flex items-center gap-2"
+                    className="px-6 py-2 rounded-lg bg-gradient-to-r from-primary to-purple-500 text-white font-medium hover:shadow-lg hover:opacity-90 transition-all motion-reduce:duration-[0.01ms] flex items-center gap-2"
                   >
                     {t('bookAudit')} <CheckCircle className="w-4 h-4" />
                   </a>

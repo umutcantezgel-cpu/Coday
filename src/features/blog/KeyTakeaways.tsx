@@ -47,7 +47,7 @@ export const KeyTakeaways: React.FC<KeyTakeawaysProps> = ({
             <motion.li
               key={idx}
               id={`takeaway-${idx}`}
-              className="flex gap-4 p-4 rounded-xl bg-white/[0.02] hover:bg-white/[0.04] transition-colors border border-transparent hover:border-white/[0.05]"
+              className="flex gap-4 p-4 rounded-xl bg-white/[0.02] hover:bg-white/[0.04] transition-colors motion-reduce:duration-[0.01ms] border border-transparent hover:border-white/[0.05]"
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

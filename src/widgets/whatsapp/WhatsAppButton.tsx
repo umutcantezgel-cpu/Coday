@@ -35,9 +35,9 @@ export const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
       aria-label="WhatsApp Chat öffnen"
     >
       {/* Main Button */}
-      <div className="relative flex items-center justify-center w-14 h-14 bg-success rounded-full shadow-lg hover:shadow-xl transition-shadow">
+      <div className="relative flex items-center justify-center w-14 h-14 bg-success rounded-full shadow-lg hover:shadow-xl transition-shadow motion-reduce:duration-[0.01ms]">
         {/* Pulse Animation */}
-        <span className="absolute inset-0 rounded-full bg-success animate-ping opacity-30" />
+        <span className="absolute inset-0 rounded-full bg-success animate-ping opacity-30 motion-reduce:animate-none" />
 
         {/* WhatsApp Icon */}
         <svg
@@ -51,7 +51,7 @@ export const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
       </div>
 
       {/* Tooltip */}
-      <div className="absolute left-16 bottom-1/2 translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+      <div className="absolute left-16 bottom-1/2 translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms] pointer-events-none">
         <div className="bg-gray-900 text-white text-sm font-medium px-3 py-2 rounded-lg shadow-lg whitespace-nowrap">
           WhatsApp Chat
           <div className="absolute -left-1.5 top-1/2 -translate-y-1/2 w-3 h-3 bg-gray-900 rotate-45" />

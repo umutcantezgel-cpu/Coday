@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useRef, useEffect, useState } from 'react';
 
 interface GooeyNavItem {
@@ -25,7 +25,14 @@ const getXY = (distance: number, pointIndex: number, totalPoints: number): [numb
   return [distance * Math.cos(angle), distance * Math.sin(angle)];
 };
 
-const createParticle = (i: number, t: number, d: [number, number], r: number, totalPoints: number, colors: number[]) => {
+const createParticle = (
+  i: number,
+  t: number,
+  d: [number, number],
+  r: number,
+  totalPoints: number,
+  colors: number[]
+) => {
   const rotate = noise(r / 10);
   return {
     start: getXY(d[0], totalPoints - i, totalPoints),
@@ -33,7 +40,7 @@ const createParticle = (i: number, t: number, d: [number, number], r: number, to
     time: t,
     scale: 1 + noise(0.2),
     color: colors[Math.floor(Math.random() * colors.length)],
-    rotate: rotate > 0 ? (rotate + r / 20) * 10 : (rotate - r / 20) * 10
+    rotate: rotate > 0 ? (rotate + r / 20) * 10 : (rotate - r / 20) * 10,
   };
 };
 
@@ -46,7 +53,7 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
   particleR = 100,
   timeVariance = 300,
   colors = [1, 2, 3, 1, 2, 3, 1, 4],
-  initialActiveIndex = 0
+  initialActiveIndex = 0,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const navRef = useRef<HTMLUListElement>(null);
@@ -99,7 +106,7 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
       left: `${pos.x - containerRect.x}px`,
       top: `${pos.y - containerRect.y}px`,
       width: `${pos.width}px`,
-      height: `${pos.height}px`
+      height: `${pos.height}px`,
     };
     Object.assign(filterRef.current.style, styles);
     Object.assign(textRef.current.style, styles);
@@ -116,7 +123,7 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
     updateEffectPosition(liEl);
     if (filterRef.current) {
       const particles = filterRef.current.querySelectorAll('.particle');
-      particles.forEach(p => filterRef.current!.removeChild(p));
+      particles.forEach((p) => filterRef.current!.removeChild(p));
     }
     if (textRef.current) {
       textRef.current.classList.remove('active');
@@ -135,7 +142,7 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
       if (liEl) {
         handleClick(
           {
-            currentTarget: liEl
+            currentTarget: liEl,
           } as unknown as React.MouseEvent<HTMLAnchorElement>,
           index
         );
@@ -174,7 +181,7 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
           }
           .gooey-effect.text {
             color: #2D3748;
-            transition: color 0.3s ease;
+            transition motion-reduce:duration-[0.01ms]: color 0.3s ease;
           }
           .gooey-effect.text.active {
             color: white;
@@ -273,7 +280,7 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
             background: #1A9A9A;
             opacity: 0;
             transform: scale(0);
-            transition: all 0.3s ease;
+            transition motion-reduce:duration-[0.01ms]: all 0.3s ease;
             z-index: -1;
           }
         `}
@@ -287,13 +294,14 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
             {items.map((item, index) => (
               <li
                 key={index}
-                className={`rounded-full relative cursor-pointer transition-all duration-300 ease ${activeIndex === index ? 'active' : ''
-                  }`}
+                className={`rounded-full relative cursor-pointer transition-all motion-reduce:duration-[0.01ms] duration-300 ease ${
+                  activeIndex === index ? 'active' : ''
+                }`}
               >
                 <a
                   href={item.href}
-                  onClick={e => handleClick(e, index)}
-                  onKeyDown={e => handleKeyDown(e, index)}
+                  onClick={(e) => handleClick(e, index)}
+                  onKeyDown={(e) => handleKeyDown(e, index)}
                   className="outline-none py-[0.6em] px-[1em] inline-block"
                 >
                   {item.label}

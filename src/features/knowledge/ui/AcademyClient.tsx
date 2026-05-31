@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
@@ -31,15 +31,15 @@ const Academy: React.FC = () => {
               className="group cursor-pointer"
               onClick={() => setSelectedVideo(course)}
             >
-              <div className="relative aspect-video rounded-xl bg-slate-900 mb-4 overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-300">
+              <div className="relative aspect-video rounded-xl bg-slate-900 mb-4 overflow-hidden shadow-lg group-hover:shadow-2xl transition-all motion-reduce:duration-[0.01ms] duration-300">
                 <OptimizedImage
                   src={course.image}
                   alt={course.content[currentLang].alt}
-                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all motion-reduce:duration-[0.01ms] duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/60 to-purple-900/40 opacity-60 group-hover:opacity-40 transition-opacity" />
+                <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/60 to-purple-900/40 opacity-60 group-hover:opacity-40 transition-opacity motion-reduce:duration-[0.01ms]" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform ring-1 ring-white/50">
+                  <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms] ring-1 ring-white/50">
                     <OptimizedIcon icon={Play} className="text-white text-3xl" weight="fill" />
                   </div>
                 </div>
@@ -49,7 +49,7 @@ const Academy: React.FC = () => {
                 <span className="px-2 py-1 rounded bg-blue-50 text-blue-600 text-[10px] font-bold uppercase tracking-wider mt-1">
                   {course.content[currentLang].tag}
                 </span>
-                <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors line-clamp-1">
+                <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors motion-reduce:duration-[0.01ms] line-clamp-1">
                   {course.content[currentLang].title}
                 </h3>
               </div>
@@ -61,11 +61,11 @@ const Academy: React.FC = () => {
       {/* Video Modal */}
       {selectedVideo &&
         createPortal(
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md p-4 animate-in fade-in duration-300">
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md p-4 animate-in fade-in duration-300 motion-reduce:animate-none">
             <div className="relative w-full max-w-5xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10">
               <button
                 onClick={() => setSelectedVideo(null)}
-                className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/50 text-white hover:bg-white/20 transition-colors"
+                className="active:scale-[0.97] absolute top-4 right-4 z-10 p-2 rounded-full bg-black/50 text-white hover:bg-white/20 transition-colors motion-reduce:duration-[0.01ms]"
               >
                 <X size={24} />
               </button>

@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 import { useTranslations } from 'next-intl';
@@ -63,7 +63,7 @@ const Dienstleistung: React.FC = () => {
                 {t('unternehmensberatung.hero.subheadline')}
               </p>
               <div className="flex gap-4 mb-12">
-                <button className="bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:bg-secondary/90 transition-colors">
+                <button className="active:scale-[0.97] bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:bg-secondary/90 transition-colors motion-reduce:duration-[0.01ms]">
                   {t('unternehmensberatung.customFeatures.termin_kalender.title')}
                 </button>
               </div>
@@ -113,7 +113,7 @@ const Dienstleistung: React.FC = () => {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="p-8 border border-gray-100 rounded-2xl bg-white hover:shadow-xl transition-all"
+                className="p-8 border border-gray-100 rounded-2xl bg-white hover:shadow-xl transition-all motion-reduce:duration-[0.01ms]"
               >
                 <OptimizedIcon
                   icon={iconMap[item.icon] || ChartLineUp}

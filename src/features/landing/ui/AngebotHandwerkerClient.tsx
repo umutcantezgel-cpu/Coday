@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
@@ -32,7 +32,7 @@ export default function AngebotHandwerker() {
         <div className="container mx-auto px-6 relative z-10">
           <motion.div initial="hidden" animate="visible" variants={fadeIn} className="max-w-4xl">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-navy/5 rounded-full text-navy font-mono text-sm font-bold tracking-widest mb-8 border border-navy/10">
-              <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse motion-reduce:animate-none" />
               EXKLUSIV FÜR DIE MEISTER-GRUPPE
             </div>
             <h1 className="text-6xl md:text-8xl font-black text-navy uppercase leading-[1.05] tracking-tighter mb-8">
@@ -48,13 +48,13 @@ export default function AngebotHandwerker() {
             <div className="flex gap-4">
               <a
                 href="#roi-calculator"
-                className="bg-navy text-white px-8 py-4 rounded-xl font-bold uppercase tracking-widest hover:bg-indigo transition-colors flex items-center gap-2 shadow-lg shadow-navy/20"
+                className="bg-navy text-white px-8 py-4 rounded-xl font-bold uppercase tracking-widest hover:bg-indigo transition-colors motion-reduce:duration-[0.01ms] flex items-center gap-2 shadow-lg shadow-navy/20"
               >
                 Zum ROI-Rechner <ChartLineUp weight="bold" />
               </a>
               <a
                 href="#pakete"
-                className="bg-white text-navy border-2 border-slate-200 px-8 py-4 rounded-xl font-bold uppercase tracking-widest hover:border-navy transition-colors"
+                className="bg-white text-navy border-2 border-slate-200 px-8 py-4 rounded-xl font-bold uppercase tracking-widest hover:border-navy transition-colors motion-reduce:duration-[0.01ms]"
               >
                 Direkt zu den Preisen
               </a>
@@ -256,7 +256,7 @@ export default function AngebotHandwerker() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-white border border-slate-200 rounded-3xl p-10 hover:shadow-xl transition-shadow"
+              className="bg-white border border-slate-200 rounded-3xl p-10 hover:shadow-xl transition-shadow motion-reduce:duration-[0.01ms]"
             >
               <h3 className="text-sm font-bold text-slate-400 tracking-widest uppercase mb-2">
                 Stufe 1
@@ -329,7 +329,7 @@ export default function AngebotHandwerker() {
               </ul>
               <a
                 href="#kontakt"
-                className="block text-center w-full bg-gold text-white font-bold uppercase tracking-widest py-4 rounded-xl hover:bg-gold-bright transition-colors shadow-lg shadow-gold/20"
+                className="block text-center w-full bg-gold text-white font-bold uppercase tracking-widest py-4 rounded-xl hover:bg-gold-bright transition-colors motion-reduce:duration-[0.01ms] shadow-lg shadow-gold/20"
               >
                 Meisterstück anfragen
               </a>
@@ -389,7 +389,7 @@ export default function AngebotHandwerker() {
               className="md:w-1/2 relative"
             >
               <div className="w-full aspect-square max-w-md mx-auto bg-slate-50 border border-teal-200/50 rounded-[40px] flex items-center justify-center relative shadow-2xl">
-                <div className="absolute inset-0 bg-teal-50 rounded-[40px] -rotate-3 transition-transform hover:rotate-0" />
+                <div className="absolute inset-0 bg-teal-50 rounded-[40px] -rotate-3 transition-transform motion-reduce:duration-[0.01ms] hover:rotate-0" />
                 <div className="relative z-10 w-32 h-32 bg-white rounded-2xl shadow-xl flex items-center justify-center border border-teal-100">
                   <ShieldCheck className="w-16 h-16 text-teal-500" weight="duotone" />
                 </div>
@@ -472,7 +472,7 @@ export default function AngebotHandwerker() {
               href="https://wa.me/4915100000000"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-4 bg-teal-500 text-white px-10 py-6 rounded-2xl font-bold uppercase tracking-widest text-xl hover:bg-teal-400 transition-colors shadow-[0_0_40px_rgba(44,165,160,0.4)] hover:shadow-[0_0_60px_rgba(44,165,160,0.6)]"
+              className="inline-flex items-center justify-center gap-4 bg-teal-500 text-white px-10 py-6 rounded-2xl font-bold uppercase tracking-widest text-xl hover:bg-teal-400 transition-colors motion-reduce:duration-[0.01ms] shadow-[0_0_40px_rgba(44,165,160,0.4)] hover:shadow-[0_0_60px_rgba(44,165,160,0.6)]"
             >
               Schreib mir in WhatsApp <ArrowRight weight="bold" />
             </a>

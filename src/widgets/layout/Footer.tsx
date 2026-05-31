@@ -30,7 +30,7 @@ export const Footer: React.FC = () => {
           <p className="text-center text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-6">
             {t('logobar.title', { defaultValue: 'Vertrauen schenken uns' })}
           </p>
-          <div className="opacity-50 hover:opacity-100 transition-opacity duration-300">
+          <div className="opacity-50 hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms] duration-300">
             <LogoLoop logos={clientLogos} speed={25} logoHeight={24} gap={48} />
           </div>
         </div>
@@ -79,7 +79,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
                 >
                   {t('nav.main.home', { defaultValue: 'Startseite' })}
                 </Link>
@@ -87,7 +87,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/work"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
                 >
                   {t('nav.main.work', { defaultValue: 'Portfolio' })}
                 </Link>
@@ -95,7 +95,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/about"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
                 >
                   {t('nav.company.about', { defaultValue: 'Über uns' })}
                 </Link>
@@ -103,7 +103,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/process"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
                 >
                   {t('nav.main.process', { defaultValue: 'Prozess' })}
                 </Link>
@@ -111,7 +111,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/pricing"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
                 >
                   {t('nav.main.pricing', { defaultValue: 'Preise' })}
                 </Link>
@@ -119,7 +119,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/partnerschaft"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
                 >
                   {t('nav.main.partnerschaft', { defaultValue: 'Partner-Programm' })}
                 </Link>
@@ -127,7 +127,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/calculator"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
                 >
                   {t('nav.resources.calculator', { defaultValue: 'Preis-Rechner' })}
                 </Link>
@@ -135,7 +135,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/career"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
                 >
                   {t('nav.career.label', { defaultValue: 'Karriere' })}
                 </Link>
@@ -152,7 +152,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/services/web-development"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
                 >
                   {t('nav.services.web_development.label', { defaultValue: 'Webentwicklung' })}
                 </Link>
@@ -160,7 +160,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/services/design/ui-ux"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
                 >
                   {t('nav.services.ui_ux.label', { defaultValue: 'UI/UX Design' })}
                 </Link>
@@ -168,7 +168,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/services/seo"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
                 >
                   {t('nav.services.seo.label', { defaultValue: 'SEO Optimierung' })}
                 </Link>
@@ -176,7 +176,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/services/ecommerce-development"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
                 >
                   {t('nav.services.ecommerce.label', { defaultValue: 'E-Commerce' })}
                 </Link>
@@ -184,7 +184,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/services/development/api-integration"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
                 >
                   {t('nav.services.api.label', { defaultValue: 'API-Integrationen' })}
                 </Link>
@@ -192,7 +192,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/services/web-development"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
                 >
                   {t('nav.services.fullstack.label', { defaultValue: 'Full-Stack Entwicklung' })}
                 </Link>
@@ -200,7 +200,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/branchen/public-sector"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
                 >
                   {t('nav.industries.public', { defaultValue: 'Öffentliche Aufträge' })}
                 </Link>
@@ -208,7 +208,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/branchen/startups-tech"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
                 >
                   {t('nav.industries.tech', { defaultValue: 'Tech Startups' })}
                 </Link>
@@ -225,7 +225,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/standorte/hessen"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
                 >
                   Webdesign Hessen
                 </Link>
@@ -233,7 +233,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/standorte/wetzlar"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
                 >
                   Webagentur Wetzlar
                 </Link>
@@ -241,7 +241,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/branchen/gesundheit"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
                 >
                   Praxis-Website Wetzlar
                 </Link>
@@ -249,7 +249,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/branchen/gesundheit"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
                 >
                   Praxis-Website Gießen
                 </Link>
@@ -257,7 +257,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/branchen/handwerk"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
                 >
                   Handwerker Wetzlar
                 </Link>
@@ -274,7 +274,7 @@ export const Footer: React.FC = () => {
               <li>
                 <a
                   href="mailto:umut@codayweb.de"
-                  className="hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
+                  className="hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
                 >
                   umut@codayweb.de
                 </a>
@@ -282,7 +282,7 @@ export const Footer: React.FC = () => {
               <li>
                 <a
                   href="tel:+4917641195301"
-                  className="hover:text-primary transition-colors inline-flex items-center min-h-[44px]"
+                  className="hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
                 >
                   +49 176 41195301
                 </a>
@@ -297,7 +297,7 @@ export const Footer: React.FC = () => {
             </ul>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center min-h-[44px] px-6 bg-primary/20 text-blue-400 border border-primary/30 rounded-lg text-sm font-bold hover:bg-primary hover:text-white transition-all"
+              className="inline-flex items-center justify-center min-h-[44px] px-6 bg-primary/20 text-blue-400 border border-primary/30 rounded-lg text-sm font-bold hover:bg-primary hover:text-white transition-all motion-reduce:duration-[0.01ms]"
             >
               {t('nav.main.contact', { defaultValue: 'Projekt starten' })}
             </Link>
@@ -308,7 +308,7 @@ export const Footer: React.FC = () => {
         <div className="border-t border-gray-800/50 pt-10 pb-6">
           <TrustBadges
             align="center"
-            className="opacity-80 grayscale hover:grayscale-0 transition-all duration-300"
+            className="opacity-80 grayscale hover:grayscale-0 transition-all motion-reduce:duration-[0.01ms] duration-300"
           />
         </div>
 
@@ -316,28 +316,28 @@ export const Footer: React.FC = () => {
           <nav aria-label="Soziale Medien" className="flex gap-6 text-gray-400">
             <a
               href="/contact"
-              className="hover:text-primary transition-colors p-3 -m-3 inline-flex items-center justify-center min-h-[44px] min-w-[44px]"
+              className="hover:text-primary transition-colors motion-reduce:duration-[0.01ms] p-3 -m-3 inline-flex items-center justify-center min-h-[44px] min-w-[44px]"
               aria-label={t('social.visit', { platform: 'Facebook' })}
             >
               <OptimizedIcon icon={FacebookLogo} />
             </a>
             <a
               href="/contact"
-              className="hover:text-primary transition-colors p-3 -m-3 inline-flex items-center justify-center min-h-[44px] min-w-[44px]"
+              className="hover:text-primary transition-colors motion-reduce:duration-[0.01ms] p-3 -m-3 inline-flex items-center justify-center min-h-[44px] min-w-[44px]"
               aria-label={t('social.visit', { platform: 'Instagram' })}
             >
               <OptimizedIcon icon={InstagramLogo} />
             </a>
             <a
               href="/contact"
-              className="hover:text-primary transition-colors p-3 -m-3 inline-flex items-center justify-center min-h-[44px] min-w-[44px]"
+              className="hover:text-primary transition-colors motion-reduce:duration-[0.01ms] p-3 -m-3 inline-flex items-center justify-center min-h-[44px] min-w-[44px]"
               aria-label={t('social.visit', { platform: 'Twitter' })}
             >
               <OptimizedIcon icon={TwitterLogo} />
             </a>
             <a
               href="/contact"
-              className="hover:text-primary transition-colors p-3 -m-3 inline-flex items-center justify-center min-h-[44px] min-w-[44px]"
+              className="hover:text-primary transition-colors motion-reduce:duration-[0.01ms] p-3 -m-3 inline-flex items-center justify-center min-h-[44px] min-w-[44px]"
               aria-label={t('social.visit', { platform: 'LinkedIn' })}
             >
               <OptimizedIcon icon={LinkedinLogo} />
@@ -349,19 +349,19 @@ export const Footer: React.FC = () => {
           >
             <Link
               href="/legal/agb"
-              className="hover:text-white transition-colors inline-flex items-center min-h-[44px]"
+              className="hover:text-white transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
             >
               {t('nav.legal.agb')}
             </Link>
             <Link
               href="/legal/datenschutz"
-              className="hover:text-white transition-colors inline-flex items-center min-h-[44px]"
+              className="hover:text-white transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
             >
               {t('nav.legal.privacy')}
             </Link>
             <Link
               href="/legal/impressum"
-              className="hover:text-white transition-colors inline-flex items-center min-h-[44px]"
+              className="hover:text-white transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
             >
               {t('nav.legal.imprint')}
             </Link>

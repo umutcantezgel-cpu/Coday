@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 
@@ -21,10 +21,10 @@ const Calendar: React.FC = () => {
           <div className="p-6 md:p-8 border-b border-gray-100 flex items-center justify-between bg-slate-50/50">
             <h2 className="text-2xl font-bold text-gray-800">April 2026</h2>
             <div className="flex space-x-2">
-              <button className="p-2 rounded-full hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-200 transition-all">
+              <button className="active:scale-[0.97] p-2 rounded-full hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-200 transition-all motion-reduce:duration-[0.01ms]">
                 <OptimizedIcon icon={CaretLeft} className="text-gray-500" />
               </button>
-              <button className="p-2 rounded-full hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-200 transition-all">
+              <button className="active:scale-[0.97] p-2 rounded-full hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-200 transition-all motion-reduce:duration-[0.01ms]">
                 <OptimizedIcon icon={CaretRight} className="text-gray-500" />
               </button>
             </div>
@@ -55,13 +55,13 @@ const Calendar: React.FC = () => {
                   </span>
                 </div>
                 {day === 12 && (
-                  <div className="bg-blue-50 border border-blue-100 p-2 rounded-md mb-1 cursor-pointer hover:bg-blue-100 transition-colors">
+                  <div className="bg-blue-50 border border-blue-100 p-2 rounded-md mb-1 cursor-pointer hover:bg-blue-100 transition-colors motion-reduce:duration-[0.01ms]">
                     <div className="text-xs font-bold text-blue-700">Masterclass</div>
                     <div className="text-[10px] text-blue-500">14:00 Uhr</div>
                   </div>
                 )}
                 {day === 15 && (
-                  <div className="bg-purple-50 border border-purple-100 p-2 rounded-md mb-1 cursor-pointer hover:bg-purple-100 transition-colors">
+                  <div className="bg-purple-50 border border-purple-100 p-2 rounded-md mb-1 cursor-pointer hover:bg-purple-100 transition-colors motion-reduce:duration-[0.01ms]">
                     <div className="text-xs font-bold text-purple-700">Networking</div>
                     <div className="text-[10px] text-purple-500">18:00 Uhr</div>
                   </div>

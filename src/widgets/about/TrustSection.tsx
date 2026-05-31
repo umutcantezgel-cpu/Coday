@@ -3,11 +3,7 @@ import { motion } from 'motion/react';
 import { AnimatedCounter } from '@/shared/ui/AnimatedCounter';
 
 /* ═══ Real client names from portfolio ═══ */
-const clients = [
-  'Batherm',
-  'MS-Schlüsseldienst',
-  'Lindener Ratsstuben',
-];
+const clients = ['Batherm', 'MS-Schlüsseldienst', 'Lindener Ratsstuben'];
 
 const metrics = [
   { value: 100, suffix: '+', label: 'Erfolgreiche Projekte' },
@@ -55,7 +51,7 @@ export const TrustSection: React.FC = () => {
               {[...clients, ...clients, ...clients].map((client, index) => (
                 <div
                   key={`${client}-${index}`}
-                  className="px-6 py-3 rounded-full border border-white/[0.08] bg-white/[0.02] text-gray-400 font-display font-semibold text-sm tracking-wide hover:border-primary/30 hover:text-primary transition-all duration-400 select-none whitespace-nowrap"
+                  className="px-6 py-3 rounded-full border border-white/[0.08] bg-white/[0.02] text-gray-400 font-display font-semibold text-sm tracking-wide hover:border-primary/30 hover:text-primary transition-all motion-reduce:duration-[0.01ms] duration-400 select-none whitespace-nowrap"
                 >
                   {client}
                 </div>
@@ -69,7 +65,7 @@ export const TrustSection: React.FC = () => {
           {metrics.map((metric, index) => (
             <motion.div
               key={metric.label}
-              className="relative group text-center p-6 md:p-8 rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm hover:border-primary/20 transition-all duration-500"
+              className="relative group text-center p-6 md:p-8 rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm hover:border-primary/20 transition-all motion-reduce:duration-[0.01ms] duration-500"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -80,7 +76,7 @@ export const TrustSection: React.FC = () => {
               }}
             >
               {/* Glow bg */}
-              <div className="absolute inset-0 rounded-2xl bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
+              <div className="absolute inset-0 rounded-2xl bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms] duration-500 blur-xl" />
 
               <div className="relative z-10">
                 <div className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-3 tracking-tighter flex justify-center items-baseline">

@@ -196,7 +196,7 @@ const Packages: React.FC = () => {
             ).map((point, idx) => (
               <div
                 key={idx}
-                className="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow duration-300"
+                className="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow motion-reduce:duration-[0.01ms] duration-300"
               >
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
                   <OptimizedIcon icon={CheckCircle} className="text-2xl text-primary" />
@@ -233,7 +233,7 @@ const Packages: React.FC = () => {
                 <div
                   className={`
                     relative rounded-2xl overflow-hidden h-full flex flex-col
-                    transition-all duration-500 ease-out
+                    transition-all motion-reduce:duration-[0.01ms] duration-500 ease-out
                     ${
                       pkg.popular
                         ? 'bg-white/[0.08] backdrop-blur-xl border-2 border-primary/40 shadow-[0_0_60px_-10px_rgba(26,154,154,0.3)]'
@@ -342,9 +342,9 @@ const Packages: React.FC = () => {
                     {/* CTA */}
                     <button
                       onClick={() => handleSelect(pkg.id)}
-                      className={`
+                      className={`active:scale-[0.97] 
                         w-full py-4 px-6 rounded-xl font-bold text-sm uppercase tracking-wider
-                        transition-all duration-300 flex items-center justify-center gap-2
+                        transition-all motion-reduce:duration-[0.01ms] duration-300 flex items-center justify-center gap-2
                         ${
                           pkg.popular
                             ? 'bg-primary text-white hover:bg-primary/90 shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5'
@@ -381,7 +381,7 @@ const Packages: React.FC = () => {
               ).map((ref, idx) => (
                 <div
                   key={idx}
-                  className="bg-white/[0.04] backdrop-blur-lg border border-white/[0.08] rounded-2xl p-8 flex items-center gap-6 hover:bg-white/[0.07] transition-colors duration-300"
+                  className="bg-white/[0.04] backdrop-blur-lg border border-white/[0.08] rounded-2xl p-8 flex items-center gap-6 hover:bg-white/[0.07] transition-colors motion-reduce:duration-[0.01ms] duration-300"
                 >
                   <div className="flex-shrink-0">
                     <span className="font-display font-black text-4xl text-primary">
@@ -404,7 +404,7 @@ const Packages: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="mt-12 max-w-3xl mx-auto"
           >
-            <div className="relative rounded-2xl overflow-hidden bg-white/[0.04] backdrop-blur-lg border border-white/[0.08] hover:border-primary/30 transition-all duration-500">
+            <div className="relative rounded-2xl overflow-hidden bg-white/[0.04] backdrop-blur-lg border border-white/[0.08] hover:border-primary/30 transition-all motion-reduce:duration-[0.01ms] duration-500">
               <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent" />
               <div className="p-8 lg:p-10 text-center">
                 <span className="inline-block bg-accent/20 text-accent text-[11px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-4">
@@ -421,7 +421,7 @@ const Packages: React.FC = () => {
                 </p>
                 <NavLink
                   href="/booking"
-                  className="inline-flex items-center gap-2 px-8 py-3.5 bg-transparent border border-accent/40 text-accent font-bold rounded-xl hover:bg-accent/10 hover:border-accent/60 transition-all duration-300 hover:-translate-y-0.5"
+                  className="inline-flex items-center gap-2 px-8 py-3.5 bg-transparent border border-accent/40 text-accent font-bold rounded-xl hover:bg-accent/10 hover:border-accent/60 transition-all motion-reduce:duration-[0.01ms] duration-300 hover:-translate-y-0.5"
                 >
                   {t('custom.cta', { defaultValue: 'Individuelles Angebot anfragen' })}
                   <OptimizedIcon icon={ArrowRight} className="text-sm" />
@@ -542,7 +542,7 @@ const Packages: React.FC = () => {
                   ].map(([feature, starter, pro, enterprise], _idx) => (
                     <tr
                       key={_idx}
-                      className="border-b border-gray-50 hover:bg-gray-50/50 transition-colors"
+                      className="border-b border-gray-50 hover:bg-gray-50/50 transition-colors motion-reduce:duration-[0.01ms]"
                     >
                       <td className="p-4 text-sm font-medium text-gray-700">{feature}</td>
                       <td className="p-4 text-center text-sm text-gray-600">{starter}</td>
@@ -581,7 +581,7 @@ const Packages: React.FC = () => {
               {['basic', 'growth', 'partnership'].map((level, _idx) => (
                 <div
                   key={level}
-                  className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-shadow duration-300 flex flex-col"
+                  className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-shadow motion-reduce:duration-[0.01ms] duration-300 flex flex-col"
                 >
                   <h3 className="font-display font-bold text-xl text-gray-900 mb-2">
                     {t(`retainers.${level}.name`)}
@@ -608,7 +608,7 @@ const Packages: React.FC = () => {
                   </ul>
                   <NavLink
                     href="/booking"
-                    className="w-full py-3 px-6 rounded-xl font-bold text-sm text-center border-2 border-primary text-primary hover:bg-primary hover:text-white transition-colors duration-300"
+                    className="w-full py-3 px-6 rounded-xl font-bold text-sm text-center border-2 border-primary text-primary hover:bg-primary hover:text-white transition-colors motion-reduce:duration-[0.01ms] duration-300"
                   >
                     {t('cta_section.button', { defaultValue: 'Termin buchen' })}
                   </NavLink>
@@ -638,20 +638,20 @@ const Packages: React.FC = () => {
               ).map((item, _idx) => (
                 <div
                   key={_idx}
-                  className="bg-white border border-gray-200 rounded-2xl overflow-hidden transition-all duration-300 shadow-sm hover:shadow-md"
+                  className="bg-white border border-gray-200 rounded-2xl overflow-hidden transition-all motion-reduce:duration-[0.01ms] duration-300 shadow-sm hover:shadow-md"
                 >
                   <button
                     onClick={() => setOpenFaqIndex(openFaqIndex === _idx ? null : _idx)}
-                    className="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none"
+                    className="active:scale-[0.97] w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none"
                   >
                     <span className="font-bold text-gray-900 pr-4">{item.question}</span>
                     <OptimizedIcon
                       icon={CaretDown}
-                      className={`text-gray-400 transition-transform duration-300 flex-shrink-0 ${openFaqIndex === _idx ? 'rotate-180' : ''}`}
+                      className={`text-gray-400 transition-transform motion-reduce:duration-[0.01ms] duration-300 flex-shrink-0 ${openFaqIndex === _idx ? 'rotate-180' : ''}`}
                     />
                   </button>
                   <div
-                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    className={`overflow-hidden transition-all motion-reduce:duration-[0.01ms] duration-300 ease-in-out ${
                       openFaqIndex === _idx ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                     }`}
                   >
@@ -679,7 +679,7 @@ const Packages: React.FC = () => {
               <p className="text-gray-600 mb-6">{t('cta_section.text')}</p>
               <NavLink
                 href="/booking"
-                className="inline-flex items-center px-8 py-3.5 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 duration-300"
+                className="inline-flex items-center px-8 py-3.5 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition-all motion-reduce:duration-[0.01ms] shadow-lg hover:shadow-xl hover:-translate-y-0.5 duration-300"
               >
                 {t('cta_section.button')}
                 <OptimizedIcon icon={Calendar} className="ml-2" />

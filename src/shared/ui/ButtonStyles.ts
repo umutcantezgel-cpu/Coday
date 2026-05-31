@@ -6,7 +6,7 @@ export const buttonVariants: Record<string, string> = {
   outline:
     'border-2 border-primary-700 text-primary-700 hover:bg-primary-700 hover:text-white motion-safe:hover:scale-[1.02] motion-safe:active:scale-[0.98] shadow-sm hover:shadow-glow',
   ghost:
-    'text-secondary-600 hover:bg-secondary-100 hover:text-primary-600 motion-safe:active:scale-[0.98] relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:bg-primary-50 hover:before:translate-x-0 before:transition-transform before:duration-300 before:ease-out before:-z-10',
+    'text-secondary-600 hover:bg-secondary-100 hover:text-primary-600 motion-safe:active:scale-[0.98] relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:bg-primary-50 hover:before:translate-x-0 before:transition-transform motion-reduce:duration-[0.01ms] before:duration-300 before:ease-out before:-z-10',
 };
 
 export const buttonSizes: Record<string, string> = {
@@ -18,4 +18,4 @@ export const buttonSizes: Record<string, string> = {
 };
 
 export const baseButtonStyles =
-  'inline-flex items-center justify-center rounded-xl font-medium transition-all duration-300 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed motion-safe:active:scale-[0.98] motion-safe:hover:-translate-y-1 hover:shadow-md min-h-[44px] touch-manipulation isolate';
+  'inline-flex items-center justify-center rounded-xl font-medium transition-all motion-reduce:duration-[0.01ms] duration-300 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed motion-safe:active:scale-[0.98] motion-safe:hover:-translate-y-1 hover:shadow-md min-h-[44px] touch-manipulation isolate';

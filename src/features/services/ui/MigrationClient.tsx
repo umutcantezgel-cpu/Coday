@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import dynamic from 'next/dynamic';
 import { useTranslations } from 'next-intl';
@@ -32,15 +32,11 @@ interface FaqItem {
 export function MigrationClient() {
   const t = useTranslations('services');
 
-  const processSteps =
-    (t.raw('migration_page.process.steps') as ProcessStep[]) || [];
+  const processSteps = (t.raw('migration_page.process.steps') as ProcessStep[]) || [];
   const faqItems = (t.raw('migration_page.faq.items') as FaqItem[]) || [];
-  const beforeItems =
-    (t.raw('migration_page.before_after.before.items') as string[]) || [];
-  const afterItems =
-    (t.raw('migration_page.before_after.after.items') as string[]) || [];
-  const fromTech =
-    (t.raw('migration_page.technologies.from') as string[]) || [];
+  const beforeItems = (t.raw('migration_page.before_after.before.items') as string[]) || [];
+  const afterItems = (t.raw('migration_page.before_after.after.items') as string[]) || [];
+  const fromTech = (t.raw('migration_page.technologies.from') as string[]) || [];
   const toTech = (t.raw('migration_page.technologies.to') as string[]) || [];
 
   // Safe access checks
@@ -53,8 +49,6 @@ export function MigrationClient() {
 
   return (
     <>
-      
-
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-6 overflow-hidden bg-background-light">
         <div className="max-w-7xl mx-auto text-center relative z-10">
@@ -201,21 +195,24 @@ export function MigrationClient() {
             direction="right"
             logos={safeFromTech.map((tech) => ({
               node: (
-                <div className="px-6 py-3 bg-red-50 border border-red-100 rounded-full mx-2 whitespace-nowrap transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-red-100 cursor-default">
+                <div className="px-6 py-3 bg-red-50 border border-red-100 rounded-full mx-2 whitespace-nowrap transition-all motion-reduce:duration-[0.01ms] duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-red-100 cursor-default">
                   <span className="font-bold text-red-800">{tech}</span>
                 </div>
               ),
             }))}
           />
           <div className="text-center py-4">
-            <OptimizedIcon icon={ArrowDown} className="text-3xl text-slate-400 animate-bounce" />
+            <OptimizedIcon
+              icon={ArrowDown}
+              className="text-3xl text-slate-400 animate-bounce motion-reduce:animate-none"
+            />
           </div>
           <LogoLoop
             speed={30}
             direction="left"
             logos={safeToTech.map((tech) => ({
               node: (
-                <div className="px-6 py-3 bg-green-50 border border-green-100 rounded-full mx-2 whitespace-nowrap transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-green-100 cursor-default">
+                <div className="px-6 py-3 bg-green-50 border border-green-100 rounded-full mx-2 whitespace-nowrap transition-all motion-reduce:duration-[0.01ms] duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-green-100 cursor-default">
                   <span className="font-bold text-green-800">{tech}</span>
                 </div>
               ),
@@ -241,6 +238,4 @@ export function MigrationClient() {
       <RelevantFAQs serviceId="migration" className="mb-24" />
     </>
   );
-};
-
-
+}

@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import dynamic from 'next/dynamic';
 import { useTranslations } from 'next-intl';
@@ -53,7 +53,7 @@ export function ConsultingClient() {
             <h1 className="text-5xl md:text-8xl font-display font-bold mb-8 leading-tight tracking-tight">
               {t('hero.title_start')}
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-teal-400 to-purple-400 animate-gradient-x">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-teal-400 to-purple-400 animate-gradient-x motion-reduce:animate-none">
                 {t('hero.title_end')}
               </span>
             </h1>
@@ -63,11 +63,11 @@ export function ConsultingClient() {
             </p>
 
             <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
-              <button className="w-full md:w-auto px-8 py-5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-2xl transition-all shadow-[0_0_40px_-10px_rgba(37,99,235,0.5)] hover:shadow-[0_0_60px_-10px_rgba(37,99,235,0.6)] flex items-center justify-center gap-2">
+              <button className="active:scale-[0.97] w-full md:w-auto px-8 py-5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-2xl transition-all motion-reduce:duration-[0.01ms] shadow-[0_0_40px_-10px_rgba(37,99,235,0.5)] hover:shadow-[0_0_60px_-10px_rgba(37,99,235,0.6)] flex items-center justify-center gap-2">
                 <OptimizedIcon icon={Handshake} className="w-6 h-6" />
                 {t('hero.cta_primary')}
               </button>
-              <button className="w-full md:w-auto px-8 py-5 bg-slate-800/50 hover:bg-slate-700/50 text-white font-bold rounded-2xl transition-all border border-slate-700 hover:border-slate-500 backdrop-blur-sm flex items-center justify-center gap-2">
+              <button className="active:scale-[0.97] w-full md:w-auto px-8 py-5 bg-slate-800/50 hover:bg-slate-700/50 text-white font-bold rounded-2xl transition-all motion-reduce:duration-[0.01ms] border border-slate-700 hover:border-slate-500 backdrop-blur-sm flex items-center justify-center gap-2">
                 <OptimizedIcon icon={ChartLineUp} className="w-6 h-6 text-slate-400" />
                 {t('hero.cta_secondary')}
               </button>
@@ -137,10 +137,10 @@ export function ConsultingClient() {
                 </p>
                 <Link
                   href="/portfolio/tech-startup-exit"
-                  className="inline-flex items-center gap-2 text-blue-600 font-bold hover:text-blue-700 transition-colors group"
+                  className="inline-flex items-center gap-2 text-blue-600 font-bold hover:text-blue-700 transition-colors motion-reduce:duration-[0.01ms] group"
                 >
                   Case Study ansehen
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform motion-reduce:duration-[0.01ms]" />
                 </Link>
               </div>
               <div className="flex-1 relative w-full aspect-square md:aspect-auto md:h-80 bg-slate-100 rounded-3xl overflow-hidden border border-slate-200">
@@ -184,6 +184,4 @@ export function ConsultingClient() {
       </div>
     </>
   );
-};
-
-
+}

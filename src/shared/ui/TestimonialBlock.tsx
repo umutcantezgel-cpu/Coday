@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React from 'react';
 import { Star, Quotes, LinkedinLogo } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
@@ -60,14 +60,14 @@ export const TestimonialBlock: React.FC<TestimonialBlockProps> = ({
 
   return (
     <>
-      <script 
-        type="application/ld+json" 
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
       />
       <div
         ref={ref as React.RefObject<HTMLDivElement>}
         style={{ animationDelay: `${delay}ms` }}
-        className={`relative bg-white rounded-2xl p-8 md:p-12 shadow-flat-md overflow-hidden h-full flex flex-col transition-all duration-700 ease-out ${
+        className={`relative bg-white rounded-2xl p-8 md:p-12 shadow-flat-md overflow-hidden h-full flex flex-col transition-all motion-reduce:duration-[0.01ms] duration-700 ease-out ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         } ${featured ? 'border-2 border-primary/20 shadow-xl' : ''} ${className}`}
       >
@@ -78,7 +78,7 @@ export const TestimonialBlock: React.FC<TestimonialBlockProps> = ({
         />
 
         {/* Große Anführungszeichen */}
-        <div className="absolute top-8 right-8 text-surface-light opacity-50 transition-transform duration-500 hover:scale-110">
+        <div className="absolute top-8 right-8 text-surface-light opacity-50 transition-transform motion-reduce:duration-[0.01ms] duration-500 hover:scale-110">
           <OptimizedIcon icon={Quotes} className="w-20 h-20" weight="fill" />
         </div>
 
@@ -114,7 +114,7 @@ export const TestimonialBlock: React.FC<TestimonialBlockProps> = ({
               <OptimizedImage
                 src={authorImageUrl}
                 alt={authorName}
-                className="object-cover w-full h-full transition-transform duration-500 hover:scale-110"
+                className="object-cover w-full h-full transition-transform motion-reduce:duration-[0.01ms] duration-500 hover:scale-110"
                 sizes="(max-width: 768px) 64px, 80px"
               />
             </div>
@@ -132,7 +132,7 @@ export const TestimonialBlock: React.FC<TestimonialBlockProps> = ({
                   href={linkedInUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-slate-400 hover:text-[#0A66C2] transition-colors"
+                  className="text-slate-400 hover:text-[#0A66C2] transition-colors motion-reduce:duration-[0.01ms]"
                   aria-label={`${authorName} auf LinkedIn`}
                 >
                   <OptimizedIcon icon={LinkedinLogo} className="w-5 h-5" weight="fill" />
@@ -159,7 +159,7 @@ export const TestimonialBlock: React.FC<TestimonialBlockProps> = ({
                 alt={authorCompany || 'Company'}
                 width={80}
                 height={40}
-                className="object-contain max-h-10 opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300"
+                className="object-contain max-h-10 opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all motion-reduce:duration-[0.01ms] duration-300"
               />
             </div>
           )}

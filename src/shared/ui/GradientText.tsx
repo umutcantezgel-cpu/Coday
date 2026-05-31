@@ -13,10 +13,10 @@ interface GradientTextProps {
 /**
  * On mobile (< md breakpoint), the gradient is static — no animation.
  * This avoids creating a compositing layer on the LCP H1 text element.
- * On desktop, the gradient animates via `animate-gradient-xy`.
+ * On desktop, the gradient animates via `animate-gradient-xy motion-reduce:animate-none`.
  *
  * Implementation: uses CSS `animation: none` on mobile via inline + Tailwind
- * classes; the animation class only applies at md+ via `md:animate-gradient-xy`.
+ * classes; the animation class only applies at md+ via `md:animate-gradient-xy motion-reduce:animate-none`.
  */
 export default function GradientText({
   children,
@@ -37,14 +37,14 @@ export default function GradientText({
   return (
     <span
       className={cn(
-        'relative mx-auto inline-block rounded-[1.25rem] font-medium overflow-hidden transition-shadow duration-500',
+        'relative mx-auto inline-block rounded-[1.25rem] font-medium overflow-hidden transition-shadow motion-reduce:duration-[0.01ms] duration-500',
         showBorder ? 'py-1 px-2' : '',
         className
       )}
     >
       {showBorder && (
         <div
-          className="absolute inset-0 z-0 pointer-events-none rounded-[1.25rem] md:animate-gradient-xy"
+          className="absolute inset-0 z-0 pointer-events-none rounded-[1.25rem] md:animate-gradient-xy motion-reduce:animate-none"
           style={{
             ...gradientStyle,
             animationDuration: `${animationSpeed}s`,
@@ -63,7 +63,7 @@ export default function GradientText({
         </div>
       )}
       <div
-        className="inline-block relative z-2 text-transparent bg-clip-text md:animate-gradient-xy pb-1"
+        className="inline-block relative z-2 text-transparent bg-clip-text md:animate-gradient-xy pb-1 motion-reduce:animate-none"
         style={{
           ...gradientStyle,
           animationDuration: `${animationSpeed}s`,

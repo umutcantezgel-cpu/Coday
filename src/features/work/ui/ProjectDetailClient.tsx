@@ -107,7 +107,7 @@ const ProjectDetail: React.FC = () => {
           <div className="flex items-center text-sm text-gray-500">
             <NavLink
               href="/work"
-              className="hover:text-primary transition-colors flex items-center gap-1.5"
+              className="hover:text-primary transition-colors motion-reduce:duration-[0.01ms] flex items-center gap-1.5"
             >
               <ArrowLeft className="w-3.5 h-3.5" />
               {t('project_detail.breadcrumb_projects')}
@@ -148,13 +148,13 @@ const ProjectDetail: React.FC = () => {
               <OptimizedImage
                 src={heroImage}
                 alt={project.solution.imageAlts?.[0] || `${project.title} Hero`}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                className="absolute inset-0 w-full h-full object-cover transition-transform motion-reduce:duration-[0.01ms] duration-1000 group-hover:scale-105"
               />
             ) : (
               <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-black flex items-center justify-center">
                 <OptimizedIcon
                   icon={iconMap[projectData.thumbnail] || Wrench}
-                  className="text-9xl text-white/10 group-hover:scale-110 transition-transform duration-1000"
+                  className="text-9xl text-white/10 group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms] duration-1000"
                 />
               </div>
             )}
@@ -239,7 +239,7 @@ const ProjectDetail: React.FC = () => {
                   </p>
                   <NavLink
                     href="/contact"
-                    className="block w-full py-3 bg-gray-900 text-white rounded-xl font-bold hover:bg-black transition-colors"
+                    className="block w-full py-3 bg-gray-900 text-white rounded-xl font-bold hover:bg-black transition-colors motion-reduce:duration-[0.01ms]"
                   >
                     {t('project_detail.sidebar.request_project')}
                   </NavLink>
@@ -308,7 +308,7 @@ const ProjectDetail: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1, duration: 0.4 }}
-                    className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:border-primary/20 transition-all duration-300"
+                    className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:border-primary/20 transition-all motion-reduce:duration-[0.01ms] duration-300"
                   >
                     <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-lg mb-4">
                       {i + 1}
@@ -367,9 +367,9 @@ const ProjectDetail: React.FC = () => {
                               project.solution.imageAlts?.[i] ||
                               `${project.title} Solution ${i + 1}`
                             }
-                            className="w-full h-auto object-cover transform group-hover:scale-[1.03] transition-transform duration-700"
+                            className="w-full h-auto object-cover transform group-hover:scale-[1.03] transition-transform motion-reduce:duration-[0.01ms] duration-700"
                           />
-                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300 flex items-center justify-center">
+                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors motion-reduce:duration-[0.01ms] duration-300 flex items-center justify-center">
                             {/* Invisible overlay for click area */}
                           </div>
                         </div>
@@ -492,7 +492,7 @@ const ProjectDetail: React.FC = () => {
           </p>
           <NavLink
             href={`/contact?service=${project.category}`}
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl border-2 border-gray-200 text-gray-700 font-bold hover:border-primary hover:text-primary transition-all duration-300"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl border-2 border-gray-200 text-gray-700 font-bold hover:border-primary hover:text-primary transition-all motion-reduce:duration-[0.01ms] duration-300"
           >
             {t('project_detail.cta_button', { defaultValue: 'Projekt anfragen' })}
             <ArrowRight className="w-5 h-5" />
@@ -510,14 +510,14 @@ const ProjectDetail: React.FC = () => {
               href={`/work/${prevSlug}`}
               className="flex items-center gap-4 group text-left w-full sm:w-auto"
             >
-              <div className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 group-hover:border-primary group-hover:text-primary group-hover:bg-primary/5 transition-all duration-300">
+              <div className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 group-hover:border-primary group-hover:text-primary group-hover:bg-primary/5 transition-all motion-reduce:duration-[0.01ms] duration-300">
                 <ArrowLeft className="w-5 h-5" />
               </div>
               <div>
                 <div className="text-xs text-gray-500 uppercase font-bold tracking-wider mb-1">
                   {t('')}
                 </div>
-                <div className="font-display font-bold text-xl group-hover:text-primary transition-colors">
+                <div className="font-display font-bold text-xl group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms]">
                   {prevProject.content[currentLang].title}
                 </div>
               </div>
@@ -535,11 +535,11 @@ const ProjectDetail: React.FC = () => {
                 <div className="text-xs text-gray-500 uppercase font-bold tracking-wider mb-1">
                   {t('')}
                 </div>
-                <div className="font-display font-bold text-xl group-hover:text-primary transition-colors">
+                <div className="font-display font-bold text-xl group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms]">
                   {nextProject.content[currentLang].title}
                 </div>
               </div>
-              <div className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 group-hover:border-primary group-hover:text-primary group-hover:bg-primary/5 transition-all duration-300">
+              <div className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 group-hover:border-primary group-hover:text-primary group-hover:bg-primary/5 transition-all motion-reduce:duration-[0.01ms] duration-300">
                 <ArrowRight className="w-5 h-5" />
               </div>
             </NavLink>
@@ -583,7 +583,7 @@ const ProjectDetail: React.FC = () => {
               />
               <button
                 onClick={closeLightbox}
-                className="absolute top-4 right-4 text-white/70 hover:text-white bg-black/50 hover:bg-black/80 rounded-full p-2 transition-all cursor-pointer z-50"
+                className="active:scale-[0.97] absolute top-4 right-4 text-white/70 hover:text-white bg-black/50 hover:bg-black/80 rounded-full p-2 transition-all motion-reduce:duration-[0.01ms] cursor-pointer z-50"
                 aria-label="Bildvorschau schließen"
               >
                 <X className="w-6 h-6" />

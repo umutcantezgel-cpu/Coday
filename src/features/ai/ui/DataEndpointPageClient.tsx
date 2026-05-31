@@ -93,7 +93,10 @@ export default function DataEndpointPage() {
                   </thead>
                   <tbody className="divide-y divide-slate-100">
                     {endpoint.schema.map((field) => (
-                      <tr key={field.field} className="hover:bg-slate-50 transition-colors">
+                      <tr
+                        key={field.field}
+                        className="hover:bg-slate-50 transition-colors motion-reduce:duration-[0.01ms]"
+                      >
                         <td className="px-4 py-4 font-mono font-bold text-primary">
                           {field.field}
                         </td>
@@ -125,7 +128,7 @@ export default function DataEndpointPage() {
                   href={endpoint.endpoints.json}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full flex items-center justify-between p-4 bg-emerald-50 text-emerald-800 rounded-xl hover:bg-emerald-100 transition-colors group"
+                  className="w-full flex items-center justify-between p-4 bg-emerald-50 text-emerald-800 rounded-xl hover:bg-emerald-100 transition-colors motion-reduce:duration-[0.01ms] group"
                 >
                   <span className="flex items-center gap-3 font-bold">
                     <FileText weight="duotone" className="text-xl text-emerald-600" />
@@ -133,14 +136,14 @@ export default function DataEndpointPage() {
                   </span>
                   <Download
                     weight="bold"
-                    className="opacity-50 group-hover:opacity-100 transition-opacity"
+                    className="opacity-50 group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms]"
                   />
                 </a>
                 <a
                   href={endpoint.endpoints.csv}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full flex items-center justify-between p-4 bg-blue-50 text-blue-800 rounded-xl hover:bg-blue-100 transition-colors group"
+                  className="w-full flex items-center justify-between p-4 bg-blue-50 text-blue-800 rounded-xl hover:bg-blue-100 transition-colors motion-reduce:duration-[0.01ms] group"
                 >
                   <span className="flex items-center gap-3 font-bold">
                     <FileCsv weight="duotone" className="text-xl text-blue-600" />
@@ -148,7 +151,7 @@ export default function DataEndpointPage() {
                   </span>
                   <Download
                     weight="bold"
-                    className="opacity-50 group-hover:opacity-100 transition-opacity"
+                    className="opacity-50 group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms]"
                   />
                 </a>
               </div>

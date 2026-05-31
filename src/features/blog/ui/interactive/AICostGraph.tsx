@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { TrendDown, User, Robot, CurrencyEur } from '@phosphor-icons/react/dist/ssr';
@@ -39,14 +39,14 @@ export const AICostGraph: React.FC = () => {
       <div className="flex flex-wrap gap-4 mb-8 bg-gray-50 p-2 rounded-xl w-fit border border-gray-100">
         <button
           onClick={() => setView('staff')}
-          className={`px-4 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-2 ${view === 'staff' ? 'bg-white shadow text-gray-800 border-gray-200 border' : 'text-gray-500 hover:text-gray-700'}`}
+          className={`active:scale-[0.97] px-4 py-2 rounded-lg text-sm font-bold transition-all motion-reduce:duration-[0.01ms] flex items-center gap-2 ${view === 'staff' ? 'bg-white shadow text-gray-800 border-gray-200 border' : 'text-gray-500 hover:text-gray-700'}`}
         >
           <User size={16} />
           {t('aiCostGraph.staff')}
         </button>
         <button
           onClick={() => setView('ai')}
-          className={`px-4 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-2 ${view === 'ai' ? 'bg-indigo-600 text-white shadow' : 'text-gray-500 hover:text-gray-700'}`}
+          className={`active:scale-[0.97] px-4 py-2 rounded-lg text-sm font-bold transition-all motion-reduce:duration-[0.01ms] flex items-center gap-2 ${view === 'ai' ? 'bg-indigo-600 text-white shadow' : 'text-gray-500 hover:text-gray-700'}`}
         >
           <Robot size={16} />
           {t('aiCostGraph.ai')}
@@ -64,13 +64,14 @@ export const AICostGraph: React.FC = () => {
         {(view === 'ai' ? dataAI : dataStaff).map((value, index) => (
           <div key={index} className="flex-1 flex flex-col justify-end group relative items-center">
             <motion.div
-              initial={{ height: 0 }}
-              animate={{ height: `${(value / 70) * 100}%` }}
+              initial={{ scaleY: 0 }}
+              style={{ transformOrigin: 'bottom' }}
+              animate={{ scaleY: value / 70 }}
               transition={{ ...EASING.spring, delay: index * STAGGER.default }}
               className={`w-full max-w-[40px] rounded-t-lg relative ${view === 'ai' ? 'bg-gradient-to-t from-indigo-500 to-indigo-300' : 'bg-red-300'}`}
             >
               {/* Value Tooltip */}
-              <div className="absolute -top-10 left-1/2 -translate-x-1/2 bg-black text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20">
+              <div className="absolute -top-10 left-1/2 -translate-x-1/2 bg-black text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms] whitespace-nowrap z-20">
                 {value}k €
               </div>
             </motion.div>

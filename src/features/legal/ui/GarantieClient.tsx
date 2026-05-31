@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 import { SeoHead } from '@/shared/ui/SeoHead';
@@ -59,7 +59,7 @@ const Garantie: React.FC = () => {
               viewport={{ once: true }}
               className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 relative overflow-hidden group"
             >
-              <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
+              <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity motion-reduce:duration-[0.01ms]">
                 <OptimizedIcon icon={RocketLaunch} className="text-9xl text-sapphire" />
               </div>
               <OptimizedIcon icon={RocketLaunch} className="text-4xl text-sapphire mb-6" />
@@ -79,7 +79,7 @@ const Garantie: React.FC = () => {
               transition={{ delay: 0.1 }}
               className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 relative overflow-hidden group"
             >
-              <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
+              <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity motion-reduce:duration-[0.01ms]">
                 <OptimizedIcon icon={LockOpen} className="text-9xl text-sapphire" />
               </div>
               <OptimizedIcon icon={LockOpen} className="text-4xl text-sapphire mb-6" />
@@ -99,7 +99,7 @@ const Garantie: React.FC = () => {
               transition={{ delay: 0.2 }}
               className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 relative overflow-hidden group"
             >
-              <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
+              <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity motion-reduce:duration-[0.01ms]">
                 <OptimizedIcon icon={CurrencyEur} className="text-9xl text-sapphire" />
               </div>
               <OptimizedIcon icon={CurrencyEur} className="text-4xl text-sapphire mb-6" />

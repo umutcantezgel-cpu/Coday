@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
@@ -26,14 +26,14 @@ const Whitepapers: React.FC = () => {
           {whitepaperData.map((paper) => (
             <div
               key={paper.id}
-              className="flex flex-col bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl transition-shadow duration-300 group"
+              className="flex flex-col bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl transition-shadow motion-reduce:duration-[0.01ms] duration-300 group"
             >
               <div className="h-64 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10" />
                 <OptimizedImage
                   src={paper.image}
                   alt={paper.content[currentLang].alt}
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform motion-reduce:duration-[0.01ms] duration-700"
                 />
                 <div className="absolute bottom-4 left-4 z-20">
                   <div className="w-12 h-16 bg-white shadow-lg rounded-sm transform -rotate-6 border border-gray-200 flex items-center justify-center">
@@ -57,7 +57,7 @@ const Whitepapers: React.FC = () => {
                   href={paper.fileUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full py-4 rounded-xl border-2 border-slate-100 text-gray-900 font-bold hover:border-blue-500 hover:text-blue-600 transition-colors flex items-center justify-center group-hover:bg-blue-50"
+                  className="w-full py-4 rounded-xl border-2 border-slate-100 text-gray-900 font-bold hover:border-blue-500 hover:text-blue-600 transition-colors motion-reduce:duration-[0.01ms] flex items-center justify-center group-hover:bg-blue-50"
                 >
                   <OptimizedIcon icon={DownloadSimple} className="mr-2" />
                   {t('whitepapers.download')}

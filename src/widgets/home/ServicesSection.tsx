@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
@@ -7,7 +5,7 @@ import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import BlurText from '@/shared/ui/BlurText';
 import { MagicBento, BentoCard } from '@/shared/ui/MagicBento';
 import dynamic from 'next/dynamic';
-const FadeInUp = dynamic(() => import('@/shared/ui/MotionWrappers').then(m => m.FadeInUp));
+import { FadeInUp } from '@/shared/ui/MotionWrappers';
 import { Code, Palette, RocketLaunch, ArrowRight } from '@phosphor-icons/react/dist/ssr';
 
 export const ServicesSection: React.FC = () => {
@@ -71,19 +69,19 @@ export const ServicesSection: React.FC = () => {
                 effect={service.effect}
                 spotlightColor="rgba(20, 122, 122, 0.15)"
                 glowColor="rgba(139, 92, 246, 0.3)"
-                className="h-full border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02] hover:border-primary/20 transition-all duration-500 ease-out bg-white rounded-2xl md:aspect-[1/1.618]"
+                className="h-full border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02] hover:border-primary/20 transition-all motion-reduce:duration-[0.01ms] duration-500 ease-out bg-white rounded-2xl md:aspect-[1/1.618]"
               >
                 <Link
                   href={service.link}
                   className="group relative p-6 md:p-8 flex flex-col h-full"
                 >
                   <div
-                    className={`absolute top-0 end-0 w-32 h-32 ${service.color} opacity-[0.03] rounded-bl-[100px] rtl:rounded-br-[100px] rtl:rounded-bl-none transition-transform duration-700 ease-out group-hover:scale-[1.3] group-hover:opacity-[0.06]`}
+                    className={`absolute top-0 end-0 w-32 h-32 ${service.color} opacity-[0.03] rounded-bl-[100px] rtl:rounded-br-[100px] rtl:rounded-bl-none transition-transform motion-reduce:duration-[0.01ms] duration-700 ease-out group-hover:scale-[1.3] group-hover:opacity-[0.06]`}
                   ></div>
 
                   <div className="relative z-10 flex-grow">
                     <div
-                      className={`w-14 h-14 ${service.color} bg-opacity-10 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500 group-hover:scale-110 group-hover:bg-opacity-20 group-hover:-rotate-3 shadow-sm`}
+                      className={`w-14 h-14 ${service.color} bg-opacity-10 rounded-2xl flex items-center justify-center mb-6 transition-all motion-reduce:duration-[0.01ms] duration-500 group-hover:scale-110 group-hover:bg-opacity-20 group-hover:-rotate-3 shadow-sm`}
                     >
                       <OptimizedIcon
                         icon={service.icon}
@@ -92,7 +90,7 @@ export const ServicesSection: React.FC = () => {
                       />
                     </div>
 
-                    <h3 className="font-display font-bold text-xl md:text-2xl text-secondary mb-3 group-hover:text-primary transition-colors duration-300">
+                    <h3 className="font-display font-bold text-xl md:text-2xl text-secondary mb-3 group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms] duration-300">
                       {t(`services.items.${service.id}.title`, { defaultValue: service.id })}
                     </h3>
                     <p className="text-base text-slate-600 mb-8 leading-[1.618]">
@@ -102,12 +100,12 @@ export const ServicesSection: React.FC = () => {
                     </p>
                   </div>
 
-                  <div className="flex items-center text-primary font-bold tracking-wide uppercase text-sm mt-auto transition-all duration-300 group-hover:tracking-wider">
+                  <div className="flex items-center text-primary font-bold tracking-wide uppercase text-sm mt-auto transition-all motion-reduce:duration-[0.01ms] duration-300 group-hover:tracking-wider">
                     {tCommon('cta.more', { defaultValue: 'Mehr erfahren' })}
                     <OptimizedIcon
                       icon={ArrowRight}
                       weight="bold"
-                      className="ms-3 group-hover:translate-x-2 rtl:group-hover:-translate-x-2 transition-transform duration-300 ease-out"
+                      className="ms-3 group-hover:translate-x-2 rtl:group-hover:-translate-x-2 transition-transform motion-reduce:duration-[0.01ms] duration-300 ease-out"
                     />
                   </div>
                 </Link>

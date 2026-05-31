@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
@@ -38,7 +38,8 @@ export const TrackingSimulator: React.FC = () => {
               runSimulation();
             }}
             className={clsx(
-              'p-6 rounded-2xl border-2 text-left transition-all',
+              'active:scale-[0.97]',
+              'p-6 rounded-2xl border-2 text-left transition-all motion-reduce:duration-[0.01ms]',
               mode === 'client'
                 ? 'border-red-500 bg-red-50 text-red-900'
                 : 'border-gray-200 hover:border-red-200 text-gray-600'
@@ -68,7 +69,8 @@ export const TrackingSimulator: React.FC = () => {
               runSimulation();
             }}
             className={clsx(
-              'p-6 rounded-2xl border-2 text-left transition-all',
+              'active:scale-[0.97]',
+              'p-6 rounded-2xl border-2 text-left transition-all motion-reduce:duration-[0.01ms]',
               mode === 'server'
                 ? 'border-green-500 bg-green-50 text-green-900'
                 : 'border-gray-200 hover:border-green-200 text-gray-600'
@@ -96,7 +98,7 @@ export const TrackingSimulator: React.FC = () => {
             <span className="text-xs font-bold uppercase text-gray-400 mb-2">Data Loss</span>
             <span
               className={clsx(
-                'text-4xl font-mono font-bold transition-colors',
+                'text-4xl font-mono font-bold transition-colors motion-reduce:duration-[0.01ms]',
                 mode === 'client' ? 'text-red-500' : 'text-green-500'
               )}
             >
@@ -110,7 +112,10 @@ export const TrackingSimulator: React.FC = () => {
 
         {/* Visualization Area */}
         <div className="relative h-32 bg-gray-900 rounded-2xl overflow-hidden flex items-center px-8 border border-gray-800">
-          <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "url(/images/grid.svg)" }} />
+          <div
+            className="absolute inset-0 opacity-10"
+            style={{ backgroundImage: 'url(/images/grid.svg)' }}
+          />
 
           {/* User */}
           <div className="relative z-10 flex flex-col items-center gap-2 text-white">
@@ -162,7 +167,7 @@ export const TrackingSimulator: React.FC = () => {
           <div className="relative z-10 flex flex-col items-center gap-2 text-white">
             <div
               className={clsx(
-                'w-12 h-12 rounded-full flex items-center justify-center transition-colors',
+                'w-12 h-12 rounded-full flex items-center justify-center transition-colors motion-reduce:duration-[0.01ms]',
                 mode === 'client' ? 'bg-gray-700 text-gray-400' : 'bg-blue-600 text-white'
               )}
             >

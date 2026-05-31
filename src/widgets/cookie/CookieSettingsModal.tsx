@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { useCookieStore } from '@/shared/lib/cookieStore';
@@ -53,7 +53,7 @@ const CookieSettingsModal: React.FC<CookieSettingsModalProps> = ({ isOpen, onClo
         role="dialog"
         aria-modal="true"
         aria-labelledby="cookie-settings-title"
-        className="bg-white rounded-2xl shadow-xl w-full max-w-lg overflow-hidden animate-in fade-in zoom-in duration-200"
+        className="bg-white rounded-2xl shadow-xl w-full max-w-lg overflow-hidden animate-in fade-in zoom-in duration-200 motion-reduce:animate-none"
       >
         <div className="flex items-center justify-between p-6 border-b border-gray-100">
           <h2 id="cookie-settings-title" className="text-xl font-bold text-gray-900">
@@ -61,7 +61,7 @@ const CookieSettingsModal: React.FC<CookieSettingsModalProps> = ({ isOpen, onClo
           </h2>
           <button
             onClick={onClose}
-            className="p-2 hover:bg-gray-100 rounded-full transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            className="p-2 hover:bg-gray-100 rounded-full transition-colors motion-reduce:duration-[0.01ms] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             aria-label={t('common.close')}
           >
             <OptimizedIcon icon={X} className="text-gray-500" aria-hidden="true" />
@@ -69,9 +69,7 @@ const CookieSettingsModal: React.FC<CookieSettingsModalProps> = ({ isOpen, onClo
         </div>
 
         <div className="p-6 space-y-6">
-          <p className="text-gray-600 text-sm">
-            {t('cookie.settings.desc')}
-          </p>
+          <p className="text-gray-600 text-sm">{t('cookie.settings.desc')}</p>
 
           <div className="space-y-4">
             {/* Essential */}
@@ -90,9 +88,7 @@ const CookieSettingsModal: React.FC<CookieSettingsModalProps> = ({ isOpen, onClo
                 >
                   {t('cookie.essential.title')}
                 </label>
-                <p className="text-xs text-gray-500">
-                  {t('cookie.essential.desc')}
-                </p>
+                <p className="text-xs text-gray-500">{t('cookie.essential.desc')}</p>
               </div>
             </div>
 
@@ -114,9 +110,7 @@ const CookieSettingsModal: React.FC<CookieSettingsModalProps> = ({ isOpen, onClo
                 >
                   {t('cookie.analytics.title')}
                 </label>
-                <p className="text-xs text-gray-500">
-                  {t('cookie.analytics.desc')}
-                </p>
+                <p className="text-xs text-gray-500">{t('cookie.analytics.desc')}</p>
               </div>
             </div>
 
@@ -138,9 +132,7 @@ const CookieSettingsModal: React.FC<CookieSettingsModalProps> = ({ isOpen, onClo
                 >
                   {t('cookie.marketing.title')}
                 </label>
-                <p className="text-xs text-gray-500">
-                  {t('cookie.marketing.desc')}
-                </p>
+                <p className="text-xs text-gray-500">{t('cookie.marketing.desc')}</p>
               </div>
             </div>
           </div>
@@ -149,13 +141,13 @@ const CookieSettingsModal: React.FC<CookieSettingsModalProps> = ({ isOpen, onClo
         <div className="p-6 bg-gray-50 flex justify-end gap-3">
           <button
             onClick={onClose}
-            className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+            className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors motion-reduce:duration-[0.01ms]"
           >
             {t('common.cancel')}
           </button>
           <button
             onClick={handleSave}
-            className="px-4 py-2 text-sm font-medium text-white bg-primary rounded-lg hover:bg-primary-dark transition-colors"
+            className="px-4 py-2 text-sm font-medium text-white bg-primary rounded-lg hover:bg-primary-dark transition-colors motion-reduce:duration-[0.01ms]"
           >
             {t('common.save')}
           </button>

@@ -1,7 +1,6 @@
-"use client";
+'use client';
 
 import React, { useState } from 'react';
-
 
 import { Link } from '@/i18n/navigation';
 import { motion } from 'motion/react';
@@ -39,8 +38,6 @@ export default function WikiHub() {
 
   return (
     <div className="bg-coday-black min-h-screen pt-32 pb-24 text-coday-gray-100 font-sans selection:bg-coday-gold selection:text-coday-black">
-      
-
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
         <header className="mb-16">
           <motion.div
@@ -67,7 +64,7 @@ export default function WikiHub() {
               <input
                 type="text"
                 placeholder="Entität suchen (z.B. Next.js, Headless CMS)..."
-                className="w-full bg-coday-black border border-coday-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:border-coday-gold transition-colors"
+                className="w-full bg-coday-black border border-coday-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:border-coday-gold transition-colors motion-reduce:duration-[0.01ms]"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
@@ -91,7 +88,7 @@ export default function WikiHub() {
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${activeCategory === cat ? 'bg-coday-gold text-coday-black' : 'bg-coday-gray-800 text-coday-gray-300 hover:bg-coday-gray-700'}`}
+                  className={`active:scale-[0.97] px-4 py-2 rounded-lg text-sm font-medium transition-colors motion-reduce:duration-[0.01ms] ${activeCategory === cat ? 'bg-coday-gold text-coday-black' : 'bg-coday-gray-800 text-coday-gray-300 hover:bg-coday-gray-700'}`}
                 >
                   {cat}
                 </button>
@@ -110,14 +107,14 @@ export default function WikiHub() {
             >
               <Link
                 href={`/knowledge/wiki/${entity.slug}`}
-                className="block p-6 rounded-xl bg-coday-dark border border-coday-gray-800 hover:border-coday-gold/50 hover:bg-coday-gray-900 transition-all group h-full"
+                className="block p-6 rounded-xl bg-coday-dark border border-coday-gray-800 hover:border-coday-gold/50 hover:bg-coday-gray-900 transition-all motion-reduce:duration-[0.01ms] group h-full"
               >
                 <div className="flex justify-between items-start mb-4">
                   <span className="text-xs font-bold uppercase tracking-wider text-coday-gold bg-coday-gold/10 px-2 py-1 rounded">
                     {entity.category}
                   </span>
                 </div>
-                <h2 className="text-xl font-semibold mb-2 group-hover:text-coday-gold transition-colors">
+                <h2 className="text-xl font-semibold mb-2 group-hover:text-coday-gold transition-colors motion-reduce:duration-[0.01ms]">
                   {entity.displayName}
                 </h2>
                 <div className="text-sm text-coday-gray-500 line-clamp-2">

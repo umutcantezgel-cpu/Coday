@@ -155,7 +155,7 @@ const BookingCalendar = ({
           </p>
           <button
             onClick={() => window.location.reload()}
-            className="mt-6 px-6 py-2 bg-gray-900 text-white rounded-full hover:bg-primary transition-colors"
+            className="active:scale-[0.97] mt-6 px-6 py-2 bg-gray-900 text-white rounded-full hover:bg-primary transition-colors motion-reduce:duration-[0.01ms]"
           >
             {t('calendar.success.new_booking')}
           </button>
@@ -188,8 +188,8 @@ const BookingCalendar = ({
                     <button
                       key={date.toISOString()}
                       onClick={() => handleDateSelect(date)}
-                      className={`
-                      flex-shrink-0 w-16 md:w-20 h-20 md:h-24 rounded-2xl flex flex-col items-center justify-center gap-1 transition-all
+                      className={`active:scale-[0.97] 
+                      flex-shrink-0 w-16 md:w-20 h-20 md:h-24 rounded-2xl flex flex-col items-center justify-center gap-1 transition-all motion-reduce:duration-[0.01ms]
                       border ${isSelected ? 'border-primary bg-primary/10 text-primary scale-105' : 'border-gray-100 hover:border-primary/50 text-gray-500'}
                     `}
                     >
@@ -228,8 +228,8 @@ const BookingCalendar = ({
                         key={time}
                         onClick={() => !isBooked && setSelectedTime(time)}
                         disabled={isBooked}
-                        className={`
-                          py-2 rounded-xl text-sm font-medium transition-all
+                        className={`active:scale-[0.97] 
+                          py-2 rounded-xl text-sm font-medium transition-all motion-reduce:duration-[0.01ms]
                           ${
                             selectedTime === time
                               ? 'bg-primary text-white shadow-lg shadow-primary/30'
@@ -252,7 +252,7 @@ const BookingCalendar = ({
               <button
                 disabled={!selectedDate || !selectedTime}
                 onClick={nextStep}
-                className="hidden md:block px-8 py-3 bg-black text-white rounded-full font-medium disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-800 transition-colors shadow-lg"
+                className="active:scale-[0.97] hidden md:block px-8 py-3 bg-black text-white rounded-full font-medium disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-800 transition-colors motion-reduce:duration-[0.01ms] shadow-lg"
               >
                 {t('calendar.step1.next')}
               </button>
@@ -270,7 +270,7 @@ const BookingCalendar = ({
                       >
                         <button
                           onClick={nextStep}
-                          className="w-full py-4 bg-black text-white rounded-2xl font-bold text-lg shadow-2xl pointer-events-auto flex items-center justify-center gap-2 active:scale-95 transition-transform"
+                          className="active:scale-[0.97] w-full py-4 bg-black text-white rounded-2xl font-bold text-lg shadow-2xl pointer-events-auto flex items-center justify-center gap-2 transition-transform motion-reduce:duration-[0.01ms]"
                         >
                           {t('calendar.step1.next')}
                           <svg
@@ -339,7 +339,7 @@ const BookingCalendar = ({
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     aria-invalid={!!error}
                     aria-describedby={error ? 'booking-error' : undefined}
-                    className="w-full p-3 rounded-xl bg-white border border-gray-100 focus:border-primary outline-none transition-colors"
+                    className="w-full p-3 rounded-xl bg-white border border-gray-100 focus:border-primary outline-none transition-colors motion-reduce:duration-[0.01ms]"
                   />
                 </div>
                 <div>
@@ -362,7 +362,7 @@ const BookingCalendar = ({
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     aria-invalid={!!error}
                     aria-describedby={error ? 'booking-error' : undefined}
-                    className="w-full p-3 rounded-xl bg-white border border-gray-100 focus:border-primary outline-none transition-colors"
+                    className="w-full p-3 rounded-xl bg-white border border-gray-100 focus:border-primary outline-none transition-colors motion-reduce:duration-[0.01ms]"
                   />
                 </div>
               </div>
@@ -381,7 +381,7 @@ const BookingCalendar = ({
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   aria-invalid={!!error}
                   aria-describedby={error ? 'booking-error' : undefined}
-                  className="w-full p-3 rounded-xl bg-white border border-gray-100 focus:border-primary outline-none transition-colors"
+                  className="w-full p-3 rounded-xl bg-white border border-gray-100 focus:border-primary outline-none transition-colors motion-reduce:duration-[0.01ms]"
                 />
               </div>
               <div>
@@ -399,7 +399,7 @@ const BookingCalendar = ({
                   onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                   aria-invalid={!!error}
                   aria-describedby={error ? 'booking-error' : undefined}
-                  className="w-full p-3 rounded-xl bg-white border border-gray-100 focus:border-primary outline-none transition-colors"
+                  className="w-full p-3 rounded-xl bg-white border border-gray-100 focus:border-primary outline-none transition-colors motion-reduce:duration-[0.01ms]"
                 />
               </div>
 
@@ -418,14 +418,14 @@ const BookingCalendar = ({
                 <button
                   type="button"
                   onClick={prevStep}
-                  className="px-6 py-2 text-gray-500 hover:text-gray-800 font-medium"
+                  className="active:scale-[0.97] px-6 py-2 text-gray-500 hover:text-gray-800 font-medium"
                 >
                   {t('calendar.step2.buttons.back')}
                 </button>
                 <button
                   type="submit"
                   disabled={loading}
-                  className="px-8 py-2 bg-black text-white rounded-full font-medium hover:bg-gray-800 transition-colors disabled:opacity-50 flex items-center gap-2"
+                  className="active:scale-[0.97] px-8 py-2 bg-black text-white rounded-full font-medium hover:bg-gray-800 transition-colors motion-reduce:duration-[0.01ms] disabled:opacity-50 flex items-center gap-2"
                 >
                   {loading
                     ? t('calendar.step2.buttons.submitting')

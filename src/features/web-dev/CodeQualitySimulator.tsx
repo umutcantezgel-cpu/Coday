@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from 'motion/react';
@@ -99,11 +99,11 @@ const CodeQualitySimulator: React.FC = () => {
             <div
               key={feature.id}
               onClick={() => toggleFeature(feature.id)}
-              className={`group cursor-pointer p-4 rounded-xl border transition-all duration-300 flex items-center justify-between ${feature.active ? 'bg-white border-primary shadow-md' : 'bg-white border-transparent hover:border-gray-200'}`}
+              className={`group cursor-pointer p-4 rounded-xl border transition-all motion-reduce:duration-[0.01ms] duration-300 flex items-center justify-between ${feature.active ? 'bg-white border-primary shadow-md' : 'bg-white border-transparent hover:border-gray-200'}`}
             >
               <div className="flex items-center gap-4">
                 <div
-                  className={`w-10 h-10 rounded-lg flex items-center justify-center transition-colors ${feature.active ? 'bg-primary text-white' : 'bg-gray-100 text-gray-400'}`}
+                  className={`w-10 h-10 rounded-lg flex items-center justify-center transition-colors motion-reduce:duration-[0.01ms] ${feature.active ? 'bg-primary text-white' : 'bg-gray-100 text-gray-400'}`}
                 >
                   <OptimizedIcon icon={feature.icon} />
                 </div>
@@ -117,7 +117,7 @@ const CodeQualitySimulator: React.FC = () => {
                 </div>
               </div>
               <div
-                className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors ${feature.active ? 'border-primary bg-primary' : 'border-gray-200'}`}
+                className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors motion-reduce:duration-[0.01ms] ${feature.active ? 'border-primary bg-primary' : 'border-gray-200'}`}
               >
                 {feature.active && <OptimizedIcon icon={Check} className="text-white text-xs" />}
               </div>

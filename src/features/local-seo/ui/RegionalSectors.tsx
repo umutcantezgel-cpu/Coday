@@ -21,9 +21,9 @@ export const RegionalSectors: React.FC<{ city: CityData }> = ({ city }) => {
           {city.dominantB2BSectors.slice(0, 3).map((sector, idx) => (
             <div
               key={idx}
-              className="p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-accent/50 transition-colors group"
+              className="p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-accent/50 transition-colors motion-reduce:duration-[0.01ms] group"
             >
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms]">
                 {idx === 0 ? (
                   <Factory weight="duotone" className="w-8 h-8" />
                 ) : idx === 1 ? (

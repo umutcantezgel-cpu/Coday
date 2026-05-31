@@ -35,7 +35,7 @@ export const Button: React.FC<ButtonProps> = ({
       {...props}
     >
       {isLoading ? (
-        <CircleNotch className="w-5 h-5 animate-spin me-2" />
+        <CircleNotch className="w-5 h-5 animate-spin me-2 motion-reduce:animate-none" />
       ) : leftIcon ? (
         <span className="me-2">{leftIcon}</span>
       ) : null}

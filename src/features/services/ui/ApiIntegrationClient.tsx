@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import dynamic from 'next/dynamic';
 import { useTranslations } from 'next-intl';
@@ -35,8 +35,6 @@ export function ApiIntegrationClient() {
 
   return (
     <>
-      
-
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6 overflow-hidden bg-background-light">
         {/* Animated Background Mesh */}
@@ -92,7 +90,7 @@ export function ApiIntegrationClient() {
                   <OptimizedIcon icon={Cpu} className="text-4xl text-white" />
                 </div>
                 {/* Pulsing Rings */}
-                <div className="absolute inset-0 bg-blue-500/20 rounded-full animate-ping z-0" />
+                <div className="absolute inset-0 bg-blue-500/20 rounded-full animate-ping z-0 motion-reduce:animate-none" />
               </div>
 
               {/* Satellite Nodes */}
@@ -142,7 +140,7 @@ export function ApiIntegrationClient() {
           <MagicBento className="grid-cols-1 md:grid-cols-3 gap-6 h-auto md:h-[600px]">
             <BentoCard className="md:col-span-2 md:row-span-2 bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-900 text-white overflow-hidden">
               <div className="absolute inset-0 opacity-20 pointer-events-none">
-                <div className="absolute -right-20 -bottom-20 w-96 h-96 bg-blue-400 rounded-full blur-3xl animate-pulse" />
+                <div className="absolute -right-20 -bottom-20 w-96 h-96 bg-blue-400 rounded-full blur-3xl animate-pulse motion-reduce:animate-none" />
                 <div className="absolute -left-20 -top-20 w-72 h-72 bg-indigo-500 rounded-full blur-3xl opacity-50" />
                 <div className="absolute right-10 top-10 w-32 h-32 border-4 border-white/10 rounded-full" />
                 <div className="absolute right-16 top-16 w-20 h-20 border-4 border-white/10 rounded-full" />
@@ -164,7 +162,7 @@ export function ApiIntegrationClient() {
             </BentoCard>
 
             <BentoCard className="md:col-span-1 md:row-span-1 bg-white border border-red-100 shadow-sm relative overflow-hidden group">
-              <div className="absolute -right-8 -bottom-8 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
+              <div className="absolute -right-8 -bottom-8 opacity-5 group-hover:opacity-10 transition-opacity motion-reduce:duration-[0.01ms] duration-500">
                 <OptimizedIcon
                   icon={ShieldCheck}
                   className="text-[12rem] text-red-500 transform -rotate-12"
@@ -188,7 +186,7 @@ export function ApiIntegrationClient() {
             </BentoCard>
 
             <BentoCard className="md:col-span-1 md:row-span-1 bg-white border border-amber-100 shadow-sm relative overflow-hidden group">
-              <div className="absolute -right-4 -top-4 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
+              <div className="absolute -right-4 -top-4 opacity-5 group-hover:opacity-10 transition-opacity motion-reduce:duration-[0.01ms] duration-500">
                 <OptimizedIcon
                   icon={Lightning}
                   className="text-[10rem] text-amber-500 transform rotate-12"
@@ -229,21 +227,20 @@ export function ApiIntegrationClient() {
           <LogoLoop
             speed={40}
             direction="left"
-            logos={(
-              (t.raw('api_integration_page.connectivity.tools') as string[]) ||
-              []
-            ).map((tool) => ({
-              node: (
-                <div className="flex items-center gap-2 px-6 py-3 bg-white rounded-full border border-slate-200 shadow-sm mx-2 whitespace-nowrap">
-                  <OptimizedIcon
-                    icon={CheckCircle}
-                    className="w-5 h-5 text-green-500"
-                    weight="fill"
-                  />
-                  <span className="font-bold text-slate-700">{tool}</span>
-                </div>
-              ),
-            }))}
+            logos={((t.raw('api_integration_page.connectivity.tools') as string[]) || []).map(
+              (tool) => ({
+                node: (
+                  <div className="flex items-center gap-2 px-6 py-3 bg-white rounded-full border border-slate-200 shadow-sm mx-2 whitespace-nowrap">
+                    <OptimizedIcon
+                      icon={CheckCircle}
+                      className="w-5 h-5 text-green-500"
+                      weight="fill"
+                    />
+                    <span className="font-bold text-slate-700">{tool}</span>
+                  </div>
+                ),
+              })
+            )}
           />
         </div>
       </section>
@@ -255,9 +252,7 @@ export function ApiIntegrationClient() {
             {t('api_integration_page.faq.title')}
           </h2>
           <div className="space-y-6">
-            {(
-              (t.raw('api_integration_page.faq.items') as FaqItem[]) || []
-            ).map((item, i) => (
+            {((t.raw('api_integration_page.faq.items') as FaqItem[]) || []).map((item, i) => (
               <div key={i} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
                 <h3 className="text-lg font-bold mb-3">{item.q}</h3>
                 <p className="text-slate-600 leading-relaxed">{item.a}</p>
@@ -269,6 +264,4 @@ export function ApiIntegrationClient() {
       <RelevantFAQs serviceId="api-integrations" className="mb-24" />
     </>
   );
-};
-
-
+}

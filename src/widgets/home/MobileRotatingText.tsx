@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { useState, useEffect } from 'react';
 
@@ -11,7 +11,7 @@ export const MobileRotatingText: React.FC<{ texts: string[] }> = ({ texts }) => 
   return (
     <span
       key={index}
-      className="inline-block animate-fade-in-up text-[var(--text-lead)] font-light text-text-secondary"
+      className="inline-block animate-fade-in-up text-[var(--text-lead)] font-light text-text-secondary motion-reduce:animate-none"
     >
       {texts[index]}
     </span>

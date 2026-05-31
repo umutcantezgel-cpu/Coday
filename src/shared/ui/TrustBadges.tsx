@@ -62,16 +62,13 @@ export const TrustBadges: React.FC<TrustBadgesProps> = ({
   };
 
   return (
-    <div
-      className={`w-full ${className}`}
-      aria-label="Vertrauenssiegel und Zertifikate"
-    >
+    <div className={`w-full ${className}`} aria-label="Vertrauenssiegel und Zertifikate">
       <div className={getLayoutClass()}>
         {badges.map((badge, index) => {
           const BadgeContent = () => (
             <>
               <div
-                className={`w-12 h-12 rounded-full bg-surface-light flex items-center justify-center mb-3 transition-transform duration-300 group-hover:scale-110 ${badge.color || 'text-primary'}`}
+                className={`w-12 h-12 rounded-full bg-surface-light flex items-center justify-center mb-3 transition-transform motion-reduce:duration-[0.01ms] duration-300 group-hover:scale-110 ${badge.color || 'text-primary'}`}
               >
                 <OptimizedIcon icon={badge.icon} className="w-6 h-6" weight="fill" />
               </div>
@@ -82,7 +79,7 @@ export const TrustBadges: React.FC<TrustBadgesProps> = ({
             </>
           );
 
-          const wrapperClass = `group flex flex-col items-center p-4 rounded-xl hover:bg-surface-light/50 transition-colors duration-300 w-full h-full`;
+          const wrapperClass = `group flex flex-col items-center p-4 rounded-xl hover:bg-surface-light/50 transition-colors motion-reduce:duration-[0.01ms] duration-300 w-full h-full`;
 
           return (
             <FadeInUp key={badge.id} delay={index * 0.1}>

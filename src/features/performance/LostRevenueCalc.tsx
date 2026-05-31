@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
 
 const LostRevenueCalc: React.FC = () => {
@@ -87,7 +87,7 @@ const LostRevenueCalc: React.FC = () => {
           </p>
           {loadTime > 1.5 && (
             <div className="mt-8">
-              <button className="px-6 py-2 bg-white text-secondary font-bold rounded-lg hover:bg-gray-100 transition-colors">
+              <button className="active:scale-[0.97] px-6 py-2 bg-white text-secondary font-bold rounded-lg hover:bg-gray-100 transition-colors motion-reduce:duration-[0.01ms]">
                 Jetzt optimieren
               </button>
             </div>

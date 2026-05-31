@@ -83,24 +83,22 @@ export const ProblemSolventMatrix: React.FC<ProblemSolventMatrixProps> = ({
               <div className="w-10 h-10 rounded-lg bg-slate-700 flex items-center justify-center text-slate-400">
                 <OptimizedIcon icon={row.icon} className="w-5 h-5" />
               </div>
-              <span className="font-bold text-slate-200">
-                {t(`${prefix}.${row.id}.label`)}
-              </span>
+              <span className="font-bold text-slate-200">{t(`${prefix}.${row.id}.label`)}</span>
             </div>
 
             {/* Bad Side */}
-            <div className="p-4 md:p-6 flex items-center gap-3 bg-red-900/5 md:bg-slate-800 md:rounded-xl border-x md:border border-slate-700/50 md:border-red-900/10 group hover:border-red-500/30 transition-colors">
+            <div className="p-4 md:p-6 flex items-center gap-3 bg-red-900/5 md:bg-slate-800 md:rounded-xl border-x md:border border-slate-700/50 md:border-red-900/10 group hover:border-red-500/30 transition-colors motion-reduce:duration-[0.01ms]">
               <OptimizedIcon
                 icon={XCircle}
-                className="w-5 h-5 text-red-500/50 group-hover:text-red-500 transition-colors shrink-0"
+                className="w-5 h-5 text-red-500/50 group-hover:text-red-500 transition-colors motion-reduce:duration-[0.01ms] shrink-0"
               />
-              <span className="text-slate-400 group-hover:text-red-200 transition-colors text-sm md:text-base">
+              <span className="text-slate-400 group-hover:text-red-200 transition-colors motion-reduce:duration-[0.01ms] text-sm md:text-base">
                 {t(`${prefix}.${row.id}.bad`)}
               </span>
             </div>
 
             {/* Good Side */}
-            <div className="p-4 md:p-6 flex items-center gap-3 bg-blue-900/5 md:bg-slate-800 md:rounded-xl border-b md:border border-slate-700/50 md:border-blue-900/10 group hover:border-blue-500/30 transition-colors shadow-[0_0_0_1px_rgba(59,130,246,0)_inset] hover:shadow-[0_0_0_1px_rgba(59,130,246,0.2)_inset]">
+            <div className="p-4 md:p-6 flex items-center gap-3 bg-blue-900/5 md:bg-slate-800 md:rounded-xl border-b md:border border-slate-700/50 md:border-blue-900/10 group hover:border-blue-500/30 transition-colors motion-reduce:duration-[0.01ms] shadow-[0_0_0_1px_rgba(59,130,246,0)_inset] hover:shadow-[0_0_0_1px_rgba(59,130,246,0.2)_inset]">
               <OptimizedIcon
                 icon={CheckCircle}
                 className="w-5 h-5 text-blue-500 shrink-0 shadow-lg shadow-blue-500/20"

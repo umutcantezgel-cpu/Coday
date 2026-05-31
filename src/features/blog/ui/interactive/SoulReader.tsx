@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { CheckCircle, HandPalm, Robot } from '@phosphor-icons/react/dist/ssr';
@@ -38,7 +38,7 @@ export const SoulReader: React.FC<SoulReaderProps> = ({ data }) => {
           viewport={{ once: true }}
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-200 shadow-sm mb-6">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-primary animate-pulse motion-reduce:animate-none" />
             <span className="text-xs font-bold tracking-widest uppercase text-gray-500">
               Interactive Experiment
             </span>
@@ -80,8 +80,8 @@ export const SoulReader: React.FC<SoulReaderProps> = ({ data }) => {
         <AnimatePresence>
           {hasVoted && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
               className="mt-12 overflow-hidden"
             >
               <div
@@ -145,10 +145,14 @@ const QuizOption: React.FC<QuizOptionProps> = ({
   const isRevealed = hasVoted;
 
   return (
-    <button onClick={onSelect} disabled={hasVoted} className="group relative w-full text-left">
+    <button
+      onClick={onSelect}
+      disabled={hasVoted}
+      className="active:scale-[0.97] group relative w-full text-left"
+    >
       <div
         className={clsx(
-          'relative aspect-square rounded-[2rem] overflow-hidden border-4 transition-all duration-500 shadow-2xl',
+          'relative aspect-square rounded-[2rem] overflow-hidden border-4 transition-all motion-reduce:duration-[0.01ms] duration-500 shadow-2xl',
           !hasVoted &&
             'hover:scale-[1.02] border-transparent hover:border-primary/50 cursor-pointer',
           hasVoted && isCorrect && 'border-green-500 ring-4 ring-green-500/20 grayscale-0',
@@ -162,7 +166,7 @@ const QuizOption: React.FC<QuizOptionProps> = ({
         {isRevealed && (
           <div
             className={clsx(
-              'absolute inset-0 flex items-center justify-center bg-black/40 backdrop-blur-[2px] opacity-0 animate-[fadeIn_0.5s_forwards]'
+              'absolute inset-0 flex items-center justify-center bg-black/40 backdrop-blur-[2px] opacity-0 animate-[fadeIn_0.5s_forwards] motion-reduce:animate-none'
             )}
           >
             {isCorrect ? (
@@ -179,11 +183,11 @@ const QuizOption: React.FC<QuizOptionProps> = ({
       </div>
 
       <div className="mt-6 flex justify-between items-center px-4">
-        <span className="text-xl font-bold text-gray-400 group-hover:text-primary transition-colors">
+        <span className="text-xl font-bold text-gray-400 group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms]">
           {label}
         </span>
         {!hasVoted && (
-          <span className="px-4 py-1 rounded-full border border-gray-200 text-sm font-medium text-gray-500 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all">
+          <span className="px-4 py-1 rounded-full border border-gray-200 text-sm font-medium text-gray-500 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all motion-reduce:duration-[0.01ms]">
             Select
           </span>
         )}

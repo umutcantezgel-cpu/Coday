@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
 import { Palette, CursorClick } from '@phosphor-icons/react/dist/ssr';
 import { clsx } from 'clsx';
@@ -52,7 +52,8 @@ export const DesignPsychologyPicker: React.FC = () => {
               key={color.name}
               onClick={() => setSelectedColor(color)}
               className={clsx(
-                'flex items-center justify-between p-3 rounded-xl transition-all border',
+                'active:scale-[0.97]',
+                'flex items-center justify-between p-3 rounded-xl transition-all motion-reduce:duration-[0.01ms] border',
                 selectedColor!.name === color.name
                   ? 'bg-white border-gray-300 shadow-md transform scale-105'
                   : 'bg-transparent border-transparent hover:bg-gray-100'
@@ -71,13 +72,13 @@ export const DesignPsychologyPicker: React.FC = () => {
 
         {/* Preview */}
         <div
-          className="w-full md:w-2/3 p-8 md:p-12 flex flex-col items-center justify-center min-h-[300px] relative transition-colors duration-700"
+          className="w-full md:w-2/3 p-8 md:p-12 flex flex-col items-center justify-center min-h-[300px] relative transition-colors motion-reduce:duration-[0.01ms] duration-700"
           style={{ backgroundColor: `${selectedColor!.hex}10` }}
         >
           {' '}
           // 10% opacity bg
           <button
-            className="px-8 py-4 rounded-full text-white font-bold text-lg shadow-xl shadow-current transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl flex items-center gap-3"
+            className="active:scale-[0.97] px-8 py-4 rounded-full text-white font-bold text-lg shadow-xl shadow-current transition-all motion-reduce:duration-[0.01ms] duration-300 transform hover:-translate-y-1 hover:shadow-2xl flex items-center gap-3"
             style={{
               backgroundColor: selectedColor!.hex,
               boxShadow: `0 20px 25px -5px ${selectedColor!.hex}66`,
@@ -90,7 +91,7 @@ export const DesignPsychologyPicker: React.FC = () => {
             <span className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2 block">
               {t('blog:designPsychology.perception')}
             </span>
-            <p className="text-lg font-medium text-gray-800 transition-all duration-300 w-full animate-in fade-in slide-in-from-bottom-4">
+            <p className="text-lg font-medium text-gray-800 transition-all motion-reduce:duration-[0.01ms] duration-300 w-full animate-in fade-in slide-in-from-bottom-4 motion-reduce:animate-none">
               "{selectedColor!.text}"
             </p>
           </div>

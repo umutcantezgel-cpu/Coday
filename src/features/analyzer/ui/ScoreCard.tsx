@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 import { motion } from 'motion/react';
@@ -41,7 +41,7 @@ export const ScoreCard: React.FC<ScoreCardProps> = ({
       onClick={onClick}
       className={`
         relative p-6 rounded-2xl border-2 cursor-pointer
-        transition-all duration-300 hover:shadow-xl
+        transition-all motion-reduce:duration-[0.01ms] duration-300 hover:shadow-xl
         ${getScoreBg(score)}
       `}
     >
@@ -77,7 +77,7 @@ export const ScoreCard: React.FC<ScoreCardProps> = ({
       </div>
 
       {/* Hover Arrow */}
-      <div className="flex justify-end mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+      <div className="flex justify-end mt-2 opacity-0 group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms]">
         <OptimizedIcon icon={ArrowRight} className="text-primary text-sm" />
       </div>
     </motion.div>

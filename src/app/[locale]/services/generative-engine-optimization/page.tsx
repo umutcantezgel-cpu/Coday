@@ -227,7 +227,7 @@ export default async function GeoServicePage({ params }: { params: Promise<{ loc
             {t.whyUs.items.map((item, i) => (
               <div
                 key={i}
-                className="bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-primary-500/30 transition-colors"
+                className="bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-primary-500/30 transition-colors motion-reduce:duration-[0.01ms]"
               >
                 <h3 className="text-xl font-bold text-white mb-4">{item.title}</h3>
                 <p className="text-gray-400 leading-relaxed">{item.text}</p>

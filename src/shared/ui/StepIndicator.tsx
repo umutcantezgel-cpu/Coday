@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React from 'react';
 import { motion } from 'motion/react';
 import { Check } from '@phosphor-icons/react/dist/ssr';
@@ -40,7 +40,7 @@ const StepIndicator: React.FC<StepIndicatorProps> = ({ currentStep, className = 
                 animate={{ scale: isCurrent ? 1.1 : 1 }}
                 className={`
                   w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center font-bold text-xs md:text-sm
-                  transition-all duration-300
+                  transition-all motion-reduce:duration-[0.01ms] duration-300
                   ${isCompleted ? 'bg-primary text-white' : ''}
                   ${isCurrent ? 'bg-primary text-white ring-2 md:ring-4 ring-primary/20' : ''}
                   ${isUpcoming ? 'bg-gray-100 text-gray-400 border-2 border-gray-200' : ''}

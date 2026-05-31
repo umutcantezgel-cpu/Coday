@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
@@ -71,7 +71,7 @@ const Handwerk: React.FC = () => {
                 {t('handwerk-bau.hero.subheadline')}
               </p>
               <div className="flex gap-4">
-                <button className="bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:bg-secondary/90 transition-colors">
+                <button className="active:scale-[0.97] bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:bg-secondary/90 transition-colors motion-reduce:duration-[0.01ms]">
                   {t('buttons.cta_analysis', { ns: 'common' })}
                 </button>
               </div>

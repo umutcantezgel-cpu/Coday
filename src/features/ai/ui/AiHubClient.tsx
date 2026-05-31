@@ -120,10 +120,10 @@ export function AiHubClient() {
               ].map((feature, idx) => (
                 <div
                   key={idx}
-                  className="group p-6 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-xl transition-all border border-gray-100"
+                  className="group p-6 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-xl transition-all motion-reduce:duration-[0.01ms] border border-gray-100"
                 >
                   <div
-                    className={`w-12 h-12 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform`}
+                    className={`w-12 h-12 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms]`}
                   >
                     <OptimizedIcon icon={feature.icon} />
                   </div>

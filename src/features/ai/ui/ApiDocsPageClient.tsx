@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 import { SeoHead } from '@/shared/ui/SeoHead';
@@ -112,14 +112,14 @@ print(data)`;
               <a
                 key={endpoint.slug}
                 href={`/ai/data/${endpoint.slug}`}
-                className="group bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-primary/50 hover:shadow-md transition-all flex flex-col md:flex-row md:items-center justify-between gap-4"
+                className="group bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-primary/50 hover:shadow-md transition-all motion-reduce:duration-[0.01ms] flex flex-col md:flex-row md:items-center justify-between gap-4"
               >
                 <div>
                   <div className="flex items-center gap-3 mb-2">
                     <span className="px-2 py-1 bg-slate-100 text-slate-600 text-xs font-bold uppercase rounded">
                       {endpoint.category}
                     </span>
-                    <h3 className="text-lg font-bold text-slate-900 group-hover:text-primary transition-colors">
+                    <h3 className="text-lg font-bold text-slate-900 group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms]">
                       {endpoint.title}
                     </h3>
                   </div>

@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
@@ -33,20 +33,20 @@ export const UrlInputForm: React.FC = () => {
         <div
           className={`
             relative flex items-center rounded-2xl overflow-hidden
-            transition-all duration-300 ease-out
+            transition-all motion-reduce:duration-[0.01ms] duration-300 ease-out
             ${isFocused ? 'ring-4 ring-primary/20 shadow-2xl shadow-primary/10' : 'shadow-xl'}
             ${error ? 'ring-2 ring-red-500/50' : ''}
           `}
         >
           {/* Gradient Border Effect */}
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-0 group-focus-within:opacity-100 transition-opacity" />
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-0 group-focus-within:opacity-100 transition-opacity motion-reduce:duration-[0.01ms]" />
 
           {/* Input Field */}
           <div className="relative flex-1 flex items-center bg-white rounded-l-2xl">
             {/* Icon */}
             <div className="pl-6 pr-3">
               <MagnifyingGlass
-                className={`w-6 h-6 transition-colors ${isFocused ? 'text-primary' : 'text-gray-400'}`}
+                className={`w-6 h-6 transition-colors motion-reduce:duration-[0.01ms] ${isFocused ? 'text-primary' : 'text-gray-400'}`}
               />
             </div>
 
@@ -95,9 +95,9 @@ export const UrlInputForm: React.FC = () => {
           <button
             type="submit"
             disabled={!isValidUrl || isLoading}
-            className={`
+            className={`active:scale-[0.97] 
               relative px-8 py-5 font-bold text-white text-lg
-              transition-all duration-300
+              transition-all motion-reduce:duration-[0.01ms] duration-300
               ${
                 isValidUrl && !isLoading
                   ? 'bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 cursor-pointer'
@@ -107,7 +107,7 @@ export const UrlInputForm: React.FC = () => {
           >
             {isLoading ? (
               <span className="flex items-center gap-2">
-                <CircleNotch className="w-5 h-5 animate-spin" />
+                <CircleNotch className="w-5 h-5 animate-spin motion-reduce:animate-none" />
                 <span>{t('input.analyzing')}</span>
               </span>
             ) : (

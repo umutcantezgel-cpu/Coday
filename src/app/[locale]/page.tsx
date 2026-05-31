@@ -9,17 +9,14 @@ import { headers } from 'next/headers';
 import Script from 'next/script';
 import React from 'react';
 
-import dynamic from 'next/dynamic';
-
-const LogoLoop = dynamic(() => import('@/shared/ui/LogoLoop'), { ssr: true });
-
-const StatsSection = dynamic(() => import('@/widgets/home/StatsSection').then((mod) => mod.StatsSection), { ssr: true });
-const PhilosophySection = dynamic(() => import('@/widgets/home/PhilosophySection').then((mod) => mod.PhilosophySection), { ssr: true });
-const ServicesSection = dynamic(() => import('@/widgets/home/ServicesSection').then((mod) => mod.ServicesSection), { ssr: true });
-const IndustriesGrid = dynamic(() => import('@/widgets/home/IndustriesGrid').then((mod) => mod.IndustriesGrid), { ssr: true });
-const TestimonialsSection = dynamic(() => import('@/widgets/home/TestimonialsSection').then((mod) => mod.TestimonialsSection), { ssr: true });
-const PortfolioTeaserSection = dynamic(() => import('@/widgets/home/PortfolioTeaserSection').then((mod) => mod.PortfolioTeaserSection), { ssr: true });
-const AgencyComparisonTable = dynamic(() => import('@/features/analyzer/ui/AgencyComparisonTable'), { ssr: true });
+import LogoLoop from '@/shared/ui/LogoLoop';
+import { StatsSection } from '@/widgets/home/StatsSection';
+import { PhilosophySection } from '@/widgets/home/PhilosophySection';
+import { ServicesSection } from '@/widgets/home/ServicesSection';
+import { IndustriesGrid } from '@/widgets/home/IndustriesGrid';
+import { TestimonialsSection } from '@/widgets/home/TestimonialsSection';
+import { PortfolioTeaserSection } from '@/widgets/home/PortfolioTeaserSection';
+import AgencyComparisonTable from '@/features/analyzer/ui/AgencyComparisonTable';
 
 export async function generateMetadata({
   params,
@@ -70,7 +67,9 @@ export default async function HomePage() {
       </div>
 
       <div>
-        <React.Suspense fallback={<Skeleton className="h-96 w-full max-w-7xl mx-auto rounded-3xl" />}>
+        <React.Suspense
+          fallback={<Skeleton className="h-96 w-full max-w-7xl mx-auto rounded-3xl" />}
+        >
           <AgencyComparisonTable />
         </React.Suspense>
       </div>
@@ -99,14 +98,21 @@ export default async function HomePage() {
         </React.Suspense>
       </div>
 
-      <section aria-labelledby="tech-stack-heading" className="py-[var(--space-section)] bg-gray-50 overflow-hidden">
+      <section
+        aria-labelledby="tech-stack-heading"
+        className="py-[var(--space-section)] bg-gray-50 overflow-hidden"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <span className="text-sapphire font-bold tracking-wider uppercase text-xs mb-2 block">
               Core Tech Stack
             </span>
-            <h2 id="tech-stack-heading" className="font-display font-bold text-2xl sm:text-3xl text-secondary">
-              High-End Architektur <span className="text-sapphire">für kompromisslose Performance</span>
+            <h2
+              id="tech-stack-heading"
+              className="font-display font-bold text-2xl sm:text-3xl text-secondary"
+            >
+              High-End Architektur{' '}
+              <span className="text-sapphire">für kompromisslose Performance</span>
             </h2>
           </div>
           <LogoLoop
@@ -132,7 +138,6 @@ export default async function HomePage() {
       <React.Suspense fallback={<div className="min-h-[400px]" />}>
         <TestimonialsSection />
       </React.Suspense>
-
     </main>
   );
 }

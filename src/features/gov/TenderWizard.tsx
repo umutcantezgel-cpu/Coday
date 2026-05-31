@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from 'motion/react';
@@ -93,7 +93,7 @@ export const TenderWizard: React.FC = () => {
                     <button
                       key={opt}
                       onClick={() => handleBudgetSelect(opt)}
-                      className="p-6 rounded-xl bg-slate-700/50 border border-slate-600 hover:bg-blue-600 hover:border-blue-500 transition-all group text-left"
+                      className="active:scale-[0.97] p-6 rounded-xl bg-slate-700/50 border border-slate-600 hover:bg-blue-600 hover:border-blue-500 transition-all motion-reduce:duration-[0.01ms] group text-left"
                     >
                       <div className="w-3 h-3 rounded-full bg-slate-500 group-hover:bg-white mb-4" />
                       <span className="font-bold text-slate-200 group-hover:text-white block">
@@ -115,7 +115,7 @@ export const TenderWizard: React.FC = () => {
               >
                 <button
                   onClick={() => setStep('budget')}
-                  className="mb-8 text-slate-400 hover:text-white flex items-center gap-2 text-sm"
+                  className="active:scale-[0.97] mb-8 text-slate-400 hover:text-white flex items-center gap-2 text-sm"
                 >
                   <ArrowLeft /> Zurück
                 </button>
@@ -127,7 +127,7 @@ export const TenderWizard: React.FC = () => {
                     <button
                       key={opt}
                       onClick={() => handleTypeSelect(opt)}
-                      className="p-6 rounded-xl bg-slate-700/50 border border-slate-600 hover:bg-blue-600 hover:border-blue-500 transition-all group flex items-center gap-4"
+                      className="active:scale-[0.97] p-6 rounded-xl bg-slate-700/50 border border-slate-600 hover:bg-blue-600 hover:border-blue-500 transition-all motion-reduce:duration-[0.01ms] group flex items-center gap-4"
                     >
                       <div className="p-2 rounded-lg bg-slate-800 group-hover:bg-blue-500/20">
                         <OptimizedIcon
@@ -166,13 +166,13 @@ export const TenderWizard: React.FC = () => {
                 <div className="flex flex-col md:flex-row justify-center gap-4">
                   <button
                     onClick={resetWizard}
-                    className="text-slate-400 hover:text-white px-6 py-3"
+                    className="active:scale-[0.97] text-slate-400 hover:text-white px-6 py-3"
                   >
                     Neu starten
                   </button>
                   <Link
                     href={`?type=${resultKey}#contact`}
-                    className="bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-8 rounded-lg transition-colors flex items-center justify-center gap-2"
+                    className="bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-8 rounded-lg transition-colors motion-reduce:duration-[0.01ms] flex items-center justify-center gap-2"
                   >
                     {t(`wizard.results.${resultKey}.action`)}
                     <CaretRight weight="bold" />

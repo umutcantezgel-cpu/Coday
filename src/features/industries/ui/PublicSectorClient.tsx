@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 import { useTranslations } from 'next-intl';
@@ -33,7 +33,7 @@ const PublicSectorPage: React.FC = () => {
       <section className="relative pt-32 pb-24 px-4 overflow-hidden bg-gradient-to-b from-slate-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           {/* Gov Badge */}
-          <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-800 px-4 py-1.5 rounded-full text-sm font-semibold mb-8 animate-fade-in-up">
+          <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-800 px-4 py-1.5 rounded-full text-sm font-semibold mb-8 animate-fade-in-up motion-reduce:animate-none">
             <OptimizedIcon icon={Bank} className="w-4 h-4" />
             {t('hero.badge')}
           </div>
@@ -53,7 +53,7 @@ const PublicSectorPage: React.FC = () => {
             {t('meta.description')}
           </p>
 
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 animate-fade-in-up delay-100">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 animate-fade-in-up delay-100 motion-reduce:animate-none">
             <NavLink
               href="/contact"
               className={cn(
@@ -86,10 +86,10 @@ const PublicSectorPage: React.FC = () => {
               { icon: Files, label: t('trust.opensource'), desc: 'Open Source' },
             ].map((item, idx) => (
               <div key={idx} className="flex flex-col items-center group cursor-default">
-                <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-blue-50 transition-colors">
+                <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-blue-50 transition-colors motion-reduce:duration-[0.01ms]">
                   <OptimizedIcon
                     icon={item.icon}
-                    className="w-8 h-8 text-slate-600 group-hover:text-blue-700 transition-colors"
+                    className="w-8 h-8 text-slate-600 group-hover:text-blue-700 transition-colors motion-reduce:duration-[0.01ms]"
                   />
                 </div>
                 <h3 className="font-bold text-slate-800">{item.label}</h3>
@@ -133,7 +133,7 @@ const PublicSectorPage: React.FC = () => {
             ].map((service, idx) => (
               <div
                 key={idx}
-                className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow"
+                className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow motion-reduce:duration-[0.01ms]"
               >
                 <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6 text-blue-700">
                   <OptimizedIcon icon={service.icon} className="w-6 h-6" />
@@ -215,10 +215,10 @@ const PublicSectorPage: React.FC = () => {
                   direkt hoch oder senden Sie es uns verschlüsselt zu.
                 </p>
 
-                <div className="p-8 border-2 border-dashed border-slate-300 rounded-2xl bg-slate-50 hover:bg-white hover:border-blue-400 transition-colors cursor-pointer group">
+                <div className="p-8 border-2 border-dashed border-slate-300 rounded-2xl bg-slate-50 hover:bg-white hover:border-blue-400 transition-colors motion-reduce:duration-[0.01ms] cursor-pointer group">
                   <OptimizedIcon
                     icon={Files}
-                    className="w-12 h-12 text-slate-400 mx-auto mb-4 group-hover:text-blue-500 transition-colors"
+                    className="w-12 h-12 text-slate-400 mx-auto mb-4 group-hover:text-blue-500 transition-colors motion-reduce:duration-[0.01ms]"
                   />
                   <p className="text-lg font-medium text-slate-700">{t('contact.upload_label')}</p>
                   <p className="text-sm text-slate-500 mt-2">

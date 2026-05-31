@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link as NavLink } from '@/i18n/navigation';
@@ -54,9 +54,15 @@ import dynamic from 'next/dynamic';
 const ArchitectureVisualizer = dynamic(() => import('@/features/web-dev/ArchitectureVisualizer'));
 const CodeQualitySimulator = dynamic(() => import('@/features/web-dev/CodeQualitySimulator'));
 const SecurityGrid = dynamic(() => import('@/features/web-dev/SecurityGrid'));
-const RelevantFAQs = dynamic(() => import('@/features/faq/ui/RelevantFAQs').then(mod => mod.RelevantFAQs));
-const TechStackShowcase = dynamic(() => import('@/widgets/services/TechStackShowcase').then(mod => mod.TechStackShowcase));
-const TestimonialCard = dynamic(() => import('@/shared/ui/TestimonialCard').then(mod => mod.TestimonialCard));
+const RelevantFAQs = dynamic(() =>
+  import('@/features/faq/ui/RelevantFAQs').then((mod) => mod.RelevantFAQs)
+);
+const TechStackShowcase = dynamic(() =>
+  import('@/widgets/services/TechStackShowcase').then((mod) => mod.TechStackShowcase)
+);
+const TestimonialCard = dynamic(() =>
+  import('@/shared/ui/TestimonialCard').then((mod) => mod.TestimonialCard)
+);
 
 export function WebDevelopmentClient() {
   const t = useTranslations('services');
@@ -66,11 +72,23 @@ export function WebDevelopmentClient() {
   const webDevTechStack: TechItem[] = [
     { name: 'Next.js', category: 'Frontend', iconNode: <OptimizedIcon icon={Stack} size="lg" /> },
     { name: 'React', category: 'Frontend', iconNode: <OptimizedIcon icon={Code} size="lg" /> },
-    { name: 'Tailwind CSS', category: 'Frontend', iconNode: <OptimizedIcon icon={PaintBrush} size="lg" /> },
+    {
+      name: 'Tailwind CSS',
+      category: 'Frontend',
+      iconNode: <OptimizedIcon icon={PaintBrush} size="lg" />,
+    },
     { name: 'TypeScript', category: 'Frontend', iconNode: <OptimizedIcon icon={Code} size="lg" /> },
     { name: 'Node.js', category: 'Backend', iconNode: <OptimizedIcon icon={Database} size="lg" /> },
-    { name: 'Supabase', category: 'Backend', iconNode: <OptimizedIcon icon={Database} size="lg" /> },
-    { name: 'PostgreSQL', category: 'Backend', iconNode: <OptimizedIcon icon={Database} size="lg" /> },
+    {
+      name: 'Supabase',
+      category: 'Backend',
+      iconNode: <OptimizedIcon icon={Database} size="lg" />,
+    },
+    {
+      name: 'PostgreSQL',
+      category: 'Backend',
+      iconNode: <OptimizedIcon icon={Database} size="lg" />,
+    },
     { name: 'Sanity', category: 'CMS', iconNode: <OptimizedIcon icon={Stack} size="lg" /> },
     { name: 'Vercel', category: 'Deployment', iconNode: <OptimizedIcon icon={Cloud} size="lg" /> },
     { name: 'GitHub', category: 'Tools', iconNode: <OptimizedIcon icon={Code} size="lg" /> },
@@ -92,7 +110,9 @@ export function WebDevelopmentClient() {
                 animateBy="words"
                 className="block"
               />
-              <span className="text-primary">{t('services.web_development_page.hero.title_static')}</span>
+              <span className="text-primary">
+                {t('services.web_development_page.hero.title_static')}
+              </span>
             </h1>
             <p className="text-xl text-slate-600 leading-relaxed max-w-3xl lg:mx-0 mx-auto">
               {t('services.web_development_page.hero.description')}
@@ -104,7 +124,7 @@ export function WebDevelopmentClient() {
               <OptimizedImage
                 src={webDevImages.hero.src}
                 alt={t(webDevImages.hero.alt as any)}
-                className="relative rounded-3xl shadow-flat-lg w-full transform -rotate-1 hover:rotate-0 transition-all duration-500 bg-white p-2"
+                className="relative rounded-3xl shadow-flat-lg w-full transform -rotate-1 hover:rotate-0 transition-all motion-reduce:duration-[0.01ms] duration-500 bg-white p-2"
                 priority
               />
             )}
@@ -156,21 +176,22 @@ export function WebDevelopmentClient() {
             <NavLink
               key={index}
               href={`/services/web-development/${feature.slug}`}
-              className="bg-white p-8 rounded-2xl shadow-flat border border-gray-100 hover:shadow-flat-lg transition-all duration-300 group hover:-translate-y-1 block relative overflow-hidden h-full"
+              className="bg-white p-8 rounded-2xl shadow-flat border border-gray-100 hover:shadow-flat-lg transition-all motion-reduce:duration-[0.01ms] duration-300 group hover:-translate-y-1 block relative overflow-hidden h-full"
             >
-              <div className="absolute top-0 end-0 w-32 h-32 bg-secondary/5 rounded-bl-full -me-8 -mt-8 transition-transform group-hover:scale-110"></div>
-              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors relative z-10">
+              <div className="absolute top-0 end-0 w-32 h-32 bg-secondary/5 rounded-bl-full -me-8 -mt-8 transition-transform motion-reduce:duration-[0.01ms] group-hover:scale-110"></div>
+              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors motion-reduce:duration-[0.01ms] relative z-10">
                 <OptimizedIcon icon={iconMap[feature.icon] || Code} />
               </div>
-              <h3 className="font-display font-bold text-xl text-secondary mb-3 group-hover:text-primary transition-colors relative z-10">
+              <h3 className="font-display font-bold text-xl text-secondary mb-3 group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms] relative z-10">
                 {/* Check if translation exists first */}
                 {t(feature.titleKey as any)}
               </h3>
               <p className="text-slate-600 leading-relaxed mb-4 relative z-10">
                 {t(feature.descriptionKey as any)}
               </p>
-              <div className="text-primary font-bold text-sm uppercase tracking-wide flex items-center opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0 relative z-10">
-                {t('common.actions.read_more')} <OptimizedIcon icon={ArrowRight} className="ms-1 text-sm" />
+              <div className="text-primary font-bold text-sm uppercase tracking-wide flex items-center opacity-0 group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms] transform translate-y-2 group-hover:translate-y-0 relative z-10">
+                {t('common.actions.read_more')}{' '}
+                <OptimizedIcon icon={ArrowRight} className="ms-1 text-sm" />
               </div>
             </NavLink>
           ))}
@@ -210,7 +231,7 @@ export function WebDevelopmentClient() {
           </p>
           <NavLink
             href="/contact"
-            className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-primary rounded-xl bg-white hover:bg-gray-50 shadow-lg hover:shadow-xl transition-all"
+            className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-primary rounded-xl bg-white hover:bg-gray-50 shadow-lg hover:shadow-xl transition-all motion-reduce:duration-[0.01ms]"
           >
             {t('services.web_development_page.cta.button')}
             <OptimizedIcon icon={RocketLaunch} className="ms-2" />

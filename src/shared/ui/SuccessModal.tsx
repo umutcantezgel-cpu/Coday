@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React from 'react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { CheckCircle } from '@phosphor-icons/react/dist/ssr';
@@ -67,7 +67,7 @@ export const SuccessModal: React.FC<SuccessModalProps> = ({
 
             <button
               onClick={onClose}
-              className="w-full py-4 bg-gray-900 text-white font-bold rounded-xl hover:bg-black transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gray-900"
+              className="w-full py-4 bg-gray-900 text-white font-bold rounded-xl hover:bg-black transition-colors motion-reduce:duration-[0.01ms] focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gray-900"
             >
               Verstanden
             </button>

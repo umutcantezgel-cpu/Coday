@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React from 'react';
 import { motion } from 'motion/react';
 import { Check } from '@phosphor-icons/react/dist/ssr';
@@ -41,7 +41,7 @@ const Timeline: React.FC<TimelineProps> = ({ items, className = '' }) => {
             <div
               className={`
               relative z-10 w-12 h-12 rounded-full flex items-center justify-center
-              transition-all duration-300 group-hover:scale-110
+              transition-all motion-reduce:duration-[0.01ms] duration-300 group-hover:scale-110
               ${
                 item.completed
                   ? 'bg-primary text-white shadow-lg shadow-primary/30'
@@ -58,7 +58,7 @@ const Timeline: React.FC<TimelineProps> = ({ items, className = '' }) => {
 
             {/* Content */}
             <div className="mt-4 px-2">
-              <h4 className="font-bold text-secondary text-sm mb-1 group-hover:text-primary transition-colors">
+              <h4 className="font-bold text-secondary text-sm mb-1 group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms]">
                 {item.title}
               </h4>
               <p className="text-xs text-slate-500 leading-relaxed hidden md:block">

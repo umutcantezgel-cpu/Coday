@@ -15,21 +15,21 @@ const ServiceFunnelVisualizer: React.FC = () => {
 
       <div className="flex flex-col gap-2">
         {/* Funnel Steps */}
-        <div className="bg-blue-50 p-4 rounded-xl w-full mx-auto text-center border border-blue-100 relative group hover:bg-blue-100 transition-colors">
+        <div className="bg-blue-50 p-4 rounded-xl w-full mx-auto text-center border border-blue-100 relative group hover:bg-blue-100 transition-colors motion-reduce:duration-[0.01ms]">
           <span className="font-bold text-blue-900">
             {t('unternehmensberatung.features.service_funnel.steps.traffic')}
           </span>
           <div className="text-xs text-blue-400 mt-1">1.000 Visitors</div>
         </div>
 
-        <div className="bg-blue-100 p-4 rounded-xl w-[80%] mx-auto text-center border border-blue-200 relative group hover:bg-blue-200 transition-colors text-white">
+        <div className="bg-blue-100 p-4 rounded-xl w-[80%] mx-auto text-center border border-blue-200 relative group hover:bg-blue-200 transition-colors motion-reduce:duration-[0.01ms] text-white">
           <span className="font-bold text-blue-900">
             {t('unternehmensberatung.features.service_funnel.steps.leads')}
           </span>
           <div className="text-xs text-blue-500 mt-1">50 Leads</div>
         </div>
 
-        <div className="bg-primary p-4 rounded-xl w-[60%] mx-auto text-center shadow-lg relative group hover:bg-primary/90 transition-colors text-white">
+        <div className="bg-primary p-4 rounded-xl w-[60%] mx-auto text-center shadow-lg relative group hover:bg-primary/90 transition-colors motion-reduce:duration-[0.01ms] text-white">
           <span className="font-bold text-white">
             {t('unternehmensberatung.features.service_funnel.steps.clients')}
           </span>

@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { m, PanInfo, useMotionValue, useTransform, MotionValue, Transition } from 'motion/react';
 import React, { JSX } from 'react';
@@ -93,7 +93,7 @@ const CarouselItemComponent: React.FC<CarouselItemProps> = ({
       className={`relative shrink-0 flex flex-col ${
         round
           ? 'items-center justify-center text-center bg-surface-light border-0'
-          : 'items-start justify-between bg-white border border-gray-200 rounded-3xl shadow-sm hover:shadow-md transition-shadow'
+          : 'items-start justify-between bg-white border border-gray-200 rounded-3xl shadow-sm hover:shadow-md transition-shadow motion-reduce:duration-[0.01ms]'
       } overflow-hidden cursor-grab active:cursor-grabbing`}
       style={{
         width: itemWidth,
@@ -326,7 +326,7 @@ export default function Carousel({
           {items.map((_, index) => (
             <m.div
               key={index}
-              className={`h-2 w-2 rounded-full cursor-pointer transition-colors duration-150 ${
+              className={`h-2 w-2 rounded-full cursor-pointer transition-colors motion-reduce:duration-[0.01ms] duration-150 ${
                 activeIndex === index
                   ? round
                     ? 'bg-white'

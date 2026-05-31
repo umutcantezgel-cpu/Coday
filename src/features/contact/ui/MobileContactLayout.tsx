@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState, Suspense, lazy } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useTranslations } from 'next-intl';
@@ -28,11 +28,7 @@ export const MobileContactLayout: React.FC = () => {
                 <h1 className="font-display font-bold text-2xl text-secondary mb-2">
                   {t('hero.title_start')}
                 </h1>
-                <p className="text-slate-600">
-                  {t(
-                    'mobile.booking_intro'
-                  )}
-                </p>
+                <p className="text-slate-600">{t('mobile.booking_intro')}</p>
               </div>
               <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
                 <BookingCalendar />
@@ -50,11 +46,7 @@ export const MobileContactLayout: React.FC = () => {
                 <h1 className="font-display font-bold text-2xl text-secondary mb-2">
                   {t('mobile.contact_title')}
                 </h1>
-                <p className="text-slate-600">
-                  {t(
-                    'mobile.contact_intro'
-                  )}
-                </p>
+                <p className="text-slate-600">{t('mobile.contact_intro')}</p>
               </div>
               <Suspense fallback={<Skeleton className="h-[400px] w-full rounded-2xl" />}>
                 <ApplicationWizard />
@@ -94,8 +86,8 @@ export const MobileContactLayout: React.FC = () => {
         <div className="grid grid-cols-2 p-2 gap-2">
           <button
             onClick={() => setActiveTab('booking')}
-            className={`
-              flex flex-col items-center justify-center gap-1 py-2 px-4 rounded-xl text-xs font-bold transition-all relative overflow-hidden
+            className={`active:scale-[0.97] 
+              flex flex-col items-center justify-center gap-1 py-2 px-4 rounded-xl text-xs font-bold transition-all motion-reduce:duration-[0.01ms] relative overflow-hidden
               ${activeTab === 'booking' ? 'text-primary' : 'text-slate-500 hover:bg-gray-50'}
             `}
           >
@@ -116,8 +108,8 @@ export const MobileContactLayout: React.FC = () => {
 
           <button
             onClick={() => setActiveTab('contact')}
-            className={`
-              flex flex-col items-center justify-center gap-1 py-2 px-4 rounded-xl text-xs font-bold transition-all relative overflow-hidden
+            className={`active:scale-[0.97] 
+              flex flex-col items-center justify-center gap-1 py-2 px-4 rounded-xl text-xs font-bold transition-all motion-reduce:duration-[0.01ms] relative overflow-hidden
               ${activeTab === 'contact' ? 'text-purple-600' : 'text-slate-500 hover:bg-gray-50'}
             `}
           >

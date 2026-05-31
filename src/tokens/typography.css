@@ -1,0 +1,48 @@
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-heading: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+    monospace;
+
+  /* Fluid Typography Scale (1.25) */
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1rem;
+
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.25rem;
+
+  --text-base: 1rem;
+  --text-base--line-height: 1.5rem;
+
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.75rem;
+
+  --text-xl: 1.25rem;
+  --text-xl--line-height: 1.75rem;
+
+  --text-2xl: 1.5rem;
+  --text-2xl--line-height: 2rem;
+
+  /* Starting from 3xl, we make them somewhat fluid or just map the scale */
+  --text-3xl: clamp(1.875rem, 1.5rem + 1.25vw, 2.34375rem);
+  --text-3xl--line-height: 2.25rem;
+
+  --text-4xl: clamp(2.34375rem, 1.875rem + 2.5vw, 2.9296875rem);
+  --text-4xl--line-height: 2.5rem;
+
+  --text-5xl: clamp(2.9296875rem, 2.34375rem + 3.75vw, 3.662109375rem);
+  --text-5xl--line-height: 1;
+
+  --text-6xl: clamp(3.662109375rem, 2.9296875rem + 5vw, 4.57763671875rem);
+  --text-6xl--line-height: 1;
+
+  --text-7xl: clamp(4.57763671875rem, 3.662109375rem + 6.25vw, 5.7220458984375rem);
+  --text-7xl--line-height: 1;
+
+  --text-8xl: clamp(6rem, 5vw + 4rem, 8rem);
+  --text-8xl--line-height: 1;
+
+  --text-9xl: clamp(8rem, 5vw + 6rem, 10rem);
+  --text-9xl--line-height: 1;
+}

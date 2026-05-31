@@ -1,8 +1,8 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
 import dynamic from 'next/dynamic';
-const CountUp = dynamic(() => import('@/shared/ui/CountUp'));
-const FadeInUp = dynamic(() => import('@/shared/ui/MotionWrappers').then(m => m.FadeInUp));
+import CountUp from '@/shared/ui/CountUp';
+import { FadeInUp } from '@/shared/ui/MotionWrappers';
 
 export const StatsSection: React.FC = () => {
   const t = useTranslations('home');
@@ -10,9 +10,7 @@ export const StatsSection: React.FC = () => {
   return (
     <section className="py-[var(--space-section)] relative z-20 -mt-20 mb-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <FadeInUp
-          className="bg-white/90 backdrop-blur-md rounded-2xl p-8 lg:p-12 shadow-flat-lg border border-gray-100/50"
-        >
+        <FadeInUp className="bg-white/90 backdrop-blur-md rounded-2xl p-8 lg:p-12 shadow-flat-lg border border-gray-100/50">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-gray-100">
             <div className="px-4 text-center">
               <div

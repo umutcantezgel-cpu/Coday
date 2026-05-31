@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
@@ -66,13 +66,13 @@ const Marketplace: React.FC = () => {
           {PRODUCTS.map((item) => (
             <div
               key={item.id}
-              className="group relative bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl hover:border-blue-200 transition-all duration-300 flex flex-col"
+              className="group relative bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl hover:border-blue-200 transition-all motion-reduce:duration-[0.01ms] duration-300 flex flex-col"
             >
               <div className="h-48 relative overflow-hidden bg-slate-50">
                 <OptimizedImage
                   src={item.image}
                   alt={item.alt}
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform motion-reduce:duration-[0.01ms] duration-700"
                 />
                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-gray-900 shadow-sm">
                   Popular
@@ -87,7 +87,7 @@ const Marketplace: React.FC = () => {
 
                 <div className="flex items-center justify-between mt-4 pt-4 border-t border-gray-100">
                   <span className="text-xl font-bold text-blue-600">{item.price}</span>
-                  <button className="px-4 py-2 rounded-lg bg-gray-900 text-sm font-bold text-white hover:bg-gray-800 transition-colors">
+                  <button className="active:scale-[0.97] px-4 py-2 rounded-lg bg-gray-900 text-sm font-bold text-white hover:bg-gray-800 transition-colors motion-reduce:duration-[0.01ms]">
                     Kaufen
                   </button>
                 </div>

@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import BlurText from '@/shared/ui/BlurText';
 import dynamic from 'next/dynamic';
-const FadeInUp = dynamic(() => import('@/shared/ui/MotionWrappers').then(m => m.FadeInUp));
+import { FadeInUp } from '@/shared/ui/MotionWrappers';
 
 export const PhilosophySection: React.FC = () => {
   const t = useTranslations('home');
@@ -36,7 +36,7 @@ export const PhilosophySection: React.FC = () => {
             <OptimizedImage
               src="/images/hero/business-handshake-partnerschaft-tuer-offen-zusammenarbeit-vertrauen-small.webp"
               alt={t('images.trust_collaboration', { ns: 'home' })}
-              className="relative rounded-[2rem] shadow-flat-lg bg-white p-2 transform -rotate-2 hover:rotate-0 transition-all duration-500 w-full max-w-[150px] mx-auto lg:mx-0"
+              className="relative rounded-[2rem] shadow-flat-lg bg-white p-2 transform -rotate-2 hover:rotate-0 transition-all motion-reduce:duration-[0.01ms] duration-500 w-full max-w-[150px] mx-auto lg:mx-0"
               width={96}
               height={96}
             />

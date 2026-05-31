@@ -57,7 +57,7 @@ export const EdgeNetworkMap: React.FC = () => {
             <div className="w-3 h-3 bg-primary rounded-full relative z-10 shadow-[0_0_10px_theme(colors.primary)]" />
 
             {/* Label (Tooltips on hover could apply here) */}
-            <span className="absolute top-4 left-1/2 -translate-x-1/2 text-[10px] text-slate-400 opacity-0 hover:opacity-100 transition-opacity whitespace-nowrap">
+            <span className="absolute top-4 left-1/2 -translate-x-1/2 text-[10px] text-slate-400 opacity-0 hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms] whitespace-nowrap">
               {loc.name}
             </span>
           </motion.div>

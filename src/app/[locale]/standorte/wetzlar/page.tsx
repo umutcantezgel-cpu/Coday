@@ -14,14 +14,16 @@ export async function generateMetadata({
   if (locale === 'en') {
     return generatePageMetadata({
       title: 'Web Agency Wetzlar | Next.js & Web Design',
-      description: 'Local expertise meets high-end tech. Your web agency in Wetzlar for Next.js, Headless CMS and web design. Personal meetings in Central Hesse.',
+      description:
+        'Local expertise meets high-end tech. Your web agency in Wetzlar for Next.js, Headless CMS and web design. Personal meetings in Central Hesse.',
       path: '/en/standorte/wetzlar',
       type: 'money',
     });
   }
   return generatePageMetadata({
     title: 'Webagentur Wetzlar | Next.js & Webdesign',
-    description: 'Lokale Expertise trifft auf High-End Tech. Ihre Webagentur in Wetzlar für Next.js, Headless CMS und Webdesign. Persönliche Treffen in Mittelhessen.',
+    description:
+      'Lokale Expertise trifft auf High-End Tech. Ihre Webagentur in Wetzlar für Next.js, Headless CMS und Webdesign. Persönliche Treffen in Mittelhessen.',
     path: '/de/standorte/wetzlar',
     type: 'money',
   });
@@ -33,7 +35,8 @@ const content = {
       title: 'Ihre',
       titleHighlight: 'Webagentur',
       titleSuffix: 'in Wetzlar',
-      description: 'Persönliche Beratung in Mittelhessen. Als Solo-Founder kombiniere ich lokales Marktverständnis mit modernster Next.js Technologie für messbare digitale Ergebnisse.',
+      description:
+        'Persönliche Beratung in Mittelhessen. Als Solo-Founder kombiniere ich lokales Marktverständnis mit modernster Next.js Technologie für messbare digitale Ergebnisse.',
       cta: 'Gespräch vereinbaren',
     },
     whyLocal: {
@@ -69,15 +72,18 @@ const content = {
       items: [
         {
           name: 'Batherm',
-          description: 'Professionelle Webpräsenz für den Heizungs- und Sanitärfachbetrieb aus der Region. Moderne Darstellung der Leistungen mit optimierter lokaler Auffindbarkeit.',
+          description:
+            'Professionelle Webpräsenz für den Heizungs- und Sanitärfachbetrieb aus der Region. Moderne Darstellung der Leistungen mit optimierter lokaler Auffindbarkeit.',
         },
         {
           name: 'MS Schlüsseldienst Wetzlar',
-          description: 'Lokale SEO-Strategie und performante Website für den Schlüsselnotdienst in Wetzlar. Ergebnis: Top-Platzierung bei „Schlüsseldienst Wetzlar" in der Google-Suche.',
+          description:
+            'Lokale SEO-Strategie und performante Website für den Schlüsselnotdienst in Wetzlar. Ergebnis: Top-Platzierung bei „Schlüsseldienst Wetzlar" in der Google-Suche.',
         },
         {
           name: 'Lindener Ratsstuben',
-          description: 'Digitale Visitenkarte für die traditionelle Gastronomie. Responsive Webdesign mit Online-Reservierung und optimierter Google-My-Business Integration.',
+          description:
+            'Digitale Visitenkarte für die traditionelle Gastronomie. Responsive Webdesign mit Online-Reservierung und optimierter Google-My-Business Integration.',
         },
       ],
     },
@@ -112,7 +118,8 @@ const content = {
     },
     cta: {
       title: 'Bereit für Ihre neue Website?',
-      description: 'Lassen Sie uns bei einem Kaffee in Wetzlar über Ihr Projekt sprechen. Kostenlose Erstberatung, unverbindlich.',
+      description:
+        'Lassen Sie uns bei einem Kaffee in Wetzlar über Ihr Projekt sprechen. Kostenlose Erstberatung, unverbindlich.',
       button: 'Jetzt Termin vereinbaren',
     },
   },
@@ -121,7 +128,8 @@ const content = {
       title: 'Your',
       titleHighlight: 'Web Agency',
       titleSuffix: 'in Wetzlar',
-      description: 'Personal consulting in Central Hesse. As a solo founder, I combine local market understanding with cutting-edge Next.js technology for measurable digital results.',
+      description:
+        'Personal consulting in Central Hesse. As a solo founder, I combine local market understanding with cutting-edge Next.js technology for measurable digital results.',
       cta: 'Schedule a Meeting',
     },
     whyLocal: {
@@ -129,7 +137,7 @@ const content = {
       items: [
         {
           title: 'Personal Meetings',
-          text: 'Whether for a coffee in Wetzlar\'s old town or directly at your office in the Lahn-Dill district. Proximity builds trust and shortens communication.',
+          text: "Whether for a coffee in Wetzlar's old town or directly at your office in the Lahn-Dill district. Proximity builds trust and shortens communication.",
         },
         {
           title: 'Local Market Knowledge',
@@ -157,15 +165,18 @@ const content = {
       items: [
         {
           name: 'Batherm',
-          description: 'Professional web presence for the heating and sanitary specialist from the region. Modern presentation of services with optimized local discoverability.',
+          description:
+            'Professional web presence for the heating and sanitary specialist from the region. Modern presentation of services with optimized local discoverability.',
         },
         {
           name: 'MS Schlüsseldienst Wetzlar',
-          description: 'Local SEO strategy and performant website for the locksmith service in Wetzlar. Result: Top ranking for "Schlüsseldienst Wetzlar" in Google search.',
+          description:
+            'Local SEO strategy and performant website for the locksmith service in Wetzlar. Result: Top ranking for "Schlüsseldienst Wetzlar" in Google search.',
         },
         {
           name: 'Lindener Ratsstuben',
-          description: 'Digital business card for traditional gastronomy. Responsive web design with online reservation and optimized Google My Business integration.',
+          description:
+            'Digital business card for traditional gastronomy. Responsive web design with online reservation and optimized Google My Business integration.',
         },
       ],
     },
@@ -194,13 +205,14 @@ const content = {
         },
         {
           q: 'Why a solo agency instead of a large firm?',
-          a: 'With me, you always talk to the developer directly – no middleman, no misunderstandings. You get enterprise quality at fair prices because I don\'t have the overhead costs of a large agency.',
+          a: "With me, you always talk to the developer directly – no middleman, no misunderstandings. You get enterprise quality at fair prices because I don't have the overhead costs of a large agency.",
         },
       ],
     },
     cta: {
       title: 'Ready for Your New Website?',
-      description: 'Let\'s discuss your project over a coffee in Wetzlar. Free initial consultation, no obligations.',
+      description:
+        "Let's discuss your project over a coffee in Wetzlar. Free initial consultation, no obligations.",
       button: 'Schedule Now',
     },
   },
@@ -290,7 +302,8 @@ export default async function WetzlarLocationPage({
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(59,130,246,0.08),transparent_60%)]" />
         <div className="max-w-5xl mx-auto text-center relative z-10">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white leading-tight">
-            {t.hero.title} <span className="text-primary-500">{t.hero.titleHighlight}</span> {t.hero.titleSuffix}
+            {t.hero.title} <span className="text-primary-500">{t.hero.titleHighlight}</span>{' '}
+            {t.hero.titleSuffix}
           </h1>
           <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
             {t.hero.description}
@@ -309,7 +322,10 @@ export default async function WetzlarLocationPage({
           <h2 className="text-3xl font-bold text-white mb-12 text-center">{t.whyLocal.title}</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {t.whyLocal.items.map((item, i) => (
-              <div key={i} className="bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-primary-500/30 transition-colors">
+              <div
+                key={i}
+                className="bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-primary-500/30 transition-colors motion-reduce:duration-[0.01ms]"
+              >
                 <h3 className="text-xl font-bold text-white mb-4">{item.title}</h3>
                 <p className="text-gray-400 leading-relaxed">{item.text}</p>
               </div>
@@ -324,7 +340,10 @@ export default async function WetzlarLocationPage({
           <h2 className="text-3xl font-bold text-white mb-8">{t.services.title}</h2>
           <div className="grid md:grid-cols-2 gap-4">
             {t.services.items.map((item, i) => (
-              <div key={i} className="flex items-center gap-4 text-gray-300 bg-white/5 p-4 rounded-xl border border-white/5">
+              <div
+                key={i}
+                className="flex items-center gap-4 text-gray-300 bg-white/5 p-4 rounded-xl border border-white/5"
+              >
                 <span className="text-primary-500 text-xl flex-shrink-0">✓</span>
                 <span>{item}</span>
               </div>
@@ -339,7 +358,10 @@ export default async function WetzlarLocationPage({
           <h2 className="text-3xl font-bold text-white mb-12 text-center">{t.references.title}</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {t.references.items.map((ref, i) => (
-              <div key={i} className="bg-gradient-to-br from-white/5 to-white/[0.02] p-8 rounded-2xl border border-white/10">
+              <div
+                key={i}
+                className="bg-gradient-to-br from-white/5 to-white/[0.02] p-8 rounded-2xl border border-white/10"
+              >
                 <div className="w-12 h-12 rounded-xl bg-primary-500/10 flex items-center justify-center mb-6">
                   <span className="text-primary-500 font-bold text-lg">{ref.name.charAt(0)}</span>
                 </div>

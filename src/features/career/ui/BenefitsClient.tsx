@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
@@ -74,7 +74,7 @@ const Benefits: React.FC = () => {
               className="h-full bg-white text-left shadow-flat border border-gray-100"
             >
               <div className="p-8 h-full flex flex-col items-start text-left">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms]">
                   <OptimizedIcon
                     icon={iconMap[benefit.icon] || WarningCircle}
                     className="text-3xl text-primary"

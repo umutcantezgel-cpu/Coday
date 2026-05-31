@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
 import { Link } from '@/i18n/navigation';
@@ -167,7 +167,7 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
                     </span>
                     <OptimizedIcon
                       icon={CaretDown}
-                      className={`w-5 h-5 transition-transform duration-300 ${
+                      className={`w-5 h-5 transition-transform motion-reduce:duration-[0.01ms] duration-300 ${
                         expandedItem === item.label
                           ? 'rotate-180 text-primary-400'
                           : 'text-slate-400'
@@ -178,9 +178,9 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
                   <AnimatePresence initial={false}>
                     {expandedItem === item.label && (
                       <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.3, ease: 'easeInOut' }}
                         className="overflow-hidden"
                       >
@@ -276,7 +276,7 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
               </div>
               <Link
                 href="/contact"
-                className="flex-1 flex items-center justify-center gap-2 bg-primary text-white py-3.5 rounded-xl font-semibold active:scale-[0.98] transition-transform shadow-lg shadow-primary/25"
+                className="flex-1 flex items-center justify-center gap-2 bg-primary text-white py-3.5 rounded-xl font-semibold active:scale-[0.98] transition-transform motion-reduce:duration-[0.01ms] shadow-lg shadow-primary/25"
                 onClick={onClose}
               >
                 <span>{t('nav.cta_booking', { defaultValue: 'Termin buchen' })}</span>

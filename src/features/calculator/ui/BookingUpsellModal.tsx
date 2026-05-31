@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React from 'react';
 import { Icon } from '@/shared/ui/Icon';
 import Link from 'next/link';
@@ -25,7 +25,7 @@ export const BookingUpsellModal: React.FC<BookingUpsellModalProps> = ({ isOpen, 
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose}></div>
       <div
-        className="relative bg-white rounded-3xl p-8 max-w-lg w-full shadow-2xl animate-in fade-in zoom-in duration-300"
+        className="relative bg-white rounded-3xl p-8 max-w-lg w-full shadow-2xl animate-in fade-in zoom-in duration-300 motion-reduce:animate-none"
         role="dialog"
         aria-modal="true"
         aria-labelledby="upsell-modal-title"
@@ -53,14 +53,14 @@ export const BookingUpsellModal: React.FC<BookingUpsellModalProps> = ({ isOpen, 
           <div className="space-y-3">
             <Link
               href="/booking"
-              className="block w-full py-4 bg-primary text-white rounded-xl font-bold hover:bg-opacity-90 transition-all shadow-lg hover:shadow-xl uppercase tracking-wide"
+              className="block w-full py-4 bg-primary text-white rounded-xl font-bold hover:bg-opacity-90 transition-all motion-reduce:duration-[0.01ms] shadow-lg hover:shadow-xl uppercase tracking-wide"
             >
               Termin jetzt buchen
             </Link>
 
             <button
               onClick={onClose}
-              className="block w-full py-3 text-gray-500 font-medium hover:text-gray-800 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+              className="active:scale-[0.97] block w-full py-3 text-gray-500 font-medium hover:text-gray-800 transition-colors motion-reduce:duration-[0.01ms] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             >
               Nein, zurück zur Startseite
             </button>

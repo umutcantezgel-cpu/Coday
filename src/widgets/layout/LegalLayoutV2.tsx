@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState, useEffect, useMemo } from 'react';
 import { SeoHead } from '@/shared/ui/SeoHead';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
@@ -117,7 +117,7 @@ export const LegalLayoutV2: React.FC<LegalLayoutV2Props> = ({
                 <NavLink
                   key={page.key}
                   href={page.path}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all
+                  className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all motion-reduce:duration-[0.01ms]
                     ${
                       pageType === page.key
                         ? 'bg-primary/10 text-primary'
@@ -139,7 +139,7 @@ export const LegalLayoutV2: React.FC<LegalLayoutV2Props> = ({
               </span>
               <button
                 onClick={() => window.print()}
-                className="flex items-center gap-1.5 hover:text-gray-900 transition-colors"
+                className="flex items-center gap-1.5 hover:text-gray-900 transition-colors motion-reduce:duration-[0.01ms]"
               >
                 <OptimizedIcon icon={FileText} className="w-4 h-4" />
                 <span className="hidden sm:inline">PDF</span>
@@ -210,7 +210,7 @@ export const LegalLayoutV2: React.FC<LegalLayoutV2Props> = ({
                       <a
                         key={item.id}
                         href={`#${item.id}`}
-                        className={`flex items-center gap-2 px-3 py-2.5 text-sm rounded-lg transition-all
+                        className={`flex items-center gap-2 px-3 py-2.5 text-sm rounded-lg transition-all motion-reduce:duration-[0.01ms]
                           ${
                             activeSection === item.id
                               ? 'bg-primary/10 text-primary font-medium border-l-2 border-primary'
@@ -229,14 +229,14 @@ export const LegalLayoutV2: React.FC<LegalLayoutV2Props> = ({
                   <div className="mt-6 pt-6 border-t border-gray-100 space-y-2">
                     <button
                       onClick={() => window.print()}
-                      className="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
+                      className="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors motion-reduce:duration-[0.01ms]"
                     >
                       <OptimizedIcon icon={FileText} className="w-4 h-4" />
                       {t('common.download_pdf', { defaultValue: 'Download PDF' })}
                     </button>
                     <a
                       href="mailto:umut@codayweb.de?subject=Legal Question"
-                      className="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
+                      className="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors motion-reduce:duration-[0.01ms]"
                     >
                       <OptimizedIcon icon={EnvelopeSimple} className="w-4 h-4" />
                       {t('common.contact', { defaultValue: 'Contact Us' })}
@@ -269,7 +269,7 @@ export const LegalLayoutV2: React.FC<LegalLayoutV2Props> = ({
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
             onClick={scrollToTop}
-            className="fixed bottom-8 right-8 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center hover:bg-primary/90 transition-colors z-40"
+            className="fixed bottom-8 right-8 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center hover:bg-primary/90 transition-colors motion-reduce:duration-[0.01ms] z-40"
           >
             <OptimizedIcon icon={CaretLeft} className="w-5 h-5 rotate-90" />
           </motion.button>

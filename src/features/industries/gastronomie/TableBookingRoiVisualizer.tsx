@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { formatCurrency } from '@/shared/utils/formatters';
@@ -116,7 +116,7 @@ const TableBookingRoiVisualizer: React.FC = () => {
             </p>
           </div>
 
-          <button className="w-full bg-primary text-white font-bold py-3 rounded-xl shadow-lg hover:bg-primary/90 transition-all">
+          <button className="active:scale-[0.97] w-full bg-primary text-white font-bold py-3 rounded-xl shadow-lg hover:bg-primary/90 transition-all motion-reduce:duration-[0.01ms]">
             {t('gastronomie-hotellerie.features.roi_visualizer.cta')}
           </button>
         </div>

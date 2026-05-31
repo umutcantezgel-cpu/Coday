@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useRef, useState } from 'react';
 import { Link } from '@/i18n/navigation';
 import {
@@ -36,29 +36,121 @@ function resolveDefault(m: WidgetModule, name: string): { default: React.Compone
 }
 
 // Interactive Components (Lazy Loaded)
-const ROI_Calculator: LazyWidget = React.lazy(() => import('@/features/blog/ui/interactive/ROI_Calculator').then((m) => resolveDefault(m as WidgetModule, 'ROI_Calculator')));
-const SpeedComparison: LazyWidget = React.lazy(() => import('@/features/blog/ui/interactive/SpeedComparison').then((m) => resolveDefault(m as WidgetModule, 'SpeedComparison')));
-const DesignPsychologyPicker: LazyWidget = React.lazy(() => import('@/features/blog/ui/interactive/DesignPsychologyPicker').then((m) => resolveDefault(m as WidgetModule, 'DesignPsychologyPicker')));
-const SEOTrafficGraph: LazyWidget = React.lazy(() => import('@/features/blog/ui/interactive/SEOTrafficGraph').then((m) => resolveDefault(m as WidgetModule, 'SEOTrafficGraph')));
-const MobileSimulator: LazyWidget = React.lazy(() => import('@/features/blog/ui/interactive/MobileSimulator').then((m) => resolveDefault(m as WidgetModule, 'MobileSimulator')));
-const DataMaturityAssessment: LazyWidget = React.lazy(() => import('@/features/blog/ui/interactive/DataMaturityAssessment').then((m) => resolveDefault(m as WidgetModule, 'DataMaturityAssessment')));
-const HackSimulator: LazyWidget = React.lazy(() => import('@/features/blog/ui/interactive/HackSimulator').then((m) => resolveDefault(m as WidgetModule, 'HackSimulator')));
-const ABTestSimulator: LazyWidget = React.lazy(() => import('@/features/blog/ui/interactive/ABTestSimulator').then((m) => resolveDefault(m as WidgetModule, 'ABTestSimulator')));
-const VoiceDemo: LazyWidget = React.lazy(() => import('@/features/blog/ui/interactive/VoiceDemo').then((m) => resolveDefault(m as WidgetModule, 'VoiceDemo')));
-const AICostGraph: LazyWidget = React.lazy(() => import('@/features/blog/ui/interactive/AICostGraph').then((m) => resolveDefault(m as WidgetModule, 'AICostGraph')));
-const WebHistoryTimeline: LazyWidget = React.lazy(() => import('@/features/blog/ui/interactive/WebHistoryTimeline').then((m) => resolveDefault(m as WidgetModule, 'WebHistoryTimeline')));
-const AgencyCostCalculator: LazyWidget = React.lazy(() => import('@/features/blog/ui/interactive/AgencyCostCalculator').then((m) => resolveDefault(m as WidgetModule, 'AgencyCostCalculator')));
-const SoulReader: LazyWidget = React.lazy(() => import('@/features/blog/ui/interactive/SoulReader').then((m) => resolveDefault(m as WidgetModule, 'SoulReader')));
-const LatencyCostCalculator: LazyWidget = React.lazy(() => import('@/features/blog/ui/interactive/LatencyCostCalculator').then((m) => resolveDefault(m as WidgetModule, 'LatencyCostCalculator')));
-const SovereigntyChecklist: LazyWidget = React.lazy(() => import('@/features/blog/ui/interactive/SovereigntyChecklist').then((m) => resolveDefault(m as WidgetModule, 'SovereigntyChecklist')));
-const ContrastRatioAnalyzer: LazyWidget = React.lazy(() => import('@/features/blog/ui/interactive/ContrastRatioAnalyzer').then((m) => resolveDefault(m as WidgetModule, 'ContrastRatioAnalyzer')));
-const TCOCalculator: LazyWidget = React.lazy(() => import('@/features/blog/ui/interactive/TCOCalculator').then((m) => resolveDefault(m as WidgetModule, 'TCOCalculator')));
-const SecurityGapWizard: LazyWidget = React.lazy(() => import('@/features/blog/ui/interactive/SecurityGapWizard').then((m) => resolveDefault(m as WidgetModule, 'SecurityGapWizard')));
-const OZGReadiness: LazyWidget = React.lazy(() => import('@/features/blog/ui/interactive/OZGReadiness').then((m) => resolveDefault(m as WidgetModule, 'OZGReadiness')));
-const TrackingSimulator: LazyWidget = React.lazy(() => import('@/features/blog/ui/interactive/TrackingSimulator').then((m) => resolveDefault(m as WidgetModule, 'TrackingSimulator')));
-const ComponentConfigurator: LazyWidget = React.lazy(() => import('@/features/blog/ui/interactive/ComponentConfigurator').then((m) => resolveDefault(m as WidgetModule, 'ComponentConfigurator')));
-const ROIEstimator: LazyWidget = React.lazy(() => import('@/features/blog/ui/interactive/ROIEstimator').then((m) => resolveDefault(m as WidgetModule, 'ROIEstimator')));
-const BlindTestQuiz: LazyWidget = React.lazy(() => import('@/features/blog/ui/interactive/BlindTestQuiz').then((m) => resolveDefault(m as WidgetModule, 'BlindTestQuiz')));
+const ROI_Calculator: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/ROI_Calculator').then((m) =>
+    resolveDefault(m as WidgetModule, 'ROI_Calculator')
+  )
+);
+const SpeedComparison: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/SpeedComparison').then((m) =>
+    resolveDefault(m as WidgetModule, 'SpeedComparison')
+  )
+);
+const DesignPsychologyPicker: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/DesignPsychologyPicker').then((m) =>
+    resolveDefault(m as WidgetModule, 'DesignPsychologyPicker')
+  )
+);
+const SEOTrafficGraph: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/SEOTrafficGraph').then((m) =>
+    resolveDefault(m as WidgetModule, 'SEOTrafficGraph')
+  )
+);
+const MobileSimulator: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/MobileSimulator').then((m) =>
+    resolveDefault(m as WidgetModule, 'MobileSimulator')
+  )
+);
+const DataMaturityAssessment: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/DataMaturityAssessment').then((m) =>
+    resolveDefault(m as WidgetModule, 'DataMaturityAssessment')
+  )
+);
+const HackSimulator: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/HackSimulator').then((m) =>
+    resolveDefault(m as WidgetModule, 'HackSimulator')
+  )
+);
+const ABTestSimulator: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/ABTestSimulator').then((m) =>
+    resolveDefault(m as WidgetModule, 'ABTestSimulator')
+  )
+);
+const VoiceDemo: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/VoiceDemo').then((m) =>
+    resolveDefault(m as WidgetModule, 'VoiceDemo')
+  )
+);
+const AICostGraph: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/AICostGraph').then((m) =>
+    resolveDefault(m as WidgetModule, 'AICostGraph')
+  )
+);
+const WebHistoryTimeline: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/WebHistoryTimeline').then((m) =>
+    resolveDefault(m as WidgetModule, 'WebHistoryTimeline')
+  )
+);
+const AgencyCostCalculator: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/AgencyCostCalculator').then((m) =>
+    resolveDefault(m as WidgetModule, 'AgencyCostCalculator')
+  )
+);
+const SoulReader: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/SoulReader').then((m) =>
+    resolveDefault(m as WidgetModule, 'SoulReader')
+  )
+);
+const LatencyCostCalculator: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/LatencyCostCalculator').then((m) =>
+    resolveDefault(m as WidgetModule, 'LatencyCostCalculator')
+  )
+);
+const SovereigntyChecklist: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/SovereigntyChecklist').then((m) =>
+    resolveDefault(m as WidgetModule, 'SovereigntyChecklist')
+  )
+);
+const ContrastRatioAnalyzer: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/ContrastRatioAnalyzer').then((m) =>
+    resolveDefault(m as WidgetModule, 'ContrastRatioAnalyzer')
+  )
+);
+const TCOCalculator: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/TCOCalculator').then((m) =>
+    resolveDefault(m as WidgetModule, 'TCOCalculator')
+  )
+);
+const SecurityGapWizard: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/SecurityGapWizard').then((m) =>
+    resolveDefault(m as WidgetModule, 'SecurityGapWizard')
+  )
+);
+const OZGReadiness: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/OZGReadiness').then((m) =>
+    resolveDefault(m as WidgetModule, 'OZGReadiness')
+  )
+);
+const TrackingSimulator: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/TrackingSimulator').then((m) =>
+    resolveDefault(m as WidgetModule, 'TrackingSimulator')
+  )
+);
+const ComponentConfigurator: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/ComponentConfigurator').then((m) =>
+    resolveDefault(m as WidgetModule, 'ComponentConfigurator')
+  )
+);
+const ROIEstimator: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/ROIEstimator').then((m) =>
+    resolveDefault(m as WidgetModule, 'ROIEstimator')
+  )
+);
+const BlindTestQuiz: LazyWidget = React.lazy(() =>
+  import('@/features/blog/ui/interactive/BlindTestQuiz').then((m) =>
+    resolveDefault(m as WidgetModule, 'BlindTestQuiz')
+  )
+);
 
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -115,13 +207,13 @@ export const QuoteBlockRenderer: React.FC<{ block: QuoteBlock }> = ({ block }) =
     >
       <div
         className={cn(
-          'relative p-10 md:p-14 rounded-[2rem] overflow-hidden group transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5',
+          'relative p-10 md:p-14 rounded-[2rem] overflow-hidden group transition-all motion-reduce:duration-[0.01ms] duration-500 hover:shadow-2xl hover:shadow-primary/5',
           block.variant === 'gradient'
             ? 'bg-gradient-to-br from-primary/5 via-secondary/5 to-transparent border border-white/50 backdrop-blur-sm'
             : 'bg-surface-light border-l-8 border-primary'
         )}
       >
-        <QuoteIcon className="absolute top-8 left-8 text-primary/10 w-20 h-20 -z-0 rotate-12 transition-transform duration-700 group-hover:rotate-0" />
+        <QuoteIcon className="absolute top-8 left-8 text-primary/10 w-20 h-20 -z-0 rotate-12 transition-transform motion-reduce:duration-[0.01ms] duration-700 group-hover:rotate-0" />
 
         <blockquote className="relative z-10 text-center md:text-left">
           <p
@@ -157,8 +249,8 @@ export const CTABlockRenderer: React.FC<{ block: CTABlock }> = ({ block }) => {
       viewport={{ once: true }}
       className="my-16 relative overflow-hidden rounded-[2.5rem] group"
     >
-      <div className="absolute inset-0 bg-secondary/5 group-hover:bg-secondary/10 transition-colors duration-500" />
-      <div className="absolute -right-20 -top-20 w-80 h-80 bg-primary/20 blur-[100px] rounded-full group-hover:bg-primary/30 transition-all duration-700" />
+      <div className="absolute inset-0 bg-secondary/5 group-hover:bg-secondary/10 transition-colors motion-reduce:duration-[0.01ms] duration-500" />
+      <div className="absolute -right-20 -top-20 w-80 h-80 bg-primary/20 blur-[100px] rounded-full group-hover:bg-primary/30 transition-all motion-reduce:duration-[0.01ms] duration-700" />
       <div className="absolute -left-20 -bottom-20 w-60 h-60 bg-secondary/10 blur-[80px] rounded-full" />
 
       <div className="relative p-10 md:p-14 border border-white/20 rounded-[2.5rem] backdrop-blur-xl bg-white/10 shadow-xl overflow-hidden">
@@ -169,14 +261,14 @@ export const CTABlockRenderer: React.FC<{ block: CTABlock }> = ({ block }) => {
           </div>
           <Link
             href={block.href}
-            className="group/btn relative overflow-hidden inline-flex items-center gap-3 px-8 py-4 bg-primary text-white rounded-full font-bold shadow-lg shadow-primary/30 hover:shadow-2xl hover:shadow-primary/40 hover:-translate-y-1 transition-all duration-300 transform-gpu"
+            className="group/btn relative overflow-hidden inline-flex items-center gap-3 px-8 py-4 bg-primary text-white rounded-full font-bold shadow-lg shadow-primary/30 hover:shadow-2xl hover:shadow-primary/40 hover:-translate-y-1 transition-all motion-reduce:duration-[0.01ms] duration-300 transform-gpu"
           >
             <span className="relative z-10">{block.buttonText}</span>
             <ArrowRight
               size={20}
-              className="relative z-10 group-hover/btn:translate-x-1 transition-transform"
+              className="relative z-10 group-hover/btn:translate-x-1 transition-transform motion-reduce:duration-[0.01ms]"
             />
-            <div className="absolute inset-0 -translate-x-full group-hover/btn:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent z-0" />
+            <div className="absolute inset-0 -translate-x-full group-hover/btn:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent z-0 motion-reduce:animate-none" />
           </Link>
         </div>
       </div>
@@ -188,10 +280,10 @@ export const AccordionItem: React.FC<{ title: string; content: string }> = ({ ti
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+    <div className="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow motion-reduce:duration-[0.01ms]">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between p-4 px-6 text-left font-bold text-gray-800 hover:bg-gray-50 transition-colors"
+        className="active:scale-[0.97] w-full flex items-center justify-between p-4 px-6 text-left font-bold text-gray-800 hover:bg-gray-50 transition-colors motion-reduce:duration-[0.01ms]"
       >
         {title}
         {isOpen ? (
@@ -203,9 +295,9 @@ export const AccordionItem: React.FC<{ title: string; content: string }> = ({ ti
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
             className="overflow-hidden"
           >
             <div className="p-6 pt-0 text-gray-600 leading-relaxed border-t border-gray-50">
@@ -265,9 +357,9 @@ export const InteractiveBlockRenderer: React.FC<{ block: InteractiveBlock }> = (
   return (
     <React.Suspense
       fallback={
-        <div className="my-12 h-64 bg-gray-50 rounded-3xl animate-pulse flex items-center justify-center border border-gray-100">
+        <div className="my-12 h-64 bg-gray-50 rounded-3xl animate-pulse flex items-center justify-center border border-gray-100 motion-reduce:animate-none">
           <div className="flex flex-col items-center gap-3 text-gray-400">
-            <div className="w-8 h-8 border-4 border-gray-300 border-t-blue-500 rounded-full animate-spin" />
+            <div className="w-8 h-8 border-4 border-gray-300 border-t-blue-500 rounded-full animate-spin motion-reduce:animate-none" />
             <span className="text-sm font-medium">{t('blog:loadingModule')}</span>
           </div>
         </div>

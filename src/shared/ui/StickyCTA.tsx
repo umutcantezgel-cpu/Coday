@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Link as NavLink } from '@/i18n/navigation';
@@ -40,7 +40,7 @@ export const StickyCTA: React.FC = () => {
             </div>
             <NavLink
               href="/contact"
-              className="bg-gray-900 text-white px-5 py-3 rounded-xl font-bold text-sm hover:bg-black transition-colors flex items-center gap-2 shadow-lg"
+              className="bg-gray-900 text-white px-5 py-3 rounded-xl font-bold text-sm hover:bg-black transition-colors motion-reduce:duration-[0.01ms] flex items-center gap-2 shadow-lg"
             >
               {t('buttons.start_project')}
               <OptimizedIcon icon={RocketLaunch} className="text-white" />

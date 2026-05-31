@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { X, CheckCircle } from '@phosphor-icons/react/dist/ssr';
 import { useTranslations } from 'next-intl';
@@ -72,7 +71,7 @@ const AgencyComparisonTable: React.FC = () => {
               {features.map((feature, index) => (
                 <tr
                   key={index}
-                  className="border-b border-slate-800 hover:bg-white/5 transition-colors"
+                  className="border-b border-slate-800 hover:bg-white/5 transition-colors motion-reduce:duration-[0.01ms]"
                 >
                   <th
                     scope="row"

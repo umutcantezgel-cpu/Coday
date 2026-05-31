@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState, useEffect, useRef } from 'react';
 
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
@@ -16,9 +16,12 @@ import { NavDropdown } from '@/widgets/navigation/NavDropdown';
 import dynamic from 'next/dynamic';
 import '@/widgets/navigation/MobileReadyNav.css';
 
-const MobileNavOverlay = dynamic(() => import('@/widgets/navigation/MobileNavOverlay').then((m) => m.MobileNavOverlay), {
-  ssr: false,
-});
+const MobileNavOverlay = dynamic(
+  () => import('@/widgets/navigation/MobileNavOverlay').then((m) => m.MobileNavOverlay),
+  {
+    ssr: false,
+  }
+);
 
 interface CardNavProps {
   className?: string;
@@ -47,7 +50,7 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
   useEffect(() => {
     // Initialize state properly on mount (e.g. if loaded midway down the page)
     lastScrollY.current = window.scrollY;
-    
+
     // Defer the initial state update to avoid cascading render warning
     requestAnimationFrame(() => {
       if (window.scrollY > 50) setIsScrolled(true);
@@ -76,7 +79,6 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => {
-      
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
@@ -172,23 +174,21 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
               onMouseEnter={() => handleMouseEnter(item.label)}
               onMouseLeave={handleMouseLeave}
             >
-                <button
-                  className={`nav-pill-link relative z-10 ${activeCategory === item.label ? 'active bg-slate-100' : 'hover:bg-slate-50'}`}
-                  aria-expanded={activeCategory === item.label}
-                  onClick={() =>
-                    setActiveCategory(activeCategory === item.label ? null : item.label)
-                  }
-                >
-                  {t(item.label)}
-                  <OptimizedIcon
-                    icon={CaretDown}
-                    className={`nav-chevron ${activeCategory === item.label ? 'rotate' : ''}`}
-                  />
-                </button>
+              <button
+                className={`nav-pill-link relative z-10 ${activeCategory === item.label ? 'active bg-slate-100' : 'hover:bg-slate-50'}`}
+                aria-expanded={activeCategory === item.label}
+                onClick={() => setActiveCategory(activeCategory === item.label ? null : item.label)}
+              >
+                {t(item.label)}
+                <OptimizedIcon
+                  icon={CaretDown}
+                  className={`nav-chevron ${activeCategory === item.label ? 'rotate' : ''}`}
+                />
+              </button>
 
               {/* Focused Dropdown */}
               <div
-                className={`nav-dropdown absolute left-1/2 -translate-x-1/2 transition-all duration-300 ease-out origin-top ${
+                className={`nav-dropdown absolute left-1/2 -translate-x-1/2 transition-all motion-reduce:duration-[0.01ms] duration-300 ease-out origin-top ${
                   activeCategory === item.label
                     ? 'opacity-100 translate-y-0 scale-100 blur-none pointer-events-auto'
                     : 'opacity-0 -translate-y-2 scale-95 blur-sm pointer-events-none'
@@ -280,8 +280,8 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
         <div className="nav-pill-actions">
           {/* Desktop/Tablet Only Actions */}
           <div className="nav-desktop-actions hidden lg:flex items-center gap-3">
-            <NavDropdown 
-              title="Lokales" 
+            <NavDropdown
+              title="Lokales"
               items={[
                 { label: 'Hessen Übersicht', href: '/standorte/hessen' },
                 { label: 'Agentur Wetzlar', href: '/standorte/wetzlar' },
@@ -289,8 +289,8 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
                 { label: 'Arzt in Gießen', href: '/branchen/arzt/giessen' },
                 { label: 'Handwerker in Wetzlar', href: '/branchen/handwerker/wetzlar' },
                 { label: 'Datenschutz', href: '/legal/datenschutz' },
-                { label: 'Impressum', href: '/legal/impressum' }
-              ]} 
+                { label: 'Impressum', href: '/legal/impressum' },
+              ]}
             />
             <React.Suspense fallback={null}>
               <LanguageSwitcher />
@@ -324,7 +324,7 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
               <LanguageSwitcher />
             </React.Suspense>
             <button
-              className={`mobile-menu-trigger p-2 min-w-[44px] min-h-[44px] flex items-center justify-center active:scale-[0.9] transition-transform ${isMobileOpen ? 'is-open' : ''}`}
+              className={`mobile-menu-trigger p-2 min-w-[44px] min-h-[44px] flex items-center justify-center active:scale-[0.9] transition-transform motion-reduce:duration-[0.01ms] ${isMobileOpen ? 'is-open' : ''}`}
               onClick={() => setIsMobileOpen(!isMobileOpen)}
               aria-label={isMobileOpen ? 'Close Menu' : 'Open Menu'}
               aria-expanded={isMobileOpen}

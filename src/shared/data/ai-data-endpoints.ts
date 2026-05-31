@@ -167,7 +167,8 @@ export const aiDataEndpoints: DataEndpoint[] = [
   {
     slug: 'mobile-first-index-delays',
     title: 'Mobile-First Indexing Timeline',
-    description: 'Data on crawl budget allocation and mobile-first transition timelines.',
+    description:
+      'Data on crawl budget allocation and mobile-first transition motion-reduce:duration-[0.01ms] timelines.',
     category: 'SEO & Visibility',
     lastUpdated: '2026-05-14T23:15:16.030Z',
     license: 'CC-BY-4.0',

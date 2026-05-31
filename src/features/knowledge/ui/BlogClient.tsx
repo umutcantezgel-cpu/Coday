@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { useState, useMemo } from 'react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
@@ -72,7 +72,7 @@ const Blog: React.FC = () => {
             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
               <OptimizedIcon
                 icon={MagnifyingGlass}
-                className="text-slate-400 group-focus-within:text-primary transition-colors"
+                className="text-slate-400 group-focus-within:text-primary transition-colors motion-reduce:duration-[0.01ms]"
                 size="md"
               />
             </div>
@@ -81,7 +81,7 @@ const Blog: React.FC = () => {
               placeholder={t('searchPlaceholder', 'Suchen Sie nach Artikeln...')}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-4 rounded-2xl bg-white border border-gray-200 focus:border-primary focus:ring-4 focus:ring-primary/10 shadow-sm transition-all text-slate-700"
+              className="w-full pl-12 pr-4 py-4 rounded-2xl bg-white border border-gray-200 focus:border-primary focus:ring-4 focus:ring-primary/10 shadow-sm transition-all motion-reduce:duration-[0.01ms] text-slate-700"
             />
           </div>
         </div>
@@ -99,7 +99,7 @@ const Blog: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setActiveCategory(category)}
-                className={`px-6 py-2 rounded-full text-sm font-bold transition-colors duration-300 ${
+                className={`px-6 py-2 rounded-full text-sm font-bold transition-colors motion-reduce:duration-[0.01ms] duration-300 ${
                   activeCategory === category
                     ? 'bg-primary text-white shadow-md shadow-primary/30'
                     : 'bg-white text-slate-600 border border-gray-200 hover:border-primary/50 hover:text-primary'
@@ -122,18 +122,18 @@ const Blog: React.FC = () => {
           >
             <Link
               href={`/knowledge/blog/${featuredPost.slug}`}
-              className="block relative rounded-3xl overflow-hidden shadow-2xl group cursor-pointer h-[500px] hover:-translate-y-1.5 hover:scale-[1.01] hover:shadow-glow transition-all duration-500 ease-out"
+              className="block relative rounded-3xl overflow-hidden shadow-2xl group cursor-pointer h-[500px] hover:-translate-y-1.5 hover:scale-[1.01] hover:shadow-glow transition-all motion-reduce:duration-[0.01ms] duration-500 ease-out"
             >
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10" />
               <OptimizedImage
                 src={featuredPost.image}
                 alt={featuredPost.title}
-                className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform motion-reduce:duration-[0.01ms] duration-700"
                 priority
               />
 
               <div className="absolute inset-0 z-20 flex flex-col justify-end p-8 md:p-12">
-                <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform motion-reduce:duration-[0.01ms] duration-300">
                   <span className="inline-block px-3 py-1 rounded-full bg-blue-600 text-white text-xs font-bold uppercase tracking-wider mb-4">
                     {t('highlight')}
                   </span>
@@ -171,12 +171,12 @@ const Blog: React.FC = () => {
                   href={`/knowledge/blog/${post.slug}`}
                   className="flex flex-col group cursor-pointer h-full"
                 >
-                  <article className="flex flex-col h-full bg-white rounded-3xl p-5 shadow-sm border border-gray-100 hover:shadow-xl hover:border-primary/20 hover:-translate-y-1.5 hover:scale-[1.02] transition-all duration-500 ease-out">
+                  <article className="flex flex-col h-full bg-white rounded-3xl p-5 shadow-sm border border-gray-100 hover:shadow-xl hover:border-primary/20 hover:-translate-y-1.5 hover:scale-[1.02] transition-all motion-reduce:duration-[0.01ms] duration-500 ease-out">
                     <div className="h-56 rounded-2xl bg-slate-100 mb-6 overflow-hidden relative">
                       <OptimizedImage
                         src={post.image}
                         alt={post.alt}
-                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms] duration-700"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                     </div>
@@ -189,7 +189,7 @@ const Blog: React.FC = () => {
                       <span className="text-slate-500">{post.readTime}</span>
                     </div>
 
-                    <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors line-clamp-2">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors motion-reduce:duration-[0.01ms] line-clamp-2">
                       {post.title}
                     </h3>
 
@@ -205,7 +205,7 @@ const Blog: React.FC = () => {
                         </div>
                         <span className="text-sm font-medium text-slate-700">{post.author}</span>
                       </div>
-                      <span className="text-sm font-bold text-primary flex items-center group-hover:translate-x-1 transition-transform">
+                      <span className="text-sm font-bold text-primary flex items-center group-hover:translate-x-1 transition-transform motion-reduce:duration-[0.01ms]">
                         {t('readMore')}
                         <OptimizedIcon icon={ArrowRight} className="text-sm ml-1" />
                       </span>
@@ -236,7 +236,7 @@ const Blog: React.FC = () => {
                 setSearchQuery('');
                 setActiveCategory('All');
               }}
-              className="px-6 py-2 bg-primary text-white rounded-full font-bold hover:bg-primary-dark transition-colors"
+              className="active:scale-[0.97] px-6 py-2 bg-primary text-white rounded-full font-bold hover:bg-primary-dark transition-colors motion-reduce:duration-[0.01ms]"
             >
               {t('resetFilters', 'Filter zurücksetzen')}
             </button>
@@ -266,18 +266,18 @@ const Blog: React.FC = () => {
                   placeholder={t('community.emailPlaceholder')}
                   className="px-6 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-gray-500 focus:border-primary focus:ring-1 focus:ring-primary flex-grow"
                 />
-                <button className="px-8 py-4 rounded-xl bg-primary text-white font-bold hover:bg-primary-dark transition-colors shadow-lg hover:shadow-primary/50">
+                <button className="active:scale-[0.97] px-8 py-4 rounded-xl bg-primary text-white font-bold hover:bg-primary-dark transition-colors motion-reduce:duration-[0.01ms] shadow-lg hover:shadow-primary/50">
                   {t('community.subscribe')}
                 </button>
               </div>
             </div>
 
             <div className="relative z-10 lg:w-5/12">
-              <div className="relative aspect-square md:aspect-video lg:aspect-square rounded-2xl overflow-hidden shadow-2xl border border-gray-800 rotate-2 hover:rotate-0 transition-transform duration-500 group">
+              <div className="relative aspect-square md:aspect-video lg:aspect-square rounded-2xl overflow-hidden shadow-2xl border border-gray-800 rotate-2 hover:rotate-0 transition-transform motion-reduce:duration-[0.01ms] duration-500 group">
                 <OptimizedImage
                   src="/images/services/drei-kunden-reviews.webp"
                   alt={t('community.socialProofAlt')}
-                  className="w-full h-full object-cover transform scale-100 group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100"
+                  className="w-full h-full object-cover transform scale-100 group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms] duration-700 opacity-80 group-hover:opacity-100"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900 to-transparent p-6">
                   <div className="flex items-center gap-2 mb-2">

@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 import GradientText from '@/shared/ui/GradientText';
@@ -133,20 +133,20 @@ export const AboutClient: React.FC = () => {
             className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed mb-12"
             {...stagger(0.25)}
           >
-            Coday ist eine Solo-Webagentur aus Wetzlar, die digitale Erlebnisse von Hand
-            erschafft. Jedes Projekt ist ein Unikat, entwickelt für Marken, die sich von der Masse
-            abheben wollen.
+            Coday ist eine Solo-Webagentur aus Wetzlar, die digitale Erlebnisse von Hand erschafft.
+            Jedes Projekt ist ein Unikat, entwickelt für Marken, die sich von der Masse abheben
+            wollen.
           </motion.p>
 
           <motion.div className="flex justify-center gap-4" {...stagger(0.35)}>
             <Link
               href="/contact"
-              className="group inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-full font-medium hover:bg-primary/90 transition-all hover:-translate-y-0.5 shadow-lg hover:shadow-glow"
+              className="group inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-full font-medium hover:bg-primary/90 transition-all motion-reduce:duration-[0.01ms] hover:-translate-y-0.5 shadow-lg hover:shadow-glow"
             >
               Projekt anfragen
               <ArrowRight
                 weight="bold"
-                className="transition-transform group-hover:translate-x-1"
+                className="transition-transform motion-reduce:duration-[0.01ms] group-hover:translate-x-1"
               />
             </Link>
           </motion.div>
@@ -212,14 +212,14 @@ export const AboutClient: React.FC = () => {
             {values.map((value, index) => (
               <motion.div
                 key={value.title}
-                className="group relative p-8 rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm hover:border-primary/30 hover:bg-white/[0.04] transition-all duration-500"
+                className="group relative p-8 rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm hover:border-primary/30 hover:bg-white/[0.04] transition-all motion-reduce:duration-[0.01ms] duration-500"
                 {...stagger(index * 0.1)}
               >
                 {/* Glow on hover */}
-                <div className="absolute inset-0 rounded-2xl bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
+                <div className="absolute inset-0 rounded-2xl bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms] duration-500 blur-xl" />
 
                 <div className="relative z-10">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors motion-reduce:duration-[0.01ms]">
                     <value.icon size={24} weight="duotone" className="text-primary" />
                   </div>
                   <h3 className="text-xl font-display font-bold text-white mb-3">{value.title}</h3>
@@ -276,8 +276,8 @@ export const AboutClient: React.FC = () => {
                   }}
                 >
                   {/* Step Number Circle */}
-                  <div className="relative mx-auto w-[4.5rem] h-[4.5rem] rounded-full border-2 border-white/10 bg-secondary flex items-center justify-center mb-6 group-hover:border-primary/50 transition-colors duration-500 z-10">
-                    <div className="absolute inset-1 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="relative mx-auto w-[4.5rem] h-[4.5rem] rounded-full border-2 border-white/10 bg-secondary flex items-center justify-center mb-6 group-hover:border-primary/50 transition-colors motion-reduce:duration-[0.01ms] duration-500 z-10">
+                    <div className="absolute inset-1 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms] duration-500" />
                     <step.icon size={28} weight="duotone" className="text-primary relative z-10" />
                   </div>
 
@@ -311,7 +311,7 @@ export const AboutClient: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <TrustBadges
             align="center"
-            className="opacity-80 grayscale hover:grayscale-0 transition-all duration-300 [&_*]:text-white"
+            className="opacity-80 grayscale hover:grayscale-0 transition-all motion-reduce:duration-[0.01ms] duration-300 [&_*]:text-white"
           />
         </div>
       </section>

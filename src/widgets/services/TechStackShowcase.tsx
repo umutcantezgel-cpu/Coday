@@ -65,9 +65,9 @@ export const TechStackShowcase: React.FC<TechStackShowcaseProps> = ({
                 {items.map((tech, index) => (
                   <div
                     key={index}
-                    className="group flex flex-col items-center justify-center p-6 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+                    className="group flex flex-col items-center justify-center p-6 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all motion-reduce:duration-[0.01ms] duration-300 hover:-translate-y-1"
                   >
-                    <div className="h-16 w-16 mb-4 flex items-center justify-center grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500">
+                    <div className="h-16 w-16 mb-4 flex items-center justify-center grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all motion-reduce:duration-[0.01ms] duration-500">
                       {tech.logoUrl ? (
                         <img
                           src={tech.logoUrl}
@@ -84,7 +84,7 @@ export const TechStackShowcase: React.FC<TechStackShowcaseProps> = ({
                         </div>
                       )}
                     </div>
-                    <span className="text-sm font-semibold text-slate-600 group-hover:text-primary transition-colors">
+                    <span className="text-sm font-semibold text-slate-600 group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms]">
                       {tech.name}
                     </span>
                   </div>

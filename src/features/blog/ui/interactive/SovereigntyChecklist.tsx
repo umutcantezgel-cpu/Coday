@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { ShieldCheck, ShieldWarning, Globe, LockKey, Check } from '@phosphor-icons/react/dist/ssr';
@@ -104,13 +104,13 @@ export const SovereigntyChecklist: React.FC = () => {
             <label
               key={item.id}
               className={clsx(
-                'flex items-start gap-4 p-4 rounded-xl border transition-all cursor-pointer hover:bg-gray-50',
+                'flex items-start gap-4 p-4 rounded-xl border transition-all motion-reduce:duration-[0.01ms] cursor-pointer hover:bg-gray-50',
                 checkedItems[item.id] ? 'border-blue-500 bg-blue-50/30' : 'border-gray-200'
               )}
             >
               <div
                 className={clsx(
-                  'w-6 h-6 rounded-md border-2 flex items-center justify-center shrink-0 mt-0.5 transition-colors',
+                  'w-6 h-6 rounded-md border-2 flex items-center justify-center shrink-0 mt-0.5 transition-colors motion-reduce:duration-[0.01ms]',
                   checkedItems[item.id]
                     ? 'bg-blue-600 border-blue-600 text-white'
                     : 'border-gray-300 bg-white'
@@ -140,7 +140,7 @@ export const SovereigntyChecklist: React.FC = () => {
           {!showResult ? (
             <button
               onClick={() => setShowResult(true)}
-              className="px-8 py-3 bg-blue-600 text-white font-bold rounded-xl shadow-lg shadow-blue-200 hover:bg-blue-700 hover:scale-105 transition-all"
+              className="active:scale-[0.97] px-8 py-3 bg-blue-600 text-white font-bold rounded-xl shadow-lg shadow-blue-200 hover:bg-blue-700 hover:scale-105 transition-all motion-reduce:duration-[0.01ms]"
             >
               Calculate Risk Score
             </button>

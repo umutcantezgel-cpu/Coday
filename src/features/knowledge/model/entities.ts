@@ -280,7 +280,11 @@ export const wikiEntities: WikiEntity[] = [
     displayName: 'Framer Motion',
     aliases: ['Framer'],
     category: 'Tech',
-    relatedEntities: ['cinematic-page-transition', 'micro-interaction', 'kinetic-typography'],
+    relatedEntities: [
+      'cinematic-page-transition motion-reduce:duration-[0.01ms]',
+      'micro-interaction',
+      'kinetic-typography',
+    ],
   },
   {
     slug: 'lenis-scroll',
@@ -696,7 +700,7 @@ export const wikiEntities: WikiEntity[] = [
     relatedEntities: ['micro-interaction', 'awwwards', 'e-e-a-t'],
   },
   {
-    slug: 'cinematic-page-transition',
+    slug: 'cinematic-page-transition motion-reduce:duration-[0.01ms]',
     displayName: 'Cinematic Page Transition',
     aliases: ['Page Transitions'],
     category: 'Design',
@@ -707,7 +711,11 @@ export const wikiEntities: WikiEntity[] = [
     displayName: 'Preloader',
     aliases: ['Loading Screen'],
     category: 'Design',
-    relatedEntities: ['cinematic-page-transition', 'awwwards', 'e-e-a-t'],
+    relatedEntities: [
+      'cinematic-page-transition motion-reduce:duration-[0.01ms]',
+      'awwwards',
+      'e-e-a-t',
+    ],
   },
   {
     slug: 'parallax-scroll',
@@ -766,7 +774,7 @@ export const wikiEntities: WikiEntity[] = [
       'prefers-reduced-motion',
       'kinetic-typography',
       'magnetic-ui',
-      'cinematic-page-transition',
+      'cinematic-page-transition motion-reduce:duration-[0.01ms]',
       'preloader',
       'parallax-scroll',
       'mix-blend-mode',

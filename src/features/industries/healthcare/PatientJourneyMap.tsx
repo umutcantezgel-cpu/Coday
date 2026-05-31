@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { MagnifyingGlass, FileText, Clock, FirstAid } from '@phosphor-icons/react/dist/ssr';
@@ -60,7 +60,7 @@ const PatientJourneyMap: React.FC = () => {
           <React.Fragment key={idx}>
             {/* Analog Side (Left) */}
             <div
-              className={`lg:text-end ${step === idx ? 'opacity-100' : 'opacity-40'} transition-opacity`}
+              className={`lg:text-end ${step === idx ? 'opacity-100' : 'opacity-40'} transition-opacity motion-reduce:duration-[0.01ms]`}
             >
               <h4 className="font-bold text-red-500 mb-2 flex items-center justify-end gap-2">
                 <span className="text-xs bg-red-100 px-2 py-1 rounded-full uppercase">
@@ -73,7 +73,7 @@ const PatientJourneyMap: React.FC = () => {
 
             {/* Center Icon */}
             <div
-              className={`hidden lg:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-full items-center justify-center border-4 border-white z-10 cursor-pointer transition-all ${step === idx ? 'bg-primary text-white scale-110 shadow-lg' : 'bg-gray-100 text-gray-400'}`}
+              className={`hidden lg:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-full items-center justify-center border-4 border-white z-10 cursor-pointer transition-all motion-reduce:duration-[0.01ms] ${step === idx ? 'bg-primary text-white scale-110 shadow-lg' : 'bg-gray-100 text-gray-400'}`}
               style={{ top: `${idx * 25}%` }}
               onClick={() => setStep(idx)}
             >
@@ -81,7 +81,9 @@ const PatientJourneyMap: React.FC = () => {
             </div>
 
             {/* Digital Side (Right) */}
-            <div className={`${step === idx ? 'opacity-100' : 'opacity-40'} transition-opacity`}>
+            <div
+              className={`${step === idx ? 'opacity-100' : 'opacity-40'} transition-opacity motion-reduce:duration-[0.01ms]`}
+            >
               <h4 className="font-bold text-green-600 mb-2 flex items-center gap-2">
                 <span className="text-xs bg-green-100 px-2 py-1 rounded-full uppercase">
                   {t('aerzte-gesundheit.features.patient_journey.labels.digital')}

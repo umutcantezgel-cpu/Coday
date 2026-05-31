@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { formatCurrency } from '@/shared/utils/formatters';
@@ -53,10 +53,7 @@ const PropertyRoiCalculator: React.FC = () => {
               {t('immobilien-makler.features.roi_calculator.labels.commission_rate')}
             </label>
             <span>
-              {new Intl.NumberFormat(locale, { maximumFractionDigits: 2 }).format(
-                commissionRate
-              )}
-              %
+              {new Intl.NumberFormat(locale, { maximumFractionDigits: 2 }).format(commissionRate)}%
             </span>
           </div>
           <input
@@ -103,7 +100,7 @@ const PropertyRoiCalculator: React.FC = () => {
         </p>
       </div>
 
-      <button className="w-full bg-secondary text-white font-bold py-4 rounded-xl shadow-lg hover:bg-secondary/90 transition-all">
+      <button className="active:scale-[0.97] w-full bg-secondary text-white font-bold py-4 rounded-xl shadow-lg hover:bg-secondary/90 transition-all motion-reduce:duration-[0.01ms]">
         {t('immobilien-makler.features.roi_calculator.cta')}
       </button>
     </div>

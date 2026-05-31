@@ -142,7 +142,7 @@ const TroubleshooterWizard = () => {
           {history.length > 1 && !result && (
             <button
               onClick={reset}
-              className="text-sm text-slate-500 hover:text-blue-600 transition-colors"
+              className="active:scale-[0.97] text-sm text-slate-500 hover:text-blue-600 transition-colors motion-reduce:duration-[0.01ms]"
             >
               Restart
             </button>
@@ -150,7 +150,7 @@ const TroubleshooterWizard = () => {
           {result && (
             <button
               onClick={reset}
-              className="text-sm text-slate-500 hover:text-blue-600 transition-colors"
+              className="active:scale-[0.97] text-sm text-slate-500 hover:text-blue-600 transition-colors motion-reduce:duration-[0.01ms]"
             >
               Start Over
             </button>
@@ -172,13 +172,13 @@ const TroubleshooterWizard = () => {
                   <button
                     key={opt.id}
                     onClick={() => handleSelect(opt)}
-                    className="text-left px-6 py-4 rounded-xl bg-white  border-2 border-transparent hover:border-blue-500 hover:shadow-lg transition-all group"
+                    className="active:scale-[0.97] text-left px-6 py-4 rounded-xl bg-white  border-2 border-transparent hover:border-blue-500 hover:shadow-lg transition-all motion-reduce:duration-[0.01ms] group"
                   >
                     <div className="flex items-center justify-between">
-                      <span className="font-bold text-slate-900  group-hover:text-blue-600 :text-blue-400 transition-colors">
+                      <span className="font-bold text-slate-900  group-hover:text-blue-600 :text-blue-400 transition-colors motion-reduce:duration-[0.01ms]">
                         {opt.label}
                       </span>
-                      <CaretRight className="w-5 h-5 text-slate-300 group-hover:text-blue-500 transition-colors" />
+                      <CaretRight className="w-5 h-5 text-slate-300 group-hover:text-blue-500 transition-colors motion-reduce:duration-[0.01ms]" />
                     </div>
                   </button>
                 ))}
@@ -202,7 +202,7 @@ const TroubleshooterWizard = () => {
               </p>
               <Link
                 href={results[result as keyof typeof results].link}
-                className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-all hover:scale-105 shadow-lg shadow-blue-500/30"
+                className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-all motion-reduce:duration-[0.01ms] hover:scale-105 shadow-lg shadow-blue-500/30"
               >
                 Explore Solution <ArrowRight className="w-5 h-5" />
               </Link>

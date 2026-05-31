@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React from 'react';
 import { usePathname, useRouter } from '@/i18n/navigation';
 import { useLocale } from 'next-intl';
@@ -18,7 +18,7 @@ export const LanguageSwitcher: React.FC = () => {
 
   return (
     <button
-      className="flex items-center gap-1.5 px-3 py-1.5 min-h-[44px] min-w-[44px] justify-center rounded-full bg-slate-100/50 backdrop-blur-md hover:bg-slate-100 text-slate-600 hover:text-slate-900 border border-slate-200/50 hover:border-slate-300 transition-all hover:scale-[1.02] active:scale-[0.98] focus:ring-2 focus:ring-primary/20 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+      className="flex items-center gap-1.5 px-3 py-1.5 min-h-[44px] min-w-[44px] justify-center rounded-full bg-slate-100/50 backdrop-blur-md hover:bg-slate-100 text-slate-600 hover:text-slate-900 border border-slate-200/50 hover:border-slate-300 transition-all motion-reduce:duration-[0.01ms] hover:scale-[1.02] active:scale-[0.98] focus:ring-2 focus:ring-primary/20 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
       onClick={toggleLanguage}
       aria-label={locale === 'de' ? 'DE – Switch to English' : 'EN – Auf Deutsch wechseln'}
       title="Switch Language"

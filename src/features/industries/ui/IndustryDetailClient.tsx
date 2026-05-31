@@ -63,7 +63,7 @@ export function IndustryDetailClient() {
       <div className="container mx-auto px-4 mb-8">
         <Link
           href="/branchen"
-          className="inline-flex items-center text-text-slate hover:text-primary transition-colors"
+          className="inline-flex items-center text-text-slate hover:text-primary transition-colors motion-reduce:duration-[0.01ms]"
         >
           <ArrowLeft size={16} className="mr-2" />
           {t('detail.nav.back')}
@@ -87,13 +87,13 @@ export function IndustryDetailClient() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/contact"
-                className="px-8 py-3 bg-primary text-white font-bold rounded-lg hover:bg-opacity-90 transition-all shadow-flat hover:translate-y-[-2px]"
+                className="px-8 py-3 bg-primary text-white font-bold rounded-lg hover:bg-opacity-90 transition-all motion-reduce:duration-[0.01ms] shadow-flat hover:translate-y-[-2px]"
               >
                 {t('detail.hero.cta_primary')}
               </Link>
               <Link
                 href="/calculator"
-                className="px-8 py-3 bg-white text-secondary border border-gray-200 font-bold rounded-lg hover:border-primary hover:text-primary transition-all shadow-sm"
+                className="px-8 py-3 bg-white text-secondary border border-gray-200 font-bold rounded-lg hover:border-primary hover:text-primary transition-all motion-reduce:duration-[0.01ms] shadow-sm"
               >
                 {t('detail.hero.cta_secondary')}
               </Link>
@@ -104,7 +104,7 @@ export function IndustryDetailClient() {
             <OptimizedImage
               src={heroImage.src}
               alt={heroImage.alt}
-              className="relative rounded-3xl shadow-2xl w-full transform -rotate-1 hover:rotate-0 transition-all duration-500"
+              className="relative rounded-3xl shadow-2xl w-full transform -rotate-1 hover:rotate-0 transition-all motion-reduce:duration-[0.01ms] duration-500"
               priority
             />
           </div>
@@ -121,9 +121,9 @@ export function IndustryDetailClient() {
             {industry.challenges.map((challenge, idx) => (
               <div
                 key={idx}
-                className="p-8 bg-gray-50 rounded-2xl border border-gray-100 relative overflow-hidden group hover:shadow-md transition-all"
+                className="p-8 bg-gray-50 rounded-2xl border border-gray-100 relative overflow-hidden group hover:shadow-md transition-all motion-reduce:duration-[0.01ms]"
               >
-                <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity motion-reduce:duration-[0.01ms]">
                   <XCircle size={64} className="text-red-500" />
                 </div>
                 <h3 className="text-xl font-bold text-secondary mb-3 relative z-10">
@@ -150,7 +150,7 @@ export function IndustryDetailClient() {
             {industry.solutions.map((sol, idx) => (
               <div
                 key={idx}
-                className="bg-white p-8 rounded-2xl border border-gray-200 shadow-flat hover:border-primary/50 transition-all"
+                className="bg-white p-8 rounded-2xl border border-gray-200 shadow-flat hover:border-primary/50 transition-all motion-reduce:duration-[0.01ms]"
               >
                 <div className="mb-4 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
                   <CheckCircle size={24} />
@@ -179,16 +179,16 @@ export function IndustryDetailClient() {
               {industryGalleryImages[slug].map((img, idx) => (
                 <div
                   key={idx}
-                  className="relative group overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 aspect-square"
+                  className="relative group overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all motion-reduce:duration-[0.01ms] duration-500 aspect-square"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms] duration-300 z-10"></div>
                   <OptimizedImage
                     src={img.src}
                     alt={img.alt}
-                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms] duration-700"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw"
                   />
-                  <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-20">
+                  <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform motion-reduce:duration-[0.01ms] duration-300 z-20">
                     <p className="text-sm font-medium line-clamp-2">{img.alt}</p>
                   </div>
                 </div>
@@ -210,7 +210,7 @@ export function IndustryDetailClient() {
             </div>
             <Link
               href="/contact"
-              className="mt-4 md:mt-0 inline-flex items-center gap-2 text-primary hover:text-white transition-colors"
+              className="mt-4 md:mt-0 inline-flex items-center gap-2 text-primary hover:text-white transition-colors motion-reduce:duration-[0.01ms]"
             >
               {t('detail.features.cta')} <ArrowRight size={20} />
             </Link>
@@ -220,7 +220,7 @@ export function IndustryDetailClient() {
             {industry.customFeatures.map((feat, idx) => (
               <div
                 key={idx}
-                className="bg-white/5 p-6 rounded-xl border border-white/10 hover:bg-white/10 transition-colors"
+                className="bg-white/5 p-6 rounded-xl border border-white/10 hover:bg-white/10 transition-colors motion-reduce:duration-[0.01ms]"
               >
                 <h4 className="font-bold text-lg mb-2 text-primary">{t(feat.title)}</h4>
                 <p className="text-gray-300 text-sm">{t(feat.description)}</p>
@@ -244,19 +244,19 @@ export function IndustryDetailClient() {
                   <Link
                     href={`/branchen/${relIndustry.slug}`}
                     key={relIndustry.slug}
-                    className="group relative rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all h-64"
+                    className="group relative rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all motion-reduce:duration-[0.01ms] h-64"
                   >
                     <OptimizedImage
                       src={relImage.src}
                       alt={relImage.alt}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      className="w-full h-full object-cover transition-transform motion-reduce:duration-[0.01ms] duration-700 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                     <div className="absolute bottom-0 left-0 p-6">
-                      <h3 className="text-xl font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                      <h3 className="text-xl font-bold text-white mb-1 group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms]">
                         {t(relIndustry.title)}
                       </h3>
-                      <span className="text-sm text-gray-300 group-hover:text-white transition-colors flex items-center gap-2">
+                      <span className="text-sm text-gray-300 group-hover:text-white transition-colors motion-reduce:duration-[0.01ms] flex items-center gap-2">
                         {t('detail.related.link')} <ArrowRight size={14} />
                       </span>
                     </div>

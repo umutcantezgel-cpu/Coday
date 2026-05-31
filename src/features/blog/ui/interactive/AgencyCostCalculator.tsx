@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { CurrencyDollar, Robot, User, Lightning, ArrowRight } from '@phosphor-icons/react/dist/ssr';
@@ -97,7 +97,7 @@ export const AgencyCostCalculator: React.FC = () => {
           {/* Results */}
           <div className="space-y-6">
             {/* Traditional Agency Card */}
-            <div className="group relative p-6 bg-white border border-red-100 rounded-3xl shadow-sm hover:shadow-md transition-all">
+            <div className="group relative p-6 bg-white border border-red-100 rounded-3xl shadow-sm hover:shadow-md transition-all motion-reduce:duration-[0.01ms]">
               <div className="flex items-center justify-between mb-2">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center text-red-500">
@@ -123,7 +123,7 @@ export const AgencyCostCalculator: React.FC = () => {
             </div>
 
             {/* Coday Hybrid Model Card */}
-            <div className="group relative p-6 bg-gray-900 text-white rounded-3xl shadow-xl hover:scale-[1.02] transition-transform duration-300">
+            <div className="group relative p-6 bg-gray-900 text-white rounded-3xl shadow-xl hover:scale-[1.02] transition-transform motion-reduce:duration-[0.01ms] duration-300">
               <div className="absolute top-0 right-0 p-6 opacity-10">
                 <Robot size={100} />
               </div>
@@ -166,7 +166,7 @@ export const AgencyCostCalculator: React.FC = () => {
 
             <Link
               href="/contact"
-              className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-gray-900 text-white font-bold hover:bg-gray-800 transition-colors"
+              className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-gray-900 text-white font-bold hover:bg-gray-800 transition-colors motion-reduce:duration-[0.01ms]"
             >
               Stop Burning Money <ArrowRight />
             </Link>

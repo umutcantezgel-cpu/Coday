@@ -37,11 +37,11 @@ export const DownloadArea: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow group relative overflow-hidden"
+              className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow motion-reduce:duration-[0.01ms] group relative overflow-hidden"
             >
               <div className="flex items-start gap-6">
                 <div
-                  className={`w-16 h-16 rounded-2xl flex items-center justify-center shrink-0 transition-colors ${item.bg}`}
+                  className={`w-16 h-16 rounded-2xl flex items-center justify-center shrink-0 transition-colors motion-reduce:duration-[0.01ms] ${item.bg}`}
                 >
                   <OptimizedIcon icon={item.icon} className={`w-8 h-8 ${item.color}`} />
                 </div>
@@ -54,7 +54,7 @@ export const DownloadArea: React.FC = () => {
                   </p>
 
                   <div className="flex items-center justify-between mt-auto">
-                    <button className="flex items-center gap-2 text-blue-600 font-bold hover:text-blue-700 transition-colors">
+                    <button className="active:scale-[0.97] flex items-center gap-2 text-blue-600 font-bold hover:text-blue-700 transition-colors motion-reduce:duration-[0.01ms]">
                       <OptimizedIcon icon={DownloadSimple} className="w-5 h-5" />
                       {t(`downloads.${item.key}.button`)}
                     </button>

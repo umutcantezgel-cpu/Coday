@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { ChartBar, ArrowUpRight } from '@phosphor-icons/react/dist/ssr';
@@ -38,13 +38,13 @@ export const SEOTrafficGraph: React.FC = () => {
       <div className="flex gap-4 mb-8 bg-gray-100 p-1 rounded-xl w-fit">
         <button
           onClick={() => setView('standard')}
-          className={`px-4 py-2 rounded-lg text-sm font-bold transition-all ${view === 'standard' ? 'bg-white shadow text-gray-800' : 'text-gray-500 hover:text-gray-700'}`}
+          className={`active:scale-[0.97] px-4 py-2 rounded-lg text-sm font-bold transition-all motion-reduce:duration-[0.01ms] ${view === 'standard' ? 'bg-white shadow text-gray-800' : 'text-gray-500 hover:text-gray-700'}`}
         >
           {t('seoTraffic.standard')}
         </button>
         <button
           onClick={() => setView('coday')}
-          className={`px-4 py-2 rounded-lg text-sm font-bold transition-all ${view === 'coday' ? 'bg-green-600 text-white shadow' : 'text-gray-500 hover:text-gray-700'}`}
+          className={`active:scale-[0.97] px-4 py-2 rounded-lg text-sm font-bold transition-all motion-reduce:duration-[0.01ms] ${view === 'coday' ? 'bg-green-600 text-white shadow' : 'text-gray-500 hover:text-gray-700'}`}
         >
           {t('seoTraffic.coday')}
         </button>
@@ -66,17 +66,18 @@ export const SEOTrafficGraph: React.FC = () => {
         {(view === 'coday' ? dataCoday : dataStandard).map((value, index) => (
           <div key={index} className="flex-1 flex flex-col justify-end group relative h-full">
             <motion.div
-              initial={{ height: 0 }}
-              animate={{ height: `${(value / (view === 'coday' ? 320 : 22)) * 100}%` }}
+              initial={{ scaleY: 0 }}
+              style={{ transformOrigin: 'bottom' }}
+              animate={{ scaleY: (value / (view === 'coday' ? 320 : 22)) * 100 }}
               transition={{ ...EASING.spring, delay: index * STAGGER.default }}
-              className={`w-full rounded-t-sm relative transition-all duration-300 ${
+              className={`w-full rounded-t-sm relative transition-all motion-reduce:duration-[0.01ms] duration-300 ${
                 view === 'coday'
                   ? 'bg-gradient-to-t from-emerald-600 to-emerald-400 group-hover:from-emerald-500 group-hover:to-emerald-300 shadow-[0_0_15px_rgba(16,185,129,0.3)]'
                   : 'bg-gradient-to-t from-gray-400 to-gray-300 group-hover:from-gray-300 group-hover:to-gray-200'
               }`}
             >
               {/* Value Tooltip */}
-              <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-900/90 backdrop-blur text-white text-[10px] font-bold py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-xl z-20">
+              <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-900/90 backdrop-blur text-white text-[10px] font-bold py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms] whitespace-nowrap shadow-xl z-20">
                 {value}k
               </div>
             </motion.div>

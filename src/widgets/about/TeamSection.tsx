@@ -47,22 +47,19 @@ export const TeamSection: React.FC = () => {
               Coday
             </span>
           </motion.h2>
-          <motion.p
-            className="text-lg text-gray-400 max-w-2xl mx-auto"
-            {...stagger(0.2)}
-          >
-            Ein Entwickler. Ein Ansprechpartner. Keine Agentur-Bürokratie — nur direkter Draht
-            zu dem Menschen, der Ihr Projekt von A bis Z umsetzt.
+          <motion.p className="text-lg text-gray-400 max-w-2xl mx-auto" {...stagger(0.2)}>
+            Ein Entwickler. Ein Ansprechpartner. Keine Agentur-Bürokratie — nur direkter Draht zu
+            dem Menschen, der Ihr Projekt von A bis Z umsetzt.
           </motion.p>
         </div>
 
         {/* Founder Card */}
         <motion.div
-          className="relative group bg-white/[0.03] border border-white/[0.06] rounded-2xl overflow-hidden hover:border-primary/40 transition-all duration-500 max-w-2xl mx-auto"
+          className="relative group bg-white/[0.03] border border-white/[0.06] rounded-2xl overflow-hidden hover:border-primary/40 transition-all motion-reduce:duration-[0.01ms] duration-500 max-w-2xl mx-auto"
           {...stagger(0.3)}
         >
           {/* Glow on hover */}
-          <div className="absolute -inset-px rounded-2xl bg-gradient-to-b from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+          <div className="absolute -inset-px rounded-2xl bg-gradient-to-b from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms] duration-500 pointer-events-none" />
 
           <div className="p-8 lg:p-10 relative z-10">
             {/* Avatar + Info */}
@@ -103,7 +100,7 @@ export const TeamSection: React.FC = () => {
             <div className="flex items-center justify-center sm:justify-start gap-3">
               <a
                 href="mailto:umut@codayweb.de"
-                className="p-2.5 bg-white/10 backdrop-blur-md rounded-full hover:bg-primary transition-colors text-white"
+                className="p-2.5 bg-white/10 backdrop-blur-md rounded-full hover:bg-primary transition-colors motion-reduce:duration-[0.01ms] text-white"
                 aria-label="E-Mail senden"
               >
                 <EnvelopeSimple size={18} weight="fill" />
@@ -112,7 +109,7 @@ export const TeamSection: React.FC = () => {
                 href="https://linkedin.com/in/umutcantezgel"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 bg-white/10 backdrop-blur-md rounded-full hover:bg-primary transition-colors text-white"
+                className="p-2.5 bg-white/10 backdrop-blur-md rounded-full hover:bg-primary transition-colors motion-reduce:duration-[0.01ms] text-white"
                 aria-label="LinkedIn Profil"
               >
                 <LinkedinLogo size={18} weight="fill" />

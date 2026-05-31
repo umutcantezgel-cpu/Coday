@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
 import { useForm } from 'react-hook-form';
@@ -48,11 +48,9 @@ export const ApplicationWizard: React.FC = () => {
         message: t('wizard.validation.required'),
       }),
     name: z.string().min(2, { message: t('wizard.validation.min_length') }),
-    email: z
-      .string()
-      .email({
-        message: t('wizard.validation.email'),
-      }),
+    email: z.string().email({
+      message: t('wizard.validation.email'),
+    }),
     phone: z.string().optional(),
     message: z.string().optional(),
     website: z.string().optional(), // honeypot
@@ -162,9 +160,7 @@ export const ApplicationWizard: React.FC = () => {
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-2">
             <Icon name="check_circle" className="text-primary" />
-            <span className="font-bold text-gray-900">
-              {t('wizard.package_summary.title')}
-            </span>
+            <span className="font-bold text-gray-900">{t('wizard.package_summary.title')}</span>
           </div>
           <span className="text-xs bg-primary/10 text-primary font-bold px-3 py-1 rounded-full">
             {packageName}
@@ -181,15 +177,12 @@ export const ApplicationWizard: React.FC = () => {
           ))}
           {selectedModules.length > 5 && (
             <p className="text-xs text-gray-500">
-              +{selectedModules.length - 5}{' '}
-              {t('wizard.package_summary.more')}
+              +{selectedModules.length - 5} {t('wizard.package_summary.more')}
             </p>
           )}
         </div>
         <div className="mt-3 pt-3 border-t border-primary/10 flex justify-between font-bold text-sm">
-          <span className="text-gray-700">
-            {t('wizard.package_summary.total')}
-          </span>
+          <span className="text-gray-700">{t('wizard.package_summary.total')}</span>
           <div className="text-right">
             <span className="text-gray-900">
               {formatCurrency(totalOneTime / 100, 'EUR', locale)}
@@ -221,9 +214,7 @@ export const ApplicationWizard: React.FC = () => {
         <h3 className="text-2xl font-bold text-gray-900 mb-2">
           {t('wizard.success.calendly_title')}
         </h3>
-        <p className="text-gray-600 mb-8">
-          {t('wizard.success.calendly_desc')}
-        </p>
+        <p className="text-gray-600 mb-8">{t('wizard.success.calendly_desc')}</p>
         <div className="w-full rounded-2xl overflow-hidden border border-gray-100 bg-gray-50 mb-8">
           <InlineWidget
             url="https://calendly.com/coday-beratung/30min"
@@ -250,7 +241,7 @@ export const ApplicationWizard: React.FC = () => {
               href="/assets/pdf/47-punkte-audit.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-bold text-primary hover:text-blue-700 transition-colors"
+              className="inline-flex items-center gap-2 text-sm font-bold text-primary hover:text-blue-700 transition-colors motion-reduce:duration-[0.01ms]"
             >
               Jetzt herunterladen <Icon name="arrow_forward" size="sm" />
             </a>
@@ -277,13 +268,9 @@ export const ApplicationWizard: React.FC = () => {
     <div className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
       <div className="bg-gray-50 px-4 md:px-8 py-6 border-b border-gray-100">
         <h3 className="text-xl font-bold text-gray-900">
-          {hasPackage
-            ? t('wizard.title_package')
-            : t('wizard.title_direct')}
+          {hasPackage ? t('wizard.title_package') : t('wizard.title_direct')}
         </h3>
-        <p className="text-sm text-gray-500 mt-1">
-          {t('wizard.subtitle')}
-        </p>
+        <p className="text-sm text-gray-500 mt-1">{t('wizard.subtitle')}</p>
       </div>
 
       <form
@@ -305,27 +292,17 @@ export const ApplicationWizard: React.FC = () => {
             </label>
             <select
               {...register('project')}
-              className={`w-full px-4 py-3 rounded-xl border outline-none transition-all bg-white appearance-none ${
+              className={`w-full px-4 py-3 rounded-xl border outline-none transition-all motion-reduce:duration-[0.01ms] bg-white appearance-none ${
                 errors.project
                   ? 'border-red-500 ring-1 ring-red-500'
                   : 'border-gray-200 focus:border-primary focus:ring-2 focus:ring-blue-100'
               }`}
             >
-              <option value="">
-                {t('wizard.step1.project_type.placeholder')}
-              </option>
-              <option value="webdesign">
-                {t('wizard.step1.project_type.options.webdesign')}
-              </option>
-              <option value="webapp">
-                {t('wizard.step1.project_type.options.webapp')}
-              </option>
-              <option value="ecommerce">
-                {t('wizard.step1.project_type.options.ecommerce')}
-              </option>
-              <option value="audit">
-                {t('wizard.step1.project_type.options.audit')}
-              </option>
+              <option value="">{t('wizard.step1.project_type.placeholder')}</option>
+              <option value="webdesign">{t('wizard.step1.project_type.options.webdesign')}</option>
+              <option value="webapp">{t('wizard.step1.project_type.options.webapp')}</option>
+              <option value="ecommerce">{t('wizard.step1.project_type.options.ecommerce')}</option>
+              <option value="audit">{t('wizard.step1.project_type.options.audit')}</option>
             </select>
             {errors.project && (
               <div className="flex items-center gap-1.5 mt-1.5 text-red-500 text-sm">
@@ -344,7 +321,7 @@ export const ApplicationWizard: React.FC = () => {
             <input
               id="wizard-name"
               {...register('name')}
-              className={`w-full px-4 py-3 min-h-[48px] rounded-xl border outline-none transition-all ${
+              className={`w-full px-4 py-3 min-h-[48px] rounded-xl border outline-none transition-all motion-reduce:duration-[0.01ms] ${
                 errors.name
                   ? 'border-red-500 ring-1 ring-red-500 bg-red-50/10'
                   : 'border-gray-200 focus:border-primary focus:ring-2 focus:ring-blue-100'
@@ -367,7 +344,7 @@ export const ApplicationWizard: React.FC = () => {
               id="wizard-email"
               {...register('email')}
               type="email"
-              className={`w-full px-4 py-3 min-h-[48px] rounded-xl border outline-none transition-all ${
+              className={`w-full px-4 py-3 min-h-[48px] rounded-xl border outline-none transition-all motion-reduce:duration-[0.01ms] ${
                 errors.email
                   ? 'border-red-500 ring-1 ring-red-500 bg-red-50/10'
                   : 'border-gray-200 focus:border-primary focus:ring-2 focus:ring-blue-100'
@@ -394,7 +371,7 @@ export const ApplicationWizard: React.FC = () => {
               id="wizard-phone"
               {...register('phone')}
               type="tel"
-              className="w-full px-4 py-3 min-h-[48px] rounded-xl border border-gray-200 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-blue-100"
+              className="w-full px-4 py-3 min-h-[48px] rounded-xl border border-gray-200 outline-none transition-all motion-reduce:duration-[0.01ms] focus:border-primary focus:ring-2 focus:ring-blue-100"
               placeholder={t('wizard.step3.phone.placeholder')}
               autoComplete="tel"
             />
@@ -407,7 +384,7 @@ export const ApplicationWizard: React.FC = () => {
               id="wizard-message"
               {...register('message')}
               rows={2}
-              className="w-full px-4 py-3 min-h-[48px] rounded-xl border border-gray-200 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-blue-100"
+              className="w-full px-4 py-3 min-h-[48px] rounded-xl border border-gray-200 outline-none transition-all motion-reduce:duration-[0.01ms] focus:border-primary focus:ring-2 focus:ring-blue-100"
               placeholder={t('wizard.step3.message.placeholder')}
             />
           </div>
@@ -420,9 +397,7 @@ export const ApplicationWizard: React.FC = () => {
               {...register('privacy')}
               className="mt-1 w-4 h-4 text-primary rounded border-gray-300 focus:ring-primary"
             />
-            <span className="text-sm text-gray-500">
-              {t('wizard.step3.privacy.label')}
-            </span>
+            <span className="text-sm text-gray-500">{t('wizard.step3.privacy.label')}</span>
           </label>
           {errors.privacy && (
             <div className="flex items-center gap-1.5 mt-2 text-red-500 text-sm">
@@ -446,11 +421,11 @@ export const ApplicationWizard: React.FC = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-primary text-white font-bold hover:bg-blue-700 transition-colors shadow-lg hover:shadow-primary/25 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+            className="active:scale-[0.97] w-full sm:w-auto px-8 py-3.5 rounded-xl bg-primary text-white font-bold hover:bg-blue-700 transition-colors motion-reduce:duration-[0.01ms] shadow-lg hover:shadow-primary/25 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
           >
             {isSubmitting ? (
               <>
-                <Icon name="loader" className="animate-spin" size="sm" />
+                <Icon name="loader" className="animate-spin motion-reduce:animate-none" size="sm" />
                 {t('wizard.buttons.submitting')}
               </>
             ) : (

@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import dynamic from 'next/dynamic';
 import { useTranslations } from 'next-intl';
@@ -26,7 +26,6 @@ import {
 import { TechStackShowcase, TechItem } from '@/widgets/services/TechStackShowcase';
 import { SeoHead } from '@/shared/ui/SeoHead';
 import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
-
 
 export function SeoClient() {
   const t = useTranslations('services');
@@ -102,7 +101,7 @@ export function SeoClient() {
               <OptimizedImage
                 src={marketingImages.hero!.src}
                 alt={t(marketingImages.hero!.alt)}
-                className="relative rounded-3xl shadow-flat-lg w-full transform rotate-1 hover:rotate-0 transition-all duration-500 bg-white p-2"
+                className="relative rounded-3xl shadow-flat-lg w-full transform rotate-1 hover:rotate-0 transition-all motion-reduce:duration-[0.01ms] duration-500 bg-white p-2"
                 priority
               />
             </div>
@@ -182,20 +181,21 @@ export function SeoClient() {
               </h2>
               <p className="text-lg text-slate-600 mb-6">{t('seo_page.dominance.description')}</p>
               <ul className="space-y-3">
-                {(Array.isArray(t.raw('seo_page.dominance.items')) ? (t.raw('seo_page.dominance.items') as string[]) : []).map(
-                  (item, i) => (
-                    <li key={i} className="flex items-center text-secondary font-medium">
-                      <OptimizedIcon icon={CheckCircle} className="text-sapphire me-2" />
-                      {item}
-                    </li>
-                  )
-                )}
+                {(Array.isArray(t.raw('seo_page.dominance.items'))
+                  ? (t.raw('seo_page.dominance.items') as string[])
+                  : []
+                ).map((item, i) => (
+                  <li key={i} className="flex items-center text-secondary font-medium">
+                    <OptimizedIcon icon={CheckCircle} className="text-sapphire me-2" />
+                    {item}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-8 bg-surface-light rounded-3xl border border-gray-100 hover:shadow-lg transition-all">
+            <div className="p-8 bg-surface-light rounded-3xl border border-gray-100 hover:shadow-lg transition-all motion-reduce:duration-[0.01ms]">
               <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6">
                 <OptimizedIcon icon={Gear} />
               </div>
@@ -204,7 +204,7 @@ export function SeoClient() {
               </h3>
               <p className="text-slate-600">{t('seo_page.dominance.cards.technical.desc')}</p>
             </div>
-            <div className="p-8 bg-surface-light rounded-3xl border border-gray-100 hover:shadow-lg transition-all">
+            <div className="p-8 bg-surface-light rounded-3xl border border-gray-100 hover:shadow-lg transition-all motion-reduce:duration-[0.01ms]">
               <div className="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center mb-6">
                 <OptimizedIcon icon={FileText} />
               </div>
@@ -213,7 +213,7 @@ export function SeoClient() {
               </h3>
               <p className="text-slate-600">{t('seo_page.dominance.cards.content.desc')}</p>
             </div>
-            <div className="p-8 bg-surface-light rounded-3xl border border-gray-100 hover:shadow-lg transition-all">
+            <div className="p-8 bg-surface-light rounded-3xl border border-gray-100 hover:shadow-lg transition-all motion-reduce:duration-[0.01ms]">
               <div className="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center mb-6">
                 <OptimizedIcon icon={MapPin} />
               </div>
@@ -232,8 +232,6 @@ export function SeoClient() {
         title={t('seo_page.tech_stack.title')}
         subtitle={t('seo_page.tech_stack.description')}
       />
-
-
 
       {/* Relevant FAQs */}
       <RelevantFAQs serviceId="seo" className="mb-24" />
@@ -279,9 +277,9 @@ export function SeoClient() {
               ].map((phase, idx) => (
                 <div
                   key={idx}
-                  className="relative bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors group"
+                  className="relative bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors motion-reduce:duration-[0.01ms] group"
                 >
-                  <div className="absolute -top-6 start-8 bg-primary text-secondary font-bold text-xl w-12 h-12 rounded-xl flex items-center justify-center shadow-lg border-4 border-secondary group-hover:scale-110 transition-transform">
+                  <div className="absolute -top-6 start-8 bg-primary text-secondary font-bold text-xl w-12 h-12 rounded-xl flex items-center justify-center shadow-lg border-4 border-secondary group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms]">
                     {phase.step}
                   </div>
                   <h3 className="font-bold text-xl mt-4 mb-3">{phase.title}</h3>
@@ -309,14 +307,14 @@ export function SeoClient() {
             </p>
             <NavLink
               href="/cases"
-              className="inline-flex items-center justify-center px-6 py-3 font-bold text-secondary rounded-xl bg-primary hover:bg-white transition-all shadow-glow"
+              className="inline-flex items-center justify-center px-6 py-3 font-bold text-secondary rounded-xl bg-primary hover:bg-white transition-all motion-reduce:duration-[0.01ms] shadow-glow"
             >
               {t('actions.read_more')}
               <OptimizedIcon icon={ArrowRight} className="ms-2" />
             </NavLink>
           </div>
           <div className="md:w-1/2 relative z-10 w-full">
-            <div className="aspect-video bg-white/5 rounded-2xl border border-white/10 p-2 shadow-2xl backdrop-blur-sm transform rotate-2 hover:rotate-0 transition-transform duration-500 overflow-hidden">
+            <div className="aspect-video bg-white/5 rounded-2xl border border-white/10 p-2 shadow-2xl backdrop-blur-sm transform rotate-2 hover:rotate-0 transition-transform motion-reduce:duration-[0.01ms] duration-500 overflow-hidden">
               {/* Replace with actual case study image if available */}
               <div className="w-full h-full bg-slate-800 rounded-xl flex items-center justify-center">
                 <OptimizedIcon
@@ -332,5 +330,4 @@ export function SeoClient() {
       </section>
     </div>
   );
-};
-
+}

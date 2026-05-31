@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 import { useTranslations } from 'next-intl';
@@ -69,7 +69,7 @@ const Retail: React.FC = () => {
                 {t('ecommerce-retail.hero.subheadline')}
               </p>
               <div className="flex gap-4 mb-12">
-                <button className="bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:bg-secondary/90 transition-colors">
+                <button className="active:scale-[0.97] bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:bg-secondary/90 transition-colors motion-reduce:duration-[0.01ms]">
                   {t('ecommerce-retail.customFeatures.produkt_konfigurator.title')}
                 </button>
               </div>

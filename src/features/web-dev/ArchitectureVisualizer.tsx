@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { motion } from 'motion/react';
@@ -93,7 +93,7 @@ const ArchitectureVisualizer: React.FC = () => {
             onMouseLeave={() => setActiveNode(null)}
           >
             <div
-              className={`w-24 h-24 sm:w-32 sm:h-32 rounded-2xl border border-white/10 backdrop-blur-md bg-white/5 flex flex-col items-center justify-center p-4 cursor-pointer transition-all duration-300 ${activeNode === node.id ? 'scale-110 border-white/30 bg-white/10 shadow-[0_0_30px_rgba(26,154,154,0.3)]' : 'hover:border-white/20'}`}
+              className={`w-24 h-24 sm:w-32 sm:h-32 rounded-2xl border border-white/10 backdrop-blur-md bg-white/5 flex flex-col items-center justify-center p-4 cursor-pointer transition-all motion-reduce:duration-[0.01ms] duration-300 ${activeNode === node.id ? 'scale-110 border-white/30 bg-white/10 shadow-[0_0_30px_rgba(26,154,154,0.3)]' : 'hover:border-white/20'}`}
               style={{ borderColor: activeNode === node.id ? node.color : '' }}
             >
               <div

@@ -63,11 +63,12 @@ export const RocketToTop = () => {
           <AnimatePresence>
             {isLaunching && (
               <motion.div
-                initial={{ opacity: 1, height: 0 }}
-                animate={{ opacity: 0, height: 100 }}
+                initial={{ opacity: 1, scaleY: 0 }}
+                style={{ transformOrigin: 'top' }}
+                animate={{ opacity: 0, scaleY: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
-                className="absolute top-full w-4 bg-gradient-to-b from-yellow-400 via-orange-500 to-transparent blur-sm rounded-b-full"
+                className="absolute top-full w-4 h-[100px] bg-gradient-to-b from-yellow-400 via-orange-500 to-transparent blur-sm rounded-b-full motion-reduce:transition-none"
               />
             )}
           </AnimatePresence>

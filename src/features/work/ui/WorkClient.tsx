@@ -73,7 +73,7 @@ const Work: React.FC = () => {
                 <button
                   key={item.id}
                   onClick={() => handleFilterChange(index)}
-                  className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 ${
+                  className={`active:scale-[0.97] px-6 py-2.5 rounded-full text-sm font-bold transition-all motion-reduce:duration-[0.01ms] duration-300 ${
                     item.id === filter
                       ? 'bg-primary text-white shadow-lg shadow-primary/25 scale-105'
                       : 'bg-gray-100 text-gray-500 hover:bg-gray-200 hover:text-gray-700'
@@ -125,7 +125,7 @@ const Work: React.FC = () => {
           </p>
           <Link
             href="/booking"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-white rounded-full font-bold text-lg hover:bg-primary-dark transition-colors shadow-lg shadow-primary/25"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-white rounded-full font-bold text-lg hover:bg-primary-dark transition-colors motion-reduce:duration-[0.01ms] shadow-lg shadow-primary/25"
           >
             Jetzt anfragen
           </Link>

@@ -1,8 +1,13 @@
-"use client";
+'use client';
 import React, { useState, useEffect } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { motion, AnimatePresence } from 'motion/react';
-import { SplitHorizontal, Users, CursorClick, ArrowsClockwise } from '@phosphor-icons/react/dist/ssr';
+import {
+  SplitHorizontal,
+  Users,
+  CursorClick,
+  ArrowsClockwise,
+} from '@phosphor-icons/react/dist/ssr';
 import { clsx } from 'clsx';
 import { cn } from '@/shared/lib/utils';
 import { formatNumber } from '@/shared/utils/formatters';
@@ -90,21 +95,21 @@ export const ABTestSimulator: React.FC = () => {
             {!isRunning ? (
               <button
                 onClick={() => setIsRunning(true)}
-                className="px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg text-sm font-bold transition-all flex items-center gap-2"
+                className="active:scale-[0.97] px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg text-sm font-bold transition-all motion-reduce:duration-[0.01ms] flex items-center gap-2"
               >
                 <ArrowsClockwise className="w-4 h-4" /> {t('blog.abTest.start')}
               </button>
             ) : (
               <button
                 onClick={() => setIsRunning(false)}
-                className="px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg text-sm font-bold transition-all"
+                className="active:scale-[0.97] px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg text-sm font-bold transition-all motion-reduce:duration-[0.01ms]"
               >
                 {t('blog.abTest.stop')}
               </button>
             )}
             <button
               onClick={reset}
-              className="p-2 hover:bg-white/10 rounded-lg transition-colors"
+              className="active:scale-[0.97] p-2 hover:bg-white/10 rounded-lg transition-colors motion-reduce:duration-[0.01ms]"
               title="Reset"
             >
               <ArrowsClockwise className="w-4 h-4" />
@@ -133,7 +138,8 @@ export const ABTestSimulator: React.FC = () => {
                   }
                 }}
                 className={clsx(
-                  'p-4 rounded-xl border text-left transition-all relative overflow-hidden group',
+                  'active:scale-[0.97]',
+                  'p-4 rounded-xl border text-left transition-all motion-reduce:duration-[0.01ms] relative overflow-hidden group',
                   activeVariant === variantId
                     ? 'bg-white border-primary shadow-md ring-1 ring-primary/20'
                     : 'bg-white border-gray-200 hover:border-gray-300 opacity-70 hover:opacity-100'
@@ -231,7 +237,7 @@ export const ABTestSimulator: React.FC = () => {
                     className="flex-1 flex flex-col p-6 items-center text-center justify-center bg-gray-50"
                   >
                     {/* Image Placeholder */}
-                    <div className="w-full aspect-video bg-gray-200 rounded-xl mb-6 animate-pulse"></div>
+                    <div className="w-full aspect-video bg-gray-200 rounded-xl mb-6 animate-pulse motion-reduce:animate-none"></div>
 
                     {/* Headline */}
                     <h3
@@ -257,7 +263,8 @@ export const ABTestSimulator: React.FC = () => {
                     {/* Button */}
                     <button
                       className={cn(
-                        'w-full py-4 rounded-xl text-white font-bold shadow-lg transition-transform active:scale-95',
+                        'active:scale-[0.97]',
+                        'w-full py-4 rounded-xl text-white font-bold shadow-lg transition-transform motion-reduce:duration-[0.01ms]',
                         VARIANTS[activeVariant].buttonColor
                       )}
                     >

@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import * as React from 'react';
 import { useTranslations } from 'next-intl';
@@ -22,15 +22,13 @@ export default function ErrorBoundary({ error, reset }: ErrorBoundaryProps) {
         <div className="w-16 h-16 bg-red-500/10 rounded-full flex items-center justify-center mb-6 border border-red-500/20">
           <WarningCircle className="w-8 h-8 text-red-500" weight="duotone" />
         </div>
-        
+
         <h1 className="text-2xl md:text-3xl font-bold mb-4 tracking-tight">{t('title')}</h1>
-        <p className="text-text-secondary mb-8 leading-relaxed">
-          {t('description')}
-        </p>
-        
+        <p className="text-text-secondary mb-8 leading-relaxed">{t('description')}</p>
+
         <button
           onClick={() => reset()}
-          className="inline-flex items-center justify-center rounded-xl font-medium transition-all duration-300 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 bg-primary-700 text-white shadow-md hover:bg-primary-800 hover:shadow-glow min-h-[48px] px-6 w-full"
+          className="inline-flex items-center justify-center rounded-xl font-medium transition-all motion-reduce:duration-[0.01ms] duration-300 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 bg-primary-700 text-white shadow-md hover:bg-primary-800 hover:shadow-glow min-h-[48px] px-6 w-full"
         >
           {t('tryAgain')}
         </button>

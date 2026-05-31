@@ -12,7 +12,7 @@ import PerksGrid from '@/features/careers/PerksGrid';
 
 export function CareerOverviewClient() {
   const t = useTranslations('careers');
-  
+
   return (
     <div className="bg-background-light min-h-dvh">
       {/* Hero Section */}
@@ -44,7 +44,7 @@ export function CareerOverviewClient() {
           <div className="flex justify-center gap-4">
             <a
               href="#jobs"
-              className="bg-secondary text-white px-8 py-4 rounded-xl font-bold hover:bg-secondary/90 transition-colors shadow-lg"
+              className="bg-secondary text-white px-8 py-4 rounded-xl font-bold hover:bg-secondary/90 transition-colors motion-reduce:duration-[0.01ms] shadow-lg"
             >
               {t('hero.cta')}
             </a>
@@ -110,10 +110,10 @@ export function CareerOverviewClient() {
               <a
                 href="/contact"
                 key={idx}
-                className="flex flex-col sm:flex-row sm:items-center justify-between p-6 rounded-2xl border border-gray-100 hover:border-sapphire/50 hover:shadow-lg transition-all group"
+                className="flex flex-col sm:flex-row sm:items-center justify-between p-6 rounded-2xl border border-gray-100 hover:border-sapphire/50 hover:shadow-lg transition-all motion-reduce:duration-[0.01ms] group"
               >
                 <div>
-                  <h3 className="font-bold text-xl text-secondary group-hover:text-sapphire transition-colors">
+                  <h3 className="font-bold text-xl text-secondary group-hover:text-sapphire transition-colors motion-reduce:duration-[0.01ms]">
                     {job.title}
                   </h3>
                   <div className="flex gap-4 text-sm text-gray-500 mt-1">
@@ -122,7 +122,7 @@ export function CareerOverviewClient() {
                     <span>{job.time}</span>
                   </div>
                 </div>
-                <span className="mt-4 sm:mt-0 px-4 py-2 bg-gray-50 text-secondary font-bold rounded-lg text-sm group-hover:bg-sapphire group-hover:text-white transition-all">
+                <span className="mt-4 sm:mt-0 px-4 py-2 bg-gray-50 text-secondary font-bold rounded-lg text-sm group-hover:bg-sapphire group-hover:text-white transition-all motion-reduce:duration-[0.01ms]">
                   {t('jobs.button')} &rarr;
                 </span>
               </a>

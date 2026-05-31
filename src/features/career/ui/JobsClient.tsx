@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
@@ -49,7 +49,7 @@ const Jobs: React.FC = () => {
             <OptimizedImage
               src="/images/hero/team-buero-high-five-erfolg-feiern-banner-konfetti-ziel-erreicht-medaillen-wachstum.webp"
               alt="Unser Team feiert Erfolge"
-              className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-700"
+              className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform motion-reduce:duration-[0.01ms] duration-700"
               priority
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 md:p-12 text-left">
@@ -83,7 +83,7 @@ const Jobs: React.FC = () => {
             {jobs.map((job) => (
               <div
                 key={job.id}
-                className="bg-white rounded-2xl border border-aurora-mist p-8 flex flex-col md:flex-row md:items-center justify-between hover:shadow-lg transition-all duration-300 group mb-4"
+                className="bg-white rounded-2xl border border-aurora-mist p-8 flex flex-col md:flex-row md:items-center justify-between hover:shadow-lg transition-all motion-reduce:duration-[0.01ms] duration-300 group mb-4"
               >
                 <div>
                   <div className="flex items-center space-x-3 mb-2">
@@ -94,7 +94,7 @@ const Jobs: React.FC = () => {
                       {job.location}
                     </span>
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors motion-reduce:duration-[0.01ms]">
                     {job.title}
                   </h3>
                   <p className="text-slate-500 max-w-xl">{job.desc}</p>
@@ -103,7 +103,7 @@ const Jobs: React.FC = () => {
                 <div className="mt-6 md:mt-0 flex items-center">
                   <a
                     href={createMailtoLink(job.mailtoSubject)}
-                    className="px-6 py-3 rounded-xl bg-gray-900 text-white font-bold hover:bg-gray-800 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 inline-block"
+                    className="px-6 py-3 rounded-xl bg-gray-900 text-white font-bold hover:bg-gray-800 transition-colors motion-reduce:duration-[0.01ms] shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 inline-block"
                   >
                     {t('jobs.button')}
                   </a>
@@ -118,7 +118,7 @@ const Jobs: React.FC = () => {
           <p className="text-slate-500 mb-8 max-w-xl mx-auto">{t('jobs.no_jobs.desc')}</p>
           <a
             href="mailto:umut@codayweb.de?subject=Initiativbewerbung%20bei%20Coday&body=Hallo%20Coday-Team%2C%0D%0A%0D%0Aich%20bewerbe%20mich%20initiativ%20bei%20Ihnen.%0D%0A%0D%0AMeine%20St%C3%A4rken%3A%0D%0A-%20%0D%0A-%20%0D%0A%0D%0AMit%20freundlichen%20Gr%C3%BC%C3%9Fen"
-            className="px-8 py-4 rounded-xl border-2 border-slate-200 text-slate-600 font-bold hover:border-blue-500 hover:text-blue-600 transition-colors bg-white inline-block"
+            className="px-8 py-4 rounded-xl border-2 border-slate-200 text-slate-600 font-bold hover:border-blue-500 hover:text-blue-600 transition-colors motion-reduce:duration-[0.01ms] bg-white inline-block"
           >
             {t('jobs.no_jobs.button')}
           </a>

@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React from 'react';
 import { motion } from 'motion/react';
 import { useTranslations } from 'next-intl';
@@ -28,7 +28,10 @@ export const GlobalCTA: React.FC<GlobalCTAProps> = ({
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-[50%] -right-[10%] w-[70%] h-[70%] rounded-full bg-primary/20 blur-[120px] mix-blend-screen" />
         <div className="absolute -bottom-[50%] -left-[10%] w-[60%] h-[60%] rounded-full bg-blue-600/20 blur-[120px] mix-blend-screen" />
-        <div className="absolute inset-0 opacity-10 mix-blend-overlay" style={{ backgroundImage: "url(/noise.svg)" }}></div>
+        <div
+          className="absolute inset-0 opacity-10 mix-blend-overlay"
+          style={{ backgroundImage: 'url(/noise.svg)' }}
+        ></div>
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
@@ -59,11 +62,11 @@ export const GlobalCTA: React.FC<GlobalCTAProps> = ({
 
           <Link
             href={buttonLink}
-            className="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all duration-200 bg-primary border border-transparent rounded-full hover:bg-blue-700 hover:shadow-[0_0_40px_rgba(37,99,235,0.4)] focus:ring-2 focus:ring-offset-2 focus:ring-primary focus:ring-offset-secondary overflow-hidden"
+            className="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all motion-reduce:duration-[0.01ms] duration-200 bg-primary border border-transparent rounded-full hover:bg-blue-700 hover:shadow-[0_0_40px_rgba(37,99,235,0.4)] focus:ring-2 focus:ring-offset-2 focus:ring-primary focus:ring-offset-secondary overflow-hidden"
           >
             {/* Hover Glare Effect */}
             <div className="absolute inset-0 overflow-hidden rounded-full pointer-events-none">
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shimmer" />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shimmer motion-reduce:animate-none" />
             </div>
 
             <span className="relative flex items-center gap-2">
@@ -71,7 +74,7 @@ export const GlobalCTA: React.FC<GlobalCTAProps> = ({
               <OptimizedIcon
                 icon={ArrowRight}
                 weight="bold"
-                className="transition-transform duration-300 group-hover:translate-x-1"
+                className="transition-transform motion-reduce:duration-[0.01ms] duration-300 group-hover:translate-x-1"
               />
             </span>
           </Link>

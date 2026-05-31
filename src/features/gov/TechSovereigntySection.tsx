@@ -72,7 +72,7 @@ export const TechSovereigntySection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className={`p-6 rounded-2xl bg-slate-800/50 backdrop-blur-sm border ${item.border} hover:bg-slate-800 transition-colors group`}
+              className={`p-6 rounded-2xl bg-slate-800/50 backdrop-blur-sm border ${item.border} hover:bg-slate-800 transition-colors motion-reduce:duration-[0.01ms] group`}
             >
               <div
                 className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 ${item.bg} ${item.color}`}

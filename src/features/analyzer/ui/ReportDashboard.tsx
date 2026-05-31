@@ -1,5 +1,4 @@
- 
-"use client";
+'use client';
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import {
@@ -146,13 +145,13 @@ export const ReportDashboard: React.FC = () => {
                 alert(t('dashboard.server_dead'));
               }
             }}
-            className="px-6 py-3 bg-gray-100 text-gray-700 font-bold rounded-xl hover:bg-gray-200 transition-colors"
+            className="active:scale-[0.97] px-6 py-3 bg-gray-100 text-gray-700 font-bold rounded-xl hover:bg-gray-200 transition-colors motion-reduce:duration-[0.01ms]"
           >
             {t('dashboard.button_test_server')}
           </button>
           <button
             onClick={resetAnalysis}
-            className="px-8 py-3 bg-primary text-white font-bold rounded-xl hover:bg-blue-700 transition-colors shadow-lg"
+            className="active:scale-[0.97] px-8 py-3 bg-primary text-white font-bold rounded-xl hover:bg-blue-700 transition-colors motion-reduce:duration-[0.01ms] shadow-lg"
           >
             {t('dashboard.button_retry')}
           </button>
@@ -161,7 +160,7 @@ export const ReportDashboard: React.FC = () => {
         <div className="mt-8">
           <button
             onClick={() => useAnalyzerStore.getState().loadDemoData(t)}
-            className="text-sm text-gray-400 hover:text-gray-600 underline transition-colors"
+            className="active:scale-[0.97] text-sm text-gray-400 hover:text-gray-600 underline transition-colors motion-reduce:duration-[0.01ms]"
           >
             {t('dashboard.button_demo')}
           </button>
@@ -223,14 +222,14 @@ export const ReportDashboard: React.FC = () => {
         <div className="flex justify-center gap-3">
           <button
             onClick={handleDownloadPdf}
-            className="flex items-center gap-2 px-5 py-2.5 bg-white border border-gray-200 rounded-xl font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-300 transition-all shadow-sm"
+            className="active:scale-[0.97] flex items-center gap-2 px-5 py-2.5 bg-white border border-gray-200 rounded-xl font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-300 transition-all motion-reduce:duration-[0.01ms] shadow-sm"
           >
             <DownloadSimple className="w-4 h-4" />
             <span>{t('dashboard.button_pdf')}</span>
           </button>
           <button
             onClick={handleShare}
-            className="flex items-center gap-2 px-5 py-2.5 bg-white border border-gray-200 rounded-xl font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-300 transition-all shadow-sm"
+            className="active:scale-[0.97] flex items-center gap-2 px-5 py-2.5 bg-white border border-gray-200 rounded-xl font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-300 transition-all motion-reduce:duration-[0.01ms] shadow-sm"
           >
             {copied ? (
               <>
@@ -246,7 +245,7 @@ export const ReportDashboard: React.FC = () => {
           </button>
           <button
             onClick={() => setShowEmailModal(true)}
-            className="flex items-center gap-2 px-5 py-2.5 bg-white border border-gray-200 rounded-xl font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-300 transition-all shadow-sm"
+            className="active:scale-[0.97] flex items-center gap-2 px-5 py-2.5 bg-white border border-gray-200 rounded-xl font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-300 transition-all motion-reduce:duration-[0.01ms] shadow-sm"
           >
             <Envelope className="w-4 h-4" />
             <span>{t('dashboard.button_email')}</span>
@@ -383,7 +382,7 @@ export const ReportDashboard: React.FC = () => {
               initial={{ opacity: 0, x: isRtl ? 20 : -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.6 + idx * 0.05 }}
-              className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-lg transition-shadow"
+              className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-lg transition-shadow motion-reduce:duration-[0.01ms]"
             >
               <div className="flex items-start gap-4">
                 <div
@@ -432,7 +431,7 @@ export const ReportDashboard: React.FC = () => {
           {!result.actionPlan && (
             <button
               onClick={() => useAnalyzerStore.getState().generatePlan()}
-              className="text-sm font-bold text-primary hover:text-blue-700 transition-colors"
+              className="active:scale-[0.97] text-sm font-bold text-primary hover:text-blue-700 transition-colors motion-reduce:duration-[0.01ms]"
             >
               {t('dashboard.generate_plan')}
             </button>
@@ -476,7 +475,7 @@ export const ReportDashboard: React.FC = () => {
             <p className="text-gray-500 mb-4">{t('dashboard.plan_placeholder')}</p>
             <button
               onClick={() => useAnalyzerStore.getState().generatePlan()}
-              className="bg-primary text-white px-6 py-2 rounded-lg font-bold shadow hover:bg-blue-700 transition-all"
+              className="active:scale-[0.97] bg-primary text-white px-6 py-2 rounded-lg font-bold shadow hover:bg-blue-700 transition-all motion-reduce:duration-[0.01ms]"
             >
               {t('dashboard.generate_ai_plan')}
             </button>
@@ -496,7 +495,7 @@ export const ReportDashboard: React.FC = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button
             onClick={() => window.open('/booking', '_blank')}
-            className="flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary font-bold rounded-xl hover:bg-blue-50 transition-colors shadow-lg"
+            className="active:scale-[0.97] flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary font-bold rounded-xl hover:bg-blue-50 transition-colors motion-reduce:duration-[0.01ms] shadow-lg"
           >
             <CalendarBlank className="w-5 h-5" />
             <span>{t('dashboard.button_book')}</span>
@@ -504,7 +503,7 @@ export const ReportDashboard: React.FC = () => {
 
           <button
             onClick={resetAnalysis}
-            className="px-8 py-4 bg-white/10 text-white font-bold rounded-xl hover:bg-white/20 transition-colors border border-white/30"
+            className="active:scale-[0.97] px-8 py-4 bg-white/10 text-white font-bold rounded-xl hover:bg-white/20 transition-colors motion-reduce:duration-[0.01ms] border border-white/30"
           >
             {t('dashboard.button_new_analysis')}
           </button>
@@ -522,4 +521,3 @@ export const ReportDashboard: React.FC = () => {
 };
 
 export default ReportDashboard;
-

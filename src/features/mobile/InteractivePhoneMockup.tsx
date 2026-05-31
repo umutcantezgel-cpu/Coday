@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
@@ -24,13 +24,13 @@ const InteractivePhoneMockup: React.FC = () => {
       {/* Phone Frame */}
       <div className="relative w-[300px] h-[600px] bg-gray-900 rounded-[3rem] shadow-[0_0_50px_rgba(0,0,0,0.2)] border-[8px] border-gray-900 overflow-hidden ring-4 ring-gray-200/20">
         {/* Dynamic Notch */}
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-7 bg-black rounded-b-2xl z-50 transition-all duration-300 hover:w-40 hover:h-8 cursor-pointer flex items-center justify-center">
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-7 bg-black rounded-b-2xl z-50 transition-all motion-reduce:duration-[0.01ms] duration-300 hover:w-40 hover:h-8 cursor-pointer flex items-center justify-center">
           <div className="w-16 h-1 bg-gray-800 rounded-full"></div>
         </div>
 
         {/* Screen Content */}
         <div
-          className={`w-full h-full pt-10 pb-20 overflow-y-auto no-scrollbar transition-colors duration-500 ${isDarkMode ? 'bg-slate-900 text-white' : 'bg-gray-50 text-slate-800'}`}
+          className={`w-full h-full pt-10 pb-20 overflow-y-auto no-scrollbar transition-colors motion-reduce:duration-[0.01ms] duration-500 ${isDarkMode ? 'bg-slate-900 text-white' : 'bg-gray-50 text-slate-800'}`}
         >
           {/* Header inside Phone */}
           <div className="px-6 mb-6 flex justify-between items-center">
@@ -42,7 +42,7 @@ const InteractivePhoneMockup: React.FC = () => {
             </div>
             <button
               onClick={() => setIsDarkMode(!isDarkMode)}
-              className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${isDarkMode ? 'bg-white/10 text-yellow-400' : 'bg-gray-200 text-gray-600'}`}
+              className={`active:scale-[0.97] w-8 h-8 rounded-full flex items-center justify-center transition-colors motion-reduce:duration-[0.01ms] ${isDarkMode ? 'bg-white/10 text-yellow-400' : 'bg-gray-200 text-gray-600'}`}
             >
               <OptimizedIcon icon={isDarkMode ? Sun : Moon} className="text-sm" />
             </button>
@@ -78,7 +78,7 @@ const InteractivePhoneMockup: React.FC = () => {
                   <p className="text-xs opacity-80 mb-4 relative z-10">
                     Check out the latest collection.
                   </p>
-                  <button className="bg-white text-blue-600 px-4 py-1.5 rounded-lg text-xs font-bold shadow-sm relative z-10">
+                  <button className="active:scale-[0.97] bg-white text-blue-600 px-4 py-1.5 rounded-lg text-xs font-bold shadow-sm relative z-10">
                     Shop Now
                   </button>
                 </div>
@@ -165,19 +165,19 @@ const InteractivePhoneMockup: React.FC = () => {
         >
           <button
             onClick={() => setActiveTab('home')}
-            className={`flex flex-col items-center gap-1 ${activeTab === 'home' ? 'text-blue-500' : 'opacity-40'}`}
+            className={`active:scale-[0.97] flex flex-col items-center gap-1 ${activeTab === 'home' ? 'text-blue-500' : 'opacity-40'}`}
           >
             <OptimizedIcon icon={House} className="text-xl" />
           </button>
           <button
             onClick={() => setActiveTab('shop')}
-            className={`flex flex-col items-center gap-1 ${activeTab === 'shop' ? 'text-blue-500' : 'opacity-40'}`}
+            className={`active:scale-[0.97] flex flex-col items-center gap-1 ${activeTab === 'shop' ? 'text-blue-500' : 'opacity-40'}`}
           >
             <OptimizedIcon icon={ShoppingBag} className="text-xl" />
           </button>
           <button
             onClick={() => setActiveTab('profile')}
-            className={`flex flex-col items-center gap-1 ${activeTab === 'profile' ? 'text-blue-500' : 'opacity-40'}`}
+            className={`active:scale-[0.97] flex flex-col items-center gap-1 ${activeTab === 'profile' ? 'text-blue-500' : 'opacity-40'}`}
           >
             <OptimizedIcon icon={User} className="text-xl" />
           </button>

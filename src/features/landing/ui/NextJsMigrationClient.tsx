@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 import { SeoHead } from '@/shared/ui/SeoHead';
@@ -31,7 +31,7 @@ const NextJsMigration: React.FC = () => {
             jetzt auf React und Next.js für maximale Performance und Konversion.
           </p>
           <div className="flex gap-4 justify-center">
-            <button className="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-500 transition-colors shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(37,99,235,0.6)] transform hover:-translate-y-1">
+            <button className="active:scale-[0.97] bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-500 transition-colors motion-reduce:duration-[0.01ms] shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(37,99,235,0.6)] transform hover:-translate-y-1">
               Migrations-Audit anfragen
             </button>
           </div>
@@ -46,7 +46,7 @@ const NextJsMigration: React.FC = () => {
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-blue-200 transition-colors">
+            <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-blue-200 transition-colors motion-reduce:duration-[0.01ms]">
               <div className="bg-blue-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
                 <Lightning size={32} className="text-blue-600" weight="duotone" />
               </div>
@@ -56,7 +56,7 @@ const NextJsMigration: React.FC = () => {
                 garantiert.
               </p>
             </div>
-            <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-blue-200 transition-colors">
+            <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-blue-200 transition-colors motion-reduce:duration-[0.01ms]">
               <div className="bg-blue-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
                 <RocketLaunch size={32} className="text-blue-600" weight="duotone" />
               </div>
@@ -66,7 +66,7 @@ const NextJsMigration: React.FC = () => {
                 Rendering.
               </p>
             </div>
-            <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-blue-200 transition-colors">
+            <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-blue-200 transition-colors motion-reduce:duration-[0.01ms]">
               <div className="bg-blue-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
                 <ShieldCheck size={32} className="text-blue-600" weight="duotone" />
               </div>
@@ -88,7 +88,7 @@ const NextJsMigration: React.FC = () => {
           <p className="text-xl text-slate-600 mb-10">
             Ohne Downtime. Ohne Ranking-Verlust. Mit maximalem ROI.
           </p>
-          <button className="bg-secondary text-white px-8 py-4 rounded-xl font-bold hover:bg-secondary/90 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+          <button className="active:scale-[0.97] bg-secondary text-white px-8 py-4 rounded-xl font-bold hover:bg-secondary/90 transition-colors motion-reduce:duration-[0.01ms] shadow-lg hover:shadow-xl transform hover:-translate-y-1">
             Kostenlose Potenzialanalyse sichern
           </button>
         </div>

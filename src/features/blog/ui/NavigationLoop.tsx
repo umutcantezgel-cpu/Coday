@@ -11,7 +11,7 @@ export const RelatedArticles: React.FC<{ currentSlug: string; category: string }
   currentSlug,
   category,
 }) => {
-  const t = useTranslations('blog'); 
+  const t = useTranslations('blog');
   const locale = useLocale();
   const allPosts = getBlogPosts(locale);
 
@@ -41,28 +41,28 @@ export const RelatedArticles: React.FC<{ currentSlug: string; category: string }
             <Link
               key={post.id}
               href={`/knowledge/blog/${post.slug}`}
-              className="group block bg-white rounded-3xl p-2 shadow-sm hover:shadow-xl transition-all duration-300 border border-transparent hover:border-gray-100"
+              className="group block bg-white rounded-3xl p-2 shadow-sm hover:shadow-xl transition-all motion-reduce:duration-[0.01ms] duration-300 border border-transparent hover:border-gray-100"
             >
               <div className="flex gap-6 items-center h-full">
                 <div className="w-24 h-24 shrink-0 rounded-2xl overflow-hidden relative">
                   <OptimizedImage
                     src={post.image}
                     alt={post.alt}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms] duration-500"
                   />
                 </div>
                 <div className="flex-1 py-2 pr-4">
                   <span className="text-xs font-bold text-primary uppercase tracking-wider mb-2 block">
                     {post.category}
                   </span>
-                  <h4 className="font-bold text-secondary text-lg leading-snug mb-2 group-hover:text-primary transition-colors line-clamp-2">
+                  <h4 className="font-bold text-secondary text-lg leading-snug mb-2 group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms] line-clamp-2">
                     {post.title}
                   </h4>
-                  <div className="flex items-center text-sm text-gray-400 font-medium group-hover:text-primary transition-colors">
+                  <div className="flex items-center text-sm text-gray-400 font-medium group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms]">
                     {t('readArticle')}
                     <ArrowRight
                       size={14}
-                      className="ml-1 group-hover:translate-x-1 transition-transform"
+                      className="ml-1 group-hover:translate-x-1 transition-transform motion-reduce:duration-[0.01ms]"
                     />
                   </div>
                 </div>

@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 import { SeoHead } from '@/shared/ui/SeoHead';
@@ -34,7 +34,7 @@ const LocalWetzlar: React.FC = () => {
             einen digitalen Kundenmagneten.
           </p>
           <div className="flex gap-4 justify-center">
-            <button className="bg-secondary text-white px-8 py-4 rounded-xl font-bold hover:bg-secondary/90 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+            <button className="active:scale-[0.97] bg-secondary text-white px-8 py-4 rounded-xl font-bold hover:bg-secondary/90 transition-colors motion-reduce:duration-[0.01ms] shadow-lg hover:shadow-xl transform hover:-translate-y-1">
               Jetzt Potenzial-Analyse sichern
             </button>
           </div>
@@ -44,7 +44,7 @@ const LocalWetzlar: React.FC = () => {
       <section className="py-24 bg-aurora-white relative border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow motion-reduce:duration-[0.01ms]">
               <div className="bg-primary/10 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
                 <Lightning size={32} className="text-primary" weight="duotone" />
               </div>
@@ -54,7 +54,7 @@ const LocalWetzlar: React.FC = () => {
                 in Wetzlar.
               </p>
             </div>
-            <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow motion-reduce:duration-[0.01ms]">
               <div className="bg-primary/10 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
                 <ChartLineUp size={32} className="text-primary" weight="duotone" />
               </div>
@@ -63,7 +63,7 @@ const LocalWetzlar: React.FC = () => {
                 Datenbasierte Designs, die aus lokalen Besuchern in Wetzlar zahlende Kunden machen.
               </p>
             </div>
-            <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow motion-reduce:duration-[0.01ms]">
               <div className="bg-primary/10 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
                 <BuildingOffice size={32} className="text-primary" weight="duotone" />
               </div>
@@ -87,7 +87,7 @@ const LocalWetzlar: React.FC = () => {
             Lassen Sie uns herausfinden, wie wir Ihr Unternehmen in Wetzlar digital skalieren
             können.
           </p>
-          <button className="bg-primary text-white px-8 py-4 rounded-xl font-bold hover:bg-primary/90 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+          <button className="active:scale-[0.97] bg-primary text-white px-8 py-4 rounded-xl font-bold hover:bg-primary/90 transition-colors motion-reduce:duration-[0.01ms] shadow-lg hover:shadow-xl transform hover:-translate-y-1">
             Kostenloses Erstgespräch buchen
           </button>
         </div>

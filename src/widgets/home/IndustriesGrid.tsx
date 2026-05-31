@@ -1,10 +1,8 @@
-
-
 import React from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import dynamic from 'next/dynamic';
-const FadeInUp = dynamic(() => import('@/shared/ui/MotionWrappers').then(m => m.FadeInUp));
+import { FadeInUp } from '@/shared/ui/MotionWrappers';
 import {
   Barricade as Construction,
   Buildings as Apartment,
@@ -72,12 +70,7 @@ export const IndustriesGrid: React.FC = () => {
 
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
           {industries.map((ind, index) => (
-            <FadeInUp
-              key={ind.id}
-              duration={0.6}
-              delay={index * 0.1}
-              className="h-full"
-            >
+            <FadeInUp key={ind.id} duration={0.6} delay={index * 0.1} className="h-full">
               <Link href={ind.link} className="block h-full">
                 <BentoCard
                   effect={ind.effect}

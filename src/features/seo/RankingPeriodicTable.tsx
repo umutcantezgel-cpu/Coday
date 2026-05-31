@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useRtl } from '@/shared/hooks/useRtl';
@@ -128,7 +128,7 @@ const RankingPeriodicTable: React.FC = () => {
                 key={idx}
                 whileHover={{ scale: 1.1, zIndex: 10 }}
                 onMouseEnter={() => setActiveElement(el)}
-                className="w-16 h-16 sm:w-20 sm:h-20 cursor-pointer rounded-lg border border-white/10 flex flex-col items-center justify-center relative backdrop-blur-sm bg-white/5 transition-colors"
+                className="w-16 h-16 sm:w-20 sm:h-20 cursor-pointer rounded-lg border border-white/10 flex flex-col items-center justify-center relative backdrop-blur-sm bg-white/5 transition-colors motion-reduce:duration-[0.01ms]"
                 style={{
                   borderColor:
                     activeElement?.symbol === el.symbol ? getCategoryColor(el.category) : '',

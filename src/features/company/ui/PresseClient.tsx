@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 import { SeoHead } from '@/shared/ui/SeoHead';
@@ -66,9 +66,9 @@ const Presse: React.FC = () => {
               </p>
               {/* Logo Grid placeholder */}
               <div className="flex flex-wrap justify-center gap-8 opacity-30 grayscale">
-                <div className="h-12 w-32 bg-gray-200 rounded animate-pulse"></div>
-                <div className="h-12 w-32 bg-gray-200 rounded animate-pulse"></div>
-                <div className="h-12 w-32 bg-gray-200 rounded animate-pulse"></div>
+                <div className="h-12 w-32 bg-gray-200 rounded animate-pulse motion-reduce:animate-none"></div>
+                <div className="h-12 w-32 bg-gray-200 rounded animate-pulse motion-reduce:animate-none"></div>
+                <div className="h-12 w-32 bg-gray-200 rounded animate-pulse motion-reduce:animate-none"></div>
               </div>
             </div>
           </section>
@@ -104,7 +104,7 @@ const Presse: React.FC = () => {
                 Laden Sie unser offizielles Press Kit herunter. Es enthält hochauflösende Logos,
                 Gründerfotos und Kurzprofile von Coday.
               </p>
-              <button className="relative z-10 inline-flex items-center gap-2 bg-primary text-white font-bold py-3 px-8 rounded-xl hover:bg-primary/90 transition-colors">
+              <button className="active:scale-[0.97] relative z-10 inline-flex items-center gap-2 bg-primary text-white font-bold py-3 px-8 rounded-xl hover:bg-primary/90 transition-colors motion-reduce:duration-[0.01ms]">
                 <OptimizedIcon icon={Download} className="text-xl" />
                 Press Kit Herunterladen
               </button>

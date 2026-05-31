@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Module } from '@/shared/data/modules';
@@ -36,7 +36,7 @@ export const ModuleCard: React.FC<ModuleCardProps> = ({
     <div
       onClick={!disabled && !isIncluded ? onToggle : undefined}
       className={`
-        relative p-4 rounded-xl border transition-all duration-300 flex flex-col h-full
+        relative p-4 rounded-xl border transition-all motion-reduce:duration-[0.01ms] duration-300 flex flex-col h-full
         ${
           isIncluded
             ? 'bg-emerald-50/50 border-emerald-200 cursor-default'
@@ -77,7 +77,7 @@ export const ModuleCard: React.FC<ModuleCardProps> = ({
       {/* Header */}
       <div className="flex items-start justify-between mb-2 mt-1">
         <div
-          className={`p-2 rounded-lg transition-colors ${
+          className={`p-2 rounded-lg transition-colors motion-reduce:duration-[0.01ms] ${
             isIncluded
               ? 'bg-emerald-100 text-emerald-600'
               : isSelected
@@ -109,7 +109,7 @@ export const ModuleCard: React.FC<ModuleCardProps> = ({
         {/* Learn More Toggle */}
         <button
           onClick={handleToggleDetails}
-          className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-wide text-primary hover:text-primary/80 transition-colors mb-2"
+          className="active:scale-[0.97] flex items-center gap-1 text-[10px] font-bold uppercase tracking-wide text-primary hover:text-primary/80 transition-colors motion-reduce:duration-[0.01ms] mb-2"
         >
           <Icon name={showDetails ? 'expand_less' : 'expand_more'} className="text-sm" />
           {showDetails ? 'Weniger anzeigen' : 'Mehr erfahren'}
@@ -119,9 +119,9 @@ export const ModuleCard: React.FC<ModuleCardProps> = ({
         <AnimatePresence>
           {showDetails && (
             <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: 'auto', opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2 }}
               className="overflow-hidden"
             >
@@ -136,7 +136,7 @@ export const ModuleCard: React.FC<ModuleCardProps> = ({
       {/* Selection Indicator (Implicit/Minimal) */}
       <div
         className={`
-                mt-auto w-full py-1.5 rounded-md text-center text-xs font-bold transition-all
+                mt-auto w-full py-1.5 rounded-md text-center text-xs font-bold transition-all motion-reduce:duration-[0.01ms]
                 ${
                   isIncluded
                     ? 'bg-emerald-100 text-emerald-700'

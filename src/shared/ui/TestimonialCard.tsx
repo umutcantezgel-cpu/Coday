@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React from 'react';
 import { Star, Quotes } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
@@ -104,7 +104,7 @@ export const TestimonialCard: React.FC<TestimonialProps> = ({
               alt={authorCompany || 'Company'}
               width={60}
               height={30}
-              className="object-contain max-h-8 opacity-70 grayscale hover:grayscale-0 transition-all duration-300"
+              className="object-contain max-h-8 opacity-70 grayscale hover:grayscale-0 transition-all motion-reduce:duration-[0.01ms] duration-300"
             />
           </div>
         )}

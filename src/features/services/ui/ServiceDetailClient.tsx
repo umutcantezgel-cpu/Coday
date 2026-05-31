@@ -168,13 +168,16 @@ export function ServiceDetailClient() {
       {/* Breadcrumb */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
         <div className="flex items-center text-sm text-gray-500">
-          <NavLink href="/services" className="hover:text-sapphire transition-colors">
+          <NavLink
+            href="/services"
+            className="hover:text-sapphire transition-colors motion-reduce:duration-[0.01ms]"
+          >
             {tCommon('nav.services.label')}
           </NavLink>
           <span className="mx-2">/</span>
           <NavLink
             href={`/services/${category}`}
-            className="hover:text-sapphire transition-colors capitalize"
+            className="hover:text-sapphire transition-colors motion-reduce:duration-[0.01ms] capitalize"
           >
             {service.category}
           </NavLink>
@@ -199,7 +202,7 @@ export function ServiceDetailClient() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <NavLink
                 href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl bg-gray-900 hover:bg-gray-800 shadow-lg hover:shadow-xl transition-all match-hover-translate-y-1"
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl bg-gray-900 hover:bg-gray-800 shadow-lg hover:shadow-xl transition-all motion-reduce:duration-[0.01ms] match-hover-translate-y-1"
               >
                 {t('generic_detail.hero.consulting_btn')}
                 <OptimizedIcon icon={CalendarIcon} className="ml-2" />
@@ -286,8 +289,8 @@ export function ServiceDetailClient() {
           {/* Background Blobs (preserved but pushed back) */}
           <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
             <div className="absolute inset-0 bg-gray-900/80"></div> {/* Darken overlay */}
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl mix-blend-screen animate-pulse-slow"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-3xl mix-blend-screen animate-pulse-slow delay-1000"></div>
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl mix-blend-screen animate-pulse-slow motion-reduce:animate-none"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-3xl mix-blend-screen animate-pulse-slow delay-1000 motion-reduce:animate-none"></div>
           </div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -308,7 +311,7 @@ export function ServiceDetailClient() {
                 {processSteps.map((step, index) => (
                   <div key={index} className="relative group">
                     <div className="flex flex-col items-center text-center">
-                      <div className="w-16 h-16 rounded-2xl bg-gray-800 border border-gray-700 flex items-center justify-center text-xl font-bold font-display mb-6 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300 shadow-lg relative z-10">
+                      <div className="w-16 h-16 rounded-2xl bg-gray-800 border border-gray-700 flex items-center justify-center text-xl font-bold font-display mb-6 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all motion-reduce:duration-[0.01ms] duration-300 shadow-lg relative z-10">
                         {step.number}
                       </div>
                       <h3 className="text-xl font-bold mb-4 h-14 flex items-center justify-center">
@@ -340,7 +343,7 @@ export function ServiceDetailClient() {
               </p>
               <NavLink
                 href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl bg-gray-900 hover:bg-gray-800 shadow-lg hover:shadow-xl transition-all"
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl bg-gray-900 hover:bg-gray-800 shadow-lg hover:shadow-xl transition-all motion-reduce:duration-[0.01ms]"
               >
                 {t('generic_detail.advantages.contact_btn')}
               </NavLink>
@@ -349,7 +352,7 @@ export function ServiceDetailClient() {
               {advantages.map((adv, index) => (
                 <div
                   key={index}
-                  className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+                  className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow motion-reduce:duration-[0.01ms]"
                 >
                   <OptimizedIcon
                     icon={iconMap[adv.icon] || Code}
@@ -411,8 +414,8 @@ export function ServiceDetailClient() {
 
       {/* CTA Section */}
       <section className="max-w-5xl mx-auto px-4 text-center pb-20">
-        <div className="glass-card p-12 rounded-3xl bg-secondary border border-gray-800 relative overflow-hidden group hover:border-gray-700 transition-colors">
-          <div className="absolute top-0 right-0 p-32 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-primary/20 transition-colors duration-500"></div>
+        <div className="glass-card p-12 rounded-3xl bg-secondary border border-gray-800 relative overflow-hidden group hover:border-gray-700 transition-colors motion-reduce:duration-[0.01ms]">
+          <div className="absolute top-0 right-0 p-32 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-primary/20 transition-colors motion-reduce:duration-[0.01ms] duration-500"></div>
 
           <div className="relative z-10">
             <h2 className="font-display font-bold text-3xl text-white mb-6">
@@ -423,7 +426,7 @@ export function ServiceDetailClient() {
             </p>
             <NavLink
               href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-gray-900 rounded-xl bg-white hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-gray-900 rounded-xl bg-white hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all motion-reduce:duration-[0.01ms] transform hover:-translate-y-1"
             >
               {t('generic_detail.final_cta.button')}
               <OptimizedIcon icon={RocketLaunch} className="ml-2" />
@@ -440,20 +443,18 @@ const FaqItem: React.FC<{ question: string; answer: string }> = ({ question, ans
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border border-gray-200 rounded-xl bg-white overflow-hidden transition-all duration-300 hover:shadow-sm">
+    <div className="border border-gray-200 rounded-xl bg-white overflow-hidden transition-all motion-reduce:duration-[0.01ms] duration-300 hover:shadow-sm">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between p-6 text-left focus-visible:ring-2 focus-visible:ring-primary focus-visible:rounded-xl"
+        className="active:scale-[0.97] w-full flex items-center justify-between p-6 text-left focus-visible:ring-2 focus-visible:ring-primary focus-visible:rounded-xl"
       >
         <span className="font-bold text-gray-900 text-lg">{question}</span>
         <OptimizedIcon
           icon={CaretDown}
-          className={`text-gray-400 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+          className={`text-gray-400 transition-transform motion-reduce:duration-[0.01ms] duration-300 ${isOpen ? 'rotate-180' : ''}`}
         />
       </button>
-      <div
-        className={`px-6 text-gray-600 leading-relaxed overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96 pb-6 opacity-100' : 'max-h-0 opacity-0'}`}
-      >
+      <div className={`px-6 text-gray-600 leading-relaxed ${isOpen ? 'block pb-6' : 'hidden'}`}>
         {answer}
       </div>
     </div>

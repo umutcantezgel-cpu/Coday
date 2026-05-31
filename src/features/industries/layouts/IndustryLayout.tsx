@@ -39,7 +39,10 @@ const ParallaxHero = ({
       ref={ref}
       className="relative h-dvh min-h-[800px] flex items-center justify-center overflow-hidden"
     >
-      <motion.div style={{ y, opacity, willChange: 'transform, opacity', transform: 'translateZ(0)' }} className="absolute inset-0 z-0 transform-gpu">
+      <motion.div
+        style={{ y, opacity, willChange: 'transform, opacity', transform: 'translateZ(0)' }}
+        className="absolute inset-0 z-0 transform-gpu"
+      >
         {video ? (
           <video
             src={video}
@@ -111,7 +114,7 @@ export const IndustryLayout: React.FC<IndustryLayoutProps> = ({
       >
         <Link
           href="/work"
-          className="inline-flex items-center gap-2 hover:opacity-70 transition-opacity"
+          className="inline-flex items-center gap-2 hover:opacity-70 transition-opacity motion-reduce:duration-[0.01ms]"
         >
           <Icon name="arrow_left" size="md" />
           <span className="font-medium">Back</span>
@@ -131,7 +134,7 @@ export const IndustryLayout: React.FC<IndustryLayoutProps> = ({
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 }}
-                  className="bg-gray-900/90 backdrop-blur-xl border border-white/10 p-8 rounded-3xl hover:bg-black transition-colors shadow-xl"
+                  className="bg-gray-900/90 backdrop-blur-xl border border-white/10 p-8 rounded-3xl hover:bg-black transition-colors motion-reduce:duration-[0.01ms] shadow-xl"
                 >
                   <h3 className="text-xl font-bold text-white mb-4">{point.title}</h3>
                   <p className="text-white/70">{point.description}</p>
@@ -142,7 +145,9 @@ export const IndustryLayout: React.FC<IndustryLayoutProps> = ({
         </section>
 
         {/* Custom Interactive Module (Slider etc) */}
-        {children && <section className="py-[var(--space-section)] overflow-hidden">{children}</section>}
+        {children && (
+          <section className="py-[var(--space-section)] overflow-hidden">{children}</section>
+        )}
 
         {/* Solutions/Features */}
         <section className="py-[var(--space-section)] bg-black text-white">
@@ -153,7 +158,7 @@ export const IndustryLayout: React.FC<IndustryLayoutProps> = ({
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               {solutions.map((sol, i) => (
                 <div key={i} className="flex gap-6 group">
-                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
+                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0 group-hover:bg-primary group-hover:text-white transition-colors motion-reduce:duration-[0.01ms]">
                     <Icon name="check" className="text-xl" />
                   </div>
                   <div>
@@ -174,7 +179,7 @@ export const IndustryLayout: React.FC<IndustryLayoutProps> = ({
             </h2>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-4 bg-white text-primary px-8 py-4 rounded-full font-bold text-xl hover:scale-105 transition-transform"
+              className="inline-flex items-center gap-4 bg-white text-primary px-8 py-4 rounded-full font-bold text-xl hover:scale-105 transition-transform motion-reduce:duration-[0.01ms]"
             >
               Strategiegespräch buchen <Icon name="arrow_right" />
             </Link>

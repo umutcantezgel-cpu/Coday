@@ -43,7 +43,7 @@ export const PricingReality: React.FC = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="grid grid-cols-1 md:grid-cols-3 bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-md transition-shadow"
+                className="grid grid-cols-1 md:grid-cols-3 bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-md transition-shadow motion-reduce:duration-[0.01ms]"
               >
                 {/* Criteria */}
                 <div className="p-6 flex items-center gap-3 bg-slate-50/50 border-b md:border-b-0 md:border-r border-slate-100 font-bold text-slate-700">
@@ -58,7 +58,7 @@ export const PricingReality: React.FC = () => {
 
                 {/* Coday (Good) */}
                 <div className="p-6 flex items-center gap-3 text-slate-800 bg-blue-50/10 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-blue-50/20 opacity-0 md:group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute inset-0 bg-blue-50/20 opacity-0 md:group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms]" />
                   <OptimizedIcon
                     icon={CheckCircle}
                     className="w-5 h-5 text-emerald-500 flex-shrink-0"

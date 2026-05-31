@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
@@ -98,7 +98,9 @@ const Services: React.FC = () => {
             </ScrollFloat>
             <div className="max-w-2xl">
               <RotatingText
-                texts={(t.raw('hero.rotating') as string[]) || ['Web-Design', 'Web-Entwicklung', 'SEO']}
+                texts={
+                  (t.raw('hero.rotating') as string[]) || ['Web-Design', 'Web-Entwicklung', 'SEO']
+                }
                 rotationInterval={3500}
                 staggerFrom="first"
                 staggerDuration={0.025}
@@ -111,7 +113,7 @@ const Services: React.FC = () => {
             <OptimizedImage
               src={serviceImages.hero!.src}
               alt={t(serviceImages.hero!.alt)}
-              className="relative rounded-3xl shadow-flat-lg w-full transform -rotate-1 hover:rotate-0 transition-all duration-500"
+              className="relative rounded-3xl shadow-flat-lg w-full transform -rotate-1 hover:rotate-0 transition-all motion-reduce:duration-[0.01ms] duration-500"
               priority
             />
           </div>
@@ -127,14 +129,14 @@ const Services: React.FC = () => {
               effect={cat.effect}
               spotlightColor="rgba(20, 122, 122, 0.15)"
               glowColor="rgba(139, 92, 246, 0.3)"
-              className="h-full border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02] hover:border-primary/20 transition-all duration-500 ease-out bg-white rounded-2xl md:aspect-[1/1.618]"
+              className="h-full border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02] hover:border-primary/20 transition-all motion-reduce:duration-[0.01ms] duration-500 ease-out bg-white rounded-2xl md:aspect-[1/1.618]"
             >
               <NavLink
                 href={cat.link}
                 className="group relative p-6 md:p-8 block h-full flex flex-col"
               >
                 {/* Decorative Background Image */}
-                <div className="absolute top-0 end-0 w-64 h-64 opacity-[0.02] transform translate-x-12 rtl:-translate-x-12 -translate-y-12 group-hover:scale-110 group-hover:opacity-[0.05] transition-all duration-700 rounded-bl-[100px] rtl:rounded-br-[100px] rtl:rounded-bl-none overflow-hidden pointer-events-none ease-out">
+                <div className="absolute top-0 end-0 w-64 h-64 opacity-[0.02] transform translate-x-12 rtl:-translate-x-12 -translate-y-12 group-hover:scale-110 group-hover:opacity-[0.05] transition-all motion-reduce:duration-[0.01ms] duration-700 rounded-bl-[100px] rtl:rounded-br-[100px] rtl:rounded-bl-none overflow-hidden pointer-events-none ease-out">
                   {serviceImages[cat.imageKey || 'hero'] && (
                     <OptimizedImage
                       src={serviceImages[cat.imageKey || 'hero']!.src}
@@ -144,12 +146,12 @@ const Services: React.FC = () => {
                   )}
                 </div>
                 <div
-                  className={`absolute top-0 end-0 w-32 h-32 ${cat.color} opacity-[0.03] rounded-bl-[100px] rtl:rounded-br-[100px] rtl:rounded-bl-none transition-transform duration-700 ease-out group-hover:scale-[1.3] group-hover:opacity-[0.06]`}
+                  className={`absolute top-0 end-0 w-32 h-32 ${cat.color} opacity-[0.03] rounded-bl-[100px] rtl:rounded-br-[100px] rtl:rounded-bl-none transition-transform motion-reduce:duration-[0.01ms] duration-700 ease-out group-hover:scale-[1.3] group-hover:opacity-[0.06]`}
                 ></div>
 
                 <div className="relative z-10 flex-grow">
                   <div
-                    className={`w-14 h-14 ${cat.color} bg-opacity-10 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500 group-hover:scale-110 group-hover:bg-opacity-20 group-hover:-rotate-3 shadow-sm`}
+                    className={`w-14 h-14 ${cat.color} bg-opacity-10 rounded-2xl flex items-center justify-center mb-6 transition-all motion-reduce:duration-[0.01ms] duration-500 group-hover:scale-110 group-hover:bg-opacity-20 group-hover:-rotate-3 shadow-sm`}
                   >
                     <OptimizedIcon
                       icon={cat.icon}
@@ -158,17 +160,17 @@ const Services: React.FC = () => {
                     />
                   </div>
 
-                  <h3 className="font-display font-bold text-xl md:text-2xl text-secondary mb-3 group-hover:text-primary transition-colors duration-300">
+                  <h3 className="font-display font-bold text-xl md:text-2xl text-secondary mb-3 group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms] duration-300">
                     {cat.title}
                   </h3>
                   <p className="text-base text-slate-600 mb-8 leading-[1.618]">{cat.description}</p>
                 </div>
-                <div className="flex items-center text-primary font-bold tracking-wide uppercase text-sm mt-auto transition-all duration-300 group-hover:tracking-wider">
+                <div className="flex items-center text-primary font-bold tracking-wide uppercase text-sm mt-auto transition-all motion-reduce:duration-[0.01ms] duration-300 group-hover:tracking-wider">
                   {t('cta.more')}
                   <OptimizedIcon
                     icon={ArrowRight}
                     weight="bold"
-                    className="ms-3 group-hover:translate-x-2 rtl:group-hover:-translate-x-2 transition-transform duration-300 ease-out"
+                    className="ms-3 group-hover:translate-x-2 rtl:group-hover:-translate-x-2 transition-transform motion-reduce:duration-[0.01ms] duration-300 ease-out"
                   />
                 </div>
               </NavLink>
@@ -201,7 +203,7 @@ const Services: React.FC = () => {
           </ScrollFloat>
           <React.Suspense
             fallback={
-              <div className="h-14 w-40 bg-gray-200 rounded-xl animate-pulse inline-block" />
+              <div className="h-14 w-40 bg-gray-200 rounded-xl animate-pulse inline-block motion-reduce:animate-none" />
             }
           >
             <GlareHover glareColor="#ffffff" glareOpacity={0.4} className="inline-block rounded-xl">

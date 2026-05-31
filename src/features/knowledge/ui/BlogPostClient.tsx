@@ -110,7 +110,7 @@ const BlogPost: React.FC = () => {
       <nav className="fixed top-24 left-4 z-40 md:left-8">
         <Link
           href="/knowledge/blog"
-          className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-md border border-white/20 rounded-full text-secondary hover:bg-white hover:shadow-lg transition-all font-medium text-sm shadow-sm"
+          className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-md border border-white/20 rounded-full text-secondary hover:bg-white hover:shadow-lg transition-all motion-reduce:duration-[0.01ms] font-medium text-sm shadow-sm"
         >
           <ArrowLeft size={16} />
           <span className="hidden md:inline">{t('blog:backToOverview')}</span>
@@ -195,7 +195,7 @@ const BlogPost: React.FC = () => {
                   </div>
                   <Link
                     href="/contact"
-                    className="shrink-0 px-6 py-3 bg-primary text-white font-bold rounded-xl shadow-lg shadow-primary/30 hover:bg-primary-dark transition-all transform hover:-translate-y-1 flex items-center gap-2"
+                    className="shrink-0 px-6 py-3 bg-primary text-white font-bold rounded-xl shadow-lg shadow-primary/30 hover:bg-primary-dark transition-all motion-reduce:duration-[0.01ms] transform hover:-translate-y-1 flex items-center gap-2"
                   >
                     <EnvelopeSimple size={20} />
                     {t('cta.button')}
@@ -213,7 +213,7 @@ const BlogPost: React.FC = () => {
                   <p className="text-slate-500 mb-4 leading-relaxed">{t('authorDesc')}</p>
                   <Link
                     href="/about"
-                    className="text-primary font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all"
+                    className="text-primary font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all motion-reduce:duration-[0.01ms]"
                   >
                     {t('moreAboutAuthor')}
                     <ArrowRight size={14} />

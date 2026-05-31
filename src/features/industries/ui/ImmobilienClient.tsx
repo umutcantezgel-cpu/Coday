@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 import { useTranslations } from 'next-intl';
@@ -76,7 +76,7 @@ const Immobilien: React.FC = () => {
                 {t('immobilien-makler.hero.subheadline')}
               </p>
               <div className="flex gap-4 mb-12">
-                <button className="bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:bg-secondary/90 transition-colors">
+                <button className="active:scale-[0.97] bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:bg-secondary/90 transition-colors motion-reduce:duration-[0.01ms]">
                   {t('immobilien-makler.features.virtual_tour.cta')}
                 </button>
               </div>
@@ -137,9 +137,9 @@ const Immobilien: React.FC = () => {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-xl transition-all border border-gray-100"
+                className="p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-xl transition-all motion-reduce:duration-[0.01ms] border border-gray-100"
               >
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms] duration-300">
                   <OptimizedIcon icon={iconMap[item.icon] || Cube} />
                 </div>
                 <h3 className="font-bold text-xl text-secondary mb-3">{item.title}</h3>

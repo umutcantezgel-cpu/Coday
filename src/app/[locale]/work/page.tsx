@@ -70,7 +70,7 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
               <Link
                 key={project.slug}
                 href={`/work/${project.slug}`}
-                className="group relative rounded-3xl overflow-hidden bg-white border border-neutral-200 shadow-sm hover:shadow-xl hover:border-primary-200 transition-all duration-500"
+                className="group relative rounded-3xl overflow-hidden bg-white border border-neutral-200 shadow-sm hover:shadow-xl hover:border-primary-200 transition-all motion-reduce:duration-[0.01ms] duration-500"
               >
                 {/* Image */}
                 <div className="relative aspect-video overflow-hidden bg-neutral-100">
@@ -78,7 +78,7 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
                     <OptimizedImage
                       src={heroImage}
                       alt={content.solution.imageAlts?.[0] || content.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="w-full h-full object-cover transition-transform motion-reduce:duration-[0.01ms] duration-700 group-hover:scale-105"
                     />
                   ) : (
                     <div className="w-full h-full bg-gradient-to-br from-secondary-800 to-secondary-950" />
@@ -114,13 +114,13 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-50 text-primary-700 font-bold text-xs uppercase tracking-widest mb-3">
                     {content.category}
                   </div>
-                  <h2 className="font-display font-bold text-xl text-secondary-900 mb-2 group-hover:text-primary-700 transition-colors">
+                  <h2 className="font-display font-bold text-xl text-secondary-900 mb-2 group-hover:text-primary-700 transition-colors motion-reduce:duration-[0.01ms]">
                     {content.title}
                   </h2>
                   <p className="text-secondary-600 text-sm line-clamp-2 mb-4">{content.subtitle}</p>
                   <div className="flex items-center gap-2 text-primary-600 font-semibold text-sm">
                     {isEn ? 'View Case Study' : 'Case Study ansehen'}
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform motion-reduce:duration-[0.01ms]" />
                   </div>
                 </div>
               </Link>
@@ -162,7 +162,7 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
                   {/* Progress bar */}
                   <div className="h-2 bg-neutral-200 rounded-full overflow-hidden">
                     <div
-                      className="h-full bg-gradient-to-r from-primary-500 to-primary-700 rounded-full transition-all duration-1000"
+                      className="h-full bg-gradient-to-r from-primary-500 to-primary-700 rounded-full transition-all motion-reduce:duration-[0.01ms] duration-1000"
                       style={{ width: `${project.completion ?? 0}%` }}
                     />
                   </div>

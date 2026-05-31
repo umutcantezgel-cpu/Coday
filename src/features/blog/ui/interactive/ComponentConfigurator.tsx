@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Palette, CornersOut, ArrowsOut, Check } from '@phosphor-icons/react/dist/ssr';
@@ -45,7 +45,8 @@ export const ComponentConfigurator: React.FC = () => {
                 key={c}
                 onClick={() => setColor(c)}
                 className={clsx(
-                  'w-10 h-10 rounded-full border-2 transition-all shadow-sm',
+                  'active:scale-[0.97]',
+                  'w-10 h-10 rounded-full border-2 transition-all motion-reduce:duration-[0.01ms] shadow-sm',
                   color === c ? 'border-gray-900 scale-110' : 'border-transparent scale-100',
                   c === 'blue' && 'bg-blue-600',
                   c === 'purple' && 'bg-purple-600',
@@ -68,7 +69,8 @@ export const ComponentConfigurator: React.FC = () => {
                 key={r}
                 onClick={() => setRadius(r)}
                 className={clsx(
-                  'flex-1 py-2 text-xs font-bold rounded-md transition-all capitalize',
+                  'active:scale-[0.97]',
+                  'flex-1 py-2 text-xs font-bold rounded-md transition-all motion-reduce:duration-[0.01ms] capitalize',
                   radius === r
                     ? 'bg-white shadow-sm text-gray-900'
                     : 'text-gray-500 hover:text-gray-700'
@@ -91,7 +93,8 @@ export const ComponentConfigurator: React.FC = () => {
                 key={p}
                 onClick={() => setPadding(p)}
                 className={clsx(
-                  'flex-1 py-2 text-xs font-bold rounded-md transition-all capitalize',
+                  'active:scale-[0.97]',
+                  'flex-1 py-2 text-xs font-bold rounded-md transition-all motion-reduce:duration-[0.01ms] capitalize',
                   padding === p
                     ? 'bg-white shadow-sm text-gray-900'
                     : 'text-gray-500 hover:text-gray-700'
@@ -111,7 +114,7 @@ export const ComponentConfigurator: React.FC = () => {
         <motion.div
           layout
           className={clsx(
-            'bg-white shadow-2xl max-w-sm w-full mx-8 relative z-10 transition-all duration-300 ease-out',
+            'bg-white shadow-2xl max-w-sm w-full mx-8 relative z-10 transition-all motion-reduce:duration-[0.01ms] duration-300 ease-out',
             radiusMap[radius],
             paddingMap[padding]
           )}
@@ -148,7 +151,7 @@ export const ComponentConfigurator: React.FC = () => {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             className={clsx(
-              'w-full py-3 px-6 text-white font-bold shadow-lg transition-colors',
+              'w-full py-3 px-6 text-white font-bold shadow-lg transition-colors motion-reduce:duration-[0.01ms]',
               colorMap[color],
               radius === 'full' ? 'rounded-full' : radius === 'none' ? 'rounded-none' : 'rounded-lg' // Buttons usually match brand radius
             )}

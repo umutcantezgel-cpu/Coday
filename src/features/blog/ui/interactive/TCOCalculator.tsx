@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { ChartBar, Warning } from '@phosphor-icons/react/dist/ssr';
@@ -84,7 +84,8 @@ export const TCOCalculator: React.FC = () => {
                     key={y}
                     onClick={() => setYears(y)}
                     className={clsx(
-                      'px-4 py-2 rounded-lg font-medium transition-colors',
+                      'active:scale-[0.97]',
+                      'px-4 py-2 rounded-lg font-medium transition-colors motion-reduce:duration-[0.01ms]',
                       years === y
                         ? 'bg-blue-600 text-white'
                         : 'bg-gray-100 text-gray-600 hover:bg-gray-200'

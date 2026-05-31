@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useTranslations } from 'next-intl';
@@ -41,7 +41,7 @@ const PosSyncDemo: React.FC = () => {
         {/* Connection Line */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
           <div
-            className={`w-12 h-12 rounded-full bg-surface-dark border-2 ${justSold ? 'border-green-500 animate-pulse' : 'border-gray-700'} flex items-center justify-center transition-colors duration-300`}
+            className={`w-12 h-12 rounded-full bg-surface-dark border-2 ${justSold ? 'border-green-500 animate-pulse motion-reduce:animate-none' : 'border-gray-700'} flex items-center justify-center transition-colors motion-reduce:duration-[0.01ms] duration-300`}
           >
             <Icon
               name="arrow-right"
@@ -138,14 +138,17 @@ const PosSyncDemo: React.FC = () => {
                 className="absolute inset-0 bg-black/50 backdrop-blur-[1px] flex items-center justify-center rounded-lg"
               >
                 <div className="bg-black text-white text-[10px] px-2 py-1 rounded-full flex gap-1 items-center">
-                  <Icon name="refresh-cw" className="w-3 h-3 animate-spin" />
+                  <Icon
+                    name="refresh-cw"
+                    className="w-3 h-3 animate-spin motion-reduce:animate-none"
+                  />
                   {t('ecommerce-retail.features.pos_sync.actions.update')}
                 </div>
               </motion.div>
             )}
           </div>
 
-          <button className="w-full bg-primary text-white text-xs font-bold py-2 rounded mt-3 opacity-50 cursor-not-allowed">
+          <button className="active:scale-[0.97] w-full bg-primary text-white text-xs font-bold py-2 rounded mt-3 opacity-50 cursor-not-allowed">
             {t('ecommerce-retail.features.pos_sync.actions.add_to_cart')}
           </button>
         </div>

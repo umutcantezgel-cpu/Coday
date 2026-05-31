@@ -25,7 +25,7 @@ const TeamGallery: React.FC = () => {
         >
           {/* Background Image (Mock color for now) */}
           <div
-            className={`absolute inset-0 bg-gradient-to-br ${idx % 2 === 0 ? 'from-gray-800 to-gray-900' : 'from-slate-700 to-slate-800'} transition-transform duration-500 group-hover:scale-110`}
+            className={`absolute inset-0 bg-gradient-to-br ${idx % 2 === 0 ? 'from-gray-800 to-gray-900' : 'from-slate-700 to-slate-800'} transition-transform motion-reduce:duration-[0.01ms] duration-500 group-hover:scale-110`}
           ></div>
 
           {/* Placeholder Avatar */}
@@ -34,15 +34,15 @@ const TeamGallery: React.FC = () => {
           </div>
 
           {/* Content Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-90 transition-opacity"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-90 transition-opacity motion-reduce:duration-[0.01ms]"></div>
 
-          <div className="absolute bottom-0 left-0 p-4 w-full translate-y-2 group-hover:translate-y-0 transition-transform">
+          <div className="absolute bottom-0 left-0 p-4 w-full translate-y-2 group-hover:translate-y-0 transition-transform motion-reduce:duration-[0.01ms]">
             <h4 className="font-bold text-white text-lg leading-none mb-1">{member.name}</h4>
             <p className="text-primary text-xs font-bold uppercase tracking-wider">{member.role}</p>
           </div>
 
           {/* Hover Reveal: Fun Fact */}
-          <div className="absolute inset-0 bg-primary/90 p-6 flex items-center justify-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="absolute inset-0 bg-primary/90 p-6 flex items-center justify-center text-center opacity-0 group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms] duration-300">
             <div>
               <span className="text-4xl mb-2 block">🍕</span>
               <p className="text-white font-bold text-sm">{member.funfact_title}</p>

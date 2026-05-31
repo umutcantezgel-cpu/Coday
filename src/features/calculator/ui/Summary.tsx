@@ -43,9 +43,7 @@ export const CalculatorSummary: React.FC = () => {
       {packageName && (
         <div className="mb-4 p-3 bg-primary/5 rounded-xl border border-primary/10 flex items-center gap-2">
           <OptimizedIcon icon={CheckCircle} className="text-primary" />
-          <span className="text-sm font-bold text-gray-900">
-            {t('summary.package')}:
-          </span>
+          <span className="text-sm font-bold text-gray-900">{t('summary.package')}:</span>
           <span className="text-sm font-bold text-primary">{packageName}</span>
         </div>
       )}
@@ -57,9 +55,7 @@ export const CalculatorSummary: React.FC = () => {
         )}
         {selectedModules.map((module) => (
           <div key={module.id} className="flex justify-between items-start text-sm">
-            <span className="text-gray-700 font-medium">
-              {t(`modules.${module.id}.name`)}
-            </span>
+            <span className="text-gray-700 font-medium">{t(`modules.${module.id}.name`)}</span>
             <span className="text-gray-900 font-bold whitespace-nowrap">
               {formatCurrency(module.priceInCents / 100, 'EUR', locale)}
             </span>
@@ -95,13 +91,13 @@ export const CalculatorSummary: React.FC = () => {
       <div className="space-y-3">
         <NavLink
           href="/contact"
-          className="w-full py-4 bg-primary text-white rounded-xl font-bold hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/25 flex items-center justify-center transform hover:-translate-y-1 text-lg animate-pulse hover:animate-none"
+          className="w-full py-4 bg-primary text-white rounded-xl font-bold hover:bg-primary/90 transition-all motion-reduce:duration-[0.01ms] shadow-lg hover:shadow-primary/25 flex items-center justify-center transform hover:-translate-y-1 text-lg animate-pulse hover:animate-none motion-reduce:animate-none"
         >
           {t('summary.continue')}
           <OptimizedIcon icon={ArrowRight} className="ml-2 text-lg" />
         </NavLink>
         <div className="text-center">
-          <button className="text-xs text-gray-400 hover:text-gray-600 underline">
+          <button className="active:scale-[0.97] text-xs text-gray-400 hover:text-gray-600 underline">
             {t('summary.share')}
           </button>
         </div>

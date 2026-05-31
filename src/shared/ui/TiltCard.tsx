@@ -60,7 +60,10 @@ export const TiltCard: React.FC<TiltCardProps> = ({ children, className, glare =
           rotateY,
           transformStyle: 'preserve-3d',
         }}
-        className={cn('relative w-full h-full transition-shadow duration-300', className)}
+        className={cn(
+          'relative w-full h-full transition-shadow motion-reduce:duration-[0.01ms] duration-300',
+          className
+        )}
       >
         <m.div
           style={{ transform: 'translateZ(30px)', transformStyle: 'preserve-3d' }}

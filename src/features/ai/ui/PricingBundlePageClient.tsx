@@ -41,21 +41,21 @@ const FaqItem = ({ question, answer }: { question: string; answer: string }) => 
     <div className="border border-slate-200 rounded-2xl overflow-hidden bg-white mb-4">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-6 py-4 flex items-center justify-between text-left focus:outline-none"
+        className="active:scale-[0.97] w-full px-6 py-4 flex items-center justify-between text-left focus:outline-none"
         aria-expanded={isOpen}
       >
         <span className="font-bold text-secondary">{question}</span>
         <OptimizedIcon
           icon={CaretDown}
-          className={`w-5 h-5 text-slate-400 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+          className={`w-5 h-5 text-slate-400 transition-transform motion-reduce:duration-[0.01ms] duration-300 ${isOpen ? 'rotate-180' : ''}`}
         />
       </button>
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
             className="overflow-hidden"
           >
             <div className="px-6 pb-5 pt-1 text-slate-600 leading-relaxed">{answer}</div>
