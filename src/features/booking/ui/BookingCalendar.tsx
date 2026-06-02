@@ -177,7 +177,7 @@ const BookingCalendar = ({
             exit={{ opacity: 0, x: 20 }}
             className="space-y-6"
           >
-            <h3 className="text-xl font-bold text-gray-900 mb-4">{t('calendar.step1.title')}</h3>
+            <h2 className="text-xl font-bold text-gray-900 mb-4">{t('calendar.step1.title')}</h2>
 
             {/* Scrollable Dates with Fade Mask */}
             <div className="relative">
@@ -189,7 +189,7 @@ const BookingCalendar = ({
                       key={date.toISOString()}
                       onClick={() => handleDateSelect(date)}
                       className={`active:scale-[0.97] 
-                      flex-shrink-0 w-16 md:w-20 h-20 md:h-24 rounded-2xl flex flex-col items-center justify-center gap-1 transition-all motion-reduce:duration-[0.01ms]
+                      flex-shrink-0 w-16 md:w-20 h-20 md:h-24 rounded-2xl flex flex-col items-center justify-center gap-1 transition motion-reduce:duration-[0.01ms]
                       border ${isSelected ? 'border-primary bg-primary/10 text-primary scale-105' : 'border-gray-100 hover:border-primary/50 text-gray-500'}
                     `}
                     >
@@ -229,7 +229,7 @@ const BookingCalendar = ({
                         onClick={() => !isBooked && setSelectedTime(time)}
                         disabled={isBooked}
                         className={`active:scale-[0.97] 
-                          py-2 rounded-xl text-sm font-medium transition-all motion-reduce:duration-[0.01ms]
+                          py-2 rounded-xl text-sm font-medium transition motion-reduce:duration-[0.01ms]
                           ${
                             selectedTime === time
                               ? 'bg-primary text-white shadow-lg shadow-primary/30'
@@ -306,7 +306,7 @@ const BookingCalendar = ({
             className="space-y-4"
           >
             <div className="mb-6">
-              <h3 className="text-xl font-bold text-gray-900">{t('calendar.step2.title')}</h3>
+              <h2 className="text-xl font-bold text-gray-900">{t('calendar.step2.title')}</h2>
               <p className="text-sm text-gray-500">
                 {selectedDate?.toLocaleDateString(locale === 'en' ? 'en-US' : 'de-DE', {
                   weekday: 'long',

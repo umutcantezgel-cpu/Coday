@@ -208,7 +208,7 @@ export const GovContactForm: React.FC = () => {
               {...register('authority')}
               aria-invalid={!!errors.authority}
               aria-describedby={errors.authority ? 'error-authority' : undefined}
-              className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all motion-reduce:duration-[0.01ms]"
+              className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition motion-reduce:duration-[0.01ms]"
               placeholder="z.B. Stadtverwaltung Musterstadt"
             />
             {errors.authority && (
@@ -231,7 +231,7 @@ export const GovContactForm: React.FC = () => {
               {...register('name')}
               aria-invalid={!!errors.name}
               aria-describedby={errors.name ? 'error-name' : undefined}
-              className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all motion-reduce:duration-[0.01ms]"
+              className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition motion-reduce:duration-[0.01ms]"
               placeholder="Vorname Nachname"
             />
             {errors.name && (
@@ -258,7 +258,7 @@ export const GovContactForm: React.FC = () => {
               type="email"
               aria-invalid={!!errors.email}
               aria-describedby={errors.email ? 'error-email' : undefined}
-              className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all motion-reduce:duration-[0.01ms]"
+              className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition motion-reduce:duration-[0.01ms]"
               placeholder="name@stadt.de"
             />
             {errors.email && (
@@ -280,7 +280,7 @@ export const GovContactForm: React.FC = () => {
               id="phone"
               {...register('phone')}
               type="tel"
-              className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all motion-reduce:duration-[0.01ms]"
+              className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition motion-reduce:duration-[0.01ms]"
               placeholder="+49 ..."
             />
           </div>
@@ -299,7 +299,7 @@ export const GovContactForm: React.FC = () => {
             <select
               id="year"
               {...register('year')}
-              className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all motion-reduce:duration-[0.01ms] bg-white"
+              className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition motion-reduce:duration-[0.01ms] bg-white"
             >
               {['2024', '2025', 'later'].map((opt) => (
                 <option key={opt} value={opt}>
@@ -320,7 +320,7 @@ export const GovContactForm: React.FC = () => {
             <select
               id="type"
               {...register('type')}
-              className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all motion-reduce:duration-[0.01ms] bg-white"
+              className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition motion-reduce:duration-[0.01ms] bg-white"
             >
               {['direct', 'uvgo', 'vgv', 'open'].map((opt) => (
                 <option key={opt} value={opt}>
@@ -344,7 +344,7 @@ export const GovContactForm: React.FC = () => {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="active:scale-[0.97] w-full py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-lg hover:shadow-blue-500/30 transition-all motion-reduce:duration-[0.01ms] flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+          className="active:scale-[0.97] w-full py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-lg hover:shadow-blue-500/30 transition motion-reduce:duration-[0.01ms] flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
         >
           {isSubmitting ? (
             <>

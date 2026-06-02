@@ -117,7 +117,7 @@ export const LegalLayoutV2: React.FC<LegalLayoutV2Props> = ({
                 <NavLink
                   key={page.key}
                   href={page.path}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all motion-reduce:duration-[0.01ms]
+                  className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition motion-reduce:duration-[0.01ms]
                     ${
                       pageType === page.key
                         ? 'bg-primary/10 text-primary'
@@ -210,7 +210,7 @@ export const LegalLayoutV2: React.FC<LegalLayoutV2Props> = ({
                       <a
                         key={item.id}
                         href={`#${item.id}`}
-                        className={`flex items-center gap-2 px-3 py-2.5 text-sm rounded-lg transition-all motion-reduce:duration-[0.01ms]
+                        className={`flex items-center gap-2 px-3 py-2.5 text-sm rounded-lg transition motion-reduce:duration-[0.01ms]
                           ${
                             activeSection === item.id
                               ? 'bg-primary/10 text-primary font-medium border-l-2 border-primary'

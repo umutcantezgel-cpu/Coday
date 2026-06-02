@@ -20,7 +20,7 @@ export const NearbyCities: React.FC<{ currentSlug: string }> = ({ currentSlug })
             <Link
               key={city.slug}
               href={`/webagentur-${city.slug}`}
-              className="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-primary/50 transition-all motion-reduce:duration-[0.01ms] group"
+              className="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-primary/50 transition motion-reduce:duration-[0.01ms] group"
             >
               <div>
                 <div className="text-white font-medium group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms]">

@@ -20,7 +20,7 @@ const OfflineReadyDemo: React.FC = () => {
 
         <div
           onClick={() => setIsOnline(!isOnline)}
-          className={`cursor-pointer px-4 py-2 rounded-full border flex items-center gap-2 transition-all motion-reduce:duration-[0.01ms] ${isOnline ? 'bg-green-500/20 border-green-500 text-green-400' : 'bg-red-500/20 border-red-500 text-red-400'}`}
+          className={`cursor-pointer px-4 py-2 rounded-full border flex items-center gap-2 transition motion-reduce:duration-[0.01ms] ${isOnline ? 'bg-green-500/20 border-green-500 text-green-400' : 'bg-red-500/20 border-red-500 text-red-400'}`}
         >
           <OptimizedIcon icon={isOnline ? WifiHigh : WifiSlash} className="text-lg" />
           <span className="font-bold text-sm uppercase tracking-wider">
@@ -55,7 +55,7 @@ const OfflineReadyDemo: React.FC = () => {
 
         {/* Our PWA */}
         <div
-          className={`bg-gradient-to-br from-primary/20 to-secondary rounded-2xl p-6 border transition-all motion-reduce:duration-[0.01ms] ${isOnline ? 'border-primary/50 shadow-lg shadow-primary/10' : 'border-white/20 grayscale'}`}
+          className={`bg-gradient-to-br from-primary/20 to-secondary rounded-2xl p-6 border transition motion-reduce:duration-[0.01ms] ${isOnline ? 'border-primary/50 shadow-lg shadow-primary/10' : 'border-white/20 grayscale'}`}
         >
           <span className="flex items-center gap-2 mb-8">
             <span className="text-xs font-bold uppercase tracking-wider text-primary">

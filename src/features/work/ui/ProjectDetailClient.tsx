@@ -308,7 +308,7 @@ const ProjectDetail: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1, duration: 0.4 }}
-                    className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:border-primary/20 transition-all motion-reduce:duration-[0.01ms] duration-300"
+                    className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:border-primary/20 transition motion-reduce:duration-[0.01ms] duration-300"
                   >
                     <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-lg mb-4">
                       {i + 1}
@@ -492,7 +492,7 @@ const ProjectDetail: React.FC = () => {
           </p>
           <NavLink
             href={`/contact?service=${project.category}`}
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl border-2 border-gray-200 text-gray-700 font-bold hover:border-primary hover:text-primary transition-all motion-reduce:duration-[0.01ms] duration-300"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl border-2 border-gray-200 text-gray-700 font-bold hover:border-primary hover:text-primary transition motion-reduce:duration-[0.01ms] duration-300"
           >
             {t('project_detail.cta_button', { defaultValue: 'Projekt anfragen' })}
             <ArrowRight className="w-5 h-5" />
@@ -510,7 +510,7 @@ const ProjectDetail: React.FC = () => {
               href={`/work/${prevSlug}`}
               className="flex items-center gap-4 group text-left w-full sm:w-auto"
             >
-              <div className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 group-hover:border-primary group-hover:text-primary group-hover:bg-primary/5 transition-all motion-reduce:duration-[0.01ms] duration-300">
+              <div className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 group-hover:border-primary group-hover:text-primary group-hover:bg-primary/5 transition motion-reduce:duration-[0.01ms] duration-300">
                 <ArrowLeft className="w-5 h-5" />
               </div>
               <div>
@@ -539,7 +539,7 @@ const ProjectDetail: React.FC = () => {
                   {nextProject.content[currentLang].title}
                 </div>
               </div>
-              <div className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 group-hover:border-primary group-hover:text-primary group-hover:bg-primary/5 transition-all motion-reduce:duration-[0.01ms] duration-300">
+              <div className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 group-hover:border-primary group-hover:text-primary group-hover:bg-primary/5 transition motion-reduce:duration-[0.01ms] duration-300">
                 <ArrowRight className="w-5 h-5" />
               </div>
             </NavLink>
@@ -583,7 +583,7 @@ const ProjectDetail: React.FC = () => {
               />
               <button
                 onClick={closeLightbox}
-                className="active:scale-[0.97] absolute top-4 right-4 text-white/70 hover:text-white bg-black/50 hover:bg-black/80 rounded-full p-2 transition-all motion-reduce:duration-[0.01ms] cursor-pointer z-50"
+                className="active:scale-[0.97] absolute top-4 right-4 text-white/70 hover:text-white bg-black/50 hover:bg-black/80 rounded-full p-2 transition motion-reduce:duration-[0.01ms] cursor-pointer z-50"
                 aria-label="Bildvorschau schließen"
               >
                 <X className="w-6 h-6" />

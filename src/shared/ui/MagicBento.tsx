@@ -156,7 +156,7 @@ export const MagicBento: React.FC<BentoProps> = ({
     content = cards.map((card, idx) => (
       <ParticleCard
         key={idx}
-        className={`p-6 rounded-xl border border-white/10 bg-black/50 backdrop-blur-md min-h-[200px] flex flex-col justify-end transition-all motion-reduce:duration-[0.01ms] duration-500 ease-out hover:-translate-y-1.5 hover:scale-[1.02] hover:shadow-glow hover:bg-black/40 ${enableBorderGlow ? 'card--border-glow' : ''}`}
+        className={`p-6 rounded-xl border border-white/10 bg-black/50 backdrop-blur-md min-h-[200px] flex flex-col justify-end transition motion-reduce:duration-[0.01ms] duration-500 ease-out hover:-translate-y-1.5 hover:scale-[1.02] hover:shadow-glow hover:bg-black/40 ${enableBorderGlow ? 'card--border-glow' : ''}`}
         style={{ backgroundColor: card.color || '#060010' }}
         disableAnimations={shouldDisableAnimations}
       >

@@ -61,7 +61,7 @@ const HeadlessVsShopifyGrid: React.FC = () => {
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`active:scale-[0.97] flex-1 py-2 rounded-lg text-sm font-bold capitalize transition-all motion-reduce:duration-[0.01ms] ${activeTab === tab ? 'bg-primary text-white shadow-lg' : 'text-gray-400 hover:text-white'}`}
+              className={`active:scale-[0.97] flex-1 py-2 rounded-lg text-sm font-bold capitalize transition motion-reduce:duration-[0.01ms] ${activeTab === tab ? 'bg-primary text-white shadow-lg' : 'text-gray-400 hover:text-white'}`}
             >
               {tab}
             </button>

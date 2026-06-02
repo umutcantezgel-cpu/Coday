@@ -96,7 +96,7 @@ const RecruitingFunnelDemo: React.FC = () => {
               <div
                 key={idx}
                 onClick={() => setStep(idx)}
-                className={`flex items-start gap-4 p-4 rounded-xl cursor-pointer transition-all motion-reduce:duration-[0.01ms] ${step === idx ? 'bg-primary/5 border border-primary/20' : 'hover:bg-gray-50 border border-transparent'}`}
+                className={`flex items-start gap-4 p-4 rounded-xl cursor-pointer transition motion-reduce:duration-[0.01ms] ${step === idx ? 'bg-primary/5 border border-primary/20' : 'hover:bg-gray-50 border border-transparent'}`}
               >
                 <div
                   className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${step === idx ? 'bg-primary text-white' : 'bg-gray-100 text-gray-500'}`}

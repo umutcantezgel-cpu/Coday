@@ -55,7 +55,7 @@ export const TeamSection: React.FC = () => {
 
         {/* Founder Card */}
         <motion.div
-          className="relative group bg-white/[0.03] border border-white/[0.06] rounded-2xl overflow-hidden hover:border-primary/40 transition-all motion-reduce:duration-[0.01ms] duration-500 max-w-2xl mx-auto"
+          className="relative group bg-white/[0.03] border border-white/[0.06] rounded-2xl overflow-hidden hover:border-primary/40 transition motion-reduce:duration-[0.01ms] duration-500 max-w-2xl mx-auto"
           {...stagger(0.3)}
         >
           {/* Glow on hover */}

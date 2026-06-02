@@ -100,7 +100,7 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ blocks, isMobi
                   <a
                     href={`#${heading.id}`}
                     className={cn(
-                      'block py-1 transition-all motion-reduce:duration-[0.01ms] duration-200 hover:text-primary',
+                      'block py-1 transition motion-reduce:duration-[0.01ms] duration-200 hover:text-primary',
                       activeId === heading.id
                         ? 'text-primary font-bold pl-3 border-l-2 border-primary'
                         : 'text-gray-600 pl-3 border-l-2 border-transparent'
@@ -135,7 +135,7 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ blocks, isMobi
             <a
               href={`#${heading.id}`}
               className={cn(
-                'block pl-4 py-1 border-l-2 transition-all motion-reduce:duration-[0.01ms] duration-200 hover:text-primary',
+                'block pl-4 py-1 border-l-2 transition motion-reduce:duration-[0.01ms] duration-200 hover:text-primary',
                 activeId === heading.id
                   ? 'border-primary text-primary font-medium'
                   : 'border-transparent text-gray-500 hover:border-gray-300'

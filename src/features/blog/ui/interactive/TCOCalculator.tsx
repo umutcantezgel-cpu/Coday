@@ -117,7 +117,7 @@ export const TCOCalculator: React.FC = () => {
               <div className="h-12 bg-gray-100 rounded-xl overflow-hidden relative">
                 <motion.div
                   className="h-full bg-gradient-to-r from-red-400 to-red-600"
-                  initial={{ width: 0 }}
+                  initial={{ scaleX: 0 }}
                   animate={{
                     width: `${(wpTotalWithBuild / Math.max(wpTotalWithBuild, headlessTotal)) * 100}%`,
                   }}
@@ -138,7 +138,7 @@ export const TCOCalculator: React.FC = () => {
               <div className="h-12 bg-gray-100 rounded-xl overflow-hidden relative">
                 <motion.div
                   className="h-full bg-gradient-to-r from-green-400 to-green-600"
-                  initial={{ width: 0 }}
+                  initial={{ scaleX: 0 }}
                   animate={{
                     width: `${(headlessTotal / Math.max(wpTotalWithBuild, headlessTotal)) * 100}%`,
                   }}

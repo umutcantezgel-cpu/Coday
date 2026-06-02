@@ -46,7 +46,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
               // Mobile Optimization: 16px font to prevent zoom, 48px height
               'text-base h-[48px] px-4',
               // Transitions
-              'transition-all motion-reduce:duration-[0.01ms] duration-200 focus:border-primary focus:ring-4 focus:ring-primary/20 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2',
+              'transition motion-reduce:duration-[0.01ms] duration-200 focus:border-primary focus:ring-4 focus:ring-primary/20 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2',
               // Icon adjustments
               leftIcon && 'ps-11',
               rightIcon && 'pe-11',

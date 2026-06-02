@@ -63,7 +63,7 @@ const BlindTestQuiz: React.FC = () => {
               whileHover={!hasVoted ? { scale: 1.02 } : {}}
               whileTap={!hasVoted ? { scale: 0.98 } : {}}
               className={cn(
-                'w-full aspect-[4/5] rounded-3xl overflow-hidden border-4 transition-all motion-reduce:duration-[0.01ms] duration-500 relative bg-gray-100',
+                'w-full aspect-[4/5] rounded-3xl overflow-hidden border-4 transition motion-reduce:duration-[0.01ms] duration-500 relative bg-gray-100',
                 hasVoted && selected === option.id
                   ? 'border-primary shadow-2xl shadow-primary/20'
                   : 'border-transparent hover:border-gray-200 shadow-lg',
@@ -73,7 +73,7 @@ const BlindTestQuiz: React.FC = () => {
               {/* Overlay for "Click to Vote" */}
               {!hasVoted && (
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors motion-reduce:duration-[0.01ms] z-10 flex items-center justify-center">
-                  <span className="opacity-0 group-hover:opacity-100 bg-white text-secondary font-bold px-6 py-3 rounded-full shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-all motion-reduce:duration-[0.01ms] duration-300">
+                  <span className="opacity-0 group-hover:opacity-100 bg-white text-secondary font-bold px-6 py-3 rounded-full shadow-lg transform translate-y-4 group-hover:translate-y-0 transition motion-reduce:duration-[0.01ms] duration-300">
                     Dieses Design wählen
                   </span>
                 </div>

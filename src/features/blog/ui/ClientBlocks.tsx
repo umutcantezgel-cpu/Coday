@@ -207,7 +207,7 @@ export const QuoteBlockRenderer: React.FC<{ block: QuoteBlock }> = ({ block }) =
     >
       <div
         className={cn(
-          'relative p-10 md:p-14 rounded-[2rem] overflow-hidden group transition-all motion-reduce:duration-[0.01ms] duration-500 hover:shadow-2xl hover:shadow-primary/5',
+          'relative p-10 md:p-14 rounded-[2rem] overflow-hidden group transition motion-reduce:duration-[0.01ms] duration-500 hover:shadow-2xl hover:shadow-primary/5',
           block.variant === 'gradient'
             ? 'bg-gradient-to-br from-primary/5 via-secondary/5 to-transparent border border-white/50 backdrop-blur-sm'
             : 'bg-surface-light border-l-8 border-primary'
@@ -250,7 +250,7 @@ export const CTABlockRenderer: React.FC<{ block: CTABlock }> = ({ block }) => {
       className="my-16 relative overflow-hidden rounded-[2.5rem] group"
     >
       <div className="absolute inset-0 bg-secondary/5 group-hover:bg-secondary/10 transition-colors motion-reduce:duration-[0.01ms] duration-500" />
-      <div className="absolute -right-20 -top-20 w-80 h-80 bg-primary/20 blur-[100px] rounded-full group-hover:bg-primary/30 transition-all motion-reduce:duration-[0.01ms] duration-700" />
+      <div className="absolute -right-20 -top-20 w-80 h-80 bg-primary/20 blur-[100px] rounded-full group-hover:bg-primary/30 transition motion-reduce:duration-[0.01ms] duration-700" />
       <div className="absolute -left-20 -bottom-20 w-60 h-60 bg-secondary/10 blur-[80px] rounded-full" />
 
       <div className="relative p-10 md:p-14 border border-white/20 rounded-[2.5rem] backdrop-blur-xl bg-white/10 shadow-xl overflow-hidden">
@@ -261,7 +261,7 @@ export const CTABlockRenderer: React.FC<{ block: CTABlock }> = ({ block }) => {
           </div>
           <Link
             href={block.href}
-            className="group/btn relative overflow-hidden inline-flex items-center gap-3 px-8 py-4 bg-primary text-white rounded-full font-bold shadow-lg shadow-primary/30 hover:shadow-2xl hover:shadow-primary/40 hover:-translate-y-1 transition-all motion-reduce:duration-[0.01ms] duration-300 transform-gpu"
+            className="group/btn relative overflow-hidden inline-flex items-center gap-3 px-8 py-4 bg-primary text-white rounded-full font-bold shadow-lg shadow-primary/30 hover:shadow-2xl hover:shadow-primary/40 hover:-translate-y-1 transition motion-reduce:duration-[0.01ms] duration-300 transform-gpu"
           >
             <span className="relative z-10">{block.buttonText}</span>
             <ArrowRight

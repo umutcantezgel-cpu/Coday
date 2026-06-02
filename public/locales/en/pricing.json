@@ -128,7 +128,7 @@
     "headline": "Three Packages. <0>Zero Surprises.</0>",
     "subheadline": "Choose the package that fits your goals. All prices are fixed – no hidden costs.",
     "title": "Web Design Pricing & SEO Costs | Packages - Coday",
-    "description": "Transparent web design pricing and SEO packages. We offer a 100% fixed price guarantee for high-end web development with no hidden costs."
+    "description": "Transparent web design pricing and SEO packages. I offer a 100% fixed price guarantee for high-end web development with no hidden costs."
   },
   "custom": {
     "title": "Bigger Project?",
@@ -141,15 +141,15 @@
     "items": [
       {
         "question": "Why fixed pricing?",
-        "answer": "We believe in transparency. Our fixed prices give you full planning security – no hidden costs, no subsequent demands. You know exactly what you get and what it costs."
+        "answer": "I believe in transparency. My fixed prices give you full planning security – no hidden costs, no subsequent demands. You know exactly what you get and what it costs."
       },
       {
         "question": "What if I need more?",
-        "answer": "Our packages cover most requirements. If you need additional pages, features, or special integrations, we can calculate these transparently and fairly as an add-on or set up a custom project."
+        "answer": "My packages cover most requirements. If you need additional pages, features, or special integrations, I will calculate these transparently as an add-on or set up a custom project."
       },
       {
         "question": "How long does the implementation take?",
-        "answer": "Depending on the package, the delivery time is between 2 and 4 weeks. We work efficiently with proven playbooks so your new website can go live quickly, without compromising on quality."
+        "answer": "Depending on the package, the delivery time is between 2 and 4 weeks. I work efficiently with proven processes so your new website can go live quickly, without compromising on quality."
       }
     ]
   },
@@ -188,35 +188,35 @@
     }
   },
   "value_prop": {
-    "title": "Warum Next.js? Warum ab 2.500€?",
-    "description": "Ihre Website ist kein simples Aushängeschild mehr – sie ist Ihr stärkster, vollautomatisierter Vertriebsmitarbeiter. Eine Investition in Performance ist eine Investition in messbaren Umsatz.",
+    "title": "Why Next.js? Why from 2,500€?",
+    "description": "Your website is no longer just a simple business card – it is your strongest, fully automated sales representative. An investment in performance is an investment in measurable revenue.",
     "points": [
       {
-        "title": "Millisekunden-Ladezeiten",
-        "description": "53% der Nutzer springen ab, wenn eine Seite länger als 3 Sekunden lädt. Unsere Headless-Architekturen garantieren Ladezeiten im Millisekundenbereich."
+        "title": "Millisecond Load Times",
+        "description": "53% of users bounce if a page takes longer than 3 seconds to load. My headless architecture guarantees load times in the milliseconds."
       },
       {
-        "title": "Maximale Conversion",
-        "description": "Jede Sekunde Verzögerung kostet Sie 7% an Conversion. Ein 100/100 Google Lighthouse-Score bedeutet ein reibungsloses Nutzererlebnis und signifikant mehr Anfragen."
+        "title": "Maximum Conversion",
+        "description": "Every second of delay costs you 7% in conversions. A 100/100 Google Lighthouse score means a seamless user experience and significantly more inquiries."
       },
       {
-        "title": "Local SEO Dominanz",
-        "description": "Mit strukturierten Daten (JSON-LD) und Entity-Based SEO katapultieren wir Ihr lokales Geschäft (Wetzlar & Hessen) an die Spitze des Google Local Packs."
+        "title": "Local SEO Dominance",
+        "description": "With structured data (JSON-LD) and Entity-Based SEO, I catapult your local business to the top of the Google Local Pack."
       }
     ]
   },
   "trust_section": {
-    "title": "Ergebnisse, die für sich sprechen",
+    "title": "Results that speak for themselves",
     "references": [
       {
         "name": "Batherm (Wetzlar)",
         "metric": "+240%",
-        "label": "Mehr qualifizierte B2B-Anfragen im ersten Quartal nach Relaunch"
+        "label": "More qualified B2B inquiries in the first quarter after relaunch"
       },
       {
         "name": "Lindener Ratsstuben",
         "metric": "< 0.8s",
-        "label": "Ladezeit (LCP) im 99. Perzentil, massiver Boost bei Google Maps"
+        "label": "Load time (LCP) in the 99th percentile, massive boost on Google Maps"
       }
     ]
   }

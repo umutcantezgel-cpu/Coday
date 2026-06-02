@@ -65,7 +65,7 @@ export const NavDropdown: React.FC<NavDropdownProps> = ({ title, items }) => {
         id={menuId}
         role="menu"
         aria-label={title}
-        className={`absolute top-full left-1/2 -translate-x-1/2 w-64 pt-2 transition-all motion-reduce:duration-[0.01ms] duration-200 origin-top
+        className={`absolute top-full left-1/2 -translate-x-1/2 w-64 pt-2 transition motion-reduce:duration-[0.01ms] duration-200 origin-top
           ${isOpen ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'}`}
       >
         <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl border border-blue-50/50 overflow-hidden p-2 ring-1 ring-black/5 max-h-[60vh] overflow-y-auto custom-scrollbar">
@@ -77,7 +77,7 @@ export const NavDropdown: React.FC<NavDropdownProps> = ({ title, items }) => {
                 href={item.href}
                 role="menuitem"
                 className={`
-                  flex items-center space-x-3 px-4 py-3 min-h-[44px] rounded-xl transition-all motion-reduce:duration-[0.01ms] duration-200
+                  flex items-center space-x-3 px-4 py-3 min-h-[44px] rounded-xl transition motion-reduce:duration-[0.01ms] duration-200
                   ${isActive ? 'bg-blue-50 text-blue-600' : 'text-gray-600 hover:bg-slate-50 hover:text-gray-900'}
                 `}
                 onClick={() => setIsOpen(false)}

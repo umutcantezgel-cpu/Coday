@@ -14,8 +14,8 @@ export const CookieConsentBanner: React.FC = () => {
   useEffect(() => {
     // Check store state instead of raw localStorage for consistency
     if (!hasConsented) {
-      // Use requestAnimationFrame to avoid hydration mismatch without artificial delays
-      requestAnimationFrame(() => setIsVisible(true));
+      const timer = setTimeout(() => setIsVisible(true), 2500); // Delay by 2.5s to avoid LCP blocking
+      return () => clearTimeout(timer);
     } else if (isVisible) {
       setTimeout(() => setIsVisible(false), 0);
     }
@@ -44,7 +44,7 @@ export const CookieConsentBanner: React.FC = () => {
       <div
         aria-label="Cookie Banner"
         role="dialog"
-        className={`fixed bottom-4 left-4 right-4 z-[100] max-w-4xl mx-auto transition-all motion-reduce:duration-[0.01ms] duration-500 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0 pointer-events-none'}`}
+        className={`fixed bottom-4 left-4 right-4 z-[100] max-w-4xl mx-auto transition motion-reduce:duration-[0.01ms] duration-500 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0 pointer-events-none'}`}
       >
         <div className="bg-white/95 backdrop-blur-xl border border-white/20 shadow-2xl rounded-2xl p-6 md:p-8 flex flex-col lg:flex-row gap-6 items-center lg:items-start text-center lg:text-left ring-1 ring-black/5">
           <div className="p-3 bg-primary/10 rounded-xl text-primary shrink-0">

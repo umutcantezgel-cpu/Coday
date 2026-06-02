@@ -1,5 +1,5 @@
-"use client";
-"use client";
+'use client';
+'use client';
 import { useEffect, useRef, useState } from 'react';
 
 interface UseIntersectionObserverProps {
@@ -9,8 +9,8 @@ interface UseIntersectionObserverProps {
 }
 
 export function useIntersectionObserver({
-  threshold = 0.15,
-  rootMargin = '0px',
+  threshold = 0,
+  rootMargin = '50px 0px -50px 0px',
   triggerOnce = true,
 }: UseIntersectionObserverProps = {}) {
   const [isVisible, setIsVisible] = useState(false);
@@ -44,9 +44,7 @@ export function useIntersectionObserver({
     observer.observe(element);
 
     return () => {
-      if (element) {
-        observer.unobserve(element);
-      }
+      observer.disconnect();
     };
   }, [threshold, rootMargin, triggerOnce]);
 

@@ -4,6 +4,7 @@ import React, { Suspense, lazy, useEffect } from 'react';
 import BlurText from '@/shared/ui/BlurText';
 import GradientText from '@/shared/ui/GradientText';
 import BookingCalendar from '@/features/booking/ui/BookingCalendar';
+import { motion } from 'motion/react';
 const InteractiveMap = lazy(() => import('@/shared/ui/InteractiveMap'));
 const ApplicationWizard = lazy(() => import('@/features/contact/ApplicationWizard'));
 import { TestimonialCard } from '@/shared/ui/TestimonialCard';
@@ -42,6 +43,25 @@ export const ContactClient: React.FC = () => {
     }
   }, [hasPackage, setStep]);
 
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.05,
+      },
+    },
+  };
+
+  const staggerItem = {
+    hidden: { opacity: 0, y: 8 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.25, ease: [0.23, 1, 0.32, 1] as any },
+    },
+  };
+
   return (
     <div className="bg-background-light min-h-dvh">
       {/* Step Indicator - only shown when coming from package flow */}
@@ -71,14 +91,13 @@ export const ContactClient: React.FC = () => {
                 <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
                   {t('hero.badge')}
                 </span>
-                <h1 className="font-display font-black text-3xl sm:text-5xl lg:text-6xl text-secondary mb-6 tracking-tight">
+                <h1 className="font-display font-black text-3xl sm:text-5xl lg:text-6xl text-secondary mb-6 tracking-tight text-balance">
                   <BlurText
                     text={t('hero.title_start')}
                     delay={100}
                     animateBy="words"
-                    className="inline-block"
+                    className="inline-block mr-3"
                   />
-                  <br />
                   <GradientText
                     colors={['#3B82F6', '#2563EB', '#1D4ED8']}
                     animationSpeed={4}
@@ -94,14 +113,21 @@ export const ContactClient: React.FC = () => {
                 </div>
 
                 <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-6">
-                  <h3 className="font-bold text-gray-900 text-lg">Kontaktinformationen</h3>
+                  <h2 className="font-bold text-gray-900 text-lg">Kontaktinformationen</h2>
 
-                  <div className="grid gap-6">
-                    <a
+                  <motion.div
+                    variants={staggerContainer}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, margin: '-50px' }}
+                    className="grid gap-6"
+                  >
+                    <motion.a
+                      variants={staggerItem}
                       href="mailto:umut@codayweb.de"
-                      className="flex items-start gap-4 text-slate-600 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] group"
+                      className="flex items-start gap-4 text-slate-600 hover:text-primary transition-colors duration-200 motion-reduce:duration-[0.01ms] group"
                     >
-                      <div className="w-10 h-10 bg-purple-50 rounded-lg flex items-center justify-center text-purple-600 group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms] flex-shrink-0">
+                      <div className="w-10 h-10 bg-purple-50 rounded-lg flex items-center justify-center text-purple-600 group-hover:scale-[1.05] group-active:scale-[0.97] transition-transform duration-200 ease-out flex-shrink-0">
                         <OptimizedIcon icon={Envelope} />
                       </div>
                       <div>
@@ -110,13 +136,14 @@ export const ContactClient: React.FC = () => {
                         </strong>
                         <span className="text-sm">umut@codayweb.de</span>
                       </div>
-                    </a>
+                    </motion.a>
 
-                    <a
+                    <motion.a
+                      variants={staggerItem}
                       href="tel:+4917641195301"
-                      className="flex items-start gap-4 text-slate-600 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] group"
+                      className="flex items-start gap-4 text-slate-600 hover:text-primary transition-colors duration-200 motion-reduce:duration-[0.01ms] group"
                     >
-                      <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center text-primary group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms] flex-shrink-0">
+                      <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center text-primary group-hover:scale-[1.05] group-active:scale-[0.97] transition-transform duration-200 ease-out flex-shrink-0">
                         <OptimizedIcon icon={Phone} />
                       </div>
                       <div>
@@ -125,9 +152,12 @@ export const ContactClient: React.FC = () => {
                         </strong>
                         <span className="text-sm">+49 176 41195301</span>
                       </div>
-                    </a>
+                    </motion.a>
 
-                    <div className="flex items-start gap-4 text-slate-600">
+                    <motion.div
+                      variants={staggerItem}
+                      className="flex items-start gap-4 text-slate-600"
+                    >
                       <div className="w-10 h-10 bg-orange-50 rounded-lg flex items-center justify-center text-orange-600 flex-shrink-0">
                         <OptimizedIcon icon={MapPin} />
                       </div>
@@ -141,9 +171,12 @@ export const ContactClient: React.FC = () => {
                           (Remote weltweit)
                         </span>
                       </div>
-                    </div>
+                    </motion.div>
 
-                    <div className="flex items-start gap-4 text-slate-600">
+                    <motion.div
+                      variants={staggerItem}
+                      className="flex items-start gap-4 text-slate-600"
+                    >
                       <div className="w-10 h-10 bg-green-50 rounded-lg flex items-center justify-center text-green-600 flex-shrink-0">
                         <OptimizedIcon icon={Clock} />
                       </div>
@@ -157,34 +190,37 @@ export const ContactClient: React.FC = () => {
                           (Termine nach Vereinbarung)
                         </span>
                       </div>
-                    </div>
+                    </motion.div>
 
-                    <div className="pt-2 border-t border-gray-100">
-                      <h4 className="text-sm font-bold text-gray-900 mb-3">
+                    <motion.div variants={staggerItem} className="pt-2 border-t border-gray-100">
+                      <h3 className="text-sm font-bold text-gray-900 mb-3">
                         {t('location.socials.label', { fallback: 'Folgen Sie uns' })}
-                      </h4>
+                      </h3>
                       <div className="flex gap-3">
                         <a
                           href="/contact"
+                          aria-label="Instagram"
                           className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors motion-reduce:duration-[0.01ms]"
                         >
                           <OptimizedIcon icon={InstagramLogo} />
                         </a>
                         <a
                           href="/contact"
+                          aria-label="LinkedIn"
                           className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors motion-reduce:duration-[0.01ms]"
                         >
                           <OptimizedIcon icon={LinkedinLogo} />
                         </a>
                         <a
                           href="/contact"
+                          aria-label="Facebook"
                           className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors motion-reduce:duration-[0.01ms]"
                         >
                           <OptimizedIcon icon={FacebookLogo} />
                         </a>
                       </div>
-                    </div>
-                  </div>
+                    </motion.div>
+                  </motion.div>
                 </div>
               </div>
 
@@ -249,7 +285,7 @@ export const ContactClient: React.FC = () => {
                 href={`https://wa.me/4917641195301?text=${t('location.whatsapp.message')}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 p-5 bg-white rounded-xl border border-aurora-mist hover:shadow-lg transition-all motion-reduce:duration-[0.01ms] group"
+                className="flex items-center gap-4 p-5 bg-white rounded-xl border border-aurora-mist hover:shadow-lg transition motion-reduce:duration-[0.01ms] group"
               >
                 <div className="w-12 h-12 bg-success/10 rounded-xl flex items-center justify-center flex-shrink-0">
                   <svg
@@ -269,14 +305,14 @@ export const ContactClient: React.FC = () => {
                 </div>
                 <OptimizedIcon
                   icon={ArrowRight}
-                  className="text-gray-400 group-hover:text-success group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-all motion-reduce:duration-[0.01ms]"
+                  className="text-gray-400 group-hover:text-success group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition motion-reduce:duration-[0.01ms]"
                 />
               </a>
 
               {/* Phone */}
               <a
                 href="tel:+4917641195301"
-                className="flex items-center gap-4 p-5 bg-white rounded-xl border border-aurora-mist hover:shadow-lg transition-all motion-reduce:duration-[0.01ms] group"
+                className="flex items-center gap-4 p-5 bg-white rounded-xl border border-aurora-mist hover:shadow-lg transition motion-reduce:duration-[0.01ms] group"
               >
                 <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center flex-shrink-0">
                   <OptimizedIcon icon={Phone} className="text-primary" />
@@ -289,14 +325,14 @@ export const ContactClient: React.FC = () => {
                 </div>
                 <OptimizedIcon
                   icon={ArrowRight}
-                  className="text-gray-400 group-hover:text-primary group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-all motion-reduce:duration-[0.01ms]"
+                  className="text-gray-400 group-hover:text-primary group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition motion-reduce:duration-[0.01ms]"
                 />
               </a>
 
               {/* Email */}
               <a
                 href="mailto:umut@codayweb.de"
-                className="flex items-center gap-4 p-5 bg-white rounded-xl border border-aurora-mist hover:shadow-lg transition-all motion-reduce:duration-[0.01ms] group"
+                className="flex items-center gap-4 p-5 bg-white rounded-xl border border-aurora-mist hover:shadow-lg transition motion-reduce:duration-[0.01ms] group"
               >
                 <div className="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center flex-shrink-0">
                   <OptimizedIcon icon={Envelope} className="text-purple-600" />
@@ -309,7 +345,7 @@ export const ContactClient: React.FC = () => {
                 </div>
                 <OptimizedIcon
                   icon={ArrowRight}
-                  className="text-gray-400 group-hover:text-purple-600 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-all motion-reduce:duration-[0.01ms]"
+                  className="text-gray-400 group-hover:text-purple-600 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition motion-reduce:duration-[0.01ms]"
                 />
               </a>
 

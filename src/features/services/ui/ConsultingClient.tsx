@@ -63,11 +63,11 @@ export function ConsultingClient() {
             </p>
 
             <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
-              <button className="active:scale-[0.97] w-full md:w-auto px-8 py-5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-2xl transition-all motion-reduce:duration-[0.01ms] shadow-[0_0_40px_-10px_rgba(37,99,235,0.5)] hover:shadow-[0_0_60px_-10px_rgba(37,99,235,0.6)] flex items-center justify-center gap-2">
+              <button className="active:scale-[0.97] w-full md:w-auto px-8 py-5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-2xl transition motion-reduce:duration-[0.01ms] shadow-[0_0_40px_-10px_rgba(37,99,235,0.5)] hover:shadow-[0_0_60px_-10px_rgba(37,99,235,0.6)] flex items-center justify-center gap-2">
                 <OptimizedIcon icon={Handshake} className="w-6 h-6" />
                 {t('hero.cta_primary')}
               </button>
-              <button className="active:scale-[0.97] w-full md:w-auto px-8 py-5 bg-slate-800/50 hover:bg-slate-700/50 text-white font-bold rounded-2xl transition-all motion-reduce:duration-[0.01ms] border border-slate-700 hover:border-slate-500 backdrop-blur-sm flex items-center justify-center gap-2">
+              <button className="active:scale-[0.97] w-full md:w-auto px-8 py-5 bg-slate-800/50 hover:bg-slate-700/50 text-white font-bold rounded-2xl transition motion-reduce:duration-[0.01ms] border border-slate-700 hover:border-slate-500 backdrop-blur-sm flex items-center justify-center gap-2">
                 <OptimizedIcon icon={ChartLineUp} className="w-6 h-6 text-slate-400" />
                 {t('hero.cta_secondary')}
               </button>

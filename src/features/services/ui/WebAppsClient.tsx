@@ -96,7 +96,7 @@ export function WebAppsClient() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <NavLink
                   href="/contact"
-                  className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl bg-gray-900 hover:bg-gray-800 shadow-lg hover:shadow-xl transition-all motion-reduce:duration-[0.01ms]"
+                  className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl bg-gray-900 hover:bg-gray-800 shadow-lg hover:shadow-xl transition motion-reduce:duration-[0.01ms]"
                 >
                   {t('web_apps_page.hero.cta')}
                 </NavLink>
@@ -165,7 +165,7 @@ export function WebAppsClient() {
             ].map((sat, i) => (
               <div
                 key={i}
-                className="absolute flex flex-col items-center gap-2 transition-all motion-reduce:duration-[0.01ms] duration-[1500ms] ease-out"
+                className="absolute flex flex-col items-center gap-2 transition motion-reduce:duration-[0.01ms] duration-[1500ms] ease-out"
                 style={{
                   transform: isVisible
                     ? `rotate(${sat.angle}deg) translate(${sat.dist}px) rotate(-${sat.angle}deg)`
@@ -200,7 +200,7 @@ export function WebAppsClient() {
                   stroke="white"
                   strokeWidth="2"
                   strokeDasharray="5,5"
-                  className="transition-all motion-reduce:duration-[0.01ms] duration-[1500ms] ease-out"
+                  className="transition motion-reduce:duration-[0.01ms] duration-[1500ms] ease-out"
                   style={{
                     transform: isVisible
                       ? `rotate(${angle}deg) translateX(180px)`
@@ -304,7 +304,7 @@ export function WebAppsClient() {
             ].map((feature, i) => (
               <div
                 key={i}
-                className="p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-xl transition-all motion-reduce:duration-[0.01ms] border border-gray-100 group"
+                className="p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-xl transition motion-reduce:duration-[0.01ms] border border-gray-100 group"
               >
                 <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-sapphire mb-6 group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms]">
                   <OptimizedIcon icon={iconMap[feature.icon] || Cloud} />

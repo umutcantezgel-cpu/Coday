@@ -152,7 +152,7 @@ const QuizOption: React.FC<QuizOptionProps> = ({
     >
       <div
         className={clsx(
-          'relative aspect-square rounded-[2rem] overflow-hidden border-4 transition-all motion-reduce:duration-[0.01ms] duration-500 shadow-2xl',
+          'relative aspect-square rounded-[2rem] overflow-hidden border-4 transition motion-reduce:duration-[0.01ms] duration-500 shadow-2xl',
           !hasVoted &&
             'hover:scale-[1.02] border-transparent hover:border-primary/50 cursor-pointer',
           hasVoted && isCorrect && 'border-green-500 ring-4 ring-green-500/20 grayscale-0',
@@ -187,7 +187,7 @@ const QuizOption: React.FC<QuizOptionProps> = ({
           {label}
         </span>
         {!hasVoted && (
-          <span className="px-4 py-1 rounded-full border border-gray-200 text-sm font-medium text-gray-500 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all motion-reduce:duration-[0.01ms]">
+          <span className="px-4 py-1 rounded-full border border-gray-200 text-sm font-medium text-gray-500 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition motion-reduce:duration-[0.01ms]">
             Select
           </span>
         )}

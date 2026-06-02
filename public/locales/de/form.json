@@ -42,7 +42,7 @@
         },
         "placeholder": "Bitte wählen..."
       },
-      "title": "Erzählen Sie uns von Ihrem Vorhaben"
+      "title": "Erzählen Sie mir von Ihrem Vorhaben"
     },
     "step2": {
       "chars": "Zeichen",
@@ -86,8 +86,10 @@
     },
     "success": {
       "back_home": "Zurück zur Startseite",
-      "message": "Vielen Dank für Ihr Interesse. Wir haben Ihre Anfrage erhalten und werden uns innerhalb von 24 Stunden bei Ihnen melden.",
-      "title": "Anfrage erhalten!"
+      "message": "Vielen Dank für Ihr Interesse. Ich habe Ihre Anfrage erhalten und melde mich innerhalb von 24 Stunden bei Ihnen.",
+      "title": "Anfrage erhalten!",
+      "calendly_title": "Perfekt! Lassen Sie uns sprechen.",
+      "calendly_desc": "Wählen Sie einen passenden Termin für unser kurzes Kennenlerngespräch."
     },
     "validation": {
       "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
@@ -98,7 +100,7 @@
       "required": "Dieses Feld ist erforderlich"
     },
     "title_direct": "Schildern Sie Ihr Projekt",
-    "subtitle": "Wir melden uns innerhalb von 24 Stunden."
+    "subtitle": "Ich melde mich innerhalb von 24 Stunden."
   },
   "cookie": {
     "settings": {

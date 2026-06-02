@@ -1,5 +1,5 @@
-"use client";
-"use client";
+'use client';
+'use client';
 import React, { ReactNode, useEffect, useRef } from 'react';
 
 // Custom hook to apply magnetic effect via vanilla DOM manipulation
@@ -35,8 +35,9 @@ function useMagnetic<T extends HTMLElement>(strength: number = 0.2) {
       cancelAnimationFrame(animationFrameId);
       animationFrameId = requestAnimationFrame(() => {
         if (element) {
-          element.style.transform = `translate3d(${x}px, ${y}px, 0)`;
-          element.style.transition = x === 0 && y === 0 ? 'transform 0.5s ease-out' : 'transform 0.1s ease-out';
+          element.style.transform = `translate(${x}px, ${y}px)`;
+          element.style.transition =
+            x === 0 && y === 0 ? 'transform 0.5s ease-out' : 'transform 0.1s ease-out';
         }
       });
     };
@@ -64,9 +65,9 @@ interface MagneticProps extends React.HTMLAttributes<HTMLElement> {
   as?: React.ElementType;
 }
 
-export const Magnetic: React.FC<MagneticProps> = ({ 
-  children, 
-  strength = 0.2, 
+export const Magnetic: React.FC<MagneticProps> = ({
+  children,
+  strength = 0.2,
   className = '',
   as: Component = 'div',
   ...props

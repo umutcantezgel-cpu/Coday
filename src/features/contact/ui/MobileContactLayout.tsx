@@ -25,7 +25,7 @@ export const MobileContactLayout: React.FC = () => {
               transition={{ duration: 0.3 }}
             >
               <div className="mb-6">
-                <h1 className="font-display font-bold text-2xl text-secondary mb-2">
+                <h1 className="font-display font-bold text-2xl text-secondary mb-2 text-balance">
                   {t('hero.title_start')}
                 </h1>
                 <p className="text-slate-600">{t('mobile.booking_intro')}</p>
@@ -43,7 +43,7 @@ export const MobileContactLayout: React.FC = () => {
               transition={{ duration: 0.3 }}
             >
               <div className="mb-6">
-                <h1 className="font-display font-bold text-2xl text-secondary mb-2">
+                <h1 className="font-display font-bold text-2xl text-secondary mb-2 text-balance">
                   {t('mobile.contact_title')}
                 </h1>
                 <p className="text-slate-600">{t('mobile.contact_intro')}</p>
@@ -83,11 +83,13 @@ export const MobileContactLayout: React.FC = () => {
 
       {/* Bottom Fixed Tabs */}
       <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-t border-gray-200 shadow-[0_-5px_20px_-5px_rgba(0,0,0,0.1)] pb-safe safe-area-bottom">
-        <div className="grid grid-cols-2 p-2 gap-2">
+        <div role="tablist" className="grid grid-cols-2 p-2 gap-2">
           <button
+            role="tab"
+            aria-selected={activeTab === 'booking'}
             onClick={() => setActiveTab('booking')}
             className={`active:scale-[0.97] 
-              flex flex-col items-center justify-center gap-1 py-2 px-4 rounded-xl text-xs font-bold transition-all motion-reduce:duration-[0.01ms] relative overflow-hidden
+              flex flex-col items-center justify-center gap-1 py-2 px-4 rounded-xl text-xs font-bold transition motion-reduce:duration-[0.01ms] relative overflow-hidden
               ${activeTab === 'booking' ? 'text-primary' : 'text-slate-500 hover:bg-gray-50'}
             `}
           >
@@ -107,9 +109,11 @@ export const MobileContactLayout: React.FC = () => {
           </button>
 
           <button
+            role="tab"
+            aria-selected={activeTab === 'contact'}
             onClick={() => setActiveTab('contact')}
             className={`active:scale-[0.97] 
-              flex flex-col items-center justify-center gap-1 py-2 px-4 rounded-xl text-xs font-bold transition-all motion-reduce:duration-[0.01ms] relative overflow-hidden
+              flex flex-col items-center justify-center gap-1 py-2 px-4 rounded-xl text-xs font-bold transition motion-reduce:duration-[0.01ms] relative overflow-hidden
               ${activeTab === 'contact' ? 'text-purple-600' : 'text-slate-500 hover:bg-gray-50'}
             `}
           >

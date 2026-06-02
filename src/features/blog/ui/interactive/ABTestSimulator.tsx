@@ -95,14 +95,14 @@ export const ABTestSimulator: React.FC = () => {
             {!isRunning ? (
               <button
                 onClick={() => setIsRunning(true)}
-                className="active:scale-[0.97] px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg text-sm font-bold transition-all motion-reduce:duration-[0.01ms] flex items-center gap-2"
+                className="active:scale-[0.97] px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg text-sm font-bold transition motion-reduce:duration-[0.01ms] flex items-center gap-2"
               >
                 <ArrowsClockwise className="w-4 h-4" /> {t('blog.abTest.start')}
               </button>
             ) : (
               <button
                 onClick={() => setIsRunning(false)}
-                className="active:scale-[0.97] px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg text-sm font-bold transition-all motion-reduce:duration-[0.01ms]"
+                className="active:scale-[0.97] px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg text-sm font-bold transition motion-reduce:duration-[0.01ms]"
               >
                 {t('blog.abTest.stop')}
               </button>
@@ -139,7 +139,7 @@ export const ABTestSimulator: React.FC = () => {
                 }}
                 className={clsx(
                   'active:scale-[0.97]',
-                  'p-4 rounded-xl border text-left transition-all motion-reduce:duration-[0.01ms] relative overflow-hidden group',
+                  'p-4 rounded-xl border text-left transition motion-reduce:duration-[0.01ms] relative overflow-hidden group',
                   activeVariant === variantId
                     ? 'bg-white border-primary shadow-md ring-1 ring-primary/20'
                     : 'bg-white border-gray-200 hover:border-gray-300 opacity-70 hover:opacity-100'

@@ -48,14 +48,14 @@ const GearSetup: React.FC = () => {
               <div className="flex gap-4">
                 <button
                   onClick={() => setLaptop('mac')}
-                  className={`active:scale-[0.97] flex-1 p-4 rounded-xl border transition-all motion-reduce:duration-[0.01ms] text-left ${laptop === 'mac' ? 'bg-primary/20 border-primary text-white' : 'bg-white/5 border-transparent text-gray-400 hover:bg-white/10'}`}
+                  className={`active:scale-[0.97] flex-1 p-4 rounded-xl border transition motion-reduce:duration-[0.01ms] text-left ${laptop === 'mac' ? 'bg-primary/20 border-primary text-white' : 'bg-white/5 border-transparent text-gray-400 hover:bg-white/10'}`}
                 >
                   <div className="font-bold mb-1">Apple</div>
                   <div className="text-xs opacity-70">M3 Max</div>
                 </button>
                 <button
                   onClick={() => setLaptop('win')}
-                  className={`active:scale-[0.97] flex-1 p-4 rounded-xl border transition-all motion-reduce:duration-[0.01ms] text-left ${laptop === 'win' ? 'bg-primary/20 border-primary text-white' : 'bg-white/5 border-transparent text-gray-400 hover:bg-white/10'}`}
+                  className={`active:scale-[0.97] flex-1 p-4 rounded-xl border transition motion-reduce:duration-[0.01ms] text-left ${laptop === 'win' ? 'bg-primary/20 border-primary text-white' : 'bg-white/5 border-transparent text-gray-400 hover:bg-white/10'}`}
                 >
                   <div className="font-bold mb-1">Windows</div>
                   <div className="text-xs opacity-70">Dell XPS</div>
@@ -77,7 +77,7 @@ const GearSetup: React.FC = () => {
                   <button
                     key={opt.id}
                     onClick={() => setMonitor(opt.id as 'ultra' | 'dual' | 'pro')}
-                    className={`active:scale-[0.97] p-3 rounded-lg border transition-all motion-reduce:duration-[0.01ms] text-sm font-bold ${monitor === opt.id ? 'bg-primary/20 border-primary text-white' : 'bg-white/5 border-transparent text-gray-400 hover:bg-white/10'}`}
+                    className={`active:scale-[0.97] p-3 rounded-lg border transition motion-reduce:duration-[0.01ms] text-sm font-bold ${monitor === opt.id ? 'bg-primary/20 border-primary text-white' : 'bg-white/5 border-transparent text-gray-400 hover:bg-white/10'}`}
                   >
                     {opt.label}
                   </button>
@@ -93,14 +93,14 @@ const GearSetup: React.FC = () => {
               <div className="flex gap-4">
                 <button
                   onClick={() => setAudio('over')}
-                  className={`active:scale-[0.97] flex-1 p-4 rounded-xl border transition-all motion-reduce:duration-[0.01ms] text-left ${audio === 'over' ? 'bg-primary/20 border-primary text-white' : 'bg-white/5 border-transparent text-gray-400 hover:bg-white/10'}`}
+                  className={`active:scale-[0.97] flex-1 p-4 rounded-xl border transition motion-reduce:duration-[0.01ms] text-left ${audio === 'over' ? 'bg-primary/20 border-primary text-white' : 'bg-white/5 border-transparent text-gray-400 hover:bg-white/10'}`}
                 >
                   <div className="font-bold mb-1">Over-Ear</div>
                   <div className="text-xs opacity-70">Sony XM5</div>
                 </button>
                 <button
                   onClick={() => setAudio('pods')}
-                  className={`active:scale-[0.97] flex-1 p-4 rounded-xl border transition-all motion-reduce:duration-[0.01ms] text-left ${audio === 'pods' ? 'bg-primary/20 border-primary text-white' : 'bg-white/5 border-transparent text-gray-400 hover:bg-white/10'}`}
+                  className={`active:scale-[0.97] flex-1 p-4 rounded-xl border transition motion-reduce:duration-[0.01ms] text-left ${audio === 'pods' ? 'bg-primary/20 border-primary text-white' : 'bg-white/5 border-transparent text-gray-400 hover:bg-white/10'}`}
                 >
                   <div className="font-bold mb-1">In-Ear</div>
                   <div className="text-xs opacity-70">AirPods Pro</div>

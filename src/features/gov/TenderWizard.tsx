@@ -93,7 +93,7 @@ export const TenderWizard: React.FC = () => {
                     <button
                       key={opt}
                       onClick={() => handleBudgetSelect(opt)}
-                      className="active:scale-[0.97] p-6 rounded-xl bg-slate-700/50 border border-slate-600 hover:bg-blue-600 hover:border-blue-500 transition-all motion-reduce:duration-[0.01ms] group text-left"
+                      className="active:scale-[0.97] p-6 rounded-xl bg-slate-700/50 border border-slate-600 hover:bg-blue-600 hover:border-blue-500 transition motion-reduce:duration-[0.01ms] group text-left"
                     >
                       <div className="w-3 h-3 rounded-full bg-slate-500 group-hover:bg-white mb-4" />
                       <span className="font-bold text-slate-200 group-hover:text-white block">
@@ -127,7 +127,7 @@ export const TenderWizard: React.FC = () => {
                     <button
                       key={opt}
                       onClick={() => handleTypeSelect(opt)}
-                      className="active:scale-[0.97] p-6 rounded-xl bg-slate-700/50 border border-slate-600 hover:bg-blue-600 hover:border-blue-500 transition-all motion-reduce:duration-[0.01ms] group flex items-center gap-4"
+                      className="active:scale-[0.97] p-6 rounded-xl bg-slate-700/50 border border-slate-600 hover:bg-blue-600 hover:border-blue-500 transition motion-reduce:duration-[0.01ms] group flex items-center gap-4"
                     >
                       <div className="p-2 rounded-lg bg-slate-800 group-hover:bg-blue-500/20">
                         <OptimizedIcon

@@ -99,7 +99,7 @@ const CodeQualitySimulator: React.FC = () => {
             <div
               key={feature.id}
               onClick={() => toggleFeature(feature.id)}
-              className={`group cursor-pointer p-4 rounded-xl border transition-all motion-reduce:duration-[0.01ms] duration-300 flex items-center justify-between ${feature.active ? 'bg-white border-primary shadow-md' : 'bg-white border-transparent hover:border-gray-200'}`}
+              className={`group cursor-pointer p-4 rounded-xl border transition motion-reduce:duration-[0.01ms] duration-300 flex items-center justify-between ${feature.active ? 'bg-white border-primary shadow-md' : 'bg-white border-transparent hover:border-gray-200'}`}
             >
               <div className="flex items-center gap-4">
                 <div

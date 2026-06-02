@@ -222,14 +222,14 @@ export const ReportDashboard: React.FC = () => {
         <div className="flex justify-center gap-3">
           <button
             onClick={handleDownloadPdf}
-            className="active:scale-[0.97] flex items-center gap-2 px-5 py-2.5 bg-white border border-gray-200 rounded-xl font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-300 transition-all motion-reduce:duration-[0.01ms] shadow-sm"
+            className="active:scale-[0.97] flex items-center gap-2 px-5 py-2.5 bg-white border border-gray-200 rounded-xl font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-300 transition motion-reduce:duration-[0.01ms] shadow-sm"
           >
             <DownloadSimple className="w-4 h-4" />
             <span>{t('dashboard.button_pdf')}</span>
           </button>
           <button
             onClick={handleShare}
-            className="active:scale-[0.97] flex items-center gap-2 px-5 py-2.5 bg-white border border-gray-200 rounded-xl font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-300 transition-all motion-reduce:duration-[0.01ms] shadow-sm"
+            className="active:scale-[0.97] flex items-center gap-2 px-5 py-2.5 bg-white border border-gray-200 rounded-xl font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-300 transition motion-reduce:duration-[0.01ms] shadow-sm"
           >
             {copied ? (
               <>
@@ -245,7 +245,7 @@ export const ReportDashboard: React.FC = () => {
           </button>
           <button
             onClick={() => setShowEmailModal(true)}
-            className="active:scale-[0.97] flex items-center gap-2 px-5 py-2.5 bg-white border border-gray-200 rounded-xl font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-300 transition-all motion-reduce:duration-[0.01ms] shadow-sm"
+            className="active:scale-[0.97] flex items-center gap-2 px-5 py-2.5 bg-white border border-gray-200 rounded-xl font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-300 transition motion-reduce:duration-[0.01ms] shadow-sm"
           >
             <Envelope className="w-4 h-4" />
             <span>{t('dashboard.button_email')}</span>
@@ -475,7 +475,7 @@ export const ReportDashboard: React.FC = () => {
             <p className="text-gray-500 mb-4">{t('dashboard.plan_placeholder')}</p>
             <button
               onClick={() => useAnalyzerStore.getState().generatePlan()}
-              className="active:scale-[0.97] bg-primary text-white px-6 py-2 rounded-lg font-bold shadow hover:bg-blue-700 transition-all motion-reduce:duration-[0.01ms]"
+              className="active:scale-[0.97] bg-primary text-white px-6 py-2 rounded-lg font-bold shadow hover:bg-blue-700 transition motion-reduce:duration-[0.01ms]"
             >
               {t('dashboard.generate_ai_plan')}
             </button>

@@ -16,7 +16,7 @@ export const FadeInUp: React.FC<MotionWrapperProps> = ({
   children,
   className = '',
   delay = 0,
-  duration = 0.6,
+  duration = 0.25,
   once = true,
   layout = false,
 }) => {
@@ -27,7 +27,7 @@ export const FadeInUp: React.FC<MotionWrapperProps> = ({
     <div
       ref={ref}
       data-in-view={isInView}
-      className={`transition-[transform,opacity] ease-out opacity-0 translate-y-[30px] data-[in-view=true]:opacity-100 data-[in-view=true]:translate-y-0 motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none transform-gpu will-change-transform ${className}`}
+      className={`transition-[transform,opacity] ease-[cubic-bezier(0.23,1,0.32,1)] opacity-0 translate-y-[15px] data-[in-view=true]:opacity-100 data-[in-view=true]:translate-y-0 motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none ${className}`}
       style={{ transitionDuration: `${duration}s`, transitionDelay: `${delay}s` }}
     >
       {children}
@@ -39,7 +39,7 @@ export const ScaleIn: React.FC<MotionWrapperProps> = ({
   children,
   className = '',
   delay = 0,
-  duration = 0.5,
+  duration = 0.25,
   once = true,
   layout = false,
 }) => {
@@ -50,7 +50,7 @@ export const ScaleIn: React.FC<MotionWrapperProps> = ({
     <div
       ref={ref}
       data-in-view={isInView}
-      className={`transition-[transform,opacity] ease-out opacity-0 scale-95 data-[in-view=true]:opacity-100 data-[in-view=true]:scale-100 motion-reduce:scale-100 motion-reduce:opacity-100 motion-reduce:transition-none transform-gpu will-change-transform ${className}`}
+      className={`transition-[transform,opacity] ease-[cubic-bezier(0.23,1,0.32,1)] opacity-0 scale-95 data-[in-view=true]:opacity-100 data-[in-view=true]:scale-100 motion-reduce:scale-100 motion-reduce:opacity-100 motion-reduce:transition-none ${className}`}
       style={{ transitionDuration: `${duration}s`, transitionDelay: `${delay}s` }}
     >
       {children}
@@ -70,7 +70,7 @@ export const StaggerContainer: React.FC<Omit<MotionWrapperProps, 'delay' | 'dura
     if (ref.current) {
       const items = ref.current.querySelectorAll('.stagger-item');
       items.forEach((item, index) => {
-        (item as HTMLElement).style.transitionDelay = `${Math.min(index * 60, 400)}ms`;
+        (item as HTMLElement).style.transitionDelay = `${Math.min(index * 50, 400)}ms`;
       });
     }
   }, []);
@@ -79,8 +79,8 @@ export const StaggerContainer: React.FC<Omit<MotionWrapperProps, 'delay' | 'dura
     <div
       ref={ref}
       data-in-view={isInView}
-      className={`group/stagger transition-opacity opacity-0 data-[in-view=true]:opacity-100 motion-reduce:opacity-100 motion-reduce:transition-none ${className}`}
-      style={{ transitionDuration: '0.3s' }}
+      className={`group/stagger transition-opacity ease-[cubic-bezier(0.23,1,0.32,1)] opacity-0 data-[in-view=true]:opacity-100 motion-reduce:opacity-100 motion-reduce:transition-none ${className}`}
+      style={{ transitionDuration: '0.25s' }}
     >
       {children}
     </div>
@@ -93,8 +93,8 @@ export const StaggerItem: React.FC<{ children: ReactNode; className?: string }> 
 }) => {
   return (
     <div
-      className={`stagger-item transition-[transform,opacity] ease-out opacity-0 translate-y-[20px] group-data-[in-view=true]/stagger:opacity-100 group-data-[in-view=true]/stagger:translate-y-0 motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none transform-gpu will-change-transform ${className}`}
-      style={{ transitionDuration: '0.5s' }}
+      className={`stagger-item transition-[transform,opacity] ease-[cubic-bezier(0.23,1,0.32,1)] opacity-0 translate-y-[15px] group-data-[in-view=true]/stagger:opacity-100 group-data-[in-view=true]/stagger:translate-y-0 motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none ${className}`}
+      style={{ transitionDuration: '0.25s' }}
     >
       {children}
     </div>

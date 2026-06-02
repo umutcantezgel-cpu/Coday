@@ -41,7 +41,7 @@ const Timeline: React.FC<TimelineProps> = ({ items, className = '' }) => {
             <div
               className={`
               relative z-10 w-12 h-12 rounded-full flex items-center justify-center
-              transition-all motion-reduce:duration-[0.01ms] duration-300 group-hover:scale-110
+              transition motion-reduce:duration-[0.01ms] duration-300 group-hover:scale-110
               ${
                 item.completed
                   ? 'bg-primary text-white shadow-lg shadow-primary/30'

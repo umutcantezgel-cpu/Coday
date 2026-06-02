@@ -47,13 +47,13 @@ const DesignSystemShowcase: React.FC = () => {
         <div className="bg-white p-1 rounded-xl border border-gray-200 flex gap-1">
           <button
             onClick={() => setTheme('brand-a')}
-            className={`active:scale-[0.97] px-4 py-2 rounded-lg text-sm font-bold transition-all motion-reduce:duration-[0.01ms] ${theme === 'brand-a' ? 'bg-gray-900 text-white shadow-md' : 'text-gray-500 hover:bg-gray-50'}`}
+            className={`active:scale-[0.97] px-4 py-2 rounded-lg text-sm font-bold transition motion-reduce:duration-[0.01ms] ${theme === 'brand-a' ? 'bg-gray-900 text-white shadow-md' : 'text-gray-500 hover:bg-gray-50'}`}
           >
             Playful
           </button>
           <button
             onClick={() => setTheme('brand-b')}
-            className={`active:scale-[0.97] px-4 py-2 rounded-lg text-sm font-bold transition-all motion-reduce:duration-[0.01ms] ${theme === 'brand-b' ? 'bg-gray-900 text-white shadow-md' : 'text-gray-500 hover:bg-gray-50'}`}
+            className={`active:scale-[0.97] px-4 py-2 rounded-lg text-sm font-bold transition motion-reduce:duration-[0.01ms] ${theme === 'brand-b' ? 'bg-gray-900 text-white shadow-md' : 'text-gray-500 hover:bg-gray-50'}`}
           >
             Enterprise
           </button>
@@ -111,7 +111,7 @@ const DesignSystemShowcase: React.FC = () => {
               layout
               type="text"
               placeholder="hello@example.com"
-              className={`w-full px-4 py-3 outline-none transition-all motion-reduce:duration-[0.01ms] focus:ring-2`}
+              className={`w-full px-4 py-3 outline-none transition motion-reduce:duration-[0.01ms] focus:ring-2`}
               style={{
                 borderRadius: current.radius,
                 border:

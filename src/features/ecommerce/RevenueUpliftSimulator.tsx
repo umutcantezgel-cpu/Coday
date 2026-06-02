@@ -87,7 +87,7 @@ const RevenueUpliftSimulator: React.FC = () => {
               Performance.
             </p>
 
-            <button className="active:scale-[0.97] mt-8 px-6 py-3 bg-primary text-white font-bold rounded-xl shadow-lg hover:bg-primary/90 transition-all motion-reduce:duration-[0.01ms] flex items-center justify-center gap-2 w-full sm:w-auto">
+            <button className="active:scale-[0.97] mt-8 px-6 py-3 bg-primary text-white font-bold rounded-xl shadow-lg hover:bg-primary/90 transition motion-reduce:duration-[0.01ms] flex items-center justify-center gap-2 w-full sm:w-auto">
               Strategiegespräch buchen
               <Icon name="arrow_forward" className="text-sm" />
             </button>

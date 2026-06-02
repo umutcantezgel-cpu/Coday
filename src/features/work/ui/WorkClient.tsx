@@ -73,7 +73,7 @@ const Work: React.FC = () => {
                 <button
                   key={item.id}
                   onClick={() => handleFilterChange(index)}
-                  className={`active:scale-[0.97] px-6 py-2.5 rounded-full text-sm font-bold transition-all motion-reduce:duration-[0.01ms] duration-300 ${
+                  className={`active:scale-[0.97] px-6 py-2.5 rounded-full text-sm font-bold transition motion-reduce:duration-[0.01ms] duration-300 ${
                     item.id === filter
                       ? 'bg-primary text-white shadow-lg shadow-primary/25 scale-105'
                       : 'bg-gray-100 text-gray-500 hover:bg-gray-200 hover:text-gray-700'

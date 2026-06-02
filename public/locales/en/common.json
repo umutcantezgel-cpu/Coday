@@ -322,9 +322,14 @@
     "cta": "Request Audit →"
   },
   "actions": {
-    "read_more": "Mehr erfahren"
+    "read_more": "Read more"
+  },
+  "features": {
+    "google_maps": "Google Business Profile Optimization",
+    "regional_pages": "Regional Landing Pages",
+    "review_management": "Review Management"
   },
   "de": "Deutsch",
   "en": "English",
-  "about": "Über uns"
+  "about": "About Us"
 }

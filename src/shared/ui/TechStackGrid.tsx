@@ -30,7 +30,7 @@ const TechStackGrid: React.FC<TechStackGridProps> = ({ items, className = '' }) 
           variants={scaleUpVariants}
           transition={TRANSITION.reveal}
           whileHover={{ y: -4, scale: 1.02 }}
-          className="group relative bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-lg transition-all motion-reduce:duration-[0.01ms] cursor-pointer overflow-hidden"
+          className="group relative bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-lg transition motion-reduce:duration-[0.01ms] cursor-pointer overflow-hidden"
         >
           {/* Background glow */}
           <div

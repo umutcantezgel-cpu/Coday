@@ -294,7 +294,7 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
             {items.map((item, index) => (
               <li
                 key={index}
-                className={`rounded-full relative cursor-pointer transition-all motion-reduce:duration-[0.01ms] duration-300 ease ${
+                className={`rounded-full relative cursor-pointer transition motion-reduce:duration-[0.01ms] duration-300 ease ${
                   activeIndex === index ? 'active' : ''
                 }`}
               >

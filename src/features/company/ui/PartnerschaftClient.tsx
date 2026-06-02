@@ -75,7 +75,7 @@ const Partnerschaft: React.FC = () => {
             >
               <NavLink
                 href="/contact"
-                className="px-8 py-4 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition-all motion-reduce:duration-[0.01ms] duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center gap-2"
+                className="px-8 py-4 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition motion-reduce:duration-[0.01ms] duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center gap-2"
               >
                 Partner werden <OptimizedIcon icon={ArrowRight} />
               </NavLink>
@@ -210,7 +210,7 @@ const Partnerschaft: React.FC = () => {
             </p>
             <NavLink
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition-all motion-reduce:duration-[0.01ms] duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition motion-reduce:duration-[0.01ms] duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
             >
               Partner-Gespräch vereinbaren <OptimizedIcon icon={TrendUp} />
             </NavLink>

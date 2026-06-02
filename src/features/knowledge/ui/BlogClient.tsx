@@ -81,7 +81,7 @@ const Blog: React.FC = () => {
               placeholder={t('searchPlaceholder', 'Suchen Sie nach Artikeln...')}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-4 rounded-2xl bg-white border border-gray-200 focus:border-primary focus:ring-4 focus:ring-primary/10 shadow-sm transition-all motion-reduce:duration-[0.01ms] text-slate-700"
+              className="w-full pl-12 pr-4 py-4 rounded-2xl bg-white border border-gray-200 focus:border-primary focus:ring-4 focus:ring-primary/10 shadow-sm transition motion-reduce:duration-[0.01ms] text-slate-700"
             />
           </div>
         </div>
@@ -122,7 +122,7 @@ const Blog: React.FC = () => {
           >
             <Link
               href={`/knowledge/blog/${featuredPost.slug}`}
-              className="block relative rounded-3xl overflow-hidden shadow-2xl group cursor-pointer h-[500px] hover:-translate-y-1.5 hover:scale-[1.01] hover:shadow-glow transition-all motion-reduce:duration-[0.01ms] duration-500 ease-out"
+              className="block relative rounded-3xl overflow-hidden shadow-2xl group cursor-pointer h-[500px] hover:-translate-y-1.5 hover:scale-[1.01] hover:shadow-glow transition motion-reduce:duration-[0.01ms] duration-500 ease-out"
             >
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10" />
               <OptimizedImage
@@ -171,7 +171,7 @@ const Blog: React.FC = () => {
                   href={`/knowledge/blog/${post.slug}`}
                   className="flex flex-col group cursor-pointer h-full"
                 >
-                  <article className="flex flex-col h-full bg-white rounded-3xl p-5 shadow-sm border border-gray-100 hover:shadow-xl hover:border-primary/20 hover:-translate-y-1.5 hover:scale-[1.02] transition-all motion-reduce:duration-[0.01ms] duration-500 ease-out">
+                  <article className="flex flex-col h-full bg-white rounded-3xl p-5 shadow-sm border border-gray-100 hover:shadow-xl hover:border-primary/20 hover:-translate-y-1.5 hover:scale-[1.02] transition motion-reduce:duration-[0.01ms] duration-500 ease-out">
                     <div className="h-56 rounded-2xl bg-slate-100 mb-6 overflow-hidden relative">
                       <OptimizedImage
                         src={post.image}

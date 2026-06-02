@@ -77,8 +77,9 @@ export const SpeedComparison: React.FC = () => {
             <div className="h-4 bg-gray-800 rounded-full overflow-hidden">
               <motion.div
                 className="h-full bg-red-500"
-                initial={{ width: 0 }}
-                animate={{ width: `${wpProgress}%` }}
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: wpProgress / 100 }}
+                style={{ transformOrigin: 'left' }}
                 transition={{ ease: 'linear' }}
               />
             </div>
@@ -99,8 +100,9 @@ export const SpeedComparison: React.FC = () => {
             <div className="h-4 bg-gray-800 rounded-full overflow-hidden relative">
               <motion.div
                 className="h-full bg-primary shadow-[0_0_20px_rgba(20,122,122,0.8)]"
-                initial={{ width: 0 }}
-                animate={{ width: `${customProgress}%` }}
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: customProgress / 100 }}
+                style={{ transformOrigin: 'left' }}
                 transition={{ ease: 'easeOut' }}
               />
             </div>
@@ -111,7 +113,7 @@ export const SpeedComparison: React.FC = () => {
           <button
             onClick={startRace}
             disabled={isRunning}
-            className="px-8 py-3 bg-white text-black font-bold rounded-full hover:scale-105 active:scale-[0.97] transition-all motion-reduce:duration-[0.01ms] disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-white/20"
+            className="px-8 py-3 bg-white text-black font-bold rounded-full hover:scale-105 active:scale-[0.97] transition motion-reduce:duration-[0.01ms] disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-white/20"
           >
             {isRunning ? t('speedComparison.rendering') : t('speedComparison.startTest')}
           </button>

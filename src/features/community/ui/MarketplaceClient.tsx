@@ -66,7 +66,7 @@ const Marketplace: React.FC = () => {
           {PRODUCTS.map((item) => (
             <div
               key={item.id}
-              className="group relative bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl hover:border-blue-200 transition-all motion-reduce:duration-[0.01ms] duration-300 flex flex-col"
+              className="group relative bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl hover:border-blue-200 transition motion-reduce:duration-[0.01ms] duration-300 flex flex-col"
             >
               <div className="h-48 relative overflow-hidden bg-slate-50">
                 <OptimizedImage

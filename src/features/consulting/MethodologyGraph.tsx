@@ -80,7 +80,7 @@ export const MethodologyGraph: React.FC<MethodologyGraphProps> = ({
               <div
                 className={`w-20 h-20 mx-auto rounded-2xl flex items-center justify-center mb-6 
                                 ${step.bg} ${step.border} border-2 backdrop-blur-sm 
-                                transition-all motion-reduce:duration-[0.01ms] duration-300 group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] z-10 relative bg-slate-900`}
+                                transition motion-reduce:duration-[0.01ms] duration-300 group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] z-10 relative bg-slate-900`}
               >
                 <OptimizedIcon icon={step.icon} className={`w-8 h-8 ${step.color}`} />
 

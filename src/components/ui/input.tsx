@@ -10,6 +10,9 @@ export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> 
   wrapperClassName?: string;
 }
 
+/**
+ * A reusable Input component with floating label, error, and helper text support.
+ */
 const Input = forwardRef<HTMLInputElement, InputProps>(
   (
     {
@@ -39,15 +42,14 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       <div
         className={cn(
           'w-full flex flex-col',
-          error &&
-            'animate-[shake-x_0.4s_cubic-bezier(0.36,0.07,0.19,0.97)_both] motion-reduce:animate-none',
+          error && 'animate-shake motion-reduce:animate-none',
           props.disabled && 'opacity-50 cursor-not-allowed',
           wrapperClassName
         )}
       >
         <div
           className={cn(
-            'relative flex items-center h-[56px] bg-white rounded-xl border border-gray-200 transition-colors duration-200 motion-reduce:transition-none',
+            'relative flex items-center h-14 bg-white rounded-xl border border-gray-200',
             'focus-within:border-primary-600 focus-within:ring-1 focus-within:ring-primary-600',
             props.disabled && 'opacity-50 cursor-not-allowed bg-gray-50'
           )}
@@ -76,7 +78,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             <label
               htmlFor={inputId}
               className={cn(
-                'absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none transition-[transform,opacity,color] duration-200 ease-out origin-top-left motion-reduce:transition-none',
+                'absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none transition-[transform,opacity] duration-150 ease-appear origin-top-left motion-reduce:transition-none',
                 'peer-focus:-translate-y-[1.1rem] peer-focus:scale-[0.80] peer-focus:text-primary-600',
                 'peer-[:not(:placeholder-shown)]:-translate-y-[1.1rem] peer-[:not(:placeholder-shown)]:scale-[0.80]',
                 leftIcon &&
@@ -109,7 +111,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           <p
             id={errorId}
             className={cn(
-              'absolute top-0 left-1 text-sm text-red-500 flex items-center gap-1 transition-[transform,opacity] duration-200 ease-out motion-reduce:transition-none',
+              'absolute top-0 left-1 text-sm text-red-500 flex items-center gap-1 transition-[transform,opacity] duration-150 ease-appear motion-reduce:transition-none',
               error ? 'translate-y-0 opacity-100' : '-translate-y-2 opacity-0 pointer-events-none'
             )}
             role="alert"
@@ -120,7 +122,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           <p
             id={helperId}
             className={cn(
-              'absolute top-0 left-1 text-sm text-gray-500 transition-[transform,opacity] duration-200 ease-out motion-reduce:transition-none',
+              'absolute top-0 left-1 text-sm text-gray-500 transition-[transform,opacity] duration-150 ease-appear motion-reduce:transition-none',
               !error && helperText
                 ? 'translate-y-0 opacity-100'
                 : '-translate-y-2 opacity-0 pointer-events-none'

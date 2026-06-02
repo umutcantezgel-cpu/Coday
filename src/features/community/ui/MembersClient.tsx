@@ -31,7 +31,7 @@ const Members: React.FC = () => {
           {members.map((member, i) => (
             <div
               key={i}
-              className="group relative bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-lg transition-all motion-reduce:duration-[0.01ms] duration-300 text-center"
+              className="group relative bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-lg transition motion-reduce:duration-[0.01ms] duration-300 text-center"
             >
               <div className="absolute inset-0 bg-gradient-to-b from-transparent to-blue-50/30 opacity-0 group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms] rounded-2xl pointer-events-none" />
 

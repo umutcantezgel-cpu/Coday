@@ -51,7 +51,7 @@ export const TrustSection: React.FC = () => {
               {[...clients, ...clients, ...clients].map((client, index) => (
                 <div
                   key={`${client}-${index}`}
-                  className="px-6 py-3 rounded-full border border-white/[0.08] bg-white/[0.02] text-gray-400 font-display font-semibold text-sm tracking-wide hover:border-primary/30 hover:text-primary transition-all motion-reduce:duration-[0.01ms] duration-400 select-none whitespace-nowrap"
+                  className="px-6 py-3 rounded-full border border-white/[0.08] bg-white/[0.02] text-gray-400 font-display font-semibold text-sm tracking-wide hover:border-primary/30 hover:text-primary transition motion-reduce:duration-[0.01ms] duration-400 select-none whitespace-nowrap"
                 >
                   {client}
                 </div>
@@ -65,7 +65,7 @@ export const TrustSection: React.FC = () => {
           {metrics.map((metric, index) => (
             <motion.div
               key={metric.label}
-              className="relative group text-center p-6 md:p-8 rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm hover:border-primary/20 transition-all motion-reduce:duration-[0.01ms] duration-500"
+              className="relative group text-center p-6 md:p-8 rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm hover:border-primary/20 transition motion-reduce:duration-[0.01ms] duration-500"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

@@ -9,9 +9,9 @@ const generateClientLogo = (text: string, Icon: React.ElementType): LogoItem => 
     <div className="flex items-center justify-center gap-3 h-12 px-6 group cursor-default">
       <Icon
         weight="duotone"
-        className="w-8 h-8 text-slate-400 opacity-60 group-hover:opacity-100 group-hover:text-primary transition-all motion-reduce:duration-[0.01ms] duration-300 grayscale group-hover:grayscale-0"
+        className="w-8 h-8 text-slate-400 opacity-60 group-hover:opacity-100 group-hover:text-primary transition motion-reduce:duration-[0.01ms] duration-300 grayscale group-hover:grayscale-0"
       />
-      <span className="font-display font-bold text-xl text-slate-400 opacity-60 group-hover:opacity-100 group-hover:text-primary transition-all motion-reduce:duration-[0.01ms] duration-300 grayscale group-hover:grayscale-0 tracking-wide uppercase">
+      <span className="font-display font-bold text-xl text-slate-400 opacity-60 group-hover:opacity-100 group-hover:text-primary transition motion-reduce:duration-[0.01ms] duration-300 grayscale group-hover:grayscale-0 tracking-wide uppercase">
         {text}
       </span>
     </div>

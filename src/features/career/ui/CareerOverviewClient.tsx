@@ -110,7 +110,7 @@ export function CareerOverviewClient() {
               <a
                 href="/contact"
                 key={idx}
-                className="flex flex-col sm:flex-row sm:items-center justify-between p-6 rounded-2xl border border-gray-100 hover:border-sapphire/50 hover:shadow-lg transition-all motion-reduce:duration-[0.01ms] group"
+                className="flex flex-col sm:flex-row sm:items-center justify-between p-6 rounded-2xl border border-gray-100 hover:border-sapphire/50 hover:shadow-lg transition motion-reduce:duration-[0.01ms] group"
               >
                 <div>
                   <h3 className="font-bold text-xl text-secondary group-hover:text-sapphire transition-colors motion-reduce:duration-[0.01ms]">
@@ -122,7 +122,7 @@ export function CareerOverviewClient() {
                     <span>{job.time}</span>
                   </div>
                 </div>
-                <span className="mt-4 sm:mt-0 px-4 py-2 bg-gray-50 text-secondary font-bold rounded-lg text-sm group-hover:bg-sapphire group-hover:text-white transition-all motion-reduce:duration-[0.01ms]">
+                <span className="mt-4 sm:mt-0 px-4 py-2 bg-gray-50 text-secondary font-bold rounded-lg text-sm group-hover:bg-sapphire group-hover:text-white transition motion-reduce:duration-[0.01ms]">
                   {t('jobs.button')} &rarr;
                 </span>
               </a>

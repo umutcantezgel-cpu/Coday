@@ -134,7 +134,7 @@ export const HackSimulator: React.FC = () => {
               disabled={isRunning}
               className={cn(
                 'active:scale-[0.97]',
-                'px-4 py-3 min-h-[44px] rounded-md transition-all motion-reduce:duration-[0.01ms] flex items-center gap-2 font-medium text-sm',
+                'px-4 py-3 min-h-[44px] rounded-md transition motion-reduce:duration-[0.01ms] flex items-center gap-2 font-medium text-sm',
                 activeSystem === 'wordpress'
                   ? 'bg-red-500/20 text-red-400 border border-red-500/50'
                   : 'text-gray-500 hover:text-gray-300',
@@ -152,7 +152,7 @@ export const HackSimulator: React.FC = () => {
               disabled={isRunning}
               className={cn(
                 'active:scale-[0.97]',
-                'px-4 py-3 min-h-[44px] rounded-md transition-all motion-reduce:duration-[0.01ms] flex items-center gap-2 font-medium text-sm',
+                'px-4 py-3 min-h-[44px] rounded-md transition motion-reduce:duration-[0.01ms] flex items-center gap-2 font-medium text-sm',
                 activeSystem === 'coday'
                   ? 'bg-green-500/20 text-green-400 border border-green-500/50'
                   : 'text-gray-500 hover:text-gray-300',
@@ -280,7 +280,7 @@ export const HackSimulator: React.FC = () => {
         <div className="h-1 bg-gray-800 w-full">
           <motion.div
             className={cn(
-              'h-full transition-all motion-reduce:duration-[0.01ms] duration-300',
+              'h-full transition motion-reduce:duration-[0.01ms] duration-300',
               getStatusColor()
             )}
             style={{ width: `${attackProgress}%` }}

@@ -133,7 +133,7 @@ const Gastronomie: React.FC = () => {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all motion-reduce:duration-[0.01ms]"
+                className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition motion-reduce:duration-[0.01ms]"
               >
                 <div className="w-12 h-12 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center mb-6">
                   <OptimizedIcon icon={iconMap[item.icon] || Confetti} />

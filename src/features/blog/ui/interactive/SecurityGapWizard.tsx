@@ -96,8 +96,9 @@ export const SecurityGapWizard: React.FC = () => {
       <div className="absolute top-0 left-0 w-full h-1 bg-gray-100">
         <motion.div
           className="h-full bg-blue-600"
-          initial={{ width: 0 }}
-          animate={{ width: `${((step + (showResult ? 1 : 0)) / QUESTIONS.length) * 100}%` }}
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: (((step + (showResult ? 1 : 0)) / QUESTIONS.length) * 100) / 100 }}
+          style={{ transformOrigin: 'left' }}
         />
       </div>
 
@@ -126,7 +127,7 @@ export const SecurityGapWizard: React.FC = () => {
                   <button
                     key={idx}
                     onClick={() => handleAnswer(option.score)}
-                    className="active:scale-[0.97] w-full p-4 rounded-xl border border-gray-200 hover:border-blue-500 hover:bg-blue-50 transition-all motion-reduce:duration-[0.01ms] text-left flex items-center justify-between group"
+                    className="active:scale-[0.97] w-full p-4 rounded-xl border border-gray-200 hover:border-blue-500 hover:bg-blue-50 transition motion-reduce:duration-[0.01ms] text-left flex items-center justify-between group"
                   >
                     <span className="font-medium text-gray-700 group-hover:text-blue-900">
                       {option.label}
@@ -180,8 +181,9 @@ export const SecurityGapWizard: React.FC = () => {
                           ? 'bg-yellow-500'
                           : 'bg-red-500'
                     )}
-                    initial={{ width: 0 }}
-                    animate={{ width: `${percentage}%` }}
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: percentage / 100 }}
+                    style={{ transformOrigin: 'left' }}
                     transition={{ delay: 0.2, duration: 0.8 }}
                   />
                 </div>

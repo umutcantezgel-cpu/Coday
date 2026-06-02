@@ -108,7 +108,7 @@ const Calculator: React.FC = () => {
               return (
                 <div
                   key={category}
-                  className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all motion-reduce:duration-[0.01ms] duration-300"
+                  className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition motion-reduce:duration-[0.01ms] duration-300"
                 >
                   <button
                     onClick={() => toggleCategory(category)}
@@ -197,7 +197,7 @@ const Calculator: React.FC = () => {
           <p className="text-gray-600 mb-6">{t('hero.next_step')}</p>
           <button
             onClick={handleContinueToContact}
-            className="active:scale-[0.97] inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all motion-reduce:duration-[0.01ms] duration-300 uppercase tracking-wide"
+            className="active:scale-[0.97] inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition motion-reduce:duration-[0.01ms] duration-300 uppercase tracking-wide"
           >
             {t('hero.continue')}
             <ArrowRight size={20} />

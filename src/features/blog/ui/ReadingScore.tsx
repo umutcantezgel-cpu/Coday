@@ -62,9 +62,10 @@ export const ReadingScore: React.FC<{ currentPostId?: number }> = ({ currentPost
 
         <div className="w-full bg-gray-700 h-2 rounded-full overflow-hidden mb-2">
           <motion.div
-            initial={{ width: 0 }}
-            animate={{ width: `${progress}%` }}
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: progress / 100 }}
             transition={{ duration: 1, ease: 'easeOut' }}
+            style={{ transformOrigin: 'left' }}
             className="h-full bg-gradient-to-r from-yellow-400 to-orange-500"
           />
         </div>

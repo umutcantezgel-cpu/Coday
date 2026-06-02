@@ -261,7 +261,11 @@
   background-color: color-mix(in srgb, var(--color-bg-primary) 70%, transparent);
   border: 1px solid color-mix(in srgb, var(--color-border-default) 40%, transparent);
   border-radius: 1rem;
-  transition: all 300ms ease;
+  transition:
+    transform 300ms ease,
+    box-shadow 300ms ease,
+    border-color 300ms ease,
+    background-color 300ms ease;
   box-shadow: var(--shadow-md);
 }
 .glass-card:hover {
@@ -276,7 +280,11 @@
   background-color: var(--color-bg-primary);
   border: 1px solid var(--color-border-default);
   border-radius: 1rem;
-  transition: all 300ms ease;
+  transition:
+    transform 300ms ease,
+    box-shadow 300ms ease,
+    border-color 300ms ease,
+    background-color 300ms ease;
   box-shadow: var(--shadow-sm);
 }
 .flat-card:hover {
@@ -323,24 +331,40 @@
 .link-animated:hover {
   color: var(--color-text-link);
 }
-.link-animated::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: -0.25rem;
-  left: 0;
-  background-color: var(--color-primary-600);
-  transform-origin: bottom right;
-  transition: transform 150ms ease;
-}
-.link-animated:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
 
 /* Phase 18 Animations */
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-4px);
+  }
+  75% {
+    transform: translateX(4px);
+  }
+}
+
+@keyframes scale-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-shake {
+  animation: shake 400ms var(--ease-out) forwards;
+}
+.animate-scale-pulse {
+  animation: scale-pulse 300ms var(--ease-out) forwards;
+}
+
 .animate-fade-in-up {
   animation: fade-in-up var(--duration-slower) var(--ease-out) forwards;
 }
@@ -547,7 +571,6 @@ body {
   transition:
     opacity var(--duration-slow) var(--ease-out),
     transform var(--duration-slow) var(--ease-out);
-  will-change: opacity, transform;
 }
 
 .reveal-visible {
@@ -606,26 +629,6 @@ body {
 }
 .stagger-5 {
   transition-delay: 500ms;
-}
-
-/* Animated Underline for Links */
-.link-animated {
-  position: relative;
-  text-decoration: none;
-}
-.link-animated::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 1px;
-  bottom: -2px;
-  left: 0;
-  background-color: var(--color-primary-500);
-  transition: width var(--duration-fast) var(--ease-out);
-}
-.link-animated:hover::after,
-.link-animated:focus-visible::after {
-  width: 100%;
 }
 
 /* Button & Card Hover Enhancements */

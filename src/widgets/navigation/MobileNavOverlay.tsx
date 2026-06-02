@@ -10,6 +10,7 @@ import { NavItem } from '@/widgets/navigation/config';
 import '@/widgets/navigation/MobileReadyNav.css';
 
 import { useFocusTrap } from '@/shared/hooks/useFocusTrap';
+import { useScrollLock } from '@/hooks/use-scroll-lock';
 
 interface MobileNavOverlayProps {
   items: NavItem[];
@@ -27,37 +28,17 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
     setExpandedItem(expandedItem === label ? null : label);
   };
 
-  // Lock body scroll and handle escape key
-  useEffect(() => {
-    if (isOpen) {
-      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-      document.documentElement.style.overflow = 'hidden';
-      document.documentElement.style.overscrollBehavior = 'none';
-      document.body.style.paddingRight = `${scrollbarWidth}px`;
-      document.body.style.overflow = 'hidden';
-      document.body.style.overscrollBehavior = 'none';
-      document.body.classList.add('mobile-nav-open');
-    } else {
-      document.documentElement.style.overflow = '';
-      document.documentElement.style.overscrollBehavior = '';
-      document.body.style.paddingRight = '';
-      document.body.style.overflow = '';
-      document.body.style.overscrollBehavior = '';
-      document.body.classList.remove('mobile-nav-open');
-    }
+  // Lock body scroll
+  useScrollLock(isOpen);
 
+  // handle escape key
+  useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
+      if (e.key === 'Escape' && isOpen) onClose();
     };
     window.addEventListener('keydown', handleEsc);
 
     return () => {
-      document.documentElement.style.overflow = '';
-      document.documentElement.style.overscrollBehavior = '';
-      document.body.style.paddingRight = '';
-      document.body.style.overflow = '';
-      document.body.style.overscrollBehavior = '';
-      document.body.classList.remove('mobile-nav-open');
       window.removeEventListener('keydown', handleEsc);
     };
   }, [isOpen, onClose]);

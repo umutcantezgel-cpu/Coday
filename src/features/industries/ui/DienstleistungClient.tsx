@@ -113,7 +113,7 @@ const Dienstleistung: React.FC = () => {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="p-8 border border-gray-100 rounded-2xl bg-white hover:shadow-xl transition-all motion-reduce:duration-[0.01ms]"
+                className="p-8 border border-gray-100 rounded-2xl bg-white hover:shadow-xl transition motion-reduce:duration-[0.01ms]"
               >
                 <OptimizedIcon
                   icon={iconMap[item.icon] || ChartLineUp}

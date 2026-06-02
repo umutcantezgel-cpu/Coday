@@ -17,6 +17,7 @@ import { IndustriesGrid } from '@/widgets/home/IndustriesGrid';
 import { TestimonialsSection } from '@/widgets/home/TestimonialsSection';
 import { PortfolioTeaserSection } from '@/widgets/home/PortfolioTeaserSection';
 import AgencyComparisonTable from '@/features/analyzer/ui/AgencyComparisonTable';
+import { ScrollReveal } from '@/shared/ui/animations/ScrollReveal';
 
 export async function generateMetadata({
   params,
@@ -58,13 +59,15 @@ export default async function HomePage() {
 
       <HeroSection />
 
-      <TrustBar />
+      <ScrollReveal index={0}>
+        <TrustBar />
+      </ScrollReveal>
 
-      <div>
+      <ScrollReveal index={1}>
         <React.Suspense fallback={<div className="min-h-[400px]" />}>
           <StatsSection />
         </React.Suspense>
-      </div>
+      </ScrollReveal>
 
       <div>
         <React.Suspense
@@ -74,70 +77,74 @@ export default async function HomePage() {
         </React.Suspense>
       </div>
 
-      <div>
+      <ScrollReveal index={0}>
         <React.Suspense fallback={<div className="min-h-[400px]" />}>
           <PhilosophySection />
         </React.Suspense>
-      </div>
+      </ScrollReveal>
 
-      <div>
+      <ScrollReveal index={1}>
         <React.Suspense fallback={<div className="min-h-[400px]" />}>
           <ServicesSection />
         </React.Suspense>
-      </div>
+      </ScrollReveal>
 
-      <div>
+      <ScrollReveal index={0}>
         <React.Suspense fallback={<div className="min-h-[400px]" />}>
           <PortfolioTeaserSection />
         </React.Suspense>
-      </div>
+      </ScrollReveal>
 
-      <div>
+      <ScrollReveal index={1}>
         <React.Suspense fallback={<div className="min-h-[400px]" />}>
           <IndustriesGrid />
         </React.Suspense>
-      </div>
+      </ScrollReveal>
 
-      <section
-        aria-labelledby="tech-stack-heading"
-        className="py-[var(--space-section)] bg-gray-50 overflow-hidden"
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <span className="text-sapphire font-bold tracking-wider uppercase text-xs mb-2 block">
-              Core Tech Stack
-            </span>
-            <h2
-              id="tech-stack-heading"
-              className="font-display font-bold text-2xl sm:text-3xl text-secondary"
-            >
-              High-End Architektur{' '}
-              <span className="text-sapphire">für kompromisslose Performance</span>
-            </h2>
+      <ScrollReveal index={0}>
+        <section
+          aria-labelledby="tech-stack-heading"
+          className="py-[var(--space-section)] bg-gray-50 overflow-hidden"
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-10">
+              <span className="text-sapphire font-bold tracking-wider uppercase text-xs mb-2 block">
+                Core Tech Stack
+              </span>
+              <h2
+                id="tech-stack-heading"
+                className="font-display font-bold text-2xl sm:text-3xl text-secondary"
+              >
+                High-End Architektur{' '}
+                <span className="text-sapphire">für kompromisslose Performance</span>
+              </h2>
+            </div>
+            <LogoLoop
+              logos={[
+                { node: <span className="font-bold text-secondary/80 text-xl">React 19</span> },
+                { node: <span className="font-bold text-secondary/80 text-xl">Next.js 15</span> },
+                { node: <span className="font-bold text-secondary/80 text-xl">TypeScript</span> },
+                { node: <span className="font-bold text-secondary/80 text-xl">Tailwind v4</span> },
+                { node: <span className="font-bold text-secondary/80 text-xl">Sanity CMS</span> },
+                { node: <span className="font-bold text-secondary/80 text-xl">Supabase</span> },
+                { node: <span className="font-bold text-secondary/80 text-xl">Vercel</span> },
+              ]}
+              speed={60}
+              direction="left"
+              logoHeight={32}
+              gap={80}
+              fadeOut={true}
+              pauseOnHover={true}
+            />
           </div>
-          <LogoLoop
-            logos={[
-              { node: <span className="font-bold text-secondary/80 text-xl">React 19</span> },
-              { node: <span className="font-bold text-secondary/80 text-xl">Next.js 15</span> },
-              { node: <span className="font-bold text-secondary/80 text-xl">TypeScript</span> },
-              { node: <span className="font-bold text-secondary/80 text-xl">Tailwind v4</span> },
-              { node: <span className="font-bold text-secondary/80 text-xl">Sanity CMS</span> },
-              { node: <span className="font-bold text-secondary/80 text-xl">Supabase</span> },
-              { node: <span className="font-bold text-secondary/80 text-xl">Vercel</span> },
-            ]}
-            speed={60}
-            direction="left"
-            logoHeight={32}
-            gap={80}
-            fadeOut={true}
-            pauseOnHover={true}
-          />
-        </div>
-      </section>
+        </section>
+      </ScrollReveal>
 
-      <React.Suspense fallback={<div className="min-h-[400px]" />}>
-        <TestimonialsSection />
-      </React.Suspense>
+      <ScrollReveal index={1}>
+        <React.Suspense fallback={<div className="min-h-[400px]" />}>
+          <TestimonialsSection />
+        </React.Suspense>
+      </ScrollReveal>
     </main>
   );
 }

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
-import ClientComponent from '@/features/pricing/ui/PackagesClient';
+import Packages from '@/features/pricing/ui/Packages';
 
 export async function generateMetadata({
   params,
@@ -27,5 +27,5 @@ export async function generateMetadata({
 }
 
 export default function PricingPage() {
-  return <ClientComponent />;
+  return <Packages />;
 }

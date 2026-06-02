@@ -124,7 +124,7 @@ export function WebDevelopmentClient() {
               <OptimizedImage
                 src={webDevImages.hero.src}
                 alt={t(webDevImages.hero.alt as any)}
-                className="relative rounded-3xl shadow-flat-lg w-full transform -rotate-1 hover:rotate-0 transition-all motion-reduce:duration-[0.01ms] duration-500 bg-white p-2"
+                className="relative rounded-3xl shadow-flat-lg w-full transform -rotate-1 hover:rotate-0 transition motion-reduce:duration-[0.01ms] duration-500 bg-white p-2"
                 priority
               />
             )}
@@ -176,7 +176,7 @@ export function WebDevelopmentClient() {
             <NavLink
               key={index}
               href={`/services/web-development/${feature.slug}`}
-              className="bg-white p-8 rounded-2xl shadow-flat border border-gray-100 hover:shadow-flat-lg transition-all motion-reduce:duration-[0.01ms] duration-300 group hover:-translate-y-1 block relative overflow-hidden h-full"
+              className="bg-white p-8 rounded-2xl shadow-flat border border-gray-100 hover:shadow-flat-lg transition motion-reduce:duration-[0.01ms] duration-300 group hover:-translate-y-1 block relative overflow-hidden h-full"
             >
               <div className="absolute top-0 end-0 w-32 h-32 bg-secondary/5 rounded-bl-full -me-8 -mt-8 transition-transform motion-reduce:duration-[0.01ms] group-hover:scale-110"></div>
               <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors motion-reduce:duration-[0.01ms] relative z-10">
@@ -231,7 +231,7 @@ export function WebDevelopmentClient() {
           </p>
           <NavLink
             href="/contact"
-            className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-primary rounded-xl bg-white hover:bg-gray-50 shadow-lg hover:shadow-xl transition-all motion-reduce:duration-[0.01ms]"
+            className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-primary rounded-xl bg-white hover:bg-gray-50 shadow-lg hover:shadow-xl transition motion-reduce:duration-[0.01ms]"
           >
             {t('services.web_development_page.cta.button')}
             <OptimizedIcon icon={RocketLaunch} className="ms-2" />

@@ -39,14 +39,14 @@ export const AICostGraph: React.FC = () => {
       <div className="flex flex-wrap gap-4 mb-8 bg-gray-50 p-2 rounded-xl w-fit border border-gray-100">
         <button
           onClick={() => setView('staff')}
-          className={`active:scale-[0.97] px-4 py-2 rounded-lg text-sm font-bold transition-all motion-reduce:duration-[0.01ms] flex items-center gap-2 ${view === 'staff' ? 'bg-white shadow text-gray-800 border-gray-200 border' : 'text-gray-500 hover:text-gray-700'}`}
+          className={`active:scale-[0.97] px-4 py-2 rounded-lg text-sm font-bold transition motion-reduce:duration-[0.01ms] flex items-center gap-2 ${view === 'staff' ? 'bg-white shadow text-gray-800 border-gray-200 border' : 'text-gray-500 hover:text-gray-700'}`}
         >
           <User size={16} />
           {t('aiCostGraph.staff')}
         </button>
         <button
           onClick={() => setView('ai')}
-          className={`active:scale-[0.97] px-4 py-2 rounded-lg text-sm font-bold transition-all motion-reduce:duration-[0.01ms] flex items-center gap-2 ${view === 'ai' ? 'bg-indigo-600 text-white shadow' : 'text-gray-500 hover:text-gray-700'}`}
+          className={`active:scale-[0.97] px-4 py-2 rounded-lg text-sm font-bold transition motion-reduce:duration-[0.01ms] flex items-center gap-2 ${view === 'ai' ? 'bg-indigo-600 text-white shadow' : 'text-gray-500 hover:text-gray-700'}`}
         >
           <Robot size={16} />
           {t('aiCostGraph.ai')}

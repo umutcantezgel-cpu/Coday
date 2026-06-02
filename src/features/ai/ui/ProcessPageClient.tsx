@@ -108,8 +108,9 @@ export default function ProcessPage() {
           </div>
           <div className="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
             <motion.div
-              initial={{ width: 0 }}
-              animate={{ width: `${progressPercentage}%` }}
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: progressPercentage / 100 }}
+              style={{ transformOrigin: 'left' }}
               className="h-full bg-primary"
             />
           </div>

@@ -192,7 +192,7 @@ export function HeadlessCmsClient() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* Sanity */}
-            <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition-all motion-reduce:duration-[0.01ms] relative overflow-hidden group">
+            <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition motion-reduce:duration-[0.01ms] relative overflow-hidden group">
               <div className="absolute top-0 right-0 bg-error/10 text-error text-xs font-bold px-3 py-1 rounded-bl-xl">
                 {t('headless_cms_page.cms_comparison.sanity.badge')}
               </div>
@@ -240,7 +240,7 @@ export function HeadlessCmsClient() {
             </div>
 
             {/* Strapi */}
-            <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition-all motion-reduce:duration-[0.01ms] relative overflow-hidden group">
+            <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition motion-reduce:duration-[0.01ms] relative overflow-hidden group">
               <div className="absolute top-0 right-0 bg-purple-500/10 text-purple-600 text-xs font-bold px-3 py-1 rounded-bl-xl">
                 {t('headless_cms_page.cms_comparison.strapi.badge')}
               </div>

@@ -20,6 +20,7 @@ import {
   Lock,
 } from '@phosphor-icons/react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
+import { ScrollReveal } from '@/shared/ui/animations/ScrollReveal';
 // SeoHead is handled differently in Next.js App Router, so we remove it from the client component
 
 export function AiHubClient() {
@@ -70,96 +71,100 @@ export function AiHubClient() {
 
       {/* Features Section (shown when idle) */}
       {status === 'idle' && (
-        <section className="py-24 bg-white border-t border-gray-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="font-display font-bold text-3xl text-gray-900 mb-4">
-                {t('analyzer.features.title')}
-              </h2>
-              <p className="text-gray-600 max-w-xl mx-auto">{t('analyzer.features.desc')}</p>
-            </div>
+        <ScrollReveal index={1}>
+          <section className="py-24 bg-white border-t border-gray-100">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-16">
+                <h2 className="font-display font-bold text-3xl text-gray-900 mb-4">
+                  {t('analyzer.features.title')}
+                </h2>
+                <p className="text-gray-600 max-w-xl mx-auto">{t('analyzer.features.desc')}</p>
+              </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  icon: Lightning,
-                  title: t('analyzer.features.items.speed.title'),
-                  desc: t('analyzer.features.items.speed.desc'),
-                  color: 'from-orange-500 to-red-500',
-                },
-                {
-                  icon: MagnifyingGlass,
-                  title: t('analyzer.features.items.seo.title'),
-                  desc: t('analyzer.features.items.seo.desc'),
-                  color: 'from-green-500 to-emerald-500',
-                },
-                {
-                  icon: Shield,
-                  title: t('analyzer.features.items.security.title'),
-                  desc: t('analyzer.features.items.security.desc'),
-                  color: 'from-blue-500 to-cyan-500',
-                },
-                {
-                  icon: Wheelchair,
-                  title: t('analyzer.features.items.a11y.title'),
-                  desc: t('analyzer.features.items.a11y.desc'),
-                  color: 'from-purple-500 to-violet-500',
-                },
-                {
-                  icon: CursorClick,
-                  title: t('analyzer.features.items.ux.title'),
-                  desc: t('analyzer.features.items.ux.desc'),
-                  color: 'from-pink-500 to-rose-500',
-                },
-                {
-                  icon: FileText,
-                  title: t('analyzer.features.items.content.title'),
-                  desc: t('analyzer.features.items.content.desc'),
-                  color: 'from-yellow-500 to-amber-500',
-                },
-              ].map((feature, idx) => (
-                <div
-                  key={idx}
-                  className="group p-6 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-xl transition-all motion-reduce:duration-[0.01ms] border border-gray-100"
-                >
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {[
+                  {
+                    icon: Lightning,
+                    title: t('analyzer.features.items.speed.title'),
+                    desc: t('analyzer.features.items.speed.desc'),
+                    color: 'from-orange-500 to-red-500',
+                  },
+                  {
+                    icon: MagnifyingGlass,
+                    title: t('analyzer.features.items.seo.title'),
+                    desc: t('analyzer.features.items.seo.desc'),
+                    color: 'from-green-500 to-emerald-500',
+                  },
+                  {
+                    icon: Shield,
+                    title: t('analyzer.features.items.security.title'),
+                    desc: t('analyzer.features.items.security.desc'),
+                    color: 'from-blue-500 to-cyan-500',
+                  },
+                  {
+                    icon: Wheelchair,
+                    title: t('analyzer.features.items.a11y.title'),
+                    desc: t('analyzer.features.items.a11y.desc'),
+                    color: 'from-purple-500 to-violet-500',
+                  },
+                  {
+                    icon: CursorClick,
+                    title: t('analyzer.features.items.ux.title'),
+                    desc: t('analyzer.features.items.ux.desc'),
+                    color: 'from-pink-500 to-rose-500',
+                  },
+                  {
+                    icon: FileText,
+                    title: t('analyzer.features.items.content.title'),
+                    desc: t('analyzer.features.items.content.desc'),
+                    color: 'from-yellow-500 to-amber-500',
+                  },
+                ].map((feature, idx) => (
                   <div
-                    className={`w-12 h-12 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms]`}
+                    key={idx}
+                    className="group p-6 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-xl transition-[transform,opacity] duration-[400ms] ease-appear motion-reduce:transition-none border border-gray-100"
                   >
-                    <OptimizedIcon icon={feature.icon} />
+                    <div
+                      className={`w-12 h-12 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms]`}
+                    >
+                      <OptimizedIcon icon={feature.icon} />
+                    </div>
+                    <h3 className="font-bold text-xl text-secondary mb-2">{feature.title}</h3>
+                    <p className="text-slate-600 text-sm">{feature.desc}</p>
                   </div>
-                  <h3 className="font-bold text-xl text-secondary mb-2">{feature.title}</h3>
-                  <p className="text-slate-600 text-sm">{feature.desc}</p>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </ScrollReveal>
       )}
 
       {/* Trust Section */}
       {status === 'idle' && (
-        <section className="py-16 bg-gray-50 border-t border-gray-100">
-          <div className="max-w-4xl mx-auto px-4 text-center">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-sm text-gray-500 mb-8">
-              <div className="flex items-center justify-center gap-2">
-                <OptimizedIcon icon={CheckCircle} className="text-primary" />
-                <span>{t('analyzer.trust.free')}</span>
+        <ScrollReveal index={2}>
+          <section className="py-16 bg-gray-50 border-t border-gray-100">
+            <div className="max-w-4xl mx-auto px-4 text-center">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-sm text-gray-500 mb-8">
+                <div className="flex items-center justify-center gap-2">
+                  <OptimizedIcon icon={CheckCircle} className="text-primary" />
+                  <span>{t('analyzer.trust.free')}</span>
+                </div>
+                <div className="flex items-center justify-center gap-2">
+                  <OptimizedIcon icon={Lock} className="text-primary" />
+                  <span>{t('analyzer.trust.private')}</span>
+                </div>
+                <div className="flex items-center justify-center gap-2">
+                  <OptimizedIcon icon={Lightning} className="text-primary" />
+                  <span>{t('analyzer.trust.fast')}</span>
+                </div>
+                <div className="hidden md:flex items-center justify-center gap-2 text-primary font-medium">
+                  <span>{t('analyzer.trust.stats')}</span>
+                </div>
               </div>
-              <div className="flex items-center justify-center gap-2">
-                <OptimizedIcon icon={Lock} className="text-primary" />
-                <span>{t('analyzer.trust.private')}</span>
-              </div>
-              <div className="flex items-center justify-center gap-2">
-                <OptimizedIcon icon={Lightning} className="text-primary" />
-                <span>{t('analyzer.trust.fast')}</span>
-              </div>
-              <div className="hidden md:flex items-center justify-center gap-2 text-primary font-medium">
-                <span>{t('analyzer.trust.stats')}</span>
-              </div>
+              <p className="text-sm text-gray-500">{t('analyzer.trust.stats')}</p>
             </div>
-            <p className="text-sm text-gray-500">{t('analyzer.trust.stats')}</p>
-          </div>
-        </section>
+          </section>
+        </ScrollReveal>
       )}
     </div>
   );

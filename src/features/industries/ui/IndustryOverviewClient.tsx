@@ -56,7 +56,7 @@ export function IndustryOverviewClient() {
               <Link
                 href={`/branchen/${industry.slug}`}
                 key={industry.slug}
-                className="group block p-8 bg-white border border-gray-200 rounded-3xl shadow-md hover:shadow-xl transition-all motion-reduce:duration-[0.01ms] duration-500 hover:-translate-y-2 relative overflow-hidden"
+                className="group block p-8 bg-white border border-gray-200 rounded-3xl shadow-md hover:shadow-xl transition motion-reduce:duration-[0.01ms] duration-500 hover:-translate-y-2 relative overflow-hidden"
               >
                 {/* Background Image */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity motion-reduce:duration-[0.01ms] duration-500 pointer-events-none">

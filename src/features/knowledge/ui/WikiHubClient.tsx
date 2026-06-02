@@ -107,7 +107,7 @@ export default function WikiHub() {
             >
               <Link
                 href={`/knowledge/wiki/${entity.slug}`}
-                className="block p-6 rounded-xl bg-coday-dark border border-coday-gray-800 hover:border-coday-gold/50 hover:bg-coday-gray-900 transition-all motion-reduce:duration-[0.01ms] group h-full"
+                className="block p-6 rounded-xl bg-coday-dark border border-coday-gray-800 hover:border-coday-gold/50 hover:bg-coday-gray-900 transition motion-reduce:duration-[0.01ms] group h-full"
               >
                 <div className="flex justify-between items-start mb-4">
                   <span className="text-xs font-bold uppercase tracking-wider text-coday-gold bg-coday-gold/10 px-2 py-1 rounded">

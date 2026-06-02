@@ -39,7 +39,7 @@ export const TrackingSimulator: React.FC = () => {
             }}
             className={clsx(
               'active:scale-[0.97]',
-              'p-6 rounded-2xl border-2 text-left transition-all motion-reduce:duration-[0.01ms]',
+              'p-6 rounded-2xl border-2 text-left transition motion-reduce:duration-[0.01ms]',
               mode === 'client'
                 ? 'border-red-500 bg-red-50 text-red-900'
                 : 'border-gray-200 hover:border-red-200 text-gray-600'
@@ -70,7 +70,7 @@ export const TrackingSimulator: React.FC = () => {
             }}
             className={clsx(
               'active:scale-[0.97]',
-              'p-6 rounded-2xl border-2 text-left transition-all motion-reduce:duration-[0.01ms]',
+              'p-6 rounded-2xl border-2 text-left transition motion-reduce:duration-[0.01ms]',
               mode === 'server'
                 ? 'border-green-500 bg-green-50 text-green-900'
                 : 'border-gray-200 hover:border-green-200 text-gray-600'

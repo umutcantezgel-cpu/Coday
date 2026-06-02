@@ -34,7 +34,7 @@ export const TemplateVault: React.FC<TemplateVaultProps> = ({ projects }) => {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: index * 0.05 }}
-              className="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl transition-all motion-reduce:duration-[0.01ms] duration-300"
+              className="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl transition motion-reduce:duration-[0.01ms] duration-300"
             >
               {/* Preview Window (Mockup style) */}
               <div className="relative aspect-[4/3] bg-slate-100 overflow-hidden border-b border-gray-100">

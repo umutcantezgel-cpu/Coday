@@ -195,7 +195,7 @@ export function MigrationClient() {
             direction="right"
             logos={safeFromTech.map((tech) => ({
               node: (
-                <div className="px-6 py-3 bg-red-50 border border-red-100 rounded-full mx-2 whitespace-nowrap transition-all motion-reduce:duration-[0.01ms] duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-red-100 cursor-default">
+                <div className="px-6 py-3 bg-red-50 border border-red-100 rounded-full mx-2 whitespace-nowrap transition motion-reduce:duration-[0.01ms] duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-red-100 cursor-default">
                   <span className="font-bold text-red-800">{tech}</span>
                 </div>
               ),
@@ -212,7 +212,7 @@ export function MigrationClient() {
             direction="left"
             logos={safeToTech.map((tech) => ({
               node: (
-                <div className="px-6 py-3 bg-green-50 border border-green-100 rounded-full mx-2 whitespace-nowrap transition-all motion-reduce:duration-[0.01ms] duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-green-100 cursor-default">
+                <div className="px-6 py-3 bg-green-50 border border-green-100 rounded-full mx-2 whitespace-nowrap transition motion-reduce:duration-[0.01ms] duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-green-100 cursor-default">
                   <span className="font-bold text-green-800">{tech}</span>
                 </div>
               ),

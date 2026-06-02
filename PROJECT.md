@@ -1,30 +1,30 @@
-# Project: Coday Full Website Redesign
+# Project: Motion System Overhaul
 
 ## Architecture
-- Code layout follows Next.js App Router inside `src/app/[locale]`.
-- Redesigns must adhere to high-end design, Emil Kowalski interaction design protocol, strict A11y & Performance limits.
+
+- Implementation of the Emil Kowalski motion philosophy.
+- Core restriction: Only animate `transform` and `opacity`.
+- Components affected: Buttons, Navigation, Inputs, Cards, Modals, Toasts, Accordions, Page Transitions, Scroll Animations.
 
 ## Milestones
-| # | Name | Scope | Dependencies | Status |
-|---|------|-------|-------------|--------|
-| 1 | Core Layouts & Homepage | src/app/layout.tsx, src/app/[locale]/layout.tsx, src/app/[locale]/page.tsx | none | PLANNED |
-| 2 | General Info Pages | about, contact, pricing, process, garantie, partnerschaft, presse, booking, calculator | none | PLANNED |
-| 3 | Legal Pages | legal/*, privacy | none | PLANNED |
-| 4 | Services Pages | services/* | none | PLANNED |
-| 5 | Work & Career Pages | work/*, career/* | none | PLANNED |
-| 6 | Industries & Standorte | branchen/*, industries/*, standorte/*, landingpages/*, webdesign-agentur-wetzlar, angebot-handwerker | none | PLANNED |
-| 7 | Knowledge & Community | knowledge/*, community/* | none | PLANNED |
-| 8 | AI Specific Pages | ai/* | none | PLANNED |
-| 9 | Final E2E Test Pass | Pass all E2E tests | 1-8 | PLANNED |
-| 10 | Adversarial Coverage | Tier 5 testing | 9 | PLANNED |
+
+| #   | Name                      | Scope                                                                                                                                                                                     | Dependencies | Status |
+| --- | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | ------ |
+| 1   | Baseline Analysis         | Use chrome-devtools and a11y-debugging to measure current FPS, layout triggers, memory, and a11y compliance. Output to `.antigravity/motion/performance-baseline.md` and `a11y-audit.md`. | none         | DONE   |
+| 2   | Component Interactions    | Implement 4-pillar motion on UI components (Buttons, Nav, Inputs, Cards, etc.) with exact timings.                                                                                        | M1           | DONE   |
+| 3   | Page & Scroll Transitions | Implement Next.js page transitions and IntersectionObserver-based scroll animations with staggering.                                                                                      | M2           | DONE   |
+| 4   | Final Verification        | Verify 60fps, no GPU leaks, and reduced-motion compliance using devtools and a11y skills.                                                                                                 | M3           | DONE   |
 
 ## Interface Contracts
-- Each page MUST have a single `<h1/>`.
-- Each page MUST have touch-friendly targets (min 44x44px).
-- Animations: max 300ms entry, 400ms staggered, 250ms transitions.
-- LCP < 2.0s (mobile), CLS < 0.05, first-load JS < 100KB.
-- Output: `.antigravity/pages/[SEITENNAME]-redesign-report.md` required for each page.
+
+### Motion ↔ Components
+
+- Standard timing: hover (150ms ease-appear), active (scale 0.97, 80ms), loading (fade), success (scale pulse 300ms), error (shake 400ms).
+- Scroll Animation: threshold 0.15, rootMargin: 0px 0px -50px 0px. Standard entrance: opacity/translateY(20px) in 400ms. Staggering 60ms delay, max 400ms.
 
 ## Code Layout
-- Components: `src/components/...`
-- App Router: `src/app/...`
+
+- Next.js App Router (src/app, src/components)
+- Next-Intl for i18n
+- TailwindCSS for styling
+- `motion` (Framer Motion) for complex animations where required, or standard CSS transitions.

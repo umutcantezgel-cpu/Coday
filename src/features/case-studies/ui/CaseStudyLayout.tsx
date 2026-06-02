@@ -61,7 +61,7 @@ export const CaseStudyLayout: React.FC<CaseStudyLayoutProps> = ({
       <nav role="navigation" className="absolute top-0 w-full z-50 p-6 md:p-8">
         <Link
           href="/work"
-          className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white hover:bg-white/20 transition-all motion-reduce:duration-[0.01ms] font-medium text-sm"
+          className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white hover:bg-white/20 transition motion-reduce:duration-[0.01ms] font-medium text-sm"
         >
           <ArrowLeft size={16} />
           <span>{t('project_detail.back_to_overview')}</span>
@@ -161,7 +161,7 @@ export const CaseStudyLayout: React.FC<CaseStudyLayoutProps> = ({
             </h2>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-white rounded-xl font-bold text-lg hover:shadow-glow hover:-translate-y-1 transition-all motion-reduce:duration-[0.01ms]"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-white rounded-xl font-bold text-lg hover:shadow-glow hover:-translate-y-1 transition motion-reduce:duration-[0.01ms]"
             >
               <span>{t('project_detail.cta.button')}</span>
               <ArrowUpRight />

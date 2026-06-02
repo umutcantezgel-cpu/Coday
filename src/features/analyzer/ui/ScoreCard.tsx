@@ -41,7 +41,7 @@ export const ScoreCard: React.FC<ScoreCardProps> = ({
       onClick={onClick}
       className={`
         relative p-6 rounded-2xl border-2 cursor-pointer
-        transition-all motion-reduce:duration-[0.01ms] duration-300 hover:shadow-xl
+        transition motion-reduce:duration-[0.01ms] duration-300 hover:shadow-xl
         ${getScoreBg(score)}
       `}
     >

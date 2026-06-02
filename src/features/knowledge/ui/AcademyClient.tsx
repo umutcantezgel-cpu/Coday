@@ -31,11 +31,11 @@ const Academy: React.FC = () => {
               className="group cursor-pointer"
               onClick={() => setSelectedVideo(course)}
             >
-              <div className="relative aspect-video rounded-xl bg-slate-900 mb-4 overflow-hidden shadow-lg group-hover:shadow-2xl transition-all motion-reduce:duration-[0.01ms] duration-300">
+              <div className="relative aspect-video rounded-xl bg-slate-900 mb-4 overflow-hidden shadow-lg group-hover:shadow-2xl transition motion-reduce:duration-[0.01ms] duration-300">
                 <OptimizedImage
                   src={course.image}
                   alt={course.content[currentLang].alt}
-                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all motion-reduce:duration-[0.01ms] duration-700"
+                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition motion-reduce:duration-[0.01ms] duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/60 to-purple-900/40 opacity-60 group-hover:opacity-40 transition-opacity motion-reduce:duration-[0.01ms]" />
                 <div className="absolute inset-0 flex items-center justify-center">

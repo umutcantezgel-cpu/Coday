@@ -69,7 +69,7 @@ export const ServicesSection: React.FC = () => {
                 effect={service.effect}
                 spotlightColor="rgba(20, 122, 122, 0.15)"
                 glowColor="rgba(139, 92, 246, 0.3)"
-                className="h-full border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02] hover:border-primary/20 transition-all motion-reduce:duration-[0.01ms] duration-500 ease-out bg-white rounded-2xl md:aspect-[1/1.618]"
+                className="h-full border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02] hover:border-primary/20 transition motion-reduce:duration-[0.01ms] duration-500 ease-out bg-white rounded-2xl md:aspect-[1/1.618]"
               >
                 <Link
                   href={service.link}
@@ -81,7 +81,7 @@ export const ServicesSection: React.FC = () => {
 
                   <div className="relative z-10 flex-grow">
                     <div
-                      className={`w-14 h-14 ${service.color} bg-opacity-10 rounded-2xl flex items-center justify-center mb-6 transition-all motion-reduce:duration-[0.01ms] duration-500 group-hover:scale-110 group-hover:bg-opacity-20 group-hover:-rotate-3 shadow-sm`}
+                      className={`w-14 h-14 ${service.color} bg-opacity-10 rounded-2xl flex items-center justify-center mb-6 transition motion-reduce:duration-[0.01ms] duration-500 group-hover:scale-110 group-hover:bg-opacity-20 group-hover:-rotate-3 shadow-sm`}
                     >
                       <OptimizedIcon
                         icon={service.icon}
@@ -100,7 +100,7 @@ export const ServicesSection: React.FC = () => {
                     </p>
                   </div>
 
-                  <div className="flex items-center text-primary font-bold tracking-wide uppercase text-sm mt-auto transition-all motion-reduce:duration-[0.01ms] duration-300 group-hover:tracking-wider">
+                  <div className="flex items-center text-primary font-bold tracking-wide uppercase text-sm mt-auto transition motion-reduce:duration-[0.01ms] duration-300 group-hover:tracking-wider">
                     {tCommon('cta.more', { defaultValue: 'Mehr erfahren' })}
                     <OptimizedIcon
                       icon={ArrowRight}

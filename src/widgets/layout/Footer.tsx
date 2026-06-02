@@ -13,6 +13,7 @@ import {
 import LogoLoop from '@/shared/ui/LogoLoop';
 import { TrustBadges } from '@/shared/ui/TrustBadges';
 import { clientLogos } from '@/shared/data/clientLogos';
+import { ProvenExpertSeal } from '@/components/ProvenExpertSeal';
 
 export const Footer: React.FC = () => {
   const t = useTranslations('common');
@@ -79,7 +80,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
                   {t('nav.main.home', { defaultValue: 'Startseite' })}
                 </Link>
@@ -87,7 +88,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/work"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
                   {t('nav.main.work', { defaultValue: 'Portfolio' })}
                 </Link>
@@ -95,7 +96,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/about"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
                   {t('nav.company.about', { defaultValue: 'Über uns' })}
                 </Link>
@@ -103,7 +104,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/process"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
                   {t('nav.main.process', { defaultValue: 'Prozess' })}
                 </Link>
@@ -111,7 +112,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/pricing"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
                   {t('nav.main.pricing', { defaultValue: 'Preise' })}
                 </Link>
@@ -119,7 +120,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/partnerschaft"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
                   {t('nav.main.partnerschaft', { defaultValue: 'Partner-Programm' })}
                 </Link>
@@ -127,7 +128,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/calculator"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
                   {t('nav.resources.calculator', { defaultValue: 'Preis-Rechner' })}
                 </Link>
@@ -135,7 +136,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/career"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
                   {t('nav.career.label', { defaultValue: 'Karriere' })}
                 </Link>
@@ -152,7 +153,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/services/web-development"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
                   {t('nav.services.web_development.label', { defaultValue: 'Webentwicklung' })}
                 </Link>
@@ -160,7 +161,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/services/design/ui-ux"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
                   {t('nav.services.ui_ux.label', { defaultValue: 'UI/UX Design' })}
                 </Link>
@@ -168,7 +169,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/services/seo"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
                   {t('nav.services.seo.label', { defaultValue: 'SEO Optimierung' })}
                 </Link>
@@ -176,7 +177,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/services/ecommerce-development"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
                   {t('nav.services.ecommerce.label', { defaultValue: 'E-Commerce' })}
                 </Link>
@@ -184,7 +185,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/services/development/api-integration"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
                   {t('nav.services.api.label', { defaultValue: 'API-Integrationen' })}
                 </Link>
@@ -192,7 +193,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/services/web-development"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
                   {t('nav.services.fullstack.label', { defaultValue: 'Full-Stack Entwicklung' })}
                 </Link>
@@ -200,7 +201,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/branchen/public-sector"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
                   {t('nav.industries.public', { defaultValue: 'Öffentliche Aufträge' })}
                 </Link>
@@ -208,7 +209,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/branchen/startups-tech"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
                   {t('nav.industries.tech', { defaultValue: 'Tech Startups' })}
                 </Link>
@@ -225,7 +226,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/standorte/hessen"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
                   Webdesign Hessen
                 </Link>
@@ -233,7 +234,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/standorte/wetzlar"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
                   Webagentur Wetzlar
                 </Link>
@@ -241,7 +242,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/branchen/gesundheit"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
                   Praxis-Website Wetzlar
                 </Link>
@@ -249,7 +250,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/branchen/gesundheit"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
                   Praxis-Website Gießen
                 </Link>
@@ -257,7 +258,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/branchen/handwerk"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
                   Handwerker Wetzlar
                 </Link>
@@ -274,7 +275,7 @@ export const Footer: React.FC = () => {
               <li>
                 <a
                   href="mailto:umut@codayweb.de"
-                  className="hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
+                  className="hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
                   umut@codayweb.de
                 </a>
@@ -282,7 +283,7 @@ export const Footer: React.FC = () => {
               <li>
                 <a
                   href="tel:+4917641195301"
-                  className="hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
+                  className="hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
                   +49 176 41195301
                 </a>
@@ -297,19 +298,20 @@ export const Footer: React.FC = () => {
             </ul>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center min-h-[44px] px-6 bg-primary/20 text-blue-400 border border-primary/30 rounded-lg text-sm font-bold hover:bg-primary hover:text-white transition-all motion-reduce:duration-[0.01ms]"
+              className="inline-flex items-center justify-center min-h-[44px] px-6 bg-primary/20 text-blue-400 border border-primary/30 rounded-lg text-sm font-bold hover:bg-primary hover:text-white transition motion-reduce:duration-[0.01ms]"
             >
               {t('nav.main.contact', { defaultValue: 'Projekt starten' })}
             </Link>
           </div>
         </div>
 
-        {/* Trust Badges in Footer */}
-        <div className="border-t border-gray-800/50 pt-10 pb-6">
+        {/* Trust & Review Badges in Footer */}
+        <div className="border-t border-gray-800/50 pt-10 pb-6 flex flex-col items-center justify-center gap-8">
           <TrustBadges
             align="center"
-            className="opacity-80 grayscale hover:grayscale-0 transition-all motion-reduce:duration-[0.01ms] duration-300"
+            className="opacity-80 grayscale hover:grayscale-0 transition motion-reduce:duration-[0.01ms] duration-300"
           />
+          <ProvenExpertSeal />
         </div>
 
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
@@ -349,19 +351,19 @@ export const Footer: React.FC = () => {
           >
             <Link
               href="/legal/agb"
-              className="hover:text-white transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
+              className="hover:text-white transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
             >
               {t('nav.legal.agb')}
             </Link>
             <Link
               href="/legal/datenschutz"
-              className="hover:text-white transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
+              className="hover:text-white transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
             >
               {t('nav.legal.privacy')}
             </Link>
             <Link
               href="/legal/impressum"
-              className="hover:text-white transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[44px]"
+              className="hover:text-white transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
             >
               {t('nav.legal.imprint')}
             </Link>

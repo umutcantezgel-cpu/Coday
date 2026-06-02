@@ -97,7 +97,7 @@ export const AgencyCostCalculator: React.FC = () => {
           {/* Results */}
           <div className="space-y-6">
             {/* Traditional Agency Card */}
-            <div className="group relative p-6 bg-white border border-red-100 rounded-3xl shadow-sm hover:shadow-md transition-all motion-reduce:duration-[0.01ms]">
+            <div className="group relative p-6 bg-white border border-red-100 rounded-3xl shadow-sm hover:shadow-md transition motion-reduce:duration-[0.01ms]">
               <div className="flex items-center justify-between mb-2">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center text-red-500">
@@ -116,8 +116,9 @@ export const AgencyCostCalculator: React.FC = () => {
               <div className="w-full bg-gray-100 h-2 rounded-full mt-4 overflow-hidden">
                 <motion.div
                   className="h-full bg-red-400"
-                  initial={{ width: 0 }}
-                  animate={{ width: '100%' }}
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  style={{ transformOrigin: 'left' }}
                 />
               </div>
             </div>
@@ -145,8 +146,9 @@ export const AgencyCostCalculator: React.FC = () => {
               <div className="w-full bg-white/10 h-2 rounded-full mt-4 overflow-hidden relative z-10">
                 <motion.div
                   className="h-full bg-primary"
-                  initial={{ width: 0 }}
-                  animate={{ width: '40%' }} // Represents the efficiency ratio
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 0.4 }} // Represents the efficiency ratio
+                  style={{ transformOrigin: 'left' }}
                 />
               </div>
             </div>

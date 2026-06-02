@@ -21,7 +21,7 @@ export const SkipLink: React.FC = () => {
         focus:bg-white focus:text-gray-900 focus:shadow-lg focus:ring-2 focus:ring-primary focus:ring-offset-2
         
         font-medium text-sm
-        transition-all motion-reduce:duration-[0.01ms]
+        transition motion-reduce:duration-[0.01ms]
       "
     >
       {label}

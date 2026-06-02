@@ -324,6 +324,11 @@
   "actions": {
     "read_more": "Mehr erfahren"
   },
+  "features": {
+    "google_maps": "Google Business Profil Optimierung",
+    "regional_pages": "Regionale Landingpages",
+    "review_management": "Reputationsmanagement"
+  },
   "de": "Deutsch",
   "en": "English",
   "about": "Über uns"

@@ -87,13 +87,13 @@ export function IndustryDetailClient() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/contact"
-                className="px-8 py-3 bg-primary text-white font-bold rounded-lg hover:bg-opacity-90 transition-all motion-reduce:duration-[0.01ms] shadow-flat hover:translate-y-[-2px]"
+                className="px-8 py-3 bg-primary text-white font-bold rounded-lg hover:bg-opacity-90 transition motion-reduce:duration-[0.01ms] shadow-flat hover:translate-y-[-2px]"
               >
                 {t('detail.hero.cta_primary')}
               </Link>
               <Link
                 href="/calculator"
-                className="px-8 py-3 bg-white text-secondary border border-gray-200 font-bold rounded-lg hover:border-primary hover:text-primary transition-all motion-reduce:duration-[0.01ms] shadow-sm"
+                className="px-8 py-3 bg-white text-secondary border border-gray-200 font-bold rounded-lg hover:border-primary hover:text-primary transition motion-reduce:duration-[0.01ms] shadow-sm"
               >
                 {t('detail.hero.cta_secondary')}
               </Link>
@@ -104,7 +104,7 @@ export function IndustryDetailClient() {
             <OptimizedImage
               src={heroImage.src}
               alt={heroImage.alt}
-              className="relative rounded-3xl shadow-2xl w-full transform -rotate-1 hover:rotate-0 transition-all motion-reduce:duration-[0.01ms] duration-500"
+              className="relative rounded-3xl shadow-2xl w-full transform -rotate-1 hover:rotate-0 transition motion-reduce:duration-[0.01ms] duration-500"
               priority
             />
           </div>
@@ -121,7 +121,7 @@ export function IndustryDetailClient() {
             {industry.challenges.map((challenge, idx) => (
               <div
                 key={idx}
-                className="p-8 bg-gray-50 rounded-2xl border border-gray-100 relative overflow-hidden group hover:shadow-md transition-all motion-reduce:duration-[0.01ms]"
+                className="p-8 bg-gray-50 rounded-2xl border border-gray-100 relative overflow-hidden group hover:shadow-md transition motion-reduce:duration-[0.01ms]"
               >
                 <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity motion-reduce:duration-[0.01ms]">
                   <XCircle size={64} className="text-red-500" />
@@ -150,7 +150,7 @@ export function IndustryDetailClient() {
             {industry.solutions.map((sol, idx) => (
               <div
                 key={idx}
-                className="bg-white p-8 rounded-2xl border border-gray-200 shadow-flat hover:border-primary/50 transition-all motion-reduce:duration-[0.01ms]"
+                className="bg-white p-8 rounded-2xl border border-gray-200 shadow-flat hover:border-primary/50 transition motion-reduce:duration-[0.01ms]"
               >
                 <div className="mb-4 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
                   <CheckCircle size={24} />
@@ -179,7 +179,7 @@ export function IndustryDetailClient() {
               {industryGalleryImages[slug].map((img, idx) => (
                 <div
                   key={idx}
-                  className="relative group overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all motion-reduce:duration-[0.01ms] duration-500 aspect-square"
+                  className="relative group overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition motion-reduce:duration-[0.01ms] duration-500 aspect-square"
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms] duration-300 z-10"></div>
                   <OptimizedImage
@@ -244,7 +244,7 @@ export function IndustryDetailClient() {
                   <Link
                     href={`/branchen/${relIndustry.slug}`}
                     key={relIndustry.slug}
-                    className="group relative rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all motion-reduce:duration-[0.01ms] h-64"
+                    className="group relative rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition motion-reduce:duration-[0.01ms] h-64"
                   >
                     <OptimizedImage
                       src={relImage.src}

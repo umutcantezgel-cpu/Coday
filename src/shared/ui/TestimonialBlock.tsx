@@ -67,7 +67,7 @@ export const TestimonialBlock: React.FC<TestimonialBlockProps> = ({
       <div
         ref={ref as React.RefObject<HTMLDivElement>}
         style={{ animationDelay: `${delay}ms` }}
-        className={`relative bg-white rounded-2xl p-8 md:p-12 shadow-flat-md overflow-hidden h-full flex flex-col transition-all motion-reduce:duration-[0.01ms] duration-700 ease-out ${
+        className={`relative bg-white rounded-2xl p-8 md:p-12 shadow-flat-md overflow-hidden h-full flex flex-col transition motion-reduce:duration-[0.01ms] duration-700 ease-out ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         } ${featured ? 'border-2 border-primary/20 shadow-xl' : ''} ${className}`}
       >
@@ -159,7 +159,7 @@ export const TestimonialBlock: React.FC<TestimonialBlockProps> = ({
                 alt={authorCompany || 'Company'}
                 width={80}
                 height={40}
-                className="object-contain max-h-10 opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all motion-reduce:duration-[0.01ms] duration-300"
+                className="object-contain max-h-10 opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition motion-reduce:duration-[0.01ms] duration-300"
               />
             </div>
           )}

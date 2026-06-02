@@ -40,7 +40,7 @@ const PsychologyGrid: React.FC = () => {
         <motion.div
           key={index}
           whileHover={{ y: -5 }}
-          className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-flat-lg transition-all motion-reduce:duration-[0.01ms] group cursor-default"
+          className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-flat-lg transition motion-reduce:duration-[0.01ms] group cursor-default"
         >
           <div
             className="w-12 h-12 rounded-xl mb-4 flex items-center justify-center text-white shadow-md transition-transform motion-reduce:duration-[0.01ms] group-hover:scale-110"

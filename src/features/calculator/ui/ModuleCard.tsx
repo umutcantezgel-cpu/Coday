@@ -36,7 +36,7 @@ export const ModuleCard: React.FC<ModuleCardProps> = ({
     <div
       onClick={!disabled && !isIncluded ? onToggle : undefined}
       className={`
-        relative p-4 rounded-xl border transition-all motion-reduce:duration-[0.01ms] duration-300 flex flex-col h-full
+        relative p-4 rounded-xl border transition motion-reduce:duration-[0.01ms] duration-300 flex flex-col h-full
         ${
           isIncluded
             ? 'bg-emerald-50/50 border-emerald-200 cursor-default'
@@ -136,7 +136,7 @@ export const ModuleCard: React.FC<ModuleCardProps> = ({
       {/* Selection Indicator (Implicit/Minimal) */}
       <div
         className={`
-                mt-auto w-full py-1.5 rounded-md text-center text-xs font-bold transition-all motion-reduce:duration-[0.01ms]
+                mt-auto w-full py-1.5 rounded-md text-center text-xs font-bold transition motion-reduce:duration-[0.01ms]
                 ${
                   isIncluded
                     ? 'bg-emerald-100 text-emerald-700'

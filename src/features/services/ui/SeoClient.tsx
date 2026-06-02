@@ -101,7 +101,7 @@ export function SeoClient() {
               <OptimizedImage
                 src={marketingImages.hero!.src}
                 alt={t(marketingImages.hero!.alt)}
-                className="relative rounded-3xl shadow-flat-lg w-full transform rotate-1 hover:rotate-0 transition-all motion-reduce:duration-[0.01ms] duration-500 bg-white p-2"
+                className="relative rounded-3xl shadow-flat-lg w-full transform rotate-1 hover:rotate-0 transition motion-reduce:duration-[0.01ms] duration-500 bg-white p-2"
                 priority
               />
             </div>
@@ -195,7 +195,7 @@ export function SeoClient() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-8 bg-surface-light rounded-3xl border border-gray-100 hover:shadow-lg transition-all motion-reduce:duration-[0.01ms]">
+            <div className="p-8 bg-surface-light rounded-3xl border border-gray-100 hover:shadow-lg transition motion-reduce:duration-[0.01ms]">
               <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6">
                 <OptimizedIcon icon={Gear} />
               </div>
@@ -204,7 +204,7 @@ export function SeoClient() {
               </h3>
               <p className="text-slate-600">{t('seo_page.dominance.cards.technical.desc')}</p>
             </div>
-            <div className="p-8 bg-surface-light rounded-3xl border border-gray-100 hover:shadow-lg transition-all motion-reduce:duration-[0.01ms]">
+            <div className="p-8 bg-surface-light rounded-3xl border border-gray-100 hover:shadow-lg transition motion-reduce:duration-[0.01ms]">
               <div className="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center mb-6">
                 <OptimizedIcon icon={FileText} />
               </div>
@@ -213,7 +213,7 @@ export function SeoClient() {
               </h3>
               <p className="text-slate-600">{t('seo_page.dominance.cards.content.desc')}</p>
             </div>
-            <div className="p-8 bg-surface-light rounded-3xl border border-gray-100 hover:shadow-lg transition-all motion-reduce:duration-[0.01ms]">
+            <div className="p-8 bg-surface-light rounded-3xl border border-gray-100 hover:shadow-lg transition motion-reduce:duration-[0.01ms]">
               <div className="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center mb-6">
                 <OptimizedIcon icon={MapPin} />
               </div>
@@ -307,7 +307,7 @@ export function SeoClient() {
             </p>
             <NavLink
               href="/cases"
-              className="inline-flex items-center justify-center px-6 py-3 font-bold text-secondary rounded-xl bg-primary hover:bg-white transition-all motion-reduce:duration-[0.01ms] shadow-glow"
+              className="inline-flex items-center justify-center px-6 py-3 font-bold text-secondary rounded-xl bg-primary hover:bg-white transition motion-reduce:duration-[0.01ms] shadow-glow"
             >
               {t('actions.read_more')}
               <OptimizedIcon icon={ArrowRight} className="ms-2" />

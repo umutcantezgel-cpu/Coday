@@ -91,7 +91,7 @@ export const CalculatorSummary: React.FC = () => {
       <div className="space-y-3">
         <NavLink
           href="/contact"
-          className="w-full py-4 bg-primary text-white rounded-xl font-bold hover:bg-primary/90 transition-all motion-reduce:duration-[0.01ms] shadow-lg hover:shadow-primary/25 flex items-center justify-center transform hover:-translate-y-1 text-lg animate-pulse hover:animate-none motion-reduce:animate-none"
+          className="w-full py-4 bg-primary text-white rounded-xl font-bold hover:bg-primary/90 transition motion-reduce:duration-[0.01ms] shadow-lg hover:shadow-primary/25 flex items-center justify-center transform hover:-translate-y-1 text-lg animate-pulse hover:animate-none motion-reduce:animate-none"
         >
           {t('summary.continue')}
           <OptimizedIcon icon={ArrowRight} className="ml-2 text-lg" />

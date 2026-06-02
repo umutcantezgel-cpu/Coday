@@ -64,7 +64,7 @@ const ConversionFunnelMap: React.FC = () => {
           >
             {/* Funnel Bar */}
             <div
-              className="bg-gradient-to-r mx-auto rounded-xl flex items-center justify-between px-6 py-4 shadow-sm transition-all motion-reduce:duration-[0.01ms] duration-300 group-hover:scale-105 group-hover:shadow-lg relative z-10"
+              className="bg-gradient-to-r mx-auto rounded-xl flex items-center justify-between px-6 py-4 shadow-sm transition motion-reduce:duration-[0.01ms] duration-300 group-hover:scale-105 group-hover:shadow-lg relative z-10"
               style={{
                 width: `${100 - idx * 15}%`,
                 minWidth: '300px',
@@ -79,7 +79,7 @@ const ConversionFunnelMap: React.FC = () => {
 
             {/* Tooltip / Fix Reveal */}
             <div
-              className={`absolute top-1/2 -translate-y-1/2 w-64 bg-surface-dark text-white p-4 rounded-xl shadow-xl border border-gray-700 transition-all motion-reduce:duration-[0.01ms] duration-300 z-20
+              className={`absolute top-1/2 -translate-y-1/2 w-64 bg-surface-dark text-white p-4 rounded-xl shadow-xl border border-gray-700 transition motion-reduce:duration-[0.01ms] duration-300 z-20
                                 ${isRtl ? 'right-full mr-4' : 'left-full ml-4'}
                                 ${
                                   hoveredStep === idx

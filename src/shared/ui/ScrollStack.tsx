@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { useLayoutEffect, useRef, useCallback } from 'react';
 import type { ReactNode } from 'react';
@@ -14,7 +14,7 @@ export const ScrollStackItem: React.FC<ScrollStackItemProps> = ({
   itemClassName = '',
 }) => (
   <div
-    className={`scroll-stack-card relative w-full h-80 my-8 p-12 rounded-[40px] shadow-flat box-border origin-top will-change-transform bg-white border border-gray-100 ${itemClassName}`.trim()}
+    className={`scroll-stack-card relative w-full h-80 my-8 p-12 rounded-[40px] shadow-flat box-border origin-top bg-white border border-gray-100 ${itemClassName}`.trim()}
     style={{
       backfaceVisibility: 'hidden',
       transformStyle: 'preserve-3d',
@@ -283,7 +283,6 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
       if (i < cards.length - 1) {
         card.style.marginBottom = `${itemDistance}px`;
       }
-      card.style.willChange = 'transform, filter';
       card.style.transformOrigin = 'top center';
       card.style.backfaceVisibility = 'hidden';
       card.style.transform = 'translateZ(0)';
@@ -329,7 +328,6 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
         WebkitOverflowScrolling: 'touch',
         scrollBehavior: 'smooth',
         transform: 'translateZ(0)',
-        willChange: 'scroll-position',
       }}
     >
       <div className="scroll-stack-inner pt-[20vh] px-20 pb-[50rem] min-h-dvh">

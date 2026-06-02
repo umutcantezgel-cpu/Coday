@@ -3,6 +3,9 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
+/**
+ * A one-time SplashScreen shown on first visit per session.
+ */
 export function SplashScreen() {
   const [showSplash, setShowSplash] = useState(true);
   const [isExited, setIsExited] = useState(false);

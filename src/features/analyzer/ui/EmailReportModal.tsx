@@ -147,7 +147,7 @@ export const EmailReportModal: React.FC<EmailReportModalProps> = ({ isOpen, onCl
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder={t('modal.placeholder_name')}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all motion-reduce:duration-[0.01ms]"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition motion-reduce:duration-[0.01ms]"
                     />
                   </div>
 
@@ -165,7 +165,7 @@ export const EmailReportModal: React.FC<EmailReportModalProps> = ({ isOpen, onCl
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder={t('modal.placeholder_email')}
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all motion-reduce:duration-[0.01ms]"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition motion-reduce:duration-[0.01ms]"
                     />
                   </div>
 
@@ -174,7 +174,7 @@ export const EmailReportModal: React.FC<EmailReportModalProps> = ({ isOpen, onCl
                   <button
                     type="submit"
                     disabled={isSending}
-                    className="active:scale-[0.97] w-full py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all motion-reduce:duration-[0.01ms] disabled:opacity-50 flex items-center justify-center gap-2"
+                    className="active:scale-[0.97] w-full py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-xl hover:from-blue-700 hover:to-purple-700 transition motion-reduce:duration-[0.01ms] disabled:opacity-50 flex items-center justify-center gap-2"
                   >
                     {isSending ? (
                       <>

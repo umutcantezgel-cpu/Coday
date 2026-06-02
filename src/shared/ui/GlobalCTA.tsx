@@ -62,7 +62,7 @@ export const GlobalCTA: React.FC<GlobalCTAProps> = ({
 
           <Link
             href={buttonLink}
-            className="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all motion-reduce:duration-[0.01ms] duration-200 bg-primary border border-transparent rounded-full hover:bg-blue-700 hover:shadow-[0_0_40px_rgba(37,99,235,0.4)] focus:ring-2 focus:ring-offset-2 focus:ring-primary focus:ring-offset-secondary overflow-hidden"
+            className="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-white transition motion-reduce:duration-[0.01ms] duration-200 bg-primary border border-transparent rounded-full hover:bg-blue-700 hover:shadow-[0_0_40px_rgba(37,99,235,0.4)] focus:ring-2 focus:ring-offset-2 focus:ring-primary focus:ring-offset-secondary overflow-hidden"
           >
             {/* Hover Glare Effect */}
             <div className="absolute inset-0 overflow-hidden rounded-full pointer-events-none">

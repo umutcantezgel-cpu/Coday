@@ -237,7 +237,6 @@ const RotatingText = forwardRef<RotatingTextRef, RotatingTextProps>(
                         ),
                       }}
                       className={cn('inline-block transform-gpu', elementLevelClassName)}
-                      style={{ willChange: 'transform, filter, opacity' }}
                     >
                       {char}
                     </motion.span>

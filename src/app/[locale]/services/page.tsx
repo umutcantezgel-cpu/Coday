@@ -1,6 +1,6 @@
 import { setRequestLocale } from 'next-intl/server';
 import { SeoHead } from '@/shared/ui/SeoHead';
-import ClientComponent from '@/features/services/ui/ServicesOverviewClient';
+import { ServicesOverview } from '@/features/services/ui/ServicesOverview';
 
 export default async function Page(props: { params: Promise<{ locale: string }> }) {
   const params = await props.params;
@@ -13,7 +13,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
         description="Willkommen bei Coday. Entdecken Sie unsere Leistungen."
         pageType="default"
       />
-      <ClientComponent />
+      <ServicesOverview />
     </>
   );
 }

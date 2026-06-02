@@ -202,7 +202,7 @@ export function ServiceDetailClient() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <NavLink
                 href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl bg-gray-900 hover:bg-gray-800 shadow-lg hover:shadow-xl transition-all motion-reduce:duration-[0.01ms] match-hover-translate-y-1"
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl bg-gray-900 hover:bg-gray-800 shadow-lg hover:shadow-xl transition motion-reduce:duration-[0.01ms] match-hover-translate-y-1"
               >
                 {t('generic_detail.hero.consulting_btn')}
                 <OptimizedIcon icon={CalendarIcon} className="ml-2" />
@@ -311,7 +311,7 @@ export function ServiceDetailClient() {
                 {processSteps.map((step, index) => (
                   <div key={index} className="relative group">
                     <div className="flex flex-col items-center text-center">
-                      <div className="w-16 h-16 rounded-2xl bg-gray-800 border border-gray-700 flex items-center justify-center text-xl font-bold font-display mb-6 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all motion-reduce:duration-[0.01ms] duration-300 shadow-lg relative z-10">
+                      <div className="w-16 h-16 rounded-2xl bg-gray-800 border border-gray-700 flex items-center justify-center text-xl font-bold font-display mb-6 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition motion-reduce:duration-[0.01ms] duration-300 shadow-lg relative z-10">
                         {step.number}
                       </div>
                       <h3 className="text-xl font-bold mb-4 h-14 flex items-center justify-center">
@@ -343,7 +343,7 @@ export function ServiceDetailClient() {
               </p>
               <NavLink
                 href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl bg-gray-900 hover:bg-gray-800 shadow-lg hover:shadow-xl transition-all motion-reduce:duration-[0.01ms]"
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl bg-gray-900 hover:bg-gray-800 shadow-lg hover:shadow-xl transition motion-reduce:duration-[0.01ms]"
               >
                 {t('generic_detail.advantages.contact_btn')}
               </NavLink>
@@ -426,7 +426,7 @@ export function ServiceDetailClient() {
             </p>
             <NavLink
               href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-gray-900 rounded-xl bg-white hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all motion-reduce:duration-[0.01ms] transform hover:-translate-y-1"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-gray-900 rounded-xl bg-white hover:bg-gray-100 shadow-lg hover:shadow-xl transition motion-reduce:duration-[0.01ms] transform hover:-translate-y-1"
             >
               {t('generic_detail.final_cta.button')}
               <OptimizedIcon icon={RocketLaunch} className="ml-2" />
@@ -443,7 +443,7 @@ const FaqItem: React.FC<{ question: string; answer: string }> = ({ question, ans
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border border-gray-200 rounded-xl bg-white overflow-hidden transition-all motion-reduce:duration-[0.01ms] duration-300 hover:shadow-sm">
+    <div className="border border-gray-200 rounded-xl bg-white overflow-hidden transition motion-reduce:duration-[0.01ms] duration-300 hover:shadow-sm">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="active:scale-[0.97] w-full flex items-center justify-between p-6 text-left focus-visible:ring-2 focus-visible:ring-primary focus-visible:rounded-xl"

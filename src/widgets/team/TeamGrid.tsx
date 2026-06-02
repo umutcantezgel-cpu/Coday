@@ -11,7 +11,7 @@ export const ClientReferencesGrid: React.FC = () => {
       {clientReferences.map((client) => (
         <div key={client.id} className="group text-center">
           {/* Small circular avatar */}
-          <div className="w-16 h-16 mx-auto mb-3 rounded-full overflow-hidden ring-2 ring-gray-100 group-hover:ring-primary/30 transition-all motion-reduce:duration-[0.01ms] duration-300">
+          <div className="w-16 h-16 mx-auto mb-3 rounded-full overflow-hidden ring-2 ring-gray-100 group-hover:ring-primary/30 transition motion-reduce:duration-[0.01ms] duration-300">
             <OptimizedImage
               src={client.image}
               alt={client.name}

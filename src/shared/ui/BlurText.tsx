@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useEffect, useRef, useState } from 'react';
 
 type BlurTextProps = {
@@ -48,7 +48,7 @@ const BlurText: React.FC<BlurTextProps> = ({
       {elements.map((segment, index) => (
         <span
           key={index}
-          className={`inline-block transition-all duration-700 ease-out motion-reduce:transition-none motion-reduce:opacity-100 motion-reduce:blur-0 ${
+          className={`inline-block transition duration-700 ease-out motion-reduce:transition-none motion-reduce:opacity-100 motion-reduce:blur-0 ${
             inView ? 'opacity-100 blur-0 translate-y-0' : 'opacity-0 blur-[10px] translate-y-2'
           }`}
           style={{ transitionDelay: `${(index * delay) / 1000}s` }}

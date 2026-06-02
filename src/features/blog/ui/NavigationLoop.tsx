@@ -41,7 +41,7 @@ export const RelatedArticles: React.FC<{ currentSlug: string; category: string }
             <Link
               key={post.id}
               href={`/knowledge/blog/${post.slug}`}
-              className="group block bg-white rounded-3xl p-2 shadow-sm hover:shadow-xl transition-all motion-reduce:duration-[0.01ms] duration-300 border border-transparent hover:border-gray-100"
+              className="group block bg-white rounded-3xl p-2 shadow-sm hover:shadow-xl transition motion-reduce:duration-[0.01ms] duration-300 border border-transparent hover:border-gray-100"
             >
               <div className="flex gap-6 items-center h-full">
                 <div className="w-24 h-24 shrink-0 rounded-2xl overflow-hidden relative">

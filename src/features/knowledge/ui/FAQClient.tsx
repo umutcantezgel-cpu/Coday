@@ -107,7 +107,7 @@ const FAQ = () => {
         <div className="flex justify-center space-x-2 min-w-max pb-2">
           <button
             onClick={() => handleCategoryClick('all')}
-            className={`active:scale-[0.97] px-6 py-2 rounded-full text-sm font-bold transition-all motion-reduce:duration-[0.01ms] ${
+            className={`active:scale-[0.97] px-6 py-2 rounded-full text-sm font-bold transition motion-reduce:duration-[0.01ms] ${
               selectedCategory === 'all'
                 ? 'bg-blue-600 text-white shadow-md'
                 : 'bg-white text-slate-600 hover:bg-slate-50 border border-slate-200'
@@ -119,7 +119,7 @@ const FAQ = () => {
             <button
               key={cat.id}
               onClick={() => handleCategoryClick(cat.id)}
-              className={`active:scale-[0.97] px-6 py-2 rounded-full text-sm font-bold transition-all motion-reduce:duration-[0.01ms] flex items-center gap-2 ${
+              className={`active:scale-[0.97] px-6 py-2 rounded-full text-sm font-bold transition motion-reduce:duration-[0.01ms] flex items-center gap-2 ${
                 selectedCategory === cat.id
                   ? 'bg-blue-600 text-white shadow-md'
                   : 'bg-white text-slate-600 hover:bg-slate-50 border border-slate-200'

@@ -3,7 +3,7 @@ import { getOrganizationSchema } from '@/lib/schema';
 import { generatePageMetadata } from '@/lib/metadata';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
-import { Inter } from 'next/font/google';
+import { Inter, Outfit } from 'next/font/google';
 import { headers } from 'next/headers';
 import { draftMode } from 'next/headers';
 
@@ -11,6 +11,7 @@ import '../globals.css';
 
 import { routing } from '@/i18n/routing';
 import MainLayout from '@/widgets/layout/MainLayout';
+import { MotionProvider } from '@/shared/ui/providers/MotionProvider';
 import { GoogleAnalytics } from '@/shared/lib/analytics/GoogleAnalytics';
 import { PostHogAnalytics } from '@/shared/lib/analytics/PostHogAnalytics';
 import { MetaPixel } from '@/shared/lib/analytics/MetaPixel';
@@ -20,6 +21,13 @@ import { ClarityAnalytics } from '@/shared/lib/analytics/ClarityAnalytics';
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
+  display: 'swap',
+  preload: true,
+});
+
+const outfit = Outfit({
+  subsets: ['latin'],
+  variable: '--font-outfit',
   display: 'swap',
   preload: true,
 });
@@ -67,7 +75,7 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={`${inter.variable}`}>
+    <html lang={locale} className={`${inter.variable} ${outfit.variable}`}>
       <head>
         <link rel="preconnect" href="https://cdn.sanity.io" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://vitals.vercel-insights.com" crossOrigin="anonymous" />
@@ -95,9 +103,11 @@ export default async function RootLayout({
               </div>
             </>
           )}
-          <div className="flex flex-col min-h-screen">
-            <MainLayout>{children}</MainLayout>
-          </div>
+          <MotionProvider>
+            <div className="flex flex-col min-h-screen">
+              <MainLayout>{children}</MainLayout>
+            </div>
+          </MotionProvider>
         </NextIntlClientProvider>
       </body>
     </html>

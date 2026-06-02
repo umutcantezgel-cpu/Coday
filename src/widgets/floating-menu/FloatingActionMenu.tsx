@@ -35,8 +35,7 @@ export const FloatingActionMenu: React.FC = () => {
   return (
     <div
       id="fab-container"
-      className="floating-action-menu fixed bottom-6 right-6 z-max flex flex-col items-end gap-4 will-change-transform transform-gpu"
-      style={{ transform: 'translateZ(0)' }}
+      className="floating-action-menu fixed bottom-6 right-6 z-max flex flex-col items-end gap-4"
     >
       {/* Social Media Sub-Menu */}
       <AnimatePresence>
@@ -45,7 +44,6 @@ export const FloatingActionMenu: React.FC = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 20 }}
-            style={{ willChange: 'transform, opacity' }}
             className="absolute bottom-full right-16 mb-2 bg-white rounded-2xl shadow-xl p-3 flex flex-col gap-3 border border-gray-100"
           >
             <a
@@ -87,7 +85,12 @@ export const FloatingActionMenu: React.FC = () => {
       {/* Menu Items */}
       <AnimatePresence>
         {isOpen && (
-          <div className="flex flex-col gap-4 items-end">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="flex flex-col gap-4 items-end"
+          >
             {/* Social Media Button */}
             <motion.button
               initial={{ opacity: 0, y: 20, scale: 0.8 }}
@@ -95,7 +98,7 @@ export const FloatingActionMenu: React.FC = () => {
               exit={{ opacity: 0, y: 20, scale: 0.8 }}
               transition={{ delay: 0.1 }}
               onClick={handleSocialClick}
-              className="bg-white text-gray-800 p-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all motion-reduce:duration-[0.01ms] flex items-center gap-3 group relative"
+              className="bg-white text-gray-800 p-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition motion-reduce:duration-[0.01ms] flex items-center gap-3 group relative"
               aria-label="Social Media anzeigen"
             >
               <span className="absolute right-full mr-4 bg-gray-900 text-white text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms] whitespace-nowrap">
@@ -113,7 +116,7 @@ export const FloatingActionMenu: React.FC = () => {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 20, scale: 0.8 }}
               transition={{ delay: 0.05 }}
-              className="bg-success text-white p-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all motion-reduce:duration-[0.01ms] flex items-center gap-3 group relative"
+              className="bg-success text-white p-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition motion-reduce:duration-[0.01ms] flex items-center gap-3 group relative"
               aria-label="WhatsApp öffnen"
             >
               <span className="absolute right-full mr-4 bg-gray-900 text-white text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms] whitespace-nowrap">
@@ -128,7 +131,7 @@ export const FloatingActionMenu: React.FC = () => {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 20, scale: 0.8 }}
               onClick={handleChatClick}
-              className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all motion-reduce:duration-[0.01ms] flex items-center gap-3 group relative"
+              className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition motion-reduce:duration-[0.01ms] flex items-center gap-3 group relative"
               aria-label="AI Assistant öffnen"
             >
               <span className="absolute right-full mr-4 bg-gray-900 text-white text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms] whitespace-nowrap">
@@ -136,15 +139,14 @@ export const FloatingActionMenu: React.FC = () => {
               </span>
               <ChatCircle className="w-6 h-6" />
             </motion.button>
-          </div>
+          </motion.div>
         )}
       </AnimatePresence>
 
       {/* Main Toggle Button */}
       <motion.button
         onClick={toggleMenu}
-        style={{ willChange: 'transform' }}
-        className={`w-16 h-16 rounded-full shadow-2xl flex items-center justify-center transition-all motion-reduce:duration-[0.01ms] duration-300 z-max
+        className={`w-16 h-16 rounded-full shadow-2xl flex items-center justify-center transition motion-reduce:duration-[0.01ms] duration-300 z-max
                     ${
                       isOpen
                         ? 'bg-gray-900 text-white rotate-180'

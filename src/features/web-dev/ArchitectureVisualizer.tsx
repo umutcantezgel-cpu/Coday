@@ -61,9 +61,10 @@ const ArchitectureVisualizer: React.FC = () => {
         <div className="absolute inset-0 top-1/2 -translate-y-1/2 h-1 bg-white/5 w-full -z-10"></div>
         <motion.div
           className="absolute inset-0 top-1/2 -translate-y-1/2 h-1 bg-gradient-to-r from-pink-500 via-teal-500 to-blue-500 -z-10"
-          initial={{ width: '0%' }}
-          animate={{ width: '100%' }}
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
           transition={{ duration: 2, ease: 'easeInOut' }}
+          style={{ transformOrigin: 'left' }}
         />
 
         {/* Packets Animation */}
@@ -93,7 +94,7 @@ const ArchitectureVisualizer: React.FC = () => {
             onMouseLeave={() => setActiveNode(null)}
           >
             <div
-              className={`w-24 h-24 sm:w-32 sm:h-32 rounded-2xl border border-white/10 backdrop-blur-md bg-white/5 flex flex-col items-center justify-center p-4 cursor-pointer transition-all motion-reduce:duration-[0.01ms] duration-300 ${activeNode === node.id ? 'scale-110 border-white/30 bg-white/10 shadow-[0_0_30px_rgba(26,154,154,0.3)]' : 'hover:border-white/20'}`}
+              className={`w-24 h-24 sm:w-32 sm:h-32 rounded-2xl border border-white/10 backdrop-blur-md bg-white/5 flex flex-col items-center justify-center p-4 cursor-pointer transition motion-reduce:duration-[0.01ms] duration-300 ${activeNode === node.id ? 'scale-110 border-white/30 bg-white/10 shadow-[0_0_30px_rgba(26,154,154,0.3)]' : 'hover:border-white/20'}`}
               style={{ borderColor: activeNode === node.id ? node.color : '' }}
             >
               <div

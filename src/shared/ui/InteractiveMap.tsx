@@ -52,7 +52,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
               <Icon name="location_on" className="text-primary" />
             </div>
             <div>
-              <h4 className="font-bold text-gray-900 mb-1">Coday Standort</h4>
+              <h3 className="font-bold text-gray-900 mb-1">Coday Standort</h3>
               <p className="text-sm text-gray-600 mb-2">
                 Lessingstraße 4<br />
                 35578 Wetzlar

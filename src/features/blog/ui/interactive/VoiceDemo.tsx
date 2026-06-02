@@ -110,7 +110,7 @@ export const VoiceDemo: React.FC = () => {
             onClick={handleMicClick}
             disabled={isListening}
             className={cn(
-              'w-20 h-20 rounded-full flex items-center justify-center transition-all motion-reduce:duration-[0.01ms] duration-300 relative',
+              'w-20 h-20 rounded-full flex items-center justify-center transition motion-reduce:duration-[0.01ms] duration-300 relative',
               isListening
                 ? 'bg-red-500 shadow-[0_0_30px_rgba(239,68,68,0.4)] scale-110'
                 : 'bg-gradient-to-r from-indigo-600 to-purple-600 shadow-lg hover:shadow-indigo-500/25 hover:scale-105 active:scale-[0.97]'

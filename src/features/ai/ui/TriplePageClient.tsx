@@ -283,7 +283,7 @@ export default function TriplePage() {
                   <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center flex-shrink-0 group-open:bg-primary/10 transition-colors motion-reduce:duration-[0.01ms]">
                     <OptimizedIcon
                       icon={CaretDown}
-                      className="w-5 h-5 text-slate-400 group-open:text-primary group-open:-rotate-180 transition-all motion-reduce:duration-[0.01ms] duration-300"
+                      className="w-5 h-5 text-slate-400 group-open:text-primary group-open:-rotate-180 transition motion-reduce:duration-[0.01ms] duration-300"
                     />
                   </div>
                 </summary>

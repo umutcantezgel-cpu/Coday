@@ -33,7 +33,7 @@ export const UrlInputForm: React.FC = () => {
         <div
           className={`
             relative flex items-center rounded-2xl overflow-hidden
-            transition-all motion-reduce:duration-[0.01ms] duration-300 ease-out
+            transition motion-reduce:duration-[0.01ms] duration-300 ease-out
             ${isFocused ? 'ring-4 ring-primary/20 shadow-2xl shadow-primary/10' : 'shadow-xl'}
             ${error ? 'ring-2 ring-red-500/50' : ''}
           `}
@@ -97,7 +97,7 @@ export const UrlInputForm: React.FC = () => {
             disabled={!isValidUrl || isLoading}
             className={`active:scale-[0.97] 
               relative px-8 py-5 font-bold text-white text-lg
-              transition-all motion-reduce:duration-[0.01ms] duration-300
+              transition motion-reduce:duration-[0.01ms] duration-300
               ${
                 isValidUrl && !isLoading
                   ? 'bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 cursor-pointer'

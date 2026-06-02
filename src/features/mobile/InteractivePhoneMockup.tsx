@@ -24,7 +24,7 @@ const InteractivePhoneMockup: React.FC = () => {
       {/* Phone Frame */}
       <div className="relative w-[300px] h-[600px] bg-gray-900 rounded-[3rem] shadow-[0_0_50px_rgba(0,0,0,0.2)] border-[8px] border-gray-900 overflow-hidden ring-4 ring-gray-200/20">
         {/* Dynamic Notch */}
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-7 bg-black rounded-b-2xl z-50 transition-all motion-reduce:duration-[0.01ms] duration-300 hover:w-40 hover:h-8 cursor-pointer flex items-center justify-center">
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-7 bg-black rounded-b-2xl z-50 transition motion-reduce:duration-[0.01ms] duration-300 origin-top hover:scale-[1.15] cursor-pointer flex items-center justify-center">
           <div className="w-16 h-1 bg-gray-800 rounded-full"></div>
         </div>
 

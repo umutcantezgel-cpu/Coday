@@ -66,7 +66,7 @@ export const WebHistoryTimeline: React.FC = () => {
       {/* Timeline Line */}
       <div className="relative h-1 bg-slate-700 rounded-full mb-12 mx-4 md:mx-12">
         <div
-          className="absolute top-0 left-0 h-full bg-blue-500 rounded-full transition-all motion-reduce:duration-[0.01ms] duration-500"
+          className="absolute top-0 left-0 h-full bg-blue-500 rounded-full transition motion-reduce:duration-[0.01ms] duration-500"
           style={{ width: `${(selectedEra / (eras.length - 1)) * 100}%` }}
         />
 
@@ -75,7 +75,7 @@ export const WebHistoryTimeline: React.FC = () => {
             <button
               key={era.year}
               onClick={() => setSelectedEra(index)}
-              className={`active:scale-[0.97] w-4 h-4 rounded-full transition-all motion-reduce:duration-[0.01ms] duration-300 relative group ${
+              className={`active:scale-[0.97] w-4 h-4 rounded-full transition motion-reduce:duration-[0.01ms] duration-300 relative group ${
                 index <= selectedEra
                   ? 'bg-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.5)]'
                   : 'bg-slate-600'

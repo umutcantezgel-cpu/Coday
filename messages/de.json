@@ -98,12 +98,7 @@
     "dataMaturity": {
       "title": "Daten-Maturitäts-Check",
       "questionStep": "Frage {current} von {total}",
-      "levels": [
-        "Blindflug",
-        "Basis-Tracking",
-        "Erweitertes Tracking",
-        "Data-Driven"
-      ],
+      "levels": ["Blindflug", "Basis-Tracking", "Erweitertes Tracking", "Data-Driven"],
       "descriptions": [
         "Sie verlassen sich stark auf Ihr Bauchgefühl. Ohne saubere Datenstruktur ist es schwer zu skalieren.",
         "Sie haben erste Tracking-Lösungen im Einsatz, schöpfen das Potenzial für Automatisierung aber nicht aus.",
@@ -186,11 +181,7 @@
     "jobs": {
       "hero_title_prefix": "Wir suchen",
       "culture_badge": "Teamkultur",
-      "hero_rotating": [
-        "Entwickler",
-        "Designer",
-        "Talente"
-      ],
+      "hero_rotating": ["Entwickler", "Designer", "Talente"],
       "hero_desc": "Werde Teil unseres Teams und gestalte die digitale Zukunft.",
       "list": [
         {
@@ -219,11 +210,7 @@
       "values": {
         "title": "Unsere Werte",
         "desc": "Das ist uns wichtig.",
-        "items": [
-          "Transparenz in jedem Schritt",
-          "Höchste Code-Qualität",
-          "Echte Partnerschaften"
-        ]
+        "items": ["Transparenz in jedem Schritt", "Höchste Code-Qualität", "Echte Partnerschaften"]
       },
       "team": {
         "title": "Das Team",
@@ -261,11 +248,11 @@
       "description": "High-End Webentwicklung, Design & Strategie aus Wetzlar, Hessen für Ihren digitalen Erfolg."
     },
     "hero": {
-      "rotatingTexts": [
-        "Web-Design",
-        "Web-Entwicklung",
-        "SEO"
-      ]
+      "rotatingTexts": ["Web-Design", "Web-Entwicklung", "SEO"]
+    },
+    "methodology": {
+      "title": "Präzises Handwerk statt Massenabfertigung.",
+      "description": "Als Solo-Agentur arbeite ich direkt mit Ihnen zusammen – ohne Projektmanager oder stille Post. Sie erhalten maßgeschneiderte Lösungen, die auf modernsten Web-Technologien basieren und echte Ergebnisse liefern. Von der ersten Konzeption bis zum finalen Launch."
     }
   }
 }

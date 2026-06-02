@@ -1,13 +1,13 @@
 {
   "hero": {
-    "headline_gradient": "Webdesign Agentur.",
-    "headline_prefix": "Ihre High-End",
-    "description": "Wir entwickeln maßgeschneiderte, blitzschnelle Enterprise-Webseiten mit Next.js und React – ganz ohne WordPress-Templates. Als Ihre Webdesign Agentur aus Wetzlar kombinieren wir High-End Webentwicklung mit datengetriebener SEO. Das Ergebnis: Minimale Ladezeiten, überragende User Experience und messbar mehr Umsatz für Ihr Unternehmen.",
+    "headline_gradient": "Headless Websites.",
+    "headline_prefix": "Handgefertigte",
+    "description": "Individuelle Next.js-Architektur aus Wetzlar. Keine Baukästen, keine Templates. Sauberes React, striktes TypeScript und Headless CMS mit Sanity. Für Unternehmen, die messbar schnelle Ladezeiten und ein eigenständiges Design benötigen.",
     "rotating": [
-      "Enterprise-Grade Performance.",
-      "Maximaler ROI. Skalierbares Wachstum.",
-      "Prämierte UX. Kompromissloser Code.",
-      "Kein Overhead. Nur Ergebnisse."
+      "React & TypeScript.",
+      "Tailwind CSS Layouts.",
+      "Sanity CMS Integration.",
+      "Entwicklung aus Wetzlar."
     ]
   },
   "industries": {
@@ -70,7 +70,26 @@
     "text": "Vom ambitionierten Mittelstand bis zum Enterprise-Konzern: Wir liefern digitale Exzellenz, auf die Sie sich bedingungslos verlassen können.",
     "title_prefix": "Kunden, die",
     "title_suffix": "Uns Vertrauen.",
-    "items": []
+    "items": [
+      {
+        "quote": "Coday hat unsere digitale Präsenz komplett revolutioniert. Die neue Website ist nicht nur extrem schnell, sondern spiegelt die Qualität unserer Arbeit perfekt wider.",
+        "authorName": "Geschäftsführung",
+        "authorPosition": "Inhaber",
+        "authorCompany": "Batherm"
+      },
+      {
+        "quote": "Seit wir die neue Website haben, erhalten wir deutlich mehr lokale Anfragen. Die Ladezeit ist phänomenal und die SEO-Performance spricht für sich.",
+        "authorName": "Geschäftsführung",
+        "authorPosition": "Inhaber",
+        "authorCompany": "MS Schlüsseldienst Wetzlar"
+      },
+      {
+        "quote": "Unsere Gäste lieben die neue Online-Speisekarte und das einfache System. Die Zusammenarbeit mit Coday war hochprofessionell, schnell und absolut reibungslos.",
+        "authorName": "Geschäftsführung",
+        "authorPosition": "Inhaber",
+        "authorCompany": "Lindener Ratsstuben"
+      }
+    ]
   },
   "comparison": {
     "title_prefix": "Traditionell vs.",

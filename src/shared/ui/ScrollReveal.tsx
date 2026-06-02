@@ -32,12 +32,12 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
       if (word.match(/^\s+$/)) return word;
       return (
         <span
-          className="inline-block word transition-opacity ease-out will-change-opacity motion-reduce:transition-none"
+          className="inline-block word transition-opacity ease-out motion-reduce:transition-none"
           key={index}
           style={{
             opacity: isInView ? 1 : baseOpacity,
             transitionDuration: '0.8s',
-            transitionDelay: `${index * 0.05}s`,
+            transitionDelay: `${Math.min(index * 60, 400)}ms`,
           }}
         >
           {word}
@@ -50,7 +50,7 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
     <h2
       ref={ref}
       data-in-view={isInView}
-      className={`my-5 transition-[transform,opacity] ease-out will-change-transform ${containerClassName} motion-reduce:transition-none`}
+      className={`my-5 transition-[transform,opacity] ease-out ${containerClassName} motion-reduce:transition-none`}
       style={{
         transform: isInView ? 'rotate(0deg)' : `rotate(${baseRotation}deg)`,
         transformOrigin: '0% 50%',

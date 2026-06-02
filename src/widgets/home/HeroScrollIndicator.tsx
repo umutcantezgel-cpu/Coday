@@ -30,7 +30,7 @@ export const HeroScrollIndicator: React.FC = () => {
     <div
       ref={indicatorRef}
       aria-hidden="true"
-      className={`absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20 transform-gpu motion-reduce:animate-none transition-all duration-500 ease-out ${
+      className={`absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20 transform-gpu motion-reduce:animate-none transition duration-500 ease-out ${
         isVisible ? 'opacity-60 translate-y-0' : 'opacity-0 translate-y-4'
       }`}
       style={{ willChange: 'opacity, transform' }}

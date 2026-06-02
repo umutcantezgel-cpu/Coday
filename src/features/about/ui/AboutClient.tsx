@@ -21,6 +21,7 @@ import {
 import { Breadcrumbs } from '@/shared/ui/Breadcrumbs';
 import { motion } from 'motion/react';
 import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
+import { ScrollReveal } from '@/shared/ui/animations/ScrollReveal';
 
 /* ═══ DATA ═══ */
 const values = [
@@ -141,7 +142,7 @@ export const AboutClient: React.FC = () => {
           <motion.div className="flex justify-center gap-4" {...stagger(0.35)}>
             <Link
               href="/contact"
-              className="group inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-full font-medium hover:bg-primary/90 transition-all motion-reduce:duration-[0.01ms] hover:-translate-y-0.5 shadow-lg hover:shadow-glow"
+              className="group inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-full font-medium hover:bg-primary/90 transition motion-reduce:duration-[0.01ms] hover:-translate-y-0.5 shadow-lg hover:shadow-glow"
             >
               Projekt anfragen
               <ArrowRight
@@ -212,7 +213,7 @@ export const AboutClient: React.FC = () => {
             {values.map((value, index) => (
               <motion.div
                 key={value.title}
-                className="group relative p-8 rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm hover:border-primary/30 hover:bg-white/[0.04] transition-all motion-reduce:duration-[0.01ms] duration-500"
+                className="group relative p-8 rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm hover:border-primary/30 hover:bg-white/[0.04] transition motion-reduce:duration-[0.01ms] duration-500"
                 {...stagger(index * 0.1)}
               >
                 {/* Glow on hover */}
@@ -298,24 +299,33 @@ export const AboutClient: React.FC = () => {
       </section>
 
       {/* ═══ TEAM ═══ */}
-      <TeamSection />
+      <ScrollReveal index={0}>
+        <TeamSection />
+      </ScrollReveal>
 
       {/* FAQs for Rich Snippets */}
-      <RelevantFAQs
-        serviceId={['web-development', 'web-design', 'seo']}
-        className="bg-secondary border-t border-white/5"
-      />
+      <ScrollReveal index={1}>
+        <RelevantFAQs
+          serviceId={['web-development', 'web-design', 'seo']}
+          className="bg-secondary border-t border-white/5"
+        />
+      </ScrollReveal>
 
       {/* ═══ TRUST SIGNALS ═══ */}
-      <section className="bg-secondary pt-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <TrustBadges
-            align="center"
-            className="opacity-80 grayscale hover:grayscale-0 transition-all motion-reduce:duration-[0.01ms] duration-300 [&_*]:text-white"
-          />
-        </div>
-      </section>
-      <TrustSection />
+      <ScrollReveal index={0}>
+        <section className="bg-secondary pt-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <TrustBadges
+              align="center"
+              className="opacity-80 grayscale hover:grayscale-0 transition motion-reduce:duration-[0.01ms] duration-300 [&_*]:text-white"
+            />
+          </div>
+        </section>
+      </ScrollReveal>
+
+      <ScrollReveal index={1}>
+        <TrustSection />
+      </ScrollReveal>
     </div>
   );
 };

@@ -74,10 +74,11 @@ const InteractiveQuiz: React.FC<InteractiveQuizProps> = ({ title, questions, cla
       {/* Progress bar */}
       <div className="h-2 bg-gray-200 rounded-full mb-8 overflow-hidden">
         <motion.div
-          className="h-full bg-primary rounded-full"
-          initial={{ width: 0 }}
-          animate={{ width: `${progress}%` }}
+          className="h-full w-full bg-primary rounded-full"
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: progress / 100 }}
           transition={{ duration: 0.3 }}
+          style={{ transformOrigin: isRtl ? 'right' : 'left' }}
         />
       </div>
 
@@ -101,7 +102,7 @@ const InteractiveQuiz: React.FC<InteractiveQuizProps> = ({ title, questions, cla
                     onClick={() => handleAnswer(index)}
                     disabled={selectedAnswer !== null}
                     className={`
-                      w-full text-start p-4 rounded-xl border-2 transition-all motion-reduce:duration-[0.01ms]
+                      w-full text-start p-4 rounded-xl border-2 transition motion-reduce:duration-[0.01ms]
                       ${
                         selectedAnswer === null
                           ? 'border-gray-200 hover:border-primary hover:bg-primary/5 cursor-pointer'

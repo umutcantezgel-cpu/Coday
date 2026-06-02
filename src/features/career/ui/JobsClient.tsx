@@ -83,7 +83,7 @@ const Jobs: React.FC = () => {
             {jobs.map((job) => (
               <div
                 key={job.id}
-                className="bg-white rounded-2xl border border-aurora-mist p-8 flex flex-col md:flex-row md:items-center justify-between hover:shadow-lg transition-all motion-reduce:duration-[0.01ms] duration-300 group mb-4"
+                className="bg-white rounded-2xl border border-aurora-mist p-8 flex flex-col md:flex-row md:items-center justify-between hover:shadow-lg transition motion-reduce:duration-[0.01ms] duration-300 group mb-4"
               >
                 <div>
                   <div className="flex items-center space-x-3 mb-2">

@@ -100,7 +100,7 @@ const PropertyRoiCalculator: React.FC = () => {
         </p>
       </div>
 
-      <button className="active:scale-[0.97] w-full bg-secondary text-white font-bold py-4 rounded-xl shadow-lg hover:bg-secondary/90 transition-all motion-reduce:duration-[0.01ms]">
+      <button className="active:scale-[0.97] w-full bg-secondary text-white font-bold py-4 rounded-xl shadow-lg hover:bg-secondary/90 transition motion-reduce:duration-[0.01ms]">
         {t('immobilien-makler.features.roi_calculator.cta')}
       </button>
     </div>

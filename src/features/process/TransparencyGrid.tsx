@@ -27,7 +27,7 @@ const TransparencyGrid: React.FC = () => {
 
       <div className="grid md:grid-cols-2 gap-8 relative z-10">
         {/* Card 1: Kanban */}
-        <div className="bg-gray-800/50 backdrop-blur border border-white/10 rounded-2xl p-6 hover:bg-gray-800 transition-all motion-reduce:duration-[0.01ms] group">
+        <div className="bg-gray-800/50 backdrop-blur border border-white/10 rounded-2xl p-6 hover:bg-gray-800 transition motion-reduce:duration-[0.01ms] group">
           <div className="flex items-center gap-4 mb-6">
             <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center text-blue-400">
               <OptimizedIcon icon={Kanban} />
@@ -53,7 +53,7 @@ const TransparencyGrid: React.FC = () => {
         </div>
 
         {/* Card 2: Slack */}
-        <div className="bg-gray-800/50 backdrop-blur border border-white/10 rounded-2xl p-6 hover:bg-gray-800 transition-all motion-reduce:duration-[0.01ms] group">
+        <div className="bg-gray-800/50 backdrop-blur border border-white/10 rounded-2xl p-6 hover:bg-gray-800 transition motion-reduce:duration-[0.01ms] group">
           <div className="flex items-center gap-4 mb-6">
             <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center text-purple-400">
               <OptimizedIcon icon={Chat} />

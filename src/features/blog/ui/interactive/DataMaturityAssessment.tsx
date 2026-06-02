@@ -155,8 +155,9 @@ export const DataMaturityAssessment: React.FC = () => {
             <div className="w-full bg-gray-200/30 rounded-full h-2">
               <motion.div
                 className="bg-gradient-to-r from-primary to-purple-500 h-2 rounded-full"
-                initial={{ width: 0 }}
-                animate={{ width: `${progress}%` }}
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: progress / 100 }}
+                style={{ transformOrigin: 'left' }}
                 transition={{ duration: 0.5 }}
               />
             </div>
@@ -182,12 +183,12 @@ export const DataMaturityAssessment: React.FC = () => {
                     <button
                       key={index}
                       onClick={() => handleAnswer(option.points)}
-                      className="active:scale-[0.97] group p-4 text-left rounded-xl border border-gray-200 hover:border-primary hover:bg-primary/5 transition-all motion-reduce:duration-[0.01ms] duration-200 flex items-center justify-between"
+                      className="active:scale-[0.97] group p-4 text-left rounded-xl border border-gray-200 hover:border-primary hover:bg-primary/5 transition motion-reduce:duration-[0.01ms] duration-200 flex items-center justify-between"
                     >
                       <span className="text-gray-900 group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms]">
                         {option.text}
                       </span>
-                      <CheckCircle className="w-5 h-5 opacity-0 group-hover:opacity-100 text-primary transition-all motion-reduce:duration-[0.01ms] transform translate-x-2 group-hover:translate-x-0" />
+                      <CheckCircle className="w-5 h-5 opacity-0 group-hover:opacity-100 text-primary transition motion-reduce:duration-[0.01ms] transform translate-x-2 group-hover:translate-x-0" />
                     </button>
                   ))}
                 </div>
@@ -265,13 +266,13 @@ export const DataMaturityAssessment: React.FC = () => {
                 <div className="flex justify-center gap-4">
                   <button
                     onClick={reset}
-                    className="active:scale-[0.97] px-6 py-2 rounded-lg text-gray-900/60 hover:text-primary hover:bg-primary/5 transition-all motion-reduce:duration-[0.01ms]"
+                    className="active:scale-[0.97] px-6 py-2 rounded-lg text-gray-900/60 hover:text-primary hover:bg-primary/5 transition motion-reduce:duration-[0.01ms]"
                   >
                     {t('retry')}
                   </button>
                   <a
                     href="/contact"
-                    className="px-6 py-2 rounded-lg bg-gradient-to-r from-primary to-purple-500 text-white font-medium hover:shadow-lg hover:opacity-90 transition-all motion-reduce:duration-[0.01ms] flex items-center gap-2"
+                    className="px-6 py-2 rounded-lg bg-gradient-to-r from-primary to-purple-500 text-white font-medium hover:shadow-lg hover:opacity-90 transition motion-reduce:duration-[0.01ms] flex items-center gap-2"
                   >
                     {t('bookAudit')} <CheckCircle className="w-4 h-4" />
                   </a>

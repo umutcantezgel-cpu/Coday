@@ -1,13 +1,13 @@
 {
   "hero": {
-    "headline_gradient": "Performance Agency.",
-    "headline_prefix": "Your Enterprise",
-    "description": "We engineer custom, lightning-fast enterprise websites using Next.js and React – completely free of WordPress templates. As your premier web design agency, we combine high-end development with data-driven SEO. The result: minimal load times, superior user experience, and measurable revenue growth for your business.",
+    "headline_gradient": "Headless Websites.",
+    "headline_prefix": "Handcrafted",
+    "description": "Custom Next.js architecture from Wetzlar, Germany. No page builders, no templates. Clean React, typed with TypeScript, and content managed via Sanity CMS. For businesses that require fast load times and an independent design.",
     "rotating": [
-      "Enterprise-Grade Performance.",
-      "Maximum ROI. Scalable Growth.",
-      "Award-Winning UX. Uncompromising Code.",
-      "No Overhead. Just Results."
+      "React & TypeScript.",
+      "Tailwind CSS Layouts.",
+      "Sanity CMS Integration.",
+      "Local development from Wetzlar."
     ]
   },
   "industries": {
@@ -70,7 +70,26 @@
     "text": "From ambitious SMEs to enterprise corporations: We deliver digital excellence you can unconditionally rely on.",
     "title_prefix": "Clients who",
     "title_suffix": "Trust Us.",
-    "items": []
+    "items": [
+      {
+        "quote": "Coday completely revolutionized our digital presence. The new website is not only extremely fast, but perfectly reflects the quality of our work.",
+        "authorName": "Management",
+        "authorPosition": "Owner",
+        "authorCompany": "Batherm"
+      },
+      {
+        "quote": "Since launching the new website, we have seen a significant increase in local inquiries. The load time is phenomenal and the SEO performance speaks for itself.",
+        "authorName": "Management",
+        "authorPosition": "Owner",
+        "authorCompany": "MS Schlüsseldienst Wetzlar"
+      },
+      {
+        "quote": "Our guests love the new online menu and the easy-to-use system. Working with Coday was highly professional, fast, and absolutely seamless.",
+        "authorName": "Management",
+        "authorPosition": "Owner",
+        "authorCompany": "Lindener Ratsstuben"
+      }
+    ]
   },
   "comparison": {
     "title_prefix": "Traditional vs.",

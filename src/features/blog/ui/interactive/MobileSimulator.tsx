@@ -25,7 +25,7 @@ export const MobileSimulator: React.FC = () => {
           onClick={() => setMode('bad')}
           className={clsx(
             'active:scale-[0.97]',
-            'px-6 py-2 rounded-full font-bold transition-all motion-reduce:duration-[0.01ms] flex items-center gap-2',
+            'px-6 py-2 rounded-full font-bold transition motion-reduce:duration-[0.01ms] flex items-center gap-2',
             mode === 'bad'
               ? 'bg-red-600 text-white shadow-lg shadow-red-900/50'
               : 'bg-gray-800 text-gray-400 hover:bg-gray-700'
@@ -38,7 +38,7 @@ export const MobileSimulator: React.FC = () => {
           onClick={() => setMode('good')}
           className={clsx(
             'active:scale-[0.97]',
-            'px-6 py-2 rounded-full font-bold transition-all motion-reduce:duration-[0.01ms] flex items-center gap-2',
+            'px-6 py-2 rounded-full font-bold transition motion-reduce:duration-[0.01ms] flex items-center gap-2',
             mode === 'good'
               ? 'bg-green-600 text-white shadow-lg shadow-green-900/50'
               : 'bg-gray-800 text-gray-400 hover:bg-gray-700'
@@ -53,7 +53,7 @@ export const MobileSimulator: React.FC = () => {
       <div className="flex justify-center relative z-10">
         <div
           className={clsx(
-            'bg-white transition-all motion-reduce:duration-[0.01ms] duration-500 overflow-hidden relative shadow-xl',
+            'bg-white transition motion-reduce:duration-[0.01ms] duration-500 overflow-hidden relative shadow-xl',
             device === 'mobile'
               ? 'w-[300px] h-[500px] rounded-[2rem] border-[8px] border-gray-800'
               : 'w-full max-w-2xl h-[400px] rounded-lg border-[12px] border-gray-800'

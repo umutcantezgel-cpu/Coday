@@ -46,7 +46,7 @@ export const ComponentConfigurator: React.FC = () => {
                 onClick={() => setColor(c)}
                 className={clsx(
                   'active:scale-[0.97]',
-                  'w-10 h-10 rounded-full border-2 transition-all motion-reduce:duration-[0.01ms] shadow-sm',
+                  'w-10 h-10 rounded-full border-2 transition motion-reduce:duration-[0.01ms] shadow-sm',
                   color === c ? 'border-gray-900 scale-110' : 'border-transparent scale-100',
                   c === 'blue' && 'bg-blue-600',
                   c === 'purple' && 'bg-purple-600',
@@ -70,7 +70,7 @@ export const ComponentConfigurator: React.FC = () => {
                 onClick={() => setRadius(r)}
                 className={clsx(
                   'active:scale-[0.97]',
-                  'flex-1 py-2 text-xs font-bold rounded-md transition-all motion-reduce:duration-[0.01ms] capitalize',
+                  'flex-1 py-2 text-xs font-bold rounded-md transition motion-reduce:duration-[0.01ms] capitalize',
                   radius === r
                     ? 'bg-white shadow-sm text-gray-900'
                     : 'text-gray-500 hover:text-gray-700'
@@ -94,7 +94,7 @@ export const ComponentConfigurator: React.FC = () => {
                 onClick={() => setPadding(p)}
                 className={clsx(
                   'active:scale-[0.97]',
-                  'flex-1 py-2 text-xs font-bold rounded-md transition-all motion-reduce:duration-[0.01ms] capitalize',
+                  'flex-1 py-2 text-xs font-bold rounded-md transition motion-reduce:duration-[0.01ms] capitalize',
                   padding === p
                     ? 'bg-white shadow-sm text-gray-900'
                     : 'text-gray-500 hover:text-gray-700'
@@ -114,7 +114,7 @@ export const ComponentConfigurator: React.FC = () => {
         <motion.div
           layout
           className={clsx(
-            'bg-white shadow-2xl max-w-sm w-full mx-8 relative z-10 transition-all motion-reduce:duration-[0.01ms] duration-300 ease-out',
+            'bg-white shadow-2xl max-w-sm w-full mx-8 relative z-10 transition motion-reduce:duration-[0.01ms] duration-300 ease-out',
             radiusMap[radius],
             paddingMap[padding]
           )}

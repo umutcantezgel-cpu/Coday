@@ -1,11 +1,22 @@
 'use client';
 
 import React from 'react';
-import { m, LazyMotion, domAnimation, AnimatePresence, useReducedMotion, Variants } from 'motion/react';
+import {
+  m,
+  LazyMotion,
+  domAnimation,
+  AnimatePresence,
+  useReducedMotion,
+  Variants,
+} from 'motion/react';
 import { usePathname } from '@/i18n/navigation';
+import { FrozenRoute } from '@/shared/ui/animations/FrozenRoute';
 
 const transitionVariants: Variants = {
-  initial: (custom: { direction: 'same' | 'deeper' | 'back'; shouldReduceMotion: boolean | null }) => {
+  initial: (custom: {
+    direction: 'same' | 'deeper' | 'back';
+    shouldReduceMotion: boolean | null;
+  }) => {
     if (custom.shouldReduceMotion) return { opacity: 0 };
     if (custom.direction === 'deeper') return { opacity: 0, x: 20 };
     if (custom.direction === 'back') return { opacity: 0, x: -20 };
@@ -21,7 +32,8 @@ const transitionVariants: Variants = {
   },
   exit: (custom: { direction: 'same' | 'deeper' | 'back'; shouldReduceMotion: boolean | null }) => {
     if (custom.shouldReduceMotion) return { opacity: 0, transition: { duration: 0.15 } };
-    if (custom.direction === 'deeper') return { opacity: 0, x: -20, transition: { duration: 0.15 } };
+    if (custom.direction === 'deeper')
+      return { opacity: 0, x: -20, transition: { duration: 0.15 } };
     if (custom.direction === 'back') return { opacity: 0, x: 20, transition: { duration: 0.15 } };
     return { opacity: 0, transition: { duration: 0.15 } };
   },
@@ -36,11 +48,11 @@ export const PageTransition = ({ children }: { children: React.ReactNode }) => {
   if (pathname !== prevPathname) {
     const prevSegments = prevPathname.split('/').filter(Boolean).length;
     const currSegments = pathname.split('/').filter(Boolean).length;
-    
+
     let newDirection: 'same' | 'deeper' | 'back' = 'same';
     if (currSegments > prevSegments) newDirection = 'deeper';
     else if (currSegments < prevSegments) newDirection = 'back';
-    
+
     setPrevPathname(pathname);
     setDirection(newDirection);
   }
@@ -62,7 +74,7 @@ export const PageTransition = ({ children }: { children: React.ReactNode }) => {
           exit="exit"
           className="flex-grow flex flex-col min-h-screen"
         >
-          {children}
+          <FrozenRoute>{children}</FrozenRoute>
         </m.div>
       </AnimatePresence>
     </LazyMotion>

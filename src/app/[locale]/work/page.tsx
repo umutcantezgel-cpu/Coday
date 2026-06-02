@@ -70,7 +70,7 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
               <Link
                 key={project.slug}
                 href={`/work/${project.slug}`}
-                className="group relative rounded-3xl overflow-hidden bg-white border border-neutral-200 shadow-sm hover:shadow-xl hover:border-primary-200 transition-all motion-reduce:duration-[0.01ms] duration-500"
+                className="group relative rounded-3xl overflow-hidden bg-white border border-neutral-200 shadow-sm hover:shadow-xl hover:border-primary-200 transition motion-reduce:duration-[0.01ms] duration-500"
               >
                 {/* Image */}
                 <div className="relative aspect-video overflow-hidden bg-neutral-100">
@@ -162,7 +162,7 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
                   {/* Progress bar */}
                   <div className="h-2 bg-neutral-200 rounded-full overflow-hidden">
                     <div
-                      className="h-full bg-gradient-to-r from-primary-500 to-primary-700 rounded-full transition-all motion-reduce:duration-[0.01ms] duration-1000"
+                      className="h-full bg-gradient-to-r from-primary-500 to-primary-700 rounded-full transition motion-reduce:duration-[0.01ms] duration-1000"
                       style={{ width: `${project.completion ?? 0}%` }}
                     />
                   </div>

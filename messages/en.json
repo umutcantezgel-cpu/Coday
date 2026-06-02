@@ -98,12 +98,7 @@
     "dataMaturity": {
       "title": "Data Maturity Check",
       "questionStep": "Question {current} of {total}",
-      "levels": [
-        "Flying Blind",
-        "Basic Tracking",
-        "Advanced Tracking",
-        "Data-Driven"
-      ],
+      "levels": ["Flying Blind", "Basic Tracking", "Advanced Tracking", "Data-Driven"],
       "descriptions": [
         "You rely heavily on gut feeling. Without a solid data structure, scaling is difficult.",
         "You have initial tracking solutions in place, but aren't fully utilizing automation potential.",
@@ -186,11 +181,7 @@
     "jobs": {
       "hero_title_prefix": "We are hiring",
       "culture_badge": "Culture",
-      "hero_rotating": [
-        "Developers",
-        "Designers",
-        "Talents"
-      ],
+      "hero_rotating": ["Developers", "Designers", "Talents"],
       "hero_desc": "Join our team and shape the digital future.",
       "list": [
         {
@@ -219,11 +210,7 @@
       "values": {
         "title": "Our Values",
         "desc": "This is what matters to us.",
-        "items": [
-          "Transparency in every step",
-          "Highest code quality",
-          "True partnerships"
-        ]
+        "items": ["Transparency in every step", "Highest code quality", "True partnerships"]
       },
       "team": {
         "title": "The Team",
@@ -261,11 +248,11 @@
       "description": "High-End Web Development, Design & Strategy from Wetzlar, Hesse for your digital success."
     },
     "hero": {
-      "rotatingTexts": [
-        "Web Design",
-        "Web Development",
-        "SEO"
-      ]
+      "rotatingTexts": ["Web Design", "Web Development", "SEO"]
+    },
+    "methodology": {
+      "title": "Precision Craftsmanship over Mass Production.",
+      "description": "As a solo agency, I work directly with you — without project managers or miscommunication. You receive custom solutions based on the latest web technologies that deliver real results. From initial concept to final launch."
     }
   }
 }

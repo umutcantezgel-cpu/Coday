@@ -79,7 +79,7 @@ export function EnterpriseWebClient() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <NavLink
                 href="/booking"
-                className="group relative px-8 py-4 bg-secondary text-white rounded-full font-bold text-lg overflow-hidden transition-all motion-reduce:duration-[0.01ms] hover:scale-105"
+                className="group relative px-8 py-4 bg-secondary text-white rounded-full font-bold text-lg overflow-hidden transition motion-reduce:duration-[0.01ms] hover:scale-105"
               >
                 <span className="relative z-10 flex items-center">
                   {t('enterprise_web_page.hero.cta_primary')}

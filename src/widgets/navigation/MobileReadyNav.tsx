@@ -160,6 +160,7 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
             aria-hidden="true"
             className="logo-icon w-12 h-12 object-contain"
             priority={true}
+            fetchPriority="high"
           />
           <span className="logo-text text-lg">Coday</span>
           <span className="sr-only"> – Zur Startseite</span>
@@ -188,7 +189,7 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
 
               {/* Focused Dropdown */}
               <div
-                className={`nav-dropdown absolute left-1/2 -translate-x-1/2 transition-all motion-reduce:duration-[0.01ms] duration-300 ease-out origin-top ${
+                className={`nav-dropdown absolute left-1/2 -translate-x-1/2 transition motion-reduce:duration-[0.01ms] duration-300 ease-out origin-top ${
                   activeCategory === item.label
                     ? 'opacity-100 translate-y-0 scale-100 blur-none pointer-events-auto'
                     : 'opacity-0 -translate-y-2 scale-95 blur-sm pointer-events-none'

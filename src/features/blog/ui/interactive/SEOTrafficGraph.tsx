@@ -38,13 +38,13 @@ export const SEOTrafficGraph: React.FC = () => {
       <div className="flex gap-4 mb-8 bg-gray-100 p-1 rounded-xl w-fit">
         <button
           onClick={() => setView('standard')}
-          className={`active:scale-[0.97] px-4 py-2 rounded-lg text-sm font-bold transition-all motion-reduce:duration-[0.01ms] ${view === 'standard' ? 'bg-white shadow text-gray-800' : 'text-gray-500 hover:text-gray-700'}`}
+          className={`active:scale-[0.97] px-4 py-2 rounded-lg text-sm font-bold transition motion-reduce:duration-[0.01ms] ${view === 'standard' ? 'bg-white shadow text-gray-800' : 'text-gray-500 hover:text-gray-700'}`}
         >
           {t('seoTraffic.standard')}
         </button>
         <button
           onClick={() => setView('coday')}
-          className={`active:scale-[0.97] px-4 py-2 rounded-lg text-sm font-bold transition-all motion-reduce:duration-[0.01ms] ${view === 'coday' ? 'bg-green-600 text-white shadow' : 'text-gray-500 hover:text-gray-700'}`}
+          className={`active:scale-[0.97] px-4 py-2 rounded-lg text-sm font-bold transition motion-reduce:duration-[0.01ms] ${view === 'coday' ? 'bg-green-600 text-white shadow' : 'text-gray-500 hover:text-gray-700'}`}
         >
           {t('seoTraffic.coday')}
         </button>
@@ -70,7 +70,7 @@ export const SEOTrafficGraph: React.FC = () => {
               style={{ transformOrigin: 'bottom' }}
               animate={{ scaleY: (value / (view === 'coday' ? 320 : 22)) * 100 }}
               transition={{ ...EASING.spring, delay: index * STAGGER.default }}
-              className={`w-full rounded-t-sm relative transition-all motion-reduce:duration-[0.01ms] duration-300 ${
+              className={`w-full rounded-t-sm relative transition motion-reduce:duration-[0.01ms] duration-300 ${
                 view === 'coday'
                   ? 'bg-gradient-to-t from-emerald-600 to-emerald-400 group-hover:from-emerald-500 group-hover:to-emerald-300 shadow-[0_0_15px_rgba(16,185,129,0.3)]'
                   : 'bg-gradient-to-t from-gray-400 to-gray-300 group-hover:from-gray-300 group-hover:to-gray-200'

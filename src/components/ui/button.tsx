@@ -3,7 +3,7 @@ import { CircleNotch, CheckCircle, WarningCircle } from '@phosphor-icons/react/d
 import { cn } from '@/lib/utils';
 
 export const baseButtonStyles =
-  'relative inline-flex items-center justify-center rounded-xl font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none transition-[transform,filter,background-color,border-color,opacity,color] duration-200 ease-out motion-reduce:transition-none active:scale-[0.97] touch-manipulation isolate';
+  'relative inline-flex items-center justify-center rounded-xl font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none transition-[transform,opacity] duration-150 ease-appear motion-reduce:transition-none active:scale-[0.97] active:duration-[80ms] touch-manipulation isolate';
 
 export const buttonVariants: Record<string, string> = {
   primary:
@@ -18,10 +18,10 @@ export const buttonVariants: Record<string, string> = {
 
 export const buttonSizes: Record<string, string> = {
   sm: 'h-10 px-4 text-sm',
-  md: 'h-[48px] px-6 text-base',
-  lg: 'h-[56px] px-8 text-lg',
-  icon: 'h-[48px] w-[48px] p-0',
-  xl: 'h-[64px] px-10 text-xl',
+  md: 'h-12 px-6 text-base',
+  lg: 'h-14 px-8 text-lg',
+  icon: 'h-12 w-12 p-0',
+  xl: 'h-16 px-10 text-xl',
 };
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -33,6 +33,9 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   state?: 'idle' | 'loading' | 'success' | 'error';
 }
 
+/**
+ * A reusable Button component with variants, sizes, and state handling.
+ */
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
@@ -55,14 +58,20 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <button
         ref={ref}
-        className={cn(baseButtonStyles, buttonVariants[variant], buttonSizes[size], className)}
+        className={cn(
+          baseButtonStyles,
+          buttonVariants[variant],
+          buttonSizes[size],
+          effectiveState === 'error' && 'animate-shake',
+          className
+        )}
         disabled={disabled || effectiveState === 'loading'}
         {...props}
       >
         <span
           className={cn(
-            'flex items-center justify-center gap-2 transition-[opacity,filter,transform] duration-200 ease-out motion-reduce:transition-none',
-            isOverlayVisible ? 'opacity-0 blur-[2px] scale-95' : 'opacity-100 blur-0 scale-100'
+            'flex items-center justify-center gap-2 transition-[opacity,transform] duration-150 ease-appear motion-reduce:transition-none',
+            isOverlayVisible ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
           )}
         >
           {leftIcon && <span className="mr-2 inline-flex">{leftIcon}</span>}
@@ -72,10 +81,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
         <span
           className={cn(
-            'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center transition-[opacity,filter,transform] duration-200 ease-out motion-reduce:transition-none',
-            effectiveState === 'loading'
-              ? 'opacity-100 blur-0 scale-100'
-              : 'opacity-0 blur-[2px] scale-95 pointer-events-none'
+            'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center transition-[opacity,transform] duration-150 ease-appear motion-reduce:transition-none',
+            effectiveState === 'loading' ? 'opacity-100' : 'opacity-0 pointer-events-none'
           )}
           aria-hidden={effectiveState !== 'loading'}
         >
@@ -84,10 +91,10 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
         <span
           className={cn(
-            'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center transition-[opacity,filter,transform] duration-200 ease-out motion-reduce:transition-none text-green-500',
+            'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center transition-[opacity,transform] duration-150 ease-appear motion-reduce:transition-none text-green-500',
             effectiveState === 'success'
-              ? 'opacity-100 blur-0 scale-100'
-              : 'opacity-0 blur-[2px] scale-95 pointer-events-none'
+              ? 'opacity-100 animate-scale-pulse'
+              : 'opacity-0 scale-95 pointer-events-none'
           )}
           aria-hidden={effectiveState !== 'success'}
         >
@@ -96,10 +103,10 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
         <span
           className={cn(
-            'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center transition-[opacity,filter,transform] duration-200 ease-out motion-reduce:transition-none text-red-500',
+            'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center transition-[opacity,transform] duration-150 ease-appear motion-reduce:transition-none text-red-500',
             effectiveState === 'error'
-              ? 'opacity-100 blur-0 scale-100'
-              : 'opacity-0 blur-[2px] scale-95 pointer-events-none'
+              ? 'opacity-100 scale-100'
+              : 'opacity-0 scale-95 pointer-events-none'
           )}
           aria-hidden={effectiveState !== 'error'}
         >

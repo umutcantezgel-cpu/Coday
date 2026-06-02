@@ -106,7 +106,7 @@ export function WebDesignClient() {
             <OptimizedImage
               src={brandingImages.hero?.src || ''}
               alt={brandingImages.hero?.alt || ''}
-              className="relative rounded-[2rem] shadow-flat-lg w-full transform -rotate-2 hover:rotate-0 transition-all motion-reduce:duration-[0.01ms] duration-500 bg-white p-2"
+              className="relative rounded-[2rem] shadow-flat-lg w-full transform -rotate-2 hover:rotate-0 transition motion-reduce:duration-[0.01ms] duration-500 bg-white p-2"
               priority
             />
           </div>
@@ -270,7 +270,7 @@ export function WebDesignClient() {
               <NavLink
                 key={index}
                 href={`/services/web-design/${feature.slug}`}
-                className="bg-white p-8 rounded-2xl shadow-flat border border-gray-100 hover:shadow-flat-lg transition-all motion-reduce:duration-[0.01ms] duration-300 group hover:-translate-y-1 block relative overflow-hidden h-full"
+                className="bg-white p-8 rounded-2xl shadow-flat border border-gray-100 hover:shadow-flat-lg transition motion-reduce:duration-[0.01ms] duration-300 group hover:-translate-y-1 block relative overflow-hidden h-full"
               >
                 <div className="absolute top-0 end-0 w-32 h-32 bg-secondary/5 rounded-bl-full -me-8 -mt-8 transition-transform motion-reduce:duration-[0.01ms] group-hover:scale-110"></div>
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-sapphire mb-6 group-hover:bg-sapphire group-hover:text-white transition-colors motion-reduce:duration-[0.01ms] relative z-10">
@@ -311,7 +311,7 @@ export function WebDesignClient() {
             </p>
             <NavLink
               href="/cases"
-              className="inline-flex items-center justify-center px-6 py-3 font-bold text-secondary rounded-xl bg-primary hover:bg-white transition-all motion-reduce:duration-[0.01ms] shadow-glow"
+              className="inline-flex items-center justify-center px-6 py-3 font-bold text-secondary rounded-xl bg-primary hover:bg-white transition motion-reduce:duration-[0.01ms] shadow-glow"
             >
               {t('actions.read_more')}
               <OptimizedIcon icon={ArrowRight} className="ms-2" />

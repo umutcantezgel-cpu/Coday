@@ -28,7 +28,7 @@ export default function ErrorBoundary({ error, reset }: ErrorBoundaryProps) {
 
         <button
           onClick={() => reset()}
-          className="inline-flex items-center justify-center rounded-xl font-medium transition-all motion-reduce:duration-[0.01ms] duration-300 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 bg-primary-700 text-white shadow-md hover:bg-primary-800 hover:shadow-glow min-h-[48px] px-6 w-full"
+          className="inline-flex items-center justify-center rounded-xl font-medium transition motion-reduce:duration-[0.01ms] duration-300 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 bg-primary-700 text-white shadow-md hover:bg-primary-800 hover:shadow-glow min-h-[48px] px-6 w-full"
         >
           {t('tryAgain')}
         </button>

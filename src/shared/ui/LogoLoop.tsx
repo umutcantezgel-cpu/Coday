@@ -437,7 +437,7 @@ const LogoLoop = React.memo<LogoLoopProps>(
 
         <div
           className={cx(
-            'flex will-change-transform select-none relative z-0',
+            'flex select-none relative z-0',
             'motion-reduce:transform-none',
             isVertical ? 'flex-col h-max w-full' : 'flex-row w-max'
           )}

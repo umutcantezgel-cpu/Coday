@@ -26,7 +26,7 @@ export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ project }) => {
   const image = content.solution?.images?.[0] || '/images/brand/coday-full.webp';
 
   const innerContent = (
-    <article className="group relative rounded-3xl overflow-hidden shadow-md h-[400px] flex flex-col hover:-translate-y-1 hover:scale-[1.02] hover:shadow-glow transition-all motion-reduce:duration-[0.01ms] duration-slow ease-out cursor-pointer w-full">
+    <article className="group relative rounded-3xl overflow-hidden shadow-md h-[400px] flex flex-col hover:-translate-y-1 hover:scale-[1.02] hover:shadow-glow transition motion-reduce:duration-[0.01ms] duration-slow ease-out cursor-pointer w-full">
       {/* Background Image */}
       <div className="absolute inset-0">
         <OptimizedImage

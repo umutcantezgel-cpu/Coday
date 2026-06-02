@@ -72,9 +72,10 @@ export const AnalysisProgress: React.FC = () => {
         <div className="h-3 bg-gray-100 rounded-full overflow-hidden">
           <motion.div
             className="h-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-full"
-            initial={{ width: 0 }}
-            animate={{ width: `${progress.progress}%` }}
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: progress.progress / 100 }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
+            style={{ transformOrigin: 'left' }}
           />
         </div>
       </div>
@@ -97,7 +98,7 @@ export const AnalysisProgress: React.FC = () => {
               transition={TRANSITION.reveal}
               className={`
                 relative p-4 rounded-2xl border-2 text-center
-                transition-all motion-reduce:duration-[0.01ms] duration-300
+                transition motion-reduce:duration-[0.01ms] duration-300
                 ${
                   isCompleted
                     ? 'border-green-500 bg-green-50'

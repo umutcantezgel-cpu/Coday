@@ -104,7 +104,7 @@ export const SovereigntyChecklist: React.FC = () => {
             <label
               key={item.id}
               className={clsx(
-                'flex items-start gap-4 p-4 rounded-xl border transition-all motion-reduce:duration-[0.01ms] cursor-pointer hover:bg-gray-50',
+                'flex items-start gap-4 p-4 rounded-xl border transition motion-reduce:duration-[0.01ms] cursor-pointer hover:bg-gray-50',
                 checkedItems[item.id] ? 'border-blue-500 bg-blue-50/30' : 'border-gray-200'
               )}
             >
@@ -140,7 +140,7 @@ export const SovereigntyChecklist: React.FC = () => {
           {!showResult ? (
             <button
               onClick={() => setShowResult(true)}
-              className="active:scale-[0.97] px-8 py-3 bg-blue-600 text-white font-bold rounded-xl shadow-lg shadow-blue-200 hover:bg-blue-700 hover:scale-105 transition-all motion-reduce:duration-[0.01ms]"
+              className="active:scale-[0.97] px-8 py-3 bg-blue-600 text-white font-bold rounded-xl shadow-lg shadow-blue-200 hover:bg-blue-700 hover:scale-105 transition motion-reduce:duration-[0.01ms]"
             >
               Calculate Risk Score
             </button>
