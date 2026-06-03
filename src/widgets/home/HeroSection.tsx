@@ -7,7 +7,7 @@ import GradientText from '@/shared/ui/GradientText';
 import { cn } from '@/shared/lib/utils';
 import dynamic from 'next/dynamic';
 
-import { FadeInUp } from '@/shared/ui/MotionWrappers';
+// Removed FadeInUp to optimize LCP
 import { MobileRotatingText } from './MobileRotatingText';
 
 const ClientRotatingText = dynamic(() =>
@@ -24,15 +24,16 @@ export const HeroSection: React.FC = () => {
 
       <div className="relative z-10 w-full max-w-6xl mx-auto flex flex-col items-center">
         {/* Eyebrow Tag */}
-        <FadeInUp delay={0.1} duration={0.7} className="ease-[cubic-bezier(0.32,0.72,0,1)]">
+        <div className="w-full">
           <div className="mb-10 rounded-full px-5 py-2 text-[10px] sm:text-xs uppercase tracking-[0.2em] font-medium bg-white/5 dark:bg-black/20 border border-black/5 dark:border-white/10 backdrop-blur-md shadow-sm">
             {t('hero.eyebrow', { defaultValue: 'High-End Digital Agency' })}
           </div>
-        </FadeInUp>
+        </div>
 
         {/* Huge Typography, Text perfectly centered, max 2-3 lines */}
-        <FadeInUp delay={0.2} duration={0.7} className="ease-[cubic-bezier(0.32,0.72,0,1)]">
-          <h1 className="max-w-5xl font-display font-bold text-5xl md:text-7xl lg:text-8xl tracking-tight text-text-primary text-balance mb-8">
+        {/* Huge Typography, Text perfectly centered, max 2-3 lines */}
+        <div className="w-full">
+          <h1 className="max-w-5xl font-display font-bold text-5xl md:text-7xl lg:text-8xl tracking-tight text-text-primary mb-8">
             {t('hero.headline_prefix')} <br />
             <GradientText
               colors={[
@@ -47,15 +48,15 @@ export const HeroSection: React.FC = () => {
               {t('hero.headline_gradient')}
             </GradientText>
           </h1>
-        </FadeInUp>
+        </div>
 
-        <FadeInUp delay={0.3} duration={0.7} className="ease-[cubic-bezier(0.32,0.72,0,1)]">
-          <p className="max-w-2xl text-[var(--text-lead)] font-light text-text-secondary leading-relaxed mb-6 text-balance mx-auto">
+        <div className="w-full">
+          <p className="max-w-2xl text-[var(--text-lead)] font-light text-text-secondary leading-relaxed mb-6 mx-auto">
             {t('hero.description')}
           </p>
-        </FadeInUp>
+        </div>
 
-        <FadeInUp delay={0.4} duration={0.7} className="ease-[cubic-bezier(0.32,0.72,0,1)] w-full">
+        <div className="w-full">
           <div className="min-h-[60px] w-full max-w-3xl flex items-center justify-center text-center mb-8 mx-auto px-4">
             <span className="hidden md:inline-flex w-full justify-center">
               <ClientRotatingText
@@ -70,10 +71,10 @@ export const HeroSection: React.FC = () => {
               <MobileRotatingText texts={t.raw('hero.rotating') as string[]} />
             </span>
           </div>
-        </FadeInUp>
+        </div>
 
         {/* 2 High-Contrast CTAs */}
-        <FadeInUp delay={0.5} duration={0.7} className="ease-[cubic-bezier(0.32,0.72,0,1)] w-full sm:w-auto">
+        <div className="w-full sm:w-auto">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full">
             <Link href="/contact" className="group w-full sm:w-auto">
               <Button 
@@ -99,7 +100,7 @@ export const HeroSection: React.FC = () => {
               </Button>
             </Link>
           </div>
-        </FadeInUp>
+        </div>
       </div>
     </section>
   );
