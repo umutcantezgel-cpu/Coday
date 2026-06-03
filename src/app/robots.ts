@@ -49,7 +49,7 @@ export default function robots(): MetadataRoute.Robots {
         ],
       },
     ],
-    sitemap: 'https://codayweb.de/sitemap.xml',
-    host: 'https://codayweb.de',
+    sitemap: 'https://www.codayweb.de/sitemap.xml',
+    host: 'https://www.codayweb.de',
   };
 }
