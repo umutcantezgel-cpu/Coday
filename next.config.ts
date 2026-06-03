@@ -25,6 +25,7 @@ const nextConfig: NextConfig = {
     ],
   },
   reactStrictMode: true,
+  poweredByHeader: false,
   experimental: {
     optimizePackageImports: [
       '@phosphor-icons/react',

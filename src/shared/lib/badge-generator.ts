@@ -29,7 +29,7 @@ export const BADGE_VARIANTS = [
 export type BadgeVariantIndex = 0 | 1 | 2 | 3 | 4;
 
 /** Base URL for badge links */
-const CODAY_BASE_URL = 'https://codayweb.de';
+const CODAY_BASE_URL = 'https://www.codayweb.de';
 
 /* ────────────────────────────── Utilities ────────────────────────────── */
 

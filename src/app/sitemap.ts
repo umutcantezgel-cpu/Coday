@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 
-const BASE_URL = 'https://codayweb.de';
+const BASE_URL = 'https://www.codayweb.de';
 const SITEMAP_LIMIT = 50000;
 
 /**

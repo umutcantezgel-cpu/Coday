@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-const BASE_URL = 'https://codayweb.de';
+const BASE_URL = 'https://www.codayweb.de';
 
 /**
  * Generate robots meta based on page type and environment.

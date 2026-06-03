@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://codayweb.de';
+export const BASE_URL = 'https://www.codayweb.de';
 export const ORG_ID = `${BASE_URL}/#organization`;
 export const FOUNDER_ID = `${BASE_URL}/#founder`;
 

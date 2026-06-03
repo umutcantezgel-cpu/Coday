@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 export const dynamic = 'force-static';
 
-const BASE_URL = 'https://codayweb.de';
+const BASE_URL = 'https://www.codayweb.de';
 
 export async function GET() {
   const content = `# Coday — High-End Headless Web Development aus Wetzlar
