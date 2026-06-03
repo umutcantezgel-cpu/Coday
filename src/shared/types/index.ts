@@ -40,6 +40,7 @@ export interface CompanyInfo {
     linkedin?: string;
     twitter?: string;
     instagram?: string;
+    facebook?: string;
     github?: string;
   };
   openingHours: Record<string, string>;
