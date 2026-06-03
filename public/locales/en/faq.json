@@ -1,20 +1,116 @@
 {
   "hero": {
-    "title": "Agency FAQ | Questions on Web Design & SEO - Coday",
-    "subtitle": "Everything you need to know about our process, pricing, and philosophy.",
+    "title": "Häufig gestellte Fragen",
+    "subtitle": "Antworten auf Ihre wichtigsten Fragen",
     "description": "Frequently asked questions about our web design projects, SEO strategies, Next.js development, and fixed pricing. Find all your answers here."
   },
   "search": {
-    "placeholder": "Search for efficient solutions...",
-    "no_results": "No questions found matching your search.",
-    "clear": "Clear search"
+    "placeholder": "Fragen durchsuchen...",
+    "no_results": "Keine Ergebnisse gefunden",
+    "clear": "Suche zurücksetzen"
   },
   "categories": {
-    "all": "All Questions"
+    "all": "Alle Fragen"
   },
   "cta": {
-    "title": "Still have questions?",
-    "text": "Can't find the answer you're looking for? Let's talk directly.",
-    "button": "Contact Us"
+    "title": "Noch Fragen?",
+    "text": "Kontaktieren Sie uns für eine persönliche Beratung.",
+    "button": "Kontakt aufnehmen"
+  },
+  "troubleshooter": {
+    "title": "Nicht sicher, wo Sie anfangen sollen?",
+    "recommendation": "Unsere Empfehlung",
+    "restart": "Neustart",
+    "start_over": "Von vorne beginnen",
+    "explore": "Lösung entdecken",
+    "steps": {
+      "goal": {
+        "question": "Was ist Ihr aktuelles Hauptziel?",
+        "options": {
+          "growth": "Umsatz / Leads steigern",
+          "launch": "Ein neues Produkt einführen",
+          "efficiency": "Automatisieren / Zeit sparen",
+          "fix": "Technische Probleme beheben"
+        }
+      },
+      "growth-context": {
+        "question": "Wie gewinnen Sie derzeit Kunden?",
+        "options": {
+          "ads": "Bezahlte Werbung (Hohe CPA)",
+          "organic": "SEO / Content (Langsam)",
+          "referral": "Empfehlungen (Unberechenbar)"
+        }
+      },
+      "launch-context": {
+        "question": "In welcher Phase befinden Sie sich?",
+        "options": {
+          "idea": "Nur eine Idee",
+          "prototype": "Prototyp / Design vorhanden",
+          "ready": "Bereit zur Skalierung"
+        }
+      },
+      "efficiency-context": {
+        "question": "Wo liegt der Engpass?",
+        "options": {
+          "support": "Kundensupport überlastet",
+          "manual": "Manuelle Dateneingabe",
+          "cms": "Website-Updates sind langsam"
+        }
+      },
+      "fix-context": {
+        "question": "Was ist defekt?",
+        "options": {
+          "speed": "Website ist zu langsam",
+          "security": "Sicherheitsbedenken / Hacks",
+          "ux": "Benutzer sind verwirrt"
+        }
+      }
+    },
+    "results": {
+      "cro": {
+        "title": "Conversion-Optimierung",
+        "desc": "Sie benötigen nicht mehr Traffic, sondern eine bessere Conversion."
+      },
+      "seo": {
+        "title": "SEO-Strategie",
+        "desc": "Dominieren Sie die Suchergebnisse mit einem technischen SEO-Audit."
+      },
+      "marketing": {
+        "title": "Wachstumsmarketing",
+        "desc": "Eine ganzheitliche Strategie, um Ihre Akquise-Kanäle zu diversifizieren."
+      },
+      "strategy": {
+        "title": "Digitale Beratung",
+        "desc": "Lassen Sie uns Ihre Idee validieren, bevor wir sie entwickeln."
+      },
+      "dev": {
+        "title": "Web-/App-Entwicklung",
+        "desc": "Verwandeln Sie Ihr Design in ein hochleistungsfähiges Produkt."
+      },
+      "ai-support": {
+        "title": "KI-Integration",
+        "desc": "Automatisieren Sie Ihren Support mit maßgeschneiderten KI-Agenten."
+      },
+      "automation": {
+        "title": "Prozessautomatisierung",
+        "desc": "Verknüpfen Sie Ihre Tools und beenden Sie manuelle Arbeitsabläufe."
+      },
+      "headless": {
+        "title": "Headless-CMS-Migration",
+        "desc": "Stärken Sie Ihr Marketing-Team mit einem modernen CMS."
+      },
+      "performance": {
+        "title": "Performance-Audit",
+        "desc": "Beschleunigen Sie Ihre Website für bessere UX und Rankings."
+      },
+      "security": {
+        "title": "Sicherheitshärtung",
+        "desc": "Schützen Sie Ihre Assets mit unternehmensweiter Sicherheit."
+      },
+      "ux-audit": {
+        "title": "UX/UI-Audit",
+        "desc": "Identifizieren Sie Reibungspunkte und verbessern Sie die Benutzerfreundlichkeit."
+      }
+    }
   }
 }

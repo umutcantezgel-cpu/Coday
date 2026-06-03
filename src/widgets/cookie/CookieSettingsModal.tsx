@@ -96,16 +96,16 @@ const CookieSettingsModal: React.FC<CookieSettingsModalProps> = ({ isOpen, onClo
                     type="checkbox"
                     checked={localPreferences.necessary}
                     disabled
-                    className="mt-1 h-4 w-4 text-primary border-gray-300 rounded focus:ring-primary"
+                    className="mt-1 h-4 w-4 shrink-0 text-primary border-gray-300 rounded focus:ring-primary"
                   />
-                  <div>
+                  <div className="min-w-0">
                     <label
                       htmlFor="cookie-essential"
-                      className="block text-sm font-medium text-gray-900"
+                      className="block text-sm font-medium text-gray-900 break-words"
                     >
                       {t('cookie.essential.title')}
                     </label>
-                    <p className="text-xs text-gray-500">{t('cookie.essential.desc')}</p>
+                    <p className="text-xs text-gray-500 break-words hyphens-auto">{t('cookie.essential.desc')}</p>
                   </div>
                 </div>
 
@@ -118,16 +118,16 @@ const CookieSettingsModal: React.FC<CookieSettingsModalProps> = ({ isOpen, onClo
                     onChange={(e) =>
                       setLocalPreferences((prev) => ({ ...prev, analytics: e.target.checked }))
                     }
-                    className="mt-1 h-4 w-4 text-primary border-gray-300 rounded focus:ring-primary"
+                    className="mt-1 h-4 w-4 shrink-0 text-primary border-gray-300 rounded focus:ring-primary"
                   />
-                  <div>
+                  <div className="min-w-0">
                     <label
                       htmlFor="cookie-analytics"
-                      className="block text-sm font-medium text-gray-900"
+                      className="block text-sm font-medium text-gray-900 break-words"
                     >
                       {t('cookie.analytics.title')}
                     </label>
-                    <p className="text-xs text-gray-500">{t('cookie.analytics.desc')}</p>
+                    <p className="text-xs text-gray-500 break-words hyphens-auto">{t('cookie.analytics.desc')}</p>
                   </div>
                 </div>
 
@@ -140,16 +140,16 @@ const CookieSettingsModal: React.FC<CookieSettingsModalProps> = ({ isOpen, onClo
                     onChange={(e) =>
                       setLocalPreferences((prev) => ({ ...prev, marketing: e.target.checked }))
                     }
-                    className="mt-1 h-4 w-4 text-primary border-gray-300 rounded focus:ring-primary"
+                    className="mt-1 h-4 w-4 shrink-0 text-primary border-gray-300 rounded focus:ring-primary"
                   />
-                  <div>
+                  <div className="min-w-0">
                     <label
                       htmlFor="cookie-marketing"
-                      className="block text-sm font-medium text-gray-900"
+                      className="block text-sm font-medium text-gray-900 break-words"
                     >
                       {t('cookie.marketing.title')}
                     </label>
-                    <p className="text-xs text-gray-500">{t('cookie.marketing.desc')}</p>
+                    <p className="text-xs text-gray-500 break-words hyphens-auto">{t('cookie.marketing.desc')}</p>
                   </div>
                 </div>
               </div>

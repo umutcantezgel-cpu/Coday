@@ -6,7 +6,7 @@
 export const AUTHOR = {
   name: 'Umutcan Tezgel',
   role: 'Technical Director',
-  image: '/images/umutcan-tezgel.jpg',
+  image: '/images/brand/coday-full.webp',
 };
 
 export const aiPositions = [

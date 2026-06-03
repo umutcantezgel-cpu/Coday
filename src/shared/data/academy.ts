@@ -145,7 +145,7 @@ export const academyData: Course[] = [
     slug: 'website-check',
     videoSrc: '/videos/academy/Website__Magnet_oder_Schreck_.mp4',
     image:
-      '/images/portfolio/mockup-website-fotograf-portfolio-hochzeit-portrait-business-event-galerie.webp',
+      '/images/hero/business-meeting-besprechung-team-konferenz.webp',
     content: {
       de: {
         title: 'Website: Magnet oder Schreck?',

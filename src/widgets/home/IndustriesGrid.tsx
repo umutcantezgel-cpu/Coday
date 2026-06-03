@@ -82,7 +82,7 @@ export const IndustriesGrid: React.FC = () => {
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
                     <OptimizedIcon icon={ind.icon} size="xl" className="text-primary" />
                   </div>
-                  <h3 className="font-bold text-lg text-secondary mb-2">
+                  <h3 className="font-bold text-lg text-secondary mb-2 break-words hyphens-auto" lang="de">
                     {t(`industries.card_${ind.id}.title`)}
                   </h3>
                   <p className="text-sm text-slate-600">{t(`industries.card_${ind.id}.desc`)}</p>

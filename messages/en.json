@@ -2,19 +2,19 @@
   "common": {
     "skipLink": "Skip to main content",
     "logobar": {
-      "title": "Trusted by"
+      "title": "Vertrauen schenken uns"
     },
     "nav": {
       "main": {
-        "home": "Home",
-        "work": "Work",
-        "process": "Process",
-        "pricing": "Pricing",
+        "home": "Startseite",
+        "work": "Portfolio",
+        "process": "Prozess",
+        "pricing": "Preise",
         "partnerschaft": "Partner Program",
-        "contact": "Start Project"
+        "contact": "Projekt starten"
       },
       "company": {
-        "about": "About"
+        "about": "Über uns"
       },
       "resources": {
         "calculator": "Pricing Calculator"
@@ -39,21 +39,21 @@
           "label": "API Integrations"
         },
         "fullstack": {
-          "label": "Full-Stack Development"
+          "label": "Full-Stack Entwicklung"
         }
       },
       "industries": {
-        "public": "Public Sector",
+        "public": "Öffentliche Aufträge",
         "tech": "Tech Startups"
       },
       "legal": {
-        "agb": "Terms",
-        "privacy": "Privacy",
-        "imprint": "Imprint"
+        "agb": "AGB",
+        "privacy": "Datenschutz",
+        "imprint": "Impressum"
       }
     },
     "footer": {
-      "slogan": "High-End Web Development with AI Precision from Hesse.",
+      "slogan": "High-End Webentwicklung für Agenturen & Unternehmen. Wir bauen digitale Flaggschiffe, die messbar performen.",
       "trust": {
         "title": "Coday Web",
         "desc": "Premium Agency"
@@ -61,13 +61,47 @@
       "sections": {
         "navigation": "Navigation",
         "services": "Services",
-        "regional": "Locations & Industries",
-        "contact": "Contact"
+        "regional": "Standorte & Branchen",
+        "contact": "Kontakt"
       },
-      "rights": "© {year} Coday"
+      "rights": "© {year} Coday. Alle Rechte vorbehalten."
     },
     "de": "German",
-    "en": "English"
+    "en": "English",
+    "announcement": {
+      "text": "Enterprise-Audit: Kostenlose Potenzialanalyse verfügbar.",
+      "cta": "Angebot sichern →"
+    },
+    "social": {
+      "visit": "Besuchen Sie uns auf {platform}"
+    },
+    "global_cta": {
+      "title_prefix": "Bereit für Ihr",
+      "title_highlight": "digitales Upgrade?",
+      "subtitle": "Lassen Sie uns gemeinsam herausfinden, wie wir Ihre Vision in ein performantes digitales Produkt verwandeln können.",
+      "button": "Kostenloses Erstgespräch"
+    },
+    "cookie": {
+      "settings": {
+        "title": "Cookie-Einstellungen",
+        "desc": "Wir verwenden Cookies, um Ihre Erfahrung zu verbessern. Bitte wählen Sie aus, welche Cookies Sie zulassen möchten."
+      },
+      "essential": {
+        "title": "Notwendige Cookies",
+        "desc": "Diese Cookies sind für die Grundfunktionen der Website erforderlich und können nicht deaktiviert werden."
+      },
+      "analytics": {
+        "title": "Analyse-Cookies",
+        "desc": "Helfen uns zu verstehen, wie Besucher mit der Website interagieren, indem Informationen anonym gesammelt und gemeldet werden."
+      },
+      "marketing": {
+        "title": "Marketing-Cookies",
+        "desc": "Werden verwendet, um Besuchern auf Websites zu folgen. Die Absicht ist, Anzeigen zu zeigen, die relevant und ansprechend für den einzelnen Benutzer sind."
+      }
+    },
+    "close": "Schließen",
+    "cancel": "Abbrechen",
+    "save": "Speichern"
   },
   "metadata": {
     "title": "Coday — AI-Augmented Web Agency from Wetzlar",
@@ -86,7 +120,14 @@
     "hero": {
       "title": "AI-Augmented Web Development",
       "subtitle": "High-end websites with React, TypeScript, and Headless CMS. Fixed pricing from €2,000.",
-      "cta": "Start Project"
+      "cta": "Start Project",
+      "eyebrow": "High-End Digital Agency",
+      "view_projects": "Projekte ansehen"
+    },
+    "techStack": {
+      "eyebrow": "Core Tech Stack",
+      "headingPrefix": "High-End Architektur",
+      "headingSuffix": "für kompromisslose Performance"
     }
   },
   "footer": {
@@ -98,7 +139,12 @@
     "dataMaturity": {
       "title": "Data Maturity Check",
       "questionStep": "Question {current} of {total}",
-      "levels": ["Flying Blind", "Basic Tracking", "Advanced Tracking", "Data-Driven"],
+      "levels": [
+        "Flying Blind",
+        "Basic Tracking",
+        "Advanced Tracking",
+        "Data-Driven"
+      ],
       "descriptions": [
         "You rely heavily on gut feeling. Without a solid data structure, scaling is difficult.",
         "You have initial tracking solutions in place, but aren't fully utilizing automation potential.",
@@ -109,37 +155,155 @@
       "recommendation": "Our recommendation",
       "retry": "Retry Test",
       "bookAudit": "Request Audit"
+    },
+    "keyTakeaways": {
+      "title": "Wichtigste Erkenntnisse",
+      "share": "Auf Twitter teilen"
     }
   },
   "faq": {
     "hero": {
-      "title": "Frequently Asked Questions",
-      "subtitle": "Find quick answers to your questions."
+      "title": "Häufig gestellte Fragen",
+      "subtitle": "Antworten auf Ihre wichtigsten Fragen"
     },
     "search": {
-      "placeholder": "Search...",
-      "no_results": "No results found",
-      "clear": "Clear search"
+      "placeholder": "Fragen durchsuchen...",
+      "no_results": "Keine Ergebnisse gefunden",
+      "clear": "Suche zurücksetzen"
     },
     "cta": {
-      "title": "Still have questions?",
-      "text": "Contact us for more information.",
-      "button": "Contact Us"
+      "title": "Noch Fragen?",
+      "text": "Kontaktieren Sie uns für eine persönliche Beratung.",
+      "button": "Kontakt aufnehmen"
     },
     "categories": {
-      "all": "All Categories"
+      "all": "Alle Fragen"
+    },
+    "troubleshooter": {
+      "title": "Nicht sicher, wo Sie anfangen sollen?",
+      "recommendation": "Unsere Empfehlung",
+      "restart": "Neustart",
+      "start_over": "Von vorne beginnen",
+      "explore": "Lösung entdecken",
+      "steps": {
+        "goal": {
+          "question": "Was ist Ihr aktuelles Hauptziel?",
+          "options": {
+            "growth": "Umsatz / Leads steigern",
+            "launch": "Ein neues Produkt einführen",
+            "efficiency": "Automatisieren / Zeit sparen",
+            "fix": "Technische Probleme beheben"
+          }
+        },
+        "growth-context": {
+          "question": "Wie gewinnen Sie derzeit Kunden?",
+          "options": {
+            "ads": "Bezahlte Werbung (Hohe CPA)",
+            "organic": "SEO / Content (Langsam)",
+            "referral": "Empfehlungen (Unberechenbar)"
+          }
+        },
+        "launch-context": {
+          "question": "In welcher Phase befinden Sie sich?",
+          "options": {
+            "idea": "Nur eine Idee",
+            "prototype": "Prototyp / Design vorhanden",
+            "ready": "Bereit zur Skalierung"
+          }
+        },
+        "efficiency-context": {
+          "question": "Wo liegt der Engpass?",
+          "options": {
+            "support": "Kundensupport überlastet",
+            "manual": "Manuelle Dateneingabe",
+            "cms": "Website-Updates sind langsam"
+          }
+        },
+        "fix-context": {
+          "question": "Was ist defekt?",
+          "options": {
+            "speed": "Website ist zu langsam",
+            "security": "Sicherheitsbedenken / Hacks",
+            "ux": "Benutzer sind verwirrt"
+          }
+        }
+      },
+      "results": {
+        "cro": {
+          "title": "Conversion-Optimierung",
+          "desc": "Sie benötigen nicht mehr Traffic, sondern eine bessere Conversion."
+        },
+        "seo": {
+          "title": "SEO-Strategie",
+          "desc": "Dominieren Sie die Suchergebnisse mit einem technischen SEO-Audit."
+        },
+        "marketing": {
+          "title": "Wachstumsmarketing",
+          "desc": "Eine ganzheitliche Strategie, um Ihre Akquise-Kanäle zu diversifizieren."
+        },
+        "strategy": {
+          "title": "Digitale Beratung",
+          "desc": "Lassen Sie uns Ihre Idee validieren, bevor wir sie entwickeln."
+        },
+        "dev": {
+          "title": "Web-/App-Entwicklung",
+          "desc": "Verwandeln Sie Ihr Design in ein hochleistungsfähiges Produkt."
+        },
+        "ai-support": {
+          "title": "KI-Integration",
+          "desc": "Automatisieren Sie Ihren Support mit maßgeschneiderten KI-Agenten."
+        },
+        "automation": {
+          "title": "Prozessautomatisierung",
+          "desc": "Verknüpfen Sie Ihre Tools und beenden Sie manuelle Arbeitsabläufe."
+        },
+        "headless": {
+          "title": "Headless-CMS-Migration",
+          "desc": "Stärken Sie Ihr Marketing-Team mit einem modernen CMS."
+        },
+        "performance": {
+          "title": "Performance-Audit",
+          "desc": "Beschleunigen Sie Ihre Website für bessere UX und Rankings."
+        },
+        "security": {
+          "title": "Sicherheitshärtung",
+          "desc": "Schützen Sie Ihre Assets mit unternehmensweiter Sicherheit."
+        },
+        "ux-audit": {
+          "title": "UX/UI-Audit",
+          "desc": "Identifizieren Sie Reibungspunkte und verbessern Sie die Benutzerfreundlichkeit."
+        }
+      }
     }
   },
   "knowledge": {
     "academy": {
       "title": "Academy",
-      "subtitle": "Learn from the best."
+      "subtitle": "Lernen Sie die Grundlagen",
+      "close_video": "Video schließen"
     },
     "newsletter": {
       "title": "Newsletter",
-      "subtitle": "Stay up to date.",
-      "emailPlaceholder": "Your email address",
-      "subscribe": "Subscribe"
+      "subtitle": "Bleiben Sie auf dem neuesten Stand.",
+      "emailPlaceholder": "Ihre E-Mail-Adresse",
+      "subscribe": "Abonnieren",
+      "success_title": "Vielen Dank!",
+      "success_message": "Sie haben sich erfolgreich angemeldet.",
+      "privacy_consent_pre": "Ich stimme der Verarbeitung meiner Daten gemäß der ",
+      "privacy_link": "Datenschutzerklärung",
+      "privacy_consent_post": " zu.",
+      "error": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut."
+    },
+    "wiki": {
+      "title": "AI & Digital Excellence Wiki",
+      "subtitle": "Der Coday Knowledge Graph. 100 essentielle Entitäten aus Tech, Business und Design, strukturiert für KI-Crawler und Menschen.",
+      "search_placeholder": "Entität suchen (z.B. Next.js, Headless CMS)...",
+      "search_aria": "Entität suchen",
+      "no_results": "Keine Entitäten gefunden für \"{searchTerm}\"",
+      "categories": {
+        "all": "Alle"
+      },
+      "aliases": "Aliasse:"
     }
   },
   "work": {
@@ -181,7 +345,11 @@
     "jobs": {
       "hero_title_prefix": "We are hiring",
       "culture_badge": "Culture",
-      "hero_rotating": ["Developers", "Designers", "Talents"],
+      "hero_rotating": [
+        "Developers",
+        "Designers",
+        "Talents"
+      ],
       "hero_desc": "Join our team and shape the digital future.",
       "list": [
         {
@@ -210,7 +378,11 @@
       "values": {
         "title": "Our Values",
         "desc": "This is what matters to us.",
-        "items": ["Transparency in every step", "Highest code quality", "True partnerships"]
+        "items": [
+          "Transparency in every step",
+          "Highest code quality",
+          "True partnerships"
+        ]
       },
       "team": {
         "title": "The Team",
@@ -248,11 +420,715 @@
       "description": "High-End Web Development, Design & Strategy from Wetzlar, Hesse for your digital success."
     },
     "hero": {
-      "rotatingTexts": ["Web Design", "Web Development", "SEO"]
+      "rotatingTexts": [
+        "Web Design",
+        "Web Development",
+        "SEO"
+      ]
     },
     "methodology": {
       "title": "Precision Craftsmanship over Mass Production.",
       "description": "As a solo agency, I work directly with you — without project managers or miscommunication. You receive custom solutions based on the latest web technologies that deliver real results. From initial concept to final launch."
+    },
+    "label": "Unsere Leistungen",
+    "title_prefix": "Wir bieten",
+    "title_suffix": "kompromisslose Premium Services.",
+    "items": {
+      "web_dev": {
+        "title": "High-End Webentwicklung",
+        "description": "Wir programmieren performante Webanwendungen mit Next.js und React, die technologisch Maßstäbe setzen."
+      },
+      "web_design": {
+        "title": "Exklusives Webdesign",
+        "description": "Ästhetische, konversionsstarke Designs, die Ihre Markenidentität perfekt in den digitalen Raum übersetzen."
+      },
+      "growth": {
+        "title": "Technisches SEO",
+        "description": "Datengestützte Optimierung für maximale Sichtbarkeit und nachhaltiges Wachstum in den Suchergebnissen."
+      }
+    }
+  },
+  "hero": {
+    "eyebrow": "High-End Digital Agency",
+    "headline_prefix": "Ihre Vision, präzise",
+    "headline_gradient": "realisiert.",
+    "description": "Als exklusive Web-Agentur aus Wetzlar entwickeln wir performante, KI-gestützte Plattformen für Unternehmen, die den Markt dominieren wollen. Höchste Qualität, ohne Kompromisse.",
+    "rotating": [
+      "Next.js App Router Architektur",
+      "Headless CMS Integration",
+      "Maximale Performance & SEO"
+    ],
+    "view_projects": "Projekte ansehen"
+  },
+  "techStack": {
+    "eyebrow": "Core Tech Stack",
+    "headingPrefix": "High-End Architektur",
+    "headingSuffix": "für kompromisslose Performance"
+  },
+  "philosophy": {
+    "traditional": "Traditionelle Handwerkskunst",
+    "history": "trifft auf modernste Web-Technologie.",
+    "text_overhead": "Wir verzichten bewusst auf ineffiziente Strukturen und Overhead. Als spezialisierte Agentur bieten wir Ihnen direkte, strategische Beratung und Umsetzung auf höchstem technischen Niveau.",
+    "standard": "Der Status Quo",
+    "text_standard": "reicht uns nicht. Wir entwickeln digitale Erlebnisse, die Ihre Konkurrenz in den Schatten stellen und Ihr Unternehmen als Marktführer positionieren."
+  },
+  "images": {
+    "trust_collaboration": "Vertrauen und partnerschaftliche Zusammenarbeit auf Augenhöhe"
+  },
+  "industries": {
+    "title_prefix": "Maßgeschneiderte Lösungen",
+    "title_suffix": "für Ihre Branche.",
+    "card_craft": {
+      "title": "Handwerk & Bauwesen",
+      "desc": "Digitale Präsenz, die Handwerkskunst widerspiegelt und hochwertige Kundenanfragen generiert."
+    },
+    "card_realestate": {
+      "title": "Immobilien & Makler",
+      "desc": "Exklusive Exposés und performante Portfolios zur Gewinnung erstklassiger Mandate."
+    },
+    "card_shop": {
+      "title": "E-Commerce & Retail",
+      "desc": "Skalierbare Onlineshops mit blitzschnellen Ladezeiten für maximale Conversion-Raten."
+    },
+    "card_consulting": {
+      "title": "Unternehmensberatung",
+      "desc": "Repräsentative Webauftritte, die Ihre Expertise und Seriosität auf den ersten Blick vermitteln."
+    },
+    "card_health": {
+      "title": "Gesundheitswesen",
+      "desc": "Vertrauensbildende Praxis-Websites mit nahtloser, sicherer Terminbuchung für Ihre Patienten."
+    }
+  },
+  "portfolio_teaser": {
+    "overline": "Bewiesene Ergebnisse",
+    "title": "Unsere Arbeit spricht für sich.",
+    "subtitle": "Keine Fließband-Templates. Nur handgefertigte High-Performance Plattformen, die digitale Dominanz ausstrahlen.",
+    "cta": "Alle Case Studies ansehen"
+  },
+  "logobar": {
+    "title": "Diesen innovativen Unternehmen dürfen wir als Partner zur Seite stehen"
+  },
+  "stats": {
+    "seconds": "Sek",
+    "load_time": "Durchschnittliche Ladezeit",
+    "percent": "%",
+    "ownership": "Quellcode Eigentum",
+    "hours": "Std",
+    "availability": "Dedizierter Support",
+    "profit": "Unlimitiert",
+    "focused": "Fokus auf Ihren ROI"
+  },
+  "testimonials": {
+    "title_prefix": "Was unsere Kunden",
+    "title_suffix": "über uns sagen.",
+    "text": "Erfahren Sie, wie wir Unternehmen dabei unterstützen, ihre digitale Präsenz auf das nächste Level zu heben.",
+    "rating": "4.9/5 Durchschnittliche Bewertung",
+    "excellence": "Basierend auf echten Kundenstimmen",
+    "items": [
+      {
+        "quote": "Die Zusammenarbeit mit Coday war ein voller Erfolg. Unsere neue Website ist nicht nur optisch ein Meisterwerk, sondern überzeugt auch durch herausragende Performance.",
+        "authorName": "Dr. Markus Schmidt",
+        "authorPosition": "Geschäftsführer",
+        "authorCompany": "Schmidt Consulting"
+      },
+      {
+        "quote": "Von der ersten Konzeption bis zum Livegang – absolute Professionalität und technisches Know-how auf höchstem Niveau.",
+        "authorName": "Laura Weber",
+        "authorPosition": "Marketingleiterin",
+        "authorCompany": "Weber Immobilien"
+      },
+      {
+        "quote": "Dank der neuen E-Commerce-Lösung konnten wir unsere Conversion-Rate signifikant steigern. Ein verlässlicher Partner für digitales Wachstum.",
+        "authorName": "Johannes Becker",
+        "authorPosition": "Gründer",
+        "authorCompany": "Becker Retail GmbH"
+      }
+    ]
+  },
+  "filter": {
+    "all": "Alle",
+    "design": "Design",
+    "development": "Entwicklung",
+    "marketing": "Marketing"
+  },
+  "sections": {
+    "booking": {
+      "subtitle": "Vereinbaren Sie ein unverbindliches Erstgespräch. Gemeinsam evaluieren wir das Potenzial für Ihr nächstes Projekt."
+    }
+  },
+  "project_detail": {
+    "not_found": "Projekt nicht gefunden",
+    "back_to_overview": "Zurück zur Übersicht",
+    "breadcrumb_projects": "Projekte",
+    "sidebar": {
+      "details": "Details",
+      "service": "Service",
+      "period": "Zeitraum",
+      "result": "Ergebnis",
+      "interested_title": "Interessiert an ähnlichen Ergebnissen?",
+      "request_project": "Projekt anfragen",
+      "client": "Kunde",
+      "industry": "Branche",
+      "services": "Leistungen",
+      "year": "Jahr"
+    },
+    "challenge": "Die Herausforderung",
+    "approach": "Unser Ansatz",
+    "results": "Die Ergebnisse",
+    "impact": "Messbarer Erfolg",
+    "before_after_title": "Vorher & Nachher",
+    "before": "Vorher",
+    "after": "Nachher",
+    "nav": {
+      "prev": "Vorheriges Projekt",
+      "next": "Nächstes Projekt"
+    },
+    "cta": {
+      "title": "Lassen Sie uns Großartiges erschaffen",
+      "button": "Jetzt anfragen"
+    },
+    "cta_title": "Überzeugt von diesen Resultaten?",
+    "cta_desc": "Lassen Sie uns in einem persönlichen Gespräch eruieren, wie wir ähnliche Ergebnisse für Ihr Unternehmen erzielen können.",
+    "cta_button": "Projekt anfragen"
+  },
+  "api_integration_page": {
+    "hero": {
+      "title_prefix": "Nahtlose",
+      "title_suffix": "API-Integrationen"
+    }
+  },
+  "brand_identity_page": {
+    "hero": {
+      "title_prefix": "Einzigartige",
+      "title_suffix": "Markenidentität"
+    }
+  },
+  "consulting_page": {
+    "hero": {
+      "title_prefix": "Strategisches",
+      "title_suffix": "IT-Consulting"
+    }
+  },
+  "design_systems_page": {
+    "hero": {
+      "title_prefix": "Skalierbare",
+      "title_suffix": "Design Systeme"
+    }
+  },
+  "ecommerce_page": {
+    "hero": {
+      "title_prefix": "High-End",
+      "title_suffix": "E-Commerce Lösungen"
+    }
+  },
+  "enterprise_web_page": {
+    "hero": {
+      "title_prefix": "Enterprise",
+      "title_suffix": "Web-Entwicklung"
+    }
+  },
+  "generic_detail": {
+    "advantages": {
+      "contact_btn": "Jetzt beraten lassen",
+      "desc": "Entdecken Sie die messbaren Vorteile unserer maßgeschneiderten Lösungen.",
+      "label": "Ihre Vorteile",
+      "title": "Warum Sie sich für uns entscheiden sollten"
+    },
+    "faq": {
+      "desc": "Hier finden Sie Antworten auf die häufigsten Fragen.",
+      "title": "Häufig gestellte Fragen"
+    },
+    "final_cta": {
+      "button": "Kostenloses Erstgespräch",
+      "desc": "Lassen Sie uns gemeinsam Ihre digitale Zukunft gestalten.",
+      "title": "Bereit für das nächste Level?"
+    },
+    "hero": {
+      "benefits_title": "Vorteile auf einen Blick",
+      "consulting_btn": "Zur kostenlosen Beratung"
+    },
+    "not_found": {
+      "link": "Zurück zur Übersicht",
+      "title": "Service nicht gefunden"
+    },
+    "process": {
+      "label": "Unser Ansatz",
+      "title": "Ein bewährter Prozess für Ihren Erfolg"
+    },
+    "testimonials": {
+      "label": "Referenzen",
+      "title": "Das sagen unsere Kunden"
+    },
+    "trust": {
+      "title": "Vertrauen durch messbare Ergebnisse"
+    }
+  },
+  "headless_cms_page": {
+    "hero": {
+      "title_prefix": "Modernes",
+      "title_suffix": "Headless CMS"
+    },
+    "why_headless": {
+      "description": "Trennen Sie Frontend und Backend für maximale Flexibilität und Kontrolle über Ihre Inhalte.",
+      "items": {
+        "dev_friendly": {
+          "desc": "Optimale Entwickler-Erfahrung mit strukturierten, modernen APIs.",
+          "title": "Developer Friendly"
+        },
+        "omnichannel": {
+          "desc": "Nutzen Sie einen zentralen Content-Hub für all Ihre digitalen Kanäle.",
+          "title": "Omnichannel Auslieferung"
+        },
+        "performance": {
+          "desc": "Blitzschnelle Auslieferung durch den Einsatz globaler Edge-Netzwerke.",
+          "title": "High Performance"
+        },
+        "security": {
+          "desc": "Reduzierte Angriffsfläche dank strikt entkoppelter System-Architektur.",
+          "title": "Maximale Sicherheit"
+        }
+      },
+      "title": "Warum Headless?"
+    }
+  },
+  "migration_page": {
+    "before_after": {
+      "after": {
+        "label": "Nach der Migration"
+      },
+      "before": {
+        "label": "Status Quo"
+      },
+      "description": "Erleben Sie den qualitativen Sprung zu einer modernen, wartbaren Architektur.",
+      "title": "Der Architektur-Wechsel"
+    },
+    "faq": {
+      "title": "Häufige Fragen zur Migration"
+    },
+    "hero": {
+      "cta": "Migrations-Audit anfragen",
+      "description": "Wir modernisieren Ihr bestehendes System ohne Datenverlust und Ausfallzeiten.",
+      "label": "System-Migration",
+      "title_prefix": "Sichere",
+      "title_suffix": "Migrationen"
+    },
+    "process": {
+      "description": "Ein methodischer Ansatz stellt sicher, dass Ihre Daten sicher übertragen werden.",
+      "title": "Unser Migrationsprozess"
+    },
+    "technologies": {
+      "description": "Wir beherrschen sowohl Legacy-Systeme als auch moderne Cloud-Stacks.",
+      "title": "Technologie-Expertise"
+    }
+  },
+  "performance_page": {
+    "google_values": {
+      "badge": "Core Web Vitals",
+      "description": "Wir optimieren streng nach den Google-Richtlinien für maximale Geschwindigkeit.",
+      "title": "Exzellenz messbar gemacht"
+    },
+    "hero": {
+      "badge": "Performance-Optimierung",
+      "description": "Verbessern Sie Ihre Konversionsraten durch blitzschnelle Ladezeiten.",
+      "title_prefix": "Maximale",
+      "title_suffix": "Web-Performance"
+    },
+    "meta": {
+      "description": "Wir optimieren Ihre Website für maximale Geschwindigkeit und beste Google Rankings.",
+      "title": "Web-Performance Optimierung"
+    },
+    "metrics": {
+      "eco": "Energieeffizienz",
+      "load_time": "Ladezeit",
+      "score": "Lighthouse Score",
+      "shift": "Layout Shift"
+    }
+  },
+  "seo_page": {
+    "case_study": {
+      "description": "Erfahren Sie, wie wir die Sichtbarkeit unserer Kunden signifikant steigern konnten.",
+      "label": "Erfolgsgeschichten",
+      "title": "Bewiesene Resultate"
+    },
+    "dominance": {
+      "cards": {
+        "content": {
+          "desc": "Zielgruppenorientierte Inhalte, die Nutzer und Suchmaschinen restlos überzeugen.",
+          "title": "Content-Strategie"
+        },
+        "regional": {
+          "desc": "Gezielte Optimierung für maximale Sichtbarkeit in Ihrem lokalen und regionalen Markt.",
+          "title": "Local SEO"
+        },
+        "technical": {
+          "desc": "Fehlerfreie Architektur, schnelle Ladezeiten und eine perfekte Crawlability.",
+          "title": "Technisches SEO"
+        }
+      },
+      "description": "Wir decken sämtliche Aspekte der modernen Suchmaschinenoptimierung ab.",
+      "title": "Ganzheitliche Optimierung"
+    },
+    "hero": {
+      "badge": "Datengetriebenes SEO",
+      "description": "Steigern Sie Ihre Sichtbarkeit und ziehen Sie organisch hochwertige Leads an.",
+      "title_prefix": "Dominieren Sie",
+      "title_suffix": "Ihren Markt"
+    },
+    "meta": {
+      "description": "Professionelle SEO-Optimierung für bessere Rankings und mehr qualifizierten Traffic.",
+      "title": "SEO Optimierung"
+    },
+    "problem": {
+      "description": "Eine noch so großartige Website bringt keinen Mehrwert, wenn sie nicht gefunden wird.",
+      "label": "Die Herausforderung",
+      "title": "Unsichtbarkeit kostet wertvollen Umsatz"
+    },
+    "process": {
+      "description": "Unser methodischer und datenbasierter Ansatz für nachhaltige Top-Rankings.",
+      "steps": {
+        "audit": {
+          "desc": "Umfassende Analyse des Status Quo und präzise Identifikation ungenutzter Potenziale.",
+          "title": "Technical Audit"
+        },
+        "implementation": {
+          "desc": "Sorgfältige technische und inhaltliche Umsetzung der definierten Optimierungsmaßnahmen.",
+          "title": "Implementierung"
+        },
+        "monitoring": {
+          "desc": "Kontinuierliche Überwachung der Rankings sowie proaktive Feinjustierung der Performance.",
+          "title": "Monitoring"
+        },
+        "strategy": {
+          "desc": "Entwicklung einer maßgeschneiderten, langfristigen Strategie basierend auf fundierten Daten.",
+          "title": "Strategie-Entwicklung"
+        }
+      },
+      "title": "Der Weg zur Spitze"
+    },
+    "ranking_factors": {
+      "badge": "Ranking-Faktoren",
+      "description": "Wir optimieren konsequent nach den aktuellsten Google-Richtlinien, insbesondere den Core Web Vitals.",
+      "title": "Performance trifft auf Relevanz"
+    },
+    "solution": {
+      "description": "Wir positionieren Sie präzise dort, wo Ihre potenziellen Kunden aktiv suchen.",
+      "label": "Unsere Lösung",
+      "title": "Nachhaltiges Wachstum durch organische Sichtbarkeit"
+    },
+    "tech_stack": {
+      "description": "Modernste Tools für tiefgreifende Marktanalysen und exaktes Tracking.",
+      "title": "Unser professioneller SEO-Stack"
+    }
+  },
+  "ui_ux_page": {
+    "deliverables": {
+      "title": "Was Sie erhalten"
+    },
+    "faq": {
+      "title": "Häufige Fragen zu UI/UX"
+    },
+    "hero": {
+      "badge": "UI/UX Design",
+      "cta": "Design-Audit anfragen",
+      "description": "Wir kreieren digitale Erlebnisse, die nicht nur beeindrucken, sondern auch konvertieren.",
+      "title_prefix": "Intuitives",
+      "title_suffix": "Nutzererlebnis"
+    },
+    "process": {
+      "description": "Ein iterativer Design-Prozess stellt sicher, dass wir die Bedürfnisse Ihrer Nutzer exakt treffen.",
+      "title": "Unser Design-Prozess"
+    },
+    "psychology": {
+      "description": "Design basiert bei uns auf psychologischen Prinzipien, die das Nutzerverhalten positiv steuern.",
+      "title": "Design trifft auf Psychologie"
+    }
+  },
+  "ux_audit_page": {
+    "deliverables": {
+      "title": "Konkrete Handlungsempfehlungen"
+    },
+    "hero": {
+      "badge": "UX-Audit",
+      "cta": "Audit starten",
+      "description": "Identifizieren Sie Reibungspunkte in Ihrer User Journey und steigern Sie Ihre Konversionsraten.",
+      "title_prefix": "Tiefgreifendes",
+      "title_suffix": "UX-Audit"
+    },
+    "stats": {
+      "conversion_label": "Konversionssteigerung"
+    },
+    "what_we_analyze": {
+      "title": "Unsere Analysepunkte"
+    }
+  },
+  "web_apps_page": {
+    "features": {
+      "description": "Ein Überblick über unsere technologischen Kernkompetenzen.",
+      "items": {
+        "cloud": {
+          "desc": "Modernste Serverless-Architektur für höchste Effizienz und Ausfallsicherheit.",
+          "title": "Cloud Native"
+        },
+        "internal_tools": {
+          "desc": "Maßgeschneiderte Software-Lösungen zur Digitalisierung Ihrer Unternehmensprozesse.",
+          "title": "Interne Tools"
+        },
+        "pwa": {
+          "desc": "Ein natives App-Erlebnis direkt im Browser, das auch offline hervorragend funktioniert.",
+          "title": "Progressive Web Apps"
+        },
+        "realtime": {
+          "desc": "Live-Datenübertragung für eine sofortige und reibungslose Nutzererfahrung.",
+          "title": "Echtzeit-Synchronisation"
+        },
+        "saas": {
+          "desc": "Skalierbare Cloud-Lösungen als starkes Fundament für Ihr Geschäftsmodell.",
+          "title": "SaaS Plattformen"
+        },
+        "security": {
+          "desc": "Höchste Sicherheitsstandards, die Ihre sensiblen Unternehmensdaten verlässlich schützen.",
+          "title": "Enterprise Security"
+        }
+      },
+      "title": "Leistungsstarke Funktionen"
+    },
+    "hero": {
+      "cta": "Projektanfrage stellen",
+      "description": "Wir entwickeln komplexe und skalierbare Webapplikationen, die sich wie native Apps anfühlen.",
+      "title_prefix": "Maßgeschneiderte",
+      "title_suffix": "Web-Apps"
+    },
+    "integration_network": {
+      "description": "Nahtlose Anbindung an Ihre bestehenden Systeme für einen effizienten Datenaustausch.",
+      "label": "System-Integration",
+      "title": "API-First Ansatz"
+    },
+    "security": {
+      "badges": {
+        "gdpr": "DSGVO-konform",
+        "ssl": "SSL Verschlüsselung",
+        "support": "Dedizierter Support",
+        "uptime": "99.9% Verfügbarkeit"
+      },
+      "description": "Bei der Entwicklung unserer Web-Apps steht die Sicherheit Ihrer Daten stets an erster Stelle.",
+      "title": "Kompromisslose Sicherheit"
+    }
+  },
+  "web_design_page": {
+    "before_after": {
+      "description": "Ein direkter Vergleich zeigt die enorme Wirkung von professionellem High-End Design.",
+      "label": "Transformation",
+      "title": "Vorher & Nachher"
+    },
+    "case_study": {
+      "description": "Werfen Sie einen Blick auf unsere herausragenden Design-Projekte.",
+      "label": "Referenzprojekte",
+      "title": "Design in Aktion"
+    },
+    "design_system": {
+      "description": "Wir entwickeln umfassende Design-Systeme für einen konsistenten Markenauftritt.",
+      "label": "Skalierbarkeit",
+      "title": "Modulare Design Systeme"
+    },
+    "hero": {
+      "description": "Ästhetisches und funktionales Webdesign, das Ihre Marke auf das nächste Level hebt.",
+      "label": "Webdesign Studio",
+      "title_prefix": "Zukunftsweisendes",
+      "title_suffix": "Webdesign"
+    },
+    "meta": {
+      "description": "Wir kreieren exzellentes Webdesign, das Ihre Zielgruppe begeistert und konvertiert.",
+      "title": "High-End Webdesign"
+    },
+    "problem": {
+      "description": "Ein veraltetes Design schadet Ihrem Markenimage und kostet Sie täglich wertvolle Kunden.",
+      "label": "Die Ausgangslage",
+      "title": "Der erste Eindruck zählt"
+    },
+    "process": {
+      "description": "Ein strukturierter Ablauf garantiert Ergebnisse von höchster Qualität.",
+      "title": "Unser Design-Workflow"
+    },
+    "psychology": {
+      "description": "Unsere Designs basieren auf Erkenntnissen der Verhaltenspsychologie.",
+      "label": "Nutzerverhalten",
+      "title": "Psychologie im Design"
+    },
+    "solution": {
+      "description": "Wir verbinden visuelle Exzellenz mit herausragender Usability.",
+      "label": "Unser Lösungsansatz",
+      "title": "Design, das Ergebnisse liefert"
+    },
+    "tech_stack": {
+      "description": "Modernste Tools für kollaboratives und präzises Design.",
+      "title": "Unser Design-Stack"
+    }
+  },
+  "web_development_page": {
+    "architecture": {
+      "visualizer": {
+        "build": {
+          "desc": "Automatisierte Tests & CI/CD",
+          "details": "Jeder Commit wird automatisch getestet und optimiert gebaut.",
+          "label": "Build Pipeline"
+        },
+        "cms": {
+          "desc": "Sanity.io Infrastruktur",
+          "details": "Strukturierte Inhalte mit voll typisierter API.",
+          "label": "Headless CMS"
+        },
+        "edge": {
+          "desc": "Vercel Edge & Middleware",
+          "details": "Globale Auslieferung in wenigen Millisekunden.",
+          "label": "Edge Network"
+        },
+        "footer": "Technologie-Stack & Infrastruktur",
+        "user": {
+          "desc": "Globale Auslieferung",
+          "details": "Nahtloses Erlebnis durch intelligentes Edge Caching.",
+          "label": "Endnutzer"
+        }
+      }
+    },
+    "process": {
+      "simulator": {
+        "features": {
+          "ci": {
+            "desc": "Gewährleistet reibungslose und sichere Deployments",
+            "label": "CI/CD Pipeline"
+          },
+          "lint": {
+            "desc": "Sichert konsistenten und fehlerfreien Code",
+            "label": "Linting & Formatierung"
+          },
+          "review": {
+            "desc": "Manuelle Qualitätskontrolle für höchste Standards",
+            "label": "Code Reviews"
+          },
+          "test": {
+            "desc": "Garantiert kontinuierliche Stabilität und Zuverlässigkeit",
+            "label": "Automatisierte Tests"
+          },
+          "ts": {
+            "desc": "Strenge Typsicherheit eliminiert Runtime-Fehler",
+            "label": "TypeScript Strict Mode"
+          }
+        },
+        "messages": {
+          "enterprise": "Enterprise-Level: Maximale Skalierbarkeit, Sicherheit und Performance.",
+          "good": "Sehr gut: Hohe Zuverlässigkeit und saubere Code-Struktur.",
+          "risky": "Kritisch: Stabilitätsschwankungen und Performance-Einbußen wahrscheinlich.",
+          "stable": "Stabil: Solide Basis, jedoch mit weiterem Optimierungspotenzial.",
+          "unstable": "Warnung: Hohes Risiko für technische Schulden und Systemausfälle."
+        },
+        "mission_accomplished": "Exzellenz erreicht!",
+        "project_status": "Projektstatus:",
+        "status_label": "Systemstabilität",
+        "subtitle": "Aktivieren Sie verschiedene Best Practices, um deren Auswirkungen direkt zu erleben.",
+        "title": "Code-Qualität Simulator"
+      }
+    },
+    "security": {
+      "items": {
+        "csrf": {
+          "title": "Auth",
+          "value": "Sichere Sessions"
+        },
+        "ddos": {
+          "title": "DDoS-Schutz",
+          "value": "Edge Network"
+        },
+        "owasp": {
+          "title": "OWASP Top 10",
+          "value": "Vollständiger Schutz"
+        },
+        "sql": {
+          "title": "Datenbank",
+          "value": "Injection-Schutz"
+        },
+        "ssl": {
+          "title": "Verschlüsselung",
+          "value": "TLS 1.3 / SSL"
+        },
+        "xss": {
+          "title": "Cross-Site",
+          "value": "XSS & CSRF sicher"
+        }
+      }
+    }
+  },
+  "form": {
+    "wizard": {
+      "title_package": "Request Package",
+      "title_direct": "Direct Inquiry",
+      "subtitle": "We usually get back to you within 24 hours.",
+      "validation": {
+        "required": "This field is required",
+        "min_length": "Please enter at least 2 characters",
+        "email": "Please enter a valid email address",
+        "privacy": "Please accept the privacy policy"
+      },
+      "error": {
+        "submit": "An error occurred. Please try again later."
+      },
+      "package_summary": {
+        "title": "Selected Package:",
+        "more": "more",
+        "total": "Total (approx.):"
+      },
+      "success": {
+        "calendly_title": "Almost done!",
+        "calendly_desc": "Please select a time for a short discovery call."
+      },
+      "step1": {
+        "project_type": {
+          "label": "Project Type",
+          "placeholder": "Please select",
+          "options": {
+            "webdesign": "Web Design & Corporate Website",
+            "webapp": "Web Application / SaaS",
+            "ecommerce": "E-Commerce",
+            "audit": "Website Audit & Optimization"
+          }
+        }
+      },
+      "step3": {
+        "name": {
+          "label": "Your Name",
+          "placeholder": "John Doe"
+        },
+        "email": {
+          "label": "Your Email",
+          "placeholder": "john@doe.com"
+        },
+        "phone": {
+          "label": "Your Phone Number (optional)",
+          "placeholder": "+1 234 56789"
+        },
+        "message": {
+          "label": "Message / Project Details",
+          "placeholder": "How can we help you?"
+        },
+        "privacy": {
+          "label": "I agree that my data will be stored and processed to handle my request."
+        }
+      },
+      "buttons": {
+        "submitting": "Sending...",
+        "submit_next": "Continue to Calendar"
+      }
+    }
+  },
+  "calculator": {
+    "meta": {
+      "title": "Project Cost Calculator | Coday Web Agency",
+      "description": "Calculate the cost of your next website, web app, or e-commerce solution in real-time."
+    }
+  },
+  "analyzer": {
+    "meta": {
+      "title": "Website Analyzer Audit | Coday",
+      "description": "Test your website for performance, SEO, accessibility, and best practices. Free audit."
     }
   }
 }

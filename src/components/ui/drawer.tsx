@@ -76,9 +76,9 @@ export function Drawer({
   } as const;
 
   const positionClasses = {
-    right: 'inset-y-0 right-0 h-full w-full max-w-md border-l',
-    left: 'inset-y-0 left-0 h-full w-full max-w-md border-r',
-    bottom: 'bottom-0 left-0 right-0 w-full max-h-[90vh] border-t rounded-t-2xl',
+    right: 'inset-y-0 right-0 h-full w-full max-w-md',
+    left: 'inset-y-0 left-0 h-full w-full max-w-md',
+    bottom: 'bottom-0 left-0 right-0 w-full max-h-[calc(90vh)] rounded-t-2xl',
   };
 
   if (!mounted) return null;
@@ -90,7 +90,7 @@ export function Drawer({
           <motion.div
             key="drawer-overlay"
             exit={{ opacity: 0, transition: { duration: 0.15, ease: 'easeOut' } }}
-            className="fixed inset-0 z-50 isolate flex"
+            className="fixed inset-0 z-modal isolate flex"
           >
             {/* Backdrop */}
             <motion.div
@@ -115,7 +115,7 @@ export function Drawer({
                 ease: [0.32, 0.72, 0, 1] as const, // iOS-like drawer curve
               }}
               className={cn(
-                'absolute bg-white shadow-2xl border-black/5 flex flex-col',
+                'absolute bg-surface-elevated shadow-flat-lg flex flex-col motion-safe:ease-spring motion-safe:duration-500',
                 positionClasses[position],
                 className
               )}
@@ -136,7 +136,7 @@ export function Drawer({
                 {!hideCloseButton && (
                   <button
                     onClick={onClose}
-                    className="rounded-full p-2 text-gray-400 transition-[transform,colors] duration-[160ms] ease-out hover:bg-gray-100 hover:text-gray-900 active:scale-[0.97] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
+                    className="rounded-full p-2 text-gray-400 transition-[transform,colors] motion-safe:duration-500 motion-safe:ease-spring hover:bg-gray-100 hover:text-gray-900 active:scale-[0.97] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
                     aria-label="Close drawer"
                   >
                     <X className="h-5 w-5" />

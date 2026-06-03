@@ -25,14 +25,14 @@ export function DesignSystemsClient() {
       
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 px-6 overflow-hidden bg-background-light">
+      <section className="relative pt-32 pb-24 px-6 overflow-hidden bg-surface-base">
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-50 text-indigo-600 text-sm font-bold mb-8 border border-indigo-100">
             <OptimizedIcon icon={SquaresFour} className="w-4 h-4" />
             <span>{t('design_systems_page.hero.badge')}</span>
           </span>
 
-          <h1 className="font-display font-black text-5xl sm:text-7xl lg:text-8xl text-secondary mb-8 tracking-tight">
+          <h1 className="font-display font-black text-5xl sm:text-7xl lg:text-8xl text-content-base mb-8 tracking-tight text-balance">
             <BlurText
               text={t('design_systems_page.hero.title_prefix')}
               delay={100}
@@ -47,7 +47,7 @@ export function DesignSystemsClient() {
               {t('design_systems_page.hero.title_suffix')}
             </GradientText>
           </h1>
-          <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto mb-12">
+          <p className="text-xl text-content-muted leading-relaxed max-w-prose text-pretty max-w-2xl mx-auto mb-12">
             {t('design_systems_page.hero.description')}
           </p>
           <Button size="lg" variant="primary" rightIcon={<OptimizedIcon icon={ArrowRight} />}>
@@ -57,9 +57,9 @@ export function DesignSystemsClient() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-surface-elevated">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl font-display font-bold mb-16 text-center">
+          <h2 className="text-4xl font-display font-bold mb-16 text-center text-balance">
             {t('design_systems_page.benefits.title')}
           </h2>
 
@@ -84,7 +84,7 @@ export function DesignSystemsClient() {
       {/* What We Build Section */}
       <section className="py-24 bg-slate-900 text-white">
         <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-4xl font-display font-bold mb-12 text-center">
+          <h2 className="text-4xl font-display font-bold mb-12 text-center text-balance">
             {t('design_systems_page.components.title')}
           </h2>
 
@@ -109,12 +109,12 @@ export function DesignSystemsClient() {
       </section>
 
       {/* Workflow Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-surface-elevated">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-display font-bold mb-6">
+          <h2 className="text-3xl font-display font-bold mb-6 text-balance">
             {t('design_systems_page.workflow.title')}
           </h2>
-          <p className="text-xl text-slate-600 mb-12">
+          <p className="text-xl text-content-muted mb-12">
             {t('design_systems_page.workflow.description')}
           </p>
 
@@ -122,14 +122,14 @@ export function DesignSystemsClient() {
           <div className="flex items-center justify-center gap-8">
             <div className="flex flex-col items-center">
               <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-3">
-                <OptimizedIcon icon={FigmaLogo} className="text-4xl text-white" />
+                <OptimizedIcon icon={FigmaLogo} className="text-4xl text-white text-balance" />
               </div>
               <span className="font-bold text-slate-700">Figma</span>
             </div>
-            <OptimizedIcon icon={ArrowRight} className="text-4xl text-slate-300" />
+            <OptimizedIcon icon={ArrowRight} className="text-4xl text-slate-300 text-balance" />
             <div className="flex flex-col items-center">
               <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-3">
-                <OptimizedIcon icon={Code} className="text-4xl text-white" />
+                <OptimizedIcon icon={Code} className="text-4xl text-white text-balance" />
               </div>
               <span className="font-bold text-slate-700">React</span>
             </div>

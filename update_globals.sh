@@ -1,0 +1,19 @@
+sed -i '' '/\/\* Semantic Colors for Tailwind classes \*\//a\
+  --color-surface-base: var(--color-bg-primary);\
+  --color-surface-muted: var(--color-bg-secondary);\
+  --color-content-base: var(--color-text-primary);\
+  --color-content-muted: var(--color-text-secondary);\
+  --color-content-inverse: var(--color-text-inverse);\
+  --color-action-primary: var(--color-primary-700);\
+  --color-action-primary-hover: var(--color-primary-800);\
+  --color-action-secondary: var(--color-secondary-800);\
+  --color-action-secondary-hover: var(--color-secondary-900);\
+  --color-border-base: var(--color-border-default);\
+  --color-border-muted: var(--color-border-subtle);\
+  --color-danger-base: #ef4444;\
+  --color-danger-muted: #fee2e2;\
+  --color-success-base: #22c55e;\
+  --color-success-muted: #dcfce7;\
+  --color-warning-base: #f59e0b;\
+  --color-warning-muted: #fef3c7;\
+' src/app/globals.css

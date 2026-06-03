@@ -80,7 +80,7 @@ export const ContactClient: React.FC = () => {
       {/* Desktop Layout (Original Split) */}
       <div className="hidden lg:block">
         <section
-          className={`relative ${hasPackage ? 'pt-6 md:pt-12' : 'pt-24 md:pt-32'} pb-32 md:pb-24 px-4 overflow-hidden`}
+          className={`relative ${hasPackage ? 'pt-6 md:pt-12' : 'pt-32 md:pt-48'} pb-48 md:pb-64 px-4 overflow-hidden`}
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
@@ -269,7 +269,7 @@ export const ContactClient: React.FC = () => {
       />
 
       {/* Contact Info & Map Section */}
-      <section className="py-12 md:py-24 bg-aurora-snow">
+      <section className="py-24 md:py-48 bg-aurora-snow">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-display font-bold text-3xl text-gray-900 mb-4">

@@ -1,3 +1,4 @@
+import { generatePageMetadata } from '@/lib/metadata';
 import { AgbClient } from '@/features/legal/ui/AgbClient';
 import { getTranslations } from 'next-intl/server';
 import { Metadata } from 'next';

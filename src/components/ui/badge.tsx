@@ -24,12 +24,12 @@ export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement | HTMLB
 }
 
 const badgeVariants: Record<string, string> = {
-  primary: 'bg-primary-100 text-primary-800 border-transparent',
-  secondary: 'bg-secondary-100 text-secondary-800 border-transparent',
-  outline: 'text-primary-800 border-primary-200',
-  success: 'bg-green-100 text-green-800 border-transparent',
-  warning: 'bg-yellow-100 text-yellow-800 border-transparent',
-  error: 'bg-red-100 text-red-800 border-transparent',
+  primary: 'bg-action-primary text-content-inverse border-transparent',
+  secondary: 'bg-surface-muted text-content-base border-transparent',
+  outline: 'text-content-base border-border-base',
+  success: 'bg-success-muted text-success-base border-transparent',
+  warning: 'bg-warning-muted text-warning-base border-transparent',
+  error: 'bg-danger-muted text-danger-base border-transparent',
 };
 
 const Badge = forwardRef<HTMLSpanElement | HTMLButtonElement, BadgeProps>(
@@ -40,10 +40,10 @@ const Badge = forwardRef<HTMLSpanElement | HTMLButtonElement, BadgeProps>(
       <Component
         ref={ref as React.Ref<HTMLSpanElement> & React.Ref<HTMLButtonElement>}
         className={cn(
-          'inline-flex items-center justify-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-[transform,filter,opacity,background-color] duration-150 ease-out',
+          'inline-flex items-center justify-center rounded-lg border px-2.5 py-0.5 text-xs font-semibold transition-[transform,filter,opacity,background-color] duration-300 ease-spring',
           badgeVariants[variant],
           interactive &&
-            'cursor-pointer hover:opacity-80 active:scale-[0.97] min-h-11 min-w-11 touch-manipulation focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2',
+            'cursor-pointer hover:opacity-80 active:scale-[0.97] min-h-11 min-w-11 touch-manipulation focus:outline-none focus-visible:ring-2 focus-visible:ring-action-primary focus-visible:ring-offset-2',
           className
         )}
         {...(interactive ? { type: 'button' as const } : {})}

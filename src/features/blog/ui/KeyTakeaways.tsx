@@ -16,8 +16,8 @@ interface KeyTakeawaysProps {
 }
 
 export const KeyTakeaways: React.FC<KeyTakeawaysProps> = ({ title, items }) => {
-  const t = useTranslations();
-  const displayTitle = title || t('blog:keyTakeaways.title');
+  const t = useTranslations('blog');
+  const displayTitle = title || t('keyTakeaways.title');
 
   const handleShare = (text: string) => {
     const url = window.location.href;
@@ -58,7 +58,7 @@ export const KeyTakeaways: React.FC<KeyTakeawaysProps> = ({ title, items }) => {
               <button
                 onClick={() => handleShare(item.text)}
                 className="active:scale-[0.97] shrink-0 opacity-0 group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms] p-2 text-gray-400 hover:text-blue-400 hover:bg-blue-50 rounded-full"
-                title="Auf Twitter teilen"
+                title={t('keyTakeaways.share')}
               >
                 <ShareNetwork size={16} />
               </button>

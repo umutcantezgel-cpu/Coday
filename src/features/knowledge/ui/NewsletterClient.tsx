@@ -10,7 +10,7 @@ import { CheckCircle, CircleNotch } from '@phosphor-icons/react';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 
 const Newsletter: React.FC = () => {
-  const t = useTranslations('knowledge');
+  const t = useTranslations('knowledge.newsletter');
   const [email, setEmail] = useState('');
   const [botField, setBotField] = useState('');
   const [acceptedPrivacy, setAcceptedPrivacy] = useState(false);
@@ -52,17 +52,17 @@ const Newsletter: React.FC = () => {
         </div>
 
         <h1 className="font-display font-black text-5xl md:text-6xl text-gradient mb-6">
-          {t('newsletter.title')}
+          {t('title')}
         </h1>
         <p className="text-xl text-slate-500 mb-10 leading-relaxed max-w-2xl mx-auto">
-          {t('newsletter.subtitle')}
+          {t('subtitle')}
         </p>
 
         {status === 'success' ? (
           <div className="max-w-md mx-auto bg-green-50 p-6 rounded-2xl border border-green-100 mb-8 flex flex-col items-center text-green-700 animate-in fade-in zoom-in duration-300 motion-reduce:animate-none" role="status" aria-live="polite">
             <OptimizedIcon icon={CheckCircle} className="w-12 h-12 mb-2 text-green-500" />
-            <h3 className="font-bold text-lg">Vielen Dank!</h3>
-            <p>Du hast dich erfolgreich angemeldet.</p>
+            <h3 className="font-bold text-lg">{t('success_title')}</h3>
+            <p>{t('success_message')}</p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="max-w-md mx-auto mb-8 flex flex-col gap-4">
@@ -82,8 +82,8 @@ const Newsletter: React.FC = () => {
               <Input
                 type="email"
                 inputMode="email"
-                placeholder={t('newsletter.emailPlaceholder')}
-                aria-label={t('newsletter.emailPlaceholder')}
+                placeholder={t('emailPlaceholder')}
+                aria-label={t('emailPlaceholder')}
                 className="bg-transparent border-0 focus:ring-0 px-4"
                 wrapperClassName="flex-1 space-y-0"
                 required
@@ -102,7 +102,7 @@ const Newsletter: React.FC = () => {
                     className="animate-spin motion-reduce:animate-none"
                   />
                 ) : (
-                  t('newsletter.subscribe')
+                  t('subscribe')
                 )}
               </Button>
             </div>
@@ -117,11 +117,11 @@ const Newsletter: React.FC = () => {
                 className="mt-1 w-4 h-4 text-blue-600 rounded border-slate-300 focus:ring-blue-500"
               />
               <label htmlFor="privacy-newsletter" className="text-sm text-slate-500">
-                Ich stimme der Verarbeitung meiner Daten gemäß der{' '}
+                {t('privacy_consent_pre')}
                 <a href="/legal/datenschutz" className="underline hover:text-slate-700">
-                  Datenschutzerklärung
-                </a>{' '}
-                zu.
+                  {t('privacy_link')}
+                </a>
+                {t('privacy_consent_post')}
               </label>
             </div>
           </form>
@@ -129,7 +129,7 @@ const Newsletter: React.FC = () => {
 
         {status === 'error' && (
           <p role="alert" className="text-red-500 text-sm mb-4">
-            Ein Fehler ist aufgetreten. Bitte versuche es später erneut.
+            {t('error')}
           </p>
         )}
       </div>

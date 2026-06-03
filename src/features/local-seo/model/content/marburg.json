@@ -1,0 +1,55 @@
+{
+  "target": "marburg",
+  "type": "location",
+  "meta": {
+    "title": "Webdesign & Next.js Agentur Marburg | Coday",
+    "description": "Hochperformante Next.js Webseiten für Marburgs Pharma-, Gesundheits- und Innovationssektor. Coday ist Ihre spezialisierte Headless Webagentur."
+  },
+  "hero": {
+    "headline": "Enterprise Next.js Webdesign für Marburg",
+    "subheadline": "Ihre Headless Webagentur für Pharma, Health & Innovation",
+    "description": "In Marburg, dem Zentrum für Biotechnologie und medizinische Forschung, müssen digitale Identitäten höchste Ansprüche an Performance, Sicherheit und Skalierbarkeit erfüllen. Als spezialisierte Next.js Webagentur in direkter Nachbarschaft (Wetzlar) entwickelt Coday hochperformante, maßgeschneiderte Headless-Lösungen, die Ihre Innovationskraft digital greifbar machen. Wir bauen keine Standard-Templates, sondern digitale Hochleistungssysteme."
+  },
+  "localDominance": {
+    "title": "Digitale Exzellenz für Marburgs Spitzenbranchen",
+    "description": "Marburg ist ein globaler Leuchtturm für Pharma, Life Sciences und medizinische Forschung. Von den Behringwerken bis zum UKGM – Unternehmen hier erfordern Web-Infrastrukturen, die extrem schnell, absolut sicher und zukunftssicher sind. Coday liefert genau das: Next.js-Architekturen, die internationalen Enterprise-Standards entsprechen.",
+    "points": [
+      "Next.js App Router Architektur für maximale Ladezeiten (LCP < 2.0s) und perfekte Core Web Vitals, essentiell für internationale Sichtbarkeit.",
+      "Headless CMS Integration (Sanity) für hochsichere, entkoppelte Datenhaltung und nahtloses Content-Management in komplexen Organisationen.",
+      "Kompromisslose Sicherheit durch Edge-Rendering und Server Components – keine direkten Datenbankzugriffe vom Client, ideal für sensible Branchen.",
+      "Skalierbare Performance für globale Pharma- und Biotech-Unternehmen, die plötzliche Traffic-Spitzen (z.B. bei Publikationen oder Produkt-Launches) problemlos bewältigen müssen."
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "Warum Next.js die richtige Wahl für den Gesundheitssektor ist",
+      "content": "Der Pharma- und Gesundheitssektor in Marburg verlangt nach höchster Präzision und Verlässlichkeit. Veraltete monolithische Systeme wie WordPress werden diesen Ansprüchen oft nicht mehr gerecht, insbesondere wenn es um Sicherheit und Ladezeiten geht. Mit Next.js setzen wir auf eine moderne React-basierte Architektur, die Webseiten im Vorfeld rendert (SSG/ISR) oder hochperformant auf dem Server (SSR) ausliefert. Das Ergebnis ist eine digitale Präsenz, die nicht nur extrem schnell lädt, sondern durch die Entkopplung von Frontend und Backend (Headless-Ansatz) eine wesentlich geringere Angriffsfläche bietet. Sensible Daten bleiben sicher, während Ihre globale Zielgruppe eine blitzschnelle User Experience genießt."
+    },
+    {
+      "title": "Maßgeschneiderte Webentwicklung für Marburger Innovationstreiber",
+      "content": "Egal ob Sie ein Spin-off der Philipps-Universität, ein etabliertes Biotech-Unternehmen in den Behringwerken oder ein innovativer Dienstleister im Gesundheitswesen sind – Ihre Website ist das digitale Spiegelbild Ihrer wissenschaftlichen und wirtschaftlichen Kompetenz. Coday entwickelt individuelle Web-Applikationen, die sich nahtlos in Ihre bestehenden Systeme integrieren lassen. Durch den Einsatz von TypeScript garantieren wir eine fehlerfreie, typsichere Codebasis, die auch langfristig von einem einzelnen Entwickler wartbar bleibt. Wir verzichten auf überflüssigen Code und setzen auf performantes, inline Tailwind CSS für ein modernes, anspruchsvolles Design, das Vertrauen schafft."
+    },
+    {
+      "title": "Lokale Nähe, internationales Enterprise-Niveau",
+      "content": "Als Solo-Agentur aus dem benachbarten Wetzlar bietet Coday Ihnen die perfekte Kombination: Die persönliche Erreichbarkeit und direkte Kommunikation eines lokalen Partners, gepaart mit dem technischen Know-how, das sonst nur große, internationale Agenturen bieten. Sie kommunizieren direkt mit dem Entwickler, ohne Projektmanager-Umwege. Durch diesen schlanken, agilen Prozess können komplexe Next.js-Projekte effizient und in höchster Qualität umgesetzt werden. Wir verstehen die regionale Bedeutung des Pharmastandorts Marburg und übersetzen diese in eine digitale Sprache, die auf dem Weltmarkt überzeugt."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Warum sollten Marburger Pharma-Unternehmen auf Next.js wechseln?",
+      "a": "Next.js bietet überlegene Sicherheit durch die Trennung von Frontend und Backend (Headless). Zudem sorgt die Architektur für extrem schnelle Ladezeiten, was für internationale Fachbesucher und die Suchmaschinenoptimierung (SEO) entscheidend ist. Im Gegensatz zu herkömmlichen CMS gibt es keine gefährlichen Plugins oder offene Datenbankzugriffe auf Client-Seite."
+    },
+    {
+      "q": "Wie gewährleistet Coday die Performance der Website?",
+      "a": "Wir arbeiten mit strikten Performance-Budgets (z.B. Largest Contentful Paint unter 2 Sekunden). Durch den Einsatz der Next.js 15 App Router Architektur, React Server Components und Edge-Hosting über Vercel stellen wir sicher, dass nur das absolute Minimum an JavaScript an den Browser gesendet wird. Das garantiert blitzschnelle Interaktionen."
+    },
+    {
+      "q": "Können bestehende Daten in die neue Next.js-Architektur migriert werden?",
+      "a": "Ja, der große Vorteil des Headless-Ansatzes ist, dass wir über APIs auf bestehende Datenbanken, ERP-Systeme oder moderne Headless CMS wie Sanity zugreifen können. Wir binden Ihre Daten sicher ein und rendern sie performant im Frontend."
+    },
+    {
+      "q": "Wie läuft die Zusammenarbeit mit Coday ab?",
+      "a": "Als Solo-Agentur biete ich Ihnen direkte, transparente Kommunikation. Nach einer detaillierten Analyse Ihrer Anforderungen im Raum Marburg entwickeln wir eine maßgeschneiderte Next.js-Architektur. Sie haben während des gesamten Prozesses direkten Einblick und einen festen Ansprechpartner für alle technischen und gestalterischen Fragen."
+    }
+  ]
+}

@@ -156,21 +156,24 @@ const FAQ = () => {
                       : 'border-slate-200 hover:border-blue-300'
                   }`}
                 >
-                  <button
-                    onClick={() => toggleItem(faq.id)}
-                    className="active:scale-[0.97] w-full flex justify-between items-center p-6 text-left focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:rounded-xl"
-                    aria-expanded={openItem === faq.id}
-                    aria-controls={`faq-answer-${faq.id}`}
-                  >
-                    <span className="font-display font-bold text-lg text-slate-900 pr-8">
-                      {faq.question}
-                    </span>
-                    <CaretDown
-                      className={`h-5 w-5 text-slate-500 transition-transform motion-reduce:duration-[0.01ms] duration-300 ${
-                        openItem === faq.id ? 'rotate-180 text-blue-500' : ''
-                      }`}
-                    />
-                  </button>
+                  <h3>
+                    <button
+                      id={`faq-trigger-${faq.id}`}
+                      onClick={() => toggleItem(faq.id)}
+                      className="active:scale-[0.97] w-full flex justify-between items-center p-6 text-left focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:rounded-xl"
+                      aria-expanded={openItem === faq.id}
+                      aria-controls={`faq-answer-${faq.id}`}
+                    >
+                      <span className="font-display font-bold text-lg text-slate-900 pr-8">
+                        {faq.question}
+                      </span>
+                      <CaretDown
+                        className={`h-5 w-5 text-slate-500 transition-transform motion-reduce:duration-[0.01ms] duration-300 ${
+                          openItem === faq.id ? 'rotate-180 text-blue-500' : ''
+                        }`}
+                      />
+                    </button>
+                  </h3>
                   <AnimatePresence>
                     {openItem === faq.id && (
                       <motion.div

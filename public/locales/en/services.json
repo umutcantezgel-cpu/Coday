@@ -157,7 +157,13 @@
     },
     "digital_branding": {
       "description": "Today, a brand must work primarily on smartphones. We don't think in letterheads, but in pixels.",
-      "tags": ["Logo Design", "Typography", "Color Palette", "Tone of Voice", "Social Assets"],
+      "tags": [
+        "Logo Design",
+        "Typography",
+        "Color Palette",
+        "Tone of Voice",
+        "Social Assets"
+      ],
       "title": "Digital-First Branding"
     },
     "hero": {
@@ -634,7 +640,12 @@
       "From Idea to Market Leadership."
     ],
     "title": "Web Development & SEO Agency | Services - Coday",
-    "description": "Our expertise: High-end web design, React & Next.js development, conversion rate optimization, and data-driven SEO strategies for maximum ROI."
+    "description": "Our expertise: High-end web design, React & Next.js development, conversion rate optimization, and data-driven SEO strategies for maximum ROI.",
+    "rotatingTexts": [
+      "Web Design",
+      "Web Development",
+      "SEO"
+    ]
   },
   "migration_page": {
     "before_after": {
@@ -717,7 +728,14 @@
         "Java Monoliths"
       ],
       "title": "Supported Technologies",
-      "to": ["Next.js", "React", "Node.js", "Supabase", "Headless CMS", "Vercel Edge"]
+      "to": [
+        "Next.js",
+        "React",
+        "Node.js",
+        "Supabase",
+        "Headless CMS",
+        "Vercel Edge"
+      ]
     },
     "meta": {
       "title": "System Migration & Legacy Modernization | Coday",
@@ -1343,7 +1361,12 @@
         "title": "Design Systems",
         "description": "Consistent component libraries for scalable products and fast development.",
         "long_description": "A Design System is the Single Source of Truth for your product. We develop modular component systems that ensure consistency and accelerate development.",
-        "benefits": ["Consistent UI", "Faster development", "Simplified maintenance", "Scalability"]
+        "benefits": [
+          "Consistent UI",
+          "Faster development",
+          "Simplified maintenance",
+          "Scalability"
+        ]
       },
       "website-relaunch": {
         "title": "Website Relaunch",
@@ -1395,237 +1418,95 @@
   },
   "web_development_page": {
     "hero": {
-      "description": "We don't build \"Homepages\", we build digital assets. Scalable, secure and blazing fast. Specialized in modern web apps and complex online shops.",
-      "label": "Technology Stack",
-      "title_anim": "Fast",
-      "title_static": "Web Development."
-    },
-    "tech_stack": {
-      "description": "Our technology stack is no coincidence. Every tool was chosen for maximum speed, scalability, and search engine dominance.",
-      "nextjs": {
-        "desc": "Server-Side Rendering and static generation for extremely fast load times.",
-        "title": "Next.js 14"
-      },
-      "supabase": {
-        "desc": "Real-time databases and authentication. Scalable and Open Source.",
-        "title": "Supabase"
-      },
-      "tailwind": {
-        "desc": "Modern styling for minimal file sizes.",
-        "title": "Tailwind CSS"
-      },
-      "title": "Professional Architecture",
-      "typescript": {
-        "desc": "Type-safe code that prevents errors before they happen.",
-        "title": "TypeScript"
-      }
-    },
-    "performance": {
-      "label": "Load Time Metrics",
-      "title": "Speed is Revenue. <br /> We optimize every millisecond.",
-      "description": "Google punishes slow sites. Users abandon them. Our architectures are optimized for top scores.",
-      "metrics": {
-        "lcp": {
-          "label": "Largest Contentful Paint",
-          "value": "0.8s"
-        },
-        "fid": {
-          "label": "First Input Delay",
-          "value": "12ms"
-        },
-        "cls": {
-          "label": "Visual Stability",
-          "value": "0.00"
-        }
-      },
-      "visual": {
-        "score_label": "Speed Score"
-      }
-    },
-    "architecture": {
-      "label": "Architecture",
-      "title": "Decoupled. Serverless. <br /> Limitless.",
-      "description": "We rely on modern decoupled architecture. Data is separated from design. Result: Infinite flexibility and maximum security.",
-      "list": [
-        "Global content caching (<50ms)",
-        "No direct DB access from browser",
-        "Static generation for instant load",
-        "Auto image optimization & lazy loading"
-      ],
-      "visualizer": {
-        "cms": {
-          "label": "Headless CMS",
-          "desc": "Sanity / Supabase",
-          "details": "Structured Content Lake"
-        },
-        "build": {
-          "label": "Build System",
-          "desc": "Next.js / CI/CD",
-          "details": "Static & Server Side Generation"
-        },
-        "edge": {
-          "label": "Edge Network",
-          "desc": "Vercel / CDN",
-          "details": "Global Distribution <50ms"
-        },
-        "user": {
-          "label": "End User",
-          "desc": "Browser / Device",
-          "details": "Instant Interaction"
-        },
-        "footer": "Modern Headless Architecture Flow"
-      }
-    },
-    "comparison": {
-      "label": "Tech Comparison",
-      "title": "Why Next.js vs. WordPress?",
-      "headers": {
-        "feature": "Feature",
-        "wordpress": "Wordpress / Builders",
-        "coday": "Coday Next.js Stack"
-      },
-      "rows": [
-        {
-          "feat": "Load Time",
-          "bad": "2.5s - 5.0s",
-          "good": "< 0.8s"
-        },
-        {
-          "feat": "Security",
-          "bad": "Plugin Vulnerabilities",
-          "good": "Static & Server-side Security"
-        },
-        {
-          "feat": "Scalability",
-          "bad": "Limited by Server/DB",
-          "good": "Global Edge Network"
-        },
-        {
-          "feat": "Maintenance",
-          "bad": "Constant Updates Required",
-          "good": "Automated Deployment"
-        },
-        {
-          "feat": "SEO",
-          "bad": "Basic Features",
-          "good": "Technical SEO Dominance"
-        }
-      ]
-    },
-    "security": {
-      "title": "Professional Security Standards",
-      "items": {
-        "owasp": {
-          "title": "OWASP Top 10",
-          "value": "Protected"
-        },
-        "ssl": {
-          "title": "SSL/TLS",
-          "value": "Top Grade A+"
-        },
-        "ddos": {
-          "title": "DDoS Protection",
-          "value": "Edge Layer"
-        },
-        "sql": {
-          "title": "SQL Injection",
-          "value": "Impossible"
-        },
-        "xss": {
-          "title": "XSS Attacks",
-          "value": "Sanitized"
-        },
-        "csrf": {
-          "title": "CSRF Tokens",
-          "value": "Auto-Handled"
-        }
-      }
-    },
-    "process": {
-      "label": "The Process",
-      "title": "Clean Code. <br /> No Compromises.",
-      "description": "We write code that remains maintainable in 3 years. Type-Safe, tested, and documented.",
-      "steps": [
-        {
-          "title": "Architecture & Tech Pack",
-          "desc": "Next.js, TypeScript, Supabase"
-        },
-        {
-          "title": "Components & Design",
-          "desc": "Atomic Design System"
-        },
-        {
-          "title": "Speed Optimization",
-          "desc": "Core Web Vitals Optimization"
-        },
-        {
-          "title": "Automated Testing",
-          "desc": "CI/CD & Unit Tests"
-        }
-      ],
-      "simulator": {
-        "title": "Code Quality Simulator",
-        "subtitle": "What makes software maintainable? Toggle the modules.",
-        "features": {
-          "ts": {
-            "label": "TypeScript Strict",
-            "desc": "Prevents runtime errors"
-          },
-          "test": {
-            "label": "Unit Tests",
-            "desc": "Catches regressions"
-          },
-          "ci": {
-            "label": "CI/CD Pipeline",
-            "desc": "Automated deployment"
-          },
-          "lint": {
-            "label": "ESLint / Prettier",
-            "desc": "Consistent code style"
-          },
-          "review": {
-            "label": "Code Reviews",
-            "desc": "Knowledge sharing"
-          }
-        },
-        "messages": {
-          "unstable": "Project is unstable. High Risk.",
-          "risky": "Project is unstable. High Bug Risk.",
-          "stable": "Basic Stability Reached.",
-          "good": "Good Quality. Maintainable.",
-          "enterprise": "Enterprise Grade. Max Scalability."
-        },
-        "status_label": "Stability",
-        "project_status": "Project Status",
-        "mission_accomplished": "Mission Accomplished"
-      },
-      "code_snippet": {
-        "loading_comment": "// Fast Loading"
-      }
-    },
-    "cta": {
-      "title": "Ready for real speed?",
-      "description": "No Builders. No Bloat. Just code that sells.",
-      "button": "Request Dev Team"
-    },
-    "meta": {
-      "title": "Web Development Agency | React & Next.js Experts",
-      "description": "High-end web development with Next.js, React, and TypeScript. Fast, scalable, and secure websites that leave your competition behind."
+      "label": "Headless Web Development",
+      "title_anim": "Handcrafted",
+      "title_static": "Headless Websites.",
+      "description": "Custom Next.js architecture from Germany. No page builders, no templates. Clean React, strict TypeScript, and Headless CMS with Sanity. For companies that need measurably fast load times and an independent design."
     },
     "problem": {
-      "label": "The Problem",
-      "title": "Slow Websites Cost Money.",
-      "description": "Users bounce when your page takes longer than 3 seconds to load."
+      "label": "The Challenge",
+      "title": "Page Builders Limit Your Growth",
+      "description": "Slow load times, rigid templates, and security risks. Standard systems quickly reach their limits and cost you valuable revenue and visibility on Google."
     },
     "solution": {
       "label": "The Solution",
-      "title": "High-Performance Architectures.",
-      "description": "We use Edge Networks and Next.js for millisecond-fast load times."
+      "title": "Custom Headless Architecture",
+      "description": "We separate frontend and backend. The result: Lightning-fast load times, absolute design freedom, and maximum security. A website that grows with your business."
     },
-    "case_study": {
-      "label": "Success Story",
-      "title": "How We Doubled the Conversion Rate.",
-      "description": "See how we reduced our client's load times from 4.5 seconds to under 0.8 seconds through a complete relaunch based on Next.js and a Headless architecture — measurably increasing revenue."
+    "tech_stack": {
+      "title": "Our Tech Stack",
+      "description": "We rely on the most modern and performant technologies on the market to secure your crucial competitive advantage."
+    },
+    "architecture": {
+      "label": "System Architecture",
+      "title": "Modern Headless Architecture Flow",
+      "description": "This is how the different components of your new digital ecosystem interact seamlessly with each other.",
+      "visualizer": {
+        "build": {
+          "desc": "Automated Tests & CI/CD",
+          "details": "Every commit is automatically tested and optimally built.",
+          "label": "Build Pipeline"
+        },
+        "cms": {
+          "desc": "Sanity.io Infrastructure",
+          "details": "Structured content with fully typed API.",
+          "label": "Headless CMS"
+        },
+        "edge": {
+          "desc": "Vercel Edge & Middleware",
+          "details": "Global delivery in milliseconds.",
+          "label": "Edge Network"
+        },
+        "footer": "Technology Stack & Infrastructure",
+        "user": {
+          "desc": "Global Delivery",
+          "details": "Seamless experience via intelligent Edge Caching.",
+          "label": "End User"
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready for your digital upgrade?",
+      "description": "Let's find out together how we can transform your vision into a high-performance digital product.",
+      "button": "Free Initial Consultation"
+    },
+    "process": {
+      "simulator": {
+        "features": {
+          "ci": {
+            "desc": "Ensures smooth and secure deployments",
+            "label": "CI/CD Pipeline"
+          },
+          "lint": {
+            "desc": "Secures consistent and error-free code",
+            "label": "Linting & Formatting"
+          },
+          "review": {
+            "desc": "Manual quality control for highest standards",
+            "label": "Code Reviews"
+          },
+          "test": {
+            "desc": "Guarantees continuous stability and reliability",
+            "label": "Automated Tests"
+          },
+          "ts": {
+            "desc": "Strict type safety eliminates runtime errors",
+            "label": "TypeScript Strict Mode"
+          }
+        },
+        "messages": {
+          "enterprise": "Enterprise-Level: Maximum scalability, security, and performance.",
+          "good": "Very good: High reliability and clean code structure.",
+          "risky": "Critical: Stability fluctuations and performance drops likely.",
+          "stable": "Stable: Solid foundation, but with further optimization potential.",
+          "unstable": "Warning: High risk for technical debt and system failures."
+        },
+        "mission_accomplished": "Excellence achieved!",
+        "project_status": "Project Status:",
+        "status_label": "System Stability",
+        "subtitle": "Activate different best practices to experience their impact directly.",
+        "title": "Code Quality Simulator"
+      }
     }
   },
   "actions": {
@@ -1634,7 +1515,28 @@
     "learn_more": "View details"
   },
   "meta": {
-    "title": "Our Web Design & SEO Services | Coday",
-    "description": "High-performance web development, local SEO, and scalable architectures for small and medium-sized businesses from Wetzlar."
+    "title": "Our Services in Wetzlar | Coday",
+    "description": "High-End Web Development, Design & Strategy from Wetzlar, Hesse for your digital success."
+  },
+  "methodology": {
+    "title": "Precision Craftsmanship over Mass Production.",
+    "description": "As a solo agency, I work directly with you — without project managers or miscommunication. You receive custom solutions based on the latest web technologies that deliver real results. From initial concept to final launch."
+  },
+  "label": "Unsere Leistungen",
+  "title_prefix": "Wir bieten",
+  "title_suffix": "kompromisslose Premium Services.",
+  "items": {
+    "web_dev": {
+      "title": "High-End Webentwicklung",
+      "description": "Wir programmieren performante Webanwendungen mit Next.js und React, die technologisch Maßstäbe setzen."
+    },
+    "web_design": {
+      "title": "Exklusives Webdesign",
+      "description": "Ästhetische, konversionsstarke Designs, die Ihre Markenidentität perfekt in den digitalen Raum übersetzen."
+    },
+    "growth": {
+      "title": "Technisches SEO",
+      "description": "Datengestützte Optimierung für maximale Sichtbarkeit und nachhaltiges Wachstum in den Suchergebnissen."
+    }
   }
 }

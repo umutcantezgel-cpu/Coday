@@ -90,7 +90,7 @@ export const ServicesSection: React.FC = () => {
                       />
                     </div>
 
-                    <h3 className="font-display font-bold text-xl md:text-2xl text-secondary mb-3 group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms] duration-300">
+                    <h3 className="font-display font-bold text-xl md:text-2xl text-secondary mb-3 group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms] duration-300 break-words hyphens-auto" lang="de">
                       {t(`services.items.${service.id}.title`, { defaultValue: service.id })}
                     </h3>
                     <p className="text-base text-slate-600 mb-8 leading-[1.618]">

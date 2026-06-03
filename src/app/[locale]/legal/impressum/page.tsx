@@ -26,10 +26,10 @@ export default async function ImpressumPage({ params }: { params: Promise<{ loca
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-20">
-      <h1 className="text-3xl font-bold mb-8">{isEn ? 'Legal Notice' : 'Impressum'}</h1>
+      <h1 className="text-3xl font-bold mb-8 text-secondary-900">{isEn ? 'Legal Notice' : 'Impressum'}</h1>
 
-      <section className="py-[var(--space-section)] space-y-4 text-gray-300">
-        <h2 className="text-xl font-semibold text-white">
+      <section className="py-[var(--space-section)] space-y-4 text-secondary-800">
+        <h2 className="text-xl font-semibold text-secondary-900">
           {isEn ? 'Information according to § 5 DDG' : 'Angaben gemäß § 5 DDG'}
         </h2>
         <p>
@@ -40,12 +40,12 @@ export default async function ImpressumPage({ params }: { params: Promise<{ loca
           Deutschland
         </p>
 
-        <h2 className="text-xl font-semibold text-white mt-8">{isEn ? 'Contact' : 'Kontakt'}</h2>
+        <h2 className="text-xl font-semibold text-secondary-900 mt-8">{isEn ? 'Contact' : 'Kontakt'}</h2>
         <p>
           E-Mail: umut@codayweb.de
         </p>
 
-        <h2 className="text-xl font-semibold text-white mt-8">
+        <h2 className="text-xl font-semibold text-secondary-900 mt-8">
           {isEn ? 'VAT Information' : 'Umsatzsteuer'}
         </h2>
         <p>
@@ -54,7 +54,7 @@ export default async function ImpressumPage({ params }: { params: Promise<{ loca
             : 'Kleinunternehmer gemäß § 19 UStG — es wird keine Umsatzsteuer ausgewiesen.'}
         </p>
 
-        <h2 className="text-xl font-semibold text-white mt-8">
+        <h2 className="text-xl font-semibold text-secondary-900 mt-8">
           {isEn ? 'Responsible for Content' : 'Inhaltlich Verantwortlicher'}
         </h2>
         <p>

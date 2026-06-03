@@ -1,0 +1,59 @@
+{
+  "target": "immobilien-makler-wetzlar",
+  "type": "industry-location",
+  "meta": {
+    "title": "Webdesign für Immobilienmakler in Wetzlar | Coday",
+    "description": "Premium Websites & Local SEO für Immobilienmakler in Wetzlar. Steigern Sie Ihre Objektakquise mit digitalen Exposés und messbarer Sichtbarkeit in Mittelhessen."
+  },
+  "hero": {
+    "headline": "Digitale Exzellenz für Immobilienmakler in Wetzlar",
+    "subheadline": "Mehr Objektakquise. Mehr Sichtbarkeit. Premium Webdesign.",
+    "description": "Der Immobilienmarkt in Wetzlar und dem Lahn-Dill-Kreis ist hart umkämpft. Mit einer hochmodernen, Conversion-optimierten Website von Coday positionieren Sie sich als der führende Makler der Region. Wir verwandeln Klicks in qualifizierte Verkäufer-Leads und präsentieren Ihre Objekte in atemberaubenden digitalen Exposés."
+  },
+  "localDominance": {
+    "title": "Lokale Dominanz im Wetzlarer Immobilienmarkt",
+    "description": "Als Immobilienmakler in Wetzlar reicht es nicht mehr aus, nur auf den gängigen Portalen gelistet zu sein. Ihre eigene Website muss der stärkste Motor für Ihre Objektakquise werden. Wir sorgen dafür, dass Sie bei Suchanfragen wie 'Haus verkaufen Wetzlar' oder 'Immobilienmakler Lahn-Dill' ganz oben stehen.",
+    "points": [
+      "Top-Rankings bei Google für relevante Immobilien-Suchbegriffe in Wetzlar und Umgebung.",
+      "Gezielte Lead-Generierung für die Akquise neuer Verkaufsobjekte (Eigentümer-Fokus).",
+      "Maximale Performance und blitzschnelle Ladezeiten dank modernster Next.js Technologie.",
+      "Nahtlose Integration von Immobiliensoftware (z.B. onOffice, FlowFact) für automatisierte Exposés."
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "Die neue Ära der Objektpräsentation: Digitale Exposés",
+      "content": "Vergessen Sie statische PDF-Dateien. Wir entwickeln für Sie dynamische, interaktive digitale Exposés, die Ihre Immobilien in Wetzlar von ihrer besten Seite zeigen. Mit hochauflösenden Galerien, virtuellen 360-Grad-Rundgängen, integrierten Lagekarten der Wetzlarer Altstadt oder den umliegenden Stadtteilen und sofortigen Kontaktmöglichkeiten. Jedes Exposé lädt blitzschnell und ist perfekt für Smartphones optimiert – so überzeugen Sie Käufer und beeindrucken Verkäufer gleichermaßen."
+    },
+    {
+      "title": "Objektakquise auf Autopilot: Verkäufer gezielt ansprechen",
+      "content": "Ihre wichtigste Zielgruppe sind Eigentümer in Wetzlar, Dalheim, Nauborn oder Garbenheim, die ihre Immobilie verkaufen möchten. Wir implementieren intelligente Lead-Funnel und Online-Wertermittlungstools direkt auf Ihrer Website. Durch gezieltes Local SEO für Wetzlar fangen wir potenzielle Verkäufer genau in dem Moment ab, in dem sie nach Informationen zum Hausverkauf in Mittelhessen suchen. Das Ergebnis: Ein kontinuierlicher Strom an hochqualifizierten Leads für Ihre Objektakquise."
+    },
+    {
+      "title": "Next.js Technologie: Der unfaire Vorteil für Wetzlarer Makler",
+      "content": "Coday setzt auf modernste Webtechnologien wie Next.js und React. Warum ist das für Sie als Immobilienmakler relevant? Weil Geschwindigkeit und Benutzererfahrung direkt mit Ihrem Google-Ranking und Ihrer Conversion-Rate zusammenhängen. Unsere High-End Websites laden in Bruchteilen von Sekunden, bieten eine App-ähnliche Nutzererfahrung und heben sich drastisch von den Baukasten-Websites Ihrer lokalen Mitbewerber in Wetzlar ab."
+    },
+    {
+      "title": "Ihre Marke als Vertrauensanker im Lahn-Dill-Kreis",
+      "content": "Der Immobilienverkauf ist Vertrauenssache. Ihr digitaler Auftritt muss höchste Professionalität und lokale Expertise ausstrahlen. Wir designen Ihre Website so, dass sie Ihre Marktkenntnis in Wetzlar unterstreicht. Von der eleganten Team-Präsentation bis hin zur prominenten Platzierung Ihrer Referenzobjekte in und um Wetzlar – wir machen Ihre Marke zur ersten Wahl für anspruchsvolle Immobilienverkäufer."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Warum brauche ich als Immobilienmakler in Wetzlar Local SEO?",
+      "a": "Weil die meisten Eigentümer ihre Suche nach einem Makler lokal beginnen. Wenn jemand in Wetzlar 'Immobilie verkaufen' googelt, müssen Sie auf Seite 1 stehen. Local SEO sorgt dafür, dass Sie genau von den Menschen in Wetzlar und dem Lahn-Dill-Kreis gefunden werden, die Ihre Dienstleistung jetzt benötigen."
+    },
+    {
+      "q": "Können Sie unsere bestehende Maklersoftware in die neue Website integrieren?",
+      "a": "Ja, absolut. Als spezialisierte Webagentur integrieren wir gängige Immobilien-CRMs wie onOffice, FlowFact oder EstateOS nahtlos via API in Ihre neue Next.js Website. So werden Ihre Immobilien in Wetzlar automatisch auf Ihrer Website als Premium-Exposés veröffentlicht, ohne manuellen Aufwand."
+    },
+    {
+      "q": "Wie helfen Sie konkret bei der Objektakquise in Wetzlar?",
+      "a": "Wir kombinieren hochkonvertierendes Webdesign mit gezielter Suchmaschinenoptimierung (SEO). Durch die Integration von Tools zur Online-Immobilienbewertung und Landingpages, die speziell auf Verkäufer in Wetzlarer Stadtteilen (z.B. Steindorf, Hermannstein) zugeschnitten sind, generieren wir qualifizierte Verkäufer-Leads direkt über Ihre Website."
+    },
+    {
+      "q": "Warum sollte ich Coday für das Webdesign meiner Makler-Website wählen?",
+      "a": "Als High-End Webagentur aus Wetzlar verstehen wir nicht nur modernste Next.js Technologien, sondern auch den lokalen Markt. Wir liefern keine Standard-Templates, sondern maßgeschneiderte digitale Erlebnisse, die Ihre Immobilien-Marke stärken, Vertrauen schaffen und messbar mehr Umsatz durch neue Alleinaufträge generieren."
+    }
+  ]
+}

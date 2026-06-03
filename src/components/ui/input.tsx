@@ -49,13 +49,13 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       >
         <div
           className={cn(
-            'relative flex items-center h-14 bg-white rounded-xl border border-gray-200',
-            'focus-within:border-primary-600 focus-within:ring-1 focus-within:ring-primary-600',
-            props.disabled && 'opacity-50 cursor-not-allowed bg-gray-50'
+            'relative flex items-center h-14 bg-surface-base rounded-xl border border-border-base',
+            'focus-within:border-action-primary focus-within:ring-2 focus-within:ring-action-primary',
+            props.disabled && 'opacity-50 cursor-not-allowed bg-surface-muted'
           )}
         >
           {leftIcon && (
-            <div className="absolute left-4 text-gray-400 pointer-events-none z-10">{leftIcon}</div>
+            <div className="absolute left-4 text-content-muted pointer-events-none z-10">{leftIcon}</div>
           )}
 
           <input
@@ -65,7 +65,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             aria-invalid={!!error}
             aria-describedby={error ? errorId : helperText ? helperId : undefined}
             className={cn(
-              'peer w-full h-full bg-transparent text-secondary outline-none px-4 text-base pt-4 pb-1 disabled:cursor-not-allowed',
+              'peer w-full h-full bg-transparent text-content-base outline-none px-4 text-base pt-4 pb-1 disabled:cursor-not-allowed',
               label && 'placeholder:opacity-0 focus:placeholder:opacity-100',
               leftIcon && 'pl-11',
               rightIcon && 'pr-11',
@@ -78,8 +78,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             <label
               htmlFor={inputId}
               className={cn(
-                'absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none transition-[transform,opacity] duration-150 ease-appear origin-top-left motion-reduce:transition-none',
-                'peer-focus:-translate-y-[1.1rem] peer-focus:scale-[0.80] peer-focus:text-primary-600',
+                'absolute left-4 top-1/2 -translate-y-1/2 text-content-muted pointer-events-none transition-[transform,opacity] duration-300 ease-spring origin-top-left motion-reduce:transition-none',
+                'peer-focus:-translate-y-[1.1rem] peer-focus:scale-[0.80] peer-focus:text-action-primary',
                 'peer-[:not(:placeholder-shown)]:-translate-y-[1.1rem] peer-[:not(:placeholder-shown)]:scale-[0.80]',
                 leftIcon &&
                   'left-11 peer-focus:-translate-x-7 peer-[:not(:placeholder-shown)]:-translate-x-7'
@@ -94,7 +94,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           )}
 
           {rightIcon && (
-            <div className="absolute right-4 text-gray-400 pointer-events-none z-10">
+            <div className="absolute right-4 text-content-muted pointer-events-none z-10">
               {rightIcon}
             </div>
           )}
@@ -111,7 +111,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           <p
             id={errorId}
             className={cn(
-              'absolute top-0 left-1 text-sm text-red-500 flex items-center gap-1 transition-[transform,opacity] duration-150 ease-appear motion-reduce:transition-none',
+              'absolute top-0 left-1 text-sm text-danger-base flex items-center gap-1 transition-[transform,opacity] duration-300 ease-spring motion-reduce:transition-none',
               error ? 'translate-y-0 opacity-100' : '-translate-y-2 opacity-0 pointer-events-none'
             )}
             role="alert"
@@ -122,7 +122,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           <p
             id={helperId}
             className={cn(
-              'absolute top-0 left-1 text-sm text-gray-500 transition-[transform,opacity] duration-150 ease-appear motion-reduce:transition-none',
+              'absolute top-0 left-1 text-sm text-content-muted transition-[transform,opacity] duration-300 ease-spring motion-reduce:transition-none',
               !error && helperText
                 ? 'translate-y-0 opacity-100'
                 : '-translate-y-2 opacity-0 pointer-events-none'

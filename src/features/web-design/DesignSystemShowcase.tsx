@@ -26,36 +26,36 @@ const DesignSystemShowcase: React.FC = () => {
       radius: '0.25rem', // Rounded
       font: 'font-sans',
       shadow: 'shadow-sm hover:shadow-md',
-      bg: 'bg-white',
+      bg: 'bg-surface-elevated',
       textColor: 'text-slate-700',
       buttonText: 'text-white',
-      border: 'border border-gray-200',
+      border: 'border border-border-subtle',
     },
   };
 
   const current = themes[theme];
 
   return (
-    <div className="bg-surface-light rounded-3xl p-8 border border-gray-100 overflow-hidden relative">
+    <div className="bg-surface-light rounded-3xl p-8 border border-border-muted overflow-hidden relative">
       <div className="flex justify-between items-center mb-12">
         <div>
-          <h3 className="font-display font-bold text-2xl text-secondary">The Power of Tokens</h3>
+          <h3 className="font-display font-bold text-2xl text-content-base">The Power of Tokens</h3>
           <p className="text-slate-500 text-sm mt-1">Ein System. Unendliche Möglichkeiten.</p>
         </div>
 
         {/* Toggle */}
-        <div className="bg-white p-1 rounded-xl border border-gray-200 flex gap-1">
+        <div className="bg-surface-elevated p-1 rounded-xl border border-border-subtle flex gap-1">
           <button
             onClick={() => setTheme('brand-a')}
             aria-pressed={theme === 'brand-a'}
-            className={`active:scale-[0.97] px-4 py-2 rounded-lg text-sm font-bold transition motion-reduce:duration-[0.01ms] ${theme === 'brand-a' ? 'bg-gray-900 text-white shadow-md' : 'text-gray-500 hover:bg-gray-50'}`}
+            className={`active:scale-[0.97] px-4 py-2 rounded-lg text-sm font-bold transition motion-reduce:duration-[0.01ms] ${theme === 'brand-a' ? 'bg-gray-900 text-white shadow-md' : 'text-gray-500 hover:bg-surface-muted'}`}
           >
             Playful
           </button>
           <button
             onClick={() => setTheme('brand-b')}
             aria-pressed={theme === 'brand-b'}
-            className={`active:scale-[0.97] px-4 py-2 rounded-lg text-sm font-bold transition motion-reduce:duration-[0.01ms] ${theme === 'brand-b' ? 'bg-gray-900 text-white shadow-md' : 'text-gray-500 hover:bg-gray-50'}`}
+            className={`active:scale-[0.97] px-4 py-2 rounded-lg text-sm font-bold transition motion-reduce:duration-[0.01ms] ${theme === 'brand-b' ? 'bg-gray-900 text-white shadow-md' : 'text-gray-500 hover:bg-surface-muted'}`}
           >
             Enterprise
           </button>
@@ -64,7 +64,7 @@ const DesignSystemShowcase: React.FC = () => {
 
       <motion.div
         layout
-        className={`grid md:grid-cols-2 gap-8 p-8 rounded-2xl transition-colors motion-reduce:duration-[0.01ms] duration-500 ${current.bg} border border-gray-200/50`}
+        className={`grid md:grid-cols-2 gap-8 p-8 rounded-2xl transition-colors motion-reduce:duration-[0.01ms] duration-500 ${current.bg} border border-border-subtle/50`}
       >
         {/* Card Component */}
         <motion.div
@@ -153,7 +153,7 @@ const DesignSystemShowcase: React.FC = () => {
                 border: theme === 'brand-a' ? '2px solid black' : 'none',
               }}
             >
-              <span className="absolute right-1 top-1 w-4 h-4 bg-white rounded-full shadow-sm" aria-hidden="true"></span>
+              <span className="absolute right-1 top-1 w-4 h-4 bg-surface-elevated rounded-full shadow-sm" aria-hidden="true"></span>
             </button>
             <span className={`text-sm font-bold ${current.textColor}`}>Toggle State</span>
           </div>
@@ -164,7 +164,7 @@ const DesignSystemShowcase: React.FC = () => {
         {['Primary Color', 'Border Radius', 'Typography'].map((label, i) => (
           <div key={i} className="text-center">
             <div className="text-xs uppercase tracking-widest text-gray-400 mb-1">{label}</div>
-            <div className="font-mono text-xs font-bold text-secondary bg-white py-1 px-2 rounded border border-gray-100 inline-block">
+            <div className="font-mono text-xs font-bold text-content-base bg-surface-elevated py-1 px-2 rounded border border-border-muted inline-block">
               {i === 0 && current.primary}
               {i === 1 && current.radius}
               {i === 2 && current.font}

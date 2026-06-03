@@ -14,7 +14,7 @@ const Process: React.FC = () => {
   return (
     <div className="bg-background-light min-h-dvh">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 px-4 text-center">
+      <section className="relative pt-48 pb-32 px-4 text-center">
         <div className="max-w-4xl mx-auto relative z-10">
           <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
             {t('hero.badge')}
@@ -43,7 +43,7 @@ const Process: React.FC = () => {
       </section>
 
       {/* Animated Timeline - NEW HIGH COMPLEXITY */}
-      <section className="py-12 bg-white relative">
+      <section className="py-24 md:py-32 bg-white relative">
         <h2 className="sr-only">Prozessablauf</h2>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <ProjectTimelineAnimation />
@@ -51,14 +51,14 @@ const Process: React.FC = () => {
       </section>
 
       {/* Transparency Section - NEW HIGH COMPLEXITY */}
-      <section className="py-24 bg-surface-dark">
+      <section className="py-32 md:py-48 bg-surface-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <TransparencyGrid />
         </div>
       </section>
 
       {/* Guarantee Section */}
-      <section className="py-32 bg-gray-50 text-center">
+      <section className="py-40 md:py-56 bg-gray-50 text-center">
         <div className="max-w-3xl mx-auto px-4">
           <h2 className="font-display font-bold text-4xl text-secondary mb-8">
             {t('guarantee.title')}

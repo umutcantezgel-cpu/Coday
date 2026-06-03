@@ -74,7 +74,7 @@ export const industryGalleryImages: Record<string, { src: string; alt: string }[
       alt: 'Landschaftsgärtner bei der Grünpflege',
     },
     { src: '/images/industries/pooltechniker.webp', alt: 'Pooltechniker prüft Wasserqualität' },
-    { src: '/images/industries/kaminkehrer.webp', alt: 'Schornsteinfeger bei der Arbeit' }, // Fallback if exists? Removed from script, check path validity. Removed for safety.
+    { src: '/images/brand/coday-full.webp', alt: 'Schornsteinfeger bei der Arbeit' }, // Fallback if exists? Removed from script, check path validity. Removed for safety.
     {
       src: '/images/industries/kfz.webp',
       alt: 'KFZ-Mechaniker in moderner Werkstatt mit Diagnose-Computer',

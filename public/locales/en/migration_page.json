@@ -1,0 +1,30 @@
+{
+  "before_after": {
+    "after": {
+      "label": "Nach der Migration"
+    },
+    "before": {
+      "label": "Status Quo"
+    },
+    "description": "Erleben Sie den qualitativen Sprung zu einer modernen, wartbaren Architektur.",
+    "title": "Der Architektur-Wechsel"
+  },
+  "faq": {
+    "title": "Häufige Fragen zur Migration"
+  },
+  "hero": {
+    "cta": "Migrations-Audit anfragen",
+    "description": "Wir modernisieren Ihr bestehendes System ohne Datenverlust und Ausfallzeiten.",
+    "label": "System-Migration",
+    "title_prefix": "Sichere",
+    "title_suffix": "Migrationen"
+  },
+  "process": {
+    "description": "Ein methodischer Ansatz stellt sicher, dass Ihre Daten sicher übertragen werden.",
+    "title": "Unser Migrationsprozess"
+  },
+  "technologies": {
+    "description": "Wir beherrschen sowohl Legacy-Systeme als auch moderne Cloud-Stacks.",
+    "title": "Technologie-Expertise"
+  }
+}

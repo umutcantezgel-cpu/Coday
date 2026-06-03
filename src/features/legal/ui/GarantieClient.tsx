@@ -36,7 +36,7 @@ const Garantie: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="font-display font-black text-4xl sm:text-5xl md:text-6xl text-gray-900 mb-6"
+            className="font-display font-black text-4xl sm:text-5xl md:text-6xl text-gray-900 mb-6 break-words hyphens-auto"
           >
             Unsere Garantien
           </motion.h1>
@@ -63,7 +63,7 @@ const Garantie: React.FC = () => {
                 <OptimizedIcon icon={RocketLaunch} className="text-9xl text-sapphire" aria-hidden="true" />
               </div>
               <OptimizedIcon icon={RocketLaunch} className="text-4xl text-sapphire mb-6" aria-hidden="true" />
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Lighthouse-90-Garantie</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 break-words hyphens-auto">Lighthouse-90-Garantie</h3>
               <p className="text-gray-600 leading-relaxed">
                 Wir garantieren, dass Ihre neue Website zum Go-Live in allen vier Google
                 Lighthouse-Kategorien (Performance, Accessibility, Best Practices, SEO) einen Score
@@ -83,7 +83,7 @@ const Garantie: React.FC = () => {
                 <OptimizedIcon icon={LockOpen} className="text-9xl text-sapphire" aria-hidden="true" />
               </div>
               <OptimizedIcon icon={LockOpen} className="text-4xl text-sapphire mb-6" aria-hidden="true" />
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">No-Vendor-Lock-Garantie</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 break-words hyphens-auto">No-Vendor-Lock-Garantie</h3>
               <p className="text-gray-600 leading-relaxed">
                 Ihre Daten gehören Ihnen. Alle Assets, der Quellcode und sämtliche Zugangsdaten
                 werden nach Abschluss der Zahlung vollständig an Sie übergeben. Wir binden Sie nicht
@@ -103,7 +103,7 @@ const Garantie: React.FC = () => {
                 <OptimizedIcon icon={CurrencyEur} className="text-9xl text-sapphire" aria-hidden="true" />
               </div>
               <OptimizedIcon icon={CurrencyEur} className="text-4xl text-sapphire mb-6" aria-hidden="true" />
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Festpreis-Garantie</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 break-words hyphens-auto">Festpreis-Garantie</h3>
               <p className="text-gray-600 leading-relaxed">
                 Was wir im Statement of Work (SOW) vereinbaren, ist bindend. Es gibt keine
                 versteckten Kosten, keine überraschenden Stundenabrechnungen und keine
@@ -120,7 +120,7 @@ const Garantie: React.FC = () => {
             className="mt-16 bg-sapphire/5 border border-sapphire/20 rounded-2xl p-8 max-w-4xl mx-auto text-center"
           >
             <OptimizedIcon icon={ShieldCheck} className="text-5xl text-sapphire mx-auto mb-4" aria-hidden="true" />
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Unser Umgang mit Fehlern</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4 break-words hyphens-auto">Unser Umgang mit Fehlern</h3>
             <p className="text-gray-700 leading-relaxed">
               Sollte es trotz unserer hohen Qualitätsstandards jemals zu einem Garantiefall kommen,
               gehen wir offen damit um. Wir dokumentieren den Fehler transparent in unserem Blog –

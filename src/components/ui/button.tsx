@@ -3,17 +3,17 @@ import { CircleNotch, CheckCircle, WarningCircle } from '@phosphor-icons/react/d
 import { cn } from '@/lib/utils';
 
 const baseButtonStyles =
-  'relative inline-flex items-center justify-center rounded-xl font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none transition-[transform,opacity] duration-150 ease-appear motion-reduce:transition-none active:scale-[0.97] active:duration-[80ms] touch-manipulation isolate';
+  'relative inline-flex items-center justify-center rounded-xl font-medium outline-none focus-visible:ring-2 focus-visible:ring-action-primary focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none transition-[transform,opacity,filter,box-shadow,background-color] duration-300 ease-spring motion-reduce:transition-none active:scale-[0.97] touch-manipulation isolate';
 
 const buttonVariants: Record<string, string> = {
   primary:
-    'bg-primary-700 text-white shadow-sm border border-transparent [@media(hover:hover)_and_(pointer:fine)]:hover:bg-primary-800 [@media(hover:hover)_and_(pointer:fine)]:hover:shadow-md',
+    'bg-action-primary text-content-inverse shadow-sm border border-transparent [@media(hover:hover)_and_(pointer:fine)]:hover:bg-action-primary-hover [@media(hover:hover)_and_(pointer:fine)]:hover:shadow-md',
   secondary:
-    'bg-secondary-800 text-white shadow-sm border border-transparent [@media(hover:hover)_and_(pointer:fine)]:hover:bg-secondary-900 [@media(hover:hover)_and_(pointer:fine)]:hover:shadow-md',
+    'bg-action-secondary text-content-inverse shadow-sm border border-transparent [@media(hover:hover)_and_(pointer:fine)]:hover:bg-action-secondary-hover [@media(hover:hover)_and_(pointer:fine)]:hover:shadow-md',
   outline:
-    'bg-transparent border-2 border-primary-700 text-primary-700 [@media(hover:hover)_and_(pointer:fine)]:hover:bg-primary-50',
+    'bg-transparent border-2 border-action-primary text-action-primary [@media(hover:hover)_and_(pointer:fine)]:hover:bg-surface-muted',
   ghost:
-    'bg-transparent border-transparent text-secondary-600 [@media(hover:hover)_and_(pointer:fine)]:hover:bg-secondary-100 [@media(hover:hover)_and_(pointer:fine)]:hover:text-primary-600',
+    'bg-transparent border-transparent text-content-muted [@media(hover:hover)_and_(pointer:fine)]:hover:bg-surface-muted [@media(hover:hover)_and_(pointer:fine)]:hover:text-content-base',
 };
 
 const buttonSizes: Record<string, string> = {
@@ -70,7 +70,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       >
         <span
           className={cn(
-            'flex items-center justify-center gap-2 transition-[opacity,transform] duration-150 ease-appear motion-reduce:transition-none',
+            'flex items-center justify-center gap-2 transition-[opacity,transform,filter] duration-300 ease-spring motion-reduce:transition-none',
             isOverlayVisible ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
           )}
         >
@@ -81,7 +81,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
         <span
           className={cn(
-            'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center transition-[opacity,transform] duration-150 ease-appear motion-reduce:transition-none',
+            'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center transition-[opacity,transform,filter] duration-300 ease-spring motion-reduce:transition-none',
             effectiveState === 'loading' ? 'opacity-100' : 'opacity-0 pointer-events-none'
           )}
           aria-hidden={effectiveState !== 'loading'}
@@ -91,7 +91,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
         <span
           className={cn(
-            'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center transition-[opacity,transform] duration-150 ease-appear motion-reduce:transition-none text-green-500',
+            'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center transition-[opacity,transform,filter] duration-300 ease-spring motion-reduce:transition-none text-success-base',
             effectiveState === 'success'
               ? 'opacity-100 animate-scale-pulse'
               : 'opacity-0 scale-95 pointer-events-none'
@@ -103,7 +103,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
         <span
           className={cn(
-            'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center transition-[opacity,transform] duration-150 ease-appear motion-reduce:transition-none text-red-500',
+            'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center transition-[opacity,transform,filter] duration-300 ease-spring motion-reduce:transition-none text-danger-base',
             effectiveState === 'error'
               ? 'opacity-100 scale-100'
               : 'opacity-0 scale-95 pointer-events-none'

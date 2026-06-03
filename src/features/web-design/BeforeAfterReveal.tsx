@@ -88,7 +88,7 @@ const BeforeAfterReveal: React.FC = () => {
       aria-valuenow={Math.round(sliderPosition)}
       aria-valuetext={`Showing ${Math.round(sliderPosition)}% before, ${Math.round(100 - sliderPosition)}% after`}
       tabIndex={0}
-      className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] rounded-3xl overflow-hidden cursor-ew-resize select-none shadow-flat-lg border border-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+      className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] rounded-3xl overflow-hidden cursor-ew-resize select-none shadow-flat-lg border border-border-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
       onMouseMove={(e) => !isDragging && handleMove(e)}
       onTouchMove={handleMove}
       onMouseDown={handleMouseDown}
@@ -99,14 +99,14 @@ const BeforeAfterReveal: React.FC = () => {
       {/* Background (After / Premium) - Full Width */}
       <div className={`absolute inset-0 ${afterFallback} flex items-center justify-center`}>
         <div className="text-center p-8">
-          <h3 className="text-4xl lg:text-5xl font-display font-black text-white mb-4 drop-shadow-md">
+          <h3 className="text-4xl lg:text-5xl font-display font-black text-white mb-4 drop-shadow-md text-balance">
             Coday Design
           </h3>
           <p className="text-white/90 text-lg font-bold">Conversion-Optimized</p>
 
           {/* Mock UI Elements floating */}
-          <div className="absolute top-10 right-10 w-24 h-24 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 animate-pulse motion-reduce:animate-none" aria-hidden="true"></div>
-          <div className="absolute bottom-10 left-10 w-32 h-16 bg-white/10 backdrop-blur-md rounded-full border border-white/20" aria-hidden="true"></div>
+          <div className="absolute top-10 right-10 w-24 h-24 bg-surface-elevated/10 backdrop-blur-md rounded-2xl border border-white/20 animate-pulse motion-reduce:animate-none" aria-hidden="true"></div>
+          <div className="absolute bottom-10 left-10 w-32 h-16 bg-surface-elevated/10 backdrop-blur-md rounded-full border border-white/20" aria-hidden="true"></div>
         </div>
       </div>
 
@@ -122,7 +122,7 @@ const BeforeAfterReveal: React.FC = () => {
           {' '}
           {/* Fix width to prevent squishing content */}
           <div className="text-center p-8 grayscale opacity-70">
-            <h3 className="text-4xl lg:text-5xl font-serif text-gray-500 mb-4">Old Agency</h3>
+            <h3 className="text-4xl lg:text-5xl font-serif text-gray-500 mb-4 text-balance">Old Agency</h3>
             <p className="text-gray-500 text-lg">Standard Template</p>
 
             <div className="absolute top-10 right-10 w-24 h-24 bg-gray-300 rounded-none border border-gray-400"></div>
@@ -133,10 +133,10 @@ const BeforeAfterReveal: React.FC = () => {
 
       {/* Slider Handle */}
       <div
-        className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize z-20 flex items-center justify-center"
+        className="absolute top-0 bottom-0 w-1 bg-surface-elevated cursor-ew-resize z-20 flex items-center justify-center"
         style={{ left: `${sliderPosition}%` }}
       >
-        <div className="w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center text-primary">
+        <div className="w-10 h-10 bg-surface-elevated rounded-full shadow-lg flex items-center justify-center text-action-primary">
           <Icon name="code" className="text-xl" />
         </div>
       </div>

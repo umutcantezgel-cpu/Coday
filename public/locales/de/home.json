@@ -8,7 +8,12 @@
       "Tailwind CSS Layouts.",
       "Sanity CMS Integration.",
       "Entwicklung aus Wetzlar."
-    ]
+    ],
+    "title": "AI-augmented Webentwicklung",
+    "subtitle": "High-End Websites mit React, TypeScript und Headless CMS. Festpreise ab 2.000 €.",
+    "cta": "Projekt starten",
+    "eyebrow": "High-End Digital Agency",
+    "view_projects": "Projekte ansehen"
   },
   "industries": {
     "card_consulting": {
@@ -154,5 +159,10 @@
     "title": "Unsere Arbeit spricht für sich.",
     "subtitle": "Keine Fließband-Templates. Nur handgefertigte High-Performance Plattformen, die Dominanz ausstrahlen.",
     "cta": "Alle Case Studies"
+  },
+  "techStack": {
+    "eyebrow": "Core Tech Stack",
+    "headingPrefix": "High-End Architektur",
+    "headingSuffix": "für kompromisslose Performance"
   }
 }

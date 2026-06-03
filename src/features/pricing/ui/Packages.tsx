@@ -82,7 +82,7 @@ export default async function Packages() {
         description={t('page.subheadline')}
         breadcrumbs={[
           { name: 'Home', url: 'https://www.codayweb.de' },
-          { name: t('page.title'), url: 'https://www.codayweb.de/packages' },
+          { name: t('page.title'), url: 'https://www.codayweb.de/pricing' },
         ]}
         schemaData={{
           softwareApp: {

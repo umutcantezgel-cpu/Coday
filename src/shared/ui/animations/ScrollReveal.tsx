@@ -18,10 +18,11 @@ export function ScrollReveal({ children, className = '', index = 0 }: ScrollReve
   return (
     <div
       ref={ref}
-      className={`transition-[transform,opacity] duration-[400ms] ease-appear motion-reduce:transition-none ${className}`}
+      className={`transition-all duration-[700ms] ease-[cubic-bezier(0.32,0.72,0,1)] motion-reduce:transition-none ${className}`}
       style={{
         opacity: isInView ? 1 : 0,
-        transform: isInView ? 'translateY(0)' : 'translateY(20px)',
+        transform: isInView ? 'translateY(0)' : 'translateY(4rem)',
+        filter: isInView ? 'blur(0px)' : 'blur(8px)',
         transitionDelay: `${delayMs}ms`,
       }}
     >

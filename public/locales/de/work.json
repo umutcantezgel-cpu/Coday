@@ -3,10 +3,10 @@
     "badge": "Unsere Arbeit",
     "label": "Unsere Arbeit",
     "desc": "Jedes Projekt erzählt eine Geschichte. Hier sind unsere neuesten Erfolgsgeschichten, die für sich sprechen.",
-    "description": "Entdecken Sie unsere Webdesign Referenzen und SEO-Erfolgsgeschichten. Wir bauen digitale Waffen für Marken, die ihre Branche dominieren wollen.",
+    "description": "Hier ist, was wir gebaut haben.",
     "title_gradient": "Ergebnisse.",
     "title_start": "Echte",
-    "title": "Webdesign Referenzen | Portfolio & Projekte - Coday"
+    "title": "Fallstudien"
   },
   "filter": {
     "all": "Alle",
@@ -121,15 +121,15 @@
   },
   "sections": {
     "in_progress": {
-      "title": "In Arbeit",
-      "subtitle": "Aktuelle Projekte in Entwicklung."
+      "title": "In Bearbeitung",
+      "subtitle": "Dinge, die wir derzeit bauen."
     },
     "case_studies": {
       "title": "Ausgewählte Arbeiten"
     },
     "templates": {
-      "title": "Templates",
-      "subtitle": "Startklare Lösungen."
+      "title": "Vorlagen",
+      "subtitle": "Gebrauchsfertige Vorlagen"
     }
   },
   "actions": {

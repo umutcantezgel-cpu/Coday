@@ -45,7 +45,7 @@ export const GlobalCTA: React.FC<GlobalCTAProps> = ({
             <OptimizedIcon icon={RocketLaunch} className="w-8 h-8 text-blue-400" weight="duotone" />
           </div>
 
-          <h2 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl mb-6 tracking-tight">
+          <h2 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl mb-6 tracking-tight break-words hyphens-auto">
             {title || (
               <>
                 {t('global_cta.title_prefix')}{' '}

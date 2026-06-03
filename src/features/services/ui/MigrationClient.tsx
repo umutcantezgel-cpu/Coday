@@ -50,14 +50,14 @@ export function MigrationClient() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 px-6 overflow-hidden bg-background-light">
+      <section className="relative pt-32 pb-24 px-6 overflow-hidden bg-surface-base">
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-50 text-purple-600 text-sm font-bold mb-8 border border-purple-100">
             <OptimizedIcon icon={RocketLaunch} className="w-4 h-4" />
             <span>{t('migration_page.hero.label')}</span>
           </span>
 
-          <h1 className="font-display font-black text-5xl sm:text-7xl lg:text-8xl text-secondary mb-8 tracking-tight leading-[1.1]">
+          <h1 className="font-display font-black text-5xl sm:text-7xl lg:text-8xl text-content-base mb-8 tracking-tight leading-[1.1] text-balance">
             <BlurText
               text={t('migration_page.hero.title_prefix')}
               delay={100}
@@ -72,7 +72,7 @@ export function MigrationClient() {
               {t('migration_page.hero.title_suffix')}
             </GradientText>
           </h1>
-          <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto mb-12">
+          <p className="text-xl text-content-muted leading-relaxed max-w-prose text-pretty max-w-2xl mx-auto mb-12">
             {t('migration_page.hero.description')}
           </p>
           <Button size="lg" variant="primary" rightIcon={<OptimizedIcon icon={ArrowRight} />}>
@@ -82,13 +82,13 @@ export function MigrationClient() {
       </section>
 
       {/* Before / After Comparison */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-surface-elevated">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-display font-bold mb-4">
+            <h2 className="text-4xl font-display font-bold mb-4 text-balance">
               {t('migration_page.before_after.title')}
             </h2>
-            <p className="text-xl text-slate-600">{t('migration_page.before_after.description')}</p>
+            <p className="text-xl text-content-muted">{t('migration_page.before_after.description')}</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -147,7 +147,7 @@ export function MigrationClient() {
       <section className="py-24 bg-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-display font-bold mb-4">
+            <h2 className="text-4xl font-display font-bold mb-4 text-balance">
               {t('migration_page.process.title')}
             </h2>
             <p className="text-xl text-slate-400">{t('migration_page.process.description')}</p>
@@ -181,12 +181,12 @@ export function MigrationClient() {
       </section>
 
       {/* Supported Technologies */}
-      <section className="py-20 bg-white overflow-hidden">
+      <section className="py-20 bg-surface-elevated overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 mb-12 text-center">
-          <h2 className="text-3xl font-display font-bold mb-4">
+          <h2 className="text-3xl font-display font-bold mb-4 text-balance">
             {t('migration_page.technologies.title')}
           </h2>
-          <p className="text-lg text-slate-600">{t('migration_page.technologies.description')}</p>
+          <p className="text-lg text-content-muted">{t('migration_page.technologies.description')}</p>
         </div>
 
         <div className="flex flex-col gap-4">
@@ -195,7 +195,7 @@ export function MigrationClient() {
             direction="right"
             logos={safeFromTech.map((tech) => ({
               node: (
-                <div className="px-6 py-3 bg-red-50 border border-red-100 rounded-full mx-2 whitespace-nowrap transition motion-reduce:duration-[0.01ms] duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-red-100 cursor-default">
+                <div className="px-6 py-3 bg-red-50 border border-red-100 rounded-full mx-2 whitespace-nowrap transition motion-reduce:duration-[0.01ms] duration-300 hover:scale-[0.97] ease-spring hover:shadow-md hover:bg-red-100 cursor-default">
                   <span className="font-bold text-red-800">{tech}</span>
                 </div>
               ),
@@ -204,7 +204,7 @@ export function MigrationClient() {
           <div aria-hidden="true" className="text-center py-4">
             <OptimizedIcon
               icon={ArrowDown}
-              className="text-3xl text-slate-400 animate-bounce motion-reduce:animate-none"
+              className="text-3xl text-slate-400 animate-bounce motion-reduce:animate-none text-balance"
             />
           </div>
           <LogoLoop
@@ -212,7 +212,7 @@ export function MigrationClient() {
             direction="left"
             logos={safeToTech.map((tech) => ({
               node: (
-                <div className="px-6 py-3 bg-green-50 border border-green-100 rounded-full mx-2 whitespace-nowrap transition motion-reduce:duration-[0.01ms] duration-300 hover:-translate-y-1 hover:shadow-md hover:bg-green-100 cursor-default">
+                <div className="px-6 py-3 bg-green-50 border border-green-100 rounded-full mx-2 whitespace-nowrap transition motion-reduce:duration-[0.01ms] duration-300 hover:scale-[0.97] ease-spring hover:shadow-md hover:bg-green-100 cursor-default">
                   <span className="font-bold text-green-800">{tech}</span>
                 </div>
               ),
@@ -222,14 +222,14 @@ export function MigrationClient() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 bg-background-light">
+      <section className="py-24 bg-surface-base">
         <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-12 text-center">{t('migration_page.faq.title')}</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center text-balance">{t('migration_page.faq.title')}</h2>
           <div className="space-y-6">
             {safeFaqItems.map((item, i) => (
-              <div key={i} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+              <div key={i} className="bg-surface-elevated p-8 rounded-2xl shadow-sm border border-slate-100">
                 <h3 className="text-lg font-bold mb-3">{item.q}</h3>
-                <p className="text-slate-600 leading-relaxed">{item.a}</p>
+                <p className="text-content-muted leading-relaxed max-w-prose text-pretty">{item.a}</p>
               </div>
             ))}
           </div>

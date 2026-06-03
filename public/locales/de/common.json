@@ -24,16 +24,16 @@
   },
   "global_cta": {
     "title_prefix": "Bereit für Ihr",
-    "title_highlight": "nächstes Projekt?",
-    "subtitle": "Lassen Sie uns gemeinsam herausfinden, wie wir Ihr digitales Wachstum beschleunigen können. Kostenlos und unverbindlich.",
-    "button": "Projekt starten"
+    "title_highlight": "digitales Upgrade?",
+    "subtitle": "Lassen Sie uns gemeinsam herausfinden, wie wir Ihre Vision in ein performantes digitales Produkt verwandeln können.",
+    "button": "Kostenloses Erstgespräch"
   },
   "footer": {
     "links": {
       "booking": "Termin buchen",
       "packages": "Pakete"
     },
-    "rights": "© {year} Coday",
+    "rights": "© {year} Coday. Alle Rechte vorbehalten.",
     "sections": {
       "career": "Karriere",
       "contact": "Kontakt",
@@ -43,10 +43,10 @@
       "services": "Services",
       "regional": "Standorte & Branchen"
     },
-    "slogan": "Wir eliminieren Ineffizienz. Die letzte Web-Agentur, die Sie jemals beauftragen werden.",
+    "slogan": "High-End Webentwicklung für Agenturen & Unternehmen. Wir bauen digitale Flaggschiffe, die messbar performen.",
     "trust": {
-      "desc": "Kämpfen Sie gegen digitalen Ballast.",
-      "title": "Ihr Strategiepartner"
+      "desc": "Premium Agency",
+      "title": "Coday Web"
     }
   },
   "generic_detail": {
@@ -97,7 +97,7 @@
       "process": "Prozess",
       "pricing": "Preise",
       "contact": "Projekt starten",
-      "partnerschaft": "Partnerschaft"
+      "partnerschaft": "Partner-Programm"
     },
     "about": {
       "contact": {
@@ -160,7 +160,7 @@
       }
     },
     "company": {
-      "about": "Über Uns",
+      "about": "Über uns",
       "action": "Starten",
       "agency": "Die Agentur",
       "career": "Karriere",
@@ -194,7 +194,7 @@
       "label": "Projekte"
     },
     "resources": {
-      "calculator": "Preisrechner",
+      "calculator": "Preis-Rechner",
       "dashboard": "Kunden-Dashboard",
       "knowledge": {
         "faq": {
@@ -210,7 +210,7 @@
     },
     "services": {
       "api": {
-        "label": "API Integrationen"
+        "label": "API-Integrationen"
       },
       "audit": {
         "label": "UX Audit"
@@ -255,7 +255,7 @@
       },
       "seo": {
         "desc": "Rankings & Wachstum",
-        "label": "SEO & Traffic"
+        "label": "SEO Optimierung"
       },
       "ui_ux": {
         "label": "UI/UX Design"
@@ -280,6 +280,8 @@
         "title": "Portfolio"
       },
       "batherm": "Batherm",
+      "schluesseldienst": "MS Schlüsseldienst",
+      "ratsstuben": "Lindener Ratsstuben",
       "creative_impact": "Creative Impact",
       "featured": {
         "title": "Highlights"
@@ -292,7 +294,7 @@
     }
   },
   "logobar": {
-    "title": "Vertrauen schenken uns innovative Unternehmen"
+    "title": "Vertrauen schenken uns"
   },
   "scroll_cta": {
     "book_audit": "Strategiegespräch buchen",
@@ -318,8 +320,8 @@
     "linkedin": "LinkedIn"
   },
   "announcement": {
-    "text": "Enterprise-Audit: Kostenlose Potenzialanalyse für Q4 verfügbar.",
-    "cta": "Audit anfragen →"
+    "text": "Enterprise-Audit: Kostenlose Potenzialanalyse verfügbar.",
+    "cta": "Angebot sichern →"
   },
   "actions": {
     "read_more": "Mehr erfahren"
@@ -330,6 +332,28 @@
     "review_management": "Reputationsmanagement"
   },
   "de": "Deutsch",
-  "en": "English",
-  "about": "Über uns"
+  "en": "Englisch",
+  "about": "Über uns",
+  "skipLink": "Zum Hauptinhalt springen",
+  "cookie": {
+    "settings": {
+      "title": "Cookie-Einstellungen",
+      "desc": "Wir verwenden Cookies, um Ihre Erfahrung zu verbessern. Bitte wählen Sie aus, welche Cookies Sie zulassen möchten."
+    },
+    "essential": {
+      "title": "Notwendige Cookies",
+      "desc": "Diese Cookies sind für die Grundfunktionen der Website erforderlich und können nicht deaktiviert werden."
+    },
+    "analytics": {
+      "title": "Analyse-Cookies",
+      "desc": "Helfen uns zu verstehen, wie Besucher mit der Website interagieren, indem Informationen anonym gesammelt und gemeldet werden."
+    },
+    "marketing": {
+      "title": "Marketing-Cookies",
+      "desc": "Werden verwendet, um Besuchern auf Websites zu folgen. Die Absicht ist, Anzeigen zu zeigen, die relevant und ansprechend für den einzelnen Benutzer sind."
+    }
+  },
+  "close": "Schließen",
+  "cancel": "Abbrechen",
+  "save": "Speichern"
 }

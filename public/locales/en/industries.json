@@ -749,5 +749,27 @@
         "description": "Automatic language detection and switch."
       }
     }
+  },
+  "title_prefix": "Maßgeschneiderte Lösungen",
+  "title_suffix": "für Ihre Branche.",
+  "card_craft": {
+    "title": "Handwerk & Bauwesen",
+    "desc": "Digitale Präsenz, die Handwerkskunst widerspiegelt und hochwertige Kundenanfragen generiert."
+  },
+  "card_realestate": {
+    "title": "Immobilien & Makler",
+    "desc": "Exklusive Exposés und performante Portfolios zur Gewinnung erstklassiger Mandate."
+  },
+  "card_shop": {
+    "title": "E-Commerce & Retail",
+    "desc": "Skalierbare Onlineshops mit blitzschnellen Ladezeiten für maximale Conversion-Raten."
+  },
+  "card_consulting": {
+    "title": "Unternehmensberatung",
+    "desc": "Repräsentative Webauftritte, die Ihre Expertise und Seriosität auf den ersten Blick vermitteln."
+  },
+  "card_health": {
+    "title": "Gesundheitswesen",
+    "desc": "Vertrauensbildende Praxis-Websites mit nahtloser, sicherer Terminbuchung für Ihre Patienten."
   }
 }

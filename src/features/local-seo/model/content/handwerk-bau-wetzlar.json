@@ -1,0 +1,51 @@
+{
+  "target": "handwerk-bau-wetzlar",
+  "type": "industry-location",
+  "meta": {
+    "title": "Webdesign für Handwerk & Bau in Wetzlar | Coday",
+    "description": "Hochleistungs-Websites und lokales SEO für Handwerksbetriebe und Bauunternehmen in Wetzlar und dem Lahn-Dill-Kreis. Gewinnen Sie Fachkräfte und Premium-Kunden."
+  },
+  "hero": {
+    "headline": "Digitale Dominanz für Ihr Handwerksunternehmen in Wetzlar",
+    "subheadline": "Webdesign & Local SEO, das Handwerk und Bau im Lahn-Dill-Kreis spürbar voranbringt.",
+    "description": "Coday entwickelt als High-End Webagentur rasante Next.js-Websites speziell für das Handwerk. Wir transformieren Ihre Online-Präsenz in einen digitalen Magneten für neue Aufträge und qualifizierte Fachkräfte in Wetzlar und Umgebung."
+  },
+  "localDominance": {
+    "title": "Lokale Vormachtstellung für Wetzlarer Handwerksbetriebe",
+    "description": "Im hart umkämpften Bau- und Handwerkssektor des Lahn-Dill-Kreises reicht eine einfache Website nicht mehr aus. Sie benötigen eine digitale Infrastruktur, die Ihre handwerkliche Exzellenz widerspiegelt und Sie in den lokalen Suchergebnissen unübersehbar macht.",
+    "points": [
+      "Top-Platzierungen in Wetzlar durch datengetriebenes Local SEO für Handwerker",
+      "Sichtbarkeit in Google Maps für Suchanfragen wie 'Dachdecker Wetzlar' oder 'Bauunternehmen Lahn-Dill'",
+      "Automatisierte Leadgenerierung für lukrative Bauprojekte in Mittelhessen",
+      "Aufbau einer starken, vertrauenswürdigen digitalen Arbeitgebermarke"
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "Fachkräftegewinnung im Lahn-Dill-Kreis: Ihr digitaler Vorteil",
+      "content": "Der Fachkräftemangel im Handwerk ist in Wetzlar und Umgebung deutlich spürbar. Gute Gesellen und Meister suchen sich heute ihre Arbeitgeber aus. Eine moderne, pfeilschnelle Next.js Website von Coday präsentiert Ihren Betrieb als zukunftsorientierten Top-Arbeitgeber. Mit nahtlosen digitalen Bewerbungsprozessen und einer starken Arbeitgebermarke ziehen Sie genau das Personal an, das Sie für das Wachstum Ihres Bauunternehmens benötigen."
+    },
+    {
+      "title": "High-Performance Webdesign für Bau und Handwerk",
+      "content": "Ihre Kunden erwarten Qualität – online wie offline. Ladezeiten von unter einer Sekunde, eine makellose mobile Darstellung direkt auf der Baustelle und eine intuitive Benutzerführung sind heute Pflicht. Wir nutzen modernste Technologien wie Next.js und React, um für Ihren Handwerksbetrieb in Wetzlar eine Plattform zu schaffen, die nicht nur beeindruckt, sondern konvertiert. Ihre neue Website wird zum stärksten Vertriebsmitarbeiter Ihres Unternehmens."
+    },
+    {
+      "title": "Messbare Ergebnisse durch lokales SEO für Wetzlar",
+      "content": "Wenn in Wetzlar nach einem zuverlässigen Handwerker gesucht wird, müssen Sie auf Platz 1 stehen. Unsere Local SEO Strategien sind speziell auf die Bedürfnisse von Bauunternehmen und Handwerksbetrieben zugeschnitten. Wir optimieren Ihr Google Unternehmensprofil, integrieren relevante lokale Keywords und sorgen dafür, dass Sie bei den entscheidenden Suchanfragen im Lahn-Dill-Kreis gefunden werden – von der Badsanierung bis zum Rohbau."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Warum braucht mein Handwerksbetrieb in Wetzlar eine High-End Website?",
+      "a": "Eine Premium-Website spiegelt die Qualität Ihrer handwerklichen Arbeit wider. Sie differenziert Sie in Wetzlar von Mitbewerbern, rechtfertigt höhere Preise bei Premium-Kunden und ist das entscheidende Werkzeug, um im Lahn-Dill-Kreis qualifizierte Fachkräfte zu rekrutieren."
+    },
+    {
+      "q": "Wie hilft mir Coday bei der Mitarbeitergewinnung im Handwerk?",
+      "a": "Wir entwickeln maßgeschneiderte Karriere- und Recruiting-Seiten, die Ihre Arbeitgebervorteile optimal präsentieren. Durch extrem schnelle Ladezeiten und mobile Optimierung machen wir es potenziellen Bewerbern in Wetzlar so einfach wie möglich, Kontakt aufzunehmen – direkt vom Smartphone aus."
+    },
+    {
+      "q": "Wie lange dauert es, bis wir durch Local SEO in Wetzlar besser gefunden werden?",
+      "a": "Während erste technische Optimierungen oft schnell sichtbare Verbesserungen bringen, ist Local SEO ein kontinuierlicher Prozess. In der Regel verzeichnen unsere Handwerkskunden in Wetzlar nach 3 bis 6 Monaten signifikante Steigerungen bei den lokalen Suchanfragen und qualifizierten Leads."
+    }
+  ]
+}

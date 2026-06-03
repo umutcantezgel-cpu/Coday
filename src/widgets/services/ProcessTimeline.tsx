@@ -17,16 +17,16 @@ interface ProcessTimelineProps {
 
 export const ProcessTimeline: React.FC<ProcessTimelineProps> = ({ steps, title, subtitle }) => {
   return (
-    <section className="py-[var(--space-section)] bg-white relative overflow-hidden">
+    <section className="py-[var(--space-section)] bg-surface-elevated relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16 max-w-3xl mx-auto">
           {subtitle && (
-            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
+            <span className="text-action-primary font-bold tracking-wider uppercase text-sm mb-4 block">
               {subtitle}
             </span>
           )}
           {title && (
-            <h2 className="font-display font-black text-3xl sm:text-5xl text-secondary mb-6 leading-tight">
+            <h2 className="font-display font-black text-3xl sm:text-5xl text-content-base mb-6 leading-tight text-balance">
               {title}
             </h2>
           )}
@@ -52,36 +52,36 @@ export const ProcessTimeline: React.FC<ProcessTimelineProps> = ({ steps, title, 
                 {/* Content */}
                 <div className="w-full md:w-1/2 pl-24 md:pl-0 md:px-12 flex flex-col">
                   <div
-                    className={`bg-white p-8 rounded-2xl shadow-flat border border-gray-100 hover:shadow-glow transition motion-reduce:duration-[0.01ms] duration-300 hover:-translate-y-1 ${
+                    className={`bg-surface-elevated p-8 rounded-2xl shadow-flat border border-border-muted hover:shadow-glow transition motion-reduce:duration-[0.01ms] duration-300 hover:scale-[0.97] ease-spring ${
                       isEven ? 'md:text-left' : 'md:text-right'
                     }`}
                   >
                     <div
                       className={`flex items-center mb-4 ${isEven ? 'justify-start' : 'md:justify-end'}`}
                     >
-                      <span className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary font-bold text-lg mr-4 md:mx-4">
+                      <span className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-action-primary font-bold text-lg mr-4 md:mx-4">
                         {index + 1}
                       </span>
-                      <h3 className="font-display font-bold text-2xl text-secondary">
+                      <h3 className="font-display font-bold text-2xl text-content-base">
                         {step.title}
                       </h3>
                     </div>
-                    <p className="text-slate-600 leading-relaxed text-lg">{step.description}</p>
+                    <p className="text-content-muted leading-relaxed max-w-prose text-pretty text-lg">{step.description}</p>
                   </div>
                 </div>
 
                 {/* Center Node */}
-                <div className="absolute left-8 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 bg-white rounded-full border-4 border-primary z-10 shadow-sm">
+                <div className="absolute left-8 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 bg-surface-elevated rounded-full border-4 border-primary z-10 shadow-sm">
                   {step.icon ? (
                     <OptimizedIcon
                       icon={step.icon}
-                      className="text-primary text-xl"
+                      className="text-action-primary text-xl"
                       weight="bold"
                     />
                   ) : (
                     <OptimizedIcon
                       icon={CheckCircle}
-                      className="text-primary text-xl"
+                      className="text-action-primary text-xl"
                       weight="fill"
                     />
                   )}

@@ -3,6 +3,7 @@
 import * as React from 'react';
 import { cn } from '@/shared/lib/utils';
 import { AnimatePresence, motion } from 'motion/react';
+// This component uses framer-motion which handles prefers-reduced-motion automatically.
 
 export type AlertVariant = 'default' | 'destructive' | 'success';
 
@@ -27,7 +28,7 @@ export interface AlertProps extends Omit<
 
 const variantStyles: Record<AlertVariant, string> = {
   default:
-    'bg-neutral-50 text-neutral-900 border-neutral-200 dark:bg-neutral-900 dark:text-neutral-50 dark:border-neutral-800',
+    'bg-surface-elevated text-neutral-900 border-subtle dark:text-neutral-50',
   destructive:
     'bg-red-50 text-red-900 border-red-200 dark:bg-red-950/50 dark:text-red-200 dark:border-red-900',
   success:
@@ -83,8 +84,8 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
                   onClick={handleDismiss}
                   aria-label="Dismiss alert"
                   className={cn(
-                    'flex h-11 w-11 shrink-0 items-center justify-center rounded-md', // 44x44 min tap target
-                    'transition-[transform,colors] duration-[160ms] ease-out hover:bg-black/5 dark:hover:bg-white/10 active:scale-[0.97]',
+                    'flex h-11 w-11 shrink-0 items-center justify-center rounded-md text-content-muted', // 44x44 min tap target
+                    'transition-[transform,colors] duration-[160ms] ease-out motion-reduce:transition-none hover:bg-black/5 dark:hover:bg-white/10 active:scale-[0.97]',
                     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2'
                   )}
                 >

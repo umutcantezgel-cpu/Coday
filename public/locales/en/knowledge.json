@@ -37,23 +37,41 @@
         "title": "What Does a Website Really Cost?"
       }
     },
-    "subtitle": "Become an expert in digital growth. Free courses for our community.",
-    "title": "Academy"
+    "subtitle": "Lernen Sie die Grundlagen",
+    "title": "Academy",
+    "close_video": "Video schließen"
   },
   "blog": {
     "subtitle": "Deep dives, strategies and news from the digital world.",
     "title": "Blog & Insights"
   },
   "newsletter": {
-    "emailPlaceholder": "Your best email address",
+    "emailPlaceholder": "Ihre E-Mail-Adresse",
     "privacy": "We respect your privacy. Unsubscribe at any time.",
-    "subscribe": "Subscribe",
-    "subtitle": "Join 10,000+ founders and get the best digital growth strategies delivered weekly to your inbox. No spam. Just value.",
-    "title": "The Insider Newsletter"
+    "subscribe": "Abonnieren",
+    "subtitle": "Bleiben Sie auf dem neuesten Stand.",
+    "title": "Newsletter",
+    "success_title": "Vielen Dank!",
+    "success_message": "Sie haben sich erfolgreich angemeldet.",
+    "privacy_consent_pre": "Ich stimme der Verarbeitung meiner Daten gemäß der ",
+    "privacy_link": "Datenschutzerklärung",
+    "privacy_consent_post": " zu.",
+    "error": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut."
   },
   "whitepapers": {
     "download": "Download for Free",
     "subtitle": "Free guides, checklists, and templates for your success.",
     "title": "Guides & Resources"
+  },
+  "wiki": {
+    "title": "AI & Digital Excellence Wiki",
+    "subtitle": "Der Coday Knowledge Graph. 100 essentielle Entitäten aus Tech, Business und Design, strukturiert für KI-Crawler und Menschen.",
+    "search_placeholder": "Entität suchen (z.B. Next.js, Headless CMS)...",
+    "search_aria": "Entität suchen",
+    "no_results": "Keine Entitäten gefunden für \"{searchTerm}\"",
+    "categories": {
+      "all": "Alle"
+    },
+    "aliases": "Aliasse:"
   }
 }

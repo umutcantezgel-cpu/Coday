@@ -104,19 +104,19 @@ const CodeQualitySimulator: React.FC = () => {
               aria-checked={feature.active}
               className={`group w-full cursor-pointer p-4 rounded-xl border transition motion-reduce:duration-[0.01ms] duration-300 flex items-center justify-between text-start focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${feature.active ? 'bg-white border-primary shadow-md' : 'bg-white border-transparent hover:border-gray-200'}`}
             >
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 flex-1 min-w-0 pr-4">
                 <div
                   className={`w-10 h-10 rounded-lg flex items-center justify-center transition-colors motion-reduce:duration-[0.01ms] ${feature.active ? 'bg-primary text-white' : 'bg-gray-100 text-gray-400'}`}
                 >
                   <OptimizedIcon icon={feature.icon} />
                 </div>
-                <div>
+                <div className="flex-1 min-w-0">
                   <div
-                    className={`font-bold text-sm ${feature.active ? 'text-secondary' : 'text-gray-500'}`}
+                    className={`font-bold text-sm truncate ${feature.active ? 'text-secondary' : 'text-gray-500'}`}
                   >
                     {feature.label}
                   </div>
-                  <div className="text-xs text-slate-400">{feature.desc}</div>
+                  <div className="text-xs text-slate-400 truncate">{feature.desc}</div>
                 </div>
               </div>
               <div

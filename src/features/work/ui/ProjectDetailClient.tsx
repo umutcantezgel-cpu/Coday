@@ -412,7 +412,7 @@ const ProjectDetail: React.FC = () => {
 
               <div className="relative z-10">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-4">
-                  ✦ {t('')}
+                  ✦ {t('project_detail.impact')}
                 </div>
                 <h2 className="font-display font-bold text-3xl mb-4">
                   {t('project_detail.results')}
@@ -449,7 +449,7 @@ const ProjectDetail: React.FC = () => {
                   viewport={{ once: true, margin: '-50px' }}
                   transition={{ duration: 0.5 }}
                 >
-                  <h2 className="font-display font-bold text-3xl text-gray-900 mb-6">{t('')}</h2>
+                  <h2 className="font-display font-bold text-3xl text-gray-900 mb-6">{t('project_detail.before_after_title')}</h2>
 
                   {project.beforeAfter.beforeImage && project.beforeAfter.afterImage ? (
                     <BeforeAfterSlider
@@ -457,8 +457,8 @@ const ProjectDetail: React.FC = () => {
                       afterImage={project.beforeAfter.afterImage}
                       beforeAlt={project.beforeAfter.beforeAlt || `Before - ${project.title}`}
                       afterAlt={project.beforeAfter.afterAlt || `After - ${project.title}`}
-                      beforeLabel={t('')}
-                      afterLabel={t('')}
+                      beforeLabel={t('project_detail.before')}
+                      afterLabel={t('project_detail.after')}
                     />
                   ) : (
                     /* Fallback: single-side display */
@@ -473,7 +473,7 @@ const ProjectDetail: React.FC = () => {
                             height={600}
                           />
                           <div className="absolute top-4 left-4 bg-black/50 backdrop-blur-md text-white text-xs font-bold uppercase px-3 py-1 rounded">
-                            {t('')}
+                            {t('project_detail.before')}
                           </div>
                         </div>
                       )}
@@ -487,7 +487,7 @@ const ProjectDetail: React.FC = () => {
                             height={600}
                           />
                           <div className="absolute top-4 left-4 bg-primary text-white text-xs font-bold uppercase px-3 py-1 rounded">
-                            {t('')}
+                            {t('project_detail.after')}
                           </div>
                         </div>
                       )}
@@ -537,7 +537,7 @@ const ProjectDetail: React.FC = () => {
               </div>
               <div>
                 <div className="text-xs text-gray-500 uppercase font-bold tracking-wider mb-1">
-                  {t('')}
+                  {t('project_detail.nav.prev')}
                 </div>
                 <div className="font-display font-bold text-xl group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms]">
                   {prevProject.content[currentLang].title}
@@ -555,7 +555,7 @@ const ProjectDetail: React.FC = () => {
             >
               <div>
                 <div className="text-xs text-gray-500 uppercase font-bold tracking-wider mb-1">
-                  {t('')}
+                  {t('project_detail.nav.next')}
                 </div>
                 <div className="font-display font-bold text-xl group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms]">
                   {nextProject.content[currentLang].title}

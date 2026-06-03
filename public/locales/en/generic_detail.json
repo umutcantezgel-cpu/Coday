@@ -1,0 +1,36 @@
+{
+  "advantages": {
+    "contact_btn": "Jetzt beraten lassen",
+    "desc": "Entdecken Sie die messbaren Vorteile unserer maßgeschneiderten Lösungen.",
+    "label": "Ihre Vorteile",
+    "title": "Warum Sie sich für uns entscheiden sollten"
+  },
+  "faq": {
+    "desc": "Hier finden Sie Antworten auf die häufigsten Fragen.",
+    "title": "Häufig gestellte Fragen"
+  },
+  "final_cta": {
+    "button": "Kostenloses Erstgespräch",
+    "desc": "Lassen Sie uns gemeinsam Ihre digitale Zukunft gestalten.",
+    "title": "Bereit für das nächste Level?"
+  },
+  "hero": {
+    "benefits_title": "Vorteile auf einen Blick",
+    "consulting_btn": "Zur kostenlosen Beratung"
+  },
+  "not_found": {
+    "link": "Zurück zur Übersicht",
+    "title": "Service nicht gefunden"
+  },
+  "process": {
+    "label": "Unser Ansatz",
+    "title": "Ein bewährter Prozess für Ihren Erfolg"
+  },
+  "testimonials": {
+    "label": "Referenzen",
+    "title": "Das sagen unsere Kunden"
+  },
+  "trust": {
+    "title": "Vertrauen durch messbare Ergebnisse"
+  }
+}

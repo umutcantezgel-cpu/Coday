@@ -52,7 +52,7 @@ export const ServicesOverview = async () => {
   ];
 
   return (
-    <div className="bg-background-light">
+    <div className="bg-surface-base">
       <SeoHead
         title={t('meta.title', { fallback: 'Unsere Leistungen in Wetzlar | Coday' })}
         description={t('meta.description', {
@@ -79,16 +79,16 @@ export const ServicesOverview = async () => {
             <div className="mb-4 flex justify-center lg:justify-start">
               <Breadcrumbs />
             </div>
-            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
+            <span className="text-action-primary font-bold tracking-wider uppercase text-sm mb-4 block">
               {t('hero.label')}
             </span>
 
             <noscript>
               <style>{`.js-only { display: none; }`}</style>
-              <h1 className="font-display font-black text-4xl sm:text-6xl text-secondary mb-4">
+              <h1 className="font-display font-black text-4xl sm:text-6xl text-content-base mb-4 text-balance">
                 {t('hero.title')}
               </h1>
-              <div className="text-xl text-slate-600 leading-relaxed mb-6">
+              <div className="text-xl text-content-muted leading-relaxed max-w-prose text-pretty mb-6 max-w-prose">
                 {(t.raw('hero.rotating') as string[])?.[0] || 'Web-Design'}
               </div>
             </noscript>
@@ -101,7 +101,7 @@ export const ServicesOverview = async () => {
                 scrollEnd="center center"
                 stagger={0.02}
                 containerClassName="!my-0 mb-4"
-                textClassName="font-display font-black text-4xl sm:text-6xl text-secondary"
+                textClassName="font-display font-black text-4xl sm:text-6xl text-content-base text-balance"
               >
                 {t('hero.title')}
               </ScrollFloat>
@@ -113,19 +113,19 @@ export const ServicesOverview = async () => {
                   rotationInterval={3500}
                   staggerFrom="first"
                   staggerDuration={0.025}
-                  mainClassName="text-xl text-slate-600 leading-relaxed"
+                  mainClassName="text-xl text-content-muted leading-relaxed max-w-prose"
                 />
               </div>
             </div>
           </div>
           <div className="relative hidden lg:block">
-            <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-3xl transform rotate-2"></div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-action-primary/20 to-transparent rounded-3xl transform rotate-2"></div>
             <Image
               src={serviceImages.hero!.src}
               alt={t(serviceImages.hero!.alt)}
               width={800}
               height={600}
-              className="relative rounded-3xl shadow-flat-lg w-full h-auto transform -rotate-1 hover:rotate-0 transition motion-reduce:duration-[0.01ms] duration-500"
+              className="relative rounded-3xl shadow-flat-lg w-full h-auto transform -rotate-1 hover:rotate-0 transition motion-reduce:duration-[0.01ms] duration-300 hover:scale-[0.97] ease-spring"
               priority={true}
             />
           </div>
@@ -141,17 +141,17 @@ export const ServicesOverview = async () => {
               effect={cat.effect}
               spotlightColor="rgba(20, 122, 122, 0.15)"
               glowColor="rgba(139, 92, 246, 0.3)"
-              className="h-full border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02] hover:border-primary/20 transition motion-reduce:duration-[0.01ms] duration-500 ease-out bg-white rounded-2xl md:aspect-[1/1.618]"
+              className="h-full border border-border-muted shadow-sm hover:scale-[0.97] hover:border-action-primary/20 transition motion-reduce:duration-[0.01ms] duration-300 ease-spring bg-surface-elevated rounded-2xl md:aspect-[1/1.618]"
             >
               <div className="group relative p-6 md:p-8 block h-full flex flex-col">
                 {/* Decorative Background Image */}
-                <div className="absolute top-0 end-0 w-64 h-64 opacity-[0.02] transform translate-x-12 rtl:-translate-x-12 -translate-y-12 group-hover:scale-110 group-hover:opacity-[0.05] transition motion-reduce:duration-[0.01ms] duration-700 rounded-bl-[100px] rtl:rounded-br-[100px] rtl:rounded-bl-none overflow-hidden pointer-events-none ease-out">
+                <div className="absolute top-0 end-0 w-64 h-64 opacity-[0.02] transform translate-x-12 rtl:-translate-x-12 -translate-y-12 group-hover:scale-[0.97] ease-spring group-hover:opacity-[0.05] transition motion-reduce:duration-[0.01ms] duration-700 rounded-bl-[100px] rtl:rounded-br-[100px] rtl:rounded-bl-none overflow-hidden pointer-events-none ease-out">
                   {serviceImages[cat.imageKey || 'hero'] && (
                     <Image
                       src={serviceImages[cat.imageKey || 'hero']!.src}
                       alt=""
-                      width={400}
-                      height={400}
+                      width={256}
+                      height={256}
                       className="w-full h-full object-cover mix-blend-multiply"
                     />
                   )}
@@ -162,31 +162,32 @@ export const ServicesOverview = async () => {
 
                 <div className="relative z-10 flex-grow">
                   <div
-                    className={`w-14 h-14 ${cat.color} bg-opacity-10 rounded-2xl flex items-center justify-center mb-6 transition motion-reduce:duration-[0.01ms] duration-500 group-hover:scale-110 group-hover:bg-opacity-20 group-hover:-rotate-3 shadow-sm`}
+                    className={`w-14 h-14 ${cat.color} bg-opacity-10 rounded-2xl flex items-center justify-center mb-6 transition motion-reduce:duration-[0.01ms] duration-500 shadow-sm`}
                   >
                     <OptimizedIcon
                       icon={cat.icon}
+                      size="lg"
                       weight="duotone"
                       className={`text-3xl ${cat.color.replace('bg-', 'text-')}`}
                     />
                   </div>
 
-                  <h3 className="font-display font-bold text-xl md:text-2xl text-secondary mb-3 group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms] duration-300">
+                  <h3 className="font-display font-bold text-xl md:text-2xl text-content-base mb-3 group-hover:text-action-primary transition-colors motion-reduce:duration-[0.01ms] duration-300">
                     <NavLink
                       href={cat.link}
-                      className="before:absolute before:inset-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-md"
+                      className="before:absolute before:inset-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-action-primary focus-visible:ring-offset-2 rounded-md"
                     >
                       {cat.title}
                     </NavLink>
                   </h3>
-                  <p className="text-base text-slate-600 mb-8 leading-[1.618]">{cat.description}</p>
+                  <p className="text-base text-content-muted mb-8 leading-relaxed max-w-prose text-pretty">{cat.description}</p>
                 </div>
-                <div className="flex items-center text-primary font-bold tracking-wide uppercase text-sm mt-auto transition motion-reduce:duration-[0.01ms] duration-300 group-hover:tracking-wider pointer-events-none">
+                <div className="flex items-center text-action-primary font-bold tracking-wide uppercase text-sm mt-auto transition motion-reduce:duration-[0.01ms] duration-300 group-hover:tracking-wider pointer-events-none">
                   {t('cta.more')}
                   <OptimizedIcon
                     icon={ArrowRight}
                     weight="bold"
-                    className="ms-3 group-hover:translate-x-2 rtl:group-hover:-translate-x-2 transition-transform motion-reduce:duration-[0.01ms] duration-300 ease-out"
+                    className="ms-3 group-hover:translate-x-2 rtl:group-hover:-translate-x-2 transition-transform motion-reduce:duration-[0.01ms] duration-300 ease-spring"
                   />
                 </div>
               </div>
@@ -196,13 +197,13 @@ export const ServicesOverview = async () => {
       </section>
 
       {/* Methodology / Trust Signals */}
-      <section className="py-20 md:py-32 bg-white border-t border-gray-100">
+      <section className="py-20 md:py-32 bg-surface-elevated border-t border-border-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-16">
-            <h2 className="font-display font-bold text-3xl md:text-5xl text-secondary mb-6 leading-tight">
+            <h2 className="font-display font-bold text-3xl md:text-5xl text-content-base mb-6 leading-tight text-balance">
               {t('methodology.title', { fallback: 'Präzises Handwerk statt Massenabfertigung.' })}
             </h2>
-            <p className="text-lg md:text-xl text-slate-600 leading-[1.8]">
+            <p className="text-lg md:text-xl text-content-muted leading-relaxed max-w-prose text-pretty">
               {t('methodology.description', {
                 fallback:
                   'Als Solo-Agentur arbeite ich direkt mit Ihnen zusammen – ohne Projektmanager oder stille Post. Sie erhalten maßgeschneiderte Lösungen, die auf modernsten Web-Technologien basieren und echte Ergebnisse liefern. Von der ersten Konzeption bis zum finalen Launch.',
@@ -230,15 +231,15 @@ export const ServicesOverview = async () => {
             ] as const).map((item, i) => (
               <li
                 key={i}
-                className="group border-l border-gray-200 pl-6 hover:border-primary transition-colors duration-500"
+                className="group border-l border-border-subtle pl-6 hover:border-action-primary transition-colors duration-300 hover:scale-[0.97] ease-spring hover:cursor-pointer"
               >
-                <span aria-hidden="true" className="block text-sm font-bold text-primary mb-2 tracking-wider">
+                <span aria-hidden="true" className="block text-sm font-bold text-action-primary mb-2 tracking-wider">
                   {item.step}
                 </span>
-                <h3 className="text-xl font-display font-bold text-secondary mb-3 group-hover:text-primary transition-colors duration-300">
+                <h3 className="text-xl font-display font-bold text-content-base mb-3 group-hover:text-action-primary transition-colors duration-300">
                   {item.title}
                 </h3>
-                <p className="text-slate-600 leading-relaxed">{item.desc}</p>
+                <p className="text-content-muted leading-relaxed max-w-prose text-pretty">{item.desc}</p>
               </li>
             ))}
           </ol>
@@ -248,16 +249,16 @@ export const ServicesOverview = async () => {
       {/* FAQs for Rich Snippets */}
       <RelevantFAQs
         serviceId={['web-development', 'web-design', 'seo']}
-        className="bg-gray-50 border-t border-gray-100"
+        className="bg-surface-muted border-t border-border-muted"
       />
 
       {/* CTA with GlareHover */}
-      <section className="py-12 md:py-20 bg-white border-t border-gray-100">
+      <section className="py-12 md:py-20 bg-surface-elevated border-t border-border-muted">
         <div className="max-w-5xl mx-auto px-4 text-center">
-          <h2 className="font-display font-bold text-3xl text-secondary mb-8">
+          <h2 className="font-display font-bold text-3xl text-content-base mb-8 text-balance">
             {t('cta.ready')}
           </h2>
-          <GlareHover glareColor="#ffffff" glareOpacity={0.4} className="inline-block rounded-xl">
+          <GlareHover glareColor="#ffffff" glareOpacity={0.4} className="inline-block rounded-xl hover:scale-[0.97] transition-transform duration-300 ease-spring">
             <NavLink
               href="/contact"
               className={cn(baseButtonStyles, buttonVariants.primary, buttonSizes.lg)}

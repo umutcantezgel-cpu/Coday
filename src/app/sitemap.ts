@@ -91,12 +91,34 @@ export default async function sitemap({ id }: { id: number }): Promise<MetadataR
         sitemapEntry('/work', { changeFrequency: 'monthly', priority: 0.8 }),
         sitemapEntry('/process', { changeFrequency: 'monthly', priority: 0.7 }),
         sitemapEntry('/pricing', { changeFrequency: 'monthly', priority: 0.8 }),
-        sitemapEntry('/packages', { changeFrequency: 'monthly', priority: 0.8 }),
-        sitemapEntry('/knowledge/blog', { changeFrequency: 'weekly', priority: 0.7 }),
         sitemapEntry('/contact', { changeFrequency: 'monthly', priority: 0.7 }),
-        // Local SEO pages
-        sitemapEntry('/standorte/wetzlar', { changeFrequency: 'monthly', priority: 0.6 }),
-        sitemapEntry('/standorte/hessen', { changeFrequency: 'monthly', priority: 0.6 }),
+        
+        // Knowledge & Community
+        sitemapEntry('/knowledge/blog', { changeFrequency: 'weekly', priority: 0.7 }),
+        sitemapEntry('/knowledge/academy', { changeFrequency: 'monthly', priority: 0.6 }),
+        sitemapEntry('/knowledge/faq', { changeFrequency: 'monthly', priority: 0.6 }),
+        sitemapEntry('/community/events', { changeFrequency: 'monthly', priority: 0.6 }),
+        
+        // Corporate
+        sitemapEntry('/career', { changeFrequency: 'monthly', priority: 0.7 }),
+        sitemapEntry('/presse', { changeFrequency: 'monthly', priority: 0.6 }),
+        sitemapEntry('/partnerschaft', { changeFrequency: 'monthly', priority: 0.6 }),
+        
+        // Tools
+        sitemapEntry('/analyzer', { changeFrequency: 'weekly', priority: 0.8 }),
+        sitemapEntry('/calculator', { changeFrequency: 'monthly', priority: 0.7 }),
+
+        // Local SEO & Branches (High Priority for Wetzlar Dominance)
+        sitemapEntry('/standorte/wetzlar', { changeFrequency: 'monthly', priority: 0.9 }),
+        sitemapEntry('/standorte/hessen', { changeFrequency: 'monthly', priority: 0.8 }),
+        sitemapEntry('/standorte/giessen', { changeFrequency: 'monthly', priority: 0.8 }),
+        sitemapEntry('/branchen/handwerk', { changeFrequency: 'monthly', priority: 0.8 }),
+        sitemapEntry('/branchen/gastronomie', { changeFrequency: 'monthly', priority: 0.8 }),
+        sitemapEntry('/branchen/gesundheit', { changeFrequency: 'monthly', priority: 0.8 }),
+        sitemapEntry('/branchen/dienstleistung', { changeFrequency: 'monthly', priority: 0.8 }),
+        sitemapEntry('/branchen/immobilien', { changeFrequency: 'monthly', priority: 0.8 }),
+        sitemapEntry('/branchen/publicsector', { changeFrequency: 'monthly', priority: 0.8 }),
+        sitemapEntry('/branchen/retail', { changeFrequency: 'monthly', priority: 0.8 }),
       ]
     : [];
 

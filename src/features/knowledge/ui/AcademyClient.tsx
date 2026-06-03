@@ -75,7 +75,7 @@ const Academy: React.FC = () => {
               <button
                 onClick={() => setSelectedVideo(null)}
                 className="active:scale-[0.97] absolute top-4 right-4 z-10 p-2 rounded-full bg-black/50 text-white hover:bg-white/20 transition-colors motion-reduce:duration-[0.01ms]"
-                aria-label="Close video"
+                aria-label={t('academy.close_video')}
               >
                 <X size={24} />
               </button>

@@ -17,7 +17,7 @@ const AnnouncementBar: React.FC = () => {
             })}
           </span>
           <Link
-            href="/packages"
+            href="/pricing"
             className="bg-white/20 hover:bg-white/30 text-white px-3 py-0.5 rounded-full text-xs font-bold transition-colors motion-reduce:duration-[0.01ms]"
           >
             {t('announcement.cta', { defaultValue: 'Angebot sichern →' })}

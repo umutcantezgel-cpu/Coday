@@ -14,10 +14,10 @@ export default function ErrorBoundary({ error, reset }: ErrorBoundaryProps) {
     console.error('🔥 APP CRASH:', error);
   }, [error]);
 
-  const t = useTranslations('error.500');
+  const t = useTranslations('error.serverError');
 
   return (
-    <div className="flex items-center justify-center min-h-[70vh] p-6 selection:bg-primary-500/30">
+    <div className="flex items-center justify-center min-h-screen p-6 selection:bg-primary-500/30">
       <div className="max-w-md w-full bg-bg-secondary p-8 md:p-12 rounded-3xl border border-border-default shadow-lg text-center flex flex-col items-center">
         <div className="w-16 h-16 bg-red-500/10 rounded-full flex items-center justify-center mb-6 border border-red-500/20">
           <WarningCircle className="w-8 h-8 text-red-500" weight="duotone" />
@@ -28,7 +28,7 @@ export default function ErrorBoundary({ error, reset }: ErrorBoundaryProps) {
 
         <button
           onClick={() => reset()}
-          className="inline-flex items-center justify-center rounded-xl font-medium transition motion-reduce:duration-[0.01ms] duration-300 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 bg-primary-700 text-white shadow-md hover:bg-primary-800 hover:shadow-glow min-h-[48px] px-6 w-full"
+          className="inline-flex items-center justify-center rounded-xl font-medium transition motion-reduce:duration-[0.01ms] duration-300 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 bg-primary-700 text-white shadow-md hover:bg-primary-800 hover:shadow-glow min-h-12 px-6 w-full"
         >
           {t('tryAgain')}
         </button>

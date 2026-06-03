@@ -1,0 +1,133 @@
+{
+  "target": "frankfurt-am-main",
+  "type": "location",
+  "meta": {
+    "title": "High-End Webdesign Agentur Frankfurt am Main | Next.js & Headless CMS",
+    "description": "Premium Webentwicklung für Frankfurt: Banken, FinTechs & B2B-Mittelstand. Ersetzen Sie unsichere WordPress-Systeme durch performante Next.js-Architekturen."
+  },
+  "hero": {
+    "headline": "Digitale Dominanz für den Finanzplatz Frankfurt am Main.",
+    "subheadline": "Ihre Premium Webdesign Agentur für Enterprise-Grade Architektur, Next.js und Headless CMS",
+    "description": "In der pulsierenden Wirtschaftsmetropole Frankfurt am Main, in der Milliardenwerte in Millisekunden gehandelt werden, entscheidet die digitale Performance über Marktführerschaft. Als spezialisierte High-End Webdesign Agentur für den Großraum Frankfurt liefert Coday keine gewöhnlichen Websites, sondern maßgeschneiderte, entkoppelte digitale Infrastrukturen. Wir entwickeln mit Next.js 15, React 19 und TypeScript auf höchstem Enterprise-Niveau. Unser Ziel: Ihre Marke im stark umkämpften B2B- und Finanzsektor mit blitzschnellen Ladezeiten, absolut sicherer Headless-Architektur und einer herausragenden User Experience an die Spitze zu setzen. Verabschieden Sie sich von trägen, unsicheren WordPress-Monolithen und investieren Sie in zukunftssichere Technologie, die messbaren ROI und qualifizierte B2B-Leads generiert. Wir sind Ihr strategischer Partner für kompromisslose digitale Exzellenz in Mainhattan."
+  },
+  "localDominance": {
+    "title": "Technologische Vorherrschaft in Mainhattan: Warum Frankfurter Marktführer auf Next.js setzen",
+    "description": "Frankfurt am Main ist das unangefochtene finanzielle Herz Europas. Vom Bankenviertel über die Messe Frankfurt bis hin zum Flughafen – hier agieren Unternehmen mit globalem Anspruch und höchstem Innovationsdruck. In diesem Hochgeschwindigkeitsumfeld sind Millisekunden bares Geld und ein Reputationsverlust durch Sicherheitslücken fatal. Coday übersetzt die extremen Anforderungen des Frankfurter Hochfrequenzhandels und des anspruchsvollen B2B-Sektors in digitale Exzellenz. Wir positionieren Ihr Unternehmen mit einer Web-Infrastruktur, die nicht nur lokalen Wettbewerbern, sondern globalen Standards überlegen ist.",
+    "points": [
+      "FinTech-Grade Security: Maximale Sicherheit durch entkoppelte Headless-Architekturen (Jamstack), Edge-Computing und den vollständigen Verzicht auf monolithische Datenbanken, die bei WordPress direkte Angriffsflächen bieten.",
+      "Next.js Performance für Mainhattan: Millisekunden-schnelle Ladezeiten durch Server-Side Rendering (SSR), React Server Components und Edge-Caching. Wir garantieren LCP-Werte unter 2.0 Sekunden – ein Muss für Top-Rankings und maximale Conversion-Raten im B2B-Bereich.",
+      "Skalierbarkeit auf Enterprise-Level: Ob extreme Traffic-Spitzen durch einen IPO an der Frankfurter Börse, internationale PR-Kampagnen oder Messe-Auftritte – unsere Systeme skalieren dank moderner Serverless-Infrastruktur vollautomatisch und ausfallsicher.",
+      "B2B Lead-Generation Engine: Wir verstehen den komplexen, mehrstufigen Vertriebszyklus im Frankfurter Consulting- und B2B-Umfeld. Unsere Plattformen sind darauf ausgelegt, C-Level Entscheider durch eine makellose, vertrauensbildende UX in hochqualifizierte Leads zu konvertieren.",
+      "Zero-Trust-Architecture: Implementierung modernster Authentifizierungslösungen (z.B. Supabase Auth) für hochsichere Kundenportale, Investoren-Dashboards und exklusive B2B-Bereiche, die den strengen Compliance-Anforderungen der Finanzindustrie gerecht werden.",
+      "Headless CMS Agilität: Mit modernen Systemen wie Sanity v3 ermöglichen wir Ihren Marketing- und PR-Teams eine Echtzeit-Orchestrierung von Inhalten über alle Kanäle – von der Corporate Website über Mobile Apps bis hin zu Digital Signage Systemen.",
+      "Lokale Expertise, globales Niveau: Als Solo-Agency kombinieren wir tiefes Verständnis für die Kultur des hessischen Mittelstands mit den technologischen Standards und Architekturen, die im Silicon Valley von Tech-Giganten genutzt werden.",
+      "Lokaler DE-CIX Vorteil: Durch die Nutzung von Edge-Netzwerken und die geografische Nähe zum DE-CIX in Frankfurt garantieren wir Latenzen, die Ihre Website spürbar reaktionsschneller machen als die der Konkurrenz.",
+      "Lückenlose Compliance & DSGVO: Strikte Einhaltung aller europäischen Datenschutzrichtlinien durch sicheres Daten-Hosting in der EU, Cookie-freie Analytics-Optionen und verschlüsseltes Session-Management.",
+      "Kompromisslose Code-Qualität: Kein Spaghetti-Code, keine überladenen Plugins. Jede Zeile Code wird in TypeScript (strict mode) geschrieben und durch strenge CI/CD-Pipelines auf Performance und Sicherheit geprüft, bevor sie live geht."
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "Das Ende der WordPress-Ära im Frankfurter B2B-Sektor",
+      "content": "Für viele Jahre war WordPress das Standard-Werkzeug für Corporate Websites. Doch in einer Stadt wie Frankfurt, in der Banken, FinTechs und führende Industrieunternehmen höchste Maßstäbe an Sicherheit und Performance legen, ist der monolithische Ansatz von WordPress zu einem unkalkulierbaren Geschäftsrisiko geworden. Die ständige Notwendigkeit von Plugin-Updates, die Anfälligkeit für SQL-Injections, schleppende Ladezeiten durch aufgeblähten Code (wie bei Elementor oder Divi) und die starre Kopplung von Backend und Frontend entsprechen nicht mehr den Anforderungen an eine moderne Enterprise-Infrastruktur. Coday ersetzt diese veralteten Systeme durch Next.js. Wir entkoppeln Ihre Daten vom Design, eliminieren die typischen Angriffsvektoren eines Monolithen und liefern eine Plattform, die technologisch eine Dekade voraus ist."
+    },
+    {
+      "title": "Next.js & React 19: Die Architektur der digitalen Marktführer",
+      "content": "Wir setzen kompromisslos auf den modernen Branchenstandard: Next.js 15 in Kombination mit React 19 und TypeScript. Diese Technologien ermöglichen es uns, sogenannte Server Components zu nutzen. Das bedeutet, dass der Großteil Ihrer Website bereits auf dem Server (oder am Edge) gerendert wird und nicht erst mühsam im Browser des Nutzers geladen werden muss. Das Resultat ist eine drastische Reduzierung der JavaScript-Nutzlast. Für Ihr Unternehmen in Frankfurt bedeutet dies konkret: Ihre Website lädt nahezu verzögerungsfrei, unabhängig davon, ob Ihr Kunde sie im Büro am PC oder unterwegs auf dem Smartphone über das Mobilfunknetz aufruft. Diese Architektur ist nicht nur für die User Experience entscheidend, sondern bildet das Fundament für herausragende Google Core Web Vitals und somit für lokale SEO-Dominanz in Frankfurt am Main."
+    },
+    {
+      "title": "Headless CMS: Redaktionelle Freiheit ohne technische Fesseln",
+      "content": "Große Frankfurter Unternehmen, Immobilienentwickler und Beratungsgesellschaften benötigen Agilität in ihrer Kommunikation. Mit einem traditionellen CMS sind Design und Inhalte fest verdrahtet – jede Änderung am Layout erfordert tiefgreifende Eingriffe. Coday löst dieses Problem durch den Einsatz von Headless CMS Lösungen wie Sanity v3. Hier werden Ihre Inhalte als reine, strukturierte Daten gespeichert und über eine API (Schnittstelle) an das Next.js-Frontend ausgeliefert. Ihr Marketing-Team profitiert von einer hochgradig maßgeschneiderten, intuitiven Benutzeroberfläche, die visuelles Editing und Echtzeit-Kollaboration ermöglicht. Es gibt keine zerschossenen Layouts durch Redakteure mehr, keinen Vendor-Lock-in und absolute Freiheit, denselben Content zukünftig auch in Smartwatches, Apps oder internen Dashboards auszuspielen."
+    },
+    {
+      "title": "FinTech-Grade Security für den sichersten Standort Europas",
+      "content": "Frankfurt verzeiht keine Sicherheitslücken. Wenn Sie sensible B2B-Daten verwalten, Investoren-Informationen bereitstellen oder Kundenportale betreiben, ist eine Zero-Trust-Architektur unerlässlich. Durch unseren Jamstack-Ansatz besitzt das Frontend Ihrer Website keine direkte Verbindung zur Datenbank. Es gibt keine auslesbare Datenbankstruktur im Quellcode und kein '/wp-admin'-Portal, das von Bots attackiert werden kann. Für authentifizierte Bereiche implementieren wir Enterprise-Grade Lösungen wie Supabase, die modernste Verschlüsselung, Row Level Security (RLS) und strikte Content Security Policies (CSP) bieten. Wir hosten auf global verteilten Edge-Netzwerken, die DDoS-Attacken automatisch mitigieren, noch bevor sie Ihre Serverarchitektur erreichen."
+    },
+    {
+      "title": "Messbarer ROI durch kompromisslose Performance",
+      "content": "Eine Website ist kein rein visuelles Aushängeschild, sondern ein Performance-Kanal, dessen ROI messbar sein muss. Amazon hat bereits vor Jahren bewiesen, dass jede 100 Millisekunden Ladezeit direkte Auswirkungen auf den Umsatz haben. Im B2B-Umfeld führt eine langsame Website zu enormen Bounce-Raten, da C-Level-Entscheider keine Geduld für Ladescreens haben. Coday verpflichtet sich zu strikten Performance-Budgets: Wir garantieren einen Largest Contentful Paint (LCP) von unter 2,0 Sekunden auf mobilen Endgeräten und einen Interaction to Next Paint (INP) von unter 150 Millisekunden. Diese technische Exzellenz belohnt Google mit besseren Rankings. Ihre Website wird zur Hochleistungs-Maschine für Lead-Generierung in Frankfurt."
+    },
+    {
+      "title": "B2B Lead-Generierung auf C-Level-Niveau",
+      "content": "Entscheidungswege im B2B-Sektor sind komplex. Die digitale Erstansprache muss vom ersten Pixel an Vertrauen, Autorität und Kompetenz ausstrahlen. Wir entwickeln für Frankfurter Unternehmensberatungen, Kanzleien und Industrieunternehmen digitale Erlebnisse, die nicht wie Templates wirken, sondern wie maßgeschneiderte Premium-Produkte. Durch den Einsatz von Tailwind CSS 4 kreieren wir pixelgenaue, einzigartige Interfaces. Subtile, Hardware-beschleunigte Animationen leiten das Auge des Nutzers gezielt zu den Call-to-Actions. Wir integrieren nahtlos Ihre bestehenden CRM-Systeme (wie HubSpot oder Salesforce) über sichere APIs, sodass jeder gewonnene Lead direkt und DSGVO-konform in Ihrem Vertriebsprozess landet."
+    },
+    {
+      "title": "UI/UX Design: Ästhetik, die Autorität und Innovation vereint",
+      "content": "Technologische Brillanz allein reicht nicht aus; sie muss durch ein Design kommuniziert werden, das der Seriosität der Frankfurter Finanzwelt und der Innovationskraft moderner Tech-Startups entspricht. Der Design-Ansatz von Coday ist von minimalistischer Eleganz geprägt. Wir verzichten auf überladene Elemente und konzentrieren uns auf exzellente Typografie, perfekte Proportionen (Whitespace) und ein Farbkonzept, das Ihre Corporate Identity auf Premium-Niveau hebt. Jede Interaktion, vom Hover-Effekt bis zum Seitenübergang, wird flüssig und ohne Ruckeln (Jank-free) animiert. Dieses Level an Polish suggeriert dem Nutzer unterbewusst die höchste Qualität – genau das, was er von Ihren Dienstleistungen erwartet."
+    },
+    {
+      "title": "Nahtlose System-Integration für die Frankfurter Industrie",
+      "content": "Der Mittelstand und die Industrie im Rhein-Main-Gebiet verfügen oft über komplexe, historisch gewachsene IT-Infrastrukturen, ERP-Systeme und PIM-Lösungen. Eine der größten Stärken unserer Next.js Headless-Architektur ist die uneingeschränkte API-Fähigkeit. Wir können jede REST- oder GraphQL-API anbinden. Egal, ob Live-Börsendaten, komplexe Produktkataloge aus SAP oder HR-Schnittstellen für Ihr Recruiting am Standort Frankfurt – wir orchestrieren diese Datenquellen in einem zentralen, pfeilschnellen Frontend, ohne Ihre internen Systeme zu überlasten. Die Nutzung von Middleware erlaubt uns zudem, Anfragen dynamisch und sicher zu routen."
+    },
+    {
+      "title": "Skalierbarkeit am Edge: Der Vercel-Vorteil",
+      "content": "Wenn Ihr Unternehmen wächst, muss Ihre IT-Infrastruktur mitwachsen. Traditionelles Server-Hosting erfordert ständige Kapazitätsanpassungen. Coday deployt Ihre Next.js-Anwendungen auf der Vercel Edge Network-Infrastruktur. Dies bedeutet, dass Ihre Website nicht auf einem einzelnen Server in Frankfurt liegt, sondern global in einem dezentralen Netzwerk bereitgestellt wird. Für Nutzer aus Frankfurt werden die Daten blitzschnell aus dem nächstgelegenen Knotenpunkt (z.B. nahe dem DE-CIX) geladen. Kommen Zugriffe aus New York oder Tokio, übernehmen die dortigen Knotenpunkte. Dies garantiert eine 99,99%ige Uptime, extreme Ausfallsicherheit und globale Performance, ohne dass Sie sich um Server-Wartung kümmern müssen."
+    },
+    {
+      "title": "Ihr strategischer Solo-Partner für digitale Exzellenz",
+      "content": "Coday ist keine anonyme Großagentur, bei der Ihr Projekt von Junior-Developern oder Offshore-Teams abgearbeitet wird. Als spezialisierte Solo-Agency bietet Gründer Umutcan Emre Tezgel Ihnen direkte Kommunikation auf Augenhöhe, kompromisslose technische Qualität und tiefgreifende Verantwortung für den Erfolg Ihres Projekts. Wir verstehen uns als Ihr langfristiger strategischer Partner für den Raum Frankfurt am Main. Wir betreuen nicht hunderte Kunden gleichzeitig, sondern arbeiten exklusiv mit wenigen ausgewählten Unternehmen zusammen, die unseren Anspruch an absolute High-End Webentwicklung teilen. Dies garantiert Ihnen höchste Priorität und ein Endprodukt, das in seiner Architektur, seinem Design und seiner Performance konkurrenzlos ist."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Warum sollten Frankfurter Unternehmen Next.js anstelle von WordPress wählen?",
+      "a": "WordPress war lange Zeit der Standard, ist jedoch eine monolithische Architektur, die für moderne Enterprise-Anforderungen oft zu langsam, unsicher und starr ist. Insbesondere im Frankfurter Finanz- und B2B-Sektor, wo Datensicherheit und schnelle Ladezeiten essenziell sind, birgt WordPress durch unzählige Drittanbieter-Plugins erhebliche Sicherheitsrisiken. Next.js hingegen entkoppelt das Frontend vom Backend (Headless). Dies führt zu unknackbarer Sicherheit (keine direkte Datenbankverbindung im Browser), extrem schnellen Ladezeiten durch Server-Side Rendering (SSR) und einer Skalierbarkeit, die von Tech-Giganten weltweit geschätzt wird."
+    },
+    {
+      "q": "Wie gewährleistet Coday höchste Datensicherheit für sensible Finanzdaten?",
+      "a": "Unsere Jamstack-Architektur eliminiert herkömmliche Angriffsflächen. Wir setzen auf strikte Content Security Policies (CSP), sichern Schnittstellen durch moderne Edge-Middleware ab und nutzen Enterprise-Grade Authentifizierungssysteme wie Supabase Auth. Da das CMS (wie Sanity) komplett vom öffentlichen Frontend isoliert läuft, können Hacker selbst im schlimmsten Fall nicht über die Website auf das Backend zugreifen. Zudem schützt das Hosting über Vercel durch integrierte Edge-Security vor DDoS-Attacken."
+    },
+    {
+      "q": "Ist ein Headless CMS wie Sanity schwierig für unser Marketing-Team in Frankfurt zu bedienen?",
+      "a": "Ganz im Gegenteil. Einer der größten Vorteile von Sanity v3 ist die hochgradig individualisierbare Benutzeroberfläche. Wir konfigurieren das Dashboard (Sanity Studio) exakt nach den Workflows Ihres Teams. Redakteure profitieren von Echtzeit-Kollaboration (ähnlich wie in Google Docs), visuellen Previews und strukturiertem Content-Editing. Sie müssen sich nie wieder mit zerschossenen Layouts oder überladenen Page-Buildern herumschlagen, sondern können sich zu 100% auf den redaktionellen Inhalt konzentrieren."
+    },
+    {
+      "q": "Was sind die Google Core Web Vitals und warum sind sie für unsere Agentur-Website so wichtig?",
+      "a": "Die Core Web Vitals sind Googles wichtigste Metriken für die User Experience: LCP (Ladezeit), INP (Reaktionszeit) und CLS (visuelle Stabilität). In einem hart umkämpften Markt wie Frankfurt entscheidet die Performance über das Suchmaschinen-Ranking und die Conversion-Rate. B2B-Entscheider brechen den Besuch ab, wenn eine Seite länger als 3 Sekunden lädt. Wir optimieren unsere Next.js-Anwendungen so strikt, dass wir diese Metriken nicht nur erfüllen, sondern dominieren – was Ihnen einen direkten Wettbewerbsvorteil in der Sichtbarkeit verschafft."
+    },
+    {
+      "q": "Wie funktioniert die Integration unserer bestehenden CRM- und ERP-Systeme?",
+      "a": "Dank des API-First-Ansatzes von Next.js können wir nahezu jedes moderne System nahtlos anbinden. Ob Salesforce, HubSpot, SAP oder maßgeschneiderte Inhouse-Lösungen Ihrer Frankfurter IT-Abteilung – wir rufen die benötigten Daten sicher über sichere Schnittstellen ab und rendern sie performant im Frontend. Dies ermöglicht beispielsweise hochkomplexe Kundenportale, Live-Börsendaten-Integrationen oder personalisierte B2B-Dashboards ohne Systembrüche."
+    },
+    {
+      "q": "Wie lange dauert die Entwicklung einer High-End Corporate Website durch Coday?",
+      "a": "Qualität auf Enterprise-Niveau erfordert Präzision. Abhängig von der Komplexität der Datenmigration, den gewünschten API-Integrationen und dem Umfang des UI-Designs liegt die Entwicklungszeit in der Regel zwischen 8 und 16 Wochen. Dieser Zeitrahmen umfasst eine gründliche technische Konzeption, das maßgeschneiderte Design, die rigorose Programmierung in TypeScript, umfassende QA-Tests (Typecheck, Linting, End-to-End) sowie die finale Performance-Optimierung vor dem Live-Gang."
+    },
+    {
+      "q": "Sind die von Ihnen erstellten Plattformen vollständig DSGVO-konform?",
+      "a": "Absolut. Datenschutz ist, besonders im Raum Frankfurt am Main, nicht verhandelbar. Wir konzipieren Ihre Architektur nach dem Prinzip 'Privacy by Design'. Wir vermeiden unnötige Third-Party-Skripte, implementieren Cookie-freie Analytics-Optionen (sofern gewünscht), sorgen für ein sicheres Session-Management und hosten Daten auf Servern in der Europäischen Union (z.B. Frankfurt Region), um die strengen Richtlinien der DSGVO ausnahmslos zu erfüllen."
+    },
+    {
+      "q": "Bieten Sie auch langfristige Wartung und Weiterentwicklung nach dem Launch an?",
+      "a": "Ja, Coday ist Ihr langfristiger Technologiepartner. Nach dem Launch bieten wir dedizierte Service-Level-Agreements (SLAs) an. Wir übernehmen das kontinuierliche Performance-Monitoring, spielen Sicherheitsupdates auf Ebene der Abhängigkeiten ein (überwacht durch striktes Dependency-Management) und entwickeln Ihre Plattform agil weiter. So stellen wir sicher, dass Ihre digitale Infrastruktur auch Jahre nach dem Launch den technologischen Standard am Markt definiert."
+    },
+    {
+      "q": "Was kostet eine Next.js Headless Architektur im Vergleich zu WordPress?",
+      "a": "Die Initialkosten einer maßgeschneiderten Next.js Architektur sind aufgrund der höheren Ingenieursleistung (TypeScript, React, Custom API-Architektur) in der Regel höher als bei einer Template-basierten WordPress-Seite. Betrachtet man jedoch die Total Cost of Ownership (TCO) auf 3-5 Jahre, ist Next.js deutlich lukrativer: Sie sparen immense Kosten für ständige Sicherheitswartungen, Server-Upgrades bei Traffic-Spitzen und teure Relaunches aufgrund veralteter Systeme. Zudem amortisiert sich die Investition durch messbar höhere B2B-Conversion-Raten und sinkende Absprungraten."
+    },
+    {
+      "q": "Was bedeutet 'Solo Headless Web Agency' für die Umsetzung meines Projekts?",
+      "a": "Als Solo-Agency betreut der Gründer Umutcan Emre Tezgel Ihr Projekt von der ersten strategischen Beratung bis zum letzten Commit im Code selbst. Dies bedeutet: Keine Reibungsverluste durch Account-Manager, keine Weitergabe an unerfahrene Junior-Entwickler und absolute Transparenz. Sie arbeiten direkt mit einem Senior-Software-Ingenieur zusammen, der die volle architektonische Verantwortung trägt und eine Code-Qualität garantiert, die in traditionellen Agentur-Setups oft an enge Budgets und knappe Deadlines scheitert."
+    },
+    {
+      "q": "Wir haben sehr spezifische Design-Richtlinien. Können diese in Next.js abgebildet werden?",
+      "a": "Uneingeschränkt. Im Gegensatz zu WordPress-Themes gibt es bei unserer Webentwicklung keinerlei Layout-Restriktionen. Wir nutzen Tailwind CSS 4, um Ihr Corporate Design pixelgenau und kompromisslos in Code zu übersetzen. Von spezifischen Typografie-Hierarchien bis hin zu komplexen, Hardware-beschleunigten Micro-Interaktionen und Animationen – wir realisieren ein Frontend, das Ihre Marke exakt so repräsentiert, wie es Ihre CI-Vorgaben definieren."
+    },
+    {
+      "q": "Wie wird das Hosting bei Next.js realisiert?",
+      "a": "Wir nutzen primär Vercel, die Schöpfer von Next.js, als Hosting-Plattform. Vercel bietet ein globales Edge-Netzwerk, das statische Assets und Serverless-Functions ausliefert. Für Sie in Frankfurt bedeutet das: Besucher Ihrer Seite rufen die Daten aus dem nächstgelegenen Rechenzentrum (z.B. Frankfurt) ab. Das Resultat ist eine unschlagbare Latenz, automatische Skalierung bei Traffic-Spitzen ohne manuelles Server-Management und eine Ausfallsicherheit (Uptime), die herkömmliche vServer weit übertrifft."
+    },
+    {
+      "q": "Wie schnell lässt sich ein Redesign oder ein Feature-Update umsetzen?",
+      "a": "Sehr schnell und vor allem sicher. Durch unsere modulare Architektur (React Components) und strenge Qualitätsrichtlinien (TypeScript, Linting) können neue Features isoliert entwickelt und getestet werden, ohne den Rest des Systems zu gefährden. Wenn Ihr Frankfurter Unternehmen eine neue Landingpage für eine Kampagne benötigt, kann das Marketing-Team diese oft autark im Headless CMS aus bestehenden Komponenten zusammenstellen, ohne dass ein Entwickler eingreifen muss."
+    },
+    {
+      "q": "Ist Next.js gut für SEO und lokale Sichtbarkeit in Frankfurt am Main?",
+      "a": "Next.js ist das mächtigste Tool für moderne Suchmaschinenoptimierung. Da die Seiten serverseitig vorgerendert werden (SSR) oder bereits als statisches HTML vorliegen (SSG), kann der Google-Bot den Inhalt sofort und vollständig lesen – anders als bei traditionellen Single Page Applications (SPAs). In Kombination mit unseren optimierten Core Web Vitals, semantischem HTML und strukturierter Datenauszeichnung (JSON-LD) schaffen wir die besten technischen Voraussetzungen, um Ihre Sichtbarkeit im Frankfurter Markt massiv zu steigern."
+    },
+    {
+      "q": "Kann ich mein aktuelles WordPress-Frontend behalten und Next.js integrieren?",
+      "a": "Wir empfehlen einen vollständigen Wechsel für maximale Performance und Sicherheit. Es ist jedoch möglich, WordPress temporär als Headless CMS weiterzunutzen und das Frontend in Next.js komplett neu zu schreiben. Dies ist oft ein guter erster Schritt in Richtung Entkopplung. Das langfristige Ziel für High-End Ansprüche sollte jedoch der Wechsel auf ein dediziertes Headless CMS wie Sanity sein, um die architektonischen Altlasten von WordPress endgültig hinter sich zu lassen."
+    }
+  ]
+}

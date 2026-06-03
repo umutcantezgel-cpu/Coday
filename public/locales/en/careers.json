@@ -1,52 +1,37 @@
 {
   "benefits": {
     "hero": {
-      "badge": "Perks & Extras",
-      "desc": "We demand a lot, but we give a lot back. Our benefits are designed to watch your back.",
-      "title": "More than just Salary."
+      "badge": "Benefits",
+      "desc": "We offer more than just a job.",
+      "title": "Your Benefits at Coday"
     },
     "items": [
       {
-        "icon": "laptop_mac",
-        "text": "Latest MacBook Pro, 4K Monitor, and Noise-Cancelling Headphones of your choice.",
-        "title": "Top Hardware"
+        "icon": "rocket_launch",
+        "title": "Growth",
+        "text": "Continuous learning."
       },
       {
-        "icon": "home",
-        "text": "Work from where you want. We finance your home office or co-working space.",
-        "title": "Work from Anywhere"
+        "icon": "heart",
+        "title": "Health",
+        "text": "We care about your health."
       },
       {
-        "icon": "flight_takeoff",
-        "text": "Twice a year the whole team flies to a sunny place to work and celebrate.",
-        "title": "Workations"
-      },
-      {
-        "icon": "payments",
-        "text": "We pay top salaries for top talent. Including profit sharing.",
-        "title": "Top Salary"
-      },
-      {
-        "icon": "school",
-        "text": "€2,000 per year for courses, conferences, and books. Your growth is important to us.",
-        "title": "Education Budget"
-      },
-      {
-        "icon": "fitness_center",
-        "text": "Sports membership and monthly health bonus.",
-        "title": "Health"
+        "icon": "users",
+        "title": "Great Team",
+        "text": "We work together on exciting projects."
       }
     ]
   },
   "culture": {
     "hero": {
-      "badge": "The DNA",
-      "desc": "Not an agency like any other. We are a team of elite engineers, designers, and strategists with one goal: To dominate our clients' markets.",
-      "title_gradient": "And that is good.",
-      "title_start": "We are different."
+      "badge": "About us",
+      "desc": "We work with passion, transparency, and innovation.",
+      "title_gradient": "Culture",
+      "title_start": "Our"
     },
     "team": {
-      "desc": "People make the difference.",
+      "desc": "Meet the people behind Coday.",
       "members": [
         {
           "funfact": "Strategy & Scaling",
@@ -73,12 +58,16 @@
           "role": "Art Director"
         }
       ],
-      "title": "The Minds Behind It"
+      "title": "The Team"
     },
     "values": {
-      "desc": "Culture is what happens when no one is looking. These principles guide every decision we make.",
-      "items": ["100% Remote, 100% Focus", "Radical Honesty", "Results over Face Time"],
-      "title": "Our Rules."
+      "desc": "This is what matters to us.",
+      "items": [
+        "Transparency in every step",
+        "Highest code quality",
+        "True partnerships"
+      ],
+      "title": "Our Values"
     },
     "values_deck": {
       "deep_work": {
@@ -107,45 +96,33 @@
     "title_start": "No Standard."
   },
   "jobs": {
-    "button": "Apply",
-    "culture_badge": "Our Culture",
+    "button": "Apply now",
+    "culture_badge": "Culture",
     "details": {
       "fulltime": "Full-time",
       "parttime": "Part-time / Freelance",
       "type": "Remote (DE)"
     },
-    "hero_desc": "We eliminate the inefficiencies of the traditional agency world. No bureaucracy. Only engineering excellence, scaling, and measurable success.",
-    "hero_rotating": ["Future.", "Excellence.", "Innovation.", "Elite."],
-    "hero_title_prefix": "Join the",
+    "hero_desc": "Join our team and shape the digital future.",
+    "hero_rotating": [
+      "Developers",
+      "Designers",
+      "Talents"
+    ],
+    "hero_title_prefix": "We are hiring",
     "list": [
       {
-        "desc": "Develop high-performance user interfaces and scale our Aurora Design System. Do you stand for technical perfection?",
-        "id": 1,
-        "location": "Remote",
-        "mailtoSubject": "Application as Frontend Engineer",
-        "title": "Senior Frontend Engineer (React/Next.js)",
-        "type": "Full-time"
-      },
-      {
-        "desc": "Create data-driven visual experiences with maximum conversion rates. From concept to high-fidelity prototype.",
-        "id": 2,
-        "location": "Remote",
-        "mailtoSubject": "Application as Designer",
-        "title": "Senior Product Designer (UX/UI)",
-        "type": "Full-time"
-      },
-      {
-        "desc": "Scale our enterprise clients and optimize complex sales funnels. Analytical, strategic, and closing-oriented.",
-        "id": 3,
-        "location": "Remote",
-        "mailtoSubject": "Application as Growth Marketing Lead",
-        "title": "Growth Marketing Lead",
-        "type": "Full-time"
+        "id": "1",
+        "type": "Full-time",
+        "location": "Wetzlar / Remote",
+        "title": "Senior Frontend Developer",
+        "desc": "We are looking for an experienced frontend developer with React and Next.js experience.",
+        "mailtoSubject": "Application for Senior Frontend Developer"
       }
     ],
     "no_jobs": {
-      "button": "Apply Speculatively",
-      "desc": "We are always looking for exceptional talent. Send us your speculative application and tell us how you can help us succeed.",
+      "button": "Unsolicited Application",
+      "desc": "We are always looking for talents. Send us an unsolicited application!",
       "title": "No suitable position?"
     },
     "title": "Open Positions"

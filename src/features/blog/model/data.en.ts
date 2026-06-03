@@ -1411,7 +1411,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Government',
     readTime: '12 min.',
     image:
-      '/images/portfolio/mockup-website-immobilienagentur-real-estate-listings-preise-berlin.webp',
+      '/images/hero/geschaeftsfrau-smartphone-karte-location-pin-ihr-lokales-unternehmen-handwerker-kmu.webp',
     alt: 'Digital Citizen ID Card',
     author: 'Coday Public Sector',
     date: 'August 2, 2026',

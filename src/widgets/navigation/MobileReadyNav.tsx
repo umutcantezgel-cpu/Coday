@@ -299,7 +299,7 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
             </React.Suspense>
 
             <Link
-              href="/packages"
+              href="/pricing"
               className="nav-pill-cta hidden xl:flex"
               style={{
                 backgroundColor: 'var(--color-accent-700)',

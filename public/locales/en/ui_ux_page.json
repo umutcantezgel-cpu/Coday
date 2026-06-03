@@ -1,0 +1,23 @@
+{
+  "deliverables": {
+    "title": "Was Sie erhalten"
+  },
+  "faq": {
+    "title": "Häufige Fragen zu UI/UX"
+  },
+  "hero": {
+    "badge": "UI/UX Design",
+    "cta": "Design-Audit anfragen",
+    "description": "Wir kreieren digitale Erlebnisse, die nicht nur beeindrucken, sondern auch konvertieren.",
+    "title_prefix": "Intuitives",
+    "title_suffix": "Nutzererlebnis"
+  },
+  "process": {
+    "description": "Ein iterativer Design-Prozess stellt sicher, dass wir die Bedürfnisse Ihrer Nutzer exakt treffen.",
+    "title": "Unser Design-Prozess"
+  },
+  "psychology": {
+    "description": "Design basiert bei uns auf psychologischen Prinzipien, die das Nutzerverhalten positiv steuern.",
+    "title": "Design trifft auf Psychologie"
+  }
+}
