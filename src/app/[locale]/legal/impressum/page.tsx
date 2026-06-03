@@ -50,8 +50,8 @@ export default async function ImpressumPage({ params }: { params: Promise<{ loca
         </h2>
         <p>
           {isEn
-            ? 'Small business according to § 19 UStG — no VAT is charged.'
-            : 'Kleinunternehmer gemäß § 19 UStG — es wird keine Umsatzsteuer ausgewiesen.'}
+            ? 'VAT ID: (To be updated)'
+            : 'USt-IdNr.: (wird nachgereicht)'}
         </p>
 
         <h2 className="text-xl font-semibold text-secondary-900 mt-8">
