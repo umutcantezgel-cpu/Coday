@@ -199,21 +199,21 @@ export const ContactClient: React.FC = () => {
                       </h3>
                       <div className="flex gap-3">
                         <a
-                          href="/contact"
+                          href="https://www.instagram.com/codayweb/" target="_blank" rel="noopener noreferrer"
                           aria-label="Instagram"
                           className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors motion-reduce:duration-[0.01ms]"
                         >
                           <OptimizedIcon icon={InstagramLogo} />
                         </a>
                         <a
-                          href="/contact"
+                          href="https://www.linkedin.com/in/umutcan-emre-tezgel-65a41a3aa/" target="_blank" rel="noopener noreferrer"
                           aria-label="LinkedIn"
                           className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors motion-reduce:duration-[0.01ms]"
                         >
                           <OptimizedIcon icon={LinkedinLogo} />
                         </a>
                         <a
-                          href="/contact"
+                          href="https://www.facebook.com/profile.php?id=61588758264018" target="_blank" rel="noopener noreferrer"
                           aria-label="Facebook"
                           className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors motion-reduce:duration-[0.01ms]"
                         >

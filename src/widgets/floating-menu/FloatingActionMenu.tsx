@@ -48,7 +48,7 @@ export const FloatingActionMenu: React.FC = () => {
             className="absolute bottom-full right-16 mb-2 bg-white rounded-2xl shadow-xl p-3 flex flex-col gap-3 border border-gray-100"
           >
             <a
-              href="/contact"
+              href="https://www.linkedin.com/in/umutcan-emre-tezgel-65a41a3aa/" target="_blank" rel="noopener noreferrer"
               className="p-2 hover:bg-gray-50 rounded-xl text-info transition-colors motion-reduce:duration-[0.01ms] flex items-center gap-3 w-32"
               aria-label="Besuchen Sie uns auf LinkedIn"
             >
@@ -56,7 +56,7 @@ export const FloatingActionMenu: React.FC = () => {
               <span className="text-sm font-bold text-gray-700">LinkedIn</span>
             </a>
             <a
-              href="/contact"
+              href="https://www.instagram.com/codayweb/" target="_blank" rel="noopener noreferrer"
               className="p-2 hover:bg-gray-50 rounded-xl text-error transition-colors motion-reduce:duration-[0.01ms] flex items-center gap-3 w-32"
               aria-label="Besuchen Sie uns auf Instagram"
             >
@@ -72,7 +72,7 @@ export const FloatingActionMenu: React.FC = () => {
               <span className="text-sm font-bold text-gray-700">Twitter</span>
             </a>
             <a
-              href="/contact"
+              href="https://www.facebook.com/profile.php?id=61588758264018" target="_blank" rel="noopener noreferrer"
               className="p-2 hover:bg-gray-50 rounded-xl text-info transition-colors motion-reduce:duration-[0.01ms] flex items-center gap-3 w-32"
               aria-label="Besuchen Sie uns auf Facebook"
             >
