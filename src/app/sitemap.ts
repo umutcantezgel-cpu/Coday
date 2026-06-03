@@ -60,75 +60,50 @@ function sitemapEntry(
   };
 }
 
-/**
- * Pagination for large sitemaps (>50,000 URLs).
- */
-export async function generateSitemaps() {
-  const query = `count(*[_type in ["post", "caseStudy", "service", "location"] && !(_id in path("drafts.**"))])`;
-  const count = await fetchSanity<number>(query, true);
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  // Static routes
+  const staticRoutes: MetadataRoute.Sitemap = [
+    // Homepage — highest priority
+    sitemapEntry('/', { changeFrequency: 'weekly', priority: 1.0 }),
+    // Money pages
+    sitemapEntry('/about', { changeFrequency: 'monthly', priority: 0.8 }),
+    sitemapEntry('/services', { changeFrequency: 'monthly', priority: 0.9 }),
+    sitemapEntry('/work', { changeFrequency: 'monthly', priority: 0.8 }),
+    sitemapEntry('/process', { changeFrequency: 'monthly', priority: 0.7 }),
+    sitemapEntry('/pricing', { changeFrequency: 'monthly', priority: 0.8 }),
+    sitemapEntry('/contact', { changeFrequency: 'monthly', priority: 0.7 }),
+    
+    // Knowledge & Community
+    sitemapEntry('/knowledge/blog', { changeFrequency: 'weekly', priority: 0.7 }),
+    sitemapEntry('/knowledge/academy', { changeFrequency: 'monthly', priority: 0.6 }),
+    sitemapEntry('/knowledge/faq', { changeFrequency: 'monthly', priority: 0.6 }),
+    sitemapEntry('/community/events', { changeFrequency: 'monthly', priority: 0.6 }),
+    
+    // Corporate
+    sitemapEntry('/career', { changeFrequency: 'monthly', priority: 0.7 }),
+    sitemapEntry('/presse', { changeFrequency: 'monthly', priority: 0.6 }),
+    sitemapEntry('/partnerschaft', { changeFrequency: 'monthly', priority: 0.6 }),
+    
+    // Tools
+    sitemapEntry('/analyzer', { changeFrequency: 'weekly', priority: 0.8 }),
+    sitemapEntry('/calculator', { changeFrequency: 'monthly', priority: 0.7 }),
 
-  const staticCount = 10; // Approximate number of static routes
-  const totalUrls = count + staticCount;
-  const sitemapsCount = Math.ceil(totalUrls / SITEMAP_LIMIT);
-
-  return Array.from({ length: Math.max(1, sitemapsCount) }, (_, id) => ({ id }));
-}
-
-/**
- * Generate sitemap entries for a specific sitemap ID.
- */
-export default async function sitemap({ id }: { id: number }): Promise<MetadataRoute.Sitemap> {
-  const isFirstSitemap = id === 0;
-
-  // Static routes (only in the first sitemap)
-  const staticRoutes: MetadataRoute.Sitemap = isFirstSitemap
-    ? [
-        // Homepage — highest priority
-        sitemapEntry('/', { changeFrequency: 'weekly', priority: 1.0 }),
-        // Money pages
-        sitemapEntry('/about', { changeFrequency: 'monthly', priority: 0.8 }),
-        sitemapEntry('/services', { changeFrequency: 'monthly', priority: 0.9 }),
-        sitemapEntry('/work', { changeFrequency: 'monthly', priority: 0.8 }),
-        sitemapEntry('/process', { changeFrequency: 'monthly', priority: 0.7 }),
-        sitemapEntry('/pricing', { changeFrequency: 'monthly', priority: 0.8 }),
-        sitemapEntry('/contact', { changeFrequency: 'monthly', priority: 0.7 }),
-        
-        // Knowledge & Community
-        sitemapEntry('/knowledge/blog', { changeFrequency: 'weekly', priority: 0.7 }),
-        sitemapEntry('/knowledge/academy', { changeFrequency: 'monthly', priority: 0.6 }),
-        sitemapEntry('/knowledge/faq', { changeFrequency: 'monthly', priority: 0.6 }),
-        sitemapEntry('/community/events', { changeFrequency: 'monthly', priority: 0.6 }),
-        
-        // Corporate
-        sitemapEntry('/career', { changeFrequency: 'monthly', priority: 0.7 }),
-        sitemapEntry('/presse', { changeFrequency: 'monthly', priority: 0.6 }),
-        sitemapEntry('/partnerschaft', { changeFrequency: 'monthly', priority: 0.6 }),
-        
-        // Tools
-        sitemapEntry('/analyzer', { changeFrequency: 'weekly', priority: 0.8 }),
-        sitemapEntry('/calculator', { changeFrequency: 'monthly', priority: 0.7 }),
-
-        // Local SEO & Branches (High Priority for Wetzlar Dominance)
-        sitemapEntry('/standorte/wetzlar', { changeFrequency: 'monthly', priority: 0.9 }),
-        sitemapEntry('/standorte/hessen', { changeFrequency: 'monthly', priority: 0.8 }),
-        sitemapEntry('/standorte/giessen', { changeFrequency: 'monthly', priority: 0.8 }),
-        sitemapEntry('/branchen/handwerk', { changeFrequency: 'monthly', priority: 0.8 }),
-        sitemapEntry('/branchen/gastronomie', { changeFrequency: 'monthly', priority: 0.8 }),
-        sitemapEntry('/branchen/gesundheit', { changeFrequency: 'monthly', priority: 0.8 }),
-        sitemapEntry('/branchen/dienstleistung', { changeFrequency: 'monthly', priority: 0.8 }),
-        sitemapEntry('/branchen/immobilien', { changeFrequency: 'monthly', priority: 0.8 }),
-        sitemapEntry('/branchen/publicsector', { changeFrequency: 'monthly', priority: 0.8 }),
-        sitemapEntry('/branchen/retail', { changeFrequency: 'monthly', priority: 0.8 }),
-      ]
-    : [];
+    // Local SEO & Branches (High Priority for Wetzlar Dominance)
+    sitemapEntry('/standorte/wetzlar', { changeFrequency: 'monthly', priority: 0.9 }),
+    sitemapEntry('/standorte/hessen', { changeFrequency: 'monthly', priority: 0.8 }),
+    sitemapEntry('/standorte/giessen', { changeFrequency: 'monthly', priority: 0.8 }),
+    sitemapEntry('/branchen/handwerk', { changeFrequency: 'monthly', priority: 0.8 }),
+    sitemapEntry('/branchen/gastronomie', { changeFrequency: 'monthly', priority: 0.8 }),
+    sitemapEntry('/branchen/gesundheit', { changeFrequency: 'monthly', priority: 0.8 }),
+    sitemapEntry('/branchen/dienstleistung', { changeFrequency: 'monthly', priority: 0.8 }),
+    sitemapEntry('/branchen/immobilien', { changeFrequency: 'monthly', priority: 0.8 }),
+    sitemapEntry('/branchen/publicsector', { changeFrequency: 'monthly', priority: 0.8 }),
+    sitemapEntry('/branchen/retail', { changeFrequency: 'monthly', priority: 0.8 }),
+  ];
 
   // Dynamic content from Sanity (without drafts)
-  const staticCount = isFirstSitemap ? staticRoutes.length : 0;
-  const start = id * SITEMAP_LIMIT - (id > 0 ? staticRoutes.length : 0);
-  const end = start + SITEMAP_LIMIT - staticCount;
-
   const query = `
-    *[_type in ["post", "caseStudy", "service", "location"] && !(_id in path("drafts.**"))] | order(_updatedAt desc) [${start}...${end}] {
+    *[_type in ["post", "caseStudy", "service", "location"] && !(_id in path("drafts.**"))] | order(_updatedAt desc) {
       _id,
       _type,
       _updatedAt,
