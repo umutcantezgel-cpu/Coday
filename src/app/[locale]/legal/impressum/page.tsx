@@ -45,14 +45,7 @@ export default async function ImpressumPage({ params }: { params: Promise<{ loca
           E-Mail: umut@codayweb.de
         </p>
 
-        <h2 className="text-xl font-semibold text-secondary-900 mt-8">
-          {isEn ? 'VAT Information' : 'Umsatzsteuer'}
-        </h2>
-        <p>
-          {isEn
-            ? 'VAT ID: (To be updated)'
-            : 'USt-IdNr.: (wird nachgereicht)'}
-        </p>
+
 
         <h2 className="text-xl font-semibold text-secondary-900 mt-8">
           {isEn ? 'Responsible for Content' : 'Inhaltlich Verantwortlicher'}
