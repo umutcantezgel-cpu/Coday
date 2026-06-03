@@ -60,10 +60,10 @@ export const LocalSeoTemplate: React.FC<LocalSeoTemplateProps> = ({ content, cit
           <span className="text-primary-500 font-bold uppercase tracking-wider text-sm mb-4 block">
             {content.hero.headline}
           </span>
-          <h1 className="font-display font-black text-4xl sm:text-6xl text-white mb-6 tracking-tight">
+          <h1 className="font-display font-black text-4xl sm:text-6xl text-secondary-900 mb-6 tracking-tight">
             <BlurText text={content.hero.subheadline} delay={50} animateBy="words" />
           </h1>
-          <p className="text-xl text-gray-300 leading-relaxed mb-10 max-w-2xl mx-auto">
+          <p className="text-xl text-secondary-800 font-medium leading-relaxed mb-10 max-w-2xl mx-auto">
             {content.hero.description}
           </p>
           <Link href="/contact">
@@ -104,7 +104,7 @@ export const LocalSeoTemplate: React.FC<LocalSeoTemplateProps> = ({ content, cit
               <h2 className="font-display font-bold text-3xl sm:text-4xl text-secondary-900 mb-6">
                 {content.localDominance.title}
               </h2>
-              <p className="text-lg text-secondary-700 mb-8">
+              <p className="text-lg text-secondary-800 font-medium mb-8">
                 {content.localDominance.description}
               </p>
               <ul className="space-y-4">
@@ -119,7 +119,7 @@ export const LocalSeoTemplate: React.FC<LocalSeoTemplateProps> = ({ content, cit
             <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col items-center justify-center min-h-[400px]">
               <OptimizedIcon icon={MapPin} className="text-primary-500 w-24 h-24 mb-6 opacity-80" />
               <h3 className="text-2xl font-bold text-secondary-900 mb-2">{content.target.split('-').join(' ').toUpperCase()}</h3>
-              <p className="text-secondary-600 text-center">Digitale Transformation vor Ort.</p>
+              <p className="text-secondary-800 font-medium text-center">Digitale Transformation vor Ort.</p>
             </div>
           </div>
         </div>
@@ -137,7 +137,7 @@ export const LocalSeoTemplate: React.FC<LocalSeoTemplateProps> = ({ content, cit
             {content.faq.map((item, idx) => (
               <div key={idx} className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
                 <h3 className="text-lg font-bold text-secondary-900 mb-3">{item.q}</h3>
-                <p className="text-secondary-700 leading-relaxed">{item.a}</p>
+                <p className="text-secondary-800 font-medium leading-relaxed">{item.a}</p>
               </div>
             ))}
           </div>
@@ -148,7 +148,7 @@ export const LocalSeoTemplate: React.FC<LocalSeoTemplateProps> = ({ content, cit
       <section className="py-24 px-4 bg-gradient-to-br from-primary-900/10 to-bg-primary text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl font-bold text-secondary-900 mb-6">Bereit für messbares Wachstum?</h2>
-          <p className="text-xl text-secondary-700 mb-10 leading-relaxed">
+          <p className="text-xl text-secondary-800 font-medium mb-10 leading-relaxed">
             Lassen Sie uns gemeinsam herausfinden, wie wir Ihr Unternehmen durch High-End Webdesign an die Spitze bringen.
           </p>
           <Link href="/contact">
