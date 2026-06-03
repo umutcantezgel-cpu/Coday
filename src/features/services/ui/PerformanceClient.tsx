@@ -27,7 +27,7 @@ export function PerformanceClient() {
   };
 
   return (
-    <div className="bg-background-light min-h-dvh">
+    <div className="bg-surface-base min-h-dvh">
       <SeoHead
         title={t('performance_page.meta.title')}
         description={t('performance_page.meta.description')}
@@ -39,7 +39,7 @@ export function PerformanceClient() {
           <span className="text-sapphire font-bold tracking-wider uppercase text-sm mb-4 block">
             {t('performance_page.hero.badge')}
           </span>
-          <h1 className="font-display font-black text-5xl sm:text-7xl lg:text-8xl text-secondary mb-8 tracking-tight">
+          <h1 className="font-display font-black text-5xl sm:text-7xl lg:text-8xl text-content-base mb-8 tracking-tight text-balance">
             <BlurText
               text={t('performance_page.hero.title_prefix')}
               delay={100}
@@ -55,7 +55,7 @@ export function PerformanceClient() {
               {t('performance_page.hero.title_suffix')}
             </GradientText>
           </h1>
-          <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto mb-12">
+          <p className="text-xl text-content-muted leading-relaxed max-w-prose text-pretty max-w-2xl mx-auto mb-12">
             {t('performance_page.hero.description')}
           </p>
         </div>
@@ -71,10 +71,10 @@ export function PerformanceClient() {
           <span className="text-sapphire font-bold uppercase tracking-wider text-sm mb-4 block">
             {t('performance_page.google_values.badge')}
           </span>
-          <h2 className="font-display font-bold text-3xl sm:text-4xl text-secondary mb-4">
+          <h2 className="font-display font-bold text-3xl sm:text-4xl text-content-base mb-4 text-balance">
             {t('performance_page.google_values.title')}
           </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+          <p className="text-lg text-content-muted max-w-2xl mx-auto">
             {t.rich("performance_page.google_values.description", { i: (chunks) => <i>{chunks}</i> })}
           </p>
         </div>
@@ -89,7 +89,7 @@ export function PerformanceClient() {
       <section className="py-24 bg-surface-dark text-white">
         <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-8 text-center">
           <div>
-            <div className="text-5xl font-black text-primary mb-2">
+            <div className="text-5xl font-black text-action-primary mb-2 text-balance">
               <CountUp from={0} to={99} duration={2} />%
             </div>
             <div className="uppercase tracking-widest text-sm text-gray-400">
@@ -97,7 +97,7 @@ export function PerformanceClient() {
             </div>
           </div>
           <div>
-            <div className="text-5xl font-black text-primary mb-2">
+            <div className="text-5xl font-black text-action-primary mb-2 text-balance">
               <CountUp from={0} to={0.5} duration={2} />s
             </div>
             <div className="uppercase tracking-widest text-sm text-gray-400">
@@ -105,13 +105,13 @@ export function PerformanceClient() {
             </div>
           </div>
           <div>
-            <div className="text-5xl font-black text-primary mb-2">0</div>
+            <div className="text-5xl font-black text-action-primary mb-2 text-balance">0</div>
             <div className="uppercase tracking-widest text-sm text-gray-400">
               {t('performance_page.metrics.shift')}
             </div>
           </div>
           <div>
-            <div className="text-5xl font-black text-primary mb-2">100%</div>
+            <div className="text-5xl font-black text-action-primary mb-2 text-balance">100%</div>
             <div className="uppercase tracking-widest text-sm text-gray-400">
               {t('performance_page.metrics.eco')}
             </div>
@@ -120,7 +120,7 @@ export function PerformanceClient() {
       </section>
 
       {/* Relevant FAQs */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-surface-elevated">
         <RelevantFAQs serviceId="web-development" />
       </section>
     </div>

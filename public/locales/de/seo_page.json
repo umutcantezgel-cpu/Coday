@@ -1,0 +1,76 @@
+{
+  "case_study": {
+    "description": "Erfahren Sie, wie wir die Sichtbarkeit unserer Kunden signifikant steigern konnten.",
+    "label": "Erfolgsgeschichten",
+    "title": "Bewiesene Resultate"
+  },
+  "dominance": {
+    "cards": {
+      "content": {
+        "desc": "Zielgruppenorientierte Inhalte, die Nutzer und Suchmaschinen restlos überzeugen.",
+        "title": "Content-Strategie"
+      },
+      "regional": {
+        "desc": "Gezielte Optimierung für maximale Sichtbarkeit in Ihrem lokalen und regionalen Markt.",
+        "title": "Local SEO"
+      },
+      "technical": {
+        "desc": "Fehlerfreie Architektur, schnelle Ladezeiten und eine perfekte Crawlability.",
+        "title": "Technisches SEO"
+      }
+    },
+    "description": "Wir decken sämtliche Aspekte der modernen Suchmaschinenoptimierung ab.",
+    "title": "Ganzheitliche Optimierung"
+  },
+  "hero": {
+    "badge": "Datengetriebenes SEO",
+    "description": "Steigern Sie Ihre Sichtbarkeit und ziehen Sie organisch hochwertige Leads an.",
+    "title_prefix": "Dominieren Sie",
+    "title_suffix": "Ihren Markt"
+  },
+  "meta": {
+    "description": "Professionelle SEO-Optimierung für bessere Rankings und mehr qualifizierten Traffic.",
+    "title": "SEO Optimierung"
+  },
+  "problem": {
+    "description": "Eine noch so großartige Website bringt keinen Mehrwert, wenn sie nicht gefunden wird.",
+    "label": "Die Herausforderung",
+    "title": "Unsichtbarkeit kostet wertvollen Umsatz"
+  },
+  "process": {
+    "description": "Unser methodischer und datenbasierter Ansatz für nachhaltige Top-Rankings.",
+    "steps": {
+      "audit": {
+        "desc": "Umfassende Analyse des Status Quo und präzise Identifikation ungenutzter Potenziale.",
+        "title": "Technical Audit"
+      },
+      "implementation": {
+        "desc": "Sorgfältige technische und inhaltliche Umsetzung der definierten Optimierungsmaßnahmen.",
+        "title": "Implementierung"
+      },
+      "monitoring": {
+        "desc": "Kontinuierliche Überwachung der Rankings sowie proaktive Feinjustierung der Performance.",
+        "title": "Monitoring"
+      },
+      "strategy": {
+        "desc": "Entwicklung einer maßgeschneiderten, langfristigen Strategie basierend auf fundierten Daten.",
+        "title": "Strategie-Entwicklung"
+      }
+    },
+    "title": "Der Weg zur Spitze"
+  },
+  "ranking_factors": {
+    "badge": "Ranking-Faktoren",
+    "description": "Wir optimieren konsequent nach den aktuellsten Google-Richtlinien, insbesondere den Core Web Vitals.",
+    "title": "Performance trifft auf Relevanz"
+  },
+  "solution": {
+    "description": "Wir positionieren Sie präzise dort, wo Ihre potenziellen Kunden aktiv suchen.",
+    "label": "Unsere Lösung",
+    "title": "Nachhaltiges Wachstum durch organische Sichtbarkeit"
+  },
+  "tech_stack": {
+    "description": "Modernste Tools für tiefgreifende Marktanalysen und exaktes Tracking.",
+    "title": "Unser professioneller SEO-Stack"
+  }
+}

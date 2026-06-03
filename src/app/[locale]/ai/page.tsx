@@ -1,3 +1,4 @@
+import { generatePageMetadata } from '@/lib/metadata';
 import { AiHubClient } from '@/features/ai/ui/AiHubClient';
 import { getTranslations } from 'next-intl/server';
 import { Metadata } from 'next';

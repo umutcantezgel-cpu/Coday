@@ -126,7 +126,7 @@ export function Popover({
             }}
             style={{ transformOrigin: originStyles[position] }}
             className={cn(
-              'absolute z-50 min-w-48 rounded-xl bg-white p-4 shadow-xl ring-1 ring-black/5',
+              'absolute z-popover min-w-48 rounded-xl bg-surface-elevated p-4 shadow-flat-lg motion-safe:ease-spring motion-safe:duration-500',
               positionStyles[position],
               alignStyles[align],
               className

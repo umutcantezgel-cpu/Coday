@@ -128,8 +128,7 @@ export const workData: Record<string, Project> = {
           description:
             'Eine Next.js Applikation, die sich so flüssig anfühlt wie eine native App. Mit integriertem Terminkalender, Bad-Rechner und automatisierten Email-Flows. Wir haben ein hochmodernes, ansprechendes Webdesign entwickelt, das nicht nur ästhetisch überzeugt, sondern auch auf Conversion-Optimierung ausgelegt ist. Die Performance-Optimierung durch Headless-Architektur garantiert dabei blitzschnelle Ladezeiten, was sich signifikant auf das SEO-Ranking auswirkt.',
           images: [
-            '/images/portfolio/mockup-website-sanitaer-heizung-mueller-handwerker-24h-notdienst-responsive.webp',
-            '/images/portfolio/mockup-website-sanitaer-heizung-mueller-handwerker-24h-notdienst-responsive-640w.webp',
+            '/images/portfolio/batherm-illustration.webp',
           ],
           imageAlts: [
             'Webdesign für Sanitär & Heizung Batherm: Desktop und Mobile Responsive Mockup der neuen Handwerker-Website',
@@ -138,8 +137,7 @@ export const workData: Record<string, Project> = {
         },
         beforeAfter: {
           beforeImage: '/images/brand/coday-full.webp',
-          afterImage:
-            '/images/portfolio/mockup-website-sanitaer-heizung-mueller-handwerker-24h-notdienst-responsive.webp',
+          afterImage: '/images/portfolio/batherm-illustration.webp',
           beforeAlt: 'Alte, veraltete Website des Sanitärbetriebs Batherm ohne Conversion-Fokus',
           afterAlt: 'Neues, performantes Webdesign für Batherm mit Fokus auf Lead-Generierung',
         },
@@ -206,8 +204,7 @@ export const workData: Record<string, Project> = {
           description:
             'A Next.js application that feels as smooth as a native app. With integrated scheduling, bath calculator, and automated email flows.',
           images: [
-            '/images/portfolio/mockup-website-sanitaer-heizung-mueller-handwerker-24h-notdienst-responsive.webp',
-            '/images/portfolio/mockup-website-sanitaer-heizung-mueller-handwerker-24h-notdienst-responsive-640w.webp',
+            '/images/portfolio/batherm-illustration.webp',
           ],
           imageAlts: [
             'Web Design for HVAC Batherm: Desktop and Mobile Responsive Mockup of the new craftsmen website',
@@ -216,8 +213,7 @@ export const workData: Record<string, Project> = {
         },
         beforeAfter: {
           beforeImage: '/images/brand/coday-full.webp',
-          afterImage:
-            '/images/portfolio/mockup-website-sanitaer-heizung-mueller-handwerker-24h-notdienst-responsive.webp',
+          afterImage: '/images/portfolio/batherm-illustration.webp',
           beforeAlt:
             'Old, outdated website of the sanitary company Batherm without conversion focus',
           afterAlt: 'New, performant web design for Batherm with focus on lead generation',
@@ -300,7 +296,7 @@ export const workData: Record<string, Project> = {
           description:
             'Eine blitzschnelle Next.js-Applikation mit Fokus auf mobile Notfallkunden. Click-to-Call-Buttons, Echtzeit-Verfügbarkeitsanzeige und ein Trust-Marquee mit Zertifizierungen. Jede Unterseite ist für einen spezifischen Stadtteil optimiert.',
           images: [
-            '/images/portfolio/mockup-website-sanitaer-heizung-mueller-handwerker-24h-notdienst-responsive.webp',
+            '/images/hero/hexagon-collage-zimmermann-hammer-elektriker-kabel-bauarbeiter-helm-koch-brot-buero-laptop.webp',
           ],
           imageAlts: [
             'Responsive Website Design für Schlüsseldienst Wetzlar mit 24h Notdienst und Festpreisen',
@@ -371,7 +367,7 @@ export const workData: Record<string, Project> = {
           description:
             'A blazing-fast Next.js application focused on mobile emergency customers. Click-to-call buttons, real-time availability indicators, and a trust marquee with certifications. Every subpage is optimized for a specific district.',
           images: [
-            '/images/portfolio/mockup-website-sanitaer-heizung-mueller-handwerker-24h-notdienst-responsive.webp',
+            '/images/hero/hexagon-collage-zimmermann-hammer-elektriker-kabel-bauarbeiter-helm-koch-brot-buero-laptop.webp',
           ],
           imageAlts: [
             'Responsive website design for locksmith Wetzlar with 24h emergency service and fixed prices',
@@ -451,7 +447,7 @@ export const workData: Record<string, Project> = {
           description:
             'Eine einladende, blitzschnelle Website, die die Persönlichkeit des Gasthauses perfekt widerspiegelt. Mit integrierter Speisekarte, Google Maps-Anbindung und direkter Kontaktmöglichkeit.',
           images: [
-            '/images/portfolio/mockup-website-restaurant-speisekarte-vorspeisen-hauptgerichte-desserts-responsive.webp',
+            '/images/hero/kundenberatung-gespraech-meeting-service-professionell.webp',
           ],
           imageAlts: [
             'Responsive Website Design für Restaurant Lindener Ratsstuben mit digitaler Speisekarte',
@@ -517,7 +513,7 @@ export const workData: Record<string, Project> = {
           description:
             'An inviting, blazing-fast website that perfectly reflects the personality of the inn. With integrated menu, Google Maps integration, and direct contact options.',
           images: [
-            '/images/portfolio/mockup-website-restaurant-speisekarte-vorspeisen-hauptgerichte-desserts-responsive.webp',
+            '/images/hero/kundenberatung-gespraech-meeting-service-professionell.webp',
           ],
           imageAlts: [
             'Responsive website design for restaurant Lindener Ratsstuben with digital menu',

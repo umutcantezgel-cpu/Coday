@@ -71,7 +71,7 @@ export function Modal({
           <motion.div
             key="modal-overlay"
             exit={{ opacity: 0, transition: { duration: 0.15, ease: 'easeOut' } }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 isolate"
+            className="fixed inset-0 z-modal flex items-center justify-center p-4 isolate"
           >
             {/* Backdrop */}
             <motion.div
@@ -100,7 +100,7 @@ export function Modal({
                 ease: [0.23, 1, 0.32, 1], // Strong ease-out
               }}
               className={cn(
-                'relative w-full max-w-lg rounded-2xl bg-white p-6 shadow-xl ring-1 ring-black/5 origin-center',
+                'relative w-full max-w-lg rounded-2xl bg-surface-elevated p-6 shadow-flat-lg origin-center motion-safe:ease-spring motion-safe:duration-500',
                 className
               )}
               role="dialog"
@@ -117,7 +117,7 @@ export function Modal({
               {!hideCloseButton && (
                 <button
                   onClick={onClose}
-                  className="absolute right-4 top-4 rounded-full p-2 text-gray-400 transition-[transform,colors] duration-[160ms] ease-out hover:bg-gray-100 hover:text-gray-900 active:scale-[0.97] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
+                  className="absolute right-4 top-4 rounded-full p-2 text-gray-400 transition-[transform,colors] motion-safe:duration-500 motion-safe:ease-spring hover:bg-gray-100 hover:text-gray-900 active:scale-[0.97] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
                   aria-label="Close modal"
                 >
                   <X className="h-5 w-5" />

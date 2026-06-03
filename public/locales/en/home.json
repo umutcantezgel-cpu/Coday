@@ -8,7 +8,12 @@
       "Tailwind CSS Layouts.",
       "Sanity CMS Integration.",
       "Local development from Wetzlar."
-    ]
+    ],
+    "title": "AI-Augmented Web Development",
+    "subtitle": "High-end websites with React, TypeScript, and Headless CMS. Fixed pricing from €2,000.",
+    "cta": "Start Project",
+    "eyebrow": "High-End Digital Agency",
+    "view_projects": "Projekte ansehen"
   },
   "industries": {
     "card_consulting": {
@@ -154,5 +159,10 @@
     "title": "Our work speaks for itself.",
     "subtitle": "No assembly-line templates. Only hand-crafted high-performance platforms that exude dominance.",
     "cta": "All Case Studies"
+  },
+  "techStack": {
+    "eyebrow": "Core Tech Stack",
+    "headingPrefix": "High-End Architektur",
+    "headingSuffix": "für kompromisslose Performance"
   }
 }

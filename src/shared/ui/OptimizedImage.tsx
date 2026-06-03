@@ -18,6 +18,8 @@ interface OptimizedImageProps {
   style?: React.CSSProperties;
   title?: string;
   draggable?: boolean;
+  fetchPriority?: 'high' | 'low' | 'auto';
+  loading?: 'lazy' | 'eager';
 }
 
 // Default sizes attribute for responsive images when none is provided
@@ -33,6 +35,8 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   width,
   height,
   style,
+  fetchPriority,
+  loading,
   // srcSet is accepted but ignored — next/image generates its own
 }) => {
   const [hasError, setHasError] = useState(false);
@@ -82,6 +86,8 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
           priority={priority}
           sizes={sizes || DEFAULT_SIZES}
           onError={() => setHasError(true)}
+          {...(fetchPriority ? { fetchPriority } : {})}
+          {...(loading ? { loading } : {})}
         />
       </div>
     );
@@ -116,6 +122,8 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
         priority={priority}
         quality={80}
         onError={() => setHasError(true)}
+        {...(fetchPriority ? { fetchPriority } : {})}
+        {...(loading ? { loading } : {})}
       />
     </div>
   );

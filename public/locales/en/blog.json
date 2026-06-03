@@ -50,24 +50,24 @@
     "title": "Join 2,500+ <br /> Experts."
   },
   "dataMaturity": {
-    "bookAudit": "Book Audit",
-    "descriptions": {
-      "0": "You are flying blind. Your marketing budget is a gamble.",
-      "1": "You collect data but rarely use it for decisions.",
-      "2": "You know what happens and optimize based on numbers.",
-      "3": "Data is your unfair competitive advantage. Scaling is pure math."
-    },
-    "levels": {
-      "0": "Data-Blind",
-      "1": "Data-Tourist",
-      "2": "Data-Analyst",
-      "3": "Data-Dominator"
-    },
+    "bookAudit": "Request Audit",
+    "descriptions": [
+      "You rely heavily on gut feeling. Without a solid data structure, scaling is difficult.",
+      "You have initial tracking solutions in place, but aren't fully utilizing automation potential.",
+      "You actively use data, but could scale even more efficiently with predictive models.",
+      "Your marketing is highly data-driven. You are ready for AI-powered scaling."
+    ],
+    "levels": [
+      "Flying Blind",
+      "Basic Tracking",
+      "Advanced Tracking",
+      "Data-Driven"
+    ],
     "questionStep": "Question {current} of {total}",
-    "recommendation": "Our Recommendation",
+    "recommendation": "Our recommendation",
     "retry": "Retry Test",
     "title": "Data Maturity Check",
-    "yourStatus": "Your Data Maturity"
+    "yourStatus": "Your current status:"
   },
   "designPsychology": {
     "buyNow": "Buy Now",
@@ -117,7 +117,8 @@
   "highlight": "Highlight",
   "interactiveComponent": "Interactive Component",
   "keyTakeaways": {
-    "title": "Key Takeaways"
+    "title": "Wichtigste Erkenntnisse",
+    "share": "Auf Twitter teilen"
   },
   "loadingModule": "Loading Module...",
   "mobileSimulator": {

@@ -102,58 +102,11 @@ export const SeoHead: React.FC<SeoHeadProps> = ({
   // Manual Helmet workaround for links/meta removed. Using Helmet directly.
 
   return (
-    <>
-    <>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        {/* Google Search Console Verification */}
-        <meta
-          name="google-site-verification"
-          content="qkqa8A5TESjhVg1kESd65TRfn9HBiSMrMnNBTXAoOko"
-        />
-
-        {/* LCP Optimization */}
-        {preloadImage && (
-          <link
-            rel="preload"
-            as="image"
-            href={preloadImage}
-            fetchPriority="high"
-          />
-        )}
-
-        {/* Canonical & Hreflang */}
-        {links.map((link, index) => (
-          <link key={index} rel={link.rel} href={link.href} hrefLang={link.hreflang} />
-        ))}
-
-        {/* Open Graph */}
-        <meta property="og:site_name" content="Coday" />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:image" content={image} />
-        <meta property="og:image:alt" content={title} />
-        <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:locale" content={currentLang === 'en' ? 'en_US' : 'de_DE'} />
-        <meta property="og:locale:alternate" content={currentLang === 'en' ? 'de_DE' : 'en_US'} />
-        <meta property="og:type" content="website" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={image} />
-
-        {effectiveNoIndex && <meta name="robots" content="noindex, follow" />}
-      </>
-      <JsonLd
-        pageUrl={canonicalUrl}
-        breadcrumbs={breadcrumbs}
-        pageType={pageType}
-        data={schemaData}
-      />
-    </>
+    <JsonLd
+      pageUrl={canonicalUrl}
+      breadcrumbs={breadcrumbs}
+      pageType={pageType}
+      data={schemaData}
+    />
   );
 };

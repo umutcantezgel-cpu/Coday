@@ -1,8 +1,8 @@
 {
   "hero": {
-    "title": "Web Design Portfolio | Case Studies & Projects - Coday",
-    "description": "Explore our web design portfolio and SEO case studies. We build digital economic weapons for brands that want to dominate their industry.",
-    "label": "Evidence of Excellence",
+    "title": "Case Studies",
+    "description": "Here is what we have built.",
+    "label": "Our Work",
     "badge": "Our Work",
     "desc": "Every project tells a story. Here are our latest success stories that speak for themselves.",
     "title_gradient": "Results.",
@@ -10,19 +10,19 @@
   },
   "sections": {
     "in_progress": {
-      "title": "The Lab / In Progress",
-      "subtitle": "Live builds deploying in real-time."
+      "title": "In Progress",
+      "subtitle": "Things we are currently building."
     },
     "case_studies": {
       "title": "Selected Works"
     },
     "templates": {
-      "title": "The Vault",
-      "subtitle": "Production-ready templates optimized for speed and conversion."
+      "title": "Templates",
+      "subtitle": "Ready-to-use templates"
     }
   },
   "actions": {
-    "view_live": "View Live Build"
+    "view_live": "View Live"
   },
   "filter": {
     "all": "All",

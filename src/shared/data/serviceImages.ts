@@ -46,7 +46,7 @@ export const webDevImages: Record<string, { src: string; alt: string }> = {
     alt: 'images.web_dev.hero.alt',
   },
   solutions: {
-    src: '/images/services/mockup-website-b2b-loesungen-responsive-laptop-smartphone-prozessoptimierung.webp',
+    src: '/images/hero/business-handshake-partnerschaft-tuer-offen-zusammenarbeit-vertrauen.webp',
     alt: 'images.web_dev.solutions.alt',
   },
 };

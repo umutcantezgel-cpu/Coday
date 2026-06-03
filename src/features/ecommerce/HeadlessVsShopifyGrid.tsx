@@ -46,23 +46,23 @@ const HeadlessVsShopifyGrid: React.FC = () => {
   };
 
   return (
-    <div className="bg-surface-dark border border-white/10 rounded-3xl p-8 lg:p-12 relative overflow-hidden">
+    <div className="bg-surface-elevated shadow-flat border border-primary/10 rounded-3xl p-8 lg:p-12 relative overflow-hidden">
       <div className="grid lg:grid-cols-2 gap-12 mb-12">
         <div>
-          <h3 className="font-display font-bold text-2xl text-white mb-4">Architektur Vergleich</h3>
-          <p className="text-gray-400">
+          <h3 className="font-display font-bold text-2xl text-content-base mb-4">Architektur Vergleich</h3>
+          <p className="text-content-muted">
             Standard Shop vs. Headless Commerce. Was passt zu Ihrer Phase?
           </p>
         </div>
 
         {/* Tabs */}
-        <div className="flex bg-white/5 p-1 rounded-xl border border-white/10" role="group" aria-label="Phase auswählen">
+        <div className="flex bg-primary/5 p-1 rounded-xl border border-primary/10" role="group" aria-label="Phase auswählen">
           {(['startup', 'scaleup', 'enterprise'] as const).map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
               aria-pressed={activeTab === tab}
-              className={`active:scale-[0.97] flex-1 py-2 rounded-lg text-sm font-bold capitalize transition motion-reduce:duration-[0.01ms] ${activeTab === tab ? 'bg-primary text-white shadow-lg' : 'text-gray-400 hover:text-white'}`}
+              className={`active:scale-[0.97] flex-1 py-2 rounded-lg text-sm font-bold capitalize transition motion-reduce:duration-[0.01ms] ${activeTab === tab ? 'bg-primary text-white shadow-lg' : 'text-content-muted hover:text-content-base'}`}
             >
               {tab}
             </button>
@@ -70,7 +70,7 @@ const HeadlessVsShopifyGrid: React.FC = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 bg-white/5 border-b border-white/10 p-4 text-xs uppercase font-bold tracking-wider text-gray-500 mb-4 rounded-t-xl" role="row" aria-hidden="true">
+      <div className="grid grid-cols-3 bg-primary/5 border-b border-primary/10 p-4 text-xs uppercase font-bold tracking-wider text-content-muted mb-4 rounded-t-xl" role="row" aria-hidden="true">
         <div>Merkmal</div>
         <div>Standard (Shopify/Woo)</div>
         <div className="text-primary">Headless (Next.js)</div>
@@ -85,16 +85,16 @@ const HeadlessVsShopifyGrid: React.FC = () => {
         {comparisons[activeTab].map((item, idx) => (
           <div
             key={idx}
-            className="grid grid-cols-3 p-4 items-center border-b border-white/5 last:border-0 hover:bg-white/5 rounded-lg transition-colors motion-reduce:duration-[0.01ms]"
+            className="grid grid-cols-3 p-4 items-center border-b border-primary/5 last:border-0 hover:bg-primary/5 rounded-lg transition-colors motion-reduce:duration-[0.01ms]"
           >
-            <div className="font-bold text-white">{item.feat}</div>
+            <div className="font-bold text-content-base">{item.feat}</div>
             <div
-              className={`text-sm ${item.winner === 'std' ? 'text-green-400 font-bold' : 'text-gray-400'}`}
+              className={`text-sm ${item.winner === 'std' ? 'text-green-600 font-bold' : 'text-content-muted'}`}
             >
               {item.std}
             </div>
             <div
-              className={`text-sm ${item.winner === 'headless' ? 'text-primary font-bold' : 'text-gray-400'}`}
+              className={`text-sm ${item.winner === 'headless' ? 'text-primary font-bold' : 'text-content-muted'}`}
             >
               {item.headless}
             </div>

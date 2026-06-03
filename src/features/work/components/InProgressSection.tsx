@@ -16,19 +16,17 @@ export const InProgressSection: React.FC<InProgressSectionProps> = ({ projects }
   if (projects.length === 0) return null;
 
   return (
-    <section className="py-[var(--space-section)] bg-slate-900 border-y border-slate-800/50">
+    <section className="py-[var(--space-section)] bg-background-light">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between mb-12">
-          <div>
-            <h2 className="text-2xl font-bold text-white flex items-center gap-3">
-              <span className="w-3 h-3 bg-emerald-500 rounded-full animate-pulse motion-reduce:animate-none" aria-hidden="true" />
-              {t('sections.in_progress.title')}
-            </h2>
-            <p className="text-slate-400 mt-2">{t('sections.in_progress.subtitle')}</p>
-          </div>
+        <div className="flex flex-col items-center justify-center text-center mb-16">
+          <h2 className="text-3xl font-display font-bold text-neutral-900 dark:text-white flex items-center justify-center gap-3 mb-4">
+            <span className="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-pulse motion-reduce:animate-none" aria-hidden="true" />
+            {t('sections.in_progress.title')}
+          </h2>
+          <p className="text-neutral-500 dark:text-neutral-400 max-w-2xl">{t('sections.in_progress.subtitle')}</p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border-subtle rounded-xl overflow-hidden border border-border-subtle">
           {projects.map((project, index) => (
             <motion.a
               key={project.slug}
@@ -39,45 +37,46 @@ export const InProgressSection: React.FC<InProgressSectionProps> = ({ projects }
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
-              className="group relative bg-slate-950 border border-slate-800 rounded-xl p-6 overflow-hidden hover:border-emerald-500/50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500 focus-visible:border-emerald-500/50 transition-colors motion-reduce:duration-[0.01ms]"
+              className="group relative h-full bg-surface-elevated p-8 flex flex-col justify-between overflow-hidden hover:bg-neutral-50 dark:hover:bg-neutral-800/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary transition-colors motion-reduce:duration-[0.01ms]"
             >
-              <div className="flex justify-between items-start mb-6">
-                <div
-                  className={`w-12 h-12 rounded-lg ${project.heroImage} opacity-80 flex items-center justify-center`}
-                >
-                  <CircleNotch className="w-6 h-6 text-white animate-spin motion-reduce:animate-none" aria-hidden="true" />
+              <div>
+                <div className="flex justify-between items-start mb-8">
+                  <div className={`w-12 h-12 rounded-lg ${project.heroImage} opacity-80 flex items-center justify-center bg-neutral-200 dark:bg-neutral-800`}>
+                    <CircleNotch className="w-6 h-6 text-neutral-500 animate-spin motion-reduce:animate-none" aria-hidden="true" />
+                  </div>
+                  <span className="px-2 py-1 text-xs font-mono text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-500/10 rounded border border-emerald-200 dark:border-emerald-500/20">
+                    {project.completion}%
+                  </span>
                 </div>
-                <span className="px-2 py-1 text-xs font-mono text-emerald-400 bg-emerald-500/10 rounded border border-emerald-500/20">
-                  {project.completion}%
-                </span>
+
+                <h3 className="text-xl font-bold text-neutral-900 dark:text-white mb-2 group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms]">
+                  {project.content[currentLang].title}
+                </h3>
+                <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-8 line-clamp-2">
+                  {project.content[currentLang].subtitle}
+                </p>
               </div>
 
-              <h3 className="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors motion-reduce:duration-[0.01ms]">
-                {project.content[currentLang].title}
-              </h3>
-              <p className="text-sm text-slate-400 mb-4 line-clamp-2">
-                {project.content[currentLang].subtitle}
-              </p>
-
-              {/* Progress Bar */}
-              <div
-                className="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden mb-4"
-                role="progressbar"
-                aria-valuenow={project.completion}
-                aria-valuemin={0}
-                aria-valuemax={100}
-                aria-label={`${project.content[currentLang].title}: ${project.completion}% ${t('sections.in_progress.title')}`}
-              >
+              <div>
+                {/* Progress Bar */}
                 <div
-                  className="bg-emerald-500 h-full rounded-full"
-                  style={{ width: `${project.completion}%` }}
-                />
-              </div>
+                  className="w-full bg-neutral-200 dark:bg-neutral-800 h-1.5 rounded-full overflow-hidden mb-6"
+                  role="progressbar"
+                  aria-valuenow={project.completion}
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                  aria-label={`${project.content[currentLang].title}: ${project.completion}% ${t('sections.in_progress.title')}`}
+                >
+                  <div
+                    className="bg-emerald-500 h-full rounded-full transition-all duration-1000"
+                    style={{ width: `${project.completion}%` }}
+                  />
+                </div>
 
-              <div className="flex items-center text-xs font-bold text-emerald-500 uppercase tracking-wider group-hover:translate-x-2 transition-transform motion-reduce:duration-[0.01ms]">
-                <span>{t('actions.view_live')}</span>
-                <ArrowRight className="ml-2 w-3 h-3" aria-hidden="true" />
+                <div className="flex items-center text-xs font-bold text-primary uppercase tracking-wider group-hover:translate-x-2 transition-transform motion-reduce:duration-[0.01ms]">
+                  <span>{t('actions.view_live')}</span>
+                  <ArrowRight className="ml-2 w-3 h-3" aria-hidden="true" />
+                </div>
               </div>
             </motion.a>
           ))}

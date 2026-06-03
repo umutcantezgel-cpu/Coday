@@ -13,7 +13,7 @@ export const getDemoResult = (t: AnalyzerTranslator): AnalysisResult => ({
   duration: 1240,
   techStack: ['WordPress', 'jQuery', 'Apache'],
   screenshotUrl:
-    '/images/portfolio/mockup-website-immobilienagentur-real-estate-listings-preise-berlin.webp',
+    '/images/hero/geschaeftsfrau-smartphone-karte-location-pin-ihr-lokales-unternehmen-handwerker-kmu.webp',
 
   performance: {
     score: 35,

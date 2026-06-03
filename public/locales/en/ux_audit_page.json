@@ -1,0 +1,18 @@
+{
+  "deliverables": {
+    "title": "Konkrete Handlungsempfehlungen"
+  },
+  "hero": {
+    "badge": "UX-Audit",
+    "cta": "Audit starten",
+    "description": "Identifizieren Sie Reibungspunkte in Ihrer User Journey und steigern Sie Ihre Konversionsraten.",
+    "title_prefix": "Tiefgreifendes",
+    "title_suffix": "UX-Audit"
+  },
+  "stats": {
+    "conversion_label": "Konversionssteigerung"
+  },
+  "what_we_analyze": {
+    "title": "Unsere Analysepunkte"
+  }
+}

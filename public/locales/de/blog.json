@@ -50,24 +50,24 @@
     "title": "Schließen Sie sich <br /> 2.500+ Experten an."
   },
   "dataMaturity": {
-    "bookAudit": "Audit buchen",
-    "descriptions": {
-      "0": "Sie fliegen blind. Ihr Marketing-Budget ist ein Glücksspiel.",
-      "1": "Sie sammeln Daten, nutzen sie aber kaum für Entscheidungen.",
-      "2": "Sie wissen was passiert und optimieren basierend auf Zahlen.",
-      "3": "Daten sind Ihr unfairer Wettbewerbsvorteil. Skalierung ist reine Mathematik."
-    },
-    "levels": {
-      "0": "Daten-Blind",
-      "1": "Daten-Besucher",
-      "2": "Daten-Versteher",
-      "3": "Daten-Dominator"
-    },
+    "bookAudit": "Audit anfragen",
+    "descriptions": [
+      "Sie verlassen sich stark auf Ihr Bauchgefühl. Ohne saubere Datenstruktur ist es schwer zu skalieren.",
+      "Sie haben erste Tracking-Lösungen im Einsatz, schöpfen das Potenzial für Automatisierung aber nicht aus.",
+      "Sie nutzen Daten aktiv, könnten aber mit prädiktiven Modellen noch effizienter skalieren.",
+      "Ihr Marketing ist hochgradig datengetrieben. Sie sind bereit für AI-gestützte Skalierung."
+    ],
+    "levels": [
+      "Blindflug",
+      "Basis-Tracking",
+      "Erweitertes Tracking",
+      "Data-Driven"
+    ],
     "questionStep": "Frage {current} von {total}",
     "recommendation": "Unsere Empfehlung",
     "retry": "Test wiederholen",
-    "title": "Daten-Reifegrad Check",
-    "yourStatus": "Ihr Daten-Reifegrad"
+    "title": "Daten-Maturitäts-Check",
+    "yourStatus": "Ihr aktueller Status:"
   },
   "designPsychology": {
     "buyNow": "Jetzt kaufen",
@@ -117,7 +117,8 @@
   "highlight": "Highlight",
   "interactiveComponent": "Interaktives Element",
   "keyTakeaways": {
-    "title": "Kernaussagen"
+    "title": "Wichtigste Erkenntnisse",
+    "share": "Auf Twitter teilen"
   },
   "loadingModule": "Lade Modul...",
   "mobileSimulator": {

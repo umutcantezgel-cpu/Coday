@@ -63,7 +63,7 @@ export default function UseCasePage() {
           article: {
             headline: useCase.de.title,
             description: useCase.de.description,
-            image: '/images/og-image.jpg',
+            image: '/images/brand/coday-full.webp',
             author: 'Umutcan Tezgel',
             datePublished: new Date().toISOString().split('T')[0],
             articleSection: 'Case Studies',

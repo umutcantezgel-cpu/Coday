@@ -55,8 +55,8 @@ const SecurityGrid: React.FC = () => {
           <div className="w-10 h-10 mx-auto rounded-full bg-white/5 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms]">
             <OptimizedIcon icon={item.icon} className="text-xl" style={{ color: item.color }} />
           </div>
-          <div className="text-gray-400 text-xs uppercase tracking-wider mb-1">{item.title}</div>
-          <div className="text-white font-bold text-sm">{item.value}</div>
+          <div className="text-gray-400 text-xs uppercase tracking-wider mb-1 break-words hyphens-auto">{item.title}</div>
+          <div className="text-white font-bold text-sm break-words hyphens-auto">{item.value}</div>
         </div>
       ))}
     </div>

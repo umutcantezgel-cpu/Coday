@@ -1,0 +1,35 @@
+{
+  "not_found": "Projekt nicht gefunden",
+  "back_to_overview": "Zurück zur Übersicht",
+  "breadcrumb_projects": "Projekte",
+  "sidebar": {
+    "details": "Details",
+    "service": "Service",
+    "period": "Zeitraum",
+    "result": "Ergebnis",
+    "interested_title": "Interessiert an ähnlichen Ergebnissen?",
+    "request_project": "Projekt anfragen",
+    "client": "Kunde",
+    "industry": "Branche",
+    "services": "Leistungen",
+    "year": "Jahr"
+  },
+  "challenge": "Die Herausforderung",
+  "approach": "Unser Ansatz",
+  "results": "Die Ergebnisse",
+  "impact": "Messbarer Erfolg",
+  "before_after_title": "Vorher & Nachher",
+  "before": "Vorher",
+  "after": "Nachher",
+  "nav": {
+    "prev": "Vorheriges Projekt",
+    "next": "Nächstes Projekt"
+  },
+  "cta": {
+    "title": "Lassen Sie uns Großartiges erschaffen",
+    "button": "Jetzt anfragen"
+  },
+  "cta_title": "Überzeugt von diesen Resultaten?",
+  "cta_desc": "Lassen Sie uns in einem persönlichen Gespräch eruieren, wie wir ähnliche Ergebnisse für Ihr Unternehmen erzielen können.",
+  "cta_button": "Projekt anfragen"
+}

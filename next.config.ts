@@ -18,6 +18,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'images.provenexpert.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'picsum.photos',
+      },
     ],
   },
   reactStrictMode: true,
@@ -109,6 +113,16 @@ const nextConfig: NextConfig = {
       {
         source: '/:locale(de|en)/services/web-design/audit',
         destination: '/:locale/services/design/ux-audit',
+        permanent: true,
+      },
+      {
+        source: '/packages',
+        destination: '/pricing',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/packages',
+        destination: '/:locale/pricing',
         permanent: true,
       },
     ];

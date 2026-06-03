@@ -1,0 +1,50 @@
+{
+  "before_after": {
+    "description": "Ein direkter Vergleich zeigt die enorme Wirkung von professionellem High-End Design.",
+    "label": "Transformation",
+    "title": "Vorher & Nachher"
+  },
+  "case_study": {
+    "description": "Werfen Sie einen Blick auf unsere herausragenden Design-Projekte.",
+    "label": "Referenzprojekte",
+    "title": "Design in Aktion"
+  },
+  "design_system": {
+    "description": "Wir entwickeln umfassende Design-Systeme für einen konsistenten Markenauftritt.",
+    "label": "Skalierbarkeit",
+    "title": "Modulare Design Systeme"
+  },
+  "hero": {
+    "description": "Ästhetisches und funktionales Webdesign, das Ihre Marke auf das nächste Level hebt.",
+    "label": "Webdesign Studio",
+    "title_prefix": "Zukunftsweisendes",
+    "title_suffix": "Webdesign"
+  },
+  "meta": {
+    "description": "Wir kreieren exzellentes Webdesign, das Ihre Zielgruppe begeistert und konvertiert.",
+    "title": "High-End Webdesign"
+  },
+  "problem": {
+    "description": "Ein veraltetes Design schadet Ihrem Markenimage und kostet Sie täglich wertvolle Kunden.",
+    "label": "Die Ausgangslage",
+    "title": "Der erste Eindruck zählt"
+  },
+  "process": {
+    "description": "Ein strukturierter Ablauf garantiert Ergebnisse von höchster Qualität.",
+    "title": "Unser Design-Workflow"
+  },
+  "psychology": {
+    "description": "Unsere Designs basieren auf Erkenntnissen der Verhaltenspsychologie.",
+    "label": "Nutzerverhalten",
+    "title": "Psychologie im Design"
+  },
+  "solution": {
+    "description": "Wir verbinden visuelle Exzellenz mit herausragender Usability.",
+    "label": "Unser Lösungsansatz",
+    "title": "Design, das Ergebnisse liefert"
+  },
+  "tech_stack": {
+    "description": "Modernste Tools für kollaboratives und präzises Design.",
+    "title": "Unser Design-Stack"
+  }
+}

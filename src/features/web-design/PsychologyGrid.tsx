@@ -40,19 +40,19 @@ const PsychologyGrid: React.FC = () => {
         <motion.div
           key={index}
           whileHover={{ y: -5 }}
-          className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-flat-lg transition motion-reduce:duration-[0.01ms] group cursor-default"
+          className="bg-surface-elevated p-6 rounded-2xl border border-border-muted shadow-sm hover:shadow-flat-lg transition motion-reduce:duration-[0.01ms] group cursor-default"
         >
           <div
-            className="w-12 h-12 rounded-xl mb-4 flex items-center justify-center text-white shadow-md transition-transform motion-reduce:duration-[0.01ms] group-hover:scale-110"
+            className="w-12 h-12 rounded-xl mb-4 flex items-center justify-center text-white shadow-md transition-transform motion-reduce:duration-[0.01ms] group-hover:scale-[0.97] ease-spring"
             style={{ backgroundColor: law.color }}
           >
             <Icon name={law.icon} />
           </div>
-          <h4 className="font-bold text-lg text-secondary mb-2">{law.title}</h4>
-          <p className="text-slate-600 text-sm mb-4 leading-relaxed h-[60px]">{law.desc}</p>
+          <h4 className="font-bold text-lg text-content-base mb-2">{law.title}</h4>
+          <p className="text-content-muted text-sm mb-4 leading-relaxed max-w-prose text-pretty h-[60px]">{law.desc}</p>
 
-          <div className="bg-gray-50 rounded-lg p-3 text-xs border border-gray-100">
-            <span className="font-bold text-secondary block mb-1">Praxis-Beispiel:</span>
+          <div className="bg-surface-muted rounded-lg p-3 text-xs border border-border-muted">
+            <span className="font-bold text-content-base block mb-1">Praxis-Beispiel:</span>
             <span className="text-slate-500">{law.example}</span>
           </div>
         </motion.div>

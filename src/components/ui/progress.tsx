@@ -44,7 +44,7 @@ export const Progress = React.forwardRef<HTMLDivElement, ProgressProps>(
         aria-valuenow={safeValue}
         aria-label={ariaLabel || 'Progress'}
         className={cn(
-          'relative h-2 w-full overflow-hidden rounded-full bg-neutral-200 dark:bg-neutral-800',
+          'relative h-2 w-full overflow-hidden rounded-full border border-subtle bg-surface-elevated',
           className
         )}
         {...props}

@@ -23,30 +23,30 @@
     }
   },
   "global_cta": {
-    "title_prefix": "Ready for your",
-    "title_highlight": "next project?",
-    "subtitle": "Let's find out together how we can accelerate your digital growth. Free and without obligation.",
-    "button": "Start project"
+    "title_prefix": "Bereit für Ihr",
+    "title_highlight": "digitales Upgrade?",
+    "subtitle": "Lassen Sie uns gemeinsam herausfinden, wie wir Ihre Vision in ein performantes digitales Produkt verwandeln können.",
+    "button": "Kostenloses Erstgespräch"
   },
   "footer": {
     "links": {
       "booking": "Book Appointment",
       "packages": "Packages"
     },
-    "rights": "© {year} Coday",
+    "rights": "© {year} Coday. Alle Rechte vorbehalten.",
     "sections": {
       "career": "Career",
-      "contact": "Contact",
+      "contact": "Kontakt",
       "knowledge": "Knowledge",
       "navigation": "Navigation",
       "pricing": "Pricing",
       "services": "Services",
-      "regional": "Locations & Industries"
+      "regional": "Standorte & Branchen"
     },
-    "slogan": "We kill inefficiency. The last agency you'll ever need.",
+    "slogan": "High-End Webentwicklung für Agenturen & Unternehmen. Wir bauen digitale Flaggschiffe, die messbar performen.",
     "trust": {
-      "desc": "Fight against the fluff.",
-      "title": "Resistance Member"
+      "desc": "Premium Agency",
+      "title": "Coday Web"
     }
   },
   "generic_detail": {
@@ -92,12 +92,12 @@
   "loading": "Loading language...",
   "nav": {
     "main": {
-      "home": "Home",
+      "home": "Startseite",
       "work": "Portfolio",
-      "process": "Process",
-      "pricing": "Pricing",
-      "contact": "Start Project",
-      "partnerschaft": "Partnership"
+      "process": "Prozess",
+      "pricing": "Preise",
+      "contact": "Projekt starten",
+      "partnerschaft": "Partner Program"
     },
     "about": {
       "contact": {
@@ -153,14 +153,14 @@
         "desc": "Current Roles",
         "label": "Open Positions"
       },
-      "label": "Career",
+      "label": "Careers",
       "overview": {
         "desc": "Join the Elite",
         "label": "Overview"
       }
     },
     "company": {
-      "about": "About Us",
+      "about": "Über uns",
       "action": "Start",
       "agency": "The Agency",
       "career": "Career",
@@ -177,14 +177,14 @@
       "label": "Industries",
       "real_estate": "Real Estate",
       "service": "Services",
-      "public": "Public Sector",
+      "public": "Öffentliche Aufträge",
       "tech": "Tech Startups"
     },
     "legal": {
       "hub": "Overview",
-      "agb": "Terms",
-      "imprint": "Imprint",
-      "privacy": "Privacy"
+      "agb": "AGB",
+      "imprint": "Impressum",
+      "privacy": "Datenschutz"
     },
     "packages": {
       "label": "Packages"
@@ -194,7 +194,7 @@
       "label": "Projects"
     },
     "resources": {
-      "calculator": "Price Calculator",
+      "calculator": "Pricing Calculator",
       "dashboard": "Client Dashboard",
       "knowledge": {
         "faq": {
@@ -255,7 +255,7 @@
       },
       "seo": {
         "desc": "Top Rankings & Organic Growth",
-        "label": "SEO & Traffic"
+        "label": "SEO Optimization"
       },
       "ui_ux": {
         "label": "UI/UX Design"
@@ -272,7 +272,7 @@
         "label": "Web Development"
       },
       "fullstack": {
-        "label": "Full-Stack Development"
+        "label": "Full-Stack Entwicklung"
       }
     },
     "work": {
@@ -280,6 +280,8 @@
         "title": "Portfolio"
       },
       "batherm": "Batherm",
+      "schluesseldienst": "MS Schlüsseldienst",
+      "ratsstuben": "Lindener Ratsstuben",
       "creative_impact": "Creative Impact",
       "featured": {
         "title": "Highlights"
@@ -292,7 +294,7 @@
     }
   },
   "logobar": {
-    "title": "Trusted by innovative companies"
+    "title": "Vertrauen schenken uns"
   },
   "scroll_cta": {
     "book_audit": "Book Strategy Session",
@@ -311,15 +313,15 @@
     "contact": "Send Request"
   },
   "social": {
-    "visit": "Visit us on {platform}",
+    "visit": "Besuchen Sie uns auf {platform}",
     "facebook": "Facebook",
     "instagram": "Instagram",
     "twitter": "Twitter",
     "linkedin": "LinkedIn"
   },
   "announcement": {
-    "text": "Enterprise Audit: Free potential analysis available for Q4.",
-    "cta": "Request Audit →"
+    "text": "Enterprise-Audit: Kostenlose Potenzialanalyse verfügbar.",
+    "cta": "Angebot sichern →"
   },
   "actions": {
     "read_more": "Read more"
@@ -329,7 +331,29 @@
     "regional_pages": "Regional Landing Pages",
     "review_management": "Review Management"
   },
-  "de": "Deutsch",
+  "de": "German",
   "en": "English",
-  "about": "About Us"
+  "about": "About Us",
+  "skipLink": "Skip to main content",
+  "cookie": {
+    "settings": {
+      "title": "Cookie-Einstellungen",
+      "desc": "Wir verwenden Cookies, um Ihre Erfahrung zu verbessern. Bitte wählen Sie aus, welche Cookies Sie zulassen möchten."
+    },
+    "essential": {
+      "title": "Notwendige Cookies",
+      "desc": "Diese Cookies sind für die Grundfunktionen der Website erforderlich und können nicht deaktiviert werden."
+    },
+    "analytics": {
+      "title": "Analyse-Cookies",
+      "desc": "Helfen uns zu verstehen, wie Besucher mit der Website interagieren, indem Informationen anonym gesammelt und gemeldet werden."
+    },
+    "marketing": {
+      "title": "Marketing-Cookies",
+      "desc": "Werden verwendet, um Besuchern auf Websites zu folgen. Die Absicht ist, Anzeigen zu zeigen, die relevant und ansprechend für den einzelnen Benutzer sind."
+    }
+  },
+  "close": "Schließen",
+  "cancel": "Abbrechen",
+  "save": "Speichern"
 }

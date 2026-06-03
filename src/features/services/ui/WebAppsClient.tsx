@@ -72,16 +72,16 @@ export function WebAppsClient() {
   }, []);
 
   return (
-    <div className="bg-background-light font-sans text-text-light">
+    <div className="bg-surface-base font-sans text-text-light">
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center lg:text-left grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="inline-flex items-center justify-center p-3 bg-sapphire/10 rounded-xl text-sapphire mb-6">
-                <OptimizedIcon icon={Stack} className="text-3xl" />
+                <OptimizedIcon icon={Stack} className="text-3xl text-balance" />
               </div>
-              <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-gray-900 mb-6 leading-tight">
+              <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-gray-900 mb-6 leading-tight text-balance">
                 <BlurText
                   text={t('web_apps_page.hero.title_prefix')}
                   delay={100}
@@ -90,7 +90,7 @@ export function WebAppsClient() {
                 />{' '}
                 <span className="text-sapphire">{t('web_apps_page.hero.title_suffix')}</span>
               </h1>
-              <p className="text-xl text-gray-600 leading-relaxed mb-8 max-w-lg">
+              <p className="text-xl text-gray-600 leading-relaxed max-w-prose text-pretty mb-8 max-w-lg">
                 {t('web_apps_page.hero.description')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -110,7 +110,7 @@ export function WebAppsClient() {
                 alt={appDevImages.hero ? t(appDevImages.hero.alt) : ''}
                 width={800}
                 height={600}
-                className="relative rounded-2xl shadow-xl w-full h-auto rotate-2 hover:rotate-0 transition-transform motion-reduce:duration-[0.01ms] duration-500 bg-white p-2"
+                className="relative rounded-2xl shadow-xl w-full h-auto rotate-2 hover:rotate-0 transition-transform motion-reduce:duration-[0.01ms] duration-500 bg-surface-elevated p-2"
                 priority={true}
               />
             </div>
@@ -133,10 +133,10 @@ export function WebAppsClient() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16 text-white">
-            <span className="text-primary font-bold uppercase tracking-wider text-sm mb-4 block">
+            <span className="text-action-primary font-bold uppercase tracking-wider text-sm mb-4 block">
               {t('web_apps_page.integration_network.label')}
             </span>
-            <h2 className="font-display font-bold text-3xl sm:text-4xl mb-6">
+            <h2 className="font-display font-bold text-3xl sm:text-4xl mb-6 text-balance">
               {t('web_apps_page.integration_network.title')}
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto text-lg">
@@ -146,8 +146,8 @@ export function WebAppsClient() {
 
           <div className="relative h-[500px] flex items-center justify-center">
             {/* Central Hub */}
-            <div className="w-32 h-32 bg-white rounded-full flex items-center justify-center shadow-[0_0_50px_rgba(255,255,255,0.2)] z-20 relative animate-pulse motion-reduce:animate-none">
-              <span className="font-bold text-secondary text-center leading-tight">
+            <div className="w-32 h-32 bg-surface-elevated rounded-full flex items-center justify-center shadow-[0_0_50px_rgba(255,255,255,0.2)] z-20 relative animate-pulse motion-reduce:animate-none">
+              <span className="font-bold text-content-base text-center leading-tight">
                 Coday
                 <br />
                 Core
@@ -220,13 +220,13 @@ export function WebAppsClient() {
 
       {/* Security & Compliance Badges - NEW HIGH COMPLEXITY SECTION */}
       <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-24">
-        <div className="bg-white rounded-3xl border border-gray-200 shadow-xl p-8 lg:p-12">
+        <div className="bg-surface-elevated rounded-3xl border border-border-subtle shadow-xl p-8 lg:p-12">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="font-display font-bold text-3xl text-gray-900 mb-6 whitespace-pre-line">
+              <h2 className="font-display font-bold text-3xl text-gray-900 mb-6 whitespace-pre-line text-balance">
                 {t('web_apps_page.security.title')}
               </h2>
-              <p className="text-gray-600 leading-relaxed mb-8">
+              <p className="text-gray-600 leading-relaxed max-w-prose text-pretty mb-8">
                 {t('web_apps_page.security.description')}
               </p>
               <ul className="space-y-4">
@@ -240,7 +240,7 @@ export function WebAppsClient() {
                 ))}
               </ul>
             </div>
-            <div className="bg-gray-50 rounded-2xl p-8 grid grid-cols-2 gap-4">
+            <div className="bg-surface-muted rounded-2xl p-8 grid grid-cols-2 gap-4">
               {[
                 { key: 'gdpr', icon: 'verified_user', color: 'text-blue-600' },
                 { key: 'ssl', icon: 'lock', color: 'text-green-600' },
@@ -249,13 +249,13 @@ export function WebAppsClient() {
               ].map((badge, i) => (
                 <div
                   key={i}
-                  className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center justify-center text-center hover:scale-105 transition-transform motion-reduce:duration-[0.01ms]"
+                  className="bg-surface-elevated p-6 rounded-xl shadow-sm border border-border-muted flex flex-col items-center justify-center text-center hover:scale-[0.97] ease-spring transition-transform motion-reduce:duration-[0.01ms]"
                 >
                   <OptimizedIcon
                     icon={iconMap[badge.icon] || ShieldCheck}
                     className={`text-4xl mb-3 ${badge.color}`}
                   />
-                  <span className="font-bold text-gray-900">
+                  <span className="text-balance font-bold text-gray-900">
                     {t(`web_apps_page.security.badges.${badge.key}`)}
                   </span>
                 </div>
@@ -266,10 +266,10 @@ export function WebAppsClient() {
       </section>
 
       {/* Features Grid */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-surface-elevated">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="font-display font-bold text-3xl sm:text-4xl text-gray-900 mb-4">
+            <h2 className="font-display font-bold text-3xl sm:text-4xl text-gray-900 mb-4 text-balance">
               {t('web_apps_page.features.title')}
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -306,15 +306,15 @@ export function WebAppsClient() {
             ].map((feature, i) => (
               <div
                 key={i}
-                className="p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-xl transition motion-reduce:duration-[0.01ms] border border-gray-100 group"
+                className="p-8 rounded-2xl bg-surface-muted hover:bg-surface-elevated hover:shadow-xl transition motion-reduce:duration-[0.01ms] border border-border-muted group"
               >
-                <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-sapphire mb-6 group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms]">
+                <div className="w-12 h-12 bg-surface-elevated rounded-xl shadow-sm flex items-center justify-center text-sapphire mb-6 group-hover:scale-[0.97] ease-spring transition-transform motion-reduce:duration-[0.01ms]">
                   <OptimizedIcon icon={iconMap[feature.icon] || Cloud} />
                 </div>
                 <h3 className="font-bold text-xl text-gray-900 mb-3">
                   {t(`web_apps_page.features.items.${feature.key}.title`)}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed max-w-prose text-pretty">
                   {t(`web_apps_page.features.items.${feature.key}.desc`)}
                 </p>
               </div>

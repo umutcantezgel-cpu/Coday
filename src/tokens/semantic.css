@@ -58,23 +58,23 @@
   --color-sapphire: #0f5c5c;
 
   /* Semantic Colors for Tailwind classes */
-  --color-bg-primary: var(--color-bg-primary);
-  --color-bg-secondary: var(--color-bg-secondary);
-  --color-bg-tertiary: var(--color-bg-tertiary);
-  --color-bg-inverse: var(--color-bg-inverse);
-  --color-bg-accent: var(--color-bg-accent);
-  --color-bg-muted: var(--color-bg-muted);
+  --color-bg-primary: var(--color-surface-base);
+  --color-bg-secondary: var(--color-surface-muted);
+  --color-bg-tertiary: var(--color-slate-200);
+  --color-bg-inverse: var(--color-surface-inverse);
+  --color-bg-accent: var(--color-teal-50);
+  --color-bg-muted: var(--color-slate-50);
 
-  --color-text-primary: var(--color-secondary-900);
-  --color-text-secondary: var(--color-secondary-800);
-  --color-text-tertiary: var(--color-secondary-700);
-  --color-text-inverse: var(--color-text-inverse);
-  --color-text-link: var(--color-primary-900);
-  --color-text-accent: var(--color-accent-900);
+  --color-text-primary: var(--color-content-base);
+  --color-text-secondary: var(--color-content-muted);
+  --color-text-tertiary: var(--color-slate-400);
+  --color-text-inverse: var(--color-content-inverse);
+  --color-text-link: var(--color-teal-600);
+  --color-text-accent: var(--color-teal-700);
 
-  --color-border-default: var(--color-border-default);
-  --color-border-strong: var(--color-border-strong);
-  --color-border-subtle: var(--color-border-subtle);
+  --color-border-default: var(--color-border-base);
+  --color-border-strong: var(--color-border-inverse);
+  --color-border-subtle: var(--color-border-muted);
 
   /* Surfaces */
   --color-surface-base: var(--color-slate-50);

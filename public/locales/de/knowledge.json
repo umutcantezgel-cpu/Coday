@@ -37,23 +37,41 @@
         "title": "Was kostet eine Website wirklich?"
       }
     },
-    "subtitle": "Werde zum Experten für digitales Wachstum. Kostenlose Kurse für unsere Community.",
-    "title": "Academy"
+    "subtitle": "Lernen Sie die Grundlagen",
+    "title": "Academy",
+    "close_video": "Video schließen"
   },
   "blog": {
     "subtitle": "Deep Dives, Strategien und News aus der digitalen Welt.",
     "title": "Blog & Insights"
   },
   "newsletter": {
-    "emailPlaceholder": "Ihre beste E-Mail Adresse",
+    "emailPlaceholder": "Ihre E-Mail-Adresse",
     "privacy": "Wir respektieren Ihre Privatsphäre. Abmeldung jederzeit möglich.",
-    "subscribe": "Anmelden",
-    "subtitle": "Treten Sie 10.000+ Gründern bei und erhalten Sie wöchentlich die besten Strategien für digitales Wachstum direkt in Ihr Postfach. Kein Spam. Nur Mehrwert.",
-    "title": "Der Insider Newsletter"
+    "subscribe": "Abonnieren",
+    "subtitle": "Bleiben Sie auf dem neuesten Stand.",
+    "title": "Newsletter",
+    "success_title": "Vielen Dank!",
+    "success_message": "Sie haben sich erfolgreich angemeldet.",
+    "privacy_consent_pre": "Ich stimme der Verarbeitung meiner Daten gemäß der ",
+    "privacy_link": "Datenschutzerklärung",
+    "privacy_consent_post": " zu.",
+    "error": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut."
   },
   "whitepapers": {
     "download": "Kostenlos herunterladen",
     "subtitle": "Kostenlose Anleitungen, Checklisten und Vorlagen für Ihren Erfolg.",
     "title": "Ratgeber & Ressourcen"
+  },
+  "wiki": {
+    "title": "AI & Digital Excellence Wiki",
+    "subtitle": "Der Coday Knowledge Graph. 100 essentielle Entitäten aus Tech, Business und Design, strukturiert für KI-Crawler und Menschen.",
+    "search_placeholder": "Entität suchen (z.B. Next.js, Headless CMS)...",
+    "search_aria": "Entität suchen",
+    "no_results": "Keine Entitäten gefunden für \"{searchTerm}\"",
+    "categories": {
+      "all": "Alle"
+    },
+    "aliases": "Aliasse:"
   }
 }

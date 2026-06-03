@@ -1,0 +1,64 @@
+{
+  "target": "aerzte-gesundheit-wetzlar",
+  "type": "industry-location",
+  "meta": {
+    "title": "Webdesign & SEO für Ärzte in Wetzlar | Coday",
+    "description": "Premium Next.js Webdesign und lokales SEO für Ärzte, Praxen und Gesundheitsdienstleister in Wetzlar. Gewinnen Sie mehr Patienten mit Coday."
+  },
+  "hero": {
+    "headline": "Digitale Exzellenz für Ihre Praxis in Wetzlar.",
+    "subheadline": "Webdesign & Patienten-SEO für Ärzte und Gesundheitseinrichtungen.",
+    "description": "In der Gesundheitsbranche zählt Vertrauen ab dem ersten Klick. Wir entwickeln blitzschnelle, sichere und hochkonvertierende Next.js-Websites für Ärzte, Fachärzte und Kliniken in Wetzlar und dem Lahn-Dill-Kreis. Steigern Sie Ihre Sichtbarkeit und optimieren Sie Ihre Terminvergabe durch erstklassige digitale Lösungen von Coday."
+  },
+  "localDominance": {
+    "title": "Lokale Dominanz für Ihre Arztpraxis in Wetzlar",
+    "description": "Patienten in Wetzlar suchen täglich nach Fachärzten und Gesundheitsdienstleistungen. Werden Sie genau dann gefunden, wenn Ihre Expertise gefragt ist. Unsere Wetzlar-spezifischen SEO-Strategien positionieren Ihre Praxis an der Spitze der Suchergebnisse.",
+    "points": [
+      "Top-Rankings bei lokalen Suchanfragen (z.B. 'Hausarzt Wetzlar', 'Zahnarzt Lahn-Dill-Kreis')",
+      "Optimierung des Google My Business Profils für medizinische Einrichtungen",
+      "Gezielte Sichtbarkeit in den relevanten Wetzlarer Stadtteilen und Umlandgemeinden",
+      "Aufbau von Vertrauen durch digitale Präsenz, die Ihre fachliche Kompetenz widerspiegelt",
+      "Maximale Conversion-Raten von der Google-Suche bis zur Online-Terminbuchung"
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "Warum Next.js für medizinische Websites in Wetzlar unerlässlich ist",
+      "content": "Für Ärzte und Kliniken sind Datenschutz, Sicherheit und Ladegeschwindigkeit nicht verhandelbar. Mit unserer Next.js-Architektur (App Router) und React 19 liefern wir Websites, die in Millisekunden laden. Das sorgt nicht nur für ein exzellentes Patientenerlebnis auf dem Smartphone, sondern ist auch ein entscheidender Rankingfaktor für Google. Ihre Praxiswebsite in Wetzlar wird technologisch auf Enterprise-Niveau gehoben – sicher, skalierbar und zukunftssicher."
+    },
+    {
+      "title": "Patientengewinnung neu gedacht: Lokales SEO für Gesundheitsberufe",
+      "content": "Eine schöne Website allein bringt keine neuen Patienten in Ihr Wartezimmer. Coday verbindet High-End-Webdesign mit tiefgreifendem Verständnis für medizinisches SEO im Raum Wetzlar. Wir analysieren das Suchverhalten Ihrer Zielgruppe, optimieren Inhalte auf spezifische Behandlungen und Symptome und stellen sicher, dass Privat- und Kassenpatienten genau die Leistungen finden, die Sie in Ihrer Praxis anbieten."
+    },
+    {
+      "title": "Sichere & moderne Terminvergabe (Supabase Integration)",
+      "content": "Die Digitalisierung von Praxisabläufen beginnt bei der Terminvereinbarung. Wir integrieren nahtlos moderne, datenschutzkonforme Buchungssysteme. Dank unserer Expertise in Supabase und Vercel Edge-Technologien realisieren wir schnelle, ausfallsichere Systeme, die Ihr Praxisteam in Wetzlar spürbar entlasten und den Patienten einen komfortablen, 24/7 verfügbaren Service bieten."
+    },
+    {
+      "title": "Barrierefreiheit und responsive Exzellenz",
+      "content": "Gerade im Gesundheitssektor muss eine Website für alle Menschen zugänglich sein – unabhängig von Alter oder Einschränkungen. Wir entwickeln strikt nach aktuellen Accessibility-Standards (a11y). Das bedeutet: Perfekte Lesbarkeit, einfache Navigation und fehlerfreie Darstellung auf jedem Endgerät. Mit Coday zeigt sich Ihre Wetzlarer Praxis von der besten und nutzerfreundlichsten Seite."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Warum sollten Wetzlarer Ärzte in eine Next.js Website investieren?",
+      "a": "Next.js bietet überragende Performance und Sicherheit. Für Ärzte bedeutet das: Blitzschnelle Ladezeiten, was Patienten (besonders mobil) und Suchmaschinen gleichermaßen schätzen. Zudem ermöglicht es hochsichere, datenschutzkonforme Architekturen für sensible Patientendaten."
+    },
+    {
+      "q": "Wie hilft lokales SEO meiner Praxis in Wetzlar?",
+      "a": "Lokales SEO sorgt dafür, dass Sie bei Suchanfragen in Ihrer Region (z.B. 'Orthopäde Wetzlar' oder 'Kardiologe Lahn-Dill') auf den vordersten Plätzen erscheinen. Dies führt zu mehr relevanten Anfragen und einer zielgerichteten Auslastung Ihrer Praxis."
+    },
+    {
+      "q": "Sind die Websites von Coday für Ärzte datenschutzkonform (DSGVO)?",
+      "a": "Ja, absolute Priorität. Als Solo-Agentur in Wetzlar setze ich auf modernste, europäische oder strikt konforme Technologien (z.B. Supabase, Edge-Routing), um höchste Datensicherheit zu gewährleisten und rechtliche Risiken für Ihre Praxis zu minimieren."
+    },
+    {
+      "q": "Können bestehende Termin-Systeme (z.B. Doctolib) integriert werden?",
+      "a": "Selbstverständlich. Wir binden Ihre bevorzugten Buchungssysteme nahtlos in das hochperformante Frontend der Website ein, sodass der Übergang für den Patienten fließend und professionell wirkt."
+    },
+    {
+      "q": "Wie lange dauert die Entwicklung einer neuen Praxiswebsite?",
+      "a": "Dank unserer effizienten Next.js 15 und Tailwind CSS 4 Architektur realisieren wir maßgeschneiderte, hochperformante Websites für Ärzte in Wetzlar in der Regel innerhalb weniger Wochen – von der Konzeption bis zum Go-Live."
+    }
+  ]
+}

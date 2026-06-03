@@ -36,7 +36,7 @@ const PRODUCTS = [
     id: 5,
     title: 'Contract Templates Pack',
     price: '€149',
-    image: '/images/industries/anwaeltin.webp',
+    image: '/images/brand/coday-full.webp',
     alt: 'Vertraege',
   },
   {

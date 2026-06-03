@@ -35,16 +35,16 @@ export const TechStackShowcase: React.FC<TechStackShowcaseProps> = ({
   );
 
   return (
-    <section className="py-[var(--space-section)] bg-slate-50 relative overflow-hidden">
+    <section className="py-[var(--space-section)] bg-surface-muted relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16 max-w-3xl mx-auto">
           {subtitle && (
-            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
+            <span className="text-action-primary font-bold tracking-wider uppercase text-sm mb-4 block">
               {subtitle}
             </span>
           )}
           {title && (
-            <h2 className="font-display font-black text-3xl sm:text-5xl text-secondary mb-6 leading-tight">
+            <h2 className="font-display font-black text-3xl sm:text-5xl text-content-base mb-6 leading-tight text-balance">
               {title}
             </h2>
           )}
@@ -59,14 +59,14 @@ export const TechStackShowcase: React.FC<TechStackShowcaseProps> = ({
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.5, delay: catIndex * 0.1 }}
             >
-              <h3 className="text-xl font-bold text-secondary mb-8 text-center md:text-left border-b border-gray-200 pb-2">
+              <h3 className="text-xl font-bold text-content-base mb-8 text-center md:text-left border-b border-border-subtle pb-2">
                 {category}
               </h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
                 {items.map((tech, index) => (
                   <div
                     key={index}
-                    className="group flex flex-col items-center justify-center p-6 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition motion-reduce:duration-[0.01ms] duration-300 hover:-translate-y-1"
+                    className="group flex flex-col items-center justify-center p-6 bg-surface-elevated rounded-2xl shadow-sm border border-border-muted hover:shadow-md transition motion-reduce:duration-[0.01ms] duration-300 hover:scale-[0.97] ease-spring"
                   >
                     <div className="h-16 w-16 mb-4 flex items-center justify-center grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition motion-reduce:duration-[0.01ms] duration-500 relative">
                       {tech.logoUrl ? (
@@ -86,7 +86,7 @@ export const TechStackShowcase: React.FC<TechStackShowcaseProps> = ({
                         </div>
                       )}
                     </div>
-                    <span className="text-sm font-semibold text-slate-600 group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms]">
+                    <span className="text-sm font-semibold text-content-muted group-hover:text-action-primary transition-colors motion-reduce:duration-[0.01ms]">
                       {tech.name}
                     </span>
                   </div>

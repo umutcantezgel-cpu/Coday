@@ -151,10 +151,10 @@ export const LegalLayoutV2: React.FC<LegalLayoutV2Props> = ({
         </div>
       </div>
 
-      <div className="pt-12 pb-24">
+      <div className="pt-32 pb-48">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
-          <header role="banner" className="mb-16 text-center">
+          <header role="banner" className="mb-24 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

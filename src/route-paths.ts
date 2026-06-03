@@ -24,7 +24,7 @@ export const ROUTES = {
         BATHERM: '/work/batherm',
     },
     PROCESS: '/process',
-    PACKAGES: '/packages',
+    PACKAGES: '/pricing',
     CONTACT: '/contact',
     CALCULATOR: '/calculator',
     BOOKING: '/booking',

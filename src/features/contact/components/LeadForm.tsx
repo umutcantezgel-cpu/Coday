@@ -2,6 +2,7 @@
 'use client';
 
 import { Button } from '@/shared/ui/Button';
+import { Input } from '@/components/ui/input';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Turnstile } from '@marsidev/react-turnstile';
 import { useActionState, useEffect } from 'react';
@@ -32,7 +33,7 @@ export function LeadForm() {
   }, [state.success]);
 
   return (
-    <form action={formAction} onSubmit={handleSubmit(onSubmit)} className="space-y-6 max-w-2xl mx-auto bg-white/5 p-8 rounded-2xl border border-white/10" noValidate>
+    <form action={formAction} onSubmit={handleSubmit(onSubmit)} className="space-y-12 max-w-2xl mx-auto bg-surface-base/50 backdrop-blur-md shadow-2xl p-8 md:p-16 rounded-3xl border border-white/10" noValidate>
       
       {state.error && (
         <div role="alert" className="bg-red-500/10 border border-red-500 text-red-500 p-4 rounded-xl">
@@ -46,67 +47,51 @@ export function LeadForm() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <label htmlFor="lead-name" className="block text-sm font-medium text-gray-300 mb-2">Name <span aria-hidden="true">*</span></label>
-          <input
-            id="lead-name"
-            {...register('name')}
-            aria-required="true"
-            aria-invalid={!!errors.name}
-            aria-describedby={errors.name ? 'lead-name-error' : undefined}
-            className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-primary-500 outline-none"
-            placeholder="Jane Doe"
-          />
-          {errors.name && <p id="lead-name-error" role="alert" className="text-red-400 text-sm mt-1">{errors.name.message}</p>}
-        </div>
-        <div>
-          <label htmlFor="lead-email" className="block text-sm font-medium text-gray-300 mb-2">E-Mail <span aria-hidden="true">*</span></label>
-          <input
-            id="lead-email"
-            {...register('email')}
-            type="email"
-            aria-required="true"
-            aria-invalid={!!errors.email}
-            aria-describedby={errors.email ? 'lead-email-error' : undefined}
-            className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-primary-500 outline-none"
-            placeholder="jane@company.com"
-          />
-          {errors.email && <p id="lead-email-error" role="alert" className="text-red-400 text-sm mt-1">{errors.email.message}</p>}
-        </div>
+        <Input
+          id="lead-name"
+          label="Name *"
+          {...register('name')}
+          aria-required="true"
+          error={errors.name?.message}
+          placeholder="Jane Doe"
+        />
+        <Input
+          id="lead-email"
+          label="E-Mail *"
+          type="email"
+          {...register('email')}
+          aria-required="true"
+          error={errors.email?.message}
+          placeholder="jane@company.com"
+        />
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <Input
+          id="lead-company"
+          label="Unternehmen"
+          {...register('company')}
+          placeholder="Company GmbH"
+        />
+        <Input
+          id="lead-phone"
+          label="Telefon"
+          type="tel"
+          {...register('phone')}
+          placeholder="+49 170 1234567"
+        />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="lead-company" className="block text-sm font-medium text-gray-300 mb-2">Unternehmen</label>
-          <input
-            id="lead-company"
-            {...register('company')}
-            className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-primary-500 outline-none"
-            placeholder="Company GmbH"
-          />
-        </div>
-        <div>
-          <label htmlFor="lead-phone" className="block text-sm font-medium text-gray-300 mb-2">Telefon</label>
-          <input
-            id="lead-phone"
-            {...register('phone')}
-            type="tel"
-            className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-primary-500 outline-none"
-            placeholder="+49 170 1234567"
-          />
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <label htmlFor="lead-projectType" className="block text-sm font-medium text-gray-300 mb-2">Projekt-Typ <span aria-hidden="true">*</span></label>
+          <label htmlFor="lead-projectType" className="block text-sm font-medium text-content-base mb-2">Projekt-Typ <span aria-hidden="true">*</span></label>
           <select
             id="lead-projectType"
             {...register('projectType')}
             aria-required="true"
             aria-invalid={!!errors.projectType}
             aria-describedby={errors.projectType ? 'lead-projectType-error' : undefined}
-            className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-primary-500 outline-none"
+            className="w-full bg-surface-base rounded-xl border border-border-base px-4 h-14 text-content-base focus:border-action-primary focus:ring-2 focus:ring-action-primary outline-none"
           >
             <option value="">Bitte wählen...</option>
             <option value="Neue Website">Neue Website</option>
@@ -119,14 +104,14 @@ export function LeadForm() {
           {errors.projectType && <p id="lead-projectType-error" role="alert" className="text-red-400 text-sm mt-1">{errors.projectType.message}</p>}
         </div>
         <div>
-          <label htmlFor="lead-budget" className="block text-sm font-medium text-gray-300 mb-2">Budget <span aria-hidden="true">*</span></label>
+          <label htmlFor="lead-budget" className="block text-sm font-medium text-content-base mb-2">Budget <span aria-hidden="true">*</span></label>
           <select
             id="lead-budget"
             {...register('budget')}
             aria-required="true"
             aria-invalid={!!errors.budget}
             aria-describedby={errors.budget ? 'lead-budget-error' : undefined}
-            className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-primary-500 outline-none"
+            className="w-full bg-surface-base rounded-xl border border-border-base px-4 h-14 text-content-base focus:border-action-primary focus:ring-2 focus:ring-action-primary outline-none"
           >
             <option value="">Bitte wählen...</option>
             <option value="<5k">&lt; 5.000 €</option>
@@ -141,14 +126,14 @@ export function LeadForm() {
       </div>
 
       <div>
-        <label htmlFor="lead-timeframe" className="block text-sm font-medium text-gray-300 mb-2">Zeitrahmen <span aria-hidden="true">*</span></label>
+        <label htmlFor="lead-timeframe" className="block text-sm font-medium text-content-base mb-2">Zeitrahmen <span aria-hidden="true">*</span></label>
         <select
           id="lead-timeframe"
           {...register('timeframe')}
           aria-required="true"
           aria-invalid={!!errors.timeframe}
           aria-describedby={errors.timeframe ? 'lead-timeframe-error' : undefined}
-          className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-primary-500 outline-none"
+          className="w-full bg-surface-base rounded-xl border border-border-base px-4 h-14 text-content-base focus:border-action-primary focus:ring-2 focus:ring-action-primary outline-none"
         >
           <option value="">Bitte wählen...</option>
           <option value="ASAP">So schnell wie möglich</option>
@@ -161,7 +146,7 @@ export function LeadForm() {
       </div>
 
       <div>
-        <label htmlFor="lead-description" className="block text-sm font-medium text-gray-300 mb-2">Projekt-Details <span aria-hidden="true">*</span></label>
+        <label htmlFor="lead-description" className="block text-sm font-medium text-content-base mb-2">Projekt-Details <span aria-hidden="true">*</span></label>
         <textarea
           id="lead-description"
           {...register('description')}
@@ -169,7 +154,7 @@ export function LeadForm() {
           aria-required="true"
           aria-invalid={!!errors.description}
           aria-describedby={errors.description ? 'lead-description-error' : undefined}
-          className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-primary-500 outline-none resize-none"
+          className="w-full bg-surface-base rounded-xl border border-border-base px-4 py-4 text-content-base focus:border-action-primary focus:ring-2 focus:ring-action-primary outline-none resize-none"
           placeholder="Erzähl mir etwas über dein Vorhaben..."
         />
         {errors.description && <p id="lead-description-error" role="alert" className="text-red-400 text-sm mt-1">{errors.description.message}</p>}

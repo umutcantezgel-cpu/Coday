@@ -307,14 +307,14 @@ export const DataProcessorCard: React.FC<DataProcessorCardProps> = ({
         </div>
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 mb-1">
-            <h4 className="font-bold text-gray-900">{name}</h4>
+            <h4 className="font-bold text-gray-900 break-words">{name}</h4>
             {gdprCompliant && (
               <span className="px-2 py-0.5 bg-green-50 text-green-700 text-xs font-medium rounded-full">
                 DSGVO
               </span>
             )}
           </div>
-          <p className="text-sm text-gray-600 mb-2">{purpose}</p>
+          <p className="text-sm text-gray-600 mb-2 break-words hyphens-auto">{purpose}</p>
           <div className="flex items-center gap-4 text-xs text-gray-500">
             <span className="flex items-center gap-1">
               <OptimizedIcon icon={MapPin} className="w-3 h-3" />
@@ -393,9 +393,9 @@ export const LegalSectionHeader: React.FC<LegalSectionHeaderProps> = ({
           {IconComp ? <OptimizedIcon icon={IconComp} className="w-6 h-6" /> : number}
         </div>
       )}
-      <div>
-        <h2 className="font-display font-bold text-2xl text-secondary">{title}</h2>
-        {subtitle && <p className="text-gray-500 mt-1">{subtitle}</p>}
+      <div className="min-w-0">
+        <h2 className="font-display font-bold text-2xl text-secondary break-words hyphens-auto">{title}</h2>
+        {subtitle && <p className="text-gray-500 mt-1 break-words">{subtitle}</p>}
       </div>
     </div>
   );

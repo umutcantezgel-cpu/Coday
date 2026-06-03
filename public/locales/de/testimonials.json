@@ -1,0 +1,27 @@
+{
+  "title_prefix": "Was unsere Kunden",
+  "title_suffix": "über uns sagen.",
+  "text": "Erfahren Sie, wie wir Unternehmen dabei unterstützen, ihre digitale Präsenz auf das nächste Level zu heben.",
+  "rating": "4.9/5 Durchschnittliche Bewertung",
+  "excellence": "Basierend auf echten Kundenstimmen",
+  "items": [
+    {
+      "quote": "Die Zusammenarbeit mit Coday war ein voller Erfolg. Unsere neue Website ist nicht nur optisch ein Meisterwerk, sondern überzeugt auch durch herausragende Performance.",
+      "authorName": "Dr. Markus Schmidt",
+      "authorPosition": "Geschäftsführer",
+      "authorCompany": "Schmidt Consulting"
+    },
+    {
+      "quote": "Von der ersten Konzeption bis zum Livegang – absolute Professionalität und technisches Know-how auf höchstem Niveau.",
+      "authorName": "Laura Weber",
+      "authorPosition": "Marketingleiterin",
+      "authorCompany": "Weber Immobilien"
+    },
+    {
+      "quote": "Dank der neuen E-Commerce-Lösung konnten wir unsere Conversion-Rate signifikant steigern. Ein verlässlicher Partner für digitales Wachstum.",
+      "authorName": "Johannes Becker",
+      "authorPosition": "Gründer",
+      "authorCompany": "Becker Retail GmbH"
+    }
+  ]
+}

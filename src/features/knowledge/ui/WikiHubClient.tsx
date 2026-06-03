@@ -3,10 +3,12 @@
 import React, { useState } from 'react';
 
 import { Link } from '@/i18n/navigation';
+import { useTranslations } from 'next-intl';
 import { motion } from 'motion/react';
 import { wikiEntities } from '@/features/knowledge/model/entities';
 
 export default function WikiHub() {
+  const t = useTranslations('knowledge.wiki');
   const [searchTerm, setSearchTerm] = useState('');
   const [activeCategory, setActiveCategory] = useState<string | 'All'>('All');
 
@@ -25,8 +27,7 @@ export default function WikiHub() {
     '@type': 'DefinedTermSet',
     '@id': 'https://www.codayweb.de/knowledge/wiki#set',
     name: 'Coday AI & Digital Excellence Wiki',
-    description:
-      '100 essentielle Entitäten aus den Bereichen Tech, Business und Design für moderne Web-Architektur.',
+    description: t('subtitle'),
     hasDefinedTerm: wikiEntities.map((entity) => ({
       '@type': 'DefinedTerm',
       '@id': `https://www.codayweb.de/knowledge/wiki/${entity.slug}#term`,
@@ -52,8 +53,7 @@ export default function WikiHub() {
               </span>
             </h1>
             <p className="text-xl text-coday-gray-400 max-w-3xl">
-              Das Coday Knowledge Graph. 100 essentielle Entitäten aus Tech, Business und Design,
-              strukturiert für KI-Crawler und Menschen.
+              {t('subtitle')}
             </p>
           </motion.div>
         </header>
@@ -61,11 +61,11 @@ export default function WikiHub() {
         <div className="mb-12">
           <div className="flex flex-col md:flex-row gap-6 justify-between items-center bg-coday-dark border border-coday-gray-800 p-4 rounded-xl">
             <div className="w-full md:w-1/2 relative">
-              <label htmlFor="wiki-search" className="sr-only">Entität suchen</label>
+              <label htmlFor="wiki-search" className="sr-only">{t('search_aria')}</label>
               <input
                 id="wiki-search"
                 type="search"
-                placeholder="Entität suchen (z.B. Next.js, Headless CMS)..."
+                placeholder={t('search_placeholder')}
                 className="w-full bg-coday-black border border-coday-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:border-coday-gold transition-colors motion-reduce:duration-[0.01ms]"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
@@ -94,7 +94,7 @@ export default function WikiHub() {
                   className={`active:scale-[0.97] px-4 py-2 rounded-lg text-sm font-medium transition-colors motion-reduce:duration-[0.01ms] ${activeCategory === cat ? 'bg-coday-gold text-coday-black' : 'bg-coday-gray-800 text-coday-gray-300 hover:bg-coday-gray-700'}`}
                   aria-pressed={activeCategory === cat}
                 >
-                  {cat}
+                  {cat === 'All' ? t('categories.all') : cat}
                 </button>
               ))}
             </div>
@@ -122,7 +122,7 @@ export default function WikiHub() {
                   {entity.displayName}
                 </h2>
                 <div className="text-sm text-coday-gray-500 line-clamp-2">
-                  Aliasse: {entity.aliases.slice(0, 3).join(', ')}{' '}
+                  {t('aliases')} {entity.aliases.slice(0, 3).join(', ')}{' '}
                   {entity.aliases.length > 3 && '...'}
                 </div>
               </Link>
@@ -132,7 +132,7 @@ export default function WikiHub() {
 
         {filteredEntities.length === 0 && (
           <div className="text-center py-20 text-coday-gray-500">
-            <p className="text-xl">Keine Entitäten gefunden für "{searchTerm}"</p>
+            <p className="text-xl">{t('no_results', { searchTerm })}</p>
           </div>
         )}
       </div>

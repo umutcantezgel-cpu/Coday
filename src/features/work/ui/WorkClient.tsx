@@ -86,12 +86,12 @@ const Work: React.FC = () => {
             </div>
           </motion.div>
 
-          <motion.div layout className="flex flex-col md:flex-row md:flex-wrap gap-8" aria-live="polite">
+          <motion.div layout className="grid grid-cols-1 md:grid-cols-5 gap-px bg-border-subtle overflow-hidden rounded-xl border border-border-subtle" aria-live="polite">
             <AnimatePresence mode="popLayout">
               {filteredCaseStudies.map((project, index) => {
-                // Asymmetric Phi-pattern (alternating 61.8% and 38.2% splits)
+                // Asymmetric Phi-pattern (approx 60/40)
                 const isLarge = index % 4 === 0 || index % 4 === 3;
-                const widthClass = isLarge ? 'md:w-[calc(61.8%-1rem)]' : 'md:w-[calc(38.2%-1rem)]';
+                const widthClass = isLarge ? 'md:col-span-3' : 'md:col-span-2';
 
                 return (
                   <motion.div
@@ -101,7 +101,7 @@ const Work: React.FC = () => {
                     exit={{ opacity: 0, scale: 0.9 }}
                     transition={{ duration: 0.4, ease: 'easeInOut', delay: index * 0.05 }}
                     key={project.slug}
-                    className={`h-full w-full ${widthClass}`}
+                    className={`h-full w-full bg-surface-elevated ${widthClass}`}
                   >
                     <CaseStudyCard project={project} index={index} />
                   </motion.div>

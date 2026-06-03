@@ -127,6 +127,8 @@ const BlogPost: React.FC = () => {
             height={675}
             className="w-full h-full object-cover"
             priority
+            fetchPriority="high"
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background-light via-background-light/90 to-black/30 z-10"></div>
         </div>
@@ -146,7 +148,7 @@ const BlogPost: React.FC = () => {
             <BlurText text={post.title} delay={50} animateBy="words" className="block" />
           </h1>
 
-          <p className="text-xl md:text-2xl text-slate-600 font-medium leading-relaxed drop-shadow-sm bg-white/50 backdrop-blur-md p-6 rounded-2xl inline-block border border-white/60 shadow-sm max-w-3xl">
+          <p className="text-xl md:text-2xl text-content-base font-medium leading-relaxed drop-shadow-sm bg-white/50 backdrop-blur-md p-6 rounded-2xl inline-block border border-white/60 shadow-sm max-w-3xl">
             {post.excerpt}
           </p>
         </div>
@@ -176,11 +178,11 @@ const BlogPost: React.FC = () => {
               </div>
 
               {/* Dynamic Sections (Constrained Width for readability) */}
-              <div className="max-w-[720px] mx-auto">
+              <div className="max-w-prose mx-auto">
                 <div className="lg:hidden">
                   <TableOfContents blocks={post.content} isMobile />
                 </div>
-                <div className="prose prose-lg prose-slate prose-headings:font-display prose-headings:font-bold prose-a:text-primary hover:prose-a:text-primary-dark prose-img:rounded-2xl prose-img:shadow-md">
+                <div className="prose prose-lg text-content-base prose-headings:text-content-base prose-p:text-content-base prose-strong:text-content-base prose-li:text-content-base prose-slate prose-headings:font-display prose-headings:font-bold prose-a:text-primary hover:prose-a:text-primary-dark prose-img:rounded-2xl prose-img:shadow-md">
                   {post.content.map((block) => (
                     <BlockRenderer key={block.id} block={block} />
                   ))}
@@ -188,7 +190,7 @@ const BlogPost: React.FC = () => {
               </div>
 
               {/* Contextual CTA */}
-              <div className="max-w-[720px] mx-auto mt-16 mb-16 bg-gradient-to-br from-primary/10 to-transparent border border-primary/20 rounded-3xl p-8 relative overflow-hidden group">
+              <div className="max-w-prose mx-auto mt-16 mb-16 bg-gradient-to-br from-primary/10 to-transparent border border-primary/20 rounded-3xl p-8 relative overflow-hidden group">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
                 <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
                   <div>
@@ -206,7 +208,7 @@ const BlogPost: React.FC = () => {
               </div>
 
               {/* Author Box */}
-              <div className="max-w-[720px] mx-auto border-t border-gray-100 pt-12 flex flex-col sm:flex-row gap-6 items-start sm:items-center">
+              <div className="max-w-prose mx-auto border-t border-gray-100 pt-12 flex flex-col sm:flex-row gap-6 items-start sm:items-center">
                 <div className="w-24 h-24 rounded-full bg-surface-light flex items-center justify-center text-primary overflow-hidden shrink-0 shadow-md">
                   <span className="font-bold text-3xl">{post.author.charAt(0)}</span>
                 </div>

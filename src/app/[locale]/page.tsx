@@ -8,6 +8,7 @@ import { HeroSection } from '@/widgets/home/HeroSection';
 import { headers } from 'next/headers';
 import Script from 'next/script';
 import React from 'react';
+import { getTranslations } from 'next-intl/server';
 
 import LogoLoop from '@/shared/ui/LogoLoop';
 import { StatsSection } from '@/widgets/home/StatsSection';
@@ -44,6 +45,7 @@ export async function generateMetadata({
 }
 
 export default async function HomePage() {
+  const t = await getTranslations('home');
   const nonce = (await headers()).get('x-nonce') ?? '';
   const serviceSchema = getProfessionalServiceSchema();
   const localSchema = getLocalBusinessSchema();
@@ -64,7 +66,7 @@ export default async function HomePage() {
       </ScrollReveal>
 
       <ScrollReveal index={1}>
-        <React.Suspense fallback={<div className="min-h-[400px]" />}>
+        <React.Suspense fallback={<div className="min-h-96" />}>
           <StatsSection />
         </React.Suspense>
       </ScrollReveal>
@@ -78,25 +80,25 @@ export default async function HomePage() {
       </div>
 
       <ScrollReveal index={0}>
-        <React.Suspense fallback={<div className="min-h-[400px]" />}>
+        <React.Suspense fallback={<div className="min-h-96" />}>
           <PhilosophySection />
         </React.Suspense>
       </ScrollReveal>
 
       <ScrollReveal index={1}>
-        <React.Suspense fallback={<div className="min-h-[400px]" />}>
+        <React.Suspense fallback={<div className="min-h-96" />}>
           <ServicesSection />
         </React.Suspense>
       </ScrollReveal>
 
       <ScrollReveal index={0}>
-        <React.Suspense fallback={<div className="min-h-[400px]" />}>
+        <React.Suspense fallback={<div className="min-h-96" />}>
           <PortfolioTeaserSection />
         </React.Suspense>
       </ScrollReveal>
 
       <ScrollReveal index={1}>
-        <React.Suspense fallback={<div className="min-h-[400px]" />}>
+        <React.Suspense fallback={<div className="min-h-96" />}>
           <IndustriesGrid />
         </React.Suspense>
       </ScrollReveal>
@@ -109,14 +111,14 @@ export default async function HomePage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10">
               <span className="text-sapphire font-bold tracking-wider uppercase text-xs mb-2 block">
-                Core Tech Stack
+                {t('techStack.eyebrow', { defaultValue: 'Core Tech Stack' })}
               </span>
               <h2
                 id="tech-stack-heading"
                 className="font-display font-bold text-2xl sm:text-3xl text-secondary"
               >
-                High-End Architektur{' '}
-                <span className="text-sapphire">für kompromisslose Performance</span>
+                {t('techStack.headingPrefix', { defaultValue: 'High-End Architektur' })}{' '}
+                <span className="text-sapphire">{t('techStack.headingSuffix', { defaultValue: 'für kompromisslose Performance' })}</span>
               </h2>
             </div>
             <LogoLoop
@@ -141,7 +143,7 @@ export default async function HomePage() {
       </ScrollReveal>
 
       <ScrollReveal index={1}>
-        <React.Suspense fallback={<div className="min-h-[400px]" />}>
+        <React.Suspense fallback={<div className="min-h-96" />}>
           <TestimonialsSection />
         </React.Suspense>
       </ScrollReveal>

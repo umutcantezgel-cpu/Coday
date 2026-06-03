@@ -26,10 +26,10 @@ export function BrandIdentityClient() {
       
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 px-6 overflow-hidden bg-background-light">
+      <section className="relative pt-32 pb-24 px-6 overflow-hidden bg-surface-base">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-start">
-            <h1 className="font-display font-black text-5xl sm:text-6xl lg:text-7xl text-secondary mb-8 tracking-tight">
+            <h1 className="font-display font-black text-5xl sm:text-6xl lg:text-7xl text-content-base mb-8 tracking-tight text-balance">
               <BlurText
                 text={t('brand_identity_page.hero.title_prefix')}
                 delay={100}
@@ -45,7 +45,7 @@ export function BrandIdentityClient() {
                 {t('brand_identity_page.hero.title_suffix')}
               </GradientText>
             </h1>
-            <p className="text-xl text-slate-600 leading-relaxed max-w-xl mb-10">
+            <p className="text-xl text-content-muted leading-relaxed max-w-prose text-pretty max-w-xl mb-10">
               {t('brand_identity_page.hero.description')}
             </p>
             <Button size="lg" variant="primary" rightIcon={<OptimizedIcon icon={ArrowRight} />}>
@@ -66,12 +66,12 @@ export function BrandIdentityClient() {
       </section>
 
       {/* Digital Branding Tags */}
-      <section className="py-24 bg-white text-center">
+      <section className="py-24 bg-surface-elevated text-center">
         <div className="max-w-4xl mx-auto px-6">
-          <h2 className="font-display font-bold text-3xl mb-6">
+          <h2 className="font-display font-bold text-3xl mb-6 text-balance">
             {t('brand_identity_page.digital_branding.title')}
           </h2>
-          <p className="text-slate-600 mb-12 max-w-2xl mx-auto">
+          <p className="text-content-muted mb-12 max-w-2xl mx-auto">
             {t('brand_identity_page.digital_branding.description')}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
@@ -90,7 +90,7 @@ export function BrandIdentityClient() {
       {/* Process Section */}
       <section className="py-24 bg-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl font-display font-bold mb-16 text-center">
+          <h2 className="text-4xl font-display font-bold mb-16 text-center text-balance">
             {t('brand_identity_page.process.title')}
           </h2>
 
@@ -116,14 +116,14 @@ export function BrandIdentityClient() {
       </section>
 
       {/* Deliverables Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-surface-elevated">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-display font-bold mb-12">
+          <h2 className="text-3xl font-display font-bold mb-12 text-balance">
             {t('brand_identity_page.deliverables.title')}
           </h2>
           <div className="grid md:grid-cols-3 gap-4">
             {deliverables.map((item, i) => (
-              <div key={i} className="flex items-center gap-3 p-4 bg-slate-50 rounded-xl">
+              <div key={i} className="flex items-center gap-3 p-4 bg-surface-muted rounded-xl">
                 <OptimizedIcon icon={CheckCircle} className="text-green-500" weight="fill" />
                 <span className="font-medium text-slate-700">{item}</span>
               </div>

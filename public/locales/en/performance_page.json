@@ -1,0 +1,23 @@
+{
+  "google_values": {
+    "badge": "Core Web Vitals",
+    "description": "Wir optimieren streng nach den Google-Richtlinien für maximale Geschwindigkeit.",
+    "title": "Exzellenz messbar gemacht"
+  },
+  "hero": {
+    "badge": "Performance-Optimierung",
+    "description": "Verbessern Sie Ihre Konversionsraten durch blitzschnelle Ladezeiten.",
+    "title_prefix": "Maximale",
+    "title_suffix": "Web-Performance"
+  },
+  "meta": {
+    "description": "Wir optimieren Ihre Website für maximale Geschwindigkeit und beste Google Rankings.",
+    "title": "Web-Performance Optimierung"
+  },
+  "metrics": {
+    "eco": "Energieeffizienz",
+    "load_time": "Ladezeit",
+    "score": "Lighthouse Score",
+    "shift": "Layout Shift"
+  }
+}

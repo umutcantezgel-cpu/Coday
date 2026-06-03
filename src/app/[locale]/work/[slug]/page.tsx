@@ -1,8 +1,24 @@
+import { generatePageMetadata } from '@/lib/metadata';
+import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { SeoHead } from '@/shared/ui/SeoHead';
 import ClientComponent from '@/features/work/ui/ProjectDetailClient';
 import { workData } from '@/shared/data/work';
 import { notFound } from 'next/navigation';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return generatePageMetadata({
+    title: 'Coday Web-Agentur',
+    description: 'Premium Webentwicklung & Design',
+    path: `/${locale}`,
+    type: 'money',
+  });
+}
 
 export function generateStaticParams() {
   return Object.keys(workData).map((slug) => ({ slug }));

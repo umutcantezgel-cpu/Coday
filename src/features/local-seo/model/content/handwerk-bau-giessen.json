@@ -1,0 +1,59 @@
+{
+  "target": "handwerk-bau-giessen",
+  "type": "industry-location",
+  "meta": {
+    "title": "Premium Webdesign für Handwerk & Bau in Gießen | Coday",
+    "description": "High-End Next.js Webdesign für Handwerks- und Bauunternehmen in Gießen. Gewinnen Sie Fachkräfte, digitalisieren Sie Prozesse und dominieren Sie den Mittelhessischen Markt mit extremer Performance."
+  },
+  "hero": {
+    "headline": "Digitales Fundament für Gießens Handwerks-Elite",
+    "subheadline": "Websites, die Fachkräfte anziehen, Vertrauen schaffen und Aufträge sichern",
+    "description": "Im hart umkämpften Bau- und Handwerkssektor in Gießen, Wetzlar und ganz Mittelhessen entscheidet Ihre digitale Präsenz heute über den wirtschaftlichen Erfolg von morgen. Coday entwickelt maßgeschneiderte, blitzschnelle High-End-Websites, die nicht nur beeindrucken, sondern qualifizierte Mitarbeiter anwerben und Ihre lokale Marktführerschaft zementieren."
+  },
+  "localDominance": {
+    "title": "Regionale Dominanz im Gießener Baugewerbe",
+    "description": "Wir verstehen die spezifischen Anforderungen von Handwerksbetrieben in Gießen. Von der Lahn über den Schiffenberg bis in die umliegenden Industriegebiete: Wir positionieren Sie digital exakt dort, wo Ihre lukrativsten Kunden und zukünftigen Mitarbeiter suchen.",
+    "points": [
+      "Maximale Sichtbarkeit: Lokales SEO für Gießen, Wetzlar und den gesamten Lahn-Dill-Kreis",
+      "Automatisierte Mitarbeitergewinnung durch psychologisch optimierte Recruiting-Funnels",
+      "Technologische Überlegenheit: Blitzschnelle Ladezeiten dank modernster Next.js und Edge-Architektur",
+      "Perfekte mobile Darstellung: Optimiert für schnelle Zugriffe direkt von der Baustelle"
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "Das Problem: Unsichtbarkeit im digitalen Gießen",
+      "content": "Viele erstklassige Handwerksbetriebe, Bauunternehmer und Architekten in Gießen leiden unter veralteten, langsamen Websites. Das Resultat ist fatal: Junge, gut ausgebildete Fachkräfte bewerben sich bei der Konkurrenz, und lukrative Großaufträge gehen an Betriebe mit einem moderneren Außenauftritt. Eine einfache Baukasten-Website oder verstaubte WordPress-Präsenz reicht heute nicht mehr aus, um im Kampf um die besten Talente der THM oder im regionalen Handwerk ernst genommen zu werden."
+    },
+    {
+      "title": "Unsere Lösung: High-End Webdesign als Ihre Recruiting-Maschine",
+      "content": "Als Premium Webagentur verwandelt Coday Ihren digitalen Auftritt in ein hochperformantes, automatisiertes Werkzeug. Wir nutzen modernste Frameworks wie React, Next.js 15 und TypeScript, um Websites zu bauen, die in Millisekunden laden und technische Brillanz ausstrahlen. Durch gezielte Conversion-Rate-Optimierung und messerscharfes, minimalistisches Design überzeugen Sie Bewerber auf den allerersten Blick. Ihr Meisterbetrieb wird als zukunftssicherer, innovativer Arbeitgeber wahrgenommen, bei dem man gerne arbeitet."
+    },
+    {
+      "title": "Vertrauen durch visuelle Exzellenz und echte Performance",
+      "content": "Im Baugewerbe zählen Qualität, Präzision und Zuverlässigkeit. Ihre Website muss genau diese Werte widerspiegeln. Coday kreiert digitale Erlebniswelten mit erstklassigen Animationen, sauberer Typografie und klaren Strukturen. Wir setzen auf performante Architekturen ohne Kompromisse. Das bedeutet: Keine Ladebalken, keine verschobenen Layouts. Ihr Unternehmen präsentiert sich mit einer digitalen Perfektion, die Premium-Kunden überzeugt und Ihre handwerkliche Qualität unterstreicht."
+    },
+    {
+      "title": "Skalierbare Plattformen für wachsende Gießener Betriebe",
+      "content": "Ihr Unternehmen wächst, Ihre digitale Präsenz sollte das auch tun. Wir bauen keine statischen Visitenkarten, sondern dynamische, skalierbare Plattformen. Egal ob Sie ein neues Gewerk hinzufügen, aktuelle Bauprojekte aus Gießen als Case Studies präsentieren wollen oder ein integriertes CMS für schnelle Updates benötigen – wir nutzen headless Architekturen wie Sanity, um Ihnen maximale Flexibilität zu garantieren, ohne die Performance zu gefährden."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Warum braucht mein Handwerksbetrieb in Gießen eine High-End Next.js Website?",
+      "a": "Weil der erste Eindruck heute fast ausschließlich digital stattfindet. Wenn ein potenzieller Azubi, ein Architekt oder ein Bauherr nach Betrieben in Gießen sucht, entscheidet Ihre Website in Sekundenbruchteilen über Professionalität, Vertrauen und Auftragsvergabe. Eine High-End Next.js Website von Coday sorgt für unschlagbare Ladezeiten und ein elitäres Design, das Sie sofort als Marktführer positioniert und Ihre Konkurrenz deklassiert."
+    },
+    {
+      "q": "Wie genau hilft mir die neue Website beim Recruiting von Fachkräften?",
+      "a": "Wir integrieren hochkonvertierende, mehrstufige Recruiting-Funnels und optimieren Ihre Karriereseite exakt auf die psychologischen Bedürfnisse moderner Fachkräfte. Durch ein extrem schnelles, barrierefreies und auf mobilen Geräten perfektioniertes Bewerbungserlebnis reduzieren wir die Abbruchrate drastisch. Potenzielle Mitarbeiter erkennen sofort, dass Sie ein innovativer, strukturierter und lukrativer Arbeitgeber in Mittelhessen sind."
+    },
+    {
+      "q": "Sind Ihre Webanwendungen für den harten Alltag auf Baustellen optimiert?",
+      "a": "Absolut. Coday entwickelt streng nach dem Mobile-First-Prinzip und fokussiert sich massiv auf Performance-Metriken (Core Web Vitals). Ihre Website wird auf jedem Smartphone perfekt dargestellt, ist leicht bedienbar und lädt selbst bei der schlechtesten Netzabdeckung in Gießen oder im Umland extrem schnell. Das ist essenziell für Bauleiter, Architekten und Kunden, die von unterwegs auf Ihre Referenzen oder Kontaktdaten zugreifen."
+    },
+    {
+      "q": "Warum sollte ich Coday gegenüber einer klassischen Gießener Full-Service-Agentur bevorzugen?",
+      "a": "Coday ist hochspezialisiert. Wir sind keine Generalisten, die nebenbei ein bisschen WordPress machen. Wir fokussieren uns zu 100% auf High-End Web-Engineering mit Next.js, React und Headless-Systemen. Als Solo-Agentur profitieren Sie von direkter Kommunikation, kompromissloser handwerklicher Qualität im Code und einer Geschwindigkeit, die große Agenturen durch ihren Overhead nicht leisten können."
+    }
+  ]
+}

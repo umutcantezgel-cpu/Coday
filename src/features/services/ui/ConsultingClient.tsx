@@ -34,7 +34,7 @@ export function ConsultingClient() {
         pageType="service"
       />
 
-      <div className="min-h-dvh bg-slate-50">
+      <div className="min-h-dvh bg-surface-muted">
         {/* --- HERO SECTION --- */}
         <section className="relative min-h-[90vh] flex items-center justify-center bg-slate-900 text-white overflow-hidden pb-24 pt-32">
           {/* Background Grid */}
@@ -50,7 +50,7 @@ export function ConsultingClient() {
               <span className="text-sm font-bold tracking-wide uppercase">{t('hero.badge')}</span>
             </motion.div>
 
-            <h1 className="text-5xl md:text-8xl font-display font-bold mb-8 leading-tight tracking-tight">
+            <h1 className="text-5xl md:text-8xl font-display font-bold mb-8 leading-tight tracking-tight text-balance">
               {t('hero.title_start')}
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-teal-400 to-purple-400 animate-gradient-x motion-reduce:animate-none">
@@ -58,7 +58,7 @@ export function ConsultingClient() {
               </span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-slate-400 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
+            <p className="text-xl md:text-2xl text-slate-400 mb-12 max-w-3xl mx-auto font-light leading-relaxed max-w-prose text-pretty">
               {t('hero.subtitle')}
             </p>
 
@@ -96,7 +96,7 @@ export function ConsultingClient() {
         >
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-24">
-              <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-500 mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-500 mb-6 text-balance">
                 {t('methodology.title')}
               </h2>
               <p className="text-xl text-slate-400 max-w-2xl mx-auto">
@@ -122,17 +122,17 @@ export function ConsultingClient() {
         </motion.section>
 
         {/* --- CASE STUDY TEASER --- */}
-        <section className="py-24 bg-slate-50 border-t border-slate-200/50">
+        <section className="py-24 bg-surface-muted border-t border-slate-200/50">
           <div className="max-w-5xl mx-auto px-4">
-            <div className="bg-white rounded-[2rem] p-8 md:p-16 shadow-[0_10px_40px_rgba(0,0,0,0.05)] border border-slate-100 flex flex-col md:flex-row items-center gap-12">
+            <div className="bg-surface-elevated rounded-[2rem] p-8 md:p-16 shadow-[0_10px_40px_rgba(0,0,0,0.05)] border border-slate-100 flex flex-col md:flex-row items-center gap-12">
               <div className="flex-1">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 mb-6 text-sm font-bold uppercase tracking-wide">
                   {t('case_study.label')}
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 text-balance">
                   {t('case_study.title')}
                 </h2>
-                <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+                <p className="text-lg text-content-muted mb-8 leading-relaxed max-w-prose text-pretty">
                   {t('case_study.description')}
                 </p>
                 <Link
@@ -145,7 +145,7 @@ export function ConsultingClient() {
               </div>
               <div className="flex-1 relative w-full aspect-square md:aspect-auto md:h-80 bg-slate-100 rounded-3xl overflow-hidden border border-slate-200">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 flex items-center justify-center">
-                  <div className="w-32 h-32 bg-white rounded-full shadow-lg flex items-center justify-center border border-slate-100">
+                  <div className="w-32 h-32 bg-surface-elevated rounded-full shadow-lg flex items-center justify-center border border-slate-100">
                     <ChartLineUp className="w-16 h-16 text-blue-500" />
                   </div>
                 </div>
@@ -158,7 +158,7 @@ export function ConsultingClient() {
         <section className="py-24 bg-slate-950 border-t border-slate-800/30">
           <RelevantFAQs
             serviceId="consulting"
-            className="text-white [&_h2]:text-white [&_span]:text-white [&_button]:bg-slate-900 [&_div.bg-white]:bg-slate-900 [&_div.bg-white]:border-slate-800"
+            className="text-white [&_h2]:text-white [&_span]:text-white [&_button]:bg-slate-900 [&_div.bg-surface-elevated]:bg-slate-900 [&_div.bg-surface-elevated]:border-slate-800"
           />
         </section>
 
@@ -166,14 +166,14 @@ export function ConsultingClient() {
         <section className="py-32 bg-blue-600 text-white relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('/noise.png')] opacity-20 mix-blend-overlay"></div>
           <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-            <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight">
+            <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight text-balance">
               {t('booking.title')}
             </h2>
             <p className="text-xl md:text-2xl text-blue-100 mb-16 font-light">
               {t('booking.subtitle')}
             </p>
 
-            <div className="bg-white rounded-3xl overflow-hidden text-slate-900 shadow-2xl">
+            <div className="bg-surface-elevated rounded-3xl overflow-hidden text-slate-900 shadow-2xl">
               <BookingCalendar
                 initialServiceType="consulting"
                 className="border-none shadow-none"

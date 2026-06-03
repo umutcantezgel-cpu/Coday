@@ -26,30 +26,30 @@ const GearSetup: React.FC = () => {
   };
 
   return (
-    <div className="bg-surface-dark rounded-3xl p-8 lg:p-12 border border-white/10 overflow-hidden relative">
-      <div className="absolute top-0 right-0 p-4 opacity-10 pointer-events-none">
-        <OptimizedIcon icon={Desktop} className="text-[300px] text-white" aria-hidden="true" />
+    <div className="bg-surface-elevated rounded-3xl p-8 lg:p-12 border border-primary/10 overflow-hidden relative shadow-sm">
+      <div className="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
+        <OptimizedIcon icon={Desktop} className="text-[300px] text-primary" aria-hidden="true" />
       </div>
 
       <div className="relative z-10 grid lg:grid-cols-2 gap-12">
         {/* Controls */}
         <div>
-          <h3 className="font-display font-bold text-3xl text-white mb-2">Dein Setup.</h3>
-          <p className="text-gray-400 mb-8">
+          <h3 className="font-display font-bold text-3xl text-secondary-900 mb-2">Dein Setup.</h3>
+          <p className="text-secondary-600 mb-8">
             Wähle deine Waffen. Wir bestellen alles vor deinem ersten Tag.
           </p>
 
           <div className="space-y-8">
             {/* Laptop Selector */}
             <div>
-              <label className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3 block">
+              <label className="text-xs font-bold text-secondary-500 uppercase tracking-wider mb-3 block">
                 Machine
               </label>
               <div className="flex gap-4" role="group" aria-label="Machine auswählen">
                 <button
                   aria-pressed={laptop === 'mac'}
                   onClick={() => setLaptop('mac')}
-                  className={`active:scale-[0.97] flex-1 p-4 rounded-xl border transition motion-reduce:duration-[0.01ms] text-left ${laptop === 'mac' ? 'bg-primary/20 border-primary text-white' : 'bg-white/5 border-transparent text-gray-400 hover:bg-white/10'}`}
+                  className={`active:scale-[0.97] flex-1 p-4 rounded-xl border transition motion-reduce:duration-[0.01ms] text-left ${laptop === 'mac' ? 'bg-primary-50 border-primary-300 text-primary-900 shadow-sm' : 'bg-white border-neutral-200 text-secondary-600 hover:bg-neutral-50'}`}
                 >
                   <div className="font-bold mb-1">Apple</div>
                   <div className="text-xs opacity-70">M3 Max</div>
@@ -57,7 +57,7 @@ const GearSetup: React.FC = () => {
                 <button
                   aria-pressed={laptop === 'win'}
                   onClick={() => setLaptop('win')}
-                  className={`active:scale-[0.97] flex-1 p-4 rounded-xl border transition motion-reduce:duration-[0.01ms] text-left ${laptop === 'win' ? 'bg-primary/20 border-primary text-white' : 'bg-white/5 border-transparent text-gray-400 hover:bg-white/10'}`}
+                  className={`active:scale-[0.97] flex-1 p-4 rounded-xl border transition motion-reduce:duration-[0.01ms] text-left ${laptop === 'win' ? 'bg-primary-50 border-primary-300 text-primary-900 shadow-sm' : 'bg-white border-neutral-200 text-secondary-600 hover:bg-neutral-50'}`}
                 >
                   <div className="font-bold mb-1">Windows</div>
                   <div className="text-xs opacity-70">Dell XPS</div>
@@ -67,7 +67,7 @@ const GearSetup: React.FC = () => {
 
             {/* Monitor Selector */}
             <div>
-              <label className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3 block">
+              <label className="text-xs font-bold text-secondary-500 uppercase tracking-wider mb-3 block">
                 Display
               </label>
               <div className="grid grid-cols-3 gap-2" role="group" aria-label="Display auswählen">
@@ -80,7 +80,7 @@ const GearSetup: React.FC = () => {
                     key={opt.id}
                     aria-pressed={monitor === opt.id}
                     onClick={() => setMonitor(opt.id as 'ultra' | 'dual' | 'pro')}
-                    className={`active:scale-[0.97] p-3 rounded-lg border transition motion-reduce:duration-[0.01ms] text-sm font-bold ${monitor === opt.id ? 'bg-primary/20 border-primary text-white' : 'bg-white/5 border-transparent text-gray-400 hover:bg-white/10'}`}
+                    className={`active:scale-[0.97] p-3 rounded-lg border transition motion-reduce:duration-[0.01ms] text-sm font-bold ${monitor === opt.id ? 'bg-primary-50 border-primary-300 text-primary-900 shadow-sm' : 'bg-white border-neutral-200 text-secondary-600 hover:bg-neutral-50'}`}
                   >
                     {opt.label}
                   </button>
@@ -90,14 +90,14 @@ const GearSetup: React.FC = () => {
 
             {/* Audio Selector */}
             <div>
-              <label className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3 block">
+              <label className="text-xs font-bold text-secondary-500 uppercase tracking-wider mb-3 block">
                 Audio
               </label>
               <div className="flex gap-4" role="group" aria-label="Audio auswählen">
                 <button
                   aria-pressed={audio === 'over'}
                   onClick={() => setAudio('over')}
-                  className={`active:scale-[0.97] flex-1 p-4 rounded-xl border transition motion-reduce:duration-[0.01ms] text-left ${audio === 'over' ? 'bg-primary/20 border-primary text-white' : 'bg-white/5 border-transparent text-gray-400 hover:bg-white/10'}`}
+                  className={`active:scale-[0.97] flex-1 p-4 rounded-xl border transition motion-reduce:duration-[0.01ms] text-left ${audio === 'over' ? 'bg-primary-50 border-primary-300 text-primary-900 shadow-sm' : 'bg-white border-neutral-200 text-secondary-600 hover:bg-neutral-50'}`}
                 >
                   <div className="font-bold mb-1">Over-Ear</div>
                   <div className="text-xs opacity-70">Sony XM5</div>
@@ -105,7 +105,7 @@ const GearSetup: React.FC = () => {
                 <button
                   aria-pressed={audio === 'pods'}
                   onClick={() => setAudio('pods')}
-                  className={`active:scale-[0.97] flex-1 p-4 rounded-xl border transition motion-reduce:duration-[0.01ms] text-left ${audio === 'pods' ? 'bg-primary/20 border-primary text-white' : 'bg-white/5 border-transparent text-gray-400 hover:bg-white/10'}`}
+                  className={`active:scale-[0.97] flex-1 p-4 rounded-xl border transition motion-reduce:duration-[0.01ms] text-left ${audio === 'pods' ? 'bg-primary-50 border-primary-300 text-primary-900 shadow-sm' : 'bg-white border-neutral-200 text-secondary-600 hover:bg-neutral-50'}`}
                 >
                   <div className="font-bold mb-1">In-Ear</div>
                   <div className="text-xs opacity-70">AirPods Pro</div>
@@ -116,8 +116,8 @@ const GearSetup: React.FC = () => {
         </div>
 
         {/* Preview */}
-        <div className="bg-black/40 rounded-2xl p-8 flex flex-col justify-center relative border border-white/5">
-          <div className="absolute top-4 right-4 text-xs font-mono text-primary flex items-center gap-2">
+        <div className="bg-neutral-50 rounded-2xl p-8 flex flex-col justify-center relative border border-neutral-200 shadow-inner">
+          <div className="absolute top-4 right-4 text-xs font-mono text-green-600 font-bold flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse motion-reduce:animate-none" aria-hidden="true"></span>
             READY TO SHIP
           </div>
@@ -127,14 +127,14 @@ const GearSetup: React.FC = () => {
               key={laptop}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="bg-white/5 p-4 rounded-xl flex items-center gap-4"
+              className="bg-white border border-neutral-100 shadow-sm p-4 rounded-xl flex items-center gap-4"
             >
-              <div className="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center text-white">
+              <div className="w-12 h-12 bg-primary-50 border border-primary-100 rounded-lg flex items-center justify-center text-primary-600">
                 <OptimizedIcon icon={Laptop} className="text-2xl" />
               </div>
               <div>
-                <h4 className="font-bold text-white">{equipment.laptops[laptop].name}</h4>
-                <p className="text-gray-400 text-sm">{equipment.laptops[laptop].desc}</p>
+                <h4 className="font-bold text-secondary-900">{equipment.laptops[laptop].name}</h4>
+                <p className="text-secondary-500 text-sm">{equipment.laptops[laptop].desc}</p>
               </div>
             </motion.div>
 
@@ -143,14 +143,14 @@ const GearSetup: React.FC = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.1 }}
-              className="bg-white/5 p-4 rounded-xl flex items-center gap-4"
+              className="bg-white border border-neutral-100 shadow-sm p-4 rounded-xl flex items-center gap-4"
             >
-              <div className="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center text-white">
+              <div className="w-12 h-12 bg-primary-50 border border-primary-100 rounded-lg flex items-center justify-center text-primary-600">
                 <OptimizedIcon icon={Monitor} className="text-2xl" />
               </div>
               <div>
-                <h4 className="font-bold text-white">{equipment.monitors[monitor].name}</h4>
-                <p className="text-gray-400 text-sm">{equipment.monitors[monitor].desc}</p>
+                <h4 className="font-bold text-secondary-900">{equipment.monitors[monitor].name}</h4>
+                <p className="text-secondary-500 text-sm">{equipment.monitors[monitor].desc}</p>
               </div>
             </motion.div>
 
@@ -159,28 +159,28 @@ const GearSetup: React.FC = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
-              className="bg-white/5 p-4 rounded-xl flex items-center gap-4"
+              className="bg-white border border-neutral-100 shadow-sm p-4 rounded-xl flex items-center gap-4"
             >
-              <div className="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center text-white">
+              <div className="w-12 h-12 bg-primary-50 border border-primary-100 rounded-lg flex items-center justify-center text-primary-600">
                 <OptimizedIcon icon={Headphones} className="text-2xl" />
               </div>
               <div>
-                <h4 className="font-bold text-white">{equipment.audio[audio].name}</h4>
-                <p className="text-gray-400 text-sm">{equipment.audio[audio].desc}</p>
+                <h4 className="font-bold text-secondary-900">{equipment.audio[audio].name}</h4>
+                <p className="text-secondary-500 text-sm">{equipment.audio[audio].desc}</p>
               </div>
             </motion.div>
 
-            <div className="pt-8 border-t border-white/10 mt-4">
+            <div className="pt-8 border-t border-neutral-200 mt-4">
               <div className="flex justify-between items-end">
                 <div>
-                  <p className="text-gray-400 text-xs uppercase tracking-wider mb-1">
+                  <p className="text-secondary-500 text-xs uppercase tracking-wider mb-1 font-bold">
                     Gesamtwert (ca.)
                   </p>
-                  <div className="text-3xl font-bold text-white font-mono">
+                  <div className="text-3xl font-bold text-secondary-900 font-mono">
                     {laptop === 'mac' ? '€5.800' : '€4.200'}
                   </div>
                 </div>
-                <button className="active:scale-[0.97] px-4 py-2 bg-white text-secondary font-bold rounded-lg text-sm hover:bg-gray-200 transition-colors motion-reduce:duration-[0.01ms]">
+                <button className="active:scale-[0.97] px-4 py-2 bg-primary-600 text-white font-bold rounded-lg text-sm hover:bg-primary-700 transition-colors motion-reduce:duration-[0.01ms] shadow-sm">
                   Bestellung simulieren
                 </button>
               </div>

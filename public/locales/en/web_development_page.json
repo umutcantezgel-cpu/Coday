@@ -1,0 +1,93 @@
+{
+  "architecture": {
+    "visualizer": {
+      "build": {
+        "desc": "Automatisierte Tests & CI/CD",
+        "details": "Jeder Commit wird automatisch getestet und optimiert gebaut.",
+        "label": "Build Pipeline"
+      },
+      "cms": {
+        "desc": "Sanity.io Infrastruktur",
+        "details": "Strukturierte Inhalte mit voll typisierter API.",
+        "label": "Headless CMS"
+      },
+      "edge": {
+        "desc": "Vercel Edge & Middleware",
+        "details": "Globale Auslieferung in wenigen Millisekunden.",
+        "label": "Edge Network"
+      },
+      "footer": "Technologie-Stack & Infrastruktur",
+      "user": {
+        "desc": "Globale Auslieferung",
+        "details": "Nahtloses Erlebnis durch intelligentes Edge Caching.",
+        "label": "Endnutzer"
+      }
+    }
+  },
+  "process": {
+    "simulator": {
+      "features": {
+        "ci": {
+          "desc": "Gewährleistet reibungslose und sichere Deployments",
+          "label": "CI/CD Pipeline"
+        },
+        "lint": {
+          "desc": "Sichert konsistenten und fehlerfreien Code",
+          "label": "Linting & Formatierung"
+        },
+        "review": {
+          "desc": "Manuelle Qualitätskontrolle für höchste Standards",
+          "label": "Code Reviews"
+        },
+        "test": {
+          "desc": "Garantiert kontinuierliche Stabilität und Zuverlässigkeit",
+          "label": "Automatisierte Tests"
+        },
+        "ts": {
+          "desc": "Strenge Typsicherheit eliminiert Runtime-Fehler",
+          "label": "TypeScript Strict Mode"
+        }
+      },
+      "messages": {
+        "enterprise": "Enterprise-Level: Maximale Skalierbarkeit, Sicherheit und Performance.",
+        "good": "Sehr gut: Hohe Zuverlässigkeit und saubere Code-Struktur.",
+        "risky": "Kritisch: Stabilitätsschwankungen und Performance-Einbußen wahrscheinlich.",
+        "stable": "Stabil: Solide Basis, jedoch mit weiterem Optimierungspotenzial.",
+        "unstable": "Warnung: Hohes Risiko für technische Schulden und Systemausfälle."
+      },
+      "mission_accomplished": "Exzellenz erreicht!",
+      "project_status": "Projektstatus:",
+      "status_label": "Systemstabilität",
+      "subtitle": "Aktivieren Sie verschiedene Best Practices, um deren Auswirkungen direkt zu erleben.",
+      "title": "Code-Qualität Simulator"
+    }
+  },
+  "security": {
+    "items": {
+      "csrf": {
+        "title": "Auth",
+        "value": "Sichere Sessions"
+      },
+      "ddos": {
+        "title": "DDoS-Schutz",
+        "value": "Edge Network"
+      },
+      "owasp": {
+        "title": "OWASP Top 10",
+        "value": "Vollständiger Schutz"
+      },
+      "sql": {
+        "title": "Datenbank",
+        "value": "Injection-Schutz"
+      },
+      "ssl": {
+        "title": "Verschlüsselung",
+        "value": "TLS 1.3 / SSL"
+      },
+      "xss": {
+        "title": "Cross-Site",
+        "value": "XSS & CSRF sicher"
+      }
+    }
+  }
+}

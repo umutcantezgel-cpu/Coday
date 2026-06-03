@@ -67,7 +67,7 @@ export default function OpinionPage() {
             type: 'OpinionNewsArticle',
             headline: position.de.title,
             description: position.de.elevatorPitch,
-            image: '/images/og-image.jpg',
+            image: '/images/brand/coday-full.webp',
             author: AUTHOR.name,
             datePublished: '2024-05-15',
             articleSection: 'Industry Opinion',

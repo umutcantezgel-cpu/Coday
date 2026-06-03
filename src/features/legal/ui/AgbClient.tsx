@@ -203,19 +203,19 @@ export function AgbClient() {
           })}
         />
 
-        <p className="leading-relaxed text-gray-600 mb-4">
+        <p className="leading-relaxed text-secondary-800 mb-4">
           {t('terms.sections.1.p1', {
             defaultValue:
               '(1) Diese Allgemeinen Geschäftsbedingungen (nachfolgend „AGB") von Umutcan Emre Tezgel, Lessingstraße 4, 35578 Wetzlar (nachfolgend „Anbieter"), gelten für alle Verträge über Webdesign-, Webentwicklungs- und digitale Dienstleistungen, die zwischen dem Anbieter und seinen Kunden (nachfolgend „Auftraggeber") geschlossen werden.',
           })}
         </p>
-        <p className="leading-relaxed text-gray-600 mb-4">
+        <p className="leading-relaxed text-secondary-800 mb-4">
           {t('terms.sections.1.p2', {
             defaultValue:
               '(2) Maßgebend ist die zum Zeitpunkt des Vertragsschlusses gültige Fassung der AGB. Abweichende Geschäftsbedingungen des Auftraggebers werden nicht anerkannt, es sei denn, der Anbieter stimmt ihrer Geltung ausdrücklich schriftlich zu.',
           })}
         </p>
-        <p className="leading-relaxed text-gray-600">
+        <p className="leading-relaxed text-secondary-800">
           {t('terms.sections.1.p3', {
             defaultValue:
               '(3) Diese AGB gelten sowohl für Verbraucher als auch für Unternehmer im Sinne des § 14 BGB.',
@@ -282,25 +282,25 @@ export function AgbClient() {
           })}
         />
 
-        <p className="leading-relaxed text-gray-600 mb-4">
+        <p className="leading-relaxed text-secondary-800 mb-4">
           {t('terms.sections.2.p1', {
             defaultValue:
               '(1) Die auf der Website dargestellten Leistungsbeschreibungen und Preisangaben stellen kein verbindliches Angebot dar, sondern eine Aufforderung zur Abgabe eines Angebots (invitatio ad offerendum).',
           })}
         </p>
-        <p className="leading-relaxed text-gray-600 mb-4">
+        <p className="leading-relaxed text-secondary-800 mb-4">
           {t('terms.sections.2.p2', {
             defaultValue:
               '(2) Durch Absenden einer Projektanfrage über das Kontaktformular oder per E-Mail gibt der Auftraggeber ein unverbindliches Angebot ab.',
           })}
         </p>
-        <p className="leading-relaxed text-gray-600 mb-4">
+        <p className="leading-relaxed text-secondary-800 mb-4">
           {t('terms.sections.2.p3', {
             defaultValue:
               '(3) Ein Vertrag kommt erst durch die Unterzeichnung eines schriftlichen Angebots durch beide Parteien oder durch ausdrückliche schriftliche Annahme per E-Mail zustande.',
           })}
         </p>
-        <p className="leading-relaxed text-gray-600">
+        <p className="leading-relaxed text-secondary-800">
           {t('terms.sections.2.p4', {
             defaultValue:
               '(4) Der Anbieter speichert den Vertragstext und sendet dem Auftraggeber eine Bestätigung per E-Mail. Der Vertragstext ist für den Auftraggeber nach Vertragsschluss nicht mehr zugänglich außer auf Anfrage.',
@@ -318,14 +318,14 @@ export function AgbClient() {
           })}
         />
 
-        <p className="leading-relaxed text-gray-600 mb-4">
+        <p className="leading-relaxed text-secondary-800 mb-4">
           {t('terms.sections.3.p1', {
             defaultValue:
               '(1) Der Anbieter erbringt Webdesign-, Webentwicklungs- und digitale Marketingdienstleistungen gemäß dem individuellen Angebot. Dazu können gehören:',
           })}
         </p>
 
-        <ul className="list-disc pl-5 text-gray-600 space-y-2 mb-6">
+        <ul className="list-disc pl-5 text-secondary-800 space-y-2 mb-6">
           <li>
             {t('terms.services.list.1', {
               defaultValue: 'Konzeption und Design von Websites und Web-Applikationen',
@@ -350,7 +350,7 @@ export function AgbClient() {
           </li>
         </ul>
 
-        <p className="leading-relaxed text-gray-600 mb-4">
+        <p className="leading-relaxed text-secondary-800 mb-4">
           {t('terms.sections.3.p2', {
             defaultValue:
               '(2) Die Anzahl der im Angebot vereinbarten Revisionsrunden ist verbindlich. Standardmäßig sind bis zu drei (3) Revisionsrunden im Leistungsumfang enthalten.',
@@ -380,7 +380,7 @@ export function AgbClient() {
           })}
         />
 
-        <p className="leading-relaxed text-gray-600 mb-6">
+        <p className="leading-relaxed text-secondary-800 mb-6">
           {t('terms.sections.projektablauf.intro', {
             defaultValue:
               'Jedes Projekt durchläuft einen strukturierten Prozess, um höchste Qualität und transparente Kommunikation zu gewährleisten:',
@@ -427,13 +427,13 @@ export function AgbClient() {
           })}
         />
 
-        <p className="leading-relaxed text-gray-600 mb-4">
+        <p className="leading-relaxed text-secondary-800 mb-4">
           {t('terms.sections.4.p1', {
             defaultValue:
               '(1) Alle im Angebot genannten Preise sind Nettopreise zuzüglich der gesetzlichen Mehrwertsteuer von derzeit 19%.',
           })}
         </p>
-        <p className="leading-relaxed text-gray-600 mb-4">
+        <p className="leading-relaxed text-secondary-800 mb-4">
           {t('terms.sections.4.p2', {
             defaultValue: '(2) Die Zahlung erfolgt in der Regel in zwei Raten:',
           })}
@@ -460,13 +460,13 @@ export function AgbClient() {
           </LegalInfoCard>
         </div>
 
-        <p className="leading-relaxed text-gray-600 mb-4">
+        <p className="leading-relaxed text-secondary-800 mb-4">
           {t('terms.sections.4.p3', {
             defaultValue:
               '(3) Bei größeren Projekten können abweichende Zahlungsmodalitäten (z.B. Dreiteilung) vereinbart werden.',
           })}
         </p>
-        <p className="leading-relaxed text-gray-600">
+        <p className="leading-relaxed text-secondary-800">
           {t('terms.sections.4.p4', {
             defaultValue:
               '(4) Rechnungen sind innerhalb von 14 Tagen nach Erhalt ohne Abzug zahlbar. Bei Zahlungsverzug werden Verzugszinsen in Höhe von 5 Prozentpunkten über dem Basiszinssatz berechnet.',
@@ -495,19 +495,19 @@ export function AgbClient() {
         </LegalAlertBox>
 
         <div className="mt-6">
-          <p className="leading-relaxed text-gray-600 mb-4">
+          <p className="leading-relaxed text-secondary-800 mb-4">
             {t('terms.festpreis.p1', {
               defaultValue:
                 '(1) Der Festpreis umfasst alle im Angebot definierten Leistungen, einschließlich der vereinbarten Revisionsrunden.',
             })}
           </p>
-          <p className="leading-relaxed text-gray-600 mb-4">
+          <p className="leading-relaxed text-secondary-800 mb-4">
             {t('terms.festpreis.p2', {
               defaultValue:
                 '(2) Zusätzliche Leistungen, die über das ursprüngliche Angebot hinausgehen, werden separat angeboten und berechnet. Eine schriftliche Beauftragung ist erforderlich.',
             })}
           </p>
-          <p className="leading-relaxed text-gray-600">
+          <p className="leading-relaxed text-secondary-800">
             {t('terms.festpreis.p3', {
               defaultValue:
                 '(3) Änderungen am Projektumfang durch den Auftraggeber können zu Preisanpassungen führen. Der Anbieter informiert hierüber vorab.',
@@ -528,7 +528,7 @@ export function AgbClient() {
           })}
         />
 
-        <p className="leading-relaxed text-gray-600 mb-4">
+        <p className="leading-relaxed text-secondary-800 mb-4">
           {t('terms.mitwirkung.intro', {
             defaultValue:
               'Der Auftraggeber stellt sicher, dass die für die Durchführung des Projekts erforderlichen Materialien und Informationen rechtzeitig zur Verfügung gestellt werden:',
@@ -606,19 +606,19 @@ export function AgbClient() {
           })}
         />
 
-        <p className="leading-relaxed text-gray-600 mb-4">
+        <p className="leading-relaxed text-secondary-800 mb-4">
           {t('terms.eigentum.p1', {
             defaultValue:
               '(1) Mit vollständiger Bezahlung gehen alle Nutzungsrechte an den erstellten Werken auf den Auftraggeber über. Dies umfasst das Recht zur unbeschränkten Nutzung für geschäftliche Zwecke.',
           })}
         </p>
-        <p className="leading-relaxed text-gray-600 mb-4">
+        <p className="leading-relaxed text-secondary-800 mb-4">
           {t('terms.eigentum.p2', {
             defaultValue:
               '(2) Das Urheberrecht verbleibt beim Anbieter. Der Anbieter behält sich vor, die erstellten Werke zu Referenzzwecken im eigenen Portfolio zu präsentieren, sofern keine Vertraulichkeitsvereinbarung besteht.',
           })}
         </p>
-        <p className="leading-relaxed text-gray-600 mb-4">
+        <p className="leading-relaxed text-secondary-800 mb-4">
           {t('terms.eigentum.p3', {
             defaultValue:
               '(3) Quelldateien (z.B. Design-Dateien in Figma, Sketch oder Adobe XD) werden nur übergeben, wenn dies ausdrücklich vereinbart wurde.',
@@ -656,25 +656,25 @@ export function AgbClient() {
         </LegalAlertBox>
 
         <div className="mt-6 space-y-4">
-          <p className="leading-relaxed text-gray-600">
+          <p className="leading-relaxed text-secondary-800">
             {t('terms.sections.5.p1', {
               defaultValue:
                 '(1) Die KI-Dienste dienen ausschließlich zu Informationszwecken und stellen keine rechtliche, medizinische oder finanzielle Beratung dar.',
             })}
           </p>
-          <p className="leading-relaxed text-gray-600">
+          <p className="leading-relaxed text-secondary-800">
             {t('terms.sections.5.p2', {
               defaultValue:
                 '(2) Automatisch generierte Inhalte wurden maschinell erstellt und können Fehler enthalten.',
             })}
           </p>
-          <p className="leading-relaxed text-gray-600">
+          <p className="leading-relaxed text-secondary-800">
             {t('terms.sections.5.p3', {
               defaultValue:
                 '(3) Der Anbieter übernimmt keine Gewähr für die Richtigkeit, Vollständigkeit oder Aktualität der KI-generierten Informationen.',
             })}
           </p>
-          <p className="leading-relaxed text-gray-600">
+          <p className="leading-relaxed text-secondary-800">
             {t('terms.sections.5.p4', {
               defaultValue:
                 '(4) Jegliche Haftung für Schäden, die aus der Nutzung von KI-generierten Inhalten entstehen, ist ausgeschlossen, soweit gesetzlich zulässig.',
@@ -683,12 +683,12 @@ export function AgbClient() {
         </div>
 
         <div className="mt-6">
-          <p className="leading-relaxed text-gray-600 mb-2">
+          <p className="leading-relaxed text-secondary-800 mb-2">
             {t('terms.ki.not_for', {
               defaultValue: 'KI-Antworten sind insbesondere nicht geeignet für:',
             })}
           </p>
-          <ul className="list-disc pl-5 text-gray-600 space-y-2">
+          <ul className="list-disc pl-5 text-secondary-800 space-y-2">
             <li>{t('terms.sections.5.list.1', { defaultValue: 'Finanzielle Entscheidungen' })}</li>
             <li>{t('terms.sections.5.list.2', { defaultValue: 'Geschäftliche Strategien' })}</li>
             <li>{t('terms.sections.5.list.3', { defaultValue: 'Rechtliche Maßnahmen' })}</li>
@@ -711,13 +711,13 @@ export function AgbClient() {
           })}
         />
 
-        <p className="leading-relaxed text-gray-600 mb-4">
+        <p className="leading-relaxed text-secondary-800 mb-4">
           {t('terms.gewaehrleistung.p1', {
             defaultValue:
               '(1) Der Anbieter gewährleistet, dass die erbrachten Leistungen dem vereinbarten Funktionsumfang entsprechen und fachgerecht ausgeführt werden.',
           })}
         </p>
-        <p className="leading-relaxed text-gray-600 mb-4">
+        <p className="leading-relaxed text-secondary-800 mb-4">
           {t('terms.gewaehrleistung.p2', {
             defaultValue:
               '(2) Mängel sind dem Anbieter unverzüglich nach Entdeckung schriftlich mitzuteilen. Der Anbieter wird berechtigte Mängel im Rahmen der Nacherfüllung kostenlos beseitigen.',
@@ -736,7 +736,7 @@ export function AgbClient() {
           })}
         </LegalInfoCard>
 
-        <p className="leading-relaxed text-gray-600 mt-4">
+        <p className="leading-relaxed text-secondary-800 mt-4">
           {t('terms.gewaehrleistung.p3', {
             defaultValue:
               '(3) Die Gewährleistungsfrist beträgt 12 Monate ab Projektübergabe, sofern nicht anders vereinbart.',
@@ -752,25 +752,25 @@ export function AgbClient() {
           subtitle={t('terms.sections.6.subtitle', { defaultValue: 'Umfang unserer Haftung' })}
         />
 
-        <p className="leading-relaxed text-gray-600 mb-4">
+        <p className="leading-relaxed text-secondary-800 mb-4">
           {t('terms.sections.6.p1', {
             defaultValue:
               '(1) Der Anbieter haftet unbeschränkt bei Vorsatz und grober Fahrlässigkeit sowie für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit.',
           })}
         </p>
-        <p className="leading-relaxed text-gray-600 mb-4">
+        <p className="leading-relaxed text-secondary-800 mb-4">
           {t('terms.sections.6.p2', {
             defaultValue:
               '(2) Bei leicht fahrlässiger Verletzung wesentlicher Vertragspflichten (Kardinalpflichten) ist die Haftung auf den vertragstypischen, vorhersehbaren Schaden begrenzt.',
           })}
         </p>
-        <p className="leading-relaxed text-gray-600 mb-4">
+        <p className="leading-relaxed text-secondary-800 mb-4">
           {t('terms.sections.6.p3', {
             defaultValue:
               '(3) Eine weitergehende Haftung ist ausgeschlossen, soweit gesetzlich zulässig.',
           })}
         </p>
-        <p className="leading-relaxed text-gray-600">
+        <p className="leading-relaxed text-secondary-800">
           {t('terms.sections.6.p4', {
             defaultValue:
               '(4) Die Haftungsbeschränkungen gelten auch zugunsten der Erfüllungsgehilfen des Anbieters.',
@@ -788,19 +788,19 @@ export function AgbClient() {
           })}
         />
 
-        <p className="leading-relaxed text-gray-600 mb-4">
+        <p className="leading-relaxed text-secondary-800 mb-4">
           {t('terms.vertraulichkeit.p1', {
             defaultValue:
               '(1) Beide Parteien verpflichten sich, alle im Rahmen der Zusammenarbeit erhaltenen vertraulichen Informationen geheim zu halten und nicht an Dritte weiterzugeben.',
           })}
         </p>
-        <p className="leading-relaxed text-gray-600 mb-4">
+        <p className="leading-relaxed text-secondary-800 mb-4">
           {t('terms.vertraulichkeit.p2', {
             defaultValue:
               '(2) Vertrauliche Informationen umfassen insbesondere Geschäftsgeheimnisse, Kundendaten, technische Details und unveröffentlichte Marketingstrategien.',
           })}
         </p>
-        <p className="leading-relaxed text-gray-600">
+        <p className="leading-relaxed text-secondary-800">
           {t('terms.vertraulichkeit.p3', {
             defaultValue:
               '(3) Diese Verpflichtung gilt auch nach Beendigung des Vertragsverhältnisses fort.',
@@ -818,19 +818,19 @@ export function AgbClient() {
           })}
         />
 
-        <p className="leading-relaxed text-gray-600 mb-4">
+        <p className="leading-relaxed text-secondary-800 mb-4">
           {t('terms.kuendigung.p1', {
             defaultValue:
               '(1) Bei projektbezogenen Verträgen ist eine ordentliche Kündigung nicht vorgesehen. Der Vertrag endet mit Abschluss des Projekts.',
           })}
         </p>
-        <p className="leading-relaxed text-gray-600 mb-4">
+        <p className="leading-relaxed text-secondary-800 mb-4">
           {t('terms.kuendigung.p2', {
             defaultValue:
               '(2) Bei Wartungs- oder Supportverträgen kann mit einer Frist von 30 Tagen zum Monatsende gekündigt werden.',
           })}
         </p>
-        <p className="leading-relaxed text-gray-600 mb-4">
+        <p className="leading-relaxed text-secondary-800 mb-4">
           {t('terms.kuendigung.p3', {
             defaultValue:
               '(3) Das Recht zur außerordentlichen Kündigung aus wichtigem Grund bleibt unberührt.',
@@ -860,25 +860,25 @@ export function AgbClient() {
           })}
         />
 
-        <p className="leading-relaxed text-gray-600 mb-4">
+        <p className="leading-relaxed text-secondary-800 mb-4">
           {t('terms.sections.7.p1', {
             defaultValue:
               '(1) Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts.',
           })}
         </p>
-        <p className="leading-relaxed text-gray-600 mb-4">
+        <p className="leading-relaxed text-secondary-800 mb-4">
           {t('terms.sections.7.p2', {
             defaultValue:
               '(2) Gerichtsstand für alle Streitigkeiten ist Wetzlar, sofern der Auftraggeber Kaufmann, juristische Person des öffentlichen Rechts oder öffentlich-rechtliches Sondervermögen ist.',
           })}
         </p>
-        <p className="leading-relaxed text-gray-600 mb-4">
+        <p className="leading-relaxed text-secondary-800 mb-4">
           {t('terms.sections.7.p3', {
             defaultValue:
               '(3) Sollten einzelne Bestimmungen dieser AGB ganz oder teilweise unwirksam sein oder werden, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt. An die Stelle der unwirksamen Bestimmung tritt die gesetzliche Regelung.',
           })}
         </p>
-        <p className="leading-relaxed text-gray-600 mb-4">
+        <p className="leading-relaxed text-secondary-800 mb-4">
           {t('terms.sections.7.p4', {
             defaultValue:
               '(4) Änderungen und Ergänzungen dieses Vertrages bedürfen der Schriftform. Dies gilt auch für die Aufhebung dieses Schriftformerfordernisses.',
@@ -886,7 +886,7 @@ export function AgbClient() {
         </p>
 
         <div className="mt-8 p-6 bg-slate-50 rounded-xl border border-slate-100">
-          <p className="text-gray-700 mb-2">
+          <p className="text-secondary-900 mb-2">
             {t('terms.sections.7.p5', {
               defaultValue: 'Bei Fragen zu diesen AGB kontaktieren Sie uns gerne:',
             })}

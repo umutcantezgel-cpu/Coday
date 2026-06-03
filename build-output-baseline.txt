@@ -1,0 +1,483 @@
+
+> coday@2.1.0 build
+> next build
+
+   ▲ Next.js 15.5.18
+   - Environments: .env.local, .env
+   - Experiments (use with caution):
+     · optimizePackageImports
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 8.4s
+   Linting and checking validity of types ...
+(node:15838) ESLintIgnoreWarning: The ".eslintignore" file is no longer supported. Switch to using the "ignores" property in "eslint.config.js": https://eslint.org/docs/latest/use/configure/migration-guide#ignoring-files
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+ ⚠ The Next.js plugin was not detected in your ESLint configuration. See https://nextjs.org/docs/app/api-reference/config/eslint#migrating-existing-config
+
+./src/app/[locale]/ai/page.tsx
+5:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/ai/usecase/[scenario]/page.tsx
+5:17  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/branchen/[industry]/[location]/page.tsx
+8:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/branchen/[industry]/page.tsx
+6:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/branchen/dienstleistung/page.tsx
+6:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/branchen/gastronomie/page.tsx
+6:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/branchen/gesundheit/page.tsx
+6:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/branchen/handwerk/page.tsx
+6:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/branchen/immobilien/page.tsx
+6:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/branchen/page.tsx
+6:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/branchen/public-sector/page.tsx
+6:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/branchen/retail/page.tsx
+6:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/knowledge/blog/[slug]/page.tsx
+12:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+25:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/layout.tsx
+35:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+61:17  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/legal/agb/page.tsx
+5:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/legal/datenschutz/page.tsx
+4:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/legal/impressum/page.tsx
+5:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/page.tsx
+22:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/pricing/page.tsx
+5:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/services/[category]/[slug]/page.tsx
+8:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/services/consulting/page.tsx
+6:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/services/design/brand-identity/page.tsx
+6:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/services/design/design-systems/page.tsx
+6:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/services/design/ui-ux/page.tsx
+6:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/services/design/ux-audit/page.tsx
+6:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/services/development/api-integration/page.tsx
+6:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/services/development/headless-cms/page.tsx
+6:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/services/development/migration/page.tsx
+6:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/services/development/web-apps/page.tsx
+6:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/services/ecommerce-development/page.tsx
+6:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/services/enterprise-web/page.tsx
+6:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/services/generative-engine-optimization/page.tsx
+8:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/services/performance/page.tsx
+6:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/services/seo/page.tsx
+6:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/services/web-design/page.tsx
+6:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/services/web-development/page.tsx
+6:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/standorte/giessen/page.tsx
+8:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/standorte/hessen/page.tsx
+7:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/standorte/wetzlar/page.tsx
+8:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/webdesign-agentur-wetzlar/page.tsx
+8:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/work/[slug]/page.tsx
+7:17  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/app/[locale]/work/page.tsx
+8:23  Warning: Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.  react-refresh/only-export-components
+
+./src/features/contact/ApplicationWizard.tsx
+81:26  Warning: Compilation Skipped: Use of incompatible library
+
+This API returns functions which cannot be memoized without leading to stale UI. To prevent this, by default React Compiler will skip memoizing this component/hook. However, you may see issues if values from this API are passed to other components/hooks that are memoized.
+
+/Users/umurey/agency-domination/src/features/contact/ApplicationWizard.tsx:81:26
+  79 |   });
+  80 |
+> 81 |   const submittedEmail = watch('email');
+     |                          ^^^^^ React Hook Form's `useForm()` API returns a `watch()` function which cannot be memoized safely.
+  82 |   const submittedName = watch('name');
+  83 |
+  84 |   // Track form abandon  react-hooks/incompatible-library
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+   Collecting page data ...
+   Generating static pages (0/221) ...
+   Generating static pages (55/221) 
+   Generating static pages (110/221) 
+Error: MISSING_MESSAGE: services.methodology.title (de)
+    at t (.next/server/chunks/64121.js:1:166127)
+    at u (.next/server/chunks/64121.js:1:166283)
+    at v (.next/server/chunks/64121.js:1:167616)
+    at x (.next/server/app/[locale]/services/page.js:7:19832) {
+  code: 'MISSING_MESSAGE',
+  originalMessage: 'services.methodology.title (de)'
+}
+Error: MISSING_MESSAGE: services.methodology.description (de)
+    at t (.next/server/chunks/64121.js:1:166127)
+    at u (.next/server/chunks/64121.js:1:166283)
+    at v (.next/server/chunks/64121.js:1:167616)
+    at x (.next/server/app/[locale]/services/page.js:7:20000) {
+  code: 'MISSING_MESSAGE',
+  originalMessage: 'services.methodology.description (de)'
+}
+   Generating static pages (165/221) 
+Error: MISSING_MESSAGE: services.methodology.title (en)
+    at t (.next/server/chunks/64121.js:1:166127)
+    at u (.next/server/chunks/64121.js:1:166283)
+    at v (.next/server/chunks/64121.js:1:167616)
+    at x (.next/server/app/[locale]/services/page.js:7:19832) {
+  code: 'MISSING_MESSAGE',
+  originalMessage: 'services.methodology.title (en)'
+}
+Error: MISSING_MESSAGE: services.methodology.description (en)
+    at t (.next/server/chunks/64121.js:1:166127)
+    at u (.next/server/chunks/64121.js:1:166283)
+    at v (.next/server/chunks/64121.js:1:167616)
+    at x (.next/server/app/[locale]/services/page.js:7:20000) {
+  code: 'MISSING_MESSAGE',
+  originalMessage: 'services.methodology.description (en)'
+}
+ ✓ Generating static pages (221/221)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                                      Size  First Load JS  Revalidate  Expire
+┌ ○ /_not-found                                                 176 B         109 kB
+├ ● /[locale]                                                 6.67 kB         148 kB
+├   ├ /de
+├   └ /en
+├ ● /[locale]/about                                           22.7 kB         218 kB
+├   ├ /de/about
+├   └ /en/about
+├ ● /[locale]/ai                                                24 kB         210 kB
+├   ├ /de/ai
+├   └ /en/ai
+├ ƒ /[locale]/ai/[slug]                                       30.5 kB         220 kB
+├ ● /[locale]/ai/api-docs                                     34.3 kB         229 kB
+├   ├ /de/ai/api-docs
+├   └ /en/ai/api-docs
+├ ƒ /[locale]/ai/data/[dataset]                               9.68 kB         205 kB
+├ ƒ /[locale]/ai/fuer/[persona]                                 21 kB         211 kB
+├ ƒ /[locale]/ai/kosten/[branche]                             22.3 kB         212 kB
+├ ƒ /[locale]/ai/position/[thema]                             25.5 kB         220 kB
+├ ƒ /[locale]/ai/preis/[bundle]                               18.9 kB         212 kB
+├ ƒ /[locale]/ai/prozess/[schritt]                            19.6 kB         209 kB
+├ ƒ /[locale]/ai/reviews/[quelle]                             13.1 kB         203 kB
+├ ● /[locale]/ai/usecase/[scenario]                           13.8 kB         204 kB
+├ ● /[locale]/angebot-handwerker                              10.4 kB         183 kB
+├   ├ /de/angebot-handwerker
+├   └ /en/angebot-handwerker
+├ ● /[locale]/booking                                         2.62 kB         187 kB
+├   ├ /de/booking
+├   └ /en/booking
+├ ● /[locale]/branchen                                        8.86 kB         162 kB
+├   ├ /de/branchen
+├   └ /en/branchen
+├ ƒ /[locale]/branchen/[industry]                               155 B         163 kB
+├ ƒ /[locale]/branchen/[industry]/[location]                    154 B         163 kB
+├ ● /[locale]/branchen/dienstleistung                           183 B         192 kB
+├   ├ /de/branchen/dienstleistung
+├   └ /en/branchen/dienstleistung
+├ ● /[locale]/branchen/gastronomie                              198 B         202 kB
+├   ├ /de/branchen/gastronomie
+├   └ /en/branchen/gastronomie
+├ ● /[locale]/branchen/gesundheit                               194 B         198 kB
+├   ├ /de/branchen/gesundheit
+├   └ /en/branchen/gesundheit
+├ ● /[locale]/branchen/handwerk                                 232 B         321 kB
+├   ├ /de/branchen/handwerk
+├   └ /en/branchen/handwerk
+├ ● /[locale]/branchen/immobilien                               231 B         322 kB
+├   ├ /de/branchen/immobilien
+├   └ /en/branchen/immobilien
+├ ● /[locale]/branchen/public-sector                            206 B         260 kB
+├   ├ /de/branchen/public-sector
+├   └ /en/branchen/public-sector
+├ ● /[locale]/branchen/retail                                   231 B         321 kB
+├   ├ /de/branchen/retail
+├   └ /en/branchen/retail
+├ ● /[locale]/calculator                                      20.7 kB         323 kB
+├   ├ /de/calculator
+├   └ /en/calculator
+├ ● /[locale]/career                                          2.52 kB         136 kB
+├   ├ /de/career
+├   └ /en/career
+├ ● /[locale]/career/benefits                                 12.8 kB         194 kB
+├   ├ /de/career/benefits
+├   └ /en/career/benefits
+├ ● /[locale]/career/culture                                   6.1 kB         187 kB
+├   ├ /de/career/culture
+├   └ /en/career/culture
+├ ● /[locale]/career/jobs                                     4.79 kB         185 kB
+├   ├ /de/career/jobs
+├   └ /en/career/jobs
+├ ● /[locale]/community/calendar                              2.47 kB         140 kB
+├   ├ /de/community/calendar
+├   └ /en/community/calendar
+├ ● /[locale]/community/events                                2.35 kB         140 kB
+├   ├ /de/community/events
+├   └ /en/community/events
+├ ● /[locale]/community/marketplace                           2.53 kB         137 kB
+├   ├ /de/community/marketplace
+├   └ /en/community/marketplace
+├ ● /[locale]/community/members                               2.31 kB         137 kB
+├   ├ /de/community/members
+├   └ /en/community/members
+├ ● /[locale]/contact                                           15 kB         343 kB
+├   ├ /de/contact
+├   └ /en/contact
+├ ● /[locale]/garantie                                        7.32 kB         197 kB
+├   ├ /de/garantie
+├   └ /en/garantie
+├ ● /[locale]/industries/dienstleistung                         189 B         192 kB
+├   ├ /de/industries/dienstleistung
+├   └ /en/industries/dienstleistung
+├ ● /[locale]/industries/gastronomie                            204 B         202 kB
+├   ├ /de/industries/gastronomie
+├   └ /en/industries/gastronomie
+├ ● /[locale]/industries/gesundheit                             200 B         198 kB
+├   ├ /de/industries/gesundheit
+├   └ /en/industries/gesundheit
+├ ● /[locale]/industries/handwerk                               238 B         321 kB
+├   ├ /de/industries/handwerk
+├   └ /en/industries/handwerk
+├ ● /[locale]/industries/immobilien                             239 B         322 kB
+├   ├ /de/industries/immobilien
+├   └ /en/industries/immobilien
+├ ● /[locale]/industries/publicsector                           218 B         264 kB
+├   ├ /de/industries/publicsector
+├   └ /en/industries/publicsector
+├ ● /[locale]/industries/retail                                 239 B         321 kB
+├   ├ /de/industries/retail
+├   └ /en/industries/retail
+├ ● /[locale]/knowledge/academy                               5.18 kB         148 kB
+├   ├ /de/knowledge/academy
+├   └ /en/knowledge/academy
+├ ● /[locale]/knowledge/blog                                  17.2 kB         252 kB
+├   ├ /de/knowledge/blog
+├   └ /en/knowledge/blog
+├ ● /[locale]/knowledge/blog/[slug]                            267 kB         515 kB
+├   ├ /de/knowledge/blog/high-performance-web-vitals
+├   ├ /de/knowledge/blog/die-5-groessten-fehler-im-webdesign
+├   ├ /de/knowledge/blog/anti-ai-manifest
+├   └ [+46 more paths]
+├ ● /[locale]/knowledge/blogpost                                176 B         109 kB
+├   ├ /de/knowledge/blogpost
+├   └ /en/knowledge/blogpost
+├ ● /[locale]/knowledge/faq                                   15.7 kB         192 kB
+├   ├ /de/knowledge/faq
+├   └ /en/knowledge/faq
+├ ● /[locale]/knowledge/newsletter                            5.75 kB         149 kB
+├   ├ /de/knowledge/newsletter
+├   └ /en/knowledge/newsletter
+├ ● /[locale]/knowledge/whitepapers                           3.99 kB         147 kB
+├   ├ /de/knowledge/whitepapers
+├   └ /en/knowledge/whitepapers
+├ ● /[locale]/knowledge/wikihub                               10.2 kB         216 kB
+├   ├ /de/knowledge/wikihub
+├   └ /en/knowledge/wikihub
+├ ● /[locale]/landingpages/localwetzlar                       4.94 kB         135 kB
+├   ├ /de/landingpages/localwetzlar
+├   └ /en/landingpages/localwetzlar
+├ ● /[locale]/landingpages/nextjsmigration                    6.25 kB         136 kB
+├   ├ /de/landingpages/nextjsmigration
+├   └ /en/landingpages/nextjsmigration
+├ ● /[locale]/legal/agb                                       18.1 kB         227 kB
+├   ├ /de/legal/agb
+├   └ /en/legal/agb
+├ ● /[locale]/legal/datenschutz                                 176 B         109 kB
+├   ├ /de/legal/datenschutz
+├   └ /en/legal/datenschutz
+├ ● /[locale]/legal/impressum                                   176 B         109 kB
+├   ├ /de/legal/impressum
+├   └ /en/legal/impressum
+├ ● /[locale]/nav-test                                        6.59 kB         170 kB
+├   ├ /de/nav-test
+├   └ /en/nav-test
+├ ● /[locale]/page-stress-test                                  176 B         109 kB
+├   ├ /de/page-stress-test
+├   └ /en/page-stress-test
+├ ● /[locale]/partnerschaft                                    8.3 kB         198 kB
+├   ├ /de/partnerschaft
+├   └ /en/partnerschaft
+├ ● /[locale]/presse                                          5.33 kB         195 kB
+├   ├ /de/presse
+├   └ /en/presse
+├ ● /[locale]/pricing                                         7.77 kB         154 kB
+├   ├ /de/pricing
+├   └ /en/pricing
+├ ● /[locale]/privacy                                         3.11 kB         112 kB
+├   ├ /de/privacy
+├   └ /en/privacy
+├ ● /[locale]/process                                         26.9 kB         226 kB
+├   ├ /de/process
+├   └ /en/process
+├ ● /[locale]/services                                        11.4 kB         206 kB
+├   ├ /de/services
+├   └ /en/services
+├ ƒ /[locale]/services/[category]/[slug]                      9.18 kB         224 kB
+├ ● /[locale]/services/consulting                             7.76 kB         220 kB
+├   ├ /de/services/consulting
+├   └ /en/services/consulting
+├ ● /[locale]/services/design/brand-identity                  9.43 kB         186 kB
+├   ├ /de/services/design/brand-identity
+├   └ /en/services/design/brand-identity
+├ ● /[locale]/services/design/design-systems                  11.2 kB         188 kB
+├   ├ /de/services/design/design-systems
+├   └ /en/services/design/design-systems
+├ ● /[locale]/services/design/ui-ux                           11.8 kB         188 kB
+├   ├ /de/services/design/ui-ux
+├   └ /en/services/design/ui-ux
+├ ● /[locale]/services/design/ux-audit                          11 kB         188 kB
+├   ├ /de/services/design/ux-audit
+├   └ /en/services/design/ux-audit
+├ ● /[locale]/services/development/api-integration            20.2 kB         205 kB
+├   ├ /de/services/development/api-integration
+├   └ /en/services/development/api-integration
+├ ● /[locale]/services/development/headless-cms               18.7 kB         204 kB
+├   ├ /de/services/development/headless-cms
+├   └ /en/services/development/headless-cms
+├ ● /[locale]/services/development/migration                  13.1 kB         198 kB
+├   ├ /de/services/development/migration
+├   └ /en/services/development/migration
+├ ● /[locale]/services/development/web-apps                   16.7 kB         209 kB
+├   ├ /de/services/development/web-apps
+├   └ /en/services/development/web-apps
+├ ● /[locale]/services/ecommerce-development                  13.5 kB         312 kB
+├   ├ /de/services/ecommerce-development
+├   └ /en/services/ecommerce-development
+├ ● /[locale]/services/enterprise-web                         12.9 kB         225 kB
+├   ├ /de/services/enterprise-web
+├   └ /en/services/enterprise-web
+├ ● /[locale]/services/generative-engine-optimization         4.88 kB         117 kB
+├   ├ /de/services/generative-engine-optimization
+├   └ /en/services/generative-engine-optimization
+├ ● /[locale]/services/performance                            8.28 kB         189 kB
+├   ├ /de/services/performance
+├   └ /en/services/performance
+├ ● /[locale]/services/seo                                    23.2 kB         219 kB
+├   ├ /de/services/seo
+├   └ /en/services/seo
+├ ● /[locale]/services/web-design                             23.7 kB         331 kB
+├   ├ /de/services/web-design
+├   └ /en/services/web-design
+├ ● /[locale]/services/web-development                        12.5 kB         167 kB
+├   ├ /de/services/web-development
+├   └ /en/services/web-development
+├ ● /[locale]/standorte/giessen                               4.88 kB         117 kB
+├   ├ /de/standorte/giessen
+├   └ /en/standorte/giessen
+├ ● /[locale]/standorte/hessen                                4.88 kB         117 kB
+├   ├ /de/standorte/hessen
+├   └ /en/standorte/hessen
+├ ● /[locale]/standorte/wetzlar                               4.88 kB         117 kB
+├   ├ /de/standorte/wetzlar
+├   └ /en/standorte/wetzlar
+├ ● /[locale]/test-overlays                                   5.47 kB         169 kB
+├   ├ /de/test-overlays
+├   └ /en/test-overlays
+├ ● /[locale]/test-primitives                                   176 B         109 kB
+├   ├ /de/test-primitives
+├   └ /en/test-primitives
+├ ● /[locale]/webdesign-agentur-wetzlar                       4.88 kB         117 kB
+├   ├ /de/webdesign-agentur-wetzlar
+├   └ /en/webdesign-agentur-wetzlar
+├ ● /[locale]/work                                            5.67 kB         123 kB
+├   ├ /de/work
+├   └ /en/work
+├ ● /[locale]/work/[slug]                                       162 B         216 kB
+├   ├ /de/work/batherm
+├   ├ /de/work/schluesseldienst-wetzlar
+├   ├ /de/work/lindener-ratsstuben
+├   └ [+5 more paths]
+├ ● /[locale]/work/projectdetail                                161 B         216 kB
+├   ├ /de/work/projectdetail
+├   └ /en/work/projectdetail
+├ ● /[locale]/work/work                                       16.3 kB         204 kB
+├   ├ /de/work/work
+├   └ /en/work/work
+├ ƒ /api/draft-mode/disable                                     176 B         109 kB
+├ ƒ /api/draft-mode/enable                                      176 B         109 kB
+├ ƒ /api/revalidate                                             176 B         109 kB
+├ ○ /llms.txt                                                   176 B         109 kB
+├ ○ /manifest.json                                                0 B            0 B
+├ ○ /robots.txt                                                 176 B         109 kB
+└ ● /sitemap/[__metadata_id__]                                  176 B         109 kB          1h      1y
+    └ /sitemap/0.xml                                                                          1h      1y
++ First Load JS shared by all                                  109 kB
+  ├ chunks/31255-c7473391749ab718.js                            46 kB
+  ├ chunks/4bd1b696-bad92808725a934a.js                       54.2 kB
+  └ other shared chunks (total)                               9.01 kB
+
+Route (pages)                                                    Size  First Load JS
+┌   /_app                                                         0 B         106 kB
+└ ƒ /api/mcp                                                      0 B         106 kB
++ First Load JS shared by all                                  106 kB
+  ├ chunks/framework-4e7523d9c9b09bf7.js                      59.8 kB
+  ├ chunks/main-023b20f99f605d43.js                           37.6 kB
+  └ other shared chunks (total)                               9.06 kB
+
+ƒ Middleware                                                  50.6 kB
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+

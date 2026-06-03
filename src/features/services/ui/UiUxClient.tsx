@@ -30,7 +30,7 @@ export function UiUxClient() {
       
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 px-6 overflow-hidden bg-background-light">
+      <section className="relative pt-32 pb-24 px-6 overflow-hidden bg-surface-base">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-start">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pink-50 text-pink-600 text-sm font-bold mb-8 border border-pink-100">
@@ -38,7 +38,7 @@ export function UiUxClient() {
               <span>{t('ui_ux_page.hero.badge')}</span>
             </span>
 
-            <h1 className="font-display font-black text-5xl sm:text-6xl lg:text-7xl text-secondary mb-8 tracking-tight">
+            <h1 className="font-display font-black text-5xl sm:text-6xl lg:text-7xl text-content-base mb-8 tracking-tight text-balance">
               <BlurText
                 text={t('ui_ux_page.hero.title_prefix')}
                 delay={100}
@@ -53,7 +53,7 @@ export function UiUxClient() {
                 {t('ui_ux_page.hero.title_suffix')}
               </GradientText>
             </h1>
-            <p className="text-xl text-slate-600 leading-relaxed max-w-xl mb-10">
+            <p className="text-xl text-content-muted leading-relaxed max-w-prose text-pretty max-w-xl mb-10">
               {t('ui_ux_page.hero.description')}
             </p>
             <Button size="lg" variant="primary" rightIcon={<OptimizedIcon icon={ArrowRight} />}>
@@ -64,7 +64,7 @@ export function UiUxClient() {
           {/* Hero Visual - Figma-like UI Preview */}
           <div className="relative hidden lg:block">
             <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 to-purple-500/10 rounded-3xl blur-3xl" />
-            <div className="relative glass-card p-6 rounded-2xl shadow-xl bg-white border border-slate-200">
+            <div className="relative glass-card p-6 rounded-2xl shadow-xl bg-surface-elevated border border-slate-200">
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-3 h-3 rounded-full bg-red-400" />
                 <div className="w-3 h-3 rounded-full bg-yellow-400" />
@@ -73,12 +73,12 @@ export function UiUxClient() {
               <div className="grid grid-cols-3 gap-4">
                 <div className="col-span-1 space-y-3">
                   <div className="h-8 bg-slate-100 rounded" />
-                  <div className="h-24 bg-slate-50 rounded" />
+                  <div className="h-24 bg-surface-muted rounded" />
                   <div className="h-8 bg-pink-100 rounded" />
                 </div>
                 <div className="col-span-2 space-y-3">
                   <div className="h-32 bg-gradient-to-br from-pink-100 to-purple-100 rounded-lg" />
-                  <div className="h-16 bg-slate-50 rounded" />
+                  <div className="h-16 bg-surface-muted rounded" />
                 </div>
               </div>
             </div>
@@ -87,13 +87,13 @@ export function UiUxClient() {
       </section>
 
       {/* Process Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-surface-elevated">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-display font-bold mb-4">
+            <h2 className="text-4xl font-display font-bold mb-4 text-balance">
               {t('ui_ux_page.process.title')}
             </h2>
-            <p className="text-xl text-slate-600">{t('ui_ux_page.process.description')}</p>
+            <p className="text-xl text-content-muted">{t('ui_ux_page.process.description')}</p>
           </div>
 
           <div className="grid md:grid-cols-4 gap-8">
@@ -111,7 +111,7 @@ export function UiUxClient() {
                 </div>
                 <div className="relative pt-12">
                   <h3 className="text-xl font-bold text-slate-900 mb-2">{step.title}</h3>
-                  <p className="text-slate-600">{step.desc}</p>
+                  <p className="text-content-muted">{step.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -123,7 +123,7 @@ export function UiUxClient() {
       <section className="py-24 bg-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-display font-bold mb-4">
+            <h2 className="text-4xl font-display font-bold mb-4 text-balance">
               {t('ui_ux_page.psychology.title')}
             </h2>
             <p className="text-xl text-slate-400">{t('ui_ux_page.psychology.description')}</p>
@@ -144,9 +144,9 @@ export function UiUxClient() {
       </section>
 
       {/* Deliverables Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-surface-elevated">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-display font-bold mb-12">
+          <h2 className="text-3xl font-display font-bold mb-12 text-balance">
             {t('ui_ux_page.deliverables.title')}
           </h2>
           <div className="flex flex-wrap justify-center gap-4">
@@ -163,14 +163,14 @@ export function UiUxClient() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 bg-background-light">
+      <section className="py-24 bg-surface-base">
         <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-12 text-center">{t('ui_ux_page.faq.title')}</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center text-balance">{t('ui_ux_page.faq.title')}</h2>
           <div className="space-y-6">
             {faqItems.map((item, i) => (
-              <div key={i} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+              <div key={i} className="bg-surface-elevated p-8 rounded-2xl shadow-sm border border-slate-100">
                 <h3 className="text-lg font-bold mb-3">{item.q}</h3>
-                <p className="text-slate-600 leading-relaxed">{item.a}</p>
+                <p className="text-content-muted leading-relaxed max-w-prose text-pretty">{item.a}</p>
               </div>
             ))}
           </div>

@@ -36,7 +36,7 @@ export function ApiIntegrationClient() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-6 overflow-hidden bg-background-light">
+      <section className="relative pt-32 pb-20 px-6 overflow-hidden bg-surface-base">
         {/* Animated Background Mesh */}
         <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">
           <svg aria-hidden="true" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -62,13 +62,13 @@ export function ApiIntegrationClient() {
               <span>System Automation</span>
             </div>
 
-            <h1 className="font-display font-black text-5xl sm:text-7xl text-secondary mb-8 leading-[0.9]">
+            <h1 className="font-display font-black text-5xl sm:text-7xl text-content-base mb-8 leading-[0.9] text-balance">
               {t('api_integration_page.hero.title_prefix')}
               <br />
               <span className="text-blue-600">{t('api_integration_page.hero.title_suffix')}</span>
             </h1>
 
-            <p className="text-xl text-slate-600 leading-relaxed mb-10 max-w-lg">
+            <p className="text-xl text-content-muted leading-relaxed max-w-prose text-pretty mb-10 max-w-lg">
               {t('api_integration_page.hero.description')}
             </p>
 
@@ -81,13 +81,13 @@ export function ApiIntegrationClient() {
 
           {/* Visual: Connection Grid */}
           <div className="relative">
-            <div className="bg-white p-8 rounded-3xl shadow-2xl border border-slate-100 relative overflow-hidden">
+            <div className="bg-surface-elevated p-8 rounded-3xl shadow-2xl border border-slate-100 relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500" />
 
               {/* Central Hub */}
               <div className="flex justify-center mb-12 relative">
                 <div className="w-24 h-24 bg-slate-900 rounded-full flex items-center justify-center shadow-xl relative z-10">
-                  <OptimizedIcon icon={Cpu} className="text-4xl text-white" />
+                  <OptimizedIcon icon={Cpu} className="text-4xl text-white text-balance" />
                 </div>
                 {/* Pulsing Rings */}
                 <div className="absolute inset-0 bg-blue-500/20 rounded-full animate-ping z-0 motion-reduce:animate-none" />
@@ -126,13 +126,13 @@ export function ApiIntegrationClient() {
       </section>
 
       {/* Why Automate - Bento Grid */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-surface-elevated">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
-            <h2 className="text-4xl font-display font-bold mb-6">
+            <h2 className="text-4xl font-display font-bold mb-6 text-balance">
               {t('api_integration_page.why_automate.title')}
             </h2>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+            <p className="text-xl text-content-muted max-w-2xl mx-auto">
               {t('api_integration_page.why_automate.description')}
             </p>
           </div>
@@ -147,21 +147,21 @@ export function ApiIntegrationClient() {
               </div>
 
               <div className="relative z-10 h-full flex flex-col justify-between p-6">
-                <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center backdrop-blur-sm border border-white/20 mb-8">
-                  <OptimizedIcon icon={Timer} className="text-4xl text-white" weight="fill" />
+                <div className="w-16 h-16 rounded-2xl bg-surface-elevated/10 flex items-center justify-center backdrop-blur-sm border border-white/20 mb-8">
+                  <OptimizedIcon icon={Timer} className="text-4xl text-white text-balance" weight="fill" />
                 </div>
                 <div>
-                  <h3 className="text-4xl font-display font-bold text-white mb-4 leading-tight">
+                  <h3 className="text-4xl font-display font-bold text-white mb-4 leading-tight text-balance">
                     {t('api_integration_page.why_automate.items.efficiency.title')}
                   </h3>
-                  <p className="text-blue-100 text-xl leading-relaxed max-w-md">
+                  <p className="text-blue-100 text-xl leading-relaxed max-w-prose text-pretty max-w-md">
                     {t('api_integration_page.why_automate.items.efficiency.desc')}
                   </p>
                 </div>
               </div>
             </BentoCard>
 
-            <BentoCard className="md:col-span-1 md:row-span-1 bg-white border border-red-100 shadow-sm relative overflow-hidden group">
+            <BentoCard className="md:col-span-1 md:row-span-1 bg-surface-elevated border border-red-100 shadow-sm relative overflow-hidden group">
               <div className="absolute -right-8 -bottom-8 opacity-5 group-hover:opacity-10 transition-opacity motion-reduce:duration-[0.01ms] duration-500">
                 <OptimizedIcon
                   icon={ShieldCheck}
@@ -178,14 +178,14 @@ export function ApiIntegrationClient() {
                   <h3 className="text-xl font-bold text-slate-900 mb-2">
                     {t('api_integration_page.why_automate.items.errors.title')}
                   </h3>
-                  <p className="text-slate-600 text-sm leading-relaxed">
+                  <p className="text-content-muted text-sm leading-relaxed max-w-prose text-pretty">
                     {t('api_integration_page.why_automate.items.errors.desc')}
                   </p>
                 </div>
               </div>
             </BentoCard>
 
-            <BentoCard className="md:col-span-1 md:row-span-1 bg-white border border-amber-100 shadow-sm relative overflow-hidden group">
+            <BentoCard className="md:col-span-1 md:row-span-1 bg-surface-elevated border border-amber-100 shadow-sm relative overflow-hidden group">
               <div className="absolute -right-4 -top-4 opacity-5 group-hover:opacity-10 transition-opacity motion-reduce:duration-[0.01ms] duration-500">
                 <OptimizedIcon
                   icon={Lightning}
@@ -202,7 +202,7 @@ export function ApiIntegrationClient() {
                   <h3 className="text-xl font-bold text-slate-900 mb-2">
                     {t('api_integration_page.why_automate.items.speed.title')}
                   </h3>
-                  <p className="text-slate-600 text-sm leading-relaxed">
+                  <p className="text-content-muted text-sm leading-relaxed max-w-prose text-pretty">
                     {t('api_integration_page.why_automate.items.speed.desc')}
                   </p>
                 </div>
@@ -213,12 +213,12 @@ export function ApiIntegrationClient() {
       </section>
 
       {/* Connectivity / Supported Tools */}
-      <section className="py-24 bg-slate-50 border-y border-slate-200 overflow-hidden">
+      <section className="py-24 bg-surface-muted border-y border-slate-200 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 mb-12 text-center">
-          <h2 className="text-3xl font-display font-bold mb-4">
+          <h2 className="text-3xl font-display font-bold mb-4 text-balance">
             {t('api_integration_page.connectivity.title')}
           </h2>
-          <p className="text-lg text-slate-600">
+          <p className="text-lg text-content-muted">
             {t('api_integration_page.connectivity.description')}
           </p>
         </div>
@@ -230,7 +230,7 @@ export function ApiIntegrationClient() {
             logos={((t.raw('api_integration_page.connectivity.tools') as string[]) || []).map(
               (tool) => ({
                 node: (
-                  <div className="flex items-center gap-2 px-6 py-3 bg-white rounded-full border border-slate-200 shadow-sm mx-2 whitespace-nowrap">
+                  <div className="flex items-center gap-2 px-6 py-3 bg-surface-elevated rounded-full border border-slate-200 shadow-sm mx-2 whitespace-nowrap">
                     <OptimizedIcon
                       icon={CheckCircle}
                       className="w-5 h-5 text-green-500"
@@ -246,16 +246,16 @@ export function ApiIntegrationClient() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 bg-background-light">
+      <section className="py-24 bg-surface-base">
         <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-12 text-center">
+          <h2 className="text-3xl font-bold mb-12 text-center text-balance">
             {t('api_integration_page.faq.title')}
           </h2>
           <div className="space-y-6">
             {((t.raw('api_integration_page.faq.items') as FaqItem[]) || []).map((item, i) => (
-              <div key={i} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+              <div key={i} className="bg-surface-elevated p-8 rounded-2xl shadow-sm border border-slate-100">
                 <h3 className="text-lg font-bold mb-3">{item.q}</h3>
-                <p className="text-slate-600 leading-relaxed">{item.a}</p>
+                <p className="text-content-muted leading-relaxed max-w-prose text-pretty">{item.a}</p>
               </div>
             ))}
           </div>

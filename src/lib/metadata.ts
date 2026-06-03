@@ -7,7 +7,7 @@ const BASE_URL = 'https://codayweb.de';
  * Non-production environments are always noindex.
  */
 export function generateRobotsMeta(opts: {
-  type: 'money' | 'legal' | 'studio' | 'preview';
+  type: 'money' | 'legal' | 'studio' | 'preview' | 'article' | 'default';
 }): Metadata['robots'] {
   const isProduction = process.env.NEXT_PUBLIC_VERCEL_ENV === 'production';
 
@@ -17,6 +17,8 @@ export function generateRobotsMeta(opts: {
 
   switch (opts.type) {
     case 'money':
+    case 'article':
+    case 'default':
       return { index: true, follow: true };
     case 'legal':
       return { index: false, follow: true };
@@ -34,8 +36,16 @@ export function generateRobotsMeta(opts: {
 export function generateAlternates(path: string): Metadata['alternates'] {
   // Strip locale prefix to get the route segment
   const cleanPath = path.replace(/^\/(en|de)/, '').replace(/\/$/, '') || '';
-  const dePath = `/de${cleanPath}`;
-  const enPath = `/en${cleanPath}`;
+  
+  let dePath = `/de${cleanPath}`;
+  let enPath = `/en${cleanPath}`;
+
+  // Handle localized routing maps
+  if (cleanPath.startsWith('/branchen')) {
+    enPath = `/en${cleanPath.replace(/^\/branchen/, '/industries')}`;
+  } else if (cleanPath.startsWith('/industries')) {
+    dePath = `/de${cleanPath.replace(/^\/industries/, '/branchen')}`;
+  }
 
   // Canonical points to self (the actual path passed in)
   const canonicalPath = path.startsWith('/en') ? enPath : dePath;
@@ -58,7 +68,7 @@ export function generatePageMetadata(opts: {
   title: string;
   description: string;
   path: string;
-  type: 'money' | 'legal' | 'studio' | 'preview';
+  type: 'money' | 'legal' | 'studio' | 'preview' | 'article' | 'default';
   openGraph?: Metadata['openGraph'];
 }): Metadata {
   const fullTitle = opts.title.includes('Coday')

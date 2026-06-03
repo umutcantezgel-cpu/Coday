@@ -1,5 +1,5 @@
 'use client';
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useId } from 'react';
 import { Link } from '@/i18n/navigation';
 import {
   ArrowRight,
@@ -278,20 +278,28 @@ export const CTABlockRenderer: React.FC<{ block: CTABlock }> = ({ block }) => {
 
 export const AccordionItem: React.FC<{ title: string; content: string }> = ({ title, content }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const baseId = useId();
+  const triggerId = `${baseId}-trigger`;
+  const panelId = `${baseId}-panel`;
 
   return (
     <div className="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow motion-reduce:duration-[0.01ms]">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="active:scale-[0.97] w-full flex items-center justify-between p-4 px-6 text-left font-bold text-gray-800 hover:bg-gray-50 transition-colors motion-reduce:duration-[0.01ms]"
-      >
-        {title}
-        {isOpen ? (
-          <Minus size={18} className="text-primary" />
-        ) : (
-          <Plus size={18} className="text-gray-400" />
-        )}
-      </button>
+      <h3>
+        <button
+          id={triggerId}
+          onClick={() => setIsOpen(!isOpen)}
+          aria-expanded={isOpen}
+          aria-controls={panelId}
+          className="active:scale-[0.97] w-full flex items-center justify-between p-4 px-6 text-left font-bold text-gray-800 hover:bg-gray-50 transition-colors motion-reduce:duration-[0.01ms] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+        >
+          {title}
+          {isOpen ? (
+            <Minus size={18} className="text-primary" aria-hidden="true" />
+          ) : (
+            <Plus size={18} className="text-gray-400" aria-hidden="true" />
+          )}
+        </button>
+      </h3>
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -300,7 +308,7 @@ export const AccordionItem: React.FC<{ title: string; content: string }> = ({ ti
             exit={{ opacity: 0, y: -10 }}
             className="overflow-hidden"
           >
-            <div className="p-6 pt-0 text-gray-600 leading-relaxed border-t border-gray-50">
+            <div id={panelId} role="region" aria-labelledby={triggerId} className="p-6 pt-0 text-gray-600 leading-relaxed border-t border-gray-50">
               {content}
             </div>
           </motion.div>

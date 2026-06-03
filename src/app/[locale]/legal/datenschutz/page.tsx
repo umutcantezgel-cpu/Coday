@@ -31,11 +31,11 @@ export default async function DatenschutzPage({ params }: { params: Promise<{ lo
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-20">
-      <h1 className="text-3xl font-bold mb-8">
+      <h1 className="text-3xl font-bold mb-8 text-secondary-900">
         {isEn ? 'Privacy Policy' : 'Datenschutzerklärung'}
       </h1>
-      <section className="py-[var(--space-section)] space-y-6 text-gray-300">
-        <h2 className="text-xl font-semibold text-white">
+      <section className="py-[var(--space-section)] space-y-6 text-secondary-800">
+        <h2 className="text-xl font-semibold text-secondary-900">
           {isEn ? '1. Data Controller' : '1. Verantwortlicher'}
         </h2>
         <p>
@@ -48,7 +48,7 @@ export default async function DatenschutzPage({ params }: { params: Promise<{ lo
           E-Mail: umut@codayweb.de
         </p>
 
-        <h2 className="text-xl font-semibold text-white">
+        <h2 className="text-xl font-semibold text-secondary-900">
           {isEn ? '2. Your Rights under GDPR' : '2. Ihre Rechte nach DSGVO'}
         </h2>
         <p>
@@ -57,14 +57,14 @@ export default async function DatenschutzPage({ params }: { params: Promise<{ lo
             : 'Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch (Art. 15-21 DSGVO).'}
         </p>
 
-        <h2 className="text-xl font-semibold text-white">{isEn ? '3. Hosting' : '3. Hosting'}</h2>
+        <h2 className="text-xl font-semibold text-secondary-900">{isEn ? '3. Hosting' : '3. Hosting'}</h2>
         <p>
           {isEn
             ? 'This website is hosted on Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA. Vercel processes server logs (IP address, browser, timestamp) to ensure operation.'
             : 'Diese Website wird bei Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA gehostet. Vercel verarbeitet Server-Logdaten (IP-Adresse, Browser, Zeitstempel) zur Sicherstellung des Betriebs.'}
         </p>
 
-        <h2 className="text-xl font-semibold text-white">
+        <h2 className="text-xl font-semibold text-secondary-900">
           {isEn ? '4. ProvenExpert Review Seal' : '4. ProvenExpert Bewertungssiegel'}
         </h2>
         <p>
@@ -73,7 +73,7 @@ export default async function DatenschutzPage({ params }: { params: Promise<{ lo
             : 'Wir nutzen das Bewertungssiegel von ProvenExpert (Expert Systems AG, Quedlinburger Str. 1, 10589 Berlin). Das eingebundene Siegel lädt ein statisches Bild von images.provenexpert.com. Dabei wird Ihre IP-Adresse an ProvenExpert übermittelt. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Darstellung von Kundenbewertungen). Weitere Informationen: https://www.provenexpert.com/de-de/datenschutzerklaerung/'}
         </p>
 
-        <p className="text-sm text-gray-500 mt-12">
+        <p className="text-sm text-secondary-600 mt-12">
           {isEn ? 'Last updated: May 2026' : 'Stand: Mai 2026'}
         </p>
       </section>

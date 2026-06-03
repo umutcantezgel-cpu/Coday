@@ -104,7 +104,7 @@ export function ServiceDetailClient() {
 
   if (!service) {
     return (
-      <div className="min-h-dvh flex items-center justify-center bg-background-light">
+      <div className="min-h-dvh flex items-center justify-center bg-surface-base">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-4">
             {t('generic_detail.not_found.title')}
@@ -164,7 +164,7 @@ export function ServiceDetailClient() {
   };
 
   return (
-    <main className="bg-background-light pt-24 pb-0">
+    <main className="bg-surface-base pt-24 pb-0">
       {/* Breadcrumb */}
       <nav aria-label="Breadcrumb" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
         <ol className="flex items-center text-sm text-gray-500">
@@ -195,12 +195,12 @@ export function ServiceDetailClient() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <div className="inline-flex items-center justify-center p-3 bg-sapphire/10 rounded-xl text-sapphire mb-6">
-              <OptimizedIcon icon={iconMap[service.icon] || Code} className="text-3xl" />
+              <OptimizedIcon icon={iconMap[service.icon] || Code} className="text-3xl text-balance" />
             </div>
-            <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-gray-900 mb-6 leading-tight">
+            <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-gray-900 mb-6 leading-tight text-balance">
               {t(service.titleKey)}
             </h1>
-            <p className="text-xl text-gray-600 leading-relaxed mb-8">
+            <p className="text-xl text-gray-600 leading-relaxed max-w-prose text-pretty mb-8">
               {t(service.longDescriptionKey)}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -217,7 +217,7 @@ export function ServiceDetailClient() {
           <div className="relative hidden lg:block">
             {/* Abstract Visual */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full blur-3xl opacity-60"></div>
-            <div className="relative glass-card p-8 rounded-3xl border border-white/50 bg-white/60 backdrop-blur-xl shadow-glass">
+            <div className="relative glass-card p-8 rounded-3xl border border-white/50 bg-surface-elevated/60 backdrop-blur-xl shadow-glass">
               <h2 className="font-display font-bold text-2xl text-gray-900 mb-6">
                 {t('generic_detail.hero.benefits_title')}
               </h2>
@@ -240,7 +240,7 @@ export function ServiceDetailClient() {
       {/* Mobile Benefits (only if Process is NOT present, otherwise Advantages section handles it) */}
       {!service.processStepsKey && (
         <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-12 lg:mb-24 lg:hidden">
-          <div className="glass-card p-8 rounded-2xl bg-white shadow-aurora">
+          <div className="glass-card p-8 rounded-2xl bg-surface-elevated shadow-aurora">
             <h2 className="font-display font-bold text-2xl text-gray-900 mb-6">
               {t('generic_detail.hero.benefits_title')}
             </h2>
@@ -257,7 +257,7 @@ export function ServiceDetailClient() {
       )}
 
       {/* Trust / Logos Section */}
-      <section className="py-12 border-y border-gray-100 bg-white/50 mb-12 lg:mb-24 overflow-hidden">
+      <section className="py-12 border-y border-border-muted bg-surface-elevated/50 mb-12 lg:mb-24 overflow-hidden">
         <div className="w-full text-center">
           <p className="text-sm font-semibold text-gray-600 uppercase tracking-wider mb-8">
             {tCommon('generic_detail.trust.title')}
@@ -301,10 +301,10 @@ export function ServiceDetailClient() {
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-20">
-              <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
+              <span className="text-action-primary font-bold tracking-wider uppercase text-sm mb-4 block">
                 {t('generic_detail.process.label')}
               </span>
-              <h2 className="font-display font-bold text-3xl sm:text-5xl mb-6">
+              <h2 className="font-display font-bold text-3xl sm:text-5xl mb-6 text-balance">
                 {t.rich('generic_detail.process.title', { br: () => <br /> })}
               </h2>
             </div>
@@ -323,7 +323,7 @@ export function ServiceDetailClient() {
                       <h3 className="text-xl font-bold mb-4 h-14 flex items-center justify-center">
                         {step.title}
                       </h3>
-                      <p className="text-sm text-gray-400 leading-relaxed">{step.description}</p>
+                      <p className="text-sm text-gray-400 leading-relaxed max-w-prose text-pretty">{step.description}</p>
                     </div>
                   </li>
                 ))}
@@ -341,10 +341,10 @@ export function ServiceDetailClient() {
               <span className="text-sapphire font-bold tracking-wider uppercase text-sm mb-4 block">
                 {t('generic_detail.advantages.label')}
               </span>
-              <h2 className="font-display font-bold text-3xl sm:text-4xl text-gray-900 mb-6">
+              <h2 className="font-display font-bold text-3xl sm:text-4xl text-gray-900 mb-6 text-balance">
                 {t.rich('generic_detail.advantages.title', { br: () => <br /> })}
               </h2>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed max-w-prose text-pretty">
                 {t('generic_detail.advantages.desc')}
               </p>
               <NavLink
@@ -358,14 +358,14 @@ export function ServiceDetailClient() {
               {advantages.map((adv, index) => (
                 <div
                   key={index}
-                  className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow motion-reduce:duration-[0.01ms]"
+                  className="bg-surface-elevated p-6 rounded-2xl shadow-sm border border-border-muted hover:shadow-md transition-shadow motion-reduce:duration-[0.01ms]"
                 >
                   <OptimizedIcon
                     icon={iconMap[adv.icon] || Code}
-                    className="text-sapphire text-3xl mb-4"
+                    className="text-sapphire text-3xl mb-4 text-balance"
                   />
                   <h3 className="font-bold text-gray-900 mb-2">{adv.title}</h3>
-                  <p className="text-sm text-gray-500 leading-relaxed">{adv.description}</p>
+                  <p className="text-sm text-gray-500 leading-relaxed max-w-prose text-pretty">{adv.description}</p>
                 </div>
               ))}
             </div>
@@ -375,13 +375,13 @@ export function ServiceDetailClient() {
 
       {/* Testimonials */}
       {service.testimonialsKey && testimonials && testimonials.length > 0 && (
-        <section className="bg-surface-light py-24 mb-24 border-y border-gray-100">
+        <section className="bg-surface-light py-24 mb-24 border-y border-border-muted">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <span className="text-sapphire font-bold tracking-wider uppercase text-sm mb-4 block">
                 {t('generic_detail.testimonials.label')}
               </span>
-              <h2 className="font-display font-bold text-3xl sm:text-4xl text-gray-900 mb-6">
+              <h2 className="font-display font-bold text-3xl sm:text-4xl text-gray-900 mb-6 text-balance">
                 {t('generic_detail.testimonials.title')}
               </h2>
             </div>
@@ -405,7 +405,7 @@ export function ServiceDetailClient() {
       {service.faqsKey && (
         <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-32">
           <div className="text-center mb-12">
-            <h2 className="font-display font-bold text-3xl text-gray-900 mb-4">
+            <h2 className="font-display font-bold text-3xl text-gray-900 mb-4 text-balance">
               {t('generic_detail.faq.title')}
             </h2>
             <p className="text-gray-600">{t('generic_detail.faq.desc')}</p>
@@ -424,7 +424,7 @@ export function ServiceDetailClient() {
           <div className="absolute top-0 right-0 p-32 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-primary/20 transition-colors motion-reduce:duration-[0.01ms] duration-500"></div>
 
           <div className="relative z-10">
-            <h2 className="font-display font-bold text-3xl text-white mb-6">
+            <h2 className="font-display font-bold text-3xl text-white mb-6 text-balance">
               {t('generic_detail.final_cta.title')}
             </h2>
             <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
@@ -432,7 +432,7 @@ export function ServiceDetailClient() {
             </p>
             <NavLink
               href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-gray-900 rounded-xl bg-white hover:bg-gray-100 shadow-lg hover:shadow-xl transition motion-reduce:duration-[0.01ms] transform hover:-translate-y-1"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-gray-900 rounded-xl bg-surface-elevated hover:bg-gray-100 shadow-lg hover:shadow-xl transition motion-reduce:duration-[0.01ms] transform hover:scale-[0.97] ease-spring"
             >
               {t('generic_detail.final_cta.button')}
               <OptimizedIcon icon={RocketLaunch} className="ml-2" />
@@ -451,7 +451,7 @@ const FaqItem: React.FC<{ question: string; answer: string }> = ({ question, ans
   const panelId = `faq-panel-${id}`;
 
   return (
-    <div className="border border-gray-200 rounded-xl bg-white overflow-hidden transition motion-reduce:duration-[0.01ms] duration-300 hover:shadow-sm">
+    <div className="border border-border-subtle rounded-xl bg-surface-elevated overflow-hidden transition motion-reduce:duration-[0.01ms] duration-300 hover:shadow-sm">
       <h3>
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -466,7 +466,7 @@ const FaqItem: React.FC<{ question: string; answer: string }> = ({ question, ans
           />
         </button>
       </h3>
-      <div id={panelId} role="region" className={`px-6 text-gray-600 leading-relaxed ${isOpen ? 'block pb-6' : 'hidden'}`}>
+      <div id={panelId} role="region" className={`px-6 text-gray-600 leading-relaxed max-w-prose text-pretty ${isOpen ? 'block pb-6' : 'hidden'}`}>
         {answer}
       </div>
     </div>

@@ -1,0 +1,53 @@
+{
+  "features": {
+    "description": "Ein Überblick über unsere technologischen Kernkompetenzen.",
+    "items": {
+      "cloud": {
+        "desc": "Modernste Serverless-Architektur für höchste Effizienz und Ausfallsicherheit.",
+        "title": "Cloud Native"
+      },
+      "internal_tools": {
+        "desc": "Maßgeschneiderte Software-Lösungen zur Digitalisierung Ihrer Unternehmensprozesse.",
+        "title": "Interne Tools"
+      },
+      "pwa": {
+        "desc": "Ein natives App-Erlebnis direkt im Browser, das auch offline hervorragend funktioniert.",
+        "title": "Progressive Web Apps"
+      },
+      "realtime": {
+        "desc": "Live-Datenübertragung für eine sofortige und reibungslose Nutzererfahrung.",
+        "title": "Echtzeit-Synchronisation"
+      },
+      "saas": {
+        "desc": "Skalierbare Cloud-Lösungen als starkes Fundament für Ihr Geschäftsmodell.",
+        "title": "SaaS Plattformen"
+      },
+      "security": {
+        "desc": "Höchste Sicherheitsstandards, die Ihre sensiblen Unternehmensdaten verlässlich schützen.",
+        "title": "Enterprise Security"
+      }
+    },
+    "title": "Leistungsstarke Funktionen"
+  },
+  "hero": {
+    "cta": "Projektanfrage stellen",
+    "description": "Wir entwickeln komplexe und skalierbare Webapplikationen, die sich wie native Apps anfühlen.",
+    "title_prefix": "Maßgeschneiderte",
+    "title_suffix": "Web-Apps"
+  },
+  "integration_network": {
+    "description": "Nahtlose Anbindung an Ihre bestehenden Systeme für einen effizienten Datenaustausch.",
+    "label": "System-Integration",
+    "title": "API-First Ansatz"
+  },
+  "security": {
+    "badges": {
+      "gdpr": "DSGVO-konform",
+      "ssl": "SSL Verschlüsselung",
+      "support": "Dedizierter Support",
+      "uptime": "99.9% Verfügbarkeit"
+    },
+    "description": "Bei der Entwicklung unserer Web-Apps steht die Sicherheit Ihrer Daten stets an erster Stelle.",
+    "title": "Kompromisslose Sicherheit"
+  }
+}

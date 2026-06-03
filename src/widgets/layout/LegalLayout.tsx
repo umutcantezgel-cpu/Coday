@@ -24,14 +24,14 @@ export const LegalLayout: React.FC<LegalLayoutProps> = ({
   tocItems = [],
 }) => {
   return (
-    <div className="bg-background-light min-h-dvh pt-24 pb-24">
+    <div className="bg-background-light min-h-dvh pt-48 pb-48">
       <SeoHead
         title={`${title} | Coday`}
         description={typeof subtitle === 'string' ? subtitle : title}
       />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <header role="banner" className="mb-16 text-center">
+        <header role="banner" className="mb-24 text-center">
           <h1 className="font-display font-black text-4xl sm:text-5xl text-secondary mb-4">
             {title}
           </h1>

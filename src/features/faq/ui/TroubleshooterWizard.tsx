@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { CaretRight, Check, ArrowRight } from '@phosphor-icons/react/dist/ssr';
 import { Link } from '@/i18n/navigation';
+import { useTranslations } from 'next-intl';
 
 // Simple decision tree data (internal for now, could move to data.ts later)
 const steps = [
@@ -113,6 +114,7 @@ const results = {
 };
 
 const TroubleshooterWizard = () => {
+  const t = useTranslations('faq.troubleshooter');
   const [history, setHistory] = useState<string[]>(['goal']);
   const [result, setResult] = useState<string | null>(null);
 
@@ -137,14 +139,14 @@ const TroubleshooterWizard = () => {
       <div className="relative z-10">
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-2xl font-bold font-display text-slate-900 ">
-            {result ? 'Our Recommendation' : 'Not sure where to start?'}
+            {result ? t('recommendation') : t('title')}
           </h2>
           {history.length > 1 && !result && (
             <button
               onClick={reset}
               className="active:scale-[0.97] text-sm text-slate-500 hover:text-blue-600 transition-colors motion-reduce:duration-[0.01ms]"
             >
-              Restart
+              {t('restart')}
             </button>
           )}
           {result && (
@@ -152,7 +154,7 @@ const TroubleshooterWizard = () => {
               onClick={reset}
               className="active:scale-[0.97] text-sm text-slate-500 hover:text-blue-600 transition-colors motion-reduce:duration-[0.01ms]"
             >
-              Start Over
+              {t('start_over')}
             </button>
           )}
         </div>
@@ -167,8 +169,8 @@ const TroubleshooterWizard = () => {
               className="space-y-6"
               aria-live="polite"
             >
-              <h3 className="text-xl text-slate-700  font-medium">{currentStep.question}</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4" role="group" aria-label={currentStep.question}>
+              <h3 className="text-xl text-slate-700  font-medium">{t(`steps.${currentStep.id}.question`)}</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4" role="group" aria-label={t(`steps.${currentStep.id}.question`)}>
                 {currentStep.options.map((opt) => (
                   <button
                     key={opt.id}
@@ -176,10 +178,10 @@ const TroubleshooterWizard = () => {
                     className="active:scale-[0.97] text-left px-6 py-4 rounded-xl bg-white  border-2 border-transparent hover:border-blue-500 hover:shadow-lg transition motion-reduce:duration-[0.01ms] group"
                   >
                     <div className="flex items-center justify-between">
-                      <span className="font-bold text-slate-900  group-hover:text-blue-600 :text-blue-400 transition-colors motion-reduce:duration-[0.01ms]">
-                        {opt.label}
+                      <span className="font-bold text-slate-900 group-hover:text-blue-600 transition-colors motion-reduce:duration-[0.01ms] line-clamp-2 pr-2">
+                        {t(`steps.${currentStep.id}.options.${opt.id}`)}
                       </span>
-                      <CaretRight className="w-5 h-5 text-slate-300 group-hover:text-blue-500 transition-colors motion-reduce:duration-[0.01ms]" />
+                      <CaretRight className="w-5 h-5 flex-shrink-0 text-slate-300 group-hover:text-blue-500 transition-colors motion-reduce:duration-[0.01ms]" />
                     </div>
                   </button>
                 ))}
@@ -197,16 +199,16 @@ const TroubleshooterWizard = () => {
                 <Check className="w-8 h-8 text-green-600 " />
               </div>
               <h3 className="text-3xl font-bold font-display text-slate-900  mb-2">
-                {results[result as keyof typeof results].title}
+                {t(`results.${result}.title`)}
               </h3>
               <p className="text-lg text-slate-600  mb-8 max-w-lg mx-auto">
-                {results[result as keyof typeof results].desc}
+                {t(`results.${result}.desc`)}
               </p>
               <Link
                 href={results[result as keyof typeof results].link}
                 className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition motion-reduce:duration-[0.01ms] hover:scale-105 shadow-lg shadow-blue-500/30"
               >
-                Explore Solution <ArrowRight className="w-5 h-5" />
+                {t('explore')} <ArrowRight className="w-5 h-5" />
               </Link>
             </motion.div>
           ) : null}

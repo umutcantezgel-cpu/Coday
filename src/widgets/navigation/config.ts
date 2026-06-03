@@ -105,7 +105,11 @@ export const getNavItems = (): NavItem[] => [
     groups: [
       {
         title: 'nav.work.featured.title',
-        links: [{ label: 'nav.work.batherm', href: 'https://www.batherm.de' }],
+        links: [
+          { label: 'nav.work.batherm', href: 'https://www.batherm.de' },
+          { label: 'nav.work.schluesseldienst', href: 'https://wetzlar-schlüsseldienst.de' },
+          { label: 'nav.work.ratsstuben', href: 'https://lindener-ratsstuben.de' },
+        ],
       },
       {
         title: 'nav.work.all.title',
@@ -201,7 +205,7 @@ export const getNavItems = (): NavItem[] => [
         links: [
           { label: 'nav.about.contact.label', href: '/contact', desc: 'nav.about.contact.desc' },
           { label: 'nav.booking.label', href: '/booking' },
-          { label: 'nav.packages.label', href: '/packages' },
+          { label: 'nav.packages.label', href: '/pricing' },
         ],
       },
     ],

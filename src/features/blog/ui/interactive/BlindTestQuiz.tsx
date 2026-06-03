@@ -20,7 +20,7 @@ const BlindTestQuiz: React.FC = () => {
   const options: VotingOption[] = [
     {
       id: 'ai',
-      image: '/images/blog/ai-generated-design-mockup-generic.webp', // Placeholder
+      image: '/images/brand/coday-full.webp', // Placeholder
       label: 'Design A',
       price: '500€',
       conversionRate: '0.8%',
@@ -28,7 +28,7 @@ const BlindTestQuiz: React.FC = () => {
     },
     {
       id: 'human',
-      image: '/images/blog/premium-custom-design-mockup-coday.webp', // Placeholder
+      image: '/images/brand/coday-full.webp', // Placeholder
       label: 'Design B',
       price: '15.000€',
       conversionRate: '4.2%',
