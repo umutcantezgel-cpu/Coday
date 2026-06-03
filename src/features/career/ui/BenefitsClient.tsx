@@ -78,6 +78,7 @@ const Benefits: React.FC = () => {
                   <OptimizedIcon
                     icon={iconMap[benefit.icon] || WarningCircle}
                     className="text-3xl text-primary"
+                    aria-hidden="true"
                   />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3 text-left">{benefit.title}</h3>

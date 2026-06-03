@@ -71,9 +71,9 @@ export default async function Packages() {
     },
   ];
 
-  const trustReferences = t.raw('trust_section.references') as any[];
-  const valuePropPoints = t.raw('value_prop.points') as any[];
-  const faqItems = t.raw('faq.items') as any[];
+  const trustReferences = t.raw('trust_section.references') as { metric: string; name: string; label: string }[];
+  const valuePropPoints = t.raw('value_prop.points') as { title: string; description: string }[];
+  const faqItems = t.raw('faq.items') as { question: string; answer: string }[];
 
   return (
     <div className="min-h-[100dvh] bg-white">
@@ -237,30 +237,32 @@ export default async function Packages() {
 
                       <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent mb-8" />
 
-                      <div className="space-y-4 mb-10 flex-grow">
+                      <ul className="space-y-4 mb-10 flex-grow">
                         {pkg.features.map((feature, idx) => (
-                          <div key={idx} className="flex items-start gap-3">
+                          <li key={idx} className="flex items-start gap-3">
                             <OptimizedIcon
                               icon={CheckCircle}
+                              aria-hidden="true"
                               className={`text-lg mt-0.5 flex-shrink-0 ${pkg.popular ? 'text-primary' : 'text-gray-400'}`}
                             />
                             <span className="text-gray-300 text-base leading-relaxed">
                               {feature}
                             </span>
-                          </div>
+                          </li>
                         ))}
                         {pkg.notIncluded?.map((feature, idx) => (
-                          <div key={`ni-${idx}`} className="flex items-start gap-3">
+                          <li key={`ni-${idx}`} className="flex items-start gap-3">
                             <OptimizedIcon
                               icon={MinusCircle}
+                              aria-hidden="true"
                               className="text-lg text-gray-500 mt-0.5 flex-shrink-0"
                             />
                             <span className="text-gray-400 text-base line-through leading-relaxed">
                               {feature}
                             </span>
-                          </div>
+                          </li>
                         ))}
-                      </div>
+                      </ul>
 
                       <PackageSelectButton pkgId={pkg.id} ctaText={pkg.cta} popular={pkg.popular} />
                     </div>
@@ -316,18 +318,19 @@ export default async function Packages() {
               </div>
               <div className="overflow-x-auto">
                 <table className="w-full text-left">
+                  <caption className="sr-only">{t('comparison.title')}</caption>
                   <thead>
                     <tr className="border-b border-gray-100">
-                      <th className="p-6 text-sm font-semibold text-gray-500 uppercase tracking-wider">
+                      <th scope="col" className="p-6 text-sm font-semibold text-gray-500 uppercase tracking-wider">
                         {t('comparison.headers.feature')}
                       </th>
-                      <th className="p-6 text-center text-sm font-bold text-gray-900">
+                      <th scope="col" className="p-6 text-center text-sm font-bold text-gray-900">
                         {t('comparison.headers.starter')}
                       </th>
-                      <th className="p-6 text-center text-sm font-bold text-gray-900 bg-primary/5">
+                      <th scope="col" className="p-6 text-center text-sm font-bold text-gray-900 bg-primary/5">
                         {t('comparison.headers.professional')}
                       </th>
-                      <th className="p-6 text-center text-sm font-bold text-gray-900">
+                      <th scope="col" className="p-6 text-center text-sm font-bold text-gray-900">
                         {t('comparison.headers.enterprise')}
                       </th>
                     </tr>
@@ -351,7 +354,7 @@ export default async function Packages() {
                           animationFillMode: 'both',
                         }}
                       >
-                        <td className="p-6 text-base font-medium text-gray-700">{label}</td>
+                        <th scope="row" className="p-6 text-base font-medium text-gray-700">{label}</th>
                         <td className="p-6 text-center text-base text-gray-600">
                           {t(`comparison.rows.${key}.starter`)}
                         </td>
@@ -388,9 +391,9 @@ export default async function Packages() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="p-1.5 rounded-[2rem] bg-black/5 ring-1 ring-black/5 inline-block">
             <div className="bg-white rounded-[calc(2rem-0.375rem)] p-12 shadow-[inset_0_1px_1px_rgba(255,255,255,1)]">
-              <h3 className="font-display font-bold text-4xl text-gray-900 mb-4 tracking-tight text-balance">
+              <h2 className="font-display font-bold text-4xl text-gray-900 mb-4 tracking-tight text-balance">
                 {t('cta_section.title')}
-              </h3>
+              </h2>
               <p className="text-xl text-gray-500 mb-10 max-w-2xl mx-auto leading-relaxed text-pretty">
                 {t('cta_section.text')}
               </p>

@@ -2,7 +2,7 @@
 @source "./src";
 @theme {
   /* ═══ TAILWIND V4 INTEGRATION FROM CONFIG ═══ */
-  --color-accent: #f6ad55;
+  --color-accent: #b45309;
   --color-background-light: #ffffff;
   --color-background-dark: #f8fafc;
   --color-surface-light: #ffffff;
@@ -10,8 +10,8 @@
   --color-text-light: #1a202c;
   --color-text-dark: #334155;
   --color-sapphire: #0f5c5c;
-  --color-slate-400: #cbd5e1;
-  --color-slate-500: #94a3b8;
+  --color-slate-400: #64748b;
+  --color-slate-500: #475569;
 
   --z-negative: -1;
   --z-elevated: 10;
@@ -62,11 +62,11 @@
   --color-accent-300: #fcd34d;
   --color-accent-400: #fbbf24;
   --color-accent-500: #f59e0b;
-  --color-accent-600: #f6ad55;
-  --color-accent-700: #d97706;
-  --color-accent-800: #b45309;
-  --color-accent-900: #92400e;
-  --color-accent-950: #78350f;
+  --color-accent-600: #d97706;
+  --color-accent-700: #b45309;
+  --color-accent-800: #92400e;
+  --color-accent-900: #78350f;
+  --color-accent-950: #451a03;
 
   --color-neutral-50: #fafafa;
   --color-neutral-100: #f4f4f5;
@@ -176,9 +176,9 @@
   --color-text-link: var(--color-primary-900);
   --color-text-accent: var(--color-accent-900);
 
-  --color-border-default: var(--color-neutral-200);
-  --color-border-strong: var(--color-neutral-300);
-  --color-border-subtle: var(--color-neutral-100);
+  --color-border-default: #8b8b96;
+  --color-border-strong: var(--color-neutral-500);
+  --color-border-subtle: var(--color-neutral-300);
 
   /* Component specifics mapping to semantics */
   --color-button-primary-bg: var(--color-primary-700);
@@ -189,7 +189,7 @@
 
   /* Gradients */
   --gradient-hero: linear-gradient(135deg, var(--color-primary-700), var(--color-secondary-800));
-  --gradient-accent: linear-gradient(135deg, var(--color-accent-500), var(--color-accent-700));
+  --gradient-accent: linear-gradient(135deg, var(--color-accent-700), var(--color-accent-900));
   --gradient-subtle: linear-gradient(135deg, var(--color-bg-secondary), var(--color-bg-primary));
   --gradient-dark: linear-gradient(135deg, var(--color-secondary-900), var(--color-neutral-950));
 

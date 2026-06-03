@@ -112,7 +112,9 @@ const Calculator: React.FC = () => {
                 >
                   <button
                     onClick={() => toggleCategory(category)}
-                    className="active:scale-[0.97] w-full px-6 py-5 flex items-center justify-between hover:bg-gray-50 transition-colors motion-reduce:duration-[0.01ms]"
+                    aria-expanded={isOpen}
+                    aria-controls={`category-panel-${category}`}
+                    className="active:scale-[0.97] focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none w-full px-6 py-5 flex items-center justify-between hover:bg-gray-50 transition-colors motion-reduce:duration-[0.01ms]"
                   >
                     <div className="flex items-center gap-4">
                       <div
@@ -142,7 +144,7 @@ const Calculator: React.FC = () => {
                     </div>
                   </button>
 
-                  <div className={isOpen ? 'block' : 'hidden'}>
+                  <div id={`category-panel-${category}`} role="region" aria-label={t(`categories.${category}`)} className={isOpen ? 'block' : 'hidden'}>
                     <div className="p-6 pt-0 border-t border-gray-50 bg-gray-50/30">
                       <div className="grid md:grid-cols-2 gap-4 mt-6">
                         {categoryModules.map((module) => (
@@ -197,7 +199,7 @@ const Calculator: React.FC = () => {
           <p className="text-gray-600 mb-6">{t('hero.next_step')}</p>
           <button
             onClick={handleContinueToContact}
-            className="active:scale-[0.97] inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition motion-reduce:duration-[0.01ms] duration-300 uppercase tracking-wide"
+            className="active:scale-[0.97] focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:outline-none inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition motion-reduce:duration-[0.01ms] duration-300 uppercase tracking-wide"
           >
             {t('hero.continue')}
             <ArrowRight size={20} />

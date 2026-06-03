@@ -60,7 +60,7 @@ const Work: React.FC = () => {
           >
             {/* Overline Eyebrow */}
             <p className="text-primary font-bold text-xs uppercase tracking-[0.15em] mb-4 flex items-center justify-center gap-2">
-              <FunnelSimple className="w-4 h-4" weight="bold" />
+              <FunnelSimple className="w-4 h-4" weight="bold" aria-hidden="true" />
               Portfolio
             </p>
             <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-8">
@@ -73,7 +73,8 @@ const Work: React.FC = () => {
                 <button
                   key={item.id}
                   onClick={() => handleFilterChange(index)}
-                  className={`active:scale-[0.97] px-6 py-2.5 rounded-full text-sm font-bold transition motion-reduce:duration-[0.01ms] duration-300 ${
+                  aria-pressed={item.id === filter}
+                  className={`active:scale-[0.97] px-6 py-2.5 rounded-full text-sm font-bold transition motion-reduce:duration-[0.01ms] duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${
                     item.id === filter
                       ? 'bg-primary text-white shadow-lg shadow-primary/25 scale-105'
                       : 'bg-gray-100 text-gray-500 hover:bg-gray-200 hover:text-gray-700'
@@ -85,7 +86,7 @@ const Work: React.FC = () => {
             </div>
           </motion.div>
 
-          <motion.div layout className="flex flex-col md:flex-row md:flex-wrap gap-8">
+          <motion.div layout className="flex flex-col md:flex-row md:flex-wrap gap-8" aria-live="polite">
             <AnimatePresence mode="popLayout">
               {filteredCaseStudies.map((project, index) => {
                 // Asymmetric Phi-pattern (alternating 61.8% and 38.2% splits)

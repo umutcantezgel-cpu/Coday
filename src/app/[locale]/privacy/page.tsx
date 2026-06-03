@@ -6,7 +6,7 @@ export default function PrivacyPage() {
   const { preferences, openSettings, rejectAll } = useCookieStore();
 
   return (
-    <main className="max-w-4xl mx-auto px-6 py-20 prose dark:prose-invert">
+    <div className="max-w-4xl mx-auto px-6 py-20 prose dark:prose-invert">
       <h1>Datenschutzerklärung</h1>
       <p>
         Verantwortliche Stelle im Sinne der Datenschutzgesetze, insbesondere der
@@ -110,6 +110,6 @@ export default function PrivacyPage() {
         </table>
       </div>
 
-    </main>
+    </div>
   );
 }

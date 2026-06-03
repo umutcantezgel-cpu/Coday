@@ -13,12 +13,13 @@ const technologies = [
 
 export const TechStackHologram: React.FC = () => {
   return (
-    <div className="relative w-full h-[600px] flex items-center justify-center perspective-[1000px]">
+    <div className="relative w-full h-[600px] flex items-center justify-center perspective-[1000px]" role="img" aria-label="Interactive 3D hologram showing tech stack: React Router v7, Supabase, Tailwind, Edge Network, TypeScript, and Auth orbiting around a central core">
       {/* Central Core */}
       <motion.div
         animate={{ rotateY: 360 }}
         transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-        className="relative w-64 h-64 transform-style-3d"
+        className="relative w-64 h-64 transform-style-3d motion-reduce:animate-none"
+        aria-hidden="true"
       >
         {/* Core Sphere */}
         <div className="absolute inset-0 m-auto w-32 h-32 rounded-full bg-gradient-to-br from-primary to-blue-600 blur-xl opacity-50 animate-pulse motion-reduce:animate-none" />

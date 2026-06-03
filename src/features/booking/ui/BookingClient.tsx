@@ -7,7 +7,7 @@ import { SeoHead } from '@/shared/ui/SeoHead';
 export default function Booking() {
   const t = useTranslations('booking');
   return (
-    <div className="pt-24 pb-20 container mx-auto px-4 min-h-dvh">
+    <main className="pt-24 pb-20 container mx-auto px-4 min-h-dvh">
       <SeoHead
         title={`${t('page.title')} | Coday`}
         description={t('page.subtitle')}
@@ -36,6 +36,6 @@ export default function Booking() {
       <div className="max-w-4xl mx-auto">
         <BookingCalendar className="shadow-2xl border-aurora-mist/50" />
       </div>
-    </div>
+    </main>
   );
 }

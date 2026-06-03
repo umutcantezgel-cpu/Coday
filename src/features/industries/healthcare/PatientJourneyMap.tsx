@@ -72,13 +72,16 @@ const PatientJourneyMap: React.FC = () => {
             </div>
 
             {/* Center Icon */}
-            <div
-              className={`hidden lg:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-full items-center justify-center border-4 border-white z-10 cursor-pointer transition motion-reduce:duration-[0.01ms] ${step === idx ? 'bg-primary text-white scale-110 shadow-lg' : 'bg-gray-100 text-gray-400'}`}
+            <button
+              type="button"
+              className={`hidden lg:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-full items-center justify-center border-4 border-white z-10 transition motion-reduce:duration-[0.01ms] ${step === idx ? 'bg-primary text-white scale-110 shadow-lg' : 'bg-gray-100 text-gray-400'}`}
               style={{ top: `${idx * 25}%` }}
               onClick={() => setStep(idx)}
+              aria-label={`${s.title}: Schritt ${idx + 1} anzeigen`}
+              aria-pressed={step === idx}
             >
-              <OptimizedIcon icon={iconMap[s.icon] || MagnifyingGlass} />
-            </div>
+              <OptimizedIcon icon={iconMap[s.icon] || MagnifyingGlass} aria-hidden="true" />
+            </button>
 
             {/* Digital Side (Right) */}
             <div

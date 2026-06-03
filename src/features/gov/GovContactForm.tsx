@@ -149,6 +149,8 @@ export const GovContactForm: React.FC = () => {
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         className="bg-green-50 border border-green-200 rounded-2xl p-8 text-center"
+        role="status"
+        aria-live="polite"
       >
         <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
           <OptimizedIcon icon={CheckCircle} className="w-8 h-8 text-green-600" />
@@ -172,6 +174,8 @@ export const GovContactForm: React.FC = () => {
     <form
       onSubmit={handleSubmit(onSubmit)}
       className="bg-white rounded-2xl shadow-xl border border-slate-200 p-6 md:p-8"
+      aria-label={t('request_quote.title')}
+      noValidate
     >
       <div className="mb-8 pb-6 border-b border-slate-100">
         <h3 className="text-2xl font-display font-bold text-slate-900 mb-2">

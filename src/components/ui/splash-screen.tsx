@@ -63,6 +63,9 @@ export function SplashScreen() {
       {showSplash && (
         <motion.div
           id="splash-screen"
+          role="status"
+          aria-live="polite"
+          aria-label="Loading Coday"
           className="fixed inset-0 z-[9999] bg-secondary flex items-center justify-center"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -72,6 +75,7 @@ export function SplashScreen() {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
+            className="motion-reduce:!transform-none"
           >
             <div className="text-4xl font-bold tracking-tighter text-white">
               Coday<span className="text-primary">.</span>

@@ -26,6 +26,8 @@ export const ReadingProgress: React.FC = () => {
     <motion.div
       className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary origin-left z-50"
       style={{ scaleX }}
+      role="progressbar"
+      aria-label="Reading progress"
     />
   );
 };
@@ -81,6 +83,7 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ blocks, isMobi
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="active:scale-[0.97] w-full flex items-center justify-between p-4 font-display font-bold text-secondary text-sm uppercase tracking-wider bg-gray-50/50 hover:bg-gray-50 transition-colors motion-reduce:duration-[0.01ms]"
+          aria-expanded={isOpen}
         >
           <div className="flex items-center gap-2">
             <List size={18} className="text-primary" />
@@ -125,7 +128,7 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ blocks, isMobi
   }
 
   return (
-    <nav className="sticky top-32 max-h-[calc(100dvh-10rem)] overflow-auto custom-scrollbar pl-4">
+    <nav className="sticky top-32 max-h-[calc(100dvh-10rem)] overflow-auto custom-scrollbar pl-4" aria-label="Table of Contents">
       <h4 className="font-display font-bold text-secondary mb-4 text-sm uppercase tracking-wider">
         Inhalt
       </h4>

@@ -13,7 +13,7 @@ const Whitepapers: React.FC = () => {
   const currentLang = locale as 'de' | 'en';
 
   return (
-    <div className="bg-background-light min-h-dvh pt-24 pb-20">
+    <main className="bg-background-light min-h-dvh pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h1 className="font-display font-black text-5xl md:text-6xl text-gradient mb-6">
@@ -24,7 +24,7 @@ const Whitepapers: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {whitepaperData.map((paper) => (
-            <div
+            <article
               key={paper.id}
               className="flex flex-col bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl transition-shadow motion-reduce:duration-[0.01ms] duration-300 group"
             >
@@ -33,6 +33,8 @@ const Whitepapers: React.FC = () => {
                 <OptimizedImage
                   src={paper.image}
                   alt={paper.content[currentLang].alt}
+                  width={800}
+                  height={600}
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform motion-reduce:duration-[0.01ms] duration-700"
                 />
                 <div className="absolute bottom-4 left-4 z-20">
@@ -63,11 +65,11 @@ const Whitepapers: React.FC = () => {
                   {t('whitepapers.download')}
                 </a>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 export default Whitepapers;

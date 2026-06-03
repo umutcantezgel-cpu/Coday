@@ -103,7 +103,11 @@ export const TestimonialBlock: React.FC<TestimonialBlockProps> = ({
         <blockquote
           className={`italic text-slate-700 font-light mb-10 flex-grow relative z-10 leading-relaxed ${featured ? 'text-xl md:text-2xl' : 'text-lg md:text-xl'}`}
         >
-          "{quote}"
+          <p>"{quote}"</p>
+          <footer className="mt-4 not-italic text-sm text-slate-500">
+            <cite className="not-italic font-bold text-secondary">{authorName}</cite>
+            {authorCompany && <>, {authorCompany}</>}
+          </footer>
         </blockquote>
 
         {/* Autor Info Wrapper */}
@@ -114,6 +118,8 @@ export const TestimonialBlock: React.FC<TestimonialBlockProps> = ({
               <OptimizedImage
                 src={authorImageUrl}
                 alt={authorName}
+                width={80}
+                height={80}
                 className="object-cover w-full h-full transition-transform motion-reduce:duration-[0.01ms] duration-500 hover:scale-110"
                 sizes="(max-width: 768px) 64px, 80px"
               />

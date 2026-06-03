@@ -80,7 +80,7 @@ export function Tabs({ tabs, defaultValue, onChange, className, id, ...props }: 
               className={cn(
                 'relative min-h-11 min-w-11 px-4 py-2 text-sm font-medium transition-colors duration-150 ease-out outline-none rounded-md flex-shrink-0 cursor-pointer active:scale-[0.97]',
                 'focus-visible:ring-2 focus-visible:ring-neutral-950',
-                isActive ? 'text-neutral-950' : 'text-neutral-500 hover:text-neutral-700'
+                isActive ? 'text-neutral-950' : 'text-neutral-600 hover:text-neutral-900'
               )}
             >
               {isActive && (

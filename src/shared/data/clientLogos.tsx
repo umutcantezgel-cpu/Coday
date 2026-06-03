@@ -6,12 +6,13 @@ import { Drop, Key, ForkKnife } from '@phosphor-icons/react/dist/ssr';
 // im Design-System-konformen Stil darzustellen, da reine Text-Platzhalter nicht zulässig sind.
 const generateClientLogo = (text: string, Icon: React.ElementType): LogoItem => ({
   node: (
-    <div className="flex items-center justify-center gap-3 h-12 px-6 group cursor-default">
+    <div className="flex items-center justify-center gap-3 h-12 px-6 group cursor-default" aria-label={text} role="img">
       <Icon
         weight="duotone"
+        aria-hidden="true"
         className="w-8 h-8 text-slate-400 opacity-60 group-hover:opacity-100 group-hover:text-primary transition motion-reduce:duration-[0.01ms] duration-300 grayscale group-hover:grayscale-0"
       />
-      <span className="font-display font-bold text-xl text-slate-400 opacity-60 group-hover:opacity-100 group-hover:text-primary transition motion-reduce:duration-[0.01ms] duration-300 grayscale group-hover:grayscale-0 tracking-wide uppercase">
+      <span aria-hidden="true" className="font-display font-bold text-xl text-slate-400 opacity-60 group-hover:opacity-100 group-hover:text-primary transition motion-reduce:duration-[0.01ms] duration-300 grayscale group-hover:grayscale-0 tracking-wide uppercase">
         {text}
       </span>
     </div>

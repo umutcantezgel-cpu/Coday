@@ -26,13 +26,15 @@ export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ project }) => {
   const image = content.solution?.images?.[0] || '/images/brand/coday-full.webp';
 
   const innerContent = (
-    <article className="group relative rounded-3xl overflow-hidden shadow-md h-[400px] flex flex-col hover:-translate-y-1 hover:scale-[1.02] hover:shadow-glow transition motion-reduce:duration-[0.01ms] duration-slow ease-out cursor-pointer w-full">
+    <article className="group relative rounded-3xl overflow-hidden shadow-md h-[400px] flex flex-col hover:-translate-y-1 hover:scale-[1.02] hover:shadow-glow focus-within:-translate-y-1 focus-within:scale-[1.02] focus-within:shadow-glow transition motion-reduce:duration-[0.01ms] duration-slow ease-out cursor-pointer w-full">
       {/* Background Image */}
       <div className="absolute inset-0">
         <OptimizedImage
           src={image}
           alt={content.solution?.imageAlts?.[0] || `Case Study: ${title} - ${industry}`}
           className="w-full h-full object-cover transform group-hover:scale-[1.04] transition-transform motion-reduce:duration-[0.01ms] duration-slower ease-out"
+          width={800}
+          height={600}
         />
       </div>
 
@@ -61,7 +63,7 @@ export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ project }) => {
           <span className="text-sm font-bold text-primary uppercase tracking-widest">{client}</span>
           <h3 className="font-display font-bold text-3xl text-white mt-2 mb-6">{title}</h3>
           <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-slate-900 rounded-full font-bold text-sm hover:bg-primary hover:text-white transition-colors motion-reduce:duration-[0.01ms]">
-            Case Study ansehen <ArrowUpRight weight="bold" />
+            Case Study ansehen <ArrowUpRight weight="bold" aria-hidden="true" />
           </div>
         </div>
       </div>
@@ -70,14 +72,14 @@ export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ project }) => {
 
   if (project.liveUrl) {
     return (
-      <Link href={`/work/${project.slug}`} className="group block h-full">
+      <Link href={`/work/${project.slug}`} className="group block h-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary rounded-3xl">
         {innerContent}
       </Link>
     );
   }
 
   return (
-    <Link href={`/work/${project.slug}`} className="group block h-full">
+    <Link href={`/work/${project.slug}`} className="group block h-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary rounded-3xl">
       {innerContent}
     </Link>
   );

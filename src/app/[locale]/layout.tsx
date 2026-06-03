@@ -87,17 +87,16 @@ export default async function RootLayout({
             nonce={nonce}
             dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
           />
-          <GoogleAnalytics />
-          <PostHogAnalytics />
-          <MetaPixel />
-          <LinkedInInsight />
-          <ClarityAnalytics />
 
           {(await draftMode()).isEnabled && (
             <>
               <div className="bg-blue-600 text-white text-center py-1 text-sm font-medium">
                 Draft Mode Enabled{' '}
-                <a href="/api/draft-mode/disable" className="underline hover:text-blue-100 ml-2">
+                <a 
+                  href="/api/draft-mode/disable" 
+                  className="underline hover:text-blue-100 ml-2 focus:outline-none focus:ring-2 focus:ring-white rounded"
+                  aria-label="Disable draft mode"
+                >
                   Disable
                 </a>
               </div>
@@ -109,6 +108,12 @@ export default async function RootLayout({
             </div>
           </MotionProvider>
         </NextIntlClientProvider>
+        
+        <GoogleAnalytics />
+        <PostHogAnalytics />
+        <MetaPixel />
+        <LinkedInInsight />
+        <ClarityAnalytics />
       </body>
     </html>
   );

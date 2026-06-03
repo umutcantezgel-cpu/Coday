@@ -37,8 +37,8 @@ const VirtualTourTeaser: React.FC = () => {
         </div>
 
         <div className="flex gap-2">
-          <button className="active:scale-[0.97] w-10 h-10 rounded-full bg-white/10 backdrop-blur border border-white/20 flex items-center justify-center text-white hover:bg-white/20 pointer-events-auto">
-            <Icon name="maximize" />
+          <button aria-label="Vollbild" className="active:scale-[0.97] w-10 h-10 rounded-full bg-white/10 backdrop-blur border border-white/20 flex items-center justify-center text-white hover:bg-white/20 pointer-events-auto">
+            <Icon name="maximize" aria-hidden="true" />
           </button>
         </div>
       </div>
@@ -66,22 +66,31 @@ const VirtualTourTeaser: React.FC = () => {
             }}
           >
             {/* Simulated Room Elements to give depth */}
-            <div className="absolute top-1/2 left-[20%] w-20 h-20 border-2 border-white/50 rounded-full flex items-center justify-center hover:scale-110 transition-transform motion-reduce:duration-[0.01ms] cursor-pointer group/hotspot">
-              <div className="w-4 h-4 bg-white rounded-full animate-ping motion-reduce:animate-none"></div>
-              <div className="absolute top-full mt-2 bg-black/80 text-white text-xs px-2 py-1 rounded opacity-0 group-hover/hotspot:opacity-100 whitespace-nowrap">
+            <button
+              type="button"
+              aria-label={t('immobilien-makler.features.virtual_tour.hotspots.kitchen')}
+              className="absolute top-1/2 left-[20%] w-20 h-20 border-2 border-white/50 rounded-full flex items-center justify-center hover:scale-110 transition-transform motion-reduce:duration-[0.01ms] group/hotspot"
+            >
+              <div className="w-4 h-4 bg-white rounded-full animate-ping motion-reduce:animate-none" aria-hidden="true"></div>
+              <div className="absolute top-full mt-2 bg-black/80 text-white text-xs px-2 py-1 rounded opacity-0 group-hover/hotspot:opacity-100 whitespace-nowrap" aria-hidden="true">
                 {t('immobilien-makler.features.virtual_tour.hotspots.kitchen')}
               </div>
-            </div>
+            </button>
 
-            <div className="absolute top-1/3 left-[60%] w-20 h-20 border-2 border-white/50 rounded-full flex items-center justify-center hover:scale-110 transition-transform motion-reduce:duration-[0.01ms] cursor-pointer group/hotspot">
+            <button
+              type="button"
+              aria-label={t('immobilien-makler.features.virtual_tour.hotspots.terrace')}
+              className="absolute top-1/3 left-[60%] w-20 h-20 border-2 border-white/50 rounded-full flex items-center justify-center hover:scale-110 transition-transform motion-reduce:duration-[0.01ms] group/hotspot"
+            >
               <div
                 className="w-4 h-4 bg-white rounded-full animate-ping motion-reduce:animate-none"
                 style={{ animationDelay: '1s' }}
+                aria-hidden="true"
               ></div>
-              <div className="absolute top-full mt-2 bg-black/80 text-white text-xs px-2 py-1 rounded opacity-0 group-hover/hotspot:opacity-100 whitespace-nowrap">
+              <div className="absolute top-full mt-2 bg-black/80 text-white text-xs px-2 py-1 rounded opacity-0 group-hover/hotspot:opacity-100 whitespace-nowrap" aria-hidden="true">
                 {t('immobilien-makler.features.virtual_tour.hotspots.terrace')}
               </div>
-            </div>
+            </button>
           </div>
         </motion.div>
 
@@ -99,21 +108,21 @@ const VirtualTourTeaser: React.FC = () => {
       {/* Bottom Bar */}
       <div className="absolute bottom-0 inset-x-0 p-4 bg-white/90 backdrop-blur z-20 flex justify-between items-center border-t border-gray-100">
         <div className="flex gap-4 overflow-x-auto no-scrollbar">
-          <div className="w-16 h-12 bg-gray-300 rounded overflow-hidden border-2 border-primary relative cursor-pointer">
+          <button type="button" aria-pressed="true" aria-label={t('immobilien-makler.features.virtual_tour.rooms.living')} className="w-16 h-12 bg-gray-300 rounded overflow-hidden border-2 border-primary relative">
             <span className="absolute bottom-0 inset-x-0 w-full text-[8px] bg-black/50 text-white text-center">
               {t('immobilien-makler.features.virtual_tour.rooms.living')}
             </span>
-          </div>
-          <div className="w-16 h-12 bg-gray-200 rounded overflow-hidden border border-transparent hover:border-gray-400 relative cursor-pointer opacity-60">
+          </button>
+          <button type="button" aria-label={t('immobilien-makler.features.virtual_tour.rooms.bath')} className="w-16 h-12 bg-gray-200 rounded overflow-hidden border border-transparent hover:border-gray-400 relative opacity-60">
             <span className="absolute bottom-0 inset-x-0 w-full text-[8px] bg-black/50 text-white text-center">
               {t('immobilien-makler.features.virtual_tour.rooms.bath')}
             </span>
-          </div>
-          <div className="w-16 h-12 bg-gray-200 rounded overflow-hidden border border-transparent hover:border-gray-400 relative cursor-pointer opacity-60">
+          </button>
+          <button type="button" aria-label={t('immobilien-makler.features.virtual_tour.rooms.kitchen')} className="w-16 h-12 bg-gray-200 rounded overflow-hidden border border-transparent hover:border-gray-400 relative opacity-60">
             <span className="absolute bottom-0 inset-x-0 w-full text-[8px] bg-black/50 text-white text-center">
               {t('immobilien-makler.features.virtual_tour.rooms.kitchen')}
             </span>
-          </div>
+          </button>
         </div>
         <button className="active:scale-[0.97] bg-secondary text-white px-4 py-2 rounded-lg text-xs font-bold shadow-md hover:bg-secondary/90">
           {t('immobilien-makler.features.virtual_tour.cta')}

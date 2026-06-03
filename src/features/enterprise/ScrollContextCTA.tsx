@@ -33,7 +33,7 @@ export const ScrollContextCTA: React.FC = () => {
           transition={{ type: 'spring', stiffness: 260, damping: 20 }}
           className="fixed bottom-6 inset-x-0 mx-auto w-full max-w-sm md:max-w-md z-50 px-4 hidden lg:block"
         >
-          <div className="bg-secondary/90 backdrop-blur-xl border border-white/10 p-3 rounded-full shadow-2xl flex items-center justify-between pl-6">
+          <aside aria-label={t('scroll_cta.ready')} className="bg-secondary/90 backdrop-blur-xl border border-white/10 p-3 rounded-full shadow-2xl flex items-center justify-between pl-6">
             <div className="flex flex-col">
               <span className="text-xs text-slate-400 font-bold uppercase tracking-wider">
                 {t('scroll_cta.ready')}
@@ -44,10 +44,10 @@ export const ScrollContextCTA: React.FC = () => {
               href="/booking"
               className="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-full font-bold text-sm flex items-center gap-2 transition-colors motion-reduce:duration-[0.01ms]"
             >
-              <CalendarBlank size={16} />
+              <CalendarBlank size={16} aria-hidden="true" />
               {t('scroll_cta.book_audit')}
             </Link>
-          </div>
+          </aside>
         </motion.div>
       )}
     </AnimatePresence>

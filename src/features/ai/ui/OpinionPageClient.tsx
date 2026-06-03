@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { useParams } from 'next/navigation';
 import { aiPositions, AUTHOR } from '@/shared/data/ai-positions';
 import { SeoHead } from '@/shared/ui/SeoHead';
@@ -110,9 +111,11 @@ export default function OpinionPage() {
           {/* AUTHOR BIO BLOCK */}
           <div className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-sm border border-slate-100 max-w-xl">
             <div className="w-14 h-14 bg-slate-200 rounded-full overflow-hidden flex-shrink-0">
-              <img
+              <Image
                 src={AUTHOR.image}
                 alt={AUTHOR.name}
+                width={56}
+                height={56}
                 className="w-full h-full object-cover grayscale"
               />
             </div>
@@ -128,7 +131,7 @@ export default function OpinionPage() {
           <div className="absolute -left-6 top-0 bottom-0 w-2 bg-primary rounded-full hidden md:block"></div>
           <div className="bg-white p-8 md:p-10 rounded-2xl shadow-xl border border-slate-100">
             <h2 className="text-sm font-bold text-primary uppercase tracking-wider mb-4 flex items-center gap-2">
-              <Scales weight="bold" />
+              <Scales weight="bold" aria-hidden="true" />
               Unsere Position
             </h2>
             <p className="text-xl md:text-2xl font-medium text-slate-800 leading-relaxed">
@@ -140,7 +143,7 @@ export default function OpinionPage() {
         {/* MYTH VS REALITY SECTION */}
         <section className="mb-16">
           <h2 className="text-3xl font-black text-slate-900 mb-8 flex items-center gap-3">
-            <Sword weight="duotone" className="text-primary" />
+            <Sword weight="duotone" className="text-primary" aria-hidden="true" />
             Branchen-Mythen vs. Realität
           </h2>
 
@@ -153,7 +156,7 @@ export default function OpinionPage() {
                 {/* THE MYTH */}
                 <div className="bg-slate-50 p-6 md:p-8">
                   <h3 className="text-sm font-bold text-red-500 uppercase tracking-wider mb-3 flex items-center gap-2">
-                    <XCircle weight="fill" />
+                    <XCircle weight="fill" aria-hidden="true" />
                     Der Mythos
                   </h3>
                   <p className="text-lg font-medium text-slate-700 italic">"{ca.claim}"</p>
@@ -161,7 +164,7 @@ export default function OpinionPage() {
                 {/* THE REALITY (Rebuttal) */}
                 <div className="bg-white p-6 md:p-8 border-t md:border-t-0 md:border-l border-slate-200 relative">
                   <h3 className="text-sm font-bold text-emerald-600 uppercase tracking-wider mb-3 flex items-center gap-2">
-                    <CheckCircle weight="fill" />
+                    <CheckCircle weight="fill" aria-hidden="true" />
                     Die Realität
                   </h3>
                   <p className="text-slate-700 leading-relaxed">{ca.rebuttal}</p>
@@ -174,7 +177,7 @@ export default function OpinionPage() {
         {/* CORE ARGUMENTS */}
         <section className="mb-16">
           <h2 className="text-3xl font-black text-slate-900 mb-8 flex items-center gap-3">
-            <Lightbulb weight="duotone" className="text-primary" />
+            <Lightbulb weight="duotone" className="text-primary" aria-hidden="true" />
             Warum wir diese Position vertreten
           </h2>
 
@@ -200,7 +203,7 @@ export default function OpinionPage() {
         <section className="mb-24">
           <div className="bg-slate-900 text-white p-8 md:p-12 rounded-3xl relative overflow-hidden">
             <div className="absolute top-0 right-0 p-8 opacity-10">
-              <TrendUp size={120} />
+              <TrendUp size={120} aria-hidden="true" />
             </div>
             <h2 className="text-2xl font-bold mb-4 relative z-10">Fazit</h2>
             <p className="text-lg text-slate-300 leading-relaxed relative z-10">

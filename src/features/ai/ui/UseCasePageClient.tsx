@@ -116,7 +116,7 @@ export default function UseCasePage() {
                   key={idx}
                   className="flex items-center gap-2 bg-slate-800 text-slate-200 px-3 py-1.5 rounded-lg text-sm font-mono"
                 >
-                  <OptimizedIcon icon={CodeBlock} className="w-4 h-4" />
+                  <OptimizedIcon icon={CodeBlock} className="w-4 h-4" aria-hidden="true" />
                   {tech}
                 </div>
               ))}
@@ -127,7 +127,7 @@ export default function UseCasePage() {
         {/* METRICS DASHBOARD */}
         <div className="mb-16">
           <h2 className="font-display font-black text-3xl text-secondary mb-6 flex items-center gap-3">
-            <OptimizedIcon icon={TrendUp} className="w-8 h-8 text-primary" />
+            <OptimizedIcon icon={TrendUp} className="w-8 h-8 text-primary" aria-hidden="true" />
             Outcome Metrics
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -160,7 +160,7 @@ export default function UseCasePage() {
                     </span>
                     <span className="text-xl font-bold text-slate-500">{metric.before}</span>
                   </div>
-                  <OptimizedIcon icon={ArrowRight} className="w-6 h-6 text-slate-300 mb-1" />
+                  <OptimizedIcon icon={ArrowRight} className="w-6 h-6 text-slate-300 mb-1" aria-hidden="true" />
                   <div className="flex flex-col">
                     <span className="text-sm text-primary font-medium mb-1">Danach</span>
                     <span className="text-3xl font-black text-secondary">{metric.after}</span>
@@ -175,14 +175,14 @@ export default function UseCasePage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
           <div className="bg-red-50/50 rounded-3xl p-8 border border-red-100">
             <h2 className="font-display font-bold text-2xl text-secondary mb-4 flex items-center gap-3">
-              <OptimizedIcon icon={WarningCircle} className="w-8 h-8 text-red-500" />
+              <OptimizedIcon icon={WarningCircle} className="w-8 h-8 text-red-500" aria-hidden="true" />
               Die Herausforderung
             </h2>
             <p className="text-slate-700 leading-relaxed">{useCase.de.problem}</p>
           </div>
           <div className="bg-green-50/50 rounded-3xl p-8 border border-green-100">
             <h2 className="font-display font-bold text-2xl text-secondary mb-4 flex items-center gap-3">
-              <OptimizedIcon icon={Lightbulb} className="w-8 h-8 text-green-500" />
+              <OptimizedIcon icon={Lightbulb} className="w-8 h-8 text-green-500" aria-hidden="true" />
               Unsere Lösung
             </h2>
             <p className="text-slate-700 leading-relaxed">{useCase.de.solution}</p>

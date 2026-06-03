@@ -18,15 +18,17 @@ const MenuEngineeringDemo: React.FC = () => {
             {t('gastronomie-hotellerie.features.menu_engineering.description')}
           </p>
 
-          <div className="flex bg-white/10 p-1 rounded-xl w-fit">
+          <div className="flex bg-white/10 p-1 rounded-xl w-fit" role="group" aria-label={t('gastronomie-hotellerie.features.menu_engineering.title')}>
             <button
               onClick={() => setMode('paper')}
+              aria-pressed={mode === 'paper'}
               className={`active:scale-[0.97] px-5 py-2 rounded-lg text-sm font-bold transition motion-reduce:duration-[0.01ms] ${mode === 'paper' ? 'bg-white text-slate-900' : 'text-gray-400 hover:text-white'}`}
             >
               {t('gastronomie-hotellerie.features.menu_engineering.toggles.paper')}
             </button>
             <button
               onClick={() => setMode('digital')}
+              aria-pressed={mode === 'digital'}
               className={`active:scale-[0.97] px-5 py-2 rounded-lg text-sm font-bold transition motion-reduce:duration-[0.01ms] ${mode === 'digital' ? 'bg-primary text-white' : 'text-gray-400 hover:text-white'}`}
             >
               {t('gastronomie-hotellerie.features.menu_engineering.toggles.digital')}
@@ -130,9 +132,13 @@ const MenuEngineeringDemo: React.FC = () => {
                           )}
                         </div>
                       </div>
-                      <div className="ms-auto w-5 h-5 rounded-full bg-green-500 flex items-center justify-center text-black font-bold text-[10px] cursor-pointer">
+                      <button
+                        type="button"
+                        aria-label={t('gastronomie-hotellerie.features.menu_engineering.digital_view.cta_add')}
+                        className="ms-auto w-5 h-5 rounded-full bg-green-500 flex items-center justify-center text-black font-bold text-[10px]"
+                      >
                         +
-                      </div>
+                      </button>
                     </div>
                   </motion.div>
                 </div>

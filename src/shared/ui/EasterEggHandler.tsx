@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import confetti from 'canvas-confetti';
 
 export const EasterEggHandler = () => {
   const [clickCount, setClickCount] = useState(0);
@@ -31,10 +30,14 @@ export const EasterEggHandler = () => {
     return () => document.removeEventListener('click', handleClick);
   }, []);
 
-  const triggerEasterEgg = () => {
+  const triggerEasterEgg = async () => {
     // 1. Confetti Explosion
     const duration = 3 * 1000;
     const end = Date.now() + duration;
+    
+    // Dynamically import confetti to save bundle size
+    const confettiModule = await import('canvas-confetti');
+    const confetti = confettiModule.default || confettiModule;
 
     const frame = () => {
       confetti({

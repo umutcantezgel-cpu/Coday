@@ -133,7 +133,7 @@ const TroubleshooterWizard = () => {
   };
 
   return (
-    <div className="bg-slate-50  rounded-3xl p-8 md:p-12 relative overflow-hidden border border-slate-200  shadow-xl max-w-4xl mx-auto my-16">
+    <section className="bg-slate-50  rounded-3xl p-8 md:p-12 relative overflow-hidden border border-slate-200  shadow-xl max-w-4xl mx-auto my-16" aria-label="Troubleshooter">
       <div className="relative z-10">
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-2xl font-bold font-display text-slate-900 ">
@@ -165,9 +165,10 @@ const TroubleshooterWizard = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               className="space-y-6"
+              aria-live="polite"
             >
               <h3 className="text-xl text-slate-700  font-medium">{currentStep.question}</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4" role="group" aria-label={currentStep.question}>
                 {currentStep.options.map((opt) => (
                   <button
                     key={opt.id}
@@ -190,6 +191,7 @@ const TroubleshooterWizard = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               className="text-center py-8"
+              aria-live="assertive"
             >
               <div className="w-16 h-16 bg-green-100  rounded-full flex items-center justify-center mx-auto mb-6">
                 <Check className="w-8 h-8 text-green-600 " />
@@ -210,7 +212,7 @@ const TroubleshooterWizard = () => {
           ) : null}
         </AnimatePresence>
       </div>
-    </div>
+    </section>
   );
 };
 

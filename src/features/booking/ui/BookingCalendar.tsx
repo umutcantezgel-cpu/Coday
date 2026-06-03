@@ -155,7 +155,7 @@ const BookingCalendar = ({
           </p>
           <button
             onClick={() => window.location.reload()}
-            className="active:scale-[0.97] mt-6 px-6 py-2 bg-gray-900 text-white rounded-full hover:bg-primary transition-colors motion-reduce:duration-[0.01ms]"
+            className="active:scale-[0.97] focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none mt-6 px-6 py-2 bg-gray-900 text-white rounded-full hover:bg-primary transition-colors motion-reduce:duration-[0.01ms]"
           >
             {t('calendar.success.new_booking')}
           </button>
@@ -167,7 +167,24 @@ const BookingCalendar = ({
   return (
     <div
       className={`p-4 md:p-6 bg-white/50 backdrop-blur-sm rounded-3xl border border-white/20 shadow-xl ${className}`}
+      role="group"
+      aria-label={t('calendar.step1.title')}
     >
+      {/* Step indicator */}
+      <nav aria-label="Booking steps" className="flex items-center gap-2 mb-4 text-sm">
+        {[1, 2].map((s) => (
+          <div
+            key={s}
+            className={`flex items-center gap-1 ${s === step ? 'text-primary font-bold' : 'text-gray-400'}`}
+            aria-current={s === step ? 'step' : undefined}
+          >
+            <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${s === step ? 'bg-primary text-white' : s < step ? 'bg-primary/20 text-primary' : 'bg-gray-100 text-gray-400'}`}>
+              {s}
+            </span>
+            <span className="hidden sm:inline">{s === 1 ? t('calendar.step1.title') : t('calendar.step2.title')}</span>
+          </div>
+        ))}
+      </nav>
       <AnimatePresence mode="wait">
         {step === 1 && (
           <motion.div
@@ -177,18 +194,26 @@ const BookingCalendar = ({
             exit={{ opacity: 0, x: 20 }}
             className="space-y-6"
           >
-            <h2 className="text-xl font-bold text-gray-900 mb-4">{t('calendar.step1.title')}</h2>
+            <h2 id="booking-step1-heading" className="text-xl font-bold text-gray-900 mb-4">{t('calendar.step1.title')}</h2>
 
             {/* Scrollable Dates with Fade Mask */}
-            <div className="relative">
-              <div className="flex gap-3 overflow-x-auto pb-4 no-scrollbar scroll-smooth snap-x">
+            <div className="relative" role="group" aria-labelledby="booking-step1-heading">
+              <div className="flex gap-3 overflow-x-auto pb-4 no-scrollbar scroll-smooth snap-x" role="listbox" aria-label={t('calendar.step1.title')}>
                 {dates.map((date) => {
                   const isSelected = selectedDate?.toDateString() === date.toDateString();
+                  const fullDateLabel = date.toLocaleDateString(locale === 'en' ? 'en-US' : 'de-DE', {
+                    weekday: 'long',
+                    day: 'numeric',
+                    month: 'long',
+                  });
                   return (
                     <button
                       key={date.toISOString()}
+                      role="option"
+                      aria-selected={isSelected}
+                      aria-label={fullDateLabel}
                       onClick={() => handleDateSelect(date)}
-                      className={`active:scale-[0.97] 
+                      className={`active:scale-[0.97] focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none
                       flex-shrink-0 w-16 md:w-20 h-20 md:h-24 rounded-2xl flex flex-col items-center justify-center gap-1 transition motion-reduce:duration-[0.01ms]
                       border ${isSelected ? 'border-primary bg-primary/10 text-primary scale-105' : 'border-gray-100 hover:border-primary/50 text-gray-500'}
                     `}
@@ -212,6 +237,8 @@ const BookingCalendar = ({
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
+                role="group"
+                aria-label={t('calendar.step2.form.notes.placeholder', { fallback: 'Available time slots' })}
                 className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3"
               >
                 {fetchingSlots ? (
@@ -228,7 +255,9 @@ const BookingCalendar = ({
                         key={time}
                         onClick={() => !isBooked && setSelectedTime(time)}
                         disabled={isBooked}
-                        className={`active:scale-[0.97] 
+                        aria-pressed={selectedTime === time}
+                        aria-label={`${time}${isBooked ? ' - ' + t('calendar.step2.buttons.submitting', { fallback: 'booked' }) : ''}`}
+                        className={`active:scale-[0.97] focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none
                           py-2 rounded-xl text-sm font-medium transition motion-reduce:duration-[0.01ms]
                           ${
                             selectedTime === time
@@ -252,7 +281,7 @@ const BookingCalendar = ({
               <button
                 disabled={!selectedDate || !selectedTime}
                 onClick={nextStep}
-                className="active:scale-[0.97] hidden md:block px-8 py-3 bg-black text-white rounded-full font-medium disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-800 transition-colors motion-reduce:duration-[0.01ms] shadow-lg"
+                className="active:scale-[0.97] focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none hidden md:block px-8 py-3 bg-black text-white rounded-full font-medium disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-800 transition-colors motion-reduce:duration-[0.01ms] shadow-lg"
               >
                 {t('calendar.step1.next')}
               </button>
@@ -270,7 +299,7 @@ const BookingCalendar = ({
                       >
                         <button
                           onClick={nextStep}
-                          className="active:scale-[0.97] w-full py-4 bg-black text-white rounded-2xl font-bold text-lg shadow-2xl pointer-events-auto flex items-center justify-center gap-2 transition-transform motion-reduce:duration-[0.01ms]"
+                          className="active:scale-[0.97] focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none w-full py-4 bg-black text-white rounded-2xl font-bold text-lg shadow-2xl pointer-events-auto flex items-center justify-center gap-2 transition-transform motion-reduce:duration-[0.01ms]"
                         >
                           {t('calendar.step1.next')}
                           <svg
@@ -317,7 +346,7 @@ const BookingCalendar = ({
               </p>
             </div>
 
-            <form onSubmit={handleBook} className="space-y-4">
+            <form onSubmit={handleBook} className="space-y-4" noValidate>
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label
@@ -339,7 +368,7 @@ const BookingCalendar = ({
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     aria-invalid={!!error}
                     aria-describedby={error ? 'booking-error' : undefined}
-                    className="w-full p-3 rounded-xl bg-white border border-gray-100 focus:border-primary outline-none transition-colors motion-reduce:duration-[0.01ms]"
+                    className="w-full p-3 rounded-xl bg-white border border-gray-100 focus:border-primary focus-visible:ring-2 focus-visible:ring-primary outline-none transition-colors motion-reduce:duration-[0.01ms]"
                   />
                 </div>
                 <div>
@@ -362,7 +391,7 @@ const BookingCalendar = ({
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     aria-invalid={!!error}
                     aria-describedby={error ? 'booking-error' : undefined}
-                    className="w-full p-3 rounded-xl bg-white border border-gray-100 focus:border-primary outline-none transition-colors motion-reduce:duration-[0.01ms]"
+                    className="w-full p-3 rounded-xl bg-white border border-gray-100 focus:border-primary focus-visible:ring-2 focus-visible:ring-primary outline-none transition-colors motion-reduce:duration-[0.01ms]"
                   />
                 </div>
               </div>
@@ -381,7 +410,7 @@ const BookingCalendar = ({
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   aria-invalid={!!error}
                   aria-describedby={error ? 'booking-error' : undefined}
-                  className="w-full p-3 rounded-xl bg-white border border-gray-100 focus:border-primary outline-none transition-colors motion-reduce:duration-[0.01ms]"
+                  className="w-full p-3 rounded-xl bg-white border border-gray-100 focus:border-primary focus-visible:ring-2 focus-visible:ring-primary outline-none transition-colors motion-reduce:duration-[0.01ms]"
                 />
               </div>
               <div>
@@ -399,7 +428,7 @@ const BookingCalendar = ({
                   onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                   aria-invalid={!!error}
                   aria-describedby={error ? 'booking-error' : undefined}
-                  className="w-full p-3 rounded-xl bg-white border border-gray-100 focus:border-primary outline-none transition-colors motion-reduce:duration-[0.01ms]"
+                  className="w-full p-3 rounded-xl bg-white border border-gray-100 focus:border-primary focus-visible:ring-2 focus-visible:ring-primary outline-none transition-colors motion-reduce:duration-[0.01ms]"
                 />
               </div>
 
@@ -418,14 +447,14 @@ const BookingCalendar = ({
                 <button
                   type="button"
                   onClick={prevStep}
-                  className="active:scale-[0.97] px-6 py-2 text-gray-500 hover:text-gray-800 font-medium"
+                  className="active:scale-[0.97] focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none px-6 py-2 text-gray-500 hover:text-gray-800 font-medium"
                 >
                   {t('calendar.step2.buttons.back')}
                 </button>
                 <button
                   type="submit"
                   disabled={loading}
-                  className="active:scale-[0.97] px-8 py-2 bg-black text-white rounded-full font-medium hover:bg-gray-800 transition-colors motion-reduce:duration-[0.01ms] disabled:opacity-50 flex items-center gap-2"
+                  className="active:scale-[0.97] focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none px-8 py-2 bg-black text-white rounded-full font-medium hover:bg-gray-800 transition-colors motion-reduce:duration-[0.01ms] disabled:opacity-50 flex items-center gap-2"
                 >
                   {loading
                     ? t('calendar.step2.buttons.submitting')

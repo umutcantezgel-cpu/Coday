@@ -1,0 +1,846 @@
+
+--- ./src/components/ui/drawer.tsx (line 61) ---
+  }, [isOpen, onClose]);
+
+  const slideVariants = {
+    right: {
+      initial: { transform: 'translateX(100%)' },
+      animate: { transform: 'translateX(0%)' },
+      exit: { transform: 'translateX(100%)', transition: { duration: 0.15, ease: 'easeOut' as const } },
+
+--- ./src/components/ui/drawer.tsx (line 66) ---
+      animate: { transform: 'translateX(0%)' },
+      exit: { transform: 'translateX(100%)', transition: { duration: 0.15, ease: 'easeOut' as const } },
+    },
+    left: {
+      initial: { transform: 'translateX(-100%)' },
+      animate: { transform: 'translateX(0%)' },
+      exit: { transform: 'translateX(-100%)', transition: { duration: 0.15, ease: 'easeOut' as const } },
+
+--- ./src/components/ui/drawer.tsx (line 71) ---
+      animate: { transform: 'translateX(0%)' },
+      exit: { transform: 'translateX(-100%)', transition: { duration: 0.15, ease: 'easeOut' as const } },
+    },
+    bottom: {
+      initial: { transform: 'translateY(100%)' },
+      animate: { transform: 'translateY(0%)' },
+      exit: { transform: 'translateY(100%)', transition: { duration: 0.15, ease: 'easeOut' as const } },
+
+--- ./src/components/ui/drawer.tsx (line 79) ---
+  } as const;
+
+  const positionClasses = {
+    right: 'inset-y-0 right-0 h-full w-full max-w-md border-l',
+    left: 'inset-y-0 left-0 h-full w-full max-w-md border-r',
+    bottom: 'bottom-0 left-0 right-0 w-full max-h-[90vh] border-t rounded-t-2xl',
+  };
+
+--- ./src/components/ui/drawer.tsx (line 80) ---
+
+  const positionClasses = {
+    right: 'inset-y-0 right-0 h-full w-full max-w-md border-l',
+    left: 'inset-y-0 left-0 h-full w-full max-w-md border-r',
+    bottom: 'bottom-0 left-0 right-0 w-full max-h-[90vh] border-t rounded-t-2xl',
+  };
+
+
+--- ./src/components/ui/drawer.tsx (line 81) ---
+  const positionClasses = {
+    right: 'inset-y-0 right-0 h-full w-full max-w-md border-l',
+    left: 'inset-y-0 left-0 h-full w-full max-w-md border-r',
+    bottom: 'bottom-0 left-0 right-0 w-full max-h-[90vh] border-t rounded-t-2xl',
+  };
+
+  if (!mounted) return null;
+
+--- ./src/components/ui/popover.tsx (line 57) ---
+  }, [isOpen]);
+
+  const positionStyles = {
+    top: 'bottom-full mb-2',
+    bottom: 'top-full mt-2',
+    left: 'right-full mr-2',
+    right: 'left-full ml-2',
+
+--- ./src/components/ui/popover.tsx (line 58) ---
+
+  const positionStyles = {
+    top: 'bottom-full mb-2',
+    bottom: 'top-full mt-2',
+    left: 'right-full mr-2',
+    right: 'left-full ml-2',
+  };
+
+--- ./src/components/ui/popover.tsx (line 59) ---
+  const positionStyles = {
+    top: 'bottom-full mb-2',
+    bottom: 'top-full mt-2',
+    left: 'right-full mr-2',
+    right: 'left-full ml-2',
+  };
+
+
+--- ./src/components/ui/popover.tsx (line 60) ---
+    top: 'bottom-full mb-2',
+    bottom: 'top-full mt-2',
+    left: 'right-full mr-2',
+    right: 'left-full ml-2',
+  };
+
+  const alignStyles = {
+
+--- ./src/components/ui/popover.tsx (line 70) ---
+  };
+
+  const originStyles = {
+    top: align === 'start' ? 'bottom left' : align === 'end' ? 'bottom right' : 'bottom',
+    bottom: align === 'start' ? 'top left' : align === 'end' ? 'top right' : 'top',
+    left: align === 'start' ? 'top right' : align === 'end' ? 'bottom right' : 'right',
+    right: align === 'start' ? 'top left' : align === 'end' ? 'bottom left' : 'left',
+
+--- ./src/components/ui/popover.tsx (line 71) ---
+
+  const originStyles = {
+    top: align === 'start' ? 'bottom left' : align === 'end' ? 'bottom right' : 'bottom',
+    bottom: align === 'start' ? 'top left' : align === 'end' ? 'top right' : 'top',
+    left: align === 'start' ? 'top right' : align === 'end' ? 'bottom right' : 'right',
+    right: align === 'start' ? 'top left' : align === 'end' ? 'bottom left' : 'left',
+  };
+
+--- ./src/components/ui/popover.tsx (line 72) ---
+  const originStyles = {
+    top: align === 'start' ? 'bottom left' : align === 'end' ? 'bottom right' : 'bottom',
+    bottom: align === 'start' ? 'top left' : align === 'end' ? 'top right' : 'top',
+    left: align === 'start' ? 'top right' : align === 'end' ? 'bottom right' : 'right',
+    right: align === 'start' ? 'top left' : align === 'end' ? 'bottom left' : 'left',
+  };
+
+
+--- ./src/components/ui/popover.tsx (line 73) ---
+    top: align === 'start' ? 'bottom left' : align === 'end' ? 'bottom right' : 'bottom',
+    bottom: align === 'start' ? 'top left' : align === 'end' ? 'top right' : 'top',
+    left: align === 'start' ? 'top right' : align === 'end' ? 'bottom right' : 'right',
+    right: align === 'start' ? 'top left' : align === 'end' ? 'bottom left' : 'left',
+  };
+
+  const getBaseTransform = () => {
+
+--- ./src/components/ui/tooltip.tsx (line 59) ---
+  }, []);
+
+  const positionStyles = {
+    top: 'bottom-full left-1/2 -translate-x-1/2 mb-2',
+    bottom: 'top-full left-1/2 -translate-x-1/2 mt-2',
+    left: 'right-full top-1/2 -translate-y-1/2 mr-2',
+    right: 'left-full top-1/2 -translate-y-1/2 ml-2',
+
+--- ./src/components/ui/tooltip.tsx (line 60) ---
+
+  const positionStyles = {
+    top: 'bottom-full left-1/2 -translate-x-1/2 mb-2',
+    bottom: 'top-full left-1/2 -translate-x-1/2 mt-2',
+    left: 'right-full top-1/2 -translate-y-1/2 mr-2',
+    right: 'left-full top-1/2 -translate-y-1/2 ml-2',
+  };
+
+--- ./src/components/ui/tooltip.tsx (line 61) ---
+  const positionStyles = {
+    top: 'bottom-full left-1/2 -translate-x-1/2 mb-2',
+    bottom: 'top-full left-1/2 -translate-x-1/2 mt-2',
+    left: 'right-full top-1/2 -translate-y-1/2 mr-2',
+    right: 'left-full top-1/2 -translate-y-1/2 ml-2',
+  };
+
+
+--- ./src/components/ui/tooltip.tsx (line 62) ---
+    top: 'bottom-full left-1/2 -translate-x-1/2 mb-2',
+    bottom: 'top-full left-1/2 -translate-x-1/2 mt-2',
+    left: 'right-full top-1/2 -translate-y-1/2 mr-2',
+    right: 'left-full top-1/2 -translate-y-1/2 ml-2',
+  };
+
+  const originStyles = {
+
+--- ./src/components/ui/tooltip.tsx (line 66) ---
+  };
+
+  const originStyles = {
+    top: 'bottom',
+    bottom: 'top',
+    left: 'right',
+    right: 'left',
+
+--- ./src/components/ui/tooltip.tsx (line 67) ---
+
+  const originStyles = {
+    top: 'bottom',
+    bottom: 'top',
+    left: 'right',
+    right: 'left',
+  };
+
+--- ./src/components/ui/tooltip.tsx (line 68) ---
+  const originStyles = {
+    top: 'bottom',
+    bottom: 'top',
+    left: 'right',
+    right: 'left',
+  };
+
+
+--- ./src/components/ui/tooltip.tsx (line 69) ---
+    top: 'bottom',
+    bottom: 'top',
+    left: 'right',
+    right: 'left',
+  };
+
+  return (
+
+--- ./src/features/about/ui/AboutClient.tsx (line 88) ---
+const fadeUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: '-60px' as const },
+  transition: { duration: 0.6, ease: EASE_OUT },
+};
+
+
+--- ./src/features/about/ui/AboutClient.tsx (line 273) ---
+                  className="relative text-center group"
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-40px' }}
+                  transition={{
+                    duration: 0.5,
+                    delay: index * 0.12,
+
+--- ./src/features/analyzer/ui/CircularGauge.tsx (line 33) ---
+  return (
+    <div
+      className="relative flex items-center justify-center"
+      style={{ width: size, height: size }}
+    >
+      {/* Background Circle */}
+      <svg width={size} height={size} className="transform -rotate-90" aria-hidden="true">
+
+--- ./src/features/blog/ui/ClientBlocks.tsx (line 198) ---
+
+export const QuoteBlockRenderer: React.FC<{ block: QuoteBlock }> = ({ block }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+
+  return (
+    <motion.div
+
+--- ./src/features/blog/ui/interactive/HackSimulator.tsx (line 289) ---
+              'h-full transition motion-reduce:duration-[0.01ms] duration-300',
+              getStatusColor()
+            )}
+            style={{ width: `${attackProgress}%` }}
+          />
+        </div>
+      </div>
+
+--- ./src/features/blog/ui/interactive/TCOCalculator.tsx (line 122) ---
+                  className="h-full bg-gradient-to-r from-red-400 to-red-600"
+                  initial={{ scaleX: 0 }}
+                  animate={{
+                    width: `${(wpTotalWithBuild / Math.max(wpTotalWithBuild, headlessTotal)) * 100}%`,
+                  }}
+                  transition={{ duration: 0.5 }}
+                />
+
+--- ./src/features/blog/ui/interactive/TCOCalculator.tsx (line 143) ---
+                  className="h-full bg-gradient-to-r from-green-400 to-green-600"
+                  initial={{ scaleX: 0 }}
+                  animate={{
+                    width: `${(headlessTotal / Math.max(wpTotalWithBuild, headlessTotal)) * 100}%`,
+                  }}
+                  transition={{ duration: 0.5 }}
+                />
+
+--- ./src/features/blog/ui/interactive/TrackingSimulator.tsx (line 139) ---
+                'absolute top-1/2 -mt-3 w-6 h-6 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.5)] z-20',
+                mode === 'client' ? 'bg-red-500 text-white' : 'bg-green-500 text-white'
+              )}
+              initial={{ left: '0%', opacity: 1, scale: 1 }}
+              animate={{
+                left: mode === 'client' ? '50%' : '100%',
+                opacity: mode === 'client' ? [1, 1, 0] : 1, // Fade out if blocked
+
+--- ./src/features/blog/ui/interactive/TrackingSimulator.tsx (line 141) ---
+              )}
+              initial={{ left: '0%', opacity: 1, scale: 1 }}
+              animate={{
+                left: mode === 'client' ? '50%' : '100%',
+                opacity: mode === 'client' ? [1, 1, 0] : 1, // Fade out if blocked
+                scale: mode === 'client' ? [1, 1, 0] : 1,
+              }}
+
+--- ./src/features/blog/ui/interactive/WebHistoryTimeline.tsx (line 70) ---
+      <div className="relative h-1 bg-slate-700 rounded-full mb-12 mx-4 md:mx-12">
+        <div
+          className="absolute top-0 left-0 h-full bg-blue-500 rounded-full transition motion-reduce:duration-[0.01ms] duration-500"
+          style={{ width: `${(selectedEra / (eras.length - 1)) * 100}%` }}
+        />
+
+        <div className="absolute top-1/2 -translate-y-1/2 w-full flex justify-between">
+
+--- ./src/features/case-studies/ui/ComparisonSlider.tsx (line 75) ---
+        <motion.div
+          style={{ x }}
+          drag="x"
+          dragConstraints={{ left: 0, right: width }}
+          dragElastic={0}
+          dragMomentum={false}
+          role="slider"
+
+--- ./src/features/consulting/ConsultingReadiness.tsx (line 119) ---
+                >
+                  <div
+                    className="h-full bg-blue-500 rounded-full transition motion-reduce:duration-[0.01ms] duration-500"
+                    style={{ width: `${((currentStep + 1) / QUESTIONS.length) * 100}%` }}
+                  />
+                </div>
+              </div>
+
+--- ./src/features/contact/ApplicationWizard.tsx (line 229) ---
+                email: submittedEmail,
+                name: submittedName,
+              }}
+              styles={{ height: '650px', width: '100%' }}
+            />
+          </div>
+
+
+--- ./src/features/contact/ApplicationWizard.tsx (line 298) ---
+            noValidate
+            aria-label={hasPackage ? t('wizard.title_package') : t('wizard.title_direct')}
+          >
+            <div style={{ position: 'absolute', left: '-5000px' }} aria-hidden="true">
+              <input type="text" {...register('website')} tabIndex={-1} autoComplete="off" />
+            </div>
+
+
+--- ./src/features/contact/ui/ContactClient.tsx (line 122) ---
+                    variants={staggerContainer}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, margin: '-50px' }}
+                    className="grid gap-6"
+                  >
+                    <motion.a
+
+--- ./src/features/ecommerce/ConversionFunnelMap.tsx (line 79) ---
+              onBlur={() => setHoveredStep(null)}
+              className="bg-gradient-to-r mx-auto rounded-xl flex items-center justify-between px-6 py-4 shadow-sm transition motion-reduce:duration-[0.01ms] duration-300 group-hover:scale-105 group-hover:shadow-lg relative z-10 w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              style={{
+                width: `${100 - idx * 15}%`,
+                minWidth: '300px',
+                background: `linear-gradient(to ${isRtl ? 'left' : 'right'}, ${step.color}, #ffffff)`,
+              }}
+
+--- ./src/features/enterprise/EdgeNetworkMap.tsx (line 48) ---
+          <motion.div
+            key={i}
+            className="absolute w-3 h-3"
+            style={{ left: `${(loc.x / 180) * 100}%`, top: `${loc.y}%` }}
+          >
+            {/* Pulse */}
+            <motion.div
+
+--- ./src/features/enterprise/TechStackHologram.tsx (line 38) ---
+              key={i}
+              style={{
+                position: 'absolute',
+                left: '50%',
+                top: '50%',
+                x: x - 48, // Centering offset (half width)
+                y: -48, // Centering offset (half height)
+
+--- ./src/features/enterprise/TechStackHologram.tsx (line 39) ---
+              style={{
+                position: 'absolute',
+                left: '50%',
+                top: '50%',
+                x: x - 48, // Centering offset (half width)
+                y: -48, // Centering offset (half height)
+                z: z,
+
+--- ./src/features/gov/OzgRoadmap.tsx (line 51) ---
+                key={step.key}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-100px' }}
+                transition={{ delay: idx * 0.1 }}
+                className={`flex flex-col md:flex-row gap-8 items-center ${idx % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
+              >
+
+--- ./src/features/industries/real-estate/VirtualTourTeaser.tsx (line 57) ---
+        <motion.div
+          animate={controls}
+          className="absolute top-0 left-0 h-full flex"
+          style={{ width: '200%' }} // Wide container
+        >
+          {/* Placeholder for Panoramic Image - using a gradient pattern for demo if no image */}
+          <div
+
+--- ./src/features/industries/retail/LoyaltyLoop.tsx (line 87) ---
+              key={step.id}
+              className="absolute flex flex-col items-center justify-center transform -translate-x-1/2 -translate-y-1/2"
+              style={{
+                left: `${x}%`,
+                top: `${y}%`,
+              }}
+            >
+
+--- ./src/features/industries/retail/LoyaltyLoop.tsx (line 88) ---
+              className="absolute flex flex-col items-center justify-center transform -translate-x-1/2 -translate-y-1/2"
+              style={{
+                left: `${x}%`,
+                top: `${y}%`,
+              }}
+            >
+              <motion.div
+
+--- ./src/features/knowledge/ui/BlogClient.tsx (line 123) ---
+            className="mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
+          >
+            <Link
+
+--- ./src/features/knowledge/ui/BlogClient.tsx (line 169) ---
+                key={post.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-50px' }}
+                transition={{ duration: 0.6, delay: index * 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
+                className="h-full"
+              >
+
+--- ./src/features/landing/ui/AngebotHandwerkerClient.tsx (line 80) ---
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-100px' }}
+            variants={fadeIn}
+            className="text-center mb-16"
+          >
+
+--- ./src/features/packages/ui/PackagesClient.tsx (line 391) ---
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.6 }}
+            className="bg-white rounded-3xl border border-gray-200 shadow-xl overflow-hidden"
+          >
+
+--- ./src/features/process/ProjectTimelineAnimation.tsx (line 32) ---
+              key={idx}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-100px' }}
+              className={`flex flex-col lg:flex-row items-center gap-12 lg:gap-24 relative ${isEven ? '' : 'lg:flex-row-reverse'}`}
+            >
+              {/* Content Side */}
+
+--- ./src/features/web-dev/ArchitectureVisualizer.tsx (line 74) ---
+        <motion.div
+          className="absolute top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full shadow-[0_0_10px_rgba(255,255,255,0.8)]"
+          animate={{
+            left: ['10%', '90%'],
+            opacity: [0, 1, 1, 0],
+          }}
+          transition={{
+
+--- ./src/features/web-dev/ArchitectureVisualizer.tsx (line 89) ---
+          <motion.div
+            key={node.id}
+            className="absolute top-1/2 -translate-y-1/2 transform -translate-x-1/2"
+            style={{ left: `${node.x}%` }}
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: index * STAGGER.hero * 2, duration: DURATION.default }}
+
+--- ./src/features/work/components/InProgressSection.tsx (line 74) ---
+              >
+                <div
+                  className="bg-emerald-500 h-full rounded-full"
+                  style={{ width: `${project.completion}%` }}
+                />
+              </div>
+
+
+--- ./src/features/work/ui/ProjectDetailClient.tsx (line 257) ---
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ duration: 0.5 }}
+              className="prose prose-lg max-w-none"
+            >
+
+--- ./src/features/work/ui/ProjectDetailClient.tsx (line 294) ---
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ duration: 0.5 }}
+            >
+              <h2 className="font-display font-bold text-3xl text-gray-900 mb-6">
+
+--- ./src/features/work/ui/ProjectDetailClient.tsx (line 327) ---
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ duration: 0.5 }}
+            >
+              <h2 className="font-display font-bold text-3xl text-gray-900 mb-6">
+
+--- ./src/features/work/ui/ProjectDetailClient.tsx (line 399) ---
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ duration: 0.5 }}
+              className="bg-gradient-to-br from-slate-900 via-gray-900 to-black text-white p-8 sm:p-10 rounded-3xl relative overflow-hidden"
+            >
+
+--- ./src/features/work/ui/ProjectDetailClient.tsx (line 443) ---
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-50px' }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <h2 className="font-display font-bold text-3xl text-gray-900 mb-6">{t('')}</h2>
+
+--- ./src/shared/ui/AnimatedCounter.tsx (line 46) ---
+  valueClassName = 'text-4xl lg:text-5xl font-black',
+}) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: '-50px' });
+  const prefersReducedMotion = useReducedMotion();
+
+  const {
+
+--- ./src/shared/ui/BeforeAfterSlider.tsx (line 104) ---
+        {/* Divider Line */}
+        <div
+          className="absolute top-0 bottom-0 w-0.5 bg-white shadow-[0_0_8px_rgba(0,0,0,0.3)] z-20 pointer-events-none"
+          style={{ left: `${position}%`, transform: 'translateX(-50%)' }}
+        >
+          {/* Handle */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center pointer-events-none">
+
+--- ./src/shared/ui/CardSwap.tsx (line 102) ---
+              }}
+              className={`absolute top-1/2 left-1/2 rounded-xl border border-white bg-black [transform-style:preserve-3d] [backface-visibility:hidden] ${child.props.customClass ?? ''} ${child.props.className ?? ''}`.trim()}
+              style={{
+                width: '100%',
+                height: '100%',
+                marginLeft: '-50%', // Centering replacement
+                marginTop: '-50%',
+
+--- ./src/shared/ui/CardSwap.tsx (line 103) ---
+              className={`absolute top-1/2 left-1/2 rounded-xl border border-white bg-black [transform-style:preserve-3d] [backface-visibility:hidden] ${child.props.customClass ?? ''} ${child.props.className ?? ''}`.trim()}
+              style={{
+                width: '100%',
+                height: '100%',
+                marginLeft: '-50%', // Centering replacement
+                marginTop: '-50%',
+                ...child.props.style,
+
+--- ./src/shared/ui/CardSwap.tsx (line 104) ---
+              style={{
+                width: '100%',
+                height: '100%',
+                marginLeft: '-50%', // Centering replacement
+                marginTop: '-50%',
+                ...child.props.style,
+              }}
+
+--- ./src/shared/ui/CardSwap.tsx (line 105) ---
+                width: '100%',
+                height: '100%',
+                marginLeft: '-50%', // Centering replacement
+                marginTop: '-50%',
+                ...child.props.style,
+              }}
+              onClick={(e) => {
+
+--- ./src/shared/ui/FlowingMenu.tsx (line 80) ---
+  const findClosestEdge = (
+    mouseX: number,
+    mouseY: number,
+    width: number,
+    height: number
+  ): 'top' | 'bottom' => {
+    const topEdgeDist = Math.pow(mouseX - width / 2, 2) + Math.pow(mouseY, 2);
+
+--- ./src/shared/ui/FlowingMenu.tsx (line 81) ---
+    mouseX: number,
+    mouseY: number,
+    width: number,
+    height: number
+  ): 'top' | 'bottom' => {
+    const topEdgeDist = Math.pow(mouseX - width / 2, 2) + Math.pow(mouseY, 2);
+    const bottomEdgeDist = Math.pow(mouseX - width / 2, 2) + Math.pow(mouseY - height, 2);
+
+--- ./src/shared/ui/GlobalCTA.tsx (line 41) ---
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 mb-8 shadow-[0_0_30px_rgba(37,99,235,0.3)]">
+
+--- ./src/shared/ui/Magnetic.tsx (line 18) ---
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const { clientX, clientY } = e;
+    const { height, width, left, top } = ref.current?.getBoundingClientRect() || {
+      height: 0,
+      width: 0,
+      left: 0,
+      top: 0,
+
+--- ./src/shared/ui/Magnetic.tsx (line 19) ---
+    const { clientX, clientY } = e;
+    const { height, width, left, top } = ref.current?.getBoundingClientRect() || {
+      height: 0,
+      width: 0,
+      left: 0,
+      top: 0,
+    };
+
+--- ./src/shared/ui/Magnetic.tsx (line 20) ---
+    const { height, width, left, top } = ref.current?.getBoundingClientRect() || {
+      height: 0,
+      width: 0,
+      left: 0,
+      top: 0,
+    };
+
+
+--- ./src/shared/ui/Magnetic.tsx (line 21) ---
+      height: 0,
+      width: 0,
+      left: 0,
+      top: 0,
+    };
+
+    const middleX = clientX - (left + width / 2);
+
+--- ./src/shared/ui/ScrollFloat.tsx (line 75) ---
+      initial={isMounted && !prefersReducedMotion ? 'hidden' : false}
+      animate={isMounted && !prefersReducedMotion ? undefined : 'visible'}
+      whileInView={isMounted && !prefersReducedMotion ? 'visible' : undefined}
+      viewport={{ once: true, margin: '-10%' }}
+      variants={prefersReducedMotion ? undefined : containerVariants}
+    >
+      <span className={`inline-block text-[clamp(1.6rem,4vw,3rem)] leading-[1.5] ${textClassName}`}>
+
+--- ./src/shared/ui/Timeline.tsx (line 38) ---
+            variants={fadeUpVariants}
+            transition={TRANSITION.reveal}
+            className="flex flex-col items-center text-center group cursor-pointer"
+            style={{ width: `${100 / items.length}%` }}
+            aria-current={item.completed ? undefined : index === 0 ? 'step' : undefined}
+          >
+            {/* Node */}
+
+--- ./src/widgets/about/TeamSection.tsx (line 11) ---
+const fadeUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: '-50px' as const },
+  transition: { duration: 0.6, ease: EASE_OUT },
+};
+
+
+--- ./src/widgets/about/TrustSection.tsx (line 21) ---
+const fadeUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: '-50px' as const },
+  transition: { duration: 0.6, ease: EASE_OUT },
+};
+
+
+--- ./src/widgets/home/DraggableTechStack.tsx (line 11) ---
+  {
+    name: 'Next.js 15',
+    color: 'bg-zinc-900 text-white border-zinc-700',
+    top: '20%',
+    left: '15%',
+    rotate: -12,
+  },
+
+--- ./src/widgets/home/DraggableTechStack.tsx (line 12) ---
+    name: 'Next.js 15',
+    color: 'bg-zinc-900 text-white border-zinc-700',
+    top: '20%',
+    left: '15%',
+    rotate: -12,
+  },
+  {
+
+--- ./src/widgets/home/DraggableTechStack.tsx (line 18) ---
+  {
+    name: 'React 19',
+    color: 'bg-[#149ECA]/90 text-white border-[#149ECA]/50',
+    top: '35%',
+    left: '80%',
+    rotate: 8,
+  },
+
+--- ./src/widgets/home/DraggableTechStack.tsx (line 19) ---
+    name: 'React 19',
+    color: 'bg-[#149ECA]/90 text-white border-[#149ECA]/50',
+    top: '35%',
+    left: '80%',
+    rotate: 8,
+  },
+  {
+
+--- ./src/widgets/home/DraggableTechStack.tsx (line 25) ---
+  {
+    name: 'Tailwind 4',
+    color: 'bg-[#38BDF8]/90 text-white border-[#38BDF8]/50',
+    top: '65%',
+    left: '12%',
+    rotate: -6,
+  },
+
+--- ./src/widgets/home/DraggableTechStack.tsx (line 26) ---
+    name: 'Tailwind 4',
+    color: 'bg-[#38BDF8]/90 text-white border-[#38BDF8]/50',
+    top: '65%',
+    left: '12%',
+    rotate: -6,
+  },
+  {
+
+--- ./src/widgets/home/DraggableTechStack.tsx (line 32) ---
+  {
+    name: 'Supabase',
+    color: 'bg-[#3ECF8E]/90 text-white border-[#3ECF8E]/50',
+    top: '75%',
+    left: '75%',
+    rotate: 15,
+  },
+
+--- ./src/widgets/home/DraggableTechStack.tsx (line 33) ---
+    name: 'Supabase',
+    color: 'bg-[#3ECF8E]/90 text-white border-[#3ECF8E]/50',
+    top: '75%',
+    left: '75%',
+    rotate: 15,
+  },
+  {
+
+--- ./src/widgets/home/DraggableTechStack.tsx (line 39) ---
+  {
+    name: 'Framer Motion',
+    color: 'bg-[#0055FF]/90 text-white border-[#0055FF]/50',
+    top: '45%',
+    left: '8%',
+    rotate: 10,
+  },
+
+--- ./src/widgets/home/DraggableTechStack.tsx (line 40) ---
+    name: 'Framer Motion',
+    color: 'bg-[#0055FF]/90 text-white border-[#0055FF]/50',
+    top: '45%',
+    left: '8%',
+    rotate: 10,
+  },
+  {
+
+--- ./src/widgets/home/DraggableTechStack.tsx (line 46) ---
+  {
+    name: 'Sanity',
+    color: 'bg-[#F03E2F]/90 text-white border-[#F03E2F]/50',
+    top: '15%',
+    left: '70%',
+    rotate: -8,
+  },
+
+--- ./src/widgets/home/DraggableTechStack.tsx (line 47) ---
+    name: 'Sanity',
+    color: 'bg-[#F03E2F]/90 text-white border-[#F03E2F]/50',
+    top: '15%',
+    left: '70%',
+    rotate: -8,
+  },
+];
+
+--- ./src/widgets/home/DraggableTechStack.tsx (line 79) ---
+            'border border-white/20 backdrop-blur-md',
+            tech.color
+          )}
+          style={{ top: tech.top, left: tech.left }}
+        >
+          {tech.name}
+        </motion.div>
+
+--- ./src/widgets/layout/LegalLayoutV2.tsx (line 86) ---
+  }, [tocItems]);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const estimatedReadTime = useMemo(() => {
+
+--- ./src/widgets/layout/LegalLayoutV2.tsx (line 106) ---
+      <div className="fixed top-0 left-0 right-0 h-1 bg-gray-100 z-50">
+        <motion.div
+          className="h-full bg-gradient-to-r from-primary to-primary/80"
+          style={{ width: `${readProgress}%` }}
+          transition={{ duration: 0.1 }}
+        />
+      </div>
+
+--- ./src/widgets/layout/LegalLayoutV2.tsx (line 291) ---
+          main {
+            box-shadow: none !important;
+            border: none !important;
+            padding: 0 !important;
+          }
+        }
+      `}</style>
+
+--- ./src/widgets/layout/RocketToTop.tsx (line 29) ---
+
+    // Smooth scroll to top
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+
+
+--- ./src/widgets/services/ProcessTimeline.tsx (line 46) ---
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-100px' }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className={`relative flex items-center mb-16 last:mb-0 ${
+                  isEven ? 'md:flex-row-reverse' : 'md:flex-row'
+
+--- ./src/widgets/services/TechStackShowcase.tsx (line 59) ---
+              key={category}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ duration: 0.5, delay: catIndex * 0.1 }}
+            >
+              <h3 className="text-xl font-bold text-secondary mb-8 text-center md:text-left border-b border-gray-200 pb-2">

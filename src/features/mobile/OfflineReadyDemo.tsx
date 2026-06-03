@@ -18,15 +18,18 @@ const OfflineReadyDemo: React.FC = () => {
           <p className="text-gray-400 text-sm">Schalten Sie das Internet aus.</p>
         </div>
 
-        <div
+        <button
+          type="button"
           onClick={() => setIsOnline(!isOnline)}
-          className={`cursor-pointer px-4 py-2 rounded-full border flex items-center gap-2 transition motion-reduce:duration-[0.01ms] ${isOnline ? 'bg-green-500/20 border-green-500 text-green-400' : 'bg-red-500/20 border-red-500 text-red-400'}`}
+          aria-pressed={isOnline}
+          aria-label={isOnline ? 'Internet ausschalten' : 'Internet einschalten'}
+          className={`px-4 py-2 rounded-full border flex items-center gap-2 transition motion-reduce:duration-[0.01ms] ${isOnline ? 'bg-green-500/20 border-green-500 text-green-400' : 'bg-red-500/20 border-red-500 text-red-400'}`}
         >
-          <OptimizedIcon icon={isOnline ? WifiHigh : WifiSlash} className="text-lg" />
+          <OptimizedIcon icon={isOnline ? WifiHigh : WifiSlash} className="text-lg" aria-hidden="true" />
           <span className="font-bold text-sm uppercase tracking-wider">
             {isOnline ? 'Internet On' : 'Offline Mode'}
           </span>
-        </div>
+        </button>
       </div>
 
       {/* Demo Area */}

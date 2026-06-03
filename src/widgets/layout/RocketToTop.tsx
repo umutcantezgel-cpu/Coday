@@ -55,7 +55,7 @@ export const RocketToTop = () => {
             ease: isLaunching ? 'easeIn' : undefined,
           }}
           className="fixed bottom-8 right-8 z-[90] p-4 bg-primary text-white rounded-full shadow-lg hover:shadow-brand-lg hover:bg-primary/90 flex justify-center items-center overflow-visible"
-          aria-label="Back to top"
+          aria-label="Zurück nach oben"
         >
           <RocketLaunch weight="fill" className="w-6 h-6" />
 

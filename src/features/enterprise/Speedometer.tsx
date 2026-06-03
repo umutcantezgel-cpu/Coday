@@ -17,9 +17,9 @@ export const Speedometer: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative w-full max-w-4xl mx-auto">
+    <div className="relative w-full max-w-4xl mx-auto" role="region" aria-label="Lighthouse Performance Score">
       {/* Main Gauge */}
-      <div className="flex flex-col items-center justify-center mb-16 relative">
+      <div className="flex flex-col items-center justify-center mb-16 relative" aria-hidden="true">
         <div className="w-64 h-32 overflow-hidden relative">
           {/* Gauge Background */}
           <div className="w-64 h-64 rounded-full border-[20px] border-white/5 border-b-0 absolute top-0 left-0" />
@@ -41,6 +41,8 @@ export const Speedometer: React.FC = () => {
             initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
             className="text-6xl font-black text-white font-display tracking-tighter"
+            aria-live="polite"
+            aria-atomic="true"
           >
             {score}
           </motion.div>

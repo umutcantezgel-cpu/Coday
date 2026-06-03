@@ -30,7 +30,7 @@ const PosSyncDemo: React.FC = () => {
     <div className="bg-surface-dark rounded-3xl p-8 lg:p-12 border border-white/5 h-full flex flex-col">
       <div className="text-center mb-10">
         <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-secondary/20 text-secondary mb-4">
-          <Icon name="refresh-cw" className="w-6 h-6" />
+          <Icon name="refresh-cw" className="w-6 h-6" aria-hidden="true" />
         </div>
         <h3 className="font-display font-bold text-2xl text-white mb-2">
           {t('ecommerce-retail.features.pos_sync.title')}
@@ -45,6 +45,7 @@ const PosSyncDemo: React.FC = () => {
           >
             <Icon
               name="arrow-right"
+              aria-hidden="true"
               className={`${justSold ? 'text-green-500' : 'text-gray-500'} w-5 h-5`}
             />
           </div>
@@ -53,7 +54,7 @@ const PosSyncDemo: React.FC = () => {
         {/* Left: POS Terminal (Store) */}
         <div className="bg-gray-800 rounded-2xl p-4 border border-gray-700 relative overflow-hidden">
           <div className="absolute top-0 right-0 p-2 opacity-50">
-            <Icon name="map-pin" className="w-4 h-4 text-white" />
+            <Icon name="map-pin" className="w-4 h-4 text-white" aria-hidden="true" />
           </div>
           <div className="text-xs text-gray-400 uppercase tracking-wider mb-4 text-center">
             {t('ecommerce-retail.features.pos_sync.labels.store')}
@@ -98,7 +99,7 @@ const PosSyncDemo: React.FC = () => {
         {/* Right: Online Store (Mobile) */}
         <div className="bg-primary/5 rounded-2xl p-4 border border-primary/20 relative overflow-hidden">
           <div className="absolute top-0 right-0 p-2 opacity-50">
-            <Icon name="globe" className="w-4 h-4 text-primary" />
+            <Icon name="globe" className="w-4 h-4 text-primary" aria-hidden="true" />
           </div>
           <div className="text-xs text-primary/70 uppercase tracking-wider mb-4 text-center">
             {t('ecommerce-retail.features.pos_sync.labels.online')}

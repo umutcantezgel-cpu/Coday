@@ -122,14 +122,14 @@ export const AnalysisProgress: React.FC = () => {
                 `}
               >
                 {isCompleted ? (
-                  <OptimizedIcon icon={Check} />
+                  <OptimizedIcon icon={Check} aria-hidden="true" />
                 ) : isActive ? (
                   <OptimizedIcon
                     icon={ArrowsClockwise}
                     className="animate-spin motion-reduce:animate-none"
                   />
                 ) : (
-                  <OptimizedIcon icon={agent.icon} />
+                  <OptimizedIcon icon={agent.icon} aria-hidden="true" />
                 )}
               </div>
 

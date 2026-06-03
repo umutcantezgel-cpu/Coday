@@ -40,7 +40,7 @@ const ProjectTimelineAnimation: React.FC = () => {
                   {step.phase}
                 </span>
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-secondary text-white mb-6 shadow-xl">
-                  {step.icon && <OptimizedIcon icon={step.icon} className="text-3xl" />}
+                  {step.icon && <OptimizedIcon icon={step.icon} className="text-3xl" aria-hidden="true" />}
                 </div>
                 <h3 className="font-display font-bold text-3xl text-secondary mb-4">
                   {step.title}

@@ -39,7 +39,7 @@ export const ReadingScore: React.FC<{ currentPostId?: number }> = ({ currentPost
   const progress = (score / nextLevel) * 100;
 
   return (
-    <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-6 text-white shadow-xl mb-8 relative overflow-hidden group">
+    <section className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-6 text-white shadow-xl mb-8 relative overflow-hidden group" aria-label="Reading Score">
       {/* Glossy effect */}
       <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-10 translate-x-10 blur-2xl group-hover:bg-white/10 transition-colors motion-reduce:duration-[0.01ms]"></div>
 
@@ -48,7 +48,7 @@ export const ReadingScore: React.FC<{ currentPostId?: number }> = ({ currentPost
           <span className="text-xs font-bold uppercase tracking-widest text-gray-400">
             Your Rank
           </span>
-          <Trophy size={16} className="text-yellow-400" />
+          <Trophy size={16} className="text-yellow-400" aria-hidden="true" />
         </div>
 
         <h3 className="text-xl font-bold mb-1 text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 to-yellow-500">
@@ -60,7 +60,7 @@ export const ReadingScore: React.FC<{ currentPostId?: number }> = ({ currentPost
           <span className="text-xs text-gray-400 mb-1">XP Points</span>
         </div>
 
-        <div className="w-full bg-gray-700 h-2 rounded-full overflow-hidden mb-2">
+        <div className="w-full bg-gray-700 h-2 rounded-full overflow-hidden mb-2" role="progressbar" aria-valuenow={score} aria-valuemin={0} aria-valuemax={nextLevel} aria-label={`${score} XP of ${nextLevel} XP`}>
           <motion.div
             initial={{ scaleX: 0 }}
             animate={{ scaleX: progress / 100 }}
@@ -85,6 +85,8 @@ export const ReadingScore: React.FC<{ currentPostId?: number }> = ({ currentPost
             exit={{ opacity: 0 }}
             transition={{ delay: 10 }}
             className="absolute inset-0 bg-green-500/90 flex flex-col items-center justify-center backdrop-blur-sm z-20"
+            role="status"
+            aria-live="assertive"
           >
             <Lightning className="text-white w-8 h-8 mb-2 animate-bounce motion-reduce:animate-none" />
             <span className="font-bold text-lg">+100 XP</span>
@@ -92,6 +94,6 @@ export const ReadingScore: React.FC<{ currentPostId?: number }> = ({ currentPost
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </section>
   );
 };

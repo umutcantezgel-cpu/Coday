@@ -42,7 +42,7 @@ const Jobs: React.FC = () => {
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 relative">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[500px] bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-3xl opacity-30 pointer-events-none -z-10"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[500px] bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-3xl opacity-30 pointer-events-none -z-10" aria-hidden="true"></div>
 
           {/* Hero Visual */}
           <div className="relative rounded-3xl overflow-hidden mb-12 shadow-2xl h-[400px] group">
@@ -51,12 +51,14 @@ const Jobs: React.FC = () => {
               alt="Unser Team feiert Erfolge"
               className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform motion-reduce:duration-[0.01ms] duration-700"
               priority
+              width={1920}
+              height={1080}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 md:p-12 text-left">
               <span className="inline-block px-3 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white text-xs font-bold uppercase tracking-wider mb-4 w-fit">
                 {t('jobs.culture_badge')}
               </span>
-              <h2 className="font-display font-black text-4xl sm:text-5xl text-gray-900 mb-6">
+              <h1 className="font-display font-black text-4xl sm:text-5xl text-white mb-6">
                 {t('jobs.hero_title_prefix')} <br />
                 <RotatingText
                   texts={t.raw('jobs.hero_rotating') as string[]}
@@ -65,7 +67,7 @@ const Jobs: React.FC = () => {
                   staggerDuration={0.025}
                   mainClassName="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-purple-500"
                 />
-              </h2>
+              </h1>
               <p className="text-xl text-gray-600 mb-8 max-w-2xl text-white/90">
                 {t('jobs.hero_desc')}
               </p>
@@ -83,7 +85,7 @@ const Jobs: React.FC = () => {
             {jobs.map((job) => (
               <div
                 key={job.id}
-                className="bg-white rounded-2xl border border-aurora-mist p-8 flex flex-col md:flex-row md:items-center justify-between hover:shadow-lg transition motion-reduce:duration-[0.01ms] duration-300 group mb-4"
+                className="bg-white rounded-2xl border border-aurora-mist p-8 flex flex-col md:flex-row md:items-center justify-between hover:shadow-lg focus-within:shadow-lg transition motion-reduce:duration-[0.01ms] duration-300 group mb-4"
               >
                 <div>
                   <div className="flex items-center space-x-3 mb-2">
@@ -103,7 +105,8 @@ const Jobs: React.FC = () => {
                 <div className="mt-6 md:mt-0 flex items-center">
                   <a
                     href={createMailtoLink(job.mailtoSubject)}
-                    className="px-6 py-3 rounded-xl bg-gray-900 text-white font-bold hover:bg-gray-800 transition-colors motion-reduce:duration-[0.01ms] shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 inline-block"
+                    aria-label={`${t('jobs.button')}: ${job.title}`}
+                    className="px-6 py-3 rounded-xl bg-gray-900 text-white font-bold hover:bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 transition-colors motion-reduce:duration-[0.01ms] shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 inline-block"
                   >
                     {t('jobs.button')}
                   </a>
@@ -114,11 +117,11 @@ const Jobs: React.FC = () => {
         </div>
 
         <div className="mt-16 text-center bg-slate-50 rounded-3xl p-12 border border-slate-100 max-w-5xl mx-auto">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">{t('jobs.no_jobs.title')}</h3>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('jobs.no_jobs.title')}</h2>
           <p className="text-slate-500 mb-8 max-w-xl mx-auto">{t('jobs.no_jobs.desc')}</p>
           <a
             href="mailto:umut@codayweb.de?subject=Initiativbewerbung%20bei%20Coday&body=Hallo%20Coday-Team%2C%0D%0A%0D%0Aich%20bewerbe%20mich%20initiativ%20bei%20Ihnen.%0D%0A%0D%0AMeine%20St%C3%A4rken%3A%0D%0A-%20%0D%0A-%20%0D%0A%0D%0AMit%20freundlichen%20Gr%C3%BC%C3%9Fen"
-            className="px-8 py-4 rounded-xl border-2 border-slate-200 text-slate-600 font-bold hover:border-blue-500 hover:text-blue-600 transition-colors motion-reduce:duration-[0.01ms] bg-white inline-block"
+            className="px-8 py-4 rounded-xl border-2 border-slate-200 text-slate-600 font-bold hover:border-blue-500 hover:text-blue-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 focus-visible:border-blue-500 focus-visible:text-blue-600 transition-colors motion-reduce:duration-[0.01ms] bg-white inline-block"
           >
             {t('jobs.no_jobs.button')}
           </a>

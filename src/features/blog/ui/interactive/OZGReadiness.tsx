@@ -47,7 +47,7 @@ export const OZGReadiness: React.FC = () => {
   const currentLevel = getLevel();
 
   return (
-    <div className="my-16 relative overflow-hidden rounded-[2.5rem] border border-gray-200 bg-white shadow-xl">
+    <section className="my-16 relative overflow-hidden rounded-[2.5rem] border border-gray-200 bg-white shadow-xl" aria-label="OZG 2.0 Readiness Check">
       <div className="p-8 md:p-12">
         <div className="flex items-center gap-4 mb-8">
           <div className="p-3 rounded-full bg-blue-50 text-blue-600">
@@ -75,6 +75,7 @@ export const OZGReadiness: React.FC = () => {
                     ? 'border-blue-500 bg-blue-50 text-blue-900 shadow-sm'
                     : 'border-gray-200 hover:border-gray-300 text-gray-600'
                 )}
+                aria-pressed={activeModules.includes(m.id)}
               >
                 <div className="flex items-center gap-3">
                   <m.icon
@@ -97,7 +98,7 @@ export const OZGReadiness: React.FC = () => {
             ))}
           </div>
 
-          <div className=" bg-gray-50 rounded-3xl p-8 flex flex-col justify-between">
+          <div className=" bg-gray-50 rounded-3xl p-8 flex flex-col justify-between" aria-live="polite">
             <div>
               <p className="text-xs font-bold text-gray-400 uppercase mb-6">Maturity Level</p>
               <div className="space-y-6 relative">
@@ -147,7 +148,7 @@ export const OZGReadiness: React.FC = () => {
                 <span className="text-gray-500 text-sm">Readiness Score</span>
                 <span className="text-3xl font-mono font-bold text-gray-900">{score}%</span>
               </div>
-              <div className="h-2 bg-gray-200 rounded-full mt-2 overflow-hidden">
+              <div className="h-2 bg-gray-200 rounded-full mt-2 overflow-hidden" role="progressbar" aria-valuenow={score} aria-valuemin={0} aria-valuemax={100} aria-label="Readiness Score">
                 <motion.div
                   className="h-full bg-blue-600"
                   initial={{ scaleX: 0 }}
@@ -160,7 +161,7 @@ export const OZGReadiness: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

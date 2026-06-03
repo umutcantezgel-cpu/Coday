@@ -113,7 +113,7 @@ export const UrlInputForm: React.FC = () => {
             ) : (
               <span className="flex items-center gap-2">
                 <span>{t('input.analyze_button')}</span>
-                <OptimizedIcon icon={ArrowRight} className="text-xl" />
+                <OptimizedIcon icon={ArrowRight} className="text-xl" aria-hidden="true" />
               </span>
             )}
           </button>

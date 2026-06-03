@@ -153,9 +153,9 @@ export function MigrationClient() {
             <p className="text-xl text-slate-400">{t('migration_page.process.description')}</p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-6">
+          <ol className="grid md:grid-cols-4 gap-6">
             {safeProcessSteps.map((step, i) => (
-              <motion.div
+              <motion.li
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -164,7 +164,7 @@ export function MigrationClient() {
                 className="relative"
               >
                 <div className="bg-slate-800 border border-slate-700 rounded-2xl p-6 h-full">
-                  <div className="w-10 h-10 rounded-full bg-purple-500/20 text-purple-300 font-bold flex items-center justify-center mb-4 text-lg">
+                  <div aria-hidden="true" className="w-10 h-10 rounded-full bg-purple-500/20 text-purple-300 font-bold flex items-center justify-center mb-4 text-lg">
                     {i + 1}
                   </div>
                   <h3 className="text-lg font-bold text-white mb-2">{step.title}</h3>
@@ -172,11 +172,11 @@ export function MigrationClient() {
                 </div>
                 {/* Connector line (except for last) */}
                 {i < safeProcessSteps.length - 1 && (
-                  <div className="hidden md:block absolute top-1/2 -right-3 w-6 h-0.5 bg-gradient-to-r from-slate-700 to-slate-500 transform -translate-y-1/2" />
+                  <div aria-hidden="true" className="hidden md:block absolute top-1/2 -right-3 w-6 h-0.5 bg-gradient-to-r from-slate-700 to-slate-500 transform -translate-y-1/2" />
                 )}
-              </motion.div>
+              </motion.li>
             ))}
-          </div>
+          </ol>
         </div>
       </section>
 
@@ -201,7 +201,7 @@ export function MigrationClient() {
               ),
             }))}
           />
-          <div className="text-center py-4">
+          <div aria-hidden="true" className="text-center py-4">
             <OptimizedIcon
               icon={ArrowDown}
               className="text-3xl text-slate-400 animate-bounce motion-reduce:animate-none"

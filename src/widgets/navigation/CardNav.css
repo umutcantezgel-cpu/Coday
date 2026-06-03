@@ -419,3 +419,51 @@ body.mobile-nav-open #fab-container {
   flex-direction: column;
   gap: 1rem;
 }
+
+/* ──────────────── Focus-Visible Indicators ──────────────── */
+
+.nav-pill-link:focus-visible,
+.nav-pill-cta:focus-visible,
+.nav-pill-logo:focus-visible {
+  outline: 2px solid var(--color-primary-600, #0d9488);
+  outline-offset: 2px;
+  border-radius: 9999px;
+}
+
+.dropdown-link-item:focus-visible,
+.dropdown-sidebar-item:focus-visible {
+  outline: 2px solid var(--color-primary-600, #0d9488);
+  outline-offset: 2px;
+}
+
+.mobile-link-item:focus-visible {
+  outline: 2px solid var(--color-primary-400, #2dd4bf);
+  outline-offset: 2px;
+}
+
+.mobile-accordion-trigger:focus-visible {
+  outline: 2px solid var(--color-primary-400, #2dd4bf);
+  outline-offset: 2px;
+  border-radius: 0.5rem;
+}
+
+.mobile-menu-trigger:focus-visible {
+  outline: 2px solid var(--color-primary-600, #0d9488);
+  outline-offset: 2px;
+  border-radius: 0.5rem;
+}
+
+/* ──────────────── Reduced Motion ──────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-pill-link,
+  .nav-pill-cta,
+  .nav-chevron,
+  .dropdown-sidebar-item,
+  .dropdown-link-item,
+  .mobile-link-item,
+  .mobile-close-btn {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

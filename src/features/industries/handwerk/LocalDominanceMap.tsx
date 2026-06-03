@@ -12,7 +12,7 @@ const LocalDominanceMap: React.FC = () => {
       </h3>
       <p className="text-gray-500 mb-8">{t('handwerk-bau.features.local_dominance.description')}</p>
 
-      <div className="relative h-64 bg-slate-100 rounded-2xl overflow-hidden border border-slate-200">
+      <div className="relative h-64 bg-slate-100 rounded-2xl overflow-hidden border border-slate-200" role="img" aria-label={t('handwerk-bau.features.local_dominance.title')}>
         {/* Simulated Map Background */}
         <div
           className="absolute inset-0 opacity-10"
@@ -25,7 +25,7 @@ const LocalDominanceMap: React.FC = () => {
         {/* Central Location (Business) */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10">
           <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-lg border-4 border-white">
-            <Icon name="business" className="text-white" />
+            <Icon name="business" className="text-white" aria-hidden="true" />
           </div>
           <div className="bg-white px-3 py-1 rounded-full shadow-md mt-2 text-xs font-bold text-slate-800">
             {t('handwerk-bau.features.local_dominance.labels.your_business')}

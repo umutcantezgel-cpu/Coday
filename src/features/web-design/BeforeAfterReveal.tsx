@@ -66,16 +66,35 @@ const BeforeAfterReveal: React.FC = () => {
     };
   }, [isDragging]);
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    const step = 2;
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') {
+      e.preventDefault();
+      setSliderPosition((prev) => Math.max(0, prev - step));
+    } else if (e.key === 'ArrowRight' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      setSliderPosition((prev) => Math.min(100, prev + step));
+    }
+  };
+
   return (
     <div
       ref={containerRef}
       dir="ltr"
-      className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] rounded-3xl overflow-hidden cursor-ew-resize select-none shadow-flat-lg border border-gray-100"
-      onMouseMove={(e) => !isDragging && handleMove(e)} // Optional: Hover move
+      role="slider"
+      aria-label="Before and after design comparison slider"
+      aria-valuemin={0}
+      aria-valuemax={100}
+      aria-valuenow={Math.round(sliderPosition)}
+      aria-valuetext={`Showing ${Math.round(sliderPosition)}% before, ${Math.round(100 - sliderPosition)}% after`}
+      tabIndex={0}
+      className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] rounded-3xl overflow-hidden cursor-ew-resize select-none shadow-flat-lg border border-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+      onMouseMove={(e) => !isDragging && handleMove(e)}
       onTouchMove={handleMove}
       onMouseDown={handleMouseDown}
       onTouchStart={handleMouseDown}
       onTouchEnd={handleMouseUp}
+      onKeyDown={handleKeyDown}
     >
       {/* Background (After / Premium) - Full Width */}
       <div className={`absolute inset-0 ${afterFallback} flex items-center justify-center`}>
@@ -86,8 +105,8 @@ const BeforeAfterReveal: React.FC = () => {
           <p className="text-white/90 text-lg font-bold">Conversion-Optimized</p>
 
           {/* Mock UI Elements floating */}
-          <div className="absolute top-10 right-10 w-24 h-24 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 animate-pulse motion-reduce:animate-none"></div>
-          <div className="absolute bottom-10 left-10 w-32 h-16 bg-white/10 backdrop-blur-md rounded-full border border-white/20"></div>
+          <div className="absolute top-10 right-10 w-24 h-24 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 animate-pulse motion-reduce:animate-none" aria-hidden="true"></div>
+          <div className="absolute bottom-10 left-10 w-32 h-16 bg-white/10 backdrop-blur-md rounded-full border border-white/20" aria-hidden="true"></div>
         </div>
       </div>
 

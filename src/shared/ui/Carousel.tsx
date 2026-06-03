@@ -102,9 +102,12 @@ const CarouselItemComponent: React.FC<CarouselItemProps> = ({
         ...(round && { borderRadius: '50%' }),
       }}
       transition={transition}
+      role="group"
+      aria-roledescription="slide"
+      aria-label={`${item.title} – Slide ${index + 1}`}
     >
       <div className={`${round ? 'p-0 m-0' : 'mb-4 p-8'}`}>
-        <span className="flex h-[32px] w-[32px] items-center justify-center rounded-full bg-primary/10 text-primary">
+        <span className="flex h-[32px] w-[32px] items-center justify-center rounded-full bg-primary/10 text-primary" aria-hidden="true">
           {item.icon}
         </span>
       </div>
@@ -279,6 +282,8 @@ export default function Carousel({
   return (
     <div
       ref={containerRef}
+      aria-roledescription="carousel"
+      aria-label="Content carousel"
       className={`relative overflow-hidden p-4 ${
         round
           ? 'rounded-full border border-gray-100'
@@ -305,6 +310,8 @@ export default function Carousel({
         transition={effectiveTransition}
         onAnimationStart={handleAnimationStart}
         onAnimationComplete={handleAnimationComplete}
+        aria-live="polite"
+        aria-atomic="false"
       >
         {itemsForRender.map((item, index) => (
           <CarouselItemComponent
@@ -322,10 +329,14 @@ export default function Carousel({
       <div
         className={`flex w-full justify-center ${round ? 'absolute z-20 bottom-12 left-1/2 -translate-x-1/2' : ''}`}
       >
-        <div className="mt-4 flex w-[150px] justify-between px-8">
-          {items.map((_, index) => (
-            <m.div
+        <div className="mt-4 flex w-[150px] justify-between px-8" role="tablist" aria-label="Carousel navigation">
+          {items.map((item, index) => (
+            <button
               key={index}
+              type="button"
+              role="tab"
+              aria-selected={activeIndex === index}
+              aria-label={`Go to slide ${index + 1}: ${item.title}`}
               className={`h-2 w-2 rounded-full cursor-pointer transition-colors motion-reduce:duration-[0.01ms] duration-150 ${
                 activeIndex === index
                   ? round
@@ -335,11 +346,10 @@ export default function Carousel({
                     ? 'bg-border-default'
                     : 'bg-[rgba(51,51,51,0.4)]'
               }`}
-              animate={{
-                scale: activeIndex === index ? 1.2 : 1,
+              style={{
+                transform: activeIndex === index ? 'scale(1.2)' : 'scale(1)',
               }}
               onClick={() => setPosition(loop ? index + 1 : index)}
-              transition={{ duration: 0.15 }}
             />
           ))}
         </div>

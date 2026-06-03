@@ -39,7 +39,7 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
   const inProgress = projects.filter((p) => p.type === 'in_progress');
 
   return (
-    <main className="min-h-dvh bg-bg-primary">
+    <div className="min-h-dvh bg-bg-primary">
       {/* Hero */}
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto">
@@ -172,6 +172,6 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
           </div>
         </section>
       )}
-    </main>
+    </div>
   );
 }

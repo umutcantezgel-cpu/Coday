@@ -2,10 +2,10 @@ import React, { forwardRef } from 'react';
 import { CircleNotch, CheckCircle, WarningCircle } from '@phosphor-icons/react/dist/ssr';
 import { cn } from '@/lib/utils';
 
-export const baseButtonStyles =
+const baseButtonStyles =
   'relative inline-flex items-center justify-center rounded-xl font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none transition-[transform,opacity] duration-150 ease-appear motion-reduce:transition-none active:scale-[0.97] active:duration-[80ms] touch-manipulation isolate';
 
-export const buttonVariants: Record<string, string> = {
+const buttonVariants: Record<string, string> = {
   primary:
     'bg-primary-700 text-white shadow-sm border border-transparent [@media(hover:hover)_and_(pointer:fine)]:hover:bg-primary-800 [@media(hover:hover)_and_(pointer:fine)]:hover:shadow-md',
   secondary:
@@ -16,7 +16,7 @@ export const buttonVariants: Record<string, string> = {
     'bg-transparent border-transparent text-secondary-600 [@media(hover:hover)_and_(pointer:fine)]:hover:bg-secondary-100 [@media(hover:hover)_and_(pointer:fine)]:hover:text-primary-600',
 };
 
-export const buttonSizes: Record<string, string> = {
+const buttonSizes: Record<string, string> = {
   sm: 'h-10 px-4 text-sm',
   md: 'h-12 px-6 text-base',
   lg: 'h-14 px-8 text-lg',

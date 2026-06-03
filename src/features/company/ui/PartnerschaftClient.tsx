@@ -75,9 +75,9 @@ const Partnerschaft: React.FC = () => {
             >
               <NavLink
                 href="/contact"
-                className="px-8 py-4 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition motion-reduce:duration-[0.01ms] duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center gap-2"
+                className="px-8 py-4 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition motion-reduce:duration-[0.01ms] duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary flex items-center justify-center gap-2"
               >
-                Partner werden <OptimizedIcon icon={ArrowRight} />
+                Partner werden <OptimizedIcon icon={ArrowRight} aria-hidden="true" />
               </NavLink>
             </motion.div>
           </div>
@@ -85,8 +85,9 @@ const Partnerschaft: React.FC = () => {
       </div>
 
       {/* Two Programs Section */}
-      <div className="py-20 bg-white">
+      <section className="py-20 bg-white" aria-labelledby="partner-programs-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 id="partner-programs-heading" className="sr-only">Partnerschafts-Programme</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8">
             {/* Referral / Alumni */}
             <motion.div
@@ -191,10 +192,10 @@ const Partnerschaft: React.FC = () => {
             </motion.div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* CTA Section */}
-      <div className="py-20 bg-background-light">
+      <section className="py-20 bg-background-light">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -210,13 +211,13 @@ const Partnerschaft: React.FC = () => {
             </p>
             <NavLink
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition motion-reduce:duration-[0.01ms] duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition motion-reduce:duration-[0.01ms] duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
             >
-              Partner-Gespräch vereinbaren <OptimizedIcon icon={TrendUp} />
+              Partner-Gespräch vereinbaren <OptimizedIcon icon={TrendUp} aria-hidden="true" />
             </NavLink>
           </motion.div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

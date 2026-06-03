@@ -11,18 +11,21 @@ export const ClarityAnalytics: React.FC = () => {
   if (!consent.analytics || !CLARITY_ID || CLARITY_ID.includes('dummy')) return null;
 
   return (
-    <Script
-      id="clarity-js"
-      strategy="lazyOnload"
-      dangerouslySetInnerHTML={{
-        __html: `
-          (function(c,l,a,r,i,t,y){
-              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-          })(window, document, "clarity", "script", "${CLARITY_ID}");
-        `,
-      }}
-    />
+    <>
+      <Script
+        id="clarity-init"
+        strategy="lazyOnload"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.clarity=window.clarity||function(){(window.clarity.q=window.clarity.q||[]).push(arguments)};
+          `,
+        }}
+      />
+      <Script 
+        id="clarity-script"
+        src={`https://www.clarity.ms/tag/${CLARITY_ID}`} 
+        strategy="lazyOnload" 
+      />
+    </>
   );
 };

@@ -60,9 +60,9 @@ const Garantie: React.FC = () => {
               className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 relative overflow-hidden group"
             >
               <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity motion-reduce:duration-[0.01ms]">
-                <OptimizedIcon icon={RocketLaunch} className="text-9xl text-sapphire" />
+                <OptimizedIcon icon={RocketLaunch} className="text-9xl text-sapphire" aria-hidden="true" />
               </div>
-              <OptimizedIcon icon={RocketLaunch} className="text-4xl text-sapphire mb-6" />
+              <OptimizedIcon icon={RocketLaunch} className="text-4xl text-sapphire mb-6" aria-hidden="true" />
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Lighthouse-90-Garantie</h3>
               <p className="text-gray-600 leading-relaxed">
                 Wir garantieren, dass Ihre neue Website zum Go-Live in allen vier Google
@@ -80,9 +80,9 @@ const Garantie: React.FC = () => {
               className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 relative overflow-hidden group"
             >
               <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity motion-reduce:duration-[0.01ms]">
-                <OptimizedIcon icon={LockOpen} className="text-9xl text-sapphire" />
+                <OptimizedIcon icon={LockOpen} className="text-9xl text-sapphire" aria-hidden="true" />
               </div>
-              <OptimizedIcon icon={LockOpen} className="text-4xl text-sapphire mb-6" />
+              <OptimizedIcon icon={LockOpen} className="text-4xl text-sapphire mb-6" aria-hidden="true" />
               <h3 className="text-2xl font-bold text-gray-900 mb-4">No-Vendor-Lock-Garantie</h3>
               <p className="text-gray-600 leading-relaxed">
                 Ihre Daten gehören Ihnen. Alle Assets, der Quellcode und sämtliche Zugangsdaten
@@ -100,9 +100,9 @@ const Garantie: React.FC = () => {
               className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 relative overflow-hidden group"
             >
               <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity motion-reduce:duration-[0.01ms]">
-                <OptimizedIcon icon={CurrencyEur} className="text-9xl text-sapphire" />
+                <OptimizedIcon icon={CurrencyEur} className="text-9xl text-sapphire" aria-hidden="true" />
               </div>
-              <OptimizedIcon icon={CurrencyEur} className="text-4xl text-sapphire mb-6" />
+              <OptimizedIcon icon={CurrencyEur} className="text-4xl text-sapphire mb-6" aria-hidden="true" />
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Festpreis-Garantie</h3>
               <p className="text-gray-600 leading-relaxed">
                 Was wir im Statement of Work (SOW) vereinbaren, ist bindend. Es gibt keine
@@ -119,7 +119,7 @@ const Garantie: React.FC = () => {
             viewport={{ once: true }}
             className="mt-16 bg-sapphire/5 border border-sapphire/20 rounded-2xl p-8 max-w-4xl mx-auto text-center"
           >
-            <OptimizedIcon icon={ShieldCheck} className="text-5xl text-sapphire mx-auto mb-4" />
+            <OptimizedIcon icon={ShieldCheck} className="text-5xl text-sapphire mx-auto mb-4" aria-hidden="true" />
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Unser Umgang mit Fehlern</h3>
             <p className="text-gray-700 leading-relaxed">
               Sollte es trotz unserer hohen Qualitätsstandards jemals zu einem Garantiefall kommen,

@@ -63,16 +63,18 @@ const InteractiveQuiz: React.FC<InteractiveQuizProps> = ({ title, questions, cla
   return (
     <div
       className={`bg-gradient-to-br from-primary/5 to-secondary/5 rounded-3xl p-8 border border-primary/10 ${className}`}
+      role="group"
+      aria-labelledby="quiz-title"
     >
       <div className="flex items-center justify-between mb-6">
-        <h3 className="text-xl font-bold text-secondary">{title}</h3>
-        <span className="text-sm font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">
+        <h3 id="quiz-title" className="text-xl font-bold text-secondary">{title}</h3>
+        <span className="text-sm font-medium text-primary bg-primary/10 px-3 py-1 rounded-full" aria-live="polite">
           {currentQuestion + 1}/{questions.length}
         </span>
       </div>
 
       {/* Progress bar */}
-      <div className="h-2 bg-gray-200 rounded-full mb-8 overflow-hidden">
+      <div className="h-2 bg-gray-200 rounded-full mb-8 overflow-hidden" role="progressbar" aria-valuenow={Math.round(progress)} aria-valuemin={0} aria-valuemax={100} aria-label={`Fortschritt: ${Math.round(progress)}%`}>
         <motion.div
           className="h-full w-full bg-primary rounded-full"
           initial={{ scaleX: 0 }}
@@ -90,47 +92,50 @@ const InteractiveQuiz: React.FC<InteractiveQuizProps> = ({ title, questions, cla
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: isRtl ? 20 : -20 }}
           >
-            <p className="text-lg font-medium text-secondary mb-6">{current?.question}</p>
-            <div className="space-y-3">
-              {current?.options?.map((option, index) => {
-                const isCorrect = index === current.correctIndex;
-                const isSelected = index === selectedAnswer;
+            <fieldset className="border-none p-0 m-0">
+              <legend className="text-lg font-medium text-secondary mb-6">{current?.question}</legend>
+              <div className="space-y-3">
+                {current?.options?.map((option, index) => {
+                  const isCorrect = index === current.correctIndex;
+                  const isSelected = index === selectedAnswer;
 
-                return (
-                  <button
-                    key={index}
-                    onClick={() => handleAnswer(index)}
-                    disabled={selectedAnswer !== null}
-                    className={`
-                      w-full text-start p-4 rounded-xl border-2 transition motion-reduce:duration-[0.01ms]
-                      ${
-                        selectedAnswer === null
-                          ? 'border-gray-200 hover:border-primary hover:bg-primary/5 cursor-pointer'
-                          : isCorrect
-                            ? 'border-green-500 bg-green-50'
-                            : isSelected
-                              ? 'border-red-500 bg-red-50'
-                              : 'border-gray-200 opacity-50'
-                      }
-                    `}
-                  >
-                    <div className="flex items-center justify-between">
-                      <span
-                        className={`font-medium ${isSelected && !isCorrect ? 'text-red-600' : isCorrect && showResult ? 'text-green-600' : 'text-secondary'}`}
-                      >
-                        {option}
-                      </span>
-                      {showResult && isCorrect && (
-                        <CheckCircle className="text-green-500" size={20} />
-                      )}
-                      {showResult && isSelected && !isCorrect && (
-                        <XCircle className="text-red-500" size={20} />
-                      )}
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
+                  return (
+                    <button
+                      key={index}
+                      onClick={() => handleAnswer(index)}
+                      disabled={selectedAnswer !== null}
+                      aria-pressed={isSelected}
+                      className={`
+                        w-full text-start p-4 rounded-xl border-2 transition motion-reduce:duration-[0.01ms]
+                        ${
+                          selectedAnswer === null
+                            ? 'border-gray-200 hover:border-primary hover:bg-primary/5 cursor-pointer'
+                            : isCorrect
+                              ? 'border-green-500 bg-green-50'
+                              : isSelected
+                                ? 'border-red-500 bg-red-50'
+                                : 'border-gray-200 opacity-50'
+                        }
+                      `}
+                    >
+                      <div className="flex items-center justify-between">
+                        <span
+                          className={`font-medium ${isSelected && !isCorrect ? 'text-red-600' : isCorrect && showResult ? 'text-green-600' : 'text-secondary'}`}
+                        >
+                          {option}
+                        </span>
+                        {showResult && isCorrect && (
+                          <CheckCircle className="text-green-500" size={20} aria-label="Richtig" />
+                        )}
+                        {showResult && isSelected && !isCorrect && (
+                          <XCircle className="text-red-500" size={20} aria-label="Falsch" />
+                        )}
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+            </fieldset>
             {showResult && (
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
@@ -143,7 +148,7 @@ const InteractiveQuiz: React.FC<InteractiveQuizProps> = ({ title, questions, cla
                   className="flex items-center gap-2 px-6 py-3 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition-colors motion-reduce:duration-[0.01ms]"
                 >
                   {currentQuestion < questions.length - 1 ? 'Nächste Frage' : 'Ergebnis anzeigen'}
-                  <ArrowRight size={18} />
+                  <ArrowRight size={18} aria-hidden="true" />
                 </button>
               </motion.div>
             )}
@@ -154,10 +159,12 @@ const InteractiveQuiz: React.FC<InteractiveQuizProps> = ({ title, questions, cla
             animate={{ opacity: 1, scale: 1 }}
             className="text-center py-8"
           >
-            <div className="text-6xl mb-4">
+            <div className="text-6xl mb-4" role="img" aria-label={
+              score === questions.length ? 'Pokal' : score >= questions.length / 2 ? 'Party' : 'Bücher'
+            }>
               {score === questions.length ? '🏆' : score >= questions.length / 2 ? '🎉' : '📚'}
             </div>
-            <h4 className="text-2xl font-bold text-secondary mb-2">
+            <h4 className="text-2xl font-bold text-secondary mb-2" aria-live="polite">
               {score}/{questions.length} richtig!
             </h4>
             <p className="text-slate-600 mb-6">
@@ -171,7 +178,7 @@ const InteractiveQuiz: React.FC<InteractiveQuizProps> = ({ title, questions, cla
               onClick={restart}
               className="flex items-center gap-2 px-6 py-3 bg-secondary text-white font-bold rounded-xl hover:bg-secondary/90 transition-colors motion-reduce:duration-[0.01ms] mx-auto"
             >
-              <ArrowCounterClockwise size={18} />
+              <ArrowCounterClockwise size={18} aria-hidden="true" />
               Nochmal versuchen
             </button>
           </motion.div>

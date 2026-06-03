@@ -54,7 +54,20 @@ const ValuesDeck: React.FC = () => {
         <div className="w-full h-full bg-white/5 rounded-3xl blur-3xl transform scale-110"></div>
       </div>
 
-      <div className="relative w-full h-full cursor-pointer" onClick={nextCard}>
+      <div
+        className="relative w-full h-full cursor-pointer"
+        onClick={nextCard}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            nextCard();
+          }
+        }}
+        role="button"
+        tabIndex={0}
+        aria-label={`Werte-Karte: ${values[index].title}. Klicken für nächste Karte.`}
+        aria-roledescription="Kartenspiel"
+      >
         <AnimatePresence initial={false}>
           {values.map((val, idx) => {
             // Only render current and next couple of cards
@@ -81,7 +94,7 @@ const ValuesDeck: React.FC = () => {
                 </h3>
                 <p className="text-white/80 font-medium leading-relaxed">{val.desc}</p>
 
-                <div className="absolute bottom-8 text-white/40 text-xs font-bold uppercase tracking-widest">
+                <div className="absolute bottom-8 text-white/40 text-xs font-bold uppercase tracking-widest" aria-hidden="true">
                   Tap for next
                 </div>
               </motion.div>

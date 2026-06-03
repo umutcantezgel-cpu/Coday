@@ -61,14 +61,14 @@ export const MethodologyGraph: React.FC<MethodologyGraphProps> = ({
   const t = useTranslations(namespace);
 
   return (
-    <div className="w-full max-w-6xl mx-auto py-12">
+    <div className="w-full max-w-6xl mx-auto py-12" role="region" aria-label="Methodology process: 5 steps from analysis to results">
       <div className="relative">
         {/* Connecting Line (Desktop) */}
-        <div className="hidden md:block absolute top-[2.5rem] left-0 right-0 h-1 bg-gradient-to-r from-blue-900 via-purple-900 to-yellow-900 -z-10 rounded-full" />
+        <div aria-hidden="true" className="hidden md:block absolute top-[2.5rem] left-0 right-0 h-1 bg-gradient-to-r from-blue-900 via-purple-900 to-yellow-900 -z-10 rounded-full" />
 
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+        <ol className="grid grid-cols-1 md:grid-cols-5 gap-8">
           {STEPS.map((step, index) => (
-            <motion.div
+            <motion.li
               key={step.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -86,20 +86,21 @@ export const MethodologyGraph: React.FC<MethodologyGraphProps> = ({
 
                 {/* Pulse Effect */}
                 <div
+                  aria-hidden="true"
                   className={`absolute inset-0 rounded-2xl ${step.bg} animate-ping opacity-0 group-hover:opacity-50 transition-opacity motion-reduce:duration-[0.01ms] motion-reduce:animate-none`}
                 />
               </div>
 
               {/* Mobile Connector */}
               {index < STEPS.length - 1 && (
-                <div className="md:hidden flex justify-center mb-8">
+                <div aria-hidden="true" className="md:hidden flex justify-center mb-8">
                   <OptimizedIcon icon={ArrowRight} className="w-6 h-6 text-slate-700" />
                 </div>
               )}
 
               {/* Content */}
               <div className="text-center px-2">
-                <div className="inline-block px-2 py-1 rounded text-[10px] font-mono text-slate-500 bg-slate-800 mb-3 uppercase tracking-wider">
+                <div aria-hidden="true" className="inline-block px-2 py-1 rounded text-[10px] font-mono text-slate-500 bg-slate-800 mb-3 uppercase tracking-wider">
                   Step 0{step.id}
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-200 transition-colors motion-reduce:duration-[0.01ms]">
@@ -109,9 +110,9 @@ export const MethodologyGraph: React.FC<MethodologyGraphProps> = ({
                   {t(`${prefix}.steps.${step.id}.desc`)}
                 </p>
               </div>
-            </motion.div>
+            </motion.li>
           ))}
-        </div>
+        </ol>
       </div>
     </div>
   );

@@ -27,7 +27,7 @@ export const ROICalculator: React.FC = () => {
       <div className="bg-white p-8 rounded-3xl shadow-md border border-gray-200">
         <div className="flex items-center gap-3 mb-8">
           <div className="p-3 bg-blue-50 text-primary rounded-xl">
-            <Calculator size={24} />
+            <Calculator size={24} aria-hidden="true" />
           </div>
           <div>
             <h3 className="text-xl font-bold text-gray-900">Opportunity Calculator</h3>
@@ -37,8 +37,9 @@ export const ROICalculator: React.FC = () => {
 
         <div className="space-y-6">
           <div>
-            <label className="block text-sm font-bold text-gray-700 mb-2">Monthly Visitors</label>
+            <label htmlFor="roi-traffic" className="block text-sm font-bold text-gray-700 mb-2">Monthly Visitors</label>
             <input
+              id="roi-traffic"
               type="range"
               min="1000"
               max="100000"
@@ -53,10 +54,11 @@ export const ROICalculator: React.FC = () => {
           </div>
 
           <div>
-            <label className="block text-sm font-bold text-gray-700 mb-2">
+            <label htmlFor="roi-conversion" className="block text-sm font-bold text-gray-700 mb-2">
               Conversion Rate (%)
             </label>
             <input
+              id="roi-conversion"
               type="range"
               min="0.5"
               max="10"
@@ -75,10 +77,11 @@ export const ROICalculator: React.FC = () => {
           </div>
 
           <div>
-            <label className="block text-sm font-bold text-gray-700 mb-2">
+            <label htmlFor="roi-aov" className="block text-sm font-bold text-gray-700 mb-2">
               Avg. Order Value (€)
             </label>
             <input
+              id="roi-aov"
               type="range"
               min="10"
               max="500"
@@ -111,7 +114,7 @@ export const ROICalculator: React.FC = () => {
             </span>
           </div>
           <div className="flex items-center gap-2 text-red-300 text-sm font-bold uppercase tracking-wider mb-8">
-            <Warning size={16} />
+            <Warning size={16} aria-hidden="true" />
             Lost due to poor performance
           </div>
 
@@ -121,16 +124,16 @@ export const ROICalculator: React.FC = () => {
             <div>
               <div className="text-white/60 text-sm mb-1">Potential Annual Rev</div>
               <div className="text-2xl font-bold flex items-center gap-2">
-                <CurrencyEur className="text-emerald-400" />
+                <CurrencyEur className="text-emerald-400" aria-hidden="true" />
                 {formatCurrency(Math.round(potentialRevenue * 12), 'EUR', locale)}
               </div>
             </div>
             <motion.div
               animate={{ scale: [1, 1.1, 1] }}
               transition={{ repeat: Infinity, duration: 2 }}
-              className="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400"
+              className="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 motion-reduce:animate-none"
             >
-              <TrendUp size={24} />
+              <TrendUp size={24} aria-hidden="true" />
             </motion.div>
           </div>
         </motion.div>

@@ -80,7 +80,7 @@ export const ABTestSimulator: React.FC = () => {
   };
 
   return (
-    <div className="my-12 font-sans w-full max-w-4xl mx-auto">
+    <section className="my-12 font-sans w-full max-w-4xl mx-auto" aria-label={t('blog.abTest.title')}>
       <div className="bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-xl">
         {/* Header */}
         <div className="bg-gradient-to-r from-gray-900 to-gray-800 p-6 text-white flex items-center justify-between">
@@ -111,6 +111,7 @@ export const ABTestSimulator: React.FC = () => {
               onClick={reset}
               className="active:scale-[0.97] p-2 hover:bg-white/10 rounded-lg transition-colors motion-reduce:duration-[0.01ms]"
               title="Reset"
+              aria-label="Reset simulation"
             >
               <ArrowsClockwise className="w-4 h-4" />
             </button>
@@ -144,6 +145,7 @@ export const ABTestSimulator: React.FC = () => {
                     ? 'bg-white border-primary shadow-md ring-1 ring-primary/20'
                     : 'bg-white border-gray-200 hover:border-gray-300 opacity-70 hover:opacity-100'
                 )}
+                aria-pressed={activeVariant === variantId}
               >
                 <div className="flex justify-between items-start mb-2">
                   <strong
@@ -302,6 +304,6 @@ export const ABTestSimulator: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

@@ -864,6 +864,18 @@
     },
     "process": {
       "description": "Strukturiertes Design, das Ergebnisse liefert.",
+      "prototyping": {
+        "desc": "Interaktive Designs in Figma.",
+        "title": "Prototyping"
+      },
+      "research": {
+        "desc": "Zielgruppenanalyse und User Journeys.",
+        "title": "Research"
+      },
+      "wireframing": {
+        "desc": "Struktur und Layout ohne Ablenkung.",
+        "title": "Wireframing"
+      },
       "steps": [
         {
           "desc": "Zielgruppenanalyse, Wettbewerber-Research und User Personas.",
@@ -1025,6 +1037,20 @@
     }
   },
   "web_design_page": {
+    "services_grid": {
+      "design_systems": {
+        "description": "Konsistente Komponentenbibliotheken für skalierbare Produkte und schnelle Entwicklung.",
+        "title": "Design Systeme"
+      },
+      "ux_ui_design": {
+        "description": "Digitales Markenerlebnis. Nutzerzentriertes Design, das Ihre Marke greifbar macht.",
+        "title": "UX/UI Design"
+      },
+      "website_relaunch": {
+        "description": "Von der Strategie zum neuen Design. Wir modernisieren Ihren Webauftritt grundlegend.",
+        "title": "Website Relaunch"
+      }
+    },
     "before_after": {
       "description": "Sehen Sie selbst, wie wir aus einer veralteten 'Visitenkarte im Netz' eine schnelle Verkaufsmaschine machen.",
       "label": "Hochwertige Umgestaltung",

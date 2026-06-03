@@ -19,15 +19,18 @@ export const MobileContactLayout: React.FC = () => {
           {activeTab === 'booking' ? (
             <motion.div
               key="booking"
+              id="tabpanel-booking"
+              role="tabpanel"
+              aria-labelledby="tab-booking"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 20 }}
               transition={{ duration: 0.3 }}
             >
               <div className="mb-6">
-                <h1 className="font-display font-bold text-2xl text-secondary mb-2 text-balance">
+                <h2 className="font-display font-bold text-2xl text-secondary mb-2 text-balance">
                   {t('hero.title_start')}
-                </h1>
+                </h2>
                 <p className="text-slate-600">{t('mobile.booking_intro')}</p>
               </div>
               <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
@@ -37,15 +40,18 @@ export const MobileContactLayout: React.FC = () => {
           ) : (
             <motion.div
               key="contact"
+              id="tabpanel-contact"
+              role="tabpanel"
+              aria-labelledby="tab-contact"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.3 }}
             >
               <div className="mb-6">
-                <h1 className="font-display font-bold text-2xl text-secondary mb-2 text-balance">
+                <h2 className="font-display font-bold text-2xl text-secondary mb-2 text-balance">
                   {t('mobile.contact_title')}
-                </h1>
+                </h2>
                 <p className="text-slate-600">{t('mobile.contact_intro')}</p>
               </div>
               <Suspense fallback={<Skeleton className="h-[400px] w-full rounded-2xl" />}>
@@ -83,10 +89,12 @@ export const MobileContactLayout: React.FC = () => {
 
       {/* Bottom Fixed Tabs */}
       <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-t border-gray-200 shadow-[0_-5px_20px_-5px_rgba(0,0,0,0.1)] pb-safe safe-area-bottom">
-        <div role="tablist" className="grid grid-cols-2 p-2 gap-2">
+        <div role="tablist" aria-label={t('mobile.tabs.booking')} className="grid grid-cols-2 p-2 gap-2">
           <button
+            id="tab-booking"
             role="tab"
             aria-selected={activeTab === 'booking'}
+            aria-controls="tabpanel-booking"
             onClick={() => setActiveTab('booking')}
             className={`active:scale-[0.97] 
               flex flex-col items-center justify-center gap-1 py-2 px-4 rounded-xl text-xs font-bold transition motion-reduce:duration-[0.01ms] relative overflow-hidden
@@ -109,8 +117,10 @@ export const MobileContactLayout: React.FC = () => {
           </button>
 
           <button
+            id="tab-contact"
             role="tab"
             aria-selected={activeTab === 'contact'}
+            aria-controls="tabpanel-contact"
             onClick={() => setActiveTab('contact')}
             className={`active:scale-[0.97] 
               flex flex-col items-center justify-center gap-1 py-2 px-4 rounded-xl text-xs font-bold transition motion-reduce:duration-[0.01ms] relative overflow-hidden

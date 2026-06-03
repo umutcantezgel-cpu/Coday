@@ -54,7 +54,7 @@ export function CareerOverviewClient() {
 
       {/* Career Path - NEW HIGH COMPLEXITY */}
       <section className="py-24 bg-gray-50 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5 bg-[url('/noise.svg')]"></div>
+        <div className="absolute inset-0 opacity-5 bg-[url('/noise.svg')]" aria-hidden="true"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -89,7 +89,7 @@ export function CareerOverviewClient() {
             {t('jobs.title')}
           </h2>
 
-          <div className="space-y-4">
+          <ul className="space-y-4" role="list">
             {[
               {
                 title: 'Senior Frontend Engineer (React/Next)',
@@ -107,10 +107,10 @@ export function CareerOverviewClient() {
                 time: t('jobs.details.parttime'),
               },
             ].map((job, idx) => (
+              <li key={idx} className="list-none">
               <a
                 href="/contact"
-                key={idx}
-                className="flex flex-col sm:flex-row sm:items-center justify-between p-6 rounded-2xl border border-gray-100 hover:border-sapphire/50 hover:shadow-lg transition motion-reduce:duration-[0.01ms] group"
+                className="flex flex-col sm:flex-row sm:items-center justify-between p-6 rounded-2xl border border-gray-100 hover:border-sapphire/50 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sapphire focus-visible:border-sapphire/50 focus-visible:shadow-lg transition motion-reduce:duration-[0.01ms] group"
               >
                 <div>
                   <h3 className="font-bold text-xl text-secondary group-hover:text-sapphire transition-colors motion-reduce:duration-[0.01ms]">
@@ -126,8 +126,9 @@ export function CareerOverviewClient() {
                   {t('jobs.button')} &rarr;
                 </span>
               </a>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
     </div>

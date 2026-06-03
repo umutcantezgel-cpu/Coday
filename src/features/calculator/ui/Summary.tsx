@@ -36,7 +36,7 @@ export const CalculatorSummary: React.FC = () => {
   const packageName = getPackageName();
 
   return (
-    <div className="bg-white rounded-3xl border border-gray-100 shadow-lg p-6 lg:p-8 sticky top-24">
+    <div className="bg-white rounded-3xl border border-gray-100 shadow-lg p-6 lg:p-8 sticky top-24" aria-live="polite" aria-atomic="true">
       <h3 className="font-display font-bold text-2xl text-gray-900 mb-4">{t('summary.title')}</h3>
 
       {/* Package Badge */}
@@ -91,13 +91,13 @@ export const CalculatorSummary: React.FC = () => {
       <div className="space-y-3">
         <NavLink
           href="/contact"
-          className="w-full py-4 bg-primary text-white rounded-xl font-bold hover:bg-primary/90 transition motion-reduce:duration-[0.01ms] shadow-lg hover:shadow-primary/25 flex items-center justify-center transform hover:-translate-y-1 text-lg animate-pulse hover:animate-none motion-reduce:animate-none"
+          className="w-full py-4 bg-primary text-white rounded-xl font-bold hover:bg-primary/90 transition motion-reduce:duration-[0.01ms] shadow-lg hover:shadow-primary/25 flex items-center justify-center transform hover:-translate-y-1 text-lg animate-pulse hover:animate-none motion-reduce:animate-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:outline-none"
         >
           {t('summary.continue')}
           <OptimizedIcon icon={ArrowRight} className="ml-2 text-lg" />
         </NavLink>
         <div className="text-center">
-          <button className="active:scale-[0.97] text-xs text-gray-400 hover:text-gray-600 underline">
+          <button className="active:scale-[0.97] focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none text-xs text-gray-400 hover:text-gray-600 underline">
             {t('summary.share')}
           </button>
         </div>

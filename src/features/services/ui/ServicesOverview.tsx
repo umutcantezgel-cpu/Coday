@@ -3,7 +3,7 @@ import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { Code, Palette, RocketLaunch, ArrowRight } from '@phosphor-icons/react/dist/ssr';
 import { getTranslations } from 'next-intl/server';
 import { Link as NavLink } from '@/i18n/navigation';
-import { OptimizedImage } from '@/shared/ui/OptimizedImage';
+import Image from 'next/image';
 import { serviceImages } from '@/shared/data/serviceImages';
 import ScrollFloat from '@/shared/ui/ScrollFloat';
 import { cn } from '@/shared/lib/utils';
@@ -120,17 +120,20 @@ export const ServicesOverview = async () => {
           </div>
           <div className="relative hidden lg:block">
             <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-3xl transform rotate-2"></div>
-            <OptimizedImage
+            <Image
               src={serviceImages.hero!.src}
               alt={t(serviceImages.hero!.alt)}
-              className="relative rounded-3xl shadow-flat-lg w-full transform -rotate-1 hover:rotate-0 transition motion-reduce:duration-[0.01ms] duration-500"
+              width={800}
+              height={600}
+              className="relative rounded-3xl shadow-flat-lg w-full h-auto transform -rotate-1 hover:rotate-0 transition motion-reduce:duration-[0.01ms] duration-500"
+              priority={true}
             />
           </div>
         </div>
       </section>
 
       {/* Categories Grid with MagicBento */}
-      <section className="pb-20 md:pb-32 px-4 sm:px-6 lg:px-8">
+      <section aria-label="Service categories" className="pb-20 md:pb-32 px-4 sm:px-6 lg:px-8">
         <MagicBento columns={3} gap={32} className="max-w-7xl mx-auto">
           {categories.map((cat, index) => (
             <BentoCard
@@ -144,9 +147,11 @@ export const ServicesOverview = async () => {
                 {/* Decorative Background Image */}
                 <div className="absolute top-0 end-0 w-64 h-64 opacity-[0.02] transform translate-x-12 rtl:-translate-x-12 -translate-y-12 group-hover:scale-110 group-hover:opacity-[0.05] transition motion-reduce:duration-[0.01ms] duration-700 rounded-bl-[100px] rtl:rounded-br-[100px] rtl:rounded-bl-none overflow-hidden pointer-events-none ease-out">
                   {serviceImages[cat.imageKey || 'hero'] && (
-                    <OptimizedImage
+                    <Image
                       src={serviceImages[cat.imageKey || 'hero']!.src}
                       alt=""
+                      width={400}
+                      height={400}
                       className="w-full h-full object-cover mix-blend-multiply"
                     />
                   )}
@@ -205,8 +210,8 @@ export const ServicesOverview = async () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 md:gap-12">
-            {[
+          <ol className="grid md:grid-cols-3 gap-8 md:gap-12">
+            {([
               {
                 step: '01',
                 title: 'Analyse & Strategie',
@@ -222,21 +227,21 @@ export const ServicesOverview = async () => {
                 title: 'Launch & Skalierung',
                 desc: 'Reibungsloses Deployment, technische SEO-Optimierung und kontinuierliche Performance-Überwachung.',
               },
-            ].map((item, i) => (
-              <div
+            ] as const).map((item, i) => (
+              <li
                 key={i}
                 className="group border-l border-gray-200 pl-6 hover:border-primary transition-colors duration-500"
               >
-                <span className="block text-sm font-bold text-primary mb-2 tracking-wider">
+                <span aria-hidden="true" className="block text-sm font-bold text-primary mb-2 tracking-wider">
                   {item.step}
                 </span>
                 <h3 className="text-xl font-display font-bold text-secondary mb-3 group-hover:text-primary transition-colors duration-300">
                   {item.title}
                 </h3>
                 <p className="text-slate-600 leading-relaxed">{item.desc}</p>
-              </div>
+              </li>
             ))}
-          </div>
+          </ol>
         </div>
       </section>
 
@@ -249,9 +254,9 @@ export const ServicesOverview = async () => {
       {/* CTA with GlareHover */}
       <section className="py-12 md:py-20 bg-white border-t border-gray-100">
         <div className="max-w-5xl mx-auto px-4 text-center">
-          <div className="font-display font-bold text-3xl text-secondary mb-8">
+          <h2 className="font-display font-bold text-3xl text-secondary mb-8">
             {t('cta.ready')}
-          </div>
+          </h2>
           <GlareHover glareColor="#ffffff" glareOpacity={0.4} className="inline-block rounded-xl">
             <NavLink
               href="/contact"

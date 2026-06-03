@@ -23,7 +23,7 @@ const DashboardLayout: React.FC = () => {
         <span>Agency Admin</span>
       </div>
 
-      <nav role="navigation" className="flex-1 px-4 py-6 space-y-1">
+      <nav role="navigation" aria-label="Dashboard Navigation" className="flex-1 px-4 py-6 space-y-1">
         <a
           href="/contact"
           className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-50 rounded-lg"
@@ -33,6 +33,7 @@ const DashboardLayout: React.FC = () => {
         </a>
         <a
           href="/contact"
+          aria-current="page"
           className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-primary bg-primary/5 rounded-lg"
         >
           <OptimizedIcon icon={ShareNetwork} size="sm" className="text-xl" />

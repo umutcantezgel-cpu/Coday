@@ -123,6 +123,8 @@ const BlogPost: React.FC = () => {
           <OptimizedImage
             src={post.image}
             alt={post.alt}
+            width={1200}
+            height={675}
             className="w-full h-full object-cover"
             priority
           />
@@ -154,7 +156,7 @@ const BlogPost: React.FC = () => {
       <div className="container mx-auto px-4 -mt-8 relative z-30">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Main Article */}
-          <main className="lg:col-span-8 lg:col-start-1">
+          <article className="lg:col-span-8 lg:col-start-1">
             <div className="bg-white rounded-[2.5rem] p-6 md:p-12 lg:p-16 shadow-2xl border border-gray-100">
               {/* Meta Data */}
               <div className="flex flex-wrap items-center justify-between border-b border-gray-100 pb-8 mb-10 text-sm text-gray-500 gap-4">
@@ -168,8 +170,8 @@ const BlogPost: React.FC = () => {
                   </div>
                 </div>
                 <div className="flex items-center gap-2 bg-slate-50 px-4 py-2 rounded-xl">
-                  <CalendarBlank size={18} className="text-slate-400" />
-                  <span className="font-medium text-slate-600">{post.date}</span>
+                  <CalendarBlank size={18} className="text-slate-400" aria-hidden="true" />
+                  <time dateTime={post.date} className="font-medium text-slate-600">{post.date}</time>
                 </div>
               </div>
 
@@ -190,7 +192,7 @@ const BlogPost: React.FC = () => {
                 <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
                 <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
                   <div>
-                    <h4 className="text-2xl font-bold text-secondary mb-2">{t('cta.title')}</h4>
+                    <h2 className="text-2xl font-bold text-secondary mb-2">{t('cta.title')}</h2>
                     <p className="text-slate-600">{t('cta.desc')}</p>
                   </div>
                   <Link
@@ -209,7 +211,7 @@ const BlogPost: React.FC = () => {
                   <span className="font-bold text-3xl">{post.author.charAt(0)}</span>
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-secondary mb-2">{post.author}</h4>
+                  <h2 className="text-xl font-bold text-secondary mb-2">{post.author}</h2>
                   <p className="text-slate-500 mb-4 leading-relaxed">{t('authorDesc')}</p>
                   <Link
                     href="/about"
@@ -221,7 +223,7 @@ const BlogPost: React.FC = () => {
                 </div>
               </div>
             </div>
-          </main>
+          </article>
 
           {/* Sidebar ToC & Gamification */}
           <aside className="hidden lg:block lg:col-span-4 sticky top-32">

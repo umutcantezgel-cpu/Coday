@@ -52,7 +52,7 @@ export const VoiceDemo: React.FC = () => {
   };
 
   return (
-    <div className="my-12 font-sans w-full max-w-2xl mx-auto">
+    <section className="my-12 font-sans w-full max-w-2xl mx-auto" aria-label={t('blog:voiceDemo.title')}>
       <div className="bg-gray-900 rounded-3xl overflow-hidden border border-gray-800 shadow-2xl relative">
         {/* Decorative elements */}
         <div className="absolute top-0 right-0 p-32 bg-purple-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
@@ -68,7 +68,7 @@ export const VoiceDemo: React.FC = () => {
           </div>
 
           {/* Conversation Area */}
-          <div className="w-full space-y-4 mb-8">
+          <div className="w-full space-y-4 mb-8" aria-live="polite">
             <AnimatePresence mode="wait">
               {transcript && (
                 <motion.div
@@ -109,6 +109,7 @@ export const VoiceDemo: React.FC = () => {
           <button
             onClick={handleMicClick}
             disabled={isListening}
+            aria-label={isListening ? t('blog:voiceDemo.listening') : t('blog:voiceDemo.tapToSpeak')}
             className={cn(
               'w-20 h-20 rounded-full flex items-center justify-center transition motion-reduce:duration-[0.01ms] duration-300 relative',
               isListening
@@ -131,6 +132,6 @@ export const VoiceDemo: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

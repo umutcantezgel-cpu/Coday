@@ -56,11 +56,12 @@ const HeadlessVsShopifyGrid: React.FC = () => {
         </div>
 
         {/* Tabs */}
-        <div className="flex bg-white/5 p-1 rounded-xl border border-white/10">
+        <div className="flex bg-white/5 p-1 rounded-xl border border-white/10" role="group" aria-label="Phase auswählen">
           {(['startup', 'scaleup', 'enterprise'] as const).map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
+              aria-pressed={activeTab === tab}
               className={`active:scale-[0.97] flex-1 py-2 rounded-lg text-sm font-bold capitalize transition motion-reduce:duration-[0.01ms] ${activeTab === tab ? 'bg-primary text-white shadow-lg' : 'text-gray-400 hover:text-white'}`}
             >
               {tab}
@@ -69,13 +70,18 @@ const HeadlessVsShopifyGrid: React.FC = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 bg-white/5 border-b border-white/10 p-4 text-xs uppercase font-bold tracking-wider text-gray-500 mb-4 rounded-t-xl">
+      <div className="grid grid-cols-3 bg-white/5 border-b border-white/10 p-4 text-xs uppercase font-bold tracking-wider text-gray-500 mb-4 rounded-t-xl" role="row" aria-hidden="true">
         <div>Merkmal</div>
         <div>Standard (Shopify/Woo)</div>
         <div className="text-primary">Headless (Next.js)</div>
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-4" role="table" aria-label={`Architektur Vergleich für ${activeTab}`}>
+        <div className="sr-only" role="row">
+          <span role="columnheader">Merkmal</span>
+          <span role="columnheader">Standard (Shopify/Woo)</span>
+          <span role="columnheader">Headless (Next.js)</span>
+        </div>
         {comparisons[activeTab].map((item, idx) => (
           <div
             key={idx}

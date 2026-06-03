@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useId } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { useRouter, Link as NavLink } from '@/i18n/navigation';
 import { motion } from 'motion/react';
@@ -269,28 +269,30 @@ export const PackagesClient: React.FC = () => {
                     )}
 
                     {/* Features */}
-                    <div className="space-y-3 mb-8 flex-grow">
+                    <ul className="space-y-3 mb-8 flex-grow">
                       {pkg.features.map((feature, _idx) => (
-                        <div key={_idx} className="flex items-start gap-3">
+                        <li key={_idx} className="flex items-start gap-3">
                           <OptimizedIcon
                             icon={CheckCircle}
+                            aria-hidden="true"
                             className={`text-base mt-0.5 flex-shrink-0 ${pkg.popular ? 'text-primary' : 'text-primary/70'}`}
                           />
                           <span className="text-gray-300 text-sm leading-relaxed">{feature}</span>
-                        </div>
+                        </li>
                       ))}
                       {pkg.notIncluded?.map((feature, _idx) => (
-                        <div key={`ni-${_idx}`} className="flex items-start gap-3 opacity-40">
+                        <li key={`ni-${_idx}`} className="flex items-start gap-3 opacity-40">
                           <OptimizedIcon
                             icon={MinusCircle}
+                            aria-hidden="true"
                             className="text-base text-gray-600 mt-0.5 flex-shrink-0"
                           />
                           <span className="text-gray-500 text-sm line-through leading-relaxed">
                             {feature}
                           </span>
-                        </div>
+                        </li>
                       ))}
-                    </div>
+                    </ul>
 
                     {/* CTA */}
                     <button
@@ -398,18 +400,19 @@ export const PackagesClient: React.FC = () => {
 
             <div className="overflow-x-auto">
               <table className="w-full">
+                <caption className="sr-only">{t('comparison.title')}</caption>
                 <thead>
                   <tr className="border-b border-gray-100">
-                    <th className="p-4 text-left text-sm font-semibold text-gray-500">
+                    <th scope="col" className="p-4 text-left text-sm font-semibold text-gray-500">
                       {t('comparison.headers.feature')}
                     </th>
-                    <th className="p-4 text-center text-sm font-bold text-gray-900">
+                    <th scope="col" className="p-4 text-center text-sm font-bold text-gray-900">
                       {t('comparison.headers.starter')}
                     </th>
-                    <th className="p-4 text-center text-sm font-bold text-primary bg-primary/5">
+                    <th scope="col" className="p-4 text-center text-sm font-bold text-primary bg-primary/5">
                       {t('comparison.headers.professional')}
                     </th>
-                    <th className="p-4 text-center text-sm font-bold text-gray-900">
+                    <th scope="col" className="p-4 text-center text-sm font-bold text-gray-900">
                       {t('comparison.headers.enterprise')}
                     </th>
                   </tr>
@@ -463,7 +466,7 @@ export const PackagesClient: React.FC = () => {
                       key={_idx}
                       className="border-b border-gray-50 hover:bg-gray-50/50 transition-colors motion-reduce:duration-[0.01ms]"
                     >
-                      <td className="p-4 text-sm font-medium text-gray-700">{feature}</td>
+                      <th scope="row" className="p-4 text-sm font-medium text-gray-700 text-left">{feature}</th>
                       <td className="p-4 text-center text-sm text-gray-600">{starter}</td>
                       <td className="p-4 text-center text-sm text-gray-900 bg-primary/5 font-medium">
                         {pro}
@@ -545,32 +548,45 @@ export const PackagesClient: React.FC = () => {
               {t('faq.title', { fallback: 'Häufig gestellte Fragen' })}
             </h2>
             <div className="space-y-4">
-              {getArray('faq.items').map((item: any, _idx: number) => (
-                <div
-                  key={_idx}
-                  className="bg-white border border-gray-200 rounded-2xl overflow-hidden transition motion-reduce:duration-[0.01ms] duration-300 shadow-sm hover:shadow-md"
-                >
-                  <button
-                    onClick={() => setOpenFaqIndex(openFaqIndex === _idx ? null : _idx)}
-                    className="active:scale-[0.97] w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none"
-                  >
-                    <span className="font-bold text-gray-900 pr-4">{item.question}</span>
-                    <OptimizedIcon
-                      icon={CaretDown}
-                      className={`text-gray-400 transition-transform motion-reduce:duration-[0.01ms] duration-300 flex-shrink-0 ${openFaqIndex === _idx ? 'rotate-180' : ''}`}
-                    />
-                  </button>
+              {getArray('faq.items').map((item: Record<string, string>, _idx: number) => {
+                const isOpen = openFaqIndex === _idx;
+                const panelId = `faq-panel-${_idx}`;
+                const triggerId = `faq-trigger-${_idx}`;
+                return (
                   <div
-                    className={`overflow-hidden transition motion-reduce:duration-[0.01ms] duration-300 ease-in-out ${
-                      openFaqIndex === _idx ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                    }`}
+                    key={_idx}
+                    className="bg-white border border-gray-200 rounded-2xl overflow-hidden transition motion-reduce:duration-[0.01ms] duration-300 shadow-sm hover:shadow-md"
                   >
-                    <div className="px-6 pb-5 pt-0 text-gray-600 text-sm leading-relaxed">
-                      {item.answer}
+                    <h3>
+                      <button
+                        id={triggerId}
+                        onClick={() => setOpenFaqIndex(isOpen ? null : _idx)}
+                        aria-expanded={isOpen}
+                        aria-controls={panelId}
+                        className="active:scale-[0.97] w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                      >
+                        <span className="font-bold text-gray-900 pr-4">{item.question}</span>
+                        <OptimizedIcon
+                          icon={CaretDown}
+                          className={`text-gray-400 transition-transform motion-reduce:duration-[0.01ms] duration-300 flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`}
+                        />
+                      </button>
+                    </h3>
+                    <div
+                      id={panelId}
+                      role="region"
+                      aria-labelledby={triggerId}
+                      className={`overflow-hidden transition motion-reduce:duration-[0.01ms] duration-300 ease-in-out ${
+                        isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                      }`}
+                    >
+                      <div className="px-6 pb-5 pt-0 text-gray-600 text-sm leading-relaxed">
+                        {item.answer}
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </motion.div>
 

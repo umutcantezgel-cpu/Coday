@@ -3,10 +3,10 @@
     "title": "Web Design Portfolio | Case Studies & Projects - Coday",
     "description": "Explore our web design portfolio and SEO case studies. We build digital economic weapons for brands that want to dominate their industry.",
     "label": "Evidence of Excellence",
-    "badge": "Unsere Arbeit",
-    "desc": "Jedes Projekt erzählt eine Geschichte. Hier sind unsere neuesten Erfolgsgeschichten, die für sich sprechen.",
-    "title_gradient": "Ergebnisse.",
-    "title_start": "Echte"
+    "badge": "Our Work",
+    "desc": "Every project tells a story. Here are our latest success stories that speak for themselves.",
+    "title_gradient": "Results.",
+    "title_start": "Real"
   },
   "sections": {
     "in_progress": {
@@ -111,28 +111,28 @@
     "approach": "Our Approach",
     "results": "Results",
     "hero": {
-      "title": "Wir erschaffen digitale Monumente",
-      "description": "Keine einfachen Websites. Wir bauen ökonomische Waffen für Marken, die dominieren wollen.",
+      "title": "We Create Digital Monuments",
+      "description": "Not simple websites. We build economic weapons for brands that want to dominate.",
       "label": "Evidence of Excellence"
     },
     "sections": {
       "in_progress": {
-        "title": "Das Labor / In Progress",
-        "subtitle": "Live-Builds, die in Echtzeit entstehen."
+        "title": "The Lab / In Progress",
+        "subtitle": "Live builds deploying in real-time."
       },
       "case_studies": {
-        "title": "Ausgewählte Arbeiten"
+        "title": "Selected Works"
       },
       "templates": {
-        "title": "Der Safe",
-        "subtitle": "Produktionsreife Templates, optimiert für Speed und Conversion."
+        "title": "The Vault",
+        "subtitle": "Production-ready templates optimized for speed and conversion."
       }
     },
     "actions": {
-      "view_live": "Live Build ansehen"
+      "view_live": "View Live Build"
     },
-    "cta_title": "Ähnliches Projekt?",
-    "cta_desc": "Lassen Sie uns über Ihre Vision sprechen.",
-    "cta_button": "Projekt anfragen"
+    "cta_title": "Similar Project?",
+    "cta_desc": "Let's talk about your vision.",
+    "cta_button": "Request Project"
   }
 }

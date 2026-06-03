@@ -86,6 +86,18 @@ export default function CountUp({
   useEffect(() => {
     if (!isInView || !startWhen) return;
 
+    // Respect prefers-reduced-motion
+    const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (motionQuery.matches) {
+      const endVal = direction === 'down' ? from : to;
+      if (ref.current) {
+        ref.current.textContent = formatValue(endVal);
+      }
+      if (onStart) onStart();
+      if (onEnd) onEnd();
+      return;
+    }
+
     let startTime: number | null = null;
     let animationFrameId: number;
 

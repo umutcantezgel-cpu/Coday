@@ -43,7 +43,7 @@ const BlindTestQuiz: React.FC = () => {
   };
 
   return (
-    <div className="my-16 scroll-mt-24" id="blind-test-quiz">
+    <section className="my-16 scroll-mt-24" id="blind-test-quiz" aria-label="Blind-Test: Welches Design verkauft mehr?">
       <div className="text-center mb-8">
         <h3 className="font-display font-bold text-3xl text-secondary mb-3">
           Blind-Test: Welches Design verkauft mehr?
@@ -86,7 +86,7 @@ const BlindTestQuiz: React.FC = () => {
                   option.id === 'ai' ? 'bg-indigo-50' : 'bg-emerald-50'
                 )}
               >
-                <span className="font-display font-bold text-2xl opacity-20">{option.label}</span>
+                <span className="font-display font-bold text-2xl opacity-20" aria-hidden="true">{option.label}</span>
               </div>
 
               {/* 
@@ -161,6 +161,7 @@ const BlindTestQuiz: React.FC = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
           className="mt-12 text-center p-8 bg-gray-50 rounded-3xl border border-gray-100"
+          aria-live="polite"
         >
           <h4 className="font-bold text-xl text-secondary mb-2">Die Wahrheit tut weh.</h4>
           <p className="text-gray-600 max-w-2xl mx-auto">
@@ -169,7 +170,7 @@ const BlindTestQuiz: React.FC = () => {
           </p>
         </motion.div>
       )}
-    </div>
+    </section>
   );
 };
 

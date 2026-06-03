@@ -15,6 +15,11 @@ export interface ProgressProps extends React.HTMLAttributes<HTMLDivElement> {
    * @default 100
    */
   max?: number;
+  /**
+   * Accessible label for screen readers.
+   * @default 'Progress'
+   */
+  'aria-label'?: string;
 }
 
 /**
@@ -25,7 +30,7 @@ export interface ProgressProps extends React.HTMLAttributes<HTMLDivElement> {
  * @returns {JSX.Element} The rendered Progress component.
  */
 export const Progress = React.forwardRef<HTMLDivElement, ProgressProps>(
-  ({ className, value = 0, max = 100, ...props }, ref) => {
+  ({ className, value = 0, max = 100, 'aria-label': ariaLabel, ...props }, ref) => {
     // Ensure value is bounded between 0 and max
     const safeValue = Math.min(Math.max(value, 0), max);
     const percentage = max > 0 ? safeValue / max : 0;
@@ -37,6 +42,7 @@ export const Progress = React.forwardRef<HTMLDivElement, ProgressProps>(
         aria-valuemin={0}
         aria-valuemax={max}
         aria-valuenow={safeValue}
+        aria-label={ariaLabel || 'Progress'}
         className={cn(
           'relative h-2 w-full overflow-hidden rounded-full bg-neutral-200 dark:bg-neutral-800',
           className
@@ -46,7 +52,7 @@ export const Progress = React.forwardRef<HTMLDivElement, ProgressProps>(
         <div
           className={cn(
             'h-full w-full bg-primary-600 origin-left',
-            'transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]'
+            'transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none'
           )}
           style={{ transform: `scaleX(${percentage})` }}
         />

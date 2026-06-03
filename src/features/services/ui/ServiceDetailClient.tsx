@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import { useParams } from 'next/navigation';
 import { Link as NavLink } from '@/i18n/navigation';
 import { servicesData } from '@/shared/data/services';
-import { OptimizedImage } from '@/shared/ui/OptimizedImage';
+import Image from 'next/image';
 import { TestimonialCard } from '@/shared/ui/TestimonialCard';
 import {
   appDevImages,
@@ -164,27 +164,31 @@ export function ServiceDetailClient() {
   };
 
   return (
-    <div className="bg-background-light pt-24 pb-0">
+    <main className="bg-background-light pt-24 pb-0">
       {/* Breadcrumb */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
-        <div className="flex items-center text-sm text-gray-500">
-          <NavLink
-            href="/services"
-            className="hover:text-sapphire transition-colors motion-reduce:duration-[0.01ms]"
-          >
-            {tCommon('nav.services.label')}
-          </NavLink>
-          <span className="mx-2">/</span>
-          <NavLink
-            href={`/services/${category}`}
-            className="hover:text-sapphire transition-colors motion-reduce:duration-[0.01ms] capitalize"
-          >
-            {service.category}
-          </NavLink>
-          <span className="mx-2">/</span>
-          <span className="text-sapphire font-medium">{t(service.titleKey)}</span>
-        </div>
-      </div>
+      <nav aria-label="Breadcrumb" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+        <ol className="flex items-center text-sm text-gray-500">
+          <li>
+            <NavLink
+              href="/services"
+              className="hover:text-sapphire transition-colors motion-reduce:duration-[0.01ms]"
+            >
+              {tCommon('nav.services.label')}
+            </NavLink>
+          </li>
+          <li aria-hidden="true" className="mx-2">/</li>
+          <li>
+            <NavLink
+              href={`/services/${category}`}
+              className="hover:text-sapphire transition-colors motion-reduce:duration-[0.01ms] capitalize"
+            >
+              {service.category}
+            </NavLink>
+          </li>
+          <li aria-hidden="true" className="mx-2">/</li>
+          <li aria-current="page" className="text-sapphire font-medium">{t(service.titleKey)}</li>
+        </ol>
+      </nav>
 
       {/* Hero Section */}
       <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-12 lg:mb-20 text-center lg:text-left">
@@ -214,9 +218,9 @@ export function ServiceDetailClient() {
             {/* Abstract Visual */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full blur-3xl opacity-60"></div>
             <div className="relative glass-card p-8 rounded-3xl border border-white/50 bg-white/60 backdrop-blur-xl shadow-glass">
-              <h3 className="font-display font-bold text-2xl text-gray-900 mb-6">
+              <h2 className="font-display font-bold text-2xl text-gray-900 mb-6">
                 {t('generic_detail.hero.benefits_title')}
-              </h3>
+              </h2>
               <ul className="space-y-4">
                 {benefits.map((benefit, i) => (
                   <li key={i} className="flex items-start">
@@ -237,9 +241,9 @@ export function ServiceDetailClient() {
       {!service.processStepsKey && (
         <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-12 lg:mb-24 lg:hidden">
           <div className="glass-card p-8 rounded-2xl bg-white shadow-aurora">
-            <h3 className="font-display font-bold text-2xl text-gray-900 mb-6">
+            <h2 className="font-display font-bold text-2xl text-gray-900 mb-6">
               {t('generic_detail.hero.benefits_title')}
-            </h3>
+            </h2>
             <ul className="space-y-4">
               {benefits.map((benefit, i) => (
                 <li key={i} className="flex items-start">
@@ -274,9 +278,11 @@ export function ServiceDetailClient() {
                 const bgImage = getServiceImage(category, slug);
                 if (bgImage) {
                   return (
-                    <OptimizedImage
+                    <Image
                       src={bgImage.src}
                       alt=""
+                      width={400}
+                      height={400}
                       className="w-full h-full object-cover mix-blend-overlay grayscale"
                     />
                   );
@@ -307,11 +313,11 @@ export function ServiceDetailClient() {
               {/* Connecting Line (Desktop) */}
               <div className="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-800 -translate-y-1/2"></div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-8">
+              <ol className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-8" role="list">
                 {processSteps.map((step, index) => (
-                  <div key={index} className="relative group">
+                  <li key={index} className="relative group">
                     <div className="flex flex-col items-center text-center">
-                      <div className="w-16 h-16 rounded-2xl bg-gray-800 border border-gray-700 flex items-center justify-center text-xl font-bold font-display mb-6 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition motion-reduce:duration-[0.01ms] duration-300 shadow-lg relative z-10">
+                      <div className="w-16 h-16 rounded-2xl bg-gray-800 border border-gray-700 flex items-center justify-center text-xl font-bold font-display mb-6 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition motion-reduce:duration-[0.01ms] duration-300 shadow-lg relative z-10" aria-hidden="true">
                         {step.number}
                       </div>
                       <h3 className="text-xl font-bold mb-4 h-14 flex items-center justify-center">
@@ -319,9 +325,9 @@ export function ServiceDetailClient() {
                       </h3>
                       <p className="text-sm text-gray-400 leading-relaxed">{step.description}</p>
                     </div>
-                  </div>
+                  </li>
                 ))}
-              </div>
+              </ol>
             </div>
           </div>
         </section>
@@ -435,26 +441,32 @@ export function ServiceDetailClient() {
         </div>
       </section>
       <StickyCTA />
-    </div>
+    </main>
   );
 }
 
 const FaqItem: React.FC<{ question: string; answer: string }> = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const id = React.useId();
+  const panelId = `faq-panel-${id}`;
 
   return (
     <div className="border border-gray-200 rounded-xl bg-white overflow-hidden transition motion-reduce:duration-[0.01ms] duration-300 hover:shadow-sm">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="active:scale-[0.97] w-full flex items-center justify-between p-6 text-left focus-visible:ring-2 focus-visible:ring-primary focus-visible:rounded-xl"
-      >
-        <span className="font-bold text-gray-900 text-lg">{question}</span>
-        <OptimizedIcon
-          icon={CaretDown}
-          className={`text-gray-400 transition-transform motion-reduce:duration-[0.01ms] duration-300 ${isOpen ? 'rotate-180' : ''}`}
-        />
-      </button>
-      <div className={`px-6 text-gray-600 leading-relaxed ${isOpen ? 'block pb-6' : 'hidden'}`}>
+      <h3>
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          aria-expanded={isOpen}
+          aria-controls={panelId}
+          className="active:scale-[0.97] w-full flex items-center justify-between p-6 text-left focus-visible:ring-2 focus-visible:ring-primary focus-visible:rounded-xl"
+        >
+          <span className="font-bold text-gray-900 text-lg">{question}</span>
+          <OptimizedIcon
+            icon={CaretDown}
+            className={`text-gray-400 transition-transform motion-reduce:duration-[0.01ms] duration-300 ${isOpen ? 'rotate-180' : ''}`}
+          />
+        </button>
+      </h3>
+      <div id={panelId} role="region" className={`px-6 text-gray-600 leading-relaxed ${isOpen ? 'block pb-6' : 'hidden'}`}>
         {answer}
       </div>
     </div>

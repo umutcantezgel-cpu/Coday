@@ -127,7 +127,7 @@ export function AiHubClient() {
                     <div
                       className={`w-12 h-12 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms]`}
                     >
-                      <OptimizedIcon icon={feature.icon} />
+                      <OptimizedIcon icon={feature.icon} aria-hidden="true" />
                     </div>
                     <h3 className="font-bold text-xl text-secondary mb-2">{feature.title}</h3>
                     <p className="text-slate-600 text-sm">{feature.desc}</p>
@@ -146,15 +146,15 @@ export function AiHubClient() {
             <div className="max-w-4xl mx-auto px-4 text-center">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-sm text-gray-500 mb-8">
                 <div className="flex items-center justify-center gap-2">
-                  <OptimizedIcon icon={CheckCircle} className="text-primary" />
+                  <OptimizedIcon icon={CheckCircle} className="text-primary" aria-hidden="true" />
                   <span>{t('analyzer.trust.free')}</span>
                 </div>
                 <div className="flex items-center justify-center gap-2">
-                  <OptimizedIcon icon={Lock} className="text-primary" />
+                  <OptimizedIcon icon={Lock} className="text-primary" aria-hidden="true" />
                   <span>{t('analyzer.trust.private')}</span>
                 </div>
                 <div className="flex items-center justify-center gap-2">
-                  <OptimizedIcon icon={Lightning} className="text-primary" />
+                  <OptimizedIcon icon={Lightning} className="text-primary" aria-hidden="true" />
                   <span>{t('analyzer.trust.fast')}</span>
                 </div>
                 <div className="hidden md:flex items-center justify-center gap-2 text-primary font-medium">

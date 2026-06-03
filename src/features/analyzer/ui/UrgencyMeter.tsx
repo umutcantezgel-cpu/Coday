@@ -14,7 +14,7 @@ export const UrgencyMeter: React.FC<UrgencyMeterProps> = ({ score }) => {
 
   return (
     <div className="p-4 border border-dashed border-gray-300 rounded-lg bg-gray-50 text-center">
-      <OptimizedIcon icon={Warning} className="mx-auto mb-2 text-yellow-500" />
+      <OptimizedIcon icon={Warning} className="mx-auto mb-2 text-yellow-500" aria-hidden="true" />
       <p className="text-gray-500 text-sm">{t('urgency.unavailable', { score })}</p>
     </div>
   );

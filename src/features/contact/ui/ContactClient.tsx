@@ -1,12 +1,13 @@
 'use client';
 
-import React, { Suspense, lazy, useEffect } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import BlurText from '@/shared/ui/BlurText';
 import GradientText from '@/shared/ui/GradientText';
 import BookingCalendar from '@/features/booking/ui/BookingCalendar';
 import { motion } from 'motion/react';
-const InteractiveMap = lazy(() => import('@/shared/ui/InteractiveMap'));
-const ApplicationWizard = lazy(() => import('@/features/contact/ApplicationWizard'));
+import dynamic from 'next/dynamic';
+const InteractiveMap = dynamic(() => import('@/shared/ui/InteractiveMap'), { ssr: false });
+const ApplicationWizard = dynamic(() => import('@/features/contact/ApplicationWizard'), { ssr: false });
 import { TestimonialCard } from '@/shared/ui/TestimonialCard';
 import LogoLoop from '@/shared/ui/LogoLoop';
 import { clientLogos } from '@/shared/data/clientLogos';
@@ -58,7 +59,7 @@ export const ContactClient: React.FC = () => {
     show: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.25, ease: [0.23, 1, 0.32, 1] as any },
+      transition: { duration: 0.25, ease: [0.23, 1, 0.32, 1] as [number, number, number, number] },
     },
   };
 

@@ -35,7 +35,7 @@ export function IndustryOverviewClient() {
   const t = useTranslations('industries');
 
   return (
-    <div className="bg-background-light min-h-dvh pt-24 pb-20">
+    <main className="bg-background-light min-h-dvh pt-24 pb-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 max-w-2xl mx-auto">
           <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
@@ -63,6 +63,8 @@ export function IndustryOverviewClient() {
                   <OptimizedImage
                     src={image.src}
                     alt=""
+                    width={800}
+                    height={600}
                     className="w-full h-full object-cover grayscale mix-blend-multiply transform scale-100 group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms] duration-700"
                   />
                 </div>
@@ -91,6 +93,6 @@ export function IndustryOverviewClient() {
           })}
         </div>
       </div>
-    </div>
+    </main>
   );
 }

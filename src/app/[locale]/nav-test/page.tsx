@@ -25,6 +25,8 @@ export default function TestPage() {
             ]}
           />
 
+          <h1 className="text-2xl font-bold mb-6">Navigation Test</h1>
+
           <h2 className="mt-8 mb-4 text-xl">Tabs Instance 1</h2>
           <Tabs
             tabs={[

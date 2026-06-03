@@ -1,11 +1,13 @@
 'use client';
 import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import dynamic from 'next/dynamic';
+
+
 import { useTranslations } from 'next-intl';
 import { Link as NavLink } from '@/i18n/navigation';
 import BlurText from '@/shared/ui/BlurText';
 import { servicesData } from '@/shared/data/services';
-import { OptimizedImage } from '@/shared/ui/OptimizedImage';
+import Image from 'next/image';
 import { brandingImages } from '@/shared/data/serviceImages';
 import DesignSystemShowcase from '@/features/web-design/DesignSystemShowcase';
 import PsychologyGrid from '@/features/web-design/PsychologyGrid';
@@ -103,11 +105,13 @@ export function WebDesignClient() {
           </div>
           <div className="relative hidden lg:block">
             <div className="absolute inset-0 bg-primary/10 rounded-[2rem] transform rotate-3 scale-95"></div>
-            <OptimizedImage
+            <Image
               src={brandingImages.hero?.src || ''}
               alt={brandingImages.hero?.alt || ''}
-              className="relative rounded-[2rem] shadow-flat-lg w-full transform -rotate-2 hover:rotate-0 transition motion-reduce:duration-[0.01ms] duration-500 bg-white p-2"
-              priority
+              width={800}
+              height={600}
+              className="relative rounded-[2rem] shadow-flat-lg w-full h-auto transform -rotate-2 hover:rotate-0 transition motion-reduce:duration-[0.01ms] duration-500 bg-white p-2"
+              priority={true}
             />
           </div>
         </div>
@@ -227,7 +231,7 @@ export function WebDesignClient() {
 
           <div className="relative">
             {/* Connecting Line */}
-            <div className="absolute top-1/2 left-0 w-full h-1 bg-white/10 -translate-y-1/2 hidden lg:block"></div>
+            <div aria-hidden="true" className="absolute top-1/2 left-0 w-full h-1 bg-white/10 -translate-y-1/2 hidden lg:block"></div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
               {(
@@ -241,7 +245,7 @@ export function WebDesignClient() {
                   key={idx}
                   className="relative bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors motion-reduce:duration-[0.01ms] group"
                 >
-                  <div className="absolute -top-6 start-8 bg-primary text-white font-bold text-xl w-12 h-12 rounded-xl flex items-center justify-center shadow-lg border-4 border-secondary group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms]">
+                  <div aria-hidden="true" className="absolute -top-6 start-8 bg-primary text-white font-bold text-xl w-12 h-12 rounded-xl flex items-center justify-center shadow-lg border-4 border-secondary group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms]">
                     {phase.number}
                   </div>
                   <h3 className="font-bold text-xl mt-4 mb-3">{phase.title}</h3>

@@ -22,7 +22,7 @@ const ParallaxHeroImage = ({ src, alt }: { src: string; alt: string }) => {
   return (
     <div ref={ref} className="absolute inset-0 z-0 overflow-hidden">
       <motion.div style={{ y, scale, opacity }} className="relative w-full h-full">
-        <OptimizedImage src={src} alt={alt} className="w-full h-full object-cover" priority />
+        <OptimizedImage src={src} alt={alt} className="w-full h-full object-cover" priority width={1920} height={1080} />
       </motion.div>
     </div>
   );
@@ -58,19 +58,18 @@ export const CaseStudyLayout: React.FC<CaseStudyLayoutProps> = ({
   return (
     <div className="bg-background-light min-h-dvh">
       {/* Navigation */}
-      <nav role="navigation" className="absolute top-0 w-full z-50 p-6 md:p-8">
+      <nav className="absolute top-0 w-full z-50 p-6 md:p-8" aria-label="Case Study Navigation">
         <Link
           href="/work"
-          className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white hover:bg-white/20 transition motion-reduce:duration-[0.01ms] font-medium text-sm"
+          className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition motion-reduce:duration-[0.01ms] font-medium text-sm"
         >
-          <ArrowLeft size={16} />
+          <ArrowLeft size={16} aria-hidden="true" />
           <span>{t('project_detail.back_to_overview')}</span>
         </Link>
       </nav>
 
       {/* Hero */}
       <header
-        role="banner"
         className="relative h-dvh min-h-[800px] flex items-end pb-32 overflow-hidden"
       >
         {/* Parallax Background */}
@@ -106,32 +105,33 @@ export const CaseStudyLayout: React.FC<CaseStudyLayoutProps> = ({
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 1, repeat: Infinity, repeatType: 'reverse' }}
           className="absolute bottom-12 left-1/2 -translate-x-1/2 text-white/50 flex flex-col items-center gap-2 z-20"
+          aria-hidden="true"
         >
           <span className="text-xs font-bold uppercase tracking-widest">Scroll</span>
           <div className="w-px h-12 bg-gradient-to-b from-white to-transparent"></div>
         </motion.div>
       </header>
 
-      <main role="main">
+      <main>
         {/* Meta Grid */}
         <section className="py-[var(--space-section)] container mx-auto px-4 -mt-12 relative z-30 mb-24">
           <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-xl border border-gray-100 grid grid-cols-2 md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-sm uppercase font-bold text-gray-400 mb-2 tracking-wider">
+              <h2 className="text-sm uppercase font-bold text-gray-400 mb-2 tracking-wider">
                 {t('project_detail.sidebar.client')}
-              </h3>
+              </h2>
               <p className="text-lg font-bold text-secondary">{client}</p>
             </div>
             <div>
-              <h3 className="text-sm uppercase font-bold text-gray-400 mb-2 tracking-wider">
+              <h2 className="text-sm uppercase font-bold text-gray-400 mb-2 tracking-wider">
                 {t('project_detail.sidebar.industry')}
-              </h3>
+              </h2>
               <p className="text-lg font-bold text-secondary">{industry}</p>
             </div>
             <div>
-              <h3 className="text-sm uppercase font-bold text-gray-400 mb-2 tracking-wider">
+              <h2 className="text-sm uppercase font-bold text-gray-400 mb-2 tracking-wider">
                 {t('project_detail.sidebar.services')}
-              </h3>
+              </h2>
               <ul className="text-lg font-bold text-secondary space-y-1">
                 {services.map((s) => (
                   <li key={s}>{s}</li>
@@ -139,9 +139,9 @@ export const CaseStudyLayout: React.FC<CaseStudyLayoutProps> = ({
               </ul>
             </div>
             <div>
-              <h3 className="text-sm uppercase font-bold text-gray-400 mb-2 tracking-wider">
+              <h2 className="text-sm uppercase font-bold text-gray-400 mb-2 tracking-wider">
                 {t('project_detail.sidebar.year')}
-              </h3>
+              </h2>
               <p className="text-lg font-bold text-secondary">{year}</p>
             </div>
           </div>
@@ -164,7 +164,7 @@ export const CaseStudyLayout: React.FC<CaseStudyLayoutProps> = ({
               className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-white rounded-xl font-bold text-lg hover:shadow-glow hover:-translate-y-1 transition motion-reduce:duration-[0.01ms]"
             >
               <span>{t('project_detail.cta.button')}</span>
-              <ArrowUpRight />
+              <ArrowUpRight aria-hidden="true" />
             </Link>
           </div>
         </section>

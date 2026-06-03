@@ -40,17 +40,20 @@ export const TemplateVault: React.FC<TemplateVaultProps> = ({ projects }) => {
               <div className="relative aspect-[4/3] bg-slate-100 overflow-hidden border-b border-gray-100">
                 <iframe
                   src={project.liveUrl}
+                  title={`${project.content[currentLang].title} – Preview`}
                   className="w-[200%] h-[200%] transform scale-50 origin-top-left pointer-events-none opacity-80 group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms]"
                   tabIndex={-1}
+                  aria-hidden="true"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms] flex items-end p-4">
                   <a
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-2 bg-white text-slate-900 font-bold text-center rounded-lg shadow-lg hover:bg-slate-50 transition-colors motion-reduce:duration-[0.01ms] flex items-center justify-center gap-2"
+                    aria-label={`Preview ${project.content[currentLang].title}`}
+                    className="w-full py-2 bg-white text-slate-900 font-bold text-center rounded-lg shadow-lg hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 transition-colors motion-reduce:duration-[0.01ms] flex items-center justify-center gap-2"
                   >
-                    <Eye size={16} />
+                    <Eye size={16} aria-hidden="true" />
                     Preview
                   </a>
                 </div>
@@ -68,8 +71,11 @@ export const TemplateVault: React.FC<TemplateVaultProps> = ({ projects }) => {
                 <p className="text-xs text-slate-500 mb-3 line-clamp-2">
                   {project.content[currentLang].solution.description}
                 </p>
-                <button className="active:scale-[0.97] w-full py-1.5 text-xs font-bold text-slate-400 border border-slate-200 rounded-lg hover:border-slate-900 hover:text-slate-900 transition-colors motion-reduce:duration-[0.01ms] flex items-center justify-center gap-2">
-                  <Copy size={14} />
+                <button
+                  aria-label={`Clone template: ${project.content[currentLang].title}`}
+                  className="active:scale-[0.97] w-full py-1.5 text-xs font-bold text-slate-400 border border-slate-200 rounded-lg hover:border-slate-900 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 focus-visible:border-slate-900 focus-visible:text-slate-900 transition-colors motion-reduce:duration-[0.01ms] flex items-center justify-center gap-2"
+                >
+                  <Copy size={14} aria-hidden="true" />
                   Clone Template
                 </button>
               </div>

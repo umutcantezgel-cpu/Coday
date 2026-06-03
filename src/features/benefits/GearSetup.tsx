@@ -28,7 +28,7 @@ const GearSetup: React.FC = () => {
   return (
     <div className="bg-surface-dark rounded-3xl p-8 lg:p-12 border border-white/10 overflow-hidden relative">
       <div className="absolute top-0 right-0 p-4 opacity-10 pointer-events-none">
-        <OptimizedIcon icon={Desktop} className="text-[300px] text-white" />
+        <OptimizedIcon icon={Desktop} className="text-[300px] text-white" aria-hidden="true" />
       </div>
 
       <div className="relative z-10 grid lg:grid-cols-2 gap-12">
@@ -45,8 +45,9 @@ const GearSetup: React.FC = () => {
               <label className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3 block">
                 Machine
               </label>
-              <div className="flex gap-4">
+              <div className="flex gap-4" role="group" aria-label="Machine auswählen">
                 <button
+                  aria-pressed={laptop === 'mac'}
                   onClick={() => setLaptop('mac')}
                   className={`active:scale-[0.97] flex-1 p-4 rounded-xl border transition motion-reduce:duration-[0.01ms] text-left ${laptop === 'mac' ? 'bg-primary/20 border-primary text-white' : 'bg-white/5 border-transparent text-gray-400 hover:bg-white/10'}`}
                 >
@@ -54,6 +55,7 @@ const GearSetup: React.FC = () => {
                   <div className="text-xs opacity-70">M3 Max</div>
                 </button>
                 <button
+                  aria-pressed={laptop === 'win'}
                   onClick={() => setLaptop('win')}
                   className={`active:scale-[0.97] flex-1 p-4 rounded-xl border transition motion-reduce:duration-[0.01ms] text-left ${laptop === 'win' ? 'bg-primary/20 border-primary text-white' : 'bg-white/5 border-transparent text-gray-400 hover:bg-white/10'}`}
                 >
@@ -68,7 +70,7 @@ const GearSetup: React.FC = () => {
               <label className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3 block">
                 Display
               </label>
-              <div className="grid grid-cols-3 gap-2">
+              <div className="grid grid-cols-3 gap-2" role="group" aria-label="Display auswählen">
                 {[
                   { id: 'ultra', label: 'Ultrawide' },
                   { id: 'dual', label: 'Dual 4K' },
@@ -76,6 +78,7 @@ const GearSetup: React.FC = () => {
                 ].map((opt) => (
                   <button
                     key={opt.id}
+                    aria-pressed={monitor === opt.id}
                     onClick={() => setMonitor(opt.id as 'ultra' | 'dual' | 'pro')}
                     className={`active:scale-[0.97] p-3 rounded-lg border transition motion-reduce:duration-[0.01ms] text-sm font-bold ${monitor === opt.id ? 'bg-primary/20 border-primary text-white' : 'bg-white/5 border-transparent text-gray-400 hover:bg-white/10'}`}
                   >
@@ -90,8 +93,9 @@ const GearSetup: React.FC = () => {
               <label className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3 block">
                 Audio
               </label>
-              <div className="flex gap-4">
+              <div className="flex gap-4" role="group" aria-label="Audio auswählen">
                 <button
+                  aria-pressed={audio === 'over'}
                   onClick={() => setAudio('over')}
                   className={`active:scale-[0.97] flex-1 p-4 rounded-xl border transition motion-reduce:duration-[0.01ms] text-left ${audio === 'over' ? 'bg-primary/20 border-primary text-white' : 'bg-white/5 border-transparent text-gray-400 hover:bg-white/10'}`}
                 >
@@ -99,6 +103,7 @@ const GearSetup: React.FC = () => {
                   <div className="text-xs opacity-70">Sony XM5</div>
                 </button>
                 <button
+                  aria-pressed={audio === 'pods'}
                   onClick={() => setAudio('pods')}
                   className={`active:scale-[0.97] flex-1 p-4 rounded-xl border transition motion-reduce:duration-[0.01ms] text-left ${audio === 'pods' ? 'bg-primary/20 border-primary text-white' : 'bg-white/5 border-transparent text-gray-400 hover:bg-white/10'}`}
                 >
@@ -113,7 +118,7 @@ const GearSetup: React.FC = () => {
         {/* Preview */}
         <div className="bg-black/40 rounded-2xl p-8 flex flex-col justify-center relative border border-white/5">
           <div className="absolute top-4 right-4 text-xs font-mono text-primary flex items-center gap-2">
-            <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse motion-reduce:animate-none"></span>
+            <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse motion-reduce:animate-none" aria-hidden="true"></span>
             READY TO SHIP
           </div>
 

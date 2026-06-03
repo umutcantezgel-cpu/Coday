@@ -10,8 +10,8 @@ export const WorkHero: React.FC = () => {
   return (
     <section className="py-[var(--space-section)] relative overflow-hidden bg-bg-inverse text-text-inverse">
       {/* Background Noise/Grid */}
-      <div className="absolute inset-0 opacity-20 mix-blend-overlay pointer-events-none" style={{ backgroundImage: "url('/noise.png')" }} />
-      <div className="absolute inset-0 bg-gradient-to-b from-bg-inverse via-bg-inverse/90 to-bg-inverse pointer-events-none" />
+      <div className="absolute inset-0 opacity-20 mix-blend-overlay pointer-events-none" style={{ backgroundImage: "url('/noise.png')" }} aria-hidden="true" />
+      <div className="absolute inset-0 bg-gradient-to-b from-bg-inverse via-bg-inverse/90 to-bg-inverse pointer-events-none" aria-hidden="true" />
 
       <div className="container mx-auto px-4 relative z-10 flex flex-col items-center">
         <div className="max-w-[var(--container-narrow)] mx-auto text-center">
@@ -21,7 +21,7 @@ export const WorkHero: React.FC = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-900/50 border border-primary-500/30 text-primary-300 mb-8 backdrop-blur-md"
           >
-            <Lightning className="w-4 h-4" weight="fill" />
+            <Lightning className="w-4 h-4" weight="fill" aria-hidden="true" />
             <span className="text-xs font-bold tracking-widest uppercase">
               {t('hero.label')}
             </span>
@@ -42,11 +42,11 @@ export const WorkHero: React.FC = () => {
             className="flex flex-wrap justify-center gap-8 text-text-tertiary"
           >
             <div className="flex items-center gap-2">
-              <Cube className="w-5 h-5 text-primary-400" />
+              <Cube className="w-5 h-5 text-primary-400" aria-hidden="true" />
               <span className="text-sm font-mono">12+ Live Projects</span>
             </div>
             <div className="flex items-center gap-2">
-              <Code className="w-5 h-5 text-success" />
+              <Code className="w-5 h-5 text-success" aria-hidden="true" />
               <span className="text-sm font-mono">5 In-Progress</span>
             </div>
           </motion.div>

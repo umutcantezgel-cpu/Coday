@@ -26,7 +26,7 @@ export const SoulReader: React.FC<SoulReaderProps> = ({ data }) => {
   const isCorrect = selected === 'human';
 
   return (
-    <div className="my-16 relative overflow-hidden rounded-[2.5rem] border border-gray-100 bg-gray-50 shadow-2xl">
+    <section className="my-16 relative overflow-hidden rounded-[2.5rem] border border-gray-100 bg-gray-50 shadow-2xl" aria-label={data?.title || 'The Turing Test for Design'}>
       {/* Background blobs */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2" />
@@ -83,6 +83,7 @@ export const SoulReader: React.FC<SoulReaderProps> = ({ data }) => {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               className="mt-12 overflow-hidden"
+              aria-live="polite"
             >
               <div
                 className={clsx(
@@ -120,7 +121,7 @@ export const SoulReader: React.FC<SoulReaderProps> = ({ data }) => {
           )}
         </AnimatePresence>
       </div>
-    </div>
+    </section>
   );
 };
 
@@ -160,7 +161,7 @@ const QuizOption: React.FC<QuizOptionProps> = ({
           hasVoted && !isCorrect && !isSelected && 'opacity-50 grayscale'
         )}
       >
-        <OptimizedImage src={image} alt={label} className="w-full h-full object-cover" />
+        <OptimizedImage src={image} alt={`${label}: Design option for the quiz`} width={600} height={600} className="w-full h-full object-cover" />
 
         {/* Overlay Result */}
         {isRevealed && (

@@ -14,6 +14,7 @@ import { AnimatedCounter } from '@/shared/ui/AnimatedCounter';
 import { BeforeAfterSlider } from '@/shared/ui/BeforeAfterSlider';
 import { motion, AnimatePresence } from 'motion/react';
 import { X } from '@phosphor-icons/react';
+import Image from 'next/image';
 
 const iconMap: Record<string, React.ElementType> = {
   handyman: Wrench,
@@ -104,17 +105,17 @@ const ProjectDetail: React.FC = () => {
       <section className="relative pt-24 pb-0 overflow-hidden">
         {/* Breadcrumb (above hero) */}
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6">
-          <div className="flex items-center text-sm text-gray-500">
+          <nav aria-label="Breadcrumb" className="flex items-center text-sm text-gray-500">
             <NavLink
               href="/work"
-              className="hover:text-primary transition-colors motion-reduce:duration-[0.01ms] flex items-center gap-1.5"
+              className="hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-colors motion-reduce:duration-[0.01ms] flex items-center gap-1.5"
             >
-              <ArrowLeft className="w-3.5 h-3.5" />
+              <ArrowLeft className="w-3.5 h-3.5" aria-hidden="true" />
               {t('project_detail.breadcrumb_projects')}
             </NavLink>
-            <span className="mx-2">/</span>
-            <span className="text-primary font-medium">{project.title}</span>
-          </div>
+            <span className="mx-2" aria-hidden="true">/</span>
+            <span className="text-primary font-medium" aria-current="page">{project.title}</span>
+          </nav>
         </div>
 
         {/* Hero Visual */}
@@ -149,6 +150,9 @@ const ProjectDetail: React.FC = () => {
                 src={heroImage}
                 alt={project.solution.imageAlts?.[0] || `${project.title} Hero`}
                 className="absolute inset-0 w-full h-full object-cover transition-transform motion-reduce:duration-[0.01ms] duration-1000 group-hover:scale-105"
+                priority={true}
+                width={1920}
+                height={1080}
               />
             ) : (
               <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-black flex items-center justify-center">
@@ -193,9 +197,9 @@ const ProjectDetail: React.FC = () => {
           {/* ─────────────── Sidebar (Sticky) ─────────────── */}
           <div className="lg:col-span-4 space-y-8">
             <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-aurora sticky top-24">
-              <h3 className="font-display font-bold text-xl mb-6">
+              <h2 className="font-display font-bold text-xl mb-6">
                 {t('project_detail.sidebar.details')}
-              </h3>
+              </h2>
               <ul className="space-y-4 text-sm text-gray-600">
                 <li className="flex justify-between border-b border-gray-100 pb-2">
                   <span>{t('project_detail.sidebar.service')}</span>
@@ -214,7 +218,7 @@ const ProjectDetail: React.FC = () => {
               {/* Related Services */}
               {project.relatedServices && project.relatedServices.length > 0 && (
                 <div className="mt-8 pt-6 border-t border-gray-100">
-                  <h4 className="font-display font-bold text-lg mb-4">{t('')}</h4>
+                  <h3 className="font-display font-bold text-lg mb-4">{t('project_detail.sidebar.related', { defaultValue: 'Verwandte Services' })}</h3>
                   <ul className="space-y-2">
                     {project.relatedServices.map((service, idx) => (
                       <li key={idx}>
@@ -313,7 +317,7 @@ const ProjectDetail: React.FC = () => {
                     <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-lg mb-4">
                       {i + 1}
                     </div>
-                    <h4 className="font-bold text-gray-900 mb-2">{step.title}</h4>
+                    <h3 className="font-bold text-gray-900 mb-2">{step.title}</h3>
                     <p className="text-sm text-gray-600">{step.description}</p>
                   </motion.div>
                 ))}
@@ -341,7 +345,10 @@ const ProjectDetail: React.FC = () => {
                     return (
                       <div
                         key={i}
-                        className={`rounded-xl border border-gray-200 shadow-lg overflow-hidden bg-white group cursor-zoom-in ${
+                        role="button"
+                        tabIndex={0}
+                        aria-label={project.solution.imageAlts?.[i] || `${project.title} Solution ${i + 1} – Zum Vergrößern klicken`}
+                        className={`rounded-xl border border-gray-200 shadow-lg overflow-hidden bg-white group cursor-zoom-in focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${
                           isFullWidth ? 'md:col-span-2' : ''
                         }`}
                         onClick={() =>
@@ -350,6 +357,15 @@ const ProjectDetail: React.FC = () => {
                             project.solution.imageAlts?.[i] || `${project.title} Solution ${i + 1}`
                           )
                         }
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            openLightbox(
+                              img,
+                              project.solution.imageAlts?.[i] || `${project.title} Solution ${i + 1}`
+                            );
+                          }
+                        }}
                       >
                         {/* Browser Mockup Header */}
                         <div className="bg-gray-50 border-b border-gray-100 px-4 py-3 flex items-center gap-2">
@@ -368,8 +384,10 @@ const ProjectDetail: React.FC = () => {
                               `${project.title} Solution ${i + 1}`
                             }
                             className="w-full h-auto object-cover transform group-hover:scale-[1.03] transition-transform motion-reduce:duration-[0.01ms] duration-700"
+                            width={1200}
+                            height={800}
                           />
-                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors motion-reduce:duration-[0.01ms] duration-300 flex items-center justify-center">
+                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 group-focus-visible:bg-black/5 transition-colors motion-reduce:duration-[0.01ms] duration-300 flex items-center justify-center">
                             {/* Invisible overlay for click area */}
                           </div>
                         </div>
@@ -451,6 +469,8 @@ const ProjectDetail: React.FC = () => {
                             src={project.beforeAfter.beforeImage}
                             alt={project.beforeAfter.beforeAlt || `Before - ${project.title}`}
                             className="absolute inset-0 w-full h-full object-cover"
+                            width={800}
+                            height={600}
                           />
                           <div className="absolute top-4 left-4 bg-black/50 backdrop-blur-md text-white text-xs font-bold uppercase px-3 py-1 rounded">
                             {t('')}
@@ -463,6 +483,8 @@ const ProjectDetail: React.FC = () => {
                             src={project.beforeAfter.afterImage}
                             alt={project.beforeAfter.afterAlt || `After - ${project.title}`}
                             className="absolute inset-0 w-full h-full object-cover"
+                            width={800}
+                            height={600}
                           />
                           <div className="absolute top-4 left-4 bg-primary text-white text-xs font-bold uppercase px-3 py-1 rounded">
                             {t('')}
@@ -495,7 +517,7 @@ const ProjectDetail: React.FC = () => {
             className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl border-2 border-gray-200 text-gray-700 font-bold hover:border-primary hover:text-primary transition motion-reduce:duration-[0.01ms] duration-300"
           >
             {t('project_detail.cta_button', { defaultValue: 'Projekt anfragen' })}
-            <ArrowRight className="w-5 h-5" />
+            <ArrowRight className="w-5 h-5" aria-hidden="true" />
           </NavLink>
         </div>
       </section>
@@ -503,15 +525,15 @@ const ProjectDetail: React.FC = () => {
       {/* ═══════════════════════════ */}
       {/* NEXT / PREVIOUS Navigation */}
       {/* ═══════════════════════════ */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-gray-200">
+      <nav aria-label="Projekt-Navigation" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-gray-200">
         <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
           {prevSlug && prevProject ? (
             <NavLink
               href={`/work/${prevSlug}`}
-              className="flex items-center gap-4 group text-left w-full sm:w-auto"
+              className="flex items-center gap-4 group text-left w-full sm:w-auto focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded-lg"
             >
-              <div className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 group-hover:border-primary group-hover:text-primary group-hover:bg-primary/5 transition motion-reduce:duration-[0.01ms] duration-300">
-                <ArrowLeft className="w-5 h-5" />
+              <div className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 group-hover:border-primary group-hover:text-primary group-hover:bg-primary/5 group-focus-visible:border-primary group-focus-visible:text-primary group-focus-visible:bg-primary/5 transition motion-reduce:duration-[0.01ms] duration-300">
+                <ArrowLeft className="w-5 h-5" aria-hidden="true" />
               </div>
               <div>
                 <div className="text-xs text-gray-500 uppercase font-bold tracking-wider mb-1">
@@ -529,7 +551,7 @@ const ProjectDetail: React.FC = () => {
           {nextSlug && nextProject ? (
             <NavLink
               href={`/work/${nextSlug}`}
-              className="flex items-center gap-4 group text-right w-full sm:w-auto justify-end"
+              className="flex items-center gap-4 group text-right w-full sm:w-auto justify-end focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded-lg"
             >
               <div>
                 <div className="text-xs text-gray-500 uppercase font-bold tracking-wider mb-1">
@@ -539,15 +561,15 @@ const ProjectDetail: React.FC = () => {
                   {nextProject.content[currentLang].title}
                 </div>
               </div>
-              <div className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 group-hover:border-primary group-hover:text-primary group-hover:bg-primary/5 transition motion-reduce:duration-[0.01ms] duration-300">
-                <ArrowRight className="w-5 h-5" />
+              <div className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 group-hover:border-primary group-hover:text-primary group-hover:bg-primary/5 group-focus-visible:border-primary group-focus-visible:text-primary group-focus-visible:bg-primary/5 transition motion-reduce:duration-[0.01ms] duration-300">
+                <ArrowRight className="w-5 h-5" aria-hidden="true" />
               </div>
             </NavLink>
           ) : (
             <div />
           )}
         </div>
-      </section>
+      </nav>
 
       {/* ═══════════════════════════ */}
       {/* Lightbox Overlay */}
@@ -575,15 +597,18 @@ const ProjectDetail: React.FC = () => {
               className="relative max-w-7xl max-h-full w-full h-full flex items-center justify-center cursor-default"
               onClick={(e) => e.stopPropagation()}
             >
-              <img
+              <Image
                 src={activeLightboxImage}
-                alt={lightboxAlt}
+                alt={lightboxAlt || 'Lightbox Image'}
+                width={1920}
+                height={1080}
                 className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
-                loading="lazy"
+                priority={false}
               />
               <button
                 onClick={closeLightbox}
-                className="active:scale-[0.97] absolute top-4 right-4 text-white/70 hover:text-white bg-black/50 hover:bg-black/80 rounded-full p-2 transition motion-reduce:duration-[0.01ms] cursor-pointer z-50"
+                autoFocus
+                className="active:scale-[0.97] absolute top-4 right-4 text-white/70 hover:text-white bg-black/50 hover:bg-black/80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white rounded-full p-2 transition motion-reduce:duration-[0.01ms] cursor-pointer z-50"
                 aria-label="Bildvorschau schließen"
               >
                 <X className="w-6 h-6" />

@@ -59,7 +59,7 @@ const Blog: React.FC = () => {
     : filteredPosts;
 
   return (
-    <div className="bg-background-light min-h-dvh pt-24 pb-20">
+    <main className="bg-background-light min-h-dvh pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h1 className="font-display font-black text-5xl md:text-6xl text-gradient mb-6">
@@ -76,8 +76,10 @@ const Blog: React.FC = () => {
                 size="md"
               />
             </div>
+            <label htmlFor="blog-search" className="sr-only">{t('searchPlaceholder', 'Suchen Sie nach Artikeln...')}</label>
             <input
-              type="text"
+              id="blog-search"
+              type="search"
               placeholder={t('searchPlaceholder', 'Suchen Sie nach Artikeln...')}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
@@ -87,7 +89,7 @@ const Blog: React.FC = () => {
         </div>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap items-center justify-center gap-3 mb-12">
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-12" role="group" aria-label={t('categories.all', 'Kategorien')}>
           <AnimatePresence>
             {categories.map((category) => (
               <motion.button
@@ -99,6 +101,7 @@ const Blog: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setActiveCategory(category)}
+                aria-pressed={activeCategory === category}
                 className={`px-6 py-2 rounded-full text-sm font-bold transition-colors motion-reduce:duration-[0.01ms] duration-300 ${
                   activeCategory === category
                     ? 'bg-primary text-white shadow-md shadow-primary/30'
@@ -113,7 +116,7 @@ const Blog: React.FC = () => {
 
         {/* Featured Post */}
         {featuredPost && (
-          <motion.div
+          <motion.article
             className="mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -128,6 +131,8 @@ const Blog: React.FC = () => {
               <OptimizedImage
                 src={featuredPost.image}
                 alt={featuredPost.title}
+                width={1200}
+                height={675}
                 className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform motion-reduce:duration-[0.01ms] duration-700"
                 priority
               />
@@ -152,7 +157,7 @@ const Blog: React.FC = () => {
                 </div>
               </div>
             </Link>
-          </motion.div>
+          </motion.article>
         )}
 
         {/* Article Grid */}
@@ -176,6 +181,8 @@ const Blog: React.FC = () => {
                       <OptimizedImage
                         src={post.image}
                         alt={post.alt}
+                        width={800}
+                        height={450}
                         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms] duration-700"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
@@ -261,9 +268,12 @@ const Blog: React.FC = () => {
                 {t('community.description')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
+                <label htmlFor="blog-newsletter-email" className="sr-only">{t('community.emailPlaceholder')}</label>
                 <input
+                  id="blog-newsletter-email"
                   type="email"
                   placeholder={t('community.emailPlaceholder')}
+                  aria-label={t('community.emailPlaceholder')}
                   className="px-6 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-gray-500 focus:border-primary focus:ring-1 focus:ring-primary flex-grow"
                 />
                 <button className="active:scale-[0.97] px-8 py-4 rounded-xl bg-primary text-white font-bold hover:bg-primary-dark transition-colors motion-reduce:duration-[0.01ms] shadow-lg hover:shadow-primary/50">
@@ -277,11 +287,13 @@ const Blog: React.FC = () => {
                 <OptimizedImage
                   src="/images/services/drei-kunden-reviews.webp"
                   alt={t('community.socialProofAlt')}
+                  width={600}
+                  height={600}
                   className="w-full h-full object-cover transform scale-100 group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms] duration-700 opacity-80 group-hover:opacity-100"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900 to-transparent p-6">
                   <div className="flex items-center gap-2 mb-2">
-                    <div className="flex text-yellow-500">
+                    <div className="flex text-yellow-500" aria-hidden="true">
                       {[1, 2, 3, 4, 5].map((i) => (
                         <OptimizedIcon
                           key={i}
@@ -300,7 +312,7 @@ const Blog: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 

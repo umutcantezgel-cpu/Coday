@@ -1,5 +1,4 @@
 'use client';
-'use client';
 import React, { ReactNode, useEffect, useRef } from 'react';
 
 // Custom hook to apply magnetic effect via vanilla DOM manipulation
@@ -9,6 +8,10 @@ function useMagnetic<T extends HTMLElement>(strength: number = 0.2) {
   useEffect(() => {
     const element = ref.current;
     if (!element) return;
+
+    // Respect prefers-reduced-motion
+    const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (motionQuery.matches) return;
 
     let x = 0;
     let y = 0;

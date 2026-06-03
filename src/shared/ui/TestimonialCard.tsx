@@ -50,7 +50,7 @@ export const TestimonialCard: React.FC<TestimonialProps> = ({
 
       {/* Star Rating */}
       {rating > 0 && (
-        <div className="flex gap-1 mb-6 text-yellow-600">
+        <div className="flex gap-1 mb-6 text-yellow-600" role="img" aria-label={`Bewertung: ${rating} von 5 Sternen`}>
           {[...Array(5)].map((_, i) => (
             <OptimizedIcon
               key={i}
@@ -64,7 +64,11 @@ export const TestimonialCard: React.FC<TestimonialProps> = ({
 
       {/* Zitat */}
       <blockquote className="text-lg italic text-slate-700 font-light mb-8 flex-grow relative z-10 leading-relaxed">
-        "{quote}"
+        <p>"{quote}"</p>
+        <footer className="mt-4 not-italic text-sm text-slate-500">
+          <cite className="not-italic font-bold text-secondary">{authorName}</cite>
+          {authorCompany && <>, {authorCompany}</>}
+        </footer>
       </blockquote>
 
       {/* Autor Info */}

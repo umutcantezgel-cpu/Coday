@@ -133,7 +133,7 @@ export const DataMaturityAssessment: React.FC = () => {
   const progress = ((currentStep + 1) / QUESTIONS.length) * 100;
 
   return (
-    <div className="my-12 w-full max-w-3xl mx-auto font-sans">
+    <section className="my-12 w-full max-w-3xl mx-auto font-sans" aria-label={t('title')}>
       <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow motion-reduce:duration-[0.01ms] duration-300">
         <div className="p-6 md:p-8 bg-gradient-to-r from-primary/5 to-purple-500/5 border-b border-gray-200">
           <div className="flex items-center justify-between mb-4">
@@ -152,7 +152,7 @@ export const DataMaturityAssessment: React.FC = () => {
           </div>
 
           {!showResult && (
-            <div className="w-full bg-gray-200/30 rounded-full h-2">
+            <div className="w-full bg-gray-200/30 rounded-full h-2" role="progressbar" aria-valuenow={currentStep + 1} aria-valuemin={1} aria-valuemax={QUESTIONS.length} aria-label={t('questionStep', { current: currentStep + 1, total: QUESTIONS.length })}>
               <motion.div
                 className="bg-gradient-to-r from-primary to-purple-500 h-2 rounded-full"
                 initial={{ scaleX: 0 }}
@@ -174,9 +174,10 @@ export const DataMaturityAssessment: React.FC = () => {
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.3 }}
               >
-                <h4 className="text-xl font-semibold text-gray-900 mb-8 leading-relaxed">
-                  {QUESTIONS[currentStep]!.text}
-                </h4>
+                <fieldset>
+                  <legend className="text-xl font-semibold text-gray-900 mb-8 leading-relaxed">
+                    {QUESTIONS[currentStep]!.text}
+                  </legend>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {QUESTIONS[currentStep]!.options.map((option, index) => (
@@ -192,6 +193,7 @@ export const DataMaturityAssessment: React.FC = () => {
                     </button>
                   ))}
                 </div>
+                </fieldset>
               </motion.div>
             ) : (
               <motion.div
@@ -200,6 +202,7 @@ export const DataMaturityAssessment: React.FC = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4 }}
                 className="text-center"
+                aria-live="assertive"
               >
                 <div
                   className={cn(
@@ -282,6 +285,6 @@ export const DataMaturityAssessment: React.FC = () => {
           </AnimatePresence>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

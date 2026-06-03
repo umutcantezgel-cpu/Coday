@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import BlurText from '@/shared/ui/BlurText';
 import GradientText from '@/shared/ui/GradientText';
 import { Link as NavLink } from '@/i18n/navigation';
-import { OptimizedImage } from '@/shared/ui/OptimizedImage';
+import Image from 'next/image';
 import { marketingImages } from '@/shared/data/serviceImages';
 import TrafficROICalculator from '@/features/seo/TrafficROICalculator';
 import RankingPeriodicTable from '@/features/seo/RankingPeriodicTable';
@@ -98,11 +98,13 @@ export function SeoClient() {
             </div>
             <div className="relative">
               <div className="absolute inset-0 bg-primary/10 rounded-3xl transform -rotate-2 scale-105"></div>
-              <OptimizedImage
+              <Image
                 src={marketingImages.hero!.src}
                 alt={t(marketingImages.hero!.alt)}
-                className="relative rounded-3xl shadow-flat-lg w-full transform rotate-1 hover:rotate-0 transition motion-reduce:duration-[0.01ms] duration-500 bg-white p-2"
-                priority
+                width={800}
+                height={600}
+                className="relative rounded-3xl shadow-flat-lg w-full h-auto transform rotate-1 hover:rotate-0 transition motion-reduce:duration-[0.01ms] duration-500 bg-white p-2"
+                priority={true}
               />
             </div>
           </div>
@@ -169,10 +171,12 @@ export function SeoClient() {
           <div className="grid md:grid-cols-2 gap-20 items-center mb-24">
             <div className="order-2 md:order-1 relative">
               <div className="absolute top-0 end-0 w-32 h-32 bg-secondary/5 rounded-full blur-2xl"></div>
-              <OptimizedImage
+              <Image
                 src={marketingImages.omnichannel!.src}
                 alt={t(marketingImages.omnichannel!.alt)}
-                className="relative rounded-3xl shadow-lg w-full border border-gray-100"
+                width={800}
+                height={600}
+                className="relative rounded-3xl shadow-lg w-full h-auto border border-gray-100"
               />
             </div>
             <div className="order-1 md:order-2">
@@ -250,7 +254,7 @@ export function SeoClient() {
 
           <div className="relative">
             {/* Connecting Line */}
-            <div className="absolute top-1/2 left-0 w-full h-1 bg-white/10 -translate-y-1/2 hidden lg:block"></div>
+            <div aria-hidden="true" className="absolute top-1/2 left-0 w-full h-1 bg-white/10 -translate-y-1/2 hidden lg:block"></div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
@@ -279,7 +283,7 @@ export function SeoClient() {
                   key={idx}
                   className="relative bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors motion-reduce:duration-[0.01ms] group"
                 >
-                  <div className="absolute -top-6 start-8 bg-primary text-secondary font-bold text-xl w-12 h-12 rounded-xl flex items-center justify-center shadow-lg border-4 border-secondary group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms]">
+                  <div aria-hidden="true" className="absolute -top-6 start-8 bg-primary text-secondary font-bold text-xl w-12 h-12 rounded-xl flex items-center justify-center shadow-lg border-4 border-secondary group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms]">
                     {phase.step}
                   </div>
                   <h3 className="font-bold text-xl mt-4 mb-3">{phase.title}</h3>

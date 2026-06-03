@@ -7,7 +7,7 @@ import { Link as NavLink } from '@/i18n/navigation';
 import BlurText from '@/shared/ui/BlurText';
 
 import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
-import { OptimizedImage } from '@/shared/ui/OptimizedImage';
+import Image from 'next/image';
 import { appDevImages } from '@/shared/data/serviceImages';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import {
@@ -105,11 +105,13 @@ export function WebAppsClient() {
             {/* Visual Placeholder for Code/Dashboard */}
             <div className="relative hidden lg:block">
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-br from-indigo-500/10 to-primary/10 rounded-full blur-3xl opacity-60"></div>
-              <OptimizedImage
+              <Image
                 src={appDevImages.hero?.src || ''}
                 alt={appDevImages.hero ? t(appDevImages.hero.alt) : ''}
-                className="relative rounded-2xl shadow-xl w-full rotate-2 hover:rotate-0 transition-transform motion-reduce:duration-[0.01ms] duration-500 bg-white p-2"
-                priority
+                width={800}
+                height={600}
+                className="relative rounded-2xl shadow-xl w-full h-auto rotate-2 hover:rotate-0 transition-transform motion-reduce:duration-[0.01ms] duration-500 bg-white p-2"
+                priority={true}
               />
             </div>
           </div>

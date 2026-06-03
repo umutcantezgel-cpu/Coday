@@ -9,7 +9,7 @@ export const ProvenExpertSeal: React.FC = () => {
       rel="noopener noreferrer"
       title="Bewertungen zu Coday Web-Agentur auf ProvenExpert"
       aria-label="Kundenbewertungen & Erfahrungen zu Coday Web-Agentur"
-      className="inline-block transition-transform hover:scale-105 hover:-translate-y-1 duration-300"
+      className="inline-block transition-transform hover:scale-105 hover:-translate-y-1 duration-300 motion-reduce:transition-none motion-reduce:hover:transform-none"
     >
       {/* 
         HINWEIS: ProvenExpert generiert für jeden Account einen spezifischen Image-Hash.

@@ -12,7 +12,7 @@ export const ROIEstimator: React.FC = () => {
   const extraRevenue = projectedRevenue - revenue;
 
   return (
-    <div className="my-16 relative overflow-hidden rounded-[2.5rem] border border-gray-200 bg-white shadow-xl">
+    <section className="my-16 relative overflow-hidden rounded-[2.5rem] border border-gray-200 bg-white shadow-xl" aria-label="CRO ROI Estimator">
       <div className="p-8 md:p-12">
         <div className="flex items-center gap-4 mb-8">
           <div className="p-3 rounded-full bg-emerald-50 text-emerald-600">
@@ -28,10 +28,11 @@ export const ROIEstimator: React.FC = () => {
           <div className="space-y-8">
             <div>
               <div className="flex justify-between mb-2">
-                <label className="text-sm font-bold text-gray-700">Annual Revenue ($)</label>
+                <label htmlFor="roi-revenue" className="text-sm font-bold text-gray-700">Annual Revenue ($)</label>
                 <span className="text-sm font-mono text-gray-500">{revenue.toLocaleString()}</span>
               </div>
               <input
+                id="roi-revenue"
                 type="range"
                 min="100000"
                 max="10000000"
@@ -44,7 +45,7 @@ export const ROIEstimator: React.FC = () => {
 
             <div>
               <div className="flex justify-between mb-2">
-                <label className="text-sm font-bold text-gray-700">
+                <label htmlFor="roi-conversion" className="text-sm font-bold text-gray-700">
                   Current Conversion Rate (%)
                 </label>
                 <span className="text-sm font-mono text-gray-500">
@@ -52,6 +53,7 @@ export const ROIEstimator: React.FC = () => {
                 </span>
               </div>
               <input
+                id="roi-conversion"
                 type="range"
                 min="0.5"
                 max="5.0"
@@ -64,12 +66,13 @@ export const ROIEstimator: React.FC = () => {
 
             <div>
               <div className="flex justify-between mb-2">
-                <label className="text-sm font-bold text-gray-700">Projected Lift (+%)</label>
+                <label htmlFor="roi-lift" className="text-sm font-bold text-gray-700">Projected Lift (+%)</label>
                 <span className="text-sm font-mono text-emerald-600 font-bold">
                   +{lift.toFixed(1)}%
                 </span>
               </div>
               <input
+                id="roi-lift"
                 type="range"
                 min="0.1"
                 max="2.0"
@@ -87,7 +90,7 @@ export const ROIEstimator: React.FC = () => {
           <div className="bg-emerald-900 rounded-3xl p-8 text-white flex flex-col justify-center relative overflow-hidden">
             <div className="absolute top-0 right-0 p-32 bg-emerald-500 rounded-full blur-3xl opacity-20 -mr-16 -mt-16" />
 
-            <div className="relative z-10 text-center">
+            <div className="relative z-10 text-center" aria-live="polite">
               <span className="text-emerald-300 font-bold uppercase text-xs tracking-widest">
                 Extra Annual Revenue
               </span>
@@ -110,7 +113,7 @@ export const ROIEstimator: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

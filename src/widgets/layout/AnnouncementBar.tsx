@@ -11,7 +11,7 @@ const AnnouncementBar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
         <div className="flex items-center justify-center gap-4 text-sm font-medium">
           <span className="flex items-center">
-            <OptimizedIcon icon={Celebration} className="text-lg mr-2" />
+            <OptimizedIcon icon={Celebration} className="text-lg mr-2" aria-hidden="true" />
             {t('announcement.text', {
               defaultValue: 'Enterprise-Audit: Kostenlose Potenzialanalyse verfügbar.',
             })}

@@ -136,7 +136,7 @@ export default function ProcessPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="flex items-center gap-3 bg-slate-50 p-4 rounded-xl border border-slate-100">
                 <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 shrink-0">
-                  <OptimizedIcon icon={Clock} className="w-5 h-5" />
+                  <OptimizedIcon icon={Clock} className="w-5 h-5" aria-hidden="true" />
                 </div>
                 <div>
                   <p className="text-xs text-slate-500 uppercase font-semibold">Dauer</p>
@@ -145,7 +145,7 @@ export default function ProcessPage() {
               </div>
               <div className="flex items-center gap-3 bg-slate-50 p-4 rounded-xl border border-slate-100">
                 <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 shrink-0">
-                  <OptimizedIcon icon={Wrench} className="w-5 h-5" />
+                  <OptimizedIcon icon={Wrench} className="w-5 h-5" aria-hidden="true" />
                 </div>
                 <div>
                   <p className="text-xs text-slate-500 uppercase font-semibold">Tools</p>
@@ -160,14 +160,14 @@ export default function ProcessPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
           <div className="bg-primary/5 rounded-3xl p-8 border border-primary/20">
             <h2 className="font-display font-bold text-2xl text-secondary mb-4 flex items-center gap-3">
-              <OptimizedIcon icon={Target} className="w-8 h-8 text-primary" />
+              <OptimizedIcon icon={Target} className="w-8 h-8 text-primary" aria-hidden="true" />
               Unsere Rolle (Coday)
             </h2>
             <p className="text-slate-700 leading-relaxed font-medium">{processData.codayRole}</p>
           </div>
           <div className="bg-slate-100 rounded-3xl p-8 border border-slate-200">
             <h2 className="font-display font-bold text-2xl text-secondary mb-4 flex items-center gap-3">
-              <OptimizedIcon icon={Users} className="w-8 h-8 text-slate-500" />
+              <OptimizedIcon icon={Users} className="w-8 h-8 text-slate-500" aria-hidden="true" />
               Ihre Rolle (Klient)
             </h2>
             <p className="text-slate-700 leading-relaxed font-medium">{processData.clientRole}</p>
@@ -177,7 +177,7 @@ export default function ProcessPage() {
         {/* DELIVERABLES */}
         <div className="mb-16">
           <h2 className="font-display font-black text-3xl text-secondary mb-6 flex items-center gap-3">
-            <OptimizedIcon icon={CheckCircle} className="w-8 h-8 text-green-500" />
+            <OptimizedIcon icon={CheckCircle} className="w-8 h-8 text-green-500" aria-hidden="true" />
             Deliverables am Ende dieses Schritts
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -218,7 +218,7 @@ export default function ProcessPage() {
               href={`/ai/prozess/${processData.previousStep}`}
               className="flex items-center gap-3 bg-white border border-slate-200 px-6 py-4 rounded-2xl hover:border-primary hover:text-primary transition-colors motion-reduce:duration-[0.01ms] flex-1"
             >
-              <OptimizedIcon icon={CaretLeft} className="w-6 h-6 shrink-0" />
+              <OptimizedIcon icon={CaretLeft} className="w-6 h-6 shrink-0" aria-hidden="true" />
               <div>
                 <p className="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">
                   Vorheriger Schritt
@@ -245,7 +245,7 @@ export default function ProcessPage() {
                   {aiProcesses.find((p) => p.slug === processData.nextStep)?.de.title}
                 </p>
               </div>
-              <OptimizedIcon icon={CaretRight} className="w-6 h-6 shrink-0" />
+              <OptimizedIcon icon={CaretRight} className="w-6 h-6 shrink-0" aria-hidden="true" />
             </Link>
           ) : (
             <div className="flex-1" />

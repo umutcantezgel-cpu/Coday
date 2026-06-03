@@ -102,8 +102,8 @@ export const LegalLayoutV2: React.FC<LegalLayoutV2Props> = ({
       {/* Progress Bar */}
       <div className="fixed top-0 left-0 right-0 h-1 bg-gray-100 z-50">
         <motion.div
-          className="h-full bg-gradient-to-r from-primary to-primary/80"
-          style={{ width: `${readProgress}%` }}
+          className="h-full w-full bg-gradient-to-r from-primary to-primary/80 origin-left"
+          animate={{ scaleX: readProgress / 100 }}
           transition={{ duration: 0.1 }}
         />
       </div>
@@ -112,11 +112,12 @@ export const LegalLayoutV2: React.FC<LegalLayoutV2Props> = ({
       <div className="bg-white/80 backdrop-blur-lg border-b border-gray-100 sticky top-0 z-40 pt-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14">
-            <nav role="navigation" className="flex items-center gap-1">
+            <nav role="navigation" aria-label="Rechtsnavigation" className="flex items-center gap-1">
               {legalPages.map((page) => (
                 <NavLink
                   key={page.key}
                   href={page.path}
+                  aria-current={pageType === page.key ? 'page' : undefined}
                   className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition motion-reduce:duration-[0.01ms]
                     ${
                       pageType === page.key
@@ -140,6 +141,7 @@ export const LegalLayoutV2: React.FC<LegalLayoutV2Props> = ({
               <button
                 onClick={() => window.print()}
                 className="flex items-center gap-1.5 hover:text-gray-900 transition-colors motion-reduce:duration-[0.01ms]"
+                aria-label="Seite als PDF drucken"
               >
                 <OptimizedIcon icon={FileText} className="w-4 h-4" />
                 <span className="hidden sm:inline">PDF</span>
@@ -270,6 +272,7 @@ export const LegalLayoutV2: React.FC<LegalLayoutV2Props> = ({
             exit={{ opacity: 0, scale: 0.8 }}
             onClick={scrollToTop}
             className="fixed bottom-8 right-8 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center hover:bg-primary/90 transition-colors motion-reduce:duration-[0.01ms] z-40"
+            aria-label="Zurück nach oben"
           >
             <OptimizedIcon icon={CaretLeft} className="w-5 h-5 rotate-90" />
           </motion.button>

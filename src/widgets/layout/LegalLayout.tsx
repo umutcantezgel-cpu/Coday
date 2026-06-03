@@ -48,7 +48,7 @@ export const LegalLayout: React.FC<LegalLayoutProps> = ({
           {/* Table of Contents (Desktop Sticky) */}
           {tocItems.length > 0 && (
             <aside className="hidden lg:block sticky top-32">
-              <nav role="navigation" className="space-y-1">
+              <nav role="navigation" aria-label="Inhaltsverzeichnis" className="space-y-1">
                 <h3 className="font-bold text-sm uppercase tracking-wider text-slate-400 mb-4 px-3">
                   Inhalt
                 </h3>

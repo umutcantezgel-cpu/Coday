@@ -93,13 +93,16 @@ const RecruitingFunnelDemo: React.FC = () => {
 
           <div className="space-y-6">
             {steps.map((s, idx) => (
-              <div
+              <button
                 key={idx}
+                type="button"
                 onClick={() => setStep(idx)}
-                className={`flex items-start gap-4 p-4 rounded-xl cursor-pointer transition motion-reduce:duration-[0.01ms] ${step === idx ? 'bg-primary/5 border border-primary/20' : 'hover:bg-gray-50 border border-transparent'}`}
+                aria-pressed={step === idx}
+                className={`flex items-start gap-4 p-4 rounded-xl w-full text-left transition motion-reduce:duration-[0.01ms] ${step === idx ? 'bg-primary/5 border border-primary/20' : 'hover:bg-gray-50 border border-transparent'}`}
               >
                 <div
-                  className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${step === idx ? 'bg-primary text-white' : 'bg-gray-100 text-gray-500'}`}
+                  className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 ${step === idx ? 'bg-primary text-white' : 'bg-gray-100 text-gray-500'}`}
+                  aria-hidden="true"
                 >
                   {idx + 1}
                 </div>
@@ -111,7 +114,7 @@ const RecruitingFunnelDemo: React.FC = () => {
                   </h4>
                   <p className="text-sm text-slate-500">{s.desc}</p>
                 </div>
-              </div>
+              </button>
             ))}
           </div>
         </div>

@@ -27,11 +27,11 @@ const Members: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" role="list">
           {members.map((member, i) => (
-            <div
+            <li
               key={i}
-              className="group relative bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-lg transition motion-reduce:duration-[0.01ms] duration-300 text-center"
+              className="group relative bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-lg focus-within:shadow-lg transition motion-reduce:duration-[0.01ms] duration-300 text-center list-none"
             >
               <div className="absolute inset-0 bg-gradient-to-b from-transparent to-blue-50/30 opacity-0 group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms] rounded-2xl pointer-events-none" />
 
@@ -39,21 +39,26 @@ const Members: React.FC = () => {
                 <div className="w-24 h-24 mx-auto rounded-full p-1 bg-gradient-to-br from-blue-400 to-purple-500 mb-4">
                   <OptimizedImage
                     src={member.image}
-                    alt={member.name}
+                    alt={`Profilfoto von ${member.name}`}
                     className="w-full h-full rounded-full border-2 border-white object-cover"
+                    width={150}
+                    height={150}
                   />
                 </div>
 
-                <h3 className="text-lg font-bold text-gray-900">{member.name}</h3>
+                <h2 className="text-lg font-bold text-gray-900">{member.name}</h2>
                 <p className="text-sm text-primary font-medium mb-4">{member.role}</p>
 
-                <button className="active:scale-[0.97] w-full py-2 rounded-lg bg-slate-50 text-slate-600 text-sm font-semibold hover:bg-blue-50 hover:text-blue-600 transition-colors motion-reduce:duration-[0.01ms]">
+                <button
+                  aria-label={`Mit ${member.name} vernetzen`}
+                  className="active:scale-[0.97] w-full py-2 rounded-lg bg-slate-50 text-slate-600 text-sm font-semibold hover:bg-blue-50 hover:text-blue-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 focus-visible:bg-blue-50 focus-visible:text-blue-600 transition-colors motion-reduce:duration-[0.01ms]"
+                >
                   Vernetzen
                 </button>
               </div>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </div>
   );

@@ -202,8 +202,8 @@
       "title": "Web Development"
     },
     "seo": {
-      "title": "Suchmaschinenoptimierung (SEO)",
-      "description": "Sichtbarkeit erhöhen und mehr organischen Traffic aufbauen."
+      "title": "Search Engine Optimization (SEO)",
+      "description": "Increase visibility and build more organic traffic."
     }
   },
   "consulting_page": {
@@ -452,57 +452,57 @@
     "matrix": {
       "rows": {
         "focus": {
-          "label": "Fokus",
-          "bad": "Bunte Templates & Themes",
+          "label": "Focus",
+          "bad": "Colorful Templates & Themes",
           "good": "Performance & Conversion"
         },
         "architecture": {
-          "label": "Architektur",
-          "bad": "Monolithisch & Träge",
+          "label": "Architecture",
+          "bad": "Monolithic & Sluggish",
           "good": "Headless & Edge-Ready"
         },
         "speed": {
-          "label": "Geschwindigkeit",
-          "bad": "Ladezeiten > 3s",
-          "good": "Ladezeiten < 500ms"
+          "label": "Speed",
+          "bad": "Load times > 3s",
+          "good": "Load times < 500ms"
         },
         "cost": {
-          "label": "Kosten",
-          "bad": "Laufende Wartung",
-          "good": "Skalierbares Asset"
+          "label": "Cost",
+          "bad": "Ongoing Maintenance",
+          "good": "Scalable Asset"
         }
       }
     },
     "methodology": {
-      "title": "Unser Enterprise Prozess",
-      "subtitle": "Von der Konzeption bis zum globalen Deployment.",
+      "title": "Our Enterprise Process",
+      "subtitle": "From concept to global deployment.",
       "steps": {
         "1": {
           "title": "Discovery",
-          "desc": "Analyse der Geschäftsziele und Architekturplanung."
+          "desc": "Analysis of business goals and architecture planning."
         },
         "2": {
           "title": "Prototyping",
-          "desc": "UX/UI Design und High-Fidelity Klick-Dummies."
+          "desc": "UX/UI Design and high-fidelity click dummies."
         },
         "3": {
           "title": "Engineering",
-          "desc": "Agile Entwicklung mit Next.js und Edge-Technologien."
+          "desc": "Agile development with Next.js and Edge technologies."
         },
         "4": {
           "title": "QA & Testing",
-          "desc": "Automatisierte Tests für Sicherheit und Performance."
+          "desc": "Automated tests for security and performance."
         },
         "5": {
           "title": "Deployment",
-          "desc": "Globaler Rollout über Vercel Edge Network."
+          "desc": "Global rollout via Vercel Edge Network."
         }
       }
     },
     "case_study": {
       "label": "Enterprise in Action",
       "title": "10x Faster Time-to-Market.",
-      "description": "Wie wir durch Headless Commerce und eine moderne Next.js Architektur die Conversion-Rate eines Branchenführers um 40% gesteigert haben."
+      "description": "How we increased the conversion rate of an industry leader by 40% through Headless Commerce and a modern Next.js architecture."
     }
   },
   "generic_detail": {
@@ -807,31 +807,31 @@
       "description": "We rely on industry-leading enterprise tools for precise analytics, in-depth audits, and measurable success."
     },
     "process": {
-      "title": "Unser SEO-Prozess",
-      "description": "Datengestützte Optimierung für messbare Resultate.",
+      "title": "Our SEO Process",
+      "description": "Data-driven optimization for measurable results.",
       "steps": {
         "audit": {
-          "title": "Audit & Analyse",
-          "desc": "Tiefe technische Analyse und Keyword-Research."
+          "title": "Audit & Analysis",
+          "desc": "Deep technical analysis and keyword research."
         },
         "strategy": {
-          "title": "Strategie & Planung",
-          "desc": "Entwicklung einer Roadmap für Content und Technik."
+          "title": "Strategy & Planning",
+          "desc": "Developing a roadmap for content and technical SEO."
         },
         "implementation": {
-          "title": "Umsetzung",
-          "desc": "OnPage-Optimierung und technisches SEO."
+          "title": "Implementation",
+          "desc": "On-page optimization and technical SEO."
         },
         "monitoring": {
-          "title": "Monitoring & Linkaufbau",
-          "desc": "Laufende Überwachung und OffPage-Signale."
+          "title": "Monitoring & Link Building",
+          "desc": "Ongoing monitoring and off-page signals."
         }
       }
     },
     "cta_section": {
-      "title": "Bereit für mehr organischen Traffic?",
-      "description": "Lassen Sie uns Ihre Sichtbarkeit gemeinsam skalieren.",
-      "button": "Kostenloses SEO-Audit"
+      "title": "Ready for more organic traffic?",
+      "description": "Let's scale your visibility together.",
+      "button": "Free SEO Audit"
     }
   },
   "ui_ux_page": {
@@ -1613,19 +1613,19 @@
       "description": "High-end web development with Next.js, React, and TypeScript. Fast, scalable, and secure websites that leave your competition behind."
     },
     "problem": {
-      "label": "Das Problem",
-      "title": "Langsame Webseiten kosten Geld.",
-      "description": "Nutzer springen ab, wenn Ihre Seite länger als 3 Sekunden lädt."
+      "label": "The Problem",
+      "title": "Slow Websites Cost Money.",
+      "description": "Users bounce when your page takes longer than 3 seconds to load."
     },
     "solution": {
-      "label": "Die Lösung",
-      "title": "High-Performance Architekturen.",
-      "description": "Wir nutzen Edge-Networks und Next.js für millisekunden-schnelle Ladezeiten."
+      "label": "The Solution",
+      "title": "High-Performance Architectures.",
+      "description": "We use Edge Networks and Next.js for millisecond-fast load times."
     },
     "case_study": {
-      "label": "Erfolgsgeschichte",
-      "title": "Wie wir die Conversion-Rate verdoppelt haben.",
-      "description": "Sehen Sie sich an, wie wir durch einen kompletten Relaunch auf Basis von Next.js und einer Headless-Architektur die Ladezeiten unseres Kunden von 4,5 Sekunden auf unter 0,8 Sekunden reduzieren konnten – und damit den Umsatz messbar gesteigert haben."
+      "label": "Success Story",
+      "title": "How We Doubled the Conversion Rate.",
+      "description": "See how we reduced our client's load times from 4.5 seconds to under 0.8 seconds through a complete relaunch based on Next.js and a Headless architecture — measurably increasing revenue."
     }
   },
   "actions": {
@@ -1634,7 +1634,7 @@
     "learn_more": "View details"
   },
   "meta": {
-    "title": "Unsere Webdesign & SEO Services | Coday",
-    "description": "Hochleistungs-Webentwicklung, lokales SEO und skalierbare Architekturen für kleine und mittelständische Unternehmen aus Wetzlar."
+    "title": "Our Web Design & SEO Services | Coday",
+    "description": "High-performance web development, local SEO, and scalable architectures for small and medium-sized businesses from Wetzlar."
   }
 }

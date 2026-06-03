@@ -122,13 +122,19 @@ const RankingPeriodicTable: React.FC = () => {
           <h3 className="font-display font-bold text-2xl text-white mb-6">
             The Periodic Table of SEO Factors
           </h3>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2" role="group" aria-label="SEO ranking factors">
             {elements.map((el, idx) => (
               <motion.div
                 key={idx}
                 whileHover={{ scale: 1.1, zIndex: 10 }}
+                whileFocus={{ scale: 1.1, zIndex: 10 }}
                 onMouseEnter={() => setActiveElement(el)}
-                className="w-16 h-16 sm:w-20 sm:h-20 cursor-pointer rounded-lg border border-white/10 flex flex-col items-center justify-center relative backdrop-blur-sm bg-white/5 transition-colors motion-reduce:duration-[0.01ms]"
+                onFocus={() => setActiveElement(el)}
+                onBlur={() => setActiveElement(null)}
+                tabIndex={0}
+                role="button"
+                aria-label={`${el.symbol}: ${el.name} - ${el.desc}`}
+                className="w-16 h-16 sm:w-20 sm:h-20 cursor-pointer rounded-lg border border-white/10 flex flex-col items-center justify-center relative backdrop-blur-sm bg-white/5 transition-colors motion-reduce:duration-[0.01ms] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                 style={{
                   borderColor:
                     activeElement?.symbol === el.symbol ? getCategoryColor(el.category) : '',
@@ -201,7 +207,7 @@ const RankingPeriodicTable: React.FC = () => {
                       ></div>
                     ))}
                   </div>
-                  <span className="text-xs text-gray-400 ml-1">Importance</span>
+                  <span className="text-xs text-gray-400 ms-1">Importance</span>
                 </div>
                 <p className="text-gray-300 text-lg leading-relaxed border-t border-white/10 pt-4">
                   {activeElement.desc}

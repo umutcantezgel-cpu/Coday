@@ -49,7 +49,12 @@ export const InformationGainWidget: React.FC<BenchmarkProps> = ({
           <div className="mt-1 h-3 w-full rounded-full bg-neutral-800">
             <div 
               className="h-full rounded-full bg-gradient-to-r from-red-500 to-orange-500" 
-              style={{ width: `${Math.min((parseFloat(uniqueLcp) / 5) * 100, 100)}%` }} 
+              style={{ width: `${Math.min((parseFloat(uniqueLcp) / 5) * 100, 100)}%` }}
+              role="progressbar"
+              aria-valuenow={parseFloat(uniqueLcp)}
+              aria-valuemin={0}
+              aria-valuemax={5}
+              aria-label={`Durchschnittliche Ladezeit ${uniqueLcp} Sekunden, kritisch`}
             />
           </div>
         </div>
@@ -62,7 +67,12 @@ export const InformationGainWidget: React.FC<BenchmarkProps> = ({
           <div className="mt-1 h-3 w-full rounded-full bg-neutral-800">
             <div 
               className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-teal-400" 
-              style={{ width: `${(codayTargetLcp / 5) * 100}%` }} 
+              style={{ width: `${(codayTargetLcp / 5) * 100}%` }}
+              role="progressbar"
+              aria-valuenow={codayTargetLcp}
+              aria-valuemin={0}
+              aria-valuemax={5}
+              aria-label={`Coday Ladezeit ${codayTargetLcp} Sekunden, exzellent`}
             />
           </div>
         </div>

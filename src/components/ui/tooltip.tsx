@@ -77,9 +77,12 @@ export function Tooltip({ content, children, className, position = 'top' }: Tool
       onMouseLeave={closeTooltip}
       onFocus={openTooltip}
       onBlur={closeTooltip}
-      aria-describedby={isOpen ? tooltipId : undefined}
     >
-      {children}
+      {React.isValidElement(children)
+        ? React.cloneElement(children, {
+            'aria-describedby': isOpen ? tooltipId : undefined,
+          } as React.HTMLAttributes<HTMLElement>)
+        : children}
 
       <AnimatePresence>
         {isOpen && (

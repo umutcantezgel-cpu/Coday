@@ -113,7 +113,7 @@ export const ReportDashboard: React.FC = () => {
     return (
       <div className="w-full max-w-4xl mx-auto px-4 py-32 text-center">
         <div className="w-24 h-24 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-6">
-          <OptimizedIcon icon={CloudSlash} className="text-red-500 text-5xl" />
+          <OptimizedIcon icon={CloudSlash} className="text-red-500 text-5xl" aria-hidden="true" />
         </div>
         <h2 className="text-3xl font-bold text-gray-900 mb-2">{t('dashboard.analysis_failed')}</h2>
 
@@ -210,7 +210,7 @@ export const ReportDashboard: React.FC = () => {
           (val: unknown) => typeof val === 'object' && (val as { score?: number })?.score === -1
         ) && (
           <div className="max-w-xl mx-auto mb-8 bg-orange-50 border border-orange-200 rounded-xl p-4 flex items-center gap-3 text-left">
-            <OptimizedIcon icon={Warning} className="text-orange-500" />
+            <OptimizedIcon icon={Warning} className="text-orange-500" aria-hidden="true" />
             <div className="text-sm text-orange-800">
               <strong>{t('dashboard.partial_failure')}</strong>{' '}
               {t('dashboard.partial_failure_desc')}
@@ -408,7 +408,7 @@ export const ReportDashboard: React.FC = () => {
                   </div>
                   <p className="text-gray-600 mb-3">{issue.description}</p>
                   <div className="flex items-center gap-2 text-sm text-primary font-medium">
-                    <OptimizedIcon icon={Lightbulb} className="text-base" />
+                    <OptimizedIcon icon={Lightbulb} className="text-base" aria-hidden="true" />
                     <span>{issue.fix}</span>
                   </div>
                 </div>

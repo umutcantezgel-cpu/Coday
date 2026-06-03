@@ -22,7 +22,7 @@ const InteractivePhoneMockup: React.FC = () => {
   return (
     <div className="flex justify-center items-center py-12">
       {/* Phone Frame */}
-      <div className="relative w-[300px] h-[600px] bg-gray-900 rounded-[3rem] shadow-[0_0_50px_rgba(0,0,0,0.2)] border-[8px] border-gray-900 overflow-hidden ring-4 ring-gray-200/20">
+      <div className="relative w-[300px] h-[600px] bg-gray-900 rounded-[3rem] shadow-[0_0_50px_rgba(0,0,0,0.2)] border-[8px] border-gray-900 overflow-hidden ring-4 ring-gray-200/20" role="img" aria-label="Interactive phone mockup demonstrating a mobile PWA app with home, shop, and profile screens">
         {/* Dynamic Notch */}
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-7 bg-black rounded-b-2xl z-50 transition motion-reduce:duration-[0.01ms] duration-300 origin-top hover:scale-[1.15] cursor-pointer flex items-center justify-center">
           <div className="w-16 h-1 bg-gray-800 rounded-full"></div>
@@ -42,9 +42,10 @@ const InteractivePhoneMockup: React.FC = () => {
             </div>
             <button
               onClick={() => setIsDarkMode(!isDarkMode)}
+              aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
               className={`active:scale-[0.97] w-8 h-8 rounded-full flex items-center justify-center transition-colors motion-reduce:duration-[0.01ms] ${isDarkMode ? 'bg-white/10 text-yellow-400' : 'bg-gray-200 text-gray-600'}`}
             >
-              <OptimizedIcon icon={isDarkMode ? Sun : Moon} className="text-sm" />
+              <OptimizedIcon icon={isDarkMode ? Sun : Moon} className="text-sm" aria-hidden="true" />
             </button>
           </div>
 
@@ -165,21 +166,27 @@ const InteractivePhoneMockup: React.FC = () => {
         >
           <button
             onClick={() => setActiveTab('home')}
+            aria-label="Home"
+            aria-pressed={activeTab === 'home'}
             className={`active:scale-[0.97] flex flex-col items-center gap-1 ${activeTab === 'home' ? 'text-blue-500' : 'opacity-40'}`}
           >
-            <OptimizedIcon icon={House} className="text-xl" />
+            <OptimizedIcon icon={House} className="text-xl" aria-hidden="true" />
           </button>
           <button
             onClick={() => setActiveTab('shop')}
+            aria-label="Shop"
+            aria-pressed={activeTab === 'shop'}
             className={`active:scale-[0.97] flex flex-col items-center gap-1 ${activeTab === 'shop' ? 'text-blue-500' : 'opacity-40'}`}
           >
-            <OptimizedIcon icon={ShoppingBag} className="text-xl" />
+            <OptimizedIcon icon={ShoppingBag} className="text-xl" aria-hidden="true" />
           </button>
           <button
             onClick={() => setActiveTab('profile')}
+            aria-label="Profile"
+            aria-pressed={activeTab === 'profile'}
             className={`active:scale-[0.97] flex flex-col items-center gap-1 ${activeTab === 'profile' ? 'text-blue-500' : 'opacity-40'}`}
           >
-            <OptimizedIcon icon={User} className="text-xl" />
+            <OptimizedIcon icon={User} className="text-xl" aria-hidden="true" />
           </button>
 
           {/* Home Indicator */}

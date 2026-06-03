@@ -92,8 +92,8 @@ export const SecurityGapWizard: React.FC = () => {
   const currentQuestion = QUESTIONS[step];
 
   return (
-    <div className="my-16 relative overflow-hidden rounded-[2.5rem] border border-gray-200 bg-white shadow-xl min-h-[400px] flex flex-col">
-      <div className="absolute top-0 left-0 w-full h-1 bg-gray-100">
+    <section className="my-16 relative overflow-hidden rounded-[2.5rem] border border-gray-200 bg-white shadow-xl min-h-[400px] flex flex-col" aria-label="Security Gap Assessment">
+      <div className="absolute top-0 left-0 w-full h-1 bg-gray-100" role="progressbar" aria-valuenow={step + (showResult ? 1 : 0)} aria-valuemin={0} aria-valuemax={QUESTIONS.length} aria-label={`Step ${step + 1} of ${QUESTIONS.length}`}>
         <motion.div
           className="h-full bg-blue-600"
           initial={{ scaleX: 0 }}
@@ -122,7 +122,7 @@ export const SecurityGapWizard: React.FC = () => {
 
               <h3 className="text-2xl font-bold text-gray-900 mb-8">{currentQuestion!.question}</h3>
 
-              <div className="space-y-3">
+              <div className="space-y-3" role="group" aria-label={currentQuestion!.question}>
                 {currentQuestion!.options.map((option, idx) => (
                   <button
                     key={idx}
@@ -149,6 +149,7 @@ export const SecurityGapWizard: React.FC = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               className="w-full max-w-lg"
+              aria-live="assertive"
             >
               <div
                 className={clsx(
@@ -203,7 +204,7 @@ export const SecurityGapWizard: React.FC = () => {
           )}
         </AnimatePresence>
       </div>
-    </div>
+    </section>
   );
 };
 

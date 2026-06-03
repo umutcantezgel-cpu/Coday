@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef, useEffect, ReactNode } from 'react';
+import React, { useState, useRef, useEffect, useId, ReactNode } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { cn } from '@/lib/utils';
 import { useFocusTrap } from '@/hooks/use-focus-trap';
@@ -11,6 +11,8 @@ interface PopoverProps {
   className?: string;
   position?: 'top' | 'bottom' | 'left' | 'right';
   align?: 'start' | 'center' | 'end';
+  /** Accessible label for the popover dialog. */
+  'aria-label'?: string;
 }
 
 /**
@@ -22,10 +24,12 @@ export function Popover({
   className,
   position = 'bottom',
   align = 'center',
+  'aria-label': ariaLabel,
 }: PopoverProps) {
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const trapRef = useFocusTrap(isOpen);
+  const popoverId = useId();
 
   useEffect(() => {
     if (!isOpen) return;
@@ -78,9 +82,30 @@ export function Popover({
 
   return (
     <div className="relative inline-block" ref={containerRef}>
-      <div onClick={() => setIsOpen(!isOpen)} aria-haspopup="dialog" aria-expanded={isOpen}>
-        {trigger}
-      </div>
+      {React.isValidElement(trigger) ? (
+        React.cloneElement(trigger as React.ReactElement<any>, {
+          onClick: (e: React.MouseEvent) => {
+            setIsOpen(!isOpen);
+            if ((trigger as React.ReactElement<any>).props.onClick) {
+              (trigger as React.ReactElement<any>).props.onClick(e);
+            }
+          },
+          'aria-haspopup': 'dialog',
+          'aria-expanded': isOpen,
+          'aria-controls': isOpen ? `popover-${popoverId}` : undefined,
+        })
+      ) : (
+        <button
+          type="button"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-haspopup="dialog"
+          aria-expanded={isOpen}
+          aria-controls={isOpen ? `popover-${popoverId}` : undefined}
+          className="inline-flex appearance-none bg-transparent border-none p-0 cursor-pointer"
+        >
+          {trigger}
+        </button>
+      )}
 
       <AnimatePresence>
         {isOpen && (
@@ -107,6 +132,8 @@ export function Popover({
               className
             )}
             role="dialog"
+            id={`popover-${popoverId}`}
+            aria-label={ariaLabel}
           >
             {content}
           </motion.div>

@@ -146,10 +146,9 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
   };
 
   return (
-    <header role="banner" className={`card-nav-container ${className}`} ref={navRef}>
+    <header className={`card-nav-container ${className}`} ref={navRef}>
       {/* Floating Pill */}
       <nav
-        role="navigation"
         className={`nav-pill ${isScrolled ? 'scrolled' : 'at-top'} ${!isVisible ? 'nav-hidden' : ''}`}
         aria-label="Hauptnavigation"
       >
@@ -158,6 +157,8 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
             src={CodayLogo}
             alt=""
             aria-hidden="true"
+            width={48}
+            height={48}
             className="logo-icon w-12 h-12 object-contain"
             priority={true}
             fetchPriority="high"

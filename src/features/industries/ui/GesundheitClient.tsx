@@ -37,6 +37,8 @@ const Gesundheit: React.FC = () => {
           <OptimizedImage
             src={IMAGES.industries.healthcare.hero}
             alt="Medical professional with digital tools"
+            width={1920}
+            height={1080}
             className="w-full h-full object-cover opacity-10"
             priority
           />

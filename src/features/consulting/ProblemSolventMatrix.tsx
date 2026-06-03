@@ -51,11 +51,11 @@ export const ProblemSolventMatrix: React.FC<ProblemSolventMatrixProps> = ({
   ];
 
   return (
-    <div className="w-full max-w-5xl mx-auto">
+    <div className="w-full max-w-5xl mx-auto" role="region" aria-label="Comparison: Standard Dev Shop vs Coday Strategy Partner">
       {/* Header */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 text-center md:text-left">
         <div className="md:col-span-1 flex items-center justify-center md:justify-start">
-          <h3 className="text-2xl font-bold text-white">Der Unterschied</h3>
+          <h2 className="text-2xl font-bold text-white">Der Unterschied</h2>
         </div>
         <div className="md:col-span-1 bg-red-500/10 py-2 rounded-t-xl md:rounded-xl border border-red-500/20 text-red-400 font-mono text-sm uppercase tracking-wider flex items-center justify-center gap-2">
           <OptimizedIcon icon={XCircle} className="w-4 h-4" />

@@ -93,7 +93,7 @@ export const HeroSection: React.FC = () => {
                 <span className="relative z-10 flex items-center justify-center w-full">
                   {tCommon('buttons.start_project')}
                   <div className="w-8 h-8 rounded-full bg-black/10 dark:bg-white/10 flex items-center justify-center ml-3 transition-transform motion-reduce:duration-[0.01ms] group-hover:translate-x-1 group-hover:-translate-y-[1px] group-hover:scale-105">
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </div>
                 </span>
               </Link>
@@ -116,7 +116,7 @@ export const HeroSection: React.FC = () => {
         </div>
 
         {/* Right: Interactive Staggered Cards (Editorial Split / Asymmetrical Bento feel) */}
-        <div className="w-full md:w-1/2 relative h-[400px] sm:h-[500px] flex items-center justify-center">
+        <div className="w-full md:w-1/2 relative h-[400px] sm:h-[500px] flex items-center justify-center" aria-hidden="true">
           {/* Main Card (Double Bezel) */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] sm:w-[320px] bg-black/5 p-2 rounded-[2rem] shadow-xl z-20">
             <div className="bg-white p-6 rounded-[calc(2rem-0.5rem)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)] flex flex-col gap-4">
@@ -124,9 +124,9 @@ export const HeroSection: React.FC = () => {
                 {'</>'}
               </div>
               <div>
-                <h2 className="font-display font-bold text-xl text-secondary-900">
+                <p className="font-display font-bold text-xl text-secondary-900">
                   Instant Load Times
-                </h2>
+                </p>
                 <p className="text-sm text-secondary-600 mt-2">
                   Server components delivering pages in under 50ms.
                 </p>

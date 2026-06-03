@@ -16,7 +16,10 @@ interface DrawerProps {
   className?: string;
   position?: 'right' | 'left' | 'bottom';
   hideCloseButton?: boolean;
+  /** Accessible label for the drawer. Required if no title is provided. */
+  'aria-label'?: string;
 }
+
 
 const Portal = ({ children }: { children: React.ReactNode }) => {
   return createPortal(children, document.body);
@@ -33,7 +36,9 @@ export function Drawer({
   className,
   position = 'right',
   hideCloseButton = false,
+  'aria-label': ariaLabel,
 }: DrawerProps) {
+  const drawerId = React.useId();
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
     // eslint-disable-next-line
@@ -52,23 +57,23 @@ export function Drawer({
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isOpen, onClose]);
 
-  const slideVariants: Record<string, any> = {
+  const slideVariants = {
     right: {
       initial: { transform: 'translateX(100%)' },
       animate: { transform: 'translateX(0%)' },
-      exit: { transform: 'translateX(100%)', transition: { duration: 0.15, ease: 'easeOut' } },
+      exit: { transform: 'translateX(100%)', transition: { duration: 0.15, ease: 'easeOut' as const } },
     },
     left: {
       initial: { transform: 'translateX(-100%)' },
       animate: { transform: 'translateX(0%)' },
-      exit: { transform: 'translateX(-100%)', transition: { duration: 0.15, ease: 'easeOut' } },
+      exit: { transform: 'translateX(-100%)', transition: { duration: 0.15, ease: 'easeOut' as const } },
     },
     bottom: {
       initial: { transform: 'translateY(100%)' },
       animate: { transform: 'translateY(0%)' },
-      exit: { transform: 'translateY(100%)', transition: { duration: 0.15, ease: 'easeOut' } },
+      exit: { transform: 'translateY(100%)', transition: { duration: 0.15, ease: 'easeOut' as const } },
     },
-  };
+  } as const;
 
   const positionClasses = {
     right: 'inset-y-0 right-0 h-full w-full max-w-md border-l',
@@ -116,11 +121,12 @@ export function Drawer({
               )}
               role="dialog"
               aria-modal="true"
-              aria-labelledby={title ? 'drawer-title' : undefined}
+              aria-labelledby={title ? `drawer-title-${drawerId}` : undefined}
+              aria-label={!title ? (ariaLabel || 'Drawer') : undefined}
             >
               <div className="flex items-center justify-between p-4 border-b border-gray-100">
                 {title ? (
-                  <h2 id="drawer-title" className="text-lg font-semibold text-gray-900">
+                  <h2 id={`drawer-title-${drawerId}`} className="text-lg font-semibold text-gray-900">
                     {title}
                   </h2>
                 ) : (

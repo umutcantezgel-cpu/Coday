@@ -10,7 +10,7 @@ type BlurTextProps = {
   rootMargin?: string;
   animationFrom?: Record<string, string | number>;
   animationTo?: Array<Record<string, string | number>>;
-  easing?: any;
+  easing?: string;
   onAnimationComplete?: () => void;
   stepDuration?: number;
   direction?: 'top' | 'bottom';

@@ -80,7 +80,7 @@ export const TeamSection: React.FC = () => {
                       key={fact.label}
                       className="inline-flex items-center gap-1.5 text-xs text-gray-400 bg-white/[0.05] px-3 py-1.5 rounded-full"
                     >
-                      <fact.icon size={14} className="text-primary/70" />
+                      <fact.icon size={14} className="text-primary/70" aria-hidden="true" />
                       {fact.label}
                     </span>
                   ))}

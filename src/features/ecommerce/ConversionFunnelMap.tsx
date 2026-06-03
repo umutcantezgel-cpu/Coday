@@ -51,7 +51,11 @@ const ConversionFunnelMap: React.FC = () => {
         We fix the leaks.
       </h3>
 
-      <div className="flex flex-col items-center max-w-2xl mx-auto space-y-2">
+      <div
+        className="flex flex-col items-center max-w-2xl mx-auto space-y-2"
+        role="list"
+        aria-label="Conversion funnel steps: from 100% landing visitors to 3.6% purchase"
+      >
         {steps.map((step, idx) => (
           <motion.div
             key={idx}
@@ -60,25 +64,33 @@ const ConversionFunnelMap: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: idx * 0.1 }}
-            className="w-full relative group cursor-pointer"
+            className="w-full relative group"
+            role="listitem"
           >
             {/* Funnel Bar */}
-            <div
-              className="bg-gradient-to-r mx-auto rounded-xl flex items-center justify-between px-6 py-4 shadow-sm transition motion-reduce:duration-[0.01ms] duration-300 group-hover:scale-105 group-hover:shadow-lg relative z-10"
+            <button
+              type="button"
+              onMouseEnter={() => setHoveredStep(idx)}
+              onMouseLeave={() => setHoveredStep(null)}
+              onFocus={() => setHoveredStep(idx)}
+              onBlur={() => setHoveredStep(null)}
+              className="bg-gradient-to-r mx-auto rounded-xl flex items-center justify-between px-6 py-4 shadow-sm transition motion-reduce:duration-[0.01ms] duration-300 group-hover:scale-105 group-hover:shadow-lg relative z-10 w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               style={{
                 width: `${100 - idx * 15}%`,
                 minWidth: '300px',
                 background: `linear-gradient(to ${isRtl ? 'left' : 'right'}, ${step.color}, #ffffff)`,
               }}
+              aria-describedby={`funnel-tooltip-${idx}`}
             >
               <span className="font-bold text-white drop-shadow-md">{step.name}</span>
               <span className="font-mono font-bold text-white bg-black/10 px-2 py-1 rounded">
                 {step.userCount}
               </span>
-            </div>
+            </button>
 
-            {/* Tooltip / Fix Reveal */}
             <div
+              id={`funnel-tooltip-${idx}`}
+              role="tooltip"
               className={`absolute top-1/2 -translate-y-1/2 w-64 bg-surface-dark text-white p-4 rounded-xl shadow-xl border border-gray-700 transition motion-reduce:duration-[0.01ms] duration-300 z-20
                                 ${isRtl ? 'right-full mr-4' : 'left-full ml-4'}
                                 ${

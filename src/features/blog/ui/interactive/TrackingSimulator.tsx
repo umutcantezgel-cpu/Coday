@@ -19,7 +19,7 @@ export const TrackingSimulator: React.FC = () => {
   };
 
   return (
-    <div className="my-16 relative overflow-hidden rounded-[2.5rem] border border-gray-200 bg-white shadow-xl">
+    <section className="my-16 relative overflow-hidden rounded-[2.5rem] border border-gray-200 bg-white shadow-xl" aria-label="Tracking Simulator">
       <div className="p-8 md:p-12">
         <div className="flex items-center gap-4 mb-8">
           <div className="p-3 rounded-full bg-indigo-50 text-indigo-600">
@@ -44,6 +44,7 @@ export const TrackingSimulator: React.FC = () => {
                 ? 'border-red-500 bg-red-50 text-red-900'
                 : 'border-gray-200 hover:border-red-200 text-gray-600'
             )}
+            aria-pressed={mode === 'client'}
           >
             <div className="flex justify-between items-start mb-4">
               <Cookie
@@ -75,6 +76,7 @@ export const TrackingSimulator: React.FC = () => {
                 ? 'border-green-500 bg-green-50 text-green-900'
                 : 'border-gray-200 hover:border-green-200 text-gray-600'
             )}
+            aria-pressed={mode === 'server'}
           >
             <div className="flex justify-between items-start mb-4">
               <HardDrives
@@ -94,7 +96,7 @@ export const TrackingSimulator: React.FC = () => {
             </p>
           </button>
 
-          <div className="p-6 rounded-2xl border border-gray-200 bg-gray-50 flex flex-col justify-center text-center">
+          <div className="p-6 rounded-2xl border border-gray-200 bg-gray-50 flex flex-col justify-center text-center" aria-live="polite">
             <span className="text-xs font-bold uppercase text-gray-400 mb-2">Data Loss</span>
             <span
               className={clsx(
@@ -126,17 +128,17 @@ export const TrackingSimulator: React.FC = () => {
           </div>
 
           {/* Path */}
-          <div className="flex-1 relative h-0.5 bg-gray-700 mx-4">
+          <div className="flex-1 relative h-0.5 bg-gray-700 mx-4 @container">
             {/* Data Packet */}
             <motion.div
               key={mode} // Reset animation on mode change
               className={clsx(
-                'absolute top-1/2 -mt-3 w-6 h-6 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.5)] z-20',
+                'absolute left-0 top-1/2 -mt-3 w-6 h-6 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.5)] z-20',
                 mode === 'client' ? 'bg-red-500 text-white' : 'bg-green-500 text-white'
               )}
-              initial={{ left: '0%', opacity: 1, scale: 1 }}
+              initial={{ x: '0cqw', opacity: 1, scale: 1 }}
               animate={{
-                left: mode === 'client' ? '50%' : '100%',
+                x: mode === 'client' ? '50cqw' : '100cqw',
                 opacity: mode === 'client' ? [1, 1, 0] : 1, // Fade out if blocked
                 scale: mode === 'client' ? [1, 1, 0] : 1,
               }}
@@ -177,7 +179,7 @@ export const TrackingSimulator: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

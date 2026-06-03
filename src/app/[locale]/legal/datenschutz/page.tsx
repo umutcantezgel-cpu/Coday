@@ -30,7 +30,7 @@ export default async function DatenschutzPage({ params }: { params: Promise<{ lo
   const isEn = locale === 'en';
 
   return (
-    <main className="max-w-3xl mx-auto px-4 py-20">
+    <div className="max-w-3xl mx-auto px-4 py-20">
       <h1 className="text-3xl font-bold mb-8">
         {isEn ? 'Privacy Policy' : 'Datenschutzerklärung'}
       </h1>
@@ -77,6 +77,6 @@ export default async function DatenschutzPage({ params }: { params: Promise<{ lo
           {isEn ? 'Last updated: May 2026' : 'Stand: Mai 2026'}
         </p>
       </section>
-    </main>
+    </div>
   );
 }

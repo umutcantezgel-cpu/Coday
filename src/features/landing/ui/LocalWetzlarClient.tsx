@@ -20,7 +20,7 @@ const LocalWetzlar: React.FC = () => {
       <section className="relative pt-32 pb-24 px-4 overflow-hidden bg-white">
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <span className="text-primary font-bold tracking-wider uppercase text-sm mb-6 block flex items-center justify-center gap-2">
-            <MapPin size={20} weight="fill" /> Local Wetzlar Offer
+            <MapPin size={20} weight="fill" aria-hidden="true" /> Local Wetzlar Offer
           </span>
           <h1 className="font-display font-black text-4xl sm:text-6xl text-secondary mb-6 tracking-tight">
             Webdesign Wetzlar:
@@ -46,7 +46,7 @@ const LocalWetzlar: React.FC = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow motion-reduce:duration-[0.01ms]">
               <div className="bg-primary/10 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                <Lightning size={32} className="text-primary" weight="duotone" />
+                <Lightning size={32} className="text-primary" weight="duotone" aria-hidden="true" />
               </div>
               <h3 className="text-xl font-bold text-secondary mb-3">Maximale Performance</h3>
               <p className="text-slate-600">
@@ -56,7 +56,7 @@ const LocalWetzlar: React.FC = () => {
             </div>
             <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow motion-reduce:duration-[0.01ms]">
               <div className="bg-primary/10 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                <ChartLineUp size={32} className="text-primary" weight="duotone" />
+                <ChartLineUp size={32} className="text-primary" weight="duotone" aria-hidden="true" />
               </div>
               <h3 className="text-xl font-bold text-secondary mb-3">Auf Conversion optimiert</h3>
               <p className="text-slate-600">
@@ -65,7 +65,7 @@ const LocalWetzlar: React.FC = () => {
             </div>
             <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow motion-reduce:duration-[0.01ms]">
               <div className="bg-primary/10 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                <BuildingOffice size={32} className="text-primary" weight="duotone" />
+                <BuildingOffice size={32} className="text-primary" weight="duotone" aria-hidden="true" />
               </div>
               <h3 className="text-xl font-bold text-secondary mb-3">Regionale Dominanz</h3>
               <p className="text-slate-600">

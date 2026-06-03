@@ -98,7 +98,7 @@ export default function PersonaPage() {
 
           <div className="relative z-10">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 rounded-full text-slate-600 font-semibold text-sm mb-6">
-              <OptimizedIcon icon={Target} className="w-4 h-4 text-primary" />
+              <OptimizedIcon icon={Target} className="w-4 h-4 text-primary" aria-hidden="true" />
               <span>Speziallösung für: {personaData.persona}</span>
             </div>
 
@@ -115,21 +115,21 @@ export default function PersonaPage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               <div className="flex flex-col p-5 bg-slate-50 rounded-2xl border border-slate-100">
-                <OptimizedIcon icon={Lightning} className="w-8 h-8 text-primary mb-3" />
+                <OptimizedIcon icon={Lightning} className="w-8 h-8 text-primary mb-3" aria-hidden="true" />
                 <span className="text-sm text-slate-500 font-semibold uppercase tracking-wider mb-1">
                   Performance
                 </span>
                 <span className="font-bold text-lg text-secondary">Enterprise Speed</span>
               </div>
               <div className="flex flex-col p-5 bg-slate-50 rounded-2xl border border-slate-100">
-                <OptimizedIcon icon={ShieldCheck} className="w-8 h-8 text-accent mb-3" />
+                <OptimizedIcon icon={ShieldCheck} className="w-8 h-8 text-accent mb-3" aria-hidden="true" />
                 <span className="text-sm text-slate-500 font-semibold uppercase tracking-wider mb-1">
                   Compliance
                 </span>
                 <span className="font-bold text-lg text-secondary">100% DSGVO-konform</span>
               </div>
               <div className="flex flex-col p-5 bg-slate-50 rounded-2xl border border-slate-100 sm:col-span-2 lg:col-span-1">
-                <OptimizedIcon icon={RocketLaunch} className="w-8 h-8 text-primary mb-3" />
+                <OptimizedIcon icon={RocketLaunch} className="w-8 h-8 text-primary mb-3" aria-hidden="true" />
                 <span className="text-sm text-slate-500 font-semibold uppercase tracking-wider mb-1">
                   Time to Value
                 </span>
@@ -149,7 +149,7 @@ export default function PersonaPage() {
             className="bg-red-50/50 rounded-3xl p-8 border border-red-100"
           >
             <h2 className="font-display font-bold text-2xl text-secondary mb-6 flex items-center gap-3">
-              <OptimizedIcon icon={WarningCircle} className="w-8 h-8 text-red-500" />
+              <OptimizedIcon icon={WarningCircle} className="w-8 h-8 text-red-500" aria-hidden="true" />
               Kennen Sie diese Herausforderungen?
             </h2>
             <ul className="space-y-4">
@@ -172,7 +172,7 @@ export default function PersonaPage() {
             className="bg-green-50/50 rounded-3xl p-8 border border-green-100"
           >
             <h2 className="font-display font-bold text-2xl text-secondary mb-6 flex items-center gap-3">
-              <OptimizedIcon icon={Trophy} className="w-8 h-8 text-green-500" />
+              <OptimizedIcon icon={Trophy} className="w-8 h-8 text-green-500" aria-hidden="true" />
               Ihre neuen digitalen Ziele
             </h2>
             <ul className="space-y-4">

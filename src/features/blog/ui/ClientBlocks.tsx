@@ -181,7 +181,7 @@ export const ImageBlockRenderer: React.FC<{ block: ImageBlock }> = ({ block }) =
         )}
       >
         <motion.div style={{ y, scale: 1.1 }} className="absolute inset-0 w-full h-full">
-          <OptimizedImage src={block.src} alt={block.alt} className="w-full h-full object-cover" />
+          <OptimizedImage src={block.src} alt={block.alt} width={1200} height={675} className="w-full h-full object-cover" />
         </motion.div>
       </div>
       {block.caption && (

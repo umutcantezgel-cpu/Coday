@@ -59,7 +59,7 @@ export function HeadlessCmsClient() {
           </div>
 
           {/* Visual: Abstract Content Connection */}
-          <div className="relative">
+          <div className="relative" aria-hidden="true">
             <GlareHover className="rounded-3xl overflow-hidden shadow-2xl bg-slate-900 border border-slate-800 p-8">
               <div className="flex justify-between items-center mb-12">
                 <div className="text-white font-mono text-sm opacity-50">Content Source</div>
@@ -123,7 +123,7 @@ export function HeadlessCmsClient() {
 
           <MagicBento className="grid-cols-1 md:grid-cols-3 gap-6 h-auto md:h-[600px]">
             <BentoCard className="md:col-span-2 md:row-span-1 bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20">
-              <div className="absolute right-4 top-4 opacity-20">
+              <div aria-hidden="true" className="absolute right-4 top-4 opacity-20">
                 <OptimizedIcon icon={ShareNetwork} className="text-6xl text-sapphire" />
               </div>
               <div className="relative z-10 p-6 flex flex-col justify-end h-full">
@@ -136,7 +136,7 @@ export function HeadlessCmsClient() {
               </div>
             </BentoCard>
             <BentoCard className="md:col-span-1 md:row-span-1 bg-slate-50">
-              <div className="absolute right-4 top-4 opacity-20">
+              <div aria-hidden="true" className="absolute right-4 top-4 opacity-20">
                 <OptimizedIcon icon={Lightning} className="text-6xl text-yellow-500" />
               </div>
               <div className="relative z-10 p-6 flex flex-col justify-end h-full">
@@ -149,7 +149,7 @@ export function HeadlessCmsClient() {
               </div>
             </BentoCard>
             <BentoCard className="md:col-span-1 md:row-span-1 bg-slate-50">
-              <div className="absolute right-4 top-4 opacity-20">
+              <div aria-hidden="true" className="absolute right-4 top-4 opacity-20">
                 <OptimizedIcon icon={ShieldCheck} className="text-6xl text-green-500" />
               </div>
               <div className="relative z-10 p-6 flex flex-col justify-end h-full">
@@ -162,7 +162,7 @@ export function HeadlessCmsClient() {
               </div>
             </BentoCard>
             <BentoCard className="md:col-span-2 md:row-span-1 bg-slate-900 text-white">
-              <div className="absolute right-4 top-4 opacity-20">
+              <div aria-hidden="true" className="absolute right-4 top-4 opacity-20">
                 <OptimizedIcon icon={Code} className="text-6xl text-blue-400" />
               </div>
               <div className="relative z-10 p-6 flex flex-col justify-end h-full">
@@ -294,7 +294,7 @@ export function HeadlessCmsClient() {
               const faqItems = t.raw('headless_cms_page.faq.items');
               if (!Array.isArray(faqItems)) return null;
 
-              return faqItems.map((item: any, i: number) => (
+              return faqItems.map((item: { q: string; a: string }, i: number) => (
                 <div key={i} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
                   <h3 className="text-lg font-bold mb-3">{item.q}</h3>
                   <p className="text-slate-600 leading-relaxed">{item.a}</p>

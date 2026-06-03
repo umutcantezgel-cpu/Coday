@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import Image from 'next/image';
 
 export interface TechItem {
   name: string;
@@ -67,13 +68,14 @@ export const TechStackShowcase: React.FC<TechStackShowcaseProps> = ({
                     key={index}
                     className="group flex flex-col items-center justify-center p-6 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition motion-reduce:duration-[0.01ms] duration-300 hover:-translate-y-1"
                   >
-                    <div className="h-16 w-16 mb-4 flex items-center justify-center grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition motion-reduce:duration-[0.01ms] duration-500">
+                    <div className="h-16 w-16 mb-4 flex items-center justify-center grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition motion-reduce:duration-[0.01ms] duration-500 relative">
                       {tech.logoUrl ? (
-                        <img
+                        <Image
                           src={tech.logoUrl}
                           alt=""
                           aria-hidden="true"
-                          className="max-h-full max-w-full object-contain"
+                          fill
+                          className="object-contain"
                         />
                       ) : (
                         <div

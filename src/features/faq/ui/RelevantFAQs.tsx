@@ -69,6 +69,8 @@ export const RelevantFAQs: React.FC<Props> = ({ serviceId, title, className = ''
               <button
                 onClick={() => toggleItem(faq.id)}
                 className="active:scale-[0.97] w-full flex justify-between items-center p-6 text-left focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:rounded-xl"
+                aria-expanded={openItem === faq.id}
+                aria-controls={`relevant-faq-answer-${faq.id}`}
               >
                 <span className="font-display font-bold text-lg text-slate-900  pr-8">
                   {faq.question}
@@ -80,7 +82,7 @@ export const RelevantFAQs: React.FC<Props> = ({ serviceId, title, className = ''
                 />
               </button>
               {openItem === faq.id && (
-                <div className="px-6 pb-6 text-slate-600  leading-relaxed prose prose-blue  max-w-none">
+                <div id={`relevant-faq-answer-${faq.id}`} role="region" className="px-6 pb-6 text-slate-600  leading-relaxed prose prose-blue  max-w-none">
                   <div
                     dangerouslySetInnerHTML={{
                       __html: faq.answer

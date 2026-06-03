@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react'
 import { useTranslations } from 'next-intl';
 import { Link as NavLink } from '@/i18n/navigation';
 import { servicesData } from '@/shared/data/services';
-import { OptimizedImage } from '@/shared/ui/OptimizedImage';
+import Image from 'next/image';
 import { webDevImages } from '@/shared/data/serviceImages';
 import BlurText from '@/shared/ui/BlurText';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
@@ -119,13 +119,15 @@ export function WebDevelopmentClient() {
             </p>
           </div>
           <div className="relative hidden lg:block">
-            <div className="absolute inset-0 bg-primary/10 rounded-3xl transform rotate-2 scale-105"></div>
+            <div aria-hidden="true" className="absolute inset-0 bg-primary/10 rounded-3xl transform rotate-2 scale-105"></div>
             {webDevImages.hero && (
-              <OptimizedImage
+              <Image
                 src={webDevImages.hero.src}
                 alt={t(webDevImages.hero.alt as any)}
-                className="relative rounded-3xl shadow-flat-lg w-full transform -rotate-1 hover:rotate-0 transition motion-reduce:duration-[0.01ms] duration-500 bg-white p-2"
-                priority
+                width={800}
+                height={600}
+                className="relative rounded-3xl shadow-flat-lg w-full h-auto transform -rotate-1 hover:rotate-0 transition motion-reduce:duration-[0.01ms] duration-500 bg-white p-2"
+                priority={true}
               />
             )}
           </div>

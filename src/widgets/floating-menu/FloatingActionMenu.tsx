@@ -33,8 +33,9 @@ export const FloatingActionMenu: React.FC = () => {
   };
 
   return (
-    <div
+    <nav
       id="fab-container"
+      aria-label="Schnellzugriff"
       className="floating-action-menu fixed bottom-6 right-6 z-max flex flex-col items-end gap-4"
     >
       {/* Social Media Sub-Menu */}
@@ -98,6 +99,8 @@ export const FloatingActionMenu: React.FC = () => {
               exit={{ opacity: 0, y: 20, scale: 0.8 }}
               transition={{ delay: 0.1 }}
               onClick={handleSocialClick}
+              aria-expanded={showSocials}
+              aria-haspopup="true"
               className="bg-white text-gray-800 p-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition motion-reduce:duration-[0.01ms] flex items-center gap-3 group relative"
               aria-label="Social Media anzeigen"
             >
@@ -146,6 +149,8 @@ export const FloatingActionMenu: React.FC = () => {
       {/* Main Toggle Button */}
       <motion.button
         onClick={toggleMenu}
+        aria-expanded={isOpen}
+        aria-haspopup="true"
         className={`w-16 h-16 rounded-full shadow-2xl flex items-center justify-center transition motion-reduce:duration-[0.01ms] duration-300 z-max
                     ${
                       isOpen
@@ -153,7 +158,7 @@ export const FloatingActionMenu: React.FC = () => {
                         : 'bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white hover:scale-110'
                     }`}
         whileTap={{ scale: 0.9 }}
-        aria-label={isOpen ? 'Menü schließen' : 'Menü öffnen'}
+        aria-label={isOpen ? 'Schnellzugriff-Menü schließen' : 'Schnellzugriff-Menü öffnen'}
       >
         {isOpen ? (
           <X className="w-8 h-8" />
@@ -165,6 +170,6 @@ export const FloatingActionMenu: React.FC = () => {
           </div>
         )}
       </motion.button>
-    </div>
+    </nav>
   );
 };

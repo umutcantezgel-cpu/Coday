@@ -65,7 +65,7 @@ const Presse: React.FC = () => {
                 Presseveröffentlichungen.
               </p>
               {/* Logo Grid placeholder */}
-              <div className="flex flex-wrap justify-center gap-8 opacity-30 grayscale">
+              <div className="flex flex-wrap justify-center gap-8 opacity-30 grayscale" aria-hidden="true">
                 <div className="h-12 w-32 bg-gray-200 rounded animate-pulse motion-reduce:animate-none"></div>
                 <div className="h-12 w-32 bg-gray-200 rounded animate-pulse motion-reduce:animate-none"></div>
                 <div className="h-12 w-32 bg-gray-200 rounded animate-pulse motion-reduce:animate-none"></div>
@@ -98,13 +98,13 @@ const Presse: React.FC = () => {
           {/* Press Kit Download */}
           <section>
             <div className="bg-gray-900 rounded-3xl p-10 text-center relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 blur-[100px] rounded-full pointer-events-none" />
+              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 blur-[100px] rounded-full pointer-events-none" aria-hidden="true" />
               <h2 className="text-3xl font-bold text-white mb-4 relative z-10">Press Kit</h2>
               <p className="text-gray-400 mb-8 max-w-xl mx-auto relative z-10">
                 Laden Sie unser offizielles Press Kit herunter. Es enthält hochauflösende Logos,
                 Gründerfotos und Kurzprofile von Coday.
               </p>
-              <button className="active:scale-[0.97] relative z-10 inline-flex items-center gap-2 bg-primary text-white font-bold py-3 px-8 rounded-xl hover:bg-primary/90 transition-colors motion-reduce:duration-[0.01ms]">
+              <button className="active:scale-[0.97] relative z-10 inline-flex items-center gap-2 bg-primary text-white font-bold py-3 px-8 rounded-xl hover:bg-primary/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-colors motion-reduce:duration-[0.01ms]">
                 <OptimizedIcon icon={Download} className="text-xl" />
                 Press Kit Herunterladen
               </button>

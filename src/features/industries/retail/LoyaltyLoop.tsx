@@ -20,7 +20,7 @@ const LoyaltyLoop: React.FC = () => {
 
       <div className="relative z-10 text-center mb-8">
         <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/20 text-primary mb-4">
-          <Icon name="repeat" className="w-6 h-6" />
+          <Icon name="repeat" className="w-6 h-6" aria-hidden="true" />
         </div>
         <h3 className="font-display font-bold text-2xl text-white mb-2">
           {t('ecommerce-retail.features.loyalty_loop.title')}

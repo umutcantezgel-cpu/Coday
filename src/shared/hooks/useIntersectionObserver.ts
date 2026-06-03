@@ -1,5 +1,4 @@
 'use client';
-'use client';
 import { useEffect, useRef, useState } from 'react';
 
 interface UseIntersectionObserverProps {
@@ -13,8 +12,10 @@ export function useIntersectionObserver({
   rootMargin = '50px 0px -50px 0px',
   triggerOnce = true,
 }: UseIntersectionObserverProps = {}) {
-  const [isVisible, setIsVisible] = useState(false);
+  // Start visible for no-JS fallback and SSR — JS will hide before observing
+  const [isVisible, setIsVisible] = useState(true);
   const ref = useRef<HTMLDivElement | null>(null);
+  const initializedRef = useRef(false);
 
   useEffect(() => {
     const element = ref.current;
@@ -23,12 +24,23 @@ export function useIntersectionObserver({
     // Check if user prefers reduced motion
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) {
-      requestAnimationFrame(() => setIsVisible(true));
+      // Already true from initial state — no setState needed
       return;
     }
 
+    // Reset initialization flag
+    initializedRef.current = false;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
+        if (!initializedRef.current) {
+          // First callback — if not intersecting, hide the element
+          initializedRef.current = true;
+          if (!entry.isIntersecting) {
+            setIsVisible(false);
+            return;
+          }
+        }
         if (entry.isIntersecting) {
           setIsVisible(true);
           if (triggerOnce) {

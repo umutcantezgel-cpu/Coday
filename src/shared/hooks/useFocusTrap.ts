@@ -2,11 +2,10 @@ import { useEffect, useRef } from 'react';
 
 /**
  * Hook to trap focus within a container when active.
- * Handles Tab and Shift+Tab to cycle focus.
- * Restoration of focus on unmount is handled by the caller or browser default behavior,
- * but explicit restoration is often better managed by the parent component.
+ * Handles Tab and Shift+Tab to cycle focus, and optionally ESC to close.
+ * Restoration of focus on unmount is handled automatically.
  */
-export const useFocusTrap = (isActive: boolean) => {
+export const useFocusTrap = (isActive: boolean, onEscape?: () => void) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const previousFocus = useRef<HTMLElement | null>(null);
 
@@ -25,6 +24,12 @@ export const useFocusTrap = (isActive: boolean) => {
       }
 
       const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === 'Escape' && onEscape) {
+          e.preventDefault();
+          onEscape();
+          return;
+        }
+
         if (e.key !== 'Tab') return;
 
         const focusable = containerRef.current?.querySelectorAll(
@@ -60,7 +65,8 @@ export const useFocusTrap = (isActive: boolean) => {
       };
     }
     return undefined;
-  }, [isActive]);
+  }, [isActive, onEscape]);
 
   return containerRef;
 };
+

@@ -39,6 +39,7 @@ const OmnichannelStrategies: React.FC = () => {
           <button
             key={key}
             onClick={() => setActiveStrategy(key)}
+            aria-pressed={activeStrategy === key}
             className={`active:scale-[0.97] px-6 py-2 rounded-full border text-sm font-bold transition motion-reduce:duration-[0.01ms] ${activeStrategy === key ? 'bg-primary border-primary text-white scale-105 shadow-md' : 'bg-white border-gray-200 text-slate-500 hover:bg-gray-50 hover:text-secondary'}`}
           >
             {data.title}

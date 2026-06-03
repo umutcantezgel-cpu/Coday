@@ -75,8 +75,27 @@ export const TenderWizard: React.FC = () => {
           <p className="text-slate-400 mt-4 max-w-2xl mx-auto">{t('wizard.description')}</p>
         </div>
 
-        <div className="bg-slate-800/50 backdrop-blur-xl border border-slate-700 rounded-2xl p-8 md:p-12 min-h-[400px] flex flex-col justify-center relative overflow-hidden">
+        <div
+          role="group"
+          aria-label={t('wizard.headline')}
+          className="bg-slate-800/50 backdrop-blur-xl border border-slate-700 rounded-2xl p-8 md:p-12 min-h-[400px] flex flex-col justify-center relative overflow-hidden"
+        >
+          {/* Step Progress Indicator */}
+          <div className="absolute top-4 left-1/2 -translate-x-1/2 flex items-center gap-2" role="list" aria-label={`Schritt ${step === 'budget' ? 1 : step === 'type' ? 2 : 3} von 3`}>
+            {(['budget', 'type', 'result'] as const).map((s, idx) => (
+              <div key={s} className="flex items-center" role="listitem">
+                <div
+                  className={`w-3 h-3 rounded-full transition-colors motion-reduce:duration-[0.01ms] ${
+                    s === step ? 'bg-blue-500' : (step === 'type' && s === 'budget') || (step === 'result') ? 'bg-blue-500/50' : 'bg-slate-600'
+                  }`}
+                  aria-current={s === step ? 'step' : undefined}
+                />
+                {idx < 2 && <div className="w-6 h-px bg-slate-600 mx-1" aria-hidden="true" />}
+              </div>
+            ))}
+          </div>
           <AnimatePresence mode="wait">
+            <div aria-live="polite">
             {step === 'budget' && (
               <motion.div
                 key="budget"
@@ -115,9 +134,10 @@ export const TenderWizard: React.FC = () => {
               >
                 <button
                   onClick={() => setStep('budget')}
+                  aria-label="Zurück zum vorherigen Schritt"
                   className="active:scale-[0.97] mb-8 text-slate-400 hover:text-white flex items-center gap-2 text-sm"
                 >
-                  <ArrowLeft /> Zurück
+                  <ArrowLeft aria-hidden="true" /> Zurück
                 </button>
                 <h3 className="text-xl font-bold text-white mb-8 text-center">
                   {t('wizard.steps.type.question')}
@@ -180,6 +200,7 @@ export const TenderWizard: React.FC = () => {
                 </div>
               </motion.div>
             )}
+          </div>
           </AnimatePresence>
         </div>
       </div>

@@ -170,7 +170,7 @@ export default function PricingBundlePage() {
             <div className="flex flex-col gap-4 w-full md:w-auto">
               <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/10 flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0">
-                  <OptimizedIcon icon={Clock} className="w-6 h-6 text-white" />
+                  <OptimizedIcon icon={Clock} className="w-6 h-6 text-white" aria-hidden="true" />
                 </div>
                 <div>
                   <p className="text-xs text-slate-300 uppercase font-semibold">Durchlaufzeit</p>
@@ -191,7 +191,7 @@ export default function PricingBundlePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
           <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">
             <h2 className="font-display font-bold text-2xl text-secondary mb-6 flex items-center gap-3">
-              <OptimizedIcon icon={CheckCircle} className="w-8 h-8 text-green-500" />
+              <OptimizedIcon icon={CheckCircle} className="w-8 h-8 text-green-500" aria-hidden="true" />
               Inklusive (Scope)
             </h2>
             <ul className="space-y-4">
@@ -210,7 +210,7 @@ export default function PricingBundlePage() {
 
           <div className="bg-slate-50 rounded-3xl p-8 border border-slate-200">
             <h2 className="font-display font-bold text-2xl text-secondary mb-6 flex items-center gap-3">
-              <OptimizedIcon icon={XCircle} className="w-8 h-8 text-red-400" />
+              <OptimizedIcon icon={XCircle} className="w-8 h-8 text-red-400" aria-hidden="true" />
               Nicht enthalten
             </h2>
             <ul className="space-y-4">
@@ -227,7 +227,7 @@ export default function PricingBundlePage() {
             </ul>
 
             <div className="mt-8 bg-blue-50 border border-blue-100 rounded-xl p-4 flex gap-3">
-              <OptimizedIcon icon={Info} className="w-6 h-6 text-blue-500 shrink-0" />
+              <OptimizedIcon icon={Info} className="w-6 h-6 text-blue-500 shrink-0" aria-hidden="true" />
               <p className="text-sm text-blue-800 font-medium">
                 Scharfe Projektgrenzen bewahren uns vor Scope-Creep und garantieren, dass wir im
                 Zeit- und Budgetplan bleiben. Ergänzungen können flexibel als Upsell hinzugebucht

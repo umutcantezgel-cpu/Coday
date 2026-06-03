@@ -44,6 +44,8 @@ const Gastronomie: React.FC = () => {
           <OptimizedImage
             src={IMAGES.industries.gastronomie.hero}
             alt="Modern restaurant ambience"
+            width={1920}
+            height={1080}
             className="w-full h-full object-cover opacity-10"
             priority
           />

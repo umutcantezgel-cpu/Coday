@@ -64,7 +64,7 @@ export const ConsultingReadiness: React.FC = () => {
   const resultKey = calculateResult();
 
   return (
-    <div className="w-full max-w-4xl mx-auto bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border border-slate-700 text-white">
+    <div className="w-full max-w-4xl mx-auto bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border border-slate-700 text-white" role="region" aria-label="Consulting readiness diagnostic">
       <div className="p-8 md:p-12 min-h-[400px] flex flex-col justify-center">
         <AnimatePresence mode="wait">
           {!started && (
@@ -78,9 +78,9 @@ export const ConsultingReadiness: React.FC = () => {
               <div className="w-20 h-20 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-xl shadow-blue-900/50">
                 <OptimizedIcon icon={Brain} className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-3xl md:text-4xl font-display font-bold mb-4">
+              <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
                 {t('diagnostic.title')}
-              </h3>
+              </h2>
               <p className="text-slate-400 text-lg mb-10 max-w-xl mx-auto">
                 {t('diagnostic.subtitle')}
               </p>
@@ -103,10 +103,17 @@ export const ConsultingReadiness: React.FC = () => {
               className="w-full"
             >
               <div className="flex justify-between items-center mb-8">
-                <span className="text-sm font-mono text-blue-400">
+                <span className="text-sm font-mono text-blue-400" aria-hidden="true">
                   0{currentStep + 1} / 0{QUESTIONS.length}
                 </span>
-                <div className="h-1 bg-slate-800 rounded-full flex-1 mx-4">
+                <div
+                  className="h-1 bg-slate-800 rounded-full flex-1 mx-4"
+                  role="progressbar"
+                  aria-valuenow={currentStep + 1}
+                  aria-valuemin={1}
+                  aria-valuemax={QUESTIONS.length}
+                  aria-label={`Question ${currentStep + 1} of ${QUESTIONS.length}`}
+                >
                   <div
                     className="h-full bg-blue-500 rounded-full transition motion-reduce:duration-[0.01ms] duration-500"
                     style={{ width: `${((currentStep + 1) / QUESTIONS.length) * 100}%` }}
@@ -114,11 +121,11 @@ export const ConsultingReadiness: React.FC = () => {
                 </div>
               </div>
 
-              <h3 className="text-2xl md:text-3xl font-bold mb-10 text-center">
+              <h2 className="text-2xl md:text-3xl font-bold mb-10 text-center">
                 {t(`diagnostic.questions.${QUESTIONS[currentStep]!.id}.text`)}
-              </h3>
+              </h2>
 
-              <div className="grid gap-4 md:grid-cols-3">
+              <div className="grid gap-4 md:grid-cols-3" role="group" aria-label="Answer options">
                 {(['a', 'b', 'c'] as OptionKey[]).map((opt) => (
                   <button
                     key={opt}
@@ -145,13 +152,15 @@ export const ConsultingReadiness: React.FC = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               className="text-center"
+              aria-live="polite"
+              aria-atomic="true"
             >
               <div className="inline-block px-4 py-2 rounded-full bg-green-500/10 text-green-400 border border-green-500/30 mb-6 font-mono text-sm">
                 ANALYSIS COMPLETE
               </div>
-              <h3 className="text-3xl md:text-5xl font-display font-bold mb-6 text-white">
+              <h2 className="text-3xl md:text-5xl font-display font-bold mb-6 text-white">
                 {t(`diagnostic.results.${resultKey}.title`)}
-              </h3>
+              </h2>
               <p className="text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
                 {t(`diagnostic.results.${resultKey}.description`)}
               </p>

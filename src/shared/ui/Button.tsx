@@ -32,10 +32,15 @@ export const Button: React.FC<ButtonProps> = ({
     <button
       className={cn(baseButtonStyles, buttonVariants[variant], buttonSizes[size], className)}
       disabled={isLoading || disabled}
+      aria-disabled={isLoading || disabled || undefined}
+      aria-busy={isLoading || undefined}
       {...props}
     >
       {isLoading ? (
-        <CircleNotch className="w-5 h-5 animate-spin me-2 motion-reduce:animate-none" />
+        <>
+          <CircleNotch className="w-5 h-5 animate-spin me-2 motion-reduce:animate-none" aria-hidden="true" />
+          <span className="sr-only">Lädt…</span>
+        </>
       ) : leftIcon ? (
         <span className="me-2">{leftIcon}</span>
       ) : null}

@@ -58,17 +58,17 @@ export function IndustryDetailClient() {
   }
 
   return (
-    <div className="bg-background-light min-h-dvh pt-24">
+    <main className="bg-background-light min-h-dvh pt-24">
       {/* Navigation */}
-      <div className="container mx-auto px-4 mb-8">
+      <nav aria-label={t('detail.nav.back')} className="container mx-auto px-4 mb-8">
         <Link
           href="/branchen"
           className="inline-flex items-center text-text-slate hover:text-primary transition-colors motion-reduce:duration-[0.01ms]"
         >
-          <ArrowLeft size={16} className="mr-2" />
+          <ArrowLeft size={16} className="mr-2" aria-hidden="true" />
           {t('detail.nav.back')}
         </Link>
-      </div>
+      </nav>
 
       {/* Hero Section - Now with Image */}
       <section className="container mx-auto px-4 mb-20">
@@ -104,6 +104,8 @@ export function IndustryDetailClient() {
             <OptimizedImage
               src={heroImage.src}
               alt={heroImage.alt}
+              width={800}
+              height={600}
               className="relative rounded-3xl shadow-2xl w-full transform -rotate-1 hover:rotate-0 transition motion-reduce:duration-[0.01ms] duration-500"
               priority
             />
@@ -124,7 +126,7 @@ export function IndustryDetailClient() {
                 className="p-8 bg-gray-50 rounded-2xl border border-gray-100 relative overflow-hidden group hover:shadow-md transition motion-reduce:duration-[0.01ms]"
               >
                 <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity motion-reduce:duration-[0.01ms]">
-                  <XCircle size={64} className="text-red-500" />
+                  <XCircle size={64} className="text-red-500" aria-hidden="true" />
                 </div>
                 <h3 className="text-xl font-bold text-secondary mb-3 relative z-10">
                   {t(challenge.title)}
@@ -153,7 +155,7 @@ export function IndustryDetailClient() {
                 className="bg-white p-8 rounded-2xl border border-gray-200 shadow-flat hover:border-primary/50 transition motion-reduce:duration-[0.01ms]"
               >
                 <div className="mb-4 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
-                  <CheckCircle size={24} />
+                  <CheckCircle size={24} aria-hidden="true" />
                 </div>
                 <h3 className="text-xl font-bold text-secondary mb-2">{t(sol.title)}</h3>
                 <p className="text-text-light">{t(sol.description)}</p>
@@ -185,6 +187,8 @@ export function IndustryDetailClient() {
                   <OptimizedImage
                     src={img.src}
                     alt={img.alt}
+                    width={400}
+                    height={400}
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms] duration-700"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw"
                   />
@@ -222,7 +226,7 @@ export function IndustryDetailClient() {
                 key={idx}
                 className="bg-white/5 p-6 rounded-xl border border-white/10 hover:bg-white/10 transition-colors motion-reduce:duration-[0.01ms]"
               >
-                <h4 className="font-bold text-lg mb-2 text-primary">{t(feat.title)}</h4>
+                <h3 className="font-bold text-lg mb-2 text-primary">{t(feat.title)}</h3>
                 <p className="text-gray-300 text-sm">{t(feat.description)}</p>
               </div>
             ))}
@@ -249,6 +253,8 @@ export function IndustryDetailClient() {
                     <OptimizedImage
                       src={relImage.src}
                       alt={relImage.alt}
+                      width={600}
+                      height={400}
                       className="w-full h-full object-cover transition-transform motion-reduce:duration-[0.01ms] duration-700 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
@@ -266,6 +272,6 @@ export function IndustryDetailClient() {
           </div>
         </div>
       </section>
-    </div>
+    </main>
   );
 }

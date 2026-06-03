@@ -120,7 +120,9 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
           animate="open"
           exit="exit"
           variants={overlayVariants}
-          aria-hidden={!isOpen}
+          role="dialog"
+          aria-modal="true"
+          aria-label={t('nav.mobile.label', { defaultValue: 'Mobile Navigation' })}
         >
           {/* Scrollable Content */}
           <div className="mobile-content-scroll pt-24">

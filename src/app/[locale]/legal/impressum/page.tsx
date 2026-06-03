@@ -25,7 +25,7 @@ export default async function ImpressumPage({ params }: { params: Promise<{ loca
   const isEn = locale === 'en';
 
   return (
-    <main className="max-w-3xl mx-auto px-4 py-20">
+    <div className="max-w-3xl mx-auto px-4 py-20">
       <h1 className="text-3xl font-bold mb-8">{isEn ? 'Legal Notice' : 'Impressum'}</h1>
 
       <section className="py-[var(--space-section)] space-y-4 text-gray-300">
@@ -63,6 +63,6 @@ export default async function ImpressumPage({ params }: { params: Promise<{ loca
           35578 Wetzlar
         </p>
       </section>
-    </main>
+    </div>
   );
 }

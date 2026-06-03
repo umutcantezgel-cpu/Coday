@@ -96,10 +96,13 @@ const CodeQualitySimulator: React.FC = () => {
         {/* Controls */}
         <div className="p-8 bg-surface-light border-r border-gray-100 space-y-4">
           {features.map((feature) => (
-            <div
+            <button
               key={feature.id}
+              type="button"
               onClick={() => toggleFeature(feature.id)}
-              className={`group cursor-pointer p-4 rounded-xl border transition motion-reduce:duration-[0.01ms] duration-300 flex items-center justify-between ${feature.active ? 'bg-white border-primary shadow-md' : 'bg-white border-transparent hover:border-gray-200'}`}
+              role="checkbox"
+              aria-checked={feature.active}
+              className={`group w-full cursor-pointer p-4 rounded-xl border transition motion-reduce:duration-[0.01ms] duration-300 flex items-center justify-between text-start focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${feature.active ? 'bg-white border-primary shadow-md' : 'bg-white border-transparent hover:border-gray-200'}`}
             >
               <div className="flex items-center gap-4">
                 <div
@@ -121,7 +124,7 @@ const CodeQualitySimulator: React.FC = () => {
               >
                 {feature.active && <OptimizedIcon icon={Check} className="text-white text-xs" />}
               </div>
-            </div>
+            </button>
           ))}
         </div>
 

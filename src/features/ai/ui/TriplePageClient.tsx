@@ -112,7 +112,7 @@ export default function TriplePage() {
 
           <div className="relative z-10">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 rounded-full text-slate-600 font-semibold text-sm mb-6">
-              <OptimizedIcon icon={MapPin} className="w-4 h-4 text-primary" />
+              <OptimizedIcon icon={MapPin} className="w-4 h-4 text-primary" aria-hidden="true" />
               <span>
                 {tripleData.city}, {tripleData.state}
               </span>
@@ -120,7 +120,7 @@ export default function TriplePage() {
                 <>
                   <span className="w-1 h-1 rounded-full bg-slate-300" />
                   <span className="text-accent flex items-center gap-1">
-                    <OptimizedIcon icon={Target} className="w-4 h-4" />
+                    <OptimizedIcon icon={Target} className="w-4 h-4" aria-hidden="true" />
                     Flagship Region
                   </span>
                 </>
@@ -140,7 +140,7 @@ export default function TriplePage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="flex flex-col p-5 bg-slate-50 rounded-2xl border border-slate-100">
-                <OptimizedIcon icon={Users} className="w-8 h-8 text-primary mb-3" />
+                <OptimizedIcon icon={Users} className="w-8 h-8 text-primary mb-3" aria-hidden="true" />
                 <span className="text-sm text-slate-500 font-semibold uppercase tracking-wider mb-1">
                   Einwohner
                 </span>
@@ -149,7 +149,7 @@ export default function TriplePage() {
                 </span>
               </div>
               <div className="flex flex-col p-5 bg-slate-50 rounded-2xl border border-slate-100">
-                <OptimizedIcon icon={ChartBar} className="w-8 h-8 text-accent mb-3" />
+                <OptimizedIcon icon={ChartBar} className="w-8 h-8 text-accent mb-3" aria-hidden="true" />
                 <span className="text-sm text-slate-500 font-semibold uppercase tracking-wider mb-1">
                   Mitbewerber-Dichte
                 </span>
@@ -158,7 +158,7 @@ export default function TriplePage() {
                 </span>
               </div>
               <div className="flex flex-col p-5 bg-slate-50 rounded-2xl border border-slate-100">
-                <OptimizedIcon icon={RocketLaunch} className="w-8 h-8 text-primary mb-3" />
+                <OptimizedIcon icon={RocketLaunch} className="w-8 h-8 text-primary mb-3" aria-hidden="true" />
                 <span className="text-sm text-slate-500 font-semibold uppercase tracking-wider mb-1">
                   Unser Ansatz
                 </span>
@@ -173,7 +173,7 @@ export default function TriplePage() {
           <div className="lg:col-span-2 space-y-8">
             <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">
               <h2 className="font-display font-bold text-3xl text-secondary mb-6 flex items-center gap-3">
-                <OptimizedIcon icon={Globe} className="w-8 h-8 text-primary" />
+                <OptimizedIcon icon={Globe} className="w-8 h-8 text-primary" aria-hidden="true" />
                 Warum {tripleData.service} für {tripleData.city}?
               </h2>
               <div className="prose prose-lg prose-slate max-w-none text-slate-600">

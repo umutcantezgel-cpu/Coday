@@ -203,7 +203,7 @@ export default async function GiessenLocationPage({
   };
 
   return (
-    <main className="flex-1 w-full flex flex-col">
+    <div className="flex-1 w-full flex flex-col">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify([localBusinessJsonLd, faqJsonLd]) }}
@@ -271,7 +271,7 @@ export default async function GiessenLocationPage({
           <div className="space-y-6">
             {t.faq.items.map((item, i) => (
               <div key={i} className="bg-white/5 rounded-2xl border border-white/10 p-6">
-                <h4 className="text-lg font-semibold text-white mb-3">{item.q}</h4>
+                <h3 className="text-lg font-semibold text-white mb-3">{item.q}</h3>
                 <p className="text-gray-400 leading-relaxed">{item.a}</p>
               </div>
             ))}
@@ -291,6 +291,6 @@ export default async function GiessenLocationPage({
           </Link>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

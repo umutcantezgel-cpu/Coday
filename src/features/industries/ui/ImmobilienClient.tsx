@@ -44,6 +44,8 @@ const Immobilien: React.FC = () => {
           <OptimizedImage
             src={IMAGES.industries.realEstate.hero}
             alt={t('immobilien-makler.hero.image_alt', 'Immobilienpräsentation und Software')}
+            width={1920}
+            height={1080}
             className="w-full h-full object-cover opacity-10"
             priority
           />

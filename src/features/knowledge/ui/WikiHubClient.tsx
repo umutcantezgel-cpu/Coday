@@ -37,7 +37,7 @@ export default function WikiHub() {
   };
 
   return (
-    <div className="bg-coday-black min-h-screen pt-32 pb-24 text-coday-gray-100 font-sans selection:bg-coday-gold selection:text-coday-black">
+    <main className="bg-coday-black min-h-screen pt-32 pb-24 text-coday-gray-100 font-sans selection:bg-coday-gold selection:text-coday-black">
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
         <header className="mb-16">
           <motion.div
@@ -61,8 +61,10 @@ export default function WikiHub() {
         <div className="mb-12">
           <div className="flex flex-col md:flex-row gap-6 justify-between items-center bg-coday-dark border border-coday-gray-800 p-4 rounded-xl">
             <div className="w-full md:w-1/2 relative">
+              <label htmlFor="wiki-search" className="sr-only">Entität suchen</label>
               <input
-                type="text"
+                id="wiki-search"
+                type="search"
                 placeholder="Entität suchen (z.B. Next.js, Headless CMS)..."
                 className="w-full bg-coday-black border border-coday-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:border-coday-gold transition-colors motion-reduce:duration-[0.01ms]"
                 value={searchTerm}
@@ -73,6 +75,7 @@ export default function WikiHub() {
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
+                aria-hidden="true"
               >
                 <path
                   strokeLinecap="round"
@@ -89,6 +92,7 @@ export default function WikiHub() {
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
                   className={`active:scale-[0.97] px-4 py-2 rounded-lg text-sm font-medium transition-colors motion-reduce:duration-[0.01ms] ${activeCategory === cat ? 'bg-coday-gold text-coday-black' : 'bg-coday-gray-800 text-coday-gray-300 hover:bg-coday-gray-700'}`}
+                  aria-pressed={activeCategory === cat}
                 >
                   {cat}
                 </button>
@@ -132,6 +136,6 @@ export default function WikiHub() {
           </div>
         )}
       </div>
-    </div>
+    </main>
   );
 }

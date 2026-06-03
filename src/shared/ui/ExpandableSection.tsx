@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useId } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { CaretDown, Sparkle } from '@phosphor-icons/react/dist/ssr';
 
@@ -19,6 +19,7 @@ const ExpandableSection: React.FC<ExpandableSectionProps> = ({
   className = '',
 }) => {
   const [isOpen, setIsOpen] = useState(defaultOpen);
+  const panelId = useId();
 
   const baseStyles =
     variant === 'highlight'
@@ -29,13 +30,15 @@ const ExpandableSection: React.FC<ExpandableSectionProps> = ({
     <div className={`rounded-2xl border overflow-hidden ${baseStyles} ${className}`}>
       <button
         onClick={() => setIsOpen(!isOpen)}
+        aria-expanded={isOpen}
+        aria-controls={panelId}
         className="w-full flex items-center justify-between p-5 text-left hover:bg-gray-50/50 transition-colors motion-reduce:duration-[0.01ms]"
       >
         <div className="flex items-center gap-3">
-          {variant === 'highlight' && <Sparkle className="text-primary" size={18} />}
+          {variant === 'highlight' && <Sparkle className="text-primary" size={18} aria-hidden="true" />}
           <span className="font-bold text-secondary">{title}</span>
         </div>
-        <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.2 }}>
+        <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.2 }} aria-hidden="true">
           <CaretDown className="text-slate-400" size={20} />
         </motion.div>
       </button>
@@ -43,6 +46,9 @@ const ExpandableSection: React.FC<ExpandableSectionProps> = ({
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
+            id={panelId}
+            role="region"
+            aria-labelledby={undefined}
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}

@@ -37,10 +37,11 @@ const LeadQualificationSimulator: React.FC = () => {
       {/* Filter Control */}
       <div className="mb-12 bg-gray-50 p-6 rounded-2xl border border-gray-100">
         <div className="flex justify-between font-bold text-slate-700 mb-2">
-          <label>{t('unternehmensberatung.features.lead_simulator.filter_label')}</label>
+          <label htmlFor="minBudget">{t('unternehmensberatung.features.lead_simulator.filter_label')}</label>
           <span className="text-primary">{formatCurrency(minBudget, 'EUR', locale)}</span>
         </div>
         <input
+          id="minBudget"
           type="range"
           min="0"
           max="10000"
@@ -52,7 +53,7 @@ const LeadQualificationSimulator: React.FC = () => {
       </div>
 
       {/* Lead Inbox Visualization */}
-      <div className="space-y-3">
+      <div className="space-y-3" role="list" aria-label="Lead Inbox">
         <div className="flex justify-between text-xs font-bold text-gray-400 uppercase border-b pb-2">
           <span>{t('unternehmensberatung.features.lead_simulator.table_headers.inbox')}</span>
           <span>{t('unternehmensberatung.features.lead_simulator.table_headers.status')}</span>

@@ -71,13 +71,17 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
         className={`relative overflow-hidden ${getAspectRatioClass()} ${className}`}
         style={containerStyle}
       >
-        <img
+        <Image
           src={src}
           alt={alt}
-          className="w-full h-full object-cover"
-          loading={priority ? 'eager' : 'lazy'}
-          width={width}
-          height={height}
+          unoptimized
+          {...(useFill
+            ? { fill: true, className: 'object-cover' }
+            : { width: width as number, height: height as number, className: 'w-full h-full object-cover' }
+          )}
+          priority={priority}
+          sizes={sizes || DEFAULT_SIZES}
+          onError={() => setHasError(true)}
         />
       </div>
     );

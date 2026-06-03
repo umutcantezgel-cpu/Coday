@@ -292,6 +292,8 @@ export const ApplicationWizard: React.FC = () => {
             onSubmit={handleSubmit(onSubmit)}
             onChange={handleInteraction}
             className="p-4 md:p-8 space-y-6"
+            noValidate
+            aria-label={hasPackage ? t('wizard.title_package') : t('wizard.title_direct')}
           >
             <div style={{ position: 'absolute', left: '-5000px' }} aria-hidden="true">
               <input type="text" {...register('website')} tabIndex={-1} autoComplete="off" />
@@ -309,6 +311,7 @@ export const ApplicationWizard: React.FC = () => {
                   {t('wizard.step1.project_type.label')}
                 </label>
                 <select
+                  aria-required="true"
                   id="project-type"
                   {...register('project')}
                   aria-invalid={!!errors.project}
@@ -316,7 +319,7 @@ export const ApplicationWizard: React.FC = () => {
                   className={`w-full px-4 py-3 rounded-xl border outline-none transition motion-reduce:duration-[0.01ms] bg-white appearance-none ${
                     errors.project
                       ? 'border-red-500 ring-1 ring-red-500'
-                      : 'border-gray-200 focus:border-primary focus:ring-2 focus:ring-blue-100'
+                      : 'border-gray-200 focus:border-primary focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-transparent'
                   }`}
                 >
                   <option value="">{t('wizard.step1.project_type.placeholder')}</option>
@@ -337,6 +340,7 @@ export const ApplicationWizard: React.FC = () => {
                       exit={{ opacity: 0, y: -4 }}
                       transition={{ duration: 0.2 }}
                       id="project-type-error"
+                      role="alert"
                       className="absolute bottom-0 left-0 flex items-center gap-1.5 text-red-500 text-sm"
                     >
                       <Icon name="warning" className="w-4 h-4" />
@@ -355,12 +359,13 @@ export const ApplicationWizard: React.FC = () => {
                 <input
                   id="wizard-name"
                   {...register('name')}
+                  aria-required="true"
                   aria-invalid={!!errors.name}
                   aria-describedby={errors.name ? 'wizard-name-error' : undefined}
                   className={`w-full px-4 py-3 min-h-[48px] rounded-xl border outline-none transition motion-reduce:duration-[0.01ms] ${
                     errors.name
                       ? 'border-red-500 ring-1 ring-red-500 bg-red-50/10'
-                      : 'border-gray-200 focus:border-primary focus:ring-2 focus:ring-blue-100'
+                      : 'border-gray-200 focus:border-primary focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-transparent'
                   }`}
                   placeholder={t('wizard.step3.name.placeholder')}
                   autoComplete="name"
@@ -373,6 +378,7 @@ export const ApplicationWizard: React.FC = () => {
                       exit={{ opacity: 0, y: -4 }}
                       transition={{ duration: 0.2 }}
                       id="wizard-name-error"
+                      role="alert"
                       className="absolute bottom-0 left-0 flex items-center gap-1.5 text-red-500 text-sm"
                     >
                       <Icon name="warning" className="w-4 h-4" />
@@ -389,12 +395,13 @@ export const ApplicationWizard: React.FC = () => {
                   id="wizard-email"
                   {...register('email')}
                   type="email"
+                  aria-required="true"
                   aria-invalid={!!errors.email}
                   aria-describedby={errors.email ? 'wizard-email-error' : undefined}
                   className={`w-full px-4 py-3 min-h-[48px] rounded-xl border outline-none transition motion-reduce:duration-[0.01ms] ${
                     errors.email
                       ? 'border-red-500 ring-1 ring-red-500 bg-red-50/10'
-                      : 'border-gray-200 focus:border-primary focus:ring-2 focus:ring-blue-100'
+                      : 'border-gray-200 focus:border-primary focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-transparent'
                   }`}
                   placeholder={t('wizard.step3.email.placeholder')}
                   autoComplete="email"
@@ -408,6 +415,7 @@ export const ApplicationWizard: React.FC = () => {
                       exit={{ opacity: 0, y: -4 }}
                       transition={{ duration: 0.2 }}
                       id="wizard-email-error"
+                      role="alert"
                       className="absolute bottom-0 left-0 flex items-center gap-1.5 text-red-500 text-sm"
                     >
                       <Icon name="warning" className="w-4 h-4" />
@@ -427,7 +435,7 @@ export const ApplicationWizard: React.FC = () => {
                   id="wizard-phone"
                   {...register('phone')}
                   type="tel"
-                  className="w-full px-4 py-3 min-h-[48px] rounded-xl border border-gray-200 outline-none transition motion-reduce:duration-[0.01ms] focus:border-primary focus:ring-2 focus:ring-blue-100"
+                  className="w-full px-4 py-3 min-h-[48px] rounded-xl border border-gray-200 outline-none transition motion-reduce:duration-[0.01ms] focus:border-primary focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-transparent"
                   placeholder={t('wizard.step3.phone.placeholder')}
                   autoComplete="tel"
                 />
@@ -440,7 +448,7 @@ export const ApplicationWizard: React.FC = () => {
                   id="wizard-message"
                   {...register('message')}
                   rows={2}
-                  className="w-full px-4 py-3 min-h-[48px] rounded-xl border border-gray-200 outline-none transition motion-reduce:duration-[0.01ms] focus:border-primary focus:ring-2 focus:ring-blue-100"
+                  className="w-full px-4 py-3 min-h-[48px] rounded-xl border border-gray-200 outline-none transition motion-reduce:duration-[0.01ms] focus:border-primary focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-transparent"
                   placeholder={t('wizard.step3.message.placeholder')}
                 />
               </div>
@@ -451,6 +459,7 @@ export const ApplicationWizard: React.FC = () => {
                 <input
                   type="checkbox"
                   {...register('privacy')}
+                  aria-required="true"
                   aria-invalid={!!errors.privacy}
                   aria-describedby={errors.privacy ? 'wizard-privacy-error' : undefined}
                   className="mt-1 w-4 h-4 text-primary rounded border-gray-300 focus:ring-primary"
@@ -465,6 +474,7 @@ export const ApplicationWizard: React.FC = () => {
                     exit={{ opacity: 0, y: -4 }}
                     transition={{ duration: 0.2 }}
                     id="wizard-privacy-error"
+                    role="alert"
                     className="absolute bottom-0 left-0 flex items-center gap-1.5 text-red-500 text-sm"
                   >
                     <Icon name="warning" className="w-4 h-4" />

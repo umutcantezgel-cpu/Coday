@@ -18,15 +18,17 @@ const DigitalExposeDemo: React.FC = () => {
 
       {/* Toggle */}
       <div className="flex justify-center mb-12">
-        <div className="bg-white/10 p-1 rounded-xl flex gap-1">
+        <div className="bg-white/10 p-1 rounded-xl flex gap-1" role="group" aria-label={t('immobilien-makler.features.expose_demo.title')}>
           <button
             onClick={() => setView('pdf')}
+            aria-pressed={view === 'pdf'}
             className={`active:scale-[0.97] px-6 py-2 rounded-lg text-sm font-bold transition motion-reduce:duration-[0.01ms] ${view === 'pdf' ? 'bg-white text-slate-900 shadow-lg' : 'text-gray-400 hover:text-white'}`}
           >
             {t('immobilien-makler.features.expose_demo.toggles.pdf')}
           </button>
           <button
             onClick={() => setView('web')}
+            aria-pressed={view === 'web'}
             className={`active:scale-[0.97] px-6 py-2 rounded-lg text-sm font-bold transition motion-reduce:duration-[0.01ms] ${view === 'web' ? 'bg-primary text-white shadow-lg' : 'text-gray-400 hover:text-white'}`}
           >
             {t('immobilien-makler.features.expose_demo.toggles.web')}

@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Cookie } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import Link from 'next/link';
@@ -11,6 +11,20 @@ export const CookieConsentBanner: React.FC = () => {
   const [showSettings, setShowSettings] = useState(false);
   const { hasConsented, acceptAll, rejectAll } = useCookieStore();
 
+  const handleRejectAll = useCallback(() => {
+    rejectAll();
+    setIsVisible(false);
+  }, [rejectAll]);
+
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isVisible) {
+        handleRejectAll();
+      }
+    },
+    [isVisible, handleRejectAll]
+  );
+
   useEffect(() => {
     // Check store state instead of raw localStorage for consistency
     if (!hasConsented) {
@@ -21,13 +35,13 @@ export const CookieConsentBanner: React.FC = () => {
     }
   }, [hasConsented, isVisible]);
 
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [handleKeyDown]);
+
   const handleAcceptAll = () => {
     acceptAll();
-    setIsVisible(false);
-  };
-
-  const handleRejectAll = () => {
-    rejectAll();
     setIsVisible(false);
   };
 
@@ -42,18 +56,19 @@ export const CookieConsentBanner: React.FC = () => {
   return (
     <>
       <div
-        aria-label="Cookie Banner"
-        role="dialog"
+        role="alertdialog"
+        aria-labelledby="cookie-banner-title"
+        aria-describedby="cookie-banner-desc"
         className={`fixed bottom-4 left-4 right-4 z-[100] max-w-4xl mx-auto transition motion-reduce:duration-[0.01ms] duration-500 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0 pointer-events-none'}`}
       >
         <div className="bg-white/95 backdrop-blur-xl border border-white/20 shadow-2xl rounded-2xl p-6 md:p-8 flex flex-col lg:flex-row gap-6 items-center lg:items-start text-center lg:text-left ring-1 ring-black/5">
-          <div className="p-3 bg-primary/10 rounded-xl text-primary shrink-0">
+          <div className="p-3 bg-primary/10 rounded-xl text-primary shrink-0" aria-hidden="true">
             <OptimizedIcon icon={Cookie} className="w-8 h-8" />
           </div>
           <div className="flex-1 space-y-4">
             <div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Privatsphäre-Einstellungen</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
+              <h3 id="cookie-banner-title" className="text-lg font-bold text-gray-900 mb-2">Privatsphäre-Einstellungen</h3>
+              <p id="cookie-banner-desc" className="text-sm text-gray-600 leading-relaxed">
                 Wir verwenden Cookies und ähnliche Technologien, um Ihr Erlebnis zu verbessern,
                 Leistung zu messen und personalisierte Inhalte anzuzeigen. Einige sind essenziell,
                 andere helfen uns, diese Website und Ihre Erfahrung zu verbessern.

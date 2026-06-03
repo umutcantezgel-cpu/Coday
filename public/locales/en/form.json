@@ -5,7 +5,7 @@
       "next": "Next",
       "submit": "Submit",
       "submitting": "Sending...",
-      "submit_next": "Weiter"
+      "submit_next": "Next"
     },
     "error": {
       "submit": "An error occurred. Please try again."
@@ -30,7 +30,7 @@
           "webapp": "Web Application",
           "webdesign": "Web Design & Relaunch"
         },
-        "placeholder": "Bitte wählen"
+        "placeholder": "Please select..."
       },
       "timeline": {
         "label": "Timeline",
@@ -75,8 +75,8 @@
       },
       "title": "Your Contact Details",
       "message": {
-        "label": "Ihre Nachricht",
-        "placeholder": "Beschreiben Sie kurz Ihr Projekt..."
+        "label": "Your Message",
+        "placeholder": "Briefly describe your project..."
       }
     },
     "steps": {
@@ -87,7 +87,9 @@
     "success": {
       "back_home": "Back to Home",
       "message": "Thank you for your interest. We have received your request and will get back to you within 24 hours.",
-      "title": "Request received!"
+      "title": "Request received!",
+      "calendly_title": "Perfect! Let's talk.",
+      "calendly_desc": "Choose a suitable time for our short introductory call."
     },
     "validation": {
       "email": "Please enter a valid email address",
@@ -97,30 +99,30 @@
       "privacy": "Please accept the privacy policy",
       "required": "This field is required"
     },
-    "title_direct": "Schildern Sie Ihr Projekt",
-    "subtitle": "Wir melden uns innerhalb von 24 Stunden."
+    "title_direct": "Describe Your Project",
+    "subtitle": "We will get back to you within 24 hours."
   },
   "cookie": {
     "settings": {
-      "title": "Cookie Einstellungen",
-      "desc": "Wir nutzen Cookies für Analytics."
+      "title": "Cookie Settings",
+      "desc": "We use cookies for analytics."
     },
     "essential": {
-      "title": "Essenziell",
-      "desc": "Notwendig für die Webseite."
+      "title": "Essential",
+      "desc": "Required for the website to function."
     },
     "analytics": {
       "title": "Analytics",
-      "desc": "Für anonyme Statistiken."
+      "desc": "For anonymous statistics."
     },
     "marketing": {
       "title": "Marketing",
-      "desc": "Für personalisierte Werbung."
+      "desc": "For personalized advertising."
     }
   },
   "common": {
-    "cancel": "Abbrechen",
-    "save": "Speichern",
-    "close": "Schließen"
+    "cancel": "Cancel",
+    "save": "Save",
+    "close": "Close"
   }
 }

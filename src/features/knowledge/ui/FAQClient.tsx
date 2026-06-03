@@ -39,7 +39,7 @@ const FAQ = () => {
   };
 
   return (
-    <div className="min-h-dvh bg-background-light pt-24 pb-20">
+    <main className="min-h-dvh bg-background-light pt-24 pb-20">
       <JsonLd
         pageType="faq"
         data={{
@@ -79,8 +79,10 @@ const FAQ = () => {
           <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
             <MagnifyingGlass className="h-6 w-6 text-slate-400" />
           </div>
+          <label htmlFor="faq-search" className="sr-only">{t('search.placeholder')}</label>
           <input
-            type="text"
+            id="faq-search"
+            type="search"
             className="block w-full pl-12 pr-12 py-4 bg-white border border-slate-200 rounded-2xl text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent shadow-lg text-lg transition-shadow motion-reduce:duration-[0.01ms]"
             placeholder={t('search.placeholder')}
             value={searchTerm}
@@ -90,6 +92,7 @@ const FAQ = () => {
             <button
               onClick={() => setSearchTerm('')}
               className="active:scale-[0.97] absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-slate-600"
+              aria-label={t('search.clear')}
             >
               <X className="h-5 w-5" />
             </button>
@@ -104,7 +107,7 @@ const FAQ = () => {
 
       {/* Categories */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 overflow-x-auto">
-        <div className="flex justify-center space-x-2 min-w-max pb-2">
+        <div className="flex justify-center space-x-2 min-w-max pb-2" role="group" aria-label={t('categories.all')}>
           <button
             onClick={() => handleCategoryClick('all')}
             className={`active:scale-[0.97] px-6 py-2 rounded-full text-sm font-bold transition motion-reduce:duration-[0.01ms] ${
@@ -112,6 +115,7 @@ const FAQ = () => {
                 ? 'bg-blue-600 text-white shadow-md'
                 : 'bg-white text-slate-600 hover:bg-slate-50 border border-slate-200'
             }`}
+            aria-pressed={selectedCategory === 'all'}
           >
             {t('categories.all')}
           </button>
@@ -124,6 +128,7 @@ const FAQ = () => {
                   ? 'bg-blue-600 text-white shadow-md'
                   : 'bg-white text-slate-600 hover:bg-slate-50 border border-slate-200'
               }`}
+              aria-pressed={selectedCategory === cat.id}
             >
               {cat.title}
             </button>
@@ -154,6 +159,8 @@ const FAQ = () => {
                   <button
                     onClick={() => toggleItem(faq.id)}
                     className="active:scale-[0.97] w-full flex justify-between items-center p-6 text-left focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:rounded-xl"
+                    aria-expanded={openItem === faq.id}
+                    aria-controls={`faq-answer-${faq.id}`}
                   >
                     <span className="font-display font-bold text-lg text-slate-900 pr-8">
                       {faq.question}
@@ -172,7 +179,7 @@ const FAQ = () => {
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.2, ease: 'easeOut' }}
                       >
-                        <div className="px-6 pb-6 text-slate-600 leading-relaxed prose prose-blue max-w-none">
+                        <div id={`faq-answer-${faq.id}`} role="region" aria-labelledby={`faq-trigger-${faq.id}`} className="px-6 pb-6 text-slate-600 leading-relaxed prose prose-blue max-w-none">
                           {/* Simple markdown rendering or just text with line breaks */}
                           <div
                             dangerouslySetInnerHTML={{
@@ -228,7 +235,7 @@ const FAQ = () => {
           <div className="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-blue-700 rounded-full opacity-20 blur-3xl"></div>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 

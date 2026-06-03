@@ -1,7 +1,7 @@
 'use client';
 
 import React, { ReactNode, RefObject, useState, useEffect } from 'react';
-import { motion, Variants } from 'motion/react';
+import { motion, Variants, useReducedMotion } from 'motion/react';
 
 interface ScrollFloatProps {
   children: ReactNode;
@@ -22,6 +22,7 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
   animationDuration = 1,
   stagger = 0.03,
 }) => {
+  const prefersReducedMotion = useReducedMotion();
   const [isMounted, setIsMounted] = useState(false);
   useEffect(() => {
     const timer = setTimeout(() => setIsMounted(true), 10);
@@ -68,14 +69,14 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
     <motion.h2
       key={isMounted ? 'mounted' : 'ssr'}
       className={`my-5 overflow-hidden ${containerClassName}`}
-      initial={isMounted ? 'hidden' : false}
-      animate={isMounted ? undefined : 'visible'}
-      whileInView={isMounted ? 'visible' : undefined}
+      initial={isMounted && !prefersReducedMotion ? 'hidden' : false}
+      animate={isMounted && !prefersReducedMotion ? undefined : 'visible'}
+      whileInView={isMounted && !prefersReducedMotion ? 'visible' : undefined}
       viewport={{ once: true, margin: '-10%' }}
-      variants={containerVariants}
+      variants={prefersReducedMotion ? undefined : containerVariants}
     >
       <span className={`inline-block text-[clamp(1.6rem,4vw,3rem)] leading-[1.5] ${textClassName}`}>
-        {splitText}
+        {prefersReducedMotion ? children : splitText}
       </span>
     </motion.h2>
   );

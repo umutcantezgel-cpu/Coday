@@ -53,7 +53,7 @@ const ParallaxHero = ({
             className="w-full h-full object-cover"
           />
         ) : (
-          <OptimizedImage src={image} alt={title} className="w-full h-full object-cover" />
+          <OptimizedImage src={image} alt={title} width={1920} height={1080} priority className="w-full h-full object-cover" />
         )}
         <div className="absolute inset-0 bg-black/40 z-10" />
         <div className="absolute inset-0 bg-gradient-to-t from-background-light via-transparent to-black/20 z-10" />

@@ -17,7 +17,7 @@ const NextJsMigration: React.FC = () => {
         <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/40 via-slate-900 to-black"></div>
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <span className="text-blue-400 font-bold tracking-wider uppercase text-sm mb-6 block flex items-center justify-center gap-2">
-            <Code size={20} weight="fill" /> Next.js Enterprise Migration
+            <Code size={20} weight="fill" aria-hidden="true" /> Next.js Enterprise Migration
           </span>
           <h1 className="font-display font-black text-4xl sm:text-6xl mb-6 tracking-tight">
             Von Legacy zu Next.js:
@@ -48,7 +48,7 @@ const NextJsMigration: React.FC = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-blue-200 transition-colors motion-reduce:duration-[0.01ms]">
               <div className="bg-blue-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                <Lightning size={32} className="text-blue-600" weight="duotone" />
+                <Lightning size={32} className="text-blue-600" weight="duotone" aria-hidden="true" />
               </div>
               <h3 className="text-xl font-bold text-secondary mb-3">Extreme Geschwindigkeit</h3>
               <p className="text-slate-600">
@@ -58,7 +58,7 @@ const NextJsMigration: React.FC = () => {
             </div>
             <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-blue-200 transition-colors motion-reduce:duration-[0.01ms]">
               <div className="bg-blue-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                <RocketLaunch size={32} className="text-blue-600" weight="duotone" />
+                <RocketLaunch size={32} className="text-blue-600" weight="duotone" aria-hidden="true" />
               </div>
               <h3 className="text-xl font-bold text-secondary mb-3">SEO-Dominanz</h3>
               <p className="text-slate-600">
@@ -68,7 +68,7 @@ const NextJsMigration: React.FC = () => {
             </div>
             <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-blue-200 transition-colors motion-reduce:duration-[0.01ms]">
               <div className="bg-blue-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                <ShieldCheck size={32} className="text-blue-600" weight="duotone" />
+                <ShieldCheck size={32} className="text-blue-600" weight="duotone" aria-hidden="true" />
               </div>
               <h3 className="text-xl font-bold text-secondary mb-3">Zukunftssicherheit</h3>
               <p className="text-slate-600">

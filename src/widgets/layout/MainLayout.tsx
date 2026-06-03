@@ -16,13 +16,19 @@ interface LayoutProps {
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <ConditionalWrapper>
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-primary-700 focus:text-white focus:rounded-lg focus:outline-2 focus:outline-offset-2 focus:outline-primary-500"
+      >
+        Skip to main content
+      </a>
       <MobileReadyNav />
       <RouteAnnouncer />
 
       {/* Spacer for fixed nav */}
       <div className="h-24" />
 
-      <main role="main" id="main-content" className="flex-grow pb-20 lg:pb-0">
+      <main id="main-content" className="flex-grow pb-20 lg:pb-0">
         <PageTransition>{children}</PageTransition>
       </main>
 

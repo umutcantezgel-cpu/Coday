@@ -17,11 +17,13 @@ const TeamGallery: React.FC = () => {
   const teamMembers = Array.isArray(team) ? team : [];
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <ul className="grid grid-cols-2 md:grid-cols-4 gap-4" role="list">
       {teamMembers.map((member, idx) => (
-        <div
+        <li
           key={idx}
-          className="group relative aspect-[3/4] rounded-2xl overflow-hidden cursor-pointer"
+          className="group relative aspect-[3/4] rounded-2xl overflow-hidden cursor-pointer list-none focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2"
+          tabIndex={0}
+          aria-label={`${member.name}, ${member.role}`}
         >
           {/* Background Image (Mock color for now) */}
           <div
@@ -29,7 +31,7 @@ const TeamGallery: React.FC = () => {
           ></div>
 
           {/* Placeholder Avatar */}
-          <div className="absolute inset-0 flex items-center justify-center opacity-50 font-black text-9xl text-white/5 uppercase select-none">
+          <div className="absolute inset-0 flex items-center justify-center opacity-50 font-black text-9xl text-white/5 uppercase select-none" aria-hidden="true">
             {member.name[0]}
           </div>
 
@@ -49,9 +51,9 @@ const TeamGallery: React.FC = () => {
               <p className="text-white/80 text-xs">{member.funfact}</p>
             </div>
           </div>
-        </div>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 };
 

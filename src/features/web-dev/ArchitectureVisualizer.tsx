@@ -48,7 +48,7 @@ const ArchitectureVisualizer: React.FC = () => {
   ];
 
   return (
-    <div className="w-full bg-surface-dark rounded-3xl p-8 border border-white/5 overflow-hidden relative min-h-[400px] flex items-center justify-center">
+    <div className="w-full bg-surface-dark rounded-3xl p-8 border border-white/5 overflow-hidden relative min-h-[400px] flex items-center justify-center" role="region" aria-label={t('web_development_page.architecture.visualizer.footer')}>
       {/* Background Grid */}
       <div className="absolute inset-0 grid grid-cols-12 grid-rows-6 opacity-10 pointer-events-none">
         {Array.from({ length: 72 }).map((_, i) => (
@@ -92,9 +92,14 @@ const ArchitectureVisualizer: React.FC = () => {
             transition={{ delay: index * STAGGER.hero * 2, duration: DURATION.default }}
             onMouseEnter={() => setActiveNode(node.id)}
             onMouseLeave={() => setActiveNode(null)}
+            onFocus={() => setActiveNode(node.id)}
+            onBlur={() => setActiveNode(null)}
           >
             <div
-              className={`w-24 h-24 sm:w-32 sm:h-32 rounded-2xl border border-white/10 backdrop-blur-md bg-white/5 flex flex-col items-center justify-center p-4 cursor-pointer transition motion-reduce:duration-[0.01ms] duration-300 ${activeNode === node.id ? 'scale-110 border-white/30 bg-white/10 shadow-[0_0_30px_rgba(26,154,154,0.3)]' : 'hover:border-white/20'}`}
+              className={`w-24 h-24 sm:w-32 sm:h-32 rounded-2xl border border-white/10 backdrop-blur-md bg-white/5 flex flex-col items-center justify-center p-4 cursor-pointer transition motion-reduce:duration-[0.01ms] duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${activeNode === node.id ? 'scale-110 border-white/30 bg-white/10 shadow-[0_0_30px_rgba(26,154,154,0.3)]' : 'hover:border-white/20'}`}
+              tabIndex={0}
+              role="button"
+              aria-label={`${node.label}: ${node.desc}`}
               style={{ borderColor: activeNode === node.id ? node.color : '' }}
             >
               <div

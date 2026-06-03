@@ -8,6 +8,7 @@ import { CheckCircle } from '@phosphor-icons/react/dist/ssr';
 export default function TestPrimitivesPage() {
   return (
     <div className="p-8 flex flex-col gap-8">
+      <h1 className="text-2xl font-bold">UI Primitives Test</h1>
       <div>
         <h2 className="mb-4">Buttons</h2>
         <div className="flex gap-4 items-center">

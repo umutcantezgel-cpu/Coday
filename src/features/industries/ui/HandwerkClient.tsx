@@ -39,6 +39,8 @@ const Handwerk: React.FC = () => {
           <OptimizedImage
             src={IMAGES.industries.handwerk.hero}
             alt={t('handwerk-bau.hero.image_alt', 'Professionelle Handwerker bei der Arbeit')}
+            width={1920}
+            height={1080}
             className="w-full h-full object-cover opacity-10"
             priority
           />

@@ -61,18 +61,20 @@ const Marketplace: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" role="list">
           {/* Marketplace Items */}
           {PRODUCTS.map((item) => (
-            <div
+            <li
               key={item.id}
-              className="group relative bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl hover:border-blue-200 transition motion-reduce:duration-[0.01ms] duration-300 flex flex-col"
+              className="group relative bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl hover:border-blue-200 focus-within:shadow-xl focus-within:border-blue-200 transition motion-reduce:duration-[0.01ms] duration-300 flex flex-col list-none"
             >
               <div className="h-48 relative overflow-hidden bg-slate-50">
                 <OptimizedImage
                   src={item.image}
                   alt={item.alt}
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform motion-reduce:duration-[0.01ms] duration-700"
+                  width={800}
+                  height={600}
                 />
                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-gray-900 shadow-sm">
                   Popular
@@ -80,21 +82,24 @@ const Marketplace: React.FC = () => {
               </div>
 
               <div className="p-6 flex-1 flex flex-col">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                <h2 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h2>
                 <p className="text-slate-500 mb-4 text-sm flex-1">
                   Professionelles Paket für direkten Einsatz. Inklusive Updates.
                 </p>
 
                 <div className="flex items-center justify-between mt-4 pt-4 border-t border-gray-100">
                   <span className="text-xl font-bold text-blue-600">{item.price}</span>
-                  <button className="active:scale-[0.97] px-4 py-2 rounded-lg bg-gray-900 text-sm font-bold text-white hover:bg-gray-800 transition-colors motion-reduce:duration-[0.01ms]">
+                  <button
+                    aria-label={`${item.title} kaufen für ${item.price}`}
+                    className="active:scale-[0.97] px-4 py-2 rounded-lg bg-gray-900 text-sm font-bold text-white hover:bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 transition-colors motion-reduce:duration-[0.01ms]"
+                  >
                     Kaufen
                   </button>
                 </div>
               </div>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </div>
   );

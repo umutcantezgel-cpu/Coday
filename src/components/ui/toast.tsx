@@ -42,7 +42,9 @@ export function Toaster() {
             className={cn(
               'pointer-events-auto relative mt-2 flex w-full items-center justify-between overflow-hidden rounded-xl border bg-white p-4 shadow-lg ring-1 ring-black/5'
             )}
-            role="status"
+            role={t.role}
+            aria-live={t.ariaLive}
+            aria-atomic="true"
           >
             <div className="flex w-full items-start gap-3">
               {t.type && <div className="mt-0.5 shrink-0">{icons[t.type]}</div>}
@@ -52,7 +54,7 @@ export function Toaster() {
               </div>
               <button
                 onClick={() => removeToast(t.id)}
-                className="inline-flex shrink-0 rounded-md text-gray-400 transition-[transform,colors] duration-[160ms] ease-out hover:bg-black/5 hover:text-gray-900 active:scale-[0.97] focus:outline-none focus:ring-2 focus:ring-primary-500"
+                className="inline-flex shrink-0 rounded-md text-gray-400 transition-[transform,colors] duration-[160ms] ease-out hover:bg-black/5 hover:text-gray-900 active:scale-[0.97] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
                 aria-label="Close toast"
               >
                 <X className="h-4 w-4" />

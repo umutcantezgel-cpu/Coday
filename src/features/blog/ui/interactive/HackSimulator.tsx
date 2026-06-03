@@ -115,7 +115,7 @@ export const HackSimulator: React.FC = () => {
   const isSecure = activeSystem === 'coday' && attackProgress === 100;
 
   return (
-    <div className="my-12 w-full max-w-4xl mx-auto font-mono text-sm">
+    <section className="my-12 w-full max-w-4xl mx-auto font-mono text-sm" aria-label={t('hackSimulator.title')}>
       <div className="bg-bg-inverse rounded-xl overflow-hidden shadow-2xl border border-gray-800">
         {/* Header */}
         <div className="bg-border-strong p-4 flex flex-col md:flex-row items-center justify-between gap-4 border-b border-gray-700">
@@ -170,6 +170,9 @@ export const HackSimulator: React.FC = () => {
           <div
             className="col-span-2 p-6 overflow-y-auto bg-bg-inverse font-mono text-xs md:text-sm border-r border-gray-800"
             ref={scrollRef}
+            role="log"
+            aria-live="polite"
+            aria-label={t('hackSimulator.title')}
           >
             {logs.length === 0 && (
               <div className="h-full flex flex-col items-center justify-center text-gray-600 gap-4">
@@ -219,7 +222,7 @@ export const HackSimulator: React.FC = () => {
           </div>
 
           {/* Visual Status Panel */}
-          <div className="col-span-1 bg-bg-inverse p-6 flex flex-col items-center justify-center border-l border-gray-800 relative overflow-hidden">
+          <div className="col-span-1 bg-bg-inverse p-6 flex flex-col items-center justify-center border-l border-gray-800 relative overflow-hidden" aria-live="polite">
             <AnimatePresence mode="wait">
               {isCompromised ? (
                 <motion.div
@@ -277,7 +280,7 @@ export const HackSimulator: React.FC = () => {
         </div>
 
         {/* Progress Bar */}
-        <div className="h-1 bg-gray-800 w-full">
+        <div className="h-1 bg-gray-800 w-full" role="progressbar" aria-valuenow={attackProgress} aria-valuemin={0} aria-valuemax={100} aria-label="Attack progress">
           <motion.div
             className={cn(
               'h-full transition motion-reduce:duration-[0.01ms] duration-300',
@@ -298,11 +301,12 @@ export const HackSimulator: React.FC = () => {
           <button
             onClick={() => setLogs([])}
             className="active:scale-[0.97] hover:text-white flex items-center gap-1"
+            aria-label={t('hackSimulator.reset')}
           >
             <ArrowsClockwise className="w-3 h-3" /> {t('hackSimulator.reset')}
           </button>
         )}
       </div>
-    </div>
+    </section>
   );
 };

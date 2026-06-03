@@ -51,7 +51,7 @@ export const ScoreCard: React.FC<ScoreCardProps> = ({
           <div
             className={`w-10 h-10 rounded-xl bg-gradient-to-br ${score === -1 ? 'from-gray-400 to-gray-500' : color} flex items-center justify-center text-white`}
           >
-            <OptimizedIcon icon={icon} className="text-xl" />
+            <OptimizedIcon icon={icon} className="text-xl" aria-hidden="true" />
           </div>
           <h3 className="font-bold text-gray-900">{title}</h3>
         </div>
@@ -68,7 +68,7 @@ export const ScoreCard: React.FC<ScoreCardProps> = ({
         <div className="flex-shrink-0">
           {score === -1 ? (
             <div className="w-16 h-16 rounded-full border-4 border-gray-200 flex items-center justify-center bg-white">
-              <OptimizedIcon icon={WarningCircle} className="text-gray-400 text-2xl" />
+              <OptimizedIcon icon={WarningCircle} className="text-gray-400 text-2xl" aria-hidden="true" />
             </div>
           ) : (
             <CircularGauge score={score} size={64} color={color} />
@@ -78,7 +78,7 @@ export const ScoreCard: React.FC<ScoreCardProps> = ({
 
       {/* Hover Arrow */}
       <div className="flex justify-end mt-2 opacity-0 group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms]">
-        <OptimizedIcon icon={ArrowRight} className="text-primary text-sm" />
+        <OptimizedIcon icon={ArrowRight} className="text-primary text-sm" aria-hidden="true" />
       </div>
     </motion.div>
   );

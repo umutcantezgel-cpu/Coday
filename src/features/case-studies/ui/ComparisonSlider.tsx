@@ -40,6 +40,8 @@ export const ComparisonSlider: React.FC<ComparisonSliderProps> = ({
   return (
     <div
       className={`relative w-full ${aspectRatio} rounded-3xl overflow-hidden cursor-ew-resize select-none my-16 shadow-2xl`}
+      role="group"
+      aria-label={`${beforeLabel} / ${afterLabel} comparison slider`}
     >
       <div ref={containerRef} className="absolute inset-0 w-full h-full">
         {/* AFTER Image (Background) */}
@@ -48,6 +50,8 @@ export const ComparisonSlider: React.FC<ComparisonSliderProps> = ({
             src={afterImage}
             alt={afterLabel}
             className="w-full h-full object-cover"
+            width={800}
+            height={600}
           />
           <span className="absolute top-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-xs font-bold backdrop-blur-sm z-10">
             {afterLabel}
@@ -60,6 +64,8 @@ export const ComparisonSlider: React.FC<ComparisonSliderProps> = ({
             src={beforeImage}
             alt={beforeLabel}
             className="w-full h-full object-cover"
+            width={800}
+            height={600}
           />
           <span className="absolute top-4 left-4 bg-black/50 text-white px-3 py-1 rounded-full text-xs font-bold backdrop-blur-sm z-30">
             {beforeLabel}
@@ -73,7 +79,22 @@ export const ComparisonSlider: React.FC<ComparisonSliderProps> = ({
           dragConstraints={{ left: 0, right: width }}
           dragElastic={0}
           dragMomentum={false}
-          className="absolute top-0 bottom-0 w-1 bg-white z-40 cursor-ew-resize flex items-center justify-center group"
+          role="slider"
+          aria-label="Comparison slider handle"
+          aria-valuemin={0}
+          aria-valuemax={100}
+          tabIndex={0}
+          className="absolute top-0 bottom-0 w-1 bg-white z-40 cursor-ew-resize flex items-center justify-center group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          onKeyDown={(e: React.KeyboardEvent) => {
+            const step = width * 0.05;
+            if (e.key === 'ArrowLeft') {
+              e.preventDefault();
+              x.set(Math.max(0, x.get() - step));
+            } else if (e.key === 'ArrowRight') {
+              e.preventDefault();
+              x.set(Math.min(width, x.get() + step));
+            }
+          }}
         >
           <div className="w-10 h-10 bg-white rounded-full shadow-xl flex items-center justify-center text-secondary group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms] group-active:scale-[0.97]">
             <DotsSixVertical size={20} />

@@ -114,7 +114,7 @@ export default function AiCostPage() {
             <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center p-6 bg-slate-50 rounded-2xl border border-slate-200">
               <div className="flex items-center gap-4">
                 <div className="w-14 h-14 bg-primary/10 text-primary rounded-xl flex items-center justify-center">
-                  <OptimizedIcon icon={CurrencyEur} className="w-8 h-8" />
+                  <OptimizedIcon icon={CurrencyEur} className="w-8 h-8" aria-hidden="true" />
                 </div>
                 <div>
                   <div className="text-sm text-slate-500 font-semibold uppercase tracking-wider mb-1">
@@ -129,7 +129,7 @@ export default function AiCostPage() {
               <div className="hidden sm:block w-px h-12 bg-slate-300" />
               <div className="flex items-center gap-4">
                 <div className="w-14 h-14 bg-accent/10 text-accent rounded-xl flex items-center justify-center">
-                  <OptimizedIcon icon={ClockCounterClockwise} className="w-8 h-8" />
+                  <OptimizedIcon icon={ClockCounterClockwise} className="w-8 h-8" aria-hidden="true" />
                 </div>
                 <div>
                   <div className="text-sm text-slate-500 font-semibold uppercase tracking-wider mb-1">
@@ -149,7 +149,7 @@ export default function AiCostPage() {
           {/* Cost Breakdown */}
           <div className="lg:col-span-2 space-y-6">
             <h2 className="font-display font-bold text-2xl text-secondary flex items-center gap-3">
-              <OptimizedIcon icon={ChartLineUp} className="w-6 h-6 text-primary" />
+              <OptimizedIcon icon={ChartLineUp} className="w-6 h-6 text-primary" aria-hidden="true" />
               Detaillierte Kostenaufschlüsselung
             </h2>
             <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
@@ -173,7 +173,7 @@ export default function AiCostPage() {
           {/* Value Factors */}
           <div className="space-y-6">
             <h2 className="font-display font-bold text-2xl text-secondary flex items-center gap-3">
-              <OptimizedIcon icon={Lightbulb} className="w-6 h-6 text-accent" />
+              <OptimizedIcon icon={Lightbulb} className="w-6 h-6 text-accent" aria-hidden="true" />
               Werttreiber
             </h2>
             <div className="bg-secondary text-white rounded-2xl p-6 sm:p-8 shadow-xl relative overflow-hidden">
@@ -184,6 +184,7 @@ export default function AiCostPage() {
                     <OptimizedIcon
                       icon={CheckCircle}
                       className="w-5 h-5 text-accent mt-1 flex-shrink-0"
+                      aria-hidden="true"
                     />
                     <span className="text-slate-300 text-sm leading-relaxed">{factor}</span>
                   </li>

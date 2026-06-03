@@ -48,16 +48,23 @@ const CardNav: React.FC<CardNavProps> = ({
     return () => clearTimeout(timer);
   }, [pathname]);
 
-  // Handle outside click to close
+  // Handle outside click and Escape key to close
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (navRef.current && !navRef.current.contains(event.target as Node)) {
         setActiveCategory(null);
       }
     };
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setActiveCategory(null);
+      }
+    };
     document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('keydown', handleKeyDown);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleKeyDown);
     };
   }, []);
 
@@ -106,7 +113,7 @@ const CardNav: React.FC<CardNavProps> = ({
   };
 
   return (
-    <div className={`card-nav-container ${className}`} ref={navRef}>
+    <header role="banner" className={`card-nav-container ${className}`} ref={navRef}>
       {/* Floating Pill */}
       <nav className="nav-pill" aria-label="Hauptnavigation">
         <Link href="/" className="nav-pill-logo" title="Zur Startseite">
@@ -127,6 +134,7 @@ const CardNav: React.FC<CardNavProps> = ({
               <button
                 className={`nav-pill-link ${activeCategory === item.label ? 'active' : ''}`}
                 aria-expanded={activeCategory === item.label}
+                onClick={() => setActiveCategory(activeCategory === item.label ? null : item.label)}
               >
                 {t(item.label)}
                 <OptimizedIcon
@@ -289,6 +297,7 @@ const CardNav: React.FC<CardNavProps> = ({
               className="mobile-menu-trigger p-2 min-w-[44px] min-h-[44px] flex items-center justify-center"
               onClick={() => setIsMobileOpen(true)}
               aria-label={isMobileOpen ? 'Close Menu' : 'Open Menu'}
+              aria-expanded={isMobileOpen}
             >
               <OptimizedIcon icon={isMobileOpen ? X : List} className="w-6 h-6" />
             </button>
@@ -302,7 +311,7 @@ const CardNav: React.FC<CardNavProps> = ({
         isOpen={isMobileOpen}
         onClose={() => setIsMobileOpen(false)}
       />
-    </div>
+    </header>
   );
 };
 

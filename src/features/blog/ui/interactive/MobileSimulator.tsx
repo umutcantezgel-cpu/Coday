@@ -10,7 +10,7 @@ export const MobileSimulator: React.FC = () => {
   const [device, setDevice] = useState<'mobile' | 'desktop'>('mobile');
 
   return (
-    <div className="my-12 bg-gray-900 rounded-3xl p-8 border border-gray-800 shadow-2xl overflow-hidden relative">
+    <section className="my-12 bg-gray-900 rounded-3xl p-8 border border-gray-800 shadow-2xl overflow-hidden relative" aria-label={t('blog:mobileSimulator.title')}>
       <div className="absolute top-0 right-0 p-4 opacity-10">
         <DeviceMobile size={120} className="text-white" />
       </div>
@@ -30,6 +30,7 @@ export const MobileSimulator: React.FC = () => {
               ? 'bg-red-600 text-white shadow-lg shadow-red-900/50'
               : 'bg-gray-800 text-gray-400 hover:bg-gray-700'
           )}
+          aria-pressed={mode === 'bad'}
         >
           <XCircle size={18} />
           {t('blog:mobileSimulator.badMode')}
@@ -43,6 +44,7 @@ export const MobileSimulator: React.FC = () => {
               ? 'bg-green-600 text-white shadow-lg shadow-green-900/50'
               : 'bg-gray-800 text-gray-400 hover:bg-gray-700'
           )}
+          aria-pressed={mode === 'good'}
         >
           <CheckCircle size={18} />
           {t('blog:mobileSimulator.goodMode')}
@@ -140,6 +142,7 @@ export const MobileSimulator: React.FC = () => {
         <button
           onClick={() => setDevice((d) => (d === 'mobile' ? 'desktop' : 'mobile'))}
           className="active:scale-[0.97] flex items-center gap-2 hover:text-white transition-colors motion-reduce:duration-[0.01ms]"
+          aria-label={device === 'mobile' ? t('blog:mobileSimulator.switchToDesktop') : t('blog:mobileSimulator.switchToMobile')}
         >
           {device === 'mobile' ? <Monitor size={16} /> : <DeviceMobile size={16} />}
           {device === 'mobile'
@@ -148,6 +151,6 @@ export const MobileSimulator: React.FC = () => {
           {t('blog:mobileSimulator.view')}
         </button>
       </div>
-    </div>
+    </section>
   );
 };

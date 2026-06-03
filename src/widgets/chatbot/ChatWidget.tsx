@@ -46,12 +46,13 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
             exit={{ scale: 0, opacity: 0 }}
             onClick={toggleChat}
             className="fixed right-6 z-max w-14 h-14 rounded-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white shadow-2xl hover:shadow-purple-500/25 transition-shadow motion-reduce:duration-[0.01ms] flex items-center justify-center group bottom-[120px] md:bottom-6"
+            aria-label="Chat öffnen"
           >
-            <ChatCircle className="w-6 h-6 group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms]" />
+            <ChatCircle className="w-6 h-6 group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms]" aria-hidden="true" />
 
             {/* Notification Badge */}
             {messages.length > 0 && isMinimized && (
-              <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full text-xs font-bold flex items-center justify-center">
+              <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full text-xs font-bold flex items-center justify-center" aria-live="polite" aria-label={`${messages.length} ungelesene Nachrichten`}>
                 {messages.length}
               </span>
             )}
@@ -71,6 +72,8 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
             className="fixed right-6 z-max w-[calc(100vw-3rem)] md:w-96 h-[500px] max-h-[calc(100dvh-8rem)] bg-white rounded-2xl shadow-2xl border border-gray-100 flex flex-col overflow-hidden bottom-[120px] md:bottom-6"
+            role="dialog"
+            aria-label="Chat mit Codi KI-Assistent"
           >
             {/* Header */}
             <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 px-4 py-3 flex items-center justify-between">
@@ -87,14 +90,16 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
                 <button
                   onClick={minimizeChat}
                   className="p-1.5 rounded-full hover:bg-white/20 transition-colors motion-reduce:duration-[0.01ms] text-white"
+                  aria-label="Chat minimieren"
                 >
-                  <Minus className="w-4 h-4" />
+                  <Minus className="w-4 h-4" aria-hidden="true" />
                 </button>
                 <button
                   onClick={toggleChat}
                   className="p-1.5 rounded-full hover:bg-white/20 transition-colors motion-reduce:duration-[0.01ms] text-white"
+                  aria-label="Chat schließen"
                 >
-                  <X className="w-4 h-4" />
+                  <X className="w-4 h-4" aria-hidden="true" />
                 </button>
               </div>
             </div>
@@ -108,7 +113,7 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
             </div>
 
             {/* Messages */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50">
+            <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50" role="log" aria-live="polite" aria-label="Chat-Nachrichten">
               {messages.map((message) => (
                 <motion.div
                   key={message.id}
@@ -139,6 +144,8 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   className="flex justify-start"
+                  role="status"
+                  aria-label="Codi tippt..."
                 >
                   <div className="bg-white px-4 py-3 rounded-2xl rounded-bl-md border border-gray-100 shadow-sm">
                     <div className="flex gap-1">

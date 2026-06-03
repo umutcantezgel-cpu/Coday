@@ -85,7 +85,7 @@ export const SovereigntyChecklist: React.FC = () => {
   const result = getResult();
 
   return (
-    <div className="my-16 relative overflow-hidden rounded-[2.5rem] border border-gray-200 bg-white shadow-xl">
+    <section className="my-16 relative overflow-hidden rounded-[2.5rem] border border-gray-200 bg-white shadow-xl" aria-label="Digital Sovereignty Audit">
       <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-600 to-indigo-600" />
 
       <div className="p-8 md:p-12">
@@ -120,7 +120,7 @@ export const SovereigntyChecklist: React.FC = () => {
               </div>
               <input
                 type="checkbox"
-                className="hidden"
+                className="sr-only"
                 checked={!!checkedItems[item.id]}
                 onChange={() => toggleItem(item.id)}
               />
@@ -156,6 +156,7 @@ export const SovereigntyChecklist: React.FC = () => {
                     ? 'bg-yellow-50 border-yellow-200 text-yellow-900'
                     : 'bg-red-50 border-red-200 text-red-900'
               )}
+              aria-live="assertive"
             >
               <div
                 className={clsx(
@@ -182,7 +183,7 @@ export const SovereigntyChecklist: React.FC = () => {
           )}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

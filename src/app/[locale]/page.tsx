@@ -49,7 +49,7 @@ export default async function HomePage() {
   const localSchema = getLocalBusinessSchema();
 
   return (
-    <main>
+    <>
       <Script
         id="schema-local-service"
         type="application/ld+json"
@@ -145,6 +145,6 @@ export default async function HomePage() {
           <TestimonialsSection />
         </React.Suspense>
       </ScrollReveal>
-    </main>
+    </>
   );
 }

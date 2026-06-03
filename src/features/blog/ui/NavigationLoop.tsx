@@ -48,6 +48,8 @@ export const RelatedArticles: React.FC<{ currentSlug: string; category: string }
                   <OptimizedImage
                     src={post.image}
                     alt={post.alt}
+                    width={400}
+                    height={400}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms] duration-500"
                   />
                 </div>

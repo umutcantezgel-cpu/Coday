@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 const FOCUSABLE_ELEMENTS =
   'a[href], button, textarea, input[type="text"], input[type="radio"], input[type="checkbox"], select, [tabindex]:not([tabindex="-1"])';
 
-export function useFocusTrap(active: boolean) {
+export function useFocusTrap(active: boolean, onEscape?: () => void) {
   const ref = useRef<HTMLElement | null>(null);
   const previousFocus = useRef<HTMLElement | null>(null);
 
@@ -19,6 +19,12 @@ export function useFocusTrap(active: boolean) {
     if (!container) return;
 
     const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && onEscape) {
+        e.preventDefault();
+        onEscape();
+        return;
+      }
+
       if (e.key !== 'Tab') return;
 
       const focusableElements = container.querySelectorAll<HTMLElement>(FOCUSABLE_ELEMENTS);
@@ -67,7 +73,7 @@ export function useFocusTrap(active: boolean) {
         previousFocus.current = null;
       }
     };
-  }, [active]);
+  }, [active, onEscape]);
 
   return ref;
 }

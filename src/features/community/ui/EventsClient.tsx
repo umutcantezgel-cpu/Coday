@@ -18,19 +18,19 @@ const Events: React.FC = () => {
           </p>
         </div>
 
-        <div className="space-y-6">
+        <ul className="space-y-6" role="list">
           {[1, 2, 3].map((item) => (
-            <div
+            <li
               key={item}
-              className="flex flex-col md:flex-row bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg transition motion-reduce:duration-[0.01ms] duration-300"
+              className="flex flex-col md:flex-row bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg focus-within:shadow-lg transition motion-reduce:duration-[0.01ms] duration-300 list-none"
             >
               <div className="md:w-1/3 bg-slate-100 relative h-48 md:h-auto">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10" />
                 <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-1 shadow-sm">
                   <span className="block text-xs font-bold text-slate-500 uppercase">April</span>
-                  <span className="block text-xl font-black text-emerald-900 text-center">
+                  <time dateTime={`2026-04-${10 + item}`} className="block text-xl font-black text-emerald-900 text-center">
                     {10 + item}
-                  </span>
+                  </time>
                 </div>
               </div>
 
@@ -40,8 +40,8 @@ const Events: React.FC = () => {
                     Webinar
                   </span>
                   <span className="text-slate-400 text-xs flex items-center">
-                    <OptimizedIcon icon={Clock} className="text-[14px] mr-1" />
-                    14:00 - 15:30
+                    <OptimizedIcon icon={Clock} className="text-[14px] mr-1" aria-hidden="true" />
+                    <time dateTime={`2026-04-${10 + item}T14:00`}>14:00 - 15:30</time>
                   </span>
                 </div>
 
@@ -53,13 +53,13 @@ const Events: React.FC = () => {
                   und Automatisierung.
                 </p>
 
-                <button className="active:scale-[0.97] self-start px-6 py-3 rounded-xl bg-gradient-ocean text-white font-bold text-sm shadow-md hover:shadow-lg hover:opacity-90 transition motion-reduce:duration-[0.01ms]">
+                <button className="active:scale-[0.97] self-start px-6 py-3 rounded-xl bg-gradient-ocean text-white font-bold text-sm shadow-md hover:shadow-lg hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 transition motion-reduce:duration-[0.01ms]">
                   Jetzt anmelden
                 </button>
               </div>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </div>
   );

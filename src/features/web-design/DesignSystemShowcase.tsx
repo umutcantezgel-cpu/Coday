@@ -47,12 +47,14 @@ const DesignSystemShowcase: React.FC = () => {
         <div className="bg-white p-1 rounded-xl border border-gray-200 flex gap-1">
           <button
             onClick={() => setTheme('brand-a')}
+            aria-pressed={theme === 'brand-a'}
             className={`active:scale-[0.97] px-4 py-2 rounded-lg text-sm font-bold transition motion-reduce:duration-[0.01ms] ${theme === 'brand-a' ? 'bg-gray-900 text-white shadow-md' : 'text-gray-500 hover:bg-gray-50'}`}
           >
             Playful
           </button>
           <button
             onClick={() => setTheme('brand-b')}
+            aria-pressed={theme === 'brand-b'}
             className={`active:scale-[0.97] px-4 py-2 rounded-lg text-sm font-bold transition motion-reduce:duration-[0.01ms] ${theme === 'brand-b' ? 'bg-gray-900 text-white shadow-md' : 'text-gray-500 hover:bg-gray-50'}`}
           >
             Enterprise
@@ -106,9 +108,10 @@ const DesignSystemShowcase: React.FC = () => {
         {/* Input Elements */}
         <div className="space-y-4">
           <div className="space-y-2">
-            <label className={`text-sm font-bold ${current.textColor}`}>Email Address</label>
+            <label htmlFor="design-email" className={`text-sm font-bold ${current.textColor}`}>Email Address</label>
             <motion.input
               layout
+              id="design-email"
               type="text"
               placeholder="hello@example.com"
               className={`w-full px-4 py-3 outline-none transition motion-reduce:duration-[0.01ms] focus:ring-2`}
@@ -139,15 +142,19 @@ const DesignSystemShowcase: React.FC = () => {
 
           {/* Toggle Switch */}
           <div className="flex items-center gap-3">
-            <div
-              className={`w-12 h-6 rounded-full relative transition-colors motion-reduce:duration-[0.01ms] duration-300`}
+            <button
+              type="button"
+              role="switch"
+              aria-checked="true"
+              aria-label="Toggle State"
+              className="w-12 h-6 rounded-full relative transition-colors motion-reduce:duration-[0.01ms] duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               style={{
                 backgroundColor: current.secondary,
                 border: theme === 'brand-a' ? '2px solid black' : 'none',
               }}
             >
-              <div className="absolute right-1 top-1 w-4 h-4 bg-white rounded-full shadow-sm"></div>
-            </div>
+              <span className="absolute right-1 top-1 w-4 h-4 bg-white rounded-full shadow-sm" aria-hidden="true"></span>
+            </button>
             <span className={`text-sm font-bold ${current.textColor}`}>Toggle State</span>
           </div>
         </div>

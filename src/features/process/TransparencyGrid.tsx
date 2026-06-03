@@ -30,15 +30,15 @@ const TransparencyGrid: React.FC = () => {
         <div className="bg-gray-800/50 backdrop-blur border border-white/10 rounded-2xl p-6 hover:bg-gray-800 transition motion-reduce:duration-[0.01ms] group">
           <div className="flex items-center gap-4 mb-6">
             <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center text-blue-400">
-              <OptimizedIcon icon={Kanban} />
+              <OptimizedIcon icon={Kanban} aria-hidden="true" />
             </div>
             <div>
-              <h4 className="font-bold text-white text-lg">{t('transparency.kanban.title')}</h4>
+              <h3 className="font-bold text-white text-lg">{t('transparency.kanban.title')}</h3>
               <p className="text-sm text-gray-400">{t('transparency.kanban.desc')}</p>
             </div>
           </div>
           {/* Fake Kanban Items */}
-          <div className="flex gap-2 opacity-50 group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms]">
+          <div className="flex gap-2 opacity-50 group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms]" aria-hidden="true">
             <div className="w-1/3 h-24 bg-white/5 rounded-lg p-2 space-y-2">
               <div className="w-full h-8 bg-white/10 rounded"></div>
               <div className="w-full h-8 bg-white/10 rounded"></div>
@@ -56,15 +56,15 @@ const TransparencyGrid: React.FC = () => {
         <div className="bg-gray-800/50 backdrop-blur border border-white/10 rounded-2xl p-6 hover:bg-gray-800 transition motion-reduce:duration-[0.01ms] group">
           <div className="flex items-center gap-4 mb-6">
             <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center text-purple-400">
-              <OptimizedIcon icon={Chat} />
+              <OptimizedIcon icon={Chat} aria-hidden="true" />
             </div>
             <div>
-              <h4 className="font-bold text-white text-lg">{t('transparency.chat.title')}</h4>
+              <h3 className="font-bold text-white text-lg">{t('transparency.chat.title')}</h3>
               <p className="text-sm text-gray-400">{t('transparency.chat.desc')}</p>
             </div>
           </div>
           {/* Fake Chat */}
-          <div className="space-y-3 opacity-50 group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms]">
+          <div className="space-y-3 opacity-50 group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms]" aria-hidden="true">
             <div className="flex gap-2">
               <div className="w-6 h-6 rounded-full bg-primary"></div>
               <div className="bg-white/10 rounded-lg rounded-tl-none p-2 text-xs text-gray-300">

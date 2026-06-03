@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useId, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { AnimatePresence, motion } from 'motion/react';
 import { X } from '@phosphor-icons/react';
@@ -15,6 +15,8 @@ interface ModalProps {
   children: React.ReactNode;
   className?: string;
   hideCloseButton?: boolean;
+  /** Accessible label for the modal. Required if no title is provided. */
+  'aria-label'?: string;
 }
 
 const Portal = React.forwardRef<HTMLDivElement, { children: React.ReactNode }>(
@@ -39,7 +41,9 @@ export function Modal({
   children,
   className,
   hideCloseButton = false,
+  'aria-label': ariaLabel,
 }: ModalProps) {
+  const modalId = useId();
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
     // eslint-disable-next-line
@@ -101,10 +105,11 @@ export function Modal({
               )}
               role="dialog"
               aria-modal="true"
-              aria-labelledby={title ? 'modal-title' : undefined}
+              aria-labelledby={title ? `modal-title-${modalId}` : undefined}
+              aria-label={!title ? (ariaLabel || 'Dialog') : undefined}
             >
               {title && (
-                <h2 id="modal-title" className="mb-4 text-xl font-semibold text-gray-900">
+                <h2 id={`modal-title-${modalId}`} className="mb-4 text-xl font-semibold text-gray-900">
                   {title}
                 </h2>
               )}

@@ -85,6 +85,8 @@ export function Navbar({ logo, items, className, ...props }: NavbarProps) {
               exit={{ y: '-100%' }}
               transition={{ duration: 0.15, ease: 'easeOut' }}
               className="bg-white border-b border-neutral-200 shadow-lg pointer-events-auto"
+              role="navigation"
+              aria-label="Mobile Navigation"
             >
               <div className="flex flex-col py-2 px-2 gap-1">
                 {items.map((item) => (

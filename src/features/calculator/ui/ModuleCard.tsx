@@ -34,7 +34,17 @@ export const ModuleCard: React.FC<ModuleCardProps> = ({
 
   return (
     <div
+      role="switch"
+      aria-checked={isSelected || isIncluded}
+      aria-label={`${t(`modules.${module.id}.name`)}: ${formatCurrency(module.priceInCents / 100, 'EUR', locale)} - ${isIncluded ? t('card.status.included') : isSelected ? t('card.status.selected') : t('card.status.add')}`}
+      tabIndex={disabled || isIncluded ? -1 : 0}
       onClick={!disabled && !isIncluded ? onToggle : undefined}
+      onKeyDown={(e: React.KeyboardEvent) => {
+        if (!disabled && !isIncluded && (e.key === 'Enter' || e.key === ' ')) {
+          e.preventDefault();
+          onToggle();
+        }
+      }}
       className={`
         relative p-4 rounded-xl border transition motion-reduce:duration-[0.01ms] duration-300 flex flex-col h-full
         ${
@@ -51,8 +61,8 @@ export const ModuleCard: React.FC<ModuleCardProps> = ({
         }
         ${
           !isSelected && !isIncluded && !disabled
-            ? 'bg-white border-gray-100 hover:border-primary/30 hover:shadow-lg'
-            : ''
+            ? 'bg-white border-gray-100 hover:border-primary/30 hover:shadow-lg focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:outline-none'
+            : 'focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:outline-none'
         }
         ${disabled ? 'opacity-50 cursor-not-allowed grayscale' : ''}
       `}
@@ -109,7 +119,7 @@ export const ModuleCard: React.FC<ModuleCardProps> = ({
         {/* Learn More Toggle */}
         <button
           onClick={handleToggleDetails}
-          className="active:scale-[0.97] flex items-center gap-1 text-[10px] font-bold uppercase tracking-wide text-primary hover:text-primary/80 transition-colors motion-reduce:duration-[0.01ms] mb-2"
+          className="active:scale-[0.97] focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none flex items-center gap-1 text-[10px] font-bold uppercase tracking-wide text-primary hover:text-primary/80 transition-colors motion-reduce:duration-[0.01ms] mb-2 rounded"
         >
           <Icon name={showDetails ? 'expand_less' : 'expand_more'} className="text-sm" />
           {showDetails ? 'Weniger anzeigen' : 'Mehr erfahren'}

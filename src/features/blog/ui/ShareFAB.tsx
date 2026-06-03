@@ -77,6 +77,8 @@ export const ShareFAB: React.FC<{ title: string; url?: string }> = ({ title, url
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsOpen(!isOpen)}
         className="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center shadow-xl shadow-primary/30 z-50"
+        aria-label={isOpen ? t('shareTitle') : t('shareTitle')}
+        aria-expanded={isOpen}
       >
         <ShareNetwork size={24} />
       </motion.button>

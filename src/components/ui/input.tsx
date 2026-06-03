@@ -78,7 +78,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             <label
               htmlFor={inputId}
               className={cn(
-                'absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none transition-[transform,opacity] duration-150 ease-appear origin-top-left motion-reduce:transition-none',
+                'absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none transition-[transform,opacity] duration-150 ease-appear origin-top-left motion-reduce:transition-none',
                 'peer-focus:-translate-y-[1.1rem] peer-focus:scale-[0.80] peer-focus:text-primary-600',
                 'peer-[:not(:placeholder-shown)]:-translate-y-[1.1rem] peer-[:not(:placeholder-shown)]:scale-[0.80]',
                 leftIcon &&

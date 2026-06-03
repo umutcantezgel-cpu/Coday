@@ -38,7 +38,7 @@ export const TrustSection: React.FC = () => {
           </motion.p>
 
           {/* Client Badge Marquee */}
-          <div className="relative flex overflow-hidden group select-none [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+          <div className="relative flex overflow-hidden group select-none [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]" role="marquee" aria-label="Kunden-Referenzen: Batherm, MS-Schlüsseldienst, Lindener Ratsstuben">
             <motion.div
               className="flex gap-4 md:gap-6 shrink-0 py-4"
               animate={{ x: ['0%', '-50%'] }}
@@ -52,6 +52,7 @@ export const TrustSection: React.FC = () => {
                 <div
                   key={`${client}-${index}`}
                   className="px-6 py-3 rounded-full border border-white/[0.08] bg-white/[0.02] text-gray-400 font-display font-semibold text-sm tracking-wide hover:border-primary/30 hover:text-primary transition motion-reduce:duration-[0.01ms] duration-400 select-none whitespace-nowrap"
+                  aria-hidden="true"
                 >
                   {client}
                 </div>
