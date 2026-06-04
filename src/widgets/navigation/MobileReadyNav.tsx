@@ -287,11 +287,12 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
               items={[
                 { label: 'Hessen Übersicht', href: '/standorte/hessen' },
                 { label: 'Agentur Wetzlar', href: '/standorte/wetzlar' },
-                { label: 'Arzt in Wetzlar', href: '/branchen/arzt/wetzlar' },
-                { label: 'Arzt in Gießen', href: '/branchen/arzt/giessen' },
+                { label: 'Arzt in Wetzlar', href: '/branchen/gesundheitswesen/arzt-wetzlar' },
+                { label: 'Arzt in Gießen', href: '/branchen/gesundheitswesen/arzt-giessen' },
                 { label: 'Handwerker in Wetzlar', href: '/branchen/handwerker/wetzlar' },
-                { label: 'Datenschutz', href: '/legal/datenschutz' },
-                { label: 'Impressum', href: '/legal/impressum' },
+                { label: 'KFZ-Werkstätten', href: '/branchen/automobil/kfz-werkstatt' },
+                { label: 'KFZ-Mechatroniker', href: '/branchen/automobil/kfz-mechatroniker' },
+                { label: 'Autohändler', href: '/branchen/automobil/autohaendler' },
               ]}
             />
             <React.Suspense fallback={null}>

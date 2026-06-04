@@ -47,7 +47,7 @@ export const ApplicationWizard: React.FC = () => {
       .refine((val) => hasPackage || (val && val.trim().length > 0), {
         message: t('wizard.validation.required'),
       }),
-    name: z.string().min(2, { message: t('wizard.validation.min_length') }),
+    name: z.string().min(2, { message: t('wizard.validation.min_length', { count: 2 }) }),
     email: z.string().email({
       message: t('wizard.validation.email'),
     }),

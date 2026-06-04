@@ -100,7 +100,13 @@
       "required": "Dieses Feld ist erforderlich"
     },
     "title_direct": "Schildern Sie Ihr Projekt",
-    "subtitle": "Ich melde mich innerhalb von 24 Stunden."
+    "subtitle": "Ich melde mich innerhalb von 24 Stunden.",
+    "title_package": "Ihr gewähltes Paket",
+    "package_summary": {
+      "title": "Gewähltes Paket:",
+      "total": "Geschätzter Gesamtpreis",
+      "more": "weitere Module"
+    }
   },
   "cookie": {
     "settings": {

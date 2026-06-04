@@ -100,7 +100,13 @@
       "required": "This field is required"
     },
     "title_direct": "Describe Your Project",
-    "subtitle": "We will get back to you within 24 hours."
+    "subtitle": "We will get back to you within 24 hours.",
+    "title_package": "Your selected package",
+    "package_summary": {
+      "title": "Selected package:",
+      "total": "Estimated total price",
+      "more": "more modules"
+    }
   },
   "cookie": {
     "settings": {

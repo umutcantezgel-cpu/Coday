@@ -40,16 +40,56 @@ export function IndustryToolEmbed({ industryKey }: IndustryToolEmbedProps) {
           Interaktive Branchenlösung
         </h2>
         <p className="text-lg text-secondary-600 font-medium">
-          Testen Sie direkt unser exklusives Tool für Ihre Branche.
+          Entdecken Sie unsere maßgeschneiderte Lösung für Ihre Branche in einer interaktiven
+          Live-Demo.
         </p>
       </div>
-      <div className="bg-white border border-gray-100 rounded-[2rem] overflow-hidden shadow-2xl h-[800px] w-full">
-        <iframe
-          src={url}
-          className="w-full h-full border-none"
-          title={`Interaktives Tool für ${industryKey}`}
-          loading="lazy"
-        />
+      <div className="bg-white border border-gray-100 rounded-[2rem] overflow-hidden shadow-2xl p-12 text-center flex flex-col items-center justify-center relative group">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-50 to-transparent opacity-50 pointer-events-none" />
+        <div className="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform duration-500">
+          <svg
+            className="w-10 h-10 text-primary-600"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+            />
+          </svg>
+        </div>
+        <h3 className="text-2xl font-display font-bold text-secondary-900 mb-4 relative z-10">
+          Live-Demo öffnen
+        </h3>
+        <p className="text-secondary-600 max-w-md mx-auto mb-8 relative z-10">
+          Wir haben ein spezielles Tool entwickelt, um Ihnen die Möglichkeiten für Ihr Business
+          greifbar zu machen.
+        </p>
+        <a
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-primary-600 rounded-full hover:bg-primary-700 hover:scale-105 transition-all shadow-lg hover:shadow-primary-600/30 relative z-10"
+        >
+          Zur interaktiven Demo
+          <svg
+            className="ml-2 w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M14 5l7 7m0 0l-7 7m7-7H3"
+            ></path>
+          </svg>
+        </a>
       </div>
     </section>
   );
