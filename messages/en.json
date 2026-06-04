@@ -14,42 +14,200 @@
         "contact": "Projekt starten"
       },
       "company": {
-        "about": "Über uns"
+        "label": "Company",
+        "agency": "The Agency",
+        "about": "About Us",
+        "career": "Career",
+        "legal": "Legal",
+        "action": "Get Started"
       },
       "resources": {
-        "calculator": "Pricing Calculator"
+        "label": "Resources",
+        "knowledge": {
+          "title": "Knowledge",
+          "faq": {
+            "label": "FAQ",
+            "desc": "Common questions"
+          }
+        },
+        "tools": {
+          "title": "Tools"
+        },
+        "calculator": "Pricing Calculator",
+        "dashboard": "Client Portal"
       },
       "career": {
-        "label": "Careers"
+        "label": "Career",
+        "desc": "Join the team",
+        "jobs": {
+          "label": "Open Positions",
+          "desc": "Current jobs"
+        },
+        "culture": {
+          "label": "Culture",
+          "desc": "How we work"
+        },
+        "benefits": {
+          "label": "Benefits",
+          "desc": "Your perks"
+        }
       },
       "services": {
+        "label": "Services",
+        "development": {
+          "title": "Development"
+        },
         "web_development": {
-          "label": "Web Development"
+          "label": "Web Development",
+          "desc": "Fast & Scalable"
         },
-        "ui_ux": {
-          "label": "UI/UX Design"
-        },
-        "seo": {
-          "label": "SEO Optimization"
+        "web_apps": {
+          "label": "Web Applications"
         },
         "ecommerce": {
-          "label": "E-Commerce"
+          "label": "E-Commerce",
+          "desc": "Shops that convert"
+        },
+        "cms": {
+          "label": "Headless CMS"
         },
         "api": {
           "label": "API Integrations"
+        },
+        "migration": {
+          "label": "Migrations"
+        },
+        "enterprise": {
+          "label": "Enterprise Platforms",
+          "desc": "Portals & Systems"
+        },
+        "design": {
+          "title": "Design"
+        },
+        "web_design": {
+          "label": "Web Design",
+          "desc": "High-End UX/UI"
+        },
+        "ui_ux": {
+          "label": "UI/UX Optimization"
+        },
+        "brand": {
+          "label": "Brand Identity"
+        },
+        "design_systems": {
+          "label": "Design Systems"
+        },
+        "audit": {
+          "label": "UX Audit"
+        },
+        "growth": {
+          "title": "Growth"
+        },
+        "seo": {
+          "label": "SEO & Visibility",
+          "desc": "Organic Growth"
+        },
+        "performance": {
+          "label": "Performance",
+          "desc": "Load times < 1s"
+        },
+        "consulting": {
+          "label": "Consulting",
+          "desc": "Digital Strategy"
         },
         "fullstack": {
           "label": "Full-Stack Entwicklung"
         }
       },
       "industries": {
+        "label": "Industries",
+        "automotive": {
+          "title": "Automotive",
+          "overview": "Overview: Automotive",
+          "desc": "Digital solutions for cars",
+          "werkstatt": "Car Repair Shops",
+          "mechatroniker": "Mechatronics",
+          "haendler": "Car Dealers"
+        },
+        "healthcare": {
+          "title": "Healthcare",
+          "overview": "Overview: Healthcare",
+          "desc": "Smart clinics and doctors",
+          "wetzlar": "Doctors in Wetzlar",
+          "giessen": "Doctors in Giessen"
+        },
+        "crafts": {
+          "title": "Crafts & Construction",
+          "overview": "Overview: Crafts",
+          "desc": "Digital crafts businesses",
+          "wetzlar": "Crafts in Wetzlar"
+        },
+        "other": {
+          "title": "Other Industries",
+          "overview": "View all industries",
+          "real_estate": "Real Estate Agents",
+          "gastronomy": "Gastronomy & Hotels"
+        },
         "public": "Öffentliche Aufträge",
         "tech": "Tech Startups"
       },
       "legal": {
-        "agb": "AGB",
-        "privacy": "Datenschutz",
-        "imprint": "Impressum"
+        "hub": "Legal",
+        "imprint": "Imprint",
+        "privacy": "Privacy Policy",
+        "agb": "Terms of Service"
+      },
+      "work": {
+        "label": "Work",
+        "featured": {
+          "title": "Highlights"
+        },
+        "batherm": "Batherm",
+        "schluesseldienst": "MS Schlüsseldienst",
+        "ratsstuben": "Lindener Ratsstuben",
+        "all": {
+          "title": "Portfolio"
+        },
+        "view_all": "View All Projects"
+      },
+      "academy": {
+        "blog": {
+          "label": "Blog & Insights",
+          "desc": "News & Trends"
+        },
+        "whitepapers": {
+          "label": "Whitepapers",
+          "desc": "Guides & PDFs"
+        },
+        "courses": {
+          "label": "Video Courses",
+          "desc": "Expert Knowledge"
+        },
+        "newsletter": {
+          "label": "Newsletter",
+          "desc": "Weekly tips"
+        },
+        "audit": {
+          "label": "Free Audit",
+          "desc": "Website Analysis"
+        }
+      },
+      "about": {
+        "desc": "The Agency",
+        "process": {
+          "label": "Our Process",
+          "desc": "How we work"
+        },
+        "contact": {
+          "label": "Contact",
+          "desc": "Let's talk"
+        }
+      },
+      "booking": {
+        "label": "Book a Call"
+      },
+      "packages": {
+        "label": "Packages"
       }
     },
     "footer": {

@@ -83,52 +83,64 @@ export const getNavItems = (): NavItem[] => [
     ],
   },
   {
-    label: 'Branchen',
+    label: 'nav.industries.label',
     bgColor: 'var(--color-primary-900)',
     textColor: 'var(--color-text-inverse)',
     groups: [
       {
-        title: 'Automobil & KFZ',
+        title: 'nav.industries.automotive.title',
         links: [
           {
-            label: 'Übersicht: Automobil',
+            label: 'nav.industries.automotive.overview',
             href: '/branchen/automobil',
-            desc: 'Digitale Lösungen für die Autobranche',
+            desc: 'nav.industries.automotive.desc',
           },
-          { label: 'KFZ-Werkstätten', href: '/branchen/automobil/kfz-werkstatt' },
-          { label: 'KFZ-Mechatroniker', href: '/branchen/automobil/kfz-mechatroniker' },
-          { label: 'Autohändler', href: '/branchen/automobil/autohaendler' },
+          {
+            label: 'nav.industries.automotive.werkstatt',
+            href: '/branchen/automobil/kfz-werkstatt',
+          },
+          {
+            label: 'nav.industries.automotive.mechatroniker',
+            href: '/branchen/automobil/kfz-mechatroniker',
+          },
+          { label: 'nav.industries.automotive.haendler', href: '/branchen/automobil/autohaendler' },
         ],
       },
       {
-        title: 'Gesundheitswesen',
+        title: 'nav.industries.healthcare.title',
         links: [
           {
-            label: 'Übersicht: Gesundheit',
+            label: 'nav.industries.healthcare.overview',
             href: '/branchen/gesundheitswesen',
-            desc: 'Smarte Praxen und Kliniken',
+            desc: 'nav.industries.healthcare.desc',
           },
-          { label: 'Arzt in Wetzlar', href: '/branchen/gesundheitswesen/arzt-wetzlar' },
-          { label: 'Arzt in Gießen', href: '/branchen/gesundheitswesen/arzt-giessen' },
+          {
+            label: 'nav.industries.healthcare.wetzlar',
+            href: '/branchen/gesundheitswesen/arzt-wetzlar',
+          },
+          {
+            label: 'nav.industries.healthcare.giessen',
+            href: '/branchen/gesundheitswesen/arzt-giessen',
+          },
         ],
       },
       {
-        title: 'Handwerk & Bau',
+        title: 'nav.industries.crafts.title',
         links: [
           {
-            label: 'Übersicht: Handwerk',
+            label: 'nav.industries.crafts.overview',
             href: '/branchen/handwerker',
-            desc: 'Digitale Handwerksbetriebe',
+            desc: 'nav.industries.crafts.desc',
           },
-          { label: 'Handwerker in Wetzlar', href: '/branchen/handwerker/wetzlar' },
+          { label: 'nav.industries.crafts.wetzlar', href: '/branchen/handwerker/wetzlar' },
         ],
       },
       {
-        title: 'Weitere Branchen',
+        title: 'nav.industries.other.title',
         links: [
-          { label: 'Alle Branchen ansehen', href: '/branchen' },
-          { label: 'Immobilien Makler', href: '/branchen/immobilien-makler' },
-          { label: 'Gastronomie', href: '/branchen/gastronomie-hotellerie' },
+          { label: 'nav.industries.other.overview', href: '/branchen' },
+          { label: 'nav.industries.other.real_estate', href: '/branchen/immobilien-makler' },
+          { label: 'nav.industries.other.gastronomy', href: '/branchen/gastronomie-hotellerie' },
         ],
       },
     ],
