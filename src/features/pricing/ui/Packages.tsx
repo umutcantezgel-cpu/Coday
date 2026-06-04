@@ -185,42 +185,42 @@ export default async function Packages() {
         </div>
       </section>
 
-      {/* Dark Pricing Section (Ethereal Glass) */}
-      <section className="relative bg-[#050505] py-24 lg:py-40 px-4 w-full overflow-hidden">
-        {/* Deep Ethereal Glows */}
+      {/* Light Pricing Section (Golden Ratio & Symmetry) */}
+      <section className="relative bg-white py-24 lg:py-[155px] px-4 w-full overflow-hidden border-t border-black/5">
+        {/* Soft Ethereal Glows */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden flex items-center justify-center">
-          <div className="w-[80vw] h-[80vh] bg-primary/20 rounded-full blur-[120px] opacity-30 mix-blend-screen" />
+          <div className="w-[61.8vw] h-[61.8vh] bg-primary/5 rounded-full blur-[120px] mix-blend-multiply" />
         </div>
 
         <div className="relative max-w-[90rem] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 items-stretch">
             {packages.map((pkg, idx) => (
               <div
                 key={pkg.id}
                 className={`relative group ${pkg.popular ? 'lg:-my-6 z-10' : ''} motion-safe:animate-fade-in-up`}
                 style={{
                   animationDelay: `${Math.min(idx * 50, 400)}ms`,
-                  animationDuration: '250ms',
+                  animationDuration: '382ms', // Golden ratio approx
                   animationFillMode: 'both',
                 }}
               >
                 {/* Outer Shell (Doppelrand) */}
                 <div
-                  className={`p-2 rounded-[2rem] h-full ${
+                  className={`p-1.5 rounded-[2rem] h-full ${
                     pkg.popular
-                      ? 'bg-white/10 ring-1 ring-white/20 shadow-[0_0_60px_-10px_rgba(26,154,154,0.3)]'
-                      : 'bg-white/5 ring-1 ring-white/10'
+                      ? 'bg-primary/20 ring-1 ring-primary/30 shadow-[0_34px_55px_-15px_rgba(26,154,154,0.15)]'
+                      : 'bg-black/5 ring-1 ring-black/5'
                   }`}
                 >
                   {/* Inner Core */}
                   <div
-                    className={`relative h-full flex flex-col rounded-[calc(2rem-0.5rem)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)] ${
-                      pkg.popular ? 'bg-[#0a0a0a]' : 'bg-[#080808]'
+                    className={`relative h-full flex flex-col rounded-[calc(2rem-0.375rem)] shadow-[inset_0_1px_1px_rgba(255,255,255,1)] ${
+                      pkg.popular ? 'bg-white' : 'bg-gray-50/80 backdrop-blur-sm'
                     }`}
                   >
                     {pkg.popular && (
                       <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                        <span className="bg-primary text-slate-900 text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg shadow-primary/30 border border-primary/50">
+                        <span className="bg-primary text-slate-900 text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg shadow-primary/30 border border-primary/20">
                           {t('packages.professional.badge')}
                         </span>
                       </div>
@@ -228,19 +228,19 @@ export default async function Packages() {
 
                     <div className="p-8 lg:p-10 flex flex-col flex-grow">
                       <div className="text-center mb-8">
-                        <h3 className="font-display font-bold text-3xl text-white mb-2 text-balance">
+                        <h3 className="font-display font-bold text-3xl text-gray-900 mb-2 text-balance">
                           {pkg.name}
                         </h3>
-                        <p className="text-gray-400 text-sm text-pretty">{pkg.tagline}</p>
+                        <p className="text-gray-500 text-sm text-pretty">{pkg.tagline}</p>
                       </div>
 
                       <div className="text-center mb-8">
-                        <div className="font-display font-black text-6xl text-white tracking-tight mb-4">
+                        <div className="font-display font-black text-6xl text-gray-900 tracking-tight mb-4">
                           {pkg.setupPrice.toLocaleString('de-DE')}
-                          <span className="text-4xl text-gray-500 font-medium">€</span>
+                          <span className="text-4xl text-gray-400 font-medium">€</span>
                         </div>
-                        <div className="inline-flex items-center gap-2 bg-white/5 text-gray-300 text-xs font-medium px-4 py-2 rounded-full border border-white/10">
-                          <OptimizedIcon icon={Clock} className="text-sm" />
+                        <div className="inline-flex items-center gap-2 bg-black/5 text-gray-600 text-xs font-medium px-4 py-2 rounded-full border border-black/5">
+                          <OptimizedIcon icon={Clock} className="text-sm text-gray-500" />
                           <span>
                             {t('labels.delivery', {
                               days: pkg.deliveryDays,
@@ -250,7 +250,7 @@ export default async function Packages() {
                         </div>
                       </div>
 
-                      <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent mb-8" />
+                      <div className="h-px w-full bg-gradient-to-r from-transparent via-black/10 to-transparent mb-8" />
 
                       <ul className="space-y-4 mb-10 flex-grow">
                         {pkg.features.map((feature, idx) => (
@@ -260,7 +260,7 @@ export default async function Packages() {
                               aria-hidden="true"
                               className={`text-lg mt-0.5 flex-shrink-0 ${pkg.popular ? 'text-primary' : 'text-gray-400'}`}
                             />
-                            <span className="text-gray-300 text-base leading-relaxed">
+                            <span className="text-gray-600 text-base leading-relaxed">
                               {feature}
                             </span>
                           </li>
@@ -270,7 +270,7 @@ export default async function Packages() {
                             <OptimizedIcon
                               icon={MinusCircle}
                               aria-hidden="true"
-                              className="text-lg text-gray-500 mt-0.5 flex-shrink-0"
+                              className="text-lg text-gray-300 mt-0.5 flex-shrink-0"
                             />
                             <span className="text-gray-400 text-base line-through leading-relaxed">
                               {feature}
@@ -289,28 +289,28 @@ export default async function Packages() {
         </div>
       </section>
 
-      {/* Trust & References */}
-      <section className="py-24 px-4 bg-[#050505] w-full border-t border-white/5">
+      {/* Trust & References (Light Mode) */}
+      <section className="py-24 px-4 bg-gray-50 w-full border-t border-black/5">
         <div className="max-w-5xl mx-auto text-center mb-16">
-          <span className="inline-block rounded-full px-4 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium bg-white/5 text-gray-400 border border-white/10 mb-6">
+          <span className="inline-block rounded-full px-4 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium bg-black/5 text-gray-500 border border-black/5 mb-6">
             {t('trust_section.title')}
           </span>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
             {trustReferences?.map((ref, idx) => (
               <div
                 key={idx}
-                className="p-1.5 rounded-[2rem] bg-white/5 ring-1 ring-white/10 motion-safe:animate-fade-in-up"
+                className="p-1.5 rounded-[2rem] bg-black/5 ring-1 ring-black/5 motion-safe:animate-fade-in-up"
                 style={{
                   animationDelay: `${Math.min(idx * 50, 400)}ms`,
-                  animationDuration: '250ms',
+                  animationDuration: '382ms',
                   animationFillMode: 'both',
                 }}
               >
-                <div className="bg-[#0a0a0a] rounded-[calc(2rem-0.375rem)] p-8 h-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)] flex flex-col md:flex-row items-start md:items-center gap-6">
+                <div className="bg-white rounded-[calc(2rem-0.375rem)] p-8 lg:p-10 h-full shadow-[inset_0_1px_1px_rgba(255,255,255,1)] flex flex-col md:flex-row items-start md:items-center gap-6">
                   <div className="font-display font-black text-5xl text-primary">{ref.metric}</div>
                   <div>
-                    <p className="text-white font-bold text-xl mb-1 text-balance">{ref.name}</p>
-                    <p className="text-gray-400 text-base leading-relaxed text-pretty">
+                    <p className="text-gray-900 font-bold text-xl mb-1 text-balance">{ref.name}</p>
+                    <p className="text-gray-500 text-base leading-relaxed text-pretty">
                       {ref.label}
                     </p>
                   </div>
