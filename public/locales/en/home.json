@@ -1,19 +1,19 @@
 {
   "hero": {
-    "headline_gradient": "Headless Websites.",
-    "headline_prefix": "Handcrafted",
-    "description": "Custom Next.js architecture from Wetzlar, Germany. No page builders, no templates. Clean React, typed with TypeScript, and content managed via Sanity CMS. For businesses that require fast load times and an independent design.",
+    "headline_gradient": "Generate Revenue.",
+    "headline_prefix": "Websites that",
+    "description": "Stop losing customers to slow load times. We engineer blazing-fast, psychologically optimized Next.js web platforms that convert visitors into paying clients. 100% Fixed Pricing. No hidden fees.",
     "rotating": [
-      "React & TypeScript.",
-      "Tailwind CSS Layouts.",
-      "Sanity CMS Integration.",
-      "Local development from Wetzlar."
+      "0.8s Load Time Guaranteed.",
+      "Conversion-Optimized Design.",
+      "Local SEO Dominance.",
+      "100% Transparent. 0% Bullshit."
     ],
     "title": "AI-Augmented Web Development",
     "subtitle": "High-end websites with React, TypeScript, and Headless CMS. Fixed pricing from €2,000.",
-    "cta": "Start Project",
-    "eyebrow": "High-End Digital Agency",
-    "view_projects": "Projekte ansehen"
+    "cta": "Free Potential Analysis",
+    "eyebrow": "Measurable Growth & High-End Performance",
+    "view_projects": "See Results"
   },
   "industries": {
     "card_consulting": {
