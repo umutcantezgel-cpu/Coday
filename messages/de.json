@@ -139,12 +139,7 @@
     "dataMaturity": {
       "title": "Daten-Maturitäts-Check",
       "questionStep": "Frage {current} von {total}",
-      "levels": [
-        "Blindflug",
-        "Basis-Tracking",
-        "Erweitertes Tracking",
-        "Data-Driven"
-      ],
+      "levels": ["Blindflug", "Basis-Tracking", "Erweitertes Tracking", "Data-Driven"],
       "descriptions": [
         "Sie verlassen sich stark auf Ihr Bauchgefühl. Ohne saubere Datenstruktur ist es schwer zu skalieren.",
         "Sie haben erste Tracking-Lösungen im Einsatz, schöpfen das Potenzial für Automatisierung aber nicht aus.",
@@ -324,6 +319,42 @@
       "label": "Unsere Arbeit",
       "title": "Fallstudien",
       "description": "Hier ist, was wir gebaut haben."
+    },
+    "project_detail": {
+      "not_found": "Projekt nicht gefunden",
+      "back_to_overview": "Zurück zur Übersicht",
+      "breadcrumb_projects": "Projekte",
+      "sidebar": {
+        "details": "Details",
+        "service": "Service",
+        "period": "Zeitraum",
+        "result": "Ergebnis",
+        "interested_title": "Interessiert an ähnlichen Ergebnissen?",
+        "request_project": "Projekt anfragen",
+        "client": "Kunde",
+        "industry": "Branche",
+        "services": "Leistungen",
+        "year": "Jahr",
+        "related": "Verwandte Services"
+      },
+      "challenge": "Die Herausforderung",
+      "approach": "Unser Ansatz",
+      "results": "Die Ergebnisse",
+      "impact": "Messbarer Erfolg",
+      "before_after_title": "Vorher & Nachher",
+      "before": "Vorher",
+      "after": "Nachher",
+      "nav": {
+        "prev": "Vorheriges Projekt",
+        "next": "Nächstes Projekt"
+      },
+      "cta": {
+        "title": "Lassen Sie uns Großartiges erschaffen",
+        "button": "Jetzt anfragen"
+      },
+      "cta_title": "Überzeugt von diesen Resultaten?",
+      "cta_desc": "Lassen Sie uns in einem persönlichen Gespräch eruieren, wie wir ähnliche Ergebnisse für Ihr Unternehmen erzielen können.",
+      "cta_button": "Projekt anfragen"
     }
   },
   "social": {
@@ -345,11 +376,7 @@
     "jobs": {
       "hero_title_prefix": "Wir suchen",
       "culture_badge": "Teamkultur",
-      "hero_rotating": [
-        "Entwickler",
-        "Designer",
-        "Talente"
-      ],
+      "hero_rotating": ["Entwickler", "Designer", "Talente"],
       "hero_desc": "Werde Teil unseres Teams und gestalte die digitale Zukunft.",
       "list": [
         {
@@ -378,11 +405,7 @@
       "values": {
         "title": "Unsere Werte",
         "desc": "Das ist uns wichtig.",
-        "items": [
-          "Transparenz in jedem Schritt",
-          "Höchste Code-Qualität",
-          "Echte Partnerschaften"
-        ]
+        "items": ["Transparenz in jedem Schritt", "Höchste Code-Qualität", "Echte Partnerschaften"]
       },
       "team": {
         "title": "Das Team",
@@ -420,11 +443,7 @@
       "description": "High-End Webentwicklung, Design & Strategie aus Wetzlar, Hessen für Ihren digitalen Erfolg."
     },
     "hero": {
-      "rotatingTexts": [
-        "Web-Design",
-        "Web-Entwicklung",
-        "SEO"
-      ]
+      "rotatingTexts": ["Web-Design", "Web-Entwicklung", "SEO"]
     },
     "methodology": {
       "title": "Präzises Handwerk statt Massenabfertigung.",
@@ -555,41 +574,6 @@
     "booking": {
       "subtitle": "Vereinbaren Sie ein unverbindliches Erstgespräch. Gemeinsam evaluieren wir das Potenzial für Ihr nächstes Projekt."
     }
-  },
-  "project_detail": {
-    "not_found": "Projekt nicht gefunden",
-    "back_to_overview": "Zurück zur Übersicht",
-    "breadcrumb_projects": "Projekte",
-    "sidebar": {
-      "details": "Details",
-      "service": "Service",
-      "period": "Zeitraum",
-      "result": "Ergebnis",
-      "interested_title": "Interessiert an ähnlichen Ergebnissen?",
-      "request_project": "Projekt anfragen",
-      "client": "Kunde",
-      "industry": "Branche",
-      "services": "Leistungen",
-      "year": "Jahr"
-    },
-    "challenge": "Die Herausforderung",
-    "approach": "Unser Ansatz",
-    "results": "Die Ergebnisse",
-    "impact": "Messbarer Erfolg",
-    "before_after_title": "Vorher & Nachher",
-    "before": "Vorher",
-    "after": "Nachher",
-    "nav": {
-      "prev": "Vorheriges Projekt",
-      "next": "Nächstes Projekt"
-    },
-    "cta": {
-      "title": "Lassen Sie uns Großartiges erschaffen",
-      "button": "Jetzt anfragen"
-    },
-    "cta_title": "Überzeugt von diesen Resultaten?",
-    "cta_desc": "Lassen Sie uns in einem persönlichen Gespräch eruieren, wie wir ähnliche Ergebnisse für Ihr Unternehmen erzielen können.",
-    "cta_button": "Projekt anfragen"
   },
   "api_integration_page": {
     "hero": {
