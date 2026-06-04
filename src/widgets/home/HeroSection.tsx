@@ -1,13 +1,10 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/navigation';
-import { ArrowRight } from '@phosphor-icons/react/dist/ssr';
-import { Button } from '@/shared/ui/Button';
 import GradientText from '@/shared/ui/GradientText';
 import { cn } from '@/shared/lib/utils';
 import dynamic from 'next/dynamic';
+import { GamifiedHeroCta } from './GamifiedHeroCta';
 
-// Removed FadeInUp to optimize LCP
 import { MobileRotatingText } from './MobileRotatingText';
 
 const ClientRotatingText = dynamic(() =>
@@ -16,14 +13,13 @@ const ClientRotatingText = dynamic(() =>
 
 export const HeroSection: React.FC = () => {
   const t = useTranslations('home');
-  const tCommon = useTranslations('common');
 
   return (
-    <section className="relative w-full min-h-[85svh] flex flex-col items-center justify-center overflow-x-hidden bg-bg-primary text-center px-4 pt-16 pb-16 md:pt-24 md:pb-24">
-      <div className="relative z-10 w-full max-w-6xl mx-auto flex flex-col items-center">
-        {/* Huge Typography, Text perfectly centered, max 2-3 lines */}
-        <div className="w-full">
-          <h1 className="max-w-5xl mx-auto text-center font-display font-bold text-5xl md:text-7xl lg:text-8xl tracking-tight text-text-primary mb-8">
+    <section className="relative w-full min-h-[85svh] flex flex-col justify-center overflow-x-hidden bg-bg-primary px-4 pt-16 pb-16 md:pt-24 md:pb-24">
+      <div className="relative z-10 w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        {/* Left Column: Text Content */}
+        <div className="lg:col-span-7 flex flex-col items-start text-left">
+          <h1 className="font-display font-bold text-5xl md:text-7xl lg:text-[5.5rem] tracking-tight text-text-primary mb-8 leading-[1.05]">
             {t('hero.headline_prefix')} <br />
             <GradientText
               colors={[
@@ -38,62 +34,30 @@ export const HeroSection: React.FC = () => {
               {t('hero.headline_gradient')}
             </GradientText>
           </h1>
-        </div>
 
-        <div className="w-full">
-          <p className="max-w-2xl mx-auto text-center text-base sm:text-lg md:text-xl font-light text-text-secondary leading-relaxed mb-8">
+          <p className="max-w-2xl text-base sm:text-lg md:text-xl font-light text-text-secondary leading-relaxed mb-8">
             {t('hero.description')}
           </p>
-        </div>
 
-        <div className="w-full">
-          <div className="min-h-[60px] w-full max-w-3xl flex items-center justify-center text-center mb-10 mx-auto px-4">
-            <span className="hidden md:inline-flex w-full justify-center">
+          <div className="min-h-[60px] w-full flex items-center justify-start mb-4 lg:mb-0">
+            <span className="hidden md:inline-flex w-full justify-start">
               <ClientRotatingText
                 texts={t.raw('hero.rotating') as string[]}
                 rotationInterval={3000}
                 staggerFrom="first"
                 staggerDuration={0.03}
-                mainClassName="text-lg md:text-xl font-medium text-primary-600 dark:text-primary-400 leading-relaxed justify-center text-center"
+                mainClassName="text-lg md:text-xl font-medium text-primary-600 dark:text-primary-400 leading-relaxed justify-start text-left"
               />
             </span>
-            <span className="md:hidden block w-full text-primary-600 dark:text-primary-400 font-medium text-center text-base break-words hyphens-auto">
+            <span className="md:hidden block w-full text-primary-600 dark:text-primary-400 font-medium text-left text-base break-words hyphens-auto">
               <MobileRotatingText texts={t.raw('hero.rotating') as string[]} />
             </span>
           </div>
         </div>
 
-        {/* 2 High-Contrast CTAs */}
-        <div className="w-full sm:w-auto">
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 w-full px-6 sm:px-0">
-            <Link href="/contact" className="group w-full sm:w-auto">
-              <Button
-                variant="primary"
-                size="lg"
-                className="w-full sm:w-auto rounded-full px-8 py-4 sm:py-3.5 flex items-center justify-center gap-3 transition-transform duration-[160ms] ease-out active:scale-[0.97] shadow-lg shadow-primary-500/20"
-              >
-                <span className="font-semibold text-[15px] sm:text-base tracking-wide">
-                  {tCommon('buttons.start_project')}
-                </span>
-                <ArrowRight
-                  className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:translate-x-1"
-                  aria-hidden="true"
-                />
-              </Button>
-            </Link>
-
-            <Link href="/work" className="group w-full sm:w-auto">
-              <Button
-                variant="ghost"
-                size="lg"
-                className="w-full sm:w-auto rounded-full px-8 py-4 sm:py-3.5 flex items-center justify-center transition-transform duration-[160ms] ease-out active:scale-[0.97] bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10"
-              >
-                <span className="font-medium text-[15px] sm:text-base tracking-wide text-text-primary">
-                  {t('hero.view_projects', { defaultValue: 'Projekte ansehen' })}
-                </span>
-              </Button>
-            </Link>
-          </div>
+        {/* Right Column: Gamified C-Slider */}
+        <div className="lg:col-span-5 flex justify-center lg:justify-end mt-8 lg:mt-0">
+          <GamifiedHeroCta />
         </div>
       </div>
     </section>
