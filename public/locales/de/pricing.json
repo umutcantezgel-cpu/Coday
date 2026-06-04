@@ -1,53 +1,60 @@
 {
   "comparison": {
     "headers": {
-      "enterprise": "Enterprise",
-      "feature": "Feature",
+      "onepager": "Onepager",
+      "starter": "Starter",
       "professional": "Professional",
-      "starter": "Starter"
+      "enterprise": "Enterprise"
     },
     "rows": {
       "cms": {
         "ent": "✓",
         "label": "CMS",
         "pro": "✓",
-        "starter": "—"
+        "starter": "—",
+        "onepager": "—"
       },
       "custom": {
         "ent": "✓",
         "label": "Custom Development",
         "pro": "—",
-        "starter": "—"
+        "starter": "—",
+        "onepager": "—"
       },
       "ecommerce": {
         "ent": "✓",
         "label": "E-Commerce",
         "pro": "—",
-        "starter": "—"
+        "starter": "—",
+        "onepager": "—"
       },
       "pages": {
         "ent": "Bis zu 30",
         "label": "Seiten",
         "pro": "7-10",
-        "starter": "3-5"
+        "starter": "3-5",
+        "onepager": "1"
       },
       "revisions": {
         "ent": "Unbegrenzt",
         "label": "Revisionen",
         "pro": "5",
-        "starter": "3"
+        "starter": "3",
+        "onepager": "1"
       },
       "seo": {
         "ent": "Premium",
         "label": "SEO",
         "pro": "Erweitert",
-        "starter": "Basis"
+        "starter": "Basis",
+        "onepager": "Basis"
       },
       "support": {
         "ent": "Optional",
         "label": "Support/Wartung",
         "pro": "Optional",
-        "starter": "30 Tage"
+        "starter": "30 Tage",
+        "onepager": "14 Tage"
       }
     },
     "title": "Paket-Vergleich"
@@ -95,6 +102,15 @@
       "3 Änderungsrunden",
       "Besucheranalyse eingerichtet",
       "30 Tage Unterstützung"
+    ],
+    "onepager": [
+      "1 Onepager Startseite",
+      "Modernes, psychologisches Design",
+      "Mobilgeräte-Optimierung",
+      "Basis-SEO",
+      "Kontaktformular",
+      "1 Änderungsrunde",
+      "14 Tage Support"
     ]
   },
   "labels": {
@@ -104,7 +120,8 @@
   },
   "not_included": {
     "professional": ["Online-Shop Funktionen", "Individuelle App-Entwicklung"],
-    "starter": ["Inhaltsverwaltung", "Online-Shop", "Individuelle Funktionen"]
+    "starter": ["Inhaltsverwaltung", "Online-Shop", "Individuelle Funktionen"],
+    "onepager": ["Unterseiten", "Inhaltsverwaltung (CMS)", "Blog"]
   },
   "packages": {
     "enterprise": {
@@ -122,6 +139,11 @@
       "cta": "Einsteiger wählen",
       "name": "Einsteiger",
       "tagline": "Perfekt für den Start"
+    },
+    "onepager": {
+      "name": "Onepager",
+      "tagline": "Perfekt als Visitenkarte",
+      "cta": "Onepager wählen"
     }
   },
   "page": {
@@ -188,7 +210,7 @@
     }
   },
   "value_prop": {
-    "title": "Warum Next.js? Warum ab 2.500€?",
+    "title": "Warum Next.js? Warum ab 499€?",
     "description": "Ihre Website ist kein simples Aushängeschild mehr – sie ist Ihr stärkster, vollautomatisierter Vertriebsmitarbeiter. Eine Investition in Performance ist eine Investition in messbaren Umsatz.",
     "points": [
       {

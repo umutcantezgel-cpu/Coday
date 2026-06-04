@@ -37,10 +37,21 @@ export default async function Packages() {
 
   const packages = [
     {
+      id: 'onepager',
+      name: t('packages.onepager.name'),
+      tagline: t('packages.onepager.tagline'),
+      setupPrice: 499,
+      monthlyPrice: 0,
+      features: t.raw('features.onepager') as string[],
+      notIncluded: t.raw('not_included.onepager') as string[],
+      cta: t('packages.onepager.cta'),
+      deliveryDays: 7,
+    },
+    {
       id: 'starter',
       name: t('packages.starter.name'),
       tagline: t('packages.starter.tagline'),
-      setupPrice: 2500,
+      setupPrice: 1490,
       monthlyPrice: 0,
       features: t.raw('features.starter') as string[],
       notIncluded: t.raw('not_included.starter') as string[],
@@ -51,7 +62,7 @@ export default async function Packages() {
       id: 'professional',
       name: t('packages.professional.name'),
       tagline: t('packages.professional.tagline'),
-      setupPrice: 5000,
+      setupPrice: 2990,
       monthlyPrice: 0,
       popular: true,
       features: t.raw('features.professional') as string[],
@@ -63,7 +74,7 @@ export default async function Packages() {
       id: 'enterprise',
       name: t('packages.enterprise.name'),
       tagline: t('packages.enterprise.tagline'),
-      setupPrice: 10000,
+      setupPrice: 5990,
       monthlyPrice: 0,
       features: t.raw('features.enterprise') as string[],
       cta: t('packages.enterprise.cta'),
@@ -71,7 +82,11 @@ export default async function Packages() {
     },
   ];
 
-  const trustReferences = t.raw('trust_section.references') as { metric: string; name: string; label: string }[];
+  const trustReferences = t.raw('trust_section.references') as {
+    metric: string;
+    name: string;
+    label: string;
+  }[];
   const valuePropPoints = t.raw('value_prop.points') as { title: string; description: string }[];
   const faqItems = t.raw('faq.items') as { question: string; answer: string }[];
 
@@ -177,8 +192,8 @@ export default async function Packages() {
           <div className="w-[80vw] h-[80vh] bg-primary/20 rounded-full blur-[120px] opacity-30 mix-blend-screen" />
         </div>
 
-        <div className="relative max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+        <div className="relative max-w-[90rem] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {packages.map((pkg, idx) => (
               <div
                 key={pkg.id}
@@ -321,13 +336,22 @@ export default async function Packages() {
                   <caption className="sr-only">{t('comparison.title')}</caption>
                   <thead>
                     <tr className="border-b border-gray-100">
-                      <th scope="col" className="p-6 text-sm font-semibold text-gray-500 uppercase tracking-wider">
+                      <th
+                        scope="col"
+                        className="p-6 text-sm font-semibold text-gray-500 uppercase tracking-wider"
+                      >
                         {t('comparison.headers.feature')}
+                      </th>
+                      <th scope="col" className="p-6 text-center text-sm font-bold text-gray-900">
+                        {t('comparison.headers.onepager')}
                       </th>
                       <th scope="col" className="p-6 text-center text-sm font-bold text-gray-900">
                         {t('comparison.headers.starter')}
                       </th>
-                      <th scope="col" className="p-6 text-center text-sm font-bold text-gray-900 bg-primary/5">
+                      <th
+                        scope="col"
+                        className="p-6 text-center text-sm font-bold text-gray-900 bg-primary/5"
+                      >
                         {t('comparison.headers.professional')}
                       </th>
                       <th scope="col" className="p-6 text-center text-sm font-bold text-gray-900">
@@ -354,7 +378,12 @@ export default async function Packages() {
                           animationFillMode: 'both',
                         }}
                       >
-                        <th scope="row" className="p-6 text-base font-medium text-gray-700">{label}</th>
+                        <th scope="row" className="p-6 text-base font-medium text-gray-700">
+                          {label}
+                        </th>
+                        <td className="p-6 text-center text-base text-gray-600">
+                          {t(`comparison.rows.${key}.onepager`)}
+                        </td>
                         <td className="p-6 text-center text-base text-gray-600">
                           {t(`comparison.rows.${key}.starter`)}
                         </td>
