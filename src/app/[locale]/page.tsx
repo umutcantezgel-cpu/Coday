@@ -28,17 +28,17 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'High-End Web Development with AI Precision',
+      title: 'Leading Web Design & Development Agency in Wetzlar & Hessen',
       description:
-        'AI-augmented web development from Wetzlar. React, TypeScript, Headless CMS. Fixed prices from €2,000.',
+        'The #1 web agency in Wetzlar & Hessen. High-performance Next.js, React, TypeScript, Tailwind CSS & Framer Motion websites. Incomparable modern web solutions.',
       path: '/en',
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'High-End Webentwicklung mit AI-Präzision',
+    title: 'Beste Webagentur in Wetzlar & Hessen | High-Performance Websites',
     description:
-      'AI-augmented Webentwicklung aus Wetzlar. React, TypeScript, Headless CMS. Festpreise ab 2.000 €.',
+      'Die führende Webdesign & Entwicklungsagentur in Hessen. Wir bauen unvergleichbar schnelle Websites mit Next.js, React, Tailwind & Framer Motion. Herausragende Ergebnisse garantiert.',
     path: '/de',
     type: 'money',
   });
@@ -118,7 +118,9 @@ export default async function HomePage() {
                 className="font-display font-bold text-2xl sm:text-3xl text-secondary"
               >
                 {t('techStack.headingPrefix', { defaultValue: 'High-End Architektur' })}{' '}
-                <span className="text-sapphire">{t('techStack.headingSuffix', { defaultValue: 'für kompromisslose Performance' })}</span>
+                <span className="text-sapphire">
+                  {t('techStack.headingSuffix', { defaultValue: 'für kompromisslose Performance' })}
+                </span>
               </h2>
             </div>
             <LogoLoop
@@ -127,7 +129,9 @@ export default async function HomePage() {
                 { node: <span className="font-bold text-secondary/80 text-xl">Next.js 15</span> },
                 { node: <span className="font-bold text-secondary/80 text-xl">TypeScript</span> },
                 { node: <span className="font-bold text-secondary/80 text-xl">Tailwind v4</span> },
-                { node: <span className="font-bold text-secondary/80 text-xl">Sanity CMS</span> },
+                {
+                  node: <span className="font-bold text-secondary/80 text-xl">Framer Motion</span>,
+                },
                 { node: <span className="font-bold text-secondary/80 text-xl">Supabase</span> },
                 { node: <span className="font-bold text-secondary/80 text-xl">Vercel</span> },
               ]}

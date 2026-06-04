@@ -41,18 +41,18 @@ export async function generateMetadata({
 
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'High-End Web Development with AI Precision',
+      title: 'Premium Web Design & Development Agency in Wetzlar & Hessen',
       description:
-        'AI-augmented web development from Wetzlar, Germany. Next.js, TypeScript, Headless CMS. Fixed prices from €2,000.',
+        'The leading web agency in Wetzlar and Hessen. We build high-performance, modern websites using Next.js, React, TypeScript, Tailwind CSS, and Framer Motion. Results that speak for themselves.',
       path: '/en',
       type: 'money',
     });
   }
 
   return generatePageMetadata({
-    title: 'High-End Webentwicklung mit AI-Präzision',
+    title: 'Die führende Webagentur in Wetzlar & Hessen | Coday',
     description:
-      'AI-augmented Webentwicklung aus Wetzlar. Next.js, TypeScript, Headless CMS. Festpreise ab 2.000 €.',
+      'Ihre beste Webdesign und Webentwicklungsagentur im Raum Wetzlar und Hessen. Hochperformante Next.js, React, TypeScript, Tailwind & Framer Motion Webseiten. Unvergleichbare Ergebnisse.',
     path: '/de',
     type: 'money',
   });
@@ -92,8 +92,8 @@ export default async function RootLayout({
             <>
               <div className="bg-blue-600 text-white text-center py-1 text-sm font-medium">
                 Draft Mode Enabled{' '}
-                <a 
-                  href="/api/draft-mode/disable" 
+                <a
+                  href="/api/draft-mode/disable"
                   className="underline hover:text-blue-100 ml-2 focus:outline-none focus:ring-2 focus:ring-white rounded"
                   aria-label="Disable draft mode"
                 >
@@ -108,7 +108,7 @@ export default async function RootLayout({
             </div>
           </MotionProvider>
         </NextIntlClientProvider>
-        
+
         <GoogleAnalytics />
         <PostHogAnalytics />
         <MetaPixel />

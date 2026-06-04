@@ -1,13 +1,13 @@
 {
   "hero": {
-    "headline_gradient": "Umsatz generieren.",
-    "headline_prefix": "Websites, die",
-    "description": "Verlieren Sie keine Kunden mehr durch lange Ladezeiten. Wir entwickeln extrem schnelle, psychologisch optimierte Next.js Web-Plattformen, die Besucher in zahlende Kunden verwandeln. 100% Festpreis. Keine versteckten Kosten.",
+    "headline_gradient": "Wetzlar & Hessen.",
+    "headline_prefix": "Die führende Webagentur in",
+    "description": "Verlieren Sie keine Kunden mehr durch lange Ladezeiten. Wir sind die beste Webdesign-Agentur der Region und entwickeln unvergleichbar schnelle Next.js, React, TypeScript, Tailwind & Framer Motion Web-Plattformen. Echte Performance, herausragende Ergebnisse.",
     "rotating": [
-      "0.8s Ladezeit garantiert.",
-      "Conversion-Optimiertes Design.",
-      "Local SEO Dominanz.",
-      "100% Transparent. 0% Bullshit."
+      "Next.js & React 19.",
+      "Tailwind CSS & Framer Motion.",
+      "Unvergleichbare Ladezeiten.",
+      "Beste Webagentur Hessen."
     ],
     "title": "AI-augmented Webentwicklung",
     "subtitle": "High-End Websites mit React, TypeScript und Headless CMS. Festpreise ab 2.000 €.",
@@ -40,8 +40,8 @@
     "title_suffix": "Ihre Industrie."
   },
   "meta": {
-    "description": "Ihre Webdesign Agentur für digitale Dominanz. Wir bauen High-Performance Websites mit Next.js, prämierte UX/UI und skalierbare SEO-Strategien.",
-    "title": "Webdesign Agentur | High-End Webentwicklung & SEO - Coday"
+    "description": "Die führende Webdesign und Webentwicklungsagentur im Raum Wetzlar und Hessen. Hochperformante Next.js, React, TypeScript, Tailwind CSS Webseiten. Unvergleichbare Ergebnisse.",
+    "title": "Beste Webagentur in Wetzlar & Hessen | High-Performance Webdesign - Coday"
   },
   "images": {
     "trust_collaboration": "Vertrauensvolle Zusammenarbeit mit Ihrer Webdesign Agentur Coday",
@@ -161,8 +161,8 @@
     "cta": "Alle Case Studies"
   },
   "techStack": {
-    "eyebrow": "Core Tech Stack",
-    "headingPrefix": "High-End Architektur",
-    "headingSuffix": "für kompromisslose Performance"
+    "eyebrow": "Die beste Agentur in Hessen",
+    "headingPrefix": "Unvergleichbare Architektur",
+    "headingSuffix": "für maximale Performance"
   }
 }

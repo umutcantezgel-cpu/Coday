@@ -1,13 +1,13 @@
 {
   "hero": {
-    "headline_gradient": "Generate Revenue.",
-    "headline_prefix": "Websites that",
-    "description": "Stop losing customers to slow load times. We engineer blazing-fast, psychologically optimized Next.js web platforms that convert visitors into paying clients. 100% Fixed Pricing. No hidden fees.",
+    "headline_gradient": "Wetzlar & Hessen.",
+    "headline_prefix": "The Leading Web Agency in",
+    "description": "Stop losing customers to slow load times. We are the best web design agency in the region, building incomparably fast Next.js, React, TypeScript, Tailwind & Framer Motion web platforms. Real performance, outstanding results.",
     "rotating": [
-      "0.8s Load Time Guaranteed.",
-      "Conversion-Optimized Design.",
-      "Local SEO Dominance.",
-      "100% Transparent. 0% Bullshit."
+      "Next.js & React 19.",
+      "Tailwind CSS & Framer Motion.",
+      "Incomparable Load Times.",
+      "Best Web Agency in Hessen."
     ],
     "title": "AI-Augmented Web Development",
     "subtitle": "High-end websites with React, TypeScript, and Headless CMS. Fixed pricing from €2,000.",
@@ -40,8 +40,8 @@
     "title_suffix": "Your Industry."
   },
   "meta": {
-    "description": "Your web design agency for digital dominance. We build high-performance Next.js websites, award-winning UX/UI, and scalable SEO strategies.",
-    "title": "Web Design Agency | High-End Web Development & SEO - Coday"
+    "description": "The leading web design and development agency in Wetzlar and Hessen. High-performance Next.js, React, TypeScript, Tailwind CSS websites. Incomparable results.",
+    "title": "Best Web Agency in Wetzlar & Hessen | High-Performance Web Design - Coday"
   },
   "images": {
     "trust_collaboration": "Trusting Collaboration with your Web Design Agency Coday",
@@ -161,8 +161,8 @@
     "cta": "All Case Studies"
   },
   "techStack": {
-    "eyebrow": "Core Tech Stack",
-    "headingPrefix": "High-End Architektur",
-    "headingSuffix": "für kompromisslose Performance"
+    "eyebrow": "The Best Agency in Hessen",
+    "headingPrefix": "Incomparable Architecture",
+    "headingSuffix": "for maximum performance"
   }
 }
