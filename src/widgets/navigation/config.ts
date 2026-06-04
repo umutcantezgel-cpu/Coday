@@ -80,15 +80,55 @@ export const getNavItems = (): NavItem[] => [
           },
         ],
       },
+    ],
+  },
+  {
+    label: 'Branchen',
+    bgColor: 'var(--color-primary-900)',
+    textColor: 'var(--color-text-inverse)',
+    groups: [
       {
-        title: 'nav.industries.label',
+        title: 'Automobil & KFZ',
         links: [
-          { label: 'Branchen Übersicht', href: '/branchen' },
-          { label: 'Automobil & KFZ', href: '/branchen/automobil' },
-          { label: 'Gesundheitswesen', href: '/branchen/gesundheitswesen' },
-          { label: 'Handwerker & Bau', href: '/branchen/handwerker' },
-          { label: 'nav.industries.real_estate', href: '/branchen/immobilien-makler' },
-          { label: 'nav.industries.gastronomy', href: '/branchen/gastronomie-hotellerie' },
+          {
+            label: 'Übersicht: Automobil',
+            href: '/branchen/automobil',
+            desc: 'Digitale Lösungen für die Autobranche',
+          },
+          { label: 'KFZ-Werkstätten', href: '/branchen/automobil/kfz-werkstatt' },
+          { label: 'KFZ-Mechatroniker', href: '/branchen/automobil/kfz-mechatroniker' },
+          { label: 'Autohändler', href: '/branchen/automobil/autohaendler' },
+        ],
+      },
+      {
+        title: 'Gesundheitswesen',
+        links: [
+          {
+            label: 'Übersicht: Gesundheit',
+            href: '/branchen/gesundheitswesen',
+            desc: 'Smarte Praxen und Kliniken',
+          },
+          { label: 'Arzt in Wetzlar', href: '/branchen/gesundheitswesen/arzt-wetzlar' },
+          { label: 'Arzt in Gießen', href: '/branchen/gesundheitswesen/arzt-giessen' },
+        ],
+      },
+      {
+        title: 'Handwerk & Bau',
+        links: [
+          {
+            label: 'Übersicht: Handwerk',
+            href: '/branchen/handwerker',
+            desc: 'Digitale Handwerksbetriebe',
+          },
+          { label: 'Handwerker in Wetzlar', href: '/branchen/handwerker/wetzlar' },
+        ],
+      },
+      {
+        title: 'Weitere Branchen',
+        links: [
+          { label: 'Alle Branchen ansehen', href: '/branchen' },
+          { label: 'Immobilien Makler', href: '/branchen/immobilien-makler' },
+          { label: 'Gastronomie', href: '/branchen/gastronomie-hotellerie' },
         ],
       },
     ],
