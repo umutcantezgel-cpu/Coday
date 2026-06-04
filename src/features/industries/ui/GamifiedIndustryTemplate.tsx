@@ -10,6 +10,7 @@ import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import BlurText from '@/shared/ui/BlurText';
 import { LocalSchemaBuilder } from '@/features/local-seo/ui/LocalSchemaBuilder';
 import { GamifiedRoiCalculator } from './GamifiedRoiCalculator';
+import { IndustryToolEmbed } from './IndustryToolEmbed';
 
 // Temporary fallback for icon rendering
 const getIconByName = (name: string) => {
@@ -123,6 +124,9 @@ export const GamifiedIndustryTemplate: React.FC<{ content: any; cityData?: any }
           <GamifiedRoiCalculator industryName={content.target.replace('-', ' ').toUpperCase()} />
         </div>
       </section>
+
+      {/* 2.5 EXTERNAL TOOL EMBED */}
+      <IndustryToolEmbed industryKey={content.target} />
 
       {/* 3. BENTO GRID */}
       <section className="py-24 bg-secondary-50 relative">
