@@ -19,7 +19,7 @@ export const HeroSection: React.FC = () => {
       <div className="relative z-10 w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
         {/* Left Column: Text Content */}
         <div className="lg:col-span-7 flex flex-col items-start text-left">
-          <h1 className="font-display font-bold text-5xl md:text-7xl lg:text-[5.5rem] tracking-tight text-text-primary mb-8 leading-[1.05]">
+          <h1 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] tracking-tight text-text-primary mb-6 lg:mb-8 leading-[1.1] lg:leading-[1.05]">
             {t('hero.headline_prefix')} <br />
             <GradientText
               colors={[
@@ -29,7 +29,7 @@ export const HeroSection: React.FC = () => {
               ]}
               animationSpeed={8}
               showBorder={false}
-              className="inline-block"
+              className="inline-block mt-2 lg:mt-0"
             >
               {t('hero.headline_gradient')}
             </GradientText>

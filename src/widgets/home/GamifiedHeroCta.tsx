@@ -7,9 +7,12 @@ import { ArrowRight, Sparkle } from '@phosphor-icons/react';
 
 export const GamifiedHeroCta: React.FC = () => {
   const router = useRouter();
-  const radius = 100; // Size of the C-curve
+
+  // Dimensions optimized for all screens (safe for mobile)
+  const radius = 110;
   const diameter = radius * 2;
-  const knobSize = 64; // Size of the 'O'
+  const knobSize = 68; // Slightly larger, more premium knob
+  const trackThickness = 72; // Thick track for the knob to slide inside
 
   const containerRef = useRef<HTMLDivElement>(null);
   const dragY = useMotionValue(0);
@@ -18,29 +21,26 @@ export const GamifiedHeroCta: React.FC = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
 
-  // Calculate X position based on Y position to form a C curve (left half of a circle)
+  // Mathematics: The X position based on Y position (Left half of a circle)
   const xPos = useTransform(dragY, (val) => {
     const vy = val - radius;
-    // Constrain to prevent NaN due to elastic drag bounce
     const constrainedVy = Math.max(-radius, Math.min(radius, vy));
     return -Math.sqrt(radius * radius - constrainedVy * constrainedVy);
   });
 
-  // Opacity of the "Potenzialanalyse starten" text increases as you drag down
-  const progressTextOpacity = useTransform(dragY, [0, radius, diameter], [0.3, 1, 0]);
-
-  // Scale of the checkmark / success state when reaching the bottom
+  const progressTextOpacity = useTransform(dragY, [0, radius], [0.5, 0]);
   const successScale = useTransform(dragY, [diameter * 0.8, diameter], [0, 1]);
+  const bgKnobOpacity = useTransform(dragY, [0, diameter], [1, 0]);
 
-  const handleDragEnd = (event: any, info: any) => {
+  const handleDragEnd = () => {
     setIsDragging(false);
-    if (dragY.get() >= diameter * 0.9) {
-      // Reached the end! Trigger haptic and redirect
+    if (dragY.get() >= diameter * 0.85) {
+      // Reached the bottom -> Vibrate & Navigate
       if (typeof navigator !== 'undefined' && navigator.vibrate) {
         navigator.vibrate(50);
       }
       controls.start({
-        scale: 0,
+        scale: 0.8,
         opacity: 0,
         transition: { duration: 0.3 },
       });
@@ -49,23 +49,21 @@ export const GamifiedHeroCta: React.FC = () => {
       // Snap back to top
       controls.start({
         y: 0,
-        transition: { type: 'spring', stiffness: 300, damping: 20 },
+        transition: { type: 'spring', stiffness: 400, damping: 25 },
       });
-      // We manually update dragY back to 0 so the xPos math follows
-      // Framer motion controls animate the DOM element, but sometimes we need to animate the MotionValue itself.
     }
   };
 
-  // We need to animate the motion value directly to ensure X updates correctly on snap back
+  // Animate the motion value directly to ensure X updates correctly on snap back
   useEffect(() => {
-    if (!isDragging && dragY.get() > 0 && dragY.get() < diameter * 0.9) {
+    if (!isDragging && dragY.get() > 0 && dragY.get() < diameter * 0.85) {
       const animation = setInterval(() => {
         const current = dragY.get();
         if (current <= 1) {
           dragY.set(0);
           clearInterval(animation);
         } else {
-          dragY.set(current * 0.8); // Simple easing back to 0
+          dragY.set(current * 0.8);
         }
       }, 16);
       return () => clearInterval(animation);
@@ -80,65 +78,93 @@ export const GamifiedHeroCta: React.FC = () => {
 
   return (
     <div
-      className="relative flex items-center justify-end w-[280px] h-[300px] select-none"
+      className="relative flex items-center justify-end w-full max-w-[340px] h-[340px] select-none mx-auto lg:mr-0"
       ref={containerRef}
     >
-      {/* Background SVG Track (The 'C') */}
+      {/* Thick Background SVG Track */}
       <svg
-        width={radius + knobSize}
-        height={diameter + knobSize}
-        viewBox={`0 0 ${radius + knobSize} ${diameter + knobSize}`}
-        className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none"
+        width={radius + trackThickness}
+        height={diameter + trackThickness}
+        viewBox={`0 0 ${radius + trackThickness} ${diameter + trackThickness}`}
+        className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none drop-shadow-2xl"
       >
-        <path
-          d={`M ${radius + knobSize / 2} ${knobSize / 2} A ${radius} ${radius} 0 0 0 ${radius + knobSize / 2} ${diameter + knobSize / 2}`}
-          fill="none"
-          stroke="rgba(20, 20, 20, 0.05)" // Light theme subtle track
-          strokeWidth="12"
-          strokeLinecap="round"
-          className="dark:stroke-white/10"
-        />
-        {/* Glow effect path */}
-        <path
-          d={`M ${radius + knobSize / 2} ${knobSize / 2} A ${radius} ${radius} 0 0 0 ${radius + knobSize / 2} ${diameter + knobSize / 2}`}
-          fill="none"
-          stroke="url(#gradientC)"
-          strokeWidth="4"
-          strokeLinecap="round"
-          className="opacity-50"
-        />
         <defs>
-          <linearGradient id="gradientC" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="var(--color-primary-500)" stopOpacity="0.8" />
-            <stop offset="50%" stopColor="var(--color-secondary-500)" stopOpacity="0.3" />
-            <stop offset="100%" stopColor="var(--color-primary-500)" stopOpacity="0.8" />
+          <linearGradient id="trackGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop
+              offset="0%"
+              stopColor="rgba(0,0,0,0.02)"
+              className="dark:stop-color-[rgba(255,255,255,0.03)]"
+            />
+            <stop
+              offset="50%"
+              stopColor="rgba(0,0,0,0.06)"
+              className="dark:stop-color-[rgba(255,255,255,0.08)]"
+            />
+            <stop
+              offset="100%"
+              stopColor="rgba(0,0,0,0.02)"
+              className="dark:stop-color-[rgba(255,255,255,0.03)]"
+            />
           </linearGradient>
+          <filter id="insetShadow">
+            <feOffset dx="0" dy="4" />
+            <feGaussianBlur stdDeviation="6" result="offset-blur" />
+            <feComposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse" />
+            <feFlood floodColor="black" floodOpacity="0.2" result="color" />
+            <feComposite operator="in" in="color" in2="inverse" result="shadow" />
+            <feComposite operator="over" in="shadow" in2="SourceGraphic" />
+          </filter>
         </defs>
+
+        {/* Deep Groove Track */}
+        <path
+          d={`M ${radius + trackThickness / 2} ${trackThickness / 2} A ${radius} ${radius} 0 0 0 ${radius + trackThickness / 2} ${diameter + trackThickness / 2}`}
+          fill="none"
+          stroke="url(#trackGradient)"
+          strokeWidth={trackThickness}
+          strokeLinecap="round"
+          filter="url(#insetShadow)"
+          className="dark:stroke-white/5 stroke-black/5"
+        />
+
+        {/* Glow inner rail */}
+        <path
+          d={`M ${radius + trackThickness / 2} ${trackThickness / 2} A ${radius} ${radius} 0 0 0 ${radius + trackThickness / 2} ${diameter + trackThickness / 2}`}
+          fill="none"
+          stroke="var(--color-primary-500)"
+          strokeWidth="2"
+          strokeLinecap="round"
+          className="opacity-20 mix-blend-overlay"
+        />
       </svg>
 
       {/* Instructional Text Inside the C */}
-      <div className="absolute right-[120px] top-1/2 -translate-y-1/2 flex flex-col items-end text-right pointer-events-none">
+      <div className="absolute right-[140px] top-1/2 -translate-y-1/2 flex flex-col items-end text-right pointer-events-none pr-4">
         <motion.div
           style={{ opacity: progressTextOpacity }}
-          className="text-sm font-bold text-gray-400 dark:text-gray-500 mb-1"
+          className="text-sm md:text-base font-bold text-gray-800 dark:text-gray-200 mb-1"
         >
           Potenzialanalyse
         </motion.div>
-        <div className="text-[10px] uppercase tracking-widest text-gray-300 dark:text-gray-600 flex items-center gap-1">
-          <ArrowRight className="w-3 h-3 rotate-90" /> Ziehen
-        </div>
+        <motion.div
+          style={{ opacity: progressTextOpacity }}
+          className="text-[10px] md:text-xs uppercase tracking-widest text-primary-600 dark:text-primary-400 flex items-center gap-1.5 font-bold"
+        >
+          <ArrowRight className="w-3.5 h-3.5 rotate-90" /> Nach unten ziehen
+        </motion.div>
       </div>
 
       {/* The Draggable 'O' Knob */}
       <div className="relative h-full w-[100px] flex justify-end">
-        <div className="absolute top-[50px] right-0 h-[200px] w-[20px]" />{' '}
-        {/* Drag Area Boundary */}
+        {/* Invisible hit area for drag stability */}
+        <div className="absolute top-[30px] right-0 h-[280px] w-[60px]" />
+
         <motion.div
-          className="absolute right-0 top-[20px] z-10 touch-none flex flex-col items-center cursor-grab active:cursor-grabbing"
+          className="absolute right-0 top-[30px] z-10 touch-none flex flex-col items-center cursor-grab active:cursor-grabbing"
           style={{ y: dragY, x: xPos }}
           drag="y"
           dragConstraints={{ top: 0, bottom: diameter }}
-          dragElastic={0.05}
+          dragElastic={0.02}
           dragMomentum={false}
           onDragStart={() => setIsDragging(true)}
           onDragEnd={handleDragEnd}
@@ -147,50 +173,42 @@ export const GamifiedHeroCta: React.FC = () => {
           onClick={handleClick}
           animate={controls}
         >
-          {/* The Knob UI */}
+          {/* The Knob UI - Now extremely premium and thick */}
           <motion.div
-            className="w-16 h-16 rounded-full bg-white dark:bg-gray-900 border-[4px] border-primary-500 shadow-xl shadow-primary-500/30 flex items-center justify-center relative overflow-hidden group"
+            className="w-[68px] h-[68px] rounded-full bg-white dark:bg-[#111] border border-gray-200 dark:border-gray-800 shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:shadow-[0_8px_32px_rgba(255,255,255,0.05)] flex items-center justify-center relative overflow-hidden group"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <div className="absolute inset-0 bg-gradient-to-tr from-primary-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            {/* Glossy overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent dark:from-white/10 rounded-full" />
+            <div className="absolute inset-0 bg-primary-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-            {/* Default State: Sparkle (or Results icon) */}
+            {/* Default State: Results CTA */}
             <motion.div
               className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none"
-              style={{ opacity: useTransform(dragY, [0, 50], [1, 0]) }}
+              style={{ opacity: bgKnobOpacity }}
             >
-              <span className="text-[8px] font-bold text-gray-400 mb-0.5 tracking-wider uppercase">
+              <span className="text-[8px] font-bold text-gray-400 dark:text-gray-500 mb-0.5 tracking-wider uppercase">
                 Klick
               </span>
-              <span className="text-[10px] font-medium text-gray-800 dark:text-gray-200">
-                Projekte
-              </span>
-            </motion.div>
-
-            {/* Dragging State: Arrow Down */}
-            <motion.div
-              className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none"
-              style={{ opacity: useTransform(dragY, [20, 80], [0, 1]) }}
-            >
-              <ArrowRight className="w-6 h-6 text-primary-500 rotate-90" />
+              <span className="text-[10px] font-bold text-gray-900 dark:text-white">Projekte</span>
             </motion.div>
 
             {/* Success State: Check/Sparkle */}
             <motion.div
-              className="absolute inset-0 bg-primary-500 flex items-center justify-center pointer-events-none"
+              className="absolute inset-0 bg-primary-500 flex items-center justify-center pointer-events-none shadow-[inset_0_-4px_8px_rgba(0,0,0,0.2)]"
               style={{ scale: successScale, opacity: successScale }}
             >
-              <Sparkle weight="fill" className="w-6 h-6 text-white animate-pulse" />
+              <Sparkle weight="fill" className="w-7 h-7 text-white animate-pulse" />
             </motion.div>
           </motion.div>
 
           <motion.div
-            className="absolute -bottom-8 whitespace-nowrap text-xs font-medium text-primary-600 bg-primary-50 px-3 py-1 rounded-full shadow-sm"
-            initial={{ opacity: 0, y: -10 }}
+            className="absolute -bottom-10 whitespace-nowrap text-[11px] font-bold text-primary-700 dark:text-primary-300 bg-primary-50 dark:bg-primary-900/30 px-3 py-1.5 rounded-full shadow-lg border border-primary-100 dark:border-primary-800"
+            initial={{ opacity: 0, y: -5 }}
             animate={{
               opacity: isHovered && !isDragging && dragY.get() === 0 ? 1 : 0,
-              y: isHovered && !isDragging && dragY.get() === 0 ? 0 : -10,
+              y: isHovered && !isDragging && dragY.get() === 0 ? 0 : -5,
             }}
           >
             Klick für Ergebnisse
