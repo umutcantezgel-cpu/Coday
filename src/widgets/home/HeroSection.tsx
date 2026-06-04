@@ -19,19 +19,8 @@ export const HeroSection: React.FC = () => {
   const tCommon = useTranslations('common');
 
   return (
-    <section className="relative w-full min-h-[85svh] flex flex-col items-center justify-center overflow-x-hidden bg-bg-primary text-center px-4 pt-28 pb-16 md:pt-36 md:pb-24">
+    <section className="relative w-full min-h-[85svh] flex flex-col items-center justify-center overflow-x-hidden bg-bg-primary text-center px-4 pt-16 pb-16 md:pt-24 md:pb-24">
       <div className="relative z-10 w-full max-w-6xl mx-auto flex flex-col items-center">
-        {/* Eyebrow Tag */}
-        <div className="w-full flex justify-center">
-          <div className="mb-10 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs sm:text-sm font-medium bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/10 backdrop-blur-md text-text-primary">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-500"></span>
-            </span>
-            {t('hero.eyebrow', { defaultValue: 'High-End Digital Agency' })}
-          </div>
-        </div>
-
         {/* Huge Typography, Text perfectly centered, max 2-3 lines */}
         <div className="w-full">
           <h1 className="max-w-5xl mx-auto text-center font-display font-bold text-5xl md:text-7xl lg:text-8xl tracking-tight text-text-primary mb-8">
