@@ -1,0 +1,124 @@
+{
+  "target": "kfz-werkstatt",
+  "type": "industry-location",
+  "meta": {
+    "title": "Premium Webdesign & SEO für KFZ-Werkstätten | Coday",
+    "description": "Dominieren Sie den Markt in Ihrer Region. Gewinnen Sie lukrative Unfallinstandsetzungen und Stammkunden statt billiger Reifenwechsel. High-End Webdesign für Werkstätten."
+  },
+  "hero": {
+    "headline": "Ihre KFZ-Werkstatt als unangefochtene Nummer 1.",
+    "subheadline": "Mehr lukrative Aufträge. Keine lästigen Preisdiskussionen mehr.",
+    "description": "Ihre aktuelle Website kostet Sie jeden Monat bares Geld. Wenn Autobesitzer mit einem teuren Motorschaden oder einem Unfallwagen nach einer verlässlichen KFZ-Werkstatt suchen, verzeihen sie keine veralteten, langsamen Internetauftritte. Wir bauen hochperformante, psychologisch optimierte Websites, die Vertrauen ausstrahlen und Premium-Kunden anziehen, bevor Ihre Konkurrenz überhaupt reagieren kann.",
+    "metrics": [
+      { "value": "240", "label": "Mehr Premium-Anfragen", "suffix": "%" },
+      { "value": "95", "label": "Conversion-Rate Steigerung", "suffix": "%" }
+    ]
+  },
+  "gamifiedStats": {
+    "title": "Wie viele Premium-Kunden lassen Sie aktuell auf der Straße liegen?",
+    "description": "Jeden Tag suchen hunderte Fahrzeugbesitzer in Ihrer Region nach einer kompetenten Werkstatt für Inspektionen, aufwendige Diagnoseverfahren oder Unfallinstandsetzungen. Wenn Sie bei Google nicht ganz oben stehen oder Ihre Website nicht auf Anhieb maximale Kompetenz und Modernität ausstrahlt, wandert das Geld direkt zu Ihren Mitbewerbern.",
+    "counters": [
+      {
+        "targetValue": 89,
+        "suffix": "%",
+        "label": "der Autofahrer googeln vor dem Werkstattbesuch"
+      },
+      {
+        "targetValue": 75,
+        "suffix": "%",
+        "label": "urteilen über Ihre Qualität nur anhand der Website"
+      }
+    ]
+  },
+  "bentoGrid": {
+    "title": "Der unfaire Vorteil für Ihre Werkstatt",
+    "subtitle": "Warum Sie mit einer Coday-Website nicht mehr vergleichbar sind.",
+    "cards": [
+      {
+        "title": "Extreme Geschwindigkeit",
+        "text": "Autofahrer in Notsituationen warten nicht auf langsame Websites. Wir garantieren Ladezeiten unter einer Sekunde. Der Kunde ist bei Ihnen, bevor die Seite der Konkurrenz geladen hat.",
+        "size": "large",
+        "icon": "Speed"
+      },
+      {
+        "title": "Vertrauens-Design",
+        "text": "Wir transformieren Ihre Expertise in ein visuelles Meisterwerk. Jedes Detail strahlt absolute Präzision und Verlässlichkeit aus.",
+        "size": "small",
+        "icon": "Design"
+      },
+      {
+        "title": "Lokale SEO-Dominanz",
+        "text": "Werden Sie gefunden, wenn es darauf ankommt. Wir platzieren Sie bei Google genau dort, wo die Kaufbereitschaft am höchsten ist.",
+        "size": "small",
+        "icon": "SEO"
+      },
+      {
+        "title": "Automatisierte Neukundengewinnung",
+        "text": "Ihre Website wird zur digitalen Verkaufsmaschine. Hochkonvertierende Termin-Funktionen, smarte Kontaktformulare und psychologisch fundierte Handlungsaufforderungen filtern Reifenkicker heraus und bringen Ihnen hochprofitable Reparaturaufträge.",
+        "size": "tall",
+        "icon": "Security"
+      }
+    ]
+  },
+  "processSteps": [
+    {
+      "title": "1. Potenzial-Analyse & Strategie",
+      "description": "Wir analysieren Ihre lokale Konkurrenz schonungslos. Wir finden heraus, nach welchen hochpreisigen Reparaturleistungen Ihre Zielgruppe wirklich sucht und entwickeln eine Strategie, wie wir diese Nachfrage exklusiv zu Ihnen leiten."
+    },
+    {
+      "title": "2. High-End UI/UX Design",
+      "description": "Keine Baukasten-Templates. Wir erschaffen eine maßgeschneiderte, visuell beeindruckende Identität, die exakt die Qualität Ihrer Werkstattarbeit widerspiegelt. Modern, clean und absolut vertrauenserweckend."
+    },
+    {
+      "title": "3. Performance-Entwicklung & SEO",
+      "description": "Mit der neuesten Next.js Technologie programmieren wir Ihre Plattform. Rasend schnell, technisch makellos und von Grund auf für Google optimiert, um Ihnen den ersten Platz in Ihrer Region zu sichern."
+    },
+    {
+      "title": "4. Launch & Skalierung",
+      "description": "Mit dem Livegang beginnt die eigentliche Domination. Wir monitoren die Performance, optimieren die Conversion-Raten und stellen sicher, dass Ihre Werkstatt langfristig an der Spitze bleibt."
+    }
+  ],
+  "localDominance": {
+    "title": "Werden Sie zum Platzhirsch Ihrer Region",
+    "description": "Der Markt für KFZ-Reparaturen ist hart umkämpft. Standard-Marketing funktioniert nicht mehr. Sie brauchen eine digitale Präsenz, die so überlegen ist, dass Kunden bereit sind, für Ihre Qualität gerne mehr zu bezahlen und längere Anfahrtswege in Kauf zu nehmen.",
+    "points": [
+      "Monopolisierung der lukrativsten Suchbegriffe (Unfallinstandsetzung, Motordiagnose, Inspektion)",
+      "Aufbau einer massiven Experten-Positionierung im regionalen Vergleich",
+      "Sog-Wirkung statt Kaltakquise: Kunden suchen Sie, nicht umgekehrt"
+    ]
+  },
+  "faq": [
+    {
+      "q": "Warum reicht eine einfache Baukasten-Website für meine Werkstatt nicht mehr aus?",
+      "a": "Baukasten-Websites sind langsam, SEO-technisch schwach und sehen aus wie jede andere Wald-und-Wiesen-Werkstatt. Premium-Kunden mit teuren Fahrzeugen oder lukrativen Aufträgen suchen nach Anbietern, die Professionalität ausstrahlen. Eine billige Website signalisiert unbewusst billige Arbeit. Wir bauen High-End-Lösungen, die genau das Gegenteil tun: Sie etablieren Sie sofort als Premium-Anbieter."
+    },
+    {
+      "q": "Wie schnell sehen wir Ergebnisse nach dem Launch der neuen Website?",
+      "a": "Unsere Next.js-Architektur führt oft schon in den ersten Wochen zu spürbaren Verbesserungen in der Google-Sichtbarkeit. Die Conversion-Rate – also der Prozentsatz der Besucher, die tatsächlich anrufen oder einen Termin buchen – steigt durch unsere psychologische Nutzerführung meist ab dem ersten Tag nach dem Livegang signifikant an."
+    },
+    {
+      "q": "Wir haben bereits genug Aufträge, oft sogar zu viele. Warum sollten wir in eine neue Website investieren?",
+      "a": "Wenn Sie voll sind, ist es an der Zeit, die Qualität der Aufträge zu filtern. Eine High-End-Website hilft Ihnen dabei, die nervigen 'Was-ist-letzte-Preis'-Kunden abzuwehren und gezielt die hochprofitablen Aufträge anzuziehen. Sie erhöhen Ihren Umsatz bei gleichem oder geringerem Zeitaufwand."
+    },
+    {
+      "q": "Was unterscheidet Coday von anderen Webdesign-Agenturen für KFZ-Betriebe?",
+      "a": "Wir nutzen keine fertigen Themes, wir lagern nichts aus und wir machen keine halben Sachen. Coday steht für kompromisslose Performance. Wir nutzen dieselben Enterprise-Technologien (React, Next.js, Vercel) wie die größten Tech-Konzerne der Welt, um Ihnen einen unfairen technologischen Vorteil in Ihrer Region."
+    },
+    {
+      "q": "Bieten Sie auch fortlaufende SEO-Betreuung an?",
+      "a": "Ja. Die Website ist nur der Motor. SEO ist der Treibstoff. Wir bieten exklusive Partnerschaften an, in denen wir kontinuierlich an Ihrer Sichtbarkeit arbeiten, Content ausbauen und sicherstellen, dass Sie Ihre Konkurrenz dauerhaft dominieren."
+    },
+    {
+      "q": "Wir wollen auch neue Mitarbeiter (Mechatroniker) finden. Hilft die Website dabei?",
+      "a": "Absolut. Fachkräftemangel ist in der KFZ-Branche das größte Problem. Gute Mechatroniker wollen in modernen, innovativen Betrieben arbeiten. Ihre neue Website wird auch als mächtiges Recruiting-Tool konzipiert, das Ihr Unternehmen als attraktiven, zukunftssicheren Arbeitgeber präsentiert."
+    },
+    {
+      "q": "Wie viel Aufwand bedeutet das Projekt für mich im Tagesgeschäft?",
+      "a": "Minimalen Aufwand. Wir wissen, dass Sie in der Werkstatt stehen und Geld verdienen müssen. Nach einem initialen Strategie-Gespräch übernehmen wir 100% der Umsetzung – von der Texterstellung bis zur Programmierung."
+    },
+    {
+      "q": "Können Terminbuchungssysteme oder DMS-Software integriert werden?",
+      "a": "Ja, wir binden jede moderne Schnittstelle nahtlos ein. Ob Online-Terminbuchung, WhatsApp-Chatbots für schnelle Anfragen oder Anbindungen an Ihr Dealer Management System – wir digitalisieren Ihre Kundenkommunikation auf höchstem Niveau."
+    }
+  ]
+}

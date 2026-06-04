@@ -1,51 +1,124 @@
 {
-  "target": "handwerk-bau-wetzlar",
+  "target": "handwerker-wetzlar",
   "type": "industry-location",
   "meta": {
-    "title": "Webdesign für Handwerk & Bau in Wetzlar | Coday",
-    "description": "Hochleistungs-Websites und lokales SEO für Handwerksbetriebe und Bauunternehmen in Wetzlar und dem Lahn-Dill-Kreis. Gewinnen Sie Fachkräfte und Premium-Kunden."
+    "title": "Webdesign & Local SEO für Handwerker in Wetzlar | Coday",
+    "description": "Dominieren Sie den Markt in Wetzlar und Umgebung. Gewinnen Sie lukrative Großprojekte statt lästiger Kleinaufträge. High-End Websites für Premium-Handwerker."
   },
   "hero": {
-    "headline": "Digitale Dominanz für Ihr Handwerksunternehmen in Wetzlar",
-    "subheadline": "Webdesign & Local SEO, das Handwerk und Bau im Lahn-Dill-Kreis spürbar voranbringt.",
-    "description": "Coday entwickelt als High-End Webagentur rasante Next.js-Websites speziell für das Handwerk. Wir transformieren Ihre Online-Präsenz in einen digitalen Magneten für neue Aufträge und qualifizierte Fachkräfte in Wetzlar und Umgebung."
-  },
-  "localDominance": {
-    "title": "Lokale Vormachtstellung für Wetzlarer Handwerksbetriebe",
-    "description": "Im hart umkämpften Bau- und Handwerkssektor des Lahn-Dill-Kreises reicht eine einfache Website nicht mehr aus. Sie benötigen eine digitale Infrastruktur, die Ihre handwerkliche Exzellenz widerspiegelt und Sie in den lokalen Suchergebnissen unübersehbar macht.",
-    "points": [
-      "Top-Platzierungen in Wetzlar durch datengetriebenes Local SEO für Handwerker",
-      "Sichtbarkeit in Google Maps für Suchanfragen wie 'Dachdecker Wetzlar' oder 'Bauunternehmen Lahn-Dill'",
-      "Automatisierte Leadgenerierung für lukrative Bauprojekte in Mittelhessen",
-      "Aufbau einer starken, vertrauenswürdigen digitalen Arbeitgebermarke"
+    "headline": "Das digitale Fundament für Wetzlars beste Handwerker.",
+    "subheadline": "Filtern Sie schlechte Kunden heraus. Ziehen Sie hochprofitable Aufträge magisch an.",
+    "description": "Sie liefern meisterhafte Qualitätsarbeit, aber Ihre aktuelle Website verkauft Sie unter Wert. Wenn Bauherren und Architekten nach verlässlichen Partnern in Wetzlar suchen, entscheidet die digitale Präsenz über den Zuschlag. Wir bauen hochperformante Websites, die Ihre Handwerkskunst in den Premium-Sektor katapultieren.",
+    "metrics": [
+      { "value": "250", "label": "Mehr Premium-Anfragen", "suffix": "%" },
+      { "value": "1", "label": "Die logische Nr. 1 in der Region", "suffix": "" }
     ]
   },
-  "contentSections": [
+  "gamifiedStats": {
+    "title": "Wie viele lukrative Aufträge verlieren Sie täglich?",
+    "description": "Hunderte Hausbesitzer, Investoren und Firmen in Wetzlar suchen jeden Monat nach kompetenten Handwerksbetrieben. Wenn Sie bei Google nicht auf Seite 1 stehen oder Ihre Website unprofessionell wirkt, macht der Mitbewerber das Geschäft – selbst wenn er schlechter arbeitet als Sie.",
+    "counters": [
+      {
+        "targetValue": 94,
+        "suffix": "%",
+        "label": "der Kunden googeln Handwerker vor der Kontaktaufnahme"
+      },
+      {
+        "targetValue": 65,
+        "suffix": "%",
+        "label": "sind bereit, für einen professionelleren Auftritt höhere Preise zu zahlen"
+      }
+    ]
+  },
+  "bentoGrid": {
+    "title": "Die Coday Methode für das Handwerk",
+    "subtitle": "Warum wir Handwerksbetriebe unschlagbar machen.",
+    "cards": [
+      {
+        "title": "Visuelle Autorität",
+        "text": "Wir rücken Ihre Referenzprojekte ins Rampenlicht. Ein starkes, maskulines und extrem hochwertiges Design, das Kompetenz, Zuverlässigkeit und absolute Präzision ausstrahlt.",
+        "size": "large",
+        "icon": "Design"
+      },
+      {
+        "title": "Automatisierte Lead-Filterung",
+        "text": "Nie wieder Zeit mit 'Was-ist-letzte-Preis'-Kunden verschwenden. Smarte Anfrage-Funnels filtern unrentable Kleinstaufträge heraus und liefern Ihnen vorqualifizierte Bauherren.",
+        "size": "tall",
+        "icon": "Security"
+      },
+      {
+        "title": "Maximale Lade-Geschwindigkeit",
+        "text": "Handwerker-Websites sind oft voller unoptimierter Bilder. Wir nutzen Next.js. Ihre Seite lädt auf der Baustelle auf dem Handy in unter einer Sekunde.",
+        "size": "small",
+        "icon": "Speed"
+      },
+      {
+        "title": "Lokales SEO in Wetzlar",
+        "text": "Egal ob Dachdecker, SHK oder Elektriker – wir sorgen dafür, dass Sie bei Google in Wetzlar und dem Lahn-Dill-Kreis ganz oben stehen.",
+        "size": "small",
+        "icon": "SEO"
+      }
+    ]
+  },
+  "processSteps": [
     {
-      "title": "Fachkräftegewinnung im Lahn-Dill-Kreis: Ihr digitaler Vorteil",
-      "content": "Der Fachkräftemangel im Handwerk ist in Wetzlar und Umgebung deutlich spürbar. Gute Gesellen und Meister suchen sich heute ihre Arbeitgeber aus. Eine moderne, pfeilschnelle Next.js Website von Coday präsentiert Ihren Betrieb als zukunftsorientierten Top-Arbeitgeber. Mit nahtlosen digitalen Bewerbungsprozessen und einer starken Arbeitgebermarke ziehen Sie genau das Personal an, das Sie für das Wachstum Ihres Bauunternehmens benötigen."
+      "title": "1. Strategie & Zielgruppen-Fokus",
+      "description": "Wollen Sie mehr Sanierungen? Mehr Architekten-Aufträge? Wir definieren Ihre profitabelsten Leistungen und richten die gesamte digitale Strategie exakt darauf aus."
     },
     {
-      "title": "High-Performance Webdesign für Bau und Handwerk",
-      "content": "Ihre Kunden erwarten Qualität – online wie offline. Ladezeiten von unter einer Sekunde, eine makellose mobile Darstellung direkt auf der Baustelle und eine intuitive Benutzerführung sind heute Pflicht. Wir nutzen modernste Technologien wie Next.js und React, um für Ihren Handwerksbetrieb in Wetzlar eine Plattform zu schaffen, die nicht nur beeindruckt, sondern konvertiert. Ihre neue Website wird zum stärksten Vertriebsmitarbeiter Ihres Unternehmens."
+      "title": "2. High-End Design & Copywriting",
+      "description": "Wir schreiben Texte, die Vertrauen wecken und Einwände behandeln. Kombiniert mit einem Design, das handwerkliche Perfektion digital erlebbar macht."
     },
     {
-      "title": "Messbare Ergebnisse durch lokales SEO für Wetzlar",
-      "content": "Wenn in Wetzlar nach einem zuverlässigen Handwerker gesucht wird, müssen Sie auf Platz 1 stehen. Unsere Local SEO Strategien sind speziell auf die Bedürfnisse von Bauunternehmen und Handwerksbetrieben zugeschnitten. Wir optimieren Ihr Google Unternehmensprofil, integrieren relevante lokale Keywords und sorgen dafür, dass Sie bei den entscheidenden Suchanfragen im Lahn-Dill-Kreis gefunden werden – von der Badsanierung bis zum Rohbau."
+      "title": "3. Programmierung auf Enterprise-Niveau",
+      "description": "Wir basteln nicht mit WordPress. Wir programmieren mit modernsten React/Next.js Technologien für absolute Spitzen-Performance und Sicherheit."
+    },
+    {
+      "title": "4. Wetzlar-Dominanz & Skalierung",
+      "description": "Nach dem Livegang optimieren wir kontinuierlich weiter. Ihre Sichtbarkeit wächst, Ihre Anfragen steigen, Ihr Betrieb skaliert profitabel."
     }
   ],
+  "localDominance": {
+    "title": "Der absolute Marktführer im Lahn-Dill-Kreis",
+    "description": "Gute Handwerker sind ausgebucht, das ist bekannt. Das Ziel ist nicht, einfach mehr Arbeit zu generieren. Das Ziel ist es, sich aussuchen zu können, welche hochprofitablen Großprojekte Sie annehmen und wem Sie absagen. Wir geben Ihnen die digitale Hebelwirkung dafür.",
+    "points": [
+      "Erhöhung der Durchsetzbarkeit von höheren Stundensätzen und Projektpreisen",
+      "Aufbau einer magnetischen Arbeitgebermarke gegen den Fachkräftemangel",
+      "Generierung von kontinuierlichen Anfragen für Ihre Wunsch-Dienstleistungen"
+    ]
+  },
   "faq": [
     {
-      "q": "Warum braucht mein Handwerksbetrieb in Wetzlar eine High-End Website?",
-      "a": "Eine Premium-Website spiegelt die Qualität Ihrer handwerklichen Arbeit wider. Sie differenziert Sie in Wetzlar von Mitbewerbern, rechtfertigt höhere Preise bei Premium-Kunden und ist das entscheidende Werkzeug, um im Lahn-Dill-Kreis qualifizierte Fachkräfte zu rekrutieren."
+      "q": "Wir sind auf Monate ausgebucht. Warum sollten wir jetzt in eine Website investieren?",
+      "a": "Wenn Sie voll sind, ist der perfekte Zeitpunkt für ein Upgrade gekommen. Eine High-End-Website bringt Ihnen nicht zwingend mehr Arbeit, sondern bessere Arbeit. Sie filtern nervige Kleinaufträge heraus, positionieren sich im Premium-Segment und können höhere Preise für lukrativere Projekte abrufen."
     },
     {
-      "q": "Wie hilft mir Coday bei der Mitarbeitergewinnung im Handwerk?",
-      "a": "Wir entwickeln maßgeschneiderte Karriere- und Recruiting-Seiten, die Ihre Arbeitgebervorteile optimal präsentieren. Durch extrem schnelle Ladezeiten und mobile Optimierung machen wir es potenziellen Bewerbern in Wetzlar so einfach wie möglich, Kontakt aufzunehmen – direkt vom Smartphone aus."
+      "q": "Wir finden keine Fachkräfte. Kann die Website beim Recruiting in Wetzlar helfen?",
+      "a": "Absolut, das ist einer der größten Hebel. Gute Gesellen und Meister wollen in Betrieben arbeiten, die modern, innovativ und sicher aufgestellt sind. Eine herausragende Website mit einer starken Karriereseite ist Ihr bester Verkäufer im Kampf um die besten Köpfe im Lahn-Dill-Kreis."
     },
     {
-      "q": "Wie lange dauert es, bis wir durch Local SEO in Wetzlar besser gefunden werden?",
-      "a": "Während erste technische Optimierungen oft schnell sichtbare Verbesserungen bringen, ist Local SEO ein kontinuierlicher Prozess. In der Regel verzeichnen unsere Handwerkskunden in Wetzlar nach 3 bis 6 Monaten signifikante Steigerungen bei den lokalen Suchanfragen und qualifizierten Leads."
+      "q": "Ich habe keine Zeit, mich um Texte oder Bilder zu kümmern. Ist das ein Problem?",
+      "a": "Nein. Wir sind eine Full-Service-Agentur. Wir schreiben verkaufspsychologisch optimierte Texte und organisieren bei Bedarf professionelle Fotoshootings auf Ihren Baustellen in Wetzlar. Sie machen Ihr Handwerk, wir machen unseres."
+    },
+    {
+      "q": "Warum sollten wir nicht einfach eine günstige Baukasten-Seite selber machen?",
+      "a": "Weil Sie Ihren Kunden auch nicht empfehlen, die Elektrik im Haus selbst zu verlegen. Baukasten-Seiten sind langsam, ranken schlecht bei Google und strahlen mangelnde Professionalität aus. Eine billige Website kostet Sie täglich bares Geld in Form von verlorenen Premium-Aufträgen."
+    },
+    {
+      "q": "Wie schnell werden wir bei Google in Wetzlar besser gefunden?",
+      "a": "Unsere technische Basis (Next.js) bietet den ultimativen SEO-Vorteil. Wir sehen bei lokalen Suchbegriffen (z.B. 'Dachdecker Wetzlar') oft schon nach wenigen Wochen signifikante Sprünge in der Sichtbarkeit, da Google extrem schnelle und gut strukturierte Seiten bevorzugt."
+    },
+    {
+      "q": "Wie hilft mir die Website, nervige Preisanfragen abzuwehren?",
+      "a": "Wir bauen 'Hürden' in Form von intelligenten, mehrstufigen Kontaktformularen ein. Wer nur den billigsten Preis sucht, bricht ab. Wer Qualität will, füllt das Formular aus. So landet nur noch vorqualifizierte Anfragen auf Ihrem Schreibtisch."
+    },
+    {
+      "q": "Ist Coday teurer als andere Webdesigner in Wetzlar?",
+      "a": "Wir sind keine klassische Feld-Wald-und-Wiesen-Agentur, sondern bauen hochspezialisierte digitale Produkte. Unser Fokus liegt auf einem extrem hohen Return on Investment. Wer billig kauft, kauft zweimal. Wer bei Coday kauft, investiert in die langfristige Marktführerschaft."
+    },
+    {
+      "q": "Brauche ich ständige Updates oder Wartungsverträge?",
+      "a": "Nein. Im Gegensatz zu WordPress, das ständig gehackt wird oder Updates braucht, ist unsere Next.js/Vercel-Infrastruktur wartungsfrei und von Haus aus extrem sicher. Das System läuft stabil, sicher und rasend schnell, ohne versteckte laufende Kosten."
     }
   ]
 }

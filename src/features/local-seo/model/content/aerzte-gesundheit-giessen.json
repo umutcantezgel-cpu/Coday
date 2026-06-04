@@ -1,81 +1,124 @@
 {
-  "target": "aerzte-gesundheit-giessen",
+  "target": "arzt-giessen",
   "type": "industry-location",
   "meta": {
-    "title": "Premium Webdesign & Local SEO für Ärzte in Gießen | Coday",
-    "description": "Gewinnen Sie mehr Patienten in Gießen. Coday entwickelt blitzschnelle, SEO-optimierte Next.js Websites für Arztpraxen, MVZ und Kliniken in der Universitätsstadt."
+    "title": "High-End Praxis-Websites & SEO für Ärzte in Gießen | Coday",
+    "description": "Dominieren Sie den medizinischen Sektor in der Universitätsstadt Gießen. Gewinnen Sie Premium-Patienten, automatisieren Sie Ihre Prozesse und heben Sie sich ab."
   },
   "hero": {
-    "headline": "Digitale Exzellenz für Ärzte und Kliniken in Gießen.",
-    "subheadline": "Moderne Praxis-Websites, die Vertrauen schaffen, Prozesse digitalisieren und gezielt Neupatienten gewinnen.",
-    "description": "In der Medizinstadt Gießen entscheiden Sekunden über den ersten Eindruck. Wir bei Coday verwandeln Ihre medizinische Expertise in eine herausragende digitale Präsenz. Mit modernster Next.js-Technologie entwickeln wir maßgeschneiderte High-End-Websites für Fachärzte, Therapeuten und Gesundheitszentren, die nicht nur ästhetisch überzeugen, sondern durch exzellentes Local SEO messbar mehr Patienten aus Gießen und Mittelhessen in Ihr Wartezimmer bringen."
-  },
-  "localDominance": {
-    "title": "Lokale Dominanz für Ihre Praxis in Gießen",
-    "description": "Gießen ist geprägt durch sein Universitätsklinikum und ein sehr dichtes Netz an medizinischen Spezialisten. Um in diesem kompetitiven Umfeld herauszustechen, reicht eine Standard-Website längst nicht mehr aus. Wir positionieren Ihre Praxis an der Spitze der lokalen Suchergebnisse und machen Sie zur ersten Wahl für Patienten.",
-    "points": [
-      "Gezieltes Local SEO für Patienten aus Gießen, Wetzlar und dem gesamten Lahn-Dill-Kreis.",
-      "Dominante Sichtbarkeit bei lokalen Suchanfragen wie 'Facharzt Gießen', 'Zahnarzt Gießen' oder spezifischen Behandlungen.",
-      "Performance-Optimierung für mobile Patienten, die unterwegs nach schneller medizinischer Hilfe suchen.",
-      "Nachhaltiger Vertrauensaufbau durch ein professionelles, hochmodernes Webdesign, das Ihre medizinische Expertise widerspiegelt.",
-      "Nahtlose Integration von Online-Terminbuchungssystemen zur Steigerung der Conversion-Rate.",
-      "Aufbau lokaler Autorität durch strukturierte Daten (Schema Markup) speziell für den Gesundheitssektor."
+    "headline": "Ihre Praxis als medizinischer Leuchtturm in Gießen.",
+    "subheadline": "Exzellentes Design. Maximale Sichtbarkeit. Vollautomatisierte Patientenführung.",
+    "description": "In einer Universitätsstadt wie Gießen ist die medizinische Konkurrenz massiv und die Patientenstruktur jung und anspruchsvoll. Wenn Ihre digitale Präsenz nicht sofort höchste Innovationskraft und Kompetenz ausstrahlt, verlieren Sie die lukrativsten Patienten an Ihre Mitbewerber. Wir bauen digitale Festungen für ambitionierte Ärzte.",
+    "metrics": [
+      { "value": "200", "label": "Mehr Online-Terminbuchungen", "suffix": "%" },
+      { "value": "50", "label": "Zeitgewinn am Empfang", "suffix": "%" }
     ]
   },
-  "contentSections": [
+  "gamifiedStats": {
+    "title": "Verlieren Sie den digitalen Kampf um Patienten?",
+    "description": "Gießener Patienten erwarten digitale Exzellenz. Wenn sie Ihre Website auf dem Smartphone öffnen und ewig zoomen müssen oder das Design an die 2000er Jahre erinnert, ziehen sie unbewusst fatale Rückschlüsse auf Ihre medizinische Ausstattung und Kompetenz.",
+    "counters": [
+      {
+        "targetValue": 88,
+        "suffix": "%",
+        "label": "der Neupatienten recherchieren online vor dem Erstbesuch"
+      },
+      {
+        "targetValue": 4,
+        "suffix": "Sek.",
+        "label": "entscheiden, ob ein Patient bleibt oder den nächsten Arzt sucht"
+      }
+    ]
+  },
+  "bentoGrid": {
+    "title": "Der unfaire Vorteil für Ihre Praxis",
+    "subtitle": "Warum Coday die einzige logische Wahl für Gießener Top-Mediziner ist.",
+    "cards": [
+      {
+        "title": "Vertrauens-Architektur",
+        "text": "Wir übersetzen Ihre medizinische Brillanz in ein klares, minimalistisches High-End-Design. Seriosität, die man sofort spürt und die Ängste abbaut.",
+        "size": "large",
+        "icon": "Design"
+      },
+      {
+        "title": "Digitale Triage & Automatisierung",
+        "text": "Intelligente Funnels leiten Standard-Anfragen (Rezepte, Krankschreibungen) effizient ab, entlasten Ihr Team und filtern Privatpatienten heraus.",
+        "size": "tall",
+        "icon": "Speed"
+      },
+      {
+        "title": "Lokale SEO-Dominanz (Gießen)",
+        "text": "Ob 'Zahnarzt Gießen' oder 'Kardiologe Mittelhessen' – wir programmieren Next.js-Plattformen, die von Google geliebt und unweigerlich auf Platz 1 gerankt werden.",
+        "size": "small",
+        "icon": "SEO"
+      },
+      {
+        "title": "100% Rechtssicherheit",
+        "text": "Keine Abmahnfallen. Wir garantieren absolute DSGVO-Konformität, sicheres Hosting und den Schutz sensibler Patientendaten nach höchsten Standards.",
+        "size": "small",
+        "icon": "Security"
+      }
+    ]
+  },
+  "processSteps": [
     {
-      "title": "Warum Next.js die beste Wahl für medizinische Websites ist",
-      "content": "Als Arzt in Gießen benötigen Sie eine Website, die genauso präzise und zuverlässig arbeitet wie Sie selbst. Herkömmliche Baukasten-Systeme oder veraltete WordPress-Installationen stoßen hier schnell an ihre Grenzen. Next.js, die weltweit führende React-Technologie, ermöglicht uns den Bau von Websites mit unübertroffener Ladezeit (Core Web Vitals). Eine schnelle Website reduziert die Absprungrate drastisch und signalisiert Google höchste Relevanz. Besonders für Patienten, die akute Beschwerden haben und auf dem Smartphone nach Hilfe suchen, ist eine blitzschnelle Performance entscheidend. Coday garantiert Ihnen eine technische Architektur, die Ihre Mitbewerber im Raum Gießen weit hinter sich lässt und Ihre digitale Infrastruktur zukunftssicher macht."
+      "title": "1. Gießen-Marktanalyse & Strategie",
+      "description": "Wir analysieren Ihre spezifische Fachrichtung im Gießener Wettbewerbsumfeld und identifizieren die lukrativsten Suchvolumina für Ihre Wunscharbeitsgebiete."
     },
     {
-      "title": "Patientengewinnung durch strategisches Local SEO",
-      "content": "Die meisten Patienten in Gießen beginnen ihre Suche nach einem neuen Hausarzt, Zahnarzt oder Spezialisten bei Google. Unsere Local SEO-Strategien sind speziell auf den medizinischen Sektor zugeschnitten. Wir optimieren Ihr Google Unternehmensprofil (Google Business Profile), integrieren relevante medizinische Keywords und implementieren strukturierte Daten (Schema Markup für 'MedicalClinic' oder 'Physician'). So stellen wir sicher, dass Ihre Praxis nicht nur gefunden wird, sondern bei den entscheidenden Suchanfragen in Gießen prominent auf den ersten Plätzen und im Google Local Pack platziert ist – für einen stetigen, planbaren Strom an Neupatienten und Privatpatienten."
+      "title": "2. Psychologisches UX/UI Design",
+      "description": "Kein Copy-Paste. Wir kreieren eine völlig eigenständige, visuell beeindruckende Praxis-Identität, die Souveränität, Hygiene und Innovation ausstrahlt."
     },
     {
-      "title": "Digitales Vertrauen: Premium-Design für Premium-Medizin",
-      "content": "Ihre Website ist das erste digitale Wartezimmer Ihrer Praxis. Ein veraltetes, langsames Design schreckt Patienten ab, bevor sie überhaupt zum Hörer greifen oder online einen Termin vereinbaren. Wir bei Coday setzen auf minimalistisches, vertrauenerweckendes und barrierefreies Webdesign. Wir präsentieren Ihr Praxisteam, Ihre Räumlichkeiten und Ihre medizinischen Leistungen in höchster Qualität. Klare Strukturen, beruhigende Farbkonzepte und eine intuitive Benutzerführung (UX) vermitteln absolute Kompetenz, Hygiene und Empathie – Werte, die für Patienten im Gesundheitswesen der Universitätsstadt Gießen an allererster Stelle stehen."
+      "title": "3. Enterprise-Level Programmierung",
+      "description": "Rasend schnelle Ladezeiten, perfekte mobile Darstellung und nahtlose Anbindung Ihrer Praxisverwaltungs- oder Buchungssysteme."
     },
     {
-      "title": "Sicherheit und Datenschutz (DSGVO) im Fokus",
-      "content": "Gerade im Gesundheitsbereich ist der Schutz sensibler Patientendaten nicht verhandelbar. Als erfahrene Premium-Web-Agentur stellen wir sicher, dass Ihre neue Praxis-Website den strengsten Richtlinien der DSGVO und des deutschen Datenschutzes entspricht. Von sicheren, verschlüsselten Kontaktformularen über rechtskonformes Cookie-Management bis hin zu Server-Verbindungen mit höchsten Verschlüsselungsstandards – wir implementieren eine technische Basis, die Ihnen und Ihren Patienten in Gießen maximale Sicherheit garantiert. Sie können sich voll und ganz auf die Medizin konzentrieren, während wir die rechtliche und technische Sicherheit Ihrer digitalen Präsenz gewährleisten."
-    },
-    {
-      "title": "Effizienz durch digitale Prozesse: Die Online-Terminvergabe",
-      "content": "Das Telefon in der Anmeldung klingelt ununterbrochen? Entlasten Sie Ihr Praxisteam in Gießen durch intelligente digitale Prozesse. Wir integrieren bewährte Online-Terminbuchungssysteme (wie z.B. Doctolib, Jameda, Samedi oder CGM) nahtlos und datenschutzkonform in Ihre neue Next.js Website. Patienten können bequem rund um die Uhr Termine vereinbaren, Wiederholungsrezepte anfordern oder Videosprechstunden buchen. Diese digitale Transformation verbessert nicht nur die Patientenzufriedenheit erheblich, sondern optimiert auch die Arbeitsabläufe in Ihrer Praxis massiv, sodass Ihr Personal wieder mehr Zeit für die persönliche Betreuung der Patienten vor Ort hat."
-    },
-    {
-      "title": "Mobile First: Die Patienten von heute suchen auf dem Smartphone",
-      "content": "Weit über 70% der Suchanfragen nach medizinischer Hilfe in Gießen erfolgen mittlerweile über mobile Endgeräte. Deshalb entwickeln wir Ihre Praxis-Website mit einem strikten 'Mobile First'-Ansatz. Dank unserer Next.js-Architektur und hochoptimierten, responsiven Layouts lädt Ihre Seite auf jedem Smartphone sofort und wird perfekt dargestellt. Egal ob ein Student der JLU Gießen auf dem Campus schnell einen Hausarzt sucht oder eine junge Familie einen Kinderarzt – Ihre Praxis präsentiert sich digital von ihrer besten Seite. Große Tap-Targets, exzellent lesbare Schriften und sofort griffbereite Kontaktinformationen (Click-to-Call) machen die Kontaktaufnahme so einfach wie nie zuvor."
-    },
-    {
-      "title": "Employer Branding: Gewinnen Sie medizinisches Fachpersonal in Gießen",
-      "content": "Der akute Fachkräftemangel im Gesundheitswesen ist auch im Raum Gießen und Mittelhessen deutlich spürbar. Eine herausragende Website ist daher nicht nur ein Instrument zur Patientengewinnung, sondern auch Ihr stärkstes Werkzeug für modernes Employer Branding. Wir kreieren dedizierte, hochkonvertierende Karriere-Bereiche, die Ihre Praxis oder Klinik als modernen, attraktiven Arbeitgeber für MFAs, Pflegekräfte und angestellte Ärzte positionieren. Mit einer Premium-Webpräsenz heben Sie sich im Recruiting von anderen medizinischen Einrichtungen in Gießen ab und ziehen die besten Talente der Region an."
+      "title": "4. Launch & Skalierung",
+      "description": "Mit dem Launch übernehmen Sie die digitale Meinungsführerschaft in Gießen. Wir monitoren, betreuen und sichern Ihre Top-Positionen langfristig ab."
     }
   ],
+  "localDominance": {
+    "title": "Werden Sie zur unumstrittenen Instanz",
+    "description": "In Gießen mit seinem Klinikum und zahlreichen Fachärzten ist Sichtbarkeit alles. Sie können nicht darauf warten, dass Patienten Sie zufällig finden. Mit einer aggressiven, aber hochseriösen digitalen Positionierung schöpfen Sie die Nachfrage nach Premium-Medizin gezielt ab.",
+    "points": [
+      "Gezielte Steuerung des Patientenstroms (mehr Privatversicherte)",
+      "Aufbau einer extrem starken Arbeitgebermarke für die Gewinnung von MFAs und Ärzten",
+      "Massiver Vertrauensvorschuss noch vor dem Betreten der Praxis"
+    ]
+  },
   "faq": [
     {
-      "q": "Wie lange dauert die Erstellung einer neuen Praxis-Website für Ärzte in Gießen?",
-      "a": "Für eine maßgeschneiderte, auf Next.js basierende High-End-Website rechnen wir in der Regel mit einer Entwicklungszeit von 4 bis 8 Wochen. Wir legen bei Coday großen Wert auf eine detaillierte Abstimmung und strategische Planung, um Ihre spezifische medizinische Ausrichtung in Gießen perfekt digital abzubilden, ohne Ihren Praxisalltag zu stören."
+      "q": "In Gießen gibt es unzählige Praxen. Wie können wir uns digital überhaupt noch abheben?",
+      "a": "Gerade weil es so viele Praxen gibt, ist es einfach, sich abheben – denn 90% der Praxis-Websites sind technologisch und visuell auf einem katastrophalen Stand. Wir kombinieren Enterprise-Technologie (Next.js) mit High-End-Design. Dieser Kontrast zu Ihren Mitbewerbern fällt Patienten sofort ins Auge."
     },
     {
-      "q": "Können Sie mein bestehendes Online-Terminsystem (z.B. Doctolib) in die neue Website integrieren?",
-      "a": "Ja, absolut. Wir integrieren alle gängigen Praxisverwaltungs- und Buchungssysteme wie Doctolib, Jameda, Samedi oder CGM Life eServices nahtlos und datenschutzkonform in Ihre neue Next.js Website. So gewährleisten wir einen reibungslosen Buchungsprozess für Ihre Patienten in Gießen und Umgebung."
+      "q": "Können wir gezielt mehr Privatpatienten oder Selbstzahler-Leistungen bewerben?",
+      "a": "Ja, das ist einer unserer Kernansätze. Durch strategische Suchmaschinenoptimierung und psychologisch durchdachte Landeseiten positionieren wir spezifische IGeL-Leistungen oder Privatbehandlungen so elegant und begehrenswert, dass die Nachfrage exakt aus der gewünschten Zielgruppe kommt."
     },
     {
-      "q": "Warum ist gezieltes Local SEO für meine Arztpraxis in Gießen so wichtig?",
-      "a": "Local SEO sorgt dafür, dass Ihre Praxis bei Google genau dann auf den Top-Positionen erscheint, wenn Patienten aus Gießen gezielt nach Ihren medizinischen Leistungen suchen. In einer Universitätsstadt mit extrem hoher Arztdichte und viel Fluktuation ist dies der nachhaltigste und effektivste Weg, um kontinuierlich genau die richtigen Patienten für Ihre Spezialisierung zu gewinnen."
+      "q": "Wie wird mein Personal durch die neue Website entlastet?",
+      "a": "Ein Telefon, das den ganzen Tag klingelt, ist ein Zeichen von ineffizienten digitalen Prozessen. Wir integrieren intelligente FAQs, digitale Rezeptanforderungen, Online-Terminvergaben und digitale Anamnesebögen. Das reduziert die Arbeitslast Ihrer MFAs drastisch."
     },
     {
-      "q": "Berücksichtigen Sie die ärztliche Werberichtlinie bei der Texterstellung und Gestaltung?",
-      "a": "Selbstverständlich. Wir kennen die strikten rechtlichen Rahmenbedingungen für Ärzte und Kliniken (u.a. Heilmittelwerbegesetz, ärztliche Berufsordnung) sehr genau. Wir gestalten Ihre Inhalte werblich ansprechend und patientenorientiert, bleiben dabei aber stets streng im Rahmen des rechtlich Zulässigen. Ihre Seriosität und Integrität stehen für uns immer im Vordergrund."
+      "q": "Wir haben sehr strikte Vorgaben bezüglich Werbung (HWG). Berücksichtigen Sie das?",
+      "a": "Selbstverständlich. Wir kennen die juristischen Fallstricke des Heilmittelwerbegesetzes. Unser Copywriting ist hochprofessionell, sachlich fundiert und dennoch extrem überzeugend. Wir wecken Vertrauen durch Expertise, nicht durch reißerische Versprechen."
     },
     {
-      "q": "Sind Ihre Websites für Ärzte DSGVO-konform?",
-      "a": "Ja. Als Premium-Agentur entwickeln wir alle Systeme nach dem Prinzip 'Privacy by Design'. Wir integrieren sichere Cookie-Banner, verschlüsselte Verbindungen (SSL), rechtskonforme Datenschutzerklärungen und sorgen dafür, dass keine Daten ohne Zustimmung an Drittanbieter fließen. Der Schutz der Patientendaten in Gießen hat für uns absolute Priorität."
+      "q": "Binden Sie Doctolib, Jameda oder Samedi ein?",
+      "a": "Ja, wir integrieren jedes gängige Online-Buchungssystem nahtlos. Der Patient merkt keinen Bruch in der User Experience, was die Abbruchrate bei der Terminbuchung minimiert."
     },
     {
-      "q": "Was kostet eine Premium-Website für eine medizinische Einrichtung bei Coday?",
-      "a": "Die Investition hängt von Ihren spezifischen Anforderungen, der Größe der Einrichtung (Einzelpraxis vs. Medizinisches Versorgungszentrum/Klinik) und den gewünschten technischen Funktionen ab. Wir bieten maßgeschneiderte, transparente Premium-Lösungen ab ca. 5.000 Euro, die sich durch messbare Patientengewinnung und Prozessoptimierung in Gießen extrem schnell amortisieren."
+      "q": "Warum sollten wir viel Geld in eine individuelle Website investieren, wenn es Ärzte-Vorlagen gibt?",
+      "a": "Eine Vorlage ist ein Kompromiss. Sie ist langsam, schwerfällig und identisch mit tausenden anderen Seiten. Premium-Patienten haben ein feines Gespür für Qualität. Wer bei seinem Außenauftritt spart, erweckt den Eindruck, auch in der Praxis an der falschen Stelle zu sparen."
+    },
+    {
+      "q": "Unterstützt die neue Seite auch bei der Personalsuche in Gießen?",
+      "a": "Ja. Gießen ist eine Studentenstadt, junge Fachkräfte erwarten moderne Arbeitgeber. Eine exzellente digitale Präsenz ist heute das stärkste Argument, um qualifizierte MFAs oder junge Assistenzärzte von Ihrer Praxis zu überzeugen."
+    },
+    {
+      "q": "Wie läuft die Zusammenarbeit ab, ohne unseren Praxisalltag zu stören?",
+      "a": "Wir arbeiten komplett autark. Nach einem präzisen Kick-Off-Gespräch übernehmen wir Konzeption, Design, Text und Programmierung. Sie erhalten regelmäßige Updates und prüfen lediglich die Ergebnisse, während Sie sich zu 100% auf Ihre Patienten konzentrieren können."
     }
   ]
 }

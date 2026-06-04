@@ -1,0 +1,120 @@
+{
+  "target": "autohaendler",
+  "type": "industry-location",
+  "meta": {
+    "title": "High-End Websites für Premium-Autohändler | Coday",
+    "description": "Verkaufen Sie Fahrzeuge emotional und blitzschnell online. Dominieren Sie Ihren Markt mit atemberaubendem Next.js Webdesign für Autohäuser und Fahrzeughändler."
+  },
+  "hero": {
+    "headline": "Digitale Showrooms, die Fahrzeuge verkaufen.",
+    "subheadline": "Emotionales Design. Maximale Geschwindigkeit. Unfaire Konversionsraten.",
+    "description": "Autokauf ist pure Emotion. Wenn Ihr digitaler Showroom aussieht wie eine Excel-Tabelle aus dem Jahr 2010, töten Sie jegliches Kaufinteresse in Sekundenbruchteilen. Wir erschaffen immersive, atemberaubende digitale Erlebnisse, die Vertrauen aufbauen, Emotionen wecken und Leads am Fließband generieren.",
+    "metrics": [
+      { "value": "300", "label": "Mehr Probefahrt-Anfragen", "suffix": "%" },
+      { "value": "0.8", "label": "Sekunden Ladezeit", "suffix": "s" }
+    ]
+  },
+  "gamifiedStats": {
+    "title": "Die teuersten Fehler im digitalen Autohandel",
+    "description": "Ihre Fahrzeuge sind poliert, Ihr Verkaufsraum ist makellos – doch 95% Ihrer potenziellen Kunden sehen zuerst Ihre Website. Eine veraltete mobile Ansicht oder langsame Ladezeiten bei großen Fahrzeugbildern lassen den Kunden sofort zum nächsten Händler swipen.",
+    "counters": [
+      { "targetValue": 95, "suffix": "%", "label": "starten den Autokauf heute online" },
+      {
+        "targetValue": 68,
+        "suffix": "%",
+        "label": "der Käufer entscheiden basierend auf der digitalen Präsentation"
+      }
+    ]
+  },
+  "bentoGrid": {
+    "title": "Die Coday-Architektur für Autohäuser",
+    "subtitle": "Warum wir die Konkurrenz in den Schatten stellen.",
+    "cards": [
+      {
+        "title": "Cinematisches Design",
+        "text": "Fahrzeuge müssen wirken. Wir nutzen großflächige Layouts, perfekte Typografie und flüssige Animationen, um Ihre Flotte ins absolute Rampenlicht zu rücken.",
+        "size": "large",
+        "icon": "Design"
+      },
+      {
+        "title": "Hyperspeed Bildauslieferung",
+        "text": "Kein Warten auf Ladebalken. Durch Next.js Image Optimization laden selbst 4K-Fahrzeugbilder in Millisekunden auf jedem Smartphone.",
+        "size": "small",
+        "icon": "Speed"
+      },
+      {
+        "title": "Lokale Dominanz",
+        "text": "Wenn jemand in Ihrer Region nach einem spezifischen Modell sucht, wird er bei Ihnen landen. Wir bauen Ihre Seite als SEO-Festung auf.",
+        "size": "small",
+        "icon": "SEO"
+      },
+      {
+        "title": "Smarte Lead-Maschine",
+        "text": "Von der nahtlosen Inzahlungnahme-Bewertung bis zur vollautomatisierten Probefahrt-Buchung. Wir reduzieren Reibungspunkte und maximieren die Anfragen.",
+        "size": "tall",
+        "icon": "Security"
+      }
+    ]
+  },
+  "processSteps": [
+    {
+      "title": "1. Fahrzeug- & Markenanalyse",
+      "description": "Wir analysieren Ihr Inventar, Ihre Zielgruppe und Ihre aktuellen Schwachstellen in der digitalen Vermarktung."
+    },
+    {
+      "title": "2. UX & Interface Design",
+      "description": "Entwicklung eines Interfaces, das den Fahrzeugverkauf zelebriert. Jedes Pixel ist darauf optimiert, Begehrlichkeit und Vertrauen zu wecken."
+    },
+    {
+      "title": "3. Schnittstellen-Integration",
+      "description": "Wir binden mobile.de, AutoScout24 oder Ihr internes DMS nahtlos ein. Keine manuelle Pflege, automatische Synchronisation bei absoluter High-Performance."
+    },
+    {
+      "title": "4. Performance-Launch",
+      "description": "Der Go-Live. Ihre neue Plattform startet sofort durch und beginnt, den Traffic Ihrer Mitbewerber aggressiv abzuschöpfen."
+    }
+  ],
+  "localDominance": {
+    "title": "Erobern Sie das Monopol in Ihrer Region",
+    "description": "Der Autohandel befindet sich im massiven Wandel. Wer digital nicht absolut perfekt aufgestellt ist, wird von überregionalen Plattformen verdrängt. Wir rüsten Sie mit der digitalen Feuerkraft aus, um in Ihrer Region der unangefochtene Platzhirsch zu werden und zu bleiben.",
+    "points": [
+      "Abgrenzung durch Premium-Wahrnehmung von reinen 'Kiesplatz-Händlern'",
+      "Maximierung der Conversion-Rate bei teuren Traffic-Kampagnen",
+      "Vollständige Automatisierung von Standard-Kundenanfragen"
+    ]
+  },
+  "faq": [
+    {
+      "q": "Können unsere Fahrzeuge automatisch von mobile.de oder AutoScout24 importiert werden?",
+      "a": "Selbstverständlich. Wir integrieren leistungsstarke APIs, die Ihren Fahrzeugbestand in Echtzeit synchronisieren. Sie pflegen Ihre Autos wie gewohnt in Ihrem System, und unsere Website präsentiert sie in atemberaubender High-End-Optik – rasend schnell und SEO-optimiert."
+    },
+    {
+      "q": "Autobilder laden auf unserer jetzigen Seite ewig. Wird das besser?",
+      "a": "Wir lösen dieses Problem vollständig. Durch die fortschrittliche Architektur von Next.js und Edge-Caching werden selbst hochauflösende Galeriebilder komprimiert und in Sekundenbruchteilen ausgeliefert. Eine flüssige User Experience ist der Schlüssel zu mehr Verkäufen."
+    },
+    {
+      "q": "Lohnt sich das Investment für einen kleineren unabhängigen Händler?",
+      "a": "Mehr denn je. Gerade als unabhängiger Händler müssen Sie Vertrauen aufbauen, um gegen große Marken-Niederlassungen zu bestehen. Ein extrem hochwertiges Webdesign suggeriert Seriosität, Sicherheit und Qualität – die wichtigsten Faktoren beim Autokauf."
+    },
+    {
+      "q": "Wie helfen Sie uns, mehr Probefahrten zu generieren?",
+      "a": "Wir ersetzen langweilige Kontaktformulare durch interaktive, psychologisch optimierte Lead-Funnels. Wir reduzieren die Hemmschwelle des Nutzers und führen ihn spielerisch und hochkonvertierend direkt zum Klick auf 'Jetzt Probefahrt buchen'."
+    },
+    {
+      "q": "Ist die Website für Smartphones optimiert?",
+      "a": "Optimiert ist das falsche Wort. Wir entwickeln Mobile-First. Weit über 80% Ihrer Kunden suchen ihr nächstes Auto auf dem Smartphone, abends auf der Couch. Wir erschaffen ein App-ähnliches, flüssiges Erlebnis, das auf jedem mobilen Gerät schlichtweg perfekt funktioniert."
+    },
+    {
+      "q": "Warum Coday und nicht eine spezialisierte Autohaus-Agentur?",
+      "a": "Spezialisierte Autohaus-Agenturen nutzen meistens fertige Baukästen und veraltete Templates. Das Ergebnis: Ihre Website sieht exakt so aus wie die von 500 anderen Händlern. Wir bringen Enterprise-Technologie und echtes High-End-Design in Ihre Branche. Sie werden unkopierbar."
+    },
+    {
+      "q": "Können wir auch Finanzierungsrechner und Inzahlungnahme-Tools integrieren?",
+      "a": "Absolut. Wir programmieren maßgeschneiderte, blitzschnelle Rechner und interaktive Formulare zur Fahrzeugbewertung, die direkt Leads für Ihr Vertriebsteam generieren und den Kunden binden."
+    },
+    {
+      "q": "Wie verbessern wir unser Ranking bei Google für lokale Suchanfragen?",
+      "a": "Die Kombination aus der massiven technischen Überlegenheit von Next.js (Ladezeit = Rankingfaktor) und unserer semantischen Code-Struktur sorgt dafür, dass Google Ihre Seite liebt. Wir optimieren gezielt auf kaufbereite Suchanfragen in Ihrer Region."
+    }
+  ]
+}

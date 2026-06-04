@@ -83,17 +83,12 @@ export const getNavItems = (): NavItem[] => [
       {
         title: 'nav.industries.label',
         links: [
-          { label: 'nav.industries.overview', href: '/branchen' },
+          { label: 'Branchen Übersicht', href: '/branchen' },
+          { label: 'Automobil & KFZ', href: '/branchen/automobil' },
+          { label: 'Gesundheitswesen', href: '/branchen/gesundheitswesen' },
+          { label: 'Handwerker & Bau', href: '/branchen/handwerker' },
           { label: 'nav.industries.real_estate', href: '/branchen/immobilien-makler' },
-          {
-            label: 'nav.industries.gastronomy',
-            href: '/branchen/gastronomie-hotellerie',
-          },
-          { label: 'nav.industries.craft', href: '/branchen/handwerk' },
-          { label: 'nav.industries.tech', href: '/branchen/startups-tech' },
-          { label: 'nav.industries.ecommerce', href: '/branchen/e-commerce' },
-          { label: 'nav.industries.service', href: '/branchen/dienstleistung' },
-          { label: 'nav.industries.public', href: '/branchen/public-sector' },
+          { label: 'nav.industries.gastronomy', href: '/branchen/gastronomie-hotellerie' },
         ],
       },
     ],

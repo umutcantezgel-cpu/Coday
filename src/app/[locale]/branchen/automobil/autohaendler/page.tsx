@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { LocalSeoTemplate } from '@/features/local-seo/ui/LocalSeoTemplate';
+import { GamifiedIndustryTemplate } from '@/features/industries/ui/GamifiedIndustryTemplate';
 import { getCityBySlug } from '@/features/local-seo/model/cities';
 import fs from 'fs';
 import path from 'path';
@@ -76,7 +76,7 @@ export default async function SubIndustryPage({ params }: { params: Promise<{ lo
 
   return (
     <>
-      <LocalSeoTemplate content={content} cityData={cityData} />
+      <GamifiedIndustryTemplate content={content} cityData={cityData} />
       {/* TODO: Integrate the 'spezielles Tool' here once the user provides it */}
     </>
   );

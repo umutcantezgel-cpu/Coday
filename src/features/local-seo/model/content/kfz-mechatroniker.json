@@ -1,0 +1,124 @@
+{
+  "target": "kfz-mechatroniker",
+  "type": "industry-location",
+  "meta": {
+    "title": "Digitale Dominanz für selbstständige KFZ-Mechatroniker | Coday",
+    "description": "Verwandeln Sie Ihr Handwerk in eine hochprofitable Marke. Gewinnen Sie Premium-Kunden, skalieren Sie Ihren Betrieb und hängen Sie die Konkurrenz digital ab."
+  },
+  "hero": {
+    "headline": "Von der Schrauber-Bude zur Premium-Marke.",
+    "subheadline": "Sie liefern meisterhafte Qualität. Wir sorgen dafür, dass Ihre Kunden das auch sofort sehen und entsprechend bezahlen.",
+    "description": "Ihre handwerkliche Brillanz als KFZ-Mechatroniker nützt Ihnen wenig, wenn Ihre Website nach Hobby-Schrauber aussieht. Wir bauen digitale Präsenzen, die Ihre Expertise ins absolute Zentrum stellen, Vertrauen aufbauen und Ihnen hochprofitable Reparaturaufträge auf Autopilot liefern.",
+    "metrics": [
+      { "value": "200", "label": "Mehr Neukunden-Anfragen", "suffix": "%" },
+      { "value": "100", "label": "Exklusives Design", "suffix": "%" }
+    ]
+  },
+  "gamifiedStats": {
+    "title": "Ihr handwerkliches Können bleibt unsichtbar.",
+    "description": "Die meisten talentierten KFZ-Mechatroniker verlieren täglich Aufträge an Werkstätten, die zwar handwerklich schlechter, aber digital besser aufgestellt sind. Eine unprofessionelle Website suggeriert dem Unterbewusstsein des Kunden unprofessionelle Arbeit am Fahrzeug.",
+    "counters": [
+      {
+        "targetValue": 92,
+        "suffix": "%",
+        "label": "der Kunden bewerten Kompetenz nach dem Webdesign"
+      },
+      {
+        "targetValue": 80,
+        "suffix": "%",
+        "label": "mehr Umsatzpotenzial durch Premium-Wahrnehmung"
+      }
+    ]
+  },
+  "bentoGrid": {
+    "title": "Der Turbo für Ihr KFZ-Business",
+    "subtitle": "Warum Coday der Gamechanger für Ihren Betrieb ist.",
+    "cards": [
+      {
+        "title": "Premium-Wahrnehmung",
+        "text": "Wir verpacken Ihre technischen Fähigkeiten in ein atemberaubendes, hochmodernes Design, das sofort Preise jenseits des Marktdurchschnitts rechtfertigt.",
+        "size": "large",
+        "icon": "Design"
+      },
+      {
+        "title": "High-Speed Performance",
+        "text": "Keine Wartezeiten. Ihre Seite lädt in Millisekunden und bietet ein makelloses Erlebnis auf jedem Smartphone.",
+        "size": "small",
+        "icon": "Speed"
+      },
+      {
+        "title": "SEO-Sichtbarkeit",
+        "text": "Sie werden zur unübersehbaren Autorität in Ihrer Region, wenn Kunden nach spezifischen KFZ-Problemen suchen.",
+        "size": "small",
+        "icon": "SEO"
+      },
+      {
+        "title": "Hochkonvertierende Struktur",
+        "text": "Wir leiten den Besucher psychologisch präzise von der ersten Sekunde bis zur Terminbuchung. Weniger Abbrüche, mehr volle Terminkalender mit den richtigen Kunden.",
+        "size": "tall",
+        "icon": "Security"
+      }
+    ]
+  },
+  "processSteps": [
+    {
+      "title": "1. Strategische Positionierung",
+      "description": "Wir analysieren Ihre Stärken und definieren Sie als den unangefochtenen Experten für spezielle Probleme in Ihrem Einzugsgebiet."
+    },
+    {
+      "title": "2. Neuro-Design",
+      "description": "Gestaltung einer Website, die nicht nur schön aussieht, sondern das Vertrauenszentrum Ihrer Besucher im Gehirn aktiviert."
+    },
+    {
+      "title": "3. Entwicklung auf Enterprise-Niveau",
+      "description": "Programmierung mit Next.js. Absolute technische Perfektion, maximale Sicherheit und überlegene Ladegeschwindigkeit."
+    },
+    {
+      "title": "4. Skalierung Ihres Betriebs",
+      "description": "Nach dem Launch sorgen wir mit datengetriebenen Anpassungen dafür, dass Ihre Anfragen durch die Decke gehen und Ihre Werkstatt platzt."
+    }
+  ],
+  "localDominance": {
+    "title": "Dominieren Sie den lokalen Markt",
+    "description": "Es reicht nicht mehr aus, nur gute Arbeit zu leisten. Wer im digitalen Zeitalter als KFZ-Mechatroniker wachsen will, muss auch digital wie ein Marktführer auftreten. Wir machen Sie zur ersten und einzigen logischen Wahl in Ihrer Stadt.",
+    "points": [
+      "Absolute Dominanz bei relevanten Suchanfragen",
+      "Positionierung als hochpreisiger Premium-Dienstleister",
+      "Aufbau einer magnetischen Arbeitgebermarke zur Mitarbeitergewinnung"
+    ]
+  },
+  "faq": [
+    {
+      "q": "Ich arbeite alleine oder mit einem kleinen Team. Ist so eine High-End-Website nicht übertrieben?",
+      "a": "Nein. Gerade als kleiner Betrieb müssen Sie über Effizienz und Qualität gewinnen, nicht über Masse. Eine High-End-Website zieht genau die Kunden an, die bereit sind, für exzellente Arbeit gutes Geld zu bezahlen. Sie filtern die zeitraubenden Kunden heraus und maximieren Ihren Gewinn pro Auftrag."
+    },
+    {
+      "q": "Was kostet eine Next.js Website von Coday?",
+      "a": "Wir verkaufen keine Websites, wir verkaufen digitale Marktdominanz. Ein Projekt mit uns ist ein Investment, das sich durch hochprofitable Neukunden und gesteigerte Markenwahrnehmung innerhalb kürzester Zeit amortisiert. Die genauen Kosten hängen von Ihren Zielen ab."
+    },
+    {
+      "q": "Warum sollte ich nicht einfach eine günstige WordPress-Seite nehmen?",
+      "a": "Weil Sie damit in der Masse untergehen. WordPress-Seiten sind fehleranfällig, langsam und sehen oft aus wie von der Stange. Next.js ist die Technologie, die auch von Milliarden-Konzernen genutzt wird. Sie bietet unschlagbare Geschwindigkeit und Sicherheit – und katapultiert Sie an die Spitze der Google-Ergebnisse."
+    },
+    {
+      "q": "Schreiben Sie auch die Texte für meine neue Website?",
+      "a": "Selbstverständlich. Unsere Copywriter sind darauf spezialisiert, verkaufspsychologisch optimierte Texte zu verfassen. Wir übersetzen Ihr technisches Fachwissen in fesselnde Argumente, die Ihre Zielgruppe sofort überzeugen."
+    },
+    {
+      "q": "Wie hilft mir die Website bei der Suche nach neuen Mitarbeitern?",
+      "a": "Ein moderner, professioneller Webauftritt ist heute das wichtigste Recruiting-Instrument. Gute KFZ-Mechatroniker suchen sich ihren Arbeitgeber aus. Wenn Ihre Website Innovation und Erfolg ausstrahlt, bewerben sich Top-Talente von ganz alleine bei Ihnen."
+    },
+    {
+      "q": "Ich habe keine schönen Fotos von meiner Werkstatt. Ist das ein Problem?",
+      "a": "Nein. Wir beraten Sie, wie wir mit professioneller Fotografie oder hochklassigen Stock-Materialien und Art Direction Ihre Arbeit optimal in Szene setzen. Ein schlechtes Foto darf niemals ein herausragendes Design ruinieren."
+    },
+    {
+      "q": "Wie lange dauert die Umsetzung des Projekts?",
+      "a": "In der Regel benötigen wir für Konzeption, Design und Entwicklung 4 bis 8 Wochen. Wir arbeiten effizient, zielgerichtet und ohne unnötige Verzögerungen – mit höchstem Qualitätsanspruch."
+    },
+    {
+      "q": "Kümmert sich Coday auch um Updates und Wartung?",
+      "a": "Ja. Mit unserer Technologie-Wahl (Next.js & Vercel) minimieren wir ohnehin den Wartungsaufwand radikal. Keine zerschossenen Plugins mehr. Wir bieten Ihnen auf Wunsch einen vollumfänglichen Betreuungsservice, damit Sie sich zu 100% auf Ihr Handwerk konzentrieren können."
+    }
+  ]
+}
