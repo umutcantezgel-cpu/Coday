@@ -86,55 +86,16 @@ export const GamifiedHeroCta: React.FC = () => {
         width={radius + trackThickness}
         height={diameter + trackThickness}
         viewBox={`0 0 ${radius + trackThickness} ${diameter + trackThickness}`}
-        className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none drop-shadow-2xl"
+        className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none"
       >
-        <defs>
-          <linearGradient id="trackGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop
-              offset="0%"
-              stopColor="rgba(0,0,0,0.02)"
-              className="dark:stop-color-[rgba(255,255,255,0.03)]"
-            />
-            <stop
-              offset="50%"
-              stopColor="rgba(0,0,0,0.06)"
-              className="dark:stop-color-[rgba(255,255,255,0.08)]"
-            />
-            <stop
-              offset="100%"
-              stopColor="rgba(0,0,0,0.02)"
-              className="dark:stop-color-[rgba(255,255,255,0.03)]"
-            />
-          </linearGradient>
-          <filter id="insetShadow">
-            <feOffset dx="0" dy="4" />
-            <feGaussianBlur stdDeviation="6" result="offset-blur" />
-            <feComposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse" />
-            <feFlood floodColor="black" floodOpacity="0.2" result="color" />
-            <feComposite operator="in" in="color" in2="inverse" result="shadow" />
-            <feComposite operator="over" in="shadow" in2="SourceGraphic" />
-          </filter>
-        </defs>
-
-        {/* Deep Groove Track */}
-        <path
-          d={`M ${radius + trackThickness / 2} ${trackThickness / 2} A ${radius} ${radius} 0 0 0 ${radius + trackThickness / 2} ${diameter + trackThickness / 2}`}
-          fill="none"
-          stroke="url(#trackGradient)"
-          strokeWidth={trackThickness}
-          strokeLinecap="round"
-          filter="url(#insetShadow)"
-          className="dark:stroke-white/5 stroke-black/5"
-        />
-
-        {/* Glow inner rail */}
+        {/* The Thick Coday C */}
         <path
           d={`M ${radius + trackThickness / 2} ${trackThickness / 2} A ${radius} ${radius} 0 0 0 ${radius + trackThickness / 2} ${diameter + trackThickness / 2}`}
           fill="none"
           stroke="var(--color-primary-500)"
-          strokeWidth="2"
+          strokeWidth="24"
           strokeLinecap="round"
-          className="opacity-20 mix-blend-overlay"
+          className="drop-shadow-[0_0_20px_var(--color-primary-400)]"
         />
       </svg>
 
