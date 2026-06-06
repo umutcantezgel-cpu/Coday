@@ -5,11 +5,10 @@ import { Resend } from 'resend';
 import { z } from 'zod';
 import { calculateLeadScore, leadFormSchema } from '../schema/lead';
 
-const resendKey = process.env.RESEND_API_KEY;
-const resend = resendKey ? new Resend(resendKey) : null;
-
 export async function submitLeadAction(prevState: unknown, formData: FormData) {
   const supabase = createAdminClient();
+  const resendKey = process.env.RESEND_API_KEY;
+  const resend = resendKey ? new Resend(resendKey) : null;
   try {
     // 1. Verify Turnstile
     const token = formData.get('cf-turnstile-response');
