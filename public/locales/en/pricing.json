@@ -1,6 +1,7 @@
 {
   "comparison": {
     "headers": {
+      "feature": "Feature",
       "onepager": "Onepager",
       "starter": "Starter",
       "professional": "Professional",
