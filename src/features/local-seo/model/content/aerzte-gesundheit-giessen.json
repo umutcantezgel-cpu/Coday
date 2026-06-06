@@ -3,30 +3,34 @@
   "type": "industry-location",
   "meta": {
     "title": "High-End Praxis-Websites & SEO für Ärzte in Gießen | Coday",
-    "description": "Dominieren Sie den medizinischen Sektor in der Universitätsstadt Gießen. Gewinnen Sie Premium-Patienten, automatisieren Sie Ihre Prozesse und heben Sie sich ab."
+    "description": "Dominieren Sie den medizinischen Sektor am UKGM-Standort Gießen. Erschließen Sie das Potenzial von 28.000 Studenten und anspruchsvollen Privatpatienten."
   },
   "hero": {
     "headline": "Ihre Praxis als medizinischer Leuchtturm in Gießen.",
-    "subheadline": "Exzellentes Design. Maximale Sichtbarkeit. Vollautomatisierte Patientenführung.",
-    "description": "In einer Universitätsstadt wie Gießen ist die medizinische Konkurrenz massiv und die Patientenstruktur jung und anspruchsvoll. Wenn Ihre digitale Präsenz nicht sofort höchste Innovationskraft und Kompetenz ausstrahlt, verlieren Sie die lukrativsten Patienten an Ihre Mitbewerber. Wir bauen digitale Festungen für ambitionierte Ärzte.",
+    "subheadline": "Exzellentes Design. Maximale Sichtbarkeit am UKGM-Standort. Vollautomatisierte Patientenführung.",
+    "description": "In einer Universitätsstadt wie Gießen mit dem renommierten UKGM und über 28.000 Studenten ist die medizinische Konkurrenz massiv, und die Patientenstruktur extrem jung und digital-affin. Wenn Ihre Webpräsenz nicht sofort höchste Innovationskraft und Kompetenz ausstrahlt, verlieren Sie die lukrativsten Patienten. Wir bauen digitale Festungen für ambitionierte Gießener Ärzte.",
     "metrics": [
       { "value": "200", "label": "Mehr Online-Terminbuchungen", "suffix": "%" },
-      { "value": "50", "label": "Zeitgewinn am Empfang", "suffix": "%" }
+      {
+        "value": "50",
+        "label": "Zeitgewinn durch studentische Aushilfen und Automatisierung",
+        "suffix": "%"
+      }
     ]
   },
   "gamifiedStats": {
     "title": "Verlieren Sie den digitalen Kampf um Patienten?",
-    "description": "Gießener Patienten erwarten digitale Exzellenz. Wenn sie Ihre Website auf dem Smartphone öffnen und ewig zoomen müssen oder das Design an die 2000er Jahre erinnert, ziehen sie unbewusst fatale Rückschlüsse auf Ihre medizinische Ausstattung und Kompetenz.",
+    "description": "Gießener Patienten, insbesondere die große Studenten-Demografie, erwarten digitale Exzellenz. Wenn sie Ihre Website auf dem Smartphone öffnen und ewig zoomen müssen, ziehen sie fatale Rückschlüsse auf Ihre medizinische Ausstattung und wechseln den Arzt.",
     "counters": [
       {
         "targetValue": 88,
         "suffix": "%",
-        "label": "der Neupatienten recherchieren online vor dem Erstbesuch"
+        "label": "der Neupatienten recherchieren in Gießen online vor dem Erstbesuch"
       },
       {
         "targetValue": 4,
         "suffix": "Sek.",
-        "label": "entscheiden, ob ein Patient bleibt oder den nächsten Arzt sucht"
+        "label": "entscheiden, ob ein Patient bleibt oder den nächsten Facharzt sucht"
       }
     ]
   },
@@ -36,13 +40,13 @@
     "cards": [
       {
         "title": "Vertrauens-Architektur",
-        "text": "Wir übersetzen Ihre medizinische Brillanz in ein klares, minimalistisches High-End-Design. Seriosität, die man sofort spürt und die Ängste abbaut.",
+        "text": "Wir übersetzen Ihre medizinische Brillanz in ein klares, minimalistisches High-End-Design. Seriosität, die man sofort spürt und die Ängste bei jüngeren Patienten abbaut.",
         "size": "large",
         "icon": "Design"
       },
       {
         "title": "Digitale Triage & Automatisierung",
-        "text": "Intelligente Funnels leiten Standard-Anfragen (Rezepte, Krankschreibungen) effizient ab, entlasten Ihr Team und filtern Privatpatienten heraus.",
+        "text": "Intelligente Funnels leiten Standard-Anfragen von Studenten (Rezeptbestellungen, Krankschreibungen) effizient ab, entlasten Ihr Team massiv.",
         "size": "tall",
         "icon": "Speed"
       },
@@ -63,15 +67,15 @@
   "processSteps": [
     {
       "title": "1. Gießen-Marktanalyse & Strategie",
-      "description": "Wir analysieren Ihre spezifische Fachrichtung im Gießener Wettbewerbsumfeld und identifizieren die lukrativsten Suchvolumina für Ihre Wunscharbeitsgebiete."
+      "description": "Wir analysieren Ihre spezifische Fachrichtung im starken Gießener Wettbewerbsumfeld (Klinikum, viele junge Kollegen) und identifizieren die lukrativsten Suchvolumina."
     },
     {
       "title": "2. Psychologisches UX/UI Design",
-      "description": "Kein Copy-Paste. Wir kreieren eine völlig eigenständige, visuell beeindruckende Praxis-Identität, die Souveränität, Hygiene und Innovation ausstrahlt."
+      "description": "Kein Copy-Paste. Wir kreieren eine völlig eigenständige Praxis-Identität, die Souveränität, Hygiene und Innovation ausstrahlt, perfekt abgestimmt auf die Universitätsstadt."
     },
     {
       "title": "3. Enterprise-Level Programmierung",
-      "description": "Rasend schnelle Ladezeiten, perfekte mobile Darstellung und nahtlose Anbindung Ihrer Praxisverwaltungs- oder Buchungssysteme."
+      "description": "Rasend schnelle Ladezeiten, perfekte mobile Darstellung und nahtlose Anbindung Ihrer Praxisverwaltungs- oder Jameda/Doctolib-Systeme."
     },
     {
       "title": "4. Launch & Skalierung",
@@ -79,46 +83,46 @@
     }
   ],
   "localDominance": {
-    "title": "Werden Sie zur unumstrittenen Instanz",
-    "description": "In Gießen mit seinem Klinikum und zahlreichen Fachärzten ist Sichtbarkeit alles. Sie können nicht darauf warten, dass Patienten Sie zufällig finden. Mit einer aggressiven, aber hochseriösen digitalen Positionierung schöpfen Sie die Nachfrage nach Premium-Medizin gezielt ab.",
+    "title": "Werden Sie zur unumstrittenen Instanz am UKGM",
+    "description": "In Gießen mit seinem Klinikum und zahlreichen Fachärzten ist Sichtbarkeit alles. Sie können nicht darauf warten, dass Patienten Sie zufällig finden. Mit einer aggressiven, aber hochseriösen digitalen Positionierung schöpfen Sie die Nachfrage gezielt ab.",
     "points": [
-      "Gezielte Steuerung des Patientenstroms (mehr Privatversicherte)",
-      "Aufbau einer extrem starken Arbeitgebermarke für die Gewinnung von MFAs und Ärzten",
+      "Gezielte Steuerung des Studenten- und Privatpatientenstroms",
+      "Aufbau einer extrem starken Arbeitgebermarke in einem umkämpften MFA-Markt",
       "Massiver Vertrauensvorschuss noch vor dem Betreten der Praxis"
     ]
   },
   "faq": [
     {
-      "q": "In Gießen gibt es unzählige Praxen. Wie können wir uns digital überhaupt noch abheben?",
-      "a": "Gerade weil es so viele Praxen gibt, ist es einfach, sich abheben – denn 90% der Praxis-Websites sind technologisch und visuell auf einem katastrophalen Stand. Wir kombinieren Enterprise-Technologie (Next.js) mit High-End-Design. Dieser Kontrast zu Ihren Mitbewerbern fällt Patienten sofort ins Auge."
+      "q": "In Gießen gibt es unzählige Praxen und das Uniklinikum. Wie können wir uns da noch digital abheben?",
+      "a": "Gerade weil die Konkurrenz so hoch ist, ist Differenzierung einfach. 90% der Praxis-Websites in Gießen sind technologisch auf dem Stand von 2010. Wir kombinieren Enterprise-Technologie (Next.js) mit High-End-Design. Dieser Kontrast fällt anspruchsvollen Patienten und Studenten sofort ins Auge."
     },
     {
       "q": "Können wir gezielt mehr Privatpatienten oder Selbstzahler-Leistungen bewerben?",
-      "a": "Ja, das ist einer unserer Kernansätze. Durch strategische Suchmaschinenoptimierung und psychologisch durchdachte Landeseiten positionieren wir spezifische IGeL-Leistungen oder Privatbehandlungen so elegant und begehrenswert, dass die Nachfrage exakt aus der gewünschten Zielgruppe kommt."
+      "a": "Ja, das ist einer unserer Kernansätze. Durch strategische Suchmaschinenoptimierung und psychologisch durchdachte Landeseiten positionieren wir spezifische IGeL-Leistungen so elegant, dass die Nachfrage exakt aus der gewünschten Zielgruppe kommt."
     },
     {
-      "q": "Wie wird mein Personal durch die neue Website entlastet?",
-      "a": "Ein Telefon, das den ganzen Tag klingelt, ist ein Zeichen von ineffizienten digitalen Prozessen. Wir integrieren intelligente FAQs, digitale Rezeptanforderungen, Online-Terminvergaben und digitale Anamnesebögen. Das reduziert die Arbeitslast Ihrer MFAs drastisch."
+      "q": "Wie wird mein Personal in Stoßzeiten (z.B. Semesterstart) durch die neue Website entlastet?",
+      "a": "Wir integrieren intelligente FAQs, digitale Rezeptanforderungen, Online-Terminvergaben und digitale Anamnesebögen. Das reduziert die Arbeitslast Ihrer MFAs drastisch, da Standardanfragen der Studenten vollautomatisiert abgewickelt werden."
     },
     {
       "q": "Wir haben sehr strikte Vorgaben bezüglich Werbung (HWG). Berücksichtigen Sie das?",
-      "a": "Selbstverständlich. Wir kennen die juristischen Fallstricke des Heilmittelwerbegesetzes. Unser Copywriting ist hochprofessionell, sachlich fundiert und dennoch extrem überzeugend. Wir wecken Vertrauen durch Expertise, nicht durch reißerische Versprechen."
+      "a": "Selbstverständlich. Wir kennen die juristischen Fallstricke des Heilmittelwerbegesetzes. Unser Copywriting ist hochprofessionell, sachlich fundiert und weckt Vertrauen durch Expertise, nicht durch reißerische Versprechen."
     },
     {
       "q": "Binden Sie Doctolib, Jameda oder Samedi ein?",
-      "a": "Ja, wir integrieren jedes gängige Online-Buchungssystem nahtlos. Der Patient merkt keinen Bruch in der User Experience, was die Abbruchrate bei der Terminbuchung minimiert."
+      "a": "Ja, wir integrieren jedes gängige Online-Buchungssystem nahtlos. Der Patient merkt keinen Bruch in der User Experience, was die Abbruchrate bei der Terminbuchung enorm minimiert."
     },
     {
       "q": "Warum sollten wir viel Geld in eine individuelle Website investieren, wenn es Ärzte-Vorlagen gibt?",
-      "a": "Eine Vorlage ist ein Kompromiss. Sie ist langsam, schwerfällig und identisch mit tausenden anderen Seiten. Premium-Patienten haben ein feines Gespür für Qualität. Wer bei seinem Außenauftritt spart, erweckt den Eindruck, auch in der Praxis an der falschen Stelle zu sparen."
+      "a": "Premium-Patienten haben ein feines Gespür für Qualität. Wer bei seinem Außenauftritt spart, erweckt den Eindruck, auch in der Praxis an der falschen Stelle zu sparen. Eine Vorlage ist langsam, schwerfällig und nicht an den lokalen Gießener Markt angepasst."
     },
     {
       "q": "Unterstützt die neue Seite auch bei der Personalsuche in Gießen?",
-      "a": "Ja. Gießen ist eine Studentenstadt, junge Fachkräfte erwarten moderne Arbeitgeber. Eine exzellente digitale Präsenz ist heute das stärkste Argument, um qualifizierte MFAs oder junge Assistenzärzte von Ihrer Praxis zu überzeugen."
+      "a": "Absolut. Gießen ist eine Studentenstadt, junge Fachkräfte erwarten moderne Arbeitgeber. Eine exzellente digitale Präsenz ist heute das stärkste Argument, um qualifizierte MFAs oder junge Assistenzärzte vom UKGM von Ihrer Praxis zu überzeugen."
     },
     {
       "q": "Wie läuft die Zusammenarbeit ab, ohne unseren Praxisalltag zu stören?",
-      "a": "Wir arbeiten komplett autark. Nach einem präzisen Kick-Off-Gespräch übernehmen wir Konzeption, Design, Text und Programmierung. Sie erhalten regelmäßige Updates und prüfen lediglich die Ergebnisse, während Sie sich zu 100% auf Ihre Patienten konzentrieren können."
+      "a": "Wir arbeiten komplett autark. Nach einem präzisen Kick-Off übernehmen wir Konzeption, Design, Text und Programmierung. Sie erhalten regelmäßige Updates und prüfen lediglich die Ergebnisse, während Sie sich zu 100% auf Ihre Patienten konzentrieren."
     }
   ]
 }

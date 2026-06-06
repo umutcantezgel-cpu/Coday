@@ -75,7 +75,7 @@ export async function submitLeadAction(prevState: unknown, formData: FormData) {
 
     // 5. Send Email via Resend
     if (resend) {
-      await resend.emails.send({
+      const { data, error: emailError } = await resend.emails.send({
         from: 'Coday Leads <leads@codayweb.de>',
         to: ['umut@codayweb.de'],
         subject: `New Lead: ${parsedData.name} (Score: ${score})`,
@@ -90,6 +90,14 @@ Description: ${parsedData.description}
 Score: ${score}
         `,
       });
+
+      if (emailError) {
+        console.error('Resend Email Error:', emailError);
+      } else {
+        console.log('Resend Email Success:', data);
+      }
+    } else {
+      console.warn('RESEND_API_KEY is not set, skipping email.');
     }
 
     // 6. Slack Webhook (if high score)

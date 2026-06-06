@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
 import { IndustryDetailClient } from '@/features/industries/ui/IndustryDetailClient';
+import { IndustryToolEmbed } from '@/features/industries/ui/IndustryToolEmbed';
 
 export async function generateMetadata({
   params,
@@ -35,7 +36,7 @@ export default async function GesundheitswesenHubPage({
   return (
     <>
       <IndustryDetailClient />
-      {/* TODO: Integrate the 'spezielles Tool' here once the user provides it */}
+      <IndustryToolEmbed industryKey="gesundheit" />
     </>
   );
 }

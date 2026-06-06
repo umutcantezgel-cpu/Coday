@@ -104,7 +104,26 @@ export function getProfessionalServiceSchema() {
       '@id': ORG_ID,
     },
     name: 'Coday Web Services',
+    legalName: 'Coday UG (haftungsbeschränkt)',
     description: 'High-End Webentwicklung & Generative Engine Optimization',
+    taxID: '039 874 00784',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Lessingstraße 4',
+      postalCode: '35578',
+      addressLocality: 'Wetzlar',
+      addressRegion: 'Hessen',
+      addressCountry: 'DE',
+    },
+    founder: {
+      '@type': 'Person',
+      '@id': FOUNDER_ID,
+      name: 'Umutcan Emre Tezgel',
+      sameAs: [
+        'https://www.linkedin.com/in/umutcan-emre-tezgel-156382218/',
+        'https://www.openpr.de/news/coday',
+      ],
+    },
     areaServed: [
       { '@type': 'City', name: 'Wetzlar' },
       { '@type': 'AdministrativeArea', name: 'Lahn-Dill-Kreis' },

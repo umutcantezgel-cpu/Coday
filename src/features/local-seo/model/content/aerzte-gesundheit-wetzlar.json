@@ -2,59 +2,59 @@
   "target": "arzt-wetzlar",
   "type": "industry-location",
   "meta": {
-    "title": "High-End Praxis-Websites & Patienten-Gewinnung in Wetzlar | Coday",
-    "description": "Dominieren Sie den Wetzlarer Gesundheitsmarkt. Gewinnen Sie Privatpatienten, entlasten Sie Ihren Empfang und strahlen Sie maximale medizinische Kompetenz aus."
+    "title": "High-End Praxis-Websites & SEO für Ärzte in Wetzlar | Coday",
+    "description": "Dominieren Sie den Wetzlarer Gesundheitsmarkt. Sprechen Sie eine anspruchsvolle, gesetztere Demografie an und entlasten Sie Ihr Team durch smarte Digitalisierung."
   },
   "hero": {
-    "headline": "Ihre Praxis als erste Adresse in Wetzlar.",
-    "subheadline": "Mehr Privatpatienten. Weniger Telefon-Chaos. Absolute digitale Souveränität.",
-    "description": "Das Wartezimmer mag voll sein, aber wie steht es um die Qualität Ihrer Patientenstruktur? Veraltete Praxis-Websites wirken abschreckend auf anspruchsvolle Patienten und überlasten Ihr Personal mit unnötigen Anrufen. Wir verwandeln Ihre digitale Präsenz in Wetzlar in eine automatisierte Maschine für Premium-Patienten und maximale Effizienz.",
+    "headline": "Die erste Adresse für anspruchsvolle Patienten in Wetzlar.",
+    "subheadline": "Mehr Privatpatienten. Weniger Telefon-Chaos. Digitale Barrierefreiheit für jede Generation.",
+    "description": "Wetzlar ist geprägt von einer starken Optik-Industrie (Leica, Zeiss) und einer kaufkräftigen, aber tendenziell älteren Demografie. Ihre Patienten suchen nach Verlässlichkeit und Qualität. Wenn Ihre Website unübersichtlich oder veraltet ist, verlieren Sie genau diese wertvolle Zielgruppe. Wir bauen digitale Praxis-Plattformen, die Vertrauen schaffen und kinderleicht zu bedienen sind.",
     "metrics": [
-      { "value": "60", "label": "Weniger Telefonanrufe", "suffix": "%" },
-      { "value": "150", "label": "Mehr Privatpatienten", "suffix": "%" }
+      { "value": "75", "label": "Telefonische Entlastung bei Senioren", "suffix": "%" },
+      { "value": "150", "label": "Mehr Anfragen für hochwertige IGeL-Leistungen", "suffix": "%" }
     ]
   },
   "gamifiedStats": {
-    "title": "Ihr Image entscheidet sich in Millisekunden.",
-    "description": "Gesundheit ist absolute Vertrauenssache. Wenn ein Patient aus Wetzlar nach einem Facharzt sucht und eine unmoderne, unstrukturierte Website findet, zweifelt sein Unterbewusstsein sofort auch an Ihrer medizinischen Kompetenz.",
+    "title": "Ihr Praxis-Image entscheidet sich in Millisekunden.",
+    "description": "Gesundheit ist im Lahn-Dill-Kreis absolute Vertrauenssache. Wenn ein Patient aus Wetzlar oder den umliegenden Gemeinden nach einem Facharzt sucht und eine unstrukturierte Website findet, zweifelt er unbewusst auch an Ihrer medizinischen Kompetenz.",
     "counters": [
       {
         "targetValue": 84,
         "suffix": "%",
-        "label": "der Patienten googeln den Arzt vor der Terminbuchung"
+        "label": "der Wetzlarer googeln den Arzt vor der ersten Terminbuchung"
       },
       {
         "targetValue": 72,
         "suffix": "%",
-        "label": "wechseln den Arzt wegen schlechter digitaler Services"
+        "label": "wechseln den Arzt wegen fehlender digitaler Erreichbarkeit"
       }
     ]
   },
   "bentoGrid": {
     "title": "Das digitale Praxis-Fundament",
-    "subtitle": "Warum Wetzlarer Ärzte auf Coday vertrauen.",
+    "subtitle": "Warum Wetzlarer Top-Ärzte auf Coday vertrauen.",
     "cards": [
       {
-        "title": "Maximale Seriosität",
-        "text": "Wir erschaffen ein klinisch reines, vertrauenserweckendes Design. Ruhige Typografie, elegante Farbwelten und eine Architektur, die sofort höchste Expertise vermittelt.",
+        "title": "Barrierefreie Seriosität",
+        "text": "Wir erschaffen ein vertrauenserweckendes Design mit extrem guter Lesbarkeit (Contrast-Ratios), das speziell für eine ältere Patientenstruktur optimiert ist.",
         "size": "large",
         "icon": "Design"
       },
       {
         "title": "Empfangs-Automatisierung",
-        "text": "Entlasten Sie Ihr MFA-Team radikal. Intelligente Online-Terminvergabe, Rezeptbestellungen und digitale Anamnese-Bögen reduzieren das Telefonaufkommen dramatisch.",
+        "text": "Intelligente, aber extrem simple Online-Terminvergabe und Rezeptbestellungen reduzieren das Telefonaufkommen dramatisch – selbst bei nicht-technikaffinen Patienten.",
         "size": "tall",
         "icon": "Speed"
       },
       {
         "title": "Lokale SEO-Dominanz in Wetzlar",
-        "text": "Wenn Wetzlarer nach Ihrer Fachrichtung suchen, stehen Sie ganz oben. Wir optimieren auf die lukrativsten Suchbegriffe und Behandlungen.",
+        "text": "Wenn Wetzlarer nach Ihrer Fachrichtung suchen, stehen Sie ganz oben. Wir optimieren auf lukrative Behandlungen für den gesamten Lahn-Dill-Kreis.",
         "size": "small",
         "icon": "SEO"
       },
       {
         "title": "Absolute DSGVO-Sicherheit",
-        "text": "Keine Kompromisse beim Datenschutz. Wir entwickeln rechtssichere Architekturen, die Patientendaten schützen und Sie vor teuren Abmahnungen bewahren.",
+        "text": "Wir entwickeln rechtssichere Architekturen, die sensible Gesundheitsdaten von Privat- und Kassenpatienten nach strengsten deutschen Richtlinien schützen.",
         "size": "small",
         "icon": "Security"
       }
@@ -62,63 +62,59 @@
   },
   "processSteps": [
     {
-      "title": "1. Praxis-Audit & Ziele",
-      "description": "Wir analysieren Ihre Praxis in Wetzlar. Wollen Sie mehr IGeL-Leistungen verkaufen? Suchen Sie Privatpatienten? Müssen Sie Ihr Personal entlasten? Wir entwickeln die exakte Strategie."
+      "title": "1. Wetzlar-Audit & Praxis-Ziele",
+      "description": "Wir analysieren Ihre Praxis. Wollen Sie sich im Lahn-Dill-Kreis für spezielle Behandlungen positionieren oder einfach Ihren Empfang massiv entlasten? Wir entwickeln die Strategie."
     },
     {
       "title": "2. Medizin-spezifisches UX-Design",
-      "description": "Eine Architektur, die Patienten Ängste nimmt und Vertrauen aufbaut. Absolute Barrierefreiheit, intuitive Navigation und eine beruhigende, hochprofessionelle Ästhetik."
+      "description": "Eine Architektur, die Ängste nimmt und Vertrauen aufbaut. Absolute Barrierefreiheit, große Schriftbilder und eine beruhigende, hochprofessionelle Ästhetik."
     },
     {
       "title": "3. Technologische Integration",
-      "description": "Wir verbinden die Website nahtlos mit Doctolib, Samedi, x.patient oder Ihrem individuellen Praxisverwaltungssystem. Schnell, sicher, effizient."
+      "description": "Wir verbinden die neue Plattform nahtlos mit Doctolib, x.patient oder Ihrem individuellen Praxisverwaltungssystem. Schnell, sicher und wartungsarm."
     },
     {
-      "title": "4. Wetzlar-Rollout & Betreuung",
-      "description": "Nach dem Livegang sorgen wir dafür, dass Ihre Praxis dauerhaft die Nummer eins in den Suchergebnissen von Wetzlar und Umgebung bleibt."
+      "title": "4. Lahn-Dill-Rollout & Betreuung",
+      "description": "Nach dem Livegang sorgen wir dafür, dass Ihre Praxis dauerhaft die Nummer eins in den Suchergebnissen von Wetzlar, Herborn und Umgebung bleibt."
     }
   ],
   "localDominance": {
     "title": "Unangefochtene Autorität in Wetzlar",
-    "description": "Die Arzt-Dichte in Wetzlar und Mittelhessen ist hoch. Um sich als absoluter Experte für spezielle Behandlungen (z.B. Implantologie, ästhetische Dermatologie, private Kardiologie) zu positionieren, reicht ein Eintrag bei Jameda nicht. Sie benötigen eine eigene, unangreifbare digitale Festung.",
+    "description": "In Wetzlar und Mittelhessen reicht ein einfacher Jameda-Eintrag nicht mehr, um sich als Top-Experte für spezielle Behandlungen (z.B. Implantologie oder ästhetische Medizin) zu positionieren. Sie benötigen eine eigene, unangreifbare digitale Festung, die der lokalen Wirtschaftsstärke (Optik, Feinmechanik) auf Augenhöhe begegnet.",
     "points": [
-      "Gezielte Ansprache und Gewinnung von Privatpatienten",
-      "Positionierung als innovativste und modernste Praxis der Stadt",
-      "Magnetwirkung für hochqualifizierte MFAs und neue Ärzte"
+      "Gezielte Gewinnung von kaufkräftigen Privatpatienten aus Wetzlar und Umland",
+      "Positionierung als modernste und verlässlichste Praxis der Stadt",
+      "Sogwirkung für hochqualifizierte MFAs in einem leergefegten Arbeitsmarkt"
     ]
   },
   "faq": [
     {
-      "q": "Unsere Praxis ist ohnehin überlaufen. Wozu brauchen wir eine so hochwertige Website?",
-      "a": "Quantität ist nicht Qualität. Wenn Ihr Wartezimmer platzt, ist eine exzellente Website Ihr bester Filter. Sie können den Fokus gezielt auf Privatpatienten oder lukrative IGeL-Leistungen lenken, während Sie gleichzeitig Ihr Personal durch automatisierte Prozesse radikal entlasten."
+      "q": "Unsere Wetzlarer Praxis ist ohnehin überlaufen. Wozu brauchen wir eine so hochwertige Website?",
+      "a": "Quantität ist nicht Qualität. Wenn Ihr Wartezimmer platzt, ist eine exzellente Website Ihr bester Filter. Sie können den Fokus gezielt auf Privatpatienten oder lukrative IGeL-Leistungen lenken, während Sie Ihr Personal radikal entlasten."
     },
     {
-      "q": "Wie hilft uns die Website, das ständige Telefonklingeln zu stoppen?",
-      "a": "Wir implementieren eine intelligente, nutzerfreundliche Architektur, die Patienten geradezu zwingt, Standardanfragen (Termine, Rezepte, Überweisungen) digital zu erledigen. Das senkt das Telefonaufkommen oft um über 60% und reduziert den Stress für Ihr Team."
+      "q": "Unsere Patienten in Wetzlar sind oft etwas älter. Nutzen die überhaupt eine moderne Website?",
+      "a": "Gerade hier ist UX/UI Design entscheidend! Die meisten älteren Patienten nutzen mittlerweile Smartphones, scheitern aber an unübersichtlichen, kleinen Menüs. Wir bauen barrierefreie Schnittstellen, die so simpel sind, dass wirklich jeder sie nutzen kann."
     },
     {
       "q": "Ist das Ganze zu 100% DSGVO-konform?",
-      "a": "Absolut. Im medizinischen Bereich gibt es keinen Spielraum für Fehler. Wir hosten in Europa, verzichten auf unsichere Drittanbieter-Cookies und implementieren höchste Sicherheitsstandards, um Patienten- und Praxisdaten kompromisslos zu schützen."
+      "a": "Absolut. Im medizinischen Bereich gibt es keinen Spielraum für Fehler. Wir hosten in Europa, verzichten auf unsichere Drittanbieter-Cookies und implementieren höchste Sicherheitsstandards."
     },
     {
-      "q": "Wir nutzen Doctolib für Termine. Können Sie das einbinden?",
-      "a": "Ja, wir integrieren Doctolib, Jameda oder jedes andere Terminvergabesystem nahtlos und tief in das High-End-Design Ihrer neuen Website, ohne Brüche in der Nutzererfahrung."
-    },
-    {
-      "q": "Können Sie auch helfen, neue medizinische Fachangestellte in Wetzlar zu finden?",
-      "a": "Ja. Der Fachkräftemangel ist immens. Eine veraltete Website schreckt junge, talentierte MFAs ab. Wir bauen eine 'Karriere'-Sektion auf, die Ihre Praxis als modernen, wertschätzenden Top-Arbeitgeber in Wetzlar präsentiert – ein unfairer Vorteil im Kampf um die besten Köpfe."
+      "q": "Können Sie auch helfen, neue medizinische Fachangestellte im Lahn-Dill-Kreis zu finden?",
+      "a": "Ja. Der Fachkräftemangel in Mittelhessen ist immens. Eine veraltete Website schreckt junge, talentierte MFAs ab. Wir bauen eine 'Karriere'-Sektion auf, die Ihre Praxis als wertschätzenden Top-Arbeitgeber in Wetzlar präsentiert."
     },
     {
       "q": "Warum sollten wir mit Coday arbeiten statt mit einer reinen Ärzte-Agentur?",
-      "a": "Ärzte-Agenturen nutzen oft verstaubte Standard-Templates. Das Ergebnis ist eine Seite, die wie jede andere Arztpraxis aussieht. Wir bringen das Niveau von High-End-Tech-Unternehmen in den medizinischen Sektor. Das garantiert Ihnen eine exklusive Sonderstellung in der Wahrnehmung."
+      "a": "Ärzte-Agenturen nutzen oft verstaubte Standard-Templates. Das Ergebnis ist eine Seite, die exakt wie jede andere Arztpraxis in Wetzlar aussieht. Wir bringen Premium-Technologie in den medizinischen Sektor für eine exklusive Wahrnehmung."
     },
     {
       "q": "Gibt es Einschränkungen wegen des ärztlichen Werbeverbots?",
-      "a": "Wir kennen die Grenzen des Heilmittelwerbegesetzes (HWG) und des ärztlichen Berufsrechts. Wir texten seriös, sachlich und hochprofessionell, schaffen es aber gleichzeitig, psychologisch tiefgreifendes Vertrauen zu generieren, ohne reißerisch zu wirken."
+      "a": "Wir kennen die strengen Vorgaben des Heilmittelwerbegesetzes (HWG). Wir texten seriös, sachlich und hochprofessionell, schaffen es aber gleichzeitig, psychologisch tiefgreifendes Vertrauen bei den Patienten zu generieren."
     },
     {
-      "q": "Wir sitzen direkt in Wetzlar. Wie lange dauert es, bis wir bei Google ganz oben stehen?",
-      "a": "Durch unsere technologische Basis (Next.js) sichern wir uns den entscheidenden Performance-Vorteil. Bei lokaler SEO für Wetzlar sehen wir oft schon nach wenigen Wochen massive Sprünge in der Sichtbarkeit, besonders für spezifische, hochpreisige Behandlungen."
+      "q": "Wir sitzen direkt in Wetzlar. Wie lange dauert es, bis wir bei Google lokal ganz oben stehen?",
+      "a": "Durch unsere technologische Basis (Next.js) sichern wir uns den entscheidenden Performance-Vorteil. Bei lokaler SEO für Wetzlar sehen wir oft schon nach wenigen Wochen massive Sprünge in der Sichtbarkeit, besonders für spezifische Fachbehandlungen."
     }
   ]
 }

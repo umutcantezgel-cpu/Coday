@@ -29,7 +29,7 @@ const values = [
     icon: HandFist,
     title: 'Handwerk statt KI',
     description:
-      'Jede Zeile Code, jedes Pixel Design — von Hand geschrieben. Keine Templates, keine KI-Generatoren. Nur echtes digitales Handwerk.',
+      'Wir nutzen Premium-Manufaktur-Qualität (Custom Code) statt massenproduzierter KI-Standardlösungen. Jede Zeile Code, jedes Pixel Design — von Hand geschrieben für maximale Performance und Individualität.',
   },
   {
     icon: Lightning,

@@ -18,8 +18,14 @@ export function IndustryToolEmbed({ industryKey }: IndustryToolEmbedProps) {
     industryKey?.toLowerCase().includes('arzt')
   ) {
     url = 'https://praxis-seven-ashy.vercel.app/';
+  } else if (
+    industryKey?.toLowerCase().includes('automobil') ||
+    industryKey?.toLowerCase().includes('kfz') ||
+    industryKey?.toLowerCase().includes('auto')
+  ) {
+    url = 'https://automobile-lac.vercel.app/';
   } else {
-    // Automobil coming soon
+    // Other industries coming soon
     return (
       <section className="w-full max-w-7xl mx-auto px-4 py-16">
         <div className="bg-gray-50 border border-gray-100 rounded-3xl p-8 text-center h-64 flex flex-col items-center justify-center">

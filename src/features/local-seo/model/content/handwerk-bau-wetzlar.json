@@ -3,58 +3,62 @@
   "type": "industry-location",
   "meta": {
     "title": "Webdesign & Local SEO für Handwerker in Wetzlar | Coday",
-    "description": "Dominieren Sie den Markt in Wetzlar und Umgebung. Gewinnen Sie lukrative Großprojekte statt lästiger Kleinaufträge. High-End Websites für Premium-Handwerker."
+    "description": "Dominieren Sie das starke Baugewerbe in Wetzlar. Gewinnen Sie lukrative Industrieaufträge und Premium-Privatkunden im Umfeld von Leica und Buderus."
   },
   "hero": {
     "headline": "Das digitale Fundament für Wetzlars beste Handwerker.",
-    "subheadline": "Filtern Sie schlechte Kunden heraus. Ziehen Sie hochprofitable Aufträge magisch an.",
-    "description": "Sie liefern meisterhafte Qualitätsarbeit, aber Ihre aktuelle Website verkauft Sie unter Wert. Wenn Bauherren und Architekten nach verlässlichen Partnern in Wetzlar suchen, entscheidet die digitale Präsenz über den Zuschlag. Wir bauen hochperformante Websites, die Ihre Handwerkskunst in den Premium-Sektor katapultieren.",
+    "subheadline": "Mehr Industrie-Aufträge. Bessere Privatkunden. Absolute Marktführerschaft.",
+    "description": "Wetzlar ist ein kraftvoller Industriestandort (Optik, Feinmechanik, Leica, Bosch Thermotechnik). Hier sitzen kaufkräftige Bauherren und Unternehmen, die bei Handwerkern keine Kompromisse eingehen. Wenn Ihre Website nach 'billigem Kleinbetrieb' aussieht, geht der Premium-Auftrag an die Konkurrenz. Wir bauen hochperformante Websites, die Ihre Handwerkskunst im Wetzlarer Baugewerbe in den Premium-Sektor katapultieren.",
     "metrics": [
-      { "value": "250", "label": "Mehr Premium-Anfragen", "suffix": "%" },
-      { "value": "1", "label": "Die logische Nr. 1 in der Region", "suffix": "" }
+      { "value": "250", "label": "Mehr Anfragen für lukrative Großprojekte", "suffix": "%" },
+      {
+        "value": "1",
+        "label": "Die erste Wahl für Wetzlars Industrie & Privat-Bauherren",
+        "suffix": ""
+      }
     ]
   },
   "gamifiedStats": {
-    "title": "Wie viele lukrative Aufträge verlieren Sie täglich?",
-    "description": "Hunderte Hausbesitzer, Investoren und Firmen in Wetzlar suchen jeden Monat nach kompetenten Handwerksbetrieben. Wenn Sie bei Google nicht auf Seite 1 stehen oder Ihre Website unprofessionell wirkt, macht der Mitbewerber das Geschäft – selbst wenn er schlechter arbeitet als Sie.",
+    "title": "Wie viele lukrative Aufträge in Mittelhessen verlieren Sie täglich?",
+    "description": "Im Lahn-Dill-Kreis wird massiv gebaut und saniert. Wenn Firmen oder private Investoren in Wetzlar einen Handwerker suchen und Ihre Website auf dem Handy nicht schnell lädt oder unprofessionell wirkt, macht der Mitbewerber das Geschäft.",
     "counters": [
       {
         "targetValue": 94,
         "suffix": "%",
-        "label": "der Kunden googeln Handwerker vor der Kontaktaufnahme"
+        "label": "der Wetzlarer Bauherren googeln Handwerker vor der ersten Kontaktaufnahme"
       },
       {
         "targetValue": 65,
         "suffix": "%",
-        "label": "sind bereit, für einen professionelleren Auftritt höhere Preise zu zahlen"
+        "label": "sind bereit, bei einem professionelleren Auftritt höhere Stundensätze zu zahlen"
       }
     ]
   },
   "bentoGrid": {
     "title": "Die Coday Methode für das Handwerk",
-    "subtitle": "Warum wir Handwerksbetriebe unschlagbar machen.",
+    "subtitle": "Warum Wetzlarer Handwerksbetriebe mit uns unschlagbar werden.",
     "cards": [
       {
         "title": "Visuelle Autorität",
-        "text": "Wir rücken Ihre Referenzprojekte ins Rampenlicht. Ein starkes, maskulines und extrem hochwertiges Design, das Kompetenz, Zuverlässigkeit und absolute Präzision ausstrahlt.",
+        "text": "Wir rücken Ihre lokalen Referenzprojekte ins Rampenlicht. Ein starkes, maskulines Design, das Kompetenz, Zuverlässigkeit und Präzision ausstrahlt – passend zum Wetzlarer Industriestandard.",
         "size": "large",
         "icon": "Design"
       },
       {
         "title": "Automatisierte Lead-Filterung",
-        "text": "Nie wieder Zeit mit 'Was-ist-letzte-Preis'-Kunden verschwenden. Smarte Anfrage-Funnels filtern unrentable Kleinstaufträge heraus und liefern Ihnen vorqualifizierte Bauherren.",
+        "text": "Nie wieder Zeit mit unrentablen Kleinstaufträgen verschwenden. Smarte Funnels filtern 'Was-ist-letzte-Preis'-Kunden heraus und liefern Ihnen vorqualifizierte Bauherren.",
         "size": "tall",
         "icon": "Security"
       },
       {
-        "title": "Maximale Lade-Geschwindigkeit",
-        "text": "Handwerker-Websites sind oft voller unoptimierter Bilder. Wir nutzen Next.js. Ihre Seite lädt auf der Baustelle auf dem Handy in unter einer Sekunde.",
+        "title": "Extreme Performance auf der Baustelle",
+        "text": "Handwerker-Websites sind oft voller großer Bilder. Wir nutzen Next.js. Ihre Seite lädt auf jedem Smartphone im Lahn-Dill-Kreis in unter einer Sekunde.",
         "size": "small",
         "icon": "Speed"
       },
       {
-        "title": "Lokales SEO in Wetzlar",
-        "text": "Egal ob Dachdecker, SHK oder Elektriker – wir sorgen dafür, dass Sie bei Google in Wetzlar und dem Lahn-Dill-Kreis ganz oben stehen.",
+        "title": "Lokale SEO-Dominanz (Lahn-Dill)",
+        "text": "Egal ob Dachdecker, SHK oder Elektriker – wir sorgen dafür, dass Sie bei Google in Wetzlar, Herborn und Umgebung unangefochten auf Platz 1 stehen.",
         "size": "small",
         "icon": "SEO"
       }
@@ -62,63 +66,63 @@
   },
   "processSteps": [
     {
-      "title": "1. Strategie & Zielgruppen-Fokus",
-      "description": "Wollen Sie mehr Sanierungen? Mehr Architekten-Aufträge? Wir definieren Ihre profitabelsten Leistungen und richten die gesamte digitale Strategie exakt darauf aus."
+      "title": "1. Wetzlar-Strategie & Zielgruppen-Fokus",
+      "description": "Wollen Sie mehr Industrie-Sanierungen im Leitz-Park? Mehr exklusive Architekten-Aufträge? Wir richten die digitale Strategie exakt darauf aus."
     },
     {
       "title": "2. High-End Design & Copywriting",
-      "description": "Wir schreiben Texte, die Vertrauen wecken und Einwände behandeln. Kombiniert mit einem Design, das handwerkliche Perfektion digital erlebbar macht."
+      "description": "Wir schreiben Texte, die das starke, verlässliche Handwerk repräsentieren und Einwände direkt behandeln. Die visuelle Sprache spricht Premium-Kunden an."
     },
     {
-      "title": "3. Programmierung auf Enterprise-Niveau",
-      "description": "Wir basteln nicht mit WordPress. Wir programmieren mit modernsten React/Next.js Technologien für absolute Spitzen-Performance und Sicherheit."
+      "title": "3. Enterprise-Programmierung",
+      "description": "Wir basteln nicht mit veralteten Baukästen. Wir programmieren mit modernsten React-Technologien für absolute Spitzen-Performance und DSGVO-Sicherheit."
     },
     {
-      "title": "4. Wetzlar-Dominanz & Skalierung",
-      "description": "Nach dem Livegang optimieren wir kontinuierlich weiter. Ihre Sichtbarkeit wächst, Ihre Anfragen steigen, Ihr Betrieb skaliert profitabel."
+      "title": "4. Lokale Dominanz & Skalierung",
+      "description": "Ihre Sichtbarkeit bei Wetzlarer Bauherren wächst, Ihre Anfragen steigen, Ihr Betrieb skaliert profitabel und sie können Preise souverän durchsetzen."
     }
   ],
   "localDominance": {
     "title": "Der absolute Marktführer im Lahn-Dill-Kreis",
-    "description": "Gute Handwerker sind ausgebucht, das ist bekannt. Das Ziel ist nicht, einfach mehr Arbeit zu generieren. Das Ziel ist es, sich aussuchen zu können, welche hochprofitablen Großprojekte Sie annehmen und wem Sie absagen. Wir geben Ihnen die digitale Hebelwirkung dafür.",
+    "description": "Gute Handwerker in Wetzlar sind ausgebucht. Das Ziel ist nicht, einfach mehr Arbeit zu generieren. Das Ziel ist es, sich aussuchen zu können, welche hochprofitablen Großprojekte Sie annehmen. Wir geben Ihnen den digitalen Hebel für diese Marktmacht.",
     "points": [
-      "Erhöhung der Durchsetzbarkeit von höheren Stundensätzen und Projektpreisen",
-      "Aufbau einer magnetischen Arbeitgebermarke gegen den Fachkräftemangel",
-      "Generierung von kontinuierlichen Anfragen für Ihre Wunsch-Dienstleistungen"
+      "Deutliche Erhöhung der Durchsetzbarkeit von höheren Stundensätzen",
+      "Aufbau einer magnetischen Arbeitgebermarke gegen den starken lokalen Fachkräftemangel",
+      "Kontinuierliche Generierung von Anfragen für Ihre lukrativsten Wunsch-Dienstleistungen"
     ]
   },
   "faq": [
     {
-      "q": "Wir sind auf Monate ausgebucht. Warum sollten wir jetzt in eine Website investieren?",
-      "a": "Wenn Sie voll sind, ist der perfekte Zeitpunkt für ein Upgrade gekommen. Eine High-End-Website bringt Ihnen nicht zwingend mehr Arbeit, sondern bessere Arbeit. Sie filtern nervige Kleinaufträge heraus, positionieren sich im Premium-Segment und können höhere Preise für lukrativere Projekte abrufen."
+      "q": "Wir sind in Wetzlar ohnehin auf Monate ausgebucht. Warum eine neue Website?",
+      "a": "Wenn Sie voll sind, ist der perfekte Zeitpunkt für ein Upgrade gekommen. Eine High-End-Website bringt Ihnen nicht mehr Arbeit, sondern bessere Arbeit. Sie positionieren sich im Premium-Segment und können in Wetzlars starker Wirtschaft höhere Preise abrufen."
     },
     {
-      "q": "Wir finden keine Fachkräfte. Kann die Website beim Recruiting in Wetzlar helfen?",
-      "a": "Absolut, das ist einer der größten Hebel. Gute Gesellen und Meister wollen in Betrieben arbeiten, die modern, innovativ und sicher aufgestellt sind. Eine herausragende Website mit einer starken Karriereseite ist Ihr bester Verkäufer im Kampf um die besten Köpfe im Lahn-Dill-Kreis."
+      "q": "Wir finden keine Fachkräfte. Kann die Website beim Recruiting helfen?",
+      "a": "Absolut. In einer Industriestadt wie Wetzlar konkurrieren Sie mit großen Konzernen (Leica, Bosch) um Talente. Eine herausragende Website mit einer starken Karriereseite ist Ihr bester Verkäufer im Kampf um die besten Gesellen und Meister im Lahn-Dill-Kreis."
     },
     {
       "q": "Ich habe keine Zeit, mich um Texte oder Bilder zu kümmern. Ist das ein Problem?",
-      "a": "Nein. Wir sind eine Full-Service-Agentur. Wir schreiben verkaufspsychologisch optimierte Texte und organisieren bei Bedarf professionelle Fotoshootings auf Ihren Baustellen in Wetzlar. Sie machen Ihr Handwerk, wir machen unseres."
+      "a": "Nein. Wir sind eine Full-Service-Agentur. Wir schreiben verkaufspsychologisch optimierte Texte und organisieren bei Bedarf professionelle Fotoshootings auf Ihren Baustellen in und um Wetzlar. Sie machen Ihr Handwerk, wir unseres."
     },
     {
       "q": "Warum sollten wir nicht einfach eine günstige Baukasten-Seite selber machen?",
-      "a": "Weil Sie Ihren Kunden auch nicht empfehlen, die Elektrik im Haus selbst zu verlegen. Baukasten-Seiten sind langsam, ranken schlecht bei Google und strahlen mangelnde Professionalität aus. Eine billige Website kostet Sie täglich bares Geld in Form von verlorenen Premium-Aufträgen."
+      "a": "Weil Sie Ihren Kunden auch nicht empfehlen, die Elektrik im Haus selbst zu verlegen. Baukasten-Seiten sind langsam, ranken schlecht bei Google und strahlen mangelnde Professionalität aus. Das kostet Sie täglich lukrative Aufträge."
     },
     {
       "q": "Wie schnell werden wir bei Google in Wetzlar besser gefunden?",
-      "a": "Unsere technische Basis (Next.js) bietet den ultimativen SEO-Vorteil. Wir sehen bei lokalen Suchbegriffen (z.B. 'Dachdecker Wetzlar') oft schon nach wenigen Wochen signifikante Sprünge in der Sichtbarkeit, da Google extrem schnelle und gut strukturierte Seiten bevorzugt."
+      "a": "Unsere technische Basis (Next.js) bietet den ultimativen SEO-Vorteil. Wir sehen bei lokalen Suchbegriffen (z.B. 'Elektriker Wetzlar') oft schon nach wenigen Wochen signifikante Sprünge in der Sichtbarkeit."
     },
     {
       "q": "Wie hilft mir die Website, nervige Preisanfragen abzuwehren?",
-      "a": "Wir bauen 'Hürden' in Form von intelligenten, mehrstufigen Kontaktformularen ein. Wer nur den billigsten Preis sucht, bricht ab. Wer Qualität will, füllt das Formular aus. So landet nur noch vorqualifizierte Anfragen auf Ihrem Schreibtisch."
+      "a": "Wir bauen intelligente, mehrstufige Kontaktformulare ein. Wer nur den billigsten Handwerker sucht, bricht ab. Wer Wetzlarer Qualität will, füllt das Formular aus. So landen nur noch vorqualifizierte Premium-Anfragen auf Ihrem Schreibtisch."
     },
     {
-      "q": "Ist Coday teurer als andere Webdesigner in Wetzlar?",
-      "a": "Wir sind keine klassische Feld-Wald-und-Wiesen-Agentur, sondern bauen hochspezialisierte digitale Produkte. Unser Fokus liegt auf einem extrem hohen Return on Investment. Wer billig kauft, kauft zweimal. Wer bei Coday kauft, investiert in die langfristige Marktführerschaft."
+      "q": "Ist Coday teurer als klassische Webdesigner in Wetzlar?",
+      "a": "Wir sind keine Feld-Wald-und-Wiesen-Agentur. Unser Fokus liegt auf einem extrem hohen Return on Investment für Handwerker. Wer billig kauft, kauft zweimal. Wer bei Coday kauft, investiert in die langfristige Marktführerschaft in Mittelhessen."
     },
     {
       "q": "Brauche ich ständige Updates oder Wartungsverträge?",
-      "a": "Nein. Im Gegensatz zu WordPress, das ständig gehackt wird oder Updates braucht, ist unsere Next.js/Vercel-Infrastruktur wartungsfrei und von Haus aus extrem sicher. Das System läuft stabil, sicher und rasend schnell, ohne versteckte laufende Kosten."
+      "a": "Nein. Im Gegensatz zu anfälligen WordPress-Seiten ist unsere Infrastruktur wartungsfrei und extrem sicher. Das System läuft stabil und rasend schnell, ohne versteckte laufende Kosten für Sie."
     }
   ]
 }
