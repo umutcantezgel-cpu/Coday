@@ -1,6 +1,5 @@
 'use client';
-import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
-import dynamic from 'next/dynamic';
+import React from 'react';
 import { useTranslations } from 'next-intl';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import {
@@ -148,7 +147,11 @@ export function ApiIntegrationClient() {
 
               <div className="relative z-10 h-full flex flex-col justify-between p-6">
                 <div className="w-16 h-16 rounded-2xl bg-surface-elevated/10 flex items-center justify-center backdrop-blur-sm border border-white/20 mb-8">
-                  <OptimizedIcon icon={Timer} className="text-4xl text-white text-balance" weight="fill" />
+                  <OptimizedIcon
+                    icon={Timer}
+                    className="text-4xl text-white text-balance"
+                    weight="fill"
+                  />
                 </div>
                 <div>
                   <h3 className="text-4xl font-display font-bold text-white mb-4 leading-tight text-balance">
@@ -253,9 +256,14 @@ export function ApiIntegrationClient() {
           </h2>
           <div className="space-y-6">
             {((t.raw('api_integration_page.faq.items') as FaqItem[]) || []).map((item, i) => (
-              <div key={i} className="bg-surface-elevated p-8 rounded-2xl shadow-sm border border-slate-100">
+              <div
+                key={i}
+                className="bg-surface-elevated p-8 rounded-2xl shadow-sm border border-slate-100"
+              >
                 <h3 className="text-lg font-bold mb-3">{item.q}</h3>
-                <p className="text-content-muted leading-relaxed max-w-prose text-pretty">{item.a}</p>
+                <p className="text-content-muted leading-relaxed max-w-prose text-pretty">
+                  {item.a}
+                </p>
               </div>
             ))}
           </div>

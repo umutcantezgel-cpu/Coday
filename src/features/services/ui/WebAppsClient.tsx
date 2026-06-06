@@ -1,6 +1,5 @@
 'use client';
-import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
-import dynamic from 'next/dynamic';
+import React, { useState, useEffect, useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link as NavLink } from '@/i18n/navigation';
 

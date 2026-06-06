@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Lightbulb, ShareNetwork, CheckCircle } from '@phosphor-icons/react/dist/ssr';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { useTranslations } from 'next-intl';
 
 export interface KeyTakeawayItem {
@@ -42,7 +42,7 @@ export const KeyTakeaways: React.FC<KeyTakeawaysProps> = ({ title, items }) => {
 
         <div className="space-y-4 relative z-10">
           {items.map((item, idx) => (
-            <motion.div
+            <m.div
               key={idx}
               initial={{ opacity: 0, x: -10 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -62,7 +62,7 @@ export const KeyTakeaways: React.FC<KeyTakeawaysProps> = ({ title, items }) => {
               >
                 <ShareNetwork size={16} />
               </button>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

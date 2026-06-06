@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { Check } from '@phosphor-icons/react/dist/ssr';
 import { staggerContainer, fadeUpVariants, STAGGER, TRANSITION } from '@/shared/lib/motion';
 
@@ -20,9 +20,12 @@ const Timeline: React.FC<TimelineProps> = ({ items, className = '' }) => {
   return (
     <div className={`relative py-8 ${className}`} aria-label="Projektzeitplan">
       {/* Horizontal line */}
-      <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-primary/20 via-primary to-primary/20 transform -translate-y-1/2 rounded-full" aria-hidden="true" />
+      <div
+        className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-primary/20 via-primary to-primary/20 transform -translate-y-1/2 rounded-full"
+        aria-hidden="true"
+      />
 
-      <motion.ol
+      <m.ol
         className="flex justify-between items-start relative list-none p-0 m-0"
         variants={staggerContainer(STAGGER.hero)}
         initial="hidden"
@@ -30,7 +33,7 @@ const Timeline: React.FC<TimelineProps> = ({ items, className = '' }) => {
         viewport={{ once: true }}
       >
         {items.map((item, index) => (
-          <motion.li
+          <m.li
             key={index}
             variants={fadeUpVariants}
             transition={TRANSITION.reveal}
@@ -68,9 +71,9 @@ const Timeline: React.FC<TimelineProps> = ({ items, className = '' }) => {
                 {item.description}
               </p>
             </div>
-          </motion.li>
+          </m.li>
         ))}
-      </motion.ol>
+      </m.ol>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 'use client';
 import React, { useRef, useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import { ChatCircle, X, Minus, PaperPlaneRight, CircleNotch } from '@phosphor-icons/react/dist/ssr';
 import { useChatStore } from '@/widgets/chatbot/lib/chatStore';
 import { Input } from '@/shared/ui/Input';
@@ -40,7 +40,7 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
       {/* Chat Button */}
       <AnimatePresence>
         {(!isOpen || isMinimized) && !hideTrigger && (
-          <motion.button
+          <m.button
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
@@ -48,25 +48,32 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
             className="fixed right-6 z-max w-14 h-14 rounded-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white shadow-2xl hover:shadow-purple-500/25 transition-shadow motion-reduce:duration-[0.01ms] flex items-center justify-center group bottom-[120px] md:bottom-6"
             aria-label="Chat öffnen"
           >
-            <ChatCircle className="w-6 h-6 group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms]" aria-hidden="true" />
+            <ChatCircle
+              className="w-6 h-6 group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms]"
+              aria-hidden="true"
+            />
 
             {/* Notification Badge */}
             {messages.length > 0 && isMinimized && (
-              <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full text-xs font-bold flex items-center justify-center" aria-live="polite" aria-label={`${messages.length} ungelesene Nachrichten`}>
+              <span
+                className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full text-xs font-bold flex items-center justify-center"
+                aria-live="polite"
+                aria-label={`${messages.length} ungelesene Nachrichten`}
+              >
                 {messages.length}
               </span>
             )}
 
             {/* Pulse Animation */}
             <span className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 animate-ping opacity-25 motion-reduce:animate-none" />
-          </motion.button>
+          </m.button>
         )}
       </AnimatePresence>
 
       {/* Chat Window */}
       <AnimatePresence>
         {isOpen && !isMinimized && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
@@ -113,9 +120,14 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
             </div>
 
             {/* Messages */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50" role="log" aria-live="polite" aria-label="Chat-Nachrichten">
+            <div
+              className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50"
+              role="log"
+              aria-live="polite"
+              aria-label="Chat-Nachrichten"
+            >
               {messages.map((message) => (
-                <motion.div
+                <m.div
                   key={message.id}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -135,12 +147,12 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
                       </p>
                     )}
                   </div>
-                </motion.div>
+                </m.div>
               ))}
 
               {/* Typing Indicator */}
               {isTyping && (
-                <motion.div
+                <m.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   className="flex justify-start"
@@ -163,7 +175,7 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
                       />
                     </div>
                   </div>
-                </motion.div>
+                </m.div>
               )}
 
               <div ref={messagesEndRef} />
@@ -198,7 +210,7 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
                 </Button>
               </div>
             </form>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </>

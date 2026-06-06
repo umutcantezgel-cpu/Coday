@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { ShieldCheck, ShieldWarning, Globe, LockKey, Check } from '@phosphor-icons/react/dist/ssr';
 import { clsx } from 'clsx';
 
@@ -85,7 +85,10 @@ export const SovereigntyChecklist: React.FC = () => {
   const result = getResult();
 
   return (
-    <section className="my-16 relative overflow-hidden rounded-[2.5rem] border border-gray-200 bg-white shadow-xl" aria-label="Digital Sovereignty Audit">
+    <section
+      className="my-16 relative overflow-hidden rounded-[2.5rem] border border-gray-200 bg-white shadow-xl"
+      aria-label="Digital Sovereignty Audit"
+    >
       <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-600 to-indigo-600" />
 
       <div className="p-8 md:p-12">
@@ -145,7 +148,7 @@ export const SovereigntyChecklist: React.FC = () => {
               Calculate Risk Score
             </button>
           ) : (
-            <motion.div
+            <m.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               className={clsx(
@@ -179,7 +182,7 @@ export const SovereigntyChecklist: React.FC = () => {
                 <span className="block text-xs uppercase font-bold opacity-60">Score</span>
                 <span className="text-4xl font-mono font-bold">{score}/100</span>
               </div>
-            </motion.div>
+            </m.div>
           )}
         </div>
       </div>

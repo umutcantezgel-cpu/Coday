@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import {
   SplitHorizontal,
   Users,
@@ -80,7 +80,10 @@ export const ABTestSimulator: React.FC = () => {
   };
 
   return (
-    <section className="my-12 font-sans w-full max-w-4xl mx-auto" aria-label={t('blog.abTest.title')}>
+    <section
+      className="my-12 font-sans w-full max-w-4xl mx-auto"
+      aria-label={t('blog.abTest.title')}
+    >
       <div className="bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-xl">
         {/* Header */}
         <div className="bg-gradient-to-r from-gray-900 to-gray-800 p-6 text-white flex items-center justify-between">
@@ -230,7 +233,7 @@ export const ABTestSimulator: React.FC = () => {
 
                 {/* Hero Section */}
                 <AnimatePresence mode="wait">
-                  <motion.div
+                  <m.div
                     key={activeVariant}
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -277,7 +280,7 @@ export const ABTestSimulator: React.FC = () => {
 
                     {/* Trust Elements (Only Variant B) */}
                     {activeVariant === 'B' && (
-                      <motion.div
+                      <m.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.2 }}
@@ -292,9 +295,9 @@ export const ABTestSimulator: React.FC = () => {
                           ))}
                         </div>
                         <span>{t('blog.abTest.variantB.trust')}</span>
-                      </motion.div>
+                      </m.div>
                     )}
-                  </motion.div>
+                  </m.div>
                 </AnimatePresence>
               </div>
             </div>

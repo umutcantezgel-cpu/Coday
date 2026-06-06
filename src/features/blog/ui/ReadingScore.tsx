@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import { Trophy, Lightning } from '@phosphor-icons/react/dist/ssr';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 
 export const ReadingScore: React.FC<{ currentPostId?: number }> = ({ currentPostId }) => {
   const [readPosts, setReadPosts] = useState<number[]>(() => {
@@ -39,7 +39,10 @@ export const ReadingScore: React.FC<{ currentPostId?: number }> = ({ currentPost
   const progress = (score / nextLevel) * 100;
 
   return (
-    <section className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-6 text-white shadow-xl mb-8 relative overflow-hidden group" aria-label="Reading Score">
+    <section
+      className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-6 text-white shadow-xl mb-8 relative overflow-hidden group"
+      aria-label="Reading Score"
+    >
       {/* Glossy effect */}
       <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-10 translate-x-10 blur-2xl group-hover:bg-white/10 transition-colors motion-reduce:duration-[0.01ms]"></div>
 
@@ -60,8 +63,15 @@ export const ReadingScore: React.FC<{ currentPostId?: number }> = ({ currentPost
           <span className="text-xs text-gray-400 mb-1">XP Points</span>
         </div>
 
-        <div className="w-full bg-gray-700 h-2 rounded-full overflow-hidden mb-2" role="progressbar" aria-valuenow={score} aria-valuemin={0} aria-valuemax={nextLevel} aria-label={`${score} XP of ${nextLevel} XP`}>
-          <motion.div
+        <div
+          className="w-full bg-gray-700 h-2 rounded-full overflow-hidden mb-2"
+          role="progressbar"
+          aria-valuenow={score}
+          aria-valuemin={0}
+          aria-valuemax={nextLevel}
+          aria-label={`${score} XP of ${nextLevel} XP`}
+        >
+          <m.div
             initial={{ scaleX: 0 }}
             animate={{ scaleX: progress / 100 }}
             transition={{ duration: 1, ease: 'easeOut' }}
@@ -79,7 +89,7 @@ export const ReadingScore: React.FC<{ currentPostId?: number }> = ({ currentPost
       {/* Unlock Notification (Conditional, simulated for now) */}
       <AnimatePresence>
         {currentPostId && !readPosts.includes(currentPostId) && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
@@ -91,7 +101,7 @@ export const ReadingScore: React.FC<{ currentPostId?: number }> = ({ currentPost
             <Lightning className="text-white w-8 h-8 mb-2 animate-bounce motion-reduce:animate-none" />
             <span className="font-bold text-lg">+100 XP</span>
             <span className="text-xs">Article Completed!</span>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </section>

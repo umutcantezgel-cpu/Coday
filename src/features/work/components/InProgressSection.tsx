@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslations, useLocale } from 'next-intl';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { ArrowRight, CircleNotch } from '@phosphor-icons/react/dist/ssr';
 import { Project } from '@/shared/data/work';
 
@@ -20,15 +20,20 @@ export const InProgressSection: React.FC<InProgressSectionProps> = ({ projects }
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center justify-center text-center mb-16">
           <h2 className="text-3xl font-display font-bold text-neutral-900 dark:text-white flex items-center justify-center gap-3 mb-4">
-            <span className="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-pulse motion-reduce:animate-none" aria-hidden="true" />
+            <span
+              className="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-pulse motion-reduce:animate-none"
+              aria-hidden="true"
+            />
             {t('sections.in_progress.title')}
           </h2>
-          <p className="text-neutral-500 dark:text-neutral-400 max-w-2xl">{t('sections.in_progress.subtitle')}</p>
+          <p className="text-neutral-500 dark:text-neutral-400 max-w-2xl">
+            {t('sections.in_progress.subtitle')}
+          </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border-subtle rounded-xl overflow-hidden border border-border-subtle">
           {projects.map((project, index) => (
-            <motion.a
+            <m.a
               key={project.slug}
               href={project.liveUrl}
               target="_blank"
@@ -41,8 +46,13 @@ export const InProgressSection: React.FC<InProgressSectionProps> = ({ projects }
             >
               <div>
                 <div className="flex justify-between items-start mb-8">
-                  <div className={`w-12 h-12 rounded-lg ${project.heroImage} opacity-80 flex items-center justify-center bg-neutral-200 dark:bg-neutral-800`}>
-                    <CircleNotch className="w-6 h-6 text-neutral-500 animate-spin motion-reduce:animate-none" aria-hidden="true" />
+                  <div
+                    className={`w-12 h-12 rounded-lg ${project.heroImage} opacity-80 flex items-center justify-center bg-neutral-200 dark:bg-neutral-800`}
+                  >
+                    <CircleNotch
+                      className="w-6 h-6 text-neutral-500 animate-spin motion-reduce:animate-none"
+                      aria-hidden="true"
+                    />
                   </div>
                   <span className="px-2 py-1 text-xs font-mono text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-500/10 rounded border border-emerald-200 dark:border-emerald-500/20">
                     {project.completion}%
@@ -78,7 +88,7 @@ export const InProgressSection: React.FC<InProgressSectionProps> = ({ projects }
                   <ArrowRight className="ml-2 w-3 h-3" aria-hidden="true" />
                 </div>
               </div>
-            </motion.a>
+            </m.a>
           ))}
         </div>
       </div>

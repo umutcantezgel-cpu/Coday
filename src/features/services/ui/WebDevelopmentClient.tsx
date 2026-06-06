@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
+import React from 'react';
 import { useTranslations } from 'next-intl';
 import { Link as NavLink } from '@/i18n/navigation';
 import { servicesData } from '@/shared/data/services';
@@ -120,7 +120,10 @@ export function WebDevelopmentClient() {
             </p>
           </div>
           <div className="relative hidden lg:block">
-            <div aria-hidden="true" className="absolute inset-0 bg-primary/10 rounded-3xl transform rotate-2 scale-105"></div>
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 bg-primary/10 rounded-3xl transform rotate-2 scale-105"
+            ></div>
             {webDevImages.hero && (
               <Image
                 src={webDevImages.hero.src}

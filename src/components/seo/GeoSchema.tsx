@@ -1,6 +1,3 @@
-
-
-
 type SchemaType = 'Organization' | 'Article' | 'FAQPage';
 
 interface GeoSchemaProps {
@@ -33,7 +30,7 @@ export function GeoSchema({ type, data }: GeoSchemaProps) {
       },
       sameAs: [
         // Verknüpfung mit Entitäten für LLMs extrem wichtig!
-        'https://www.linkedin.com/compunknown/coday',
+        'https://www.linkedin.com/company/coday',
         // 'https://twitter.com/codayweb'
       ],
       ...data,
@@ -69,14 +66,15 @@ export function GeoSchema({ type, data }: GeoSchemaProps) {
     return {
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
-      mainEntity: data.faqs?.map((faq: { question: string; answer: string }) => ({
-        '@type': 'Question',
-        name: faq.question,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: faq.answer,
-        },
-      })) || [],
+      mainEntity:
+        data.faqs?.map((faq: { question: string; answer: string }) => ({
+          '@type': 'Question',
+          name: faq.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.answer,
+          },
+        })) || [],
     };
   };
 

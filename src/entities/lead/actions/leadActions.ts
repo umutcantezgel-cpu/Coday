@@ -1,7 +1,11 @@
 'use server';
 
 import { createAdminClient } from '@/shared/lib/supabase/server';
-import { LeadSchema, type StoredLead, type LeadSubmissionResult } from '@/entities/lead/model/types';
+import {
+  LeadSchema,
+  type StoredLead,
+  type LeadSubmissionResult,
+} from '@/entities/lead/model/types';
 
 export async function submitLeadAction(data: unknown): Promise<LeadSubmissionResult> {
   try {
@@ -51,6 +55,7 @@ export async function getLeadsAction(): Promise<StoredLead[]> {
 
     if (error) throw error;
 
+     
     return data.map((item: any) => ({
       id: item.id,
       createdAt: item.created_at,
@@ -75,7 +80,10 @@ export async function getLeadsAction(): Promise<StoredLead[]> {
   }
 }
 
-export async function updateLeadStatusAction(leadId: string, status: StoredLead['status']): Promise<boolean> {
+export async function updateLeadStatusAction(
+  leadId: string,
+  status: StoredLead['status']
+): Promise<boolean> {
   try {
     const supabase = createAdminClient();
     const { error } = await supabase.from('leads').update({ status }).eq('id', leadId);

@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { Palette, CornersOut, ArrowsOut, Check } from '@phosphor-icons/react/dist/ssr';
 import { clsx } from 'clsx';
 
@@ -111,7 +111,7 @@ export const ComponentConfigurator: React.FC = () => {
       <div className="lg:col-span-2 bg-gray-50 rounded-3xl border border-gray-200 flex items-center justify-center min-h-[400px] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gray-400 to-transparent" />
 
-        <motion.div
+        <m.div
           layout
           className={clsx(
             'bg-white shadow-2xl max-w-sm w-full mx-8 relative z-10 transition motion-reduce:duration-[0.01ms] duration-300 ease-out',
@@ -120,7 +120,7 @@ export const ComponentConfigurator: React.FC = () => {
           )}
         >
           <div className="flex items-start gap-4 mb-6">
-            <motion.div
+            <m.div
               layout
               className={clsx(
                 'w-12 h-12 flex items-center justify-center text-white shadow-xl',
@@ -133,20 +133,20 @@ export const ComponentConfigurator: React.FC = () => {
               )}
             >
               <Check size={24} weight="bold" />
-            </motion.div>
+            </m.div>
             <div>
-              <motion.div layout className="h-4 w-32 bg-gray-200 rounded mb-2" />
-              <motion.div layout className="h-3 w-48 bg-gray-100 rounded" />
+              <m.div layout className="h-4 w-32 bg-gray-200 rounded mb-2" />
+              <m.div layout className="h-3 w-48 bg-gray-100 rounded" />
             </div>
           </div>
 
-          <motion.div layout className="space-y-3 mb-8">
+          <m.div layout className="space-y-3 mb-8">
             <div className="h-2 w-full bg-gray-100 rounded" />
             <div className="h-2 w-5/6 bg-gray-100 rounded" />
             <div className="h-2 w-4/6 bg-gray-100 rounded" />
-          </motion.div>
+          </m.div>
 
-          <motion.button
+          <m.button
             layout
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
@@ -157,8 +157,8 @@ export const ComponentConfigurator: React.FC = () => {
             )}
           >
             Primary Action
-          </motion.button>
-        </motion.div>
+          </m.button>
+        </m.div>
       </div>
     </div>
   );

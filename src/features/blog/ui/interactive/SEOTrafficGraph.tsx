@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { ChartBar, ArrowUpRight } from '@phosphor-icons/react/dist/ssr';
 import { EASING, STAGGER } from '@/shared/lib/motion';
 
@@ -65,7 +65,7 @@ export const SEOTrafficGraph: React.FC = () => {
 
         {(view === 'coday' ? dataCoday : dataStandard).map((value, index) => (
           <div key={index} className="flex-1 flex flex-col justify-end group relative h-full">
-            <motion.div
+            <m.div
               initial={{ scaleY: 0 }}
               style={{ transformOrigin: 'bottom' }}
               animate={{ scaleY: (value / (view === 'coday' ? 320 : 22)) * 100 }}
@@ -80,7 +80,7 @@ export const SEOTrafficGraph: React.FC = () => {
               <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-900/90 backdrop-blur text-white text-[10px] font-bold py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms] whitespace-nowrap shadow-xl z-20">
                 {value}k
               </div>
-            </motion.div>
+            </m.div>
             <span className="text-[10px] uppercase tracking-wider text-gray-400 text-center mt-3 font-medium h-4">
               {months[index]}
             </span>

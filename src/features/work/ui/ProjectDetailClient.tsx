@@ -12,7 +12,7 @@ import { workData } from '@/shared/data/work';
 import { SeoHead } from '@/shared/ui/SeoHead';
 import { AnimatedCounter } from '@/shared/ui/AnimatedCounter';
 import { BeforeAfterSlider } from '@/shared/ui/BeforeAfterSlider';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import { X } from '@phosphor-icons/react';
 import Image from 'next/image';
 
@@ -113,15 +113,19 @@ const ProjectDetail: React.FC = () => {
               <ArrowLeft className="w-3.5 h-3.5" aria-hidden="true" />
               {t('project_detail.breadcrumb_projects')}
             </NavLink>
-            <span className="mx-2" aria-hidden="true">/</span>
-            <span className="text-primary font-medium" aria-current="page">{project.title}</span>
+            <span className="mx-2" aria-hidden="true">
+              /
+            </span>
+            <span className="text-primary font-medium" aria-current="page">
+              {project.title}
+            </span>
           </nav>
         </div>
 
         {/* Hero Visual */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
           {/* Title Block */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -136,10 +140,10 @@ const ProjectDetail: React.FC = () => {
             <p className="text-xl sm:text-2xl text-gray-500 max-w-3xl mx-auto leading-relaxed">
               {project.subtitle}
             </p>
-          </motion.div>
+          </m.div>
 
           {/* Hero Image / Gradient Fallback */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 30, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.15 }}
@@ -169,7 +173,7 @@ const ProjectDetail: React.FC = () => {
             {/* Stats Overlay */}
             <div className="absolute bottom-6 left-6 right-6 grid grid-cols-3 gap-3 sm:gap-4">
               {project.stats.map((stat, i) => (
-                <motion.div
+                <m.div
                   key={i}
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -182,10 +186,10 @@ const ProjectDetail: React.FC = () => {
                   <div className="text-white font-bold text-base sm:text-xl lg:text-2xl">
                     {stat.value}
                   </div>
-                </motion.div>
+                </m.div>
               ))}
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
@@ -218,7 +222,9 @@ const ProjectDetail: React.FC = () => {
               {/* Related Services */}
               {project.relatedServices && project.relatedServices.length > 0 && (
                 <div className="mt-8 pt-6 border-t border-gray-100">
-                  <h3 className="font-display font-bold text-lg mb-4">{t('project_detail.sidebar.related', { defaultValue: 'Verwandte Services' })}</h3>
+                  <h3 className="font-display font-bold text-lg mb-4">
+                    {t('project_detail.sidebar.related', { defaultValue: 'Verwandte Services' })}
+                  </h3>
                   <ul className="space-y-2">
                     {project.relatedServices.map((service, idx) => (
                       <li key={idx}>
@@ -255,7 +261,7 @@ const ProjectDetail: React.FC = () => {
           {/* ─────────────── Main Content ─────────────── */}
           <div className="lg:col-span-8 space-y-20">
             {/* ── Challenge ── */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
@@ -289,10 +295,10 @@ const ProjectDetail: React.FC = () => {
                   </footer>
                 </blockquote>
               )}
-            </motion.div>
+            </m.div>
 
             {/* ── Approach ── */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
@@ -306,7 +312,7 @@ const ProjectDetail: React.FC = () => {
               </p>
               <div className="grid md:grid-cols-2 gap-6">
                 {project.approach.steps.map((step, i) => (
-                  <motion.div
+                  <m.div
                     key={i}
                     initial={{ opacity: 0, y: 15 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -319,13 +325,13 @@ const ProjectDetail: React.FC = () => {
                     </div>
                     <h3 className="font-bold text-gray-900 mb-2">{step.title}</h3>
                     <p className="text-sm text-gray-600">{step.description}</p>
-                  </motion.div>
+                  </m.div>
                 ))}
               </div>
-            </motion.div>
+            </m.div>
 
             {/* ── Solution ── */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
@@ -347,7 +353,10 @@ const ProjectDetail: React.FC = () => {
                         key={i}
                         role="button"
                         tabIndex={0}
-                        aria-label={project.solution.imageAlts?.[i] || `${project.title} Solution ${i + 1} – Zum Vergrößern klicken`}
+                        aria-label={
+                          project.solution.imageAlts?.[i] ||
+                          `${project.title} Solution ${i + 1} – Zum Vergrößern klicken`
+                        }
                         className={`rounded-xl border border-gray-200 shadow-lg overflow-hidden bg-white group cursor-zoom-in focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${
                           isFullWidth ? 'md:col-span-2' : ''
                         }`}
@@ -362,7 +371,8 @@ const ProjectDetail: React.FC = () => {
                             e.preventDefault();
                             openLightbox(
                               img,
-                              project.solution.imageAlts?.[i] || `${project.title} Solution ${i + 1}`
+                              project.solution.imageAlts?.[i] ||
+                                `${project.title} Solution ${i + 1}`
                             );
                           }
                         }}
@@ -396,10 +406,10 @@ const ProjectDetail: React.FC = () => {
                   })}
                 </div>
               )}
-            </motion.div>
+            </m.div>
 
             {/* ── Results (Dark Premium Card) ── */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
@@ -438,18 +448,20 @@ const ProjectDetail: React.FC = () => {
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </m.div>
 
             {/* ── Before / After ── */}
             {project.beforeAfter &&
               (project.beforeAfter.beforeImage || project.beforeAfter.afterImage) && (
-                <motion.div
+                <m.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-50px' }}
                   transition={{ duration: 0.5 }}
                 >
-                  <h2 className="font-display font-bold text-3xl text-gray-900 mb-6">{t('project_detail.before_after_title')}</h2>
+                  <h2 className="font-display font-bold text-3xl text-gray-900 mb-6">
+                    {t('project_detail.before_after_title')}
+                  </h2>
 
                   {project.beforeAfter.beforeImage && project.beforeAfter.afterImage ? (
                     <BeforeAfterSlider
@@ -493,7 +505,7 @@ const ProjectDetail: React.FC = () => {
                       )}
                     </div>
                   )}
-                </motion.div>
+                </m.div>
               )}
           </div>
         </div>
@@ -525,7 +537,10 @@ const ProjectDetail: React.FC = () => {
       {/* ═══════════════════════════ */}
       {/* NEXT / PREVIOUS Navigation */}
       {/* ═══════════════════════════ */}
-      <nav aria-label="Projekt-Navigation" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-gray-200">
+      <nav
+        aria-label="Projekt-Navigation"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-gray-200"
+      >
         <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
           {prevSlug && prevProject ? (
             <NavLink
@@ -576,7 +591,7 @@ const ProjectDetail: React.FC = () => {
       {/* ═══════════════════════════ */}
       <AnimatePresence>
         {activeLightboxImage && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -589,7 +604,7 @@ const ProjectDetail: React.FC = () => {
               if (e.key === 'Escape') closeLightbox();
             }}
           >
-            <motion.div
+            <m.div
               initial={{ scale: 0.95, opacity: 0, y: 20 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.95, opacity: 0, y: 20 }}
@@ -613,8 +628,8 @@ const ProjectDetail: React.FC = () => {
               >
                 <X className="w-6 h-6" />
               </button>
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
         )}
       </AnimatePresence>
     </div>

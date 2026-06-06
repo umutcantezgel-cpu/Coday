@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import { useTranslations } from 'next-intl';
 
 const MenuEngineeringDemo: React.FC = () => {
@@ -18,7 +18,11 @@ const MenuEngineeringDemo: React.FC = () => {
             {t('gastronomie-hotellerie.features.menu_engineering.description')}
           </p>
 
-          <div className="flex bg-white/10 p-1 rounded-xl w-fit" role="group" aria-label={t('gastronomie-hotellerie.features.menu_engineering.title')}>
+          <div
+            className="flex bg-white/10 p-1 rounded-xl w-fit"
+            role="group"
+            aria-label={t('gastronomie-hotellerie.features.menu_engineering.title')}
+          >
             <button
               onClick={() => setMode('paper')}
               aria-pressed={mode === 'paper'}
@@ -39,7 +43,7 @@ const MenuEngineeringDemo: React.FC = () => {
         <div className="relative h-[400px] bg-slate-900 rounded-2xl border border-white/10 overflow-hidden flex items-center justify-center p-6">
           <AnimatePresence mode="wait">
             {mode === 'paper' ? (
-              <motion.div
+              <m.div
                 key="paper"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -74,9 +78,9 @@ const MenuEngineeringDemo: React.FC = () => {
                 <div className="absolute bottom-4 left-0 right-0 text-center text-xs text-gray-500 italic">
                   {t('gastronomie-hotellerie.features.menu_engineering.paper_view.disclaimer')}
                 </div>
-              </motion.div>
+              </m.div>
             ) : (
-              <motion.div
+              <m.div
                 key="digital"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -110,7 +114,7 @@ const MenuEngineeringDemo: React.FC = () => {
                   </div>
 
                   {/* Upsell Dialog */}
-                  <motion.div
+                  <m.div
                     initial={{ y: 50, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.5 }}
@@ -134,15 +138,17 @@ const MenuEngineeringDemo: React.FC = () => {
                       </div>
                       <button
                         type="button"
-                        aria-label={t('gastronomie-hotellerie.features.menu_engineering.digital_view.cta_add')}
+                        aria-label={t(
+                          'gastronomie-hotellerie.features.menu_engineering.digital_view.cta_add'
+                        )}
                         className="ms-auto w-5 h-5 rounded-full bg-green-500 flex items-center justify-center text-black font-bold text-[10px]"
                       >
                         +
                       </button>
                     </div>
-                  </motion.div>
+                  </m.div>
                 </div>
-              </motion.div>
+              </m.div>
             )}
           </AnimatePresence>
         </div>

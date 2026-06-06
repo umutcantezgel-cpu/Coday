@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import Image from 'next/image';
 
 export interface TechItem {
@@ -52,7 +52,7 @@ export const TechStackShowcase: React.FC<TechStackShowcaseProps> = ({
 
         <div className="grid gap-12 md:gap-16">
           {Object.entries(groupedTech).map(([category, items], catIndex) => (
-            <motion.div
+            <m.div
               key={category}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -92,7 +92,7 @@ export const TechStackShowcase: React.FC<TechStackShowcaseProps> = ({
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

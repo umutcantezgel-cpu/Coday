@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { AnimatePresence, motion } from 'motion/react';
+import { AnimatePresence, m } from 'motion/react';
 import { X } from '@phosphor-icons/react';
 import { cn } from '@/lib/utils';
 import { useScrollLock } from '@/hooks/use-scroll-lock';
@@ -19,7 +19,6 @@ interface DrawerProps {
   /** Accessible label for the drawer. Required if no title is provided. */
   'aria-label'?: string;
 }
-
 
 const Portal = ({ children }: { children: React.ReactNode }) => {
   return createPortal(children, document.body);
@@ -61,17 +60,26 @@ export function Drawer({
     right: {
       initial: { transform: 'translateX(100%)' },
       animate: { transform: 'translateX(0%)' },
-      exit: { transform: 'translateX(100%)', transition: { duration: 0.15, ease: 'easeOut' as const } },
+      exit: {
+        transform: 'translateX(100%)',
+        transition: { duration: 0.15, ease: 'easeOut' as const },
+      },
     },
     left: {
       initial: { transform: 'translateX(-100%)' },
       animate: { transform: 'translateX(0%)' },
-      exit: { transform: 'translateX(-100%)', transition: { duration: 0.15, ease: 'easeOut' as const } },
+      exit: {
+        transform: 'translateX(-100%)',
+        transition: { duration: 0.15, ease: 'easeOut' as const },
+      },
     },
     bottom: {
       initial: { transform: 'translateY(100%)' },
       animate: { transform: 'translateY(0%)' },
-      exit: { transform: 'translateY(100%)', transition: { duration: 0.15, ease: 'easeOut' as const } },
+      exit: {
+        transform: 'translateY(100%)',
+        transition: { duration: 0.15, ease: 'easeOut' as const },
+      },
     },
   } as const;
 
@@ -87,13 +95,13 @@ export function Drawer({
     <Portal>
       <AnimatePresence>
         {isOpen && (
-          <motion.div
+          <m.div
             key="drawer-overlay"
             exit={{ opacity: 0, transition: { duration: 0.15, ease: 'easeOut' } }}
             className="fixed inset-0 z-modal isolate flex"
           >
             {/* Backdrop */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0, transition: { duration: 0.15, ease: 'easeOut' } }}
@@ -104,7 +112,7 @@ export function Drawer({
             />
 
             {/* Drawer Content */}
-            <motion.div
+            <m.div
               // @ts-expect-error - Framer Motion generic ref types can be tricky
               ref={trapRef}
               initial={slideVariants[position].initial}
@@ -122,11 +130,14 @@ export function Drawer({
               role="dialog"
               aria-modal="true"
               aria-labelledby={title ? `drawer-title-${drawerId}` : undefined}
-              aria-label={!title ? (ariaLabel || 'Drawer') : undefined}
+              aria-label={!title ? ariaLabel || 'Drawer' : undefined}
             >
               <div className="flex items-center justify-between p-4 border-b border-gray-100">
                 {title ? (
-                  <h2 id={`drawer-title-${drawerId}`} className="text-lg font-semibold text-gray-900">
+                  <h2
+                    id={`drawer-title-${drawerId}`}
+                    className="text-lg font-semibold text-gray-900"
+                  >
                     {title}
                   </h2>
                 ) : (
@@ -145,8 +156,8 @@ export function Drawer({
               </div>
 
               <div className="flex-1 overflow-y-auto p-4">{children}</div>
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
         )}
       </AnimatePresence>
     </Portal>

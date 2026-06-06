@@ -4,10 +4,12 @@ import React, { Suspense, useEffect } from 'react';
 import BlurText from '@/shared/ui/BlurText';
 import GradientText from '@/shared/ui/GradientText';
 import BookingCalendar from '@/features/booking/ui/BookingCalendar';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import dynamic from 'next/dynamic';
 const InteractiveMap = dynamic(() => import('@/shared/ui/InteractiveMap'), { ssr: false });
-const ApplicationWizard = dynamic(() => import('@/features/contact/ApplicationWizard'), { ssr: false });
+const ApplicationWizard = dynamic(() => import('@/features/contact/ApplicationWizard'), {
+  ssr: false,
+});
 import { TestimonialCard } from '@/shared/ui/TestimonialCard';
 import LogoLoop from '@/shared/ui/LogoLoop';
 import { clientLogos } from '@/shared/data/clientLogos';
@@ -116,14 +118,14 @@ export const ContactClient: React.FC = () => {
                 <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-6">
                   <h2 className="font-bold text-gray-900 text-lg">Kontaktinformationen</h2>
 
-                  <motion.div
+                  <m.div
                     variants={staggerContainer}
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true, margin: '-50px' }}
                     className="grid gap-6"
                   >
-                    <motion.a
+                    <m.a
                       variants={staggerItem}
                       href="mailto:umut@codayweb.de"
                       className="flex items-start gap-4 text-slate-600 hover:text-primary transition-colors duration-200 motion-reduce:duration-[0.01ms] group"
@@ -137,9 +139,9 @@ export const ContactClient: React.FC = () => {
                         </strong>
                         <span className="text-sm">umut@codayweb.de</span>
                       </div>
-                    </motion.a>
+                    </m.a>
 
-                    <motion.a
+                    <m.a
                       variants={staggerItem}
                       href="tel:+4917641195301"
                       className="flex items-start gap-4 text-slate-600 hover:text-primary transition-colors duration-200 motion-reduce:duration-[0.01ms] group"
@@ -153,12 +155,9 @@ export const ContactClient: React.FC = () => {
                         </strong>
                         <span className="text-sm">+49 176 41195301</span>
                       </div>
-                    </motion.a>
+                    </m.a>
 
-                    <motion.div
-                      variants={staggerItem}
-                      className="flex items-start gap-4 text-slate-600"
-                    >
+                    <m.div variants={staggerItem} className="flex items-start gap-4 text-slate-600">
                       <div className="w-10 h-10 bg-orange-50 rounded-lg flex items-center justify-center text-orange-600 flex-shrink-0">
                         <OptimizedIcon icon={MapPin} />
                       </div>
@@ -172,12 +171,9 @@ export const ContactClient: React.FC = () => {
                           (Remote weltweit)
                         </span>
                       </div>
-                    </motion.div>
+                    </m.div>
 
-                    <motion.div
-                      variants={staggerItem}
-                      className="flex items-start gap-4 text-slate-600"
-                    >
+                    <m.div variants={staggerItem} className="flex items-start gap-4 text-slate-600">
                       <div className="w-10 h-10 bg-green-50 rounded-lg flex items-center justify-center text-green-600 flex-shrink-0">
                         <OptimizedIcon icon={Clock} />
                       </div>
@@ -191,37 +187,43 @@ export const ContactClient: React.FC = () => {
                           (Termine nach Vereinbarung)
                         </span>
                       </div>
-                    </motion.div>
+                    </m.div>
 
-                    <motion.div variants={staggerItem} className="pt-2 border-t border-gray-100">
+                    <m.div variants={staggerItem} className="pt-2 border-t border-gray-100">
                       <h3 className="text-sm font-bold text-gray-900 mb-3">
                         {t('location.socials.label', { fallback: 'Folgen Sie uns' })}
                       </h3>
                       <div className="flex gap-3">
                         <a
-                          href="https://www.instagram.com/codayweb/" target="_blank" rel="noopener noreferrer"
+                          href="https://www.instagram.com/codayweb/"
+                          target="_blank"
+                          rel="noopener noreferrer"
                           aria-label="Instagram"
                           className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors motion-reduce:duration-[0.01ms]"
                         >
                           <OptimizedIcon icon={InstagramLogo} />
                         </a>
                         <a
-                          href="https://www.linkedin.com/in/umutcan-emre-tezgel-65a41a3aa/" target="_blank" rel="noopener noreferrer"
+                          href="https://www.linkedin.com/in/umutcan-emre-tezgel-65a41a3aa/"
+                          target="_blank"
+                          rel="noopener noreferrer"
                           aria-label="LinkedIn"
                           className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors motion-reduce:duration-[0.01ms]"
                         >
                           <OptimizedIcon icon={LinkedinLogo} />
                         </a>
                         <a
-                          href="https://www.facebook.com/profile.php?id=61588758264018" target="_blank" rel="noopener noreferrer"
+                          href="https://www.facebook.com/profile.php?id=61588758264018"
+                          target="_blank"
+                          rel="noopener noreferrer"
                           aria-label="Facebook"
                           className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white transition-colors motion-reduce:duration-[0.01ms]"
                         >
                           <OptimizedIcon icon={FacebookLogo} />
                         </a>
                       </div>
-                    </motion.div>
-                  </motion.div>
+                    </m.div>
+                  </m.div>
                 </div>
               </div>
 

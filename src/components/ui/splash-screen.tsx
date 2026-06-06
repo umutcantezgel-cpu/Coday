@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 
 /**
  * A one-time SplashScreen shown on first visit per session.
@@ -61,7 +61,7 @@ export function SplashScreen() {
   return (
     <AnimatePresence onExitComplete={handleExitComplete}>
       {showSplash && (
-        <motion.div
+        <m.div
           id="splash-screen"
           role="status"
           aria-live="polite"
@@ -71,7 +71,7 @@ export function SplashScreen() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5, ease: 'easeInOut' }}
         >
-          <motion.div
+          <m.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
@@ -80,8 +80,8 @@ export function SplashScreen() {
             <div className="text-4xl font-bold tracking-tighter text-white">
               Coday<span className="text-primary">.</span>
             </div>
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
       )}
     </AnimatePresence>
   );

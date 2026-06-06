@@ -1,7 +1,7 @@
 'use client';
 
 import React, { ReactNode, RefObject, useState, useEffect } from 'react';
-import { motion, Variants, useReducedMotion } from 'motion/react';
+import { m, Variants, useReducedMotion } from 'motion/react';
 
 interface ScrollFloatProps {
   children: ReactNode;
@@ -50,9 +50,9 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
   };
 
   const splitText = (typeof children === 'string' ? children : '').split('').map((char, index) => (
-    <motion.span className="inline-block word transform-gpu" key={index} variants={itemVariants}>
+    <m.span className="inline-block word transform-gpu" key={index} variants={itemVariants}>
       {char === ' ' ? '\u00A0' : char}
-    </motion.span>
+    </m.span>
   ));
 
   const containerVariants: Variants = {
@@ -66,7 +66,7 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
   };
 
   return (
-    <motion.h2
+    <m.h2
       key={isMounted ? 'mounted' : 'ssr'}
       className={`my-5 overflow-hidden ${containerClassName}`}
       initial={isMounted && !prefersReducedMotion ? 'hidden' : false}
@@ -78,7 +78,7 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
       <span className={`inline-block text-[clamp(1.6rem,4vw,3rem)] leading-[1.5] ${textClassName}`}>
         {prefersReducedMotion ? children : splitText}
       </span>
-    </motion.h2>
+    </m.h2>
   );
 };
 

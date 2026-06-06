@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import { useRtl } from '@/shared/hooks/useRtl';
 
 interface Element {
@@ -124,7 +124,7 @@ const RankingPeriodicTable: React.FC = () => {
           </h3>
           <div className="flex flex-wrap gap-2" role="group" aria-label="SEO ranking factors">
             {elements.map((el, idx) => (
-              <motion.div
+              <m.div
                 key={idx}
                 whileHover={{ scale: 1.1, zIndex: 10 }}
                 whileFocus={{ scale: 1.1, zIndex: 10 }}
@@ -153,7 +153,7 @@ const RankingPeriodicTable: React.FC = () => {
                 <div className="text-[8px] sm:text-[10px] text-gray-400 truncate w-full text-center px-1">
                   {el.name}
                 </div>
-              </motion.div>
+              </m.div>
             ))}
           </div>
 
@@ -177,7 +177,7 @@ const RankingPeriodicTable: React.FC = () => {
         <div className="relative">
           <AnimatePresence mode="wait">
             {activeElement ? (
-              <motion.div
+              <m.div
                 key={activeElement.symbol}
                 initial={{ opacity: 0, x: isRtl ? -20 : 20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -212,7 +212,7 @@ const RankingPeriodicTable: React.FC = () => {
                 <p className="text-gray-300 text-lg leading-relaxed border-t border-white/10 pt-4">
                   {activeElement.desc}
                 </p>
-              </motion.div>
+              </m.div>
             ) : (
               <div className="h-full flex items-center justify-center text-gray-500 text-center italic">
                 Hover over an element <br /> to see details.

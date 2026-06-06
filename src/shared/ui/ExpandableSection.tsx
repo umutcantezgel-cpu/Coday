@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useId } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import { CaretDown, Sparkle } from '@phosphor-icons/react/dist/ssr';
 
 interface ExpandableSectionProps {
@@ -35,17 +35,23 @@ const ExpandableSection: React.FC<ExpandableSectionProps> = ({
         className="w-full flex items-center justify-between p-5 text-left hover:bg-gray-50/50 transition-colors motion-reduce:duration-[0.01ms]"
       >
         <div className="flex items-center gap-3">
-          {variant === 'highlight' && <Sparkle className="text-primary" size={18} aria-hidden="true" />}
+          {variant === 'highlight' && (
+            <Sparkle className="text-primary" size={18} aria-hidden="true" />
+          )}
           <span className="font-bold text-secondary">{title}</span>
         </div>
-        <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.2 }} aria-hidden="true">
+        <m.div
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ duration: 0.2 }}
+          aria-hidden="true"
+        >
           <CaretDown className="text-slate-400" size={20} />
-        </motion.div>
+        </m.div>
       </button>
 
       <AnimatePresence initial={false}>
         {isOpen && (
-          <motion.div
+          <m.div
             id={panelId}
             role="region"
             aria-labelledby={undefined}
@@ -57,7 +63,7 @@ const ExpandableSection: React.FC<ExpandableSectionProps> = ({
             <div className="px-5 pb-5 pt-0 text-slate-600 leading-relaxed border-t border-gray-100/50">
               {children}
             </div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </div>

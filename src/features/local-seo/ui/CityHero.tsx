@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import GradientText from '@/shared/ui/GradientText';
 import Typography from '@/shared/ui/Typography';
 import { CityData } from '@/features/local-seo/model/cities';
@@ -14,7 +14,7 @@ export const CityHero: React.FC<{ city: CityData }> = ({ city }) => {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[500px] bg-primary-900/30 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="container relative z-10 mx-auto px-4 text-center flex flex-col items-center">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -40,7 +40,7 @@ export const CityHero: React.FC<{ city: CityData }> = ({ city }) => {
             High-Performance Webdesign, zielgerichtetem Handwerks-Fokus und messbaren ROI-Strategien
             für B2B- & Branchenriesen.
           </Typography>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

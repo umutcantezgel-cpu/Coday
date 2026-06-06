@@ -5,7 +5,8 @@ import { Resend } from 'resend';
 import { z } from 'zod';
 import { calculateLeadScore, leadFormSchema } from '../schema/lead';
 
-const resend = new Resend(process.env.RESEND_API_KEY || 're_123');
+const resendKey = process.env.RESEND_API_KEY;
+const resend = resendKey ? new Resend(resendKey) : null;
 
 export async function submitLeadAction(prevState: unknown, formData: FormData) {
   const supabase = createAdminClient();
@@ -13,16 +14,13 @@ export async function submitLeadAction(prevState: unknown, formData: FormData) {
     // 1. Verify Turnstile
     const token = formData.get('cf-turnstile-response');
     if (process.env.NODE_ENV === 'production') {
-      const verifyRes = await fetch(
-        'https://challenges.cloudflare.com/turnstile/v0/siteverify',
-        {
-          method: 'POST',
-          body: `secret=${process.env.TURNSTILE_SECRET_KEY}&response=${token}`,
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-          },
-        }
-      );
+      const verifyRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+        method: 'POST',
+        body: `secret=${process.env.TURNSTILE_SECRET_KEY}&response=${token}`,
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+      });
       const verifyJson = await verifyRes.json();
       if (!verifyJson.success) {
         return { success: false, error: 'Anti-bot verification failed.' };
@@ -62,12 +60,11 @@ export async function submitLeadAction(prevState: unknown, formData: FormData) {
         email: parsedData.email,
         company: parsedData.company,
         phone: parsedData.phone,
-        project_type: parsedData.projectType,
+        project: parsedData.projectType,
         budget: parsedData.budget,
-        timeframe: parsedData.timeframe,
-        description: parsedData.description,
+        timeline: parsedData.timeframe,
+        message: parsedData.description,
         source: parsedData.source,
-        score: score,
       },
     ]);
 
@@ -77,7 +74,7 @@ export async function submitLeadAction(prevState: unknown, formData: FormData) {
     }
 
     // 5. Send Email via Resend
-    if (process.env.RESEND_API_KEY) {
+    if (resend) {
       await resend.emails.send({
         from: 'Coday Leads <leads@codayweb.de>',
         to: ['umut@codayweb.de'],

@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { AnimatePresence, motion } from 'motion/react';
+import { AnimatePresence, m } from 'motion/react';
 import { X, CheckCircle, WarningCircle, Info } from '@phosphor-icons/react';
 import { cn } from '@/lib/utils';
 import { useToast } from '@/hooks/use-toast';
@@ -26,7 +26,7 @@ export function Toaster() {
     >
       <AnimatePresence mode="popLayout">
         {toasts.map((t) => (
-          <motion.div
+          <m.div
             key={t.id}
             initial={{ opacity: 0, transform: 'translateY(100%) scale(0.95)' }}
             animate={{ opacity: 1, transform: 'translateY(0%) scale(1)' }}
@@ -60,7 +60,7 @@ export function Toaster() {
                 <X className="h-4 w-4" />
               </button>
             </div>
-          </motion.div>
+          </m.div>
         ))}
       </AnimatePresence>
     </div>

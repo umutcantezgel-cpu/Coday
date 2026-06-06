@@ -2,7 +2,7 @@
 import React, { useRef, useCallback } from 'react';
 import { Icon } from '@/shared/ui/Icon';
 import Link from 'next/link';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import { createPortal } from 'react-dom';
 
 interface BookingUpsellModalProps {
@@ -15,31 +15,34 @@ export const BookingUpsellModal: React.FC<BookingUpsellModalProps> = ({ isOpen, 
   const previousFocusRef = useRef<HTMLElement | null>(null);
 
   // Keyboard handling: Escape to close + focus trap
-  const handleKeyDown = useCallback((e: KeyboardEvent) => {
-    if (e.key === 'Escape' && isOpen) {
-      onClose();
-      return;
-    }
-    if (e.key === 'Tab' && isOpen && modalRef.current) {
-      const focusable = modalRef.current.querySelectorAll<HTMLElement>(
-        'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
-      );
-      if (focusable.length === 0) return;
-      const first = focusable[0];
-      const last = focusable[focusable.length - 1];
-      if (e.shiftKey) {
-        if (document.activeElement === first) {
-          e.preventDefault();
-          last.focus();
-        }
-      } else {
-        if (document.activeElement === last) {
-          e.preventDefault();
-          first.focus();
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        onClose();
+        return;
+      }
+      if (e.key === 'Tab' && isOpen && modalRef.current) {
+        const focusable = modalRef.current.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        );
+        if (focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey) {
+          if (document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          }
+        } else {
+          if (document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
         }
       }
-    }
-  }, [isOpen, onClose]);
+    },
+    [isOpen, onClose]
+  );
 
   React.useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
@@ -76,8 +79,8 @@ export const BookingUpsellModal: React.FC<BookingUpsellModalProps> = ({ isOpen, 
   return createPortal(
     <AnimatePresence>
       {isOpen && (
-        <motion.div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-          <motion.div
+        <m.div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+          <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -85,7 +88,7 @@ export const BookingUpsellModal: React.FC<BookingUpsellModalProps> = ({ isOpen, 
             className="absolute inset-0 bg-black/60 backdrop-blur-sm"
             onClick={onClose}
           />
-          <motion.div
+          <m.div
             ref={modalRef}
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -133,8 +136,8 @@ export const BookingUpsellModal: React.FC<BookingUpsellModalProps> = ({ isOpen, 
                 </button>
               </div>
             </div>
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
       )}
     </AnimatePresence>,
     document.body

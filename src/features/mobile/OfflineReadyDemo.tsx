@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import { WifiHigh, WifiSlash, Image, CloudSlash, Info } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 
@@ -25,7 +25,11 @@ const OfflineReadyDemo: React.FC = () => {
           aria-label={isOnline ? 'Internet ausschalten' : 'Internet einschalten'}
           className={`px-4 py-2 rounded-full border flex items-center gap-2 transition motion-reduce:duration-[0.01ms] ${isOnline ? 'bg-green-500/20 border-green-500 text-green-400' : 'bg-red-500/20 border-red-500 text-red-400'}`}
         >
-          <OptimizedIcon icon={isOnline ? WifiHigh : WifiSlash} className="text-lg" aria-hidden="true" />
+          <OptimizedIcon
+            icon={isOnline ? WifiHigh : WifiSlash}
+            className="text-lg"
+            aria-hidden="true"
+          />
           <span className="font-bold text-sm uppercase tracking-wider">
             {isOnline ? 'Internet On' : 'Offline Mode'}
           </span>
@@ -74,18 +78,18 @@ const OfflineReadyDemo: React.FC = () => {
           <div className="space-y-4">
             {/* Content Cards that persist */}
             {[1, 2].map((i) => (
-              <motion.div key={i} layout className="bg-white p-4 rounded-xl flex gap-4">
+              <m.div key={i} layout className="bg-white p-4 rounded-xl flex gap-4">
                 <div className="w-12 h-12 bg-gray-200 rounded-lg flex-shrink-0"></div>
                 <div>
                   <div className="h-4 w-32 bg-gray-800 rounded mb-2"></div>
                   <div className="h-3 w-48 bg-gray-400 rounded"></div>
                 </div>
-              </motion.div>
+              </m.div>
             ))}
 
             <AnimatePresence>
               {!isOnline && (
-                <motion.div
+                <m.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   className="bg-yellow-500/20 border border-yellow-500/50 p-3 rounded-lg flex items-center gap-3 text-yellow-200 text-xs"
@@ -93,7 +97,7 @@ const OfflineReadyDemo: React.FC = () => {
                   <OptimizedIcon icon={Info} className="text-sm" />
                   Sie sind offline, aber die App funktioniert weiter. Daten werden synchronisiert,
                   sobald Sie wieder online sind.
-                </motion.div>
+                </m.div>
               )}
             </AnimatePresence>
           </div>

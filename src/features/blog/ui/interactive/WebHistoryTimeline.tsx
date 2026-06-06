@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { Monitor, Cpu, Stack, Lightning } from '@phosphor-icons/react/dist/ssr';
 import { useTranslations } from 'next-intl';
 import { useMemo } from 'react';
@@ -98,7 +98,7 @@ export const WebHistoryTimeline: React.FC = () => {
         {eras.map(
           (era, index) =>
             index === selectedEra && (
-              <motion.div
+              <m.div
                 key={era.year}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -141,7 +141,7 @@ export const WebHistoryTimeline: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </m.div>
             )
         )}
       </div>

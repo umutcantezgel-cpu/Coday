@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslations, useLocale } from 'next-intl';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { Copy, Eye } from '@phosphor-icons/react/dist/ssr';
 import { Project } from '@/shared/data/work';
 
@@ -29,7 +29,7 @@ export const TemplateVault: React.FC<TemplateVaultProps> = ({ projects }) => {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border-subtle rounded-xl overflow-hidden border border-border-subtle">
           {projects.map((project, index) => (
-            <motion.div
+            <m.div
               key={project.slug}
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -82,7 +82,7 @@ export const TemplateVault: React.FC<TemplateVaultProps> = ({ projects }) => {
                   Clone Template
                 </button>
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

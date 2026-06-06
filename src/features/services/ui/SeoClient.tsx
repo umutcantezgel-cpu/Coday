@@ -1,6 +1,5 @@
 'use client';
-import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
-import dynamic from 'next/dynamic';
+import React from 'react';
 import { useTranslations } from 'next-intl';
 import BlurText from '@/shared/ui/BlurText';
 import GradientText from '@/shared/ui/GradientText';
@@ -183,7 +182,9 @@ export function SeoClient() {
               <h2 className="font-display font-bold text-3xl sm:text-4xl text-content-base mb-6 text-balance">
                 {t('seo_page.dominance.title')}
               </h2>
-              <p className="text-lg text-content-muted mb-6">{t('seo_page.dominance.description')}</p>
+              <p className="text-lg text-content-muted mb-6">
+                {t('seo_page.dominance.description')}
+              </p>
               <ul className="space-y-3">
                 {(Array.isArray(t.raw('seo_page.dominance.items'))
                   ? (t.raw('seo_page.dominance.items') as string[])
@@ -254,7 +255,10 @@ export function SeoClient() {
 
           <div className="relative">
             {/* Connecting Line */}
-            <div aria-hidden="true" className="absolute top-1/2 left-0 w-full h-1 bg-surface-elevated/10 -translate-y-1/2 hidden lg:block"></div>
+            <div
+              aria-hidden="true"
+              className="absolute top-1/2 left-0 w-full h-1 bg-surface-elevated/10 -translate-y-1/2 hidden lg:block"
+            ></div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
@@ -283,11 +287,16 @@ export function SeoClient() {
                   key={idx}
                   className="relative bg-surface-elevated/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:bg-surface-elevated/10 transition-colors motion-reduce:duration-[0.01ms] group"
                 >
-                  <div aria-hidden="true" className="absolute -top-6 start-8 bg-primary text-content-base font-bold text-xl w-12 h-12 rounded-xl flex items-center justify-center shadow-lg border-4 border-secondary group-hover:scale-[0.97] ease-spring transition-transform motion-reduce:duration-[0.01ms]">
+                  <div
+                    aria-hidden="true"
+                    className="absolute -top-6 start-8 bg-primary text-content-base font-bold text-xl w-12 h-12 rounded-xl flex items-center justify-center shadow-lg border-4 border-secondary group-hover:scale-[0.97] ease-spring transition-transform motion-reduce:duration-[0.01ms]"
+                  >
                     {phase.step}
                   </div>
                   <h3 className="font-bold text-xl mt-4 mb-3">{phase.title}</h3>
-                  <p className="text-sm text-gray-400 leading-relaxed max-w-prose text-pretty">{phase.desc}</p>
+                  <p className="text-sm text-gray-400 leading-relaxed max-w-prose text-pretty">
+                    {phase.desc}
+                  </p>
                 </div>
               ))}
             </div>

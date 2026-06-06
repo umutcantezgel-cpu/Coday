@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect, useId, ReactNode } from 'react';
-import { AnimatePresence, motion } from 'motion/react';
+import { AnimatePresence, m } from 'motion/react';
 import { cn } from '@/lib/utils';
 import { useFocusTrap } from '@/hooks/use-focus-trap';
 
@@ -109,7 +109,7 @@ export function Popover({
 
       <AnimatePresence>
         {isOpen && (
-          <motion.div
+          <m.div
             key="popover-content"
             // @ts-expect-error - Framer Motion generic ref types can be tricky
             ref={trapRef}
@@ -136,7 +136,7 @@ export function Popover({
             aria-label={ariaLabel}
           >
             {content}
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </div>

@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, Suspense, lazy } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import { useTranslations } from 'next-intl';
 import BookingCalendar from '@/features/booking/ui/BookingCalendar';
 const ApplicationWizard = lazy(() => import('@/features/contact/ApplicationWizard'));
@@ -17,7 +17,7 @@ export const MobileContactLayout: React.FC = () => {
       <div className="px-4 py-6 pb-32">
         <AnimatePresence mode="wait">
           {activeTab === 'booking' ? (
-            <motion.div
+            <m.div
               key="booking"
               id="tabpanel-booking"
               role="tabpanel"
@@ -36,9 +36,9 @@ export const MobileContactLayout: React.FC = () => {
               <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
                 <BookingCalendar />
               </div>
-            </motion.div>
+            </m.div>
           ) : (
-            <motion.div
+            <m.div
               key="contact"
               id="tabpanel-contact"
               role="tabpanel"
@@ -57,7 +57,7 @@ export const MobileContactLayout: React.FC = () => {
               <Suspense fallback={<Skeleton className="h-[400px] w-full rounded-2xl" />}>
                 <ApplicationWizard />
               </Suspense>
-            </motion.div>
+            </m.div>
           )}
         </AnimatePresence>
       </div>
@@ -89,7 +89,11 @@ export const MobileContactLayout: React.FC = () => {
 
       {/* Bottom Fixed Tabs */}
       <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-t border-gray-200 shadow-[0_-5px_20px_-5px_rgba(0,0,0,0.1)] pb-safe safe-area-bottom">
-        <div role="tablist" aria-label={t('mobile.tabs.booking')} className="grid grid-cols-2 p-2 gap-2">
+        <div
+          role="tablist"
+          aria-label={t('mobile.tabs.booking')}
+          className="grid grid-cols-2 p-2 gap-2"
+        >
           <button
             id="tab-booking"
             role="tab"
@@ -102,7 +106,7 @@ export const MobileContactLayout: React.FC = () => {
             `}
           >
             {activeTab === 'booking' && (
-              <motion.div
+              <m.div
                 layoutId="activeTabBg"
                 className="absolute inset-0 bg-primary/10 rounded-xl"
                 initial={false}
@@ -128,7 +132,7 @@ export const MobileContactLayout: React.FC = () => {
             `}
           >
             {activeTab === 'contact' && (
-              <motion.div
+              <m.div
                 layoutId="activeTabBg"
                 className="absolute inset-0 bg-purple-50 rounded-xl"
                 initial={false}

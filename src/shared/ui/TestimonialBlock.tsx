@@ -48,14 +48,11 @@ export const TestimonialBlock: React.FC<TestimonialBlockProps> = ({
       name: authorName,
     },
     reviewBody: quote,
-    ...(authorCompany
-      ? {
-          itemReviewed: {
-            '@type': 'Organization',
-            name: authorCompany,
-          },
-        }
-      : {}),
+    itemReviewed: {
+      '@type': 'Organization',
+      '@id': 'https://www.codayweb.de/#organization',
+      name: 'Coday',
+    },
   };
 
   return (

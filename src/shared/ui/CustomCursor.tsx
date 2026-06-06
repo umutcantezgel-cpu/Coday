@@ -1,6 +1,6 @@
-"use client";
+'use client';
 import React, { useEffect, useState, useSyncExternalStore } from 'react';
-import { motion, useMotionValue, useSpring } from 'motion/react';
+import { m, useMotionValue, useSpring } from 'motion/react';
 
 const subscribeToMediaQueries = (callback: () => void) => {
   const pointerQuery = window.matchMedia('(pointer: fine)');
@@ -35,7 +35,11 @@ export const CustomCursor: React.FC = () => {
 
   const [isHovering, setIsHovering] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const isDesktop = useSyncExternalStore(subscribeToMediaQueries, getMediaQuerySnapshot, getServerSnapshot);
+  const isDesktop = useSyncExternalStore(
+    subscribeToMediaQueries,
+    getMediaQuerySnapshot,
+    getServerSnapshot
+  );
 
   useEffect(() => {
     if (!isDesktop) return;
@@ -97,7 +101,7 @@ export const CustomCursor: React.FC = () => {
   return (
     <>
       {/* Small Dot */}
-      <motion.div
+      <m.div
         className="fixed top-0 left-0 w-2 h-2 rounded-full pointer-events-none z-[9999]"
         style={{
           x: mouseX,
@@ -114,7 +118,7 @@ export const CustomCursor: React.FC = () => {
         transition={{ type: 'tween', ease: 'backOut', duration: 0.15 }}
       />
       {/* Outer Circle */}
-      <motion.div
+      <m.div
         className="fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-[9998] flex items-center justify-center"
         style={{
           x: cursorXSpring,

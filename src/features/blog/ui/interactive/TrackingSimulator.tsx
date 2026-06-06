@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import {
   Cookie,
   HardDrives,
@@ -19,7 +19,10 @@ export const TrackingSimulator: React.FC = () => {
   };
 
   return (
-    <section className="my-16 relative overflow-hidden rounded-[2.5rem] border border-gray-200 bg-white shadow-xl" aria-label="Tracking Simulator">
+    <section
+      className="my-16 relative overflow-hidden rounded-[2.5rem] border border-gray-200 bg-white shadow-xl"
+      aria-label="Tracking Simulator"
+    >
       <div className="p-8 md:p-12">
         <div className="flex items-center gap-4 mb-8">
           <div className="p-3 rounded-full bg-indigo-50 text-indigo-600">
@@ -96,7 +99,10 @@ export const TrackingSimulator: React.FC = () => {
             </p>
           </button>
 
-          <div className="p-6 rounded-2xl border border-gray-200 bg-gray-50 flex flex-col justify-center text-center" aria-live="polite">
+          <div
+            className="p-6 rounded-2xl border border-gray-200 bg-gray-50 flex flex-col justify-center text-center"
+            aria-live="polite"
+          >
             <span className="text-xs font-bold uppercase text-gray-400 mb-2">Data Loss</span>
             <span
               className={clsx(
@@ -130,7 +136,7 @@ export const TrackingSimulator: React.FC = () => {
           {/* Path */}
           <div className="flex-1 relative h-0.5 bg-gray-700 mx-4 @container">
             {/* Data Packet */}
-            <motion.div
+            <m.div
               key={mode} // Reset animation on mode change
               className={clsx(
                 'absolute left-0 top-1/2 -mt-3 w-6 h-6 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.5)] z-20',
@@ -145,12 +151,12 @@ export const TrackingSimulator: React.FC = () => {
               transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
             >
               <ArrowRight size={14} weight="bold" />
-            </motion.div>
+            </m.div>
 
             {/* Blocker (Only visible in Client Mode) */}
             <AnimatePresence>
               {mode === 'client' && (
-                <motion.div
+                <m.div
                   initial={{ scale: 0, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   exit={{ scale: 0, opacity: 0 }}
@@ -160,7 +166,7 @@ export const TrackingSimulator: React.FC = () => {
                   <span className="absolute -bottom-6 w-32 text-center -ml-10 text-[10px] text-red-400 font-mono uppercase">
                     AdBlocker Active
                   </span>
-                </motion.div>
+                </m.div>
               )}
             </AnimatePresence>
           </div>

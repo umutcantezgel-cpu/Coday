@@ -1,6 +1,6 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { TrendUp, Calculator } from '@phosphor-icons/react/dist/ssr';
 
 export const ROIEstimator: React.FC = () => {
@@ -12,7 +12,10 @@ export const ROIEstimator: React.FC = () => {
   const extraRevenue = projectedRevenue - revenue;
 
   return (
-    <section className="my-16 relative overflow-hidden rounded-[2.5rem] border border-gray-200 bg-white shadow-xl" aria-label="CRO ROI Estimator">
+    <section
+      className="my-16 relative overflow-hidden rounded-[2.5rem] border border-gray-200 bg-white shadow-xl"
+      aria-label="CRO ROI Estimator"
+    >
       <div className="p-8 md:p-12">
         <div className="flex items-center gap-4 mb-8">
           <div className="p-3 rounded-full bg-emerald-50 text-emerald-600">
@@ -28,7 +31,9 @@ export const ROIEstimator: React.FC = () => {
           <div className="space-y-8">
             <div>
               <div className="flex justify-between mb-2">
-                <label htmlFor="roi-revenue" className="text-sm font-bold text-gray-700">Annual Revenue ($)</label>
+                <label htmlFor="roi-revenue" className="text-sm font-bold text-gray-700">
+                  Annual Revenue ($)
+                </label>
                 <span className="text-sm font-mono text-gray-500">{revenue.toLocaleString()}</span>
               </div>
               <input
@@ -66,7 +71,9 @@ export const ROIEstimator: React.FC = () => {
 
             <div>
               <div className="flex justify-between mb-2">
-                <label htmlFor="roi-lift" className="text-sm font-bold text-gray-700">Projected Lift (+%)</label>
+                <label htmlFor="roi-lift" className="text-sm font-bold text-gray-700">
+                  Projected Lift (+%)
+                </label>
                 <span className="text-sm font-mono text-emerald-600 font-bold">
                   +{lift.toFixed(1)}%
                 </span>
@@ -94,14 +101,14 @@ export const ROIEstimator: React.FC = () => {
               <span className="text-emerald-300 font-bold uppercase text-xs tracking-widest">
                 Extra Annual Revenue
               </span>
-              <motion.div
+              <m.div
                 key={extraRevenue}
                 initial={{ scale: 0.9, opacity: 0.8 }}
                 animate={{ scale: 1, opacity: 1 }}
                 className="text-4xl md:text-5xl font-mono font-bold my-4"
               >
                 +${extraRevenue.toLocaleString(undefined, { maximumFractionDigits: 0 })}
-              </motion.div>
+              </m.div>
 
               <div className="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm">
                 <TrendUp size={16} className="text-emerald-400" />

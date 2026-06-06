@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { Lightning, Globe, Cpu } from '@phosphor-icons/react/dist/ssr';
 
 export const Speedometer: React.FC = () => {
@@ -17,7 +17,11 @@ export const Speedometer: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative w-full max-w-4xl mx-auto" role="region" aria-label="Lighthouse Performance Score">
+    <div
+      className="relative w-full max-w-4xl mx-auto"
+      role="region"
+      aria-label="Lighthouse Performance Score"
+    >
       {/* Main Gauge */}
       <div className="flex flex-col items-center justify-center mb-16 relative" aria-hidden="true">
         <div className="w-64 h-32 overflow-hidden relative">
@@ -25,7 +29,7 @@ export const Speedometer: React.FC = () => {
           <div className="w-64 h-64 rounded-full border-[20px] border-white/5 border-b-0 absolute top-0 left-0" />
 
           {/* Gauge Progress */}
-          <motion.div
+          <m.div
             initial={{ rotate: -180 }}
             whileInView={{ rotate: 0 }}
             viewport={{ once: true }}
@@ -37,7 +41,7 @@ export const Speedometer: React.FC = () => {
 
         {/* Needle / Score */}
         <div className="absolute top-20 text-center">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
             className="text-6xl font-black text-white font-display tracking-tighter"
@@ -45,7 +49,7 @@ export const Speedometer: React.FC = () => {
             aria-atomic="true"
           >
             {score}
-          </motion.div>
+          </m.div>
           <span className="text-primary font-bold tracking-widest text-xs uppercase">
             Lighthouse Score
           </span>
@@ -64,7 +68,7 @@ export const Speedometer: React.FC = () => {
           { label: 'Global Request Latency', val: '45ms', icon: Globe, color: 'text-blue-400' },
           { label: 'Time to Interactive', val: '0s', icon: Cpu, color: 'text-cyan-400' },
         ].map((stat, i) => (
-          <motion.div
+          <m.div
             key={i}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -78,7 +82,7 @@ export const Speedometer: React.FC = () => {
               <div className="text-2xl font-bold text-white mb-1">{stat.val}</div>
               <div className="text-xs text-slate-400 uppercase tracking-wider">{stat.label}</div>
             </div>
-          </motion.div>
+          </m.div>
         ))}
       </div>
 

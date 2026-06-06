@@ -1,6 +1,6 @@
-"use client";
+'use client';
 import React, { useEffect, useRef } from 'react';
-import { motion, useInView, useSpring, useTransform, useReducedMotion } from 'motion/react';
+import { m, useInView, useSpring, useTransform, useReducedMotion } from 'motion/react';
 
 interface AnimatedCounterProps {
   value: string | number;
@@ -78,7 +78,7 @@ export const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
       <div className="flex items-baseline gap-1">
         {finalPrefix && <span className={valueClassName}>{finalPrefix}</span>}
         {isAnimatable ? (
-          <motion.span className={valueClassName}>{displayValue}</motion.span>
+          <m.span className={valueClassName}>{displayValue}</m.span>
         ) : (
           <span className={valueClassName}>{value}</span>
         )}

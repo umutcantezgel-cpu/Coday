@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { CaretDown } from '@phosphor-icons/react/dist/ssr';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { getFAQs } from '@/features/faq/model';
 
 interface Props {
@@ -58,7 +58,7 @@ export const RelevantFAQs: React.FC<Props> = ({ serviceId, title, className = ''
         </h2>
         <div className="space-y-4">
           {relevant.map((faq) => (
-            <motion.div
+            <m.div
               key={faq.id}
               className={`bg-white  rounded-2xl border transition-colors motion-reduce:duration-[0.01ms] overflow-hidden ${
                 openItem === faq.id
@@ -82,7 +82,11 @@ export const RelevantFAQs: React.FC<Props> = ({ serviceId, title, className = ''
                 />
               </button>
               {openItem === faq.id && (
-                <div id={`relevant-faq-answer-${faq.id}`} role="region" className="px-6 pb-6 text-slate-600  leading-relaxed prose prose-blue  max-w-none">
+                <div
+                  id={`relevant-faq-answer-${faq.id}`}
+                  role="region"
+                  className="px-6 pb-6 text-slate-600  leading-relaxed prose prose-blue  max-w-none"
+                >
                   <div
                     dangerouslySetInnerHTML={{
                       __html: faq.answer
@@ -92,7 +96,7 @@ export const RelevantFAQs: React.FC<Props> = ({ serviceId, title, className = ''
                   />
                 </div>
               )}
-            </motion.div>
+            </m.div>
           ))}
         </div>
         <div className="mt-10 text-center">

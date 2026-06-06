@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useRef, useEffect } from 'react';
-import { motion, useMotionValue, useTransform } from 'motion/react';
+import { m, useMotionValue, useTransform } from 'motion/react';
 import { DotsSixVertical } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 
@@ -59,7 +59,7 @@ export const ComparisonSlider: React.FC<ComparisonSliderProps> = ({
         </div>
 
         {/* BEFORE Image (Foreground with Clip Path) */}
-        <motion.div style={{ clipPath }} className="absolute inset-0 w-full h-full z-20">
+        <m.div style={{ clipPath }} className="absolute inset-0 w-full h-full z-20">
           <OptimizedImage
             src={beforeImage}
             alt={beforeLabel}
@@ -70,10 +70,10 @@ export const ComparisonSlider: React.FC<ComparisonSliderProps> = ({
           <span className="absolute top-4 left-4 bg-black/50 text-white px-3 py-1 rounded-full text-xs font-bold backdrop-blur-sm z-30">
             {beforeLabel}
           </span>
-        </motion.div>
+        </m.div>
 
         {/* Handle */}
-        <motion.div
+        <m.div
           style={{ x }}
           drag="x"
           dragConstraints={{ left: 0, right: width }}
@@ -99,7 +99,7 @@ export const ComparisonSlider: React.FC<ComparisonSliderProps> = ({
           <div className="w-10 h-10 bg-white rounded-full shadow-xl flex items-center justify-center text-secondary group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms] group-active:scale-[0.97]">
             <DotsSixVertical size={20} />
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </div>
   );

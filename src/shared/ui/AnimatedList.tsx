@@ -9,7 +9,7 @@ import React, {
   UIEvent,
   Children,
 } from 'react';
-import { motion, useInView } from 'motion/react';
+import { m, useInView } from 'motion/react';
 
 interface AnimatedItemProps {
   children: ReactNode;
@@ -31,7 +31,7 @@ export const AnimatedItem: React.FC<AnimatedItemProps> = ({
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { amount: 0.5, once: false });
   return (
-    <motion.div
+    <m.div
       ref={ref}
       data-index={index}
       onMouseEnter={onMouseEnter}
@@ -42,7 +42,7 @@ export const AnimatedItem: React.FC<AnimatedItemProps> = ({
       className={`cursor-pointer ${className}`}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 };
 

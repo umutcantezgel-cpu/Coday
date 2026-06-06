@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { CalendarBlank, User, CheckCircle } from '@phosphor-icons/react/dist/ssr';
 
 export const ReservationDemo = () => {
@@ -17,7 +17,7 @@ export const ReservationDemo = () => {
 
       <div className="space-y-6">
         {/* Step 1: Date & Time */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0.5 }}
           animate={{ opacity: step >= 1 ? 1 : 0.5 }}
           className={`p-4 rounded-xl transition-colors motion-reduce:duration-[0.01ms] ${step === 1 ? 'bg-white shadow-sm' : 'bg-transparent'}`}
@@ -43,10 +43,10 @@ export const ReservationDemo = () => {
           ) : (
             <div className="font-medium text-lg">Heute, 19:30 Uhr</div>
           )}
-        </motion.div>
+        </m.div>
 
         {/* Step 2: Guests */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0.5 }}
           animate={{ opacity: step >= 2 ? 1 : 0.5 }}
           className={`p-4 rounded-xl transition-colors motion-reduce:duration-[0.01ms] ${step === 2 ? 'bg-white shadow-sm' : 'bg-transparent'}`}
@@ -72,7 +72,7 @@ export const ReservationDemo = () => {
           ) : (
             <div className="font-medium text-lg">2 Personen</div>
           )}
-        </motion.div>
+        </m.div>
 
         {/* Confirm Button */}
         <button

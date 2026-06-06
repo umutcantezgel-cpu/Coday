@@ -1,6 +1,6 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { Calculator } from '@phosphor-icons/react/dist/ssr';
 import { useLocale } from 'next-intl';
 import { formatCurrency, formatNumber } from '@/shared/utils/formatters';
@@ -82,14 +82,14 @@ export const ROICalculator: React.FC = () => {
 
         <div className="text-center">
           <div className="text-white/50 text-sm mb-1">Ihr verbranntes Geld pro Monat</div>
-          <motion.div
+          <m.div
             key={extraRevenue}
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-500"
           >
             -{formatCurrency(extraRevenue, 'EUR', locale)}
-          </motion.div>
+          </m.div>
         </div>
       </div>
 

@@ -2,7 +2,7 @@
 
 import React, { useState, useCallback } from 'react';
 import { useTranslations } from 'next-intl';
-import { AnimatePresence, motion } from 'motion/react';
+import { AnimatePresence, m } from 'motion/react';
 import { FunnelSimple } from '@phosphor-icons/react';
 
 import { workData } from '@/shared/data/work';
@@ -51,7 +51,7 @@ const Work: React.FC = () => {
       {/* 3. Featured Case Studies */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -84,9 +84,13 @@ const Work: React.FC = () => {
                 </button>
               ))}
             </div>
-          </motion.div>
+          </m.div>
 
-          <motion.div layout className="grid grid-cols-1 md:grid-cols-5 gap-px bg-border-subtle overflow-hidden rounded-xl border border-border-subtle" aria-live="polite">
+          <m.div
+            layout
+            className="grid grid-cols-1 md:grid-cols-5 gap-px bg-border-subtle overflow-hidden rounded-xl border border-border-subtle"
+            aria-live="polite"
+          >
             <AnimatePresence mode="popLayout">
               {filteredCaseStudies.map((project, index) => {
                 // Asymmetric Phi-pattern (approx 60/40)
@@ -94,7 +98,7 @@ const Work: React.FC = () => {
                 const widthClass = isLarge ? 'md:col-span-3' : 'md:col-span-2';
 
                 return (
-                  <motion.div
+                  <m.div
                     layout
                     initial={{ opacity: 0, scale: 0.9, y: 20 }}
                     animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -104,11 +108,11 @@ const Work: React.FC = () => {
                     className={`h-full w-full bg-surface-elevated ${widthClass}`}
                   >
                     <CaseStudyCard project={project} index={index} />
-                  </motion.div>
+                  </m.div>
                 );
               })}
             </AnimatePresence>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 

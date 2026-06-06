@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { ChartLineUp, CurrencyEur } from '@phosphor-icons/react';
 
 interface GamifiedRoiCalculatorProps {
@@ -95,7 +95,7 @@ export const GamifiedRoiCalculator: React.FC<GamifiedRoiCalculatorProps> = ({
           </div>
         </div>
 
-        <motion.div
+        <m.div
           className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 text-center"
           initial={{ scale: 0.95, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
@@ -117,7 +117,7 @@ export const GamifiedRoiCalculator: React.FC<GamifiedRoiCalculatorProps> = ({
           <p className="text-secondary-400 text-sm mt-6">
             Basierend auf branchenweiten Durchschnittswerten für High-End Webseiten.
           </p>
-        </motion.div>
+        </m.div>
       </div>
     </div>
   );

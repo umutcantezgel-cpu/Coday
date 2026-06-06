@@ -1,6 +1,6 @@
-"use client";
+'use client';
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { Code, CaretDown, ArrowUpRight, ArrowRight, List, X } from '@phosphor-icons/react/dist/ssr';
 import { LanguageSwitcher } from '@/widgets/navigation/LanguageSwitcher';
@@ -146,7 +146,7 @@ const CardNav: React.FC<CardNavProps> = ({
               {/* Focused Dropdown */}
               <AnimatePresence>
                 {activeCategory === item.label && (
-                  <motion.div
+                  <m.div
                     className="nav-dropdown"
                     initial="hidden"
                     animate="visible"
@@ -173,7 +173,7 @@ const CardNav: React.FC<CardNavProps> = ({
                             >
                               {t(group.title)}
                               {activeTabs[item.label] === idx && (
-                                <motion.div
+                                <m.div
                                   layoutId={`active-indicator-${item.label}`}
                                   className="active-indicator"
                                 />
@@ -238,9 +238,9 @@ const CardNav: React.FC<CardNavProps> = ({
                           // No groups (fallback)
                           <div className="dropdown-links-grid">
                             {item.links?.map((link, i) => (
-                                <Link
-                                  key={i}
-                                  href={link.href}
+                              <Link
+                                key={i}
+                                href={link.href}
                                 className="dropdown-link-item"
                                 onClick={() => setActiveCategory(null)}
                               >
@@ -251,7 +251,7 @@ const CardNav: React.FC<CardNavProps> = ({
                         )}
                       </div>
                     </div>
-                  </motion.div>
+                  </m.div>
                 )}
               </AnimatePresence>
             </div>

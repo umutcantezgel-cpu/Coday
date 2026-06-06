@@ -16,7 +16,7 @@ import {
 } from '@phosphor-icons/react/dist/ssr';
 import { useTranslations } from 'next-intl';
 import { Link as NavLink } from '@/i18n/navigation';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 
 interface TocItem {
   id: string;
@@ -101,7 +101,7 @@ export const LegalLayoutV2: React.FC<LegalLayoutV2Props> = ({
 
       {/* Progress Bar */}
       <div className="fixed top-0 left-0 right-0 h-1 bg-gray-100 z-50">
-        <motion.div
+        <m.div
           className="h-full w-full bg-gradient-to-r from-primary to-primary/80 origin-left"
           animate={{ scaleX: readProgress / 100 }}
           transition={{ duration: 0.1 }}
@@ -112,7 +112,11 @@ export const LegalLayoutV2: React.FC<LegalLayoutV2Props> = ({
       <div className="bg-white/80 backdrop-blur-lg border-b border-gray-100 sticky top-0 z-40 pt-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14">
-            <nav role="navigation" aria-label="Rechtsnavigation" className="flex items-center gap-1">
+            <nav
+              role="navigation"
+              aria-label="Rechtsnavigation"
+              className="flex items-center gap-1"
+            >
               {legalPages.map((page) => (
                 <NavLink
                   key={page.key}
@@ -155,7 +159,7 @@ export const LegalLayoutV2: React.FC<LegalLayoutV2Props> = ({
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <header role="banner" className="mb-24 text-center">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -192,7 +196,7 @@ export const LegalLayoutV2: React.FC<LegalLayoutV2Props> = ({
                   </div>
                 )}
               </div>
-            </motion.div>
+            </m.div>
           </header>
 
           <div className="grid lg:grid-cols-[280px_1fr] gap-12 items-start">
@@ -266,7 +270,7 @@ export const LegalLayoutV2: React.FC<LegalLayoutV2Props> = ({
       {/* Back to Top Button */}
       <AnimatePresence>
         {showBackToTop && (
-          <motion.button
+          <m.button
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
@@ -275,7 +279,7 @@ export const LegalLayoutV2: React.FC<LegalLayoutV2Props> = ({
             aria-label="Zurück nach oben"
           >
             <OptimizedIcon icon={CaretLeft} className="w-5 h-5 rotate-90" />
-          </motion.button>
+          </m.button>
         )}
       </AnimatePresence>
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { EnvelopeSimple, LinkedinLogo, MapPin, Briefcase, Code } from '@phosphor-icons/react';
 
 /* ═══ ANIMATION PRESETS ═══ */
@@ -32,13 +32,13 @@ export const TeamSection: React.FC = () => {
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <motion.span
+          <m.span
             className="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4 block"
             {...fadeUp}
           >
             Der Gründer
-          </motion.span>
-          <motion.h2
+          </m.span>
+          <m.h2
             className="text-4xl md:text-5xl font-display font-bold mb-6 tracking-tight text-white"
             {...stagger(0.1)}
           >
@@ -46,15 +46,15 @@ export const TeamSection: React.FC = () => {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">
               Coday
             </span>
-          </motion.h2>
-          <motion.p className="text-lg text-gray-400 max-w-2xl mx-auto" {...stagger(0.2)}>
+          </m.h2>
+          <m.p className="text-lg text-gray-400 max-w-2xl mx-auto" {...stagger(0.2)}>
             Ein Entwickler. Ein Ansprechpartner. Keine Agentur-Bürokratie — nur direkter Draht zu
             dem Menschen, der Ihr Projekt von A bis Z umsetzt.
-          </motion.p>
+          </m.p>
         </div>
 
         {/* Founder Card */}
-        <motion.div
+        <m.div
           className="relative group bg-white/[0.03] border border-white/[0.06] rounded-2xl overflow-hidden hover:border-primary/40 transition motion-reduce:duration-[0.01ms] duration-500 max-w-2xl mx-auto"
           {...stagger(0.3)}
         >
@@ -116,7 +116,7 @@ export const TeamSection: React.FC = () => {
               </a>
             </div>
           </div>
-        </motion.div>
+        </m.div>
       </div>
 
       {/* Structured Data: Person */}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { CalendarBlank, User, ShieldCheck } from '@phosphor-icons/react/dist/ssr';
 import { useRtl } from '@/shared/hooks/useRtl';
 
@@ -13,7 +13,7 @@ export const AppointmentFlow = () => {
 
       <div className="space-y-8 relative">
         {/* Step 1 */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, x: isRtl ? 20 : -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           className="flex gap-6 items-start"
@@ -27,10 +27,10 @@ export const AppointmentFlow = () => {
               Automatisches Triage-System filtert Dringlichkeit.
             </p>
           </div>
-        </motion.div>
+        </m.div>
 
         {/* Step 2 */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, x: isRtl ? 20 : -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.2 }}
@@ -43,10 +43,10 @@ export const AppointmentFlow = () => {
             <h4 className="font-bold text-lg mb-1">Terminfindung</h4>
             <p className="text-gray-500 text-sm">Echtzeit-Abgleich mit Ihrem Praxis-Kalender.</p>
           </div>
-        </motion.div>
+        </m.div>
 
         {/* Step 3 */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, x: isRtl ? 20 : -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.4 }}
@@ -59,7 +59,7 @@ export const AppointmentFlow = () => {
             <h4 className="font-bold text-lg mb-1 text-primary">Bestätigt & DSGVO-Konform</h4>
             <p className="text-primary/70 text-sm">Patient erhält Erinnerungen per SMS/Mail.</p>
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </div>
   );

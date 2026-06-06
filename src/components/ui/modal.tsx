@@ -2,7 +2,7 @@
 
 import React, { useEffect, useId, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { AnimatePresence, motion } from 'motion/react';
+import { AnimatePresence, m } from 'motion/react';
 import { X } from '@phosphor-icons/react';
 import { cn } from '@/lib/utils';
 import { useScrollLock } from '@/hooks/use-scroll-lock';
@@ -22,7 +22,7 @@ interface ModalProps {
 const Portal = React.forwardRef<HTMLDivElement, { children: React.ReactNode }>(
   ({ children }, ref) => {
     return createPortal(
-      <div ref={ref} style={{ display: 'contents' }}>
+      <div ref={ref} className="contents">
         {children}
       </div>,
       document.body
@@ -68,13 +68,13 @@ export function Modal({
     <Portal>
       <AnimatePresence>
         {isOpen && (
-          <motion.div
+          <m.div
             key="modal-overlay"
             exit={{ opacity: 0, transition: { duration: 0.15, ease: 'easeOut' } }}
             className="fixed inset-0 z-modal flex items-center justify-center p-4 isolate"
           >
             {/* Backdrop */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0, transition: { duration: 0.15, ease: 'easeOut' } }}
@@ -85,7 +85,7 @@ export function Modal({
             />
 
             {/* Modal Content */}
-            <motion.div
+            <m.div
               // @ts-expect-error - Framer Motion generic ref types can be tricky
               ref={trapRef}
               initial={{ opacity: 0, transform: 'scale(0.95)' }}
@@ -106,10 +106,13 @@ export function Modal({
               role="dialog"
               aria-modal="true"
               aria-labelledby={title ? `modal-title-${modalId}` : undefined}
-              aria-label={!title ? (ariaLabel || 'Dialog') : undefined}
+              aria-label={!title ? ariaLabel || 'Dialog' : undefined}
             >
               {title && (
-                <h2 id={`modal-title-${modalId}`} className="mb-4 text-xl font-semibold text-gray-900">
+                <h2
+                  id={`modal-title-${modalId}`}
+                  className="mb-4 text-xl font-semibold text-gray-900"
+                >
                   {title}
                 </h2>
               )}
@@ -125,8 +128,8 @@ export function Modal({
               )}
 
               <div className="relative">{children}</div>
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
         )}
       </AnimatePresence>
     </Portal>

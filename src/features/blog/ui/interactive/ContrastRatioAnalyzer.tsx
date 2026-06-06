@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { Eyeglasses, CheckCircle, XCircle, Info, Shuffle } from '@phosphor-icons/react/dist/ssr';
 import { clsx } from 'clsx';
 
@@ -125,14 +125,14 @@ export const ContrastRatioAnalyzer: React.FC = () => {
 
           {/* Preview */}
           <div className="space-y-6">
-            <motion.div
+            <m.div
               className="p-10 rounded-3xl shadow-lg flex flex-col items-center justify-center text-center min-h-[200px]"
               style={{ backgroundColor: bgColor, color: textColor }}
               layout
             >
               <h4 className="text-2xl font-bold mb-2">Hello World</h4>
               <p className="opacity-80">This is how your text looks.</p>
-            </motion.div>
+            </m.div>
 
             <div className="flex items-center justify-between p-6 bg-gray-50 rounded-2xl border border-gray-100">
               <div>

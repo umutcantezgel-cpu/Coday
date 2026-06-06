@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import { useTranslations } from 'next-intl';
 import { Icon } from '@/shared/ui/Icon';
 
@@ -63,28 +63,28 @@ const PosSyncDemo: React.FC = () => {
           <div className="bg-white rounded-lg p-3 h-32 flex flex-col items-center justify-center shadow-inner relative">
             <div className="text-slate-900 font-bold mb-2">Sneaker X</div>
             <AnimatePresence mode="wait">
-              <motion.div
+              <m.div
                 key={stock}
                 initial={{ scale: 1.5, color: '#22c55e' }}
                 animate={{ scale: 1, color: '#0f172a' }}
                 className="text-3xl font-black"
               >
                 {stock}
-              </motion.div>
+              </m.div>
             </AnimatePresence>
             <div className="text-[10px] text-slate-500 uppercase">
               {t('ecommerce-retail.features.pos_sync.labels.stock')}
             </div>
 
             {justSold && (
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
                 className="absolute inset-x-0 bottom-0 bg-green-500 text-white text-[10px] font-bold text-center py-1"
               >
                 {t('ecommerce-retail.features.pos_sync.actions.sold')}
-              </motion.div>
+              </m.div>
             )}
           </div>
 
@@ -119,21 +119,21 @@ const PosSyncDemo: React.FC = () => {
                     {t('ecommerce-retail.features.pos_sync.labels.stock')}:
                   </div>
                   <AnimatePresence mode="wait">
-                    <motion.div
+                    <m.div
                       key={stock} // Syncs with left side
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       className="text-sm font-bold text-primary"
                     >
                       {stock}
-                    </motion.div>
+                    </m.div>
                   </AnimatePresence>
                 </div>
               </div>
             </div>
             {/* Sync Indicator */}
             {justSold && (
-              <motion.div
+              <m.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 className="absolute inset-0 bg-black/50 backdrop-blur-[1px] flex items-center justify-center rounded-lg"
@@ -145,7 +145,7 @@ const PosSyncDemo: React.FC = () => {
                   />
                   {t('ecommerce-retail.features.pos_sync.actions.update')}
                 </div>
-              </motion.div>
+              </m.div>
             )}
           </div>
 

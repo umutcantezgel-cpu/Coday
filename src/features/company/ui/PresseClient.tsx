@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { SeoHead } from '@/shared/ui/SeoHead';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { Breadcrumbs } from '@/shared/ui/Breadcrumbs';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { Download, MicrophoneStage, Article } from '@phosphor-icons/react';
@@ -25,22 +25,22 @@ const Presse: React.FC = () => {
         </div>
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
-          <motion.span
+          <m.span
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block"
           >
             Media & Insights
-          </motion.span>
-          <motion.h1
+          </m.span>
+          <m.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
             className="font-display font-black text-4xl sm:text-5xl md:text-6xl text-gray-900 mb-6"
           >
             Coday in den Medien
-          </motion.h1>
-          <motion.p
+          </m.h1>
+          <m.p
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -48,7 +48,7 @@ const Presse: React.FC = () => {
           >
             Erfahren Sie mehr über unsere Präsenz in der Presse und bei Events. Laden Sie unser
             Press Kit für Ihre Berichterstattung herunter.
-          </motion.p>
+          </m.p>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -65,7 +65,10 @@ const Presse: React.FC = () => {
                 Presseveröffentlichungen.
               </p>
               {/* Logo Grid placeholder */}
-              <div className="flex flex-wrap justify-center gap-8 opacity-30 grayscale" aria-hidden="true">
+              <div
+                className="flex flex-wrap justify-center gap-8 opacity-30 grayscale"
+                aria-hidden="true"
+              >
                 <div className="h-12 w-32 bg-gray-200 rounded animate-pulse motion-reduce:animate-none"></div>
                 <div className="h-12 w-32 bg-gray-200 rounded animate-pulse motion-reduce:animate-none"></div>
                 <div className="h-12 w-32 bg-gray-200 rounded animate-pulse motion-reduce:animate-none"></div>
@@ -98,7 +101,10 @@ const Presse: React.FC = () => {
           {/* Press Kit Download */}
           <section>
             <div className="bg-gray-900 rounded-3xl p-10 text-center relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 blur-[100px] rounded-full pointer-events-none" aria-hidden="true" />
+              <div
+                className="absolute top-0 right-0 w-64 h-64 bg-primary/20 blur-[100px] rounded-full pointer-events-none"
+                aria-hidden="true"
+              />
               <h2 className="text-3xl font-bold text-white mb-4 relative z-10">Press Kit</h2>
               <p className="text-gray-400 mb-8 max-w-xl mx-auto relative z-10">
                 Laden Sie unser offizielles Press Kit herunter. Es enthält hochauflösende Logos,

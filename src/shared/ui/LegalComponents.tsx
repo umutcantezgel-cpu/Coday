@@ -14,7 +14,7 @@ import {
   MapPin,
   ArrowSquareOut,
 } from '@phosphor-icons/react/dist/ssr';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 
 // ============================================
 // LEGAL INFO CARD
@@ -142,13 +142,13 @@ export const ExpandableClause: React.FC<ExpandableClauseProps> = ({
         className="w-full flex items-center justify-between px-5 py-4 bg-slate-50 hover:bg-slate-100 transition-colors motion-reduce:duration-[0.01ms] text-left"
       >
         <span className="font-medium text-gray-900">{title}</span>
-        <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.2 }}>
+        <m.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.2 }}>
           <OptimizedIcon icon={CaretDown} className="w-5 h-5 text-gray-500" />
-        </motion.div>
+        </m.div>
       </button>
       <AnimatePresence initial={false}>
         {isOpen && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
@@ -157,7 +157,7 @@ export const ExpandableClause: React.FC<ExpandableClauseProps> = ({
             <div className="px-5 py-4 text-gray-600 text-sm leading-relaxed border-t border-gray-100">
               {children}
             </div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </div>
@@ -264,7 +264,7 @@ export const GlossaryTooltip: React.FC<GlossaryTooltipProps> = ({ term, definiti
       </span>
       <AnimatePresence>
         {isVisible && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 5 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 5 }}
@@ -272,7 +272,7 @@ export const GlossaryTooltip: React.FC<GlossaryTooltipProps> = ({ term, definiti
           >
             <strong>{term}:</strong> {definition}
             <div className="absolute left-1/2 -translate-x-1/2 top-full w-2 h-2 bg-secondary rotate-45 -mt-1" />
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </span>
@@ -394,7 +394,9 @@ export const LegalSectionHeader: React.FC<LegalSectionHeaderProps> = ({
         </div>
       )}
       <div className="min-w-0">
-        <h2 className="font-display font-bold text-2xl text-secondary break-words hyphens-auto">{title}</h2>
+        <h2 className="font-display font-bold text-2xl text-secondary break-words hyphens-auto">
+          {title}
+        </h2>
         {subtitle && <p className="text-gray-500 mt-1 break-words">{subtitle}</p>}
       </div>
     </div>

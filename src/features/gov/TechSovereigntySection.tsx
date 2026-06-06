@@ -9,7 +9,7 @@ import {
   Cpu,
 } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 
 export const TechSovereigntySection: React.FC = () => {
   const t = useTranslations('public-sector');
@@ -66,7 +66,7 @@ export const TechSovereigntySection: React.FC = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {items.map((item, idx) => (
-            <motion.div
+            <m.div
               key={item.key}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -92,7 +92,7 @@ export const TechSovereigntySection: React.FC = () => {
               <p className="text-slate-400 text-sm leading-relaxed">
                 {t(`tech_stack.items.${item.key}.desc`)}
               </p>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

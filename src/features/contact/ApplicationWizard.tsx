@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -122,6 +122,8 @@ export const ApplicationWizard: React.FC = () => {
         email: data.email,
         phone: data.phone,
         message: dbMessage,
+        project: data.project || getPackageName() || undefined,
+        source: hasPackage ? 'calculator' : 'contact',
       });
 
       if (!result.success) throw new Error(result.error || 'Unknown error');
@@ -152,7 +154,7 @@ export const ApplicationWizard: React.FC = () => {
     const totalMonthly = getTotalMonthly();
 
     return (
-      <motion.div
+      <m.div
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         className="mb-6 p-5 bg-gradient-to-r from-primary/5 to-primary/10 rounded-2xl border border-primary/20"
@@ -194,7 +196,7 @@ export const ApplicationWizard: React.FC = () => {
             )}
           </div>
         </div>
-      </motion.div>
+      </m.div>
     );
   };
 
@@ -207,7 +209,7 @@ export const ApplicationWizard: React.FC = () => {
   if (success) {
     return (
       <AnimatePresence mode="wait">
-        <motion.div
+        <m.div
           key="success"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -257,21 +259,20 @@ export const ApplicationWizard: React.FC = () => {
                   <Icon key={i} name="star" className="w-4 h-4 fill-current" />
                 ))}
               </div>
-              <p className="text-sm text-gray-600 italic mb-3">
-                "Seit dem Relaunch durch Codayweb hat sich unsere Konversionsrate verdreifacht. Der
-                Discovery-Call war bereits ein enormer Mehrwert!"
-              </p>
-              <div className="text-xs font-bold text-gray-900">— Michael R., Geschäftsführer</div>
+              <p className="text-sm text-gray-600 italic mb-3">{t('wizard.success.trust_text')}</p>
+              <div className="text-xs font-bold text-gray-900">
+                {t('wizard.success.trust_source')}
+              </div>
             </div>
           </div>
-        </motion.div>
+        </m.div>
       </AnimatePresence>
     );
   }
 
   return (
     <AnimatePresence mode="wait">
-      <motion.div
+      <m.div
         key="form"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -334,7 +335,7 @@ export const ApplicationWizard: React.FC = () => {
                 </select>
                 <AnimatePresence>
                   {errors.project && (
-                    <motion.div
+                    <m.div
                       initial={{ opacity: 0, y: -4 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -4 }}
@@ -345,7 +346,7 @@ export const ApplicationWizard: React.FC = () => {
                     >
                       <Icon name="warning" className="w-4 h-4" />
                       <p>{errors.project.message}</p>
-                    </motion.div>
+                    </m.div>
                   )}
                 </AnimatePresence>
               </div>
@@ -372,7 +373,7 @@ export const ApplicationWizard: React.FC = () => {
                 />
                 <AnimatePresence>
                   {errors.name && (
-                    <motion.div
+                    <m.div
                       initial={{ opacity: 0, y: -4 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -4 }}
@@ -383,7 +384,7 @@ export const ApplicationWizard: React.FC = () => {
                     >
                       <Icon name="warning" className="w-4 h-4" />
                       <p>{errors.name.message}</p>
-                    </motion.div>
+                    </m.div>
                   )}
                 </AnimatePresence>
               </div>
@@ -409,7 +410,7 @@ export const ApplicationWizard: React.FC = () => {
                 />
                 <AnimatePresence>
                   {errors.email && (
-                    <motion.div
+                    <m.div
                       initial={{ opacity: 0, y: -4 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -4 }}
@@ -420,7 +421,7 @@ export const ApplicationWizard: React.FC = () => {
                     >
                       <Icon name="warning" className="w-4 h-4" />
                       <p>{errors.email.message}</p>
-                    </motion.div>
+                    </m.div>
                   )}
                 </AnimatePresence>
               </div>
@@ -468,7 +469,7 @@ export const ApplicationWizard: React.FC = () => {
               </label>
               <AnimatePresence>
                 {errors.privacy && (
-                  <motion.div
+                  <m.div
                     initial={{ opacity: 0, y: -4 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -4 }}
@@ -479,7 +480,7 @@ export const ApplicationWizard: React.FC = () => {
                   >
                     <Icon name="warning" className="w-4 h-4" />
                     <p>{errors.privacy.message}</p>
-                  </motion.div>
+                  </m.div>
                 )}
               </AnimatePresence>
             </div>
@@ -521,7 +522,7 @@ export const ApplicationWizard: React.FC = () => {
             </div>
           </form>
         </div>
-      </motion.div>
+      </m.div>
     </AnimatePresence>
   );
 };

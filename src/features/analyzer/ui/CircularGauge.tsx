@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 
 interface CircularGaugeProps {
   score: number;
@@ -43,7 +43,7 @@ export const CircularGauge: React.FC<CircularGaugeProps> = ({
           fill="transparent"
         />
         {/* Progress Circle */}
-        <motion.circle
+        <m.circle
           cx={center}
           cy={center}
           r={radius}
@@ -63,9 +63,9 @@ export const CircularGauge: React.FC<CircularGaugeProps> = ({
         className="absolute inset-0 flex items-center justify-center font-bold text-gray-700"
         style={{ fontSize: size * 0.3 }}
       >
-        <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }}>
+        <m.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }}>
           {Math.round(score)}
-        </motion.span>
+        </m.span>
       </div>
     </div>
   );

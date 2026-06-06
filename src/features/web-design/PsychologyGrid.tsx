@@ -1,6 +1,6 @@
 import React from 'react';
 import { Icon } from '@/shared/ui/Icon';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 
 const PsychologyGrid: React.FC = () => {
   const laws = [
@@ -37,7 +37,7 @@ const PsychologyGrid: React.FC = () => {
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
       {laws.map((law, index) => (
-        <motion.div
+        <m.div
           key={index}
           whileHover={{ y: -5 }}
           className="bg-surface-elevated p-6 rounded-2xl border border-border-muted shadow-sm hover:shadow-flat-lg transition motion-reduce:duration-[0.01ms] group cursor-default"
@@ -49,13 +49,15 @@ const PsychologyGrid: React.FC = () => {
             <Icon name={law.icon} />
           </div>
           <h4 className="font-bold text-lg text-content-base mb-2">{law.title}</h4>
-          <p className="text-content-muted text-sm mb-4 leading-relaxed max-w-prose text-pretty h-[60px]">{law.desc}</p>
+          <p className="text-content-muted text-sm mb-4 leading-relaxed max-w-prose text-pretty h-[60px]">
+            {law.desc}
+          </p>
 
           <div className="bg-surface-muted rounded-lg p-3 text-xs border border-border-muted">
             <span className="font-bold text-content-base block mb-1">Praxis-Beispiel:</span>
             <span className="text-slate-500">{law.example}</span>
           </div>
-        </motion.div>
+        </m.div>
       ))}
     </div>
   );

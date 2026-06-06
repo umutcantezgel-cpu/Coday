@@ -5,30 +5,58 @@ export const FOUNDER_ID = `${BASE_URL}/#founder`;
 export function getOrganizationSchema() {
   return {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
+    '@type': ['Organization', 'ProfessionalService'],
     '@id': ORG_ID,
     name: 'Coday',
-    alternateName: ['Web Fabrik Agentur', 'Coday Webentwicklung'],
+    legalName: 'Coday UG (haftungsbeschränkt)',
+    alternateName: ['Coday Webentwicklung', 'Coday Web Agency'],
     url: BASE_URL,
-    image: `${BASE_URL}/logo.png`,
-    description: 'High-End Webentwicklung & Generative Engine Optimization',
+    image: `${BASE_URL}/images/og-image.jpg`,
+    description:
+      'High-End Next.js Webentwicklung & Generative Engine Optimization (GEO) für B2B-Unternehmen in Wetzlar, Gießen und Hessen.',
+    slogan: 'Digitales Handwerk statt Template-Massenware.',
+    taxID: '039 874 00784',
     logo: {
       '@type': 'ImageObject',
-      url: `${BASE_URL}/logo.png`,
-      width: 600,
-      height: 60,
+      '@id': `${BASE_URL}/#logo`,
+      url: `${BASE_URL}/images/coday-logo.png`,
+      contentUrl: `${BASE_URL}/images/coday-logo.png`,
+      width: 512,
+      height: 512,
+      caption: 'Coday Logo',
     },
     founder: {
       '@type': 'Person',
       '@id': FOUNDER_ID,
       name: 'Umutcan Emre Tezgel',
-      jobTitle: 'Founder & Lead Engineer',
+      givenName: 'Umutcan Emre',
+      familyName: 'Tezgel',
+      jobTitle: 'Gründer & Full-Stack Developer',
+      worksFor: { '@id': ORG_ID },
       sameAs: [
         'https://www.linkedin.com/in/umutcan-emre-tezgel-156382218/',
         'https://github.com/umurey',
+        'https://www.openpr.de/news/coday',
       ],
     },
-    foundingDate: '2026-01-20',
+    foundingDate: '2024',
+    knowsAbout: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'Framer Motion',
+      'Headless CMS',
+      'Sanity',
+      'Supabase',
+      'Enterprise Webentwicklung',
+      'Search Engine Optimization',
+      'Core Web Vitals',
+      'Generative Engine Optimization',
+      'E-Commerce',
+      'Performance Optimization',
+    ],
+    knowsLanguage: ['de', 'en'],
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Lessingstraße 4',
@@ -37,6 +65,20 @@ export function getOrganizationSchema() {
       addressRegion: 'Hessen',
       addressCountry: 'DE',
     },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 50.564,
+      longitude: 8.502,
+    },
+    areaServed: [
+      { '@type': 'City', name: 'Wetzlar' },
+      { '@type': 'City', name: 'Gießen' },
+      { '@type': 'City', name: 'Marburg' },
+      { '@type': 'City', name: 'Frankfurt am Main' },
+      { '@type': 'AdministrativeArea', name: 'Lahn-Dill-Kreis' },
+      { '@type': 'AdministrativeArea', name: 'Hessen' },
+      { '@type': 'Country', name: 'Germany' },
+    ],
     contactPoint: [
       {
         '@type': 'ContactPoint',
@@ -49,13 +91,13 @@ export function getOrganizationSchema() {
     sameAs: [
       'https://www.linkedin.com/company/coday',
       'https://github.com/coday',
+      'https://www.instagram.com/codayweb',
     ],
   };
 }
 
 export function getProfessionalServiceSchema() {
   return {
-    '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
     '@id': `${BASE_URL}/#professional-service`,
     provider: {
@@ -101,7 +143,6 @@ export function getProfessionalServiceSchema() {
 
 export function getLocalBusinessSchema() {
   return {
-    '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     '@id': `${BASE_URL}/#local-business`,
     parentOrganization: {

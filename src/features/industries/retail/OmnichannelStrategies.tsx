@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { Storefront, Devices } from '@phosphor-icons/react/dist/ssr';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import { useTranslations } from 'next-intl';
 
 const OmnichannelStrategies: React.FC = () => {
@@ -63,7 +63,7 @@ const OmnichannelStrategies: React.FC = () => {
           {/* Animation Container */}
           <div className="flex-1 relative flex items-center justify-center">
             <AnimatePresence mode="wait">
-              <motion.div
+              <m.div
                 key={activeStrategy}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -71,11 +71,11 @@ const OmnichannelStrategies: React.FC = () => {
                 className="absolute bg-white px-4 py-3 rounded-xl border border-gray-100 shadow-xl text-xs text-slate-600 text-center w-48 z-20"
               >
                 {strategies[activeStrategy]?.desc}
-              </motion.div>
+              </m.div>
             </AnimatePresence>
 
             {/* Moving Particle */}
-            <motion.div
+            <m.div
               key={activeStrategy + '-particle'}
               animate={{ x: ['-120%', '120%'] }}
               transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}

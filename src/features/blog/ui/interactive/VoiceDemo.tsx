@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { Microphone, MicrophoneSlash, Sparkle, SpeakerHigh } from '@phosphor-icons/react/dist/ssr';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import { cn } from '@/shared/lib/utils';
 
 import { useTranslations } from 'next-intl';
@@ -52,7 +52,10 @@ export const VoiceDemo: React.FC = () => {
   };
 
   return (
-    <section className="my-12 font-sans w-full max-w-2xl mx-auto" aria-label={t('blog:voiceDemo.title')}>
+    <section
+      className="my-12 font-sans w-full max-w-2xl mx-auto"
+      aria-label={t('blog:voiceDemo.title')}
+    >
       <div className="bg-gray-900 rounded-3xl overflow-hidden border border-gray-800 shadow-2xl relative">
         {/* Decorative elements */}
         <div className="absolute top-0 right-0 p-32 bg-purple-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
@@ -71,7 +74,7 @@ export const VoiceDemo: React.FC = () => {
           <div className="w-full space-y-4 mb-8" aria-live="polite">
             <AnimatePresence mode="wait">
               {transcript && (
-                <motion.div
+                <m.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   className="flex justify-end"
@@ -79,11 +82,11 @@ export const VoiceDemo: React.FC = () => {
                   <div className="bg-gray-800 text-gray-200 px-4 py-2 rounded-2xl rounded-tr-sm max-w-[80%] text-sm">
                     "{transcript}"
                   </div>
-                </motion.div>
+                </m.div>
               )}
 
               {response && (
-                <motion.div
+                <m.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   className="flex justify-start items-start gap-3"
@@ -94,7 +97,7 @@ export const VoiceDemo: React.FC = () => {
                   <div className="bg-indigo-900/50 border border-indigo-500/30 text-indigo-100 px-4 py-3 rounded-2xl rounded-tl-sm max-w-[80%] text-sm shadow-sm backdrop-blur-sm">
                     {response}
                   </div>
-                </motion.div>
+                </m.div>
               )}
             </AnimatePresence>
 
@@ -109,7 +112,9 @@ export const VoiceDemo: React.FC = () => {
           <button
             onClick={handleMicClick}
             disabled={isListening}
-            aria-label={isListening ? t('blog:voiceDemo.listening') : t('blog:voiceDemo.tapToSpeak')}
+            aria-label={
+              isListening ? t('blog:voiceDemo.listening') : t('blog:voiceDemo.tapToSpeak')
+            }
             className={cn(
               'w-20 h-20 rounded-full flex items-center justify-center transition motion-reduce:duration-[0.01ms] duration-300 relative',
               isListening

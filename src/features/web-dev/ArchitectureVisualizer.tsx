@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { STAGGER, DURATION } from '@/shared/lib/motion';
 
 const ArchitectureVisualizer: React.FC = () => {
@@ -48,7 +48,11 @@ const ArchitectureVisualizer: React.FC = () => {
   ];
 
   return (
-    <div className="w-full bg-surface-dark rounded-3xl p-8 border border-white/5 overflow-hidden relative min-h-[400px] flex items-center justify-center" role="region" aria-label={t('web_development_page.architecture.visualizer.footer')}>
+    <div
+      className="w-full bg-surface-dark rounded-3xl p-8 border border-white/5 overflow-hidden relative min-h-[400px] flex items-center justify-center"
+      role="region"
+      aria-label={t('web_development_page.architecture.visualizer.footer')}
+    >
       {/* Background Grid */}
       <div className="absolute inset-0 grid grid-cols-12 grid-rows-6 opacity-10 pointer-events-none">
         {Array.from({ length: 72 }).map((_, i) => (
@@ -59,7 +63,7 @@ const ArchitectureVisualizer: React.FC = () => {
       <div className="relative w-full max-w-4xl h-64">
         {/* Connecting Lines */}
         <div className="absolute inset-0 top-1/2 -translate-y-1/2 h-1 bg-white/5 w-full -z-10"></div>
-        <motion.div
+        <m.div
           className="absolute inset-0 top-1/2 -translate-y-1/2 h-1 bg-gradient-to-r from-pink-500 via-teal-500 to-blue-500 -z-10"
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
@@ -68,7 +72,7 @@ const ArchitectureVisualizer: React.FC = () => {
         />
 
         {/* Packets Animation */}
-        <motion.div
+        <m.div
           className="absolute top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full shadow-[0_0_10px_rgba(255,255,255,0.8)]"
           animate={{
             left: ['10%', '90%'],
@@ -83,7 +87,7 @@ const ArchitectureVisualizer: React.FC = () => {
 
         {/* Nodes */}
         {nodes.map((node, index) => (
-          <motion.div
+          <m.div
             key={node.id}
             className="absolute top-1/2 -translate-y-1/2 transform -translate-x-1/2"
             style={{ left: `${node.x}%` }}
@@ -115,17 +119,17 @@ const ArchitectureVisualizer: React.FC = () => {
 
               {/* Popover Detail */}
               {activeNode === node.id && (
-                <motion.div
+                <m.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   className="absolute -top-16 left-1/2 -translate-x-1/2 w-40 bg-white text-secondary p-3 rounded-xl shadow-xl text-center z-20 pointer-events-none"
                 >
                   <div className="text-xs font-bold">{node.details}</div>
                   <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-3 h-3 bg-white rotate-45"></div>
-                </motion.div>
+                </m.div>
               )}
             </div>
-          </motion.div>
+          </m.div>
         ))}
       </div>
 

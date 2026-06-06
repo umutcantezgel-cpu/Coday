@@ -1,7 +1,5 @@
 'use client';
-import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
-import dynamic from 'next/dynamic';
-
+import React from 'react';
 
 import { useTranslations } from 'next-intl';
 import { Link as NavLink } from '@/i18n/navigation';
@@ -231,7 +229,10 @@ export function WebDesignClient() {
 
           <div className="relative">
             {/* Connecting Line */}
-            <div aria-hidden="true" className="absolute top-1/2 left-0 w-full h-1 bg-surface-elevated/10 -translate-y-1/2 hidden lg:block"></div>
+            <div
+              aria-hidden="true"
+              className="absolute top-1/2 left-0 w-full h-1 bg-surface-elevated/10 -translate-y-1/2 hidden lg:block"
+            ></div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
               {(
@@ -245,11 +246,16 @@ export function WebDesignClient() {
                   key={idx}
                   className="relative bg-surface-elevated/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:bg-surface-elevated/10 transition-colors motion-reduce:duration-[0.01ms] group"
                 >
-                  <div aria-hidden="true" className="absolute -top-6 start-8 bg-primary text-white font-bold text-xl w-12 h-12 rounded-xl flex items-center justify-center shadow-lg border-4 border-secondary group-hover:scale-[0.97] ease-spring transition-transform motion-reduce:duration-[0.01ms]">
+                  <div
+                    aria-hidden="true"
+                    className="absolute -top-6 start-8 bg-primary text-white font-bold text-xl w-12 h-12 rounded-xl flex items-center justify-center shadow-lg border-4 border-secondary group-hover:scale-[0.97] ease-spring transition-transform motion-reduce:duration-[0.01ms]"
+                  >
                     {phase.number}
                   </div>
                   <h3 className="font-bold text-xl mt-4 mb-3">{phase.title}</h3>
-                  <p className="text-sm text-gray-400 leading-relaxed max-w-prose text-pretty">{phase.description}</p>
+                  <p className="text-sm text-gray-400 leading-relaxed max-w-prose text-pretty">
+                    {phase.description}
+                  </p>
                 </div>
               ))}
             </div>

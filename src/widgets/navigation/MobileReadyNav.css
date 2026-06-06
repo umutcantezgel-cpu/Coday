@@ -417,7 +417,7 @@ body.mobile-nav-open #fab-container {
   align-items: center;
   justify-content: space-between;
   padding: 1rem 1.5rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .mobile-logo {
@@ -434,14 +434,14 @@ body.mobile-nav-open #fab-container {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.05);
   border: none;
   cursor: pointer;
   transition: background 0.2s;
 }
 
 .mobile-close-btn:active {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .mobile-content-scroll {

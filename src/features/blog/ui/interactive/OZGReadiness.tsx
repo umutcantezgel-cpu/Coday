@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import {
   Buildings,
   CaretRight,
@@ -47,7 +47,10 @@ export const OZGReadiness: React.FC = () => {
   const currentLevel = getLevel();
 
   return (
-    <section className="my-16 relative overflow-hidden rounded-[2.5rem] border border-gray-200 bg-white shadow-xl" aria-label="OZG 2.0 Readiness Check">
+    <section
+      className="my-16 relative overflow-hidden rounded-[2.5rem] border border-gray-200 bg-white shadow-xl"
+      aria-label="OZG 2.0 Readiness Check"
+    >
       <div className="p-8 md:p-12">
         <div className="flex items-center gap-4 mb-8">
           <div className="p-3 rounded-full bg-blue-50 text-blue-600">
@@ -98,7 +101,10 @@ export const OZGReadiness: React.FC = () => {
             ))}
           </div>
 
-          <div className=" bg-gray-50 rounded-3xl p-8 flex flex-col justify-between" aria-live="polite">
+          <div
+            className=" bg-gray-50 rounded-3xl p-8 flex flex-col justify-between"
+            aria-live="polite"
+          >
             <div>
               <p className="text-xs font-bold text-gray-400 uppercase mb-6">Maturity Level</p>
               <div className="space-y-6 relative">
@@ -111,7 +117,7 @@ export const OZGReadiness: React.FC = () => {
 
                   return (
                     <div key={level.id} className="relative pl-10">
-                      <motion.div
+                      <m.div
                         className={clsx(
                           'absolute left-0 top-1 w-6 h-6 rounded-full border-4 z-10 box-border bg-white',
                           isActive ? 'border-blue-600' : 'border-gray-300'
@@ -148,8 +154,15 @@ export const OZGReadiness: React.FC = () => {
                 <span className="text-gray-500 text-sm">Readiness Score</span>
                 <span className="text-3xl font-mono font-bold text-gray-900">{score}%</span>
               </div>
-              <div className="h-2 bg-gray-200 rounded-full mt-2 overflow-hidden" role="progressbar" aria-valuenow={score} aria-valuemin={0} aria-valuemax={100} aria-label="Readiness Score">
-                <motion.div
+              <div
+                className="h-2 bg-gray-200 rounded-full mt-2 overflow-hidden"
+                role="progressbar"
+                aria-valuenow={score}
+                aria-valuemin={0}
+                aria-valuemax={100}
+                aria-label="Readiness Score"
+              >
+                <m.div
                   className="h-full bg-blue-600"
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: score / 100 }}

@@ -1,6 +1,5 @@
-"use client";
-import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
-import dynamic from 'next/dynamic';
+'use client';
+import React from 'react';
 import { useTranslations } from 'next-intl';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { ArrowRight, CheckCircle } from '@phosphor-icons/react';
@@ -9,7 +8,7 @@ import { Button } from '@/shared/ui/Button';
 import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
 import BlurText from '@/shared/ui/BlurText';
 import GradientText from '@/shared/ui/GradientText';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 
 export function BrandIdentityClient() {
   const t = useTranslations('services');
@@ -23,8 +22,6 @@ export function BrandIdentityClient() {
 
   return (
     <>
-      
-
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-6 overflow-hidden bg-surface-base">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
@@ -96,7 +93,7 @@ export function BrandIdentityClient() {
 
           <div className="grid md:grid-cols-4 gap-6">
             {processSteps.map((step, i) => (
-              <motion.div
+              <m.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -109,7 +106,7 @@ export function BrandIdentityClient() {
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2">{step.title}</h3>
                 <p className="text-slate-400 text-sm">{step.desc}</p>
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </div>
@@ -134,6 +131,4 @@ export function BrandIdentityClient() {
       <RelevantFAQs serviceId="brand-identity" className="mb-24" />
     </>
   );
-};
-
-
+}

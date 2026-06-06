@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { Cpu, Database, Lightning, Globe, Stack, Shield } from '@phosphor-icons/react/dist/ssr';
 
 const technologies = [
@@ -13,9 +13,13 @@ const technologies = [
 
 export const TechStackHologram: React.FC = () => {
   return (
-    <div className="relative w-full h-[600px] flex items-center justify-center perspective-[1000px]" role="img" aria-label="Interactive 3D hologram showing tech stack: React Router v7, Supabase, Tailwind, Edge Network, TypeScript, and Auth orbiting around a central core">
+    <div
+      className="relative w-full h-[600px] flex items-center justify-center perspective-[1000px]"
+      role="img"
+      aria-label="Interactive 3D hologram showing tech stack: React Router v7, Supabase, Tailwind, Edge Network, TypeScript, and Auth orbiting around a central core"
+    >
       {/* Central Core */}
-      <motion.div
+      <m.div
         animate={{ rotateY: 360 }}
         transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
         className="relative w-64 h-64 transform-style-3d motion-reduce:animate-none"
@@ -31,7 +35,7 @@ export const TechStackHologram: React.FC = () => {
           const z = Math.sin((angle * Math.PI) / 180) * radius;
 
           return (
-            <motion.div
+            <m.div
               key={i}
               style={{
                 position: 'absolute',
@@ -58,10 +62,10 @@ export const TechStackHologram: React.FC = () => {
                 <tech.icon className={`w-8 h-8 ${tech.color}`} />
                 <span className="text-xs font-bold text-white/80">{tech.name}</span>
               </div>
-            </motion.div>
+            </m.div>
           );
         })}
-      </motion.div>
+      </m.div>
 
       {/* Floor Reflection */}
       <div className="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-white/10 to-transparent blur-2xl -z-10 transform rotate-x-90" />

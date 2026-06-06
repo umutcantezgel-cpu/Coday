@@ -19,7 +19,7 @@ import type {
 } from '@/features/blog/model/types';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
-import { motion, useScroll, useTransform, useInView, AnimatePresence } from 'motion/react';
+import { m, useScroll, useTransform, useInView, AnimatePresence } from 'motion/react';
 
 // Typed module resolution for lazy-loaded interactive widgets
 interface WidgetModule {
@@ -180,9 +180,15 @@ export const ImageBlockRenderer: React.FC<{ block: ImageBlock }> = ({ block }) =
           block.layout === 'fullscreen' ? '' : 'rounded-3xl'
         )}
       >
-        <motion.div style={{ y, scale: 1.1 }} className="absolute inset-0 w-full h-full">
-          <OptimizedImage src={block.src} alt={block.alt} width={1200} height={675} className="w-full h-full object-cover" />
-        </motion.div>
+        <m.div style={{ y, scale: 1.1 }} className="absolute inset-0 w-full h-full">
+          <OptimizedImage
+            src={block.src}
+            alt={block.alt}
+            width={1200}
+            height={675}
+            className="w-full h-full object-cover"
+          />
+        </m.div>
       </div>
       {block.caption && (
         <figcaption className="text-center text-sm text-gray-400 mt-4 font-medium italic">
@@ -198,7 +204,7 @@ export const QuoteBlockRenderer: React.FC<{ block: QuoteBlock }> = ({ block }) =
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <motion.div
+    <m.div
       ref={ref}
       initial={{ opacity: 0, scale: 0.95 }}
       animate={isInView ? { opacity: 1, scale: 1 } : {}}
@@ -237,13 +243,13 @@ export const QuoteBlockRenderer: React.FC<{ block: QuoteBlock }> = ({ block }) =
           )}
         </blockquote>
       </div>
-    </motion.div>
+    </m.div>
   );
 };
 
 export const CTABlockRenderer: React.FC<{ block: CTABlock }> = ({ block }) => {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -272,7 +278,7 @@ export const CTABlockRenderer: React.FC<{ block: CTABlock }> = ({ block }) => {
           </Link>
         </div>
       </div>
-    </motion.div>
+    </m.div>
   );
 };
 
@@ -302,16 +308,21 @@ export const AccordionItem: React.FC<{ title: string; content: string }> = ({ ti
       </h3>
       <AnimatePresence>
         {isOpen && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             className="overflow-hidden"
           >
-            <div id={panelId} role="region" aria-labelledby={triggerId} className="p-6 pt-0 text-gray-600 leading-relaxed border-t border-gray-50">
+            <div
+              id={panelId}
+              role="region"
+              aria-labelledby={triggerId}
+              className="p-6 pt-0 text-gray-600 leading-relaxed border-t border-gray-50"
+            >
               {content}
             </div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </div>

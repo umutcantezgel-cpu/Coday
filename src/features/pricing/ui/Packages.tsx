@@ -82,6 +82,18 @@ export default async function Packages() {
     },
   ];
 
+  const ultimatePackage = {
+    id: 'ultimate',
+    name: t('packages.ultimate.name', { defaultValue: 'Ultimate Domination' }),
+    tagline: t('packages.ultimate.tagline', { defaultValue: 'Der unfaire Wettbewerbsvorteil' }),
+    badge: t('packages.ultimate.badge', { defaultValue: 'Agentur Partner' }),
+    setupPrice: 12999,
+    monthlyPrice: 0,
+    features: t.raw('features.ultimate') as string[],
+    cta: t('packages.ultimate.cta', { defaultValue: 'Ultimate wählen' }),
+    deliveryDays: 60,
+  };
+
   const trustReferences = t.raw('trust_section.references') as {
     metric: string;
     name: string;
@@ -285,6 +297,88 @@ export default async function Packages() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Ultimate Anchor Tier (Horizontal Layout) */}
+          <div
+            className="mt-8 lg:mt-12 relative group motion-safe:animate-fade-in-up"
+            style={{
+              animationDelay: '600ms',
+              animationDuration: '382ms',
+              animationFillMode: 'both',
+            }}
+          >
+            <div className="p-1.5 rounded-[2rem] bg-gray-900 ring-1 ring-black shadow-[0_34px_55px_-15px_rgba(0,0,0,0.3)] overflow-hidden">
+              <div className="relative flex flex-col lg:flex-row items-stretch rounded-[calc(2rem-0.375rem)] bg-black shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] overflow-hidden">
+                {/* Background effects for Ultimate tier */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-black to-black opacity-80 pointer-events-none" />
+                <div className="absolute top-0 right-0 w-[40rem] h-[40rem] bg-primary/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+
+                {ultimatePackage.badge && (
+                  <div className="absolute top-0 left-8 -translate-y-0 translate-y-[-50%] lg:translate-y-0 lg:left-auto lg:right-12 lg:top-8 z-20">
+                    <span className="bg-primary text-slate-900 text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg shadow-primary/30 border border-primary/20">
+                      {ultimatePackage.badge}
+                    </span>
+                  </div>
+                )}
+
+                {/* Left side: Content & Features */}
+                <div className="relative z-10 p-8 lg:p-12 flex-1 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-white/10">
+                  <div className="mb-8">
+                    <h3 className="font-display font-bold text-4xl lg:text-5xl text-white mb-3 text-balance tracking-tight">
+                      {ultimatePackage.name}
+                    </h3>
+                    <p className="text-gray-400 text-lg text-pretty max-w-xl">
+                      {ultimatePackage.tagline}
+                    </p>
+                  </div>
+
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl">
+                    {ultimatePackage.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start gap-3">
+                        <OptimizedIcon
+                          icon={CheckCircle}
+                          aria-hidden="true"
+                          className="text-lg mt-0.5 flex-shrink-0 text-primary"
+                        />
+                        <span className="text-gray-300 text-base leading-relaxed">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Right side: Pricing & CTA */}
+                <div className="relative z-10 p-8 lg:p-12 w-full lg:w-[400px] flex flex-col items-center justify-center bg-white/5 backdrop-blur-md">
+                  <div className="text-center mb-8">
+                    <div className="font-display font-black text-6xl text-white tracking-tight mb-4">
+                      {ultimatePackage.setupPrice.toLocaleString('de-DE')}
+                      <span className="text-4xl text-gray-500 font-medium ml-1">€</span>
+                    </div>
+                    <div className="inline-flex items-center gap-2 bg-white/5 text-gray-400 text-xs font-medium px-4 py-2 rounded-full border border-white/10">
+                      <OptimizedIcon icon={Clock} className="text-sm text-gray-400" />
+                      <span>
+                        {t('labels.delivery', {
+                          days: ultimatePackage.deliveryDays,
+                          defaultValue: `~${ultimatePackage.deliveryDays} Tage`,
+                        })}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="w-full">
+                    {/* Reuse the existing PackageSelectButton, maybe give it a dark mode wrapper or custom styles if it accepts classes, else rely on its defaults. */}
+                    {/* The existing PackageSelectButton forces a standard white background or primary button. Since this is dark mode, primary works well. */}
+                    <div className="[&>button]:w-full [&>button]:py-5 [&>button]:text-lg">
+                      <PackageSelectButton
+                        pkgId={ultimatePackage.id}
+                        ctaText={ultimatePackage.cta}
+                        popular={true}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

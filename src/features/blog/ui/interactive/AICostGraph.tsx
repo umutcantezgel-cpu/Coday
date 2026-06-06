@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { TrendDown, User, Robot, CurrencyEur } from '@phosphor-icons/react/dist/ssr';
 import { EASING, STAGGER } from '@/shared/lib/motion';
 
@@ -63,7 +63,7 @@ export const AICostGraph: React.FC = () => {
 
         {(view === 'ai' ? dataAI : dataStaff).map((value, index) => (
           <div key={index} className="flex-1 flex flex-col justify-end group relative items-center">
-            <motion.div
+            <m.div
               initial={{ scaleY: 0 }}
               style={{ transformOrigin: 'bottom' }}
               animate={{ scaleY: value / 70 }}
@@ -74,7 +74,7 @@ export const AICostGraph: React.FC = () => {
               <div className="absolute -top-10 left-1/2 -translate-x-1/2 bg-black text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms] whitespace-nowrap z-20">
                 {value}k €
               </div>
-            </motion.div>
+            </m.div>
             <span className="text-[10px] md:text-xs text-gray-400 text-center mt-2 font-mono h-4">
               {months[index]}
             </span>

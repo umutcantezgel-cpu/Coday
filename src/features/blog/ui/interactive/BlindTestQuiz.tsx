@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import { Trophy, Warning } from '@phosphor-icons/react/dist/ssr';
 import { cn } from '@/shared/lib/utils';
 
@@ -43,7 +43,11 @@ const BlindTestQuiz: React.FC = () => {
   };
 
   return (
-    <section className="my-16 scroll-mt-24" id="blind-test-quiz" aria-label="Blind-Test: Welches Design verkauft mehr?">
+    <section
+      className="my-16 scroll-mt-24"
+      id="blind-test-quiz"
+      aria-label="Blind-Test: Welches Design verkauft mehr?"
+    >
       <div className="text-center mb-8">
         <h3 className="font-display font-bold text-3xl text-secondary mb-3">
           Blind-Test: Welches Design verkauft mehr?
@@ -57,7 +61,7 @@ const BlindTestQuiz: React.FC = () => {
         {options.map((option) => (
           <div key={option.id} className="relative group">
             {/* Image Card */}
-            <motion.button
+            <m.button
               onClick={() => handleVote(option.id)}
               disabled={hasVoted}
               whileHover={!hasVoted ? { scale: 1.02 } : {}}
@@ -86,7 +90,9 @@ const BlindTestQuiz: React.FC = () => {
                   option.id === 'ai' ? 'bg-indigo-50' : 'bg-emerald-50'
                 )}
               >
-                <span className="font-display font-bold text-2xl opacity-20" aria-hidden="true">{option.label}</span>
+                <span className="font-display font-bold text-2xl opacity-20" aria-hidden="true">
+                  {option.label}
+                </span>
               </div>
 
               {/* 
@@ -96,12 +102,12 @@ const BlindTestQuiz: React.FC = () => {
                 className="w-full h-full object-cover"
               /> 
               */}
-            </motion.button>
+            </m.button>
 
             {/* Result Reveal */}
             <AnimatePresence>
               {hasVoted && (
-                <motion.div
+                <m.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2, duration: 0.5 }}
@@ -148,7 +154,7 @@ const BlindTestQuiz: React.FC = () => {
                         : 'Maßgeschneidert. Nutzt Psychologie und Branding. Wirkt autoritär.'}
                     </div>
                   </div>
-                </motion.div>
+                </m.div>
               )}
             </AnimatePresence>
           </div>
@@ -156,7 +162,7 @@ const BlindTestQuiz: React.FC = () => {
       </div>
 
       {hasVoted && (
-        <motion.div
+        <m.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
@@ -168,7 +174,7 @@ const BlindTestQuiz: React.FC = () => {
             87% der Nutzer entschieden sich für Design B, obwohl es 30x mehr kostet. Warum? Weil
             Qualität Vertrauen schafft. Und Vertrauen ist die Währung des Internets.
           </p>
-        </motion.div>
+        </m.div>
       )}
     </section>
   );

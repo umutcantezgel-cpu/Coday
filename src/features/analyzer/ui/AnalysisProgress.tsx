@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { useAnalyzerStore } from '@/features/analyzer/model/store';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import {
@@ -70,7 +70,7 @@ export const AnalysisProgress: React.FC = () => {
           <span className="text-sm font-bold text-primary">{Math.round(progress.progress)}%</span>
         </div>
         <div className="h-3 bg-gray-100 rounded-full overflow-hidden">
-          <motion.div
+          <m.div
             className="h-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-full"
             initial={{ scaleX: 0 }}
             animate={{ scaleX: progress.progress / 100 }}
@@ -81,7 +81,7 @@ export const AnalysisProgress: React.FC = () => {
       </div>
 
       {/* Agent Grid */}
-      <motion.div
+      <m.div
         className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4"
         variants={staggerContainer(STAGGER.slow)}
         initial="hidden"
@@ -92,7 +92,7 @@ export const AnalysisProgress: React.FC = () => {
           const isActive = progress.currentAgent === agent.id;
 
           return (
-            <motion.div
+            <m.div
               key={agent.id}
               variants={fadeUpVariants}
               transition={TRANSITION.reveal}
@@ -145,21 +145,21 @@ export const AnalysisProgress: React.FC = () => {
 
               {/* Status Badge */}
               {isActive && (
-                <motion.div
+                <m.div
                   initial={{ opacity: 0, scale: 0 }}
                   animate={{ opacity: 1, scale: 1 }}
                   className="absolute -top-2 -right-2 w-6 h-6 bg-primary rounded-full flex items-center justify-center"
                 >
                   <div className="w-2 h-2 bg-white rounded-full animate-ping motion-reduce:animate-none" />
-                </motion.div>
+                </m.div>
               )}
-            </motion.div>
+            </m.div>
           );
         })}
-      </motion.div>
+      </m.div>
 
       {/* Current Action Text */}
-      <motion.p
+      <m.p
         key={progress.currentAgent}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -170,7 +170,7 @@ export const AnalysisProgress: React.FC = () => {
               agent: AGENTS.find((a) => a.id === progress.currentAgent)?.name || 'Agent',
             })
           : t('progress.connection_establishing')}
-      </motion.p>
+      </m.p>
     </div>
   );
 };

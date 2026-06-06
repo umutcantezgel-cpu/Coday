@@ -1,6 +1,6 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { CurrencyEur, TrendUp, MagnifyingGlass } from '@phosphor-icons/react/dist/ssr';
 import { useLocale } from 'next-intl';
 import { formatCurrency, formatNumber } from '@/shared/utils/formatters';
@@ -103,7 +103,7 @@ export const TrafficROICalculator: React.FC = () => {
 
       {/* Results */}
       <div className="relative">
-        <motion.div
+        <m.div
           initial={{ scale: 0.9, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
           className="p-8 rounded-3xl bg-gray-900 text-white relative overflow-hidden"
@@ -134,15 +134,15 @@ export const TrafficROICalculator: React.FC = () => {
                 {formatCurrency(Math.round(projectedRevenue), 'EUR', locale)}
               </div>
             </div>
-            <motion.div
+            <m.div
               animate={{ scale: [1, 1.1, 1] }}
               transition={{ repeat: Infinity, duration: 2 }}
               className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 motion-reduce:animate-none"
             >
               <TrendUp size={24} aria-hidden="true" />
-            </motion.div>
+            </m.div>
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </div>
   );

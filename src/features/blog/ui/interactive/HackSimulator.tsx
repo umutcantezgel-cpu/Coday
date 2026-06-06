@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import {
   TerminalWindow,
   Shield,
@@ -115,7 +115,10 @@ export const HackSimulator: React.FC = () => {
   const isSecure = activeSystem === 'coday' && attackProgress === 100;
 
   return (
-    <section className="my-12 w-full max-w-4xl mx-auto font-mono text-sm" aria-label={t('hackSimulator.title')}>
+    <section
+      className="my-12 w-full max-w-4xl mx-auto font-mono text-sm"
+      aria-label={t('hackSimulator.title')}
+    >
       <div className="bg-bg-inverse rounded-xl overflow-hidden shadow-2xl border border-gray-800">
         {/* Header */}
         <div className="bg-border-strong p-4 flex flex-col md:flex-row items-center justify-between gap-4 border-b border-gray-700">
@@ -189,7 +192,7 @@ export const HackSimulator: React.FC = () => {
 
             <div className="space-y-2">
               {logs.map((log) => (
-                <motion.div
+                <m.div
                   key={log!.id}
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -209,10 +212,10 @@ export const HackSimulator: React.FC = () => {
                       ? log!.message
                       : log!.message}
                   </span>
-                </motion.div>
+                </m.div>
               ))}
               {isRunning && (
-                <motion.div
+                <m.div
                   animate={{ opacity: [0, 1, 0] }}
                   transition={{ repeat: Infinity, duration: 0.8 }}
                   className="w-2 h-4 bg-green-500 inline-block align-middle"
@@ -222,10 +225,13 @@ export const HackSimulator: React.FC = () => {
           </div>
 
           {/* Visual Status Panel */}
-          <div className="col-span-1 bg-bg-inverse p-6 flex flex-col items-center justify-center border-l border-gray-800 relative overflow-hidden" aria-live="polite">
+          <div
+            className="col-span-1 bg-bg-inverse p-6 flex flex-col items-center justify-center border-l border-gray-800 relative overflow-hidden"
+            aria-live="polite"
+          >
             <AnimatePresence mode="wait">
               {isCompromised ? (
-                <motion.div
+                <m.div
                   key="compromised"
                   initial={{ scale: 0.8, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
@@ -238,9 +244,9 @@ export const HackSimulator: React.FC = () => {
                     {t('hackSimulator.criticalFailure')}
                   </h3>
                   <p className="text-gray-400 text-xs">{t('hackSimulator.criticalDesc')}</p>
-                </motion.div>
+                </m.div>
               ) : isSecure ? (
-                <motion.div
+                <m.div
                   key="secure"
                   initial={{ scale: 0.8, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
@@ -253,14 +259,14 @@ export const HackSimulator: React.FC = () => {
                     {t('hackSimulator.systemSecure')}
                   </h3>
                   <p className="text-gray-400 text-xs">{t('hackSimulator.secureDesc')}</p>
-                </motion.div>
+                </m.div>
               ) : (
-                <motion.div key="scanning" className="text-center z-10 opacity-50">
+                <m.div key="scanning" className="text-center z-10 opacity-50">
                   <Shield className="w-20 h-20 text-gray-600 mx-auto mb-4" />
                   <p className="text-gray-500">
                     Status: {isRunning ? t('hackSimulator.scanning') : t('hackSimulator.idle')}
                   </p>
-                </motion.div>
+                </m.div>
               )}
             </AnimatePresence>
 
@@ -280,8 +286,15 @@ export const HackSimulator: React.FC = () => {
         </div>
 
         {/* Progress Bar */}
-        <div className="h-1 bg-gray-800 w-full" role="progressbar" aria-valuenow={attackProgress} aria-valuemin={0} aria-valuemax={100} aria-label="Attack progress">
-          <motion.div
+        <div
+          className="h-1 bg-gray-800 w-full"
+          role="progressbar"
+          aria-valuenow={attackProgress}
+          aria-valuemin={0}
+          aria-valuemax={100}
+          aria-label="Attack progress"
+        >
+          <m.div
             className={cn(
               'h-full transition motion-reduce:duration-[0.01ms] duration-300',
               getStatusColor()

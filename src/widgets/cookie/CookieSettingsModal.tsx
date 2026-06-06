@@ -5,7 +5,7 @@ import { useCookieStore } from '@/shared/lib/cookieStore';
 import { X } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { useFocusTrap } from '@/shared/hooks/useFocusTrap';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 
 interface CookieSettingsModalProps {
   isOpen: boolean;
@@ -54,14 +54,14 @@ const CookieSettingsModal: React.FC<CookieSettingsModalProps> = ({ isOpen, onClo
   return (
     <AnimatePresence>
       {isOpen && (
-        <motion.div
+        <m.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
           className="fixed inset-0 z-[105] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4"
         >
-          <motion.div
+          <m.div
             ref={containerRef as any}
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -105,7 +105,9 @@ const CookieSettingsModal: React.FC<CookieSettingsModalProps> = ({ isOpen, onClo
                     >
                       {t('cookie.essential.title')}
                     </label>
-                    <p className="text-xs text-gray-500 break-words hyphens-auto">{t('cookie.essential.desc')}</p>
+                    <p className="text-xs text-gray-500 break-words hyphens-auto">
+                      {t('cookie.essential.desc')}
+                    </p>
                   </div>
                 </div>
 
@@ -127,7 +129,9 @@ const CookieSettingsModal: React.FC<CookieSettingsModalProps> = ({ isOpen, onClo
                     >
                       {t('cookie.analytics.title')}
                     </label>
-                    <p className="text-xs text-gray-500 break-words hyphens-auto">{t('cookie.analytics.desc')}</p>
+                    <p className="text-xs text-gray-500 break-words hyphens-auto">
+                      {t('cookie.analytics.desc')}
+                    </p>
                   </div>
                 </div>
 
@@ -149,7 +153,9 @@ const CookieSettingsModal: React.FC<CookieSettingsModalProps> = ({ isOpen, onClo
                     >
                       {t('cookie.marketing.title')}
                     </label>
-                    <p className="text-xs text-gray-500 break-words hyphens-auto">{t('cookie.marketing.desc')}</p>
+                    <p className="text-xs text-gray-500 break-words hyphens-auto">
+                      {t('cookie.marketing.desc')}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -169,8 +175,8 @@ const CookieSettingsModal: React.FC<CookieSettingsModalProps> = ({ isOpen, onClo
                 {t('common.save')}
               </button>
             </div>
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
       )}
     </AnimatePresence>
   );

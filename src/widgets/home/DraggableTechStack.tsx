@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useRef } from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { cn } from '@/shared/lib/utils';
 
 const techs = [
@@ -55,7 +55,7 @@ export const DraggableTechStack = () => {
   return (
     <div ref={constraintsRef} className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
       {techs.map((tech, i) => (
-        <motion.div
+        <m.div
           key={tech.name}
           drag
           dragConstraints={constraintsRef}
@@ -79,7 +79,7 @@ export const DraggableTechStack = () => {
           style={{ top: tech.top, left: tech.left }}
         >
           {tech.name}
-        </motion.div>
+        </m.div>
       ))}
     </div>
   );

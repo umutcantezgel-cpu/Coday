@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import Link from 'next/link';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import { CaretDown, List } from '@phosphor-icons/react/dist/ssr';
 import { cn } from '@/lib/utils';
 
@@ -129,7 +129,7 @@ export function Sidebar({ items, defaultCollapsed = false, className, ...props }
 
               <AnimatePresence initial={false}>
                 {hasSubItems && isOpen && !isSidebarCollapsed && (
-                  <motion.div
+                  <m.div
                     key={`${item.id}-submenu`}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -150,7 +150,7 @@ export function Sidebar({ items, defaultCollapsed = false, className, ...props }
                         </Link>
                       ))}
                     </div>
-                  </motion.div>
+                  </m.div>
                 )}
               </AnimatePresence>
             </div>

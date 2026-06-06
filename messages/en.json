@@ -145,8 +145,11 @@
         "other": {
           "title": "Other Industries",
           "overview": "View all industries",
-          "real_estate": "Real Estate Agents",
-          "gastronomy": "Gastronomy & Hotels"
+          "real_estate": "Real Estate",
+          "gastronomy": "Gastronomy",
+          "services": "Services",
+          "retail": "Retail & E-Commerce",
+          "public_sector": "Public Sector"
         },
         "public": "Öffentliche Aufträge",
         "tech": "Tech Startups"
@@ -259,7 +262,8 @@
     },
     "close": "Schließen",
     "cancel": "Abbrechen",
-    "save": "Speichern"
+    "save": "Speichern",
+    "calculator": "Pricing Calculator"
   },
   "metadata": {
     "title": "Coday — AI-Augmented Web Agency from Wetzlar",
@@ -601,7 +605,22 @@
       "description": "High-End Web Development, Design & Strategy from Wetzlar, Hesse for your digital success."
     },
     "hero": {
-      "rotatingTexts": ["Web Design", "Web Development", "SEO"]
+      "rotatingTexts": ["Web Design", "Web Development", "SEO"],
+      "badge": "Consulting & Strategy",
+      "title_start": "Digital",
+      "title_end": "Excellence.",
+      "subtitle": "Strategic IT consulting that uncovers inefficiencies and secures scalable architecture decisions for your next project.",
+      "cta_primary": "Free Audit",
+      "cta_secondary": "Discover Method"
+    },
+    "case_study": {
+      "label": "Success Story",
+      "title": "From MVP to Enterprise Scale",
+      "description": "Learn how our consulting helped a tech startup reduce technical debt and prepare the platform for a successful exit."
+    },
+    "booking": {
+      "title": "Ready for the next level?",
+      "subtitle": "Book a non-binding initial consultation now and we will analyze your potential."
     },
     "methodology": {
       "title": "Precision Craftsmanship over Mass Production.",
@@ -1265,6 +1284,9 @@
     "meta": {
       "title": "Project Cost Calculator | Coday Web Agency",
       "description": "Calculate the cost of your next website, web app, or e-commerce solution in real-time."
+    },
+    "summary": {
+      "package": "Selected Package"
     }
   },
   "analyzer": {

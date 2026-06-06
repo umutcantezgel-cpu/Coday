@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import { useTranslations } from 'next-intl';
 import {
   CheckCircle,
@@ -64,11 +64,15 @@ export const ConsultingReadiness: React.FC = () => {
   const resultKey = calculateResult();
 
   return (
-    <div className="w-full max-w-4xl mx-auto bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border border-slate-700 text-white" role="region" aria-label="Consulting readiness diagnostic">
+    <div
+      className="w-full max-w-4xl mx-auto bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border border-slate-700 text-white"
+      role="region"
+      aria-label="Consulting readiness diagnostic"
+    >
       <div className="p-8 md:p-12 min-h-[400px] flex flex-col justify-center">
         <AnimatePresence mode="wait">
           {!started && (
-            <motion.div
+            <m.div
               key="intro"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -91,11 +95,11 @@ export const ConsultingReadiness: React.FC = () => {
                 {t('diagnostic.start_btn')}
                 <OptimizedIcon icon={ArrowRight} className="w-5 h-5" />
               </button>
-            </motion.div>
+            </m.div>
           )}
 
           {started && !finished && (
-            <motion.div
+            <m.div
               key="question"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -143,11 +147,11 @@ export const ConsultingReadiness: React.FC = () => {
                   </button>
                 ))}
               </div>
-            </motion.div>
+            </m.div>
           )}
 
           {finished && (
-            <motion.div
+            <m.div
               key="result"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -182,7 +186,7 @@ export const ConsultingReadiness: React.FC = () => {
                   Neustarten
                 </button>
               </div>
-            </motion.div>
+            </m.div>
           )}
         </AnimatePresence>
       </div>

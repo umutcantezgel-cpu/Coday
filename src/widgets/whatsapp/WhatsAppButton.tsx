@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 
 import { COMPANY_CONFIG } from '@/shared/config/constants';
 
@@ -22,7 +22,7 @@ export const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
   return (
-    <motion.a
+    <m.a
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
@@ -57,7 +57,7 @@ export const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
           <div className="absolute -left-1.5 top-1/2 -translate-y-1/2 w-3 h-3 bg-gray-900 rotate-45" />
         </div>
       </div>
-    </motion.a>
+    </m.a>
   );
 };
 

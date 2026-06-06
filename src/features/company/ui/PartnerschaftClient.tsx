@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { ArrowRight, Users, Handshake, TrendUp, CheckCircle } from '@phosphor-icons/react';
 import { SeoHead } from '@/shared/ui/SeoHead';
@@ -32,16 +32,16 @@ const Partnerschaft: React.FC = () => {
           <Breadcrumbs />
 
           <div className="text-center max-w-3xl mx-auto mt-8">
-            <motion.span
+            <m.span
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block"
             >
               Coday Partner Network
-            </motion.span>
+            </m.span>
 
-            <motion.h1
+            <m.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
@@ -55,9 +55,9 @@ const Partnerschaft: React.FC = () => {
               >
                 Erfolge teilen.
               </GradientText>
-            </motion.h1>
+            </m.h1>
 
-            <motion.p
+            <m.p
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -65,9 +65,9 @@ const Partnerschaft: React.FC = () => {
             >
               Empfehlen Sie erstklassige Web-Entwicklung an Ihr Netzwerk und profitieren Sie von
               unserem transparenten Provisionsmodell.
-            </motion.p>
+            </m.p>
 
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
@@ -79,7 +79,7 @@ const Partnerschaft: React.FC = () => {
               >
                 Partner werden <OptimizedIcon icon={ArrowRight} aria-hidden="true" />
               </NavLink>
-            </motion.div>
+            </m.div>
           </div>
         </div>
       </div>
@@ -87,10 +87,12 @@ const Partnerschaft: React.FC = () => {
       {/* Two Programs Section */}
       <section className="py-20 bg-white" aria-labelledby="partner-programs-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 id="partner-programs-heading" className="sr-only">Partnerschafts-Programme</h2>
+          <h2 id="partner-programs-heading" className="sr-only">
+            Partnerschafts-Programme
+          </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8">
             {/* Referral / Alumni */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -136,10 +138,10 @@ const Partnerschaft: React.FC = () => {
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </m.div>
 
             {/* Agency Partners */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -189,7 +191,7 @@ const Partnerschaft: React.FC = () => {
                   ))}
                 </ul>
               </div>
-            </motion.div>
+            </m.div>
           </div>
         </div>
       </section>
@@ -197,7 +199,7 @@ const Partnerschaft: React.FC = () => {
       {/* CTA Section */}
       <section className="py-20 bg-background-light">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -215,7 +217,7 @@ const Partnerschaft: React.FC = () => {
             >
               Partner-Gespräch vereinbaren <OptimizedIcon icon={TrendUp} aria-hidden="true" />
             </NavLink>
-          </motion.div>
+          </m.div>
         </div>
       </section>
     </div>

@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { Lightning, HardDrives, Database } from '@phosphor-icons/react/dist/ssr';
 
 import { useTranslations } from 'next-intl';
@@ -75,7 +75,7 @@ export const SpeedComparison: React.FC = () => {
               </span>
             </div>
             <div className="h-4 bg-gray-800 rounded-full overflow-hidden">
-              <motion.div
+              <m.div
                 className="h-full bg-red-500"
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: wpProgress / 100 }}
@@ -98,7 +98,7 @@ export const SpeedComparison: React.FC = () => {
               </span>
             </div>
             <div className="h-4 bg-gray-800 rounded-full overflow-hidden relative">
-              <motion.div
+              <m.div
                 className="h-full bg-primary shadow-[0_0_20px_rgba(20,122,122,0.8)]"
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: customProgress / 100 }}

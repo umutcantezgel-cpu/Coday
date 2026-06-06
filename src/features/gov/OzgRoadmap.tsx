@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import {
   Info,
   FileText,
@@ -44,7 +44,7 @@ export const OzgRoadmap: React.FC = () => {
 
           <div className="space-y-12 relative">
             {steps.map((step, idx) => (
-              <motion.div
+              <m.div
                 key={step.key}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -85,18 +85,18 @@ export const OzgRoadmap: React.FC = () => {
 
                 {/* Empty Side for Balance */}
                 <div className="flex-1 hidden md:block" />
-              </motion.div>
+              </m.div>
             ))}
           </div>
 
           {/* Goal Marker */}
-          <motion.div
+          <m.div
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             className="mx-auto mt-16 w-24 h-24 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full flex items-center justify-center shadow-xl shadow-blue-200 relative z-10"
           >
             <OptimizedIcon icon={CheckCircle} className="w-10 h-10 text-white" />
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>

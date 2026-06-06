@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import {
   Sun,
@@ -22,7 +22,11 @@ const InteractivePhoneMockup: React.FC = () => {
   return (
     <div className="flex justify-center items-center py-12">
       {/* Phone Frame */}
-      <div className="relative w-[300px] h-[600px] bg-gray-900 rounded-[3rem] shadow-[0_0_50px_rgba(0,0,0,0.2)] border-[8px] border-gray-900 overflow-hidden ring-4 ring-gray-200/20" role="img" aria-label="Interactive phone mockup demonstrating a mobile PWA app with home, shop, and profile screens">
+      <div
+        className="relative w-[300px] h-[600px] bg-gray-900 rounded-[3rem] shadow-[0_0_50px_rgba(0,0,0,0.2)] border-[8px] border-gray-900 overflow-hidden ring-4 ring-gray-200/20"
+        role="img"
+        aria-label="Interactive phone mockup demonstrating a mobile PWA app with home, shop, and profile screens"
+      >
         {/* Dynamic Notch */}
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-7 bg-black rounded-b-2xl z-50 transition motion-reduce:duration-[0.01ms] duration-300 origin-top hover:scale-[1.15] cursor-pointer flex items-center justify-center">
           <div className="w-16 h-1 bg-gray-800 rounded-full"></div>
@@ -45,13 +49,17 @@ const InteractivePhoneMockup: React.FC = () => {
               aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
               className={`active:scale-[0.97] w-8 h-8 rounded-full flex items-center justify-center transition-colors motion-reduce:duration-[0.01ms] ${isDarkMode ? 'bg-white/10 text-yellow-400' : 'bg-gray-200 text-gray-600'}`}
             >
-              <OptimizedIcon icon={isDarkMode ? Sun : Moon} className="text-sm" aria-hidden="true" />
+              <OptimizedIcon
+                icon={isDarkMode ? Sun : Moon}
+                className="text-sm"
+                aria-hidden="true"
+              />
             </button>
           </div>
 
           <AnimatePresence mode="wait">
             {activeTab === 'home' && (
-              <motion.div
+              <m.div
                 key="home"
                 initial={{ opacity: 0, x: isRtl ? -20 : 20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -105,11 +113,11 @@ const InteractivePhoneMockup: React.FC = () => {
                     <div className="text-xs opacity-50">Active</div>
                   </div>
                 </div>
-              </motion.div>
+              </m.div>
             )}
 
             {activeTab === 'shop' && (
-              <motion.div
+              <m.div
                 key="shop"
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -128,11 +136,11 @@ const InteractivePhoneMockup: React.FC = () => {
                     </div>
                   </div>
                 ))}
-              </motion.div>
+              </m.div>
             )}
 
             {activeTab === 'profile' && (
-              <motion.div
+              <m.div
                 key="profile"
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -155,7 +163,7 @@ const InteractivePhoneMockup: React.FC = () => {
                     <OptimizedIcon icon={CaretRight} className="text-sm opacity-50" />
                   </div>
                 </div>
-              </motion.div>
+              </m.div>
             )}
           </AnimatePresence>
         </div>

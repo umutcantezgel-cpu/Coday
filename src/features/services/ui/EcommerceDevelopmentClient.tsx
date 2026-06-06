@@ -1,6 +1,5 @@
-"use client";
-import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
-import dynamic from 'next/dynamic';
+'use client';
+import React from 'react';
 import { useTranslations } from 'next-intl';
 import BlurText from '@/shared/ui/BlurText';
 import GradientText from '@/shared/ui/GradientText';
@@ -86,6 +85,4 @@ export function EcommerceDevelopmentClient() {
       </section>
     </div>
   );
-};
-
-
+}

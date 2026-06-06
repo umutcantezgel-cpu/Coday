@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 
 const locations = [
   { x: 50, y: 30, name: 'New York' },
@@ -16,7 +16,11 @@ const locations = [
 
 export const EdgeNetworkMap: React.FC = () => {
   return (
-    <div role="img" aria-label="Global Edge Network Map showing server locations in New York, Washington, California, London, Frankfurt, Stockholm, Tokyo, Singapore, Sydney, and São Paulo connected via Frankfurt hub" className="relative w-full aspect-video md:aspect-[2/1] bg-secondary/5 rounded-3xl border border-white/10 overflow-hidden flex items-center justify-center p-8">
+    <div
+      role="img"
+      aria-label="Global Edge Network Map showing server locations in New York, Washington, California, London, Frankfurt, Stockholm, Tokyo, Singapore, Sydney, and São Paulo connected via Frankfurt hub"
+      className="relative w-full aspect-video md:aspect-[2/1] bg-secondary/5 rounded-3xl border border-white/10 overflow-hidden flex items-center justify-center p-8"
+    >
       <div className="absolute top-4 start-6 z-10">
         <div className="text-xs font-bold text-primary uppercase tracking-widest mb-1">
           Global Edge Network
@@ -42,13 +46,13 @@ export const EdgeNetworkMap: React.FC = () => {
         </svg>
 
         {locations.map((loc, i) => (
-          <motion.div
+          <m.div
             key={i}
             className="absolute w-3 h-3"
             style={{ left: `${(loc.x / 180) * 100}%`, top: `${loc.y}%` }}
           >
             {/* Pulse */}
-            <motion.div
+            <m.div
               animate={{ scale: [1, 2], opacity: [0.5, 0] }}
               transition={{ duration: 1.5, repeat: Infinity, delay: i * 0.2 }}
               className="absolute inset-0 bg-primary rounded-full motion-reduce:hidden"
@@ -60,7 +64,7 @@ export const EdgeNetworkMap: React.FC = () => {
             <span className="absolute top-4 left-1/2 -translate-x-1/2 text-[10px] text-slate-400 opacity-0 hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms] whitespace-nowrap">
               {loc.name}
             </span>
-          </motion.div>
+          </m.div>
         ))}
 
         {/* Connection Lines (Frankfurt Hub) */}
@@ -74,7 +78,7 @@ export const EdgeNetworkMap: React.FC = () => {
             const y2 = loc.y;
 
             return (
-              <motion.line
+              <m.line
                 key={i}
                 x1={`${x1}%`}
                 y1={`${y1}%`}

@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import {
   Envelope,
   PaperPlaneRight,
@@ -81,14 +81,14 @@ export const EmailReportModal: React.FC<EmailReportModalProps> = ({ isOpen, onCl
   return (
     <AnimatePresence>
       {isOpen && (
-        <motion.div
+        <m.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50"
           onClick={onClose}
         >
-          <motion.div
+          <m.div
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
@@ -100,13 +100,13 @@ export const EmailReportModal: React.FC<EmailReportModalProps> = ({ isOpen, onCl
           >
             {isSent ? (
               <div className="text-center py-8">
-                <motion.div
+                <m.div
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"
                 >
                   <CheckCircle className="w-8 h-8 text-green-600" />
-                </motion.div>
+                </m.div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{t('modal.success_title')}</h3>
                 <p className="text-gray-600">{t('modal.success_message')}</p>
               </div>
@@ -193,8 +193,8 @@ export const EmailReportModal: React.FC<EmailReportModalProps> = ({ isOpen, onCl
                 <p className="text-xs text-gray-400 text-center mt-4">{t('modal.privacy_note')}</p>
               </>
             )}
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
       )}
     </AnimatePresence>
   );

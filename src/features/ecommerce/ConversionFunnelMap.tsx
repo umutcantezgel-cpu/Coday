@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { useRtl } from '@/shared/hooks/useRtl';
 
 const ConversionFunnelMap: React.FC = () => {
@@ -57,7 +57,7 @@ const ConversionFunnelMap: React.FC = () => {
         aria-label="Conversion funnel steps: from 100% landing visitors to 3.6% purchase"
       >
         {steps.map((step, idx) => (
-          <motion.div
+          <m.div
             key={idx}
             onMouseEnter={() => setHoveredStep(idx)}
             onMouseLeave={() => setHoveredStep(null)}
@@ -116,7 +116,7 @@ const ConversionFunnelMap: React.FC = () => {
 
             {/* Dropoff connector lines */}
             {idx < steps.length - 1 && <div className="h-2 w-0.5 bg-gray-200 mx-auto"></div>}
-          </motion.div>
+          </m.div>
         ))}
       </div>
     </div>

@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useMemo } from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { Calculator, Warning, Trophy } from '@phosphor-icons/react/dist/ssr';
 import { cn } from '@/shared/lib/utils';
 
@@ -118,7 +118,7 @@ const LatencyCostCalculator: React.FC = () => {
             <span className="text-gray-500 text-sm font-medium uppercase tracking-wider">
               Jährliches Verbrennungs-Potenzial
             </span>
-            <motion.div
+            <m.div
               key={lostRevenue}
               initial={{ scale: 0.9, opacity: 0.8 }}
               animate={{ scale: 1, opacity: 1 }}
@@ -128,7 +128,7 @@ const LatencyCostCalculator: React.FC = () => {
               )}
             >
               {lostRevenue > 0 ? `-${formatCurrency(lostRevenue * 12)}` : '0,00 €'}
-            </motion.div>
+            </m.div>
 
             {lostRevenue > 0 ? (
               <div className="flex items-center justify-center gap-2 text-red-600 bg-red-100 py-2 px-4 rounded-full inline-flex mx-auto">

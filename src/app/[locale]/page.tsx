@@ -56,7 +56,12 @@ export default async function HomePage() {
         id="schema-local-service"
         type="application/ld+json"
         nonce={nonce}
-        dangerouslySetInnerHTML={{ __html: JSON.stringify([serviceSchema, localSchema]) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [serviceSchema, localSchema],
+          }),
+        }}
       />
 
       <HeroSection />

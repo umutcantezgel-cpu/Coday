@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion, useScroll, useTransform } from 'motion/react';
+import { m, useScroll, useTransform } from 'motion/react';
 import { useRef } from 'react';
 import { Link } from '@/i18n/navigation';
 import { Icon } from '@/shared/ui/Icon';
@@ -39,7 +39,7 @@ const ParallaxHero = ({
       ref={ref}
       className="relative h-dvh min-h-[800px] flex items-center justify-center overflow-hidden"
     >
-      <motion.div
+      <m.div
         style={{ y, opacity, willChange: 'transform, opacity', transform: 'translateZ(0)' }}
         className="absolute inset-0 z-0 transform-gpu"
       >
@@ -53,11 +53,18 @@ const ParallaxHero = ({
             className="w-full h-full object-cover"
           />
         ) : (
-          <OptimizedImage src={image} alt={title} width={1920} height={1080} priority className="w-full h-full object-cover" />
+          <OptimizedImage
+            src={image}
+            alt={title}
+            width={1920}
+            height={1080}
+            priority
+            className="w-full h-full object-cover"
+          />
         )}
         <div className="absolute inset-0 bg-black/40 z-10" />
         <div className="absolute inset-0 bg-gradient-to-t from-background-light via-transparent to-black/20 z-10" />
-      </motion.div>
+      </m.div>
 
       <div className="container mx-auto px-4 z-20 text-center relative">
         <ScrollFloat
@@ -85,14 +92,14 @@ const ParallaxHero = ({
         </div>
       </div>
 
-      <motion.div
+      <m.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 1, repeat: Infinity, repeatType: 'reverse' }}
         className="absolute bottom-12 left-1/2 -translate-x-1/2 text-white/50 flex flex-col items-center gap-2 z-20"
       >
         <div className="w-px h-12 bg-gradient-to-b from-white to-transparent"></div>
-      </motion.div>
+      </m.div>
     </div>
   );
 };
@@ -129,7 +136,7 @@ export const IndustryLayout: React.FC<IndustryLayoutProps> = ({
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 -mt-32">
               {painPoints.map((point, i) => (
-                <motion.div
+                <m.div
                   key={i}
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -138,7 +145,7 @@ export const IndustryLayout: React.FC<IndustryLayoutProps> = ({
                 >
                   <h3 className="text-xl font-bold text-white mb-4">{point.title}</h3>
                   <p className="text-white/70">{point.description}</p>
-                </motion.div>
+                </m.div>
               ))}
             </div>
           </div>

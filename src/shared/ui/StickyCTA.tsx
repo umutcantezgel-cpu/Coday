@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import { Link as NavLink } from '@/i18n/navigation';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { RocketLaunch } from '@phosphor-icons/react/dist/ssr';
@@ -23,7 +23,7 @@ export const StickyCTA: React.FC = () => {
   return (
     <AnimatePresence>
       {isVisible && (
-        <motion.div
+        <m.div
           initial={{ y: 100 }}
           animate={{ y: 0 }}
           exit={{ y: 100 }}
@@ -46,7 +46,7 @@ export const StickyCTA: React.FC = () => {
               <OptimizedIcon icon={RocketLaunch} className="text-white" />
             </NavLink>
           </div>
-        </motion.div>
+        </m.div>
       )}
     </AnimatePresence>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { CheckCircle } from '@phosphor-icons/react/dist/ssr';
 
@@ -39,7 +39,7 @@ export const ProcessTimeline: React.FC<ProcessTimelineProps> = ({ steps, title, 
           {steps.map((step, index) => {
             const isEven = index % 2 === 0;
             return (
-              <motion.div
+              <m.div
                 key={index}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -66,7 +66,9 @@ export const ProcessTimeline: React.FC<ProcessTimelineProps> = ({ steps, title, 
                         {step.title}
                       </h3>
                     </div>
-                    <p className="text-content-muted leading-relaxed max-w-prose text-pretty text-lg">{step.description}</p>
+                    <p className="text-content-muted leading-relaxed max-w-prose text-pretty text-lg">
+                      {step.description}
+                    </p>
                   </div>
                 </div>
 
@@ -86,7 +88,7 @@ export const ProcessTimeline: React.FC<ProcessTimelineProps> = ({ steps, title, 
                     />
                   )}
                 </div>
-              </motion.div>
+              </m.div>
             );
           })}
         </div>

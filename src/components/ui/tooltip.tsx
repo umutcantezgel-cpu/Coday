@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect, ReactNode, useId } from 'react';
-import { AnimatePresence, motion } from 'motion/react';
+import { AnimatePresence, m } from 'motion/react';
 import { cn } from '@/lib/utils';
 
 interface TooltipProps {
@@ -86,7 +86,7 @@ export function Tooltip({ content, children, className, position = 'top' }: Tool
 
       <AnimatePresence>
         {isOpen && (
-          <motion.div
+          <m.div
             key="tooltip-content"
             id={tooltipId}
             initial={{ opacity: 0, scale: 0.95 }}
@@ -105,7 +105,7 @@ export function Tooltip({ content, children, className, position = 'top' }: Tool
             role="tooltip"
           >
             {content}
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </div>

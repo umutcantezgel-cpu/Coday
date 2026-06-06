@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import { useTranslations } from 'next-intl';
 
 const RecruitingFunnelDemo: React.FC = () => {
@@ -123,7 +123,7 @@ const RecruitingFunnelDemo: React.FC = () => {
           <div className="absolute inset-0 bg-primary/20 rounded-full blur-[100px]"></div>
 
           <AnimatePresence mode="wait">
-            <motion.div
+            <m.div
               key={step}
               initial={{ opacity: 0, y: 20, scale: 0.9 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -138,7 +138,7 @@ const RecruitingFunnelDemo: React.FC = () => {
                   {steps[step]!.visual}
                 </div>
               </div>
-            </motion.div>
+            </m.div>
           </AnimatePresence>
         </div>
       </div>

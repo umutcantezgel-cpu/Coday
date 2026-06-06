@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { CurrencyDollar, Robot, User, Lightning, ArrowRight } from '@phosphor-icons/react/dist/ssr';
 import Link from 'next/link';
 
@@ -114,7 +114,7 @@ export const AgencyCostCalculator: React.FC = () => {
                 <span className="text-base font-normal text-gray-400">/ mo</span>
               </div>
               <div className="w-full bg-gray-100 h-2 rounded-full mt-4 overflow-hidden">
-                <motion.div
+                <m.div
                   className="h-full bg-red-400"
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
@@ -144,7 +144,7 @@ export const AgencyCostCalculator: React.FC = () => {
                 <span className="text-base font-normal text-gray-400">/ mo</span>
               </div>
               <div className="w-full bg-white/10 h-2 rounded-full mt-4 overflow-hidden relative z-10">
-                <motion.div
+                <m.div
                   className="h-full bg-primary"
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 0.4 }} // Represents the efficiency ratio
@@ -154,7 +154,7 @@ export const AgencyCostCalculator: React.FC = () => {
             </div>
 
             {/* Savings Highlight */}
-            <motion.div
+            <m.div
               className="text-center p-6 bg-green-50 rounded-2xl border border-green-100"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -164,7 +164,7 @@ export const AgencyCostCalculator: React.FC = () => {
               <p className="text-4xl font-bold text-green-600">
                 {(savings * 12).toLocaleString('de-DE')}€
               </p>
-            </motion.div>
+            </m.div>
 
             <Link
               href="/contact"

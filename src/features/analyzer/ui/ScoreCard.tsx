@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { CircularGauge } from '@/features/analyzer/ui/CircularGauge';
 import { WarningCircle, ArrowRight } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
@@ -35,7 +35,7 @@ export const ScoreCard: React.FC<ScoreCardProps> = ({
   };
 
   return (
-    <motion.div
+    <m.div
       whileHover={{ y: -4, scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       onClick={onClick}
@@ -68,7 +68,11 @@ export const ScoreCard: React.FC<ScoreCardProps> = ({
         <div className="flex-shrink-0">
           {score === -1 ? (
             <div className="w-16 h-16 rounded-full border-4 border-gray-200 flex items-center justify-center bg-white">
-              <OptimizedIcon icon={WarningCircle} className="text-gray-400 text-2xl" aria-hidden="true" />
+              <OptimizedIcon
+                icon={WarningCircle}
+                className="text-gray-400 text-2xl"
+                aria-hidden="true"
+              />
             </div>
           ) : (
             <CircularGauge score={score} size={64} color={color} />
@@ -80,7 +84,7 @@ export const ScoreCard: React.FC<ScoreCardProps> = ({
       <div className="flex justify-end mt-2 opacity-0 group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms]">
         <OptimizedIcon icon={ArrowRight} className="text-primary text-sm" aria-hidden="true" />
       </div>
-    </motion.div>
+    </m.div>
   );
 };
 

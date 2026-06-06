@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import { RocketLaunch } from '@phosphor-icons/react/dist/ssr';
 
 export const RocketToTop = () => {
@@ -39,7 +39,7 @@ export const RocketToTop = () => {
   return (
     <AnimatePresence>
       {isVisible && (
-        <motion.button
+        <m.button
           onClick={scrollToTop}
           initial={{ opacity: 0, y: 50, scale: 0.5 }}
           animate={{
@@ -62,7 +62,7 @@ export const RocketToTop = () => {
           {/* Fire Particles when launching */}
           <AnimatePresence>
             {isLaunching && (
-              <motion.div
+              <m.div
                 initial={{ opacity: 1, scaleY: 0 }}
                 style={{ transformOrigin: 'top' }}
                 animate={{ opacity: 0, scaleY: 1 }}
@@ -72,7 +72,7 @@ export const RocketToTop = () => {
               />
             )}
           </AnimatePresence>
-        </motion.button>
+        </m.button>
       )}
     </AnimatePresence>
   );

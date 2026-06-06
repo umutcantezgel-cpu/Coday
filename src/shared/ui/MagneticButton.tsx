@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useRef, useState } from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { cn } from '@/shared/lib/utils';
 
 interface MagneticButtonProps {
@@ -33,7 +33,7 @@ export const MagneticButton: React.FC<MagneticButtonProps> = ({
   };
 
   return (
-    <motion.div
+    <m.div
       className={cn('relative inline-block', className)}
       ref={ref}
       onMouseMove={handleMouse}
@@ -43,6 +43,6 @@ export const MagneticButton: React.FC<MagneticButtonProps> = ({
       onClick={onClick}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 };

@@ -1,6 +1,5 @@
-"use client";
-import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
-import dynamic from 'next/dynamic';
+'use client';
+import React from 'react';
 import { useTranslations } from 'next-intl';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { SquaresFour, ArrowRight, Check, FigmaLogo, Code } from '@phosphor-icons/react';
@@ -9,7 +8,7 @@ import { Button } from '@/shared/ui/Button';
 import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
 import BlurText from '@/shared/ui/BlurText';
 import GradientText from '@/shared/ui/GradientText';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 
 export function DesignSystemsClient() {
   const t = useTranslations('services');
@@ -22,8 +21,6 @@ export function DesignSystemsClient() {
 
   return (
     <>
-      
-
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-6 overflow-hidden bg-surface-base">
         <div className="max-w-7xl mx-auto text-center relative z-10">
@@ -65,7 +62,7 @@ export function DesignSystemsClient() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {benefits.map((benefit, i) => (
-              <motion.div
+              <m.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -75,7 +72,7 @@ export function DesignSystemsClient() {
               >
                 <h3 className="text-2xl font-bold text-indigo-900 mb-3">{benefit.title}</h3>
                 <p className="text-indigo-700">{benefit.desc}</p>
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </div>
@@ -90,7 +87,7 @@ export function DesignSystemsClient() {
 
           <div className="space-y-4">
             {components.map((component, i) => (
-              <motion.div
+              <m.div
                 key={i}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -102,7 +99,7 @@ export function DesignSystemsClient() {
                   <OptimizedIcon icon={Check} weight="bold" />
                 </div>
                 <span className="text-lg font-medium">{component}</span>
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </div>
@@ -139,6 +136,4 @@ export function DesignSystemsClient() {
       <RelevantFAQs serviceId="design-systems" className="mb-24" />
     </>
   );
-};
-
-
+}

@@ -19,7 +19,7 @@ import {
   Rocket,
 } from '@phosphor-icons/react';
 import { Breadcrumbs } from '@/shared/ui/Breadcrumbs';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
 import { ScrollReveal } from '@/shared/ui/animations/ScrollReveal';
 
@@ -100,22 +100,28 @@ export const AboutClient: React.FC = () => {
       {/* ═══ HERO ═══ */}
       <section className="relative pt-36 pb-28 px-4 overflow-hidden bg-secondary">
         {/* Background Effects */}
-        <div className="absolute inset-0 opacity-[0.03] bg-[url('/noise.svg')]" aria-hidden="true" />
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] max-w-3xl max-h-3xl bg-primary/8 blur-[150px] rounded-full pointer-events-none" aria-hidden="true" />
+        <div
+          className="absolute inset-0 opacity-[0.03] bg-[url('/noise.svg')]"
+          aria-hidden="true"
+        />
+        <div
+          className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] max-w-3xl max-h-3xl bg-primary/8 blur-[150px] rounded-full pointer-events-none"
+          aria-hidden="true"
+        />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <motion.div className="mb-4 flex justify-center" {...stagger(0)}>
+          <m.div className="mb-4 flex justify-center" {...stagger(0)}>
             <Breadcrumbs />
-          </motion.div>
+          </m.div>
 
-          <motion.span
+          <m.span
             className="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-6 block"
             {...stagger(0.1)}
           >
             Unsere Identität
-          </motion.span>
+          </m.span>
 
-          <motion.h1
+          <m.h1
             className="font-display font-black text-4xl sm:text-6xl lg:text-7xl text-white mb-8 tracking-tighter leading-[1.1] max-w-5xl mx-auto"
             {...stagger(0.15)}
           >
@@ -128,18 +134,18 @@ export const AboutClient: React.FC = () => {
             >
               Keine Kompromisse.
             </GradientText>
-          </motion.h1>
+          </m.h1>
 
-          <motion.p
+          <m.p
             className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed mb-12"
             {...stagger(0.25)}
           >
             Coday ist eine Solo-Webagentur aus Wetzlar, die digitale Erlebnisse von Hand erschafft.
             Jedes Projekt ist ein Unikat, entwickelt für Marken, die sich von der Masse abheben
             wollen.
-          </motion.p>
+          </m.p>
 
-          <motion.div className="flex justify-center gap-4" {...stagger(0.35)}>
+          <m.div className="flex justify-center gap-4" {...stagger(0.35)}>
             <Link
               href="/contact"
               className="group inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-full font-medium hover:bg-primary/90 transition motion-reduce:duration-[0.01ms] hover:-translate-y-0.5 shadow-lg hover:shadow-glow focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
@@ -150,7 +156,7 @@ export const AboutClient: React.FC = () => {
                 className="transition-transform motion-reduce:duration-[0.01ms] group-hover:translate-x-1"
               />
             </Link>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
@@ -159,60 +165,66 @@ export const AboutClient: React.FC = () => {
         className="relative py-28 overflow-hidden"
         style={{ background: 'linear-gradient(180deg, #0f172a 0%, #111827 100%)' }}
       >
-        <div className="absolute inset-0 opacity-[0.02] bg-[url('/noise.svg')]" aria-hidden="true" />
+        <div
+          className="absolute inset-0 opacity-[0.02] bg-[url('/noise.svg')]"
+          aria-hidden="true"
+        />
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           {/* Decorative Quotation Mark */}
-          <motion.div
+          <m.div
             className="text-[8rem] md:text-[12rem] leading-none font-display font-black text-primary/10 select-none -mb-16 md:-mb-24"
             aria-hidden="true"
             {...stagger(0)}
           >
             „
-          </motion.div>
+          </m.div>
 
-          <motion.blockquote {...stagger(0.1)}>
+          <m.blockquote {...stagger(0.1)}>
             <p className="text-2xl md:text-3xl lg:text-4xl font-display font-light text-white/90 leading-snug tracking-tight">
               Wir glauben daran, dass das Internet ein Ort der{' '}
               <span className="text-primary font-semibold">Schönheit</span> und{' '}
               <span className="text-primary font-semibold">Funktionalität</span> sein sollte. Unsere
               Mission ist es, den Status Quo herauszufordern.
             </p>
-          </motion.blockquote>
+          </m.blockquote>
 
-          <motion.div className="mt-8 flex items-center justify-center gap-3" {...stagger(0.2)}>
+          <m.div className="mt-8 flex items-center justify-center gap-3" {...stagger(0.2)}>
             <div className="w-12 h-px bg-primary/50" />
             <span className="text-sm text-gray-500 tracking-widest uppercase font-medium">
               Anti-AI Philosophie
             </span>
             <div className="w-12 h-px bg-primary/50" />
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* ═══ VALUES ═══ */}
       <section className="py-24 lg:py-32 bg-secondary relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.02] bg-[url('/noise.svg')]" aria-hidden="true" />
+        <div
+          className="absolute inset-0 opacity-[0.02] bg-[url('/noise.svg')]"
+          aria-hidden="true"
+        />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <motion.span
+            <m.span
               className="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4 block"
               {...stagger(0)}
             >
               Unsere Werte
-            </motion.span>
-            <motion.h2
+            </m.span>
+            <m.h2
               className="text-3xl md:text-5xl font-display font-bold text-white tracking-tight"
               {...stagger(0.1)}
             >
               Was uns antreibt
-            </motion.h2>
+            </m.h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             {values.map((value, index) => (
-              <motion.div
+              <m.div
                 key={value.title}
                 className="group relative p-8 rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm hover:border-primary/30 hover:bg-white/[0.04] transition motion-reduce:duration-[0.01ms] duration-500"
                 {...stagger(index * 0.1)}
@@ -229,7 +241,7 @@ export const AboutClient: React.FC = () => {
                     {value.description}
                   </p>
                 </div>
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </div>
@@ -240,22 +252,25 @@ export const AboutClient: React.FC = () => {
         className="py-24 lg:py-32 relative overflow-hidden"
         style={{ background: 'linear-gradient(180deg, #111827 0%, #0f172a 100%)' }}
       >
-        <div className="absolute inset-0 opacity-[0.02] bg-[url('/noise.svg')]" aria-hidden="true" />
+        <div
+          className="absolute inset-0 opacity-[0.02] bg-[url('/noise.svg')]"
+          aria-hidden="true"
+        />
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-20">
-            <motion.span
+            <m.span
               className="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4 block"
               {...stagger(0)}
             >
               Unser Prozess
-            </motion.span>
-            <motion.h2
+            </m.span>
+            <m.h2
               className="text-3xl md:text-5xl font-display font-bold text-white tracking-tight"
               {...stagger(0.1)}
             >
               Von der Idee zum Meisterwerk
-            </motion.h2>
+            </m.h2>
           </div>
 
           {/* Timeline */}
@@ -265,7 +280,7 @@ export const AboutClient: React.FC = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6">
               {processSteps.map((step, index) => (
-                <motion.div
+                <m.div
                   key={step.title}
                   className="relative text-center group"
                   initial={{ opacity: 0, y: 40 }}
@@ -292,7 +307,7 @@ export const AboutClient: React.FC = () => {
                   <p className="text-gray-500 text-sm leading-relaxed max-w-[220px] mx-auto">
                     {step.description}
                   </p>
-                </motion.div>
+                </m.div>
               ))}
             </div>
           </div>

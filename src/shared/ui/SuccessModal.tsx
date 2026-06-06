@@ -2,7 +2,7 @@
 import React from 'react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { CheckCircle } from '@phosphor-icons/react/dist/ssr';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import { createPortal } from 'react-dom';
 import { useScrollLock } from '@/hooks/use-scroll-lock';
 
@@ -72,15 +72,15 @@ export const SuccessModal: React.FC<SuccessModalProps> = ({
   return createPortal(
     <AnimatePresence>
       {isOpen && (
-        <motion.div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-          <motion.div
+        <m.div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="absolute inset-0 bg-black/60 backdrop-blur-sm"
             onClick={onClose}
           />
-          <motion.div
+          <m.div
             ref={dialogRef}
             initial={{ scale: 0.9, opacity: 0, y: 20 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
@@ -92,9 +92,15 @@ export const SuccessModal: React.FC<SuccessModalProps> = ({
             aria-describedby="success-modal-desc"
           >
             {/* Background Decoration */}
-            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-500 to-purple-600" aria-hidden="true" />
+            <div
+              className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-500 to-purple-600"
+              aria-hidden="true"
+            />
 
-            <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6" aria-hidden="true">
+            <div
+              className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6"
+              aria-hidden="true"
+            >
               <OptimizedIcon icon={CheckCircle} className="text-4xl text-green-600" />
             </div>
 
@@ -104,7 +110,9 @@ export const SuccessModal: React.FC<SuccessModalProps> = ({
             >
               {title}
             </h3>
-            <p id="success-modal-desc" className="text-gray-600 mb-8 leading-relaxed">{message}</p>
+            <p id="success-modal-desc" className="text-gray-600 mb-8 leading-relaxed">
+              {message}
+            </p>
 
             <button
               ref={closeButtonRef}
@@ -113,8 +121,8 @@ export const SuccessModal: React.FC<SuccessModalProps> = ({
             >
               Verstanden
             </button>
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
       )}
     </AnimatePresence>,
     document.body

@@ -142,5 +142,11 @@
         }
       ]
     }
+  ],
+  "crons": [
+    {
+      "path": "/api/health",
+      "schedule": "0 10 * * *"
+    }
   ]
 }

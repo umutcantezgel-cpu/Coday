@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useTranslations } from 'next-intl';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import {
   PaperPlaneRight,
   Buildings,
@@ -109,26 +109,7 @@ export const GovContactForm: React.FC = () => {
 
       if (!result.success) throw new Error(result.error || 'Unknown error saving lead');
 
-      // 2. Trigger Edge Function (fire-and-forget for UI speed, or await if critical)
-      // Re-using existing endpoint
-      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-      const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-
-      if (supabaseUrl && supabaseKey) {
-        fetch(`${supabaseUrl}/functions/v1/send-lead`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${supabaseKey}`,
-          },
-          body: JSON.stringify({
-            ...data,
-            company: data.authority,
-            message: fullMessage,
-            project: 'Public Sector Inquiry',
-          }),
-        }).catch((err) => console.error('Edge function error:', err));
-      }
+      // Email notification is now handled by saveLeadInternalAction
 
       setSuccess(true);
     } catch (err: unknown) {
@@ -145,7 +126,7 @@ export const GovContactForm: React.FC = () => {
 
   if (success) {
     return (
-      <motion.div
+      <m.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         className="bg-green-50 border border-green-200 rounded-2xl p-8 text-center"
@@ -166,7 +147,7 @@ export const GovContactForm: React.FC = () => {
         >
           Neue Anfrage stellen
         </button>
-      </motion.div>
+      </m.div>
     );
   }
 

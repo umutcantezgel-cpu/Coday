@@ -1,6 +1,6 @@
-"use client";
+'use client';
 import React, { useRef, useState } from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 
 interface MagneticProps {
   children: React.ReactNode;
@@ -34,7 +34,7 @@ export const Magnetic: React.FC<MagneticProps> = ({ children, strength = 0.2, cl
   const { x, y } = position;
 
   return (
-    <motion.div
+    <m.div
       ref={ref}
       className={className}
       onMouseMove={handleMouseMove}
@@ -43,6 +43,6 @@ export const Magnetic: React.FC<MagneticProps> = ({ children, strength = 0.2, cl
       transition={{ type: 'spring', stiffness: 150, damping: 15, mass: 0.1 }}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 };

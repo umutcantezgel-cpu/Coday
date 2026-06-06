@@ -1,6 +1,5 @@
 'use client';
-import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
-import dynamic from 'next/dynamic';
+import React from 'react';
 import { useTranslations } from 'next-intl';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import {
@@ -18,7 +17,7 @@ import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
 import BlurText from '@/shared/ui/BlurText';
 import GradientText from '@/shared/ui/GradientText';
 import LogoLoop from '@/shared/ui/LogoLoop';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 
 interface ProcessStep {
   title: string;
@@ -88,7 +87,9 @@ export function MigrationClient() {
             <h2 className="text-4xl font-display font-bold mb-4 text-balance">
               {t('migration_page.before_after.title')}
             </h2>
-            <p className="text-xl text-content-muted">{t('migration_page.before_after.description')}</p>
+            <p className="text-xl text-content-muted">
+              {t('migration_page.before_after.description')}
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -155,7 +156,7 @@ export function MigrationClient() {
 
           <ol className="grid md:grid-cols-4 gap-6">
             {safeProcessSteps.map((step, i) => (
-              <motion.li
+              <m.li
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -164,7 +165,10 @@ export function MigrationClient() {
                 className="relative"
               >
                 <div className="bg-slate-800 border border-slate-700 rounded-2xl p-6 h-full">
-                  <div aria-hidden="true" className="w-10 h-10 rounded-full bg-purple-500/20 text-purple-300 font-bold flex items-center justify-center mb-4 text-lg">
+                  <div
+                    aria-hidden="true"
+                    className="w-10 h-10 rounded-full bg-purple-500/20 text-purple-300 font-bold flex items-center justify-center mb-4 text-lg"
+                  >
                     {i + 1}
                   </div>
                   <h3 className="text-lg font-bold text-white mb-2">{step.title}</h3>
@@ -172,9 +176,12 @@ export function MigrationClient() {
                 </div>
                 {/* Connector line (except for last) */}
                 {i < safeProcessSteps.length - 1 && (
-                  <div aria-hidden="true" className="hidden md:block absolute top-1/2 -right-3 w-6 h-0.5 bg-gradient-to-r from-slate-700 to-slate-500 transform -translate-y-1/2" />
+                  <div
+                    aria-hidden="true"
+                    className="hidden md:block absolute top-1/2 -right-3 w-6 h-0.5 bg-gradient-to-r from-slate-700 to-slate-500 transform -translate-y-1/2"
+                  />
                 )}
-              </motion.li>
+              </m.li>
             ))}
           </ol>
         </div>
@@ -186,7 +193,9 @@ export function MigrationClient() {
           <h2 className="text-3xl font-display font-bold mb-4 text-balance">
             {t('migration_page.technologies.title')}
           </h2>
-          <p className="text-lg text-content-muted">{t('migration_page.technologies.description')}</p>
+          <p className="text-lg text-content-muted">
+            {t('migration_page.technologies.description')}
+          </p>
         </div>
 
         <div className="flex flex-col gap-4">
@@ -224,12 +233,19 @@ export function MigrationClient() {
       {/* FAQ Section */}
       <section className="py-24 bg-surface-base">
         <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-12 text-center text-balance">{t('migration_page.faq.title')}</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center text-balance">
+            {t('migration_page.faq.title')}
+          </h2>
           <div className="space-y-6">
             {safeFaqItems.map((item, i) => (
-              <div key={i} className="bg-surface-elevated p-8 rounded-2xl shadow-sm border border-slate-100">
+              <div
+                key={i}
+                className="bg-surface-elevated p-8 rounded-2xl shadow-sm border border-slate-100"
+              >
                 <h3 className="text-lg font-bold mb-3">{item.q}</h3>
-                <p className="text-content-muted leading-relaxed max-w-prose text-pretty">{item.a}</p>
+                <p className="text-content-muted leading-relaxed max-w-prose text-pretty">
+                  {item.a}
+                </p>
               </div>
             ))}
           </div>

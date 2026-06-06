@@ -1,10 +1,11 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
+import { createPortal } from 'react-dom';
+import { m, AnimatePresence, useReducedMotion } from 'motion/react';
 import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { CaretDown, ArrowRight } from '@phosphor-icons/react/dist/ssr';
+import { CaretDown, ArrowRight, X } from '@phosphor-icons/react/dist/ssr';
 import { LanguageSwitcher } from '@/widgets/navigation/LanguageSwitcher';
 import { NavItem } from '@/widgets/navigation/config';
 import '@/widgets/navigation/MobileReadyNav.css';
@@ -23,6 +24,12 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
   const [expandedItem, setExpandedItem] = useState<string | null>(null);
   const containerRef = useFocusTrap(isOpen);
   const shouldReduceMotion = useReducedMotion();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setMounted(true), 0);
+    return () => clearTimeout(timer);
+  }, []);
 
   const toggleItem = (label: string) => {
     setExpandedItem(expandedItem === label ? null : label);
@@ -94,26 +101,26 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
     open: {
       opacity: 1,
       y: 0,
-
       transition: {
-        duration: 0.5,
-        ease: [0.21, 0.47, 0.32, 0.98] as [number, number, number, number],
+        type: 'spring' as const,
+        stiffness: 300,
+        damping: 24,
       },
     },
     closed: {
       opacity: 0,
       y: shouldReduceMotion ? 0 : 20,
-
       transition: {
-        duration: 0.4,
-        ease: [0.21, 0.47, 0.32, 0.98] as [number, number, number, number],
+        duration: 0.3,
       },
     },
   };
-  return (
+  if (!mounted) return null;
+
+  return createPortal(
     <AnimatePresence mode="wait">
       {isOpen && (
-        <motion.div
+        <m.div
           ref={containerRef}
           className="mobile-overlay-container"
           initial="closed"
@@ -124,9 +131,23 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
           aria-modal="true"
           aria-label={t('nav.mobile.label', { defaultValue: 'Mobile Navigation' })}
         >
+          {/* Custom Premium Header */}
+          <div className="mobile-header">
+            <Link href="/" className="mobile-logo" onClick={onClose}>
+              <span className="text-2xl font-bold text-white tracking-tight">Coday</span>
+            </Link>
+            <button
+              className="mobile-close-btn"
+              onClick={onClose}
+              aria-label={t('close', { defaultValue: 'Schließen' })}
+            >
+              <OptimizedIcon icon={X} className="w-6 h-6 text-white" />
+            </button>
+          </div>
+
           {/* Scrollable Content */}
-          <div className="mobile-content-scroll pt-24">
-            <motion.nav
+          <div className="mobile-content-scroll">
+            <m.nav
               className="mobile-nav-list"
               aria-label={t('nav.mobile.label', { defaultValue: 'Mobile Navigation' })}
               variants={containerVariants}
@@ -134,33 +155,29 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
               animate="open"
             >
               {items.map((item) => (
-                <motion.div
-                  key={item.label}
-                  className="mobile-group-wrapper"
-                  variants={itemVariants}
-                >
-                  <motion.button
+                <m.div key={item.label} className="mobile-group-wrapper" variants={itemVariants}>
+                  <m.button
                     className={`mobile-accordion-trigger ${expandedItem === item.label ? 'active' : ''}`}
                     onClick={() => toggleItem(item.label)}
                     aria-expanded={expandedItem === item.label}
                     whileTap={{ scale: 0.98 }}
                   >
-                    <span className="text-xl font-bold tracking-tight text-white">
+                    <span className="text-3xl font-light tracking-tight text-white">
                       {t(item.label)}
                     </span>
                     <OptimizedIcon
                       icon={CaretDown}
-                      className={`w-5 h-5 transition-transform motion-reduce:duration-[0.01ms] duration-300 ${
+                      className={`w-6 h-6 transition-transform motion-reduce:duration-[0.01ms] duration-300 ${
                         expandedItem === item.label
                           ? 'rotate-180 text-primary-400'
                           : 'text-slate-400'
                       }`}
                     />
-                  </motion.button>
+                  </m.button>
 
                   <AnimatePresence initial={false}>
                     {expandedItem === item.label && (
-                      <motion.div
+                      <m.div
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
@@ -243,12 +260,12 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
                             </div>
                           )}
                         </div>
-                      </motion.div>
+                      </m.div>
                     )}
                   </AnimatePresence>
-                </motion.div>
+                </m.div>
               ))}
-            </motion.nav>
+            </m.nav>
           </div>
 
           {/* Footer (Fixed at bottom) */}
@@ -267,8 +284,9 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
               </Link>
             </div>
           </div>
-        </motion.div>
+        </m.div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   );
 };

@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import {
   DownloadSimple,
   ShareNetwork,
@@ -172,7 +172,7 @@ export const ReportDashboard: React.FC = () => {
   return (
     <div className="w-full max-w-7xl mx-auto px-4 py-12">
       {/* Hero Section */}
-      <motion.div
+      <m.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="text-center mb-16"
@@ -251,12 +251,12 @@ export const ReportDashboard: React.FC = () => {
             <span>{t('dashboard.button_email')}</span>
           </button>
         </div>
-      </motion.div>
+      </m.div>
 
       {/* Main Score & Urgency */}
       <div className="grid lg:grid-cols-2 gap-8 mb-16">
         {/* Overall Score */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, x: isRtl ? 20 : -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.2 }}
@@ -267,7 +267,7 @@ export const ReportDashboard: React.FC = () => {
           </h3>
 
           {/* Big Score */}
-          <motion.div
+          <m.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.5, type: 'spring', stiffness: 200 }}
@@ -284,7 +284,7 @@ export const ReportDashboard: React.FC = () => {
             `}
           >
             <span className="text-6xl font-black text-white">{result.overallScore}</span>
-          </motion.div>
+          </m.div>
 
           <p className="text-gray-500">
             {result.overallScore >= 80
@@ -293,16 +293,16 @@ export const ReportDashboard: React.FC = () => {
                 ? t('dashboard.score_ok')
                 : t('dashboard.score_bad')}
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Urgency Meter */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, x: isRtl ? -20 : 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.3 }}
         >
           <UrgencyMeter score={result.urgencyScore} />
-        </motion.div>
+        </m.div>
       </div>
 
       {/* Category Grid */}
@@ -316,7 +316,7 @@ export const ReportDashboard: React.FC = () => {
               data && typeof data === 'object' && 'summary' in data ? data.summary : '';
 
             return (
-              <motion.div
+              <m.div
                 key={cat.key}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -330,7 +330,7 @@ export const ReportDashboard: React.FC = () => {
                   summary={summary as string}
                   onClick={() => setSelectedCategory(cat.key)}
                 />
-              </motion.div>
+              </m.div>
             );
           })}
         </div>
@@ -377,7 +377,7 @@ export const ReportDashboard: React.FC = () => {
 
         <div className="space-y-4">
           {allIssues.slice(0, 10).map((issue, idx) => (
-            <motion.div
+            <m.div
               key={idx}
               initial={{ opacity: 0, x: isRtl ? 20 : -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -413,7 +413,7 @@ export const ReportDashboard: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
 
@@ -441,7 +441,7 @@ export const ReportDashboard: React.FC = () => {
         {result.actionPlan ? (
           <div className="grid gap-4">
             {result.actionPlan.map((step) => (
-              <motion.div
+              <m.div
                 key={step.step}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -467,7 +467,7 @@ export const ReportDashboard: React.FC = () => {
                   </div>
                   <p className="text-gray-600">{step.description}</p>
                 </div>
-              </motion.div>
+              </m.div>
             ))}
           </div>
         ) : (
@@ -484,7 +484,7 @@ export const ReportDashboard: React.FC = () => {
       </div>
 
       {/* CTA Section */}
-      <motion.div
+      <m.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1 }}
@@ -508,7 +508,7 @@ export const ReportDashboard: React.FC = () => {
             {t('dashboard.button_new_analysis')}
           </button>
         </div>
-      </motion.div>
+      </m.div>
 
       {/* Modals */}
       <EmailReportModal

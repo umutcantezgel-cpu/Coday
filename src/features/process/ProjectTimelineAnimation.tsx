@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { Globe, Buildings, Palette, Code, RocketLaunch } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 
@@ -25,7 +25,7 @@ const ProjectTimelineAnimation: React.FC = () => {
         {steps.map((step, idx) => {
           const isEven = idx % 2 === 0;
           return (
-            <motion.div
+            <m.div
               key={idx}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -40,7 +40,9 @@ const ProjectTimelineAnimation: React.FC = () => {
                   {step.phase}
                 </span>
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-secondary text-white mb-6 shadow-xl">
-                  {step.icon && <OptimizedIcon icon={step.icon} className="text-3xl" aria-hidden="true" />}
+                  {step.icon && (
+                    <OptimizedIcon icon={step.icon} className="text-3xl" aria-hidden="true" />
+                  )}
                 </div>
                 <h3 className="font-display font-bold text-3xl text-secondary mb-4">
                   {step.title}
@@ -53,7 +55,7 @@ const ProjectTimelineAnimation: React.FC = () => {
 
               {/* Spacer for layout balance */}
               <div className="flex-1 hidden lg:block"></div>
-            </motion.div>
+            </m.div>
           );
         })}
       </div>

@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import {
   MagnifyingGlass,
   CircleNotch,
@@ -75,7 +75,7 @@ export const UrlInputForm: React.FC = () => {
             {/* Validation Indicator */}
             <AnimatePresence mode="wait">
               {url && (
-                <motion.div
+                <m.div
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.8 }}
@@ -86,7 +86,7 @@ export const UrlInputForm: React.FC = () => {
                   ) : (
                     <WarningCircle className="w-5 h-5 text-orange-400" />
                   )}
-                </motion.div>
+                </m.div>
               )}
             </AnimatePresence>
           </div>
@@ -122,7 +122,7 @@ export const UrlInputForm: React.FC = () => {
         {/* Error Message */}
         <AnimatePresence>
           {error && (
-            <motion.div
+            <m.div
               id="analyzer-url-error"
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -131,7 +131,7 @@ export const UrlInputForm: React.FC = () => {
             >
               <WarningCircle className="w-5 h-5 text-red-500 flex-shrink-0" />
               <p className="text-red-700 font-medium">{error}</p>
-            </motion.div>
+            </m.div>
           )}
         </AnimatePresence>
       </form>

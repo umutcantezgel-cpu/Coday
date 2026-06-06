@@ -5,7 +5,7 @@ import BlurText from '@/shared/ui/BlurText';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import { useTranslations } from 'next-intl';
 
-import { motion, useScroll, useTransform } from 'motion/react';
+import { m, useScroll, useTransform } from 'motion/react';
 import { useRef } from 'react';
 
 // Parallax Image Component
@@ -21,9 +21,16 @@ const ParallaxHeroImage = ({ src, alt }: { src: string; alt: string }) => {
 
   return (
     <div ref={ref} className="absolute inset-0 z-0 overflow-hidden">
-      <motion.div style={{ y, scale, opacity }} className="relative w-full h-full">
-        <OptimizedImage src={src} alt={alt} className="w-full h-full object-cover" priority width={1920} height={1080} />
-      </motion.div>
+      <m.div style={{ y, scale, opacity }} className="relative w-full h-full">
+        <OptimizedImage
+          src={src}
+          alt={alt}
+          className="w-full h-full object-cover"
+          priority
+          width={1920}
+          height={1080}
+        />
+      </m.div>
     </div>
   );
 };
@@ -69,9 +76,7 @@ export const CaseStudyLayout: React.FC<CaseStudyLayoutProps> = ({
       </nav>
 
       {/* Hero */}
-      <header
-        className="relative h-dvh min-h-[800px] flex items-end pb-32 overflow-hidden"
-      >
+      <header className="relative h-dvh min-h-[800px] flex items-end pb-32 overflow-hidden">
         {/* Parallax Background */}
         <div className="absolute inset-0 z-0">
           <ParallaxHeroImage src={heroImage} alt={title} />
@@ -100,7 +105,7 @@ export const CaseStudyLayout: React.FC<CaseStudyLayoutProps> = ({
         </div>
 
         {/* Scroll Indicator */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 1, repeat: Infinity, repeatType: 'reverse' }}
@@ -109,7 +114,7 @@ export const CaseStudyLayout: React.FC<CaseStudyLayoutProps> = ({
         >
           <span className="text-xs font-bold uppercase tracking-widest">Scroll</span>
           <div className="w-px h-12 bg-gradient-to-b from-white to-transparent"></div>
-        </motion.div>
+        </m.div>
       </header>
 
       <main>

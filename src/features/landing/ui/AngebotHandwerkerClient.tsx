@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import {
   Check,
   ShieldCheck,
@@ -30,9 +30,12 @@ export default function AngebotHandwerker() {
       <section className="relative pt-32 pb-20 overflow-hidden bg-white border-b border-slate-200">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-teal-100 rounded-full blur-[120px] opacity-30 -translate-y-1/2 translate-x-1/4 pointer-events-none" />
         <div className="container mx-auto px-6 relative z-10">
-          <motion.div initial="hidden" animate="visible" variants={fadeIn} className="max-w-4xl">
+          <m.div initial="hidden" animate="visible" variants={fadeIn} className="max-w-4xl">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-navy/5 rounded-full text-navy font-mono text-sm font-bold tracking-widest mb-8 border border-navy/10">
-              <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse motion-reduce:animate-none" aria-hidden="true" />
+              <span
+                className="w-2 h-2 rounded-full bg-teal-500 animate-pulse motion-reduce:animate-none"
+                aria-hidden="true"
+              />
               EXKLUSIV FÜR DIE MEISTER-GRUPPE
             </div>
             <h1 className="text-6xl md:text-8xl font-black text-navy uppercase leading-[1.05] tracking-tighter mb-8">
@@ -59,7 +62,7 @@ export default function AngebotHandwerker() {
                 Direkt zu den Preisen
               </a>
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
@@ -74,7 +77,7 @@ export default function AngebotHandwerker() {
         />
 
         <div className="container mx-auto px-6 relative z-10">
-          <motion.div
+          <m.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-100px' }}
@@ -85,10 +88,10 @@ export default function AngebotHandwerker() {
               Die harte Wahrheit
             </h2>
             <div className="w-24 h-1 bg-gold mx-auto" />
-          </motion.div>
+          </m.div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -107,15 +110,19 @@ export default function AngebotHandwerker() {
                 Ist die Seite langsam? Lädt das Bild vom Badumbau nicht sofort? Der Kunde ist beim
                 Konkurrenten. Das kostet direkt bares Geld.
               </p>
-            </motion.div>
+            </m.div>
 
-            <motion.div
+            <m.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               className="bg-teal-900/20 p-10 rounded-2xl border border-teal-500/30 relative shadow-[0_0_50px_rgba(44,165,160,0.15)]"
             >
-              <Lightning className="w-16 h-16 text-teal-400 mb-6" weight="duotone" aria-hidden="true" />
+              <Lightning
+                className="w-16 h-16 text-teal-400 mb-6"
+                weight="duotone"
+                aria-hidden="true"
+              />
               <h3 className="text-3xl font-bold mb-6 text-teal-400 uppercase">
                 Speed ins Fundament gegossen
               </h3>
@@ -126,13 +133,14 @@ export default function AngebotHandwerker() {
               <div className="bg-black/20 p-6 rounded-xl border border-white/5">
                 <p className="text-slate-300 text-lg">
                   <strong className="text-white flex items-center gap-2 mb-2">
-                    <Crosshair className="text-gold" aria-hidden="true" /> SEO wie ein Scharfschütze:
+                    <Crosshair className="text-gold" aria-hidden="true" /> SEO wie ein
+                    Scharfschütze:
                   </strong>
                   Wir wollen lieber 10 echte Käufer in eurer Stadt, als 1.000 wahllose Klicks von
                   Leuten, die nur rumschnüffeln.
                 </p>
               </div>
-            </motion.div>
+            </m.div>
           </div>
         </div>
       </section>
@@ -141,7 +149,7 @@ export default function AngebotHandwerker() {
       <section id="roi-calculator" className="py-24 bg-white border-b border-slate-200">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
-            <motion.div
+            <m.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -157,13 +165,16 @@ export default function AngebotHandwerker() {
               <p className="text-xl text-slate-500">
                 Rechne live aus, wie viel Geld du verbrennst, weil Kunden beim Konkurrenten anrufen.
               </p>
-            </motion.div>
+            </m.div>
 
             <div className="bg-white border border-slate-200 p-8 md:p-12 rounded-3xl shadow-2xl shadow-slate-200/50">
               <div className="grid md:grid-cols-2 gap-12">
                 <div>
                   <div className="mb-8">
-                    <label htmlFor="ticket-size" className="block text-sm font-bold text-slate-500 uppercase tracking-widest mb-4">
+                    <label
+                      htmlFor="ticket-size"
+                      className="block text-sm font-bold text-slate-500 uppercase tracking-widest mb-4"
+                    >
                       Ø Gewinn pro Auftrag (Netto)
                     </label>
                     <div className="flex items-center gap-4 mb-4">
@@ -184,7 +195,10 @@ export default function AngebotHandwerker() {
                   </div>
 
                   <div>
-                    <label htmlFor="lost-inquiries" className="block text-sm font-bold text-slate-500 uppercase tracking-widest mb-4">
+                    <label
+                      htmlFor="lost-inquiries"
+                      className="block text-sm font-bold text-slate-500 uppercase tracking-widest mb-4"
+                    >
                       Entgangene Aufträge pro Monat
                       <span className="block text-xs text-slate-400 normal-case mt-1">
                         (Kunden, die wegen schlechter Sichtbarkeit zur Konkurrenz gehen)
@@ -239,7 +253,7 @@ export default function AngebotHandwerker() {
       {/* PACKAGES */}
       <section id="pakete" className="py-24 bg-slate-50">
         <div className="container mx-auto px-6">
-          <motion.div
+          <m.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -250,11 +264,11 @@ export default function AngebotHandwerker() {
               Die Ausbau-Stufen
             </h2>
             <div className="w-24 h-1 bg-navy mx-auto" />
-          </motion.div>
+          </m.div>
 
           <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-start">
             {/* PAKET 1 */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -281,15 +295,19 @@ export default function AngebotHandwerker() {
                   'SEO-Basiskonfiguration',
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <Check className="text-teal-500 mt-1 flex-shrink-0" weight="bold" aria-hidden="true" />
+                    <Check
+                      className="text-teal-500 mt-1 flex-shrink-0"
+                      weight="bold"
+                      aria-hidden="true"
+                    />
                     <span className="text-slate-700">{item}</span>
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </m.div>
 
             {/* PAKET 3 - FLAGGSCHIFF (Center) */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -324,7 +342,11 @@ export default function AngebotHandwerker() {
                   'Premium UI/UX Design System',
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <Check className="text-gold mt-1 flex-shrink-0" weight="bold" aria-hidden="true" />
+                    <Check
+                      className="text-gold mt-1 flex-shrink-0"
+                      weight="bold"
+                      aria-hidden="true"
+                    />
                     <span className="text-slate-800 font-semibold">{item}</span>
                   </li>
                 ))}
@@ -335,10 +357,10 @@ export default function AngebotHandwerker() {
               >
                 Meisterstück anfragen
               </a>
-            </motion.div>
+            </m.div>
 
             {/* PAKET 2 */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -369,13 +391,17 @@ export default function AngebotHandwerker() {
                     'Bewertungs-Integration',
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
-                      <Check className="text-teal-400 mt-1 flex-shrink-0" weight="bold" aria-hidden="true" />
+                      <Check
+                        className="text-teal-400 mt-1 flex-shrink-0"
+                        weight="bold"
+                        aria-hidden="true"
+                      />
                       <span className="text-slate-200">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
-            </motion.div>
+            </m.div>
           </div>
         </div>
       </section>
@@ -384,7 +410,7 @@ export default function AngebotHandwerker() {
       <section className="py-24 bg-white border-y border-slate-200 overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center gap-16">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -393,7 +419,11 @@ export default function AngebotHandwerker() {
               <div className="w-full aspect-square max-w-md mx-auto bg-slate-50 border border-teal-200/50 rounded-[40px] flex items-center justify-center relative shadow-2xl">
                 <div className="absolute inset-0 bg-teal-50 rounded-[40px] -rotate-3 transition-transform motion-reduce:duration-[0.01ms] hover:rotate-0" />
                 <div className="relative z-10 w-32 h-32 bg-white rounded-2xl shadow-xl flex items-center justify-center border border-teal-100">
-                  <ShieldCheck className="w-16 h-16 text-teal-500" weight="duotone" aria-hidden="true" />
+                  <ShieldCheck
+                    className="w-16 h-16 text-teal-500"
+                    weight="duotone"
+                    aria-hidden="true"
+                  />
                 </div>
                 <div className="absolute -right-4 top-20 bg-white border border-teal-100 px-6 py-3 rounded-xl shadow-lg font-mono text-sm text-teal-600 font-bold">
                   99.9% UPTIME
@@ -402,9 +432,9 @@ export default function AngebotHandwerker() {
                   <Wrench className="text-slate-400" aria-hidden="true" /> WARTUNG AKTIV
                 </div>
               </div>
-            </motion.div>
+            </m.div>
 
-            <motion.div
+            <m.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -429,7 +459,7 @@ export default function AngebotHandwerker() {
               <p className="text-lg font-bold text-navy">
                 Einfach neue Baustellen-Fotos per WhatsApp schicken, ich baue sie ein. Fertig.
               </p>
-            </motion.div>
+            </m.div>
           </div>
         </div>
       </section>
@@ -439,10 +469,13 @@ export default function AngebotHandwerker() {
         id="kontakt"
         className="py-32 bg-navy text-white text-center relative overflow-hidden"
       >
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\'60\' height=\'103.923\' viewBox=\'0 0 60 103.923\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M30 103.923L0 86.6025V51.9615L30 34.641L60 51.9615V86.6025L30 103.923ZM30 101.923L58 85.6025V52.9615L30 36.641L2 52.9615V85.6025L30 101.923ZM30 51.9615L0 34.641V0L30 -17.3205L60 0V34.641L30 51.9615ZM30 49.9615L58 33.641V1.0385L30 -15.3205L2 1.0385V33.641L30 49.9615Z\' fill=\'%23ffffff\' fill-opacity=\'0.03\'/%3E%3C/svg%3E')]" aria-hidden="true" />
+        <div
+          className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\'60\' height=\'103.923\' viewBox=\'0 0 60 103.923\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M30 103.923L0 86.6025V51.9615L30 34.641L60 51.9615V86.6025L30 103.923ZM30 101.923L58 85.6025V52.9615L30 36.641L2 52.9615V85.6025L30 101.923ZM30 51.9615L0 34.641V0L30 -17.3205L60 0V34.641L30 51.9615ZM30 49.9615L58 33.641V1.0385L30 -15.3205L2 1.0385V33.641L30 49.9615Z\' fill=\'%23ffffff\' fill-opacity=\'0.03\'/%3E%3C/svg%3E')]"
+          aria-hidden="true"
+        />
 
         <div className="container mx-auto px-6 relative z-10">
-          <motion.div
+          <m.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -478,7 +511,7 @@ export default function AngebotHandwerker() {
             >
               Schreib mir in WhatsApp <ArrowRight weight="bold" aria-hidden="true" />
             </a>
-          </motion.div>
+          </m.div>
         </div>
       </section>
     </div>

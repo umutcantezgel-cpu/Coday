@@ -3,7 +3,7 @@
 import React, { useEffect, useState, useId } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { useRouter, Link as NavLink } from '@/i18n/navigation';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import {
   Clock,
@@ -127,15 +127,15 @@ export const PackagesClient: React.FC = () => {
         <StepIndicator currentStep="packages" className="mb-8" />
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-8">
-          <motion.span
+          <m.span
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block"
           >
             {t('page.title')}
-          </motion.span>
-          <motion.h1
+          </m.span>
+          <m.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
@@ -150,15 +150,15 @@ export const PackagesClient: React.FC = () => {
             >
               {headlineMiddle}
             </GradientText>
-          </motion.h1>
-          <motion.p
+          </m.h1>
+          <m.p
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-xl text-gray-600 max-w-2xl mx-auto"
           >
             {t('page.subheadline')}
-          </motion.p>
+          </m.p>
         </div>
       </div>
 
@@ -175,7 +175,7 @@ export const PackagesClient: React.FC = () => {
           {/* Package Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-center">
             {packages.map((pkg, index) => (
-              <motion.div
+              <m.div
                 key={pkg.id}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -312,12 +312,12 @@ export const PackagesClient: React.FC = () => {
                     </button>
                   </div>
                 </div>
-              </motion.div>
+              </m.div>
             ))}
           </div>
 
           {/* Custom Pricing Banner */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -348,10 +348,10 @@ export const PackagesClient: React.FC = () => {
                 </NavLink>
               </div>
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Trust Bar — compact inline */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -378,14 +378,14 @@ export const PackagesClient: React.FC = () => {
                 <span className="text-xs font-medium tracking-wide">{badge.label}</span>
               </div>
             ))}
-          </motion.div>
+          </m.div>
         </div>
       </div>
 
       {/* Comparison Section — Light */}
       <div className="bg-background-light py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-50px' }}
@@ -409,7 +409,10 @@ export const PackagesClient: React.FC = () => {
                     <th scope="col" className="p-4 text-center text-sm font-bold text-gray-900">
                       {t('comparison.headers.starter')}
                     </th>
-                    <th scope="col" className="p-4 text-center text-sm font-bold text-primary bg-primary/5">
+                    <th
+                      scope="col"
+                      className="p-4 text-center text-sm font-bold text-primary bg-primary/5"
+                    >
                       {t('comparison.headers.professional')}
                     </th>
                     <th scope="col" className="p-4 text-center text-sm font-bold text-gray-900">
@@ -466,7 +469,9 @@ export const PackagesClient: React.FC = () => {
                       key={_idx}
                       className="border-b border-gray-50 hover:bg-gray-50/50 transition-colors motion-reduce:duration-[0.01ms]"
                     >
-                      <th scope="row" className="p-4 text-sm font-medium text-gray-700 text-left">{feature}</th>
+                      <th scope="row" className="p-4 text-sm font-medium text-gray-700 text-left">
+                        {feature}
+                      </th>
                       <td className="p-4 text-center text-sm text-gray-600">{starter}</td>
                       <td className="p-4 text-center text-sm text-gray-900 bg-primary/5 font-medium">
                         {pro}
@@ -477,10 +482,10 @@ export const PackagesClient: React.FC = () => {
                 </tbody>
               </table>
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Retainer Section */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -534,10 +539,10 @@ export const PackagesClient: React.FC = () => {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </m.div>
 
           {/* FAQ Section */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -588,10 +593,10 @@ export const PackagesClient: React.FC = () => {
                 );
               })}
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Final CTA */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -611,7 +616,7 @@ export const PackagesClient: React.FC = () => {
                 <OptimizedIcon icon={Calendar} className="ml-2" />
               </NavLink>
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </div>

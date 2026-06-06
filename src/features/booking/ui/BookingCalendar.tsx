@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { useTranslations, useLocale } from 'next-intl';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import { Skeleton } from '@/shared/ui/Skeleton';
 // Initialize Supabase Client (Frontend)
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -135,7 +135,7 @@ const BookingCalendar = ({
   if (success) {
     return (
       <div className={`p-8 bg-gray-50 rounded-2xl border border-gray-200 text-center ${className}`}>
-        <motion.div
+        <m.div
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           className="flex flex-col items-center gap-4"
@@ -159,7 +159,7 @@ const BookingCalendar = ({
           >
             {t('calendar.success.new_booking')}
           </button>
-        </motion.div>
+        </m.div>
       </div>
     );
   }
@@ -178,34 +178,47 @@ const BookingCalendar = ({
             className={`flex items-center gap-1 ${s === step ? 'text-primary font-bold' : 'text-gray-400'}`}
             aria-current={s === step ? 'step' : undefined}
           >
-            <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${s === step ? 'bg-primary text-white' : s < step ? 'bg-primary/20 text-primary' : 'bg-gray-100 text-gray-400'}`}>
+            <span
+              className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${s === step ? 'bg-primary text-white' : s < step ? 'bg-primary/20 text-primary' : 'bg-gray-100 text-gray-400'}`}
+            >
               {s}
             </span>
-            <span className="hidden sm:inline">{s === 1 ? t('calendar.step1.title') : t('calendar.step2.title')}</span>
+            <span className="hidden sm:inline">
+              {s === 1 ? t('calendar.step1.title') : t('calendar.step2.title')}
+            </span>
           </div>
         ))}
       </nav>
       <AnimatePresence mode="wait">
         {step === 1 && (
-          <motion.div
+          <m.div
             key="step1"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 20 }}
             className="space-y-6"
           >
-            <h2 id="booking-step1-heading" className="text-xl font-bold text-gray-900 mb-4">{t('calendar.step1.title')}</h2>
+            <h2 id="booking-step1-heading" className="text-xl font-bold text-gray-900 mb-4">
+              {t('calendar.step1.title')}
+            </h2>
 
             {/* Scrollable Dates with Fade Mask */}
             <div className="relative" role="group" aria-labelledby="booking-step1-heading">
-              <div className="flex gap-3 overflow-x-auto pb-4 no-scrollbar scroll-smooth snap-x" role="listbox" aria-label={t('calendar.step1.title')}>
+              <div
+                className="flex gap-3 overflow-x-auto pb-4 no-scrollbar scroll-smooth snap-x"
+                role="listbox"
+                aria-label={t('calendar.step1.title')}
+              >
                 {dates.map((date) => {
                   const isSelected = selectedDate?.toDateString() === date.toDateString();
-                  const fullDateLabel = date.toLocaleDateString(locale === 'en' ? 'en-US' : 'de-DE', {
-                    weekday: 'long',
-                    day: 'numeric',
-                    month: 'long',
-                  });
+                  const fullDateLabel = date.toLocaleDateString(
+                    locale === 'en' ? 'en-US' : 'de-DE',
+                    {
+                      weekday: 'long',
+                      day: 'numeric',
+                      month: 'long',
+                    }
+                  );
                   return (
                     <button
                       key={date.toISOString()}
@@ -234,11 +247,13 @@ const BookingCalendar = ({
 
             {/* Time Slots */}
             {selectedDate && (
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 role="group"
-                aria-label={t('calendar.step2.form.notes.placeholder', { fallback: 'Available time slots' })}
+                aria-label={t('calendar.step2.form.notes.placeholder', {
+                  fallback: 'Available time slots',
+                })}
                 className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3"
               >
                 {fetchingSlots ? (
@@ -273,7 +288,7 @@ const BookingCalendar = ({
                     );
                   })
                 )}
-              </motion.div>
+              </m.div>
             )}
 
             <div className="flex justify-end pt-4">
@@ -291,7 +306,7 @@ const BookingCalendar = ({
                 createPortal(
                   <AnimatePresence>
                     {selectedDate && selectedTime && (
-                      <motion.div
+                      <m.div
                         initial={{ y: 100, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         exit={{ y: 100, opacity: 0 }}
@@ -317,17 +332,17 @@ const BookingCalendar = ({
                             />
                           </svg>
                         </button>
-                      </motion.div>
+                      </m.div>
                     )}
                   </AnimatePresence>,
                   document.body
                 )}
             </div>
-          </motion.div>
+          </m.div>
         )}
 
         {step === 2 && (
-          <motion.div
+          <m.div
             key="step2"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -462,7 +477,7 @@ const BookingCalendar = ({
                 </button>
               </div>
             </form>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </div>

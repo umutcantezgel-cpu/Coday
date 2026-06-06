@@ -180,26 +180,31 @@ const ORGANIZATION_SCHEMA = {
   email: 'kontakt@codayweb.de',
   telephone: '+49-176-41195301',
   foundingDate: '2024',
-  priceRange: '€€',
+  priceRange: '€€€',
   currenciesAccepted: 'EUR',
   paymentAccepted: 'Bank Transfer, Invoice',
   slogan: 'Die Anti-Agentur aus Wetzlar',
   numberOfEmployees: {
     '@type': 'QuantitativeValue',
-    value: 3,
+    value: 1,
   },
+  taxID: '039 874 00784',
   knowsAbout: [
-    'Web Development',
+    'Next.js',
     'React',
-    'React Router v7',
     'TypeScript',
+    'Tailwind CSS',
+    'Framer Motion',
+    'Headless CMS',
+    'Sanity',
+    'Supabase',
     'Search Engine Optimization',
     'Core Web Vitals',
-    'Headless CMS',
     'E-Commerce',
     'UI/UX Design',
     'Performance Optimization',
     'Generative Engine Optimization',
+    'Enterprise Webentwicklung',
   ],
   logo: {
     '@type': 'ImageObject',
@@ -214,10 +219,16 @@ const ORGANIZATION_SCHEMA = {
   founder: {
     '@type': 'Person',
     '@id': `${BASE_URL}/#founder`,
-    name: 'Umutcan Tezgel',
-    jobTitle: 'Founder & Lead Developer',
-    url: `${BASE_URL}/de/ueber-uns`,
-    sameAs: ['https://www.linkedin.com/in/umutcantezgel', 'https://github.com/umutcantezgel'],
+    name: 'Umutcan Emre Tezgel',
+    givenName: 'Umutcan Emre',
+    familyName: 'Tezgel',
+    jobTitle: 'Gr\u00fcnder & Full-Stack Developer',
+    worksFor: { '@id': `${BASE_URL}/#organization` },
+    sameAs: [
+      'https://www.linkedin.com/in/umutcan-emre-tezgel-156382218/',
+      'https://github.com/umurey',
+      'https://www.openpr.de/news/coday',
+    ],
   },
   address: {
     '@type': 'PostalAddress',
@@ -706,9 +717,9 @@ export const JsonLd: React.FC<JsonLdProps> = ({
   };
 
   return (
-    <script 
-      type="application/ld+json" 
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} 
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
     />
   );
 };

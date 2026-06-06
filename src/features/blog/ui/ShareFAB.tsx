@@ -7,7 +7,7 @@ import {
   Copy,
   Check,
 } from '@phosphor-icons/react/dist/ssr';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import { useTranslations } from 'next-intl';
 
 export const ShareFAB: React.FC<{ title: string; url?: string }> = ({ title, url }) => {
@@ -41,7 +41,7 @@ export const ShareFAB: React.FC<{ title: string; url?: string }> = ({ title, url
     <div className="fixed bottom-8 right-8 z-50">
       <AnimatePresence>
         {isOpen && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 20 }}
@@ -68,11 +68,11 @@ export const ShareFAB: React.FC<{ title: string; url?: string }> = ({ title, url
             >
               {copied ? <Check size={20} className="text-green-500" /> : <Copy size={20} />}
             </button>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
 
-      <motion.button
+      <m.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsOpen(!isOpen)}
@@ -81,7 +81,7 @@ export const ShareFAB: React.FC<{ title: string; url?: string }> = ({ title, url
         aria-expanded={isOpen}
       >
         <ShareNetwork size={24} />
-      </motion.button>
+      </m.button>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { Icon } from '@/shared/ui/Icon';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 
 const DesignSystemShowcase: React.FC = () => {
   const [theme, setTheme] = useState<'brand-a' | 'brand-b'>('brand-a');
@@ -62,12 +62,12 @@ const DesignSystemShowcase: React.FC = () => {
         </div>
       </div>
 
-      <motion.div
+      <m.div
         layout
         className={`grid md:grid-cols-2 gap-8 p-8 rounded-2xl transition-colors motion-reduce:duration-[0.01ms] duration-500 ${current.bg} border border-border-subtle/50`}
       >
         {/* Card Component */}
-        <motion.div
+        <m.div
           layout
           className={`p-6 ${current.bg} ${current.border} shadow-none`}
           style={{
@@ -103,13 +103,15 @@ const DesignSystemShowcase: React.FC = () => {
           >
             Action
           </button>
-        </motion.div>
+        </m.div>
 
         {/* Input Elements */}
         <div className="space-y-4">
           <div className="space-y-2">
-            <label htmlFor="design-email" className={`text-sm font-bold ${current.textColor}`}>Email Address</label>
-            <motion.input
+            <label htmlFor="design-email" className={`text-sm font-bold ${current.textColor}`}>
+              Email Address
+            </label>
+            <m.input
               layout
               id="design-email"
               type="text"
@@ -127,7 +129,7 @@ const DesignSystemShowcase: React.FC = () => {
           </div>
 
           {/* Alert / Badge */}
-          <motion.div
+          <m.div
             layout
             className={`p-4 flex items-center gap-3`}
             style={{
@@ -138,7 +140,7 @@ const DesignSystemShowcase: React.FC = () => {
           >
             <Icon name="info" style={{ color: theme === 'brand-a' ? 'black' : current.primary }} />
             <span className={`text-sm font-bold ${current.textColor}`}>System Alert</span>
-          </motion.div>
+          </m.div>
 
           {/* Toggle Switch */}
           <div className="flex items-center gap-3">
@@ -153,12 +155,15 @@ const DesignSystemShowcase: React.FC = () => {
                 border: theme === 'brand-a' ? '2px solid black' : 'none',
               }}
             >
-              <span className="absolute right-1 top-1 w-4 h-4 bg-surface-elevated rounded-full shadow-sm" aria-hidden="true"></span>
+              <span
+                className="absolute right-1 top-1 w-4 h-4 bg-surface-elevated rounded-full shadow-sm"
+                aria-hidden="true"
+              ></span>
             </button>
             <span className={`text-sm font-bold ${current.textColor}`}>Toggle State</span>
           </div>
         </div>
-      </motion.div>
+      </m.div>
 
       <div className="mt-8 grid grid-cols-3 gap-4">
         {['Primary Color', 'Border Radius', 'Typography'].map((label, i) => (

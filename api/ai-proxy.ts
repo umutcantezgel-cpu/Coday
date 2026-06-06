@@ -1,6 +1,18 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+const GEMINI_KEYS = (process.env.GEMINI_API_KEYS || process.env.GEMINI_API_KEY || '')
+  .split(',')
+  .map((k) => k.trim())
+  .filter(Boolean);
+const OPENROUTER_KEYS = (process.env.OPENROUTER_API_KEYS || '')
+  .split(',')
+  .map((k) => k.trim())
+  .filter(Boolean);
+
+function getRandomKey(keys: string[]) {
+  if (keys.length === 0) return null;
+  return keys[Math.floor(Math.random() * keys.length)];
+}
 
 // Simple in-memory rate limiter
 const rateLimit = new Map<string, { count: number; resetAt: number }>();
@@ -35,9 +47,60 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   try {
     const { messages, model } = req.body;
+    const requestedModel = model || 'gemini-2.0-flash';
+
+    // OpenRouter routing
+    if (requestedModel.includes('/')) {
+      const orKey = getRandomKey(OPENROUTER_KEYS);
+      if (!orKey) {
+        return res.status(500).json({ error: 'OpenRouter keys not configured' });
+      }
+
+      // Convert Gemini message format to OpenAI format for OpenRouter
+      const openAiMessages = messages.map((m: any) => ({
+        role: m.role || 'user',
+        content: m.parts?.[0]?.text || '',
+      }));
+
+      const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${orKey}`,
+          'HTTP-Referer': 'https://codayweb.de',
+          'X-Title': 'Coday',
+        },
+        body: JSON.stringify({
+          model: requestedModel,
+          messages: openAiMessages,
+        }),
+      });
+
+      const data = await response.json();
+
+      // Convert OpenAI response format back to Gemini format for the client
+      if (data.choices && data.choices[0]) {
+        return res.status(200).json({
+          candidates: [
+            {
+              content: {
+                parts: [{ text: data.choices[0].message.content }],
+              },
+            },
+          ],
+        });
+      }
+      return res.status(200).json(data);
+    }
+
+    // Native Gemini routing
+    const geminiKey = getRandomKey(GEMINI_KEYS);
+    if (!geminiKey) {
+      return res.status(500).json({ error: 'Gemini keys not configured' });
+    }
 
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/${model || 'gemini-2.0-flash'}:generateContent?key=${GEMINI_API_KEY}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/${requestedModel}:generateContent?key=${geminiKey}`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

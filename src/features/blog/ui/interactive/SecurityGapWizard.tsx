@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import {
   ShieldCheck,
   LockKey,
@@ -92,9 +92,19 @@ export const SecurityGapWizard: React.FC = () => {
   const currentQuestion = QUESTIONS[step];
 
   return (
-    <section className="my-16 relative overflow-hidden rounded-[2.5rem] border border-gray-200 bg-white shadow-xl min-h-[400px] flex flex-col" aria-label="Security Gap Assessment">
-      <div className="absolute top-0 left-0 w-full h-1 bg-gray-100" role="progressbar" aria-valuenow={step + (showResult ? 1 : 0)} aria-valuemin={0} aria-valuemax={QUESTIONS.length} aria-label={`Step ${step + 1} of ${QUESTIONS.length}`}>
-        <motion.div
+    <section
+      className="my-16 relative overflow-hidden rounded-[2.5rem] border border-gray-200 bg-white shadow-xl min-h-[400px] flex flex-col"
+      aria-label="Security Gap Assessment"
+    >
+      <div
+        className="absolute top-0 left-0 w-full h-1 bg-gray-100"
+        role="progressbar"
+        aria-valuenow={step + (showResult ? 1 : 0)}
+        aria-valuemin={0}
+        aria-valuemax={QUESTIONS.length}
+        aria-label={`Step ${step + 1} of ${QUESTIONS.length}`}
+      >
+        <m.div
           className="h-full bg-blue-600"
           initial={{ scaleX: 0 }}
           animate={{ scaleX: (((step + (showResult ? 1 : 0)) / QUESTIONS.length) * 100) / 100 }}
@@ -105,7 +115,7 @@ export const SecurityGapWizard: React.FC = () => {
       <div className="flex-1 p-8 md:p-12 flex flex-col items-center justify-center text-center">
         <AnimatePresence mode="wait">
           {!showResult ? (
-            <motion.div
+            <m.div
               key={`step-${step}`}
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -142,9 +152,9 @@ export const SecurityGapWizard: React.FC = () => {
               <div className="mt-8 text-xs text-xs text-gray-400 font-mono uppercase tracking-widest">
                 Step {step + 1} of {QUESTIONS.length}
               </div>
-            </motion.div>
+            </m.div>
           ) : (
-            <motion.div
+            <m.div
               key="result"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -173,7 +183,7 @@ export const SecurityGapWizard: React.FC = () => {
                   <span className="text-2xl font-mono font-bold">{percentage}%</span>
                 </div>
                 <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
-                  <motion.div
+                  <m.div
                     className={clsx(
                       'h-full',
                       percentage >= 90
@@ -200,7 +210,7 @@ export const SecurityGapWizard: React.FC = () => {
               >
                 Restart Assessment
               </button>
-            </motion.div>
+            </m.div>
           )}
         </AnimatePresence>
       </div>

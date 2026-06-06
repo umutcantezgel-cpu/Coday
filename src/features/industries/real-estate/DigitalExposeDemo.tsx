@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import { useTranslations } from 'next-intl';
 
 const DigitalExposeDemo: React.FC = () => {
@@ -18,7 +18,11 @@ const DigitalExposeDemo: React.FC = () => {
 
       {/* Toggle */}
       <div className="flex justify-center mb-12">
-        <div className="bg-white/10 p-1 rounded-xl flex gap-1" role="group" aria-label={t('immobilien-makler.features.expose_demo.title')}>
+        <div
+          className="bg-white/10 p-1 rounded-xl flex gap-1"
+          role="group"
+          aria-label={t('immobilien-makler.features.expose_demo.title')}
+        >
           <button
             onClick={() => setView('pdf')}
             aria-pressed={view === 'pdf'}
@@ -40,7 +44,7 @@ const DigitalExposeDemo: React.FC = () => {
       <div className="max-w-4xl mx-auto h-[500px] relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black">
         <AnimatePresence mode="wait">
           {view === 'pdf' ? (
-            <motion.div
+            <m.div
               key="pdf"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -69,9 +73,9 @@ const DigitalExposeDemo: React.FC = () => {
                     ))}
                 </div>
               </div>
-            </motion.div>
+            </m.div>
           ) : (
-            <motion.div
+            <m.div
               key="web"
               initial={{ opacity: 0, scale: 1.05 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -91,25 +95,25 @@ const DigitalExposeDemo: React.FC = () => {
                 ></div>
 
                 <div className="relative z-10 p-8 h-full flex flex-col justify-center items-center text-center">
-                  <motion.div
+                  <m.div
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.2 }}
                     className="inline-block bg-primary/20 text-primary border border-primary/30 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4"
                   >
                     {t('immobilien-makler.features.expose_demo.web_view.badge')}
-                  </motion.div>
+                  </m.div>
 
-                  <motion.h2
+                  <m.h2
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.3 }}
                     className="text-4xl font-display font-black text-white mb-6"
                   >
                     {t('immobilien-makler.features.expose_demo.web_view.title')}
-                  </motion.h2>
+                  </m.h2>
 
-                  <motion.div
+                  <m.div
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.4 }}
@@ -121,7 +125,7 @@ const DigitalExposeDemo: React.FC = () => {
                     <button className="active:scale-[0.97] bg-white/10 text-white backdrop-blur border border-white/20 px-6 py-3 rounded-full font-bold hover:bg-white/20 transition-colors motion-reduce:duration-[0.01ms]">
                       {t('immobilien-makler.features.expose_demo.web_view.cta_share')}
                     </button>
-                  </motion.div>
+                  </m.div>
 
                   {/* Feature Badges */}
                   <div className="absolute bottom-8 flex gap-8">
@@ -144,7 +148,7 @@ const DigitalExposeDemo: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </m.div>
           )}
         </AnimatePresence>
       </div>

@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 
 import { Code, Flask, RocketLaunch, Ruler, Users, Check } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
@@ -137,7 +137,7 @@ const CodeQualitySimulator: React.FC = () => {
               aria-hidden="true"
             >
               <circle cx="50" cy="50" r="45" fill="none" stroke="#f3f4f6" strokeWidth="8" />
-              <motion.circle
+              <m.circle
                 cx="50"
                 cy="50"
                 r="45"
@@ -152,14 +152,14 @@ const CodeQualitySimulator: React.FC = () => {
               />
             </svg>
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-              <motion.span
+              <m.span
                 key={score}
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 className="text-4xl font-black text-secondary"
               >
                 {score}%
-              </motion.span>
+              </m.span>
               <span className="text-xs uppercase font-bold text-gray-400">
                 {t('web_development_page.process.simulator.status_label')}
               </span>
@@ -167,7 +167,7 @@ const CodeQualitySimulator: React.FC = () => {
           </div>
 
           <AnimatePresence mode="wait">
-            <motion.div
+            <m.div
               key={message}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -180,7 +180,7 @@ const CodeQualitySimulator: React.FC = () => {
                   : t('web_development_page.process.simulator.project_status')}
               </div>
               <p className="text-slate-500 text-sm max-w-xs">{message}</p>
-            </motion.div>
+            </m.div>
           </AnimatePresence>
         </div>
       </div>

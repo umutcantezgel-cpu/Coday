@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
@@ -35,7 +35,7 @@ export const GlobalCTA: React.FC<GlobalCTAProps> = ({
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
@@ -78,7 +78,7 @@ export const GlobalCTA: React.FC<GlobalCTAProps> = ({
               />
             </span>
           </Link>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

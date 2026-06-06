@@ -139,8 +139,11 @@ export const getNavItems = (): NavItem[] => [
         title: 'nav.industries.other.title',
         links: [
           { label: 'nav.industries.other.overview', href: '/branchen' },
-          { label: 'nav.industries.other.real_estate', href: '/branchen/immobilien-makler' },
-          { label: 'nav.industries.other.gastronomy', href: '/branchen/gastronomie-hotellerie' },
+          { label: 'nav.industries.other.real_estate', href: '/branchen/immobilien' },
+          { label: 'nav.industries.other.gastronomy', href: '/branchen/gastronomie' },
+          { label: 'nav.industries.other.services', href: '/branchen/dienstleistung' },
+          { label: 'nav.industries.other.retail', href: '/branchen/retail' },
+          { label: 'nav.industries.other.public_sector', href: '/branchen/public-sector' },
         ],
       },
     ],

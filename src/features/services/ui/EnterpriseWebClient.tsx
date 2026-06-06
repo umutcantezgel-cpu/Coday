@@ -1,8 +1,7 @@
 'use client';
-import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
-import dynamic from 'next/dynamic';
+import React, { useRef } from 'react';
 import { useTranslations } from 'next-intl';
-import { motion, useScroll, useTransform } from 'motion/react';
+import { m, useScroll, useTransform } from 'motion/react';
 import { ArrowRight, Cpu } from '@phosphor-icons/react';
 import { Link as NavLink } from '@/i18n/navigation';
 import { TechStackHologram } from '@/features/enterprise/TechStackHologram';
@@ -55,7 +54,7 @@ export function EnterpriseWebClient() {
         </div>
 
         <div className="container mx-auto px-4 z-10 text-center">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -95,11 +94,11 @@ export function EnterpriseWebClient() {
                 {t('enterprise_web_page.hero.cta_secondary')}
               </NavLink>
             </div>
-          </motion.div>
+          </m.div>
         </div>
 
         {/* Scroll Indicator */}
-        <motion.div
+        <m.div
           style={{ opacity }}
           className="absolute bottom-10 start-1/2 -translate-x-1/2 rtl:translate-x-1/2 flex flex-col items-center gap-2"
         >
@@ -107,7 +106,7 @@ export function EnterpriseWebClient() {
             {t('enterprise_web_page.hero.scroll_hint')}
           </span>
           <div className="w-[1px] h-12 bg-gradient-to-b from-primary to-transparent"></div>
-        </motion.div>
+        </m.div>
       </section>
 
       {/* SECTION 2: SPEED / METRICS */}

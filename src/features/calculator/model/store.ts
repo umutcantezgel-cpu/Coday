@@ -31,21 +31,22 @@ export const useCalculatorStore = create<CalculatorState>()(
       selectPackage: (packageId) => {
         const newSet = new Set<string>();
 
-        // Map Packages to Modules (Pre-selection)
+        // Map Packages exactly 1:1 to their base module to prevent hidden cost mismatches
         switch (packageId) {
+          case 'onepager':
+            newSet.add('basis-onepager');
+            break;
           case 'starter':
             newSet.add('basis-starter');
-            // Starter features usually included in base price
             break;
           case 'professional':
-            newSet.add('basis-business'); // Corporate Website
-            newSet.add('func-cms'); // CMS
-            newSet.add('support-basic'); // Monthly Support
+            newSet.add('basis-professional');
             break;
           case 'enterprise':
-            newSet.add('basis-enterprise'); // Web App
-            newSet.add('commerce-headless'); // E-Commerce
-            newSet.add('support-pro'); // Premium Support
+            newSet.add('basis-enterprise');
+            break;
+          case 'ultimate':
+            newSet.add('basis-ultimate');
             break;
           default:
             newSet.add('basis-starter');
@@ -121,9 +122,11 @@ export const useCalculatorStore = create<CalculatorState>()(
         const { selectedPackageId } = get();
         if (!selectedPackageId) return null;
         const names: Record<string, string> = {
+          onepager: 'Onepager',
           starter: 'Starter',
           professional: 'Professional',
           enterprise: 'Enterprise',
+          ultimate: 'Ultimate',
         };
         return names[selectedPackageId] || null;
       },

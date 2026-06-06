@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { ChartBar, Warning } from '@phosphor-icons/react/dist/ssr';
 import { clsx } from 'clsx';
 
@@ -115,7 +115,7 @@ export const TCOCalculator: React.FC = () => {
                 <span className="text-red-600">${wpTotalWithBuild.toLocaleString()}</span>
               </div>
               <div className="h-12 bg-gray-100 rounded-xl overflow-hidden relative">
-                <motion.div
+                <m.div
                   className="h-full bg-gradient-to-r from-red-400 to-red-600"
                   initial={{ scaleX: 0 }}
                   animate={{
@@ -136,7 +136,7 @@ export const TCOCalculator: React.FC = () => {
                 <span className="text-green-600">${headlessTotal.toLocaleString()}</span>
               </div>
               <div className="h-12 bg-gray-100 rounded-xl overflow-hidden relative">
-                <motion.div
+                <m.div
                   className="h-full bg-gradient-to-r from-green-400 to-green-600"
                   initial={{ scaleX: 0 }}
                   animate={{

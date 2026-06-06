@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { SeoHead } from '@/shared/ui/SeoHead';
 import { Button } from '@/shared/ui/Button';
 import { Link } from '@/i18n/navigation';
@@ -54,26 +54,26 @@ export const GamifiedIndustryTemplate: React.FC<{ content: any; cityData?: any }
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-bg-primary/20 to-transparent pointer-events-none" />
         <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-16 items-center relative z-10">
           <div>
-            <motion.span
+            <m.span
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               className="inline-flex items-center px-4 py-2 rounded-full bg-secondary-50 text-primary-600 font-bold uppercase tracking-wider text-xs mb-6 border border-secondary-100 shadow-sm"
             >
               <div className="w-2 h-2 rounded-full bg-primary-500 mr-2 animate-pulse" />
               {content.hero.headline}
-            </motion.span>
+            </m.span>
             <h1 className="font-display font-black text-5xl sm:text-7xl text-secondary-900 mb-6 tracking-tight leading-[1.1]">
               <BlurText text={content.hero.subheadline} delay={30} animateBy="words" />
             </h1>
-            <motion.p
+            <m.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
               className="text-xl text-secondary-600 font-medium leading-relaxed mb-10 max-w-xl"
             >
               {content.hero.description}
-            </motion.p>
-            <motion.div
+            </m.p>
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 }}
@@ -88,14 +88,14 @@ export const GamifiedIndustryTemplate: React.FC<{ content: any; cityData?: any }
                   Unverbindliche Analyse
                 </Button>
               </Link>
-            </motion.div>
+            </m.div>
           </div>
 
           <div className="relative">
             {/* Gamified Floating Stats */}
             <div className="grid grid-cols-2 gap-4">
               {content.hero.metrics?.map((metric: any, idx: number) => (
-                <motion.div
+                <m.div
                   key={idx}
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -109,7 +109,7 @@ export const GamifiedIndustryTemplate: React.FC<{ content: any; cityData?: any }
                   <div className="text-sm font-bold text-secondary-500 uppercase tracking-wide">
                     {metric.label}
                   </div>
-                </motion.div>
+                </m.div>
               ))}
             </div>
             {/* Abstract Decorative Element */}
@@ -145,7 +145,7 @@ export const GamifiedIndustryTemplate: React.FC<{ content: any; cityData?: any }
               const Icon = getIconByName(card.icon);
 
               return (
-                <motion.div
+                <m.div
                   key={idx}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -164,7 +164,7 @@ export const GamifiedIndustryTemplate: React.FC<{ content: any; cityData?: any }
                   <p className="text-secondary-600 leading-relaxed font-medium mt-auto">
                     {card.text}
                   </p>
-                </motion.div>
+                </m.div>
               );
             })}
           </div>
@@ -199,7 +199,7 @@ export const GamifiedIndustryTemplate: React.FC<{ content: any; cityData?: any }
             </div>
             <div className="space-y-8">
               {content.processSteps?.map((step: any, idx: number) => (
-                <motion.div
+                <m.div
                   key={idx}
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -212,7 +212,7 @@ export const GamifiedIndustryTemplate: React.FC<{ content: any; cityData?: any }
                   <p className="text-secondary-600 leading-relaxed font-medium">
                     {step.description}
                   </p>
-                </motion.div>
+                </m.div>
               ))}
             </div>
           </div>
@@ -247,13 +247,13 @@ export const GamifiedIndustryTemplate: React.FC<{ content: any; cityData?: any }
                   </div>
                 </div>
                 {openFaq === idx && (
-                  <motion.div
+                  <m.div
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: 'auto', opacity: 1 }}
                     className="px-6 pb-6 text-secondary-300 font-medium leading-relaxed"
                   >
                     {item.a}
-                  </motion.div>
+                  </m.div>
                 )}
               </div>
             ))}

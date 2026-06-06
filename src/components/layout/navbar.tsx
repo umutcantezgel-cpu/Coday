@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import Link from 'next/link';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import { List, X } from '@phosphor-icons/react/dist/ssr';
 import { cn } from '@/lib/utils';
 
@@ -77,7 +77,7 @@ export function Navbar({ logo, items, className, ...props }: NavbarProps) {
       <div className="absolute top-full left-0 w-full overflow-hidden z-10 md:hidden pointer-events-none">
         <AnimatePresence>
           {isOpen && (
-            <motion.div
+            <m.div
               key="mobile-menu"
               id="mobile-menu"
               initial={{ y: '-100%' }}
@@ -100,7 +100,7 @@ export function Navbar({ logo, items, className, ...props }: NavbarProps) {
                   </Link>
                 ))}
               </div>
-            </motion.div>
+            </m.div>
           )}
         </AnimatePresence>
       </div>

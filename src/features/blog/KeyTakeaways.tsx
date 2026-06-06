@@ -1,6 +1,6 @@
 import React from 'react';
 import { Lightbulb, CheckCircle } from '@phosphor-icons/react/dist/ssr';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 
 export interface KeyTakeaway {
   text: string;
@@ -44,7 +44,7 @@ export const KeyTakeaways: React.FC<KeyTakeawaysProps> = ({
         {/* Semantic list for Answer Engine extractors */}
         <ul className="space-y-4">
           {items.map((item, idx) => (
-            <motion.li
+            <m.li
               key={idx}
               id={`takeaway-${idx}`}
               className="flex gap-4 p-4 rounded-xl bg-white/[0.02] hover:bg-white/[0.04] transition-colors motion-reduce:duration-[0.01ms] border border-transparent hover:border-white/[0.05]"
@@ -59,7 +59,7 @@ export const KeyTakeaways: React.FC<KeyTakeawaysProps> = ({
               <div>
                 <strong className="block text-white font-medium mb-1">{item.text}</strong>
               </div>
-            </motion.li>
+            </m.li>
           ))}
         </ul>
       </div>

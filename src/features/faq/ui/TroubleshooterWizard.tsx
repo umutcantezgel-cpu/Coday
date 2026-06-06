@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import { CaretRight, Check, ArrowRight } from '@phosphor-icons/react/dist/ssr';
 import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
@@ -135,7 +135,10 @@ const TroubleshooterWizard = () => {
   };
 
   return (
-    <section className="bg-slate-50  rounded-3xl p-8 md:p-12 relative overflow-hidden border border-slate-200  shadow-xl max-w-4xl mx-auto my-16" aria-label="Troubleshooter">
+    <section
+      className="bg-slate-50  rounded-3xl p-8 md:p-12 relative overflow-hidden border border-slate-200  shadow-xl max-w-4xl mx-auto my-16"
+      aria-label="Troubleshooter"
+    >
       <div className="relative z-10">
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-2xl font-bold font-display text-slate-900 ">
@@ -161,7 +164,7 @@ const TroubleshooterWizard = () => {
 
         <AnimatePresence mode="wait">
           {!result && currentStep ? (
-            <motion.div
+            <m.div
               key={currentStep.id}
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -169,8 +172,14 @@ const TroubleshooterWizard = () => {
               className="space-y-6"
               aria-live="polite"
             >
-              <h3 className="text-xl text-slate-700  font-medium">{t(`steps.${currentStep.id}.question`)}</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4" role="group" aria-label={t(`steps.${currentStep.id}.question`)}>
+              <h3 className="text-xl text-slate-700  font-medium">
+                {t(`steps.${currentStep.id}.question`)}
+              </h3>
+              <div
+                className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+                role="group"
+                aria-label={t(`steps.${currentStep.id}.question`)}
+              >
                 {currentStep.options.map((opt) => (
                   <button
                     key={opt.id}
@@ -186,9 +195,9 @@ const TroubleshooterWizard = () => {
                   </button>
                 ))}
               </div>
-            </motion.div>
+            </m.div>
           ) : result && results[result as keyof typeof results] ? (
-            <motion.div
+            <m.div
               key="result"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -210,7 +219,7 @@ const TroubleshooterWizard = () => {
               >
                 {t('explore')} <ArrowRight className="w-5 h-5" />
               </Link>
-            </motion.div>
+            </m.div>
           ) : null}
         </AnimatePresence>
       </div>

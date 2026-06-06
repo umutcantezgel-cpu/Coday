@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { AnimatedCounter } from '@/shared/ui/AnimatedCounter';
 
 /* ═══ Real client names from portfolio ═══ */
@@ -30,16 +30,20 @@ export const TrustSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Logos / Client Names Section */}
         <div className="mb-20">
-          <motion.p
+          <m.p
             className="text-center text-xs font-bold text-gray-500 uppercase tracking-[0.2em] mb-10"
             {...fadeUp}
           >
             Vertrauen von führenden Unternehmen
-          </motion.p>
+          </m.p>
 
           {/* Client Badge Marquee */}
-          <div className="relative flex overflow-hidden group select-none [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]" role="marquee" aria-label="Kunden-Referenzen: Batherm, MS-Schlüsseldienst, Lindener Ratsstuben">
-            <motion.div
+          <div
+            className="relative flex overflow-hidden group select-none [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"
+            role="marquee"
+            aria-label="Kunden-Referenzen: Batherm, MS-Schlüsseldienst, Lindener Ratsstuben"
+          >
+            <m.div
               className="flex gap-4 md:gap-6 shrink-0 py-4"
               animate={{ x: ['0%', '-50%'] }}
               transition={{
@@ -57,14 +61,14 @@ export const TrustSection: React.FC = () => {
                   {client}
                 </div>
               ))}
-            </motion.div>
+            </m.div>
           </div>
         </div>
 
         {/* Metrics Section */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {metrics.map((metric, index) => (
-            <motion.div
+            <m.div
               key={metric.label}
               className="relative group text-center p-6 md:p-8 rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm hover:border-primary/20 transition motion-reduce:duration-[0.01ms] duration-500"
               initial={{ opacity: 0, y: 30 }}
@@ -88,7 +92,7 @@ export const TrustSection: React.FC = () => {
                   {metric.label}
                 </p>
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

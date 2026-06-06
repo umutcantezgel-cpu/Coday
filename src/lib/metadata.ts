@@ -36,7 +36,7 @@ export function generateRobotsMeta(opts: {
 export function generateAlternates(path: string): Metadata['alternates'] {
   // Strip locale prefix to get the route segment
   const cleanPath = path.replace(/^\/(en|de)/, '').replace(/\/$/, '') || '';
-  
+
   let dePath = `/de${cleanPath}`;
   let enPath = `/en${cleanPath}`;
 
@@ -48,14 +48,20 @@ export function generateAlternates(path: string): Metadata['alternates'] {
   }
 
   // Canonical points to self (the actual path passed in)
-  const canonicalPath = path.startsWith('/en') ? enPath : dePath;
+  // For the homepage, the German version (default) canonicalizes to the root domain (/).
+  const isHomepage = cleanPath === '';
+  const canonicalPath = path.startsWith('/en') ? enPath : isHomepage ? '' : dePath;
+
+  // The hreflang and x-default for the German homepage should also point to the root domain.
+  const deLangPath = isHomepage ? '' : dePath;
+  const xDefaultPath = isHomepage ? '' : dePath;
 
   return {
     canonical: `${BASE_URL}${canonicalPath}`,
     languages: {
-      de: `${BASE_URL}${dePath}`,
+      de: `${BASE_URL}${deLangPath}`,
       en: `${BASE_URL}${enPath}`,
-      'x-default': `${BASE_URL}${dePath}`,
+      'x-default': `${BASE_URL}${xDefaultPath}`,
     },
   };
 }
@@ -71,9 +77,7 @@ export function generatePageMetadata(opts: {
   type: 'money' | 'legal' | 'studio' | 'preview' | 'article' | 'default';
   openGraph?: Metadata['openGraph'];
 }): Metadata {
-  const fullTitle = opts.title.includes('Coday')
-    ? opts.title
-    : `${opts.title} | Coday`;
+  const fullTitle = opts.title.includes('Coday') ? opts.title : `${opts.title} | Coday`;
 
   return {
     title: fullTitle,

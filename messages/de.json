@@ -145,8 +145,11 @@
         "other": {
           "title": "Weitere Branchen",
           "overview": "Alle Branchen ansehen",
-          "real_estate": "Immobilien Makler",
-          "gastronomy": "Gastronomie"
+          "real_estate": "Immobilien",
+          "gastronomy": "Gastronomie",
+          "services": "Dienstleistungen",
+          "retail": "Retail & E-Commerce",
+          "public_sector": "Öffentlicher Sektor"
         },
         "public": "Öffentliche Aufträge",
         "tech": "Tech Startups"
@@ -259,7 +262,8 @@
     },
     "close": "Schließen",
     "cancel": "Abbrechen",
-    "save": "Speichern"
+    "save": "Speichern",
+    "calculator": "Preis-Rechner"
   },
   "metadata": {
     "title": "Coday — AI-augmented Web Agency aus Wetzlar",
@@ -601,7 +605,22 @@
       "description": "High-End Webentwicklung, Design & Strategie aus Wetzlar, Hessen für Ihren digitalen Erfolg."
     },
     "hero": {
-      "rotatingTexts": ["Web-Design", "Web-Entwicklung", "SEO"]
+      "rotatingTexts": ["Web-Design", "Web-Entwicklung", "SEO"],
+      "badge": "Consulting & Strategy",
+      "title_start": "Digitale",
+      "title_end": "Exzellenz.",
+      "subtitle": "Strategische IT-Beratung, die Ineffizienzen aufdeckt und skalierbare Architektur-Entscheidungen für Ihr nächstes Projekt sichert.",
+      "cta_primary": "Kostenloses Audit",
+      "cta_secondary": "Methode entdecken"
+    },
+    "case_study": {
+      "label": "Success Story",
+      "title": "Vom MVP zur Enterprise-Skalierung",
+      "description": "Erfahren Sie, wie unsere Beratung einem Tech-Startup geholfen hat, technische Schulden abzubauen und die Plattform für einen erfolgreichen Exit vorzubereiten."
+    },
+    "booking": {
+      "title": "Bereit für das nächste Level?",
+      "subtitle": "Buchen Sie jetzt eine unverbindliche Erstberatung und wir analysieren Ihr Potenzial."
     },
     "methodology": {
       "title": "Präzises Handwerk statt Massenabfertigung.",
@@ -1265,6 +1284,9 @@
     "meta": {
       "title": "Projektkosten-Rechner | Coday Web-Agentur",
       "description": "Berechnen Sie in Echtzeit die Kosten für Ihre nächste Website, Web-App oder E-Commerce Lösung."
+    },
+    "summary": {
+      "package": "Gewähltes Paket"
     }
   },
   "analyzer": {

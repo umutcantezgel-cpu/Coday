@@ -1,6 +1,6 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { CurrencyEur, Calculator, TrendUp, Warning } from '@phosphor-icons/react/dist/ssr';
 import { useLocale } from 'next-intl';
 import { formatCurrency, formatNumber } from '@/shared/utils/formatters';
@@ -37,7 +37,9 @@ export const ROICalculator: React.FC = () => {
 
         <div className="space-y-6">
           <div>
-            <label htmlFor="roi-traffic" className="block text-sm font-bold text-gray-700 mb-2">Monthly Visitors</label>
+            <label htmlFor="roi-traffic" className="block text-sm font-bold text-gray-700 mb-2">
+              Monthly Visitors
+            </label>
             <input
               id="roi-traffic"
               type="range"
@@ -99,7 +101,7 @@ export const ROICalculator: React.FC = () => {
 
       {/* Results */}
       <div className="relative">
-        <motion.div
+        <m.div
           initial={{ scale: 0.9, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
           className="p-8 rounded-3xl bg-secondary text-white relative overflow-hidden"
@@ -128,15 +130,15 @@ export const ROICalculator: React.FC = () => {
                 {formatCurrency(Math.round(potentialRevenue * 12), 'EUR', locale)}
               </div>
             </div>
-            <motion.div
+            <m.div
               animate={{ scale: [1, 1.1, 1] }}
               transition={{ repeat: Infinity, duration: 2 }}
               className="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 motion-reduce:animate-none"
             >
               <TrendUp size={24} aria-hidden="true" />
-            </motion.div>
+            </m.div>
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </div>
   );

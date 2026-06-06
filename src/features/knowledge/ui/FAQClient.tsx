@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import { MagnifyingGlass, CaretDown, X } from '@phosphor-icons/react';
 import { JsonLd } from '@/shared/ui/JsonLd';
 import { getFAQs, getFAQCategories } from '@/features/faq/model';
@@ -54,23 +54,23 @@ const FAQ = () => {
 
       {/* Hero & Search */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
-        <motion.h1
+        <m.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="font-display font-black text-4xl md:text-5xl text-gradient mb-4"
         >
           {t('hero.title')}
-        </motion.h1>
-        <motion.p
+        </m.h1>
+        <m.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
           className="text-lg text-slate-500 mb-8"
         >
           {t('hero.subtitle')}
-        </motion.p>
+        </m.p>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2 }}
@@ -79,7 +79,9 @@ const FAQ = () => {
           <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
             <MagnifyingGlass className="h-6 w-6 text-slate-400" />
           </div>
-          <label htmlFor="faq-search" className="sr-only">{t('search.placeholder')}</label>
+          <label htmlFor="faq-search" className="sr-only">
+            {t('search.placeholder')}
+          </label>
           <input
             id="faq-search"
             type="search"
@@ -97,7 +99,7 @@ const FAQ = () => {
               <X className="h-5 w-5" />
             </button>
           )}
-        </motion.div>
+        </m.div>
       </div>
 
       {/* Troubleshooter Wizard */}
@@ -107,7 +109,11 @@ const FAQ = () => {
 
       {/* Categories */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 overflow-x-auto">
-        <div className="flex justify-center space-x-2 min-w-max pb-2" role="group" aria-label={t('categories.all')}>
+        <div
+          className="flex justify-center space-x-2 min-w-max pb-2"
+          role="group"
+          aria-label={t('categories.all')}
+        >
           <button
             onClick={() => handleCategoryClick('all')}
             className={`active:scale-[0.97] px-6 py-2 rounded-full text-sm font-bold transition motion-reduce:duration-[0.01ms] ${
@@ -140,14 +146,14 @@ const FAQ = () => {
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatePresence mode="wait">
           {filteredFAQs.length > 0 ? (
-            <motion.div
+            <m.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="space-y-4"
             >
               {filteredFAQs.map((faq) => (
-                <motion.div
+                <m.div
                   key={faq.id}
                   layoutId={faq.id}
                   className={`bg-white rounded-2xl border transition-colors motion-reduce:duration-[0.01ms] overflow-hidden ${
@@ -176,13 +182,18 @@ const FAQ = () => {
                   </h3>
                   <AnimatePresence>
                     {openItem === faq.id && (
-                      <motion.div
+                      <m.div
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.2, ease: 'easeOut' }}
                       >
-                        <div id={`faq-answer-${faq.id}`} role="region" aria-labelledby={`faq-trigger-${faq.id}`} className="px-6 pb-6 text-slate-600 leading-relaxed prose prose-blue max-w-none">
+                        <div
+                          id={`faq-answer-${faq.id}`}
+                          role="region"
+                          aria-labelledby={`faq-trigger-${faq.id}`}
+                          className="px-6 pb-6 text-slate-600 leading-relaxed prose prose-blue max-w-none"
+                        >
                           {/* Simple markdown rendering or just text with line breaks */}
                           <div
                             dangerouslySetInnerHTML={{
@@ -192,18 +203,14 @@ const FAQ = () => {
                             }}
                           />
                         </div>
-                      </motion.div>
+                      </m.div>
                     )}
                   </AnimatePresence>
-                </motion.div>
+                </m.div>
               ))}
-            </motion.div>
+            </m.div>
           ) : (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-center py-20"
-            >
+            <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center py-20">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-slate-100 mb-4">
                 <MagnifyingGlass className="h-8 w-8 text-slate-400" />
               </div>
@@ -215,7 +222,7 @@ const FAQ = () => {
               >
                 {t('search.clear')}
               </button>
-            </motion.div>
+            </m.div>
           )}
         </AnimatePresence>
       </div>

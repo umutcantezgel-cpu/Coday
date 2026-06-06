@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { XCircle, CheckCircle, Gavel } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 
@@ -37,7 +37,7 @@ export const PricingReality: React.FC = () => {
           <div className="space-y-4">
             {/* Rows */}
             {[0, 1, 2, 3].map((idx) => (
-              <motion.div
+              <m.div
                 key={idx}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -67,7 +67,7 @@ export const PricingReality: React.FC = () => {
                     {t(`pricing_reality.table.rows.${idx}.coday`)}
                   </span>
                 </div>
-              </motion.div>
+              </m.div>
             ))}
           </div>
 

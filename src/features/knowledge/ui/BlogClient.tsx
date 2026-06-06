@@ -8,7 +8,7 @@ import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import { Link } from '@/i18n/navigation';
 import { getBlogPosts } from '@/features/blog/model/data';
 import { useTranslation, Trans } from 'react-i18next';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 
 const Blog: React.FC = () => {
   const { i18n, t } = useTranslation('blog');
@@ -76,7 +76,9 @@ const Blog: React.FC = () => {
                 size="md"
               />
             </div>
-            <label htmlFor="blog-search" className="sr-only">{t('searchPlaceholder', 'Suchen Sie nach Artikeln...')}</label>
+            <label htmlFor="blog-search" className="sr-only">
+              {t('searchPlaceholder', 'Suchen Sie nach Artikeln...')}
+            </label>
             <input
               id="blog-search"
               type="search"
@@ -89,10 +91,14 @@ const Blog: React.FC = () => {
         </div>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap items-center justify-center gap-3 mb-12" role="group" aria-label={t('categories.all', 'Kategorien')}>
+        <div
+          className="flex flex-wrap items-center justify-center gap-3 mb-12"
+          role="group"
+          aria-label={t('categories.all', 'Kategorien')}
+        >
           <AnimatePresence>
             {categories.map((category) => (
-              <motion.button
+              <m.button
                 key={category}
                 layout
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -109,14 +115,14 @@ const Blog: React.FC = () => {
                 }`}
               >
                 {category === 'All' ? t('categories.all', 'Alle') : category}
-              </motion.button>
+              </m.button>
             ))}
           </AnimatePresence>
         </div>
 
         {/* Featured Post */}
         {featuredPost && (
-          <motion.article
+          <m.article
             className="mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -157,14 +163,14 @@ const Blog: React.FC = () => {
                 </div>
               </div>
             </Link>
-          </motion.article>
+          </m.article>
         )}
 
         {/* Article Grid */}
         {gridPosts.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {gridPosts.map((post, index) => (
-              <motion.div
+              <m.div
                 key={post.id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -219,7 +225,7 @@ const Blog: React.FC = () => {
                     </div>
                   </article>
                 </Link>
-              </motion.div>
+              </m.div>
             ))}
           </div>
         ) : (
@@ -268,7 +274,9 @@ const Blog: React.FC = () => {
                 {t('community.description')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <label htmlFor="blog-newsletter-email" className="sr-only">{t('community.emailPlaceholder')}</label>
+                <label htmlFor="blog-newsletter-email" className="sr-only">
+                  {t('community.emailPlaceholder')}
+                </label>
                 <input
                   id="blog-newsletter-email"
                   type="email"

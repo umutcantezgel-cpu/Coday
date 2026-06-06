@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import { CheckCircle, HandPalm, Robot } from '@phosphor-icons/react/dist/ssr';
 import { clsx } from 'clsx';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
@@ -26,13 +26,16 @@ export const SoulReader: React.FC<SoulReaderProps> = ({ data }) => {
   const isCorrect = selected === 'human';
 
   return (
-    <section className="my-16 relative overflow-hidden rounded-[2.5rem] border border-gray-100 bg-gray-50 shadow-2xl" aria-label={data?.title || 'The Turing Test for Design'}>
+    <section
+      className="my-16 relative overflow-hidden rounded-[2.5rem] border border-gray-100 bg-gray-50 shadow-2xl"
+      aria-label={data?.title || 'The Turing Test for Design'}
+    >
       {/* Background blobs */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2" />
 
       <div className="relative z-10 p-8 md:p-12 text-center">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -51,7 +54,7 @@ export const SoulReader: React.FC<SoulReaderProps> = ({ data }) => {
             {data?.description ||
               'Can you feel the difference? One of these images was crafted by a human soul, the other by a GPU. Choose the human one.'}
           </p>
-        </motion.div>
+        </m.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto">
           {/* Human Option */}
@@ -79,7 +82,7 @@ export const SoulReader: React.FC<SoulReaderProps> = ({ data }) => {
 
         <AnimatePresence>
           {hasVoted && (
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               className="mt-12 overflow-hidden"
@@ -117,7 +120,7 @@ export const SoulReader: React.FC<SoulReaderProps> = ({ data }) => {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </m.div>
           )}
         </AnimatePresence>
       </div>
@@ -161,7 +164,13 @@ const QuizOption: React.FC<QuizOptionProps> = ({
           hasVoted && !isCorrect && !isSelected && 'opacity-50 grayscale'
         )}
       >
-        <OptimizedImage src={image} alt={`${label}: Design option for the quiz`} width={600} height={600} className="w-full h-full object-cover" />
+        <OptimizedImage
+          src={image}
+          alt={`${label}: Design option for the quiz`}
+          width={600}
+          height={600}
+          className="w-full h-full object-cover"
+        />
 
         {/* Overlay Result */}
         {isRevealed && (

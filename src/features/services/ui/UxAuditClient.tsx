@@ -1,6 +1,5 @@
-"use client";
-import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
-import dynamic from 'next/dynamic';
+'use client';
+import React from 'react';
 import { useTranslations } from 'next-intl';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { ChartBar, ArrowRight, MagnifyingGlass, FileText } from '@phosphor-icons/react';
@@ -10,7 +9,7 @@ import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
 import BlurText from '@/shared/ui/BlurText';
 import GradientText from '@/shared/ui/GradientText';
 import CountUp from '@/shared/ui/CountUp';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 
 export function UxAuditClient() {
   const t = useTranslations('services');
@@ -23,8 +22,6 @@ export function UxAuditClient() {
 
   return (
     <>
-      
-
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-6 overflow-hidden bg-surface-base">
         <div className="max-w-7xl mx-auto text-center relative z-10">
@@ -78,7 +75,7 @@ export function UxAuditClient() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {analysisItems.map((item, i) => (
-              <motion.div
+              <m.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -91,7 +88,7 @@ export function UxAuditClient() {
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
                 <p className="text-content-muted text-sm">{item.desc}</p>
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </div>
@@ -106,7 +103,7 @@ export function UxAuditClient() {
 
           <div className="grid md:grid-cols-2 gap-4">
             {deliverables.map((item, i) => (
-              <motion.div
+              <m.div
                 key={i}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -118,7 +115,7 @@ export function UxAuditClient() {
                   <OptimizedIcon icon={FileText} />
                 </div>
                 <span className="font-medium">{item}</span>
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </div>
@@ -126,6 +123,4 @@ export function UxAuditClient() {
       <RelevantFAQs serviceId="ux-audit" className="mb-24" />
     </>
   );
-};
-
-
+}

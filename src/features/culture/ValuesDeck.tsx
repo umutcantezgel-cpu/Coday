@@ -1,6 +1,6 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import { useTranslations } from 'next-intl';
 
 const ValuesDeck: React.FC = () => {
@@ -75,7 +75,7 @@ const ValuesDeck: React.FC = () => {
             if (diff > 2) return null;
 
             return (
-              <motion.div
+              <m.div
                 key={val.title}
                 initial={{ scale: 0.8, y: 50, opacity: 0 }}
                 animate={{
@@ -94,10 +94,13 @@ const ValuesDeck: React.FC = () => {
                 </h3>
                 <p className="text-white/80 font-medium leading-relaxed">{val.desc}</p>
 
-                <div className="absolute bottom-8 text-white/40 text-xs font-bold uppercase tracking-widest" aria-hidden="true">
+                <div
+                  className="absolute bottom-8 text-white/40 text-xs font-bold uppercase tracking-widest"
+                  aria-hidden="true"
+                >
                   Tap for next
                 </div>
-              </motion.div>
+              </m.div>
             );
           })}
         </AnimatePresence>

@@ -1,6 +1,5 @@
-"use client";
-import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
-import dynamic from 'next/dynamic';
+'use client';
+import React from 'react';
 import { useTranslations } from 'next-intl';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { PenNib, ArrowRight, Brain } from '@phosphor-icons/react';
@@ -9,7 +8,7 @@ import { Button } from '@/shared/ui/Button';
 import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
 import BlurText from '@/shared/ui/BlurText';
 import GradientText from '@/shared/ui/GradientText';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 
 export function UiUxClient() {
   const t = useTranslations('services');
@@ -27,8 +26,6 @@ export function UiUxClient() {
 
   return (
     <>
-      
-
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-6 overflow-hidden bg-surface-base">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
@@ -98,7 +95,7 @@ export function UiUxClient() {
 
           <div className="grid md:grid-cols-4 gap-8">
             {processSteps.map((step, i) => (
-              <motion.div
+              <m.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -113,7 +110,7 @@ export function UiUxClient() {
                   <h3 className="text-xl font-bold text-slate-900 mb-2">{step.title}</h3>
                   <p className="text-content-muted">{step.desc}</p>
                 </div>
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </div>
@@ -165,12 +162,19 @@ export function UiUxClient() {
       {/* FAQ Section */}
       <section className="py-24 bg-surface-base">
         <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-12 text-center text-balance">{t('ui_ux_page.faq.title')}</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center text-balance">
+            {t('ui_ux_page.faq.title')}
+          </h2>
           <div className="space-y-6">
             {faqItems.map((item, i) => (
-              <div key={i} className="bg-surface-elevated p-8 rounded-2xl shadow-sm border border-slate-100">
+              <div
+                key={i}
+                className="bg-surface-elevated p-8 rounded-2xl shadow-sm border border-slate-100"
+              >
                 <h3 className="text-lg font-bold mb-3">{item.q}</h3>
-                <p className="text-content-muted leading-relaxed max-w-prose text-pretty">{item.a}</p>
+                <p className="text-content-muted leading-relaxed max-w-prose text-pretty">
+                  {item.a}
+                </p>
               </div>
             ))}
           </div>
@@ -179,6 +183,4 @@ export function UiUxClient() {
       <RelevantFAQs serviceId="ui-ux" className="mb-24" />
     </>
   );
-};
-
-
+}

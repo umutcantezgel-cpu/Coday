@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslations } from 'next-intl';
 import { FilePdf, DownloadSimple, CheckSquareOffset } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 
 export const DownloadArea: React.FC = () => {
   const t = useTranslations('public-sector');
@@ -31,7 +31,7 @@ export const DownloadArea: React.FC = () => {
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {downloads.map((item, idx) => (
-            <motion.div
+            <m.div
               key={item.key}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -64,7 +64,7 @@ export const DownloadArea: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

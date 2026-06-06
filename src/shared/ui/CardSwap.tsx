@@ -1,6 +1,6 @@
-"use client";
+'use client';
 import React, { Children, ReactElement, ReactNode, useEffect, useMemo, useState } from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 
 export interface CardSwapProps {
   width?: number | string;
@@ -79,7 +79,7 @@ const CardSwap: React.FC<CardSwapProps> = ({
           // If we move front to back, it should animate out.
 
           return (
-            <motion.div
+            <m.div
               key={child.key || childIndex} // Key must track the content, not the position
               layoutId={`card-${childIndex}`} // layoutId helps Framer track across reorders -> actually causing constraints here maybe?
               // Just simpler animate props
@@ -111,7 +111,7 @@ const CardSwap: React.FC<CardSwapProps> = ({
               }}
             >
               {child}
-            </motion.div>
+            </m.div>
           );
         })}
       </div>

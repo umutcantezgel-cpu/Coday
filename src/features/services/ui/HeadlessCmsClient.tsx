@@ -1,6 +1,5 @@
 'use client';
-import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
-import dynamic from 'next/dynamic';
+import React from 'react';
 import { useTranslations } from 'next-intl';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import {
@@ -22,7 +21,7 @@ import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
 import { MagicBento, BentoCard } from '@/shared/ui/MagicBento';
 import GlareHover from '@/shared/ui/GlareHover';
 import LogoLoop from '@/shared/ui/LogoLoop';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 
 export function HeadlessCmsClient() {
   const t = useTranslations('services');
@@ -62,20 +61,26 @@ export function HeadlessCmsClient() {
           <div className="relative" aria-hidden="true">
             <GlareHover className="rounded-3xl overflow-hidden shadow-flat bg-surface-elevated border border-primary/10 p-8">
               <div className="flex justify-between items-center mb-12">
-                <div className="text-content-muted font-mono text-sm font-bold tracking-wide">Content Source</div>
-                <div className="text-content-muted font-mono text-sm font-bold tracking-wide">Channels</div>
+                <div className="text-content-muted font-mono text-sm font-bold tracking-wide">
+                  Content Source
+                </div>
+                <div className="text-content-muted font-mono text-sm font-bold tracking-wide">
+                  Channels
+                </div>
               </div>
 
               <div className="flex items-center justify-between relative">
                 {/* Source Node */}
                 <div className="w-24 h-24 bg-primary/10 rounded-2xl border border-primary/20 flex items-center justify-center relative z-10 shadow-sm">
                   <OptimizedIcon icon={FileText} className="text-4xl text-primary text-balance" />
-                  <div className="absolute -bottom-8 text-content-base font-bold text-sm">Sanity.io</div>
+                  <div className="absolute -bottom-8 text-content-base font-bold text-sm">
+                    Sanity.io
+                  </div>
                 </div>
 
                 {/* Connection Lines */}
                 <div className="h-1 flex-1 bg-gradient-to-r from-primary/30 to-blue-500/30 mx-4 relative overflow-hidden rounded-full">
-                  <motion.div
+                  <m.div
                     className="absolute inset-y-0 left-0 w-8 bg-white/80 blur-sm"
                     animate={{ x: ['0%', '500%'] }}
                     transition={{ repeat: Infinity, duration: 1.5, ease: 'linear' }}
@@ -124,7 +129,10 @@ export function HeadlessCmsClient() {
           <MagicBento className="grid-cols-1 md:grid-cols-3 gap-6 h-auto md:h-[600px]">
             <BentoCard className="md:col-span-2 md:row-span-1 bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20">
               <div aria-hidden="true" className="absolute right-4 top-4 opacity-20">
-                <OptimizedIcon icon={ShareNetwork} className="text-6xl text-sapphire text-balance" />
+                <OptimizedIcon
+                  icon={ShareNetwork}
+                  className="text-6xl text-sapphire text-balance"
+                />
               </div>
               <div className="relative z-10 p-6 flex flex-col justify-end h-full">
                 <h3 className="text-2xl font-bold text-content-base mb-2">
@@ -150,7 +158,10 @@ export function HeadlessCmsClient() {
             </BentoCard>
             <BentoCard className="md:col-span-1 md:row-span-1 bg-surface-muted">
               <div aria-hidden="true" className="absolute right-4 top-4 opacity-20">
-                <OptimizedIcon icon={ShieldCheck} className="text-6xl text-green-500 text-balance" />
+                <OptimizedIcon
+                  icon={ShieldCheck}
+                  className="text-6xl text-green-500 text-balance"
+                />
               </div>
               <div className="relative z-10 p-6 flex flex-col justify-end h-full">
                 <h3 className="text-2xl font-bold text-content-base mb-2">
@@ -295,9 +306,14 @@ export function HeadlessCmsClient() {
               if (!Array.isArray(faqItems)) return null;
 
               return faqItems.map((item: { q: string; a: string }, i: number) => (
-                <div key={i} className="bg-surface-elevated p-8 rounded-2xl shadow-sm border border-slate-100">
+                <div
+                  key={i}
+                  className="bg-surface-elevated p-8 rounded-2xl shadow-sm border border-slate-100"
+                >
                   <h3 className="text-lg font-bold mb-3">{item.q}</h3>
-                  <p className="text-content-muted leading-relaxed max-w-prose text-pretty">{item.a}</p>
+                  <p className="text-content-muted leading-relaxed max-w-prose text-pretty">
+                    {item.a}
+                  </p>
                 </div>
               ));
             })()}

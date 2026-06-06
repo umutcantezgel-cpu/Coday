@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import {
   XCircle,
   CheckCircle,
@@ -51,7 +51,11 @@ export const ProblemSolventMatrix: React.FC<ProblemSolventMatrixProps> = ({
   ];
 
   return (
-    <div className="w-full max-w-5xl mx-auto" role="region" aria-label="Comparison: Standard Dev Shop vs Coday Strategy Partner">
+    <div
+      className="w-full max-w-5xl mx-auto"
+      role="region"
+      aria-label="Comparison: Standard Dev Shop vs Coday Strategy Partner"
+    >
       {/* Header */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 text-center md:text-left">
         <div className="md:col-span-1 flex items-center justify-center md:justify-start">
@@ -70,7 +74,7 @@ export const ProblemSolventMatrix: React.FC<ProblemSolventMatrixProps> = ({
       {/* Rows */}
       <div className="space-y-4">
         {ROWS.map((row, index) => (
-          <motion.div
+          <m.div
             key={row.id}
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -107,7 +111,7 @@ export const ProblemSolventMatrix: React.FC<ProblemSolventMatrixProps> = ({
                 {t(`${prefix}.${row.id}.good`)}
               </span>
             </div>
-          </motion.div>
+          </m.div>
         ))}
       </div>
     </div>

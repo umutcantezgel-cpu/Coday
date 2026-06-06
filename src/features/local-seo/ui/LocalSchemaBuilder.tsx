@@ -6,16 +6,16 @@ export const LocalSchemaBuilder: React.FC<{ city: CityData }> = ({ city }) => {
     '@context': 'https://schema.org',
     '@type': 'WebDesignCompany',
     name: `Coday - Webagentur für ${city.displayName}`,
-    url: `https://coday.de/webagentur-${city.slug}`,
-    logo: 'https://coday.de/logo.png',
-    image: 'https://coday.de/og-image.jpg',
+    url: `https://www.codayweb.de/webagentur-${city.slug}`,
+    logo: 'https://www.codayweb.de/logo.png',
+    image: 'https://www.codayweb.de/og-image.jpg',
     description: `Premium Webdesign, B2B-Plattformen und lokale SEO-Dominanz für Handwerk und Industrie in ${city.displayName} und Umgebung.`,
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Wetzlar',
       addressRegion: 'Hessen',
       postalCode: '35578',
-      streetAddress: 'Charlotte-Bamberg-Straße 2',
+      streetAddress: 'Lessingstraße 4',
     },
     areaServed: {
       '@type': 'City',
@@ -28,7 +28,7 @@ export const LocalSchemaBuilder: React.FC<{ city: CityData }> = ({ city }) => {
     provider: {
       '@type': 'Organization',
       name: 'Coday',
-      url: 'https://coday.de',
+      url: 'https://www.codayweb.de',
     },
     priceRange: '$$$',
   };

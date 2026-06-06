@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import { motion, useScroll, useSpring } from 'motion/react';
+import { m, useScroll, useSpring } from 'motion/react';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { slugify } from '@/features/blog/lib/utils';
@@ -23,7 +23,7 @@ export const ReadingProgress: React.FC = () => {
   });
 
   return (
-    <motion.div
+    <m.div
       className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary origin-left z-50"
       style={{ scaleX }}
       role="progressbar"
@@ -128,7 +128,10 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ blocks, isMobi
   }
 
   return (
-    <nav className="sticky top-32 max-h-[calc(100dvh-10rem)] overflow-auto custom-scrollbar pl-4" aria-label="Table of Contents">
+    <nav
+      className="sticky top-32 max-h-[calc(100dvh-10rem)] overflow-auto custom-scrollbar pl-4"
+      aria-label="Table of Contents"
+    >
       <h4 className="font-display font-bold text-secondary mb-4 text-sm uppercase tracking-wider">
         Inhalt
       </h4>

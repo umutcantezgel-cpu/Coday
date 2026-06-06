@@ -1,8 +1,7 @@
 'use client';
-import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
-import dynamic from 'next/dynamic';
+import React from 'react';
 import { useTranslations } from 'next-intl';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { SeoHead } from '@/shared/ui/SeoHead';
 import { Brain, Handshake, ChartLineUp } from '@phosphor-icons/react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
@@ -41,14 +40,14 @@ export function ConsultingClient() {
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14rem_24rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20"></div>
 
           <div className="relative z-10 text-center max-w-5xl px-4">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 mb-8 backdrop-blur-md"
             >
               <OptimizedIcon icon={Brain} className="w-5 h-5" />
               <span className="text-sm font-bold tracking-wide uppercase">{t('hero.badge')}</span>
-            </motion.div>
+            </m.div>
 
             <h1 className="text-5xl md:text-8xl font-display font-bold mb-8 leading-tight tracking-tight text-balance">
               {t('hero.title_start')}
@@ -87,7 +86,7 @@ export function ConsultingClient() {
         </section>
 
         {/* --- METHODOLOGY: THE BLUEPRINT --- */}
-        <motion.section
+        <m.section
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -106,10 +105,10 @@ export function ConsultingClient() {
 
             <MethodologyGraph />
           </div>
-        </motion.section>
+        </m.section>
 
         {/* --- MATRIX: THE COMPARISON --- */}
-        <motion.section
+        <m.section
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -119,7 +118,7 @@ export function ConsultingClient() {
           <div className="max-w-6xl mx-auto px-4">
             <ProblemSolventMatrix />
           </div>
-        </motion.section>
+        </m.section>
 
         {/* --- CASE STUDY TEASER --- */}
         <section className="py-24 bg-surface-muted border-t border-slate-200/50">

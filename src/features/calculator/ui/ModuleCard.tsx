@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Module } from '@/shared/data/modules';
 import { Icon } from '@/shared/ui/Icon';
-import { AnimatePresence, motion } from 'motion/react';
+import { AnimatePresence, m } from 'motion/react';
 import { formatCurrency } from '@/shared/utils/formatters';
 
 interface ModuleCardProps {
@@ -128,7 +128,7 @@ export const ModuleCard: React.FC<ModuleCardProps> = ({
         {/* Expandable Details */}
         <AnimatePresence>
           {showDetails && (
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
@@ -138,7 +138,7 @@ export const ModuleCard: React.FC<ModuleCardProps> = ({
               <div className="text-xs text-gray-500 bg-gray-50 p-3 rounded-lg border border-gray-100 mb-2 leading-relaxed">
                 {t(`modules.${module.id}.learn_more`)}
               </div>
-            </motion.div>
+            </m.div>
           )}
         </AnimatePresence>
       </div>

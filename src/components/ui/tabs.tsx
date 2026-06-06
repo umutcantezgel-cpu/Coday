@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { cn } from '@/lib/utils';
 
 export interface Tab {
@@ -84,7 +84,7 @@ export function Tabs({ tabs, defaultValue, onChange, className, id, ...props }: 
               )}
             >
               {isActive && (
-                <motion.div
+                <m.div
                   layoutId={`${layoutIdPrefix}-indicator`}
                   className="absolute inset-0 bg-white rounded-md shadow-sm"
                   initial={false}

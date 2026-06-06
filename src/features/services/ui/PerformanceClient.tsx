@@ -1,6 +1,5 @@
-"use client";
-import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
-import dynamic from 'next/dynamic';
+'use client';
+import React from 'react';
 import { useTranslations } from 'next-intl';
 import BlurText from '@/shared/ui/BlurText';
 import GradientText from '@/shared/ui/GradientText';
@@ -75,7 +74,9 @@ export function PerformanceClient() {
             {t('performance_page.google_values.title')}
           </h2>
           <p className="text-lg text-content-muted max-w-2xl mx-auto">
-            {t.rich("performance_page.google_values.description", { i: (chunks) => <i>{chunks}</i> })}
+            {t.rich('performance_page.google_values.description', {
+              i: (chunks) => <i>{chunks}</i>,
+            })}
           </p>
         </div>
         <CoreWebVitalsChart />
@@ -125,6 +126,4 @@ export function PerformanceClient() {
       </section>
     </div>
   );
-};
-
-
+}

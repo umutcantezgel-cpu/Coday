@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { useTranslations } from 'next-intl';
 import { Icon } from '@/shared/ui/Icon';
 
@@ -47,7 +47,7 @@ const LoyaltyLoop: React.FC = () => {
             strokeDasharray="4 4"
           />
           {/* Animated Active Segment - Simulating flow */}
-          <motion.circle
+          <m.circle
             cx="50"
             cy="50"
             r="35"
@@ -88,7 +88,7 @@ const LoyaltyLoop: React.FC = () => {
                 top: `${y}%`,
               }}
             >
-              <motion.div
+              <m.div
                 initial={{ scale: 0.8, opacity: 0.5 }}
                 animate={{ scale: [1, 1.1, 1], opacity: 1 }}
                 transition={{ delay: index * 2, duration: 2, repeat: Infinity, repeatDelay: 6 }}
@@ -99,7 +99,7 @@ const LoyaltyLoop: React.FC = () => {
                   name={step.icon as React.ComponentProps<typeof Icon>['name']}
                   className="text-white w-4 h-4"
                 />
-              </motion.div>
+              </m.div>
               <span className="text-[10px] font-bold text-white uppercase tracking-wider bg-black/60 backdrop-blur px-2 py-0.5 rounded border border-white/10 whitespace-nowrap">
                 {t(`ecommerce-retail.features.loyalty_loop.steps.${step.id}`)}
               </span>

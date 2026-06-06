@@ -1,6 +1,6 @@
-"use client";
+'use client';
 import React, { useRef, useState, useEffect } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import { m, useAnimation } from 'motion/react';
 import { useRtl } from '@/shared/hooks/useRtl';
 
 interface MenuItemData {
@@ -151,14 +151,14 @@ const MenuItem: React.FC<MenuItemProps> = ({
       >
         {text}
       </a>
-      <motion.div
+      <m.div
         className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none"
         animate={marqueeControls}
         initial={{ y: '101%' }} // Start hidden
         style={{ backgroundColor: marqueeBgColor }}
       >
-        <motion.div className="h-full w-fit flex" animate={marqueeInnerControls}>
-          <motion.div
+        <m.div className="h-full w-fit flex" animate={marqueeInnerControls}>
+          <m.div
             className="flex items-center h-full"
             animate={{ x: isRtl ? '50%' : '-50%' }}
             transition={{ duration: speed, repeat: Infinity, ease: 'linear' }}
@@ -178,9 +178,9 @@ const MenuItem: React.FC<MenuItemProps> = ({
                 />
               </div>
             ))}
-          </motion.div>
-        </motion.div>
-      </motion.div>
+          </m.div>
+        </m.div>
+      </m.div>
     </div>
   );
 };

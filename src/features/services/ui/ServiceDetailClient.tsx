@@ -1,6 +1,5 @@
 'use client';
-import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
-import dynamic from 'next/dynamic';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import { Link as NavLink } from '@/i18n/navigation';
 import { servicesData } from '@/shared/data/services';
@@ -176,7 +175,9 @@ export function ServiceDetailClient() {
               {tCommon('nav.services.label')}
             </NavLink>
           </li>
-          <li aria-hidden="true" className="mx-2">/</li>
+          <li aria-hidden="true" className="mx-2">
+            /
+          </li>
           <li>
             <NavLink
               href={`/services/${category}`}
@@ -185,8 +186,12 @@ export function ServiceDetailClient() {
               {service.category}
             </NavLink>
           </li>
-          <li aria-hidden="true" className="mx-2">/</li>
-          <li aria-current="page" className="text-sapphire font-medium">{t(service.titleKey)}</li>
+          <li aria-hidden="true" className="mx-2">
+            /
+          </li>
+          <li aria-current="page" className="text-sapphire font-medium">
+            {t(service.titleKey)}
+          </li>
         </ol>
       </nav>
 
@@ -195,7 +200,10 @@ export function ServiceDetailClient() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <div className="inline-flex items-center justify-center p-3 bg-sapphire/10 rounded-xl text-sapphire mb-6">
-              <OptimizedIcon icon={iconMap[service.icon] || Code} className="text-3xl text-balance" />
+              <OptimizedIcon
+                icon={iconMap[service.icon] || Code}
+                className="text-3xl text-balance"
+              />
             </div>
             <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-gray-900 mb-6 leading-tight text-balance">
               {t(service.titleKey)}
@@ -317,13 +325,18 @@ export function ServiceDetailClient() {
                 {processSteps.map((step, index) => (
                   <li key={index} className="relative group">
                     <div className="flex flex-col items-center text-center">
-                      <div className="w-16 h-16 rounded-2xl bg-gray-800 border border-gray-700 flex items-center justify-center text-xl font-bold font-display mb-6 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition motion-reduce:duration-[0.01ms] duration-300 shadow-lg relative z-10" aria-hidden="true">
+                      <div
+                        className="w-16 h-16 rounded-2xl bg-gray-800 border border-gray-700 flex items-center justify-center text-xl font-bold font-display mb-6 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition motion-reduce:duration-[0.01ms] duration-300 shadow-lg relative z-10"
+                        aria-hidden="true"
+                      >
                         {step.number}
                       </div>
                       <h3 className="text-xl font-bold mb-4 h-14 flex items-center justify-center">
                         {step.title}
                       </h3>
-                      <p className="text-sm text-gray-400 leading-relaxed max-w-prose text-pretty">{step.description}</p>
+                      <p className="text-sm text-gray-400 leading-relaxed max-w-prose text-pretty">
+                        {step.description}
+                      </p>
                     </div>
                   </li>
                 ))}
@@ -365,7 +378,9 @@ export function ServiceDetailClient() {
                     className="text-sapphire text-3xl mb-4 text-balance"
                   />
                   <h3 className="font-bold text-gray-900 mb-2">{adv.title}</h3>
-                  <p className="text-sm text-gray-500 leading-relaxed max-w-prose text-pretty">{adv.description}</p>
+                  <p className="text-sm text-gray-500 leading-relaxed max-w-prose text-pretty">
+                    {adv.description}
+                  </p>
                 </div>
               ))}
             </div>
@@ -466,7 +481,11 @@ const FaqItem: React.FC<{ question: string; answer: string }> = ({ question, ans
           />
         </button>
       </h3>
-      <div id={panelId} role="region" className={`px-6 text-gray-600 leading-relaxed max-w-prose text-pretty ${isOpen ? 'block pb-6' : 'hidden'}`}>
+      <div
+        id={panelId}
+        role="region"
+        className={`px-6 text-gray-600 leading-relaxed max-w-prose text-pretty ${isOpen ? 'block pb-6' : 'hidden'}`}
+      >
         {answer}
       </div>
     </div>

@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import {
   ChatCircle,
   ShareNetwork,
@@ -41,14 +41,16 @@ export const FloatingActionMenu: React.FC = () => {
       {/* Social Media Sub-Menu */}
       <AnimatePresence>
         {showSocials && isOpen && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 20 }}
             className="absolute bottom-full right-16 mb-2 bg-white rounded-2xl shadow-xl p-3 flex flex-col gap-3 border border-gray-100"
           >
             <a
-              href="https://www.linkedin.com/in/umutcan-emre-tezgel-65a41a3aa/" target="_blank" rel="noopener noreferrer"
+              href="https://www.linkedin.com/in/umutcan-emre-tezgel-65a41a3aa/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="p-2 hover:bg-gray-50 rounded-xl text-info transition-colors motion-reduce:duration-[0.01ms] flex items-center gap-3 w-32"
               aria-label="Besuchen Sie uns auf LinkedIn"
             >
@@ -56,7 +58,9 @@ export const FloatingActionMenu: React.FC = () => {
               <span className="text-sm font-bold text-gray-700">LinkedIn</span>
             </a>
             <a
-              href="https://www.instagram.com/codayweb/" target="_blank" rel="noopener noreferrer"
+              href="https://www.instagram.com/codayweb/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="p-2 hover:bg-gray-50 rounded-xl text-error transition-colors motion-reduce:duration-[0.01ms] flex items-center gap-3 w-32"
               aria-label="Besuchen Sie uns auf Instagram"
             >
@@ -72,28 +76,30 @@ export const FloatingActionMenu: React.FC = () => {
               <span className="text-sm font-bold text-gray-700">Twitter</span>
             </a>
             <a
-              href="https://www.facebook.com/profile.php?id=61588758264018" target="_blank" rel="noopener noreferrer"
+              href="https://www.facebook.com/profile.php?id=61588758264018"
+              target="_blank"
+              rel="noopener noreferrer"
               className="p-2 hover:bg-gray-50 rounded-xl text-info transition-colors motion-reduce:duration-[0.01ms] flex items-center gap-3 w-32"
               aria-label="Besuchen Sie uns auf Facebook"
             >
               <FacebookLogo className="w-5 h-5" />
               <span className="text-sm font-bold text-gray-700">Facebook</span>
             </a>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
 
       {/* Menu Items */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="flex flex-col gap-4 items-end"
           >
             {/* Social Media Button */}
-            <motion.button
+            <m.button
               initial={{ opacity: 0, y: 20, scale: 0.8 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 20, scale: 0.8 }}
@@ -108,10 +114,10 @@ export const FloatingActionMenu: React.FC = () => {
                 Social Media
               </span>
               <ShareNetwork className="w-6 h-6" />
-            </motion.button>
+            </m.button>
 
             {/* WhatsApp Button */}
-            <motion.a
+            <m.a
               href="https://wa.me/4917641195301"
               target="_blank"
               rel="noopener noreferrer"
@@ -126,10 +132,10 @@ export const FloatingActionMenu: React.FC = () => {
                 WhatsApp
               </span>
               <Phone className="w-6 h-6" />
-            </motion.a>
+            </m.a>
 
             {/* AI Assistant Button */}
-            <motion.button
+            <m.button
               initial={{ opacity: 0, y: 20, scale: 0.8 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 20, scale: 0.8 }}
@@ -141,13 +147,13 @@ export const FloatingActionMenu: React.FC = () => {
                 AI Assistant
               </span>
               <ChatCircle className="w-6 h-6" />
-            </motion.button>
-          </motion.div>
+            </m.button>
+          </m.div>
         )}
       </AnimatePresence>
 
       {/* Main Toggle Button */}
-      <motion.button
+      <m.button
         onClick={toggleMenu}
         aria-expanded={isOpen}
         aria-haspopup="true"
@@ -169,7 +175,7 @@ export const FloatingActionMenu: React.FC = () => {
             <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full" />
           </div>
         )}
-      </motion.button>
+      </m.button>
     </nav>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { staggerContainer, scaleUpVariants, STAGGER, TRANSITION } from '@/shared/lib/motion';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 
@@ -17,7 +17,7 @@ interface TechStackGridProps {
 
 const TechStackGrid: React.FC<TechStackGridProps> = ({ items, className = '' }) => {
   return (
-    <motion.div
+    <m.div
       className={`grid grid-cols-2 md:grid-cols-4 gap-4 ${className}`}
       variants={staggerContainer(STAGGER.slow)}
       initial="hidden"
@@ -25,7 +25,7 @@ const TechStackGrid: React.FC<TechStackGridProps> = ({ items, className = '' }) 
       viewport={{ once: true }}
     >
       {items.map((item, index) => (
-        <motion.div
+        <m.div
           key={index}
           variants={scaleUpVariants}
           transition={TRANSITION.reveal}
@@ -58,9 +58,9 @@ const TechStackGrid: React.FC<TechStackGridProps> = ({ items, className = '' }) 
 
           {/* Description (tooltip on hover) */}
           <p className="text-xs text-slate-500 line-clamp-2">{item.description}</p>
-        </motion.div>
+        </m.div>
       ))}
-    </motion.div>
+    </m.div>
   );
 };
 

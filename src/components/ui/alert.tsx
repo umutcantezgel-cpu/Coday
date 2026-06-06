@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { cn } from '@/shared/lib/utils';
-import { AnimatePresence, motion } from 'motion/react';
+import { AnimatePresence, m } from 'motion/react';
 // This component uses framer-motion which handles prefers-reduced-motion automatically.
 
 export type AlertVariant = 'default' | 'destructive' | 'success';
@@ -27,8 +27,7 @@ export interface AlertProps extends Omit<
 }
 
 const variantStyles: Record<AlertVariant, string> = {
-  default:
-    'bg-surface-elevated text-neutral-900 border-subtle dark:text-neutral-50',
+  default: 'bg-surface-elevated text-neutral-900 border-subtle dark:text-neutral-50',
   destructive:
     'bg-red-50 text-red-900 border-red-200 dark:bg-red-950/50 dark:text-red-200 dark:border-red-900',
   success:
@@ -53,7 +52,7 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
     return (
       <AnimatePresence>
         {isShowing && (
-          <motion.div
+          <m.div
             ref={ref}
             role="alert"
             initial={{ opacity: 0, transform: 'scale(0.95)' }}
@@ -107,7 +106,7 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
                 </button>
               )}
             </div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     );

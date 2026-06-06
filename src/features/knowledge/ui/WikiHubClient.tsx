@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { wikiEntities } from '@/features/knowledge/model/entities';
 
 export default function WikiHub() {
@@ -41,7 +41,7 @@ export default function WikiHub() {
     <main className="bg-coday-black min-h-screen pt-32 pb-24 text-coday-gray-100 font-sans selection:bg-coday-gold selection:text-coday-black">
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
         <header className="mb-16">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -52,16 +52,16 @@ export default function WikiHub() {
                 Wiki
               </span>
             </h1>
-            <p className="text-xl text-coday-gray-400 max-w-3xl">
-              {t('subtitle')}
-            </p>
-          </motion.div>
+            <p className="text-xl text-coday-gray-400 max-w-3xl">{t('subtitle')}</p>
+          </m.div>
         </header>
 
         <div className="mb-12">
           <div className="flex flex-col md:flex-row gap-6 justify-between items-center bg-coday-dark border border-coday-gray-800 p-4 rounded-xl">
             <div className="w-full md:w-1/2 relative">
-              <label htmlFor="wiki-search" className="sr-only">{t('search_aria')}</label>
+              <label htmlFor="wiki-search" className="sr-only">
+                {t('search_aria')}
+              </label>
               <input
                 id="wiki-search"
                 type="search"
@@ -103,7 +103,7 @@ export default function WikiHub() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredEntities.map((entity, idx) => (
-            <motion.div
+            <m.div
               key={entity.slug}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -126,7 +126,7 @@ export default function WikiHub() {
                   {entity.aliases.length > 3 && '...'}
                 </div>
               </Link>
-            </motion.div>
+            </m.div>
           ))}
         </div>
 

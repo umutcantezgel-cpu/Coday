@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import {
   CheckCircle,
   XCircle,
@@ -67,15 +67,27 @@ const InteractiveQuiz: React.FC<InteractiveQuizProps> = ({ title, questions, cla
       aria-labelledby="quiz-title"
     >
       <div className="flex items-center justify-between mb-6">
-        <h3 id="quiz-title" className="text-xl font-bold text-secondary">{title}</h3>
-        <span className="text-sm font-medium text-primary bg-primary/10 px-3 py-1 rounded-full" aria-live="polite">
+        <h3 id="quiz-title" className="text-xl font-bold text-secondary">
+          {title}
+        </h3>
+        <span
+          className="text-sm font-medium text-primary bg-primary/10 px-3 py-1 rounded-full"
+          aria-live="polite"
+        >
           {currentQuestion + 1}/{questions.length}
         </span>
       </div>
 
       {/* Progress bar */}
-      <div className="h-2 bg-gray-200 rounded-full mb-8 overflow-hidden" role="progressbar" aria-valuenow={Math.round(progress)} aria-valuemin={0} aria-valuemax={100} aria-label={`Fortschritt: ${Math.round(progress)}%`}>
-        <motion.div
+      <div
+        className="h-2 bg-gray-200 rounded-full mb-8 overflow-hidden"
+        role="progressbar"
+        aria-valuenow={Math.round(progress)}
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-label={`Fortschritt: ${Math.round(progress)}%`}
+      >
+        <m.div
           className="h-full w-full bg-primary rounded-full"
           initial={{ scaleX: 0 }}
           animate={{ scaleX: progress / 100 }}
@@ -86,14 +98,16 @@ const InteractiveQuiz: React.FC<InteractiveQuizProps> = ({ title, questions, cla
 
       <AnimatePresence mode="wait">
         {!isFinished ? (
-          <motion.div
+          <m.div
             key={currentQuestion}
             initial={{ opacity: 0, x: isRtl ? -20 : 20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: isRtl ? 20 : -20 }}
           >
             <fieldset className="border-none p-0 m-0">
-              <legend className="text-lg font-medium text-secondary mb-6">{current?.question}</legend>
+              <legend className="text-lg font-medium text-secondary mb-6">
+                {current?.question}
+              </legend>
               <div className="space-y-3">
                 {current?.options?.map((option, index) => {
                   const isCorrect = index === current.correctIndex;
@@ -137,7 +151,7 @@ const InteractiveQuiz: React.FC<InteractiveQuizProps> = ({ title, questions, cla
               </div>
             </fieldset>
             {showResult && (
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="mt-6"
@@ -150,18 +164,26 @@ const InteractiveQuiz: React.FC<InteractiveQuizProps> = ({ title, questions, cla
                   {currentQuestion < questions.length - 1 ? 'Nächste Frage' : 'Ergebnis anzeigen'}
                   <ArrowRight size={18} aria-hidden="true" />
                 </button>
-              </motion.div>
+              </m.div>
             )}
-          </motion.div>
+          </m.div>
         ) : (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             className="text-center py-8"
           >
-            <div className="text-6xl mb-4" role="img" aria-label={
-              score === questions.length ? 'Pokal' : score >= questions.length / 2 ? 'Party' : 'Bücher'
-            }>
+            <div
+              className="text-6xl mb-4"
+              role="img"
+              aria-label={
+                score === questions.length
+                  ? 'Pokal'
+                  : score >= questions.length / 2
+                    ? 'Party'
+                    : 'Bücher'
+              }
+            >
               {score === questions.length ? '🏆' : score >= questions.length / 2 ? '🎉' : '📚'}
             </div>
             <h4 className="text-2xl font-bold text-secondary mb-2" aria-live="polite">
@@ -181,7 +203,7 @@ const InteractiveQuiz: React.FC<InteractiveQuizProps> = ({ title, questions, cla
               <ArrowCounterClockwise size={18} aria-hidden="true" />
               Nochmal versuchen
             </button>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </div>

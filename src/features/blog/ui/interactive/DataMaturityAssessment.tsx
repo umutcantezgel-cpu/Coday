@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import { CheckCircle, TrendUp, ChartBar, Lock } from '@phosphor-icons/react/dist/ssr';
 import { cn } from '@/shared/lib/utils';
 import { useTranslations } from 'next-intl';
@@ -152,8 +152,15 @@ export const DataMaturityAssessment: React.FC = () => {
           </div>
 
           {!showResult && (
-            <div className="w-full bg-gray-200/30 rounded-full h-2" role="progressbar" aria-valuenow={currentStep + 1} aria-valuemin={1} aria-valuemax={QUESTIONS.length} aria-label={t('questionStep', { current: currentStep + 1, total: QUESTIONS.length })}>
-              <motion.div
+            <div
+              className="w-full bg-gray-200/30 rounded-full h-2"
+              role="progressbar"
+              aria-valuenow={currentStep + 1}
+              aria-valuemin={1}
+              aria-valuemax={QUESTIONS.length}
+              aria-label={t('questionStep', { current: currentStep + 1, total: QUESTIONS.length })}
+            >
+              <m.div
                 className="bg-gradient-to-r from-primary to-purple-500 h-2 rounded-full"
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: progress / 100 }}
@@ -167,7 +174,7 @@ export const DataMaturityAssessment: React.FC = () => {
         <div className="p-6 md:p-8 min-h-[300px] flex flex-col justify-center">
           <AnimatePresence mode="wait">
             {!showResult ? (
-              <motion.div
+              <m.div
                 key={currentStep}
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -179,24 +186,24 @@ export const DataMaturityAssessment: React.FC = () => {
                     {QUESTIONS[currentStep]!.text}
                   </legend>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {QUESTIONS[currentStep]!.options.map((option, index) => (
-                    <button
-                      key={index}
-                      onClick={() => handleAnswer(option.points)}
-                      className="active:scale-[0.97] group p-4 text-left rounded-xl border border-gray-200 hover:border-primary hover:bg-primary/5 transition motion-reduce:duration-[0.01ms] duration-200 flex items-center justify-between"
-                    >
-                      <span className="text-gray-900 group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms]">
-                        {option.text}
-                      </span>
-                      <CheckCircle className="w-5 h-5 opacity-0 group-hover:opacity-100 text-primary transition motion-reduce:duration-[0.01ms] transform translate-x-2 group-hover:translate-x-0" />
-                    </button>
-                  ))}
-                </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {QUESTIONS[currentStep]!.options.map((option, index) => (
+                      <button
+                        key={index}
+                        onClick={() => handleAnswer(option.points)}
+                        className="active:scale-[0.97] group p-4 text-left rounded-xl border border-gray-200 hover:border-primary hover:bg-primary/5 transition motion-reduce:duration-[0.01ms] duration-200 flex items-center justify-between"
+                      >
+                        <span className="text-gray-900 group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms]">
+                          {option.text}
+                        </span>
+                        <CheckCircle className="w-5 h-5 opacity-0 group-hover:opacity-100 text-primary transition motion-reduce:duration-[0.01ms] transform translate-x-2 group-hover:translate-x-0" />
+                      </button>
+                    ))}
+                  </div>
                 </fieldset>
-              </motion.div>
+              </m.div>
             ) : (
-              <motion.div
+              <m.div
                 key="result"
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -280,7 +287,7 @@ export const DataMaturityAssessment: React.FC = () => {
                     {t('bookAudit')} <CheckCircle className="w-4 h-4" />
                   </a>
                 </div>
-              </motion.div>
+              </m.div>
             )}
           </AnimatePresence>
         </div>

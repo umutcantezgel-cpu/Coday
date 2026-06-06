@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { Desktop, Laptop, Monitor, Headphones } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 
@@ -118,12 +118,15 @@ const GearSetup: React.FC = () => {
         {/* Preview */}
         <div className="bg-neutral-50 rounded-2xl p-8 flex flex-col justify-center relative border border-neutral-200 shadow-inner">
           <div className="absolute top-4 right-4 text-xs font-mono text-green-600 font-bold flex items-center gap-2">
-            <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse motion-reduce:animate-none" aria-hidden="true"></span>
+            <span
+              className="w-2 h-2 bg-green-500 rounded-full animate-pulse motion-reduce:animate-none"
+              aria-hidden="true"
+            ></span>
             READY TO SHIP
           </div>
 
           <div className="space-y-6">
-            <motion.div
+            <m.div
               key={laptop}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -136,9 +139,9 @@ const GearSetup: React.FC = () => {
                 <h4 className="font-bold text-secondary-900">{equipment.laptops[laptop].name}</h4>
                 <p className="text-secondary-500 text-sm">{equipment.laptops[laptop].desc}</p>
               </div>
-            </motion.div>
+            </m.div>
 
-            <motion.div
+            <m.div
               key={monitor}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -152,9 +155,9 @@ const GearSetup: React.FC = () => {
                 <h4 className="font-bold text-secondary-900">{equipment.monitors[monitor].name}</h4>
                 <p className="text-secondary-500 text-sm">{equipment.monitors[monitor].desc}</p>
               </div>
-            </motion.div>
+            </m.div>
 
-            <motion.div
+            <m.div
               key={audio}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -168,7 +171,7 @@ const GearSetup: React.FC = () => {
                 <h4 className="font-bold text-secondary-900">{equipment.audio[audio].name}</h4>
                 <p className="text-secondary-500 text-sm">{equipment.audio[audio].desc}</p>
               </div>
-            </motion.div>
+            </m.div>
 
             <div className="pt-8 border-t border-neutral-200 mt-4">
               <div className="flex justify-between items-end">
