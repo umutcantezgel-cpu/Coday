@@ -231,5 +231,9 @@
         "description": "Clear positioning instead of \"Welcome\"."
       }
     ]
+  },
+  "meta": {
+    "title": "Website Analyzer Audit | Coday",
+    "description": "Test your website for performance, SEO, accessibility, and best practices. Free audit."
   }
 }

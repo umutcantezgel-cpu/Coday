@@ -91,7 +91,9 @@
       "calendly_title": "Perfekt! Lassen Sie uns sprechen.",
       "calendly_desc": "Wählen Sie einen passenden Termin für unser kurzes Kennenlerngespräch.",
       "trust_text": "Durch die Zusammenarbeit mit Coday konnten wir unsere digitale Sichtbarkeit deutlich steigern. Der erste Anruf war bereits extrem hilfreich.",
-      "trust_source": "— Batherm, Haustechnik"
+      "trust_source": "— Batherm, Haustechnik",
+      "booking_title": "Ihre Anfrage wurde erfolgreich gesendet! 🎉",
+      "booking_desc": "Wir prüfen Ihre Angaben und melden uns zeitnah. Optional: Überspringen Sie die E-Mail-Abstimmung und buchen Sie direkt einen Wunschtermin."
     },
     "validation": {
       "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein",

@@ -252,6 +252,15 @@ export const ApplicationWizard: React.FC = () => {
               </div>
             </div>
           </div>
+
+          <div className="mt-8">
+            <a
+              href={`/${locale}`}
+              className="text-gray-500 hover:text-gray-900 text-sm font-medium transition-colors"
+            >
+              {t('wizard.success.back_home')}
+            </a>
+          </div>
         </m.div>
       </AnimatePresence>
     );

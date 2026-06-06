@@ -132,6 +132,11 @@
     "monthly": "Monatlich",
     "one_time": "Einmalig",
     "share": "Konfiguration teilen",
-    "title": "Ihr Paket"
+    "title": "Ihr Paket",
+    "package": "Gewähltes Paket"
+  },
+  "meta": {
+    "title": "Projektkosten-Rechner | Coday Web-Agentur",
+    "description": "Berechnen Sie in Echtzeit die Kosten für Ihre nächste Website, Web-App oder E-Commerce Lösung."
   }
 }

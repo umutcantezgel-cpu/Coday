@@ -132,6 +132,11 @@
     "monthly": "Monthly",
     "one_time": "One-time",
     "share": "Share Configuration",
-    "title": "Your Package"
+    "title": "Your Package",
+    "package": "Selected Package"
+  },
+  "meta": {
+    "title": "Project Cost Calculator | Coday Web Agency",
+    "description": "Calculate the costs for your next website, web app or e-commerce solution in real time."
   }
 }
