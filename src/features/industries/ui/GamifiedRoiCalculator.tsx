@@ -45,6 +45,7 @@ export const GamifiedRoiCalculator: React.FC<GamifiedRoiCalculatorProps> = ({
     }, stepTime);
 
     return () => clearInterval(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [revenue]);
 
   return (

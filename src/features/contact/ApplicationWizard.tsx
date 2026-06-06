@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
 import { m, AnimatePresence } from 'motion/react';
-import { useForm } from 'react-hook-form';
+import { useForm, useWatch } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Icon } from '@/shared/ui/Icon';
@@ -62,7 +62,7 @@ export const ApplicationWizard: React.FC = () => {
   const {
     register,
     handleSubmit,
-    watch,
+    control,
     formState: { errors },
   } = useForm<WizardFormData>({
     resolver: zodResolver(WizardSchema),
@@ -78,8 +78,9 @@ export const ApplicationWizard: React.FC = () => {
     },
   });
 
-  const submittedEmail = watch('email');
-  const submittedName = watch('name');
+  const submittedEmail = useWatch({ control, name: 'email' }) || '';
+  const submittedName = useWatch({ control, name: 'name' }) || '';
+  const submittedPhone = useWatch({ control, name: 'phone' });
 
   // Track form abandon
   useEffect(() => {
@@ -214,7 +215,7 @@ export const ApplicationWizard: React.FC = () => {
               prefillData={{
                 name: submittedName,
                 email: submittedEmail,
-                phone: watch('phone'),
+                phone: submittedPhone,
               }}
             />
           </div>
