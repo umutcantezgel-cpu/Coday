@@ -23,16 +23,20 @@
     "link": "Vollständige Fallstudie ansehen",
     "stats": {
       "cpa": {
-        "desc": "Reduktion durch optimierte Funnels und intelligentere Werbebudget-Verteilung.",
+        "desc": "Reduktion der Kosten pro qualifiziertem Lead durch optimierte Funnels.",
         "label": "Niedrigerer CPA"
       },
       "lcp": {
-        "desc": "Largest Contentful Paint optimiert für sofortige Seitenladezeiten.",
-        "label": "LCP Score"
+        "desc": "Largest Contentful Paint unter 1 Sekunde für sofortige Seitenladung.",
+        "label": "LCP < 1s"
       },
       "leads": {
-        "desc": "Mehr qualifizierte Leads durch konversionoptimiertes Design und UX.",
-        "label": "Mehr Leads"
+        "desc": "Steigerung qualifizierter Anfragen innerhalb der ersten 90 Tage nach Launch.",
+        "label": "Mehr Anfragen"
+      },
+      "revenue": {
+        "desc": "Direkt messbare Umsatzsteigerung durch höhere Konversionsraten.",
+        "label": "Umsatzwachstum"
       }
     },
     "title": "Die Zahlen sprechen"
@@ -41,22 +45,22 @@
     "desc": "Was unsere Kunden über die Zusammenarbeit mit uns sagen.",
     "items": [
       {
-        "company": "TechVenture GmbH",
-        "name": "Sarah M.",
-        "role": "Geschäftsführerin",
-        "text": "Coday hat unsere Online-Präsenz komplett transformiert. Die Ergebnisse haben alle unsere Erwartungen übertroffen."
+        "company": "Batherm",
+        "name": "Geschäftsführung",
+        "role": "Inhaber",
+        "text": "Die neue Website hat unsere digitale Präsenz komplett revolutioniert. Wir erhalten deutlich mehr qualifizierte Anfragen aus der Region und die Ladezeiten sind phänomenal."
       },
       {
-        "company": "Digital Dynamics",
-        "name": "Thomas K.",
-        "role": "Marketing-Leiter",
-        "text": "Endlich eine Agentur, die hält was sie verspricht. Unsere Konversionsrate stieg in nur 3 Monaten um 340%."
+        "company": "MS Schlüsseldienst Wetzlar",
+        "name": "Geschäftsführung",
+        "role": "Inhaber",
+        "text": "Seit dem Launch der neuen Website kommen über 60% unserer Neukunden direkt über Google. Die lokale Sichtbarkeit hat sich drastisch verbessert."
       },
       {
-        "company": "InnoScale AG",
-        "name": "Lisa B.",
-        "role": "Head of Digital",
-        "text": "Die technische Expertise und Designqualität sind Weltklasse. Echte Partner, nicht nur Dienstleister."
+        "company": "Lindener Ratsstuben",
+        "name": "Geschäftsführung",
+        "role": "Inhaber",
+        "text": "Die Online-Speisekarte und das Reservierungssystem haben unseren Arbeitsalltag enorm erleichtert. Telefonische Reservierungen sind um die Hälfte zurückgegangen."
       }
     ],
     "title": "Kundenstimmen"

@@ -14,7 +14,8 @@ export type ConversionEvent =
   | 'form_success'
   | 'form_error'
   | 'cta_click'
-  | 'calendly_open'
+  | 'feature_used'
+  | 'discovery_call_booked'
   | 'scroll_depth'
   | 'page_view'
   | 'engagement';

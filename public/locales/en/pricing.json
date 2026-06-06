@@ -72,6 +72,16 @@
     "title": "Still unsure?"
   },
   "features": {
+    "ultimate": [
+      "Unlimited Pages & Layouts",
+      "Headless E-Commerce Setup",
+      "Complex Custom Logic & Dashboards",
+      "Premium Local SEO Dominance",
+      "Custom iOS & Android App Option",
+      "Lifetime Priority Support",
+      "Dedicated Project Manager",
+      "VIP SLA & Performance Guarantee"
+    ],
     "enterprise": [
       "Up to 30 Pages",
       "Custom Web Application",
@@ -125,6 +135,12 @@
     "onepager": ["Subpages", "Content Management (CMS)", "Blog"]
   },
   "packages": {
+    "ultimate": {
+      "cta": "Choose Ultimate",
+      "name": "Ultimate Domination",
+      "tagline": "The unfair competitive advantage",
+      "badge": "Agency Partner"
+    },
     "enterprise": {
       "cta": "Request Enterprise",
       "name": "Enterprise",

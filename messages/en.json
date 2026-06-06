@@ -1238,8 +1238,8 @@
         "total": "Total (approx.):"
       },
       "success": {
-        "calendly_title": "Almost done!",
-        "calendly_desc": "Please select a time for a short discovery call."
+        "booking_title": "Almost done!",
+        "booking_desc": "Please select a time for a short discovery call."
       },
       "step1": {
         "project_type": {

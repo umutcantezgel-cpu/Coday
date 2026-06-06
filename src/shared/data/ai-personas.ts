@@ -145,7 +145,7 @@ export const aiPersonas: AiPersonaData[] = [
     goals: [
       'Aufbau von unerschütterlicher Experten-Autorität',
       'Automatisierte Vorqualifizierung von High-Ticket Leads',
-      'Nahtlose Integration von Terminbuchungs-Systemen (Calendly etc.)',
+      'Nahtlose Integration von Terminbuchungs-Systemen',
       'Generierung von Thought-Leadership Content (Blog/Podcast)',
     ],
     codaySolution:
@@ -361,7 +361,7 @@ export const aiPersonas: AiPersonaData[] = [
       'Abhängigkeit von ständiger Content-Produktion (Social Media)',
       'Unklarheit, wie man Premium-Preise digital rechtfertigt',
       'Kalte Interessenten buchen keine Erstgespräche',
-      'Technik-Chaos mit verschiedenen Tools (WordPress, Calendly, Digistore)',
+      'Technik-Chaos mit verschiedenen Tools (WordPress, Terminbuchung, Digistore)',
     ],
     goals: [
       'Aufbau eines hochkonvertierenden Lead-Funnels',

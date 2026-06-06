@@ -1,15 +1,20 @@
-// Follow this setup guide to integrate the Deno language server with your editor:
-// https://deno.land/manual/getting_started/setup_your_environment
-
 import { serve } from 'https://deno.land/std@0.168.0/http/server.ts';
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-};
+const ALLOWED_ORIGINS = ['https://www.codayweb.de', 'https://codayweb.de', 'http://localhost:3000'];
+
+function getCorsHeaders(req: Request) {
+  const origin = req.headers.get('Origin') || '';
+  const allowedOrigin = ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0];
+  return {
+    'Access-Control-Allow-Origin': allowedOrigin,
+    'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+  };
+}
 
 serve(async (req) => {
+  const corsHeaders = getCorsHeaders(req);
+
   // Handle CORS preflight
   if (req.method === 'OPTIONS') {
     return new Response('ok', { headers: corsHeaders });
@@ -21,13 +26,17 @@ serve(async (req) => {
 
   if (!supabaseUrl || !supabaseKey) {
     console.error('Server misconfiguration: Missing Supabase keys');
-    return new Response(
-      JSON.stringify({ error: 'Server misconfiguration: Missing Supabase keys' }),
-      { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-    );
+    return new Response(JSON.stringify({ error: 'Server misconfiguration' }), {
+      status: 500,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    });
   }
 
   const supabase = createClient(supabaseUrl, supabaseKey);
+
+  // Email sender config: use verified domain or fall back to Resend sandbox
+  const EMAIL_FROM_BOOKING = Deno.env.get('EMAIL_FROM') || 'Coday Booking <onboarding@resend.dev>';
+  const ADMIN_EMAIL = 'umut@codayweb.de';
 
   // Handle GET: Fetch availability (booked slots)
   if (req.method === 'GET') {
@@ -35,8 +44,6 @@ serve(async (req) => {
       const url = new URL(req.url);
       const startDate = url.searchParams.get('start') || new Date().toISOString().split('T')[0];
       const endDate = url.searchParams.get('end');
-
-      console.log(`[GET] Fetching bookings from ${startDate} to ${endDate || 'infinity'}`);
 
       let query = supabase.from('bookings').select('date,time_slot').gte('date', startDate);
 
@@ -51,19 +58,14 @@ serve(async (req) => {
         throw error;
       }
 
-      console.log(`[GET] Found ${data?.length} bookings`);
-
       return new Response(JSON.stringify({ bookings: data || [] }), {
         status: 200,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       });
-    } catch (err: any) {
+    } catch (err) {
       console.error('[GET] Unexpected Error:', err);
       return new Response(
-        JSON.stringify({
-          error: err.message || 'Failed to fetch bookings',
-          details: err,
-        }),
+        JSON.stringify({ error: err instanceof Error ? err.message : 'Failed to fetch bookings' }),
         { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
     }
@@ -75,8 +77,7 @@ serve(async (req) => {
       const payload = await req.json();
       const { name, email, phone, date, time_slot, service_type, notes } = payload;
 
-      console.log(`[POST] New booking request: ${email} on ${date} at ${time_slot}`);
-
+      // Input validation
       if (!name || !email || !date || !time_slot) {
         return new Response(JSON.stringify({ error: 'Missing required fields' }), {
           status: 400,
@@ -84,22 +85,15 @@ serve(async (req) => {
         });
       }
 
-      // 1. Check if slot is taken
-      const { data: existing, error: checkError } = await supabase
-        .from('bookings')
-        .select('id')
-        .eq('date', date)
-        .eq('time_slot', time_slot)
-        .single();
-
-      if (existing) {
-        return new Response(JSON.stringify({ error: 'This time slot is already booked.' }), {
-          status: 409,
+      // Basic email format check
+      if (!email.includes('@') || !email.includes('.')) {
+        return new Response(JSON.stringify({ error: 'Invalid email format' }), {
+          status: 400,
           headers: { ...corsHeaders, 'Content-Type': 'application/json' },
         });
       }
 
-      // 2. Insert Booking
+      // Insert booking — the UNIQUE(date, time_slot) constraint prevents duplicates at DB level
       const { error: insertError } = await supabase.from('bookings').insert({
         name,
         email,
@@ -112,11 +106,18 @@ serve(async (req) => {
       });
 
       if (insertError) {
+        // Handle unique constraint violation (slot already booked)
+        if (insertError.code === '23505') {
+          return new Response(JSON.stringify({ error: 'This time slot is already booked.' }), {
+            status: 409,
+            headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+          });
+        }
         console.error('[POST] Insert Error:', insertError);
         throw insertError;
       }
 
-      // 3. Send Emails via Resend
+      // Send Emails via Resend
       let emailStatus = 'skipped';
       if (resendApiKey) {
         try {
@@ -125,7 +126,7 @@ serve(async (req) => {
 
           // Email 1: Confirmation to the CUSTOMER
           await resend.emails.send({
-            from: 'Coday Booking <onboarding@resend.dev>',
+            from: EMAIL_FROM_BOOKING,
             to: [email],
             subject: `Terminbestätigung: ${date} um ${time_slot}`,
             html: `
@@ -145,10 +146,10 @@ serve(async (req) => {
             `,
           });
 
-          // Email 2: Notification to ADMIN with full registration details
+          // Email 2: Notification to ADMIN
           await resend.emails.send({
-            from: 'Coday Booking <onboarding@resend.dev>',
-            to: ['umut@codayweb.de'],
+            from: EMAIL_FROM_BOOKING,
+            to: [ADMIN_EMAIL],
             subject: `📅 Neue Buchung: ${name} — ${date} um ${time_slot}`,
             html: `
               <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 32px; background: #f0fdf4; border-radius: 16px; border: 1px solid #bbf7d0;">
@@ -180,12 +181,11 @@ serve(async (req) => {
         JSON.stringify({ success: true, message: 'Booking confirmed', email: emailStatus }),
         { status: 200, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
-    } catch (error: any) {
+    } catch (error) {
       console.error('[POST] Booking Error:', error);
       return new Response(
         JSON.stringify({
           error: error instanceof Error ? error.message : 'Internal Server Error',
-          details: error,
         }),
         { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );

@@ -38,7 +38,7 @@ The foundation. Dumb UI components, global hooks, and utility functions.
 
 We use a **Headless UI + Tailwind** approach.
 
-- **Tokens:** Colors, spacing, and typography are defined in `tailwind.config.js`.
+- **Tokens:** Colors, spacing, and typography are defined in `src/app/globals.css` via Tailwind v4 `@theme` block.
 - **Components:** Found in `src/shared/ui`. These are unstyled by default and styled via utility classes.
 
 ## 🌍 State Management

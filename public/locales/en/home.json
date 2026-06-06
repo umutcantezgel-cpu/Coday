@@ -1,17 +1,17 @@
 {
   "hero": {
-    "headline_gradient": "Wetzlar & Hessen.",
-    "headline_prefix": "The Leading Web Agency in",
-    "description": "Stop losing customers to slow load times. We are the best web design agency in the region, building incomparably fast Next.js, React, TypeScript, Tailwind & Framer Motion web platforms. Real performance, outstanding results.",
+    "headline_gradient": "measurable results.",
+    "headline_prefix": "Digital infrastructure for",
+    "description": "Your website isn\u2019t a brochure \u2013 it\u2019s your best salesperson. We build lightning-fast platforms that filter out price shoppers and attract high-value premium clients. Fixed pricing. Full code ownership. Zero risk.",
     "rotating": [
-      "Next.js & React 19.",
-      "Tailwind CSS & Framer Motion.",
-      "Incomparable Load Times.",
-      "Best Web Agency in Hessen."
+      "Google Page 1 in 90 days.",
+      "Load time under 1 second.",
+      "100% code ownership guaranteed.",
+      "+250% more qualified leads."
     ],
     "title": "AI-Augmented Web Development",
     "subtitle": "High-end websites with React, TypeScript, and Headless CMS. Fixed pricing from €2,000.",
-    "cta": "Free Potential Analysis",
+    "cta": "Free Potential Audit",
     "eyebrow": "Measurable Growth & High-End Performance",
     "view_projects": "See Results"
   },

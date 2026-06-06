@@ -1238,8 +1238,8 @@
         "total": "Gesamt (ca.):"
       },
       "success": {
-        "calendly_title": "Fast geschafft!",
-        "calendly_desc": "Wählen Sie jetzt einen Termin für ein kurzes Kennenlerngespräch."
+        "booking_title": "Fast geschafft!",
+        "booking_desc": "Wählen Sie jetzt einen Termin für ein kurzes Kennenlerngespräch."
       },
       "step1": {
         "project_type": {

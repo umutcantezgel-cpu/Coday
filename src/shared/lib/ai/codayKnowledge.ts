@@ -35,7 +35,7 @@ export const CODAY_KNOWLEDGE_BASE = {
     phone: '+49 176 41195301',
     website: 'https://www.codayweb.de',
     websiteAlternative: 'https://codayweb.de',
-    calendly: 'https://calendly.com/coday-beratung/30min',
+    booking: 'https://codayweb.de/contact',
     whatsapp: 'https://wa.me/4917641195301',
   },
 
@@ -249,7 +249,6 @@ export const CODAY_KNOWLEDGE_BASE = {
       'Terminbuchung direkt im Report',
     ],
   },
-
 
   // ============================================================
   // FAQ ANTWORTEN

@@ -11,6 +11,12 @@ const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 interface BookingCalendarProps {
   className?: string;
   initialServiceType?: string;
+  prefillData?: {
+    name?: string;
+    email?: string;
+    phone?: string;
+    notes?: string;
+  };
 }
 
 const TIME_SLOTS = ['09:00', '10:00', '11:00', '13:00', '14:00', '15:00', '16:00'];
@@ -18,6 +24,7 @@ const TIME_SLOTS = ['09:00', '10:00', '11:00', '13:00', '14:00', '15:00', '16:00
 const BookingCalendar = ({
   className,
   initialServiceType = 'consultation',
+  prefillData,
 }: BookingCalendarProps) => {
   const t = useTranslations('booking');
   const locale = useLocale();
@@ -25,10 +32,10 @@ const BookingCalendar = ({
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    notes: '',
+    name: prefillData?.name || '',
+    email: prefillData?.email || '',
+    phone: prefillData?.phone || '',
+    notes: prefillData?.notes || '',
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);

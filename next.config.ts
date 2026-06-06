@@ -18,15 +18,12 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'images.provenexpert.com',
       },
-      {
-        protocol: 'https',
-        hostname: 'picsum.photos',
-      },
     ],
   },
   reactStrictMode: true,
   poweredByHeader: false,
   experimental: {
+    reactCompiler: true,
     optimizePackageImports: [
       '@phosphor-icons/react',
       '@phosphor-icons/react/dist/ssr',

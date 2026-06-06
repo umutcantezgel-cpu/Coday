@@ -68,7 +68,7 @@ export function needsHumanSupport(message: string): boolean {
  */
 export function getHumanSupportResponse(): {
   message: string;
-  action: 'email' | 'phone' | 'calendly' | 'link';
+  action: 'email' | 'phone' | 'booking' | 'link';
   actionUrl: string;
 } {
   return {

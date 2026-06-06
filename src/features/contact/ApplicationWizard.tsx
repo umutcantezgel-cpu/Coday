@@ -9,7 +9,7 @@ import { saveLeadInternalAction } from '@/features/contact/actions/saveLeadInter
 import { useTranslations, useLocale } from 'next-intl';
 import { useCalculatorStore } from '@/features/calculator/model/store';
 import { formatCurrency } from '@/shared/utils/formatters';
-import { InlineWidget, useCalendlyEventListener } from 'react-calendly';
+import BookingCalendar from '@/features/booking/ui/BookingCalendar';
 import { trackEvent } from '@/shared/lib/analytics/tracking';
 
 type WizardFormData = {
@@ -139,12 +139,6 @@ export const ApplicationWizard: React.FC = () => {
     }
   };
 
-  useCalendlyEventListener({
-    onEventScheduled: (e) => {
-      trackEvent('discovery_call_booked', { eventData: e.data, event_category: 'lead' });
-    },
-  });
-
   // Package Summary
   const renderPackageSummary = () => {
     if (!hasPackage) return null;
@@ -200,12 +194,6 @@ export const ApplicationWizard: React.FC = () => {
     );
   };
 
-  useCalendlyEventListener({
-    onEventScheduled: (_e) => {
-      trackEvent('discovery_call_booked', { event_category: 'lead_form', event_label: 'Calendly' });
-    },
-  });
-
   if (success) {
     return (
       <AnimatePresence mode="wait">
@@ -218,17 +206,16 @@ export const ApplicationWizard: React.FC = () => {
           className="bg-white rounded-3xl p-6 md:p-12 text-center shadow-xl border border-gray-100"
         >
           <h2 className="text-2xl font-bold text-gray-900 mb-2">
-            {t('wizard.success.calendly_title')}
+            {t('wizard.success.booking_title')}
           </h2>
-          <p className="text-gray-600 mb-8">{t('wizard.success.calendly_desc')}</p>
+          <p className="text-gray-600 mb-8">{t('wizard.success.booking_desc')}</p>
           <div className="w-full rounded-2xl overflow-hidden border border-gray-100 bg-gray-50 mb-8">
-            <InlineWidget
-              url="https://calendly.com/coday-beratung/30min"
-              prefill={{
-                email: submittedEmail,
+            <BookingCalendar
+              prefillData={{
                 name: submittedName,
+                email: submittedEmail,
+                phone: watch('phone'),
               }}
-              styles={{ height: '650px', width: '100%' }}
             />
           </div>
 

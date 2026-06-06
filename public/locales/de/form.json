@@ -89,7 +89,9 @@
       "message": "Vielen Dank für Ihr Interesse. Ich habe Ihre Anfrage erhalten und melde mich innerhalb von 24 Stunden bei Ihnen.",
       "title": "Anfrage erhalten!",
       "calendly_title": "Perfekt! Lassen Sie uns sprechen.",
-      "calendly_desc": "Wählen Sie einen passenden Termin für unser kurzes Kennenlerngespräch."
+      "calendly_desc": "Wählen Sie einen passenden Termin für unser kurzes Kennenlerngespräch.",
+      "trust_text": "Durch die Zusammenarbeit mit Coday konnten wir unsere digitale Sichtbarkeit deutlich steigern. Der erste Anruf war bereits extrem hilfreich.",
+      "trust_source": "— Batherm, Haustechnik"
     },
     "validation": {
       "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein",

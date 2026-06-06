@@ -89,7 +89,9 @@
       "message": "Thank you for your interest. We have received your request and will get back to you within 24 hours.",
       "title": "Request received!",
       "calendly_title": "Perfect! Let's talk.",
-      "calendly_desc": "Choose a suitable time for our short introductory call."
+      "calendly_desc": "Choose a suitable time for our short introductory call.",
+      "trust_text": "Working with Coday significantly increased our digital visibility. The first call alone was incredibly valuable.",
+      "trust_source": "— Batherm, Building Services"
     },
     "validation": {
       "email": "Please enter a valid email address",

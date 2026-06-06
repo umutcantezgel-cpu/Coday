@@ -39,16 +39,20 @@
     "link": "View Full Case Study",
     "stats": {
       "cpa": {
-        "desc": "Reduction through optimized funnels and smarter ad spend allocation.",
+        "desc": "Reduction in cost per qualified lead through optimized funnels.",
         "label": "Lower CPA"
       },
       "lcp": {
-        "desc": "Largest Contentful Paint optimized for instant page loads.",
-        "label": "LCP Score"
+        "desc": "Largest Contentful Paint under 1 second for instant page loads.",
+        "label": "LCP < 1s"
       },
       "leads": {
-        "desc": "More qualified leads through conversion-optimized design and UX.",
-        "label": "More Leads"
+        "desc": "Increase in qualified inquiries within the first 90 days after launch.",
+        "label": "More Inquiries"
+      },
+      "revenue": {
+        "desc": "Directly measurable revenue growth through higher conversion rates.",
+        "label": "Revenue Growth"
       }
     },
     "title": "The Numbers Speak"
@@ -57,22 +61,22 @@
     "desc": "What our clients say about working with us.",
     "items": [
       {
-        "company": "TechVenture GmbH",
-        "name": "Sarah M.",
-        "role": "CEO",
-        "text": "Coday transformed our online presence completely. The results exceeded all our expectations."
+        "company": "Batherm",
+        "name": "Management",
+        "role": "Owner",
+        "text": "The new website completely revolutionized our digital presence. We receive significantly more qualified inquiries from the region and the loading times are phenomenal."
       },
       {
-        "company": "Digital Dynamics",
-        "name": "Thomas K.",
-        "role": "Marketing Director",
-        "text": "Finally an agency that delivers what they promise. Our conversion rate increased by 340% in just 3 months."
+        "company": "MS Schl\u00fcsseldienst Wetzlar",
+        "name": "Management",
+        "role": "Owner",
+        "text": "Since launching the new website, over 60% of our new customers come directly through Google. Local visibility has improved dramatically."
       },
       {
-        "company": "InnoScale AG",
-        "name": "Lisa B.",
-        "role": "Head of Digital",
-        "text": "The technical expertise and design quality are world-class. True partners, not just service providers."
+        "company": "Lindener Ratsstuben",
+        "name": "Management",
+        "role": "Owner",
+        "text": "The online menu and reservation system have enormously simplified our daily operations. Phone reservations have dropped by half."
       }
     ],
     "title": "Client Voices"

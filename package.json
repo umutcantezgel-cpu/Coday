@@ -44,7 +44,6 @@
     "next-nprogress-bar": "^2.4.7",
     "next-sanity": "^13.0.3",
     "react": "^19.0.0",
-    "react-calendly": "^4.4.0",
     "react-code-blocks": "^0.1.6",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.71.1",

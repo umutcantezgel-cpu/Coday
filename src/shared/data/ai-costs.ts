@@ -320,7 +320,7 @@ export const aiCostData: AiCostData[] = [
     slug: 'finanzberater',
     metaTitle: 'Website Kosten für Finanzberater & Vermögensverwalter',
     metaDescription:
-      'Kosten für Websites in der Finanzbranche. Trust-Design, Calendly-Integration und Lead-Funnel für B2B/B2C.',
+      'Kosten für Websites in der Finanzbranche. Trust-Design, Terminbuchungs-Integration und Lead-Funnel für B2B/B2C.',
     costMin: 4000,
     costMax: 11500,
     currency: 'EUR',
@@ -330,7 +330,7 @@ export const aiCostData: AiCostData[] = [
       { item: 'Lead-Funnel & Analytics', costMin: 1000, costMax: 2500 },
     ],
     factors: [
-      'Umsetzung von DSGVO-konformen Consent-Layern für Tools wie Calendly und HubSpot',
+      'Umsetzung von DSGVO-konformen Consent-Layern für Tools wie HubSpot',
       'Integration von Lead-Magnets (z.B. PDF-Ratgeber zu ETF-Strategien oder Altersvorsorge)',
       'Aufbau von "Social Proof"-Sektionen mit verifizierten ProvenExpert-APIs',
     ],
@@ -339,7 +339,7 @@ export const aiCostData: AiCostData[] = [
       {
         question: 'Ist die Terminbuchung DSGVO-konform?',
         answer:
-          'Ja. Bei Finanzdaten ist Sicherheit kritisch. Wir nutzen Server-Side-Tracking und DSGVO-sichere Proxy-Setups, um Drittanbieter-Tools wie Calendly legal einzubinden.',
+          'Ja. Bei Finanzdaten ist Sicherheit kritisch. Wir nutzen Server-Side-Tracking und eine DSGVO-sichere Eigenentwicklung für die Terminbuchung, um Datensicherheit zu garantieren.',
       },
     ],
   },

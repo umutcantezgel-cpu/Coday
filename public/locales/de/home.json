@@ -1,17 +1,17 @@
 {
   "hero": {
-    "headline_gradient": "Wetzlar & Hessen.",
-    "headline_prefix": "Die führende Webagentur in",
-    "description": "Verlieren Sie keine Kunden mehr durch lange Ladezeiten. Wir sind die beste Webdesign-Agentur der Region und entwickeln unvergleichbar schnelle Next.js, React, TypeScript, Tailwind & Framer Motion Web-Plattformen. Echte Performance, herausragende Ergebnisse.",
+    "headline_gradient": "messbare Ergebnisse.",
+    "headline_prefix": "Digitale Infrastrukturen für",
+    "description": "Ihre Website ist kein Aushängeschild – sie ist Ihr bester Vertriebsmitarbeiter. Wir entwickeln blitzschnelle Plattformen, die nervige Preisanfragen filtern und kaufkräftige Premium-Kunden anziehen. Festpreise. Volle Code-Eigentumsr\u00fcckgabe. Null Risiko.",
     "rotating": [
-      "Next.js & React 19.",
-      "Tailwind CSS & Framer Motion.",
-      "Unvergleichbare Ladezeiten.",
-      "Beste Webagentur Hessen."
+      "Google Seite 1 in 90 Tagen.",
+      "Ladezeit unter 1 Sekunde.",
+      "100% Code-Eigentum garantiert.",
+      "+250% mehr qualifizierte Anfragen."
     ],
     "title": "AI-augmented Webentwicklung",
     "subtitle": "High-End Websites mit React, TypeScript und Headless CMS. Festpreise ab 2.000 €.",
-    "cta": "Kostenlose Potenzialanalyse",
+    "cta": "Kostenloses Potenzial-Audit",
     "eyebrow": "Messbares Wachstum & High-End Performance",
     "view_projects": "Ergebnisse ansehen"
   },
