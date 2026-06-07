@@ -37,7 +37,8 @@ export async function saveLeadInternalAction(data: {
 
     if (supabaseUrl && supabaseAnonKey) {
       try {
-        await fetch(`${supabaseUrl}/functions/v1/send-lead`, {
+        const baseUrl = supabaseUrl.endsWith('/') ? supabaseUrl.slice(0, -1) : supabaseUrl;
+        const res = await fetch(`${baseUrl}/functions/v1/send-lead`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -52,6 +53,13 @@ export async function saveLeadInternalAction(data: {
             message: data.message || '',
           }),
         });
+
+        if (!res.ok) {
+          const errorText = await res.text();
+          console.error(`Edge Function Error (${res.status}):`, errorText);
+        } else {
+          console.log('Edge Function success:', await res.json());
+        }
       } catch (emailError) {
         // Email failure should not block the lead submission
         console.error('Email notification failed (non-blocking):', emailError);

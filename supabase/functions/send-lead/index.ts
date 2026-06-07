@@ -54,7 +54,7 @@ serve(async (req) => {
       let adminEmailResult: any = null;
 
       try {
-        adminEmailResult = await resend.emails.send({
+        const adminRes = await resend.emails.send({
           from: EMAIL_FROM,
           to: [ADMIN_EMAIL],
           subject: `Neue Anfrage: ${name || 'Unbekannt'} (${project || 'Allgemein'})`,
@@ -78,6 +78,11 @@ serve(async (req) => {
           `,
           reply_to: email,
         });
+
+        if (adminRes.error) {
+          throw adminRes.error;
+        }
+        adminEmailResult = adminRes.data;
         emailStatus = 'admin_sent';
       } catch (adminErr) {
         console.error('Error sending admin email:', adminErr);
@@ -86,7 +91,7 @@ serve(async (req) => {
 
       // Customer Confirmation Email
       try {
-        await resend.emails.send({
+        const customerRes = await resend.emails.send({
           from: EMAIL_FROM,
           to: [email],
           subject: 'Danke für deine Anfrage bei Coday! 🚀',
@@ -107,13 +112,17 @@ serve(async (req) => {
             </div>
           `,
         });
-        emailStatus = 'both_sent';
+
+        if (customerRes.error) {
+          console.warn(
+            'Could not send confirmation email to customer (Sandbox limit?):',
+            customerRes.error
+          );
+        } else {
+          emailStatus = 'both_sent';
+        }
       } catch (customerErr) {
-        // Will likely fail in Sandbox if email is not verified
-        console.warn(
-          'Could not send confirmation email to customer (Sandbox limit?):',
-          customerErr
-        );
+        console.warn('Exception while sending confirmation email:', customerErr);
       }
 
       return new Response(
