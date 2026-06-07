@@ -28,12 +28,25 @@ export async function saveLeadInternalAction(data: {
 
     if (dbError) {
       console.error('Supabase Error:', dbError);
-      return { success: false, error: 'Database error occurred.' };
+      return { success: false, error: 'DB_ERROR: ' + JSON.stringify(dbError) };
     }
 
     // Fire-and-forget email notification via Supabase Edge Function
     const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
     const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+    if (!supabaseUrl) {
+      return {
+        success: false,
+        error: 'MISSING_ENV: NEXT_PUBLIC_SUPABASE_URL is not defined in Vercel',
+      };
+    }
+    if (!supabaseAnonKey) {
+      return {
+        success: false,
+        error: 'MISSING_ENV: NEXT_PUBLIC_SUPABASE_ANON_KEY is not defined in Vercel',
+      };
+    }
 
     if (supabaseUrl && supabaseAnonKey) {
       try {
@@ -57,18 +70,20 @@ export async function saveLeadInternalAction(data: {
         if (!res.ok) {
           const errorText = await res.text();
           console.error(`Edge Function Error (${res.status}):`, errorText);
+          // Return the edge function error to UI for debugging
+          return { success: false, error: `EMAIL_ERROR (${res.status}): ` + errorText };
         } else {
           console.log('Edge Function success:', await res.json());
         }
       } catch (emailError) {
-        // Email failure should not block the lead submission
-        console.error('Email notification failed (non-blocking):', emailError);
+        // Return fetch error to UI
+        return { success: false, error: 'FETCH_ERROR: ' + String(emailError) };
       }
     }
 
     return { success: true };
   } catch (error) {
     console.error('Internal Save Error:', error);
-    return { success: false, error: 'An unexpected error occurred.' };
+    return { success: false, error: 'CATCH_ERROR: ' + String(error) };
   }
 }
