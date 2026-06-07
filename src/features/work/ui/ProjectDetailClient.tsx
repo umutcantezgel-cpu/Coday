@@ -11,7 +11,7 @@ import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import { workData } from '@/shared/data/work';
 import { SeoHead } from '@/shared/ui/SeoHead';
 import { AnimatedCounter } from '@/shared/ui/AnimatedCounter';
-import { BeforeAfterSlider } from '@/shared/ui/BeforeAfterSlider';
+
 import { m, AnimatePresence } from 'motion/react';
 import { X } from '@phosphor-icons/react';
 import Image from 'next/image';
@@ -449,64 +449,6 @@ const ProjectDetail: React.FC = () => {
                 </div>
               </div>
             </m.div>
-
-            {/* ── Before / After ── */}
-            {project.beforeAfter &&
-              (project.beforeAfter.beforeImage || project.beforeAfter.afterImage) && (
-                <m.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-50px' }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <h2 className="font-display font-bold text-3xl text-gray-900 mb-6">
-                    {t('project_detail.before_after_title')}
-                  </h2>
-
-                  {project.beforeAfter.beforeImage && project.beforeAfter.afterImage ? (
-                    <BeforeAfterSlider
-                      beforeImage={project.beforeAfter.beforeImage}
-                      afterImage={project.beforeAfter.afterImage}
-                      beforeAlt={project.beforeAfter.beforeAlt || `Before - ${project.title}`}
-                      afterAlt={project.beforeAfter.afterAlt || `After - ${project.title}`}
-                      beforeLabel={t('project_detail.before')}
-                      afterLabel={t('project_detail.after')}
-                    />
-                  ) : (
-                    /* Fallback: single-side display */
-                    <div className="grid md:grid-cols-2 gap-6">
-                      {project.beforeAfter.beforeImage && (
-                        <div className="relative rounded-2xl overflow-hidden shadow-lg border border-gray-100 aspect-[4/3]">
-                          <OptimizedImage
-                            src={project.beforeAfter.beforeImage}
-                            alt={project.beforeAfter.beforeAlt || `Before - ${project.title}`}
-                            className="absolute inset-0 w-full h-full object-cover"
-                            width={800}
-                            height={600}
-                          />
-                          <div className="absolute top-4 left-4 bg-black/50 backdrop-blur-md text-white text-xs font-bold uppercase px-3 py-1 rounded">
-                            {t('project_detail.before')}
-                          </div>
-                        </div>
-                      )}
-                      {project.beforeAfter.afterImage && (
-                        <div className="relative rounded-2xl overflow-hidden shadow-lg border border-gray-100 aspect-[4/3]">
-                          <OptimizedImage
-                            src={project.beforeAfter.afterImage}
-                            alt={project.beforeAfter.afterAlt || `After - ${project.title}`}
-                            className="absolute inset-0 w-full h-full object-cover"
-                            width={800}
-                            height={600}
-                          />
-                          <div className="absolute top-4 left-4 bg-primary text-white text-xs font-bold uppercase px-3 py-1 rounded">
-                            {t('project_detail.after')}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  )}
-                </m.div>
-              )}
           </div>
         </div>
 

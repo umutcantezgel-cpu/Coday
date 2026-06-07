@@ -4,6 +4,9 @@ import GradientText from '@/shared/ui/GradientText';
 import { cn } from '@/shared/lib/utils';
 import dynamic from 'next/dynamic';
 import { GamifiedHeroCta } from './GamifiedHeroCta';
+import { Link } from '@/i18n/navigation';
+import { ArrowRight, Briefcase } from '@phosphor-icons/react/dist/ssr';
+import { baseButtonStyles, buttonVariants, buttonSizes } from '@/shared/ui/ButtonStyles';
 
 import { MobileRotatingText } from './MobileRotatingText';
 
@@ -15,7 +18,7 @@ export const HeroSection: React.FC = () => {
   const t = useTranslations('home');
 
   return (
-    <section className="relative w-full min-h-[85svh] flex flex-col justify-center overflow-x-hidden bg-bg-primary px-4 pt-16 pb-16 md:pt-24 md:pb-24">
+    <section className="relative w-full min-h-[85svh] flex flex-col justify-center overflow-x-hidden bg-bg-primary px-4 pt-12 pb-12 md:pt-24 md:pb-24">
       <div className="relative z-10 w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
         {/* Left Column: Text Content */}
         <div className="lg:col-span-7 flex flex-col items-start text-left">
@@ -53,10 +56,38 @@ export const HeroSection: React.FC = () => {
               <MobileRotatingText texts={t.raw('hero.rotating') as string[]} />
             </span>
           </div>
+
+          {/* Mobile Only CTAs */}
+          <div className="mt-8 flex flex-col w-full gap-3 lg:hidden">
+            <Link
+              href="/booking"
+              className={cn(
+                baseButtonStyles,
+                buttonVariants['primary'],
+                buttonSizes['lg'],
+                'w-full justify-center text-base'
+              )}
+            >
+              {t('hero.cta')}
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Link>
+            <Link
+              href="/work"
+              className={cn(
+                baseButtonStyles,
+                buttonVariants['outline'],
+                buttonSizes['lg'],
+                'w-full justify-center text-base'
+              )}
+            >
+              <Briefcase className="w-5 h-5 mr-2" />
+              {t('hero.view_projects')}
+            </Link>
+          </div>
         </div>
 
-        {/* Right Column: Gamified C-Slider */}
-        <div className="lg:col-span-5 flex justify-center lg:justify-end mt-8 lg:mt-0">
+        {/* Right Column: Gamified C-Slider (Hidden on Mobile) */}
+        <div className="hidden lg:flex lg:col-span-5 justify-end mt-8 lg:mt-0">
           <GamifiedHeroCta />
         </div>
       </div>

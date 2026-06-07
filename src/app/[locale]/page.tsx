@@ -36,7 +36,7 @@ export async function generateMetadata({
     });
   }
   return generatePageMetadata({
-    title: 'Beste Webagentur in Wetzlar & Hessen | High-Performance Websites',
+    title: 'High-Performance Webentwicklung & Digitalagentur in Wetzlar',
     description:
       'Die führende Webdesign & Entwicklungsagentur in Hessen. Wir bauen unvergleichbar schnelle Websites mit Next.js, React, Tailwind & Framer Motion. Herausragende Ergebnisse garantiert.',
     path: '/de',

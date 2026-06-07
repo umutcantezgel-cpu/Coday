@@ -50,7 +50,7 @@ export async function generateMetadata({
   }
 
   return generatePageMetadata({
-    title: 'Die führende Webagentur in Wetzlar & Hessen | Coday',
+    title: 'High-Performance Webentwicklung & Digitale Infrastruktur | Coday',
     description:
       'Ihre beste Webdesign und Webentwicklungsagentur im Raum Wetzlar und Hessen. Hochperformante Next.js, React, TypeScript, Tailwind & Framer Motion Webseiten. Unvergleichbare Ergebnisse.',
     path: '/de',

@@ -1,9 +1,8 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
-import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import BlurText from '@/shared/ui/BlurText';
-import dynamic from 'next/dynamic';
 import { FadeInUp } from '@/shared/ui/MotionWrappers';
+import { InteractivePhilosophyVisual } from './InteractivePhilosophyVisual';
 
 export const PhilosophySection: React.FC = () => {
   const t = useTranslations('home');
@@ -30,16 +29,9 @@ export const PhilosophySection: React.FC = () => {
               </p>
             </div>
           </FadeInUp>
-          <FadeInUp className="relative">
-            {/* Organic shape backdrop */}
-            <div className="absolute inset-0 bg-primary/10 rounded-[2rem] transform rotate-3 scale-95"></div>
-            <OptimizedImage
-              src="/images/hero/business-handshake-partnerschaft-tuer-offen-zusammenarbeit-vertrauen-small.webp"
-              alt={t('images.trust_collaboration', { ns: 'home' })}
-              className="relative rounded-[2rem] shadow-flat-lg bg-white p-2 transform -rotate-2 hover:rotate-0 transition motion-reduce:duration-[0.01ms] duration-500 w-full max-w-[150px] mx-auto lg:mx-0"
-              width={96}
-              height={96}
-            />
+          <FadeInUp className="relative flex justify-center lg:justify-end perspective-1000">
+            {/* Organic shape backdrop replaced with a subtle tech glow inside the component */}
+            <InteractivePhilosophyVisual />
           </FadeInUp>
         </div>
       </div>

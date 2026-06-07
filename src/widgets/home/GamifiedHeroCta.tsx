@@ -131,7 +131,8 @@ export const GamifiedHeroCta: React.FC = () => {
           onDragEnd={handleDragEnd}
           onHoverStart={() => setIsHovered(true)}
           onHoverEnd={() => setIsHovered(false)}
-          onClick={handleClick}
+          onTap={handleClick}
+          draggable={false}
           animate={controls}
         >
           {/* The Knob UI - Now extremely premium and thick */}

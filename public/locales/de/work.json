@@ -89,7 +89,8 @@
       "period": "Zeitraum",
       "result": "Ergebnis",
       "interested_title": "Interessiert an ähnlichen Ergebnissen?",
-      "request_project": "Projekt anfragen"
+      "request_project": "Projekt anfragen",
+      "related": "Verwandte Services"
     },
     "hero": {
       "title": "Wir erschaffen digitale Monumente",
@@ -119,6 +120,11 @@
     "challenge": "Die Herausforderung",
     "approach": "Unser Ansatz",
     "results": "Ergebnisse",
+    "impact": "Impact",
+    "nav": {
+      "next": "Nächstes Projekt",
+      "prev": "Vorheriges Projekt"
+    },
     "cta_title": "Ähnliches Projekt?",
     "cta_desc": "Lassen Sie uns über Ihre Vision sprechen.",
     "cta_button": "Projekt anfragen"

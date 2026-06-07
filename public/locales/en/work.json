@@ -105,7 +105,8 @@
       "period": "Period",
       "result": "Result",
       "interested_title": "Interested in similar results?",
-      "request_project": "Request Project"
+      "request_project": "Request Project",
+      "related": "Related Services"
     },
     "cta": {
       "title": "Ready for the next step?",
@@ -114,6 +115,11 @@
     "challenge": "The Challenge",
     "approach": "Our Approach",
     "results": "Results",
+    "impact": "Impact",
+    "nav": {
+      "next": "Next Project",
+      "prev": "Previous Project"
+    },
     "hero": {
       "title": "We Create Digital Monuments",
       "description": "Not simple websites. We build economic weapons for brands that want to dominate.",
