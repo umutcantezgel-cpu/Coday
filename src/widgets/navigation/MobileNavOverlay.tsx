@@ -186,15 +186,15 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
                       >
                         <div className="mobile-accordion-content">
                           {item.groups ? (
-                            item.groups.map((group, idx) => (
-                              <div key={idx} className="mb-6 last:mb-2">
+                            item.groups.map((group, groupIdx) => (
+                              <div key={groupIdx} className="mb-6 last:mb-2">
                                 {item.groups!.length > 1 && (
                                   <h4 className="text-xs uppercase tracking-wider text-slate-400 font-bold mb-3 pl-2 border-l-2 border-slate-700">
                                     {t(group.title)}
                                   </h4>
                                 )}
                                 <div className="space-y-1">
-                                  {group.links.map((link) => {
+                                  {group.links.map((link, linkIdx) => {
                                     const isExternal = link.href.startsWith('http');
 
                                     const LinkComponent = (
@@ -210,7 +210,7 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
 
                                     return (
                                       <LinkComponent
-                                        key={link.href}
+                                        key={`${link.href}-${linkIdx}`}
                                         {...linkProps}
                                         className="mobile-link-item"
                                         onClick={onClose}
@@ -231,7 +231,7 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
                             ))
                           ) : (
                             <div className="space-y-1">
-                              {item.links?.map((link) => {
+                              {item.links?.map((link, linkIdx) => {
                                 const isExternal = link.href.startsWith('http');
                                 const LinkComponent = (
                                   isExternal ? 'a' : Link
@@ -246,7 +246,7 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
 
                                 return (
                                   <LinkComponent
-                                    key={link.href}
+                                    key={`${link.href}-${linkIdx}`}
                                     {...linkProps}
                                     className="mobile-link-item"
                                     onClick={onClose}
