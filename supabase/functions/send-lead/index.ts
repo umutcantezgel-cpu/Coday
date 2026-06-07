@@ -50,35 +50,79 @@ serve(async (req) => {
       const { Resend } = await import('npm:resend');
       const resend = new Resend(resendApiKey);
 
-      const emailResult = await resend.emails.send({
-        from: EMAIL_FROM,
-        to: [ADMIN_EMAIL],
-        subject: `Neue Anfrage: ${name || 'Unbekannt'} (${project || 'Allgemein'})`,
-        html: `
-          <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 32px; background: #eff6ff; border-radius: 16px; border: 1px solid #bfdbfe;">
-            <h2 style="color: #1e40af; margin-bottom: 16px;">📩 Neue Kontaktanfrage</h2>
-            <table style="width: 100%; border-collapse: collapse;">
-              <tr><td style="padding: 10px 12px; color: #6b7280; border-bottom: 1px solid #e5e7eb;">Name</td><td style="padding: 10px 12px; font-weight: 600; color: #111827; border-bottom: 1px solid #e5e7eb;">${name || '—'}</td></tr>
-              <tr><td style="padding: 10px 12px; color: #6b7280; border-bottom: 1px solid #e5e7eb;">E-Mail</td><td style="padding: 10px 12px; font-weight: 600; color: #111827; border-bottom: 1px solid #e5e7eb;"><a href="mailto:${email}" style="color: #2563eb;">${email}</a></td></tr>
-              <tr><td style="padding: 10px 12px; color: #6b7280; border-bottom: 1px solid #e5e7eb;">Telefon</td><td style="padding: 10px 12px; font-weight: 600; color: #111827; border-bottom: 1px solid #e5e7eb;">${phone || '—'}</td></tr>
-              <tr><td style="padding: 10px 12px; color: #6b7280; border-bottom: 1px solid #e5e7eb;">Firma</td><td style="padding: 10px 12px; font-weight: 600; color: #111827; border-bottom: 1px solid #e5e7eb;">${company || '—'}</td></tr>
-              <tr><td style="padding: 10px 12px; color: #6b7280; border-bottom: 1px solid #e5e7eb;">Projekt</td><td style="padding: 10px 12px; font-weight: 600; color: #111827; border-bottom: 1px solid #e5e7eb;">${project || '—'}</td></tr>
-            </table>
-            <div style="margin-top: 24px; padding: 16px; background: white; border-radius: 12px;">
-              <h3 style="color: #374151; margin: 0 0 8px;">Nachricht:</h3>
-              <p style="white-space: pre-wrap; color: #374151; margin: 0;">${message}</p>
-            </div>
-            <hr style="border: none; border-top: 1px solid #bfdbfe; margin: 24px 0;" />
-            <p style="color: #6b7280; font-size: 13px;">Automatisch generiert von Coday Contact System</p>
-          </div>
-        `,
-        reply_to: email,
-      });
+      let emailStatus = 'skipped';
+      let adminEmailResult: any = null;
 
-      return new Response(JSON.stringify({ success: true, data: emailResult }), {
-        status: 200,
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-      });
+      try {
+        adminEmailResult = await resend.emails.send({
+          from: EMAIL_FROM,
+          to: [ADMIN_EMAIL],
+          subject: `Neue Anfrage: ${name || 'Unbekannt'} (${project || 'Allgemein'})`,
+          html: `
+            <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 32px; background: #eff6ff; border-radius: 16px; border: 1px solid #bfdbfe;">
+              <h2 style="color: #1e40af; margin-bottom: 16px;">📩 Neue Kontaktanfrage</h2>
+              <table style="width: 100%; border-collapse: collapse;">
+                <tr><td style="padding: 10px 12px; color: #6b7280; border-bottom: 1px solid #e5e7eb;">Name</td><td style="padding: 10px 12px; font-weight: 600; color: #111827; border-bottom: 1px solid #e5e7eb;">${name || '—'}</td></tr>
+                <tr><td style="padding: 10px 12px; color: #6b7280; border-bottom: 1px solid #e5e7eb;">E-Mail</td><td style="padding: 10px 12px; font-weight: 600; color: #111827; border-bottom: 1px solid #e5e7eb;"><a href="mailto:${email}" style="color: #2563eb;">${email}</a></td></tr>
+                <tr><td style="padding: 10px 12px; color: #6b7280; border-bottom: 1px solid #e5e7eb;">Telefon</td><td style="padding: 10px 12px; font-weight: 600; color: #111827; border-bottom: 1px solid #e5e7eb;">${phone || '—'}</td></tr>
+                <tr><td style="padding: 10px 12px; color: #6b7280; border-bottom: 1px solid #e5e7eb;">Firma</td><td style="padding: 10px 12px; font-weight: 600; color: #111827; border-bottom: 1px solid #e5e7eb;">${company || '—'}</td></tr>
+                <tr><td style="padding: 10px 12px; color: #6b7280; border-bottom: 1px solid #e5e7eb;">Projekt</td><td style="padding: 10px 12px; font-weight: 600; color: #111827; border-bottom: 1px solid #e5e7eb;">${project || '—'}</td></tr>
+              </table>
+              <div style="margin-top: 24px; padding: 16px; background: white; border-radius: 12px;">
+                <h3 style="color: #374151; margin: 0 0 8px;">Nachricht:</h3>
+                <p style="white-space: pre-wrap; color: #374151; margin: 0;">${message}</p>
+              </div>
+              <hr style="border: none; border-top: 1px solid #bfdbfe; margin: 24px 0;" />
+              <p style="color: #6b7280; font-size: 13px;">Automatisch generiert von Coday Contact System</p>
+            </div>
+          `,
+          reply_to: email,
+        });
+        emailStatus = 'admin_sent';
+      } catch (adminErr) {
+        console.error('Error sending admin email:', adminErr);
+        throw adminErr;
+      }
+
+      // Customer Confirmation Email
+      try {
+        await resend.emails.send({
+          from: EMAIL_FROM,
+          to: [email],
+          subject: 'Danke für deine Anfrage bei Coday! 🚀',
+          html: `
+            <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 520px; margin: 0 auto; padding: 32px; background: #f9fafb; border-radius: 16px;">
+              <h2 style="color: #111827; margin-bottom: 8px;">Anfrage erfolgreich gesendet ✅</h2>
+              <p style="color: #374151; font-size: 16px; line-height: 1.5;">Hallo ${name || 'Zukünftiger Partner'},</p>
+              <p style="color: #374151; font-size: 16px; line-height: 1.5;">vielen Dank für deine Nachricht! Wir haben deine Anfrage erhalten und werden uns schnellstmöglich bei dir melden.</p>
+              
+              <div style="background: white; padding: 20px; border-radius: 12px; margin: 24px 0; border: 1px solid #e5e7eb;">
+                <h3 style="margin-top: 0; font-size: 14px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em;">Deine Nachricht:</h3>
+                <p style="color: #111827; font-style: italic; margin: 0;">"${message}"</p>
+              </div>
+
+              <p style="color: #374151; font-size: 16px; line-height: 1.5;">Viele Grüße,<br/>Dein Coday Team</p>
+              <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 24px 0;" />
+              <p style="color: #9ca3af; font-size: 13px;">Coday Agency · codayweb.de</p>
+            </div>
+          `,
+        });
+        emailStatus = 'both_sent';
+      } catch (customerErr) {
+        // Will likely fail in Sandbox if email is not verified
+        console.warn(
+          'Could not send confirmation email to customer (Sandbox limit?):',
+          customerErr
+        );
+      }
+
+      return new Response(
+        JSON.stringify({ success: true, data: adminEmailResult, status: emailStatus }),
+        {
+          status: 200,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        }
+      );
     } catch (error) {
       console.error('Email send error:', error);
       return new Response(
