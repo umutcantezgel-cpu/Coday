@@ -143,12 +143,8 @@
           "wetzlar": "Handwerker in Wetzlar"
         },
         "other": {
-          "title": "Weitere Branchen",
-          "overview": "Alle Branchen ansehen",
-          "real_estate": "Immobilien",
-          "gastronomy": "Gastronomie",
           "services": "Dienstleistungen",
-          "retail": "Retail & E-Commerce",
+          "retail": "Handel & E-Commerce",
           "public_sector": "Öffentlicher Sektor"
         },
         "public": "Öffentliche Aufträge",
@@ -693,6 +689,55 @@
     "card_health": {
       "title": "Gesundheitswesen",
       "desc": "Vertrauensbildende Praxis-Websites mit nahtloser, sicherer Terminbuchung für Ihre Patienten."
+    },
+    "automobil": {
+      "title": "Automobil & KFZ",
+      "hero": {
+        "headline": "Digitale Lösungen für die Autobranche",
+        "subheadline": "Wir helfen KFZ-Werkstätten und Autohändlern, digital sichtbar zu werden."
+      },
+      "challenges": {
+        "c1": {
+          "title": "Mitarbeitermangel",
+          "description": "Schwierigkeit, qualifizierte Mechatroniker zu finden."
+        },
+        "c2": {
+          "title": "Wenig Terminanfragen",
+          "description": "Kunden buchen online bei der Konkurrenz."
+        },
+        "c3": {
+          "title": "Veralteter Auftritt",
+          "description": "Die Website entspricht nicht mehr aktuellen Standards."
+        }
+      },
+      "solutions": {
+        "s1": {
+          "title": "Fahrzeug-Präsentation",
+          "description": "Moderne Darstellung Ihres Angebots."
+        },
+        "s2": {
+          "title": "Online-Terminbuchung",
+          "description": "Kunden können Termine für Reifenwechsel & Co online buchen."
+        },
+        "s3": {
+          "title": "Recruiting-Funnel",
+          "description": "Mehr Bewerbungen durch gezielte Kampagnen."
+        }
+      },
+      "customFeatures": {
+        "f1": {
+          "title": "Mobile-First Design",
+          "description": "Ihre Webseite sieht auf Smartphones optimal aus."
+        },
+        "f2": {
+          "title": "SEO-Optimierung",
+          "description": "Lokale Sichtbarkeit für mehr Laufkundschaft."
+        },
+        "f3": {
+          "title": "Leads & Anfragen",
+          "description": "Generierung von lukrativen Kundenanfragen."
+        }
+      }
     }
   },
   "portfolio_teaser": {

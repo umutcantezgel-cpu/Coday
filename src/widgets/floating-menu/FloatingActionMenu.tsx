@@ -36,7 +36,7 @@ export const FloatingActionMenu: React.FC = () => {
     <nav
       id="fab-container"
       aria-label="Schnellzugriff"
-      className="floating-action-menu fixed bottom-6 right-6 z-max flex flex-col items-end gap-4"
+      className="floating-action-menu fixed bottom-6 right-6 z-[9999] flex flex-col items-end gap-4"
     >
       {/* Social Media Sub-Menu */}
       <AnimatePresence>
@@ -157,7 +157,7 @@ export const FloatingActionMenu: React.FC = () => {
         onClick={toggleMenu}
         aria-expanded={isOpen}
         aria-haspopup="true"
-        className={`w-16 h-16 rounded-full shadow-2xl flex items-center justify-center transition motion-reduce:duration-[0.01ms] duration-300 z-max
+        className={`w-16 h-16 rounded-full shadow-2xl flex items-center justify-center transition motion-reduce:duration-[0.01ms] duration-300 z-[9999]
                     ${
                       isOpen
                         ? 'bg-gray-900 text-white rotate-180'

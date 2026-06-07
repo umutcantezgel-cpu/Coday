@@ -31,7 +31,8 @@ serve(async (req) => {
   // Configurable email sender — set EMAIL_FROM in Supabase Edge Function secrets
   // once codayweb.de domain is verified in Resend
   const EMAIL_FROM = Deno.env.get('EMAIL_FROM') || 'Coday Contact <onboarding@resend.dev>';
-  const ADMIN_EMAIL = 'umut@codayweb.de';
+  // Resend Sandbox requires emails to be sent to the verified account owner email
+  const ADMIN_EMAIL = 'umutcantezgel@gmail.com';
 
   if (req.method === 'POST') {
     try {

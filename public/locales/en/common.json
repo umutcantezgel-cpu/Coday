@@ -194,7 +194,10 @@
         "title": "Other Industries",
         "overview": "View all industries",
         "real_estate": "Real Estate Agents",
-        "gastronomy": "Gastronomy & Hotels"
+        "gastronomy": "Gastronomy & Hotels",
+        "services": "Services",
+        "retail": "Retail & E-Commerce",
+        "public_sector": "Public Sector"
       },
       "all": "All Industries",
       "overview": "Overview",

@@ -143,10 +143,6 @@
           "wetzlar": "Crafts in Wetzlar"
         },
         "other": {
-          "title": "Other Industries",
-          "overview": "View all industries",
-          "real_estate": "Real Estate",
-          "gastronomy": "Gastronomy",
           "services": "Services",
           "retail": "Retail & E-Commerce",
           "public_sector": "Public Sector"
@@ -693,6 +689,55 @@
     "card_health": {
       "title": "Gesundheitswesen",
       "desc": "Vertrauensbildende Praxis-Websites mit nahtloser, sicherer Terminbuchung für Ihre Patienten."
+    },
+    "automobil": {
+      "title": "Automotive",
+      "hero": {
+        "headline": "Digital Solutions for Automotive",
+        "subheadline": "We help car repair shops and dealerships gain online visibility."
+      },
+      "challenges": {
+        "c1": {
+          "title": "Lack of Staff",
+          "description": "Hard to find qualified mechanics."
+        },
+        "c2": {
+          "title": "Few Appointments",
+          "description": "Customers book online with competitors."
+        },
+        "c3": {
+          "title": "Outdated Presence",
+          "description": "Website is not up to modern standards."
+        }
+      },
+      "solutions": {
+        "s1": {
+          "title": "Vehicle Showcase",
+          "description": "Modern presentation of your offerings."
+        },
+        "s2": {
+          "title": "Online Booking",
+          "description": "Customers can book tire changes etc online."
+        },
+        "s3": {
+          "title": "Recruiting Funnel",
+          "description": "More applications via targeted campaigns."
+        }
+      },
+      "customFeatures": {
+        "f1": {
+          "title": "Mobile-First Design",
+          "description": "Your website looks perfect on smartphones."
+        },
+        "f2": {
+          "title": "SEO Optimization",
+          "description": "Local visibility for walk-in customers."
+        },
+        "f3": {
+          "title": "Leads & Requests",
+          "description": "Generate lucrative customer inquiries."
+        }
+      }
     }
   },
   "portfolio_teaser": {

@@ -771,5 +771,54 @@
   "card_health": {
     "title": "Gesundheitswesen",
     "desc": "Vertrauensbildende Praxis-Websites mit nahtloser, sicherer Terminbuchung für Ihre Patienten."
+  },
+  "automobil": {
+    "title": "Automobil & KFZ",
+    "hero": {
+      "headline": "Mehr Termine, volle Werkstatt",
+      "subheadline": "Wir digitalisieren Autohäuser und Werkstätten für planbare Kundenanfragen und Service-Buchungen."
+    },
+    "challenges": {
+      "c1": {
+        "title": "Abhängigkeit von Portalen",
+        "description": "Hohe Gebühren bei Mobile.de & Autoscout24."
+      },
+      "c2": {
+        "title": "Termin-Chaos",
+        "description": "Telefon klingelt ständig für einfache Terminvereinbarungen."
+      },
+      "c3": {
+        "title": "Sichtbarkeit",
+        "description": "Lokale Kunden finden eher die Konkurrenz als Sie."
+      }
+    },
+    "solutions": {
+      "s1": {
+        "title": "Eigener Vertriebskanal",
+        "description": "Unabhängigkeit durch eine starke eigene Website."
+      },
+      "s2": {
+        "title": "Digitale Terminbuchung",
+        "description": "Werkstatt-Termine 24/7 online buchen lassen."
+      },
+      "s3": {
+        "title": "Local SEO",
+        "description": "Top-Platzierungen bei lokalen Suchanfragen."
+      }
+    },
+    "customFeatures": {
+      "f1": {
+        "title": "Fahrzeugbestand-Sync",
+        "description": "Automatische Synchronisation mit Ihrer Fahrzeugsoftware."
+      },
+      "f2": {
+        "title": "Schadensmelder",
+        "description": "Kunden können Bilder vom Schaden direkt hochladen."
+      },
+      "f3": {
+        "title": "Probefahrt-Kalender",
+        "description": "Verwaltung von Probefahrten für Neufahrzeuge."
+      }
+    }
   }
 }

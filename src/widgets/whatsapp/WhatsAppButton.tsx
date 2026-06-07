@@ -26,7 +26,7 @@ export const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className={`fixed left-6 z-max group bottom-[120px] md:bottom-6 ${className}`}
+      className={`fixed left-4 md:left-6 z-[9999] group bottom-[90px] md:bottom-6 ${className}`}
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay: 1, type: 'spring', stiffness: 200 }}
@@ -37,7 +37,7 @@ export const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
       {/* Main Button */}
       <div className="relative flex items-center justify-center w-14 h-14 bg-success rounded-full shadow-lg hover:shadow-xl transition-shadow motion-reduce:duration-[0.01ms]">
         {/* Pulse Animation */}
-        <span className="absolute inset-0 rounded-full bg-success animate-ping opacity-30 motion-reduce:animate-none" />
+        <span className="absolute inset-0 rounded-full bg-success animate-ping opacity-40 motion-reduce:animate-none -z-10" />
 
         {/* WhatsApp Icon */}
         <svg

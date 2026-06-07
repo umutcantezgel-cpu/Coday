@@ -12,6 +12,61 @@ export interface IndustryData {
 }
 
 export const industriesData: Record<string, IndustryData> = {
+  automobil: {
+    slug: 'automobil',
+    title: 'automobil.title',
+    icon: 'hammer',
+    hero: {
+      headline: 'automobil.hero.headline',
+      subheadline: 'automobil.hero.subheadline',
+    },
+    challenges: [
+      {
+        title: 'automobil.challenges.c1.title',
+        description: 'automobil.challenges.c1.description',
+      },
+      {
+        title: 'automobil.challenges.c2.title',
+        description: 'automobil.challenges.c2.description',
+      },
+      {
+        title: 'automobil.challenges.c3.title',
+        description: 'automobil.challenges.c3.description',
+      },
+    ],
+    solutions: [
+      {
+        title: 'automobil.solutions.s1.title',
+        description: 'automobil.solutions.s1.description',
+        icon: 'directions_car',
+      },
+      {
+        title: 'automobil.solutions.s2.title',
+        description: 'automobil.solutions.s2.description',
+        icon: 'calendar_month',
+      },
+      {
+        title: 'automobil.solutions.s3.title',
+        description: 'automobil.solutions.s3.description',
+        icon: 'group',
+      },
+    ],
+    customFeatures: [
+      {
+        title: 'automobil.customFeatures.f1.title',
+        description: 'automobil.customFeatures.f1.description',
+      },
+      {
+        title: 'automobil.customFeatures.f2.title',
+        description: 'automobil.customFeatures.f2.description',
+      },
+      {
+        title: 'automobil.customFeatures.f3.title',
+        description: 'automobil.customFeatures.f3.description',
+      },
+    ],
+  },
+
   'handwerk-bau': {
     slug: 'handwerk-bau',
     title: 'handwerk-bau.title',

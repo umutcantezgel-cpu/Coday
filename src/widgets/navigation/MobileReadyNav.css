@@ -402,7 +402,7 @@ body.mobile-nav-open #fab-container {
   inset: 0;
   height: 100dvh;
   /* Fallback and dynamic height */
-  z-index: 9999;
+  z-index: 10001;
   background: rgba(15, 23, 42, 0.95); /* Deep Navy */
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);

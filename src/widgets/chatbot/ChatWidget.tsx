@@ -45,18 +45,18 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
             onClick={toggleChat}
-            className="fixed right-6 z-max w-14 h-14 rounded-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white shadow-2xl hover:shadow-purple-500/25 transition-shadow motion-reduce:duration-[0.01ms] flex items-center justify-center group bottom-[120px] md:bottom-6"
+            className="fixed right-4 md:right-6 z-[9999] w-14 h-14 rounded-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white shadow-2xl hover:shadow-purple-500/25 transition-all motion-reduce:duration-[0.01ms] flex items-center justify-center group bottom-[90px] md:bottom-6 opacity-100 isolation-auto"
             aria-label="Chat öffnen"
           >
             <ChatCircle
-              className="w-6 h-6 group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms]"
+              className="w-6 h-6 group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms] relative z-10"
               aria-hidden="true"
             />
 
             {/* Notification Badge */}
             {messages.length > 0 && isMinimized && (
               <span
-                className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full text-xs font-bold flex items-center justify-center"
+                className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full text-xs font-bold flex items-center justify-center z-20 shadow-sm"
                 aria-live="polite"
                 aria-label={`${messages.length} ungelesene Nachrichten`}
               >
@@ -65,7 +65,7 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
             )}
 
             {/* Pulse Animation */}
-            <span className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 animate-ping opacity-25 motion-reduce:animate-none" />
+            <span className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 animate-ping opacity-40 motion-reduce:animate-none -z-10" />
           </m.button>
         )}
       </AnimatePresence>
@@ -78,7 +78,7 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="fixed right-6 z-max w-[calc(100vw-3rem)] md:w-96 h-[500px] max-h-[calc(100dvh-8rem)] bg-white rounded-2xl shadow-2xl border border-gray-100 flex flex-col overflow-hidden bottom-[120px] md:bottom-6"
+            className="fixed right-4 md:right-6 z-[9999] w-[calc(100vw-2rem)] md:w-96 h-[500px] max-h-[calc(100dvh-7rem)] bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.2)] border border-gray-200 flex flex-col overflow-hidden bottom-[90px] md:bottom-6 opacity-100"
             role="dialog"
             aria-label="Chat mit Codi KI-Assistent"
           >

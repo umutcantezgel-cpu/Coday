@@ -35,7 +35,7 @@ export default async function AutomobilHubPage({
   setRequestLocale(locale);
   return (
     <>
-      <IndustryDetailClient />
+      <IndustryDetailClient industrySlug="automobil" />
       <IndustryToolEmbed industryKey="automobil" />
     </>
   );

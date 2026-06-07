@@ -38,9 +38,9 @@ const iconMap: Record<string, React.ElementType> = {
   rocket_launch: RocketLaunch,
 };
 
-export function IndustryDetailClient() {
+export function IndustryDetailClient({ industrySlug }: { industrySlug?: string }) {
   const params = useParams();
-  const slug = params?.industry as string;
+  const slug = industrySlug || (params?.industry as string);
   const t = useTranslations('industries');
   const industry = slug ? industriesData[slug] : undefined;
   const heroImage =

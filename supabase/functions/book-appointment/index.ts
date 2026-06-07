@@ -36,7 +36,8 @@ serve(async (req) => {
 
   // Email sender config: use verified domain or fall back to Resend sandbox
   const EMAIL_FROM_BOOKING = Deno.env.get('EMAIL_FROM') || 'Coday Booking <onboarding@resend.dev>';
-  const ADMIN_EMAIL = 'umut@codayweb.de';
+  // Resend Sandbox requires emails to be sent to the verified account owner email
+  const ADMIN_EMAIL = 'umutcantezgel@gmail.com';
 
   // Handle GET: Fetch availability (booked slots)
   if (req.method === 'GET') {
@@ -125,26 +126,34 @@ serve(async (req) => {
           const resend = new resendModule.Resend(resendApiKey);
 
           // Email 1: Confirmation to the CUSTOMER
-          await resend.emails.send({
-            from: EMAIL_FROM_BOOKING,
-            to: [email],
-            subject: `Terminbestätigung: ${date} um ${time_slot}`,
-            html: `
-              <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 520px; margin: 0 auto; padding: 32px; background: #f9fafb; border-radius: 16px;">
-                <h2 style="color: #111827; margin-bottom: 8px;">Termin bestätigt ✅</h2>
-                <p style="color: #374151;">Hallo ${name},</p>
-                <p style="color: #374151;">Ihr Beratungstermin wurde erfolgreich gebucht.</p>
-                <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
-                  <tr><td style="padding: 8px 0; color: #6b7280;">Datum</td><td style="padding: 8px 0; font-weight: 600; color: #111827;">${date}</td></tr>
-                  <tr><td style="padding: 8px 0; color: #6b7280;">Uhrzeit</td><td style="padding: 8px 0; font-weight: 600; color: #111827;">${time_slot} Uhr</td></tr>
-                  <tr><td style="padding: 8px 0; color: #6b7280;">Service</td><td style="padding: 8px 0; font-weight: 600; color: #111827;">${service_type || 'Beratung'}</td></tr>
-                </table>
-                <p style="color: #374151;">Wir freuen uns auf das Gespräch!</p>
-                <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 24px 0;" />
-                <p style="color: #9ca3af; font-size: 13px;">Coday Agency · codayweb.de</p>
-              </div>
-            `,
-          });
+          // Might fail if domain is not verified yet (Resend sandbox only allows sending to self)
+          try {
+            await resend.emails.send({
+              from: EMAIL_FROM_BOOKING,
+              to: [email],
+              subject: `Terminbestätigung: ${date} um ${time_slot}`,
+              html: `
+                <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 520px; margin: 0 auto; padding: 32px; background: #f9fafb; border-radius: 16px;">
+                  <h2 style="color: #111827; margin-bottom: 8px;">Termin bestätigt ✅</h2>
+                  <p style="color: #374151;">Hallo ${name},</p>
+                  <p style="color: #374151;">Ihr Beratungstermin wurde erfolgreich gebucht.</p>
+                  <table style="width: 100%; border-collapse: collapse; margin: 24px 0;">
+                    <tr><td style="padding: 8px 0; color: #6b7280;">Datum</td><td style="padding: 8px 0; font-weight: 600; color: #111827;">${date}</td></tr>
+                    <tr><td style="padding: 8px 0; color: #6b7280;">Uhrzeit</td><td style="padding: 8px 0; font-weight: 600; color: #111827;">${time_slot} Uhr</td></tr>
+                    <tr><td style="padding: 8px 0; color: #6b7280;">Service</td><td style="padding: 8px 0; font-weight: 600; color: #111827;">${service_type || 'Beratung'}</td></tr>
+                  </table>
+                  <p style="color: #374151;">Wir freuen uns auf das Gespräch!</p>
+                  <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 24px 0;" />
+                  <p style="color: #9ca3af; font-size: 13px;">Coday Agency · codayweb.de</p>
+                </div>
+              `,
+            });
+          } catch (customerEmailErr) {
+            console.warn(
+              '[POST] Could not send email to customer (likely Sandbox restriction):',
+              customerEmailErr
+            );
+          }
 
           // Email 2: Notification to ADMIN
           await resend.emails.send({
