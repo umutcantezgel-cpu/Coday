@@ -104,12 +104,7 @@ export const ApplicationWizard: React.FC = () => {
     setError(null);
 
     try {
-      // Honeypot check
-      if (data._bot_trap_field && data._bot_trap_field.trim() !== '') {
-        console.warn('Bot detected via honeypot');
-        setSuccess(true); // Silently succeed
-        return;
-      }
+      // Temporarily removed honeypot check to fix aggressive browser autofill blocking the owner
 
       let fullMessage = `Lead from simplified form.\n\nNachricht: ${data.message || '-'}\nTelefon: ${data.phone || '-'}`;
       if (hasPackage) {
