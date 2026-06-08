@@ -19,7 +19,7 @@ type WizardFormData = {
   phone?: string;
   message?: string;
   privacy: boolean;
-  website?: string; // Honeypot
+  _bot_trap_field?: string; // Honeypot
 };
 
 export const ApplicationWizard: React.FC = () => {
