@@ -53,7 +53,7 @@ export const ApplicationWizard: React.FC = () => {
     }),
     phone: z.string().optional(),
     message: z.string().optional(),
-    website: z.string().optional(), // honeypot
+    _bot_trap_field: z.string().optional(), // honeypot
     privacy: z.boolean().refine((val) => val === true, {
       message: t('wizard.validation.privacy'),
     }),
@@ -74,7 +74,7 @@ export const ApplicationWizard: React.FC = () => {
       phone: '',
       message: '',
       privacy: false,
-      website: '', // honeypot
+      _bot_trap_field: '', // honeypot
     },
   });
 
@@ -105,7 +105,7 @@ export const ApplicationWizard: React.FC = () => {
 
     try {
       // Honeypot check
-      if (data.website && data.website.trim() !== '') {
+      if (data._bot_trap_field && data._bot_trap_field.trim() !== '') {
         console.warn('Bot detected via honeypot');
         setSuccess(true); // Silently succeed
         return;
@@ -293,8 +293,14 @@ export const ApplicationWizard: React.FC = () => {
             noValidate
             aria-label={hasPackage ? t('wizard.title_package') : t('wizard.title_direct')}
           >
+            {/* Honeypot field for bot protection */}
             <div style={{ position: 'absolute', left: '-5000px' }} aria-hidden="true">
-              <input type="text" {...register('website')} tabIndex={-1} autoComplete="off" />
+              <input
+                type="text"
+                {...register('_bot_trap_field')}
+                tabIndex={-1}
+                autoComplete="off"
+              />
             </div>
 
             {renderPackageSummary()}
