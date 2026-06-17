@@ -138,11 +138,22 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
           <div className="max-w-2xl mx-auto">
             {inProgress.map((project) => {
               const content = project.content[lang];
+              const Wrapper = project.liveUrl ? 'a' : 'div';
+              const wrapperProps = project.liveUrl
+                ? {
+                    href: project.liveUrl,
+                    target: '_blank',
+                    rel: 'noopener noreferrer',
+                    className:
+                      'block mb-4 p-6 rounded-2xl bg-neutral-50 border border-neutral-200 border-dashed hover:border-primary-300 hover:bg-white hover:shadow-sm transition-all cursor-pointer',
+                  }
+                : {
+                    className:
+                      'block mb-4 p-6 rounded-2xl bg-neutral-50 border border-neutral-200 border-dashed',
+                  };
+
               return (
-                <div
-                  key={project.slug}
-                  className="p-6 rounded-2xl bg-neutral-50 border border-neutral-200 border-dashed"
-                >
+                <Wrapper key={project.slug} {...(wrapperProps as any)}>
                   <div className="flex items-center gap-4 mb-4">
                     <div className="flex-1">
                       <h3 className="font-display font-bold text-lg text-secondary-900">
@@ -166,7 +177,7 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
                       style={{ width: `${project.completion ?? 0}%` }}
                     />
                   </div>
-                </div>
+                </Wrapper>
               );
             })}
           </div>

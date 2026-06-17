@@ -747,19 +747,19 @@ export const workData: Record<string, Project> = {
     category: 'development',
     type: 'in_progress',
     status: 'building',
-    completion: 40,
+    completion: 90,
     thumbnail: 'heartbeat',
     liveUrl: 'https://hey-fede.de',
     heroImage: 'bg-surface-dark',
     content: {
       de: {
         title: 'hey fede',
-        subtitle: 'In Entwicklung — Bald verfügbar',
+        subtitle: 'In Entwicklung — Fast fertig',
         category: 'Web Development',
         stats: [
           { label: 'Status', value: 'In Entwicklung' },
           { label: 'Tech Stack', value: 'Next.js 15, Tailwind v4' },
-          { label: 'Fortschritt', value: '40%' },
+          { label: 'Fortschritt', value: '90%' },
         ],
         challenge: {
           title: 'Das Projekt',
@@ -804,12 +804,12 @@ export const workData: Record<string, Project> = {
       },
       en: {
         title: 'hey fede',
-        subtitle: 'In Development — Coming Soon',
+        subtitle: 'In Development — Almost complete',
         category: 'Web Development',
         stats: [
           { label: 'Status', value: 'In Development' },
           { label: 'Tech Stack', value: 'Next.js 15, Tailwind v4' },
-          { label: 'Progress', value: '40%' },
+          { label: 'Progress', value: '90%' },
         ],
         challenge: {
           title: 'The Project',
