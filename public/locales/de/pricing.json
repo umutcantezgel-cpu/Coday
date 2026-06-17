@@ -74,10 +74,10 @@
   "features": {
     "ultimate": [
       "Unbegrenzte Seiten & Layouts",
-      "E-Commerce Setup (nach Absprache)",
+      "Optional: Headless E-Commerce Setup (gegen Aufpreis)",
       "Komplexe Custom Logic & Dashboards",
       "Premium Local SEO Dominanz",
-      "Mobile App & weitere Custom Features als Add-on",
+      "Optional: Eigene iOS & Android App (gegen Aufpreis)",
       "Lifetime Priority Support",
       "Dedicated Project Manager",
       "VIP SLA & Performance-Garantie"
@@ -250,22 +250,26 @@
       {
         "name": "Batherm (Wetzlar)",
         "metric": "+240%",
-        "label": "Mehr qualifizierte B2B-Anfragen im ersten Quartal nach Relaunch"
+        "label": "Mehr qualifizierte B2B-Anfragen im ersten Quartal nach Relaunch",
+        "href": "https://www.batherm.de"
       },
       {
         "name": "Talia Boutique",
         "metric": "Live",
-        "label": "https://talia-boutique.de/"
+        "label": "Online Store ansehen",
+        "href": "https://talia-boutique.de/"
       },
       {
         "name": "Memo Baut (In Entwicklung)",
         "metric": "WIP",
-        "label": "https://memo-baut-test.vercel.app/"
+        "label": "Preview ansehen",
+        "href": "https://memo-baut-test.vercel.app/"
       },
       {
         "name": "Lindener Ratsstuben",
         "metric": "< 0.8s",
-        "label": "Ladezeit (LCP) im 99. Perzentil, massiver Boost bei Google Maps"
+        "label": "Ladezeit (LCP) im 99. Perzentil, massiver Boost bei Google Maps",
+        "href": "https://lindener-ratsstuben.de"
       }
     ]
   }

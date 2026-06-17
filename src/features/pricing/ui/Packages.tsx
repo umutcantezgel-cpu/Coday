@@ -98,6 +98,7 @@ export default async function Packages() {
     metric: string;
     name: string;
     label: string;
+    href?: string;
   }[];
   const valuePropPoints = t.raw('value_prop.points') as { title: string; description: string }[];
   const faqItems = t.raw('faq.items') as { question: string; answer: string }[];
@@ -404,9 +405,20 @@ export default async function Packages() {
                   <div className="font-display font-black text-5xl text-primary">{ref.metric}</div>
                   <div>
                     <p className="text-gray-900 font-bold text-xl mb-1 text-balance">{ref.name}</p>
-                    <p className="text-gray-500 text-base leading-relaxed text-pretty">
-                      {ref.label}
-                    </p>
+                    {ref.href ? (
+                      <a
+                        href={ref.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:text-primary-600 hover:underline text-base leading-relaxed text-pretty transition-colors"
+                      >
+                        {ref.label}
+                      </a>
+                    ) : (
+                      <p className="text-gray-500 text-base leading-relaxed text-pretty">
+                        {ref.label}
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>
