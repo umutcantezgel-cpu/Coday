@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState } from 'react';
 import Image from 'next/image';
 
@@ -77,12 +77,15 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
       >
         <Image
           src={src}
-          alt={alt}
+          alt={alt || ''}
           unoptimized
           {...(useFill
             ? { fill: true, className: 'object-cover' }
-            : { width: width as number, height: height as number, className: 'w-full h-full object-cover' }
-          )}
+            : {
+                width: width as number,
+                height: height as number,
+                className: 'w-full h-full object-cover',
+              })}
           priority={priority}
           sizes={sizes || DEFAULT_SIZES}
           onError={() => setHasError(true)}
@@ -113,11 +116,10 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
     >
       <Image
         src={src}
-        alt={alt}
+        alt={alt || ''}
         {...(useFill
           ? { fill: true, className: 'object-cover' }
-          : { width, height, className: 'w-full h-full object-cover' }
-        )}
+          : { width, height, className: 'w-full h-full object-cover' })}
         sizes={sizes || DEFAULT_SIZES}
         priority={priority}
         quality={80}

@@ -74,10 +74,10 @@
   "features": {
     "ultimate": [
       "Unbegrenzte Seiten & Layouts",
-      "Headless E-Commerce Setup",
+      "E-Commerce Setup (nach Absprache)",
       "Komplexe Custom Logic & Dashboards",
       "Premium Local SEO Dominanz",
-      "Eigene iOS & Android App Option",
+      "Mobile App & weitere Custom Features als Add-on",
       "Lifetime Priority Support",
       "Dedicated Project Manager",
       "VIP SLA & Performance-Garantie"
@@ -251,6 +251,16 @@
         "name": "Batherm (Wetzlar)",
         "metric": "+240%",
         "label": "Mehr qualifizierte B2B-Anfragen im ersten Quartal nach Relaunch"
+      },
+      {
+        "name": "Talia Boutique",
+        "metric": "Live",
+        "label": "https://talia-boutique.de/"
+      },
+      {
+        "name": "Memo Baut (In Entwicklung)",
+        "metric": "WIP",
+        "label": "https://memo-baut-test.vercel.app/"
       },
       {
         "name": "Lindener Ratsstuben",

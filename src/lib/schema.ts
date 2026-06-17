@@ -197,3 +197,89 @@ export function getLocalBusinessSchema() {
     currenciesAccepted: 'EUR',
   };
 }
+
+export function getArticleSchema(post: {
+  title: string;
+  excerpt: string;
+  url: string;
+  publishedAt: string;
+  imageUrl?: string;
+  authorName?: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': post.url,
+    },
+    headline: post.title,
+    description: post.excerpt,
+    image: post.imageUrl ? [post.imageUrl] : [`${BASE_URL}/images/og-image.jpg`],
+    datePublished: post.publishedAt,
+    dateModified: post.publishedAt,
+    author: {
+      '@type': 'Person',
+      name: post.authorName || 'Umutcan Emre Tezgel',
+      url: BASE_URL,
+    },
+    publisher: {
+      '@id': ORG_ID,
+    },
+  };
+}
+
+export function getServiceSchema(service: { name: string; description: string; url: string }) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': service.url,
+    name: service.name,
+    description: service.description,
+    provider: {
+      '@id': ORG_ID,
+    },
+    areaServed: [
+      { '@type': 'Country', name: 'Germany' },
+      { '@type': 'Country', name: 'Austria' },
+      { '@type': 'Country', name: 'Switzerland' },
+    ],
+  };
+}
+
+export function getDynamicLocationSchema(location: {
+  city: string;
+  description: string;
+  url: string;
+  latitude?: number;
+  longitude?: number;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    '@id': location.url,
+    parentOrganization: {
+      '@id': ORG_ID,
+    },
+    name: `Coday Webdesign ${location.city}`,
+    description: location.description,
+    url: location.url,
+    telephone: '+49-176-41195301',
+    image: `${BASE_URL}/logo.png`,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: location.city,
+      addressRegion: 'Hessen',
+      addressCountry: 'DE',
+    },
+    ...(location.latitude && location.longitude
+      ? {
+          geo: {
+            '@type': 'GeoCoordinates',
+            latitude: location.latitude,
+            longitude: location.longitude,
+          },
+        }
+      : {}),
+  };
+}

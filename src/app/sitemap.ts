@@ -145,9 +145,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     sitemapEntry('/community/events', { changeFrequency: 'monthly', priority: 0.8 }),
     sitemapEntry('/landingpages/localwetzlar', { changeFrequency: 'monthly', priority: 0.8 }),
     sitemapEntry('/landingpages/nextjsmigration', { changeFrequency: 'monthly', priority: 0.8 }),
-    sitemapEntry('/legal/agb', { changeFrequency: 'monthly', priority: 0.8 }),
-    sitemapEntry('/legal/datenschutz', { changeFrequency: 'monthly', priority: 0.8 }),
-    sitemapEntry('/legal/impressum', { changeFrequency: 'monthly', priority: 0.8 }),
   ];
 
   // Dynamic content from Sanity (without drafts)

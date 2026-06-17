@@ -45,6 +45,11 @@
       "learn_more": "Für komplexe Anforderungen: Wir entwickeln individuelle Softwarelösungen mit Benutzer-Logins, Datenbanken und speziellen Funktionen, die exakt auf Ihre Geschäftsprozesse zugeschnitten sind.",
       "name": "Web Application"
     },
+    "basis-professional": {
+      "description": "Erweiterte Unternehmens-Präsenz (CMS)",
+      "learn_more": "Professionelle Präsenz mit CMS, Blog, erweiterten SEO-Funktionen und mehr Unterseiten. Ideal für wachsende Unternehmen.",
+      "name": "Professional Website"
+    },
     "basis-starter": {
       "description": "High-Performance Landing Page (Next.js)",
       "learn_more": "Eine blitzschnelle 'One-Pager' Webseite, ideal für Kampagnen, Produktlaunches oder Startups. Technisch optimiert für maximale Conversion und sofortige Sichtbarkeit.",

@@ -127,9 +127,7 @@ export const workData: Record<string, Project> = {
           title: 'Die Plattform',
           description:
             'Eine Next.js Applikation, die sich so flüssig anfühlt wie eine native App. Mit integriertem Terminkalender, Bad-Rechner und automatisierten Email-Flows. Wir haben ein hochmodernes, ansprechendes Webdesign entwickelt, das nicht nur ästhetisch überzeugt, sondern auch auf Conversion-Optimierung ausgelegt ist. Die Performance-Optimierung durch Headless-Architektur garantiert dabei blitzschnelle Ladezeiten, was sich signifikant auf das SEO-Ranking auswirkt.',
-          images: [
-            '/images/portfolio/batherm-illustration.webp',
-          ],
+          images: ['/images/portfolio/batherm-illustration.webp'],
           imageAlts: [
             'Webdesign für Sanitär & Heizung Batherm: Desktop und Mobile Responsive Mockup der neuen Handwerker-Website',
             'Mobile-First Webdesign für Handwerker Batherm: Lead-Generierung und Terminbuchung auf dem Smartphone',
@@ -203,9 +201,7 @@ export const workData: Record<string, Project> = {
           title: 'The Platform',
           description:
             'A Next.js application that feels as smooth as a native app. With integrated scheduling, bath calculator, and automated email flows.',
-          images: [
-            '/images/portfolio/batherm-illustration.webp',
-          ],
+          images: ['/images/portfolio/batherm-illustration.webp'],
           imageAlts: [
             'Web Design for HVAC Batherm: Desktop and Mobile Responsive Mockup of the new craftsmen website',
             'Mobile-First Web Design for Craftsmen Batherm: Lead generation and appointment scheduling on smartphone',
@@ -232,6 +228,127 @@ export const workData: Record<string, Project> = {
           { name: 'Performance & Speed', path: '/services/performance' },
           { name: 'Enterprise Web', path: '/services/enterprise-web' },
         ],
+      },
+    },
+  },
+
+  // --- Talia Boutique ---
+  'talia-boutique': {
+    slug: 'talia-boutique',
+    category: 'ecommerce',
+    type: 'case_study',
+    status: 'live',
+    thumbnail: 'shopping-bag',
+    liveUrl: 'https://talia-boutique.de/',
+    heroImage: 'bg-surface-dark',
+    content: {
+      de: {
+        title: 'Talia Boutique',
+        subtitle: 'Moderne E-Commerce Plattform',
+        category: 'E-Commerce & Web Design',
+        stats: [
+          { label: 'Branche', value: 'Fashion & Retail' },
+          { label: 'Tech Stack', value: 'Next.js, Tailwind, Shopify' },
+          { label: 'Status', value: 'Live' },
+        ],
+        challenge: {
+          title: 'Das Problem',
+          description:
+            'Eine Premium-Boutique brauchte eine digitale Präsenz, die den exklusiven Charakter der Marke widerspiegelt.',
+          list: [
+            'Kein Online-Verkaufskanal',
+            'Veraltetes Markenimage online',
+            'Schlechte mobile Nutzererfahrung',
+          ],
+        },
+        approach: {
+          title: 'Unser Ansatz',
+          description:
+            'Entwicklung eines Headless E-Commerce Setups für maximale Geschwindigkeit und Designfreiheit.',
+          steps: [
+            {
+              title: 'Premium Design',
+              description: 'Fokus auf große Bilder und minimalistische Typografie.',
+            },
+            {
+              title: 'Headless Commerce',
+              description: 'Next.js Frontend mit Shopify Backend für schnelle Ladezeiten.',
+            },
+            {
+              title: 'Mobile First',
+              description: 'Optimierter Checkout-Prozess für Smartphone-Nutzer.',
+            },
+          ],
+        },
+        solution: {
+          title: 'Die Lösung',
+          description:
+            'Ein blitzschneller Online-Shop, der das Premium-Gefühl der Boutique perfekt in die digitale Welt überträgt.',
+          images: [],
+        },
+        results: {
+          title: 'Ergebnisse',
+          description: 'Signifikante Steigerung der Online-Verkäufe.',
+          metrics: [
+            { label: 'Shop-Launch', value: 'Erfolgreich', change: 'Online' },
+            { label: 'Performance', value: '95+', change: 'PageSpeed' },
+            { label: 'Design', value: 'Premium', change: 'UX/UI' },
+          ],
+        },
+      },
+      en: {
+        title: 'Talia Boutique',
+        subtitle: 'Modern E-Commerce Platform',
+        category: 'E-Commerce & Web Design',
+        stats: [
+          { label: 'Industry', value: 'Fashion & Retail' },
+          { label: 'Tech Stack', value: 'Next.js, Tailwind, Shopify' },
+          { label: 'Status', value: 'Live' },
+        ],
+        challenge: {
+          title: 'The Problem',
+          description:
+            'A premium boutique needed a digital presence reflecting the exclusive character of the brand.',
+          list: [
+            'No online sales channel',
+            'Outdated brand image online',
+            'Poor mobile user experience',
+          ],
+        },
+        approach: {
+          title: 'Our Approach',
+          description:
+            'Development of a Headless E-Commerce setup for maximum speed and design freedom.',
+          steps: [
+            {
+              title: 'Premium Design',
+              description: 'Focus on large images and minimalist typography.',
+            },
+            {
+              title: 'Headless Commerce',
+              description: 'Next.js frontend with Shopify backend for fast load times.',
+            },
+            {
+              title: 'Mobile First',
+              description: 'Optimized checkout process for smartphone users.',
+            },
+          ],
+        },
+        solution: {
+          title: 'The Solution',
+          description:
+            'A blazing-fast online shop that perfectly translates the premium feel of the boutique into the digital world.',
+          images: [],
+        },
+        results: {
+          title: 'Results',
+          description: 'Significant increase in online sales.',
+          metrics: [
+            { label: 'Shop Launch', value: 'Successful', change: 'Online' },
+            { label: 'Performance', value: '95+', change: 'PageSpeed' },
+            { label: 'Design', value: 'Premium', change: 'UX/UI' },
+          ],
+        },
       },
     },
   },
@@ -446,9 +563,7 @@ export const workData: Record<string, Project> = {
           title: 'Das Ergebnis',
           description:
             'Eine einladende, blitzschnelle Website, die die Persönlichkeit des Gasthauses perfekt widerspiegelt. Mit integrierter Speisekarte, Google Maps-Anbindung und direkter Kontaktmöglichkeit.',
-          images: [
-            '/images/hero/kundenberatung-gespraech-meeting-service-professionell.webp',
-          ],
+          images: ['/images/hero/kundenberatung-gespraech-meeting-service-professionell.webp'],
           imageAlts: [
             'Responsive Website Design für Restaurant Lindener Ratsstuben mit digitaler Speisekarte',
           ],
@@ -512,9 +627,7 @@ export const workData: Record<string, Project> = {
           title: 'The Result',
           description:
             'An inviting, blazing-fast website that perfectly reflects the personality of the inn. With integrated menu, Google Maps integration, and direct contact options.',
-          images: [
-            '/images/hero/kundenberatung-gespraech-meeting-service-professionell.webp',
-          ],
+          images: ['/images/hero/kundenberatung-gespraech-meeting-service-professionell.webp'],
           imageAlts: [
             'Responsive website design for restaurant Lindener Ratsstuben with digital menu',
           ],
@@ -532,6 +645,98 @@ export const workData: Record<string, Project> = {
           { name: 'Web Design & UI/UX', path: '/services/web-design' },
           { name: 'Local SEO', path: '/services/seo' },
         ],
+      },
+    },
+  },
+
+  // --- Memo Baut (In Development) ---
+  'memo-baut': {
+    slug: 'memo-baut',
+    category: 'development',
+    type: 'in_progress',
+    status: 'building',
+    completion: 80,
+    thumbnail: 'hammer',
+    liveUrl: 'https://memo-baut-test.vercel.app/',
+    heroImage: 'bg-surface-dark',
+    content: {
+      de: {
+        title: 'Memo Baut',
+        subtitle: 'In Entwicklung — Fast fertig',
+        category: 'Web Development',
+        stats: [
+          { label: 'Status', value: 'In Entwicklung' },
+          { label: 'Tech Stack', value: 'Next.js 15, Tailwind' },
+          { label: 'Fortschritt', value: '80%' },
+        ],
+        challenge: {
+          title: 'Das Projekt',
+          description:
+            'Ein neues digitales Erlebnis für ein Bauunternehmen, das aktuell in der finalen Entwicklungsphase ist.',
+          list: ['Konzeptphase abgeschlossen', 'Design implementiert', 'Launch steht bevor'],
+        },
+        approach: {
+          title: 'Unser Ansatz',
+          description: 'Fokus auf schnelle Ladezeiten und klare Strukturierung der Bauprojekte.',
+          steps: [
+            { title: 'Konzeption', description: 'Strukturierung der Dienstleistungen.' },
+            { title: 'Entwicklung', description: 'Umsetzung mit Next.js.' },
+            { title: 'Launch', description: 'Go-Live in Kürze.' },
+          ],
+        },
+        solution: {
+          title: 'Coming Soon',
+          description: 'Dieses Projekt befindet sich im finalen Feinschliff.',
+          images: [],
+        },
+        results: {
+          title: 'Ergebnisse',
+          description: 'Ergebnisse nach Launch.',
+          metrics: [
+            { label: 'Status', value: 'In Dev', change: 'Aktiv' },
+            { label: 'Fortschritt', value: '80%', change: 'Bald fertig' },
+            { label: 'Launch', value: 'Bald', change: '2026' },
+          ],
+        },
+      },
+      en: {
+        title: 'Memo Baut',
+        subtitle: 'In Development — Almost complete',
+        category: 'Web Development',
+        stats: [
+          { label: 'Status', value: 'In Development' },
+          { label: 'Tech Stack', value: 'Next.js 15, Tailwind' },
+          { label: 'Progress', value: '80%' },
+        ],
+        challenge: {
+          title: 'The Project',
+          description:
+            'A new digital experience for a construction company, currently in final development.',
+          list: ['Concept phase completed', 'Design implemented', 'Launch imminent'],
+        },
+        approach: {
+          title: 'Our Approach',
+          description: 'Focus on fast load times and clear structuring of construction projects.',
+          steps: [
+            { title: 'Conception', description: 'Structuring of services.' },
+            { title: 'Development', description: 'Implementation with Next.js.' },
+            { title: 'Launch', description: 'Go-Live shortly.' },
+          ],
+        },
+        solution: {
+          title: 'Coming Soon',
+          description: 'This project is in final polish.',
+          images: [],
+        },
+        results: {
+          title: 'Results',
+          description: 'Results after launch.',
+          metrics: [
+            { label: 'Status', value: 'In Dev', change: 'Active' },
+            { label: 'Progress', value: '80%', change: 'Almost done' },
+            { label: 'Launch', value: 'Soon', change: '2026' },
+          ],
+        },
       },
     },
   },

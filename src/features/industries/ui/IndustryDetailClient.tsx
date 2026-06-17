@@ -26,6 +26,7 @@ import {
   RocketLaunch,
 } from '@phosphor-icons/react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
+import { SeoHead } from '@/shared/ui/SeoHead';
 
 const iconMap: Record<string, React.ElementType> = {
   hammer: Hammer,
@@ -57,8 +58,17 @@ export function IndustryDetailClient({ industrySlug }: { industrySlug?: string }
     );
   }
 
+  const schemaData = {
+    service: {
+      name: t(industry.title),
+      description: t(industry.hero.subheadline),
+      serviceType: 'Industry Solution',
+    },
+  };
+
   return (
     <main className="bg-background-light min-h-dvh pt-24">
+      <SeoHead schemaData={schemaData} pageType="service" />
       {/* Navigation */}
       <nav aria-label={t('detail.nav.back')} className="container mx-auto px-4 mb-8">
         <Link

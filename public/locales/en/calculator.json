@@ -45,6 +45,11 @@
       "learn_more": "For complex requirements: We develop individual software solutions with user logins, databases, and special functions tailored exactly to your business processes.",
       "name": "Web Application"
     },
+    "basis-professional": {
+      "description": "Advanced Corporate Presence (CMS)",
+      "learn_more": "Professional presence with CMS, blog, advanced SEO features, and more subpages. Ideal for growing businesses.",
+      "name": "Professional Website"
+    },
     "basis-starter": {
       "description": "High-Performance Landing Page (Next.js)",
       "learn_more": "A lightning-fast 'one-pager' website, ideal for campaigns, product launches, or startups. Technically optimized for maximum conversion and immediate visibility.",

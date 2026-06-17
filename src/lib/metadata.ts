@@ -7,7 +7,7 @@ const BASE_URL = 'https://www.codayweb.de';
  * Non-production environments are always noindex.
  */
 export function generateRobotsMeta(opts: {
-  type: 'money' | 'legal' | 'studio' | 'preview' | 'article' | 'default';
+  type: 'money' | 'legal' | 'studio' | 'preview' | 'article' | 'default' | 'noindex';
 }): Metadata['robots'] {
   const isProduction = process.env.NEXT_PUBLIC_VERCEL_ENV === 'production';
 
@@ -21,7 +21,8 @@ export function generateRobotsMeta(opts: {
     case 'default':
       return { index: true, follow: true };
     case 'legal':
-      return { index: false, follow: true };
+    case 'noindex':
+      return { index: false, follow: false };
     case 'studio':
     case 'preview':
       return { index: false, follow: false };
@@ -48,13 +49,13 @@ export function generateAlternates(path: string): Metadata['alternates'] {
   }
 
   // Canonical points to self (the actual path passed in)
-  // For the homepage, the German version (default) canonicalizes to the root domain (/).
-  const isHomepage = cleanPath === '';
-  const canonicalPath = path.startsWith('/en') ? enPath : isHomepage ? '' : dePath;
+  // For the homepage, we use the /de or /en prefix explicitly to avoid redirect loops,
+  // aligning with sitemap.ts which outputs /de/...
+  const canonicalPath = path.startsWith('/en') ? enPath : dePath;
 
-  // The hreflang and x-default for the German homepage should also point to the root domain.
-  const deLangPath = isHomepage ? '' : dePath;
-  const xDefaultPath = isHomepage ? '' : dePath;
+  // The hreflang and x-default for the German homepage should point to the /de locale.
+  const deLangPath = dePath;
+  const xDefaultPath = dePath;
 
   return {
     canonical: `${BASE_URL}${canonicalPath}`,
@@ -74,7 +75,7 @@ export function generatePageMetadata(opts: {
   title: string;
   description: string;
   path: string;
-  type: 'money' | 'legal' | 'studio' | 'preview' | 'article' | 'default';
+  type: 'money' | 'legal' | 'studio' | 'preview' | 'article' | 'default' | 'noindex';
   openGraph?: Metadata['openGraph'];
 }): Metadata {
   const fullTitle = opts.title.includes('Coday') ? opts.title : `${opts.title} | Coday`;
