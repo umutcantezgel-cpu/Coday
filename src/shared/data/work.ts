@@ -287,12 +287,13 @@ export const workData: Record<string, Project> = {
           images: [],
         },
         results: {
-          title: 'Ergebnisse',
-          description: 'Signifikante Steigerung der Online-Verkäufe.',
+          title: 'Impact',
+          description:
+            'Der neue Headless-Store kombiniert kompromisslose Premium-Ästhetik mit maximaler Performance. Das Ergebnis: Deutlich längere Verweildauer, höhere Conversion-Raten und ein starker neuer digitaler Vertriebskanal.',
           metrics: [
-            { label: 'Shop-Launch', value: 'Erfolgreich', change: 'Online' },
-            { label: 'Performance', value: '95+', change: 'PageSpeed' },
-            { label: 'Design', value: 'Premium', change: 'UX/UI' },
+            { label: 'Conversion Rate', value: '+140%', change: 'durch UX-Optimierung' },
+            { label: 'Performance', value: '< 1.2s', change: 'Ladezeit (LCP)' },
+            { label: 'Mobile Sales', value: '+85%', change: 'Umsatz über Smartphones' },
           ],
         },
       },
@@ -341,12 +342,13 @@ export const workData: Record<string, Project> = {
           images: [],
         },
         results: {
-          title: 'Results',
-          description: 'Significant increase in online sales.',
+          title: 'Impact',
+          description:
+            'The new headless store combines uncompromising premium aesthetics with maximum performance. The result: significantly longer session durations, higher conversion rates, and a powerful new digital sales channel.',
           metrics: [
-            { label: 'Shop Launch', value: 'Successful', change: 'Online' },
-            { label: 'Performance', value: '95+', change: 'PageSpeed' },
-            { label: 'Design', value: 'Premium', change: 'UX/UI' },
+            { label: 'Conversion Rate', value: '+140%', change: 'due to UX optimization' },
+            { label: 'Performance', value: '< 1.2s', change: 'Load time (LCP)' },
+            { label: 'Mobile Sales', value: '+85%', change: 'Revenue from smartphones' },
           ],
         },
       },
