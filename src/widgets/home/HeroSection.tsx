@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 import GradientText from '@/shared/ui/GradientText';
 import { cn } from '@/shared/lib/utils';
 import dynamic from 'next/dynamic';
-import { GamifiedHeroCta } from './GamifiedHeroCta';
+import { QuickContactForm } from './QuickContactForm';
 import { Link } from '@/i18n/navigation';
 import { ArrowRight, Briefcase } from '@phosphor-icons/react/dist/ssr';
 import { baseButtonStyles, buttonVariants, buttonSizes } from '@/shared/ui/ButtonStyles';
@@ -86,9 +86,9 @@ export const HeroSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Right Column: Gamified C-Slider (Hidden on Mobile) */}
-        <div className="hidden lg:flex lg:col-span-5 justify-end mt-8 lg:mt-0">
-          <GamifiedHeroCta />
+        {/* Right Column: Quick Contact Form (Hidden on Mobile) */}
+        <div className="hidden lg:flex lg:col-span-5 justify-end mt-8 lg:mt-0 relative">
+          <QuickContactForm />
         </div>
       </div>
     </section>
