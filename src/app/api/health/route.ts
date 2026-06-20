@@ -39,8 +39,9 @@ export async function GET(request: Request) {
   try {
     const supabase = createClient(supabaseUrl, supabaseKey);
 
-    // Lightweight query to keep the database active
-    const { error } = await supabase.from('leads').select('id', { count: 'exact', head: true });
+    // Lightweight GET query to keep the database active.
+    // Using a real GET request instead of HEAD to ensure Supabase registers the activity.
+    const { data, error } = await supabase.from('leads').select('id').limit(1);
 
     if (error) {
       return NextResponse.json(
