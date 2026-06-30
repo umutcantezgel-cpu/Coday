@@ -12,8 +12,8 @@ export async function saveLeadInternalAction(data: {
   source?: string;
 }) {
   try {
-    // Fallback to the known API key if Vercel doesn't have it in the production environment variables
-    const resendApiKey = process.env.RESEND_API_KEY || 're_U47SSVtg_M7fHNuoTq41u1kFU3kEBRqZ5';
+    // Load the API key from Vercel environment variables
+    const resendApiKey = process.env.RESEND_API_KEY;
 
     if (!resendApiKey) {
       console.error('Server misconfiguration: Missing RESEND_API_KEY');
@@ -27,7 +27,7 @@ export async function saveLeadInternalAction(data: {
 
     // Configurable email sender — set EMAIL_FROM in Vercel env
     const EMAIL_FROM = process.env.EMAIL_FROM || 'Coday Contact <onboarding@resend.dev>';
-    const ADMIN_EMAIL = 'umutcantezgel@gmail.com';
+    const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'umut@codayweb.de';
 
     let emailStatus = 'skipped';
     let adminEmailResult: any = null;
@@ -69,9 +69,9 @@ export async function saveLeadInternalAction(data: {
         adminErr
       );
       try {
-        // Fallback: If Vercel has an unverified EMAIL_FROM or an invalid API key, it will fail. We retry with the sandbox verified email and hardcoded known-good key.
-        const fallbackResend = new Resend('re_U47SSVtg_M7fHNuoTq41u1kFU3kEBRqZ5');
-        const fallbackRes = await fallbackResend.emails.send({
+        // Fallback: If Vercel has an unverified EMAIL_FROM, the first attempt fails.
+        // We retry using the SAME Vercel API key but force the sender to onboarding@resend.dev.
+        const fallbackRes = await resend.emails.send({
           from: 'Coday Contact <onboarding@resend.dev>',
           to: [ADMIN_EMAIL],
           subject: `Neue Anfrage: ${data.name || 'Unbekannt'} (${data.project || 'Allgemein'})`,
