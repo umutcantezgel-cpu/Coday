@@ -127,9 +127,9 @@ export const ApplicationWizard: React.FC = () => {
       trackEvent('form_submit', { event_category: 'lead_form' });
 
       setSuccess(true);
-    } catch (err: unknown) {
-      console.error('Submission error:', err);
-      setError(err instanceof Error ? err.message : t('wizard.error.submit'));
+    } catch (err: any) {
+      console.error('Wizard submission error:', err);
+      setError(`Fehler: ${err.message || 'Unknown error'}`);
     } finally {
       setIsSubmitting(false);
     }
