@@ -63,9 +63,49 @@ export async function saveLeadInternalAction(data: {
       }
       adminEmailResult = adminRes.data;
       emailStatus = 'admin_sent';
-    } catch (adminErr) {
-      console.error('Error sending admin email:', adminErr);
-      return { success: false, error: 'ADMIN_EMAIL_ERROR: ' + String(adminErr) };
+    } catch (adminErr: any) {
+      console.warn(
+        'First attempt to send admin email failed. Retrying with onboarding@resend.dev...',
+        adminErr
+      );
+      try {
+        // Fallback: If Vercel has an unverified EMAIL_FROM or an invalid API key, it will fail. We retry with the sandbox verified email and hardcoded known-good key.
+        const fallbackResend = new Resend('re_U47SSVtg_M7fHNuoTq41u1kFU3kEBRqZ5');
+        const fallbackRes = await fallbackResend.emails.send({
+          from: 'Coday Contact <onboarding@resend.dev>',
+          to: [ADMIN_EMAIL],
+          subject: `Neue Anfrage: ${data.name || 'Unbekannt'} (${data.project || 'Allgemein'})`,
+          html: `
+            <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 32px; background: #eff6ff; border-radius: 16px; border: 1px solid #bfdbfe;">
+              <h2 style="color: #1e40af; margin-bottom: 16px;">📩 Neue Kontaktanfrage (Fallback Sender)</h2>
+              <table style="width: 100%; border-collapse: collapse;">
+                <tr><td style="padding: 10px 12px; color: #6b7280; border-bottom: 1px solid #e5e7eb;">Name</td><td style="padding: 10px 12px; font-weight: 600; color: #111827; border-bottom: 1px solid #e5e7eb;">${data.name || '—'}</td></tr>
+                <tr><td style="padding: 10px 12px; color: #6b7280; border-bottom: 1px solid #e5e7eb;">E-Mail</td><td style="padding: 10px 12px; font-weight: 600; color: #111827; border-bottom: 1px solid #e5e7eb;"><a href="mailto:${data.email}" style="color: #2563eb;">${data.email}</a></td></tr>
+                <tr><td style="padding: 10px 12px; color: #6b7280; border-bottom: 1px solid #e5e7eb;">Telefon</td><td style="padding: 10px 12px; font-weight: 600; color: #111827; border-bottom: 1px solid #e5e7eb;">${data.phone || '—'}</td></tr>
+                <tr><td style="padding: 10px 12px; color: #6b7280; border-bottom: 1px solid #e5e7eb;">Firma</td><td style="padding: 10px 12px; font-weight: 600; color: #111827; border-bottom: 1px solid #e5e7eb;">${data.company || '—'}</td></tr>
+                <tr><td style="padding: 10px 12px; color: #6b7280; border-bottom: 1px solid #e5e7eb;">Projekt/Quelle</td><td style="padding: 10px 12px; font-weight: 600; color: #111827; border-bottom: 1px solid #e5e7eb;">${data.project || data.source || '—'}</td></tr>
+              </table>
+              <div style="margin-top: 24px; padding: 16px; background: white; border-radius: 12px;">
+                <h3 style="color: #374151; margin: 0 0 8px;">Nachricht:</h3>
+                <p style="white-space: pre-wrap; color: #374151; margin: 0;">${data.message || '—'}</p>
+              </div>
+              <hr style="border: none; border-top: 1px solid #bfdbfe; margin: 24px 0;" />
+              <p style="color: #6b7280; font-size: 13px;">Automatisch generiert von Coday Contact System (No DB)</p>
+            </div>
+          `,
+          replyTo: data.email,
+        });
+
+        if (fallbackRes.error) {
+          throw fallbackRes.error;
+        }
+        adminEmailResult = fallbackRes.data;
+        emailStatus = 'admin_sent_fallback';
+      } catch (fallbackErr: any) {
+        console.error('Error sending admin email (even with fallback):', fallbackErr);
+        const errorMsg = fallbackErr?.message || JSON.stringify(fallbackErr);
+        return { success: false, error: 'ADMIN_EMAIL_ERROR: ' + errorMsg };
+      }
     }
 
     // Customer Confirmation Email
