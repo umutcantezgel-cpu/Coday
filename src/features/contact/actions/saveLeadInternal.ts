@@ -1,6 +1,6 @@
 'use server';
 
-import { createAdminClient } from '@/shared/lib/supabase/server';
+import { Resend } from 'resend';
 
 export async function saveLeadInternalAction(data: {
   name: string;
@@ -12,76 +12,98 @@ export async function saveLeadInternalAction(data: {
   source?: string;
 }) {
   try {
-    const supabase = createAdminClient();
+    const resendApiKey = process.env.RESEND_API_KEY;
 
-    const { error: dbError } = await supabase.from('leads').insert([
-      {
-        name: data.name,
-        email: data.email,
-        company: data.company,
-        phone: data.phone,
-        message: data.message,
-        project: data.project,
-        source: data.source || 'contact',
-      },
-    ]);
-
-    if (dbError) {
-      console.error('Supabase Error:', dbError);
-      return { success: false, error: 'DB_ERROR: ' + JSON.stringify(dbError) };
-    }
-
-    // Fire-and-forget email notification via Supabase Edge Function
-    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-    const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-
-    if (!supabaseUrl) {
+    if (!resendApiKey) {
+      console.error('Server misconfiguration: Missing RESEND_API_KEY');
       return {
         success: false,
-        error: 'MISSING_ENV: NEXT_PUBLIC_SUPABASE_URL is not defined in Vercel',
-      };
-    }
-    if (!supabaseAnonKey) {
-      return {
-        success: false,
-        error: 'MISSING_ENV: NEXT_PUBLIC_SUPABASE_ANON_KEY is not defined in Vercel',
+        error: 'MISSING_ENV: RESEND_API_KEY is not defined in Vercel',
       };
     }
 
-    if (supabaseUrl && supabaseAnonKey) {
-      try {
-        const baseUrl = supabaseUrl.endsWith('/') ? supabaseUrl.slice(0, -1) : supabaseUrl;
-        const res = await fetch(`${baseUrl}/functions/v1/send-lead`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${supabaseAnonKey}`,
-          },
-          body: JSON.stringify({
-            name: data.name,
-            email: data.email,
-            phone: data.phone || '',
-            company: data.company || '',
-            project: data.project || '',
-            message: data.message || '',
-          }),
-        });
+    const resend = new Resend(resendApiKey);
 
-        if (!res.ok) {
-          const errorText = await res.text();
-          console.error(`Edge Function Error (${res.status}):`, errorText);
-          // Return the edge function error to UI for debugging
-          return { success: false, error: `EMAIL_ERROR (${res.status}): ` + errorText };
-        } else {
-          console.log('Edge Function success:', await res.json());
-        }
-      } catch (emailError) {
-        // Return fetch error to UI
-        return { success: false, error: 'FETCH_ERROR: ' + String(emailError) };
+    // Configurable email sender — set EMAIL_FROM in Vercel env
+    const EMAIL_FROM = process.env.EMAIL_FROM || 'Coday Contact <onboarding@resend.dev>';
+    const ADMIN_EMAIL = 'umutcantezgel@gmail.com';
+
+    let emailStatus = 'skipped';
+    let adminEmailResult: any = null;
+
+    try {
+      const adminRes = await resend.emails.send({
+        from: EMAIL_FROM,
+        to: [ADMIN_EMAIL],
+        subject: `Neue Anfrage: ${data.name || 'Unbekannt'} (${data.project || 'Allgemein'})`,
+        html: `
+          <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 32px; background: #eff6ff; border-radius: 16px; border: 1px solid #bfdbfe;">
+            <h2 style="color: #1e40af; margin-bottom: 16px;">📩 Neue Kontaktanfrage</h2>
+            <table style="width: 100%; border-collapse: collapse;">
+              <tr><td style="padding: 10px 12px; color: #6b7280; border-bottom: 1px solid #e5e7eb;">Name</td><td style="padding: 10px 12px; font-weight: 600; color: #111827; border-bottom: 1px solid #e5e7eb;">${data.name || '—'}</td></tr>
+              <tr><td style="padding: 10px 12px; color: #6b7280; border-bottom: 1px solid #e5e7eb;">E-Mail</td><td style="padding: 10px 12px; font-weight: 600; color: #111827; border-bottom: 1px solid #e5e7eb;"><a href="mailto:${data.email}" style="color: #2563eb;">${data.email}</a></td></tr>
+              <tr><td style="padding: 10px 12px; color: #6b7280; border-bottom: 1px solid #e5e7eb;">Telefon</td><td style="padding: 10px 12px; font-weight: 600; color: #111827; border-bottom: 1px solid #e5e7eb;">${data.phone || '—'}</td></tr>
+              <tr><td style="padding: 10px 12px; color: #6b7280; border-bottom: 1px solid #e5e7eb;">Firma</td><td style="padding: 10px 12px; font-weight: 600; color: #111827; border-bottom: 1px solid #e5e7eb;">${data.company || '—'}</td></tr>
+              <tr><td style="padding: 10px 12px; color: #6b7280; border-bottom: 1px solid #e5e7eb;">Projekt/Quelle</td><td style="padding: 10px 12px; font-weight: 600; color: #111827; border-bottom: 1px solid #e5e7eb;">${data.project || data.source || '—'}</td></tr>
+            </table>
+            <div style="margin-top: 24px; padding: 16px; background: white; border-radius: 12px;">
+              <h3 style="color: #374151; margin: 0 0 8px;">Nachricht:</h3>
+              <p style="white-space: pre-wrap; color: #374151; margin: 0;">${data.message || '—'}</p>
+            </div>
+            <hr style="border: none; border-top: 1px solid #bfdbfe; margin: 24px 0;" />
+            <p style="color: #6b7280; font-size: 13px;">Automatisch generiert von Coday Contact System (No DB)</p>
+          </div>
+        `,
+        replyTo: data.email,
+      });
+
+      if (adminRes.error) {
+        throw adminRes.error;
       }
+      adminEmailResult = adminRes.data;
+      emailStatus = 'admin_sent';
+    } catch (adminErr) {
+      console.error('Error sending admin email:', adminErr);
+      return { success: false, error: 'ADMIN_EMAIL_ERROR: ' + String(adminErr) };
     }
 
-    return { success: true };
+    // Customer Confirmation Email
+    try {
+      const customerRes = await resend.emails.send({
+        from: EMAIL_FROM,
+        to: [data.email],
+        subject: 'Danke für deine Anfrage bei Coday! 🚀',
+        html: `
+          <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 520px; margin: 0 auto; padding: 32px; background: #f9fafb; border-radius: 16px;">
+            <h2 style="color: #111827; margin-bottom: 8px;">Anfrage erfolgreich gesendet ✅</h2>
+            <p style="color: #374151; font-size: 16px; line-height: 1.5;">Hallo ${data.name || 'Zukünftiger Partner'},</p>
+            <p style="color: #374151; font-size: 16px; line-height: 1.5;">vielen Dank für deine Nachricht! Wir haben deine Anfrage erhalten und werden uns schnellstmöglich bei dir melden.</p>
+            
+            <div style="background: white; padding: 20px; border-radius: 12px; margin: 24px 0; border: 1px solid #e5e7eb;">
+              <h3 style="margin-top: 0; font-size: 14px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em;">Deine Nachricht:</h3>
+              <p style="color: #111827; font-style: italic; margin: 0;">"${data.message || '—'}"</p>
+            </div>
+
+            <p style="color: #374151; font-size: 16px; line-height: 1.5;">Viele Grüße,<br/>Dein Coday Team</p>
+            <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 24px 0;" />
+            <p style="color: #9ca3af; font-size: 13px;">Coday Agency · codayweb.de</p>
+          </div>
+        `,
+      });
+
+      if (customerRes.error) {
+        console.warn(
+          'Could not send confirmation email to customer (Sandbox limit?):',
+          customerRes.error
+        );
+      } else {
+        emailStatus = 'both_sent';
+      }
+    } catch (customerErr) {
+      console.warn('Exception while sending confirmation email:', customerErr);
+    }
+
+    return { success: true, status: emailStatus };
   } catch (error) {
     console.error('Internal Save Error:', error);
     return { success: false, error: 'CATCH_ERROR: ' + String(error) };
