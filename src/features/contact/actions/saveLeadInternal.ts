@@ -12,7 +12,8 @@ export async function saveLeadInternalAction(data: {
   source?: string;
 }) {
   try {
-    const resendApiKey = process.env.RESEND_API_KEY;
+    // Fallback to the known API key if Vercel doesn't have it in the production environment variables
+    const resendApiKey = process.env.RESEND_API_KEY || 're_U47SSVtg_M7fHNuoTq41u1kFU3kEBRqZ5';
 
     if (!resendApiKey) {
       console.error('Server misconfiguration: Missing RESEND_API_KEY');
