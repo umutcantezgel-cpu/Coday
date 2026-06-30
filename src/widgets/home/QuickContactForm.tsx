@@ -63,9 +63,10 @@ export const QuickContactForm: React.FC = () => {
       if (!result.success) throw new Error(result.error || 'Unknown error');
 
       setSuccess(true);
-    } catch (err: unknown) {
+    } catch (err: any) {
       console.error('Submission error:', err);
-      setError('Ein Fehler ist aufgetreten. Bitte versuche es später noch einmal.');
+      // Display the actual error for debugging
+      setError(`Fehler: ${err.message || 'Unknown error'}`);
     } finally {
       setIsSubmitting(false);
     }
