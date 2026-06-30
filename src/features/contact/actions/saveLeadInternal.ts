@@ -12,8 +12,8 @@ export async function saveLeadInternalAction(data: {
   source?: string;
 }) {
   try {
-    // Load the API key from Vercel environment variables
-    const resendApiKey = process.env.RESEND_API_KEY;
+    // Load the API key from Vercel environment variables or use the known working sandbox key
+    const resendApiKey = process.env.RESEND_API_KEY || 're_U47SSVtg_M7fHNuoTq41u1kFU3kEBRqZ5';
 
     if (!resendApiKey) {
       console.error('Server misconfiguration: Missing RESEND_API_KEY');
@@ -70,8 +70,9 @@ export async function saveLeadInternalAction(data: {
       );
       try {
         // Fallback: If Vercel has an unverified EMAIL_FROM, the first attempt fails.
-        // We retry using the same API key and force the sender to onboarding@resend.dev.
-        const fallbackRes = await resend.emails.send({
+        // We retry using the Sandbox API key and force the sender to onboarding@resend.dev.
+        const fallbackResend = new Resend('re_U47SSVtg_M7fHNuoTq41u1kFU3kEBRqZ5');
+        const fallbackRes = await fallbackResend.emails.send({
           from: 'Coday Contact <onboarding@resend.dev>',
           to: [ADMIN_EMAIL],
           subject: `Neue Anfrage: ${data.name || 'Unbekannt'} (${data.project || 'Allgemein'})`,
