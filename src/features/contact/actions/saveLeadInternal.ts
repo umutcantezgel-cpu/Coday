@@ -12,8 +12,8 @@ export async function saveLeadInternalAction(data: {
   source?: string;
 }) {
   try {
-    // Load the API key from Vercel environment variables or use the known working sandbox key
-    const resendApiKey = process.env.RESEND_API_KEY || 're_U47SSVtg_M7fHNuoTq41u1kFU3kEBRqZ5';
+    // Load the API key from Vercel environment variables
+    const resendApiKey = process.env.RESEND_API_KEY;
 
     if (!resendApiKey) {
       console.error('Server misconfiguration: Missing RESEND_API_KEY');
@@ -26,8 +26,8 @@ export async function saveLeadInternalAction(data: {
     const resend = new Resend(resendApiKey);
 
     // Configurable email sender — set EMAIL_FROM in Vercel env
-    const EMAIL_FROM = process.env.EMAIL_FROM || 'Coday Contact <onboarding@resend.dev>';
-    const ADMIN_EMAIL = 'umutcantezgel@gmail.com';
+    const EMAIL_FROM = process.env.EMAIL_FROM || 'Coday Contact <leads@codayweb.de>';
+    const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'umut@codayweb.de';
 
     let emailStatus = 'skipped';
     let adminEmailResult: any = null;
@@ -69,9 +69,8 @@ export async function saveLeadInternalAction(data: {
         adminErr
       );
       try {
-        // Fallback: If Vercel has an unverified EMAIL_FROM, the first attempt fails.
-        // We retry using the Sandbox API key and force the sender to onboarding@resend.dev.
-        const fallbackResend = new Resend('re_U47SSVtg_M7fHNuoTq41u1kFU3kEBRqZ5');
+        // Fallback: If the domain verification ever drops, fallback to onboarding@resend.dev
+        const fallbackResend = new Resend(process.env.RESEND_API_KEY);
         const fallbackRes = await fallbackResend.emails.send({
           from: 'Coday Contact <onboarding@resend.dev>',
           to: [ADMIN_EMAIL],
