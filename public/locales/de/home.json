@@ -175,5 +175,20 @@
       "Sie möchten wissen, ob eine neue Website für Ihr Unternehmen in Wetzlar oder Mittelhessen sinnvoll ist? Vereinbaren Sie ein kostenloses Erstgespräch – persönlich, unverbindlich und ohne Verkaufsdruck. In 30 Minuten zeigen wir Ihnen, wo Ihre aktuelle Website Potenzial verschenkt und wie eine moderne, schnelle Website Ihnen konkret mehr Kunden bringen kann."
     ],
     "cta": "Kostenloses Erstgespräch vereinbaren"
+  },
+  "quick_contact": {
+    "title": "Projekt starten",
+    "subtitle": "Tragen Sie sich ein und wir melden uns innerhalb von 24 Stunden bei Ihnen.",
+    "name_placeholder": "Ihr Name",
+    "email_placeholder": "Ihre E-Mail",
+    "phone_placeholder": "Telefonnummer (optional)",
+    "submit": "Jetzt anfragen",
+    "success_title": "Anfrage erhalten!",
+    "success_subtitle": "Wir haben Ihre Daten erhalten und melden uns in Kürze bei Ihnen.",
+    "new_request": "Neue Anfrage senden",
+    "errors": {
+      "name": "Bitte geben Sie Ihren Namen ein.",
+      "email": "Bitte geben Sie eine gültige E-Mail ein."
+    }
   }
 }

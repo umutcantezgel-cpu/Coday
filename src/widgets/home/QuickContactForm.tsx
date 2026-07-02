@@ -17,17 +17,18 @@ import {
 } from '@phosphor-icons/react';
 import { useTranslations } from 'next-intl';
 
-const QuickContactSchema = z.object({
-  name: z.string().min(2, { message: 'Bitte gib deinen Namen ein.' }),
-  email: z.string().email({ message: 'Bitte gib eine gültige E-Mail ein.' }),
-  phone: z.string().optional(),
-  _bot_trap_field: z.string().optional(), // Honeypot
-});
-
-type QuickContactData = z.infer<typeof QuickContactSchema>;
-
 export const QuickContactForm: React.FC = () => {
-  const t = useTranslations('home'); // or 'contact' if needed
+  const t = useTranslations('home');
+
+  const QuickContactSchema = z.object({
+    name: z.string().min(2, { message: t('quick_contact.errors.name') }),
+    email: z.string().email({ message: t('quick_contact.errors.email') }),
+    phone: z.string().optional(),
+    _bot_trap_field: z.string().optional(), // Honeypot
+  });
+
+  type QuickContactData = z.infer<typeof QuickContactSchema>;
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -66,7 +67,7 @@ export const QuickContactForm: React.FC = () => {
     } catch (err: any) {
       console.error('Submission error:', err);
       // Display the actual error for debugging
-      setError(`Fehler: ${err.message || 'Unknown error'}`);
+      setError(err.message || 'Unknown error');
     } finally {
       setIsSubmitting(false);
     }
@@ -89,11 +90,9 @@ export const QuickContactForm: React.FC = () => {
           >
             <div className="mb-6">
               <h3 className="font-display font-bold text-2xl text-secondary-900 mb-2">
-                Projekt starten
+                {t('quick_contact.title')}
               </h3>
-              <p className="text-secondary-600 text-sm">
-                Trag dich ein und wir melden uns innerhalb von 24 Stunden bei dir.
-              </p>
+              <p className="text-secondary-600 text-sm">{t('quick_contact.subtitle')}</p>
             </div>
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -114,7 +113,7 @@ export const QuickContactForm: React.FC = () => {
                   <input
                     type="text"
                     {...register('name')}
-                    placeholder="Dein Name"
+                    placeholder={t('quick_contact.name_placeholder')}
                     className="w-full pl-11 pr-4 py-3 bg-white/80 border border-neutral-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all placeholder:text-secondary-400 text-secondary-900"
                     disabled={isSubmitting}
                   />
@@ -132,7 +131,7 @@ export const QuickContactForm: React.FC = () => {
                   <input
                     type="email"
                     {...register('email')}
-                    placeholder="Deine E-Mail"
+                    placeholder={t('quick_contact.email_placeholder')}
                     className="w-full pl-11 pr-4 py-3 bg-white/80 border border-neutral-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all placeholder:text-secondary-400 text-secondary-900"
                     disabled={isSubmitting}
                   />
@@ -150,7 +149,7 @@ export const QuickContactForm: React.FC = () => {
                   <input
                     type="tel"
                     {...register('phone')}
-                    placeholder="Telefonnummer (optional)"
+                    placeholder={t('quick_contact.phone_placeholder')}
                     className="w-full pl-11 pr-4 py-3 bg-white/80 border border-neutral-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all placeholder:text-secondary-400 text-secondary-900"
                     disabled={isSubmitting}
                   />
@@ -173,7 +172,7 @@ export const QuickContactForm: React.FC = () => {
                   <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                 ) : (
                   <>
-                    Jetzt anfragen
+                    {t('quick_contact.submit')}
                     <OptimizedIcon
                       icon={PaperPlaneRight}
                       className="w-5 h-5 group-hover:translate-x-1 transition-transform"
@@ -194,16 +193,14 @@ export const QuickContactForm: React.FC = () => {
               <OptimizedIcon icon={CheckCircle} className="w-8 h-8" />
             </div>
             <h3 className="font-display font-bold text-2xl text-secondary-900 mb-2">
-              Anfrage erhalten!
+              {t('quick_contact.success_title')}
             </h3>
-            <p className="text-secondary-600 mb-6">
-              Wir haben deine Daten erhalten und melden uns in Kürze bei dir.
-            </p>
+            <p className="text-secondary-600 mb-6">{t('quick_contact.success_subtitle')}</p>
             <button
               onClick={() => setSuccess(false)}
               className="text-primary-600 font-bold hover:underline"
             >
-              Neue Anfrage senden
+              {t('quick_contact.new_request')}
             </button>
           </m.div>
         )}

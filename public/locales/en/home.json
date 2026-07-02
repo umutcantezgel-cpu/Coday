@@ -174,6 +174,21 @@
       "Our clients – including Batherm Sanitär & Heizung, Schlüsseldienst Wetzlar and Lindener Ratsstuben – confirm: since their relaunch, they receive significantly more local enquiries via Google. This is thanks to our combination of technical performance (load time under 1 second, perfect Core Web Vitals) and thoughtful local search engine optimization. We optimize your website for exactly the search terms your customers use to find your services.",
       "Want to find out whether a new website makes sense for your business in Wetzlar or Central Hesse? Book a free initial consultation – personal, non-binding and without sales pressure. In 30 minutes, we'll show you where your current website is leaving potential on the table and how a modern, fast website can concretely bring you more clients."
     ],
-    "cta": "Book Free Consultation"
+    "cta": "Book a Free Consultation"
+  },
+  "quick_contact": {
+    "title": "Start your project",
+    "subtitle": "Leave your details and we'll get back to you within 24 hours.",
+    "name_placeholder": "Your Name",
+    "email_placeholder": "Your Email",
+    "phone_placeholder": "Phone Number (optional)",
+    "submit": "Send Request",
+    "success_title": "Request received!",
+    "success_subtitle": "We have received your details and will be in touch shortly.",
+    "new_request": "Send a new request",
+    "errors": {
+      "name": "Please enter your name.",
+      "email": "Please enter a valid email address."
+    }
   }
 }
