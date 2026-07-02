@@ -7,12 +7,13 @@ import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 
 import { Link } from '@/i18n/navigation';
 import { getBlogPosts } from '@/features/blog/model/data';
-import { useTranslation, Trans } from 'react-i18next';
+import { useTranslations, useLocale } from 'next-intl';
 import { m, AnimatePresence } from 'motion/react';
 
 const Blog: React.FC = () => {
-  const { i18n, t } = useTranslation('blog');
-  const posts = getBlogPosts(i18n.language);
+  const t = useTranslations('blog');
+  const locale = useLocale();
+  const posts = getBlogPosts(locale);
 
   const [activeCategory, setActiveCategory] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -77,12 +78,12 @@ const Blog: React.FC = () => {
               />
             </div>
             <label htmlFor="blog-search" className="sr-only">
-              {t('searchPlaceholder', 'Suchen Sie nach Artikeln...')}
+              {t('searchPlaceholder')}
             </label>
             <input
               id="blog-search"
               type="search"
-              placeholder={t('searchPlaceholder', 'Suchen Sie nach Artikeln...')}
+              placeholder={t('searchPlaceholder')}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-12 pr-4 py-4 rounded-2xl bg-white border border-gray-200 focus:border-primary focus:ring-4 focus:ring-primary/10 shadow-sm transition motion-reduce:duration-[0.01ms] text-slate-700"
@@ -94,7 +95,7 @@ const Blog: React.FC = () => {
         <div
           className="flex flex-wrap items-center justify-center gap-3 mb-12"
           role="group"
-          aria-label={t('categories.all', 'Kategorien')}
+          aria-label={t('categories.label')}
         >
           <AnimatePresence>
             {categories.map((category) => (
@@ -114,7 +115,7 @@ const Blog: React.FC = () => {
                     : 'bg-white text-slate-600 border border-gray-200 hover:border-primary/50 hover:text-primary'
                 }`}
               >
-                {category === 'All' ? t('categories.all', 'Alle') : category}
+                {category === 'All' ? t('categories.all') : category}
               </m.button>
             ))}
           </AnimatePresence>
@@ -235,15 +236,8 @@ const Blog: React.FC = () => {
               className="mx-auto text-slate-300 mb-4"
               size="xl"
             />
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">
-              {t('noResults', 'Keine Artikel gefunden')}
-            </h3>
-            <p className="text-slate-500 mb-6">
-              {t(
-                'noResultsDesc',
-                'Versuchen Sie es mit einem anderen Suchbegriff oder einer anderen Kategorie.'
-              )}
-            </p>
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">{t('noResults')}</h3>
+            <p className="text-slate-500 mb-6">{t('noResultsDesc')}</p>
             <button
               onClick={() => {
                 setSearchQuery('');
@@ -251,7 +245,7 @@ const Blog: React.FC = () => {
               }}
               className="active:scale-[0.97] px-6 py-2 bg-primary text-white rounded-full font-bold hover:bg-primary-dark transition-colors motion-reduce:duration-[0.01ms]"
             >
-              {t('resetFilters', 'Filter zurücksetzen')}
+              {t('resetFilters')}
             </button>
           </div>
         )}
@@ -268,7 +262,7 @@ const Blog: React.FC = () => {
                 {t('community.label')}
               </span>
               <h2 className="font-display font-bold text-3xl md:text-4xl text-white mb-6">
-                <Trans i18nKey="community.title" components={{ br: <br /> }} />
+                {t.rich('community.title', { br: () => <br /> })}
               </h2>
               <p className="text-gray-400 text-lg mb-8 leading-relaxed">
                 {t('community.description')}

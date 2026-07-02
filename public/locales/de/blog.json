@@ -117,6 +117,14 @@
     "title": "Digitalagentur Blog | Webdesign & SEO Insights - Coday",
     "description": "Tiefgehende Analysen, Strategien und Best Practices für modernes Webdesign, lokales SEO und professionelle Webentwicklung. Jetzt Insights entdecken!"
   },
+  "searchPlaceholder": "Suchen Sie nach Artikeln...",
+  "categories": {
+    "label": "Kategorien",
+    "all": "Alle"
+  },
+  "noResults": "Keine Artikel gefunden",
+  "noResultsDesc": "Versuchen Sie es mit einem anderen Suchbegriff oder einer anderen Kategorie.",
+  "resetFilters": "Filter zurücksetzen",
   "highlight": "Highlight",
   "interactiveComponent": "Interaktives Element",
   "keyTakeaways": {
