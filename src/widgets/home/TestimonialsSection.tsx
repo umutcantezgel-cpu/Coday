@@ -73,7 +73,7 @@ export const TestimonialsSection: React.FC = () => {
 
         <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-6">
           <div className="flex -space-x-4">
-            {['S', 'M', 'J', 'P'].map((initial, i) => (
+            {['A', 'M', 'H'].map((initial, i) => (
               <div
                 key={i}
                 className="w-12 h-12 rounded-full bg-white border-2 border-surface-light flex items-center justify-center text-sm font-bold text-primary shadow-sm"
