@@ -4,8 +4,7 @@ import { generatePageMetadata } from '@/lib/metadata';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { Inter, Outfit } from 'next/font/google';
-import { headers } from 'next/headers';
-import { draftMode } from 'next/headers';
+import { setRequestLocale } from 'next-intl/server';
 
 import '../globals.css';
 
@@ -70,7 +69,7 @@ export default async function RootLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const nonce = (await headers()).get('x-nonce') ?? '';
+  setRequestLocale(locale);
   const orgSchema = getOrganizationSchema();
   const proSchema = getProfessionalServiceSchema();
   const combinedSchema = [orgSchema, proSchema];
@@ -83,26 +82,11 @@ export default async function RootLayout({
         <link rel="preconnect" href="https://vitals.vercel-insights.com" crossOrigin="anonymous" />
         <script
           type="application/ld+json"
-          nonce={nonce}
           dangerouslySetInnerHTML={{ __html: JSON.stringify(combinedSchema) }}
         />
       </head>
       <body className="bg-secondary text-white antialiased" suppressHydrationWarning>
         <NextIntlClientProvider messages={messages} locale={locale}>
-          {(await draftMode()).isEnabled && (
-            <>
-              <div className="bg-blue-600 text-white text-center py-1 text-sm font-medium">
-                Draft Mode Enabled{' '}
-                <a
-                  href="/api/draft-mode/disable"
-                  className="underline hover:text-blue-100 ml-2 focus:outline-none focus:ring-2 focus:ring-white rounded"
-                  aria-label="Disable draft mode"
-                >
-                  Disable
-                </a>
-              </div>
-            </>
-          )}
           <MotionProvider>
             <div className="flex flex-col min-h-screen">
               <MainLayout>{children}</MainLayout>

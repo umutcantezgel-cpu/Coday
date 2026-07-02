@@ -51,10 +51,16 @@ export const PortfolioTeaserSection: React.FC = () => {
             const tags = content.stats?.map((s) => s.value) || [];
 
             return (
-              <div key={project.slug} className={`flex flex-col gap-12 lg:gap-24 lg:items-center ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
+              <div
+                key={project.slug}
+                className={`flex flex-col gap-12 lg:gap-24 lg:items-center ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
+              >
                 {/* Image Section */}
                 <ScaleIn delay={0.1} duration={0.8} className="w-full lg:w-3/5 group relative">
-                  <Link href={`/work/${project.slug}`} className="block relative aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-[0_20px_50px_rgba(8,_112,_184,_0.07)]">
+                  <Link
+                    href={`/work/${project.slug}`}
+                    className="block relative aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-[0_20px_50px_rgba(8,_112,_184,_0.07)]"
+                  >
                     <div className="absolute inset-0 bg-secondary-900/5 group-hover:bg-transparent transition-colors duration-500 z-10" />
                     <OptimizedImage
                       src={image}
@@ -64,7 +70,7 @@ export const PortfolioTeaserSection: React.FC = () => {
                       height={900}
                       priority={index === 0}
                     />
-                    
+
                     {/* Hover Overlay Badge */}
                     <div className="absolute top-6 right-6 z-20 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 bg-white/90 backdrop-blur-md text-secondary-900 rounded-full p-4 shadow-xl flex items-center justify-center">
                       <ArrowUpRight weight="bold" className="w-6 h-6" />
@@ -73,7 +79,11 @@ export const PortfolioTeaserSection: React.FC = () => {
                 </ScaleIn>
 
                 {/* Text Content Section */}
-                <FadeInUp delay={0.2} duration={0.8} className="w-full lg:w-2/5 flex flex-col justify-center">
+                <FadeInUp
+                  delay={0.2}
+                  duration={0.8}
+                  className="w-full lg:w-2/5 flex flex-col justify-center"
+                >
                   <div className="flex gap-3 flex-wrap mb-6">
                     <span className="px-3 py-1.5 bg-primary-50 text-primary-700 rounded-full text-xs font-bold uppercase tracking-wider border border-primary-100">
                       {content.category}
@@ -87,23 +97,29 @@ export const PortfolioTeaserSection: React.FC = () => {
                       </span>
                     ))}
                   </div>
-                  
+
                   <Link href={`/work/${project.slug}`} className="group inline-block">
                     <h3 className="font-display font-black text-4xl sm:text-5xl text-secondary-900 mb-6 group-hover:text-primary-600 transition-colors duration-300">
                       {content.title}
                     </h3>
                   </Link>
-                  
+
                   <p className="text-xl text-secondary-700 leading-relaxed mb-10 max-w-lg font-medium">
                     {content.subtitle}
                   </p>
 
-                  <Link 
+                  <Link
                     href={`/work/${project.slug}`}
+                    aria-label={`Case Study ansehen: ${content.title}`}
                     className="inline-flex items-center gap-3 font-bold text-lg text-secondary-900 hover:text-primary-600 transition-colors w-max group"
                   >
-                    <span className="border-b-2 border-secondary-900 group-hover:border-primary-600 pb-1 transition-colors">Case Study ansehen</span>
-                    <ArrowRight weight="bold" className="transform group-hover:translate-x-2 transition-transform duration-300 w-5 h-5" />
+                    <span className="border-b-2 border-secondary-900 group-hover:border-primary-600 pb-1 transition-colors">
+                      Case Study ansehen
+                    </span>
+                    <ArrowRight
+                      weight="bold"
+                      className="transform group-hover:translate-x-2 transition-transform duration-300 w-5 h-5"
+                    />
                   </Link>
                 </FadeInUp>
               </div>
@@ -114,4 +130,3 @@ export const PortfolioTeaserSection: React.FC = () => {
     </section>
   );
 };
-

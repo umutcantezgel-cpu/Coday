@@ -198,22 +198,6 @@ export const Footer: React.FC = () => {
                   {t('nav.services.fullstack.label', { defaultValue: 'Full-Stack Entwicklung' })}
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/branchen/public-sector"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
-                >
-                  {t('nav.industries.public', { defaultValue: 'Öffentliche Aufträge' })}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/branchen/startups-tech"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
-                >
-                  {t('nav.industries.tech', { defaultValue: 'Tech Startups' })}
-                </Link>
-              </li>
             </ul>
           </nav>
 
@@ -323,6 +307,7 @@ export const Footer: React.FC = () => {
               className="hover:text-primary transition-colors motion-reduce:duration-[0.01ms] p-3 -m-3 inline-flex items-center justify-center min-h-[44px] min-w-[44px]"
               aria-label={t('social.visit', { platform: 'Facebook' })}
             >
+              <span className="sr-only">{t('social.visit', { platform: 'Facebook' })}</span>
               <OptimizedIcon icon={FacebookLogo} />
             </a>
             <a
@@ -332,6 +317,7 @@ export const Footer: React.FC = () => {
               className="hover:text-primary transition-colors motion-reduce:duration-[0.01ms] p-3 -m-3 inline-flex items-center justify-center min-h-[44px] min-w-[44px]"
               aria-label={t('social.visit', { platform: 'Instagram' })}
             >
+              <span className="sr-only">{t('social.visit', { platform: 'Instagram' })}</span>
               <OptimizedIcon icon={InstagramLogo} />
             </a>
             <a
@@ -339,6 +325,7 @@ export const Footer: React.FC = () => {
               className="hover:text-primary transition-colors motion-reduce:duration-[0.01ms] p-3 -m-3 inline-flex items-center justify-center min-h-[44px] min-w-[44px]"
               aria-label={t('social.visit', { platform: 'Twitter' })}
             >
+              <span className="sr-only">{t('social.visit', { platform: 'Twitter' })}</span>
               <OptimizedIcon icon={TwitterLogo} />
             </a>
             <a
@@ -348,6 +335,7 @@ export const Footer: React.FC = () => {
               className="hover:text-primary transition-colors motion-reduce:duration-[0.01ms] p-3 -m-3 inline-flex items-center justify-center min-h-[44px] min-w-[44px]"
               aria-label={t('social.visit', { platform: 'LinkedIn' })}
             >
+              <span className="sr-only">{t('social.visit', { platform: 'LinkedIn' })}</span>
               <OptimizedIcon icon={LinkedinLogo} />
             </a>
           </nav>
