@@ -10,17 +10,17 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Pricing — Transparent Fixed Prices',
+      title: 'Web Design Prices Wetzlar | Transparent Plans',
       description:
-        'Web development packages from €2,500. No hidden costs. See all pricing details and packages.',
+        'Clear fixed prices for your web design project in Wetzlar and Central Hesse. No hidden costs and fully transparent packages. Request your free quote.',
       path: '/en/pricing',
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'Preise — Transparente Festpreise',
+    title: 'Webdesign Preise Wetzlar | Transparente Pakete',
     description:
-      'Webentwicklung ab 2.500 €. Keine versteckten Kosten. Alle Preise und Pakete im Überblick.',
+      'Klare Festpreise für Ihr Webdesign in Wetzlar und Mittelhessen. Keine versteckten Kosten, faire Pakete. Jetzt unverbindlich Ihr Angebot anfragen.',
     path: '/de/pricing',
     type: 'money',
   });

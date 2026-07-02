@@ -33,7 +33,7 @@ export async function generateMetadata({
     });
   } catch (e) {
     return generatePageMetadata({
-      title: 'IT-Lösungen | Next.js & Webdesign',
+      title: 'Webdesign für KFZ-Werkstätten | Raum Wetzlar',
       description: 'Digitale Dominanz für Ihre Branche.',
       path: `/${locale}/branchen/automobil/kfz-werkstatt`,
       type: 'money',

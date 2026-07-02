@@ -10,10 +10,20 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  if (locale === 'en') {
+    return generatePageMetadata({
+      title: 'Web Design Offer for Craftsmen | Central Hesse',
+      description:
+        'Special web design package for craftsmen in Wetzlar and Central Hesse. Fixed price, fast delivery and design that brings new clients. Inquire today.',
+      path: '/en/angebot-handwerker',
+      type: 'money',
+    });
+  }
   return generatePageMetadata({
-    title: 'Coday | angebot-handwerker',
-    description: 'Willkommen bei Coday. Entdecken Sie unsere Leistungen.',
-    path: `/${locale}`,
+    title: 'Webdesign Angebot für Handwerker | Mittelhessen',
+    description:
+      'Spezielles Webdesign Paket für Handwerker in Wetzlar und Mittelhessen. Festpreis, schnelle Umsetzung und Design das Aufträge bringt. Jetzt anfragen.',
+    path: '/de/angebot-handwerker',
     type: 'money',
   });
 }

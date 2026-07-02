@@ -3,12 +3,26 @@ import { generatePageMetadata } from '@/lib/metadata';
 import { UiUxClient } from '@/features/services/ui/UiUxClient';
 import { setRequestLocale } from 'next-intl/server';
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
   const { locale } = await params;
+  if (locale === 'en') {
+    return generatePageMetadata({
+      title: 'UI/UX Design Agency Wetzlar | User-Friendly',
+      description:
+        'Professional UI/UX design by Coday in Wetzlar. User-centered interfaces for higher conversions and satisfied customers in Central Hesse. Get in touch.',
+      path: '/en/services/design/ui-ux',
+      type: 'money',
+    });
+  }
   return generatePageMetadata({
-    title: 'UI/UX Design',
-    description: 'User Interface and User Experience Design.',
-    path: `/${locale}/services/design/ui-ux`,
+    title: 'UI/UX Design Agentur Wetzlar | Nutzerfreundlich',
+    description:
+      'Professionelles UI/UX Design von Coday in Wetzlar. Nutzerzentrierte Interfaces für höhere Konversion und zufriedene Kunden in Mittelhessen. Anfragen.',
+    path: '/de/services/design/ui-ux',
     type: 'money',
   });
 }

@@ -3,19 +3,25 @@ import { generatePageMetadata } from '@/lib/metadata';
 import { EcommerceDevelopmentClient } from '@/features/services/ui/EcommerceDevelopmentClient';
 import { setRequestLocale } from 'next-intl/server';
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'E-Commerce Development',
-      description: 'Custom e-commerce solutions with high performance and conversions by Coday.',
+      title: 'E-Commerce Shop Development | Wetzlar & Hesse',
+      description:
+        'Professional e-commerce and online shop development by Coday in Wetzlar. High performance and conversion rates for your business in Hesse. Get in touch.',
       path: '/en/services/ecommerce-development',
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'E-Commerce Entwicklung',
-    description: 'Individuelle E-Commerce Lösungen mit hoher Performance und Konversionsrate von Coday.',
+    title: 'Onlineshop erstellen lassen | Wetzlar & Hessen',
+    description:
+      'Professionelle E-Commerce und Onlineshop Entwicklung von Coday in Wetzlar. Hohe Performance und Konversionsraten für Ihr Geschäft in Hessen. Anfragen.',
     path: '/de/services/ecommerce-development',
     type: 'money',
   });

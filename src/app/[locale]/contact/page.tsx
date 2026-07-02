@@ -10,19 +10,25 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  if (locale === 'en') {
+    return generatePageMetadata({
+      title: 'Contact Us | Web Design Agency Wetzlar Hesse',
+      description:
+        'Get in touch with Coday, your web design agency in Wetzlar, Hesse. Free initial consultation on-site or via video call. We reply within 24 hours.',
+      path: '/en/contact',
+      type: 'money',
+    });
+  }
   return generatePageMetadata({
-    title: 'Kontakt aufnehmen | Coday Webdesign Wetzlar',
-    description: 'Sprechen Sie mit Coday aus Wetzlar, Hessen über Ihr nächstes Webprojekt. Wir entwickeln High-Performance Websites und Apps für Ihren digitalen Erfolg.',
-    path: `/${locale}`,
+    title: 'Kontakt | Webdesign Agentur Wetzlar Mittelhessen',
+    description:
+      'Nehmen Sie Kontakt zu Coday auf, Ihrer Webdesign Agentur in Wetzlar. Kostenloses Erstgespräch vor Ort oder per Video. Antwort innerhalb von 24 Stunden.',
+    path: '/de/contact',
     type: 'money',
   });
 }
 
-export default async function ContactPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
+export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
   const resolvedParams = await params;
   setRequestLocale(resolvedParams.locale);
 

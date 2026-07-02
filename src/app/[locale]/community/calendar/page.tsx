@@ -10,10 +10,20 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  if (locale === 'en') {
+    return generatePageMetadata({
+      title: 'Community Calendar | Web Design Agency Wetzlar',
+      description:
+        'Current events and dates from the Coday community in Wetzlar. Networking and knowledge sharing for entrepreneurs and web design enthusiasts in Hesse.',
+      path: '/en/community/calendar',
+      type: 'money',
+    });
+  }
   return generatePageMetadata({
-    title: 'Coday | calendar',
-    description: 'Erfahren Sie mehr über calendar',
-    path: `/${locale}`,
+    title: 'Community Kalender | Webdesign Agentur Wetzlar',
+    description:
+      'Aktuelle Events und Termine der Coday Community in Wetzlar. Networking und Wissensaustausch für Unternehmer und Webdesign Interessierte in Hessen.',
+    path: '/de/community/calendar',
     type: 'money',
   });
 }

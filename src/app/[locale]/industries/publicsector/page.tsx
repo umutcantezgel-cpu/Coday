@@ -10,10 +10,20 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  if (locale === 'en') {
+    return generatePageMetadata({
+      title: 'Web Design for Public Sector | Hesse Germany',
+      description:
+        'Accessible and GDPR-compliant websites for municipalities and authorities in Hesse. Secure web development by Coday from Wetzlar. Get in touch today.',
+      path: '/en/industries/publicsector',
+      type: 'money',
+    });
+  }
   return generatePageMetadata({
-    title: 'Coday | publicsector',
-    description: 'Erfahren Sie mehr über publicsector',
-    path: `/${locale}`,
+    title: 'Webdesign für Öffentlichen Sektor | Hessen',
+    description:
+      'Barrierefreie und DSGVO-konforme Webseiten für Kommunen und Behörden in Hessen. Sichere Webentwicklung von Coday aus Wetzlar. Jetzt Kontakt aufnehmen.',
+    path: '/de/industries/publicsector',
     type: 'money',
   });
 }

@@ -12,15 +12,17 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Crafts IT Solutions',
-      description: 'Custom software and IT solutions for the Crafts industry.',
+      title: 'Web Design for Craftsmen | Agency Wetzlar Hesse',
+      description:
+        'Professional websites for craft businesses in Wetzlar and Hesse. More orders through local visibility on Google. Personal service at a fixed price.',
       path: `/en/branchen/handwerker`,
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'Handwerker IT-Lösungen',
-    description: 'Maßgeschneiderte Software- und IT-Lösungen für die Branche Handwerker.',
+    title: 'Webdesign für Handwerker | Agentur Wetzlar Hessen',
+    description:
+      'Professionelle Webseiten für Handwerksbetriebe in Wetzlar und Hessen. Mehr Aufträge durch lokale Sichtbarkeit bei Google. Persönlich und zum Festpreis.',
     path: `/de/branchen/handwerker`,
     type: 'money',
   });

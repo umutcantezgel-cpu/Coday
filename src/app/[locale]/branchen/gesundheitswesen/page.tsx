@@ -12,15 +12,17 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Healthcare IT Solutions',
-      description: 'Custom software and IT solutions for the Healthcare industry.',
+      title: 'Web Design for Doctors & Clinics | Agency Hesse',
+      description:
+        'Professional practice websites for doctors in Wetzlar and Hesse. Attract patients through modern web design and local SEO optimization. Inquire today.',
       path: `/en/branchen/gesundheitswesen`,
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'Gesundheitswesen IT-Lösungen',
-    description: 'Maßgeschneiderte Software- und IT-Lösungen für die Branche Gesundheitswesen.',
+    title: 'Webdesign für Ärzte & Praxen | Agentur in Hessen',
+    description:
+      'Professionelle Praxis-Webseiten für Ärzte in Wetzlar und Hessen. Patientengewinnung durch modernes Webdesign und lokale SEO Optimierung. Jetzt anfragen.',
     path: `/de/branchen/gesundheitswesen`,
     type: 'money',
   });

@@ -28,17 +28,17 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Leading Web Design & Development Agency in Wetzlar & Hessen',
+      title: 'Web Design Agency in Wetzlar & Central Hesse',
       description:
-        'The #1 web agency in Wetzlar & Hessen. High-performance Next.js, React, TypeScript, Tailwind CSS & Framer Motion websites. Incomparable modern web solutions.',
+        'Your new website from a web designer in Wetzlar. Personal service, fixed price, online in 3 weeks. For craftsmen, doctors and businesses. Inquire now.',
       path: '/en',
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'Webdesign Wetzlar — Webseiten, die Kunden bringen | Coday',
+    title: 'Webdesign Agentur in Wetzlar & Mittelhessen',
     description:
-      'Ihre neue Webseite vom Webdesigner in Wetzlar. Persönlich, zum Festpreis, in 3 Wochen online. Jetzt kostenloses Erstgespräch sichern.',
+      'Ihre neue Webseite vom Webdesigner in Wetzlar. Persönlich, zum Festpreis, in 3 Wochen online. Für Handwerker, Ärzte und Gastronomen. Jetzt anfragen.',
     path: '/de',
     type: 'money',
   });

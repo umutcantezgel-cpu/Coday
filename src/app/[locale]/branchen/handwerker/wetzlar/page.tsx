@@ -33,7 +33,7 @@ export async function generateMetadata({
     });
   } catch (e) {
     return generatePageMetadata({
-      title: 'IT-Lösungen | Next.js & Webdesign',
+      title: 'Webdesign für Handwerker in Wetzlar | Agentur',
       description: 'Digitale Dominanz für Ihre Branche.',
       path: `/${locale}/branchen/handwerker/wetzlar`,
       type: 'money',

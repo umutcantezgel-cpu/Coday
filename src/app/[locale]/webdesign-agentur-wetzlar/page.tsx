@@ -13,15 +13,15 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Design Agency Wetzlar & Gießen | Coday',
+      title: 'Web Design Agency Wetzlar | Premium Development',
       description:
-        'Your high-end web design agency for Wetzlar, Gießen and the Lahn-Dill district. Next.js performance, local SEO dominance, and premium UX.',
+        'Your high-end web design agency for Wetzlar, Giessen and Lahn-Dill. Extreme performance with Next.js, local SEO dominance and premium UX design.',
       path: '/en/webdesign-agentur-wetzlar',
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'Webdesign Agentur Wetzlar & Gießen | Premium Webentwicklung',
+    title: 'Webdesign Agentur Wetzlar | Premium Webentwicklung',
     description:
       'Ihre High-End Webdesign Agentur für Wetzlar, Gießen und Lahn-Dill. Extreme Performance dank Next.js, lokale SEO-Dominanz und Premium UX Design.',
     path: '/de/webdesign-agentur-wetzlar',

@@ -10,10 +10,20 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  if (locale === 'en') {
+    return generatePageMetadata({
+      title: 'Web Design Academy | Knowledge for Central Hesse',
+      description:
+        'Learn web design basics at Coday Academy Wetzlar. Courses and tutorials for entrepreneurs and freelancers in Hesse. Start building your skills today.',
+      path: '/en/knowledge/academy',
+      type: 'money',
+    });
+  }
   return generatePageMetadata({
-    title: 'Coday | academy',
-    description: 'Erfahren Sie mehr über academy',
-    path: `/${locale}`,
+    title: 'Webdesign Academy | Wissen für Mittelhessen',
+    description:
+      'Lernen Sie Webdesign Grundlagen in der Coday Academy Wetzlar. Kurse und Tutorials für Unternehmer und Selbstständige in Hessen. Jetzt Wissen aufbauen.',
+    path: '/de/knowledge/academy',
     type: 'money',
   });
 }

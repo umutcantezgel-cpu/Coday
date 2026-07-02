@@ -10,10 +10,20 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  if (locale === 'en') {
+    return generatePageMetadata({
+      title: 'Web Design for Real Estate | Wetzlar Hesse Area',
+      description:
+        'Premium websites for real estate agents in Wetzlar and Hesse. Property listings, search features and lead generation through modern design. Inquire.',
+      path: '/en/industries/immobilien',
+      type: 'money',
+    });
+  }
   return generatePageMetadata({
-    title: 'Coday | immobilien',
-    description: 'Erfahren Sie mehr über immobilien',
-    path: `/${locale}`,
+    title: 'Webdesign für Immobilienmakler | Raum Wetzlar',
+    description:
+      'Hochwertige Webseiten für Immobilienmakler in Wetzlar und Hessen. Exposés, Objektsuche und Lead-Generierung durch modernes Webdesign. Jetzt anfragen.',
+    path: '/de/industries/immobilien',
     type: 'money',
   });
 }

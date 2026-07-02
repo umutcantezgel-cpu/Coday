@@ -10,16 +10,20 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  if (locale === 'en') {
+    return generatePageMetadata({
+      title: 'Book Free Consultation | Web Design Wetzlar',
+      description:
+        'Book your free 30-minute consultation with Coday in Wetzlar. Web design, SEO and development for local businesses in Hesse. Personal and no obligation.',
+      path: '/en/booking',
+      type: 'money',
+    });
+  }
   return generatePageMetadata({
-    title:
-      locale === 'de'
-        ? 'Termin buchen | Kostenloses Erstgespräch | Coday Wetzlar'
-        : 'Book Appointment | Free Consultation | Coday Wetzlar',
+    title: 'Erstgespräch buchen | Webdesigner Wetzlar Hessen',
     description:
-      locale === 'de'
-        ? 'Buchen Sie jetzt Ihr kostenloses 30-minütiges Beratungsgespräch mit Coday aus Wetzlar. Webdesign, Entwicklung und SEO — persönlich und unverbindlich.'
-        : 'Book your free 30-minute consultation with Coday from Wetzlar, Germany. Web design, development and SEO — personal and no obligation.',
-    path: `/${locale}/booking`,
+      'Buchen Sie Ihr kostenloses 30-Minuten-Beratungsgespräch mit Coday in Wetzlar. Webdesign, SEO und Entwicklung. Persönlich und unverbindlich anfragen.',
+    path: '/de/booking',
     type: 'money',
   });
 }

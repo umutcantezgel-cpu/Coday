@@ -41,18 +41,18 @@ export async function generateMetadata({
 
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Premium Web Design & Development Agency in Wetzlar & Hessen',
+      title: 'Web Design & Development Wetzlar | Fixed Price',
       description:
-        'The leading web agency in Wetzlar and Hessen. We build high-performance, modern websites using Next.js, React, TypeScript, Tailwind CSS, and Framer Motion. Results that speak for themselves.',
+        'Coday is your web design agency in Wetzlar and Central Hesse. Fast, modern websites at a fixed price with personal support. Get your free consultation.',
       path: '/en',
       type: 'money',
     });
   }
 
   return generatePageMetadata({
-    title: 'High-Performance Webentwicklung & Digitale Infrastruktur | Coday',
+    title: 'Webdesign & Webentwicklung Wetzlar | Festpreis',
     description:
-      'Ihre beste Webdesign und Webentwicklungsagentur im Raum Wetzlar und Hessen. Hochperformante Next.js, React, TypeScript, Tailwind & Framer Motion Webseiten. Unvergleichbare Ergebnisse.',
+      'Coday ist Ihre Webdesign Agentur in Wetzlar und Mittelhessen. Schnelle, moderne Webseiten zum Festpreis mit persönlicher Betreuung. Jetzt beraten lassen.',
     path: '/de',
     type: 'money',
   });
@@ -88,7 +88,7 @@ export default async function RootLayout({
         />
       </head>
       <body className="bg-secondary text-white antialiased" suppressHydrationWarning>
-        <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider messages={messages} locale={locale}>
           {(await draftMode()).isEnabled && (
             <>
               <div className="bg-blue-600 text-white text-center py-1 text-sm font-medium">

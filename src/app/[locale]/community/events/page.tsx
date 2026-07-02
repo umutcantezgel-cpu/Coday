@@ -10,10 +10,20 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  if (locale === 'en') {
+    return generatePageMetadata({
+      title: 'Events | Web Design Community Wetzlar Hesse',
+      description:
+        'Web design events and digital meetups by Coday in Wetzlar. Workshops, meetups and talks for the business community across Central Hesse region.',
+      path: '/en/community/events',
+      type: 'money',
+    });
+  }
   return generatePageMetadata({
-    title: 'Coday | events',
-    description: 'Erfahren Sie mehr über events',
-    path: `/${locale}`,
+    title: 'Events & Veranstaltungen | Webdesign Wetzlar',
+    description:
+      'Webdesign Events und digitale Veranstaltungen von Coday in Wetzlar. Workshops, Meetups und Vorträge für die Business Community in Mittelhessen.',
+    path: '/de/community/events',
     type: 'money',
   });
 }

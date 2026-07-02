@@ -5,11 +5,6 @@ import { NextResponse, type NextRequest } from 'next/server';
 const handleI18nRouting = createMiddleware(routing);
 
 export default function middleware(request: NextRequest) {
-  const url = request.nextUrl.clone();
-  if (url.pathname.startsWith('/en')) {
-    url.pathname = url.pathname.replace(/^\/en/, '/de');
-    return NextResponse.redirect(url, 301);
-  }
   return handleI18nRouting(request);
 }
 

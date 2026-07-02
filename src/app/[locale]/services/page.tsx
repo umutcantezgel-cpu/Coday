@@ -10,11 +10,20 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  if (locale === 'en') {
+    return generatePageMetadata({
+      title: 'Web Design & SEO Services | Agency in Wetzlar',
+      description:
+        'All web design and SEO services from your agency in Wetzlar at a glance. From business websites to online shops, everything from one source. Inquire now.',
+      path: '/en/services',
+      type: 'money',
+    });
+  }
   return generatePageMetadata({
-    title: 'Webseite erstellen lassen in Wetzlar & Mittelhessen | Coday',
+    title: 'Webdesign & SEO Leistungen | Agentur in Wetzlar',
     description:
-      'Wir erstellen Ihre Firmenwebseite in Wetzlar. Zuverlässig, schnell und sicher. Alle Leistungen aus einer Hand vom lokalen Webdesigner.',
-    path: `/${locale}`,
+      'Alle Webdesign und SEO Leistungen Ihrer Agentur in Wetzlar auf einen Blick. Von der Firmenwebseite bis zum Onlineshop, alles aus einer Hand. Anfragen.',
+    path: '/de/services',
     type: 'money',
   });
 }

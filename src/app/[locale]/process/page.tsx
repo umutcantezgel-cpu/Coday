@@ -10,10 +10,20 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  if (locale === 'en') {
+    return generatePageMetadata({
+      title: 'Our Web Design Process | How We Work in Wetzlar',
+      description:
+        'From first meeting to launch. Learn how Coday in Wetzlar delivers your web project. Personal, structured and always at the agreed fixed price point.',
+      path: '/en/process',
+      type: 'money',
+    });
+  }
   return generatePageMetadata({
-    title: 'Coday | process',
-    description: 'Willkommen bei Coday. Entdecken Sie unsere Leistungen.',
-    path: `/${locale}`,
+    title: 'Unser Webdesign Prozess | So arbeiten wir in Wetzlar',
+    description:
+      'Vom Erstgespräch bis zum Launch. Erfahren Sie wie Coday in Wetzlar Ihr Webprojekt umsetzt. Persönlich, strukturiert und immer zum vereinbarten Festpreis.',
+    path: '/de/process',
     type: 'money',
   });
 }

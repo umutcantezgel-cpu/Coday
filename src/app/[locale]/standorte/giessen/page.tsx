@@ -13,10 +13,18 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   try {
-    const filePath = path.join(process.cwd(), 'src', 'features', 'local-seo', 'model', 'content', 'giessen.json');
+    const filePath = path.join(
+      process.cwd(),
+      'src',
+      'features',
+      'local-seo',
+      'model',
+      'content',
+      'giessen.json'
+    );
     const fileContents = fs.readFileSync(filePath, 'utf8');
     const content = JSON.parse(fileContents);
-    
+
     return generatePageMetadata({
       title: content.meta.title,
       description: content.meta.description,
@@ -25,7 +33,7 @@ export async function generateMetadata({
     });
   } catch (e) {
     return generatePageMetadata({
-      title: 'Webagentur Gießen | Next.js & Webdesign',
+      title: 'Webdesign Agentur Gießen | Top Webseiten',
       description: 'Webagentur in Gießen.',
       path: `/${locale}/standorte/giessen`,
       type: 'money',
@@ -43,7 +51,15 @@ export default async function GiessenLocationPage({
 
   let content = null;
   try {
-    const filePath = path.join(process.cwd(), 'src', 'features', 'local-seo', 'model', 'content', 'giessen.json');
+    const filePath = path.join(
+      process.cwd(),
+      'src',
+      'features',
+      'local-seo',
+      'model',
+      'content',
+      'giessen.json'
+    );
     const fileContents = fs.readFileSync(filePath, 'utf8');
     content = JSON.parse(fileContents);
   } catch (e) {
@@ -51,7 +67,9 @@ export default async function GiessenLocationPage({
   }
 
   if (!content) {
-    return <div className="p-20 text-center">Gießen SEO Content is currently being generated...</div>;
+    return (
+      <div className="p-20 text-center">Gießen SEO Content is currently being generated...</div>
+    );
   }
 
   const cityData = getCityBySlug('giessen');

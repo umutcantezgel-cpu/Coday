@@ -13,11 +13,20 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  if (locale === 'en') {
+    return generatePageMetadata({
+      title: 'Web Design Marburg | Websites That Bring Clients',
+      description:
+        'Your web agency for Marburg and the surrounding area. High-performance websites that bring new clients. Personal and at a guaranteed fixed price.',
+      path: '/en/landingpages/marburg',
+      type: 'money',
+    });
+  }
   return generatePageMetadata({
-    title: 'Webdesign Agentur in Marburg | Coday',
+    title: 'Webdesign Marburg | Webseiten die Kunden bringen',
     description:
-      'Ihre Webagentur für Marburg. Hochperformante Webseiten, die messbar neue Kunden bringen. Regional, persönlich und zum Festpreis.',
-    path: `/${locale}/landingpages/marburg`,
+      'Ihre Webagentur für Marburg und Umgebung. Hochperformante Webseiten die messbar neue Kunden bringen. Persönlich und zum garantierten Festpreis. Anfragen.',
+    path: '/de/landingpages/marburg',
     type: 'money',
   });
 }

@@ -10,10 +10,20 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  if (locale === 'en') {
+    return generatePageMetadata({
+      title: 'Our Agency Culture | Web Design Wetzlar Hesse',
+      description:
+        'The culture at Coday in Wetzlar. Collaboration, innovation and passion for excellent web design. This is how we work at our agency in Hesse region.',
+      path: '/en/career/culture',
+      type: 'money',
+    });
+  }
   return generatePageMetadata({
-    title: 'Coday | culture',
-    description: 'Erfahren Sie mehr über culture',
-    path: `/${locale}`,
+    title: 'Unsere Agenturkultur | Webdesign Wetzlar Hessen',
+    description:
+      'Die Kultur bei Coday in Wetzlar. Kollaboration, Innovation und Leidenschaft für exzellentes Webdesign. So arbeiten wir in unserer Agentur in Hessen.',
+    path: '/de/career/culture',
     type: 'money',
   });
 }

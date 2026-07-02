@@ -13,10 +13,18 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   try {
-    const filePath = path.join(process.cwd(), 'src', 'features', 'local-seo', 'model', 'content', 'wetzlar.json');
+    const filePath = path.join(
+      process.cwd(),
+      'src',
+      'features',
+      'local-seo',
+      'model',
+      'content',
+      'wetzlar.json'
+    );
     const fileContents = fs.readFileSync(filePath, 'utf8');
     const content = JSON.parse(fileContents);
-    
+
     return generatePageMetadata({
       title: content.meta.title,
       description: content.meta.description,
@@ -26,7 +34,7 @@ export async function generateMetadata({
   } catch (e) {
     // Fallback if file doesn't exist yet
     return generatePageMetadata({
-      title: 'Webagentur Wetzlar | Next.js & Webdesign',
+      title: 'Webdesign Agentur Wetzlar | Top Webseiten',
       description: 'Lokale Expertise trifft auf High-End Tech.',
       path: `/${locale}/standorte/wetzlar`,
       type: 'money',
@@ -44,7 +52,15 @@ export default async function WetzlarLocationPage({
 
   let content = null;
   try {
-    const filePath = path.join(process.cwd(), 'src', 'features', 'local-seo', 'model', 'content', 'wetzlar.json');
+    const filePath = path.join(
+      process.cwd(),
+      'src',
+      'features',
+      'local-seo',
+      'model',
+      'content',
+      'wetzlar.json'
+    );
     const fileContents = fs.readFileSync(filePath, 'utf8');
     content = JSON.parse(fileContents);
   } catch (e) {
@@ -52,7 +68,9 @@ export default async function WetzlarLocationPage({
   }
 
   if (!content) {
-    return <div className="p-20 text-center">Wetzlar SEO Content is currently being generated...</div>;
+    return (
+      <div className="p-20 text-center">Wetzlar SEO Content is currently being generated...</div>
+    );
   }
 
   const cityData = getCityBySlug('wetzlar');

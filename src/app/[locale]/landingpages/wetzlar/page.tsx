@@ -13,11 +13,20 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  if (locale === 'en') {
+    return generatePageMetadata({
+      title: 'Web Design Wetzlar | Websites That Bring Clients',
+      description:
+        'Your web agency in Wetzlar. High-performance websites that measurably bring new clients. Regional, personal and at a guaranteed fixed price. Inquire.',
+      path: '/en/landingpages/wetzlar',
+      type: 'money',
+    });
+  }
   return generatePageMetadata({
-    title: 'Webdesign Agentur in Wetzlar | Coday',
+    title: 'Webdesign Wetzlar | Webseiten die Kunden bringen',
     description:
-      'Ihre Webagentur für Wetzlar. Hochperformante Webseiten, die messbar neue Kunden bringen. Regional, persönlich und zum Festpreis.',
-    path: `/${locale}/landingpages/wetzlar`,
+      'Ihre Webagentur in Wetzlar. Hochperformante Webseiten, die messbar neue Kunden bringen. Regional, persönlich und zum garantierten Festpreis. Anfragen.',
+    path: '/de/landingpages/wetzlar',
     type: 'money',
   });
 }

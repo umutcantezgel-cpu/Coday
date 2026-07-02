@@ -10,10 +10,20 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  if (locale === 'en') {
+    return generatePageMetadata({
+      title: 'Press & Media | Web Design Agency Wetzlar Hesse',
+      description:
+        'Press materials and media information from Coday, your web design agency in Wetzlar. Logos, press releases and company info at a glance for journalists.',
+      path: '/en/presse',
+      type: 'money',
+    });
+  }
   return generatePageMetadata({
-    title: 'Coday | presse',
-    description: 'Willkommen bei Coday. Entdecken Sie unsere Leistungen.',
-    path: `/${locale}`,
+    title: 'Pressebereich & Medien | Webdesign Agentur Wetzlar',
+    description:
+      'Pressematerial und Medieninformationen von Coday, Ihrer Webdesign Agentur in Wetzlar. Logos, Pressemitteilungen und Unternehmensinfos auf einen Blick.',
+    path: '/de/presse',
     type: 'money',
   });
 }

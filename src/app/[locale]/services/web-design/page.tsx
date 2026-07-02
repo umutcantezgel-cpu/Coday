@@ -3,19 +3,25 @@ import { generatePageMetadata } from '@/lib/metadata';
 import { WebDesignClient } from '@/features/services/ui/WebDesignClient';
 import { setRequestLocale } from 'next-intl/server';
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Design Services',
-      description: 'Premium UI/UX design. High conversion rates and beautiful aesthetics by Coday.',
+      title: 'Professional Web Design in Wetzlar & Hesse',
+      description:
+        'Premium web design by experts in Wetzlar. Modern layouts, high conversion rates and outstanding aesthetics for your business in Central Hesse. Get started.',
       path: '/en/services/web-design',
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'Webdesign Services',
-    description: 'Premium UI/UX Design. Hohe Konversionsraten und herausragende Ästhetik von Coday.',
+    title: 'Professionelles Webdesign in Wetzlar & Hessen',
+    description:
+      'Premium Webdesign vom Profi in Wetzlar. Moderne Layouts, hohe Konversionsraten und zeitlose Ästhetik für Unternehmen in Mittelhessen. Jetzt starten.',
     path: '/de/services/web-design',
     type: 'money',
   });

@@ -12,15 +12,17 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Automotive IT Solutions',
-      description: 'Custom software and IT solutions for the Automotive industry.',
+      title: 'Web Design for the Automotive Industry | Wetzlar',
+      description:
+        'Websites and digital solutions for car dealerships, workshops and automotive businesses in Wetzlar and Hesse. Premium web design by Coday. Get in touch.',
       path: `/en/branchen/automobil`,
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'Automobil IT-Lösungen',
-    description: 'Maßgeschneiderte Software- und IT-Lösungen für die Branche Automobil.',
+    title: 'Webdesign für die Automobilbranche | Wetzlar',
+    description:
+      'Websites und digitale Lösungen für Autohäuser, Werkstätten und KFZ-Betriebe in Wetzlar und Hessen. Premium Webdesign von Coday. Jetzt Termin buchen.',
     path: `/de/branchen/automobil`,
     type: 'money',
   });

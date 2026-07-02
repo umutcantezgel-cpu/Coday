@@ -10,10 +10,20 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  if (locale === 'en') {
+    return generatePageMetadata({
+      title: 'Our Work | Web Design Portfolio Wetzlar Hesse',
+      description:
+        'The complete web design portfolio from Coday in Wetzlar. Successful projects for businesses in Central Hesse and beyond. Get inspired by our work.',
+      path: '/en/work/work',
+      type: 'money',
+    });
+  }
   return generatePageMetadata({
-    title: 'Coday | work',
-    description: 'Erfahren Sie mehr über work',
-    path: `/${locale}`,
+    title: 'Unsere Arbeiten | Webdesign Portfolio Wetzlar',
+    description:
+      'Das komplette Webdesign Portfolio von Coday in Wetzlar. Erfolgreiche Projekte für Unternehmen in Mittelhessen und Hessen. Lassen Sie sich inspirieren.',
+    path: '/de/work/work',
     type: 'money',
   });
 }
@@ -24,11 +34,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
 
   return (
     <>
-      <SeoHead
-        title="Coday | work"
-        description="Erfahren Sie mehr über work"
-        pageType="default"
-      />
+      <SeoHead title="Coday | work" description="Erfahren Sie mehr über work" pageType="default" />
       <ClientComponent />
     </>
   );

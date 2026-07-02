@@ -33,7 +33,7 @@ export async function generateMetadata({
     });
   } catch (e) {
     return generatePageMetadata({
-      title: 'IT-Lösungen | Next.js & Webdesign',
+      title: 'Webdesign für Ärzte in Gießen | Praxis Homepage',
       description: 'Digitale Dominanz für Ihre Branche.',
       path: `/${locale}/branchen/gesundheitswesen/arzt-giessen`,
       type: 'money',

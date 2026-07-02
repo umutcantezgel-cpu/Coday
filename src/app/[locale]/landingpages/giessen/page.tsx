@@ -13,11 +13,20 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  if (locale === 'en') {
+    return generatePageMetadata({
+      title: 'Web Design Giessen | Websites That Bring Clients',
+      description:
+        'Your web agency for Giessen and the surrounding area. High-performance websites that bring new clients. Personal and at a guaranteed fixed price.',
+      path: '/en/landingpages/giessen',
+      type: 'money',
+    });
+  }
   return generatePageMetadata({
-    title: 'Webdesign Agentur in Gießen | Coday',
+    title: 'Webdesign Gießen | Webseiten die Kunden bringen',
     description:
-      'Ihre Webagentur für Gießen. Hochperformante Webseiten, die messbar neue Kunden bringen. Regional, persönlich und zum Festpreis.',
-    path: `/${locale}/landingpages/giessen`,
+      'Ihre Webagentur für Gießen und Umgebung. Hochperformante Webseiten die messbar neue Kunden bringen. Persönlich und zum garantierten Festpreis. Anfragen.',
+    path: '/de/landingpages/giessen',
     type: 'money',
   });
 }

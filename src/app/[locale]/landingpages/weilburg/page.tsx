@@ -13,11 +13,20 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  if (locale === 'en') {
+    return generatePageMetadata({
+      title: 'Web Design Weilburg | Local Professional Websites',
+      description:
+        'Your web agency for Weilburg and surrounding area. High-performance websites that bring new clients. Personal service at a guaranteed fixed price.',
+      path: '/en/landingpages/weilburg',
+      type: 'money',
+    });
+  }
   return generatePageMetadata({
-    title: 'Webdesign Agentur in Weilburg | Coday',
+    title: 'Webdesign Weilburg | Webseiten vom lokalen Profi',
     description:
-      'Ihre Webagentur für Weilburg. Hochperformante Webseiten, die messbar neue Kunden bringen. Regional, persönlich und zum Festpreis.',
-    path: `/${locale}/landingpages/weilburg`,
+      'Ihre Webagentur für Weilburg und Umgebung. Hochperformante Webseiten die messbar neue Kunden bringen. Persönlich und zum garantierten Festpreis. Anfragen.',
+    path: '/de/landingpages/weilburg',
     type: 'money',
   });
 }

@@ -9,17 +9,17 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Privacy Policy',
+      title: 'Privacy Policy | Web Design Agency Wetzlar Hesse',
       description:
-        'Privacy policy for codayweb.de — how we handle your data in compliance with GDPR.',
+        'Privacy policy of Coday, your web design agency in Wetzlar. GDPR-compliant data processing and your rights. Full transparency and data security.',
       path: '/en/legal/datenschutz',
       type: 'legal',
     });
   }
   return generatePageMetadata({
-    title: 'Datenschutzerklärung',
+    title: 'Datenschutzerklärung | Webdesign Agentur Wetzlar',
     description:
-      'Datenschutzerklärung von codayweb.de — DSGVO-konforme Datenverarbeitung und Ihre Rechte.',
+      'Datenschutzerklärung von Coday, Ihrer Webdesign Agentur in Wetzlar. DSGVO-konforme Datenverarbeitung und Ihre Rechte. Transparenz und Sicherheit.',
     path: '/de/legal/datenschutz',
     type: 'legal',
   });
@@ -57,7 +57,9 @@ export default async function DatenschutzPage({ params }: { params: Promise<{ lo
             : 'Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch (Art. 15-21 DSGVO).'}
         </p>
 
-        <h2 className="text-xl font-semibold text-secondary-900">{isEn ? '3. Hosting' : '3. Hosting'}</h2>
+        <h2 className="text-xl font-semibold text-secondary-900">
+          {isEn ? '3. Hosting' : '3. Hosting'}
+        </h2>
         <p>
           {isEn
             ? 'This website is hosted on Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA. Vercel processes server logs (IP address, browser, timestamp) to ensure operation.'

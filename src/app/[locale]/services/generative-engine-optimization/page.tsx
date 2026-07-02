@@ -13,17 +13,17 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Generative Engine Optimization (GEO) Agency | Coday',
+      title: 'GEO Agency Wetzlar | AI Search Optimization Hesse',
       description:
-        'Prepare your brand for the AI era. Generative Engine Optimization (GEO) ensures you dominate AI Overviews and ChatGPT search results.',
+        'Generative Engine Optimization by Coday in Wetzlar. Make your brand visible in AI Overviews and ChatGPT searches. For businesses in Central Hesse.',
       path: '/en/services/generative-engine-optimization',
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'Generative Engine Optimization (GEO) Agentur | Coday',
+    title: 'GEO Agentur Wetzlar | KI-Suchoptimierung Hessen',
     description:
-      'Machen Sie Ihre Marke bereit für die KI-Ära. Generative Engine Optimization (GEO) sichert Ihre Dominanz in AI Overviews und ChatGPT-Suchen.',
+      'Generative Engine Optimization von Coday in Wetzlar. Ihre Marke in AI Overviews und ChatGPT-Suchen sichtbar machen. Für Unternehmen in Mittelhessen.',
     path: '/de/services/generative-engine-optimization',
     type: 'money',
   });

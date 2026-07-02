@@ -10,10 +10,20 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  if (locale === 'en') {
+    return generatePageMetadata({
+      title: 'Web Design for Service Providers | Wetzlar Hesse',
+      description:
+        'Professional websites for service providers in Wetzlar and Hesse. Tax advisors, brokers and consultants win more clients online. Get started today.',
+      path: '/en/industries/dienstleistung',
+      type: 'money',
+    });
+  }
   return generatePageMetadata({
-    title: 'Coday | dienstleistung',
-    description: 'Erfahren Sie mehr über dienstleistung',
-    path: `/${locale}`,
+    title: 'Webdesign für Dienstleister | Wetzlar & Hessen',
+    description:
+      'Professionelle Webseiten für Dienstleister in Wetzlar und Hessen. Steuerberater, Makler und Berater gewinnen online mehr Kunden. Jetzt starten.',
+    path: '/de/industries/dienstleistung',
     type: 'money',
   });
 }

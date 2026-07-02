@@ -10,10 +10,20 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  if (locale === 'en') {
+    return generatePageMetadata({
+      title: 'Newsletter | Web Design Trends from Wetzlar Hesse',
+      description:
+        'Monthly web design and SEO tips from Coday in Wetzlar directly to your inbox. Exclusive knowledge for business owners in Hesse. Subscribe for free.',
+      path: '/en/knowledge/newsletter',
+      type: 'money',
+    });
+  }
   return generatePageMetadata({
-    title: 'Coday | newsletter',
-    description: 'Erfahren Sie mehr über newsletter',
-    path: `/${locale}`,
+    title: 'Newsletter | Webdesign Trends aus Wetzlar, Hessen',
+    description:
+      'Monatliche Webdesign und SEO Tipps von Coday in Wetzlar direkt in Ihr Postfach. Exklusives Wissen für Unternehmer in Hessen. Jetzt kostenlos anmelden.',
+    path: '/de/knowledge/newsletter',
     type: 'money',
   });
 }

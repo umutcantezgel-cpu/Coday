@@ -10,10 +10,20 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  if (locale === 'en') {
+    return generatePageMetadata({
+      title: 'Career & Benefits | Web Design Agency Wetzlar',
+      description:
+        'Work at Coday in Wetzlar. Attractive benefits, modern work environment and exciting web design projects in Central Hesse. Meet the team today.',
+      path: '/en/career/benefits',
+      type: 'money',
+    });
+  }
   return generatePageMetadata({
-    title: 'Coday | benefits',
-    description: 'Erfahren Sie mehr über benefits',
-    path: `/${locale}`,
+    title: 'Karriere & Benefits | Webdesign Agentur Wetzlar',
+    description:
+      'Arbeiten bei Coday in Wetzlar. Attraktive Benefits, modernes Arbeitsumfeld und spannende Webdesign Projekte in Mittelhessen. Jetzt Team kennenlernen.',
+    path: '/de/career/benefits',
     type: 'money',
   });
 }

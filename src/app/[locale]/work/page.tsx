@@ -13,17 +13,17 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Our Work — Client Projects & Case Studies',
+      title: 'Web Design References Wetzlar | Our Projects',
       description:
-        'See real client projects by Coday: Batherm, Schlüssel Schmiede Wetzlar, Lindener Ratsstuben, and more.',
+        'Real client projects by Coday in Wetzlar. Batherm, Schluessel Schmiede and more references from Central Hesse. See for yourself the quality of our work.',
       path: '/en/work',
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'Referenzen — Kundenprojekte & Case Studies',
+    title: 'Webdesign Referenzen Wetzlar | Unsere Projekte',
     description:
-      'Echte Kundenprojekte von Coday: Batherm, Schlüssel Schmiede Wetzlar, Lindener Ratsstuben und mehr.',
+      'Echte Kundenprojekte von Coday in Wetzlar. Batherm, Schlüssel Schmiede und weitere Referenzen aus Mittelhessen. Überzeugen Sie sich selbst von unserer Arbeit.',
     path: '/de/work',
     type: 'money',
   });

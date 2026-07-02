@@ -10,10 +10,20 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  if (locale === 'en') {
+    return generatePageMetadata({
+      title: 'Whitepapers & Studies | Web Design Agency Hesse',
+      description:
+        'Free whitepapers and studies on web design and digital marketing from Coday in Wetzlar. Expert knowledge for business owners across Central Hesse.',
+      path: '/en/knowledge/whitepapers',
+      type: 'money',
+    });
+  }
   return generatePageMetadata({
-    title: 'Coday | whitepapers',
-    description: 'Erfahren Sie mehr über whitepapers',
-    path: `/${locale}`,
+    title: 'Whitepapers & Studien | Webdesign Agentur Hessen',
+    description:
+      'Kostenlose Whitepapers und Studien zu Webdesign und digitalem Marketing von Coday in Wetzlar. Expertenwissen für Unternehmer in Mittelhessen.',
+    path: '/de/knowledge/whitepapers',
     type: 'money',
   });
 }

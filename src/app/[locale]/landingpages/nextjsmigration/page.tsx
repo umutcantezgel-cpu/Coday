@@ -10,10 +10,20 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  if (locale === 'en') {
+    return generatePageMetadata({
+      title: 'Next.js Migration Wetzlar | Website Upgrade Hesse',
+      description:
+        'Migrate your website to Next.js with Coday from Wetzlar. Better speed, improved SEO and future-proof technology for businesses in Central Hesse.',
+      path: '/en/landingpages/nextjsmigration',
+      type: 'money',
+    });
+  }
   return generatePageMetadata({
-    title: 'Coday | nextjsmigration',
-    description: 'Erfahren Sie mehr über nextjsmigration',
-    path: `/${locale}`,
+    title: 'Next.js Migration Wetzlar | Website Upgrade Hessen',
+    description:
+      'Migration Ihrer Website auf Next.js mit Coday aus Wetzlar. Mehr Speed, besseres SEO und zukunftssichere Technik für Unternehmen in Mittelhessen.',
+    path: '/de/landingpages/nextjsmigration',
     type: 'money',
   });
 }

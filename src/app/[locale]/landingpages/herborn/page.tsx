@@ -13,11 +13,20 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  if (locale === 'en') {
+    return generatePageMetadata({
+      title: 'Web Design Herborn | Local Professional Websites',
+      description:
+        'Your web agency for Herborn and the Lahn-Dill district. High-performance websites that bring new clients. Personal service at a fixed price.',
+      path: '/en/landingpages/herborn',
+      type: 'money',
+    });
+  }
   return generatePageMetadata({
-    title: 'Webdesign Agentur in Herborn | Coday',
+    title: 'Webdesign Herborn | Webseiten vom lokalen Profi',
     description:
-      'Ihre Webagentur für Herborn. Hochperformante Webseiten, die messbar neue Kunden bringen. Regional, persönlich und zum Festpreis.',
-    path: `/${locale}/landingpages/herborn`,
+      'Ihre Webagentur für Herborn und den Lahn-Dill-Kreis. Hochperformante Webseiten die messbar neue Kunden bringen. Persönlich und zum Festpreis. Anfragen.',
+    path: '/de/landingpages/herborn',
     type: 'money',
   });
 }

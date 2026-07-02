@@ -79,7 +79,7 @@ const CookieSettingsModal: React.FC<CookieSettingsModalProps> = ({ isOpen, onClo
               <button
                 onClick={onClose}
                 className="p-2 hover:bg-gray-100 rounded-full transition-colors motion-reduce:duration-[0.01ms] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-                aria-label={t('common.close')}
+                aria-label={t('close')}
               >
                 <OptimizedIcon icon={X} className="text-gray-500" aria-hidden="true" />
               </button>
@@ -166,13 +166,13 @@ const CookieSettingsModal: React.FC<CookieSettingsModalProps> = ({ isOpen, onClo
                 onClick={onClose}
                 className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors motion-reduce:duration-[0.01ms]"
               >
-                {t('common.cancel')}
+                {t('cancel')}
               </button>
               <button
                 onClick={handleSave}
                 className="px-4 py-2 text-sm font-medium text-white bg-primary rounded-lg hover:bg-primary-dark transition-colors motion-reduce:duration-[0.01ms]"
               >
-                {t('common.save')}
+                {t('save')}
               </button>
             </div>
           </m.div>

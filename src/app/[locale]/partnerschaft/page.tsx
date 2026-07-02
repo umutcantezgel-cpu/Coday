@@ -10,10 +10,20 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  if (locale === 'en') {
+    return generatePageMetadata({
+      title: 'Partner Program for Agencies | Web Design Hesse',
+      description:
+        'Become a Coday partner in Hesse. Together we offer your clients premium web design from Wetzlar. Attractive commissions and fair conditions for agencies.',
+      path: '/en/partnerschaft',
+      type: 'money',
+    });
+  }
   return generatePageMetadata({
-    title: 'Coday | partnerschaft',
-    description: 'Willkommen bei Coday. Entdecken Sie unsere Leistungen.',
-    path: `/${locale}`,
+    title: 'Partnerprogramm für Agenturen | Webdesign Hessen',
+    description:
+      'Werden Sie Coday Partner in Hessen. Gemeinsam bieten wir Ihren Kunden erstklassiges Webdesign aus Wetzlar. Attraktive Provisionen und faire Konditionen.',
+    path: '/de/partnerschaft',
     type: 'money',
   });
 }

@@ -3,25 +3,35 @@ import { generatePageMetadata } from '@/lib/metadata';
 import { WebDevelopmentClient } from '@/features/services/ui/WebDevelopmentClient';
 import { setRequestLocale } from 'next-intl/server';
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Development Services',
-      description: 'Custom React & Next.js web applications. High performance and modern architecture by Coday.',
+      title: 'Web Development Wetzlar | Next.js & React Agency',
+      description:
+        'Custom React and Next.js web applications from Wetzlar. High-performance architecture for businesses in Hesse. Discuss your project with us today.',
       path: '/en/services/web-development',
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'Webentwicklung Services',
-    description: 'Maßgeschneiderte React & Next.js Webanwendungen. High-Performance und moderne Architektur von Coday.',
+    title: 'Webentwicklung Wetzlar | Next.js & React Agentur',
+    description:
+      'Maßgeschneiderte React und Next.js Webanwendungen aus Wetzlar. High-Performance Architektur für Unternehmen in Hessen. Jetzt Ihr Projekt besprechen.',
     path: '/de/services/web-development',
     type: 'money',
   });
 }
 
-export default async function WebDevelopmentPage({ params }: { params: Promise<{ locale: string }> }) {
+export default async function WebDevelopmentPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
   const { locale } = await params;
   setRequestLocale(locale);
 

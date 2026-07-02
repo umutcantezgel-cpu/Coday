@@ -10,10 +10,20 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  if (locale === 'en') {
+    return generatePageMetadata({
+      title: 'Web Design for Craftsmen | Wetzlar & Hesse',
+      description:
+        'Professional websites for craft businesses in Wetzlar and Hesse. More orders through local visibility on Google. Personal service at a fixed price.',
+      path: '/en/industries/handwerk',
+      type: 'money',
+    });
+  }
   return generatePageMetadata({
-    title: 'Coday | handwerk',
-    description: 'Erfahren Sie mehr über handwerk',
-    path: `/${locale}`,
+    title: 'Webdesign für Handwerker | Wetzlar & Hessen',
+    description:
+      'Professionelle Webseiten für Handwerksbetriebe in Wetzlar und Hessen. Mehr Aufträge durch lokale Sichtbarkeit bei Google. Persönlich und zum Festpreis.',
+    path: '/de/industries/handwerk',
     type: 'money',
   });
 }

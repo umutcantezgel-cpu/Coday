@@ -10,10 +10,20 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  if (locale === 'en') {
+    return generatePageMetadata({
+      title: 'FAQ | Web Design Agency Wetzlar Central Hesse',
+      description:
+        'Answers to frequently asked questions about web design, pricing and process at Coday in Wetzlar. Everything business owners in Hesse need to know.',
+      path: '/en/knowledge/faq',
+      type: 'money',
+    });
+  }
   return generatePageMetadata({
-    title: 'Coday | faq',
-    description: 'Erfahren Sie mehr über faq',
-    path: `/${locale}`,
+    title: 'Häufige Fragen (FAQ) | Webdesign Agentur Wetzlar',
+    description:
+      'Antworten auf häufige Fragen zu Webdesign, Preisen und Ablauf bei Coday in Wetzlar. Alles was Unternehmer in Mittelhessen wissen müssen. Jetzt lesen.',
+    path: '/de/knowledge/faq',
     type: 'money',
   });
 }
@@ -24,11 +34,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
 
   return (
     <>
-      <SeoHead
-        title="Coday | faq"
-        description="Erfahren Sie mehr über faq"
-        pageType="default"
-      />
+      <SeoHead title="Coday | faq" description="Erfahren Sie mehr über faq" pageType="default" />
       <ClientComponent />
     </>
   );
