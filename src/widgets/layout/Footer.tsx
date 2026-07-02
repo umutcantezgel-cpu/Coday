@@ -28,7 +28,7 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Compact Logo Bar */}
         <div className="mb-12 border-b border-gray-800/50 pb-8">
-          <p className="text-center text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-6">
+          <p className="text-center text-[10px] font-bold uppercase tracking-widest text-gray-300 mb-6">
             {t('logobar.title', { defaultValue: 'Vertrauen schenken uns' })}
           </p>
           <div className="opacity-50 hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms] duration-300">
@@ -46,7 +46,7 @@ export const Footer: React.FC = () => {
                 className="h-10 sm:h-16 w-auto mb-6 !bg-transparent"
               />
             </div>
-            <p className="text-sm text-gray-400 max-w-xs mb-6 font-medium">{t('footer.slogan')}</p>
+            <p className="text-sm text-gray-300 max-w-xs mb-6 font-medium">{t('footer.slogan')}</p>
 
             {/* Trust Visual */}
             <div className="flex items-center gap-3 bg-white/5 p-3 rounded-xl border border-white/10 max-w-xs">
@@ -73,7 +73,7 @@ export const Footer: React.FC = () => {
 
           {/* Col 2: Main Navigation */}
           <nav aria-label={t('footer.sections.navigation', { defaultValue: 'Navigation' })}>
-            <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">
+            <h3 className="text-xs font-bold text-gray-300 uppercase tracking-wider mb-4">
               {t('footer.sections.navigation', { defaultValue: 'Navigation' })}
             </h3>
             <ul className="space-y-3">
@@ -146,7 +146,7 @@ export const Footer: React.FC = () => {
 
           {/* Col 3: Services */}
           <nav aria-label={t('footer.sections.services', { defaultValue: 'Services' })}>
-            <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">
+            <h3 className="text-xs font-bold text-gray-300 uppercase tracking-wider mb-4">
               {t('footer.sections.services', { defaultValue: 'Services' })}
             </h3>
             <ul className="space-y-3">
@@ -203,7 +203,7 @@ export const Footer: React.FC = () => {
 
           {/* Col 4: Regionales (SEO) */}
           <nav aria-label={t('footer.sections.regional', { defaultValue: 'Regionales' })}>
-            <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">
+            <h3 className="text-xs font-bold text-gray-300 uppercase tracking-wider mb-4">
               {t('footer.sections.regional', { defaultValue: 'Standorte & Branchen' })}
             </h3>
             <ul className="space-y-3">
@@ -252,7 +252,7 @@ export const Footer: React.FC = () => {
 
           {/* Col 5: Direct Contact details */}
           <div>
-            <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">
+            <h3 className="text-xs font-bold text-gray-300 uppercase tracking-wider mb-4">
               {t('footer.sections.contact', { defaultValue: 'Kontakt' })}
             </h3>
             <ul className="space-y-3 mb-6 text-sm text-gray-300">
@@ -272,7 +272,7 @@ export const Footer: React.FC = () => {
                   +49 176 41195301
                 </a>
               </li>
-              <li className="pt-2 text-gray-400">
+              <li className="pt-2 text-gray-300">
                 Umutcan Emre Tezgel (Coday)
                 <br />
                 Lessingstraße 4
@@ -299,7 +299,7 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <nav aria-label="Soziale Medien" className="flex gap-6 text-gray-400">
+          <nav aria-label="Soziale Medien" className="flex gap-6 text-gray-300">
             <a
               href="https://www.facebook.com/profile.php?id=61588758264018"
               target="_blank"
@@ -341,7 +341,7 @@ export const Footer: React.FC = () => {
           </nav>
           <nav
             aria-label="Rechtliche Informationen"
-            className="flex flex-wrap justify-center md:justify-end gap-x-4 gap-y-2 text-xs text-gray-400"
+            className="flex flex-wrap justify-center md:justify-end gap-x-4 gap-y-2 text-xs text-gray-300"
           >
             <Link
               href="/legal/agb"

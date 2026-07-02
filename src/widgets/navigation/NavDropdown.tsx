@@ -135,9 +135,7 @@ export const NavDropdown: React.FC<NavDropdownProps> = ({ title, items }) => {
       {/* Dropdown Menu */}
       <div
         id={menuId}
-        role="menu"
         aria-label={title}
-        aria-labelledby={buttonId}
         className={`absolute top-full left-1/2 -translate-x-1/2 w-64 pt-2 transition motion-reduce:duration-[0.01ms] duration-200 origin-top
           ${isOpen ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'}`}
       >
@@ -149,7 +147,6 @@ export const NavDropdown: React.FC<NavDropdownProps> = ({ title, items }) => {
                 key={index}
                 href={item.href}
                 ref={setMenuItemRef(index)}
-                role="menuitem"
                 tabIndex={isOpen ? 0 : -1}
                 aria-current={isActive ? 'page' : undefined}
                 className={`

@@ -89,9 +89,9 @@ export const QuickContactForm: React.FC = () => {
             className="relative z-10"
           >
             <div className="mb-6">
-              <h3 className="font-display font-bold text-2xl text-secondary-900 mb-2">
+              <h2 className="font-display font-bold text-2xl text-secondary-900 mb-2">
                 {t('quick_contact.title')}
-              </h3>
+              </h2>
               <p className="text-secondary-600 text-sm">{t('quick_contact.subtitle')}</p>
             </div>
 
@@ -107,14 +107,14 @@ export const QuickContactForm: React.FC = () => {
 
               <div className="space-y-1">
                 <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-secondary-400">
+                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-secondary-500">
                     <OptimizedIcon icon={User} className="w-5 h-5" />
                   </div>
                   <input
                     type="text"
                     {...register('name')}
                     placeholder={t('quick_contact.name_placeholder')}
-                    className="w-full pl-11 pr-4 py-3 bg-white/80 border border-neutral-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all placeholder:text-secondary-400 text-secondary-900"
+                    className="w-full pl-11 pr-4 py-3 bg-white/80 border border-neutral-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all placeholder:text-secondary-500 text-secondary-900"
                     disabled={isSubmitting}
                   />
                 </div>
@@ -125,14 +125,14 @@ export const QuickContactForm: React.FC = () => {
 
               <div className="space-y-1">
                 <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-secondary-400">
+                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-secondary-500">
                     <OptimizedIcon icon={Envelope} className="w-5 h-5" />
                   </div>
                   <input
                     type="email"
                     {...register('email')}
                     placeholder={t('quick_contact.email_placeholder')}
-                    className="w-full pl-11 pr-4 py-3 bg-white/80 border border-neutral-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all placeholder:text-secondary-400 text-secondary-900"
+                    className="w-full pl-11 pr-4 py-3 bg-white/80 border border-neutral-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all placeholder:text-secondary-500 text-secondary-900"
                     disabled={isSubmitting}
                   />
                 </div>
@@ -143,14 +143,14 @@ export const QuickContactForm: React.FC = () => {
 
               <div className="space-y-1">
                 <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-secondary-400">
+                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-secondary-500">
                     <OptimizedIcon icon={Phone} className="w-5 h-5" />
                   </div>
                   <input
                     type="tel"
                     {...register('phone')}
                     placeholder={t('quick_contact.phone_placeholder')}
-                    className="w-full pl-11 pr-4 py-3 bg-white/80 border border-neutral-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all placeholder:text-secondary-400 text-secondary-900"
+                    className="w-full pl-11 pr-4 py-3 bg-white/80 border border-neutral-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all placeholder:text-secondary-500 text-secondary-900"
                     disabled={isSubmitting}
                   />
                 </div>
@@ -192,9 +192,9 @@ export const QuickContactForm: React.FC = () => {
             <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-4">
               <OptimizedIcon icon={CheckCircle} className="w-8 h-8" />
             </div>
-            <h3 className="font-display font-bold text-2xl text-secondary-900 mb-2">
+            <h2 className="font-display font-bold text-2xl text-secondary-900 mb-2">
               {t('quick_contact.success_title')}
-            </h3>
+            </h2>
             <p className="text-secondary-600 mb-6">{t('quick_contact.success_subtitle')}</p>
             <button
               onClick={() => setSuccess(false)}
