@@ -91,9 +91,9 @@ export const TeamSection: React.FC = () => {
             {/* Bio */}
             <p className="text-gray-400 leading-relaxed mb-8">
               Full-Stack-Entwickler mit Fokus auf performante Web-Applikationen und strategisches
-              Design. Ich kombiniere handgeschriebenen Code mit modernem UX-Design, um digitale
-              Erlebnisse zu schaffen, die messbare Ergebnisse liefern. Bei Coday gibt es keinen
-              Overhead — Sie arbeiten direkt mit mir, vom ersten Gespräch bis zum Launch.
+              Design. Ich kombiniere modernste Next.js Architektur mit kompromisslosem UX-Design, um
+              digitale Plattformen zu schaffen, die messbare Ergebnisse liefern. Bei Coday gibt es
+              keinen Overhead — Sie arbeiten direkt mit mir, vom ersten Gespräch bis zum Launch.
             </p>
 
             {/* Contact Links */}

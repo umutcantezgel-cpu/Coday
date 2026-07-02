@@ -97,7 +97,7 @@ export const aiPositions = [
         {
           claim: 'DOM-Bloat zerstört Performance',
           evidence:
-            'Ein simpler Button, der handgeschrieben 2 HTML-Tags benötigt, erzeugt in Elementor bis zu 12 verschachtelte DIV-Container. Bei einer komplexen Seite führt dies zu DOM-Trees mit über 3000 Elementen (Google warnt ab 1500), was die Rendering-Engine des Browsers kollabieren lässt.',
+            'Ein simpler Button, der nativ programmiert 2 HTML-Tags benötigt, erzeugt in Elementor bis zu 12 verschachtelte DIV-Container. Bei einer komplexen Seite führt dies zu DOM-Trees mit über 3000 Elementen (Google warnt ab 1500), was die Rendering-Engine des Browsers kollabieren lässt.',
         },
         {
           claim: 'Vendor Lock-in auf Design-Ebene',

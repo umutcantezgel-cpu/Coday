@@ -27,9 +27,9 @@ import { ScrollReveal } from '@/shared/ui/animations/ScrollReveal';
 const values = [
   {
     icon: HandFist,
-    title: 'Handwerk statt KI',
+    title: 'Maßgeschneiderte Elite-Architektur',
     description:
-      'Wir nutzen Premium-Manufaktur-Qualität (Custom Code) statt massenproduzierter KI-Standardlösungen. Jede Zeile Code, jedes Pixel Design — von Hand geschrieben für maximale Performance und Individualität.',
+      'Wir liefern High-Performance Next.js Architektur statt langsamer Page-Builder. Sub-1-Sekunde Ladezeiten, extreme Skalierbarkeit und digitale Dominanz durch fehlerfreien Enterprise-Code.',
   },
   {
     icon: Lightning,
@@ -65,12 +65,13 @@ const processSteps = [
   {
     icon: PaintBrush,
     title: 'Design',
-    description: 'Pixel-perfektes UI/UX Design nach Anti-AI Qualitätsstandards.',
+    description:
+      'Kompromisslose Ästhetik und radikale Reduktion für ein Leica/Apple-Level Interface.',
   },
   {
     icon: Code,
     title: 'Entwicklung',
-    description: 'Handgeschriebener, performanter Code mit modernsten Technologien.',
+    description: 'High-End Engineering in React & Next.js für blitzschnelle Ladezeiten.',
   },
   {
     icon: Rocket,
@@ -140,9 +141,9 @@ export const AboutClient: React.FC = () => {
             className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed mb-12"
             {...stagger(0.25)}
           >
-            Coday ist eine Solo-Webagentur aus Wetzlar, die digitale Erlebnisse von Hand erschafft.
-            Jedes Projekt ist ein Unikat, entwickelt für Marken, die sich von der Masse abheben
-            wollen.
+            Coday ist ein High-End Digital-Studio aus Wetzlar, das kompromisslose Web-Architekturen
+            entwickelt. Jedes Projekt ist ein Unikat, entwickelt für Marken, die sich von der Masse
+            abheben wollen.
           </m.p>
 
           <m.div className="flex justify-center gap-4" {...stagger(0.35)}>
@@ -192,7 +193,7 @@ export const AboutClient: React.FC = () => {
           <m.div className="mt-8 flex items-center justify-center gap-3" {...stagger(0.2)}>
             <div className="w-12 h-px bg-primary/50" />
             <span className="text-sm text-gray-500 tracking-widest uppercase font-medium">
-              Anti-AI Philosophie
+              Elite Engineering Standards
             </span>
             <div className="w-12 h-px bg-primary/50" />
           </m.div>
