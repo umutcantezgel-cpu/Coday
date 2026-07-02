@@ -1,7 +1,6 @@
 import type { MetadataRoute } from 'next';
 
 const BASE_URL = 'https://www.codayweb.de';
-const SITEMAP_LIMIT = 50000;
 
 /**
  * Type for Sanity documents used in the sitemap.
@@ -16,7 +15,7 @@ type SanityDoc = {
 /**
  * Fetch data from Sanity via REST API.
  */
-async function fetchSanity<T>(query: string, isCount = false): Promise<T> {
+async function fetchSanity<T>(query: string): Promise<T> {
   const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'demo';
   const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || 'production';
   const url = `https://${projectId}.api.sanity.io/v2024-01-01/data/query/${dataset}?query=${encodeURIComponent(query)}`;
@@ -24,38 +23,46 @@ async function fetchSanity<T>(query: string, isCount = false): Promise<T> {
   try {
     const res = await fetch(url, { next: { revalidate: 3600 } });
     if (!res.ok) {
-      return (isCount ? 0 : []) as T;
+      return [] as T;
     }
     const data = await res.json();
     return data.result as T;
   } catch (error) {
     console.error('Sanity fetch error in sitemap:', error);
-    return (isCount ? 0 : []) as T;
+    return [] as T;
   }
 }
 
 /**
- * Helper to create a sitemap entry with both locale alternates.
+ * Helper to create a sitemap entry with Next.js 15 language alternates.
+ * Forces `lastModified` to `new Date()` to trigger immediate re-indexing by Google.
  */
 function sitemapEntry(
   path: string,
   opts: {
     changeFrequency: 'daily' | 'weekly' | 'monthly';
     priority: number;
-    lastModified?: Date;
   }
 ): MetadataRoute.Sitemap[number] {
   const cleanPath = path.replace(/^\/(en|de)/, '').replace(/\/$/, '') || '';
+
+  // We use the default locale /de as the main URL, but provide explicit alternates
   return {
     url: `${BASE_URL}/de${cleanPath}`,
-    lastModified: opts.lastModified ?? new Date(),
+    lastModified: new Date(), // Forces Google to re-index all pages immediately
     changeFrequency: opts.changeFrequency,
     priority: opts.priority,
+    alternates: {
+      languages: {
+        de: `${BASE_URL}/de${cleanPath}`,
+        en: `${BASE_URL}/en${cleanPath}`,
+      },
+    },
   };
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  // Static routes
+  // Static routes mapping
   const staticRoutes: MetadataRoute.Sitemap = [
     // === Core Pages (highest priority) ===
     sitemapEntry('/', { changeFrequency: 'monthly', priority: 1.0 }),
@@ -96,7 +103,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     sitemapEntry('/services/development/migration', { changeFrequency: 'monthly', priority: 0.6 }),
     sitemapEntry('/services/development/web-apps', { changeFrequency: 'monthly', priority: 0.6 }),
 
-    // === Standorte (Local SEO – high value) ===
+    // === Standorte (Local SEO) ===
     sitemapEntry('/standorte/wetzlar', { changeFrequency: 'monthly', priority: 0.9 }),
     sitemapEntry('/standorte/giessen', { changeFrequency: 'monthly', priority: 0.8 }),
     sitemapEntry('/standorte/hessen', { changeFrequency: 'monthly', priority: 0.8 }),
@@ -143,7 +150,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     sitemapEntry('/knowledge/blog', { changeFrequency: 'weekly', priority: 0.7 }),
     sitemapEntry('/knowledge/faq', { changeFrequency: 'monthly', priority: 0.6 }),
 
-    // === Legal (low priority, but must be in sitemap) ===
+    // === Legal ===
     sitemapEntry('/legal/impressum', { changeFrequency: 'monthly', priority: 0.3 }),
     sitemapEntry('/legal/datenschutz', { changeFrequency: 'monthly', priority: 0.3 }),
     sitemapEntry('/legal/agb', { changeFrequency: 'monthly', priority: 0.3 }),
@@ -166,7 +173,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
   `;
 
-  const dynamicDocs = await fetchSanity<SanityDoc[]>(query, false);
+  const dynamicDocs = await fetchSanity<SanityDoc[]>(query);
 
   const dynamicRoutes: MetadataRoute.Sitemap = dynamicDocs.map((doc) => {
     let routePrefix = '';
@@ -202,7 +209,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     return sitemapEntry(path, {
       changeFrequency,
       priority,
-      lastModified: new Date(doc._updatedAt),
     });
   });
 
