@@ -227,7 +227,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  href="/branchen/gesundheit"
+                  href="/branchen/gesundheitswesen/arzt-wetzlar"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
                   Praxis-Website Wetzlar
@@ -235,7 +235,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  href="/branchen/gesundheit"
+                  href="/branchen/gesundheitswesen/arzt-giessen"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
                   Praxis-Website Gießen
@@ -243,7 +243,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  href="/branchen/handwerk"
+                  href="/branchen/handwerker/wetzlar"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
                   Handwerker Wetzlar

@@ -342,7 +342,7 @@ export const AboutClient: React.FC = () => {
                 <span className="block text-sm uppercase tracking-wider text-primary mb-2">
                   Gründungsjahr
                 </span>
-                <strong className="text-white text-lg font-medium">2024</strong>
+                <strong className="text-white text-lg font-medium">2026</strong>
               </div>
               <div>
                 <span className="block text-sm uppercase tracking-wider text-primary mb-2">
@@ -363,7 +363,7 @@ export const AboutClient: React.FC = () => {
                   '@type': 'Person',
                   name: 'Umur Eyigün',
                 },
-                foundingDate: '2024',
+                foundingDate: '2026',
                 address: {
                   '@type': 'PostalAddress',
                   addressLocality: 'Wetzlar',
