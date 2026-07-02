@@ -26,27 +26,32 @@ export function generateRobotsMeta(opts: {
 /**
  * Generate canonical + hreflang alternates from a locale-prefixed path.
  * The canonical always points to the current page's absolute URL.
- * Hreflang includes de, and x-default (pointing to de).
- * We remove EN alternates to prevent them from ranking in German SERPs.
+ * Hreflang includes de, en, and x-default (pointing to de).
  */
 export function generateAlternates(path: string): Metadata['alternates'] {
   // Strip locale prefix to get the route segment
   const cleanPath = path.replace(/^\/(en|de)/, '').replace(/\/$/, '') || '';
 
   let dePath = `/de${cleanPath}`;
+  let enPath = `/en${cleanPath}`;
 
   // Handle localized routing maps
   if (cleanPath.startsWith('/industries')) {
     dePath = `/de${cleanPath.replace(/^\/industries/, '/branchen')}`;
   }
+  if (cleanPath.startsWith('/branchen')) {
+    enPath = `/en${cleanPath.replace(/^\/branchen/, '/industries')}`;
+  }
 
-  // Canonical points to the German path
-  const canonicalPath = dePath;
+  // Canonical points to the current locale's path
+  const isEn = path.startsWith('/en');
+  const canonicalPath = isEn ? enPath : dePath;
 
   return {
     canonical: `${BASE_URL}${canonicalPath}`,
     languages: {
       de: `${BASE_URL}${dePath}`,
+      en: `${BASE_URL}${enPath}`,
       'x-default': `${BASE_URL}${dePath}`,
     },
   };

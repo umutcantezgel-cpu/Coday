@@ -19,6 +19,7 @@ import { TestimonialsSection } from '@/widgets/home/TestimonialsSection';
 import { PortfolioTeaserSection } from '@/widgets/home/PortfolioTeaserSection';
 import AgencyComparisonTable from '@/features/analyzer/ui/AgencyComparisonTable';
 import { ScrollReveal } from '@/shared/ui/animations/ScrollReveal';
+import { SeoContentSection } from '@/widgets/home/SeoContentSection';
 
 export async function generateMetadata({
   params,
@@ -156,6 +157,8 @@ export default async function HomePage() {
           <TestimonialsSection />
         </React.Suspense>
       </ScrollReveal>
+
+      <SeoContentSection />
     </>
   );
 }

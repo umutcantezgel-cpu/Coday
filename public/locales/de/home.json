@@ -164,5 +164,16 @@
     "eyebrow": "5,0 Sterne auf ProvenExpert",
     "headingPrefix": "Modernste Technologie",
     "headingSuffix": "für maximale Performance"
+  },
+  "seo_content": {
+    "title": "Ihre Webdesign Agentur in Wetzlar",
+    "subtitle": "Websites, die wirklich neue Kunden gewinnen – für Handwerker, Praxen und lokale Unternehmen in Mittelhessen.",
+    "paragraphs": [
+      "Als Webdesign Agentur in Wetzlar entwickeln wir professionelle Websites, die nicht nur gut aussehen, sondern messbar mehr Kunden bringen. Ob Handwerksbetrieb, Arztpraxis, Restaurant oder lokaler Dienstleister – wir verstehen die Anforderungen regionaler Unternehmen in Wetzlar, Gießen, Marburg und ganz Mittelhessen. Unsere Websites werden mit modernsten Technologien wie React und Next.js gebaut und laden in unter einer Sekunde.",
+      "Was uns von anderen Webdesign Agenturen unterscheidet: Bei Coday arbeiten Sie direkt mit dem Entwickler, nicht mit einem Vertriebsmittler. Sie erhalten Festpreise ab 2.000 Euro – ohne versteckte Kosten, ohne Stundenabrechnungen. Und der gesamte Code gehört Ihnen: kein Vendor Lock-in, keine monatlichen Lizenzgebühren, keine Abhängigkeit von Baukästen wie WordPress oder Wix.",
+      "Unsere Kunden – darunter Batherm Sanitär & Heizung, Schlüsseldienst Wetzlar und die Lindener Ratsstuben – bestätigen: Seit dem Relaunch erhalten sie deutlich mehr lokale Anfragen über Google. Das liegt an unserer Kombination aus technischer Performance (Ladezeit unter 1 Sekunde, perfekte Core Web Vitals) und durchdachter lokaler Suchmaschinenoptimierung. Wir optimieren Ihre Website für genau die Suchbegriffe, mit denen Ihre Kunden nach Ihren Leistungen suchen.",
+      "Sie möchten wissen, ob eine neue Website für Ihr Unternehmen in Wetzlar oder Mittelhessen sinnvoll ist? Vereinbaren Sie ein kostenloses Erstgespräch – persönlich, unverbindlich und ohne Verkaufsdruck. In 30 Minuten zeigen wir Ihnen, wo Ihre aktuelle Website Potenzial verschenkt und wie eine moderne, schnelle Website Ihnen konkret mehr Kunden bringen kann."
+    ],
+    "cta": "Kostenloses Erstgespräch vereinbaren"
   }
 }
