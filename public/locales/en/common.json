@@ -86,7 +86,7 @@
     }
   },
   "hero": {
-    "subtitle": "In-depth analyses, strategies, and news from the world of digital domination.",
+    "subtitle": "In-depth analyses, strategies, and news on modern web design and local marketing.",
     "title": "Blog & Insights"
   },
   "loading": "Loading language...",
@@ -264,7 +264,7 @@
         "label": "Migrations"
       },
       "enterprise": {
-        "label": "Enterprise Platforms",
+        "label": "Web Applications",
         "desc": "Portals & Systems"
       },
       "design": {
@@ -350,8 +350,8 @@
     "linkedin": "LinkedIn"
   },
   "announcement": {
-    "text": "Enterprise-Audit: Kostenlose Potenzialanalyse verfügbar.",
-    "cta": "Angebot sichern →"
+    "text": "Free Website Analysis: See how you compare to your competition.",
+    "cta": "Check now →"
   },
   "actions": {
     "read_more": "Read more"

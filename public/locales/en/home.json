@@ -1,18 +1,18 @@
 {
   "hero": {
-    "headline_gradient": "measurable results.",
-    "headline_prefix": "Digital infrastructure for",
-    "description": "Your website isn\u2019t a brochure \u2013 it\u2019s your best salesperson. We build lightning-fast platforms that filter out price shoppers and attract high-value premium clients. Fixed pricing. Full code ownership. Zero risk.",
+    "headline_gradient": "win more clients.",
+    "headline_prefix": "Websites that actually",
+    "description": "Your website isn't a brochure – it's your best salesperson. We build lightning-fast websites for craftsmen, practices, and local businesses in Wetzlar and Central Hesse. Fixed pricing. Full code ownership. Zero risk.",
     "rotating": [
-      "Google Page 1 in 90 days.",
+      "5.0 stars on ProvenExpert.",
       "Load time under 1 second.",
       "100% code ownership guaranteed.",
-      "+250% more qualified leads."
+      "Fixed pricing from €2,000 – transparent."
     ],
-    "title": "AI-Augmented Web Development",
-    "subtitle": "High-end websites with React, TypeScript, and Headless CMS. Fixed pricing from €2,000.",
-    "cta": "Free Potential Audit",
-    "eyebrow": "Measurable Growth & High-End Performance",
+    "title": "Web Design & Development from Wetzlar",
+    "subtitle": "Professional websites with React & Next.js for trades, healthcare, and local service providers. Fixed pricing from €2,000.",
+    "cta": "Free Consultation",
+    "eyebrow": "Web Design Agency in Wetzlar – since 2024",
     "view_projects": "See Results"
   },
   "industries": {
@@ -25,7 +25,7 @@
       "title": "Craft & Construction"
     },
     "card_health": {
-      "desc": "Trustworthy web presence.",
+      "desc": "Trustworthy web presence for practices.",
       "title": "Health"
     },
     "card_realestate": {
@@ -40,18 +40,18 @@
     "title_suffix": "Your Industry."
   },
   "meta": {
-    "description": "The leading web design and development agency in Wetzlar and Hessen. High-performance Next.js, React, TypeScript, Tailwind CSS websites. Incomparable results.",
-    "title": "Best Web Agency in Wetzlar & Hessen | High-Performance Web Design - Coday"
+    "description": "Web design agency in Wetzlar and Central Hesse. Professional websites with Next.js and React for trades, practices, and local businesses. 5.0 stars. Fixed pricing.",
+    "title": "Web Design Agency Wetzlar | Professional Websites | Coday"
   },
   "images": {
     "trust_collaboration": "Trusting Collaboration with your Web Design Agency Coday",
-    "satisfied_partners": "Satisfied Partners of the Web Design Agency Coday"
+    "satisfied_partners": "Satisfied Clients of Web Design Agency Coday in Wetzlar"
   },
   "philosophy": {
     "history": "Are History.",
     "standard": "Coday is the new Standard.",
     "text_overhead": "Traditional agencies charge you for endless overhead, countless meetings, and outdated processes. The classic agency model wastes your valuable time and budget.",
-    "text_standard": "Coday is the antithesis: We combine strategic design with uncompromisingly fast, custom code. No templates. No excuses. Only one goal: your maximum growth.",
+    "text_standard": "Coday is the antithesis: We combine strategic design with uncompromisingly fast, custom code. No templates. No excuses. Only one goal: your measurable growth.",
     "traditional": "Traditional Agencies"
   },
   "stats": {
@@ -70,35 +70,35 @@
     "title_suffix": "Technology Stack"
   },
   "testimonials": {
-    "excellence": "Excellence as Standard.",
-    "rating": "5.0 Star Rating",
-    "text": "From ambitious SMEs to enterprise corporations: We deliver digital excellence you can unconditionally rely on.",
+    "excellence": "Real results, real clients.",
+    "rating": "5.0 Stars on ProvenExpert",
+    "text": "From craft businesses to medical practices: We build websites that measurably bring in more clients.",
     "title_prefix": "Clients who",
     "title_suffix": "Trust Us.",
     "items": [
       {
-        "quote": "Coday completely revolutionized our digital presence. The new website is not only extremely fast, but perfectly reflects the quality of our work.",
-        "authorName": "Management",
-        "authorPosition": "Owner",
-        "authorCompany": "Batherm"
+        "quote": "Coday elevated our digital presence to a completely new level. The new website is not only extremely fast, but perfectly reflects the quality of our work.",
+        "authorName": "Deniz Tezgel",
+        "authorPosition": "Managing Director",
+        "authorCompany": "Batherm Sanitär & Heizung"
       },
       {
         "quote": "Since launching the new website, we have seen a significant increase in local inquiries. The load time is phenomenal and the SEO performance speaks for itself.",
-        "authorName": "Management",
+        "authorName": "Murat S.",
         "authorPosition": "Owner",
         "authorCompany": "MS Schlüsseldienst Wetzlar"
       },
       {
         "quote": "Our guests love the new online menu and the easy-to-use system. Working with Coday was highly professional, fast, and absolutely seamless.",
-        "authorName": "Management",
-        "authorPosition": "Owner",
+        "authorName": "Team Lindener Ratsstuben",
+        "authorPosition": "Restaurant",
         "authorCompany": "Lindener Ratsstuben"
       }
     ]
   },
   "comparison": {
     "title_prefix": "Traditional vs.",
-    "subtitle": "Stop paying for inefficiency. Choose the agency that delivers results.",
+    "subtitle": "Stop paying for inefficiency. Choose the agency that delivers proven results.",
     "columns": {
       "metric": "Metric",
       "agency": "Traditional Agency"
@@ -112,12 +112,12 @@
       "pricing": {
         "name": "Pricing Model",
         "old": "Hourly Rates & Hidden Costs",
-        "new": "Flat Rate & Transparent"
+        "new": "Fixed Prices & Transparent"
       },
       "tech": {
         "name": "Technology",
         "old": "WordPress / Builders (Slow)",
-        "new": "Next.js / React (Instant)"
+        "new": "Next.js / React (Lightning Fast)"
       },
       "rights": {
         "name": "Rights",
@@ -134,35 +134,35 @@
   "services": {
     "label": "Our Services",
     "title_prefix": "We offer",
-    "title_suffix": "Premium Services.",
+    "title_suffix": "professional web services.",
     "items": {
       "web_dev": {
         "title": "Web Development",
-        "description": "High-performance websites and applications built with modern frameworks."
+        "description": "Fast, modern websites and web applications – built with React and Next.js."
       },
       "web_design": {
         "title": "UX/UI Design",
-        "description": "Conversion-optimized, user-centric designs for maximum performance."
+        "description": "Conversion-optimized, user-centric designs that turn visitors into clients."
       },
       "growth": {
-        "title": "Digital Growth",
-        "description": "Data-driven SEO and performance strategies to scale your enterprise."
+        "title": "Local SEO",
+        "description": "Data-driven SEO strategies so you get found in Wetzlar and the surrounding area."
       }
     },
     "cta": "View all services"
   },
   "logobar": {
-    "title": "Trusted by innovative companies"
+    "title": "Trusted by local businesses"
   },
   "portfolio_teaser": {
-    "overline": "Proven Results",
+    "overline": "Real Results",
     "title": "Our work speaks for itself.",
-    "subtitle": "No assembly-line templates. Only hand-crafted high-performance platforms that exude dominance.",
-    "cta": "All Case Studies"
+    "subtitle": "No assembly-line templates. Only hand-crafted websites that measurably bring in more clients.",
+    "cta": "View all case studies"
   },
   "techStack": {
-    "eyebrow": "The Best Agency in Hessen",
-    "headingPrefix": "Incomparable Architecture",
+    "eyebrow": "5.0 Stars on ProvenExpert",
+    "headingPrefix": "Cutting-Edge Technology",
     "headingSuffix": "for maximum performance"
   }
 }

@@ -1,18 +1,18 @@
 {
   "hero": {
-    "headline_gradient": "messbare Ergebnisse.",
-    "headline_prefix": "Digitale Infrastrukturen für",
-    "description": "Ihre Website ist kein Aushängeschild – sie ist Ihr bester Vertriebsmitarbeiter. Wir entwickeln blitzschnelle Plattformen, die nervige Preisanfragen filtern und kaufkräftige Premium-Kunden anziehen. Festpreise. Volle Code-Eigentumsr\u00fcckgabe. Null Risiko.",
+    "headline_gradient": "mehr Kunden gewinnen.",
+    "headline_prefix": "Websites, die wirklich",
+    "description": "Ihre Website ist kein Aushängeschild – sie ist Ihr bester Vertriebsmitarbeiter. Wir bauen blitzschnelle Websites für Handwerker, Praxen und lokale Unternehmen in Wetzlar und Mittelhessen. Festpreise. Voller Code gehört Ihnen. Kein Risiko.",
     "rotating": [
-      "Google Seite 1 in 90 Tagen.",
+      "5,0 Sterne auf ProvenExpert.",
       "Ladezeit unter 1 Sekunde.",
       "100% Code-Eigentum garantiert.",
-      "+250% mehr qualifizierte Anfragen."
+      "Festpreise ab 2.000 € – transparent."
     ],
-    "title": "AI-augmented Webentwicklung",
-    "subtitle": "High-End Websites mit React, TypeScript und Headless CMS. Festpreise ab 2.000 €.",
-    "cta": "Kostenloses Potenzial-Audit",
-    "eyebrow": "Messbares Wachstum & High-End Performance",
+    "title": "Webdesign & Entwicklung aus Wetzlar",
+    "subtitle": "Professionelle Websites mit React & Next.js für Handwerk, Gesundheitswesen und lokale Dienstleister. Festpreise ab 2.000 €.",
+    "cta": "Kostenloses Erstgespräch",
+    "eyebrow": "Webdesign-Agentur in Wetzlar – seit 2024",
     "view_projects": "Ergebnisse ansehen"
   },
   "industries": {
@@ -25,7 +25,7 @@
       "title": "Handwerk & Bau"
     },
     "card_health": {
-      "desc": "Vertrauenswürdige Webauftritte.",
+      "desc": "Vertrauenswürdige Webauftritte für Praxen.",
       "title": "Gesundheit"
     },
     "card_realestate": {
@@ -37,21 +37,21 @@
       "title": "Online-Shop"
     },
     "title_prefix": "Maßgeschneiderte Lösungen für",
-    "title_suffix": "Ihre Industrie."
+    "title_suffix": "Ihre Branche."
   },
   "meta": {
-    "description": "Die führende Webdesign und Webentwicklungsagentur im Raum Wetzlar und Hessen. Hochperformante Next.js, React, TypeScript, Tailwind CSS Webseiten. Unvergleichbare Ergebnisse.",
-    "title": "High-Performance Webentwicklung & Digitale Infrastruktur | Coday"
+    "description": "Webdesign-Agentur in Wetzlar und Mittelhessen. Professionelle Websites mit Next.js und React für Handwerk, Praxen und lokale Unternehmen. 5,0 Sterne. Festpreise.",
+    "title": "Webdesign Agentur Wetzlar | Professionelle Websites | Coday"
   },
   "images": {
     "trust_collaboration": "Vertrauensvolle Zusammenarbeit mit Ihrer Webdesign Agentur Coday",
-    "satisfied_partners": "Zufriedene Partner der Webdesign Agentur Coday"
+    "satisfied_partners": "Zufriedene Kunden der Webdesign Agentur Coday in Wetzlar"
   },
   "philosophy": {
     "history": "Sind Geschichte.",
     "standard": "Coday ist der neue Standard.",
     "text_overhead": "Traditionelle Agenturen berechnen Ihnen endlosen Overhead, zahllose Meetings und veraltete Prozesse. Das klassische Agenturmodell raubt Ihre wertvolle Zeit und Ihr Budget.",
-    "text_standard": "Coday ist die Antithese: Wir vereinen strategisches Design mit kompromisslos schnellem, maßgeschneidertem Code. Keine Baukästen. Keine Ausreden. Nur ein Ziel: Ihr maximales Wachstum.",
+    "text_standard": "Coday ist die Antithese: Wir vereinen strategisches Design mit kompromisslos schnellem, maßgeschneidertem Code. Keine Baukästen. Keine Ausreden. Nur ein Ziel: Ihr messbares Wachstum.",
     "traditional": "Traditionelle Agenturen"
   },
   "stats": {
@@ -70,35 +70,35 @@
     "title_suffix": "Technologie-Paket"
   },
   "testimonials": {
-    "excellence": "Exzellenz als Standard.",
-    "rating": "5.0 Sterne Bewertung",
-    "text": "Vom ambitionierten Mittelstand bis zum Enterprise-Konzern: Wir liefern digitale Exzellenz, auf die Sie sich bedingungslos verlassen können.",
+    "excellence": "Echte Ergebnisse, echte Kunden.",
+    "rating": "5,0 Sterne auf ProvenExpert",
+    "text": "Vom Handwerksbetrieb bis zur Arztpraxis: Wir bauen Websites, die nachweislich mehr Kunden bringen.",
     "title_prefix": "Kunden, die",
     "title_suffix": "Uns Vertrauen.",
     "items": [
       {
-        "quote": "Coday hat unsere digitale Präsenz komplett revolutioniert. Die neue Website ist nicht nur extrem schnell, sondern spiegelt die Qualität unserer Arbeit perfekt wider.",
-        "authorName": "Geschäftsführung",
-        "authorPosition": "Inhaber",
-        "authorCompany": "Batherm"
+        "quote": "Coday hat unsere digitale Präsenz komplett auf ein neues Level gehoben. Die neue Website ist nicht nur extrem schnell, sondern spiegelt die Qualität unserer Arbeit perfekt wider.",
+        "authorName": "Deniz Tezgel",
+        "authorPosition": "Geschäftsführer",
+        "authorCompany": "Batherm Sanitär & Heizung"
       },
       {
         "quote": "Seit wir die neue Website haben, erhalten wir deutlich mehr lokale Anfragen. Die Ladezeit ist phänomenal und die SEO-Performance spricht für sich.",
-        "authorName": "Geschäftsführung",
+        "authorName": "Murat S.",
         "authorPosition": "Inhaber",
         "authorCompany": "MS Schlüsseldienst Wetzlar"
       },
       {
         "quote": "Unsere Gäste lieben die neue Online-Speisekarte und das einfache System. Die Zusammenarbeit mit Coday war hochprofessionell, schnell und absolut reibungslos.",
-        "authorName": "Geschäftsführung",
-        "authorPosition": "Inhaber",
+        "authorName": "Team Lindener Ratsstuben",
+        "authorPosition": "Gastronomie",
         "authorCompany": "Lindener Ratsstuben"
       }
     ]
   },
   "comparison": {
     "title_prefix": "Traditionell vs.",
-    "subtitle": "Hören Sie auf, für Ineffizienz zu bezahlen. Wählen Sie die Agentur, die Ergebnisse liefert.",
+    "subtitle": "Hören Sie auf, für Ineffizienz zu bezahlen. Wählen Sie die Agentur, die nachweislich liefert.",
     "columns": {
       "metric": "Metrik",
       "agency": "Traditionelle Agentur"
@@ -112,12 +112,12 @@
       "pricing": {
         "name": "Preismodell",
         "old": "Stundensätze & Versteckte Kosten",
-        "new": "Flat Rate & Transparent"
+        "new": "Festpreise & Transparent"
       },
       "tech": {
         "name": "Technologie",
         "old": "WordPress / Baukästen (Langsam)",
-        "new": "Next.js / React (Instant)"
+        "new": "Next.js / React (Blitzschnell)"
       },
       "rights": {
         "name": "Rechte",
@@ -134,35 +134,35 @@
   "services": {
     "label": "Unsere Leistungen",
     "title_prefix": "Wir bieten",
-    "title_suffix": "Premium Services.",
+    "title_suffix": "professionelle Webservices.",
     "items": {
       "web_dev": {
-        "title": "Web Development",
-        "description": "High-Performance Websites und Applikationen gebaut mit modernen Frameworks."
+        "title": "Webentwicklung",
+        "description": "Schnelle, moderne Websites und Webanwendungen – gebaut mit React und Next.js."
       },
       "web_design": {
         "title": "UX/UI Design",
-        "description": "Konversionsoptimierte, nutzerzentrierte Designs für maximale Performance."
+        "description": "Konversionsoptimierte, nutzerzentrierte Designs, die aus Besuchern Kunden machen."
       },
       "growth": {
-        "title": "Digital Growth",
-        "description": "Datengestützte SEO und Performance-Strategien zur Skalierung Ihres Unternehmens."
+        "title": "Lokales SEO",
+        "description": "Datengestützte SEO-Strategien, damit Sie in Wetzlar und Umgebung gefunden werden."
       }
     },
     "cta": "Alle Leistungen ansehen"
   },
   "logobar": {
-    "title": "Vertrauen schenken uns innovative Unternehmen"
+    "title": "Vertrauen schenken uns lokale Unternehmen"
   },
   "portfolio_teaser": {
-    "overline": "Bewiesene Ergebnisse",
+    "overline": "Echte Ergebnisse",
     "title": "Unsere Arbeit spricht für sich.",
-    "subtitle": "Keine Fließband-Templates. Nur handgefertigte High-Performance Plattformen, die Dominanz ausstrahlen.",
-    "cta": "Alle Case Studies"
+    "subtitle": "Keine Fließband-Templates. Nur handgefertigte Websites, die messbar mehr Kunden bringen.",
+    "cta": "Alle Referenzen ansehen"
   },
   "techStack": {
-    "eyebrow": "Die beste Agentur in Hessen",
-    "headingPrefix": "Unvergleichbare Architektur",
+    "eyebrow": "5,0 Sterne auf ProvenExpert",
+    "headingPrefix": "Modernste Technologie",
     "headingSuffix": "für maximale Performance"
   }
 }

@@ -57,12 +57,7 @@
       "Sie nutzen Daten aktiv, könnten aber mit prädiktiven Modellen noch effizienter skalieren.",
       "Ihr Marketing ist hochgradig datengetrieben. Sie sind bereit für AI-gestützte Skalierung."
     ],
-    "levels": [
-      "Blindflug",
-      "Basis-Tracking",
-      "Erweitertes Tracking",
-      "Data-Driven"
-    ],
+    "levels": ["Blindflug", "Basis-Tracking", "Erweitertes Tracking", "Data-Driven"],
     "questionStep": "Frage {current} von {total}",
     "recommendation": "Unsere Empfehlung",
     "retry": "Test wiederholen",
@@ -110,9 +105,9 @@
     "wordpress": "Ziel: WordPress"
   },
   "hero": {
-    "subtitle": "Tiefgehende Analysen, Strategien und Neuigkeiten aus der Welt der digitalen Dominanz.",
+    "subtitle": "Tiefgehende Analysen, Strategien und Neuigkeiten rund um modernes Webdesign und lokales Marketing.",
     "title": "Digitalagentur Blog | Webdesign & SEO Insights - Coday",
-    "description": "Tiefgehende Analysen, Strategien und Best Practices für modernes Webdesign, High-End SEO und digitale Dominanz. Jetzt Insights entdecken!"
+    "description": "Tiefgehende Analysen, Strategien und Best Practices für modernes Webdesign, lokales SEO und professionelle Webentwicklung. Jetzt Insights entdecken!"
   },
   "highlight": "Highlight",
   "interactiveComponent": "Interaktives Element",

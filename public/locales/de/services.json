@@ -157,13 +157,7 @@
     },
     "digital_branding": {
       "description": "Eine moderne Marke muss an jedem digitalen Touchpoint performen. Wir denken nicht in Briefpapier, sondern in digitalen Ökosystemen.",
-      "tags": [
-        "Logo Design",
-        "Typography",
-        "Color Palette",
-        "Tone of Voice",
-        "Social Assets"
-      ],
+      "tags": ["Logo Design", "Typography", "Color Palette", "Tone of Voice", "Social Assets"],
       "title": "Digital-First Branding"
     },
     "hero": {
@@ -424,12 +418,12 @@
   "enterprise_web_page": {
     "hero": {
       "badge": "Beyond Standard",
-      "cta_primary": "Dominanz starten",
+      "cta_primary": "Projekt starten",
       "cta_secondary": "Cases ansehen",
-      "description": "Keine Visitenkarten. Wir bauen digitale Waffensysteme für Unternehmen, die verlieren nicht als Option sehen.",
+      "description": "Keine Visitenkarten-Websites. Wir bauen leistungsstarke Web-Plattformen für Unternehmen, die online wachsen wollen.",
       "scroll_hint": "Scroll to Explore",
-      "title_prefix": "Enterprise Webentwicklung Agentur",
-      "title_suffix": "Websites, die Märkte fressen."
+      "title_prefix": "Professionelle Webentwicklung",
+      "title_suffix": "Websites, die Ergebnisse liefern."
     },
     "roi_section": {
       "description": "Die meisten Agenturen verkaufen 'hübsches Design'. Wir verkaufen messbares Umsatzwachstum.",
@@ -441,8 +435,8 @@
       "title": "Speed is Authority."
     },
     "stack_section": {
-      "description": "Kein WordPress-Spaghetti. Wir nutzen den Tech-Stack der Milliarden-Startups.",
-      "title": "The Stack of Dominance"
+      "description": "Kein WordPress-Spaghetti. Wir nutzen den Tech-Stack erfolgreicher Startups und Wachstumsunternehmen.",
+      "title": "Der richtige Tech-Stack"
     },
     "matrix": {
       "rows": {
@@ -500,8 +494,8 @@
       "description": "Wie wir durch Headless Commerce und eine moderne Next.js Architektur die Conversion-Rate eines Branchenführers um 40% gesteigert haben."
     },
     "meta": {
-      "title": "Enterprise Webentwicklung & Headless Architekturen | Coday",
-      "description": "High-Performance Web-Lösungen für Enterprise-Kunden. Skalierbare, sichere und extrem schnelle Architekturen für den Unternehmensbereich."
+      "title": "Professionelle Webentwicklung & Headless Architekturen | Coday",
+      "description": "Leistungsstarke Web-Lösungen für wachsende Unternehmen. Skalierbare, sichere und extrem schnelle Architekturen mit Next.js und React."
     }
   },
   "generic_detail": {
@@ -634,11 +628,7 @@
     ],
     "title": "Webentwicklung & SEO Agentur | Leistungen - Coday",
     "description": "Unsere Expertise: High-End Webdesign, React & Next.js Entwicklung, Conversion-Optimierung und datengetriebene SEO-Strategien für maximalen ROI.",
-    "rotatingTexts": [
-      "Web-Design",
-      "Web-Entwicklung",
-      "SEO"
-    ]
+    "rotatingTexts": ["Web-Design", "Web-Entwicklung", "SEO"]
   },
   "migration_page": {
     "before_after": {
@@ -721,14 +711,7 @@
         "Java Monolithen"
       ],
       "title": "Wir sprechen Ihre Sprache.",
-      "to": [
-        "Next.js",
-        "React",
-        "Node.js",
-        "Supabase",
-        "Headless CMS",
-        "Vercel Edge"
-      ]
+      "to": ["Next.js", "React", "Node.js", "Supabase", "Headless CMS", "Vercel Edge"]
     },
     "meta": {
       "title": "System Migration & Legacy Modernization | Coday",
@@ -767,7 +750,7 @@
         },
         "regional": {
           "desc": "Werden Sie zum Platzhirsch in Ihrer Region.",
-          "title": "Regionale Dominanz"
+          "title": "Regionale Sichtbarkeit"
         },
         "technical": {
           "desc": "Ladezeit-Optimierung, Strukturierte Daten und Durchsuchbarkeit.",
@@ -781,10 +764,10 @@
         "Inhalts-Verteilung",
         "Datengetriebene Erkenntnisse"
       ],
-      "title": "Gesamtheitliche Dominanz"
+      "title": "Ganzheitliche Sichtbarkeit"
     },
     "hero": {
-      "badge": "Suchmaschinen-Dominanz",
+      "badge": "Suchmaschinen-Optimierung",
       "description": "Wir bringen Sie nicht nur auf Seite 1. Wir sorgen dafür, dass Sie dort bleiben. Technische Optimierung, Inhalts-Strategie und Aufbau von Autorität.",
       "title_prefix": "Ihre High-End",
       "title_suffix": "SEO Agentur."
@@ -796,7 +779,7 @@
     },
     "meta": {
       "title": "SEO Agentur & Suchmaschinenoptimierung | Coday",
-      "description": "Wirklich nachhaltige Suchmaschinenoptimierung. Ganzheitliche Strategien aus technischem SEO, regionaler Dominanz und exzellentem Content."
+      "description": "Wirklich nachhaltige Suchmaschinenoptimierung. Ganzheitliche Strategien aus technischem SEO, regionaler Sichtbarkeit und exzellentem Content."
     },
     "process": {
       "title": "Unser SEO-Prozess",
@@ -832,17 +815,17 @@
     },
     "solution": {
       "label": "Unsere Lösung",
-      "title": "Dominante Sichtbarkeit in den Suchergebnissen",
+      "title": "Maximale Sichtbarkeit in den Suchergebnissen",
       "description": "Wir verwandeln Ihre Website in einen Magneten für kaufbereite Kunden. Durch datengetriebene SEO-Strategien positionieren wir Sie genau dort, wo Ihre Zielgruppe nach Ihren Leistungen sucht."
     },
     "case_study": {
       "label": "Success Story",
       "title": "Wie wir die organischen Anfragen um 340% steigerten",
-      "description": "Erfahren Sie, wie wir für einen lokalen Dienstleister die regionale Dominanz aufgebaut und den Umsatz signifikant erhöht haben."
+      "description": "Erfahren Sie, wie wir für einen lokalen Dienstleister die regionale Sichtbarkeit ausgebaut und den Umsatz signifikant erhöht haben."
     },
     "tech_stack": {
       "title": "Unser SEO Tech-Stack",
-      "description": "Wir setzen auf branchenführende Enterprise-Tools für präzise Analysen, tiefgreifende Audits und messbaren Erfolg."
+      "description": "Wir setzen auf professionelle Tools für präzise Analysen, tiefgreifende Audits und messbaren Erfolg."
     }
   },
   "ui_ux_page": {

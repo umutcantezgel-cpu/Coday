@@ -86,7 +86,7 @@
     }
   },
   "hero": {
-    "subtitle": "Tiefgehende Analysen, Strategien und Neuigkeiten aus der Welt der digitalen Dominanz.",
+    "subtitle": "Tiefgehende Analysen, Strategien und Neuigkeiten rund um modernes Webdesign und lokales Marketing.",
     "title": "Blog & Insights"
   },
   "loading": "Lade Sprache...",
@@ -264,7 +264,7 @@
         "label": "Migrationen"
       },
       "enterprise": {
-        "label": "Enterprise Platforms",
+        "label": "Webanwendungen",
         "desc": "Portale & Systeme"
       },
       "design": {
@@ -350,8 +350,8 @@
     "linkedin": "LinkedIn"
   },
   "announcement": {
-    "text": "Enterprise-Audit: Kostenlose Potenzialanalyse verfügbar.",
-    "cta": "Angebot sichern →"
+    "text": "Kostenlose Website-Analyse: Wo stehen Sie im Vergleich zum Wettbewerb?",
+    "cta": "Jetzt prüfen →"
   },
   "actions": {
     "read_more": "Mehr erfahren"
