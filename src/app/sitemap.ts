@@ -139,6 +139,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     sitemapEntry('/community/events', { changeFrequency: 'monthly', priority: 0.8 }),
     sitemapEntry('/landingpages/localwetzlar', { changeFrequency: 'monthly', priority: 0.8 }),
     sitemapEntry('/landingpages/nextjsmigration', { changeFrequency: 'monthly', priority: 0.8 }),
+    sitemapEntry('/landingpages/wetzlar', { changeFrequency: 'monthly', priority: 0.8 }),
+    sitemapEntry('/landingpages/giessen', { changeFrequency: 'monthly', priority: 0.8 }),
+    sitemapEntry('/landingpages/marburg', { changeFrequency: 'monthly', priority: 0.8 }),
+    sitemapEntry('/landingpages/herborn', { changeFrequency: 'monthly', priority: 0.8 }),
+    sitemapEntry('/landingpages/dillenburg', { changeFrequency: 'monthly', priority: 0.8 }),
+    sitemapEntry('/landingpages/weilburg', { changeFrequency: 'monthly', priority: 0.8 }),
   ];
 
   // Dynamic content from Sanity (without drafts)
