@@ -2,6 +2,100 @@ import { BlogPost } from '@/features/blog/model/types';
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    id: 101,
+    title: 'Warum eine Facebook-Seite 2024 nicht mehr reicht',
+    slug: 'warum-facebook-seite-nicht-reicht',
+    excerpt:
+      'Verlassen Sie sich nicht nur auf Social Media. Warum eine eigene Webseite Ihr wichtigstes Verkaufsargument ist und wie sie Ihnen unabhängig von Algorithmen Kunden bringt.',
+    category: 'Webdesign',
+    readTime: '5 Min.',
+    image: '/images/marketing/omnichannel-marketing-hub-seo-social-content-strategie-vernetzt.webp',
+    alt: 'Social Media vs Eigene Webseite',
+    author: 'Umur Eyigün',
+    date: '10. Oktober 2024',
+    content: [
+      {
+        id: 'intro',
+        type: 'text',
+        heading: 'Social Media gehört nicht Ihnen',
+        level: 'h2',
+        content:
+          'Viele Unternehmen in Wetzlar denken: "Ich habe eine Facebook-Seite, das reicht." Das Problem? Sie mieten nur Land auf einer fremden Plattform. Wenn Facebook morgen die Regeln ändert, verliert Ihr Betrieb seine Sichtbarkeit.',
+      },
+      {
+        id: 'solution',
+        type: 'text',
+        heading: 'Ihre Webseite ist Ihr digitales Eigentum',
+        level: 'h2',
+        content:
+          'Ihre Webseite gehört 100% Ihnen. Keine Ablenkung durch Konkurrenz-Werbung, keine Algorithmus-Änderungen. Sie entscheiden, was Ihre Kunden sehen. Eine professionelle Webseite baut Vertrauen auf – eine reine Facebook-Seite wirkt oft unprofessionell.',
+      },
+    ],
+  },
+  {
+    id: 102,
+    title: 'Webseite für Handwerker: 5 Fehler, die Sie Kunden kosten',
+    slug: 'webseite-handwerker-fehler',
+    excerpt:
+      'Warum viele Handwerker-Webseiten kein Geld einbringen und wie Sie die häufigsten Fehler beim Webdesign vermeiden.',
+    category: 'Handwerk',
+    readTime: '6 Min.',
+    image: '/images/services/website-builder-drag-drop-baukasten-elemente-webdesign.webp',
+    alt: 'Handwerker Webseite Fehler',
+    author: 'Umur Eyigün',
+    date: '15. Oktober 2024',
+    content: [
+      {
+        id: 'intro',
+        type: 'text',
+        heading: 'Häufigste Fehler',
+        level: 'h2',
+        content:
+          'Die meisten Handwerker-Webseiten in Mittelhessen sind leider veraltet. Fehler Nummer 1: Sie funktionieren nicht richtig auf dem Handy. Über 70% der Kunden suchen heute über das Smartphone nach einem Elektriker oder Dachdecker. Wenn die Seite auf dem Handy kaputt aussieht, ist der Kunde sofort weg.',
+      },
+      {
+        id: 'contact',
+        type: 'text',
+        heading: 'Fehlende Kontaktmöglichkeiten',
+        level: 'h2',
+        content:
+          'Fehler Nummer 2: Die Telefonnummer ist schwer zu finden. Ihre Telefonnummer muss immer sichtbar und auf dem Smartphone klickbar sein!',
+      },
+    ],
+  },
+  {
+    id: 103,
+    title: 'Was kostet eine professionelle Firmenwebseite wirklich?',
+    slug: 'was-kostet-eine-firmenwebseite',
+    excerpt:
+      'Transparenz statt versteckter Kosten. Erfahren Sie genau, woraus sich die Preise für eine moderne Webseite zusammensetzen und worauf Sie achten müssen.',
+    category: 'Kosten',
+    readTime: '7 Min.',
+    image:
+      '/images/marketing/datenanalyse-business-intelligence-reporting-statistiken-auswertung.webp',
+    alt: 'Kosten für Firmenwebseite',
+    author: 'Umur Eyigün',
+    date: '20. Oktober 2024',
+    content: [
+      {
+        id: 'intro',
+        type: 'text',
+        heading: 'Die Wahrheit über Webdesign-Preise',
+        level: 'h2',
+        content:
+          'Ein Baukasten kostet nur 15€ im Monat – aber er kostet Sie Kunden. Eine echte, schnelle Firmenwebseite vom Experten kostet in der Regel zwischen 900€ und 2.500€ einmalig. Warum dieser Unterschied?',
+      },
+      {
+        id: 'details',
+        type: 'text',
+        heading: 'Qualität hat ihren Preis',
+        level: 'h2',
+        content:
+          'Sie bezahlen für maßgeschneiderte Programmierung, schnelle Ladezeiten, Suchmaschinenoptimierung (SEO) und echtes Handwerk. Eine günstige Webseite, die nicht bei Google gefunden wird, ist teurer als eine professionelle Seite, die Ihnen monatlich neue Kunden bringt.',
+      },
+    ],
+  },
+  {
     id: 10,
     title: 'Core Web Vitals 2026: Warum langsame Ladezeiten Millionen kosten',
     slug: 'high-performance-web-vitals',
