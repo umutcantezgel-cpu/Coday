@@ -259,7 +259,9 @@
     "close": "Schließen",
     "cancel": "Abbrechen",
     "save": "Speichern",
-    "calculator": "Pricing Calculator"
+    "calculator": "Pricing Calculator",
+    "garantie": "Garantie",
+    "presse": "Presse"
   },
   "metadata": {
     "title": "Coday — AI-Augmented Web Agency from Wetzlar",
@@ -352,6 +354,92 @@
     "keyTakeaways": {
       "title": "Wichtigste Erkenntnisse",
       "share": "Auf Twitter teilen"
+    },
+    "mobileSimulator": {
+      "title": "Mobile Simulator",
+      "fake": {
+        "serving": "Serving content...",
+        "clickMore": "Click for more",
+        "readMore": "Read more"
+      },
+      "switchToDesktop": "Switch to Desktop",
+      "view": "View"
+    },
+    "webHistory": {
+      "title": "Web History",
+      "columns": {
+        "model": "Model",
+        "overhead": "Overhead"
+      },
+      "eras": [
+        {
+          "title": "Era 1",
+          "description": "Era 1 description",
+          "model": "Era 1 model",
+          "overhead": "Era 1 overhead"
+        },
+        {
+          "title": "Era 2",
+          "description": "Era 2 description",
+          "model": "Era 2 model",
+          "overhead": "Era 2 overhead"
+        },
+        {
+          "title": "Era 3",
+          "description": "Era 3 description",
+          "model": "Era 3 model",
+          "overhead": "Era 3 overhead"
+        },
+        {
+          "title": "Era 4",
+          "description": "Era 4 description",
+          "model": "Era 4 model",
+          "overhead": "Era 4 overhead"
+        }
+      ]
+    },
+    "designPsychology": {
+      "title": "Design Psychology",
+      "subtitle": "Subtitle",
+      "buyNow": "Buy Now",
+      "perception": "Perception",
+      "colors": {
+        "blue": {
+          "name": "Blue",
+          "text": "Trust, security"
+        },
+        "red": {
+          "name": "Red",
+          "text": "Urgency, passion"
+        },
+        "black": {
+          "name": "Black",
+          "text": "Luxury, elegance"
+        },
+        "green": {
+          "name": "Green",
+          "text": "Nature, growth"
+        }
+      }
+    },
+    "voiceDemo": {
+      "title": "Voice AI Demo",
+      "subtitle": "Experience voice interactions",
+      "tapToSpeak": "Tap to Speak",
+      "steps": [
+        {
+          "user": "User says...",
+          "ai": "AI responds..."
+        },
+        {
+          "user": "User says...",
+          "ai": "AI responds..."
+        },
+        {
+          "user": "User says...",
+          "ai": "AI responds..."
+        }
+      ]
     }
   },
   "faq": {
@@ -508,6 +596,9 @@
       "templates": {
         "title": "Templates",
         "subtitle": "Ready-to-use templates"
+      },
+      "booking": {
+        "subtitle": "Vereinbaren Sie ein Gespräch."
       }
     },
     "actions": {
@@ -660,7 +751,8 @@
     },
     "methodology": {
       "title": "Precision Craftsmanship over Mass Production.",
-      "description": "As a solo agency, I work directly with you — without project managers or miscommunication. You receive custom solutions based on the latest web technologies that deliver real results. From initial concept to final launch."
+      "description": "As a solo agency, I work directly with you — without project managers or miscommunication. You receive custom solutions based on the latest web technologies that deliver real results. From initial concept to final launch.",
+      "subtitle": "Unsere Methodik"
     },
     "label": "Unsere Leistungen",
     "title_prefix": "Wir bieten",
@@ -677,6 +769,11 @@
       "growth": {
         "title": "Technisches SEO",
         "description": "Datengestützte Optimierung für maximale Sichtbarkeit und nachhaltiges Wachstum in den Suchergebnissen."
+      }
+    },
+    "web_development_page": {
+      "cta": {
+        "button": "Webentwicklung anfragen"
       }
     }
   },
@@ -777,6 +874,33 @@
           "title": "Leads & Requests",
           "description": "Generate lucrative customer inquiries."
         }
+      }
+    },
+    "aerzte-gesundheit": {
+      "customFeatures": {
+        "service_funnel": {
+          "steps": {
+            "leads": "Terminanfragen & Patienten"
+          }
+        }
+      }
+    },
+    "handwerk-bau": {
+      "hero": {
+        "title_1": "Professionelles Webdesign",
+        "title_2": "für Handwerker",
+        "description": "Wir bauen Websites, die Handwerksbetrieben zu mehr Sichtbarkeit und Aufträgen verhelfen.",
+        "image_alt": "Handwerker Website"
+      }
+    },
+    "buttons": {
+      "cta_analysis": "Website analysieren lassen"
+    },
+    "common": {
+      "features": {
+        "google_maps": "Google Maps Integration",
+        "regional_pages": "Regionale Landingpages",
+        "review_management": "Bewertungsmanagement"
       }
     }
   },

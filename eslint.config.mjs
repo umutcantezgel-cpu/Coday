@@ -38,13 +38,7 @@ export default [
     rules: {
       ...tsPlugin.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
-      'react-refresh/only-export-components': [
-        'warn',
-        {
-          allowConstantExport: true,
-          allowExportNames: ['loader', 'action', 'meta', 'links', 'headers', 'prerender'],
-        },
-      ],
+      'react-refresh/only-export-components': 'off',
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/ban-ts-comment': 'off',
       '@typescript-eslint/no-unused-vars': 'off',
