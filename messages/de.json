@@ -286,6 +286,46 @@
       "eyebrow": "Core Tech Stack",
       "headingPrefix": "High-End Architektur",
       "headingSuffix": "für kompromisslose Performance"
+    },
+    "seo_content": {
+      "title": "Digitale Marktführerschaft für Wetzlar",
+      "subtitle": "Wir bauen das Fundament für Ihren digitalen Erfolg",
+      "p1": "Als lokale Webagentur in Wetzlar verstehen wir die einzigartigen Herausforderungen mittelhessischer Unternehmen. Wir entwickeln nicht einfach nur Websites, sondern maßgeschneiderte digitale Plattformen, die Ihren Vertrieb automatisieren und qualifizierte Leads generieren.",
+      "p2": "Durch den Einsatz modernster Technologien wie Next.js und React garantieren wir blitzschnelle Ladezeiten, höchste Sicherheit und eine optimale User Experience – Faktoren, die Google mit Top-Platzierungen belohnt.",
+      "p3": "Unser Fokus liegt auf messbarem ROI. Mit tiefgreifender SEO-Expertise und Conversion-optimiertem Design verwandeln wir Ihre Online-Präsenz vom reinen Aushängeschild in Ihren stärksten Vertriebskanal.",
+      "cta": "Jetzt Potenzialanalyse anfordern"
+    },
+    "comparison": {
+      "title": "Warum Coday?",
+      "subtitle": "Der technologische Vorsprung",
+      "nextjs_label": "Next.js (Coday)",
+      "wp_label": "Klassisches WordPress",
+      "features": {
+        "speed": "Ladezeit",
+        "speed_next": "< 0.5s",
+        "speed_wp": "2-4s",
+        "security": "Sicherheit",
+        "security_next": "Enterprise-Grade (Keine Datenbank am Frontend)",
+        "security_wp": "Anfällig für Plugin-Hacks",
+        "seo": "SEO-Potenzial",
+        "seo_next": "Maximal (Perfekte Core Web Vitals)",
+        "seo_wp": "Durchschnittlich (Abhängig von Plugins)"
+      }
+    },
+    "quick_contact": {
+      "title": "Lassen Sie uns starten",
+      "subtitle": "Wir melden uns innerhalb von 24 Stunden.",
+      "name_placeholder": "Ihr Name",
+      "email_placeholder": "Ihre E-Mail-Adresse",
+      "phone_placeholder": "Ihre Telefonnummer (optional)",
+      "submit": "Anfrage senden",
+      "success_title": "Vielen Dank!",
+      "success_subtitle": "Ihre Anfrage wurde erfolgreich gesendet. Wir melden uns in Kürze bei Ihnen.",
+      "new_request": "Neue Anfrage stellen",
+      "errors": {
+        "name": "Bitte geben Sie Ihren Namen ein (min. 2 Zeichen)",
+        "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein"
+      }
     }
   },
   "footer": {

@@ -286,6 +286,46 @@
       "eyebrow": "Core Tech Stack",
       "headingPrefix": "High-End Architektur",
       "headingSuffix": "für kompromisslose Performance"
+    },
+    "seo_content": {
+      "title": "Digital Market Leadership for Wetzlar",
+      "subtitle": "We build the foundation for your digital success",
+      "p1": "As a local web agency in Wetzlar, we understand the unique challenges of companies in Central Hesse. We don't just build websites, but custom digital platforms that automate your sales and generate qualified leads.",
+      "p2": "By using cutting-edge technologies like Next.js and React, we guarantee lightning-fast load times, maximum security, and an optimal user experience – factors that Google rewards with top rankings.",
+      "p3": "Our focus is on measurable ROI. With deep SEO expertise and conversion-optimized design, we transform your online presence from a mere showcase into your strongest sales channel.",
+      "cta": "Request Potential Analysis Now"
+    },
+    "comparison": {
+      "title": "Why Coday?",
+      "subtitle": "The Technological Advantage",
+      "nextjs_label": "Next.js (Coday)",
+      "wp_label": "Classic WordPress",
+      "features": {
+        "speed": "Load Time",
+        "speed_next": "< 0.5s",
+        "speed_wp": "2-4s",
+        "security": "Security",
+        "security_next": "Enterprise-Grade (No database at frontend)",
+        "security_wp": "Vulnerable to plugin hacks",
+        "seo": "SEO Potential",
+        "seo_next": "Maximum (Perfect Core Web Vitals)",
+        "seo_wp": "Average (Dependent on plugins)"
+      }
+    },
+    "quick_contact": {
+      "title": "Let's get started",
+      "subtitle": "We will get back to you within 24 hours.",
+      "name_placeholder": "Your Name",
+      "email_placeholder": "Your Email Address",
+      "phone_placeholder": "Your Phone Number (optional)",
+      "submit": "Send Request",
+      "success_title": "Thank you!",
+      "success_subtitle": "Your request has been sent successfully. We will be in touch shortly.",
+      "new_request": "Submit a new request",
+      "errors": {
+        "name": "Please enter your name (min. 2 characters)",
+        "email": "Please enter a valid email address"
+      }
     }
   },
   "footer": {
