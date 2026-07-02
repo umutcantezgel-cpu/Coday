@@ -1,0 +1,69 @@
+{
+  "target": "wetzlar",
+  "type": "location",
+  "meta": {
+    "title": "Web Design Agency Wetzlar: Websites That Win Customers",
+    "description": "Your new website from the web designer in Wetzlar. Personal, at a fixed price, online in 3 weeks. For craftsmen, doctors, and service providers in Central Hesse."
+  },
+  "hero": {
+    "headline": "Web Design Agency Wetzlar: Websites That Truly Win More Customers",
+    "subheadline": "Your website is not just a digital business card – it's your best salesperson. We build lightning-fast websites for craftsmen, medical practices, and local businesses in Wetzlar and Central Hesse.",
+    "description": "As a local business owner in the Lahn-Dill district, you don't need out-of-touch agency concepts, but a website that measurably works. Coday is your web design agency right from Wetzlar. We understand the challenges of craftsmen, doctors, and restaurateurs. Instead of complicated tech jargon, we offer clear solutions at a fixed price. We ensure you are found locally on Google, your customers can book appointments online, and you find exactly the employees you urgently need."
+  },
+  "localDominance": {
+    "title": "Why Coday is the right partner for your local business",
+    "description": "We forgo expensive agency overhead and focus on what really counts for you as a medium-sized business in Wetzlar: A website that loads fast, ranks at the top of Google, and turns visitors into real customers.",
+    "points": [
+      "Personal on-site consultation: No anonymous call center. We sit down with you in Wetzlar, Giessen or Herborn and discuss your project at eye level.",
+      "Clear fixed-price model: No hidden costs. You know exactly what your new website costs right from the start.",
+      "Online in 3 weeks: We work efficiently. From the first concept to the finished website usually takes only 3 weeks.",
+      "Found locally on Google: We optimize your site specifically for local searches in Central Hesse, so customers from the region can find you directly.",
+      "Easy maintenance: You can easily change texts and images yourself without programming knowledge. We show you how.",
+      "Recruiting: We integrate clever application forms that make it extremely easy for skilled workers from the region to apply to you."
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "Web design for craftsmen in Wetzlar",
+      "content": "As a craft business in Wetzlar, you face two major challenges: You need good orders from the region and qualified specialists. A modern craftsman website solves both problems. We present your services clearly, show your reference projects with high-quality images and make it extremely easy for customers to contact you. At the same time, we build a career page that shows why it is worth working in your company. All of this, of course, perfectly optimized for smartphones, because that's where the majority of your customers look for a craftsman today."
+    },
+    {
+      "title": "Practice websites for doctors and clinics",
+      "content": "Patients in Wetzlar today almost exclusively search online for a new doctor. The first impression of your website decides whether the patient books an appointment with you or with a colleague. We develop serious, trust-building practice websites. From the introduction of the team to the clear presentation of your services and the integration of secure online appointment booking systems (e.g. Doctolib or Jameda). We pay strict attention to accessibility and fast loading times, so that your practice also leaves an excellent digital impression."
+    },
+    {
+      "title": "Visibility for local gastronomy",
+      "content": "Where are we eating today? This decision is often made spontaneously on the smartphone. If your restaurant or cafe in Wetzlar is not found immediately or the menu loads as an illegible PDF, you lose guests. We design appetizing gastronomy websites with interactive menus, direct table reservation systems and optimal connection to your Google Business Profile. This is how we ensure that your tables are well occupied even during the week."
+    },
+    {
+      "title": "Security and technology from a single source",
+      "content": "You want to take care of your business, not website maintenance. We rely on secure and modern technologies that do not need to be constantly repaired with updates. No hacked WordPress sites, no annoying error messages. We take over the complete hosting, take care of GDPR compliance (cookie banner, imprint) and reliably secure your website. So you have your head clear for your customers."
+    }
+  ],
+  "faq": [
+    {
+      "q": "How much does a professional website cost for my business in Wetzlar?",
+      "a": "We work with transparent fixed prices starting at €2,000. The exact price depends on your requirements - e.g. whether you need an online booking system or we should write the complete texts for you. In our free initial consultation, we clarify your wishes and you receive a binding offer."
+    },
+    {
+      "q": "Do you come to our company for a meeting?",
+      "a": "Yes, very gladly. We are rooted locally in Wetzlar and will visit you throughout the Lahn-Dill district, in Giessen or Marburg. This allows us to get an idea of your company right on site."
+    },
+    {
+      "q": "How long does it take until the new website is online?",
+      "a": "Once we have all the content (images, texts) from you, it usually takes about 3 to 4 weeks to get the finished website. We work purposefully and without unnecessary delays."
+    },
+    {
+      "q": "Can I make changes to the website myself later?",
+      "a": "Yes, absolutely. We will set up a very easy-to-use system for you. After a short introduction, you can adapt texts, upload new images or post current offers - without any technical prior knowledge."
+    },
+    {
+      "q": "Do you also take care of SEO so that we are found on Google?",
+      "a": "Yes, local search engine optimization (Local SEO) for the Wetzlar and Central Hesse area is integrated with us as standard. We optimize the website perfectly technically, structure the content for Google and help you set up your Google Business Profile."
+    },
+    {
+      "q": "Do you also help us create texts and images?",
+      "a": "We know that in everyday work there is often no time to write texts for the website. We are happy to take this over completely for you. For professional photos, we work with experienced local photographers."
+    }
+  ]
+}

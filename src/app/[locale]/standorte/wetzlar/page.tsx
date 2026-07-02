@@ -20,7 +20,7 @@ export async function generateMetadata({
       'local-seo',
       'model',
       'content',
-      'wetzlar.json'
+      `wetzlar.${locale}.json`
     );
     const fileContents = fs.readFileSync(filePath, 'utf8');
     const content = JSON.parse(fileContents);
@@ -59,7 +59,7 @@ export default async function WetzlarLocationPage({
       'local-seo',
       'model',
       'content',
-      'wetzlar.json'
+      `wetzlar.${locale}.json`
     );
     const fileContents = fs.readFileSync(filePath, 'utf8');
     content = JSON.parse(fileContents);

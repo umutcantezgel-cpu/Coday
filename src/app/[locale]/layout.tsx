@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { getOrganizationSchema, getProfessionalServiceSchema } from '@/lib/schema';
+
 import { generatePageMetadata } from '@/lib/metadata';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
@@ -71,9 +71,7 @@ export default async function RootLayout({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const orgSchema = getOrganizationSchema();
-  const proSchema = getProfessionalServiceSchema();
-  const combinedSchema = [orgSchema, proSchema];
+
   const messages = await getMessages();
 
   return (
@@ -81,10 +79,6 @@ export default async function RootLayout({
       <head>
         <link rel="preconnect" href="https://cdn.sanity.io" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://vitals.vercel-insights.com" crossOrigin="anonymous" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(combinedSchema) }}
-        />
       </head>
       <body className="bg-secondary text-white antialiased" suppressHydrationWarning>
         <NextIntlClientProvider messages={messages} locale={locale}>
