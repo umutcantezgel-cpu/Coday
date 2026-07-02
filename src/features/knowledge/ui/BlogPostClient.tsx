@@ -113,7 +113,7 @@ const BlogPost: React.FC = () => {
           className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-md border border-white/20 rounded-full text-secondary hover:bg-white hover:shadow-lg transition motion-reduce:duration-[0.01ms] font-medium text-sm shadow-sm"
         >
           <ArrowLeft size={16} />
-          <span className="hidden md:inline">{t('blog:backToOverview')}</span>
+          <span className="hidden md:inline">{t('backToOverview')}</span>
         </Link>
       </nav>
 
@@ -173,7 +173,9 @@ const BlogPost: React.FC = () => {
                 </div>
                 <div className="flex items-center gap-2 bg-slate-50 px-4 py-2 rounded-xl">
                   <CalendarBlank size={18} className="text-slate-400" aria-hidden="true" />
-                  <time dateTime={post.date} className="font-medium text-slate-600">{post.date}</time>
+                  <time dateTime={post.date} className="font-medium text-slate-600">
+                    {post.date}
+                  </time>
                 </div>
               </div>
 

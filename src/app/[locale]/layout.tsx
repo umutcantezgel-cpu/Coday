@@ -5,6 +5,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { Inter, Outfit } from 'next/font/google';
 import { setRequestLocale } from 'next-intl/server';
+import { Suspense } from 'react';
 
 import '../globals.css';
 
@@ -94,11 +95,13 @@ export default async function RootLayout({
           </MotionProvider>
         </NextIntlClientProvider>
 
-        <GoogleAnalytics />
-        <PostHogAnalytics />
-        <MetaPixel />
-        <LinkedInInsight />
-        <ClarityAnalytics />
+        <Suspense fallback={null}>
+          <GoogleAnalytics />
+          <PostHogAnalytics />
+          <MetaPixel />
+          <LinkedInInsight />
+          <ClarityAnalytics />
+        </Suspense>
       </body>
     </html>
   );

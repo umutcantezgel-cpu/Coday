@@ -379,7 +379,7 @@ export const InteractiveBlockRenderer: React.FC<{ block: InteractiveBlock }> = (
         <div className="my-12 h-64 bg-gray-50 rounded-3xl animate-pulse flex items-center justify-center border border-gray-100 motion-reduce:animate-none">
           <div className="flex flex-col items-center gap-3 text-gray-400">
             <div className="w-8 h-8 border-4 border-gray-300 border-t-blue-500 rounded-full animate-spin motion-reduce:animate-none" />
-            <span className="text-sm font-medium">{t('blog:loadingModule')}</span>
+            <span className="text-sm font-medium">{t('loadingModule')}</span>
           </div>
         </div>
       }

@@ -160,7 +160,8 @@
     "title": "Immobilien & Makler",
     "hero": {
       "headline": "Exklusive Objekte, exklusiv präsentiert",
-      "subheadline": "Überzeugen Sie Eigentümer und Käufer mit einer digitalen Präsenz, die Kompetenz und Klasse ausstrahlt."
+      "subheadline": "Überzeugen Sie Eigentümer und Käufer mit einer digitalen Präsenz, die Kompetenz und Klasse ausstrahlt.",
+      "image_alt": "Makler Webseite"
     },
     "challenges": {
       "objektakquise": {

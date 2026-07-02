@@ -35,6 +35,16 @@
   "module_count_other": "{count} Module ausgewählt",
   "module_count_plural": "{count} Module ausgewählt",
   "modules": {
+    "basis-onepager": {
+      "description": "High-Performance One-Pager",
+      "learn_more": "Perfekt für Startups oder Landingpages.",
+      "name": "One-Pager"
+    },
+    "basis-ultimate": {
+      "description": "Das komplette Enterprise Paket",
+      "learn_more": "Alles inklusive für Marktführer.",
+      "name": "Ultimate Hub"
+    },
     "basis-business": {
       "description": "Mehrseitige Unternehmens-Präsenz (CMS)",
       "learn_more": "Die klassische Unternehmenswebseite mit mehreren Unterseiten (Über uns, Leistungen, Kontakt). Perfekt, um Ihr Unternehmen, Ihre Dienstleistungen und Ihr Team ausführlich vorzustellen und Vertrauen aufzubauen.",

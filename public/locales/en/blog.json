@@ -40,6 +40,14 @@
     "yLabel": "Total Cost"
   },
   "backToOverview": "Back to Overview",
+  "authorRole": "Author",
+  "authorDesc": "Digital Expert at Coday. Shares insights on web design and performance.",
+  "moreAboutAuthor": "More from the author",
+  "cta": {
+    "title": "Ready for the next step?",
+    "desc": "Let's start your project together.",
+    "button": "Free Consultation"
+  },
   "community": {
     "description": "Get curated strategies and insights delivered weekly to your inbox. No ads, just value.",
     "emailPlaceholder": "Your Email Address",
@@ -57,12 +65,7 @@
       "You actively use data, but could scale even more efficiently with predictive models.",
       "Your marketing is highly data-driven. You are ready for AI-powered scaling."
     ],
-    "levels": [
-      "Flying Blind",
-      "Basic Tracking",
-      "Advanced Tracking",
-      "Data-Driven"
-    ],
+    "levels": ["Flying Blind", "Basic Tracking", "Advanced Tracking", "Data-Driven"],
     "questionStep": "Question {current} of {total}",
     "recommendation": "Our recommendation",
     "retry": "Retry Test",

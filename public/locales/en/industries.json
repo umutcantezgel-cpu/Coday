@@ -159,8 +159,9 @@
   "immobilien-makler": {
     "title": "Real Estate & Agents",
     "hero": {
-      "headline": "Exclusive Properties, Exclusively Presented",
-      "subheadline": "Convince owners and buyers with a digital presence that radiates competence and class."
+      "headline": "Exclusive properties, exclusively presented",
+      "subheadline": "Convince owners and buyers with a digital presence that radiates competence and class.",
+      "image_alt": "Real Estate Website"
     },
     "challenges": {
       "objektakquise": {

@@ -40,6 +40,14 @@
     "yLabel": "Kosten (k€)"
   },
   "backToOverview": "Zurück zur Übersicht",
+  "authorRole": "Autor",
+  "authorDesc": "Digital-Experte bei Coday. Teilt Insights zu Webdesign und Performance.",
+  "moreAboutAuthor": "Mehr vom Autor",
+  "cta": {
+    "title": "Bereit für den nächsten Schritt?",
+    "desc": "Lassen Sie uns gemeinsam Ihr Projekt starten.",
+    "button": "Kostenloses Erstgespräch"
+  },
   "community": {
     "description": "Erhalten Sie wöchentlich ausgewählte Strategien und Erkenntnisse direkt in Ihr Postfach. Keine Werbung, nur Mehrwert.",
     "emailPlaceholder": "Ihre E-Mail Adresse",

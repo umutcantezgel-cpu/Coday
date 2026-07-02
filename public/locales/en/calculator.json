@@ -35,6 +35,16 @@
   "module_count_other": "{count} modules selected",
   "module_count_plural": "{count} modules selected",
   "modules": {
+    "basis-onepager": {
+      "description": "High-Performance One-Pager",
+      "learn_more": "Perfect for startups or landing pages.",
+      "name": "One-Pager"
+    },
+    "basis-ultimate": {
+      "description": "The complete enterprise package",
+      "learn_more": "Everything included for market leaders.",
+      "name": "Ultimate Hub"
+    },
     "basis-business": {
       "description": "Multi-page Corporate Presence (CMS)",
       "learn_more": "The classic corporate website with multiple subpages (About Us, Services, Contact). Perfect for presenting your company, services, and team in detail to build trust.",

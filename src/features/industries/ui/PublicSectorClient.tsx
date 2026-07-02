@@ -22,6 +22,7 @@ import { PricingReality } from '@/features/gov/PricingReality';
 import { TenderWizard } from '@/features/gov/TenderWizard';
 import { DownloadArea } from '@/features/gov/DownloadArea';
 import { GovContactForm } from '@/features/gov/GovContactForm';
+import { Suspense } from 'react';
 import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
 
 const PublicSectorPage: React.FC = () => {
@@ -203,7 +204,9 @@ const PublicSectorPage: React.FC = () => {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
             {/* LEFT: Request Form */}
             <div>
-              <GovContactForm />
+              <Suspense fallback={null}>
+                <GovContactForm />
+              </Suspense>
             </div>
 
             {/* RIGHT: Upload & Direct Contact */}
