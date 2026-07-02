@@ -83,6 +83,7 @@ export const TestimonialBlock: React.FC<TestimonialBlockProps> = ({
         {rating > 0 && (
           <div
             className="flex gap-1 mb-8 text-yellow-500"
+            role="img"
             aria-label={`Bewertung: ${rating} von 5 Sternen`}
           >
             {[...Array(5)].map((_, i) => (
