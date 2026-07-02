@@ -16,7 +16,7 @@ export async function generateMetadata({
       description:
         'Detailed insight into our web design projects by Coday in Wetzlar. Learn how we help businesses in Central Hesse succeed in the digital landscape.',
       path: '/en/work/projectdetail',
-      type: 'money',
+      type: 'noindex',
     });
   }
   return generatePageMetadata({
@@ -24,7 +24,7 @@ export async function generateMetadata({
     description:
       'Detaillierter Einblick in unsere Webdesign Projekte von Coday in Wetzlar. Erfahren Sie wie wir Unternehmen in Mittelhessen digital erfolgreich machen.',
     path: '/de/work/projectdetail',
-    type: 'money',
+    type: 'noindex',
   });
 }
 

@@ -16,7 +16,7 @@ export async function generateMetadata({
       description:
         'Work at Coday in Wetzlar. Attractive benefits, modern work environment and exciting web design projects in Central Hesse. Meet the team today.',
       path: '/en/career/benefits',
-      type: 'money',
+      type: 'noindex',
     });
   }
   return generatePageMetadata({
@@ -24,7 +24,7 @@ export async function generateMetadata({
     description:
       'Arbeiten bei Coday in Wetzlar. Attraktive Benefits, modernes Arbeitsumfeld und spannende Webdesign Projekte in Mittelhessen. Jetzt Team kennenlernen.',
     path: '/de/career/benefits',
-    type: 'money',
+    type: 'noindex',
   });
 }
 

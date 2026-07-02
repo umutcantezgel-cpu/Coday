@@ -16,7 +16,7 @@ export async function generateMetadata({
       description:
         'Appetizing websites for restaurants and gastronomy in Wetzlar and Hesse. More guests through professional web design and strong local visibility.',
       path: '/en/industries/gastronomie',
-      type: 'money',
+      type: 'noindex',
     });
   }
   return generatePageMetadata({
@@ -24,7 +24,7 @@ export async function generateMetadata({
     description:
       'Appetitliche Webseiten für Restaurants und Gastronomie in Wetzlar und Hessen. Mehr Gäste durch professionelles Webdesign und lokale Auffindbarkeit.',
     path: '/de/industries/gastronomie',
-    type: 'money',
+    type: 'noindex',
   });
 }
 

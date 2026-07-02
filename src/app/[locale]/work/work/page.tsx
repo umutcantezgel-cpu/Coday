@@ -16,7 +16,7 @@ export async function generateMetadata({
       description:
         'The complete web design portfolio from Coday in Wetzlar. Successful projects for businesses in Central Hesse and beyond. Get inspired by our work.',
       path: '/en/work/work',
-      type: 'money',
+      type: 'noindex',
     });
   }
   return generatePageMetadata({
@@ -24,7 +24,7 @@ export async function generateMetadata({
     description:
       'Das komplette Webdesign Portfolio von Coday in Wetzlar. Erfolgreiche Projekte für Unternehmen in Mittelhessen und Hessen. Lassen Sie sich inspirieren.',
     path: '/de/work/work',
-    type: 'money',
+    type: 'noindex',
   });
 }
 

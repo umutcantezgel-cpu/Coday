@@ -16,7 +16,7 @@ export async function generateMetadata({
       description:
         'The digital marketplace of the Coday community in Wetzlar. Find service providers, tools and resources for your next web project in Central Hesse.',
       path: '/en/community/marketplace',
-      type: 'money',
+      type: 'noindex',
     });
   }
   return generatePageMetadata({
@@ -24,7 +24,7 @@ export async function generateMetadata({
     description:
       'Der digitale Marktplatz der Coday Community in Wetzlar. Finden Sie Dienstleister, Tools und Ressourcen für Ihr nächstes Webprojekt in Mittelhessen.',
     path: '/de/community/marketplace',
-    type: 'money',
+    type: 'noindex',
   });
 }
 

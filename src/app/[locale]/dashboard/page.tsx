@@ -16,7 +16,7 @@ export async function generateMetadata({
       description:
         'Your personal Coday client portal. Project progress, files and communication in one place. For web design clients in Wetzlar and Central Hesse.',
       path: '/en/dashboard',
-      type: 'money',
+      type: 'noindex',
     });
   }
   return generatePageMetadata({
@@ -24,7 +24,7 @@ export async function generateMetadata({
     description:
       'Ihr persönliches Coday Kundenportal. Projektfortschritt, Dateien und Kommunikation an einem Ort. Für Webdesign Kunden in Wetzlar und Mittelhessen.',
     path: '/de/dashboard',
-    type: 'money',
+    type: 'noindex',
   });
 }
 

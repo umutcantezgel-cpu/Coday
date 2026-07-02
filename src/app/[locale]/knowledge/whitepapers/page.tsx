@@ -16,7 +16,7 @@ export async function generateMetadata({
       description:
         'Free whitepapers and studies on web design and digital marketing from Coday in Wetzlar. Expert knowledge for business owners across Central Hesse.',
       path: '/en/knowledge/whitepapers',
-      type: 'money',
+      type: 'noindex',
     });
   }
   return generatePageMetadata({
@@ -24,7 +24,7 @@ export async function generateMetadata({
     description:
       'Kostenlose Whitepapers und Studien zu Webdesign und digitalem Marketing von Coday in Wetzlar. Expertenwissen für Unternehmer in Mittelhessen.',
     path: '/de/knowledge/whitepapers',
-    type: 'money',
+    type: 'noindex',
   });
 }
 

@@ -16,7 +16,7 @@ export async function generateMetadata({
       description:
         'Professional practice websites for doctors in Wetzlar and Hesse. Patient acquisition through modern web design and local search optimization. Inquire.',
       path: '/en/industries/gesundheit',
-      type: 'money',
+      type: 'noindex',
     });
   }
   return generatePageMetadata({
@@ -24,7 +24,7 @@ export async function generateMetadata({
     description:
       'Professionelle Praxis-Webseiten für Ärzte in Wetzlar und Hessen. Patientengewinnung durch modernes Webdesign und lokale Suchoptimierung. Jetzt anfragen.',
     path: '/de/industries/gesundheit',
-    type: 'money',
+    type: 'noindex',
   });
 }
 

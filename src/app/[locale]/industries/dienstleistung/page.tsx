@@ -16,7 +16,7 @@ export async function generateMetadata({
       description:
         'Professional websites for service providers in Wetzlar and Hesse. Tax advisors, brokers and consultants win more clients online. Get started today.',
       path: '/en/industries/dienstleistung',
-      type: 'money',
+      type: 'noindex',
     });
   }
   return generatePageMetadata({
@@ -24,7 +24,7 @@ export async function generateMetadata({
     description:
       'Professionelle Webseiten für Dienstleister in Wetzlar und Hessen. Steuerberater, Makler und Berater gewinnen online mehr Kunden. Jetzt starten.',
     path: '/de/industries/dienstleistung',
-    type: 'money',
+    type: 'noindex',
   });
 }
 
