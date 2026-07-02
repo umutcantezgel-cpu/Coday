@@ -51,12 +51,6 @@ function sitemapEntry(
     lastModified: opts.lastModified ?? new Date(),
     changeFrequency: opts.changeFrequency,
     priority: opts.priority,
-    alternates: {
-      languages: {
-        de: `${BASE_URL}/de${cleanPath}`,
-        en: `${BASE_URL}/en${cleanPath}`,
-      },
-    },
   };
 }
 
