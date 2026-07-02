@@ -41,8 +41,9 @@ export const Footer: React.FC = () => {
           <div className="col-span-2 lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <OptimizedImage
-                src="/images/brand/coday-logo-footer.webp"
+                src="/images/brand/webdesign-wetzlar-coday-logo-footer.webp"
                 alt="Coday"
+                title="Webdesign Wetzlar – Coday"
                 className="h-10 sm:h-16 w-auto mb-6 !bg-transparent"
               />
             </div>
@@ -52,8 +53,9 @@ export const Footer: React.FC = () => {
             <div className="flex items-center gap-3 bg-white/5 p-3 rounded-xl border border-white/10 max-w-xs">
               <div className="w-12 h-12 rounded-lg overflow-hidden flex-shrink-0 bg-white flex items-center justify-center p-1">
                 <OptimizedImage
-                  src="/images/hero/business-handshake-partnerschaft-tuer-offen-zusammenarbeit-vertrauen-small.webp"
+                  src="/images/hero/webdesign-wetzlar-business-handshake-partnerschaft-tuer-offen-zusammenarbeit-vertrauen-small.webp"
                   alt="Partnerschaft"
+                  title="Webdesign Wetzlar Partnerschaft"
                   className="w-full h-full object-cover rounded-md"
                   width={40}
                   height={40}
