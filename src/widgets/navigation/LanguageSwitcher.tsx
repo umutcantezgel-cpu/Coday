@@ -8,32 +8,40 @@ export const LanguageSwitcher: React.FC = () => {
   const pathname = usePathname();
 
   return (
-    <div className="flex items-center p-0.5 rounded-full bg-slate-100/80 backdrop-blur-md border border-slate-200 shadow-sm transition">
+    <div className="flex items-center p-1 rounded-full bg-slate-100/80 backdrop-blur-md border border-slate-200 shadow-inner">
       <Link
         href={pathname}
         locale="de"
-        className={`px-3 py-1.5 text-xs font-bold tracking-wider rounded-full transition-all ${
+        className={`px-3 py-1.5 text-xs font-bold tracking-wider rounded-full transition-all flex items-center gap-1 ${
           locale === 'de'
-            ? 'bg-white text-slate-900 shadow-sm ring-1 ring-slate-200 pointer-events-none'
+            ? 'bg-white text-slate-900 shadow-sm ring-1 ring-slate-200/50 pointer-events-none'
             : 'text-slate-500 hover:text-slate-800 hover:bg-slate-200/50'
         }`}
         aria-label="Auf Deutsch wechseln"
         title="Deutsch"
+        aria-current={locale === 'de' ? 'page' : undefined}
       >
-        DE
+        DE{' '}
+        {locale === 'de' && (
+          <span className="w-1.5 h-1.5 rounded-full bg-primary-500 inline-block" />
+        )}
       </Link>
       <Link
         href={pathname}
         locale="en"
-        className={`px-3 py-1.5 text-xs font-bold tracking-wider rounded-full transition-all ${
+        className={`px-3 py-1.5 text-xs font-bold tracking-wider rounded-full transition-all flex items-center gap-1 ${
           locale === 'en'
-            ? 'bg-white text-slate-900 shadow-sm ring-1 ring-slate-200 pointer-events-none'
+            ? 'bg-white text-slate-900 shadow-sm ring-1 ring-slate-200/50 pointer-events-none'
             : 'text-slate-500 hover:text-slate-800 hover:bg-slate-200/50'
         }`}
         aria-label="Switch to English"
         title="English"
+        aria-current={locale === 'en' ? 'page' : undefined}
       >
-        EN
+        EN{' '}
+        {locale === 'en' && (
+          <span className="w-1.5 h-1.5 rounded-full bg-primary-500 inline-block" />
+        )}
       </Link>
     </div>
   );
