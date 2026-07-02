@@ -24,7 +24,7 @@ export const SeoContentSection: React.FC = () => {
         >
           {t('seo_content.title', { defaultValue: 'Ihre Webdesign Agentur in Wetzlar' })}
         </h2>
-        <p className="text-lg text-primary font-medium mb-8">
+        <p className="text-lg text-secondary-700 font-medium mb-8">
           {t('seo_content.subtitle', {
             defaultValue:
               'Websites, die wirklich neue Kunden gewinnen – für Handwerker, Praxen und lokale Unternehmen.',

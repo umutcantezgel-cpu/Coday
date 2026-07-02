@@ -67,18 +67,20 @@ export const CookieConsentBanner: React.FC = () => {
           </div>
           <div className="flex-1 space-y-4">
             <div>
-              <h3 id="cookie-banner-title" className="text-lg font-bold text-gray-900 mb-2">Privatsphäre-Einstellungen</h3>
+              <h3 id="cookie-banner-title" className="text-lg font-bold text-gray-900 mb-2">
+                Privatsphäre-Einstellungen
+              </h3>
               <p id="cookie-banner-desc" className="text-sm text-gray-600 leading-relaxed">
                 Wir verwenden Cookies und ähnliche Technologien, um Ihr Erlebnis zu verbessern,
                 Leistung zu messen und personalisierte Inhalte anzuzeigen. Einige sind essenziell,
                 andere helfen uns, diese Website und Ihre Erfahrung zu verbessern.
               </p>
             </div>
-            <div className="flex flex-wrap gap-4 text-xs text-gray-500 justify-center lg:justify-start">
-              <Link href="/legal/privacy" className="hover:text-primary underline">
+            <div className="flex gap-4 text-xs text-gray-500 justify-center lg:justify-start">
+              <Link href="/legal/datenschutz" className="hover:text-primary underline">
                 Datenschutzerklärung
               </Link>
-              <Link href="/legal/imprint" className="hover:text-primary underline">
+              <Link href="/legal/impressum" className="hover:text-primary underline">
                 Impressum
               </Link>
             </div>

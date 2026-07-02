@@ -53,7 +53,7 @@ const AgencyComparisonTable: React.FC = () => {
               <tr className="border-b border-slate-700/50">
                 <th
                   scope="col"
-                  className="py-6 px-4 text-sm font-bold text-slate-400 uppercase tracking-widest w-1/4"
+                  className="py-6 px-4 text-sm font-bold text-slate-200 uppercase tracking-widest w-1/4"
                 >
                   {t('comparison.columns.metric')}
                 </th>
@@ -75,7 +75,7 @@ const AgencyComparisonTable: React.FC = () => {
                 >
                   <th
                     scope="row"
-                    className="py-4 md:py-8 px-4 font-mono text-sm text-slate-400 uppercase text-left"
+                    className="py-4 md:py-8 px-4 font-mono text-sm text-slate-200 uppercase text-left"
                   >
                     {feature.name}
                   </th>
