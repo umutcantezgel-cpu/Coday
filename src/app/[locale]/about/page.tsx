@@ -11,26 +11,23 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return generatePageMetadata({
-    title: 'Über Uns | Coday - Digitale Exzellenz aus Wetzlar',
-    description: 'Erfahren Sie mehr über Coday, unsere Mission und das Team aus Wetzlar, Hessen, das hinter unseren preisgekrönten digitalen Lösungen steht.',
+    title: 'Ihr Webdesigner in Wetzlar — Lernen Sie uns kennen | Coday',
+    description:
+      'Lernen Sie Ihren lokalen Webdesigner in Wetzlar kennen. Persönliche Beratung, faire Preise und moderne Webseiten für Handwerk und Mittelstand.',
     path: `/${locale}`,
     type: 'money',
   });
 }
 
-export default async function AboutPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
+export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
   const resolvedParams = await params;
   setRequestLocale(resolvedParams.locale);
 
   return (
     <>
       <SeoHead
-        title="Über Uns | Coday - Digitale Exzellenz aus Wetzlar"
-        description="Erfahren Sie mehr über Coday, unsere Mission und das Team aus Wetzlar, Hessen, das hinter unseren preisgekrönten digitalen Lösungen steht."
+        title="Ihr Webdesigner in Wetzlar — Lernen Sie uns kennen | Coday"
+        description="Lernen Sie Ihren lokalen Webdesigner in Wetzlar kennen. Persönliche Beratung, faire Preise und moderne Webseiten für Handwerk und Mittelstand."
         pageType="about"
       />
       <AboutClient />

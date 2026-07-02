@@ -11,8 +11,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return generatePageMetadata({
-    title: 'Coday | services',
-    description: 'Willkommen bei Coday. Entdecken Sie unsere Leistungen.',
+    title: 'Webseite erstellen lassen in Wetzlar & Mittelhessen | Coday',
+    description:
+      'Wir erstellen Ihre Firmenwebseite in Wetzlar. Zuverlässig, schnell und sicher. Alle Leistungen aus einer Hand vom lokalen Webdesigner.',
     path: `/${locale}`,
     type: 'money',
   });
@@ -25,8 +26,8 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   return (
     <>
       <SeoHead
-        title="Coday | services"
-        description="Willkommen bei Coday. Entdecken Sie unsere Leistungen."
+        title="Webseite erstellen lassen in Wetzlar & Mittelhessen | Coday"
+        description="Wir erstellen Ihre Firmenwebseite in Wetzlar. Zuverlässig, schnell und sicher. Alle Leistungen aus einer Hand vom lokalen Webdesigner."
         pageType="default"
       />
       <ServicesOverview />

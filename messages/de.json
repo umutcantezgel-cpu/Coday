@@ -601,11 +601,12 @@
       "description": "High-End Webentwicklung, Design & Strategie aus Wetzlar, Hessen für Ihren digitalen Erfolg."
     },
     "hero": {
-      "rotatingTexts": ["Web-Design", "Web-Entwicklung", "SEO"],
-      "badge": "Consulting & Strategy",
+      "rotatingTexts": ["Webdesign", "Suchmaschinenoptimierung", "Lokales Marketing"],
+      "badge": "Unsere Leistungen",
+      "title": "Professionelles Webdesign in Wetzlar.",
       "title_start": "Digitale",
       "title_end": "Exzellenz.",
-      "subtitle": "Strategische IT-Beratung, die Ineffizienzen aufdeckt und skalierbare Architektur-Entscheidungen für Ihr nächstes Projekt sichert.",
+      "subtitle": "Wir bieten alles, was Sie für Ihren digitalen Erfolg brauchen. Vom ersten Entwurf bis zur Google-Platzierung - alles aus einer Hand für lokale Unternehmen.",
       "cta_primary": "Kostenloses Audit",
       "cta_secondary": "Methode entdecken"
     },
@@ -627,24 +628,24 @@
     "title_suffix": "kompromisslose Premium Services.",
     "items": {
       "web_dev": {
-        "title": "High-End Webentwicklung",
-        "description": "Wir programmieren performante Webanwendungen mit Next.js und React, die technologisch Maßstäbe setzen."
+        "title": "Zuverlässige Webseiten",
+        "description": "Wir programmieren sichere und schnelle Webseiten, die auf jedem Smartphone perfekt aussehen und einfach zu bedienen sind."
       },
       "web_design": {
-        "title": "Exklusives Webdesign",
-        "description": "Ästhetische, konversionsstarke Designs, die Ihre Markenidentität perfekt in den digitalen Raum übersetzen."
+        "title": "Modernes Design",
+        "description": "Ansprechende Webseiten, die Ihre Kunden überzeugen und Ihr Handwerk oder Ihre Praxis ins beste Licht rücken."
       },
       "growth": {
-        "title": "Technisches SEO",
-        "description": "Datengestützte Optimierung für maximale Sichtbarkeit und nachhaltiges Wachstum in den Suchergebnissen."
+        "title": "Regionale Sichtbarkeit (SEO)",
+        "description": "Wir sorgen dafür, dass Sie bei Google in Wetzlar und Umgebung gefunden werden, wenn Kunden nach Ihren Leistungen suchen."
       }
     }
   },
   "hero": {
     "eyebrow": "High-End Digital Agency",
-    "headline_prefix": "Ihre Vision, präzise",
-    "headline_gradient": "realisiert.",
-    "description": "Als exklusive Web-Agentur aus Wetzlar entwickeln wir performante, KI-gestützte Plattformen für Unternehmen, die den Markt dominieren wollen. Höchste Qualität, ohne Kompromisse.",
+    "headline_prefix": "Wir erstellen Ihre Website in",
+    "headline_gradient": "Wetzlar & Hessen.",
+    "description": "Als lokaler Webdesigner aus Wetzlar entwickeln wir professionelle Webseiten für Handwerker, Praxen und Dienstleister, die messbar neue Kunden bringen. Zuverlässig und zum Festpreis.",
     "rotating": [
       "Next.js App Router Architektur",
       "Headless CMS Integration",

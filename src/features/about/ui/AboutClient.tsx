@@ -125,14 +125,14 @@ export const AboutClient: React.FC = () => {
             className="font-display font-black text-4xl sm:text-6xl lg:text-7xl text-white mb-8 tracking-tighter leading-[1.1] max-w-5xl mx-auto"
             {...stagger(0.15)}
           >
-            Digitales Handwerk.{' '}
+            Ihr Webdesigner in Wetzlar.{' '}
             <GradientText
               colors={['#14b8a6', '#22d3ee', '#14b8a6']}
               animationSpeed={5}
               showBorder={false}
               className="inline-block"
             >
-              Keine Kompromisse.
+              Persönlich & Nah.
             </GradientText>
           </m.h1>
 
@@ -218,7 +218,7 @@ export const AboutClient: React.FC = () => {
               className="text-3xl md:text-5xl font-display font-bold text-white tracking-tight"
               {...stagger(0.1)}
             >
-              Was uns antreibt
+              Warum Coday die richtige Wahl für Ihr lokales Unternehmen ist
             </m.h2>
           </div>
 
@@ -269,7 +269,7 @@ export const AboutClient: React.FC = () => {
               className="text-3xl md:text-5xl font-display font-bold text-white tracking-tight"
               {...stagger(0.1)}
             >
-              Von der Idee zum Meisterwerk
+              So entsteht Ihre neue Firmenwebseite
             </m.h2>
           </div>
 
@@ -317,6 +317,63 @@ export const AboutClient: React.FC = () => {
       {/* ═══ TEAM ═══ */}
       <ScrollReveal index={0}>
         <TeamSection />
+      </ScrollReveal>
+
+      {/* ═══ GEO FAKTEN ═══ */}
+      <ScrollReveal index={1}>
+        <section className="py-24 bg-secondary border-t border-white/5">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-2xl font-display font-bold text-white mb-8">Unternehmensdaten</h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-gray-400">
+              <div>
+                <span className="block text-sm uppercase tracking-wider text-primary mb-2">
+                  Firmensitz
+                </span>
+                <strong className="text-white text-lg font-medium">Wetzlar</strong>
+              </div>
+              <div>
+                <span className="block text-sm uppercase tracking-wider text-primary mb-2">
+                  Einsatzgebiet
+                </span>
+                <strong className="text-white text-lg font-medium">Mittelhessen</strong>
+              </div>
+              <div>
+                <span className="block text-sm uppercase tracking-wider text-primary mb-2">
+                  Gründungsjahr
+                </span>
+                <strong className="text-white text-lg font-medium">2024</strong>
+              </div>
+              <div>
+                <span className="block text-sm uppercase tracking-wider text-primary mb-2">
+                  Inhaber
+                </span>
+                <strong className="text-white text-lg font-medium">Umur Eyigün</strong>
+              </div>
+            </div>
+          </div>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'ProfessionalService',
+                name: 'Coday',
+                founder: {
+                  '@type': 'Person',
+                  name: 'Umur Eyigün',
+                },
+                foundingDate: '2024',
+                address: {
+                  '@type': 'PostalAddress',
+                  addressLocality: 'Wetzlar',
+                  addressRegion: 'Hessen',
+                  addressCountry: 'DE',
+                },
+                areaServed: 'Mittelhessen',
+              }),
+            }}
+          />
+        </section>
       </ScrollReveal>
 
       {/* FAQs for Rich Snippets */}

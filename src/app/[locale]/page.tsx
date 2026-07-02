@@ -36,9 +36,9 @@ export async function generateMetadata({
     });
   }
   return generatePageMetadata({
-    title: 'High-Performance Webentwicklung & Digitalagentur in Wetzlar',
+    title: 'Webdesign Wetzlar — Webseiten, die Kunden bringen | Coday',
     description:
-      'Die führende Webdesign & Entwicklungsagentur in Hessen. Wir bauen unvergleichbar schnelle Websites mit Next.js, React, Tailwind & Framer Motion. Herausragende Ergebnisse garantiert.',
+      'Ihre neue Webseite vom Webdesigner in Wetzlar. Persönlich, zum Festpreis, in 3 Wochen online. Jetzt kostenloses Erstgespräch sichern.',
     path: '/de',
     type: 'money',
   });

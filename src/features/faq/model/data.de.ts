@@ -11,81 +11,81 @@ export const faqCategories: FAQCategory[] = [
 export const faqItems: FAQItem[] = [
   {
     id: 'cost-website',
-    question: 'Was kostet eine Website?',
+    question: 'Was kostet eine Firmenwebseite in Wetzlar?',
     answer:
-      'Unsere Preise sind transparent und fair. Der Einstieg (Starter-Paket) beginnt bei einmalig **939€** zzgl. **49€** monatlich. Unser beliebtes Professional-Paket liegt bei **1.619€** (einmalig) + **99€** / Monat. Für komplexe Enterprise-Lösungen bieten wir maßgeschneiderte Pakete ab **2.219€** Setup an.',
+      'Wir arbeiten mit transparenten Festpreisen. Eine moderne Firmenwebseite beginnt bei uns ab **939€** einmalig (zzgl. 49€ monatlich für Pflege und Hosting). Für umfangreichere Webseiten mit mehr Funktionen bieten wir das Professional-Paket für **1.619€** an.',
     category: 'pricing',
     relatedServices: ['web-development', 'web-design'],
   },
   {
     id: 'wordpress',
-    question: 'Arbeiten Sie mit WordPress?',
+    question: 'Verwenden Sie WordPress oder Baukästen?',
     answer:
-      '**Nein.** Wir glauben, dass WordPress ein Sicherheitsrisiko und Performance-Flaschenhals für moderne Unternehmen ist. Wir bauen mit React (React Router v7 / Next.js) und Headless CMS (Sanity/Strapi), um 100/100 Performance-Scores und maximale Sicherheit zu garantieren.',
+      '**Nein.** Baukästen und Systeme wie WordPress sind oft langsam und anfällig für Hackerangriffe. Wir programmieren Ihre Webseite individuell. Das garantiert blitzschnelle Ladezeiten und höchste Sicherheit für Ihr Unternehmen.',
     category: 'tech',
     relatedServices: ['web-development'],
   },
   {
-    id: 'hourly-rate',
-    question: 'Was ist Ihr Stundensatz?',
+    id: 'hidden-costs',
+    question: 'Gibt es versteckte Kosten?',
     answer:
-      'Wir verkaufen keine Stunden. Wir verkaufen Ergebnisse. Unsere Preise basieren auf dem Projektumfang oder einem Retainer. Das richtet unsere Anreize auf Ihre aus: Wir wollen hochwertige Arbeit effizient liefern, nicht den Prozess in die Länge ziehen, um mehr Stunden abzurechnen.',
+      'Wir garantieren 100% Preistransparenz. Vor Projektstart erhalten Sie von uns ein klares Festpreisangebot. Es gibt keine versteckten Gebühren oder unerwarteten Rechnungen im Nachhinein.',
     category: 'pricing',
     relatedServices: ['consulting'],
   },
   {
     id: 'maintenance',
-    question: 'Bieten Sie Wartung an?',
+    question: 'Wer kümmert sich nach Fertigstellung um die Seite?',
     answer:
-      "Ja. Digitale Produkte brauchen Pflege. Wir bieten 'Growth Retainer', die nicht nur Updates und Sicherheitspatches beinhalten, sondern kontinuierliche Optimierung (CRO), A/B-Tests und Feature-Erweiterungen.",
+      'Wir lassen Sie nicht alleine. In unseren Paketen ist die technische Wartung, regelmäßige Sicherheitsupdates und das Hosting bereits enthalten. Wir stellen sicher, dass Ihre Webseite immer reibungslos funktioniert.',
     category: 'services',
     relatedServices: ['web-development', 'app-development'],
   },
   {
     id: 'timeline',
-    question: 'Wie lange dauert ein Projekt?',
+    question: 'Wie lange dauert es, bis meine neue Webseite online ist?',
     answer:
-      'Eine typische High-Performance Website dauert 4-8 Wochen. Eine komplexe Web-Applikation dauert 3-6 Monate. Wir arbeiten in 2-Wochen-Sprints und liefern alle 14 Tage funktionierenden Code.',
+      'In der Regel ist Ihre neue Webseite innerhalb von 3 bis 6 Wochen fertig und online. Wir stimmen den Zeitplan vorher genau mit Ihnen ab und halten uns an unsere Zusagen.',
     category: 'process',
     relatedServices: ['web-development'],
   },
   {
     id: 'seo-guarantee',
-    question: 'Garantieren Sie Platz 1 bei Google?',
+    question: 'Werde ich bei Google in Wetzlar auf Platz 1 gefunden?',
     answer:
-      'Keine seriöse Agentur kann Platz 1 garantieren. Wir garantieren jedoch das bestmögliche technische Fundament (100/100 Lighthouse Scores, Semantisches HTML, Schema.org), welches die Voraussetzung für Rankings ist. Unsere Content-Strategien haben eine nachweisliche Erfolgsbilanz für verbesserte Sichtbarkeit.',
+      'Niemand kann Platz 1 bei Google fest garantieren. Aber wir bauen Ihre Webseite technisch so perfekt auf, dass Sie die bestmöglichen Voraussetzungen haben, um in Wetzlar und Umgebung von Neukunden über Google gefunden zu werden.',
     category: 'services',
     relatedServices: ['seo', 'marketing'],
   },
   {
     id: 'hosting',
-    question: 'Wo werden die Daten gehostet?',
+    question: 'Wo werden meine Daten und die Webseite gespeichert?',
     answer:
-      'Wir priorisieren Digitale Souveränität. Standardmäßig deployen wir auf europäischer Infrastruktur (Managed Vercel/Netlify Nodes in Frankfurt oder Hetzner Cloud), um strikte DSGVO-Konformität sicherzustellen. Wir vermeiden US-Only Datencenter für sensible Projekte.',
+      'Datenschutz ist uns wichtig. Ihre Webseite und alle Kundendaten werden sicher und 100% DSGVO-konform auf Hochleistungsservern in Deutschland gespeichert.',
     category: 'tech',
     relatedServices: ['web-development', 'consulting'],
   },
   {
     id: 'design-revisions',
-    question: 'Wie viele Design-Korrekturschleifen erhalte ich?',
+    question: 'Was passiert, wenn mir der erste Entwurf nicht gefällt?',
     answer:
-      "Wir limitieren Korrekturen nicht strikt, aber wir arbeiten kollaborativ, um 'Überraschungen' zu vermeiden. Wir binden Sie in Wireframing und Prototyping ein, sodass wir uns beim High-Fidelity UI nur noch über Details unterhalten, nicht über die Richtung.",
+      'Ihre Zufriedenheit steht an erster Stelle. Bevor wir programmieren, erstellen wir gemeinsam das Design. Wir passen den Entwurf so lange an, bis Sie zu 100% zufrieden sind.',
     category: 'process',
     relatedServices: ['design', 'web-design'],
   },
   {
-    id: 'mobile-app',
-    question: 'Brauche ich eine App oder Web App?',
+    id: 'domain',
+    question: 'Kümmern Sie sich auch um meine Domain und E-Mails?',
     answer:
-      '90% der Unternehmen brauchen keine native App-Store-App. Eine Progressive Web App (PWA) bietet dieselben Funktionen (Offline-Modus, Push-Nachrichten, Installierbarkeit) zu einem Bruchteil der Kosten und mit besserer SEO. Wir empfehlen Native nur für High-Performance Games oder spezifischen Hardware-Zugriff.',
+      'Ja, absolut. Wir übernehmen den Umzug Ihrer bestehenden Domain (z.B. www.ihr-betrieb.de) oder registrieren eine neue für Sie. Auch um die Einrichtung passender E-Mail-Adressen kümmern wir uns auf Wunsch.',
     category: 'tech',
     relatedServices: ['app-development', 'web-development'],
   },
   {
     id: 'content-creation',
-    question: 'Schreiben Sie den Content oder ich?',
+    question: 'Muss ich die Texte für die Webseite selbst schreiben?',
     answer:
-      'Wir können beides. Wir empfehlen jedoch unseren AI-Assisted Content Service. Wir interviewen Sie, um Ihre Expertise einzufangen, und nutzen dann unsere AI-Agenten, um sie zu strukturieren und zu polieren. Das spart Ihnen Zeit und sichert SEO-Optimierung.',
+      'Nein, das müssen Sie nicht. Wenn Sie möchten, übernehmen wir die Texterstellung für Sie. Wir führen ein kurzes Interview mit Ihnen und unsere Experten schreiben ansprechende Texte, die Ihre Kunden überzeugen.',
     category: 'services',
     relatedServices: ['marketing', 'seo'],
   },
