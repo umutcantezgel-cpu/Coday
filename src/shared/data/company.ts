@@ -7,7 +7,7 @@ import type { CompanyInfo } from '@/shared/types';
 /** Coday company information. Used by Impressum, Footer, JSON-LD, etc. */
 export const companyInfo: CompanyInfo = {
   name: 'Coday',
-  legalName: 'Umutcan Emre Tezgel (Coday)',
+  legalName: 'Umur Eyigün (Coday)',
   address: 'Lessingstraße 4',
   city: 'Wetzlar',
   zip: '35578',

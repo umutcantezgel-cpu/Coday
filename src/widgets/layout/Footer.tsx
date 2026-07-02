@@ -274,10 +274,10 @@ export const Footer: React.FC = () => {
             <ul className="space-y-3 mb-6 text-sm text-gray-300">
               <li>
                 <a
-                  href="mailto:umut@codayweb.de"
+                  href="mailto:kontakt@codayweb.de"
                   className="hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
-                  umut@codayweb.de
+                  kontakt@codayweb.de
                 </a>
               </li>
               <li>
@@ -289,11 +289,11 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
               <li className="pt-2 text-gray-400">
-                Coday
+                Umur Eyigün (Coday)
                 <br />
-                Wetzlar, Deutschland
+                Lessingstraße 4
                 <br />
-                (Remote weltweit)
+                35578 Wetzlar
               </li>
             </ul>
             <Link
@@ -317,14 +317,18 @@ export const Footer: React.FC = () => {
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <nav aria-label="Soziale Medien" className="flex gap-6 text-gray-400">
             <a
-              href="https://www.facebook.com/profile.php?id=61588758264018" target="_blank" rel="noopener noreferrer"
+              href="https://www.facebook.com/profile.php?id=61588758264018"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-primary transition-colors motion-reduce:duration-[0.01ms] p-3 -m-3 inline-flex items-center justify-center min-h-[44px] min-w-[44px]"
               aria-label={t('social.visit', { platform: 'Facebook' })}
             >
               <OptimizedIcon icon={FacebookLogo} />
             </a>
             <a
-              href="https://www.instagram.com/codayweb/" target="_blank" rel="noopener noreferrer"
+              href="https://www.instagram.com/codayweb/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-primary transition-colors motion-reduce:duration-[0.01ms] p-3 -m-3 inline-flex items-center justify-center min-h-[44px] min-w-[44px]"
               aria-label={t('social.visit', { platform: 'Instagram' })}
             >
@@ -338,7 +342,9 @@ export const Footer: React.FC = () => {
               <OptimizedIcon icon={TwitterLogo} />
             </a>
             <a
-              href="https://www.linkedin.com/in/umutcan-emre-tezgel-65a41a3aa/" target="_blank" rel="noopener noreferrer"
+              href="https://www.linkedin.com/in/umutcan-emre-tezgel-65a41a3aa/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-primary transition-colors motion-reduce:duration-[0.01ms] p-3 -m-3 inline-flex items-center justify-center min-h-[44px] min-w-[44px]"
               aria-label={t('social.visit', { platform: 'LinkedIn' })}
             >
