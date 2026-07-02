@@ -11,7 +11,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: '5 Min.',
     image: '/images/marketing/omnichannel-marketing-hub-seo-social-content-strategie-vernetzt.webp',
     alt: 'Social Media vs Eigene Webseite',
-    author: 'Umur Eyigün',
+    author: 'Umutcan Emre Tezgel',
     date: '10. Oktober 2024',
     content: [
       {
@@ -42,7 +42,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: '6 Min.',
     image: '/images/services/website-builder-drag-drop-baukasten-elemente-webdesign.webp',
     alt: 'Handwerker Webseite Fehler',
-    author: 'Umur Eyigün',
+    author: 'Umutcan Emre Tezgel',
     date: '15. Oktober 2024',
     content: [
       {

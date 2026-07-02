@@ -40,7 +40,7 @@ Die Codebasis wurde erfolgreich in ein hochkonvertierendes, lokal SEO-optimierte
 ### Phase 5: Externe Dominanz
 
 - Ein exakter Handlungsleitfaden für das Google Business Profile (GBP) wurde erstellt (`docs/GOOGLE_BUSINESS_GUIDE.md`).
-- Die NAP-Konsistenz (Name, Address, Phone: Umur Eyigün, Lessingstraße 4, 35578 Wetzlar) wurde zentral in `company.ts` verankert und im Footer synchronisiert.
+- Die NAP-Konsistenz (Name, Address, Phone: Umutcan Emre Tezgel, Lessingstraße 4, 35578 Wetzlar) wurde zentral in `company.ts` verankert und im Footer synchronisiert.
 - Top 5 Branchenbücher für Wetzlar/Mittelhessen wurden als Target definiert.
 
 ### Phase 6: Operation Dominic (Verifikation)

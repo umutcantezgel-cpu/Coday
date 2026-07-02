@@ -289,7 +289,7 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
               <li className="pt-2 text-gray-400">
-                Umur Eyigün (Coday)
+                Umutcan Emre Tezgel (Coday)
                 <br />
                 Lessingstraße 4
                 <br />

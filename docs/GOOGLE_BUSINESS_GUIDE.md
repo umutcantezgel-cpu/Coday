@@ -9,7 +9,7 @@ Das Google Unternehmensprofil ist Ihr wichtigstes Asset für lokale Sichtbarkeit
 ### Basis-Daten (NAP - Name, Address, Phone)
 
 - **Unternehmensname:** Coday - Webdesign Wetzlar
-- **Inhaber:** Umur Eyigün
+- **Inhaber:** Umutcan Emre Tezgel
 - **Adresse:** [Exakte Adresse Ihres Firmensitzes in Wetzlar eintragen, z.B. Musterstraße 1, 35578 Wetzlar]
 - **Telefon:** [Ihre geschäftliche Telefonnummer, identisch zur Webseite]
 - **Webseite:** https://www.codayweb.de/de
