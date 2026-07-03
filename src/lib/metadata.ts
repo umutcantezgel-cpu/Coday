@@ -35,13 +35,7 @@ export function generateAlternates(path: string): Metadata['alternates'] {
   let dePath = `/de${cleanPath}`;
   let enPath = `/en${cleanPath}`;
 
-  // Handle localized routing maps
-  if (cleanPath.startsWith('/industries')) {
-    dePath = `/de${cleanPath.replace(/^\/industries/, '/branchen')}`;
-  }
-  if (cleanPath.startsWith('/branchen')) {
-    enPath = `/en${cleanPath.replace(/^\/branchen/, '/industries')}`;
-  }
+  // Both locales use /branchen/ paths (legacy /industries/ routes redirect to /branchen/)
 
   // Canonical points to the current locale's path
   const isEn = path.startsWith('/en');

@@ -14,7 +14,7 @@ export default function middleware(request: NextRequest) {
 
   // Redirect /en/ local pages to /de/ to avoid duplicate content (as they are German targeted)
   const localPathsRegex =
-    /^\/en\/(standorte|landingpages|branchen|webdesign-agentur-wetzlar|angebot-handwerker)(\/.*)?$/;
+    /^\/en\/(standorte|landingpages|webdesign-agentur-wetzlar|angebot-handwerker)(\/.*)?$/;
   const match = pathname.match(localPathsRegex);
   if (match) {
     const newUrl = request.nextUrl.clone();

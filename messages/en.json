@@ -143,11 +143,15 @@
           "wetzlar": "Crafts in Wetzlar"
         },
         "other": {
+          "title": "More Industries",
+          "overview": "All Industries",
+          "real_estate": "Real Estate",
+          "gastronomy": "Gastronomy & Hotels",
           "services": "Services",
           "retail": "Retail & E-Commerce",
           "public_sector": "Public Sector"
         },
-        "public": "Öffentliche Aufträge",
+        "public": "Public Contracts",
         "tech": "Tech Startups"
       },
       "legal": {
@@ -207,10 +211,21 @@
       },
       "packages": {
         "label": "Packages"
+      },
+      "local": {
+        "title": "Local",
+        "hessen": "Hesse Overview",
+        "wetzlar": "Agency Wetzlar",
+        "arzt_wetzlar": "Doctor in Wetzlar",
+        "arzt_giessen": "Doctor in Giessen",
+        "handwerker_wetzlar": "Craftsman in Wetzlar",
+        "kfz_werkstatt": "Auto Workshops",
+        "kfz_mechatroniker": "Automotive Technicians",
+        "autohaendler": "Car Dealers"
       }
     },
     "footer": {
-      "slogan": "High-End Webentwicklung für Agenturen & Unternehmen. Wir bauen digitale Flaggschiffe, die messbar performen.",
+      "slogan": "High-end web development for agencies & businesses. We build digital flagships that deliver measurable performance.",
       "trust": {
         "title": "Coday Web",
         "desc": "Premium Agency"
@@ -218,50 +233,50 @@
       "sections": {
         "navigation": "Navigation",
         "services": "Services",
-        "regional": "Standorte & Branchen",
-        "contact": "Kontakt"
+        "regional": "Locations & Industries",
+        "contact": "Contact"
       },
-      "rights": "© {year} Coday. Alle Rechte vorbehalten."
+      "rights": "© {year} Coday. All rights reserved."
     },
     "de": "German",
     "en": "English",
     "announcement": {
-      "text": "Enterprise-Audit: Kostenlose Potenzialanalyse verfügbar.",
-      "cta": "Angebot sichern →"
+      "text": "Enterprise Audit: Free potential analysis available.",
+      "cta": "Claim your offer →"
     },
     "social": {
-      "visit": "Besuchen Sie uns auf {platform}"
+      "visit": "Visit us on {platform}"
     },
     "global_cta": {
-      "title_prefix": "Bereit für Ihr",
-      "title_highlight": "digitales Upgrade?",
-      "subtitle": "Lassen Sie uns gemeinsam herausfinden, wie wir Ihre Vision in ein performantes digitales Produkt verwandeln können.",
-      "button": "Kostenloses Erstgespräch"
+      "title_prefix": "Ready for your",
+      "title_highlight": "digital upgrade?",
+      "subtitle": "Let's find out together how we can turn your vision into a high-performing digital product.",
+      "button": "Free Initial Consultation"
     },
     "cookie": {
       "settings": {
-        "title": "Cookie-Einstellungen",
-        "desc": "Wir verwenden Cookies, um Ihre Erfahrung zu verbessern. Bitte wählen Sie aus, welche Cookies Sie zulassen möchten."
+        "title": "Cookie Settings",
+        "desc": "We use cookies to improve your experience. Please choose which cookies you would like to allow."
       },
       "essential": {
-        "title": "Notwendige Cookies",
-        "desc": "Diese Cookies sind für die Grundfunktionen der Website erforderlich und können nicht deaktiviert werden."
+        "title": "Essential Cookies",
+        "desc": "These cookies are required for the basic functions of the website and cannot be disabled."
       },
       "analytics": {
-        "title": "Analyse-Cookies",
-        "desc": "Helfen uns zu verstehen, wie Besucher mit der Website interagieren, indem Informationen anonym gesammelt und gemeldet werden."
+        "title": "Analytics Cookies",
+        "desc": "Help us understand how visitors interact with the website by collecting and reporting information anonymously."
       },
       "marketing": {
-        "title": "Marketing-Cookies",
-        "desc": "Werden verwendet, um Besuchern auf Websites zu folgen. Die Absicht ist, Anzeigen zu zeigen, die relevant und ansprechend für den einzelnen Benutzer sind."
+        "title": "Marketing Cookies",
+        "desc": "Used to track visitors across websites. The intention is to display ads that are relevant and engaging for the individual user."
       }
     },
-    "close": "Schließen",
-    "cancel": "Abbrechen",
-    "save": "Speichern",
+    "close": "Close",
+    "cancel": "Cancel",
+    "save": "Save",
     "calculator": "Pricing Calculator",
-    "garantie": "Garantie",
-    "presse": "Presse"
+    "garantie": "Warranty",
+    "presse": "Press"
   },
   "metadata": {
     "title": "Coday — AI-Augmented Web Agency from Wetzlar",

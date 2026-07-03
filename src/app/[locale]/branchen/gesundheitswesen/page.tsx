@@ -37,7 +37,7 @@ export default async function GesundheitswesenHubPage({
   setRequestLocale(locale);
   return (
     <>
-      <IndustryDetailClient />
+      <IndustryDetailClient industrySlug="aerzte-gesundheit" />
       <IndustryToolEmbed industryKey="gesundheit" />
     </>
   );

@@ -282,16 +282,25 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
           {/* Desktop/Tablet Only Actions */}
           <div className="nav-desktop-actions hidden lg:flex items-center gap-3">
             <NavDropdown
-              title="Lokales"
+              title={t('nav.local.title')}
               items={[
-                { label: 'Hessen Übersicht', href: '/standorte/hessen' },
-                { label: 'Agentur Wetzlar', href: '/standorte/wetzlar' },
-                { label: 'Arzt in Wetzlar', href: '/branchen/gesundheitswesen/arzt-wetzlar' },
-                { label: 'Arzt in Gießen', href: '/branchen/gesundheitswesen/arzt-giessen' },
-                { label: 'Handwerker in Wetzlar', href: '/branchen/handwerker/wetzlar' },
-                { label: 'KFZ-Werkstätten', href: '/branchen/automobil/kfz-werkstatt' },
-                { label: 'KFZ-Mechatroniker', href: '/branchen/automobil/kfz-mechatroniker' },
-                { label: 'Autohändler', href: '/branchen/automobil/autohaendler' },
+                { label: t('nav.local.hessen'), href: '/standorte/hessen' },
+                { label: t('nav.local.wetzlar'), href: '/standorte/wetzlar' },
+                {
+                  label: t('nav.local.arzt_wetzlar'),
+                  href: '/branchen/gesundheitswesen/arzt-wetzlar',
+                },
+                {
+                  label: t('nav.local.arzt_giessen'),
+                  href: '/branchen/gesundheitswesen/arzt-giessen',
+                },
+                { label: t('nav.local.handwerker_wetzlar'), href: '/branchen/handwerker/wetzlar' },
+                { label: t('nav.local.kfz_werkstatt'), href: '/branchen/automobil/kfz-werkstatt' },
+                {
+                  label: t('nav.local.kfz_mechatroniker'),
+                  href: '/branchen/automobil/kfz-mechatroniker',
+                },
+                { label: t('nav.local.autohaendler'), href: '/branchen/automobil/autohaendler' },
               ]}
             />
             <React.Suspense fallback={null}>

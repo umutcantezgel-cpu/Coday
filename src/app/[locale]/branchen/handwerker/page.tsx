@@ -37,7 +37,7 @@ export default async function HandwerkerHubPage({
   setRequestLocale(locale);
   return (
     <>
-      <IndustryDetailClient />
+      <IndustryDetailClient industrySlug="handwerk-bau" />
       <IndustryToolEmbed industryKey="handwerk" />
     </>
   );

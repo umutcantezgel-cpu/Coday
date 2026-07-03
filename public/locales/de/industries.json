@@ -47,7 +47,11 @@
     "title": "Handwerk & Bau",
     "hero": {
       "headline": "Professionelle Websites für Ihr Handwerk",
-      "subheadline": "Mehr qualifizierte Mitarbeiter und lukrative Aufträge durch eine Webseite, die Ihre Qualität widerspiegelt."
+      "subheadline": "Mehr qualifizierte Mitarbeiter und lukrative Aufträge durch eine Webseite, die Ihre Qualität widerspiegelt.",
+      "title_1": "Professionelles Webdesign",
+      "title_2": "für Handwerker",
+      "description": "Wir bauen Websites, die Handwerksbetrieben zu mehr Sichtbarkeit und Aufträgen verhelfen.",
+      "image_alt": "Handwerker Website"
     },
     "challenges": {
       "fachkraftemangel": {
@@ -329,6 +333,11 @@
       "rezept_bestellung": {
         "title": "Rezept-Bestellung",
         "description": "Modul für Folgerezept-Anforderungen."
+      },
+      "service_funnel": {
+        "steps": {
+          "leads": "Terminanfragen & Patienten"
+        }
       }
     },
     "features": {
@@ -821,5 +830,24 @@
         "description": "Verwaltung von Probefahrten für Neufahrzeuge."
       }
     }
+  },
+  "buttons": {
+    "cta_analysis": "Website analysieren lassen"
+  },
+  "common": {
+    "features": {
+      "google_maps": "Google Maps Integration",
+      "regional_pages": "Regionale Landingpages",
+      "review_management": "Bewertungsmanagement"
+    }
+  },
+  "tool_embed": {
+    "coming_soon_title": "Spezial-Tool Integration",
+    "coming_soon_desc": "Hier wird in Kürze das branchenspezifische Tool für diesen Bereich eingebunden.",
+    "title": "Interaktive Branchenlösung",
+    "subtitle": "Entdecken Sie unsere maßgeschneiderte Lösung für Ihre Branche in einer interaktiven Live-Demo.",
+    "demo_heading": "Live-Demo öffnen",
+    "demo_desc": "Wir haben ein spezielles Tool entwickelt, um Ihnen die Möglichkeiten für Ihr Business greifbar zu machen.",
+    "cta": "Zur interaktiven Demo"
   }
 }

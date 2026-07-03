@@ -47,7 +47,11 @@
     "title": "Craft & Construction",
     "hero": {
       "headline": "Digital Dominance for Your Craft",
-      "subheadline": "More qualified employees and lucrative orders through a website that reflects your quality."
+      "subheadline": "More qualified employees and lucrative orders through a website that reflects your quality.",
+      "title_1": "Professional Web Design",
+      "title_2": "for Craftsmen",
+      "description": "We build websites that help craft businesses gain more visibility and orders.",
+      "image_alt": "Craftsman Website"
     },
     "challenges": {
       "fachkraftemangel": {
@@ -329,6 +333,11 @@
       "rezept_bestellung": {
         "title": "Prescription Order",
         "description": "Module for follow-up prescription requests."
+      },
+      "service_funnel": {
+        "steps": {
+          "leads": "Appointment Requests & Patients"
+        }
       }
     },
     "features": {
@@ -751,75 +760,94 @@
       }
     }
   },
-  "title_prefix": "Maßgeschneiderte Lösungen",
-  "title_suffix": "für Ihre Branche.",
+  "title_prefix": "Tailored Solutions",
+  "title_suffix": "for Your Industry.",
   "card_craft": {
-    "title": "Handwerk & Bauwesen",
-    "desc": "Digitale Präsenz, die Handwerkskunst widerspiegelt und hochwertige Kundenanfragen generiert."
+    "title": "Crafts & Construction",
+    "desc": "Digital presence that reflects craftsmanship and generates high-quality customer inquiries."
   },
   "card_realestate": {
-    "title": "Immobilien & Makler",
-    "desc": "Exklusive Exposés und performante Portfolios zur Gewinnung erstklassiger Mandate."
+    "title": "Real Estate & Agents",
+    "desc": "Exclusive exposés and high-performance portfolios to attract premium mandates."
   },
   "card_shop": {
     "title": "E-Commerce & Retail",
-    "desc": "Skalierbare Onlineshops mit blitzschnellen Ladezeiten für maximale Conversion-Raten."
+    "desc": "Scalable online shops with lightning-fast loading times for maximum conversion rates."
   },
   "card_consulting": {
-    "title": "Unternehmensberatung",
-    "desc": "Repräsentative Webauftritte, die Ihre Expertise und Seriosität auf den ersten Blick vermitteln."
+    "title": "Business Consulting",
+    "desc": "Representative web presences that convey your expertise and professionalism at first glance."
   },
   "card_health": {
-    "title": "Gesundheitswesen",
-    "desc": "Vertrauensbildende Praxis-Websites mit nahtloser, sicherer Terminbuchung für Ihre Patienten."
+    "title": "Healthcare",
+    "desc": "Trust-building practice websites with seamless, secure appointment booking for your patients."
   },
   "automobil": {
-    "title": "Automobil & KFZ",
+    "title": "Automotive & Vehicles",
     "hero": {
-      "headline": "Mehr Termine, volle Werkstatt",
-      "subheadline": "Wir digitalisieren Autohäuser und Werkstätten für planbare Kundenanfragen und Service-Buchungen."
+      "headline": "More Appointments, Full Workshop",
+      "subheadline": "We digitalize car dealerships and workshops for predictable customer inquiries and service bookings."
     },
     "challenges": {
       "c1": {
-        "title": "Abhängigkeit von Portalen",
-        "description": "Hohe Gebühren bei Mobile.de & Autoscout24."
+        "title": "Platform Dependency",
+        "description": "High fees on Mobile.de & Autoscout24."
       },
       "c2": {
-        "title": "Termin-Chaos",
-        "description": "Telefon klingelt ständig für einfache Terminvereinbarungen."
+        "title": "Appointment Chaos",
+        "description": "Phone rings constantly for simple appointment scheduling."
       },
       "c3": {
-        "title": "Sichtbarkeit",
-        "description": "Lokale Kunden finden eher die Konkurrenz als Sie."
+        "title": "Visibility",
+        "description": "Local customers find your competitors before they find you."
       }
     },
     "solutions": {
       "s1": {
-        "title": "Eigener Vertriebskanal",
-        "description": "Unabhängigkeit durch eine starke eigene Website."
+        "title": "Own Sales Channel",
+        "description": "Independence through a strong website of your own."
       },
       "s2": {
-        "title": "Digitale Terminbuchung",
-        "description": "Werkstatt-Termine 24/7 online buchen lassen."
+        "title": "Digital Appointment Booking",
+        "description": "Let customers book workshop appointments online 24/7."
       },
       "s3": {
         "title": "Local SEO",
-        "description": "Top-Platzierungen bei lokalen Suchanfragen."
+        "description": "Top rankings for local search queries."
       }
     },
     "customFeatures": {
       "f1": {
-        "title": "Fahrzeugbestand-Sync",
-        "description": "Automatische Synchronisation mit Ihrer Fahrzeugsoftware."
+        "title": "Vehicle Inventory Sync",
+        "description": "Automatic synchronization with your vehicle management software."
       },
       "f2": {
-        "title": "Schadensmelder",
-        "description": "Kunden können Bilder vom Schaden direkt hochladen."
+        "title": "Damage Reporter",
+        "description": "Customers can upload images of damage directly."
       },
       "f3": {
-        "title": "Probefahrt-Kalender",
-        "description": "Verwaltung von Probefahrten für Neufahrzeuge."
+        "title": "Test Drive Calendar",
+        "description": "Management of test drives for new vehicles."
       }
     }
+  },
+  "buttons": {
+    "cta_analysis": "Get Your Website Analyzed"
+  },
+  "common": {
+    "features": {
+      "google_maps": "Google Maps Integration",
+      "regional_pages": "Regional Landing Pages",
+      "review_management": "Review Management"
+    }
+  },
+  "tool_embed": {
+    "coming_soon_title": "Specialized Tool Integration",
+    "coming_soon_desc": "An industry-specific tool for this sector will be integrated here shortly.",
+    "title": "Interactive Industry Solution",
+    "subtitle": "Discover our tailored solution for your industry in an interactive live demo.",
+    "demo_heading": "Open Live Demo",
+    "demo_desc": "We've developed a specialized tool to make the possibilities for your business tangible.",
+    "cta": "Go to Interactive Demo"
   }
 }

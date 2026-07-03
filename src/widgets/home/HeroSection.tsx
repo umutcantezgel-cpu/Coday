@@ -2,7 +2,6 @@ import React from 'react';
 import { useTranslations } from 'next-intl';
 import GradientText from '@/shared/ui/GradientText';
 import { cn } from '@/shared/lib/utils';
-import dynamic from 'next/dynamic';
 import { QuickContactForm } from './QuickContactForm';
 import { Link } from '@/i18n/navigation';
 import { ArrowRight, Briefcase } from '@phosphor-icons/react/dist/ssr';
@@ -10,9 +9,7 @@ import { baseButtonStyles, buttonVariants, buttonSizes } from '@/shared/ui/Butto
 
 import { MobileRotatingText } from './MobileRotatingText';
 
-const ClientRotatingText = dynamic(() =>
-  import('./ClientRotatingText').then((m) => m.ClientRotatingText)
-);
+import { ClientRotatingText } from './ClientRotatingText';
 
 export const HeroSection: React.FC = () => {
   const t = useTranslations('home');

@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useTranslations } from 'next-intl';
 
 interface IndustryToolEmbedProps {
   toolId?: string;
@@ -9,6 +10,7 @@ interface IndustryToolEmbedProps {
 }
 
 export function IndustryToolEmbed({ industryKey }: IndustryToolEmbedProps) {
+  const t = useTranslations('industries');
   let url = '';
 
   if (industryKey?.toLowerCase().includes('handwerk')) {
@@ -30,9 +32,11 @@ export function IndustryToolEmbed({ industryKey }: IndustryToolEmbedProps) {
       <section className="w-full max-w-7xl mx-auto px-4 py-16">
         <div className="bg-gray-50 border border-gray-100 rounded-3xl p-8 text-center h-64 flex flex-col items-center justify-center">
           <div className="w-12 h-12 mb-4 bg-gray-200 rounded-full animate-pulse" />
-          <h3 className="text-xl font-display font-semibold mb-2">Spezial-Tool Integration</h3>
+          <h3 className="text-xl font-display font-semibold mb-2">
+            {t('tool_embed.coming_soon_title')}
+          </h3>
           <p className="text-sm text-gray-500 max-w-md mx-auto">
-            Hier wird in Kürze das branchenspezifische Tool für diesen Bereich eingebunden.
+            {t('tool_embed.coming_soon_desc')}
           </p>
         </div>
       </section>
@@ -43,12 +47,9 @@ export function IndustryToolEmbed({ industryKey }: IndustryToolEmbedProps) {
     <section className="w-full max-w-7xl mx-auto px-4 py-24 relative z-20 -mt-10">
       <div className="text-center mb-10 max-w-3xl mx-auto">
         <h2 className="text-4xl font-display font-black text-secondary-900 mb-4">
-          Interaktive Branchenlösung
+          {t('tool_embed.title')}
         </h2>
-        <p className="text-lg text-secondary-600 font-medium">
-          Entdecken Sie unsere maßgeschneiderte Lösung für Ihre Branche in einer interaktiven
-          Live-Demo.
-        </p>
+        <p className="text-lg text-secondary-600 font-medium">{t('tool_embed.subtitle')}</p>
       </div>
       <div className="bg-white border border-gray-100 rounded-[2rem] overflow-hidden shadow-2xl p-12 text-center flex flex-col items-center justify-center relative group">
         <div className="absolute inset-0 bg-gradient-to-br from-primary-50 to-transparent opacity-50 pointer-events-none" />
@@ -68,11 +69,10 @@ export function IndustryToolEmbed({ industryKey }: IndustryToolEmbedProps) {
           </svg>
         </div>
         <h3 className="text-2xl font-display font-bold text-secondary-900 mb-4 relative z-10">
-          Live-Demo öffnen
+          {t('tool_embed.demo_heading')}
         </h3>
         <p className="text-secondary-600 max-w-md mx-auto mb-8 relative z-10">
-          Wir haben ein spezielles Tool entwickelt, um Ihnen die Möglichkeiten für Ihr Business
-          greifbar zu machen.
+          {t('tool_embed.demo_desc')}
         </p>
         <a
           href={url}
@@ -80,7 +80,7 @@ export function IndustryToolEmbed({ industryKey }: IndustryToolEmbedProps) {
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-primary-600 rounded-full hover:bg-primary-700 hover:scale-105 transition-all shadow-lg hover:shadow-primary-600/30 relative z-10"
         >
-          Zur interaktiven Demo
+          {t('tool_embed.cta')}
           <svg
             className="ml-2 w-5 h-5"
             fill="none"

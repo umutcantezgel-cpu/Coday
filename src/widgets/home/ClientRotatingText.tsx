@@ -1,9 +1,6 @@
-"use client";
-import dynamic from 'next/dynamic';
+'use client';
 import React from 'react';
-import type { RotatingTextProps } from '@/shared/ui/RotatingText';
-
-const RotatingText = dynamic(() => import('@/shared/ui/RotatingText'), { ssr: false });
+import RotatingText, { type RotatingTextProps } from '@/shared/ui/RotatingText';
 
 export function ClientRotatingText(props: RotatingTextProps) {
   return <RotatingText {...props} />;

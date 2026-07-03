@@ -91,3 +91,4 @@ build
 
 # AI Agents
 .agents
+scratch/

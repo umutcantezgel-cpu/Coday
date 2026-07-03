@@ -24,6 +24,7 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   experimental: {
     reactCompiler: true,
+    optimizeCss: true,
     optimizePackageImports: [
       '@phosphor-icons/react',
       '@phosphor-icons/react/dist/ssr',
@@ -121,6 +122,77 @@ const nextConfig: NextConfig = {
       {
         source: '/:locale(de|en)/packages',
         destination: '/:locale/pricing',
+        permanent: true,
+      },
+      // /industries/ → /branchen/ redirects
+      {
+        source: '/industries/dienstleistung',
+        destination: '/branchen/dienstleistung',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/industries/dienstleistung',
+        destination: '/:locale/branchen/dienstleistung',
+        permanent: true,
+      },
+      {
+        source: '/industries/gastronomie',
+        destination: '/branchen/gastronomie',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/industries/gastronomie',
+        destination: '/:locale/branchen/gastronomie',
+        permanent: true,
+      },
+      {
+        source: '/industries/gesundheit',
+        destination: '/branchen/gesundheitswesen',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/industries/gesundheit',
+        destination: '/:locale/branchen/gesundheitswesen',
+        permanent: true,
+      },
+      {
+        source: '/industries/handwerk',
+        destination: '/branchen/handwerker',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/industries/handwerk',
+        destination: '/:locale/branchen/handwerker',
+        permanent: true,
+      },
+      {
+        source: '/industries/immobilien',
+        destination: '/branchen/immobilien',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/industries/immobilien',
+        destination: '/:locale/branchen/immobilien',
+        permanent: true,
+      },
+      {
+        source: '/industries/publicsector',
+        destination: '/branchen/public-sector',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/industries/publicsector',
+        destination: '/:locale/branchen/public-sector',
+        permanent: true,
+      },
+      {
+        source: '/industries/retail',
+        destination: '/branchen/retail',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/industries/retail',
+        destination: '/:locale/branchen/retail',
         permanent: true,
       },
     ];

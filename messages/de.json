@@ -143,6 +143,10 @@
           "wetzlar": "Handwerker in Wetzlar"
         },
         "other": {
+          "title": "Weitere Branchen",
+          "overview": "Alle Branchen",
+          "real_estate": "Immobilien & Makler",
+          "gastronomy": "Gastronomie & Hotels",
           "services": "Dienstleistungen",
           "retail": "Handel & E-Commerce",
           "public_sector": "Öffentlicher Sektor"
@@ -207,6 +211,17 @@
       },
       "packages": {
         "label": "Pakete"
+      },
+      "local": {
+        "title": "Lokales",
+        "hessen": "Hessen Übersicht",
+        "wetzlar": "Agentur Wetzlar",
+        "arzt_wetzlar": "Arzt in Wetzlar",
+        "arzt_giessen": "Arzt in Gießen",
+        "handwerker_wetzlar": "Handwerker in Wetzlar",
+        "kfz_werkstatt": "KFZ-Werkstätten",
+        "kfz_mechatroniker": "KFZ-Mechatroniker",
+        "autohaendler": "Autohändler"
       }
     },
     "footer": {
