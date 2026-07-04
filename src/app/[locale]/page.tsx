@@ -8,15 +8,14 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Script from 'next/script';
 import React from 'react';
 
-import {
-  StatsSectionLazy,
-  IndustriesGridLazy,
-  TestimonialsSectionLazy,
-  PortfolioTeaserSectionLazy,
-  AgencyComparisonTableLazy,
-  PhilosophySectionLazy,
-  ServicesSectionLazy,
-} from '@/widgets/home/LazySections';
+import LogoLoop from '@/shared/ui/LogoLoop';
+import { StatsSection } from '@/widgets/home/StatsSection';
+import { PhilosophySection } from '@/widgets/home/PhilosophySection';
+import { ServicesSection } from '@/widgets/home/ServicesSection';
+import { IndustriesGrid } from '@/widgets/home/IndustriesGrid';
+import { TestimonialsSection } from '@/widgets/home/TestimonialsSection';
+import { PortfolioTeaserSection } from '@/widgets/home/PortfolioTeaserSection';
+import AgencyComparisonTable from '@/features/analyzer/ui/AgencyComparisonTable';
 import { ScrollReveal } from '@/shared/ui/animations/ScrollReveal';
 import { SeoContentSection } from '@/widgets/home/SeoContentSection';
 
@@ -72,7 +71,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
       <ScrollReveal index={1}>
         <React.Suspense fallback={<div className="min-h-96" />}>
-          <StatsSectionLazy />
+          <StatsSection />
         </React.Suspense>
       </ScrollReveal>
 
@@ -80,37 +79,37 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <React.Suspense
           fallback={<Skeleton className="h-96 w-full max-w-7xl mx-auto rounded-3xl" />}
         >
-          <AgencyComparisonTableLazy />
+          <AgencyComparisonTable />
         </React.Suspense>
       </div>
 
       <ScrollReveal index={0}>
         <React.Suspense fallback={<div className="min-h-96" />}>
-          <PhilosophySectionLazy />
+          <PhilosophySection />
         </React.Suspense>
       </ScrollReveal>
 
       <ScrollReveal index={1}>
         <React.Suspense fallback={<div className="min-h-96" />}>
-          <ServicesSectionLazy />
+          <ServicesSection />
         </React.Suspense>
       </ScrollReveal>
 
       <ScrollReveal index={0}>
         <React.Suspense fallback={<div className="min-h-96" />}>
-          <PortfolioTeaserSectionLazy />
+          <PortfolioTeaserSection />
         </React.Suspense>
       </ScrollReveal>
 
       <ScrollReveal index={1}>
         <React.Suspense fallback={<div className="min-h-96" />}>
-          <IndustriesGridLazy />
+          <IndustriesGrid />
         </React.Suspense>
       </ScrollReveal>
 
       <ScrollReveal index={1}>
         <React.Suspense fallback={<div className="min-h-96" />}>
-          <TestimonialsSectionLazy />
+          <TestimonialsSection />
         </React.Suspense>
       </ScrollReveal>
 
