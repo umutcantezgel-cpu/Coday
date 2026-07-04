@@ -219,6 +219,17 @@
     "packages": {
       "label": "Packages"
     },
+    "local": {
+      "title": "Local",
+      "hessen": "Hesse Overview",
+      "wetzlar": "Agency Wetzlar",
+      "arzt_wetzlar": "Doctor in Wetzlar",
+      "arzt_giessen": "Doctor in Giessen",
+      "handwerker_wetzlar": "Craftsman in Wetzlar",
+      "kfz_werkstatt": "Auto Workshops",
+      "kfz_mechatroniker": "Automotive Technicians",
+      "autohaendler": "Car Dealers"
+    },
     "projects": {
       "desc": "Our Best Client Projects",
       "label": "Projects"
