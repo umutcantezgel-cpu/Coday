@@ -1,0 +1,131 @@
+{
+  "target": "giessen",
+  "type": "location",
+  "meta": {
+    "title": "High-End Web Design Gießen | Coday – Next.js & Headless CMS for B2B",
+    "description": "Your premium web design agency for Gießen. Coday delivers custom-built, blazing-fast Next.js websites and web apps for medical technology, research & Mittelstand. Uncompromising performance without WordPress."
+  },
+  "hero": {
+    "headline": "High-End Web Design for Gießen: Digital Excellence for Market Leaders",
+    "subheadline": "Next.js, Headless CMS & uncompromising performance for the B2B sector in Central Hessen.",
+    "description": "In the science and medical hub of Gießen, digital superiority determines the edge in global competition. Coday, your premium agency from neighboring Wetzlar, develops blazing-fast, conversion-driven websites and highly complex web apps that convince discerning B2B decision-makers from the very first click. We leave behind sluggish standard solutions and combine Next.js architecture with award-winning, brutalist design for measurable ROI, maximum security, and absolute local dominance. We're not just a web design agency—we're your strategic partner for digital engineering at the enterprise level."
+  },
+  "localDominance": {
+    "title": "Digital Dominance in Gießen's Hightech & Science Ecosystem",
+    "description": "Gießen is the pulsating center for life sciences, medical technology, and cutting-edge university research in Central Hessen. The density of highly specialized B2B companies, research institutions, and logistics champions demands digital interfaces that precisely reflect this precision and innovative power. As headless specialists from the immediate vicinity (Wetzlar), we don't just understand the regional economic structure—we deliver the technological firepower to position your brand as the undisputed industry leader. We transform your website from a digital business card into a genuine, scalable sales engine.",
+    "points": [
+      "Focus on medical technology & life sciences: Complex, high-value services and products require a crystal-clear, trust-building digital presentation that doesn't test the patience of chief physicians and laboratory directors with slow load times.",
+      "Regional proximity Wetzlar-Gießen: The symbiosis of Wetzlar's optical engineering tradition and Gießen's research excellence. We offer short distances for in-person strategy meetings, deep operational insights, and agile collaboration on mission-critical web projects. We're at your office in 15 minutes.",
+      "Next.js performance as a ranking catalyst: We dominate Google search results (local & national SEO) through perfect Core Web Vitals. In the fiercely competitive B2B market, this technical superiority measurably maximizes your conversion rates while simultaneously reducing your Customer Acquisition Costs.",
+      "Employer branding for the Gießen campus (JLU & THM): The talent shortage is the bottleneck of growth. We develop digital experience worlds and career pages that magnetically attract top academic talent, engineers, and graduates from the Justus Liebig University and the Technical University of Central Hessen.",
+      "GDPR-compliant headless architecture: Especially for research-adjacent companies in Gießen, data security is essential. Through the strict separation of frontend (Next.js) and backend (e.g., Sanity, Supabase), we minimize attack surfaces to an absolute minimum—no vulnerable plugins, no compromised databases.",
+      "Scalability for Gießen's hidden champions: When you expand into international markets, our architecture scales seamlessly with you. Edge caching via the global Vercel network ensures your website loads just as fast in Tokyo, New York, or Singapore as it does in the Europaviertel in Gießen.",
+      "Buyer-centric user experience (B2B UX): B2B decision-makers have no time for confusing navigation. We structure complex data sheets, CAD models, and service portfolios so that industrial buyers immediately find what they're looking for—frictionless experiences that result in highly qualified leads.",
+      "Breaking away from generic templates: In a city full of innovation, you cannot look like your competition. Coday delivers custom design engineering that visually and unmistakably cements the technological and intellectual market leadership of your company."
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "Why Standard Websites and WordPress Catastrophically Fail in Gießen's B2B Sector",
+      "content": "The corporate landscape in Gießen, strongly shaped by biotechnology, highly specialized medical technology, and university spin-offs, operates at the highest scientific and technological level. Anyone who enters this environment with drag-and-drop template websites or slow WordPress themes unconsciously signals technological stagnation to potential business partners. WordPress was originally designed as a simple blogging system and today is artificially kept alive for enterprise websites through countless error-prone plugins. The result is always the same: extremely bloated code, catastrophic load times, constant critical security vulnerabilities, and a user experience (UX) that immediately repels sophisticated B2B clients. Coday draws a radical line here. As a specialized headless web agency, we develop exclusively with Next.js, React, and TypeScript. We deliver codebase quality at the enterprise level, free from unnecessary bloat. In a market where a single digital B2B lead can mean contracts worth millions, our uncompromising software architecture gives you the decisive technological, aesthetic, and psychological edge."
+    },
+    {
+      "title": "The Technological Edge: Next.js vs. Monolithic Systems (WordPress/Typo3)",
+      "content": "While your competition still relies on monolithic legacy systems like Typo3 or WordPress—where database, backend logic, and frontend rendering are cumbersomely intertwined—at Coday, we implement forward-looking headless architectures. Through the consistent decoupling of the frontend (Next.js) from the content backend (such as Sanity CMS), we achieve unprecedented flexibility and fault tolerance. Next.js enables Server-Side Rendering (SSR) and Static Site Generation (SSG). This means your web pages are pre-computed on the server and delivered to the user's browser as extremely fast, static files. Loading screens become a thing of the past. When a buyer from the Gießen region—or from Asia—searches for your industrial solutions, your site is fully usable within milliseconds. This technical excellence is not merely a comfort feature but a hard ranking criterion for Google (Core Web Vitals) and a direct multiplier for your conversion rate."
+    },
+    {
+      "title": "Measurable ROI Through Radical Performance Optimization (Core Web Vitals)",
+      "content": "Web performance in the high-end B2B sector is not an optional metric—it's the bottleneck of your entire digital sales and marketing funnel. Studies show: 100 milliseconds of additional load time can cost up to 1% in revenue or conversions. For complex, explanation-intensive B2B products from Gießen's research and manufacturing industry, this applies even more. Coday subjects every line of code, every animation, and every image to the strictest performance budgets: our target is a Largest Contentful Paint (LCP) under 2.0 seconds and an Interaction to Next Paint (INP) well below 150 milliseconds, even on low-end mobile devices. We don't just compress assets—we optimize the browser's entire rendering pipeline. The result is a digital platform that feels as smooth as a native app on the latest smartphone. This latency-free experience subconsciously signals to visitors: 'This company works precisely, highly efficiently, and at the highest level.' An invaluable trust advantage in B2B sales."
+    },
+    {
+      "title": "The Wetzlar-Gießen Location Advantage: The Axis of Technological Innovation",
+      "content": "The geographic, academic, and economic axis between Wetzlar and Gießen is a unique, highly productive powerhouse in Germany. Here, world-class optics, precision mechanics, and Leica tradition meet cutting-edge university research, life sciences, and modern logistics. As an agency with deep roots and headquarters in Wetzlar, we are part of this very ecosystem. We understand the mentality, the business networks, and the very specific challenges facing Central Hessian market leaders. We are not an anonymous, hard-to-reach big-city agency from Berlin, Hamburg, or Munich that vanishes after project completion. We are your strategic partner right on your doorstep. Within 15 minutes, we're available for crucial board meetings, technical architecture workshops, video productions, or short-notice strategic pivots at your Gießen headquarters. This physical proximity enables extremely agile, iterative development cycles without friction or communication breakdowns."
+    },
+    {
+      "title": "Employer Branding 2.0: Talent Acquisition Around the JLU and THM Campus",
+      "content": "The competition for the absolute best minds—exceptional engineers, software developers, researchers, and executive leaders—is fought harder nowhere than in a dynamic university city like Gießen. The Justus Liebig University (JLU) and the Technical University of Central Hessen (THM) produce thousands of highly qualified graduates every year. But how do you convince these sought-after talents to join your company when your career page is stuck in 2015 design and doesn't load properly on mobile? Coday develops digital experience worlds precisely tailored to the high expectations of Generation Z and modern professionals. We integrate seamless, accessible application processes, immersive visual insights into your company culture, and blazing-fast load times. When a master's graduate from THM opens your website, the architecture of the page must immediately convey: innovation is not just preached here—it's practiced at the highest level."
+    },
+    {
+      "title": "Absolute Security and GDPR Compliance for Sensitive Corporate Data",
+      "content": "The cyber threat landscape for mid-sized companies, clinics, and research institutions in Gießen is escalating exponentially—and it's very real. Classic monoliths like WordPress are the primary target of large-scale, automated cyberattacks due to their enormous prevalence, open-source third-party plugin code, and outdated architectural concepts. A successful breach can cause immense economic damage and devastating reputational losses. Our modern headless architecture with Next.js structurally eliminates these classic attack vectors. Since the user frontend operates completely independently from the editorial backend and data is retrieved only through highly secured, encrypted APIs, there is no conventional database that can be hacked directly via the public website through SQL injection. Combined with enterprise-grade hosting via Vercel Edge Networks, we guarantee you the highest fault tolerance, native DDoS protection, and absolute GDPR compliance for your mission-critical systems."
+    },
+    {
+      "title": "Design Engineering: Brutalism, Minimalism, and Uncompromising High-End Aesthetics",
+      "content": "Excellent, performant code necessarily requires excellent visual design. We reject generic templates, interchangeable stock photos that everyone uses, and completely overloaded layouts that confuse users. Coday stands for high-end visual design and genuine design engineering: we employ advanced design principles of Industrial Brutalist UI and sophisticated minimalism to structure complex B2B data sheets, machine specifications, and research approaches with maximum clarity. Strict typography, the deliberate and generous use of white space (negative space), asymmetric and dynamic layouts, and hardware-accelerated micro-interactions (via GSAP/Framer Motion) create an absolutely exclusive premium brand experience. Your mechanical engineering products and services from Gießen are globally state-of-the-art—your digital presence must visually communicate this superior quality from the very first second to immediately activate the psychological 'halo effect' for your sales."
+    },
+    {
+      "title": "Scalable Content Workflows with Headless Sanity CMS",
+      "content": "Successful B2B marketing demands constant adaptability: new technical case studies, scientific whitepapers, trade show announcements for your Gießen location, or last-minute press releases must go live immediately. Yet content management should never be an IT hurdle or a nerve-wracking ordeal. Instead of forcing your marketing team into WordPress's rigid, confusing backend straitjacket, we implement Sanity CMS. This is a cutting-edge, structured data backend (a true headless CMS) that we customize precisely to your specific editorial workflows and approval processes. Your team can collaboratively edit content in real-time, securely version it, and publish with a single click—without ever risking breaking the complex frontend design. All data is stored cleanly and structured, enabling future reuse not only for your main website but also for native apps, customer portals, or digital signage displays at trade shows (omnichannel publishing)."
+    },
+    {
+      "title": "Deep and Seamless Integration Into Your Existing IT System Landscape",
+      "content": "Modern mid-sized companies in the Gießen region typically work with established, complex system landscapes: global ERP systems like SAP or Microsoft Dynamics, powerful CRM solutions like Salesforce or HubSpot, or highly specialized proprietary databases. In this environment, a modern website must never be an isolated data silo. Thanks to the consistent API-first architecture of Next.js, we seamlessly integrate your existing critical systems into the new digital ecosystem. Whether it's automated, error-free lead handover from a contact form directly into your CRM system, real-time inventory queries from the ERP for a secure B2B customer portal, or highly secure Identity & Access Management (IAM) via Supabase for restricted dealer areas—we build powerful digital platforms that sustainably streamline your business processes, eliminate manual data maintenance, and deliver measurable efficiency gains for your company."
+    },
+    {
+      "title": "Long-Term Strategic Partnership: From Digital Vision to Absolute Market Leadership",
+      "content": "Coday does not see itself as a traditional service provider that delivers an isolated project, sends the invoice, and then relinquishes technical responsibility. On request, we act as your external, dedicated high-end web and design team. After the successful launch of your Next.js platform, we continuously and proactively monitor performance metrics (Lighthouse, Web Vitals), analyze real user behavior through privacy-compliant, local analytics tools, and implement iterative, data-driven optimizations (A/B testing, conversion rate optimization). The Gießen market and the global B2B sector never sleep, and your digital architecture must continuously and agilely evolve to stay at the top. With Coday at your side, you have the absolute strategic assurance that your digital infrastructure doesn't just dominate today but will continue to define the technological and aesthetic benchmark across your entire industry for years to come."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Why is Coday the best technological choice for our company in Gießen?",
+      "a": "Coday combines the personal, hands-on service of a regional agency from neighboring Wetzlar with the absolute technological excellence you'd otherwise only find at international elite agencies in major cities. We completely forgo outdated template systems like WordPress. Instead, we exclusively use high-end technologies like the React-based Next.js stack to guarantee you uncompromising load times, absolute system security, and an unmatched conversion rate for your B2B success."
+    },
+    {
+      "q": "What distinguishes your Next.js websites from traditional WordPress sites?",
+      "a": "The difference is fundamental: WordPress is a monolith where frontend and database are glued together, making it slow, cumbersome, and extremely vulnerable to cyberattacks. Next.js, on the other hand, is based on a headless architecture. The frontend is decoupled, allowing the site to be delivered as a blazing-fast, statically pre-computed application. There are no plugin conflicts, the database isn't publicly attackable, and performance (Core Web Vitals) is many times higher, directly leading to better Google rankings and more leads."
+    },
+    {
+      "q": "Why do you refuse to implement projects in WordPress or Typo3?",
+      "a": "Because we stand behind the long-term economic success of our clients. Monolithic CMS platforms like WordPress or Typo3 cause exorbitant Total Cost of Ownership (TCO) in the medium term through constant security updates, plugin maintenance, and server optimizations—just to keep the site reasonably performant. With Next.js and headless CMS (like Sanity), we solve these problems at the root. We deliver a clean, cutting-edge infrastructure that is future-proof, extremely fast, and low-maintenance."
+    },
+    {
+      "q": "Which industries in the Gießen region do you specialize in?",
+      "a": "Our technological and design depth is precisely targeted at the drivers of Gießen's economy: highly specialized B2B companies, medical technology manufacturers, life science pioneers, university research spin-offs, as well as the strongly represented innovative mechanical engineering sector and upper Mittelstand. Companies whose complex products demand absolute clarity in digital communication."
+    },
+    {
+      "q": "How important is performance (Core Web Vitals) for our local and national SEO?",
+      "a": "Critically important. Google uses Core Web Vitals (load time, visual stability, interaction delay) as primary ranking factors, particularly in the mobile index. A slow site loses massive visibility. In the B2B sector, studies show that nearly 50% of users abandon a visit if a page takes longer than 3 seconds to load. Our Next.js architecture pushes your site into the absolute high-performance range (frequently scoring 95-100 in Lighthouse audits), massively strengthening your rankings."
+    },
+    {
+      "q": "Do you come to our Gießen headquarters for strategic workshops?",
+      "a": "Absolutely. Direct contact is irreplaceable. From our agency headquarters in Wetzlar, we can reach you in Gießen within 15 to 20 minutes via the B49/A480. We value deep, personal exchange at whiteboards, especially for critical kickoff meetings, strategic architecture planning, or the final review of highly complex web projects."
+    },
+    {
+      "q": "How do you specifically support us with talent acquisition (employer branding) at the Gießen campus?",
+      "a": "The JLU and THM concentrate an enormous pool of young, ambitious talent. We help you win them over by developing specialized digital career pages that combine the 'cool factor' of modern startups with the stability of your established company. Fast, accessible mobile application funnels, authentic insights through premium videography, and a UX/UI design that radiates high-tech make you the employer of choice."
+    },
+    {
+      "q": "What does 'headless CMS' mean, and why do you recommend Sanity?",
+      "a": "With a headless CMS (like Sanity), content management (backend) is completely separated from the visible website (frontend). Sanity delivers your text and images via a fast interface (API) to the Next.js frontend. The huge advantage for your marketing team: Sanity is extremely clean, crash-proof, and can be configured exactly the way your editors need it. You can no longer accidentally break layouts, and your content can later be seamlessly reused in apps or other portals."
+    },
+    {
+      "q": "How long does the development of a high-end corporate website take?",
+      "a": "Premium quality requires deep strategic analysis and flawless engineering. Depending on the complexity, required integrations (ERP, CRM, Auth), and content migration, we typically work within a timeframe of 8 to 16 weeks from the initial strategic sketch to successful go-live. We work agilely and transparently so you can track the exact progress of your new digital platform in weekly sprints."
+    },
+    {
+      "q": "Where will our new Next.js platform be hosted? Is it GDPR-compliant?",
+      "a": "Your security is our priority. We deploy Next.js websites primarily on Vercel, the creators of the Next.js framework. Vercel offers a global edge network designed for enterprise clients. It provides automatic DDoS protection, built-in SSL encryption, and lightning-fast caching. For clients with strict compliance requirements, we configure routing to enforce German or European server locations, guaranteeing full GDPR compliance."
+    },
+    {
+      "q": "Can we connect our existing databases (CRM, ERP, SAP)?",
+      "a": "Yes, absolutely. This is one of the greatest strengths of our React and Node.js-based architecture. Through secure REST APIs or GraphQL interfaces, we can seamlessly integrate systems like Salesforce, HubSpot, SAP, PIM systems, or internal proprietary databases into your web platform. This automates lead processes, synchronizes inventory in real-time, and dramatically reduces your manual administrative overhead."
+    },
+    {
+      "q": "Do you also handle ongoing technical support after launch?",
+      "a": "Yes. A high-end platform is not a static object—it's a living digital organism. Through Service Level Agreements (SLAs), we provide ongoing technical maintenance, proactive security updates for dependencies, continuous performance monitoring, and strategic platform evolution. You have permanent access to our development team in Wetzlar, which guarantees the stability and scalability of your system."
+    },
+    {
+      "q": "We have very complex, explanation-intensive products. How do you handle that from a design perspective?",
+      "a": "That's our specialty. Through our 'design engineering' approach, we reduce visual noise to an absolute minimum. We use techniques of minimalism and clear typographic hierarchy to make technical specifications, complex CAD renderings, and detailed data sheets easily digestible. The focus is 100% on content and rapid information absorption for engineers and technical buyers."
+    },
+    {
+      "q": "How much does a custom Next.js web solution from Coday cost?",
+      "a": "Our platforms are strategic investments in the direct growth and automation of your business. Due to our uncompromising quality, custom software development (no pre-built templates), and extreme performance requirements, our base projects start in the five-figure range. The exact project scope is defined in a detailed discovery workshop in Gießen or Wetzlar. The ROI is driven by significantly more qualified leads, higher conversion rates, and massive savings on IT maintenance."
+    },
+    {
+      "q": "What happens to our existing SEO rankings during a platform migration?",
+      "a": "A relaunch always carries risks if not executed by experts. Coday plans every relaunch with meticulous SEO precision. We map your entire existing URL structure, set up permanent (301) redirects for every single link, migrate relevant metadata, and preserve your backlink structure. Thanks to the massive performance boost from Next.js, our clients typically experience a significant increase in Google visibility shortly after the relaunch."
+    }
+  ]
+}

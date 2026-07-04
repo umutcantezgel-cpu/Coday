@@ -20,7 +20,7 @@ export async function generateMetadata({
       'local-seo',
       'model',
       'content',
-      'giessen.json'
+      `giessen.${locale}.json`
     );
     const fileContents = fs.readFileSync(filePath, 'utf8');
     const content = JSON.parse(fileContents);
@@ -58,7 +58,7 @@ export default async function GiessenLocationPage({
       'local-seo',
       'model',
       'content',
-      'giessen.json'
+      `giessen.${locale}.json`
     );
     const fileContents = fs.readFileSync(filePath, 'utf8');
     content = JSON.parse(fileContents);

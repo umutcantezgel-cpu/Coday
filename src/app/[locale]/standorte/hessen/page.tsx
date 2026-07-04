@@ -19,7 +19,7 @@ export async function generateMetadata({
       'local-seo',
       'model',
       'content',
-      'hessen.json'
+      `hessen.${locale}.json`
     );
     const fileContents = fs.readFileSync(filePath, 'utf8');
     const content = JSON.parse(fileContents);
@@ -57,7 +57,7 @@ export default async function HessenLocationPage({
       'local-seo',
       'model',
       'content',
-      'hessen.json'
+      `hessen.${locale}.json`
     );
     const fileContents = fs.readFileSync(filePath, 'utf8');
     content = JSON.parse(fileContents);

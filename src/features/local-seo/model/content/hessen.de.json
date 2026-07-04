@@ -1,0 +1,119 @@
+{
+  "target": "hessen",
+  "type": "location",
+  "meta": {
+    "title": "Next.js Webdesign & Entwicklung Hessen | High-End B2B Websites by Coday",
+    "description": "Ihre kompromisslose Premium Next.js Agentur in Hessen. Wir entwickeln hochperformante, sichere und konversionsstarke B2B-Websites mit Headless-Architektur, die langsame WordPress-Systeme obsolet machen. Für Marktführer in Frankfurt, Darmstadt, Wetzlar und Kassel."
+  },
+  "hero": {
+    "headline": "Digitale Dominanz für Hessens Industrie & Mittelstand",
+    "subheadline": "Enterprise Next.js Webentwicklung & High-End B2B Design",
+    "description": "Der hessische Wirtschaftsraum verlangt nach digitaler Exzellenz, die keine Kompromisse duldet. Vergessen Sie langsame, fehleranfällige und wartungsintensive WordPress-Seiten, die Ihre Marke im B2B-Umfeld abwerten. Coday ist Ihre spezialisierte Next.js Web-Agentur für Hessen. Wir übersetzen komplexe Unternehmensvisionen in rasante, maßgeschneiderte digitale Plattformen. Durch modernste Headless-Architekturen, kompromissloses Design und Edge-Computing-Technologien erschaffen wir digitale Erlebnisse, die Ihre anspruchsvolle B2B-Zielgruppe nicht nur erreichen, sondern nachhaltig überzeugen und in qualifizierte Leads verwandeln."
+  },
+  "localDominance": {
+    "title": "Warum Hessens Wirtschafts-Elite auf Next.js, Headless & Coday vertraut",
+    "description": "Hessen ist das pulsierende Herz der deutschen und europäischen Wirtschaft. Vom global vernetzten Finanzzentrum Frankfurt über die hochinnovative Wissenschaftsstadt Darmstadt bis hin zu den Weltmarktführern der Optik und Feinmechanik in Wetzlar sowie der starken Logistikbranche in Nordhessen – hier agieren Unternehmen, die auf internationalem Niveau performen müssen. In diesem kompetitiven Umfeld sind standardisierte WordPress-Templates und schwerfällige Monolithen längst zu einem geschäftskritischen Risiko geworden. Lange Ladezeiten, Sicherheitslücken durch veraltete Plugins und fehlende Flexibilität kosten Sie im B2B-Sektor messbar Marktanteile, Sichtbarkeit und letztlich Umsatz. Coday bietet Ihnen die technologische Antwort auf diese Herausforderungen: Maßgefertigte Next.js-Plattformen, die exakt auf die Anforderungen der hessischen Industrie und des gehobenen Mittelstands zugeschnitten sind.",
+    "points": [
+      "Frankfurter Finanzdienstleister und FinTechs fordern kompromisslose Datensicherheit. Unsere Headless-Architekturen mit Next.js entkoppeln Frontend und Backend, wodurch klassische Angriffsvektoren wie SQL-Injections nahezu vollständig eliminiert werden.",
+      "Hidden Champions und der produzierende Mittelstand aus Regionen wie Wetzlar, Gießen und Kassel exportieren weltweit. Sie profitieren von rasanten Ladezeiten durch globales Edge-Routing (LCP unter 1.5 Sekunden) – unabhängig davon, ob Ihr Kunde aus Tokio, New York oder London auf die Seite zugreift.",
+      "Die Darmstädter IT- und Forschungslandschaft verlangt nach State-of-the-Art Technologien. Wir nutzen React 19, TypeScript in striktester Ausprägung und Vercel Edge Functions, um architektonische Meisterwerke zu erschaffen.",
+      "Vollständige Unabhängigkeit von Plugin-Ökosystemen: Während WordPress-Nutzer in einem ständigen Teufelskreis aus Updates und Kompatibilitätsproblemen gefangen sind, wachsen unsere Next.js Plattformen modular und konfliktfrei mit Ihren Geschäftsanforderungen.",
+      "Überlegene B2B-Leadgenerierung: Durch serverseitiges Rendering (SSR) und statische Generierung (SSG) erreichen wir perfekte Core Web Vitals, was von Google mit Top-Rankings belohnt wird und die Akquisekosten (CPA) signifikant senkt.",
+      "Nahtlose Integration in komplexe Industrie-4.0-Prozesse: Durch unsere API-first Strategie können ERP-Systeme, spezialisierte CRM-Lösungen (wie Salesforce oder HubSpot) und proprietäre Datenbanken reibungslos in Ihre neue Website eingebunden werden.",
+      "Maßgeschneiderte CMS-Lösungen für komplexe Redaktionsprozesse: Mit Sanity v3 als Headless CMS geben wir Ihren Marketingteams in ganz Hessen ein Tool an die Hand, das Echtzeit-Kollaboration und strukturierte Content-Pflege ohne Designbruch ermöglicht.",
+      "Regionale Verwurzelung mit globaler Denkweise: Als Solo-Agentur aus Wetzlar verstehen wir die einzigartige DNA des hessischen Mittelstands und übersetzen diese in digitale Produkte von internationalem Format."
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "Das unwiderrufliche Ende der WordPress-Ära im Enterprise B2B-Sektor",
+      "content": "Viele traditionsreiche hessische Unternehmen verlassen sich wider besseres Wissen noch immer auf monolithische Content-Management-Systeme wie WordPress. Doch die Anforderungen an moderne, geschäftskritische B2B-Websites haben sich in den letzten Jahren dramatisch gewandelt. WordPress wurde vor über zwei Jahrzehnten als reine Blogging-Plattform konzipiert. Sein heutiger Einsatz im Enterprise-Umfeld führt unweigerlich zu strukturellen Problemen: Ein aufgeblähtes Code-Fundament, ständige Sicherheitslücken durch unsichere Third-Party-Plugins und eine schwerfällige Datenbankabfrage, die die Ladezeiten in den Keller zieht. Als spezialisierte Next.js Agentur befreien wir Ihr Unternehmen von diesen technologischen Altlasten. Wir setzen auf eine moderne, entkoppelte Headless-Architektur. Das bedeutet für Sie: Absolute gestalterische Freiheit ohne Theme-Beschränkungen, Eliminierung unerwarteter Plugin-Konflikte, eine drastisch reduzierte Angriffsfläche für Cyberkriminalität und eine Frontend-Performance, die Ihre Wettbewerber meilenweit hinter sich lässt. Wer heute im B2B-Markt dominieren will, kann sich keine WordPress-Kompromisse mehr leisten."
+    },
+    {
+      "title": "Die Next.js Edge-Technologie: Ein unfairer Wettbewerbsvorteil für hessische Export-Champions",
+      "content": "Next.js, in Kombination mit React und modernstem Edge-Computing über Plattformen wie Vercel, ist die architektonische Basis der weltweit erfolgreichsten und am stärksten frequentierten digitalen Plattformen. Für Sie als produzierendes Unternehmen, Dienstleister oder Technologiekonzern in Hessen bedeutet das konkret: Ihre Website lädt nicht mehr in Sekunden, sondern in Millisekunden. Dieser Geschwindigkeitsvorteil hat tiefgreifende psychologische und wirtschaftliche Auswirkungen. Studien zeigen, dass B2B-Entscheider extrem sensibel auf langsame Webseiten reagieren – die Absprungraten steigen exponentiell, das Vertrauen in Ihre technologische Kompetenz sinkt. Durch fortschrittliches Server-Side Rendering (SSR) und Incremental Static Regeneration (ISR) liefert Next.js Ihre Inhalte vorgerendert und blitzschnell aus. Google und andere Suchmaschinen können Ihre Inhalte rasend schnell und ressourcenschonend indexieren. Dies sichert Ihnen einen entscheidenden Sichtbarkeitsvorteil im hart umkämpften globalen B2B-Markt. Coday bringt genau diese kompromisslose Enterprise-Technologie direkt zu Ihnen nach Hessen."
+    },
+    {
+      "title": "High-End UI/UX-Design: Vertrauen als stärkste Währung im B2B-Vertrieb",
+      "content": "Im hochpreisigen B2B-Geschäft – sei es bei komplexen Industrieanlagen, Finanzdienstleistungen oder IT-Infrastruktur – ist Ihre Website fast immer der erste, kritischste Touchpoint mit potenziellen Großkunden, Investoren oder hochkarätigen Fachkräften. Ein durchschnittliches, templates-basiertes Design sendet eine fatale Botschaft: Wer bei seiner eigenen digitalen Präsenz spart, spart vermutlich auch an der Qualität seiner Produkte. Wir bei Coday begreifen Webdesign nicht als oberflächliche Dekoration oder das simple Abfüllen von Texten in vorgefertigte Raster. Wir kreieren digitale Maßanzüge, die Autorität und technologische Führerschaft ausstrahlen. Unser Design-Prozess vereint minimalistische, aufgeräumte Ästhetik, großzügigen Weißraum, präzise typografische Hierarchien und subtile, hardwarebeschleunigte Mikro-Animationen. Wir übersetzen Ihre komplexe B2B-Identität in eine visuelle Sprache, die Vertrauen schafft und kognitive Reibung eliminiert. Ihr digitaler Auftritt wird dadurch genauso professionell, innovativ und verlässlich wirken, wie die Dienstleistungen und Produkte, für die Ihr Unternehmen in Hessen bekannt ist."
+    },
+    {
+      "title": "Sicherheitsarchitektur auf Enterprise-Niveau: Schutz vor Reputationsverlust und Datendiebstahl",
+      "content": "Cybersicherheit ist für den hessischen Mittelstand und insbesondere für Unternehmen in der Finanzmetropole Frankfurt längst keine IT-Aufgabe mehr, sondern ein zentrales Management-Thema. Herkömmliche CMS-Plattformen sind aufgrund ihrer weiten Verbreitung und monolithischen Struktur ein ständiges Ziel für automatisierte Hackerangriffe. Ein kompromittierter Webauftritt führt zu massiven Reputationsschäden und potenziell gravierenden DSGVO-Strafen. Codays Headless-Ansatz mit Next.js dreht dieses Risiko drastisch nach unten. Da das Frontend (die visuelle Website) vollständig vom Backend (Datenbank und CMS) getrennt ist, gibt es für Angreifer schlichtweg keine direkte Verbindung mehr, die sie attackieren könnten. Wir verzichten vollständig auf unsichere Plugins und implementieren strikte Content Security Policies (CSP), sicheres Session-Management über Supabase und modernste Authentifizierungsverfahren. Ihre B2B-Plattform wird dadurch zu einer digitalen Festung, die Ihren Kunden und Partnern maximale Sicherheit signalisiert."
+    },
+    {
+      "title": "API-First und nahtlose Systemintegration für die digitale Transformation",
+      "content": "Hessische Industrieunternehmen stehen mitten in der digitalen Transformation. Die Website darf nicht länger ein isoliertes Marketing-Silo sein, sondern muss als zentraler Hub für Daten und Geschäftsprozesse fungieren. Monolithische Systeme scheitern oft kläglich an der Anbindung moderner Microservices oder verlangen nach teuren, instabilen Brückenlösungen. Unsere Next.js Plattformen sind von Grund auf API-First konzipiert. Egal, ob Sie komplexe Produktdaten aus einem PIM-System abrufen, Ihr Salesforce- oder HubSpot-CRM für lückenloses Lead-Tracking anbinden oder interne ERP-Schnittstellen integrieren möchten – wir realisieren nahtlose Datenflüsse. Diese architektonische Offenheit stellt sicher, dass Ihre Website nicht nur heute, sondern auch in den nächsten zehn Jahren flexibel auf neue digitale Anforderungen und Geschäftsmodelle reagieren kann."
+    },
+    {
+      "title": "Sanity CMS: Die Revolution der redaktionellen Arbeit",
+      "content": "Eine hochmoderne Website ist nur so agil wie das Team, das sie pflegt. Wir haben uns bewusst gegen Legacy-Systeme und für Sanity entschieden – das fortschrittlichste Headless CMS auf dem Markt. Für Ihre Marketingabteilung in Hessen bedeutet das einen Paradigmenwechsel. Keine unübersichtlichen Dashboards mehr, keine Angst mehr, durch eine unbedachte Änderung das Layout der gesamten Seite zu zerstören. Wir entwickeln für Sie eine maßgeschneiderte, aufgeräumte Redaktionsoberfläche, in der Ihre Teams Inhalte in echten Datenstrukturen pflegen, statt in starren Seiten-Templates. Sanity ermöglicht Real-Time-Kollaboration ähnlich wie Google Docs und trennt den Inhalt strikt vom Design. Dadurch können Ihre Inhalte nicht nur auf der Website, sondern zukünftig auch in Apps, Digital Signage oder Kundenportalen kanalübergreifend wiederverwendet werden."
+    },
+    {
+      "title": "Skalierbarkeit und maximaler ROI für langfristiges Wachstum",
+      "content": "Eine Investition in eine maßgeschneiderte Next.js Plattform von Coday ist eine strategische Entscheidung für die Zukunftsausrichtung Ihres Unternehmens. Die Total Cost of Ownership (TCO) einer monolithischen Website wird oft unterschätzt: Versteckte Kosten für ständige Sicherheitsupdates, Server-Wartung, Performance-Optimierungen und teure Relaunches alle drei Jahre fressen Ihre Budgets auf. Unsere Headless-Lösungen sind auf Langlebigkeit ausgelegt. Das Frontend kann iterativ weiterentwickelt werden, ohne das Backend oder das CMS austauschen zu müssen. Die überlegene Performance führt zu nachweislich höheren Konversionsraten und besseren SEO-Rankings, was die Akquisekosten (CPA) kontinuierlich senkt. Wir bauen keine Wegwerf-Websites, sondern digitale Assets, die messbar zum Unternehmenswert Ihrer hessischen Marke beitragen und einen beispiellosen Return on Investment liefern."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Warum sollten wir als hessisches Industrieunternehmen von WordPress zu Next.js wechseln?",
+      "a": "Ein Wechsel von WordPress zu einer Next.js Headless-Architektur bietet Ihnen drei geschäftskritische Vorteile, die über Erfolg und Misserfolg im B2B-Sektor entscheiden: Kompromisslose Sicherheit, überlegene Performance und uneingeschränkte Skalierbarkeit. WordPress, einst als Blog-Software erdacht, schleppt enormen historischen Ballast mit sich. Es erfordert ständige Plugin-Updates, um Sicherheitslücken zu schließen, und verknüpft Frontend und Datenbank auf unsichere Weise. Next.js trennt diese Ebenen (Headless). Das macht Hackerangriffe extrem unattraktiv und schwierig. Gleichzeitig laden Next.js-Seiten durch serverseitiges Rendering und Edge-Delivery in Millisekunden, was die Core Web Vitals perfektioniert und Ihre Sichtbarkeit bei Google signifikant erhöht."
+    },
+    {
+      "q": "Wie wirkt sich die Performance einer Next.js Seite konkret auf unsere B2B-Leadgenerierung aus?",
+      "a": "Performance ist im B2B-Bereich kein technisches Gimmick, sondern ein harter Conversion-Faktor. Studien belegen, dass eine Verzögerung der Ladezeit um nur eine Sekunde die Conversion-Rate um bis zu 20% einbrechen lassen kann. Hochkarätige Entscheider haben wenig Zeit; eine langsame Website signalisiert mangelnde technologische Kompetenz. Next.js liefert extrem schnelle LCP-Werte (Largest Contentful Paint) oft unter 1.5 Sekunden. Diese flüssige, App-ähnliche Nutzererfahrung (durch Client-Side Navigation nach dem ersten Laden) eliminiert kognitive Reibung, hält den Nutzer auf der Seite und erhöht die Wahrscheinlichkeit einer qualifizierten Kontaktanfrage drastisch."
+    },
+    {
+      "q": "Wir haben Hunderte von Fachartikeln und Case Studies. Bieten Sie eine reibungslose Datenmigration an?",
+      "a": "Absolut. Als Premium-Agentur überlassen wir bei Relaunches nichts dem Zufall. Wir konzipieren zunächst die optimale Datenstruktur in unserem modernen Headless CMS (Sanity v3). Anschließend migrieren wir Ihre bestehenden Inhalte – von Blogbeiträgen über Case Studies bis hin zu komplexen Produktdatenbanken – automatisiert und strukturiert aus Ihrem Altsystem (z.B. WordPress, TYPO3). Dabei stellen wir durch sauberes 301-Redirect-Mapping sicher, dass Ihre hart erarbeiteten SEO-Rankings und Backlinks vollständig erhalten bleiben."
+    },
+    {
+      "q": "Ist ein Headless CMS nicht viel komplizierter für unser Marketingteam zu bedienen als WordPress?",
+      "a": "Ganz im Gegenteil. Die vermeintliche Einfachheit von WordPress wird oft durch überladene Page-Builder (wie Elementor), hunderte Menüpunkte und Plugin-Konflikte zunichte gemacht. Wir setzen auf Sanity CMS und konfigurieren das Interface exakt nach Ihren redaktionellen Bedürfnissen. Ihr Marketingteam in Hessen sieht nur das, was es sehen muss. Die Eingabemasken sind intuitiv, modern und trennen Inhalt strikt vom Design (Structured Content). Sie können sich auf das Schreiben konzentrieren, während das System dafür sorgt, dass das High-End-Design der Website unter keinen Umständen 'zerschossen' wird."
+    },
+    {
+      "q": "Unsere IT legt großen Wert auf Datensicherheit. Wie sicher ist die von Ihnen entwickelte Architektur?",
+      "a": "Sicherheit ist der Kern unserer Entwicklungsphilosophie. Monolithische Systeme bieten Hackern ein leichtes Ziel, da Datenbank, CMS und Frontend auf demselben Server liegen. Unsere Jamstack/Headless-Architektur entkoppelt diese Schichten vollständig. Das Next.js-Frontend kommuniziert nur über stark gesicherte APIs mit dem Backend. Wir verzichten auf fehleranfällige Drittanbieter-Plugins, implementieren strikte Content Security Policies (CSP) via Next.js Middleware und nutzen Enterprise-Grade Auth-Lösungen wie Supabase. Selbst wenn ein Angriff auf das Frontend erfolgen sollte, bleibt Ihre geschäftskritische Datenbank davon völlig isoliert."
+    },
+    {
+      "q": "Wie hoch sind die laufenden Wartungskosten bei Next.js im Vergleich zu WordPress?",
+      "a": "WordPress ist berüchtigt für seine versteckten Wartungskosten (TCO - Total Cost of Ownership). Regelmäßige Core-Updates, Plugin-Aktualisierungen, das Beheben von Kompatibilitätsproblemen und Datenbankwartungen verschlingen viel Budget. Eine Next.js-Architektur ist in dieser Hinsicht wesentlich wartungsärmer. Da es keine Plugins im klassischen Sinne gibt und das Hosting über serverlose Plattformen (wie Vercel) vollautomatisiert skaliert, entfallen die klassischen Server-Wartungsarbeiten nahezu komplett. Sie investieren Ihr Budget nicht länger in die Instandhaltung veralteter Technologie, sondern in die aktive strategische Weiterentwicklung Ihrer Plattform."
+    },
+    {
+      "q": "Können Sie unser bestehendes CRM (z.B. Salesforce) und ERP in die neue Website integrieren?",
+      "a": "Ja. Das ist einer der größten Vorteile der von uns eingesetzten API-First-Strategie. Im Gegensatz zu geschlossenen Systemen, die auf fehleranfällige Bridge-Plugins angewiesen sind, ist Next.js dafür prädestiniert, mit beliebigen REST- oder GraphQL-APIs zu kommunizieren. Wir können Formulareingaben direkt und sicher in Salesforce oder HubSpot pushen, Produktdaten in Echtzeit aus Ihrem ERP-System abrufen oder sichere B2B-Kundenportale anbinden. Die Website fungiert somit als hochperformantes Dashboard und intelligentes Verbindungsstück Ihrer gesamten digitalen Wertschöpfungskette."
+    },
+    {
+      "q": "Wie lange dauert die Entwicklung einer High-End B2B Corporate Website bei Coday?",
+      "a": "Qualität auf Enterprise-Niveau erfordert Präzision. Wir arbeiten nicht mit vorgefertigten Themes, sondern entwickeln jede Plattform von Grund auf neu – von der tiefgehenden Markenanalyse über das maßgeschneiderte UI/UX-Design bis hin zur kompromisslosen technischen Implementierung. Für ein umfassendes B2B-Projekt inklusive Headless CMS-Integration, komplexen Datenstrukturen und SEO-Migration kalkulieren wir in der Regel mit einer Laufzeit von 8 bis 14 Wochen. Jedes Projekt durchläuft bei uns strengste Qualitätskontrollen (Performance, Accessibility, Security) vor dem Go-Live."
+    },
+    {
+      "q": "Arbeiten Sie ausschließlich für Unternehmen in Hessen oder auch überregional?",
+      "a": "Als hessische Agentur (mit Sitz in Wetzlar) kennen und schätzen wir die lokale Wirtschaftsstruktur – vom Frankfurter Finanzdistrikt bis zu den Hidden Champions in Nordhessen und Mittelhessen. Wir sind jedoch digital und technologisch global aufgestellt. Wir betreuen anspruchsvolle B2B-Kunden in ganz Deutschland, der DACH-Region und darüber hinaus. Digitale Kollaborationstools ermöglichen eine reibungslose, effiziente Zusammenarbeit, ganz gleich, wo sich Ihr Hauptsitz befindet. Für strategische Kick-offs und wichtige Meilensteine sind wir auf Wunsch selbstverständlich gerne persönlich vor Ort."
+    },
+    {
+      "q": "Berücksichtigen Sie bei der Entwicklung bereits die Anforderungen an Barrierefreiheit (Accessibility)?",
+      "a": "Barrierefreiheit ist bei uns kein nachträgliches Add-on, sondern fester Bestandteil des Entwicklungsprozesses. Gemäß der Web Content Accessibility Guidelines (WCAG) und im Hinblick auf das kommende Barrierefreiheitsstärkungsgesetz (BFSG) stellen wir sicher, dass unsere Next.js Plattformen für alle Nutzer zugänglich sind. Dies umfasst korrekte semantische HTML-Strukturen, ARIA-Labels für Screenreader, perfekte Farbkontraste und vollständige Tastaturnavigierbarkeit. Eine hohe Accessibility verbessert zudem die Usability für alle Nutzer und sendet extrem positive Signale an den Google-Algorithmus."
+    },
+    {
+      "q": "Was passiert mit unserer Website bei starken Traffic-Spitzen, etwa nach einer großen PR-Kampagne?",
+      "a": "Klassische Server (z.B. bei typischen WordPress-Hostern) stoßen bei plötzlichen Besucheranstürmen schnell an ihre Grenzen – die Seite wird langsam oder stürzt komplett ab (Downtime). Unsere Next.js Plattformen hosten wir auf modernen Edge-Netzwerken wie Vercel. Diese serverlose Architektur skaliert vollautomatisch und in Millisekunden. Ihre Website wird nicht von einem einzigen Server in Frankfurt ausgeliefert, sondern liegt global verteilt an Knotenpunkten auf der ganzen Welt. Selbst massivste Traffic-Spitzen werden mühelos abgefedert, ohne dass Sie manuell Serverkapazitäten hinzubuchen müssen."
+    },
+    {
+      "q": "Setzen Sie bei der Entwicklung auf standardisierte Templates oder ist das Design völlig individuell?",
+      "a": "Coday steht für kompromissloses Custom Design. Wir verabscheuen den generischen 'Template-Look', der in der B2B-Welt leider noch allgegenwärtig ist. Jedes Design-Element, jede Mikro-Animation und das gesamte Layout-Konzept werden individuell für Ihre Marke entwickelt, um Ihre strategische Positionierung visuell zu untermauern. Wir nutzen TailwindCSS 4, um dieses Design dann Pixel für Pixel in performanten Code zu gießen. So entsteht eine digitale Identität, die zu 100% einzigartig ist und Sie unmissverständlich von Ihren Mitbewerbern abhebt."
+    },
+    {
+      "q": "Wie sichert Coday ab, dass die Website nach dem Launch langfristig erfolgreich bleibt?",
+      "a": "Ein Relaunch ist für uns nicht das Ende, sondern der Beginn einer erfolgreichen digitalen Wachstumsphase. Obwohl die laufenden Wartungsaufwände (wie bei WordPress) entfallen, lassen wir Sie nicht allein. Wir bieten strategische Betreuung, kontinuierliche Performance-Monitorings, technische Audits und die iterative Weiterentwicklung Ihrer Plattform an. Durch die flexiblen Next.js- und Headless-Strukturen können wir neue Landingpages, Features oder Integrationen agil und schnell umsetzen, während Ihr Tagesgeschäft ungestört weiterläuft."
+    },
+    {
+      "q": "Wir sind ein hochspezialisiertes Maschinenbau-Unternehmen. Verstehen Sie überhaupt unsere Branche?",
+      "a": "Gerade der hessische Maschinen- und Anlagenbau sowie die Feinmechanik zeichnen sich durch höchste Komplexität aus. Als B2B-fokussierte Agentur liegt unsere Stärke nicht darin, Maschinen zu bauen, sondern komplexe technische Sachverhalte digital exzellent zu inszenieren. Wir tauchen tief in Ihre Materie ein, analysieren Ihre Zielgruppe (Ingenieure, Einkäufer, C-Level) und entwickeln die Informationsarchitektur und das Design so, dass Ihre hochspezialisierten Produkte digital greifbar und in ihrer ganzen Innovationskraft erlebbar werden."
+    },
+    {
+      "q": "Was kostet eine maßgeschneiderte Next.js Corporate Website bei Coday?",
+      "a": "Da wir keine Baukasten-Systeme anbieten, sondern hochspezialisierte digitale Enterprise-Produkte entwickeln, hängen die Kosten stark von der Projektkomplexität ab. Einflussfaktoren sind unter anderem die Anzahl der individuellen Seiten-Typen (Templates im CMS), die Tiefe der CMS-Modellierung, die Migration bestehender Inhalte, Mehrsprachigkeit (Internationalisierung) und die Anbindung von Drittsystemen (APIs). Wir arbeiten mit transparenter Budgetierung auf Basis klar definierter Meilensteine. In einem unverbindlichen Erstgespräch analysieren wir Ihre Anforderungen und geben Ihnen eine verlässliche und transparente Investitionsschätzung."
+    }
+  ]
+}
