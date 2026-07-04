@@ -24,7 +24,7 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   experimental: {
     reactCompiler: true,
-    optimizeCss: true,
+    // optimizeCss: true, // Disabled: critters may break client hydration
     optimizePackageImports: [
       '@phosphor-icons/react',
       '@phosphor-icons/react/dist/ssr',
