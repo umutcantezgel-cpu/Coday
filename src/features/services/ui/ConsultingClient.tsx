@@ -135,7 +135,7 @@ export function ConsultingClient() {
                   {t('case_study.description')}
                 </p>
                 <Link
-                  href="/portfolio/tech-startup-exit"
+                  href="/work/batherm"
                   className="inline-flex items-center gap-2 text-blue-600 font-bold hover:text-blue-700 transition-colors motion-reduce:duration-[0.01ms] group"
                 >
                   Case Study ansehen

@@ -207,7 +207,7 @@ export function EnterpriseWebClient() {
                 {t('enterprise_web_page.case_study.description')}
               </p>
               <Link
-                href="/portfolio/ecommerce-replatforming"
+                href="/work/batherm"
                 className="inline-flex items-center gap-2 text-blue-600 font-bold hover:text-blue-700 transition-colors motion-reduce:duration-[0.01ms] group"
               >
                 Case Study ansehen

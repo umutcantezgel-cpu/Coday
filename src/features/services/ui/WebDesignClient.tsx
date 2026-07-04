@@ -320,7 +320,7 @@ export function WebDesignClient() {
               {t('web_design_page.case_study.description')}
             </p>
             <NavLink
-              href="/cases"
+              href="/work/batherm"
               className="inline-flex items-center justify-center px-6 py-3 font-bold text-content-base rounded-xl bg-primary hover:bg-surface-elevated transition motion-reduce:duration-[0.01ms] shadow-glow"
             >
               {t('actions.read_more')}
