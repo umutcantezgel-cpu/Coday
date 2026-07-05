@@ -185,21 +185,6 @@ export const getNavItems = (): NavItem[] => [
             href: '/knowledge/faq',
             desc: 'nav.resources.knowledge.faq.desc',
           },
-          {
-            label: 'nav.academy.whitepapers.label',
-            href: '/knowledge/whitepapers',
-            desc: 'nav.academy.whitepapers.desc',
-          },
-          {
-            label: 'nav.academy.courses.label',
-            href: '/knowledge/academy',
-            desc: 'nav.academy.courses.desc',
-          },
-          {
-            label: 'nav.academy.newsletter.label',
-            href: '/knowledge/newsletter',
-            desc: 'nav.academy.newsletter.desc',
-          },
         ],
       },
       {
@@ -207,7 +192,6 @@ export const getNavItems = (): NavItem[] => [
         links: [
           { label: 'nav.academy.audit.label', href: '/analyzer', desc: 'nav.academy.audit.desc' },
           { label: 'nav.resources.calculator', href: '/calculator' },
-          { label: 'nav.resources.dashboard', href: '/dashboard' },
         ],
       },
     ],
@@ -222,32 +206,6 @@ export const getNavItems = (): NavItem[] => [
         links: [
           { label: 'nav.company.about', href: '/about', desc: 'nav.about.desc' },
           { label: 'nav.about.process.label', href: '/process', desc: 'nav.about.process.desc' },
-        ],
-      },
-      {
-        title: 'nav.company.career',
-        links: [
-          { label: 'nav.career.label', href: '/career', desc: 'nav.career.desc' },
-          { label: 'nav.career.jobs.label', href: '/career/jobs', desc: 'nav.career.jobs.desc' },
-          {
-            label: 'nav.career.culture.label',
-            href: '/career/culture',
-            desc: 'nav.career.culture.desc',
-          },
-          {
-            label: 'nav.career.benefits.label',
-            href: '/career/benefits',
-            desc: 'nav.career.benefits.desc',
-          },
-        ],
-      },
-      {
-        title: 'nav.company.legal',
-        links: [
-          { label: 'nav.legal.hub', href: '/legal/impressum' },
-          { label: 'nav.legal.imprint', href: '/legal/impressum' },
-          { label: 'nav.legal.privacy', href: '/legal/datenschutz' },
-          { label: 'nav.legal.agb', href: '/legal/agb' },
         ],
       },
       {

@@ -1,11 +1,14 @@
 import type { Metadata } from 'next';
-import { getLocalBusinessSchema, getProfessionalServiceSchema } from '@/lib/schema';
+import {
+  getLocalBusinessSchema,
+  getProfessionalServiceSchema,
+  getOrganizationSchema,
+} from '@/lib/schema';
 import { generatePageMetadata } from '@/lib/metadata';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { TrustBar } from '@/shared/ui/TrustBar';
 import { HeroSection } from '@/widgets/home/HeroSection';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import Script from 'next/script';
 import React from 'react';
 
 import LogoLoop from '@/shared/ui/LogoLoop';
@@ -49,16 +52,17 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const t = await getTranslations('home');
   const serviceSchema = getProfessionalServiceSchema();
   const localSchema = getLocalBusinessSchema();
+  const orgSchema = getOrganizationSchema();
 
   return (
     <>
-      <Script
+      <script
         id="schema-local-service"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@graph': [serviceSchema, localSchema],
+            '@graph': [orgSchema, serviceSchema, localSchema],
           }),
         }}
       />
