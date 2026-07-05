@@ -16,7 +16,7 @@ export async function generateMetadata({
       description:
         'Web design events and digital meetups by Coday in Wetzlar. Workshops, meetups and talks for the business community across Central Hesse region.',
       path: '/en/community/events',
-      type: 'noindex',
+      type: 'default',
     });
   }
   return generatePageMetadata({
@@ -24,7 +24,7 @@ export async function generateMetadata({
     description:
       'Webdesign Events und digitale Veranstaltungen von Coday in Wetzlar. Workshops, Meetups und Vorträge für die Business Community in Mittelhessen.',
     path: '/de/community/events',
-    type: 'noindex',
+    type: 'default',
   });
 }
 
