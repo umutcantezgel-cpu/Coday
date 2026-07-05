@@ -16,7 +16,7 @@ export async function generateMetadata({
       description:
         'Monthly web design and SEO tips from Coday in Wetzlar directly to your inbox. Exclusive knowledge for business owners in Hesse. Subscribe for free.',
       path: '/en/knowledge/newsletter',
-      type: 'noindex',
+      type: 'default',
     });
   }
   return generatePageMetadata({
@@ -24,7 +24,7 @@ export async function generateMetadata({
     description:
       'Monatliche Webdesign und SEO Tipps von Coday in Wetzlar direkt in Ihr Postfach. Exklusives Wissen für Unternehmer in Hessen. Jetzt kostenlos anmelden.',
     path: '/de/knowledge/newsletter',
-    type: 'noindex',
+    type: 'default',
   });
 }
 

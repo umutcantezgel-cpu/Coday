@@ -16,7 +16,7 @@ export async function generateMetadata({
       description:
         'Learn web design basics at Coday Academy Wetzlar. Courses and tutorials for entrepreneurs and freelancers in Hesse. Start building your skills today.',
       path: '/en/knowledge/academy',
-      type: 'noindex',
+      type: 'default',
     });
   }
   return generatePageMetadata({
@@ -24,7 +24,7 @@ export async function generateMetadata({
     description:
       'Lernen Sie Webdesign Grundlagen in der Coday Academy Wetzlar. Kurse und Tutorials für Unternehmer und Selbstständige in Hessen. Jetzt Wissen aufbauen.',
     path: '/de/knowledge/academy',
-    type: 'noindex',
+    type: 'default',
   });
 }
 

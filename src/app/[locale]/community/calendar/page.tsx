@@ -16,7 +16,7 @@ export async function generateMetadata({
       description:
         'Current events and dates from the Coday community in Wetzlar. Networking and knowledge sharing for entrepreneurs and web design enthusiasts in Hesse.',
       path: '/en/community/calendar',
-      type: 'noindex',
+      type: 'default',
     });
   }
   return generatePageMetadata({
@@ -24,7 +24,7 @@ export async function generateMetadata({
     description:
       'Aktuelle Events und Termine der Coday Community in Wetzlar. Networking und Wissensaustausch für Unternehmer und Webdesign Interessierte in Hessen.',
     path: '/de/community/calendar',
-    type: 'noindex',
+    type: 'default',
   });
 }
 

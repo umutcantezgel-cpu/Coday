@@ -16,7 +16,7 @@ export async function generateMetadata({
       description:
         'Professional websites for craft businesses in Wetzlar and Hesse. More orders through local visibility on Google. Personal service at a fixed price.',
       path: '/en/industries/handwerk',
-      type: 'noindex',
+      type: 'default',
     });
   }
   return generatePageMetadata({
@@ -24,7 +24,7 @@ export async function generateMetadata({
     description:
       'Professionelle Webseiten für Handwerksbetriebe in Wetzlar und Hessen. Mehr Aufträge durch lokale Sichtbarkeit bei Google. Persönlich und zum Festpreis.',
     path: '/de/industries/handwerk',
-    type: 'noindex',
+    type: 'default',
   });
 }
 

@@ -16,7 +16,7 @@ export async function generateMetadata({
       description:
         'Accessible and GDPR-compliant websites for municipalities and authorities in Hesse. Secure web development by Coday from Wetzlar. Get in touch today.',
       path: '/en/industries/publicsector',
-      type: 'noindex',
+      type: 'default',
     });
   }
   return generatePageMetadata({
@@ -24,7 +24,7 @@ export async function generateMetadata({
     description:
       'Barrierefreie und DSGVO-konforme Webseiten für Kommunen und Behörden in Hessen. Sichere Webentwicklung von Coday aus Wetzlar. Jetzt Kontakt aufnehmen.',
     path: '/de/industries/publicsector',
-    type: 'noindex',
+    type: 'default',
   });
 }
 

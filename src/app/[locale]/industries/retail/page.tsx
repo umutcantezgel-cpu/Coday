@@ -16,7 +16,7 @@ export async function generateMetadata({
       description:
         'Online shops and websites for retail in Wetzlar and Hesse. More revenue through professional web design and e-commerce solutions by Coday Wetzlar.',
       path: '/en/industries/retail',
-      type: 'noindex',
+      type: 'default',
     });
   }
   return generatePageMetadata({
@@ -24,7 +24,7 @@ export async function generateMetadata({
     description:
       'Onlineshops und Webseiten für den Einzelhandel in Wetzlar und Hessen. Mehr Umsatz durch professionelles Webdesign und E-Commerce Lösungen von Coday.',
     path: '/de/industries/retail',
-    type: 'noindex',
+    type: 'default',
   });
 }
 

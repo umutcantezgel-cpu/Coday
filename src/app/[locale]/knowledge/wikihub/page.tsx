@@ -16,7 +16,7 @@ export async function generateMetadata({
       description:
         'Clear web design glossary and digital wiki from Coday in Wetzlar. Technical terms simply explained for business owners and freelancers across Hesse.',
       path: '/en/knowledge/wikihub',
-      type: 'noindex',
+      type: 'default',
     });
   }
   return generatePageMetadata({
@@ -24,7 +24,7 @@ export async function generateMetadata({
     description:
       'Verständliches Webdesign Glossar und digitales Wiki von Coday in Wetzlar. Fachbegriffe einfach erklärt für Unternehmer und Selbstständige in Hessen.',
     path: '/de/knowledge/wikihub',
-    type: 'noindex',
+    type: 'default',
   });
 }
 

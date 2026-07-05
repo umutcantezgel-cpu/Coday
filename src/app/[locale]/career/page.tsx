@@ -7,7 +7,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: 'Karriere bei Coday',
     description: 'Karrieremöglichkeiten bei Coday.',
     path: '/de/career',
-    type: 'noindex',
+    type: 'default',
   });
 }
 
