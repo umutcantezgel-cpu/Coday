@@ -64,7 +64,7 @@ export const PageTransition = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <LazyMotion features={domAnimation}>
-      <AnimatePresence mode="popLayout" custom={customProps}>
+      <AnimatePresence mode="popLayout" custom={customProps} initial={false}>
         <m.div
           key={pathname}
           custom={customProps}

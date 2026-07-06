@@ -226,7 +226,7 @@ const RotatingText = forwardRef<RotatingTextRef, RotatingTextProps>(
                   {wordObj.characters.map((char, charIndex) => (
                     <m.span
                       key={charIndex}
-                      initial={initial}
+                      initial={animatePresenceInitial ? initial : false}
                       animate={animate}
                       exit={exit}
                       transition={{
