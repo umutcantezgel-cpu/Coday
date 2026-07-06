@@ -27,7 +27,7 @@ export const FadeInUp: React.FC<MotionWrapperProps> = ({
     <div
       ref={ref}
       data-in-view={isInView}
-      className={`transition-all ease-[cubic-bezier(0.32,0.72,0,1)] opacity-0 translate-y-8 data-[in-view=true]:opacity-100 data-[in-view=true]:translate-y-0 motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none ${className}`}
+      className={`transition-[opacity,transform] ease-[cubic-bezier(0.32,0.72,0,1)] opacity-0 translate-y-8 data-[in-view=true]:opacity-100 data-[in-view=true]:translate-y-0 motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none ${className}`}
       style={{ transitionDuration: `${duration}s`, transitionDelay: `${delay}s` }}
     >
       {children}
@@ -50,7 +50,7 @@ export const ScaleIn: React.FC<MotionWrapperProps> = ({
     <div
       ref={ref}
       data-in-view={isInView}
-      className={`transition-all ease-[cubic-bezier(0.32,0.72,0,1)] opacity-0 scale-95 data-[in-view=true]:opacity-100 data-[in-view=true]:scale-100 motion-reduce:scale-100 motion-reduce:opacity-100 motion-reduce:transition-none ${className}`}
+      className={`transition-[opacity,transform] ease-[cubic-bezier(0.32,0.72,0,1)] opacity-0 scale-95 data-[in-view=true]:opacity-100 data-[in-view=true]:scale-100 motion-reduce:scale-100 motion-reduce:opacity-100 motion-reduce:transition-none ${className}`}
       style={{ transitionDuration: `${duration}s`, transitionDelay: `${delay}s` }}
     >
       {children}
@@ -93,11 +93,10 @@ export const StaggerItem: React.FC<{ children: ReactNode; className?: string }> 
 }) => {
   return (
     <div
-      className={`stagger-item transition-all ease-[cubic-bezier(0.32,0.72,0,1)] opacity-0 translate-y-8 group-data-[in-view=true]/stagger:opacity-100 group-data-[in-view=true]/stagger:translate-y-0 motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none ${className}`}
+      className={`stagger-item transition-[opacity,transform] ease-[cubic-bezier(0.32,0.72,0,1)] opacity-0 translate-y-8 group-data-[in-view=true]/stagger:opacity-100 group-data-[in-view=true]/stagger:translate-y-0 motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none ${className}`}
       style={{ transitionDuration: '0.7s' }}
     >
       {children}
     </div>
   );
 };
-

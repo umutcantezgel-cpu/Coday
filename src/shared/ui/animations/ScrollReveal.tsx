@@ -18,7 +18,7 @@ export function ScrollReveal({ children, className = '', index = 0 }: ScrollReve
   return (
     <div
       ref={ref}
-      className={`transition-all duration-[700ms] ease-[cubic-bezier(0.32,0.72,0,1)] motion-reduce:transition-none ${className}`}
+      className={`transition-[opacity,transform,filter] duration-[700ms] ease-[cubic-bezier(0.32,0.72,0,1)] motion-reduce:transition-none ${className}`}
       style={{
         opacity: isInView ? 1 : 0,
         transform: isInView ? 'translateY(0)' : 'translateY(4rem)',
