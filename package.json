@@ -6,7 +6,10 @@
     "node": ">=20.0.0"
   },
   "browserslist": [
-    "defaults and fully supports es6-module"
+    "last 1 Chrome version",
+    "last 1 Firefox version",
+    "last 1 Safari version",
+    "last 1 Edge version"
   ],
   "scripts": {
     "dev": "next dev",
