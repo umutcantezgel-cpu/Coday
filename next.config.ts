@@ -22,6 +22,10 @@ const nextConfig: NextConfig = {
   },
   reactStrictMode: true,
   poweredByHeader: false,
+  productionBrowserSourceMaps: true,
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production' ? { exclude: ['error', 'warn'] } : false,
+  },
   experimental: {
     reactCompiler: true,
     // optimizeCss: true, // Disabled: critters may break client hydration
