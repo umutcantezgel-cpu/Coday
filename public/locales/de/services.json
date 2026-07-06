@@ -112,7 +112,7 @@
     },
     "hero": {
       "cta": "Integration anfragen",
-      "description": "Wir vernetzen Ihre Enterprise-Systemlandschaft. CRM, ERP, Payment oder Marketing-Tools – für nahtlose, automatisierte Prozesse.",
+      "description": "Ich vernetze Ihre Premium-Systemlandschaft. CRM, ERP, Payment oder Marketing-Tools – für nahtlose, automatisierte Prozesse.",
       "title_prefix": "API Integrationen &",
       "title_suffix": "Automation."
     },
@@ -162,7 +162,7 @@
     },
     "hero": {
       "cta": "Branding anfragen",
-      "description": "Marken, die im Gedächtnis bleiben. Wir entwickeln Corporate Identities, Logos und Designsprachen speziell für digitale Touchpoints.",
+      "description": "Marken, die im Gedächtnis bleiben. Ich entwickle Corporate Identities, Logos und Designsprachen speziell für digitale Touchpoints.",
       "title_prefix": "Brand Identity",
       "title_suffix": "für B2B."
     },
@@ -189,7 +189,7 @@
     },
     "meta": {
       "title": "Brand Identity & Logo Design für B2B | Coday",
-      "description": "Wir entwickeln starke Markenidentitäten, Corporate Designs und Logos für digitale Touchpoints. Machen Sie Ihre Marke unverwechselbar."
+      "description": "Ich entwickle starke Markenidentitäten, Corporate Designs und Logos für digitale Touchpoints. Machen Sie Ihre Marke unverwechselbar."
     }
   },
   "categories": {
@@ -270,7 +270,7 @@
     "hero": {
       "badge": "Scalable UI",
       "cta": "System anfragen",
-      "description": "Konsistenz ist King. Wir entwickeln atomare Design Systeme, die Ihre Marke über alle Touchpoints hinweg einheitlich und effizient machen.",
+      "description": "Konsistenz ist King. Ich entwickle atomare Design Systeme, die Ihre Marke über alle Touchpoints hinweg einheitlich und effizient machen.",
       "title_prefix": "Design that",
       "title_suffix": "Scales."
     },
@@ -294,7 +294,7 @@
           "Maximale Performance (0.5s Load Time)",
           "Völlige Freiheit im Frontend-Design",
           "Komplexe Produktkonfiguratoren möglich",
-          "Perfekt für B2B & komplexe Enterprise-Shops"
+          "Perfekt für B2B & komplexe Premium-Shops"
         ],
         "recommendation": "Empfehlung für: B2B, Hidden Champions, Individualisten",
         "title": "Custom Headless"
@@ -318,7 +318,7 @@
       "title": "Bereit zu skalieren?"
     },
     "features": {
-      "description": "Ein Enterprise-Shop muss mehr können als nur gut aussehen. Wir fokussieren uns auf die Performance-Metriken, die Ihren Umsatz skalieren.",
+      "description": "Ein Premium-Shop muss mehr können als nur gut aussehen. Ich fokussiere uns auf die Performance-Metriken, die Ihren Umsatz skalieren.",
       "items": {
         "checkout": {
           "desc": "Optimierter Checkout-Flow für weniger Kaufabbrüche.",
@@ -341,7 +341,7 @@
           "title": "Performance First"
         },
         "shopify_plus": {
-          "desc": "Skalierbare Enterprise-Lösungen mit Shopify 2.0 und Hydrogen.",
+          "desc": "Skalierbare Premium-Lösungen mit Shopify 2.0 und Hydrogen.",
           "title": "Shopify & Plus"
         }
       },
@@ -463,7 +463,7 @@
       }
     },
     "methodology": {
-      "title": "Unser Enterprise Prozess",
+      "title": "Unser Premium Prozess",
       "subtitle": "Von der Konzeption bis zum globalen Deployment.",
       "steps": {
         "1": {
@@ -489,7 +489,7 @@
       }
     },
     "case_study": {
-      "label": "Enterprise in Action",
+      "label": "Premium in Action",
       "title": "10x Faster Time-to-Market.",
       "description": "Wie wir durch Headless Commerce und eine moderne Next.js Architektur die Conversion-Rate eines Branchenführers um 40% gesteigert haben."
     },
@@ -511,7 +511,7 @@
     },
     "final_cta": {
       "button": "Jetzt anfragen",
-      "desc": "Keine Standardlösungen. Wir entwickeln genau das, was Sie für Ihren Erfolg brauchen.",
+      "desc": "Keine Standardlösungen. Ich entwickle genau das, was Sie für Ihren Erfolg brauchen.",
       "title": "Starten wir Ihr Projekt."
     },
     "hero": {
@@ -537,8 +537,8 @@
   "headless_cms_page": {
     "cms_comparison": {
       "contentful": {
-        "badge": "Enterprise Choice",
-        "desc": "Der Enterprise-Standard. Robust, bewährt und perfekt für große Organisationen mit strengen Workflows.",
+        "badge": "Premium Choice",
+        "desc": "Der Agentur-Standard. Robust, bewährt und perfekt für große Organisationen mit strengen Workflows.",
         "title": "Contentful"
       },
       "description": "Wir sind Partner der führenden Headless-Systeme. Wir finden das richtige Tool für Ihren Anwendungsfall.",
@@ -637,7 +637,7 @@
           "< 1 Sekunde Ladezeit",
           "Modulare Microservices",
           "Einfach erweiterbar & günstig zu betreiben",
-          "Enterprise-Grade Sicherheit"
+          "Premium-Grade Sicherheit"
         ],
         "label": "Nachher (Modern)"
       },
@@ -757,7 +757,7 @@
           "title": "Technische Optimierung"
         }
       },
-      "description": "Suchmaschinen-Optimierung ist kein Silo. Wir vernetzen Ihre Suche mit sozialen Medien, Inhalts-Marketing und bezahlter Werbung für maximale Sichtbarkeit.",
+      "description": "Suchmaschinen-Optimierung ist kein Silo. Ich vernetze Ihre Suche mit sozialen Medien, Inhalts-Marketing und bezahlter Werbung für maximale Sichtbarkeit.",
       "items": [
         "Ganzheitliche Strategie",
         "Plattformübergreifendes Retargeting",
@@ -976,7 +976,7 @@
       "title": "Haben Sie eine Vision?"
     },
     "features": {
-      "description": "Vom MVP zum Enterprise-Portal. Wir entwickeln Architekturen, die jeder Skalierung standhalten.",
+      "description": "Vom MVP zum Premium-Portal. Ich entwickle Architekturen, die jeder Skalierung standhalten.",
       "items": {
         "cloud": {
           "desc": "AWS, Vercel oder Google Cloud Setup für maximale Uptime.",
@@ -1007,7 +1007,7 @@
     },
     "hero": {
       "cta": "Projekt besprechen",
-      "description": "Wir entwickeln komplexe Webanwendungen, Dashboards und SaaS-Plattformen. Skalierbar, sicher und user-freundlich.",
+      "description": "Ich entwickle komplexe Webanwendungen, Dashboards und SaaS-Plattformen. Skalierbar, sicher und user-freundlich.",
       "title_prefix": "SaaS &",
       "title_suffix": "Individuelle Software."
     },
@@ -1113,7 +1113,7 @@
     "solution": {
       "label": "Unsere Lösung",
       "title": "High-Performance Webdesign für maximale Conversion",
-      "description": "Wir entwickeln digitale Erlebnisse, die nicht nur beeindrucken, sondern konvertieren. Mit psychologisch fundiertem UI/UX-Design und modernster Technologie machen wir Besucher zu zahlenden Kunden."
+      "description": "Ich entwickle digitale Erlebnisse, die nicht nur beeindrucken, sondern konvertieren. Mit psychologisch fundiertem UI/UX-Design und modernster Technologie machen wir Besucher zu zahlenden Kunden."
     },
     "case_study": {
       "label": "Success Story",
@@ -1146,7 +1146,7 @@
         {
           "number": "03",
           "title": "Agile Entwicklung",
-          "description": "Wir entwickeln in kurzen Sprints mit regelmäßigen Updates. Sie sehen den Fortschritt live und können frühzeitig Feedback geben."
+          "description": "Ich entwickle in kurzen Sprints mit regelmäßigen Updates. Sie sehen den Fortschritt live und können frühzeitig Feedback geben."
         },
         {
           "number": "04",
@@ -1168,7 +1168,7 @@
         {
           "number": "02",
           "title": "Wireframing & UX",
-          "description": "Wir entwickeln die Struktur und den Flow Ihrer Website. Fokus liegt auf Usability und Conversion-Rate-Optimierung."
+          "description": "Ich entwickle die Struktur und den Flow Ihrer Website. Fokus liegt auf Usability und Conversion-Rate-Optimierung."
         },
         {
           "number": "03",
@@ -1274,7 +1274,7 @@
       "react-nextjs-agentur": {
         "title": "React & Next.js Entwicklung",
         "description": "Wir bauen skalierbare Frontends mit modernsten Frameworks für maximale Performance und User Experience.",
-        "long_description": "In der modernen Webentwicklung sind Geschwindigkeit und Benutzerfreundlichkeit entscheidend. Mit React und Next.js setzen wir auf den Industriestandard für performante, skalierbare und wartbare Webanwendungen. Wir entwickeln maßgeschneiderte Lösungen, die technische Exzellenz mit herausragendem Design verbinden.",
+        "long_description": "In der modernen Webentwicklung sind Geschwindigkeit und Benutzerfreundlichkeit entscheidend. Mit React und Next.js setzen wir auf den Industriestandard für performante, skalierbare und wartbare Webanwendungen. Ich entwickle maßgeschneiderte Lösungen, die technische Exzellenz mit herausragendem Design verbinden.",
         "benefits": [
           "Blitzschnelle Ladezeiten",
           "SEO-optimiertes Server-Side Rendering",
@@ -1285,7 +1285,7 @@
       "e-commerce-shops": {
         "title": "E-Commerce & Shops",
         "description": "High-Performance Online-Shops mit Shopify oder Custom Headless Lösungen für maximale Conversion.",
-        "long_description": "Wir entwickeln Online-Shops, die nicht nur gut aussehen, sondern verkaufen. Ob Shopify Plus oder Headless Commerce mit Shopify Hydrogen – wir bauen Einkaufserlebnisse, die Ihre Kunden lieben und Ihren Umsatz steigern.",
+        "long_description": "Ich entwickle Online-Shops, die nicht nur gut aussehen, sondern verkaufen. Ob Shopify Plus oder Headless Commerce mit Shopify Hydrogen – wir bauen Einkaufserlebnisse, die Ihre Kunden lieben und Ihren Umsatz steigern.",
         "benefits": [
           "Optimierter Checkout-Funnel",
           "Headless Commerce Architektur",
@@ -1296,7 +1296,7 @@
       "full-stack-entwicklung": {
         "title": "Full-Stack Web-Apps",
         "description": "Robuste Backends und APIs mit Node.js, TypeScript und Edge-Computing Lösungen.",
-        "long_description": "Ein starkes Frontend braucht ein leistungsfähiges Backend. Wir entwickeln sichere und skalierbare Server-Architekturen, APIs und Datenbanken, die das Rückgrat Ihrer digitalen Produkte bilden.",
+        "long_description": "Ein starkes Frontend braucht ein leistungsfähiges Backend. Ich entwickle sichere und skalierbare Server-Architekturen, APIs und Datenbanken, die das Rückgrat Ihrer digitalen Produkte bilden.",
         "benefits": [
           "Hochperformante APIs",
           "Sichere Datenverarbeitung",
@@ -1331,7 +1331,7 @@
       "design-systems": {
         "title": "Design Systems",
         "description": "Konsistente Komponenten-Bibliotheken für skalierbare Produkte und schnelle Entwicklung.",
-        "long_description": "Ein Design System ist die Single Source of Truth für Ihr Produkt. Wir entwickeln modulare Komponentensysteme, die Konsistenz sichern und die Entwicklung beschleunigen.",
+        "long_description": "Ein Design System ist die Single Source of Truth für Ihr Produkt. Ich entwickle modulare Komponentensysteme, die Konsistenz sichern und die Entwicklung beschleunigen.",
         "benefits": [
           "Konsistente UI",
           "Schnellere Entwicklung",
@@ -1465,7 +1465,7 @@
           }
         },
         "messages": {
-          "enterprise": "Enterprise-Level: Maximale Skalierbarkeit, Sicherheit und Performance.",
+          "enterprise": "Premium-Level: Maximale Skalierbarkeit, Sicherheit und Performance.",
           "good": "Sehr gut: Hohe Zuverlässigkeit und saubere Code-Struktur.",
           "risky": "Kritisch: Stabilitätsschwankungen und Performance-Einbußen wahrscheinlich.",
           "stable": "Stabil: Solide Basis, jedoch mit weiterem Optimierungspotenzial.",

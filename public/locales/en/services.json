@@ -157,13 +157,7 @@
     },
     "digital_branding": {
       "description": "Today, a brand must work primarily on smartphones. We don't think in letterheads, but in pixels.",
-      "tags": [
-        "Logo Design",
-        "Typography",
-        "Color Palette",
-        "Tone of Voice",
-        "Social Assets"
-      ],
+      "tags": ["Logo Design", "Typography", "Color Palette", "Tone of Voice", "Social Assets"],
       "title": "Digital-First Branding"
     },
     "hero": {
@@ -204,7 +198,7 @@
       "title": "Web Design"
     },
     "web_development": {
-      "description": "We build fast and powerful websites and web applications with modern technology.",
+      "description": "I build fast and powerful websites and web applications with modern technology.",
       "title": "Web Development"
     },
     "seo": {
@@ -288,7 +282,7 @@
       "title_suffix": "Scales."
     },
     "workflow": {
-      "description": "From audit to implementation – we build design systems that your team actually uses.",
+      "description": "From audit to implementation – we build design systems that yme actually uses.",
       "title": "Our Design System Workflow"
     },
     "meta": {
@@ -307,7 +301,7 @@
           "Maximum Performance (0.5s Load Time)",
           "Complete Freedom in Frontend Design",
           "Complex Product Configurators Possible",
-          "Perfect for B2B & Complex Enterprise Shops"
+          "Perfect for B2B & Complex premium Shops"
         ],
         "recommendation": "Recommended for: B2B, Hidden Champions, Individualists",
         "title": "Custom Headless"
@@ -331,7 +325,7 @@
       "title": "Ready to Scale?"
     },
     "features": {
-      "description": "A shop doesn't just have to look good, it has to work. We focus on the metrics that count.",
+      "description": "A shop doesn't just have to look good, it has to work. I focus on the metrics that count.",
       "items": {
         "checkout": {
           "desc": "Optimized checkout flow for fewer abandoned carts.",
@@ -354,7 +348,7 @@
           "title": "Performance First"
         },
         "shopify_plus": {
-          "desc": "Scalable enterprise solutions with Shopify 2.0 and Hydrogen.",
+          "desc": "Scalable premium solutions with Shopify 2.0 and Hydrogen.",
           "title": "Shopify & Plus"
         }
       },
@@ -364,7 +358,7 @@
       "badge": "E-Commerce",
       "cta_primary": "Start Shop Project",
       "cta_secondary": "View References",
-      "description": "We build high-performance shops with Shopify and WooCommerce. No standard themes, but conversion-optimized sales machines.",
+      "description": "I build high-performance shops with Shopify and WooCommerce. No standard themes, but conversion-optimized sales machines.",
       "title_anim": "E-Commerce that",
       "title_static": "sells."
     },
@@ -433,7 +427,7 @@
       "badge": "Beyond Standard",
       "cta_primary": "Start Dominance",
       "cta_secondary": "View Cases",
-      "description": "No business cards. We build digital weapon systems for companies that don't see losing as an option.",
+      "description": "No business cards. I build digital weapon systems for companies that don't see losing as an option.",
       "scroll_hint": "Scroll to Explore",
       "title_prefix": "Websites,",
       "title_suffix": "that eat markets."
@@ -444,7 +438,7 @@
       "title": "Performance = Revenue"
     },
     "speed_section": {
-      "description": "Google hates slow websites. Users do too. We build on Edge Computing and Next.js for load times under 500ms.",
+      "description": "Google hates slow websites. Users do too. I build on Edge Computing and Next.js for load times under 500ms.",
       "title": "Speed is Authority."
     },
     "stack_section": {
@@ -452,8 +446,8 @@
       "title": "The Stack of Dominance"
     },
     "meta": {
-      "title": "Enterprise Web Development & Headless Architectures | Coday",
-      "description": "High-performance web solutions for enterprise clients. Scalable, secure, and extremely fast architectures for the corporate sector."
+      "title": "premium Web Development & Headless Architectures | Coday",
+      "description": "High-performance web solutions for ambitious SMEs. Scalable, secure, and extremely fast architectures for the corporate sector."
     },
     "matrix": {
       "rows": {
@@ -480,7 +474,7 @@
       }
     },
     "methodology": {
-      "title": "Our Enterprise Process",
+      "title": "Our premium Process",
       "subtitle": "From concept to global deployment.",
       "steps": {
         "1": {
@@ -506,7 +500,7 @@
       }
     },
     "case_study": {
-      "label": "Enterprise in Action",
+      "label": "premium in Action",
       "title": "10x Faster Time-to-Market.",
       "description": "How we increased the conversion rate of an industry leader by 40% through Headless Commerce and a modern Next.js architecture."
     }
@@ -550,8 +544,8 @@
   "headless_cms_page": {
     "cms_comparison": {
       "contentful": {
-        "badge": "Enterprise Choice",
-        "desc": "The Enterprise Standard. Robust, proven, and perfect for large organizations with strict workflows.",
+        "badge": "premium Choice",
+        "desc": "The Premium Standard. Robust, proven, and perfect for large organizations with strict workflows.",
         "title": "Contentful"
       },
       "description": "We partner with leading Headless Systems. We find the right tool for your use case.",
@@ -641,11 +635,7 @@
     ],
     "title": "Web Development & SEO Agency | Services - Coday",
     "description": "Our expertise: High-end web design, React & Next.js development, conversion rate optimization, and data-driven SEO strategies for maximum ROI.",
-    "rotatingTexts": [
-      "Web Design",
-      "Web Development",
-      "SEO"
-    ]
+    "rotatingTexts": ["Web Design", "Web Development", "SEO"]
   },
   "migration_page": {
     "before_after": {
@@ -728,14 +718,7 @@
         "Java Monoliths"
       ],
       "title": "Supported Technologies",
-      "to": [
-        "Next.js",
-        "React",
-        "Node.js",
-        "Supabase",
-        "Headless CMS",
-        "Vercel Edge"
-      ]
+      "to": ["Next.js", "React", "Node.js", "Supabase", "Headless CMS", "Vercel Edge"]
     },
     "meta": {
       "title": "System Migration & Legacy Modernization | Coday",
@@ -822,7 +805,7 @@
     },
     "tech_stack": {
       "title": "Our SEO Tech Stack",
-      "description": "We rely on industry-leading enterprise tools for precise analytics, in-depth audits, and measurable success."
+      "description": "We rely on industry-leading premium tools for precise analytics, in-depth audits, and measurable success."
     },
     "process": {
       "title": "Our SEO Process",
@@ -1001,11 +984,11 @@
   "web_apps_page": {
     "cta_section": {
       "button": "Request Developer Team",
-      "description": "We build the technical foundation for it.",
+      "description": "I build the technical foundation for it.",
       "title": "Do you have a vision?"
     },
     "features": {
-      "description": "From MVP to Enterprise product. We build architecture that lasts.",
+      "description": "From MVP to premium product. I build architecture that lasts.",
       "items": {
         "cloud": {
           "desc": "AWS, Vercel, or Google Cloud setup for maximum uptime.",
@@ -1224,7 +1207,7 @@
         {
           "icon": "chart_bar",
           "title": "Scalability First",
-          "description": "We build architectures that grow with your success. From 100 to 100,000 users without redevelopment."
+          "description": "I build architectures that grow with your success. From 100 to 100,000 users without redevelopment."
         },
         {
           "icon": "stack",
@@ -1302,7 +1285,7 @@
     "web-development": {
       "react-nextjs-agentur": {
         "title": "React & Next.js Development",
-        "description": "We build scalable frontends with modern frameworks for maximum performance and user experience.",
+        "description": "I build scalable frontends with modern frameworks for maximum performance and user experience.",
         "long_description": "In modern web development, speed and user friendliness are crucial. With React and Next.js we rely on the industry standard for performant, scalable and maintainable web applications. We develop tailored solutions that combine technical excellence with outstanding design.",
         "benefits": [
           "Blazing fast load times",
@@ -1361,12 +1344,7 @@
         "title": "Design Systems",
         "description": "Consistent component libraries for scalable products and fast development.",
         "long_description": "A Design System is the Single Source of Truth for your product. We develop modular component systems that ensure consistency and accelerate development.",
-        "benefits": [
-          "Consistent UI",
-          "Faster development",
-          "Simplified maintenance",
-          "Scalability"
-        ]
+        "benefits": ["Consistent UI", "Faster development", "Simplified maintenance", "Scalability"]
       },
       "website-relaunch": {
         "title": "Website Relaunch",
@@ -1495,7 +1473,7 @@
           }
         },
         "messages": {
-          "enterprise": "Enterprise-Level: Maximum scalability, security, and performance.",
+          "enterprise": "Premium-Level: Maximum scalability, security, and performance.",
           "good": "Very good: High reliability and clean code structure.",
           "risky": "Critical: Stability fluctuations and performance drops likely.",
           "stable": "Stable: Solid foundation, but with further optimization potential.",
