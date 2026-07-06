@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 
 import { CaretDown, ArrowUpRight, ArrowRight } from '@phosphor-icons/react/dist/ssr';
-import CodayLogo from '@/assets/images/coday_logo.svg';
+import CodayLogo from '@/assets/images/coday_logo.png';
 import Image from 'next/image';
 import { LanguageSwitcher } from '@/widgets/navigation/LanguageSwitcher';
 
