@@ -81,6 +81,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-3">
               <li>
                 <Link
+                  prefetch={false}
                   href="/"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
@@ -89,6 +90,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/work"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
@@ -97,6 +99,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/about"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
@@ -105,6 +108,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/process"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
@@ -113,6 +117,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/pricing"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
@@ -121,6 +126,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/partnerschaft"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
@@ -129,6 +135,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/calculator"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
@@ -137,6 +144,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/career"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
@@ -154,6 +162,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-3">
               <li>
                 <Link
+                  prefetch={false}
                   href="/services/web-development"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
@@ -162,6 +171,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/services/design/ui-ux"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
@@ -170,6 +180,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/services/seo"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
@@ -178,6 +189,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/services/ecommerce-development"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
@@ -186,6 +198,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/services/development/api-integration"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
@@ -194,6 +207,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/services/web-development"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
@@ -211,6 +225,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-3">
               <li>
                 <Link
+                  prefetch={false}
                   href="/standorte/hessen"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
@@ -219,6 +234,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/standorte/wetzlar"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
@@ -227,6 +243,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/branchen/gesundheitswesen/arzt-wetzlar"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
@@ -235,6 +252,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/branchen/gesundheitswesen/arzt-giessen"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
@@ -243,6 +261,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
+                  prefetch={false}
                   href="/branchen/handwerker/wetzlar"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
@@ -283,6 +302,7 @@ export const Footer: React.FC = () => {
               </li>
             </ul>
             <Link
+              prefetch={false}
               href="/contact"
               className="inline-flex items-center justify-center min-h-[44px] px-6 bg-primary/20 text-blue-400 border border-primary/30 rounded-lg text-sm font-bold hover:bg-primary hover:text-white transition motion-reduce:duration-[0.01ms]"
             >
@@ -346,18 +366,21 @@ export const Footer: React.FC = () => {
             className="flex flex-wrap justify-center md:justify-end gap-x-4 gap-y-2 text-xs text-gray-300"
           >
             <Link
+              prefetch={false}
               href="/legal/agb"
               className="hover:text-white transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
             >
               {t('nav.legal.agb')}
             </Link>
             <Link
+              prefetch={false}
               href="/legal/datenschutz"
               className="hover:text-white transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
             >
               {t('nav.legal.privacy')}
             </Link>
             <Link
+              prefetch={false}
               href="/legal/impressum"
               className="hover:text-white transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
             >
