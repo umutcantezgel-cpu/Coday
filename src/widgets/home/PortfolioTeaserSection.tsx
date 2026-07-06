@@ -72,7 +72,7 @@ export const PortfolioTeaserSection: React.FC = () => {
                     />
 
                     {/* Hover Overlay Badge */}
-                    <div className="absolute top-6 right-6 z-20 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 bg-white/90 backdrop-blur-md text-secondary-900 rounded-full p-4 shadow-xl flex items-center justify-center">
+                    <div className="absolute top-6 right-6 z-20 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-[opacity,transform] duration-500 bg-white/90 backdrop-blur-md text-secondary-900 rounded-full p-4 shadow-xl flex items-center justify-center">
                       <ArrowUpRight weight="bold" className="w-6 h-6" />
                     </div>
                   </Link>

@@ -12,7 +12,7 @@ export const LanguageSwitcher: React.FC = () => {
       <Link
         href={pathname}
         locale="de"
-        className={`px-3 py-1.5 text-xs font-bold tracking-wider rounded-full transition-all flex items-center gap-1 ${
+        className={`px-3 py-1.5 text-xs font-bold tracking-wider rounded-full transition-colors flex items-center gap-1 ${
           locale === 'de'
             ? 'bg-white text-slate-900 shadow-sm ring-1 ring-slate-200/50 pointer-events-none'
             : 'text-slate-500 hover:text-slate-800 hover:bg-slate-200/50'
@@ -29,7 +29,7 @@ export const LanguageSwitcher: React.FC = () => {
       <Link
         href={pathname}
         locale="en"
-        className={`px-3 py-1.5 text-xs font-bold tracking-wider rounded-full transition-all flex items-center gap-1 ${
+        className={`px-3 py-1.5 text-xs font-bold tracking-wider rounded-full transition-colors flex items-center gap-1 ${
           locale === 'en'
             ? 'bg-white text-slate-900 shadow-sm ring-1 ring-slate-200/50 pointer-events-none'
             : 'text-slate-500 hover:text-slate-800 hover:bg-slate-200/50'

@@ -45,7 +45,7 @@ export const ChatWidget: React.FC<{ hideTrigger?: boolean }> = ({ hideTrigger = 
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
             onClick={toggleChat}
-            className="fixed right-4 md:right-6 z-[9999] w-14 h-14 rounded-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white shadow-2xl hover:shadow-purple-500/25 transition-all motion-reduce:duration-[0.01ms] flex items-center justify-center group bottom-[90px] md:bottom-6 opacity-100 isolation-auto"
+            className="fixed right-4 md:right-6 z-[9999] w-14 h-14 rounded-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white shadow-2xl hover:shadow-purple-500/25 transition-[transform,box-shadow] motion-reduce:duration-[0.01ms] flex items-center justify-center group bottom-[90px] md:bottom-6 opacity-100 isolation-auto"
             aria-label="Chat öffnen"
           >
             <ChatCircle

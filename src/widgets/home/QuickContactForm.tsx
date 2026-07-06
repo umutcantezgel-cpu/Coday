@@ -114,7 +114,7 @@ export const QuickContactForm: React.FC = () => {
                     type="text"
                     {...register('name')}
                     placeholder={t('quick_contact.name_placeholder')}
-                    className="w-full pl-11 pr-4 py-3 bg-white/80 border border-neutral-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all placeholder:text-secondary-600 text-secondary-900"
+                    className="w-full pl-11 pr-4 py-3 bg-white/80 border border-neutral-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-colors placeholder:text-secondary-600 text-secondary-900"
                     disabled={isSubmitting}
                   />
                 </div>
@@ -132,7 +132,7 @@ export const QuickContactForm: React.FC = () => {
                     type="email"
                     {...register('email')}
                     placeholder={t('quick_contact.email_placeholder')}
-                    className="w-full pl-11 pr-4 py-3 bg-white/80 border border-neutral-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all placeholder:text-secondary-600 text-secondary-900"
+                    className="w-full pl-11 pr-4 py-3 bg-white/80 border border-neutral-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-colors placeholder:text-secondary-600 text-secondary-900"
                     disabled={isSubmitting}
                   />
                 </div>
@@ -150,7 +150,7 @@ export const QuickContactForm: React.FC = () => {
                     type="tel"
                     {...register('phone')}
                     placeholder={t('quick_contact.phone_placeholder')}
-                    className="w-full pl-11 pr-4 py-3 bg-white/80 border border-neutral-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all placeholder:text-secondary-600 text-secondary-900"
+                    className="w-full pl-11 pr-4 py-3 bg-white/80 border border-neutral-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-colors placeholder:text-secondary-600 text-secondary-900"
                     disabled={isSubmitting}
                   />
                 </div>
@@ -166,7 +166,7 @@ export const QuickContactForm: React.FC = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-3.5 px-4 bg-primary-600 hover:bg-primary-700 text-secondary-900 font-bold rounded-xl shadow-lg shadow-primary-500/30 transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed group mt-2"
+                className="w-full py-3.5 px-4 bg-primary-600 hover:bg-primary-700 text-secondary-900 font-bold rounded-xl shadow-lg shadow-primary-500/30 transition-colors flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed group mt-2"
               >
                 {isSubmitting ? (
                   <span className="w-5 h-5 border-2 border-secondary-900/30 border-t-secondary-900 rounded-full animate-spin" />

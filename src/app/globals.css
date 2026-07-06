@@ -293,9 +293,7 @@
   border-radius: 1rem;
   transition:
     transform 300ms ease,
-    box-shadow 300ms ease,
-    border-color 300ms ease,
-    background-color 300ms ease;
+    box-shadow 300ms ease;
   box-shadow: var(--shadow-md);
 }
 .glass-card:hover {
@@ -312,9 +310,7 @@
   border-radius: 1rem;
   transition:
     transform 300ms ease,
-    box-shadow 300ms ease,
-    border-color 300ms ease,
-    background-color 300ms ease;
+    box-shadow 300ms ease;
   box-shadow: var(--shadow-sm);
 }
 .flat-card:hover {
@@ -669,8 +665,7 @@ a.bg-secondary,
 .btn-primary-animated {
   transition:
     transform var(--duration-fast) var(--ease-out),
-    box-shadow var(--duration-fast) var(--ease-out),
-    background-color var(--duration-fast) var(--ease-out);
+    box-shadow var(--duration-fast) var(--ease-out);
 }
 button.bg-primary:hover,
 button.bg-secondary:hover,
