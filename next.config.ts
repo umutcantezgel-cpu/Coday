@@ -28,7 +28,7 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     reactCompiler: true,
-    optimizeCss: true,
+    // optimizeCss: true, // Disabled to prevent FCP/hydration delay
     optimizePackageImports: [
       '@phosphor-icons/react',
       '@phosphor-icons/react/dist/ssr',
