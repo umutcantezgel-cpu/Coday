@@ -212,21 +212,6 @@ const nextConfig: NextConfig = {
         source: '/(.*)',
         headers: [
           {
-            key: 'Content-Security-Policy',
-            value: [
-              "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://*.vercel-scripts.com https://*.vercel-insights.com",
-              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-              "img-src 'self' data: blob: https://cdn.sanity.io https://images.provenexpert.com https://*.google-analytics.com https://*.googletagmanager.com",
-              "font-src 'self' https://fonts.gstatic.com",
-              "connect-src 'self' https://*.sanity.io https://*.vercel-insights.com https://*.google-analytics.com https://vitals.vercel-insights.com",
-              "frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com",
-              "object-src 'none'",
-              "base-uri 'self'",
-              "form-action 'self'",
-            ].join('; '),
-          },
-          {
             key: 'X-Content-Type-Options',
             value: 'nosniff',
           },
