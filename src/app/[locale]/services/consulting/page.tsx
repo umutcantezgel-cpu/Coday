@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { ConsultingClient } from '@/features/services/ui/ConsultingClient';
 import { setRequestLocale } from 'next-intl/server';
+import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
 
 export async function generateMetadata({
   params,
@@ -31,5 +32,27 @@ export default async function ConsultingPage({ params }: { params: Promise<{ loc
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <ConsultingClient />;
+  return (
+    <>
+      <script
+        id="schema-consulting"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              getOrganizationSchema(),
+              getServiceSchema({
+                name: 'Digitale Beratung & Webstrategie | Wetzlar',
+                description:
+                  'Strategische Digitalberatung von Coday in Wetzlar. Wir begleiten Unternehmen in Mittelhessen bei der digitalen Transformation. Jetzt Termin buchen.',
+                url: `${BASE_URL}/de/services/consulting`,
+              }),
+            ],
+          }),
+        }}
+      />
+      <ConsultingClient />
+    </>
+  );
 }

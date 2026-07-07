@@ -5,6 +5,7 @@ import { GamifiedIndustryTemplate } from '@/features/industries/ui/GamifiedIndus
 
 import fs from 'fs';
 import path from 'path';
+import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
 
 export async function generateMetadata({
   params,
@@ -74,6 +75,24 @@ export default async function SubIndustryPage({ params }: { params: Promise<{ lo
 
   return (
     <>
+      <script
+        id="schema-branchen-autohaendler"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              getOrganizationSchema(),
+              getServiceSchema({
+                name: 'Webdesign für Autohändler',
+                description:
+                  'Webdesign für Autohändler in Wetzlar und Hessen. Digitale Dominanz für Ihre Branche.',
+                url: `${BASE_URL}/de/branchen/automobil/autohaendler`,
+              }),
+            ],
+          }),
+        }}
+      />
       <GamifiedIndustryTemplate content={content} cityData={undefined} />
       {/* TODO: Integrate the 'spezielles Tool' here once the user provides it */}
     </>

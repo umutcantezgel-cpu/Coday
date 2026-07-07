@@ -3,6 +3,7 @@ import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
 import { IndustryDetailClient } from '@/features/industries/ui/IndustryDetailClient';
 import { IndustryToolEmbed } from '@/features/industries/ui/IndustryToolEmbed';
+import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
 
 export async function generateMetadata({
   params,
@@ -37,6 +38,24 @@ export default async function AutomobilHubPage({
   setRequestLocale(locale);
   return (
     <>
+      <script
+        id="schema-branchen-automobil"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              getOrganizationSchema(),
+              getServiceSchema({
+                name: 'Webdesign für die Automobilbranche',
+                description:
+                  'Websites und digitale Lösungen für Autohäuser, Werkstätten und KFZ-Betriebe in Wetzlar und Hessen. Premium Webdesign von Coday. Jetzt Termin buchen.',
+                url: `${BASE_URL}/de/branchen/automobil`,
+              }),
+            ],
+          }),
+        }}
+      />
       <IndustryDetailClient industrySlug="automobil" />
       <IndustryToolEmbed industryKey="automobil" />
     </>

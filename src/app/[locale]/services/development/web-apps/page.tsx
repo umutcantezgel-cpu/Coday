@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { WebAppsClient } from '@/features/services/ui/WebAppsClient';
 import { setRequestLocale } from 'next-intl/server';
+import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
 
 export async function generateMetadata({
   params,
@@ -31,5 +32,27 @@ export default async function WebAppsPage({ params }: { params: Promise<{ locale
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <WebAppsClient />;
+  return (
+    <>
+      <script
+        id="schema-web-apps"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              getOrganizationSchema(),
+              getServiceSchema({
+                name: 'Web-App Entwicklung Wetzlar | Portale & Tools',
+                description:
+                  'Individuelle Web-App Entwicklung und Portale von Coday in Wetzlar. Maßgeschneiderte Lösungen für Unternehmen in Mittelhessen. Jetzt Projekt starten.',
+                url: `${BASE_URL}/de/services/development/web-apps`,
+              }),
+            ],
+          }),
+        }}
+      />
+      <WebAppsClient />
+    </>
+  );
 }

@@ -3,6 +3,7 @@ import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
 import { IndustryDetailClient } from '@/features/industries/ui/IndustryDetailClient';
 import { IndustryToolEmbed } from '@/features/industries/ui/IndustryToolEmbed';
+import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
 
 export async function generateMetadata({
   params,
@@ -37,6 +38,24 @@ export default async function HandwerkerHubPage({
   setRequestLocale(locale);
   return (
     <>
+      <script
+        id="schema-branchen-handwerker"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              getOrganizationSchema(),
+              getServiceSchema({
+                name: 'Webdesign für Handwerker',
+                description:
+                  'Professionelle Webseiten für Handwerksbetriebe in Wetzlar und Hessen. Mehr Aufträge durch lokale Sichtbarkeit bei Google. Persönlich und zum Festpreis.',
+                url: `${BASE_URL}/de/branchen/handwerker`,
+              }),
+            ],
+          }),
+        }}
+      />
       <IndustryDetailClient industrySlug="handwerk-bau" />
       <IndustryToolEmbed industryKey="handwerk" />
     </>

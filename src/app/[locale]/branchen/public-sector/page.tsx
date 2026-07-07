@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import PublicSectorClient from '@/features/industries/ui/PublicSectorClient';
 import { setRequestLocale } from 'next-intl/server';
+import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
 
 export async function generateMetadata({
   params,
@@ -34,5 +35,27 @@ export default async function PublicSectorPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return <PublicSectorClient />;
+  return (
+    <>
+      <script
+        id="schema-branchen-public-sector"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              getOrganizationSchema(),
+              getServiceSchema({
+                name: 'Webdesign für den Öffentlichen Sektor',
+                description:
+                  'Barrierefreie und DSGVO-konforme Webseiten für Kommunen und Behörden in Hessen. Sichere Webentwicklung von Coday aus Wetzlar. Jetzt Kontakt aufnehmen.',
+                url: `${BASE_URL}/de/branchen/public-sector`,
+              }),
+            ],
+          }),
+        }}
+      />
+      <PublicSectorClient />
+    </>
+  );
 }

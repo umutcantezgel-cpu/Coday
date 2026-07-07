@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
 import { LocalSeoTemplate } from '@/features/local-seo/ui/LocalSeoTemplate';
+import { getOrganizationSchema, getDynamicLocationSchema, BASE_URL } from '@/lib/schema';
 import fs from 'fs';
 import path from 'path';
 
@@ -71,5 +72,25 @@ export default async function HessenLocationPage({
     );
   }
 
-  return <LocalSeoTemplate content={content} />;
+  const locationSchema = getDynamicLocationSchema({
+    city: 'Hessen',
+    description:
+      'Webdesign Agentur in Hessen — Premium Websites mit Next.js, SEO & Generative Engine Optimization für Unternehmen in ganz Hessen.',
+    url: `${BASE_URL}/de/standorte/hessen`,
+  });
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [getOrganizationSchema(), locationSchema],
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <LocalSeoTemplate content={content} />
+    </>
+  );
 }

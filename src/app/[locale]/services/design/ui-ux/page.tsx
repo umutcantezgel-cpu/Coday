@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { UiUxClient } from '@/features/services/ui/UiUxClient';
 import { setRequestLocale } from 'next-intl/server';
+import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
 
 export async function generateMetadata({
   params,
@@ -31,5 +32,27 @@ export default async function UiUxPage({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <UiUxClient />;
+  return (
+    <>
+      <script
+        id="schema-ui-ux"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              getOrganizationSchema(),
+              getServiceSchema({
+                name: 'UI/UX Design Agentur Wetzlar | Nutzerfreundlich',
+                description:
+                  'Professionelles UI/UX Design von Coday in Wetzlar. Nutzerzentrierte Interfaces für höhere Konversion und zufriedene Kunden in Mittelhessen. Anfragen.',
+                url: `${BASE_URL}/de/services/design/ui-ux`,
+              }),
+            ],
+          }),
+        }}
+      />
+      <UiUxClient />
+    </>
+  );
 }

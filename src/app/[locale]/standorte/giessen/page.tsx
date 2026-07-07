@@ -3,6 +3,7 @@ import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
 import { LocalSeoTemplate } from '@/features/local-seo/ui/LocalSeoTemplate';
 import { getCityBySlug } from '@/features/local-seo/model/cities';
+import { getOrganizationSchema, getDynamicLocationSchema, BASE_URL } from '@/lib/schema';
 import fs from 'fs';
 import path from 'path';
 
@@ -74,5 +75,25 @@ export default async function GiessenLocationPage({
 
   const cityData = getCityBySlug('giessen');
 
-  return <LocalSeoTemplate content={content} cityData={cityData} />;
+  const locationSchema = getDynamicLocationSchema({
+    city: 'Gießen',
+    description:
+      'Webdesign Agentur in Gießen — Premium Websites mit Next.js, SEO & Generative Engine Optimization für lokale Unternehmen.',
+    url: `${BASE_URL}/de/standorte/giessen`,
+  });
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [getOrganizationSchema(), locationSchema],
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <LocalSeoTemplate content={content} cityData={cityData} />
+    </>
+  );
 }

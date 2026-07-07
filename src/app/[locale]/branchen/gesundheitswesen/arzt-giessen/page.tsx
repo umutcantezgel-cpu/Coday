@@ -5,6 +5,7 @@ import { GamifiedIndustryTemplate } from '@/features/industries/ui/GamifiedIndus
 import { getCityBySlug } from '@/features/local-seo/model/cities';
 import fs from 'fs';
 import path from 'path';
+import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
 
 export async function generateMetadata({
   params,
@@ -76,6 +77,24 @@ export default async function SubIndustryPage({ params }: { params: Promise<{ lo
 
   return (
     <>
+      <script
+        id="schema-branchen-arzt-giessen"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              getOrganizationSchema(),
+              getServiceSchema({
+                name: 'Webdesign für Ärzte in Gießen',
+                description:
+                  'Webdesign für Ärzte in Gießen. Praxis Homepage mit modernem Design und lokaler SEO.',
+                url: `${BASE_URL}/de/branchen/gesundheitswesen/arzt-giessen`,
+              }),
+            ],
+          }),
+        }}
+      />
       <GamifiedIndustryTemplate content={content} cityData={cityData} />
       {/* TODO: Integrate the 'spezielles Tool' here once the user provides it */}
     </>

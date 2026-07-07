@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import GastronomieClient from '@/features/industries/ui/GastronomieClient';
 import { setRequestLocale } from 'next-intl/server';
+import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
 
 export async function generateMetadata({
   params,
@@ -30,5 +31,27 @@ export async function generateMetadata({
 export default async function GastronomiePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return <GastronomieClient />;
+  return (
+    <>
+      <script
+        id="schema-branchen-gastronomie"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              getOrganizationSchema(),
+              getServiceSchema({
+                name: 'Webdesign für Gastronomie',
+                description:
+                  'Appetitliche Webseiten für Restaurants und Gastronomie in Wetzlar und Hessen. Mehr Gäste durch professionelles Webdesign und lokale Auffindbarkeit.',
+                url: `${BASE_URL}/de/branchen/gastronomie`,
+              }),
+            ],
+          }),
+        }}
+      />
+      <GastronomieClient />
+    </>
+  );
 }

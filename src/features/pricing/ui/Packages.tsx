@@ -112,15 +112,6 @@ export default async function Packages() {
           { name: 'Home', url: 'https://www.codayweb.de' },
           { name: t('page.title'), url: 'https://www.codayweb.de/pricing' },
         ]}
-        schemaData={{
-          softwareApp: {
-            name: 'Coday Web Packages',
-            description: 'Professional web development packages with transparent pricing.',
-            applicationCategory: 'BusinessApplication',
-            operatingSystem: 'Web',
-            offers: { price: '2500', priceCurrency: 'EUR' },
-          },
-        }}
       />
 
       <StepInitializer />

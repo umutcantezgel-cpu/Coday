@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { UxAuditClient } from '@/features/services/ui/UxAuditClient';
 import { setRequestLocale } from 'next-intl/server';
+import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
 
 export async function generateMetadata({
   params,
@@ -31,5 +32,27 @@ export default async function UxAuditPage({ params }: { params: Promise<{ locale
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <UxAuditClient />;
+  return (
+    <>
+      <script
+        id="schema-ux-audit"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              getOrganizationSchema(),
+              getServiceSchema({
+                name: 'UX Audit & Usability Check Wetzlar | Optimierung',
+                description:
+                  'Professioneller UX Audit von Coday in Wetzlar. Wir analysieren Ihre Website auf Nutzerfreundlichkeit und Konversionspotenzial. Für Firmen in Hessen.',
+                url: `${BASE_URL}/de/services/design/ux-audit`,
+              }),
+            ],
+          }),
+        }}
+      />
+      <UxAuditClient />
+    </>
+  );
 }

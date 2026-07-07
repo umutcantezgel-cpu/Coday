@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { EnterpriseWebClient } from '@/features/services/ui/EnterpriseWebClient';
 import { setRequestLocale } from 'next-intl/server';
+import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
 
 export async function generateMetadata({
   params,
@@ -35,5 +36,27 @@ export default async function EnterpriseWebPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <EnterpriseWebClient />;
+  return (
+    <>
+      <script
+        id="schema-enterprise-web"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              getOrganizationSchema(),
+              getServiceSchema({
+                name: 'Enterprise Webentwicklung Wetzlar | Skalierbar',
+                description:
+                  'Skalierbare und sichere Enterprise Web-Lösungen von Coday in Wetzlar. Portale, Intranets und Webanwendungen für Unternehmen in Hessen. Jetzt anfragen.',
+                url: `${BASE_URL}/de/services/enterprise-web`,
+              }),
+            ],
+          }),
+        }}
+      />
+      <EnterpriseWebClient />
+    </>
+  );
 }

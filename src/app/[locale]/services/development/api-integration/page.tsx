@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { ApiIntegrationClient } from '@/features/services/ui/ApiIntegrationClient';
 import { setRequestLocale } from 'next-intl/server';
+import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
 
 export async function generateMetadata({
   params,
@@ -35,5 +36,27 @@ export default async function ApiIntegrationPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <ApiIntegrationClient />;
+  return (
+    <>
+      <script
+        id="schema-api-integration"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              getOrganizationSchema(),
+              getServiceSchema({
+                name: 'API Integration & Schnittstellen | Wetzlar',
+                description:
+                  'Nahtlose API Integrationen und Schnittstellenentwicklung von Coday in Wetzlar. Wir verbinden Ihre Systeme zuverlässig und effizient. Für Firmen in Hessen.',
+                url: `${BASE_URL}/de/services/development/api-integration`,
+              }),
+            ],
+          }),
+        }}
+      />
+      <ApiIntegrationClient />
+    </>
+  );
 }

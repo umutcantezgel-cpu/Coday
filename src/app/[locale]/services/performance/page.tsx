@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { PerformanceClient } from '@/features/services/ui/PerformanceClient';
 import { setRequestLocale } from 'next-intl/server';
+import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
 
 export async function generateMetadata({
   params,
@@ -31,5 +32,27 @@ export default async function PerformancePage({ params }: { params: Promise<{ lo
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <PerformanceClient />;
+  return (
+    <>
+      <script
+        id="schema-performance"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              getOrganizationSchema(),
+              getServiceSchema({
+                name: 'Website Speed Optimierung Wetzlar | Core Web Vitals',
+                description:
+                  'Maximale Website-Geschwindigkeit durch Core Web Vitals Optimierung von Coday in Wetzlar. Schnellere Ladezeiten, besseres Google Ranking in Hessen.',
+                url: `${BASE_URL}/de/services/performance`,
+              }),
+            ],
+          }),
+        }}
+      />
+      <PerformanceClient />
+    </>
+  );
 }

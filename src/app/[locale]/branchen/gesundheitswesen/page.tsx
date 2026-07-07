@@ -3,6 +3,7 @@ import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
 import { IndustryDetailClient } from '@/features/industries/ui/IndustryDetailClient';
 import { IndustryToolEmbed } from '@/features/industries/ui/IndustryToolEmbed';
+import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
 
 export async function generateMetadata({
   params,
@@ -37,6 +38,24 @@ export default async function GesundheitswesenHubPage({
   setRequestLocale(locale);
   return (
     <>
+      <script
+        id="schema-branchen-gesundheitswesen"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              getOrganizationSchema(),
+              getServiceSchema({
+                name: 'Webdesign für Ärzte & Praxen',
+                description:
+                  'Professionelle Praxis-Webseiten für Ärzte in Wetzlar und Hessen. Patientengewinnung durch modernes Webdesign und lokale SEO Optimierung. Jetzt anfragen.',
+                url: `${BASE_URL}/de/branchen/gesundheitswesen`,
+              }),
+            ],
+          }),
+        }}
+      />
       <IndustryDetailClient industrySlug="aerzte-gesundheit" />
       <IndustryToolEmbed industryKey="gesundheit" />
     </>

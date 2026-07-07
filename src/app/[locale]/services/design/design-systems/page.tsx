@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { DesignSystemsClient } from '@/features/services/ui/DesignSystemsClient';
 import { setRequestLocale } from 'next-intl/server';
+import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
 
 export async function generateMetadata({
   params,
@@ -35,5 +36,27 @@ export default async function DesignSystemsPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <DesignSystemsClient />;
+  return (
+    <>
+      <script
+        id="schema-design-systems"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              getOrganizationSchema(),
+              getServiceSchema({
+                name: 'Design Systems Wetzlar | Konsistente Komponenten',
+                description:
+                  'Konsistente Design Systeme und wiederverwendbare Komponenten von Coday in Wetzlar. Skalierbare UI-Bibliotheken für Unternehmen in Hessen. Anfragen.',
+                url: `${BASE_URL}/de/services/design/design-systems`,
+              }),
+            ],
+          }),
+        }}
+      />
+      <DesignSystemsClient />
+    </>
+  );
 }

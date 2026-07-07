@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import DienstleistungClient from '@/features/industries/ui/DienstleistungClient';
 import { setRequestLocale } from 'next-intl/server';
+import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
 
 export async function generateMetadata({
   params,
@@ -34,5 +35,27 @@ export default async function DienstleistungPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return <DienstleistungClient />;
+  return (
+    <>
+      <script
+        id="schema-branchen-dienstleistung"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              getOrganizationSchema(),
+              getServiceSchema({
+                name: 'Webdesign für Dienstleister',
+                description:
+                  'Professionelle Webseiten für Dienstleister in Wetzlar und Hessen. Steuerberater, Makler und Berater gewinnen online mehr Kunden. Jetzt starten.',
+                url: `${BASE_URL}/de/branchen/dienstleistung`,
+              }),
+            ],
+          }),
+        }}
+      />
+      <DienstleistungClient />
+    </>
+  );
 }

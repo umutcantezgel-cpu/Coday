@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import RetailClient from '@/features/industries/ui/RetailClient';
 import { setRequestLocale } from 'next-intl/server';
+import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
 
 export async function generateMetadata({
   params,
@@ -30,5 +31,27 @@ export async function generateMetadata({
 export default async function RetailPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return <RetailClient />;
+  return (
+    <>
+      <script
+        id="schema-branchen-retail"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              getOrganizationSchema(),
+              getServiceSchema({
+                name: 'Webdesign für Einzelhandel & Shops',
+                description:
+                  'Onlineshops und Webseiten für den Einzelhandel in Wetzlar und Hessen. Mehr Umsatz durch professionelles Webdesign und E-Commerce Lösungen von Coday.',
+                url: `${BASE_URL}/de/branchen/retail`,
+              }),
+            ],
+          }),
+        }}
+      />
+      <RetailClient />
+    </>
+  );
 }

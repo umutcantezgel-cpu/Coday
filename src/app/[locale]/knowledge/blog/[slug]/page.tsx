@@ -4,6 +4,7 @@ import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 import { getBlogPost, getBlogPosts } from '@/features/blog/model/data';
 import { routing } from '@/i18n/routing';
+import { getArticleSchema, getOrganizationSchema, BASE_URL } from '@/lib/schema';
 import BlogPostClient from '@/features/knowledge/ui/BlogPostClient';
 
 interface PageProps {
@@ -61,8 +62,37 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function BlogPostPage({ params }: PageProps) {
-  const { locale } = await params;
+  const { locale, slug } = await params;
   setRequestLocale(locale);
 
-  return <BlogPostClient />;
+  const post = getBlogPost(slug, locale);
+
+  const jsonLd = post
+    ? {
+        '@context': 'https://schema.org',
+        '@graph': [
+          getOrganizationSchema(),
+          getArticleSchema({
+            title: post.title,
+            excerpt: post.excerpt,
+            url: `${BASE_URL}/${locale}/knowledge/blog/${slug}`,
+            publishedAt: post.date,
+            imageUrl: post.image ? `${BASE_URL}${post.image}` : undefined,
+            authorName: post.author,
+          }),
+        ],
+      }
+    : null;
+
+  return (
+    <>
+      {jsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      )}
+      <BlogPostClient />
+    </>
+  );
 }

@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { HeadlessCmsClient } from '@/features/services/ui/HeadlessCmsClient';
 import { setRequestLocale } from 'next-intl/server';
+import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
 
 export async function generateMetadata({
   params,
@@ -31,5 +32,27 @@ export default async function HeadlessCmsPage({ params }: { params: Promise<{ lo
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <HeadlessCmsClient />;
+  return (
+    <>
+      <script
+        id="schema-headless-cms"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              getOrganizationSchema(),
+              getServiceSchema({
+                name: 'Headless CMS Entwicklung Wetzlar | Flexibel',
+                description:
+                  'Moderne Headless CMS Lösungen von Coday in Wetzlar. Flexible Content-Verwaltung mit Sanity, Strapi oder Contentful für Ihr Unternehmen in Hessen.',
+                url: `${BASE_URL}/de/services/development/headless-cms`,
+              }),
+            ],
+          }),
+        }}
+      />
+      <HeadlessCmsClient />
+    </>
+  );
 }

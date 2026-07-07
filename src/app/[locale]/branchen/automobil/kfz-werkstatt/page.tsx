@@ -5,6 +5,7 @@ import { GamifiedIndustryTemplate } from '@/features/industries/ui/GamifiedIndus
 
 import fs from 'fs';
 import path from 'path';
+import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
 
 export async function generateMetadata({
   params,
@@ -74,6 +75,24 @@ export default async function SubIndustryPage({ params }: { params: Promise<{ lo
 
   return (
     <>
+      <script
+        id="schema-branchen-kfz-werkstatt"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              getOrganizationSchema(),
+              getServiceSchema({
+                name: 'Webdesign für KFZ-Werkstätten',
+                description:
+                  'Webdesign für KFZ-Werkstätten im Raum Wetzlar. Digitale Dominanz für Ihre Branche.',
+                url: `${BASE_URL}/de/branchen/automobil/kfz-werkstatt`,
+              }),
+            ],
+          }),
+        }}
+      />
       <GamifiedIndustryTemplate content={content} cityData={undefined} />
       {/* TODO: Integrate the 'spezielles Tool' here once the user provides it */}
     </>

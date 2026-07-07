@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { IndustryOverviewClient } from '@/features/industries/ui/IndustryOverviewClient';
 import { setRequestLocale } from 'next-intl/server';
+import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
 
 export async function generateMetadata({
   params,
@@ -35,5 +36,27 @@ export default async function IndustryOverviewPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <IndustryOverviewClient />;
+  return (
+    <>
+      <script
+        id="schema-branchen-overview"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              getOrganizationSchema(),
+              getServiceSchema({
+                name: 'Webdesign Branchenlösungen',
+                description:
+                  'Spezialisiertes Webdesign für jede Branche von Coday in Wetzlar. Handwerker, Ärzte, Gastronomen und Dienstleister in Mittelhessen. Jetzt anfragen.',
+                url: `${BASE_URL}/de/branchen`,
+              }),
+            ],
+          }),
+        }}
+      />
+      <IndustryOverviewClient />
+    </>
+  );
 }

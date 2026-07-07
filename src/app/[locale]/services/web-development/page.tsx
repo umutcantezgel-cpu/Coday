@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { WebDevelopmentClient } from '@/features/services/ui/WebDevelopmentClient';
 import { setRequestLocale } from 'next-intl/server';
+import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
 
 export async function generateMetadata({
   params,
@@ -35,5 +36,27 @@ export default async function WebDevelopmentPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <WebDevelopmentClient />;
+  return (
+    <>
+      <script
+        id="schema-web-development"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              getOrganizationSchema(),
+              getServiceSchema({
+                name: 'Webentwicklung Wetzlar | Next.js & React Agentur',
+                description:
+                  'Maßgeschneiderte React und Next.js Webanwendungen aus Wetzlar. High-Performance Architektur für Unternehmen in Hessen. Jetzt Ihr Projekt besprechen.',
+                url: `${BASE_URL}/de/services/web-development`,
+              }),
+            ],
+          }),
+        }}
+      />
+      <WebDevelopmentClient />
+    </>
+  );
 }

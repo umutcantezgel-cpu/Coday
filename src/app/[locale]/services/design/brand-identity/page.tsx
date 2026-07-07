@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { BrandIdentityClient } from '@/features/services/ui/BrandIdentityClient';
 import { setRequestLocale } from 'next-intl/server';
+import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
 
 export async function generateMetadata({
   params,
@@ -35,5 +36,27 @@ export default async function BrandIdentityPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <BrandIdentityClient />;
+  return (
+    <>
+      <script
+        id="schema-brand-identity"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              getOrganizationSchema(),
+              getServiceSchema({
+                name: 'Corporate Design & Branding Agentur | Wetzlar',
+                description:
+                  'Starke Markenidentität und Corporate Design von Coday in Wetzlar. Logo, Farben und Typografie für Ihr Unternehmen in Hessen. Jetzt Marke gestalten.',
+                url: `${BASE_URL}/de/services/design/brand-identity`,
+              }),
+            ],
+          }),
+        }}
+      />
+      <BrandIdentityClient />
+    </>
+  );
 }

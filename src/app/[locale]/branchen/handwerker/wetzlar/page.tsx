@@ -5,6 +5,7 @@ import { GamifiedIndustryTemplate } from '@/features/industries/ui/GamifiedIndus
 import { getCityBySlug } from '@/features/local-seo/model/cities';
 import fs from 'fs';
 import path from 'path';
+import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
 
 export async function generateMetadata({
   params,
@@ -76,6 +77,24 @@ export default async function SubIndustryPage({ params }: { params: Promise<{ lo
 
   return (
     <>
+      <script
+        id="schema-branchen-handwerker-wetzlar"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              getOrganizationSchema(),
+              getServiceSchema({
+                name: 'Webdesign für Handwerker in Wetzlar',
+                description:
+                  'Webdesign für Handwerker in Wetzlar. Digitale Dominanz für Ihre Branche.',
+                url: `${BASE_URL}/de/branchen/handwerker/wetzlar`,
+              }),
+            ],
+          }),
+        }}
+      />
       <GamifiedIndustryTemplate content={content} cityData={cityData} />
       {/* TODO: Integrate the 'spezielles Tool' here once the user provides it */}
     </>
