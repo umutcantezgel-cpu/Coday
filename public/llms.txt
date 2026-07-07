@@ -6,7 +6,7 @@
 Name: Coday
 Type: Web Design & Development Agency
 Location: Wetzlar, Hessen, Germany
-Founded: 2024
+Founded: 2026
 Contact: kontakt@codayweb.de
 
 ## Content License

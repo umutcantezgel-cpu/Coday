@@ -348,7 +348,7 @@ export const AboutClient: React.FC = () => {
                 <span className="block text-sm uppercase tracking-wider text-primary mb-2">
                   Inhaber
                 </span>
-                <strong className="text-white text-lg font-medium">Umur Eyigün</strong>
+                <strong className="text-white text-lg font-medium">Umutcan Emre Tezgel</strong>
               </div>
             </div>
           </div>
@@ -361,7 +361,7 @@ export const AboutClient: React.FC = () => {
                 name: 'Coday',
                 founder: {
                   '@type': 'Person',
-                  name: 'Umur Eyigün',
+                  name: 'Umutcan Emre Tezgel',
                 },
                 foundingDate: '2026',
                 address: {

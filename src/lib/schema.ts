@@ -4,8 +4,7 @@ export const FOUNDER_ID = `${BASE_URL}/#founder`;
 
 export function getOrganizationSchema() {
   return {
-    '@context': 'https://schema.org',
-    '@type': ['Organization', 'ProfessionalService'],
+    '@type': ['Organization', 'LocalBusiness', 'ProfessionalService'],
     '@id': ORG_ID,
     name: 'Coday',
     legalName: 'Umutcan Emre Tezgel',
@@ -13,9 +12,19 @@ export function getOrganizationSchema() {
     url: BASE_URL,
     image: `${BASE_URL}/images/og-image.jpg`,
     description:
-      'High-End Next.js Webentwicklung & Generative Engine Optimization (GEO) für B2B-Unternehmen in Wetzlar, Gießen und Hessen.',
-    slogan: 'Digitales Handwerk statt Template-Massenware.',
+      'Premium Webdesign & Generative Engine Optimization (GEO) für KMUs und Handwerker in Wetzlar, Gießen und Hessen.',
+    slogan: 'Die Anti-Agentur aus Wetzlar.',
+    email: 'kontakt@codayweb.de',
+    telephone: '+49-176-41195301',
     taxID: '039 874 00784',
+    foundingDate: '2026',
+    priceRange: '€€€',
+    currenciesAccepted: 'EUR',
+    paymentAccepted: 'Bank Transfer, Invoice',
+    numberOfEmployees: {
+      '@type': 'QuantitativeValue',
+      value: 1,
+    },
     logo: {
       '@type': 'ImageObject',
       '@id': `${BASE_URL}/#logo`,
@@ -39,7 +48,6 @@ export function getOrganizationSchema() {
         'https://www.openpr.de/news/coday',
       ],
     },
-    foundingDate: '2026',
     knowsAbout: [
       'Next.js',
       'React',
@@ -49,12 +57,13 @@ export function getOrganizationSchema() {
       'Headless CMS',
       'Sanity',
       'Supabase',
-      'Enterprise Webentwicklung',
       'Search Engine Optimization',
       'Core Web Vitals',
       'Generative Engine Optimization',
       'E-Commerce',
       'Performance Optimization',
+      'UI/UX Design',
+      'Premium Webentwicklung',
     ],
     knowsLanguage: ['de', 'en'],
     address: {
@@ -70,11 +79,19 @@ export function getOrganizationSchema() {
       latitude: 50.564,
       longitude: 8.502,
     },
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '09:00',
+        closes: '18:00',
+      },
+    ],
     areaServed: [
-      { '@type': 'City', name: 'Wetzlar' },
-      { '@type': 'City', name: 'Gießen' },
-      { '@type': 'City', name: 'Marburg' },
-      { '@type': 'City', name: 'Frankfurt am Main' },
+      { '@type': 'City', name: 'Wetzlar', '@id': 'https://www.wikidata.org/wiki/Q3852' },
+      { '@type': 'City', name: 'Gießen', '@id': 'https://www.wikidata.org/wiki/Q3869' },
+      { '@type': 'City', name: 'Marburg', '@id': 'https://www.wikidata.org/wiki/Q3866' },
+      { '@type': 'City', name: 'Frankfurt am Main', '@id': 'https://www.wikidata.org/wiki/Q1794' },
       { '@type': 'AdministrativeArea', name: 'Lahn-Dill-Kreis' },
       { '@type': 'AdministrativeArea', name: 'Hessen' },
       { '@type': 'Country', name: 'Germany' },
@@ -90,9 +107,31 @@ export function getOrganizationSchema() {
     ],
     sameAs: [
       'https://www.linkedin.com/company/coday',
+      'https://www.linkedin.com/in/umutcan-emre-tezgel-156382218/',
       'https://github.com/coday',
       'https://www.instagram.com/codayweb',
+      'https://www.youtube.com/@coday',
     ],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Web Services & Packages',
+      itemListElement: [
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Webdesign' } },
+        {
+          '@type': 'Offer',
+          itemOffered: { '@type': 'Service', name: 'Next.js 15 Web Development' },
+        },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'SEO-Optimierung' } },
+        {
+          '@type': 'Offer',
+          itemOffered: { '@type': 'Service', name: 'Generative Engine Optimization (GEO)' },
+        },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Headless CMS (Sanity)' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Performance-Optimierung' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Local SEO' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'E-Commerce' } },
+      ],
+    },
   };
 }
 

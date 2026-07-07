@@ -34,14 +34,21 @@ async function fetchSanity<T>(query: string): Promise<T> {
 }
 
 /**
+ * Static build timestamp — set once at build time.
+ * Google uses lastModified to schedule re-crawls; using new Date() on every
+ * request misleads Googlebot into thinking every page changed every second.
+ */
+const BUILD_DATE = new Date('2026-07-07T00:00:00Z');
+
+/**
  * Helper to create a sitemap entry with Next.js 15 language alternates.
- * Forces `lastModified` to `new Date()` to trigger immediate re-indexing by Google.
  */
 function sitemapEntry(
   path: string,
   opts: {
     changeFrequency: 'daily' | 'weekly' | 'monthly';
     priority: number;
+    lastModified?: Date;
   }
 ): MetadataRoute.Sitemap[number] {
   const cleanPath = path.replace(/^\/(en|de)/, '').replace(/\/$/, '') || '';
@@ -49,7 +56,7 @@ function sitemapEntry(
   // We use the default locale /de as the main URL, but provide explicit alternates
   return {
     url: `${BASE_URL}/de${cleanPath}`,
-    lastModified: new Date(), // Forces Google to re-index all pages immediately
+    lastModified: opts.lastModified || BUILD_DATE,
     changeFrequency: opts.changeFrequency,
     priority: opts.priority,
     alternates: {
@@ -209,6 +216,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     return sitemapEntry(path, {
       changeFrequency,
       priority,
+      lastModified: doc._updatedAt ? new Date(doc._updatedAt) : undefined,
     });
   });
 
