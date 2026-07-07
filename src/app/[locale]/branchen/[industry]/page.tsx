@@ -1,9 +1,14 @@
 import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
+import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
 import { setRequestLocale } from 'next-intl/server';
 import { IndustryDetailClient } from '@/features/industries/ui/IndustryDetailClient';
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string; industry: string }> }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; industry: string }>;
+}): Promise<Metadata> {
   const { locale, industry } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
@@ -21,9 +26,34 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   });
 }
 
-export default async function IndustryDetailPage({ params }: { params: Promise<{ locale: string; industry: string }> }) {
-  const { locale } = await params;
+export default async function IndustryDetailPage({
+  params,
+}: {
+  params: Promise<{ locale: string; industry: string }>;
+}) {
+  const { locale, industry } = await params;
   setRequestLocale(locale);
 
-  return <IndustryDetailClient />;
+  return (
+    <>
+      <script
+        id={`schema-branchen-${industry}`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              getOrganizationSchema(),
+              getServiceSchema({
+                name: `Webdesign für ${industry}`,
+                description: `Maßgeschneiderte Webdesign-Lösungen für die Branche ${industry} von Coday in Wetzlar.`,
+                url: `${BASE_URL}/de/branchen/${industry}`,
+              }),
+            ],
+          }),
+        }}
+      />
+      <IndustryDetailClient />
+    </>
+  );
 }
