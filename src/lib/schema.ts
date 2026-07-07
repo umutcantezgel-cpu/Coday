@@ -145,6 +145,7 @@ export function getProfessionalServiceSchema() {
     name: 'Coday Web Agency',
     legalName: 'Umutcan Emre Tezgel',
     description: 'High-End Webentwicklung & Generative Engine Optimization',
+    image: `${BASE_URL}/images/og-image.jpg`,
     url: BASE_URL,
     telephone: '+49-176-41195301',
     taxID: '039 874 00784',
@@ -260,6 +261,7 @@ export function getLocalBusinessSchema() {
     ],
     paymentAccepted: 'Bank Transfer, Invoice, SEPA',
     currenciesAccepted: 'EUR',
+    priceRange: '€€€',
   };
 }
 
