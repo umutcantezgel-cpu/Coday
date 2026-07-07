@@ -348,3 +348,123 @@ export function getDynamicLocationSchema(location: {
       : {}),
   };
 }
+
+/* ═══ PAGE-SPECIFIC SCHEMAS ═══ */
+
+export function getPricingSchema() {
+  return {
+    '@type': 'Product',
+    '@id': `${BASE_URL}/de/pricing#product`,
+    name: 'Coday Webdesign Pakete',
+    description:
+      'Transparente Festpreis-Pakete für professionelles Webdesign. Vom Onepager bis zur Enterprise-Lösung.',
+    brand: { '@id': ORG_ID },
+    offers: [
+      {
+        '@type': 'Offer',
+        name: 'Onepager',
+        description: 'Perfekt als digitale Visitenkarte',
+        priceCurrency: 'EUR',
+        price: '990',
+        priceValidUntil: '2027-12-31',
+        availability: 'https://schema.org/InStock',
+        url: `${BASE_URL}/de/pricing`,
+      },
+      {
+        '@type': 'Offer',
+        name: 'Starter',
+        description: 'Ideal für den professionellen Einstieg',
+        priceCurrency: 'EUR',
+        price: '2000',
+        priceValidUntil: '2027-12-31',
+        availability: 'https://schema.org/InStock',
+        url: `${BASE_URL}/de/pricing`,
+      },
+      {
+        '@type': 'Offer',
+        name: 'Professional',
+        description: 'Unser Bestseller für ambitionierte Unternehmen',
+        priceCurrency: 'EUR',
+        price: '4000',
+        priceValidUntil: '2027-12-31',
+        availability: 'https://schema.org/InStock',
+        url: `${BASE_URL}/de/pricing`,
+      },
+    ],
+  };
+}
+
+export function getPortfolioSchema(projects: { name: string; url: string; description: string }[]) {
+  return {
+    '@type': 'CollectionPage',
+    '@id': `${BASE_URL}/de/work#portfolio`,
+    name: 'Coday Portfolio & Referenzen',
+    description:
+      'Echte Kundenprojekte von Coday in Wetzlar. Case Studies mit messbaren Ergebnissen.',
+    url: `${BASE_URL}/de/work`,
+    isPartOf: { '@id': `${BASE_URL}/#website` },
+    about: { '@id': ORG_ID },
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: projects.map((p, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        item: {
+          '@type': 'CreativeWork',
+          name: p.name,
+          url: p.url,
+          description: p.description,
+          creator: { '@id': ORG_ID },
+        },
+      })),
+    },
+  };
+}
+
+export function getProcessSchema() {
+  return {
+    '@type': 'HowTo',
+    '@id': `${BASE_URL}/de/process#howto`,
+    name: 'So entsteht Ihre Website bei Coday',
+    description:
+      'Vom Erstgespräch bis zum Launch — der strukturierte Webdesign-Prozess von Coday in 5 Schritten.',
+    totalTime: 'P21D',
+    estimatedCost: {
+      '@type': 'MonetaryAmount',
+      currency: 'EUR',
+      value: '2000',
+    },
+    step: [
+      {
+        '@type': 'HowToStep',
+        position: 1,
+        name: 'Kostenloses Erstgespräch',
+        text: 'Wir lernen Ihr Unternehmen, Ihre Ziele und Ihre Zielgruppe kennen. 30 Minuten, unverbindlich.',
+      },
+      {
+        '@type': 'HowToStep',
+        position: 2,
+        name: 'Strategie & Konzept',
+        text: 'Basierend auf dem Erstgespräch erstelle ich ein maßgeschneidertes Konzept mit Seitenstruktur, Design-Richtung und technischer Architektur.',
+      },
+      {
+        '@type': 'HowToStep',
+        position: 3,
+        name: 'Design & Entwicklung',
+        text: 'Ich entwickle Ihre Website mit Next.js, optimiert auf Performance, SEO und Nutzererlebnis. Sie sehen regelmäßig den Fortschritt.',
+      },
+      {
+        '@type': 'HowToStep',
+        position: 4,
+        name: 'Review & Feinschliff',
+        text: 'Sie testen die Website, geben Feedback. Ich optimiere bis zur Perfektion — alles im Festpreis enthalten.',
+      },
+      {
+        '@type': 'HowToStep',
+        position: 5,
+        name: 'Launch & Übergabe',
+        text: 'Ihre Website geht live. Sie erhalten 100% Code-Eigentum, Dokumentation und optionalen Support.',
+      },
+    ],
+  };
+}

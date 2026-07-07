@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
+import { getOrganizationSchema, getPricingSchema } from '@/lib/schema';
 import Packages from '@/features/pricing/ui/Packages';
 
 export async function generateMetadata({
@@ -27,5 +28,19 @@ export async function generateMetadata({
 }
 
 export default function PricingPage() {
-  return <Packages />;
+  return (
+    <>
+      <script
+        id="schema-pricing"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [getOrganizationSchema(), getPricingSchema()],
+          }),
+        }}
+      />
+      <Packages />
+    </>
+  );
 }

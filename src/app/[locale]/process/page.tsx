@@ -2,6 +2,7 @@ import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { SeoHead } from '@/shared/ui/SeoHead';
+import { getOrganizationSchema, getProcessSchema } from '@/lib/schema';
 import ClientComponent from '@/features/process/ui/ProcessClient';
 
 export async function generateMetadata({
@@ -34,6 +35,16 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
 
   return (
     <>
+      <script
+        id="schema-process"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [getOrganizationSchema(), getProcessSchema()],
+          }),
+        }}
+      />
       <SeoHead
         title="Coday | process"
         description="Willkommen bei Coday. Entdecken Sie unsere Leistungen."
