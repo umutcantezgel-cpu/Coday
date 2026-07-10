@@ -290,7 +290,7 @@ export function ServiceDetailClient() {
                   return (
                     <Image
                       src={bgImage.src}
-                      alt={service.title || 'Service Header'}
+                      alt={t(service.titleKey) || 'Service Header'}
                       width={400}
                       height={400}
                       className="w-full h-full object-cover mix-blend-overlay grayscale"

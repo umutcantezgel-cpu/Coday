@@ -79,9 +79,11 @@ const AgencyComparisonTable: React.FC = () => {
                   >
                     {feature.name}
                   </th>
-                  <td className="py-4 md:py-8 px-4 text-slate-300 text-lg flex items-center">
-                    <X size={24} className="text-slate-500 mr-3 flex-shrink-0" />
-                    {feature.old}
+                  <td className="py-4 md:py-8 px-4 text-slate-300 text-lg">
+                    <div className="flex items-center">
+                      <X size={24} className="text-slate-500 mr-3 flex-shrink-0" />
+                      {feature.old}
+                    </div>
                   </td>
                   <td className="py-4 md:py-8 px-4 text-white text-lg font-bold relative">
                     <div className="flex items-center">

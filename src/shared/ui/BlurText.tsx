@@ -21,7 +21,7 @@ const BlurText: React.FC<BlurTextProps> = ({
   delay = 80,
   className = '',
   animateBy = 'words',
-  threshold = 0.1,
+  threshold = 0,
   rootMargin = '0px',
 }) => {
   const elements = animateBy === 'words' ? text.split(' ') : text.split('');

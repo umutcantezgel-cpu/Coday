@@ -72,7 +72,7 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
       initial={isMounted && !prefersReducedMotion ? 'hidden' : false}
       animate={isMounted && !prefersReducedMotion ? undefined : 'visible'}
       whileInView={isMounted && !prefersReducedMotion ? 'visible' : undefined}
-      viewport={{ once: true, margin: '-10%' }}
+      viewport={{ once: true, margin: '0px 0px -50px 0px' }}
       variants={prefersReducedMotion ? undefined : containerVariants}
     >
       <span className={`inline-block text-[clamp(1.6rem,4vw,3rem)] leading-[1.5] ${textClassName}`}>
