@@ -5,8 +5,9 @@ import { usePathname } from 'next/navigation';
 import dynamic from 'next/dynamic';
 
 import { GlobalCTA } from '@/shared/ui/GlobalCTA';
-const FloatingActionMenu = dynamic(
-  () => import('@/widgets/floating-menu/FloatingActionMenu').then((m) => m.FloatingActionMenu),
+const FloatingWidgetsManager = dynamic(
+  () =>
+    import('@/widgets/floating-menu/FloatingWidgetsManager').then((m) => m.FloatingWidgetsManager),
   { ssr: false }
 );
 const ChatWidget = dynamic(() => import('@/widgets/chatbot').then((module) => module.ChatWidget), {
@@ -36,7 +37,7 @@ export const ConditionalWrapper = ({ children }: { children: React.ReactNode }) 
       </Suspense>
 
       <Suspense fallback={null}>
-        <FloatingActionMenu />
+        <FloatingWidgetsManager />
       </Suspense>
 
       <Suspense fallback={null}>
