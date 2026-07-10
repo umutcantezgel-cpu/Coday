@@ -72,7 +72,7 @@ export const TechStackShowcase: React.FC<TechStackShowcaseProps> = ({
                       {tech.logoUrl ? (
                         <Image
                           src={tech.logoUrl}
-                          alt=""
+                          alt={tech.name}
                           aria-hidden="true"
                           fill
                           className="object-contain"

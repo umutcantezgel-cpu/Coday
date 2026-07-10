@@ -478,7 +478,7 @@ export const BLOG_POSTS: BlogPost[] = [
         description:
           "Don't leave your social media presence to chance. We manage your accounts data-driven.",
         buttonText: 'Request Social Audit',
-        href: '/services/social',
+        href: '/services/consulting',
         variant: 'glass',
       },
     ],
@@ -544,7 +544,7 @@ export const BLOG_POSTS: BlogPost[] = [
         description:
           'We produce your first 5 Short-Form Videos for Social Media. Strategy, shooting, and editing included.',
         buttonText: 'Request Content Package',
-        href: '/services/content',
+        href: '/services/seo',
         variant: 'glass',
       },
     ],

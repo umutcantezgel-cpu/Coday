@@ -18,7 +18,7 @@ export const companyInfo: CompanyInfo = {
   employeeCount: 1,
   certifications: ['DSGVO Compliant'],
   socialMedia: {
-    linkedin: 'https://www.linkedin.com/in/umutcan-emre-tezgel-65a41a3aa/',
+    linkedin: 'https://www.linkedin.com/in/umutcan-tezgel',
     twitter: 'https://twitter.com/coday',
     instagram: 'https://www.instagram.com/codayweb/',
     facebook: 'https://www.facebook.com/profile.php?id=61588758264018',

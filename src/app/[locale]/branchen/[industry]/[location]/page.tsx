@@ -59,8 +59,8 @@ export async function generateMetadata({
     title,
     description:
       locale === 'en'
-        ? `Digital solutions for ${formattedIndustry}.`
-        : `Digitale Lösungen für ${formattedIndustry}.`,
+        ? `Professional web design and custom digital solutions for ${formattedIndustry}${location !== 'allgemein' ? ` in ${location.charAt(0).toUpperCase() + location.slice(1)}` : ''}. Increase your visibility, attract more customers, and dominate your local market with Coday.`
+        : `Professionelles Webdesign und maßgeschneiderte digitale Lösungen für ${formattedIndustry}${location !== 'allgemein' ? ` in ${location.charAt(0).toUpperCase() + location.slice(1)}` : ''}. Steigern Sie Ihre Sichtbarkeit, gewinnen Sie mehr Kunden und dominieren Sie Ihren Markt mit Coday.`,
     path: `/${locale}/branchen/${industry}/${location}`,
     type: 'money',
   });

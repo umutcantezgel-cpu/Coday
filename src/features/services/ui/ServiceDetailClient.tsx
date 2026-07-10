@@ -106,9 +106,9 @@ export function ServiceDetailClient() {
     return (
       <div className="min-h-dvh flex items-center justify-center bg-surface-base">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">
             {t('generic_detail.not_found.title')}
-          </h1>
+          </h2>
           <NavLink href="/services" className="text-sapphire hover:underline">
             {t('generic_detail.not_found.link')}
           </NavLink>
@@ -290,7 +290,7 @@ export function ServiceDetailClient() {
                   return (
                     <Image
                       src={bgImage.src}
-                      alt=""
+                      alt={service.title || 'Service Header'}
                       width={400}
                       height={400}
                       className="w-full h-full object-cover mix-blend-overlay grayscale"

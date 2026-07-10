@@ -6,6 +6,8 @@ import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { servicesData } from '@/shared/data/services';
 
+import { getTranslations } from 'next-intl/server';
+
 export async function generateMetadata({
   params,
 }: {
@@ -20,10 +22,21 @@ export async function generateMetadata({
   const featureData = categoryData[slug];
   if (!featureData) return notFound();
 
-  // Basic metadata, ideally this would use translations based on the featureData
+  const t = await getTranslations({ locale, namespace: 'services' });
+  const title = t(featureData.titleKey);
+  const description = t(featureData.descriptionKey);
+
+  // Fallback if description is too short (Seobility needs ~140 chars)
+  const fullDesc =
+    description.length < 100
+      ? locale === 'en'
+        ? `${description} Discover our comprehensive ${title} services at Coday. We build high-performance digital products to elevate your brand and drive business growth.`
+        : `${description} Entdecken Sie unsere umfassenden ${title} Services bei Coday. Wir entwickeln leistungsstarke digitale Produkte, um Ihre Marke zu stärken und das Unternehmenswachstum voranzutreiben.`
+      : description;
+
   return generatePageMetadata({
-    title: `${featureData.titleKey} - Services`,
-    description: `Details about our ${slug} service at Coday.`,
+    title: `${title} - Services`,
+    description: fullDesc,
     path: `/${locale}/services/${category}/${slug}`,
     type: 'money',
   });

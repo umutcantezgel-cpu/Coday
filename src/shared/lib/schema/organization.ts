@@ -11,10 +11,10 @@ export function getOrganizationSchema(): Organization {
     url: 'https://codayweb.de',
     logo: 'https://codayweb.de/images/brand/coday-logo-footer.webp', // Ersetze mit der korrekten Logo-URL
     sameAs: [
-      'https://www.linkedin.com/company/codayweb',
+      'https://www.linkedin.com/in/umutcan-tezgel',
       'https://twitter.com/codayweb',
-      'https://www.instagram.com/codayweb',
-      'https://www.facebook.com/codayweb'
+      'https://www.instagram.com/codayweb/',
+      'https://www.facebook.com/profile.php?id=61588758264018',
     ],
     contactPoint: {
       '@type': 'ContactPoint',
@@ -39,6 +39,10 @@ export function getUmutSchema(): Person {
     name: 'Umutcan Tezgel',
     url: 'https://codayweb.de/about',
     jobTitle: 'Founder & Full-Stack Developer',
+    sameAs: [
+      'https://www.linkedin.com/in/umutcan-tezgel',
+      'https://www.facebook.com/profile.php?id=61588758264018',
+    ],
     worksFor: {
       '@id': ORGANIZATION_ID,
     },

@@ -99,13 +99,43 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/services/web-development/:slug+',
-        destination: '/services/development/:slug+',
+        source: '/services/web-development/api-integration',
+        destination: '/services/development/api-integration',
         permanent: true,
       },
       {
-        source: '/:locale(de|en)/services/web-development/:slug+',
-        destination: '/:locale/services/development/:slug+',
+        source: '/:locale(de|en)/services/web-development/api-integration',
+        destination: '/:locale/services/development/api-integration',
+        permanent: true,
+      },
+      {
+        source: '/services/web-development/headless-cms',
+        destination: '/services/development/headless-cms',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/services/web-development/headless-cms',
+        destination: '/:locale/services/development/headless-cms',
+        permanent: true,
+      },
+      {
+        source: '/services/web-development/migration',
+        destination: '/services/development/migration',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/services/web-development/migration',
+        destination: '/:locale/services/development/migration',
+        permanent: true,
+      },
+      {
+        source: '/services/web-development/web-apps',
+        destination: '/services/development/web-apps',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/services/web-development/web-apps',
+        destination: '/:locale/services/development/web-apps',
         permanent: true,
       },
       {

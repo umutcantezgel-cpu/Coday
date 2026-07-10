@@ -29,9 +29,9 @@ export const GamifiedIndustryTemplate: React.FC<{ content: any; cityData?: any }
     return (
       <div className="min-h-dvh flex items-center justify-center p-20 text-center flex-col bg-background-light">
         <div className="w-16 h-16 border-4 border-primary-500 border-t-transparent rounded-full animate-spin mb-6" />
-        <h1 className="text-3xl font-display font-bold text-secondary-900 mb-4">
+        <h2 className="text-3xl font-display font-bold text-secondary-900 mb-4">
           Content wird gamifiziert...
-        </h1>
+        </h2>
         <p className="text-secondary-600 max-w-md">
           Die AI verarbeitet gerade die 10x Content-Expansion für diese Branche. Bitte laden Sie die
           Seite in wenigen Augenblicken neu.

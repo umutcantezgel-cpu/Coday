@@ -351,7 +351,7 @@ export const Footer: React.FC = () => {
               <OptimizedIcon icon={TwitterLogo} />
             </a>
             <a
-              href="https://www.linkedin.com/in/umutcan-emre-tezgel-65a41a3aa/"
+              href="https://www.linkedin.com/in/umutcan-tezgel"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-primary transition-colors motion-reduce:duration-[0.01ms] p-3 -m-3 inline-flex items-center justify-center min-h-[44px] min-w-[44px]"

@@ -720,7 +720,7 @@ export const BLOG_POSTS: BlogPost[] = [
         description:
           'Überlassen Sie Ihre Social Media Präsenz nicht dem Zufall. Wir managen Ihre Accounts data-driven.',
         buttonText: 'Social Audit anfragen',
-        href: '/services/social',
+        href: '/services/consulting',
         variant: 'glass',
       },
     ],
@@ -791,7 +791,7 @@ export const BLOG_POSTS: BlogPost[] = [
         description:
           'Wir richten Ihnen Klaviyo oder ActiveCampaign komplett ein. Inklusive aller Basis-Flows.',
         buttonText: 'Automation Setup buchen',
-        href: '/services/marketing',
+        href: '/services/seo',
         variant: 'secondary',
       },
     ],
@@ -857,7 +857,7 @@ export const BLOG_POSTS: BlogPost[] = [
         description:
           'Wir produzieren Ihre ersten 5 Short-Form Videos für Social Media. Strategie, Dreh und Schnitt inklusive.',
         buttonText: 'Content-Paket anfragen',
-        href: '/services/content',
+        href: '/services/seo',
         variant: 'glass',
       },
     ],
@@ -1190,7 +1190,7 @@ export const BLOG_POSTS: BlogPost[] = [
         description:
           'Wir implementieren Custom AI-Solutions, die Ihre Prozesse automatisieren und Kunden begeistern.',
         buttonText: 'AI Workshop buchen',
-        href: '/services/ai',
+        href: '/services/development/web-apps',
         variant: 'glass',
       },
     ],

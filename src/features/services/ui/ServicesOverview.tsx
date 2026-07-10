@@ -149,7 +149,7 @@ export const ServicesOverview = async () => {
                   {serviceImages[cat.imageKey || 'hero'] && (
                     <Image
                       src={serviceImages[cat.imageKey || 'hero']!.src}
-                      alt=""
+                      alt={cat.title}
                       width={256}
                       height={256}
                       className="w-full h-full object-cover mix-blend-multiply"
@@ -180,7 +180,9 @@ export const ServicesOverview = async () => {
                       {cat.title}
                     </NavLink>
                   </h3>
-                  <p className="text-base text-content-muted mb-8 leading-relaxed max-w-prose text-pretty">{cat.description}</p>
+                  <p className="text-base text-content-muted mb-8 leading-relaxed max-w-prose text-pretty">
+                    {cat.description}
+                  </p>
                 </div>
                 <div className="flex items-center text-action-primary font-bold tracking-wide uppercase text-sm mt-auto transition motion-reduce:duration-[0.01ms] duration-300 group-hover:tracking-wider pointer-events-none">
                   {t('cta.more')}
@@ -212,34 +214,41 @@ export const ServicesOverview = async () => {
           </div>
 
           <ol className="grid md:grid-cols-3 gap-8 md:gap-12">
-            {([
-              {
-                step: '01',
-                title: 'Analyse & Strategie',
-                desc: 'Tiefgreifendes Verständnis Ihrer Geschäftsziele. Keine Schablonen, sondern fundierte Architektur-Entscheidungen.',
-              },
-              {
-                step: '02',
-                title: 'Design & Entwicklung',
-                desc: 'Performante Umsetzung mit Next.js und React. Pixelperfektes Design, das Vertrauen schafft und konvertiert.',
-              },
-              {
-                step: '03',
-                title: 'Launch & Skalierung',
-                desc: 'Reibungsloses Deployment, technische SEO-Optimierung und kontinuierliche Performance-Überwachung.',
-              },
-            ] as const).map((item, i) => (
+            {(
+              [
+                {
+                  step: '01',
+                  title: 'Analyse & Strategie',
+                  desc: 'Tiefgreifendes Verständnis Ihrer Geschäftsziele. Keine Schablonen, sondern fundierte Architektur-Entscheidungen.',
+                },
+                {
+                  step: '02',
+                  title: 'Design & Entwicklung',
+                  desc: 'Performante Umsetzung mit Next.js und React. Pixelperfektes Design, das Vertrauen schafft und konvertiert.',
+                },
+                {
+                  step: '03',
+                  title: 'Launch & Skalierung',
+                  desc: 'Reibungsloses Deployment, technische SEO-Optimierung und kontinuierliche Performance-Überwachung.',
+                },
+              ] as const
+            ).map((item, i) => (
               <li
                 key={i}
                 className="group border-l border-border-subtle pl-6 hover:border-action-primary transition-colors duration-300 hover:scale-[0.97] ease-spring hover:cursor-pointer"
               >
-                <span aria-hidden="true" className="block text-sm font-bold text-action-primary mb-2 tracking-wider">
+                <span
+                  aria-hidden="true"
+                  className="block text-sm font-bold text-action-primary mb-2 tracking-wider"
+                >
                   {item.step}
                 </span>
                 <h3 className="text-xl font-display font-bold text-content-base mb-3 group-hover:text-action-primary transition-colors duration-300">
                   {item.title}
                 </h3>
-                <p className="text-content-muted leading-relaxed max-w-prose text-pretty">{item.desc}</p>
+                <p className="text-content-muted leading-relaxed max-w-prose text-pretty">
+                  {item.desc}
+                </p>
               </li>
             ))}
           </ol>
@@ -258,7 +267,11 @@ export const ServicesOverview = async () => {
           <h2 className="font-display font-bold text-3xl text-content-base mb-8 text-balance">
             {t('cta.ready')}
           </h2>
-          <GlareHover glareColor="#ffffff" glareOpacity={0.4} className="inline-block rounded-xl hover:scale-[0.97] transition-transform duration-300 ease-spring">
+          <GlareHover
+            glareColor="#ffffff"
+            glareOpacity={0.4}
+            className="inline-block rounded-xl hover:scale-[0.97] transition-transform duration-300 ease-spring"
+          >
             <NavLink
               href="/contact"
               className={cn(baseButtonStyles, buttonVariants.primary, buttonSizes.lg)}

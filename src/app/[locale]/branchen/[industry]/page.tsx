@@ -10,17 +10,23 @@ export async function generateMetadata({
   params: Promise<{ locale: string; industry: string }>;
 }): Promise<Metadata> {
   const { locale, industry } = await params;
+
+  const formattedIndustry = industry
+    .split('-')
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(' ');
+
   if (locale === 'en') {
     return generatePageMetadata({
-      title: `${industry} IT Solutions`,
-      description: `Custom software and IT solutions for the ${industry} industry.`,
+      title: `${formattedIndustry} Web Design & IT Solutions`,
+      description: `Custom web design, software development, and IT solutions specifically tailored for the ${formattedIndustry} industry. Elevate your digital presence and optimize your workflows with Coday.`,
       path: `/en/branchen/${industry}`,
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: `${industry} IT-Lösungen`,
-    description: `Maßgeschneiderte Software- und IT-Lösungen für die Branche ${industry}.`,
+    title: `${formattedIndustry} Webdesign & IT-Lösungen`,
+    description: `Maßgeschneidertes Webdesign, Softwareentwicklung und IT-Lösungen speziell für die Branche ${formattedIndustry}. Optimieren Sie Ihre Prozesse und stärken Sie Ihre digitale Präsenz mit Coday.`,
     path: `/de/branchen/${industry}`,
     type: 'money',
   });

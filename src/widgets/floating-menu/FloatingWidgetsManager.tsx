@@ -6,7 +6,7 @@ import { m, AnimatePresence } from 'motion/react';
 import {
   ChatCircle,
   ShareNetwork,
-  Phone,
+  WhatsappLogo,
   ShieldCheck,
   FolderPlus,
   Alien,
@@ -14,6 +14,7 @@ import {
 import { useChatStore } from '@/widgets/chatbot/lib/chatStore';
 import { useCookieStore } from '@/shared/lib/cookieStore';
 import { VelocityVoidOverlay } from '@/widgets/velocity-void/VelocityVoidOverlay';
+import { FloatingMenuMobile } from './FloatingMenuMobile';
 
 const WIDGET_SIZE = 64; // Diameter
 const RADIUS = WIDGET_SIZE / 2;
@@ -397,7 +398,7 @@ export const FloatingWidgetsManager: React.FC = () => {
       lastPointer.current = { x: e.clientX, y: e.clientY, t: now };
       prevPointer.current = { x: e.clientX, y: e.clientY, t: now };
 
-      (e.target as HTMLElement).setPointerCapture(e.pointerId);
+      (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
 
       if (navigator.vibrate) navigator.vibrate(30);
 
@@ -451,13 +452,17 @@ export const FloatingWidgetsManager: React.FC = () => {
         const dx = w.x - folder.x;
         const dy = w.y - folder.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < WIDGET_SIZE) {
+        if (dist < WIDGET_SIZE * 1.5) {
           // SWALLOWED
           w.isInsideFolder = true;
           w.vx = 0;
           w.vy = 0;
         }
       }
+
+      try {
+        (e.currentTarget as HTMLElement).releasePointerCapture(e.pointerId);
+      } catch (err) {}
 
       animFrame.current = requestAnimationFrame(animate);
     },
@@ -621,7 +626,7 @@ export const FloatingWidgetsManager: React.FC = () => {
       {renderWidget(
         wWa,
         <div className="w-full h-full bg-success text-white rounded-full flex items-center justify-center relative">
-          <Phone className="w-8 h-8" weight="fill" />
+          <WhatsappLogo className="w-8 h-8" weight="fill" />
           <AnimatePresence>
             {showWaBadge && (
               <m.span
@@ -693,4 +698,19 @@ export const FloatingWidgetsManager: React.FC = () => {
   );
 };
 
-export default FloatingWidgetsManager;
+export default function FloatingWidgetsWrapper() {
+  const [mounted, setMounted] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    setIsMobile(window.innerWidth < 768);
+
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  if (!mounted) return null;
+  return isMobile ? <FloatingMenuMobile /> : <FloatingWidgetsManager />;
+}

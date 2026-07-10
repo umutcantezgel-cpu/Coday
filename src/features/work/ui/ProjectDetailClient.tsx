@@ -76,7 +76,7 @@ const ProjectDetail: React.FC = () => {
       <div className="min-h-dvh flex items-center justify-center bg-background-light">
         <SeoHead title="Projekt nicht gefunden | Coday" noIndex />
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">{t('project_detail.not_found')}</h1>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('project_detail.not_found')}</h2>
           <NavLink href="/work" className="text-primary hover:underline">
             {t('project_detail.back_to_overview')}
           </NavLink>
