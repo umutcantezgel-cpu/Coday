@@ -62,7 +62,7 @@ export function IndustryOverviewClient() {
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity motion-reduce:duration-[0.01ms] duration-500 pointer-events-none">
                   <OptimizedImage
                     src={image.src}
-                    alt={t(industry.titleKey)}
+                    alt={t(industry.title)}
                     width={800}
                     height={600}
                     className="w-full h-full object-cover grayscale mix-blend-multiply transform scale-100 group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms] duration-700"
