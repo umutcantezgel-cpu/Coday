@@ -100,7 +100,8 @@ export default async function IndustryDetailPage({
       cityData = getCityBySlug(location);
     }
   } catch (e) {
-    // Fallback to IndustryDetailClient
+    // Return 404 if content doesn't exist
+    return notFound();
   }
 
   const schemaScript = (
@@ -131,11 +132,5 @@ export default async function IndustryDetailPage({
       </>
     );
   }
-
-  return (
-    <>
-      {schemaScript}
-      <IndustryDetailClient />
-    </>
-  );
+  return notFound();
 }
