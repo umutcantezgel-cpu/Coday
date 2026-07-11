@@ -6,8 +6,7 @@ import dynamic from 'next/dynamic';
 
 import { GlobalCTA } from '@/shared/ui/GlobalCTA';
 const FloatingWidgetsManager = dynamic(
-  () =>
-    import('@/widgets/floating-menu/FloatingWidgetsManager').then((m) => m.FloatingWidgetsManager),
+  () => import('@/widgets/floating-menu/FloatingWidgetsManager'),
   { ssr: false }
 );
 const ChatWidget = dynamic(() => import('@/widgets/chatbot').then((module) => module.ChatWidget), {
