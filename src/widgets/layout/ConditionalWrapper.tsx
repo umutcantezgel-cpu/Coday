@@ -15,6 +15,9 @@ const ChatWidget = dynamic(() => import('@/widgets/chatbot').then((module) => mo
 const CookieConsentBanner = dynamic(() => import('@/widgets/cookie/CookieConsentBanner'), {
   ssr: false,
 });
+const FloatingWhatsAppWidget = dynamic(() => import('@/widgets/whatsapp/FloatingWhatsAppWidget'), {
+  ssr: false,
+});
 
 export const ConditionalWrapper = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname() || '';
@@ -41,6 +44,10 @@ export const ConditionalWrapper = ({ children }: { children: React.ReactNode }) 
 
       <Suspense fallback={null}>
         <CookieConsentBanner />
+      </Suspense>
+
+      <Suspense fallback={null}>
+        <FloatingWhatsAppWidget phoneNumber="4917641195301" />
       </Suspense>
     </div>
   );

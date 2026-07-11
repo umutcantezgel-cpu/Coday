@@ -37,7 +37,7 @@ interface PhysicsState {
   isInsideFolder: boolean;
 }
 
-const WIDGET_IDS = ['whatsapp', 'security', 'chat', 'social', 'folder', 'game'] as const;
+const WIDGET_IDS = ['security', 'chat', 'social', 'folder', 'game'] as const;
 type WidgetId = (typeof WIDGET_IDS)[number];
 
 function getContextualMessage(pathname: string, defaultMsg: string): string {
@@ -62,25 +62,13 @@ export const FloatingWidgetsManager: React.FC = () => {
   // Re-render trigger
   const [, forceRender] = useState(0);
 
-  // Tooltips & badges
-  const [showWaTooltip, setShowWaTooltip] = useState(false);
-  const [showWaBadge, setShowWaBadge] = useState(true);
+  const [showFolderTooltip, setShowFolderTooltip] = useState(false);
+  const [showSecurityTooltip, setShowSecurityTooltip] = useState(false);
 
   // Physics state array using refs to avoid re-renders during drag/anim
   const widgets = useRef<Record<WidgetId, PhysicsState>>({
     folder: {
       id: 'folder',
-      x: 0,
-      y: 0,
-      vx: 0,
-      vy: 0,
-      isDragging: false,
-      wasDragged: false,
-      isSnapping: false,
-      isInsideFolder: false,
-    },
-    whatsapp: {
-      id: 'whatsapp',
       x: 0,
       y: 0,
       vx: 0,
@@ -158,10 +146,6 @@ export const FloatingWidgetsManager: React.FC = () => {
     widgets.current.folder.x = window.innerWidth - WIDGET_SIZE - margin;
     widgets.current.folder.y = bottomBase;
 
-    widgets.current.whatsapp.x = margin;
-    widgets.current.whatsapp.y = bottomBase;
-    widgets.current.whatsapp.isInsideFolder = false;
-
     ['security', 'chat', 'social', 'game'].forEach((id) => {
       const w = widgets.current[id as WidgetId];
       w.x = widgets.current.folder.x;
@@ -171,12 +155,7 @@ export const FloatingWidgetsManager: React.FC = () => {
 
     forceRender((n) => n + 1);
 
-    const tooltipTimer = setTimeout(() => setShowWaTooltip(true), 5000);
-    const badgeTimer = setTimeout(() => setShowWaBadge(false), 30000);
-
     return () => {
-      clearTimeout(tooltipTimer);
-      clearTimeout(badgeTimer);
       cancelAnimationFrame(animFrame.current);
     };
   }, []);
@@ -471,10 +450,8 @@ export const FloatingWidgetsManager: React.FC = () => {
         w.isInsideFolder = false;
       }
 
-      if (id === 'whatsapp') {
-        setShowWaTooltip(false);
-        setShowWaBadge(false);
-      }
+      if (id === 'folder') setShowFolderTooltip(false);
+      if (id === 'security') setShowSecurityTooltip(false);
 
       const now = Date.now();
       dragStart.current = { x: e.clientX, y: e.clientY };
@@ -558,19 +535,6 @@ export const FloatingWidgetsManager: React.FC = () => {
   );
 
   /* ── Clicks ── */
-  const handleWhatsAppClick = (e: React.MouseEvent) => {
-    if (widgets.current.whatsapp.wasDragged) {
-      e.preventDefault();
-      return;
-    }
-    const msg = getContextualMessage(
-      pathname,
-      'Hallo, ich interessiere mich für Ihre Webdesign-Dienstleistungen.'
-    );
-    const url = `https://wa.me/4917641195301?text=${encodeURIComponent(msg)}`;
-    window.open(url, '_blank');
-  };
-
   const handleSecurityClick = (e: React.MouseEvent) => {
     if (widgets.current.security.wasDragged) return;
     openSettings();
@@ -608,7 +572,6 @@ export const FloatingWidgetsManager: React.FC = () => {
 
   if (!mounted) return null;
 
-  const wWa = widgets.current.whatsapp;
   const wSec = widgets.current.security;
   const wChat = widgets.current.chat;
   const wSocial = widgets.current.social;
@@ -689,46 +652,6 @@ export const FloatingWidgetsManager: React.FC = () => {
           </span>
         </div>,
         handleChatClick,
-        ''
-      )}
-
-      {/* ── WhatsApp Widget ── */}
-      {renderWidget(
-        wWa,
-        <div className="w-full h-full bg-[#25D366] text-white rounded-full flex items-center justify-center relative">
-          <WhatsappLogo className="w-8 h-8" weight="fill" />
-          <AnimatePresence>
-            {showWaBadge && (
-              <m.span
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                exit={{ scale: 0 }}
-                className="absolute -top-1 -right-1 w-6 h-6 bg-red-500 text-white text-xs font-bold rounded-full flex items-center justify-center shadow-md border-2 border-white pointer-events-none"
-              >
-                1
-              </m.span>
-            )}
-          </AnimatePresence>
-
-          {!wWa.isDragging && wWa.vx === 0 && wWa.vy === 0 && (
-            <span className="absolute inset-0 bg-success rounded-full opacity-30 animate-ping pointer-events-none" />
-          )}
-
-          <AnimatePresence>
-            {(showWaTooltip || showWaBadge) && (
-              <m.div
-                initial={{ opacity: 0, x: 10 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 10 }}
-                className="absolute top-1/2 -translate-y-1/2 left-full ml-4 bg-gray-900 text-white text-sm font-bold px-4 py-2 rounded-xl shadow-xl whitespace-nowrap pointer-events-none hidden md:block"
-              >
-                Chat starten 💬
-                <div className="absolute top-1/2 -translate-y-1/2 -left-1 border-4 border-transparent border-r-gray-900" />
-              </m.div>
-            )}
-          </AnimatePresence>
-        </div>,
-        handleWhatsAppClick,
         ''
       )}
 
