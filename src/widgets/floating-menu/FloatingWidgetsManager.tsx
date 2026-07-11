@@ -18,10 +18,10 @@ import { FloatingMenuMobile } from './FloatingMenuMobile';
 
 const WIDGET_SIZE = 64; // Diameter
 const RADIUS = WIDGET_SIZE / 2;
-const FRICTION = 0.92;
-const BOUNCE = 0.6;
-const COLLISION_BOUNCE = 0.8;
-const MIN_VEL = 0.3;
+const FRICTION = 0.96; // Float freely like zero gravity
+const BOUNCE = 0.85; // Bouncy walls
+const COLLISION_BOUNCE = 0.9;
+const MIN_VEL = 0.1;
 const DRAG_THRESHOLD = 5;
 
 // Unified state for a physics widget
@@ -142,7 +142,9 @@ export const FloatingWidgetsManager: React.FC = () => {
   const activeWidgetId = useRef<WidgetId | null>(null);
 
   const animFrame = useRef<number>(0);
+  const containerRef = useRef<HTMLDivElement>(null);
   const isMobile = useRef(false);
+  const isFolderOpen = useRef(false);
 
   // Initialize positions
   useEffect(() => {
@@ -150,32 +152,22 @@ export const FloatingWidgetsManager: React.FC = () => {
     isMobile.current = window.innerWidth < 768;
 
     const margin = isMobile.current ? 16 : 24;
-    const hideOffset = isMobile.current ? WIDGET_SIZE * 0.6 : 0;
     const bottomBase = window.innerHeight - WIDGET_SIZE - (isMobile.current ? 140 : 96);
 
     // Initial arrangement
-    // Right side: folder, chat, social
-    widgets.current.folder.x =
-      window.innerWidth - WIDGET_SIZE + hideOffset - (isMobile.current ? 0 : margin);
+    widgets.current.folder.x = window.innerWidth - WIDGET_SIZE - margin;
     widgets.current.folder.y = bottomBase;
 
-    widgets.current.chat.x =
-      window.innerWidth - WIDGET_SIZE + hideOffset - (isMobile.current ? 0 : margin);
-    widgets.current.chat.y = bottomBase - WIDGET_SIZE - 16;
-
-    widgets.current.social.x =
-      window.innerWidth - WIDGET_SIZE + hideOffset - (isMobile.current ? 0 : margin);
-    widgets.current.social.y = bottomBase - WIDGET_SIZE * 2 - 32;
-
-    // Left side: whatsapp, security, game
-    widgets.current.whatsapp.x = isMobile.current ? -hideOffset : margin;
+    widgets.current.whatsapp.x = margin;
     widgets.current.whatsapp.y = bottomBase;
+    widgets.current.whatsapp.isInsideFolder = false;
 
-    widgets.current.security.x = isMobile.current ? -hideOffset : margin;
-    widgets.current.security.y = bottomBase - WIDGET_SIZE - 16;
-
-    widgets.current.game.x = isMobile.current ? -hideOffset : margin;
-    widgets.current.game.y = bottomBase - WIDGET_SIZE * 2 - 32;
+    ['security', 'chat', 'social', 'game'].forEach((id) => {
+      const w = widgets.current[id as WidgetId];
+      w.x = widgets.current.folder.x;
+      w.y = widgets.current.folder.y;
+      w.isInsideFolder = true;
+    });
 
     forceRender((n) => n + 1);
 
@@ -208,15 +200,27 @@ export const FloatingWidgetsManager: React.FC = () => {
         const w1 = widgets.current[ids[i]];
         const w2 = widgets.current[ids[j]];
 
-        // Ignore hidden widgets
-        if (w1.isInsideFolder || w2.isInsideFolder) continue;
+        // 1. Items inside the folder never collide with each other.
+        // This ensures they slide smoothly into their straight line (Pinselstrich) without bouncing.
+        if (w1.isInsideFolder && w2.isInsideFolder) continue;
 
-        const dx = w2.x - w1.x;
-        const dy = w2.y - w1.y;
-        const distSq = dx * dx + dy * dy;
-        const minDist = WIDGET_SIZE;
+        // 2. Items inside the folder never collide with the folder itself.
+        if (w1.isInsideFolder && w2.id === 'folder') continue;
+        if (w2.isInsideFolder && w1.id === 'folder') continue;
 
-        if (distSq > 0 && distSq < minDist * minDist) {
+        let dx = w2.x - w1.x;
+        let dy = w2.y - w1.y;
+        let distSq = dx * dx + dy * dy;
+
+        if (distSq === 0) {
+          dx = (Math.random() - 0.5) * 0.1;
+          dy = (Math.random() - 0.5) * 0.1;
+          distSq = dx * dx + dy * dy;
+        }
+
+        const minDist = WIDGET_SIZE + 4; // Add slight padding
+
+        if (distSq < minDist * minDist) {
           hasCollisions = true;
           const dist = Math.sqrt(distSq);
           const overlap = minDist - dist;
@@ -269,11 +273,10 @@ export const FloatingWidgetsManager: React.FC = () => {
 
   const checkBounds = (w: PhysicsState) => {
     let bounded = false;
-    const hideOffset = isMobile.current ? WIDGET_SIZE * 0.6 : 0;
 
-    // Limits
-    const minX = -hideOffset;
-    const maxX = window.innerWidth - WIDGET_SIZE + hideOffset;
+    // Strict limits (no more hideOffset)
+    const minX = 0;
+    const maxX = window.innerWidth - WIDGET_SIZE;
     const minY = 0;
     const maxY = window.innerHeight - WIDGET_SIZE;
 
@@ -301,8 +304,7 @@ export const FloatingWidgetsManager: React.FC = () => {
   };
 
   const getSnapTarget = (w: PhysicsState) => {
-    const margin = 16;
-    const hideOffset = isMobile.current ? WIDGET_SIZE * 0.6 : 0;
+    const margin = isMobile.current ? 16 : 24;
 
     const midX = w.x + RADIUS;
     const distLeft = midX;
@@ -311,10 +313,10 @@ export const FloatingWidgetsManager: React.FC = () => {
     const targetY = Math.max(margin, Math.min(window.innerHeight - WIDGET_SIZE - margin, w.y));
 
     if (distLeft < distRight) {
-      return { x: isMobile.current ? -hideOffset : margin, y: targetY };
+      return { x: margin, y: targetY };
     }
     return {
-      x: window.innerWidth - WIDGET_SIZE + (isMobile.current ? hideOffset : -margin),
+      x: window.innerWidth - WIDGET_SIZE - margin,
       y: targetY,
     };
   };
@@ -342,7 +344,64 @@ export const FloatingWidgetsManager: React.FC = () => {
 
     WIDGET_IDS.forEach((id) => {
       const w = widgets.current[id];
-      if (w.isDragging || w.isInsideFolder) return;
+      if (w.isDragging) return;
+
+      if (w.isInsideFolder) {
+        const folder = widgets.current.folder;
+        let targetX = folder.x;
+        let targetY = folder.y;
+
+        if (isFolderOpen.current) {
+          const insideIds = WIDGET_IDS.filter(
+            (i) => i !== 'folder' && widgets.current[i].isInsideFolder
+          );
+          const index = insideIds.indexOf(id as WidgetId);
+
+          targetY = folder.y - (index + 1) * (WIDGET_SIZE + 16); // Perfect straight line
+
+          const spring = 0.2;
+          w.vx += (targetX - w.x) * spring;
+          w.vy += (targetY - w.y) * spring;
+          // Heavy damping for fluid, "Pinselstrich" animation without bouncy collisions
+          w.vx *= 0.6;
+          w.vy *= 0.6;
+        } else {
+          const targetX = folder.x;
+          const targetY = folder.y;
+          const spring = 0.3;
+          w.vx += (targetX - w.x) * spring;
+          w.vy += (targetY - w.y) * spring;
+          w.vx *= 0.6;
+          w.vy *= 0.6;
+        }
+
+        w.x += w.vx;
+        w.y += w.vy;
+
+        checkBounds(w);
+
+        if (
+          Math.abs(w.vx) > 0.1 ||
+          Math.abs(w.vy) > 0.1 ||
+          Math.abs(w.x - targetX) > 1 ||
+          Math.abs(w.y - targetY) > 1
+        ) {
+          moving = true;
+        }
+        return;
+      }
+
+      // If floating free, check if it should be swallowed magnetically
+      if (!w.isInsideFolder && w.id !== 'folder' && isFolderOpen.current && !w.isDragging) {
+        const folder = widgets.current.folder;
+        const dx = w.x - folder.x;
+        const dy = w.y - folder.y;
+        if (dx * dx + dy * dy < WIDGET_SIZE * 1.8 * (WIDGET_SIZE * 1.8)) {
+          w.isInsideFolder = true;
+          w.vx *= 0.5; // Dampen current velocity so it transitions smoothly into the folder slot
+          w.vy *= 0.5;
+        }
+      }
 
       w.vx *= FRICTION;
       w.vy *= FRICTION;
@@ -377,6 +436,26 @@ export const FloatingWidgetsManager: React.FC = () => {
     }
   }, []);
 
+  // Auto-close folder when clicking outside on Desktop/Mobile
+  useEffect(() => {
+    const handleGlobalPointerDown = (e: PointerEvent) => {
+      if (!isFolderOpen.current) return;
+      if (containerRef.current && containerRef.current.contains(e.target as Node)) {
+        // Clicked inside the widget container, let the widget logic handle it
+        return;
+      }
+      // Clicked outside, close the folder
+      isFolderOpen.current = false;
+      cancelAnimationFrame(animFrame.current);
+      animFrame.current = requestAnimationFrame(animate);
+    };
+
+    window.addEventListener('pointerdown', handleGlobalPointerDown);
+    return () => {
+      window.removeEventListener('pointerdown', handleGlobalPointerDown);
+    };
+  }, [animate]);
+
   const onPointerDown = useCallback(
     (e: React.PointerEvent, id: WidgetId) => {
       e.preventDefault();
@@ -387,6 +466,10 @@ export const FloatingWidgetsManager: React.FC = () => {
       w.vx = 0;
       w.vy = 0;
       activeWidgetId.current = id;
+
+      if (w.isInsideFolder) {
+        w.isInsideFolder = false;
+      }
 
       if (id === 'whatsapp') {
         setShowWaTooltip(false);
@@ -432,11 +515,16 @@ export const FloatingWidgetsManager: React.FC = () => {
   }, []);
 
   const onPointerUp = useCallback(
-    (e: React.PointerEvent, id: WidgetId) => {
+    (e: React.PointerEvent, id: WidgetId, onClickAction?: (e: React.MouseEvent) => void) => {
       const w = widgets.current[id];
       if (!w.isDragging) return;
       w.isDragging = false;
       activeWidgetId.current = null;
+
+      // Handle actual clicks here since we used preventDefault in onPointerDown
+      if (!w.wasDragged && onClickAction) {
+        onClickAction(e as unknown as React.MouseEvent);
+      }
 
       const dt = Math.max(1, lastPointer.current.t - prevPointer.current.t);
       const vx = ((lastPointer.current.x - prevPointer.current.x) / dt) * 16;
@@ -447,12 +535,12 @@ export const FloatingWidgetsManager: React.FC = () => {
       w.vy = Math.max(-maxV, Math.min(maxV, vy));
 
       // CHECK FOLDER DROP
-      if (id !== 'folder') {
+      if (w.wasDragged && id !== 'folder') {
         const folder = widgets.current.folder;
         const dx = w.x - folder.x;
         const dy = w.y - folder.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < WIDGET_SIZE * 1.5) {
+        if (dist < WIDGET_SIZE * 2 && isFolderOpen.current) {
           // SWALLOWED
           w.isInsideFolder = true;
           w.vx = 0;
@@ -504,27 +592,12 @@ export const FloatingWidgetsManager: React.FC = () => {
   const handleFolderClick = (e: React.MouseEvent) => {
     if (widgets.current.folder.wasDragged) return;
 
-    // Eject all hidden widgets!
-    let exploded = false;
-    WIDGET_IDS.forEach((id) => {
-      const w = widgets.current[id];
-      if (w.isInsideFolder) {
-        w.isInsideFolder = false;
-        w.x = widgets.current.folder.x;
-        w.y = widgets.current.folder.y;
+    isFolderOpen.current = !isFolderOpen.current;
 
-        // Random velocity between -30 and 30
-        w.vx = (Math.random() - 0.5) * 60;
-        w.vy = (Math.random() - 0.5) * 60;
-        exploded = true;
-      }
-    });
+    if (navigator.vibrate) navigator.vibrate(isFolderOpen.current ? 30 : 15);
 
-    if (exploded) {
-      if (navigator.vibrate) navigator.vibrate(50);
-      cancelAnimationFrame(animFrame.current);
-      animFrame.current = requestAnimationFrame(animate);
-    }
+    cancelAnimationFrame(animFrame.current);
+    animFrame.current = requestAnimationFrame(animate);
   };
 
   const [isGameActive, setIsGameActive] = useState(false);
@@ -549,7 +622,11 @@ export const FloatingWidgetsManager: React.FC = () => {
     onClick: (e: React.MouseEvent) => void,
     extraClasses: string
   ) => {
-    if (w.isInsideFolder) return null;
+    if (w.isInsideFolder && !isFolderOpen.current) {
+      const folder = widgets.current.folder;
+      const distSq = Math.pow(w.x - folder.x, 2) + Math.pow(w.y - folder.y, 2);
+      if (distSq < 16) return null; // Hide only when fully sucked in
+    }
 
     return (
       <div
@@ -561,17 +638,10 @@ export const FloatingWidgetsManager: React.FC = () => {
         }}
         onPointerDown={(e) => onPointerDown(e, w.id as WidgetId)}
         onPointerMove={(e) => onPointerMove(e, w.id as WidgetId)}
-        onPointerUp={(e) => onPointerUp(e, w.id as WidgetId)}
+        onPointerUp={(e) => onPointerUp(e, w.id as WidgetId, onClick)}
         onPointerCancel={(e) => onPointerUp(e, w.id as WidgetId)}
       >
-        <button
-          onClick={onClick}
-          className="w-full h-full rounded-full shadow-lg hover:shadow-xl transition-shadow flex items-center justify-center relative bg-white border border-gray-200 text-gray-800"
-          style={{
-            background: w.id === 'chat' || w.id === 'folder' ? 'transparent' : undefined,
-            border: w.id === 'chat' || w.id === 'folder' ? 'none' : undefined,
-          }}
-        >
+        <button className="w-full h-full rounded-full shadow-lg hover:shadow-xl transition-shadow flex items-center justify-center relative outline-none focus:outline-none">
           {content}
         </button>
       </div>
@@ -579,17 +649,17 @@ export const FloatingWidgetsManager: React.FC = () => {
   };
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-[9999]">
+    <div ref={containerRef} className="fixed inset-0 pointer-events-none z-[9999]">
       {/* ── Security Widget ── */}
       {renderWidget(
         wSec,
-        <>
+        <div className="w-full h-full bg-white text-gray-800 border border-gray-200 rounded-full flex items-center justify-center relative">
           <ShieldCheck className="w-8 h-8 text-primary" weight="fill" />
           <span className="absolute top-1/2 -translate-y-1/2 right-full mr-4 bg-gray-900 text-white text-xs font-bold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-xl hidden md:block">
             Cookies
             <div className="absolute top-1/2 -translate-y-1/2 -right-1 border-4 border-transparent border-l-gray-900" />
           </span>
-        </>,
+        </div>,
         handleSecurityClick,
         ''
       )}
@@ -597,13 +667,13 @@ export const FloatingWidgetsManager: React.FC = () => {
       {/* ── Social Widget ── */}
       {renderWidget(
         wSocial,
-        <>
+        <div className="w-full h-full bg-white text-gray-800 border border-gray-200 rounded-full flex items-center justify-center relative">
           <ShareNetwork className="w-8 h-8 text-gray-800" weight="fill" />
           <span className="absolute top-1/2 -translate-y-1/2 right-full mr-4 bg-gray-900 text-white text-xs font-bold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-xl hidden md:block">
             Instagram
             <div className="absolute top-1/2 -translate-y-1/2 -right-1 border-4 border-transparent border-l-gray-900" />
           </span>
-        </>,
+        </div>,
         handleSocialClick,
         ''
       )}
@@ -625,7 +695,7 @@ export const FloatingWidgetsManager: React.FC = () => {
       {/* ── WhatsApp Widget ── */}
       {renderWidget(
         wWa,
-        <div className="w-full h-full bg-success text-white rounded-full flex items-center justify-center relative">
+        <div className="w-full h-full bg-[#25D366] text-white rounded-full flex items-center justify-center relative">
           <WhatsappLogo className="w-8 h-8" weight="fill" />
           <AnimatePresence>
             {showWaBadge && (
@@ -665,13 +735,17 @@ export const FloatingWidgetsManager: React.FC = () => {
       {/* ── FOLDER Widget ── */}
       {renderWidget(
         wFolder,
-        <div className="w-full h-full rounded-full bg-gray-900 text-white shadow-2xl flex items-center justify-center relative overflow-hidden group-hover:brightness-110 transition-all">
-          <div className="absolute inset-0 opacity-50 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black animate-pulse" />
+        <div
+          className={`w-full h-full rounded-full shadow-2xl flex items-center justify-center relative overflow-hidden transition-all ${isFolderOpen.current ? 'bg-amber-200 text-amber-900' : 'bg-[#F5E6D3] text-[#4A3728] hover:bg-amber-200 hover:text-amber-900'}`}
+        >
+          {isFolderOpen.current ? (
+            <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-amber-700 via-transparent to-transparent animate-pulse" />
+          ) : null}
           <FolderPlus className="w-8 h-8 relative z-10" weight="fill" />
 
-          <span className="absolute top-1/2 -translate-y-1/2 right-full mr-4 bg-gray-900 text-white text-xs font-bold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-xl hidden md:block">
-            Widgets einsammeln
-            <div className="absolute top-1/2 -translate-y-1/2 -right-1 border-4 border-transparent border-l-gray-900" />
+          <span className="absolute top-1/2 -translate-y-1/2 right-full mr-4 bg-[#4A3728] text-[#F5E6D3] text-xs font-bold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-xl hidden md:block">
+            {isFolderOpen.current ? 'Ordner schließen' : 'Widgets Ordner'}
+            <div className="absolute top-1/2 -translate-y-1/2 -right-1 border-4 border-transparent border-l-[#4A3728]" />
           </span>
         </div>,
         handleFolderClick,
@@ -681,12 +755,39 @@ export const FloatingWidgetsManager: React.FC = () => {
       {/* ── GAME Widget (Easter Egg) ── */}
       {renderWidget(
         wGame,
-        <div className="w-full h-full rounded-full bg-black text-white shadow-xl flex items-center justify-center relative overflow-hidden group-hover:brightness-125 border border-white/20 transition-all">
-          <Alien className="w-7 h-7 relative z-10 text-white" weight="duotone" />
+        <div className="w-full h-full rounded-full bg-[#161311] shadow-[0_0_15px_rgba(212,175,55,0.4)] group-hover:shadow-[0_0_25px_rgba(212,175,55,0.8)] border-2 border-[#D4AF37] flex items-center justify-center relative overflow-hidden transition-all">
+          {/* Custom Pixel Art Bot Icon (Matches PLAYER_SPRITE_L1) */}
+          <svg
+            viewBox="0 0 7 6"
+            className="w-6 h-6 relative z-10 drop-shadow-[0_0_5px_rgba(0,240,255,0.8)]"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g fill="#F5E6D3">
+              {/* Row 0 */}
+              <rect x="3" y="0" width="1" height="1" />
+              {/* Row 1 */}
+              <rect x="2" y="1" width="1" height="1" />
+              <rect x="4" y="1" width="1" height="1" />
+              {/* Row 2 */}
+              <rect x="1" y="2" width="5" height="1" />
+              {/* Row 3 */}
+              <rect x="1" y="3" width="5" height="1" />
+              {/* Row 4 */}
+              <rect x="1" y="4" width="1" height="1" />
+              <rect x="3" y="4" width="1" height="1" />
+              <rect x="5" y="4" width="1" height="1" />
+            </g>
+            {/* Glowing Eye */}
+            <rect x="3" y="1" width="1" height="1" fill="#00f0ff" />
+            {/* Thrusters */}
+            <rect x="1" y="5" width="1" height="1" fill="#ff2a6d" />
+            <rect x="5" y="5" width="1" height="1" fill="#ff2a6d" />
+          </svg>
 
-          <span className="absolute top-1/2 -translate-y-1/2 right-full mr-4 bg-gray-900 text-white text-xs font-bold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-xl hidden md:block border border-white/10">
+          <span className="absolute top-1/2 -translate-y-1/2 right-full mr-4 bg-[#D4AF37] text-[#161311] text-xs font-bold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-xl hidden md:block">
             Velocity Void
-            <div className="absolute top-1/2 -translate-y-1/2 -right-1 border-4 border-transparent border-l-gray-900" />
+            <div className="absolute top-1/2 -translate-y-1/2 -right-1 border-4 border-transparent border-l-[#D4AF37]" />
           </span>
         </div>,
         handleGameClick,
