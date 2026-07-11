@@ -11,7 +11,11 @@ export function useScrollAnimation(ref: RefObject<HTMLElement | null>, once: boo
 
     // Respect reduced motion preference — keep elements visible
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) {
+
+    // Disable scroll animations on mobile to ensure content is always visible and doesn't disappear on scroll
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024;
+
+    if (prefersReducedMotion || isMobile) {
       // Already true from initial state — no setState needed
       return;
     }
