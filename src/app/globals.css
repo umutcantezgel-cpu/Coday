@@ -80,7 +80,7 @@
   --color-neutral-900: #18181b;
   --color-neutral-950: #09090b;
 
-  --color-primary: var(--color-primary-600);
+  --color-primary: var(--color-primary-700);
   --color-secondary: var(--color-secondary-900);
 
   /* Semantic Colors for Tailwind classes */

@@ -99,6 +99,7 @@ export const FloatingMenuMobile = () => {
 
         <button
           onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? 'Close menu' : 'Open menu'}
           className="w-14 h-14 rounded-full bg-gray-900 text-white shadow-2xl flex items-center justify-center pointer-events-auto"
         >
           {isOpen ? <X className="w-7 h-7" /> : <List className="w-7 h-7" />}
