@@ -19,7 +19,7 @@ export const PortfolioTeaserSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-end mb-24">
           <FadeInUp duration={0.6} className="max-w-2xl">
-            <p className="text-primary-600 font-bold text-xs uppercase tracking-[0.15em] mb-4">
+            <p className="text-action-primary font-bold text-xs uppercase tracking-[0.15em] mb-4">
               {t('portfolio_teaser.overline', { defaultValue: 'Bewiesene Ergebnisse' })}
             </p>
             <h2 className="font-display font-black text-4xl sm:text-5xl text-secondary-900 mb-6 tracking-tight">
@@ -99,7 +99,7 @@ export const PortfolioTeaserSection: React.FC = () => {
                   </div>
 
                   <Link href={`/work/${project.slug}`} className="group inline-block">
-                    <h3 className="font-display font-black text-4xl sm:text-5xl text-secondary-900 mb-6 group-hover:text-primary-600 transition-colors duration-300">
+                    <h3 className="font-display font-black text-4xl sm:text-5xl text-secondary-900 mb-6 group-hover:text-action-primary transition-colors duration-300">
                       {content.title}
                     </h3>
                   </Link>
@@ -111,9 +111,9 @@ export const PortfolioTeaserSection: React.FC = () => {
                   <Link
                     href={`/work/${project.slug}`}
                     aria-label={`Case Study ansehen: ${content.title}`}
-                    className="inline-flex items-center gap-3 font-bold text-lg text-secondary-900 hover:text-primary-600 transition-colors w-max group"
+                    className="inline-flex items-center gap-3 font-bold text-lg text-secondary-900 hover:text-action-primary transition-colors w-max group"
                   >
-                    <span className="border-b-2 border-secondary-900 group-hover:border-primary-600 pb-1 transition-colors">
+                    <span className="border-b-2 border-secondary-900 group-hover:border-action-primary pb-1 transition-colors">
                       Case Study ansehen
                     </span>
                     <ArrowRight
