@@ -35,7 +35,7 @@ export const PortfolioTeaserSection: React.FC = () => {
           <FadeInUp delay={0.2} duration={0.6} className="mt-8 md:mt-0">
             <Link
               href="/work"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-bold text-white bg-primary-600 hover:bg-primary-700 transition motion-reduce:duration-[0.01ms] duration-300 rounded-full shadow-lg shadow-primary-600/20 hover:shadow-xl hover:shadow-primary-600/30 hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-bold text-white bg-action-primary hover:bg-action-primary-hover transition motion-reduce:duration-[0.01ms] duration-300 rounded-full shadow-lg shadow-action-primary/20 hover:shadow-xl hover:shadow-action-primary/30 hover:-translate-y-0.5"
             >
               {t('portfolio_teaser.cta', { defaultValue: 'Alle Case Studies' })}
               <ArrowRight className="w-5 h-5" />

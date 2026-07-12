@@ -75,7 +75,7 @@ export const TrustBadges: React.FC<TrustBadgesProps> = ({
               <div className="font-bold text-secondary text-sm md:text-base text-center">
                 {badge.title}
               </div>
-              <div className="text-xs text-slate-400 text-center mt-1">{badge.description}</div>
+              <div className="text-xs text-slate-300 text-center mt-1">{badge.description}</div>
             </>
           );
 
