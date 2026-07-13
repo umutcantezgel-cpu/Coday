@@ -1,6 +1,6 @@
 'use client';
 
-import React, { Suspense, useEffect } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import BlurText from '@/shared/ui/BlurText';
 import GradientText from '@/shared/ui/GradientText';
 import BookingCalendar from '@/features/booking/ui/BookingCalendar';
@@ -38,6 +38,12 @@ export const ContactClient: React.FC = () => {
   const selectedPackageId = useCalculatorStore((state) => state.selectedPackageId);
   const setStep = useCalculatorStore((state) => state.setStep);
   const hasPackage = !!selectedPackageId;
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsMounted(true), 0);
+    return () => clearTimeout(timer);
+  }, []);
 
   // Set step when arriving from flow
   useEffect(() => {
@@ -75,9 +81,7 @@ export const ContactClient: React.FC = () => {
       )}
 
       {/* Mobile Layout (Tabbed) */}
-      <div className="lg:hidden mt-20">
-        <MobileContactLayout />
-      </div>
+      <div className="lg:hidden mt-20 min-h-screen">{isMounted && <MobileContactLayout />}</div>
 
       {/* Desktop Layout (Original Split) */}
       <div className="hidden lg:block">

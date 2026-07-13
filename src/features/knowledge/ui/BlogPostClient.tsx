@@ -24,10 +24,15 @@ const BlogPost: React.FC = () => {
   const t = useTranslations('blog');
   const router = useRouter();
   const [currentUrl, setCurrentUrl] = React.useState('');
+  const [isMounted, setIsMounted] = React.useState(false);
 
   React.useEffect(() => {
-    const timer = setTimeout(() => setCurrentUrl(window.location.href), 0);
-    return () => clearTimeout(timer);
+    const timer1 = setTimeout(() => setIsMounted(true), 0);
+    const timer2 = setTimeout(() => setCurrentUrl(window.location.href), 0);
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+    };
   }, []);
 
   const slug = rawSlug?.endsWith('/') ? rawSlug.slice(0, -1) : rawSlug;
@@ -164,10 +169,6 @@ const BlogPost: React.FC = () => {
           {/* Main Article */}
           <article className="lg:col-span-8 lg:col-start-1">
             <div className="bg-white rounded-[2.5rem] p-6 md:p-12 lg:p-16 shadow-2xl border border-gray-100">
-              {/* SEO Sub-headline: Organically repeat the H1 text (title) in the body */}
-              <p className="font-bold text-lg text-secondary mb-8 pb-4 border-b border-gray-100">
-                {post.title}
-              </p>
               {/* Meta Data */}
               <div className="flex flex-wrap items-center justify-between border-b border-gray-100 pb-8 mb-10 text-sm text-gray-500 gap-4">
                 <div className="flex items-center gap-4">
@@ -190,7 +191,14 @@ const BlogPost: React.FC = () => {
               {/* Dynamic Sections (Constrained Width for readability) */}
               <div className="max-w-prose mx-auto">
                 <div className="lg:hidden">
-                  <TableOfContents blocks={post.content} isMobile />
+                  {!isMounted ? (
+                    <div
+                      className="h-14 mb-8 border border-gray-100 rounded-2xl bg-gray-50/50 shadow-sm"
+                      aria-hidden="true"
+                    />
+                  ) : (
+                    <TableOfContents blocks={post.content} isMobile />
+                  )}
                 </div>
                 <div className="prose prose-lg text-content-base prose-headings:text-content-base prose-p:text-content-base prose-strong:text-content-base prose-li:text-content-base prose-slate prose-headings:font-display prose-headings:font-bold prose-a:text-primary hover:prose-a:text-primary-dark prose-img:rounded-2xl prose-img:shadow-md">
                   {post.content.map((block) => (
