@@ -72,11 +72,11 @@ const content = {
       items: [
         {
           q: 'Was ist der Unterschied zwischen SEO und GEO?',
-          a: 'SEO (Search Engine Optimization) optimiert für Links und Algorithmen, um Nutzer zum Klicken zu bewegen. GEO (Generative Engine Optimization) optimiert für KI-Modelle, damit diese Ihre Inhalte in direkten Antworten und Zusammenfassungen zitieren.',
+          a: 'SEO (Search Engine Optimization) optimiert für Links und Algorithmen, um Nutzer zum Klicken zu bewegen. Als Generative Engine Optimization (GEO) Agentur optimieren wir für KI-Modelle, damit diese Ihre Inhalte in direkten Antworten und Zusammenfassungen zitieren.',
         },
         {
           q: 'Für wen lohnt sich GEO?',
-          a: 'Für jedes Unternehmen, dessen Kunden nach Erklärungen, Vergleichen oder direkten Lösungen suchen. B2B, SaaS, Medizin, Finanzen und Premium-Dienstleister profitieren massiv.',
+          a: 'Für jedes Unternehmen, dessen Kunden nach Erklärungen, Vergleichen oder direkten Lösungen suchen. B2B, SaaS, Medizin, Finanzen und Premium-Dienstleister profitieren massiv von einer Generative Engine Optimization (GEO) Agentur.',
         },
         {
           q: 'Macht GEO klassisches SEO überflüssig?',
@@ -133,15 +133,15 @@ const content = {
       items: [
         {
           q: 'What is the difference between SEO and GEO?',
-          a: 'SEO optimizes for links and algorithms to get users to click. GEO optimizes for AI models so they cite your content in direct answers and summaries.',
+          a: 'SEO (Search Engine Optimization) optimizes for links and algorithms to get users to click. As a Generative Engine Optimization (GEO) Agency, we optimize for AI models so they cite your content in direct answers and summaries.',
         },
         {
           q: 'Who benefits from GEO?',
-          a: 'Any company whose customers search for explanations, comparisons, or direct solutions. B2B, SaaS, medical, finance, and premium service providers benefit massively.',
+          a: 'Any business whose customers search for explanations, comparisons, or direct solutions. B2B, SaaS, medical, finance, and premium service providers benefit massively from partnering with a Generative Engine Optimization (GEO) Agency.',
         },
         {
           q: 'Does GEO make classic SEO obsolete?',
-          a: "No, it's an evolution. Technical perfection (pagespeed) and high-quality content are still the foundation. GEO builds upon this, using structured data and Semantic Web principles to guide AI bots.",
+          a: 'No, it is an evolution. Technical perfection (Pagespeed) and high-quality content remain the foundation. A Generative Engine Optimization (GEO) Agency builds on this, using structured data and Semantic Web principles to guide AI bots.',
         },
       ],
     },

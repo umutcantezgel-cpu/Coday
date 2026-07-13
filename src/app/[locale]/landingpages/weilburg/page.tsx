@@ -92,7 +92,9 @@ export default async function WeilburgLandingPage(props: { params: Promise<{ loc
                 online nach Ihren Angeboten. Wenn Sie nicht sofort gefunden werden oder Ihre
                 Webseite veraltet wirkt, verlieren Sie bares Geld an die regionale Konkurrenz. Eine
                 moderne, Conversion-optimierte Internetpräsenz baut Vertrauen auf, noch bevor der
-                erste persönliche Kontakt entsteht.
+                erste persönliche Kontakt entsteht. Wir wissen, worauf es ankommt, um in der Region
+                Weilburg und im Lahn-Dill-Kreis digital erfolgreich zu sein. Mit unserer Expertise
+                im Bereich Webentwicklung und SEO bringen wir Sie auf die vorderen Plätze.
               </p>
               <p>
                 Wir unterstützen Sie dabei, eine digitale Präsenz aufzubauen, die nicht nur auf den
