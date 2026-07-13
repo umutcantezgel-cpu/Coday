@@ -133,7 +133,12 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
         >
           {/* Custom Premium Header */}
           <div className="mobile-header">
-            <Link href="/" className="mobile-logo" onClick={onClose}>
+            <Link
+              href="/"
+              className="mobile-logo"
+              onClick={onClose}
+              aria-label="Coday - Zur Startseite"
+            >
               <span className="text-2xl font-bold text-white tracking-tight">Coday</span>
             </Link>
             <button

@@ -116,7 +116,12 @@ const CardNav: React.FC<CardNavProps> = ({
     <header role="banner" className={`card-nav-container ${className}`} ref={navRef}>
       {/* Floating Pill */}
       <nav className="nav-pill" aria-label="Hauptnavigation">
-        <Link href="/" className="nav-pill-logo" title="Zur Startseite">
+        <Link
+          href="/"
+          className="nav-pill-logo"
+          title="Zur Startseite"
+          aria-label="Coday - Zur Startseite"
+        >
           <OptimizedIcon icon={Code} className="logo-icon" aria-hidden="true" />
           <span className="logo-text">Coday</span>
           <span className="sr-only"> – Zur Startseite</span>

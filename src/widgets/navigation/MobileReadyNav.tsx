@@ -152,7 +152,12 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
         className={`nav-pill ${isScrolled ? 'scrolled' : 'at-top'} ${!isVisible ? 'nav-hidden' : ''}`}
         aria-label="Hauptnavigation"
       >
-        <Link href="/" className="nav-pill-logo" title="Zur Startseite">
+        <Link
+          href="/"
+          className="nav-pill-logo"
+          title="Zur Startseite"
+          aria-label="Coday - Zur Startseite"
+        >
           <Image
             src={CodayLogo}
             alt="Coday Webdesign Agentur Wetzlar Logo"

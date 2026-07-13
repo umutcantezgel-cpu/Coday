@@ -59,6 +59,7 @@ export const PortfolioTeaserSection: React.FC = () => {
                 <ScaleIn delay={0.1} duration={0.8} className="w-full lg:w-3/5 group relative">
                   <Link
                     href={`/work/${project.slug}`}
+                    aria-label={`Bild für Case Study ansehen: ${content.title}`}
                     className="block relative aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-[0_20px_50px_rgba(8,_112,_184,_0.07)]"
                   >
                     <div className="absolute inset-0 bg-secondary-900/5 group-hover:bg-transparent transition-colors duration-500 z-10" />

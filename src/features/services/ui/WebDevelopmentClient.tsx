@@ -179,9 +179,8 @@ export function WebDevelopmentClient() {
       <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-24">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
           {features.map((feature, index) => (
-            <NavLink
+            <div
               key={index}
-              href={`/services/web-development/${feature.slug}`}
               className="bg-surface-elevated p-8 rounded-2xl shadow-flat border border-border-muted hover:shadow-flat-lg transition motion-reduce:duration-[0.01ms] duration-300 group hover:scale-[0.97] ease-spring block relative overflow-hidden h-full"
             >
               <div className="absolute top-0 end-0 w-32 h-32 bg-secondary/5 rounded-bl-full -me-8 -mt-8 transition-transform motion-reduce:duration-[0.01ms] group-hover:scale-[0.97] ease-spring"></div>
@@ -189,17 +188,21 @@ export function WebDevelopmentClient() {
                 <OptimizedIcon icon={iconMap[feature.icon] || Code} />
               </div>
               <h3 className="font-display font-bold text-xl text-content-base mb-3 group-hover:text-action-primary transition-colors motion-reduce:duration-[0.01ms] relative z-10">
-                {/* Check if translation exists first */}
-                {t(feature.titleKey as any)}
+                <NavLink
+                  href={`/services/web-development/${feature.slug}`}
+                  className="before:absolute before:inset-0 before:z-30 hover:underline"
+                >
+                  {t(feature.titleKey as any)}
+                </NavLink>
               </h3>
-              <p className="text-content-muted leading-relaxed max-w-prose text-pretty mb-4 relative z-10">
+              <p className="text-content-muted leading-relaxed max-w-prose text-pretty mb-4 relative z-40">
                 {t(feature.descriptionKey as any)}
               </p>
-              <div className="text-action-primary font-bold text-sm uppercase tracking-wide flex items-center opacity-0 group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms] transform translate-y-2 group-hover:translate-y-0 relative z-10">
+              <div className="text-action-primary font-bold text-sm uppercase tracking-wide flex items-center opacity-0 group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms] transform translate-y-2 group-hover:translate-y-0 relative z-40">
                 {tCommon('actions.read_more')}{' '}
                 <OptimizedIcon icon={ArrowRight} className="ms-1 text-sm" />
               </div>
-            </NavLink>
+            </div>
           ))}
         </div>
       </section>

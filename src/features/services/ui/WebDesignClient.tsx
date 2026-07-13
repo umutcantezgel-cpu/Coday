@@ -277,9 +277,8 @@ export function WebDesignClient() {
             // Map the feature slug to the translation key
 
             return (
-              <NavLink
+              <div
                 key={index}
-                href={`/services/web-design/${feature.slug}`}
                 className="bg-surface-elevated p-8 rounded-2xl shadow-flat border border-border-muted hover:shadow-flat-lg transition motion-reduce:duration-[0.01ms] duration-300 group hover:scale-[0.97] ease-spring block relative overflow-hidden h-full"
               >
                 <div className="absolute top-0 end-0 w-32 h-32 bg-secondary/5 rounded-bl-full -me-8 -mt-8 transition-transform motion-reduce:duration-[0.01ms] group-hover:scale-[0.97] ease-spring"></div>
@@ -287,16 +286,21 @@ export function WebDesignClient() {
                   <OptimizedIcon icon={iconMap[feature.icon] || Palette} />
                 </div>
                 <h3 className="font-display font-bold text-xl text-content-base mb-3 group-hover:text-sapphire transition-colors motion-reduce:duration-[0.01ms] relative z-10">
-                  {t(feature.titleKey)}
+                  <NavLink
+                    href={`/services/web-design/${feature.slug}`}
+                    className="before:absolute before:inset-0 before:z-30 hover:underline"
+                  >
+                    {t(feature.titleKey)}
+                  </NavLink>
                 </h3>
-                <p className="text-content-muted leading-relaxed max-w-prose text-pretty mb-4 relative z-10">
+                <p className="text-content-muted leading-relaxed max-w-prose text-pretty mb-4 relative z-40">
                   {t(feature.descriptionKey)}
                 </p>
-                <div className="text-sapphire font-bold text-sm uppercase tracking-wide flex items-center opacity-0 group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms] transform translate-y-2 group-hover:translate-y-0 relative z-10">
+                <div className="text-sapphire font-bold text-sm uppercase tracking-wide flex items-center opacity-0 group-hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms] transform translate-y-2 group-hover:translate-y-0 relative z-40">
                   {t('actions.read_more')}{' '}
                   <OptimizedIcon icon={ArrowRight} className="ms-1 text-sm" />
                 </div>
-              </NavLink>
+              </div>
             );
           })}
         </div>

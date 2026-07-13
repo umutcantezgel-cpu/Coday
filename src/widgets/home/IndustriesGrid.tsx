@@ -71,7 +71,7 @@ export const IndustriesGrid: React.FC = () => {
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
           {industries.map((ind, index) => (
             <FadeInUp key={ind.id} duration={0.6} delay={index * 0.1} className="h-full">
-              <Link href={ind.link} className="block h-full">
+              <div className="block h-full relative group">
                 <BentoCard
                   effect={ind.effect}
                   tiltMax={ind.tiltMax}
@@ -79,15 +79,25 @@ export const IndustriesGrid: React.FC = () => {
                   spotlightColor={ind.spotlightColor}
                   className="p-6 text-start h-full"
                 >
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4 relative z-40">
                     <OptimizedIcon icon={ind.icon} size="xl" className="text-primary" />
                   </div>
-                  <h3 className="font-bold text-lg text-secondary mb-2 break-words hyphens-auto" lang="de">
-                    {t(`industries.card_${ind.id}.title`)}
+                  <h3
+                    className="font-bold text-lg text-secondary mb-2 break-words hyphens-auto"
+                    lang="de"
+                  >
+                    <Link
+                      href={ind.link}
+                      className="before:absolute before:inset-0 before:z-30 group-hover:text-primary transition-colors hover:underline"
+                    >
+                      {t(`industries.card_${ind.id}.title`)}
+                    </Link>
                   </h3>
-                  <p className="text-sm text-slate-600">{t(`industries.card_${ind.id}.desc`)}</p>
+                  <p className="text-sm text-slate-600 relative z-40">
+                    {t(`industries.card_${ind.id}.desc`)}
+                  </p>
                 </BentoCard>
-              </Link>
+              </div>
             </FadeInUp>
           ))}
         </div>

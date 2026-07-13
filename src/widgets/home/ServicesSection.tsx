@@ -71,11 +71,7 @@ export const ServicesSection: React.FC = () => {
                 glowColor="rgba(139, 92, 246, 0.3)"
                 className="h-full border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02] hover:border-primary/20 transition motion-reduce:duration-[0.01ms] duration-500 ease-out bg-white rounded-2xl md:aspect-[1/1.618]"
               >
-                <Link
-                  href={service.link}
-                  aria-label={t(`services.items.${service.id}.title`, { defaultValue: service.id })}
-                  className="group relative p-6 md:p-8 flex flex-col h-full"
-                >
+                <div className="group relative p-6 md:p-8 flex flex-col h-full">
                   <div
                     className={`absolute top-0 end-0 w-32 h-32 ${service.color} opacity-[0.03] rounded-bl-[100px] rtl:rounded-br-[100px] rtl:rounded-bl-none transition-transform motion-reduce:duration-[0.01ms] duration-700 ease-out group-hover:scale-[1.3] group-hover:opacity-[0.06]`}
                   ></div>
@@ -95,16 +91,21 @@ export const ServicesSection: React.FC = () => {
                       className="font-display font-bold text-xl md:text-2xl text-secondary mb-3 group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms] duration-300 break-words hyphens-auto"
                       lang="de"
                     >
-                      {t(`services.items.${service.id}.title`, { defaultValue: service.id })}
+                      <Link
+                        href={service.link}
+                        className="before:absolute before:inset-0 before:z-30 hover:underline"
+                      >
+                        {t(`services.items.${service.id}.title`, { defaultValue: service.id })}
+                      </Link>
                     </h3>
-                    <p className="text-base text-slate-600 mb-8 leading-[1.618]">
+                    <p className="text-base text-slate-600 mb-8 leading-[1.618] relative z-40">
                       {t(`services.items.${service.id}.description`, {
                         defaultValue: 'Beschreibung',
                       })}
                     </p>
                   </div>
 
-                  <div className="flex items-center text-primary font-bold tracking-wide uppercase text-sm mt-auto transition motion-reduce:duration-[0.01ms] duration-300 group-hover:tracking-wider">
+                  <div className="flex items-center text-primary font-bold tracking-wide uppercase text-sm mt-auto transition motion-reduce:duration-[0.01ms] duration-300 group-hover:tracking-wider relative z-40">
                     {t(`services.items.${service.id}.title`, { defaultValue: service.id })} ansehen
                     <OptimizedIcon
                       icon={ArrowRight}
@@ -112,7 +113,7 @@ export const ServicesSection: React.FC = () => {
                       className="ms-3 group-hover:translate-x-2 rtl:group-hover:-translate-x-2 transition-transform motion-reduce:duration-[0.01ms] duration-300 ease-out"
                     />
                   </div>
-                </Link>
+                </div>
               </BentoCard>
             </FadeInUp>
           ))}

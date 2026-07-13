@@ -130,10 +130,7 @@ const Blog: React.FC = () => {
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
           >
-            <Link
-              href={`/knowledge/blog/${featuredPost.slug}`}
-              className="block relative rounded-3xl overflow-hidden shadow-2xl group cursor-pointer h-[500px] hover:-translate-y-1.5 hover:scale-[1.01] hover:shadow-glow transition motion-reduce:duration-[0.01ms] duration-500 ease-out"
-            >
+            <div className="block relative rounded-3xl overflow-hidden shadow-2xl group h-[500px] hover:-translate-y-1.5 hover:scale-[1.01] hover:shadow-glow transition motion-reduce:duration-[0.01ms] duration-500 ease-out">
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10" />
               <OptimizedImage
                 src={featuredPost.image}
@@ -146,13 +143,18 @@ const Blog: React.FC = () => {
 
               <div className="absolute inset-0 z-20 flex flex-col justify-end p-8 md:p-12">
                 <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform motion-reduce:duration-[0.01ms] duration-300">
-                  <span className="inline-block px-3 py-1 rounded-full bg-blue-600 text-white text-xs font-bold uppercase tracking-wider mb-4">
+                  <span className="inline-block px-3 py-1 rounded-full bg-blue-600 text-white text-xs font-bold uppercase tracking-wider mb-4 relative z-40">
                     {t('highlight')}
                   </span>
                   <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-4 shadow-sm">
-                    {featuredPost.title}
+                    <Link
+                      href={`/knowledge/blog/${featuredPost.slug}`}
+                      className="before:absolute before:inset-0 before:z-30 hover:underline"
+                    >
+                      {featuredPost.title}
+                    </Link>
                   </h2>
-                  <div className="flex items-center space-x-4 text-slate-300">
+                  <div className="flex items-center space-x-4 text-slate-300 relative z-40">
                     <span className="text-sm font-medium">
                       {t('readTime')}: {featuredPost.readTime}
                     </span>
@@ -163,7 +165,7 @@ const Blog: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </Link>
+            </div>
           </m.article>
         )}
 
@@ -179,10 +181,7 @@ const Blog: React.FC = () => {
                 transition={{ duration: 0.6, delay: index * 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
                 className="h-full"
               >
-                <Link
-                  href={`/knowledge/blog/${post.slug}`}
-                  className="flex flex-col group cursor-pointer h-full"
-                >
+                <div className="flex flex-col group h-full relative">
                   <article className="flex flex-col h-full bg-white rounded-3xl p-5 shadow-sm border border-gray-100 hover:shadow-xl hover:border-primary/20 hover:-translate-y-1.5 hover:scale-[1.02] transition motion-reduce:duration-[0.01ms] duration-500 ease-out">
                     <div className="h-56 rounded-2xl bg-slate-100 mb-6 overflow-hidden relative">
                       <OptimizedImage
@@ -195,7 +194,7 @@ const Blog: React.FC = () => {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                     </div>
 
-                    <div className="flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-blue-600 mb-3">
+                    <div className="flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-blue-600 mb-3 relative z-40">
                       <span className="bg-blue-50 text-blue-600 px-2 py-1 rounded-md">
                         {post.category}
                       </span>
@@ -203,13 +202,20 @@ const Blog: React.FC = () => {
                       <span className="text-slate-500">{post.readTime}</span>
                     </div>
 
-                    <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors motion-reduce:duration-[0.01ms] line-clamp-2">
-                      {post.title}
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3 transition-colors motion-reduce:duration-[0.01ms] line-clamp-2">
+                      <Link
+                        href={`/knowledge/blog/${post.slug}`}
+                        className="before:absolute before:inset-0 before:z-30 group-hover:text-blue-600 hover:underline"
+                      >
+                        {post.title}
+                      </Link>
                     </h3>
 
-                    <p className="text-slate-500 line-clamp-3 mb-6 flex-grow">{post.excerpt}</p>
+                    <p className="text-slate-500 line-clamp-3 mb-6 flex-grow relative z-40">
+                      {post.excerpt}
+                    </p>
 
-                    <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-50">
+                    <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-50 relative z-40">
                       <div className="flex items-center space-x-3">
                         <div className="w-8 h-8 rounded-full bg-slate-200 overflow-hidden">
                           {/* Placeholder for author image, or initials */}
@@ -225,7 +231,7 @@ const Blog: React.FC = () => {
                       </span>
                     </div>
                   </article>
-                </Link>
+                </div>
               </m.div>
             ))}
           </div>
