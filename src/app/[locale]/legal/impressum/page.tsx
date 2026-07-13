@@ -76,6 +76,10 @@ export default async function ImpressumPage({ params }: { params: Promise<{ loca
           </p>
         </section>
       </div>
+      {/* SEO Title für Keyword-Konsistenz */}
+      <div className="container mx-auto px-4 pb-12 text-center">
+        <p className="text-[10px] text-gray-500/40 font-medium tracking-wide">{_seoTitle}</p>
+      </div>
     </>
   );
 }
