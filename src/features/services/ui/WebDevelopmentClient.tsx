@@ -101,10 +101,10 @@ export function WebDevelopmentClient() {
       <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-24 text-center lg:text-start">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <span className="text-action-primary font-bold tracking-wider uppercase text-sm mb-4 block">
+            <h1 className="text-action-primary font-bold tracking-wider uppercase text-sm mb-4 block">
               {t('web_development_page.hero.label')}
-            </span>
-            <h1 className="font-display font-black text-4xl sm:text-6xl text-content-base mb-6 text-balance">
+            </h1>
+            <h2 className="block font-display font-black text-4xl sm:text-6xl text-content-base mb-6 text-balance">
               <BlurText
                 text={t('web_development_page.hero.title_anim')}
                 delay={100}
@@ -114,7 +114,7 @@ export function WebDevelopmentClient() {
               <span className="text-action-primary">
                 {t('web_development_page.hero.title_static')}
               </span>
-            </h1>
+            </h2>
             <p className="text-xl text-content-muted leading-relaxed max-w-prose text-pretty max-w-3xl lg:mx-0 mx-auto">
               {t('web_development_page.hero.description')}
             </p>

@@ -42,7 +42,10 @@ const Jobs: React.FC = () => {
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 relative">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[500px] bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-3xl opacity-30 pointer-events-none -z-10" aria-hidden="true"></div>
+          <div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[500px] bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-3xl opacity-30 pointer-events-none -z-10"
+            aria-hidden="true"
+          ></div>
 
           {/* Hero Visual */}
           <div className="relative rounded-3xl overflow-hidden mb-12 shadow-2xl h-[400px] group">
@@ -55,10 +58,10 @@ const Jobs: React.FC = () => {
               height={1080}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 md:p-12 text-left">
-              <span className="inline-block px-3 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white text-xs font-bold uppercase tracking-wider mb-4 w-fit">
+              <h1 className="inline-block px-3 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white text-xs font-bold uppercase tracking-wider mb-4 w-fit">
                 {t('jobs.culture_badge')}
-              </span>
-              <h1 className="font-display font-black text-4xl sm:text-5xl text-white mb-6">
+              </h1>
+              <h2 className="block font-display font-black text-4xl sm:text-5xl text-white mb-6">
                 {t('jobs.hero_title_prefix')} <br />
                 <RotatingText
                   texts={t.raw('jobs.hero_rotating') as string[]}
@@ -67,7 +70,7 @@ const Jobs: React.FC = () => {
                   staggerDuration={0.025}
                   mainClassName="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-purple-500"
                 />
-              </h1>
+              </h2>
               <p className="text-xl text-gray-600 mb-8 max-w-2xl text-white/90">
                 {t('jobs.hero_desc')}
               </p>

@@ -48,10 +48,10 @@ const Retail: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="text-primary font-bold tracking-wider uppercase text-sm mb-6 block">
+              <h1 className="text-primary font-bold tracking-wider uppercase text-sm mb-6 block">
                 {t('ecommerce-retail.title')}
-              </span>
-              <h1 className="font-display font-black text-4xl sm:text-6xl text-secondary mb-6 tracking-tight">
+              </h1>
+              <h2 className="block font-display font-black text-4xl sm:text-6xl text-secondary mb-6 tracking-tight">
                 <BlurText
                   text={t('ecommerce-retail.hero.headline')}
                   delay={100}
@@ -66,7 +66,7 @@ const Retail: React.FC = () => {
                 >
                   {t('ecommerce-retail.hero.subheadline')}
                 </GradientText>
-              </h1>
+              </h2>
               <p className="text-xl text-slate-600 leading-relaxed mb-8 max-w-xl">
                 {t('ecommerce-retail.hero.subheadline')}
               </p>

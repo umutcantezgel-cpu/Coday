@@ -16,10 +16,10 @@ const Process: React.FC = () => {
       {/* Hero Section */}
       <section className="relative pt-48 pb-32 px-4 text-center">
         <div className="max-w-4xl mx-auto relative z-10">
-          <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
+          <h1 className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
             {t('hero.badge')}
-          </span>
-          <h1 className="font-display font-black text-5xl sm:text-7xl text-secondary mb-6 tracking-tight">
+          </h1>
+          <h2 className="block font-display font-black text-5xl sm:text-7xl text-secondary mb-6 tracking-tight">
             <BlurText
               text={t('hero.title_start')}
               delay={100}
@@ -34,7 +34,7 @@ const Process: React.FC = () => {
             >
               {t('hero.title_gradient')}
             </GradientText>
-          </h1>
+          </h2>
           <p className="text-2xl text-slate-600 leading-relaxed mb-8 max-w-2xl mx-auto">
             {t('hero.desc')}
           </p>

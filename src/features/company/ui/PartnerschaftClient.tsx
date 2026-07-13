@@ -32,16 +32,16 @@ const Partnerschaft: React.FC = () => {
           <Breadcrumbs />
 
           <div className="text-center max-w-3xl mx-auto mt-8">
-            <m.span
+            <m.h1
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block"
             >
               Coday Partner Network
-            </m.span>
+            </m.h1>
 
-            <m.h1
+            <m.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
@@ -55,7 +55,7 @@ const Partnerschaft: React.FC = () => {
               >
                 Erfolge teilen.
               </GradientText>
-            </m.h1>
+            </m.h2>
 
             <m.p
               initial={{ opacity: 0, y: 15 }}

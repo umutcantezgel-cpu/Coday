@@ -61,16 +61,16 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
         {/* Hero */}
         <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto">
-            <span className="text-primary-600 font-bold tracking-wider uppercase text-xs mb-3 block">
+            <h1 className="text-primary-600 font-bold tracking-wider uppercase text-xs mb-3 block">
               {isEn ? 'Portfolio' : 'Referenzen'}
-            </span>
-            <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-secondary-900 mb-6 leading-tight">
+            </h1>
+            <h2 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-secondary-900 mb-6 leading-tight">
               {isEn ? 'Real Projects.' : 'Echte Projekte.'}
               <br />
               <span className="text-primary-700">
                 {isEn ? 'Real Results.' : 'Echte Ergebnisse.'}
               </span>
-            </h1>
+            </h2>
             <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
               {isEn
                 ? 'Every project tells a story of transformation. From concept to launch — always with measurable impact.'

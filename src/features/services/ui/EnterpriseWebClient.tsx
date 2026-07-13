@@ -59,17 +59,16 @@ export function EnterpriseWebClient() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
-            <span className="inline-block py-1 px-3 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs font-bold tracking-widest uppercase mb-6">
+            <h1 className="inline-block py-1 px-3 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs font-bold tracking-widest uppercase mb-6">
               {t('enterprise_web_page.hero.badge')}
-            </span>
-
-            <h1 className="font-display font-black text-6xl md:text-8xl lg:text-9xl tracking-tight leading-none mb-8 text-content-base text-balance">
+            </h1>
+            <h2 className="block font-display font-black text-6xl md:text-8xl lg:text-9xl tracking-tight leading-none mb-8 text-content-base text-balance">
               {t('enterprise_web_page.hero.title_prefix')}
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-sapphire to-blue-600">
                 {t('enterprise_web_page.hero.title_suffix')}
               </span>
-            </h1>
+            </h2>
 
             <p className="max-w-2xl mx-auto text-xl md:text-2xl text-slate-500 font-light leading-relaxed max-w-prose text-pretty mb-12">
               {t('enterprise_web_page.hero.description')}

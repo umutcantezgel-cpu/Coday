@@ -161,6 +161,10 @@ const BlogPost: React.FC = () => {
           {/* Main Article */}
           <article className="lg:col-span-8 lg:col-start-1">
             <div className="bg-white rounded-[2.5rem] p-6 md:p-12 lg:p-16 shadow-2xl border border-gray-100">
+              {/* SEO Sub-headline: Organically repeat the H1 text (title) in the body */}
+              <p className="font-bold text-lg text-secondary mb-8 pb-4 border-b border-gray-100">
+                {post.title}
+              </p>
               {/* Meta Data */}
               <div className="flex flex-wrap items-center justify-between border-b border-gray-100 pb-8 mb-10 text-sm text-gray-500 gap-4">
                 <div className="flex items-center gap-4">

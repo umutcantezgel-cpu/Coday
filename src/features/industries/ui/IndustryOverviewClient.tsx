@@ -38,12 +38,12 @@ export function IndustryOverviewClient() {
     <main className="bg-background-light min-h-dvh pt-24 pb-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 max-w-2xl mx-auto">
-          <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
+          <h1 className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
             {t('overview.label')}
-          </span>
-          <h1 className="text-4xl md:text-5xl font-bold font-display text-secondary mb-4">
-            {t('overview.title')}
           </h1>
+          <h2 className="block text-4xl md:text-5xl font-bold font-display text-secondary mb-4">
+            {t('overview.title')}
+          </h2>
           <p className="text-lg text-text-light">{t('overview.description')}</p>
         </div>
 

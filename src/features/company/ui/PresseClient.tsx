@@ -46,8 +46,8 @@ const Presse: React.FC = () => {
             transition={{ delay: 0.2 }}
             className="text-xl text-gray-600 max-w-2xl mx-auto"
           >
-            Erfahren Sie mehr über unsere Präsenz in der Presse und bei Events. Laden Sie unser
-            Press Kit für Ihre Berichterstattung herunter.
+            Erfahren Sie mehr über Coday in den Medien, unsere Präsenz in der Presse und bei Events.
+            Laden Sie unser Press Kit für Ihre Berichterstattung herunter.
           </m.p>
         </div>
 

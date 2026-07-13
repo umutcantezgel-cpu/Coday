@@ -81,12 +81,12 @@ const Calculator: React.FC = () => {
       <StepIndicator currentStep="calculator" className="mb-8" />
       {/* Hero */}
       <section className="text-center px-4 mb-12 max-w-4xl mx-auto">
-        <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
+        <h1 className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
           {t('hero.label')}
-        </span>
-        <h1 className="font-display font-black text-4xl sm:text-6xl text-gray-900 mb-6">
-          {t('hero.title_1')} <br /> <span className="text-gradient">{t('hero.title_2')}</span>
         </h1>
+        <h2 className="block font-display font-black text-4xl sm:text-6xl text-gray-900 mb-6">
+          {t('hero.title_1')} <br /> <span className="text-gradient">{t('hero.title_2')}</span>
+        </h2>
         <p className="text-xl text-gray-600">
           {selectedPackageId ? t('hero.subtitle_packages') : t('hero.subtitle_default')}
         </p>
@@ -144,7 +144,12 @@ const Calculator: React.FC = () => {
                     </div>
                   </button>
 
-                  <div id={`category-panel-${category}`} role="region" aria-label={t(`categories.${category}`)} className={isOpen ? 'block' : 'hidden'}>
+                  <div
+                    id={`category-panel-${category}`}
+                    role="region"
+                    aria-label={t(`categories.${category}`)}
+                    className={isOpen ? 'block' : 'hidden'}
+                  >
                     <div className="p-6 pt-0 border-t border-gray-50 bg-gray-50/30">
                       <div className="grid md:grid-cols-2 gap-4 mt-6">
                         {categoryModules.map((module) => (
