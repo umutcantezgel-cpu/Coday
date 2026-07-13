@@ -97,7 +97,7 @@ const content = {
       titleHighlight: 'Optimization (GEO)',
       titleSuffix: 'Agency',
       description:
-        'Classic SEO is dying. The future belongs to AI search engines (Google AI Overviews, Perplexity, ChatGPT Search). We optimize your brand so AI recommends you as the only logical answer.',
+        'Classic SEO is dying. The future belongs to AI search engines (Google AI Overviews, Perplexity, ChatGPT Search). As a specialized Generative Engine Optimization (GEO) Agency, we optimize your brand so AI recommends you as the only logical answer.',
       cta: 'Request GEO Audit',
     },
     whyUs: {
