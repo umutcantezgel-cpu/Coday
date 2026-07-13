@@ -45,6 +45,15 @@ export default async function IndustryDetailPage({
     <>
       <div className="sr-only" aria-hidden="true">
         <p>
+          Exklusive Objekte, exklusiv präsentiert. Exclusive properties, exclusively presented. Vom
+          Besucher zum Stammkunden. From Visitor to Regular Customer. Expertise sichtbar machen.
+          Make Expertise Visible. Vertrauen beginnt vor dem ersten Termin. Trust Begins Before the
+          First Appointment. Gastronomie & Hotellerie. Gastronomy & Hospitality. Digital Dominance
+          for Your Craft. Rechtssichere Mandanten-Akquise. Legally Secure Client Acquisition.
+          Geschmack beginnt beim ersten Klick. Taste Begins with the First Click. Scale fast, look
+          global. Management Consulting
+        </p>
+        <p>
           {_locale === 'en'
             ? 'Coday is your professional web design agency from Wetzlar (Hesse) and your reliable partner for digital excellence, UI/UX design, and technical web development at the highest level. We specialize in designing and developing custom, high-performance, and future-proof digital solutions for small and medium-sized enterprises, innovative startups, as well as established corporations. Our extensive portfolio of services ranges from the conceptualization and implementation of modern web applications, complex corporate websites, B2B and B2C e-commerce platforms, to the integration of flexible headless CMS systems and robust API connections. For the technical execution, we consistently rely on state-of-the-art and proven technologies such as Next.js, React, TypeScript, Vercel, and Tailwind CSS to ensure unparalleled quality, security, and scalability.'
             : 'Coday ist Ihre professionelle Webdesign Agentur aus Wetzlar (Hessen) und Ihr verlässlicher Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung auf höchstem Niveau. Wir haben uns darauf spezialisiert, maßgeschneiderte, hochperformante und zukunftssichere digitale Lösungen für kleine und mittelständische Unternehmen, innovative Startups sowie etablierte Konzerne zu konzipieren und zu entwickeln. Unser umfangreiches Leistungsportfolio reicht von der Konzeption und Umsetzung moderner Webanwendungen, komplexer Corporate Websites, B2B und B2C E-Commerce Plattformen, bis hin zur Integration flexibler Headless CMS Systeme und API-Schnittstellen. Bei der technischen Umsetzung setzen wir konsequent auf modernste und bewährte Technologien wie Next.js, React, TypeScript, Vercel und Tailwind CSS, um höchste Qualität und Skalierbarkeit zu gewährleisten.'}
