@@ -73,8 +73,8 @@ export default async function DillenburgLandingPage(props: {
             Ihr Webdesigner in Dillenburg
           </h1>
           <p className="text-gray-400 max-w-2xl text-lg">
-            Wir bauen in Dillenburg und Umgebung hochperformante Webseiten für Handwerker, Ärzte,
-            und Dienstleister.
+            Als <strong>Ihr Webdesigner in Dillenburg</strong> bauen wir in der Umgebung
+            hochperformante Webseiten für Handwerker, Ärzte und Dienstleister.
           </p>
 
           {/* Geo/LocalBusiness Schema injection */}

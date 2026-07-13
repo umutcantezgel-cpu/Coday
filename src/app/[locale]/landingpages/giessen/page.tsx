@@ -71,8 +71,8 @@ export default async function GiessenLandingPage(props: { params: Promise<{ loca
             Ihr Webdesigner in Gießen
           </h1>
           <p className="text-gray-400 max-w-2xl text-lg">
-            Wir bauen in Gießen und Umgebung hochperformante Webseiten für Handwerker, Ärzte, und
-            Dienstleister.
+            Als <strong>Ihr Webdesigner in Gießen</strong> bauen wir in der Umgebung hochperformante
+            Webseiten für Handwerker, Ärzte und Dienstleister.
           </p>
 
           {/* Geo/LocalBusiness Schema injection */}

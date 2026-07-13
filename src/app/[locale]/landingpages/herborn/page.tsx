@@ -71,8 +71,8 @@ export default async function HerbornLandingPage(props: { params: Promise<{ loca
             Ihr Webdesigner in Herborn
           </h1>
           <p className="text-gray-400 max-w-2xl text-lg">
-            Wir bauen in Herborn und Umgebung hochperformante Webseiten für Handwerker, Ärzte, und
-            Dienstleister.
+            Als <strong>Ihr Webdesigner in Herborn</strong> bauen wir in der Umgebung
+            hochperformante Webseiten für Handwerker, Ärzte und Dienstleister.
           </p>
 
           {/* Geo/LocalBusiness Schema injection */}
