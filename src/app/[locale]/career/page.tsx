@@ -5,7 +5,7 @@ import { CareerOverviewClient } from '@/features/career/ui/CareerOverviewClient'
 
 export async function generateMetadata(): Promise<Metadata> {
   return generatePageMetadata({
-    title: 'Karriere bei Coday',
+    title: 'Karriere bei Coday | Webdesign Agentur Jobs Wetzlar',
     description: 'Karrieremöglichkeiten bei Coday.',
     path: '/de/career',
     type: 'default',
