@@ -36,8 +36,16 @@ export default async function DesignSystemsPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
+  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _seoTitle =
+    _locale === 'en'
+      ? 'Design Systems Wetzlar | Consistent Components | Coday'
+      : 'Design Systems Wetzlar | Konsistente Komponenten | Coday';
   return (
     <>
+      <span className="sr-only" aria-hidden="true">
+        {_seoTitle}
+      </span>
       <script
         id="schema-design-systems"
         type="application/ld+json"

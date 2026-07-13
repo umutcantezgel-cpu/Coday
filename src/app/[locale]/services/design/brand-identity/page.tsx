@@ -36,8 +36,16 @@ export default async function BrandIdentityPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
+  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _seoTitle =
+    _locale === 'en'
+      ? 'Corporate Design & Branding Agency | Wetzlar | Coday'
+      : 'Corporate Design & Branding Agentur | Wetzlar | Coday';
   return (
     <>
+      <span className="sr-only" aria-hidden="true">
+        {_seoTitle}
+      </span>
       <script
         id="schema-brand-identity"
         type="application/ld+json"

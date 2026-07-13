@@ -35,8 +35,17 @@ export default async function DienstleistungPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _seoTitle =
+    _locale === 'en'
+      ? 'Web Design for Service Providers | Wetzlar Hesse | Coday'
+      : 'Webdesign für Dienstleister | Wetzlar & Hessen | Coday';
   return (
     <>
+      <span className="sr-only" aria-hidden="true">
+        {_seoTitle}
+      </span>
       <script
         id="schema-branchen-dienstleistung"
         type="application/ld+json"

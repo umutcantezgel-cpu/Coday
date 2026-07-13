@@ -36,8 +36,16 @@ export default async function EnterpriseWebPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
+  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _seoTitle =
+    _locale === 'en'
+      ? 'Enterprise Web Development Wetzlar | Scalable | Coday'
+      : 'Enterprise Webentwicklung Wetzlar | Skalierbar | Coday';
   return (
     <>
+      <span className="sr-only" aria-hidden="true">
+        {_seoTitle}
+      </span>
       <script
         id="schema-enterprise-web"
         type="application/ld+json"

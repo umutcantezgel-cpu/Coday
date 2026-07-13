@@ -32,8 +32,16 @@ export default async function UiUxPage({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   setRequestLocale(locale);
 
+  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _seoTitle =
+    _locale === 'en'
+      ? 'UI/UX Design Agency Wetzlar | User-Friendly | Coday'
+      : 'UI/UX Design Agentur Wetzlar | Nutzerfreundlich | Coday';
   return (
     <>
+      <span className="sr-only" aria-hidden="true">
+        {_seoTitle}
+      </span>
       <script
         id="schema-ui-ux"
         type="application/ld+json"

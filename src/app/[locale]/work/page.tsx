@@ -45,8 +45,16 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
     description: p.content[lang].subtitle,
   }));
 
+  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _seoTitle =
+    _locale === 'en'
+      ? 'Web Design References Wetzlar | Our Projects | Coday'
+      : 'Webdesign Referenzen Wetzlar | Unsere Projekte | Coday';
   return (
     <>
+      <span className="sr-only" aria-hidden="true">
+        {_seoTitle}
+      </span>
       <script
         id="schema-portfolio"
         type="application/ld+json"

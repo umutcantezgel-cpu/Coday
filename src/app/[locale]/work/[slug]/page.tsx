@@ -36,8 +36,13 @@ export default async function Page(props: { params: Promise<{ locale: string; sl
   const project = workData[params.slug];
   const content = params.locale === 'en' ? project.content.en : project.content.de;
 
+  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _seoTitle = _locale === 'en' ? 'Coday Web-Agentur' : 'Coday Web-Agentur';
   return (
     <>
+      <span className="sr-only" aria-hidden="true">
+        {_seoTitle}
+      </span>
       <SeoHead
         title={`${content.title} – Case Study | Coday`}
         description={`${content.title}: ${content.subtitle}. ${content.challenge.description}`}

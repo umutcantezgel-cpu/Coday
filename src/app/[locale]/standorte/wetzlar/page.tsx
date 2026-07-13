@@ -88,8 +88,16 @@ export default async function WetzlarLocationPage({
     '@graph': [getOrganizationSchema(), locationSchema],
   };
 
+  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _seoTitle =
+    _locale === 'en'
+      ? 'Webdesign Agentur Wetzlar | Top Webseiten | Coday'
+      : 'Webdesign Agentur Wetzlar | Top Webseiten | Coday';
   return (
     <>
+      <span className="sr-only" aria-hidden="true">
+        {_seoTitle}
+      </span>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

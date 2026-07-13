@@ -32,8 +32,16 @@ export default async function ConsultingPage({ params }: { params: Promise<{ loc
   const { locale } = await params;
   setRequestLocale(locale);
 
+  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _seoTitle =
+    _locale === 'en'
+      ? 'Digital Consulting & Web Strategy | Wetzlar | Coday'
+      : 'Digitale Beratung & Webstrategie | Wetzlar | Coday';
   return (
     <>
+      <span className="sr-only" aria-hidden="true">
+        {_seoTitle}
+      </span>
       <script
         id="schema-consulting"
         type="application/ld+json"

@@ -35,8 +35,17 @@ export default async function PublicSectorPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _seoTitle =
+    _locale === 'en'
+      ? 'Web Design for the Public Sector | Hesse Region | Coday'
+      : 'Webdesign für den Öffentlichen Sektor | Hessen | Coday';
   return (
     <>
+      <span className="sr-only" aria-hidden="true">
+        {_seoTitle}
+      </span>
       <script
         id="schema-branchen-public-sector"
         type="application/ld+json"

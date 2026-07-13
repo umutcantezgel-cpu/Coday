@@ -32,8 +32,16 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   const params = await props.params;
   setRequestLocale(params.locale);
 
+  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _seoTitle =
+    _locale === 'en'
+      ? 'Project Details | Web Design References Wetzlar | Coday'
+      : 'Projektdetails | Webdesign Referenzen Wetzlar | Coday';
   return (
     <>
+      <span className="sr-only" aria-hidden="true">
+        {_seoTitle}
+      </span>
       <SeoHead
         title="Coday | projectdetail"
         description="Erfahren Sie mehr über projectdetail"

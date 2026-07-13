@@ -65,6 +65,7 @@ export const LocalSeoTemplate: React.FC<LocalSeoTemplateProps> = ({ content, cit
             <BlurText text={content.hero.subheadline} delay={50} animateBy="words" />
           </h2>
           <p className="text-xl text-secondary-800 font-medium leading-relaxed mb-10 max-w-2xl mx-auto">
+            <span className="sr-only">{content.hero.headline}</span>
             {content.hero.description}
           </p>
           <Link href="/contact">

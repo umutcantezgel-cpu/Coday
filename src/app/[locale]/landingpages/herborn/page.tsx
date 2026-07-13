@@ -56,8 +56,16 @@ export default async function HerbornLandingPage(props: { params: Promise<{ loca
 
   const cityData = getCityBySlug('herborn');
 
+  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _seoTitle =
+    _locale === 'en'
+      ? 'Web Design Herborn | Local Professional Websites | Coday'
+      : 'Webdesign Herborn | Webseiten vom lokalen Profi | Coday';
   return (
     <>
+      <span className="sr-only" aria-hidden="true">
+        {_seoTitle}
+      </span>
       <SeoHead
         title={`Webdesign Agentur in Herborn | Coday`}
         description={`Ihre Webagentur für Herborn. Hochperformante Webseiten, die messbar neue Kunden bringen. Regional, persönlich und zum Festpreis.`}

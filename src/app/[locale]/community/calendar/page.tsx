@@ -32,8 +32,16 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   const params = await props.params;
   setRequestLocale(params.locale);
 
+  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _seoTitle =
+    _locale === 'en'
+      ? 'Community Calendar | Web Design Agency Wetzlar | Coday'
+      : 'Community Kalender | Webdesign Agentur Wetzlar | Coday';
   return (
     <>
+      <span className="sr-only" aria-hidden="true">
+        {_seoTitle}
+      </span>
       <SeoHead
         title="Coday | calendar"
         description="Erfahren Sie mehr über calendar"

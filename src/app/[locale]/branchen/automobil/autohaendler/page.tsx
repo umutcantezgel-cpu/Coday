@@ -72,8 +72,16 @@ export default async function SubIndustryPage({ params }: { params: Promise<{ lo
     );
   }
 
+  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _seoTitle =
+    _locale === 'en'
+      ? 'Webdesign für Autohändler | Agentur in Wetzlar | Coday'
+      : 'Webdesign für Autohändler | Agentur in Wetzlar | Coday';
   return (
     <>
+      <span className="sr-only" aria-hidden="true">
+        {_seoTitle}
+      </span>
       <script
         id="schema-branchen-autohaendler"
         type="application/ld+json"

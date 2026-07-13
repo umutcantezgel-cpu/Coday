@@ -32,8 +32,16 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   const params = await props.params;
   setRequestLocale(params.locale);
 
+  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _seoTitle =
+    _locale === 'en'
+      ? 'FAQ | Web Design Agency Wetzlar Central Hesse | Coday'
+      : 'Häufige Fragen (FAQ) | Webdesign Agentur Wetzlar | Coday';
   return (
     <>
+      <span className="sr-only" aria-hidden="true">
+        {_seoTitle}
+      </span>
       <SeoHead title="Coday | faq" description="Erfahren Sie mehr über faq" pageType="default" />
       <ClientComponent />
     </>

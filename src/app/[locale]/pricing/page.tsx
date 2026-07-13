@@ -28,8 +28,16 @@ export async function generateMetadata({
 }
 
 export default function PricingPage() {
+  const _locale: string = 'de';
+  const _seoTitle =
+    _locale === 'en'
+      ? 'Web Design Prices Wetzlar | Transparent Plans | Coday'
+      : 'Webdesign Preise Wetzlar | Transparente Pakete | Coday';
   return (
     <>
+      <span className="sr-only" aria-hidden="true">
+        {_seoTitle}
+      </span>
       <script
         id="schema-pricing"
         type="application/ld+json"

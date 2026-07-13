@@ -56,8 +56,16 @@ export default async function GiessenLandingPage(props: { params: Promise<{ loca
 
   const cityData = getCityBySlug('giessen');
 
+  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _seoTitle =
+    _locale === 'en'
+      ? 'Web Design Giessen | Websites That Bring Clients | Coday'
+      : 'Webdesign Gießen | Webseiten die Kunden bringen | Coday';
   return (
     <>
+      <span className="sr-only" aria-hidden="true">
+        {_seoTitle}
+      </span>
       <SeoHead
         title={`Webdesign Agentur in Gießen | Coday`}
         description={`Ihre Webagentur für Gießen. Hochperformante Webseiten, die messbar neue Kunden bringen. Regional, persönlich und zum Festpreis.`}

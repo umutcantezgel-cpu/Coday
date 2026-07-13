@@ -72,8 +72,16 @@ export default async function SubIndustryPage({ params }: { params: Promise<{ lo
     );
   }
 
+  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _seoTitle =
+    _locale === 'en'
+      ? 'Webdesign für KFZ-Werkstätten | Raum Wetzlar | Coday'
+      : 'Webdesign für KFZ-Werkstätten | Raum Wetzlar | Coday';
   return (
     <>
+      <span className="sr-only" aria-hidden="true">
+        {_seoTitle}
+      </span>
       <script
         id="schema-branchen-kfz-werkstatt"
         type="application/ld+json"

@@ -74,8 +74,16 @@ export default async function SubIndustryPage({ params }: { params: Promise<{ lo
 
   const cityData = getCityBySlug('giessen');
 
+  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _seoTitle =
+    _locale === 'en'
+      ? 'Webdesign für Ärzte in Gießen | Praxis Homepage | Coday'
+      : 'Webdesign für Ärzte in Gießen | Praxis Homepage | Coday';
   return (
     <>
+      <span className="sr-only" aria-hidden="true">
+        {_seoTitle}
+      </span>
       <script
         id="schema-branchen-arzt-giessen"
         type="application/ld+json"

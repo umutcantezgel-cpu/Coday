@@ -27,8 +27,13 @@ export default function CareerPage() {
     ],
   };
 
+  const _locale: string = 'de';
+  const _seoTitle = _locale === 'en' ? 'Karriere bei Coday' : 'Karriere bei Coday';
   return (
     <>
+      <span className="sr-only" aria-hidden="true">
+        {_seoTitle}
+      </span>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

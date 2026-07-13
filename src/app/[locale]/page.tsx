@@ -55,8 +55,16 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const orgSchema = getOrganizationSchema();
   const websiteSchema = getWebSiteSchema();
 
+  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _seoTitle =
+    _locale === 'en'
+      ? 'Web Design Agency in Wetzlar & Central Hesse | Coday'
+      : 'Webdesign Agentur in Wetzlar & Mittelhessen | Coday';
   return (
     <>
+      <span className="sr-only" aria-hidden="true">
+        {_seoTitle}
+      </span>
       <script
         id="schema-local-service"
         type="application/ld+json"

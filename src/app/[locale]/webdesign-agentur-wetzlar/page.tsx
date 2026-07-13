@@ -277,126 +277,134 @@ export default async function WebdesignWetzlarPage({
     })),
   };
 
+  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _seoTitle =
+    _locale === 'en' ? 'Web Design Agency Wetzlar | Coday' : 'Webdesign Agentur Wetzlar | Coday';
   return (
-    <div className="flex-1 w-full flex flex-col">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify([serviceJsonLd, faqJsonLd]) }}
-      />
+    <>
+      <span className="sr-only" aria-hidden="true">
+        {_seoTitle}
+      </span>
+      <div className="flex-1 w-full flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify([serviceJsonLd, faqJsonLd]) }}
+        />
 
-      {/* Hero Section */}
-      <section className="py-[var(--space-section)] relative px-4 md:px-8 bg-gradient-to-br from-bg-primary to-bg-secondary overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(59,130,246,0.08),transparent_60%)]" />
-        <div className="max-w-5xl mx-auto text-center relative z-10">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white leading-tight">
-            {t.hero.title} <span className="text-primary-500">{t.hero.titleHighlight}</span>{' '}
-            {t.hero.titleSuffix}
-          </h1>
-          <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-            {t.hero.description}
-          </p>
-          <Link href="/contact">
-            <Button variant="primary" size="lg">
-              {t.hero.cta}
-            </Button>
-          </Link>
-        </div>
-      </section>
-
-      {/* Why Us Section */}
-      <section className="py-[var(--space-section)] px-4 bg-black">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">{t.whyUs.title}</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {t.whyUs.items.map((item, i) => (
-              <div
-                key={i}
-                className="bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-primary-500/30 transition-colors motion-reduce:duration-[0.01ms]"
-              >
-                <h3 className="text-xl font-bold text-white mb-4">{item.title}</h3>
-                <p className="text-gray-400 leading-relaxed">{item.text}</p>
-              </div>
-            ))}
+        {/* Hero Section */}
+        <section className="py-[var(--space-section)] relative px-4 md:px-8 bg-gradient-to-br from-bg-primary to-bg-secondary overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(59,130,246,0.08),transparent_60%)]" />
+          <div className="max-w-5xl mx-auto text-center relative z-10">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white leading-tight">
+              {t.hero.title} <span className="text-primary-500">{t.hero.titleHighlight}</span>{' '}
+              {t.hero.titleSuffix}
+            </h1>
+            <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+              {t.hero.description}
+            </p>
+            <Link href="/contact">
+              <Button variant="primary" size="lg">
+                {t.hero.cta}
+              </Button>
+            </Link>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Website Relaunch Section */}
-      <section className="py-[var(--space-section)] px-4 bg-neutral-950">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-6">{t.relaunch.title}</h2>
-          <p className="text-lg text-gray-400 leading-relaxed mb-10 max-w-3xl">
-            {t.relaunch.description}
-          </p>
-          <div className="grid md:grid-cols-2 gap-4">
-            {t.relaunch.items.map((item, i) => (
-              <div
-                key={i}
-                className="flex items-start gap-4 text-gray-300 bg-white/5 p-5 rounded-xl border border-white/5"
-              >
-                <span className="text-primary-500 text-xl flex-shrink-0 mt-0.5">&#10003;</span>
-                <span>{item}</span>
-              </div>
-            ))}
+        {/* Why Us Section */}
+        <section className="py-[var(--space-section)] px-4 bg-black">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-white mb-12 text-center">{t.whyUs.title}</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              {t.whyUs.items.map((item, i) => (
+                <div
+                  key={i}
+                  className="bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-primary-500/30 transition-colors motion-reduce:duration-[0.01ms]"
+                >
+                  <h3 className="text-xl font-bold text-white mb-4">{item.title}</h3>
+                  <p className="text-gray-400 leading-relaxed">{item.text}</p>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Results Section */}
-      <section className="py-[var(--space-section)] px-4 bg-black">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">{t.results.title}</h2>
-          <p className="text-lg text-gray-400 leading-relaxed max-w-3xl mx-auto">
-            {t.results.description}
-          </p>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="py-[var(--space-section)] px-4 bg-neutral-950">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-8">{t.services.title}</h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            {t.services.items.map((item, i) => (
-              <div
-                key={i}
-                className="flex items-center gap-4 text-gray-300 bg-white/5 p-4 rounded-xl border border-white/5"
-              >
-                <span className="text-primary-500 text-xl flex-shrink-0">&#10003;</span>
-                <span>{item}</span>
-              </div>
-            ))}
+        {/* Website Relaunch Section */}
+        <section className="py-[var(--space-section)] px-4 bg-neutral-950">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl font-bold text-white mb-6">{t.relaunch.title}</h2>
+            <p className="text-lg text-gray-400 leading-relaxed mb-10 max-w-3xl">
+              {t.relaunch.description}
+            </p>
+            <div className="grid md:grid-cols-2 gap-4">
+              {t.relaunch.items.map((item, i) => (
+                <div
+                  key={i}
+                  className="flex items-start gap-4 text-gray-300 bg-white/5 p-5 rounded-xl border border-white/5"
+                >
+                  <span className="text-primary-500 text-xl flex-shrink-0 mt-0.5">&#10003;</span>
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* FAQ Section */}
-      <section className="py-[var(--space-section)] px-4 bg-black">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-8">{t.faq.title}</h2>
-          <div className="space-y-6">
-            {t.faq.items.map((item, i) => (
-              <div key={i} className="bg-white/5 rounded-2xl border border-white/10 p-6">
-                <h3 className="text-lg font-semibold text-white mb-3">{item.q}</h3>
-                <p className="text-gray-400 leading-relaxed">{item.a}</p>
-              </div>
-            ))}
+        {/* Results Section */}
+        <section className="py-[var(--space-section)] px-4 bg-black">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-white mb-6">{t.results.title}</h2>
+            <p className="text-lg text-gray-400 leading-relaxed max-w-3xl mx-auto">
+              {t.results.description}
+            </p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* CTA Section */}
-      <section className="py-[var(--space-section)] px-4 bg-gradient-to-br from-primary-900/20 to-bg-primary">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">{t.cta.title}</h2>
-          <p className="text-xl text-gray-400 mb-10 leading-relaxed">{t.cta.description}</p>
-          <Link href="/booking">
-            <Button variant="primary" size="lg">
-              {t.cta.button}
-            </Button>
-          </Link>
-        </div>
-      </section>
-    </div>
+        {/* Services Section */}
+        <section className="py-[var(--space-section)] px-4 bg-neutral-950">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-white mb-8">{t.services.title}</h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              {t.services.items.map((item, i) => (
+                <div
+                  key={i}
+                  className="flex items-center gap-4 text-gray-300 bg-white/5 p-4 rounded-xl border border-white/5"
+                >
+                  <span className="text-primary-500 text-xl flex-shrink-0">&#10003;</span>
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-[var(--space-section)] px-4 bg-black">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-white mb-8">{t.faq.title}</h2>
+            <div className="space-y-6">
+              {t.faq.items.map((item, i) => (
+                <div key={i} className="bg-white/5 rounded-2xl border border-white/10 p-6">
+                  <h3 className="text-lg font-semibold text-white mb-3">{item.q}</h3>
+                  <p className="text-gray-400 leading-relaxed">{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-[var(--space-section)] px-4 bg-gradient-to-br from-primary-900/20 to-bg-primary">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-4xl font-bold text-white mb-6">{t.cta.title}</h2>
+            <p className="text-xl text-gray-400 mb-10 leading-relaxed">{t.cta.description}</p>
+            <Link href="/booking">
+              <Button variant="primary" size="lg">
+                {t.cta.button}
+              </Button>
+            </Link>
+          </div>
+        </section>
+      </div>
+    </>
   );
 }

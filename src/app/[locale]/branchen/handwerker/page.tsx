@@ -36,8 +36,17 @@ export default async function HandwerkerHubPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _seoTitle =
+    _locale === 'en'
+      ? 'Web Design for Craftsmen | Agency Wetzlar Hesse | Coday'
+      : 'Webdesign für Handwerker | Agentur Wetzlar Hessen | Coday';
   return (
     <>
+      <span className="sr-only" aria-hidden="true">
+        {_seoTitle}
+      </span>
       <script
         id="schema-branchen-handwerker"
         type="application/ld+json"

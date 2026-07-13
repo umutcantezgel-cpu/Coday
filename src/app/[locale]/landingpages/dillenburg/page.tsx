@@ -58,8 +58,16 @@ export default async function DillenburgLandingPage(props: {
 
   const cityData = getCityBySlug('dillenburg');
 
+  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _seoTitle =
+    _locale === 'en'
+      ? 'Web Design Dillenburg | Professional Websites | Coday'
+      : 'Webdesign Dillenburg | Webseiten vom Profi | Coday';
   return (
     <>
+      <span className="sr-only" aria-hidden="true">
+        {_seoTitle}
+      </span>
       <SeoHead
         title={`Webdesign Agentur in Dillenburg | Coday`}
         description={`Ihre Webagentur für Dillenburg. Hochperformante Webseiten, die messbar neue Kunden bringen. Regional, persönlich und zum Festpreis.`}

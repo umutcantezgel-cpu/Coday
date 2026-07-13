@@ -84,8 +84,14 @@ export default async function BlogPostPage({ params }: PageProps) {
       }
     : null;
 
+  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _seoTitle =
+    _locale === 'en' ? 'Blog Post Not Found | Coday' : 'Blog Post Not Found | Coday';
   return (
     <>
+      <span className="sr-only" aria-hidden="true">
+        {_seoTitle}
+      </span>
       {jsonLd && (
         <script
           type="application/ld+json"

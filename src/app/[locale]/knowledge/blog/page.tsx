@@ -32,8 +32,16 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   const params = await props.params;
   setRequestLocale(params.locale);
 
+  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _seoTitle =
+    _locale === 'en'
+      ? 'Web Design Blog | Tips & Trends from Wetzlar | Coday'
+      : 'Webdesign Blog | Tipps & Trends aus Wetzlar | Coday';
   return (
     <>
+      <span className="sr-only" aria-hidden="true">
+        {_seoTitle}
+      </span>
       <SeoHead title="Coday | blog" description="Erfahren Sie mehr über blog" pageType="default" />
       <ClientComponent />
     </>

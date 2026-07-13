@@ -32,8 +32,16 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   const params = await props.params;
   setRequestLocale(params.locale);
 
+  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _seoTitle =
+    _locale === 'en'
+      ? 'Web Design & SEO Services | Agency in Wetzlar | Coday'
+      : 'Webdesign & SEO Leistungen | Agentur in Wetzlar | Coday';
   return (
     <>
+      <span className="sr-only" aria-hidden="true">
+        {_seoTitle}
+      </span>
       <SeoHead
         title="Webseite erstellen lassen in Wetzlar & Mittelhessen | Coday"
         description="Wir erstellen Ihre Firmenwebseite in Wetzlar. Zuverlässig, schnell und sicher. Alle Leistungen aus einer Hand vom lokalen Webdesigner."

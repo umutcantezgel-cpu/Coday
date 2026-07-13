@@ -32,8 +32,16 @@ export default async function MigrationPage({ params }: { params: Promise<{ loca
   const { locale } = await params;
   setRequestLocale(locale);
 
+  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _seoTitle =
+    _locale === 'en'
+      ? 'Website Migration & Relaunch Wetzlar | Secure | Coday'
+      : 'Website Migration & Relaunch Wetzlar | Sicher | Coday';
   return (
     <>
+      <span className="sr-only" aria-hidden="true">
+        {_seoTitle}
+      </span>
       <script
         id="schema-migration"
         type="application/ld+json"

@@ -74,8 +74,16 @@ export default async function SubIndustryPage({ params }: { params: Promise<{ lo
 
   const cityData = getCityBySlug('wetzlar');
 
+  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _seoTitle =
+    _locale === 'en'
+      ? 'Webdesign für Handwerker in Wetzlar | Agentur | Coday'
+      : 'Webdesign für Handwerker in Wetzlar | Agentur | Coday';
   return (
     <>
+      <span className="sr-only" aria-hidden="true">
+        {_seoTitle}
+      </span>
       <script
         id="schema-branchen-handwerker-wetzlar"
         type="application/ld+json"

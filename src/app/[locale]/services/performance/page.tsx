@@ -32,8 +32,16 @@ export default async function PerformancePage({ params }: { params: Promise<{ lo
   const { locale } = await params;
   setRequestLocale(locale);
 
+  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _seoTitle =
+    _locale === 'en'
+      ? 'Website Speed Optimization Wetzlar | Core Web Vitals | Coday'
+      : 'Website Speed Optimierung Wetzlar | Core Web Vitals | Coday';
   return (
     <>
+      <span className="sr-only" aria-hidden="true">
+        {_seoTitle}
+      </span>
       <script
         id="schema-performance"
         type="application/ld+json"

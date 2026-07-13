@@ -56,8 +56,16 @@ export default async function MarburgLandingPage(props: { params: Promise<{ loca
 
   const cityData = getCityBySlug('marburg');
 
+  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _seoTitle =
+    _locale === 'en'
+      ? 'Web Design Marburg | Websites That Bring Clients | Coday'
+      : 'Webdesign Marburg | Webseiten die Kunden bringen | Coday';
   return (
     <>
+      <span className="sr-only" aria-hidden="true">
+        {_seoTitle}
+      </span>
       <SeoHead
         title={`Webdesign Agentur in Marburg | Coday`}
         description={`Ihre Webagentur für Marburg. Hochperformante Webseiten, die messbar neue Kunden bringen. Regional, persönlich und zum Festpreis.`}

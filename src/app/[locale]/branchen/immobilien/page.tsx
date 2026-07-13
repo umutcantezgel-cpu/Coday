@@ -31,8 +31,17 @@ export async function generateMetadata({
 export default async function ImmobilienPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _seoTitle =
+    _locale === 'en'
+      ? 'Web Design for Real Estate Agents | Wetzlar Hesse | Coday'
+      : 'Webdesign für Immobilienmakler | Wetzlar Hessen | Coday';
   return (
     <>
+      <span className="sr-only" aria-hidden="true">
+        {_seoTitle}
+      </span>
       <script
         id="schema-branchen-immobilien"
         type="application/ld+json"

@@ -32,8 +32,16 @@ export default async function WebDesignPage({ params }: { params: Promise<{ loca
   const { locale } = await params;
   setRequestLocale(locale);
 
+  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _seoTitle =
+    _locale === 'en'
+      ? 'Professional Web Design in Wetzlar & Hesse | Coday'
+      : 'Professionelles Webdesign in Wetzlar & Hessen | Coday';
   return (
     <>
+      <span className="sr-only" aria-hidden="true">
+        {_seoTitle}
+      </span>
       <script
         id="schema-web-design"
         type="application/ld+json"

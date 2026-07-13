@@ -31,8 +31,17 @@ export async function generateMetadata({
 export default async function RetailPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _seoTitle =
+    _locale === 'en'
+      ? 'Web Design for Retail & Shops | Wetzlar Hesse | Coday'
+      : 'Webdesign für Einzelhandel & Shops | Wetzlar | Coday';
   return (
     <>
+      <span className="sr-only" aria-hidden="true">
+        {_seoTitle}
+      </span>
       <script
         id="schema-branchen-retail"
         type="application/ld+json"

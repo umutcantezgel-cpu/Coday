@@ -32,8 +32,16 @@ export default async function WebAppsPage({ params }: { params: Promise<{ locale
   const { locale } = await params;
   setRequestLocale(locale);
 
+  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _seoTitle =
+    _locale === 'en'
+      ? 'Web App Development Wetzlar | Portals & Tools | Coday'
+      : 'Web-App Entwicklung Wetzlar | Portale & Tools | Coday';
   return (
     <>
+      <span className="sr-only" aria-hidden="true">
+        {_seoTitle}
+      </span>
       <script
         id="schema-web-apps"
         type="application/ld+json"

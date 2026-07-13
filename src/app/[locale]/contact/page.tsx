@@ -32,8 +32,16 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
   const resolvedParams = await params;
   setRequestLocale(resolvedParams.locale);
 
+  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _seoTitle =
+    _locale === 'en'
+      ? 'Contact Us | Web Design Agency Wetzlar Hesse | Coday'
+      : 'Kontakt | Webdesign Agentur Wetzlar Mittelhessen | Coday';
   return (
     <>
+      <span className="sr-only" aria-hidden="true">
+        {_seoTitle}
+      </span>
       <SeoHead
         title="Kontakt aufnehmen | Coday Webdesign Wetzlar"
         description="Sprechen Sie mit Coday aus Wetzlar, Hessen über Ihr nächstes Webprojekt. Wir entwickeln High-Performance Websites und Apps für Ihren digitalen Erfolg."

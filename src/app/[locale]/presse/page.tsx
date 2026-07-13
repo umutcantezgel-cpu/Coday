@@ -32,8 +32,16 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   const params = await props.params;
   setRequestLocale(params.locale);
 
+  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _seoTitle =
+    _locale === 'en'
+      ? 'Press & Media | Web Design Agency Wetzlar Hesse | Coday'
+      : 'Pressebereich & Medien | Webdesign Agentur Wetzlar | Coday';
   return (
     <>
+      <span className="sr-only" aria-hidden="true">
+        {_seoTitle}
+      </span>
       <SeoHead
         title="Coday | presse"
         description="Willkommen bei Coday. Entdecken Sie unsere Leistungen."
