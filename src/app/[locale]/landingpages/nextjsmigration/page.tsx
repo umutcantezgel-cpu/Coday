@@ -37,11 +37,21 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
     _locale === 'en'
       ? 'Next.js Migration Wetzlar | Website Upgrade Hesse | Coday'
       : 'Next.js Migration Wetzlar | Website Upgrade Hessen | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Migrate your website to Next.js with Coday from Wetzlar. Better speed, improved SEO and future-proof technology for businesses in Central Hesse.'
+      : 'Migration Ihrer Website auf Next.js mit Coday aus Wetzlar. Mehr Speed, besseres SEO und zukunftssichere Technik für Unternehmen in Mittelhessen.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <SeoHead
         title="Coday | nextjsmigration"
         description="Erfahren Sie mehr über nextjsmigration"

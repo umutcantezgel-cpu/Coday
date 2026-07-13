@@ -37,11 +37,21 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
     _locale === 'en'
       ? 'Book Free Consultation | Web Design Wetzlar | Coday'
       : 'Erstgespräch buchen | Webdesigner Wetzlar Hessen | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Book your free 30-minute consultation with Coday in Wetzlar. Web design, SEO and development for local businesses in Hesse. Personal and no obligation.'
+      : 'Buchen Sie Ihr kostenloses 30-Minuten-Beratungsgespräch mit Coday in Wetzlar. Webdesign, SEO und Entwicklung. Persönlich und unverbindlich anfragen.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <SeoHead
         title="Termin buchen | Coday"
         description="Kostenloses 30-minütiges Beratungsgespräch mit Coday aus Wetzlar buchen."

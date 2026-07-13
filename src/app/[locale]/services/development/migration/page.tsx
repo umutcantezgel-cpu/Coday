@@ -37,11 +37,21 @@ export default async function MigrationPage({ params }: { params: Promise<{ loca
     _locale === 'en'
       ? 'Website Migration & Relaunch Wetzlar | Secure | Coday'
       : 'Website Migration & Relaunch Wetzlar | Sicher | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Secure website migration and relaunch by Coday in Wetzlar. We transfer your content while optimizing SEO and performance. For businesses across Hesse.'
+      : 'Sichere Website Migration und Relaunch von Coday in Wetzlar. Wir übertragen Ihre Inhalte und optimieren dabei SEO und Performance. Für Firmen in Hessen.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <script
         id="schema-migration"
         type="application/ld+json"

@@ -38,11 +38,21 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
     _locale === 'en'
       ? 'Our Web Design Process | How We Work in Wetzlar | Coday'
       : 'Unser Webdesign Prozess | So arbeiten wir in Wetzlar | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'From first meeting to launch. Learn how Coday in Wetzlar delivers your web project. Personal, structured and always at the agreed fixed price point.'
+      : 'Vom Erstgespräch bis zum Launch. Erfahren Sie wie Coday in Wetzlar Ihr Webprojekt umsetzt. Persönlich, strukturiert und immer zum vereinbarten Festpreis.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <script
         id="schema-process"
         type="application/ld+json"

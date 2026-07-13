@@ -37,11 +37,21 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
     _locale === 'en'
       ? 'Web Design for Public Sector | Hesse Germany | Coday'
       : 'Webdesign für Öffentlichen Sektor | Hessen | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Accessible and GDPR-compliant websites for municipalities and authorities in Hesse. Secure web development by Coday from Wetzlar. Get in touch today.'
+      : 'Barrierefreie und DSGVO-konforme Webseiten für Kommunen und Behörden in Hessen. Sichere Webentwicklung von Coday aus Wetzlar. Jetzt Kontakt aufnehmen.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <SeoHead
         title="Coday | publicsector"
         description="Erfahren Sie mehr über publicsector"

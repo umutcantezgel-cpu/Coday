@@ -37,11 +37,21 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
     _locale === 'en'
       ? 'Partner Program for Agencies | Web Design Hesse | Coday'
       : 'Partnerprogramm für Agenturen | Webdesign Hessen | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Become a Coday partner in Hesse. Together we offer your clients premium web design from Wetzlar. Attractive commissions and fair conditions for agencies.'
+      : 'Werden Sie Coday Partner in Hessen. Gemeinsam bieten wir Ihren Kunden erstklassiges Webdesign aus Wetzlar. Attraktive Provisionen und faire Konditionen.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <SeoHead
         title="Coday | partnerschaft"
         description="Willkommen bei Coday. Entdecken Sie unsere Leistungen."

@@ -37,11 +37,21 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
     _locale === 'en'
       ? 'Press & Media | Web Design Agency Wetzlar Hesse | Coday'
       : 'Pressebereich & Medien | Webdesign Agentur Wetzlar | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Press materials and media information from Coday, your web design agency in Wetzlar. Logos, press releases and company info at a glance for journalists.'
+      : 'Pressematerial und Medieninformationen von Coday, Ihrer Webdesign Agentur in Wetzlar. Logos, Pressemitteilungen und Unternehmensinfos auf einen Blick.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <SeoHead
         title="Coday | presse"
         description="Willkommen bei Coday. Entdecken Sie unsere Leistungen."

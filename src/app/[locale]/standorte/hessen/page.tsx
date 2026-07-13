@@ -89,11 +89,21 @@ export default async function HessenLocationPage({
     _locale === 'en'
       ? 'Webdesign Agentur Hessen | Premium Webseiten | Coday'
       : 'Webdesign Agentur Hessen | Premium Webseiten | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Webagentur und Next.js Entwickler in Hessen.'
+      : 'Webagentur und Next.js Entwickler in Hessen.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

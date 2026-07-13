@@ -41,11 +41,21 @@ export default async function WebDevelopmentPage({
     _locale === 'en'
       ? 'Web Development Wetzlar | Next.js & React Agency | Coday'
       : 'Webentwicklung Wetzlar | Next.js & React Agentur | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Custom React and Next.js web applications from Wetzlar. High-performance architecture for businesses in Hesse. Discuss your project with us today.'
+      : 'Maßgeschneiderte React und Next.js Webanwendungen aus Wetzlar. High-Performance Architektur für Unternehmen in Hessen. Jetzt Ihr Projekt besprechen.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <script
         id="schema-web-development"
         type="application/ld+json"

@@ -37,11 +37,21 @@ export default async function SeoPage({ params }: { params: Promise<{ locale: st
     _locale === 'en'
       ? 'SEO Agency Wetzlar | Regional Search Optimization | Coday'
       : 'SEO Agentur Wetzlar | Regionale Suchoptimierung | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Regional SEO and GEO optimization by Coday in Wetzlar. More visibility for your business in Central Hesse on Google. Get your free consultation today.'
+      : 'Regionale SEO und GEO Optimierung von Coday in Wetzlar. Mehr Sichtbarkeit für Ihr Unternehmen in Mittelhessen bei Google. Jetzt kostenlos beraten lassen.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <script
         id="schema-seo"
         type="application/ld+json"

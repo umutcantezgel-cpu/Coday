@@ -34,11 +34,21 @@ export default async function DatenschutzPage({ params }: { params: Promise<{ lo
     _locale === 'en'
       ? 'Privacy Policy | Web Design Agency Wetzlar Hesse | Coday'
       : 'Datenschutzerklärung | Webdesign Agentur Wetzlar | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Privacy policy of Coday, your web design agency in Wetzlar. GDPR-compliant data processing and your rights. Full transparency and data security.'
+      : 'Datenschutzerklärung von Coday, Ihrer Webdesign Agentur in Wetzlar. DSGVO-konforme Datenverarbeitung und Ihre Rechte. Transparenz und Sicherheit.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <div className="max-w-3xl mx-auto px-4 py-20">
         <h1 className="text-3xl font-bold mb-8 text-secondary-900">
           {isEn ? 'Privacy Policy' : 'Datenschutzerklärung'}

@@ -37,11 +37,21 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
     _locale === 'en'
       ? 'Events | Web Design Community Wetzlar Hesse | Coday'
       : 'Events & Veranstaltungen | Webdesign Wetzlar | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Web design events and digital meetups by Coday in Wetzlar. Workshops, meetups and talks for the business community across Central Hesse region.'
+      : 'Webdesign Events und digitale Veranstaltungen von Coday in Wetzlar. Workshops, Meetups und Vorträge für die Business Community in Mittelhessen.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <SeoHead
         title="Coday | events"
         description="Erfahren Sie mehr über events"

@@ -37,11 +37,21 @@ export default async function UiUxPage({ params }: { params: Promise<{ locale: s
     _locale === 'en'
       ? 'UI/UX Design Agency Wetzlar | User-Friendly | Coday'
       : 'UI/UX Design Agentur Wetzlar | Nutzerfreundlich | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Professional UI/UX design by Coday in Wetzlar. User-centered interfaces for higher conversions and satisfied customers in Central Hesse. Get in touch.'
+      : 'Professionelles UI/UX Design von Coday in Wetzlar. Nutzerzentrierte Interfaces für höhere Konversion und zufriedene Kunden in Mittelhessen. Anfragen.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <script
         id="schema-ui-ux"
         type="application/ld+json"

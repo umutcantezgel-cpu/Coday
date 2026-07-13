@@ -280,11 +280,21 @@ export default async function WebdesignWetzlarPage({
   const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
   const _seoTitle =
     _locale === 'en' ? 'Web Design Agency Wetzlar | Coday' : 'Webdesign Agentur Wetzlar | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Your web design agency in Wetzlar. Premium websites with Next.js for businesses in Central Hesse. Fixed prices, full code ownership. Inquire now.'
+      : 'Ihre Webdesign Agentur in Wetzlar. Professionelle Websites und Website Relaunch für Unternehmen in Mittelhessen. Festpreise, voller Code gehört Ihnen.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <div className="flex-1 w-full flex flex-col">
         <script
           type="application/ld+json"

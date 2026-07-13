@@ -37,11 +37,21 @@ export default async function ConsultingPage({ params }: { params: Promise<{ loc
     _locale === 'en'
       ? 'Digital Consulting & Web Strategy | Wetzlar | Coday'
       : 'Digitale Beratung & Webstrategie | Wetzlar | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Strategic digital consulting by Coday in Wetzlar. We guide businesses in Central Hesse through their digital transformation. Book your appointment.'
+      : 'Strategische Digitalberatung von Coday in Wetzlar. Wir begleiten Unternehmen in Mittelhessen bei der digitalen Transformation. Jetzt Termin buchen.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <script
         id="schema-consulting"
         type="application/ld+json"

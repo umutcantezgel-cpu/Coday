@@ -37,11 +37,21 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
     _locale === 'en'
       ? 'Whitepapers & Studies | Web Design Agency Hesse | Coday'
       : 'Whitepapers & Studien | Webdesign Agentur Hessen | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Free whitepapers and studies on web design and digital marketing from Coday in Wetzlar. Expert knowledge for business owners across Central Hesse.'
+      : 'Kostenlose Whitepapers und Studien zu Webdesign und digitalem Marketing von Coday in Wetzlar. Expertenwissen für Unternehmer in Mittelhessen.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <SeoHead
         title="Coday | whitepapers"
         description="Erfahren Sie mehr über whitepapers"

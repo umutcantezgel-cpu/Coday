@@ -37,11 +37,21 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
     _locale === 'en'
       ? 'Web Design Academy | Knowledge for Central Hesse | Coday'
       : 'Webdesign Academy | Wissen für Mittelhessen | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Learn web design basics at Coday Academy Wetzlar. Courses and tutorials for entrepreneurs and freelancers in Hesse. Start building your skills today.'
+      : 'Lernen Sie Webdesign Grundlagen in der Coday Academy Wetzlar. Kurse und Tutorials für Unternehmer und Selbstständige in Hessen. Jetzt Wissen aufbauen.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <SeoHead
         title="Coday | academy"
         description="Erfahren Sie mehr über academy"

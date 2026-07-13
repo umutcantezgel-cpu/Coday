@@ -77,11 +77,21 @@ export default async function SubIndustryPage({ params }: { params: Promise<{ lo
     _locale === 'en'
       ? 'Webdesign für KFZ-Mechatroniker | Hessen | Coday'
       : 'Webdesign für KFZ-Mechatroniker | Hessen | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Digitale Dominanz für Ihre Branche.'
+      : 'Digitale Dominanz für Ihre Branche.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <script
         id="schema-branchen-kfz-mechatroniker"
         type="application/ld+json"

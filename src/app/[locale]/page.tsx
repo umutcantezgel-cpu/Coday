@@ -60,11 +60,21 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     _locale === 'en'
       ? 'Web Design Agency in Wetzlar & Central Hesse | Coday'
       : 'Webdesign Agentur in Wetzlar & Mittelhessen | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Your new website from a web designer in Wetzlar. Personal service, fixed price, online in 3 weeks. For craftsmen, doctors and businesses. Inquire now.'
+      : 'Ihre neue Webseite vom Webdesigner in Wetzlar. Persönlich, zum Festpreis, in 3 Wochen online. Für Handwerker, Ärzte und Gastronomen. Jetzt anfragen.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <script
         id="schema-local-service"
         type="application/ld+json"

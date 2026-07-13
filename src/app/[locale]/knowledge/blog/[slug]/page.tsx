@@ -87,11 +87,21 @@ export default async function BlogPostPage({ params }: PageProps) {
   const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
   const _seoTitle =
     _locale === 'en' ? 'Blog Post Not Found | Coday' : 'Blog Post Not Found | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'The requested blog post could not be found.'
+      : 'The requested blog post could not be found.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       {jsonLd && (
         <script
           type="application/ld+json"

@@ -37,11 +37,21 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
     _locale === 'en'
       ? 'FAQ | Web Design Agency Wetzlar Central Hesse | Coday'
       : 'Häufige Fragen (FAQ) | Webdesign Agentur Wetzlar | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Answers to frequently asked questions about web design, pricing and process at Coday in Wetzlar. Everything business owners in Hesse need to know.'
+      : 'Antworten auf häufige Fragen zu Webdesign, Preisen und Ablauf bei Coday in Wetzlar. Alles was Unternehmer in Mittelhessen wissen müssen. Jetzt lesen.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <SeoHead title="Coday | faq" description="Erfahren Sie mehr über faq" pageType="default" />
       <ClientComponent />
     </>

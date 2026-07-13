@@ -61,11 +61,21 @@ export default async function HerbornLandingPage(props: { params: Promise<{ loca
     _locale === 'en'
       ? 'Web Design Herborn | Local Professional Websites | Coday'
       : 'Webdesign Herborn | Webseiten vom lokalen Profi | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Your web agency for Herborn and the Lahn-Dill district. High-performance websites that bring new clients. Personal service at a fixed price.'
+      : 'Ihre Webagentur für Herborn und den Lahn-Dill-Kreis. Hochperformante Webseiten die messbar neue Kunden bringen. Persönlich und zum Festpreis. Anfragen.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <SeoHead
         title={`Webdesign Agentur in Herborn | Coday`}
         description={`Ihre Webagentur für Herborn. Hochperformante Webseiten, die messbar neue Kunden bringen. Regional, persönlich und zum Festpreis.`}

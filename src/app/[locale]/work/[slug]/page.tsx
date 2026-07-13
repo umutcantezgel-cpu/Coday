@@ -38,11 +38,19 @@ export default async function Page(props: { params: Promise<{ locale: string; sl
 
   const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
   const _seoTitle = _locale === 'en' ? 'Coday Web-Agentur' : 'Coday Web-Agentur';
+  const _seoDesc =
+    _locale === 'en' ? 'Premium Webentwicklung & Design' : 'Premium Webentwicklung & Design';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <SeoHead
         title={`${content.title} – Case Study | Coday`}
         description={`${content.title}: ${content.subtitle}. ${content.challenge.description}`}

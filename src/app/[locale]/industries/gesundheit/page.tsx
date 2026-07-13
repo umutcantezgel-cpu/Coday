@@ -37,11 +37,21 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
     _locale === 'en'
       ? 'Web Design for Doctors & Practices | Wetzlar Area | Coday'
       : 'Webdesign für Ärzte & Praxen | Raum Wetzlar | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Professional practice websites for doctors in Wetzlar and Hesse. Patient acquisition through modern web design and local search optimization. Inquire.'
+      : 'Professionelle Praxis-Webseiten für Ärzte in Wetzlar und Hessen. Patientengewinnung durch modernes Webdesign und lokale Suchoptimierung. Jetzt anfragen.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <SeoHead
         title="Coday | gesundheit"
         description="Erfahren Sie mehr über gesundheit"

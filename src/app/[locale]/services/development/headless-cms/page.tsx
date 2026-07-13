@@ -37,11 +37,21 @@ export default async function HeadlessCmsPage({ params }: { params: Promise<{ lo
     _locale === 'en'
       ? 'Headless CMS Development Wetzlar | Flexible | Coday'
       : 'Headless CMS Entwicklung Wetzlar | Flexibel | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Modern headless CMS solutions by Coday in Wetzlar. Flexible content management with Sanity, Strapi or Contentful for your business in Hesse region.'
+      : 'Moderne Headless CMS Lösungen von Coday in Wetzlar. Flexible Content-Verwaltung mit Sanity, Strapi oder Contentful für Ihr Unternehmen in Hessen.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <script
         id="schema-headless-cms"
         type="application/ld+json"

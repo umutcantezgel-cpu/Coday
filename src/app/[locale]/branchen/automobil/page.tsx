@@ -42,11 +42,21 @@ export default async function AutomobilHubPage({
     _locale === 'en'
       ? 'Web Design for the Automotive Industry | Wetzlar | Coday'
       : 'Webdesign für die Automobilbranche | Wetzlar | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Websites and digital solutions for car dealerships, workshops and automotive businesses in Wetzlar and Hesse. Premium web design by Coday. Get in touch.'
+      : 'Websites und digitale Lösungen für Autohäuser, Werkstätten und KFZ-Betriebe in Wetzlar und Hessen. Premium Webdesign von Coday. Jetzt Termin buchen.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <script
         id="schema-branchen-automobil"
         type="application/ld+json"

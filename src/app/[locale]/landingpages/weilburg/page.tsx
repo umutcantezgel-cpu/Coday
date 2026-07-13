@@ -61,11 +61,21 @@ export default async function WeilburgLandingPage(props: { params: Promise<{ loc
     _locale === 'en'
       ? 'Web Design Weilburg | Local Professional Websites | Coday'
       : 'Webdesign Weilburg | Webseiten vom lokalen Profi | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Your web agency for Weilburg and surrounding area. High-performance websites that bring new clients. Personal service at a guaranteed fixed price.'
+      : 'Ihre Webagentur für Weilburg und Umgebung. Hochperformante Webseiten die messbar neue Kunden bringen. Persönlich und zum garantierten Festpreis. Anfragen.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <SeoHead
         title={`Webdesign Agentur in Weilburg | Coday`}
         description={`Ihre Webagentur für Weilburg. Hochperformante Webseiten, die messbar neue Kunden bringen. Regional, persönlich und zum Festpreis.`}

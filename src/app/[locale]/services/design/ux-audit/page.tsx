@@ -37,11 +37,21 @@ export default async function UxAuditPage({ params }: { params: Promise<{ locale
     _locale === 'en'
       ? 'UX Audit & Usability Review Wetzlar | Analysis | Coday'
       : 'UX Audit & Usability Check Wetzlar | Optimierung | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Professional UX audit by Coday in Wetzlar. We analyze your website for usability and conversion potential. For businesses across Hesse. Get started.'
+      : 'Professioneller UX Audit von Coday in Wetzlar. Wir analysieren Ihre Website auf Nutzerfreundlichkeit und Konversionspotenzial. Für Firmen in Hessen.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <script
         id="schema-ux-audit"
         type="application/ld+json"

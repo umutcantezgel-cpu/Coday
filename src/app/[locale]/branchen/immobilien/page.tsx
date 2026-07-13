@@ -37,11 +37,21 @@ export default async function ImmobilienPage({ params }: { params: Promise<{ loc
     _locale === 'en'
       ? 'Web Design for Real Estate Agents | Wetzlar Hesse | Coday'
       : 'Webdesign für Immobilienmakler | Wetzlar Hessen | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Premium websites for real estate agents in Wetzlar and Hesse. Property listings, search features and lead generation through modern design. Inquire.'
+      : 'Hochwertige Webseiten für Immobilienmakler in Wetzlar und Hessen. Exposés, Objektsuche und Lead-Generierung durch modernes Webdesign. Jetzt anfragen.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <script
         id="schema-branchen-immobilien"
         type="application/ld+json"

@@ -50,11 +50,21 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
     _locale === 'en'
       ? 'Web Design References Wetzlar | Our Projects | Coday'
       : 'Webdesign Referenzen Wetzlar | Unsere Projekte | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Real client projects by Coday in Wetzlar. Batherm, Schluessel Schmiede and more references from Central Hesse. See for yourself the quality of our work.'
+      : 'Echte Kundenprojekte von Coday in Wetzlar. Batherm, Schlüssel Schmiede und weitere Referenzen aus Mittelhessen. Überzeugen Sie sich selbst von unserer Arbeit.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <script
         id="schema-portfolio"
         type="application/ld+json"

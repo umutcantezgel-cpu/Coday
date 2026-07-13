@@ -41,11 +41,21 @@ export default async function BrandIdentityPage({
     _locale === 'en'
       ? 'Corporate Design & Branding Agency | Wetzlar | Coday'
       : 'Corporate Design & Branding Agentur | Wetzlar | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Strong brand identity and corporate design by Coday in Wetzlar. Logo, colors and typography for your business in Hesse. Start building your brand now.'
+      : 'Starke Markenidentität und Corporate Design von Coday in Wetzlar. Logo, Farben und Typografie für Ihr Unternehmen in Hessen. Jetzt Marke gestalten.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <script
         id="schema-brand-identity"
         type="application/ld+json"

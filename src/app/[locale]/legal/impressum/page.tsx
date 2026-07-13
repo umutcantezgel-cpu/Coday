@@ -34,11 +34,21 @@ export default async function ImpressumPage({ params }: { params: Promise<{ loca
     _locale === 'en'
       ? 'Legal Notice | Web Design Agency Wetzlar Hesse | Coday'
       : 'Impressum | Webdesign Agentur Wetzlar Mittelhessen | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Legal notice and company information for Coday, web design agency in Wetzlar. Owner: Umutcan Emre Tezgel. Contact details and legal information.'
+      : 'Impressum und Anbieterkennzeichnung von Coday, Webdesign Agentur in Wetzlar. Inhaber: Umutcan Emre Tezgel. Kontakt und rechtliche Informationen.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <div className="max-w-3xl mx-auto px-4 py-20">
         <h1 className="text-3xl font-bold mb-8 text-secondary-900">
           {isEn ? 'Legal Notice' : 'Impressum'}

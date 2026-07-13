@@ -37,11 +37,21 @@ export default async function PerformancePage({ params }: { params: Promise<{ lo
     _locale === 'en'
       ? 'Website Speed Optimization Wetzlar | Core Web Vitals | Coday'
       : 'Website Speed Optimierung Wetzlar | Core Web Vitals | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Maximum website speed through Core Web Vitals optimization by Coday in Wetzlar. Faster load times and better Google rankings across Hesse region.'
+      : 'Maximale Website-Geschwindigkeit durch Core Web Vitals Optimierung von Coday in Wetzlar. Schnellere Ladezeiten, besseres Google Ranking in Hessen.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <script
         id="schema-performance"
         type="application/ld+json"

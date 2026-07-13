@@ -37,11 +37,21 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
     _locale === 'en'
       ? 'About Your Web Design Agency in Wetzlar, Hesse | Coday'
       : 'Über Ihre Webdesign Agentur in Wetzlar, Hessen | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Meet Coday, your personal web design agency in Wetzlar. We build websites for craftsmen, doctors and local businesses across Central Hesse. Learn more.'
+      : 'Lernen Sie Coday kennen, Ihre persönliche Webdesign Agentur in Wetzlar. Wir gestalten Webseiten für Handwerker, Ärzte und Unternehmen in Mittelhessen.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <SeoHead
         title="Ihr Webdesigner in Wetzlar — Lernen Sie uns kennen | Coday"
         description="Lernen Sie Ihren lokalen Webdesigner in Wetzlar kennen. Persönliche Beratung, faire Preise und moderne Webseiten für Handwerk und Mittelstand."

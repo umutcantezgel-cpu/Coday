@@ -41,11 +41,21 @@ export default async function EnterpriseWebPage({
     _locale === 'en'
       ? 'Enterprise Web Development Wetzlar | Scalable | Coday'
       : 'Enterprise Webentwicklung Wetzlar | Skalierbar | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Scalable and secure enterprise web solutions by Coday in Wetzlar. Portals, intranets and complex web applications for businesses in Hesse. Inquire.'
+      : 'Skalierbare und sichere Enterprise Web-Lösungen von Coday in Wetzlar. Portale, Intranets und Webanwendungen für Unternehmen in Hessen. Jetzt anfragen.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <script
         id="schema-enterprise-web"
         type="application/ld+json"

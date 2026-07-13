@@ -37,11 +37,21 @@ export default async function WebAppsPage({ params }: { params: Promise<{ locale
     _locale === 'en'
       ? 'Web App Development Wetzlar | Portals & Tools | Coday'
       : 'Web-App Entwicklung Wetzlar | Portale & Tools | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Custom web app development and portals by Coday in Wetzlar. Tailored solutions for businesses in Central Hesse. Start your project with us today.'
+      : 'Individuelle Web-App Entwicklung und Portale von Coday in Wetzlar. Maßgeschneiderte Lösungen für Unternehmen in Mittelhessen. Jetzt Projekt starten.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <script
         id="schema-web-apps"
         type="application/ld+json"

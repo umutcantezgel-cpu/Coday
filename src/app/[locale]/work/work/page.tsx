@@ -37,11 +37,21 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
     _locale === 'en'
       ? 'Our Work | Web Design Portfolio Wetzlar Hesse | Coday'
       : 'Unsere Arbeiten | Webdesign Portfolio Wetzlar | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'The complete web design portfolio from Coday in Wetzlar. Successful projects for businesses in Central Hesse and beyond. Get inspired by our work.'
+      : 'Das komplette Webdesign Portfolio von Coday in Wetzlar. Erfolgreiche Projekte für Unternehmen in Mittelhessen und Hessen. Lassen Sie sich inspirieren.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <SeoHead title="Coday | work" description="Erfahren Sie mehr über work" pageType="default" />
       <ClientComponent />
     </>

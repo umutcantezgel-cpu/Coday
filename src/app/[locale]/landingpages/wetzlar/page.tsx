@@ -61,11 +61,21 @@ export default async function WetzlarLandingPage(props: { params: Promise<{ loca
     _locale === 'en'
       ? 'Web Design Wetzlar | Websites That Bring Clients | Coday'
       : 'Webdesign Wetzlar | Webseiten die Kunden bringen | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Your web agency in Wetzlar. High-performance websites that measurably bring new clients. Regional, personal and at a guaranteed fixed price. Inquire.'
+      : 'Ihre Webagentur in Wetzlar. Hochperformante Webseiten, die messbar neue Kunden bringen. Regional, persönlich und zum garantierten Festpreis. Anfragen.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <SeoHead
         title={`Webdesign Agentur in Wetzlar | Coday`}
         description={`Ihre Webagentur für Wetzlar. Hochperformante Webseiten, die messbar neue Kunden bringen. Regional, persönlich und zum Festpreis.`}

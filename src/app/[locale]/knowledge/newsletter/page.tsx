@@ -37,11 +37,21 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
     _locale === 'en'
       ? 'Newsletter | Web Design Trends from Wetzlar Hesse | Coday'
       : 'Newsletter | Webdesign Trends aus Wetzlar, Hessen | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Monthly web design and SEO tips from Coday in Wetzlar directly to your inbox. Exclusive knowledge for business owners in Hesse. Subscribe for free.'
+      : 'Monatliche Webdesign und SEO Tipps von Coday in Wetzlar direkt in Ihr Postfach. Exklusives Wissen für Unternehmer in Hessen. Jetzt kostenlos anmelden.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <SeoHead
         title="Coday | newsletter"
         description="Erfahren Sie mehr über newsletter"

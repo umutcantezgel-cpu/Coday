@@ -37,11 +37,21 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
     _locale === 'en'
       ? 'Web Design Offer for Craftsmen | Central Hesse | Coday'
       : 'Webdesign Angebot für Handwerker | Mittelhessen | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Special web design package for craftsmen in Wetzlar and Central Hesse. Fixed price, fast delivery and design that brings new clients. Inquire today.'
+      : 'Spezielles Webdesign Paket für Handwerker in Wetzlar und Mittelhessen. Festpreis, schnelle Umsetzung und Design das Aufträge bringt. Jetzt anfragen.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <SeoHead
         title="Coday | angebot-handwerker"
         description="Willkommen bei Coday. Entdecken Sie unsere Leistungen."

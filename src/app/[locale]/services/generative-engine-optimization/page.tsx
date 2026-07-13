@@ -198,11 +198,21 @@ export default async function GeoServicePage({ params }: { params: Promise<{ loc
     _locale === 'en'
       ? 'GEO Agency Wetzlar | AI Search Optimization Hesse | Coday'
       : 'GEO Agentur Wetzlar | KI-Suchoptimierung Hessen | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Generative Engine Optimization by Coday in Wetzlar. Make your brand visible in AI Overviews and ChatGPT searches. For businesses in Central Hesse.'
+      : 'Generative Engine Optimization von Coday in Wetzlar. Ihre Marke in AI Overviews und ChatGPT-Suchen sichtbar machen. Für Unternehmen in Mittelhessen.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <div className="flex-1 w-full flex flex-col">
         <script
           type="application/ld+json"

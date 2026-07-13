@@ -37,11 +37,21 @@ export default async function EcommercePage({ params }: { params: Promise<{ loca
     _locale === 'en'
       ? 'E-Commerce Shop Development | Wetzlar & Hesse | Coday'
       : 'Onlineshop erstellen lassen | Wetzlar & Hessen | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Professional e-commerce and online shop development by Coday in Wetzlar. High performance and conversion rates for your business in Hesse. Get in touch.'
+      : 'Professionelle E-Commerce und Onlineshop Entwicklung von Coday in Wetzlar. Hohe Performance und Konversionsraten für Ihr Geschäft in Hessen. Anfragen.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <script
         id="schema-ecommerce"
         type="application/ld+json"

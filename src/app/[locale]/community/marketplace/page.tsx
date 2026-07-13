@@ -37,11 +37,21 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
     _locale === 'en'
       ? 'Community Marketplace | Web Design Network Wetzlar | Coday'
       : 'Community Marktplatz | Webdesign Netzwerk Wetzlar | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'The digital marketplace of the Coday community in Wetzlar. Find service providers, tools and resources for your next web project in Central Hesse.'
+      : 'Der digitale Marktplatz der Coday Community in Wetzlar. Finden Sie Dienstleister, Tools und Ressourcen für Ihr nächstes Webprojekt in Mittelhessen.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <SeoHead
         title="Coday | marketplace"
         description="Erfahren Sie mehr über marketplace"

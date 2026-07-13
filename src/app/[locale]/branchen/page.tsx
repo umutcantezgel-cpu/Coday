@@ -41,11 +41,21 @@ export default async function IndustryOverviewPage({
     _locale === 'en'
       ? 'Web Design Industry Solutions Wetzlar & Hesse | Coday'
       : 'Webdesign Branchenlösungen Wetzlar & Mittelhessen | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Specialized web design for every industry by Coday in Wetzlar. Craftsmen, doctors, restaurants and service providers in Central Hesse. Inquire now.'
+      : 'Spezialisiertes Webdesign für jede Branche von Coday in Wetzlar. Handwerker, Ärzte, Gastronomen und Dienstleister in Mittelhessen. Jetzt anfragen.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <script
         id="schema-branchen-overview"
         type="application/ld+json"

@@ -42,11 +42,21 @@ export default async function GesundheitswesenHubPage({
     _locale === 'en'
       ? 'Web Design for Doctors & Clinics | Agency Hesse | Coday'
       : 'Webdesign für Ärzte & Praxen | Agentur in Hessen | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Professional practice websites for doctors in Wetzlar and Hesse. Attract patients through modern web design and local SEO optimization. Inquire today.'
+      : 'Professionelle Praxis-Webseiten für Ärzte in Wetzlar und Hessen. Patientengewinnung durch modernes Webdesign und lokale SEO Optimierung. Jetzt anfragen.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <script
         id="schema-branchen-gesundheitswesen"
         type="application/ld+json"

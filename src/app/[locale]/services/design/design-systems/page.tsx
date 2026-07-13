@@ -41,11 +41,21 @@ export default async function DesignSystemsPage({
     _locale === 'en'
       ? 'Design Systems Wetzlar | Consistent Components | Coday'
       : 'Design Systems Wetzlar | Konsistente Komponenten | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Consistent design systems and reusable components by Coday in Wetzlar. Scalable UI libraries for businesses in Hesse. Get in touch to get started.'
+      : 'Konsistente Design Systeme und wiederverwendbare Komponenten von Coday in Wetzlar. Skalierbare UI-Bibliotheken für Unternehmen in Hessen. Anfragen.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <script
         id="schema-design-systems"
         type="application/ld+json"

@@ -37,11 +37,21 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
     _locale === 'en'
       ? 'Community Members | Web Design Agency Hesse | Coday'
       : 'Community Mitglieder | Webdesign Agentur Hessen | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Members of the Coday community in Wetzlar and Hesse. Connect with entrepreneurs, designers and developers in Central Hesse. Join the network today.'
+      : 'Mitglieder der Coday Community in Wetzlar und Hessen. Vernetzen Sie sich mit Unternehmern, Designern und Entwicklern in Mittelhessen. Jetzt beitreten.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <SeoHead
         title="Coday | members"
         description="Erfahren Sie mehr über members"

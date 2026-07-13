@@ -63,11 +63,21 @@ export default async function DillenburgLandingPage(props: {
     _locale === 'en'
       ? 'Web Design Dillenburg | Professional Websites | Coday'
       : 'Webdesign Dillenburg | Webseiten vom Profi | Coday';
+  const _seoDesc =
+    _locale === 'en'
+      ? 'Your web agency for Dillenburg and the Lahn-Dill district. High-performance websites that bring new clients. Personal service at a fixed price.'
+      : 'Ihre Webagentur für Dillenburg und den Lahn-Dill-Kreis. Hochperformante Webseiten die messbar neue Kunden bringen. Persönlich und zum Festpreis. Anfragen.';
   return (
     <>
-      <span className="sr-only" aria-hidden="true">
-        {_seoTitle}
-      </span>
+      <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
+        <p>{_seoDesc}</p>
+        <p>
+          {_locale === 'en'
+            ? 'Coday is your partner for digital excellence, UI/UX design, and technical web development.'
+            : 'Coday ist Ihr Partner für digitale Exzellenz, UI/UX Design und technische Webentwicklung.'}
+        </p>
+      </div>
       <SeoHead
         title={`Webdesign Agentur in Dillenburg | Coday`}
         description={`Ihre Webagentur für Dillenburg. Hochperformante Webseiten, die messbar neue Kunden bringen. Regional, persönlich und zum Festpreis.`}
