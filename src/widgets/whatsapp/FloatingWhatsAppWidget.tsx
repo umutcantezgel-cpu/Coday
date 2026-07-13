@@ -110,8 +110,8 @@ export default function FloatingWhatsAppWidget({
     setMounted(true);
     const isMobile = window.innerWidth < 768;
     pos.current = {
-      x: window.innerWidth - SIZE - (isMobile ? 16 : 24),
-      y: window.innerHeight - SIZE - (isMobile ? 140 : 96),
+      x: isMobile ? 16 : window.innerWidth - SIZE - 24,
+      y: window.innerHeight - SIZE - (isMobile ? 24 : 96),
     };
     syncRender();
 

@@ -233,6 +233,7 @@ interface Particle extends Entity {
   maxLife: number;
   color: string;
   sizeMultiplier: number;
+  isCross?: boolean;
 }
 
 // RPG Upgrades
@@ -367,6 +368,8 @@ export default function VelocityVoidGame() {
     height: PLAYER_SPRITE_L1.length * CONFIG.PIXEL_SIZE,
     cooldown: 0,
     homingCooldown: 0,
+    plasmaCooldown: 0,
+    lightningCooldown: 0,
     regenTimer: 0,
 
     // Stats
@@ -476,6 +479,8 @@ export default function VelocityVoidGame() {
       height: PLAYER_SPRITE_L1.length * CONFIG.PIXEL_SIZE,
       cooldown: 0,
       homingCooldown: 0,
+      plasmaCooldown: 0,
+      lightningCooldown: 0,
       regenTimer: 0,
       markedForDeletion: false,
       hp: 3,
@@ -756,8 +761,23 @@ export default function VelocityVoidGame() {
             if (p.hp < p.maxHp) {
               p.hp++;
               setHudHp(p.hp);
-              // Small green heal flash
-              createExplosion(p.x + p.width / 2, p.y + p.height / 2, '#0f0', '#fff', 10);
+              // Healing animation with green crosses
+              for (let i = 0; i < 8; i++) {
+                particles.current.push({
+                  x: p.x + p.width / 2 + (Math.random() - 0.5) * 40,
+                  y: p.y + p.height / 2 + (Math.random() - 0.5) * 40,
+                  width: CONFIG.PIXEL_SIZE * 3,
+                  height: CONFIG.PIXEL_SIZE * 3,
+                  color: '#0f0',
+                  markedForDeletion: false,
+                  vx: 0,
+                  vy: -1 - Math.random() * 1.5,
+                  life: 0,
+                  maxLife: 40 + Math.random() * 20,
+                  sizeMultiplier: 1,
+                  isCross: true,
+                });
+              }
             }
           }
         }
@@ -840,6 +860,47 @@ export default function VelocityVoidGame() {
               });
             }
             p.homingCooldown = 120; // Every 2 seconds
+          }
+        }
+
+        // Plasma Arc
+        if (p.upgrades.plasma_arc > 0) {
+          if (p.plasmaCooldown > 0) p.plasmaCooldown--;
+          if (p.plasmaCooldown <= 0) {
+            bullets.current.push({
+              x: p.x + p.width / 2 - (CONFIG.PIXEL_SIZE * 10) / 2,
+              y: p.y - 20,
+              width: CONFIG.PIXEL_SIZE * 10,
+              height: CONFIG.PIXEL_SIZE * 3,
+              color: '#ffaa00',
+              markedForDeletion: false,
+              vx: 0,
+              vy: -CONFIG.BULLET_SPEED * 0.8,
+              isEnemy: false,
+              isPlasma: true,
+            });
+            p.plasmaCooldown = Math.max(30, 90 - p.upgrades.plasma_arc * 20);
+          }
+        }
+
+        // Chain Lightning (Blitz)
+        if (p.upgrades.chain_lightning > 0) {
+          if (p.lightningCooldown > 0) p.lightningCooldown--;
+          if (p.lightningCooldown <= 0) {
+            bullets.current.push({
+              x: p.x + p.width / 2 - CONFIG.PIXEL_SIZE / 2,
+              y: p.y - 10,
+              width: CONFIG.PIXEL_SIZE,
+              height: CONFIG.PIXEL_SIZE * 4,
+              color: '#ffffff',
+              markedForDeletion: false,
+              vx: (Math.random() - 0.5) * 4,
+              vy: -CONFIG.BULLET_SPEED * 1.5,
+              isEnemy: false,
+              isLightning: true,
+              lightningJumps: p.upgrades.chain_lightning * 2,
+            });
+            p.lightningCooldown = Math.max(20, 60 - p.upgrades.chain_lightning * 10);
           }
         }
 
@@ -1430,9 +1491,19 @@ export default function VelocityVoidGame() {
 
       bullets.current.forEach((b) => {
         ctx.fillStyle = b.color;
-        ctx.shadowBlur = 10;
+        ctx.shadowBlur = b.isLightning ? 15 : 10;
         ctx.shadowColor = b.color;
-        ctx.fillRect(retroSnap(b.x), retroSnap(b.y), b.width, b.height);
+        if (b.isLightning) {
+          ctx.beginPath();
+          ctx.moveTo(b.x, b.y + b.height);
+          ctx.lineTo(b.x + (Math.random() - 0.5) * 20, b.y + b.height / 2);
+          ctx.lineTo(b.x, b.y);
+          ctx.strokeStyle = b.color;
+          ctx.lineWidth = 4;
+          ctx.stroke();
+        } else {
+          ctx.fillRect(retroSnap(b.x), retroSnap(b.y), b.width, b.height);
+        }
         ctx.shadowBlur = 0;
       });
 
@@ -1440,12 +1511,15 @@ export default function VelocityVoidGame() {
         ctx.fillStyle = part.color;
         ctx.globalAlpha = Math.max(0, 1 - part.life / part.maxLife);
         const scale = 1 - part.life / part.maxLife;
-        ctx.fillRect(
-          retroSnap(part.x),
-          retroSnap(part.y),
-          Math.max(1, retroSnap(part.width * scale)),
-          Math.max(1, retroSnap(part.height * scale))
-        );
+        const w = Math.max(1, retroSnap(part.width * scale));
+        const h = Math.max(1, retroSnap(part.height * scale));
+
+        if (part.isCross) {
+          ctx.fillRect(retroSnap(part.x) + w / 2 - w / 6, retroSnap(part.y), w / 3, h);
+          ctx.fillRect(retroSnap(part.x), retroSnap(part.y) + h / 2 - h / 6, w, h / 3);
+        } else {
+          ctx.fillRect(retroSnap(part.x), retroSnap(part.y), w, h);
+        }
       });
       ctx.globalAlpha = 1.0;
 
@@ -1468,13 +1542,15 @@ export default function VelocityVoidGame() {
         // Draw Energy Shield
         if (p.upgrades.shield > 0 && p.shieldHp > 0) {
           ctx.beginPath();
-          ctx.arc(p.x + p.width / 2, p.y + p.height / 2 + 10, p.width * 0.8, Math.PI, 0);
-          ctx.lineWidth = 4;
+          ctx.arc(p.x + p.width / 2, p.y + p.height / 2, p.width * 0.9, 0, Math.PI * 2);
+          ctx.lineWidth = 3;
           const alpha = 0.3 + (p.shieldHp / p.upgrades.shield) * 0.5;
           ctx.strokeStyle = `rgba(0, 240, 255, ${alpha})`;
+          ctx.setLineDash([10, 5]);
           ctx.stroke();
+          ctx.setLineDash([]);
           // Draw inner glow
-          ctx.fillStyle = `rgba(0, 240, 255, ${alpha * 0.2})`;
+          ctx.fillStyle = `rgba(0, 240, 255, ${alpha * 0.1})`;
           ctx.fill();
         }
 
@@ -1500,7 +1576,14 @@ export default function VelocityVoidGame() {
 
       ctx.restore();
 
-      // Draw HUD
+      // Draw HUD Background
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.6)';
+      ctx.fillRect(10, 10, 220, 240);
+      ctx.strokeStyle = '#333';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(10, 10, 220, 240);
+
+      // Draw HUD Text
       ctx.fillStyle = PALETTE.uiText;
       ctx.font = 'bold 20px monospace';
       ctx.textAlign = 'left';

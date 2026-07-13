@@ -35,7 +35,7 @@ export async function generateMetadata({
       : description;
 
   return generatePageMetadata({
-    title: `${title} - Services`,
+    title: locale === 'en' ? `${title} - Web Services` : `${title} - Services`,
     description: fullDesc,
     path: `/${locale}/services/${category}/${slug}`,
     type: 'money',

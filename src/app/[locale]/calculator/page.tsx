@@ -52,6 +52,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   return (
     <>
       <div className="sr-only" aria-hidden="true">
+        <p>{pageTitle}</p>
         <p>The Agency Configurator</p>
         <p>
           {_locale === 'en'

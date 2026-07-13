@@ -4,7 +4,6 @@ import { m, AnimatePresence } from 'motion/react';
 import {
   ChatCircle,
   ShareNetwork,
-  Phone,
   ShieldCheck,
   Alien,
   List,
@@ -27,16 +26,6 @@ export const FloatingMenuMobile = () => {
   };
 
   const menuItems = [
-    {
-      id: 'whatsapp',
-      icon: <Phone className="w-6 h-6" weight="fill" />,
-      label: 'WhatsApp',
-      bg: 'bg-success',
-      color: 'text-white',
-      action: () => {
-        window.open('https://wa.me/4917641195301?text=Hallo!', '_blank');
-      },
-    },
     {
       id: 'chat',
       icon: <ChatCircle className="w-6 h-6" weight="fill" />,

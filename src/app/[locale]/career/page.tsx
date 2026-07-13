@@ -34,6 +34,7 @@ export default function CareerPage() {
   return (
     <>
       <div className="sr-only" aria-hidden="true">
+        <p>{_seoTitle}</p>
         <p>Join the Elite</p>
         <p>
           {_locale === 'en'
