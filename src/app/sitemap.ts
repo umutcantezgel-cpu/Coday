@@ -53,6 +53,17 @@ function sitemapEntry(
 ): MetadataRoute.Sitemap[number] {
   const cleanPath = path.replace(/^\/(en|de)/, '').replace(/\/$/, '') || '';
 
+  const localPathsRegex = /^\/(landingpages|webdesign-agentur-wetzlar|angebot-handwerker)(\/.*)?$/;
+  const isLocalPath = localPathsRegex.test(cleanPath);
+
+  const languages: Record<string, string> = {
+    de: `${BASE_URL}/de${cleanPath}`,
+  };
+
+  if (!isLocalPath) {
+    languages.en = `${BASE_URL}/en${cleanPath}`;
+  }
+
   // We use the default locale /de as the main URL, but provide explicit alternates
   return {
     url: `${BASE_URL}/de${cleanPath}`,
@@ -60,10 +71,7 @@ function sitemapEntry(
     changeFrequency: opts.changeFrequency,
     priority: opts.priority,
     alternates: {
-      languages: {
-        de: `${BASE_URL}/de${cleanPath}`,
-        en: `${BASE_URL}/en${cleanPath}`,
-      },
+      languages,
     },
   };
 }

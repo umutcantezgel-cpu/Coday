@@ -35,19 +35,25 @@ export function generateAlternates(path: string): Metadata['alternates'] {
   let dePath = `/de${cleanPath}`;
   let enPath = `/en${cleanPath}`;
 
-  // Both locales use /branchen/ paths (legacy /industries/ routes redirect to /branchen/)
-
   // Canonical points to the current locale's path
   const isEn = path.startsWith('/en');
   const canonicalPath = isEn ? enPath : dePath;
 
+  const localPathsRegex = /^\/(landingpages|webdesign-agentur-wetzlar|angebot-handwerker)(\/.*)?$/;
+  const isLocalPath = localPathsRegex.test(cleanPath);
+
+  const languages: Record<string, string> = {
+    de: `${BASE_URL}${dePath}`,
+    'x-default': `${BASE_URL}${dePath}`,
+  };
+
+  if (!isLocalPath) {
+    languages.en = `${BASE_URL}${enPath}`;
+  }
+
   return {
     canonical: `${BASE_URL}${canonicalPath}`,
-    languages: {
-      de: `${BASE_URL}${dePath}`,
-      en: `${BASE_URL}${enPath}`,
-      'x-default': `${BASE_URL}${dePath}`,
-    },
+    languages,
   };
 }
 

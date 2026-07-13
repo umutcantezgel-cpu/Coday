@@ -22,7 +22,17 @@ export default function middleware(request: NextRequest) {
     return NextResponse.redirect(newUrl);
   }
 
-  return handleI18nRouting(request);
+  const response = handleI18nRouting(request);
+
+  // Remove the `Link` header (injected by next-intl with hreflang alternates) for local paths
+  // to avoid exposing the /en/ URLs to search engines, as they redirect back to /de/
+  const localPathsRegexDe =
+    /^\/de\/(landingpages|webdesign-agentur-wetzlar|angebot-handwerker)(\/.*)?$/;
+  if (pathname.match(localPathsRegexDe)) {
+    response.headers.delete('Link');
+  }
+
+  return response;
 }
 
 export const config = {

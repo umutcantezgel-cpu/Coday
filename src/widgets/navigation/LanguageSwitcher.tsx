@@ -7,6 +7,14 @@ export const LanguageSwitcher: React.FC = () => {
   const locale = useLocale();
   const pathname = usePathname();
 
+  const cleanPath = pathname.replace(/^\/(en|de)/, '').replace(/\/$/, '') || '';
+  const localPathsRegex = /^\/(landingpages|webdesign-agentur-wetzlar|angebot-handwerker)(\/.*)?$/;
+  const isLocalPath = localPathsRegex.test(cleanPath);
+
+  // For German-only landing pages, the English switcher just goes to the English homepage
+  // to avoid hitting the 301 redirect back to German
+  const enLink = isLocalPath ? '/' : pathname;
+
   return (
     <div className="flex items-center p-1 rounded-full bg-slate-100/80 backdrop-blur-md border border-slate-200 shadow-inner">
       <Link
@@ -27,7 +35,7 @@ export const LanguageSwitcher: React.FC = () => {
         )}
       </Link>
       <Link
-        href={pathname}
+        href={enLink}
         locale="en"
         className={`px-3 py-1.5 text-xs font-bold tracking-wider rounded-full transition-colors flex items-center gap-1 ${
           locale === 'en'
