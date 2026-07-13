@@ -49,6 +49,10 @@ export function getOrganizationSchema() {
       ],
     },
     knowsAbout: [
+      'Webdesign',
+      'Webentwicklung',
+      'Website Relaunch',
+      'Responsive Webdesign',
       'Next.js',
       'React',
       'TypeScript',
@@ -60,7 +64,6 @@ export function getOrganizationSchema() {
       'Search Engine Optimization',
       'Core Web Vitals',
       'Generative Engine Optimization',
-      'E-Commerce',
       'Performance Optimization',
       'UI/UX Design',
       'Premium Webentwicklung',
@@ -440,6 +443,30 @@ export function getPortfolioSchema(projects: { name: string; url: string; descri
           creator: { '@id': ORG_ID },
         },
       })),
+    },
+  };
+}
+
+export function getWebSiteSchema() {
+  return {
+    '@type': 'WebSite',
+    '@id': `${BASE_URL}/#website`,
+    url: BASE_URL,
+    name: 'Coday',
+    alternateName: 'Coday Webdesign Wetzlar',
+    description:
+      'Webdesign Agentur in Wetzlar. Professionelle Websites und Website Relaunch für Unternehmen in Mittelhessen.',
+    publisher: {
+      '@id': ORG_ID,
+    },
+    inLanguage: ['de-DE', 'en-US'],
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${BASE_URL}/de/services?q={search_term_string}`,
+      },
+      'query-input': 'required name=search_term_string',
     },
   };
 }

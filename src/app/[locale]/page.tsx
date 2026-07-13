@@ -3,6 +3,7 @@ import {
   getLocalBusinessSchema,
   getProfessionalServiceSchema,
   getOrganizationSchema,
+  getWebSiteSchema,
 } from '@/lib/schema';
 import { generatePageMetadata } from '@/lib/metadata';
 import { Skeleton } from '@/shared/ui/Skeleton';
@@ -52,6 +53,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const serviceSchema = getProfessionalServiceSchema();
   const localSchema = getLocalBusinessSchema();
   const orgSchema = getOrganizationSchema();
+  const websiteSchema = getWebSiteSchema();
 
   return (
     <>
@@ -61,7 +63,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@graph': [orgSchema, serviceSchema, localSchema],
+            '@graph': [orgSchema, serviceSchema, localSchema, websiteSchema],
           }),
         }}
       />
