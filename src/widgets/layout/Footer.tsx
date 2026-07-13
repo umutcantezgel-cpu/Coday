@@ -276,6 +276,15 @@ export const Footer: React.FC = () => {
                   Handwerker Wetzlar
                 </Link>
               </li>
+              <li>
+                <Link
+                  prefetch={false}
+                  href="/uebersicht"
+                  className="text-sm text-primary hover:text-primary/80 transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2 font-medium"
+                >
+                  Seitenübersicht (Sitemap)
+                </Link>
+              </li>
             </ul>
           </nav>
 

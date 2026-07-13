@@ -3,7 +3,18 @@ import { generatePageMetadata } from '@/lib/metadata';
 import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
 import { setRequestLocale } from 'next-intl/server';
 import { IndustryDetailClient } from '@/features/industries/ui/IndustryDetailClient';
+import { industriesData } from '@/shared/data/industries';
+import { routing } from '@/i18n/routing';
 
+export function generateStaticParams() {
+  const params: { locale: string; industry: string }[] = [];
+  routing.locales.forEach((locale) => {
+    Object.keys(industriesData).forEach((industry) => {
+      params.push({ locale, industry });
+    });
+  });
+  return params;
+}
 export async function generateMetadata({
   params,
 }: {

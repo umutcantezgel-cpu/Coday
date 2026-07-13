@@ -53,8 +53,7 @@ export function IndustryOverviewClient() {
             const image = industryHeroImages[industry.slug] || industryFallbackImage;
 
             return (
-              <Link
-                href={`/branchen/${industry.slug}`}
+              <div
                 key={industry.slug}
                 className="group block p-8 bg-white border border-gray-200 rounded-3xl shadow-md hover:shadow-xl transition motion-reduce:duration-[0.01ms] duration-500 hover:-translate-y-2 relative overflow-hidden"
               >
@@ -75,7 +74,12 @@ export function IndustryOverviewClient() {
                     <Icon size={32} />
                   </div>
                   <h3 className="text-2xl font-bold font-display text-secondary mb-3 group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms]">
-                    {t(industry.title)}
+                    <Link
+                      href={`/branchen/${industry.slug}`}
+                      className="before:absolute before:inset-0"
+                    >
+                      {t(industry.title)}
+                    </Link>
                   </h3>
                   <p className="text-text-light mb-8 flex-grow leading-relaxed">
                     {t(industry.hero.subheadline)}
@@ -88,7 +92,7 @@ export function IndustryOverviewClient() {
                     />
                   </span>
                 </div>
-              </Link>
+              </div>
             );
           })}
         </div>

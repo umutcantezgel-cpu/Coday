@@ -7,7 +7,19 @@ import { notFound } from 'next/navigation';
 import { servicesData } from '@/shared/data/services';
 
 import { getTranslations } from 'next-intl/server';
+import { routing } from '@/i18n/routing';
 
+export function generateStaticParams() {
+  const params: { locale: string; category: string; slug: string }[] = [];
+  routing.locales.forEach((locale) => {
+    Object.entries(servicesData).forEach(([category, categoryData]) => {
+      Object.keys(categoryData as any).forEach((slug) => {
+        params.push({ locale, category, slug });
+      });
+    });
+  });
+  return params;
+}
 export async function generateMetadata({
   params,
 }: {
