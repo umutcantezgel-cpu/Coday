@@ -2,55 +2,67 @@
   "target": "autohaendler",
   "type": "industry-location",
   "meta": {
-    "title": "High-End Websites für Premium-Autohändler | Coday",
-    "description": "Verkaufen Sie Fahrzeuge emotional und blitzschnell online. Dominieren Sie Ihren Markt mit atemberaubendem Next.js Webdesign für Autohäuser und Fahrzeughändler."
+    "title": "Webdesign Agentur für Premium Autohändler",
+    "description": "Verkaufen Sie Fahrzeuge emotional online. Dominieren Sie den Markt mit atemberaubendem Webdesign für Autohäuser und Fahrzeughändler."
   },
   "hero": {
-    "headline": "Digitale Showrooms, die Fahrzeuge verkaufen.",
+    "headline": "Digitale Showrooms die Fahrzeuge verkaufen.",
     "subheadline": "Emotionales Design. Maximale Geschwindigkeit. Unfaire Konversionsraten.",
-    "description": "Autokauf ist pure Emotion. Wenn Ihr digitaler Showroom aussieht wie eine Excel-Tabelle aus dem Jahr 2010, töten Sie jegliches Kaufinteresse in Sekundenbruchteilen. Wir erschaffen immersive, atemberaubende digitale Erlebnisse, die Vertrauen aufbauen, Emotionen wecken und Leads am Fließband generieren.",
+    "description": "Emotionales Design. Maximale Geschwindigkeit. Unfaire Konversionsraten. Autokauf ist pure Emotion und beginnt heute fast immer im Internet. Wenn Ihr digitaler Showroom aussieht wie eine veraltete Tabelle, verlieren Sie potenzielles Kaufinteresse in Sekundenbruchteilen. Als spezialisierte Webdesign Agentur erschaffen wir für Autohändler immersive und atemberaubende digitale Erlebnisse. Wir fokussieren uns auf hochmoderne Webseitenentwicklung und den strategischen Webseiten Relaunch, um Vertrauen aufzubauen, Emotionen zu wecken und kontinuierlich neue Kundenanfragen zu generieren. Ihre neue Webseite wird zum besten Verkäufer in Ihrem Team.",
     "metrics": [
-      { "value": "300", "label": "Mehr Probefahrt-Anfragen", "suffix": "%" },
-      { "value": "0.8", "label": "Sekunden Ladezeit", "suffix": "s" }
+      {
+        "value": "300",
+        "label": "Mehr Probefahrt Anfragen",
+        "suffix": "%"
+      },
+      {
+        "value": "0.8",
+        "label": "Sekunden Ladezeit",
+        "suffix": "s"
+      }
     ]
   },
   "gamifiedStats": {
     "title": "Die teuersten Fehler im digitalen Autohandel",
-    "description": "Ihre Fahrzeuge sind poliert, Ihr Verkaufsraum ist makellos – doch 95% Ihrer potenziellen Kunden sehen zuerst Ihre Website. Eine veraltete mobile Ansicht oder langsame Ladezeiten bei großen Fahrzeugbildern lassen den Kunden sofort zum nächsten Händler swipen.",
+    "description": "Ihre Fahrzeuge sind perfekt aufbereitet und Ihr Verkaufsraum ist makellos, doch die überwältigende Mehrheit Ihrer potenziellen Kunden bewertet Sie zuerst anhand Ihrer Webseite. Eine veraltete mobile Ansicht, langsame Ladezeiten bei hochauflösenden Fahrzeugbildern oder eine unklare Benutzerführung lassen den Kunden sofort zum nächsten Händler wechseln. Ein professioneller Webseiten Relaunch durch unsere Webagentur behebt diese kritischen Fehler. Wir optimieren jeden Aspekt Ihrer Onlinepräsenz, damit Besucher bleiben und zu Käufern werden.",
     "counters": [
-      { "targetValue": 95, "suffix": "%", "label": "starten den Autokauf heute online" },
+      {
+        "targetValue": 95,
+        "suffix": "%",
+        "label": "starten den Autokauf heute online"
+      },
       {
         "targetValue": 68,
         "suffix": "%",
-        "label": "der Käufer entscheiden basierend auf der digitalen Präsentation"
+        "label": "entscheiden basierend auf der digitalen Präsentation"
       }
     ]
   },
   "bentoGrid": {
-    "title": "Die Coday-Architektur für Autohäuser",
-    "subtitle": "Warum wir die Konkurrenz in den Schatten stellen.",
+    "title": "Die Webdesign Architektur für Autohäuser",
+    "subtitle": "Warum unsere Webseitenentwicklung die Konkurrenz übertrifft.",
     "cards": [
       {
-        "title": "Cinematisches Design",
-        "text": "Fahrzeuge müssen wirken. Wir nutzen großflächige Layouts, perfekte Typografie und flüssige Animationen, um Ihre Flotte ins absolute Rampenlicht zu rücken.",
+        "title": "Cinematisches Design für maximale Wirkung",
+        "text": "Fahrzeuge müssen visuell überzeugen. Wir nutzen großflächige Layouts, perfekte Typografie und flüssige Animationen, um Ihre Fahrzeugflotte ins absolute Rampenlicht zu rücken. Jedes Detail unserer Webseitenentwicklung ist darauf ausgerichtet, die Wertigkeit Ihrer Fahrzeuge perfekt zu transportieren.",
         "size": "large",
         "icon": "Design"
       },
       {
         "title": "Hyperspeed Bildauslieferung",
-        "text": "Kein Warten auf Ladebalken. Durch Next.js Image Optimization laden selbst 4K-Fahrzeugbilder in Millisekunden auf jedem Smartphone.",
+        "text": "Kein Warten auf Ladebalken. Durch modernste Webentwicklung laden selbst hochauflösende Fahrzeugbilder in Millisekunden auf jedem Smartphone. Das reduziert Absprünge massiv.",
         "size": "small",
         "icon": "Speed"
       },
       {
-        "title": "Lokale Dominanz",
-        "text": "Wenn jemand in Ihrer Region nach einem spezifischen Modell sucht, wird er bei Ihnen landen. Wir bauen Ihre Seite als SEO-Festung auf.",
+        "title": "Lokale Suchmaschinen Dominanz",
+        "text": "Wenn jemand in Ihrer Region nach einem spezifischen Modell sucht, wird er bei Ihnen landen. Wir bauen Ihre Seite als SEO Festung auf und sorgen für exzellente Sichtbarkeit.",
         "size": "small",
         "icon": "SEO"
       },
       {
-        "title": "Smarte Lead-Maschine",
-        "text": "Von der nahtlosen Inzahlungnahme-Bewertung bis zur vollautomatisierten Probefahrt-Buchung. Wir reduzieren Reibungspunkte und maximieren die Anfragen.",
+        "title": "Smarte Lead Maschine",
+        "text": "Von der nahtlosen Bewertung für Inzahlungnahmen bis zur vollautomatisierten Buchung von Probefahrten. Wir reduzieren alle Reibungspunkte und maximieren die digitalen Anfragen durch gezieltes Webdesign.",
         "size": "tall",
         "icon": "Security"
       }
@@ -58,63 +70,71 @@
   },
   "processSteps": [
     {
-      "title": "1. Fahrzeug- & Markenanalyse",
-      "description": "Wir analysieren Ihr Inventar, Ihre Zielgruppe und Ihre aktuellen Schwachstellen in der digitalen Vermarktung."
+      "title": "Fahrzeug und Markenanalyse",
+      "description": "Wir analysieren Ihr Inventar, Ihre Zielgruppe und Ihre aktuellen Schwachstellen in der digitalen Vermarktung. Diese tiefgehende Analyse bildet das Fundament für eine zielgerichtete Webseitenentwicklung."
     },
     {
-      "title": "2. UX & Interface Design",
-      "description": "Entwicklung eines Interfaces, das den Fahrzeugverkauf zelebriert. Jedes Pixel ist darauf optimiert, Begehrlichkeit und Vertrauen zu wecken."
+      "title": "Interface und Webdesign",
+      "description": "Wir entwickeln ein digitales Interface, das den Fahrzeugverkauf zelebriert. Jedes Pixel wird im Rahmen unseres Webdesigns darauf optimiert, Begehrlichkeit und absolutes Vertrauen zu wecken."
     },
     {
-      "title": "3. Schnittstellen-Integration",
-      "description": "Wir binden mobile.de, AutoScout24 oder Ihr internes DMS nahtlos ein. Keine manuelle Pflege, automatische Synchronisation bei absoluter High-Performance."
+      "title": "Schnittstellen Integration",
+      "description": "Wir binden externe Fahrzeugbörsen oder Ihr internes Verwaltungssystem nahtlos ein. Keine manuelle Pflege, sondern vollautomatische Synchronisation bei absoluter technischer High Performance."
     },
     {
-      "title": "4. Performance-Launch",
-      "description": "Der Go-Live. Ihre neue Plattform startet sofort durch und beginnt, den Traffic Ihrer Mitbewerber aggressiv abzuschöpfen."
+      "title": "Performance Launch und SEO",
+      "description": "Der finale Go Live Ihrer neuen Webseite. Ihre Plattform startet sofort durch, ist technisch fehlerfrei und beginnt unmittelbar damit, den Traffic Ihrer regionalen Mitbewerber aggressiv abzuschöpfen."
     }
   ],
   "localDominance": {
     "title": "Erobern Sie das Monopol in Ihrer Region",
-    "description": "Der Autohandel befindet sich im massiven Wandel. Wer digital nicht absolut perfekt aufgestellt ist, wird von überregionalen Plattformen verdrängt. Wir rüsten Sie mit der digitalen Feuerkraft aus, um in Ihrer Region der unangefochtene Platzhirsch zu werden und zu bleiben.",
+    "description": "Der Autohandel befindet sich in einem massiven Wandel. Wer digital nicht absolut perfekt aufgestellt ist, wird schnell von großen überregionalen Plattformen verdrängt. Als Ihre dedizierte Webagentur rüsten wir Sie mit der digitalen Feuerkraft aus, um in Ihrer Region der unangefochtene Marktführer zu werden und diese Position langfristig zu sichern. Ein strategischer Webseiten Relaunch ist der erste entscheidende Schritt in diese Richtung.",
     "points": [
-      "Abgrenzung durch Premium-Wahrnehmung von reinen 'Kiesplatz-Händlern'",
-      "Maximierung der Conversion-Rate bei teuren Traffic-Kampagnen",
-      "Vollständige Automatisierung von Standard-Kundenanfragen"
+      "Deutliche Abgrenzung durch eine exklusive Premium Wahrnehmung",
+      "Maximierung der Conversion Rate bei teuren lokalen Traffic Kampagnen",
+      "Vollständige Automatisierung von wiederkehrenden Standard Kundenanfragen"
     ]
   },
   "faq": [
     {
-      "q": "Können unsere Fahrzeuge automatisch von mobile.de oder AutoScout24 importiert werden?",
-      "a": "Selbstverständlich. Wir integrieren leistungsstarke APIs, die Ihren Fahrzeugbestand in Echtzeit synchronisieren. Sie pflegen Ihre Autos wie gewohnt in Ihrem System, und unsere Website präsentiert sie in atemberaubender High-End-Optik – rasend schnell und SEO-optimiert."
+      "q": "Können unsere Fahrzeuge automatisch von gängigen Börsen importiert werden?",
+      "a": "Selbstverständlich. Wir integrieren bei der Webseitenentwicklung leistungsstarke Schnittstellen, die Ihren Fahrzeugbestand in Echtzeit synchronisieren. Sie pflegen Ihre Autos wie gewohnt in Ihrem System, und unsere Webseite präsentiert diese in atemberaubender Optik, rasend schnell und optimal für Suchmaschinen vorbereitet."
     },
     {
-      "q": "Autobilder laden auf unserer jetzigen Seite ewig. Wird das besser?",
-      "a": "Wir lösen dieses Problem vollständig. Durch die fortschrittliche Architektur von Next.js und Edge-Caching werden selbst hochauflösende Galeriebilder komprimiert und in Sekundenbruchteilen ausgeliefert. Eine flüssige User Experience ist der Schlüssel zu mehr Verkäufen."
+      "q": "Unsere Autobilder laden aktuell sehr langsam. Wird das durch ein neues Webdesign besser?",
+      "a": "Wir lösen dieses Problem bei einem Webseiten Relaunch vollständig. Durch unsere moderne Webseitenentwicklung werden selbst hochauflösende Galeriebilder intelligent komprimiert und in Sekundenbruchteilen ausgeliefert. Eine absolut flüssige Nutzererfahrung ist der Schlüssel zu deutlich mehr Verkäufen und glücklichen Kunden."
     },
     {
-      "q": "Lohnt sich das Investment für einen kleineren unabhängigen Händler?",
-      "a": "Mehr denn je. Gerade als unabhängiger Händler müssen Sie Vertrauen aufbauen, um gegen große Marken-Niederlassungen zu bestehen. Ein extrem hochwertiges Webdesign suggeriert Seriosität, Sicherheit und Qualität – die wichtigsten Faktoren beim Autokauf."
+      "q": "Lohnt sich das Investment in eine professionelle Webagentur für kleinere Händler?",
+      "a": "Mehr denn je. Gerade als unabhängiger Fahrzeughändler müssen Sie enormes Vertrauen aufbauen, um gegen große Markenniederlassungen bestehen zu können. Ein extrem hochwertiges Webdesign suggeriert Seriosität, Sicherheit und höchste Qualität. Genau diese Faktoren sind heute entscheidend beim Autokauf."
     },
     {
-      "q": "Wie helfen Sie uns, mehr Probefahrten zu generieren?",
-      "a": "Wir ersetzen langweilige Kontaktformulare durch interaktive, psychologisch optimierte Lead-Funnels. Wir reduzieren die Hemmschwelle des Nutzers und führen ihn spielerisch und hochkonvertierend direkt zum Klick auf 'Jetzt Probefahrt buchen'."
+      "q": "Wie helfen Sie uns durch Webdesign mehr Probefahrten zu generieren?",
+      "a": "Wir ersetzen langweilige und fehleranfällige Kontaktformulare durch interaktive, psychologisch optimierte Prozesse. Unser Webdesign reduziert die Hemmschwelle des Nutzers massiv und führt ihn spielerisch sowie hochkonvertierend direkt zum gewünschten Ziel, wie etwa der Buchung einer Probefahrt."
     },
     {
-      "q": "Ist die Website für Smartphones optimiert?",
-      "a": "Optimiert ist das falsche Wort. Wir entwickeln Mobile-First. Weit über 80% Ihrer Kunden suchen ihr nächstes Auto auf dem Smartphone, abends auf der Couch. Wir erschaffen ein App-ähnliches, flüssiges Erlebnis, das auf jedem mobilen Gerät schlichtweg perfekt funktioniert."
+      "q": "Ist die von Ihnen entwickelte Webseite auch für Smartphones optimiert?",
+      "a": "Optimiert ist das falsche Wort, wir entwickeln strikt nach dem Mobile First Ansatz. Weit über 80 Prozent Ihrer Kunden suchen ihr nächstes Auto auf dem Smartphone. Daher erschaffen wir im Rahmen der Webseitenentwicklung ein flüssiges Erlebnis, das auf jedem mobilen Gerät schlichtweg perfekt funktioniert."
     },
     {
-      "q": "Warum Coday und nicht eine spezialisierte Autohaus-Agentur?",
-      "a": "Spezialisierte Autohaus-Agenturen nutzen meistens fertige Baukästen und veraltete Templates. Das Ergebnis: Ihre Website sieht exakt so aus wie die von 500 anderen Händlern. Wir bringen Enterprise-Technologie und echtes High-End-Design in Ihre Branche. Sie werden unkopierbar."
+      "q": "Warum sollten wir uns für Ihre Webagentur entscheiden?",
+      "a": "Viele Agenturen nutzen standardisierte Baukästen und veraltete Vorlagen. Das Resultat ist eine Webseite, die exakt so aussieht wie die von hunderten anderen Händlern. Wir bieten maßgeschneiderte Webseitenentwicklung und echtes High End Webdesign. Mit unserer Lösung werden Sie in Ihrer Region einzigartig und unkopierbar."
     },
     {
-      "q": "Können wir auch Finanzierungsrechner und Inzahlungnahme-Tools integrieren?",
-      "a": "Absolut. Wir programmieren maßgeschneiderte, blitzschnelle Rechner und interaktive Formulare zur Fahrzeugbewertung, die direkt Leads für Ihr Vertriebsteam generieren und den Kunden binden."
+      "q": "Bieten Sie auch die Integration von Tools zur Inzahlungnahme an?",
+      "a": "Absolut. Wenn wir Webseiten entwickeln, programmieren wir gerne maßgeschneiderte und blitzschnelle Rechner sowie interaktive Formulare zur Fahrzeugbewertung. Diese Tools generieren direkt wertvolle Kontakte für Ihr Vertriebsteam und binden den Kunden frühzeitig an Ihr Autohaus."
     },
     {
-      "q": "Wie verbessern wir unser Ranking bei Google für lokale Suchanfragen?",
-      "a": "Die Kombination aus der massiven technischen Überlegenheit von Next.js (Ladezeit = Rankingfaktor) und unserer semantischen Code-Struktur sorgt dafür, dass Google Ihre Seite liebt. Wir optimieren gezielt auf kaufbereite Suchanfragen in Ihrer Region."
+      "q": "Wie verbessern wir unser Ranking bei Suchmaschinen für lokale Suchanfragen?",
+      "a": "Die Kombination aus der massiven technischen Überlegenheit unserer Webseitenentwicklung, extrem schnellen Ladezeiten und unserer perfekten semantischen Struktur sorgt dafür, dass Suchmaschinen Ihre Seite bevorzugen. Wir optimieren Ihr Webdesign gezielt auf kaufbereite Suchanfragen in Ihrer spezifischen Region."
+    },
+    {
+      "q": "Was beinhaltet ein kompletter Webseiten Relaunch für unser Autohaus?",
+      "a": "Ein Webseiten Relaunch durch unsere Webagentur umfasst die vollständige Neukonzeption Ihres digitalen Auftritts. Angefangen bei einer detaillierten Zielgruppenanalyse, über ein modernes und verkaufspsychologisch optimiertes Webdesign, bis hin zur fehlerfreien technischen Umsetzung und finalen Suchmaschinenoptimierung. Wir sorgen dafür, dass Ihre neue Webseite ein kraftvolles Werkzeug zur Kundengewinnung wird."
+    },
+    {
+      "q": "Bieten Sie auch fortlaufende Betreuung nach der Webseitenentwicklung an?",
+      "a": "Ja, als vollumfängliche Webagentur lassen wir Sie nach dem Start nicht alleine. Wir bieten kontinuierliche technische Wartung, fortlaufende Suchmaschinenoptimierung und passen Ihr Webdesign bei Bedarf an neue Marktentwicklungen an. Ihr langfristiger digitaler Erfolg ist unser oberstes Ziel."
     }
   ]
 }

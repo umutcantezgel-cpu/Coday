@@ -68,7 +68,6 @@ export default async function SubIndustryPage({ params }: { params: Promise<{ lo
       <div className="p-20 text-center pt-48">
         <h1 className="text-2xl font-bold mb-4">Inhalt wird geladen...</h1>
         <p>Der branchenspezifische Content für diese Seite wird aktuell konfiguriert.</p>
-        {/* TODO: Integrate the 'spezielles Tool' here once the user provides it */}
       </div>
     );
   }
@@ -94,7 +93,6 @@ export default async function SubIndustryPage({ params }: { params: Promise<{ lo
         }}
       />
       <GamifiedIndustryTemplate content={content} cityData={undefined} />
-      {/* TODO: Integrate the 'spezielles Tool' here once the user provides it */}
     </>
   );
 }

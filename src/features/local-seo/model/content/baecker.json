@@ -1,0 +1,124 @@
+{
+  "target": "baecker",
+  "type": "industry-location",
+  "meta": {
+    "title": "Bäckerei Webdesign Agentur | Moderne Webseiten für Bäcker",
+    "description": "Digitale Sichtbarkeit für traditionelle Handwerksbäcker. Wir als erfahrene Webagentur erstellen verkaufsstarke Webseiten für Ihre Bäckereifilialen durch exzellente Webseitenentwicklung und durchdachtes lokales Marketing."
+  },
+  "hero": {
+    "headline": "Traditionelles Backhandwerk exzellent digital erlebbar gemacht",
+    "subheadline": "Mehr regionale Sichtbarkeit, höhere Kundenbindung und messbar spürbarer Umsatz durch modernes Webdesign",
+    "description": "Mehr regionale Sichtbarkeit, höhere Kundenbindung und messbar spürbarer Umsatz durch modernes Webdesign Der herrliche Duft von frisch gebackenem Brot und handgemachten Kuchen lockt tagtäglich treue Kunden direkt in Ihre Filiale. Aber wie locken Sie überhaupt erst völlig neue Kunden in Ihre Bäckerei, wenn diese heutzutage fast ausschließlich online suchen? Eine absolut moderne und hoch emotionale Webseite macht Ihr echtes Backhandwerk auch im digitalen Raum greifbar und extrem spürbar. Als spezialisierte Webagentur helfen wir traditionsreichen Bäckereien aktiv dabei, sich gegen günstige Industriebäcker und unpersönliche Supermärkte sehr erfolgreich durchzusetzen. Mit exzellentem Webdesign und kompromissloser Webseitenentwicklung werden Sie regional die unangefochtene Nummer Eins bei absolut allen Suchanfragen nach frischen Backwaren, reichhaltigem Frühstück oder aufwendigen Hochzeitstorten. Ein strategischer Webseiten Relaunch ist der erste Schritt zur absoluten digitalen Marktführerschaft.",
+    "metrics": [
+      {
+        "value": "150",
+        "label": "Mehr lokale Sichtbarkeit durch Webseitenentwicklung",
+        "suffix": "%"
+      },
+      {
+        "value": "90",
+        "label": "Optimale Google Bewertungen durch Webseiten Relaunch",
+        "suffix": "+"
+      }
+    ]
+  },
+  "gamifiedStats": {
+    "title": "Warum viele klassische Bäckereien online extrem wertvolle Kunden verlieren",
+    "description": "Die alten Zeiten, in denen eine einfache Laufkundschaft am frühen Morgen völlig ausreichte, sind endgültig vorbei. Wenn junge Familien, vielbeschäftigte Büroangestellte oder große Veranstalter heute nach einer perfekten Torte für einen Geburtstag oder einem großartigen Sonntagsfrühstück in der direkten Nähe suchen, dann entscheiden sie sich meist innerhalb von extrem wenigen Sekunden völlig unbewusst anhand des digitalen Auftritts und des vorhandenen Webdesign. Ein veralteter Online Auftritt signalisiert mangelnde Frische und fehlende Innovation. Ohne eine professionelle Webseitenentwicklung verlieren Sie täglich wertvolle Umsätze an die große Konkurrenz, die digital besser aufgestellt ist.",
+    "counters": [
+      {
+        "targetValue": 78,
+        "suffix": "%",
+        "label": "Ihrer potenziellen Kunden suchen täglich sehr lokal über das eigene Smartphone nach hervorragenden Bäckereien"
+      },
+      {
+        "targetValue": 64,
+        "suffix": "%",
+        "label": "wollen Kuchen, Brötchen und spezielle Vorbestellungen extrem gerne vollständig und sicher digital abwickeln"
+      }
+    ]
+  },
+  "bentoGrid": {
+    "title": "Hochwertiges Webdesign für traditionelle Bäckereien und feine Konditoreien",
+    "subtitle": "So digitalisieren wir Ihr klassisches Handwerk durch unsere Webagentur.",
+    "cards": [
+      {
+        "title": "Wunderschöne emotionale Bildwelten",
+        "text": "Wir als erfahrene Webagentur rücken Ihre leckeren Backwaren absolut ins perfekte Licht. Sehr großformatige und extrem hochauflösende Bilder sowie knusprige Details lassen den Nutzer das meisterhafte Handwerk durch unser Webdesign regelrecht spüren und wecken sofort großen Appetit bei jedem einzelnen Betrachter.",
+        "size": "large",
+        "icon": "Design"
+      },
+      {
+        "title": "Intelligente digitale Vorbestellung",
+        "text": "Reduzieren Sie morgendliche Wartezeiten in der Filiale extrem. Ein sehr intelligentes Abholsystem für die perfekten Sonntagsbrötchen oder extrem aufwendige Festtagstorten wird direkt in die neue Webseitenentwicklung integriert und erleichtert Ihren Arbeitsalltag enorm.",
+        "size": "small",
+        "icon": "Speed"
+      },
+      {
+        "title": "Einfacher regionaler Filialfinder",
+        "text": "Perfekt integrierte interaktive Karten und genaue Öffnungszeiten in echter Echtzeit sorgen jederzeit dafür, dass absolut all Ihre Kunden immer den absolut schnellsten Weg zum frisch gebackenen Brot und zu den leckersten süßen Teilchen finden.",
+        "size": "small",
+        "icon": "MapPin"
+      },
+      {
+        "title": "Effektives lokales SEO für Bäcker",
+        "text": "Wenn jemand in Ihrer direkten Region nach einer sehr guten Bäckerei in der Nähe oder nach einer absolut speziellen Hochzeitstorte sucht, stehen Sie durch unsere gezielte Webseitenentwicklung und unser perfekt optimiertes Webdesign ganz oben. Dies ist garantiert und bringt massiv neue Stammkunden.",
+        "size": "tall",
+        "icon": "SEO"
+      }
+    ]
+  },
+  "processSteps": [
+    {
+      "title": "1 Markenanalyse und Filialstrukturierung",
+      "description": "Unsere spezialisierte Webagentur analysiert vor jedem Webseiten Relaunch Ihre genaue Identität, absolut all Ihre Standorte und Ihr gesamtes Sortiment wie Brote, Snacks und spezielle Tortenangebote für eine völlig perfekte und strukturierte Webseitenentwicklung, die keinen Kundenwunsch offen lässt."
+    },
+    {
+      "title": "2 Hochwertige Fotografie und toller Content",
+      "description": "Ohne absolut erstklassige und sehr appetitliche Bilder bekommt niemand großen Hunger. Wir kümmern uns im Rahmen des neuen Webdesign um extrem ansprechende Aufnahmen Ihrer gesamten Backstube, Ihrer Mitarbeiter und natürlich Ihrer wunderbaren Handwerkskunst in Form von Brot und Kuchen."
+    },
+    {
+      "title": "3 Modernes Webdesign und rasante Entwicklung",
+      "description": "Wir programmieren als Webagentur eine blitzschnelle und extrem mobil optimierte digitale Plattform. Niemand wartet morgens früh auf der Straße sehr lange auf eine extrem langsam ladende Bäcker Webseite. Geschwindigkeit ist bei der Webseitenentwicklung für mobile Nutzer das absolute A und O."
+    },
+    {
+      "title": "4 Lokale Dominanz und Suchmaschinen Optimierung",
+      "description": "Unsere Webagentur optimiert durch die durchdachte Webseitenentwicklung Ihr gesamtes regionales Profil und bringt Sie direkt bei absolut allen relevanten regionalen Google Suchen absolut ganz nach vorne auf Platz eins. So dominieren Sie nach dem Webseiten Relaunch den gesamten lokalen Markt völlig mühelos."
+    }
+  ],
+  "localDominance": {
+    "title": "Sichern Sie sich extrem effektiv den gesamten regionalen Bäckermarkt",
+    "description": "Alle traditionsreichen Bäckereien leben absolut ausschließlich von ihrer starken lokalen Reichweite. Wer online nicht sofort gefunden wird, überlässt den wichtigen Markt den riesigen Supermärkten und extrem billigen Backshops, die wenig Wert auf echte Qualität legen. Als engagierte Webagentur positionieren wir Ihr echtes und ehrliches traditionelles Handwerk durch exzellente Webseitenentwicklung so stark im digitalen Raum, dass die anspruchsvollen Kunden sehr gerne bereit sind, für Ihre enorm hohe Qualität auch mal einen kleinen Umweg zu fahren. Durch den perfekten Webseiten Relaunch setzen wir Sie an die absolute qualitative Spitze Ihrer gesamten Region.",
+    "points": [
+      "Ihre extrem wichtige digitale Sichtbarkeit bei absolut kaufbereiten lokalen Suchanfragen nach hochwertigen Backwaren wird durch unsere Webagentur massiv und sehr nachhaltig gestärkt",
+      "Wir integrieren eine vollständige und sehr sichere Digitalisierung von großen Vorbestellungen und extrem lukrativen Catering Anfragen direkt ins System",
+      "Eine enorme Stärkung Ihrer Arbeitgebermarke zur sehr leichten Gewinnung von völlig neuen Handwerksbäckern und sehr engagiertem Verkaufspersonal"
+    ]
+  },
+  "faq": [
+    {
+      "q": "Warum braucht unsere traditionelle Bäckerei überhaupt eine professionelle Webseite durch eine Webagentur?",
+      "a": "Ihre handwerkliche Qualität ist absolut herausragend, aber wer das online noch nicht sehen kann, vergleicht Sie fälschlicherweise immer direkt mit dem billigen Supermarkt. Eine sehr professionelle Webseitenentwicklung visualisiert Ihre große Handwerkskunst, baut wichtiges Vertrauen auf und generiert dadurch extrem lukrative Zusatzgeschäfte wie teures Catering, große Firmenbestellungen oder exklusive Hochzeitstorten durch unser exzellentes Webdesign."
+    },
+    {
+      "q": "Bietet Ihre Webagentur bei der Webseitenentwicklung auch Systeme für direkte Vorbestellungen an?",
+      "a": "Ja, absolut. Wir entwickeln nach dem Webseiten Relaunch sehr maßgeschneiderte Lösungen zur direkten Abholung, mit denen Ihre treuen Kunden morgendliche Brötchen, süßen Kuchen oder große Festtagstorten digital vorbestellen und direkt online bezahlen können. Dies entlastet Ihr Verkaufspersonal extrem enorm und reduziert ärgerliche Warteschlangen im Laden sehr erheblich, was Ihre Kunden durch das neue Webdesign extrem glücklich machen wird."
+    },
+    {
+      "q": "Können wir unsere ständig wechselnden Wochenangebote durch die neue Webseitenentwicklung selbst anpassen?",
+      "a": "Selbstverständlich. Wir als moderne Webagentur integrieren ein hochmodernes und sehr leicht verständliches System, mit dem Sie völlig neue Angebote, tolle Saisonartikel oder sich kurzfristig ändernde Öffnungszeiten an Feiertagen innerhalb von extrem wenigen Sekunden auch einfach per Smartphone anpassen können. Sie sind nach dem Webseiten Relaunch völlig unabhängig und benötigen absolut keine technischen Programmierkenntnisse."
+    },
+    {
+      "q": "Wie genau hilft uns exzellentes Webdesign bei der dringenden Suche nach neuem Personal für die Backstube?",
+      "a": "Der allgemeine Fachkräftemangel ist ein extrem großes Problem für das gesamte Handwerk. Wir integrieren bei der Webseitenentwicklung sehr emotionale Karriere Seiten, die Ihre Bäckerei und Backstube als extrem attraktiven und fairen Arbeitgeber präsentieren. Ein sehr einfacher und absolut mobil optimierter Bewerbungsprozess direkt auf der neuen Webseite erhöht die finale Anzahl an sehr qualifizierten Bewerbungen enorm."
+    },
+    {
+      "q": "Ist das neue Webdesign nach dem Webseiten Relaunch wirklich optimal für absolut alle Handys angepasst?",
+      "a": "Eine kompromisslose mobile Optimierung ist der absolute Standard unserer Webagentur. Die allermeisten Bäckerei Kunden suchen direkt unterwegs im Auto oder sehr früh morgens extrem schnell nach Öffnungszeiten auf ihrem mobilen Telefon. Unsere extrem schnelle Webseitenentwicklung sorgt dafür, dass Ihre neue Webseite auf absolut jedem Smartphone in nur kleinsten Bruchteilen einer Sekunde vollständig und perfekt geladen ist."
+    },
+    {
+      "q": "Kümmert sich Ihre spezialisierte Webagentur auch um die Darstellung unserer Filialen bei lokalen Google Suchen?",
+      "a": "Ja, eine absolut durchdachte und sehr lokale Suchmaschinen Optimierung ist bei unserer Webagentur immer extrem ganzheitlich. Wir verbessern bei der Webseitenentwicklung Ihre gesamten Unternehmensprofile bei Google absolut perfekt und verknüpfen sie extrem eng mit Ihrem völlig neuen Webdesign, um Ihr gesamtes regionales Ranking Potenzial vollkommen auszuschöpfen und so extrem viele neue Kunden anzulocken."
+    }
+  ]
+}

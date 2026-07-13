@@ -112,7 +112,7 @@
     },
     "hero": {
       "cta": "Request Integration",
-      "description": "We connect your system landscape. CRM, ERP, Payment, or Marketing tools – everything works seamlessly together.",
+      "description": "We connect your system landscape with custom API Integrations. CRM, ERP, Payment, or Marketing tools – for seamless Automation.",
       "title_prefix": "API Integrations &",
       "title_suffix": "Automation."
     },
@@ -162,7 +162,7 @@
     },
     "hero": {
       "cta": "Request Branding",
-      "description": "Brands that stick. We develop corporate identities, logos, and design languages specifically for digital touchpoints.",
+      "description": "Brands that stick. We develop a strong Brand Identity for B2B companies, logos, and design languages specifically for digital touchpoints.",
       "title_prefix": "Brand Identity",
       "title_suffix": "for B2B."
     },
@@ -277,7 +277,7 @@
     "hero": {
       "badge": "Scalable UI",
       "cta": "Request Design System",
-      "description": "Consistency is King. We develop atomic design systems that make your brand uniform and efficient across all touchpoints.",
+      "description": "Consistency is King. We develop atomic design systems – Design that Scales, making your brand uniform and efficient across all touchpoints.",
       "title_prefix": "Design that",
       "title_suffix": "Scales."
     },
@@ -358,7 +358,7 @@
       "badge": "E-Commerce",
       "cta_primary": "Start Shop Project",
       "cta_secondary": "View References",
-      "description": "I build high-performance shops with Shopify and WooCommerce. No standard themes, but conversion-optimized sales machines.",
+      "description": "We build high-performance E-Commerce that sells, using Shopify and WooCommerce. No standard themes, but conversion-optimized sales machines.",
       "title_anim": "E-Commerce that",
       "title_static": "sells."
     },
@@ -420,6 +420,14 @@
         "Klaviyo Email Marketing"
       ],
       "title": "Our Tech Stack"
+    },
+    "seo_content": {
+      "title": "Experts for Headless E-Commerce Development",
+      "paragraphs": [
+        "In today's digital world, a standard online store is often not enough. As a specialized agency for e-commerce development, we focus on headless architectures using Next.js, Shopify Plus, and Hydrogen.",
+        "By separating the frontend from the backend, we achieve load times under one second. For you, this means lower bounce rates, higher conversion rates, and better Google rankings.",
+        "Whether it's a complex B2B platform or a high-performance B2C shop – we develop custom e-commerce solutions that scale with your business and give you a real competitive edge."
+      ]
     }
   },
   "enterprise_web_page": {
@@ -427,7 +435,7 @@
       "badge": "Beyond Standard",
       "cta_primary": "Start Dominance",
       "cta_secondary": "View Cases",
-      "description": "No business cards. I build digital weapon systems for companies that don't see losing as an option.",
+      "description": "No business cards. We build powerful websites and digital weapon systems that eat markets for companies that don't see losing as an option.",
       "scroll_hint": "Scroll to Explore",
       "title_prefix": "Websites,",
       "title_suffix": "that eat markets."
@@ -580,7 +588,7 @@
     },
     "hero": {
       "cta": "Get CMS Consultation",
-      "description": "Manage content centrally, deliver it everywhere. We integrate Contentful, Sanity, and Strapi in modern frontends.",
+      "description": "Manage your Content centrally with a Headless CMS, deliver it everywhere. We integrate Contentful, Sanity, and Strapi in modern frontends.",
       "title_prefix": "Headless CMS &",
       "title_suffix": "Content."
     },
@@ -679,7 +687,7 @@
     },
     "hero": {
       "cta": "Start Migration",
-      "description": "We migrate your outdated monoliths to a modern, scalable stack based on React and Next.js. Without data loss.",
+      "description": "We migrate your outdated monoliths to a modern, scalable stack based on React and Next.js. Make your system Future Proof – without data loss.",
       "label": "Legacy Modernization",
       "title_prefix": "Future",
       "title_suffix": "Proof."
@@ -733,7 +741,7 @@
     },
     "hero": {
       "badge": "Speed Optimization",
-      "description": "Every millisecond counts. We optimize your load times for maximum customer conversions and user friendliness.",
+      "description": "Every millisecond counts. We optimize your load times for maximum customer conversions, because Speed is Revenue.",
       "title_prefix": "Speed is",
       "title_suffix": "Revenue."
     },
@@ -742,6 +750,14 @@
       "load_time": "Load Time",
       "score": "Google Page Score",
       "shift": "Visual Shift"
+    },
+    "seo_content": {
+      "title": "Pagespeed Optimization & Performance Development",
+      "paragraphs": [
+        "Today, speed is one of the most critical ranking factors for Google. As an agency for performance optimization, we analyze and accelerate your web applications to the maximum.",
+        "We rely on cutting-edge technologies like Next.js, Server-Side Rendering, and Edge Computing. The results are lightning-fast load times, excellent Core Web Vitals, and an outstanding user experience.",
+        "Invest in the performance of your digital assets. Faster websites are proven to lead to more visibility, longer engagement times, and increased revenue."
+      ]
     },
     "meta": {
       "title": "Pagespeed & Core Web Vitals Optimization | Coday",
@@ -775,7 +791,7 @@
     },
     "hero": {
       "badge": "Search Engine Dominance",
-      "description": "We don't just get you to page 1. We keep you there. Technical optimization, content strategy, and authority building.",
+      "description": "Because Invisible is Irrelevant, we don't just get you to page 1, we keep you there. Technical optimization, content strategy, and authority building.",
       "title_prefix": "Invisible is",
       "title_suffix": "Irrelevant."
     },
@@ -871,7 +887,7 @@
     "hero": {
       "badge": "Design Services",
       "cta": "Request Design",
-      "description": "We create digital experiences that users love and drive conversions. From wireframes to high-fidelity prototypes.",
+      "description": "We create UI/UX Design that captivates, and digital experiences that users love and drive conversions. From wireframes to high-fidelity prototypes.",
       "title_prefix": "UI/UX Design that",
       "title_suffix": "captivates."
     },
@@ -947,7 +963,7 @@
     "hero": {
       "badge": "Research & Optimization",
       "cta": "Book Audit",
-      "description": "We analyze your user journeys, identify drop-offs, and optimize your conversion rates based on real user data.",
+      "description": "Data instead of Gut Feeling. We analyze your user journeys, identify drop-offs, and optimize your conversion rates based on real user data.",
       "title_prefix": "Data instead of",
       "title_suffix": "Gut Feeling."
     },
@@ -1019,7 +1035,7 @@
     },
     "hero": {
       "cta": "Discuss Project",
-      "description": "We develop complex web applications, dashboards, and SaaS platforms. Scalable, secure, and user-friendly.",
+      "description": "We develop custom software, complex web applications, dashboards, and SaaS platforms. Scalable, secure, and user-friendly.",
       "title_prefix": "SaaS &",
       "title_suffix": "Custom Software."
     },
@@ -1072,10 +1088,10 @@
       "title": "We design systems, \nnot pages."
     },
     "hero": {
-      "description": "Design that not only looks good but sells. We combine aesthetics with psychology for digital experiences that stick.",
+      "description": "As an Award-Winning UX/UI Design Agency, we create Design that not only looks good but sells. We combine aesthetics with psychology for digital experiences that stick.",
       "label": "Design & Usability",
-      "title_prefix": "Award-Winning",
-      "title_suffix": "Web Design."
+      "title_prefix": "Award-Winning ",
+      "title_suffix": "UX/UI Design Agency."
     },
     "process": {
       "description": "We leave nothing to chance. Our UX process is based on data, user feedback, and iterative improvements.",
@@ -1397,9 +1413,9 @@
   "web_development_page": {
     "hero": {
       "label": "Headless Web Development",
-      "title_anim": "Handcrafted",
+      "title_anim": "Handcrafted ",
       "title_static": "Headless Websites.",
-      "description": "Custom Next.js architecture from Germany. No page builders, no templates. Clean React, strict TypeScript, and Headless CMS with Sanity. For companies that need measurably fast load times and an independent design."
+      "description": "We develop handcrafted Headless Websites with custom Next.js architecture from Germany. No page builders, no templates. Clean React, strict TypeScript, and Headless CMS with Sanity. For companies that need measurably fast load times and an independent design."
     },
     "problem": {
       "label": "The Challenge",

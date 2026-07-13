@@ -2,63 +2,67 @@
   "target": "arzt-giessen",
   "type": "industry-location",
   "meta": {
-    "title": "High-End Praxis-Websites & SEO für Ärzte in Gießen | Coday",
-    "description": "Dominieren Sie den medizinischen Sektor am UKGM-Standort Gießen. Erschließen Sie das Potenzial von 28.000 Studenten und anspruchsvollen Privatpatienten."
+    "title": "High End Praxis Webdesign für Ärzte in Gießen",
+    "description": "Dominieren Sie den medizinischen Sektor am UKGM Standort Gießen. Erschließen Sie das Potenzial von Patienten durch professionelle Webseitenentwicklung."
   },
   "hero": {
     "headline": "Ihre Praxis als medizinischer Leuchtturm in Gießen.",
-    "subheadline": "Exzellentes Design. Maximale Sichtbarkeit am UKGM-Standort. Vollautomatisierte Patientenführung.",
-    "description": "In einer Universitätsstadt wie Gießen mit dem renommierten UKGM und über 28.000 Studenten ist die medizinische Konkurrenz massiv, und die Patientenstruktur extrem jung und digital-affin. Wenn Ihre Webpräsenz nicht sofort höchste Innovationskraft und Kompetenz ausstrahlt, verlieren Sie die lukrativsten Patienten. Wir bauen digitale Festungen für ambitionierte Gießener Ärzte.",
+    "subheadline": "Exzellentes Webdesign. Maximale Sichtbarkeit am UKGM Standort. Vollautomatisierte Patientenführung.",
+    "description": "Exzellentes Webdesign. Maximale Sichtbarkeit am UKGM Standort. Vollautomatisierte Patientenführung. In einer Universitätsstadt wie Gießen mit dem renommierten UKGM und über 28.000 Studenten ist die medizinische Konkurrenz massiv. Die Patientenstruktur ist extrem jung und überdurchschnittlich digital affin. Wenn Ihre Webpräsenz nicht sofort höchste Innovationskraft und medizinische Kompetenz ausstrahlt, verlieren Sie die lukrativsten Patienten an den direkten Wettbewerb. Als spezialisierte Webdesign Agentur bauen wir digitale Festungen für ambitionierte Gießener Ärzte. Wir fokussieren uns auf exklusive Webseitenentwicklung und den strategischen Webseiten Relaunch, um Ihre medizinische Expertise in eine erstklassige digitale Erfahrung zu übersetzen.",
     "metrics": [
-      { "value": "200", "label": "Mehr Online-Terminbuchungen", "suffix": "%" },
+      {
+        "value": "200",
+        "label": "Mehr Online Terminbuchungen",
+        "suffix": "%"
+      },
       {
         "value": "50",
-        "label": "Zeitgewinn durch studentische Aushilfen und Automatisierung",
+        "label": "Zeitgewinn durch Automatisierung",
         "suffix": "%"
       }
     ]
   },
   "gamifiedStats": {
     "title": "Verlieren Sie den digitalen Kampf um Patienten?",
-    "description": "Gießener Patienten, insbesondere die große Studenten-Demografie, erwarten digitale Exzellenz. Wenn sie Ihre Website auf dem Smartphone öffnen und ewig zoomen müssen, ziehen sie fatale Rückschlüsse auf Ihre medizinische Ausstattung und wechseln den Arzt.",
+    "description": "Gießener Patienten, insbesondere die große studentische Demografie, erwarten digitale Exzellenz. Wenn sie Ihre Webseite auf dem Smartphone öffnen und ewig zoomen müssen, ziehen sie fatale Rückschlüsse auf Ihre medizinische Ausstattung und wechseln sofort den Arzt. Ein veralteter Webauftritt ist der teuerste Fehler in der heutigen Zeit. Ein professioneller Webseiten Relaunch durch unsere Webagentur behebt diese Defizite und stellt sicher, dass Ihre Onlinepräsenz exakt die hohe medizinische Qualität widerspiegelt, die Sie in Ihrer Praxis täglich abliefern.",
     "counters": [
       {
         "targetValue": 88,
         "suffix": "%",
-        "label": "der Neupatienten recherchieren in Gießen online vor dem Erstbesuch"
+        "label": "recherchieren in Gießen online vor dem Erstbesuch"
       },
       {
         "targetValue": 4,
         "suffix": "Sek.",
-        "label": "entscheiden, ob ein Patient bleibt oder den nächsten Facharzt sucht"
+        "label": "entscheiden ob ein Patient bleibt oder sucht"
       }
     ]
   },
   "bentoGrid": {
     "title": "Der unfaire Vorteil für Ihre Praxis",
-    "subtitle": "Warum Coday die einzige logische Wahl für Gießener Top-Mediziner ist.",
+    "subtitle": "Warum unsere Webseitenentwicklung die einzige logische Wahl für Gießener Mediziner ist.",
     "cards": [
       {
-        "title": "Vertrauens-Architektur",
-        "text": "Wir übersetzen Ihre medizinische Brillanz in ein klares, minimalistisches High-End-Design. Seriosität, die man sofort spürt und die Ängste bei jüngeren Patienten abbaut.",
+        "title": "Digitale Vertrauensarchitektur",
+        "text": "Wir übersetzen Ihre medizinische Brillanz in ein klares und minimalistisches High End Webdesign. Eine spürbare Seriosität, die Ängste bei jüngeren Patienten abbaut und nachhaltiges Vertrauen schafft.",
         "size": "large",
         "icon": "Design"
       },
       {
-        "title": "Digitale Triage & Automatisierung",
-        "text": "Intelligente Funnels leiten Standard-Anfragen von Studenten (Rezeptbestellungen, Krankschreibungen) effizient ab, entlasten Ihr Team massiv.",
+        "title": "Digitale Triage und Automatisierung",
+        "text": "Intelligente Funnels leiten Standardanfragen wie Rezeptbestellungen effizient ab und entlasten Ihr Praxisteam massiv. Unsere Webseitenentwicklung denkt Praxisabläufe digital weiter.",
         "size": "tall",
         "icon": "Speed"
       },
       {
-        "title": "Lokale SEO-Dominanz (Gießen)",
-        "text": "Ob 'Zahnarzt Gießen' oder 'Kardiologe Mittelhessen' – wir programmieren Next.js-Plattformen, die von Google geliebt und unweigerlich auf Platz 1 gerankt werden.",
+        "title": "Lokale SEO Dominanz in Gießen",
+        "text": "Wir programmieren Plattformen, die von Suchmaschinen geliebt und unweigerlich auf den vorderen Plätzen gerankt werden. Ihr exzellentes Webdesign wird auch exzellent gefunden.",
         "size": "small",
         "icon": "SEO"
       },
       {
-        "title": "100% Rechtssicherheit",
-        "text": "Keine Abmahnfallen. Wir garantieren absolute DSGVO-Konformität, sicheres Hosting und den Schutz sensibler Patientendaten nach höchsten Standards.",
+        "title": "Hundertprozentige Rechtssicherheit",
+        "text": "Keine Abmahnfallen. Wir garantieren absolute DSGVO Konformität, extrem sicheres Hosting und den Schutz sensibler Patientendaten nach den höchsten technischen Standards.",
         "size": "small",
         "icon": "Security"
       }
@@ -66,63 +70,63 @@
   },
   "processSteps": [
     {
-      "title": "1. Gießen-Marktanalyse & Strategie",
-      "description": "Wir analysieren Ihre spezifische Fachrichtung im starken Gießener Wettbewerbsumfeld (Klinikum, viele junge Kollegen) und identifizieren die lukrativsten Suchvolumina."
+      "title": "Gießen Marktanalyse und Strategie",
+      "description": "Wir analysieren Ihre spezifische Fachrichtung im starken Gießener Wettbewerbsumfeld und identifizieren detailliert die lukrativsten Suchvolumina für Ihren Webseiten Relaunch."
     },
     {
-      "title": "2. Psychologisches UX/UI Design",
-      "description": "Kein Copy-Paste. Wir kreieren eine völlig eigenständige Praxis-Identität, die Souveränität, Hygiene und Innovation ausstrahlt, perfekt abgestimmt auf die Universitätsstadt."
+      "title": "Psychologisches Webdesign",
+      "description": "Kein Copy und Paste. Wir kreieren eine völlig eigenständige Praxis Identität, die absolute Souveränität, Hygiene und Innovation ausstrahlt, perfekt abgestimmt auf die Universitätsstadt."
     },
     {
-      "title": "3. Enterprise-Level Programmierung",
-      "description": "Rasend schnelle Ladezeiten, perfekte mobile Darstellung und nahtlose Anbindung Ihrer Praxisverwaltungs- oder Jameda/Doctolib-Systeme."
+      "title": "Enterprise Webseitenentwicklung",
+      "description": "Rasend schnelle Ladezeiten, perfekte mobile Darstellung und nahtlose Anbindung Ihrer Praxisverwaltung oder externer Buchungssysteme sind für unsere Webagentur absoluter Standard."
     },
     {
-      "title": "4. Launch & Skalierung",
-      "description": "Mit dem Launch übernehmen Sie die digitale Meinungsführerschaft in Gießen. Wir monitoren, betreuen und sichern Ihre Top-Positionen langfristig ab."
+      "title": "Launch und Skalierung",
+      "description": "Mit dem Launch übernehmen Sie die digitale Meinungsführerschaft in Gießen. Wir monitoren, betreuen und sichern Ihre Top Positionen langfristig durch fortlaufende Suchmaschinenoptimierung ab."
     }
   ],
   "localDominance": {
     "title": "Werden Sie zur unumstrittenen Instanz am UKGM",
-    "description": "In Gießen mit seinem Klinikum und zahlreichen Fachärzten ist Sichtbarkeit alles. Sie können nicht darauf warten, dass Patienten Sie zufällig finden. Mit einer aggressiven, aber hochseriösen digitalen Positionierung schöpfen Sie die Nachfrage gezielt ab.",
+    "description": "In Gießen mit seinem Klinikum und zahlreichen niedergelassenen Fachärzten ist digitale Sichtbarkeit alles. Sie können sich nicht darauf verlassen, dass Patienten Sie rein zufällig finden. Mit einer aggressiven, aber hochseriösen digitalen Positionierung schöpfen Sie die vorhandene Nachfrage gezielt ab. Als Ihre Webagentur rüsten wir Sie mit der notwendigen digitalen Technologie aus, um in Gießen als medizinischer Experte unangefochten an der Spitze zu stehen.",
     "points": [
-      "Gezielte Steuerung des Studenten- und Privatpatientenstroms",
-      "Aufbau einer extrem starken Arbeitgebermarke in einem umkämpften MFA-Markt",
-      "Massiver Vertrauensvorschuss noch vor dem Betreten der Praxis"
+      "Gezielte Steuerung des lukrativen Studenten und Privatpatientenstroms",
+      "Aufbau einer extrem starken Arbeitgebermarke in einem stark umkämpften Personalmarkt",
+      "Massiver Vertrauensvorschuss noch weit vor dem Betreten der Praxisräume"
     ]
   },
   "faq": [
     {
-      "q": "In Gießen gibt es unzählige Praxen und das Uniklinikum. Wie können wir uns da noch digital abheben?",
-      "a": "Gerade weil die Konkurrenz so hoch ist, ist Differenzierung einfach. 90% der Praxis-Websites in Gießen sind technologisch auf dem Stand von 2010. Wir kombinieren Enterprise-Technologie (Next.js) mit High-End-Design. Dieser Kontrast fällt anspruchsvollen Patienten und Studenten sofort ins Auge."
+      "q": "In Gießen gibt es unzählige Praxen und das Uniklinikum. Wie können wir uns durch ein neues Webdesign noch digital abheben?",
+      "a": "Gerade weil die Konkurrenz in Gießen so immens hoch ist, ist eine sichtbare Differenzierung relativ einfach. Nahezu neunzig Prozent der Webseiten von Praxen in Gießen sind technologisch auf dem Stand von vor zehn Jahren. Wir kombinieren als professionelle Webagentur modernste Webseitenentwicklung mit einem High End Webdesign. Dieser visuelle und technologische Kontrast fällt anspruchsvollen Patienten und der jungen Studentenschaft sofort positiv ins Auge."
     },
     {
-      "q": "Können wir gezielt mehr Privatpatienten oder Selbstzahler-Leistungen bewerben?",
-      "a": "Ja, das ist einer unserer Kernansätze. Durch strategische Suchmaschinenoptimierung und psychologisch durchdachte Landeseiten positionieren wir spezifische IGeL-Leistungen so elegant, dass die Nachfrage exakt aus der gewünschten Zielgruppe kommt."
+      "q": "Können wir durch die neue Webseite gezielt mehr Privatpatienten oder Selbstzahler bewerben?",
+      "a": "Ja, das ist einer der zentralen Ansätze unserer Webseitenentwicklung. Durch strategische Suchmaschinenoptimierung und psychologisch durchdachte Landingpages positionieren wir spezifische individuelle Gesundheitsleistungen so elegant, dass die Nachfrage exakt aus der von Ihnen gewünschten Zielgruppe generiert wird."
     },
     {
-      "q": "Wie wird mein Personal in Stoßzeiten (z.B. Semesterstart) durch die neue Website entlastet?",
-      "a": "Wir integrieren intelligente FAQs, digitale Rezeptanforderungen, Online-Terminvergaben und digitale Anamnesebögen. Das reduziert die Arbeitslast Ihrer MFAs drastisch, da Standardanfragen der Studenten vollautomatisiert abgewickelt werden."
+      "q": "Wie wird mein Personal in Stoßzeiten zum Semesterstart durch die neue Webseite entlastet?",
+      "a": "Wir integrieren intelligente häufig gestellte Fragen, digitale Rezeptanforderungen, direkte Online Terminvergaben und digitale Anamnesebögen in das Webdesign. Das reduziert die telefonische Arbeitslast Ihrer Mitarbeiter drastisch, da Standardanfragen der Studenten vollautomatisiert über die Webseite abgewickelt werden."
     },
     {
-      "q": "Wir haben sehr strikte Vorgaben bezüglich Werbung (HWG). Berücksichtigen Sie das?",
-      "a": "Selbstverständlich. Wir kennen die juristischen Fallstricke des Heilmittelwerbegesetzes. Unser Copywriting ist hochprofessionell, sachlich fundiert und weckt Vertrauen durch Expertise, nicht durch reißerische Versprechen."
+      "q": "Wir haben sehr strikte Vorgaben bezüglich Werbung für Ärzte. Berücksichtigen Sie das?",
+      "a": "Selbstverständlich. Wir kennen die komplexen juristischen Fallstricke des Heilmittelwerbegesetzes aus zahlreichen Projekten. Unser Copywriting im Rahmen der Webseitenentwicklung ist hochprofessionell, sachlich fundiert und weckt Vertrauen durch belegte Expertise, keinesfalls durch reißerische Versprechen."
     },
     {
-      "q": "Binden Sie Doctolib, Jameda oder Samedi ein?",
-      "a": "Ja, wir integrieren jedes gängige Online-Buchungssystem nahtlos. Der Patient merkt keinen Bruch in der User Experience, was die Abbruchrate bei der Terminbuchung enorm minimiert."
+      "q": "Binden Sie bei der Webseitenentwicklung auch Systeme wie Doctolib oder Jameda ein?",
+      "a": "Ja, wir integrieren jedes gängige Online Buchungssystem nahtlos in das neue Webdesign. Der Patient merkt bei der Nutzung keinen Bruch in der Benutzererfahrung, was die Abbruchrate bei der Terminbuchung enorm minimiert und Ihre Kalender zuverlässig füllt."
     },
     {
-      "q": "Warum sollten wir viel Geld in eine individuelle Website investieren, wenn es Ärzte-Vorlagen gibt?",
-      "a": "Premium-Patienten haben ein feines Gespür für Qualität. Wer bei seinem Außenauftritt spart, erweckt den Eindruck, auch in der Praxis an der falschen Stelle zu sparen. Eine Vorlage ist langsam, schwerfällig und nicht an den lokalen Gießener Markt angepasst."
+      "q": "Warum sollten wir in eine individuelle Webagentur investieren, wenn es doch günstige Ärzte Vorlagen gibt?",
+      "a": "Premium Patienten haben ein sehr feines Gespür für Qualität. Wer bei seinem digitalen Außenauftritt spart, erweckt unweigerlich den Eindruck, auch in der Praxis an der falschen Stelle zu sparen. Eine Standardvorlage ist langsam, schwerfällig, nicht individuell anpassbar und definitiv nicht an den speziellen lokalen Markt in Gießen angepasst."
     },
     {
-      "q": "Unterstützt die neue Seite auch bei der Personalsuche in Gießen?",
-      "a": "Absolut. Gießen ist eine Studentenstadt, junge Fachkräfte erwarten moderne Arbeitgeber. Eine exzellente digitale Präsenz ist heute das stärkste Argument, um qualifizierte MFAs oder junge Assistenzärzte vom UKGM von Ihrer Praxis zu überzeugen."
+      "q": "Unterstützt uns der geplante Webseiten Relaunch auch bei der Personalsuche in Gießen?",
+      "a": "Absolut. Gießen ist eine Studentenstadt, junge medizinische Fachangestellte erwarten heute hochmoderne Arbeitgeber. Eine exzellente digitale Präsenz, geschaffen durch erstklassiges Webdesign, ist heute das mit Abstand stärkste Argument, um qualifizierte Mitarbeiter oder junge Assistenzärzte vom Klinikum von Ihrer Praxis zu überzeugen."
     },
     {
-      "q": "Wie läuft die Zusammenarbeit ab, ohne unseren Praxisalltag zu stören?",
-      "a": "Wir arbeiten komplett autark. Nach einem präzisen Kick-Off übernehmen wir Konzeption, Design, Text und Programmierung. Sie erhalten regelmäßige Updates und prüfen lediglich die Ergebnisse, während Sie sich zu 100% auf Ihre Patienten konzentrieren."
+      "q": "Wie läuft die Zusammenarbeit mit Ihrer Webagentur ab, ohne unseren intensiven Praxisalltag zu stören?",
+      "a": "Wir arbeiten komplett autark und eigenständig. Nach einem präzisen Projektstart übernehmen wir die Konzeption, das Webdesign, die Texterstellung und die abschließende Webseitenentwicklung vollständig. Sie erhalten von uns regelmäßige Zwischenstände und prüfen lediglich die Ergebnisse, während Sie sich weiterhin zu hundert Prozent auf die Behandlung Ihrer Patienten konzentrieren können."
     }
   ]
 }

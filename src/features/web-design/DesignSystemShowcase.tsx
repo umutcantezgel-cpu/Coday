@@ -91,7 +91,7 @@ const DesignSystemShowcase: React.FC = () => {
             Feature Card
           </h4>
           <p className={`text-sm mb-6 ${current.textColor} opacity-80`}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Hochwertige UI-Komponenten passen sich nahtlos an Ihre Markenidentität an.
           </p>
           <button
             className={`active:scale-[0.97] px-6 py-2 font-bold transition-transform motion-reduce:duration-[0.01ms] ${current.buttonText}`}

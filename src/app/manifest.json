@@ -2,7 +2,7 @@
   "name": "Coday Web",
   "short_name": "Coday",
   "description": "Agentur für moderne Webentwicklung & digitale Sichtbarkeit",
-  "start_url": "/",
+  "start_url": "/de",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#0a0a0a",
@@ -27,13 +27,13 @@
     {
       "name": "Unsere Services",
       "short_name": "Services",
-      "url": "/services",
+      "url": "/de/services",
       "description": "Entdecken Sie unsere Web- & SEO-Services"
     },
     {
       "name": "Kontakt",
       "short_name": "Kontakt",
-      "url": "/contact",
+      "url": "/de/contact",
       "description": "Nehmen Sie Kontakt mit uns auf"
     }
   ]

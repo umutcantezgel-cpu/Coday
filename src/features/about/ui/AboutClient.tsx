@@ -141,9 +141,10 @@ export const AboutClient: React.FC = () => {
             className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed mb-12"
             {...stagger(0.25)}
           >
-            Coday ist ein High-End Digital-Studio aus Wetzlar, das kompromisslose Web-Architekturen
-            entwickelt. Jedes Projekt ist ein Unikat, entwickelt für Marken, die sich von der Masse
-            abheben wollen.
+            Als Ihr Webdesigner in Wetzlar sind wir persönlich & nah für Sie da. Coday ist ein
+            High-End Digital-Studio aus Wetzlar, das kompromisslose Web-Architekturen entwickelt.
+            Jedes Projekt ist ein Unikat, entwickelt für Marken, die sich von der Masse abheben
+            wollen.
           </m.p>
 
           <m.div className="flex justify-center gap-4" {...stagger(0.35)}>

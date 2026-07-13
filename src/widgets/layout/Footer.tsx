@@ -224,12 +224,13 @@ export const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-3">
               <li>
-                <a
-                  href="/de/webdesign-agentur-wetzlar"
+                <Link
+                  prefetch={false}
+                  href="/webdesign-agentur-wetzlar"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
                   Webdesign Agentur Wetzlar
-                </a>
+                </Link>
               </li>
               <li>
                 <Link

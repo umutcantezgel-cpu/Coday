@@ -79,6 +79,20 @@ export function EcommerceDevelopmentClient() {
         </div>
       </section>
 
+      {/* SEO Content Block */}
+      <section className="py-24 bg-surface-base border-t border-surface-muted">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-display font-bold mb-8 text-content-base">
+            {t('ecommerce_page.seo_content.title')}
+          </h2>
+          <div className="space-y-6 text-lg text-content-muted leading-relaxed">
+            {(t.raw('ecommerce_page.seo_content.paragraphs') as string[])?.map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Relevant FAQs */}
       <section className="py-24 bg-surface-light">
         <RelevantFAQs serviceId="web-development" />

@@ -1,0 +1,124 @@
+{
+  "target": "friseur",
+  "type": "industry-location",
+  "meta": {
+    "title": "Friseur Webdesign Agentur Wetzlar | Neukundengewinnung",
+    "description": "Exklusives Webdesign für Friseure in Wetzlar. Steigern Sie Ihre Auslastung durch Online Terminbuchungen und einen Look, der Ihre Qualität widerspiegelt."
+  },
+  "hero": {
+    "headline": "Digitaler Style, der analoge Termine füllt.",
+    "subheadline": "Mehr Neukunden. Volle Terminkalender. Premium Positionierung.",
+    "description": "Mehr Neukunden. Volle Terminkalender. Premium Positionierung. Kunden entscheiden oft schon beim ersten Blick auf Ihre Website, ob sie Ihnen ihre Haare anvertrauen. Wenn Ihr Online Auftritt altmodisch wirkt, geht der Kunde zur Konkurrenz. Wir designen Websites für Friseure und Barbershops, die Handwerkskunst und Ästhetik vereinen – und Besucher direkt in die Online Terminbuchung leiten.",
+    "metrics": [
+      {
+        "value": "120",
+        "label": "Mehr Online Buchungen",
+        "suffix": "%"
+      },
+      {
+        "value": "0",
+        "label": "Anrufe während Behandlungen",
+        "suffix": ""
+      }
+    ]
+  },
+  "gamifiedStats": {
+    "title": "Warum klassische Terminvergabe Geld kostet",
+    "description": "Jedes Mal, wenn Sie oder Ihre Mitarbeiter ans Telefon gehen müssen, unterbrechen Sie die Behandlung Ihres Kunden vor Ort. Das stört das Premium Erlebnis und kostet wertvolle Arbeitszeit.",
+    "counters": [
+      {
+        "targetValue": 60,
+        "suffix": "%",
+        "label": "der Kunden buchen Termine am liebsten außerhalb der Öffnungszeiten"
+      },
+      {
+        "targetValue": 35,
+        "suffix": "%",
+        "label": "weniger No Shows durch automatische SMS Erinnerungen"
+      }
+    ]
+  },
+  "bentoGrid": {
+    "title": "Webdesign, das perfekt sitzt",
+    "subtitle": "So machen wir Ihren Salon digital erfolgreich.",
+    "cards": [
+      {
+        "title": "Ästhetisches Design",
+        "text": "Wir transportieren das Flair Ihres Salons in die digitale Welt. Mit viel Weißraum, edlen Schriften und einer Bildsprache, die Ihre Stylings feiert.",
+        "size": "large",
+        "icon": "Design"
+      },
+      {
+        "title": "Online Terminbuchung",
+        "text": "Nahtlose Integration von Treatwell, Phorest, Shore oder Ihrem eigenen System. Buchen mit 2 Klicks.",
+        "size": "small",
+        "icon": "Speed"
+      },
+      {
+        "title": "Instagram Sync",
+        "text": "Ihre besten Vorher /Nachher Bilder von Instagram werden automatisch und performant auf der Website ausgespielt.",
+        "size": "small",
+        "icon": "MapPin"
+      },
+      {
+        "title": "Local SEO Ranking",
+        "text": "Wir sorgen dafür, dass Sie bei Suchanfragen wie 'Balayage Spezialist Wetzlar' oder 'Bester Herrenfriseur' bei Google auf Platz 1 stehen.",
+        "size": "tall",
+        "icon": "SEO"
+      }
+    ]
+  },
+  "processSteps": [
+    {
+      "title": "1. Vibe Check",
+      "description": "Wir analysieren den Style Ihres Salons. Sind Sie ein edgy Barbershop oder ein exklusiver Premium Damensalon? Das Design muss 100% matchen."
+    },
+    {
+      "title": "2. Fotografie & Story",
+      "description": "Ein Salon lebt vom Team. Wir helfen Ihnen, Mitarbeiter und Räumlichkeiten emotional und professionell in Szene zu setzen."
+    },
+    {
+      "title": "3. Booking Integration",
+      "description": "Wir binden Ihr Kassensystem oder Termin Tool so tief ein, dass der Nutzer die Website nicht verlassen muss."
+    },
+    {
+      "title": "4. Launch & Local SEO",
+      "description": "Wir optimieren Ihr Google Unternehmensprofil und launchen Ihre Website als neue Nummer Eins für Friseurdienstleistungen in Ihrer Stadt."
+    }
+  ],
+  "localDominance": {
+    "title": "Werden Sie der Top Salon der Region",
+    "description": "Die Friseurbranche ist hyper lokal. Kunden suchen im Umkreis von wenigen Kilometern. Wer hier digital nicht glänzt, überlässt das Feld den Mitbewerbern. Wir bauen Ihre Website so auf, dass Sie nicht nur gefunden werden, sondern als unangefochtener Premium Experte wahrgenommen werden.",
+    "points": [
+      "Dominate Rankings für Spezial Dienstleistungen (Extensions, Balayage, Keratin)",
+      "Aufbau massiven Vertrauens durch Team Vorstellung und echte Kunden Bewertungen",
+      "Vollständige Entlastung der Rezeption durch 24/7 Online Booking"
+    ]
+  },
+  "faq": [
+    {
+      "q": "Können wir unser bestehendes Termin System behalten?",
+      "a": "Ja, absolut. Wir integrieren alle gängigen Buchungssysteme (Treatwell, Shore, Phorest, Belbo etc.) nahtlos in das neue, edle Design Ihrer Website."
+    },
+    {
+      "q": "Wie hilft eine neue Website gegen Terminausfälle (No Shows)?",
+      "a": "Durch die intelligente Einbindung von Buchungstools richten wir automatisierte Erinnerungen (SMS/E Mail) und bei Bedarf Anzahlungen ein. Das senkt No Shows drastisch."
+    },
+    {
+      "q": "Ist die Seite auch auf dem Smartphone gut bedienbar?",
+      "a": "Über 90% Ihrer Kunden werden die Seite mobil aufrufen. Wir entwickeln streng 'Mobile First'. Die Bedienung fühlt sich an wie eine hochwertige App, blitzschnell und intuitiv."
+    },
+    {
+      "q": "Können wir Preise und Teammitglieder selbst anpassen?",
+      "a": "Natürlich. Sie erhalten ein sehr einfach zu bedienendes Content Management System (CMS), mit dem Sie Preislisten aktualisieren oder neue Mitarbeiter hinzufügen können – ganz ohne technische Kenntnisse."
+    },
+    {
+      "q": "Brauchen wir neue Fotos für die Website?",
+      "a": "Wir empfehlen es stark. Stockfotos wirken bei Friseuren sehr unauthentisch. Wir können ein professionelles Shooting organisieren, um Ihren Salon und Ihr Team im besten Licht zu zeigen."
+    },
+    {
+      "q": "Wirken wir durch eine Premium Website nicht zu teuer?",
+      "a": "Ein hochwertiges Design rechtfertigt Ihre Preise. Wenn Sie erstklassige Arbeit abliefern, muss die Website diese Qualität spiegeln. Wir positionieren Sie exakt so, dass Sie Ihre Wunschkunden anziehen."
+    }
+  ]
+}

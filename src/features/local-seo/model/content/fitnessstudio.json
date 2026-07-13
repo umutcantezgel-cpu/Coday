@@ -1,0 +1,124 @@
+{
+  "target": "fitnessstudio",
+  "type": "industry-location",
+  "meta": {
+    "title": "Fitnessstudio Webdesign Agentur Wetzlar | Mitgliedergewinnung",
+    "description": "Premium Webdesign für Fitnessstudios. Gewinnen Sie automatisiert Neumitglieder durch verkaufsstarke Landingpages und nahtlose Probetraining Buchungen."
+  },
+  "hero": {
+    "headline": "Ihre Website als digitaler Vertriebsmitarbeiter.",
+    "subheadline": "Mehr Probetrainings. Bessere Mitglieder. Maximale Auslastung.",
+    "description": "Mehr Probetrainings. Bessere Mitglieder. Maximale Auslastung. Ein gutes Studio allein reicht heute nicht mehr. Potenzielle Mitglieder vergleichen Sie online mit Billig Ketten und Boutique Studios. Wenn Ihre Website keine Energie und Professionalität ausstrahlt, verlieren Sie das Abo. Wir bauen Fitnessstudio Websites, die den Vibe Ihres Studios digitalisieren und Besucher direkt ins Probetraining konvertieren.",
+    "metrics": [
+      {
+        "value": "200",
+        "label": "Mehr Leads für Probetrainings",
+        "suffix": "%"
+      },
+      {
+        "value": "3",
+        "label": "Klicks bis zum gebuchten Termin",
+        "suffix": " max."
+      }
+    ]
+  },
+  "gamifiedStats": {
+    "title": "Die Fitness Branche ist gnadenlos digital",
+    "description": "Die Zeiten, in denen Flyer im Briefkasten für Neukunden sorgten, sind endgültig vorbei. Die Entscheidung für ein Studio fällt heute abends auf dem Smartphone auf der Couch.",
+    "counters": [
+      {
+        "targetValue": 84,
+        "suffix": "%",
+        "label": "der Fitness Interessierten informieren sich primär online"
+      },
+      {
+        "targetValue": 71,
+        "suffix": "%",
+        "label": "brechen ab, wenn die Online Terminbuchung zu kompliziert ist"
+      }
+    ]
+  },
+  "bentoGrid": {
+    "title": "Digitale Muskeln für Ihr Studio",
+    "subtitle": "So gewinnen wir Mitglieder auf Autopilot.",
+    "cards": [
+      {
+        "title": "High Energy Design",
+        "text": "Wir transportieren Schweiß, Motivation und Community. Großflächige Videos und dynamische Animationen machen Lust auf Training.",
+        "size": "large",
+        "icon": "Design"
+      },
+      {
+        "title": "Nahtlose Terminbuchung",
+        "text": "Die Hürde zum Probetraining muss gegen Null gehen. Wir integrieren Termin Tools (z.B. Calendly, eFit, Magicline) für direkte 1 Klick Buchungen.",
+        "size": "small",
+        "icon": "Speed"
+      },
+      {
+        "title": "Mitglieder Portal",
+        "text": "Integration von Kursplänen, Auslastungs Anzeigen in Echtzeit und Trainer Profilen für maximale Transparenz.",
+        "size": "small",
+        "icon": "MapPin"
+      },
+      {
+        "title": "Performance Marketing Ready",
+        "text": "Perfekt abgestimmte Landingpages für Ihre Facebook  oder Google Ads Kampagnen. Blitzschnell ladend und hoch konvertierend.",
+        "size": "tall",
+        "icon": "SEO"
+      }
+    ]
+  },
+  "processSteps": [
+    {
+      "title": "1. Positionierungs Workshop",
+      "description": "Premium Club, Discounter oder Boutique Studio? Wir analysieren Ihre Zielgruppe und grenzen Sie scharf von den Mitbewerbern ab."
+    },
+    {
+      "title": "2. Visuelle Identität & UX",
+      "description": "Entwicklung eines Interfaces, das Energie ausstrahlt. Fokussierung auf den wichtigsten Conversion Pfad: Das Probetraining."
+    },
+    {
+      "title": "3. Software Integration",
+      "description": "Verknüpfung mit Ihrer Studio Verwaltungssoftware für Live Kurspläne und Lead Synchronisation ohne manuellen Aufwand."
+    },
+    {
+      "title": "4. Go Live & Skalierung",
+      "description": "Launch der blitzschnellen Website und Startschuss für Ihre digitalen Kampagnen zur Neukundengewinnung."
+    }
+  ],
+  "localDominance": {
+    "title": "Besetzen Sie Ihr Einzugsgebiet",
+    "description": "In der Fitness Branche ist das Einzugsgebiet lokal scharf begrenzt (meist 10 15km). Genau in diesem Radius müssen Sie omnipräsent sein. Durch gezieltes Local SEO und hochkonvertierende Landingpages sorgen wir dafür, dass niemand in Ihrer Region an Ihrem Studio vorbeikommt.",
+    "points": [
+      "Dominanz bei Suchen wie 'Fitnessstudio Wetzlar' oder 'Personal Training in der Nähe'",
+      "Aufbau von Expertenstatus durch Fitness  und Ernährungs Content",
+      "Deutliche Reduzierung der Customer Acquisition Cost (CAC) durch starke organische Reichweite"
+    ]
+  },
+  "faq": [
+    {
+      "q": "Können wir unsere Studio Software (z.B. Magicline, eFit) anbinden?",
+      "a": "Ja. Wir binden gängige Verwaltungssoftware über deren APIs nahtlos ein. Kurspläne, Auslastungen und Probetraining Buchungen werden automatisch synchronisiert, ohne dass der Nutzer Ihre Website verlassen muss."
+    },
+    {
+      "q": "Wie schnell lädt die neue Seite auf dem Smartphone?",
+      "a": "Dank unserer Next.js Architektur laden selbst seitenfüllende Video Backgrounds aus dem Trainingsbereich in Bruchteilen einer Sekunde. Google belohnt diese Geschwindigkeit mit Top Rankings."
+    },
+    {
+      "q": "Erstellen Sie auch Landingpages für bestimmte Kampagnen (z.B. Neujahrs Angebote)?",
+      "a": "Absolut. Durch unser integriertes Headless CMS (z.B. Sanity) können Sie oder Ihr Marketing Team innerhalb von Minuten eigenständig neue Aktions Landingpages per Drag & Drop zusammenstellen – natürlich im vorgegebenen High End Design."
+    },
+    {
+      "q": "Brauchen wir unbedingt professionelle Fotos/Videos aus unserem Studio?",
+      "a": "Wir empfehlen es dringend. Stockfotos von Models, die offensichtlich nicht in Ihrem Studio trainieren, zerstören die Authentizität sofort. Wir können auf Wunsch ein professionelles Shooting in Ihrem Studio organisieren."
+    },
+    {
+      "q": "Werden wir bei Google besser gefunden?",
+      "a": "Unsere Websites sind von Grund auf technisch für Suchmaschinen optimiert. Zusätzlich implementieren wir Schema Daten (LocalBusiness), optimieren Ihr Google Unternehmensprofil und strukturieren Ihre Inhalte so, dass Sie lokal dominieren."
+    },
+    {
+      "q": "Wie hoch ist das Investment für eine neue Studio Website?",
+      "a": "Das hängt von der Komplexität (Anzahl der Schnittstellen, Mitgliederbereich etc.) ab. Eine hochwertige Website ist jedoch das profitabelste Marketinginstrument. Durch mehr Leads refinanziert sich das Projekt oft innerhalb weniger Monate."
+    }
+  ]
+}

@@ -21,25 +21,26 @@ This technical stack results in demonstrably faster load times, superior accessi
 > AI-augmented Solo-Agentur für ultraschnelle Enterprise-Websites mit Next.js, React und Sanity.
 
 ## Services
-- [Headless CMS Integration](${BASE_URL}/services/headless-cms): Zukunftssicheres Content-Management mit Sanity.
-- [Next.js Web Development](${BASE_URL}/services/web-development): Performante, React-basierte Frontend-Architekturen.
-- [Generative Engine Optimization](${BASE_URL}/services/geo): RAG-Optimierung und AI-Discoverability für maximale Sichtbarkeit.
+- [Headless CMS Integration](${BASE_URL}/de/services/headless-cms): Zukunftssicheres Content-Management mit Sanity.
+- [Next.js Web Development](${BASE_URL}/de/services/web-development): Performante, React-basierte Frontend-Architekturen.
+- [Generative Engine Optimization](${BASE_URL}/de/services/geo): RAG-Optimierung und AI-Discoverability für maximale Sichtbarkeit.
 
 ## Case Studies
-- [Batherm](${BASE_URL}/portfolio/batherm): Sanitärtechnik Relaunch mit <1s Ladezeit.
-- [MS Schlüsseldienst Wetzlar](${BASE_URL}/portfolio/ms-schluesseldienst): Platz 1 bei Google dank Core Web Vitals Dominanz.
+- [Batherm](${BASE_URL}/de/portfolio/batherm): Sanitärtechnik Relaunch mit <1s Ladezeit.
+- [MS Schlüsseldienst Wetzlar](${BASE_URL}/de/portfolio/ms-schluesseldienst): Platz 1 bei Google dank Core Web Vitals Dominanz.
 
 ## Knowledge Base
-- [Blog](${BASE_URL}/knowledge/blog): Aktuelle Insights zu Next.js, Sanity und GEO.
-- [FAQ](${BASE_URL}/knowledge/faq): Häufige Fragen zu Headless Development und AI-Tools.
+- [Blog](${BASE_URL}/de/knowledge/blog): Aktuelle Insights zu Next.js, Sanity und GEO.
+- [FAQ](${BASE_URL}/de/knowledge/faq): Häufige Fragen zu Headless Development und AI-Tools.
 
 ## About
-- [Founder Profile](${BASE_URL}/about): Umutcan Emre Tezgel, Handwerksmeister & Lead Engineer.
-- [Process](${BASE_URL}/process): Das agile Human-in-the-Loop-Agentur-Protokoll.
+- [Founder Profile](${BASE_URL}/de/about): Umutcan Emre Tezgel, Handwerksmeister & Lead Engineer.
+- [Process](${BASE_URL}/de/process): Das agile Human-in-the-Loop-Agentur-Protokoll.
 
 ## Optional
-- [Pricing](${BASE_URL}/pricing): Transparente Festpreis-Pakete.
-- [Contact](${BASE_URL}/contact): Direkter Draht zum Entwickler.
+- [Pricing](${BASE_URL}/de/pricing): Transparente Festpreis-Pakete.
+- [Contact](${BASE_URL}/de/contact): Direkter Draht zum Entwickler.
+- [Booking](${BASE_URL}/de/booking): Erstgespräch vereinbaren.
 `;
 
   return new NextResponse(content, {

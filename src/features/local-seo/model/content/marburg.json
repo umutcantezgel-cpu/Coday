@@ -2,54 +2,70 @@
   "target": "marburg",
   "type": "location",
   "meta": {
-    "title": "Webdesign & Next.js Agentur Marburg | Coday",
-    "description": "Hochperformante Next.js Webseiten für Marburgs Pharma-, Gesundheits- und Innovationssektor. Coday ist Ihre spezialisierte Headless Webagentur."
+    "title": "Webdesign Agentur für Marburg | Exzellente Webseitenentwicklung",
+    "description": "Ihre hochperformante Webagentur für Marburg. Wir entwickeln exzellente Webseiten für Pharma, Medizin und den Mittelstand durch kompromisslose Webseitenentwicklung."
   },
   "hero": {
-    "headline": "Enterprise Next.js Webdesign für Marburg",
-    "subheadline": "Ihre Headless Webagentur für Pharma, Health & Innovation",
-    "description": "In Marburg, dem Zentrum für Biotechnologie und medizinische Forschung, müssen digitale Identitäten höchste Ansprüche an Performance, Sicherheit und Skalierbarkeit erfüllen. Als spezialisierte Next.js Webagentur in direkter Nachbarschaft (Wetzlar) entwickelt Coday hochperformante, maßgeschneiderte Headless-Lösungen, die Ihre Innovationskraft digital greifbar machen. Wir bauen keine Standard-Templates, sondern digitale Hochleistungssysteme."
+    "headline": "Enterprise Webdesign und herausragende Webseitenentwicklung für Marburg",
+    "subheadline": "Ihre spezialisierte Webagentur für Pharma Medizin und absolute Innovation",
+    "description": "Ihre spezialisierte Webagentur für Pharma Medizin und absolute Innovation In Marburg, dem weltweiten Zentrum für Biotechnologie und medizinische Forschung, müssen digitale Identitäten höchste Ansprüche an Performance, Sicherheit und absolute Skalierbarkeit erfüllen. Als spezialisierte Webagentur in direkter Nachbarschaft entwickelt Coday hochperformante und absolut maßgeschneiderte Lösungen, die Ihre enorme Innovationskraft durch exzellentes Webdesign digital völlig greifbar machen. Wir bauen nach einem professionellen Webseiten Relaunch keine einfachen Standard Vorlagen, sondern digitale Hochleistungssysteme durch kompromisslose Webseitenentwicklung."
   },
   "localDominance": {
-    "title": "Digitale Exzellenz für Marburgs Spitzenbranchen",
-    "description": "Marburg ist ein globaler Leuchtturm für Pharma, Life Sciences und medizinische Forschung. Von den Behringwerken bis zum UKGM – Unternehmen hier erfordern Web-Infrastrukturen, die extrem schnell, absolut sicher und zukunftssicher sind. Coday liefert genau das: Next.js-Architekturen, die internationalen Enterprise-Standards entsprechen.",
+    "title": "Digitale Exzellenz für Marburgs absolute Spitzenbranchen durch unsere Webagentur",
+    "description": "Marburg ist ein globaler Leuchtturm für Pharma, Life Sciences und medizinische Forschung. Von den historischen Behringwerken bis zum UKGM erfordern Unternehmen hier digitale Infrastrukturen, die extrem schnell, absolut sicher und vollkommen zukunftssicher sind. Unsere Webagentur liefert exakt das: Eine moderne Webseitenentwicklung, die absolut internationalen Enterprise Standards entspricht und durch herausragendes Webdesign besticht. Ein strategischer Webseiten Relaunch ist der erste Schritt zur absoluten digitalen Vorherrschaft.",
     "points": [
-      "Next.js App Router Architektur für maximale Ladezeiten (LCP < 2.0s) und perfekte Core Web Vitals, essentiell für internationale Sichtbarkeit.",
-      "Headless CMS Integration (Sanity) für hochsichere, entkoppelte Datenhaltung und nahtloses Content-Management in komplexen Organisationen.",
-      "Kompromisslose Sicherheit durch Edge-Rendering und Server Components – keine direkten Datenbankzugriffe vom Client, ideal für sensible Branchen.",
-      "Skalierbare Performance für globale Pharma- und Biotech-Unternehmen, die plötzliche Traffic-Spitzen (z.B. bei Publikationen oder Produkt-Launches) problemlos bewältigen müssen."
+      "Modernste Architektur für maximale Ladezeiten und perfekte Werte, essentiell für internationale Sichtbarkeit und exzellentes Webdesign.",
+      "Vollständige Integration für hochsichere, entkoppelte Datenhaltung und absolut nahtloses Content Management in extrem komplexen Organisationen.",
+      "Kompromisslose Sicherheit durch modernstes Rendering und keine direkten Datenbankzugriffe, ideal für extrem sensible Branchen in Marburg.",
+      "Skalierbare Performance für globale Pharmaunternehmen, die plötzliche starke Besucherströme bei wichtigen Publikationen völlig problemlos bewältigen müssen.",
+      "Umfassende Suchmaschinenoptimierung zur Sicherstellung der regionalen und internationalen Spitzenplatzierung durch unsere spezialisierte Webagentur.",
+      "Hervorragendes Webdesign, das das extreme Vertrauen von wichtigen Patienten und bedeutenden Investoren nachhaltig und messbar stärkt.",
+      "Spezialisierte Webseitenentwicklung, die extrem strengen Datenschutzrichtlinien der starken Gesundheitsbranche in vollem Umfang entspricht.",
+      "Nach einem professionellen Webseiten Relaunch garantieren wir durch unsere Webagentur eine absolut reibungslose und sehr einfache Systempflege."
     ]
   },
   "contentSections": [
     {
-      "title": "Warum Next.js die richtige Wahl für den Gesundheitssektor ist",
-      "content": "Der Pharma- und Gesundheitssektor in Marburg verlangt nach höchster Präzision und Verlässlichkeit. Veraltete monolithische Systeme wie WordPress werden diesen Ansprüchen oft nicht mehr gerecht, insbesondere wenn es um Sicherheit und Ladezeiten geht. Mit Next.js setzen wir auf eine moderne React-basierte Architektur, die Webseiten im Vorfeld rendert (SSG/ISR) oder hochperformant auf dem Server (SSR) ausliefert. Das Ergebnis ist eine digitale Präsenz, die nicht nur extrem schnell lädt, sondern durch die Entkopplung von Frontend und Backend (Headless-Ansatz) eine wesentlich geringere Angriffsfläche bietet. Sensible Daten bleiben sicher, während Ihre globale Zielgruppe eine blitzschnelle User Experience genießt."
+      "title": "Warum eine exzellente Webseitenentwicklung die richtige Wahl für den Gesundheitssektor ist",
+      "content": "Der große Pharma und Gesundheitssektor in Marburg verlangt nach höchster Präzision und absoluter Verlässlichkeit. Sehr veraltete monolithische Systeme werden diesen extrem strengen Ansprüchen oft absolut nicht mehr gerecht, insbesondere wenn es um notwendige Sicherheit und extrem schnelle Ladezeiten geht. Mit unserer Webagentur setzen wir auf eine sehr moderne Architektur, die Webseiten im Vorfeld rendert oder absolut hochperformant auf dem starken Server ausliefert. Das Ergebnis ist eine digitale Präsenz, die durch exzellentes Webdesign nicht nur extrem schnell lädt, sondern durch die klare Entkopplung von Frontend und Backend eine wesentlich geringere Angriffsfläche für gefährliche Hacker bietet. Sensible Daten bleiben dadurch nach jedem Webseiten Relaunch völlig sicher, während Ihre wichtige globale Zielgruppe eine absolut blitzschnelle und angenehme Erfahrung genießt. Eine kompromisslose Webseitenentwicklung ist somit der Schlüssel zum nachhaltigen Erfolg in Marburg."
     },
     {
-      "title": "Maßgeschneiderte Webentwicklung für Marburger Innovationstreiber",
-      "content": "Egal ob Sie ein Spin-off der Philipps-Universität, ein etabliertes Biotech-Unternehmen in den Behringwerken oder ein innovativer Dienstleister im Gesundheitswesen sind – Ihre Website ist das digitale Spiegelbild Ihrer wissenschaftlichen und wirtschaftlichen Kompetenz. Coday entwickelt individuelle Web-Applikationen, die sich nahtlos in Ihre bestehenden Systeme integrieren lassen. Durch den Einsatz von TypeScript garantieren wir eine fehlerfreie, typsichere Codebasis, die auch langfristig von einem einzelnen Entwickler wartbar bleibt. Wir verzichten auf überflüssigen Code und setzen auf performantes, inline Tailwind CSS für ein modernes, anspruchsvolles Design, das Vertrauen schafft."
+      "title": "Maßgeschneiderte Webseitenentwicklung für große Marburger Innovationstreiber",
+      "content": "Egal ob Sie ein modernes Spin off der Philipps Universität, ein sehr etabliertes Biotech Unternehmen in den bekannten Behringwerken oder ein hochinnovativer Dienstleister im wichtigen Gesundheitswesen in Marburg sind, Ihre neue Webseite ist das absolute digitale Spiegelbild Ihrer enormen wissenschaftlichen und starken wirtschaftlichen Kompetenz. Unsere engagierte Webagentur entwickelt sehr individuelle digitale Applikationen, die sich völlig nahtlos in all Ihre bereits bestehenden Systeme absolut perfekt integrieren lassen. Durch den enormen Einsatz von modernsten Technologien garantieren wir bei der Webseitenentwicklung eine völlig fehlerfreie und typsichere Codebasis, die auch extrem langfristig von einem einzelnen Entwickler wunderbar wartbar bleibt. Wir verzichten absolut auf überflüssigen Code und setzen auf ein sehr performantes und sauberes Webdesign, das sofortiges Vertrauen schafft und nach einem anspruchsvollen Webseiten Relaunch eine makellose Präsenz bietet."
     },
     {
-      "title": "Lokale Nähe, internationales Enterprise-Niveau",
-      "content": "Als Solo-Agentur aus dem benachbarten Wetzlar bietet Coday Ihnen die perfekte Kombination: Die persönliche Erreichbarkeit und direkte Kommunikation eines lokalen Partners, gepaart mit dem technischen Know-how, das sonst nur große, internationale Agenturen bieten. Sie kommunizieren direkt mit dem Entwickler, ohne Projektmanager-Umwege. Durch diesen schlanken, agilen Prozess können komplexe Next.js-Projekte effizient und in höchster Qualität umgesetzt werden. Wir verstehen die regionale Bedeutung des Pharmastandorts Marburg und übersetzen diese in eine digitale Sprache, die auf dem Weltmarkt überzeugt."
+      "title": "Lokale Nähe in Marburg und absolutes internationales Enterprise Niveau",
+      "content": "Als erfahrene Webagentur aus dem direkt benachbarten Wetzlar bietet Coday Ihnen für den Raum Marburg die absolut perfekte Kombination. Sie erhalten die sehr persönliche Erreichbarkeit und die sehr direkte Kommunikation eines starken lokalen Partners, völlig gepaart mit dem enormen technischen Know how in der Webseitenentwicklung, das sonst absolut nur extrem große und teure internationale Agenturen bieten können. Sie kommunizieren nach einem Webseiten Relaunch immer absolut direkt mit dem umsetzenden Experten, völlig ohne störende Umwege über externe Projektmanager. Durch diesen extrem schlanken und sehr agilen Prozess können absolut komplexe Projekte im Webdesign sehr effizient und immer in der absolut höchsten Qualität erfolgreich umgesetzt werden. Wir als Webagentur verstehen die enorme regionale Bedeutung des starken Pharmastandorts Marburg sehr genau und übersetzen diese Wichtigkeit durch unsere Webseitenentwicklung in eine absolut moderne digitale Sprache, die auf dem umkämpften Weltmarkt absolut überzeugt."
+    },
+    {
+      "title": "Die Wichtigkeit eines schnellen Webseiten Relaunch für Marburgs Wirtschaft",
+      "content": "In der rasant wachsenden Wirtschaft von Marburg ist Zeit ein extrem kritischer Faktor. Ein stark veraltetes Webdesign schreckt nicht nur neue potenzielle Kunden ab, sondern vermindert auch das Vertrauen wichtiger Investoren in Ihre technologische Innovationskraft. Ein strategischer und gut geplanter Webseiten Relaunch durch unsere kompetente Webagentur löst genau diese enormen Probleme. Wir erneuern nicht nur das visuelle Webdesign, sondern überarbeiten durch unsere professionelle Webseitenentwicklung die gesamte technologische Basis Ihrer digitalen Präsenz völlig neu. Dadurch erreichen wir absolut ungekannte Geschwindigkeiten und eine enorme Flexibilität für zukünftiges Wachstum in Marburg. Eine Webseite, die in absoluten Millisekunden lädt und dabei höchste Sicherheitsstandards erfüllt, ist heute keine optionale Spielerei mehr, sondern eine absolute geschäftskritische Voraussetzung für jedes ambitionierte Unternehmen in der Region."
     }
   ],
   "faq": [
     {
-      "q": "Warum sollten Marburger Pharma-Unternehmen auf Next.js wechseln?",
-      "a": "Next.js bietet überlegene Sicherheit durch die Trennung von Frontend und Backend (Headless). Zudem sorgt die Architektur für extrem schnelle Ladezeiten, was für internationale Fachbesucher und die Suchmaschinenoptimierung (SEO) entscheidend ist. Im Gegensatz zu herkömmlichen CMS gibt es keine gefährlichen Plugins oder offene Datenbankzugriffe auf Client-Seite."
+      "q": "Warum sollten große Marburger Pharma Unternehmen auf eine neue Webseitenentwicklung wechseln?",
+      "a": "Ein modernes System bietet absolut überlegene Sicherheit durch die strikte Trennung von Frontend und Backend. Zudem sorgt die durchdachte Webseitenentwicklung für extrem schnelle Ladezeiten, was für internationale Fachbesucher und die wichtige Suchmaschinenoptimierung absolut entscheidend ist. Im starken Gegensatz zu sehr herkömmlichen alten Systemen gibt es bei unserem Webdesign keine extrem gefährlichen Plugins oder völlig offene direkte Datenbankzugriffe."
     },
     {
-      "q": "Wie gewährleistet Coday die Performance der Website?",
-      "a": "Wir arbeiten mit strikten Performance-Budgets (z.B. Largest Contentful Paint unter 2 Sekunden). Durch den Einsatz der Next.js 15 App Router Architektur, React Server Components und Edge-Hosting über Vercel stellen wir sicher, dass nur das absolute Minimum an JavaScript an den Browser gesendet wird. Das garantiert blitzschnelle Interaktionen."
+      "q": "Wie gewährleistet Ihre erfahrene Webagentur die maximale Performance der neuen Webseite in Marburg?",
+      "a": "Wir arbeiten bei der Webseitenentwicklung immer mit extrem strikten Performance Budgets und sehr schnellen Ladezeiten unter einer Sekunde. Durch den enormen Einsatz von absolut modernen Architekturen und extrem leistungsstarkem Hosting stellen wir sicher, dass nur das absolute Minimum an Daten an den Browser des Nutzers gesendet wird. Ein solcher Webseiten Relaunch garantiert absolut blitzschnelle Interaktionen."
     },
     {
-      "q": "Können bestehende Daten in die neue Next.js-Architektur migriert werden?",
-      "a": "Ja, der große Vorteil des Headless-Ansatzes ist, dass wir über APIs auf bestehende Datenbanken, ERP-Systeme oder moderne Headless CMS wie Sanity zugreifen können. Wir binden Ihre Daten sicher ein und rendern sie performant im Frontend."
+      "q": "Können unsere bestehenden wichtigen Daten in die neue Webseitenentwicklung sicher migriert werden?",
+      "a": "Ja, der absolut große Vorteil unseres sehr modernen Ansatzes ist, dass unsere Webagentur über sichere Schnittstellen auf absolut alle bestehenden Datenbanken oder sehr moderne Systeme zugreifen kann. Wir binden all Ihre Daten völlig sicher ein und rendern sie extrem performant im neuen Webdesign für Marburg."
     },
     {
-      "q": "Wie läuft die Zusammenarbeit mit Coday ab?",
-      "a": "Als Solo-Agentur biete ich Ihnen direkte, transparente Kommunikation. Nach einer detaillierten Analyse Ihrer Anforderungen im Raum Marburg entwickeln wir eine maßgeschneiderte Next.js-Architektur. Sie haben während des gesamten Prozesses direkten Einblick und einen festen Ansprechpartner für alle technischen und gestalterischen Fragen."
+      "q": "Wie läuft die genaue Zusammenarbeit mit Ihrer spezialisierten Webagentur für Marburg ab?",
+      "a": "Als erfahrene Webagentur bieten wir Ihnen absolut direkte und völlig transparente Kommunikation. Nach einer sehr detaillierten Analyse Ihrer hohen Anforderungen im Raum Marburg beginnen wir mit der Webseitenentwicklung. Sie haben während des gesamten Prozesses bis zum Webseiten Relaunch absolut direkten Einblick in das neue Webdesign und immer einen festen Ansprechpartner."
+    },
+    {
+      "q": "Welche konkreten Vorteile bringt ein modernes Webdesign für unser Unternehmen in Marburg?",
+      "a": "Ein exzellentes Webdesign sendet sofort starke Signale von enormer technologischer Kompetenz und absoluter Vertrauenswürdigkeit. Durch die Webseitenentwicklung unserer Webagentur heben Sie sich absolut massiv von Ihren regionalen Mitbewerbern in Marburg ab. Dies führt nach einem Webseiten Relaunch zu deutlich mehr qualifizierten Anfragen und einer weitaus stärkeren digitalen Marktposition."
+    },
+    {
+      "q": "Bietet Ihre Webagentur nach dem Webseiten Relaunch in Marburg auch weiterhin Unterstützung an?",
+      "a": "Absolut. Wir lassen Sie nach der erfolgreichen Webseitenentwicklung absolut nicht alleine. Unsere Webagentur bietet sehr umfassende Betreuung für Ihr neues Webdesign an. Wir überwachen die enorme Performance, führen regelmäßige Audits durch und erweitern das System völlig flexibel um völlig neue Funktionen, damit Sie in Marburg absolut langfristig extrem erfolgreich bleiben."
     }
   ]
 }

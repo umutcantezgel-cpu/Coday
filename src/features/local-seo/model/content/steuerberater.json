@@ -1,0 +1,124 @@
+{
+  "target": "steuerberater",
+  "type": "industry-location",
+  "meta": {
+    "title": "Steuerberater Webdesign Agentur Wetzlar | Mandanten gewinnen",
+    "description": "Seriöses Premium Webdesign für Steuerberater & Kanzleien. Digitalisieren Sie Ihre Prozesse und gewinnen Sie lukrative Unternehmensmandate."
+  },
+  "hero": {
+    "headline": "Die digitale Kanzlei der Zukunft.",
+    "subheadline": "Lukrative Mandate. Digitale Prozesse. Absolute Seriosität.",
+    "description": "Lukrative Mandate. Digitale Prozesse. Absolute Seriosität. Der Wechsel eines Steuerberaters ist Vertrauenssache. Wenn Ihre Kanzlei Website altbacken und analog wirkt, zweifeln potenzielle Mandanten (insbesondere innovative Unternehmen) an Ihrer fachlichen Modernität. Wir entwickeln repräsentative Web Auftritte für Steuerberater, die digitale Kompetenz beweisen und qualifizierte Mandanten anziehen.",
+    "metrics": [
+      {
+        "value": "100",
+        "label": "Vollständige DATEV Integration",
+        "suffix": "%"
+      },
+      {
+        "value": "0",
+        "label": "Zettelwirtschaft bei Neumandanten",
+        "suffix": ""
+      }
+    ]
+  },
+  "gamifiedStats": {
+    "title": "Warum analoge Kanzleien den Anschluss verlieren",
+    "description": "Erfolgreiche Unternehmen suchen heute Berater, die DATEV Unternehmen online beherrschen und Prozesse komplett digitalisieren. Eine veraltete Website signalisiert das genaue Gegenteil.",
+    "counters": [
+      {
+        "targetValue": 78,
+        "suffix": "%",
+        "label": "der Unternehmer wechseln die Kanzlei wegen mangelnder Digitalisierung"
+      },
+      {
+        "targetValue": 85,
+        "suffix": "%",
+        "label": "der Mandanten wünschen sich ein sicheres digitales Mandanten Portal"
+      }
+    ]
+  },
+  "bentoGrid": {
+    "title": "Architektur für Steuerberater",
+    "subtitle": "So rüsten wir Ihre Kanzlei für das digitale Zeitalter.",
+    "cards": [
+      {
+        "title": "Repräsentatives Design",
+        "text": "Keine trockenen Paragraphen Wüsten. Wir visualisieren Ihre Kanzlei modern, vertrauenswürdig und extrem hochwertig. Perfekte Typografie statt Clipart.",
+        "size": "large",
+        "icon": "Design"
+      },
+      {
+        "title": "DATEV Integration",
+        "text": "Sichere Einbindung von DATEV Unternehmen online, Meine Steuern und dem DATEV Upload direkt auf Ihrer Startseite.",
+        "size": "small",
+        "icon": "Speed"
+      },
+      {
+        "title": "Mandanten Onboarding",
+        "text": "Digitale, DSGVO konforme Formulare, um Neumandanten automatisiert anzulegen und erste Daten sicher abzufragen.",
+        "size": "small",
+        "icon": "MapPin"
+      },
+      {
+        "title": "Kanzlei SEO",
+        "text": "Wir ranken Sie ganz oben für wertvolle Suchbegriffe wie 'GmbH Gründung Steuerberater' oder 'Digitale Steuerkanzlei Wetzlar'.",
+        "size": "tall",
+        "icon": "SEO"
+      }
+    ]
+  },
+  "processSteps": [
+    {
+      "title": "1. Positionierungs Analyse",
+      "description": "Fokus auf Ärzte, Handwerker oder E Commerce? Wir schärfen Ihr Profil, damit Sie genau die Mandate anziehen, die Sie wollen."
+    },
+    {
+      "title": "2. High End Fotografie",
+      "description": "Wir setzen Ihr Partner Team und die Kanzleiräume professionell in Szene – für einen ersten Eindruck, der Souveränität ausstrahlt."
+    },
+    {
+      "title": "3. Schnittstellen & Security",
+      "description": "Implementierung sicherer Portale, SSL Verschlüsselung nach Banken Standard und Integration aller relevanten DATEV Schnittstellen."
+    },
+    {
+      "title": "4. Go Live & SEO",
+      "description": "Ihre neue digitale Kanzlei geht an den Start. Flankiert von einer Local SEO Strategie, die Ihre Reichweite sofort erhöht."
+    }
+  ],
+  "localDominance": {
+    "title": "Die erste Adresse für Unternehmer in der Region",
+    "description": "Gerade bei komplexen steuerlichen Fragen suchen Geschäftsführer den persönlichen Kontakt vor Ort. Wenn Ihre Kanzlei bei regionalen Google Suchen nicht präsent ist oder die Website unprofessionell wirkt, geht das Mandat an die Konkurrenz. Wir etablieren Sie digital als *den* Experten in Ihrer Region.",
+    "points": [
+      "Starkes Ranking für hochprofitable Spezial Themen (Umwandlungssteuerrecht, Unternehmensnachfolge)",
+      "Reduzierung von Support Anfragen durch smarte FAQ  und Download Bereiche (Vollmachten, Checklisten)",
+      "Aufbau einer extrem starken Arbeitgebermarke zur Gewinnung von Steuerfachangestellten"
+    ]
+  },
+  "faq": [
+    {
+      "q": "Sind die Kontaktformulare DSGVO konform (Steuergeheimnis)?",
+      "a": "Ja, absolut. Der Schutz sensibler Daten hat für uns höchste Priorität. Wir setzen auf verschlüsselte Verbindungen, sicheres Hosting in Deutschland und binden hochsichere Portale (wie DATEV oder eigene Nextcloud Lösungen) für den Dokumentenaustausch ein."
+    },
+    {
+      "q": "Können Mandanten ihre Belege über die Website hochladen?",
+      "a": "Wir empfehlen aus Sicherheits  und Prozessgründen die direkte Einbindung von DATEV Unternehmen online (oder vergleichbaren Tools). Wir integrieren den Login Bereich extrem prominent und benutzerfreundlich direkt auf Ihrer Website."
+    },
+    {
+      "q": "Wie können wir aktiv neue Mitarbeiter (Steuerfachangestellte) finden?",
+      "a": "Der Fachkräftemangel in Ihrer Branche ist das größte Wachstumshindernis. Wir bauen emotionale Karriere Seiten auf, präsentieren Ihre Kanzlei als modernen Arbeitgeber (Homeoffice, digitale Akte) und erleichtern den Bewerbungsprozess (z.B. mobile Kurz Bewerbung)."
+    },
+    {
+      "q": "Können wir unsere Kanzlei News und Steueränderungen selbst veröffentlichen?",
+      "a": "Ja, wir integrieren ein sehr einfach zu bedienendes Headless CMS. Sie können Mandanten Infos, Blogbeiträge oder Mandantenrundschreiben blitzschnell und ohne Agenturhilfe selbst online stellen."
+    },
+    {
+      "q": "Wir möchten keine kleinen Einkommensteuerfälle mehr. Hilft die Website?",
+      "a": "Definitiv. Wir nutzen die Website als Filter. Durch die Art der Ansprache, das Premium Design und vorgeschaltete (automatisierte) Abfrage Prozesse ziehen Sie lukrative Unternehmensmandate an und filtern unpassende Anfragen elegant heraus."
+    },
+    {
+      "q": "Wie lange dauert es, bis unsere Kanzlei Website fertig ist?",
+      "a": "Da wir wissen, dass Ihre Zeit extrem knapp bemessen ist, arbeiten wir sehr autark. Nach einem initialen Strategiegespräch übernehmen wir Konzept, Text und Design komplett. Ein Relaunch ist meist in 4 bis 8 Wochen realisierbar."
+    }
+  ]
+}

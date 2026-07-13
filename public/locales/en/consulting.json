@@ -3,7 +3,7 @@
     "badge": "Coday Strategy Lab",
     "title_start": "Software is not Code.",
     "title_end": "Software is an Asset.",
-    "subtitle": "We transform vague requirements into crystal-clear architecture. Before a single line of code is written.",
+    "subtitle": "We transform your vague requirements into crystal-clear software architecture. Before a single line of code is written, we secure your digital asset.",
     "cta_primary": "Book Session",
     "cta_secondary": "Check Readiness"
   },
@@ -122,5 +122,9 @@
     "label": "Consulting in Action",
     "title": "From 0 to Million-Dollar Valuation.",
     "description": "How we laid the technical foundation for a successful exit through precise IT strategy and scalable architecture."
+  },
+  "meta": {
+    "title": "Digital Consulting & Strategy | Coday",
+    "description": "Strategic consulting for your digital transformation. Tech stack evaluation, process optimization, and data-driven growth hacking."
   }
 }

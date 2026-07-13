@@ -1,0 +1,124 @@
+{
+  "target": "online-shop",
+  "type": "industry-location",
+  "meta": {
+    "title": "E Commerce Agentur Wetzlar | Online Shops mit Shopware & Next.js",
+    "description": "Skalierbare Online Shops aus Wetzlar. Wir entwickeln hochperformante E Commerce Lösungen, die Ladezeiten minimieren und Ihre Conversion Rate maximieren."
+  },
+  "hero": {
+    "headline": "E Commerce Plattformen, die messbar konvertieren.",
+    "subheadline": "Mehr Umsatz. Kürzere Ladezeiten. Unbegrenzte Skalierbarkeit.",
+    "description": "Mehr Umsatz. Kürzere Ladezeiten. Unbegrenzte Skalierbarkeit. Im E Commerce zählt jede Millisekunde. Ein langsamer Shop oder ein umständlicher Checkout Prozess vernichten Ihr Werbebudget. Wir bauen hochperformante Headless Shops (Next.js, Shopify, Shopware), die blitzschnell laden, ein perfektes Nutzererlebnis bieten und aus Besuchern loyale Käufer machen.",
+    "metrics": [
+      {
+        "value": "35",
+        "label": "Höhere Conversion Rate (Ø)",
+        "suffix": "%"
+      },
+      {
+        "value": "0.5",
+        "label": "Sekunden Ladezeit",
+        "suffix": "s"
+      }
+    ]
+  },
+  "gamifiedStats": {
+    "title": "Warum Standard Shops Umsatz liegen lassen",
+    "description": "Der Wettbewerb im E Commerce ist gnadenlos. Wenn Ihr Shop auf langsamen, veralteten Systemen basiert, wandern Nutzer beim kleinsten Reibungspunkt zur Konkurrenz ab.",
+    "counters": [
+      {
+        "targetValue": 70,
+        "suffix": "%",
+        "label": "der Warenkörbe werden vor dem Kauf abgebrochen"
+      },
+      {
+        "targetValue": 53,
+        "suffix": "%",
+        "label": "verlassen mobile Seiten, die länger als 3 Sekunden laden"
+      }
+    ]
+  },
+  "bentoGrid": {
+    "title": "Die Coday E Commerce Architektur",
+    "subtitle": "Technologie, die sich in Umsatz auszahlt.",
+    "cards": [
+      {
+        "title": "Headless E Commerce",
+        "text": "Wir trennen Frontend (Next.js) vom Backend (Shopify/Shopware). Das Ergebnis: Kompromisslose Design Freiheit und Ladezeiten unter einer Sekunde.",
+        "size": "large",
+        "icon": "Design"
+      },
+      {
+        "title": "Optimierter Checkout",
+        "text": "1 Klick Bezahlung mit Apple Pay, PayPal & Google Pay. Wir eliminieren jede unnötige Hürde auf dem Weg zum Kauf.",
+        "size": "small",
+        "icon": "Speed"
+      },
+      {
+        "title": "ERP & PIM Integration",
+        "text": "Nahtlose Anbindung an Ihre Warenwirtschaft (JTL, Plentymarkets) für automatisierte Prozesse ohne manuellen Aufwand.",
+        "size": "small",
+        "icon": "MapPin"
+      },
+      {
+        "title": "E Commerce SEO",
+        "text": "Technische SEO Exzellenz. Ihre Kategorien und Produkte ranken auf Platz 1 bei Google und generieren kostenlosen, organischen Traffic.",
+        "size": "tall",
+        "icon": "SEO"
+      }
+    ]
+  },
+  "processSteps": [
+    {
+      "title": "1. Plattform Strategie",
+      "description": "Wir analysieren Ihr Sortiment, Ihre Zielgruppe und Ihre Logistik Prozesse, um das perfekte Shop System (Shopify, Shopware, Custom) auszuwählen."
+    },
+    {
+      "title": "2. Conversion Optimiertes UI/UX",
+      "description": "Design Entwicklung mit klarem Fokus auf Usability, Filter Navigation und einen absolut reibungslosen Kaufprozess."
+    },
+    {
+      "title": "3. Headless Development",
+      "description": "Entwicklung des Frontends mit Next.js. Wir programmieren einen Shop, der sich beim Surfen so schnell und flüssig anfühlt wie eine Native App."
+    },
+    {
+      "title": "4. Testing & Launch",
+      "description": "Umfassende Last Tests, Anbindung der Payment Provider und nahtloser Go Live ohne Downtimes."
+    }
+  ],
+  "localDominance": {
+    "title": "Nationale Reichweite, regionale Wurzeln",
+    "description": "Obwohl E Commerce grenzenlos ist, profitieren Sie massiv von einem starken Technologie Partner direkt vor Ort in Wetzlar. Wir stehen für kurze Kommunikationswege, strategische Workshops vor Ort und eine Partnerschaft auf Augenhöhe – für Shops, die den nationalen und internationalen Markt erobern.",
+    "points": [
+      "Persönlicher Ansprechpartner direkt in Mittelhessen",
+      "Gemeinsame Strategie Workshops an einem Tisch, nicht nur im Video Call",
+      "Skalierbare Architektur, die auch bei extremen Traffic Spitzen (Black Friday) standhält"
+    ]
+  },
+  "faq": [
+    {
+      "q": "Was bedeutet 'Headless E Commerce' konkret für uns?",
+      "a": "Bei klassischen Systemen sind das Design und die Datenbank starr verbunden. Bei 'Headless' trennen wir das. Wir nutzen z.B. Shopify für die Verwaltung im Hintergrund, bauen das Frontend aber komplett frei mit Next.js. Das bringt extreme Geschwindigkeit und absolute Design Freiheit."
+    },
+    {
+      "q": "Wir haben bereits ein Warenwirtschaftssystem (z.B. JTL). Kann das angebunden werden?",
+      "a": "Ja. Wir binden ERP  (Enterprise Resource Planning) und PIM Systeme (Product Information Management) über moderne APIs an. Bestände, Preise und Bestellungen werden in Echtzeit synchronisiert."
+    },
+    {
+      "q": "Eignet sich Shopify auch für komplexe B2B Shops?",
+      "a": "Absolut. Shopify Plus bietet mittlerweile hervorragende B2B Funktionen (kundenspezifische Preislisten, Mengenrabatte, Netto Checkout). Für extrem individuelle B2B Anforderungen prüfen wir auch Alternativen wie Shopware 6."
+    },
+    {
+      "q": "Wie verbessern wir die Ladezeit unseres bestehenden Shops?",
+      "a": "Oft ist das Backend das Problem. Anstatt alte Templates mühsam zu reparieren, setzen wir ein extrem schnelles Headless Frontend davor. Ihr altes System bleibt im Hintergrund erhalten, aber für den Nutzer wird der Shop blitzschnell."
+    },
+    {
+      "q": "Unterstützen Sie auch Migrationen (z.B. von Magento zu Shopify)?",
+      "a": "Ja, wir planen und executing komplexe Plattform Migrationen. Dabei sichern wir Ihre wertvollen SEO Rankings durch penibles Redirect Mapping und migrieren alle Kunden , Bestell  und Produktdaten sicher."
+    },
+    {
+      "q": "Warum Coday für unseren Shop Relaunch?",
+      "a": "Wir sind keine reine Design Agentur. Wir verstehen die technischen und kaufmännischen Prozesse im E Commerce. Unser Ziel ist nicht nur ein schöner Shop, sondern ein skalierbares System, das Ihre Conversion Rate nachhaltig erhöht."
+    }
+  ]
+}

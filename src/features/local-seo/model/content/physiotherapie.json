@@ -1,0 +1,124 @@
+{
+  "target": "physiotherapie",
+  "type": "industry-location",
+  "meta": {
+    "title": "Physiotherapie Webdesign Agentur Wetzlar | Patienten gewinnen",
+    "description": "Hochwertiges Webdesign für Physiotherapeuten & Praxen. Wir digitalisieren Ihre Terminvergabe und machen Ihre Fachkompetenz online sichtbar."
+  },
+  "hero": {
+    "headline": "Ihre digitale Praxis für mehr Privatpatienten.",
+    "subheadline": "Weniger Telefonate. Bessere Auslastung. Premium Positionierung.",
+    "description": "Weniger Telefonate. Bessere Auslastung. Premium Positionierung. Patienten mit akuten Schmerzen haben keine Geduld für langsame Websites oder Dauerbesetzt Töne am Telefon. Wenn Ihre digitale Visitenkarte Vertrauen ausstrahlt und eine schnelle Terminbuchung ermöglicht, gewinnen Sie den Patienten. Wir bauen Praxis Websites, die Ihre Expertise in den Vordergrund stellen und den Praxisalltag spürbar entlasten.",
+    "metrics": [
+      {
+        "value": "40",
+        "label": "Weniger Anrufe an der Rezeption",
+        "suffix": "%"
+      },
+      {
+        "value": "100",
+        "label": "DSGVO konforme Prozesse",
+        "suffix": "%"
+      }
+    ]
+  },
+  "gamifiedStats": {
+    "title": "Warum analoge Praxen an ihr Limit stoßen",
+    "description": "Das Telefon klingelt ununterbrochen, während Therapeuten eigentlich am Patienten arbeiten sollten. Diese Ineffizienz kostet Praxen täglich Geld und Nerven.",
+    "counters": [
+      {
+        "targetValue": 68,
+        "suffix": "%",
+        "label": "der Patienten buchen Termine am liebsten online"
+      },
+      {
+        "targetValue": 45,
+        "suffix": "%",
+        "label": "weniger Verwaltungsaufwand durch digitale Anamnesebögen"
+      }
+    ]
+  },
+  "bentoGrid": {
+    "title": "Gesunde Prozesse für Ihre Praxis",
+    "subtitle": "So entlasten wir Ihr Team und begeistern Patienten.",
+    "cards": [
+      {
+        "title": "Vertrauensvolles Design",
+        "text": "Medizinische Seriosität trifft auf warme, einladende Gestaltung. Wir präsentieren Ihr Team und Ihre Räumlichkeiten sympathisch und professionell.",
+        "size": "large",
+        "icon": "Design"
+      },
+      {
+        "title": "Online Terminvergabe",
+        "text": "Nahtlose Einbindung von Doctolib, Samedi oder anderen Praxis Softwares für direkte, sichere Buchungen.",
+        "size": "small",
+        "icon": "Speed"
+      },
+      {
+        "title": "Digitale Anamnese",
+        "text": "Sichere (DSGVO konforme) Formulare ermöglichen es Patienten, Fragebögen bereits vor dem Termin digital auszufüllen.",
+        "size": "small",
+        "icon": "MapPin"
+      },
+      {
+        "title": "Lokale Sichtbarkeit",
+        "text": "Bei Suchanfragen wie 'Krankengymnastik Wetzlar' oder 'Manuelle Therapie in der Nähe' werden Sie sofort gefunden.",
+        "size": "tall",
+        "icon": "SEO"
+      }
+    ]
+  },
+  "processSteps": [
+    {
+      "title": "1. Praxis Analyse",
+      "description": "Wir analysieren Ihre Schwerpunkte (z.B. Osteopathie, Sportphysio) und erarbeiten eine Struktur, die diese Leistungen perfekt darstellt."
+    },
+    {
+      "title": "2. Fotografie & Text",
+      "description": "Authentizität ist im Gesundheitswesen alles. Wir empfehlen professionelle Praxis  und Teamfotos und erstellen seriöse, SEO optimierte Fachtexte."
+    },
+    {
+      "title": "3. Software Integration",
+      "description": "Wir verknüpfen Ihre Praxis Software für Termin Management und stellen sicher, dass alle Datenflüsse streng der DSGVO entsprechen."
+    },
+    {
+      "title": "4. Launch & Local SEO",
+      "description": "Veröffentlichung der Website und Optimierung des Google Unternehmensprofils für maximale lokale Sichtbarkeit."
+    }
+  ],
+  "localDominance": {
+    "title": "Werden Sie die gefragteste Praxis am Ort",
+    "description": "Der Bedarf an Physiotherapie ist riesig, doch lukrative Privatleistungen (wie Osteopathie oder spezialisierte Prävention) suchen sich die Patienten gezielt aus. Wir positionieren Sie digital als absoluten Experten in Ihrem Fachgebiet, sodass Patienten gezielt Ihre Praxis wählen – auch wenn sie dafür weiter fahren müssen.",
+    "points": [
+      "Gezielte Ansprache von Selbstzahlern und Privatpatienten durch Premium Design",
+      "Aufbau von Vertrauen durch Vorstellung der Team Qualifikationen",
+      "Optimierte Darstellung auf Smartphones für schnelle Hilfe bei Akut Schmerzen"
+    ]
+  },
+  "faq": [
+    {
+      "q": "Sind Ihre Websites für Praxen DSGVO konform?",
+      "a": "Ja, absolut. Gerade im Gesundheitswesen ist Datenschutz kritisch. Wir setzen auf sicheres Hosting, verschlüsselte Verbindungen, datenschutzkonforme Formulare (kein Versand sensibler Daten via unverschlüsselter E Mail) und saubere Cookie Consent Tools."
+    },
+    {
+      "q": "Können Patienten Termine direkt über die Website buchen?",
+      "a": "Ja. Wir binden Ihre bestehende Praxis Software (z.B. Theorg, Doctolib) nahtlos ein. Das entlastet Ihre Rezeption enorm und reduziert Terminausfälle durch automatische Erinnerungen."
+    },
+    {
+      "q": "Können wir das Team oder Leistungen selbst aktualisieren?",
+      "a": "Ja, Sie erhalten ein modernes Headless CMS. Wenn ein neuer Therapeut ins Team kommt oder sich Qualifikationen ändern, können Sie dies mit wenigen Klicks selbst anpassen."
+    },
+    {
+      "q": "Schreiben Sie auch die medizinischen Texte?",
+      "a": "Wir strukturieren und optimieren Texte für Suchmaschinen (SEO). Für fachspezifische, medizinische Korrektheit arbeiten wir eng mit Ihnen zusammen oder vermitteln erfahrene Medical Writer."
+    },
+    {
+      "q": "Warum laden viele Praxis Seiten so langsam?",
+      "a": "Oft werden riesige, unkomprimierte Bilder oder veraltete WordPress Themes verwendet. Unsere Next.js Technologie sorgt dafür, dass Ihre Seite in Bruchteilen einer Sekunde lädt – ein enormer Vorteil für genervte, schmerzgeplagte Patienten."
+    },
+    {
+      "q": "Helfen Sie uns auch, Mitarbeiter (Therapeuten) zu finden?",
+      "a": "Ja, der Fachkräftemangel ist in der Physiotherapie extrem. Wir integrieren spezielle Karriere Landingpages, die Ihre Praxis als modernen, attraktiven Arbeitgeber präsentieren und den Bewerbungsprozess (z.B. 1 Klick Bewerbung) stark vereinfachen."
+    }
+  ]
+}

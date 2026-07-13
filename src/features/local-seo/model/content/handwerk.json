@@ -1,0 +1,124 @@
+{
+  "target": "handwerk",
+  "type": "industry-location",
+  "meta": {
+    "title": "Handwerker Webdesign Agentur Wetzlar | Fachkräfte gewinnen",
+    "description": "Premium Websites für Handwerksbetriebe. Gewinnen Sie lukrative Bau Aufträge und qualifizierte Fachkräfte mit einem hochmodernen digitalen Auftritt."
+  },
+  "hero": {
+    "headline": "Digitales Fundament für echtes Handwerk.",
+    "subheadline": "Mehr Fachkräfte. Bessere Aufträge. Maximale Sichtbarkeit.",
+    "description": "Mehr Fachkräfte. Bessere Aufträge. Maximale Sichtbarkeit. Die Zeiten, in denen Empfehlungen reichten, sind vorbei. Wenn Bauherren oder potenzielle Auszubildende nach einem zuverlässigen Betrieb suchen, googeln sie. Eine veraltete Website schreckt Top Bewerber und Premium Kunden ab. Wir bauen Websites für Handwerker, die Vertrauen schaffen, Ihre Expertise beweisen und als digitale Vertriebsmaschine arbeiten.",
+    "metrics": [
+      {
+        "value": "200",
+        "label": "Mehr qualifizierte Bewerbungen",
+        "suffix": "%"
+      },
+      {
+        "value": "1",
+        "label": "Sichtbarkeit in der Region",
+        "suffix": " Platz"
+      }
+    ]
+  },
+  "gamifiedStats": {
+    "title": "Warum Handwerker online Kunden & Personal verlieren",
+    "description": "Viele Betriebe haben volle Auftragsbücher, aber finden kein Personal. Andere möchten weg von Kleinaufträgen hin zu lukrativen Großprojekten. Beides scheitert oft an der digitalen Präsentation.",
+    "counters": [
+      {
+        "targetValue": 85,
+        "suffix": "%",
+        "label": "der jungen Fachkräfte informieren sich vor Bewerbung online"
+      },
+      {
+        "targetValue": 60,
+        "suffix": "%",
+        "label": "der Bauherren entscheiden anhand von Referenzbildern im Web"
+      }
+    ]
+  },
+  "bentoGrid": {
+    "title": "Webdesign, das zupackt",
+    "subtitle": "So digitalisieren wir Ihren Handwerksbetrieb.",
+    "cards": [
+      {
+        "title": "Starke Referenz Galerien",
+        "text": "Bilder sagen mehr als Worte. Wir setzen Ihre erfolgreich abgeschlossenen Bauprojekte in hochauflösenden, blitzschnellen Galerien in Szene.",
+        "size": "large",
+        "icon": "Design"
+      },
+      {
+        "title": "Automatisierte Kontaktanfragen",
+        "text": "Digitale Fragebögen filtern Anfragen vorab (Budget, Zeitrahmen), damit Sie keine Zeit mit unpassenden Kunden verschwenden.",
+        "size": "small",
+        "icon": "Speed"
+      },
+      {
+        "title": "Recruiting Funnel",
+        "text": "1 Klick Bewerbungen für Fachkräfte, integriert auf einer Landingpage, die Ihren Betrieb als Top Arbeitgeber präsentiert.",
+        "size": "small",
+        "icon": "MapPin"
+      },
+      {
+        "title": "Local SEO für Handwerker",
+        "text": "Top Rankings bei Google für Suchbegriffe wie 'Dachdecker Wetzlar' oder 'Elektriker Gießen'.",
+        "size": "tall",
+        "icon": "SEO"
+      }
+    ]
+  },
+  "processSteps": [
+    {
+      "title": "1. Strategie & Fokus",
+      "description": "Welche Aufträge wollen Sie? Welche Mitarbeiter suchen Sie? Wir richten die gesamte Website exakt auf Ihre geschäftlichen Ziele aus."
+    },
+    {
+      "title": "2. Fotografie auf der Baustelle",
+      "description": "Echtes Handwerk statt Stockfotos. Wir lassen Ihr Team und Ihre Arbeit durch professionelle Aufnahmen authentisch wirken."
+    },
+    {
+      "title": "3. Entwicklung & Design",
+      "description": "Programmierung einer robusten, extrem schnellen Website, die auch auf dem Baustellen Smartphone in Millisekunden lädt."
+    },
+    {
+      "title": "4. Local SEO Ranking",
+      "description": "Optimierung Ihres Google Profils, damit Kunden in Ihrem Einzugsgebiet Sie sofort finden, wenn ein Notfall oder Bauprojekt ansteht."
+    }
+  ],
+  "localDominance": {
+    "title": "Dominanz im Umkreis von 50km",
+    "description": "Im Handwerk ist regionale Sichtbarkeit alles. Wer bei Suchanfragen in seiner Stadt und den umliegenden Gemeinden nicht auf Seite 1 steht, verliert täglich lukrative Aufträge an die Konkurrenz. Wir optimieren Ihre Seite hyper lokal, damit Sie zum unangefochtenen Platzhirsch in Ihrer Region werden.",
+    "points": [
+      "Erstellung dynamischer Landingpages für alle relevanten Einzugsgebiete",
+      "Aufbau eines digitalen Expertenstatus durch optimierte Referenzbeschreibungen",
+      "Massive Steigerung der Arbeitgeber Attraktivität in der Region"
+    ]
+  },
+  "faq": [
+    {
+      "q": "Wir haben doch genug Aufträge – warum eine neue Website?",
+      "a": "Weil es nicht nur um Aufträge geht. Es geht um *bessere* Aufträge (höhere Marge) und vor allem um Personalgewinnung. Top Fachkräfte bewerben sich heute nicht bei Betrieben, die sich digital wie vor 20 Jahren präsentieren."
+    },
+    {
+      "q": "Wie helfen Sie uns konkret bei der Mitarbeitersuche?",
+      "a": "Wir bauen psychologisch optimierte Karriere Seiten auf. Wir reduzieren die Bewerbungshürden (z.B. Bewerbung ohne langes Anschreiben, direkt über das Smartphone) und stellen Ihre Vorteile als Arbeitgeber perfekt dar."
+    },
+    {
+      "q": "Können wir Bilder von neuen Projekten selbst hochladen?",
+      "a": "Ja. Sie erhalten Zugang zu einem extrem einfach bedienbaren System (ohne kompliziertes WordPress Backend), mit dem Sie per Handy direkt von der Baustelle Bilder in Ihre Referenz Galerie hochladen können."
+    },
+    {
+      "q": "Wirken wir durch eine Premium Website zu teuer für normale Kunden?",
+      "a": "Nein, Sie wirken professionell und zuverlässig. Kunden zahlen gerne faire Preise für Handwerker, die Seriosität und Qualität ausstrahlen. Die Website filtert zudem Kunden aus, die nur auf den billigsten Preis schauen."
+    },
+    {
+      "q": "Werden wir bei Google in unserer Stadt gefunden?",
+      "a": "Das ist unser Kernversprechen. Durch tiefgreifende Local SEO Maßnahmen und rasend schnelle Ladezeiten sorgen wir dafür, dass Sie bei Suchanfragen für Ihre Gewerke regional an der Spitze stehen."
+    },
+    {
+      "q": "Wie viel Zeit müssen wir als Betrieb in das Projekt stecken?",
+      "a": "Sehr wenig. Wir wissen, dass Handwerker auf der Baustelle gebraucht werden. Nach einem initialen Strategie Gespräch übernehmen wir Konzeption, Design, Texte und Programmierung komplett (Full Service)."
+    }
+  ]
+}

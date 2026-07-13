@@ -1,0 +1,124 @@
+{
+  "target": "zahnarzt",
+  "type": "industry-location",
+  "meta": {
+    "title": "Zahnarzt Webdesign Agentur Wetzlar | Patienten für Ihre Praxis",
+    "description": "Exzellentes Webdesign für Zahnärzte & KFO in Wetzlar. Steigern Sie Privatleistungen durch Vertrauen, High End Design und digitale Terminbuchungen."
+  },
+  "hero": {
+    "headline": "Das digitale Lächeln Ihrer Praxis.",
+    "subheadline": "Mehr Privatpatienten. Weniger Administration. Premium Image.",
+    "description": "Mehr Privatpatienten. Weniger Administration. Premium Image. Patienten haben oft Angst vor dem Zahnarztbesuch. Wenn Ihre Website kühl, veraltet oder unübersichtlich wirkt, baut sich kein Vertrauen auf – der Patient wählt eine andere Praxis. Wir kreieren digitale Praxiserlebnisse, die Angst nehmen, Kompetenz ausstrahlen und lukrative Privatleistungen (Implantologie, Ästhetik) aktiv fördern.",
+    "metrics": [
+      {
+        "value": "150",
+        "label": "Mehr Anfragen für Privatleistungen",
+        "suffix": "%"
+      },
+      {
+        "value": "60",
+        "label": "Weniger Zeitaufwand an der Rezeption",
+        "suffix": "%"
+      }
+    ]
+  },
+  "gamifiedStats": {
+    "title": "Warum Sie lukrative Behandlungen an Mitbewerber verlieren",
+    "description": "Wenn es um hochwertige Implantate oder Veneers geht, recherchieren Patienten intensiv online. Eine Website, die nicht Premium ausstrahlt, disqualifiziert Sie sofort.",
+    "counters": [
+      {
+        "targetValue": 82,
+        "suffix": "%",
+        "label": "der Patienten entscheiden sich für Praxen mit modernen Websites"
+      },
+      {
+        "targetValue": 74,
+        "suffix": "%",
+        "label": "buchen Prophylaxe Termine bevorzugt online"
+      }
+    ]
+  },
+  "bentoGrid": {
+    "title": "Die digitale Praxisarchitektur",
+    "subtitle": "So digitalisieren wir Ihren Patientengewinnungs Prozess.",
+    "cards": [
+      {
+        "title": "Vertrauensvolles Design",
+        "text": "Warme Farben, helle Räume und professionelle Teamfotos. Wir designen eine digitale Praxis, die Seriosität und Empathie ausstrahlt.",
+        "size": "large",
+        "icon": "Design"
+      },
+      {
+        "title": "Sichere Terminbuchung",
+        "text": "Nahtlose Anbindung von Doctolib oder Jameda. Patienten buchen PZR oder Kontrollen selbst – direkt in Ihre Praxissoftware.",
+        "size": "small",
+        "icon": "Speed"
+      },
+      {
+        "title": "Digitale Anamnese",
+        "text": "Patienten füllen Anamnesebögen bequem zu Hause aus (DSGVO konform). Keine Zettelwirtschaft mehr im Wartezimmer.",
+        "size": "small",
+        "icon": "MapPin"
+      },
+      {
+        "title": "Medical SEO",
+        "text": "Dominante Platzierung bei Google für hochprofitable Keywords wie 'Zahnimplantate Wetzlar' oder 'Angstpatienten Zahnarzt'.",
+        "size": "tall",
+        "icon": "SEO"
+      }
+    ]
+  },
+  "processSteps": [
+    {
+      "title": "1. Positionierung & USP",
+      "description": "Sind Sie Spezialist für Implantologie, Kinderzahnheilkunde oder Ästhetik? Wir rücken Ihren Schwerpunkt perfekt in den Fokus."
+    },
+    {
+      "title": "2. Premium Praxisfotografie",
+      "description": "Angst nehmen durch Transparenz. Wir sorgen für professionelle, sympathische Bilder Ihres Teams und der Behandlungsräume."
+    },
+    {
+      "title": "3. Software Integration",
+      "description": "Wir verbinden Ihre Website sicher mit Ihrer Praxismanagement Software für Termine und digitale Formulare."
+    },
+    {
+      "title": "4. Launch & Patientengewinnung",
+      "description": "Die Website geht online und wir optimieren Ihr Google Profil für maximale lokale Sichtbarkeit in Ihrem Einzugsgebiet."
+    }
+  ],
+  "localDominance": {
+    "title": "Werden Sie die Nummer Eins für Privatleistungen",
+    "description": "Normale Kassenleistungen bringen Sie an Ihre Auslastungsgrenze, aber hochwertige Privatleistungen (Invisalign, Implantate, Bleaching) sorgen für Profitabilität. Wir bauen Ihre Website so auf, dass sie genau jene Patienten anzieht, die Wert auf höchste Qualität legen und bereit sind, dafür zu investieren.",
+    "points": [
+      "Fokus Landingpages für High Ticket Leistungen (z.B. All on 4 Implantate)",
+      "Aufbau von Expertenstatus durch Patienten Ratgeber und FAQ",
+      "Massive Reduzierung von Praxis Anrufen durch 24/7 Online Buchung"
+    ]
+  },
+  "faq": [
+    {
+      "q": "Ist die Einbindung von Online Terminen DSGVO konform?",
+      "a": "Ja. Wir binden Systeme wie Doctolib, Jameda oder samedi datenschutzkonform ein. Die Patientendaten fließen sicher verschlüsselt in Ihr System, ohne Zwischenspeicherung auf der Website."
+    },
+    {
+      "q": "Wie können wir Angstpatienten besser ansprechen?",
+      "a": "Durch Transparenz und Empathie im Design. Wir vermeiden abschreckende Behandlungsbilder. Stattdessen zeigen wir Ihr sympathisches Team, helle Räume und erklären Methoden zur angstfreien Behandlung (z.B. Lachgas, Vollnarkose) verständlich und beruhigend."
+    },
+    {
+      "q": "Hilft die Website auch bei der Suche nach ZFA (Zahnmedizinischen Fachangestellten)?",
+      "a": "Der Fachkräftemangel ist ein massives Problem in Praxen. Wir integrieren gezielt Karriere Seiten, die Ihre Praxisvorteile (Weiterbildung, Team Events, faire Bezahlung) herausstellen und eine schnelle Kurzbewerbung via Smartphone ermöglichen."
+    },
+    {
+      "q": "Warum laden viele Praxis Websites so langsam?",
+      "a": "Oft werden riesige Bilder nicht optimiert oder veraltete Baukastensysteme genutzt. Wir entwickeln mit Next.js – Ihre neue Praxis Website wird in Millisekunden laden, was Google mit besseren Rankings belohnt."
+    },
+    {
+      "q": "Erstellen Sie auch medizinische Texte?",
+      "a": "Wir übernehmen die SEO Strukturierung und verfassen ansprechende Texte, die medizinisch korrekt, aber für den Patienten leicht verständlich sind (kein Fachchinesisch). Alternativ arbeiten wir mit Ihren Texten."
+    },
+    {
+      "q": "Wir haben schon viele Patienten, warum brauchen wir eine Premium Website?",
+      "a": "Um die *richtigen* Patienten anzuziehen. Wenn Ihre Praxis voll ist, geht es oft um die Steigerung des Anteils an Privatleistungen. Ein Premium Design rechtfertigt Premium Qualität und filtert Patienten, die nur nach Kassenleistungen suchen."
+    }
+  ]
+}

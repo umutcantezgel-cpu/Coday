@@ -1,0 +1,124 @@
+{
+  "target": "immobilienmakler",
+  "type": "industry-location",
+  "meta": {
+    "title": "Immobilienmakler Webdesign Agentur Wetzlar | Objektvermarktung",
+    "description": "High End Webdesign für Immobilienmakler. Wir bauen exklusive Plattformen, die Objekte emotional vermarkten und Verkäufer Leads automatisiert generieren."
+  },
+  "hero": {
+    "headline": "Exklusive digitale Immobilien Vermarktung.",
+    "subheadline": "Mehr Verkäufer Leads. Schnellere Vermittlung. Premium Image.",
+    "description": "Mehr Verkäufer Leads. Schnellere Vermittlung. Premium Image. In der Immobilienbranche geht es um Vertrauen und große Summen. Wenn Ihre Website aussieht wie ein Baukasten von 2012, vertraut Ihnen niemand sein Lebenswerk zum Verkauf an. Wir erschaffen digitale Makler Büros, die Seriosität, lokales Markt Know how und absolute Professionalität ausstrahlen.",
+    "metrics": [
+      {
+        "value": "180",
+        "label": "Mehr Verkäufer Leads",
+        "suffix": "%"
+      },
+      {
+        "value": "1",
+        "label": "Sekunde Ladezeit für 4K Exposés",
+        "suffix": " max."
+      }
+    ]
+  },
+  "gamifiedStats": {
+    "title": "Warum Sie Eigentümer an die Konkurrenz verlieren",
+    "description": "Eigentümer recherchieren Makler heute intensiv online, bevor sie Kontakt aufnehmen. Fehlt die digitale Souveränität, scheiden Sie sofort aus dem Auswahlprozess aus.",
+    "counters": [
+      {
+        "targetValue": 88,
+        "suffix": "%",
+        "label": "der Verkäufer vergleichen Makler Websites vor der Kontaktaufnahme"
+      },
+      {
+        "targetValue": 75,
+        "suffix": "%",
+        "label": "der Käufer sind frustriert von langsamen, unübersichtlichen Online Exposés"
+      }
+    ]
+  },
+  "bentoGrid": {
+    "title": "Architektur für Ihren digitalen Erfolg",
+    "subtitle": "So dominieren Sie den lokalen Immobilienmarkt.",
+    "cards": [
+      {
+        "title": "Immersive Exposés",
+        "text": "Präsentieren Sie Immobilien wie Luxus Güter. Mit rasend schnellen 4K Galerien, 3D Rundgängen und kinoreifen Video Integrationen.",
+        "size": "large",
+        "icon": "Design"
+      },
+      {
+        "title": "Automatisierte Wertermittlung",
+        "text": "Generieren Sie Leads auf Autopilot durch interaktive Online Wertermittlungs Tools direkt auf Ihrer Website.",
+        "size": "small",
+        "icon": "Speed"
+      },
+      {
+        "title": "API Schnittstellen",
+        "text": "Nahtlose Anbindung an Ihre Makler Software (onOffice, FlowFact) für automatischen Objekt Import ohne Doppeleingabe.",
+        "size": "small",
+        "icon": "MapPin"
+      },
+      {
+        "title": "Local SEO für Makler",
+        "text": "Wir positionieren Sie bei Google als Platzhirsch für Suchanfragen wie 'Haus verkaufen Wetzlar' oder 'Immobilienmakler Gießen'.",
+        "size": "tall",
+        "icon": "SEO"
+      }
+    ]
+  },
+  "processSteps": [
+    {
+      "title": "1. Positionierungs Strategie",
+      "description": "Wir arbeiten Ihre Unique Selling Proposition (USP) heraus. Warum sollte ein Eigentümer Ihnen sein Haus anvertrauen?"
+    },
+    {
+      "title": "2. High End UI Design",
+      "description": "Wir gestalten ein Interface, das Luxus und Seriosität vermittelt – mit perfekter Typografie und großzügigem Layout."
+    },
+    {
+      "title": "3. Software Integration",
+      "description": "Anbindung Ihrer bestehenden Makler Tools und Aufbau der Lead Generierungs Funnels (Wertermittlung)."
+    },
+    {
+      "title": "4. Launch & SEO Optimierung",
+      "description": "Die Website geht live. Wir optimieren Ihr Google Profil und starten die Lokale SEO Strategie zur Lead Gewinnung."
+    }
+  ],
+  "localDominance": {
+    "title": "Werden Sie der Platzhirsch in Ihrer Region",
+    "description": "Immobiliengeschäft ist lokales Geschäft. Wenn Sie in Ihrem Kerngebiet online nicht dominant präsent sind, verbrennen Sie täglich Geld. Wir rüsten Sie mit einer Website aus, die technisch und optisch so stark ist, dass Mitbewerber in Ihrer Region das Nachsehen haben.",
+    "points": [
+      "Starker Aufbau von lokalem Vertrauen durch optimierte Team  und Referenz Seiten",
+      "Generierung hochwertiger Eigentümer Leads ohne teure Portalkosten",
+      "Abheben vom Standard Einheitsbrei durch echtes Premium Design"
+    ]
+  },
+  "faq": [
+    {
+      "q": "Müssen wir Immobilien doppelt einpflegen (Website & Software)?",
+      "a": "Nein. Wir integrieren leistungsstarke Schnittstellen (z.B. OpenImmo, onOffice API). Sie pflegen Objekte einmal in Ihrer Makler Software, und sie erscheinen automatisch und sofort in Perfektion auf Ihrer neuen Website."
+    },
+    {
+      "q": "Bieten Sie Tools zur Online Wertermittlung an?",
+      "a": "Ja, wir binden interaktive Lead Magneten (Wertermittlungs Tools) ein. Diese psychologisch optimierten Funnels sammeln Kontaktdaten von potenziellen Verkäufern, noch bevor diese sich für einen Makler entschieden haben."
+    },
+    {
+      "q": "Warum laden unsere hochauflösenden Objekt Bilder aktuell so langsam?",
+      "a": "Klassische CMS wie WordPress komprimieren Bilder oft schlecht. Wir nutzen Next.js Image Optimization und Edge Caching. Dadurch laden auch Galerie Bilder in 4K Qualität auf dem Smartphone in Bruchteilen einer Sekunde."
+    },
+    {
+      "q": "Ist die Website für Mobilgeräte optimiert?",
+      "a": "Über 80% der Objektsuchen beginnen auf dem Smartphone. Wir entwickeln rigoros 'Mobile First'. Ihre Exposés lassen sich bedienen wie eine moderne, flüssige App."
+    },
+    {
+      "q": "Wie werden wir bei Google besser gefunden?",
+      "a": "Der Google Algorithmus liebt extrem schnelle Ladezeiten und semantisch sauberen Code – beides ist unser Markenzeichen. Zusätzlich implementieren wir spezielles Local SEO und Immobilien Schema Daten für Top Rankings."
+    },
+    {
+      "q": "Erstellen Sie auch Landingpages für Neubau Projekte?",
+      "a": "Absolut. Für große Vermarktungsprojekte bauen wir dedizierte Projekt Landingpages mit interaktiven Grundrissen und Projekt Branding auf der Basis Ihrer Haupt Website auf."
+    }
+  ]
+}

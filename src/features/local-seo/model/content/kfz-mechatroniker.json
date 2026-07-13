@@ -2,59 +2,67 @@
   "target": "kfz-mechatroniker",
   "type": "industry-location",
   "meta": {
-    "title": "Digitale Dominanz für selbstständige KFZ-Mechatroniker | Coday",
-    "description": "Verwandeln Sie Ihr Handwerk in eine hochprofitable Marke. Gewinnen Sie Premium-Kunden, skalieren Sie Ihren Betrieb und hängen Sie die Konkurrenz digital ab."
+    "title": "Digitale Dominanz für KFZ Mechatroniker",
+    "description": "Verwandeln Sie Ihr Handwerk in eine profitable Marke. Gewinnen Sie Premium Kunden durch professionelles Webdesign und Webseitenentwicklung."
   },
   "hero": {
-    "headline": "Von der Schrauber-Bude zur Premium-Marke.",
-    "subheadline": "Sie liefern meisterhafte Qualität. Wir sorgen dafür, dass Ihre Kunden das auch sofort sehen und entsprechend bezahlen.",
-    "description": "Ihre handwerkliche Brillanz als KFZ-Mechatroniker nützt Ihnen wenig, wenn Ihre Website nach Hobby-Schrauber aussieht. Wir bauen digitale Präsenzen, die Ihre Expertise ins absolute Zentrum stellen, Vertrauen aufbauen und Ihnen hochprofitable Reparaturaufträge auf Autopilot liefern.",
+    "headline": "Von der reinen Werkstatt zur Premium Marke.",
+    "subheadline": "Sie liefern meisterhafte Qualität. Wir sorgen dafür, dass Ihre Kunden das sofort sehen und entsprechend honorieren.",
+    "description": "Sie liefern meisterhafte Qualität. Wir sorgen dafür, dass Ihre Kunden das sofort sehen und entsprechend honorieren. Ihre handwerkliche Brillanz als KFZ Mechatroniker nützt Ihnen wenig, wenn Ihre Webseite unprofessionell wirkt oder veraltet ist. Wir bauen als spezialisierte Webdesign Agentur digitale Präsenzen, die Ihre technische Expertise ins absolute Zentrum stellen. Ein durchdachter Webseiten Relaunch baut massives Vertrauen auf und liefert Ihnen hochprofitable Reparaturaufträge nahezu auf Autopilot. Eine moderne Webseite ist heute Ihr wichtigster Mitarbeiter.",
     "metrics": [
-      { "value": "200", "label": "Mehr Neukunden-Anfragen", "suffix": "%" },
-      { "value": "100", "label": "Exklusives Design", "suffix": "%" }
+      {
+        "value": "200",
+        "label": "Mehr Neukunden Anfragen",
+        "suffix": "%"
+      },
+      {
+        "value": "100",
+        "label": "Exklusives Design",
+        "suffix": "%"
+      }
     ]
   },
   "gamifiedStats": {
-    "title": "Ihr handwerkliches Können bleibt unsichtbar.",
-    "description": "Die meisten talentierten KFZ-Mechatroniker verlieren täglich Aufträge an Werkstätten, die zwar handwerklich schlechter, aber digital besser aufgestellt sind. Eine unprofessionelle Website suggeriert dem Unterbewusstsein des Kunden unprofessionelle Arbeit am Fahrzeug.",
+    "title": "Ihr handwerkliches Können bleibt online oft unsichtbar",
+    "description": "Die meisten talentierten KFZ Mechatroniker verlieren täglich lukrative Aufträge an Werkstätten, die zwar handwerklich schlechter, aber digital deutlich besser aufgestellt sind. Eine unprofessionelle Webseite suggeriert dem Unterbewusstsein des potenziellen Kunden unbewusst auch eine unprofessionelle Arbeit am Fahrzeug. Ein gezielter Webseiten Relaunch durch unsere Webagentur behebt dieses Problem sofort. Wir stellen sicher, dass Ihre Onlinepräsenz exakt die hohe Qualität widerspiegelt, die Sie in Ihrer Werkstatt täglich abliefern.",
     "counters": [
       {
         "targetValue": 92,
         "suffix": "%",
-        "label": "der Kunden bewerten Kompetenz nach dem Webdesign"
+        "label": "bewerten Kompetenz primär nach dem Webdesign"
       },
       {
         "targetValue": 80,
         "suffix": "%",
-        "label": "mehr Umsatzpotenzial durch Premium-Wahrnehmung"
+        "label": "mehr Umsatzpotenzial durch eine Premium Wahrnehmung"
       }
     ]
   },
   "bentoGrid": {
-    "title": "Der Turbo für Ihr KFZ-Business",
-    "subtitle": "Warum Coday der Gamechanger für Ihren Betrieb ist.",
+    "title": "Der Turbo für Ihr KFZ Business",
+    "subtitle": "Warum unsere Webseitenentwicklung der Gamechanger für Ihren Betrieb ist.",
     "cards": [
       {
-        "title": "Premium-Wahrnehmung",
-        "text": "Wir verpacken Ihre technischen Fähigkeiten in ein atemberaubendes, hochmodernes Design, das sofort Preise jenseits des Marktdurchschnitts rechtfertigt.",
+        "title": "Exklusive Premium Wahrnehmung",
+        "text": "Wir verpacken Ihre enormen technischen Fähigkeiten in ein atemberaubendes und hochmodernes Webdesign, das sofort Preise jenseits des Marktdurchschnitts rechtfertigt und Vertrauen schafft.",
         "size": "large",
         "icon": "Design"
       },
       {
-        "title": "High-Speed Performance",
-        "text": "Keine Wartezeiten. Ihre Seite lädt in Millisekunden und bietet ein makelloses Erlebnis auf jedem Smartphone.",
+        "title": "High Speed Performance",
+        "text": "Keine Wartezeiten mehr für Ihre Kunden. Ihre neue Seite lädt in wenigen Millisekunden und bietet ein makelloses, schnelles Nutzererlebnis auf jedem mobilen Endgerät.",
         "size": "small",
         "icon": "Speed"
       },
       {
-        "title": "SEO-Sichtbarkeit",
-        "text": "Sie werden zur unübersehbaren Autorität in Ihrer Region, wenn Kunden nach spezifischen KFZ-Problemen suchen.",
+        "title": "Suchmaschinen Sichtbarkeit",
+        "text": "Sie werden zur absolut unübersehbaren Autorität in Ihrer Region, wenn Kunden nach spezifischen KFZ Problemen suchen. Unsere Webseitenentwicklung ist von Grund auf SEO optimiert.",
         "size": "small",
         "icon": "SEO"
       },
       {
         "title": "Hochkonvertierende Struktur",
-        "text": "Wir leiten den Besucher psychologisch präzise von der ersten Sekunde bis zur Terminbuchung. Weniger Abbrüche, mehr volle Terminkalender mit den richtigen Kunden.",
+        "text": "Wir leiten den Besucher psychologisch präzise von der ersten Sekunde bis zur finalen Terminbuchung. Das bedeutet für Sie weniger Abbrüche und mehr volle Terminkalender mit genau den richtigen Kunden.",
         "size": "tall",
         "icon": "Security"
       }
@@ -62,63 +70,63 @@
   },
   "processSteps": [
     {
-      "title": "1. Strategische Positionierung",
-      "description": "Wir analysieren Ihre Stärken und definieren Sie als den unangefochtenen Experten für spezielle Probleme in Ihrem Einzugsgebiet."
+      "title": "Strategische Positionierung",
+      "description": "Wir analysieren Ihre Stärken detailliert und definieren Sie als den unangefochtenen Experten für spezielle KFZ Probleme in Ihrem regionalen Einzugsgebiet."
     },
     {
-      "title": "2. Neuro-Design",
-      "description": "Gestaltung einer Website, die nicht nur schön aussieht, sondern das Vertrauenszentrum Ihrer Besucher im Gehirn aktiviert."
+      "title": "Verkaufspsychologisches Design",
+      "description": "Wir gestalten eine Webseite, die nicht nur hervorragend aussieht, sondern gezielt das Vertrauenszentrum Ihrer Besucher anspricht. Professionelles Webdesign macht hier den entscheidenden Unterschied."
     },
     {
-      "title": "3. Entwicklung auf Enterprise-Niveau",
-      "description": "Programmierung mit Next.js. Absolute technische Perfektion, maximale Sicherheit und überlegene Ladegeschwindigkeit."
+      "title": "Entwicklung auf Enterprise Niveau",
+      "description": "Wir setzen bei der Webseitenentwicklung auf modernste Technologien. Absolute technische Perfektion, maximale Sicherheit und überlegene Ladegeschwindigkeit sind für uns der Standard."
     },
     {
-      "title": "4. Skalierung Ihres Betriebs",
-      "description": "Nach dem Launch sorgen wir mit datengetriebenen Anpassungen dafür, dass Ihre Anfragen durch die Decke gehen und Ihre Werkstatt platzt."
+      "title": "Skalierung Ihres Betriebs",
+      "description": "Nach dem erfolgreichen Webseiten Relaunch sorgen wir mit datengetriebenen Anpassungen kontinuierlich dafür, dass Ihre Anfragen steigen und Ihre Werkstatt optimal ausgelastet ist."
     }
   ],
   "localDominance": {
-    "title": "Dominieren Sie den lokalen Markt",
-    "description": "Es reicht nicht mehr aus, nur gute Arbeit zu leisten. Wer im digitalen Zeitalter als KFZ-Mechatroniker wachsen will, muss auch digital wie ein Marktführer auftreten. Wir machen Sie zur ersten und einzigen logischen Wahl in Ihrer Stadt.",
+    "title": "Dominieren Sie den Markt in Ihrer Region",
+    "description": "Es reicht heute definitiv nicht mehr aus, nur exzellente handwerkliche Arbeit zu leisten. Wer im digitalen Zeitalter als KFZ Mechatroniker profitabel wachsen will, muss auch online wie ein absoluter Marktführer auftreten. Als Ihre erfahrene Webagentur machen wir Sie zur ersten und einzigen logischen Wahl in Ihrer Stadt. Wir kümmern uns vollständig um Ihre Webseitenentwicklung, damit Sie sich voll auf Ihre Arbeit in der Werkstatt konzentrieren können.",
     "points": [
-      "Absolute Dominanz bei relevanten Suchanfragen",
-      "Positionierung als hochpreisiger Premium-Dienstleister",
-      "Aufbau einer magnetischen Arbeitgebermarke zur Mitarbeitergewinnung"
+      "Absolute Dominanz bei relevanten regionalen Suchanfragen",
+      "Gezielte Positionierung als hochpreisiger Premium Dienstleister",
+      "Aufbau einer magnetischen Arbeitgebermarke zur erfolgreichen Mitarbeitergewinnung"
     ]
   },
   "faq": [
     {
-      "q": "Ich arbeite alleine oder mit einem kleinen Team. Ist so eine High-End-Website nicht übertrieben?",
-      "a": "Nein. Gerade als kleiner Betrieb müssen Sie über Effizienz und Qualität gewinnen, nicht über Masse. Eine High-End-Website zieht genau die Kunden an, die bereit sind, für exzellente Arbeit gutes Geld zu bezahlen. Sie filtern die zeitraubenden Kunden heraus und maximieren Ihren Gewinn pro Auftrag."
+      "q": "Ich arbeite alleine oder mit einem kleinen Team. Ist eine professionelle Webseite nicht übertrieben?",
+      "a": "Definitiv nicht. Gerade als kleiner KFZ Betrieb müssen Sie über maximale Effizienz und herausragende Qualität gewinnen, nicht über bloße Masse. Eine von uns entwickelte High End Webseite zieht genau jene Kunden an, die bereit sind, für exzellente Arbeit faire Preise zu bezahlen. Sie filtern dadurch unbewusst zeitraubende Kunden heraus und maximieren Ihren Gewinn pro Reparaturauftrag massiv."
     },
     {
-      "q": "Was kostet eine Next.js Website von Coday?",
-      "a": "Wir verkaufen keine Websites, wir verkaufen digitale Marktdominanz. Ein Projekt mit uns ist ein Investment, das sich durch hochprofitable Neukunden und gesteigerte Markenwahrnehmung innerhalb kürzester Zeit amortisiert. Die genauen Kosten hängen von Ihren Zielen ab."
+      "q": "Was kostet eine professionelle Webseitenentwicklung durch Ihre Webagentur?",
+      "a": "Wir verkaufen keine einfachen Webseiten, wir etablieren digitale Marktdominanz. Ein Webseiten Relaunch mit unserer Webagentur ist ein strategisches Investment, das sich durch den Gewinn von hochprofitablen Neukunden und eine deutlich gesteigerte Markenwahrnehmung innerhalb kürzester Zeit amortisiert. Die exakten Kosten besprechen wir transparent basierend auf Ihren individuellen Zielen."
     },
     {
-      "q": "Warum sollte ich nicht einfach eine günstige WordPress-Seite nehmen?",
-      "a": "Weil Sie damit in der Masse untergehen. WordPress-Seiten sind fehleranfällig, langsam und sehen oft aus wie von der Stange. Next.js ist die Technologie, die auch von Milliarden-Konzernen genutzt wird. Sie bietet unschlagbare Geschwindigkeit und Sicherheit – und katapultiert Sie an die Spitze der Google-Ergebnisse."
+      "q": "Warum sollte ich nicht einfach eine günstige Baukasten Seite nutzen?",
+      "a": "Weil Sie damit in der breiten Masse komplett untergehen. Baukasten Seiten sind oft fehleranfällig, extrem langsam und sehen aus wie standardisierte Massenware. Unsere Webseitenentwicklung setzt auf Technologien, die auch von Milliarden Konzernen genutzt werden. Diese bieten eine unschlagbare Geschwindigkeit und Sicherheit und katapultieren Sie langfristig an die Spitze der relevanten Suchergebnisse."
     },
     {
-      "q": "Schreiben Sie auch die Texte für meine neue Website?",
-      "a": "Selbstverständlich. Unsere Copywriter sind darauf spezialisiert, verkaufspsychologisch optimierte Texte zu verfassen. Wir übersetzen Ihr technisches Fachwissen in fesselnde Argumente, die Ihre Zielgruppe sofort überzeugen."
+      "q": "Schreiben Sie im Rahmen der Webseitenentwicklung auch die Texte für meine neue Webseite?",
+      "a": "Selbstverständlich. Unsere erfahrenen Copywriter sind darauf spezialisiert, verkaufspsychologisch optimierte und suchmaschinenfreundliche Texte zu verfassen. Wir übersetzen Ihr tiefes technisches Fachwissen als KFZ Mechatroniker in fesselnde und verständliche Argumente, die Ihre Zielgruppe sofort emotional überzeugen und zur Kontaktaufnahme bewegen."
     },
     {
-      "q": "Wie hilft mir die Website bei der Suche nach neuen Mitarbeitern?",
-      "a": "Ein moderner, professioneller Webauftritt ist heute das wichtigste Recruiting-Instrument. Gute KFZ-Mechatroniker suchen sich ihren Arbeitgeber aus. Wenn Ihre Website Innovation und Erfolg ausstrahlt, bewerben sich Top-Talente von ganz alleine bei Ihnen."
+      "q": "Wie hilft mir hochwertiges Webdesign bei der Suche nach neuen Mitarbeitern?",
+      "a": "Ein moderner und absolut professioneller Webauftritt ist heute das mit Abstand wichtigste Instrument im Recruiting. Exzellente KFZ Mechatroniker können sich ihren Arbeitgeber heutzutage aussuchen. Wenn Ihre Webseite Innovation, Erfolg und eine wertschätzende Unternehmenskultur ausstrahlt, bewerben sich Top Talente fast schon von alleine bei Ihnen."
     },
     {
-      "q": "Ich habe keine schönen Fotos von meiner Werkstatt. Ist das ein Problem?",
-      "a": "Nein. Wir beraten Sie, wie wir mit professioneller Fotografie oder hochklassigen Stock-Materialien und Art Direction Ihre Arbeit optimal in Szene setzen. Ein schlechtes Foto darf niemals ein herausragendes Design ruinieren."
+      "q": "Ich habe keine schönen Fotos von meiner Werkstatt. Ist das ein Hindernis für den Webseiten Relaunch?",
+      "a": "Absolut nicht. Wir beraten Sie umfassend, wie wir mit professioneller Fotografie oder dem Einsatz von hochklassigen Stock Materialien Ihre tägliche Arbeit optimal in Szene setzen können. Ein schlechtes Foto darf niemals ein herausragendes Webdesign ruinieren. Wir finden für jedes Budget die optisch beste Lösung."
     },
     {
-      "q": "Wie lange dauert die Umsetzung des Projekts?",
-      "a": "In der Regel benötigen wir für Konzeption, Design und Entwicklung 4 bis 8 Wochen. Wir arbeiten effizient, zielgerichtet und ohne unnötige Verzögerungen – mit höchstem Qualitätsanspruch."
+      "q": "Wie lange dauert die Umsetzung des Projekts bis zum Launch?",
+      "a": "In der Regel benötigen wir für die komplette Konzeption, das Webdesign und die abschließende Webseitenentwicklung zwischen vier und acht Wochen. Als spezialisierte Webagentur arbeiten wir äußerst effizient, zielgerichtet und ohne unnötige Verzögerungen, wobei wir stets unseren höchsten Qualitätsanspruch wahren."
     },
     {
-      "q": "Kümmert sich Coday auch um Updates und Wartung?",
-      "a": "Ja. Mit unserer Technologie-Wahl (Next.js & Vercel) minimieren wir ohnehin den Wartungsaufwand radikal. Keine zerschossenen Plugins mehr. Wir bieten Ihnen auf Wunsch einen vollumfänglichen Betreuungsservice, damit Sie sich zu 100% auf Ihr Handwerk konzentrieren können."
+      "q": "Kümmert sich Ihre Webagentur auch um Updates und fortlaufende Wartung?",
+      "a": "Ja. Mit unserer modernen Technologieauswahl minimieren wir den Wartungsaufwand von Beginn an radikal. Es gibt keine zerschossenen Plugins oder nervigen Sicherheitslücken mehr. Darüber hinaus bieten wir Ihnen auf Wunsch einen vollumfänglichen Betreuungsservice an, damit Sie sich zu einhundert Prozent auf Ihr eigentliches Handwerk in der Werkstatt konzentrieren können."
     }
   ]
 }

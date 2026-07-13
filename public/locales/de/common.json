@@ -376,6 +376,11 @@
   "en": "Englisch",
   "about": "Über uns",
   "skipLink": "Zum Hauptinhalt springen",
+  "garantie": "Garantie",
+  "meta": {
+    "title": "Coday | Der Agentur-Killer",
+    "description": "Wir beenden Ineffizienz. High-End Webentwicklung & Design für Agenturen und Unternehmen."
+  },
   "cookie": {
     "settings": {
       "title": "Cookie-Einstellungen",

@@ -1,60 +1,68 @@
 {
   "target": "kfz-werkstatt",
-  "type": "industry-location",
+  "type": "industry",
   "meta": {
-    "title": "Premium Webdesign & SEO für KFZ-Werkstätten | Coday",
-    "description": "Dominieren Sie den Markt in Ihrer Region. Gewinnen Sie lukrative Unfallinstandsetzungen und Stammkunden statt billiger Reifenwechsel. High-End Webdesign für Werkstätten."
+    "title": "Exzellentes Webdesign für Ihre starke KFZ Werkstatt | Unsere Webagentur",
+    "description": "Dominieren Sie den Markt in Ihrer Region durch unsere spezialisierte Webseitenentwicklung. Gewinnen Sie lukrative Kunden nach einem professionellen Webseiten Relaunch."
   },
   "hero": {
-    "headline": "Ihre KFZ-Werkstatt als unangefochtene Nummer 1.",
-    "subheadline": "Mehr lukrative Aufträge. Keine lästigen Preisdiskussionen mehr.",
-    "description": "Ihre aktuelle Website kostet Sie jeden Monat bares Geld. Wenn Autobesitzer mit einem teuren Motorschaden oder einem Unfallwagen nach einer verlässlichen KFZ-Werkstatt suchen, verzeihen sie keine veralteten, langsamen Internetauftritte. Wir bauen hochperformante, psychologisch optimierte Websites, die Vertrauen ausstrahlen und Premium-Kunden anziehen, bevor Ihre Konkurrenz überhaupt reagieren kann.",
+    "headline": "Etablieren Sie Ihre KFZ Werkstatt als unangefochtene Nummer Eins durch herausragendes Webdesign",
+    "subheadline": "Erhalten Sie deutlich mehr lukrative Aufträge und führen Sie keine lästigen Preisdiskussionen mehr dank unserer Webseitenentwicklung",
+    "description": "Erhalten Sie deutlich mehr lukrative Aufträge und führen Sie keine lästigen Preisdiskussionen mehr dank unserer Webseitenentwicklung Ihre aktuelle veraltete Webseite kostet Sie wahrscheinlich jeden einzelnen Monat bares Geld. Wenn Autobesitzer mit einem teuren Motorschaden oder einem Unfallwagen nach einer wirklich verlässlichen KFZ Werkstatt in ihrer direkten Umgebung suchen, verzeihen sie absolut keine langsamen oder unattraktiven Internetauftritte. Wir als Ihre spezialisierte Webagentur bauen hochperformante und psychologisch optimierte Webseiten, die sofortiges Vertrauen ausstrahlen und genau die richtigen Premium Kunden anziehen, noch lange bevor Ihre Konkurrenz überhaupt reagieren kann. Ein strategischer Webseiten Relaunch ist der erste große Schritt zu einem völlig neuen Umsatzniveau.",
     "metrics": [
-      { "value": "240", "label": "Mehr Premium-Anfragen", "suffix": "%" },
-      { "value": "95", "label": "Conversion-Rate Steigerung", "suffix": "%" }
+      {
+        "value": "240",
+        "label": "Mehr starke Premium Anfragen",
+        "suffix": "%"
+      },
+      {
+        "value": "95",
+        "label": "Erhöhung der Conversion Rate",
+        "suffix": "%"
+      }
     ]
   },
   "gamifiedStats": {
-    "title": "Wie viele Premium-Kunden lassen Sie aktuell auf der Straße liegen?",
-    "description": "Jeden Tag suchen hunderte Fahrzeugbesitzer in Ihrer Region nach einer kompetenten Werkstatt für Inspektionen, aufwendige Diagnoseverfahren oder Unfallinstandsetzungen. Wenn Sie bei Google nicht ganz oben stehen oder Ihre Website nicht auf Anhieb maximale Kompetenz und Modernität ausstrahlt, wandert das Geld direkt zu Ihren Mitbewerbern.",
+    "title": "Wie viele wertvolle Kunden lassen Sie bei Ihrer KFZ Werkstatt aktuell auf der Straße liegen?",
+    "description": "Jeden Tag suchen hunderte anspruchsvolle Fahrzeugbesitzer in Ihrer genauen Region intensiv nach einer kompetenten Werkstatt für anstehende Inspektionen, sehr aufwendige Diagnoseverfahren oder komplexe Unfallinstandsetzungen. Wenn Sie bei Google nicht ganz oben stehen oder Ihre aktuelle Webseite nicht auf den allerersten Blick maximale Kompetenz und Modernität ausstrahlt, wandert das Geld direkt zu Ihren zahlreichen Mitbewerbern. Dies können wir durch professionelle Webseitenentwicklung unserer Webagentur erfolgreich verhindern.",
     "counters": [
       {
         "targetValue": 89,
         "suffix": "%",
-        "label": "der Autofahrer googeln vor dem Werkstattbesuch"
+        "label": "der Autofahrer googeln intensiv vor dem Werkstattbesuch"
       },
       {
         "targetValue": 75,
         "suffix": "%",
-        "label": "urteilen über Ihre Qualität nur anhand der Website"
+        "label": "urteilen über Ihre gesamte Arbeitsqualität nur anhand der Webseite"
       }
     ]
   },
   "bentoGrid": {
-    "title": "Der unfaire Vorteil für Ihre Werkstatt",
-    "subtitle": "Warum Sie mit einer Coday-Website nicht mehr vergleichbar sind.",
+    "title": "Der absolut unfaire Vorteil für Ihre etablierte KFZ Werkstatt",
+    "subtitle": "Warum Sie mit unserer Webseitenentwicklung völlig konkurrenzlos werden.",
     "cards": [
       {
-        "title": "Extreme Geschwindigkeit",
-        "text": "Autofahrer in Notsituationen warten nicht auf langsame Websites. Wir garantieren Ladezeiten unter einer Sekunde. Der Kunde ist bei Ihnen, bevor die Seite der Konkurrenz geladen hat.",
+        "title": "Extreme Ladegeschwindigkeit",
+        "text": "Gestresste Autofahrer in Notsituationen warten absolut nicht auf sehr langsame Webseiten. Wir garantieren Ladezeiten weit unter einer Sekunde. Der Kunde ist bei Ihnen, bevor die Seite der lokalen Konkurrenz überhaupt richtig geladen hat.",
         "size": "large",
         "icon": "Speed"
       },
       {
-        "title": "Vertrauens-Design",
-        "text": "Wir transformieren Ihre Expertise in ein visuelles Meisterwerk. Jedes Detail strahlt absolute Präzision und Verlässlichkeit aus.",
+        "title": "Einzigartiges Webdesign",
+        "text": "Wir transformieren Ihre tiefgreifende Expertise in ein visuelles Meisterwerk. Jedes kleinste Detail bei der Webseitenentwicklung strahlt absolute Präzision und höchste Verlässlichkeit aus.",
         "size": "small",
         "icon": "Design"
       },
       {
-        "title": "Lokale SEO-Dominanz",
-        "text": "Werden Sie gefunden, wenn es darauf ankommt. Wir platzieren Sie bei Google genau dort, wo die Kaufbereitschaft am höchsten ist.",
+        "title": "Lokale Dominanz",
+        "text": "Werden Sie exakt dann gefunden, wenn es wirklich darauf ankommt. Unsere Webagentur platziert Sie nach dem Webseiten Relaunch bei Google genau dort, wo die aktuelle Kaufbereitschaft am allerhöchsten ist.",
         "size": "small",
         "icon": "SEO"
       },
       {
-        "title": "Automatisierte Neukundengewinnung",
-        "text": "Ihre Website wird zur digitalen Verkaufsmaschine. Hochkonvertierende Termin-Funktionen, smarte Kontaktformulare und psychologisch fundierte Handlungsaufforderungen filtern Reifenkicker heraus und bringen Ihnen hochprofitable Reparaturaufträge.",
+        "title": "Automatisierte Kunden",
+        "text": "Ihre neue Webseite wird zur digitalen Verkaufsmaschine. Hochkonvertierende Termin Funktionen und smarte Formulare filtern unpassende Anfragen völlig automatisch heraus und bringen Ihnen hochprofitable Reparaturaufträge für Ihre KFZ Werkstatt.",
         "size": "tall",
         "icon": "Security"
       }
@@ -62,63 +70,63 @@
   },
   "processSteps": [
     {
-      "title": "1. Potenzial-Analyse & Strategie",
-      "description": "Wir analysieren Ihre lokale Konkurrenz schonungslos. Wir finden heraus, nach welchen hochpreisigen Reparaturleistungen Ihre Zielgruppe wirklich sucht und entwickeln eine Strategie, wie wir diese Nachfrage exklusiv zu Ihnen leiten."
+      "title": "1. Potenzial Analyse und klare Strategie",
+      "description": "Wir analysieren Ihre lokale Konkurrenz völlig schonungslos. Wir finden exakt heraus, nach welchen hochpreisigen Reparaturleistungen Ihre Zielgruppe in der Region wirklich sucht und entwickeln eine smarte Strategie, wie wir diese lukrative Nachfrage durch exzellentes Webdesign exklusiv zu Ihnen leiten können."
     },
     {
-      "title": "2. High-End UI/UX Design",
-      "description": "Keine Baukasten-Templates. Wir erschaffen eine maßgeschneiderte, visuell beeindruckende Identität, die exakt die Qualität Ihrer Werkstattarbeit widerspiegelt. Modern, clean und absolut vertrauenserweckend."
+      "title": "2. Modernes und hochwertiges Webdesign",
+      "description": "Keine billigen Vorlagen. Wir erschaffen bei der Webseitenentwicklung eine völlig maßgeschneiderte und visuell extrem beeindruckende digitale Identität, die absolut exakt die hohe Qualität Ihrer Werkstattarbeit widerspiegelt. Dieses Webdesign ist modern, klar und absolut vertrauenserweckend für jeden Besucher."
     },
     {
-      "title": "3. Performance-Entwicklung & SEO",
-      "description": "Mit der neuesten Next.js Technologie programmieren wir Ihre Plattform. Rasend schnell, technisch makellos und von Grund auf für Google optimiert, um Ihnen den ersten Platz in Ihrer Region zu sichern."
+      "title": "3. Hochmoderne Webseitenentwicklung",
+      "description": "Mit den absolut neuesten Technologien programmieren wir Ihre digitale Plattform völlig neu. Rasend schnell, technisch makellos und von Grund auf perfekt für die Suchmaschinen optimiert, um Ihnen sofort den sicheren ersten Platz in Ihrer Region zu verschaffen. Ein Webseiten Relaunch, der absolut Maßstäbe setzt."
     },
     {
-      "title": "4. Launch & Skalierung",
-      "description": "Mit dem Livegang beginnt die eigentliche Domination. Wir monitoren die Performance, optimieren die Conversion-Raten und stellen sicher, dass Ihre Werkstatt langfristig an der Spitze bleibt."
+      "title": "4. Erfolgreicher Webseiten Relaunch und stetige Skalierung",
+      "description": "Mit dem Livegang der Webseite beginnt die eigentliche Domination Ihres Marktes. Unsere engagierte Webagentur überwacht die starke Performance sehr genau, optimiert stetig die Raten und stellt absolut sicher, dass Ihre ambitionierte KFZ Werkstatt auch langfristig unangefochten an der absoluten Spitze bleibt."
     }
   ],
   "localDominance": {
-    "title": "Werden Sie zum Platzhirsch Ihrer Region",
-    "description": "Der Markt für KFZ-Reparaturen ist hart umkämpft. Standard-Marketing funktioniert nicht mehr. Sie brauchen eine digitale Präsenz, die so überlegen ist, dass Kunden bereit sind, für Ihre Qualität gerne mehr zu bezahlen und längere Anfahrtswege in Kauf zu nehmen.",
+    "title": "Werden Sie durch professionelles Webdesign zum absoluten Platzhirsch",
+    "description": "Der lukrative Markt für komplexe KFZ Reparaturen ist extrem hart umkämpft. Veraltetes Marketing funktioniert in der heutigen Zeit absolut nicht mehr. Sie brauchen eine völlig überlegene digitale Präsenz, die absolut verdeutlicht, dass anspruchsvolle Kunden gerne bereit sind, für Ihre hohe Qualität deutlich mehr zu bezahlen und auch weitaus längere Anfahrtswege in Kauf zu nehmen.",
     "points": [
-      "Monopolisierung der lukrativsten Suchbegriffe (Unfallinstandsetzung, Motordiagnose, Inspektion)",
-      "Aufbau einer massiven Experten-Positionierung im regionalen Vergleich",
-      "Sog-Wirkung statt Kaltakquise: Kunden suchen Sie, nicht umgekehrt"
+      "Vollständige Monopolisierung der wirklich lukrativsten Suchbegriffe wie aufwendige Unfallinstandsetzung und exakte Motordiagnose.",
+      "Schneller Aufbau einer absolut massiven Experten Positionierung im direkten regionalen Vergleich zu allen Mitbewerbern.",
+      "Enorme Sog Wirkung statt mühsamer Kaltakquise. Die besten Kunden suchen durch die Arbeit unserer Webagentur nun gezielt nach Ihnen und absolut nicht mehr umgekehrt."
     ]
   },
   "faq": [
     {
-      "q": "Warum reicht eine einfache Baukasten-Website für meine Werkstatt nicht mehr aus?",
-      "a": "Baukasten-Websites sind langsam, SEO-technisch schwach und sehen aus wie jede andere Wald-und-Wiesen-Werkstatt. Premium-Kunden mit teuren Fahrzeugen oder lukrativen Aufträgen suchen nach Anbietern, die Professionalität ausstrahlen. Eine billige Website signalisiert unbewusst billige Arbeit. Wir bauen High-End-Lösungen, die genau das Gegenteil tun: Sie etablieren Sie sofort als Premium-Anbieter."
+      "q": "Warum reicht eine völlig einfache Webseite für meine KFZ Werkstatt heutzutage nicht mehr aus?",
+      "a": "Einfache Webseiten sind extrem langsam, technisch absolut schwach und sehen aus wie unzählige andere unprofessionelle Betriebe. Sehr anspruchsvolle Premium Kunden mit extrem teuren Fahrzeugen oder sehr lukrativen Aufträgen suchen immer nach Anbietern, die absolute Professionalität ausstrahlen. Eine billige Webseite signalisiert unbewusst leider sehr billige Arbeit. Wir bauen in unserer Webagentur echte Meisterwerke, die genau das absolute Gegenteil bewirken und Sie durch exzellentes Webdesign sofort als den klaren Premium Anbieter etablieren."
     },
     {
-      "q": "Wie schnell sehen wir Ergebnisse nach dem Launch der neuen Website?",
-      "a": "Unsere Next.js-Architektur führt oft schon in den ersten Wochen zu spürbaren Verbesserungen in der Google-Sichtbarkeit. Die Conversion-Rate – also der Prozentsatz der Besucher, die tatsächlich anrufen oder einen Termin buchen – steigt durch unsere psychologische Nutzerführung meist ab dem ersten Tag nach dem Livegang signifikant an."
+      "q": "Wie schnell sehen wir konkrete Ergebnisse nach dem Webseiten Relaunch?",
+      "a": "Unsere professionelle Webseitenentwicklung führt oft schon in den allerersten Wochen zu absolut spürbaren Verbesserungen in der wichtigen Sichtbarkeit bei Suchmaschinen. Die Anzahl der starken Besucher, die nach dem neuen Webdesign tatsächlich bei Ihnen anrufen oder sofort einen Termin online buchen, steigt durch unsere smarte Nutzerführung meist schon ab dem ersten Tag nach dem Webseiten Relaunch absolut signifikant an."
     },
     {
-      "q": "Wir haben bereits genug Aufträge, oft sogar zu viele. Warum sollten wir in eine neue Website investieren?",
-      "a": "Wenn Sie voll sind, ist es an der Zeit, die Qualität der Aufträge zu filtern. Eine High-End-Website hilft Ihnen dabei, die nervigen 'Was-ist-letzte-Preis'-Kunden abzuwehren und gezielt die hochprofitablen Aufträge anzuziehen. Sie erhöhen Ihren Umsatz bei gleichem oder geringerem Zeitaufwand."
+      "q": "Wir haben bereits genug Aufträge für unsere KFZ Werkstatt. Warum sollten wir dennoch in Webseitenentwicklung investieren?",
+      "a": "Wenn Ihre KFZ Werkstatt bereits sehr voll ist, wird es höchste Zeit, die genaue Qualität der angenommenen Aufträge sehr stark zu filtern. Eine extrem hochwertige Webseite hilft Ihnen bei diesem wichtigen Schritt enorm dabei, die eher unprofitablen Anfragen erfolgreich abzuwehren und völlig gezielt die hochprofitablen Reparaturaufträge stark anzuziehen. Sie erhöhen durch kompetentes Webdesign Ihren gesamten Umsatz bei absolut gleichem oder sogar deutlich geringerem Zeitaufwand."
     },
     {
-      "q": "Was unterscheidet Coday von anderen Webdesign-Agenturen für KFZ-Betriebe?",
-      "a": "Wir nutzen keine fertigen Themes, wir lagern nichts aus und wir machen keine halben Sachen. Coday steht für kompromisslose Performance. Wir nutzen dieselben Enterprise-Technologien (React, Next.js, Vercel) wie die größten Tech-Konzerne der Welt, um Ihnen einen unfairen technologischen Vorteil in Ihrer Region."
+      "q": "Was unterscheidet Ihre Webagentur von absolut anderen Anbietern für KFZ Betriebe?",
+      "a": "Wir nutzen bei der Webseitenentwicklung absolut keine fertigen Vorlagen, wir lagern keine unserer Arbeiten aus und wir machen absolut niemals halbe Sachen. Unsere Webagentur steht für völlig kompromisslose Performance. Wir nutzen beim Webdesign stets exakt dieselben modernen Enterprise Technologien wie die absolut größten Konzerne der Welt, um Ihnen dadurch einen extrem unfairen technologischen Vorteil in Ihrer gesamten Region zu sichern."
     },
     {
-      "q": "Bieten Sie auch fortlaufende SEO-Betreuung an?",
-      "a": "Ja. Die Website ist nur der Motor. SEO ist der Treibstoff. Wir bieten exklusive Partnerschaften an, in denen wir kontinuierlich an Ihrer Sichtbarkeit arbeiten, Content ausbauen und sicherstellen, dass Sie Ihre Konkurrenz dauerhaft dominieren."
+      "q": "Bietet Ihre Webagentur nach dem Webseiten Relaunch auch eine fortlaufende Betreuung an?",
+      "a": "Ja, absolut. Das Webdesign ist letztendlich nur der wichtige starke Motor, aber die Optimierung ist der unerlässliche Treibstoff. Wir bieten sehr exklusive und langfristige Partnerschaften an, in denen wir kontinuierlich an Ihrer enormen Sichtbarkeit arbeiten, den gesamten Content weiter stark ausbauen und immer absolut sicherstellen, dass Sie Ihre gesamte regionale Konkurrenz wirklich dauerhaft dominieren."
     },
     {
-      "q": "Wir wollen auch neue Mitarbeiter (Mechatroniker) finden. Hilft die Website dabei?",
-      "a": "Absolut. Fachkräftemangel ist in der KFZ-Branche das größte Problem. Gute Mechatroniker wollen in modernen, innovativen Betrieben arbeiten. Ihre neue Website wird auch als mächtiges Recruiting-Tool konzipiert, das Ihr Unternehmen als attraktiven, zukunftssicheren Arbeitgeber präsentiert."
+      "q": "Wir wollen auch dringend sehr gute Mechatroniker finden. Hilft die Webseitenentwicklung dabei?",
+      "a": "Absolut. Der anhaltende Fachkräftemangel ist in der großen KFZ Branche aktuell das mit Abstand größte Problem. Wirklich hervorragende Mechatroniker wollen heutzutage immer in absolut modernen und stark innovativen Betrieben arbeiten. Ihre neue starke Webseite wird von unserer Webagentur deshalb auch als ein extrem mächtiges Instrument für das Personalwesen konzipiert, das Ihr Unternehmen dauerhaft als absolut attraktiven und sehr zukunftssicheren Arbeitgeber perfekt präsentiert."
     },
     {
-      "q": "Wie viel Aufwand bedeutet das Projekt für mich im Tagesgeschäft?",
-      "a": "Minimalen Aufwand. Wir wissen, dass Sie in der Werkstatt stehen und Geld verdienen müssen. Nach einem initialen Strategie-Gespräch übernehmen wir 100% der Umsetzung – von der Texterstellung bis zur Programmierung."
+      "q": "Wie viel zeitlichen Aufwand bedeutet das Projekt für mich im ohnehin stressigen Tagesgeschäft?",
+      "a": "Das bedeutet für Sie einen absolut minimalen zeitlichen Aufwand. Wir wissen genau, dass Sie produktiv in Ihrer KFZ Werkstatt stehen und Geld verdienen müssen. Nach einem kurzen initialen Gespräch übernimmt unsere kompetente Webagentur hundert Prozent der gesamten Umsetzung. Angefangen von der professionellen Texterstellung bis hin zur hochmodernen Programmierung des neuen Webdesign erledigen wir alle wichtigen Schritte für Ihren erfolgreichen Webseiten Relaunch."
     },
     {
-      "q": "Können Terminbuchungssysteme oder DMS-Software integriert werden?",
-      "a": "Ja, wir binden jede moderne Schnittstelle nahtlos ein. Ob Online-Terminbuchung, WhatsApp-Chatbots für schnelle Anfragen oder Anbindungen an Ihr Dealer Management System – wir digitalisieren Ihre Kundenkommunikation auf höchstem Niveau."
+      "q": "Können moderne digitale Systeme in das neue Webdesign integriert werden?",
+      "a": "Ja, wir binden bei der Webseitenentwicklung jede von Ihnen genutzte moderne Schnittstelle absolut nahtlos ein. Ganz gleich ob es sich um moderne Online Systeme für schnelle Terminbuchungen, clevere digitale Chatbots für Kundenanfragen oder die Anbindung an Ihre spezielle und wichtige interne Werkstatt Software handelt, wir digitalisieren Ihre gesamte externe Kundenkommunikation immer auf dem allerhöchsten und modernsten Niveau."
     }
   ]
 }

@@ -112,7 +112,7 @@
     },
     "hero": {
       "cta": "Integration anfragen",
-      "description": "Ich vernetze Ihre Premium-Systemlandschaft. CRM, ERP, Payment oder Marketing-Tools – für nahtlose, automatisierte Prozesse.",
+      "description": "Ich vernetze Ihre Premium-Systemlandschaft durch maßgeschneiderte API Integrationen. CRM, ERP, Payment oder Marketing-Tools – für nahtlose Automation und Prozesse.",
       "title_prefix": "API Integrationen &",
       "title_suffix": "Automation."
     },
@@ -162,7 +162,7 @@
     },
     "hero": {
       "cta": "Branding anfragen",
-      "description": "Marken, die im Gedächtnis bleiben. Ich entwickle Corporate Identities, Logos und Designsprachen speziell für digitale Touchpoints.",
+      "description": "Marken, die im Gedächtnis bleiben. Ich entwickle eine starke Brand Identity für B2B Unternehmen, Logos und Designsprachen speziell für digitale Touchpoints.",
       "title_prefix": "Brand Identity",
       "title_suffix": "für B2B."
     },
@@ -270,7 +270,7 @@
     "hero": {
       "badge": "Scalable UI",
       "cta": "System anfragen",
-      "description": "Konsistenz ist King. Ich entwickle atomare Design Systeme, die Ihre Marke über alle Touchpoints hinweg einheitlich und effizient machen.",
+      "description": "Konsistenz ist King. Ich entwickle atomare Design Systeme – ein Design that Scales, das Ihre Marke über alle Touchpoints hinweg einheitlich und effizient macht.",
       "title_prefix": "Design that",
       "title_suffix": "Scales."
     },
@@ -351,7 +351,7 @@
       "badge": "E-Commerce",
       "cta_primary": "Shop Projekt starten",
       "cta_secondary": "Referenzen ansehen",
-      "description": "Wir bauen High-Performance Shops mit Shopify und WooCommerce. Keine Standard-Themes, sondern conversion-optimierte Verkaufsmaschinen.",
+      "description": "Als Ihre E-Commerce Agentur bauen wir High-Performance Shops mit Shopify und WooCommerce. Keine Standard-Themes, sondern conversion-optimierte Verkaufsmaschinen.",
       "title_anim": "Ihre ",
       "title_static": "E-Commerce Agentur."
     },
@@ -413,6 +413,14 @@
         "Klaviyo Email Marketing"
       ],
       "title": "Unser Tech Stack"
+    },
+    "seo_content": {
+      "title": "Experten für Headless E-Commerce Entwicklung in Wetzlar",
+      "paragraphs": [
+        "In der modernen digitalen Welt reicht ein Standard-Shop oft nicht mehr aus. Als spezialisierte Agentur für E-Commerce Entwicklung in Wetzlar fokussieren wir uns auf Headless-Architekturen mit Next.js, Shopify Plus und Hydrogen.",
+        "Durch die Trennung von Frontend und Backend erreichen wir Ladezeiten unter einer Sekunde. Das bedeutet für Sie: Niedrigere Absprungraten, höhere Conversion-Rates und ein besseres Ranking bei Google.",
+        "Ob komplexe B2B-Plattform oder performanter B2C-Shop – wir entwickeln maßgeschneiderte E-Commerce Lösungen, die mit Ihrem Unternehmen skalieren und Ihnen einen echten Wettbewerbsvorteil verschaffen."
+      ]
     }
   },
   "enterprise_web_page": {
@@ -420,7 +428,7 @@
       "badge": "Beyond Standard",
       "cta_primary": "Projekt starten",
       "cta_secondary": "Cases ansehen",
-      "description": "Keine Visitenkarten-Websites. Wir bauen leistungsstarke Web-Plattformen für Unternehmen, die online wachsen wollen.",
+      "description": "Keine Visitenkarten-Websites. Als Experten für professionelle Webentwicklung bauen wir leistungsstarke Web-Plattformen und Websites, die messbare Ergebnisse liefern.",
       "scroll_hint": "Scroll to Explore",
       "title_prefix": "Professionelle Webentwicklung",
       "title_suffix": "Websites, die Ergebnisse liefern."
@@ -573,7 +581,7 @@
     },
     "hero": {
       "cta": "CMS Beratung erhalten",
-      "description": "Verwalten Sie Inhalte zentral, spielen Sie sie überall aus. Wir integrieren Contentful, Sanity und Strapi in moderne Frontends.",
+      "description": "Verwalten Sie Content zentral mit einem Headless CMS, spielen Sie ihn überall aus. Wir integrieren Contentful, Sanity und Strapi in moderne Frontends.",
       "title_prefix": "Headless CMS &",
       "title_suffix": "Content."
     },
@@ -672,7 +680,7 @@
     },
     "hero": {
       "cta": "Migration planen",
-      "description": "Wir migrieren Ihre veralteten Monolithen zu modernen, skalierbaren Stacks auf Basis von React und Next.js. Ohne Datenverlust.",
+      "description": "Wir migrieren Ihre veralteten Monolithen zu modernen, skalierbaren Stacks auf Basis von React und Next.js. Machen Sie Ihr System Future Proof – ohne Datenverlust.",
       "label": "Legacy Modernization",
       "title_prefix": "Future",
       "title_suffix": "Proof."
@@ -726,7 +734,7 @@
     },
     "hero": {
       "badge": "Geschwindigkeits-Optimierung",
-      "description": "Jede Millisekunde zählt. Wir optimieren Ihre Ladezeiten für maximale Kundenabschlüsse und Benutzerfreundlichkeit.",
+      "description": "Als Agentur für Pagespeed Optimierung wissen wir: Jede Millisekunde zählt. Wir optimieren Ihre Ladezeiten für maximale Kundenabschlüsse, denn Geschwindigkeit ist Umsatz.",
       "title_prefix": "Pagespeed Optimierung Agentur",
       "title_suffix": "Geschwindigkeit ist Umsatz."
     },
@@ -735,6 +743,14 @@
       "load_time": "Ladezeit",
       "score": "Google Seitenbewertung",
       "shift": "Visuelle Verschiebung"
+    },
+    "seo_content": {
+      "title": "Pagespeed Optimierung & Performance Entwicklung",
+      "paragraphs": [
+        "Geschwindigkeit ist heute einer der wichtigsten Rankingfaktoren für Google. Als Agentur für Performance Optimierung aus Wetzlar analysieren und beschleunigen wir Ihre Webanwendungen auf ein Maximum.",
+        "Wir setzen auf modernste Technologien wie Next.js, Server-Side Rendering und Edge Computing. Das Resultat sind blitzschnelle Ladezeiten, exzellente Core Web Vitals und eine überragende User Experience.",
+        "Investieren Sie in die Performance Ihrer digitalen Assets. Schnellere Websites führen nachweislich zu mehr Sichtbarkeit, längerer Verweildauer und steigenden Umsätzen."
+      ]
     },
     "meta": {
       "title": "Pagespeed & Core Web Vitals Optimierung | Coday",
@@ -768,7 +784,7 @@
     },
     "hero": {
       "badge": "Suchmaschinen-Optimierung",
-      "description": "Wir bringen Sie nicht nur auf Seite 1. Wir sorgen dafür, dass Sie dort bleiben. Technische Optimierung, Inhalts-Strategie und Aufbau von Autorität.",
+      "description": "Als Ihre High-End SEO Agentur bringen wir Sie nicht nur auf Seite 1, wir sorgen dafür, dass Sie dort bleiben. Technische Optimierung, Inhalts-Strategie und Aufbau von Autorität.",
       "title_prefix": "Ihre High-End",
       "title_suffix": "SEO Agentur."
     },
@@ -859,7 +875,7 @@
     "hero": {
       "badge": "Design Services",
       "cta": "Design anfragen",
-      "description": "Wir gestalten digitale Erlebnisse, die Nutzer lieben und Konversionen treiben. Von Wireframes bis zum High-Fidelity Prototyp.",
+      "description": "Wir gestalten UI/UX Design, das fesselt, und digitale Erlebnisse, die Nutzer lieben und Konversionen treiben. Von Wireframes bis zum High-Fidelity Prototyp.",
       "title_prefix": "UI/UX Design, das",
       "title_suffix": "fesselt."
     },
@@ -935,7 +951,7 @@
     "hero": {
       "badge": "Research & Optimization",
       "cta": "Audit buchen",
-      "description": "Wir analysieren Ihre User Journeys, identifizieren Drop-offs und optimieren Ihre Conversion Rates basierend auf echten Nutzerdaten.",
+      "description": "Wir setzen auf Daten statt Bauchgefühl. Wir analysieren Ihre User Journeys, identifizieren Drop-offs und optimieren Ihre Conversion Rates basierend auf echten Nutzerdaten.",
       "title_prefix": "Daten statt",
       "title_suffix": "Bauchgefühl."
     },
@@ -1007,7 +1023,7 @@
     },
     "hero": {
       "cta": "Projekt besprechen",
-      "description": "Ich entwickle komplexe Webanwendungen, Dashboards und SaaS-Plattformen. Skalierbar, sicher und user-freundlich.",
+      "description": "Wir entwickeln individuelle Software, komplexe Webanwendungen, Dashboards und SaaS-Plattformen. Skalierbar, sicher und user-freundlich.",
       "title_prefix": "SaaS &",
       "title_suffix": "Individuelle Software."
     },
@@ -1074,9 +1090,9 @@
       "title": "Wir designen Systeme, \nnicht Seiten."
     },
     "hero": {
-      "description": "Design, das nicht nur gut aussieht, sondern verkauft. Wir verbinden Ästhetik mit Psychologie für digitale Erlebnisse, die hängen bleiben.",
+      "description": "Als preisgekrönte UX/UI Design Agentur erschaffen wir Design, das nicht nur gut aussieht, sondern verkauft. Wir verbinden Ästhetik mit Psychologie für digitale Erlebnisse, die hängen bleiben.",
       "label": "Design & Usability",
-      "title_prefix": "Preisgekrönte",
+      "title_prefix": "Preisgekrönte ",
       "title_suffix": "UX/UI Design Agentur."
     },
     "process": {
@@ -1390,9 +1406,9 @@
   "web_development_page": {
     "hero": {
       "label": "Headless Webentwicklung",
-      "title_anim": "Handgefertigte",
+      "title_anim": "Handgefertigte ",
       "title_static": "Headless Websites.",
-      "description": "Individuelle Next.js-Architektur aus Wetzlar. Keine Baukästen, keine Templates. Sauberes React, striktes TypeScript und Headless CMS mit Sanity. Für Unternehmen, die messbar schnelle Ladezeiten und ein eigenständiges Design benötigen."
+      "description": "Wir entwickeln handgefertigte Headless Websites mit individueller Next.js-Architektur aus Wetzlar. Keine Baukästen, keine Templates. Sauberes React, striktes TypeScript und Headless CMS mit Sanity. Für Unternehmen, die messbar schnelle Ladezeiten und ein eigenständiges Design benötigen."
     },
     "problem": {
       "label": "Die Herausforderung",

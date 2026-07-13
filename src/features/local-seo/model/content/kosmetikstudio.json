@@ -1,0 +1,124 @@
+{
+  "target": "kosmetikstudio",
+  "type": "industry-location",
+  "meta": {
+    "title": "Kosmetikstudio Webdesign Agentur Wetzlar | Kunden gewinnen",
+    "description": "Edles Webdesign für Kosmetikstudios & Beauty Salons. Gewinnen Sie Premium Kunden durch ein luxuriöses Design und nahtlose Online Terminbuchungen."
+  },
+  "hero": {
+    "headline": "Digitaler Luxus, der Neukunden anzieht.",
+    "subheadline": "Mehr Buchungen. Bessere Kundenbindung. Premium Image.",
+    "description": "Mehr Buchungen. Bessere Kundenbindung. Premium Image. Ihre Dienstleistungen stehen für Ästhetik und Perfektion. Wenn Ihre Website diese Qualität nicht ausstrahlt, verlieren Sie täglich lukrative Termine an die Konkurrenz. Wir designen Websites für Kosmetik  und Beauty Salons, die Exklusivität verkörpern und Besucher nahtlos in den Terminbuchungs Funnel leiten.",
+    "metrics": [
+      {
+        "value": "150",
+        "label": "Mehr Online Terminbuchungen",
+        "suffix": "%"
+      },
+      {
+        "value": "30",
+        "label": "Weniger No Shows (Terminausfälle)",
+        "suffix": "%"
+      }
+    ]
+  },
+  "gamifiedStats": {
+    "title": "Die Beauty Branche wird digital dominiert",
+    "description": "Kunden möchten Beauty Treatments am liebsten abends vom Sofa aus buchen. Wer diese Hürde nicht abbaut, verliert.",
+    "counters": [
+      {
+        "targetValue": 72,
+        "suffix": "%",
+        "label": "der Beauty Kunden bevorzugen Salons mit 24/7 Online Buchung"
+      },
+      {
+        "targetValue": 81,
+        "suffix": "%",
+        "label": "machen die Salon Auswahl von der Hochwertigkeit der Website abhängig"
+      }
+    ]
+  },
+  "bentoGrid": {
+    "title": "Webdesign mit Glow Effekt",
+    "subtitle": "So machen wir Ihr Kosmetikstudio digital unwiderstehlich.",
+    "cards": [
+      {
+        "title": "Luxuriöses UI Design",
+        "text": "Wir nutzen feine Typografie, sanfte Farbpaletten und fließende Animationen, um das Premium Gefühl Ihres Studios digital erlebbar zu machen.",
+        "size": "large",
+        "icon": "Design"
+      },
+      {
+        "title": "1 Klick Terminbuchung",
+        "text": "Integration von Treatwell, Phorest oder Shore. Nahtloses Buchen, ohne dass der Kunde die hochwertige Website verlassen muss.",
+        "size": "small",
+        "icon": "Speed"
+      },
+      {
+        "title": "Instagram Sync",
+        "text": "Ihre besten Behandlungs Ergebnisse werden automatisch aus Social Media in hochauflösende Galerien auf der Website synchronisiert.",
+        "size": "small",
+        "icon": "MapPin"
+      },
+      {
+        "title": "Local SEO für Kosmetik",
+        "text": "Wenn jemand nach 'HydraFacial Wetzlar' oder 'Microblading Gießen' sucht, stehen Sie ganz oben in den Suchergebnissen.",
+        "size": "tall",
+        "icon": "SEO"
+      }
+    ]
+  },
+  "processSteps": [
+    {
+      "title": "1. Marken Ästhetik definieren",
+      "description": "Wir analysieren Ihr Studio Konzept (Medical Beauty, Organic SPA, etc.) und entwickeln ein maßgeschneidertes, exklusives Farb  und Designkonzept."
+    },
+    {
+      "title": "2. High End Fotografie",
+      "description": "Gute Beauty Websites brauchen perfekte Bilder. Wir organisieren bei Bedarf professionelle Shootings Ihrer Räumlichkeiten und Behandlungen."
+    },
+    {
+      "title": "3. Booking & Shop Integration",
+      "description": "Wir binden Ihre Termin Software ein und integrieren auf Wunsch einen Online Shop für Ihre exklusiven Pflegeprodukte."
+    },
+    {
+      "title": "4. Go Live & SEO Setup",
+      "description": "Ihre neue digitale Visitenkarte geht live – rasend schnell geladen und perfekt für lokale Suchanfragen optimiert."
+    }
+  ],
+  "localDominance": {
+    "title": "Ziehen Sie Premium Kunden aus der Region an",
+    "description": "Beauty Kunden sind bereit, für exzellente Ergebnisse weiter zu fahren und mehr zu bezahlen – wenn das Vertrauen stimmt. Wir bauen diesen Expertenstatus durch eine makellose Online Präsenz systematisch auf, sodass Sie sich als unangefochtene Premium Marke in Ihrem Einzugsgebiet etablieren.",
+    "points": [
+      "Fokussierung auf hochpreisige Signature Treatments (z.B. apparative Kosmetik)",
+      "Aufbau massiven Vertrauens durch Vorher Nachher Galerien und verifizierte Kundenstimmen",
+      "Entlastung im Studio durch automatisierte Terminbestätigungen und Erinnerungen"
+    ]
+  },
+  "faq": [
+    {
+      "q": "Wir nutzen bereits Treatwell – reicht das nicht?",
+      "a": "Plattformen wie Treatwell sind gut, aber sie stellen Sie direkt neben Ihre härtesten Konkurrenten. Eine eigene, exklusive Website baut eine echte Marke auf, rechtfertigt höhere Preise und bindet Kunden langfristig an *Ihr* Studio, nicht an die Plattform."
+    },
+    {
+      "q": "Können wir unsere Pflegeprodukte auch online verkaufen?",
+      "a": "Ja, absolut. Wir können ein nahtloses E Commerce System (z.B. Shopify oder WooCommerce via Next.js) integrieren, damit Kunden ihre Lieblings Cremes bequem nachbestellen können – ein perfekter Umsatz Boost."
+    },
+    {
+      "q": "Unsere aktuelle Seite sieht auf dem Handy nicht gut aus. Ändert sich das?",
+      "a": "Massiv. In der Kosmetikbranche kommen bis zu 95% der Besucher übers Smartphone (oft über Instagram Links). Wir entwickeln kompromisslos Mobile First. Die Bedienung fühlt sich an wie in einer High End App."
+    },
+    {
+      "q": "Wie können wir unsere ständig wechselnden Monatsangebote einpflegen?",
+      "a": "Wir integrieren ein modernes, einfach zu bedienendes Headless CMS. Sie können Texte, Preise und Monats Specials mit wenigen Klicks auf dem Smartphone ändern. Ganz ohne technisches Vorwissen."
+    },
+    {
+      "q": "Können wir das Buchungssystem XY integrieren?",
+      "a": "Wir können praktisch jedes moderne System (Shore, Phorest, Belbo, Treatwell) über APIs oder Widgets nahtlos einbinden, sodass der Buchungsprozess optisch perfekt zur neuen Website passt."
+    },
+    {
+      "q": "Ist professionelle Fotografie wirklich notwendig?",
+      "a": "Ja. Beauty ist visuell. Kunden kaufen Ergebnisse und das Gefühl von Entspannung. Mit generischen Stockfotos erzielen Sie diese Wirkung nicht. Echte, professionelle Bilder von Ihrem Studio machen oft den Unterschied zwischen Abbruch und Buchung."
+    }
+  ]
+}

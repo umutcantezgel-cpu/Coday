@@ -3,7 +3,7 @@
     "badge": "Coday Strategy Lab",
     "title_start": "IT Consulting Agentur",
     "title_end": "Software ist Vermögen.",
-    "subtitle": "Wir transformieren Ihre vagen Anforderungen in eine glasklare Architektur. Bevor die erste Zeile Code geschrieben wird.",
+    "subtitle": "Als IT Consulting Agentur transformieren wir Ihre vagen Anforderungen in eine glasklare Software Architektur. Bevor die erste Zeile Code geschrieben wird, sichern wir Ihr digitales Vermögen ab.",
     "cta_primary": "Termin buchen",
     "cta_secondary": "Reifegrad testen"
   },
@@ -122,5 +122,9 @@
     "title": "Genug Theorie.",
     "subtitle": "Sprechen Sie direkt mit einem Senior Architect, nicht mit einem Sales-Manager.",
     "cta": "Termin auswählen"
+  },
+  "meta": {
+    "title": "Digital Consulting & Strategieberatung | Coday",
+    "description": "Strategische Beratung für Ihre digitale Transformation. Tech-Stack Evaluierung, Prozessoptimierung und datengetriebenes Growth Hacking."
   }
 }
