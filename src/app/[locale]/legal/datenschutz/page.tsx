@@ -76,15 +76,6 @@ export default async function DatenschutzPage({ params }: { params: Promise<{ lo
               : 'Diese Website wird bei Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA gehostet. Vercel verarbeitet Server-Logdaten (IP-Adresse, Browser, Zeitstempel) zur Sicherstellung des Betriebs.'}
           </p>
 
-          <h2 className="text-xl font-semibold text-secondary-900">
-            {isEn ? '4. ProvenExpert Review Seal' : '4. ProvenExpert Bewertungssiegel'}
-          </h2>
-          <p>
-            {isEn
-              ? 'We use the ProvenExpert review seal (Expert Systems AG, Quedlinburger Str. 1, 10589 Berlin). The integrated seal loads a static image from images.provenexpert.com. In this process, your IP address is transmitted to ProvenExpert. Legal basis: Art. 6 (1) lit. f GDPR (legitimate interest in displaying customer reviews). Further information: https://www.provenexpert.com/en-us/privacy-policy/'
-              : 'Wir nutzen das Bewertungssiegel von ProvenExpert (Expert Systems AG, Quedlinburger Str. 1, 10589 Berlin). Das eingebundene Siegel lädt ein statisches Bild von images.provenexpert.com. Dabei wird Ihre IP-Adresse an ProvenExpert übermittelt. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Darstellung von Kundenbewertungen). Weitere Informationen: https://www.provenexpert.com/de-de/datenschutzerklaerung/'}
-          </p>
-
           <p className="text-sm text-secondary-600 mt-12">
             {isEn ? 'Last updated: May 2026' : 'Stand: Mai 2026'}
           </p>

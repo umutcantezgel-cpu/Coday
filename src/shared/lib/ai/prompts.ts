@@ -212,7 +212,7 @@ Standort: Lessingstrasse 4, 35578 Wetzlar, Deutschland
 E-Mail: kontakt@codayweb.de
 Telefon: +49 176 41195301
 Website: www.codayweb.de
-WhatsApp: wa.me/4917641195301
+WhatsApp: api.whatsapp.com/send?phone=4917641195301
 
 === AKTUELLE PREISE ===
 

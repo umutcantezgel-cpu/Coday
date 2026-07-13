@@ -289,7 +289,7 @@ export const ContactClient: React.FC = () => {
             <div className="space-y-4">
               {/* WhatsApp */}
               <a
-                href={`https://wa.me/4917641195301?text=${t('location.whatsapp.message')}`}
+                href={`https://api.whatsapp.com/send?phone=4917641195301&text=${t('location.whatsapp.message')}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-5 bg-white rounded-xl border border-aurora-mist hover:shadow-lg transition motion-reduce:duration-[0.01ms] group"

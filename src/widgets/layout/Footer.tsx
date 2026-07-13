@@ -13,7 +13,6 @@ import {
 import LogoLoop from '@/shared/ui/LogoLoop';
 import { TrustBadges } from '@/shared/ui/TrustBadges';
 import { clientLogos } from '@/shared/data/clientLogos';
-import { ProvenExpertSeal } from '@/components/ProvenExpertSeal';
 
 export const Footer: React.FC = () => {
   const t = useTranslations('common');
@@ -326,7 +325,6 @@ export const Footer: React.FC = () => {
             align="center"
             className="opacity-80 grayscale hover:grayscale-0 transition motion-reduce:duration-[0.01ms] duration-300"
           />
-          <ProvenExpertSeal />
         </div>
 
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">

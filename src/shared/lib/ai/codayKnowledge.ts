@@ -36,7 +36,7 @@ export const CODAY_KNOWLEDGE_BASE = {
     website: 'https://www.codayweb.de',
     websiteAlternative: 'https://codayweb.de',
     booking: 'https://www.codayweb.de/de/contact',
-    whatsapp: 'https://wa.me/4917641195301',
+    whatsapp: 'https://api.whatsapp.com/send?phone=4917641195301',
   },
 
   // ============================================================
