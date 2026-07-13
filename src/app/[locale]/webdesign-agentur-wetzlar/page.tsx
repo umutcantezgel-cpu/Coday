@@ -244,7 +244,7 @@ export default async function WebdesignWetzlarPage({
   const serviceJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    '@id': 'https://codayweb.de/webdesign-agentur-wetzlar#service',
+    '@id': 'https://www.codayweb.de/webdesign-agentur-wetzlar#service',
     name: 'Premium Webdesign & Webentwicklung',
     provider: {
       '@id': ORG_ID,

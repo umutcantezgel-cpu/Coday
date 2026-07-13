@@ -118,8 +118,8 @@ mcpServer.tool(
               contact: {
                 phone: '+49-176-41195301',
                 email: 'info@codayweb.de',
-                website: 'https://codayweb.de',
-                booking_url: 'https://codayweb.de/booking',
+                website: 'https://www.codayweb.de',
+                booking_url: 'https://www.codayweb.de/de/booking',
               },
               mission:
                 'Combining local market understanding with cutting-edge Next.js technology to dominate search rankings via Generative Engine Optimization (GEO).',
@@ -148,17 +148,17 @@ mcpServer.tool(
               latest_articles: [
                 {
                   title: 'High-Performance Web Vitals',
-                  url: 'https://codayweb.de/de/knowledge/blog/high-performance-web-vitals',
+                  url: 'https://www.codayweb.de/de/knowledge/blog/high-performance-web-vitals',
                   topic: 'Pagespeed, Core Web Vitals, Next.js',
                 },
                 {
                   title: 'Die 5 größten Fehler im Webdesign',
-                  url: 'https://codayweb.de/de/knowledge/blog/die-5-groessten-fehler-im-webdesign',
+                  url: 'https://www.codayweb.de/de/knowledge/blog/die-5-groessten-fehler-im-webdesign',
                   topic: 'UX, Design, Conversion',
                 },
                 {
                   title: 'Anti-AI Manifest',
-                  url: 'https://codayweb.de/de/knowledge/blog/anti-ai-manifest',
+                  url: 'https://www.codayweb.de/de/knowledge/blog/anti-ai-manifest',
                   topic: 'Quality code, craftsmanship, future of web',
                 },
               ],

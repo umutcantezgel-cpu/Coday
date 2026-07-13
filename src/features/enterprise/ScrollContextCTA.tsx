@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { m, AnimatePresence } from 'motion/react';
 import { CalendarBlank } from '@phosphor-icons/react/dist/ssr';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 
 export const ScrollContextCTA: React.FC = () => {

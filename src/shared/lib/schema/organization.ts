@@ -1,15 +1,15 @@
 import { Organization, Person } from 'schema-dts';
 
-export const ORGANIZATION_ID = 'https://codayweb.de/#organization';
-export const UMUT_ID = 'https://codayweb.de/#umut';
+export const ORGANIZATION_ID = 'https://www.codayweb.de/#organization';
+export const UMUT_ID = 'https://www.codayweb.de/#umut';
 
 export function getOrganizationSchema(): Organization {
   return {
     '@type': 'Organization',
     '@id': ORGANIZATION_ID,
     name: 'Coday',
-    url: 'https://codayweb.de',
-    logo: 'https://codayweb.de/images/brand/coday-logo-footer.webp', // Ersetze mit der korrekten Logo-URL
+    url: 'https://www.codayweb.de',
+    logo: 'https://www.codayweb.de/images/brand/coday-logo-footer.webp',
     sameAs: [
       'https://www.linkedin.com/in/umutcan-tezgel',
       'https://twitter.com/codayweb',
@@ -37,7 +37,7 @@ export function getUmutSchema(): Person {
     '@type': 'Person',
     '@id': UMUT_ID,
     name: 'Umutcan Tezgel',
-    url: 'https://codayweb.de/about',
+    url: 'https://www.codayweb.de/de/about',
     jobTitle: 'Founder & Full-Stack Developer',
     sameAs: [
       'https://www.linkedin.com/in/umutcan-tezgel',

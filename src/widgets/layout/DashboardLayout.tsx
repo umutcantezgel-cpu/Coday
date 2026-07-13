@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from '@/i18n/navigation';
 import { SeoHead } from '@/shared/ui/SeoHead';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import {
@@ -23,36 +24,40 @@ const DashboardLayout: React.FC = () => {
         <span>Agency Admin</span>
       </div>
 
-      <nav role="navigation" aria-label="Dashboard Navigation" className="flex-1 px-4 py-6 space-y-1">
-        <a
+      <nav
+        role="navigation"
+        aria-label="Dashboard Navigation"
+        className="flex-1 px-4 py-6 space-y-1"
+      >
+        <Link
           href="/contact"
           className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-50 rounded-lg"
         >
           <OptimizedIcon icon={SquaresFour} size="sm" className="text-xl" />
           Dashboard
-        </a>
-        <a
+        </Link>
+        <Link
           href="/contact"
           aria-current="page"
           className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-primary bg-primary/5 rounded-lg"
         >
           <OptimizedIcon icon={ShareNetwork} size="sm" className="text-xl" />
           Sitemap & URLs
-        </a>
-        <a
+        </Link>
+        <Link
           href="/contact"
           className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-50 rounded-lg"
         >
           <OptimizedIcon icon={ChartBar} size="sm" className="text-xl" />
           Performance
-        </a>
-        <a
+        </Link>
+        <Link
           href="/contact"
           className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-50 rounded-lg"
         >
           <OptimizedIcon icon={Gear} size="sm" className="text-xl" />
           Settings
-        </a>
+        </Link>
       </nav>
 
       {/* ... */}

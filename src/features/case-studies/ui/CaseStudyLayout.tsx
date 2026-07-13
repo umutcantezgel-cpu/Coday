@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowLeft, ArrowUpRight } from '@phosphor-icons/react/dist/ssr';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import BlurText from '@/shared/ui/BlurText';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import { useTranslations } from 'next-intl';

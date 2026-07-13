@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { CaretDown } from '@phosphor-icons/react/dist/ssr';
 import { m } from 'motion/react';
+import { Link } from '@/i18n/navigation';
 import { getFAQs } from '@/features/faq/model';
 
 interface Props {
@@ -100,9 +101,9 @@ export const RelevantFAQs: React.FC<Props> = ({ serviceId, title, className = ''
           ))}
         </div>
         <div className="mt-10 text-center">
-          <a href="/knowledge/faq" className="text-blue-600  font-bold hover:underline">
+          <Link href="/knowledge/faq" className="text-blue-600  font-bold hover:underline">
             {t('categories.all')} →
-          </a>
+          </Link>
         </div>
       </div>
     </section>

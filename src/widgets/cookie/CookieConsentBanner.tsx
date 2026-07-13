@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Cookie } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { useCookieStore } from '@/shared/lib/cookieStore';
 import CookieSettingsModal from '@/widgets/cookie/CookieSettingsModal';
 

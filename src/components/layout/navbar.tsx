@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { m, AnimatePresence } from 'motion/react';
 import { List, X } from '@phosphor-icons/react/dist/ssr';
 import { cn } from '@/lib/utils';

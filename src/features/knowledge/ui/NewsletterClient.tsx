@@ -8,6 +8,7 @@ import { saveLeadInternalAction } from '@/features/contact/actions/saveLeadInter
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { CheckCircle, CircleNotch } from '@phosphor-icons/react';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
+import { Link } from '@/i18n/navigation';
 
 const Newsletter: React.FC = () => {
   const t = useTranslations('knowledge.newsletter');
@@ -59,7 +60,11 @@ const Newsletter: React.FC = () => {
         </p>
 
         {status === 'success' ? (
-          <div className="max-w-md mx-auto bg-green-50 p-6 rounded-2xl border border-green-100 mb-8 flex flex-col items-center text-green-700 animate-in fade-in zoom-in duration-300 motion-reduce:animate-none" role="status" aria-live="polite">
+          <div
+            className="max-w-md mx-auto bg-green-50 p-6 rounded-2xl border border-green-100 mb-8 flex flex-col items-center text-green-700 animate-in fade-in zoom-in duration-300 motion-reduce:animate-none"
+            role="status"
+            aria-live="polite"
+          >
             <OptimizedIcon icon={CheckCircle} className="w-12 h-12 mb-2 text-green-500" />
             <h3 className="font-bold text-lg">{t('success_title')}</h3>
             <p>{t('success_message')}</p>
@@ -118,9 +123,9 @@ const Newsletter: React.FC = () => {
               />
               <label htmlFor="privacy-newsletter" className="text-sm text-slate-500">
                 {t('privacy_consent_pre')}
-                <a href="/legal/datenschutz" className="underline hover:text-slate-700">
+                <Link href="/legal/datenschutz" className="underline hover:text-slate-700">
                   {t('privacy_link')}
-                </a>
+                </Link>
                 {t('privacy_consent_post')}
               </label>
             </div>

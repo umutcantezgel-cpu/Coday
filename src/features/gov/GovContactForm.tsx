@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 import { m } from 'motion/react';
 import {
   PaperPlaneRight,
@@ -349,9 +350,9 @@ export const GovContactForm: React.FC = () => {
 
         <p className="text-center text-xs text-slate-400 mt-4">
           Durch das Absenden stimmen Sie der Verarbeitung Ihrer Daten gemäß unserer{' '}
-          <a href="/legal/datenschutz" className="underline hover:text-slate-600">
+          <Link href="/legal/datenschutz" className="underline hover:text-slate-600">
             Datenschutzerklärung
-          </a>{' '}
+          </Link>{' '}
           zu.
         </p>
       </div>

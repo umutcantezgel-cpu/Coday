@@ -1,7 +1,7 @@
 'use client';
 import React, { useRef, useCallback } from 'react';
 import { Icon } from '@/shared/ui/Icon';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { m, AnimatePresence } from 'motion/react';
 import { createPortal } from 'react-dom';
 

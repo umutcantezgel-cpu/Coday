@@ -4,6 +4,7 @@ import { m, AnimatePresence } from 'motion/react';
 import { CheckCircle, TrendUp, ChartBar, Lock } from '@phosphor-icons/react/dist/ssr';
 import { cn } from '@/shared/lib/utils';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 import { useMemo } from 'react';
 
 interface Question {
@@ -280,12 +281,12 @@ export const DataMaturityAssessment: React.FC = () => {
                   >
                     {t('retry')}
                   </button>
-                  <a
+                  <Link
                     href="/contact"
                     className="px-6 py-2 rounded-lg bg-gradient-to-r from-primary to-purple-500 text-white font-medium hover:shadow-lg hover:opacity-90 transition motion-reduce:duration-[0.01ms] flex items-center gap-2"
                   >
                     {t('bookAudit')} <CheckCircle className="w-4 h-4" />
-                  </a>
+                  </Link>
                 </div>
               </m.div>
             )}

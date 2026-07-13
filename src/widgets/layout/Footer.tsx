@@ -224,13 +224,12 @@ export const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-3">
               <li>
-                <Link
-                  prefetch={false}
-                  href="/webdesign-agentur-wetzlar"
+                <a
+                  href="/de/webdesign-agentur-wetzlar"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
                   Webdesign Agentur Wetzlar
-                </Link>
+                </a>
               </li>
               <li>
                 <Link
@@ -352,7 +351,7 @@ export const Footer: React.FC = () => {
               <OptimizedIcon icon={InstagramLogo} />
             </a>
             <a
-              href="/contact"
+              href="https://twitter.com/codayweb"
               className="hover:text-primary transition-colors motion-reduce:duration-[0.01ms] p-3 -m-3 inline-flex items-center justify-center min-h-[44px] min-w-[44px]"
               aria-label={t('social.visit', { platform: 'Twitter' })}
             >

@@ -161,7 +161,7 @@ export default async function GeoServicePage({ params }: { params: Promise<{ loc
   const serviceJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    '@id': 'https://codayweb.de/services/generative-engine-optimization#service',
+    '@id': 'https://www.codayweb.de/services/generative-engine-optimization#service',
     name: 'Generative Engine Optimization (GEO)',
     provider: {
       '@id': ORG_ID,

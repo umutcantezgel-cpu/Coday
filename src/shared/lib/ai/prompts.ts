@@ -307,7 +307,7 @@ Bei anderen Anfragen:
 - Gespraeche zu Aktion fuehren: Analyzer nutzen, Termin buchen, oder Anfrage senden
 
 Kontakt: kontakt@codayweb.de | +49 176 41195301
-Termin: codayweb.de/contact`,
+Termin: www.codayweb.de/de/contact`,
 };
 
 export default AGENT_PROMPTS;

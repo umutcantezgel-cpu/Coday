@@ -1,4 +1,4 @@
-"use client";
+'use client';
 'use client';
 
 import { Button } from '@/shared/ui/Button';
@@ -9,10 +9,14 @@ import { useActionState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { submitLeadAction } from '../actions/submitLead';
 import { leadFormSchema, LeadFormValues } from '../schema/lead';
+import { Link } from '@/i18n/navigation';
 
 export function LeadForm() {
-  const [state, formAction, isPending] = useActionState(submitLeadAction, { success: false, error: '' });
-  
+  const [state, formAction, isPending] = useActionState(submitLeadAction, {
+    success: false,
+    error: '',
+  });
+
   const {
     register,
     handleSubmit,
@@ -33,10 +37,17 @@ export function LeadForm() {
   }, [state.success]);
 
   return (
-    <form action={formAction} onSubmit={handleSubmit(onSubmit)} className="space-y-12 max-w-2xl mx-auto bg-surface-base/50 backdrop-blur-md shadow-2xl p-8 md:p-16 rounded-3xl border border-white/10" noValidate>
-      
+    <form
+      action={formAction}
+      onSubmit={handleSubmit(onSubmit)}
+      className="space-y-12 max-w-2xl mx-auto bg-surface-base/50 backdrop-blur-md shadow-2xl p-8 md:p-16 rounded-3xl border border-white/10"
+      noValidate
+    >
       {state.error && (
-        <div role="alert" className="bg-red-500/10 border border-red-500 text-red-500 p-4 rounded-xl">
+        <div
+          role="alert"
+          className="bg-red-500/10 border border-red-500 text-red-500 p-4 rounded-xl"
+        >
           {state.error}
         </div>
       )}
@@ -84,7 +95,12 @@ export function LeadForm() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="lead-projectType" className="block text-sm font-medium text-content-base mb-2">Projekt-Typ <span aria-hidden="true">*</span></label>
+          <label
+            htmlFor="lead-projectType"
+            className="block text-sm font-medium text-content-base mb-2"
+          >
+            Projekt-Typ <span aria-hidden="true">*</span>
+          </label>
           <select
             id="lead-projectType"
             {...register('projectType')}
@@ -101,10 +117,16 @@ export function LeadForm() {
             <option value="Wartung">Wartung / Support</option>
             <option value="Sonstiges">Sonstiges</option>
           </select>
-          {errors.projectType && <p id="lead-projectType-error" role="alert" className="text-red-400 text-sm mt-1">{errors.projectType.message}</p>}
+          {errors.projectType && (
+            <p id="lead-projectType-error" role="alert" className="text-red-400 text-sm mt-1">
+              {errors.projectType.message}
+            </p>
+          )}
         </div>
         <div>
-          <label htmlFor="lead-budget" className="block text-sm font-medium text-content-base mb-2">Budget <span aria-hidden="true">*</span></label>
+          <label htmlFor="lead-budget" className="block text-sm font-medium text-content-base mb-2">
+            Budget <span aria-hidden="true">*</span>
+          </label>
           <select
             id="lead-budget"
             {...register('budget')}
@@ -121,12 +143,21 @@ export function LeadForm() {
             <option value="50k+">&gt; 50.000 €</option>
             <option value="Unsicher">Noch unsicher</option>
           </select>
-          {errors.budget && <p id="lead-budget-error" role="alert" className="text-red-400 text-sm mt-1">{errors.budget.message}</p>}
+          {errors.budget && (
+            <p id="lead-budget-error" role="alert" className="text-red-400 text-sm mt-1">
+              {errors.budget.message}
+            </p>
+          )}
         </div>
       </div>
 
       <div>
-        <label htmlFor="lead-timeframe" className="block text-sm font-medium text-content-base mb-2">Zeitrahmen <span aria-hidden="true">*</span></label>
+        <label
+          htmlFor="lead-timeframe"
+          className="block text-sm font-medium text-content-base mb-2"
+        >
+          Zeitrahmen <span aria-hidden="true">*</span>
+        </label>
         <select
           id="lead-timeframe"
           {...register('timeframe')}
@@ -142,11 +173,20 @@ export function LeadForm() {
           <option value="> 6 Monate">Mehr als 6 Monate</option>
           <option value="Flexibel">Flexibel</option>
         </select>
-        {errors.timeframe && <p id="lead-timeframe-error" role="alert" className="text-red-400 text-sm mt-1">{errors.timeframe.message}</p>}
+        {errors.timeframe && (
+          <p id="lead-timeframe-error" role="alert" className="text-red-400 text-sm mt-1">
+            {errors.timeframe.message}
+          </p>
+        )}
       </div>
 
       <div>
-        <label htmlFor="lead-description" className="block text-sm font-medium text-content-base mb-2">Projekt-Details <span aria-hidden="true">*</span></label>
+        <label
+          htmlFor="lead-description"
+          className="block text-sm font-medium text-content-base mb-2"
+        >
+          Projekt-Details <span aria-hidden="true">*</span>
+        </label>
         <textarea
           id="lead-description"
           {...register('description')}
@@ -157,7 +197,11 @@ export function LeadForm() {
           className="w-full bg-surface-base rounded-xl border border-border-base px-4 py-4 text-content-base focus:border-action-primary focus:ring-2 focus:ring-action-primary outline-none resize-none"
           placeholder="Erzähl mir etwas über dein Vorhaben..."
         />
-        {errors.description && <p id="lead-description-error" role="alert" className="text-red-400 text-sm mt-1">{errors.description.message}</p>}
+        {errors.description && (
+          <p id="lead-description-error" role="alert" className="text-red-400 text-sm mt-1">
+            {errors.description.message}
+          </p>
+        )}
       </div>
 
       <div className="flex items-start gap-3">
@@ -175,9 +219,17 @@ export function LeadForm() {
         </div>
         <div className="text-sm text-gray-400">
           <label htmlFor="lead-privacy">
-            Ich stimme der Verarbeitung meiner Daten laut <a href="/legal/datenschutz" className="text-primary-400 hover:underline">Datenschutzerklärung</a> zu. <span aria-hidden="true">*</span>
+            Ich stimme der Verarbeitung meiner Daten laut{' '}
+            <Link href="/legal/datenschutz" className="text-primary-400 hover:underline">
+              Datenschutzerklärung
+            </Link>{' '}
+            zu. <span aria-hidden="true">*</span>
           </label>
-          {errors.privacyAccepted && <p id="lead-privacy-error" role="alert" className="text-red-400 text-sm mt-1">{errors.privacyAccepted.message}</p>}
+          {errors.privacyAccepted && (
+            <p id="lead-privacy-error" role="alert" className="text-red-400 text-sm mt-1">
+              {errors.privacyAccepted.message}
+            </p>
+          )}
         </div>
       </div>
 
