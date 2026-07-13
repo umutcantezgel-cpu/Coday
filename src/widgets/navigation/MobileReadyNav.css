@@ -525,7 +525,7 @@ body.mobile-nav-open #fab-container {
   border-radius: 9999px;
 }
 
-.dropdown-link-item:focus-visible,
+.dropdown-link-item:has(:focus-visible),
 .dropdown-sidebar-item:focus-visible {
   outline: 2px solid var(--color-primary-600, #0d9488);
   outline-offset: 2px;

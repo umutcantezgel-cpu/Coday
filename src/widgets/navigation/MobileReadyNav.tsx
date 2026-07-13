@@ -242,27 +242,27 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
                             )}
 
                             {activeGroup!.links.map((link, i) => (
-                              <Link
-                                key={i}
-                                href={link.href}
-                                prefetch={false}
-                                className="dropdown-link-item group"
-                                onClick={() => setActiveCategory(null)}
-                                aria-label={t(link.label)}
-                                title={t(link.label)}
-                              >
+                              <div key={i} className="dropdown-link-item group relative">
                                 <div className="link-icon-wrapper" aria-hidden="true">
                                   <OptimizedIcon icon={ArrowUpRight} className="link-arrow" />
                                 </div>
                                 <div className="link-text">
-                                  <span className="link-label">{t(link.label)}</span>
+                                  <Link
+                                    href={link.href}
+                                    prefetch={false}
+                                    onClick={() => setActiveCategory(null)}
+                                    title={t(link.label)}
+                                    className="link-label before:absolute before:inset-0 focus:outline-none focus-visible:ring-0"
+                                  >
+                                    {t(link.label)}
+                                  </Link>
                                   {link.desc && (
                                     <span className="link-desc" aria-hidden="true">
                                       {t(link.desc)}
                                     </span>
                                   )}
                                 </div>
-                              </Link>
+                              </div>
                             ))}
                           </div>
                         );

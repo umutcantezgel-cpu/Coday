@@ -218,22 +218,25 @@ const CardNav: React.FC<CardNavProps> = ({
                                     : { href: link.href };
 
                                   return (
-                                    <LinkComponent
-                                      key={i}
-                                      {...linkProps}
-                                      className="dropdown-link-item group"
-                                      onClick={() => setActiveCategory(null)}
-                                    >
-                                      <div className="link-icon-wrapper">
+                                    <div key={i} className="dropdown-link-item group relative">
+                                      <div className="link-icon-wrapper" aria-hidden="true">
                                         <OptimizedIcon icon={ArrowUpRight} className="link-arrow" />
                                       </div>
                                       <div className="link-text">
-                                        <span className="link-label">{t(link.label)}</span>
+                                        <LinkComponent
+                                          {...linkProps}
+                                          className="link-label before:absolute before:inset-0 focus:outline-none focus-visible:ring-0"
+                                          onClick={() => setActiveCategory(null)}
+                                        >
+                                          {t(link.label)}
+                                        </LinkComponent>
                                         {link.desc && (
-                                          <span className="link-desc">{t(link.desc)}</span>
+                                          <span className="link-desc" aria-hidden="true">
+                                            {t(link.desc)}
+                                          </span>
                                         )}
                                       </div>
-                                    </LinkComponent>
+                                    </div>
                                   );
                                 })}
                               </div>
