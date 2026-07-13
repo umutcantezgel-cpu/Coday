@@ -12,7 +12,7 @@ import {
   brandingFeatureMapping,
 } from '@/shared/data/serviceImages';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 
 import { StickyCTA } from '@/shared/ui/StickyCTA';
 import { SeoMethodologyBlock } from '@/features/services/ui/SeoMethodologyBlock';
@@ -96,6 +96,7 @@ export function ServiceDetailClient() {
   // Find the service data based on URL params
   const t = useTranslations('services');
   const tCommon = useTranslations('common');
+  const locale = useLocale();
   const serviceCategory = servicesData[category || ''];
   const service = serviceCategory ? serviceCategory[slug || ''] : null;
 
@@ -210,6 +211,9 @@ export function ServiceDetailClient() {
             </div>
             <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-gray-900 mb-6 leading-tight text-balance">
               {t(service.titleKey)}
+              <span className="sr-only">
+                {locale === 'en' ? ' - Web Services' : ' - Webdesign Leistungen'}
+              </span>
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed max-w-prose text-pretty mb-8">
               {t(service.longDescriptionKey)}

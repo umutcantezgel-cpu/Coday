@@ -45,13 +45,9 @@ export default async function IndustryDetailPage({
     <>
       <div className="sr-only" aria-hidden="true">
         <p>
-          Exklusive Objekte, exklusiv präsentiert. Exclusive properties, exclusively presented. Vom
-          Besucher zum Stammkunden. From Visitor to Regular Customer. Expertise sichtbar machen.
-          Make Expertise Visible. Vertrauen beginnt vor dem ersten Termin. Trust Begins Before the
-          First Appointment. Gastronomie & Hotellerie. Gastronomy & Hospitality. Digital Dominance
-          for Your Craft. Rechtssichere Mandanten-Akquise. Legally Secure Client Acquisition.
-          Geschmack beginnt beim ersten Klick. Taste Begins with the First Click. Scale fast, look
-          global. Management Consulting
+          {_locale === 'en'
+            ? 'Exclusive properties, exclusively presented. From Visitor to Regular Customer. Make Expertise Visible. Trust Begins Before the First Appointment. Gastronomy & Hospitality. Digital Dominance for Your Craft. Legally Secure Client Acquisition. Taste Begins with the First Click. Scale fast, look global. Management Consulting'
+            : 'Exklusive Objekte, exklusiv präsentiert. Vom Besucher zum Stammkunden. Expertise sichtbar machen. Vertrauen beginnt vor dem ersten Termin. Gastronomie & Hotellerie. Digital Dominance for Your Craft. Rechtssichere Mandanten-Akquise. Geschmack beginnt beim ersten Klick. Scale fast, look global. Management Consulting'}
         </p>
         <p>
           {_locale === 'en'
