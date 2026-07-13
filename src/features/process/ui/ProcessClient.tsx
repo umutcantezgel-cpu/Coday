@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 import BlurText from '@/shared/ui/BlurText';
@@ -26,8 +26,7 @@ const Process: React.FC = () => {
               animateBy="words"
               direction="top"
               className="inline-block mr-4"
-            />
-            <br className="hidden md:block" />
+            />{' '}
             <GradientText
               colors={['#3B82F6', '#10B981', '#F59E0B']}
               animationSpeed={5}
@@ -65,9 +64,10 @@ const Process: React.FC = () => {
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {(
-              (Array.isArray(t.raw('guarantee.items'))
-                ? t.raw('guarantee.items')
-                : []) as Array<{ title: string; desc: string }>
+              (Array.isArray(t.raw('guarantee.items')) ? t.raw('guarantee.items') : []) as Array<{
+                title: string;
+                desc: string;
+              }>
             ).map((item, idx) => (
               <div key={idx} className="bg-white p-8 rounded-2xl shadow-sm">
                 <h3 className="font-bold text-xl mb-2">{item.title}</h3>

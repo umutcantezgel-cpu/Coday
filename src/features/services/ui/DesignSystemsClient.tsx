@@ -35,7 +35,7 @@ export function DesignSystemsClient() {
               delay={100}
               animateBy="words"
               className="inline-block mr-4"
-            />
+            />{' '}
             <GradientText
               colors={['#6366F1', '#8B5CF6', '#A78BFA']}
               animationSpeed={6}

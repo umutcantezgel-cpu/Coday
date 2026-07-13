@@ -94,7 +94,7 @@ export function WebDesignClient() {
                 delay={100}
                 animateBy="words"
                 className="block"
-              />
+              />{' '}
               <span className="text-sapphire">{t('web_design_page.hero.title_suffix')}</span>
             </h1>
             <p className="text-xl text-content-muted leading-relaxed max-w-prose text-pretty max-w-3xl lg:mx-0 mx-auto">

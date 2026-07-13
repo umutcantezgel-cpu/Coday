@@ -41,7 +41,7 @@ export function UiUxClient() {
                 delay={100}
                 animateBy="words"
                 className="inline-block me-3"
-              />
+              />{' '}
               <GradientText
                 colors={['#EC4899', '#F472B6', '#F9A8D4']}
                 animationSpeed={6}

@@ -62,7 +62,7 @@ export function MigrationClient() {
               delay={100}
               animateBy="words"
               className="inline-block mr-4"
-            />
+            />{' '}
             <GradientText
               colors={['#8B5CF6', '#7C3AED', '#6D28D9']}
               animationSpeed={6}

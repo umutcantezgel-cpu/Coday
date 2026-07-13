@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
@@ -32,8 +32,7 @@ const Culture: React.FC = () => {
               delay={100}
               animateBy="words"
               className="inline-block mr-4"
-            />
-            <br className="hidden md:block" />
+            />{' '}
             <GradientText
               colors={['#F59E0B', '#EF4444', '#EC4899']}
               animationSpeed={5}
@@ -50,7 +49,10 @@ const Culture: React.FC = () => {
 
       {/* Values Section - NEW HIGH COMPLEXITY */}
       <section className="py-24 bg-surface-dark overflow-hidden relative">
-        <div className="absolute inset-0 opacity-10 bg-[url('/noise.svg')]" aria-hidden="true"></div>
+        <div
+          className="absolute inset-0 opacity-10 bg-[url('/noise.svg')]"
+          aria-hidden="true"
+        ></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">

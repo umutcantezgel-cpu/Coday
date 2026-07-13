@@ -33,7 +33,7 @@ export function BrandIdentityClient() {
                 animateBy="words"
                 direction="top"
                 className="inline-block me-3"
-              />
+              />{' '}
               <GradientText
                 colors={['#8B5CF6', '#A78BFA', '#C4B5FD']}
                 animationSpeed={6}

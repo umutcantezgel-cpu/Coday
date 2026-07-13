@@ -36,7 +36,7 @@ export function UxAuditClient() {
               delay={100}
               animateBy="words"
               className="inline-block mr-4"
-            />
+            />{' '}
             <GradientText
               colors={['#F59E0B', '#EF4444', '#EC4899']}
               animationSpeed={6}

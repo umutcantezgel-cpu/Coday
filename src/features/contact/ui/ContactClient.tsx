@@ -100,7 +100,7 @@ export const ContactClient: React.FC = () => {
                     delay={100}
                     animateBy="words"
                     className="inline-block mr-3"
-                  />
+                  />{' '}
                   <GradientText
                     colors={['#3B82F6', '#2563EB', '#1D4ED8']}
                     animationSpeed={4}

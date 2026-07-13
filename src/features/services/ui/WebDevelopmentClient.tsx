@@ -110,7 +110,7 @@ export function WebDevelopmentClient() {
                 delay={100}
                 animateBy="words"
                 className="block"
-              />
+              />{' '}
               <span className="text-action-primary">
                 {t('web_development_page.hero.title_static')}
               </span>

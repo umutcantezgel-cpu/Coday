@@ -28,8 +28,7 @@ export function CareerOverviewClient() {
               animateBy="words"
               direction="top"
               className="inline-block mr-4"
-            />
-            <br className="hidden md:block" />
+            />{' '}
             <GradientText
               colors={['#EC4899', '#8B5CF6', '#3B82F6']}
               animationSpeed={6}
@@ -108,24 +107,24 @@ export function CareerOverviewClient() {
               },
             ].map((job, idx) => (
               <li key={idx} className="list-none">
-              <a
-                href="/contact"
-                className="flex flex-col sm:flex-row sm:items-center justify-between p-6 rounded-2xl border border-gray-100 hover:border-sapphire/50 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sapphire focus-visible:border-sapphire/50 focus-visible:shadow-lg transition motion-reduce:duration-[0.01ms] group"
-              >
-                <div>
-                  <h3 className="font-bold text-xl text-secondary group-hover:text-sapphire transition-colors motion-reduce:duration-[0.01ms]">
-                    {job.title}
-                  </h3>
-                  <div className="flex gap-4 text-sm text-gray-500 mt-1">
-                    <span>{job.type}</span>
-                    <span>•</span>
-                    <span>{job.time}</span>
+                <a
+                  href="/contact"
+                  className="flex flex-col sm:flex-row sm:items-center justify-between p-6 rounded-2xl border border-gray-100 hover:border-sapphire/50 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sapphire focus-visible:border-sapphire/50 focus-visible:shadow-lg transition motion-reduce:duration-[0.01ms] group"
+                >
+                  <div>
+                    <h3 className="font-bold text-xl text-secondary group-hover:text-sapphire transition-colors motion-reduce:duration-[0.01ms]">
+                      {job.title}
+                    </h3>
+                    <div className="flex gap-4 text-sm text-gray-500 mt-1">
+                      <span>{job.type}</span>
+                      <span>•</span>
+                      <span>{job.time}</span>
+                    </div>
                   </div>
-                </div>
-                <span className="mt-4 sm:mt-0 px-4 py-2 bg-gray-50 text-secondary font-bold rounded-lg text-sm group-hover:bg-sapphire group-hover:text-white transition motion-reduce:duration-[0.01ms]">
-                  {t('jobs.button')} &rarr;
-                </span>
-              </a>
+                  <span className="mt-4 sm:mt-0 px-4 py-2 bg-gray-50 text-secondary font-bold rounded-lg text-sm group-hover:bg-sapphire group-hover:text-white transition motion-reduce:duration-[0.01ms]">
+                    {t('jobs.button')} &rarr;
+                  </span>
+                </a>
               </li>
             ))}
           </ul>

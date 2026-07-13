@@ -43,7 +43,7 @@ export function EcommerceDevelopmentClient() {
                 animateBy="words"
                 direction="top"
                 className="inline-block me-4"
-              />
+              />{' '}
               <GradientText
                 colors={['#10B981', '#3B82F6', '#8B5CF6']}
                 animationSpeed={4}

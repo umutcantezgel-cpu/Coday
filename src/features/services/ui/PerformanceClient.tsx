@@ -45,7 +45,7 @@ export function PerformanceClient() {
               animateBy="words"
               direction="top"
               className="inline-block me-4"
-            />
+            />{' '}
             <GradientText
               colors={['#FFD700', '#FF8C00', '#FF4500']}
               animationSpeed={3}
