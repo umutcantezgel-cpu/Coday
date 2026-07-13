@@ -337,60 +337,6 @@ export const industriesData: Record<string, IndustryData> = {
       },
     ],
   },
-  'ecommerce-retail': {
-    slug: 'ecommerce-retail',
-    title: 'ecommerce-retail.title',
-    icon: 'shopping_cart',
-    hero: {
-      headline: 'ecommerce-retail.hero.headline',
-      subheadline: 'ecommerce-retail.hero.subheadline',
-    },
-    challenges: [
-      {
-        title: 'ecommerce-retail.challenges.warenkorb_abbrueche.title',
-        description: 'ecommerce-retail.challenges.warenkorb_abbrueche.description',
-      },
-      {
-        title: 'ecommerce-retail.challenges.performance.title',
-        description: 'ecommerce-retail.challenges.performance.description',
-      },
-      {
-        title: 'ecommerce-retail.challenges.marken_erlebnis.title',
-        description: 'ecommerce-retail.challenges.marken_erlebnis.description',
-      },
-    ],
-    solutions: [
-      {
-        title: 'ecommerce-retail.solutions.high_speed_frontend.title',
-        description: 'ecommerce-retail.solutions.high_speed_frontend.description',
-        icon: 'bolt',
-      },
-      {
-        title: 'ecommerce-retail.solutions.conversion_optimierung.title',
-        description: 'ecommerce-retail.solutions.conversion_optimierung.description',
-        icon: 'trending_up',
-      },
-      {
-        title: 'ecommerce-retail.solutions.omnichannel.title',
-        description: 'ecommerce-retail.solutions.omnichannel.description',
-        icon: 'storefront',
-      },
-    ],
-    customFeatures: [
-      {
-        title: 'ecommerce-retail.customFeatures.produkt_konfigurator.title',
-        description: 'ecommerce-retail.customFeatures.produkt_konfigurator.description',
-      },
-      {
-        title: 'ecommerce-retail.customFeatures.cross_selling_module.title',
-        description: 'ecommerce-retail.customFeatures.cross_selling_module.description',
-      },
-      {
-        title: 'ecommerce-retail.customFeatures.loyalty_integration.title',
-        description: 'ecommerce-retail.customFeatures.loyalty_integration.description',
-      },
-    ],
-  },
   unternehmensberatung: {
     slug: 'unternehmensberatung',
     title: 'unternehmensberatung.title',

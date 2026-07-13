@@ -1311,7 +1311,7 @@
         ]
       },
       "e-commerce-shops": {
-        "title": "E-Commerce & Shops",
+        "title": "E-Commerce Shop Development",
         "description": "High-Performance Online Shops with Shopify or Custom Headless solutions for maximum conversion.",
         "long_description": "We develop online shops that don't just look good, but sell. Whether Shopify Plus or Headless Commerce with Shopify Hydrogen – we build shopping experiences your customers love and increase your revenue.",
         "benefits": [
@@ -1333,7 +1333,7 @@
         ]
       },
       "cloud-infrastructure": {
-        "title": "Cloud Infrastructure",
+        "title": "Cloud Infrastructure & DevOps",
         "description": "High-Performance Hosting and Deployment on Vercel or AWS for global availability.",
         "long_description": "The right cloud strategy decides speed and availability. We rely on Serverless architectures and Edge Networks to deliver your content worldwide in milliseconds.",
         "benefits": [

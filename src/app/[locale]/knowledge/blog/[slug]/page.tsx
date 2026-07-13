@@ -1,4 +1,4 @@
-import { generatePageMetadata } from '@/lib/metadata';
+import { generatePageMetadata, generateAlternates } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
@@ -145,9 +145,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: post.title,
       description: post.excerpt,
     },
-    alternates: {
-      canonical: `${BASE_URL}/${locale}/knowledge/blog/${slug}`,
-    },
+    alternates: generateAlternates(`/${locale}/knowledge/blog/${slug}`),
   };
 }
 

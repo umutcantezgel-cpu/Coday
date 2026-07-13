@@ -229,6 +229,26 @@ const nextConfig: NextConfig = {
         destination: '/:locale/branchen/retail',
         permanent: true,
       },
+      {
+        source: '/branchen/ecommerce-retail',
+        destination: '/branchen/retail',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/branchen/ecommerce-retail',
+        destination: '/:locale/branchen/retail',
+        permanent: true,
+      },
+      {
+        source: '/standorte/wetzlar',
+        destination: '/webdesign-agentur-wetzlar',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/standorte/wetzlar',
+        destination: '/:locale/webdesign-agentur-wetzlar',
+        permanent: true,
+      },
       // --- Double-locale prefix fix (crawlers may have cached /de/de or /en/en) ---
       {
         source: '/de/de/:path*',
