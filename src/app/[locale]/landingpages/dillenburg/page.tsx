@@ -81,10 +81,33 @@ export default async function DillenburgLandingPage(props: {
           <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">
             Ihr Webdesigner in Dillenburg
           </h1>
-          <p className="text-gray-400 max-w-2xl text-lg">
-            Als <strong>Ihr Webdesigner in Dillenburg</strong> bauen wir in der Umgebung
-            hochperformante Webseiten für Handwerker, Ärzte und Dienstleister.
-          </p>
+          <div className="flex flex-col items-center gap-6 mt-4">
+            <p className="text-gray-400 max-w-2xl text-lg">
+              Als <strong>Ihr Webdesigner in Dillenburg</strong> bauen wir in der Umgebung
+              hochperformante Webseiten für Handwerker, Ärzte und Dienstleister.
+            </p>
+            <div className="text-gray-300 max-w-2xl text-left space-y-4 px-4 bg-white/5 p-6 rounded-2xl border border-white/10 text-base leading-relaxed">
+              <p>
+                Eine professionelle Webseite ist heute das wichtigste Aushängeschild für jedes
+                lokale Unternehmen. Egal ob Sie einen Handwerksbetrieb führen, eine Arztpraxis
+                leiten oder spezifische Dienstleistungen anbieten: Ihre potenziellen Kunden suchen
+                online nach Ihren Angeboten. Wenn Sie nicht sofort gefunden werden oder Ihre
+                Webseite veraltet wirkt, verlieren Sie bares Geld an die regionale Konkurrenz. Eine
+                moderne, Conversion-optimierte Internetpräsenz baut Vertrauen auf, noch bevor der
+                erste persönliche Kontakt entsteht.
+              </p>
+              <p>
+                Wir unterstützen Sie dabei, eine digitale Präsenz aufzubauen, die nicht nur auf den
+                ersten Blick überzeugt, sondern auch technisch einwandfrei funktioniert, extrem
+                schnelle Ladezeiten bietet und perfekt für Suchmaschinen (SEO) optimiert ist. Dabei
+                legen wir großen Wert auf intuitive Benutzerführung und barrierefreie Designs.
+                Profitieren Sie von unserer langjährigen Erfahrung im Bereich Webdesign,
+                Suchmaschinenoptimierung und digitaler Markenbildung in der Region Lahn-Dill. Lassen
+                Sie uns gemeinsam Ihr Projekt besprechen und herausfinden, wie wir Ihr Unternehmen
+                digital auf die nächste Stufe heben können.
+              </p>
+            </div>
+          </div>
 
           {/* Geo/LocalBusiness Schema injection */}
           <script
