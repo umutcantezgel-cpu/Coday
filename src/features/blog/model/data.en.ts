@@ -778,7 +778,7 @@ export const BLOG_POSTS: BlogPost[] = [
         description:
           "We design interfaces that don't just look beautiful, but sell neurologically.",
         buttonText: 'Request Design Audit',
-        href: '/services/design',
+        href: '/services/design/ui-ux',
         variant: 'glass',
       },
     ],

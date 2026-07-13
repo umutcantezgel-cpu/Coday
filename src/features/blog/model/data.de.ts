@@ -1090,7 +1090,7 @@ export const BLOG_POSTS: BlogPost[] = [
         description:
           'Wir gestalten Interfaces, die nicht nur schön aussehen, sondern neurologisch verkaufen.',
         buttonText: 'Design-Audit anfragen',
-        href: '/services/design',
+        href: '/services/design/ui-ux',
         variant: 'glass',
       },
     ],

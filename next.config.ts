@@ -229,6 +229,58 @@ const nextConfig: NextConfig = {
         destination: '/:locale/branchen/retail',
         permanent: true,
       },
+      // --- Double-locale prefix fix (crawlers may have cached /de/de or /en/en) ---
+      {
+        source: '/de/de/:path*',
+        destination: '/de/:path*',
+        permanent: true,
+      },
+      {
+        source: '/en/en/:path*',
+        destination: '/en/:path*',
+        permanent: true,
+      },
+      {
+        source: '/de/de',
+        destination: '/de',
+        permanent: true,
+      },
+      {
+        source: '/en/en',
+        destination: '/en',
+        permanent: true,
+      },
+      // --- Service category index redirects (no index page exists) ---
+      {
+        source: '/services/design',
+        destination: '/services/web-design',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/services/design',
+        destination: '/:locale/services/web-design',
+        permanent: true,
+      },
+      {
+        source: '/services/development',
+        destination: '/services/web-development',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/services/development',
+        destination: '/:locale/services/web-development',
+        permanent: true,
+      },
+      {
+        source: '/services/webdesign',
+        destination: '/services/web-design',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/services/webdesign',
+        destination: '/:locale/services/web-design',
+        permanent: true,
+      },
     ];
   },
   async headers() {

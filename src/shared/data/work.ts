@@ -149,7 +149,7 @@ export const workData: Record<string, Project> = {
           ],
         },
         relatedServices: [
-          { name: 'Webdesign & UI/UX', path: '/services/webdesign' },
+          { name: 'Webdesign & UI/UX', path: '/services/web-design' },
           { name: 'Performance & Speed', path: '/services/performance' },
           { name: 'Enterprise Web', path: '/services/enterprise-web' },
         ],
@@ -224,7 +224,7 @@ export const workData: Record<string, Project> = {
           ],
         },
         relatedServices: [
-          { name: 'Web Design & UI/UX', path: '/services/webdesign' },
+          { name: 'Web Design & UI/UX', path: '/services/web-design' },
           { name: 'Performance & Speed', path: '/services/performance' },
           { name: 'Enterprise Web', path: '/services/enterprise-web' },
         ],
@@ -433,7 +433,7 @@ export const workData: Record<string, Project> = {
         relatedServices: [
           { name: 'Local SEO', path: '/services/seo' },
           { name: 'Webdesign & UI/UX', path: '/services/web-design' },
-          { name: 'Performance', path: '/services/development' },
+          { name: 'Performance', path: '/services/performance' },
         ],
       },
       en: {
@@ -504,7 +504,7 @@ export const workData: Record<string, Project> = {
         relatedServices: [
           { name: 'Local SEO', path: '/services/seo' },
           { name: 'Web Design & UI/UX', path: '/services/web-design' },
-          { name: 'Performance', path: '/services/development' },
+          { name: 'Performance', path: '/services/performance' },
         ],
       },
     },
