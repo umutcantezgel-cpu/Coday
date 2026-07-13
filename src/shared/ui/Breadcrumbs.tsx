@@ -51,7 +51,9 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ className = '' }) => {
             href="/"
             className="text-slate-500 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] flex items-center"
             aria-label="Home"
+            title={t('nav.main.home', { defaultValue: 'Startseite' })}
           >
+            <span className="sr-only">{t('nav.main.home', { defaultValue: 'Startseite' })}</span>
             <OptimizedIcon icon={House} className="w-4 h-4" />
           </Link>
         </li>

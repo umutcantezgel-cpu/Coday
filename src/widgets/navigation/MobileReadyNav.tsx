@@ -248,13 +248,19 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
                                 prefetch={false}
                                 className="dropdown-link-item group"
                                 onClick={() => setActiveCategory(null)}
+                                aria-label={t(link.label)}
+                                title={t(link.label)}
                               >
-                                <div className="link-icon-wrapper">
+                                <div className="link-icon-wrapper" aria-hidden="true">
                                   <OptimizedIcon icon={ArrowUpRight} className="link-arrow" />
                                 </div>
                                 <div className="link-text">
                                   <span className="link-label">{t(link.label)}</span>
-                                  {link.desc && <span className="link-desc">{t(link.desc)}</span>}
+                                  {link.desc && (
+                                    <span className="link-desc" aria-hidden="true">
+                                      {t(link.desc)}
+                                    </span>
+                                  )}
                                 </div>
                               </Link>
                             ))}

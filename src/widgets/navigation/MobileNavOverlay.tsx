@@ -219,12 +219,17 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
                                         {...linkProps}
                                         className="mobile-link-item"
                                         onClick={onClose}
+                                        aria-label={t(link.label)}
+                                        title={t(link.label)}
                                       >
                                         <span className="font-medium text-slate-200">
                                           {t(link.label)}
                                         </span>
                                         {link.desc && (
-                                          <span className="text-xs text-slate-400 line-clamp-1">
+                                          <span
+                                            className="text-xs text-slate-400 line-clamp-1"
+                                            aria-hidden="true"
+                                          >
                                             {t(link.desc)}
                                           </span>
                                         )}
