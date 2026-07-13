@@ -11,7 +11,7 @@ export const SeoAuthorBlock: React.FC = () => {
       <div className="flex flex-col md:flex-row gap-8 items-start">
         <div className="w-24 h-24 md:w-32 md:h-32 shrink-0 rounded-full overflow-hidden border-2 border-white/10 relative">
           <OptimizedImage
-            src="/images/agency/umutcan-emre-tezgel-coday-webdesign-agentur-wetzlar-inhaber.webp"
+            src="/images/team/umut-founder.webp"
             alt="Umutcan Emre Tezgel - Inhaber Coday Webdesign Agentur Wetzlar"
             className="w-full h-full object-cover"
             title="Umutcan Emre Tezgel"
