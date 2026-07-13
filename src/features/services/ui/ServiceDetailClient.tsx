@@ -15,6 +15,7 @@ import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { useTranslations } from 'next-intl';
 
 import { StickyCTA } from '@/shared/ui/StickyCTA';
+import { SeoMethodologyBlock } from '@/features/services/ui/SeoMethodologyBlock';
 import {
   Lightning,
   ChartBar,
@@ -457,6 +458,7 @@ export function ServiceDetailClient() {
           </div>
         </div>
       </section>
+      <SeoMethodologyBlock />
       <StickyCTA />
     </main>
   );

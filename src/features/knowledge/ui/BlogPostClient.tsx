@@ -12,6 +12,7 @@ import BlurText from '@/shared/ui/BlurText';
 import { BlockRenderer } from '@/features/blog/ui/BlockRenderer';
 import { ReadingProgress, TableOfContents } from '@/features/blog/ui/ImmersiveReader';
 import { RelatedArticles, ShareFAB } from '@/features/blog/ui/NavigationLoop';
+import { SeoAuthorBlock } from '@/features/knowledge/ui/SeoAuthorBlock';
 import { ReadingScore } from '@/features/blog/ui/ReadingScore';
 import { useTranslations, useLocale } from 'next-intl';
 import { SeoHead } from '@/shared/ui/SeoHead';
@@ -237,6 +238,7 @@ const BlogPost: React.FC = () => {
         </div>
       </div>
 
+      <SeoAuthorBlock />
       <RelatedArticles currentSlug={post.slug} category={post.category} />
       <ShareFAB title={post.title} url={currentUrl} />
     </div>

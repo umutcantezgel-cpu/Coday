@@ -4,6 +4,7 @@ import React from 'react';
 import { SeoHead } from '@/shared/ui/SeoHead';
 import { Button } from '@/shared/ui/Button';
 import { Link } from '@/i18n/navigation';
+import { SeoLocalExpertiseBlock } from '@/features/industries/ui/SeoLocalExpertiseBlock';
 import { CheckCircle, MapPin } from '@phosphor-icons/react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import BlurText from '@/shared/ui/BlurText';
@@ -83,9 +84,9 @@ export const LocalSeoTemplate: React.FC<LocalSeoTemplateProps> = ({ content, cit
                 <h2 className="text-3xl font-display font-bold text-secondary-900 mb-6">
                   {section.title}
                 </h2>
-                <div 
-                  className="text-secondary-800 leading-relaxed" 
-                  dangerouslySetInnerHTML={{ __html: section.content.replace(/\n/g, '<br />') }} 
+                <div
+                  className="text-secondary-800 leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: section.content.replace(/\n/g, '<br />') }}
                 />
               </div>
             ))}
@@ -110,7 +111,10 @@ export const LocalSeoTemplate: React.FC<LocalSeoTemplateProps> = ({ content, cit
               <ul className="space-y-4">
                 {content.localDominance.points.map((point, idx) => (
                   <li key={idx} className="flex items-start text-secondary-800 font-medium">
-                    <OptimizedIcon icon={CheckCircle} className="text-primary-500 mr-3 flex-shrink-0 mt-1" />
+                    <OptimizedIcon
+                      icon={CheckCircle}
+                      className="text-primary-500 mr-3 flex-shrink-0 mt-1"
+                    />
                     <span>{point}</span>
                   </li>
                 ))}
@@ -118,8 +122,12 @@ export const LocalSeoTemplate: React.FC<LocalSeoTemplateProps> = ({ content, cit
             </div>
             <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col items-center justify-center min-h-[400px]">
               <OptimizedIcon icon={MapPin} className="text-primary-500 w-24 h-24 mb-6 opacity-80" />
-              <h3 className="text-2xl font-bold text-secondary-900 mb-2">{content.target.split('-').join(' ').toUpperCase()}</h3>
-              <p className="text-secondary-800 font-medium text-center">Digitale Transformation vor Ort.</p>
+              <h3 className="text-2xl font-bold text-secondary-900 mb-2">
+                {content.target.split('-').join(' ').toUpperCase()}
+              </h3>
+              <p className="text-secondary-800 font-medium text-center">
+                Digitale Transformation vor Ort.
+              </p>
             </div>
           </div>
         </div>
@@ -145,11 +153,15 @@ export const LocalSeoTemplate: React.FC<LocalSeoTemplateProps> = ({ content, cit
       </section>
 
       {/* Final CTA */}
+
       <section className="py-24 px-4 bg-gradient-to-br from-primary-900/10 to-bg-primary text-center">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-4xl font-bold text-secondary-900 mb-6">Bereit für messbares Wachstum?</h2>
+          <h2 className="text-4xl font-bold text-secondary-900 mb-6">
+            Bereit für messbares Wachstum?
+          </h2>
           <p className="text-xl text-secondary-800 font-medium mb-10 leading-relaxed">
-            Lassen Sie uns gemeinsam herausfinden, wie wir Ihr Unternehmen durch High-End Webdesign an die Spitze bringen.
+            Lassen Sie uns gemeinsam herausfinden, wie wir Ihr Unternehmen durch High-End Webdesign
+            an die Spitze bringen.
           </p>
           <Link href="/contact">
             <Button variant="primary" size="lg" className="shadow-xl shadow-primary-500/20">
@@ -158,6 +170,7 @@ export const LocalSeoTemplate: React.FC<LocalSeoTemplateProps> = ({ content, cit
           </Link>
         </div>
       </section>
+      <SeoLocalExpertiseBlock />
     </div>
   );
 };

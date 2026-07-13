@@ -5,6 +5,7 @@ import { m } from 'motion/react';
 import { SeoHead } from '@/shared/ui/SeoHead';
 import { Button } from '@/shared/ui/Button';
 import { Link } from '@/i18n/navigation';
+import { SeoLocalExpertiseBlock } from '@/features/industries/ui/SeoLocalExpertiseBlock';
 import { CheckCircle, MapPin, CaretDown, CaretUp } from '@phosphor-icons/react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import BlurText from '@/shared/ui/BlurText';
@@ -260,6 +261,7 @@ export const GamifiedIndustryTemplate: React.FC<{ content: any; cityData?: any }
           </div>
         </div>
       </section>
+      <SeoLocalExpertiseBlock />
     </div>
   );
 };
