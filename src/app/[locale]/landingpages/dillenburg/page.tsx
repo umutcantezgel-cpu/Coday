@@ -6,6 +6,7 @@ import { getCityBySlug } from '@/features/local-seo/model/cities';
 import { LocalSeoTemplate } from '@/features/local-seo/ui/LocalSeoTemplate';
 import fs from 'fs';
 import path from 'path';
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 
 export async function generateMetadata({
   params,
@@ -130,6 +131,7 @@ export default async function DillenburgLandingPage(props: {
       <div className="container mx-auto px-4 pb-12 text-center">
         <p className="text-[10px] text-gray-500/40 font-medium tracking-wide">{_seoTitle}</p>
       </div>
+      <SeoContentBlock />
     </>
   );
 }

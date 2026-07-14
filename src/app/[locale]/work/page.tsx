@@ -5,6 +5,7 @@ import { workData } from '@/shared/data/work';
 import { Link } from '@/i18n/navigation';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import { ArrowRight } from '@phosphor-icons/react/dist/ssr';
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 
 export async function generateMetadata({
   params,
@@ -219,6 +220,7 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
       <div className="container mx-auto px-4 pb-12 text-center">
         <p className="text-[10px] text-gray-500/40 font-medium tracking-wide">{_seoTitle}</p>
       </div>
+      <SeoContentBlock />
     </>
   );
 }

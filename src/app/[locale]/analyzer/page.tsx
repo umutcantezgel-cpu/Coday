@@ -5,6 +5,7 @@ import type { Metadata } from 'next';
 import { getOrganizationSchema, BASE_URL } from '@/lib/schema';
 import UrlInputForm from '@/features/analyzer/ui/UrlInputForm';
 import ReportDashboard from '@/features/analyzer/ui/ReportDashboard';
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 
 export async function generateMetadata({
   params,
@@ -75,6 +76,7 @@ export default async function AnalyzerPage(props: { params: Promise<{ locale: st
           </div>
         </div>
       </div>
+      <SeoContentBlock />
     </>
   );
 }

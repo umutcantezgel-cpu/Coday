@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { SeoHead } from '@/shared/ui/SeoHead';
 import ClientComponent from '@/features/legal/ui/GarantieClient';
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 
 export async function generateMetadata({
   params,
@@ -53,6 +54,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
       <div className="container mx-auto px-4 pb-12 text-center">
         <p className="text-[10px] text-gray-500/40 font-medium tracking-wide">{_seoTitle}</p>
       </div>
+      <SeoContentBlock />
     </>
   );
 }

@@ -8,6 +8,7 @@ import { industriesData } from '@/shared/data/industries';
 import { servicesData } from '@/shared/data/services';
 import fs from 'fs';
 import path from 'path';
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 
 export async function generateMetadata({
   params,
@@ -322,6 +323,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
           </section>
         </div>
       </div>
+      <SeoContentBlock />
     </main>
   );
 }

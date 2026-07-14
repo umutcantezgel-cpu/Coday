@@ -3,6 +3,7 @@ import { generatePageMetadata } from '@/lib/metadata';
 import { WebDevelopmentClient } from '@/features/services/ui/WebDevelopmentClient';
 import { setRequestLocale } from 'next-intl/server';
 import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 
 export async function generateMetadata({
   params,
@@ -70,6 +71,7 @@ export default async function WebDevelopmentPage({
       <div className="container mx-auto px-4 pb-12 text-center">
         <p className="text-[10px] text-gray-500/40 font-medium tracking-wide">{_seoTitle}</p>
       </div>
+      <SeoContentBlock />
     </>
   );
 }

@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
 import { ORG_ID } from '@/lib/schema';
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 
 export async function generateMetadata({
   params,
@@ -297,6 +298,7 @@ export default async function GeoServicePage({ params }: { params: Promise<{ loc
       <div className="container mx-auto px-4 pb-12 text-center">
         <p className="text-[10px] text-gray-500/40 font-medium tracking-wide">{_seoTitle}</p>
       </div>
+      <SeoContentBlock />
     </>
   );
 }

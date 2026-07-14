@@ -1,9 +1,8 @@
 'use client';
 
 import React from 'react';
-import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/navigation';
+import { Link, usePathname } from '@/i18n/navigation';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { CaretRight, House } from '@phosphor-icons/react/dist/ssr';
 

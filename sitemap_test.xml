@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<url>
+<loc>https://www.codayweb.de/de</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>1</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/about</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/about" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/booking</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/booking" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/contact</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/contact" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/pricing</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/pricing" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/process</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/process" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/work</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/work" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/webdesign-agentur-wetzlar</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/webdesign-agentur-wetzlar" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/angebot-handwerker</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/angebot-handwerker" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/services</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/services" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/services/web-development</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/services/web-development" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/services/web-development/react-nextjs-agentur</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/services/web-development/react-nextjs-agentur" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/services/web-development/e-commerce-shops</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/services/web-development/e-commerce-shops" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/services/web-development/full-stack-entwicklung</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/services/web-development/full-stack-entwicklung" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/services/web-development/cloud-infrastructure</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/services/web-development/cloud-infrastructure" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/services/web-design</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/services/web-design" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/services/web-design/ux-ui-design</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/services/web-design/ux-ui-design" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/services/web-design/design-systems</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/services/web-design/design-systems" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/services/web-design/website-relaunch</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/services/web-design/website-relaunch" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/services/growth/seo-optimization</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/services/growth/seo-optimization" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/services/growth/performance-optimization</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/services/growth/performance-optimization" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/services/growth/digital-consulting</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/services/growth/digital-consulting" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/services/seo</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/services/seo" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/services/performance</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/services/performance" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/services/consulting</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/services/consulting" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/services/ecommerce-development</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/services/ecommerce-development" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/services/enterprise-web</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/services/enterprise-web" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/services/generative-engine-optimization</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/services/generative-engine-optimization" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/services/design/ui-ux</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/services/design/ui-ux" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/services/design/brand-identity</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/services/design/brand-identity" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/services/design/ux-audit</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/services/design/ux-audit" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/services/design/design-systems</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/services/design/design-systems" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/services/development/api-integration</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/services/development/api-integration" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/services/development/headless-cms</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/services/development/headless-cms" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/services/development/migration</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/services/development/migration" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/services/development/web-apps</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/services/development/web-apps" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/standorte/wetzlar</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/standorte/wetzlar" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/standorte/giessen</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/standorte/giessen" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/standorte/hessen</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/standorte/hessen" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/branchen</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/branchen" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/branchen/handwerk-bau</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/branchen/handwerk-bau" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/branchen/immobilien-makler</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/branchen/immobilien-makler" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/branchen/unternehmensberatung</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/branchen/unternehmensberatung" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/branchen/aerzte-gesundheit</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/branchen/aerzte-gesundheit" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/branchen/anwaelte-kanzleien</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/branchen/anwaelte-kanzleien" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/branchen/gastronomie-hotellerie</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/branchen/gastronomie-hotellerie" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/branchen/startups-tech</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/branchen/startups-tech" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/branchen/handwerker</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/branchen/handwerker" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/branchen/handwerker/wetzlar</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/branchen/handwerker/wetzlar" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/branchen/gesundheitswesen</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/branchen/gesundheitswesen" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/branchen/gesundheitswesen/arzt-wetzlar</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/branchen/gesundheitswesen/arzt-wetzlar" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/branchen/gesundheitswesen/arzt-giessen</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/branchen/gesundheitswesen/arzt-giessen" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/branchen/automobil</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/branchen/automobil" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/branchen/automobil/kfz-werkstatt</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/branchen/automobil/kfz-werkstatt" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/branchen/automobil/kfz-mechatroniker</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/branchen/automobil/kfz-mechatroniker" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/branchen/automobil/autohaendler</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/branchen/automobil/autohaendler" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/branchen/gastronomie</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/branchen/gastronomie" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/branchen/dienstleistung</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/branchen/dienstleistung" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/branchen/immobilien</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/branchen/immobilien" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/branchen/public-sector</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/branchen/public-sector" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/branchen/retail</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/branchen/retail" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/landingpages/wetzlar</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/landingpages/wetzlar" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/landingpages/giessen</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/landingpages/giessen" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/landingpages/marburg</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/landingpages/marburg" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/landingpages/dillenburg</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/landingpages/dillenburg" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/landingpages/herborn</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/landingpages/herborn" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/landingpages/weilburg</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/landingpages/weilburg" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/landingpages/localwetzlar</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/landingpages/localwetzlar" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/knowledge/blog</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/knowledge/blog" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/knowledge/faq</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/knowledge/faq" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/legal/impressum</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/legal/impressum" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.3</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/legal/datenschutz</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/legal/datenschutz" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.3</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/legal/agb</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/legal/agb" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.3</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/garantie</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/garantie" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/partnerschaft</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/partnerschaft" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/presse</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/presse" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/analyzer</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/analyzer" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://www.codayweb.de/de/calculator</loc>
+<xhtml:link rel="alternate" hreflang="de" href="https://www.codayweb.de/de/calculator" />
+<lastmod>2026-07-07T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+</urlset>
