@@ -125,6 +125,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                 <li>
                   <Link
                     href="/angebot-handwerker"
+                    locale="de"
                     className="text-text-light hover:text-primary transition-colors"
                   >
                     Angebot für Handwerker
@@ -165,6 +166,30 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                   Generative Engine Optimization (GEO)
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/services/design/brand-identity"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Brand Identity
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/design/ux-audit"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  UX Audit
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/design/design-systems"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Design Systems
+                </Link>
+              </li>
             </ul>
           </section>
 
@@ -187,6 +212,54 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link
+                  href="/branchen/handwerker"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Handwerker
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/branchen/gesundheitswesen"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Gesundheitswesen
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/branchen/gastronomie"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Gastronomie
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/branchen/dienstleistung"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Dienstleistung
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/branchen/immobilien"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Immobilien
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/branchen/public-sector"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Public Sector
+                </Link>
+              </li>
               <li>
                 <Link
                   href="/branchen/gesundheitswesen/arzt-giessen"
@@ -238,6 +311,23 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
             </ul>
           </section>
 
+          {/* Tools */}
+          <section>
+            <h2 className="text-2xl font-bold text-primary mb-4 border-b border-gray-200 pb-2">
+              {locale === 'en' ? 'Tools' : 'Tools'}
+            </h2>
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  href="/analyzer"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Website Analyzer
+                </Link>
+              </li>
+            </ul>
+          </section>
+
           {/* Locations & Landingpages */}
           <section>
             <h2 className="text-2xl font-bold text-primary mb-4 border-b border-gray-200 pb-2">
@@ -247,6 +337,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               <li>
                 <Link
                   href="/webdesign-agentur-wetzlar"
+                  locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
                   Webdesign Wetzlar (Agentur)
@@ -255,6 +346,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               <li>
                 <Link
                   href="/webdesign-agentur-wetzlar"
+                  locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
                   Standort Wetzlar
@@ -276,16 +368,23 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                   Standort Hessen
                 </Link>
               </li>
-              {landingPages.map((city) => (
-                <li key={`lp-${city}`}>
-                  <Link
-                    href={`/landingpages/${city}`}
-                    className="text-text-light hover:text-primary transition-colors"
-                  >
-                    Landingpage {city.charAt(0).toUpperCase() + city.slice(1)}
-                  </Link>
-                </li>
-              ))}
+              {landingPages.map((city) => {
+                const formattedCity =
+                  city.toLowerCase() === 'giessen'
+                    ? 'Gießen'
+                    : city.charAt(0).toUpperCase() + city.slice(1);
+                return (
+                  <li key={`lp-${city}`}>
+                    <Link
+                      href={`/landingpages/${city}`}
+                      locale="de"
+                      className="text-text-light hover:text-primary transition-colors"
+                    >
+                      Landingpage {formattedCity}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </section>
 

@@ -59,21 +59,33 @@ export const SeoHead: React.FC<SeoHeadProps> = ({
 
   const cleanPath = getPathWithoutLang(currentPathname);
 
-  // Generate URLs
-  const getLocalizedUrl = (lang: string) => {
-    // Handle root path specially if needed, but usually /de or /en
-    const path = cleanPath === '/' ? '' : cleanPath;
-    return `${BASE_URL}/${lang}${path}`;
+  // Helper function to build localized URLs
+  const getLocalizedUrl = (targetLocale: string) => {
+    let path = cleanPath;
+    // Don't append trailing slash for the root path when locale prefix is added
+    if (path === '/') path = '';
+    return `${BASE_URL}/${targetLocale}${path}`;
   };
 
-  // Ensure canonical URL has no trailing slash (unless root) to prevent duplicate content indexing
-  const rawPath = currentPathname;
-  const canonicalPath =
+  const rawPath = cleanPath;
+  const canonicalPathWithoutLocale =
     rawPath.length > 1 && rawPath.endsWith('/') ? rawPath.slice(0, -1) : rawPath;
-  const canonicalUrl = `${BASE_URL}${canonicalPath}`;
+
+  // Include locale in canonical to avoid middleware redirects
+  const canonicalPath = canonicalPathWithoutLocale === '/' ? '' : canonicalPathWithoutLocale;
+  const canonicalUrl = `${BASE_URL}/${currentLang}${canonicalPath}`;
+
+  const localPathsRegex = /^\/(landingpages|webdesign-agentur-wetzlar|angebot-handwerker)(\/.*)?$/;
+  const isLocalPath = localPathsRegex.test(cleanPath);
 
   // Default links based on current path (assumes same slug)
-  const defaultLinks = SUPPORTED_LANGUAGES.map((lang) => ({
+  const defaultLinks = SUPPORTED_LANGUAGES.filter((lang) => {
+    // Do not output 'en' alternate links for local SEO pages since they redirect to 'de'
+    if (lang === 'en' && isLocalPath) {
+      return false;
+    }
+    return true;
+  }).map((lang) => ({
     rel: 'alternate',
     hreflang: lang,
     href: getLocalizedUrl(lang),

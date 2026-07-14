@@ -139,9 +139,9 @@ export const ContactClient: React.FC = () => {
                         <OptimizedIcon icon={Envelope} />
                       </div>
                       <div>
-                        <strong className="block text-secondary text-sm mb-1">
+                        <span className="block font-bold text-secondary text-sm mb-1">
                           {t('location.email.label', { fallback: 'E-Mail' })}
-                        </strong>
+                        </span>
                         <span className="text-sm">umut@codayweb.de</span>
                       </div>
                     </m.a>
@@ -155,9 +155,9 @@ export const ContactClient: React.FC = () => {
                         <OptimizedIcon icon={Phone} />
                       </div>
                       <div>
-                        <strong className="block text-secondary text-sm mb-1">
+                        <span className="block font-bold text-secondary text-sm mb-1">
                           {t('location.phone.label', { fallback: 'Telefon' })}
-                        </strong>
+                        </span>
                         <span className="text-sm">+49 176 41195301</span>
                       </div>
                     </m.a>
@@ -167,9 +167,9 @@ export const ContactClient: React.FC = () => {
                         <OptimizedIcon icon={MapPin} />
                       </div>
                       <div>
-                        <strong className="block text-secondary text-sm mb-1">
+                        <span className="block font-bold text-secondary text-sm mb-1">
                           {t('location.address.label', { fallback: 'Standort' })}
-                        </strong>
+                        </span>
                         <span className="text-sm">
                           Wetzlar, Deutschland
                           <br />
@@ -183,9 +183,9 @@ export const ContactClient: React.FC = () => {
                         <OptimizedIcon icon={Clock} />
                       </div>
                       <div>
-                        <strong className="block text-secondary text-sm mb-1">
+                        <span className="block font-bold text-secondary text-sm mb-1">
                           {t('location.hours.label', { fallback: 'Erreichbarkeit' })}
-                        </strong>
+                        </span>
                         <span className="text-sm">
                           Mo. - Fr.: 09:00 - 18:00 Uhr
                           <br />

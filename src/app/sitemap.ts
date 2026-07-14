@@ -169,7 +169,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     sitemapEntry('/services/development/web-apps', { changeFrequency: 'monthly', priority: 0.6 }),
 
     // === Standorte (Local SEO) ===
-    sitemapEntry('/standorte/wetzlar', { changeFrequency: 'monthly', priority: 0.9 }),
+    sitemapEntry('/webdesign-agentur-wetzlar', { changeFrequency: 'monthly', priority: 0.9 }),
     sitemapEntry('/standorte/giessen', { changeFrequency: 'monthly', priority: 0.8 }),
     sitemapEntry('/standorte/hessen', { changeFrequency: 'monthly', priority: 0.8 }),
 

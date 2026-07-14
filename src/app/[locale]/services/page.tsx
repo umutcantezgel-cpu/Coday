@@ -1,9 +1,17 @@
+export const dynamic = 'force-static';
+export const dynamicParams = false;
+
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { SeoHead } from '@/shared/ui/SeoHead';
 import { ServicesOverview } from '@/features/services/ui/ServicesOverview';
 import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
+import { routing } from '@/i18n/routing';
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 export async function generateMetadata({
   params,

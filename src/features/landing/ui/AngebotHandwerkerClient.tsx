@@ -504,7 +504,7 @@ export default function AngebotHandwerker() {
             </p>
 
             <a
-              href="/contact"
+              href="/de/contact"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-4 bg-teal-500 text-white px-10 py-6 rounded-2xl font-bold uppercase tracking-widest text-xl hover:bg-teal-400 transition-colors motion-reduce:duration-[0.01ms] shadow-[0_0_40px_rgba(44,165,160,0.4)] hover:shadow-[0_0_60px_rgba(44,165,160,0.6)]"

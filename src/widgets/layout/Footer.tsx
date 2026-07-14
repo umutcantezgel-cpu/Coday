@@ -306,7 +306,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   prefetch={false}
-                  href="/standorte/wetzlar"
+                  href="/webdesign-agentur-wetzlar"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
                   Standort Wetzlar
