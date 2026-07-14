@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { useTranslations } from 'next-intl';
 import { Link as NavLink } from '@/i18n/navigation';
 import {
@@ -259,6 +260,8 @@ const PublicSectorPage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <SeoContentBlock title={t('seoText.title')} text={t('seoText.content')} />
       <RelevantFAQs
         serviceId={['web-development', 'seo']}
         className="bg-gray-50 border-t border-gray-100"

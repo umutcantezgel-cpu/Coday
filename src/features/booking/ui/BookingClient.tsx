@@ -1,6 +1,7 @@
-"use client";
+'use client';
 
 import { useTranslations } from 'next-intl';
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { BookingCalendar } from '@/features/booking';
 import { SeoHead } from '@/shared/ui/SeoHead';
 
@@ -36,6 +37,8 @@ export default function Booking() {
       <div className="max-w-4xl mx-auto">
         <BookingCalendar className="shadow-2xl border-aurora-mist/50" />
       </div>
+
+      <SeoContentBlock title={t('seoText.title')} text={t('seoText.content')} />
     </main>
   );
 }

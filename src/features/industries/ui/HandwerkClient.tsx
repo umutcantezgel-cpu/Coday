@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { CheckCircle } from '@phosphor-icons/react';
 import { useTranslations } from 'next-intl';
@@ -145,6 +146,10 @@ const Handwerk: React.FC = () => {
         </div>
       </section>
 
+      <SeoContentBlock
+        title={t('handwerk-bau.seoText.title')}
+        text={t('handwerk-bau.seoText.content')}
+      />
       <RelevantFAQs
         serviceId={['web-development', 'seo']}
         className="bg-gray-50 border-t border-gray-100"

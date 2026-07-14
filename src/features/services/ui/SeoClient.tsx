@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { useTranslations } from 'next-intl';
 import BlurText from '@/shared/ui/BlurText';
 import GradientText from '@/shared/ui/GradientText';
@@ -239,6 +240,8 @@ export function SeoClient() {
       />
 
       {/* Relevant FAQs */}
+
+      <SeoContentBlock title={t('seo_page.seoText.title')} text={t('seo_page.seoText.content')} />
       <RelevantFAQs serviceId="seo" className="mb-24" />
 
       {/* SEO Process Timeline */}

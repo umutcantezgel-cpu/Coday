@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { useTranslations } from 'next-intl';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { PenNib, ArrowRight, Brain } from '@phosphor-icons/react';
@@ -180,6 +181,11 @@ export function UiUxClient() {
           </div>
         </div>
       </section>
+
+      <SeoContentBlock
+        title={t('ui_ux_page.seoText.title')}
+        text={t('ui_ux_page.seoText.content')}
+      />
       <RelevantFAQs serviceId="ui-ux" className="mb-24" />
     </>
   );

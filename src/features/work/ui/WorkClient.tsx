@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useCallback } from 'react';
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { useTranslations } from 'next-intl';
 import { AnimatePresence, m } from 'motion/react';
 import { FunnelSimple } from '@phosphor-icons/react';
@@ -129,13 +130,15 @@ const Work: React.FC = () => {
             {t('sections.booking.subtitle')}
           </p>
           <Link
-            href="/booking"
+            href="/contact"
             className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-white rounded-full font-bold text-lg hover:bg-primary-dark transition-colors motion-reduce:duration-[0.01ms] shadow-lg shadow-primary/25"
           >
             Jetzt anfragen
           </Link>
         </div>
       </section>
+
+      <SeoContentBlock title={t('seoText.title')} text={t('seoText.content')} />
     </div>
   );
 };

@@ -210,5 +210,9 @@
   "contact": {
     "title": "Projektanfrage für Behörden",
     "upload_label": "Lastenheft hochladen (PDF)"
+  },
+  "seoText": {
+    "title": "IT Services Public Sector",
+    "content": "Digitale Souveränität & Barrierefreiheit für den öffentlichen Sektor. Rechtssichere Softwarelösungen (EVB-IT). ISO 27001 und BITV 2.0 konform. Wir unterstützen Sie bei der Erstellung des Lastenhefts für die Verhandlungsvergabe."
   }
 }

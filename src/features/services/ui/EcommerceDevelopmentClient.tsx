@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { useTranslations } from 'next-intl';
 import BlurText from '@/shared/ui/BlurText';
 import GradientText from '@/shared/ui/GradientText';
@@ -95,6 +96,10 @@ export function EcommerceDevelopmentClient() {
 
       {/* Relevant FAQs */}
       <section className="py-24 bg-surface-light">
+        <SeoContentBlock
+          title={t('ecommerce_page.seoText.title')}
+          text={t('ecommerce_page.seoText.content')}
+        />
         <RelevantFAQs serviceId="web-development" />
       </section>
     </div>

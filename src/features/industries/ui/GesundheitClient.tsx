@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { useTranslations } from 'next-intl';
 import { SeoHead } from '@/shared/ui/SeoHead';
 import BlurText from '@/shared/ui/BlurText';
@@ -108,6 +109,11 @@ const Gesundheit: React.FC = () => {
           <TrustBadgeGrid />
         </div>
       </section>
+
+      <SeoContentBlock
+        title={t('aerzte-gesundheit.seoText.title')}
+        text={t('aerzte-gesundheit.seoText.content')}
+      />
       <RelevantFAQs
         serviceId={['web-development', 'seo']}
         className="bg-gray-50 border-t border-gray-100"

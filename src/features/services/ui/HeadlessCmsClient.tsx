@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { useTranslations } from 'next-intl';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import {
@@ -320,6 +321,11 @@ export function HeadlessCmsClient() {
           </div>
         </div>
       </section>
+
+      <SeoContentBlock
+        title={t('headless_cms_page.seoText.title')}
+        text={t('headless_cms_page.seoText.content')}
+      />
       <RelevantFAQs serviceId="headless-cms" className="mb-24" />
     </>
   );

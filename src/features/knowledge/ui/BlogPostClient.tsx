@@ -234,7 +234,7 @@ const BlogPost: React.FC = () => {
                   <h2 className="text-xl font-bold text-secondary mb-2">{post.author}</h2>
                   <p className="text-slate-500 mb-4 leading-relaxed">{t('authorDesc')}</p>
                   <Link
-                    href="/about"
+                    href="/contact"
                     className="text-primary font-bold text-sm flex items-center gap-1 hover:gap-2 transition motion-reduce:duration-[0.01ms]"
                   >
                     {t('moreAboutAuthor')}
@@ -253,6 +253,9 @@ const BlogPost: React.FC = () => {
         </div>
       </div>
 
+      <p className="sr-only">
+        Published in the {currentLocale === 'en' ? 'Tech Blog' : 'Agentur Blog'}
+      </p>
       <SeoAuthorBlock />
       <RelatedArticles currentSlug={post.slug} category={post.category} />
       <ShareFAB title={post.title} url={currentUrl} />

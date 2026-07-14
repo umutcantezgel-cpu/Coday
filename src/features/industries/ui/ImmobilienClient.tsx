@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { useTranslations } from 'next-intl';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { Cube, ShieldCheck, At } from '@phosphor-icons/react';
@@ -151,6 +152,11 @@ const Immobilien: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <SeoContentBlock
+        title={t('immobilien-makler.seoText.title')}
+        text={t('immobilien-makler.seoText.content')}
+      />
       <RelevantFAQs
         serviceId={['web-development', 'seo']}
         className="bg-gray-50 border-t border-gray-100"

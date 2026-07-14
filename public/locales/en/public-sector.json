@@ -210,5 +210,9 @@
   "contact": {
     "title": "Inquiry for Public Authorities",
     "upload_label": "Upload Specifications (PDF)"
+  },
+  "seoText": {
+    "title": "IT Services Public Sector",
+    "content": "Digital sovereignty & accessibility for public services. Legally compliant software solutions (EVB-IT). ISO 27001 and BITV 2.0 compliant. We support you in drafting the performance specifications for the negotiated tender."
   }
 }

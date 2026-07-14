@@ -38,16 +38,14 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: 'common' });
 
-  // Get local landing pages dynamically
-  const contentDir = path.join(process.cwd(), 'src', 'features', 'local-seo', 'model', 'content');
+  // Get local landing pages dynamically from the actual route folder
+  const landingPagesDir = path.join(process.cwd(), 'src', 'app', '[locale]', 'landingpages');
   let landingPages: string[] = [];
   try {
-    const files = fs.readdirSync(contentDir);
-    landingPages = files
-      .filter((file) => file.endsWith(`.${locale}.json`))
-      .map((file) => file.replace(`.${locale}.json`, ''));
+    const files = fs.readdirSync(landingPagesDir, { withFileTypes: true });
+    landingPages = files.filter((dirent) => dirent.isDirectory()).map((dirent) => dirent.name);
   } catch (e) {
-    console.error('Failed to read local seo content directory');
+    console.error('Failed to read landingpages directory');
   }
 
   return (
@@ -71,7 +69,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               </li>
               <li>
                 <Link
-                  href="/about"
+                  href="/contact"
                   className="text-text-light hover:text-primary transition-colors"
                 >
                   Über uns
@@ -122,14 +120,16 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                   Alle Leistungen
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/angebot-handwerker"
-                  className="text-text-light hover:text-primary transition-colors"
-                >
-                  Angebot für Handwerker
-                </Link>
-              </li>
+              {locale === 'de' && (
+                <li>
+                  <Link
+                    href="/angebot-handwerker"
+                    className="text-text-light hover:text-primary transition-colors"
+                  >
+                    Angebot für Handwerker
+                  </Link>
+                </li>
+              )}
             </ul>
           </section>
 

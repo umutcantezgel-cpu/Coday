@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { useTranslations } from 'next-intl';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import {
@@ -251,6 +252,11 @@ export function MigrationClient() {
           </div>
         </div>
       </section>
+
+      <SeoContentBlock
+        title={t('migration_page.seoText.title')}
+        text={t('migration_page.seoText.content')}
+      />
       <RelevantFAQs serviceId="migration" className="mb-24" />
     </>
   );

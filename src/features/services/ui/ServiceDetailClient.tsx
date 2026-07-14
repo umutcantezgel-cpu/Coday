@@ -183,12 +183,7 @@ export function ServiceDetailClient() {
             /
           </li>
           <li>
-            <NavLink
-              href={`/services/${category}`}
-              className="hover:text-sapphire transition-colors motion-reduce:duration-[0.01ms] capitalize"
-            >
-              {service.category}
-            </NavLink>
+            <span className="text-gray-500 capitalize">{service.category}</span>
           </li>
           <li aria-hidden="true" className="mx-2">
             /

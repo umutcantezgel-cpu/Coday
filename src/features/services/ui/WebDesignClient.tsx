@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 
 import { useTranslations } from 'next-intl';
 import { Link as NavLink } from '@/i18n/navigation';
@@ -307,6 +308,11 @@ export function WebDesignClient() {
       </section>
 
       {/* Relevant FAQs */}
+
+      <SeoContentBlock
+        title={t('web_design_page.seoText.title')}
+        text={t('web_design_page.seoText.content')}
+      />
       <RelevantFAQs serviceId="web-design" className="mb-24" />
 
       {/* Case Study Teaser - NEW */}

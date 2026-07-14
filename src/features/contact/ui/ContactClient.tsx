@@ -1,6 +1,7 @@
 'use client';
 
 import React, { Suspense, useEffect, useState } from 'react';
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import BlurText from '@/shared/ui/BlurText';
 import GradientText from '@/shared/ui/GradientText';
 import BookingCalendar from '@/features/booking/ui/BookingCalendar';
@@ -375,6 +376,8 @@ export const ContactClient: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <SeoContentBlock title={t('seoText.title')} text={t('seoText.content')} />
     </div>
   );
 };

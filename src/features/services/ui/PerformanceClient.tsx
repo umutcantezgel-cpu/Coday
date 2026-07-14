@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { useTranslations } from 'next-intl';
 import BlurText from '@/shared/ui/BlurText';
 import GradientText from '@/shared/ui/GradientText';
@@ -136,6 +137,10 @@ export function PerformanceClient() {
 
       {/* Relevant FAQs */}
       <section className="py-24 bg-surface-elevated">
+        <SeoContentBlock
+          title={t('performance_page.seoText.title')}
+          text={t('performance_page.seoText.content')}
+        />
         <RelevantFAQs serviceId="web-development" />
       </section>
     </div>

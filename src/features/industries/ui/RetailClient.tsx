@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { useTranslations } from 'next-intl';
 import BlurText from '@/shared/ui/BlurText';
 import { SeoHead } from '@/shared/ui/SeoHead';
@@ -97,6 +98,8 @@ const Retail: React.FC = () => {
           <LoyaltyLoop />
         </div>
       </section>
+
+      <SeoContentBlock title={t('retail.seoText.title')} text={t('retail.seoText.content')} />
       <RelevantFAQs
         serviceId={['web-development', 'seo']}
         className="bg-gray-50 border-t border-gray-100"

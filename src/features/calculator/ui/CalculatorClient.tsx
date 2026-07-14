@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect } from 'react';
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { useTranslations } from 'next-intl';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { CaretRight, CaretDown } from '@phosphor-icons/react';
@@ -211,6 +212,8 @@ const Calculator: React.FC = () => {
           </button>
         </div>
       </div>
+
+      <SeoContentBlock title={t('seoText.title')} text={t('seoText.content')} />
     </div>
   );
 };

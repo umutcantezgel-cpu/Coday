@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { useTranslations } from 'next-intl';
 import { Link as NavLink } from '@/i18n/navigation';
 
@@ -322,6 +323,10 @@ export function WebAppsClient() {
         </div>
       </section>
 
+      <SeoContentBlock
+        title={t('web_apps_page.seoText.title')}
+        text={t('web_apps_page.seoText.content')}
+      />
       <RelevantFAQs serviceId="web-apps" className="mb-24" />
     </div>
   );

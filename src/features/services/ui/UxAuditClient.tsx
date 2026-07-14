@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { useTranslations } from 'next-intl';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { ChartBar, ArrowRight, MagnifyingGlass, FileText } from '@phosphor-icons/react';
@@ -120,6 +121,11 @@ export function UxAuditClient() {
           </div>
         </div>
       </section>
+
+      <SeoContentBlock
+        title={t('ux_audit_page.seoText.title')}
+        text={t('ux_audit_page.seoText.content')}
+      />
       <RelevantFAQs serviceId="ux-audit" className="mb-24" />
     </>
   );

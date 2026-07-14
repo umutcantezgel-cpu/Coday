@@ -62,11 +62,7 @@
     },
     "values": {
       "desc": "Das ist uns wichtig.",
-      "items": [
-        "Transparenz in jedem Schritt",
-        "Höchste Code-Qualität",
-        "Echte Partnerschaften"
-      ],
+      "items": ["Transparenz in jedem Schritt", "Höchste Code-Qualität", "Echte Partnerschaften"],
       "title": "Unsere Werte"
     },
     "values_deck": {
@@ -104,11 +100,7 @@
       "type": "Remote (DE)"
     },
     "hero_desc": "Werde Teil unseres Teams und gestalte die digitale Zukunft.",
-    "hero_rotating": [
-      "Entwickler",
-      "Designer",
-      "Talente"
-    ],
+    "hero_rotating": ["Entwickler", "Designer", "Talente"],
     "hero_title_prefix": "Wir suchen",
     "list": [
       {
@@ -210,5 +202,9 @@
       }
     ],
     "title": "Warum Coday?"
+  },
+  "seoText": {
+    "title": "Join the Elite | Karriere bei Coday | Webdesign Agentur Jobs Wetzlar",
+    "content": "Wenn du nach \"Webdesign Agentur Jobs Wetzlar\" suchst, bist du bei Coday genau richtig. Join the Elite und werde Teil eines hochmotivierten Teams, das digitale Spitzenleistungen erbringt. Wir bieten dir nicht nur einen Job, sondern eine echte Karriere-Perspektive in der Webentwicklung.\n\nBei uns arbeitest du mit modernsten Technologien (React, Next.js) an spannenden Projekten für namhafte Kunden. Wir fördern deine individuelle Entwicklung durch kontinuierliche Weiterbildung und ein inspirierendes Arbeitsumfeld, in dem deine Ideen wertgeschätzt werden.\n\nEgal ob als Frontend Engineer, UI/UX Designer oder Projektmanager – bei Coday gestaltest du die digitale Zukunft aktiv mit. Bewirb dich jetzt und starte deine Karriere bei der führenden Webdesign Agentur in Wetzlar."
   }
 }

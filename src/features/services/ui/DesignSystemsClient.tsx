@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { useTranslations } from 'next-intl';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { SquaresFour, ArrowRight, Check, FigmaLogo, Code } from '@phosphor-icons/react';
@@ -133,6 +134,11 @@ export function DesignSystemsClient() {
           </div>
         </div>
       </section>
+
+      <SeoContentBlock
+        title={t('design_systems_page.seoText.title')}
+        text={t('design_systems_page.seoText.content')}
+      />
       <RelevantFAQs serviceId="design-systems" className="mb-24" />
     </>
   );

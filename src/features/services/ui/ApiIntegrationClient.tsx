@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { useTranslations } from 'next-intl';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import {
@@ -269,6 +270,11 @@ export function ApiIntegrationClient() {
           </div>
         </div>
       </section>
+
+      <SeoContentBlock
+        title={t('api_integration_page.seoText.title')}
+        text={t('api_integration_page.seoText.content')}
+      />
       <RelevantFAQs serviceId="api-integrations" className="mb-24" />
     </>
   );

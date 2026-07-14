@@ -156,5 +156,9 @@
   },
   "page": {
     "description": "A good text or article should contain at least 500 words, but the quality of our Web Design Agency in Wetzlar is measured in more than just words. We focus on technical excellence, measurable performance (LCP under 2 seconds), and sustainable growth for both B2B and B2C companies. As your local partner in Central Hesse, we specialize in modern Next.js solutions, headless CMS, and highly secure, performant web applications. Transparency, fixed pricing, and direct communication are always at the forefront of our partnership."
+  },
+  "seoText": {
+    "title": "Projektkosten-Rechner | The Agency Configurator | Coday Web-Agentur",
+    "content": "Nutzen Sie unseren transparenten Projektkosten-Rechner, The Agency Configurator, um eine realistische Einschätzung für Ihr nächstes Webprojekt zu erhalten. Als professionelle Coday Web-Agentur legen wir großen Wert auf Kostentransparenz und Planungssicherheit von Anfang an.\n\nEgal ob Sie eine einfache Corporate Website, einen komplexen E-Commerce Shop oder eine individuelle Web-Applikation planen – unser Konfigurator berücksichtigt alle relevanten Faktoren wie Design-Anforderungen, technische Features und SEO-Optimierung.\n\nStarten Sie jetzt Ihre Projektplanung mit der Coday Web-Agentur und erhalten Sie in wenigen Minuten eine fundierte Kostenschätzung. Für ein detailliertes, verbindliches Angebot stehen wir Ihnen anschließend gerne in einem persönlichen Beratungsgespräch zur Verfügung."
   }
 }

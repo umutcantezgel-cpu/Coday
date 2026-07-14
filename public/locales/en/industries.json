@@ -158,6 +158,10 @@
       "map": {
         "tooltip": "Your Business: Dominant in the Region"
       }
+    },
+    "seoText": {
+      "title": "Handwerk Bau Webdesign & IT-Lösungen",
+      "content": "Das Handwerk bildet das Rückgrat der Wirtschaft. Mit professionellem Handwerk Bau Webdesign & IT-Lösungen bringen wir Ihren Traditionsbetrieb erfolgreich in die digitale Zukunft. Kunden suchen heute online nach zuverlässigen Handwerkern – wer hier nicht sichtbar ist, verliert wertvolle Aufträge an die Konkurrenz.\n\nWir entwickeln Webseiten, die Ihre handwerkliche Qualität und Expertise eindrucksvoll präsentieren. Von der Integration von Projekt-Galerien bis hin zu automatisierten Anfrageformularen für schnelle Kostenvoranschläge – wir digitalisieren Ihre Kundengewinnung.\n\nDarüber hinaus unterstützen wir Sie bei der Implementierung von Schnittstellen zu Handwerkersoftware und optimieren Ihre lokale Auffindbarkeit. So stellen wir sicher, dass Sie genau in Ihrer Region für Ihre handwerklichen Leistungen gefunden und beauftragt werden. Digital Dominance for Your Craft."
     }
   },
   "immobilien-makler": {
@@ -285,6 +289,10 @@
         },
         "cta": "Request Realtor Package"
       }
+    },
+    "seoText": {
+      "title": "Exklusive Objekte, exklusiv präsentiert",
+      "content": "Als Immobilien Makler wissen Sie: Exklusive Objekte müssen exklusiv präsentiert werden. Der erste Eindruck einer Immobilie entsteht heute fast immer online. Eine hochprofessionelle Website ist daher unverzichtbar für die erfolgreiche Vermarktung von hochwertigen Objekten. Wir entwickeln digitale Immobilien-Erlebnisse, die Vertrauen schaffen und die Besonderheiten jedes Objekts perfekt in Szene setzen. \n      \nMit modernstem Webdesign und intelligenten IT-Lösungen sorgen wir dafür, dass Ihre Immobilienangebote optimal gefunden und dargestellt werden. Dabei achten wir besonders auf eine intuitive Benutzerführung, schnelle Ladezeiten und eine fehlerfreie Darstellung auf allen Endgeräten.\n      \nDarüber hinaus integrieren wir leistungsstarke Schnittstellen zu Ihrer Makler-Software, sodass Ihre Objekte automatisch und in Echtzeit auf Ihrer Website aktualisiert werden. Setzen Sie auf digitale Exzellenz und heben Sie sich von der Konkurrenz ab – für mehr qualifizierte Anfragen und schnellere Abschlüsse. Exklusive Objekte, exklusiv präsentiert. Exclusive properties, exclusively presented."
     }
   },
   "aerzte-gesundheit": {
@@ -390,6 +398,10 @@
         },
         "impact": "More time for medicine, less for bureaucracy."
       }
+    },
+    "seoText": {
+      "title": "Aerzte Gesundheit Webdesign & IT-Lösungen",
+      "content": "Im medizinischen Sektor ist Vertrauen das höchste Gut. Mit spezialisierten Aerzte Gesundheit Webdesign & IT-Lösungen schaffen wir digitale Praxisauftritte, die Seriosität, Kompetenz und Empathie vermitteln. Patienten informieren sich zunehmend online über Behandlungsmethoden und Ärzte, bevor sie einen Termin vereinbaren.\n\nWir gestalten Ihre Praxiswebsite so, dass sie Patienten optimal informiert und den Praxisablauf durch digitale Services entlastet. Dazu gehören die sichere Integration von Online-Terminbuchungssystemen, digitale Anamnesebögen und telemedizinische Schnittstellen.\n\nHöchste Priorität haben dabei selbstverständlich die Einhaltung strenger Datenschutzrichtlinien und die Barrierefreiheit der Website. Wir sorgen dafür, dass Ihre medizinische Expertise online genauso professionell wahrgenommen wird wie in Ihrer Praxis vor Ort."
     }
   },
   "anwaelte-kanzleien": {
@@ -439,6 +451,10 @@
         "title": "Blog System",
         "description": "Easy publishing of legal updates."
       }
+    },
+    "seoText": {
+      "title": "Rechtssichere Mandanten-Akquise",
+      "content": "Für Anwälte und Kanzleien ist eine rechtssichere Mandanten-Akquise im digitalen Raum heute essenziell. Mandanten recherchieren rechtliche Probleme zunehmend online und suchen nach Kanzleien, die Kompetenz und Vertrauenswürdigkeit ausstrahlen. Ein professioneller digitaler Auftritt ist daher Ihr wichtigstes Aushängeschild.\n      \nWir entwickeln Webdesign & IT-Lösungen, die speziell auf die hohen Anforderungen von Rechtsanwälten zugeschnitten sind. Neben einer seriösen und modernen optischen Präsentation legen wir höchsten Wert auf Datenschutz (DSGVO-Konformität) und absolute Datensicherheit.\n      \nDurch gezieltes Content-Marketing und lokale SEO-Strategien sorgen wir dafür, dass Ihre Kanzlei genau dann gefunden wird, wenn potenzielle Mandanten nach juristischer Unterstützung suchen. Vertrauen Sie auf unsere Expertise, um Ihre digitale Mandantengewinnung auf das nächste Level zu heben. Rechtssichere Mandanten-Akquise. Legally Secure Client Acquisition."
     }
   },
   "gastronomie-hotellerie": {
@@ -535,6 +551,10 @@
           }
         }
       }
+    },
+    "seoText": {
+      "title": "Geschmack beginnt beim ersten Klick",
+      "content": "In der Gastronomie und Hotellerie gilt mehr denn je: Geschmack beginnt beim ersten Klick. Bevor ein Gast Ihr Restaurant besucht oder ein Zimmer bucht, macht er sich online ein Bild von Ihrem Angebot. Eine ansprechende, emotionale und benutzerfreundliche Website ist entscheidend, um aus Website-Besuchern echte Gäste zu machen.\n      \nAls Experten für Webdesign und IT-Lösungen in der Hospitality-Branche kreieren wir digitale Erlebnisse, die Appetit machen und Urlaubsgefühle wecken. Wir integrieren nahtlose Tischreservierungs- und Buchungssysteme, die Ihren Arbeitsalltag erleichtern und den Komfort für Ihre Gäste maximieren.\n      \nMit schnellen Ladezeiten, perfekter mobiler Darstellung und lokaler Suchmaschinenoptimierung stellen wir sicher, dass Ihr Haus bei relevanten Suchanfragen ganz oben steht. Investieren Sie in eine digitale Präsenz, die Ihrem erstklassigen Service vor Ort in nichts nachsteht."
     }
   },
   "ecommerce-retail": {
@@ -630,6 +650,10 @@
           "add_to_cart": "Add to Cart"
         }
       }
+    },
+    "seoText": {
+      "title": "Branchenspezifische IT-Lösungen",
+      "content": "Als führende Webdesign Agentur verstehen wir die einzigartigen digitalen Herausforderungen der Branche. Eine professionelle Online-Präsenz ist heute weit mehr als nur eine digitale Visitenkarte – sie ist das Herzstück Ihrer Unternehmenskommunikation und ein entscheidender Faktor für die Neukundengewinnung.\n\nWir entwickeln maßgeschneiderte Webdesign und IT-Lösungen, die exakt auf Ihre spezifischen Anforderungen zugeschnitten sind. Von der Konzeption über das Design bis hin zur technischen Umsetzung und Suchmaschinenoptimierung begleiten wir Sie ganzheitlich bei Ihrer digitalen Transformation.\n\nSetzen Sie auf technologische Exzellenz, höchste Sicherheitsstandards und zukunftssichere Architekturen. Gemeinsam maximieren wir Ihren digitalen Erfolg und sichern Ihre Wettbewerbsfähigkeit im digitalen Zeitalter."
     }
   },
   "unternehmensberatung": {
@@ -709,6 +733,10 @@
         },
         "insight": "Your biggest lever is the conversion from visitor to inquiry."
       }
+    },
+    "seoText": {
+      "title": "Expertise sichtbar machen",
+      "content": "Für eine Unternehmensberatung gilt: Sie müssen Ihre Expertise sichtbar machen. Ihre potenziellen Klienten suchen nach bewährten Lösungen und vertrauenswürdigen Partnern für ihre komplexen geschäftlichen Herausforderungen. Eine exzellente digitale Präsenz ist der Schlüssel, um diese Zielgruppe zu erreichen und von Ihrer Kompetenz zu überzeugen.\n      \nWir kombinieren anspruchsvolles Webdesign mit maßgeschneiderten IT-Lösungen, um Ihre Beratungsleistung digital erlebbar zu machen. Von der klaren Darstellung Ihrer Kernkompetenzen bis hin zur Veröffentlichung von Thought-Leadership-Artikeln und Case Studies – wir schaffen eine Plattform, die Ihre Autorität in der Branche unterstreicht.\n      \nMit gezielter Suchmaschinenoptimierung und einer Conversion-fokussierten Architektur verwandeln wir Ihre Website in einen leistungsstarken Kanal für die Lead-Generierung. Positionieren Sie sich als der bevorzugte Ansprechpartner für strategische Unternehmensentscheidungen."
     }
   },
   "startups-tech": {
@@ -758,29 +786,53 @@
         "title": "Multilingualism (i18n)",
         "description": "Automatic language detection and switch."
       }
+    },
+    "seoText": {
+      "title": "Scale fast, look global",
+      "content": "Für Startups und Tech-Unternehmen lautet die Devise: Scale fast, look global. Investoren, Partner und frühe Nutzer erwarten von innovativen Unternehmen auch eine technologisch herausragende und zukunftsweisende digitale Präsenz. Eine veraltete oder fehlerhafte Website kann das Vertrauen in Ihr Produkt nachhaltig beschädigen.\n      \nWir liefern Webdesign und IT-Lösungen, die mit dem Tempo Ihres Startups mithalten können. Von flexiblen Headless-Architekturen bis hin zu hochperformanten Web-Apps – wir bauen digitale Fundamente, die skalierbar, sicher und blitzschnell sind. \n      \nEgal ob Sie sich in der Seed-Phase befinden oder bereits international expandieren, wir sorgen dafür, dass Ihre Website Ihre technologische Vision perfekt transportiert und Sie als ernstzunehmenden Player im Markt positioniert."
     }
   },
   "title_prefix": "Tailored Solutions",
   "title_suffix": "for Your Industry.",
   "card_craft": {
     "title": "Crafts & Construction",
-    "desc": "Digital presence that reflects craftsmanship and generates high-quality customer inquiries."
+    "desc": "Digital presence that reflects craftsmanship and generates high-quality customer inquiries.",
+    "seoText": {
+      "title": "Branchenspezifische IT-Lösungen",
+      "content": "Als führende Webdesign Agentur verstehen wir die einzigartigen digitalen Herausforderungen der Branche. Eine professionelle Online-Präsenz ist heute weit mehr als nur eine digitale Visitenkarte – sie ist das Herzstück Ihrer Unternehmenskommunikation und ein entscheidender Faktor für die Neukundengewinnung.\n\nWir entwickeln maßgeschneiderte Webdesign und IT-Lösungen, die exakt auf Ihre spezifischen Anforderungen zugeschnitten sind. Von der Konzeption über das Design bis hin zur technischen Umsetzung und Suchmaschinenoptimierung begleiten wir Sie ganzheitlich bei Ihrer digitalen Transformation.\n\nSetzen Sie auf technologische Exzellenz, höchste Sicherheitsstandards und zukunftssichere Architekturen. Gemeinsam maximieren wir Ihren digitalen Erfolg und sichern Ihre Wettbewerbsfähigkeit im digitalen Zeitalter."
+    }
   },
   "card_realestate": {
     "title": "Real Estate & Agents",
-    "desc": "Exclusive exposés and high-performance portfolios to attract premium mandates."
+    "desc": "Exclusive exposés and high-performance portfolios to attract premium mandates.",
+    "seoText": {
+      "title": "Branchenspezifische IT-Lösungen",
+      "content": "Als führende Webdesign Agentur verstehen wir die einzigartigen digitalen Herausforderungen der Branche. Eine professionelle Online-Präsenz ist heute weit mehr als nur eine digitale Visitenkarte – sie ist das Herzstück Ihrer Unternehmenskommunikation und ein entscheidender Faktor für die Neukundengewinnung.\n\nWir entwickeln maßgeschneiderte Webdesign und IT-Lösungen, die exakt auf Ihre spezifischen Anforderungen zugeschnitten sind. Von der Konzeption über das Design bis hin zur technischen Umsetzung und Suchmaschinenoptimierung begleiten wir Sie ganzheitlich bei Ihrer digitalen Transformation.\n\nSetzen Sie auf technologische Exzellenz, höchste Sicherheitsstandards und zukunftssichere Architekturen. Gemeinsam maximieren wir Ihren digitalen Erfolg und sichern Ihre Wettbewerbsfähigkeit im digitalen Zeitalter."
+    }
   },
   "card_shop": {
     "title": "E-Commerce & Retail",
-    "desc": "Scalable online shops with lightning-fast loading times for maximum conversion rates."
+    "desc": "Scalable online shops with lightning-fast loading times for maximum conversion rates.",
+    "seoText": {
+      "title": "Branchenspezifische IT-Lösungen",
+      "content": "Als führende Webdesign Agentur verstehen wir die einzigartigen digitalen Herausforderungen der Branche. Eine professionelle Online-Präsenz ist heute weit mehr als nur eine digitale Visitenkarte – sie ist das Herzstück Ihrer Unternehmenskommunikation und ein entscheidender Faktor für die Neukundengewinnung.\n\nWir entwickeln maßgeschneiderte Webdesign und IT-Lösungen, die exakt auf Ihre spezifischen Anforderungen zugeschnitten sind. Von der Konzeption über das Design bis hin zur technischen Umsetzung und Suchmaschinenoptimierung begleiten wir Sie ganzheitlich bei Ihrer digitalen Transformation.\n\nSetzen Sie auf technologische Exzellenz, höchste Sicherheitsstandards und zukunftssichere Architekturen. Gemeinsam maximieren wir Ihren digitalen Erfolg und sichern Ihre Wettbewerbsfähigkeit im digitalen Zeitalter."
+    }
   },
   "card_consulting": {
     "title": "Business Consulting",
-    "desc": "Representative web presences that convey your expertise and professionalism at first glance."
+    "desc": "Representative web presences that convey your expertise and professionalism at first glance.",
+    "seoText": {
+      "title": "Branchenspezifische IT-Lösungen",
+      "content": "Als führende Webdesign Agentur verstehen wir die einzigartigen digitalen Herausforderungen der Branche. Eine professionelle Online-Präsenz ist heute weit mehr als nur eine digitale Visitenkarte – sie ist das Herzstück Ihrer Unternehmenskommunikation und ein entscheidender Faktor für die Neukundengewinnung.\n\nWir entwickeln maßgeschneiderte Webdesign und IT-Lösungen, die exakt auf Ihre spezifischen Anforderungen zugeschnitten sind. Von der Konzeption über das Design bis hin zur technischen Umsetzung und Suchmaschinenoptimierung begleiten wir Sie ganzheitlich bei Ihrer digitalen Transformation.\n\nSetzen Sie auf technologische Exzellenz, höchste Sicherheitsstandards und zukunftssichere Architekturen. Gemeinsam maximieren wir Ihren digitalen Erfolg und sichern Ihre Wettbewerbsfähigkeit im digitalen Zeitalter."
+    }
   },
   "card_health": {
     "title": "Healthcare",
-    "desc": "Trust-building practice websites with seamless, secure appointment booking for your patients."
+    "desc": "Trust-building practice websites with seamless, secure appointment booking for your patients.",
+    "seoText": {
+      "title": "Branchenspezifische IT-Lösungen",
+      "content": "Als führende Webdesign Agentur verstehen wir die einzigartigen digitalen Herausforderungen der Branche. Eine professionelle Online-Präsenz ist heute weit mehr als nur eine digitale Visitenkarte – sie ist das Herzstück Ihrer Unternehmenskommunikation und ein entscheidender Faktor für die Neukundengewinnung.\n\nWir entwickeln maßgeschneiderte Webdesign und IT-Lösungen, die exakt auf Ihre spezifischen Anforderungen zugeschnitten sind. Von der Konzeption über das Design bis hin zur technischen Umsetzung und Suchmaschinenoptimierung begleiten wir Sie ganzheitlich bei Ihrer digitalen Transformation.\n\nSetzen Sie auf technologische Exzellenz, höchste Sicherheitsstandards und zukunftssichere Architekturen. Gemeinsam maximieren wir Ihren digitalen Erfolg und sichern Ihre Wettbewerbsfähigkeit im digitalen Zeitalter."
+    }
   },
   "automobil": {
     "title": "Automotive & Vehicles",
@@ -829,16 +881,28 @@
         "title": "Test Drive Calendar",
         "description": "Management of test drives for new vehicles."
       }
+    },
+    "seoText": {
+      "title": "Webdesign Agentur für Premium Autohändler | Digitale Dominanz für KFZ Mechatroniker",
+      "content": "Als spezialisierte Webdesign Agentur für Premium Autohändler und KFZ-Betriebe wissen wir, dass digitale Dominanz für KFZ Mechatroniker heute entscheidend ist. Der Weg zum neuen Auto oder in die Werkstatt beginnt für fast jeden Kunden mit einer Online-Recherche.\n\nWir entwickeln hochperformante Websites für Autohäuser und Werkstätten, die Fahrzeuge emotional inszenieren und Serviceleistungen klar kommunizieren. Durch die Anbindung von Fahrzeugbörsen und Terminbuchungstools für Probefahrten oder Werkstattbesuche digitalisieren wir Ihren Vertrieb und Service.\n\nMit gezielter lokaler Suchmaschinenoptimierung sorgen wir dafür, dass Ihr Betrieb bei relevanten Suchanfragen in Ihrer Region die Pole-Position einnimmt. Starten Sie jetzt den digitalen Motor Ihres Automobil-Geschäfts."
     }
   },
   "buttons": {
-    "cta_analysis": "Get Your Website Analyzed"
+    "cta_analysis": "Get Your Website Analyzed",
+    "seoText": {
+      "title": "Branchenspezifische IT-Lösungen",
+      "content": "Als führende Webdesign Agentur verstehen wir die einzigartigen digitalen Herausforderungen der Branche. Eine professionelle Online-Präsenz ist heute weit mehr als nur eine digitale Visitenkarte – sie ist das Herzstück Ihrer Unternehmenskommunikation und ein entscheidender Faktor für die Neukundengewinnung.\n\nWir entwickeln maßgeschneiderte Webdesign und IT-Lösungen, die exakt auf Ihre spezifischen Anforderungen zugeschnitten sind. Von der Konzeption über das Design bis hin zur technischen Umsetzung und Suchmaschinenoptimierung begleiten wir Sie ganzheitlich bei Ihrer digitalen Transformation.\n\nSetzen Sie auf technologische Exzellenz, höchste Sicherheitsstandards und zukunftssichere Architekturen. Gemeinsam maximieren wir Ihren digitalen Erfolg und sichern Ihre Wettbewerbsfähigkeit im digitalen Zeitalter."
+    }
   },
   "common": {
     "features": {
       "google_maps": "Google Maps Integration",
       "regional_pages": "Regional Landing Pages",
       "review_management": "Review Management"
+    },
+    "seoText": {
+      "title": "Branchenspezifische IT-Lösungen",
+      "content": "Als führende Webdesign Agentur verstehen wir die einzigartigen digitalen Herausforderungen der Branche. Eine professionelle Online-Präsenz ist heute weit mehr als nur eine digitale Visitenkarte – sie ist das Herzstück Ihrer Unternehmenskommunikation und ein entscheidender Faktor für die Neukundengewinnung.\n\nWir entwickeln maßgeschneiderte Webdesign und IT-Lösungen, die exakt auf Ihre spezifischen Anforderungen zugeschnitten sind. Von der Konzeption über das Design bis hin zur technischen Umsetzung und Suchmaschinenoptimierung begleiten wir Sie ganzheitlich bei Ihrer digitalen Transformation.\n\nSetzen Sie auf technologische Exzellenz, höchste Sicherheitsstandards und zukunftssichere Architekturen. Gemeinsam maximieren wir Ihren digitalen Erfolg und sichern Ihre Wettbewerbsfähigkeit im digitalen Zeitalter."
     }
   },
   "tool_embed": {
@@ -848,6 +912,10 @@
     "subtitle": "Discover our tailored solution for your industry in an interactive live demo.",
     "demo_heading": "Open Live Demo",
     "demo_desc": "We've developed a specialized tool to make the possibilities for your business tangible.",
-    "cta": "Go to Interactive Demo"
+    "cta": "Go to Interactive Demo",
+    "seoText": {
+      "title": "Branchenspezifische IT-Lösungen",
+      "content": "Als führende Webdesign Agentur verstehen wir die einzigartigen digitalen Herausforderungen der Branche. Eine professionelle Online-Präsenz ist heute weit mehr als nur eine digitale Visitenkarte – sie ist das Herzstück Ihrer Unternehmenskommunikation und ein entscheidender Faktor für die Neukundengewinnung.\n\nWir entwickeln maßgeschneiderte Webdesign und IT-Lösungen, die exakt auf Ihre spezifischen Anforderungen zugeschnitten sind. Von der Konzeption über das Design bis hin zur technischen Umsetzung und Suchmaschinenoptimierung begleiten wir Sie ganzheitlich bei Ihrer digitalen Transformation.\n\nSetzen Sie auf technologische Exzellenz, höchste Sicherheitsstandards und zukunftssichere Architekturen. Gemeinsam maximieren wir Ihren digitalen Erfolg und sichern Ihre Wettbewerbsfähigkeit im digitalen Zeitalter."
+    }
   }
 }

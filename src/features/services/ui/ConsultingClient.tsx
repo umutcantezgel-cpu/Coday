@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { useTranslations } from 'next-intl';
 import { m } from 'motion/react';
 import { SeoHead } from '@/shared/ui/SeoHead';
@@ -155,6 +156,10 @@ export function ConsultingClient() {
 
         {/* --- Relevant FAQs --- */}
         <section className="py-24 bg-slate-950 border-t border-slate-800/30">
+          <SeoContentBlock
+            title={t('consulting_page.seoText.title')}
+            text={t('consulting_page.seoText.content')}
+          />
           <RelevantFAQs
             serviceId="consulting"
             className="text-white [&_h2]:text-white [&_span]:text-white [&_button]:bg-slate-900 [&_div.bg-surface-elevated]:bg-slate-900 [&_div.bg-surface-elevated]:border-slate-800"

@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { useTranslations } from 'next-intl';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { Funnel, PaperPlaneRight, ChartLineUp } from '@phosphor-icons/react';
@@ -126,6 +127,11 @@ const Dienstleistung: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <SeoContentBlock
+        title={t('unternehmensberatung.seoText.title')}
+        text={t('unternehmensberatung.seoText.content')}
+      />
       <RelevantFAQs
         serviceId={['web-development', 'seo']}
         className="bg-gray-50 border-t border-gray-100"

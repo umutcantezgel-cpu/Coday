@@ -1,7 +1,9 @@
 'use client';
 
 import React from 'react';
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 import BlurText from '@/shared/ui/BlurText';
 import GradientText from '@/shared/ui/GradientText';
 // Adjusting imports assuming these components exist or need to be created, but I'll import them assuming they are migrated or I'll just remove them if not available.
@@ -107,7 +109,7 @@ export function CareerOverviewClient() {
               },
             ].map((job, idx) => (
               <li key={idx} className="list-none">
-                <a
+                <Link
                   href="/contact"
                   className="flex flex-col sm:flex-row sm:items-center justify-between p-6 rounded-2xl border border-gray-100 hover:border-sapphire/50 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sapphire focus-visible:border-sapphire/50 focus-visible:shadow-lg transition motion-reduce:duration-[0.01ms] group"
                 >
@@ -124,12 +126,14 @@ export function CareerOverviewClient() {
                   <span className="mt-4 sm:mt-0 px-4 py-2 bg-gray-50 text-secondary font-bold rounded-lg text-sm group-hover:bg-sapphire group-hover:text-white transition motion-reduce:duration-[0.01ms]">
                     {t('jobs.button')} &rarr;
                   </span>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
         </div>
       </section>
+
+      <SeoContentBlock title={t('seoText.title')} text={t('seoText.content')} />
     </div>
   );
 }

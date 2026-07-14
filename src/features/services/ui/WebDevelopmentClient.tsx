@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { useTranslations } from 'next-intl';
 import { Link as NavLink } from '@/i18n/navigation';
 import { servicesData } from '@/shared/data/services';

@@ -19,6 +19,9 @@
     "templates": {
       "title": "Templates",
       "subtitle": "Ready-to-use templates"
+    },
+    "booking": {
+      "subtitle": "Book your initial consultation now."
     }
   },
   "actions": {
@@ -144,5 +147,9 @@
     "cta_title": "Similar Project?",
     "cta_desc": "Let's talk about your vision.",
     "cta_button": "Request Project"
+  },
+  "seoText": {
+    "title": "Digital Excellence for Your Success",
+    "content": "As an experienced web design agency, we offer you comprehensive expertise and technological excellence in all areas of digital product development. Our goal is to create not only visually appealing, but above all high-performance and conversion-optimized solutions for you.\n\nThe digital landscape is evolving rapidly. Therefore, we rely on modern, future-proof technologies and agile development methods. Whether it's a complex web application, highly performant headless CMS, or demanding UI/UX design – we guarantee the highest quality standards and measurable results.\n\nTrust a partner who understands your business goals and translates them into digital success. Through continuous analysis, optimization, and strategic consulting, we ensure that your digital assets generate long-term value and that you are always one step ahead of the competition."
   }
 }

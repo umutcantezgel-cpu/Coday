@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { useTranslations } from 'next-intl';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import { IMAGES } from '@/shared/config/images';
@@ -147,6 +148,11 @@ const Gastronomie: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <SeoContentBlock
+        title={t('gastronomie-hotellerie.seoText.title')}
+        text={t('gastronomie-hotellerie.seoText.content')}
+      />
       <RelevantFAQs
         serviceId={['web-development', 'seo']}
         className="bg-gray-50 border-t border-gray-100"

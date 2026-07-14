@@ -1,5 +1,6 @@
 'use client';
 import React, { useRef } from 'react';
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { useTranslations } from 'next-intl';
 import { m, useScroll, useTransform } from 'motion/react';
 import { ArrowRight, Cpu } from '@phosphor-icons/react';
@@ -226,6 +227,10 @@ export function EnterpriseWebClient() {
 
       {/* Relevant FAQs */}
       <section className="py-24 bg-surface-elevated">
+        <SeoContentBlock
+          title={t('enterprise_web_page.seoText.title')}
+          text={t('enterprise_web_page.seoText.content')}
+        />
         <RelevantFAQs serviceId="web-development" />
       </section>
 

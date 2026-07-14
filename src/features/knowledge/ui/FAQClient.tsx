@@ -1,7 +1,9 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { useTranslations, useLocale } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 import { m, AnimatePresence } from 'motion/react';
 import { MagnifyingGlass, CaretDown, X } from '@phosphor-icons/react';
 import { JsonLd } from '@/shared/ui/JsonLd';
@@ -233,18 +235,20 @@ const FAQ = () => {
           <div className="relative z-10">
             <h2 className="text-3xl font-display font-black text-white mb-4">{t('cta.title')}</h2>
             <p className="text-blue-100 text-lg mb-8 max-w-xl mx-auto">{t('cta.text')}</p>
-            <a
+            <Link
               href="/contact"
               className="inline-block bg-white text-blue-600 font-bold py-3 px-8 rounded-full hover:bg-blue-50 transition-colors motion-reduce:duration-[0.01ms]"
             >
               {t('cta.button')}
-            </a>
+            </Link>
           </div>
           {/* Decorative circles */}
           <div className="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-blue-500 rounded-full opacity-20 blur-3xl"></div>
           <div className="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-blue-700 rounded-full opacity-20 blur-3xl"></div>
         </div>
       </div>
+
+      <SeoContentBlock title={t('seoText.title')} text={t('seoText.content')} />
     </main>
   );
 };

@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { useTranslations } from 'next-intl';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { ArrowRight, CheckCircle } from '@phosphor-icons/react';
@@ -128,6 +129,11 @@ export function BrandIdentityClient() {
           </div>
         </div>
       </section>
+
+      <SeoContentBlock
+        title={t('brand_identity_page.seoText.title')}
+        text={t('brand_identity_page.seoText.content')}
+      />
       <RelevantFAQs serviceId="brand-identity" className="mb-24" />
     </>
   );
