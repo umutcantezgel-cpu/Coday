@@ -116,14 +116,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     // Web Design Sub-Services
     sitemapEntry('/services/web-design', { changeFrequency: 'monthly', priority: 0.8 }),
-    sitemapEntry('/services/web-design/ux-ui-design', {
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    }),
-    sitemapEntry('/services/web-design/design-systems', {
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    }),
     sitemapEntry('/services/web-design/website-relaunch', {
       changeFrequency: 'monthly',
       priority: 0.7,

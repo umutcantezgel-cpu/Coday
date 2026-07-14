@@ -42,6 +42,15 @@ export function HeadlessCmsClient() {
               {t('headless_cms_page.hero.title_prefix')}
               <br />
               <span className="text-sapphire">{t('headless_cms_page.hero.title_suffix')}</span>
+
+              {/* visually hidden SEO h1 text */}
+              <div
+                className="absolute opacity-[0.01] pointer-events-none select-none -z-10 w-0 h-0 overflow-hidden"
+                aria-hidden="true"
+              >
+                {t('headless_cms_page.hero.title_prefix')}
+                {t('headless_cms_page.hero.title_suffix')}
+              </div>
             </h1>
 
             <p className="text-xl text-content-muted leading-relaxed max-w-prose text-pretty mb-10 max-w-lg">

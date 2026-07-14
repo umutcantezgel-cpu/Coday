@@ -111,6 +111,7 @@ export function generatePageMetadata(opts: {
   let finalType = opts.type;
 
   return {
+    metadataBase: new URL(BASE_URL),
     title: fullTitle,
     description: finalDescription,
     robots: generateRobotsMeta({ type: finalType }),

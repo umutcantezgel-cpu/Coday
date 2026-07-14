@@ -15,21 +15,21 @@ export async function generateMetadata({
     return generatePageMetadata({
       title: 'Web Design for Doctors & Clinics | Agency Hesse',
       description:
-        'Professional practice websites for doctors in Wetzlar and Hesse. Attract patients through modern web design and local SEO optimization. Inquire today.',
-      path: `/en/branchen/gesundheitswesen`,
-      type: 'money',
+        'Professional practice websites for doctors. Attract patients through modern web design and local SEO optimization. Inquire today.',
+      path: '/en/branchen/gesundheitswesen',
+      type: 'default',
     });
   }
   return generatePageMetadata({
-    title: 'Webdesign für Ärzte & Praxen | Agentur in Hessen',
+    title: 'Webdesign für Ärzte & Praxen | Healthcare Marketing',
     description:
-      'Professionelle Praxis-Webseiten für Ärzte in Wetzlar und Hessen. Patientengewinnung durch modernes Webdesign und lokale SEO Optimierung. Jetzt anfragen.',
-    path: `/de/branchen/gesundheitswesen`,
-    type: 'money',
+      'Professionelle Praxis-Webseiten für Ärzte und im Gesundheitswesen. Patientengewinnung durch modernes Webdesign und lokale SEO Optimierung. Jetzt anfragen.',
+    path: '/de/branchen/gesundheitswesen',
+    type: 'default',
   });
 }
 
-export default async function GesundheitswesenHubPage({
+export default async function GesundheitswesenPage({
   params,
 }: {
   params: Promise<{ locale: string }>;
@@ -40,12 +40,12 @@ export default async function GesundheitswesenHubPage({
   const _locale = (await params)?.locale || 'de';
   const _seoTitle =
     _locale === 'en'
-      ? 'Web Design for Doctors & Clinics | Agency Hesse | Coday'
-      : 'Webdesign für Ärzte & Praxen | Agentur in Hessen | Coday';
+      ? 'Web Design for Doctors & Medical Practices | Healthcare Marketing | Coday'
+      : 'Webdesign für Ärzte & Praxen | Healthcare Marketing | Coday';
   const _seoDesc =
     _locale === 'en'
-      ? 'Professional practice websites for doctors in Wetzlar and Hesse. Attract patients through modern web design and local SEO optimization. Inquire today.'
-      : 'Professionelle Praxis-Webseiten für Ärzte in Wetzlar und Hessen. Patientengewinnung durch modernes Webdesign und lokale SEO Optimierung. Jetzt anfragen.';
+      ? 'Professional practice websites for doctors. Attract patients through modern web design and local SEO optimization. Inquire today.'
+      : 'Professionelle Praxis-Webseiten für Ärzte und im Gesundheitswesen. Patientengewinnung durch modernes Webdesign und lokale SEO Optimierung. Jetzt anfragen.';
   return (
     <>
       <script
@@ -59,7 +59,7 @@ export default async function GesundheitswesenHubPage({
               getServiceSchema({
                 name: 'Webdesign für Ärzte & Praxen',
                 description:
-                  'Professionelle Praxis-Webseiten für Ärzte in Wetzlar und Hessen. Patientengewinnung durch modernes Webdesign und lokale SEO Optimierung. Jetzt anfragen.',
+                  'Professionelle Praxis-Webseiten für Ärzte und im Gesundheitswesen. Patientengewinnung durch modernes Webdesign und lokale SEO Optimierung.',
                 url: `${BASE_URL}/de/branchen/gesundheitswesen`,
               }),
             ],

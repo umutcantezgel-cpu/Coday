@@ -189,61 +189,86 @@ export const SeoTextInjector: React.FC<SeoTextInjectorProps> = ({ title = '', h1
     ].join(' ');
 
     // Missing Keyword Injection Map for SEO Optimization (100/100)
-    const exactKeywordsMap: Record<string, string[]> = {
+    const exactKeywordsMapDe: Record<string, string[]> = {
       '/branchen/automobil/kfz-mechatroniker': ['Digitale Dominanz für KFZ Mechatroniker | Coday'],
       '/branchen/automobil/autohaendler': ['Webdesign Agentur für Premium Autohändler | Coday'],
-      '/branchen/handwerk-bau': [
-        'Handwerk Bau Webdesign & IT-Lösungen | Coday',
-        'Handwerk Bau Web Design & IT Solutions | Coday',
-      ],
+      '/branchen/handwerk-bau': ['Handwerk Bau Webdesign & IT-Lösungen | Coday'],
       '/branchen/immobilien-makler': [
         'Immobilien Makler Webdesign & IT-Lösungen | Coday',
-        'Immobilien Makler Web Design & IT Solutions | Coday',
         'Exklusive Objekte, exklusiv präsentiert',
       ],
       '/branchen/unternehmensberatung': [
         'Unternehmensberatung Webdesign & IT-Lösungen | Coday',
-        'Unternehmensberatung Web Design & IT Solutions | Coday',
         'Expertise sichtbar machen',
       ],
-      '/branchen/aerzte-gesundheit': [
-        'Aerzte Gesundheit Webdesign & IT-Lösungen | Coday',
-        'Aerzte Gesundheit Web Design & IT Solutions | Coday',
-      ],
+      '/branchen/aerzte-gesundheit': ['Aerzte Gesundheit Webdesign & IT-Lösungen | Coday'],
       '/knowledge/blog/anti-ai-manifest': ['Anti-AI Manifest: Kein KI-Webdesign | Coday Blog'],
       '/knowledge/blog/der-perfekte-omni-channel-mix': [
         'Der perfekte Omni-Channel Mix | Coday Blog',
       ],
       '/knowledge/blog/death-of-third-party-cookies': [
         'Der Tod des Third-Party Cookies | Coday Blog',
-        'The Death of the Third-Party Cookie | Coday Tech Blog',
       ],
       '/knowledge/blog/ab-testing-myths': ['A/B Testing Mythen aufgedeckt | Coday Blog'],
       '/branchen/anwaelte-kanzleien': [
         'Anwaelte Kanzleien Webdesign & IT-Lösungen | Coday',
-        'Anwaelte Kanzleien Web Design & IT Solutions | Coday',
         'Rechtssichere Mandanten-Akquise',
       ],
       '/branchen/gastronomie-hotellerie': [
         'Gastronomie Hotellerie Webdesign & IT-Lösungen | Coday',
-        'Gastronomie Hotellerie Web Design & IT Solutions | Coday',
         'Geschmack beginnt beim ersten Klick',
       ],
       '/branchen/startups-tech': [
         'Startups Tech Webdesign & IT-Lösungen | Coday',
-        'Startups Tech Web Design & IT Solutions | Coday',
         'Scale fast, look global',
       ],
       '/landingpages/nextjsmigration': [
         'Von Legacy zu Next.js: Der Performance-Boost für Ihr Business',
       ],
-      '/pricing': [
-        'Web Design Prices Wetzlar | Transparent Plans | Coday',
-        'Webdesign Preise Wetzlar | Transparente Pakete | Coday',
-      ],
+      '/pricing': ['Webdesign Preise Wetzlar | Transparente Pakete | Coday'],
     };
 
-    const targetKeywords = exactKeywordsMap[pathname] || [];
+    const exactKeywordsMapEn: Record<string, string[]> = {
+      '/branchen/automobil/kfz-mechatroniker': ['Digital Dominance for Car Mechanics | Coday'],
+      '/branchen/automobil/autohaendler': ['Web Design Agency for Premium Car Dealers | Coday'],
+      '/branchen/handwerk-bau': ['Handwerk Bau Web Design & IT Solutions | Coday'],
+      '/branchen/immobilien-makler': [
+        'Immobilien Makler Web Design & IT Solutions | Coday',
+        'Exclusive properties, exclusively presented',
+      ],
+      '/branchen/unternehmensberatung': [
+        'Unternehmensberatung Web Design & IT Solutions | Coday',
+        'Make expertise visible',
+      ],
+      '/branchen/aerzte-gesundheit': ['Aerzte Gesundheit Web Design & IT Solutions | Coday'],
+      '/knowledge/blog/anti-ai-manifest': ['Anti-AI Manifesto: No AI Web Design | Coday Blog'],
+      '/knowledge/blog/der-perfekte-omni-channel-mix': [
+        'The Perfect Omni-Channel Mix | Coday Blog',
+      ],
+      '/knowledge/blog/death-of-third-party-cookies': [
+        'The Death of the Third-Party Cookie | Coday Tech Blog',
+      ],
+      '/knowledge/blog/ab-testing-myths': ['A/B Testing Myths Uncovered | Coday Blog'],
+      '/branchen/anwaelte-kanzleien': [
+        'Anwaelte Kanzleien Web Design & IT Solutions | Coday',
+        'Legally secure client acquisition',
+      ],
+      '/branchen/gastronomie-hotellerie': [
+        'Gastronomie Hotellerie Web Design & IT Solutions | Coday',
+        'Taste begins with the first click',
+      ],
+      '/branchen/startups-tech': [
+        'Startups Tech Web Design & IT Solutions | Coday',
+        'Scale fast, look global',
+      ],
+      '/landingpages/nextjsmigration': [
+        'From Legacy to Next.js: The Performance Boost for Your Business',
+      ],
+      '/pricing': ['Web Design Prices Wetzlar | Transparent Plans | Coday'],
+    };
+
+    const targetKeywords =
+      (isEn ? exactKeywordsMapEn[pathname] : exactKeywordsMapDe[pathname]) || [];
     let p3 = [
       pick(bodySentences, 13),
       pick(bodySentences, 14),

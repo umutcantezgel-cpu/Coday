@@ -252,7 +252,7 @@ const BlogPost: React.FC = () => {
 
               {/* SEO Text Injector for H1/Title keyword consistency */}
               <div className="max-w-prose mx-auto mt-8 border-t border-gray-50 pt-8">
-                <SeoTextInjector title={post.title} h1={post.title} />
+                <SeoTextInjector title={`${post.title} | Coday Blog`} h1={post.title} />
               </div>
             </div>
           </article>
@@ -265,9 +265,6 @@ const BlogPost: React.FC = () => {
         </div>
       </div>
 
-      <p className="sr-only">
-        Published in the {currentLocale === 'en' ? 'Tech Blog' : 'Agentur Blog'}
-      </p>
       <SeoAuthorBlock />
       <RelatedArticles currentSlug={post.slug} category={post.category} />
       <ShareFAB title={post.title} url={currentUrl} />

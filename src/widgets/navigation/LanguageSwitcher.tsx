@@ -1,25 +1,26 @@
 'use client';
 import React from 'react';
-import { Link, usePathname } from '@/i18n/navigation';
+import Link from 'next/link';
+import { usePathname } from '@/i18n/navigation';
 import { useLocale } from 'next-intl';
 
 export const LanguageSwitcher: React.FC = () => {
   const locale = useLocale();
   const pathname = usePathname();
 
-  const cleanPath = pathname.replace(/^\/(en|de)/, '').replace(/\/$/, '') || '';
+  const cleanPath = pathname.replace(/^\/(en|de)/, '').replace(/\/$/, '') || '/';
   const localPathsRegex = /^\/(landingpages|webdesign-agentur-wetzlar|angebot-handwerker)(\/.*)?$/;
   const isLocalPath = localPathsRegex.test(cleanPath);
 
   // For German-only landing pages, the English switcher just goes to the English homepage
   // to avoid hitting the 301 redirect back to German
-  const enLink = isLocalPath ? '/' : pathname;
+  const deLink = `/de${cleanPath === '/' ? '' : cleanPath}`;
+  const enLink = isLocalPath ? '/en' : `/en${cleanPath === '/' ? '' : cleanPath}`;
 
   return (
     <div className="flex items-center p-1 rounded-full bg-slate-100/80 backdrop-blur-md border border-slate-200 shadow-inner">
       <Link
-        href={pathname}
-        locale="de"
+        href={deLink}
         className={`px-3 py-1.5 text-xs font-bold tracking-wider rounded-full transition-colors flex items-center gap-1 ${
           locale === 'de'
             ? 'bg-white text-slate-900 shadow-sm ring-1 ring-slate-200/50 pointer-events-none'
@@ -36,7 +37,6 @@ export const LanguageSwitcher: React.FC = () => {
       </Link>
       <Link
         href={enLink}
-        locale="en"
         className={`px-3 py-1.5 text-xs font-bold tracking-wider rounded-full transition-colors flex items-center gap-1 ${
           locale === 'en'
             ? 'bg-white text-slate-900 shadow-sm ring-1 ring-slate-200/50 pointer-events-none'

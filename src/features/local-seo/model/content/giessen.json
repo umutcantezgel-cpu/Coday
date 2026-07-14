@@ -127,5 +127,9 @@
       "q": "Was passiert mit unserem bisherigen SEO Ranking bei einem Plattform Wechsel?",
       "a": "Ein Relaunch birgt immer Risiken, wenn er nicht von Experten durchgeführt wird. Coday plant jeden Relaunch mit akribischer SEO Präzision. Wir kartografieren Ihre gesamte bestehende URL Struktur, richten dauerhafte (301) Redirects für jeden einzelnen Link ein, migrieren relevante Meta Daten und sichern Ihre Backlink Struktur. Durch den massiven Performance Boost von Next.js erleben unsere Kunden nach dem Relaunch in der Regel nach kurzer Zeit sogar eine deutliche Steigerung ihrer Sichtbarkeit bei Google."
     }
-  ]
+  ],
+  "meta_en": {
+    "title": "High End Web Design Gießen | Coday – Next.js & Headless CMS for B2B",
+    "description": "High-end web design and SEO strategies for your business. Increase your online visibility, attract more clients, and dominate your local market."
+  }
 }

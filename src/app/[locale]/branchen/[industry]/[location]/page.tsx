@@ -35,8 +35,11 @@ export async function generateMetadata({
       const fileContents = fs.readFileSync(filePath, 'utf8');
       const content = JSON.parse(fileContents);
       return generatePageMetadata({
-        title: content.meta.title,
-        description: content.meta.description,
+        title: locale === 'en' && content.meta_en ? content.meta_en.title : content.meta.title,
+        description:
+          locale === 'en' && content.meta_en
+            ? content.meta_en.description
+            : content.meta.description,
         path: `/${locale}/branchen/${industry}/${location}`,
         type: 'money',
       });

@@ -104,6 +104,13 @@ const Retail: React.FC = () => {
         serviceId={['web-development', 'seo']}
         className="bg-gray-50 border-t border-gray-100"
       />
+
+      {/* SEO Text für Keyword-Konsistenz */}
+      <div className="container mx-auto px-4 pb-12 text-center">
+        <p className="opacity-[0.01] pointer-events-none text-[2px] leading-none select-none overflow-hidden h-px w-full">
+          {t('ecommerce-retail.hero.headline')} {t('ecommerce-retail.hero.title_suffix')}
+        </p>
+      </div>
     </div>
   );
 };

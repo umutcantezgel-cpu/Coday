@@ -12,17 +12,17 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'SEO Wetzlar | Regional Search Optimization',
+      title: 'SEO Agency | Professional Search Optimization',
       description:
-        'Regional SEO and GEO optimization by Coday in Wetzlar. More visibility for your business in Central Hesse on Google. Get your free consultation today.',
+        'Professional SEO and GEO optimization by Coday. More visibility for your business on Google. Get your free consultation today.',
       path: '/en/services/seo',
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'SEO Wetzlar | Suchmaschinenoptimierung Agentur',
+    title: 'SEO Agentur | Suchmaschinenoptimierung & GEO',
     description:
-      'Regionale SEO und GEO Optimierung von Coday in Wetzlar. Mehr Sichtbarkeit für Ihr Unternehmen in Mittelhessen bei Google. Jetzt kostenlos beraten lassen.',
+      'Professionelle SEO und GEO Optimierung von Coday. Mehr Sichtbarkeit für Ihr Unternehmen bei Google. Jetzt kostenlos beraten lassen.',
     path: '/de/services/seo',
     type: 'money',
   });
@@ -35,12 +35,12 @@ export default async function SeoPage({ params }: { params: Promise<{ locale: st
   const _locale = (await params)?.locale || 'de';
   const _seoTitle =
     _locale === 'en'
-      ? 'SEO Agency Wetzlar | Regional Search Optimization | Coday'
-      : 'SEO Agentur Wetzlar | Regionale Suchoptimierung | Coday';
+      ? 'SEO Agency | Professional Search Optimization | Coday'
+      : 'SEO Agentur | Suchmaschinenoptimierung & GEO | Coday';
   const _seoDesc =
     _locale === 'en'
-      ? 'Regional SEO and GEO optimization by Coday in Wetzlar. More visibility for your business in Central Hesse on Google. Get your free consultation today.'
-      : 'Regionale SEO und GEO Optimierung von Coday in Wetzlar. Mehr Sichtbarkeit für Ihr Unternehmen in Mittelhessen bei Google. Jetzt kostenlos beraten lassen.';
+      ? 'Professional SEO and GEO optimization by Coday. More visibility for your business on Google. Get your free consultation today.'
+      : 'Professionelle SEO und GEO Optimierung von Coday. Mehr Sichtbarkeit für Ihr Unternehmen bei Google. Jetzt kostenlos beraten lassen.';
   return (
     <>
       <script
@@ -52,9 +52,9 @@ export default async function SeoPage({ params }: { params: Promise<{ locale: st
             '@graph': [
               getOrganizationSchema(),
               getServiceSchema({
-                name: 'SEO Agentur Wetzlar | Regionale Suchoptimierung',
+                name: 'SEO Agentur | Suchmaschinenoptimierung & GEO',
                 description:
-                  'Regionale SEO und GEO Optimierung von Coday in Wetzlar. Mehr Sichtbarkeit für Ihr Unternehmen in Mittelhessen bei Google. Jetzt kostenlos beraten lassen.',
+                  'Professionelle SEO und GEO Optimierung von Coday. Mehr Sichtbarkeit für Ihr Unternehmen bei Google. Jetzt kostenlos beraten lassen.',
                 url: `${BASE_URL}/de/services/seo`,
               }),
             ],

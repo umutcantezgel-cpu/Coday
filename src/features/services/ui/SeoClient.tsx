@@ -83,7 +83,7 @@ export function SeoClient() {
                   delay={100}
                   animateBy="words"
                   className="block"
-                />
+                />{' '}
                 <GradientText
                   colors={['#FF6B6B', '#4ECDC4', '#45B7D1']}
                   animationSpeed={6}
@@ -91,6 +91,14 @@ export function SeoClient() {
                 >
                   {t('seo_page.hero.title_suffix')}
                 </GradientText>
+                {/* visually hidden SEO h1 text */}
+                <div
+                  className="absolute opacity-[0.01] pointer-events-none select-none -z-10 w-0 h-0 overflow-hidden"
+                  aria-hidden="true"
+                >
+                  {t('seo_page.hero.title_prefix')}
+                  {t('seo_page.hero.title_suffix')}
+                </div>
               </h1>
               <p className="text-xl text-content-muted leading-relaxed max-w-prose text-pretty max-w-2xl mx-auto lg:mx-0 mb-12">
                 {t('seo_page.hero.description')}

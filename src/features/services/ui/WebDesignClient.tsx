@@ -97,6 +97,14 @@ export function WebDesignClient() {
                 className="block"
               />{' '}
               <span className="text-sapphire">{t('web_design_page.hero.title_suffix')}</span>
+              {/* visually hidden SEO h1 text */}
+              <div
+                className="absolute opacity-[0.01] pointer-events-none select-none -z-10 w-0 h-0 overflow-hidden"
+                aria-hidden="true"
+              >
+                {t('web_design_page.hero.title_prefix')}
+                {t('web_design_page.hero.title_suffix')}
+              </div>
             </h1>
             <p className="text-xl text-content-muted leading-relaxed max-w-prose text-pretty max-w-3xl lg:mx-0 mx-auto">
               {t('web_design_page.hero.description')}
@@ -288,7 +296,13 @@ export function WebDesignClient() {
                 </div>
                 <h3 className="font-display font-bold text-xl text-content-base mb-3 group-hover:text-sapphire transition-colors motion-reduce:duration-[0.01ms] relative z-10">
                   <NavLink
-                    href={`/services/web-design/${feature.slug}`}
+                    href={
+                      feature.slug === 'design-systems'
+                        ? '/services/design/design-systems'
+                        : feature.slug === 'ux-ui-design'
+                          ? '/services/design/ui-ux'
+                          : `/services/web-design/${feature.slug}`
+                    }
                     className="before:absolute before:inset-0 before:z-30 hover:underline"
                   >
                     {t(feature.titleKey)}

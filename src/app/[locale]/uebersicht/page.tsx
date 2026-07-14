@@ -53,7 +53,9 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
     <main className="bg-background-light min-h-dvh pt-32 pb-20">
       <div className="container mx-auto px-4 max-w-4xl">
         <h1 className="text-4xl md:text-5xl font-bold font-display text-secondary mb-12">
-          {locale === 'en' ? 'Sitemap' : 'Seitenübersicht'}
+          {locale === 'en'
+            ? 'Coday Web Design Sitemap'
+            : 'Sitemap & Seitenübersicht der Coday Agentur'}
         </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">

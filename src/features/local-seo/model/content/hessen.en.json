@@ -115,5 +115,9 @@
       "q": "What does a custom Next.js corporate website from Coday cost?",
       "a": "Since we don't offer template systems but develop highly specialized digital enterprise products, costs depend heavily on project complexity. Influencing factors include the number of individual page types (templates in the CMS), the depth of CMS modeling, migration of existing content, multilingual support (internationalization), and integration of third-party systems (APIs). We work with transparent budgeting based on clearly defined milestones. In a no-obligation initial consultation, we analyze your requirements and provide you with a reliable and transparent investment estimate."
     }
-  ]
+  ],
+  "meta_en": {
+    "title": "Professional Web Design for hessen.en ",
+    "description": "High-end web design and SEO strategies for your business. Increase your online visibility, attract more clients, and dominate your local market."
+  }
 }

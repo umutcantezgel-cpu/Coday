@@ -12,7 +12,11 @@ export const SeoAuthorBlock: React.FC = () => {
         <div className="w-24 h-24 md:w-32 md:h-32 shrink-0 rounded-full overflow-hidden border-2 border-white/10 relative">
           <OptimizedImage
             src="/images/team/umut-founder.webp"
-            alt="Umutcan Emre Tezgel - Inhaber Coday Webdesign Agentur Wetzlar"
+            alt={
+              isDe
+                ? 'Umutcan Emre Tezgel - Inhaber Coday Webdesign Agentur Wetzlar'
+                : 'Umutcan Emre Tezgel - Owner Coday Web Design Agency Wetzlar'
+            }
             className="w-full h-full object-cover"
             title="Umutcan Emre Tezgel"
           />

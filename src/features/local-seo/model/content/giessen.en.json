@@ -127,5 +127,9 @@
       "q": "What happens to our existing SEO rankings during a platform migration?",
       "a": "A relaunch always carries risks if not executed by experts. Coday plans every relaunch with meticulous SEO precision. We map your entire existing URL structure, set up permanent (301) redirects for every single link, migrate relevant metadata, and preserve your backlink structure. Thanks to the massive performance boost from Next.js, our clients typically experience a significant increase in Google visibility shortly after the relaunch."
     }
-  ]
+  ],
+  "meta_en": {
+    "title": "Professional Web Design for giessen.en ",
+    "description": "High-end web design and SEO strategies for your business. Increase your online visibility, attract more clients, and dominate your local market."
+  }
 }

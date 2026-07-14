@@ -219,18 +219,27 @@ export const ServicesOverview = async () => {
               [
                 {
                   step: '01',
-                  title: 'Analyse & Strategie',
-                  desc: 'Tiefgreifendes Verständnis Ihrer Geschäftsziele. Keine Schablonen, sondern fundierte Architektur-Entscheidungen.',
+                  title: t('methodology.steps.01.title', { fallback: 'Analyse & Strategie' }),
+                  desc: t('methodology.steps.01.desc', {
+                    fallback:
+                      'Tiefgreifendes Verständnis Ihrer Geschäftsziele. Keine Schablonen, sondern fundierte Architektur-Entscheidungen.',
+                  }),
                 },
                 {
                   step: '02',
-                  title: 'Design & Entwicklung',
-                  desc: 'Performante Umsetzung mit Next.js und React. Pixelperfektes Design, das Vertrauen schafft und konvertiert.',
+                  title: t('methodology.steps.02.title', { fallback: 'Design & Entwicklung' }),
+                  desc: t('methodology.steps.02.desc', {
+                    fallback:
+                      'Performante Umsetzung mit Next.js und React. Pixelperfektes Design, das Vertrauen schafft und konvertiert.',
+                  }),
                 },
                 {
                   step: '03',
-                  title: 'Launch & Skalierung',
-                  desc: 'Reibungsloses Deployment, technische SEO-Optimierung und kontinuierliche Performance-Überwachung.',
+                  title: t('methodology.steps.03.title', { fallback: 'Launch & Skalierung' }),
+                  desc: t('methodology.steps.03.desc', {
+                    fallback:
+                      'Reibungsloses Deployment, technische SEO-Optimierung und kontinuierliche Performance-Überwachung.',
+                  }),
                 },
               ] as const
             ).map((item, i) => (
