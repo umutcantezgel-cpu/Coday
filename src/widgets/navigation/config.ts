@@ -33,6 +33,10 @@ export const getNavItems = (): NavItem[] => [
           },
           { label: 'nav.services.web_apps.label', href: '/services/development/web-apps' },
           {
+            label: 'nav.services.react_nextjs.label',
+            href: '/services/web-development/react-nextjs-agentur',
+          },
+          {
             label: 'nav.services.ecommerce.label',
             href: '/services/ecommerce-development',
             desc: 'nav.services.ecommerce.desc',
@@ -40,6 +44,14 @@ export const getNavItems = (): NavItem[] => [
           { label: 'nav.services.cms.label', href: '/services/development/headless-cms' },
           { label: 'nav.services.api.label', href: '/services/development/api-integration' },
           { label: 'nav.services.migration.label', href: '/services/development/migration' },
+          {
+            label: 'nav.services.fullstack.label',
+            href: '/services/web-development/full-stack-entwicklung',
+          },
+          {
+            label: 'nav.services.cloud_infrastructure.label',
+            href: '/services/web-development/cloud-infrastructure',
+          },
           {
             label: 'nav.services.enterprise.label',
             href: '/services/enterprise-web',
@@ -62,21 +74,34 @@ export const getNavItems = (): NavItem[] => [
             href: '/services/design/design-systems',
           },
           { label: 'nav.services.audit.label', href: '/services/design/ux-audit' },
+          {
+            label: 'nav.services.website_relaunch.label',
+            href: '/services/web-design/website-relaunch',
+          },
         ],
       },
       {
         title: 'nav.services.growth.title',
         links: [
           { label: 'nav.services.seo.label', href: '/services/seo', desc: 'nav.services.seo.desc' },
+          { label: 'nav.services.seo_opt.label', href: '/services/growth/seo-optimization' },
           {
             label: 'nav.services.performance.label',
             href: '/services/performance',
             desc: 'nav.services.performance.desc',
           },
           {
+            label: 'nav.services.perf_opt.label',
+            href: '/services/growth/performance-optimization',
+          },
+          {
             label: 'nav.services.consulting.label',
             href: '/services/consulting',
             desc: 'nav.services.consulting.desc',
+          },
+          {
+            label: 'nav.services.dig_consulting.label',
+            href: '/services/growth/digital-consulting',
           },
         ],
       },
@@ -114,6 +139,7 @@ export const getNavItems = (): NavItem[] => [
             href: '/branchen/gesundheitswesen',
             desc: 'nav.industries.healthcare.desc',
           },
+          { label: 'nav.industries.healthcare.aerzte', href: '/branchen/aerzte-gesundheit' },
           {
             label: 'nav.industries.healthcare.wetzlar',
             href: '/branchen/gesundheitswesen/arzt-wetzlar',
@@ -132,6 +158,7 @@ export const getNavItems = (): NavItem[] => [
             href: '/branchen/handwerker',
             desc: 'nav.industries.crafts.desc',
           },
+          { label: 'nav.industries.crafts.bau', href: '/branchen/handwerk-bau' },
           { label: 'nav.industries.crafts.wetzlar', href: '/branchen/handwerker/wetzlar' },
         ],
       },
@@ -139,9 +166,14 @@ export const getNavItems = (): NavItem[] => [
         title: 'nav.industries.other.title',
         links: [
           { label: 'nav.industries.other.overview', href: '/branchen' },
-          { label: 'nav.industries.other.real_estate', href: '/branchen/immobilien' },
-          { label: 'nav.industries.other.gastronomy', href: '/branchen/gastronomie' },
-          { label: 'nav.industries.other.services', href: '/branchen/dienstleistung' },
+          { label: 'nav.industries.other.real_estate_agent', href: '/branchen/immobilien-makler' },
+          {
+            label: 'nav.industries.other.gastronomy_hotel',
+            href: '/branchen/gastronomie-hotellerie',
+          },
+          { label: 'nav.industries.other.consulting', href: '/branchen/unternehmensberatung' },
+          { label: 'nav.industries.other.lawyers', href: '/branchen/anwaelte-kanzleien' },
+          { label: 'nav.industries.other.startups', href: '/branchen/startups-tech' },
           { label: 'nav.industries.other.retail', href: '/branchen/retail' },
           { label: 'nav.industries.other.public_sector', href: '/branchen/public-sector' },
         ],

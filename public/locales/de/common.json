@@ -182,13 +182,15 @@
         "overview": "Übersicht: Gesundheit",
         "desc": "Smarte Praxen und Kliniken",
         "wetzlar": "Arzt in Wetzlar",
-        "giessen": "Arzt in Gießen"
+        "giessen": "Arzt in Gießen",
+        "aerzte": "Ärzte & Gesundheit"
       },
       "crafts": {
         "title": "Handwerk & Bau",
         "overview": "Übersicht: Handwerk",
         "desc": "Digitale Handwerksbetriebe",
-        "wetzlar": "Handwerker in Wetzlar"
+        "wetzlar": "Handwerker in Wetzlar",
+        "bau": "Handwerk & Bau"
       },
       "other": {
         "title": "Weitere Branchen",
@@ -197,7 +199,12 @@
         "gastronomy": "Gastronomie",
         "services": "Dienstleistungen",
         "retail": "Handel & E-Commerce",
-        "public_sector": "Öffentlicher Sektor"
+        "public_sector": "Öffentlicher Sektor",
+        "consulting": "Unternehmensberatung",
+        "lawyers": "Anwälte & Kanzleien",
+        "startups": "Startups & Tech",
+        "gastronomy_hotel": "Gastronomie & Hotellerie",
+        "real_estate_agent": "Immobilienmakler"
       },
       "all": "Alle Branchen",
       "overview": "Übersicht",
@@ -314,6 +321,24 @@
       },
       "fullstack": {
         "label": "Full-Stack Entwicklung"
+      },
+      "react_nextjs": {
+        "label": "React & Next.js Agentur"
+      },
+      "cloud_infrastructure": {
+        "label": "Cloud Infrastruktur"
+      },
+      "website_relaunch": {
+        "label": "Website Relaunch"
+      },
+      "seo_opt": {
+        "label": "SEO Optimierung"
+      },
+      "perf_opt": {
+        "label": "Performance Opt."
+      },
+      "dig_consulting": {
+        "label": "Digitale Beratung"
       }
     },
     "work": {

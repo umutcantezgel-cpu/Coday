@@ -182,13 +182,15 @@
         "overview": "Overview: Healthcare",
         "desc": "Smart clinics and doctors",
         "wetzlar": "Doctors in Wetzlar",
-        "giessen": "Doctors in Giessen"
+        "giessen": "Doctors in Giessen",
+        "aerzte": "Doctors & Healthcare"
       },
       "crafts": {
         "title": "Crafts & Construction",
         "overview": "Overview: Crafts",
         "desc": "Digital crafts businesses",
-        "wetzlar": "Crafts in Wetzlar"
+        "wetzlar": "Crafts in Wetzlar",
+        "bau": "Crafts & Construction"
       },
       "other": {
         "title": "Other Industries",
@@ -197,7 +199,12 @@
         "gastronomy": "Gastronomy & Hotels",
         "services": "Services",
         "retail": "Retail & E-Commerce",
-        "public_sector": "Public Sector"
+        "public_sector": "Public Sector",
+        "consulting": "Consulting",
+        "lawyers": "Law Firms",
+        "startups": "Startups & Tech",
+        "gastronomy_hotel": "Gastronomy & Hotels",
+        "real_estate_agent": "Real Estate Agents"
       },
       "all": "All Industries",
       "overview": "Overview",
@@ -314,6 +321,24 @@
       },
       "fullstack": {
         "label": "Full-Stack Entwicklung"
+      },
+      "react_nextjs": {
+        "label": "React & Next.js Agency"
+      },
+      "cloud_infrastructure": {
+        "label": "Cloud Infrastructure"
+      },
+      "website_relaunch": {
+        "label": "Website Relaunch"
+      },
+      "seo_opt": {
+        "label": "SEO Optimization"
+      },
+      "perf_opt": {
+        "label": "Performance Opt."
+      },
+      "dig_consulting": {
+        "label": "Digital Consulting"
       }
     },
     "work": {
