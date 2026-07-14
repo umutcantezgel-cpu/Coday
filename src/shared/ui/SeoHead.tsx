@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 import { usePathname } from 'next/navigation';
@@ -46,7 +46,7 @@ export const SeoHead: React.FC<SeoHeadProps> = ({
   const currentLang = useLocale();
 
   // Global override: Always noindex English pages to save crawl budget
-  const effectiveNoIndex = noIndex || currentLang === 'en';
+  const effectiveNoIndex = noIndex;
 
   // Helper to get clean path without language prefix
   const getPathWithoutLang = (path: string) => {

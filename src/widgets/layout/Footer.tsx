@@ -298,7 +298,7 @@ export const Footer: React.FC = () => {
                 <Link
                   prefetch={false}
                   href="/uebersicht"
-                  className="text-sm text-primary hover:text-primary/80 transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2 font-medium"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2 font-medium"
                 >
                   Seitenübersicht (Sitemap)
                 </Link>

@@ -52,7 +52,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
       <ClientComponent />
       {/* SEO Title für Keyword-Konsistenz */}
       <div className="container mx-auto px-4 pb-12 text-center">
-        <p className="text-[10px] text-gray-500/40 font-medium tracking-wide">{_seoTitle}</p>
+        <p className="sr-only">{_seoTitle}</p>
       </div>
       <div className="sr-only">Von Legacy zu Next.js: Der Performance-Boost für Ihr Business</div>
       <SeoContentBlock />
