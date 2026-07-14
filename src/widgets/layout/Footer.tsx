@@ -150,6 +150,24 @@ export const Footer: React.FC = () => {
                   {t('nav.career.label', { defaultValue: 'Karriere' })}
                 </Link>
               </li>
+              <li>
+                <Link
+                  prefetch={false}
+                  href="/garantie"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
+                >
+                  {t('nav.main.garantie', { defaultValue: 'Garantie' })}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  prefetch={false}
+                  href="/presse"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
+                >
+                  {t('nav.main.presse', { defaultValue: 'Presse' })}
+                </Link>
+              </li>
             </ul>
           </nav>
 
@@ -285,6 +303,15 @@ export const Footer: React.FC = () => {
                   Seitenübersicht (Sitemap)
                 </Link>
               </li>
+              <li>
+                <Link
+                  prefetch={false}
+                  href="/standorte/wetzlar"
+                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
+                >
+                  Standort Wetzlar
+                </Link>
+              </li>
             </ul>
           </nav>
 
@@ -381,6 +408,20 @@ export const Footer: React.FC = () => {
             aria-label="Rechtliche Informationen"
             className="flex flex-wrap justify-center md:justify-end gap-x-4 gap-y-2 text-xs text-gray-300"
           >
+            <Link
+              prefetch={false}
+              href="/garantie"
+              className="hover:text-white transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
+            >
+              Garantie
+            </Link>
+            <Link
+              prefetch={false}
+              href="/presse"
+              className="hover:text-white transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
+            >
+              Presse
+            </Link>
             <Link
               prefetch={false}
               href="/legal/agb"
