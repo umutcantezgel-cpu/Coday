@@ -1,7 +1,7 @@
 {
   "overview": {
     "label": "Our Expertise",
-    "title": "Industry Solutions",
+    "title": "Specialized Web Design Industry Solutions",
     "description": "Every industry has its own rules. We know them. Discover our specialized concepts for your success.",
     "cta": "View Concept",
     "meta": {
@@ -461,6 +461,7 @@
     "title": "Gastronomy & Hospitality",
     "hero": {
       "headline": "Taste Begins with the First Click",
+      "title_suffix": "Premium Web Design",
       "subheadline": "Turn website visitors into guests. Make them crave your service."
     },
     "challenges": {
@@ -560,8 +561,9 @@
   "ecommerce-retail": {
     "title": "E-Commerce & Retail",
     "hero": {
-      "headline": "From Visitor to Regular Customer",
-      "subheadline": "Scalable online shops and retail experiences that sell."
+      "headline": "From Visitor",
+      "title_suffix": "to Regular Customer",
+      "description": "Scalable online shops and retail experiences that sell."
     },
     "challenges": {
       "warenkorb_abbrueche": {
@@ -659,8 +661,9 @@
   "unternehmensberatung": {
     "title": "Management Consulting",
     "hero": {
-      "headline": "Make Expertise Visible",
-      "subheadline": "Win high-ticket clients by positioning your Management Consulting firm as a thought leader."
+      "headline": "Make Expertise",
+      "title_suffix": "Visible",
+      "description": "Win high-ticket clients by positioning your Management Consulting firm as a thought leader."
     },
     "challenges": {
       "erklaerungsbedarf": {

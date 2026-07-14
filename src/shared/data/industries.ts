@@ -122,7 +122,7 @@ export const industriesData: Record<string, IndustryData> = {
     ],
   },
   'immobilien-makler': {
-    slug: 'immobilien-makler',
+    slug: 'immobilien',
     title: 'immobilien-makler.title',
     icon: 'apartment',
     hero: {

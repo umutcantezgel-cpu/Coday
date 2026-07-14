@@ -143,19 +143,25 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
             <ul className="space-y-2">
               {Object.entries(servicesData).map(([category, categoryData]) => (
                 <React.Fragment key={category}>
-                  {Object.keys(categoryData as any).map((slug) => (
-                    <li key={slug}>
-                      <Link
-                        href={`/services/${category}/${slug}`}
-                        className="text-text-light hover:text-primary transition-colors"
-                      >
-                        {slug
-                          .split('-')
-                          .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-                          .join(' ')}
-                      </Link>
-                    </li>
-                  ))}
+                  {Object.keys(categoryData as any).map((slug) => {
+                    let href = `/services/${category}/${slug}`;
+                    if (slug === 'design-systems') href = '/services/design/design-systems';
+                    if (slug === 'ux-ui-design') href = '/services/design/ui-ux';
+
+                    return (
+                      <li key={slug}>
+                        <Link
+                          href={href}
+                          className="text-text-light hover:text-primary transition-colors"
+                        >
+                          {slug
+                            .split('-')
+                            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                            .join(' ')}
+                        </Link>
+                      </li>
+                    );
+                  })}
                 </React.Fragment>
               ))}
               <li>
@@ -180,14 +186,6 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                   className="text-text-light hover:text-primary transition-colors"
                 >
                   UX Audit
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/design/design-systems"
-                  className="text-text-light hover:text-primary transition-colors"
-                >
-                  Design Systems
                 </Link>
               </li>
             </ul>

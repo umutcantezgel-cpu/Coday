@@ -1,7 +1,7 @@
 {
   "overview": {
     "label": "Unsere Expertise",
-    "title": "Branchenlösungen",
+    "title": "Spezialisierte Webdesign Branchenlösungen",
     "description": "Jede Branche hat eigene Regeln. Wir kennen sie. Entdecken Sie unsere spezialisierten Konzepte für Ihren Erfolg.",
     "cta": "Konzept ansehen",
     "meta": {
@@ -461,6 +461,7 @@
     "title": "Gastronomie & Hotellerie",
     "hero": {
       "headline": "Geschmack beginnt beim ersten Klick",
+      "title_suffix": "Premium Webdesign",
       "subheadline": "Verwandeln Sie Webseiten-Besucher in Gäste Ihrer Gastronomie & Hotellerie. Machen Sie Lust auf Ihren Service."
     },
     "challenges": {
@@ -560,8 +561,9 @@
   "ecommerce-retail": {
     "title": "E-Commerce & Retail",
     "hero": {
-      "headline": "Vom Besucher zum Stammkunden",
-      "subheadline": "Skalierbare Online-Shops und Retail-Erlebnisse, die verkaufen."
+      "headline": "Vom Besucher",
+      "title_suffix": "zum Stammkunden",
+      "description": "Skalierbare Online-Shops und Retail-Erlebnisse, die verkaufen und Ihre Marke stärken."
     },
     "challenges": {
       "warenkorb_abbrueche": {
@@ -659,8 +661,9 @@
   "unternehmensberatung": {
     "title": "Unternehmensberatung",
     "hero": {
-      "headline": "Expertise sichtbar machen",
-      "subheadline": "Gewinnen Sie High-Ticket Kunden durch eine Positionierung als Thought Leader."
+      "headline": "Expertise",
+      "title_suffix": "sichtbar machen",
+      "description": "Gewinnen Sie High-Ticket Kunden durch eine Positionierung als Thought Leader."
     },
     "challenges": {
       "erklaerungsbedarf": {

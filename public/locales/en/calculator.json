@@ -22,13 +22,13 @@
   },
   "hero": {
     "continue": "Continue to Inquiry",
-    "label": "The Agency Configurator",
+    "label": "The Project Configurator",
     "next_step": "Send us your inquiry in the next step.",
     "satisfied": "Satisfied with your configuration?",
-    "subtitle_default": "Choose from 9 categories. From basic to professional solutions.",
-    "subtitle_packages": "Extend your selected package with additional modules.",
-    "title_1": "Build Your",
-    "title_2": "Dream Agency."
+    "subtitle_default": "Calculate your web project and choose from 9 categories. From basic to professional solutions.",
+    "subtitle_packages": "Extend your selected package for your web project with additional modules.",
+    "title_1": "Calculate Your",
+    "title_2": "Web Project."
   },
   "module_count": "{count} module selected",
   "module_count_one": "{count} module selected",

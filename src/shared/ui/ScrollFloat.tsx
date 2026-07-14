@@ -13,6 +13,7 @@ interface ScrollFloatProps {
   scrollStart?: string; // GSAP scroll start (ignored)
   scrollEnd?: string; // GSAP scroll end (ignored)
   stagger?: number;
+  as?: 'h1' | 'h2' | 'div';
 }
 
 const ScrollFloat: React.FC<ScrollFloatProps> = ({
@@ -21,6 +22,7 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
   textClassName = '',
   animationDuration = 1,
   stagger = 0.03,
+  as = 'h2',
 }) => {
   const prefersReducedMotion = useReducedMotion();
   const [isMounted, setIsMounted] = useState(false);
@@ -65,8 +67,10 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
     },
   };
 
+  const MotionComponent = as === 'h1' ? m.h1 : as === 'h2' ? m.h2 : m.div;
+
   return (
-    <m.h2
+    <MotionComponent
       key={isMounted ? 'mounted' : 'ssr'}
       className={`my-5 overflow-hidden ${containerClassName}`}
       initial={isMounted && !prefersReducedMotion ? 'hidden' : false}
@@ -78,7 +82,7 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
       <span className={`inline-block text-[clamp(1.6rem,4vw,3rem)] leading-[1.5] ${textClassName}`}>
         {prefersReducedMotion ? children : splitText}
       </span>
-    </m.h2>
+    </MotionComponent>
   );
 };
 

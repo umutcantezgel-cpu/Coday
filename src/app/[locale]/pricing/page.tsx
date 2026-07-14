@@ -11,7 +11,7 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Design Prices Wetzlar | Transparent Plans',
+      title: 'Web Design Packages Wetzlar | Fixed Pricing',
       description:
         'Clear fixed prices for your web design project in Wetzlar and Central Hesse. No hidden costs and fully transparent packages. Request your free quote.',
       path: '/en/pricing',

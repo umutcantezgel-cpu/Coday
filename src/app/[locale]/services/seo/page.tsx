@@ -12,7 +12,7 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'SEO Agency Wetzlar | Regional Search Optimization',
+      title: 'SEO Wetzlar | Regional Search Optimization',
       description:
         'Regional SEO and GEO optimization by Coday in Wetzlar. More visibility for your business in Central Hesse on Google. Get your free consultation today.',
       path: '/en/services/seo',
@@ -20,7 +20,7 @@ export async function generateMetadata({
     });
   }
   return generatePageMetadata({
-    title: 'SEO Agentur Wetzlar | Regionale Suchoptimierung',
+    title: 'SEO Wetzlar | Suchmaschinenoptimierung Agentur',
     description:
       'Regionale SEO und GEO Optimierung von Coday in Wetzlar. Mehr Sichtbarkeit für Ihr Unternehmen in Mittelhessen bei Google. Jetzt kostenlos beraten lassen.',
     path: '/de/services/seo',

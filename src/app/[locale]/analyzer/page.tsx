@@ -61,7 +61,8 @@ export default async function AnalyzerPage(props: { params: Promise<{ locale: st
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="font-display font-black text-4xl sm:text-5xl md:text-6xl text-secondary-900 mb-6">
-              Website <span className="text-primary-600">Analyzer</span>
+              {_locale === 'en' ? 'Free Website ' : 'Kostenloser Website '}
+              <span className="text-primary-600">Analyzer</span> & SEO Audit
             </h1>
             <p className="text-xl text-secondary-600 max-w-2xl mx-auto">
               Testen Sie Ihre Website auf Performance, SEO, Accessibility und Best Practices mit dem

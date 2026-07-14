@@ -283,8 +283,8 @@
       "badge": "Scalable UI",
       "cta": "System anfragen",
       "description": "Konsistenz ist King. Ich entwickle atomare Design Systeme – ein Design that Scales, das Ihre Marke über alle Touchpoints hinweg einheitlich und effizient macht.",
-      "title_prefix": "Design that",
-      "title_suffix": "Scales."
+      "title_prefix": "Design Systems",
+      "title_suffix": "that Scale."
     },
     "workflow": {
       "description": "Unsere Design Systems sind nicht nur hübsch, sie funktionieren. Nahtlose Übergabe von Figma zu React/Next.js.",
@@ -710,8 +710,8 @@
       "cta": "Migration planen",
       "description": "Wir migrieren Ihre veralteten Monolithen zu modernen, skalierbaren Stacks auf Basis von React und Next.js. Machen Sie Ihr System Future Proof – ohne Datenverlust.",
       "label": "Legacy Modernization",
-      "title_prefix": "Future",
-      "title_suffix": "Proof."
+      "title_prefix": "Future Proof Migration",
+      "title_suffix": "& Replatforming."
     },
     "process": {
       "description": "Unser bewährter Prozess stellt sicher, dass Ihr Betrieb während der Migration weiterläuft.",

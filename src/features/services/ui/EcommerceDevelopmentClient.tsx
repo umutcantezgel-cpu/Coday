@@ -35,11 +35,11 @@ export function EcommerceDevelopmentClient() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
             <span className="text-sapphire font-bold tracking-wider uppercase text-sm mb-4 block">
-              Online-Shop Entwicklung
+              {t('ecommerce_page.hero.badge')}
             </span>
             <h1 className="block font-display font-black text-5xl sm:text-7xl lg:text-8xl text-content-base mb-8 tracking-tight text-balance">
               <BlurText
-                text="Shops die"
+                text={t('ecommerce_page.hero.title_anim')}
                 delay={100}
                 animateBy="words"
                 direction="top"
@@ -50,12 +50,11 @@ export function EcommerceDevelopmentClient() {
                 animationSpeed={4}
                 className="inline-block"
               >
-                verkaufen.
+                {t('ecommerce_page.hero.title_static')}
               </GradientText>
             </h1>
             <p className="text-xl text-content-muted leading-relaxed max-w-prose text-pretty max-w-2xl mx-auto mb-12">
-              Keine Vorlagen. Keine Grenzen. Wir bauen schnelle Online-Shop-Systeme mit Next.js, die
-              Ihre Verkaufsraten explodieren lassen.
+              {t('ecommerce_page.hero.description')}
             </p>
           </div>
         </div>

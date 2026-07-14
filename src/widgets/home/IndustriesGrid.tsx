@@ -28,7 +28,7 @@ export const IndustriesGrid: React.FC = () => {
     {
       id: 'realestate',
       icon: Apartment,
-      link: '/branchen/immobilien-makler',
+      link: '/branchen/immobilien',
       effect: 'glow' as const,
       glowColor: 'rgba(26, 154, 154, 0.3)',
     },

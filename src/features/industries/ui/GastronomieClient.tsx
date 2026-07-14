@@ -72,7 +72,7 @@ const Gastronomie: React.FC = () => {
                   animationSpeed={3}
                   className="inline-block"
                 >
-                  {t('gastronomie-hotellerie.hero.subheadline')}
+                  {t('gastronomie-hotellerie.hero.title_suffix')}
                 </GradientText>
               </h1>
               <p className="text-xl text-slate-600 leading-relaxed mb-8 max-w-xl">

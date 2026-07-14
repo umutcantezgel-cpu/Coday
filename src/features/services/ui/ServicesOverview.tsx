@@ -95,6 +95,7 @@ export const ServicesOverview = async () => {
 
             <div className="js-only">
               <ScrollFloat
+                as="h1"
                 animationDuration={0.8}
                 ease="back.out(1.7)"
                 scrollStart="top bottom"

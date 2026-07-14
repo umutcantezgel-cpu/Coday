@@ -31,21 +31,21 @@ const Garantie: React.FC = () => {
         </div>
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
-          <m.span
+          <m.h1
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-sapphire font-bold tracking-wider uppercase text-sm mb-4 block"
           >
-            Sicherheit für Ihr Business
-          </m.span>
-          <m.h1
+            Sicherheit für Ihr Business: Unsere Garantien
+          </m.h1>
+          <m.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
             className="font-display font-black text-4xl sm:text-5xl md:text-6xl text-gray-900 mb-6 break-words hyphens-auto"
           >
-            Unsere Garantien
-          </m.h1>
+            Agentur Garantien
+          </m.h2>
           <m.p
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}

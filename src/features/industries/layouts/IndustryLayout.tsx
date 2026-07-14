@@ -68,6 +68,7 @@ const ParallaxHero = ({
 
       <div className="container mx-auto px-4 z-20 text-center relative">
         <ScrollFloat
+          as="h1"
           animationDuration={1}
           ease="back.inOut(2)"
           scrollStart="center bottom+=50%"

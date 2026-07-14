@@ -290,8 +290,8 @@
       "badge": "Scalable UI",
       "cta": "Request Design System",
       "description": "Consistency is King. We develop atomic design systems – Design that Scales, making your brand uniform and efficient across all touchpoints.",
-      "title_prefix": "Design that",
-      "title_suffix": "Scales."
+      "title_prefix": "Design Systems",
+      "title_suffix": "that Scale."
     },
     "workflow": {
       "description": "From audit to implementation – we build design systems that yme actually uses.",
@@ -717,8 +717,8 @@
       "cta": "Start Migration",
       "description": "We migrate your outdated monoliths to a modern, scalable stack based on React and Next.js. Make your system Future Proof – without data loss.",
       "label": "Legacy Modernization",
-      "title_prefix": "Future",
-      "title_suffix": "Proof."
+      "title_prefix": "Future Proof Migration",
+      "title_suffix": "& Replatforming."
     },
     "process": {
       "description": "A safe path to modern architecture in 4 steps.",
@@ -774,8 +774,8 @@
     "hero": {
       "badge": "Speed Optimization",
       "description": "Every millisecond counts. We optimize your load times for maximum customer conversions, because Speed is Revenue.",
-      "title_prefix": "Speed is",
-      "title_suffix": "Revenue."
+      "title_prefix": "Pagespeed Optimization Agency",
+      "title_suffix": "Speed is Revenue."
     },
     "metrics": {
       "eco": "Eco Webspace",

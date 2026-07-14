@@ -8,6 +8,7 @@ interface DropdownItem {
   label: string;
   href: string;
   icon?: React.ElementType;
+  locale?: string;
 }
 
 interface NavDropdownProps {
@@ -146,6 +147,7 @@ export const NavDropdown: React.FC<NavDropdownProps> = ({ title, items }) => {
               <Link
                 key={index}
                 href={item.href}
+                locale={item.locale as any}
                 ref={setMenuItemRef(index)}
                 tabIndex={isOpen ? 0 : -1}
                 aria-current={isActive ? 'page' : undefined}

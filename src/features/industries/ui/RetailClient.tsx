@@ -65,11 +65,11 @@ const Retail: React.FC = () => {
                   animationSpeed={4}
                   className="inline-block"
                 >
-                  {t('ecommerce-retail.hero.subheadline')}
+                  {t('ecommerce-retail.hero.title_suffix')}
                 </GradientText>
               </h1>
               <p className="text-xl text-slate-600 leading-relaxed mb-8 max-w-xl">
-                {t('ecommerce-retail.hero.subheadline')}
+                {t('ecommerce-retail.hero.description')}
               </p>
               <div className="flex gap-4 mb-12">
                 <button className="active:scale-[0.97] bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:bg-secondary/90 transition-colors motion-reduce:duration-[0.01ms]">

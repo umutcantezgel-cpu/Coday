@@ -244,6 +244,7 @@ export const Footer: React.FC = () => {
                 <Link
                   prefetch={false}
                   href="/webdesign-agentur-wetzlar"
+                  locale="de"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
                   Webdesign Agentur Wetzlar
@@ -262,6 +263,7 @@ export const Footer: React.FC = () => {
                 <Link
                   prefetch={false}
                   href="/webdesign-agentur-wetzlar"
+                  locale="de"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
                   Webagentur Wetzlar
@@ -307,6 +309,7 @@ export const Footer: React.FC = () => {
                 <Link
                   prefetch={false}
                   href="/webdesign-agentur-wetzlar"
+                  locale="de"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
                   Standort Wetzlar
