@@ -246,17 +246,46 @@ export const SeoTextInjector: React.FC<SeoTextInjectorProps> = ({ title = '', h1
         pick(bodySentences, 16);
     }
 
-    return { p1, p2, p3, p4, p5 };
+    const p6 = [
+      pick(bodySentences, 1),
+      pick(bodySentences, 4),
+      pick(paragraph2Sentences, 6),
+      pick(paragraph2Sentences, 7),
+      pick(outroSentences, 4),
+    ].join(' ');
+
+    const p7 = [
+      pick(introSentences, 2),
+      pick(introSentences, 3),
+      pick(bodySentences, 15),
+      pick(paragraph2Sentences, 8),
+      pick(paragraph2Sentences, 9),
+      pick(outroSentences, 5),
+    ].join(' ');
+
+    const p8 = [
+      pick(introSentences, 4),
+      pick(bodySentences, 17),
+      pick(paragraph2Sentences, 10),
+      pick(paragraph2Sentences, 11),
+      pick(paragraph2Sentences, 12),
+      pick(outroSentences, 6),
+    ].join(' ');
+
+    return { p1, p2, p3, p4, p5, p6, p7, p8 };
   }, [pathname, title, h1, locale]);
 
   return (
-    <div className="container mx-auto px-4 pb-16 pt-8 max-w-4xl opacity-50 hover:opacity-100 transition-opacity duration-300">
+    <div className="container mx-auto px-4 pb-16 pt-8 max-w-4xl transition-opacity duration-300">
       <div className="prose prose-sm md:prose-base dark:prose-invert max-w-none text-text-muted">
         <p className="text-justify leading-relaxed">{seoText.p1}</p>
         <p className="text-justify leading-relaxed mt-4">{seoText.p2}</p>
         <p className="text-justify leading-relaxed mt-4">{seoText.p3}</p>
         <p className="text-justify leading-relaxed mt-4">{seoText.p4}</p>
         <p className="text-justify leading-relaxed mt-4">{seoText.p5}</p>
+        <p className="text-justify leading-relaxed mt-4">{seoText.p6}</p>
+        <p className="text-justify leading-relaxed mt-4">{seoText.p7}</p>
+        <p className="text-justify leading-relaxed mt-4">{seoText.p8}</p>
       </div>
     </div>
   );

@@ -27,6 +27,7 @@ import {
 } from '@phosphor-icons/react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { SeoHead } from '@/shared/ui/SeoHead';
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 
 const iconMap: Record<string, React.ElementType> = {
   hammer: Hammer,
@@ -282,6 +283,9 @@ export function IndustryDetailClient({ industrySlug }: { industrySlug?: string }
           </div>
         </div>
       </section>
+
+      {/* SEO Injection Block for Word Count and Keywords */}
+      <SeoContentBlock title={`${t(industry.title)} Webdesign`} h1={t(industry.hero.headline)} />
     </main>
   );
 }
