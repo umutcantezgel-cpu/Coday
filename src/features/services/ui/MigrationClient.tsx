@@ -255,7 +255,7 @@ export function MigrationClient() {
 
       <SeoContentBlock
         title={t('migration_page.seoText.title')}
-        text={t('migration_page.seoText.content')}
+        text={`${t('migration_page.seoText.content')} ${t('migration_page.hero.title_prefix')} ${t('migration_page.hero.title_suffix')}`}
       />
       <RelevantFAQs serviceId="migration" className="mb-24" />
 

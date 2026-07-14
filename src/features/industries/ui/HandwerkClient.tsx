@@ -61,7 +61,7 @@ const Handwerk: React.FC = () => {
                   animateBy="words"
                   className="inline-block mr-2"
                 />
-                <br />
+                <br />{' '}
                 <GradientText
                   colors={['#F59E0B', '#D97706', '#B45309']}
                   animationSpeed={4}
@@ -69,6 +69,14 @@ const Handwerk: React.FC = () => {
                 >
                   {t('handwerk-bau.hero.subheadline')}
                 </GradientText>
+                {/* visually hidden SEO h1 text */}
+                <div
+                  className="absolute opacity-[0.01] pointer-events-none select-none -z-10 w-0 h-0 overflow-hidden"
+                  aria-hidden="true"
+                >
+                  {t('handwerk-bau.title')}
+                  {t('handwerk-bau.hero.subheadline')}
+                </div>
               </h1>
               <p className="text-xl text-slate-600 leading-relaxed mb-8 max-w-xl">
                 {t('handwerk-bau.hero.subheadline')}
@@ -148,7 +156,7 @@ const Handwerk: React.FC = () => {
 
       <SeoContentBlock
         title={t('handwerk-bau.seoText.title')}
-        text={t('handwerk-bau.seoText.content')}
+        text={`${t('handwerk-bau.seoText.content')} ${t('handwerk-bau.hero.headline')} ${t('handwerk-bau.hero.title_suffix')}`}
       />
       <RelevantFAQs
         serviceId={['web-development', 'seo']}

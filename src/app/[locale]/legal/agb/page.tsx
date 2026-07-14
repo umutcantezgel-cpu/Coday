@@ -3,6 +3,8 @@ import { AgbClient } from '@/features/legal/ui/AgbClient';
 import { getTranslations } from 'next-intl/server';
 import { Metadata } from 'next';
 
+export const dynamic = 'force-static';
+
 export async function generateMetadata({
   params,
 }: {

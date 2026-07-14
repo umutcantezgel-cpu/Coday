@@ -7,6 +7,8 @@ import fs from 'fs';
 import path from 'path';
 import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
 
+export const dynamic = 'force-static';
+
 export async function generateMetadata({
   params,
 }: {
@@ -34,7 +36,10 @@ export async function generateMetadata({
     });
   } catch (e) {
     return generatePageMetadata({
-      title: 'Webdesign für KFZ-Mechatroniker | Hessen',
+      title:
+        locale === 'en'
+          ? 'Web Design for Car Mechanics | Hesse'
+          : 'Webdesign für KFZ-Mechatroniker | Hessen',
       description: 'Digitale Dominanz für Ihre Branche.',
       path: `/${locale}/branchen/automobil/kfz-mechatroniker`,
       type: 'money',
@@ -75,11 +80,11 @@ export default async function SubIndustryPage({ params }: { params: Promise<{ lo
   const _locale = (await params)?.locale || 'de';
   const _seoTitle =
     _locale === 'en'
-      ? 'Webdesign für KFZ-Mechatroniker | Hessen | Coday'
+      ? 'Web Design for Car Mechanics | Hesse | Coday'
       : 'Webdesign für KFZ-Mechatroniker | Hessen | Coday';
   const _seoDesc =
     _locale === 'en'
-      ? 'Digitale Dominanz für Ihre Branche.'
+      ? 'Digital dominance for your industry.'
       : 'Digitale Dominanz für Ihre Branche.';
   return (
     <>
@@ -92,9 +97,14 @@ export default async function SubIndustryPage({ params }: { params: Promise<{ lo
             '@graph': [
               getOrganizationSchema(),
               getServiceSchema({
-                name: 'Webdesign für KFZ-Mechatroniker',
+                name:
+                  _locale === 'en'
+                    ? 'Web Design for Car Mechanics'
+                    : 'Webdesign für KFZ-Mechatroniker',
                 description:
-                  'Webdesign für KFZ-Mechatroniker in Hessen. Digitale Dominanz für Ihre Branche.',
+                  _locale === 'en'
+                    ? 'Web design for car mechanics in Hesse. Digital dominance for your industry.'
+                    : 'Webdesign für KFZ-Mechatroniker in Hessen. Digitale Dominanz für Ihre Branche.',
                 url: `${BASE_URL}/de/branchen/automobil/kfz-mechatroniker`,
               }),
             ],

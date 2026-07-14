@@ -57,8 +57,7 @@ export function EcommerceDevelopmentClient() {
                 className="absolute opacity-[0.01] pointer-events-none select-none -z-10 w-0 h-0 overflow-hidden"
                 aria-hidden="true"
               >
-                {t('ecommerce_page.hero.title_anim')}
-                {t('ecommerce_page.hero.title_static')}
+                {t('ecommerce_page.hero.title_anim')} {t('ecommerce_page.hero.title_static')}
               </div>
             </h1>
             <p className="text-xl text-content-muted leading-relaxed max-w-prose text-pretty max-w-2xl mx-auto mb-12">
@@ -105,7 +104,7 @@ export function EcommerceDevelopmentClient() {
       <section className="py-24 bg-surface-light">
         <SeoContentBlock
           title={t('ecommerce_page.seoText.title')}
-          text={t('ecommerce_page.seoText.content')}
+          text={`${t('ecommerce_page.seoText.content')} ${t('ecommerce_page.hero.title_prefix')} ${t('ecommerce_page.hero.title_suffix')}`}
         />
         <RelevantFAQs serviceId="web-development" />
       </section>

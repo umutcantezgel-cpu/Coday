@@ -11,7 +11,7 @@
         "title": "Content-Strategie"
       },
       "regional": {
-        "desc": "Gezielte Optimierung für maximale Sichtbarkeit in Ihrem lokalen und regionalen Markt.",
+        "desc": "Targeted optimization for maximum visibility in your local and regional market.",
         "title": "Local SEO"
       },
       "technical": {
@@ -29,7 +29,7 @@
     "title_suffix": "Ihren Markt"
   },
   "meta": {
-    "description": "Professionelle SEO-Optimierung für bessere Rankings und mehr qualifizierten Traffic.",
+    "description": "Professional SEO optimization for better rankings and more qualified traffic.",
     "title": "SEO Optimierung"
   },
   "problem": {
@@ -38,7 +38,7 @@
     "title": "Unsichtbarkeit kostet wertvollen Umsatz"
   },
   "process": {
-    "description": "Unser methodischer und datenbasierter Ansatz für nachhaltige Top-Rankings.",
+    "description": "Our methodical and data-driven approach for sustainable top rankings.",
     "steps": {
       "audit": {
         "desc": "Umfassende Analyse des Status Quo und präzise Identifikation ungenutzter Potenziale.",
@@ -70,11 +70,11 @@
     "title": "Nachhaltiges Wachstum durch organische Sichtbarkeit"
   },
   "tech_stack": {
-    "description": "Modernste Tools für tiefgreifende Marktanalysen und exaktes Tracking.",
+    "description": "State-of-the-art tools for in-depth market analysis and precise tracking.",
     "title": "Unser professioneller SEO-Stack"
   },
   "seoText": {
-    "title": "Digitale Exzellenz für Ihren Erfolg",
+    "title": "Digital Excellence for Your Success",
     "content": "As an experienced web design agency, we offer comprehensive expertise and technological excellence in all areas of digital product development. Our goal is to create solutions for you that are not only visually appealing but, above all, high-performing and conversion-optimized.\n\nThe digital landscape is evolving rapidly. Therefore, we rely on modern, future-proof technologies and agile development methods. Whether it's a complex web application, a high-performance headless CMS, or sophisticated UI/UX design - we guarantee the highest quality standards and measurable results.\n\nTrust in a partner who understands your business goals and translates them into digital success. Through continuous analysis, optimization, and strategic consulting, we ensure that your digital assets generate long-term value and keep you one step ahead of the competition."
   }
 }

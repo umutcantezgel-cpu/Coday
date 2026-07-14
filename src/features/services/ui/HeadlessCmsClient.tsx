@@ -48,7 +48,7 @@ export function HeadlessCmsClient() {
                 className="absolute opacity-[0.01] pointer-events-none select-none -z-10 w-0 h-0 overflow-hidden"
                 aria-hidden="true"
               >
-                {t('headless_cms_page.hero.title_prefix')}
+                {t('headless_cms_page.hero.title_prefix')}{' '}
                 {t('headless_cms_page.hero.title_suffix')}
               </div>
             </h1>
@@ -333,7 +333,7 @@ export function HeadlessCmsClient() {
 
       <SeoContentBlock
         title={t('headless_cms_page.seoText.title')}
-        text={t('headless_cms_page.seoText.content')}
+        text={`${t('headless_cms_page.seoText.content')} ${t('headless_cms_page.hero.title_prefix')} ${t('headless_cms_page.hero.title_suffix')}`}
       />
       <RelevantFAQs serviceId="headless-cms" className="mb-24" />
     </>

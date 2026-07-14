@@ -62,8 +62,7 @@ export function ConsultingClient() {
                 className="absolute opacity-[0.01] pointer-events-none select-none -z-10 w-0 h-0 overflow-hidden"
                 aria-hidden="true"
               >
-                {t('hero.title_start')}
-                {t('hero.title_end')}
+                {t('hero.title_start')} {t('hero.title_end')}
               </div>
             </h1>
 
@@ -167,7 +166,7 @@ export function ConsultingClient() {
         <section className="py-24 bg-slate-950 border-t border-slate-800/30">
           <SeoContentBlock
             title={t('consulting_page.seoText.title')}
-            text={t('consulting_page.seoText.content')}
+            text={`${t('consulting_page.seoText.content')} ${t('consulting_page.hero.title_prefix')} ${t('consulting_page.hero.title_suffix')}`}
           />
           <RelevantFAQs
             serviceId="consulting"

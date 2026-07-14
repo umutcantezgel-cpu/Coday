@@ -4,6 +4,8 @@ import { ApiIntegrationClient } from '@/features/services/ui/ApiIntegrationClien
 import { setRequestLocale } from 'next-intl/server';
 import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
 
+export const dynamic = 'force-static';
+
 export async function generateMetadata({
   params,
 }: {

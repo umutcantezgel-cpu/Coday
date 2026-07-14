@@ -72,7 +72,7 @@ export function ApiIntegrationClient() {
                 className="absolute opacity-[0.01] pointer-events-none select-none -z-10 w-0 h-0 overflow-hidden"
                 aria-hidden="true"
               >
-                {t('api_integration_page.hero.title_prefix')}
+                {t('api_integration_page.hero.title_prefix')}{' '}
                 {t('api_integration_page.hero.title_suffix')}
               </div>
             </h1>
@@ -282,7 +282,7 @@ export function ApiIntegrationClient() {
 
       <SeoContentBlock
         title={t('api_integration_page.seoText.title')}
-        text={t('api_integration_page.seoText.content')}
+        text={`${t('api_integration_page.seoText.content')} ${t('api_integration_page.hero.title_prefix')} ${t('api_integration_page.hero.title_suffix')}`}
       />
       <RelevantFAQs serviceId="api-integrations" className="mb-24" />
     </>

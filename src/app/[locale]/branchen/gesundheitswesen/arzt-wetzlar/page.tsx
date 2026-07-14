@@ -7,6 +7,8 @@ import fs from 'fs';
 import path from 'path';
 import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
 
+export const dynamic = 'force-static';
+
 export async function generateMetadata({
   params,
 }: {

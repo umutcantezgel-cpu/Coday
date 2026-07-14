@@ -120,7 +120,7 @@ export function WebDevelopmentClient() {
                 className="absolute opacity-[0.01] pointer-events-none select-none -z-10 w-0 h-0 overflow-hidden"
                 aria-hidden="true"
               >
-                {t('web_development_page.hero.title_anim')}
+                {t('web_development_page.hero.title_anim')}{' '}
                 {t('web_development_page.hero.title_static')}
               </div>
             </h1>

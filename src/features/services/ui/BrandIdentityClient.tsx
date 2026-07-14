@@ -47,7 +47,7 @@ export function BrandIdentityClient() {
                 className="absolute opacity-[0.01] pointer-events-none select-none -z-10 w-0 h-0 overflow-hidden"
                 aria-hidden="true"
               >
-                {t('brand_identity_page.hero.title_prefix')}
+                {t('brand_identity_page.hero.title_prefix')}{' '}
                 {t('brand_identity_page.hero.title_suffix')}
               </div>
             </h1>
@@ -140,7 +140,7 @@ export function BrandIdentityClient() {
 
       <SeoContentBlock
         title={t('brand_identity_page.seoText.title')}
-        text={t('brand_identity_page.seoText.content')}
+        text={`${t('brand_identity_page.seoText.content')} ${t('brand_identity_page.hero.title_prefix')} ${t('brand_identity_page.hero.title_suffix')}`}
       />
       <RelevantFAQs serviceId="brand-identity" className="mb-24" />
     </>

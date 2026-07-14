@@ -24,6 +24,8 @@ import { TestimonialsSection } from '@/widgets/home/TestimonialsSection';
 import { PortfolioTeaserSection } from '@/widgets/home/PortfolioTeaserSection';
 import AgencyComparisonTable from '@/features/analyzer/ui/AgencyComparisonTable';
 
+export const dynamic = 'force-static';
+
 export async function generateMetadata({
   params,
 }: {

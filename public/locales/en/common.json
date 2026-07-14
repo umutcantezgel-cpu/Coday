@@ -97,7 +97,9 @@
       "process": "Prozess",
       "pricing": "Preise",
       "contact": "Projekt starten",
-      "partnerschaft": "Partner Program"
+      "partnerschaft": "Partner Program",
+      "garantie": "Guarantee",
+      "presse": "Press"
     },
     "about": {
       "desc": "The Agency",
@@ -410,7 +412,7 @@
     },
     "essential": {
       "title": "Notwendige Cookies",
-      "desc": "Diese Cookies sind für die Grundfunktionen der Website erforderlich und können nicht deaktiviert werden."
+      "desc": "These cookies are required for basic site functionality and cannot be disabled."
     },
     "analytics": {
       "title": "Analyse-Cookies",
@@ -418,7 +420,7 @@
     },
     "marketing": {
       "title": "Marketing-Cookies",
-      "desc": "Werden verwendet, um Besuchern auf Websites zu folgen. Die Absicht ist, Anzeigen zu zeigen, die relevant und ansprechend für den einzelnen Benutzer sind."
+      "desc": "Used to track visitors across websites. The intention is to display ads that are relevant and engaging for the individual user."
     }
   },
   "close": "Schließen",

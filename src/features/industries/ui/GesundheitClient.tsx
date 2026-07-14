@@ -59,7 +59,7 @@ const Gesundheit: React.FC = () => {
                   animateBy="words"
                   className="inline-block mr-3"
                 />
-                <br />
+                <br />{' '}
                 <GradientText
                   colors={['#10B981', '#34D399', '#059669']}
                   animationSpeed={4}
@@ -67,6 +67,14 @@ const Gesundheit: React.FC = () => {
                 >
                   {t('aerzte-gesundheit.hero.subheadline')}
                 </GradientText>
+                {/* visually hidden SEO h1 text */}
+                <div
+                  className="absolute opacity-[0.01] pointer-events-none select-none -z-10 w-0 h-0 overflow-hidden"
+                  aria-hidden="true"
+                >
+                  {t('aerzte-gesundheit.hero.headline')}
+                  {t('aerzte-gesundheit.hero.subheadline')}
+                </div>
               </h1>
               <p className="text-xl text-slate-600 leading-relaxed mb-8 max-w-xl">
                 {t('aerzte-gesundheit.hero.subheadline')}
@@ -112,7 +120,7 @@ const Gesundheit: React.FC = () => {
 
       <SeoContentBlock
         title={t('aerzte-gesundheit.seoText.title')}
-        text={t('aerzte-gesundheit.seoText.content')}
+        text={`${t('aerzte-gesundheit.seoText.content')} ${t('aerzte-gesundheit.hero.headline')} ${t('aerzte-gesundheit.hero.title_suffix')}`}
       />
       <RelevantFAQs
         serviceId={['web-development', 'seo']}

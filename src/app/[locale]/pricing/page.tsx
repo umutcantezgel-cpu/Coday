@@ -3,6 +3,8 @@ import { generatePageMetadata } from '@/lib/metadata';
 import { getOrganizationSchema, getPricingSchema } from '@/lib/schema';
 import Packages from '@/features/pricing/ui/Packages';
 
+export const dynamic = 'force-static';
+
 export async function generateMetadata({
   params,
 }: {

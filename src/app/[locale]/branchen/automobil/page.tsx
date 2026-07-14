@@ -5,6 +5,8 @@ import { IndustryDetailClient } from '@/features/industries/ui/IndustryDetailCli
 import { IndustryToolEmbed } from '@/features/industries/ui/IndustryToolEmbed';
 import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
 
+export const dynamic = 'force-static';
+
 export async function generateMetadata({
   params,
 }: {

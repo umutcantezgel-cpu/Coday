@@ -9,6 +9,8 @@ import ReportDashboard from '@/features/analyzer/ui/ReportDashboard';
 import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { pick } from '@/shared/lib/pick';
 
+export const dynamic = 'force-static';
+
 export async function generateMetadata({
   params,
 }: {

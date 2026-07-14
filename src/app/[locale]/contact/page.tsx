@@ -4,6 +4,8 @@ import { setRequestLocale } from 'next-intl/server';
 import { ContactClient } from '@/features/contact/ui/ContactClient';
 import { SeoHead } from '@/shared/ui/SeoHead';
 
+export const dynamic = 'force-static';
+
 export async function generateMetadata({
   params,
 }: {

@@ -5,6 +5,8 @@ import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
 import { ORG_ID } from '@/lib/schema';
 
+export const dynamic = 'force-static';
+
 export async function generateMetadata({
   params,
 }: {

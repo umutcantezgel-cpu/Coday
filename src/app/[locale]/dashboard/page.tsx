@@ -3,6 +3,8 @@ import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 
+export const dynamic = 'force-static';
+
 export async function generateMetadata({
   params,
 }: {

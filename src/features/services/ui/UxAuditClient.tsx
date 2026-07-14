@@ -50,8 +50,7 @@ export function UxAuditClient() {
               className="absolute opacity-[0.01] pointer-events-none select-none -z-10 w-0 h-0 overflow-hidden"
               aria-hidden="true"
             >
-              {t('ux_audit_page.hero.title_prefix')}
-              {t('ux_audit_page.hero.title_suffix')}
+              {t('ux_audit_page.hero.title_prefix')} {t('ux_audit_page.hero.title_suffix')}
             </div>
           </h1>
           <p className="text-xl text-content-muted leading-relaxed max-w-prose text-pretty max-w-2xl mx-auto mb-12">
@@ -132,7 +131,7 @@ export function UxAuditClient() {
 
       <SeoContentBlock
         title={t('ux_audit_page.seoText.title')}
-        text={t('ux_audit_page.seoText.content')}
+        text={`${t('ux_audit_page.seoText.content')} ${t('ux_audit_page.hero.title_prefix')} ${t('ux_audit_page.hero.title_suffix')}`}
       />
       <RelevantFAQs serviceId="ux-audit" className="mb-24" />
     </>

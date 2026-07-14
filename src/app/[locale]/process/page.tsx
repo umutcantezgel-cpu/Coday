@@ -6,6 +6,8 @@ import { getOrganizationSchema, getProcessSchema } from '@/lib/schema';
 import ClientComponent from '@/features/process/ui/ProcessClient';
 import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 
+export const dynamic = 'force-static';
+
 export async function generateMetadata({
   params,
 }: {

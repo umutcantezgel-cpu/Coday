@@ -6,111 +6,111 @@
     "desc": "A good text or article should contain at least 500 words, but the quality of our Web Design Agency in Wetzlar is measured in more than just words. We focus on technical excellence, measurable performance (LCP under 2 seconds), and sustainable growth for both B2B and B2C companies. As your local partner in Central Hesse, we specialize in modern Next.js solutions, headless CMS, and highly secure, performant web applications. Transparency, fixed pricing, and direct communication are always at the forefront of our partnership."
   },
   "search": {
-    "placeholder": "Fragen durchsuchen...",
-    "no_results": "Keine Ergebnisse gefunden",
-    "clear": "Suche zurücksetzen"
+    "placeholder": "Search questions...",
+    "no_results": "No results found",
+    "clear": "Clear search"
   },
   "categories": {
-    "all": "Alle Fragen"
+    "all": "All Questions"
   },
   "cta": {
-    "title": "Noch Fragen?",
-    "text": "Kontaktieren Sie uns für eine persönliche Beratung.",
-    "button": "Kontakt aufnehmen"
+    "title": "Still have questions?",
+    "text": "Contact us for a personal consultation.",
+    "button": "Contact Us"
   },
   "troubleshooter": {
-    "title": "Nicht sicher, wo Sie anfangen sollen?",
-    "recommendation": "Unsere Empfehlung",
-    "restart": "Neustart",
-    "start_over": "Von vorne beginnen",
-    "explore": "Lösung entdecken",
+    "title": "Not sure where to start?",
+    "recommendation": "Our Recommendation",
+    "restart": "Restart",
+    "start_over": "Start over",
+    "explore": "Discover solution",
     "steps": {
       "goal": {
-        "question": "Was ist Ihr aktuelles Hauptziel?",
+        "question": "What is your current main goal?",
         "options": {
-          "growth": "Umsatz / Leads steigern",
-          "launch": "Ein neues Produkt einführen",
-          "efficiency": "Automatisieren / Zeit sparen",
-          "fix": "Technische Probleme beheben"
+          "growth": "Increase revenue / leads",
+          "launch": "Launch a new product",
+          "efficiency": "Automate / save time",
+          "fix": "Fix technical issues"
         }
       },
       "growth-context": {
-        "question": "Wie gewinnen Sie derzeit Kunden?",
+        "question": "How do you currently acquire customers?",
         "options": {
-          "ads": "Bezahlte Werbung (Hohe CPA)",
-          "organic": "SEO / Content (Langsam)",
-          "referral": "Empfehlungen (Unberechenbar)"
+          "ads": "Paid advertising (High CPA)",
+          "organic": "SEO / Content (Slow)",
+          "referral": "Referrals (Unpredictable)"
         }
       },
       "launch-context": {
-        "question": "In welcher Phase befinden Sie sich?",
+        "question": "What stage are you in?",
         "options": {
-          "idea": "Nur eine Idee",
-          "prototype": "Prototyp / Design vorhanden",
-          "ready": "Bereit zur Skalierung"
+          "idea": "Just an idea",
+          "prototype": "Prototype / design ready",
+          "ready": "Ready to scale"
         }
       },
       "efficiency-context": {
-        "question": "Wo liegt der Engpass?",
+        "question": "Where is the bottleneck?",
         "options": {
-          "support": "Kundensupport überlastet",
-          "manual": "Manuelle Dateneingabe",
-          "cms": "Website-Updates sind langsam"
+          "support": "Customer support overloaded",
+          "manual": "Manual data entry",
+          "cms": "Website updates are slow"
         }
       },
       "fix-context": {
-        "question": "Was ist defekt?",
+        "question": "What is broken?",
         "options": {
-          "speed": "Website ist zu langsam",
-          "security": "Sicherheitsbedenken / Hacks",
-          "ux": "Benutzer sind verwirrt"
+          "speed": "Website is too slow",
+          "security": "Security concerns / hacks",
+          "ux": "Users are confused"
         }
       }
     },
     "results": {
       "cro": {
-        "title": "Conversion-Optimierung",
-        "desc": "Sie benötigen nicht mehr Traffic, sondern eine bessere Conversion."
+        "title": "Conversion Optimization",
+        "desc": "You don't need more traffic, but better conversion."
       },
       "seo": {
-        "title": "SEO-Strategie",
-        "desc": "Dominieren Sie die Suchergebnisse mit einem technischen SEO-Audit."
+        "title": "SEO Strategy",
+        "desc": "Dominate search results with a technical SEO audit."
       },
       "marketing": {
-        "title": "Wachstumsmarketing",
-        "desc": "Eine ganzheitliche Strategie, um Ihre Akquise-Kanäle zu diversifizieren."
+        "title": "Growth Marketing",
+        "desc": "A holistic strategy to diversify your acquisition channels."
       },
       "strategy": {
-        "title": "Digitale Beratung",
-        "desc": "Lassen Sie uns Ihre Idee validieren, bevor wir sie entwickeln."
+        "title": "Digital Consulting",
+        "desc": "Let's validate your idea before we build it."
       },
       "dev": {
-        "title": "Web-/App-Entwicklung",
-        "desc": "Verwandeln Sie Ihr Design in ein hochleistungsfähiges Produkt."
+        "title": "Web/App Development",
+        "desc": "Turn your design into a high-performance product."
       },
       "ai-support": {
-        "title": "KI-Integration",
-        "desc": "Automatisieren Sie Ihren Support mit maßgeschneiderten KI-Agenten."
+        "title": "AI Integration",
+        "desc": "Automate your support with custom AI agents."
       },
       "automation": {
-        "title": "Prozessautomatisierung",
-        "desc": "Verknüpfen Sie Ihre Tools und beenden Sie manuelle Arbeitsabläufe."
+        "title": "Process Automation",
+        "desc": "Connect your tools and end manual workflows."
       },
       "headless": {
-        "title": "Headless-CMS-Migration",
-        "desc": "Stärken Sie Ihr Marketing-Team mit einem modernen CMS."
+        "title": "Headless CMS Migration",
+        "desc": "Empower your marketing team with a modern CMS."
       },
       "performance": {
-        "title": "Performance-Audit",
-        "desc": "Beschleunigen Sie Ihre Website für bessere UX und Rankings."
+        "title": "Performance Audit",
+        "desc": "Accelerate your website for better UX and rankings."
       },
       "security": {
-        "title": "Sicherheitshärtung",
-        "desc": "Schützen Sie Ihre Assets mit unternehmensweiter Sicherheit."
+        "title": "Security Hardening",
+        "desc": "Protect your assets with enterprise-grade security."
       },
       "ux-audit": {
-        "title": "UX/UI-Audit",
-        "desc": "Identifizieren Sie Reibungspunkte und verbessern Sie die Benutzerfreundlichkeit."
+        "title": "UX/UI Audit",
+        "desc": "Identify friction points and improve usability."
       }
     }
   },

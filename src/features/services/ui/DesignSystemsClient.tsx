@@ -49,7 +49,7 @@ export function DesignSystemsClient() {
               className="absolute opacity-[0.01] pointer-events-none select-none -z-10 w-0 h-0 overflow-hidden"
               aria-hidden="true"
             >
-              {t('design_systems_page.hero.title_prefix')}
+              {t('design_systems_page.hero.title_prefix')}{' '}
               {t('design_systems_page.hero.title_suffix')}
             </div>
           </h1>
@@ -145,7 +145,7 @@ export function DesignSystemsClient() {
 
       <SeoContentBlock
         title={t('design_systems_page.seoText.title')}
-        text={t('design_systems_page.seoText.content')}
+        text={`${t('design_systems_page.seoText.content')} ${t('design_systems_page.hero.title_prefix')} ${t('design_systems_page.hero.title_suffix')}`}
       />
       <RelevantFAQs serviceId="design-systems" className="mb-24" />
     </>

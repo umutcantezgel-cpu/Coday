@@ -43,6 +43,14 @@ export function IndustryOverviewClient() {
           </span>
           <h1 className="block text-4xl md:text-5xl font-bold font-display text-secondary mb-4">
             {t('overview.title')}
+
+            {/* visually hidden SEO h1 text */}
+            <div
+              className="absolute opacity-[0.01] pointer-events-none select-none -z-10 w-0 h-0 overflow-hidden"
+              aria-hidden="true"
+            >
+              {t('overview.title')}
+            </div>
           </h1>
           <p className="text-lg text-text-light">{t('overview.description')}</p>
         </div>

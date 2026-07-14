@@ -63,9 +63,12 @@ export default async function IndustryDetailPage({
             '@graph': [
               getOrganizationSchema(),
               getServiceSchema({
-                name: `Webdesign für ${industry}`,
-                description: `Maßgeschneiderte Webdesign-Lösungen für die Branche ${industry} von Coday in Wetzlar.`,
-                url: `${BASE_URL}/de/branchen/${industry}`,
+                name: locale === 'en' ? `Web Design for ${industry}` : `Webdesign für ${industry}`,
+                description:
+                  locale === 'en'
+                    ? `Custom web design solutions for the ${industry} industry by Coday in Wetzlar.`
+                    : `Maßgeschneiderte Webdesign-Lösungen für die Branche ${industry} von Coday in Wetzlar.`,
+                url: `${BASE_URL}/${locale}/branchen/${industry}`,
               }),
             ],
           }),

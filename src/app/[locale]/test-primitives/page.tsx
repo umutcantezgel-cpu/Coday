@@ -11,6 +11,8 @@ import { Badge } from '@/components/ui/badge';
 import { Icon } from '@/components/ui/icon';
 import { CheckCircle } from '@phosphor-icons/react/dist/ssr';
 
+export const dynamic = 'force-static';
+
 export default function TestPrimitivesPage() {
   let _locale = 'de' as string;
   return (

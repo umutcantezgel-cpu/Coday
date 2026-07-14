@@ -8,6 +8,8 @@ import fs from 'fs';
 import path from 'path';
 import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 
+export const dynamic = 'force-static';
+
 export async function generateMetadata({
   params,
 }: {

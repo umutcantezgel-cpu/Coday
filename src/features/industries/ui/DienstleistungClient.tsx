@@ -51,7 +51,7 @@ const Dienstleistung: React.FC = () => {
                   animateBy="words"
                   className="inline-block"
                 />
-                <br />
+                <br />{' '}
                 <GradientText
                   colors={['#3B82F6', '#2563EB', '#1D4ED8']}
                   animationSpeed={4}
@@ -59,6 +59,14 @@ const Dienstleistung: React.FC = () => {
                 >
                   {t('unternehmensberatung.hero.title_suffix')}
                 </GradientText>
+                {/* visually hidden SEO h1 text */}
+                <div
+                  className="absolute opacity-[0.01] pointer-events-none select-none -z-10 w-0 h-0 overflow-hidden"
+                  aria-hidden="true"
+                >
+                  {t('unternehmensberatung.hero.headline')}
+                  {t('unternehmensberatung.hero.title_suffix')}
+                </div>
               </h1>
               <p className="text-xl text-slate-600 leading-relaxed mb-8 max-w-xl">
                 {t('unternehmensberatung.hero.description')}
@@ -130,7 +138,7 @@ const Dienstleistung: React.FC = () => {
 
       <SeoContentBlock
         title={t('unternehmensberatung.seoText.title')}
-        text={t('unternehmensberatung.seoText.content')}
+        text={`${t('unternehmensberatung.seoText.content')} ${t('unternehmensberatung.hero.headline')} ${t('unternehmensberatung.hero.title_suffix')}`}
       />
       <RelevantFAQs
         serviceId={['web-development', 'seo']}

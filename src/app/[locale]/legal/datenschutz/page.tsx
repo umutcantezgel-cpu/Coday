@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 
+export const dynamic = 'force-static';
+
 export async function generateMetadata({
   params,
 }: {

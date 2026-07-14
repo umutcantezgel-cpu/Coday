@@ -3,6 +3,8 @@ import { generatePageMetadata } from '@/lib/metadata';
 import { getOrganizationSchema, BASE_URL } from '@/lib/schema';
 import { CareerOverviewClient } from '@/features/career/ui/CareerOverviewClient';
 
+export const dynamic = 'force-static';
+
 export async function generateMetadata(): Promise<Metadata> {
   return generatePageMetadata({
     title: 'Karriere bei Coday | Webdesign Agentur Jobs Wetzlar',

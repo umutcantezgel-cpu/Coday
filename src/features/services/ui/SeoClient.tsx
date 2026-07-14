@@ -96,8 +96,7 @@ export function SeoClient() {
                   className="absolute opacity-[0.01] pointer-events-none select-none -z-10 w-0 h-0 overflow-hidden"
                   aria-hidden="true"
                 >
-                  {t('seo_page.hero.title_prefix')}
-                  {t('seo_page.hero.title_suffix')}
+                  {t('seo_page.hero.title_prefix')} {t('seo_page.hero.title_suffix')}
                 </div>
               </h1>
               <p className="text-xl text-content-muted leading-relaxed max-w-prose text-pretty max-w-2xl mx-auto lg:mx-0 mb-12">
@@ -249,7 +248,10 @@ export function SeoClient() {
 
       {/* Relevant FAQs */}
 
-      <SeoContentBlock title={t('seo_page.seoText.title')} text={t('seo_page.seoText.content')} />
+      <SeoContentBlock
+        title={t('seo_page.seoText.title')}
+        text={`${t('seo_page.seoText.content')} ${t('seo_page.hero.title_prefix')} ${t('seo_page.hero.title_suffix')}`}
+      />
       <RelevantFAQs serviceId="seo" className="mb-24" />
 
       {/* SEO Process Timeline */}

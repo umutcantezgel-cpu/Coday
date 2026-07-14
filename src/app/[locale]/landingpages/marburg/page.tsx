@@ -7,6 +7,8 @@ import { LocalSeoTemplate } from '@/features/local-seo/ui/LocalSeoTemplate';
 import fs from 'fs';
 import path from 'path';
 
+export const dynamic = 'force-static';
+
 export async function generateMetadata({
   params,
 }: {

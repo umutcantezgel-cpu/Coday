@@ -1,15 +1,20 @@
 import React from 'react';
-import {
-  CheckSquare,
-  ArrowsLeftRight,
-} from '@phosphor-icons/react/dist/ssr';
+import { CheckSquare, ArrowsLeftRight } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import { KeyTakeaways } from '@/features/blog/ui/KeyTakeaways';
 import { GlossaryTerm } from '@/features/blog/ui/GlossaryTerm';
 import { getGlossaryTerms } from '@/features/blog/model/glossary';
 import { useTranslations, useLocale } from 'next-intl';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import dynamic from 'next/dynamic';
+
+const LazyCodeBlock = dynamic(() => import('./LazyCodeBlock'), {
+  ssr: false,
+  loading: () => (
+    <div className="p-8 text-center text-gray-500 font-mono text-sm animate-pulse">
+      Loading code block...
+    </div>
+  ),
+});
 
 import type {
   ContentBlock,
@@ -34,7 +39,7 @@ import {
   QuoteBlockRenderer,
   CTABlockRenderer,
   InteractiveBlockRenderer,
-  AccordionItem
+  AccordionItem,
 } from './ClientBlocks';
 
 function cn(...inputs: ClassValue[]) {
@@ -130,20 +135,7 @@ const CodeBlockRenderer: React.FC<{ block: CodeBlock }> = ({ block }) => {
         <div className="text-xs font-mono text-gray-500 uppercase">{block.language}</div>
       </div>
       <div className="text-sm">
-        <SyntaxHighlighter
-          language={block.language || 'typescript'}
-          style={vscDarkPlus}
-          customStyle={{
-            margin: 0,
-            padding: '1.25rem',
-            background: 'transparent',
-            fontSize: '0.875rem',
-            lineHeight: '1.7',
-          }}
-          showLineNumbers={true}
-        >
-          {block.code}
-        </SyntaxHighlighter>
+        <LazyCodeBlock code={block.code} language={block.language || 'typescript'} />
       </div>
     </div>
   );

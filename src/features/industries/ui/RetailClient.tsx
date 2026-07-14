@@ -59,7 +59,7 @@ const Retail: React.FC = () => {
                   animateBy="words"
                   className="inline-block"
                 />
-                <br />
+                <br />{' '}
                 <GradientText
                   colors={['#A855F7', '#D946EF', '#EC4899']}
                   animationSpeed={4}
@@ -99,7 +99,10 @@ const Retail: React.FC = () => {
         </div>
       </section>
 
-      <SeoContentBlock title={t('retail.seoText.title')} text={t('retail.seoText.content')} />
+      <SeoContentBlock
+        title={t('retail.seoText.title')}
+        text={`${t('retail.seoText.content')} ${t('retail.hero.headline')} ${t('retail.hero.title_suffix')}`}
+      />
       <RelevantFAQs
         serviceId={['web-development', 'seo']}
         className="bg-gray-50 border-t border-gray-100"

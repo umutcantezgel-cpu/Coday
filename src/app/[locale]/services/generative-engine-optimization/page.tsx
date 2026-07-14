@@ -6,6 +6,8 @@ import { setRequestLocale } from 'next-intl/server';
 import { ORG_ID } from '@/lib/schema';
 import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 
+export const dynamic = 'force-static';
+
 export async function generateMetadata({
   params,
 }: {

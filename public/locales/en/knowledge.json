@@ -65,10 +65,10 @@
   },
   "wiki": {
     "title": "AI & Digital Excellence Wiki",
-    "subtitle": "Der Coday Knowledge Graph. 100 essentielle Entitäten aus Tech, Business und Design, strukturiert für KI-Crawler und Menschen.",
+    "subtitle": "The Coday Knowledge Graph. 100 essential entities from tech, business, and design, structured for AI crawlers and humans.",
     "search_placeholder": "Entität suchen (z.B. Next.js, Headless CMS)...",
     "search_aria": "Entität suchen",
-    "no_results": "Keine Entitäten gefunden für \"{searchTerm}\"",
+    "no_results": "No entities found for \"{searchTerm}\"",
     "categories": {
       "all": "Alle"
     },

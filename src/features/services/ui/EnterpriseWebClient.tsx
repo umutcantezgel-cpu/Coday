@@ -75,7 +75,7 @@ export function EnterpriseWebClient() {
                 className="absolute opacity-[0.01] pointer-events-none select-none -z-10 w-0 h-0 overflow-hidden"
                 aria-hidden="true"
               >
-                {t('enterprise_web_page.hero.title_prefix')}
+                {t('enterprise_web_page.hero.title_prefix')}{' '}
                 {t('enterprise_web_page.hero.title_suffix')}
               </div>
             </h1>
@@ -238,7 +238,7 @@ export function EnterpriseWebClient() {
       <section className="py-24 bg-surface-elevated">
         <SeoContentBlock
           title={t('enterprise_web_page.seoText.title')}
-          text={t('enterprise_web_page.seoText.content')}
+          text={`${t('enterprise_web_page.seoText.content')} ${t('enterprise_web_page.hero.title_prefix')} ${t('enterprise_web_page.hero.title_suffix')}`}
         />
         <RelevantFAQs serviceId="web-development" />
       </section>

@@ -5,6 +5,8 @@ import { SeoHead } from '@/shared/ui/SeoHead';
 import ClientComponent from '@/features/legal/ui/GarantieClient';
 import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 
+export const dynamic = 'force-static';
+
 export async function generateMetadata({
   params,
 }: {

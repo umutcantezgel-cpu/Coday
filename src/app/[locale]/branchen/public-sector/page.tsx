@@ -4,6 +4,8 @@ import PublicSectorClient from '@/features/industries/ui/PublicSectorClient';
 import { setRequestLocale } from 'next-intl/server';
 import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
 
+export const dynamic = 'force-static';
+
 export async function generateMetadata({
   params,
 }: {

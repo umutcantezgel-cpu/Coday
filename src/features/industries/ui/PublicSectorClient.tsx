@@ -41,7 +41,7 @@ const PublicSectorPage: React.FC = () => {
           </div>
 
           <h1 className="font-display font-black text-4xl sm:text-6xl text-slate-900 mb-6 tracking-tight max-w-4xl mx-auto">
-            {t('hero.headline')} <br />
+            {t('hero.headline')} <br />{' '}
             <GradientText
               colors={['#1e3a8a', '#3b82f6', '#1e3a8a']}
               animationSpeed={6}
@@ -49,6 +49,14 @@ const PublicSectorPage: React.FC = () => {
             >
               {t('hero.subline')}
             </GradientText>
+            {/* visually hidden SEO h1 text */}
+            <div
+              className="absolute opacity-[0.01] pointer-events-none select-none -z-10 w-0 h-0 overflow-hidden"
+              aria-hidden="true"
+            >
+              {t('hero.headline')}
+              {t('hero.subline')}
+            </div>
           </h1>
 
           <p className="text-xl text-slate-600 leading-relaxed mb-10 max-w-2xl mx-auto">

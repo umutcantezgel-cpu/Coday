@@ -6,6 +6,8 @@ import { Sidebar } from '@/components/layout/sidebar';
 import { Navbar } from '@/components/layout/navbar';
 import { Breadcrumb } from '@/components/ui/breadcrumb';
 
+export const dynamic = 'force-static';
+
 export default function TestPage() {
   let _locale = 'de' as string;
   return (

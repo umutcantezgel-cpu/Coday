@@ -59,8 +59,7 @@ export function PerformanceClient() {
               className="absolute opacity-[0.01] pointer-events-none select-none -z-10 w-0 h-0 overflow-hidden"
               aria-hidden="true"
             >
-              {t('performance_page.hero.title_prefix')}
-              {t('performance_page.hero.title_suffix')}
+              {t('performance_page.hero.title_prefix')} {t('performance_page.hero.title_suffix')}
             </div>
           </h1>
           <p className="text-xl text-content-muted leading-relaxed max-w-prose text-pretty max-w-2xl mx-auto mb-12">
@@ -147,7 +146,7 @@ export function PerformanceClient() {
       <section className="py-24 bg-surface-elevated">
         <SeoContentBlock
           title={t('performance_page.seoText.title')}
-          text={t('performance_page.seoText.content')}
+          text={`${t('performance_page.seoText.content')} ${t('performance_page.hero.title_prefix')} ${t('performance_page.hero.title_suffix')}`}
         />
         <RelevantFAQs serviceId="web-development" />
       </section>

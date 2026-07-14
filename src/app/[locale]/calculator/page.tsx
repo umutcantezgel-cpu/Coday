@@ -5,6 +5,8 @@ import type { Metadata } from 'next';
 import { getOrganizationSchema, BASE_URL } from '@/lib/schema';
 import ClientComponent from '@/features/calculator/ui/CalculatorClient';
 
+export const dynamic = 'force-static';
+
 export async function generateMetadata({
   params,
 }: {

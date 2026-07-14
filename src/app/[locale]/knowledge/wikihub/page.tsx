@@ -4,6 +4,8 @@ import { setRequestLocale } from 'next-intl/server';
 import { SeoHead } from '@/shared/ui/SeoHead';
 import ClientComponent from '@/features/knowledge/ui/WikiHubClient';
 
+export const dynamic = 'force-static';
+
 export async function generateMetadata({
   params,
 }: {
