@@ -327,7 +327,7 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
                 color: 'var(--color-text-inverse)',
               }}
             >
-              <span>{t('nav.packages.label', { defaultValue: 'Pakete' })}</span>
+              <span>{t('nav.packages.label')}</span>
               <OptimizedIcon icon={ArrowRight} className="cta-arrow" />
             </Link>
 
@@ -336,7 +336,7 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
               className="nav-pill-cta"
               style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
             >
-              <span>{t('nav.cta_booking', { defaultValue: 'Termin' })}</span>
+              <span>{t('nav.cta_booking')}</span>
               <OptimizedIcon icon={ArrowRight} className="cta-arrow" />
             </Link>
           </div>
