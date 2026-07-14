@@ -94,8 +94,56 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     // === Services ===
     sitemapEntry('/services', { changeFrequency: 'monthly', priority: 0.8 }),
-    sitemapEntry('/services/web-design', { changeFrequency: 'monthly', priority: 0.8 }),
+
+    // Web Development Sub-Services
     sitemapEntry('/services/web-development', { changeFrequency: 'monthly', priority: 0.8 }),
+    sitemapEntry('/services/web-development/react-nextjs-agentur', {
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    }),
+    sitemapEntry('/services/web-development/e-commerce-shops', {
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    }),
+    sitemapEntry('/services/web-development/full-stack-entwicklung', {
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    }),
+    sitemapEntry('/services/web-development/cloud-infrastructure', {
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    }),
+
+    // Web Design Sub-Services
+    sitemapEntry('/services/web-design', { changeFrequency: 'monthly', priority: 0.8 }),
+    sitemapEntry('/services/web-design/ux-ui-design', {
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    }),
+    sitemapEntry('/services/web-design/design-systems', {
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    }),
+    sitemapEntry('/services/web-design/website-relaunch', {
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    }),
+
+    // Growth / Marketing Sub-Services
+    sitemapEntry('/services/growth/seo-optimization', {
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    }),
+    sitemapEntry('/services/growth/performance-optimization', {
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    }),
+    sitemapEntry('/services/growth/digital-consulting', {
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    }),
+
+    // Legacy Services
     sitemapEntry('/services/seo', { changeFrequency: 'monthly', priority: 0.8 }),
     sitemapEntry('/services/performance', { changeFrequency: 'monthly', priority: 0.7 }),
     sitemapEntry('/services/consulting', { changeFrequency: 'monthly', priority: 0.7 }),
@@ -127,6 +175,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     // === Branchen (Industry pages) ===
     sitemapEntry('/branchen', { changeFrequency: 'monthly', priority: 0.7 }),
+
+    // New Industry Slugs
+    sitemapEntry('/branchen/handwerk-bau', { changeFrequency: 'monthly', priority: 0.8 }),
+    sitemapEntry('/branchen/immobilien-makler', { changeFrequency: 'monthly', priority: 0.8 }),
+    sitemapEntry('/branchen/unternehmensberatung', { changeFrequency: 'monthly', priority: 0.8 }),
+    sitemapEntry('/branchen/aerzte-gesundheit', { changeFrequency: 'monthly', priority: 0.8 }),
+    sitemapEntry('/branchen/anwaelte-kanzleien', { changeFrequency: 'monthly', priority: 0.8 }),
+    sitemapEntry('/branchen/gastronomie-hotellerie', { changeFrequency: 'monthly', priority: 0.8 }),
+    sitemapEntry('/branchen/startups-tech', { changeFrequency: 'monthly', priority: 0.8 }),
+
+    // Legacy / Generic Industry Slugs
     sitemapEntry('/branchen/handwerker', { changeFrequency: 'monthly', priority: 0.8 }),
     sitemapEntry('/branchen/handwerker/wetzlar', { changeFrequency: 'monthly', priority: 0.9 }),
     sitemapEntry('/branchen/gesundheitswesen', { changeFrequency: 'monthly', priority: 0.7 }),
