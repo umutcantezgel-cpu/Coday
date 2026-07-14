@@ -126,5 +126,15 @@
   "meta": {
     "title": "Digital Consulting & Strategieberatung | Coday",
     "description": "Strategische Beratung für Ihre digitale Transformation. Tech-Stack Evaluierung, Prozessoptimierung und datengetriebenes Growth Hacking."
+  },
+  "consulting_page": {
+    "seoText": {
+      "title": "title",
+      "content": "content"
+    },
+    "hero": {
+      "title_prefix": "title_prefix",
+      "title_suffix": "title_suffix"
+    }
   }
 }

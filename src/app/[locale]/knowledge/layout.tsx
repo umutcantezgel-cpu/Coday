@@ -4,7 +4,18 @@ import { pick } from '@/shared/lib/pick';
 
 export default async function KnowledgeLayout({ children }: { children: React.ReactNode }) {
   const messages = await getMessages();
-  const pageMessages = pick(messages as any, ['knowledge', 'blog', 'faq']);
+  const pageMessages = pick(messages as any, [
+    'knowledge',
+    'blog',
+    'faq',
+    'common',
+    'form',
+    'cookie',
+    'industries',
+    'career',
+    'booking',
+    'public-sector',
+  ]);
 
   return <NextIntlClientProvider messages={pageMessages}>{children}</NextIntlClientProvider>;
 }

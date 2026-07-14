@@ -4,7 +4,18 @@ import { pick } from '@/shared/lib/pick';
 
 export default async function CareerLayout({ children }: { children: React.ReactNode }) {
   const messages = await getMessages();
-  const pageMessages = pick(messages as any, ['careers']);
+  const pageMessages = pick(messages as any, [
+    'careers',
+    'common',
+    'faq',
+    'form',
+    'cookie',
+    'blog',
+    'industries',
+    'career',
+    'booking',
+    'public-sector',
+  ]);
 
   return <NextIntlClientProvider messages={pageMessages}>{children}</NextIntlClientProvider>;
 }

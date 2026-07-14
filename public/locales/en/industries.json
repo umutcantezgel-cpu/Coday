@@ -51,7 +51,8 @@
       "title_1": "Professional Web Design",
       "title_2": "for Craftsmen",
       "description": "We build websites that help craft businesses gain more visibility and orders.",
-      "image_alt": "Craftsman Website"
+      "image_alt": "Craftsman Website",
+      "title_suffix": "title_suffix"
     },
     "challenges": {
       "fachkraftemangel": {
@@ -169,7 +170,8 @@
     "hero": {
       "headline": "Exclusive properties, exclusively presented",
       "subheadline": "Convince owners and buyers with a digital presence that radiates competence and class.",
-      "image_alt": "Real Estate Website"
+      "image_alt": "Real Estate Website",
+      "title_suffix": "title_suffix"
     },
     "challenges": {
       "objektakquise": {
@@ -299,7 +301,8 @@
     "title": "Doctors & Healthcare",
     "hero": {
       "headline": "Trust Begins Before the First Appointment",
-      "subheadline": "Relieve your practice team and attract the right patients through modern digital processes, because Trust Begins Before the First Appointment."
+      "subheadline": "Relieve your practice team and attract the right patients through modern digital processes, because Trust Begins Before the First Appointment.",
+      "title_suffix": "title_suffix"
     },
     "challenges": {
       "telefon_ueberlastung": {
@@ -563,7 +566,8 @@
     "hero": {
       "headline": "From Visitor",
       "title_suffix": "to Regular Customer",
-      "description": "Scalable online shops and retail experiences that sell."
+      "description": "Scalable online shops and retail experiences that sell.",
+      "subheadline": "subheadline"
     },
     "challenges": {
       "warenkorb_abbrueche": {
@@ -663,7 +667,8 @@
     "hero": {
       "headline": "Make Expertise",
       "title_suffix": "Visible",
-      "description": "Win high-ticket clients by positioning your Management Consulting firm as a thought leader."
+      "description": "Win high-ticket clients by positioning your Management Consulting firm as a thought leader.",
+      "subheadline": "subheadline"
     },
     "challenges": {
       "erklaerungsbedarf": {
@@ -919,6 +924,16 @@
     "seoText": {
       "title": "Industry-specific IT Solutions",
       "content": "As an experienced web design agency, we offer comprehensive expertise and technological excellence in all areas of digital product development. Our goal is to create solutions for you that are not only visually appealing but, above all, high-performing and conversion-optimized.\n\nThe digital landscape is evolving rapidly. Therefore, we rely on modern, future-proof technologies and agile development methods. Whether it's a complex web application, a high-performance headless CMS, or sophisticated UI/UX design - we guarantee the highest quality standards and measurable results.\n\nTrust in a partner who understands your business goals and translates them into digital success. Through continuous analysis, optimization, and strategic consulting, we ensure that your digital assets generate long-term value and keep you one step ahead of the competition."
+    }
+  },
+  "retail": {
+    "seoText": {
+      "title": "title",
+      "content": "content"
+    },
+    "hero": {
+      "headline": "headline",
+      "title_suffix": "title_suffix"
     }
   }
 }

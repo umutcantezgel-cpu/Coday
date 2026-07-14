@@ -1,7 +1,7 @@
-"use client";
+'use client';
 import { useTranslations } from 'next-intl';
 
 export function Test() {
-  const t = useTranslations();
-  t('blog:dataMaturity.levels.0');
+  const t = useTranslations('blog');
+  t('dataMaturity.levels.0');
 }

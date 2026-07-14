@@ -5,19 +5,22 @@ import { clsx } from 'clsx';
 import { useTranslations } from 'next-intl';
 
 export const MobileSimulator: React.FC = () => {
-  const t = useTranslations();
+  const t = useTranslations('blog');
   const [mode, setMode] = useState<'bad' | 'good'>('bad');
   const [device, setDevice] = useState<'mobile' | 'desktop'>('mobile');
 
   return (
-    <section className="my-12 bg-gray-900 rounded-3xl p-8 border border-gray-800 shadow-2xl overflow-hidden relative" aria-label={t('blog:mobileSimulator.title')}>
+    <section
+      className="my-12 bg-gray-900 rounded-3xl p-8 border border-gray-800 shadow-2xl overflow-hidden relative"
+      aria-label={t('mobileSimulator.title')}
+    >
       <div className="absolute top-0 right-0 p-4 opacity-10">
         <DeviceMobile size={120} className="text-white" />
       </div>
 
       <h3 className="text-2xl font-bold text-white mb-6 relative z-10 flex items-center gap-3">
         <DeviceMobile className="text-blue-500" />
-        {t('blog:mobileSimulator.title')}
+        {t('mobileSimulator.title')}
       </h3>
 
       <div className="flex justify-center gap-4 mb-8 relative z-10">
@@ -33,7 +36,7 @@ export const MobileSimulator: React.FC = () => {
           aria-pressed={mode === 'bad'}
         >
           <XCircle size={18} />
-          {t('blog:mobileSimulator.badMode')}
+          {t('mobileSimulator.badMode')}
         </button>
         <button
           onClick={() => setMode('good')}
@@ -47,7 +50,7 @@ export const MobileSimulator: React.FC = () => {
           aria-pressed={mode === 'good'}
         >
           <CheckCircle size={18} />
-          {t('blog:mobileSimulator.goodMode')}
+          {t('mobileSimulator.goodMode')}
         </button>
       </div>
 
@@ -65,8 +68,8 @@ export const MobileSimulator: React.FC = () => {
           <div className="h-full overflow-y-auto bg-white custom-scrollbar">
             {/* Header */}
             <div className="bg-slate-900 p-4 flex justify-between items-center text-white sticky top-0 z-20">
-              <div className="font-bold">{t('blog:mobileSimulator.fake.logo')}</div>
-              <div className="text-xs">{t('blog:mobileSimulator.fake.menu')}</div>
+              <div className="font-bold">{t('mobileSimulator.fake.logo')}</div>
+              <div className="text-xs">{t('mobileSimulator.fake.menu')}</div>
             </div>
 
             {/* Hero */}
@@ -74,13 +77,11 @@ export const MobileSimulator: React.FC = () => {
               {mode === 'bad' ? (
                 <div className="space-y-4">
                   <div className="text-3xl font-serif text-slate-800 leading-tight">
-                    {t('blog:mobileSimulator.fake.welcome')}
+                    {t('mobileSimulator.fake.welcome')}
                   </div>
-                  <p className="text-xs text-slate-500 px-8">
-                    {t('blog:mobileSimulator.fake.serving')}
-                  </p>
+                  <p className="text-xs text-slate-500 px-8">{t('mobileSimulator.fake.serving')}</p>
                   <button className="active:scale-[0.97] text-[10px] bg-blue-600 text-white px-2 py-1 rounded hover:bg-blue-700">
-                    {t('blog:mobileSimulator.fake.clickMore')}
+                    {t('mobileSimulator.fake.clickMore')}
                   </button>
                 </div>
               ) : (
@@ -91,10 +92,10 @@ export const MobileSimulator: React.FC = () => {
                     })}
                   </h1>
                   <p className="text-sm text-slate-600 font-medium">
-                    {t('blog:mobileSimulator.fake.subheadline')}
+                    {t('mobileSimulator.fake.subheadline')}
                   </p>
                   <button className="active:scale-[0.97] w-full py-3 bg-blue-600 text-white font-bold rounded-xl shadow-lg shadow-blue-200 transition-transform motion-reduce:duration-[0.01ms]">
-                    {t('blog:mobileSimulator.fake.startNow')}
+                    {t('mobileSimulator.fake.startNow')}
                   </button>
                 </div>
               )}
@@ -119,7 +120,7 @@ export const MobileSimulator: React.FC = () => {
                   </div>
                   {mode === 'bad' && (
                     <button className="active:scale-[0.97] text-[8px] border border-blue-600 text-blue-600 px-1 py-0.5 whitespace-nowrap">
-                      {t('blog:mobileSimulator.fake.readMore')}
+                      {t('mobileSimulator.fake.readMore')}
                     </button>
                   )}
                 </div>
@@ -131,7 +132,7 @@ export const MobileSimulator: React.FC = () => {
           {mode === 'good' && device === 'mobile' && (
             <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-green-500/20 to-transparent pointer-events-none flex items-end justify-center pb-4">
               <span className="bg-green-600 text-white text-[10px] px-2 py-1 rounded-full font-bold">
-                {t('blog:mobileSimulator.fake.thumbZone')}
+                {t('mobileSimulator.fake.thumbZone')}
               </span>
             </div>
           )}
@@ -142,13 +143,17 @@ export const MobileSimulator: React.FC = () => {
         <button
           onClick={() => setDevice((d) => (d === 'mobile' ? 'desktop' : 'mobile'))}
           className="active:scale-[0.97] flex items-center gap-2 hover:text-white transition-colors motion-reduce:duration-[0.01ms]"
-          aria-label={device === 'mobile' ? t('blog:mobileSimulator.switchToDesktop') : t('blog:mobileSimulator.switchToMobile')}
+          aria-label={
+            device === 'mobile'
+              ? t('mobileSimulator.switchToDesktop')
+              : t('mobileSimulator.switchToMobile')
+          }
         >
           {device === 'mobile' ? <Monitor size={16} /> : <DeviceMobile size={16} />}
           {device === 'mobile'
-            ? t('blog:mobileSimulator.switchToDesktop')
-            : t('blog:mobileSimulator.switchToMobile')}{' '}
-          {t('blog:mobileSimulator.view')}
+            ? t('mobileSimulator.switchToDesktop')
+            : t('mobileSimulator.switchToMobile')}{' '}
+          {t('mobileSimulator.view')}
         </button>
       </div>
     </section>

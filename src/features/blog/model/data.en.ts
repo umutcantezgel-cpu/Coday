@@ -1146,7 +1146,7 @@ In essence, while AI can generate variations on a theme, it cannot originate the
         heading: 'Your Retainer Burns Money',
         level: 'h2',
         content:
-          "It's an open secret: The business model of classic advertising agencies is based on inefficiency. The longer they take for a task, the more they earn. Hourly rates reward slowness.\n\nIn a world without AI, that was acceptable. You needed manpower. But today? Today it's theft of your budget.",
+          "# The 'Agency Killer': Why the Classic Agency Model is Dead\n\nIt's an open secret: The business model of classic advertising agencies is based on inefficiency. The longer they take for a task, the more they earn. Hourly rates reward slowness.\n\nIn a world without AI, that was acceptable. You needed manpower. But today? Today it's theft of your budget.",
       },
       {
         id: 'interactive-timeline',

@@ -159,9 +159,6 @@ const BlogPost: React.FC = () => {
 
           <h1 className="font-display font-black text-4xl md:text-5xl lg:text-6xl text-secondary mb-6 leading-tight drop-shadow-sm">
             <BlurText text={post.title} delay={50} animateBy="words" className="block" />
-            <span className="sr-only">
-              {currentLocale === 'en' ? ' - Tech Blog' : ' - Agentur Blog'}
-            </span>
           </h1>
 
           <p className="text-xl md:text-2xl text-content-base font-medium leading-relaxed drop-shadow-sm bg-white/50 backdrop-blur-md p-6 rounded-2xl inline-block border border-white/60 shadow-sm max-w-3xl">

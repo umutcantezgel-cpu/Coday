@@ -51,7 +51,8 @@
       "title_1": "Professionelles Webdesign",
       "title_2": "für Handwerker",
       "description": "Wir bauen Websites, die Handwerksbetrieben zu mehr Sichtbarkeit und Aufträgen verhelfen.",
-      "image_alt": "Handwerker Website"
+      "image_alt": "Handwerker Website",
+      "title_suffix": "title_suffix"
     },
     "challenges": {
       "fachkraftemangel": {
@@ -169,7 +170,8 @@
     "hero": {
       "headline": "Exklusive Objekte, exklusiv präsentiert",
       "subheadline": "Überzeugen Sie Eigentümer und Käufer mit einer digitalen Präsenz, die Kompetenz und Klasse ausstrahlt.",
-      "image_alt": "Makler Webseite"
+      "image_alt": "Makler Webseite",
+      "title_suffix": "title_suffix"
     },
     "challenges": {
       "objektakquise": {
@@ -299,7 +301,8 @@
     "title": "Ärzte & Gesundheitswesen",
     "hero": {
       "headline": "Vertrauen beginnt vor dem ersten Termin",
-      "subheadline": "Entlasten Sie Ihr Praxis-Team und gewinnen Sie die richtigen Patienten durch moderne digitale Prozesse. Denn Vertrauen beginnt vor dem ersten Termin."
+      "subheadline": "Entlasten Sie Ihr Praxis-Team und gewinnen Sie die richtigen Patienten durch moderne digitale Prozesse. Denn Vertrauen beginnt vor dem ersten Termin.",
+      "title_suffix": "title_suffix"
     },
     "challenges": {
       "telefon_ueberlastung": {
@@ -563,7 +566,8 @@
     "hero": {
       "headline": "Vom Besucher",
       "title_suffix": "zum Stammkunden",
-      "description": "Skalierbare Online-Shops und Retail-Erlebnisse, die verkaufen und Ihre Marke stärken."
+      "description": "Skalierbare Online-Shops und Retail-Erlebnisse, die verkaufen und Ihre Marke stärken.",
+      "subheadline": "subheadline"
     },
     "challenges": {
       "warenkorb_abbrueche": {
@@ -663,7 +667,8 @@
     "hero": {
       "headline": "Expertise",
       "title_suffix": "sichtbar machen",
-      "description": "Gewinnen Sie High-Ticket Kunden durch eine Positionierung als Thought Leader."
+      "description": "Gewinnen Sie High-Ticket Kunden durch eine Positionierung als Thought Leader.",
+      "subheadline": "subheadline"
     },
     "challenges": {
       "erklaerungsbedarf": {
@@ -919,6 +924,16 @@
     "seoText": {
       "title": "Branchenspezifische IT-Lösungen",
       "content": "Als führende Webdesign Agentur verstehen wir die einzigartigen digitalen Herausforderungen der Branche. Eine professionelle Online-Präsenz ist heute weit mehr als nur eine digitale Visitenkarte – sie ist das Herzstück Ihrer Unternehmenskommunikation und ein entscheidender Faktor für die Neukundengewinnung.\n\nWir entwickeln maßgeschneiderte Webdesign und IT-Lösungen, die exakt auf Ihre spezifischen Anforderungen zugeschnitten sind. Von der Konzeption über das Design bis hin zur technischen Umsetzung und Suchmaschinenoptimierung begleiten wir Sie ganzheitlich bei Ihrer digitalen Transformation.\n\nSetzen Sie auf technologische Exzellenz, höchste Sicherheitsstandards und zukunftssichere Architekturen. Gemeinsam maximieren wir Ihren digitalen Erfolg und sichern Ihre Wettbewerbsfähigkeit im digitalen Zeitalter."
+    }
+  },
+  "retail": {
+    "seoText": {
+      "title": "title",
+      "content": "content"
+    },
+    "hero": {
+      "headline": "headline",
+      "title_suffix": "title_suffix"
     }
   }
 }

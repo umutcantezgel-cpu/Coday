@@ -369,7 +369,9 @@
       "cta_secondary": "Referenzen ansehen",
       "description": "Als Ihre E-Commerce Agentur bauen wir High-Performance Shops mit Shopify und WooCommerce. Keine Standard-Themes, sondern conversion-optimierte Verkaufsmaschinen.",
       "title_anim": "Ihre ",
-      "title_static": "E-Commerce Agentur."
+      "title_static": "E-Commerce Agentur.",
+      "title_prefix": "title_prefix",
+      "title_suffix": "title_suffix"
     },
     "roi_calculator": {
       "aov_label": "Durchschn. Warenkorb",
@@ -1510,7 +1512,8 @@
     },
     "cta": {
       "title": "Kostenloses Erstgespräch vereinbaren",
-      "description": "Kostenloses Erstgespräch: Wir zeigen Ihnen konkret, wo Ihre aktuelle Website Kunden verschenkt."
+      "description": "Kostenloses Erstgespräch: Wir zeigen Ihnen konkret, wo Ihre aktuelle Website Kunden verschenkt.",
+      "button": "Jetzt anfragen"
     },
     "process": {
       "simulator": {
@@ -1566,7 +1569,21 @@
   },
   "methodology": {
     "title": "Präzises Handwerk statt Massenabfertigung.",
-    "description": "Als Solo-Agentur arbeite ich direkt mit Ihnen zusammen – ohne Projektmanager oder stille Post. Sie erhalten maßgeschneiderte Lösungen, die auf modernsten Web-Technologien basieren und echte Ergebnisse liefern. Von der ersten Konzeption bis zum finalen Launch."
+    "description": "Als Solo-Agentur arbeite ich direkt mit Ihnen zusammen – ohne Projektmanager oder stille Post. Sie erhalten maßgeschneiderte Lösungen, die auf modernsten Web-Technologien basieren und echte Ergebnisse liefern. Von der ersten Konzeption bis zum finalen Launch.",
+    "steps": {
+      "01": {
+        "title": "title",
+        "desc": "desc"
+      },
+      "02": {
+        "title": "title",
+        "desc": "desc"
+      },
+      "03": {
+        "title": "title",
+        "desc": "desc"
+      }
+    }
   },
   "label": "Unsere Leistungen",
   "title_prefix": "Wir bieten",

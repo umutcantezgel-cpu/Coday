@@ -54,7 +54,17 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   setRequestLocale(locale);
   const messages = await getMessages();
-  const pageMessages = pick(messages as any, ['home', 'analyzer']);
+  const pageMessages = pick(messages as any, [
+    'home',
+    'analyzer',
+    'common',
+    'faq',
+    'form',
+    'cookie',
+    'blog',
+    'industries',
+    'career',
+  ]);
 
   const t = await getTranslations('home');
   const serviceSchema = getProfessionalServiceSchema();

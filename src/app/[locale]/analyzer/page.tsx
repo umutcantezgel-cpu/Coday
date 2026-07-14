@@ -41,7 +41,16 @@ export default async function AnalyzerPage(props: { params: Promise<{ locale: st
   });
 
   const messages = await getMessages();
-  const pageMessages = pick(messages as any, ['analyzer']);
+  const pageMessages = pick(messages as any, [
+    'analyzer',
+    'common',
+    'faq',
+    'form',
+    'cookie',
+    'blog',
+    'industries',
+    'career',
+  ]);
 
   const jsonLd = {
     '@context': 'https://schema.org',

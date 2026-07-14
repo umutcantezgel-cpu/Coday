@@ -16,42 +16,42 @@ interface Era {
 }
 
 export const WebHistoryTimeline: React.FC = () => {
-  const t = useTranslations();
+  const t = useTranslations('blog');
   const [selectedEra, setSelectedEra] = useState<number>(3); // Default to 2026
 
   const eras: Era[] = useMemo(
     () => [
       {
         year: 2000,
-        title: t('blog:webHistory.eras.0.title'),
+        title: t('webHistory.eras.0.title'),
         icon: Monitor,
-        description: t('blog:webHistory.eras.0.description'),
-        agencyModel: t('blog:webHistory.eras.0.model'),
-        overhead: t('blog:webHistory.eras.0.overhead'),
+        description: t('webHistory.eras.0.description'),
+        agencyModel: t('webHistory.eras.0.model'),
+        overhead: t('webHistory.eras.0.overhead'),
       },
       {
         year: 2010,
-        title: t('blog:webHistory.eras.1.title'),
+        title: t('webHistory.eras.1.title'),
         icon: Stack,
-        description: t('blog:webHistory.eras.1.description'),
-        agencyModel: t('blog:webHistory.eras.1.model'),
-        overhead: t('blog:webHistory.eras.1.overhead'),
+        description: t('webHistory.eras.1.description'),
+        agencyModel: t('webHistory.eras.1.model'),
+        overhead: t('webHistory.eras.1.overhead'),
       },
       {
         year: 2018,
-        title: t('blog:webHistory.eras.2.title'),
+        title: t('webHistory.eras.2.title'),
         icon: Lightning,
-        description: t('blog:webHistory.eras.2.description'),
-        agencyModel: t('blog:webHistory.eras.2.model'),
-        overhead: t('blog:webHistory.eras.2.overhead'),
+        description: t('webHistory.eras.2.description'),
+        agencyModel: t('webHistory.eras.2.model'),
+        overhead: t('webHistory.eras.2.overhead'),
       },
       {
         year: 2026,
-        title: t('blog:webHistory.eras.3.title'),
+        title: t('webHistory.eras.3.title'),
         icon: Cpu,
-        description: t('blog:webHistory.eras.3.description'),
-        agencyModel: t('blog:webHistory.eras.3.model'),
-        overhead: t('blog:webHistory.eras.3.overhead'),
+        description: t('webHistory.eras.3.description'),
+        agencyModel: t('webHistory.eras.3.model'),
+        overhead: t('webHistory.eras.3.overhead'),
       },
     ],
     [t]
@@ -60,7 +60,7 @@ export const WebHistoryTimeline: React.FC = () => {
   return (
     <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-8 text-white shadow-2xl border border-slate-700 my-12">
       <h3 className="text-2xl font-bold font-display text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 mb-8 text-center">
-        {t('blog:webHistory.title')}
+        {t('webHistory.title')}
       </h3>
 
       {/* Timeline Line */}
@@ -122,13 +122,13 @@ export const WebHistoryTimeline: React.FC = () => {
                     <div className="grid grid-cols-2 gap-4">
                       <div className="bg-slate-900/50 p-4 rounded-xl border border-slate-700">
                         <span className="text-xs text-slate-500 uppercase tracking-wider block mb-1">
-                          {t('blog:webHistory.columns.model')}
+                          {t('webHistory.columns.model')}
                         </span>
                         <span className="font-semibold text-blue-300">{era.agencyModel}</span>
                       </div>
                       <div className="bg-slate-900/50 p-4 rounded-xl border border-slate-700">
                         <span className="text-xs text-slate-500 uppercase tracking-wider block mb-1">
-                          {t('blog:webHistory.columns.overhead')}
+                          {t('webHistory.columns.overhead')}
                         </span>
                         <span
                           className={`font-semibold ${

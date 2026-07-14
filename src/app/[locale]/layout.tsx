@@ -78,7 +78,21 @@ export default async function RootLayout({
 
   // Only pass global namespaces to the root Client Provider
   // Page-specific components will receive their own Provider
-  const globalMessages = pick(messages as any, ['common', 'error', 'nav', 'footer', 'social']);
+  const globalMessages = pick(messages as any, [
+    'common',
+    'error',
+    'nav',
+    'footer',
+    'social',
+    'faq',
+    'form',
+    'cookie',
+    'blog',
+    'industries',
+    'career',
+    'booking',
+    'public-sector',
+  ]);
 
   return (
     <html lang={locale} className={`${inter.variable} ${outfit.variable}`} suppressHydrationWarning>

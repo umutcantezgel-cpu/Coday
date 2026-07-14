@@ -45,9 +45,11 @@ const BlurText: React.FC<BlurTextProps> = ({
 
   return (
     <span ref={ref} className={`inline-flex flex-wrap items-baseline ${className}`}>
+      <span className="sr-only">{text}</span>
       {elements.map((segment, index) => (
         <span
           key={index}
+          aria-hidden="true"
           className={`inline-block transition duration-700 ease-out motion-reduce:transition-none motion-reduce:opacity-100 motion-reduce:blur-0 ${
             inView ? 'opacity-100 blur-0 translate-y-0' : 'opacity-0 blur-[10px] translate-y-2'
           }`}

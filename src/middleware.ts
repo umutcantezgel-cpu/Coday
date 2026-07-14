@@ -12,9 +12,19 @@ export default function middleware(request: NextRequest) {
     return new NextResponse('Gone - This page has been permanently removed.', { status: 410 });
   }
 
-  // Redirect /en/ local pages to /de/ to avoid duplicate content (as they are German targeted)
+  // Redirect double locales (e.g., /de/en -> /en, /en/de -> /de)
+  const doubleLocaleMatch = pathname.match(/^\/(de|en)\/(de|en)(\/.*)?$/);
+  if (doubleLocaleMatch) {
+    const targetLocale = doubleLocaleMatch[2];
+    const rest = doubleLocaleMatch[3] || '';
+    const newUrl = request.nextUrl.clone();
+    newUrl.pathname = `/${targetLocale}${rest}`;
+    return NextResponse.redirect(newUrl);
+  }
+
+  // Redirect /en/ local pages to /de/ to avoid duplicate content and "Wrong Language" errors (as they are German targeted)
   const localPathsRegex =
-    /^\/en\/(landingpages|webdesign-agentur-wetzlar|angebot-handwerker)(\/.*)?$/;
+    /^\/en\/(landingpages|webdesign-agentur-wetzlar|angebot-handwerker|branchen\/[^/]+\/[^/]+)(\/.*)?$/;
   const match = pathname.match(localPathsRegex);
   if (match) {
     const newUrl = request.nextUrl.clone();
@@ -27,7 +37,7 @@ export default function middleware(request: NextRequest) {
   // Remove the `Link` header (injected by next-intl with hreflang alternates) for local paths
   // to avoid exposing the /en/ URLs to search engines, as they redirect back to /de/
   const localPathsRegexDe =
-    /^\/de\/(landingpages|webdesign-agentur-wetzlar|angebot-handwerker)(\/.*)?$/;
+    /^\/de\/(landingpages|webdesign-agentur-wetzlar|angebot-handwerker|branchen\/[^/]+\/[^/]+)(\/.*)?$/;
   if (pathname.match(localPathsRegexDe)) {
     response.headers.delete('Link');
   }

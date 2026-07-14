@@ -4,7 +4,18 @@ import { pick } from '@/shared/lib/pick';
 
 export default async function ContactLayout({ children }: { children: React.ReactNode }) {
   const messages = await getMessages();
-  const pageMessages = pick(messages as any, ['contact', 'form']);
+  const pageMessages = pick(messages as any, [
+    'contact',
+    'form',
+    'common',
+    'faq',
+    'cookie',
+    'blog',
+    'industries',
+    'career',
+    'booking',
+    'public-sector',
+  ]);
 
   return <NextIntlClientProvider messages={pageMessages}>{children}</NextIntlClientProvider>;
 }

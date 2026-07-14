@@ -7,7 +7,7 @@ import { cn } from '@/shared/lib/utils';
 import { useTranslations } from 'next-intl';
 
 export const VoiceDemo: React.FC = () => {
-  const t = useTranslations();
+  const t = useTranslations('blog');
   const [isListening, setIsListening] = useState(false);
   const [transcript, setTranscript] = useState('');
   const [response, setResponse] = useState('');
@@ -15,18 +15,18 @@ export const VoiceDemo: React.FC = () => {
 
   const steps = [
     {
-      user: t('blog:voiceDemo.steps.0.user'),
-      ai: t('blog:voiceDemo.steps.0.ai'),
+      user: t('voiceDemo.steps.0.user'),
+      ai: t('voiceDemo.steps.0.ai'),
       action: 'FILTER_APPLIED',
     },
     {
-      user: t('blog:voiceDemo.steps.1.user'),
-      ai: t('blog:voiceDemo.steps.1.ai'),
+      user: t('voiceDemo.steps.1.user'),
+      ai: t('voiceDemo.steps.1.ai'),
       action: 'SORT_APPLIED',
     },
     {
-      user: t('blog:voiceDemo.steps.2.user'),
-      ai: t('blog:voiceDemo.steps.2.ai'),
+      user: t('voiceDemo.steps.2.user'),
+      ai: t('voiceDemo.steps.2.ai'),
       action: 'VARIANT_CHECK',
     },
   ];
@@ -52,10 +52,7 @@ export const VoiceDemo: React.FC = () => {
   };
 
   return (
-    <section
-      className="my-12 font-sans w-full max-w-2xl mx-auto"
-      aria-label={t('blog:voiceDemo.title')}
-    >
+    <section className="my-12 font-sans w-full max-w-2xl mx-auto" aria-label={t('voiceDemo.title')}>
       <div className="bg-gray-900 rounded-3xl overflow-hidden border border-gray-800 shadow-2xl relative">
         {/* Decorative elements */}
         <div className="absolute top-0 right-0 p-32 bg-purple-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
@@ -66,8 +63,8 @@ export const VoiceDemo: React.FC = () => {
             <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-purple-500/20">
               <Sparkle className="text-white w-8 h-8" />
             </div>
-            <h3 className="text-xl font-bold text-white mb-1">{t('blog:voiceDemo.title')}</h3>
-            <p className="text-gray-400 text-sm">{t('blog:voiceDemo.subtitle')}</p>
+            <h3 className="text-xl font-bold text-white mb-1">{t('voiceDemo.title')}</h3>
+            <p className="text-gray-400 text-sm">{t('voiceDemo.subtitle')}</p>
           </div>
 
           {/* Conversation Area */}
@@ -103,7 +100,7 @@ export const VoiceDemo: React.FC = () => {
 
             {!transcript && !response && (
               <div className="text-center text-gray-600 text-sm italic py-10">
-                {t('blog:voiceDemo.tapToSpeak')}...
+                {t('voiceDemo.tapToSpeak')}...
               </div>
             )}
           </div>
@@ -112,9 +109,7 @@ export const VoiceDemo: React.FC = () => {
           <button
             onClick={handleMicClick}
             disabled={isListening}
-            aria-label={
-              isListening ? t('blog:voiceDemo.listening') : t('blog:voiceDemo.tapToSpeak')
-            }
+            aria-label={isListening ? t('voiceDemo.listening') : t('voiceDemo.tapToSpeak')}
             className={cn(
               'w-20 h-20 rounded-full flex items-center justify-center transition motion-reduce:duration-[0.01ms] duration-300 relative',
               isListening
@@ -133,7 +128,7 @@ export const VoiceDemo: React.FC = () => {
           </button>
 
           <div className="mt-4 text-xs font-mono text-gray-500 uppercase tracking-widest">
-            {isListening ? t('blog:voiceDemo.listening') : t('blog:voiceDemo.tapToSpeak')}
+            {isListening ? t('voiceDemo.listening') : t('voiceDemo.tapToSpeak')}
           </div>
         </div>
       </div>

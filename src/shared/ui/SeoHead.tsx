@@ -75,7 +75,8 @@ export const SeoHead: React.FC<SeoHeadProps> = ({
   const canonicalPath = canonicalPathWithoutLocale === '/' ? '' : canonicalPathWithoutLocale;
   const canonicalUrl = `${BASE_URL}/${currentLang}${canonicalPath}`;
 
-  const localPathsRegex = /^\/(landingpages|webdesign-agentur-wetzlar|angebot-handwerker)(\/.*)?$/;
+  const localPathsRegex =
+    /^\/(landingpages|webdesign-agentur-wetzlar|angebot-handwerker|branchen\/[^/]+\/[^/]+)(\/.*)?$/;
   const isLocalPath = localPathsRegex.test(cleanPath);
   const isBlogPath = /^\/knowledge\/blog\/.+/.test(cleanPath);
 
