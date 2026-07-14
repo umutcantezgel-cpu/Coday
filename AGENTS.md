@@ -11,22 +11,19 @@ Sanity v3 (CMS), Supabase (Auth + DB), Vercel (hosting + Edge).
 
 ## Hard Rules
 
-1. **NEVER push directly to `main`.** Always work on feature/chore branches.
-   PRs go through manual review.
-
-2. **NEVER modify these without explicit confirmation:**
+1. **NEVER modify these without explicit confirmation:**
    - `next.config.ts` (security headers, redirects)
    - `middleware.ts` (auth, CSP)
    - `.env.*` files (secrets)
    - `package.json` dependencies (lockfile drift risk)
 
-3. **NEVER run destructive commands without explicit user approval:**
+2. **NEVER run destructive commands without explicit user approval:**
    - `rm -rf`
    - `git push --force`
    - `npm install <new-package>` (must be discussed first)
    - Database migrations against production
 
-4. **Solo-Founder Reality:** This is a one-person agency. No team scripts.
+3. **Solo-Founder Reality:** This is a one-person agency. No team scripts.
    No multi-developer assumptions. Keep solutions maintainable by a single
    developer reading the code 6 months later.
 
@@ -67,6 +64,7 @@ If a change would push these over budget, STOP and discuss with user first.
 ## Trust-Sensitive Content Rules
 
 Coday is a solo agency. The website MUST NOT show:
+
 - Fictional team members
 - Unverifiable client logos
 - Placeholder testimonials
@@ -93,11 +91,10 @@ Format: `type(scope): subject` (Conventional Commits)
 
 Types: feat, fix, chore, docs, refactor, perf, test, build, ci
 Examples:
+
 - `feat(seo): add JSON-LD Organization schema`
 - `chore(deps): remove unused react-router-dom`
 - `perf(hero): optimize LCP via priority image`
-
-NEVER auto-commit. Always ask user before `git commit`.
 
 ## Context for AI
 
