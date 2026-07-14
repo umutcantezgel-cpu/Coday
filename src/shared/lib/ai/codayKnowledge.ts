@@ -177,7 +177,7 @@ export const CODAY_KNOWLEDGE_BASE = {
     ecommerce: {
       name: 'E-Commerce',
       description: 'Conversion-starke Shopsysteme.',
-      url: '/services/industries/ecommerce-retail',
+      url: '/services/industries/retail',
     },
     consulting: {
       name: 'Consulting & Dienstleistung',

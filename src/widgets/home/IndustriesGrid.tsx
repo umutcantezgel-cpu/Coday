@@ -35,7 +35,7 @@ export const IndustriesGrid: React.FC = () => {
     {
       id: 'shop',
       icon: ShoppingCart,
-      link: '/branchen/ecommerce-retail',
+      link: '/branchen/retail',
       effect: 'spotlight' as const,
       spotlightColor: 'rgba(26, 154, 154, 0.15)',
     },
