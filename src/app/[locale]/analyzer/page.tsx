@@ -1,4 +1,5 @@
-import { setRequestLocale } from 'next-intl/server';
+import { setRequestLocale, getMessages } from 'next-intl/server';
+import { NextIntlClientProvider } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
@@ -6,6 +7,7 @@ import { getOrganizationSchema, BASE_URL } from '@/lib/schema';
 import UrlInputForm from '@/features/analyzer/ui/UrlInputForm';
 import ReportDashboard from '@/features/analyzer/ui/ReportDashboard';
 import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
+import { pick } from '@/shared/lib/pick';
 
 export async function generateMetadata({
   params,
@@ -36,6 +38,9 @@ export default async function AnalyzerPage(props: { params: Promise<{ locale: st
     defaultValue: 'Kostenloses Website Audit & Performance Analyse.',
   });
 
+  const messages = await getMessages();
+  const pageMessages = pick(messages as any, ['analyzer']);
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -50,9 +55,9 @@ export default async function AnalyzerPage(props: { params: Promise<{ locale: st
     ],
   };
 
-  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _locale = typeof params !== 'undefined' && params ? params.locale : 'de';
   return (
-    <>
+    <NextIntlClientProvider messages={pageMessages}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -78,6 +83,6 @@ export default async function AnalyzerPage(props: { params: Promise<{ locale: st
         </div>
       </div>
       <SeoContentBlock />
-    </>
+    </NextIntlClientProvider>
   );
 }

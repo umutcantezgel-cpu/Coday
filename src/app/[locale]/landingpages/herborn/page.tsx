@@ -57,7 +57,7 @@ export default async function HerbornLandingPage(props: { params: Promise<{ loca
 
   const cityData = getCityBySlug('herborn');
 
-  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _locale = (await params)?.locale || 'de';
   const _seoTitle =
     _locale === 'en'
       ? 'Web Design Herborn | Local Professional Websites | Coday'

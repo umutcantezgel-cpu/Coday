@@ -194,7 +194,7 @@ export default async function GeoServicePage({ params }: { params: Promise<{ loc
     })),
   };
 
-  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _locale = (await params)?.locale || 'de';
   const _seoTitle =
     _locale === 'en'
       ? 'GEO Agency Wetzlar | AI Search Optimization Hesse | Coday'

@@ -56,7 +56,7 @@ export default async function MarburgLandingPage(props: { params: Promise<{ loca
 
   const cityData = getCityBySlug('marburg');
 
-  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _locale = (await params)?.locale || 'de';
   const _seoTitle =
     _locale === 'en'
       ? 'Web Design Marburg | Websites That Bring Clients | Coday'

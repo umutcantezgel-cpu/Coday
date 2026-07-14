@@ -59,7 +59,7 @@ export default async function DillenburgLandingPage(props: {
 
   const cityData = getCityBySlug('dillenburg');
 
-  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _locale = (await params)?.locale || 'de';
   const _seoTitle =
     _locale === 'en'
       ? 'Web Design Dillenburg | Professional Websites | Coday'

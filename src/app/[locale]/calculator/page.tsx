@@ -48,7 +48,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
     ],
   };
 
-  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _locale = (await params)?.locale || 'de';
   return (
     <>
       <script

@@ -37,7 +37,7 @@ export default async function WebDevelopmentPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _locale = (await params)?.locale || 'de';
   const _seoTitle =
     _locale === 'en'
       ? 'Web Development Wetzlar | Next.js & React Agency | Coday'

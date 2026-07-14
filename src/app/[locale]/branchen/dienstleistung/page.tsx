@@ -36,7 +36,7 @@ export default async function DienstleistungPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _locale = (await params)?.locale || 'de';
   const _seoTitle =
     _locale === 'en'
       ? 'Web Design for Service Providers | Wetzlar Hesse | Coday'

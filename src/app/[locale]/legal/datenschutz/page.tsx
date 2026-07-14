@@ -29,7 +29,7 @@ export default async function DatenschutzPage({ params }: { params: Promise<{ lo
   const { locale } = await params;
   const isEn = locale === 'en';
 
-  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _locale = (await params)?.locale || 'de';
   const _seoTitle =
     _locale === 'en'
       ? 'Privacy Policy | Web Design Agency Wetzlar Hesse | Coday'

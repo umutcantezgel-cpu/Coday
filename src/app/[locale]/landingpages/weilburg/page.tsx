@@ -57,7 +57,7 @@ export default async function WeilburgLandingPage(props: { params: Promise<{ loc
 
   const cityData = getCityBySlug('weilburg');
 
-  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _locale = (await params)?.locale || 'de';
   const _seoTitle =
     _locale === 'en'
       ? 'Web Design Weilburg | Local Professional Websites | Coday'

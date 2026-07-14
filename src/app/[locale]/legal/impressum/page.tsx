@@ -29,7 +29,7 @@ export default async function ImpressumPage({ params }: { params: Promise<{ loca
   const { locale } = await params;
   const isEn = locale === 'en';
 
-  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _locale = (await params)?.locale || 'de';
   const _seoTitle =
     _locale === 'en'
       ? 'Legal Notice | Web Design Agency Wetzlar Hesse | Coday'

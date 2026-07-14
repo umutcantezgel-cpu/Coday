@@ -56,7 +56,7 @@ export default async function GiessenLandingPage(props: { params: Promise<{ loca
 
   const cityData = getCityBySlug('giessen');
 
-  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _locale = (await params)?.locale || 'de';
   const _seoTitle =
     _locale === 'en'
       ? 'Web Design Giessen | Websites That Bring Clients | Coday'

@@ -32,7 +32,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
   const resolvedParams = await params;
   setRequestLocale(resolvedParams.locale);
 
-  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _locale = (await params)?.locale || 'de';
   const _seoTitle =
     _locale === 'en'
       ? 'Contact Us | Web Design Agency Wetzlar Hesse | Coday'

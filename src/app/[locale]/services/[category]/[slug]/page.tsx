@@ -68,7 +68,7 @@ export default async function ServiceDetailPage({
   const featureData = categoryData[slug];
   if (!featureData) return notFound();
 
-  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _locale = (await params)?.locale || 'de';
   return (
     <>
       <script

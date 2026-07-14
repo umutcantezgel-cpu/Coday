@@ -46,7 +46,7 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
     description: p.content[lang].subtitle,
   }));
 
-  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _locale = (await params)?.locale || 'de';
   const _seoTitle =
     _locale === 'en'
       ? 'Web Design References Wetzlar | Our Projects | Coday'

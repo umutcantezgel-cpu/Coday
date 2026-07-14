@@ -72,7 +72,7 @@ export default async function SubIndustryPage({ params }: { params: Promise<{ lo
     );
   }
 
-  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _locale = (await params)?.locale || 'de';
   const _seoTitle =
     _locale === 'en'
       ? 'Webdesign für KFZ-Mechatroniker | Hessen | Coday'

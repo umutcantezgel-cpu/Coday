@@ -253,7 +253,7 @@ export default async function BlogPostPage({ params }: PageProps) {
     'The Future of E-Commerce: Why Your Shop is Leaking Money': 'The Future of E-Commerce',
   };
 
-  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _locale = (await params)?.locale || 'de';
 
   let _seoTitle = _locale === 'en' ? 'Blog Post Not Found | Coday' : 'Blog Post Not Found | Coday';
   let _seoDesc =

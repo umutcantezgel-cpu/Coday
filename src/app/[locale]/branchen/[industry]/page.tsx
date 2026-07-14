@@ -51,7 +51,7 @@ export default async function IndustryDetailPage({
   const { locale, industry } = await params;
   setRequestLocale(locale);
 
-  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _locale = (await params)?.locale || 'de';
   return (
     <>
       <script

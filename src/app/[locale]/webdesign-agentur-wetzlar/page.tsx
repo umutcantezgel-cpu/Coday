@@ -277,7 +277,7 @@ export default async function WebdesignWetzlarPage({
     })),
   };
 
-  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _locale = (await params)?.locale || 'de';
   const _seoTitle =
     _locale === 'en' ? 'Web Design Agency Wetzlar | Coday' : 'Webdesign Agentur Wetzlar | Coday';
   const _seoDesc =

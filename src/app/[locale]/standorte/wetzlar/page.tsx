@@ -88,7 +88,7 @@ export default async function WetzlarLocationPage({
     '@graph': [getOrganizationSchema(), locationSchema],
   };
 
-  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _locale = (await params)?.locale || 'de';
   const _seoTitle =
     _locale === 'en'
       ? 'Webdesign Agentur Wetzlar | Top Webseiten | Coday'

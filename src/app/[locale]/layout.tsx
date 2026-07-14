@@ -62,6 +62,8 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
+import { pick } from '@/shared/lib/pick';
+
 export default async function RootLayout({
   children,
   params,
@@ -74,12 +76,16 @@ export default async function RootLayout({
 
   const messages = await getMessages();
 
+  // Only pass global namespaces to the root Client Provider
+  // Page-specific components will receive their own Provider
+  const globalMessages = pick(messages as any, ['common', 'error', 'nav', 'footer', 'social']);
+
   return (
     <html lang={locale} className={`${inter.variable} ${outfit.variable}`} suppressHydrationWarning>
       <head />
 
       <body className="bg-secondary text-white antialiased" suppressHydrationWarning>
-        <NextIntlClientProvider messages={messages} locale={locale}>
+        <NextIntlClientProvider messages={globalMessages} locale={locale}>
           <MotionProvider>
             <div className="flex flex-col min-h-screen">
               <MainLayout>{children}</MainLayout>

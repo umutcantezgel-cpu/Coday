@@ -32,7 +32,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   const resolvedParams = await params;
   setRequestLocale(resolvedParams.locale);
 
-  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _locale = (await params)?.locale || 'de';
   const _seoTitle =
     _locale === 'en'
       ? 'About Your Web Design Agency in Wetzlar, Hesse | Coday'

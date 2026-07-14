@@ -9,7 +9,9 @@ import { generatePageMetadata } from '@/lib/metadata';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { TrustBar } from '@/shared/ui/TrustBar';
 import { HeroSection } from '@/widgets/home/HeroSection';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
+import { pick } from '@/shared/lib/pick';
 import React from 'react';
 
 import { ScrollReveal } from '@/shared/ui/animations/ScrollReveal';
@@ -49,13 +51,16 @@ export async function generateMetadata({
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const messages = await getMessages();
+  const pageMessages = pick(messages as any, ['home', 'analyzer']);
+
   const t = await getTranslations('home');
   const serviceSchema = getProfessionalServiceSchema();
   const localSchema = getLocalBusinessSchema();
   const orgSchema = getOrganizationSchema();
   const websiteSchema = getWebSiteSchema();
 
-  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _locale = locale || 'de';
   const _seoTitle =
     _locale === 'en'
       ? 'Web Design Agency in Wetzlar & Central Hesse | Coday'
@@ -65,7 +70,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       ? 'Your new website from a web designer in Wetzlar. Personal service, fixed price, online in 3 weeks. For craftsmen, doctors and businesses. Inquire now.'
       : 'Ihre neue Webseite vom Webdesigner in Wetzlar. Persönlich, zum Festpreis, in 3 Wochen online. Für Handwerker, Ärzte und Gastronomen. Jetzt anfragen.';
   return (
-    <>
+    <NextIntlClientProvider messages={pageMessages}>
       <script
         id="schema-local-service"
         type="application/ld+json"
@@ -118,6 +123,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           {_seoTitle}
         </p>
       </div>
-    </>
+    </NextIntlClientProvider>
   );
 }

@@ -36,7 +36,7 @@ export default async function Page(props: { params: Promise<{ locale: string; sl
   const project = workData[params.slug];
   const content = params.locale === 'en' ? project.content.en : project.content.de;
 
-  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _locale = (await params)?.locale || 'de';
   const _seoTitle = _locale === 'en' ? 'Coday Web-Agentur' : 'Coday Web-Agentur';
   const _seoDesc =
     _locale === 'en' ? 'Premium Webentwicklung & Design' : 'Premium Webentwicklung & Design';

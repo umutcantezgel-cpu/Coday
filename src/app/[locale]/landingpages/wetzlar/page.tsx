@@ -56,7 +56,7 @@ export default async function WetzlarLandingPage(props: { params: Promise<{ loca
 
   const cityData = getCityBySlug('wetzlar');
 
-  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _locale = (await params)?.locale || 'de';
   const _seoTitle =
     _locale === 'en'
       ? 'Web Design Wetzlar | Websites That Bring Clients | Coday'

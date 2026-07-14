@@ -84,7 +84,7 @@ export default async function HessenLocationPage({
     '@graph': [getOrganizationSchema(), locationSchema],
   };
 
-  const _locale = typeof params !== 'undefined' && params ? (await params).locale : 'de';
+  const _locale = (await params)?.locale || 'de';
   const _seoTitle =
     _locale === 'en'
       ? 'Webdesign Agentur Hessen | Premium Webseiten | Coday'
