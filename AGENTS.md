@@ -101,3 +101,8 @@ Examples:
 This agent works alongside other AI tools (Claude, Perplexity, Gemini). The
 human owner orchestrates them. Position is "AI-augmented craftsmanship" —
 human dirigiert, KI führt aus.
+
+## Execution Methodology
+
+1. **Pure Brainpower Over Scripts:** DO NOT use automated scripts to solve complex tasks. Use your full 2-million token context window, deep reasoning, and raw brainpower to analyze and write perfect code manually.
+2. **Infinite Time for Maximum Quality:** You have unlimited time to complete your tasks. NEVER prioritize speed over quality. The only goal is delivering the absolute best, most flawless outcome possible, no matter how much time and thought it takes. Take your time, think deeply, and execute perfectly.
