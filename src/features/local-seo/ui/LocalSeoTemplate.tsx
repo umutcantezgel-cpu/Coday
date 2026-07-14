@@ -58,12 +58,12 @@ export const LocalSeoTemplate: React.FC<LocalSeoTemplateProps> = ({ content, cit
       <section className="relative pt-32 pb-24 px-4 overflow-hidden bg-gradient-to-br from-bg-primary to-bg-secondary">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(59,130,246,0.08),transparent_60%)]" />
         <div className="max-w-5xl mx-auto text-center relative z-10">
-          <h1 className="text-primary-500 font-bold uppercase tracking-wider text-sm mb-4 block">
+          <span className="text-primary-500 font-bold uppercase tracking-wider text-sm mb-4 block">
             {content.hero.headline}
-          </h1>
-          <h2 className="block font-display font-black text-4xl sm:text-6xl text-secondary-900 mb-6 tracking-tight">
+          </span>
+          <h1 className="block font-display font-black text-4xl sm:text-6xl text-secondary-900 mb-6 tracking-tight">
             <BlurText text={content.hero.subheadline} delay={50} animateBy="words" />
-          </h2>
+          </h1>
           <p className="text-xl text-secondary-800 font-medium leading-relaxed mb-10 max-w-2xl mx-auto">
             <span className="sr-only">{content.hero.headline}</span>
             {content.hero.description}

@@ -51,10 +51,10 @@ const Handwerk: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h1 className="text-primary font-bold tracking-wider uppercase text-sm mb-6 block">
+              <span className="text-primary font-bold tracking-wider uppercase text-sm mb-6 block">
                 {t('handwerk-bau.hero.headline')}
-              </h1>
-              <h2 className="block font-display font-black text-4xl sm:text-6xl text-secondary mb-6 tracking-tight">
+              </span>
+              <h1 className="block font-display font-black text-4xl sm:text-6xl text-secondary mb-6 tracking-tight">
                 <BlurText
                   text={t('handwerk-bau.title')}
                   delay={100}
@@ -69,7 +69,7 @@ const Handwerk: React.FC = () => {
                 >
                   {t('handwerk-bau.hero.subheadline')}
                 </GradientText>
-              </h2>
+              </h1>
               <p className="text-xl text-slate-600 leading-relaxed mb-8 max-w-xl">
                 {t('handwerk-bau.hero.subheadline')}
               </p>

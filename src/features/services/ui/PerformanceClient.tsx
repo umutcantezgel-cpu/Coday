@@ -36,10 +36,10 @@ export function PerformanceClient() {
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-4 overflow-hidden">
         <div className="max-w-7xl mx-auto text-center relative z-10">
-          <h1 className="text-sapphire font-bold tracking-wider uppercase text-sm mb-4 block">
+          <span className="text-sapphire font-bold tracking-wider uppercase text-sm mb-4 block">
             {t('performance_page.hero.badge')}
-          </h1>
-          <h2 className="block font-display font-black text-5xl sm:text-7xl lg:text-8xl text-content-base mb-8 tracking-tight text-balance">
+          </span>
+          <h1 className="block font-display font-black text-5xl sm:text-7xl lg:text-8xl text-content-base mb-8 tracking-tight text-balance">
             <BlurText
               text={t('performance_page.hero.title_prefix')}
               delay={100}
@@ -54,7 +54,7 @@ export function PerformanceClient() {
             >
               {t('performance_page.hero.title_suffix')}
             </GradientText>
-          </h2>
+          </h1>
           <p className="text-xl text-content-muted leading-relaxed max-w-prose text-pretty max-w-2xl mx-auto mb-12">
             {t('performance_page.hero.description')}
           </p>

@@ -77,11 +77,16 @@ export const SeoHead: React.FC<SeoHeadProps> = ({
 
   const localPathsRegex = /^\/(landingpages|webdesign-agentur-wetzlar|angebot-handwerker)(\/.*)?$/;
   const isLocalPath = localPathsRegex.test(cleanPath);
+  const isBlogPath = /^\/knowledge\/blog\/.+/.test(cleanPath);
 
   // Default links based on current path (assumes same slug)
   const defaultLinks = SUPPORTED_LANGUAGES.filter((lang) => {
     // Do not output 'en' alternate links for local SEO pages since they redirect to 'de'
     if (lang === 'en' && isLocalPath) {
+      return false;
+    }
+    // Do not output cross-language alternate links for blog posts since slugs differ
+    if (isBlogPath && lang !== currentLang) {
       return false;
     }
     return true;

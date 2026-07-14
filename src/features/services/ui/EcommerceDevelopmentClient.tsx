@@ -34,10 +34,10 @@ export function EcommerceDevelopmentClient() {
       <section className="relative pt-32 pb-24 px-4 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
-            <h1 className="text-sapphire font-bold tracking-wider uppercase text-sm mb-4 block">
+            <span className="text-sapphire font-bold tracking-wider uppercase text-sm mb-4 block">
               Online-Shop Entwicklung
-            </h1>
-            <h2 className="block font-display font-black text-5xl sm:text-7xl lg:text-8xl text-content-base mb-8 tracking-tight text-balance">
+            </span>
+            <h1 className="block font-display font-black text-5xl sm:text-7xl lg:text-8xl text-content-base mb-8 tracking-tight text-balance">
               <BlurText
                 text="Shops die"
                 delay={100}
@@ -52,7 +52,7 @@ export function EcommerceDevelopmentClient() {
               >
                 verkaufen.
               </GradientText>
-            </h2>
+            </h1>
             <p className="text-xl text-content-muted leading-relaxed max-w-prose text-pretty max-w-2xl mx-auto mb-12">
               Keine Vorlagen. Keine Grenzen. Wir bauen schnelle Online-Shop-Systeme mit Next.js, die
               Ihre Verkaufsraten explodieren lassen.

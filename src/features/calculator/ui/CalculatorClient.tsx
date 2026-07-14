@@ -82,12 +82,12 @@ const Calculator: React.FC = () => {
       <StepIndicator currentStep="calculator" className="mb-8" />
       {/* Hero */}
       <section className="text-center px-4 mb-12 max-w-4xl mx-auto">
-        <h1 className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
+        <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
           {t('hero.label')}
-        </h1>
-        <h2 className="block font-display font-black text-4xl sm:text-6xl text-gray-900 mb-6">
+        </span>
+        <h1 className="block font-display font-black text-4xl sm:text-6xl text-gray-900 mb-6">
           {t('hero.title_1')} <br /> <span className="text-gradient">{t('hero.title_2')}</span>
-        </h2>
+        </h1>
         <p className="text-xl text-gray-600">
           {selectedPackageId ? t('hero.subtitle_packages') : t('hero.subtitle_default')}
         </p>

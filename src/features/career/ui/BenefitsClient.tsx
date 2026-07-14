@@ -54,12 +54,12 @@ const Benefits: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero */}
         <div className="text-center mb-16">
-          <h1 className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
+          <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
             {t('benefits.hero.badge')}
-          </h1>
-          <h2 className="block font-display font-black text-5xl md:text-6xl text-gradient mb-6">
+          </span>
+          <h1 className="block font-display font-black text-5xl md:text-6xl text-gradient mb-6">
             {t('benefits.hero.title')}
-          </h2>
+          </h1>
           <p className="text-xl text-slate-500 max-w-2xl mx-auto">{t('benefits.hero.desc')}</p>
         </div>
 

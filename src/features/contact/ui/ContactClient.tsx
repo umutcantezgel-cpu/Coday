@@ -96,10 +96,10 @@ export const ContactClient: React.FC = () => {
                 <div className="mb-4">
                   <Breadcrumbs />
                 </div>
-                <h1 className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
+                <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
                   {t('hero.badge')}
-                </h1>
-                <h2 className="block font-display font-black text-3xl sm:text-5xl lg:text-6xl text-secondary mb-6 tracking-tight text-balance">
+                </span>
+                <h1 className="block font-display font-black text-3xl sm:text-5xl lg:text-6xl text-secondary mb-6 tracking-tight text-balance">
                   <BlurText
                     text={t('hero.title_start')}
                     delay={100}
@@ -113,7 +113,7 @@ export const ContactClient: React.FC = () => {
                   >
                     {t('hero.title_gradient')}
                   </GradientText>
-                </h2>
+                </h1>
                 <p className="text-xl text-slate-600 leading-relaxed mb-8">{t('hero.desc')}</p>
 
                 <div className="mb-12">

@@ -41,6 +41,16 @@ export function generateAlternates(path: string): Metadata['alternates'] {
 
   const localPathsRegex = /^\/(landingpages|webdesign-agentur-wetzlar|angebot-handwerker)(\/.*)?$/;
   const isLocalPath = localPathsRegex.test(cleanPath);
+  const isBlogPath = /^\/knowledge\/blog\/.+/.test(cleanPath);
+
+  if (isBlogPath) {
+    return {
+      canonical: `${BASE_URL}${canonicalPath}`,
+      languages: {
+        [isEn ? 'en' : 'de']: `${BASE_URL}${canonicalPath}`,
+      },
+    };
+  }
 
   const languages: Record<string, string> = {
     de: `${BASE_URL}${dePath}`,
@@ -70,12 +80,23 @@ export function generatePageMetadata(opts: {
 }): Metadata {
   const fullTitle = opts.title.includes('Coday') ? opts.title : `${opts.title} | Coday`;
 
+  let finalDescription = opts.description;
+  const isEn = opts.path.startsWith('/en');
+
+  // Fix short or duplicate meta descriptions by padding them uniquely
+  if (finalDescription.length < 110) {
+    const cleanTitle = opts.title.split('|')[0].trim();
+    const appendDe = ` Erfahren Sie mehr über ${cleanTitle} bei Coday, Ihrer Webdesign Agentur Wetzlar. Wir bieten Headless CMS, SEO & Next.js.`;
+    const appendEn = ` Learn more about ${cleanTitle} at Coday, your web design agency in Wetzlar. We specialize in Headless CMS, SEO & Next.js.`;
+    finalDescription = `${finalDescription}${isEn ? appendEn : appendDe}`;
+  }
+
   const defaultOg: Metadata['openGraph'] = {
     title: fullTitle,
-    description: opts.description,
+    description: finalDescription,
     url: `${BASE_URL}${opts.path}`,
     siteName: 'Coday',
-    locale: opts.path.startsWith('/en') ? 'en_US' : 'de_DE',
+    locale: isEn ? 'en_US' : 'de_DE',
     type: 'website',
     images: [
       {
@@ -91,14 +112,14 @@ export function generatePageMetadata(opts: {
 
   return {
     title: fullTitle,
-    description: opts.description,
+    description: finalDescription,
     robots: generateRobotsMeta({ type: finalType }),
     alternates: generateAlternates(opts.path),
     openGraph: opts.openGraph ? { ...defaultOg, ...opts.openGraph } : defaultOg,
     twitter: {
       card: 'summary_large_image',
       title: fullTitle,
-      description: opts.description,
+      description: finalDescription,
       images: [`${BASE_URL}/images/og-image.jpg`],
     },
   };

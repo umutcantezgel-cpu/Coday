@@ -74,10 +74,10 @@ export function SeoClient() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-start">
-              <h1 className="text-sapphire font-bold tracking-wider uppercase text-sm mb-4 block">
+              <span className="text-sapphire font-bold tracking-wider uppercase text-sm mb-4 block">
                 {t('seo_page.hero.badge')}
-              </h1>
-              <h2 className="block font-display font-black text-5xl sm:text-7xl text-content-base mb-8 tracking-tight text-balance">
+              </span>
+              <h1 className="block font-display font-black text-5xl sm:text-7xl text-content-base mb-8 tracking-tight text-balance">
                 <BlurText
                   text={t('seo_page.hero.title_prefix')}
                   delay={100}
@@ -91,7 +91,7 @@ export function SeoClient() {
                 >
                   {t('seo_page.hero.title_suffix')}
                 </GradientText>
-              </h2>
+              </h1>
               <p className="text-xl text-content-muted leading-relaxed max-w-prose text-pretty max-w-2xl mx-auto lg:mx-0 mb-12">
                 {t('seo_page.hero.description')}
               </p>

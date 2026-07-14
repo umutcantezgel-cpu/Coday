@@ -68,7 +68,9 @@ export default async function PublicSectorPage({
       <PublicSectorClient />
       {/* SEO Title für Keyword-Konsistenz */}
       <div className="container mx-auto px-4 pb-12 text-center">
-        <p className="sr-only">{_seoTitle}</p>
+        <p className="opacity-[0.01] pointer-events-none text-[2px] leading-none select-none overflow-hidden h-px w-full">
+          {_seoTitle}
+        </p>
       </div>
     </>
   );

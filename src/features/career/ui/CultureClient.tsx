@@ -23,10 +23,10 @@ const Culture: React.FC = () => {
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-4 text-center">
         <div className="max-w-4xl mx-auto relative z-10">
-          <h1 className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
+          <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
             {t('culture.hero.badge')}
-          </h1>
-          <h2 className="block font-display font-black text-5xl sm:text-7xl text-secondary mb-6 tracking-tight">
+          </span>
+          <h1 className="block font-display font-black text-5xl sm:text-7xl text-secondary mb-6 tracking-tight">
             <BlurText
               text={t('culture.hero.title_start')}
               delay={100}
@@ -40,7 +40,7 @@ const Culture: React.FC = () => {
             >
               {t('culture.hero.title_gradient')}
             </GradientText>
-          </h2>
+          </h1>
           <p className="text-2xl text-slate-600 leading-relaxed mb-8 max-w-2xl mx-auto">
             {t('culture.hero.desc')}
           </p>
