@@ -57,12 +57,11 @@ export default async function GesundheitswesenPage({
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@graph': [
-              getOrganizationSchema(),
+              getOrganizationSchema(_locale),
               getServiceSchema({
-                name: 'Webdesign für Ärzte & Praxen',
-                description:
-                  'Professionelle Praxis-Webseiten für Ärzte und im Gesundheitswesen. Patientengewinnung durch modernes Webdesign und lokale SEO Optimierung.',
-                url: `${BASE_URL}/de/branchen/gesundheitswesen`,
+                name: _seoTitle,
+                description: _seoDesc,
+                url: `${BASE_URL}/${_locale}/branchen/gesundheitswesen`,
               }),
             ],
           }),

@@ -48,7 +48,7 @@ export default async function WebDesignPage({ params }: { params: Promise<{ loca
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@graph': [
-              getOrganizationSchema(),
+              getOrganizationSchema(_locale),
               getServiceSchema({
                 name:
                   _locale === 'en'

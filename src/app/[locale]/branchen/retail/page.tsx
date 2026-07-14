@@ -52,12 +52,11 @@ export default async function RetailPage({ params }: { params: Promise<{ locale:
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@graph': [
-              getOrganizationSchema(),
+              getOrganizationSchema(_locale),
               getServiceSchema({
-                name: 'Webdesign für Einzelhandel & Shops',
-                description:
-                  'Onlineshops und Webseiten für den Einzelhandel in Wetzlar und Hessen. Mehr Umsatz durch professionelles Webdesign und E-Commerce Lösungen von Coday.',
-                url: `${BASE_URL}/de/branchen/retail`,
+                name: _seoTitle,
+                description: _seoDesc,
+                url: `${BASE_URL}/${_locale}/branchen/retail`,
               }),
             ],
           }),

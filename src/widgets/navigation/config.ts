@@ -2,6 +2,7 @@ export interface NavLink {
   label: string;
   href: string;
   desc?: string;
+  locale?: string;
 }
 
 export interface NavGroup {
@@ -119,16 +120,23 @@ export const getNavItems = (): NavItem[] => [
             label: 'nav.industries.automotive.overview',
             href: '/branchen/automobil',
             desc: 'nav.industries.automotive.desc',
+            locale: 'de',
           },
           {
             label: 'nav.industries.automotive.werkstatt',
             href: '/branchen/automobil/kfz-werkstatt',
+            locale: 'de',
           },
           {
             label: 'nav.industries.automotive.mechatroniker',
             href: '/branchen/automobil/kfz-mechatroniker',
+            locale: 'de',
           },
-          { label: 'nav.industries.automotive.haendler', href: '/branchen/automobil/autohaendler' },
+          {
+            label: 'nav.industries.automotive.haendler',
+            href: '/branchen/automobil/autohaendler',
+            locale: 'de',
+          },
         ],
       },
       {
@@ -138,15 +146,22 @@ export const getNavItems = (): NavItem[] => [
             label: 'nav.industries.healthcare.overview',
             href: '/branchen/gesundheitswesen',
             desc: 'nav.industries.healthcare.desc',
+            locale: 'de',
           },
-          { label: 'nav.industries.healthcare.aerzte', href: '/branchen/aerzte-gesundheit' },
+          {
+            label: 'nav.industries.healthcare.aerzte',
+            href: '/branchen/aerzte-gesundheit',
+            locale: 'de',
+          },
           {
             label: 'nav.industries.healthcare.wetzlar',
             href: '/branchen/gesundheitswesen/arzt-wetzlar',
+            locale: 'de',
           },
           {
             label: 'nav.industries.healthcare.giessen',
             href: '/branchen/gesundheitswesen/arzt-giessen',
+            locale: 'de',
           },
         ],
       },
@@ -157,26 +172,52 @@ export const getNavItems = (): NavItem[] => [
             label: 'nav.industries.crafts.overview',
             href: '/branchen/handwerker',
             desc: 'nav.industries.crafts.desc',
+            locale: 'de',
           },
-          { label: 'nav.industries.crafts.bau', href: '/branchen/handwerk-bau' },
-          { label: 'nav.industries.crafts.wetzlar', href: '/branchen/handwerker/wetzlar' },
+          { label: 'nav.industries.crafts.bau', href: '/branchen/handwerk-bau', locale: 'de' },
+          {
+            label: 'nav.industries.crafts.wetzlar',
+            href: '/branchen/handwerker/wetzlar',
+            locale: 'de',
+          },
         ],
       },
       {
         title: 'nav.industries.other.title',
         links: [
-          { label: 'nav.industries.other.overview', href: '/branchen' },
-          { label: 'nav.industries.other.real_estate_agent', href: '/branchen/immobilien' },
+          { label: 'nav.industries.other.overview', href: '/branchen', locale: 'de' },
+          {
+            label: 'nav.industries.other.real_estate_agent',
+            href: '/branchen/immobilien',
+            locale: 'de',
+          },
           {
             label: 'nav.industries.other.gastronomy_hotel',
             href: '/branchen/gastronomie',
+            locale: 'de',
           },
-          { label: 'nav.industries.other.consulting', href: '/branchen/unternehmensberatung' },
-          { label: 'nav.industries.other.lawyers', href: '/branchen/anwaelte-kanzleien' },
-          { label: 'nav.industries.other.startups', href: '/branchen/startups-tech' },
-          { label: 'nav.industries.other.retail', href: '/branchen/retail' },
-          { label: 'nav.industries.other.public_sector', href: '/branchen/public-sector' },
-          { label: 'nav.industries.other.dienstleistung', href: '/branchen/dienstleistung' },
+          {
+            label: 'nav.industries.other.consulting',
+            href: '/branchen/unternehmensberatung',
+            locale: 'de',
+          },
+          {
+            label: 'nav.industries.other.lawyers',
+            href: '/branchen/anwaelte-kanzleien',
+            locale: 'de',
+          },
+          { label: 'nav.industries.other.startups', href: '/branchen/startups-tech', locale: 'de' },
+          { label: 'nav.industries.other.retail', href: '/branchen/retail', locale: 'de' },
+          {
+            label: 'nav.industries.other.public_sector',
+            href: '/branchen/public-sector',
+            locale: 'de',
+          },
+          {
+            label: 'nav.industries.other.dienstleistung',
+            href: '/branchen/dienstleistung',
+            locale: 'de',
+          },
         ],
       },
     ],

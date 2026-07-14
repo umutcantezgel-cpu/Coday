@@ -52,12 +52,11 @@ export default async function GastronomiePage({ params }: { params: Promise<{ lo
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@graph': [
-              getOrganizationSchema(),
+              getOrganizationSchema(_locale),
               getServiceSchema({
-                name: 'Webdesign für Gastronomie',
-                description:
-                  'Appetitliche Webseiten für Restaurants und Gastronomie in Wetzlar und Hessen. Mehr Gäste durch professionelles Webdesign und lokale Auffindbarkeit.',
-                url: `${BASE_URL}/de/branchen/gastronomie`,
+                name: _seoTitle,
+                description: _seoDesc,
+                url: `${BASE_URL}/${_locale}/branchen/gastronomie`,
               }),
             ],
           }),

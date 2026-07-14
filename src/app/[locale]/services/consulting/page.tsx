@@ -52,12 +52,11 @@ export default async function ConsultingPage({ params }: { params: Promise<{ loc
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@graph': [
-              getOrganizationSchema(),
+              getOrganizationSchema(_locale),
               getServiceSchema({
-                name: 'Digitale Beratung & Webstrategie | Wetzlar',
-                description:
-                  'Strategische Digitalberatung von Coday in Wetzlar. Wir begleiten Unternehmen in Mittelhessen bei der digitalen Transformation. Jetzt Termin buchen.',
-                url: `${BASE_URL}/de/services/consulting`,
+                name: _seoTitle,
+                description: _seoDesc,
+                url: `${BASE_URL}/${_locale}/services/consulting`,
               }),
             ],
           }),

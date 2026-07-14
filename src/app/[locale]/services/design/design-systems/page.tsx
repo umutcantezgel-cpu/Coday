@@ -56,12 +56,11 @@ export default async function DesignSystemsPage({
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@graph': [
-              getOrganizationSchema(),
+              getOrganizationSchema(_locale),
               getServiceSchema({
-                name: 'Design Systems Wetzlar | Konsistente Komponenten',
-                description:
-                  'Konsistente Design Systeme und wiederverwendbare Komponenten von Coday in Wetzlar. Skalierbare UI-Bibliotheken für Unternehmen in Hessen. Anfragen.',
-                url: `${BASE_URL}/de/services/design/design-systems`,
+                name: _seoTitle,
+                description: _seoDesc,
+                url: `${BASE_URL}/${_locale}/services/design/design-systems`,
               }),
             ],
           }),

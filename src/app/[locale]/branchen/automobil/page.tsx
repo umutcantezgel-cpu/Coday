@@ -57,12 +57,11 @@ export default async function AutomobilHubPage({
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@graph': [
-              getOrganizationSchema(),
+              getOrganizationSchema(_locale),
               getServiceSchema({
-                name: 'Webdesign für die Automobilbranche',
-                description:
-                  'Websites und digitale Lösungen für Autohäuser, Werkstätten und KFZ-Betriebe in Wetzlar und Hessen. Premium Webdesign von Coday. Jetzt Termin buchen.',
-                url: `${BASE_URL}/de/branchen/automobil`,
+                name: _seoTitle,
+                description: _seoDesc,
+                url: `${BASE_URL}/${_locale}/branchen/automobil`,
               }),
             ],
           }),

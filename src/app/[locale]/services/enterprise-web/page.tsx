@@ -56,12 +56,11 @@ export default async function EnterpriseWebPage({
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@graph': [
-              getOrganizationSchema(),
+              getOrganizationSchema(_locale),
               getServiceSchema({
-                name: 'Enterprise Webentwicklung Wetzlar | Skalierbar',
-                description:
-                  'Skalierbare und sichere Enterprise Web-Lösungen von Coday in Wetzlar. Portale, Intranets und Webanwendungen für Unternehmen in Hessen. Jetzt anfragen.',
-                url: `${BASE_URL}/de/services/enterprise-web`,
+                name: _seoTitle,
+                description: _seoDesc,
+                url: `${BASE_URL}/${_locale}/services/enterprise-web`,
               }),
             ],
           }),

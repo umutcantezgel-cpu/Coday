@@ -256,6 +256,14 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               </li>
               <li>
                 <Link
+                  href="/branchen/immobilien-makler"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Immobilienmakler
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/branchen/public-sector"
                   className="text-text-light hover:text-primary transition-colors"
                 >

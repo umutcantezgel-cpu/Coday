@@ -57,12 +57,11 @@ export default async function HandwerkerHubPage({
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@graph': [
-              getOrganizationSchema(),
+              getOrganizationSchema(_locale),
               getServiceSchema({
-                name: 'Webdesign für Handwerker',
-                description:
-                  'Professionelle Webseiten für Handwerksbetriebe in Wetzlar und Hessen. Mehr Aufträge durch lokale Sichtbarkeit bei Google. Persönlich und zum Festpreis.',
-                url: `${BASE_URL}/de/branchen/handwerker`,
+                name: _seoTitle,
+                description: _seoDesc,
+                url: `${BASE_URL}/${_locale}/branchen/handwerker`,
               }),
             ],
           }),

@@ -95,7 +95,7 @@ export default async function GiessenLocationPage({
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@graph': [getOrganizationSchema(), locationSchema],
+    '@graph': [getOrganizationSchema(_locale), locationSchema],
   };
 
   const _seoTitle =

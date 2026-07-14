@@ -9,8 +9,9 @@ export const LanguageSwitcher: React.FC = () => {
   const pathname = usePathname();
 
   const cleanPath = pathname.replace(/^\/(en|de)/, '').replace(/\/$/, '') || '/';
-  const localPathsRegex = /^\/(landingpages|webdesign-agentur-wetzlar|angebot-handwerker)(\/.*)?$/;
-  const isLocalPath = localPathsRegex.test(cleanPath);
+  const localPathsRegex =
+    /^\/(landingpages|webdesign-agentur-wetzlar|angebot-handwerker|branchen\/[^/]+\/[^/]+)(\/.*)?$/;
+  const isLocalPath = localPathsRegex.test(cleanPath) || cleanPath.startsWith('/branchen');
 
   // For German-only landing pages, the English switcher just goes to the English homepage
   // to avoid hitting the 301 redirect back to German

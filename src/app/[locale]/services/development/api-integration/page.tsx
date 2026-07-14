@@ -56,12 +56,11 @@ export default async function ApiIntegrationPage({
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@graph': [
-              getOrganizationSchema(),
+              getOrganizationSchema(_locale),
               getServiceSchema({
-                name: 'API Integration & Schnittstellen | Wetzlar',
-                description:
-                  'Nahtlose API Integrationen und Schnittstellenentwicklung von Coday in Wetzlar. Wir verbinden Ihre Systeme zuverlässig und effizient. Für Firmen in Hessen.',
-                url: `${BASE_URL}/de/services/development/api-integration`,
+                name: _seoTitle,
+                description: _seoDesc,
+                url: `${BASE_URL}/${_locale}/services/development/api-integration`,
               }),
             ],
           }),

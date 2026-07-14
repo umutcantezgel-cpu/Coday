@@ -10,6 +10,8 @@ import { getCityBySlug } from '@/features/local-seo/model/cities';
 import fs from 'fs';
 import path from 'path';
 
+export const dynamicParams = false;
+
 export async function generateMetadata({
   params,
 }: {
@@ -35,10 +37,13 @@ export async function generateMetadata({
       const fileContents = fs.readFileSync(filePath, 'utf8');
       const content = JSON.parse(fileContents);
       return generatePageMetadata({
-        title: locale === 'en' && content.meta_en ? content.meta_en.title : content.meta.title,
+        title:
+          locale === 'en'
+            ? content.meta_en?.title || `${content.meta.title} in English`
+            : content.meta.title,
         description:
-          locale === 'en' && content.meta_en
-            ? content.meta_en.description
+          locale === 'en'
+            ? content.meta_en?.description || content.meta.description
             : content.meta.description,
         path: `/${locale}/branchen/${industry}/${location}`,
         type: 'money',
@@ -115,11 +120,17 @@ export default async function IndustryDetailPage({
         __html: JSON.stringify({
           '@context': 'https://schema.org',
           '@graph': [
-            getOrganizationSchema(),
+            getOrganizationSchema(locale),
             getServiceSchema({
-              name: `Webdesign für ${formattedIndustry}${formattedLocation ? ` in ${formattedLocation}` : ''}`,
-              description: `Professionelles Webdesign für ${formattedIndustry}${formattedLocation ? ` in ${formattedLocation}` : ''} von Coday.`,
-              url: `${BASE_URL}/de/branchen/${industry}/${location}`,
+              name:
+                locale === 'en'
+                  ? `Web Design for ${formattedIndustry}${formattedLocation ? ` in ${formattedLocation}` : ''}`
+                  : `Webdesign für ${formattedIndustry}${formattedLocation ? ` in ${formattedLocation}` : ''}`,
+              description:
+                locale === 'en'
+                  ? `Professional web design for ${formattedIndustry}${formattedLocation ? ` in ${formattedLocation}` : ''} by Coday.`
+                  : `Professionelles Webdesign für ${formattedIndustry}${formattedLocation ? ` in ${formattedLocation}` : ''} von Coday.`,
+              url: `${BASE_URL}/${locale}/branchen/${industry}/${location}`,
             }),
           ],
         }),

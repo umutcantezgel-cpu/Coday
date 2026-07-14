@@ -247,16 +247,17 @@ export const Footer: React.FC = () => {
                   locale="de"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
-                  Webdesign Agentur Wetzlar
+                  {t('nav.local.wetzlar', { defaultValue: 'Webdesign Agentur Wetzlar' })}
                 </Link>
               </li>
               <li>
                 <Link
                   prefetch={false}
                   href="/standorte/hessen"
+                  locale="de"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
-                  Webdesign Hessen
+                  {t('nav.local.hessen', { defaultValue: 'Webdesign Hessen' })}
                 </Link>
               </li>
               <li>
@@ -266,34 +267,37 @@ export const Footer: React.FC = () => {
                   locale="de"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
-                  Webagentur Wetzlar
+                  {t('nav.local.wetzlar', { defaultValue: 'Webagentur Wetzlar' })}
                 </Link>
               </li>
               <li>
                 <Link
                   prefetch={false}
                   href="/branchen/gesundheitswesen/arzt-wetzlar"
+                  locale="de"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
-                  Praxis-Website Wetzlar
+                  {t('nav.local.arzt_wetzlar', { defaultValue: 'Praxis-Website Wetzlar' })}
                 </Link>
               </li>
               <li>
                 <Link
                   prefetch={false}
                   href="/branchen/gesundheitswesen/arzt-giessen"
+                  locale="de"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
-                  Praxis-Website Gießen
+                  {t('nav.local.arzt_giessen', { defaultValue: 'Praxis-Website Gießen' })}
                 </Link>
               </li>
               <li>
                 <Link
                   prefetch={false}
                   href="/branchen/handwerker/wetzlar"
+                  locale="de"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
-                  Handwerker Wetzlar
+                  {t('nav.local.handwerker_wetzlar', { defaultValue: 'Handwerker Wetzlar' })}
                 </Link>
               </li>
               <li>
@@ -302,7 +306,7 @@ export const Footer: React.FC = () => {
                   href="/uebersicht"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2 font-medium"
                 >
-                  Seitenübersicht (Sitemap)
+                  {t('footer.sitemap', { defaultValue: 'Seitenübersicht (Sitemap)' })}
                 </Link>
               </li>
               <li>
@@ -312,7 +316,7 @@ export const Footer: React.FC = () => {
                   locale="de"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
-                  Standort Wetzlar
+                  {t('nav.local.wetzlar', { defaultValue: 'Standort Wetzlar' })}
                 </Link>
               </li>
             </ul>

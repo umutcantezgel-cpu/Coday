@@ -47,7 +47,8 @@
     "trust": {
       "desc": "Lokale Webagentur",
       "title": "Coday Web"
-    }
+    },
+    "sitemap": "Seitenübersicht (Sitemap)"
   },
   "generic_detail": {
     "trust": {

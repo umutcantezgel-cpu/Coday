@@ -100,7 +100,7 @@ export default async function WetzlarLocationPage({
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@graph': [getOrganizationSchema(), locationSchema],
+    '@graph': [getOrganizationSchema(_locale), locationSchema],
   };
 
   const _seoTitle =

@@ -39,7 +39,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
-      getOrganizationSchema(),
+      getOrganizationSchema(params.locale),
       {
         '@type': 'WebPage',
         '@id': `${BASE_URL}/${params.locale}/calculator`,

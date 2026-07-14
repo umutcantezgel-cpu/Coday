@@ -43,7 +43,10 @@ export async function generateMetadata({
         locale === 'en'
           ? 'Web Design for Doctors in Wetzlar | Practice Homepage'
           : 'Webdesign für Ärzte in Wetzlar | Praxis Homepage',
-      description: 'Digitale Dominanz für Ihre Branche.',
+      description:
+        locale === 'en'
+          ? 'Digital dominance for your practice.'
+          : 'Digitale Dominanz für Ihre Branche.',
       path: `/${locale}/branchen/gesundheitswesen/arzt-wetzlar`,
       type: 'money',
     });
@@ -96,7 +99,7 @@ export default async function SubIndustryPage({ params }: { params: Promise<{ lo
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@graph': [
-              getOrganizationSchema(),
+              getOrganizationSchema(_locale),
               getServiceSchema({
                 name:
                   _locale === 'en'

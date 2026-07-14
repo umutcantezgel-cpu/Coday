@@ -29,8 +29,8 @@ export async function generateMetadata({
   });
 }
 
-export default function PricingPage() {
-  const _locale: string = 'de';
+export default async function PricingPage({ params }: { params: Promise<{ locale: string }> }) {
+  const _locale = (await params)?.locale || 'de';
   const _seoTitle =
     _locale === 'en'
       ? 'Web Design Prices Wetzlar | Transparent Plans | Coday'
@@ -47,7 +47,7 @@ export default function PricingPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@graph': [getOrganizationSchema(), getPricingSchema()],
+            '@graph': [getOrganizationSchema(_locale), getPricingSchema(_locale)],
           }),
         }}
       />

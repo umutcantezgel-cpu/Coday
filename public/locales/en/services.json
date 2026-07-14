@@ -1419,7 +1419,7 @@
         "benefits": ["Consistent UI", "Faster development", "Simplified maintenance", "Scalability"]
       },
       "website-relaunch": {
-        "title": "Website Relaunch",
+        "title": "Website Redesign & Relaunch",
         "description": "From strategy to new design. We fundamentally modernize your web presence.",
         "long_description": "Outdated websites cost revenue and reputation. We accompany your relaunch holistically: Strategy, UX concept, design and technical implementation from a single source.",
         "benefits": [
@@ -1432,7 +1432,7 @@
     },
     "growth": {
       "seo-optimization": {
-        "title": "SEO & Traffic",
+        "title": "Search Engine Optimization (SEO)",
         "description": "Maximum visibility in search engines. We bring your site to the top and ensure quality traffic.",
         "long_description": "Being found is everything. With data-driven SEO strategy, technical optimization and high-quality content we ensure your target group finds you exactly when they search for you.",
         "benefits": [
@@ -1443,7 +1443,7 @@
         ]
       },
       "performance-optimization": {
-        "title": "Performance",
+        "title": "Speed & Core Web Vitals",
         "description": "High-Speed optimization for better User Experience, higher Conversion Rates and Top Google Rankings.",
         "long_description": "Speed is a feature. Slow websites lose customers. We analyze and optimize your entire infrastructure for load times in the millisecond range.",
         "benefits": [

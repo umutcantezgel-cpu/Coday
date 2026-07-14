@@ -52,12 +52,11 @@ export default async function EcommercePage({ params }: { params: Promise<{ loca
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@graph': [
-              getOrganizationSchema(),
+              getOrganizationSchema(_locale),
               getServiceSchema({
-                name: 'Onlineshop erstellen lassen | Wetzlar & Hessen',
-                description:
-                  'Professionelle E-Commerce und Onlineshop Entwicklung von Coday in Wetzlar. Hohe Performance und Konversionsraten für Ihr Geschäft in Hessen. Anfragen.',
-                url: `${BASE_URL}/de/services/ecommerce-development`,
+                name: _seoTitle,
+                description: _seoDesc,
+                url: `${BASE_URL}/${_locale}/services/ecommerce-development`,
               }),
             ],
           }),

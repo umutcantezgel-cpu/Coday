@@ -9,6 +9,8 @@ import { servicesData } from '@/shared/data/services';
 import { getTranslations } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   const params: { locale: string; category: string; slug: string }[] = [];
   routing.locales.forEach((locale) => {
@@ -47,7 +49,7 @@ export async function generateMetadata({
       : description;
 
   return generatePageMetadata({
-    title: locale === 'en' ? `${title} - Services` : `${title} - Services`,
+    title: locale === 'en' ? `${title} - Web Services` : `${title} - Webdesign Leistungen`,
     description: fullDesc,
     path: `/${locale}/services/${category}/${slug}`,
     type: 'money',
@@ -78,7 +80,7 @@ export default async function ServiceDetailPage({
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@graph': [
-              getOrganizationSchema(),
+              getOrganizationSchema(_locale),
               getServiceSchema({
                 name: featureData.titleKey || slug,
                 description: `Details about our ${slug} service at Coday.`,

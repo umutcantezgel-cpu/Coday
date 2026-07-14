@@ -96,7 +96,7 @@ export default async function HessenLocationPage({
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@graph': [getOrganizationSchema(), locationSchema],
+    '@graph': [getOrganizationSchema(_locale), locationSchema],
   };
 
   const _seoTitle =

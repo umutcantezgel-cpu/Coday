@@ -47,7 +47,8 @@
     "trust": {
       "desc": "Local Web Agency",
       "title": "Coday Web"
-    }
+    },
+    "sitemap": "Sitemap"
   },
   "generic_detail": {
     "trust": {
@@ -92,11 +93,11 @@
   "loading": "Loading language...",
   "nav": {
     "main": {
-      "home": "Startseite",
+      "home": "Home",
       "work": "Portfolio",
-      "process": "Prozess",
-      "pricing": "Preise",
-      "contact": "Projekt starten",
+      "process": "Process",
+      "pricing": "Pricing",
+      "contact": "Start Project",
       "partnerschaft": "Partner Program",
       "garantie": "Guarantee",
       "presse": "Press"
@@ -323,7 +324,7 @@
         "desc": "Digital Strategy"
       },
       "fullstack": {
-        "label": "Full-Stack Entwicklung"
+        "label": "Full-Stack Development"
       },
       "react_nextjs": {
         "label": "React & Next.js Agency"
@@ -359,11 +360,11 @@
       "creative_impact": "Creative Impact"
     },
     "mobile": {
-      "label": "Menü"
+      "label": "Menu"
     }
   },
   "logobar": {
-    "title": "Vertrauen schenken uns"
+    "title": "Trusted by"
   },
   "scroll_cta": {
     "book_audit": "Book Strategy Session",
@@ -407,25 +408,25 @@
   "garantie": "Guarantee",
   "cookie": {
     "settings": {
-      "title": "Cookie-Einstellungen",
-      "desc": "Wir verwenden Cookies, um Ihre Erfahrung zu verbessern. Bitte wählen Sie aus, welche Cookies Sie zulassen möchten."
+      "title": "Cookie Settings",
+      "desc": "We use cookies to improve your experience. Please select which cookies you want to allow."
     },
     "essential": {
-      "title": "Notwendige Cookies",
+      "title": "Essential Cookies",
       "desc": "These cookies are required for basic site functionality and cannot be disabled."
     },
     "analytics": {
-      "title": "Analyse-Cookies",
-      "desc": "Helfen uns zu verstehen, wie Besucher mit der Website interagieren, indem Informationen anonym gesammelt und gemeldet werden."
+      "title": "Analytics Cookies",
+      "desc": "Help us understand how visitors interact with the website by collecting and reporting information anonymously."
     },
     "marketing": {
-      "title": "Marketing-Cookies",
+      "title": "Marketing Cookies",
       "desc": "Used to track visitors across websites. The intention is to display ads that are relevant and engaging for the individual user."
     }
   },
-  "close": "Schließen",
-  "cancel": "Abbrechen",
+  "close": "Close",
+  "cancel": "Cancel",
   "save": "Save",
   "partnerschaft": "Partner Program",
-  "presse": "presse"
+  "presse": "Press"
 }

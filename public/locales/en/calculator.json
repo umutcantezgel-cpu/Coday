@@ -28,7 +28,8 @@
     "subtitle_default": "Calculate your web project and choose from 9 categories. From basic to professional solutions.",
     "subtitle_packages": "Extend your selected package for your web project with additional modules.",
     "title_1": "Calculate Your",
-    "title_2": "Web Project."
+    "title_2": "Web Project.",
+    "title": "Project Cost Calculator"
   },
   "module_count": "{count} module selected",
   "module_count_one": "{count} module selected",
@@ -155,7 +156,7 @@
     "description": "Calculate the costs for your next website, web app or e-commerce solution in real time."
   },
   "page": {
-    "description": "A good text or article should contain at least 500 words, but the quality of our Web Design Agency in Wetzlar is measured in more than just words. We focus on technical excellence, measurable performance (LCP under 2 seconds), and sustainable growth for both B2B and B2C companies. As your local partner in Central Hesse, we specialize in modern Next.js solutions, headless CMS, and highly secure, performant web applications. Transparency, fixed pricing, and direct communication are always at the forefront of our partnership."
+    "description": "A good text or article should contain at least 500 words, but the quality of our Web Design Agency in Wetzlar is measured in more than just words. We focus on technical excellence, measurable performance (LCP under 2 seconds), and sustainable growth for both B2B and B2C companies. As your local partner in Central Hesse, we specialize in modern Next.js solutions, headless CMS, and highly secure, performant web applications. Transparency, fixed pricing, and direct communication are always at the forefront of our partnership. Use our interactive cost calculator to get an estimate for your web design project packages."
   },
   "seoText": {
     "title": "Project Cost Calculator | The Agency Configurator | Coday Web Agency",

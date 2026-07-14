@@ -55,7 +55,7 @@ export default async function AnalyzerPage(props: { params: Promise<{ locale: st
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
-      getOrganizationSchema(),
+      getOrganizationSchema(params.locale),
       {
         '@type': 'WebPage',
         '@id': `${BASE_URL}/${params.locale}/analyzer`,

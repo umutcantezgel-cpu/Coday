@@ -52,12 +52,11 @@ export default async function UxAuditPage({ params }: { params: Promise<{ locale
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@graph': [
-              getOrganizationSchema(),
+              getOrganizationSchema(_locale),
               getServiceSchema({
-                name: 'UX Audit & Usability Check Wetzlar | Optimierung',
-                description:
-                  'Professioneller UX Audit von Coday in Wetzlar. Wir analysieren Ihre Website auf Nutzerfreundlichkeit und Konversionspotenzial. Für Firmen in Hessen.',
-                url: `${BASE_URL}/de/services/design/ux-audit`,
+                name: _seoTitle,
+                description: _seoDesc,
+                url: `${BASE_URL}/${_locale}/services/design/ux-audit`,
               }),
             ],
           }),

@@ -65,7 +65,10 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@graph': [getOrganizationSchema(), getPortfolioSchema(portfolioProjects)],
+            '@graph': [
+              getOrganizationSchema(_locale),
+              getPortfolioSchema(portfolioProjects, _locale),
+            ],
           }),
         }}
       />

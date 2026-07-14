@@ -52,12 +52,11 @@ export default async function MigrationPage({ params }: { params: Promise<{ loca
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@graph': [
-              getOrganizationSchema(),
+              getOrganizationSchema(_locale),
               getServiceSchema({
-                name: 'Website Migration & Relaunch Wetzlar | Sicher',
-                description:
-                  'Sichere Website Migration und Relaunch von Coday in Wetzlar. Wir übertragen Ihre Inhalte und optimieren dabei SEO und Performance. Für Firmen in Hessen.',
-                url: `${BASE_URL}/de/services/development/migration`,
+                name: _seoTitle,
+                description: _seoDesc,
+                url: `${BASE_URL}/${_locale}/services/development/migration`,
               }),
             ],
           }),

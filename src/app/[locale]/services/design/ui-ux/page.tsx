@@ -52,12 +52,11 @@ export default async function UiUxPage({ params }: { params: Promise<{ locale: s
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@graph': [
-              getOrganizationSchema(),
+              getOrganizationSchema(_locale),
               getServiceSchema({
-                name: 'UI/UX Design Agentur Wetzlar | Nutzerfreundlich',
-                description:
-                  'Professionelles UI/UX Design von Coday in Wetzlar. Nutzerzentrierte Interfaces für höhere Konversion und zufriedene Kunden in Mittelhessen. Anfragen.',
-                url: `${BASE_URL}/de/services/design/ui-ux`,
+                name: _seoTitle,
+                description: _seoDesc,
+                url: `${BASE_URL}/${_locale}/services/design/ui-ux`,
               }),
             ],
           }),

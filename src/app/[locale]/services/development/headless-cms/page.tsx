@@ -52,12 +52,11 @@ export default async function HeadlessCmsPage({ params }: { params: Promise<{ lo
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@graph': [
-              getOrganizationSchema(),
+              getOrganizationSchema(_locale),
               getServiceSchema({
-                name: 'Headless CMS Entwicklung Wetzlar | Flexibel',
-                description:
-                  'Moderne Headless CMS Lösungen von Coday in Wetzlar. Flexible Content-Verwaltung mit Sanity, Strapi oder Contentful für Ihr Unternehmen in Hessen.',
-                url: `${BASE_URL}/de/services/development/headless-cms`,
+                name: _seoTitle,
+                description: _seoDesc,
+                url: `${BASE_URL}/${_locale}/services/development/headless-cms`,
               }),
             ],
           }),

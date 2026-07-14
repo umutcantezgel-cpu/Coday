@@ -52,12 +52,11 @@ export default async function WebAppsPage({ params }: { params: Promise<{ locale
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@graph': [
-              getOrganizationSchema(),
+              getOrganizationSchema(_locale),
               getServiceSchema({
-                name: 'Web-App Entwicklung Wetzlar | Portale & Tools',
-                description:
-                  'Individuelle Web-App Entwicklung und Portale von Coday in Wetzlar. Maßgeschneiderte Lösungen für Unternehmen in Mittelhessen. Jetzt Projekt starten.',
-                url: `${BASE_URL}/de/services/development/web-apps`,
+                name: _seoTitle,
+                description: _seoDesc,
+                url: `${BASE_URL}/${_locale}/services/development/web-apps`,
               }),
             ],
           }),

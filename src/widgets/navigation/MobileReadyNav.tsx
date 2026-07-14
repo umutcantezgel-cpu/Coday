@@ -301,18 +301,33 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
                 {
                   label: t('nav.local.arzt_wetzlar'),
                   href: '/branchen/gesundheitswesen/arzt-wetzlar',
+                  locale: 'de',
                 },
                 {
                   label: t('nav.local.arzt_giessen'),
                   href: '/branchen/gesundheitswesen/arzt-giessen',
+                  locale: 'de',
                 },
-                { label: t('nav.local.handwerker_wetzlar'), href: '/branchen/handwerker/wetzlar' },
-                { label: t('nav.local.kfz_werkstatt'), href: '/branchen/automobil/kfz-werkstatt' },
+                {
+                  label: t('nav.local.handwerker_wetzlar'),
+                  href: '/branchen/handwerker/wetzlar',
+                  locale: 'de',
+                },
+                {
+                  label: t('nav.local.kfz_werkstatt'),
+                  href: '/branchen/automobil/kfz-werkstatt',
+                  locale: 'de',
+                },
                 {
                   label: t('nav.local.kfz_mechatroniker'),
                   href: '/branchen/automobil/kfz-mechatroniker',
+                  locale: 'de',
                 },
-                { label: t('nav.local.autohaendler'), href: '/branchen/automobil/autohaendler' },
+                {
+                  label: t('nav.local.autohaendler'),
+                  href: '/branchen/automobil/autohaendler',
+                  locale: 'de',
+                },
               ]}
             />
             <React.Suspense fallback={null}>

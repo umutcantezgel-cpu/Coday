@@ -67,12 +67,12 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   ]);
 
   const t = await getTranslations('home');
-  const serviceSchema = getProfessionalServiceSchema();
-  const localSchema = getLocalBusinessSchema();
-  const orgSchema = getOrganizationSchema();
-  const websiteSchema = getWebSiteSchema();
-
   const _locale = locale || 'de';
+  const serviceSchema = getProfessionalServiceSchema(_locale);
+  const localSchema = getLocalBusinessSchema(_locale);
+  const orgSchema = getOrganizationSchema(_locale);
+  const websiteSchema = getWebSiteSchema(_locale);
+
   const _seoTitle =
     _locale === 'en'
       ? 'Web Design Agency in Wetzlar & Central Hesse | Coday'

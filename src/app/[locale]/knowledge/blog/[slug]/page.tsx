@@ -162,7 +162,7 @@ export default async function BlogPostPage({ params }: PageProps) {
     ? {
         '@context': 'https://schema.org',
         '@graph': [
-          getOrganizationSchema(),
+          getOrganizationSchema(locale),
           getArticleSchema({
             title: post.title,
             excerpt: post.excerpt,

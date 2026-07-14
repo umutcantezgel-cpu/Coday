@@ -52,12 +52,11 @@ export default async function ImmobilienPage({ params }: { params: Promise<{ loc
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@graph': [
-              getOrganizationSchema(),
+              getOrganizationSchema(_locale),
               getServiceSchema({
-                name: 'Webdesign für Immobilienmakler',
-                description:
-                  'Hochwertige Webseiten für Immobilienmakler in Wetzlar und Hessen. Exposés, Objektsuche und Lead-Generierung durch modernes Webdesign. Jetzt anfragen.',
-                url: `${BASE_URL}/de/branchen/immobilien`,
+                name: _seoTitle,
+                description: _seoDesc,
+                url: `${BASE_URL}/${_locale}/branchen/immobilien`,
               }),
             ],
           }),

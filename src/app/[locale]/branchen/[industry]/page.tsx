@@ -61,7 +61,7 @@ export default async function IndustryDetailPage({
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@graph': [
-              getOrganizationSchema(),
+              getOrganizationSchema(_locale),
               getServiceSchema({
                 name: locale === 'en' ? `Web Design for ${industry}` : `Webdesign für ${industry}`,
                 description:

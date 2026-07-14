@@ -57,12 +57,11 @@ export default async function IndustryOverviewPage({
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@graph': [
-              getOrganizationSchema(),
+              getOrganizationSchema(_locale),
               getServiceSchema({
-                name: 'Webdesign Branchenlösungen',
-                description:
-                  'Spezialisiertes Webdesign für jede Branche von Coday in Wetzlar. Handwerker, Ärzte, Gastronomen und Dienstleister in Mittelhessen. Jetzt anfragen.',
-                url: `${BASE_URL}/de/branchen`,
+                name: _seoTitle,
+                description: _seoDesc,
+                url: `${BASE_URL}/${_locale}/branchen`,
               }),
             ],
           }),

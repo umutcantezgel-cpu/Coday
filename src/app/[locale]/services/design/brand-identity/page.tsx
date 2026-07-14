@@ -56,12 +56,11 @@ export default async function BrandIdentityPage({
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@graph': [
-              getOrganizationSchema(),
+              getOrganizationSchema(_locale),
               getServiceSchema({
-                name: 'Corporate Design & Branding Agentur | Wetzlar',
-                description:
-                  'Starke Markenidentität und Corporate Design von Coday in Wetzlar. Logo, Farben und Typografie für Ihr Unternehmen in Hessen. Jetzt Marke gestalten.',
-                url: `${BASE_URL}/de/services/design/brand-identity`,
+                name: _seoTitle,
+                description: _seoDesc,
+                url: `${BASE_URL}/${_locale}/services/design/brand-identity`,
               }),
             ],
           }),

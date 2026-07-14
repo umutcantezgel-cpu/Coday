@@ -2,7 +2,7 @@ export const BASE_URL = 'https://www.codayweb.de';
 export const ORG_ID = `${BASE_URL}/#organization`;
 export const FOUNDER_ID = `${BASE_URL}/#founder`;
 
-export function getOrganizationSchema() {
+export function getOrganizationSchema(locale: string = 'de') {
   return {
     '@type': ['Organization', 'LocalBusiness', 'ProfessionalService'],
     '@id': ORG_ID,
@@ -12,8 +12,10 @@ export function getOrganizationSchema() {
     url: BASE_URL,
     image: `${BASE_URL}/images/og-image.jpg`,
     description:
-      'Premium Webdesign & Generative Engine Optimization (GEO) für KMUs und Handwerker in Wetzlar, Gießen und Hessen.',
-    slogan: 'Die Anti-Agentur aus Wetzlar.',
+      locale === 'en'
+        ? 'Premium Web Design & Generative Engine Optimization (GEO) for SMEs and craftsmen in Wetzlar, Giessen, and Hesse.'
+        : 'Premium Webdesign & Generative Engine Optimization (GEO) für KMUs und Handwerker in Wetzlar, Gießen und Hessen.',
+    slogan: locale === 'en' ? 'The Anti-Agency from Wetzlar.' : 'Die Anti-Agentur aus Wetzlar.',
     email: 'kontakt@codayweb.de',
     telephone: '+49-176-41195301',
     taxID: '039 874 00784',
@@ -138,7 +140,7 @@ export function getOrganizationSchema() {
   };
 }
 
-export function getProfessionalServiceSchema() {
+export function getProfessionalServiceSchema(locale: string = 'de') {
   return {
     '@type': 'ProfessionalService',
     '@id': `${BASE_URL}/#professional-service`,
@@ -147,7 +149,10 @@ export function getProfessionalServiceSchema() {
     },
     name: 'Coday Web Agency',
     legalName: 'Umutcan Emre Tezgel',
-    description: 'High-End Webentwicklung & Generative Engine Optimization',
+    description:
+      locale === 'en'
+        ? 'High-End Web Development & Generative Engine Optimization'
+        : 'High-End Webentwicklung & Generative Engine Optimization',
     image: `${BASE_URL}/images/og-image.jpg`,
     url: BASE_URL,
     telephone: '+49-176-41195301',
@@ -229,15 +234,18 @@ export function getProfessionalServiceSchema() {
   };
 }
 
-export function getLocalBusinessSchema() {
+export function getLocalBusinessSchema(locale: string = 'de') {
   return {
     '@type': 'LocalBusiness',
     '@id': `${BASE_URL}/#local-business`,
     parentOrganization: {
       '@id': ORG_ID,
     },
-    name: 'Coday - Webdesign Wetzlar',
-    description: 'High-End Webentwicklung & Generative Engine Optimization',
+    name: locale === 'en' ? 'Coday - Web Design Wetzlar' : 'Coday - Webdesign Wetzlar',
+    description:
+      locale === 'en'
+        ? 'High-End Web Development & Generative Engine Optimization'
+        : 'High-End Webentwicklung & Generative Engine Optimization',
     url: BASE_URL,
     telephone: '+49-176-41195301',
     image: `${BASE_URL}/logo.png`,
@@ -356,13 +364,15 @@ export function getDynamicLocationSchema(location: {
 
 /* ═══ PAGE-SPECIFIC SCHEMAS ═══ */
 
-export function getPricingSchema() {
+export function getPricingSchema(locale: string = 'de') {
   return {
     '@type': 'Product',
-    '@id': `${BASE_URL}/de/pricing#product`,
-    name: 'Coday Webdesign Pakete',
+    '@id': `${BASE_URL}/${locale}/pricing#product`,
+    name: locale === 'en' ? 'Coday Web Design Packages' : 'Coday Webdesign Pakete',
     description:
-      'Transparente Festpreis-Pakete für professionelles Webdesign. Vom Onepager ab 499 € bis zur Enterprise-Lösung.',
+      locale === 'en'
+        ? 'Transparent fixed-price packages for professional web design. From one-pagers starting at €499 to enterprise solutions.'
+        : 'Transparente Festpreis-Pakete für professionelles Webdesign. Vom Onepager ab 499 € bis zur Enterprise-Lösung.',
     brand: { '@id': ORG_ID },
     offers: [
       {
@@ -420,14 +430,19 @@ export function getPricingSchema() {
   };
 }
 
-export function getPortfolioSchema(projects: { name: string; url: string; description: string }[]) {
+export function getPortfolioSchema(
+  projects: { name: string; url: string; description: string }[],
+  locale: string = 'de'
+) {
   return {
     '@type': 'CollectionPage',
-    '@id': `${BASE_URL}/de/work#portfolio`,
-    name: 'Coday Portfolio & Referenzen',
+    '@id': `${BASE_URL}/${locale}/work#portfolio`,
+    name: locale === 'en' ? 'Coday Portfolio & References' : 'Coday Portfolio & Referenzen',
     description:
-      'Echte Kundenprojekte von Coday in Wetzlar. Case Studies mit messbaren Ergebnissen.',
-    url: `${BASE_URL}/de/work`,
+      locale === 'en'
+        ? 'Real client projects by Coday in Wetzlar. Case studies with measurable results.'
+        : 'Echte Kundenprojekte von Coday in Wetzlar. Case Studies mit messbaren Ergebnissen.',
+    url: `${BASE_URL}/${locale}/work`,
     isPartOf: { '@id': `${BASE_URL}/#website` },
     about: { '@id': ORG_ID },
     mainEntity: {
@@ -447,15 +462,17 @@ export function getPortfolioSchema(projects: { name: string; url: string; descri
   };
 }
 
-export function getWebSiteSchema() {
+export function getWebSiteSchema(locale: string = 'de') {
   return {
     '@type': 'WebSite',
     '@id': `${BASE_URL}/#website`,
     url: BASE_URL,
     name: 'Coday',
-    alternateName: 'Coday Webdesign Wetzlar',
+    alternateName: locale === 'en' ? 'Coday Web Design Wetzlar' : 'Coday Webdesign Wetzlar',
     description:
-      'Webdesign Agentur in Wetzlar. Professionelle Websites und Website Relaunch für Unternehmen in Mittelhessen.',
+      locale === 'en'
+        ? 'Web design agency in Wetzlar. Professional websites and website relaunches for companies in Central Hesse.'
+        : 'Webdesign Agentur in Wetzlar. Professionelle Websites und Website Relaunch für Unternehmen in Mittelhessen.',
     publisher: {
       '@id': ORG_ID,
     },
@@ -471,13 +488,18 @@ export function getWebSiteSchema() {
   };
 }
 
-export function getProcessSchema() {
+export function getProcessSchema(locale: string = 'de') {
   return {
     '@type': 'HowTo',
-    '@id': `${BASE_URL}/de/process#howto`,
-    name: 'So entsteht Ihre Website bei Coday',
+    '@id': `${BASE_URL}/${locale}/process#howto`,
+    name:
+      locale === 'en'
+        ? 'How your website is created at Coday'
+        : 'So entsteht Ihre Website bei Coday',
     description:
-      'Vom Erstgespräch bis zum Launch — der strukturierte Webdesign-Prozess von Coday in 5 Schritten.',
+      locale === 'en'
+        ? 'From the initial consultation to launch — the structured web design process by Coday in 5 steps.'
+        : 'Vom Erstgespräch bis zum Launch — der strukturierte Webdesign-Prozess von Coday in 5 Schritten.',
     totalTime: 'P21D',
     estimatedCost: {
       '@type': 'MonetaryAmount',

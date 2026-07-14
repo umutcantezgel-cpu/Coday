@@ -48,7 +48,7 @@ export default async function SeoPage({ params }: { params: Promise<{ locale: st
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@graph': [
-              getOrganizationSchema(),
+              getOrganizationSchema(_locale),
               getServiceSchema({
                 name:
                   _locale === 'en'

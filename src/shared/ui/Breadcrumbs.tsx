@@ -14,7 +14,9 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ className = '' }) => {
   const t = useTranslations('common');
   const pathname = usePathname() || '';
 
-  const pathnames = pathname.split('/').filter((x) => x);
+  // Ensure locale is stripped (next-intl usePathname sometimes includes it during SSG)
+  const cleanPathname = pathname.replace(/^\/(de|en)(\/|$)/, '/');
+  const pathnames = cleanPathname.split('/').filter((x) => x);
 
   // If we are at the root, don't show breadcrumbs
   if (pathnames.length === 0) {

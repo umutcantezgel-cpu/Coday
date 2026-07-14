@@ -57,12 +57,11 @@ export default async function WebDevelopmentPage({
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@graph': [
-              getOrganizationSchema(),
+              getOrganizationSchema(_locale),
               getServiceSchema({
-                name: 'Webentwicklung Wetzlar | Next.js & React Agentur',
-                description:
-                  'Maßgeschneiderte React und Next.js Webanwendungen aus Wetzlar. High-Performance Architektur für Unternehmen in Hessen. Jetzt Ihr Projekt besprechen.',
-                url: `${BASE_URL}/de/services/web-development`,
+                name: _seoTitle,
+                description: _seoDesc,
+                url: `${BASE_URL}/${_locale}/services/web-development`,
               }),
             ],
           }),

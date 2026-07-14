@@ -43,7 +43,10 @@ export async function generateMetadata({
         locale === 'en'
           ? 'Web Design for Auto Repair Shops | Wetzlar Area'
           : 'Webdesign für KFZ-Werkstätten | Raum Wetzlar',
-      description: 'Digitale Dominanz für Ihre Branche.',
+      description:
+        locale === 'en'
+          ? 'Digital dominance for your industry.'
+          : 'Digitale Dominanz für Ihre Branche.',
       path: `/${locale}/branchen/automobil/kfz-werkstatt`,
       type: 'money',
     });
@@ -94,7 +97,7 @@ export default async function SubIndustryPage({ params }: { params: Promise<{ lo
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@graph': [
-              getOrganizationSchema(),
+              getOrganizationSchema(_locale),
               getServiceSchema({
                 name:
                   _locale === 'en'

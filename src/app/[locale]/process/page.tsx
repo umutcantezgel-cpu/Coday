@@ -53,7 +53,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@graph': [getOrganizationSchema(), getProcessSchema()],
+            '@graph': [getOrganizationSchema(_locale), getProcessSchema(_locale)],
           }),
         }}
       />

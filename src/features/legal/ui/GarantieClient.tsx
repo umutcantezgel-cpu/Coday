@@ -52,8 +52,9 @@ const Garantie: React.FC = () => {
             transition={{ delay: 0.2 }}
             className="text-xl text-gray-600 max-w-2xl mx-auto"
           >
-            Wir nehmen Ihnen das Risiko. Mit unseren drei zentralen Coday-Garantien sichern Sie sich
-            maximale Leistung, Transparenz und Unabhängigkeit.
+            Wir bieten echte Sicherheit für Ihr Business durch unsere Garantien. Wir nehmen Ihnen
+            das Risiko. Mit unseren drei zentralen Coday-Garantien sichern Sie sich maximale
+            Leistung, Transparenz und Unabhängigkeit.
           </m.p>
         </div>
 

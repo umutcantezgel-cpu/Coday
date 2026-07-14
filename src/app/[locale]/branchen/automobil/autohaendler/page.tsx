@@ -43,7 +43,10 @@ export async function generateMetadata({
         locale === 'en'
           ? 'Web Design for Car Dealers | Agency in Wetzlar'
           : 'Webdesign für Autohändler | Agentur in Wetzlar',
-      description: 'Digitale Dominanz für Ihre Branche.',
+      description:
+        locale === 'en'
+          ? 'Digital dominance for your industry.'
+          : 'Digitale Dominanz für Ihre Branche.',
       path: `/${locale}/branchen/automobil/autohaendler`,
       type: 'money',
     });
@@ -94,7 +97,7 @@ export default async function SubIndustryPage({ params }: { params: Promise<{ lo
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@graph': [
-              getOrganizationSchema(),
+              getOrganizationSchema(_locale),
               getServiceSchema({
                 name: _locale === 'en' ? 'Web Design for Car Dealers' : 'Webdesign für Autohändler',
                 description:
