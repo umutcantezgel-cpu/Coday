@@ -126,5 +126,15 @@
   "meta": {
     "title": "Digital Consulting & Strategy | Coday",
     "description": "Strategic consulting for your digital transformation. Tech stack evaluation, process optimization, and data-driven growth hacking."
+  },
+  "consulting_page": {
+    "seoText": {
+      "title": "IT Consulting Agency Wetzlar | Coday",
+      "content": "Strategic IT consulting for your digital transformation. We analyze your processes and deliver actionable roadmaps for scalable growth."
+    },
+    "hero": {
+      "title_prefix": "Digital ",
+      "title_suffix": "Consulting."
+    }
   }
 }

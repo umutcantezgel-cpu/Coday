@@ -129,12 +129,12 @@
   },
   "consulting_page": {
     "seoText": {
-      "title": "title",
-      "content": "content"
+      "title": "IT Consulting Agentur Wetzlar | Coday",
+      "content": "Strategische IT-Beratung für Ihre digitale Transformation. Wir analysieren Ihre Prozesse und liefern umsetzbare Roadmaps für skalierbares Wachstum."
     },
     "hero": {
-      "title_prefix": "title_prefix",
-      "title_suffix": "title_suffix"
+      "title_prefix": "Digitale ",
+      "title_suffix": "Beratung."
     }
   }
 }

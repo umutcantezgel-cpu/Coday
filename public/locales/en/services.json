@@ -376,7 +376,9 @@
       "cta_secondary": "View References",
       "description": "We build high-performance E-Commerce that sells, using Shopify and WooCommerce. No standard themes, but conversion-optimized sales machines.",
       "title_anim": "E-Commerce that",
-      "title_static": "sells."
+      "title_static": "sells.",
+      "title_prefix": "Your ",
+      "title_suffix": "E-Commerce Agency."
     },
     "roi_calculator": {
       "aov_label": "Average Order Value",

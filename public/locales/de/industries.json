@@ -52,7 +52,7 @@
       "title_2": "für Handwerker",
       "description": "Wir bauen Websites, die Handwerksbetrieben zu mehr Sichtbarkeit und Aufträgen verhelfen.",
       "image_alt": "Handwerker Website",
-      "title_suffix": "title_suffix"
+      "title_suffix": "für Handwerker"
     },
     "challenges": {
       "fachkraftemangel": {
@@ -171,7 +171,7 @@
       "headline": "Exklusive Objekte, exklusiv präsentiert",
       "subheadline": "Überzeugen Sie Eigentümer und Käufer mit einer digitalen Präsenz, die Kompetenz und Klasse ausstrahlt.",
       "image_alt": "Makler Webseite",
-      "title_suffix": "title_suffix"
+      "title_suffix": "für Immobilienmakler"
     },
     "challenges": {
       "objektakquise": {
@@ -302,7 +302,7 @@
     "hero": {
       "headline": "Vertrauen beginnt vor dem ersten Termin",
       "subheadline": "Entlasten Sie Ihr Praxis-Team und gewinnen Sie die richtigen Patienten durch moderne digitale Prozesse. Denn Vertrauen beginnt vor dem ersten Termin.",
-      "title_suffix": "title_suffix"
+      "title_suffix": "für Ärzte"
     },
     "challenges": {
       "telefon_ueberlastung": {
@@ -928,12 +928,12 @@
   },
   "retail": {
     "seoText": {
-      "title": "title",
-      "content": "content"
+      "title": "E-Commerce IT-Lösungen | Coday",
+      "content": "Digitale Transformation für Handel und E-Commerce. Wir entwickeln performante Online-Shops und Omnichannel-Lösungen."
     },
     "hero": {
-      "headline": "headline",
-      "title_suffix": "title_suffix"
+      "headline": "Digital Commerce",
+      "title_suffix": "Lösungen"
     }
   }
 }

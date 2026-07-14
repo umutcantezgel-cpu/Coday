@@ -370,8 +370,8 @@
       "description": "Als Ihre E-Commerce Agentur bauen wir High-Performance Shops mit Shopify und WooCommerce. Keine Standard-Themes, sondern conversion-optimierte Verkaufsmaschinen.",
       "title_anim": "Ihre ",
       "title_static": "E-Commerce Agentur.",
-      "title_prefix": "title_prefix",
-      "title_suffix": "title_suffix"
+      "title_prefix": "Ihre ",
+      "title_suffix": "E-Commerce Agentur."
     },
     "roi_calculator": {
       "aov_label": "Durchschn. Warenkorb",

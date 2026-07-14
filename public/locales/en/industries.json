@@ -52,7 +52,7 @@
       "title_2": "for Craftsmen",
       "description": "We build websites that help craft businesses gain more visibility and orders.",
       "image_alt": "Craftsman Website",
-      "title_suffix": "title_suffix"
+      "title_suffix": "for Craftsmen"
     },
     "challenges": {
       "fachkraftemangel": {
@@ -171,7 +171,7 @@
       "headline": "Exclusive properties, exclusively presented",
       "subheadline": "Convince owners and buyers with a digital presence that radiates competence and class.",
       "image_alt": "Real Estate Website",
-      "title_suffix": "title_suffix"
+      "title_suffix": "for Real Estate"
     },
     "challenges": {
       "objektakquise": {
@@ -302,7 +302,7 @@
     "hero": {
       "headline": "Trust Begins Before the First Appointment",
       "subheadline": "Relieve your practice team and attract the right patients through modern digital processes, because Trust Begins Before the First Appointment.",
-      "title_suffix": "title_suffix"
+      "title_suffix": "for Doctors"
     },
     "challenges": {
       "telefon_ueberlastung": {
@@ -928,12 +928,12 @@
   },
   "retail": {
     "seoText": {
-      "title": "title",
-      "content": "content"
+      "title": "E-Commerce IT Solutions | Coday",
+      "content": "Digital transformation for retail and e-commerce. We build high-performance online shops and omnichannel solutions."
     },
     "hero": {
-      "headline": "headline",
-      "title_suffix": "title_suffix"
+      "headline": "Digital Commerce",
+      "title_suffix": "Solutions"
     }
   }
 }
