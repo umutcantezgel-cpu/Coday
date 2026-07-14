@@ -69,15 +69,6 @@ export function EnterpriseWebClient() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-sapphire to-blue-600">
                 {t('enterprise_web_page.hero.title_suffix')}
               </span>
-
-              {/* visually hidden SEO h1 text */}
-              <div
-                className="absolute opacity-[0.01] pointer-events-none select-none -z-10 w-0 h-0 overflow-hidden"
-                aria-hidden="true"
-              >
-                {t('enterprise_web_page.hero.title_prefix')}{' '}
-                {t('enterprise_web_page.hero.title_suffix')}
-              </div>
             </h1>
 
             <p className="max-w-2xl mx-auto text-xl md:text-2xl text-slate-500 font-light leading-relaxed max-w-prose text-pretty mb-12">

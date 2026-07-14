@@ -260,10 +260,8 @@ export function MigrationClient() {
       <RelevantFAQs serviceId="migration" className="mb-24" />
 
       {/* SEO Text für Keyword-Konsistenz */}
-      <div className="container mx-auto px-4 pb-12 text-center">
-        <p className="opacity-[0.01] pointer-events-none text-[2px] leading-none select-none overflow-hidden h-px w-full">
-          {t('migration_page.hero.title_prefix')} {t('migration_page.hero.title_suffix')}
-        </p>
+      <div className="container mx-auto px-4 pb-12 text-center text-xs text-gray-400 font-mono">
+        Themen: {t('migration_page.hero.title_prefix')} {t('migration_page.hero.title_suffix')}
       </div>
     </>
   );

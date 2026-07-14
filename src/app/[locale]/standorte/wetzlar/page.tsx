@@ -28,17 +28,26 @@ export async function generateMetadata({
     const fileContents = fs.readFileSync(filePath, 'utf8');
     const content = JSON.parse(fileContents);
 
+    const enTitle = 'Web Design Agency Wetzlar | Top Websites';
+
     return generatePageMetadata({
-      title: content.meta.title,
-      description: content.meta.description,
+      title: locale === 'en' ? enTitle : content.meta.title,
+      description:
+        locale === 'en' ? 'Local expertise meets high-end tech.' : content.meta.description,
       path: `/${locale}/standorte/wetzlar`,
       type: 'money',
     });
   } catch (e) {
     // Fallback if file doesn't exist yet
     return generatePageMetadata({
-      title: 'Webdesign Agentur Wetzlar | Top Webseiten',
-      description: 'Lokale Expertise trifft auf High-End Tech.',
+      title:
+        locale === 'en'
+          ? 'Web Design Agency Wetzlar | Top Websites'
+          : 'Webdesign Agentur Wetzlar | Top Webseiten',
+      description:
+        locale === 'en'
+          ? 'Local expertise meets high-end tech.'
+          : 'Lokale Expertise trifft auf High-End Tech.',
       path: `/${locale}/standorte/wetzlar`,
       type: 'money',
     });
@@ -78,11 +87,15 @@ export default async function WetzlarLocationPage({
 
   const cityData = getCityBySlug('wetzlar');
 
+  const _locale = (await params)?.locale || 'de';
+
   const locationSchema = getDynamicLocationSchema({
     city: 'Wetzlar',
     description:
-      'Webdesign Agentur in Wetzlar — Premium Websites mit Next.js, SEO & Generative Engine Optimization für lokale Unternehmen.',
-    url: `${BASE_URL}/de/standorte/wetzlar`,
+      _locale === 'en'
+        ? 'Web design agency in Wetzlar — Premium websites with Next.js.'
+        : 'Webdesign Agentur in Wetzlar — Premium Websites mit Next.js, SEO & Generative Engine Optimization für lokale Unternehmen.',
+    url: `${BASE_URL}/${_locale}/standorte/wetzlar`,
   });
 
   const jsonLd = {
@@ -90,15 +103,10 @@ export default async function WetzlarLocationPage({
     '@graph': [getOrganizationSchema(), locationSchema],
   };
 
-  const _locale = (await params)?.locale || 'de';
   const _seoTitle =
     _locale === 'en'
-      ? 'Webdesign Agentur Wetzlar | Top Webseiten | Coday'
+      ? 'Web Design Agency Wetzlar | Top Websites | Coday'
       : 'Webdesign Agentur Wetzlar | Top Webseiten | Coday';
-  const _seoDesc =
-    _locale === 'en'
-      ? 'Lokale Expertise trifft auf High-End Tech.'
-      : 'Lokale Expertise trifft auf High-End Tech.';
   return (
     <>
       <script
@@ -107,10 +115,8 @@ export default async function WetzlarLocationPage({
       />
       <LocalSeoTemplate content={content} cityData={cityData} />
       {/* SEO Title für Keyword-Konsistenz */}
-      <div className="container mx-auto px-4 pb-12 text-center">
-        <p className="opacity-[0.01] pointer-events-none text-[2px] leading-none select-none overflow-hidden h-px w-full">
-          {_seoTitle}
-        </p>
+      <div className="container mx-auto px-4 pb-12 text-center text-xs text-gray-400 font-mono">
+        Themen: {_seoTitle}
       </div>
     </>
   );

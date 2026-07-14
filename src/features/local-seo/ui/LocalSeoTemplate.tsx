@@ -173,10 +173,8 @@ export const LocalSeoTemplate: React.FC<LocalSeoTemplateProps> = ({ content, cit
       </section>
 
       {/* SEO Text für Keyword-Konsistenz */}
-      <div className="container mx-auto px-4 pb-12 text-center">
-        <p className="opacity-[0.01] pointer-events-none text-[2px] leading-none select-none overflow-hidden h-px w-full">
-          {content.hero.headline} {content.hero.subheadline}
-        </p>
+      <div className="container mx-auto px-4 pb-12 text-center text-xs text-gray-400 font-mono">
+        Themen: {content.hero.headline} {content.hero.subheadline}
       </div>
 
       <SeoLocalExpertiseBlock />

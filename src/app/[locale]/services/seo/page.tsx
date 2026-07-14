@@ -39,10 +39,6 @@ export default async function SeoPage({ params }: { params: Promise<{ locale: st
     _locale === 'en'
       ? 'SEO Agency | Professional Search Optimization | Coday'
       : 'SEO Agentur | Suchmaschinenoptimierung & GEO | Coday';
-  const _seoDesc =
-    _locale === 'en'
-      ? 'Professional SEO and GEO optimization by Coday. More visibility for your business on Google. Get your free consultation today.'
-      : 'Professionelle SEO und GEO Optimierung von Coday. Mehr Sichtbarkeit für Ihr Unternehmen bei Google. Jetzt kostenlos beraten lassen.';
   return (
     <>
       <script
@@ -54,10 +50,15 @@ export default async function SeoPage({ params }: { params: Promise<{ locale: st
             '@graph': [
               getOrganizationSchema(),
               getServiceSchema({
-                name: 'SEO Agentur | Suchmaschinenoptimierung & GEO',
+                name:
+                  _locale === 'en'
+                    ? 'SEO Agency | Professional Search Optimization'
+                    : 'SEO Agentur | Suchmaschinenoptimierung & GEO',
                 description:
-                  'Professionelle SEO und GEO Optimierung von Coday. Mehr Sichtbarkeit für Ihr Unternehmen bei Google. Jetzt kostenlos beraten lassen.',
-                url: `${BASE_URL}/de/services/seo`,
+                  _locale === 'en'
+                    ? 'Professional SEO and GEO optimization by Coday. More visibility for your business on Google.'
+                    : 'Professionelle SEO und GEO Optimierung von Coday. Mehr Sichtbarkeit für Ihr Unternehmen bei Google. Jetzt kostenlos beraten lassen.',
+                url: `${BASE_URL}/${_locale}/services/seo`,
               }),
             ],
           }),
@@ -65,10 +66,8 @@ export default async function SeoPage({ params }: { params: Promise<{ locale: st
       />
       <SeoClient />
       {/* SEO Title für Keyword-Konsistenz */}
-      <div className="container mx-auto px-4 pb-12 text-center">
-        <p className="opacity-[0.01] pointer-events-none text-[2px] leading-none select-none overflow-hidden h-px w-full">
-          {_seoTitle}
-        </p>
+      <div className="container mx-auto px-4 pb-12 text-center text-xs text-gray-400 font-mono">
+        Themen: {_seoTitle}
       </div>
     </>
   );

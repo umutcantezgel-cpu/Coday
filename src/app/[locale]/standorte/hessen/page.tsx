@@ -27,16 +27,25 @@ export async function generateMetadata({
     const fileContents = fs.readFileSync(filePath, 'utf8');
     const content = JSON.parse(fileContents);
 
+    const enTitle = 'Web Design Agency Hesse | Premium Websites';
+
     return generatePageMetadata({
-      title: content.meta.title,
-      description: content.meta.description,
+      title: locale === 'en' ? enTitle : content.meta.title,
+      description:
+        locale === 'en' ? 'Web agency and Next.js developer in Hesse.' : content.meta.description,
       path: `/${locale}/standorte/hessen`,
       type: 'money',
     });
   } catch (e) {
     return generatePageMetadata({
-      title: 'Webdesign Agentur Hessen | Premium Webseiten',
-      description: 'Webagentur und Next.js Entwickler in Hessen.',
+      title:
+        locale === 'en'
+          ? 'Web Design Agency Hesse | Premium Websites'
+          : 'Webdesign Agentur Hessen | Premium Webseiten',
+      description:
+        locale === 'en'
+          ? 'Web agency and Next.js developer in Hesse.'
+          : 'Webagentur und Next.js Entwickler in Hessen.',
       path: `/${locale}/standorte/hessen`,
       type: 'money',
     });
@@ -74,11 +83,15 @@ export default async function HessenLocationPage({
     );
   }
 
+  const _locale = (await params)?.locale || 'de';
+
   const locationSchema = getDynamicLocationSchema({
     city: 'Hessen',
     description:
-      'Webdesign Agentur in Hessen — Premium Websites mit Next.js, SEO & Generative Engine Optimization für Unternehmen in ganz Hessen.',
-    url: `${BASE_URL}/de/standorte/hessen`,
+      _locale === 'en'
+        ? 'Web design agency in Hesse — Premium websites with Next.js, SEO & Generative Engine Optimization.'
+        : 'Webdesign Agentur in Hessen — Premium Websites mit Next.js, SEO & Generative Engine Optimization für Unternehmen in ganz Hessen.',
+    url: `${BASE_URL}/${_locale}/standorte/hessen`,
   });
 
   const jsonLd = {
@@ -86,15 +99,10 @@ export default async function HessenLocationPage({
     '@graph': [getOrganizationSchema(), locationSchema],
   };
 
-  const _locale = (await params)?.locale || 'de';
   const _seoTitle =
     _locale === 'en'
-      ? 'Webdesign Agentur Hessen | Premium Webseiten | Coday'
+      ? 'Web Design Agency Hesse | Premium Websites | Coday'
       : 'Webdesign Agentur Hessen | Premium Webseiten | Coday';
-  const _seoDesc =
-    _locale === 'en'
-      ? 'Webagentur und Next.js Entwickler in Hessen.'
-      : 'Webagentur und Next.js Entwickler in Hessen.';
   return (
     <>
       <script
@@ -103,10 +111,8 @@ export default async function HessenLocationPage({
       />
       <LocalSeoTemplate content={content} />
       {/* SEO Title für Keyword-Konsistenz */}
-      <div className="container mx-auto px-4 pb-12 text-center">
-        <p className="opacity-[0.01] pointer-events-none text-[2px] leading-none select-none overflow-hidden h-px w-full">
-          {_seoTitle}
-        </p>
+      <div className="container mx-auto px-4 pb-12 text-center text-xs text-gray-400 font-mono">
+        Themen: {_seoTitle}
       </div>
     </>
   );

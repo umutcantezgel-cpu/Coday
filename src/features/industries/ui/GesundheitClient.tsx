@@ -67,14 +67,6 @@ const Gesundheit: React.FC = () => {
                 >
                   {t('aerzte-gesundheit.hero.subheadline')}
                 </GradientText>
-                {/* visually hidden SEO h1 text */}
-                <div
-                  className="absolute opacity-[0.01] pointer-events-none select-none -z-10 w-0 h-0 overflow-hidden"
-                  aria-hidden="true"
-                >
-                  {t('aerzte-gesundheit.hero.headline')}
-                  {t('aerzte-gesundheit.hero.subheadline')}
-                </div>
               </h1>
               <p className="text-xl text-slate-600 leading-relaxed mb-8 max-w-xl">
                 {t('aerzte-gesundheit.hero.subheadline')}

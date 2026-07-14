@@ -28,16 +28,21 @@ export async function generateMetadata({
     const fileContents = fs.readFileSync(filePath, 'utf8');
     const content = JSON.parse(fileContents);
 
+    const enTitle = 'Web Design Agency Giessen | Top Websites';
+
     return generatePageMetadata({
-      title: content.meta.title,
-      description: content.meta.description,
+      title: locale === 'en' ? enTitle : content.meta.title,
+      description: locale === 'en' ? 'Web agency in Giessen.' : content.meta.description,
       path: `/${locale}/standorte/giessen`,
       type: 'money',
     });
   } catch (e) {
     return generatePageMetadata({
-      title: 'Webdesign Agentur Gießen | Top Webseiten',
-      description: 'Webagentur in Gießen.',
+      title:
+        locale === 'en'
+          ? 'Web Design Agency Giessen | Top Websites'
+          : 'Webdesign Agentur Gießen | Top Webseiten',
+      description: locale === 'en' ? 'Web agency in Giessen.' : 'Webagentur in Gießen.',
       path: `/${locale}/standorte/giessen`,
       type: 'money',
     });
@@ -77,11 +82,15 @@ export default async function GiessenLocationPage({
 
   const cityData = getCityBySlug('giessen');
 
+  const _locale = (await params)?.locale || 'de';
+
   const locationSchema = getDynamicLocationSchema({
     city: 'Gießen',
     description:
-      'Webdesign Agentur in Gießen — Premium Websites mit Next.js, SEO & Generative Engine Optimization für lokale Unternehmen.',
-    url: `${BASE_URL}/de/standorte/giessen`,
+      _locale === 'en'
+        ? 'Web design agency in Giessen — Premium websites with Next.js, SEO.'
+        : 'Webdesign Agentur in Gießen — Premium Websites mit Next.js, SEO & Generative Engine Optimization für lokale Unternehmen.',
+    url: `${BASE_URL}/${_locale}/standorte/giessen`,
   });
 
   const jsonLd = {
@@ -89,12 +98,10 @@ export default async function GiessenLocationPage({
     '@graph': [getOrganizationSchema(), locationSchema],
   };
 
-  const _locale = (await params)?.locale || 'de';
   const _seoTitle =
     _locale === 'en'
-      ? 'Webdesign Agentur Gießen | Top Webseiten | Coday'
+      ? 'Web Design Agency Giessen | Top Websites | Coday'
       : 'Webdesign Agentur Gießen | Top Webseiten | Coday';
-  const _seoDesc = _locale === 'en' ? 'Webagentur in Gießen.' : 'Webagentur in Gießen.';
   return (
     <>
       <script
@@ -103,10 +110,8 @@ export default async function GiessenLocationPage({
       />
       <LocalSeoTemplate content={content} cityData={cityData} />
       {/* SEO Title für Keyword-Konsistenz */}
-      <div className="container mx-auto px-4 pb-12 text-center">
-        <p className="opacity-[0.01] pointer-events-none text-[2px] leading-none select-none overflow-hidden h-px w-full">
-          {_seoTitle}
-        </p>
+      <div className="container mx-auto px-4 pb-12 text-center text-xs text-gray-400 font-mono">
+        Themen: {_seoTitle}
       </div>
     </>
   );

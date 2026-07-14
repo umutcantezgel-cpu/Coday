@@ -111,8 +111,36 @@ const TextBlockRenderer: React.FC<{ block: TextBlock }> = ({ block }) => {
           {block.heading}
         </HeadingTag>
       )}
-      <div className="prose prose-lg prose-slate leading-relaxed text-gray-600 whitespace-pre-wrap">
-        {renderContentWithGlossary(block.content)}
+      <div className="prose prose-lg prose-slate leading-relaxed text-gray-600">
+        {block.content
+          .split('\n\n')
+          .filter((p) => p.trim() !== '')
+          .map((paragraph, index) => {
+            if (paragraph.startsWith('### ')) {
+              return (
+                <h4 key={index} className="text-xl font-bold text-secondary mt-6 mb-4">
+                  {renderContentWithGlossary(paragraph.replace(/^### /, ''))}
+                </h4>
+              );
+            } else if (paragraph.startsWith('## ')) {
+              return (
+                <h3 key={index} className="text-2xl font-bold text-secondary mt-8 mb-4">
+                  {renderContentWithGlossary(paragraph.replace(/^## /, ''))}
+                </h3>
+              );
+            } else if (paragraph.startsWith('# ')) {
+              return (
+                <h2 key={index} className="text-3xl font-bold text-secondary mt-10 mb-6">
+                  {renderContentWithGlossary(paragraph.replace(/^# /, ''))}
+                </h2>
+              );
+            }
+            return (
+              <p key={index} className="mb-5">
+                {renderContentWithGlossary(paragraph)}
+              </p>
+            );
+          })}
       </div>
     </div>
   );

@@ -89,13 +89,6 @@ export function WebAppsClient() {
                   className="inline"
                 />{' '}
                 <span className="text-sapphire">{t('web_apps_page.hero.title_suffix')}</span>
-                {/* visually hidden SEO h1 text */}
-                <div
-                  className="absolute opacity-[0.01] pointer-events-none select-none -z-10 w-0 h-0 overflow-hidden"
-                  aria-hidden="true"
-                >
-                  {t('web_apps_page.hero.title_prefix')} {t('web_apps_page.hero.title_suffix')}
-                </div>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed max-w-prose text-pretty mb-8 max-w-lg">
                 {t('web_apps_page.hero.description')}

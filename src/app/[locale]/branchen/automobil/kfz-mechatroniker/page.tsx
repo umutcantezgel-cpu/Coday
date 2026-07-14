@@ -28,9 +28,12 @@ export async function generateMetadata({
     const fileContents = fs.readFileSync(filePath, 'utf8');
     const content = JSON.parse(fileContents);
 
+    const enTitle = 'Web Design for Car Mechanics | Hesse | Coday';
+
     return generatePageMetadata({
-      title: content.meta.title,
-      description: content.meta.description,
+      title: locale === 'en' ? enTitle : content.meta.title,
+      description:
+        locale === 'en' ? 'Digital dominance for your industry.' : content.meta.description,
       path: `/${locale}/branchen/automobil/kfz-mechatroniker`,
       type: 'money',
     });
@@ -82,10 +85,6 @@ export default async function SubIndustryPage({ params }: { params: Promise<{ lo
     _locale === 'en'
       ? 'Web Design for Car Mechanics | Hesse | Coday'
       : 'Webdesign für KFZ-Mechatroniker | Hessen | Coday';
-  const _seoDesc =
-    _locale === 'en'
-      ? 'Digital dominance for your industry.'
-      : 'Digitale Dominanz für Ihre Branche.';
   return (
     <>
       <script
@@ -113,10 +112,8 @@ export default async function SubIndustryPage({ params }: { params: Promise<{ lo
       />
       <GamifiedIndustryTemplate content={content} cityData={undefined} />
       {/* SEO Title für Keyword-Konsistenz */}
-      <div className="container mx-auto px-4 pb-12 text-center">
-        <p className="opacity-[0.01] pointer-events-none text-[2px] leading-none select-none overflow-hidden h-px w-full">
-          {_seoTitle}
-        </p>
+      <div className="container mx-auto px-4 pb-12 text-center text-xs text-gray-400 font-mono">
+        Themen: {_seoTitle}
       </div>
     </>
   );

@@ -56,14 +56,6 @@ export function ConsultingClient() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-teal-400 to-purple-400 animate-gradient-x motion-reduce:animate-none">
                 {t('hero.title_end')}
               </span>
-
-              {/* visually hidden SEO h1 text */}
-              <div
-                className="absolute opacity-[0.01] pointer-events-none select-none -z-10 w-0 h-0 overflow-hidden"
-                aria-hidden="true"
-              >
-                {t('hero.title_start')} {t('hero.title_end')}
-              </div>
             </h1>
 
             <p className="text-xl md:text-2xl text-slate-400 mb-12 max-w-3xl mx-auto font-light leading-relaxed max-w-prose text-pretty">

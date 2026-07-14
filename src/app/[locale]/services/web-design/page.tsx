@@ -39,10 +39,6 @@ export default async function WebDesignPage({ params }: { params: Promise<{ loca
     _locale === 'en'
       ? 'Professional Web Design in Wetzlar & Hesse | Coday'
       : 'Professionelles Webdesign in Wetzlar & Hessen | Coday';
-  const _seoDesc =
-    _locale === 'en'
-      ? 'Premium web design by experts in Wetzlar. Modern layouts, high conversion rates and outstanding aesthetics for your business in Central Hesse. Get started.'
-      : 'Premium Webdesign vom Profi in Wetzlar. Moderne Layouts, hohe Konversionsraten und zeitlose Ästhetik für Unternehmen in Mittelhessen. Jetzt starten.';
   return (
     <>
       <script
@@ -54,10 +50,15 @@ export default async function WebDesignPage({ params }: { params: Promise<{ loca
             '@graph': [
               getOrganizationSchema(),
               getServiceSchema({
-                name: 'Professionelles Webdesign in Wetzlar & Hessen',
+                name:
+                  _locale === 'en'
+                    ? 'Professional Web Design in Wetzlar & Hesse'
+                    : 'Professionelles Webdesign in Wetzlar & Hessen',
                 description:
-                  'Premium Webdesign vom Profi in Wetzlar. Moderne Layouts, hohe Konversionsraten und zeitlose Ästhetik für Unternehmen in Mittelhessen. Jetzt starten.',
-                url: `${BASE_URL}/de/services/web-design`,
+                  _locale === 'en'
+                    ? 'Premium web design by experts in Wetzlar. Modern layouts, high conversion rates and outstanding aesthetics.'
+                    : 'Premium Webdesign vom Profi in Wetzlar. Moderne Layouts, hohe Konversionsraten und zeitlose Ästhetik für Unternehmen in Mittelhessen. Jetzt starten.',
+                url: `${BASE_URL}/${_locale}/services/web-design`,
               }),
             ],
           }),
@@ -65,10 +66,8 @@ export default async function WebDesignPage({ params }: { params: Promise<{ loca
       />
       <WebDesignClient />
       {/* SEO Title für Keyword-Konsistenz */}
-      <div className="container mx-auto px-4 pb-12 text-center">
-        <p className="opacity-[0.01] pointer-events-none text-[2px] leading-none select-none overflow-hidden h-px w-full">
-          {_seoTitle}
-        </p>
+      <div className="container mx-auto px-4 pb-12 text-center text-xs text-gray-400 font-mono">
+        Themen: {_seoTitle}
       </div>
     </>
   );

@@ -28,15 +28,21 @@ export async function generateMetadata({
     const fileContents = fs.readFileSync(filePath, 'utf8');
     const content = JSON.parse(fileContents);
 
+    const enTitle = 'Web Design for Auto Repair Shops | Wetzlar Area';
+
     return generatePageMetadata({
-      title: content.meta.title,
-      description: content.meta.description,
+      title: locale === 'en' ? enTitle : content.meta.title,
+      description:
+        locale === 'en' ? 'Digital dominance for your industry.' : content.meta.description,
       path: `/${locale}/branchen/automobil/kfz-werkstatt`,
       type: 'money',
     });
   } catch (e) {
     return generatePageMetadata({
-      title: 'Webdesign für KFZ-Werkstätten | Raum Wetzlar',
+      title:
+        locale === 'en'
+          ? 'Web Design for Auto Repair Shops | Wetzlar Area'
+          : 'Webdesign für KFZ-Werkstätten | Raum Wetzlar',
       description: 'Digitale Dominanz für Ihre Branche.',
       path: `/${locale}/branchen/automobil/kfz-werkstatt`,
       type: 'money',
@@ -77,12 +83,8 @@ export default async function SubIndustryPage({ params }: { params: Promise<{ lo
   const _locale = (await params)?.locale || 'de';
   const _seoTitle =
     _locale === 'en'
-      ? 'Webdesign für KFZ-Werkstätten | Raum Wetzlar | Coday'
+      ? 'Web Design for Auto Repair Shops | Wetzlar Area | Coday'
       : 'Webdesign für KFZ-Werkstätten | Raum Wetzlar | Coday';
-  const _seoDesc =
-    _locale === 'en'
-      ? 'Digitale Dominanz für Ihre Branche.'
-      : 'Digitale Dominanz für Ihre Branche.';
   return (
     <>
       <script
@@ -94,10 +96,15 @@ export default async function SubIndustryPage({ params }: { params: Promise<{ lo
             '@graph': [
               getOrganizationSchema(),
               getServiceSchema({
-                name: 'Webdesign für KFZ-Werkstätten',
+                name:
+                  _locale === 'en'
+                    ? 'Web Design for Auto Repair Shops'
+                    : 'Webdesign für KFZ-Werkstätten',
                 description:
-                  'Webdesign für KFZ-Werkstätten im Raum Wetzlar. Digitale Dominanz für Ihre Branche.',
-                url: `${BASE_URL}/de/branchen/automobil/kfz-werkstatt`,
+                  _locale === 'en'
+                    ? 'Web design for auto repair shops in the Wetzlar area. Digital dominance for your industry.'
+                    : 'Webdesign für KFZ-Werkstätten im Raum Wetzlar. Digitale Dominanz für Ihre Branche.',
+                url: `${BASE_URL}/${_locale}/branchen/automobil/kfz-werkstatt`,
               }),
             ],
           }),
@@ -105,10 +112,8 @@ export default async function SubIndustryPage({ params }: { params: Promise<{ lo
       />
       <GamifiedIndustryTemplate content={content} cityData={undefined} />
       {/* SEO Title für Keyword-Konsistenz */}
-      <div className="container mx-auto px-4 pb-12 text-center">
-        <p className="opacity-[0.01] pointer-events-none text-[2px] leading-none select-none overflow-hidden h-px w-full">
-          {_seoTitle}
-        </p>
+      <div className="container mx-auto px-4 pb-12 text-center text-xs text-gray-400 font-mono">
+        Themen: {_seoTitle}
       </div>
     </>
   );

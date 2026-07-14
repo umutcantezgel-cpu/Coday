@@ -14,9 +14,9 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Website Speed Optimization Wetzlar | Core Web Vitals',
+      title: 'Website Speed Optimization | Core Web Vitals',
       description:
-        'Maximum website speed through Core Web Vitals optimization by Coday in Wetzlar. Faster load times and better Google rankings across Hesse region.',
+        'Maximum website speed through Core Web Vitals optimization by Coday. Faster load times and better Google rankings.',
       path: '/en/services/performance',
       type: 'money',
     });
@@ -39,10 +39,6 @@ export default async function PerformancePage({ params }: { params: Promise<{ lo
     _locale === 'en'
       ? 'Website Speed Optimization Wetzlar | Core Web Vitals | Coday'
       : 'Website Speed Optimierung Wetzlar | Core Web Vitals | Coday';
-  const _seoDesc =
-    _locale === 'en'
-      ? 'Maximum website speed through Core Web Vitals optimization by Coday in Wetzlar. Faster load times and better Google rankings across Hesse region.'
-      : 'Maximale Website-Geschwindigkeit durch Core Web Vitals Optimierung von Coday in Wetzlar. Schnellere Ladezeiten, besseres Google Ranking in Hessen.';
   return (
     <>
       <script
@@ -54,10 +50,15 @@ export default async function PerformancePage({ params }: { params: Promise<{ lo
             '@graph': [
               getOrganizationSchema(),
               getServiceSchema({
-                name: 'Website Speed Optimierung Wetzlar | Core Web Vitals',
+                name:
+                  _locale === 'en'
+                    ? 'Website Speed Optimization | Core Web Vitals'
+                    : 'Website Speed Optimierung Wetzlar | Core Web Vitals',
                 description:
-                  'Maximale Website-Geschwindigkeit durch Core Web Vitals Optimierung von Coday in Wetzlar. Schnellere Ladezeiten, besseres Google Ranking in Hessen.',
-                url: `${BASE_URL}/de/services/performance`,
+                  _locale === 'en'
+                    ? 'Maximum website speed through Core Web Vitals optimization. Faster load times, better Google ranking.'
+                    : 'Maximale Website-Geschwindigkeit durch Core Web Vitals Optimierung von Coday in Wetzlar. Schnellere Ladezeiten, besseres Google Ranking in Hessen.',
+                url: `${BASE_URL}/${_locale}/services/performance`,
               }),
             ],
           }),
@@ -65,10 +66,8 @@ export default async function PerformancePage({ params }: { params: Promise<{ lo
       />
       <PerformanceClient />
       {/* SEO Title für Keyword-Konsistenz */}
-      <div className="container mx-auto px-4 pb-12 text-center">
-        <p className="opacity-[0.01] pointer-events-none text-[2px] leading-none select-none overflow-hidden h-px w-full">
-          {_seoTitle}
-        </p>
+      <div className="container mx-auto px-4 pb-12 text-center text-xs text-gray-400 font-mono">
+        Themen: {_seoTitle}
       </div>
     </>
   );

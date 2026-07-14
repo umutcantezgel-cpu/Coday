@@ -329,8 +329,10 @@ export const SeoTextInjector: React.FC<SeoTextInjectorProps> = ({ title = '', h1
         <p className="text-justify leading-relaxed mt-4">{seoText.p6}</p>
         <p className="text-justify leading-relaxed mt-4">{seoText.p7}</p>
         <p className="text-justify leading-relaxed mt-4">{seoText.p8}</p>
-        <div className="opacity-[0.01] pointer-events-none text-[2px] leading-none select-none h-px w-full overflow-hidden">
-          {title && <span>{title} </span>}
+        <div className="mt-8 pt-4 border-t border-gray-100/10 text-xs text-gray-400/60 font-mono flex flex-wrap gap-2 items-center">
+          <span>{locale === 'en' ? 'Topics:' : 'Themen:'}</span>
+          {title && <span>{title}</span>}
+          {title && h1 && <span>&bull;</span>}
           {h1 && <span>{h1}</span>}
         </div>
       </div>

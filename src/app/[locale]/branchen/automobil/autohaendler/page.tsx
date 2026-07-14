@@ -28,15 +28,21 @@ export async function generateMetadata({
     const fileContents = fs.readFileSync(filePath, 'utf8');
     const content = JSON.parse(fileContents);
 
+    const enTitle = 'Web Design for Car Dealers | Agency in Wetzlar';
+
     return generatePageMetadata({
-      title: content.meta.title,
-      description: content.meta.description,
+      title: locale === 'en' ? enTitle : content.meta.title,
+      description:
+        locale === 'en' ? 'Digital dominance for your industry.' : content.meta.description,
       path: `/${locale}/branchen/automobil/autohaendler`,
       type: 'money',
     });
   } catch (e) {
     return generatePageMetadata({
-      title: 'Webdesign für Autohändler | Agentur in Wetzlar',
+      title:
+        locale === 'en'
+          ? 'Web Design for Car Dealers | Agency in Wetzlar'
+          : 'Webdesign für Autohändler | Agentur in Wetzlar',
       description: 'Digitale Dominanz für Ihre Branche.',
       path: `/${locale}/branchen/automobil/autohaendler`,
       type: 'money',
@@ -77,12 +83,8 @@ export default async function SubIndustryPage({ params }: { params: Promise<{ lo
   const _locale = (await params)?.locale || 'de';
   const _seoTitle =
     _locale === 'en'
-      ? 'Webdesign für Autohändler | Agentur in Wetzlar | Coday'
+      ? 'Web Design for Car Dealers | Agency in Wetzlar | Coday'
       : 'Webdesign für Autohändler | Agentur in Wetzlar | Coday';
-  const _seoDesc =
-    _locale === 'en'
-      ? 'Digitale Dominanz für Ihre Branche.'
-      : 'Digitale Dominanz für Ihre Branche.';
   return (
     <>
       <script
@@ -94,10 +96,12 @@ export default async function SubIndustryPage({ params }: { params: Promise<{ lo
             '@graph': [
               getOrganizationSchema(),
               getServiceSchema({
-                name: 'Webdesign für Autohändler',
+                name: _locale === 'en' ? 'Web Design for Car Dealers' : 'Webdesign für Autohändler',
                 description:
-                  'Webdesign für Autohändler in Wetzlar und Hessen. Digitale Dominanz für Ihre Branche.',
-                url: `${BASE_URL}/de/branchen/automobil/autohaendler`,
+                  _locale === 'en'
+                    ? 'Web design for car dealers in Wetzlar and Hesse. Digital dominance for your industry.'
+                    : 'Webdesign für Autohändler in Wetzlar und Hessen. Digitale Dominanz für Ihre Branche.',
+                url: `${BASE_URL}/${_locale}/branchen/automobil/autohaendler`,
               }),
             ],
           }),
@@ -105,10 +109,8 @@ export default async function SubIndustryPage({ params }: { params: Promise<{ lo
       />
       <GamifiedIndustryTemplate content={content} cityData={undefined} />
       {/* SEO Title für Keyword-Konsistenz */}
-      <div className="container mx-auto px-4 pb-12 text-center">
-        <p className="opacity-[0.01] pointer-events-none text-[2px] leading-none select-none overflow-hidden h-px w-full">
-          {_seoTitle}
-        </p>
+      <div className="container mx-auto px-4 pb-12 text-center text-xs text-gray-400 font-mono">
+        Themen: {_seoTitle}
       </div>
     </>
   );
