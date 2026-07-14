@@ -6,7 +6,7 @@ import { Button } from '@/shared/ui/Button';
 import { useTranslations } from 'next-intl';
 import { saveLeadInternalAction } from '@/features/contact/actions/saveLeadInternal';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { CheckCircle, CircleNotch } from '@phosphor-icons/react';
+import { CheckCircle, CircleNotch } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import { Link } from '@/i18n/navigation';
 

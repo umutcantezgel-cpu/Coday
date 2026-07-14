@@ -5,7 +5,7 @@ import { SeoHead } from '@/shared/ui/SeoHead';
 import { m } from 'motion/react';
 import { Breadcrumbs } from '@/shared/ui/Breadcrumbs';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { Download, MicrophoneStage, Article } from '@phosphor-icons/react';
+import { Download, MicrophoneStage, Article } from '@phosphor-icons/react/dist/ssr';
 
 const Presse: React.FC = () => {
   return (

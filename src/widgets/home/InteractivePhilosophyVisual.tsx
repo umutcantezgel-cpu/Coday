@@ -2,7 +2,7 @@
 
 import React, { useRef } from 'react';
 import { m, useMotionValue, useSpring, useTransform } from 'motion/react';
-import { Lightning, Code, ChartLineUp } from '@phosphor-icons/react';
+import { Lightning, Code, ChartLineUp } from '@phosphor-icons/react/dist/ssr';
 
 export const InteractivePhilosophyVisual: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);

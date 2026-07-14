@@ -16,7 +16,7 @@ import {
   Headset,
   Calendar,
   CaretDown,
-} from '@phosphor-icons/react';
+} from '@phosphor-icons/react/dist/ssr';
 import CountUp from '@/shared/ui/CountUp';
 import GradientText from '@/shared/ui/GradientText';
 

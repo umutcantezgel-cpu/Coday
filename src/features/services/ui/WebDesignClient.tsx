@@ -20,7 +20,7 @@ import {
   ArrowRight,
   PenNib,
   MagicWand,
-} from '@phosphor-icons/react';
+} from '@phosphor-icons/react/dist/ssr';
 import { TechStackShowcase, TechItem } from '@/widgets/services/TechStackShowcase';
 const iconMap: Record<string, React.ElementType> = {
   palette: Palette,

@@ -4,7 +4,7 @@ import React from 'react';
 import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { useTranslations } from 'next-intl';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { Cube, ShieldCheck, At } from '@phosphor-icons/react';
+import { Cube, ShieldCheck, At } from '@phosphor-icons/react/dist/ssr';
 import { SeoHead } from '@/shared/ui/SeoHead';
 import BlurText from '@/shared/ui/BlurText';
 import GradientText from '@/shared/ui/GradientText';

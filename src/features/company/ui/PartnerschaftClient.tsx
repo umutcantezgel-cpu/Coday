@@ -3,7 +3,7 @@
 import React from 'react';
 import { m } from 'motion/react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { ArrowRight, Users, Handshake, TrendUp, CheckCircle } from '@phosphor-icons/react';
+import { ArrowRight, Users, Handshake, TrendUp, CheckCircle } from '@phosphor-icons/react/dist/ssr';
 import { SeoHead } from '@/shared/ui/SeoHead';
 import { Link as NavLink } from '@/i18n/navigation';
 import { Breadcrumbs } from '@/shared/ui/Breadcrumbs';

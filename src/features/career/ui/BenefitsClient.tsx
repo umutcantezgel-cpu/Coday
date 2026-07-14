@@ -14,7 +14,7 @@ import {
   Lightning,
   Globe,
   WarningCircle,
-} from '@phosphor-icons/react';
+} from '@phosphor-icons/react/dist/ssr';
 
 const Benefits: React.FC = () => {
   const t = useTranslations('careers');

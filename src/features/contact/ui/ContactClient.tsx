@@ -26,7 +26,7 @@ import {
   InstagramLogo,
   LinkedinLogo,
   FacebookLogo,
-} from '@phosphor-icons/react';
+} from '@phosphor-icons/react/dist/ssr';
 import { Breadcrumbs } from '@/shared/ui/Breadcrumbs';
 import { useCalculatorStore } from '@/features/calculator/model/store';
 import StepIndicator from '@/shared/ui/StepIndicator';

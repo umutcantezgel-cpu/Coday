@@ -3,7 +3,7 @@
 import React from 'react';
 
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { Clock } from '@phosphor-icons/react';
+import { Clock } from '@phosphor-icons/react/dist/ssr';
 
 const Events: React.FC = () => {
   return (
@@ -28,7 +28,10 @@ const Events: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10" />
                 <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-1 shadow-sm">
                   <span className="block text-xs font-bold text-slate-500 uppercase">April</span>
-                  <time dateTime={`2026-04-${10 + item}`} className="block text-xl font-black text-emerald-900 text-center">
+                  <time
+                    dateTime={`2026-04-${10 + item}`}
+                    className="block text-xl font-black text-emerald-900 text-center"
+                  >
                     {10 + item}
                   </time>
                 </div>

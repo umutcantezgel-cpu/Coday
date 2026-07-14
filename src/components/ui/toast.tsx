@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { AnimatePresence, m } from 'motion/react';
-import { X, CheckCircle, WarningCircle, Info } from '@phosphor-icons/react';
+import { X, CheckCircle, WarningCircle, Info } from '@phosphor-icons/react/dist/ssr';
 import { cn } from '@/lib/utils';
 import { useToast } from '@/hooks/use-toast';
 

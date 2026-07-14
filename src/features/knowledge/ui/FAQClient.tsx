@@ -5,7 +5,7 @@ import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { m, AnimatePresence } from 'motion/react';
-import { MagnifyingGlass, CaretDown, X } from '@phosphor-icons/react';
+import { MagnifyingGlass, CaretDown, X } from '@phosphor-icons/react/dist/ssr';
 import { JsonLd } from '@/shared/ui/JsonLd';
 import { getFAQs, getFAQCategories } from '@/features/faq/model';
 import TroubleshooterWizard from '@/features/faq/ui/TroubleshooterWizard';

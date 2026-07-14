@@ -30,7 +30,7 @@ import {
   Pencil,
   RocketLaunch,
   Browsers,
-} from '@phosphor-icons/react';
+} from '@phosphor-icons/react/dist/ssr';
 import { useTranslations } from 'next-intl';
 
 export function AgbClient() {
@@ -898,4 +898,4 @@ export function AgbClient() {
       </section>
     </LegalLayoutV2>
   );
-};
+}

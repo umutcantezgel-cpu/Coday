@@ -27,7 +27,7 @@ import {
   DeviceMobile,
   Lightning,
   SecurityCamera,
-} from '@phosphor-icons/react';
+} from '@phosphor-icons/react/dist/ssr';
 
 const iconMap: Record<string, React.ElementType> = {
   layers: Stack,

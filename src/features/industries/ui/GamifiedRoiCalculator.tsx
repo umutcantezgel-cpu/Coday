@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { m } from 'motion/react';
-import { ChartLineUp, CurrencyEur } from '@phosphor-icons/react';
+import { ChartLineUp, CurrencyEur } from '@phosphor-icons/react/dist/ssr';
 
 interface GamifiedRoiCalculatorProps {
   baseRevenue?: number;

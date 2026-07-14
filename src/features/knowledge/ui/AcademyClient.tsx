@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import { createPortal } from 'react-dom';
-import { X, Play } from '@phosphor-icons/react';
+import { X, Play } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { academyData, Course } from '@/shared/data/academy';
 
@@ -69,7 +69,9 @@ const Academy: React.FC = () => {
             role="dialog"
             aria-modal="true"
             aria-label={selectedVideo.content[currentLang].title}
-            onKeyDown={(e) => { if (e.key === 'Escape') setSelectedVideo(null); }}
+            onKeyDown={(e) => {
+              if (e.key === 'Escape') setSelectedVideo(null);
+            }}
           >
             <div className="relative w-full max-w-5xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10">
               <button

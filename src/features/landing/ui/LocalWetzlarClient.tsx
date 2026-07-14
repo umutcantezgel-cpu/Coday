@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { SeoHead } from '@/shared/ui/SeoHead';
-import { BuildingOffice, Lightning, ChartLineUp, MapPin } from '@phosphor-icons/react';
+import { BuildingOffice, Lightning, ChartLineUp, MapPin } from '@phosphor-icons/react/dist/ssr';
 
 // Using dummy imports to make sure components resolve correctly or replacing them with inline if they don't exist.
 // Since we don't have exactly the widgets, I will create a high-converting standalone page using Tailwind CSS
@@ -56,7 +56,12 @@ const LocalWetzlar: React.FC = () => {
             </div>
             <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow motion-reduce:duration-[0.01ms]">
               <div className="bg-primary/10 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                <ChartLineUp size={32} className="text-primary" weight="duotone" aria-hidden="true" />
+                <ChartLineUp
+                  size={32}
+                  className="text-primary"
+                  weight="duotone"
+                  aria-hidden="true"
+                />
               </div>
               <h3 className="text-xl font-bold text-secondary mb-3">Auf Conversion optimiert</h3>
               <p className="text-slate-600">
@@ -65,7 +70,12 @@ const LocalWetzlar: React.FC = () => {
             </div>
             <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow motion-reduce:duration-[0.01ms]">
               <div className="bg-primary/10 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                <BuildingOffice size={32} className="text-primary" weight="duotone" aria-hidden="true" />
+                <BuildingOffice
+                  size={32}
+                  className="text-primary"
+                  weight="duotone"
+                  aria-hidden="true"
+                />
               </div>
               <h3 className="text-xl font-bold text-secondary mb-3">Regionale Dominanz</h3>
               <p className="text-slate-600">

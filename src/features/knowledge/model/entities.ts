@@ -276,7 +276,7 @@ export const wikiEntities: WikiEntity[] = [
     relatedEntities: ['design-token', 'next-js', 'e-e-a-t'],
   },
   {
-    slug: 'framer-motion',
+    slug: 'motion/react',
     displayName: 'Framer Motion',
     aliases: ['Framer'],
     category: 'Tech',
@@ -690,7 +690,7 @@ export const wikiEntities: WikiEntity[] = [
     displayName: 'Kinetic Typography',
     aliases: ['Animated Typography'],
     category: 'Design',
-    relatedEntities: ['prefers-reduced-motion', 'framer-motion', 'awwwards'],
+    relatedEntities: ['prefers-reduced-motion', 'motion/react', 'awwwards'],
   },
   {
     slug: 'magnetic-ui',
@@ -704,7 +704,7 @@ export const wikiEntities: WikiEntity[] = [
     displayName: 'Cinematic Page Transition',
     aliases: ['Page Transitions'],
     category: 'Design',
-    relatedEntities: ['framer-motion', 'preloader', 'awwwards'],
+    relatedEntities: ['motion/react', 'preloader', 'awwwards'],
   },
   {
     slug: 'preloader',
@@ -875,7 +875,7 @@ export const wikiEntities: WikiEntity[] = [
     displayName: 'Micro Interaction',
     aliases: ['Microinteractions'],
     category: 'Design',
-    relatedEntities: ['framer-motion', 'magnetic-ui', 'custom-cursor', 'haptic-feedback'],
+    relatedEntities: ['motion/react', 'magnetic-ui', 'custom-cursor', 'haptic-feedback'],
   },
   {
     slug: 'design-token',

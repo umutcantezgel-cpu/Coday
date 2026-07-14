@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { m } from 'motion/react';
-import { CurrencyDollar, Robot, User, Lightning, ArrowRight } from '@phosphor-icons/react';
+import { CurrencyDollar, Robot, User, Lightning, ArrowRight } from '@phosphor-icons/react/dist/ssr';
 import { Link } from '@/i18n/navigation';
 
 export const AgencyCostCalculator: React.FC = () => {

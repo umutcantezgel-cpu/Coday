@@ -4,7 +4,7 @@ import React, { useState, useCallback } from 'react';
 import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { useTranslations } from 'next-intl';
 import { AnimatePresence, m } from 'motion/react';
-import { FunnelSimple } from '@phosphor-icons/react';
+import { FunnelSimple } from '@phosphor-icons/react/dist/ssr';
 
 import { workData } from '@/shared/data/work';
 import { WorkHero } from '@/features/work/components/WorkHero';

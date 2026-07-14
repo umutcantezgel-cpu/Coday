@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { useTranslations } from 'next-intl';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { CaretRight, CaretDown } from '@phosphor-icons/react';
+import { CaretRight, CaretDown } from '@phosphor-icons/react/dist/ssr';
 import { useRouter } from '@/i18n/navigation';
 
 import { useCalculatorStore } from '@/features/calculator/model/store';
@@ -12,7 +12,7 @@ import { ModuleCard } from '@/features/calculator/ui/ModuleCard';
 import { CalculatorSummary } from '@/features/calculator/ui/Summary';
 import { modules, ModuleCategory } from '@/shared/data/modules';
 import StepIndicator from '@/shared/ui/StepIndicator';
-import { ArrowRight } from '@phosphor-icons/react';
+import { ArrowRight } from '@phosphor-icons/react/dist/ssr';
 import { SeoHead } from '@/shared/ui/SeoHead';
 import { useBreadcrumbs } from '@/shared/hooks/useBreadcrumbs';
 

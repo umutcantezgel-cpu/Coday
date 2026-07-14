@@ -5,7 +5,13 @@ import { SeoHead } from '@/shared/ui/SeoHead';
 import { m } from 'motion/react';
 import { Breadcrumbs } from '@/shared/ui/Breadcrumbs';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { ShieldCheck, LockOpen, CurrencyEur, RocketLaunch, TrendUp } from '@phosphor-icons/react';
+import {
+  ShieldCheck,
+  LockOpen,
+  CurrencyEur,
+  RocketLaunch,
+  TrendUp,
+} from '@phosphor-icons/react/dist/ssr';
 
 const Garantie: React.FC = () => {
   return (

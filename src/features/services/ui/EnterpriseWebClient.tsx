@@ -3,7 +3,7 @@ import React, { useRef } from 'react';
 import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { useTranslations } from 'next-intl';
 import { m, useScroll, useTransform } from 'motion/react';
-import { ArrowRight, Cpu } from '@phosphor-icons/react';
+import { ArrowRight, Cpu } from '@phosphor-icons/react/dist/ssr';
 import { Link as NavLink } from '@/i18n/navigation';
 import { TechStackHologram } from '@/features/enterprise/TechStackHologram';
 import { Speedometer } from '@/features/enterprise/Speedometer';
@@ -14,7 +14,7 @@ import { SeoHead } from '@/shared/ui/SeoHead';
 import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
 import { ProblemSolventMatrix } from '@/features/consulting/ProblemSolventMatrix';
 import { MethodologyGraph } from '@/features/consulting/MethodologyGraph';
-import { ChartLineUp } from '@phosphor-icons/react';
+import { ChartLineUp } from '@phosphor-icons/react/dist/ssr';
 import { Link } from '@/i18n/navigation';
 
 export function EnterpriseWebClient() {

@@ -6,14 +6,21 @@ import { useParams } from 'next/navigation';
 
 import { useTranslations, useLocale } from 'next-intl';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { Wrench, House, Heartbeat, Warning, ArrowLeft, ArrowRight } from '@phosphor-icons/react';
+import {
+  Wrench,
+  House,
+  Heartbeat,
+  Warning,
+  ArrowLeft,
+  ArrowRight,
+} from '@phosphor-icons/react/dist/ssr';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import { workData } from '@/shared/data/work';
 import { SeoHead } from '@/shared/ui/SeoHead';
 import { AnimatedCounter } from '@/shared/ui/AnimatedCounter';
 
 import { m, AnimatePresence } from 'motion/react';
-import { X } from '@phosphor-icons/react';
+import { X } from '@phosphor-icons/react/dist/ssr';
 import Image from 'next/image';
 
 const iconMap: Record<string, React.ElementType> = {

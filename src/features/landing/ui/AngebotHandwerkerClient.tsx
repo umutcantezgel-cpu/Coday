@@ -10,7 +10,7 @@ import {
   Wrench,
   ArrowRight,
   ChartLineUp,
-} from '@phosphor-icons/react';
+} from '@phosphor-icons/react/dist/ssr';
 
 export default function AngebotHandwerker() {
   const [ticketSize, setTicketSize] = useState(5000);

@@ -12,7 +12,7 @@ import {
   CheckCircle,
   Bank,
   LockKey,
-} from '@phosphor-icons/react';
+} from '@phosphor-icons/react/dist/ssr';
 import { cn } from '@/shared/lib/utils';
 import GradientText from '@/shared/ui/GradientText';
 import { baseButtonStyles, buttonVariants, buttonSizes } from '@/shared/ui/ButtonStyles';

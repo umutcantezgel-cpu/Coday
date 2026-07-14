@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { SeoHead } from '@/shared/ui/SeoHead';
-import { Code, RocketLaunch, ShieldCheck, Lightning } from '@phosphor-icons/react';
+import { Code, RocketLaunch, ShieldCheck, Lightning } from '@phosphor-icons/react/dist/ssr';
 
 const NextJsMigration: React.FC = () => {
   return (
@@ -48,7 +48,12 @@ const NextJsMigration: React.FC = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-blue-200 transition-colors motion-reduce:duration-[0.01ms]">
               <div className="bg-blue-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                <Lightning size={32} className="text-blue-600" weight="duotone" aria-hidden="true" />
+                <Lightning
+                  size={32}
+                  className="text-blue-600"
+                  weight="duotone"
+                  aria-hidden="true"
+                />
               </div>
               <h3 className="text-xl font-bold text-secondary mb-3">Extreme Geschwindigkeit</h3>
               <p className="text-slate-600">
@@ -58,7 +63,12 @@ const NextJsMigration: React.FC = () => {
             </div>
             <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-blue-200 transition-colors motion-reduce:duration-[0.01ms]">
               <div className="bg-blue-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                <RocketLaunch size={32} className="text-blue-600" weight="duotone" aria-hidden="true" />
+                <RocketLaunch
+                  size={32}
+                  className="text-blue-600"
+                  weight="duotone"
+                  aria-hidden="true"
+                />
               </div>
               <h3 className="text-xl font-bold text-secondary mb-3">SEO-Dominanz</h3>
               <p className="text-slate-600">
@@ -68,7 +78,12 @@ const NextJsMigration: React.FC = () => {
             </div>
             <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-blue-200 transition-colors motion-reduce:duration-[0.01ms]">
               <div className="bg-blue-100 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                <ShieldCheck size={32} className="text-blue-600" weight="duotone" aria-hidden="true" />
+                <ShieldCheck
+                  size={32}
+                  className="text-blue-600"
+                  weight="duotone"
+                  aria-hidden="true"
+                />
               </div>
               <h3 className="text-xl font-bold text-secondary mb-3">Zukunftssicherheit</h3>
               <p className="text-slate-600">

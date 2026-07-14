@@ -40,7 +40,7 @@ import {
   CheckCircle,
   CaretDown,
   Stack as Layers,
-} from '@phosphor-icons/react';
+} from '@phosphor-icons/react/dist/ssr';
 import LogoLoop from '@/shared/ui/LogoLoop';
 import { clientLogos } from '@/shared/data/clientLogos';
 import { SeoHead } from '@/shared/ui/SeoHead';

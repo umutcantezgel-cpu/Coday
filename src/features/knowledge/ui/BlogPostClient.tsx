@@ -5,7 +5,13 @@ import { useParams } from 'next/navigation';
 
 import { Link, useRouter } from '@/i18n/navigation';
 import { getLocalizedPath } from '@/shared/lib/navigation';
-import { ArrowLeft, CalendarBlank, Clock, ArrowRight, EnvelopeSimple } from '@phosphor-icons/react';
+import {
+  ArrowLeft,
+  CalendarBlank,
+  Clock,
+  ArrowRight,
+  EnvelopeSimple,
+} from '@phosphor-icons/react/dist/ssr';
 import { getBlogPost, getBlogPosts } from '@/features/blog/model/data';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import BlurText from '@/shared/ui/BlurText';

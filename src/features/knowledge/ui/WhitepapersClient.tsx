@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { DownloadSimple } from '@phosphor-icons/react';
+import { DownloadSimple } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import { whitepaperData } from '@/shared/data/whitepapers';
 import { useTranslations, useLocale } from 'next-intl';

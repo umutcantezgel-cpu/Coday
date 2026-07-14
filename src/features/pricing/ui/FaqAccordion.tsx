@@ -2,7 +2,7 @@
 
 import React, { useState, useId } from 'react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { CaretDown } from '@phosphor-icons/react';
+import { CaretDown } from '@phosphor-icons/react/dist/ssr';
 
 interface FaqItem {
   question: string;

@@ -3,7 +3,7 @@
 import * as React from 'react';
 import './globals.css';
 import { Inter } from 'next/font/google';
-import { WarningCircle } from '@phosphor-icons/react';
+import { WarningCircle } from '@phosphor-icons/react/dist/ssr';
 
 const inter = Inter({
   subsets: ['latin'],

@@ -22,7 +22,7 @@ import {
   Graph,
   Bug,
   Link,
-} from '@phosphor-icons/react';
+} from '@phosphor-icons/react/dist/ssr';
 import { TechStackShowcase, TechItem } from '@/widgets/services/TechStackShowcase';
 import { SeoHead } from '@/shared/ui/SeoHead';
 import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';

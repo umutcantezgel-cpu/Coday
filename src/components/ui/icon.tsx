@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { IconProps as PhosphorIconProps } from '@phosphor-icons/react';
+import type { IconProps as PhosphorIconProps } from '@phosphor-icons/react';
 import { cn } from '@/lib/utils';
 
 /**

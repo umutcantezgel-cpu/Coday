@@ -88,10 +88,6 @@ export function generatePageMetadata(opts: {
   };
 
   let finalType = opts.type;
-  // Prevent duplicate content penalty: EN pages contain German text
-  if (opts.path.startsWith('/en')) {
-    finalType = 'noindex';
-  }
 
   return {
     title: fullTitle,

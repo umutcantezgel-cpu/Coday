@@ -7,7 +7,7 @@ import { Button } from '@/shared/ui/Button';
 import { Link } from '@/i18n/navigation';
 import { SeoLocalExpertiseBlock } from '@/features/industries/ui/SeoLocalExpertiseBlock';
 import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
-import { CheckCircle, MapPin, CaretDown, CaretUp } from '@phosphor-icons/react';
+import { CheckCircle, MapPin, CaretDown, CaretUp } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import BlurText from '@/shared/ui/BlurText';
 import { LocalSchemaBuilder } from '@/features/local-seo/ui/LocalSchemaBuilder';

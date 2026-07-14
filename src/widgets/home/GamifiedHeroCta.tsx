@@ -3,7 +3,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { m, useMotionValue, useTransform, useAnimation } from 'motion/react';
 import { useRouter } from '@/i18n/navigation';
-import { ArrowRight, Sparkle } from '@phosphor-icons/react';
+import { ArrowRight, Sparkle } from '@phosphor-icons/react/dist/ssr';
 
 export const GamifiedHeroCta: React.FC = () => {
   const router = useRouter();

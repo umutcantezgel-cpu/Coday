@@ -3,7 +3,7 @@ import React from 'react';
 import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { useTranslations } from 'next-intl';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { ArrowRight, CheckCircle } from '@phosphor-icons/react';
+import { ArrowRight, CheckCircle } from '@phosphor-icons/react/dist/ssr';
 import { Button } from '@/shared/ui/Button';
 
 import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';

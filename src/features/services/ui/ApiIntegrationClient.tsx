@@ -18,7 +18,7 @@ import {
   Bug,
   Lightning,
   CheckCircle,
-} from '@phosphor-icons/react';
+} from '@phosphor-icons/react/dist/ssr';
 import { Button } from '@/shared/ui/Button';
 
 import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';

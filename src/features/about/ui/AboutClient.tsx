@@ -17,7 +17,7 @@ import {
   PaintBrush,
   Code,
   Rocket,
-} from '@phosphor-icons/react';
+} from '@phosphor-icons/react/dist/ssr';
 import { Breadcrumbs } from '@/shared/ui/Breadcrumbs';
 import { m } from 'motion/react';
 import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';

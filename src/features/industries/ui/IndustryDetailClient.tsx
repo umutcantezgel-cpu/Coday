@@ -24,7 +24,7 @@ import {
   ShoppingCart,
   Briefcase,
   RocketLaunch,
-} from '@phosphor-icons/react';
+} from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { SeoHead } from '@/shared/ui/SeoHead';
 import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';

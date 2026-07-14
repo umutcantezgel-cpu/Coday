@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 import { IMAGES } from '@/shared/config/images';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { QrCode, Moped, Confetti } from '@phosphor-icons/react';
+import { QrCode, Moped, Confetti } from '@phosphor-icons/react/dist/ssr';
 import BlurText from '@/shared/ui/BlurText';
 import { SeoHead } from '@/shared/ui/SeoHead';
 import GradientText from '@/shared/ui/GradientText';

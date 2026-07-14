@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { CheckCircle } from '@phosphor-icons/react';
+import { CheckCircle } from '@phosphor-icons/react/dist/ssr';
 import BlurText from '@/shared/ui/BlurText';
 import GradientText from '@/shared/ui/GradientText';
 import ValuesDeck from '@/features/culture/ValuesDeck';

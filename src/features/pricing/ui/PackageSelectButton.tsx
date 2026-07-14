@@ -4,7 +4,7 @@ import React from 'react';
 import { useRouter } from '@/i18n/navigation';
 import { useCalculatorStore } from '@/features/calculator/model/store';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { ArrowRight } from '@phosphor-icons/react';
+import { ArrowRight } from '@phosphor-icons/react/dist/ssr';
 
 interface PackageSelectButtonProps {
   pkgId: string;

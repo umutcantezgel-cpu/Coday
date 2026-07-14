@@ -1,6 +1,12 @@
 import React from 'react';
 import { m } from 'motion/react';
-import { EnvelopeSimple, LinkedinLogo, MapPin, Briefcase, Code } from '@phosphor-icons/react';
+import {
+  EnvelopeSimple,
+  LinkedinLogo,
+  MapPin,
+  Briefcase,
+  Code,
+} from '@phosphor-icons/react/dist/ssr';
 
 /* ═══ ANIMATION PRESETS ═══ */
 const EASE_OUT: [number, number, number, number] = [0.21, 0.47, 0.32, 0.98];

@@ -14,7 +14,7 @@ import {
   User,
   Envelope,
   Phone,
-} from '@phosphor-icons/react';
+} from '@phosphor-icons/react/dist/ssr';
 import { useTranslations } from 'next-intl';
 
 export const QuickContactForm: React.FC = () => {
