@@ -273,6 +273,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               <li>
                 <Link
                   href="/branchen/gesundheitswesen/arzt-giessen"
+                  locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
                   Arzt Website Gießen
@@ -281,6 +282,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               <li>
                 <Link
                   href="/branchen/gesundheitswesen/arzt-wetzlar"
+                  locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
                   Arzt Website Wetzlar
@@ -289,6 +291,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               <li>
                 <Link
                   href="/branchen/handwerker/wetzlar"
+                  locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
                   Handwerker Website Wetzlar
@@ -297,6 +300,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               <li>
                 <Link
                   href="/branchen/automobil/kfz-werkstatt"
+                  locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
                   KFZ Werkstatt
@@ -305,6 +309,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               <li>
                 <Link
                   href="/branchen/automobil/autohaendler"
+                  locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
                   Autohändler
@@ -313,6 +318,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               <li>
                 <Link
                   href="/branchen/automobil/kfz-mechatroniker"
+                  locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
                   KFZ Mechatroniker Recruiting
@@ -365,6 +371,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               <li>
                 <Link
                   href="/standorte/giessen"
+                  locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
                   Standort Gießen
@@ -373,6 +380,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               <li>
                 <Link
                   href="/standorte/hessen"
+                  locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
                   Standort Hessen

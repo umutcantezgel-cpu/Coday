@@ -7,6 +7,10 @@ import ClientComponent from '@/features/calculator/ui/CalculatorClient';
 
 export const dynamic = 'force-static';
 
+export function generateStaticParams() {
+  return [{ locale: 'de' }, { locale: 'en' }];
+}
+
 export async function generateMetadata({
   params,
 }: {

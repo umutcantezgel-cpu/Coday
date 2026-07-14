@@ -289,6 +289,7 @@ export function ServiceDetailClient() {
                 if (bgImage) {
                   return (
                     <Image
+                      priority
                       src={bgImage.src}
                       alt={t(service.titleKey) || 'Service Header'}
                       width={400}

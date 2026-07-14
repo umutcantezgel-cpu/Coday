@@ -281,5 +281,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     });
   });
 
-  return [...staticRoutes, ...dynamicRoutes];
+  const allRoutes = [...staticRoutes, ...dynamicRoutes];
+  const expandedRoutes: MetadataRoute.Sitemap = [];
+
+  for (const route of allRoutes) {
+    // Add the primary DE route
+    expandedRoutes.push(route);
+
+    // If an EN alternate exists, add it as a standalone route as well
+    if (route.alternates?.languages?.en) {
+      expandedRoutes.push({
+        ...route,
+        url: route.alternates.languages.en,
+      });
+    }
+  }
+
+  return expandedRoutes;
 }

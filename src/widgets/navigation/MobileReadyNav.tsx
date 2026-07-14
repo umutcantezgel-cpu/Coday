@@ -249,6 +249,7 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
                                 <div className="link-text">
                                   <Link
                                     href={link.href}
+                                    locale={(link as any).locale}
                                     prefetch={false}
                                     onClick={() => setActiveCategory(null)}
                                     title={t(link.label)}
@@ -274,6 +275,7 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
                           <Link
                             key={i}
                             href={link.href}
+                            locale={(link as any).locale}
                             className="dropdown-link-item"
                             onClick={() => setActiveCategory(null)}
                           >

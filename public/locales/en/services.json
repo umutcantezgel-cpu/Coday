@@ -889,8 +889,9 @@
       "button": "Free SEO Audit"
     },
     "seoText": {
-      "title": "SEO Agency Wetzlar | Coday",
-      "content": "As an experienced web design agency, we offer comprehensive expertise and technological excellence in all areas of digital product development. Our goal is to create solutions for you that are not only visually appealing but, above all, high-performing and conversion-optimized.\n\nThe digital landscape is evolving rapidly. Therefore, we rely on modern, future-proof technologies and agile development methods. Whether it's a complex web application, a high-performance headless CMS, or sophisticated UI/UX design - we guarantee the highest quality standards and measurable results.\n\nTrust in a partner who understands your business goals and translates them into digital success. Through continuous analysis, optimization, and strategic consulting, we ensure that your digital assets generate long-term value and keep you one step ahead of the competition."
+      "title": "SEO Wetzlar & Search Engine Optimization | Coday",
+      "content": "With our search engine optimization (SEO), you dominate the search results in Wetzlar and Hesse. We bring your website to the top for lucrative search queries and turn visitors into paying customers.",
+      "description": "More visibility, more inquiries. Our data-driven SEO optimization brings your website to number 1 in Wetzlar and Hesse. Start your digital dominance now!"
     }
   },
   "ui_ux_page": {
@@ -1213,7 +1214,8 @@
     },
     "seoText": {
       "title": "Webdesign Agency Wetzlar | Coday",
-      "content": "As an experienced web design agency, we offer comprehensive expertise and technological excellence in all areas of digital product development. Our goal is to create solutions for you that are not only visually appealing but, above all, high-performing and conversion-optimized.\n\nThe digital landscape is evolving rapidly. Therefore, we rely on modern, future-proof technologies and agile development methods. Whether it's a complex web application, a high-performance headless CMS, or sophisticated UI/UX design - we guarantee the highest quality standards and measurable results.\n\nTrust in a partner who understands your business goals and translates them into digital success. Through continuous analysis, optimization, and strategic consulting, we ensure that your digital assets generate long-term value and keep you one step ahead of the competition."
+      "content": "As an experienced web design agency, we offer comprehensive expertise and technological excellence in all areas of digital product development. Our goal is to create solutions for you that are not only visually appealing but, above all, high-performing and conversion-optimized.\n\nThe digital landscape is evolving rapidly. Therefore, we rely on modern, future-proof technologies and agile development methods. Whether it's a complex web application, a high-performance headless CMS, or sophisticated UI/UX design - we guarantee the highest quality standards and measurable results.\n\nTrust in a partner who understands your business goals and translates them into digital success. Through continuous analysis, optimization, and strategic consulting, we ensure that your digital assets generate long-term value and keep you one step ahead of the competition.",
+      "description": "Premium web design agency for ambitious companies. We build fast, high-converting websites that measurably acquire customers. Request your non-binding offer now!"
     }
   },
   "services_data": {
@@ -1466,6 +1468,10 @@
           "Focus on Business Value"
         ]
       }
+    },
+    "seoText": {
+      "title": "Digital Services & Web Design Agency | Coday",
+      "content": "As a full-service web design agency, we offer comprehensive digital services. From web development and UI/UX design to search engine optimization – we cover the entire spectrum for your digital success."
     }
   },
   "web_development_page": {
@@ -1562,7 +1568,8 @@
     },
     "seoText": {
       "title": "Webentwicklung Agency Wetzlar | Coday",
-      "content": "As an experienced web design agency, we offer comprehensive expertise and technological excellence in all areas of digital product development. Our goal is to create solutions for you that are not only visually appealing but, above all, high-performing and conversion-optimized.\n\nThe digital landscape is evolving rapidly. Therefore, we rely on modern, future-proof technologies and agile development methods. Whether it's a complex web application, a high-performance headless CMS, or sophisticated UI/UX design - we guarantee the highest quality standards and measurable results.\n\nTrust in a partner who understands your business goals and translates them into digital success. Through continuous analysis, optimization, and strategic consulting, we ensure that your digital assets generate long-term value and keep you one step ahead of the competition."
+      "content": "As an experienced web design agency, we offer comprehensive expertise and technological excellence in all areas of digital product development. Our goal is to create solutions for you that are not only visually appealing but, above all, high-performing and conversion-optimized.\n\nThe digital landscape is evolving rapidly. Therefore, we rely on modern, future-proof technologies and agile development methods. Whether it's a complex web application, a high-performance headless CMS, or sophisticated UI/UX design - we guarantee the highest quality standards and measurable results.\n\nTrust in a partner who understands your business goals and translates them into digital success. Through continuous analysis, optimization, and strategic consulting, we ensure that your digital assets generate long-term value and keep you one step ahead of the competition.",
+      "description": "Scalable enterprise-grade web development. From modern web apps to headless e-commerce shops. Let's realize your next major project together!"
     }
   },
   "actions": {
