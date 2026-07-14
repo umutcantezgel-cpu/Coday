@@ -87,10 +87,16 @@ export function generatePageMetadata(opts: {
     ],
   };
 
+  let finalType = opts.type;
+  // Prevent duplicate content penalty: EN pages contain German text
+  if (opts.path.startsWith('/en')) {
+    finalType = 'noindex';
+  }
+
   return {
     title: fullTitle,
     description: opts.description,
-    robots: generateRobotsMeta({ type: opts.type }),
+    robots: generateRobotsMeta({ type: finalType }),
     alternates: generateAlternates(opts.path),
     openGraph: opts.openGraph ? { ...defaultOg, ...opts.openGraph } : defaultOg,
     twitter: {

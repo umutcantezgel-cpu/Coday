@@ -16,6 +16,7 @@ import { SeoAuthorBlock } from '@/features/knowledge/ui/SeoAuthorBlock';
 import { ReadingScore } from '@/features/blog/ui/ReadingScore';
 import { useTranslations, useLocale } from 'next-intl';
 import { SeoHead } from '@/shared/ui/SeoHead';
+import { SeoTextInjector } from '@/features/seo/ui/SeoTextInjector';
 
 const BlogPost: React.FC = () => {
   const params = useParams();
@@ -241,6 +242,11 @@ const BlogPost: React.FC = () => {
                     <ArrowRight size={14} />
                   </Link>
                 </div>
+              </div>
+
+              {/* SEO Text Injector for H1/Title keyword consistency */}
+              <div className="max-w-prose mx-auto mt-8 border-t border-gray-50 pt-8">
+                <SeoTextInjector title={post.title} h1={post.title} />
               </div>
             </div>
           </article>

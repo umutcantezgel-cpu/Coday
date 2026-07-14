@@ -60,9 +60,11 @@ function sitemapEntry(
     de: `${BASE_URL}/de${cleanPath}`,
   };
 
-  if (!isLocalPath) {
-    languages.en = `${BASE_URL}/en${cleanPath}`;
-  }
+  // Temporarily disable English pages from sitemap because they are set to noindex
+  // until they are fully translated.
+  // if (!isLocalPath) {
+  //   languages.en = `${BASE_URL}/en${cleanPath}`;
+  // }
 
   // We use the default locale /de as the main URL, but provide explicit alternates
   return {

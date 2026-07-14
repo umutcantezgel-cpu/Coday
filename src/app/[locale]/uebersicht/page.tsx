@@ -253,7 +253,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               </li>
               <li>
                 <Link
-                  href="/standorte/wetzlar"
+                  href="/webdesign-agentur-wetzlar"
                   className="text-text-light hover:text-primary transition-colors"
                 >
                   Standort Wetzlar

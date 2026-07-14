@@ -297,7 +297,7 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
               title={t('nav.local.title')}
               items={[
                 { label: t('nav.local.hessen'), href: '/standorte/hessen' },
-                { label: t('nav.local.wetzlar'), href: '/standorte/wetzlar' },
+                { label: t('nav.local.wetzlar'), href: '/webdesign-agentur-wetzlar' },
                 {
                   label: t('nav.local.arzt_wetzlar'),
                   href: '/branchen/gesundheitswesen/arzt-wetzlar',
