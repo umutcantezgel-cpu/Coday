@@ -1,77 +1,77 @@
 {
   "case_study": {
-    "description": "Erfahren Sie, wie wir die Sichtbarkeit unserer Kunden signifikant steigern konnten.",
-    "label": "Erfolgsgeschichten",
-    "title": "Bewiesene Resultate"
+    "description": "Find out how we were able to significantly increase the visibility of our customers.",
+    "label": "Success stories",
+    "title": "Proven results"
   },
   "dominance": {
     "cards": {
       "content": {
-        "desc": "Zielgruppenorientierte Inhalte, die Nutzer und Suchmaschinen restlos überzeugen.",
-        "title": "Content-Strategie"
+        "desc": "Target group-oriented content that completely convinces users and search engines.",
+        "title": "Content strategy"
       },
       "regional": {
         "desc": "Targeted optimization for maximum visibility in your local and regional market.",
         "title": "Local SEO"
       },
       "technical": {
-        "desc": "Fehlerfreie Architektur, schnelle Ladezeiten und eine perfekte Crawlability.",
-        "title": "Technisches SEO"
+        "desc": "Error-free architecture, fast loading times and perfect crawlability.",
+        "title": "Technical SEO"
       }
     },
-    "description": "Wir decken sämtliche Aspekte der modernen Suchmaschinenoptimierung ab.",
-    "title": "Ganzheitliche Optimierung"
+    "description": "We cover all aspects of modern search engine optimization.",
+    "title": "Holistic optimization"
   },
   "hero": {
-    "badge": "Datengetriebenes SEO",
-    "description": "Steigern Sie Ihre Sichtbarkeit und ziehen Sie organisch hochwertige Leads an.",
-    "title_prefix": "Dominieren Sie",
-    "title_suffix": "Ihren Markt"
+    "badge": "Data-driven SEO",
+    "description": "Increase your visibility and attract high-quality leads organically.",
+    "title_prefix": "Dominate",
+    "title_suffix": "your market"
   },
   "meta": {
     "description": "Professional SEO optimization for better rankings and more qualified traffic.",
-    "title": "SEO Optimierung"
+    "title": "SEO optimization"
   },
   "problem": {
-    "description": "Eine noch so großartige Website bringt keinen Mehrwert, wenn sie nicht gefunden wird.",
-    "label": "Die Herausforderung",
-    "title": "Unsichtbarkeit kostet wertvollen Umsatz"
+    "description": "No matter how great a website is, it doesn't bring any added value if it can't be found.",
+    "label": "The challenge",
+    "title": "Invisibility costs valuable sales"
   },
   "process": {
     "description": "Our methodical and data-driven approach for sustainable top rankings.",
     "steps": {
       "audit": {
-        "desc": "Umfassende Analyse des Status Quo und präzise Identifikation ungenutzter Potenziale.",
+        "desc": "Comprehensive analysis of the status quo and precise identification of unused potential.",
         "title": "Technical Audit"
       },
       "implementation": {
-        "desc": "Sorgfältige technische und inhaltliche Umsetzung der definierten Optimierungsmaßnahmen.",
-        "title": "Implementierung"
+        "desc": "Careful technical and content-related implementation of the defined optimization measures.",
+        "title": "implementation"
       },
       "monitoring": {
-        "desc": "Kontinuierliche Überwachung der Rankings sowie proaktive Feinjustierung der Performance.",
+        "desc": "Continuous monitoring of rankings and proactive fine-tuning of performance.",
         "title": "Monitoring"
       },
       "strategy": {
-        "desc": "Entwicklung einer maßgeschneiderten, langfristigen Strategie basierend auf fundierten Daten.",
-        "title": "Strategie-Entwicklung"
+        "desc": "Develop a tailored, long-term strategy based on sound data.",
+        "title": "Strategy development"
       }
     },
-    "title": "Der Weg zur Spitze"
+    "title": "The way to the top"
   },
   "ranking_factors": {
-    "badge": "Ranking-Faktoren",
-    "description": "Wir optimieren konsequent nach den aktuellsten Google-Richtlinien, insbesondere den Core Web Vitals.",
-    "title": "Performance trifft auf Relevanz"
+    "badge": "Ranking factors",
+    "description": "We consistently optimize according to the latest Google guidelines, especially the Core Web Vitals.",
+    "title": "Performance meets relevance"
   },
   "solution": {
-    "description": "Wir positionieren Sie präzise dort, wo Ihre potenziellen Kunden aktiv suchen.",
-    "label": "Unsere Lösung",
-    "title": "Nachhaltiges Wachstum durch organische Sichtbarkeit"
+    "description": "We position you precisely where your potential customers are actively looking.",
+    "label": "Our solution",
+    "title": "Sustainable growth through organic visibility"
   },
   "tech_stack": {
     "description": "State-of-the-art tools for in-depth market analysis and precise tracking.",
-    "title": "Unser professioneller SEO-Stack"
+    "title": "Our professional SEO stack"
   },
   "seoText": {
     "title": "Digital Excellence for Your Success",

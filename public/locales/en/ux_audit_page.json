@@ -1,19 +1,19 @@
 {
   "deliverables": {
-    "title": "Konkrete Handlungsempfehlungen"
+    "title": "Concrete recommendations for action"
   },
   "hero": {
-    "badge": "UX-Audit",
-    "cta": "Audit starten",
-    "description": "Identifizieren Sie Reibungspunkte in Ihrer User Journey und steigern Sie Ihre Konversionsraten.",
-    "title_prefix": "Tiefgreifendes",
-    "title_suffix": "UX-Audit"
+    "badge": "UX audit",
+    "cta": "Start audit",
+    "description": "Identify friction points in your user journey and increase your conversion rates.",
+    "title_prefix": "Profound",
+    "title_suffix": "UX audit"
   },
   "stats": {
-    "conversion_label": "Konversionssteigerung"
+    "conversion_label": "Conversion increase"
   },
   "what_we_analyze": {
-    "title": "Unsere Analysepunkte"
+    "title": "Our analysis points"
   },
   "seoText": {
     "title": "Digital Excellence for Your Success",

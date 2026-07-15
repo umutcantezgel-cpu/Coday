@@ -33,15 +33,15 @@
       "booking": "Book Appointment",
       "packages": "Packages"
     },
-    "rights": "© {year} Coday. Alle Rechte vorbehalten.",
+    "rights": "© {year} Coday. All rights reserved.",
     "sections": {
       "career": "Career",
-      "contact": "Kontakt",
+      "contact": "contact",
       "knowledge": "Knowledge",
-      "navigation": "Navigation",
+      "navigation": "navigation",
       "pricing": "Pricing",
       "services": "Services",
-      "regional": "Standorte & Branchen"
+      "regional": "Locations & industries"
     },
     "slogan": "Your partner for local visibility. We build measurably successful websites for crafts, medical practices, and gastronomy.",
     "trust": {
@@ -120,7 +120,7 @@
         "desc": "News & Trends"
       },
       "whitepapers": {
-        "label": "Whitepapers",
+        "label": "White papers",
         "desc": "Guides & PDFs"
       },
       "courses": {
@@ -128,7 +128,7 @@
         "desc": "Expert Knowledge"
       },
       "newsletter": {
-        "label": "Newsletter",
+        "label": "newsletter",
         "desc": "Weekly tips"
       },
       "audit": {
@@ -213,13 +213,13 @@
       "all": "All Industries",
       "overview": "Overview",
       "craft": "Craft & Construction",
-      "ecommerce": "E-Commerce",
+      "ecommerce": "E-commerce",
       "gastronomy": "Gastronomy",
       "health": "Health",
       "real_estate": "Real Estate",
       "service": "Services",
-      "public": "Öffentliche Aufträge",
-      "tech": "Tech Startups"
+      "public": "Public contracts",
+      "tech": "Tech startups"
     },
     "legal": {
       "hub": "Legal",
@@ -273,7 +273,7 @@
         "label": "Web Applications"
       },
       "ecommerce": {
-        "label": "E-Commerce",
+        "label": "E-commerce",
         "desc": "Shops that convert"
       },
       "cms": {
@@ -290,17 +290,17 @@
         "desc": "Portals & Systems"
       },
       "design": {
-        "title": "Design"
+        "title": "design"
       },
       "web_design": {
         "label": "Web Design",
-        "desc": "High-End UX/UI"
+        "desc": "High-end UX/UI"
       },
       "ui_ux": {
         "label": "UI/UX Optimization"
       },
       "brand": {
-        "label": "Brand Identity"
+        "label": "Brand identity"
       },
       "design_systems": {
         "label": "Design Systems"
@@ -316,7 +316,7 @@
         "desc": "Organic Growth"
       },
       "performance": {
-        "label": "Performance",
+        "label": "performance",
         "desc": "Load times < 1s"
       },
       "consulting": {
@@ -333,13 +333,13 @@
         "label": "Cloud Infrastructure"
       },
       "website_relaunch": {
-        "label": "Website Relaunch"
+        "label": "Website relaunch"
       },
       "seo_opt": {
         "label": "SEO Optimization"
       },
       "perf_opt": {
-        "label": "Performance Opt."
+        "label": "Performance options"
       },
       "dig_consulting": {
         "label": "Digital Consulting"
@@ -351,13 +351,13 @@
         "title": "Highlights"
       },
       "batherm": "Batherm",
-      "schluesseldienst": "MS Schlüsseldienst",
+      "schluesseldienst": "MS locksmith service",
       "ratsstuben": "Lindener Ratsstuben",
       "all": {
         "title": "Portfolio"
       },
       "view_all": "View All Projects",
-      "creative_impact": "Creative Impact"
+      "creative_impact": "Creative impact"
     },
     "mobile": {
       "label": "Menu"
@@ -383,7 +383,7 @@
     "contact": "Send Request"
   },
   "social": {
-    "visit": "Besuchen Sie uns auf {platform}",
+    "visit": "Visit us on {platform}",
     "facebook": "Facebook",
     "instagram": "Instagram",
     "twitter": "Twitter",

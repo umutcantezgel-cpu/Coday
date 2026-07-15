@@ -105,7 +105,7 @@
           "your_business": "Your Business"
         },
         "stats": {
-          "radius": "Radius",
+          "radius": "radius",
           "ranking": "Ranking",
           "market_share": "Market Share"
         }
@@ -130,7 +130,7 @@
         "description": "No more CVs by mail. We build you a digital application process that pre-qualifies candidates and delivers only the 'pearls' to your inbox.",
         "steps": {
           "ad": {
-            "title": "Social Media Ad",
+            "title": "Social media ad",
             "desc": "The professional sees your ad on Instagram/Facebook.",
             "mockup": {
               "company": "Your Company",
@@ -217,7 +217,7 @@
     },
     "features": {
       "virtual_tour": {
-        "demo_label": "Live Demo",
+        "demo_label": "Live demo",
         "title": "Penthouse HafenCity",
         "hotspots": {
           "kitchen": "Kitchen (Bulthaup)",
@@ -247,19 +247,19 @@
           "desc": "Exclusive areas for VIP clients."
         },
         "followup": {
-          "title": "Auto-Followup",
+          "title": "Auto followup",
           "desc": "Stay top of mind with leads."
         }
       },
       "expose_demo": {
-        "title": "Exposé Evolution",
+        "title": "Expose evolution",
         "subtitle": "Why customers hate PDF attachments and love web exposés.",
         "toggles": {
           "pdf": "Old School (PDF)",
           "web": "Next Gen (Web)"
         },
         "pdf_view": {
-          "image_alt": "Static Image",
+          "image_alt": "Static image",
           "warning": "Not mobile optimized. \nMust be downloaded."
         },
         "web_view": {
@@ -491,7 +491,7 @@
         "description": "Promote events and promotions effectively."
       },
       "visual_storytelling": {
-        "title": "Visual Storytelling",
+        "title": "Visual storytelling",
         "description": "High-quality images and videos that convey the ambiance."
       }
     },
@@ -519,7 +519,7 @@
         "labels": {
           "covers": "Guests per Day",
           "avg_check": "Average Check",
-          "no_show_rate": "No-Show Rate"
+          "no_show_rate": "No show rate"
         },
         "disclaimer": "*Industry standard is 10-20% without reminder systems.",
         "results": {
@@ -575,7 +575,7 @@
         "description": "Customers drop off shortly before purchase."
       },
       "performance": {
-        "title": "Performance",
+        "title": "performance",
         "description": "Slow load times cost revenue, especially on mobile."
       },
       "marken_erlebnis": {
@@ -585,7 +585,7 @@
     },
     "solutions": {
       "high_speed_frontend": {
-        "title": "High-Speed Frontend",
+        "title": "High speed front end",
         "description": "Next.js solutions for lightning-fast shopping."
       },
       "conversion_optimierung": {
@@ -603,7 +603,7 @@
         "description": "Visualize customizable products live."
       },
       "cross_selling_module": {
-        "title": "Cross-Selling Module",
+        "title": "Cross-selling modules",
         "description": "Intelligent recommendations in the cart."
       },
       "loyalty_integration": {
@@ -624,7 +624,7 @@
             "desc": "Use stores as fulfillment centers."
           },
           "endless-aisle": {
-            "title": "Endless Aisle",
+            "title": "Endless aisle",
             "desc": "Order out-of-stock items in store."
           }
         },
@@ -686,11 +686,11 @@
     },
     "solutions": {
       "whitepaper_funnels": {
-        "title": "Whitepaper Funnels",
+        "title": "White paper funnels",
         "description": "Lead generation through high-quality content."
       },
       "case_studies": {
-        "title": "Case Studies",
+        "title": "Case studies",
         "description": "In-depth success stories instead of superficial logos."
       },
       "webinare": {
@@ -719,16 +719,16 @@
         "filter_label": "Minimum Budget Filter",
         "table_headers": {
           "inbox": "Incoming Inquiry",
-          "status": "Status"
+          "status": "status"
         },
         "status_labels": {
           "accept": "Accept",
           "reject": "Auto-Decline"
         },
-        "budget_label": "Budget: "
+        "budget_label": "Budget:"
       },
       "crm_flow": {
-        "title": "Tech-Stack Integration",
+        "title": "Tech stack integration",
         "description": "We connect your website directly to your CRM. No more manual data entry."
       },
       "service_funnel": {
@@ -755,11 +755,11 @@
     },
     "challenges": {
       "time_to_market": {
-        "title": "Time-to-Market",
+        "title": "Time to market",
         "description": "The website needs to be ready yesterday."
       },
       "talent_war": {
-        "title": "Talent War",
+        "title": "Talent Was",
         "description": "Attractiveness for top developers must be high."
       },
       "internationalisierung": {
@@ -777,7 +777,7 @@
         "description": "Look & Feel like in Silicon Valley."
       },
       "investor_relations": {
-        "title": "Investor Relations",
+        "title": "Investor relations",
         "description": "Areas specifically for investors and press."
       }
     },
@@ -787,7 +787,7 @@
         "description": "Seamless transition from marketing site to app."
       },
       "dark_mode": {
-        "title": "Dark Mode",
+        "title": "Dark mode",
         "description": "Popular with tech target groups."
       },
       "mehrsprachigkeit": {
@@ -904,7 +904,7 @@
   },
   "common": {
     "features": {
-      "google_maps": "Google Maps Integration",
+      "google_maps": "Google Maps integration",
       "regional_pages": "Regional Landing Pages",
       "review_management": "Review Management"
     },

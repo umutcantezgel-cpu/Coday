@@ -13,7 +13,7 @@
     "bitv": "Accessible (BITV 2.0)",
     "dsgvo": "Hosted in Germany",
     "iso": "ISO 27001 Security",
-    "opensource": "Public Money, Public Code"
+    "opensource": "Public money, public code"
   },
   "pricing": {
     "title": "Transparent Cost Calculation",
@@ -50,8 +50,8 @@
     "description": "We rely on proven open source technologies that guarantee full control over your data and infrastructure. Auditable, secure, and free of license fees.",
     "items": {
       "kubernetes": {
-        "title": "Container Orchestration",
-        "tech": "Kubernetes / K8s",
+        "title": "Container orchestration",
+        "tech": "Kubernetes/K8s",
         "desc": "Scalable microservices architectures with strict network policy isolation. BSI-compliant deployments."
       },
       "iam": {
@@ -61,12 +61,12 @@
       },
       "chat": {
         "title": "Secure Communication",
-        "tech": "Matrix / Element",
+        "tech": "Matrix/element",
         "desc": "End-to-end encrypted real-time communication. Federated and independent of US cloud providers."
       },
       "hosting": {
         "title": "Server Location",
-        "tech": "DE / EU-Only",
+        "tech": "DE / EU only",
         "desc": "Hosting in ISO 27001 certified data centers in Germany (e.g. Hetzner, T-Systems). Air-gapped option available."
       }
     }

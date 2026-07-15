@@ -32,9 +32,9 @@ export function IndustryToolEmbed({ industryKey }: IndustryToolEmbedProps) {
       <section className="w-full max-w-7xl mx-auto px-4 py-16">
         <div className="bg-gray-50 border border-gray-100 rounded-3xl p-8 text-center h-64 flex flex-col items-center justify-center">
           <div className="w-12 h-12 mb-4 bg-gray-200 rounded-full animate-pulse" />
-          <h3 className="text-xl font-display font-semibold mb-2">
+          <h2 className="text-xl font-display font-semibold mb-2">
             {t('tool_embed.coming_soon_title')}
-          </h3>
+          </h2>
           <p className="text-sm text-gray-500 max-w-md mx-auto">
             {t('tool_embed.coming_soon_desc')}
           </p>

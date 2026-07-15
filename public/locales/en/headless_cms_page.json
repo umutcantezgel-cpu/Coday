@@ -1,29 +1,29 @@
 {
   "hero": {
-    "title_prefix": "Modernes",
+    "title_prefix": "Modern",
     "title_suffix": "Headless CMS"
   },
   "why_headless": {
     "description": "Separate frontend and backend for maximum flexibility and control over your content.",
     "items": {
       "dev_friendly": {
-        "desc": "Optimale Entwickler-Erfahrung mit strukturierten, modernen APIs.",
-        "title": "Developer Friendly"
+        "desc": "Optimal developer experience with structured, modern APIs.",
+        "title": "Developer friendly"
       },
       "omnichannel": {
         "desc": "Use a central content hub for all your digital channels.",
-        "title": "Omnichannel Auslieferung"
+        "title": "Omnichannel delivery"
       },
       "performance": {
-        "desc": "Blitzschnelle Auslieferung durch den Einsatz globaler Edge-Netzwerke.",
-        "title": "High Performance"
+        "desc": "Lightning-fast delivery through the use of global edge networks.",
+        "title": "High performance"
       },
       "security": {
-        "desc": "Reduzierte Angriffsfläche dank strikt entkoppelter System-Architektur.",
-        "title": "Maximale Sicherheit"
+        "desc": "Reduced attack surface thanks to strictly decoupled system architecture.",
+        "title": "Maximum security"
       }
     },
-    "title": "Warum Headless?"
+    "title": "Why headless?"
   },
   "seoText": {
     "title": "Digital Excellence for Your Success",

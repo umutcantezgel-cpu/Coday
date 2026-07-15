@@ -7,7 +7,7 @@
     "labels": {
       "email": "Email",
       "phone": "Phone",
-      "website": "Website",
+      "website": "website",
       "response_time": "Response Time",
       "response_time_value": "Within 30 days"
     }
@@ -167,7 +167,7 @@
       "ai_desc": "Chatbots, AI Assistants, Automation",
       "backend": "Backend & DB",
       "backend_desc": "Supabase, PostgreSQL, REST APIs, Serverless",
-      "design": "UI/UX Design",
+      "design": "UI/UX design",
       "design_desc": "Figma, Adobe XD, User Research, Design Systems",
       "security": "Security",
       "security_desc": "GDPR, SSL/TLS, Secure Authentication",

@@ -1,10 +1,10 @@
 {
-  "seconds": "Sek",
-  "load_time": "Durchschnittliche Ladezeit",
+  "seconds": "sec",
+  "load_time": "Average loading time",
   "percent": "%",
-  "ownership": "Quellcode Eigentum",
-  "hours": "Std",
-  "availability": "Dedizierter Support",
-  "profit": "Unlimitiert",
-  "focused": "Fokus auf Ihren ROI"
+  "ownership": "Source code ownership",
+  "hours": "Hours",
+  "availability": "Dedicated support",
+  "profit": "Unlimited",
+  "focused": "Focus on your ROI"
 }

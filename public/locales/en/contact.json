@@ -53,7 +53,7 @@
     },
     "title": "Contact & Location",
     "whatsapp": {
-      "label": "WhatsApp",
+      "label": "Whatsapp",
       "message": "Hello,%20I%20am%20interested%20in%20your%20services."
     },
     "hours": {
@@ -65,7 +65,7 @@
   },
   "trust": {
     "facebook": "Facebook Business",
-    "google": "Google Partner",
+    "google": "Google Partners",
     "shopify": "Shopify Experts"
   },
   "testimonial": {
@@ -76,7 +76,7 @@
   "wizard": {
     "back": "Back",
     "step1": {
-      "options": ["Web Development", "E-Commerce Shop", "App Development", "Custom Software"],
+      "options": ["Web Development", "E-commerce shop", "App Development", "Custom Software"],
       "title": "How can we help?"
     },
     "step2": {

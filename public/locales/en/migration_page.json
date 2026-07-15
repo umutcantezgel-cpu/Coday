@@ -1,31 +1,31 @@
 {
   "before_after": {
     "after": {
-      "label": "Nach der Migration"
+      "label": "After migration"
     },
     "before": {
-      "label": "Status Quo"
+      "label": "status quo"
     },
-    "description": "Erleben Sie den qualitativen Sprung zu einer modernen, wartbaren Architektur.",
-    "title": "Der Architektur-Wechsel"
+    "description": "Experience the qualitative leap to modern, maintainable architecture.",
+    "title": "The architectural change"
   },
   "faq": {
-    "title": "Häufige Fragen zur Migration"
+    "title": "Frequently asked questions about migration"
   },
   "hero": {
-    "cta": "Migrations-Audit anfragen",
-    "description": "Wir modernisieren Ihr bestehendes System ohne Datenverlust und Ausfallzeiten.",
-    "label": "System-Migration",
-    "title_prefix": "Sichere",
-    "title_suffix": "Migrationen"
+    "cta": "Request a migration audit",
+    "description": "We modernize your existing system without data loss and downtime.",
+    "label": "System migration",
+    "title_prefix": "Secure",
+    "title_suffix": "Migrations"
   },
   "process": {
-    "description": "Ein methodischer Ansatz stellt sicher, dass Ihre Daten sicher übertragen werden.",
-    "title": "Unser Migrationsprozess"
+    "description": "A methodical approach ensures that your data is transferred securely.",
+    "title": "Our migration process"
   },
   "technologies": {
-    "description": "Wir beherrschen sowohl Legacy-Systeme als auch moderne Cloud-Stacks.",
-    "title": "Technologie-Expertise"
+    "description": "We master both legacy systems and modern cloud stacks.",
+    "title": "Technology expertise"
   },
   "seoText": {
     "title": "Digital Excellence for Your Success",

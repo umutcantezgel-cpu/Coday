@@ -92,24 +92,24 @@
   "matrix": {
     "rows": {
       "focus": {
-        "label": "Fokus",
+        "label": "focus",
         "bad": "Cleaning Tickets",
         "good": "Business Outcome"
       },
       "architecture": {
-        "label": "Architektur",
+        "label": "architecture",
         "bad": "Grown Chaos",
         "good": "Scalable Modules"
       },
       "speed": {
-        "label": "Geschwindigkeit",
+        "label": "speed",
         "bad": "Fast Start (Tech Debt)",
         "good": "Fast Scaling (Asset)"
       },
       "cost": {
-        "label": "Kosten",
+        "label": "Cost",
         "bad": "Hourly Rates & Change Requests",
-        "good": "Investment in Value"
+        "good": "Investment in value"
       }
     }
   },
@@ -119,7 +119,7 @@
     "cta": "Select Time"
   },
   "case_study": {
-    "label": "Consulting in Action",
+    "label": "Consulting in action",
     "title": "From 0 to Million-Dollar Valuation.",
     "description": "How we laid the technical foundation for a successful exit through precise IT strategy and scalable architecture."
   },

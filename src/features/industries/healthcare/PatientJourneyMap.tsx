@@ -48,9 +48,9 @@ const PatientJourneyMap: React.FC = () => {
 
   return (
     <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 lg:p-12">
-      <h3 className="font-display font-bold text-2xl text-secondary mb-12 text-center">
+      <h2 className="font-display font-bold text-2xl text-secondary mb-12 text-center">
         {t('aerzte-gesundheit.features.patient_journey.title')}
-      </h3>
+      </h2>
 
       <div className="grid lg:grid-cols-2 gap-12 relative">
         {/* Timeline Line */}
@@ -62,12 +62,12 @@ const PatientJourneyMap: React.FC = () => {
             <div
               className={`lg:text-end ${step === idx ? 'opacity-100' : 'opacity-40'} transition-opacity motion-reduce:duration-[0.01ms]`}
             >
-              <h4 className="font-bold text-red-500 mb-2 flex items-center justify-end gap-2">
+              <h3 className="font-bold text-red-500 mb-2 flex items-center justify-end gap-2">
                 <span className="text-xs bg-red-100 px-2 py-1 rounded-full uppercase">
                   {t('aerzte-gesundheit.features.patient_journey.labels.analog')}
                 </span>
                 {s.title}
-              </h4>
+              </h3>
               <p className="text-sm text-slate-500">{s.analog}</p>
             </div>
 
@@ -87,12 +87,12 @@ const PatientJourneyMap: React.FC = () => {
             <div
               className={`${step === idx ? 'opacity-100' : 'opacity-40'} transition-opacity motion-reduce:duration-[0.01ms]`}
             >
-              <h4 className="font-bold text-green-600 mb-2 flex items-center gap-2">
+              <h3 className="font-bold text-green-600 mb-2 flex items-center gap-2">
                 <span className="text-xs bg-green-100 px-2 py-1 rounded-full uppercase">
                   {t('aerzte-gesundheit.features.patient_journey.labels.digital')}
                 </span>
                 {s.title}
-              </h4>
+              </h3>
               <p className="text-sm text-slate-500">{s.digital}</p>
             </div>
           </React.Fragment>

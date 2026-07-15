@@ -12,6 +12,33 @@ import path from 'path';
 
 export const dynamicParams = false;
 
+export async function generateStaticParams() {
+  const params: { locale: string; industry: string; location: string }[] = [];
+  const dirPath = path.join(process.cwd(), 'src', 'features', 'local-seo', 'model', 'content');
+
+  if (!fs.existsSync(dirPath)) return params;
+
+  const files = fs.readdirSync(dirPath);
+  const { routing } = await import('@/i18n/routing');
+  const { cities } = await import('@/features/local-seo/model/cities');
+  const citySlugs = cities.map((c) => c.slug);
+
+  for (const file of files) {
+    if (!file.endsWith('.json')) continue;
+    const name = file.replace('.json', '');
+
+    // Find if name ends with a known city slug
+    const matchedCity = citySlugs.find((slug) => name.endsWith(`-${slug}`));
+    if (matchedCity) {
+      const industry = name.slice(0, -(matchedCity.length + 1)); // remove -city
+      routing.locales.forEach((locale) => {
+        params.push({ locale, industry, location: matchedCity });
+      });
+    }
+  }
+
+  return params;
+}
 export async function generateMetadata({
   params,
 }: {

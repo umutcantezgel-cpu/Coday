@@ -1,12 +1,12 @@
 {
   "eyebrow": "High-End Digital Agency",
-  "headline_prefix": "Ihre Vision, präzise",
-  "headline_gradient": "realisiert.",
+  "headline_prefix": "Your vision, precise",
+  "headline_gradient": "realized.",
   "description": "As an exclusive web agency from Wetzlar, we develop high-performance, AI-supported platforms for companies that want to dominate the market. Highest quality, without compromises.",
   "rotating": [
-    "Next.js App Router Architektur",
-    "Headless CMS Integration",
-    "Maximale Performance & SEO"
+    "Next.js App Router Architecture",
+    "Headless CMS integration",
+    "Maximum performance & SEO"
   ],
-  "view_projects": "Projekte ansehen"
+  "view_projects": "View projects"
 }

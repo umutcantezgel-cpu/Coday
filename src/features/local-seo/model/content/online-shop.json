@@ -3,12 +3,12 @@
   "type": "industry-location",
   "meta": {
     "title": "E Commerce Agentur Wetzlar | Online Shops mit Shopware & Next.js",
-    "description": "Skalierbare Online Shops aus Wetzlar. Wir entwickeln hochperformante E Commerce Lösungen, die Ladezeiten minimieren und Ihre Conversion Rate maximieren."
+    "description": "Skalierbare Online Shops au... Wir entwickeln hochperformante E Commerce Lösungen, die Ladezeiten minimieren und Ihre Conversion Rate maximieren."
   },
   "hero": {
     "headline": "E Commerce Plattformen, die messbar konvertieren.",
     "subheadline": "Mehr Umsatz. Kürzere Ladezeiten. Unbegrenzte Skalierbarkeit.",
-    "description": "Mehr Umsatz. Kürzere Ladezeiten. Unbegrenzte Skalierbarkeit. Im E Commerce zählt jede Millisekunde. Ein langsamer Shop oder ein umständlicher Checkout Prozess vernichten Ihr Werbebudget. Wir bauen hochperformante Headless Shops (Next.js, Shopify, Shopware), die blitzschnell laden, ein perfektes Nutzererlebnis bieten und aus Besuchern loyale Käufer machen.",
+    "description": "Mehr Umsatz. js, Shopify, Shopware), die blitzschnell laden, ein perfektes Nutzererlebnis bieten und aus Besuchern loyale Käufer machen.",
     "metrics": [
       {
         "value": "35",
@@ -24,7 +24,7 @@
   },
   "gamifiedStats": {
     "title": "Warum Standard Shops Umsatz liegen lassen",
-    "description": "Der Wettbewerb im E Commerce ist gnadenlos. Wenn Ihr Shop auf langsamen, veralteten Systemen basiert, wandern Nutzer beim kleinsten Reibungspunkt zur Konkurrenz ab.",
+    "description": "Der Wettbewerb im E C... Wenn Ihr Shop auf langsamen, veralteten Systemen basiert, wandern Nutzer beim kleinsten Reibungspunkt zur Konkurrenz ab.",
     "counters": [
       {
         "targetValue": 70,
@@ -88,7 +88,7 @@
   ],
   "localDominance": {
     "title": "Nationale Reichweite, regionale Wurzeln",
-    "description": "Obwohl E Commerce grenzenlos ist, profitieren Sie massiv von einem starken Technologie Partner direkt vor Ort in Wetzlar. Wir stehen für kurze Kommunikationswege, strategische Workshops vor Ort und eine Partnerschaft auf Augenhöhe – für Shops, die den nationalen und internationalen Markt erobern.",
+    "description": "Obwohl E Commerce grenzenlos ist, profitieren Sie massiv von einem starken Technologie Partner direkt vor Ort in Wetzlar. Wir stehen für kurze...",
     "points": [
       "Persönlicher Ansprechpartner direkt in Mittelhessen",
       "Gemeinsame Strategie Workshops an einem Tisch, nicht nur im Video Call",
@@ -123,6 +123,6 @@
   ],
   "meta_en": {
     "title": "E Commerce Agency Wetzlar | Online Shops mit Shopware & Next.js",
-    "description": "E Commerce Agency Wetzlar | Online Shops mit Shopware & Next.js. Increase your online visibility, attract more clients, and dominate your market with Coday's premium digital solutions."
+    "description": "E Commerce Agency Wetz... Increase your online visibility, attract more clients, and dominate your market with Coday's premium digital solutions."
   }
 }

@@ -3,16 +3,16 @@
   "type": "location",
   "meta": {
     "title": "Web Design Agency Hessen | Coday",
-    "description": "Your uncompromising premium Next.js agency in Hessen. We develop high-performance, secure, and conversion-driven B2B websites with headless architecture that make slow WordPress systems obsolete. For market leaders in Frankfurt, Darmstadt, Wetzlar, and Kassel."
+    "description": "Your uncompromising premium Next. js agency in Hessen. For market leaders in Frankfurt, Darmstadt, Wetzlar, and Kassel."
   },
   "hero": {
     "headline": "Digital Dominance for Hessen's Industry & Mittelstand",
     "subheadline": "Enterprise Next.js Web Development & High-End B2B Design",
-    "description": "Enterprise Next.js Web Development & High-End B2B Design The Hessian business landscape demands digital excellence that tolerates no compromise. Forget slow, error-prone, and maintenance-heavy WordPress sites that devalue your brand in the B2B space. Coday is your specialized Next.js web agency for Hessen. We translate complex corporate visions into blazing-fast, tailor-made digital platforms. Through cutting-edge headless architectures, uncompromising design, and edge computing technologies, we create digital experiences that don't just reach your discerning B2B audience—they sustainably convince and convert them into qualified leads."
+    "description": "Enterprise Next.js Web Development & High-End B2B Design The Hessian business landscape demands digital excellence that tolerates no compromis..."
   },
   "localDominance": {
     "title": "Why Hessen's Business Elite Trusts Next.js, Headless & Coday",
-    "description": "Hessen is the beating heart of German and European commerce. From the globally connected financial hub of Frankfurt, through the highly innovative science city of Darmstadt, to the world market leaders in optics and precision engineering in Wetzlar, and the strong logistics sector in Northern Hessen—companies here must perform at an international level. In this competitive environment, standardized WordPress templates and cumbersome monoliths have long become a business-critical risk. Long load times, security vulnerabilities from outdated plugins, and a lack of flexibility cost you measurable market share, visibility, and ultimately revenue in the B2B sector. Coday provides you with the technological answer to these challenges: custom-built Next.js platforms tailored precisely to the requirements of Hessian industry and the upper Mittelstand.",
+    "description": "Hessen is the beating heart of German and E... js platforms tailored precisely to the requirements of Hessian industry and the upper Mittelstand.",
     "points": [
       "Frankfurt financial service providers and FinTechs demand uncompromising data security. Our headless architectures with Next.js decouple frontend and backend, virtually eliminating classic attack vectors such as SQL injections.",
       "Hidden champions and the manufacturing Mittelstand from regions like Wetzlar, Gießen, and Kassel export worldwide. They benefit from lightning-fast load times through global edge routing (LCP under 1.5 seconds)—regardless of whether your client accesses your site from Tokyo, New York, or London.",
@@ -118,6 +118,6 @@
   ],
   "meta_en": {
     "title": "Professional Web Design for hessen.en ",
-    "description": "Professional Web Design for hessen.en . Increase your online visibility, attract more clients, and dominate your market with Coday's premium digital solutions."
+    "description": "Professional Web Desig... Increase your online visibility, attract more clients, and dominate your market with Coday's premium digital solutions."
   }
 }

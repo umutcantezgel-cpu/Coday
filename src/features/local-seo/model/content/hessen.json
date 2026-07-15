@@ -3,16 +3,16 @@
   "type": "location",
   "meta": {
     "title": "Next.js Webdesign & Entwicklung Hessen | High End B2B Websites by Coday",
-    "description": "Ihre kompromisslose Premium Next.js Agentur in Hessen. Wir entwickeln hochperformante, sichere und konversionsstarke B2B Websites mit Headless Architektur, die langsame WordPress Systeme obsolet machen. Für Marktführer in Frankfurt, Darmstadt, Wetzlar und Kassel."
+    "description": "Ihre kompromisslose Premium Next. js Agentur in Hessen. Für Marktführer in Frankfurt, Darmstadt, Wetzlar und Kassel."
   },
   "hero": {
     "headline": "Digitale Dominanz für Hessens Industrie & Mittelstand",
     "subheadline": "Enterprise Next.js Webentwicklung & High End B2B Design",
-    "description": "Enterprise Next.js Webentwicklung & High End B2B Design Der hessische Wirtschaftsraum verlangt nach digitaler Exzellenz, die keine Kompromisse duldet. Vergessen Sie langsame, fehleranfällige und wartungsintensive WordPress Seiten, die Ihre Marke im B2B Umfeld abwerten. Coday ist Ihre spezialisierte Next.js Web Agentur für Hessen. Wir übersetzen komplexe Unternehmensvisionen in rasante, maßgeschneiderte digitale Plattformen. Durch modernste Headless Architekturen, kompromissloses Design und Edge Computing Technologien erschaffen wir digitale Erlebnisse, die Ihre anspruchsvolle B2B Zielgruppe nicht nur erreichen, sondern nachhaltig überzeugen und in qualifizierte Leads verwandeln."
+    "description": "Enterprise Next.js Webentwicklung & High End B2B Design Der hessische Wirtschaftsraum verlangt nach digitaler Exzellenz, die keine Kompromisse..."
   },
   "localDominance": {
     "title": "Warum Hessens Wirtschafts Elite auf Next.js, Headless & Coday vertraut",
-    "description": "Hessen ist das pulsierende Herz der deutschen und europäischen Wirtschaft. Vom global vernetzten Finanzzentrum Frankfurt über die hochinnovative Wissenschaftsstadt Darmstadt bis hin zu den Weltmarktführern der Optik und Feinmechanik in Wetzlar sowie der starken Logistikbranche in Nordhessen – hier agieren Unternehmen, die auf internationalem Niveau performen müssen. In diesem kompetitiven Umfeld sind standardisierte WordPress Templates und schwerfällige Monolithen längst zu einem geschäftskritischen Risiko geworden. Lange Ladezeiten, Sicherheitslücken durch veraltete Plugins und fehlende Flexibilität kosten Sie im B2B Sektor messbar Marktanteile, Sichtbarkeit und letztlich Umsatz. Coday bietet Ihnen die technologische Antwort auf diese Herausforderungen: Maßgefertigte Next.js Plattformen, die exakt auf die Anforderungen der hessischen Industrie und des gehobenen Mittelstands zugeschnitten sind.",
+    "description": "Hessen ist das pul... js Plattformen, die exakt auf die Anforderungen der hessischen Industrie und des gehobenen Mittelstands zugeschnitten sind.",
     "points": [
       "Frankfurter Finanzdienstleister und FinTechs fordern kompromisslose Datensicherheit. Unsere Headless Architekturen mit Next.js entkoppeln Frontend und Backend, wodurch klassische Angriffsvektoren wie SQL Injections nahezu vollständig eliminiert werden.",
       "Hidden Champions und der produzierende Mittelstand aus Regionen wie Wetzlar, Gießen und Kassel exportieren weltweit. Sie profitieren von rasanten Ladezeiten durch globales Edge Routing (LCP unter 1.5 Sekunden) – unabhängig davon, ob Ihr Kunde aus Tokio, New York oder London auf die Seite zugreift.",
@@ -118,6 +118,6 @@
   ],
   "meta_en": {
     "title": "Next.js Web Design & Entwicklung Hessen | High End B2B Websites by Coday",
-    "description": "Next.js Web Design & Entwicklung Hessen | High End B2B Websites by Coday. Increase your online visibility, attract more clients, and dominate your market with Coday's premium digital solutions."
+    "description": "Next. Increase your online visibility, attract more clients, and dominate your market with Coday's premium digital solutions."
   }
 }

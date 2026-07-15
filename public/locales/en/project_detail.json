@@ -1,35 +1,35 @@
 {
-  "not_found": "Projekt nicht gefunden",
-  "back_to_overview": "Zurück zur Übersicht",
-  "breadcrumb_projects": "Projekte",
+  "not_found": "Project not found",
+  "back_to_overview": "Back to overview",
+  "breadcrumb_projects": "Projects",
   "sidebar": {
     "details": "Details",
-    "service": "Service",
-    "period": "Zeitraum",
-    "result": "Ergebnis",
-    "interested_title": "Interessiert an ähnlichen Ergebnissen?",
-    "request_project": "Projekt anfragen",
-    "client": "Kunde",
-    "industry": "Branche",
-    "services": "Leistungen",
-    "year": "Jahr"
+    "service": "service",
+    "period": "Period",
+    "result": "Result",
+    "interested_title": "Interested in similar results?",
+    "request_project": "Request a project",
+    "client": "customer",
+    "industry": "Industry",
+    "services": "Services",
+    "year": "Year"
   },
-  "challenge": "Die Herausforderung",
-  "approach": "Unser Ansatz",
-  "results": "Die Ergebnisse",
-  "impact": "Messbarer Erfolg",
-  "before_after_title": "Vorher & Nachher",
-  "before": "Vorher",
-  "after": "Nachher",
+  "challenge": "The challenge",
+  "approach": "Our approach",
+  "results": "The results",
+  "impact": "Measurable success",
+  "before_after_title": "Before, afterwards",
+  "before": "Previously",
+  "after": "Afterward",
   "nav": {
-    "prev": "Vorheriges Projekt",
-    "next": "Nächstes Projekt"
+    "prev": "Previous project",
+    "next": "Next project"
   },
   "cta": {
-    "title": "Lassen Sie uns Großartiges erschaffen",
-    "button": "Jetzt anfragen"
+    "title": "Let's create great things",
+    "button": "Inquire now"
   },
-  "cta_title": "Überzeugt von diesen Resultaten?",
+  "cta_title": "Convinced by these results?",
   "cta_desc": "Let's find out in a personal conversation how we can achieve similar results for your company.",
-  "cta_button": "Projekt anfragen"
+  "cta_button": "Request a project"
 }

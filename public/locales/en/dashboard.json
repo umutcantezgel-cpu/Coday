@@ -3,9 +3,9 @@
     "badge": "4x faster on average",
     "headers": {
       "metric": "Metric",
-      "standard": "Standard WP Site",
+      "standard": "Default WP Site",
       "us": "Coday",
-      "wix": "Wix / Squarespace"
+      "wix": "Wix/Squarespace"
     },
     "rows": {
       "mobile": "Mobile Speed",

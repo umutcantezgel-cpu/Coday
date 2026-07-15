@@ -1,24 +1,24 @@
 {
   "deliverables": {
-    "title": "Was Sie erhalten"
+    "title": "What you receive"
   },
   "faq": {
-    "title": "Häufige Fragen zu UI/UX"
+    "title": "Frequently asked questions about UI/UX"
   },
   "hero": {
-    "badge": "UI/UX Design",
-    "cta": "Design-Audit anfragen",
+    "badge": "UI/UX design",
+    "cta": "Request a design audit",
     "description": "We create digital experiences that not only impress, but also convert.",
-    "title_prefix": "Intuitives",
-    "title_suffix": "Nutzererlebnis"
+    "title_prefix": "Intuitive",
+    "title_suffix": "User experience"
   },
   "process": {
-    "description": "Ein iterativer Design-Prozess stellt sicher, dass wir die Bedürfnisse Ihrer Nutzer exakt treffen.",
-    "title": "Unser Design-Prozess"
+    "description": "An iterative design process ensures that we precisely meet the needs of your users.",
+    "title": "Our design process"
   },
   "psychology": {
-    "description": "Design basiert bei uns auf psychologischen Prinzipien, die das Nutzerverhalten positiv steuern.",
-    "title": "Design trifft auf Psychologie"
+    "description": "Our design is based on psychological principles that positively control user behavior.",
+    "title": "Design meets psychology"
   },
   "seoText": {
     "title": "Digital Excellence for Your Success",

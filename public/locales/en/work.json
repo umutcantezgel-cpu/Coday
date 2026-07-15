@@ -29,9 +29,9 @@
   },
   "filter": {
     "all": "All",
-    "design": "Design",
+    "design": "design",
     "development": "Development",
-    "marketing": "Marketing"
+    "marketing": "marketing"
   },
   "empty_state": {
     "title": "No projects found",
@@ -87,7 +87,7 @@
   "visual_identity": {
     "badge": "Brand & Design",
     "colors": {
-      "dark": "Deep Space",
+      "dark": "Deep space",
       "light": "Moonlight",
       "primary": "Electric Blue"
     },

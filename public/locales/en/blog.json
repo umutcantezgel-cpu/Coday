@@ -10,7 +10,7 @@
     "start": "Start Test",
     "stop": "Stop Test",
     "subtitle": "See how small changes can dramatically impact conversion rates.",
-    "title": "A/B Test Simulator",
+    "title": "A/B testing simulator",
     "variantA": {
       "button": "Learn More",
       "copy": "We offer a wide range of services for your business needs.",
@@ -65,7 +65,7 @@
       "You actively use data, but could scale even more efficiently with predictive models.",
       "Your marketing is highly data-driven. You are ready for AI-powered scaling."
     ],
-    "levels": ["Flying Blind", "Basic Tracking", "Advanced Tracking", "Data-Driven"],
+    "levels": ["Flying Blind", "Basic Tracking", "Advanced Tracking", "Data driven"],
     "questionStep": "Question {current} of {total}",
     "recommendation": "Our recommendation",
     "retry": "Retry Test",
@@ -109,7 +109,7 @@
     "systemSecure": "ATTACK FAILED",
     "targetStatic": "Target: 192.168.1.5 (Static HTML)",
     "targetWP": "Target: 192.168.1.1 (WP Core)",
-    "title": "Hacker Simulation",
+    "title": "Hacker simulation",
     "wordpress": "Target: WordPress"
   },
   "hero": {
@@ -128,8 +128,8 @@
   "highlight": "Highlight",
   "interactiveComponent": "Interactive Component",
   "keyTakeaways": {
-    "title": "Wichtigste Erkenntnisse",
-    "share": "Auf Twitter teilen"
+    "title": "Key findings",
+    "share": "Share on Twitter"
   },
   "loadingModule": "Loading Module...",
   "mobileSimulator": {
@@ -149,7 +149,7 @@
     "goodMode": "Good UX",
     "switchToDesktop": "Switch to Desktop",
     "switchToMobile": "Switch to Mobile",
-    "title": "Mobile UX Simulator",
+    "title": "Mobile UX simulator",
     "view": "View"
   },
   "publishedOn": "Published on",
@@ -229,7 +229,7 @@
       },
       "3": {
         "description": "Edge computing, AI-driven development, and serverless architectures. Maximum performance.",
-        "model": "Performance-as-a-Service",
+        "model": "Performance as a Service",
         "overhead": "Optimized",
         "title": "Edge & AI Era (2022+)"
       }

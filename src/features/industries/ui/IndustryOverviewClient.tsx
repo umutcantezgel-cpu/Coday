@@ -73,14 +73,14 @@ export function IndustryOverviewClient() {
                   <div className="mb-6 p-4 bg-primary/10 w-fit rounded-2xl group-hover:bg-primary group-hover:text-white transition-colors motion-reduce:duration-[0.01ms] duration-300 text-primary shadow-sm">
                     <Icon size={32} />
                   </div>
-                  <h3 className="text-2xl font-bold font-display text-secondary mb-3 group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms]">
+                  <h2 className="text-2xl font-bold font-display text-secondary mb-3 group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms]">
                     <Link
                       href={`/branchen/${industry.slug}`}
                       className="before:absolute before:inset-0"
                     >
                       {t(industry.title)}
                     </Link>
-                  </h3>
+                  </h2>
                   <p className="text-text-light mb-8 flex-grow leading-relaxed">
                     {t(industry.hero.subheadline)}
                   </p>

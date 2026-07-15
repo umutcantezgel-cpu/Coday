@@ -51,7 +51,7 @@ export function IndustryDetailClient({ industrySlug }: { industrySlug?: string }
   if (!industry) {
     return (
       <div className="min-h-dvh flex flex-col items-center justify-center pt-20">
-        <h2 className="text-3xl font-bold text-secondary mb-4">{t('detail.not_found.title')}</h2>
+        <h1 className="text-3xl font-bold text-secondary mb-4">{t('detail.not_found.title')}</h1>
         <Link href="/branchen" className="text-primary hover:underline">
           {t('detail.not_found.link')}
         </Link>

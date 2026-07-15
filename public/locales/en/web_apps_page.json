@@ -1,54 +1,54 @@
 {
   "features": {
-    "description": "Ein Überblick über unsere technologischen Kernkompetenzen.",
+    "description": "An overview of our technological core competencies.",
     "items": {
       "cloud": {
-        "desc": "Modernste Serverless-Architektur für höchste Effizienz und Ausfallsicherheit.",
-        "title": "Cloud Native"
+        "desc": "State-of-the-art serverless architecture for maximum efficiency and reliability.",
+        "title": "Cloud native"
       },
       "internal_tools": {
-        "desc": "Maßgeschneiderte Software-Lösungen zur Digitalisierung Ihrer Unternehmensprozesse.",
-        "title": "Interne Tools"
+        "desc": "Tailor-made software solutions to digitize your business processes.",
+        "title": "Internal tools"
       },
       "pwa": {
-        "desc": "Ein natives App-Erlebnis direkt im Browser, das auch offline hervorragend funktioniert.",
-        "title": "Progressive Web Apps"
+        "desc": "A native app experience directly in the browser that also works great offline.",
+        "title": "Progressive web apps"
       },
       "realtime": {
-        "desc": "Live-Datenübertragung für eine sofortige und reibungslose Nutzererfahrung.",
-        "title": "Echtzeit-Synchronisation"
+        "desc": "Live data transmission for an instant and smooth user experience.",
+        "title": "Real-time synchronization"
       },
       "saas": {
-        "desc": "Skalierbare Cloud-Lösungen als starkes Fundament für Ihr Geschäftsmodell.",
-        "title": "SaaS Plattformen"
+        "desc": "Scalable cloud solutions as a strong foundation for your business model.",
+        "title": "SaaS platforms"
       },
       "security": {
-        "desc": "Höchste Sicherheitsstandards, die Ihre sensiblen Unternehmensdaten verlässlich schützen.",
-        "title": "Enterprise Security"
+        "desc": "The highest security standards that reliably protect your sensitive company data.",
+        "title": "Enterprise security"
       }
     },
-    "title": "Leistungsstarke Funktionen"
+    "title": "Powerful features"
   },
   "hero": {
-    "cta": "Projektanfrage stellen",
-    "description": "Wir entwickeln komplexe und skalierbare Webapplikationen, die sich wie native Apps anfühlen.",
-    "title_prefix": "Maßgeschneiderte",
-    "title_suffix": "Web-Apps"
+    "cta": "Make a project request",
+    "description": "We develop complex and scalable web applications that feel like native apps.",
+    "title_prefix": "Bespoke",
+    "title_suffix": "Web apps"
   },
   "integration_network": {
-    "description": "Nahtlose Anbindung an Ihre bestehenden Systeme für einen effizienten Datenaustausch.",
-    "label": "System-Integration",
-    "title": "API-First Ansatz"
+    "description": "Seamless connection to your existing systems for efficient data exchange.",
+    "label": "System integration",
+    "title": "API-first approach"
   },
   "security": {
     "badges": {
-      "gdpr": "DSGVO-konform",
-      "ssl": "SSL Verschlüsselung",
-      "support": "Dedizierter Support",
-      "uptime": "99.9% Verfügbarkeit"
+      "gdpr": "GDPR compliant",
+      "ssl": "SSL encryption",
+      "support": "Dedicated support",
+      "uptime": "99.9% availability"
     },
-    "description": "Bei der Entwicklung unserer Web-Apps steht die Sicherheit Ihrer Daten stets an erster Stelle.",
-    "title": "Kompromisslose Sicherheit"
+    "description": "When developing our web apps, the security of your data is always our top priority.",
+    "title": "Uncompromising security"
   },
   "seoText": {
     "title": "Digital Excellence for Your Success",

@@ -2,9 +2,9 @@
   "comparison": {
     "headers": {
       "feature": "Feature",
-      "onepager": "Onepager",
-      "starter": "Starter",
-      "professional": "Professional",
+      "onepager": "One pager",
+      "starter": "starter",
+      "professional": "professional",
       "enterprise": "Enterprise"
     },
     "rows": {
@@ -24,7 +24,7 @@
       },
       "ecommerce": {
         "ent": "✓",
-        "label": "E-Commerce",
+        "label": "E-commerce",
         "pro": "—",
         "starter": "—",
         "onepager": "—"
@@ -61,10 +61,10 @@
     "title": "Package Comparison"
   },
   "trust": {
-    "google_partner": "Google Partner",
+    "google_partner": "Google Partners",
     "satisfaction": "100% Satisfaction",
-    "performance": "PageSpeed 95+",
-    "support": "24/7 Support"
+    "performance": "PageSpeed ​​95+",
+    "support": "24/7 support"
   },
   "cta_section": {
     "button": "Book Appointment",
@@ -78,7 +78,7 @@
       "Complex Custom Logic & Dashboards",
       "Premium Local SEO Dominance",
       "Optional: Custom iOS & Android App (extra charge)",
-      "Lifetime Priority Support",
+      "Lifetime priority support",
       "Dedicated Project Manager",
       "VIP SLA & Performance Guarantee"
     ],
@@ -158,7 +158,7 @@
       "tagline": "Perfect for starting out"
     },
     "onepager": {
-      "name": "Onepager",
+      "name": "One pager",
       "tagline": "Perfect as a digital business card",
       "cta": "Choose Onepager"
     }
@@ -196,7 +196,7 @@
     "title": "Support & Growth Retainer",
     "description": "Sustainable growth and continuous optimization after go-live.",
     "basic": {
-      "name": "Basic",
+      "name": "basic",
       "price": "250",
       "features": [
         "Monthly Analytics Review",
@@ -211,7 +211,7 @@
       "features": [
         "Everything in Basic",
         "2 Content Updates per month",
-        "1 A/B Experiment",
+        "1 A/B experiment",
         "5h Support Time"
       ]
     },

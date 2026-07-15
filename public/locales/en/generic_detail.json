@@ -1,36 +1,36 @@
 {
   "advantages": {
-    "contact_btn": "Jetzt beraten lassen",
-    "desc": "Entdecken Sie die messbaren Vorteile unserer maßgeschneiderten Lösungen.",
-    "label": "Ihre Vorteile",
+    "contact_btn": "Get advice now",
+    "desc": "Discover the measurable benefits of our tailor-made solutions.",
+    "label": "Your advantages",
     "title": "Why you should choose us"
   },
   "faq": {
-    "desc": "Hier finden Sie Antworten auf die häufigsten Fragen.",
-    "title": "Häufig gestellte Fragen"
+    "desc": "Here you will find answers to the most frequently asked questions.",
+    "title": "Frequently asked questions"
   },
   "final_cta": {
-    "button": "Kostenloses Erstgespräch",
+    "button": "Free initial consultation",
     "desc": "Let's shape your digital future together.",
     "title": "Ready for the next level?"
   },
   "hero": {
-    "benefits_title": "Vorteile auf einen Blick",
-    "consulting_btn": "Zur kostenlosen Beratung"
+    "benefits_title": "Advantages at a glance",
+    "consulting_btn": "For free advice"
   },
   "not_found": {
-    "link": "Zurück zur Übersicht",
+    "link": "Back to overview",
     "title": "Service not found"
   },
   "process": {
-    "label": "Unser Ansatz",
+    "label": "Our approach",
     "title": "A proven process for your success"
   },
   "testimonials": {
-    "label": "Referenzen",
+    "label": "References",
     "title": "What our customers say"
   },
   "trust": {
-    "title": "Vertrauen durch messbare Ergebnisse"
+    "title": "Trust through measurable results"
   }
 }

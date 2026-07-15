@@ -1,51 +1,51 @@
 {
   "before_after": {
-    "description": "Ein direkter Vergleich zeigt die enorme Wirkung von professionellem High-End Design.",
-    "label": "Transformation",
-    "title": "Vorher & Nachher"
+    "description": "A direct comparison shows the enormous impact of professional high-end design.",
+    "label": "transformation",
+    "title": "Before, afterwards"
   },
   "case_study": {
-    "description": "Werfen Sie einen Blick auf unsere herausragenden Design-Projekte.",
-    "label": "Referenzprojekte",
-    "title": "Design in Aktion"
+    "description": "Take a look at our outstanding design projects.",
+    "label": "Reference projects",
+    "title": "Design in action"
   },
   "design_system": {
-    "description": "Wir entwickeln umfassende Design-Systeme für einen konsistenten Markenauftritt.",
-    "label": "Skalierbarkeit",
-    "title": "Modulare Design Systeme"
+    "description": "We develop comprehensive design systems for a consistent brand appearance.",
+    "label": "Scalability",
+    "title": "Modular design systems"
   },
   "hero": {
-    "description": "Ästhetisches und funktionales Webdesign, das Ihre Marke auf das nächste Level hebt.",
-    "label": "Webdesign Studio",
-    "title_prefix": "Zukunftsweisendes",
-    "title_suffix": "Webdesign"
+    "description": "Aesthetic and functional web design that takes your brand to the next level.",
+    "label": "Web design studio",
+    "title_prefix": "Future-oriented",
+    "title_suffix": "Web design"
   },
   "meta": {
-    "description": "Wir kreieren exzellentes Webdesign, das Ihre Zielgruppe begeistert und konvertiert.",
-    "title": "High-End Webdesign"
+    "description": "We create excellent web design that inspires and converts your target group.",
+    "title": "High-end web design"
   },
   "problem": {
-    "description": "Ein veraltetes Design schadet Ihrem Markenimage und kostet Sie täglich wertvolle Kunden.",
-    "label": "Die Ausgangslage",
-    "title": "Der erste Eindruck zählt"
+    "description": "An outdated design damages your brand image and costs you valuable customers every day.",
+    "label": "The initial situation",
+    "title": "The first impression counts"
   },
   "process": {
-    "description": "Ein strukturierter Ablauf garantiert Ergebnisse von höchster Qualität.",
-    "title": "Unser Design-Workflow"
+    "description": "A structured process guarantees results of the highest quality.",
+    "title": "Our design workflow"
   },
   "psychology": {
-    "description": "Unsere Designs basieren auf Erkenntnissen der Verhaltenspsychologie.",
-    "label": "Nutzerverhalten",
-    "title": "Psychologie im Design"
+    "description": "Our designs are based on findings from behavioral psychology.",
+    "label": "User behavior",
+    "title": "Psychology in Design"
   },
   "solution": {
-    "description": "Wir verbinden visuelle Exzellenz mit herausragender Usability.",
-    "label": "Unser Lösungsansatz",
-    "title": "Design, das Ergebnisse liefert"
+    "description": "We combine visual excellence with outstanding usability.",
+    "label": "Our solution approach",
+    "title": "Design that delivers results"
   },
   "tech_stack": {
-    "description": "Modernste Tools für kollaboratives und präzises Design.",
-    "title": "Unser Design-Stack"
+    "description": "State-of-the-art tools for collaborative and precise design.",
+    "title": "Our design stack"
   },
   "seoText": {
     "title": "Digital Excellence for Your Success",

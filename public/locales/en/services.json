@@ -86,7 +86,7 @@
         "Quickbooks",
         "Datev",
         "Slack",
-        "Teams",
+        "teams",
         "Discord",
         "OpenAI",
         "Anthropic",
@@ -161,13 +161,13 @@
     },
     "digital_branding": {
       "description": "Today, a brand must work primarily on smartphones. We don't think in letterheads, but in pixels.",
-      "tags": ["Logo Design", "Typography", "Color Palette", "Tone of Voice", "Social Assets"],
-      "title": "Digital-First Branding"
+      "tags": ["Logo design", "Typography", "Color palette", "Tone of Voice", "Social Assets"],
+      "title": "Digital-first branding"
     },
     "hero": {
       "cta": "Request Branding",
       "description": "Brands that stick. We develop a strong Brand Identity for B2B companies, logos, and design languages specifically for digital touchpoints.",
-      "title_prefix": "Brand Identity",
+      "title_prefix": "Brand identity",
       "title_suffix": "for B2B."
     },
     "process": {
@@ -222,7 +222,7 @@
       },
       "growth_hack": {
         "desc": "Data-driven experiments for rapid growth. SEO, SEA, and CRO in synergy.",
-        "title": "Growth Hacking"
+        "title": "Growth hacking"
       },
       "tech_stack": {
         "desc": "Which technology fits your goals? We analyze your requirements and recommend future-proof solutions.",
@@ -320,7 +320,7 @@
           "Perfect for B2B & Complex premium Shops"
         ],
         "recommendation": "Recommended for: B2B, Hidden Champions, Individualists",
-        "title": "Custom Headless"
+        "title": "Custom headless"
       },
       "description": "We advise technology-agnostically. Here is a comparison of our top solutions.",
       "shopify": {
@@ -345,15 +345,15 @@
       "items": {
         "checkout": {
           "desc": "Optimized checkout flow for fewer abandoned carts.",
-          "title": "Custom Checkout"
+          "title": "Custom checkout"
         },
         "erp": {
           "desc": "Seamless connection to SAP, Weclapp, Xentral and Co.",
-          "title": "ERP Integration"
+          "title": "ERP integration"
         },
         "headless": {
           "desc": "Maximum performance and flexibility through decoupled frontend.",
-          "title": "Headless Commerce"
+          "title": "Headless commerce"
         },
         "mobile": {
           "desc": "Perfect shopping experience on every device.",
@@ -361,7 +361,7 @@
         },
         "performance": {
           "desc": "Blazing fast load times for better ranking and higher conversion.",
-          "title": "Performance First"
+          "title": "Performance first"
         },
         "shopify_plus": {
           "desc": "Scalable premium solutions with Shopify 2.0 and Hydrogen.",
@@ -371,7 +371,7 @@
       "title": "More than just an Online Shop"
     },
     "hero": {
-      "badge": "E-Commerce",
+      "badge": "E-commerce",
       "cta_primary": "Start Shop Project",
       "cta_secondary": "View References",
       "description": "We build high-performance E-Commerce that sells, using Shopify and WooCommerce. No standard themes, but conversion-optimized sales machines.",
@@ -382,10 +382,10 @@
     },
     "roi_calculator": {
       "aov_label": "Average Order Value",
-      "conversion_label": "Conversion Rate",
+      "conversion_label": "Conversion rate",
       "conversion_unit": "People buy",
       "metric_visitors": "Visitors / Month",
-      "metric_conversion": "Conversion Rate",
+      "metric_conversion": "Conversion rate",
       "metric_aov": "Ø Order Value",
       "increase_note": "+0.8% by Coday",
       "result_label": "Estimated Revenue Increase",
@@ -402,7 +402,7 @@
       "visitors_unit": "Visitors"
     },
     "logo_loop": {
-      "title": "Powering Next-Gen Commerce"
+      "title": "Powering next-gen commerce"
     },
     "faq": {
       "title": "Frequently Asked Questions",
@@ -422,7 +422,7 @@
       ]
     },
     "stats": {
-      "conversion_label": "Conversion Rate",
+      "conversion_label": "Conversion rate",
       "core_vitals_label": "Core Vitals",
       "load_time_label": "Load Time",
       "tech_label": "Technology",
@@ -454,7 +454,7 @@
   },
   "enterprise_web_page": {
     "hero": {
-      "badge": "Beyond Standard",
+      "badge": "Beyond standards",
       "cta_primary": "Start Dominance",
       "cta_secondary": "View Cases",
       "description": "No business cards. We build powerful websites and digital weapon systems that eat markets for companies that don't see losing as an option.",
@@ -469,7 +469,7 @@
     },
     "speed_section": {
       "description": "Google hates slow websites. Users do too. I build on Edge Computing and Next.js for load times under 500ms.",
-      "title": "Speed is Authority."
+      "title": "Speed ​​is authority."
     },
     "stack_section": {
       "description": "No WordPress spaghetti. We use the tech stack of billion-dollar startups.",
@@ -489,7 +489,7 @@
         "architecture": {
           "label": "Architecture",
           "bad": "Monolithic & Sluggish",
-          "good": "Headless & Edge-Ready"
+          "good": "Headless & edge ready"
         },
         "speed": {
           "label": "Speed",
@@ -531,7 +531,7 @@
     },
     "case_study": {
       "label": "premium in Action",
-      "title": "10x Faster Time-to-Market.",
+      "title": "10x Faster Time to Market.",
       "description": "How we increased the conversion rate of an industry leader by 40% through Headless Commerce and a modern Next.js architecture."
     },
     "seoText": {
@@ -584,12 +584,12 @@
       },
       "description": "We partner with leading Headless Systems. We find the right tool for your use case.",
       "sanity": {
-        "badge": "Best for Customization",
+        "badge": "Best for customization",
         "desc": "Our top choice for maximum flexibility. Real-time collaboration and 'Content Lake' architecture.",
         "title": "Sanity.io"
       },
       "strapi": {
-        "badge": "Open Source",
+        "badge": "Open source",
         "desc": "Open Source and Self-Hosted. Full data control and no license costs for the Community Edition.",
         "title": "Strapi"
       },
@@ -620,9 +620,9 @@
     },
     "process_visual": {
       "label": "The Headless Architecture",
-      "step_1": "CMS (Content)",
+      "step_1": "CMS (content)",
       "step_2": "API (Connection)",
-      "step_3": "Frontend (Design)"
+      "step_3": "Front end (design)"
     },
     "why_headless": {
       "description": "Separate frontend from backend for maximum flexibility and performance.",
@@ -633,7 +633,7 @@
         },
         "marketing_speed": {
           "desc": "Create landing pages without developer resources.",
-          "title": "Marketing Speed"
+          "title": "Marketing speed"
         },
         "omnichannel": {
           "desc": "One content hub for website, app, smartwatch, and more.",
@@ -641,7 +641,7 @@
         },
         "performance": {
           "desc": "Static generation via Next.js for extremely fast load times.",
-          "title": "High Performance"
+          "title": "High performance"
         },
         "scalable": {
           "desc": "Grows with your requirements without rebuilding the system.",
@@ -720,7 +720,7 @@
       "description": "We migrate your outdated monoliths to a modern, scalable stack based on React and Next.js. Make your system Future Proof – without data loss.",
       "label": "Legacy Modernization",
       "title_prefix": "Future Proof Migration",
-      "title_suffix": "& Replatforming."
+      "title_suffix": "& replatforming."
     },
     "process": {
       "description": "A safe path to modern architecture in 4 steps.",
@@ -853,7 +853,7 @@
       "description": "We transform your website into a magnet for ready-to-buy customers. Through data-driven SEO strategies, we position you exactly where your target audience is searching for your services."
     },
     "case_study": {
-      "label": "Success Story",
+      "label": "Success story",
       "title": "How we increased organic inquiries by 340%",
       "description": "Learn how we built regional dominance for a local service provider and significantly increased their revenue."
     },
@@ -1067,11 +1067,11 @@
         },
         "pwa": {
           "desc": "Native app feeling in the browser, offline-capable, and fast.",
-          "title": "Progressive Web Apps"
+          "title": "Progressive web apps"
         },
         "realtime": {
           "desc": "Live updates via WebSockets for chats, notifications, and live tracking.",
-          "title": "Realtime Data"
+          "title": "Real-time data"
         },
         "saas": {
           "desc": "Multi-tenant architectures for scalable Software-as-a-Service products.",
@@ -1092,15 +1092,15 @@
     },
     "integration_network": {
       "description": "No island solutions. Our software speaks fluently with your existing infrastructure. CRM, ERP, Payment, or AI.",
-      "label": "System Integration",
+      "label": "System integration",
       "title": "We Connect Your World."
     },
     "security": {
       "badges": {
         "gdpr": "GDPR Ready",
         "ssl": "SSL Secure",
-        "support": "24/7 Support",
-        "uptime": "99.9% Uptime"
+        "support": "24/7 support",
+        "uptime": "99.9% uptime"
       },
       "description": "Custom software often processes sensitive data. We guarantee the highest security standards and data protection compliance from day 1.",
       "items": [
@@ -1182,11 +1182,11 @@
       },
       "ux_ui_design": {
         "description": "Digital brand experience. User-centric design that makes your brand tangible.",
-        "title": "UX/UI Design Service"
+        "title": "UX/UI Design Services"
       },
       "website_relaunch": {
         "description": "From strategy to new design. We fundamentally modernize your web presence.",
-        "title": "Website Relaunch"
+        "title": "Website relaunch"
       }
     },
     "meta": {
@@ -1204,7 +1204,7 @@
       "description": "We develop digital experiences that not only impress but convert. With psychologically sound UI/UX design and cutting-edge technology, we turn visitors into paying customers."
     },
     "case_study": {
-      "label": "Success Story",
+      "label": "Success story",
       "title": "From digital wasteland to industry leader",
       "description": "See how a comprehensive relaunch tripled the conversion rate of a B2B company and revolutionized their brand perception."
     },
@@ -1228,7 +1228,7 @@
         },
         {
           "number": "02",
-          "title": "UX/UI Design Phase",
+          "title": "UX/UI design phase",
           "description": "Before we write a single line of code, we visualize the user experience. Wireframes, prototypes and high-fidelity designs ensure clarity."
         },
         {
@@ -1277,22 +1277,22 @@
       "tech_advantages": [
         {
           "icon": "lightning",
-          "title": "High Performance",
+          "title": "High performance",
           "description": "Load times under 1 second and perfect Lighthouse Score are our standard, not the goal."
         },
         {
           "icon": "chart_bar",
-          "title": "Scalability First",
+          "title": "Scalability first",
           "description": "I build architectures that grow with your success. From 100 to 100,000 users without redevelopment."
         },
         {
-          "icon": "stack",
+          "icon": "stack.stack",
           "title": "Modern Tech Stack",
           "description": "We rely on Next.js, React, TypeScript and Tailwind – the gold standard of modern web development."
         },
         {
           "icon": "shield_check",
-          "title": "Security by Design",
+          "title": "Security by design",
           "description": "Security is not a feature, but a foundation. GDPR-compliant, encrypted and safe from threats."
         },
         {
@@ -1301,15 +1301,15 @@
           "description": "No vendor lock-in. You receive clean, well-documented code that belongs to you."
         },
         {
-          "icon": "users",
+          "icon": "users.users",
           "title": "Experienced Team",
           "description": "Your project is implemented by senior developers who love complex challenges."
         }
       ],
       "design_advantages": [
         {
-          "icon": "user",
-          "title": "User-Centric",
+          "icon": "user.user",
+          "title": "User-centric",
           "description": "Design that works. We put the user in the center for intuitive experiences."
         },
         {
@@ -1319,7 +1319,7 @@
         },
         {
           "icon": "target",
-          "title": "Conversion-Optimized",
+          "title": "Conversion Optimized",
           "description": "Beauty alone is not enough. Our designs guide the user specifically to action."
         },
         {
@@ -1334,7 +1334,7 @@
         },
         {
           "icon": "film_strip",
-          "title": "Motion Design",
+          "title": "Motion design",
           "description": "Interaction and feedback through subtle animations enhance the experience."
         }
       ],
@@ -1378,7 +1378,7 @@
           "Optimized Checkout Funnel",
           "Headless Commerce Architecture",
           "ERP Integration",
-          "High-Performance Frontend"
+          "High performance front end"
         ]
       },
       "full-stack-entwicklung": {
@@ -1406,7 +1406,7 @@
     },
     "web-design": {
       "ux-ui-design": {
-        "title": "UX/UI Design Details",
+        "title": "UX/UI design details",
         "description": "Digital brand experience. User-centric design that makes your brand tangible.",
         "long_description": "Your digital presence is often the first touchpoint. We translate your brand into digital interfaces that are not only functional but make your brand identity palpable with every click.",
         "benefits": [
@@ -1429,7 +1429,7 @@
         "benefits": [
           "Modern Look & Feel",
           "Optimized User Experience",
-          "Mobile First",
+          "Mobile first",
           "SEO Relaunch Support"
         ]
       }
@@ -1478,7 +1478,7 @@
     "hero": {
       "label": "Headless Web Development",
       "title_anim": "Handcrafted ",
-      "title_static": "Headless Websites.",
+      "title_static": "Headless websites.",
       "description": "We develop handcrafted Headless Websites with custom Next.js architecture from Germany. No page builders, no templates. Clean React, strict TypeScript, and Headless CMS with Sanity. For companies that need measurably fast load times and an independent design."
     },
     "problem": {
@@ -1533,7 +1533,7 @@
         "features": {
           "ci": {
             "desc": "Ensures smooth and secure deployments",
-            "label": "CI/CD Pipeline"
+            "label": "CI/CD pipeline"
           },
           "lint": {
             "desc": "Secures consistent and error-free code",
@@ -1541,7 +1541,7 @@
           },
           "review": {
             "desc": "Manual quality control for highest standards",
-            "label": "Code Reviews"
+            "label": "Code reviews"
           },
           "test": {
             "desc": "Guarantees continuous stability and reliability",
@@ -1567,7 +1567,7 @@
       }
     },
     "seoText": {
-      "title": "Webentwicklung Agency Wetzlar | Coday",
+      "title": "Web Development Agency Wetzlar | Coday",
       "content": "As an experienced web design agency, we offer comprehensive expertise and technological excellence in all areas of digital product development. Our goal is to create solutions for you that are not only visually appealing but, above all, high-performing and conversion-optimized.\n\nThe digital landscape is evolving rapidly. Therefore, we rely on modern, future-proof technologies and agile development methods. Whether it's a complex web application, a high-performance headless CMS, or sophisticated UI/UX design - we guarantee the highest quality standards and measurable results.\n\nTrust in a partner who understands your business goals and translates them into digital success. Through continuous analysis, optimization, and strategic consulting, we ensure that your digital assets generate long-term value and keep you one step ahead of the competition.",
       "description": "Scalable enterprise-grade web development. From modern web apps to headless e-commerce shops. Let's realize your next major project together!"
     }
@@ -1585,21 +1585,21 @@
     "title": "Precision Craftsmanship over Mass Production.",
     "description": "As a solo agency, I work directly with you — without project managers or miscommunication. You receive custom solutions based on the latest web technologies that deliver real results. From initial concept to final launch."
   },
-  "label": "Unsere Leistungen",
-  "title_prefix": "Wir bieten",
-  "title_suffix": "kompromisslose Premium Services.",
+  "label": "Our services",
+  "title_prefix": "We offer",
+  "title_suffix": "uncompromising premium services.",
   "items": {
     "web_dev": {
-      "title": "High-End Webentwicklung",
-      "description": "Wir programmieren performante Webanwendungen mit Next.js und React, die technologisch Maßstäbe setzen."
+      "title": "High-end web development",
+      "description": "We program high-performance web applications with Next.js and React that set technological standards."
     },
     "web_design": {
-      "title": "Exklusives Webdesign",
+      "title": "Exclusive web design",
       "description": "Aesthetic, high-converting designs that perfectly translate your brand identity into the digital space."
     },
     "growth": {
-      "title": "Technisches SEO",
-      "description": "Datengestützte Optimierung für maximale Sichtbarkeit und nachhaltiges Wachstum in den Suchergebnissen."
+      "title": "Technical SEO",
+      "description": "Data-driven optimization for maximum visibility and sustainable growth in search results."
     }
   },
   "seoText": {

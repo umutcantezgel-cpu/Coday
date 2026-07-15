@@ -17,10 +17,10 @@
       },
       "form": {
         "email": {
-          "placeholder": "Email"
+          "placeholder": "E-mail"
         },
         "name": {
-          "placeholder": "Name"
+          "placeholder": "name"
         },
         "notes": {
           "placeholder": "Note (optional)"

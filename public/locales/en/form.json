@@ -26,7 +26,7 @@
         "label": "Project Type",
         "options": {
           "audit": "Audit & Performance",
-          "ecommerce": "E-Commerce",
+          "ecommerce": "E-commerce",
           "webapp": "Web Application",
           "webdesign": "Web Design & Relaunch"
         },
@@ -58,11 +58,11 @@
         "placeholder": "Acme Corp"
       },
       "email": {
-        "label": "Email",
+        "label": "E-mail",
         "placeholder": "john@example.com"
       },
       "name": {
-        "label": "Name",
+        "label": "name",
         "placeholder": "John Doe"
       },
       "phone": {
@@ -126,7 +126,7 @@
       "desc": "For anonymous statistics."
     },
     "marketing": {
-      "title": "Marketing",
+      "title": "marketing",
       "desc": "For personalized advertising."
     }
   },

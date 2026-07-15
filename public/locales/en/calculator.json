@@ -1,6 +1,6 @@
 {
   "card": {
-    "bestseller": "Bestseller",
+    "bestseller": "bestseller",
     "included": "Included",
     "monthly": "Monthly",
     "one_time": "One-time",
@@ -13,8 +13,8 @@
   },
   "categories": {
     "basis": "Project Basis",
-    "commerce": "E-Commerce",
-    "design": "Web Design",
+    "commerce": "E-commerce",
+    "design": "Web design",
     "function": "Functionality",
     "seo": "Technical SEO",
     "support": "Operations & Maintenance",
@@ -37,9 +37,9 @@
   "module_count_plural": "{count} modules selected",
   "modules": {
     "basis-onepager": {
-      "description": "High-Performance One-Pager",
+      "description": "High-performance one-pager",
       "learn_more": "Perfect for startups or landing pages.",
-      "name": "One-Pager"
+      "name": "One pager"
     },
     "basis-ultimate": {
       "description": "The complete enterprise package",
@@ -49,32 +49,32 @@
     "basis-business": {
       "description": "Multi-page Corporate Presence (CMS)",
       "learn_more": "The classic corporate website with multiple subpages (About Us, Services, Contact). Perfect for presenting your company, services, and team in detail to build trust.",
-      "name": "Corporate Website"
+      "name": "Corporate website"
     },
     "basis-enterprise": {
       "description": "Complex Web App with Custom Logic",
       "learn_more": "For complex requirements: We develop individual software solutions with user logins, databases, and special functions tailored exactly to your business processes.",
-      "name": "Web Application"
+      "name": "Web application"
     },
     "basis-professional": {
       "description": "Advanced Corporate Presence (CMS)",
       "learn_more": "Professional presence with CMS, blog, advanced SEO features, and more subpages. Ideal for growing businesses.",
-      "name": "Professional Website"
+      "name": "Professional website"
     },
     "basis-starter": {
       "description": "High-Performance Landing Page (Next.js)",
       "learn_more": "A lightning-fast 'one-pager' website, ideal for campaigns, product launches, or startups. Technically optimized for maximum conversion and immediate visibility.",
-      "name": "Starter Website"
+      "name": "Starter website"
     },
     "commerce-headless": {
       "description": "Custom Frontend for Shopify/WooCommerce",
       "learn_more": "The top tier of e-commerce. We separate design (frontend) from technology (Shopify/WooCommerce) to create unique shopping experiences without design limitations.",
-      "name": "Headless Commerce"
+      "name": "Headless commerce"
     },
     "commerce-starter": {
       "description": "Professional Shopify Store",
       "learn_more": "A fully set up Shopify store. Start selling your products with a professional theme, optimized checkout, and all necessary legal texts in just a few days.",
-      "name": "Shopify Setup"
+      "name": "Shopify setup"
     },
     "design-motion": {
       "description": "Advanced Animations & Transitions",
@@ -84,17 +84,17 @@
     "design-system": {
       "description": "Reusable Component Library",
       "learn_more": "Ensures consistency and saves time: We develop a library of reusable components (buttons, inputs, cards) that keeps the design uniform and accelerates future expansions.",
-      "name": "Design System"
+      "name": "Design system"
     },
     "design-ui": {
       "description": "Custom Screen Design (Figma)",
       "learn_more": "A design that fits your brand perfectly. We create individual layouts in Figma before writing a single line of code to ensure the look matches your vision 100%.",
-      "name": "Premium UI Design"
+      "name": "Premium UI design"
     },
     "func-api": {
       "description": "External Service Integration (CRM, ERP)",
       "learn_more": "Connect your website with other tools. We ensure data flows automatically between your site and your CRM, ERP, or newsletter tool.",
-      "name": "API Integration"
+      "name": "API integration"
     },
     "func-auth": {
       "description": "Login, Registration, User Dashboard",
@@ -114,17 +114,17 @@
     "seo-tech": {
       "description": "Structure, Schema.org, Core Web Vitals",
       "learn_more": "The foundation for Google success. We optimize technical structure, metadata, and schemas so search engines understand and index your content perfectly.",
-      "name": "Technical SEO Audit"
+      "name": "Technical SEO audit"
     },
     "support-basic": {
-      "description": "Server Updates & Backups",
+      "description": "Server updates & backups",
       "learn_more": "We take care of the tech. Monthly updates, daily backups, and server maintenance ensure your site always stays secure and accessible.",
       "name": "Hosting & Maintenance"
     },
     "support-pro": {
       "description": "24/7 Emergency Support & Development",
       "learn_more": "Your technical partner on demand. We provide fast help with problems and continuously support the further development of your platform.",
-      "name": "SLA Support"
+      "name": "SLA support"
     },
     "tech-i18n": {
       "description": "Multi-language Support (i18n Setup)",
@@ -134,7 +134,7 @@
     "tech-pwa": {
       "description": "Offline Support & Installability",
       "learn_more": "Turns your website into an app. Users can install it on their homescreen and use it (partially) offline – for an app-like experience in the browser.",
-      "name": "PWA Features"
+      "name": "PWA features"
     }
   },
   "summary": {

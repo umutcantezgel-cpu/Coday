@@ -116,17 +116,23 @@ const TextBlockRenderer: React.FC<{ block: TextBlock }> = ({ block }) => {
           .split('\n\n')
           .filter((p) => p.trim() !== '')
           .map((paragraph, index) => {
-            if (paragraph.startsWith('### ')) {
+            if (paragraph.startsWith('#### ')) {
               return (
                 <h4 key={index} className="text-xl font-bold text-secondary mt-6 mb-4">
-                  {renderContentWithGlossary(paragraph.replace(/^### /, ''))}
+                  {renderContentWithGlossary(paragraph.replace(/^#### /, ''))}
                 </h4>
+              );
+            } else if (paragraph.startsWith('### ')) {
+              return (
+                <h3 key={index} className="text-2xl font-bold text-secondary mt-8 mb-4">
+                  {renderContentWithGlossary(paragraph.replace(/^### /, ''))}
+                </h3>
               );
             } else if (paragraph.startsWith('## ')) {
               return (
-                <h3 key={index} className="text-2xl font-bold text-secondary mt-8 mb-4">
+                <h2 key={index} className="text-3xl font-bold text-secondary mt-10 mb-6">
                   {renderContentWithGlossary(paragraph.replace(/^## /, ''))}
-                </h3>
+                </h2>
               );
             } else if (paragraph.startsWith('# ')) {
               return (

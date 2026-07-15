@@ -2,25 +2,25 @@
   "architecture": {
     "visualizer": {
       "build": {
-        "desc": "Automatisierte Tests & CI/CD",
-        "details": "Jeder Commit wird automatisch getestet und optimiert gebaut.",
+        "desc": "Automated testing & CI/CD",
+        "details": "Every commit is automatically tested and optimized.",
         "label": "Build Pipeline"
       },
       "cms": {
-        "desc": "Sanity.io Infrastruktur",
-        "details": "Strukturierte Inhalte mit voll typisierter API.",
+        "desc": "Sanity.io infrastructure",
+        "details": "Structured content with fully typed API.",
         "label": "Headless CMS"
       },
       "edge": {
         "desc": "Vercel Edge & Middleware",
-        "details": "Globale Auslieferung in wenigen Millisekunden.",
+        "details": "Global delivery in a few milliseconds.",
         "label": "Edge Network"
       },
-      "footer": "Technologie-Stack & Infrastruktur",
+      "footer": "Technology stack & infrastructure",
       "user": {
-        "desc": "Globale Auslieferung",
-        "details": "Nahtloses Erlebnis durch intelligentes Edge Caching.",
-        "label": "Endnutzer"
+        "desc": "Global delivery",
+        "details": "Seamless experience through intelligent edge caching.",
+        "label": "End User"
       }
     }
   },
@@ -28,65 +28,65 @@
     "simulator": {
       "features": {
         "ci": {
-          "desc": "Gewährleistet reibungslose und sichere Deployments",
-          "label": "CI/CD Pipeline"
+          "desc": "Ensures smooth and secure deployments",
+          "label": "CI/CD pipeline"
         },
         "lint": {
-          "desc": "Sichert konsistenten und fehlerfreien Code",
-          "label": "Linting & Formatierung"
+          "desc": "Ensures consistent and error-free code",
+          "label": "Linting & formatting"
         },
         "review": {
-          "desc": "Manuelle Qualitätskontrolle für höchste Standards",
-          "label": "Code Reviews"
+          "desc": "Manual quality control for the highest standards",
+          "label": "Code reviews"
         },
         "test": {
-          "desc": "Garantiert kontinuierliche Stabilität und Zuverlässigkeit",
-          "label": "Automatisierte Tests"
+          "desc": "Guarantees continuous stability and reliability",
+          "label": "Automated testing"
         },
         "ts": {
-          "desc": "Strenge Typsicherheit eliminiert Runtime-Fehler",
+          "desc": "Strict type safety eliminates runtime errors",
           "label": "TypeScript Strict Mode"
         }
       },
       "messages": {
-        "enterprise": "Enterprise-Level: Maximale Skalierbarkeit, Sicherheit und Performance.",
-        "good": "Sehr gut: Hohe Zuverlässigkeit und saubere Code-Struktur.",
-        "risky": "Kritisch: Stabilitätsschwankungen und Performance-Einbußen wahrscheinlich.",
-        "stable": "Stabil: Solide Basis, jedoch mit weiterem Optimierungspotenzial.",
-        "unstable": "Warnung: Hohes Risiko für technische Schulden und Systemausfälle."
+        "enterprise": "Enterprise level: Maximum scalability, security and performance.",
+        "good": "Very good: High reliability and clean code structure.",
+        "risky": "Critical: Stability fluctuations and performance losses are likely.",
+        "stable": "Stable: Solid basis, but with further optimization potential.",
+        "unstable": "Warning: High risk of technical debt and system failure."
       },
-      "mission_accomplished": "Exzellenz erreicht!",
-      "project_status": "Projektstatus:",
-      "status_label": "Systemstabilität",
-      "subtitle": "Aktivieren Sie verschiedene Best Practices, um deren Auswirkungen direkt zu erleben.",
-      "title": "Code-Qualität Simulator"
+      "mission_accomplished": "Excellence achieved!",
+      "project_status": "Project status:",
+      "status_label": "System stability",
+      "subtitle": "Activate various best practices to directly experience their impact.",
+      "title": "Code quality simulator"
     }
   },
   "security": {
     "items": {
       "csrf": {
         "title": "Auth",
-        "value": "Sichere Sessions"
+        "value": "Secure sessions"
       },
       "ddos": {
-        "title": "DDoS-Schutz",
+        "title": "DDoS protection",
         "value": "Edge Network"
       },
       "owasp": {
         "title": "OWASP Top 10",
-        "value": "Vollständiger Schutz"
+        "value": "Complete protection"
       },
       "sql": {
-        "title": "Datenbank",
-        "value": "Injection-Schutz"
+        "title": "database",
+        "value": "Injection protection"
       },
       "ssl": {
-        "title": "Verschlüsselung",
+        "title": "Encryption",
         "value": "TLS 1.3 / SSL"
       },
       "xss": {
-        "title": "Cross-Site",
-        "value": "XSS & CSRF sicher"
+        "title": "Cross site",
+        "value": "XSS & CSRF secure"
       }
     }
   },

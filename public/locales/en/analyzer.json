@@ -13,7 +13,7 @@
     "agent_analyzing": "{agent} is analyzing your website..."
   },
   "agents": {
-    "performance": "Performance",
+    "performance": "performance",
     "seo": "SEO",
     "security": "Security",
     "accessibility": "Accessibility",

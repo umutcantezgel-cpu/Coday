@@ -6,6 +6,8 @@ export const metadata: Metadata = {
 
 import { redirect } from 'next/navigation';
 
+export const dynamic = 'force-static';
+
 // Legacy route — redirect to the blog listing page
 export default function BlogPostLegacyPage() {
   redirect('/knowledge/blog');

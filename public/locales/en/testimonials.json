@@ -1,26 +1,26 @@
 {
-  "title_prefix": "Was unsere Kunden",
-  "title_suffix": "über uns sagen.",
+  "title_prefix": "What our customers",
+  "title_suffix": "say about us.",
   "text": "Learn how we help companies take their digital presence to the next level.",
-  "rating": "4.9/5 Durchschnittliche Bewertung",
-  "excellence": "Basierend auf echten Kundenstimmen",
+  "rating": "4.9/5 Average rating",
+  "excellence": "Based on real customer testimonials",
   "items": [
     {
-      "quote": "Die Zusammenarbeit mit Coday war ein voller Erfolg. Unsere neue Website ist nicht nur optisch ein Meisterwerk, sondern überzeugt auch durch herausragende Performance.",
+      "quote": "The collaboration with Coday was a complete success. Our new website is not only a visual masterpiece, but also impresses with its outstanding performance.",
       "authorName": "Dr. Markus Schmidt",
-      "authorPosition": "Geschäftsführer",
+      "authorPosition": "Managing Director",
       "authorCompany": "Schmidt Consulting"
     },
     {
-      "quote": "Von der ersten Konzeption bis zum Livegang – absolute Professionalität und technisches Know-how auf höchstem Niveau.",
+      "quote": "From the initial conception to the go-live – absolute professionalism and technical know-how at the highest level.",
       "authorName": "Laura Weber",
-      "authorPosition": "Marketingleiterin",
-      "authorCompany": "Weber Immobilien"
+      "authorPosition": "Marketing Manager",
+      "authorCompany": "Weber Real Estate"
     },
     {
       "quote": "Thanks to the new e-commerce solution, we were able to significantly increase our conversion rate. A reliable partner for digital growth.",
       "authorName": "Johannes Becker",
-      "authorPosition": "Gründer",
+      "authorPosition": "founder",
       "authorCompany": "Becker Retail GmbH"
     }
   ]

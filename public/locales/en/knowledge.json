@@ -37,26 +37,26 @@
         "title": "What Does a Website Really Cost?"
       }
     },
-    "subtitle": "Lernen Sie die Grundlagen",
+    "subtitle": "Learn the basics",
     "title": "Academy",
-    "close_video": "Video schließen"
+    "close_video": "Close video"
   },
   "blog": {
     "subtitle": "Deep dives, strategies and news from the digital world.",
     "title": "Blog & Insights"
   },
   "newsletter": {
-    "emailPlaceholder": "Ihre E-Mail-Adresse",
+    "emailPlaceholder": "Your email address",
     "privacy": "We respect your privacy. Unsubscribe at any time.",
-    "subscribe": "Abonnieren",
-    "subtitle": "Bleiben Sie auf dem neuesten Stand.",
-    "title": "Newsletter",
-    "success_title": "Vielen Dank!",
-    "success_message": "Sie haben sich erfolgreich angemeldet.",
-    "privacy_consent_pre": "Ich stimme der Verarbeitung meiner Daten gemäß der ",
-    "privacy_link": "Datenschutzerklärung",
-    "privacy_consent_post": " zu.",
-    "error": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut."
+    "subscribe": "Subscribe",
+    "subtitle": "Stay up to date.",
+    "title": "newsletter",
+    "success_title": "Thank you!",
+    "success_message": "You have successfully logged in.",
+    "privacy_consent_pre": "I agree to the processing of my data in accordance with",
+    "privacy_link": "Privacy Policy",
+    "privacy_consent_post": "to.",
+    "error": "An error has occurred. Please try again later."
   },
   "whitepapers": {
     "download": "Download for Free",
@@ -66,12 +66,12 @@
   "wiki": {
     "title": "AI & Digital Excellence Wiki",
     "subtitle": "The Coday Knowledge Graph. 100 essential entities from tech, business, and design, structured for AI crawlers and humans.",
-    "search_placeholder": "Entität suchen (z.B. Next.js, Headless CMS)...",
-    "search_aria": "Entität suchen",
+    "search_placeholder": "Search entity (e.g. Next.js, Headless CMS)...",
+    "search_aria": "Search entity",
     "no_results": "No entities found for \"{searchTerm}\"",
     "categories": {
-      "all": "Alle"
+      "all": "All"
     },
-    "aliases": "Aliasse:"
+    "aliases": "Aliases:"
   }
 }

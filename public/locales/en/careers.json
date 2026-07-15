@@ -17,7 +17,7 @@
         "text": "We care about your health."
       },
       {
-        "icon": "users",
+        "icon": "users.users",
         "title": "Great Team",
         "text": "We work together on exciting projects."
       }
@@ -55,7 +55,7 @@
           "funfact": "Conversion-Optimized Design",
           "funfact_title": "Focus:",
           "name": "Lisa Lens",
-          "role": "Art Director"
+          "role": "Art director"
         }
       ],
       "title": "The Team"
@@ -68,19 +68,19 @@
     "values_deck": {
       "deep_work": {
         "desc": "No multitasking. No constant meetings. We block time for deep, focused work.",
-        "title": "Deep Work"
+        "title": "Deep work"
       },
       "ownership": {
         "desc": "No excuses. We take full responsibility for the result. If something goes wrong, we fix it. Period.",
-        "title": "Extreme Ownership"
+        "title": "Extreme ownership"
       },
       "speed": {
         "desc": "Perfection is the enemy of done. We ship fast and iterate based on real data.",
-        "title": "Speed wins"
+        "title": "Speed ​​wins"
       },
       "truth": {
         "desc": "We say how it is. Even if it hurts. Honest feedback is the only way to excellence.",
-        "title": "Radical Truth"
+        "title": "Radical truth"
       }
     }
   },
@@ -125,15 +125,15 @@
       "design": [
         {
           "desc": "You design precise, high-conversion interfaces.",
-          "title": "UI Designer"
+          "title": "UI designers"
         },
         {
           "desc": "You solve complex user problems on an enterprise level.",
-          "title": "Product Designer"
+          "title": "Product designer"
         },
         {
           "desc": "You define the visual strategy of tomorrow.",
-          "title": "Art Director"
+          "title": "Art director"
         }
       ],
       "dev": [
@@ -147,13 +147,13 @@
         },
         {
           "desc": "You design the next generation of our infrastructure.",
-          "title": "Tech Lead"
+          "title": "Tech lead"
         }
       ],
       "growth": [
         {
           "desc": "You acquire strategic partnerships.",
-          "title": "Sales Representative"
+          "title": "Sales representative"
         },
         {
           "desc": "You manage and scale our key accounts.",
@@ -168,7 +168,7 @@
     "selector_title": "Choose Your Path",
     "title": "Your Growth is Our Goal.",
     "tracks": {
-      "design": "Design",
+      "design": "design",
       "dev": "Engineering",
       "growth": "Growth"
     }
@@ -182,7 +182,7 @@
       },
       {
         "desc": "Latest generation MacBook Pro + 4K Monitor for your Home Office.",
-        "title": "Premium Hardware"
+        "title": "Premium hardware"
       },
       {
         "desc": "2,000€ annual budget for your professional and personal development.",
@@ -190,15 +190,15 @@
       },
       {
         "desc": "Twice a year strategic offsites with the entire team at exclusive locations.",
-        "title": "Executive Retreats"
+        "title": "Executive retreats"
       },
       {
         "desc": "Fully financed L & XL Membership to support your health.",
-        "title": "Urban Sports"
+        "title": "Urban sports"
       },
       {
         "desc": "Success is shared. Benefit from an annual profit share.",
-        "title": "Profit Share"
+        "title": "Profit share"
       }
     ],
     "title": "Why Coday?"

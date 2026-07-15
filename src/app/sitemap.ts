@@ -41,6 +41,21 @@ async function fetchSanity<T>(query: string): Promise<T> {
 const BUILD_DATE = new Date('2026-07-07T00:00:00Z');
 
 /**
+ * List of routes that are strictly German only (e.g. Local SEO)
+ * and should not generate an English alternate in the sitemap.
+ */
+const DE_ONLY_ROUTES = [
+  '/branchen/automobil/kfz-werkstatt',
+  '/branchen/automobil/kfz-mechatroniker',
+  '/branchen/automobil/autohaendler',
+  '/branchen/gesundheitswesen/arzt-wetzlar',
+  '/branchen/gesundheitswesen/arzt-giessen',
+  '/branchen/handwerker/wetzlar',
+  '/standorte/giessen',
+  '/services/consulting',
+];
+
+/**
  * Helper to create a sitemap entry with Next.js 15 language alternates.
  */
 function sitemapEntry(
@@ -55,14 +70,15 @@ function sitemapEntry(
 
   const localPathsRegex = /^\/(landingpages|webdesign-agentur-wetzlar|angebot-handwerker)(\/.*)?$/;
   const isLocalPath = localPathsRegex.test(cleanPath);
+  const isDeOnlyRoute = DE_ONLY_ROUTES.includes(cleanPath);
 
   const languages: Record<string, string> = {
     de: `${BASE_URL}/de${cleanPath}`,
   };
 
   // Temporarily disable English pages from sitemap because they are set to noindex
-  // until they are fully translated.
-  if (!isLocalPath) {
+  // until they are fully translated. We also skip explicit DE-only routes.
+  if (!isLocalPath && !isDeOnlyRoute) {
     languages.en = `${BASE_URL}/en${cleanPath}`;
   }
 
@@ -284,16 +300,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const allRoutes = [...staticRoutes, ...dynamicRoutes];
   const expandedRoutes: MetadataRoute.Sitemap = [];
 
+  const noEnglishRoutes = DE_ONLY_ROUTES.map((r) => `${BASE_URL}/de${r}`);
+
   for (const route of allRoutes) {
     // Add the primary DE route
     expandedRoutes.push(route);
 
     // If an EN alternate exists, add it as a standalone route as well
     if (route.alternates?.languages?.en) {
-      expandedRoutes.push({
-        ...route,
-        url: route.alternates.languages.en,
-      });
+      if (!noEnglishRoutes.includes(route.url)) {
+        expandedRoutes.push({
+          ...route,
+          url: route.alternates.languages.en,
+        });
+      }
     }
   }
 

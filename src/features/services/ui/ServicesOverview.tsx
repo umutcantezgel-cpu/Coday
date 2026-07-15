@@ -85,9 +85,13 @@ export const ServicesOverview = async () => {
 
             <noscript>
               <style>{`.js-only { display: none; }`}</style>
-              <h1 className="font-display font-black text-4xl sm:text-6xl text-content-base mb-4 text-balance">
+              <div
+                role="heading"
+                aria-level={1}
+                className="font-display font-black text-4xl sm:text-6xl text-content-base mb-4 text-balance"
+              >
                 {t('hero.title')}
-              </h1>
+              </div>
               <div className="text-xl text-content-muted leading-relaxed max-w-prose text-pretty mb-6 max-w-prose">
                 {(t.raw('hero.rotating') as string[])?.[0] || 'Web-Design'}
               </div>

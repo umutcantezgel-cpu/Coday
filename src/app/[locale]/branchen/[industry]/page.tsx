@@ -6,6 +6,8 @@ import { IndustryDetailClient } from '@/features/industries/ui/IndustryDetailCli
 import { industriesData } from '@/shared/data/industries';
 import { routing } from '@/i18n/routing';
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   const params: { locale: string; industry: string }[] = [];
   routing.locales.forEach((locale) => {

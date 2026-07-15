@@ -6,6 +6,8 @@ import ClientComponent from '@/features/work/ui/ProjectDetailClient';
 import { workData } from '@/shared/data/work';
 import { notFound } from 'next/navigation';
 
+export const dynamicParams = false;
+
 export async function generateMetadata({
   params,
 }: {
