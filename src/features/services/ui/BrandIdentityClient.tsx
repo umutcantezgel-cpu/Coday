@@ -105,7 +105,7 @@ export function BrandIdentityClient() {
                 <div className="w-10 h-10 rounded-full bg-purple-500/20 text-purple-400 font-bold flex items-center justify-center mb-4">
                   {i + 1}
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">{step.title}</h3>
+                <p className="text-lg font-bold text-white mb-2">{step.title}</p>
                 <p className="text-slate-400 text-sm">{step.desc}</p>
               </m.div>
             ))}

@@ -6,7 +6,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'Warum eine Facebook-Seite 2024 nicht mehr reicht',
     slug: 'warum-facebook-seite-nicht-reicht',
     excerpt:
-      'Verlassen Sie sich nicht nur auf Social Media. Warum eine eigene Webseite Ihr wichtigstes Verkaufsargument ist und wie sie Ihnen unabhängig von Algorithmen Kunden bringt.',
+      'Verlassen Sie sich nicht auf Social Media. Warum eine eigene Webseite Ihr wichtigstes Argument ist und unabhängig von Algorithmen Kunden bringt.',
     category: 'Webdesign',
     readTime: '5 Min.',
     image: '/images/marketing/omnichannel-marketing-hub-seo-social-content-strategie-vernetzt.webp',
@@ -180,7 +180,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'Die 5 tödlichen Webdesign-Fehler, die Ihre Conversion zerstören',
     slug: 'die-5-groessten-fehler-im-webdesign',
     excerpt:
-      '90% aller B2B-Websites verbrennen täglich Budget. Erfahren Sie die psychologischen und technischen Gründe, warum Besucher abspringen – und wie Sie das sofort ändern.',
+      '90% aller B2B-Websites verbrennen Budget. Erfahren Sie die wahren Gründe, warum Besucher abspringen – und wie Sie das sofort ändern.',
     category: 'Webdesign',
     readTime: '12 Min.',
     image: '/images/services/website-builder-drag-drop-baukasten-elemente-webdesign.webp',
@@ -338,7 +338,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Anti-AI Manifest: Warum 'KI-perfektes' Webdesign 2026 scheitert",
     slug: 'anti-ai-manifest',
     excerpt:
-      'KI-Tools fluten den Markt mit seelenlosen Layouts. Entdecken Sie, warum digitale Authentizität und echtes Handwerk der neue Premium-Standard für Elite-Marken sind.',
+      'KI-Tools fluten den Markt mit seelenlosen Layouts. Erfahren Sie, warum digitale Authentizität und echtes Handwerk der Premium-Standard für Marken sind.',
     category: 'Design Philosophy',
     readTime: '8 Min.',
     image: '/images/brand/coday-full.webp',
@@ -578,7 +578,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'Omni-Channel Blueprint: Maximale Präsenz ohne Budget-Verschwendung',
     slug: 'der-perfekte-omni-channel-mix',
     excerpt:
-      'B2B-Kunden fordern heute bis zu 10 Touchpoints vor dem Kauf. Sichern Sie sich den ultimativen Blueprint für lückenlose digitale Dominanz auf allen relevanten Kanälen.',
+      'B2B-Kunden fordern heute bis zu 10 Touchpoints. Sichern Sie sich den Blueprint für lückenlose digitale Dominanz auf allen relevanten Kanälen.',
     category: 'Strategie',
     readTime: '10 Min.',
     image: '/images/marketing/omnichannel-marketing-hub-seo-social-content-strategie-vernetzt.webp',
@@ -801,7 +801,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'Video Content Excellence: Warum Text tot ist',
     slug: 'video-content-excellence',
     excerpt:
-      'Menschen lesen nicht mehr. Sie schauen. Wenn Sie 2026 keine Video-Strategie haben, sind Sie unsichtbar. Wir zeigen Ihnen, wie Sie mit minimalem Aufwand maximale Sichtbarkeit erreichen.',
+      'Menschen lesen nicht mehr. Sie schauen. Ohne Video-Strategie sind Sie unsichtbar. Wir zeigen Ihnen, wie Sie effizient maximale Sichtbarkeit erreichen.',
     category: 'Content',
     readTime: '8 Min.',
     image: '/images/marketing/video-content-streaming-plattform-play-button-multimedia.webp',
@@ -867,7 +867,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'Warum WordPress im Jahr 2026 tot ist (und warum Agenturen es Ihnen trotzdem verkaufen)',
     slug: 'warum-wordpress-tot-ist',
     excerpt:
-      "WordPress war großartig. Im Jahr 2010. Heute ist es ein Sicherheitsrisiko und eine Performance-Bremse. Wir decken auf, warum 'Custom Code' der neue Standard für ernsthafte Unternehmen ist.",
+      'WordPress war 2010 großartig. Heute ist es ein Sicherheitsrisiko und bremst Performance. Warum Custom Code der neue Standard für echte Unternehmen ist.',
     category: 'Tech Deep Dive',
     readTime: '14 Min.',
     image:
@@ -987,7 +987,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'Neuro-Design: Wie Sie das Unterbewusstsein Ihrer Kunden hacken',
     slug: 'neuro-design-psychologie',
     excerpt:
-      'Farben, Formen und Layouts entscheiden in Millisekunden über Kauf oder Abbruch. Wir zeigen Ihnen die geheimen psychologischen Trigger, die Amazon und Apple nutzen.',
+      'Farben, Formen und Layouts entscheiden in Millisekunden über Kauf oder Abbruch. Entdecken Sie psychologische Trigger, die Amazon und Apple nutzen.',
     category: 'Design Psychology',
     readTime: '13 Min.',
     image: '/images/marketing/omnichannel-marketing-hub-seo-social-content-strategie-vernetzt.webp',
@@ -1298,7 +1298,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Der 'Agentur-Killer': Warum das klassische Agentur-Modell tot ist",
     slug: 'agentur-killer-modell',
     excerpt:
-      "Warum zahlen Sie monatliche Retainer für Leistungen, die eine AI in Sekunden erledigt? Wir packen aus: Die schmutzigen Geheimnisse der Branche und warum die Zukunft 'Hybrid' gehört.",
+      'Warum noch Retainer für Leistungen zahlen, die AI in Sekunden erledigt? Wir enthüllen Branchengeheimnisse und zeigen, warum die Zukunft hybrid ist.',
     category: 'Industry Disruption',
     readTime: '18 Min.',
     image: '/images/services/dienstleistung-service-illustration-01.webp',
@@ -1454,7 +1454,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'Digitale Souveränität: Warum der US Cloud Act eine Zeitbombe ist',
     slug: 'digital-sovereignty-public-sector',
     excerpt:
-      "Für den öffentlichen Sektor und kritische Infrastrukturen bedeutet 'Cloud First' oft 'America First'. Wir erklären, warum Digitale Souveränität die einzige Strategie für 2026 ist.",
+      'Für den öffentlichen Sektor bedeutet Cloud First oft America First. Wir erklären, warum Digitale Souveränität die einzig wahre Strategie für 2026 ist.',
     category: 'Government',
     readTime: '20 min.',
     image: '/images/services/online-praesenz-digitale-sichtbarkeit-internet-marketing.webp',
@@ -1524,7 +1524,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'Die Psychologie des Dark Mode: Warum Dunkel sich teuer anfühlt',
     slug: 'psychology-of-dark-mode',
     excerpt:
-      'Dark Mode ist mehr als ein Schalter. Er verändert, wie wir Wert wahrnehmen. Wir erforschen die Physik des Lichts, OLED-Screens und warum Premium-Marken die Dunkelheit lieben.',
+      'Dark Mode verändert, wie wir Wert wahrnehmen. Wir erforschen die Physik des Lichts und warum Premium-Marken die Dunkelheit auf OLED-Screens lieben.',
     category: 'Design',
     readTime: '14 min.',
     image: '/images/marketing/video-content-streaming-plattform-play-button-multimedia.webp',
@@ -1719,7 +1719,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'Digital Government: Warum das OZG 2.0 scheitert (und wie wir es retten)',
     slug: 'ozg-citizen-experience',
     excerpt:
-      'Deutschlands Onlinezugangsgesetz (OZG) versprach die digitale Revolution. Stattdessen bekamen wir PDF-Formulare. Wir analysieren die UX-Sünden des öffentlichen Sektors.',
+      'Das Onlinezugangsgesetz versprach die digitale Revolution. Stattdessen bekamen wir PDF-Formulare. Wir analysieren UX-Sünden des öffentlichen Sektors.',
     category: 'Government',
     readTime: '12 min.',
     image:
@@ -2116,7 +2116,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'Mobile First ist tot. Lang lebe Mobile Only.',
     slug: 'mobile-first-lie',
     excerpt:
-      "Desktop-Traffic ist ein Relikt. Sehen Sie in unserem Simulator, wie Ihre 'responsive' Website auf einem iPhone SE wirklich aussieht (und warum Sie Kunden verlieren).",
+      'Desktop-Traffic ist ein Relikt. Sehen Sie im Simulator, wie Ihre Website auf einem iPhone SE wirklich aussieht (und warum Sie Kunden verlieren).',
     category: 'Mobile UX',
     readTime: '8 Min.',
     image: '/images/brand/coday-full.webp',

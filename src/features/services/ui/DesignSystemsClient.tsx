@@ -71,7 +71,7 @@ export function DesignSystemsClient() {
                 transition={{ delay: i * 0.1 }}
                 className="bg-gradient-to-br from-indigo-50 to-purple-50 border border-indigo-100 rounded-3xl p-8"
               >
-                <h3 className="text-2xl font-bold text-indigo-900 mb-3">{benefit.title}</h3>
+                <p className="text-2xl font-bold text-indigo-900 mb-3">{benefit.title}</p>
                 <p className="text-indigo-700">{benefit.desc}</p>
               </m.div>
             ))}

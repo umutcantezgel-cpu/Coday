@@ -112,6 +112,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               <li>
                 <Link
                   href="/branchen"
+                  locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
                   Branchenübersicht

@@ -52,7 +52,7 @@ export function IndustryDetailClient({ industrySlug }: { industrySlug?: string }
     return (
       <div className="min-h-dvh flex flex-col items-center justify-center pt-20">
         <h1 className="text-3xl font-bold text-secondary mb-4">{t('detail.not_found.title')}</h1>
-        <Link href="/branchen" className="text-primary hover:underline">
+        <Link href="/branchen" locale="de" className="text-primary hover:underline">
           {t('detail.not_found.link')}
         </Link>
       </div>
@@ -74,6 +74,7 @@ export function IndustryDetailClient({ industrySlug }: { industrySlug?: string }
       <nav aria-label={t('detail.nav.back')} className="container mx-auto px-4 mb-8">
         <Link
           href="/branchen"
+          locale="de"
           className="inline-flex items-center text-text-slate hover:text-primary transition-colors motion-reduce:duration-[0.01ms]"
         >
           <ArrowLeft size={16} className="mr-2" aria-hidden="true" />
@@ -139,9 +140,9 @@ export function IndustryDetailClient({ industrySlug }: { industrySlug?: string }
                 <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity motion-reduce:duration-[0.01ms]">
                   <XCircle size={64} className="text-red-500" aria-hidden="true" />
                 </div>
-                <h3 className="text-xl font-bold text-secondary mb-3 relative z-10">
+                <p className="text-xl font-bold text-secondary mb-3 relative z-10">
                   {t(challenge.title)}
-                </h3>
+                </p>
                 <p className="text-text-light relative z-10">{t(challenge.description)}</p>
               </div>
             ))}
@@ -168,7 +169,7 @@ export function IndustryDetailClient({ industrySlug }: { industrySlug?: string }
                 <div className="mb-4 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
                   <CheckCircle size={24} aria-hidden="true" />
                 </div>
-                <h3 className="text-xl font-bold text-secondary mb-2">{t(sol.title)}</h3>
+                <p className="text-xl font-bold text-secondary mb-2">{t(sol.title)}</p>
                 <p className="text-text-light">{t(sol.description)}</p>
               </div>
             ))}
@@ -237,7 +238,7 @@ export function IndustryDetailClient({ industrySlug }: { industrySlug?: string }
                 key={idx}
                 className="bg-white/5 p-6 rounded-xl border border-white/10 hover:bg-white/10 transition-colors motion-reduce:duration-[0.01ms]"
               >
-                <h3 className="font-bold text-lg mb-2 text-primary">{t(feat.title)}</h3>
+                <p className="font-bold text-lg mb-2 text-primary">{t(feat.title)}</p>
                 <p className="text-gray-300 text-sm">{t(feat.description)}</p>
               </div>
             ))}
@@ -258,6 +259,7 @@ export function IndustryDetailClient({ industrySlug }: { industrySlug?: string }
                 return (
                   <Link
                     href={`/branchen/${relIndustry.slug}`}
+                    locale="de"
                     key={relIndustry.slug}
                     className="group relative rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition motion-reduce:duration-[0.01ms] h-64"
                   >
@@ -270,9 +272,9 @@ export function IndustryDetailClient({ industrySlug }: { industrySlug?: string }
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                     <div className="absolute bottom-0 left-0 p-6">
-                      <h3 className="text-xl font-bold text-white mb-1 group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms]">
+                      <p className="text-xl font-bold text-white mb-1 group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms]">
                         {t(relIndustry.title)}
-                      </h3>
+                      </p>
                       <span className="text-sm text-gray-300 group-hover:text-white transition-colors motion-reduce:duration-[0.01ms] flex items-center gap-2">
                         {t('detail.related.link')} <ArrowRight size={14} />
                       </span>

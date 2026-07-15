@@ -53,7 +53,7 @@ export const ScoreCard: React.FC<ScoreCardProps> = ({
           >
             <OptimizedIcon icon={icon} className="text-xl" aria-hidden="true" />
           </div>
-          <h3 className="font-bold text-gray-900">{title}</h3>
+          <p className="font-bold text-gray-900">{title}</p>
         </div>
       </div>
 

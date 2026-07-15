@@ -312,9 +312,9 @@ export function WebAppsClient() {
                 <div className="w-12 h-12 bg-surface-elevated rounded-xl shadow-sm flex items-center justify-center text-sapphire mb-6 group-hover:scale-[0.97] ease-spring transition-transform motion-reduce:duration-[0.01ms]">
                   <OptimizedIcon icon={iconMap[feature.icon] || Cloud} />
                 </div>
-                <h3 className="font-bold text-xl text-gray-900 mb-3">
+                <p className="font-bold text-xl text-gray-900 mb-3">
                   {t(`web_apps_page.features.items.${feature.key}.title`)}
-                </h3>
+                </p>
                 <p className="text-gray-600 leading-relaxed max-w-prose text-pretty">
                   {t(`web_apps_page.features.items.${feature.key}.desc`)}
                 </p>

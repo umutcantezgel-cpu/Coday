@@ -17,17 +17,17 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Design Giessen | Websites That Bring Clients',
+      title: 'Web Design Agency Giessen | Websites That Bring Clients',
       description:
-        'Your web agency for Giessen and the surrounding area. High-performance websites that bring new clients. Personal and at a guaranteed fixed price.',
+        'Your web design agency for Giessen and the surrounding area. High-performance websites that bring new clients. Personal and at a guaranteed fixed price.',
       path: '/en/landingpages/giessen',
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'Webdesign Gießen | Webseiten die Kunden bringen',
+    title: 'Webdesign Agentur Gießen | Webseiten die Kunden bringen',
     description:
-      'Ihre Webagentur für Gießen und Umgebung. Hochperformante Webseiten die messbar neue Kunden bringen. Persönlich und zum garantierten Festpreis. Anfragen.',
+      'Ihre Webdesign Agentur für Gießen und Umgebung. Hochperformante Webseiten die messbar neue Kunden bringen. Persönlich und zum garantierten Festpreis. Anfragen.',
     path: '/de/landingpages/giessen',
     type: 'money',
   });
@@ -61,17 +61,17 @@ export default async function GiessenLandingPage(props: { params: Promise<{ loca
   const _locale = (await params)?.locale || 'de';
   const _seoTitle =
     _locale === 'en'
-      ? 'Web Design Giessen | Websites That Bring Clients | Coday'
-      : 'Webdesign Gießen | Webseiten die Kunden bringen | Coday';
+      ? 'Web Design Agency Giessen | Websites That Bring Clients | Coday'
+      : 'Webdesign Agentur Gießen | Webseiten die Kunden bringen | Coday';
   const _seoDesc =
     _locale === 'en'
-      ? 'Your web agency for Giessen and the surrounding area. High-performance websites that bring new clients. Personal and at a guaranteed fixed price.'
-      : 'Ihre Webagentur für Gießen und Umgebung. Hochperformante Webseiten die messbar neue Kunden bringen. Persönlich und zum garantierten Festpreis. Anfragen.';
+      ? 'Your web design agency for Giessen and the surrounding area. High-performance websites that bring new clients. Personal and at a guaranteed fixed price.'
+      : 'Ihre Webdesign Agentur für Gießen und Umgebung. Hochperformante Webseiten die messbar neue Kunden bringen. Persönlich und zum garantierten Festpreis. Anfragen.';
   return (
     <>
       <SeoHead
         title={`Webdesign Agentur in Gießen | Coday`}
-        description={`Ihre Webagentur für Gießen. Hochperformante Webseiten, die messbar neue Kunden bringen. Regional, persönlich und zum Festpreis.`}
+        description={`Ihre Webdesign Agentur für Gießen. Hochperformante Webseiten, die messbar neue Kunden bringen. Regional, persönlich und zum Festpreis.`}
         pageType="default"
       />
       {content && cityData ? (

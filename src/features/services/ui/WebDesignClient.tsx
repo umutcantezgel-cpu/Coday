@@ -254,7 +254,7 @@ export function WebDesignClient() {
                   >
                     {phase.number}
                   </div>
-                  <h3 className="font-bold text-xl mt-4 mb-3">{phase.title}</h3>
+                  <p className="font-bold text-xl mt-4 mb-3">{phase.title}</p>
                   <p className="text-sm text-gray-400 leading-relaxed max-w-prose text-pretty">
                     {phase.description}
                   </p>
@@ -287,7 +287,7 @@ export function WebDesignClient() {
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-sapphire mb-6 group-hover:bg-sapphire group-hover:text-white transition-colors motion-reduce:duration-[0.01ms] relative z-10">
                   <OptimizedIcon icon={iconMap[feature.icon] || Palette} />
                 </div>
-                <h3 className="font-display font-bold text-xl text-content-base mb-3 group-hover:text-sapphire transition-colors motion-reduce:duration-[0.01ms] relative z-10">
+                <p className="font-display font-bold text-xl text-content-base mb-3 group-hover:text-sapphire transition-colors motion-reduce:duration-[0.01ms] relative z-10">
                   <NavLink
                     href={
                       feature.slug === 'design-systems'
@@ -300,7 +300,7 @@ export function WebDesignClient() {
                   >
                     {t(feature.titleKey)}
                   </NavLink>
-                </h3>
+                </p>
                 <p className="text-content-muted leading-relaxed max-w-prose text-pretty mb-4 relative z-40">
                   {t(feature.descriptionKey)}
                 </p>

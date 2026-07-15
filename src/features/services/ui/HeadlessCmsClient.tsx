@@ -136,9 +136,9 @@ export function HeadlessCmsClient() {
                 />
               </div>
               <div className="relative z-10 p-6 flex flex-col justify-end h-full">
-                <h3 className="text-2xl font-bold text-content-base mb-2">
+                <p className="text-2xl font-bold text-content-base mb-2">
                   {t('headless_cms_page.why_headless.items.omnichannel.title')}
-                </h3>
+                </p>
                 <p className="text-content-muted">
                   {t('headless_cms_page.why_headless.items.omnichannel.desc')}
                 </p>
@@ -149,9 +149,9 @@ export function HeadlessCmsClient() {
                 <OptimizedIcon icon={Lightning} className="text-6xl text-yellow-500 text-balance" />
               </div>
               <div className="relative z-10 p-6 flex flex-col justify-end h-full">
-                <h3 className="text-2xl font-bold text-content-base mb-2">
+                <p className="text-2xl font-bold text-content-base mb-2">
                   {t('headless_cms_page.why_headless.items.performance.title')}
-                </h3>
+                </p>
                 <p className="text-content-muted">
                   {t('headless_cms_page.why_headless.items.performance.desc')}
                 </p>
@@ -165,9 +165,9 @@ export function HeadlessCmsClient() {
                 />
               </div>
               <div className="relative z-10 p-6 flex flex-col justify-end h-full">
-                <h3 className="text-2xl font-bold text-content-base mb-2">
+                <p className="text-2xl font-bold text-content-base mb-2">
                   {t('headless_cms_page.why_headless.items.security.title')}
-                </h3>
+                </p>
                 <p className="text-content-muted">
                   {t('headless_cms_page.why_headless.items.security.desc')}
                 </p>
@@ -178,9 +178,9 @@ export function HeadlessCmsClient() {
                 <OptimizedIcon icon={Code} className="text-6xl text-blue-400 text-balance" />
               </div>
               <div className="relative z-10 p-6 flex flex-col justify-end h-full">
-                <h3 className="text-2xl font-bold mb-2">
+                <p className="text-2xl font-bold mb-2">
                   {t('headless_cms_page.why_headless.items.dev_friendly.title')}
-                </h3>
+                </p>
                 <p className="text-slate-400">
                   {t('headless_cms_page.why_headless.items.dev_friendly.desc')}
                 </p>
@@ -208,7 +208,7 @@ export function HeadlessCmsClient() {
               <div className="absolute top-0 right-0 bg-error/10 text-error text-xs font-bold px-3 py-1 rounded-bl-xl">
                 {t('headless_cms_page.cms_comparison.sanity.badge')}
               </div>
-              <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">Sanity.io</h3>
+              <p className="text-2xl font-bold mb-4 flex items-center gap-2">Sanity.io</p>
               <p className="text-content-muted mb-6 leading-relaxed max-w-prose text-pretty">
                 {t('headless_cms_page.cms_comparison.sanity.desc')}
               </p>
@@ -232,7 +232,7 @@ export function HeadlessCmsClient() {
               <div className="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-bl-xl">
                 {t('headless_cms_page.cms_comparison.contentful.badge')}
               </div>
-              <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">Contentful</h3>
+              <p className="text-2xl font-bold mb-4 flex items-center gap-2">Contentful</p>
               <p className="text-slate-300 mb-6 leading-relaxed max-w-prose text-pretty">
                 {t('headless_cms_page.cms_comparison.contentful.desc')}
               </p>
@@ -256,7 +256,7 @@ export function HeadlessCmsClient() {
               <div className="absolute top-0 right-0 bg-purple-500/10 text-purple-600 text-xs font-bold px-3 py-1 rounded-bl-xl">
                 {t('headless_cms_page.cms_comparison.strapi.badge')}
               </div>
-              <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">Strapi</h3>
+              <p className="text-2xl font-bold mb-4 flex items-center gap-2">Strapi</p>
               <p className="text-content-muted mb-6 leading-relaxed max-w-prose text-pretty">
                 {t('headless_cms_page.cms_comparison.strapi.desc')}
               </p>
@@ -311,7 +311,7 @@ export function HeadlessCmsClient() {
                   key={i}
                   className="bg-surface-elevated p-8 rounded-2xl shadow-sm border border-slate-100"
                 >
-                  <h3 className="text-lg font-bold mb-3">{item.q}</h3>
+                  <p className="text-lg font-bold mb-3">{item.q}</p>
                   <p className="text-content-muted leading-relaxed max-w-prose text-pretty">
                     {item.a}
                   </p>

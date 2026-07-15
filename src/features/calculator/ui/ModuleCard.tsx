@@ -109,9 +109,9 @@ export const ModuleCard: React.FC<ModuleCardProps> = ({
 
       {/* Content */}
       <div className="flex-grow">
-        <h3 className="font-display font-bold text-base text-gray-900 mb-1">
+        <p className="font-display font-bold text-base text-gray-900 mb-1">
           {t(`modules.${module.id}.name`)}
-        </h3>
+        </p>
         <p className="text-xs text-gray-600 leading-relaxed mb-3">
           {t(`modules.${module.id}.description`)}
         </p>

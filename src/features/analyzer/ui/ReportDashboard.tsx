@@ -115,7 +115,7 @@ export const ReportDashboard: React.FC = () => {
         <div className="w-24 h-24 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-6">
           <OptimizedIcon icon={CloudSlash} className="text-red-500 text-5xl" aria-hidden="true" />
         </div>
-        <h2 className="text-3xl font-bold text-gray-900 mb-2">{t('dashboard.analysis_failed')}</h2>
+        <h1 className="text-3xl font-bold text-gray-900 mb-2">{t('dashboard.analysis_failed')}</h1>
 
         <p className="text-gray-600 mb-6 max-w-md mx-auto">
           {useAnalyzerStore.getState().errorCode === 'TIMEOUT'
@@ -180,9 +180,9 @@ export const ReportDashboard: React.FC = () => {
         <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
           {t('dashboard.analysis_complete')}
         </span>
-        <h2 className="font-display font-black text-4xl md:text-6xl text-secondary mb-4">
+        <h1 className="font-display font-black text-4xl md:text-6xl text-secondary mb-4">
           {t('dashboard.your_audit')}
-        </h2>
+        </h1>
         <p className="text-xl text-gray-500 mb-2">{result.domain}</p>
         <p className="text-sm text-gray-400 mb-6">
           {t('dashboard.analyzed_on', {
@@ -262,9 +262,9 @@ export const ReportDashboard: React.FC = () => {
           transition={{ delay: 0.2 }}
           className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 text-center"
         >
-          <h3 className="text-lg font-bold text-gray-600 uppercase tracking-wider mb-6">
+          <p className="text-lg font-bold text-gray-600 uppercase tracking-wider mb-6">
             {t('dashboard.overall_score')}
-          </h3>
+          </p>
 
           {/* Big Score */}
           <m.div
@@ -401,7 +401,7 @@ export const ReportDashboard: React.FC = () => {
                 />
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-2">
-                    <h4 className="font-bold text-gray-900">{issue.title}</h4>
+                    <h3 className="font-bold text-gray-900">{issue.title}</h3>
                     <span className="text-xs text-gray-400 px-2 py-1 bg-gray-50 rounded">
                       {issue.category}
                     </span>

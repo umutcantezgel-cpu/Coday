@@ -145,7 +145,7 @@ const Immobilien: React.FC = () => {
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform motion-reduce:duration-[0.01ms] duration-300">
                   <OptimizedIcon icon={iconMap[item.icon] || Cube} />
                 </div>
-                <h3 className="font-bold text-xl text-secondary mb-3">{item.title}</h3>
+                <p className="font-bold text-xl text-secondary mb-3">{item.title}</p>
                 <p className="text-slate-600">{item.desc}</p>
               </div>
             ))}

@@ -59,9 +59,9 @@ export const TechStackShowcase: React.FC<TechStackShowcaseProps> = ({
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.5, delay: catIndex * 0.1 }}
             >
-              <h3 className="text-xl font-bold text-content-base mb-8 text-center md:text-left border-b border-border-subtle pb-2">
+              <p className="text-xl font-bold text-content-base mb-8 text-center md:text-left border-b border-border-subtle pb-2">
                 {category}
-              </h3>
+              </p>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
                 {items.map((tech, index) => (
                   <div

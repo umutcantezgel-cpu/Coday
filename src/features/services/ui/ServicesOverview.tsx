@@ -88,20 +88,17 @@ export const ServicesOverview = async () => {
             </noscript>
 
             <h1 className="font-display font-black text-4xl sm:text-6xl text-content-base mb-4 text-balance">
-              <span className="js-only block">
-                <ScrollFloat
-                  as="span"
-                  animationDuration={0.8}
-                  ease="back.out(1.7)"
-                  scrollStart="top bottom"
-                  scrollEnd="center center"
-                  stagger={0.02}
-                  containerClassName="!my-0 block"
-                >
-                  {t('hero.title')}
-                </ScrollFloat>
-              </span>
-              <noscript>{t('hero.title')}</noscript>
+              <ScrollFloat
+                as="span"
+                animationDuration={0.8}
+                ease="back.out(1.7)"
+                scrollStart="top bottom"
+                scrollEnd="center center"
+                stagger={0.02}
+                containerClassName="!my-0 block"
+              >
+                {t('hero.title')}
+              </ScrollFloat>
             </h1>
 
             <div className="text-xl text-content-muted leading-relaxed max-w-prose text-pretty mb-6">
@@ -175,14 +172,14 @@ export const ServicesOverview = async () => {
                     />
                   </div>
 
-                  <h3 className="font-display font-bold text-xl md:text-2xl text-content-base mb-3 group-hover:text-action-primary transition-colors motion-reduce:duration-[0.01ms] duration-300">
+                  <p className="font-display font-bold text-xl md:text-2xl text-content-base mb-3 group-hover:text-action-primary transition-colors motion-reduce:duration-[0.01ms] duration-300">
                     <NavLink
                       href={cat.link}
                       className="before:absolute before:inset-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-action-primary focus-visible:ring-offset-2 rounded-md"
                     >
                       {cat.title}
                     </NavLink>
-                  </h3>
+                  </p>
                   <p className="text-base text-content-muted mb-8 leading-relaxed max-w-prose text-pretty">
                     {cat.description}
                   </p>
@@ -255,9 +252,9 @@ export const ServicesOverview = async () => {
                 >
                   {item.step}
                 </span>
-                <h3 className="text-xl font-display font-bold text-content-base mb-3 group-hover:text-action-primary transition-colors duration-300">
+                <p className="text-xl font-display font-bold text-content-base mb-3 group-hover:text-action-primary transition-colors duration-300">
                   {item.title}
-                </h3>
+                </p>
                 <p className="text-content-muted leading-relaxed max-w-prose text-pretty">
                   {item.desc}
                 </p>

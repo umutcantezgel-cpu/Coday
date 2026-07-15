@@ -1,9 +1,9 @@
 {
-  "target": "immobilienmakler",
+  "target": "immobilien-makler",
   "type": "industry-location",
   "meta": {
     "title": "Immobilienmakler Webdesign Agentur Wetzlar | Objektvermarktung",
-    "description": "High End Webdesign für Immobil... Wir bauen exklusive Plattformen, die Objekte emotional vermarkten und Verkäufer Leads automatisiert generieren."
+    "description": "High End Webdesign für Makler. Wir bauen exklusive Plattformen zur emotionalen Objektvermarktung und automatisierten Lead-Generierung."
   },
   "hero": {
     "headline": "Exklusive digitale Immobilien Vermarktung.",
@@ -122,7 +122,7 @@
     }
   ],
   "meta_en": {
-    "title": "Real Estate Agents Web Design Agency Wetzlar | Objektvermarktung",
-    "description": "High-end web design for real estate agencies. Generate more seller leads, showcase properties emotionally, and establish a highly reputable digital brokerage."
+    "title": "Real Estate Broker/Agent Web Design Agency Wetzlar | Property Marketing",
+    "description": "Premium web design for real estate agents. Generate more seller leads, showcase properties emotionally, and build a reputable digital brand."
   }
 }

@@ -141,7 +141,7 @@ const Gastronomie: React.FC = () => {
                 <div className="w-12 h-12 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center mb-6">
                   <OptimizedIcon icon={iconMap[item.icon] || Confetti} />
                 </div>
-                <h3 className="font-bold text-xl text-secondary mb-3">{item.title}</h3>
+                <p className="font-bold text-xl text-secondary mb-3">{item.title}</p>
                 <p className="text-slate-600">{item.desc}</p>
               </div>
             ))}

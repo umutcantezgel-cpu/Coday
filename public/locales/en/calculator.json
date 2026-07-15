@@ -25,7 +25,7 @@
     "label": "The Project Configurator",
     "next_step": "Send us your inquiry in the next step.",
     "satisfied": "Satisfied with your configuration?",
-    "subtitle_default": "Calculate your web project and choose from 9 categories. From basic to professional solutions.",
+    "subtitle_default": "Determine the required budget for your new website or app. Build your perfect package across 9 feature categories, tailored to your exact business needs.",
     "subtitle_packages": "Extend your selected package for your web project with additional modules.",
     "title_1": "Calculate Your",
     "title_2": "Web Project.",
@@ -152,14 +152,14 @@
     "package": "Selected Package"
   },
   "meta": {
-    "title": "Project Cost Calculator | Coday Web Agency",
-    "description": "Calculate the costs for your next website, web app or e-commerce solution in real time."
+    "title": "Project Cost Estimator | Coday Web Agency",
+    "description": "Instantly estimate the budget for your next digital product. Use the Coday project configurator to get accurate pricing for web development, apps, and stores."
   },
   "page": {
-    "description": "Use our service for your digital project."
+    "description": "Get a quick and reliable price estimate for your custom web development needs."
   },
   "seoText": {
-    "title": "Project Cost Calculator | The Agency Configurator | Coday Web Agency",
-    "content": "Use our transparent project cost calculator, The Agency Configurator, to get a realistic estimate for your next web project. As a professional Coday web agency, we place great value on cost transparency and planning reliability from the very beginning.\n\nWhether you are planning a simple corporate website, a complex e-commerce shop, or a custom web application - our configurator takes all relevant factors into account, such as design requirements, technical features, and SEO optimization.\n\nStart your project planning with the Coday Web Agency now and get a solid cost estimate in just a few minutes. We are then happy to provide you with a detailed, binding offer in a personal consultation. Use our Project Cost Calculator to estimate your next app."
+    "title": "Web Development Pricing Calculator | Coday Configurator",
+    "content": "Discover the exact investment required for your upcoming digital venture using our advanced web project estimator. At Coday, we believe in upfront pricing and complete financial clarity to help you make informed decisions before development even starts.\n\nWhether you need a high-converting landing page, a fully-fledged online store, or a bespoke headless application, this tool evaluates every detail—ranging from UI/UX design preferences to backend integrations and performance tuning.\n\nBuild your custom service package today to receive an instant, data-driven cost breakdown. Once you have your estimate, our team is ready to dive deep into your requirements during a personalized consultation and craft a concrete roadmap for your success."
   }
 }

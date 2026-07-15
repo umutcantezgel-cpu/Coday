@@ -1362,7 +1362,7 @@
       "react-nextjs-agentur": {
         "title": "React & Next.js Development",
         "description": "I build scalable frontends with modern frameworks for maximum performance and user experience.",
-        "long_description": "In modern web development, speed and user friendliness are crucial. With React and Next.js we rely on the industry standard for performant, scalable and maintainable web applications. We develop tailored solutions that combine technical excellence with outstanding design.",
+        "long_description": "We build scalable, high-performance web applications using React and Next.js. Our custom solutions combine technical excellence with outstanding UX design.",
         "benefits": [
           "Blazing fast load times",
           "SEO-optimized Server-Side Rendering",
@@ -1373,7 +1373,7 @@
       "e-commerce-shops": {
         "title": "E-Commerce Shop Development",
         "description": "High-Performance Online Shops with Shopify or Custom Headless solutions for maximum conversion.",
-        "long_description": "We develop online shops that don't just look good, but sell. Whether Shopify Plus or Headless Commerce with Shopify Hydrogen – we build shopping experiences your customers love and increase your revenue.",
+        "long_description": "High-Performance Online Shops with Shopify Plus or Headless Commerce. We develop custom E-Commerce solutions that maximize conversion rates.",
         "benefits": [
           "Optimized Checkout Funnel",
           "Headless Commerce Architecture",
@@ -1382,9 +1382,9 @@
         ]
       },
       "full-stack-entwicklung": {
-        "title": "Full-Stack Web Apps",
+        "title": "Full-Stack Web App Development",
         "description": "Robust backends and APIs with Node.js, TypeScript and Edge Computing solutions.",
-        "long_description": "A strong frontend needs a powerful backend. We develop secure and scalable server architectures, APIs and databases that form the backbone of your digital products.",
+        "long_description": "We develop secure and scalable server architectures, APIs and databases that form the reliable backend for your high-performance digital products.",
         "benefits": [
           "High-performance APIs",
           "Secure data processing",
@@ -1394,8 +1394,8 @@
       },
       "cloud-infrastructure": {
         "title": "Cloud Infrastructure & DevOps",
-        "description": "High-Performance Hosting and Deployment on Vercel or AWS for global availability.",
-        "long_description": "The right cloud strategy decides speed and availability. We rely on Serverless architectures and Edge Networks to deliver your content worldwide in milliseconds.",
+        "description": "High-Performance Cloud Hosting and DevOps Deployment on Vercel or AWS for global availability.",
+        "long_description": "We utilize modern Serverless architectures and Edge Networks to deliver your content globally in milliseconds with maximum speed and availability.",
         "benefits": [
           "Global availability",
           "Automatic scaling",
@@ -1423,9 +1423,9 @@
         "benefits": ["Consistent UI", "Faster development", "Simplified maintenance", "Scalability"]
       },
       "website-relaunch": {
-        "title": "Website Redesign & Relaunch",
-        "description": "From strategy to new design. We fundamentally modernize your web presence.",
-        "long_description": "Outdated websites cost revenue and reputation. We accompany your relaunch holistically: Strategy, UX concept, design and technical implementation from a single source.",
+        "title": "Professional Website Relaunch",
+        "description": "From strategy to complete Redesign. We fundamentally modernize your web presence for a successful Relaunch.",
+        "long_description": "We guide your website relaunch holistically: From digital strategy and UX concept to modern redesign and technical implementation from a single source.",
         "benefits": [
           "Modern Look & Feel",
           "Optimized User Experience",
@@ -1436,9 +1436,9 @@
     },
     "growth": {
       "seo-optimization": {
-        "title": "Search Engine Optimization (SEO)",
+        "title": "SEO Agency for Maximum Visibility",
         "description": "Maximum visibility in search engines. We bring your site to the top and ensure quality traffic.",
-        "long_description": "Being found is everything. With data-driven SEO strategy, technical optimization and high-quality content we ensure your target group finds you exactly when they search for you.",
+        "long_description": "With a data-driven SEO strategy, technical optimization, and high-quality content, we ensure your business achieves maximum visibility in search engines.",
         "benefits": [
           "Top rankings locally & globally",
           "More qualified leads",
@@ -1447,9 +1447,9 @@
         ]
       },
       "performance-optimization": {
-        "title": "Speed & Core Web Vitals",
-        "description": "High-Speed optimization for better User Experience, higher Conversion Rates and Top Google Rankings.",
-        "long_description": "Speed is a feature. Slow websites lose customers. We analyze and optimize your entire infrastructure for load times in the millisecond range.",
+        "title": "Web Performance Optimization",
+        "description": "Speed and Core Web Vitals optimization for better User Experience, higher Conversion Rates and Top Google Rankings.",
+        "long_description": "Speed is a feature. Slow websites lose customers. We analyze and optimize your entire infrastructure for load times in the millisecond range and excellent Core Web Vitals.",
         "benefits": [
           "Better Conversion Rates",
           "Lower Bounce Rates",
@@ -1459,8 +1459,8 @@
       },
       "digital-consulting": {
         "title": "Consulting & Strategy",
-        "description": "Strategic consulting for your digital transformation. Tech stack, processes and growth.",
-        "long_description": "The digital world is complex. We give you orientation. From selecting the right technologies to optimizing your digital business processes.",
+        "description": "Strategic consulting and Strategy for your digital transformation. Tech stack, processes and growth.",
+        "long_description": "Strategic consulting for your digital transformation: We help you select the right technologies and optimize your digital business processes.",
         "benefits": [
           "Clear Roadmap",
           "Avoidance of bad investments",

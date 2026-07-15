@@ -10,10 +10,10 @@ export const ReservationDemo = () => {
     <div className="bg-surface-light rounded-3xl p-8 max-w-lg mx-auto shadow-2xl border border-white/20 overflow-hidden relative">
       <div className="absolute top-0 inset-x-0 h-1 bg-primary"></div>
 
-      <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
+      <p className="text-xl font-bold mb-6 flex items-center gap-2">
         <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse motion-reduce:animate-none"></span>
         Tisch reservieren
-      </h3>
+      </p>
 
       <div className="space-y-6">
         {/* Step 1: Date & Time */}

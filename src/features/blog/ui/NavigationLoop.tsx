@@ -33,9 +33,9 @@ export const RelatedArticles: React.FC<{ currentSlug: string; category: string }
   return (
     <section className="py-[var(--space-section)] border-t border-gray-100 bg-surface-light/30">
       <div className="container mx-auto px-4 max-w-4xl">
-        <h3 className="text-2xl font-display font-bold text-secondary mb-10">
+        <h2 className="text-2xl font-display font-bold text-secondary mb-10">
           {t('relatedArticles')}
-        </h3>
+        </h2>
         <div className="grid md:grid-cols-2 gap-8">
           {related.map((post) => (
             <Link
@@ -57,9 +57,9 @@ export const RelatedArticles: React.FC<{ currentSlug: string; category: string }
                   <span className="text-xs font-bold text-primary uppercase tracking-wider mb-2 block">
                     {post.category}
                   </span>
-                  <h4 className="font-bold text-secondary text-lg leading-snug mb-2 group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms] line-clamp-2">
+                  <p className="font-bold text-secondary text-lg leading-snug mb-2 group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms] line-clamp-2">
                     {post.title}
-                  </h4>
+                  </p>
                   <div className="flex items-center text-sm text-gray-400 font-medium group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms]">
                     {t('readArticle')}
                     <ArrowRight

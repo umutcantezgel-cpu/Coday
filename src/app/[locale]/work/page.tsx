@@ -27,7 +27,7 @@ export async function generateMetadata({
   return generatePageMetadata({
     title: 'Webdesign Referenzen Wetzlar | Unsere Projekte',
     description:
-      'Echte Kundenprojekte von Coday in Wetzlar. Batherm, Schlüssel Schmiede und weitere Referenzen aus Mittelhessen. Überzeugen Sie sich selbst von unserer Arbeit.',
+      'Echte Kundenprojekte von Coday in Wetzlar. Referenzen wie Batherm und Schlüssel Schmiede aus Mittelhessen. Überzeugen Sie sich von unserer Arbeit.',
     path: '/de/work',
     type: 'money',
   });

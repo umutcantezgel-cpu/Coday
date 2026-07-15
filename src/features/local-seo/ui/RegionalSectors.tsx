@@ -32,7 +32,7 @@ export const RegionalSectors: React.FC<{ city: CityData }> = ({ city }) => {
                   <Buildings weight="duotone" className="w-8 h-8" />
                 )}
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">{sector}</h3>
+              <p className="text-xl font-semibold text-white mb-3">{sector}</p>
               <p className="text-muted leading-relaxed">
                 Wir entwickeln maßgeschneiderte digitale Lösungen und Automatisierungsprozesse für
                 Unternehmen aus dem Bereich {sector} in {city.displayName}.

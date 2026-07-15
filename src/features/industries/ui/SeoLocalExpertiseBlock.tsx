@@ -5,6 +5,8 @@ export const SeoLocalExpertiseBlock: React.FC<{ children?: React.ReactNode }> = 
   const locale = useLocale();
   const isDe = locale !== 'en';
 
+  if (!children) return null;
+
   return (
     <section className="py-16 bg-white border-t border-gray-100">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

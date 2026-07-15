@@ -99,7 +99,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   prefetch={false}
-                  href="/contact"
+                  href="/about"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
                   {t('nav.company.about', { defaultValue: 'Über uns' })}

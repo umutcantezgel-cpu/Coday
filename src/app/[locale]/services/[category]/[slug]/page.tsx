@@ -6,8 +6,10 @@ import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { servicesData } from '@/shared/data/services';
 
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, getMessages } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
+import { NextIntlClientProvider } from 'next-intl';
+import { pick } from '@/shared/lib/pick';
 
 export const dynamic = 'force-static';
 export const dynamicParams = false;
@@ -72,6 +74,9 @@ export default async function ServiceDetailPage({
   if (!featureData) return notFound();
 
   const _locale = (await params)?.locale || 'de';
+  const messages = await getMessages();
+  const pageMessages = pick(messages as any, ['services']);
+
   return (
     <>
       <script
@@ -91,7 +96,9 @@ export default async function ServiceDetailPage({
           }),
         }}
       />
-      <ServiceDetailClient />
+      <NextIntlClientProvider messages={pageMessages}>
+        <ServiceDetailClient />
+      </NextIntlClientProvider>
     </>
   );
 }

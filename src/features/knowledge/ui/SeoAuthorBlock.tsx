@@ -2,8 +2,10 @@ import React from 'react';
 import { useTranslations } from 'next-intl';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
 
-export const SeoAuthorBlock: React.FC = () => {
+export const SeoAuthorBlock: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
   const t = useTranslations('blog.seoAuthorBlock');
+
+  if (!children) return null;
 
   return (
     <div className="mt-16 bg-white/5 border border-white/10 rounded-2xl p-8 lg:p-12">

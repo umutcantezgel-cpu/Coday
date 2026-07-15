@@ -76,6 +76,7 @@ export function IndustryOverviewClient() {
                   <h2 className="text-2xl font-bold font-display text-secondary mb-3 group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms]">
                     <Link
                       href={`/branchen/${industry.slug}`}
+                      locale="de"
                       className="before:absolute before:inset-0"
                     >
                       {t(industry.title)}

@@ -58,9 +58,9 @@ export const GamifiedRoiCalculator: React.FC<GamifiedRoiCalculatorProps> = ({
             <ChartLineUp weight="bold" className="mr-2" />
             Umsatz-Rechner
           </div>
-          <h3 className="text-3xl sm:text-4xl font-display font-bold mb-4">
+          <p className="text-3xl sm:text-4xl font-display font-bold mb-4">
             Wie viel Umsatz lässt Ihr {industryName} liegen?
-          </h3>
+          </p>
           <p className="text-secondary-400 text-lg mb-8 leading-relaxed">
             Schieben Sie den Regler auf Ihren aktuellen Jahresumsatz und entdecken Sie das
             ungenutzte Potenzial, das Ihnen durch veraltete Web-Technologien und fehlende

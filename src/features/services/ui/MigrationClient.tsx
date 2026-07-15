@@ -100,9 +100,9 @@ export function MigrationClient() {
                 <div className="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center">
                   <OptimizedIcon icon={X} className="text-red-500 text-xl" weight="bold" />
                 </div>
-                <h3 className="text-xl font-bold text-red-700">
+                <p className="text-xl font-bold text-red-700">
                   {t('migration_page.before_after.before.label')}
-                </h3>
+                </p>
               </div>
               <ul className="space-y-4">
                 {safeBeforeItems.map((item, i) => (
@@ -124,9 +124,9 @@ export function MigrationClient() {
                 <div className="w-10 h-10 rounded-full bg-green-500/10 flex items-center justify-center">
                   <OptimizedIcon icon={Check} className="text-green-500 text-xl" weight="bold" />
                 </div>
-                <h3 className="text-xl font-bold text-green-700">
+                <p className="text-xl font-bold text-green-700">
                   {t('migration_page.before_after.after.label')}
-                </h3>
+                </p>
               </div>
               <ul className="space-y-4">
                 {safeAfterItems.map((item, i) => (
@@ -172,7 +172,7 @@ export function MigrationClient() {
                   >
                     {i + 1}
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-2">{step.title}</h3>
+                  <p className="text-lg font-bold text-white mb-2">{step.title}</p>
                   <p className="text-slate-400 text-sm">{step.desc}</p>
                 </div>
                 {/* Connector line (except for last) */}
@@ -243,7 +243,7 @@ export function MigrationClient() {
                 key={i}
                 className="bg-surface-elevated p-8 rounded-2xl shadow-sm border border-slate-100"
               >
-                <h3 className="text-lg font-bold mb-3">{item.q}</h3>
+                <p className="text-lg font-bold mb-3">{item.q}</p>
                 <p className="text-content-muted leading-relaxed max-w-prose text-pretty">
                   {item.a}
                 </p>

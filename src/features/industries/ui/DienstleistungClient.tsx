@@ -120,7 +120,7 @@ const Dienstleistung: React.FC = () => {
                   icon={iconMap[item.icon] || ChartLineUp}
                   className="text-4xl text-blue-600 mb-4"
                 />
-                <h3 className="font-bold text-xl text-secondary mb-2">{item.title}</h3>
+                <p className="font-bold text-xl text-secondary mb-2">{item.title}</p>
                 <p className="text-slate-600">{item.desc}</p>
               </div>
             ))}

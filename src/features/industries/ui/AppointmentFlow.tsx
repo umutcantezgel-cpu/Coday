@@ -22,7 +22,7 @@ export const AppointmentFlow = () => {
             <User size={24} />
           </div>
           <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex-1">
-            <h4 className="font-bold text-lg mb-1">Patient wählt Anliegen</h4>
+            <p className="font-bold text-lg mb-1">Patient wählt Anliegen</p>
             <p className="text-gray-500 text-sm">
               Automatisches Triage-System filtert Dringlichkeit.
             </p>
@@ -40,7 +40,7 @@ export const AppointmentFlow = () => {
             <CalendarBlank size={24} />
           </div>
           <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex-1">
-            <h4 className="font-bold text-lg mb-1">Terminfindung</h4>
+            <p className="font-bold text-lg mb-1">Terminfindung</p>
             <p className="text-gray-500 text-sm">Echtzeit-Abgleich mit Ihrem Praxis-Kalender.</p>
           </div>
         </m.div>
@@ -56,7 +56,7 @@ export const AppointmentFlow = () => {
             <ShieldCheck size={28} />
           </div>
           <div className="bg-primary/5 p-6 rounded-2xl border border-primary/10 flex-1">
-            <h4 className="font-bold text-lg mb-1 text-primary">Bestätigt & DSGVO-Konform</h4>
+            <p className="font-bold text-lg mb-1 text-primary">Bestätigt & DSGVO-Konform</p>
             <p className="text-primary/70 text-sm">Patient erhält Erinnerungen per SMS/Mail.</p>
           </div>
         </m.div>

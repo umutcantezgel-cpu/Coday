@@ -17,7 +17,7 @@ export async function generateMetadata({
     return generatePageMetadata({
       title: 'Web Design for Doctors & Clinics | Agency Hesse',
       description:
-        'Professional practice websites for doctors. Attract patients through modern web design and local SEO optimization. Inquire today.',
+        'Professional practice websites for Doctors and Clinics by Agency Hesse. Attract patients through modern web design and local SEO optimization. Inquire today.',
       path: '/en/branchen/gesundheitswesen',
       type: 'default',
     });
@@ -46,7 +46,7 @@ export default async function GesundheitswesenPage({
       : 'Webdesign für Ärzte & Praxen | Healthcare Marketing | Coday';
   const _seoDesc =
     _locale === 'en'
-      ? 'Professional practice websites for doctors. Attract patients through modern web design and local SEO optimization. Inquire today.'
+      ? 'Professional practice websites for Doctors and Clinics by Agency Hesse. Attract patients through modern web design and local SEO optimization. Inquire today.'
       : 'Professionelle Praxis-Webseiten für Ärzte und im Gesundheitswesen. Patientengewinnung durch modernes Webdesign und lokale SEO Optimierung. Jetzt anfragen.';
   return (
     <>

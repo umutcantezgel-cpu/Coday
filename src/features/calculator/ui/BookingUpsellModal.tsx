@@ -105,12 +105,12 @@ export const BookingUpsellModal: React.FC<BookingUpsellModalProps> = ({ isOpen, 
                 <Icon name="check" className="text-3xl" />
               </div>
 
-              <h3
+              <p
                 id="upsell-modal-title"
                 className="font-display font-bold text-2xl text-gray-900 mb-2"
               >
                 Anfrage erfolgreich gesendet!
-              </h3>
+              </p>
               <p id="upsell-modal-desc" className="text-gray-600 mb-8">
                 Vielen Dank für Ihr Interesse. Wir haben Ihre Konfiguration erhalten.
                 <br />

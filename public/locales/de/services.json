@@ -1361,7 +1361,7 @@
       "e-commerce-shops": {
         "title": "E-Commerce & Online-Shops",
         "description": "High-Performance Online-Shops mit Shopify oder Custom Headless Lösungen für maximale Conversion.",
-        "long_description": "Ich entwickle Online-Shops, die nicht nur gut aussehen, sondern verkaufen. Ob Shopify Plus oder Headless Commerce mit Shopify Hydrogen – wir bauen Einkaufserlebnisse, die Ihre Kunden lieben und Ihren Umsatz steigern.",
+        "long_description": "High-Performance Online-Shops mit Shopify Plus oder Headless Commerce. Wir entwickeln maßgeschneiderte E-Commerce Lösungen für mehr Umsatz und Conversion.",
         "benefits": [
           "Optimierter Checkout-Funnel",
           "Headless Commerce Architektur",
@@ -1370,9 +1370,9 @@
         ]
       },
       "full-stack-entwicklung": {
-        "title": "Full-Stack Web-Apps",
+        "title": "Full-Stack Web-App Entwicklung",
         "description": "Robuste Backends und APIs mit Node.js, TypeScript und Edge-Computing Lösungen.",
-        "long_description": "Ein starkes Frontend braucht ein leistungsfähiges Backend. Ich entwickle sichere und skalierbare Server-Architekturen, APIs und Datenbanken, die das Rückgrat Ihrer digitalen Produkte bilden.",
+        "long_description": "Ich entwickle sichere und skalierbare Server-Architekturen, APIs und Datenbanken für leistungsfähige Full-Stack Web-Apps und digitale Produkte.",
         "benefits": [
           "Hochperformante APIs",
           "Sichere Datenverarbeitung",
@@ -1383,7 +1383,7 @@
       "cloud-infrastructure": {
         "title": "Cloud Infrastruktur & Hosting",
         "description": "High-Performance Hosting und Deployment auf Vercel oder AWS für globale Verfügbarkeit.",
-        "long_description": "Die richtige Cloud-Strategie entscheidet über Geschwindigkeit und Verfügbarkeit. Wir setzen auf Serverless-Architekturen und Edge-Networks, um Ihre Inhalte weltweit in Millisekunden auszuliefern.",
+        "long_description": "Mit modernsten Serverless-Architekturen und Edge-Networks sorgen wir für maximale Geschwindigkeit und globale Verfügbarkeit Ihrer Web-Anwendungen.",
         "benefits": [
           "Globale Verfügbarkeit",
           "Automatische Skalierung",
@@ -1416,9 +1416,9 @@
         ]
       },
       "website-relaunch": {
-        "title": "Website Relaunch",
+        "title": "Professioneller Website Relaunch",
         "description": "Von der Strategie bis zum neuen Design. Wir modernisieren Ihre Webpräsenz grundlegend.",
-        "long_description": "Veraltete Websites kosten Umsatz und Reputation. Wir begleiten Ihren Relaunch ganzheitlich: Strategie, UX-Konzept, Design und technische Umsetzung aus einer Hand.",
+        "long_description": "Wir begleiten Ihren Website Relaunch ganzheitlich: Von der Strategie über das UX-Design bis zur technischen Umsetzung für mehr Umsatz und Sichtbarkeit.",
         "benefits": [
           "Modernes Look & Feel",
           "Optimierte User Experience",
@@ -1429,7 +1429,7 @@
     },
     "growth": {
       "seo-optimization": {
-        "title": "SEO Agentur",
+        "title": "SEO Agentur für mehr Sichtbarkeit",
         "description": "Maximale Sichtbarkeit in Suchmaschinen. Wir bringen Ihre Seite nach oben und sorgen für qualitativen Traffic.",
         "long_description": "Gefunden werden ist alles. Mit datengetriebener SEO-Strategie, technischer Optimierung und hochwertigem Content sorgen wir dafür, dass Ihre Zielgruppe Sie genau dann findet, wenn sie nach Ihnen sucht.",
         "benefits": [
@@ -1440,7 +1440,7 @@
         ]
       },
       "performance-optimization": {
-        "title": "Performance",
+        "title": "Web Performance Optimierung",
         "description": "High-Speed Optimierung für bessere User Experience, höhere Conversion-Rates und Top-Google-Rankings.",
         "long_description": "Geschwindigkeit ist ein Feature. Langsame Websites verlieren Kunden. Wir analysieren und optimieren Ihre gesamte Infrastruktur für Ladezeiten im Millisekunden-Bereich.",
         "benefits": [
@@ -1453,7 +1453,7 @@
       "digital-consulting": {
         "title": "Beratung & Strategie",
         "description": "Strategische Beratung für Ihre digitale Transformation. Tech-Stack, Prozesse und Wachstum.",
-        "long_description": "Die digitale Welt ist komplex. Wir geben Ihnen Orientierung. Von der Auswahl der richtigen Technologien bis zur Optimierung Ihrer digitalen Geschäftsprozesse.",
+        "long_description": "Strategische Beratung für Ihre digitale Transformation: Von der Technologie-Auswahl bis zur Optimierung Ihrer digitalen Geschäftsprozesse.",
         "benefits": [
           "Klare Roadmap",
           "Vermeidung von Fehlinvestitionen",

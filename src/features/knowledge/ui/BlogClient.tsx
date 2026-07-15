@@ -146,14 +146,14 @@ const Blog: React.FC = () => {
                   <span className="inline-block px-3 py-1 rounded-full bg-blue-600 text-white text-xs font-bold uppercase tracking-wider mb-4 relative z-40">
                     {t('highlight')}
                   </span>
-                  <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-4 shadow-sm">
+                  <p className="text-3xl md:text-5xl font-display font-bold text-white mb-4 shadow-sm">
                     <Link
                       href={`/knowledge/blog/${featuredPost.slug}`}
                       className="before:absolute before:inset-0 before:z-30 hover:underline"
                     >
                       {featuredPost.title}
                     </Link>
-                  </h2>
+                  </p>
                   <div className="flex items-center space-x-4 text-slate-300 relative z-40">
                     <span className="text-sm font-medium">
                       {t('readTime')}: {featuredPost.readTime}
@@ -202,14 +202,14 @@ const Blog: React.FC = () => {
                       <span className="text-slate-500">{post.readTime}</span>
                     </div>
 
-                    <h3 className="text-2xl font-bold text-gray-900 mb-3 transition-colors motion-reduce:duration-[0.01ms] line-clamp-2">
+                    <p className="text-2xl font-bold text-gray-900 mb-3 transition-colors motion-reduce:duration-[0.01ms] line-clamp-2">
                       <Link
                         href={`/knowledge/blog/${post.slug}`}
                         className="before:absolute before:inset-0 before:z-30 group-hover:text-blue-600 hover:underline"
                       >
                         {post.title}
                       </Link>
-                    </h3>
+                    </p>
 
                     <p className="text-slate-500 line-clamp-3 mb-6 flex-grow relative z-40">
                       {post.excerpt}
@@ -242,7 +242,7 @@ const Blog: React.FC = () => {
               className="mx-auto text-slate-300 mb-4"
               size="xl"
             />
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">{t('noResults')}</h3>
+            <p className="text-2xl font-bold text-gray-900 mb-2">{t('noResults')}</p>
             <p className="text-slate-500 mb-6">{t('noResultsDesc')}</p>
             <button
               onClick={() => {

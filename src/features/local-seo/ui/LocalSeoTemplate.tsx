@@ -123,9 +123,9 @@ export const LocalSeoTemplate: React.FC<LocalSeoTemplateProps> = ({ content, cit
             </div>
             <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col items-center justify-center min-h-[400px]">
               <OptimizedIcon icon={MapPin} className="text-primary-500 w-24 h-24 mb-6 opacity-80" />
-              <h3 className="text-2xl font-bold text-secondary-900 mb-2">
+              <p className="text-2xl font-bold text-secondary-900 mb-2">
                 {content.target.split('-').join(' ').toUpperCase()}
-              </h3>
+              </p>
               <p className="text-secondary-800 font-medium text-center">
                 Digitale Transformation vor Ort.
               </p>
@@ -145,7 +145,7 @@ export const LocalSeoTemplate: React.FC<LocalSeoTemplateProps> = ({ content, cit
           <div className="space-y-6">
             {content.faq.map((item, idx) => (
               <div key={idx} className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
-                <h3 className="text-lg font-bold text-secondary-900 mb-3">{item.q}</h3>
+                <p className="text-lg font-bold text-secondary-900 mb-3">{item.q}</p>
                 <p className="text-secondary-800 font-medium leading-relaxed">{item.a}</p>
               </div>
             ))}

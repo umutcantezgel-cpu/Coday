@@ -216,7 +216,7 @@ const BlogPost: React.FC = () => {
                 <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
                 <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
                   <div>
-                    <h2 className="text-2xl font-bold text-secondary mb-2">{t('cta.title')}</h2>
+                    <p className="text-2xl font-bold text-secondary mb-2">{t('cta.title')}</p>
                     <p className="text-slate-600">{t('cta.desc')}</p>
                   </div>
                   <Link
@@ -235,7 +235,7 @@ const BlogPost: React.FC = () => {
                   <span className="font-bold text-3xl">{post.author.charAt(0)}</span>
                 </div>
                 <div>
-                  <h2 className="text-xl font-bold text-secondary mb-2">{post.author}</h2>
+                  <p className="text-xl font-bold text-secondary mb-2">{post.author}</p>
                   <p className="text-slate-500 mb-4 leading-relaxed">{t('authorDesc')}</p>
                   <Link
                     href="/contact"

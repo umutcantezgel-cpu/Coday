@@ -128,9 +128,9 @@ const Calculator: React.FC = () => {
                         )}
                       </div>
                       <div className="text-left">
-                        <h2 className="font-display font-bold text-lg text-gray-900">
+                        <p className="font-display font-bold text-lg text-gray-900">
                           {t(`categories.${category}`)}
-                        </h2>
+                        </p>
                         {selectedCount > 0 && (
                           <p className="text-xs text-primary font-medium mt-0.5">
                             {t('module_count', { count: selectedCount })}
@@ -199,9 +199,9 @@ const Calculator: React.FC = () => {
       {/* Continue to Contact CTA */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
         <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-3xl p-8 text-center border border-primary/10">
-          <h3 className="font-display font-bold text-2xl text-gray-900 mb-2">
+          <p className="font-display font-bold text-2xl text-gray-900 mb-2">
             {t('hero.satisfied')}
-          </h3>
+          </p>
           <p className="text-gray-600 mb-6">{t('hero.next_step')}</p>
           <button
             onClick={handleContinueToContact}

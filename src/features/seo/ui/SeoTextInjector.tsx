@@ -231,7 +231,7 @@ export const SeoTextInjector: React.FC<SeoTextInjectorProps> = ({ title = '', h1
     const exactKeywordsMapEn: Record<string, string[]> = {
       '/branchen/automobil/kfz-mechatroniker': ['Digital Dominance for Car Mechanics | Coday'],
       '/branchen/automobil/autohaendler': ['Web Design Agency for Premium Car Dealers | Coday'],
-      '/branchen/handwerk-bau': ['Handwerk Bau Web Design & IT Solutions | Coday'],
+      '/branchen/handwerk-bau': ['Trades and Construction Web Design & IT Solutions | Coday'],
       '/branchen/immobilien-makler': [
         'Immobilien Makler Web Design & IT Solutions | Coday',
         'Exclusive properties, exclusively presented',
@@ -240,7 +240,7 @@ export const SeoTextInjector: React.FC<SeoTextInjectorProps> = ({ title = '', h1
         'Unternehmensberatung Web Design & IT Solutions | Coday',
         'Make expertise visible',
       ],
-      '/branchen/aerzte-gesundheit': ['Aerzte Gesundheit Web Design & IT Solutions | Coday'],
+      '/branchen/aerzte-gesundheit': ['Doctors & Health Web Design & IT Solutions | Coday'],
       '/knowledge/blog/anti-ai-manifest': ['Anti-AI Manifesto: No AI Web Design | Coday Blog'],
       '/knowledge/blog/der-perfekte-omni-channel-mix': [
         'The Perfect Omni-Channel Mix | Coday Blog',

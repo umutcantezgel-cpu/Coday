@@ -160,9 +160,9 @@ export const GamifiedIndustryTemplate: React.FC<{ content: any; cityData?: any }
                   <div className="w-14 h-14 rounded-2xl bg-primary-50 flex items-center justify-center mb-6 text-primary-600">
                     <OptimizedIcon icon={Icon} className="w-7 h-7" />
                   </div>
-                  <h3 className="text-2xl font-bold font-display text-secondary-900 mb-3">
+                  <p className="text-2xl font-bold font-display text-secondary-900 mb-3">
                     {card.title}
-                  </h3>
+                  </p>
                   <p className="text-secondary-600 leading-relaxed font-medium mt-auto">
                     {card.text}
                   </p>
@@ -208,9 +208,9 @@ export const GamifiedIndustryTemplate: React.FC<{ content: any; cityData?: any }
                   viewport={{ once: true, margin: '-100px' }}
                   className="bg-secondary-50 rounded-3xl p-8 md:p-10 border border-secondary-100"
                 >
-                  <h3 className="text-2xl font-bold font-display text-secondary-900 mb-4">
+                  <p className="text-2xl font-bold font-display text-secondary-900 mb-4">
                     {step.title}
-                  </h3>
+                  </p>
                   <p className="text-secondary-600 leading-relaxed font-medium">
                     {step.description}
                   </p>
@@ -239,7 +239,7 @@ export const GamifiedIndustryTemplate: React.FC<{ content: any; cityData?: any }
                 onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
               >
                 <div className="p-6 flex justify-between items-center">
-                  <h3 className="text-lg font-bold pr-8">{item.q}</h3>
+                  <p className="text-lg font-bold pr-8">{item.q}</p>
                   <div className="text-primary-500 flex-shrink-0">
                     {openFaq === idx ? (
                       <CaretUp size={24} weight="bold" />

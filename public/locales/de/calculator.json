@@ -25,7 +25,7 @@
     "label": "Der Projekt-Konfigurator",
     "next_step": "Im nächsten Schritt senden Sie uns Ihre Anfrage.",
     "satisfied": "Zufrieden mit Ihrer Konfiguration?",
-    "subtitle_default": "Kalkulieren Sie Ihr Webprojekt und wählen Sie aus 9 Kategorien. Von der Basis bis zur Profi-Lösung.",
+    "subtitle_default": "Ermitteln Sie den Investitionsrahmen für Ihre digitale Plattform. Konfigurieren Sie individuelle Features aus 9 Bereichen – passgenau für Startups bis hin zu Enterprise-Kunden.",
     "subtitle_packages": "Erweitern Sie Ihr gewähltes Paket für Ihr Webprojekt mit zusätzlichen Modulen.",
     "title_1": "Kalkulieren Sie Ihr",
     "title_2": "Webprojekt."
@@ -152,13 +152,13 @@
   },
   "meta": {
     "title": "Projektkosten-Rechner | Coday Web-Agentur",
-    "description": "Berechnen Sie in Echtzeit die Kosten für Ihre nächste Website, Web-App oder E-Commerce Lösung."
+    "description": "Kalkulieren Sie online die Kosten für Ihr Webprojekt. Der Konfigurator der Coday Web-Agentur liefert sofortige Schätzungen für Websites, E-Commerce und Apps."
   },
   "page": {
-    "description": "Nutzen Sie unseren Service für Ihr digitales Projekt."
+    "description": "Planen und berechnen Sie Ihr nächstes digitales Vorhaben mit unserem interaktiven Tool."
   },
   "seoText": {
-    "title": "Projektkosten-Rechner | The Agency Configurator | Coday Web-Agentur",
-    "content": "Nutzen Sie unseren transparenten Projektkosten-Rechner, The Agency Configurator, um eine realistische Einschätzung für Ihr nächstes Webprojekt zu erhalten. Als professionelle Coday Web-Agentur legen wir großen Wert auf Kostentransparenz und Planungssicherheit von Anfang an.\n\nEgal ob Sie eine einfache Corporate Website, einen komplexen E-Commerce Shop oder eine individuelle Web-Applikation planen – unser Konfigurator berücksichtigt alle relevanten Faktoren wie Design-Anforderungen, technische Features und SEO-Optimierung.\n\nStarten Sie jetzt Ihre Projektplanung mit der Coday Web-Agentur und erhalten Sie in wenigen Minuten eine fundierte Kostenschätzung. Für ein detailliertes, verbindliches Angebot stehen wir Ihnen anschließend gerne in einem persönlichen Beratungsgespräch zur Verfügung."
+    "title": "Kostenrechner für Webprojekte | Coday Agency Configurator",
+    "content": "Mit unserem interaktiven Projekt-Konfigurator erhalten Sie schnell und unkompliziert einen präzisen Richtwert für die Realisierung Ihrer digitalen Vision. Wir als erfahrene Coday Web-Agentur setzen auf absolute Klarheit bei der Budgetplanung – ganz ohne versteckte Posten.\n\nVon der performanten Landingpage über maßgeschneiderte E-Commerce-Plattformen bis hin zu hochkomplexen Web-Applikationen: Unser Tool berechnet den Aufwand basierend auf Ihren spezifischen Wünschen bezüglich Design, Funktionen und technischer Infrastruktur.\n\nKonfigurieren Sie jetzt Ihr individuelles Setup und verschaffen Sie sich einen sofortigen Überblick über die zu erwartenden Investitionen. Anschließend besprechen wir die Details gerne in einem unverbindlichen Strategiegespräch und erarbeiten gemeinsam den optimalen Projektplan."
   }
 }

@@ -28,21 +28,23 @@ export async function generateMetadata({
     const fileContents = fs.readFileSync(filePath, 'utf8');
     const content = JSON.parse(fileContents);
 
-    const enTitle = 'Web Design Agency Giessen | Top Websites';
+    const enTitle = 'Agency Location Giessen | Coday';
 
     return generatePageMetadata({
       title: locale === 'en' ? enTitle : content.meta.title,
-      description: locale === 'en' ? 'Web agency in Giessen.' : content.meta.description,
+      description:
+        locale === 'en' ? 'Your local agency location in Giessen.' : content.meta.description,
       path: `/${locale}/standorte/giessen`,
       type: 'money',
     });
   } catch (e) {
     return generatePageMetadata({
       title:
+        locale === 'en' ? 'Agency Location Giessen | Coday' : 'Agentur Standort Gießen | Coday',
+      description:
         locale === 'en'
-          ? 'Web Design Agency Giessen | Top Websites'
-          : 'Webdesign Agentur Gießen | Top Webseiten',
-      description: locale === 'en' ? 'Web agency in Giessen.' : 'Webagentur in Gießen.',
+          ? 'Your local agency location in Giessen.'
+          : 'Ihr lokaler Agentur Standort in Gießen.',
       path: `/${locale}/standorte/giessen`,
       type: 'money',
     });
@@ -88,8 +90,8 @@ export default async function GiessenLocationPage({
     city: 'Gießen',
     description:
       _locale === 'en'
-        ? 'Web design agency in Giessen — Premium websites with Next.js, SEO.'
-        : 'Webdesign Agentur in Gießen — Premium Websites mit Next.js, SEO & Generative Engine Optimization für lokale Unternehmen.',
+        ? 'Your local agency location in Giessen — Premium websites with Next.js, SEO.'
+        : 'Ihr Agentur Standort in Gießen — Premium Websites mit Next.js, SEO & Generative Engine Optimization für lokale Unternehmen.',
     url: `${BASE_URL}/${_locale}/standorte/giessen`,
   });
 
@@ -99,9 +101,7 @@ export default async function GiessenLocationPage({
   };
 
   const _seoTitle =
-    _locale === 'en'
-      ? 'Web Design Agency Giessen | Top Websites | Coday'
-      : 'Webdesign Agentur Gießen | Top Webseiten | Coday';
+    _locale === 'en' ? 'Agency Location Giessen | Coday' : 'Agentur Standort Gießen | Coday';
   return (
     <>
       <script

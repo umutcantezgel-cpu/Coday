@@ -23,10 +23,10 @@ export const ProjectSummary: React.FC = () => {
 
   return (
     <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-flat mb-8">
-      <h3 className="font-bold text-gray-900 mb-4 flex items-center">
+      <p className="font-bold text-gray-900 mb-4 flex items-center">
         <Icon name="inventory_2" className="mr-2 text-primary" />
         Ihre Konfiguration
-      </h3>
+      </p>
 
       {selectedPackageId && (
         <div className="mb-4 pb-4 border-b border-gray-50">

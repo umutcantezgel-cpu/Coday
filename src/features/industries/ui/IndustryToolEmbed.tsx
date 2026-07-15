@@ -68,9 +68,9 @@ export function IndustryToolEmbed({ industryKey }: IndustryToolEmbedProps) {
             />
           </svg>
         </div>
-        <h3 className="text-2xl font-display font-bold text-secondary-900 mb-4 relative z-10">
+        <p className="text-2xl font-display font-bold text-secondary-900 mb-4 relative z-10">
           {t('tool_embed.demo_heading')}
-        </h3>
+        </p>
         <p className="text-secondary-600 max-w-md mx-auto mb-8 relative z-10">
           {t('tool_embed.demo_desc')}
         </p>

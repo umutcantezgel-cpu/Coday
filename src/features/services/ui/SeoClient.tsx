@@ -205,27 +205,27 @@ export function SeoClient() {
               <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6">
                 <OptimizedIcon icon={Gear} />
               </div>
-              <h3 className="font-bold text-2xl mb-4 text-content-base">
+              <p className="font-bold text-2xl mb-4 text-content-base">
                 {t('seo_page.dominance.cards.technical.title')}
-              </h3>
+              </p>
               <p className="text-content-muted">{t('seo_page.dominance.cards.technical.desc')}</p>
             </div>
             <div className="p-8 bg-surface-light rounded-3xl border border-border-muted hover:shadow-lg transition motion-reduce:duration-[0.01ms]">
               <div className="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center mb-6">
                 <OptimizedIcon icon={FileText} />
               </div>
-              <h3 className="font-bold text-2xl mb-4 text-content-base">
+              <p className="font-bold text-2xl mb-4 text-content-base">
                 {t('seo_page.dominance.cards.content.title')}
-              </h3>
+              </p>
               <p className="text-content-muted">{t('seo_page.dominance.cards.content.desc')}</p>
             </div>
             <div className="p-8 bg-surface-light rounded-3xl border border-border-muted hover:shadow-lg transition motion-reduce:duration-[0.01ms]">
               <div className="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center mb-6">
                 <OptimizedIcon icon={MapPin} />
               </div>
-              <h3 className="font-bold text-2xl mb-4 text-content-base">
+              <p className="font-bold text-2xl mb-4 text-content-base">
                 {t('seo_page.dominance.cards.regional.title')}
-              </h3>
+              </p>
               <p className="text-content-muted">{t('seo_page.dominance.cards.regional.desc')}</p>
             </div>
           </div>
@@ -299,7 +299,7 @@ export function SeoClient() {
                   >
                     {phase.step}
                   </div>
-                  <h3 className="font-bold text-xl mt-4 mb-3">{phase.title}</h3>
+                  <p className="font-bold text-xl mt-4 mb-3">{phase.title}</p>
                   <p className="text-sm text-gray-400 leading-relaxed max-w-prose text-pretty">
                     {phase.desc}
                   </p>

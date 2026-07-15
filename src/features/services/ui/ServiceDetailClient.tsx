@@ -225,9 +225,9 @@ export function ServiceDetailClient() {
             {/* Abstract Visual */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full blur-3xl opacity-60"></div>
             <div className="relative glass-card p-8 rounded-3xl border border-white/50 bg-surface-elevated/60 backdrop-blur-xl shadow-glass">
-              <h3 className="font-display font-bold text-2xl text-gray-900 mb-6">
+              <p className="font-display font-bold text-2xl text-gray-900 mb-6">
                 {t('generic_detail.hero.benefits_title')}
-              </h3>
+              </p>
               <ul className="space-y-4">
                 {benefits.map((benefit, i) => (
                   <li key={i} className="flex items-start">
@@ -248,9 +248,9 @@ export function ServiceDetailClient() {
       {!service.processStepsKey && (
         <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-12 lg:mb-24 lg:hidden">
           <div className="glass-card p-8 rounded-2xl bg-surface-elevated shadow-aurora">
-            <h3 className="font-display font-bold text-2xl text-gray-900 mb-6">
+            <p className="font-display font-bold text-2xl text-gray-900 mb-6">
               {t('generic_detail.hero.benefits_title')}
-            </h3>
+            </p>
             <ul className="space-y-4">
               {benefits.map((benefit, i) => (
                 <li key={i} className="flex items-start">
@@ -331,9 +331,9 @@ export function ServiceDetailClient() {
                       >
                         {step.number}
                       </div>
-                      <h3 className="text-xl font-bold mb-4 h-14 flex items-center justify-center">
+                      <p className="text-xl font-bold mb-4 h-14 flex items-center justify-center">
                         {step.title}
-                      </h3>
+                      </p>
                       <p className="text-sm text-gray-400 leading-relaxed max-w-prose text-pretty">
                         {step.description}
                       </p>
@@ -377,7 +377,7 @@ export function ServiceDetailClient() {
                     icon={iconMap[adv.icon] || Code}
                     className="text-sapphire text-3xl mb-4 text-balance"
                   />
-                  <h3 className="font-bold text-gray-900 mb-2">{adv.title}</h3>
+                  <p className="font-bold text-gray-900 mb-2">{adv.title}</p>
                   <p className="text-sm text-gray-500 leading-relaxed max-w-prose text-pretty">
                     {adv.description}
                   </p>
@@ -468,7 +468,7 @@ const FaqItem: React.FC<{ question: string; answer: string }> = ({ question, ans
 
   return (
     <div className="border border-border-subtle rounded-xl bg-surface-elevated overflow-hidden transition motion-reduce:duration-[0.01ms] duration-300 hover:shadow-sm">
-      <h3>
+      <div>
         <button
           onClick={() => setIsOpen(!isOpen)}
           aria-expanded={isOpen}
@@ -481,7 +481,7 @@ const FaqItem: React.FC<{ question: string; answer: string }> = ({ question, ans
             className={`text-gray-400 transition-transform motion-reduce:duration-[0.01ms] duration-300 ${isOpen ? 'rotate-180' : ''}`}
           />
         </button>
-      </h3>
+      </div>
       <div
         id={panelId}
         role="region"

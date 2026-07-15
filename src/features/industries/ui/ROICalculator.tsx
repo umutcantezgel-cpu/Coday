@@ -21,10 +21,10 @@ export const ROICalculator: React.FC = () => {
 
   return (
     <div className="bg-surface-dark border border-white/10 p-8 rounded-3xl max-w-2xl mx-auto backdrop-blur-md">
-      <h3 className="text-2xl font-bold font-display text-white mb-8 flex items-center gap-3">
+      <p className="text-2xl font-bold font-display text-white mb-8 flex items-center gap-3">
         <Calculator className="text-primary" />
         Der "Hidden Revenue" Rechner
-      </h3>
+      </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
         <div>

@@ -155,9 +155,9 @@ export function ApiIntegrationClient() {
                   />
                 </div>
                 <div>
-                  <h3 className="text-4xl font-display font-bold text-white mb-4 leading-tight text-balance">
+                  <p className="text-4xl font-display font-bold text-white mb-4 leading-tight text-balance">
                     {t('api_integration_page.why_automate.items.efficiency.title')}
-                  </h3>
+                  </p>
                   <p className="text-blue-100 text-xl leading-relaxed max-w-prose text-pretty max-w-md">
                     {t('api_integration_page.why_automate.items.efficiency.desc')}
                   </p>
@@ -179,9 +179,9 @@ export function ApiIntegrationClient() {
                   <OptimizedIcon icon={Bug} className="text-2xl" weight="fill" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">
+                  <p className="text-xl font-bold text-slate-900 mb-2">
                     {t('api_integration_page.why_automate.items.errors.title')}
-                  </h3>
+                  </p>
                   <p className="text-content-muted text-sm leading-relaxed max-w-prose text-pretty">
                     {t('api_integration_page.why_automate.items.errors.desc')}
                   </p>
@@ -203,9 +203,9 @@ export function ApiIntegrationClient() {
                   <OptimizedIcon icon={Lightning} className="text-2xl" weight="fill" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">
+                  <p className="text-xl font-bold text-slate-900 mb-2">
                     {t('api_integration_page.why_automate.items.speed.title')}
-                  </h3>
+                  </p>
                   <p className="text-content-muted text-sm leading-relaxed max-w-prose text-pretty">
                     {t('api_integration_page.why_automate.items.speed.desc')}
                   </p>
@@ -261,7 +261,7 @@ export function ApiIntegrationClient() {
                 key={i}
                 className="bg-surface-elevated p-8 rounded-2xl shadow-sm border border-slate-100"
               >
-                <h3 className="text-lg font-bold mb-3">{item.q}</h3>
+                <p className="text-lg font-bold mb-3">{item.q}</p>
                 <p className="text-content-muted leading-relaxed max-w-prose text-pretty">
                   {item.a}
                 </p>

@@ -108,7 +108,7 @@ export function UiUxClient() {
                   {String(i + 1).padStart(2, '0')}
                 </div>
                 <div className="relative pt-12">
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">{step.title}</h3>
+                  <p className="text-xl font-bold text-slate-900 mb-2">{step.title}</p>
                   <p className="text-content-muted">{step.desc}</p>
                 </div>
               </m.div>
@@ -133,7 +133,7 @@ export function UiUxClient() {
                 <div className="w-12 h-12 rounded-xl bg-pink-500/20 text-pink-400 flex items-center justify-center mb-4">
                   <OptimizedIcon icon={Brain} className="text-2xl" />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
+                <p className="text-lg font-bold text-white mb-2">{item.title}</p>
                 <p className="text-slate-400 text-sm">{item.desc}</p>
               </div>
             ))}
@@ -172,7 +172,7 @@ export function UiUxClient() {
                 key={i}
                 className="bg-surface-elevated p-8 rounded-2xl shadow-sm border border-slate-100"
               >
-                <h3 className="text-lg font-bold mb-3">{item.q}</h3>
+                <p className="text-lg font-bold mb-3">{item.q}</p>
                 <p className="text-content-muted leading-relaxed max-w-prose text-pretty">
                   {item.a}
                 </p>

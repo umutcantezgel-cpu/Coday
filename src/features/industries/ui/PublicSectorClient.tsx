@@ -94,7 +94,7 @@ const PublicSectorPage: React.FC = () => {
                     className="w-8 h-8 text-slate-600 group-hover:text-blue-700 transition-colors motion-reduce:duration-[0.01ms]"
                   />
                 </div>
-                <h3 className="font-bold text-slate-800">{item.label}</h3>
+                <p className="font-bold text-slate-800">{item.label}</p>
                 <p className="text-sm text-slate-500">{item.desc}</p>
               </div>
             ))}
@@ -140,7 +140,7 @@ const PublicSectorPage: React.FC = () => {
                 <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6 text-blue-700">
                   <OptimizedIcon icon={service.icon} className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h3>
+                <p className="text-xl font-bold text-slate-900 mb-3">{service.title}</p>
                 <p className="text-slate-600 leading-relaxed">{service.desc}</p>
               </div>
             ))}
@@ -213,7 +213,7 @@ const PublicSectorPage: React.FC = () => {
             {/* RIGHT: Upload & Direct Contact */}
             <div className="space-y-12">
               <div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-6">{t('contact.title')}</h3>
+                <p className="text-2xl font-bold text-slate-900 mb-6">{t('contact.title')}</p>
                 <p className="text-slate-600 mb-8 leading-relaxed">
                   Sie haben bereits fertige Vergabeunterlagen oder ein Lastenheft? Laden Sie es
                   direkt hoch oder senden Sie es uns verschlüsselt zu.
@@ -233,10 +233,10 @@ const PublicSectorPage: React.FC = () => {
               </div>
 
               <div className="bg-blue-50/50 p-8 rounded-2xl border border-blue-100">
-                <h4 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <p className="font-bold text-slate-900 mb-4 flex items-center gap-2">
                   <OptimizedIcon icon={ShieldCheck} className="text-blue-600" />
                   Sicherer Datenaustausch
-                </h4>
+                </p>
                 <p className="text-sm text-slate-600 mb-4">
                   Wir unterstützen S/MIME Verschlüsselung und gängige Behörden-Transfer-Tools
                   (Cryptshare, FTAPI).

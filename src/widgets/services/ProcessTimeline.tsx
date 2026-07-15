@@ -62,9 +62,9 @@ export const ProcessTimeline: React.FC<ProcessTimelineProps> = ({ steps, title, 
                       <span className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-action-primary font-bold text-lg mr-4 md:mx-4">
                         {index + 1}
                       </span>
-                      <h3 className="font-display font-bold text-2xl text-content-base">
+                      <p className="font-display font-bold text-2xl text-content-base">
                         {step.title}
-                      </h3>
+                      </p>
                     </div>
                     <p className="text-content-muted leading-relaxed max-w-prose text-pretty text-lg">
                       {step.description}

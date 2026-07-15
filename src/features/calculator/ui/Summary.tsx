@@ -36,8 +36,12 @@ export const CalculatorSummary: React.FC = () => {
   const packageName = getPackageName();
 
   return (
-    <div className="bg-white rounded-3xl border border-gray-100 shadow-lg p-6 lg:p-8 sticky top-24" aria-live="polite" aria-atomic="true">
-      <h3 className="font-display font-bold text-2xl text-gray-900 mb-4">{t('summary.title')}</h3>
+    <div
+      className="bg-white rounded-3xl border border-gray-100 shadow-lg p-6 lg:p-8 sticky top-24"
+      aria-live="polite"
+      aria-atomic="true"
+    >
+      <p className="font-display font-bold text-2xl text-gray-900 mb-4">{t('summary.title')}</p>
 
       {/* Package Badge */}
       {packageName && (

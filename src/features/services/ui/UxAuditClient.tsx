@@ -87,7 +87,7 @@ export function UxAuditClient() {
                 <div className="w-12 h-12 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center mb-4">
                   <OptimizedIcon icon={MagnifyingGlass} className="text-2xl" />
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
+                <p className="text-lg font-bold text-slate-900 mb-2">{item.title}</p>
                 <p className="text-content-muted text-sm">{item.desc}</p>
               </m.div>
             ))}

@@ -189,14 +189,14 @@ export function WebDevelopmentClient() {
               <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-action-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors motion-reduce:duration-[0.01ms] relative z-10">
                 <OptimizedIcon icon={iconMap[feature.icon] || Code} />
               </div>
-              <h3 className="font-display font-bold text-xl text-content-base mb-3 group-hover:text-action-primary transition-colors motion-reduce:duration-[0.01ms] relative z-10">
+              <p className="font-display font-bold text-xl text-content-base mb-3 group-hover:text-action-primary transition-colors motion-reduce:duration-[0.01ms] relative z-10">
                 <NavLink
                   href={`/services/web-development/${feature.slug}`}
                   className="before:absolute before:inset-0 before:z-30 hover:underline"
                 >
                   {t(feature.titleKey as any)}
                 </NavLink>
-              </h3>
+              </p>
               <p className="text-content-muted leading-relaxed max-w-prose text-pretty mb-4 relative z-40">
                 {t(feature.descriptionKey as any)}
               </p>

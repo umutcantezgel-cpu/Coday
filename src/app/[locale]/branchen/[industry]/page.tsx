@@ -24,10 +24,16 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale, industry } = await params;
 
-  const formattedIndustry = industry
+  let formattedIndustry = industry
     .split('-')
     .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
     .join(' ');
+
+  if (locale === 'en' && industry === 'handwerk-bau') {
+    formattedIndustry = 'Trades and Construction';
+  } else if (locale === 'en' && industry === 'aerzte-gesundheit') {
+    formattedIndustry = 'Doctors & Health';
+  }
 
   if (locale === 'en') {
     return generatePageMetadata({
@@ -55,10 +61,16 @@ export default async function IndustryDetailPage({
   const { locale, industry } = await params;
   setRequestLocale(locale);
 
-  const formattedIndustry = industry
+  let formattedIndustry = industry
     .split('-')
     .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
     .join(' ');
+
+  if (locale === 'en' && industry === 'handwerk-bau') {
+    formattedIndustry = 'Trades and Construction';
+  } else if (locale === 'en' && industry === 'aerzte-gesundheit') {
+    formattedIndustry = 'Doctors & Health';
+  }
   const cleanTitle =
     locale === 'en'
       ? `${formattedIndustry} Web Design & IT Solutions`
@@ -76,11 +88,14 @@ export default async function IndustryDetailPage({
             '@graph': [
               getOrganizationSchema(_locale),
               getServiceSchema({
-                name: locale === 'en' ? `Web Design for ${industry}` : `Webdesign für ${industry}`,
+                name:
+                  locale === 'en'
+                    ? `Web Design for ${formattedIndustry}`
+                    : `Webdesign für ${formattedIndustry}`,
                 description:
                   locale === 'en'
-                    ? `Custom web design solutions for the ${industry} industry by Coday in Wetzlar.`
-                    : `Maßgeschneiderte Webdesign-Lösungen für die Branche ${industry} von Coday in Wetzlar.`,
+                    ? `Custom web design solutions for the ${formattedIndustry} industry by Coday in Wetzlar.`
+                    : `Maßgeschneiderte Webdesign-Lösungen für die Branche ${formattedIndustry} von Coday in Wetzlar.`,
                 url: `${BASE_URL}/${locale}/branchen/${industry}`,
               }),
             ],

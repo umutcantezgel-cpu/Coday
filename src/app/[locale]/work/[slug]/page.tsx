@@ -7,6 +7,7 @@ import { workData } from '@/shared/data/work';
 import { notFound } from 'next/navigation';
 
 export const dynamicParams = false;
+export const dynamic = 'force-static';
 
 export async function generateMetadata({
   params,

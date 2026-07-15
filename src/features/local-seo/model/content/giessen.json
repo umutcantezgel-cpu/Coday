@@ -2,8 +2,8 @@
   "target": "giessen",
   "type": "location",
   "meta": {
-    "title": "High End Webdesign Gießen | Coday – Next.js & Headless CMS für B2B",
-    "description": "Ihre Premium Webdesign Agentur für Gießen. Coday liefert maßgeschneiderte, extrem schnelle Next. Kompromisslose Performance ohne WordPress."
+    "title": "High End Webdesign Agentur Gießen | Coday – Next.js & Headless CMS für B2B",
+    "description": "Premium Webdesign Agentur für Gießen. Wir liefern blitzschnelle Next.js B2B-Webseiten. Kompromisslose Performance ohne WordPress."
   },
   "hero": {
     "headline": "High End Webdesign für Gießen: Digitale Exzellenz für Marktführer",
@@ -130,6 +130,6 @@
   ],
   "meta_en": {
     "title": "High End Web Design Gießen | Coday – Next.js & Headless CMS for B2B",
-    "description": "Top-tier web design for Giessen's market leaders. Secure maximum conversion rates in the B2B sector with lightning-fast, highly secure headless architectures."
+    "description": "Top-tier B2B web design in Giessen. Secure maximum conversions with lightning-fast, secure Next.js & headless architectures. No WordPress."
   }
 }
