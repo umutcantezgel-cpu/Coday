@@ -336,7 +336,7 @@
     },
     "quick_contact": {
       "title": "Lassen Sie uns starten",
-      "subtitle": "Wir melden uns innerhalb von 24 Stunden.",
+      "subtitle": "Wir melden uns innerhalb von 24 Stunden. Lassen Sie uns über Ihr digitales Projekt sprechen.",
       "name_placeholder": "Ihr Name",
       "email_placeholder": "Ihre E-Mail-Adresse",
       "phone_placeholder": "Ihre Telefonnummer (optional)",
@@ -627,7 +627,7 @@
     "hero": {
       "label": "Unsere Arbeit",
       "title": "Fallstudien",
-      "description": "Hier ist, was wir gebaut haben."
+      "description": "Hier ist, was wir gebaut haben. Echte Projekte. Echte Ergebnisse."
     },
     "project_detail": {
       "not_found": "Projekt nicht gefunden",
@@ -1036,7 +1036,7 @@
     },
     "final_cta": {
       "button": "Kostenloses Erstgespräch",
-      "desc": "Lassen Sie uns gemeinsam Ihre digitale Zukunft gestalten.",
+      "desc": "Lassen Sie uns gemeinsam Ihre digitale Zukunft gestalten. Lassen Sie uns über Ihr digitales Projekt sprechen.",
       "title": "Bereit für das nächste Level?"
     },
     "hero": {
@@ -1518,7 +1518,7 @@
   "calculator": {
     "meta": {
       "title": "Projektkosten-Rechner | Coday Web-Agentur",
-      "description": "Berechnen Sie in Echtzeit die Kosten für Ihre nächste Website, Web-App oder E-Commerce Lösung."
+      "description": "Berechnen Sie in Echtzeit die Kosten für Ihre nächste Website, Web-App oder E-Commerce Lösung. Kalkulieren Sie Ihr Webprojekt."
     },
     "summary": {
       "package": "Gewähltes Paket"

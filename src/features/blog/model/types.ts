@@ -22,7 +22,7 @@ export interface TextBlock extends BaseBlock {
   type: 'text';
   content: string; // Markdown support
   heading?: string;
-  level?: 'h2' | 'h3' | 'h4';
+  level?: 'h1' | 'h2' | 'h3' | 'h4';
 }
 
 export interface ImageBlock extends BaseBlock {

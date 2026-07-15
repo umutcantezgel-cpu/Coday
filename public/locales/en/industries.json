@@ -2,7 +2,7 @@
   "overview": {
     "label": "Our Expertise",
     "title": "Specialized Web Design Industry Solutions (Branchen)",
-    "description": "Every industry has its own rules. We know them. Discover our Specialized Web Design Industry Solutions for your success.",
+    "description": "Every industry has its own rules. We know them. Discover our Specialized Web Design Industry Solutions for your success. Specialized Web Design Industry Solutions (Branchen)",
     "cta": "View Concept",
     "meta": {
       "title": "Industry Solutions | B2B Web Design & E-Commerce - Coday",
@@ -45,6 +45,7 @@
   },
   "handwerk-bau": {
     "title": "Trades & Construction",
+    "solutions_description": "We develop digital tools that make your trade business more efficient and generate qualified inquiries.",
     "hero": {
       "headline": "Digital Dominance for Your Craft",
       "subheadline": "More qualified employees and lucrative orders through a website that reflects your quality. Achieve Digital Dominance for Your Craft.",
@@ -162,7 +163,7 @@
     },
     "seoText": {
       "title": "Trades & Construction Web Design & IT Solutions",
-      "content": "Craftsmanship forms the backbone of the economy. With professional Trades & Construction Web Design & IT Solutions, we bring your traditional business successfully into the digital future. Today, customers search online for reliable tradespeople – if you are not visible here, you lose valuable orders to the competition.\n\nWe develop websites that impressively present your craftsmanship quality and expertise. From the integration of project galleries to automated inquiry forms for quick estimates – we digitize your customer acquisition.\n\nFurthermore, we support you in implementing interfaces to trades software and optimize your local searchability. This ensures that you are found and commissioned for your services exactly in your region. Digital Dominance for Your Trade. We create websites that win more customers."
+      "content": "Craftsmanship forms the backbone of the economy. With professional Trades & Construction Web Design & IT Solutions, we bring your traditional business successfully into the digital future. Today, customers search online for reliable tradespeople – if you are not visible here, you lose valuable orders to the competition.\n\nWe develop websites that impressively present your craftsmanship quality and expertise. From the integration of project galleries to automated inquiry forms for quick estimates – we digitize your customer acquisition.\n\nFurthermore, we support you in implementing interfaces to trades software and optimize your local searchability. This ensures that you are found and commissioned for your services exactly in your region. Digital Dominance for Your Trade. We build digital foundations that make your trade business the regional number one."
     }
   },
   "immobilien-makler": {
@@ -170,6 +171,7 @@
     "hero": {
       "headline": "Exclusive properties, exclusively presented",
       "subheadline": "Convince owners and buyers with a digital presence that radiates competence and class.",
+      "description": "We develop bespoke real estate websites featuring integrated digital exposés and lead funnels to secure high-value exclusive mandates.",
       "image_alt": "Real Estate Website",
       "title_suffix": "for Real Estate"
     },
@@ -188,6 +190,7 @@
       }
     },
     "solutions": {
+      "description": "Our specialized IT solutions for real estate agents digitize your sales process: from interactive web exposés to automated property acquisition.",
       "digitales_expose": {
         "title": "Digital Exposé",
         "description": "Interactive landing pages for top properties instead of boring PDFs."
@@ -294,7 +297,7 @@
     },
     "seoText": {
       "title": "Exclusive properties, exclusively presented",
-      "content": "As a real estate agent you know: Exclusive properties must be presented exclusively. The first impression of a property is almost always created online today. A highly professional website is therefore indispensable for the successful marketing of high-quality properties. We develop digital real estate experiences that build trust and perfectly stage the special features of each object.\n\nWith state-of-the-art web design and intelligent IT solutions, we ensure that your property offers are optimally found and displayed. We pay special attention to intuitive user guidance, fast loading times, and flawless display on all devices.\n\nFurthermore, we integrate powerful interfaces to your real estate agent software so that your properties are automatically updated in real time on your website. Rely on digital excellence and stand out from the competition – for more qualified inquiries and faster closings. Exclusive properties, exclusively presented. We create websites that win more customers."
+      "content": "As a real estate agent you know: Exclusive properties must be presented exclusively. The first impression of a property is almost always created online today. A highly professional website is therefore indispensable for the successful marketing of high-quality properties. We develop digital real estate experiences that build trust and perfectly stage the special features of each object.\n\nWith state-of-the-art web design and intelligent IT solutions, we ensure that your property offers are optimally found and displayed. We pay special attention to intuitive user guidance, fast loading times, and flawless display on all devices.\n\nFurthermore, we integrate powerful interfaces to your real estate agent software so that your properties are automatically updated in real time on your website. Rely on digital excellence and stand out from the competition – for more qualified inquiries and faster closings. Exclusive properties, exclusively presented. Digital excellence for your real estate success."
     }
   },
   "aerzte-gesundheit": {
@@ -302,6 +305,7 @@
     "hero": {
       "headline": "Trust Begins Before the First Appointment",
       "subheadline": "Relieve your practice team and attract the right patients through modern digital processes, because Trust Begins Before the First Appointment.",
+      "description": "Highly professional medical practice websites featuring seamless appointment booking and digital anamnesis to significantly ease your daily workload.",
       "title_suffix": "for Doctors"
     },
     "challenges": {
@@ -319,6 +323,7 @@
       }
     },
     "solutions": {
+      "description": "We transform your practice website into a digital reception room that optimally informs patients and drastically reduces administrative effort.",
       "online_terminbuchung": {
         "title": "Online Appointment Booking",
         "description": "Seamless integration (Doctolib, Jameda, or Custom) for relief."
@@ -404,7 +409,7 @@
     },
     "seoText": {
       "title": "Doctors & Healthcare Web Design & IT Solutions",
-      "content": "In the medical sector, trust is the highest good. With specialized Doctors & Healthcare Web Design & IT Solutions by Agency Hesse, we create digital practice presences for Doctors and Clinics that convey seriousness, competence, and empathy. Patients increasingly inform themselves online about treatment methods and doctors before making an appointment.\n\nWe design your practice website to optimally inform patients and relieve the practice workflow through digital services. This includes the secure integration of online appointment booking systems, digital medical history forms, and telemedicine interfaces.\n\nThe highest priority is, of course, compliance with strict data protection guidelines and the accessibility of the website. We ensure that your medical expertise is perceived just as professionally online as in your local practice. We create websites that win more customers."
+      "content": "In the medical sector, trust is the highest good. With specialized Doctors & Healthcare Web Design & IT Solutions, we create digital practice presences for Doctors and Clinics that convey seriousness, competence, and empathy. Patients increasingly inform themselves online about treatment methods and doctors before making an appointment.\n\nWe design your practice website to optimally inform patients and relieve the practice workflow through digital services. This includes the secure integration of online appointment booking systems, digital medical history forms, and telemedicine interfaces.\n\nThe highest priority is, of course, compliance with strict data protection guidelines and the accessibility of the website. We ensure that your medical expertise is perceived just as professionally online as in your local practice. Benefit from a digital practice presence that delights patients and relieves your team."
     }
   },
   "anwaelte-kanzleien": {
@@ -456,8 +461,8 @@
       }
     },
     "seoText": {
-      "title": "Legally Secure Client Acquisition",
-      "content": "For lawyers and law firms, legally secure client acquisition in the digital space is essential today. Clients increasingly research legal problems online and look for law firms that radiate competence and trustworthiness. A professional digital presence is therefore your most important figurehead.\n\nWe develop web design & IT solutions specifically tailored to the high demands of lawyers. In addition to a serious and modern visual presentation, we place the highest value on data protection (GDPR compliance) and absolute data security.\n\nThrough targeted content marketing and local SEO strategies, we ensure that your law firm is found exactly when potential clients are looking for legal support. Trust in our expertise to take your digital client acquisition to the next level. Legally secure client acquisition. We create websites that win more customers."
+      "title": "Digital Excellence for Your Law Firm",
+      "content": "In the legal sector, the first digital impression often determines a lucrative mandate. When faced with legal issues, clients search for reliable and highly competent partners. An outdated or unstructured internet presence costs you valuable inquiries every single day. Our specialized digital concepts for attorneys position you as the undisputed expert in your field.\n\nWe implement highly secure contact forms, encrypted client logins, and GDPR-compliant tracking solutions for you, guaranteeing maximum data protection. The visual language of your new website radiates absolute seriousness and clearly sets you apart from the competition.\n\nWith intelligent SEO campaigns, we place your law firm exactly where the legal-seeking client is researching. Turn your web presence into an automated client magnet that continuously generates high-quality leads for your areas of specialization."
     }
   },
   "gastronomie-hotellerie": {
@@ -557,8 +562,8 @@
       }
     },
     "seoText": {
-      "title": "Taste Begins with the First Click",
-      "content": "In gastronomy and hospitality, it is more true than ever: taste begins with the first click. Before a guest visits your restaurant or books a room, they get an online impression of your offer. An appealing, emotional, and user-friendly website is crucial for turning website visitors into real guests.\n\nAs experts for web design and IT solutions in the hospitality industry, we create digital experiences that whet the appetite and awaken holiday feelings. We integrate seamless table reservation and booking systems that make your daily work easier and maximize comfort for your guests.\n\nWith fast loading times, perfect mobile presentation, and local search engine optimization, we ensure that your establishment ranks at the top for relevant search queries. Invest in a digital presence that is in no way inferior to your first-class local service. We create websites that win more customers."
+      "title": "Hospitality in the Digital Space",
+      "content": "Success in the hospitality industry today is largely determined on the smartphone. Before guests enjoy your service on-site, they consume your ambiance visually on the web. An emotionless or hard-to-navigate website inevitably leads to high bounce rates and empty tables. We transform your internet presence into an immersive experience that awakens anticipation and drives direct reservations.\n\nOur custom-tailored platforms for restaurants and hotels are characterized by commission-free booking tools, smart digital menus, and high-performance image galleries. We automate your event marketing and reduce no-shows through clever follow-up mechanisms.\n\nThrough targeted local visibility strategies, you dominate the search results in your region. Offer your guests the outstanding premium service they can expect in your establishment right from their online research."
     }
   },
   "ecommerce-retail": {
@@ -658,12 +663,13 @@
       }
     },
     "seoText": {
-      "title": "Industry-specific IT Solutions",
-      "content": "Specialized e-commerce solutions for digital retail."
+      "title": "Industry-specific IT Solutions for Digital Retail",
+      "content": "Digital retail is growing relentlessly, and with it, the demands of consumers. Today, a successful online shop must offer more than just a digital storefront. It requires a well-thought-out shopping experience that engages customers from the first second, convinces them with fast loading times, and guides them seamlessly to a successful checkout. We develop tailored e-commerce solutions that meet exactly these requirements and sustainably increase your revenue.\n\nA key success factor here is performance and user-friendliness on mobile devices. Since a large portion of purchases are now made via smartphones, we rely on high-speed frontends and mobile-first design approaches. Through targeted conversion optimization, intelligent product recommendations, and intuitive checkout processes, we reduce cart abandonment and turn simple visitors into loyal regular customers.\n\nFurthermore, we understand the importance of the omnichannel strategy for modern retail. We intelligently connect your online shop with your local stores, enable seamless click-and-collect processes, and synchronize inventory in real-time. With our industry-specific IT solutions for e-commerce and retail, you create a consistent brand experience that builds trust and secures your position in a highly competitive market. We create websites that win more customers."
     }
   },
   "unternehmensberatung": {
     "title": "Management Consulting",
+    "solutions_description": "We design high-class web presences that underline your consulting authority and secure premium mandates.",
     "hero": {
       "headline": "Digital Expertise for Management Consultants",
       "title_suffix": "Visible",
@@ -744,7 +750,7 @@
     },
     "seoText": {
       "title": "Make Expertise Visible",
-      "content": "For a management consulting firm, it applies: You must make your expertise visible. Your potential clients are looking for proven solutions and trustworthy partners for their complex business challenges. An excellent digital presence is the key to reaching this target group and convincing them of your competence.\n\nWe combine sophisticated web design with customized IT solutions to make your consulting services digitally tangible. From clearly presenting your core competencies to publishing thought leadership articles and case studies – we create a platform that underlines your authority in the industry.\n\nWith targeted search engine optimization and a conversion-focused architecture, we turn your website into a powerful channel for lead generation. Position yourself as the preferred contact for strategic corporate decisions. We create websites that win more customers."
+      "content": "For a management consulting firm, it applies: You must make your expertise visible. Your potential clients are looking for proven solutions and trustworthy partners for their complex business challenges. An excellent digital presence is the key to reaching this target group and convincing them of your competence.\n\nWe combine sophisticated web design with customized IT solutions to make your consulting services digitally tangible. From clearly presenting your core competencies to publishing thought leadership articles and case studies – we create a platform that underlines your authority in the industry.\n\nWith targeted search engine optimization and a conversion-focused architecture, we turn your website into a powerful channel for lead generation. Position yourself as the preferred contact for strategic corporate decisions. We establish digital authority that convinces high-ticket clients."
     }
   },
   "startups-tech": {
@@ -796,8 +802,8 @@
       }
     },
     "seoText": {
-      "title": "Scale fast, look global",
-      "content": "For startups and tech companies, the motto is: Scale fast, look global. Investors, partners, and early adopters also expect a technologically outstanding and forward-looking digital presence from innovative companies. An outdated or faulty website can permanently damage trust in your product.\n\nWe deliver web design and IT solutions that can keep up with the pace of your startup. From flexible headless architectures to high-performance web apps – we build digital foundations that are scalable, secure, and lightning fast.\n\nWhether you are in the seed phase or already expanding internationally, we ensure that your website perfectly conveys your technological vision and positions you as a serious player in the market. We create websites that win more customers."
+      "title": "Web Design & Tech Solutions for Startups",
+      "content": "For ambitious technology companies, there is a clear imperative: rapid scaling requires a globally minded digital identity. Investors and early adopters expect innovative business models to be backed by a technologically excellent web presence. Any weakness in your external presentation can significantly disrupt confidence in your core product.\n\nWe design custom frontend architectures and web applications that adapt seamlessly to the agile growth of your company. By utilizing state-of-the-art headless systems, we create a high-performance, resilient, and future-proof technological foundation.\n\nRegardless of whether you have just closed your seed round or are entering new international markets: We ensure that your online platform authentically reflects the innovative power of your tech startup and provides you with a decisive competitive advantage."
     }
   },
   "title_prefix": "Tailored Solutions",

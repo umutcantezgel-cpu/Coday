@@ -79,9 +79,9 @@ export default async function HerbornLandingPage(props: { params: Promise<{ loca
         <LocalSeoTemplate content={content} cityData={cityData} />
       ) : (
         <div className="min-h-screen pt-32 text-center text-white bg-secondary flex flex-col items-center justify-center">
-          <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">
+          <h2 className="text-4xl md:text-6xl font-display font-bold mb-6">
             Ihr Webdesigner in Herborn
-          </h1>
+          </h2>
           <div className="flex flex-col items-center gap-6 mt-4">
             <h2 className="text-gray-400 max-w-2xl text-lg font-normal">
               Als <strong>Ihr Webdesigner in Herborn</strong> bauen wir in der Umgebung

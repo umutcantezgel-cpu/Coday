@@ -83,7 +83,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: 'Die Wahrheit über Webdesign-Preise',
         level: 'h2',
         content:
-          'Ein Baukasten kostet nur 15€ im Monat – aber er kostet Sie Kunden. Eine echte, schnelle Firmenwebseite vom Experten kostet in der Regel zwischen 900€ und 2.500€ einmalig. Warum dieser Unterschied?',
+          'Was kostet eine professionelle Firmenwebseite wirklich? Ein Baukasten kostet nur 15€ im Monat – aber er kostet Sie Kunden. Eine echte, schnelle Firmenwebseite vom Experten kostet in der Regel zwischen 900€ und 2.500€ einmalig. Warum dieser Unterschied?',
       },
       {
         id: 'details',
@@ -114,7 +114,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: 'Schnelligkeit ist keine Option, sondern eine Pflicht',
         level: 'h2',
         content:
-          'Das Internet hat unsere Geduld getötet. Die Toleranzgrenze für das Laden einer Website liegt heute bei unter 2,5 Sekunden. Alles darüber existiert für den durchschnittlichen Nutzer nicht.\n\nAmazon hat es vorgemacht: 100ms Ladeverzögerung kosten 1% Umsatz. Das klingt wenig, aber rechnen wir das mal auf Ihr Geschäft hoch.',
+          'Core Web Vitals 2026: Warum langsame Ladezeiten Millionen kosten. Das Internet hat unsere Geduld getötet. Die Toleranzgrenze für das Laden einer Website liegt heute bei unter 2,5 Sekunden. Alles darüber existiert für den durchschnittlichen Nutzer nicht.\n\nAmazon hat es vorgemacht: 100ms Ladeverzögerung kosten 1% Umsatz. Das klingt wenig, aber rechnen wir das mal auf Ihr Geschäft hoch.',
       },
       {
         id: 'interactive-calculator',
@@ -194,7 +194,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: "Die Illusion der 'schönen' Website",
         level: 'h2',
         content:
-          "Stellen Sie sich vor, Sie bauen ein Haus. Sie investieren in italienischen Marmor, goldene Wasserhähne und handgeschnitzte Türen. Aber Sie vergessen das Fundament. Beim ersten Sturm stürzt alles zusammen.\n\nGenau das passiert täglich im Webdesign. Unternehmen geben tausende Euro für 'hübsche' Designs aus, ignorieren aber die fundamentalen Gesetze der Nutzerpsychologie und technischen Performance. Das Resultat? Eine digitale Visitenkarte, die niemand findet und die niemanden überzeugt.",
+          "Die 5 tödlichen Webdesign-Fehler, die Ihre Conversion zerstören: Stellen Sie sich vor, Sie bauen ein Haus. Sie investieren in italienischen Marmor, goldene Wasserhähne und handgeschnitzte Türen. Aber Sie vergessen das Fundament. Beim ersten Sturm stürzt alles zusammen.\n\nGenau das passiert täglich im Webdesign. Unternehmen geben tausende Euro für 'hübsche' Designs aus, ignorieren aber die fundamentalen Gesetze der Nutzerpsychologie und technischen Performance. Das Resultat? Eine digitale Visitenkarte, die niemand findet und die niemanden überzeugt.",
       },
       {
         id: 'quote-1',
@@ -419,7 +419,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: "Das Ende vom 'Rate-Mal-Marketing'",
         level: 'h2',
         content:
-          "Henry Ford sagte einmal: 'Ich weiß, dass die Hälfte meiner Werbung hinausgeworfenes Geld ist. Ich weiß nur nicht, welche Hälfte.' \n\nDas war 1920. Heute, im Jahr 2026, ist diese Aussage keine charmante Anekdote mehr – sie ist eine Bankrotterklärung. In einer Welt, in der jeder Klick, jeder Scroll und jede Sekunde Aufmerksamkeit messbar ist, ist Unwissenheit eine Entscheidung.\n\nDie meisten Unternehmen (auch große Konzerne) treffen Entscheidungen immer noch nach dem HiPPO-Prinzip: **Hi**ghest **P**aid **P**erson's **O**pinion. Der Chef 'fühlt', dass LinkedIn besser funktioniert als TikTok. Der Marketing-Manager 'glaubt', dass die neue Landingpage schöner ist. \n\nDaten interessieren sich nicht für Gefühle. Und genau deshalb sind sie so mächtig.",
+          "Business Intelligence: Warum Bauchgefühl Ihr Marketing-Budget verbrennt. Henry Ford sagte einmal: 'Ich weiß, dass die Hälfte meiner Werbung hinausgeworfenes Geld ist. Ich weiß nur nicht, welche Hälfte.' \n\nDas war 1920. Heute, im Jahr 2026, ist diese Aussage keine charmante Anekdote mehr – sie ist eine Bankrotterklärung. In einer Welt, in der jeder Klick, jeder Scroll und jede Sekunde Aufmerksamkeit messbar ist, ist Unwissenheit eine Entscheidung.\n\nDie meisten Unternehmen (auch große Konzerne) treffen Entscheidungen immer noch nach dem HiPPO-Prinzip: **Hi**ghest **P**aid **P**erson's **O**pinion. Der Chef 'fühlt', dass LinkedIn besser funktioniert als TikTok. Der Marketing-Manager 'glaubt', dass die neue Landingpage schöner ist. \n\nDaten interessieren sich nicht für Gefühle. Und genau deshalb sind sie so mächtig.",
       },
       {
         id: 'quote-bi',
@@ -673,7 +673,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: 'Content ist King, aber Distribution ist King Kong',
         level: 'h2',
         content:
-          "Der beste Content nützt nichts, wenn ihn niemand sieht. 2026 ist 'Pay-to-Play' die Realität. Aber es gibt einen Backdoor-Hack: Engagement.",
+          "Social Media Secrets 2026: Organische Reichweite ist tot? Der beste Content nützt nichts, wenn ihn niemand sieht. 2026 ist 'Pay-to-Play' die Realität. Aber es gibt einen Backdoor-Hack: Engagement.",
       },
       {
         id: 'social-growth-graph',
@@ -744,7 +744,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: 'Ihr Geld liegt in der Liste',
         level: 'h2',
         content:
-          'Social Media Follower gehören Zuckerberg oder Musk. Ihre E-Mail-Liste gehört IHNEN. Das ist Ihr einziges echtes Asset. \n\nE-Mail Marketing ist wie Geld drucken auf Knopfdruck – wenn Sie das Vertrauen Ihrer Leser haben.',
+          'Email Marketing: Der 4400% ROI Kanal. Social Media Follower gehören Zuckerberg oder Musk. Ihre E-Mail-Liste gehört IHNEN. Das ist Ihr einziges echtes Asset. \n\nE-Mail Marketing ist wie Geld drucken auf Knopfdruck – wenn Sie das Vertrauen Ihrer Leser haben.',
       },
       {
         id: 'email-roi-calc',
@@ -815,7 +815,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: 'Die TikTokisierung der Aufmerksamkeit',
         level: 'h2',
         content:
-          'Die Aufmerksamkeitsspanne eines Goldfisches beträgt 9 Sekunden. Die eines Menschen im Jahr 2026? 8 Sekunden. \n\nLange Textwüsten funktionieren nicht mehr. Wer seine Botschaft nicht in 15-60 Sekunden Bewegtbild verpacken kann, wird ignoriert. Algorithmen von LinkedIn bis Google bevorzugen Video-Content massiv.',
+          'Video Content Excellence: Warum Text tot ist. Die Aufmerksamkeitsspanne eines Goldfisches beträgt 9 Sekunden. Die eines Menschen im Jahr 2026? 8 Sekunden. \n\nLange Textwüsten funktionieren nicht mehr. Wer seine Botschaft nicht in 15-60 Sekunden Bewegtbild verpacken kann, wird ignoriert. Algorithmen von LinkedIn bis Google bevorzugen Video-Content massiv.',
       },
       {
         id: 'video-roi-calc',
@@ -882,7 +882,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: 'Der Elefant im Raum',
         level: 'h2',
         content:
-          "43% des Internets laufen auf WordPress. Das klingt beeindruckend. Aber wissen Sie, was noch beeindruckender ist? 90% aller gehackten Websites laufen ebenfalls auf WordPress. \n\nWordPress wurde vor über 20 Jahren als Blogging-Plattform entwickelt. Heute wird es missbraucht, um komplexe Unternehmens-Lösungen zu bauen. Das Ergebnis: Ein 'Frankenstein-Code', der nur durch hunderte Plugins zusammengehalten wird. Es ist Zeit, die Wahrheit zu sagen.",
+          "Warum WordPress im Jahr 2026 tot ist (und warum Agenturen es Ihnen trotzdem verkaufen). 43% des Internets laufen auf WordPress. Das klingt beeindruckend. Aber wissen Sie, was noch beeindruckender ist? 90% aller gehackten Websites laufen ebenfalls auf WordPress. \n\nWordPress wurde vor über 20 Jahren als Blogging-Plattform entwickelt. Heute wird es missbraucht, um komplexe Unternehmens-Lösungen zu bauen. Das Ergebnis: Ein 'Frankenstein-Code', der nur durch hunderte Plugins zusammengehalten wird. Es ist Zeit, die Wahrheit zu sagen.",
       },
       {
         id: 'comparison-architecture',
@@ -1001,7 +1001,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: 'Wir kaufen emotional, wir rechtfertigen rational',
         level: 'h2',
         content:
-          'Glauben Sie wirklich, Sie haben Ihr letztes iPhone gekauft, weil der Prozessor 10% schneller war? Nein. Sie haben es gekauft, weil es sich gut angefühlt hat. \n\nDas menschliche Gehirn trifft 95% aller Entscheidungen unterbewusst (System 1). Erst danach schaltet sich der rationale Verstand (System 2) ein, um die Entscheidung zu begründen. Schlechtes Webdesign spricht nur System 2 an (Fakten). Gutes Webdesign verführt System 1.',
+          'Neuro-Design: Wie Sie das Unterbewusstsein Ihrer Kunden hacken. Glauben Sie wirklich, Sie haben Ihr letztes iPhone gekauft, weil der Prozessor 10% schneller war? Nein. Sie haben es gekauft, weil es sich gut angefühlt hat. \n\nDas menschliche Gehirn trifft 95% aller Entscheidungen unterbewusst (System 1). Erst danach schaltet sich der rationale Verstand (System 2) ein, um die Entscheidung zu begründen. Schlechtes Webdesign spricht nur System 2 an (Fakten). Gutes Webdesign verführt System 1.',
       },
       {
         id: 'chapter-colors',
@@ -1115,7 +1115,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: 'Das Ende des Suchschlitzes',
         level: 'h2',
         content:
-          "Seit 30 Jahren suchen wir gleich: Wir tippen Keywords in eine Box und bekommen 10 blaue Links. \n\nAb heute ist das vorbei. ChatGPT Search, Perplexity und Google Gemini haben das Spiel geändert. Nutzer suchen nicht mehr nach Links. Sie suchen nach Antworten. Wer seine Website nicht für 'LLMs' (Large Language Models) optimiert, wird unsichtbar.",
+          "Die KI-Revolution: Warum 2026 das Jahr der 'Voice-First' Strategie ist. Seit 30 Jahren suchen wir gleich: Wir tippen Keywords in eine Box und bekommen 10 blaue Links. \n\nAb heute ist das vorbei. ChatGPT Search, Perplexity und Google Gemini haben das Spiel geändert. Nutzer suchen nicht mehr nach Links. Sie suchen nach Antworten. Wer seine Website nicht für 'LLMs' (Large Language Models) optimiert, wird unsichtbar.",
       },
       {
         id: 'chapter-voice',
@@ -1215,7 +1215,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: 'Die Flut der Mittelmäßigkeit',
         level: 'h2',
         content:
-          "Öffnen Sie LinkedIn. Scrollen Sie durch Instagram. Schauen Sie sich die neuesten Landingpages an. Spüren Sie es? Die Müdigkeit. Alles sieht... okay aus.\n\nAI hat den 'Durchschnitt' demokratisiert. Jeder kann jetzt in Sekunden ein 'gutes' Logo, einen 'guten' Text und eine 'gute' Website erstellen. Aber wenn 'gut' kostenlos wird, wird 'gut' wertlos.\n\nIn einem Ozean aus synthetischer Perfektion sticht nur noch das hervor, was AI nicht faken kann: Menschlichkeit. Fehler. Reibung. Seele.",
+          "Das Anti-AI Manifest: Warum menschliches Design 2026 gewinnt 🛑. Öffnen Sie LinkedIn. Scrollen Sie durch Instagram. Schauen Sie sich die neuesten Landingpages an. Spüren Sie es? Die Müdigkeit. Alles sieht... okay aus.\n\nAI hat den 'Durchschnitt' demokratisiert. Jeder kann jetzt in Sekunden ein 'gutes' Logo, einen 'guten' Text und eine 'gute' Website erstellen. Aber wenn 'gut' kostenlos wird, wird 'gut' wertlos.\n\nIn einem Ozean aus synthetischer Perfektion sticht nur noch das hervor, was AI nicht faken kann: Menschlichkeit. Fehler. Reibung. Seele.",
       },
       {
         id: 'interactive-soul-reader',
@@ -1328,7 +1328,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: 'Ihr Retainer verbrennt Geld',
         level: 'h2',
         content:
-          'Es ist ein offenes Geheimnis: Das Geschäftsmodell klassischer Werbeagenturen basiert auf Ineffizienz. Je länger sie für eine Aufgabe brauchen, desto mehr verdienen sie. Stundensätze belohnen Langsamkeit.\n\nIn einer Welt ohne AI war das akzeptabel. Man brauchte Manpower. Aber heute? Heute ist es Diebstahl an Ihrem Budget.',
+          "Der 'Agentur-Killer': Warum das klassische Agentur-Modell tot ist. Es ist ein offenes Geheimnis: Das Geschäftsmodell klassischer Werbeagenturen basiert auf Ineffizienz. Je länger sie für eine Aufgabe brauchen, desto mehr verdienen sie. Stundensätze belohnen Langsamkeit.\n\nIn einer Welt ohne AI war das akzeptabel. Man brauchte Manpower. Aber heute? Heute ist es Diebstahl an Ihrem Budget.",
       },
       {
         id: 'interactive-timeline',
@@ -1468,7 +1468,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: 'Die Illusion der Kontrolle',
         level: 'h2',
         content:
-          'Sie glauben, Ihre Daten sind sicher, weil der Server in Frankfurt steht. Aber wenn dieser Server AWS, Azure oder Google gehört, liegen Sie falsch.\n\nDer **US Cloud Act** zwingt amerikanische Unternehmen, Daten an US-Behörden herauszugeben – auch wenn diese Daten in der EU liegen. Für deutsche Behörden und KRITIS ist das ein inakzeptables Risiko.',
+          'Digitale Souveränität: Warum der US Cloud Act eine Zeitbombe ist. Sie glauben, Ihre Daten sind sicher, weil der Server in Frankfurt steht. Aber wenn dieser Server AWS, Azure oder Google gehört, liegen Sie falsch.\n\nDer **US Cloud Act** zwingt amerikanische Unternehmen, Daten an US-Behörden herauszugeben – auch wenn diese Daten in der EU liegen. Für deutsche Behörden und KRITIS ist das ein inakzeptables Risiko.',
       },
       {
         id: 'interactive-sovereignty-check',
@@ -1538,7 +1538,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: 'Die Physik des Luxus',
         level: 'h2',
         content:
-          "Gehen Sie in einen Apple Store. Gehen Sie in ein Luxus-Juweliergeschäft. Was sehen Sie? Schwarze Hintergründe. Gezieltes Licht.\n\nDunkelheit schafft Fokus. Sie eliminiert Ablenkung. Auf OLED-Screens ist Schwarz keine Farbe – es ist die Abwesenheit von Licht. Es spart Akku und signalisiert 'Premium'.",
+          "Die Psychologie des Dark Mode: Warum Dunkel sich teuer anfühlt. Gehen Sie in einen Apple Store. Gehen Sie in ein Luxus-Juweliergeschäft. Was sehen Sie? Schwarze Hintergründe. Gezieltes Licht.\n\nDunkelheit schafft Fokus. Sie eliminiert Ablenkung. Auf OLED-Screens ist Schwarz keine Farbe – es ist die Abwesenheit von Licht. Es spart Akku und signalisiert 'Premium'.",
       },
       {
         id: 'text-contrast',
@@ -1609,7 +1609,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: 'Der Monolith ist tot',
         level: 'h2',
         content:
-          'WordPress betreibt 40% des Webs. Es ist auch das Ziel #1 für Hacker. Es ist langsam. Es ist aufgebläht. Es ist ein Monolith in einer Microservices-Welt.\n\nHeadless CMS (Sanity, Contentful, Strapi) entkoppelt Inhalt von Code. Es erlaubt Ihnen, Inhalte omnichannel an Web, App und Watch aus einer Quelle zu senden.',
+          'WordPress ist tot. Headless CMS beweist es (2026). WordPress betreibt 40% des Webs. Es ist auch das Ziel #1 für Hacker. Es ist langsam. Es ist aufgebläht. Es ist ein Monolith in einer Microservices-Welt.\n\nHeadless CMS (Sanity, Contentful, Strapi) entkoppelt Inhalt von Code. Es erlaubt Ihnen, Inhalte omnichannel an Web, App und Watch aus einer Quelle zu senden.',
       },
       {
         id: 'interactive-tco',
@@ -1678,7 +1678,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: 'Der Preis eines Lecks',
         level: 'h2',
         content:
-          'Die durchschnittlichen Kosten eines Datenlecks betrugen 2026 ca. 4,5 Millionen Euro. Für kleine Agenturen ist das das Todesurteil.\n\nDie meisten Agenturen schicken Daten über Slack, speichern Passwörter in Excel und haben keine Offsite-Backups. Das ist Fahrlässigkeit.',
+          'Enterprise Security: Warum ISO 27001 das Minimum Viable Product ist. Die durchschnittlichen Kosten eines Datenlecks betrugen 2026 ca. 4,5 Millionen Euro. Für kleine Agenturen ist das das Todesurteil.\n\nDie meisten Agenturen schicken Daten über Slack, speichern Passwörter in Excel und haben keine Offsite-Backups. Das ist Fahrlässigkeit.',
       },
       {
         id: 'interactive-gap',
@@ -1734,7 +1734,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: 'Der Papiertiger',
         level: 'h2',
         content:
-          'Milliarden Euro ausgegeben. Tausende Gremien. Ergebnis: Man muss immer noch ein PDF ausdrucken, um einen Bewohnerparkausweis zu beantragen.\n\nDas Problem ist nicht die Technik. Es ist das Mindset. Wir digitalisieren die Bürokratie, anstatt Prozesse neu zu denken.',
+          'Digital Government: Warum das OZG 2.0 scheitert (und wie wir es retten). Milliarden Euro ausgegeben. Tausende Gremien. Ergebnis: Man muss immer noch ein PDF ausdrucken, um einen Bewohnerparkausweis zu beantragen.\n\nDas Problem ist nicht die Technik. Es ist das Mindset. Wir digitalisieren die Bürokratie, anstatt Prozesse neu zu denken.',
       },
       {
         id: 'interactive-ozg',
@@ -1853,6 +1853,13 @@ export const BLOG_POSTS: BlogPost[] = [
     date: '1. September 2026',
     content: [
       {
+        id: 'seo-h1-ds',
+        type: 'text',
+        heading: 'Design Systems at Scale: Wie wir 100+ Marken managen, ohne verrückt zu werden',
+        level: 'h2',
+        content: '',
+      },
+      {
         id: 'intro-ds',
         type: 'text',
         heading: 'Die Konsistenz-Falle',
@@ -1917,6 +1924,13 @@ export const BLOG_POSTS: BlogPost[] = [
     date: '10. September 2026',
     content: [
       {
+        id: 'seo-h1-ecom',
+        type: 'text',
+        heading: 'Die Zukunft des E-Commerce: Warum Ihr Shop Geld verbrennt',
+        level: 'h2',
+        content: '',
+      },
+      {
         id: 'intro-cro',
         type: 'text',
         heading: 'Die Traffic-Falle',
@@ -1977,6 +1991,13 @@ export const BLOG_POSTS: BlogPost[] = [
     date: '28. Mai 2026',
     content: [
       {
+        id: 'seo-h1-ux',
+        type: 'text',
+        heading: 'Der unsichtbare ROI: Warum UX Design mehr bringt als Marketing',
+        level: 'h2',
+        content: '',
+      },
+      {
         id: 'intro-roi',
         type: 'text',
         heading: 'Design ist kein Kostenfaktor, sondern ein Multiplikator',
@@ -2013,6 +2034,13 @@ export const BLOG_POSTS: BlogPost[] = [
     author: 'Coday Security',
     date: '02. Juni 2026',
     content: [
+      {
+        id: 'seo-h1-sec',
+        type: 'text',
+        heading: 'Die Sicherheits-Lücke: Wie Open Source Ihr Business gefährdet',
+        level: 'h2',
+        content: '',
+      },
       {
         id: 'intro-sec',
         type: 'text',
@@ -2088,6 +2116,13 @@ export const BLOG_POSTS: BlogPost[] = [
     date: '14. Juni 2026',
     content: [
       {
+        id: 'seo-h1-data',
+        type: 'text',
+        heading: 'Daten-Reife: Vom Bauchgefühl zur algorithmischen Dominanz',
+        level: 'h2',
+        content: '',
+      },
+      {
         id: 'intro-data',
         type: 'text',
         heading: 'Daten sind das neue Öl (aber nur raffiniert)',
@@ -2124,6 +2159,13 @@ export const BLOG_POSTS: BlogPost[] = [
     author: 'Coday UX',
     date: '20. Juni 2026',
     content: [
+      {
+        id: 'seo-h1-mobile',
+        type: 'text',
+        heading: 'Mobile First ist tot. Lang lebe Mobile Only.',
+        level: 'h2',
+        content: '',
+      },
       {
         id: 'intro-mobile',
         type: 'text',
@@ -2162,6 +2204,13 @@ export const BLOG_POSTS: BlogPost[] = [
     date: '25. Juni 2026',
     content: [
       {
+        id: 'seo-h1-price',
+        type: 'text',
+        heading: 'Die Agentur-Preis-Lüge: Was Sie wirklich für Ihren Retainer bekommen',
+        level: 'h2',
+        content: '',
+      },
+      {
         id: 'intro-price',
         type: 'text',
         heading: 'Der Wasserkopf frisst Ihr Budget',
@@ -2198,6 +2247,13 @@ export const BLOG_POSTS: BlogPost[] = [
     author: 'Coday Legal',
     date: '30. Juni 2026',
     content: [
+      {
+        id: 'seo-h1-sov',
+        type: 'text',
+        heading: 'Digitale Souveränität: Gehören Ihre Daten wirklich Ihnen?',
+        level: 'h2',
+        content: '',
+      },
       {
         id: 'intro-sov',
         type: 'text',
@@ -2236,6 +2292,13 @@ export const BLOG_POSTS: BlogPost[] = [
     date: '05. Juli 2026',
     content: [
       {
+        id: 'seo-h1-hist',
+        type: 'text',
+        heading: 'Web 4.0: Die Geschichte der Zukunft',
+        level: 'h2',
+        content: '',
+      },
+      {
         id: 'intro-hist',
         type: 'text',
         heading: 'Wer die Vergangenheit nicht kennt...',
@@ -2272,6 +2335,13 @@ export const BLOG_POSTS: BlogPost[] = [
     author: 'Coday Redaktion',
     date: '10. Mai 2026',
     content: [
+      {
+        id: 'seo-h1-listicle',
+        type: 'text',
+        heading: 'Top Webdesign Agenturen in Hessen 2026 (Ehrlicher Vergleich)',
+        level: 'h2',
+        content: '',
+      },
       {
         id: 'intro-listicle',
         type: 'text',

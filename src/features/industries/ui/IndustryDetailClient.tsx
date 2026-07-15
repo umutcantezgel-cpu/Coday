@@ -157,7 +157,12 @@ export function IndustryDetailClient({ industrySlug }: { industrySlug?: string }
             <h2 className="text-3xl font-bold text-secondary mb-4">
               {t('detail.solutions.title', { industry: t(industry.title) })}
             </h2>
-            <p className="text-text-light max-w-2xl mx-auto">{t('detail.solutions.description')}</p>
+            <p className="text-text-light max-w-2xl mx-auto">
+              {/* @ts-ignore */}
+              {t.has(`${slug}.solutions_description`)
+                ? t(`${slug}.solutions_description`)
+                : t('detail.solutions.description')}
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">

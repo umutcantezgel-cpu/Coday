@@ -46,7 +46,9 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
   let landingPages: string[] = [];
   try {
     const files = fs.readdirSync(landingPagesDir, { withFileTypes: true });
-    landingPages = files.filter((dirent) => dirent.isDirectory()).map((dirent) => dirent.name);
+    landingPages = files
+      .filter((dirent) => dirent.isDirectory() && dirent.name !== 'giessen')
+      .map((dirent) => dirent.name);
   } catch (e) {
     console.error('Failed to read landingpages directory');
   }

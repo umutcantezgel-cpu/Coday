@@ -1356,6 +1356,63 @@
           "SEO-optimiertes Server-Side Rendering",
           "Skalierbare Komponentenarchitektur",
           "Zukunftssichere Technologie"
+        ],
+        "process": [
+          {
+            "number": "01",
+            "title": "Next.js Architektur-Setup",
+            "description": "Wir entwerfen eine zukunftssichere Server-Components Struktur für minimale JavaScript-Bundles und maximalen Pagespeed."
+          },
+          {
+            "number": "02",
+            "title": "React Komponenten-Entwicklung",
+            "description": "Pixelperfekte Umsetzung Ihres Designs in wiederverwendbare, stark typisierte React-Komponenten."
+          },
+          {
+            "number": "03",
+            "title": "State Management & API",
+            "description": "Anbindung von Headless CMS, Datenbanken und nahtloses State-Management für interaktive User Experiences."
+          },
+          {
+            "number": "04",
+            "title": "Vercel Deployment",
+            "description": "Reibungsloser Launch auf der Edge-Infrastruktur von Vercel für globale Erreichbarkeit und automatische Skalierung."
+          }
+        ],
+        "advantages": [
+          {
+            "icon": "lightning",
+            "title": "Lighthouse Score 100",
+            "description": "Dank serverseitigem Rendering mit Next.js erreichen wir Core Web Vitals, die Ihre Konkurrenz alt aussehen lassen."
+          },
+          {
+            "icon": "code",
+            "title": "TypeScript Strict",
+            "description": "Wir programmieren typensicher. Das bedeutet weniger Bugs, höhere Stabilität und saubere Codebases für Ihr Team."
+          },
+          {
+            "icon": "stack",
+            "title": "React Server Components",
+            "description": "Nutzung der neuesten React 19 Features für interaktive Web-Apps, die keine Kompromisse bei der SEO machen."
+          }
+        ],
+        "testimonials": [
+          {
+            "company": "SaaS Start-up Frankfurt",
+            "name": "Michael S.",
+            "role": "CTO",
+            "text": "Das Next.js Setup von Coday hat unsere Ladezeiten geviertelt und die Conversion-Rate signifikant gesteigert."
+          }
+        ],
+        "faqs": [
+          {
+            "question": "Warum Next.js statt herkömmlichem React?",
+            "answer": "Next.js bietet Out-of-the-box Server-Side Rendering (SSR) und Static Site Generation (SSG), was für SEO und initiale Ladezeiten unverzichtbar ist, während reines React diese Vorteile oft nur mit hohem Zusatzaufwand bietet."
+          },
+          {
+            "question": "Wie lange dauert die Entwicklung einer React-App?",
+            "answer": "Für individuelle Next.js-Lösungen planen wir in der Regel zwischen 4 und 10 Wochen, abhängig von der Komplexität der benötigten APIs und Animationen."
+          }
         ]
       },
       "e-commerce-shops": {
@@ -1367,6 +1424,63 @@
           "Headless Commerce Architektur",
           "ERP-Integration",
           "High-Performance Frontend"
+        ],
+        "process": [
+          {
+            "number": "01",
+            "title": "Shop-Konzeption",
+            "description": "Wir analysieren Ihre Produkte, Zielgruppe und erarbeiten eine informationsarchitektonische Struktur, die zum Kaufen anregt."
+          },
+          {
+            "number": "02",
+            "title": "Headless Integration",
+            "description": "Verknüpfung von Shopify, Sanity oder Commerce Layer mit einem maßgeschneiderten Frontend für maximale Freiheit."
+          },
+          {
+            "number": "03",
+            "title": "Checkout-Optimierung",
+            "description": "Reibungslose Implementierung von Zahlungsanbietern, Versandlogistik und einem barrierefreien Checkout-Prozess."
+          },
+          {
+            "number": "04",
+            "title": "Launch & Skalierung",
+            "description": "Livegang unter Volllast-Bedingungen. Wir monitoren die ersten Bestellungen, um eine fehlerfreie Customer Journey zu garantieren."
+          }
+        ],
+        "advantages": [
+          {
+            "icon": "shopping_cart",
+            "title": "Headless E-Commerce",
+            "description": "Entkopplung von Frontend und Backend. Ihr Shop lädt rasend schnell und bietet grenzenlose Design-Möglichkeiten."
+          },
+          {
+            "icon": "chart_bar",
+            "title": "Conversion Rate Focus",
+            "description": "Von der Produktseite bis zur Kasse ist jeder Pixel darauf optimiert, Besucher in zahlende Kunden zu verwandeln."
+          },
+          {
+            "icon": "shield_check",
+            "title": "Zukunftssichere Skalierbarkeit",
+            "description": "Ob Black Friday oder viraler Hit – unsere Architektur bewältigt enorme Traffic-Spitzen problemlos."
+          }
+        ],
+        "testimonials": [
+          {
+            "company": "Boutique Label",
+            "name": "Sarah M.",
+            "role": "Gründerin",
+            "text": "Unser neuer Headless-Shop ist nicht nur wunderschön, sondern lädt so schnell, dass unsere Absprungrate um 40% gesunken ist."
+          }
+        ],
+        "faqs": [
+          {
+            "question": "Was ist Headless Commerce?",
+            "answer": "Bei Headless Commerce wird das Frontend (die sichtbare Website) vom Backend (Shopify/Warenkorbsystem) getrennt. Das ermöglicht ein völlig freies Design und extrem schnelle Ladezeiten ohne die Einschränkungen klassischer Shop-Templates."
+          },
+          {
+            "question": "Bieten Sie auch klassisches Shopify-Theme Development an?",
+            "answer": "Wir fokussieren uns auf individuelle Entwicklungen (Headless oder Custom Hydrogen). Für einfache Baukasten-Themes empfehlen wir oft spezialisierte Shopify-Agenturen."
+          }
         ]
       },
       "full-stack-entwicklung": {
@@ -1378,6 +1492,63 @@
           "Sichere Datenverarbeitung",
           "Echtzeit-Funktionalitäten",
           "Nahtlose Integrationen"
+        ],
+        "process": [
+          {
+            "number": "01",
+            "title": "Datenmodellierung",
+            "description": "Wir planen die Datenbank-Struktur, definieren Schemata und sichern die Beziehungen für eine performante Datenverarbeitung."
+          },
+          {
+            "number": "02",
+            "title": "API-Design",
+            "description": "Entwicklung robuster REST oder GraphQL APIs, die als sichere Brücke zwischen Frontend und Datenbank dienen."
+          },
+          {
+            "number": "03",
+            "title": "Frontend-Anbindung",
+            "description": "Nahtlose Integration der Server-Logik in interaktive Dashboards und User-Interfaces mit Echtzeit-Updates."
+          },
+          {
+            "number": "04",
+            "title": "Security & Auditing",
+            "description": "Durchführung von Penetration-Tests, Absicherung gegen XSS/SQLi und Implementierung sicherer Authentifizierung (z.B. OAuth)."
+          }
+        ],
+        "advantages": [
+          {
+            "icon": "layers",
+            "title": "End-to-End Type Safety",
+            "description": "Mit TypeScript im Frontend und Backend fangen wir Fehler ab, bevor der Code überhaupt ausgeführt wird."
+          },
+          {
+            "icon": "cloud",
+            "title": "Serverless Backend",
+            "description": "Wir setzen auf moderne Datenbank-Provider wie Supabase, um Skalierungsprobleme und Wartungsaufwand zu minimieren."
+          },
+          {
+            "icon": "shield_check",
+            "title": "Sichere Authentifizierung",
+            "description": "Integration von NextAuth oder Supabase Auth für enterprise-grade Benutzerverwaltung und Rollensysteme."
+          }
+        ],
+        "testimonials": [
+          {
+            "company": "Logistik-Startup",
+            "name": "David K.",
+            "role": "CEO",
+            "text": "Coday hat unser gesamtes internes Dashboard entwickelt. Die nahtlose Full-Stack Architektur ist extrem robust und zukunftssicher."
+          }
+        ],
+        "faqs": [
+          {
+            "question": "Entwickeln Sie auch komplexe Web-Apps?",
+            "answer": "Ja, unsere Expertise liegt insbesondere in der Entwicklung von maßgeschneiderten Web-Apps, Kundenportalen und internen Dashboards, die weit über herkömmliche Websites hinausgehen."
+          },
+          {
+            "question": "Welche Datenbank-Technologien verwenden Sie?",
+            "answer": "Wir arbeiten primär mit PostgreSQL via Supabase oder Prisma. Je nach Anforderung kommen auch NoSQL-Lösungen zum Einsatz, um maximale Effizienz zu gewährleisten."
+          }
         ]
       },
       "cloud-infrastructure": {
@@ -1389,6 +1560,63 @@
           "Automatische Skalierung",
           "DDoS-Schutz",
           "Kosteneffiziente Architektur"
+        ],
+        "process": [
+          {
+            "number": "01",
+            "title": "Infrastruktur-Audit",
+            "description": "Wir analysieren Ihre aktuellen Serverkosten, Traffic-Spitzen und identifizieren Flaschenhälse in der bisherigen Architektur."
+          },
+          {
+            "number": "02",
+            "title": "Serverless Migration",
+            "description": "Wir konzipieren den Umzug von monolithischen Servern hin zu modernen, skalierbaren Serverless- und Edge-Lösungen."
+          },
+          {
+            "number": "03",
+            "title": "CI/CD Pipeline Setup",
+            "description": "Automatisierung Ihrer Deployment-Prozesse. Jeder Push in den Main-Branch wird automatisch getestet und live geschaltet."
+          },
+          {
+            "number": "04",
+            "title": "Monitoring & Alerting",
+            "description": "Einrichtung von Performance-Tracking, Fehler-Protokollierung und automatischen Warnsystemen bei Server-Anomalien."
+          }
+        ],
+        "advantages": [
+          {
+            "icon": "cloud",
+            "title": "Vercel Edge Network",
+            "description": "Wir deployen Ihre Anwendung global. Besucher aus New York oder Tokio erleben die gleiche rasante Geschwindigkeit wie Nutzer aus Deutschland."
+          },
+          {
+            "icon": "shield_check",
+            "title": "Zero-Downtime Deployments",
+            "description": "Dank moderner Infrastruktur-Praktiken updaten wir Ihre Website ohne eine einzige Sekunde Ausfallzeit."
+          },
+          {
+            "icon": "lightning",
+            "title": "Auto-Skalierung",
+            "description": "Egal ob 10 oder 10.000 gleichzeitige Nutzer – unsere Cloud-Lösungen skalieren Ressourcen dynamisch und vollautomatisch."
+          }
+        ],
+        "testimonials": [
+          {
+            "company": "News-Portal Hessen",
+            "name": "Thomas L.",
+            "role": "Technischer Leiter",
+            "text": "Seit der Migration auf die von Coday konfigurierte Edge-Infrastruktur sind unsere Serverkosten gesunken, während die Erreichbarkeit auf 99,99% stieg."
+          }
+        ],
+        "faqs": [
+          {
+            "question": "Bieten Sie klassisches Webhosting an?",
+            "answer": "Wir bieten kein Shared-Hosting für WordPress oder ähnliches an. Unsere Dienstleistung umfasst das professionelle Setup und Management von Cloud-Architekturen wie Vercel, AWS oder Hetzner Cloud für von uns entwickelte Individualsoftware."
+          },
+          {
+            "question": "Was passiert bei Traffic-Spitzen?",
+            "answer": "Dank Serverless-Technologien fangen die Systeme Lastspitzen automatisch ab, indem im Hintergrund dynamisch neue Instanzen gestartet werden. Sie zahlen nur für die tatsächlich genutzte Rechenleistung."
+          }
         ]
       }
     },
@@ -1402,6 +1630,63 @@
           "Intuitive User Journeys",
           "Emotionale digitale Erlebnisse",
           "Conversion-fokussiert"
+        ],
+        "process": [
+          {
+            "number": "01",
+            "title": "Nutzer- & Markenanalyse",
+            "description": "Wir tauchen tief in Ihre Brand Identity ein und analysieren die Bedürfnisse Ihrer Zielgruppe, um ein fundiertes Fundament zu schaffen."
+          },
+          {
+            "number": "02",
+            "title": "Wireframing & Flow",
+            "description": "Erstellung interaktiver Wireframes zur Visualisierung der User Journey. Hier definieren wir die Architektur ohne visuelle Ablenkung."
+          },
+          {
+            "number": "03",
+            "title": "High-Fidelity Interface",
+            "description": "Ausarbeitung der UI-Komponenten in Figma mit perfekten Typografie-, Farb- und Animationskonzepten."
+          },
+          {
+            "number": "04",
+            "title": "Prototyping & Testing",
+            "description": "Klickbare Prototypen, um die Bedienbarkeit zu validieren. So erleben Sie das fertige Produkt lange vor der Entwicklung."
+          }
+        ],
+        "advantages": [
+          {
+            "icon": "user",
+            "title": "Nutzerzentrierte Psychologie",
+            "description": "Wir gestalten nicht nur schön, wir gestalten logisch. Jedes Element führt den Nutzer intuitiv zum Ziel."
+          },
+          {
+            "icon": "palette",
+            "title": "Kompromisslose Ästhetik",
+            "description": "Wir setzen auf modernste Design-Trends wie Glassmorphism oder brutalistische Typografie – passend zu Ihrer Marke."
+          },
+          {
+            "icon": "monitor",
+            "title": "Pixel-Perfect Responsive",
+            "description": "Ihre Anwendung sieht auf einem 4K-Monitor genauso brillant aus wie auf dem kleinsten Smartphone."
+          }
+        ],
+        "testimonials": [
+          {
+            "company": "Design Agentur München",
+            "name": "Julia P.",
+            "role": "Art Director",
+            "text": "Das UI/UX Konzept von Coday ist absolut state-of-the-art. Die Benutzerführung ist extrem flüssig und durchdacht."
+          }
+        ],
+        "faqs": [
+          {
+            "question": "Nutzen Sie Vorlagen oder Templates für das Design?",
+            "answer": "Nein. Jedes unserer Designs ist ein absolutes Unikat, das von Grund auf in Figma erstellt wird, um exakt Ihre Markenwerte widerzuspiegeln."
+          },
+          {
+            "question": "Erhalten wir nach Abschluss die offenen Design-Dateien?",
+            "answer": "Selbstverständlich. Wir arbeiten komplett transparent. Nach Projektende erhalten Sie den vollen Zugriff auf alle Figma-Files und Assets."
+          }
         ]
       },
       "design-systems": {
@@ -1413,6 +1698,63 @@
           "Schnellere Entwicklung",
           "Vereinfachte Wartung",
           "Skalierbarkeit"
+        ],
+        "process": [
+          {
+            "number": "01",
+            "title": "UI Audit",
+            "description": "Wir analysieren Ihre bestehenden Interfaces und identifizieren Inkonsistenzen bei Farben, Typografie und Abständen."
+          },
+          {
+            "number": "02",
+            "title": "Token Generierung",
+            "description": "Definition der Design-Tokens (Farben, Spacings, Typografie) als skalierbare Grundlage für alle zukünftigen Komponenten."
+          },
+          {
+            "number": "03",
+            "title": "Komponenten-Bau",
+            "description": "Erstellung einer modularen UI-Bibliothek in Figma mit Varianten, Auto-Layout und interaktiven States."
+          },
+          {
+            "number": "04",
+            "title": "Developer Handoff",
+            "description": "Dokumentation aller Komponenten-Richtlinien und reibungslose Übergabe an das Entwickler-Team via Storybook oder Code-Snippets."
+          }
+        ],
+        "advantages": [
+          {
+            "icon": "widgets",
+            "title": "Single Source of Truth",
+            "description": "Alle Teams (Design, Marketing, Development) greifen auf denselben, immer aktuellen Komponenten-Pool zu."
+          },
+          {
+            "icon": "lightning",
+            "title": "Beschleunigte Entwicklung",
+            "description": "Neue Features werden nicht mehr von Grund auf designt, sondern aus dem bestehenden System effizient zusammengesetzt."
+          },
+          {
+            "icon": "shield_check",
+            "title": "Visuelle Konsistenz",
+            "description": "Einheitliches Markenbild über alle Plattformen und Touchpoints hinweg, unabhängig davon, welches Team gerade arbeitet."
+          }
+        ],
+        "testimonials": [
+          {
+            "company": "Fintech Scale-Up",
+            "name": "Marcus T.",
+            "role": "Head of Product",
+            "text": "Dank dem neuen Design System von Coday haben wir unsere Time-to-Market für neue Features nahezu halbiert."
+          }
+        ],
+        "faqs": [
+          {
+            "question": "Ab wann lohnt sich ein eigenes Design System?",
+            "answer": "Ein Design System lohnt sich, sobald mehrere Teams an einem Produkt arbeiten oder Sie planen, Ihre Software/Website stark zu skalieren. Es verhindert den 'Wildwuchs' an verschiedenen Button-Styles oder Farben."
+          },
+          {
+            "question": "Arbeiten Sie mit Figma Auto-Layout?",
+            "answer": "Ja, unsere Design Systeme basieren vollständig auf modernen Figma-Features wie Auto-Layout, Component Properties und Variables."
+          }
         ]
       },
       "website-relaunch": {
@@ -1424,6 +1766,63 @@
           "Optimierte User Experience",
           "Mobile First",
           "SEO-Relaunch-Begleitung"
+        ],
+        "process": [
+          {
+            "number": "01",
+            "title": "Status-Quo Analyse",
+            "description": "Tiefgehender Audit Ihrer aktuellen Seite: Wo verlieren wir Nutzer? Welche SEO-Rankings müssen unbedingt erhalten bleiben?"
+          },
+          {
+            "number": "02",
+            "title": "Strategie & Konzept",
+            "description": "Neuausrichtung der Architektur und der Kernbotschaften. Wir definieren den Scope für den Relaunch."
+          },
+          {
+            "number": "03",
+            "title": "Redesign & Neuentwicklung",
+            "description": "Visualisierung des neuen Interfaces und anschließende Programmierung mit modernen Headless-Technologien."
+          },
+          {
+            "number": "04",
+            "title": "SEO-Migration & Go-Live",
+            "description": "Sorgfältige Einrichtung von 301-Weiterleitungen, URL-Mappings und ein reibungsloser Launch ohne Ranking-Verluste."
+          }
+        ],
+        "advantages": [
+          {
+            "icon": "rocket",
+            "title": "Ranking-Sicherheit",
+            "description": "Ein Relaunch ohne SEO-Verlust. Wir transferieren Ihre hart erarbeiteten Google-Platzierungen sicher auf die neue Plattform."
+          },
+          {
+            "icon": "sparkle",
+            "title": "Quantensprung im Design",
+            "description": "Wir modernisieren nicht nur, wir transformieren. Ihre neue Seite wird den Qualitätsanspruch Ihres Unternehmens endlich widerspiegeln."
+          },
+          {
+            "icon": "chart_bar",
+            "title": "Fokus auf Lead-Generierung",
+            "description": "Der neue Relaunch ist darauf optimiert, aus passiven Besuchern aktive Anfragen und Kunden zu generieren."
+          }
+        ],
+        "testimonials": [
+          {
+            "company": "Industrieunternehmen Hessen",
+            "name": "Klaus F.",
+            "role": "Geschäftsführer",
+            "text": "Der Relaunch mit Coday war ein voller Erfolg. Die neue Seite ist modern, wahnsinnig schnell und die SEO-Rankings sind sogar noch gestiegen."
+          }
+        ],
+        "faqs": [
+          {
+            "question": "Verliere ich bei einem Relaunch mein Google-Ranking?",
+            "answer": "Nicht mit uns. Durch eine akribische SEO-Migration mit strukturierten 301-Weiterleitungen stellen wir sicher, dass Suchmaschinen die neuen URLs sofort akzeptieren und Ranking-Abstürze vermieden werden."
+          },
+          {
+            "question": "Können wir unsere bestehenden Texte behalten?",
+            "answer": "Ja. Oft empfehlen wir jedoch, die Gelegenheit des Relaunches zu nutzen, um veraltete Texte redaktionell zu überarbeiten und an das neue Layout anzupassen."
+          }
         ]
       }
     },
@@ -1437,6 +1836,63 @@
           "Mehr qualifizierte Leads",
           "Nachhaltiges Wachstum",
           "Sichtbarkeit vor der Konkurrenz"
+        ],
+        "process": [
+          {
+            "number": "01",
+            "title": "Technisches SEO-Audit",
+            "description": "Wir analysieren Ihre Website auf technische Schwachstellen: Ladezeiten, Indexierbarkeit, strukturierte Daten und Crawl-Budget."
+          },
+          {
+            "number": "02",
+            "title": "Keyword- & Konkurrenzanalyse",
+            "description": "Identifikation der Suchbegriffe, die wirklich Umsatz bringen, sowie Analyse der Content-Lücken Ihrer stärksten Wettbewerber."
+          },
+          {
+            "number": "03",
+            "title": "Content-Strategie & Architektur",
+            "description": "Aufbau einer semantisch korrekten Seitenstruktur und Erstellung von relevantem Content, der Nutzer und Suchmaschinen überzeugt."
+          },
+          {
+            "number": "04",
+            "title": "Monitoring & Linkaufbau",
+            "description": "Kontinuierliche Überwachung der Rankings und gezielter Aufbau von qualitativ hochwertigen Backlinks zur Stärkung der Domain-Autorität."
+          }
+        ],
+        "advantages": [
+          {
+            "icon": "search",
+            "title": "Datengetriebene Entscheidungen",
+            "description": "Wir optimieren nicht auf gut Glück. Jede SEO-Maßnahme basiert auf harter Datenanalyse und aktuellen Google-Updates."
+          },
+          {
+            "icon": "lightning",
+            "title": "Technical SEO First",
+            "description": "Durch unseren Hintergrund in der Headless-Entwicklung lösen wir komplexe technische SEO-Probleme, an denen reine Marketing-Agenturen scheitern."
+          },
+          {
+            "icon": "chart_bar",
+            "title": "Nachhaltiges Wachstum",
+            "description": "Keine Blackhat-Tricks. Wir setzen auf nachhaltige Strategien, die auch zukünftige Algorithmus-Updates sicher überstehen."
+          }
+        ],
+        "testimonials": [
+          {
+            "company": "B2B Dienstleister",
+            "name": "Andreas W.",
+            "role": "Marketing Manager",
+            "text": "Dank Coday ranken wir für unsere wichtigsten Dienstleistungen organisch auf Platz 1. Die Lead-Qualität hat sich drastisch verbessert."
+          }
+        ],
+        "faqs": [
+          {
+            "question": "Wann sehe ich erste SEO-Ergebnisse?",
+            "answer": "SEO ist ein Marathon, kein Sprint. Technische Fixes (wie PageSpeed) wirken oft in wenigen Wochen, nachhaltiges Ranking-Wachstum benötigt in der Regel 3-6 Monate."
+          },
+          {
+            "question": "Ist Technical SEO wirklich so wichtig?",
+            "answer": "Ja. Wenn Ihre Website für den Google-Bot schwer zu crawlen oder extrem langsam ist, bringt auch der beste Text keine Top-Platzierungen. Core Web Vitals sind ein offizieller Ranking-Faktor."
+          }
         ]
       },
       "performance-optimization": {
@@ -1448,6 +1904,63 @@
           "Niedrigere Absprungraten",
           "Besseres Google-Ranking",
           "Zufriedene Nutzer"
+        ],
+        "process": [
+          {
+            "number": "01",
+            "title": "Deep-Dive Analyse",
+            "description": "Ermittlung des Status Quo: Wir messen TTFB, LCP, CLS und INP und decken die schwerwiegendsten Performance-Blocker auf."
+          },
+          {
+            "number": "02",
+            "title": "Asset-Optimierung",
+            "description": "Kompression von Bildern (WebP/AVIF), Optimierung von Webfonts und radikale Reduzierung unnötiger Third-Party-Skripte."
+          },
+          {
+            "number": "03",
+            "title": "Code-Splitting & Caching",
+            "description": "Implementierung intelligenter Caching-Strategien auf Edge-Level und Optimierung der JavaScript-Auslieferung."
+          },
+          {
+            "number": "04",
+            "title": "Performance-Monitoring",
+            "description": "Einrichtung automatischer Checks, um sicherzustellen, dass zukünftige Content-Updates die Geschwindigkeit nicht negativ beeinträchtigen."
+          }
+        ],
+        "advantages": [
+          {
+            "icon": "speed",
+            "title": "Millisekunden-Fokus",
+            "description": "Wir kratzen nicht nur an der Oberfläche. Wir optimieren den kritischen Rendering-Pfad, bis Ihre Seite quasi sofort lädt."
+          },
+          {
+            "icon": "target",
+            "title": "Conversion-Boost",
+            "description": "Jede Sekunde längere Ladezeit kostet Conversion. Unsere Optimierung macht sich direkt in Ihren Umsätzen bemerkbar."
+          },
+          {
+            "icon": "lightning",
+            "title": "Lighthouse Perfection",
+            "description": "Wir zielen stets auf den perfekten 100/100 Score ab – ein Qualitätsmerkmal, das auch Google belohnt."
+          }
+        ],
+        "testimonials": [
+          {
+            "company": "E-Commerce Händler",
+            "name": "Sabine H.",
+            "role": "Inhaberin",
+            "text": "Die Ladezeit unseres Shops wurde halbiert. Die Bounce-Rate ist gesunken und unsere Conversion-Rate stieg spürbar an."
+          }
+        ],
+        "faqs": [
+          {
+            "question": "Warum ist meine Seite so langsam?",
+            "answer": "Meistens liegt es an zu großen Bildern, unnötigen Plugins, blockierendem JavaScript (z.B. Tracking-Scripts) oder einem unzureichend konfigurierten Hosting-Setup."
+          },
+          {
+            "question": "Optimieren Sie auch WordPress-Seiten?",
+            "answer": "Grundsätzlich ja, jedoch raten wir bei extremen Performance-Anforderungen oft zu einer Headless-Architektur, da klassisches WordPress hier architektonische Grenzen aufweist."
+          }
         ]
       },
       "digital-consulting": {
@@ -1459,6 +1972,63 @@
           "Vermeidung von Fehlinvestitionen",
           "Neutrale Technologie-Beratung",
           "Fokus auf Business-Value"
+        ],
+        "process": [
+          {
+            "number": "01",
+            "title": "Bedürfnis-Evaluierung",
+            "description": "Wir analysieren Ihre bestehenden digitalen Prozesse und ermitteln, welche Werkzeuge und Strategien Ihrem Unternehmen wirklich helfen."
+          },
+          {
+            "number": "02",
+            "title": "Technologie-Auswahl",
+            "description": "Unabhängige Beratung zur Wahl des passenden Tech-Stacks (z.B. CMS, Shopsystem, CRM) für Ihre individuellen Anforderungen."
+          },
+          {
+            "number": "03",
+            "title": "Architektur-Planung",
+            "description": "Erstellung einer zukunftssicheren Systemarchitektur, die mitwächst und keine technischen Schulden anhäuft."
+          },
+          {
+            "number": "04",
+            "title": "Roadmap-Erstellung",
+            "description": "Entwicklung eines klaren, phasenbasierten Projektplans mit definierten Meilensteinen und Budgetrahmen."
+          }
+        ],
+        "advantages": [
+          {
+            "icon": "lightbulb",
+            "title": "Entwickler-Perspektive",
+            "description": "Wir beraten nicht nur theoretisch, wir wissen aus der Praxis, wie aufwendig und komplex die Umsetzung tatsächlich wird."
+          },
+          {
+            "icon": "shield_check",
+            "title": "Vendor-Neutral",
+            "description": "Wir sind an keine speziellen Softwareanbieter gebunden und empfehlen ausschließlich das, was für Ihren Use Case am besten ist."
+          },
+          {
+            "icon": "chart_bar",
+            "title": "Risiko-Minimierung",
+            "description": "Vermeiden Sie kostspielige Fehlentscheidungen beim Tech-Stack, bevor Sie überhaupt mit der Entwicklung beginnen."
+          }
+        ],
+        "testimonials": [
+          {
+            "company": "Traditionsunternehmen",
+            "name": "Bernd M.",
+            "role": "CDO",
+            "text": "Das Consulting von Coday hat uns vor einer teuren System-Fehlentscheidung bewahrt. Absolute Empfehlung für digitale Strategie."
+          }
+        ],
+        "faqs": [
+          {
+            "question": "Beratung oder Umsetzung – machen Sie beides?",
+            "answer": "Ja. Wir beraten Sie strategisch und können die Architektur anschließend auch in-house umsetzen. Sie sind jedoch völlig frei, die Umsetzung mit einem anderen Dienstleister durchzuführen."
+          },
+          {
+            "question": "Beraten Sie auch zum Thema KI im Unternehmen?",
+            "answer": "Absolut. Wir helfen Ihnen, sinnvolle KI-Integrationen zu identifizieren (z.B. automatisierter Kundenservice, Datenanalyse) und bewerten deren technische Machbarkeit."
+          }
         ]
       }
     },

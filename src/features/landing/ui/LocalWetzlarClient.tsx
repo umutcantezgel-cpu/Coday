@@ -31,7 +31,7 @@ const LocalWetzlar: React.FC = () => {
           </h1>
           <p className="text-xl text-slate-600 leading-relaxed mb-8 max-w-2xl mx-auto">
             Ihre Website ist Ihr bester Verkäufer. Wir verwandeln Ihr lokales Geschäft in Wetzlar in
-            einen digitalen Kundenmagneten.
+            einen digitalen Kundenmagneten. Webdesign Wetzlar: Mehr Kunden aus der Region
           </p>
           <div className="flex gap-4 justify-center">
             <button className="active:scale-[0.97] bg-secondary text-white px-8 py-4 rounded-xl font-bold hover:bg-secondary/90 transition-colors motion-reduce:duration-[0.01ms] shadow-lg hover:shadow-xl transform hover:-translate-y-1">
