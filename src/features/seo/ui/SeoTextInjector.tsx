@@ -115,13 +115,6 @@ export const SeoTextInjector: React.FC<SeoTextInjectorProps> = ({ title = '', h1
     <div className="container mx-auto px-4 pb-16 pt-8 max-w-4xl transition-opacity duration-300">
       <div className="prose prose-sm md:prose-base dark:prose-invert max-w-none text-text-muted">
         <p className="text-justify leading-relaxed">{seoText}</p>
-
-        <div className="mt-8 pt-4 border-t border-gray-100/10 text-xs text-gray-400/60 font-mono flex flex-wrap gap-2 items-center">
-          <span>{locale === 'en' ? 'Topics:' : 'Themen:'}</span>
-          {title && <span>{title}</span>}
-          {title && h1 && <span>&bull;</span>}
-          {h1 && <span>{h1}</span>}
-        </div>
       </div>
     </div>
   );

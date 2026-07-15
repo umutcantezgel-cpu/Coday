@@ -572,7 +572,7 @@
       "headline": "Vom Besucher",
       "title_suffix": "zum Stammkunden",
       "description": "Skalierbare Online-Shops und Retail-Erlebnisse, die verkaufen und Ihre Marke stärken.",
-      "subheadline": "subheadline"
+      "subheadline": "Wir entwickeln herausragende Online-Shops und Retail-Plattformen, die sowohl die Laufkundschaft als auch die Online-Verkäufe steigern. Durch die Integration Ihrer physischen Point-of-Sale-Systeme mit Ihrer digitalen Verkaufsfläche schaffen wir ein nahtloses Omnichannel-Erlebnis. Unsere maßgeschneiderten E-Commerce-Lösungen befähigen Ihre Marke, ein größeres Publikum zu erreichen und den Umsatz in einem wettbewerbsintensiven Markt signifikant zu steigern."
     },
     "challenges": {
       "warenkorb_abbrueche": {
@@ -591,7 +591,7 @@
     "solutions": {
       "high_speed_frontend": {
         "title": "High-Speed Frontend",
-        "description": "Next.js Lösungen für blitzschnelles Shopping."
+        "description": "Next.js Lösungen für blitzschnelles Shopping. Bieten Sie Click-and-Collect, Endless-Aisle-Funktionen und integrierte Treueprogramme an, um die Kundenbindung zu stärken. Unsere Plattformen synchronisieren das Inventar in Echtzeit und stellen sicher, dass Ihre Kunden immer Zugriff auf genaue Bestandsdaten haben, egal ob sie online oder im Geschäft einkaufen. Dieser ganzheitliche Ansatz schließt die Lücke zwischen digitalem Komfort und physischen Einzelhandelserlebnissen."
       },
       "conversion_optimierung": {
         "title": "Conversion Optimierung",

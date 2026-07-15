@@ -469,18 +469,18 @@ export const industriesData: Record<string, IndustryData> = {
     ],
     solutions: [
       {
-        title: 'ecommerce-retail.solutions.headless_commerce.title',
-        description: 'ecommerce-retail.solutions.headless_commerce.description',
+        title: 'ecommerce-retail.solutions.high_speed_frontend.title',
+        description: 'ecommerce-retail.solutions.high_speed_frontend.description',
         icon: 'shopping_cart',
       },
       {
-        title: 'ecommerce-retail.solutions.cro.title',
-        description: 'ecommerce-retail.solutions.cro.description',
+        title: 'ecommerce-retail.solutions.conversion_optimierung.title',
+        description: 'ecommerce-retail.solutions.conversion_optimierung.description',
         icon: 'speed',
       },
       {
-        title: 'ecommerce-retail.solutions.shop_seo.title',
-        description: 'ecommerce-retail.solutions.shop_seo.description',
+        title: 'ecommerce-retail.solutions.omnichannel.title',
+        description: 'ecommerce-retail.solutions.omnichannel.description',
         icon: 'analytics',
       },
     ],
@@ -490,12 +490,12 @@ export const industriesData: Record<string, IndustryData> = {
         description: 'ecommerce-retail.customFeatures.produkt_konfigurator.description',
       },
       {
-        title: 'ecommerce-retail.customFeatures.erp_crm_anbindung.title',
-        description: 'ecommerce-retail.customFeatures.erp_crm_anbindung.description',
+        title: 'ecommerce-retail.customFeatures.cross_selling_module.title',
+        description: 'ecommerce-retail.customFeatures.cross_selling_module.description',
       },
       {
-        title: 'ecommerce-retail.customFeatures.pim_systeme.title',
-        description: 'ecommerce-retail.customFeatures.pim_systeme.description',
+        title: 'ecommerce-retail.customFeatures.loyalty_integration.title',
+        description: 'ecommerce-retail.customFeatures.loyalty_integration.description',
       },
     ],
   },

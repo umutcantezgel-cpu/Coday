@@ -36,6 +36,9 @@ interface LocalSeoContent {
     q: string;
     a: string;
   }[];
+  cta_title?: string;
+  cta_text?: string;
+  cta_btn?: string;
 }
 
 interface LocalSeoTemplateProps {
@@ -158,24 +161,19 @@ export const LocalSeoTemplate: React.FC<LocalSeoTemplateProps> = ({ content, cit
       <section className="py-24 px-4 bg-gradient-to-br from-primary-900/10 to-bg-primary text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl font-bold text-secondary-900 mb-6">
-            Bereit für messbares Wachstum?
+            {content.cta_title || 'Bereit für messbares Wachstum?'}
           </h2>
           <p className="text-xl text-secondary-800 font-medium mb-10 leading-relaxed">
-            Lassen Sie uns gemeinsam herausfinden, wie wir Ihr Unternehmen durch High-End Webdesign
-            an die Spitze bringen.
+            {content.cta_text ||
+              'Lassen Sie uns gemeinsam herausfinden, wie wir Ihr Unternehmen durch High-End Webdesign an die Spitze bringen.'}
           </p>
           <Link href="/contact">
             <Button variant="primary" size="lg" className="shadow-xl shadow-primary-500/20">
-              Jetzt Kontakt aufnehmen
+              {content.cta_btn || 'Jetzt Kontakt aufnehmen'}
             </Button>
           </Link>
         </div>
       </section>
-
-      {/* SEO Text für Keyword-Konsistenz */}
-      <div className="container mx-auto px-4 pb-12 text-center text-xs text-gray-400 font-mono">
-        Themen: {content.hero.headline} {content.hero.subheadline}
-      </div>
 
       <SeoLocalExpertiseBlock />
     </div>
