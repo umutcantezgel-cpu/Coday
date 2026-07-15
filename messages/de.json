@@ -11,7 +11,9 @@
         "process": "Prozess",
         "pricing": "Preise",
         "partnerschaft": "Partner-Programm",
-        "contact": "Projekt starten"
+        "contact": "Projekt starten",
+        "garantie": "Garantie",
+        "presse": "Presse"
       },
       "company": {
         "label": "Unternehmen",
@@ -236,7 +238,10 @@
         "regional": "Standorte & Branchen",
         "contact": "Kontakt"
       },
-      "rights": "© {year} Coday. Alle Rechte vorbehalten."
+      "rights": "© {year} Coday. Alle Rechte vorbehalten.",
+      "socialMedia": "Soziale Medien",
+      "legalInfo": "Rechtliche Informationen",
+      "sitemap": "Seitenübersicht (Sitemap)"
     },
     "de": "Deutsch",
     "en": "Englisch",
@@ -821,6 +826,11 @@
     "trust_collaboration": "Vertrauen und partnerschaftliche Zusammenarbeit auf Augenhöhe"
   },
   "industries": {
+    "overview": {
+      "label": "Branchen",
+      "title": "Maßgeschneiderte Webdesign Branchenlösungen",
+      "description": "Spezialisiertes Webdesign für jede Branche von Coday in Wetzlar."
+    },
     "title_prefix": "Maßgeschneiderte Lösungen",
     "title_suffix": "für Ihre Branche.",
     "card_craft": {

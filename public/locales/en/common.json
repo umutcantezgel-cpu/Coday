@@ -33,15 +33,17 @@
       "booking": "Book Appointment",
       "packages": "Packages"
     },
+    "legalInfo": "Legal Information",
+    "socialMedia": "Social Media",
     "rights": "© {year} Coday. All rights reserved.",
     "sections": {
       "career": "Career",
-      "contact": "contact",
+      "contact": "Contact",
       "knowledge": "Knowledge",
-      "navigation": "navigation",
+      "navigation": "Navigation",
       "pricing": "Pricing",
       "services": "Services",
-      "regional": "Locations & industries"
+      "regional": "Locations & Industries"
     },
     "slogan": "Your partner for local visibility. We build measurably successful websites for crafts, medical practices, and gastronomy.",
     "trust": {
@@ -128,7 +130,7 @@
         "desc": "Expert Knowledge"
       },
       "newsletter": {
-        "label": "newsletter",
+        "label": "Newsletter",
         "desc": "Weekly tips"
       },
       "audit": {
@@ -218,8 +220,8 @@
       "health": "Health",
       "real_estate": "Real Estate",
       "service": "Services",
-      "public": "Public contracts",
-      "tech": "Tech startups"
+      "public": "Public Contracts",
+      "tech": "Tech Startups"
     },
     "legal": {
       "hub": "Legal",
@@ -290,7 +292,7 @@
         "desc": "Portals & Systems"
       },
       "design": {
-        "title": "design"
+        "title": "Design"
       },
       "web_design": {
         "label": "Web Design",
@@ -300,7 +302,7 @@
         "label": "UI/UX Optimization"
       },
       "brand": {
-        "label": "Brand identity"
+        "label": "Brand Identity"
       },
       "design_systems": {
         "label": "Design Systems"
@@ -316,7 +318,7 @@
         "desc": "Organic Growth"
       },
       "performance": {
-        "label": "performance",
+        "label": "Performance",
         "desc": "Load times < 1s"
       },
       "consulting": {
@@ -333,13 +335,13 @@
         "label": "Cloud Infrastructure"
       },
       "website_relaunch": {
-        "label": "Website relaunch"
+        "label": "Website Relaunch"
       },
       "seo_opt": {
         "label": "SEO Optimization"
       },
       "perf_opt": {
-        "label": "Performance options"
+        "label": "Performance Optimization"
       },
       "dig_consulting": {
         "label": "Digital Consulting"
@@ -351,13 +353,13 @@
         "title": "Highlights"
       },
       "batherm": "Batherm",
-      "schluesseldienst": "MS locksmith service",
+      "schluesseldienst": "MS Locksmith Service",
       "ratsstuben": "Lindener Ratsstuben",
       "all": {
         "title": "Portfolio"
       },
       "view_all": "View All Projects",
-      "creative_impact": "Creative impact"
+      "creative_impact": "Creative Impact"
     },
     "mobile": {
       "label": "Menu"

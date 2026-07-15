@@ -44,6 +44,7 @@ export default async function IndustryOverviewPage({
     _locale === 'en'
       ? 'Web Design Industry Solutions Wetzlar & Hesse | Coday'
       : 'Webdesign Branchenlösungen Wetzlar & Mittelhessen | Coday';
+  const cleanTitle = _seoTitle.replace(' | Coday', '');
   const _seoDesc =
     _locale === 'en'
       ? 'Specialized web design for every industry by Coday in Wetzlar. Craftsmen, doctors, restaurants and service providers in Central Hesse. Inquire now.'
@@ -68,11 +69,7 @@ export default async function IndustryOverviewPage({
         }}
       />
       <IndustryOverviewClient />
-      {/* SEO Title für Keyword-Konsistenz */}
-      <div className="container mx-auto px-4 pb-12 text-center text-xs text-gray-400 font-mono">
-        Themen: {_seoTitle}
-      </div>
-      <SeoContentBlock />
+      <SeoContentBlock title={cleanTitle} />
     </>
   );
 }

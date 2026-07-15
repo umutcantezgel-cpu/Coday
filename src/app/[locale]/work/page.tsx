@@ -88,7 +88,7 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
             </h1>
             <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
               {isEn
-                ? 'Every project tells a story of transformation. From concept to launch — always with measurable impact.'
+                ? 'Every project tells a story of transformation. Real Projects. Real Results. From concept to launch — always with measurable impact.'
                 : 'Jedes Projekt erzählt eine Geschichte der Transformation. Vom Konzept bis zum Launch — immer mit messbarem Impact.'}
             </p>
           </div>

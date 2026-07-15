@@ -81,10 +81,10 @@ export default async function MarburgLandingPage(props: { params: Promise<{ loca
           <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">
             Ihr Webdesigner in Marburg
           </h1>
-          <p className="text-gray-400 max-w-2xl text-lg">
+          <h2 className="text-gray-400 max-w-2xl text-lg font-normal">
             Als <strong>Ihr Webdesigner in Marburg</strong> bauen wir in der Umgebung
             hochperformante Webseiten für Handwerker, Ärzte und Dienstleister.
-          </p>
+          </h2>
 
           {/* Geo/LocalBusiness Schema injection */}
           <script

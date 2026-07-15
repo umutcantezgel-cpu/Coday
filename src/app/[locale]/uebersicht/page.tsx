@@ -205,6 +205,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                 <li key={industry.slug}>
                   <Link
                     href={`/branchen/${industry.slug}`}
+                    locale="de"
                     className="text-text-light hover:text-primary transition-colors"
                   >
                     {industry.slug
@@ -217,6 +218,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               <li>
                 <Link
                   href="/branchen/handwerker"
+                  locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
                   Handwerker
@@ -225,6 +227,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               <li>
                 <Link
                   href="/branchen/gesundheitswesen"
+                  locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
                   Gesundheitswesen
@@ -233,6 +236,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               <li>
                 <Link
                   href="/branchen/gastronomie"
+                  locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
                   Gastronomie
@@ -241,6 +245,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               <li>
                 <Link
                   href="/branchen/dienstleistung"
+                  locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
                   Dienstleistung
@@ -249,6 +254,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               <li>
                 <Link
                   href="/branchen/immobilien"
+                  locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
                   Immobilien
@@ -257,6 +263,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               <li>
                 <Link
                   href="/branchen/immobilien-makler"
+                  locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
                   Immobilienmakler
@@ -265,6 +272,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               <li>
                 <Link
                   href="/branchen/public-sector"
+                  locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
                   Public Sector

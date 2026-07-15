@@ -83,13 +83,7 @@ export function generatePageMetadata(opts: {
   let finalDescription = opts.description;
   const isEn = opts.path.startsWith('/en');
 
-  // Fix short or duplicate meta descriptions by padding them uniquely
-  if (finalDescription.length < 110) {
-    const cleanTitle = opts.title.split('|')[0].trim();
-    const appendDe = ` Erfahren Sie mehr über ${cleanTitle} bei Coday, Ihrer Webdesign Agentur Wetzlar. Wir bieten Headless CMS, SEO & Next.js.`;
-    const appendEn = ` Learn more about ${cleanTitle} at Coday, your web design agency in Wetzlar. We specialize in Headless CMS, SEO & Next.js.`;
-    finalDescription = `${finalDescription}${isEn ? appendEn : appendDe}`;
-  }
+  // Removed artificial padding as it caused Seobility length warnings (> 160 chars)
 
   const defaultOg: Metadata['openGraph'] = {
     title: fullTitle,

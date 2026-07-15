@@ -83,10 +83,10 @@ export default async function HerbornLandingPage(props: { params: Promise<{ loca
             Ihr Webdesigner in Herborn
           </h1>
           <div className="flex flex-col items-center gap-6 mt-4">
-            <p className="text-gray-400 max-w-2xl text-lg">
+            <h2 className="text-gray-400 max-w-2xl text-lg font-normal">
               Als <strong>Ihr Webdesigner in Herborn</strong> bauen wir in der Umgebung
               hochperformante Webseiten für Handwerker, Ärzte und Dienstleister.
-            </p>
+            </h2>
             <div className="text-gray-300 max-w-2xl text-left space-y-4 px-4 bg-white/5 p-6 rounded-2xl border border-white/10 text-base leading-relaxed">
               <p>
                 Eine professionelle Webseite ist heute das wichtigste Aushängeschild für jedes

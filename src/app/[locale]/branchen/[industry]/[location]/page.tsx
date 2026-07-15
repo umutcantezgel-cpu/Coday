@@ -9,6 +9,7 @@ import { industriesData } from '@/shared/data/industries';
 import { getCityBySlug } from '@/features/local-seo/model/cities';
 import fs from 'fs';
 import path from 'path';
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 
 export const dynamicParams = false;
 
@@ -167,10 +168,16 @@ export default async function IndustryDetailPage({
 
   if (localContent) {
     const _locale = (await params)?.locale || 'de';
+    const pageTitle =
+      _locale === 'en'
+        ? localContent.meta_en?.title || `${localContent.meta.title} in English`
+        : localContent.meta.title;
+    const cleanTitle = pageTitle.replace(' | Coday', '');
     return (
       <>
         {schemaScript}
         <LocalSeoTemplate content={localContent} cityData={cityData} />
+        <SeoContentBlock title={cleanTitle} />
       </>
     );
   }

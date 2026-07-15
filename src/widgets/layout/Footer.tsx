@@ -371,7 +371,10 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <nav aria-label="Soziale Medien" className="flex gap-6 text-gray-300">
+          <nav
+            aria-label={t('footer.socialMedia', { defaultValue: 'Soziale Medien' })}
+            className="flex gap-6 text-gray-300"
+          >
             <a
               href="https://www.facebook.com/profile.php?id=61588758264018"
               target="_blank"
@@ -412,7 +415,7 @@ export const Footer: React.FC = () => {
             </a>
           </nav>
           <nav
-            aria-label="Rechtliche Informationen"
+            aria-label={t('footer.legalInfo', { defaultValue: 'Rechtliche Informationen' })}
             className="flex flex-wrap justify-center md:justify-end gap-x-4 gap-y-2 text-xs text-gray-300"
           >
             <Link
@@ -420,14 +423,14 @@ export const Footer: React.FC = () => {
               href="/garantie"
               className="hover:text-white transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
             >
-              Garantie
+              {t('nav.main.garantie', { defaultValue: 'Garantie' })}
             </Link>
             <Link
               prefetch={false}
               href="/presse"
               className="hover:text-white transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
             >
-              Presse
+              {t('nav.main.presse', { defaultValue: 'Presse' })}
             </Link>
             <Link
               prefetch={false}

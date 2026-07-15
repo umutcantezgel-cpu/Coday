@@ -48,7 +48,7 @@ const LocalWetzlar: React.FC = () => {
               <div className="bg-primary/10 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
                 <Lightning size={32} className="text-primary" weight="duotone" aria-hidden="true" />
               </div>
-              <h3 className="text-xl font-bold text-secondary mb-3">Maximale Performance</h3>
+              <h2 className="text-xl font-bold text-secondary mb-3">Maximale Performance</h2>
               <p className="text-slate-600">
                 Ladezeiten unter 1 Sekunde für optimale Nutzererfahrung und bessere Google-Rankings
                 in Wetzlar.
@@ -63,7 +63,7 @@ const LocalWetzlar: React.FC = () => {
                   aria-hidden="true"
                 />
               </div>
-              <h3 className="text-xl font-bold text-secondary mb-3">Auf Conversion optimiert</h3>
+              <h2 className="text-xl font-bold text-secondary mb-3">Auf Conversion optimiert</h2>
               <p className="text-slate-600">
                 Datenbasierte Designs, die aus lokalen Besuchern in Wetzlar zahlende Kunden machen.
               </p>
@@ -77,7 +77,7 @@ const LocalWetzlar: React.FC = () => {
                   aria-hidden="true"
                 />
               </div>
-              <h3 className="text-xl font-bold text-secondary mb-3">Regionale Dominanz</h3>
+              <h2 className="text-xl font-bold text-secondary mb-3">Regionale Dominanz</h2>
               <p className="text-slate-600">
                 Dominieren Sie die Suchergebnisse in Mittelhessen durch gezielte Local-SEO
                 Strategien.

@@ -29,6 +29,8 @@ export async function generateMetadata({
   });
 }
 
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
+
 export default async function Page(props: { params: Promise<{ locale: string }> }) {
   const params = await props.params;
   setRequestLocale(params.locale);
@@ -39,6 +41,8 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   const pageDescription = t('meta.description', {
     defaultValue: 'Berechnen Sie die Kosten für Ihr nächstes Webprojekt.',
   });
+
+  const cleanTitle = pageTitle.replace(' | Coday', '');
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -62,6 +66,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <ClientComponent />
+      <SeoContentBlock title={cleanTitle} />
     </>
   );
 }

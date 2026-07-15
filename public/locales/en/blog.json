@@ -235,5 +235,10 @@
       }
     },
     "title": "Evolution of the Web"
+  },
+  "seoAuthorBlock": {
+    "title": "About the Author & Coday Agency",
+    "role": "Umutcan Emre Tezgel · Owner & Senior Developer",
+    "description": "As the owner of the Coday Web Design Agency in Wetzlar, Umutcan Emre Tezgel regularly writes technical articles on modern web development, Headless CMS, and performance optimization. Our goal is to provide businesses with digital solutions that are technically flawless and drive real business results."
   }
 }

@@ -215,7 +215,10 @@ const CardNav: React.FC<CardNavProps> = ({
                                         target: '_blank',
                                         rel: 'noopener noreferrer',
                                       }
-                                    : { href: link.href };
+                                    : {
+                                        href: link.href,
+                                        ...(link.locale ? { locale: link.locale } : {}),
+                                      };
 
                                   return (
                                     <div key={i} className="dropdown-link-item group relative">
@@ -249,6 +252,7 @@ const CardNav: React.FC<CardNavProps> = ({
                               <Link
                                 key={i}
                                 href={link.href}
+                                {...(link.locale ? { locale: link.locale } : {})}
                                 className="dropdown-link-item"
                                 onClick={() => setActiveCategory(null)}
                               >

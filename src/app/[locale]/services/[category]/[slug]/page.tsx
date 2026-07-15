@@ -9,6 +9,7 @@ import { servicesData } from '@/shared/data/services';
 import { getTranslations } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 
+export const dynamic = 'force-static';
 export const dynamicParams = false;
 
 export function generateStaticParams() {
@@ -49,7 +50,7 @@ export async function generateMetadata({
       : description;
 
   return generatePageMetadata({
-    title: locale === 'en' ? `${title} - Web Services` : `${title} - Webdesign Leistungen`,
+    title: title,
     description: fullDesc,
     path: `/${locale}/services/${category}/${slug}`,
     type: 'money',

@@ -211,7 +211,10 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
                                           target: '_blank',
                                           rel: 'noopener noreferrer',
                                         }
-                                      : { href: link.href };
+                                      : {
+                                          href: link.href,
+                                          ...(link.locale ? { locale: link.locale } : {}),
+                                        };
 
                                     return (
                                       <LinkComponent
@@ -252,7 +255,10 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
                                       target: '_blank',
                                       rel: 'noopener noreferrer',
                                     }
-                                  : { href: link.href };
+                                  : {
+                                      href: link.href,
+                                      ...(link.locale ? { locale: link.locale } : {}),
+                                    };
 
                                 return (
                                   <LinkComponent

@@ -13,7 +13,7 @@ interface ScrollFloatProps {
   scrollStart?: string; // GSAP scroll start (ignored)
   scrollEnd?: string; // GSAP scroll end (ignored)
   stagger?: number;
-  as?: 'h1' | 'h2' | 'div';
+  as?: 'h1' | 'h2' | 'div' | 'span' | 'p';
 }
 
 const ScrollFloat: React.FC<ScrollFloatProps> = ({
@@ -67,7 +67,8 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
     },
   };
 
-  const MotionComponent = as === 'h1' ? m.h1 : as === 'h2' ? m.h2 : m.div;
+  const MotionComponent =
+    as === 'h1' ? m.h1 : as === 'h2' ? m.h2 : as === 'span' ? m.span : as === 'p' ? m.p : m.div;
 
   return (
     <MotionComponent

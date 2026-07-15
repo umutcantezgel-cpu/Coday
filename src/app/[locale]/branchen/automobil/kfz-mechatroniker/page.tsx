@@ -77,7 +77,7 @@ export default async function SubIndustryPage({ params }: { params: Promise<{ lo
   if (!content) {
     return (
       <div className="p-20 text-center pt-48">
-        <h1 className="text-2xl font-bold mb-4">Inhalt wird geladen...</h1>
+        <h2 className="text-2xl font-bold mb-4">Inhalt wird geladen...</h2>
         <p>Der branchenspezifische Content für diese Seite wird aktuell konfiguriert.</p>
       </div>
     );

@@ -206,9 +206,6 @@ export function ServiceDetailClient() {
             </div>
             <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-gray-900 mb-6 leading-tight text-balance">
               {t(service.titleKey)}
-              <span className="sr-only">
-                {locale === 'en' ? ' - Web Services' : ' - Webdesign Leistungen'}
-              </span>
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed max-w-prose text-pretty mb-8">
               {t(service.longDescriptionKey)}
@@ -228,9 +225,9 @@ export function ServiceDetailClient() {
             {/* Abstract Visual */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full blur-3xl opacity-60"></div>
             <div className="relative glass-card p-8 rounded-3xl border border-white/50 bg-surface-elevated/60 backdrop-blur-xl shadow-glass">
-              <h2 className="font-display font-bold text-2xl text-gray-900 mb-6">
+              <h3 className="font-display font-bold text-2xl text-gray-900 mb-6">
                 {t('generic_detail.hero.benefits_title')}
-              </h2>
+              </h3>
               <ul className="space-y-4">
                 {benefits.map((benefit, i) => (
                   <li key={i} className="flex items-start">
@@ -251,9 +248,9 @@ export function ServiceDetailClient() {
       {!service.processStepsKey && (
         <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-12 lg:mb-24 lg:hidden">
           <div className="glass-card p-8 rounded-2xl bg-surface-elevated shadow-aurora">
-            <h2 className="font-display font-bold text-2xl text-gray-900 mb-6">
+            <h3 className="font-display font-bold text-2xl text-gray-900 mb-6">
               {t('generic_detail.hero.benefits_title')}
-            </h2>
+            </h3>
             <ul className="space-y-4">
               {benefits.map((benefit, i) => (
                 <li key={i} className="flex items-start">
@@ -292,9 +289,9 @@ export function ServiceDetailClient() {
                       priority
                       src={bgImage.src}
                       alt={t(service.titleKey) || 'Service Header'}
-                      width={400}
-                      height={400}
-                      className="w-full h-full object-cover mix-blend-overlay grayscale"
+                      fill
+                      sizes="100vw"
+                      className="object-cover mix-blend-overlay grayscale"
                     />
                   );
                 }

@@ -115,7 +115,7 @@ export const ReportDashboard: React.FC = () => {
         <div className="w-24 h-24 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-6">
           <OptimizedIcon icon={CloudSlash} className="text-red-500 text-5xl" aria-hidden="true" />
         </div>
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">{t('dashboard.analysis_failed')}</h1>
+        <h2 className="text-3xl font-bold text-gray-900 mb-2">{t('dashboard.analysis_failed')}</h2>
 
         <p className="text-gray-600 mb-6 max-w-md mx-auto">
           {useAnalyzerStore.getState().errorCode === 'TIMEOUT'
@@ -180,9 +180,9 @@ export const ReportDashboard: React.FC = () => {
         <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
           {t('dashboard.analysis_complete')}
         </span>
-        <h1 className="font-display font-black text-4xl md:text-6xl text-secondary mb-4">
+        <h2 className="font-display font-black text-4xl md:text-6xl text-secondary mb-4">
           {t('dashboard.your_audit')}
-        </h1>
+        </h2>
         <p className="text-xl text-gray-500 mb-2">{result.domain}</p>
         <p className="text-sm text-gray-400 mb-6">
           {t('dashboard.analyzed_on', {

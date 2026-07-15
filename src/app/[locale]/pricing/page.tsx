@@ -29,16 +29,15 @@ export async function generateMetadata({
   });
 }
 
+import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
+
 export default async function PricingPage({ params }: { params: Promise<{ locale: string }> }) {
   const _locale = (await params)?.locale || 'de';
   const _seoTitle =
     _locale === 'en'
       ? 'Web Design Prices Wetzlar | Transparent Plans | Coday'
       : 'Webdesign Preise Wetzlar | Transparente Pakete | Coday';
-  const _seoDesc =
-    _locale === 'en'
-      ? 'Clear fixed prices for your web design project in Wetzlar and Central Hesse. No hidden costs and fully transparent packages. Request your free quote.'
-      : 'Klare Festpreise für Ihr Webdesign in Wetzlar und Mittelhessen. Keine versteckten Kosten, faire Pakete. Jetzt unverbindlich Ihr Angebot anfragen.';
+  const cleanTitle = _seoTitle.replace(' | Coday', '');
   return (
     <>
       <script
@@ -56,6 +55,7 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
       <div className="container mx-auto px-4 pb-12 text-center text-xs text-gray-400 font-mono">
         Themen: {_seoTitle}
       </div>
+      <SeoContentBlock title={cleanTitle} />
     </>
   );
 }

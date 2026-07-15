@@ -68,7 +68,8 @@ function sitemapEntry(
 ): MetadataRoute.Sitemap[number] {
   const cleanPath = path.replace(/^\/(en|de)/, '').replace(/\/$/, '') || '';
 
-  const localPathsRegex = /^\/(landingpages|webdesign-agentur-wetzlar|angebot-handwerker)(\/.*)?$/;
+  const localPathsRegex =
+    /^\/(landingpages|webdesign-agentur-wetzlar|angebot-handwerker|branchen|standorte)(\/.*)?$/;
   const isLocalPath = localPathsRegex.test(cleanPath);
   const isDeOnlyRoute = DE_ONLY_ROUTES.includes(cleanPath);
 

@@ -81,8 +81,8 @@ export default async function AnalyzerPage(props: { params: Promise<{ locale: st
               <span className="text-primary-600">Analyzer</span> & SEO Audit
             </h1>
             <p className="text-xl text-secondary-600 max-w-2xl mx-auto">
-              Testen Sie Ihre Website auf Performance, SEO, Accessibility und Best Practices mit dem
-              Coday Website Analyzer.
+              Testen Sie Ihre Website auf Performance, SEO, Accessibility und Best Practices mit
+              unserem Kostenloser Website Analyzer & SEO Audit.
             </p>
           </div>
 

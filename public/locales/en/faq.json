@@ -3,7 +3,7 @@
     "title": "Frequently Asked Questions",
     "subtitle": "Answers to your Frequently Asked Questions",
     "description": "Frequently asked questions about our web design projects, SEO strategies, Next.js development, and fixed pricing. Find all your answers here.",
-    "desc": "A good text or article should contain at least 500 words, but the quality of our Web Design Agency in Wetzlar is measured in more than just words. We focus on technical excellence, measurable performance (LCP under 2 seconds), and sustainable growth for both B2B and B2C companies. As your local partner in Central Hesse, we specialize in modern Next.js solutions, headless CMS, and highly secure, performant web applications. Transparency, fixed pricing, and direct communication are always at the forefront of our partnership."
+    "desc": "Use our service for your digital project."
   },
   "search": {
     "placeholder": "Search questions...",
@@ -116,6 +116,6 @@
   },
   "seoText": {
     "title": "Frequently Asked Questions (FAQ) about Web Design & Development",
-    "content": "As an experienced web design agency, we offer comprehensive expertise and technological excellence in all areas of digital product development. Our goal is to create solutions for you that are not only visually appealing but, above all, high-performing and conversion-optimized.\n\nThe digital landscape is evolving rapidly. Therefore, we rely on modern, future-proof technologies and agile development methods. Whether it's a complex web application, a high-performance headless CMS, or sophisticated UI/UX design - we guarantee the highest quality standards and measurable results.\n\nTrust in a partner who understands your business goals and translates them into digital success. Through continuous analysis, optimization, and strategic consulting, we ensure that your digital assets generate long-term value and keep you one step ahead of the competition."
+    "content": "Frequently asked questions about our services and processes."
   }
 }

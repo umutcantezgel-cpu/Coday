@@ -111,6 +111,7 @@ export function WebDesignClient() {
               height={600}
               className="relative rounded-[2rem] shadow-flat-lg w-full h-auto transform -rotate-2 hover:rotate-0 transition motion-reduce:duration-[0.01ms] duration-500 bg-surface-elevated p-2"
               priority={true}
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
         </div>

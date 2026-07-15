@@ -6,12 +6,14 @@
     },
     "nav": {
       "main": {
-        "home": "Startseite",
+        "home": "Home",
         "work": "Portfolio",
-        "process": "Prozess",
-        "pricing": "Preise",
+        "process": "Process",
+        "pricing": "Pricing",
         "partnerschaft": "Partner Program",
-        "contact": "Projekt starten"
+        "contact": "Start Project",
+        "garantie": "Warranty",
+        "presse": "Press"
       },
       "company": {
         "label": "Company",
@@ -236,7 +238,10 @@
         "regional": "Locations & Industries",
         "contact": "Contact"
       },
-      "rights": "© {year} Coday. All rights reserved."
+      "rights": "© {year} Coday. All rights reserved.",
+      "socialMedia": "Social Media",
+      "legalInfo": "Legal Information",
+      "sitemap": "Sitemap"
     },
     "de": "German",
     "en": "English",
@@ -625,40 +630,42 @@
       "description": "Here is what we have built."
     },
     "project_detail": {
-      "not_found": "Projekt nicht gefunden",
-      "back_to_overview": "Zurück zur Übersicht",
-      "breadcrumb_projects": "Projekte",
+      "not_found": "Project not found",
+      "back_to_overview": "Back to overview",
+      "breadcrumb_projects": "Projects",
       "sidebar": {
         "details": "Details",
         "service": "Service",
-        "period": "Zeitraum",
-        "result": "Ergebnis",
-        "interested_title": "Interessiert an ähnlichen Ergebnissen?",
-        "request_project": "Projekt anfragen",
-        "client": "Kunde",
-        "industry": "Branche",
-        "services": "Leistungen",
-        "year": "Jahr",
+        "duration": "Duration",
+        "budget": "Budget",
+        "period": "Period",
+        "result": "Result",
+        "interested_title": "Interested in similar results?",
+        "request_project": "Request Project",
+        "client": "Client",
+        "industry": "Industry",
+        "services": "Services",
+        "year": "Year",
         "related": "Related Services"
       },
-      "challenge": "Die Herausforderung",
-      "approach": "Unser Ansatz",
-      "results": "Die Ergebnisse",
-      "impact": "Messbarer Erfolg",
-      "before_after_title": "Vorher & Nachher",
-      "before": "Vorher",
-      "after": "Nachher",
+      "challenge": "The Challenge",
+      "approach": "Our Approach",
+      "results": "The Results",
+      "impact": "Measurable Success",
+      "before_after_title": "Before & After",
+      "before": "Before",
+      "after": "After",
       "nav": {
-        "prev": "Vorheriges Projekt",
-        "next": "Nächstes Projekt"
+        "prev": "Previous Project",
+        "next": "Next Project"
       },
       "cta": {
-        "title": "Lassen Sie uns Großartiges erschaffen",
-        "button": "Jetzt anfragen"
+        "title": "Let's build something great",
+        "button": "Request a project"
       },
-      "cta_title": "Überzeugt von diesen Resultaten?",
-      "cta_desc": "Lassen Sie uns in einem persönlichen Gespräch eruieren, wie wir ähnliche Ergebnisse für Ihr Unternehmen erzielen können.",
-      "cta_button": "Projekt anfragen"
+      "cta_title": "Convinced by these results?",
+      "cta_desc": "Let's find out how we can achieve similar results for your business in a personal conversation.",
+      "cta_button": "Request a project"
     }
   },
   "social": {
@@ -820,6 +827,11 @@
     "trust_collaboration": "Vertrauen und partnerschaftliche Zusammenarbeit auf Augenhöhe"
   },
   "industries": {
+    "overview": {
+      "label": "Industries",
+      "title": "Industry Solutions for Web Design",
+      "description": "Specialized web design for every industry. Custom Industry Solutions for Web Design to help you dominate your sector."
+    },
     "title_prefix": "Maßgeschneiderte Lösungen",
     "title_suffix": "für Ihre Branche.",
     "card_craft": {

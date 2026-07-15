@@ -85,32 +85,27 @@ export const ServicesOverview = async () => {
 
             <noscript>
               <style>{`.js-only { display: none; }`}</style>
-              <div
-                role="heading"
-                aria-level={1}
-                className="font-display font-black text-4xl sm:text-6xl text-content-base mb-4 text-balance"
-              >
-                {t('hero.title')}
-              </div>
-              <div className="text-xl text-content-muted leading-relaxed max-w-prose text-pretty mb-6 max-w-prose">
-                {(t.raw('hero.rotating') as string[])?.[0] || 'Web-Design'}
-              </div>
             </noscript>
 
-            <div className="js-only">
-              <ScrollFloat
-                as="h1"
-                animationDuration={0.8}
-                ease="back.out(1.7)"
-                scrollStart="top bottom"
-                scrollEnd="center center"
-                stagger={0.02}
-                containerClassName="!my-0 mb-4"
-                textClassName="font-display font-black text-4xl sm:text-6xl text-content-base text-balance"
-              >
-                {t('hero.title')}
-              </ScrollFloat>
-              <div className="max-w-2xl min-h-[60px]">
+            <h1 className="font-display font-black text-4xl sm:text-6xl text-content-base mb-4 text-balance">
+              <span className="js-only block">
+                <ScrollFloat
+                  as="span"
+                  animationDuration={0.8}
+                  ease="back.out(1.7)"
+                  scrollStart="top bottom"
+                  scrollEnd="center center"
+                  stagger={0.02}
+                  containerClassName="!my-0 block"
+                >
+                  {t('hero.title')}
+                </ScrollFloat>
+              </span>
+              <noscript>{t('hero.title')}</noscript>
+            </h1>
+
+            <div className="text-xl text-content-muted leading-relaxed max-w-prose text-pretty mb-6">
+              <span className="js-only block max-w-2xl min-h-[60px]">
                 <RotatingText
                   texts={
                     (t.raw('hero.rotating') as string[]) || ['Web-Design', 'Web-Entwicklung', 'SEO']
@@ -120,7 +115,8 @@ export const ServicesOverview = async () => {
                   staggerDuration={0.025}
                   mainClassName="text-xl text-content-muted leading-relaxed max-w-prose"
                 />
-              </div>
+              </span>
+              <noscript>{(t.raw('hero.rotating') as string[])?.[0] || 'Web-Design'}</noscript>
             </div>
           </div>
           <div className="relative hidden lg:block">
@@ -132,6 +128,7 @@ export const ServicesOverview = async () => {
               height={600}
               className="relative rounded-3xl shadow-flat-lg w-full h-auto transform -rotate-1 hover:rotate-0 transition motion-reduce:duration-[0.01ms] duration-300 hover:scale-[0.97] ease-spring"
               priority={true}
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
         </div>
@@ -158,6 +155,7 @@ export const ServicesOverview = async () => {
                       width={256}
                       height={256}
                       className="w-full h-full object-cover mix-blend-multiply"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                   )}
                 </div>
