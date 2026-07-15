@@ -12,6 +12,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  setRequestLocale(locale);
   if (locale === 'en') {
     return generatePageMetadata({
       title: 'Web Design Blog | Tips & Trends from Wetzlar',

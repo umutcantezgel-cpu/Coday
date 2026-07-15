@@ -10,6 +10,8 @@ import { getCityBySlug } from '@/features/local-seo/model/cities';
 import fs from 'fs';
 import path from 'path';
 import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
+import { routing } from '@/i18n/routing';
+import { cities } from '@/features/local-seo/model/cities';
 
 export const dynamicParams = false;
 
@@ -20,9 +22,7 @@ export async function generateStaticParams() {
   if (!fs.existsSync(dirPath)) return params;
 
   const files = fs.readdirSync(dirPath);
-  const { routing } = await import('@/i18n/routing');
-  const { cities } = await import('@/features/local-seo/model/cities');
-  const citySlugs = cities.map((c) => c.slug);
+  const citySlugs = cities ? cities.map((c) => c.slug) : [];
 
   for (const file of files) {
     if (!file.endsWith('.json')) continue;
@@ -168,15 +168,51 @@ export default async function IndustryDetailPage({
 
   if (localContent) {
     const _locale = (await params)?.locale || 'de';
-    const pageTitle =
+
+    // Normalize content for LocalSeoTemplate
+    let normalizedContent = { ...localContent };
+    if (_locale === 'en') {
+      normalizedContent = {
+        target: localContent.target,
+        type: localContent.type,
+        meta: localContent.meta_en || localContent.meta,
+        hero: localContent.hero_en || localContent.hero,
+        localDominance: localContent.localDominance_en || localContent.localDominance,
+        contentSections: localContent.contentSections_en || localContent.contentSections || [],
+        faq: localContent.faq_en || localContent.faq || [],
+      };
+    } else {
+      if (!normalizedContent.contentSections) normalizedContent.contentSections = [];
+      if (!normalizedContent.faq) normalizedContent.faq = [];
+    }
+
+    // Merge missing fields (bentoGrid, processSteps) into contentSections to avoid data loss
+    const sourceBento =
       _locale === 'en'
-        ? localContent.meta_en?.title || `${localContent.meta.title} in English`
-        : localContent.meta.title;
+        ? localContent.bentoGrid_en || localContent.bentoGrid
+        : localContent.bentoGrid;
+    if (sourceBento?.cards) {
+      sourceBento.cards.forEach((c: any) =>
+        normalizedContent.contentSections.push({ title: c.title, content: c.text })
+      );
+    }
+    const sourceProcess =
+      _locale === 'en'
+        ? localContent.processSteps_en || localContent.processSteps
+        : localContent.processSteps;
+    if (sourceProcess) {
+      sourceProcess.forEach((s: any) =>
+        normalizedContent.contentSections.push({ title: s.title, content: s.description })
+      );
+    }
+
+    const pageTitle = normalizedContent.meta?.title || '';
     const cleanTitle = pageTitle.replace(' | Coday', '');
+
     return (
       <>
         {schemaScript}
-        <LocalSeoTemplate content={localContent} cityData={cityData} />
+        <LocalSeoTemplate content={normalizedContent} cityData={cityData} />
         <SeoContentBlock title={cleanTitle} />
       </>
     );

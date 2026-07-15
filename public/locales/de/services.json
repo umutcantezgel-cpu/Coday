@@ -1349,7 +1349,7 @@
     "web-development": {
       "react-nextjs-agentur": {
         "title": "React & Next.js Entwicklung",
-        "description": "Wir bauen skalierbare Frontends mit modernsten Frameworks für maximale Performance und User Experience.",
+        "description": "Wir bauen skalierbare Frontends mit modernsten Frameworks für maximale Performance und User Experience. Entdecken Sie jetzt unsere Lösungen!",
         "long_description": "In der modernen Webentwicklung sind Geschwindigkeit und Benutzerfreundlichkeit entscheidend. Mit React und Next.js setzen wir auf den Industriestandard für performante, skalierbare und wartbare Webanwendungen. Ich entwickle maßgeschneiderte Lösungen, die technische Exzellenz mit herausragendem Design verbinden.",
         "benefits": [
           "Blitzschnelle Ladezeiten",
@@ -1360,7 +1360,7 @@
       },
       "e-commerce-shops": {
         "title": "E-Commerce & Online-Shops",
-        "description": "High-Performance Online-Shops mit Shopify oder Custom Headless Lösungen für maximale Conversion.",
+        "description": "High-Performance Online-Shops mit Shopify oder Custom Headless Lösungen für maximale Conversion. Skalieren Sie Ihren digitalen Umsatz nachhaltig.",
         "long_description": "High-Performance Online-Shops mit Shopify Plus oder Headless Commerce. Wir entwickeln maßgeschneiderte E-Commerce Lösungen für mehr Umsatz und Conversion.",
         "benefits": [
           "Optimierter Checkout-Funnel",
@@ -1370,8 +1370,8 @@
         ]
       },
       "full-stack-entwicklung": {
-        "title": "Full-Stack Web-App Entwicklung",
-        "description": "Robuste Backends und APIs mit Node.js, TypeScript und Edge-Computing Lösungen.",
+        "title": "Full-Stack Entwicklung",
+        "description": "Robuste Backends und APIs mit Node.js, TypeScript und Edge-Computing Lösungen. Maßgeschneiderte Full-Stack Entwicklung für Ihr Unternehmen in Hessen.",
         "long_description": "Ich entwickle sichere und skalierbare Server-Architekturen, APIs und Datenbanken für leistungsfähige Full-Stack Web-Apps und digitale Produkte.",
         "benefits": [
           "Hochperformante APIs",
@@ -1382,7 +1382,7 @@
       },
       "cloud-infrastructure": {
         "title": "Cloud Infrastruktur & Hosting",
-        "description": "High-Performance Hosting und Deployment auf Vercel oder AWS für globale Verfügbarkeit.",
+        "description": "High-Performance Hosting und Deployment auf Vercel oder AWS für globale Verfügbarkeit. Skalierbare Cloud-Infrastruktur für anspruchsvolle Projekte.",
         "long_description": "Mit modernsten Serverless-Architekturen und Edge-Networks sorgen wir für maximale Geschwindigkeit und globale Verfügbarkeit Ihrer Web-Anwendungen.",
         "benefits": [
           "Globale Verfügbarkeit",
@@ -1394,8 +1394,8 @@
     },
     "web-design": {
       "ux-ui-design": {
-        "title": "UX/UI Design Details",
-        "description": "Markenerlebnis im Digitalen. Nutzerzentriertes Design, das Ihre Marke erlebbar macht.",
+        "title": "UX/UI Design",
+        "description": "Markenerlebnis im Digitalen. Nutzerzentriertes Design, das Ihre Marke erlebbar macht. Wir entwickeln Interfaces für maximale Conversion-Raten.",
         "long_description": "Ihre digitale Präsenz ist oft der erste Kontaktpunkt. Wir übertragen Ihre Marke in digitale Interfaces, die nicht nur funktional sind, sondern Ihre Markenidentität bei jedem Klick spürbar machen.",
         "benefits": [
           "Markenkonforme Interfaces",
@@ -1406,7 +1406,7 @@
       },
       "design-systems": {
         "title": "Design Systems",
-        "description": "Konsistente Komponenten-Bibliotheken für skalierbare Produkte und schnelle Entwicklung.",
+        "description": "Konsistente Komponenten-Bibliotheken für skalierbare Produkte und schnelle Entwicklung. Sichern Sie sich ein zukunftssicheres Design System.",
         "long_description": "Ein Design System ist die Single Source of Truth für Ihr Produkt. Ich entwickle modulare Komponentensysteme, die Konsistenz sichern und die Entwicklung beschleunigen.",
         "benefits": [
           "Konsistente UI",
@@ -1417,7 +1417,7 @@
       },
       "website-relaunch": {
         "title": "Professioneller Website Relaunch",
-        "description": "Von der Strategie bis zum neuen Design. Wir modernisieren Ihre Webpräsenz grundlegend.",
+        "description": "Von der Strategie bis zum neuen Design. Wir modernisieren Ihre Webpräsenz grundlegend. Starten Sie Ihren Website Relaunch mit unserer Webagentur.",
         "long_description": "Wir begleiten Ihren Website Relaunch ganzheitlich: Von der Strategie über das UX-Design bis zur technischen Umsetzung für mehr Umsatz und Sichtbarkeit.",
         "benefits": [
           "Modernes Look & Feel",
@@ -1429,8 +1429,8 @@
     },
     "growth": {
       "seo-optimization": {
-        "title": "SEO Agentur für mehr Sichtbarkeit",
-        "description": "Maximale Sichtbarkeit in Suchmaschinen. Wir bringen Ihre Seite nach oben und sorgen für qualitativen Traffic.",
+        "title": "SEO Agentur für maximale Sichtbarkeit",
+        "description": "Maximale Sichtbarkeit in Suchmaschinen. Wir bringen Ihre Seite nach oben und sorgen für qualitativen Traffic. Jetzt Local SEO in Wetzlar starten.",
         "long_description": "Gefunden werden ist alles. Mit datengetriebener SEO-Strategie, technischer Optimierung und hochwertigem Content sorgen wir dafür, dass Ihre Zielgruppe Sie genau dann findet, wenn sie nach Ihnen sucht.",
         "benefits": [
           "Top-Rankings bei Google",
@@ -1441,7 +1441,7 @@
       },
       "performance-optimization": {
         "title": "Web Performance Optimierung",
-        "description": "High-Speed Optimierung für bessere User Experience, höhere Conversion-Rates und Top-Google-Rankings.",
+        "description": "High-Speed Optimierung für bessere User Experience, höhere Conversion-Rates und Top-Google-Rankings. Beschleunigen Sie Ihre Website auf Maximum.",
         "long_description": "Geschwindigkeit ist ein Feature. Langsame Websites verlieren Kunden. Wir analysieren und optimieren Ihre gesamte Infrastruktur für Ladezeiten im Millisekunden-Bereich.",
         "benefits": [
           "Bessere Conversion-Rates",
@@ -1451,8 +1451,8 @@
         ]
       },
       "digital-consulting": {
-        "title": "Beratung & Strategie",
-        "description": "Strategische Beratung für Ihre digitale Transformation. Tech-Stack, Prozesse und Wachstum.",
+        "title": "Digitale Strategie & Consulting",
+        "description": "Strategische Beratung für Ihre digitale Transformation. Tech-Stack, Prozesse und Wachstum. Sichern Sie sich Ihren Wettbewerbsvorteil durch KI.",
         "long_description": "Strategische Beratung für Ihre digitale Transformation: Von der Technologie-Auswahl bis zur Optimierung Ihrer digitalen Geschäftsprozesse.",
         "benefits": [
           "Klare Roadmap",

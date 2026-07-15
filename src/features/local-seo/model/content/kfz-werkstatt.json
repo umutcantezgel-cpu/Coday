@@ -2,67 +2,67 @@
   "target": "kfz-werkstatt",
   "type": "industry",
   "meta": {
-    "title": "Webdesign für KFZ Werkstätten | Coday",
-    "description": "Dominieren Sie den Markt in Ihrer Region durch unsere spezialisie... Gewinnen Sie lukrative Kunden nach einem professionellen Webseiten Relaunch."
+    "title": "Premium Webdesign für KFZ-Werkstätten | Coday Webagentur",
+    "description": "Dominieren Sie den regionalen Markt für Autoreparaturen mit unserem hochkonvertierenden KFZ-Werkstatt Webdesign. Gewinnen Sie durch einen strategischen Webseiten Relaunch und professionelle Webseitenentwicklung kontinuierlich lukrative Premium-Aufträge und hochqualifizierte Mechatroniker."
   },
   "hero": {
-    "headline": "Ihre KFZ-Werkstatt als Nummer Eins",
-    "subheadline": "Premium Webdesign für KFZ-Werkstätten",
-    "description": "Erhalten Sie deutlich mehr lukrative Auft... Ein strategischer Webseiten Relaunch ist der erste große Schritt zu einem völlig neuen Umsatzniveau.",
+    "headline": "Ihre KFZ-Werkstatt als unangefochtene Nummer Eins der Region",
+    "subheadline": "Spezialisiertes Premium Webdesign für KFZ-Werkstätten und Autohäuser",
+    "description": "Erhalten Sie deutlich mehr lukrative Aufträge wie Unfallinstandsetzungen, Motorreparaturen und Inspektionen von echten Premium-Kunden. Ein strategischer Webseiten Relaunch durch unsere erfahrene Webagentur ist der erste und wichtigste große Schritt zu einem völlig neuen Umsatzniveau. Wir verbinden technologische Exzellenz mit verkaufspsychologisch optimierter Webseitenentwicklung, um Ihre KFZ-Werkstatt als absoluten Marktführer zu positionieren.",
     "metrics": [
       {
         "value": "240",
-        "label": "Mehr starke Premium Anfragen",
+        "label": "Mehr starke Premium Anfragen pro Quartal",
         "suffix": "%"
       },
       {
         "value": "95",
-        "label": "Erhöhung der Conversion Rate",
+        "label": "Messbare Erhöhung der Conversion Rate",
         "suffix": "%"
       }
     ]
   },
   "gamifiedStats": {
-    "title": "Wie viele wertvolle Kunden lassen Sie bei Ihrer KFZ Werkstatt aktuell auf der Straße liegen?",
-    "description": "Jeden Tag suchen hunderte anspruchsvolle... Dies können wir durch professionelle Webseitenentwicklung unserer Webagentur erfolgreich verhindern.",
+    "title": "Wie viele wertvolle Kunden und lukrative Aufträge lassen Sie bei Ihrer KFZ-Werkstatt aktuell auf der Straße liegen?",
+    "description": "Jeden Tag suchen hunderte anspruchsvolle Fahrzeugbesitzer nach einer verlässlichen und hochprofessionellen Experten-Werkstatt. Ohne ein herausragendes KFZ-Werkstatt Webdesign verlieren Sie diese erstklassigen Kunden sofort an die lokale Konkurrenz. Diesen massiven Umsatzverlust können wir durch die professionelle Webseitenentwicklung unserer Webagentur erfolgreich und nachhaltig verhindern.",
     "counters": [
       {
         "targetValue": 89,
         "suffix": "%",
-        "label": "der Autofahrer googeln intensiv vor dem Werkstattbesuch"
+        "label": "der Autofahrer googeln intensiv und vergleichen Webseiten vor dem ersten Werkstattbesuch"
       },
       {
         "targetValue": 75,
         "suffix": "%",
-        "label": "urteilen über Ihre gesamte Arbeitsqualität nur anhand der Webseite"
+        "label": "der potenziellen Kunden urteilen über Ihre gesamte Arbeitsqualität und Verlässlichkeit nur anhand Ihrer Webseite"
       }
     ]
   },
   "bentoGrid": {
-    "title": "Der absolut unfaire Vorteil für Ihre etablierte KFZ Werkstatt",
-    "subtitle": "Warum Sie mit unserer Webseitenentwicklung völlig konkurrenzlos werden.",
+    "title": "Der absolut unfaire Wettbewerbsvorteil für Ihre etablierte KFZ-Werkstatt",
+    "subtitle": "Warum Sie mit unserer spezialisierten Webseitenentwicklung völlig konkurrenzlos werden und den lokalen Markt beherrschen.",
     "cards": [
       {
-        "title": "Extreme Ladegeschwindigkeit",
-        "text": "Gestresste Autofahrer in Notsituationen warten absolut nicht auf sehr langsame Webseiten. Wir garantieren Ladezeiten weit unter einer Sekunde. Der Kunde ist bei Ihnen, bevor die Seite der lokalen Konkurrenz überhaupt richtig geladen hat.",
+        "title": "Extreme Ladegeschwindigkeit & Performance",
+        "text": "Gestresste Autofahrer in Notsituationen (z.B. nach einem schweren Unfall oder bei einer plötzlichen Panne) warten absolut nicht auf sehr langsame Webseiten. Wir garantieren bei unserem KFZ-Werkstatt Webdesign Ladezeiten weit unter einer Sekunde. Der Kunde ist digital bereits bei Ihnen, bevor die Seite der lokalen Konkurrenz überhaupt richtig geladen hat.",
         "size": "large",
         "icon": "Speed"
       },
       {
-        "title": "Einzigartiges Webdesign",
-        "text": "Wir transformieren Ihre tiefgreifende Expertise in ein visuelles Meisterwerk. Jedes kleinste Detail bei der Webseitenentwicklung strahlt absolute Präzision und höchste Verlässlichkeit aus.",
+        "title": "Einzigartiges Premium Webdesign",
+        "text": "Wir transformieren Ihre tiefgreifende KFZ-Expertise in ein visuelles Meisterwerk. Jedes kleinste Detail bei der modernen Webseitenentwicklung strahlt absolute Präzision, höchste Verlässlichkeit und Sauberkeit aus, genau wie Ihre Werkstatt vor Ort.",
         "size": "small",
         "icon": "Design"
       },
       {
-        "title": "Lokale Dominanz",
-        "text": "Werden Sie exakt dann gefunden, wenn es wirklich darauf ankommt. Unsere Webagentur platziert Sie nach dem Webseiten Relaunch bei Google genau dort, wo die aktuelle Kaufbereitschaft am allerhöchsten ist.",
+        "title": "Lokale Dominanz & SEO",
+        "text": "Werden Sie exakt dann gefunden, wenn es wirklich darauf ankommt. Unsere Webagentur platziert Sie nach dem professionellen Webseiten Relaunch bei Google genau dort, wo die aktuelle Kaufbereitschaft für teure Reparaturen am allerhöchsten ist.",
         "size": "small",
         "icon": "SEO"
       },
       {
-        "title": "Automatisierte Kunden",
-        "text": "Ihre neue Webseite wird zur digitalen Verkaufsmaschine. Hochkonvertierende Termin Funktionen und smarte Formulare filtern unpassende Anfragen völlig automatisch heraus und bringen Ihnen hochprofitable Reparaturaufträge für Ihre KFZ Werkstatt.",
+        "title": "Automatisierte Neukundengewinnung",
+        "text": "Ihre neue Webseite wird durch unser durchdachtes KFZ-Werkstatt Webdesign zur digitalen Verkaufsmaschine. Hochkonvertierende Termin-Funktionen, digitale Schadensmeldungen und smarte Formulare filtern unpassende Anfragen völlig automatisch heraus und bringen Ihnen ausschließlich hochprofitable Reparaturaufträge für Ihre KFZ-Werkstatt.",
         "size": "tall",
         "icon": "Security"
       }
@@ -70,127 +70,127 @@
   },
   "processSteps": [
     {
-      "title": "1. Potenzial Analyse und klare Strategie",
-      "description": "Wir analysieren Ihre lokale Konkurrenz völlig schonungslos. Wir finden exakt heraus, nach welchen hochpreisigen Reparaturleistungen Ihre Zielg..."
+      "title": "1. Tiefgehende Potenzialanalyse und klare Strategie",
+      "description": "Wir analysieren Ihre lokale Konkurrenz völlig schonungslos. Wir finden exakt heraus, nach welchen hochpreisigen Reparaturleistungen (wie Getriebeinstandsetzung, Smart Repair, Motordiagnose) Ihre Zielgruppe wirklich sucht. Diese Daten bilden das absolut solide Fundament für unsere zielgerichtete Webseitenentwicklung."
     },
     {
-      "title": "2. Modernes und hochwertiges Webdesign",
-      "description": "Keine billigen Vorlagen. Dieses Webdesign ist modern, klar und absolut vertrauenserweckend für jeden Besucher."
+      "title": "2. Modernes, hochkonvertierendes KFZ-Werkstatt Webdesign",
+      "description": "Wir nutzen absolut keine billigen Vorlagen oder Baukästen. Dieses maßgeschneiderte KFZ-Werkstatt Webdesign ist extrem klar strukturiert und absolut vertrauenserweckend für jeden Besucher. Es spiegelt die echte Qualität Ihrer handwerklichen Meisterleistung perfekt im digitalen Raum wider."
     },
     {
-      "title": "3. Hochmoderne Webseitenentwicklung",
-      "description": "Mit den absolut neuesten Technologien programmieren wir Ihre digitale Plattform völlig neu. Ein Webseiten Relaunch, der absolut Maßstäbe setzt."
+      "title": "3. Hochmoderne Webseitenentwicklung & Programmierung",
+      "description": "Mit den absolut neuesten, blitzschnellen Technologien programmieren wir Ihre digitale Plattform von Grund auf völlig neu. Ein Webseiten Relaunch durch unsere smarte Webagentur setzt absolute Maßstäbe in Sachen Performance, Sicherheit und mobiler Bedienbarkeit für Smartphone-Nutzer von unterwegs."
     },
     {
       "title": "4. Erfolgreicher Webseiten Relaunch und stetige Skalierung",
-      "description": "Mit dem Livegang der Webseite beginnt die eigentliche Domination Ihres Marktes. Unsere engagierte Webagentur überwacht die starke Performance..."
+      "description": "Mit dem Livegang der Webseite beginnt die eigentliche Domination Ihres Marktes. Unsere engagierte Webagentur überwacht die starke Performance kontinuierlich. Wir optimieren Ihr digitales System weiter, damit Sie Monat für Monat mehr Premium-Kunden für KFZ-Reparaturen gewinnen."
     }
   ],
   "localDominance": {
-    "title": "Werden Sie durch professionelles Webdesign zum absoluten Platzhirsch",
-    "description": "Der lukrative Markt für komplexe KFZ Reparaturen ist extrem hart umkämpft. Veraltetes Marketing funktioniert in der heutigen Zeit absolut nich...",
+    "title": "Werden Sie durch kompromissloses KFZ-Werkstatt Webdesign zum absoluten Platzhirsch",
+    "description": "Der lukrative Markt für komplexe KFZ-Reparaturen und anspruchsvolle Karosseriearbeiten ist extrem hart umkämpft. Veraltetes Marketing funktioniert in der heutigen Zeit absolut nicht mehr. Wenn Sie Premium-Preise abrufen und die besten Mechaniker der Stadt einstellen wollen, benötigen Sie einen digitalen Premium-Auftritt. Mit unserer High-End Webseitenentwicklung katapultieren wir Ihre KFZ-Werkstatt an die absolute Spitze.",
     "points": [
-      "Vollständige Monopolisierung der wirklich lukrativsten Suchbegriffe wie aufwendige Unfallinstandsetzung und exakte Motordiagnose.",
-      "Schneller Aufbau einer absolut massiven Experten Positionierung im direkten regionalen Vergleich zu allen Mitbewerbern.",
-      "Enorme Sog Wirkung statt mühsamer Kaltakquise. Die besten Kunden suchen durch die Arbeit unserer Webagentur nun gezielt nach Ihnen und absolut nicht mehr umgekehrt."
+      "Vollständige Monopolisierung der wirklich lukrativsten Suchbegriffe in Ihrer Region, wie aufwendige Unfallinstandsetzung, exakte Motordiagnose oder Getriebereparatur durch exzellentes KFZ-Werkstatt Webdesign.",
+      "Schneller Aufbau einer absolut massiven Experten-Positionierung im direkten regionalen Vergleich zu allen freien und markengebundenen Mitbewerbern durch einen sofortigen Webseiten Relaunch.",
+      "Enorme Sogwirkung statt mühsamer Kaltakquise oder teurer Zeitungsanzeigen. Die besten Kunden mit den wertvollsten Fahrzeugen suchen durch die strategische Arbeit unserer Webagentur nun gezielt nach Ihnen – und absolut nicht mehr umgekehrt."
     ]
   },
   "faq": [
     {
-      "q": "Warum reicht eine völlig einfache Webseite für meine KFZ Werkstatt heutzutage nicht mehr aus?",
-      "a": "Einfache Webseiten sind extrem langsam, technisch absolut schwach und sehen aus wie unzählige andere unprofessionelle Betriebe. Sehr anspruchsvolle Premium Kunden mit extrem teuren Fahrzeugen oder sehr lukrativen Aufträgen suchen immer nach Anbietern, die absolute Professionalität ausstrahlen. Eine billige Webseite signalisiert unbewusst leider sehr billige Arbeit. Wir bauen in unserer Webagentur echte Meisterwerke, die genau das absolute Gegenteil bewirken und Sie durch exzellentes Webdesign sofort als den klaren Premium Anbieter etablieren."
+      "q": "Warum reicht eine völlig einfache Standard-Webseite für meine KFZ-Werkstatt heutzutage absolut nicht mehr aus?",
+      "a": "Einfache, günstige Baukasten-Webseiten sind extrem langsam, technisch absolut schwach und sehen aus wie unzählige andere unprofessionelle Hinterhof-Betriebe. Sehr anspruchsvolle Premium-Kunden mit extrem teuren Fahrzeugen oder sehr lukrativen Großaufträgen suchen immer nach Anbietern, die bereits digital absolute Professionalität ausstrahlen. Eine billige Webseite signalisiert unbewusst leider sehr billige Arbeit. Wir bauen in unserer Webagentur echte digitale Meisterwerke. Ein strategisch durchdachtes KFZ-Werkstatt Webdesign bewirkt genau das absolute Gegenteil und etabliert Sie sofort als den klaren Premium-Anbieter für höchste Qualität und Verlässlichkeit."
     },
     {
-      "q": "Wie schnell sehen wir konkrete Ergebnisse nach dem Webseiten Relaunch?",
-      "a": "Unsere professionelle Webseitenentwicklung führt oft schon in den allerersten Wochen zu absolut spürbaren Verbesserungen in der wichtigen Sichtbarkeit bei Suchmaschinen. Die Anzahl der starken Besucher, die nach dem neuen Webdesign tatsächlich bei Ihnen anrufen oder sofort einen Termin online buchen, steigt durch unsere smarte Nutzerführung meist schon ab dem ersten Tag nach dem Webseiten Relaunch absolut signifikant an."
+      "q": "Wie schnell sehen wir konkrete, messbare Ergebnisse nach dem Webseiten Relaunch durch Ihre Webagentur?",
+      "a": "Unsere professionelle Webseitenentwicklung führt oft schon in den allerersten Wochen zu absolut spürbaren Verbesserungen in der wichtigen Sichtbarkeit bei Google und anderen Suchmaschinen. Die Anzahl der starken Besucher, die nach dem neuen Webdesign tatsächlich in Ihrer KFZ-Werkstatt anrufen, eine E-Mail schreiben oder sofort einen Termin online buchen, steigt durch unsere extrem smarte Nutzerführung meist schon ab dem ersten Tag nach dem Webseiten Relaunch absolut signifikant an."
     },
     {
-      "q": "Wir haben bereits genug Aufträge für unsere KFZ Werkstatt. Warum sollten wir dennoch in Webseitenentwicklung investieren?",
-      "a": "Wenn Ihre KFZ Werkstatt bereits sehr voll ist, wird es höchste Zeit, die genaue Qualität der angenommenen Aufträge sehr stark zu filtern. Eine extrem hochwertige Webseite hilft Ihnen bei diesem wichtigen Schritt enorm dabei, die eher unprofitablen Anfragen erfolgreich abzuwehren und völlig gezielt die hochprofitablen Reparaturaufträge stark anzuziehen. Sie erhöhen durch kompetentes Webdesign Ihren gesamten Umsatz bei absolut gleichem oder sogar deutlich geringerem Zeitaufwand."
+      "q": "Wir haben bereits genug Aufträge für unsere KFZ-Werkstatt. Warum sollten wir dennoch Zeit und Geld in eine neue Webseitenentwicklung investieren?",
+      "a": "Wenn Ihre KFZ-Werkstatt bereits sehr voll ist, wird es höchste Zeit, die genaue Qualität der angenommenen Aufträge sehr stark zu filtern. Eine extrem hochwertige Webseite hilft Ihnen bei diesem wichtigen Schritt enorm. Durch exzellentes KFZ-Werkstatt Webdesign wehren Sie eher unprofitable Kleinreparaturen oder reine Preisanfragen erfolgreich ab und ziehen völlig gezielt die hochprofitablen Reparaturaufträge und gewerblichen Flottenkunden stark an. Sie erhöhen durch kompetentes Webdesign Ihren gesamten Umsatz und Gewinn bei absolut gleichem oder sogar deutlich geringerem Zeitaufwand."
     },
     {
-      "q": "Was unterscheidet Ihre Webagentur von absolut anderen Anbietern für KFZ Betriebe?",
-      "a": "Wir nutzen bei der Webseitenentwicklung absolut keine fertigen Vorlagen, wir lagern keine unserer Arbeiten aus und wir machen absolut niemals halbe Sachen. Unsere Webagentur steht für völlig kompromisslose Performance. Wir nutzen beim Webdesign stets exakt dieselben modernen Enterprise Technologien wie die absolut größten Konzerne der Welt, um Ihnen dadurch einen extrem unfairen technologischen Vorteil in Ihrer gesamten Region zu sichern."
+      "q": "Was unterscheidet Ihre spezialisierte Webagentur von absolut allen anderen Anbietern für KFZ-Betriebe?",
+      "a": "Wir nutzen bei der Webseitenentwicklung absolut keine fertigen Vorlagen, wir lagern keine unserer sensiblen Arbeiten aus und wir machen absolut niemals halbe Sachen. Unsere Webagentur steht für völlig kompromisslose Performance und handwerkliche digitale Exzellenz im Bereich KFZ-Werkstatt Webdesign. Wir nutzen beim Webdesign stets exakt dieselben modernen Enterprise-Technologien wie die absolut größten Tech-Konzerne der Welt, um Ihnen dadurch einen extrem unfairen technologischen Vorteil in Ihrer gesamten Region zu sichern."
     },
     {
-      "q": "Bietet Ihre Webagentur nach dem Webseiten Relaunch auch eine fortlaufende Betreuung an?",
-      "a": "Ja, absolut. Das Webdesign ist letztendlich nur der wichtige starke Motor, aber die Optimierung ist der unerlässliche Treibstoff. Wir bieten sehr exklusive und langfristige Partnerschaften an, in denen wir kontinuierlich an Ihrer enormen Sichtbarkeit arbeiten, den gesamten Content weiter stark ausbauen und immer absolut sicherstellen, dass Sie Ihre gesamte regionale Konkurrenz wirklich dauerhaft dominieren."
+      "q": "Bietet Ihre Webagentur nach dem Webseiten Relaunch auch eine fortlaufende Betreuung und Optimierung an?",
+      "a": "Ja, absolut. Das neue KFZ-Werkstatt Webdesign ist letztendlich nur der enorm starke Motor Ihres digitalen Marketings, aber die stetige SEO-Optimierung ist der unerlässliche Hochleistungs-Treibstoff. Wir bieten sehr exklusive und langfristige Partnerschaften an, in denen wir kontinuierlich an Ihrer enormen regionalen Sichtbarkeit arbeiten, den gesamten Fach-Content weiter stark ausbauen und immer absolut sicherstellen, dass Sie durch unsere fortlaufende Webseitenentwicklung Ihre gesamte regionale Konkurrenz wirklich dauerhaft dominieren."
     },
     {
-      "q": "Wir wollen auch dringend sehr gute Mechatroniker finden. Hilft die Webseitenentwicklung dabei?",
-      "a": "Absolut. Der anhaltende Fachkräftemangel ist in der großen KFZ Branche aktuell das mit Abstand größte Problem. Wirklich hervorragende Mechatroniker wollen heutzutage immer in absolut modernen und stark innovativen Betrieben arbeiten. Ihre neue starke Webseite wird von unserer Webagentur deshalb auch als ein extrem mächtiges Instrument für das Personalwesen konzipiert, das Ihr Unternehmen dauerhaft als absolut attraktiven und sehr zukunftssicheren Arbeitgeber perfekt präsentiert."
+      "q": "Wir wollen auch dringend sehr gute Kfz-Mechatroniker und Meister finden. Hilft die professionelle Webseitenentwicklung auch dabei?",
+      "a": "Absolut. Der anhaltende Fachkräftemangel ist in der großen KFZ-Branche aktuell das mit Abstand größte und schmerzhafteste Problem. Wirklich hervorragende Mechatroniker und talentierte Auszubildende wollen heutzutage immer in absolut modernen, sauberen und stark innovativen Betrieben arbeiten. Ihre neue, starke Webseite wird durch unser KFZ-Werkstatt Webdesign von Beginn an auch als ein extrem mächtiges Instrument für das Personalwesen (Employer Branding) konzipiert, das Ihr Unternehmen dauerhaft als absolut attraktiven und sehr zukunftssicheren Arbeitgeber perfekt präsentiert."
     },
     {
-      "q": "Wie viel zeitlichen Aufwand bedeutet das Projekt für mich im ohnehin stressigen Tagesgeschäft?",
-      "a": "Das bedeutet für Sie einen absolut minimalen zeitlichen Aufwand. Wir wissen genau, dass Sie produktiv in Ihrer KFZ Werkstatt stehen und Geld verdienen müssen. Nach einem kurzen initialen Gespräch übernimmt unsere kompetente Webagentur hundert Prozent der gesamten Umsetzung. Angefangen von der professionellen Texterstellung bis hin zur hochmodernen Programmierung des neuen Webdesign erledigen wir alle wichtigen Schritte für Ihren erfolgreichen Webseiten Relaunch."
+      "q": "Wie viel zeitlichen Aufwand bedeutet das Projekt für mich als Inhaber im ohnehin extrem stressigen Werkstatt-Tagesgeschäft?",
+      "a": "Ein Webseiten Relaunch mit unserer Webagentur bedeutet für Sie einen absolut minimalen zeitlichen Aufwand. Wir wissen genau, dass Sie produktiv in Ihrer KFZ-Werkstatt stehen, Mitarbeiter führen und echtes Geld verdienen müssen. Nach einem kurzen, prägnanten initialen Strategiegespräch übernimmt unsere hochkompetente Webagentur hundert Prozent der gesamten Umsetzung. Angefangen von der professionellen Texterstellung über die Bildauswahl bis hin zur hochmodernen Programmierung des neuen KFZ-Werkstatt Webdesigns erledigen wir absolut alle wichtigen Schritte völlig autark für Sie."
     },
     {
-      "q": "Können moderne digitale Systeme in das neue Webdesign integriert werden?",
-      "a": "Ja, wir binden bei der Webseitenentwicklung jede von Ihnen genutzte moderne Schnittstelle absolut nahtlos ein. Ganz gleich ob es sich um moderne Online Systeme für schnelle Terminbuchungen, clevere digitale Chatbots für Kundenanfragen oder die Anbindung an Ihre spezielle und wichtige interne Werkstatt Software handelt, wir digitalisieren Ihre gesamte externe Kundenkommunikation immer auf dem allerhöchsten und modernsten Niveau."
+      "q": "Können moderne digitale Systeme und Schnittstellen in das neue Webdesign integriert werden?",
+      "a": "Ja, wir binden bei der fortschrittlichen Webseitenentwicklung jede von Ihnen genutzte moderne Schnittstelle absolut nahtlos und performant ein. Ganz gleich, ob es sich um moderne Online-Systeme für schnelle digitale Terminbuchungen, clevere digitale Chatbots für Erstfragen von Kunden, Schadensmelde-Formulare mit direkten Foto-Uploads oder die direkte Anbindung an Ihre spezielle und wichtige interne Werkstatt-Software handelt – ein intelligenter Webseiten Relaunch digitalisiert Ihre gesamte externe Kundenkommunikation immer auf dem allerhöchsten und modernsten technischen Niveau."
     }
   ],
   "meta_en": {
-    "title": "Web Design for KFZ Werkstätten | Coday",
-    "description": "Web design for auto repair shops. Automate high-ticket repair inquiries and establish your garage as the premium choice for demanding car owners."
+    "title": "Premium Web Design for Auto Repair Shops & Garages | Coday Web Agency",
+    "description": "Dominate the regional market for auto repairs with our high-converting web design for auto repair shops. Gain lucrative premium orders and highly qualified mechanics continuously through a strategic website relaunch and professional website development."
   },
   "hero_en": {
-    "headline": "Your Auto Repair Shop as Number One",
-    "subheadline": "Premium Web Design for Auto Repair Shops",
-    "description": "Get significantly more lucrative orders. A strategic website relaunch is the first big step to a completely new level of revenue.",
+    "headline": "Your Auto Repair Shop as the Undisputed Number One in the Region",
+    "subheadline": "Specialized Premium Web Design for Auto Repair Shops and Car Dealerships",
+    "description": "Get significantly more lucrative orders such as complex accident repairs, engine diagnostics, and fleet inspections from true premium customers. A strategic website relaunch by our experienced web agency is the first and most crucial big step to a completely new level of revenue. We combine technological excellence with sales-psychology-optimized website development to perfectly position your auto repair shop as the absolute market leader.",
     "metrics": [
       {
         "value": "240",
-        "label": "More Strong Premium Inquiries",
+        "label": "More Strong Premium Inquiries per Quarter",
         "suffix": "%"
       },
       {
         "value": "95",
-        "label": "Increase in Conversion Rate",
+        "label": "Measurable Increase in Conversion Rate",
         "suffix": "%"
       }
     ]
   },
   "gamifiedStats_en": {
-    "title": "How many valuable customers are you currently leaving on the table at your auto repair shop?",
-    "description": "Every day, hundreds of demanding car owners search for an expert workshop. We can successfully prevent this loss through professional website development from our web agency.",
+    "title": "How many valuable customers and highly lucrative orders are you currently leaving on the table at your auto repair shop?",
+    "description": "Every single day, hundreds of demanding car owners search for a reliable and highly professional expert garage. Without outstanding web design for your auto repair shop, you are losing these premium customers immediately to the local competition. We can successfully and sustainably prevent this massive loss of revenue through the professional website development of our web agency.",
     "counters": [
       {
         "targetValue": 89,
         "suffix": "%",
-        "label": "of drivers intensely google before visiting a repair shop"
+        "label": "of drivers intensely google and compare websites before their first visit to a repair shop"
       },
       {
         "targetValue": 75,
         "suffix": "%",
-        "label": "judge your entire work quality based solely on the website"
+        "label": "of potential customers judge your entire work quality and reliability based solely on your website"
       }
     ]
   },
   "bentoGrid_en": {
-    "title": "The absolutely unfair advantage for your established auto repair shop",
-    "subtitle": "Why you will become completely unrivaled with our website development.",
+    "title": "The absolutely unfair competitive advantage for your established auto repair shop",
+    "subtitle": "Why you will become completely unrivaled with our specialized website development and dominate the local market.",
     "cards": [
       {
-        "title": "Extreme Loading Speed",
-        "text": "Stressed drivers in emergency situations absolutely will not wait for very slow websites. We guarantee loading times well under a second. The customer is with you before the local competition's site has even properly loaded.",
+        "title": "Extreme Loading Speed & Performance",
+        "text": "Stressed drivers in emergency situations (e.g., after a severe accident or a sudden breakdown) absolutely will not wait for very slow websites. We guarantee loading times well under a second with our premium auto repair shop web design. The customer is digitally with you before the local competition's site has even properly loaded.",
         "size": "large",
         "icon": "Speed"
       },
       {
-        "title": "Unique Web Design",
-        "text": "We transform your profound expertise into a visual masterpiece. Every single detail in the website development radiates absolute precision and maximum reliability.",
+        "title": "Unique Premium Web Design",
+        "text": "We transform your profound automotive expertise into a visual digital masterpiece. Every single detail in our modern website development radiates absolute precision, highest reliability, and cleanliness, just like your workshop does in real life on site.",
         "size": "small",
         "icon": "Design"
       },
       {
-        "title": "Local Dominance",
-        "text": "Be found exactly when it really matters. Our web agency places you on Google right where the current readiness to buy is highest after the website relaunch.",
+        "title": "Local Dominance & SEO Optimization",
+        "text": "Be found exactly when it really matters most. Our web agency places you on Google right where the current readiness to buy for expensive repairs is at its absolute highest after your professional website relaunch.",
         "size": "small",
         "icon": "SEO"
       },
       {
-        "title": "Automated Customers",
-        "text": "Your new website becomes a digital sales machine. Highly converting appointment features and smart forms filter out unsuitable inquiries completely automatically and bring you highly profitable repair orders for your auto repair shop.",
+        "title": "Automated New Customer Acquisition",
+        "text": "Your new website becomes a powerful digital sales machine through our well-thought-out auto repair shop web design. Highly converting appointment features, digital damage reports, and smart forms filter out unsuitable inquiries completely automatically and bring you exclusively highly profitable repair orders.",
         "size": "tall",
         "icon": "Security"
       }
@@ -198,63 +198,63 @@
   },
   "processSteps_en": [
     {
-      "title": "1. Potential Analysis and Clear Strategy",
-      "description": "We analyze your local competition completely ruthlessly. We find out exactly which high-priced repair services your target audience..."
+      "title": "1. In-depth Potential Analysis and Clear Strategy",
+      "description": "We analyze your local competition completely ruthlessly. We find out exactly which high-priced repair services (such as transmission repair, smart repair, engine diagnostics) your target audience is really searching for. This data forms the absolutely solid foundation for our targeted website development."
     },
     {
-      "title": "2. Modern and Premium Web Design",
-      "description": "No cheap templates. This web design is modern, clear, and absolutely confidence-inspiring for every visitor."
+      "title": "2. Modern, High-Converting Web Design",
+      "description": "We absolutely use no cheap templates or website builders. This customized auto repair shop web design is modern, extremely clearly structured, and absolutely confidence-inspiring for every visitor. It perfectly reflects the true quality of your craftsmanship in the digital space."
     },
     {
-      "title": "3. State-of-the-Art Website Development",
-      "description": "We program your digital platform completely anew using the absolute latest technologies. A website relaunch that absolutely sets standards."
+      "title": "3. State-of-the-Art Website Development & Programming",
+      "description": "We program your digital platform completely anew from scratch using the absolute latest, lightning-fast technologies. A website relaunch by our smart web agency sets absolute standards in terms of performance, security, and mobile usability for smartphone users on the go."
     },
     {
       "title": "4. Successful Website Relaunch and Continuous Scaling",
-      "description": "With the launch of the website, the real domination of your market begins. Our dedicated web agency monitors the strong performance..."
+      "description": "With the live launch of the website, the real domination of your market begins. Our dedicated web agency continuously monitors the strong performance. We further optimize your digital system so that you attract more premium customers for auto repairs month after month."
     }
   ],
   "localDominance_en": {
-    "title": "Become the absolute top dog through professional web design",
-    "description": "The lucrative market for complex auto repairs is extremely fiercely contested. Outdated marketing absolutely does not work in this day and age...",
+    "title": "Become the absolute top dog through uncompromising web design",
+    "description": "The lucrative market for complex auto repairs and demanding bodywork is extremely fiercely contested. Outdated marketing absolutely does not work in this day and age anymore. If you want to charge premium prices and hire the best mechanics in town, you need a premium digital presence. With our high-end website development, we catapult your auto repair shop straight to the absolute top.",
     "points": [
-      "Complete monopolization of the truly most lucrative search terms such as complex accident repair and precise engine diagnostics.",
-      "Rapid building of an absolutely massive expert positioning in direct regional comparison to all competitors.",
-      "Enormous pull effect instead of tedious cold calling. Thanks to the work of our web agency, the best customers now specifically search for you and absolutely no longer the other way around."
+      "Complete monopolization of the truly most lucrative search terms in your region, such as complex accident repair, precise engine diagnostics, or transmission repair through excellent auto repair shop web design.",
+      "Rapid building of an absolutely massive expert positioning in direct regional comparison to all independent and brand-affiliated competitors through an immediate website relaunch.",
+      "Enormous pull effect instead of tedious cold calling or expensive newspaper ads. The best customers with the most valuable vehicles now specifically search for you thanks to the strategic work of our web agency – and absolutely no longer the other way around."
     ]
   },
   "faq_en": [
     {
-      "q": "Why is a completely simple website no longer sufficient for my auto repair shop today?",
-      "a": "Simple websites are extremely slow, technically absolutely weak, and look like countless other unprofessional businesses. Very demanding premium customers with extremely expensive vehicles or very lucrative orders always look for providers that radiate absolute professionalism. A cheap website unconsciously signals unfortunately very cheap work. In our web agency, we build real masterpieces that achieve exactly the absolute opposite and immediately establish you as the clear premium provider through excellent web design."
+      "q": "Why is a completely simple standard website no longer sufficient for my auto repair shop today?",
+      "a": "Simple, cheap template websites are extremely slow, technically absolutely weak, and look like countless other unprofessional backyard businesses. Very demanding premium customers with extremely expensive vehicles or very lucrative large orders always look for providers that already radiate absolute professionalism digitally. A cheap website unconsciously signals unfortunately very cheap work. In our web agency, we build real digital masterpieces. A strategically well-thought-out auto repair shop web design achieves exactly the absolute opposite and immediately establishes you as the clear premium provider for the highest quality and reliability."
     },
     {
-      "q": "How quickly will we see concrete results after the website relaunch?",
-      "a": "Our professional website development often leads to absolutely noticeable improvements in important search engine visibility in the very first weeks. The number of strong visitors who actually call you or immediately book an appointment online after the new web design usually increases absolutely significantly from the very first day after the website relaunch thanks to our smart user guidance."
+      "q": "How quickly will we see concrete, measurable results after the website relaunch by your web agency?",
+      "a": "Our professional website development often leads to absolutely noticeable improvements in important search engine visibility on Google and other search engines in the very first weeks. The number of strong visitors who actually call your auto repair shop, write an e-mail, or immediately book an appointment online after the new web design usually increases absolutely significantly from the very first day after the website relaunch thanks to our extremely smart user guidance."
     },
     {
-      "q": "We already have enough orders for our auto repair shop. Why should we invest in website development anyway?",
-      "a": "If your auto repair shop is already very full, it is high time to filter the exact quality of the accepted orders very strongly. An extremely high-quality website helps you enormously in this important step to successfully fend off rather unprofitable inquiries and fully target highly profitable repair orders. Through competent web design, you increase your entire revenue with absolutely the same or even significantly less time investment."
+      "q": "We already have enough orders for our auto repair shop. Why should we invest time and money in new website development anyway?",
+      "a": "If your auto repair shop is already very full, it is high time to filter the exact quality of the accepted orders very strongly. An extremely high-quality website helps you enormously in this important step. Through excellent auto repair shop web design, you successfully fend off rather unprofitable small repairs or pure price inquiries and fully target highly profitable repair orders and commercial fleet customers. Through competent web design, you increase your entire revenue and profit with absolutely the same or even significantly less time investment."
     },
     {
-      "q": "What distinguishes your web agency from absolutely all other providers for auto repair shops?",
-      "a": "We absolutely use no ready-made templates in our website development, we do not outsource any of our work, and we absolutely never do things by halves. Our web agency stands for completely uncompromising performance. In web design, we always use exactly the same modern enterprise technologies as the absolute largest corporations in the world to secure you an extremely unfair technological advantage in your entire region."
+      "q": "What distinguishes your specialized web agency from absolutely all other providers for auto repair shops?",
+      "a": "We absolutely use no ready-made templates in our website development, we do not outsource any of our sensitive work, and we absolutely never do things by halves. Our web agency stands for completely uncompromising performance and digital craftsmanship excellence in the field of auto repair shop web design. In web design, we always use exactly the same modern enterprise technologies as the absolute largest tech corporations in the world to secure you an extremely unfair technological advantage in your entire region."
     },
     {
-      "q": "Does your web agency also offer ongoing support after the website relaunch?",
-      "a": "Yes, absolutely. The web design is ultimately only the important strong engine, but optimization is the essential fuel. We offer very exclusive and long-term partnerships in which we continuously work on your enormous visibility, further expand the entire content strongly, and always make absolutely sure that you really permanently dominate your entire regional competition."
+      "q": "Does your web agency also offer ongoing support and optimization after the website relaunch?",
+      "a": "Yes, absolutely. The new auto repair shop web design is ultimately only the enormously strong engine of your digital marketing, but continuous SEO optimization is the essential high-performance fuel. We offer very exclusive and long-term partnerships in which we continuously work on your enormous regional visibility, further expand the entire expert content strongly, and always make absolutely sure that you really permanently dominate your entire regional competition through our ongoing website development."
     },
     {
-      "q": "We also urgently want to find very good mechatronics engineers. Does website development help with that?",
-      "a": "Absolutely. The ongoing shortage of skilled workers is currently by far the biggest problem in the large automotive industry. Truly excellent mechatronics engineers today always want to work in absolutely modern and highly innovative companies. Your new strong website is therefore also designed by our web agency as an extremely powerful human resources instrument that perfectly presents your company permanently as an absolutely attractive and very future-proof employer."
+      "q": "We also urgently want to find very good mechatronics engineers and master mechanics. Does professional website development also help with that?",
+      "a": "Absolutely. The ongoing shortage of skilled workers is currently by far the biggest and most painful problem in the large automotive industry. Truly excellent mechatronics engineers and talented apprentices today always want to work in absolutely modern, clean, and highly innovative companies. Your new, strong website is therefore also designed from the start by our auto repair shop web design as an extremely powerful human resources instrument (employer branding) that perfectly presents your company permanently as an absolutely attractive and very future-proof employer."
     },
     {
-      "q": "How much time will this project require of me during my already stressful daily business?",
-      "a": "This means an absolutely minimal time investment for you. We know exactly that you have to be productive in your auto repair shop and make money. After a short initial conversation, our competent web agency takes over one hundred percent of the entire implementation. Starting from professional copywriting to the state-of-the-art programming of the new web design, we handle all important steps for your successful website relaunch."
+      "q": "How much time will this project require of me as an owner during my already extremely stressful daily workshop business?",
+      "a": "A website relaunch with our web agency means an absolutely minimal time investment for you. We know exactly that you have to be productive in your auto repair shop, lead employees, and make real money. After a short, concise initial strategy conversation, our highly competent web agency takes over one hundred percent of the entire implementation. Starting from professional copywriting and image selection to the state-of-the-art programming of the new auto repair shop web design, we handle absolutely all important steps completely independently for you."
     },
     {
-      "q": "Can modern digital systems be integrated into the new web design?",
-      "a": "Yes, we integrate every modern interface you use absolutely seamlessly during website development. Whether it is modern online systems for quick appointment bookings, clever digital chatbots for customer inquiries, or the connection to your special and important internal workshop software, we always digitize your entire external customer communication at the very highest and most modern level."
+      "q": "Can modern digital systems and interfaces be integrated into the new web design?",
+      "a": "Yes, we integrate every modern interface you use absolutely seamlessly and with high performance during our advanced website development. Whether it is modern online systems for quick digital appointment bookings, clever digital chatbots for initial customer questions, damage report forms with direct photo uploads, or the direct connection to your special and important internal workshop software – an intelligent website relaunch digitizes your entire external customer communication always at the very highest and most modern technical level."
     }
   ]
 }

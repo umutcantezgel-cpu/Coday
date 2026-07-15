@@ -31,6 +31,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string; category: string; slug: string }>;
 }): Promise<Metadata> {
   const { locale, category, slug } = await params;
+  setRequestLocale(locale);
 
   // Verify category and slug exist
   const categoryData = (servicesData as any)[category];
@@ -43,17 +44,9 @@ export async function generateMetadata({
   const title = t(featureData.titleKey);
   const description = t(featureData.descriptionKey);
 
-  // Fallback if description is too short (Seobility needs ~140 chars)
-  const fullDesc =
-    description.length < 100
-      ? locale === 'en'
-        ? `${description} Discover our comprehensive ${title} services at Coday. We build high-performance digital products to elevate your brand and drive business growth.`
-        : `${description} Entdecken Sie unsere umfassenden ${title} Services bei Coday. Wir entwickeln leistungsstarke digitale Produkte, um Ihre Marke zu stärken und das Unternehmenswachstum voranzutreiben.`
-      : description;
-
   return generatePageMetadata({
     title: title,
-    description: fullDesc,
+    description: description,
     path: `/${locale}/services/${category}/${slug}`,
     type: 'money',
   });
@@ -75,7 +68,7 @@ export default async function ServiceDetailPage({
 
   const _locale = (await params)?.locale || 'de';
   const messages = await getMessages();
-  const pageMessages = pick(messages as any, ['services']);
+  const pageMessages = pick(messages as any, ['services', 'common']);
 
   return (
     <>

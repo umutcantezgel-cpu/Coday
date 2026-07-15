@@ -62,12 +62,9 @@ export function generateAlternates(path: string): Metadata['alternates'] {
 
   const languages: Record<string, string> = {
     de: `${BASE_URL}${dePath}`,
+    en: `${BASE_URL}${enPath}`,
     'x-default': `${BASE_URL}${dePath}`,
   };
-
-  if (!isDeOnly) {
-    languages.en = `${BASE_URL}${enPath}`;
-  }
 
   return {
     canonical: `${BASE_URL}${canonicalPath}`,

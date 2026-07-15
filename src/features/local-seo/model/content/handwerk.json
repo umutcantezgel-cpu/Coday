@@ -2,13 +2,13 @@
   "target": "handwerk",
   "type": "industry-location",
   "meta": {
-    "title": "Handwerker Webdesign Agentur Wetzlar | Fachkräfte gewinnen",
-    "description": "Premium Websites für Handwerksbetriebe. Gewinnen Sie lukrative Bau Aufträge und qualifizierte Fachkräfte mit einem hochmodernen digitalen Auftritt."
+    "title": "Handwerker Webdesign Agentur Wetzlar | Webdesign für Handwerker",
+    "description": "Ihre Handwerker Webdesign Agentur in Wetzlar. Premium Webdesign für Handwerker und Bauunternehmen. Gewinnen Sie lukrative Bau-Aufträge und qualifizierte Fachkräfte mit einem hochmodernen digitalen Auftritt."
   },
   "hero": {
     "headline": "Digitales Fundament für echtes Handwerk.",
-    "subheadline": "Mehr Fachkräfte. Bessere Aufträge. Maximale Sichtbarkeit.",
-    "description": "Mehr Fachkräfte. Wir bauen Websites für Handwerker, die Vertrauen schaffen, Ihre Expertise beweisen und als digitale Vertriebsmaschine arbeiten.",
+    "subheadline": "Mehr Fachkräfte. Bessere Aufträge. Maximale regionale Sichtbarkeit.",
+    "description": "Als spezialisierte Handwerker Webdesign Agentur in Wetzlar wissen wir genau, worauf es ankommt. Wir bauen hochmoderne Websites für Handwerker, die sofort Vertrauen bei Ihren Wunschkunden schaffen, Ihre handwerkliche Expertise eindrucksvoll beweisen und rund um die Uhr als digitale Vertriebs- und Recruiting-Maschine arbeiten. Ein maßgeschneidertes Handwerk Webdesign ist heute der Schlüssel, um sich gegen die Konkurrenz durchzusetzen, hochpreisige Projekte zu gewinnen und die besten Talente der Region anzuziehen.",
     "metrics": [
       {
         "value": "200",
@@ -24,45 +24,45 @@
   },
   "gamifiedStats": {
     "title": "Warum Handwerker online Kunden & Personal verlieren",
-    "description": "Viele Betriebe haben volle Auftragsbücher, aber finden kein Personal. Beides scheitert oft an der digitalen Präsentation.",
+    "description": "Viele Handwerksbetriebe in der Region haben volle Auftragsbücher, aber finden einfach kein qualifiziertes Personal für die Baustelle. Gleichzeitig gehen die wirklich lukrativen Großaufträge oft an die Konkurrenz. Beides scheitert meist an einer veralteten digitalen Präsentation. Ein professionelles Webdesign für Handwerker ist längst kein Luxus mehr, sondern eine absolute Notwendigkeit, um am Markt als moderner, verlässlicher und attraktiver Arbeitgeber sowie Dienstleister wahrgenommen zu werden.",
     "counters": [
       {
         "targetValue": 85,
         "suffix": "%",
-        "label": "der jungen Fachkräfte informieren sich vor Bewerbung online"
+        "label": "der jungen Fachkräfte informieren sich vor einer Bewerbung ausführlich online über den Betrieb"
       },
       {
         "targetValue": 60,
         "suffix": "%",
-        "label": "der Bauherren entscheiden anhand von Referenzbildern im Web"
+        "label": "der Bauherren entscheiden heute maßgeblich anhand von Referenzbildern im Web"
       }
     ]
   },
   "bentoGrid": {
-    "title": "Webdesign, das zupackt",
-    "subtitle": "So digitalisieren wir Ihren Handwerksbetrieb.",
+    "title": "Webdesign für Handwerker, das zupackt",
+    "subtitle": "So digitalisieren wir Ihren Handwerksbetrieb effizient.",
     "cards": [
       {
-        "title": "Starke Referenz Galerien",
-        "text": "Bilder sagen mehr als Worte. Wir setzen Ihre erfolgreich abgeschlossenen Bauprojekte in hochauflösenden, blitzschnellen Galerien in Szene.",
+        "title": "Starke Referenz Galerien für echte Bauprojekte",
+        "text": "Bilder sagen bekanntlich mehr als tausend Worte, besonders im Handwerk. Wir setzen Ihre erfolgreich abgeschlossenen Bauprojekte in hochauflösenden, blitzschnellen Galerien in Szene. So sehen potenzielle Kunden sofort, dass Sie höchste handwerkliche Qualität liefern. Ein exzellentes Handwerk Webdesign lebt von visueller Überzeugungskraft.",
         "size": "large",
         "icon": "Design"
       },
       {
-        "title": "Automatisierte Kontaktanfragen",
-        "text": "Digitale Fragebögen filtern Anfragen vorab (Budget, Zeitrahmen), damit Sie keine Zeit mit unpassenden Kunden verschwenden.",
+        "title": "Automatisierte und vorqualifizierte Kontaktanfragen",
+        "text": "Keine endlosen Telefonate mit Kunden, die ohnehin nicht in Ihr Portfolio passen. Digitale Fragebögen filtern Anfragen vorab nach Budget, Zeitrahmen und Gewerk, damit Sie keine wertvolle Zeit mit unpassenden Kunden verschwenden.",
         "size": "small",
         "icon": "Speed"
       },
       {
-        "title": "Recruiting Funnel",
-        "text": "1 Klick Bewerbungen für Fachkräfte, integriert auf einer Landingpage, die Ihren Betrieb als Top Arbeitgeber präsentiert.",
+        "title": "Effizienter Recruiting Funnel für Fachkräfte",
+        "text": "Nutzen Sie 1-Klick-Bewerbungen für Fachkräfte, nahtlos integriert auf einer speziellen Landingpage. Wir präsentieren Ihren Betrieb als absoluten Top-Arbeitgeber in der Region, heben Ihre Benefits hervor und senken die Hürde für Bewerber drastisch.",
         "size": "small",
         "icon": "MapPin"
       },
       {
-        "title": "Local SEO für Handwerker",
-        "text": "Top Rankings bei Google für Suchbegriffe wie 'Dachdecker Wetzlar' oder 'Elektriker Gießen'.",
+        "title": "Local SEO: Dominanz bei Google",
+        "text": "Als Handwerker Webdesign Agentur sorgen wir für Top-Rankings bei Google für Suchbegriffe wie 'Dachdecker Wetzlar', 'Malerbetrieb Gießen' oder 'Elektriker Frankfurt'. Werden Sie exakt dort gefunden, wo Ihre Kunden gerade nach Handwerkern suchen.",
         "size": "tall",
         "icon": "SEO"
       }
@@ -70,65 +70,65 @@
   },
   "processSteps": [
     {
-      "title": "1. Strategie & Fokus",
-      "description": "Welche Aufträge wollen Sie? Welche Mitarbeiter suchen Sie? Wir richten die gesamte Website exakt auf Ihre geschäftlichen Ziele aus."
+      "title": "1. Strategie, Fokus & Positionierung",
+      "description": "Zu Beginn analysieren wir gemeinsam: Welche lukrativen Aufträge wollen Sie in Zukunft gewinnen? Welche Mitarbeiter und Fachkräfte suchen Sie dringend? Wir richten die gesamte Architektur Ihrer neuen Website, das Design und die Inhalte exakt auf Ihre geschäftlichen Ziele als Handwerksbetrieb aus."
     },
     {
-      "title": "2. Fotografie auf der Baustelle",
-      "description": "Echtes Handwerk statt Stockfotos. Wir lassen Ihr Team und Ihre Arbeit durch professionelle Aufnahmen authentisch wirken."
+      "title": "2. Authentische Fotografie auf der Baustelle",
+      "description": "Echtes Handwerk erfordert echte Bilder, keine austauschbaren Stockfotos. Wir lassen Ihr Team, Ihre Werkstatt und Ihre tägliche Arbeit auf der Baustelle durch professionelle, authentische Aufnahmen wirken. Das schafft sofortiges Vertrauen bei Kunden und potenziellen neuen Mitarbeitern."
     },
     {
-      "title": "3. Entwicklung & Design",
-      "description": "Programmierung einer robusten, extrem schnellen Website, die auch auf dem Baustellen Smartphone in Millisekunden lädt."
+      "title": "3. Entwicklung & Handwerk Webdesign",
+      "description": "Die Programmierung einer robusten, extrem schnellen Website ist unser Kernhandwerk. Wir stellen sicher, dass Ihre neue Webpräsenz technisch auf dem neuesten Stand ist und auch bei schlechter Internetverbindung auf dem Baustellen-Smartphone in Millisekunden fehlerfrei lädt."
     },
     {
-      "title": "4. Local SEO Ranking",
-      "description": "Optimierung Ihres Google Profils, damit Kunden in Ihrem Einzugsgebiet Sie sofort finden, wenn ein Notfall oder Bauprojekt ansteht."
+      "title": "4. Local SEO Ranking & Live-Gang",
+      "description": "Nach dem Launch beginnt die Optimierung Ihres Google Unternehmensprofils. Durch gezieltes lokales SEO für Handwerker sorgen wir dafür, dass Kunden in Ihrem direkten Einzugsgebiet Sie sofort finden, wenn ein Notfall, eine Sanierung oder ein großes neues Bauprojekt ansteht."
     }
   ],
   "localDominance": {
-    "title": "Dominanz im Umkreis von 50km",
-    "description": "Im Handwerk ist regionale Sichtbarkei... Wir optimieren Ihre Seite hyper lokal, damit Sie zum unangefochtenen Platzhirsch in Ihrer Region werden.",
+    "title": "Regionale Dominanz im Umkreis von 50km",
+    "description": "Im Handwerk ist die regionale Sichtbarkeit das absolute A und O. Kunden suchen nach einem verlässlichen Partner aus der Nähe. Mit strategischem Webdesign für Handwerker optimieren wir Ihre Seite hyper-lokal, damit Sie zum unangefochtenen Platzhirsch in Ihrer Region werden und die Konkurrenz hinter sich lassen.",
     "points": [
-      "Erstellung dynamischer Landingpages für alle relevanten Einzugsgebiete",
-      "Aufbau eines digitalen Expertenstatus durch optimierte Referenzbeschreibungen",
-      "Massive Steigerung der Arbeitgeber Attraktivität in der Region"
+      "Erstellung zielgerichteter, dynamischer Landingpages für alle relevanten Städte und Einzugsgebiete in Ihrer Umgebung",
+      "Aufbau eines unerschütterlichen digitalen Expertenstatus durch SEO-optimierte Referenzbeschreibungen und Projektvorstellungen",
+      "Massive Steigerung der Arbeitgeber-Attraktivität in der gesamten Region durch gezieltes Employer Branding im Webdesign"
     ]
   },
   "faq": [
     {
-      "q": "Wir haben doch genug Aufträge – warum eine neue Website?",
-      "a": "Weil es nicht nur um Aufträge geht. Es geht um *bessere* Aufträge (höhere Marge) und vor allem um Personalgewinnung. Top Fachkräfte bewerben sich heute nicht bei Betrieben, die sich digital wie vor 20 Jahren präsentieren."
+      "q": "Wir haben doch aktuell genug Aufträge – warum sollten wir in eine neue Website investieren?",
+      "a": "Weil es nicht nur um die reine Anzahl an Aufträgen geht. Es geht vielmehr um *bessere*, lukrativere Aufträge mit einer höheren Marge. Und fast noch wichtiger: Es geht um die Personalgewinnung. Top-Fachkräfte und motivierte Auszubildende bewerben sich heute schlichtweg nicht mehr bei Betrieben, die sich digital so präsentieren, als wären sie vor 20 Jahren stehen geblieben. Ein exzellentes Handwerk Webdesign ist Ihr stärkstes Recruiting-Tool."
     },
     {
-      "q": "Wie helfen Sie uns konkret bei der Mitarbeitersuche?",
-      "a": "Wir bauen psychologisch optimierte Karriere Seiten auf. Wir reduzieren die Bewerbungshürden (z.B. Bewerbung ohne langes Anschreiben, direkt über das Smartphone) und stellen Ihre Vorteile als Arbeitgeber perfekt dar."
+      "q": "Wie helfen Sie uns als Webdesign Agentur konkret bei der Mitarbeitersuche?",
+      "a": "Wir bauen psychologisch optimierte Karriere-Seiten auf, die genau die Sprache Ihrer Zielgruppe sprechen. Wir reduzieren die Bewerbungshürden radikal – zum Beispiel durch eine schnelle Bewerbung ohne langes, formelles Anschreiben, direkt über das Smartphone. Gleichzeitig stellen wir Ihre Vorteile als Arbeitgeber (Benefits, Teamgeist, moderne Maschinen) perfekt dar."
     },
     {
-      "q": "Können wir Bilder von neuen Projekten selbst hochladen?",
-      "a": "Ja. Sie erhalten Zugang zu einem extrem einfach bedienbaren System (ohne kompliziertes WordPress Backend), mit dem Sie per Handy direkt von der Baustelle Bilder in Ihre Referenz Galerie hochladen können."
+      "q": "Können wir Bilder von neuen Projekten später problemlos selbst hochladen?",
+      "a": "Absolut, ja. Sie erhalten von uns einen Zugang zu einem extrem einfach bedienbaren Headless-CMS (wie Sanity), ganz ohne das oft komplizierte und unübersichtliche WordPress-Backend. Damit können Sie oder Ihre Mitarbeiter direkt von der Baustelle per Handy neue Bilder in Ihre Referenz-Galerien laden. So bleibt Ihr Webdesign für Handwerker immer frisch und aktuell."
     },
     {
-      "q": "Wirken wir durch eine Premium Website zu teuer für normale Kunden?",
-      "a": "Nein, Sie wirken professionell und zuverlässig. Kunden zahlen gerne faire Preise für Handwerker, die Seriosität und Qualität ausstrahlen. Die Website filtert zudem Kunden aus, die nur auf den billigsten Preis schauen."
+      "q": "Wirken wir durch eine Premium Website eventuell zu teuer für normale, private Kunden?",
+      "a": "Nein, ganz im Gegenteil: Sie wirken professionell, etabliert und zuverlässig. Kunden zahlen gerne faire und auch höhere Preise für Handwerker, die Seriosität, Vertrauen und höchste Qualität ausstrahlen. Eine professionelle Website filtert zudem genau die Kunden aus, die bei jedem Angebot nur um den billigsten Preis feilschen wollen. Das spart Ihnen enorm viel Zeit."
     },
     {
-      "q": "Werden wir bei Google in unserer Stadt gefunden?",
-      "a": "Das ist unser Kernversprechen. Durch tiefgreifende Local SEO Maßnahmen und rasend schnelle Ladezeiten sorgen wir dafür, dass Sie bei Suchanfragen für Ihre Gewerke regional an der Spitze stehen."
+      "q": "Werden wir mit der neuen Website bei Google in unserer Stadt wirklich besser gefunden?",
+      "a": "Das ist eines unserer absoluten Kernversprechen. Durch tiefgreifende Local SEO Maßnahmen, eine perfekte technische Struktur und rasend schnelle Ladezeiten sorgen wir dafür, dass Sie bei Suchanfragen für Ihre speziellen Gewerke regional an der Spitze stehen. Webdesign für Handwerker bedeutet für uns immer auch Sichtbarkeit."
     },
     {
-      "q": "Wie viel Zeit müssen wir als Betrieb in das Projekt stecken?",
-      "a": "Sehr wenig. Wir wissen, dass Handwerker auf der Baustelle gebraucht werden. Nach einem initialen Strategie Gespräch übernehmen wir Konzeption, Design, Texte und Programmierung komplett (Full Service)."
+      "q": "Wie viel Zeit müssen wir als Handwerksbetrieb selbst in das Webdesign-Projekt stecken?",
+      "a": "Sehr wenig. Wir wissen aus Erfahrung, dass Handwerker draußen auf der Baustelle oder beim Kunden gebraucht werden. Nach einem intensiven, initialen Strategie-Gespräch übernehmen wir die Konzeption, das Design, die Erstellung aller Texte und die komplette Programmierung als Full-Service-Agentur für Sie."
     }
   ],
   "meta_en": {
-    "title": "Craftsmen Web Design Agency Wetzlar | Attract Skilled Workers",
-    "description": "Specialized web design for trades and construction. Attract qualified craftsmen, impress clients, and outshine the local competition."
+    "title": "Craftsmen Web Design Agency | Premium Web Design for Trades",
+    "description": "Your specialized craftsmen web design agency. Premium web design for trades and construction companies. Attract qualified craftsmen and impress clients."
   },
   "hero_en": {
     "headline": "Digital Foundation for True Craftsmanship.",
-    "subheadline": "More Skilled Workers. Better Contracts. Maximum Visibility.",
-    "description": "More skilled workers. We build websites for craftsmen that create trust, prove your expertise, and work as a digital sales machine.",
+    "subheadline": "More Skilled Workers. Better Contracts. Maximum Local Visibility.",
+    "description": "As a specialized craftsmen web design agency, we know exactly what matters in the trades. We build state-of-the-art websites for craftsmen that instantly build trust with your ideal clients, impressively demonstrate your expertise, and work around the clock as a digital sales and recruiting machine. Custom craftsmen web design is today's key to standing out from the competition, winning high-ticket projects, and attracting the best local talent.",
     "metrics": [
       {
         "value": "200",
@@ -144,45 +144,45 @@
   },
   "gamifiedStats_en": {
     "title": "Why Craftsmen Lose Clients & Staff Online",
-    "description": "Many companies have full order books, but can't find staff. Both often fail due to digital presentation.",
+    "description": "Many trade companies in the region have full order books, but simply cannot find qualified personnel for the construction site. At the same time, the truly lucrative large contracts often go to the competition. Both issues usually fail due to an outdated digital presentation. Professional web design for craftsmen is no longer a luxury, but an absolute necessity to be perceived in the market as a modern, reliable, and attractive employer and service provider.",
     "counters": [
       {
         "targetValue": 85,
         "suffix": "%",
-        "label": "of young skilled workers inform themselves online before applying"
+        "label": "of young skilled workers thoroughly inform themselves online about the company before applying"
       },
       {
         "targetValue": 60,
         "suffix": "%",
-        "label": "of builders make decisions based on reference images on the web"
+        "label": "of builders today make major decisions based on reference images on the web"
       }
     ]
   },
   "bentoGrid_en": {
     "title": "Web Design That Gets to Work",
-    "subtitle": "How we digitize your craft business.",
+    "subtitle": "How we efficiently digitize your craft business.",
     "cards": [
       {
-        "title": "Strong Reference Galleries",
-        "text": "Pictures speak louder than words. We showcase your successfully completed construction projects in high-resolution, lightning-fast galleries.",
+        "title": "Strong Reference Galleries for Real Projects",
+        "text": "Pictures speak louder than a thousand words, especially in the trades. We showcase your successfully completed construction projects in high-resolution, lightning-fast galleries. This way, potential clients instantly see that you deliver top-tier craftsmanship. Excellent craftsmen web design thrives on visual persuasion.",
         "size": "large",
         "icon": "Design"
       },
       {
-        "title": "Automated Contact Requests",
-        "text": "Digital questionnaires pre-filter inquiries (budget, timeframe) so you don't waste time with unsuitable clients.",
+        "title": "Automated and Pre-Qualified Inquiries",
+        "text": "No more endless phone calls with clients who don't fit your portfolio anyway. Digital questionnaires pre-filter inquiries by budget, timeframe, and specific trade, ensuring you don't waste valuable time with unsuitable prospects.",
         "size": "small",
         "icon": "Speed"
       },
       {
-        "title": "Recruiting Funnel",
-        "text": "1-click applications for skilled workers, integrated on a landing page that presents your company as a top employer.",
+        "title": "Efficient Recruiting Funnel for Staff",
+        "text": "Leverage 1-click applications for skilled workers, seamlessly integrated onto a dedicated landing page. We present your company as an absolute top employer in the region, highlight your unique benefits, and drastically lower the barrier to entry for applicants.",
         "size": "small",
         "icon": "MapPin"
       },
       {
-        "title": "Local SEO for Craftsmen",
-        "text": "Top rankings on Google for search terms like 'roofer Wetzlar' or 'electrician Gießen'.",
+        "title": "Local SEO: Dominance on Google",
+        "text": "As a craftsmen web design agency, we ensure top rankings on Google for search terms like 'roofer', 'painting company', or 'electrician' in your area. Be found exactly where and when your clients are searching for reliable tradesmen.",
         "size": "tall",
         "icon": "SEO"
       }
@@ -190,55 +190,55 @@
   },
   "processSteps_en": [
     {
-      "title": "1. Strategy & Focus",
-      "description": "What jobs do you want? What employees are you looking for? We align the entire website exactly with your business goals."
+      "title": "1. Strategy, Focus & Positioning",
+      "description": "At the beginning, we analyze together: Which lucrative contracts do you want to win in the future? What kind of employees and specialists are you urgently looking for? We align the entire architecture of your new website, the design, and the content exactly with your business goals."
     },
     {
-      "title": "2. Photography on the Construction Site",
-      "description": "Real craftsmanship instead of stock photos. We make your team and your work look authentic through professional shots."
+      "title": "2. Authentic Photography on Site",
+      "description": "Real craftsmanship requires real pictures, not interchangeable stock photos. We make your team, your workshop, and your daily work on the construction site look authentic through professional photography. This creates immediate trust with clients and potential new employees."
     },
     {
-      "title": "3. Development & Design",
-      "description": "Programming a robust, extremely fast website that loads in milliseconds even on a smartphone at the construction site."
+      "title": "3. Development & Web Design",
+      "description": "Programming a robust, extremely fast website is our core craft. We ensure that your new web presence is technically state-of-the-art and loads flawlessly in milliseconds, even with a poor internet connection on a smartphone at the construction site."
     },
     {
-      "title": "4. Local SEO Ranking",
-      "description": "Optimization of your Google profile so customers in your catchment area find you immediately when an emergency or construction project arises."
+      "title": "4. Local SEO Ranking & Launch",
+      "description": "After the launch, the optimization of your Google Business Profile begins. Through targeted local SEO for craftsmen, we ensure that customers in your direct catchment area find you immediately when an emergency, a renovation, or a large new construction project arises."
     }
   ],
   "localDominance_en": {
-    "title": "Dominance within a 50km Radius",
-    "description": "In the trades, regional visibility is key. We optimize your site hyper-locally so you become the undisputed top dog in your region.",
+    "title": "Regional Dominance within a 50km Radius",
+    "description": "In the trades, regional visibility is the absolute be-all and end-all. Customers are looking for a reliable partner nearby. With strategic web design for craftsmen, we optimize your site hyper-locally so you become the undisputed top dog in your region and leave the competition behind.",
     "points": [
-      "Creation of dynamic landing pages for all relevant catchment areas",
-      "Building digital expert status through optimized reference descriptions",
-      "Massive increase in employer attractiveness in the region"
+      "Creation of targeted, dynamic landing pages for all relevant cities and catchment areas in your vicinity",
+      "Building an unshakable digital expert status through SEO-optimized reference descriptions and project showcases",
+      "Massive increase in employer attractiveness across the entire region through targeted employer branding in web design"
     ]
   },
   "faq_en": [
     {
-      "q": "We already have enough orders – why a new website?",
-      "a": "Because it's not just about orders. It's about *better* orders (higher margin) and especially about recruiting personnel. Top skilled workers today don't apply to companies that present themselves digitally like they did 20 years ago."
+      "q": "We currently have enough orders – why should we invest in a new website?",
+      "a": "Because it's not just about the sheer number of orders. Rather, it's about *better*, more lucrative orders with a higher margin. And almost more importantly: It's about recruiting. Top professionals and motivated apprentices simply no longer apply to companies that present themselves digitally as if they were stuck 20 years in the past. An excellent craftsmen web design is your strongest recruiting tool."
     },
     {
-      "q": "How do you specifically help us find employees?",
-      "a": "We build psychologically optimized career pages. We reduce application hurdles (e.g., application without a long cover letter, directly via smartphone) and perfectly present your advantages as an employer."
+      "q": "As a web design agency, how do you specifically help us find employees?",
+      "a": "We build psychologically optimized career pages that speak the exact language of your target audience. We radically reduce application hurdles – for example, through a quick application process without a long, formal cover letter, directly via smartphone. At the same time, we perfectly showcase your advantages as an employer (benefits, team spirit, modern machinery)."
     },
     {
-      "q": "Can we upload pictures of new projects ourselves?",
-      "a": "Yes. You get access to an extremely easy-to-use system (without a complicated WordPress backend) with which you can upload pictures to your reference gallery directly from the construction site via mobile phone."
+      "q": "Can we easily upload pictures of new projects ourselves later?",
+      "a": "Absolutely, yes. You will receive access to an extremely easy-to-use headless CMS (like Sanity), entirely without the often complicated and confusing WordPress backend. This allows you or your staff to upload new pictures directly from the construction site via mobile phone into your reference galleries. This keeps your web design for craftsmen always fresh and up-to-date."
     },
     {
-      "q": "Does a premium website make us look too expensive for normal customers?",
-      "a": "No, you appear professional and reliable. Customers gladly pay fair prices for craftsmen who radiate seriousness and quality. The website also filters out customers who only look for the cheapest price."
+      "q": "Might a premium website make us look too expensive for normal, private customers?",
+      "a": "No, quite the contrary: You appear professional, established, and reliable. Customers gladly pay fair and even higher prices for craftsmen who radiate seriousness, trust, and the highest quality. A professional website also filters out exactly those customers who only want to haggle over the cheapest price on every quote. This saves you a tremendous amount of time."
     },
     {
-      "q": "Will we be found on Google in our city?",
-      "a": "That is our core promise. Through profound local SEO measures and lightning-fast loading times, we ensure that you are regionally at the top for search queries for your trades."
+      "q": "Will we really be found better on Google in our city with the new website?",
+      "a": "That is one of our absolute core promises. Through profound local SEO measures, a perfect technical structure, and lightning-fast loading times, we ensure that you are regionally at the top for search queries for your specific trades. For us, web design for craftsmen always means visibility."
     },
     {
-      "q": "How much time do we as a company have to put into the project?",
-      "a": "Very little. We know that craftsmen are needed on the construction site. After an initial strategy conversation, we completely take over conception, design, texts, and programming (Full Service)."
+      "q": "How much time do we as a craft business have to put into the web design project ourselves?",
+      "a": "Very little. We know from experience that craftsmen are needed out on the construction site or with the customer. After an intensive, initial strategy meeting, we take over the conception, the design, the creation of all texts, and the complete programming for you as a full-service agency."
     }
   ]
 }

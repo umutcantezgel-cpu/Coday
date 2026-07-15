@@ -2,13 +2,13 @@
   "target": "zahnarzt",
   "type": "industry-location",
   "meta": {
-    "title": "Zahnarzt Webdesign Agentur Wetzlar | Patienten für Ihre Praxis",
-    "description": "Exzellentes Webdesign für Zahnärzte & KFO in Wetzlar. Steigern Sie Privatleistungen durch Vertrauen, High End Design und digitale Terminbuchungen."
+    "title": "Zahnarzt Webdesign Agentur | Moderne Praxis Websites & SEO",
+    "description": "Exzellentes Webdesign für Zahnärzte & Kieferorthopäden. Wir erstellen Ihre Zahnarzt Website für mehr Privatpatienten, starkes SEO und digitale Terminbuchung."
   },
   "hero": {
-    "headline": "Das digitale Lächeln Ihrer Praxis.",
-    "subheadline": "Mehr Privatpatienten. Weniger Administration. Premium Image.",
-    "description": "Mehr Privatpatienten. Weniger Administration. Premium Image. Patienten haben oft Angst vor dem Zahnarztbesuch. Wenn Ihre Website kühl, veralte...",
+    "headline": "Das digitale Lächeln Ihrer Praxis: Exklusives Zahnarzt Webdesign.",
+    "subheadline": "Mehr Privatpatienten. Weniger Administration. Premium Image durch High-End Webdesign für Zahnärzte.",
+    "description": "Patienten haben oft Angst vor dem Zahnarztbesuch und informieren sich vorab online. Wenn Ihre Zahnarzt Website kühl, veraltet oder unübersichtlich wirkt, verlieren Sie wertvolle Patienten an die Konkurrenz. Mit unserem spezialisierten Zahnarzt Webdesign verwandeln wir Ihre digitale Präsenz in ein Aushängeschild, das Vertrauen weckt, fachliche Kompetenz ausstrahlt und gezielt Angstpatienten beruhigt. Wir erstellen Websites für Zahnärzte, die nicht nur exzellent aussehen, sondern durch gezieltes SEO und smarte Online-Terminbuchungen Ihren Praxisalltag spürbar entlasten. Setzen Sie auf professionelles Webdesign für Zahnarztpraxen und sichern Sie sich die Pole-Position in Ihrer Region.",
     "metrics": [
       {
         "value": "150",
@@ -23,46 +23,46 @@
     ]
   },
   "gamifiedStats": {
-    "title": "Warum Sie lukrative Behandlungen an Mitbewerber verlieren",
-    "description": "Wenn es um hochwertige Implantate oder Veneers geht, recherchieren Pat... Eine Website, die nicht Premium ausstrahlt, disqualifiziert Sie sofort.",
+    "title": "Warum Sie lukrative Behandlungen durch schwaches Zahnarzt Webdesign an Mitbewerber verlieren",
+    "description": "Wenn es um hochwertige Privatleistungen wie Implantate, Veneers oder Bleaching geht, recherchieren Patienten intensiv im Internet. Eine Website, die nicht Premium ausstrahlt, disqualifiziert Ihre Expertise sofort. Hochwertiges Webdesign für Zahnärzte ist heute kein Luxus mehr, sondern die Grundvoraussetzung für eine wirtschaftlich erfolgreiche Praxis. Zeigen Sie online die gleiche herausragende Qualität, die Sie auch am Behandlungsstuhl bieten.",
     "counters": [
       {
         "targetValue": 82,
         "suffix": "%",
-        "label": "der Patienten entscheiden sich für Praxen mit modernen Websites"
+        "label": "der Patienten entscheiden sich für Zahnarztpraxen mit einer modernen, vertrauenserweckenden Website."
       },
       {
         "targetValue": 74,
         "suffix": "%",
-        "label": "buchen Prophylaxe Termine bevorzugt online"
+        "label": "buchen Prophylaxe und PZR-Termine bevorzugt über eine digitale Terminbuchung online."
       }
     ]
   },
   "bentoGrid": {
-    "title": "Die digitale Praxisarchitektur",
-    "subtitle": "So digitalisieren wir Ihren Patientengewinnungs Prozess.",
+    "title": "Die Architektur Ihrer neuen Zahnarzt Website",
+    "subtitle": "So digitalisieren wir Ihre Patientengewinnung durch modernes Zahnarzt Webdesign.",
     "cards": [
       {
-        "title": "Vertrauensvolles Design",
-        "text": "Warme Farben, helle Räume und professionelle Teamfotos. Wir designen eine digitale Praxis, die Seriosität und Empathie ausstrahlt.",
+        "title": "Vertrauensvolles Praxis Design",
+        "text": "Warme Farben, helle Behandlungsräume und professionelle Teamfotos. Unser Webdesign für Zahnärzte kreiert eine digitale Praxis, die höchste Seriosität, Hygiene und Empathie ausstrahlt. Wir nehmen Ihren Patienten die Angst bereits vor dem ersten Termin.",
         "size": "large",
         "icon": "Design"
       },
       {
-        "title": "Sichere Terminbuchung",
-        "text": "Nahtlose Anbindung von Doctolib oder Jameda. Patienten buchen PZR oder Kontrollen selbst – direkt in Ihre Praxissoftware.",
+        "title": "Sichere Online-Terminbuchung",
+        "text": "Nahtlose Anbindung von Doctolib, Jameda oder samedi an Ihre Zahnarzt Website. Patienten buchen PZR, Kontrollen oder Beratungen selbst – direkt in Ihre Praxissoftware. Das entlastet Ihre Rezeption enorm.",
         "size": "small",
         "icon": "Speed"
       },
       {
-        "title": "Digitale Anamnese",
-        "text": "Patienten füllen Anamnesebögen bequem zu Hause aus (DSGVO konform). Keine Zettelwirtschaft mehr im Wartezimmer.",
+        "title": "Digitale Anamnese & Formulare",
+        "text": "Patienten füllen Anamnesebögen bequem zu Hause über Ihre neue Zahnarzt Website aus (100% DSGVO-konform). Keine Zettelwirtschaft mehr im Wartezimmer und optimierte Prozesse in der Praxis.",
         "size": "small",
         "icon": "MapPin"
       },
       {
-        "title": "Medical SEO",
-        "text": "Dominante Platzierung bei Google für hochprofitable Keywords wie 'Zahnimplantate Wetzlar' oder 'Angstpatienten Zahnarzt'.",
+        "title": "Local SEO für Zahnärzte",
+        "text": "Dominante Platzierung bei Google. Durch gezielte Suchmaschinenoptimierung für Zahnärzte ranken Sie für profitable Keywords wie 'Zahnimplantate', 'Kieferorthopädie' oder 'Angstpatienten Zahnarzt' ganz oben.",
         "size": "tall",
         "icon": "SEO"
       }
@@ -70,65 +70,65 @@
   },
   "processSteps": [
     {
-      "title": "1. Positionierung & USP",
-      "description": "Sind Sie Spezialist für Implantologie, Kinderzahnheilkunde oder Ästhetik? Wir rücken Ihren Schwerpunkt perfekt in den Fokus."
+      "title": "1. Positionierung & Praxis-USP",
+      "description": "Sind Sie Spezialist für Implantologie, Kinderzahnheilkunde, Endodontie oder ästhetische Zahnmedizin? Wir rücken Ihren Schwerpunkt durch maßgeschneidertes Zahnarzt Webdesign perfekt in den Fokus und definieren Ihre klare Botschaft an Wunschpatienten."
     },
     {
-      "title": "2. Premium Praxisfotografie",
-      "description": "Angst nehmen durch Transparenz. Wir sorgen für professionelle, sympathische Bilder Ihres Teams und der Behandlungsräume."
+      "title": "2. Premium Praxisfotografie & Videografie",
+      "description": "Angst nehmen durch Transparenz. Wir sorgen für professionelle, sympathische Bilder Ihres Teams, der Ärzte und der modernen Behandlungsräume. Authentisches Bildmaterial ist der Kern jeder erfolgreichen Zahnarzt Website."
     },
     {
-      "title": "3. Software Integration",
-      "description": "Wir verbinden Ihre Website sicher mit Ihrer Praxismanagement Software für Termine und digitale Formulare."
+      "title": "3. Software Integration & Webdesign",
+      "description": "Wir entwickeln Ihr individuelles Zahnarzt Webdesign und verbinden die Website sicher mit Ihrer Praxismanagement-Software. Von der Terminbuchung über digitale Anamnesebögen bis hin zum Patientenportal richten wir alles schlüsselfertig ein."
     },
     {
-      "title": "4. Launch & Patientengewinnung",
-      "description": "Die Website geht online und wir optimieren Ihr Google Profil für maximale lokale Sichtbarkeit in Ihrem Einzugsgebiet."
+      "title": "4. Launch & Local Medical SEO",
+      "description": "Ihre neue Zahnarzt Website geht online. Wir optimieren Ihr Google Unternehmensprofil (Google My Business) und starten unsere Local SEO Strategie, um maximale Sichtbarkeit für lukrative Suchanfragen in Ihrem direkten Einzugsgebiet zu generieren."
     }
   ],
   "localDominance": {
-    "title": "Werden Sie die Nummer Eins für Privatleistungen",
-    "description": "Normale Kassenleistungen bringen Sie an Ihre Auslastungsgrenze, aber hochwertige Privatleistungen (Invisalign, Implantate, Bleaching) sorgen f...",
+    "title": "Werden Sie mit exzellentem Zahnarzt Webdesign die Nummer Eins für Privatleistungen",
+    "description": "Normale Kassenleistungen bringen Sie schnell an Ihre Auslastungsgrenze. Hochwertige Privatleistungen wie Invisalign, All-on-4 Implantate, Veneers oder Bleaching sorgen jedoch für echten wirtschaftlichen Erfolg und Freude an der Arbeit. Eine professionelle Zahnarzt Website fungiert als Ihr bester Verkäufer, der 24/7 genau diese lukrativen Patienten anspricht, aufklärt und zur Terminbuchung führt. Überlassen Sie das Feld nicht Praxen mit besserem Webdesign, sondern dominieren Sie Ihren lokalen Markt.",
     "points": [
-      "Fokus Landingpages für High Ticket Leistungen (z.B. All on 4 Implantate)",
-      "Aufbau von Expertenstatus durch Patienten Ratgeber und FAQ",
-      "Massive Reduzierung von Praxis Anrufen durch 24/7 Online Buchung"
+      "Conversion-optimierte Fokus-Landingpages für High-Ticket Leistungen (z.B. Implantologie, Kieferorthopädie).",
+      "Aufbau von Expertenstatus und Vertrauen durch umfassende Patienten-Ratgeber, Vorher-Nachher-Galerien und tiefgehende FAQ-Sektionen.",
+      "Massive Reduzierung von Praxis-Anrufen und Entlastung der ZFA durch automatisierte 24/7 Online-Buchungssysteme."
     ]
   },
   "faq": [
     {
-      "q": "Ist die Einbindung von Online Terminen DSGVO konform?",
-      "a": "Ja. Wir binden Systeme wie Doctolib, Jameda oder samedi datenschutzkonform ein. Die Patientendaten fließen sicher verschlüsselt in Ihr System, ohne Zwischenspeicherung auf der Website."
+      "q": "Ist die Einbindung von Online-Terminen auf der Zahnarzt Website DSGVO-konform?",
+      "a": "Ja, absolut. Beim Webdesign für Zahnärzte hat Datenschutz oberste Priorität. Wir binden bewährte Systeme wie Doctolib, Jameda oder samedi zu 100% DSGVO-konform ein. Die Patientendaten fließen sicher Ende-zu-Ende-verschlüsselt direkt in Ihre Praxissoftware, ohne dass sensible Gesundheitsdaten auf dem Webserver der Website zwischengespeichert werden."
     },
     {
-      "q": "Wie können wir Angstpatienten besser ansprechen?",
-      "a": "Durch Transparenz und Empathie im Design. Wir vermeiden abschreckende Behandlungsbilder. Stattdessen zeigen wir Ihr sympathisches Team, helle Räume und erklären Methoden zur angstfreien Behandlung (z.B. Lachgas, Vollnarkose) verständlich und beruhigend."
+      "q": "Wie können wir durch das Webdesign Angstpatienten besser ansprechen und beruhigen?",
+      "a": "Durch radikale Transparenz, warme Farbwelten und Empathie im Design. Auf einer modernen Zahnarzt Website vermeiden wir abschreckende Behandlungsbilder oder kühle, sterile Klinikatmosphäre. Stattdessen zeigen wir Ihr sympathisches Team in entspannten Situationen, helle Räume und erklären Methoden zur angstfreien Behandlung (z.B. Lachgas, Dämmerschlaf, Vollnarkose) extrem verständlich, einfühlsam und beruhigend."
     },
     {
-      "q": "Hilft die Website auch bei der Suche nach ZFA (Zahnmedizinischen Fachangestellten)?",
-      "a": "Der Fachkräftemangel ist ein massives Problem in Praxen. Wir integrieren gezielt Karriere Seiten, die Ihre Praxisvorteile (Weiterbildung, Team Events, faire Bezahlung) herausstellen und eine schnelle Kurzbewerbung via Smartphone ermöglichen."
+      "q": "Hilft eine neue Zahnarzt Website auch beim Recruiting von ZFA (Zahnmedizinischen Fachangestellten)?",
+      "a": "Der Fachkräftemangel ist aktuell eines der massivsten Probleme in Zahnarztpraxen. Ein durchdachtes Zahnarzt Webdesign integriert gezielt moderne Karriere-Seiten. Hier stellen wir Ihre Praxisvorteile (bezahlte Weiterbildung, Team-Events, 4-Tage-Woche, faire Bezahlung) attraktiv heraus und ermöglichen interessierten Fachkräften eine extrem schnelle Kurzbewerbung via Smartphone in unter 60 Sekunden – ganz ohne Anschreiben."
     },
     {
-      "q": "Warum laden viele Praxis Websites so langsam?",
-      "a": "Oft werden riesige Bilder nicht optimiert oder veraltete Baukastensysteme genutzt. Wir entwickeln mit Next.js – Ihre neue Praxis Website wird in Millisekunden laden, was Google mit besseren Rankings belohnt."
+      "q": "Warum laden viele bestehende Praxis-Websites so langsam und warum ist das ein Problem?",
+      "a": "Oft werden riesige, unkomprimierte Bilder verwendet oder veraltete, schwerfällige Baukastensysteme (wie alte WordPress-Themes) genutzt. Das frustriert Patienten und schadet Ihrem Google-Ranking extrem. Wir entwickeln Ihr Zahnarzt Webdesign mit modernster Technologie (Next.js & React). Ihre neue Praxis-Website wird in Millisekunden laden, was Google mit deutlich besseren Positionen im Local SEO belohnt."
     },
     {
-      "q": "Erstellen Sie auch medizinische Texte?",
-      "a": "Wir übernehmen die SEO Strukturierung und verfassen ansprechende Texte, die medizinisch korrekt, aber für den Patienten leicht verständlich sind (kein Fachchinesisch). Alternativ arbeiten wir mit Ihren Texten."
+      "q": "Erstellen Sie im Rahmen des Zahnarzt Webdesigns auch die medizinischen Texte?",
+      "a": "Ja. Wir übernehmen die komplette SEO-Strukturierung und verfassen ansprechende Website-Texte, die medizinisch absolut korrekt, aber für den Laien-Patienten leicht und flüssig verständlich sind (wir übersetzen 'Fachchinesisch' in Patientennutzen). Wenn Sie möchten, arbeiten wir natürlich auch Hand in Hand mit Ihren eigenen Texten und optimieren diese lediglich für Suchmaschinen."
     },
     {
-      "q": "Wir haben schon viele Patienten, warum brauchen wir eine Premium Website?",
-      "a": "Um die *richtigen* Patienten anzuziehen. Wenn Ihre Praxis voll ist, geht es oft um die Steigerung des Anteils an Privatleistungen. Ein Premium Design rechtfertigt Premium Qualität und filtert Patienten, die nur nach Kassenleistungen suchen."
+      "q": "Wir haben bereits viele Patienten. Warum brauchen wir dennoch ein Premium Webdesign für unsere Zahnarztpraxis?",
+      "a": "Es geht nicht darum, mehr Patienten zu bekommen, sondern die richtigen Patienten anzuziehen. Wenn Ihre Praxis ohnehin voll ist, liegt das Ziel oft in der Steigerung des Anteils an Privatleistungen (z.B. Implantate, Ästhetik). Ein Premium Zahnarzt Webdesign rechtfertigt Ihre Premium-Qualität und Preise am Behandlungsstuhl. Es filtert automatisch Patienten, die nur nach Kassenleistungen suchen, und zieht gezielt Selbstzahler und Privatpatienten an."
     }
   ],
   "meta_en": {
-    "title": "Dentist Web Design Agency Wetzlar | Patients for Your Practice",
-    "description": "High-end web design for dentists and orthodontists. Increase lucrative private treatments and streamline your practice with digital appointment scheduling."
+    "title": "Dentist Web Design Agency | Premium Websites for Dental Practices",
+    "description": "High-end dentist web design and SEO. We create stunning websites for dental practices to increase private treatments, build trust, and automate bookings."
   },
   "hero_en": {
-    "headline": "The digital smile of your practice.",
-    "subheadline": "More private patients. Less administration. Premium image.",
-    "description": "More private patients. Less administration. Premium image. Patients are often afraid of visiting the dentist. If your website looks cold, outdated...",
+    "headline": "The digital smile of your dental practice: Exclusive Dentist Web Design.",
+    "subheadline": "More private patients. Less administration. A premium image through high-end web design for dentists.",
+    "description": "Patients are often anxious about visiting the dentist and thoroughly research online beforehand. If your dental website looks cold, outdated, or confusing, you are losing valuable patients to your competitors. With our specialized dentist web design, we transform your digital presence into a flagship that builds trust, radiates professional competence, and specifically calms anxious patients. We create websites for dental practices that not only look excellent but also noticeably relieve your daily practice routine through targeted medical SEO and smart online appointment bookings. Rely on professional web design for dentists and secure the pole position in your local area.",
     "metrics": [
       {
         "value": "150",
@@ -143,46 +143,46 @@
     ]
   },
   "gamifiedStats_en": {
-    "title": "Why you lose lucrative treatments to competitors",
-    "description": "When it comes to high-quality implants or veneers, patients do their research... A website that doesn't radiate premium quality disqualifies you immediately.",
+    "title": "Why poor dentist web design causes you to lose lucrative treatments to competitors",
+    "description": "When it comes to high-quality private services like implants, veneers, or bleaching, patients do extensive research on the internet. A dental website that doesn't radiate a premium feel immediately disqualifies your expertise. High-quality web design for dentists is no longer a luxury today, but the basic prerequisite for an economically successful practice. Show the same outstanding quality online that you offer at the treatment chair.",
     "counters": [
       {
         "targetValue": 82,
         "suffix": "%",
-        "label": "of patients choose practices with modern websites"
+        "label": "of patients choose dental practices with a modern, trustworthy, and professionally designed website."
       },
       {
         "targetValue": 74,
         "suffix": "%",
-        "label": "prefer to book prophylaxis appointments online"
+        "label": "prefer to book prophylaxis and professional teeth cleaning appointments online via a digital booking system."
       }
     ]
   },
   "bentoGrid_en": {
-    "title": "The digital practice architecture",
-    "subtitle": "How we digitize your patient acquisition process.",
+    "title": "The architecture of your new dental website",
+    "subtitle": "How we digitize your patient acquisition through modern dentist web design.",
     "cards": [
       {
-        "title": "Trust-building Design",
-        "text": "Warm colors, bright rooms, and professional team photos. We design a digital practice that radiates professionalism and empathy.",
+        "title": "Trust-building Practice Design",
+        "text": "Warm colors, bright treatment rooms, and professional team photos. Our web design for dentists creates a digital practice that radiates the highest level of professionalism, hygiene, and empathy. We take away your patients' anxiety before their very first appointment.",
         "size": "large",
         "icon": "Design"
       },
       {
-        "title": "Secure Appointment Booking",
-        "text": "Seamless integration of Doctolib or Jameda. Patients book professional teeth cleaning or check-ups themselves – directly into your practice software.",
+        "title": "Secure Online Appointment Booking",
+        "text": "Seamless integration of Doctolib, Jameda, or other booking systems into your dental website. Patients book cleanings, check-ups, or consultations themselves – directly into your practice management software. This enormously relieves your reception staff.",
         "size": "small",
         "icon": "Speed"
       },
       {
-        "title": "Digital Anamnesis",
-        "text": "Patients fill out medical history forms comfortably at home (GDPR compliant). No more paperwork in the waiting room.",
+        "title": "Digital Anamnesis & Forms",
+        "text": "Patients fill out their medical history forms comfortably at home via your new dental website (100% GDPR-compliant). No more paperwork clutter in the waiting room and highly optimized workflows in the practice.",
         "size": "small",
         "icon": "MapPin"
       },
       {
-        "title": "Medical SEO",
-        "text": "Dominant Google placement for highly profitable keywords like 'dental implants Wetzlar' or 'anxiety patients dentist'.",
+        "title": "Local SEO for Dentists",
+        "text": "Dominant placement on Google. Through targeted search engine optimization (SEO) for dentists, you will rank at the top for profitable keywords like 'dental implants', 'orthodontics', or 'anxiety dentist'.",
         "size": "tall",
         "icon": "SEO"
       }
@@ -190,55 +190,55 @@
   },
   "processSteps_en": [
     {
-      "title": "1. Positioning & USP",
-      "description": "Are you a specialist in implantology, pediatric dentistry, or aesthetics? We perfectly highlight your main focus."
+      "title": "1. Positioning & Practice USP",
+      "description": "Are you a specialist in implantology, pediatric dentistry, endodontics, or aesthetic dentistry? We perfectly highlight your main focus through tailored dentist web design and define your clear message to your ideal patients."
     },
     {
       "title": "2. Premium Practice Photography",
-      "description": "Reducing anxiety through transparency. We provide professional, sympathetic pictures of your team and treatment rooms."
+      "description": "Reducing anxiety through transparency. We provide professional, sympathetic, and authentic pictures of your team, the doctors, and the modern treatment rooms. Authentic imagery is the core of any successful dental website."
     },
     {
-      "title": "3. Software Integration",
-      "description": "We securely connect your website with your practice management software for appointments and digital forms."
+      "title": "3. Software Integration & Web Design",
+      "description": "We develop your individual dentist web design and securely connect the website with your practice management software. From appointment booking to digital medical history forms and the patient portal, we set everything up ready-to-use."
     },
     {
-      "title": "4. Launch & Patient Acquisition",
-      "description": "The website goes online, and we optimize your Google profile for maximum local visibility in your catchment area."
+      "title": "4. Launch & Local Medical SEO",
+      "description": "Your new dental website goes online. We optimize your Google Business Profile and launch our Local SEO strategy to generate maximum visibility for lucrative search queries in your direct catchment area."
     }
   ],
   "localDominance_en": {
-    "title": "Become the number one for private treatments",
-    "description": "Normal statutory health insurance services bring you to your capacity limit, but high-quality private services (Invisalign, implants, bleaching) ensure...",
+    "title": "Become the number one for private treatments with excellent dentist web design",
+    "description": "Normal statutory health insurance services quickly bring you to your capacity limit. However, high-quality private services such as Invisalign, All-on-4 implants, veneers, or bleaching ensure true economic success and joy in your work. A professional dental website acts as your best salesperson, addressing exactly these lucrative patients 24/7, educating them, and leading them to book an appointment. Do not leave the field to practices with better web design, but dominate your local market.",
     "points": [
-      "Focus landing pages for high-ticket services (e.g. All-on-4 implants)",
-      "Building expert status through patient guides and FAQs",
-      "Massive reduction of practice calls through 24/7 online booking"
+      "Conversion-optimized focus landing pages for high-ticket services (e.g., implantology, clear aligners).",
+      "Building expert status and patient trust through comprehensive patient guides, before-and-after galleries, and in-depth FAQ sections.",
+      "Massive reduction of practice phone calls and relief for dental assistants through automated 24/7 online booking systems."
     ]
   },
   "faq_en": [
     {
-      "q": "Is the integration of online appointments GDPR compliant?",
-      "a": "Yes. We integrate systems like Doctolib, Jameda, or samedi in a privacy-compliant manner. Patient data flows securely encrypted into your system without intermediate storage on the website."
+      "q": "Is the integration of online appointments on the dental website GDPR-compliant?",
+      "a": "Yes, absolutely. In web design for dentists, data protection is our top priority. We integrate proven systems like Doctolib, Jameda, or samedi 100% GDPR-compliant. Patient data flows securely end-to-end encrypted directly into your practice software, without any sensitive health data being temporarily stored on the website's web server."
     },
     {
-      "q": "How can we better address anxiety patients?",
-      "a": "Through transparency and empathy in design. We avoid off-putting treatment pictures. Instead, we show your sympathetic team, bright rooms, and explain methods for anxiety-free treatment (e.g. laughing gas, general anesthesia) clearly and reassuringly."
+      "q": "How can we use web design to better address and calm anxiety patients?",
+      "a": "Through radical transparency, warm color palettes, and empathy in design. On a modern dental website, we avoid off-putting treatment pictures or a cold, sterile clinic atmosphere. Instead, we show your sympathetic team in relaxed situations, bright rooms, and explain methods for anxiety-free treatment (e.g., laughing gas, twilight sleep, general anesthesia) in an extremely understandable, empathetic, and reassuring way."
     },
     {
-      "q": "Does the website also help with finding dental assistants (ZFA)?",
-      "a": "The shortage of skilled workers is a massive problem in practices. We specifically integrate career pages that highlight your practice's benefits (further training, team events, fair pay) and enable a quick short application via smartphone."
+      "q": "Does a new dental website also help with recruiting dental assistants (ZFA)?",
+      "a": "The shortage of skilled workers is currently one of the most massive problems in dental practices. A well-thought-out dentist web design specifically integrates modern career pages. Here, we attractively highlight your practice's benefits (paid further training, team events, 4-day work week, fair pay) and enable interested professionals to submit an extremely quick short application via smartphone in under 60 seconds – completely without a cover letter."
     },
     {
-      "q": "Why do many practice websites load so slowly?",
-      "a": "Often, huge images are not optimized or outdated website builders are used. We develop with Next.js – your new practice website will load in milliseconds, which Google rewards with better rankings."
+      "q": "Why do many existing practice websites load so slowly and why is that a problem?",
+      "a": "Often, huge, uncompressed images are used, or outdated, sluggish website builders (like old WordPress themes) are utilized. This frustrates patients and extremely harms your Google ranking. We develop your dentist web design using state-of-the-art technology (Next.js & React). Your new practice website will load in milliseconds, which Google rewards with significantly better positions in Local SEO."
     },
     {
-      "q": "Do you also write medical texts?",
-      "a": "We take over the SEO structuring and write appealing texts that are medically correct but easy for patients to understand (no technical jargon). Alternatively, we work with your texts."
+      "q": "Do you also write the medical texts as part of the dentist web design process?",
+      "a": "Yes. We take over the complete SEO structuring and write appealing website texts that are medically absolutely correct, but easy and fluently understandable for the lay patient (we translate 'medical jargon' into patient benefits). If you prefer, we naturally also work hand-in-hand with your own texts and merely optimize them for search engines."
     },
     {
-      "q": "We already have many patients, why do we need a premium website?",
-      "a": "To attract the *right* patients. When your practice is full, it's often about increasing the proportion of private treatments. A premium design justifies premium quality and filters out patients who are only looking for basic insurance services."
+      "q": "We already have many patients. Why do we still need a premium web design for our dental practice?",
+      "a": "It's not about getting *more* patients, but attracting the *right* patients. If your practice is full anyway, the goal is often to increase the proportion of private treatments (e.g., implants, aesthetics). A premium dentist web design justifies your premium quality and prices at the treatment chair. It automatically filters out patients who are only looking for basic insurance services and specifically attracts self-payers and private patients."
     }
   ]
 }

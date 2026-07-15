@@ -908,7 +908,14 @@
       "description": "We design digital experiences users love. From Wireframes to High-Fidelity Prototypes – we create interfaces that convert."
     },
     "deliverables": {
-      "title": "UX/UI Design Services Deliverables"
+      "title": "UX/UI Design Services Deliverables",
+      "items": [
+        "Figma Design Files",
+        "Interactive Prototype",
+        "Design System",
+        "Developer Handoff",
+        "User Journey Maps"
+      ]
     },
     "hero": {
       "badge": "Design Services",
@@ -1368,7 +1375,7 @@
     "web-development": {
       "react-nextjs-agentur": {
         "title": "React & Next.js Development",
-        "description": "I build scalable frontends with modern frameworks for maximum performance and user experience.",
+        "description": "I build scalable frontends with modern frameworks for maximum performance and user experience. Discover our React and Next.js web solutions today.",
         "long_description": "We build scalable, high-performance web applications using React and Next.js. Our custom solutions combine technical excellence with outstanding UX design.",
         "benefits": [
           "Blazing fast load times",
@@ -1378,8 +1385,8 @@
         ]
       },
       "e-commerce-shops": {
-        "title": "E-Commerce Shop Development",
-        "description": "High-Performance Online Shops with Shopify or Custom Headless solutions for maximum conversion.",
+        "title": "E-Commerce & Online-Shops",
+        "description": "High-Performance Online Shops with Shopify or Custom Headless solutions for maximum conversion. Scale your digital revenue with our expert team.",
         "long_description": "High-Performance Online Shops with Shopify Plus or Headless Commerce. We develop custom E-Commerce solutions that maximize conversion rates.",
         "benefits": [
           "Optimized Checkout Funnel",
@@ -1390,7 +1397,7 @@
       },
       "full-stack-entwicklung": {
         "title": "Full-Stack Web App Development",
-        "description": "Robust backends and APIs with Node.js, TypeScript and Edge Computing solutions.",
+        "description": "Robust backends and APIs with Node.js, TypeScript and Edge Computing solutions. Tailored full-stack development for your corporate requirements.",
         "long_description": "We develop secure and scalable server architectures, APIs and databases that form the reliable backend for your high-performance digital products.",
         "benefits": [
           "High-performance APIs",
@@ -1400,8 +1407,8 @@
         ]
       },
       "cloud-infrastructure": {
-        "title": "Cloud Infrastructure & DevOps",
-        "description": "High-Performance Cloud Hosting and DevOps Deployment on Vercel or AWS for global availability.",
+        "title": "Cloud Infrastructure & Hosting",
+        "description": "High-Performance Cloud Hosting and DevOps Deployment on Vercel or AWS for global availability. Secure and scalable infrastructure for your apps.",
         "long_description": "We utilize modern Serverless architectures and Edge Networks to deliver your content globally in milliseconds with maximum speed and availability.",
         "benefits": [
           "Global availability",
@@ -1413,8 +1420,8 @@
     },
     "web-design": {
       "ux-ui-design": {
-        "title": "UX/UI design details",
-        "description": "Digital brand experience. User-centric design that makes your brand tangible.",
+        "title": "UX/UI Design Details",
+        "description": "Digital brand experience. User-centric design that makes your brand tangible. We design beautiful interfaces optimized for maximum conversions.",
         "long_description": "Your digital presence is often the first touchpoint. We translate your brand into digital interfaces that are not only functional but make your brand identity palpable with every click.",
         "benefits": [
           "Brand-compliant interfaces",
@@ -1425,13 +1432,13 @@
       },
       "design-systems": {
         "title": "Design Systems",
-        "description": "Consistent component libraries for scalable products and fast development.",
+        "description": "Consistent component libraries for scalable products and fast development. Future-proof your digital presence with a comprehensive design system.",
         "long_description": "A Design System is the Single Source of Truth for your product. We develop modular component systems that ensure consistency and accelerate development.",
         "benefits": ["Consistent UI", "Faster development", "Simplified maintenance", "Scalability"]
       },
       "website-relaunch": {
         "title": "Professional Website Relaunch",
-        "description": "From strategy to complete Redesign. We fundamentally modernize your web presence for a successful Relaunch.",
+        "description": "From strategy to complete Redesign. We fundamentally modernize your web presence for a successful Relaunch. Grow your business with our expertise.",
         "long_description": "We guide your website relaunch holistically: From digital strategy and UX concept to modern redesign and technical implementation from a single source.",
         "benefits": [
           "Modern Look & Feel",
@@ -1444,7 +1451,7 @@
     "growth": {
       "seo-optimization": {
         "title": "SEO Agency for Maximum Visibility",
-        "description": "Maximum visibility in search engines. We bring your site to the top and ensure quality traffic.",
+        "description": "Maximum visibility in search engines. We bring your site to the top and ensure quality traffic. Start dominating local search results right now.",
         "long_description": "With a data-driven SEO strategy, technical optimization, and high-quality content, we ensure your business achieves maximum visibility in search engines.",
         "benefits": [
           "Top rankings locally & globally",
@@ -1455,7 +1462,7 @@
       },
       "performance-optimization": {
         "title": "Web Performance Optimization",
-        "description": "Speed and Core Web Vitals optimization for better User Experience, higher Conversion Rates and Top Google Rankings.",
+        "description": "Speed and Core Web Vitals optimization for better User Experience, higher Conversion Rates and Top Google Rankings. Accelerate your web product.",
         "long_description": "Speed is a feature. Slow websites lose customers. We analyze and optimize your entire infrastructure for load times in the millisecond range and excellent Core Web Vitals.",
         "benefits": [
           "Better Conversion Rates",
@@ -1466,7 +1473,7 @@
       },
       "digital-consulting": {
         "title": "Consulting & Strategy",
-        "description": "Strategic consulting and Strategy for your digital transformation. Tech stack, processes and growth.",
+        "description": "Strategic consulting and Strategy for your digital transformation. Tech stack, processes and growth. Gain a competitive edge with digital solutions.",
         "long_description": "Strategic consulting for your digital transformation: We help you select the right technologies and optimize your digital business processes.",
         "benefits": [
           "Clear Roadmap",

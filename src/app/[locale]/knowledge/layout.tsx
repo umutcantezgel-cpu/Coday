@@ -2,7 +2,17 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { pick } from '@/shared/lib/pick';
 
-export default async function KnowledgeLayout({ children }: { children: React.ReactNode }) {
+import { setRequestLocale } from 'next-intl/server';
+
+export default async function KnowledgeLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const messages = await getMessages();
   const pageMessages = pick(messages as any, [
     'knowledge',
