@@ -35,7 +35,6 @@ export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ project, index = 1
           className="w-full h-full object-cover transform group-hover:scale-105 transition-transform motion-reduce:duration-[0.01ms] duration-[800ms] ease-spring"
           width={800}
           height={600}
-          
           priority={isLcp}
         />
       </div>
@@ -61,15 +60,20 @@ export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ project, index = 1
           </h3>
         </div>
         <div className="inline-flex items-center gap-2 font-bold text-sm text-neutral-900 dark:text-neutral-50 group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms]">
-          Case Study ansehen <ArrowUpRight className="transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform motion-reduce:duration-[0.01ms]" weight="bold" aria-hidden="true" />
+          {locale === 'en' ? `${title} Case Study` : `Case Study: ${title}`}{' '}
+          <ArrowUpRight
+            className="transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform motion-reduce:duration-[0.01ms]"
+            weight="bold"
+            aria-hidden="true"
+          />
         </div>
       </div>
     </article>
   );
 
   return (
-    <Link 
-      href={`/work/${project.slug}`} 
+    <Link
+      href={`/work/${project.slug}`}
       className="group block h-full outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset relative z-10"
     >
       {innerContent}

@@ -182,6 +182,147 @@ export default async function DillenburgLandingPage(props: {
         </div>
       )}
       <SeoContentBlock />
+      {/* SEO */}
+      <section className="container mx-auto px-4 py-16 max-w-5xl text-secondary-600">
+        {_locale === 'en' ? (
+          <>
+            <h2 className="text-3xl font-display font-bold mb-6">
+              Professional Web Design in Dillenburg
+            </h2>
+            <div className="space-y-4 text-base leading-relaxed">
+              <p>
+                Dillenburg, a historically significant town in the northern Lahn-Dill district of
+                central Hesse, is home to a thriving and resilient economy largely driven by highly
+                specialized small and medium-sized enterprises. In this highly competitive regional
+                landscape, investing in professional web design in Dillenburg is no longer an
+                optional luxury — it is the absolute foundation of every successful, long-term
+                customer acquisition strategy. A modern, high-performance website serves as the very
+                first and most critical point of contact between your business and potential
+                clients. It instantly communicates unwavering trust, deep professionalism, and
+                authoritative competence long before a single word is exchanged in person. At Coday,
+                we specialise in building highly customized, premium websites for businesses in
+                Dillenburg that do far more than simply look visually attractive. Our rigorous web
+                design approach seamlessly combines striking visual aesthetics with unparalleled
+                technical excellence, ensuring that your digital footprint truly stands out from the
+                local crowd.
+              </p>
+              <p>
+                We guarantee blisteringly fast load times, flawless mobile responsiveness
+                (mobile-first design), and a highly intuitive user experience that gently but firmly
+                guides visitors toward taking a profitable action — whether that means requesting a
+                customized quote, booking a consultation appointment, or making a direct online
+                purchase. What truly sets our premium web design services in Dillenburg apart is our
+                incredibly deep, practical understanding of local search engine optimisation (Local
+                SEO). It is simply not enough to have a beautiful website if potential customers in
+                the Lahn-Dill district cannot easily find it online. We build every single site from
+                the ground up with maximum search engine visibility in mind, strategically targeting
+                highly relevant, intent-driven local keywords so your business consistently appears
+                at the very top of Google results when people in Dillenburg, Haiger, Herborn, and
+                the wider region actively search for your specialized products or services.
+              </p>
+              <p>
+                Our proven SEO methodology encompasses immaculately clean semantic HTML markup,
+                deeply optimised URL page structures, highly strategic content placement, and
+                comprehensive Google Business Profile enhancement. This highly cohesive approach
+                ensures that your professional website does not just passively exist online — it
+                actively and relentlessly generates highly qualified leads and measurable, scalable
+                revenue for your business month after month. Our holistic approach to outstanding
+                web design in Dillenburg begins with a thorough, data-driven analysis of your
+                specific target audience and the immediate competitive landscape. We carefully craft
+                a bespoke digital strategy perfectly tailored to your specific industry, whether you
+                operate a traditional skilled trades business, a specialized medical practice, an
+                upscale restaurant, or a B2B service company. Every single UI design element is
+                carefully aligned with your overarching brand identity, core values, and unique
+                selling propositions.
+              </p>
+              <p>
+                Impeccably high-quality imagery, compelling and persuasive copywriting, and a
+                crystal-clear content architecture ensure that busy visitors find the exact
+                information they need quickly and are strongly motivated to reach out. We also place
+                the absolute highest priority on stringent data protection and strict GDPR
+                compliance, employing state-of-the-art security encryption technologies and
+                deploying regular technical updates to keep your website completely safe from modern
+                vulnerabilities. Scalability is yet another fundamental cornerstone of our advanced
+                development process — your website is built on highly flexible, incredibly fast
+                modern frameworks like Next.js and React that grow seamlessly and effortlessly
+                alongside your expanding business. A successful web project definitely does not end
+                at the initial launch. We provide ongoing, proactive support, rigorous performance
+                monitoring, and continuous, data-driven optimisation to ensure your professional
+                website in Dillenburg keeps delivering exceptional results and a strong return on
+                investment over the long term.
+              </p>
+            </div>
+          </>
+        ) : (
+          <>
+            <h2 className="text-3xl font-display font-bold mb-6">
+              Professionelles Webdesign in Dillenburg
+            </h2>
+            <div className="space-y-4 text-base leading-relaxed">
+              <p>
+                Dillenburg, als historisch bedeutsame Oranierstadt im nördlichen Lahn-Dill-Kreis,
+                bietet eine florierende Wirtschaft, die stark von mittelständischen Unternehmen
+                geprägt ist. Ein erstklassiges, maßgeschneidertes Webdesign in Dillenburg ist
+                heutzutage absolut unerlässlich, um in dieser wettbewerbsintensiven Region
+                langfristig erfolgreich zu sein. Eine moderne, ästhetisch ansprechende und technisch
+                einwandfreie Website ist oft der erste und wichtigste Berührungspunkt zwischen Ihnen
+                und Ihren potenziellen Kunden. Sie vermittelt sofortiges Vertrauen, Professionalität
+                und tiefgreifende Kompetenz, lange bevor das erste persönliche Gespräch stattfindet.
+                Bei der Erstellung einer neuen, hochkonvertierenden Internetpräsenz für Ihr
+                Unternehmen achten wir akribisch darauf, dass das Design nicht nur optisch restlos
+                überzeugt, sondern auch technisch auf dem absolut neuesten Stand der Entwicklung
+                ist. Wir kreieren digitale Erlebnisse, die Ihre spezifische Zielgruppe emotional
+                abholen und Ihre unternehmerischen Werte klar kommunizieren.
+              </p>
+              <p>
+                Blitzschnelle Ladezeiten, kompromisslose mobile Optimierung (Mobile-First-Ansatz)
+                und eine intuitive Benutzerführung (UX-Design) sind die entscheidenden Grundlagen
+                für eine hohe Conversion-Rate. Darüber hinaus spielt die strategische
+                Suchmaschinenoptimierung (SEO) eine zentrale, erfolgskritische Rolle. Denn nur, wenn
+                Ihre Website bei Google und anderen Suchmaschinen auf den vordersten Plätzen
+                gefunden wird, können Sie nachhaltig neue Kunden gewinnen. Wir optimieren Ihre Seite
+                gezielt für lokale Suchanfragen aus Dillenburg, Haiger, Herborn und dem gesamten
+                Lahn-Dill-Kreis. So stellen wir sicher, dass Sie exakt dort digital sichtbar sind,
+                wo Ihre Zielgruppe aktiv nach Ihren Produkten oder spezialisierten Dienstleistungen
+                sucht. Durch sauberen, semantischen Code, strukturierte Daten und
+                performance-optimierte Bilder garantieren wir, dass Google Ihre Website als
+                hochrelevant und qualitativ hochwertig einstuft.
+              </p>
+              <p>
+                Unser Ansatz für modernes Webdesign in Dillenburg ist vollumfänglich und
+                ganzheitlich. Wir beginnen jedes Projekt mit einer umfassenden, detaillierten
+                Analyse Ihrer Zielgruppe und Ihrer stärksten Mitbewerber, um eine maßgeschneiderte
+                digitale Strategie zu entwickeln. Das Webdesign wird dabei völlig individuell an Ihr
+                Corporate Design angepasst und spiegelt die einzigartigen Werte und die Identität
+                Ihres Unternehmens präzise wider. Hochwertiges Bildmaterial, verkaufspsychologisch
+                optimierte Texte und eine logische, glasklare Strukturierung der Inhalte sorgen
+                dafür, dass die Besucher Ihrer Website sofort die gewünschten Informationen finden
+                und intuitiv zur Kontaktaufnahme geführt werden. Besonderen Wert legen wir auch auf
+                höchste Sicherheitsstandards und strikte DSGVO-Konformität. Mit modernsten
+                Servertechnologien und regelmäßigen Wartungsupdates gewährleisten wir, dass Ihre
+                Website stets sicher, performant und zuverlässig vor externen Angriffen geschützt
+                ist.
+              </p>
+              <p>
+                Ein weiteres wichtiges Element unserer Arbeit ist die uneingeschränkte
+                Skalierbarkeit Ihrer neuen Website. Ihre digitale Plattform soll mit Ihrem
+                Unternehmen flexibel mitwachsen können. Daher setzen wir auf moderne,
+                Headless-basierte Technologien und Next.js, die sich jederzeit nahtlos erweitern und
+                an veränderte Marktbedingungen anpassen lassen. Ein erfolgreiches Webprojekt endet
+                für uns jedoch nicht mit dem feierlichen Launch der Website. Wir bieten Ihnen eine
+                langfristige, partnerschaftliche Betreuung und regelmäßige datenbasierte Analysen,
+                um den Erfolg Ihrer Online-Präsenz kontinuierlich zu messen und weiter zu
+                optimieren. Durch das systematische Monitoring von Nutzerverhalten und
+                Conversion-Raten identifizieren wir ungenutzte Potenziale und setzen zielgerichtete
+                Verbesserungen um. Investieren Sie in ein professionelles Webdesign für Dillenburg
+                und heben Sie sich deutlich von der Konkurrenz ab – eine moderne Website ist der
+                Schlüssel zu mehr Sichtbarkeit, qualifizierten Kundenanfragen und messbarem
+                Umsatzwachstum im Lahn-Dill-Kreis.
+              </p>
+            </div>
+          </>
+        )}
+      </section>
     </>
   );
 }

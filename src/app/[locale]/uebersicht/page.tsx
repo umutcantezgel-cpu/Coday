@@ -355,6 +355,28 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
             </ul>
           </section>
 
+          {/* Work / Portfolio */}
+          <section>
+            <h2 className="text-2xl font-bold text-primary mb-4 border-b border-gray-200 pb-2">
+              {locale === 'en' ? 'Work & Portfolio' : 'Work & Portfolio'}
+            </h2>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/work" className="text-text-light hover:text-primary transition-colors">
+                  {locale === 'en' ? 'All Projects' : 'Alle Projekte'}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/work/hey-fede"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Hey Fede – Case Study
+                </Link>
+              </li>
+            </ul>
+          </section>
+
           {/* Locations & Landingpages */}
           <section>
             <h2 className="text-2xl font-bold text-primary mb-4 border-b border-gray-200 pb-2">
@@ -451,18 +473,107 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
           </section>
         </div>
 
-        <div className="mt-16 text-sm text-text-light/80 space-y-4">
-          <p>
+        <section className="container mx-auto px-4 py-16 max-w-5xl text-secondary-600">
+          <h2 className="text-3xl font-display font-bold mb-6">
             {locale === 'en'
-              ? 'This sitemap provides a comprehensive overview of the Coday Web Design agency website. Find quick links to our main pages, detailed web design and development services, industry-specific solutions, and local landing pages designed for optimal search engine visibility. We continuously update this directory to ensure you can easily navigate and discover how our premium digital solutions can help elevate your brand.'
-              : 'Diese Sitemap bietet eine umfassende Übersicht der Website der Coday Webdesign Agentur. Finden Sie hier direkte Links zu unseren Hauptseiten, detaillierten Dienstleistungen im Bereich Webdesign und Entwicklung, branchenspezifischen Lösungen sowie unseren lokalen Landingpages. Wir aktualisieren dieses Verzeichnis kontinuierlich, um Ihnen eine optimale Navigation zu ermöglichen und Ihnen zu zeigen, wie unsere Premium-Weblösungen Ihre Marke stärken können.'}
-          </p>
-          <p>
-            {locale === 'en'
-              ? 'Whether you are looking for local SEO strategies, custom React development, or a complete brand overhaul, our structured overview helps you find the right information efficiently. As a dedicated web engineering partner, Coday ensures that all digital touchpoints are built for maximum performance, accessibility, and exceptional user experience across all devices.'
-              : 'Egal, ob Sie nach lokalen SEO-Strategien, individueller React-Entwicklung oder einer kompletten Markenüberarbeitung suchen – unsere strukturierte Seitenübersicht hilft Ihnen, die gewünschten Informationen schnell zu finden. Als Ihr zuverlässiger Partner für Web-Engineering stellt Coday sicher, dass alle digitalen Berührungspunkte auf maximale Performance, Barrierefreiheit und eine herausragende User Experience auf allen Geräten optimiert sind.'}
-          </p>
-        </div>
+              ? 'Coday Web Design – Complete Sitemap & Page Overview'
+              : 'Coday Webdesign – Vollständige Sitemap & Seitenübersicht'}
+          </h2>
+          <div className="space-y-4 text-base leading-relaxed">
+            {locale === 'en' ? (
+              <>
+                <p>
+                  This sitemap provides a comprehensive overview of the Coday Web Design agency
+                  website. Here you will find quick links to all main pages, detailed web design and
+                  development services, industry-specific solutions, portfolio case studies, and
+                  local landing pages designed for optimal search engine visibility. We continuously
+                  update this directory to ensure you can easily navigate the entire Coday website
+                  and discover how our premium digital solutions can help elevate your brand. Every
+                  link on this page is structured to reduce click depth and help both users and
+                  search engine crawlers find content efficiently.
+                </p>
+                <p>
+                  Whether you are looking for local SEO strategies, custom React development, or a
+                  complete brand overhaul, our structured sitemap helps you find the right
+                  information efficiently. As a dedicated web engineering partner, Coday ensures
+                  that all digital touchpoints are built for maximum performance, accessibility, and
+                  exceptional user experience across all devices. From our portfolio showcasing real
+                  client projects to our industry pages covering healthcare, automotive, real
+                  estate, and more — every section of this website is crafted to give you a
+                  transparent view of what Coday can deliver.
+                </p>
+                <p>
+                  Our web design services are tailored for businesses of every size across Wetzlar,
+                  Hesse, and beyond. This page overview includes direct access to our specialized
+                  service pages — covering everything from UX/UI design and brand identity to
+                  generative engine optimization (GEO) and technical SEO audits. We also list all
+                  regional landing pages and location-specific content to help local businesses find
+                  exactly what they need. Coday&apos;s sitemap is not just an index; it is a
+                  navigational tool designed to connect you with the right service as quickly as
+                  possible.
+                </p>
+                <p>
+                  Transparency and discoverability are core principles at Coday. That is why we
+                  maintain this detailed page overview as a living document. As we add new services,
+                  publish new case studies, or expand into additional regions, this sitemap is
+                  updated accordingly. If you cannot find what you are looking for, do not hesitate
+                  to contact us directly. We are always happy to help you navigate our offerings and
+                  find the perfect solution for your digital project. Explore the full Coday Web
+                  Design sitemap above and take the next step toward a stronger online presence.
+                </p>
+              </>
+            ) : (
+              <>
+                <p>
+                  Diese Sitemap bietet eine umfassende Seitenübersicht der Website der Coday
+                  Webdesign Agentur. Hier finden Sie direkte Links zu allen Hauptseiten,
+                  detaillierten Webdesign- und Entwicklungsleistungen, branchenspezifischen
+                  Lösungen, Portfolio-Fallstudien sowie unseren lokalen Landingpages, die für
+                  optimale Suchmaschinen-Sichtbarkeit konzipiert sind. Wir aktualisieren dieses
+                  Verzeichnis kontinuierlich, damit Sie die gesamte Coday-Website problemlos
+                  navigieren und herausfinden können, wie unsere Premium-Weblösungen Ihre Marke
+                  stärken können. Jeder Link auf dieser Seite ist so strukturiert, dass die
+                  Klicktiefe reduziert wird und sowohl Nutzer als auch Suchmaschinen-Crawler Inhalte
+                  effizient finden.
+                </p>
+                <p>
+                  Egal, ob Sie nach lokalen SEO-Strategien, individueller React-Entwicklung oder
+                  einer kompletten Markenüberarbeitung suchen – unsere strukturierte Seitenübersicht
+                  hilft Ihnen, die gewünschten Informationen schnell zu finden. Als Ihr
+                  zuverlässiger Partner für Web-Engineering stellt Coday sicher, dass alle digitalen
+                  Berührungspunkte auf maximale Performance, Barrierefreiheit und eine herausragende
+                  User Experience auf allen Geräten optimiert sind. Von unserem Portfolio, das echte
+                  Kundenprojekte zeigt, bis hin zu unseren Branchenseiten für Gesundheitswesen,
+                  Automobil, Immobilien und mehr – jeder Bereich dieser Website ist darauf
+                  ausgelegt, Ihnen einen transparenten Einblick in die Leistungsfähigkeit von Coday
+                  Webdesign zu geben.
+                </p>
+                <p>
+                  Unsere Webdesign-Dienstleistungen sind auf Unternehmen jeder Größe in Wetzlar,
+                  Hessen und darüber hinaus zugeschnitten. Diese Seitenübersicht bietet direkten
+                  Zugang zu unseren spezialisierten Serviceseiten – von UX/UI-Design und
+                  Markenidentität über Generative Engine Optimization (GEO) bis hin zu technischen
+                  SEO-Audits. Wir listen außerdem alle regionalen Landingpages und
+                  standortspezifischen Inhalte auf, damit lokale Unternehmen genau das finden, was
+                  sie brauchen. Die Coday Sitemap ist nicht nur ein Index, sondern ein
+                  Navigationsinstrument, das Sie so schnell wie möglich mit dem richtigen Service
+                  verbindet.
+                </p>
+                <p>
+                  Transparenz und Auffindbarkeit sind Kernprinzipien bei Coday Webdesign. Deshalb
+                  pflegen wir diese detaillierte Seitenübersicht als lebendiges Dokument. Wenn wir
+                  neue Dienstleistungen hinzufügen, neue Fallstudien veröffentlichen oder in weitere
+                  Regionen expandieren, wird diese Sitemap entsprechend aktualisiert. Falls Sie
+                  nicht finden, was Sie suchen, zögern Sie nicht, uns direkt zu kontaktieren. Wir
+                  helfen Ihnen gerne, sich in unserem Angebot zurechtzufinden und die perfekte
+                  Lösung für Ihr digitales Projekt zu entdecken. Erkunden Sie die vollständige Coday
+                  Webdesign Sitemap oben und machen Sie den nächsten Schritt zu einer stärkeren
+                  Online-Präsenz.
+                </p>
+              </>
+            )}
+          </div>
+        </section>
       </div>
       <SeoContentBlock />
     </main>

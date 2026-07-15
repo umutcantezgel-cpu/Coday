@@ -42,6 +42,52 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
         pageType="default"
       />
       <ClientComponent />
+      {/* SEO */}
+      <section className="container mx-auto px-4 py-16 max-w-5xl text-secondary-600">
+        <h2 className="text-3xl font-display font-bold mb-6">
+          Webdesign für Dienstleister in Hessen
+        </h2>
+        <div className="space-y-4 text-base leading-relaxed">
+          <p>
+            Willkommen bei Coday, Ihrer Premium-Webdesign-Agentur in Wetzlar und ganz Hessen,
+            spezialisiert auf die Erstellung professioneller Webseiten für Dienstleister. In der
+            heutigen digitalen Welt ist ein starker Online-Auftritt für Dienstleistungsunternehmen
+            unerlässlich. Egal ob Sie als Steuerberater, Makler, Unternehmensberater, Handwerker
+            oder im Gesundheitswesen tätig sind – Ihre Webseite ist oft der erste Berührungspunkt
+            mit potenziellen Neukunden. Wir verstehen die spezifischen Anforderungen und
+            Herausforderungen Ihrer Branche und entwickeln maßgeschneiderte digitale Lösungen, die
+            Ihre Expertise optimal präsentieren und Vertrauen bei Ihrer Zielgruppe aufbauen.
+          </p>
+          <p>
+            Unsere Webseiten für Dienstleister zeichnen sich durch ein klares, modernes Design,
+            intuitive Benutzerführung und höchste technische Performance aus. Wir legen großen Wert
+            darauf, dass Ihre Kernkompetenzen und Serviceangebote auf den ersten Blick erkennbar
+            sind. Durch gezielte Suchmaschinenoptimierung (SEO) stellen wir zudem sicher, dass Sie
+            in Wetzlar, Gießen, Frankfurt und darüber hinaus von den richtigen Kunden gefunden
+            werden. Eine ansprechende Darstellung Ihrer Dienstleistungen, kombiniert mit strategisch
+            platzierten Call-to-Action-Elementen, verwandelt Website-Besucher effektiv in wertvolle
+            Leads und langfristige Kunden.
+          </p>
+          <p>
+            Darüber hinaus integrieren wir auf Wunsch praktische Funktionen wie
+            Online-Terminbuchungssysteme, Kundenportale oder interaktive Kontaktformulare, die Ihre
+            internen Abläufe digitalisieren und effizienter gestalten. So sparen Sie wertvolle Zeit
+            im Arbeitsalltag und bieten Ihren Kunden gleichzeitig einen hervorragenden digitalen
+            Service. Auch das Thema Barrierefreiheit und Responsive Design steht bei uns im Fokus –
+            Ihre neue Webseite wird auf allen Endgeräten, vom Smartphone bis zum Desktop-Rechner,
+            perfekt dargestellt und ist für alle Nutzergruppen leicht zugänglich.
+          </p>
+          <p>
+            Vertrauen Sie auf unsere langjährige Erfahrung und unser tiefgreifendes technisches
+            Know-how. Wir begleiten Sie von der ersten Beratung über die Konzeption und Gestaltung
+            bis hin zur finalen Programmierung und dem laufenden Support. Lassen Sie uns gemeinsam
+            Ihre digitale Präsenz auf das nächste Level heben und Ihren Erfolg als Dienstleister
+            nachhaltig steigern. Kontaktieren Sie uns noch heute für ein unverbindliches
+            Beratungsgespräch. Wir freuen uns darauf, Ihr Projekt kennenzulernen und gemeinsam eine
+            Strategie für Ihr digitales Wachstum zu entwickeln.
+          </p>
+        </div>
+      </section>
     </>
   );
 }

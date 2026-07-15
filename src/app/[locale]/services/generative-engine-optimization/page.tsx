@@ -4,7 +4,6 @@ import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
 import { ORG_ID } from '@/lib/schema';
-import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 
 export const dynamic = 'force-static';
 
@@ -296,8 +295,36 @@ export default async function GeoServicePage({ params }: { params: Promise<{ loc
           </div>
         </section>
       </div>
-
-      <SeoContentBlock />
+      {/* SEO */}
+      <section className="container mx-auto px-4 py-16 max-w-5xl text-secondary-600">
+        <h2 className="text-3xl font-display font-bold mb-6">
+          {_locale === 'en'
+            ? 'Generative Engine Optimization (GEO) in Wetzlar and Hesse: The Future of Digital Visibility'
+            : 'Generative Engine Optimization (GEO) in Wetzlar und Hessen: Die Zukunft der digitalen Sichtbarkeit'}
+        </h2>
+        <div className="space-y-4 text-base leading-relaxed">
+          <p>
+            {_locale === 'en'
+              ? 'Generative Engine Optimization (GEO) represents the next evolutionary step in digital visibility and is fundamentally changing how businesses are discovered by their potential customers online. Unlike traditional Search Engine Optimization (SEO), which focuses primarily on rankings in static search result lists and building backlinks, GEO concentrates on how Artificial Intelligence and Large Language Models (LLMs) process, structure, and reproduce information. In a world where platforms like ChatGPT, Perplexity, Google AI Overviews, and Bing Copilot are increasingly becoming the first point of contact for complex search queries, businesses must reposition themselves. As a specialized GEO agency based in Wetzlar, Coday is at the forefront of this transformation, helping companies across Hesse and beyond adapt to the new AI-driven search paradigm before their competitors do.'
+              : 'Generative Engine Optimization (GEO) repräsentiert den nächsten evolutionären Schritt in der digitalen Sichtbarkeit und verändert grundlegend, wie Unternehmen von ihren potenziellen Kunden online gefunden werden. Anders als bei klassischer Search Engine Optimization (SEO), bei der es primär um Rankings in statischen Suchergebnislisten und den Aufbau von Backlinks geht, konzentriert sich GEO darauf, wie Künstliche Intelligenz und große Sprachmodelle (Large Language Models, LLMs) Informationen verarbeiten, strukturieren und wiedergeben. In einer Welt, in der Plattformen wie ChatGPT, Perplexity, Google AI Overviews und Bing Copilot zunehmend die erste Anlaufstelle für komplexe Suchanfragen werden, müssen sich Unternehmen neu positionieren. Als spezialisierte GEO-Agentur mit Sitz in Wetzlar steht Coday an der Spitze dieser Transformation und hilft Unternehmen in ganz Hessen und darüber hinaus, sich an das neue, KI-gesteuerte Suchparadigma anzupassen, bevor es die Konkurrenz tut.'}
+          </p>
+          <p>
+            {_locale === 'en'
+              ? 'As a specialized GEO agency headquartered in Wetzlar, we support businesses throughout Central Hesse — from Gießen and Marburg to Frankfurt — in achieving visibility within these new AI-powered search environments. Our approach is built on Semantic Entity Building and the creation of a robust digital identity. This means we don\'t just optimize your brand for algorithms; we establish it as an undisputed authority and trusted source ("Entity") within your specific industry. When a user asks an AI about the best providers, solutions, or services in your segment, the AI must cite your brand as the logical and reliable answer. Our AI search optimization methodology goes beyond surface-level tactics. We analyze how large language models interpret your industry, identify the knowledge gaps that your brand can authoritatively fill, and create content architectures that make your expertise unmistakable to AI systems.'
+              : 'Als spezialisierte GEO-Agentur mit Sitz in Wetzlar unterstützen wir Unternehmen in ganz Mittelhessen – von Gießen über Marburg bis Frankfurt – dabei, in diesen neuen, KI-gestützten Suchumgebungen präsent zu sein. Unser Ansatz basiert auf Semantic Entity Building und der Schaffung einer robusten digitalen Identität. Das bedeutet, dass wir Ihre Marke nicht nur für Algorithmen optimieren, sondern sie als unumstrittene Autorität und vertrauenswürdige Quelle („Entity") in Ihrer spezifischen Branche etablieren. Wenn ein Nutzer eine KI nach den besten Anbietern, Lösungen oder Dienstleistungen in Ihrem Segment fragt, muss die KI Ihre Marke als logische und verlässliche Antwort zitieren. Unsere KI-Suchoptimierung geht über oberflächliche Taktiken hinaus. Wir analysieren, wie große Sprachmodelle Ihre Branche interpretieren, identifizieren die Wissenslücken, die Ihre Marke autoritativ füllen kann, und erstellen Content-Architekturen, die Ihre Expertise für KI-Systeme unverkennbar machen.'}
+          </p>
+          <p>
+            {_locale === 'en'
+              ? 'The mechanisms of GEO require deep technical understanding. We use advanced structured data (Advanced JSON-LD) to precisely communicate the context and relationships of your content to AI scrapers and crawlers. It is no longer sufficient to simply place keywords in texts. Instead, content must be structured so that language models can extract the facts, expertise, and nuances of your offering without errors. Citation building and digital PR play a decisive role here, as LLMs validate information by cross-referencing consistency and mentions across various high-authority platforms. For businesses in Wetzlar, Hesse, and throughout Germany, this AI search optimization approach ensures that your brand is not just indexed but actively recommended. We build citation networks that establish your business as a recognized entity across the platforms that AI models trust most — from industry publications and authoritative directories to expert forums and press coverage.'
+              : 'Die Mechanismen von GEO erfordern ein tiefes technisches Verständnis. Wir nutzen fortschrittliche Strukturierte Daten (Advanced JSON-LD), um KI-Scrapern und Crawlern den Kontext und die Relationen Ihrer Inhalte präzise zu vermitteln. Es reicht nicht mehr aus, bloße Keywords in Texten zu platzieren. Stattdessen müssen Inhalte so strukturiert sein, dass Sprachmodelle die Fakten, Expertise und Nuancen Ihres Angebots fehlerfrei extrahieren können. Zitations-Aufbau (Citation Building) und digitale PR spielen hierbei eine entscheidende Rolle, da LLMs Informationen validieren, indem sie Konsistenz und Erwähnungen über verschiedene, hoch-autoritäre Plattformen hinweg abgleichen. Für Unternehmen in Wetzlar, Hessen und in ganz Deutschland stellt dieser KI-Suchoptimierungsansatz sicher, dass Ihre Marke nicht nur indexiert, sondern aktiv empfohlen wird. Wir bauen Zitationsnetzwerke auf, die Ihr Unternehmen als anerkannte Entität auf den Plattformen etablieren, denen KI-Modelle am meisten vertrauen — von Fachpublikationen und autoritativen Verzeichnissen bis hin zu Expertenforen und Presseberichterstattung.'}
+          </p>
+          <p>
+            {_locale === 'en'
+              ? "Furthermore, the technical perfection of your website — particularly excellent Core Web Vitals — is an essential prerequisite. AI bots prefer fast, secure, and accessible websites because these can be reliably crawled and their content confidently cited. With our expertise in Generative Engine Optimization, we secure a decisive competitive advantage for your business. While many competitors still cling to outdated SEO tactics, our GEO agency indirectly trains AI models to recognize your company as the market leader. Whether B2B, SaaS, medical, finance, or premium services — GEO is the indispensable strategy to not only maintain relevance in the AI era but to harness the full potential of modern information retrieval for your business growth. Partnering with a forward-thinking GEO agency in Wetzlar means your brand is prepared for both today's search landscape and the AI-first future that is rapidly becoming reality across Hesse and all of Germany."
+              : 'Darüber hinaus ist die technische Perfektion Ihrer Website – insbesondere exzellente Core Web Vitals – eine zwingende Voraussetzung. KI-Bots bevorzugen schnelle, sichere und barrierefreie Websites, da diese verlässlich gecrawlt und deren Inhalte zuverlässig zitiert werden können. Mit unserer Expertise im Bereich Generative Engine Optimization sichern wir Ihnen einen entscheidenden Wettbewerbsvorteil. Während viele Konkurrenten noch an veralteten SEO-Taktiken festhalten, trainiert unsere GEO-Agentur indirekt die KI-Modelle darauf, Ihr Unternehmen als Marktführer zu erkennen. Ob B2B, SaaS, Medizin, Finanzen oder Premium-Dienstleistungen – GEO ist die unverzichtbare Strategie, um in der KI-Ära nicht nur an Relevanz zu behalten, sondern das volle Potenzial der modernen Informationsbeschaffung für Ihr Unternehmenswachstum zu nutzen. Die Partnerschaft mit einer zukunftsorientierten GEO-Agentur in Wetzlar bedeutet, dass Ihre Marke sowohl für die heutige Suchlandschaft als auch für die KI-first Zukunft vorbereitet ist, die in Hessen und ganz Deutschland schnell Realität wird.'}
+          </p>
+        </div>
+      </section>
     </>
   );
 }

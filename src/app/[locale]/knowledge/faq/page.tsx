@@ -47,18 +47,96 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
     <>
       <SeoHead title="Coday | faq" description="Erfahren Sie mehr über faq" pageType="default" />
       <ClientComponent />
-      <div className="container mx-auto px-4 pb-12 text-center text-xs text-gray-400 font-mono">
-        <p className="mb-2 max-w-2xl mx-auto">
-          {_locale === 'en'
-            ? 'In our FAQ section, we address common inquiries about our web design services, transparent pricing models, and the step-by-step project process at Coday. Whether you are a local business in Wetzlar or operating across Hesse, we ensure clarity before starting your project.'
-            : 'In unserem FAQ-Bereich beantworten wir häufige Fragen zu unseren Webdesign-Dienstleistungen, transparenten Preismodellen und dem genauen Projektablauf bei Coday. Egal ob Sie ein lokales Unternehmen in Wetzlar sind oder hessenweit agieren, wir sorgen für Klarheit vor Projektbeginn.'}
-        </p>
-        <p className="max-w-2xl mx-auto">
-          {_locale === 'en'
-            ? 'If you cannot find the answer to your specific question, our dedicated customer support team is always ready to assist you. Contact us directly for a personalized consultation or detailed technical guidance tailored to your digital needs.'
-            : 'Sollten Sie die Antwort auf Ihre spezifische Frage nicht finden, steht Ihnen unser engagierter Kundensupport jederzeit zur Verfügung. Kontaktieren Sie uns direkt für eine persönliche Beratung oder detaillierte technische Unterstützung passend zu Ihren digitalen Anforderungen.'}
-        </p>
-      </div>
+      {/* SEO */}
+      <section className="container mx-auto px-4 py-16 max-w-5xl text-secondary-600">
+        {_locale === 'en' ? (
+          <>
+            <h2 className="text-3xl font-display font-bold mb-6">
+              FAQ — Web Design Agency Wetzlar, Central Hesse
+            </h2>
+            <div className="space-y-4 text-base leading-relaxed">
+              <p>
+                Our FAQ page answers the most frequently asked questions about working with Coday, a
+                specialist web design agency based in Wetzlar. Whether you run a craft business in
+                Gießen, a restaurant in Marburg or a service company anywhere in Central Hesse, you
+                will find clear, honest answers about our process, timelines and what you can expect
+                from a professional website project. We created this resource because transparency
+                is a core principle at Coday — no hidden fees, no vague promises, just
+                straightforward information.
+              </p>
+              <p>
+                Common questions we address include how long a typical web design project takes,
+                what our pricing models look like and which technologies we use for development.
+                Many business owners in Hesse wonder whether they need a full custom website or if a
+                template-based approach might suit them better. We explain the trade-offs clearly so
+                you can make an informed decision. You will also find answers about ongoing
+                maintenance, hosting, domain management and how we handle content updates after
+                launch.
+              </p>
+              <p>
+                We also cover topics around search engine optimisation, GDPR compliance and mobile
+                responsiveness — three areas that every modern business website must get right. Our
+                answers are written in plain language, free from technical jargon, because we
+                believe that understanding your own website should never require a computer science
+                degree. If you are comparing web design agencies in Wetzlar or the wider
+                Mittelhessen region, this FAQ gives you a clear picture of how Coday operates.
+              </p>
+              <p>
+                If your specific question is not listed here, we are always happy to help directly.
+                Book a free, no-obligation consultation through our booking page, or send us a
+                message. At Coday, every enquiry receives a personal response — because behind this
+                agency is a real person who genuinely cares about delivering excellent results for
+                local businesses in Wetzlar and across Hesse.
+              </p>
+            </div>
+          </>
+        ) : (
+          <>
+            <h2 className="text-3xl font-display font-bold mb-6">
+              FAQ — Webdesign Agentur Wetzlar, Mittelhessen
+            </h2>
+            <div className="space-y-4 text-base leading-relaxed">
+              <p>
+                Unsere FAQ-Seite beantwortet die am häufigsten gestellten Fragen zur Zusammenarbeit
+                mit Coday, einer spezialisierten Webdesign Agentur mit Sitz in Wetzlar. Ob Sie einen
+                Handwerksbetrieb in Gießen führen, ein Restaurant in Marburg betreiben oder ein
+                Dienstleistungsunternehmen irgendwo in Mittelhessen haben — hier finden Sie klare,
+                ehrliche Antworten zu unserem Ablauf, unseren Zeitrahmen und dem, was Sie von einem
+                professionellen Website-Projekt erwarten können. Wir haben diese Seite erstellt,
+                weil Transparenz ein Grundprinzip bei Coday ist — keine versteckten Kosten, keine
+                vagen Versprechen, sondern nur nachvollziehbare Informationen.
+              </p>
+              <p>
+                Häufig gestellte Fragen umfassen unter anderem, wie lange ein typisches
+                Webdesign-Projekt dauert, wie unsere Preismodelle aussehen und welche Technologien
+                wir für die Entwicklung einsetzen. Viele Unternehmer in Hessen fragen sich, ob sie
+                eine komplett individuelle Website benötigen oder ob ein vorlagenbasierter Ansatz
+                besser geeignet wäre. Wir erklären die jeweiligen Vor- und Nachteile klar und
+                verständlich, damit Sie eine fundierte Entscheidung treffen können. Außerdem finden
+                Sie hier Antworten zu laufender Wartung, Hosting, Domain-Verwaltung und dazu, wie
+                wir inhaltliche Aktualisierungen nach dem Launch handhaben.
+              </p>
+              <p>
+                Darüber hinaus behandeln wir Themen wie Suchmaschinenoptimierung, DSGVO-Konformität
+                und mobile Responsivität — drei Bereiche, die jede moderne Unternehmenswebsite
+                zwingend richtig umsetzen muss. Unsere Antworten sind in verständlicher Sprache
+                verfasst, frei von technischem Fachjargon, denn wir sind der Überzeugung, dass das
+                Verständnis der eigenen Website kein Informatikstudium erfordern sollte. Wenn Sie
+                Webdesign Agenturen in Wetzlar oder der weiteren Region Mittelhessen vergleichen,
+                verschafft Ihnen diese FAQ-Seite ein klares Bild davon, wie Coday arbeitet.
+              </p>
+              <p>
+                Sollte Ihre spezifische Frage hier nicht aufgeführt sein, helfen wir Ihnen jederzeit
+                gerne persönlich weiter. Buchen Sie ein kostenloses, unverbindliches Erstgespräch
+                über unsere Buchungsseite oder schreiben Sie uns eine Nachricht. Bei Coday erhält
+                jede Anfrage eine persönliche Antwort — denn hinter dieser Agentur steht ein echter
+                Mensch, dem es aufrichtig am Herzen liegt, herausragende Ergebnisse für lokale
+                Unternehmen in Wetzlar und ganz Hessen zu liefern.
+              </p>
+            </div>
+          </>
+        )}
+      </section>
     </>
   );
 }

@@ -158,6 +158,143 @@ export default async function WeilburgLandingPage(props: { params: Promise<{ loc
         </div>
       )}
       <SeoContentBlock />
+      {/* SEO */}
+      <section className="container mx-auto px-4 py-16 max-w-5xl text-secondary-600">
+        {_locale === 'en' ? (
+          <>
+            <h2 className="text-3xl font-display font-bold mb-6">
+              Local Professional Web Design in Weilburg
+            </h2>
+            <div className="space-y-4 text-base leading-relaxed">
+              <p>
+                In today's highly interconnected, digital-first world, a professional and extremely
+                modern website is the definitive calling card for any serious, growth-oriented
+                business. In a historically rich and economically significant region like Weilburg —
+                with its picturesque, highly attractive setting along the River Lahn and the iconic,
+                majestic Weilburg Castle — it is absolutely essential for local businesses to be
+                optimally positioned in the highly competitive digital space. At Coday, we deeply
+                understand the specific, nuanced requirements and unique commercial dynamics of the
+                regional market in the wider Lahn-Dill district, and we actively deliver local
+                professional websites that do not merely look visually impressive but actively
+                generate highly measurable, scalable business results. Our rigorous web design
+                approach for businesses in Weilburg focuses heavily on presenting your unique brand
+                highly authentically online while precisely and effectively targeting your ideal,
+                high-value audience.
+              </p>
+              <p>
+                However, a visually compelling UI design is only half the equation when it comes to
+                true online success. Uncompromising technological excellence, lightning-fast
+                server-side rendered page load speeds, and a highly intuitive, frictionless user
+                experience (UX) are the decisive technical factors that keep demanding visitors
+                engaged on your site and ultimately seamlessly convert them into highly loyal,
+                paying customers. A central, indispensable pillar of our comprehensive web design
+                work is advanced local search engine optimisation (Local SEO). When potential,
+                highly motivated customers in Weilburg and the immediate surrounding area actively
+                search for skilled tradespeople, medical doctors, high-end restaurants, or
+                specialized professional services, Google is almost always their very first point of
+                contact. Even the most beautifully and expensively designed website is practically
+                useless if it remains completely invisible on the critical first page of search
+                results.
+              </p>
+              <p>
+                That is precisely why we strategically and meticulously optimise your entire online
+                digital presence for highly relevant, intent-driven local keywords. We absolutely
+                ensure that your local business is prominently and authoritatively placed for
+                lucrative search queries in Weilburg, Löhnberg, and the wider Lahn-Dill district,
+                aggressively optimise your crucial Google Business Profile, and sustainably
+                strengthen your overall local visibility over the long term. With carefully crafted,
+                data-driven SEO strategies and high-quality, engaging content precisely aligned to
+                the specific search intent of your potential customers, we build a rock-solid
+                digital foundation for your long-term commercial success. We never ever leave you
+                with generic, off-the-shelf template solutions — instead, we develop highly
+                individual, bespoke concepts that beautifully highlight your uniqueness and
+                significantly strengthen your overall competitive market position in Weilburg.
+              </p>
+              <p>
+                Beyond dominant search visibility, we place the absolute greatest emphasis on
+                seamless, flawless cross-device functionality through uncompromising responsive web
+                design. An ever-growing, massive number of people now use mobile smartphones and
+                tablets exclusively to research, compare, and purchase local services online. A
+                local professional website that does not instantly display optimally on mobile
+                devices or proves frustratingly difficult to navigate quickly leads to massive
+                bounce rates and severely lost business opportunities. Our local professional
+                websites for Weilburg are brilliantly conceived as mobile-responsive from the very
+                first line of custom code. This means your website's layout automatically and
+                fluidly adapts to the exact screen size of whichever device your visitor is using,
+                guaranteeing a perfect browsing experience every single time. Trust Coday — your
+                highly dependable, deeply regional partner for future-proof web design and highly
+                successful online marketing in Weilburg and across Hesse.
+              </p>
+            </div>
+          </>
+        ) : (
+          <>
+            <h2 className="text-3xl font-display font-bold mb-6">
+              Webdesign Weilburg: Webseiten vom lokalen Profi im Lahn-Dill-Kreis
+            </h2>
+            <div className="space-y-4 text-base leading-relaxed">
+              <p>
+                In der heutigen, stark vernetzten Welt ist eine professionelle und extrem moderne
+                Website das unverzichtbare Aushängeschild Ihres Unternehmens. Gerade in einer
+                historisch und wirtschaftlich bedeutenden Region wie Weilburg, mit ihrer malerischen
+                Lage an der Lahn und dem berühmten Weilburger Schloss, ist es für lokale Unternehmen
+                essenziell, digital optimal aufgestellt zu sein. Wir von der Coday Webdesign Agentur
+                verstehen die spezifischen Anforderungen und besonderen Bedürfnisse des regionalen
+                Marktes im Lahn-Dill-Kreis und bieten Ihnen maßgeschneiderte digitale Lösungen, die
+                nicht nur optisch restlos überzeugen, sondern auch echte, messbare Ergebnisse
+                liefern. Unser strategischer Ansatz im Bereich Webdesign für Weilburg zielt darauf
+                ab, Ihre Marke hochgradig authentisch im Internet zu präsentieren und gleichzeitig
+                Ihre Zielgruppe absolut zielgenau und verkaufspsychologisch optimiert anzusprechen.
+                Eine ansprechende Optik ist dabei jedoch immer nur die halbe Miete.
+              </p>
+              <p>
+                Technologische Exzellenz, blitzschnelle Ladezeiten und eine äußerst intuitive
+                Benutzerführung (UX) sind heutzutage die entscheidenden Faktoren, um Besucher auf
+                Ihrer Seite zu halten und sie schließlich in treue Kunden zu verwandeln. Ein
+                weiterer zentraler, unverzichtbarer Aspekt unserer Arbeit ist die tiefgreifende
+                lokale Suchmaschinenoptimierung (Local SEO). Wenn potenzielle Kunden in Weilburg und
+                der näheren Umgebung nach Dienstleistungen, Handwerkern, Ärzten oder
+                Gastronomieangeboten suchen, ist Google in der Regel die allererste Anlaufstelle.
+                Eine hervorragend gestaltete Webseite vom lokalen Profi nützt Ihnen geschäftlich
+                wenig, wenn sie in den organischen Suchergebnissen völlig unsichtbar bleibt. Daher
+                optimieren wir Ihre gesamte Online-Präsenz höchst strategisch auf absolut relevante,
+                kaufstarke lokale Suchbegriffe. Wir sorgen dafür, dass Ihr Unternehmen bei
+                Suchanfragen in Weilburg, Löhnberg und im gesamten Lahn-Dill-Kreis äußerst prominent
+                auf der ersten Seite platziert wird.
+              </p>
+              <p>
+                Zudem optimieren wir Ihr Google Unternehmensprofil und stärken so Ihre lokale
+                Sichtbarkeit langfristig und extrem nachhaltig. Mit durchdachten, datenbasierten
+                SEO-Strategien und hochwertigem Content, der exakt auf die Suchintention Ihrer
+                potenziellen Kunden abgestimmt ist, bauen wir eine solide digitale Basis für Ihren
+                langfristigen unternehmerischen Erfolg auf. Wir lassen Sie niemals mit generischen,
+                austauschbaren Schablonen-Lösungen allein, sondern entwickeln hochindividuelle,
+                einzigartige Konzepte, die Ihre Alleinstellungsmerkmale präzise unterstreichen und
+                Ihre Wettbewerbsposition in Weilburg signifikant und dauerhaft stärken. Darüber
+                hinaus legen wir allergrößten Wert auf eine absolut nahtlose, geräteübergreifende
+                Funktionstüchtigkeit durch striktes Responsive Webdesign. Immer mehr Menschen nutzen
+                heutzutage fast ausschließlich Smartphones und Tablets, um sich im Internet lokal zu
+                informieren oder direkt online Dienstleistungen anzufragen.
+              </p>
+              <p>
+                Eine Webseite, die auf mobilen Endgeräten nicht absolut optimal dargestellt wird
+                oder schwer zu bedienen ist, führt extrem schnell zu hohen Absprungraten und damit
+                zu massiven, unwiederbringlich verlorenen Geschäftsmöglichkeiten. Unsere exzellenten
+                Webdesign-Lösungen für ambitionierte Unternehmen in Weilburg sind von Grund auf
+                streng responsive (Mobile-First) konzipiert. Das bedeutet in der Praxis, dass sich
+                das Layout Ihrer Webseite vollkommen automatisch an die Bildschirmgröße des
+                jeweiligen Geräts anpasst und so stets ein perfektes, flüssiges Nutzererlebnis
+                garantiert. Zu unserem umfassenden Leistungsportfolio gehört auf Wunsch auch die
+                nahtlose Integration moderner Features wie automatisierte
+                Online-Terminbuchungssysteme, hochsichere Kontaktformulare oder interaktive Karten,
+                die den Mehrwert für Ihre Besucher massiv erhöhen. Vertrauen Sie auf Coday – Ihren
+                verlässlichen, regional verwurzelten Partner für zukunftssicheres, professionelles
+                Webdesign und messbar erfolgreiches Online-Marketing in Weilburg und ganz Hessen.
+              </p>
+            </div>
+          </>
+        )}
+      </section>
     </>
   );
 }

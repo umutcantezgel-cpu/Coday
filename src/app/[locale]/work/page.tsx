@@ -156,7 +156,7 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
                       {content.subtitle}
                     </p>
                     <div className="flex items-center gap-2 text-primary-600 font-semibold text-sm">
-                      {isEn ? 'View Case Study' : 'Case Study ansehen'}
+                      {isEn ? `${content.title} Case Study` : `Case Study: ${content.title}`}
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform motion-reduce:duration-[0.01ms]" />
                     </div>
                   </div>
@@ -221,6 +221,47 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
           </section>
         )}
       </div>
+
+      {/* SEO Content — keyword-rich bilingual text for Seobility compliance */}
+      <section className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto pb-16 text-secondary-600">
+        <h2 className="text-2xl sm:text-3xl font-display font-bold text-secondary-900 mb-8">
+          {isEn
+            ? 'Web Design References from Wetzlar — Real Projects, Real Results'
+            : 'Webdesign Referenzen aus Wetzlar — Echte Projekte, Echte Ergebnisse'}
+        </h2>
+        <div className="space-y-5 text-base leading-relaxed">
+          <p>
+            {isEn
+              ? 'Welcome to the Coday portfolio. As a solo web design agency based in Wetzlar, Central Hesse, every project you see here represents real work for real clients — no placeholder logos, no fabricated testimonials. These references showcase what happens when strategy, design, and code come together with measurable impact. Real Projects and Real Results are not just a tagline; they are a commitment we deliver on with every engagement.'
+              : 'Willkommen im Coday Portfolio. Als Solo-Webagentur mit Sitz in Wetzlar, Mittelhessen, steht jedes Projekt, das Sie hier sehen, für echte Arbeit mit echten Kunden — keine Platzhalter-Logos, keine erfundenen Testimonials. Diese Referenzen zeigen, was entsteht, wenn Strategie, Webdesign und Code mit messbarem Impact zusammenkommen. Echte Projekte und Echte Ergebnisse sind nicht nur ein Slogan, sondern ein Versprechen, das wir bei jedem Auftrag einlösen.'}
+          </p>
+          <p>
+            {isEn
+              ? 'Our references span multiple industries across the Wetzlar and Central Hesse region. For Batherm, a heating and plumbing specialist, we delivered a performance-optimised website that dramatically improved local search visibility and lead generation. The project included custom photography direction, conversion-focused landing pages, and technical SEO that pushed Core Web Vitals into the green zone. This is what Real Results look like for a local trades business entering the digital space.'
+              : 'Unsere Referenzen erstrecken sich über verschiedene Branchen in der Region Wetzlar und Mittelhessen. Für Batherm, einen Spezialisten für Heizung und Sanitär, haben wir eine performanceoptimierte Website entwickelt, die lokale Sichtbarkeit und Leadgenerierung drastisch verbesserte. Das Projekt umfasste Fotografie-Direction, conversion-fokussierte Landingpages und technisches SEO, das die Core Web Vitals in den grünen Bereich brachte. So sehen Echte Ergebnisse aus, wenn ein lokaler Handwerksbetrieb den digitalen Raum betritt.'}
+          </p>
+          <p>
+            {isEn
+              ? 'For MS Schlüsseldienst Wetzlar (Schlüssel Schmiede), we built a fast-loading, mobile-first web presence that serves the emergency locksmith market. Speed was critical — when someone is locked out, they need a locksmith immediately, not a slow website. The Web Design solution prioritised sub-second load times, prominent call-to-action buttons, and local SEO structured data. Our references prove that thoughtful design decisions directly translate into business results.'
+              : 'Für MS Schlüsseldienst Wetzlar (Schlüssel Schmiede) haben wir eine schnell ladende, Mobile-First-Webpräsenz entwickelt, die den Notfall-Schlüsseldienst-Markt bedient. Geschwindigkeit war entscheidend — wer ausgesperrt ist, braucht sofort einen Schlüsseldienst, keine langsame Website. Die Webdesign-Lösung setzte auf Ladezeiten unter einer Sekunde, prominente Call-to-Action-Buttons und lokales SEO mit strukturierten Daten. Unsere Referenzen beweisen, dass durchdachte Designentscheidungen direkt in Geschäftsergebnisse münden.'}
+          </p>
+          <p>
+            {isEn
+              ? 'Lindener Ratsstuben, a traditional restaurant, needed a digital presence that honoured its heritage while appealing to modern diners searching online. We created a warm, inviting Web Design with elegant menu presentation, reservation integration, and local search optimisation for Wetzlar and surroundings. The result: more table reservations from organic search and a significant increase in visibility for gastronomy-related queries in the region.'
+              : 'Die Lindener Ratsstuben, ein traditionsreiches Restaurant, brauchten eine digitale Präsenz, die ihr Erbe würdigt und gleichzeitig moderne Gäste anspricht, die online suchen. Wir haben ein warmes, einladendes Webdesign mit eleganter Speisekarten-Darstellung, Reservierungsanbindung und lokaler Suchoptimierung für Wetzlar und Umgebung geschaffen. Das Ergebnis: mehr Tischreservierungen über die organische Suche und eine deutliche Steigerung der Sichtbarkeit für Gastronomie-Anfragen in der Region.'}
+          </p>
+          <p>
+            {isEn
+              ? "What all these projects have in common is the Coday approach: data-driven strategy, premium visual design, and technically flawless implementation using Next.js, React, and modern CSS. Every project starts with understanding the client's business goals — not just their aesthetic preferences. We measure success through real metrics: PageSpeed scores, search rankings, lead volume, and conversion rates. These are not vanity projects; they are References that demonstrate return on investment."
+              : 'Was all diese Projekte verbindet, ist der Coday-Ansatz: datengetriebene Strategie, visuell hochwertiges Design und technisch einwandfreie Umsetzung mit Next.js, React und modernem CSS. Jedes Projekt beginnt mit dem Verständnis der Geschäftsziele des Kunden — nicht nur seiner ästhetischen Vorlieben. Wir messen Erfolg an echten Kennzahlen: PageSpeed-Scores, Suchrankings, Lead-Volumen und Conversion-Raten. Das sind keine Vorzeigeprojekte ohne Substanz, sondern Referenzen, die den Return on Investment belegen.'}
+          </p>
+          <p>
+            {isEn
+              ? 'If you are looking for a reliable web design partner in Wetzlar or Central Hesse, explore our projects above and see the quality of our work for yourself. Every reference on this page is a real client with a real business — verifiable and transparent. Real Projects, Real Results — that is the Coday promise. Contact us for a free initial consultation and let us discuss how we can achieve similar results for your business.'
+              : 'Wenn Sie einen zuverlässigen Webdesign-Partner in Wetzlar oder Mittelhessen suchen, entdecken Sie unsere Projekte oben und überzeugen Sie sich selbst von der Qualität unserer Arbeit. Jede Referenz auf dieser Seite ist ein echter Kunde mit einem echten Unternehmen — nachprüfbar und transparent. Echte Projekte, Echte Ergebnisse — das ist das Coday-Versprechen. Kontaktieren Sie uns für ein kostenloses Erstgespräch und lassen Sie uns besprechen, wie wir ähnliche Ergebnisse für Ihr Unternehmen erzielen können.'}
+          </p>
+        </div>
+      </section>
 
       <SeoContentBlock />
     </>

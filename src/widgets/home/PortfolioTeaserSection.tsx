@@ -59,7 +59,7 @@ export const PortfolioTeaserSection: React.FC = () => {
                 <ScaleIn delay={0.1} duration={0.8} className="w-full lg:w-3/5 group relative">
                   <Link
                     href={`/work/${project.slug}`}
-                    aria-label={`Bild für Case Study ansehen: ${content.title}`}
+                    aria-label={`${content.title} – Case Study`}
                     className="block relative aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-[0_20px_50px_rgba(8,_112,_184,_0.07)]"
                   >
                     <div className="absolute inset-0 bg-secondary-900/5 group-hover:bg-transparent transition-colors duration-500 z-10" />
@@ -111,11 +111,11 @@ export const PortfolioTeaserSection: React.FC = () => {
 
                   <Link
                     href={`/work/${project.slug}`}
-                    aria-label={`Case Study ansehen: ${content.title}`}
+                    aria-label={`${content.title} Case Study`}
                     className="inline-flex items-center gap-3 font-bold text-lg text-secondary-900 hover:text-action-primary transition-colors w-max group"
                   >
                     <span className="border-b-2 border-secondary-900 group-hover:border-action-primary pb-1 transition-colors">
-                      Case Study ansehen
+                      Case Study: {content.title}
                     </span>
                     <ArrowRight
                       weight="bold"

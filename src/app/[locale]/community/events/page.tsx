@@ -42,6 +42,52 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
         pageType="default"
       />
       <ClientComponent />
+      {/* SEO */}
+      <section className="container mx-auto px-4 py-16 max-w-5xl text-secondary-600">
+        <h2 className="text-3xl font-display font-bold mb-6">
+          Webdesign Events & Digital Community in Wetzlar
+        </h2>
+        <div className="space-y-4 text-base leading-relaxed">
+          <p>
+            Die lokale Business-Community lebt vom aktiven Austausch, von Networking und von
+            inspirierenden Veranstaltungen. Coday, Ihre innovative Webdesign Agentur aus Wetzlar,
+            engagiert sich leidenschaftlich für den Aufbau und die Pflege einer lebendigen digitalen
+            und analogen Gemeinschaft in Mittelhessen und darüber hinaus. Auf unserer Events-Seite
+            informieren wir Sie regelmäßig über bevorstehende Workshops, spannende Meetups,
+            Fachvorträge und exklusive Networking-Events rund um die Themen Webentwicklung,
+            digitales Marketing, UX/UI-Design und digitale Transformation. Wir glauben fest daran,
+            dass Wissenstransfer der Schlüssel zum Erfolg ist.
+          </p>
+          <p>
+            Unsere Veranstaltungen richten sich an Unternehmer, Gründer, Marketingverantwortliche
+            und IT-Experten, die ihr Wissen erweitern und wertvolle Kontakte knüpfen möchten. In
+            unseren praxisnahen Workshops vermitteln wir fundiertes Know-how zu aktuellen Trends wie
+            Headless CMS, React, Next.js, Performance-Optimierung und Suchmaschinenoptimierung
+            (SEO). Wir zeigen Ihnen, wie Sie moderne Webtechnologien effektiv einsetzen können, um
+            Ihr Unternehmen digital nach vorne zu bringen. Die Coday Community-Events bieten zudem
+            eine hervorragende Plattform, um Synergien zu schaffen und gemeinsame Projekte zu
+            initiieren.
+          </p>
+          <p>
+            Wetzlar als zentraler Wirtschaftsstandort in Hessen bietet dafür die idealen
+            Voraussetzungen. Egal, ob es sich um kleine, intensive Masterclasses oder größere
+            Netzwerk-Treffen handelt – wir legen großen Wert auf eine offene, inspirierende
+            Atmosphäre. Darüber hinaus laden wir regelmäßig Gastredner und Branchenexperten ein, die
+            wertvolle Einblicke in ihre Fachgebiete geben. Verpassen Sie keine unserer
+            Veranstaltungen und abonnieren Sie unseren Newsletter, um stets up to date zu bleiben
+            und sich rechtzeitig Ihren Platz zu sichern.
+          </p>
+          <p>
+            Wir freuen uns darauf, Sie bei einem unserer nächsten Events persönlich kennenzulernen
+            und gemeinsam die digitale Zukunft in der Region aktiv zu gestalten. Nutzen Sie die
+            Chance, Teil eines starken Netzwerks zu werden und profitieren Sie vom gebündelten
+            Wissen der Coday Community. Bleiben Sie neugierig, bleiben Sie innovativ – wir sehen uns
+            auf dem nächsten Event! Erweitern Sie Ihren Horizont, tauschen Sie sich mit
+            Gleichgesinnten aus und holen Sie sich wertvolle Impulse für Ihre eigenen digitalen
+            Projekte und Strategien direkt vor Ort.
+          </p>
+        </div>
+      </section>
     </>
   );
 }

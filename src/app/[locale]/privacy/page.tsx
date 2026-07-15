@@ -114,6 +114,54 @@ export default function PrivacyPage() {
           </tbody>
         </table>
       </div>
+      {/* SEO */}
+      <section className="container mx-auto px-4 py-16 max-w-5xl text-secondary-600 mt-12">
+        <h2 className="text-3xl font-display font-bold mb-6">
+          Datenschutz und Sicherheit im modernen Webdesign
+        </h2>
+        <div className="space-y-4 text-base leading-relaxed">
+          <p>
+            Datenschutz und Datensicherheit sind heutzutage entscheidende Faktoren für den
+            erfolgreichen Betrieb einer professionellen Website oder eines Online-Shops. Eine
+            transparente Datenschutzerklärung schafft nicht nur Vertrauen bei den Nutzern, sondern
+            ist auch eine zwingende rechtliche Voraussetzung nach der europäischen
+            Datenschutzgrundverordnung (DSGVO). In einer Zeit, in der Daten als das neue Gold
+            bezeichnet werden, ist der verantwortungsvolle Umgang mit personenbezogenen
+            Informationen unerlässlich. Wir bei Coday, Ihrer Webdesign Agentur in Wetzlar, legen
+            größten Wert darauf, dass alle von uns entwickelten Webanwendungen und Websites den
+            höchsten Standards der Datensicherheit entsprechen. Die Verarbeitung von Nutzerdaten
+            erfolgt stets zweckgebunden und unter Einhaltung strenger Sicherheitsmaßnahmen wie
+            SSL-Verschlüsselung, sicherer Datenbank-Architektur und regelmäßigen Sicherheitsupdates.
+            Moderne Webentwicklung mit Technologien wie Next.js und React ermöglicht es uns,
+            performante und gleichzeitig sichere digitale Erlebnisse zu schaffen. Dabei achten wir
+            besonders auf das Prinzip der Datensparsamkeit – es werden nur die Daten erhoben, die
+            für die Bereitstellung der jeweiligen Dienste absolut notwendig sind. Cookies und
+            Tracking-Technologien setzen wir äußerst sparsam und nur mit expliziter Einwilligung der
+            Nutzer ein. Unser Consent-Management-System stellt sicher, dass Besucher jederzeit die
+            volle Kontrolle über ihre Datenschutzeinstellungen behalten.
+          </p>
+          <p>
+            Neben der technischen Umsetzung beraten wir unsere Kunden auch gerne hinsichtlich der
+            datenschutzkonformen Einbindung von Drittanbieter-Tools, Analytics-Software und
+            Marketing-Plattformen. Eine rechtssichere Website ist das Fundament für nachhaltigen
+            geschäftlichen Erfolg im Internet. Zwar können wir keine rechtsverbindliche juristische
+            Beratung anbieten, doch durch unsere langjährige Erfahrung in der Webentwicklung kennen
+            wir die technischen Best Practices zur Umsetzung der DSGVO-Vorgaben. Ob es um die
+            korrekte Einbindung von Kontaktformularen, die sichere Übertragung von Kundendaten oder
+            den datenschutzkonformen Einsatz von Analyse-Tools geht – wir stehen Ihnen als
+            kompetenter Partner zur Seite. Vertrauen, Transparenz und Sicherheit sind die
+            Grundpfeiler unserer Arbeit. Wir sind davon überzeugt, dass exzellentes Webdesign und
+            strenger Datenschutz Hand in Hand gehen. Die kontinuierliche Weiterentwicklung von
+            Webtechnologien bringt auch immer wieder neue Anforderungen an den Datenschutz mit sich.
+            Deshalb bilden wir uns regelmäßig fort, um stets auf dem neuesten Stand der technischen
+            und rechtlichen Entwicklungen zu sein. Gerade im Bereich des E-Commerce und bei
+            Webanwendungen mit komplexen Nutzerinteraktionen ist ein durchdachtes Datenschutzkonzept
+            unerlässlich. Von der sicheren Passwort-Speicherung über den Schutz vor unbefugtem
+            Zugriff bis hin zur transparenten Kommunikation – wir kümmern uns um alle technischen
+            Aspekte des Datenschutzes.
+          </p>
+        </div>
+      </section>
     </div>
   );
 }

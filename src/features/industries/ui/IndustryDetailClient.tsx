@@ -161,7 +161,7 @@ export function IndustryDetailClient({ industrySlug }: { industrySlug?: string }
               {/* @ts-ignore */}
               {t.has(`${slug}.solutions_description`)
                 ? t(`${slug}.solutions_description`)
-                : t('detail.solutions.description')}
+                : t('detail.solutions.description', { industry: t(industry.title) })}
             </p>
           </div>
 

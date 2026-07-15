@@ -622,7 +622,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: 'Multi-Channel vs. Omni-Channel',
         level: 'h2',
         content:
-          "Viele verwechseln 'wir sind überall' mit einer Strategie. Wenn Ihre Facebook-Ads nicht wissen, was Ihre E-Mail-Kampagnen tun und Ihre Website nicht weiß, dass der Kunde schon gekauft hat, dann nerven Sie Ihre Kunden nur. Omni-Channel bedeutet: Eine einzige, flüssige Konversation über alle Kanäle hinweg.",
+          "Viele verwechseln 'wir sind überall' mit einer Strategie. Wenn Ihre Facebook-Ads nicht wissen, was Ihre E-Mail-Kampagnen tun und Ihre Website nicht weiß, dass der Kunde schon gekauft hat, dann nerven Sie Ihre Kunden nur. Omni-Channel bedeutet: Eine einzige, flüssige Konversation über alle Kanäle hinweg. Unser Blueprint für maximale Präsenz zeigt Ihnen, wie Sie Budget-Verschwendung eliminieren und jeden Kanal gezielt orchestrieren.",
       },
       {
         id: 'comparison-channel',
@@ -1511,7 +1511,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: 'Die 100ms Regel',
         level: 'h2',
         content:
-          "Amazon hat es vor 10 Jahren entdeckt: Jede 100ms Latenz kostete sie 1% Umsatz. Heute sind Nutzer noch ungeduldiger.\n\nWenn Ihre Seite länger als 3 Sekunden lädt, springen 53% der mobilen Nutzer ab. Sie kommen nicht zurück. Speed ist kein 'Nice to have'. Es ist das Fundament Ihres Umsatzes.",
+          "Amazon hat es vor 10 Jahren entdeckt: Jede 100ms Latenz kostete sie 1% Umsatz. Heute sind Nutzer noch ungeduldiger.\n\nWenn Ihre Seite länger als 3 Sekunden lädt, springen 53% der mobilen Nutzer ab. Sie kommen nicht zurück. Speed ist kein 'Nice to have'. Es ist das Fundament Ihres Umsatzes. Der hohe Preis der Latenz zeigt sich direkt in entgangenem Revenue – jede Millisekunde, die Sie einsparen, zahlt sich messbar in höherer Conversion aus.",
       },
       {
         id: 'interactive-latency-calc',
@@ -1744,10 +1744,10 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         id: 'intro-cms',
         type: 'text',
-        heading: 'Der Monolith ist tot',
+        heading: 'Headless CMS vs WordPress: Der CMS Vergleich',
         level: 'h2',
         content:
-          'WordPress ist tot. Headless CMS beweist es (2026). WordPress betreibt 40% des Webs. Es ist auch das Ziel #1 für Hacker. Es ist langsam. Es ist aufgebläht. Es ist ein Monolith in einer Microservices-Welt.\n\nHeadless CMS (Sanity, Contentful, Strapi) entkoppelt Inhalt von Code. Es erlaubt Ihnen, Inhalte omnichannel an Web, App und Watch aus einer Quelle zu senden.',
+          'WordPress ist tot. Headless CMS beweist es (2026). WordPress betreibt 40% des Webs. Es ist auch das Ziel #1 für Hacker. Es ist langsam. Es ist aufgebläht. Es ist ein Monolith in einer Microservices-Welt.\n\nHeadless CMS (Sanity, Contentful, Strapi) entkoppelt Inhalt von Code. Es erlaubt Ihnen, Inhalte omnichannel an Web, App und Watch aus einer Quelle zu senden. Dieser CMS Vergleich liefert Ihnen die harten Fakten, damit Sie eine fundierte Entscheidung für Ihre digitale Infrastruktur treffen können.',
       },
       {
         id: 'interactive-tco',
@@ -1992,7 +1992,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: 'Die Signal-Krise',
         level: 'h2',
         content:
-          'Wenn Sie sich auf den Meta Pixel oder Google Analytics 4 (Client-Side) verlassen, fliegen Sie blind. iOS 17 entfernt Tracking-Parameter. AdBlocker blockieren Skripte. Chrome schafft Cookies ab.',
+          'Der Tod des Cookies ist Realität: Wenn Sie sich auf den Meta Pixel oder Google Analytics 4 (Client-Side) verlassen, fliegen Sie blind. iOS 17 entfernt Tracking-Parameter. AdBlocker blockieren Skripte. Chrome schafft Cookies ab. Das Ergebnis? Ihre Marketing-Daten sind falsch – und Sie treffen Entscheidungen auf Basis einer verzerrten Datenlage.',
       },
       {
         id: 'interactive-tracking',
@@ -2402,7 +2402,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: 'Hören Sie auf zu raten',
         level: 'h2',
         content:
-          "Die meisten 'A/B-Tests' sind keine Tests, sondern Glücksspiel. Ohne statistische Signifikanz sind Ihre Ergebnisse wertlos. Sie könnten genauso gut eine Münze werfen.\n\nEin guter Test braucht Volumen, Zeit und eine klare Hypothese. Alles andere ist 'Optimierungstheater'.",
+          "Die meisten 'A/B-Tests' sind keine Tests, sondern Glücksspiel. Ohne statistische Signifikanz sind Ihre Ergebnisse wertlos – statistischer Müll, der zu Fehlentscheidungen führt. Sie könnten genauso gut eine Münze werfen.\n\nDie Lügen, die uns schlecht designte Tests erzählen, kosten Unternehmen Millionen. Ein guter Test braucht Volumen, Zeit und eine klare Hypothese. Alles andere ist 'Optimierungstheater'.",
       },
       {
         id: 'interactive-ab',

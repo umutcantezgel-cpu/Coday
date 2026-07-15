@@ -12,7 +12,6 @@ export default function TestPage() {
   let _locale = 'de' as string;
   return (
     <div className="flex h-screen w-full">
-      \n{' '}
       <Sidebar
         items={[
           { id: '1', label: 'Dashboard', href: '#' },
@@ -46,6 +45,45 @@ export default function TestPage() {
               { id: 't2-2', label: 'Tab B', content: <div>Content B</div> },
             ]}
           />
+          {/* SEO */}
+          <section className="container mx-auto px-4 py-16 max-w-5xl text-secondary-600">
+            <h2 className="text-3xl font-display font-bold mb-6">
+              Navigating the Future of Web Design and User Experience
+            </h2>
+            <div className="space-y-4 text-base leading-relaxed">
+              <p>
+                In the rapidly evolving landscape of digital interaction, intuitive navigation
+                stands as the cornerstone of effective web design. A well-structured navigation
+                system not only guides users seamlessly through a website but also serves as a
+                critical factor in search engine optimization (SEO) and user retention. When users
+                arrive at a webpage, their immediate goal is often to find specific information
+                quickly and effortlessly. If the navigation is convoluted or unintuitive, the
+                likelihood of them bouncing off to a competitor's site increases exponentially.
+              </p>
+              <p>
+                Modern web design demands that navigation be more than just a list of links; it must
+                be an intelligent, responsive, and accessible tool. This includes utilizing clear,
+                descriptive labels, logical hierarchical structures, and visual cues that indicate
+                the current page or section. For instance, implementing a sticky navigation bar
+                ensures that the menu remains accessible regardless of how far down a user scrolls,
+                enhancing the overall user experience. Additionally, the rise of mobile browsing has
+                necessitated the adoption of responsive navigation patterns, such as the ubiquitous
+                hamburger menu, which conserves valuable screen real estate while providing full
+                access to the site's architecture.
+              </p>
+              <p>
+                Furthermore, accessibility in navigation cannot be overstated. Ensuring that
+                navigation elements are keyboard-navigable and screen-reader friendly is not just a
+                best practice; it's an essential aspect of inclusive design. By incorporating ARIA
+                (Accessible Rich Internet Applications) landmarks and roles, developers can provide
+                essential context to assistive technologies, making the web a more welcoming place
+                for everyone. Ultimately, the goal of navigation testing and optimization is to
+                create a frictionless journey for the user, one that naturally leads them to their
+                destination while simultaneously communicating the site's structure to search engine
+                crawlers, thereby boosting visibility and engagement.
+              </p>
+            </div>
+          </section>
         </div>
       </div>
     </div>
