@@ -124,5 +124,121 @@
   "meta_en": {
     "title": "Kosmetikstudio Web Design Agency Wetzlar | Kunden gewinnen",
     "description": "Exclusive web design for cosmetic studios and beauty salons. Attract premium clients with luxurious aesthetics and seamless online booking integration."
-  }
+  },
+  "hero_en": {
+    "headline": "Digital luxury that attracts new clients.",
+    "subheadline": "More bookings. Better customer retention. Premium image.",
+    "description": "M... We design websites for cosmetics and beauty salons that embody exclusivity and seamlessly guide visitors into the booking funnel.",
+    "metrics": [
+      {
+        "value": "150",
+        "label": "More online appointments",
+        "suffix": "%"
+      },
+      {
+        "value": "30",
+        "label": "Fewer no-shows (missed appointments)",
+        "suffix": "%"
+      }
+    ]
+  },
+  "gamifiedStats_en": {
+    "title": "The beauty industry is digitally dominated",
+    "description": "Clients prefer to book beauty treatments in the evening from their couch. Those who do not remove this hurdle lose.",
+    "counters": [
+      {
+        "targetValue": 72,
+        "suffix": "%",
+        "label": "of beauty clients prefer salons with 24/7 online booking"
+      },
+      {
+        "targetValue": 81,
+        "suffix": "%",
+        "label": "base their salon choice on the quality of the website"
+      }
+    ]
+  },
+  "bentoGrid_en": {
+    "title": "Web design with a glow effect",
+    "subtitle": "This is how we make your cosmetic studio digitally irresistible.",
+    "cards": [
+      {
+        "title": "Luxurious UI design",
+        "text": "We use fine typography, soft color palettes, and fluid animations to make the premium feel of your studio digitally tangible.",
+        "size": "large",
+        "icon": "Design"
+      },
+      {
+        "title": "1-click appointment booking",
+        "text": "Integration of Treatwell, Phorest, or Shore. Seamless booking without the customer having to leave the high-quality website.",
+        "size": "small",
+        "icon": "Speed"
+      },
+      {
+        "title": "Instagram sync",
+        "text": "Your best treatment results are automatically synchronized from social media into high-resolution galleries on the website.",
+        "size": "small",
+        "icon": "MapPin"
+      },
+      {
+        "title": "Local SEO for cosmetics",
+        "text": "When someone searches for 'HydraFacial Wetzlar' or 'Microblading Giessen', you rank at the top of the search results.",
+        "size": "tall",
+        "icon": "SEO"
+      }
+    ]
+  },
+  "processSteps_en": [
+    {
+      "title": "1. Define brand aesthetics",
+      "description": "We analyze your studio concept (Medical Beauty, Organic SPA, etc.) and develop a customized, exclusive color and design concept."
+    },
+    {
+      "title": "2. High-end photography",
+      "description": "Good beauty websites need perfect pictures. If required, we organize professional photo shoots of your premises and treatments."
+    },
+    {
+      "title": "3. Booking & shop integration",
+      "description": "We integrate your booking software and, if desired, add an online shop for your exclusive skincare products."
+    },
+    {
+      "title": "4. Go-live & SEO setup",
+      "description": "Your new digital business card goes live – loading blazingly fast and perfectly optimized for local search queries."
+    }
+  ],
+  "localDominance_en": {
+    "title": "Attract premium clients from the region",
+    "description": "Beauty clients are willing to travel further and pay more for excellent results – if the trust is right. We build this exper...",
+    "points": [
+      "Focus on high-priced signature treatments (e.g., apparatus-based cosmetics)",
+      "Building massive trust through before-and-after galleries and verified customer reviews",
+      "Relief in the studio through automated appointment confirmations and reminders"
+    ]
+  },
+  "faq_en": [
+    {
+      "q": "We are already using Treatwell – isn't that enough?",
+      "a": "Platforms like Treatwell are good, but they place you directly next to your toughest competitors. Your own exclusive website builds a real brand, justifies higher prices, and binds customers to *your* studio in the long term, not to the platform."
+    },
+    {
+      "q": "Can we also sell our skincare products online?",
+      "a": "Yes, absolutely. We can integrate a seamless e-commerce system (e.g., Shopify or WooCommerce via Next.js) so that customers can conveniently reorder their favorite creams – a perfect revenue boost."
+    },
+    {
+      "q": "Our current site does not look good on mobile phones. Will this change?",
+      "a": "Massively. In the cosmetics industry, up to 95% of visitors come via smartphones (often via Instagram links). We develop uncompromisingly mobile-first. The operation feels like a high-end app."
+    },
+    {
+      "q": "How can we update our constantly changing monthly offers?",
+      "a": "We integrate a modern, easy-to-use headless CMS. You can change texts, prices, and monthly specials with just a few clicks on your smartphone. Completely without technical prior knowledge."
+    },
+    {
+      "q": "Can we integrate the booking system XY?",
+      "a": "We can seamlessly integrate practically any modern system (Shore, Phorest, Belbo, Treatwell) via APIs or widgets, so that the booking process visually matches the new website perfectly."
+    },
+    {
+      "q": "Is professional photography really necessary?",
+      "a": "Yes. Beauty is visual. Clients buy results and the feeling of relaxation. You won't achieve this effect with generic stock photos. Real, professional pictures of your studio often make the difference between a bounce and a booking."
+    }
+  ]
 }

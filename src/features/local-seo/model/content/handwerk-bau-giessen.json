@@ -5,10 +5,19 @@
     "title": "Webdesign für Handwerk und Bau in Gießen",
     "description": "High End Webdesign für Handwerks und Bauuntern... Gewinnen Sie durch professionelle Webseitenentwicklung Fachkräfte und dominieren Sie den Markt."
   },
+  "meta_en": {
+    "title": "Web Design for Trades and Construction in Gießen",
+    "description": "Professional web design for trades and construction in Giessen. Attract skilled workers, gain lucrative contracts, and dominate your local market."
+  },
   "hero": {
     "headline": "Digitales Fundament für Gießens Handwerks Elite",
     "subheadline": "Webseiten, die mehr Kunden gewinnen",
     "description": "Durch exzellentes Webdesign Fachkräfte anziehen, Vertrauen schaffen und Aufträge sichern Im hart umkämpften Bau und Handwerkssektor in Gießen..."
+  },
+  "hero_en": {
+    "headline": "Digital Foundation for Gießen's Trades Elite",
+    "subheadline": "Websites that win more customers",
+    "description": "Attract skilled workers, build trust, and secure contracts through excellent web design. In the highly competitive construction and trades sector in Gießen..."
   },
   "localDominance": {
     "title": "Regionale Dominanz im Gießener Baugewerbe",
@@ -18,6 +27,16 @@
       "Automatisierte Mitarbeitergewinnung durch psychologisch optimierte Recruiting Prozesse und modernes Webdesign",
       "Technologische Überlegenheit und blitzschnelle Ladezeiten dank modernster digitaler Architektur",
       "Perfekte mobile Darstellung nach dem Webseiten Relaunch für extrem schnelle Zugriffe direkt von der Baustelle"
+    ]
+  },
+  "localDominance_en": {
+    "title": "Regional Dominance in the Gießen Construction Industry",
+    "description": "As an experienced web agency, we understand the highly specific requirements of craft businesses in Gießen. From the Lahn to the Schiffenberg...",
+    "points": [
+      "Maximum visibility through targeted website development for Gießen and the entire Lahn-Dill district",
+      "Automated employee acquisition through psychologically optimized recruiting processes and modern web design",
+      "Technological superiority and lightning-fast loading times thanks to state-of-the-art digital architecture",
+      "Perfect mobile presentation after the website relaunch for extremely fast access directly from the construction site"
     ]
   },
   "contentSections": [
@@ -38,6 +57,24 @@
       "content": "Ihr Handwerksunternehmen wächst stetig, Ihre digitale Präsenz sollte dies auch tun. Wir als Ihre verlässliche Webagentur bauen im Rahmen der Webseitenentwicklung keine starren und unbeweglichen statischen Visitenkarten, sondern hochgradig dynamische, zukunftssichere und komplett skalierbare Plattformen. Egal ob Sie ein völlig neues Gewerk zu Ihrem Portfolio hinzufügen, aktuelle und spannende Bauprojekte aus Gießen als überzeugende Fallstudien online präsentieren wollen oder ein integriertes Content Management System für extrem schnelle inhaltliche Updates benötigen. Wir garantieren Ihnen durch modernstes Webdesign und intelligente Systemarchitekturen die maximale Flexibilität, ohne dabei die herausragende Performance Ihrer neuen Plattform jemals zu gefährden."
     }
   ],
+  "contentSections_en": [
+    {
+      "title": "The problem of invisibility in the digital space in Gießen",
+      "content": "Many first-class craft businesses, construction companies, and renowned architects in Gießen suffer from completely outdated, slow, and confusing websites. The result of this neglected digital presence is fatal. Young, well-trained professionals prefer to apply to the competition, and lucrative major contracts go to companies with a more modern and appealing external appearance. A simple modular website or a heavily dusted presence is definitely no longer enough today to be taken truly seriously in the tough battle for the very best talents in the region or in strong regional trades. Without professional website development, you surrender the playing field to your direct competitors without a fight."
+    },
+    {
+      "title": "Our solution through first-class web design as a recruiting machine",
+      "content": "As your premium web agency, Coday transforms your digital presence into an extremely high-performance and automated tool for your lasting success. We use state-of-the-art website development frameworks to build websites that load in absolute milliseconds and radiate technical brilliance. Through targeted conversion rate optimization and razor-sharp, very minimalist web design, you convince potentially interested applicants at first glance. After a comprehensive website relaunch by our experts, your master business will be perceived as a future-proof, innovative, and highly attractive employer in Gießen, where people love to work."
+    },
+    {
+      "title": "Absolute trust through visual excellence and true performance",
+      "content": "In the construction industry, outstanding quality, absolute precision, and unconditional reliability count. Your website must perfectly reflect exactly these essential values at all times. Our web agency creates digital experience worlds with first-class animations, extremely clean typography, and very clear visual structures through sophisticated web design. We rely on maximum-performance architectures without any compromises in website development. In practice, this means no loading bars and no unattractively shifted layouts. After a professional website relaunch, your construction company presents itself with a digital perfection that immediately convinces premium customers and digitally impressively underlines your masterful craftsmanship quality."
+    },
+    {
+      "title": "Scalable platforms for rapidly growing Gießen craft businesses",
+      "content": "Your craft business is constantly growing, your digital presence should do the same. As your reliable web agency, we do not build rigid and immobile static business cards in the context of website development, but highly dynamic, future-proof, and completely scalable platforms. Whether you want to add a completely new trade to your portfolio, present current and exciting construction projects from Gießen online as convincing case studies, or need an integrated content management system for extremely fast content updates. We guarantee you maximum flexibility through state-of-the-art web design and intelligent system architectures, without ever endangering the outstanding performance of your new platform."
+    }
+  ],
   "faq": [
     {
       "q": "Warum braucht mein spezialisierter Handwerksbetrieb in Gießen überhaupt ein neues High End Webdesign?",
@@ -56,8 +93,22 @@
       "a": "Unsere Webagentur ist technologisch hochspezialisiert und fokussiert. Wir sind keine einfachen Generalisten, die nebenbei ein kleines bisschen an Webseiten basteln. Wir fokussieren uns zu einhundert Prozent auf herausragendes Webdesign und anspruchsvollste Webseitenentwicklung mit modernsten Systemen. Sie profitieren direkt von einer klaren Kommunikation, kompromissloser handwerklicher digitaler Qualität im Programmcode und einer Arbeitsgeschwindigkeit, die große, unbewegliche Massenagenturen durch ihren massiven bürokratischen Overhead überhaupt nicht leisten können."
     }
   ],
-  "meta_en": {
-    "title": "Web Design for Trades and Construction in Gießen",
-    "description": "Professional web design for trades and construction in Giessen. Attract skilled workers, gain lucrative contracts, and dominate your local market."
-  }
+  "faq_en": [
+    {
+      "q": "Why does my specialized craft business in Gießen even need a new high-end web design?",
+      "a": "Because the very first impression today takes place almost exclusively in the digital space. When a potential apprentice, a respected architect, or a wealthy builder searches online for craft businesses in Gießen, your website decides in absolute fractions of a second about professionalism, basic trust, and ultimately about the lucrative contract award. A website relaunch and first-class web design from our web agency ensure unbeatable loading times and an elite appearance that immediately positions you as the undisputed market leader and leaves your regional competition far behind."
+    },
+    {
+      "q": "How exactly does the completely new website from the website development help me with the recruiting of good professionals?",
+      "a": "Through thoughtful web design, we integrate high-converting and multi-stage digital recruiting processes and optimize your entire career page exactly to the psychological needs of modern professionals in the trades. Through an extremely fast, completely accessible, and on all mobile devices perfected digital application experience, we drastically reduce the dropout rate of applicants. Potential new employees immediately recognize through the professional website relaunch that you are a highly innovative, exceedingly structured, and enormously lucrative employer in the Central Hesse region."
+    },
+    {
+      "q": "Are your web applications and the web design also optimized for the tough everyday life on dirty construction sites?",
+      "a": "This is absolutely the case. Our web agency develops strictly according to the mobile-first principle in website development and focuses massively on all important performance metrics and extremely fast loading times. Your website will be displayed perfectly on even the smallest smartphone, is incredibly easy to use, and loads extremely fast even with the worst conceivable network coverage in Gießen or the wider surrounding area. This is essential and indispensable for busy site managers, architects, and builders who often have to quickly access your references or your contact details on the go."
+    },
+    {
+      "q": "Why exactly should I prefer a highly specialized web agency over a classic Gießen agency for my website relaunch?",
+      "a": "Our web agency is technologically highly specialized and focused. We are not simple generalists who tinker a little bit with websites on the side. We focus one hundred percent on outstanding web design and the most demanding website development with state-of-the-art systems. You benefit directly from clear communication, uncompromising digital craftsmanship quality in the program code, and a working speed that large, immobile mass agencies simply cannot provide due to their massive bureaucratic overhead."
+    }
+  ]
 }

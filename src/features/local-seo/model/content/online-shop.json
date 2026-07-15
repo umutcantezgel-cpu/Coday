@@ -124,5 +124,121 @@
   "meta_en": {
     "title": "E Commerce Agency Wetzlar | Online Shops mit Shopware & Next.js",
     "description": "Scalable e-commerce web design. Build ultra-fast, high-converting online stores that maximize your sales and provide an unparalleled shopping experience."
-  }
+  },
+  "hero_en": {
+    "headline": "E-commerce platforms that measurably convert.",
+    "subheadline": "More revenue. Shorter load times. Unlimited scalability.",
+    "description": "We develop high-performance e-commerce solutions (Next.js, Shopify, Shopware) that load lightning fast, provide a perfect user experience, and turn visitors into loyal buyers.",
+    "metrics": [
+      {
+        "value": "35",
+        "label": "Higher Conversion Rate (Ø)",
+        "suffix": "%"
+      },
+      {
+        "value": "0.5",
+        "label": "Seconds load time",
+        "suffix": "s"
+      }
+    ]
+  },
+  "gamifiedStats_en": {
+    "title": "Why standard shops leave revenue on the table",
+    "description": "Competition in e-commerce is fierce. If your shop is based on slow, outdated systems, users will migrate to the competition at the slightest point of friction.",
+    "counters": [
+      {
+        "targetValue": 70,
+        "suffix": "%",
+        "label": "of shopping carts are abandoned before purchase"
+      },
+      {
+        "targetValue": 53,
+        "suffix": "%",
+        "label": "abandon mobile sites that take longer than 3 seconds to load"
+      }
+    ]
+  },
+  "bentoGrid_en": {
+    "title": "The Coday E-Commerce Architecture",
+    "subtitle": "Technology that pays off in revenue.",
+    "cards": [
+      {
+        "title": "Headless E-Commerce",
+        "text": "We separate the frontend (Next.js) from the backend (Shopify/Shopware). The result: uncompromising design freedom and load times under one second.",
+        "size": "large",
+        "icon": "Design"
+      },
+      {
+        "title": "Optimized Checkout",
+        "text": "1-click payment with Apple Pay, PayPal & Google Pay. We eliminate every unnecessary hurdle on the path to purchase.",
+        "size": "small",
+        "icon": "Speed"
+      },
+      {
+        "title": "ERP & PIM Integration",
+        "text": "Seamless integration with your inventory management (JTL, Plentymarkets) for automated processes without manual effort.",
+        "size": "small",
+        "icon": "MapPin"
+      },
+      {
+        "title": "E-Commerce SEO",
+        "text": "Technical SEO excellence. Your categories and products rank #1 on Google and generate free, organic traffic.",
+        "size": "tall",
+        "icon": "SEO"
+      }
+    ]
+  },
+  "processSteps_en": [
+    {
+      "title": "1. Platform Strategy",
+      "description": "We analyze your product range, your target audience, and your logistics processes to select the perfect shop system (Shopify, Shopware, Custom)."
+    },
+    {
+      "title": "2. Conversion-Optimized UI/UX",
+      "description": "Design development with a clear focus on usability, filter navigation, and an absolutely frictionless buying process."
+    },
+    {
+      "title": "3. Headless Development",
+      "description": "Frontend development with Next.js. We program a shop that feels as fast and fluid as a native app while browsing."
+    },
+    {
+      "title": "4. Testing & Launch",
+      "description": "Comprehensive load tests, integration of payment providers, and seamless go-live without downtimes."
+    }
+  ],
+  "localDominance_en": {
+    "title": "National reach, regional roots",
+    "description": "Although e-commerce is borderless, you benefit massively from a strong technology partner right here in Wetzlar. We stand for short...",
+    "points": [
+      "Personal contact right in Central Hesse",
+      "Joint strategy workshops at one table, not just via video call",
+      "Scalable architecture that withstands even extreme traffic peaks (Black Friday)"
+    ]
+  },
+  "faq_en": [
+    {
+      "q": "What does 'Headless E-Commerce' specifically mean for us?",
+      "a": "In classic systems, design and database are rigidly connected. With 'headless', we separate this. For example, we use Shopify for backend management, but build the frontend completely freely with Next.js. This brings extreme speed and absolute design freedom."
+    },
+    {
+      "q": "We already have an inventory management system (e.g. JTL). Can this be integrated?",
+      "a": "Yes. We integrate ERP (Enterprise Resource Planning) and PIM (Product Information Management) systems via modern APIs. Inventory, prices, and orders are synchronized in real-time."
+    },
+    {
+      "q": "Is Shopify also suitable for complex B2B shops?",
+      "a": "Absolutely. Shopify Plus now offers excellent B2B features (customer-specific price lists, bulk discounts, net checkout). For extremely individual B2B requirements, we also evaluate alternatives like Shopware 6."
+    },
+    {
+      "q": "How do we improve the load time of our existing shop?",
+      "a": "Often the backend is the problem. Instead of laboriously repairing old templates, we place an extremely fast headless frontend in front of it. Your old system remains in the background, but for the user, the shop becomes lightning fast."
+    },
+    {
+      "q": "Do you also support migrations (e.g. from Magento to Shopify)?",
+      "a": "Yes, we plan and execute complex platform migrations. We secure your valuable SEO rankings through meticulous redirect mapping and securely migrate all customer, order, and product data."
+    },
+    {
+      "q": "Why Coday for our shop relaunch?",
+      "a": "We are not purely a design agency. We understand the technical and commercial processes in e-commerce. Our goal is not just a beautiful shop, but a scalable system that sustainably increases your conversion rate."
+    }
+  ]
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from '@/i18n/navigation';
+import NextLink from 'next/link';
 
 import { useTranslations } from 'next-intl';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
@@ -241,64 +242,49 @@ export const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-3">
               <li>
-                <Link
+                <NextLink
                   prefetch={false}
-                  href="/webdesign-agentur-wetzlar"
-                  locale="de"
+                  href="/de/webdesign-agentur-wetzlar"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
                   {t('nav.local.wetzlar', { defaultValue: 'Webdesign Agentur Wetzlar' })}
-                </Link>
+                </NextLink>
               </li>
               <li>
-                <Link
+                <NextLink
                   prefetch={false}
-                  href="/standorte/hessen"
-                  locale="de"
+                  href="/de/standorte/hessen"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
                   {t('nav.local.hessen', { defaultValue: 'Webdesign Hessen' })}
-                </Link>
+                </NextLink>
               </li>
               <li>
-                <Link
+                <NextLink
                   prefetch={false}
-                  href="/webdesign-agentur-wetzlar"
-                  locale="de"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
-                >
-                  {t('nav.local.wetzlar', { defaultValue: 'Webagentur Wetzlar' })}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/branchen/gesundheitswesen/arzt-wetzlar"
-                  locale="de"
+                  href="/de/branchen/gesundheitswesen/arzt-wetzlar"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
                   {t('nav.local.arzt_wetzlar', { defaultValue: 'Praxis-Website Wetzlar' })}
-                </Link>
+                </NextLink>
               </li>
               <li>
-                <Link
+                <NextLink
                   prefetch={false}
-                  href="/branchen/gesundheitswesen/arzt-giessen"
-                  locale="de"
+                  href="/de/branchen/gesundheitswesen/arzt-giessen"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
                   {t('nav.local.arzt_giessen', { defaultValue: 'Praxis-Website Gießen' })}
-                </Link>
+                </NextLink>
               </li>
               <li>
-                <Link
+                <NextLink
                   prefetch={false}
-                  href="/branchen/handwerker/wetzlar"
-                  locale="de"
+                  href="/de/branchen/handwerker/wetzlar"
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
                 >
                   {t('nav.local.handwerker_wetzlar', { defaultValue: 'Handwerker Wetzlar' })}
-                </Link>
+                </NextLink>
               </li>
               <li>
                 <Link
@@ -307,16 +293,6 @@ export const Footer: React.FC = () => {
                   className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2 font-medium"
                 >
                   {t('footer.sitemap', { defaultValue: 'Seitenübersicht (Sitemap)' })}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/webdesign-agentur-wetzlar"
-                  locale="de"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
-                >
-                  {t('nav.local.wetzlar', { defaultValue: 'Standort Wetzlar' })}
                 </Link>
               </li>
             </ul>

@@ -132,5 +132,129 @@
   "meta_en": {
     "title": "Digitale Dominanz for Car Mechanics",
     "description": "Digital dominance for automotive mechanics. Turn your craftsmanship into a profitable brand and gain premium clients through professional web design."
-  }
+  },
+  "hero_en": {
+    "headline": "From a simple workshop to a premium brand.",
+    "subheadline": "Premium web design for automotive workshops",
+    "description": "You deliver masterful quality. Today, a modern website is your most important employee.",
+    "metrics": [
+      {
+        "value": "200",
+        "label": "More New Customer Inquiries",
+        "suffix": "%"
+      },
+      {
+        "value": "100",
+        "label": "Exclusive Design",
+        "suffix": "%"
+      }
+    ]
+  },
+  "gamifiedStats_en": {
+    "title": "Your craftsmanship often remains invisible online",
+    "description": "Most d... We ensure that your online presence exactly reflects the high quality you deliver every day in your workshop.",
+    "counters": [
+      {
+        "targetValue": 92,
+        "suffix": "%",
+        "label": "evaluate competence primarily based on web design"
+      },
+      {
+        "targetValue": 80,
+        "suffix": "%",
+        "label": "more revenue potential through premium perception"
+      }
+    ]
+  },
+  "bentoGrid_en": {
+    "title": "The turbo for your automotive business",
+    "subtitle": "Why our website development is the game changer for your company.",
+    "cards": [
+      {
+        "title": "Exclusive Premium Perception",
+        "text": "We package your immense technical skills in a stunning and highly modern web design that immediately justifies prices beyond the market average and builds trust.",
+        "size": "large",
+        "icon": "Design"
+      },
+      {
+        "title": "High Speed Performance",
+        "text": "No more waiting times for your customers. Your new site loads in just a few milliseconds and offers a flawless, fast user experience on any mobile device.",
+        "size": "small",
+        "icon": "Speed"
+      },
+      {
+        "title": "Search Engine Visibility",
+        "text": "You will become the absolutely unmissable authority in your region when customers search for specific automotive problems. Our website development is SEO optimized from the ground up.",
+        "size": "small",
+        "icon": "SEO"
+      },
+      {
+        "title": "High-Converting Structure",
+        "text": "We guide the visitor with psychological precision from the very first second to the final appointment booking. For you, this means fewer drop-offs and a fuller schedule with exactly the right customers.",
+        "size": "tall",
+        "icon": "Security"
+      }
+    ]
+  },
+  "processSteps_en": [
+    {
+      "title": "Strategic Positioning",
+      "description": "We analyze your strengths in detail and define you as the undisputed expert for specific automotive problems in your regional ar..."
+    },
+    {
+      "title": "Sales Psychology Design",
+      "description": "We create a website that not only looks outstanding, but... Professional web design makes the decisive difference here."
+    },
+    {
+      "title": "Enterprise Level Development",
+      "description": "We rely on... Absolute technical perfection, maximum security, and superior loading speeds are the standard for us."
+    },
+    {
+      "title": "Scaling Your Business",
+      "description": "After the successful website relaunch, we continuously make data-driven adjustments to ensure your inquiries increase and your..."
+    }
+  ],
+  "localDominance_en": {
+    "title": "Dominate the market in your region",
+    "description": "It's enough... We take full care of your website development, so you can fully concentrate on your work in the workshop.",
+    "points": [
+      "Absolute dominance for relevant regional search queries",
+      "Targeted positioning as a high-priced premium service provider",
+      "Building a magnetic employer brand for successful recruitment"
+    ]
+  },
+  "faq_en": [
+    {
+      "q": "I work alone or with a small team. Isn't a professional website overkill?",
+      "a": "Definitely not. Especially as a small automotive business, you need to win through maximum efficiency and outstanding quality, not just sheer volume. A high-end website developed by us attracts exactly those customers who are willing to pay fair prices for excellent work. You unconsciously filter out time-consuming customers and massively maximize your profit per repair order."
+    },
+    {
+      "q": "How much does professional website development by your web agency cost?",
+      "a": "We don't sell simple websites, we establish digital market dominance. A website relaunch with our web agency is a strategic investment that quickly pays for itself through acquiring highly profitable new customers and significantly increasing brand perception. We will transparently discuss the exact costs based on your individual goals."
+    },
+    {
+      "q": "Why shouldn't I just use a cheap website builder?",
+      "a": "Because you will completely disappear in the crowd. Website builders are often error-prone, extremely slow, and look like standardized mass products. Our website development relies on technologies that are also used by billion-dollar corporations. These offer unbeatable speed and security, propelling you to the top of relevant search results in the long term."
+    },
+    {
+      "q": "Do you also write the texts for my new website as part of the website development?",
+      "a": "Of course. Our experienced copywriters specialize in writing sales-psychologically optimized and search-engine-friendly texts. We translate your deep technical expertise as a car mechanic into captivating and understandable arguments that immediately convince your target audience emotionally and prompt them to contact you."
+    },
+    {
+      "q": "How does high-quality web design help me find new employees?",
+      "a": "A modern and absolutely professional web presence is by far the most important recruiting tool today. Excellent car mechanics can choose their employers nowadays. If your website exudes innovation, success, and an appreciative corporate culture, top talents will practically apply to you on their own."
+    },
+    {
+      "q": "I don't have any nice photos of my workshop. Is that an obstacle for the website relaunch?",
+      "a": "Absolutely not. We provide comprehensive advice on how we can optimally showcase your daily work using professional photography or high-class stock materials. A bad photo should never ruin an outstanding web design. We will find the best visual solution for every budget."
+    },
+    {
+      "q": "How long does the implementation of the project take until launch?",
+      "a": "Usually, we need between four and eight weeks for the complete conception, web design, and final website development. As a specialized web agency, we work extremely efficiently, purposefully, and without unnecessary delays, while always maintaining our highest quality standards."
+    },
+    {
+      "q": "Does your web agency also take care of updates and ongoing maintenance?",
+      "a": "Yes. With our modern technology stack, we radically minimize maintenance effort right from the start. There are no more broken plugins or annoying security vulnerabilities. Furthermore, we offer a comprehensive support service upon request, so you can concentrate one hundred percent on your actual craft in the workshop."
+    }
+  ]
 }

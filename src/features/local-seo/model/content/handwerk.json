@@ -122,7 +122,123 @@
     }
   ],
   "meta_en": {
-    "title": "Craftsmen Web Design Agency Wetzlar | Fachkräfte gewinnen",
+    "title": "Craftsmen Web Design Agency Wetzlar | Attract Skilled Workers",
     "description": "Specialized web design for trades and construction. Attract qualified craftsmen, impress clients, and outshine the local competition."
-  }
+  },
+  "hero_en": {
+    "headline": "Digital Foundation for True Craftsmanship.",
+    "subheadline": "More Skilled Workers. Better Contracts. Maximum Visibility.",
+    "description": "More skilled workers. We build websites for craftsmen that create trust, prove your expertise, and work as a digital sales machine.",
+    "metrics": [
+      {
+        "value": "200",
+        "label": "More qualified applications",
+        "suffix": "%"
+      },
+      {
+        "value": "1",
+        "label": "Visibility in the region",
+        "suffix": "st Place"
+      }
+    ]
+  },
+  "gamifiedStats_en": {
+    "title": "Why Craftsmen Lose Clients & Staff Online",
+    "description": "Many companies have full order books, but can't find staff. Both often fail due to digital presentation.",
+    "counters": [
+      {
+        "targetValue": 85,
+        "suffix": "%",
+        "label": "of young skilled workers inform themselves online before applying"
+      },
+      {
+        "targetValue": 60,
+        "suffix": "%",
+        "label": "of builders make decisions based on reference images on the web"
+      }
+    ]
+  },
+  "bentoGrid_en": {
+    "title": "Web Design That Gets to Work",
+    "subtitle": "How we digitize your craft business.",
+    "cards": [
+      {
+        "title": "Strong Reference Galleries",
+        "text": "Pictures speak louder than words. We showcase your successfully completed construction projects in high-resolution, lightning-fast galleries.",
+        "size": "large",
+        "icon": "Design"
+      },
+      {
+        "title": "Automated Contact Requests",
+        "text": "Digital questionnaires pre-filter inquiries (budget, timeframe) so you don't waste time with unsuitable clients.",
+        "size": "small",
+        "icon": "Speed"
+      },
+      {
+        "title": "Recruiting Funnel",
+        "text": "1-click applications for skilled workers, integrated on a landing page that presents your company as a top employer.",
+        "size": "small",
+        "icon": "MapPin"
+      },
+      {
+        "title": "Local SEO for Craftsmen",
+        "text": "Top rankings on Google for search terms like 'roofer Wetzlar' or 'electrician Gießen'.",
+        "size": "tall",
+        "icon": "SEO"
+      }
+    ]
+  },
+  "processSteps_en": [
+    {
+      "title": "1. Strategy & Focus",
+      "description": "What jobs do you want? What employees are you looking for? We align the entire website exactly with your business goals."
+    },
+    {
+      "title": "2. Photography on the Construction Site",
+      "description": "Real craftsmanship instead of stock photos. We make your team and your work look authentic through professional shots."
+    },
+    {
+      "title": "3. Development & Design",
+      "description": "Programming a robust, extremely fast website that loads in milliseconds even on a smartphone at the construction site."
+    },
+    {
+      "title": "4. Local SEO Ranking",
+      "description": "Optimization of your Google profile so customers in your catchment area find you immediately when an emergency or construction project arises."
+    }
+  ],
+  "localDominance_en": {
+    "title": "Dominance within a 50km Radius",
+    "description": "In the trades, regional visibility is key. We optimize your site hyper-locally so you become the undisputed top dog in your region.",
+    "points": [
+      "Creation of dynamic landing pages for all relevant catchment areas",
+      "Building digital expert status through optimized reference descriptions",
+      "Massive increase in employer attractiveness in the region"
+    ]
+  },
+  "faq_en": [
+    {
+      "q": "We already have enough orders – why a new website?",
+      "a": "Because it's not just about orders. It's about *better* orders (higher margin) and especially about recruiting personnel. Top skilled workers today don't apply to companies that present themselves digitally like they did 20 years ago."
+    },
+    {
+      "q": "How do you specifically help us find employees?",
+      "a": "We build psychologically optimized career pages. We reduce application hurdles (e.g., application without a long cover letter, directly via smartphone) and perfectly present your advantages as an employer."
+    },
+    {
+      "q": "Can we upload pictures of new projects ourselves?",
+      "a": "Yes. You get access to an extremely easy-to-use system (without a complicated WordPress backend) with which you can upload pictures to your reference gallery directly from the construction site via mobile phone."
+    },
+    {
+      "q": "Does a premium website make us look too expensive for normal customers?",
+      "a": "No, you appear professional and reliable. Customers gladly pay fair prices for craftsmen who radiate seriousness and quality. The website also filters out customers who only look for the cheapest price."
+    },
+    {
+      "q": "Will we be found on Google in our city?",
+      "a": "That is our core promise. Through profound local SEO measures and lightning-fast loading times, we ensure that you are regionally at the top for search queries for your trades."
+    },
+    {
+      "q": "How much time do we as a company have to put into the project?",
+      "a": "Very little. We know that craftsmen are needed on the construction site. After an initial strategy conversation, we completely take over conception, design, texts, and programming (Full Service)."
+    }
+  ]
 }

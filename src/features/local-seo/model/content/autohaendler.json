@@ -5,6 +5,10 @@
     "title": "Webdesign Agentur für Premium Autohändler",
     "description": "Verkaufen Sie Fahrzeuge emotional online. Dominieren Sie den Markt mit atemberaubendem Webdesign für Autohäuser und Fahrzeughändler."
   },
+  "meta_en": {
+    "title": "Web Design Agency for Premium Car Dealers",
+    "description": "Exclusive web design for car dealerships. Boost test drive bookings, showcase premium vehicles, and drive sales with high-performance digital platforms."
+  },
   "hero": {
     "headline": "Digitale Showrooms die Fahrzeuge verkaufen.",
     "subheadline": "Emotionales Design. Maximale Geschwindigkeit. Unfaire Konversionsraten.",
@@ -22,6 +26,23 @@
       }
     ]
   },
+  "hero_en": {
+    "headline": "Digital showrooms that sell vehicles.",
+    "subheadline": "Emotional design. Maximum speed. Unfair conversion rates.",
+    "description": "Emotional design. Maximum speed. Unfair conversion rates. Your new website will become the best salesperson on your team.",
+    "metrics": [
+      {
+        "value": "300",
+        "label": "More test drive requests",
+        "suffix": "%"
+      },
+      {
+        "value": "0.8",
+        "label": "Seconds load time",
+        "suffix": "s"
+      }
+    ]
+  },
   "gamifiedStats": {
     "title": "Die teuersten Fehler im digitalen Autohandel",
     "description": "Ihre Fahrzeuge sind perfekt aufbereitet und Ihr... Wir optimieren jeden Aspekt Ihrer Onlinepräsenz, damit Besucher bleiben und zu Käufern werden.",
@@ -35,6 +56,22 @@
         "targetValue": 68,
         "suffix": "%",
         "label": "entscheiden basierend auf der digitalen Präsentation"
+      }
+    ]
+  },
+  "gamifiedStats_en": {
+    "title": "The most expensive mistakes in digital car sales",
+    "description": "Your vehicles are perfectly prepared and your... We optimize every aspect of your online presence so that visitors stay and become buyers.",
+    "counters": [
+      {
+        "targetValue": 95,
+        "suffix": "%",
+        "label": "start buying a car online today"
+      },
+      {
+        "targetValue": 68,
+        "suffix": "%",
+        "label": "decide based on digital presentation"
       }
     ]
   },
@@ -68,6 +105,36 @@
       }
     ]
   },
+  "bentoGrid_en": {
+    "title": "The web design architecture for car dealerships",
+    "subtitle": "Why our website development outperforms the competition.",
+    "cards": [
+      {
+        "title": "Cinematic design for maximum impact",
+        "text": "Vehicles must convince visually. We use large-scale layouts, perfect typography, and fluid animations to put your vehicle fleet in the absolute spotlight. Every detail of our website development is geared towards perfectly conveying the value of your vehicles.",
+        "size": "large",
+        "icon": "Design"
+      },
+      {
+        "title": "Hyperspeed image delivery",
+        "text": "No waiting for loading bars. Through state-of-the-art web development, even high-resolution vehicle images load in milliseconds on any smartphone. This massively reduces bounce rates.",
+        "size": "small",
+        "icon": "Speed"
+      },
+      {
+        "title": "Local search engine dominance",
+        "text": "When someone in your region searches for a specific model, they will land on your site. We build your site as an SEO fortress and ensure excellent visibility.",
+        "size": "small",
+        "icon": "SEO"
+      },
+      {
+        "title": "Smart lead machine",
+        "text": "From seamless evaluation for trade-ins to fully automated booking of test drives. We reduce all friction points and maximize digital inquiries through targeted web design.",
+        "size": "tall",
+        "icon": "Security"
+      }
+    ]
+  },
   "processSteps": [
     {
       "title": "Fahrzeug und Markenanalyse",
@@ -86,6 +153,24 @@
       "description": "Der finale Go Live Ihrer neuen Webseite. Ihre Plattform startet sofort durch, ist technisch fehlerfrei und beginnt unmittelbar damit, den Traf..."
     }
   ],
+  "processSteps_en": [
+    {
+      "title": "Vehicle and brand analysis",
+      "description": "We analyze your inventory, your target group and... This in-depth analysis forms the foundation for targeted website development."
+    },
+    {
+      "title": "Interface and web design",
+      "description": "We develop a digital... As part of our web design, every pixel is optimized to arouse desirability and absolute trust."
+    },
+    {
+      "title": "Interface integration",
+      "description": "We connect external vehicle exchanges... No manual maintenance, but fully automated synchronization with absolute technical high performance."
+    },
+    {
+      "title": "Performance launch and SEO",
+      "description": "The final go-live of your new website. Your platform takes off immediately, is technically flawless and begins immediately to generate traffic..."
+    }
+  ],
   "localDominance": {
     "title": "Erobern Sie das Monopol in Ihrer Region",
     "description": "Der Autohandel befindet sich in einem massiven Wan... Ein strategischer Webseiten Relaunch ist der erste entscheidende Schritt in diese Richtung.",
@@ -93,6 +178,15 @@
       "Deutliche Abgrenzung durch eine exklusive Premium Wahrnehmung",
       "Maximierung der Conversion Rate bei teuren lokalen Traffic Kampagnen",
       "Vollständige Automatisierung von wiederkehrenden Standard Kundenanfragen"
+    ]
+  },
+  "localDominance_en": {
+    "title": "Conquer the monopoly in your region",
+    "description": "The car trade is undergoing a massive change... A strategic website relaunch is the first decisive step in this direction.",
+    "points": [
+      "Clear differentiation through exclusive premium perception",
+      "Maximization of the conversion rate in expensive local traffic campaigns",
+      "Full automation of recurring standard customer inquiries"
     ]
   },
   "faq": [
@@ -137,8 +231,46 @@
       "a": "Ja, als vollumfängliche Webagentur lassen wir Sie nach dem Start nicht alleine. Wir bieten kontinuierliche technische Wartung, fortlaufende Suchmaschinenoptimierung und passen Ihr Webdesign bei Bedarf an neue Marktentwicklungen an. Ihr langfristiger digitaler Erfolg ist unser oberstes Ziel."
     }
   ],
-  "meta_en": {
-    "title": "Web Design Agency for Premium Car Dealers",
-    "description": "Exclusive web design for car dealerships. Boost test drive bookings, showcase premium vehicles, and drive sales with high-performance digital platforms."
-  }
+  "faq_en": [
+    {
+      "q": "Can our vehicles be automatically imported from common exchanges?",
+      "a": "Of course. During website development, we integrate powerful interfaces that synchronize your vehicle inventory in real-time. You maintain your cars in your system as usual, and our website presents them in breathtaking aesthetics, blazing fast, and optimally prepared for search engines."
+    },
+    {
+      "q": "Our car images currently load very slowly. Will a new web design improve this?",
+      "a": "We completely solve this problem with a website relaunch. Thanks to our modern website development, even high-resolution gallery images are intelligently compressed and delivered in fractions of a second. An absolutely fluid user experience is the key to significantly more sales and happy customers."
+    },
+    {
+      "q": "Is the investment in a professional web agency worth it for smaller dealers?",
+      "a": "More than ever. Especially as an independent vehicle dealer, you need to build enormous trust to compete against large brand branches. An extremely high-quality web design suggests seriousness, security, and the highest quality. Exactly these factors are decisive when buying a car today."
+    },
+    {
+      "q": "How do you help us generate more test drives through web design?",
+      "a": "We replace boring and error-prone contact forms with interactive, psychologically optimized processes. Our web design massively reduces the user's inhibition threshold and guides them playfully and with high conversion directly to the desired goal, such as booking a test drive."
+    },
+    {
+      "q": "Is the website you develop also optimized for smartphones?",
+      "a": "Optimized is the wrong word; we develop strictly according to the mobile-first approach. Well over 80 percent of your customers look for their next car on their smartphone. That is why, as part of our website development, we create a fluid experience that simply works perfectly on any mobile device."
+    },
+    {
+      "q": "Why should we choose your web agency?",
+      "a": "Many agencies use standardized builders and outdated templates. The result is a website that looks exactly like those of hundreds of other dealers. We offer custom website development and true high-end web design. With our solution, you become unique and uncopyable in your region."
+    },
+    {
+      "q": "Do you also offer the integration of tools for trade-ins?",
+      "a": "Absolutely. When we develop websites, we like to program custom-made and lightning-fast calculators as well as interactive forms for vehicle valuation. These tools directly generate valuable contacts for your sales team and tie the customer to your dealership at an early stage."
+    },
+    {
+      "q": "How do we improve our ranking in search engines for local search queries?",
+      "a": "The combination of the massive technical superiority of our website development, extremely fast loading times, and our perfect semantic structure ensures that search engines prefer your site. We specifically optimize your web design for ready-to-buy search queries in your specific region."
+    },
+    {
+      "q": "What does a complete website relaunch for our dealership include?",
+      "a": "A website relaunch by our web agency includes the complete redesign of your digital presence. Starting with a detailed target group analysis, through modern and sales-psychologically optimized web design, to flawless technical implementation and final search engine optimization. We ensure that your new website becomes a powerful tool for customer acquisition."
+    },
+    {
+      "q": "Do you also offer ongoing support after the website development?",
+      "a": "Yes, as a full-service web agency, we do not leave you alone after the launch. We offer continuous technical maintenance, ongoing search engine optimization, and adapt your web design to new market developments if necessary. Your long-term digital success is our top goal."
+    }
+  ]
 }

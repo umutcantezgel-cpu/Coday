@@ -39,8 +39,16 @@ export function generateAlternates(path: string): Metadata['alternates'] {
   const isEn = path.startsWith('/en');
   const canonicalPath = isEn ? enPath : dePath;
 
-  const localPathsRegex = /^\/(landingpages|webdesign-agentur-wetzlar|angebot-handwerker)(\/.*)?$/;
-  const isLocalPath = localPathsRegex.test(cleanPath);
+  const DE_ONLY_ROUTES = [
+    '/presse',
+    '/garantie',
+    '/partnerschaft',
+    '/legal/agb',
+    '/legal/datenschutz',
+    '/legal/impressum',
+  ];
+
+  const isDeOnly = DE_ONLY_ROUTES.includes(cleanPath);
   const isBlogPath = /^\/knowledge\/blog\/.+/.test(cleanPath);
 
   if (isBlogPath) {
@@ -57,7 +65,7 @@ export function generateAlternates(path: string): Metadata['alternates'] {
     'x-default': `${BASE_URL}${dePath}`,
   };
 
-  if (!isLocalPath) {
+  if (!isDeOnly) {
     languages.en = `${BASE_URL}${enPath}`;
   }
 

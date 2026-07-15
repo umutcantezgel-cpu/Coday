@@ -128,5 +128,125 @@
   "meta_en": {
     "title": "High End Practice Web Design for Doctors in Wetzlar",
     "description": "High-end practice web design for Doctors in Wetzlar by Agency Hesse. Gain private patients and automate your reception with digital solutions."
-  }
+  },
+  "hero_en": {
+    "headline": "The first address for demanding patients in Wetzlar.",
+    "subheadline": "Websites that acquire more clients",
+    "description": "Websites that win more clients: More private patients. Less phone chaos. Digital accessibility through perfect web design. Wetzlar is characterized by a high-purchasing-power,...",
+    "metrics": [
+      {
+        "value": "75",
+        "label": "Phone relief",
+        "suffix": "%"
+      },
+      {
+        "value": "150",
+        "label": "More inquiries for high-quality services",
+        "suffix": "%"
+      }
+    ]
+  },
+  "gamifiedStats_en": {
+    "title": "Your practice image is decided in milliseconds",
+    "description": "Health in the Lahn Dill district is a matter of absolute trust. When a patient from Wetzlar or the surrounding communities searches online for a special...",
+    "counters": [
+      {
+        "targetValue": 84,
+        "suffix": "%",
+        "label": "research the doctor online before booking the first appointment"
+      },
+      {
+        "targetValue": 72,
+        "suffix": "%",
+        "label": "switch doctors due to insufficient digital accessibility"
+      }
+    ]
+  },
+  "bentoGrid_en": {
+    "title": "The digital practice foundation",
+    "subtitle": "Why Wetzlar's top medical professionals trust us for website development.",
+    "cards": [
+      {
+        "title": "Accessible Professionalism",
+        "text": "As part of our web design, we create a trustworthy appearance with extremely good readability and clear contrasts, specifically optimized for an older patient demographic and their needs.",
+        "size": "large",
+        "icon": "Design"
+      },
+      {
+        "title": "Smart Reception Automation",
+        "text": "Intelligent and extremely simple processes for online appointment scheduling and digital prescription orders dramatically reduce annoying phone volume. This works even for patients who are not tech-savvy.",
+        "size": "tall",
+        "icon": "Speed"
+      },
+      {
+        "title": "Local Search Engine Dominance",
+        "text": "When patients in Wetzlar search for your specialty, you rank at the very top of search engines. We target your web design specifically towards lucrative treatments for the entire Lahn Dill district.",
+        "size": "small",
+        "icon": "SEO"
+      },
+      {
+        "title": "Absolute GDPR Security",
+        "text": "As an experienced web agency, we develop legally secure digital architectures that uncompromisingly protect the sensitive health data of private and statutory health insurance patients according to the strictest German guidelines.",
+        "size": "small",
+        "icon": "Security"
+      }
+    ]
+  },
+  "processSteps_en": [
+    {
+      "title": "Wetzlar Practice Audit and Goals",
+      "description": "We analyze your practice in detail. We develop the appropriate strategy for your website relaunch."
+    },
+    {
+      "title": "Medical Sales Psychological Design",
+      "description": "We design e... Absolute accessibility, large typography, and a calming aesthetic are the pillars of our first-class web design."
+    },
+    {
+      "title": "Technological Enterprise Integration",
+      "description": "We seamlessly connect the new website with your exist... through state-of-the-art website development. This is done absolutely securely and requires low maintenance."
+    },
+    {
+      "title": "Lahn Dill Rollout and Support",
+      "description": "After a successful go-live, we, as your personal web agency, ensure through continuous search engine optimization that your prac..."
+    }
+  ],
+  "localDominance_en": {
+    "title": "Undisputed medical authority in Wetzlar",
+    "description": "In Wetzlar and the greater Central Hesse region, a simple listing in doctor portals is no longer enough to establish yourself as a top expert for speci...",
+    "points": [
+      "Targeted and efficient acquisition of affluent private patients from the surrounding area",
+      "Clear positioning as the most modern and technically proficient practice in the city",
+      "Strong pull effect for highly qualified medical assistants in a depleted labor market"
+    ]
+  },
+  "faq_en": [
+    {
+      "q": "Our Wetzlar practice is already overcrowded anyway. Why do we need a new web design then?",
+      "a": "Mere quantity does not always equal the desired quality. If your waiting room is already bursting at the seams, an excellent website developed by our specialized web agency is your best filter. Through intelligent web design, you can deliberately shift the focus to private patients or highly lucrative individual health services, while radically relieving your staff through digital automation."
+    },
+    {
+      "q": "Our patients in Wetzlar are often a bit older. Can they even easily use an ultra-modern website?",
+      "a": "Professional web design is especially crucial for an older target group. Most older patients use smartphones on a daily basis now, but often fail due to confusing and much too small menus. During website development, we pay meticulous attention to building accessible interfaces that are extremely clear and so simple to use that truly any patient can use them without errors."
+    },
+    {
+      "q": "Is the practice website developed by you one hundred percent GDPR compliant?",
+      "a": "For our web agency, this goes absolutely without saying. In the medical sector, there is simply no room for errors when it comes to data protection. We host the data created during website development exclusively on strictly secured servers in Europe, completely forgo insecure third-party technologies, and implement the very highest security standards in every website relaunch."
+    },
+    {
+      "q": "Can you also help find new medical assistants in the Lahn Dill district through better web design?",
+      "a": "Yes, this is more important today than ever. The shortage of skilled workers in Central Hesse is immense. An outdated website looks unattractive and deters young, talented medical assistants. As part of the website development, we build a professional career page that presents your practice as an innovative, modern, and highly appreciative top employer in the Wetzlar area."
+    },
+    {
+      "q": "Why should we work with your agency for our website relaunch instead of a large mass-market doctors' agency?",
+      "a": "Many large doctors' agencies often use dusty standard templates. The result is a website that looks exactly like every other doctor's office in Wetzlar. We, on the other hand, bring tailor-made premium technology into the medical sector. Our web design ensures an exclusive and completely unique perception perfectly tailored to your practice philosophy."
+    },
+    {
+      "q": "Are there legal restrictions in website development due to the medical advertising ban?",
+      "a": "As a web agency, we are very familiar with the strict legal requirements of the Therapeutic Products Advertising Act (Heilmittelwerbegesetz). We write copy for you that is highly reputable, factually objective, and professional. Nevertheless, through deep sales-psychological principles, we manage to generate enormous trust among potential patients without appearing dubious or loud."
+    },
+    {
+      "q": "Our practice is located right in the center of Wetzlar. How long does it take after a website relaunch until we are at the very top of search engines?",
+      "a": "Thanks to our superior technological foundation and excellent on-page optimization, we secure the decisive performance advantage. In local search engine optimization for the Wetzlar region, we very often see massive leaps in digital visibility after just a few weeks. This is especially true for highly specific specialist treatments and lucrative services."
+    }
+  ]
 }

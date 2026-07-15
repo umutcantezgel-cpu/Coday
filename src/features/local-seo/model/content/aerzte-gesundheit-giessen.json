@@ -110,7 +110,7 @@
     },
     {
       "q": "Wir haben sehr strikte Vorgaben bezüglich Werbung für Ärzte. Berücksichtigen Sie das?",
-      "a": "Selbstverständlich. Wir kennen die komplexen juristischen Fallstricke des Heilmittelwerbegesetzes aus zahlreichen Projekten. Unser Copywriting im Rahmen der Webseitenentwicklung ist hochprofessionell, sachlich fundiert und weckt Vertrauen durch belegte Expertise, keinesfalls durch reißerische Versprechen."
+      "a": "Selbstverständlich. Wir kennen die complexen juristischen Fallstricke des Heilmittelwerbegesetzes aus zahlreichen Projekten. Unser Copywriting im Rahmen der Webseitenentwicklung ist hochprofessionell, sachlich fundiert und weckt Vertrauen durch belegte Expertise, keinesfalls durch reißerische Versprechen."
     },
     {
       "q": "Binden Sie bei der Webseitenentwicklung auch Systeme wie Doctolib oder Jameda ein?",
@@ -132,5 +132,129 @@
   "meta_en": {
     "title": "High End Practice Web Design for Doctors in Gießen",
     "description": "Premium medical web design for Doctors in Giessen by Agency Hesse. Attract private patients, streamline bookings, and dominate the local sector."
-  }
+  },
+  "hero_en": {
+    "headline": "Your practice as a medical beacon in Giessen.",
+    "subheadline": "Websites that acquire more clients",
+    "description": "Websites that acquire more clients: Excellent web design. Maximum visibility at the UKGM location. Fully automated patient guidance. In a university city like Giessen with...",
+    "metrics": [
+      {
+        "value": "200",
+        "label": "More online appointment bookings",
+        "suffix": "%"
+      },
+      {
+        "value": "50",
+        "label": "Time saved through automation",
+        "suffix": "%"
+      }
+    ]
+  },
+  "gamifiedStats_en": {
+    "title": "Are you losing the digital battle for patients?",
+    "description": "Patients in Giessen, especially the large student demographic, expect digital excellence. When they open your website on their smartphone...",
+    "counters": [
+      {
+        "targetValue": 88,
+        "suffix": "%",
+        "label": "research online in Giessen before their first visit"
+      },
+      {
+        "targetValue": 4,
+        "suffix": "Sec.",
+        "label": "decide whether a patient stays or leaves"
+      }
+    ]
+  },
+  "bentoGrid_en": {
+    "title": "The unfair advantage for your practice",
+    "subtitle": "Why our website development is the only logical choice for medical professionals in Giessen.",
+    "cards": [
+      {
+        "title": "Digital trust architecture",
+        "text": "We translate your medical brilliance into a clear and minimalist high-end web design. A tangible seriousness that reduces anxiety in younger patients and builds lasting trust.",
+        "size": "large",
+        "icon": "Design"
+      },
+      {
+        "title": "Digital triage and automation",
+        "text": "Intelligent funnels efficiently route standard requests like prescription orders and massively relieve your practice team. Our website development pushes digital practice workflows further.",
+        "size": "tall",
+        "icon": "Speed"
+      },
+      {
+        "title": "Local SEO dominance in Giessen",
+        "text": "We program platforms that are loved by search engines and inevitably rank in the top positions. Your excellent web design will also be excellently found.",
+        "size": "small",
+        "icon": "SEO"
+      },
+      {
+        "title": "One hundred percent legal certainty",
+        "text": "No warning traps. We guarantee absolute GDPR compliance, extremely secure hosting, and the protection of sensitive patient data according to the highest technical standards.",
+        "size": "small",
+        "icon": "Security"
+      }
+    ]
+  },
+  "processSteps_en": [
+    {
+      "title": "Giessen market analysis and strategy",
+      "description": "We analyze your specific specialty within the highly competitive Giessen market environment and identify the most lucrative search volumes in detail..."
+    },
+    {
+      "title": "Psychological web design",
+      "description": "No copy and paste. We create a completely independent practice identity that radiates absolute sovereignty, hygiene, and innovation, perfectly tailored..."
+    },
+    {
+      "title": "Enterprise website development",
+      "description": "Lightning-fast loading times, perfect mobile display, and seamless integration of your practice management or external booking systems are standard for us..."
+    },
+    {
+      "title": "Launch and scaling",
+      "description": "With the launch, we take over... We monitor, support, and secure your top positions in the long term through continuous search engine optimization."
+    }
+  ],
+  "localDominance_en": {
+    "title": "Become the undisputed authority at the UKGM",
+    "description": "In Giessen, with its university hospital and numerous established specialists, digital visibility is everything. You cannot rely solely on...",
+    "points": [
+      "Targeted control of the lucrative student and private patient streams",
+      "Building an extremely strong employer brand in a highly competitive personnel market",
+      "Massive advance of trust well before entering the practice premises"
+    ]
+  },
+  "faq_en": [
+    {
+      "q": "There are countless practices and the university hospital in Giessen. How can we stand out digitally with a new web design?",
+      "a": "Precisely because the competition in Giessen is so immense, visible differentiation is relatively easy. Almost ninety percent of the websites of practices in Giessen are technologically at the level of ten years ago. As a professional web agency, we combine state-of-the-art website development with high-end web design. This visual and technological contrast immediately catches the eye of demanding patients and the young student body."
+    },
+    {
+      "q": "Can we specifically attract more private patients or self-payers through the new website?",
+      "a": "Yes, that is one of the central approaches of our website development. Through strategic search engine optimization and psychologically thought-out landing pages, we position specific individual health services so elegantly that the demand is generated exactly from your desired target group."
+    },
+    {
+      "q": "How will my staff be relieved by the new website during peak times at the start of the semester?",
+      "a": "We integrate intelligent frequently asked questions, digital prescription requests, direct online appointment scheduling, and digital medical history forms into the web design. This drastically reduces the phone workload of your employees, as standard requests from students are handled fully automatically via the website."
+    },
+    {
+      "q": "We have very strict guidelines regarding advertising for doctors. Do you take this into account?",
+      "a": "Of course. We know the complex legal pitfalls of the Therapeutic Products Advertising Act from numerous projects. Our copywriting in the context of website development is highly professional, factually well-founded, and builds trust through proven expertise, never through sensational promises."
+    },
+    {
+      "q": "Do you also integrate systems like Doctolib or Jameda during website development?",
+      "a": "Yes, we seamlessly integrate every common online booking system into the new web design. The patient does not notice any break in the user experience during use, which enormously minimizes the abandonment rate during appointment booking and reliably fills your calendar."
+    },
+    {
+      "q": "Why should we invest in an individual web agency when there are cheap templates for doctors?",
+      "a": "Premium patients have a very fine sense for quality. Anyone who saves money on their digital outward appearance inevitably creates the impression of saving money in the wrong place in the practice as well. A standard template is slow, cumbersome, not customizable, and definitely not adapted to the special local market in Giessen."
+    },
+    {
+      "q": "Does the planned website relaunch also support us in recruiting personnel in Giessen?",
+      "a": "Absolutely. Giessen is a student city; young medical assistants today expect highly modern employers. An excellent digital presence, created by first-class web design, is by far the strongest argument today to convince qualified employees or young assistant doctors from the hospital of your practice."
+    },
+    {
+      "q": "How does the collaboration with your web agency work without disturbing our intensive daily practice routine?",
+      "a": "We work completely autonomously and independently. After a precise project start, we fully take over the conception, web design, copywriting, and the final website development. You receive regular interim status updates from us and only check the results, while you can continue to concentrate one hundred percent on treating your patients."
+    }
+  ]
 }

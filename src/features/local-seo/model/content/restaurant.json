@@ -124,5 +124,121 @@
   "meta_en": {
     "title": "Gastronomy Web Design Agency Wetzlar | Tischreservierung & SEO",
     "description": "Premium web design for restaurants and gastronomy. Drive more table reservations and visually capture the unique culinary atmosphere of your business."
-  }
+  },
+  "hero_en": {
+    "headline": "Digital appetite that fills tables.",
+    "subheadline": "More reservations. Emotional design. Local dominance.",
+    "description": "More reservations. We design gastronomy websites that make the taste and atmosphere of your establishment digitally tangible.",
+    "metrics": [
+      {
+        "value": "130",
+        "label": "More Online Reservations",
+        "suffix": "%"
+      },
+      {
+        "value": "0",
+        "label": "PDF Menus",
+        "suffix": ""
+      }
+    ]
+  },
+  "gamifiedStats_en": {
+    "title": "Why you are losing guests online",
+    "description": "Nothing frustrates hungry users more than illegible PDF menus on their mobile phone or endlessly searching for a phone number.",
+    "counters": [
+      {
+        "targetValue": 89,
+        "suffix": "%",
+        "label": "of guests research restaurants online before their first visit"
+      },
+      {
+        "targetValue": 65,
+        "suffix": "%",
+        "label": "leave websites where the menu is unreadable on smartphones"
+      }
+    ]
+  },
+  "bentoGrid_en": {
+    "title": "The digital menu for your success",
+    "subtitle": "How we make your restaurant irresistible online.",
+    "cards": [
+      {
+        "title": "Emotional Imagery",
+        "text": "We let the eyes feast too. Large-format, crisp close-ups and ambiance videos convey the mood of your restaurant directly to the guest.",
+        "size": "large",
+        "icon": "Design"
+      },
+      {
+        "title": "Online Table Reservations",
+        "text": "1-click reservations via OpenTable, Quandoo, or your own system. The phone rings less, the tables are full.",
+        "size": "small",
+        "icon": "Speed"
+      },
+      {
+        "title": "Digital Menus",
+        "text": "No more PDFs! We build interactive, SEO-optimized menus that perfectly adapt to any smartphone display.",
+        "size": "small",
+        "icon": "MapPin"
+      },
+      {
+        "title": "Gastronomy SEO",
+        "text": "We ensure you rank at the very top for search queries like 'Best Italian Wetzlar' or 'Breakfast Giessen'.",
+        "size": "tall",
+        "icon": "SEO"
+      }
+    ]
+  },
+  "processSteps_en": [
+    {
+      "title": "1. Concept & Atmosphere",
+      "description": "Fine dining, system gastronomy, or trendy bar? We capture the essence of your concept and turn it into a digital experience."
+    },
+    {
+      "title": "2. Food Photography",
+      "description": "Stock photos are a no-go. If desired, we organize a professional food shoot that does justice to your dishes."
+    },
+    {
+      "title": "3. Booking Integration",
+      "description": "Seamless integration of your reservation system to minimize the hurdle of booking for the user."
+    },
+    {
+      "title": "4. Go-Live & Local SEO",
+      "description": "Launch for your new website and optimization of your Google Profile (Google Maps) for maximum local visibility."
+    }
+  ],
+  "localDominance_en": {
+    "title": "Become the absolute must-visit location",
+    "description": "In gastronomy, smartphones decide... We systematically build your online presence into the strongest brand in your local gastronomy scene.",
+    "points": [
+      "Dominate rankings for target group-specific search queries (e.g., 'Steakhouse Wetzlar')",
+      "Perfect synchronization of Google Business Profile (reviews) and website",
+      "Focus on strong mobile performance for spontaneous 'search nearby' customers"
+    ]
+  },
+  "faq_en": [
+    {
+      "q": "Why do you advise against PDF menus?",
+      "a": "PDFs are the number one conversion killer on smartphones. Users have to zoom, scroll, and use up a lot of data. In addition, Google has a harder time reading text in PDFs (bad for SEO). We integrate interactive menus directly into the website."
+    },
+    {
+      "q": "Can we change our menu ourselves every day?",
+      "a": "Yes, absolutely. You receive a modern Headless CMS (Content Management System) that allows you to update daily specials, prices, or seasonal menus in seconds directly from your smartphone."
+    },
+    {
+      "q": "Do you integrate our reservation system (e.g., OpenTable, Quandoo)?",
+      "a": "We seamlessly integrate all standard systems via widgets or APIs. The guest remains visually on your premium website, while the booking securely lands in your system."
+    },
+    {
+      "q": "Can we also integrate online orders (Take-Away/Delivery)?",
+      "a": "Yes. If you want to become independent of Lieferando & Co. (and save the high commission fees), we integrate a custom, commission-free ordering and payment system."
+    },
+    {
+      "q": "Is the site also fast enough for mobile users on the go?",
+      "a": "Gastronomy searches mostly happen on the go via the mobile network. Thanks to our Next.js architecture, our pages load in milliseconds – a decisive advantage over competitors with slow WordPress themes."
+    },
+    {
+      "q": "Do you also help with staff recruiting (service/kitchen)?",
+      "a": "Yes. The staff shortage in gastronomy is enormous. We can build in special recruiting landing pages that present you as a fair, modern employer and enable quick 1-click applications."
+    }
+  ]
 }

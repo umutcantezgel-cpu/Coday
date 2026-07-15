@@ -110,11 +110,18 @@
       ],
       "title": "Common API Questions"
     },
+    "meta": {
+      "title": "API Integrations | Seamless System Connections",
+      "description": "We connect your systems. CRM, ERP, Payment, or Marketing – custom API integrations for maximum automation."
+    },
+    "deliverables": {
+      "title": "API Development Services Deliverables"
+    },
     "hero": {
-      "cta": "Request Integration",
+      "title_prefix": "API Integrations & Development Services for",
+      "title_suffix": "Automation.",
       "description": "We connect your system landscape with custom API Integrations. CRM, ERP, Payment, or Marketing tools – for seamless Automation.",
-      "title_prefix": "API Integrations &",
-      "title_suffix": "Automation."
+      "cta": "Request Integration"
     },
     "why_automate": {
       "description": "Stop manual data entry. Let machines do the work.",
@@ -137,10 +144,6 @@
         }
       },
       "title": "Why Automate?"
-    },
-    "meta": {
-      "title": "API Integration & System Connectivity | Coday Agency",
-      "description": "Seamless API integrations for CRM, ERP, Marketing, and Payment. We connect your software landscape for efficient, automated processes."
     },
     "seoText": {
       "title": "Digital Excellence for Your Success",
@@ -612,11 +615,18 @@
       ],
       "title": "Frequently Asked Questions about Headless"
     },
+    "meta": {
+      "title": "Headless CMS | Flexible Content Architecture",
+      "description": "Manage content centrally, deliver it anywhere. Specialized in Contentful, Sanity, and Strapi for modern web architectures."
+    },
+    "deliverables": {
+      "title": "Headless CMS Development Deliverables"
+    },
     "hero": {
-      "cta": "Get CMS Consultation",
+      "title_prefix": "Headless CMS Development &",
+      "title_suffix": "Content.",
       "description": "Manage your Content centrally with a Headless CMS, deliver it everywhere. We integrate Contentful, Sanity, and Strapi in modern frontends.",
-      "title_prefix": "Headless CMS &",
-      "title_suffix": "Content."
+      "cta": "Get CMS Consultation"
     },
     "process_visual": {
       "label": "The Headless Architecture",
@@ -653,10 +663,6 @@
         }
       },
       "title": "Why Headless?"
-    },
-    "meta": {
-      "title": "Headless CMS Agency | Sanity, Contentful & Strapi",
-      "description": "Maximum flexibility with Headless CMS. We implement future-proof content management systems for omnichannel publishing."
     },
     "seoText": {
       "title": "Digital Excellence for Your Success",
@@ -775,8 +781,9 @@
     },
     "hero": {
       "badge": "Speed Optimization",
+      "cta": "Analyze Performance",
       "description": "Every millisecond counts. We optimize your load times for maximum customer conversions, because Speed is Revenue.",
-      "title_prefix": "Pagespeed Optimization Agency",
+      "title_prefix": "Performance Optimization & Pagespeed:",
       "title_suffix": "Speed is Revenue."
     },
     "metrics": {
@@ -794,8 +801,8 @@
       ]
     },
     "meta": {
-      "title": "Pagespeed & Core Web Vitals Optimization | Coday",
-      "description": "We optimize your load times and Core Web Vitals for better Google rankings, higher conversion rates, and excellent user experience."
+      "title": "Performance Optimization | Maximum Pagespeed",
+      "description": "Every millisecond counts. We optimize your website's load times for better rankings and higher conversions. Speed is Revenue."
     },
     "seoText": {
       "title": "Digital Excellence for Your Success",
@@ -829,9 +836,10 @@
     },
     "hero": {
       "badge": "Search Engine Dominance",
+      "cta": "Get SEO Audit",
       "description": "Because Invisible is Irrelevant, we don't just get you to page 1, we keep you there. Technical optimization, content strategy, and authority building.",
-      "title_prefix": "Invisible is",
-      "title_suffix": "Irrelevant."
+      "title_prefix": "SEO Optimization Agency:",
+      "title_suffix": "Invisible is Irrelevant."
     },
     "ranking_factors": {
       "badge": "The Science of Search",
@@ -900,15 +908,14 @@
       "description": "We design digital experiences users love. From Wireframes to High-Fidelity Prototypes – we create interfaces that convert."
     },
     "deliverables": {
-      "items": [
-        "User Research Report",
-        "Wireframes (Low & High Fidelity)",
-        "Interactive Figma Prototypes",
-        "UI Design System & Components",
-        "Usability Test Results",
-        "Developer Handoff Documentation"
-      ],
-      "title": "What You Get"
+      "title": "UX/UI Design Services Deliverables"
+    },
+    "hero": {
+      "badge": "Design Services",
+      "title_prefix": "UI/UX Design Services that",
+      "title_suffix": "captivate.",
+      "description": "We create UI/UX Design that captivates, and digital experiences that users love and drive conversions. From wireframes to high-fidelity prototypes.",
+      "cta": "Request Design"
     },
     "faq": {
       "items": [
@@ -926,13 +933,6 @@
         }
       ],
       "title": "Design FAQ"
-    },
-    "hero": {
-      "badge": "Design Services",
-      "cta": "Request Design",
-      "description": "We create UI/UX Design that captivates, and digital experiences that users love and drive conversions. From wireframes to high-fidelity prototypes.",
-      "title_prefix": "UI/UX Design that",
-      "title_suffix": "captivates."
     },
     "process": {
       "description": "Our proven design process ensures we build the right thing, beautifully.",
@@ -1084,11 +1084,18 @@
       },
       "title": "Technology that Grows"
     },
+    "meta": {
+      "title": "Web App Development | SaaS & Portals",
+      "description": "Custom web apps and SaaS platforms. Scalable, secure, and performant solutions for complex business processes."
+    },
+    "deliverables": {
+      "title": "Web Apps Development Deliverables"
+    },
     "hero": {
-      "cta": "Discuss Project",
+      "title_prefix": "SaaS & Web Apps",
+      "title_suffix": "Development.",
       "description": "We develop custom software, complex web applications, dashboards, and SaaS platforms. Scalable, secure, and user-friendly.",
-      "title_prefix": "SaaS &",
-      "title_suffix": "Custom Software."
+      "cta": "Discuss Project"
     },
     "integration_network": {
       "description": "No island solutions. Our software speaks fluently with your existing infrastructure. CRM, ERP, Payment, or AI.",

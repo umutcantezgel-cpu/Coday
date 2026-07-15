@@ -132,5 +132,129 @@
   "meta_en": {
     "title": "High End Web Design for Craftsmen in Wetzlar",
     "description": "High-end web design for craftsmen in Wetzlar. Gain premium industrial contracts and attract tradespeople through a stellar digital presence."
-  }
+  },
+  "hero_en": {
+    "headline": "The digital foundation for Wetzlar's best craftsmen.",
+    "subheadline": "Websites that win more customers",
+    "description": "Websites that win more customers: More industrial contracts. Better private clients. Absolute market leadership through outstanding web design. Wetzlar is an enormously powerful un...",
+    "metrics": [
+      {
+        "value": "250",
+        "label": "More inquiries for lucrative large-scale projects",
+        "suffix": "%"
+      },
+      {
+        "value": "1",
+        "label": "The absolute first choice for Wetzlar's builders",
+        "suffix": ""
+      }
+    ]
+  },
+  "gamifiedStats_en": {
+    "title": "How many lucrative contracts in Central Hesse are you losing daily?",
+    "description": "In the entire Lah... With modern website development, you can pick up exactly these valuable customers directly before they migrate to the competition.",
+    "counters": [
+      {
+        "targetValue": 94,
+        "suffix": "%",
+        "label": "research the right craftsman online before first contact"
+      },
+      {
+        "targetValue": 65,
+        "suffix": "%",
+        "label": "are gladly willing to pay significantly higher hourly rates for a more professional appearance"
+      }
+    ]
+  },
+  "bentoGrid_en": {
+    "title": "The Coday Method for the Craft",
+    "subtitle": "Why Wetzlar craft businesses become unbeatable with our website development.",
+    "cards": [
+      {
+        "title": "Strong visual authority",
+        "text": "As part of the web design, we put your excellent local reference projects perfectly in the spotlight. A strong, clear design that radiates maximum competence, reliability, and precision, matching the high Wetzlar industrial standard.",
+        "size": "large",
+        "icon": "Design"
+      },
+      {
+        "title": "Automated Lead Filtering",
+        "text": "Never waste valuable time again on unprofitable and annoying small jobs. Smart digital processes effectively filter out uninteresting customers and deliver exclusively pre-qualified builders.",
+        "size": "tall",
+        "icon": "Security"
+      },
+      {
+        "title": "Extreme digital performance",
+        "text": "Craftsmen websites are often full of large and slow images. We use state-of-the-art architectures in website development. Your site loads extremely fast on any mobile device throughout the entire Lahn-Dill district.",
+        "size": "small",
+        "icon": "Speed"
+      },
+      {
+        "title": "Local Search Engine Dominance",
+        "text": "Whether an experienced roofer or competent electrician, our specialized web agency permanently ensures that you rank undisputed at the top for relevant search queries in Wetzlar.",
+        "size": "small",
+        "icon": "SEO"
+      }
+    ]
+  },
+  "processSteps_en": [
+    {
+      "title": "Wetzlar Strategy and Target Group Focus",
+      "description": "Do you want to specifically take on more exclusive industrial renovations in the Leitz Park... We align the entire website relaunch exactly to this."
+    },
+    {
+      "title": "High End Web Design and Sales Psychology",
+      "description": "Through professional web design, we create a digital appearance that excellently represent... the strong and reliable craft."
+    },
+    {
+      "title": "Advanced Enterprise Programming",
+      "description": "Our web agency never messes around with outdated modular systems. During website development, we program with absolutely moder..."
+    },
+    {
+      "title": "Local Dominance and Measurable Scaling",
+      "description": "Your online visibility among affluent Wetzlar builders grows steadily, your qualified inquiries increase exponentially, and your overa..."
+    }
+  ],
+  "localDominance_en": {
+    "title": "The absolute market leader in the Lahn-Dill district",
+    "description": "Very good and reliable craftsmen in Wetzlar are... A website relaunch ensures the necessary attention of the best customers in the region.",
+    "points": [
+      "Significant increase in the successful enforceability of significantly higher hourly rates with major customers",
+      "Building a strongly magnetic digital employer brand against the ubiquitous local shortage of skilled workers",
+      "Continuous and automated generation of valuable inquiries for your absolute most lucrative desired services"
+    ]
+  },
+  "faq_en": [
+    {
+      "q": "As a craft business in Wetzlar, we are already fully booked for many months. Why do we even need a new web design?",
+      "a": "If you are completely booked out, right now is the perfect time for a digital upgrade by a specialized web agency. A professional website relaunch doesn't just bring you more work across the board, but primarily significantly better and more lucrative work. Through high-quality web design, you position yourself crystal clear in the absolute premium segment and can easily demand much higher prices and hourly rates in Wetzlar's strong economy."
+    },
+    {
+      "q": "We simply cannot find qualified skilled workers right now. Can excellent website development help with digital recruiting?",
+      "a": "This is absolutely the case. In a strong industrial city like Wetzlar, as a classic craftsman, you compete daily with very large international corporations for rare young talents. An outstandingly designed website with an extremely strong and appealing career page is by far your best and most reliable salesperson in the tough fight for the best journeymen and master craftsmen in the entire Lahn-Dill district."
+    },
+    {
+      "q": "As an entrepreneur, I really have no free time to deal with complex texts or images. Is that a problem for the website relaunch?",
+      "a": "No, that is not a problem at all. We act for you as a holistic web agency. We write all sales-psychologically optimized texts completely ourselves and, if required, we are also happy to organize highly professional photoshoots on your best construction sites in and around Wetzlar. You simply continue to focus on your demanding craft and we focus with full commitment on our work in web design."
+    },
+    {
+      "q": "Why shouldn't we simply make a very cheap website ourselves with a website builder?",
+      "a": "Quite simply, because you probably wouldn't seriously recommend to your valued customers to just repair the complex electrical system or the roof in their own house themselves. Website builder pages are technologically inferior, extremely slow, rank disastrously on search engines, and also radiate a clear lack of professionalism. Such an amateurish approach costs you cash every day and leaves lucrative premium contracts simply uncontested to your regional competition."
+    },
+    {
+      "q": "How quickly will we be found better on search engines in Wetzlar after the website development?",
+      "a": "Our extremely performant technical basis in website development always offers you the ultimate advantage in local search engine optimization. For regional search terms, we often see very significant and sustainable leaps in digital visibility after just a few weeks. Our targeted web design massively supports this exceedingly positive effect."
+    },
+    {
+      "q": "How does a professional web agency help me to fend off annoying and unprofitable price inquiries from the outset?",
+      "a": "During the website relaunch, we integrate intelligent and highly multi-stage digital contact forms. Anyone who is only looking for the cheapest craftsman in town will break off here immediately anyway. However, anyone looking for genuine Wetzlar quality will fill out the form completely. This way, from now on, only excellently pre-qualified and truly interesting premium inquiries land directly on your desk."
+    },
+    {
+      "q": "Is your web agency more expensive to implement than classic regional agencies in Wetzlar?",
+      "a": "We do not focus on extremely cheap standard solutions, but rather we rely on uncompromising and outstanding quality in website development. Our focus is on an extremely high long-term benefit for demanding craftsmen. He who buys cheap, usually buys twice. Anyone who invests in excellent web design with us, invests sustainably in absolute market leadership in the Wetzlar area and throughout Central Hesse."
+    },
+    {
+      "q": "Do I need constant and expensive updates or even maintenance contracts for my new web design?",
+      "a": "No. In absolute contrast to vulnerable and often insecure systems, our digital infrastructure is completely maintenance-free and built extremely securely. The entire system runs permanently enormously stable and always blazingly fast, without you incurring any hidden or nasty running costs for updates or security patches. Our web agency always stands for a fair and highly transparent business model without any nasty surprises."
+    }
+  ]
 }

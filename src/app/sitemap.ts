@@ -106,7 +106,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     sitemapEntry('/pricing', { changeFrequency: 'monthly', priority: 0.9 }),
     sitemapEntry('/process', { changeFrequency: 'monthly', priority: 0.7 }),
     sitemapEntry('/work', { changeFrequency: 'monthly', priority: 0.8 }),
-    sitemapEntry('/webdesign-agentur-wetzlar', { changeFrequency: 'monthly', priority: 0.9 }),
     sitemapEntry('/angebot-handwerker', { changeFrequency: 'monthly', priority: 0.8 }),
 
     // === Services ===
@@ -221,15 +220,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     sitemapEntry('/branchen/immobilien', { changeFrequency: 'monthly', priority: 0.7 }),
     sitemapEntry('/branchen/public-sector', { changeFrequency: 'monthly', priority: 0.6 }),
     sitemapEntry('/branchen/retail', { changeFrequency: 'monthly', priority: 0.6 }),
-
-    // === Landingpages (City-specific) ===
-    sitemapEntry('/landingpages/wetzlar', { changeFrequency: 'monthly', priority: 0.8 }),
-    sitemapEntry('/landingpages/giessen', { changeFrequency: 'monthly', priority: 0.7 }),
-    sitemapEntry('/landingpages/marburg', { changeFrequency: 'monthly', priority: 0.7 }),
-    sitemapEntry('/landingpages/dillenburg', { changeFrequency: 'monthly', priority: 0.6 }),
-    sitemapEntry('/landingpages/herborn', { changeFrequency: 'monthly', priority: 0.6 }),
-    sitemapEntry('/landingpages/weilburg', { changeFrequency: 'monthly', priority: 0.6 }),
-    sitemapEntry('/landingpages/localwetzlar', { changeFrequency: 'monthly', priority: 0.7 }),
 
     // === Knowledge ===
     sitemapEntry('/knowledge/blog', { changeFrequency: 'weekly', priority: 0.7 }),

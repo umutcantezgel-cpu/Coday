@@ -124,5 +124,121 @@
   "meta_en": {
     "title": "Fitnessstudio Web Design Agency Wetzlar | Mitgliedergewinnung",
     "description": "High-performance web design for gyms and fitness studios. Generate trial session leads and automate member acquisitions with a dynamic, fast-loading website."
-  }
+  },
+  "hero_en": {
+    "headline": "Your website as a digital sales representative.",
+    "subheadline": "More trial sessions. Better members. Maximum capacity.",
+    "description": "We build fitness studio websites that digitize the vibe of your studio and convert visitors directly into trial sessions.",
+    "metrics": [
+      {
+        "value": "200",
+        "label": "More leads for trial sessions",
+        "suffix": "%"
+      },
+      {
+        "value": "3",
+        "label": "Clicks to a booked appointment",
+        "suffix": " max."
+      }
+    ]
+  },
+  "gamifiedStats_en": {
+    "title": "The fitness industry is ruthlessly digital",
+    "description": "The decision for a studio is made today on the couch via smartphone.",
+    "counters": [
+      {
+        "targetValue": 84,
+        "suffix": "%",
+        "label": "of fitness enthusiasts primarily inform themselves online"
+      },
+      {
+        "targetValue": 71,
+        "suffix": "%",
+        "label": "abort when online appointment booking is too complicated"
+      }
+    ]
+  },
+  "bentoGrid_en": {
+    "title": "Digital muscles for your studio",
+    "subtitle": "How we acquire members on autopilot.",
+    "cards": [
+      {
+        "title": "High Energy Design",
+        "text": "We transport sweat, motivation, and community. Large-scale videos and dynamic animations make people want to work out.",
+        "size": "large",
+        "icon": "Design"
+      },
+      {
+        "title": "Seamless Appointment Booking",
+        "text": "The hurdle for a trial session must approach zero. We integrate scheduling tools (e.g., Calendly, eFit, Magicline) for direct 1-click bookings.",
+        "size": "small",
+        "icon": "Speed"
+      },
+      {
+        "title": "Member Portal",
+        "text": "Integration of class schedules, real-time capacity displays, and trainer profiles for maximum transparency.",
+        "size": "small",
+        "icon": "MapPin"
+      },
+      {
+        "title": "Performance Marketing Ready",
+        "text": "Perfectly tuned landing pages for your Facebook or Google Ads campaigns. Lightning-fast loading and highly converting.",
+        "size": "tall",
+        "icon": "SEO"
+      }
+    ]
+  },
+  "processSteps_en": [
+    {
+      "title": "1. Positioning Workshop",
+      "description": "Premium club, discounter, or boutique studio? We analyze your target audience and sharply differentiate you from competitors."
+    },
+    {
+      "title": "2. Visual Identity & UX",
+      "description": "Development of an interface that radiates energy. Focus on the most important conversion path: the trial session."
+    },
+    {
+      "title": "3. Software Integration",
+      "description": "Connection with your studio management software for live class schedules and lead synchronization without manual effort."
+    },
+    {
+      "title": "4. Go Live & Scaling",
+      "description": "Launch of the lightning-fast website and the starting signal for your digital campaigns to acquire new customers."
+    }
+  ],
+  "localDominance_en": {
+    "title": "Dominate your catchment area",
+    "description": "Through targeted Local SEO and highly converting landing pages, we ensure that no one in your region can overlook your studio.",
+    "points": [
+      "Dominance in searches like 'gym Wetzlar' or 'personal training near me'",
+      "Building expert status through fitness and nutrition content",
+      "Significant reduction of Customer Acquisition Cost (CAC) through strong organic reach"
+    ]
+  },
+  "faq_en": [
+    {
+      "q": "Can we integrate our studio software (e.g., Magicline, eFit)?",
+      "a": "Yes. We seamlessly integrate common management software via their APIs. Class schedules, capacity, and trial session bookings are synchronized automatically without the user having to leave your website."
+    },
+    {
+      "q": "How fast does the new site load on a smartphone?",
+      "a": "Thanks to our Next.js architecture, even screen-filling video backgrounds from the training area load in a fraction of a second. Google rewards this speed with top rankings."
+    },
+    {
+      "q": "Do you also create landing pages for specific campaigns (e.g., New Year's offers)?",
+      "a": "Absolutely. Through our integrated Headless CMS (e.g., Sanity), you or your marketing team can independently assemble new promotional landing pages via drag & drop within minutes – naturally in the specified high-end design."
+    },
+    {
+      "q": "Do we absolutely need professional photos/videos from our studio?",
+      "a": "We highly recommend it. Stock photos of models who are obviously not working out in your studio immediately destroy authenticity. If desired, we can organize a professional photoshoot in your studio."
+    },
+    {
+      "q": "Will we be found better on Google?",
+      "a": "Our websites are technically optimized for search engines from the ground up. Additionally, we implement schema data (LocalBusiness), optimize your Google Business Profile, and structure your content so that you dominate locally."
+    },
+    {
+      "q": "What is the investment for a new studio website?",
+      "a": "That depends on the complexity (number of interfaces, member area, etc.). However, a high-quality website is the most profitable marketing instrument. Through more leads, the project often pays for itself within a few months."
+    }
+  ]
 }

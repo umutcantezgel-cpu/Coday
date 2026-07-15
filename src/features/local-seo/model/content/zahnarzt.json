@@ -122,7 +122,123 @@
     }
   ],
   "meta_en": {
-    "title": "Zahnarzt Web Design Agency Wetzlar | Patienten for Ihre Practice",
+    "title": "Dentist Web Design Agency Wetzlar | Patients for Your Practice",
     "description": "High-end web design for dentists and orthodontists. Increase lucrative private treatments and streamline your practice with digital appointment scheduling."
-  }
+  },
+  "hero_en": {
+    "headline": "The digital smile of your practice.",
+    "subheadline": "More private patients. Less administration. Premium image.",
+    "description": "More private patients. Less administration. Premium image. Patients are often afraid of visiting the dentist. If your website looks cold, outdated...",
+    "metrics": [
+      {
+        "value": "150",
+        "label": "More inquiries for private treatments",
+        "suffix": "%"
+      },
+      {
+        "value": "60",
+        "label": "Less time spent at the reception",
+        "suffix": "%"
+      }
+    ]
+  },
+  "gamifiedStats_en": {
+    "title": "Why you lose lucrative treatments to competitors",
+    "description": "When it comes to high-quality implants or veneers, patients do their research... A website that doesn't radiate premium quality disqualifies you immediately.",
+    "counters": [
+      {
+        "targetValue": 82,
+        "suffix": "%",
+        "label": "of patients choose practices with modern websites"
+      },
+      {
+        "targetValue": 74,
+        "suffix": "%",
+        "label": "prefer to book prophylaxis appointments online"
+      }
+    ]
+  },
+  "bentoGrid_en": {
+    "title": "The digital practice architecture",
+    "subtitle": "How we digitize your patient acquisition process.",
+    "cards": [
+      {
+        "title": "Trust-building Design",
+        "text": "Warm colors, bright rooms, and professional team photos. We design a digital practice that radiates professionalism and empathy.",
+        "size": "large",
+        "icon": "Design"
+      },
+      {
+        "title": "Secure Appointment Booking",
+        "text": "Seamless integration of Doctolib or Jameda. Patients book professional teeth cleaning or check-ups themselves – directly into your practice software.",
+        "size": "small",
+        "icon": "Speed"
+      },
+      {
+        "title": "Digital Anamnesis",
+        "text": "Patients fill out medical history forms comfortably at home (GDPR compliant). No more paperwork in the waiting room.",
+        "size": "small",
+        "icon": "MapPin"
+      },
+      {
+        "title": "Medical SEO",
+        "text": "Dominant Google placement for highly profitable keywords like 'dental implants Wetzlar' or 'anxiety patients dentist'.",
+        "size": "tall",
+        "icon": "SEO"
+      }
+    ]
+  },
+  "processSteps_en": [
+    {
+      "title": "1. Positioning & USP",
+      "description": "Are you a specialist in implantology, pediatric dentistry, or aesthetics? We perfectly highlight your main focus."
+    },
+    {
+      "title": "2. Premium Practice Photography",
+      "description": "Reducing anxiety through transparency. We provide professional, sympathetic pictures of your team and treatment rooms."
+    },
+    {
+      "title": "3. Software Integration",
+      "description": "We securely connect your website with your practice management software for appointments and digital forms."
+    },
+    {
+      "title": "4. Launch & Patient Acquisition",
+      "description": "The website goes online, and we optimize your Google profile for maximum local visibility in your catchment area."
+    }
+  ],
+  "localDominance_en": {
+    "title": "Become the number one for private treatments",
+    "description": "Normal statutory health insurance services bring you to your capacity limit, but high-quality private services (Invisalign, implants, bleaching) ensure...",
+    "points": [
+      "Focus landing pages for high-ticket services (e.g. All-on-4 implants)",
+      "Building expert status through patient guides and FAQs",
+      "Massive reduction of practice calls through 24/7 online booking"
+    ]
+  },
+  "faq_en": [
+    {
+      "q": "Is the integration of online appointments GDPR compliant?",
+      "a": "Yes. We integrate systems like Doctolib, Jameda, or samedi in a privacy-compliant manner. Patient data flows securely encrypted into your system without intermediate storage on the website."
+    },
+    {
+      "q": "How can we better address anxiety patients?",
+      "a": "Through transparency and empathy in design. We avoid off-putting treatment pictures. Instead, we show your sympathetic team, bright rooms, and explain methods for anxiety-free treatment (e.g. laughing gas, general anesthesia) clearly and reassuringly."
+    },
+    {
+      "q": "Does the website also help with finding dental assistants (ZFA)?",
+      "a": "The shortage of skilled workers is a massive problem in practices. We specifically integrate career pages that highlight your practice's benefits (further training, team events, fair pay) and enable a quick short application via smartphone."
+    },
+    {
+      "q": "Why do many practice websites load so slowly?",
+      "a": "Often, huge images are not optimized or outdated website builders are used. We develop with Next.js – your new practice website will load in milliseconds, which Google rewards with better rankings."
+    },
+    {
+      "q": "Do you also write medical texts?",
+      "a": "We take over the SEO structuring and write appealing texts that are medically correct but easy for patients to understand (no technical jargon). Alternatively, we work with your texts."
+    },
+    {
+      "q": "We already have many patients, why do we need a premium website?",
+      "a": "To attract the *right* patients. When your practice is full, it's often about increasing the proportion of private treatments. A premium design justifies premium quality and filters out patients who are only looking for basic insurance services."
+    }
+  ]
 }

@@ -124,5 +124,121 @@
   "meta_en": {
     "title": "Real Estate Broker/Agent Web Design Agency Wetzlar | Property Marketing",
     "description": "Premium web design for real estate agents. Generate more seller leads, showcase properties emotionally, and build a reputable digital brand."
-  }
+  },
+  "hero_en": {
+    "headline": "Exclusive digital real estate marketing.",
+    "subheadline": "More seller leads. Faster placements. Premium image.",
+    "description": "More seller leads. We build digital real estate offices that radiate reliability, local market expertise, and absolute professionalism.",
+    "metrics": [
+      {
+        "value": "180",
+        "label": "More seller leads",
+        "suffix": "%"
+      },
+      {
+        "value": "1",
+        "label": "Second loading time for 4K listings",
+        "suffix": " max."
+      }
+    ]
+  },
+  "gamifiedStats_en": {
+    "title": "Why you are losing owners to the competition",
+    "description": "Property owners nowadays research agents intensively online before... If digital sovereignty is lacking, you are immediately eliminated from the selection process.",
+    "counters": [
+      {
+        "targetValue": 88,
+        "suffix": "%",
+        "label": "of sellers compare agent websites before getting in touch"
+      },
+      {
+        "targetValue": 75,
+        "suffix": "%",
+        "label": "of buyers are frustrated by slow, confusing online listings"
+      }
+    ]
+  },
+  "bentoGrid_en": {
+    "title": "Architecture for your digital success",
+    "subtitle": "How to dominate the local real estate market.",
+    "cards": [
+      {
+        "title": "Immersive Listings",
+        "text": "Present properties like luxury goods. With blazing fast 4K galleries, 3D tours, and cinematic video integrations.",
+        "size": "large",
+        "icon": "Design"
+      },
+      {
+        "title": "Automated Valuation",
+        "text": "Generate leads on autopilot through interactive online valuation tools directly on your website.",
+        "size": "small",
+        "icon": "Speed"
+      },
+      {
+        "title": "API Interfaces",
+        "text": "Seamless connection to your real estate software (onOffice, FlowFact) for automatic property import without double entry.",
+        "size": "small",
+        "icon": "MapPin"
+      },
+      {
+        "title": "Local SEO for Agents",
+        "text": "We position you on Google as the top dog for search queries like 'sell house Wetzlar' or 'real estate agent Gießen'.",
+        "size": "tall",
+        "icon": "SEO"
+      }
+    ]
+  },
+  "processSteps_en": [
+    {
+      "title": "1. Positioning Strategy",
+      "description": "We carve out your Unique Selling Proposition (USP). Why should an owner entrust their house to you?"
+    },
+    {
+      "title": "2. High-End UI Design",
+      "description": "We design an interface that conveys luxury and reliability – with perfect typography and a spacious layout."
+    },
+    {
+      "title": "3. Software Integration",
+      "description": "Connection of your existing real estate tools and setup of the lead generation funnels (property valuation)."
+    },
+    {
+      "title": "4. Launch & SEO Optimization",
+      "description": "The website goes live. We optimize your Google profile and start the Local SEO strategy for lead acquisition."
+    }
+  ],
+  "localDominance_en": {
+    "title": "Become the top dog in your region",
+    "description": "Real estate... We equip you with a website that is technically and visually so strong that competitors in your region will be left behind.",
+    "points": [
+      "Strong building of local trust through optimized team and reference pages",
+      "Generation of high-quality owner leads without expensive portal costs",
+      "Standing out from the standard uniformity through true premium design"
+    ]
+  },
+  "faq_en": [
+    {
+      "q": "Do we have to enter properties twice (website & software)?",
+      "a": "No. We integrate powerful interfaces (e.g., OpenImmo, onOffice API). You maintain properties once in your real estate software, and they automatically and immediately appear perfectly on your new website."
+    },
+    {
+      "q": "Do you offer tools for online property valuation?",
+      "a": "Yes, we integrate interactive lead magnets (valuation tools). These psychologically optimized funnels collect contact details from potential sellers even before they have decided on an agent."
+    },
+    {
+      "q": "Why do our high-resolution property images currently load so slowly?",
+      "a": "Classic CMS like WordPress often compress images poorly. We use Next.js Image Optimization and Edge Caching. This way, even gallery images in 4K quality load on smartphones in fractions of a second."
+    },
+    {
+      "q": "Is the website optimized for mobile devices?",
+      "a": "Over 80% of property searches start on a smartphone. We rigorously develop 'Mobile First'. Your listings can be operated like a modern, fluid app."
+    },
+    {
+      "q": "How can we be found better on Google?",
+      "a": "The Google algorithm loves extremely fast loading times and semantically clean code – both are our trademark. Additionally, we implement specific Local SEO and real estate schema data for top rankings."
+    },
+    {
+      "q": "Do you also create landing pages for new construction projects?",
+      "a": "Absolutely. For large marketing projects, we build dedicated project landing pages with interactive floor plans and project branding based on your main website."
+    }
+  ]
 }

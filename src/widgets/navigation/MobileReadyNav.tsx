@@ -299,36 +299,30 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
               title={t('nav.local.title')}
               items={[
                 { label: t('nav.local.hessen'), href: '/standorte/hessen' },
-                { label: t('nav.local.wetzlar'), href: '/webdesign-agentur-wetzlar', locale: 'de' },
+                { label: t('nav.local.wetzlar'), href: '/webdesign-agentur-wetzlar' },
                 {
                   label: t('nav.local.arzt_wetzlar'),
                   href: '/branchen/gesundheitswesen/arzt-wetzlar',
-                  locale: 'de',
                 },
                 {
                   label: t('nav.local.arzt_giessen'),
                   href: '/branchen/gesundheitswesen/arzt-giessen',
-                  locale: 'de',
                 },
                 {
                   label: t('nav.local.handwerker_wetzlar'),
                   href: '/branchen/handwerker/wetzlar',
-                  locale: 'de',
                 },
                 {
                   label: t('nav.local.kfz_werkstatt'),
                   href: '/branchen/automobil/kfz-werkstatt',
-                  locale: 'de',
                 },
                 {
                   label: t('nav.local.kfz_mechatroniker'),
                   href: '/branchen/automobil/kfz-mechatroniker',
-                  locale: 'de',
                 },
                 {
                   label: t('nav.local.autohaendler'),
                   href: '/branchen/automobil/autohaendler',
-                  locale: 'de',
                 },
               ]}
             />

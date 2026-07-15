@@ -122,7 +122,123 @@
     }
   ],
   "meta_en": {
-    "title": "Physiotherapie Web Design Agency Wetzlar | Patienten gewinnen",
-    "description": "Professional web design for physiotherapy practices. Reduce phone calls with automated bookings and showcase your medical expertise effectively."
-  }
+    "title": "Physiotherapy Web Design Agency Wetzlar | Attract More Patients",
+    "description": "Premium web design for physiotherapy practices. Reduce phone calls with automated bookings and showcase your medical expertise effectively online."
+  },
+  "hero_en": {
+    "headline": "Your digital clinic for more private patients.",
+    "subheadline": "Fewer phone calls. Better capacity utilization. Premium positioning.",
+    "description": "Fewer phone calls. We build practice websites that highlight your expertise and significantly relieve everyday clinic life.",
+    "metrics": [
+      {
+        "value": "40",
+        "label": "Fewer calls at the reception",
+        "suffix": "%"
+      },
+      {
+        "value": "100",
+        "label": "GDPR compliant processes",
+        "suffix": "%"
+      }
+    ]
+  },
+  "gamifiedStats_en": {
+    "title": "Why analog practices reach their limits",
+    "description": "The phone rings non-stop while therapists are actually trying to work with patients... This inefficiency costs practices money and nerves every single day.",
+    "counters": [
+      {
+        "targetValue": 68,
+        "suffix": "%",
+        "label": "of patients prefer to book appointments online"
+      },
+      {
+        "targetValue": 45,
+        "suffix": "%",
+        "label": "less administrative effort through digital medical history forms"
+      }
+    ]
+  },
+  "bentoGrid_en": {
+    "title": "Healthy processes for your practice",
+    "subtitle": "How we relieve your team and delight patients.",
+    "cards": [
+      {
+        "title": "Trustworthy Design",
+        "text": "Medical seriousness meets warm, inviting design. We present your team and premises in a friendly and professional manner.",
+        "size": "large",
+        "icon": "Design"
+      },
+      {
+        "title": "Online Appointment Booking",
+        "text": "Seamless integration of Doctolib, Samedi, or other practice software for direct, secure bookings.",
+        "size": "small",
+        "icon": "Speed"
+      },
+      {
+        "title": "Digital Medical History",
+        "text": "Secure (GDPR compliant) forms allow patients to fill out questionnaires digitally before their appointment.",
+        "size": "small",
+        "icon": "MapPin"
+      },
+      {
+        "title": "Local Visibility",
+        "text": "You will be found immediately for searches like 'physiotherapy Wetzlar' or 'manual therapy near me'.",
+        "size": "tall",
+        "icon": "SEO"
+      }
+    ]
+  },
+  "processSteps_en": [
+    {
+      "title": "1. Practice Analysis",
+      "description": "We analyze your specializations (e.g., osteopathy, sports physio) and develop a structure that presents these services perfectly."
+    },
+    {
+      "title": "2. Photography & Text",
+      "description": "Authenticity is everything in healthcare. We recommend professional practice and team photos and create serious, SEO-optimized specialist texts."
+    },
+    {
+      "title": "3. Software Integration",
+      "description": "We connect your practice software for appointment management and ensure that all data flows strictly comply with the GDPR."
+    },
+    {
+      "title": "4. Launch & Local SEO",
+      "description": "Publishing the website and optimizing the Google Business Profile for maximum local visibility."
+    }
+  ],
+  "localDominance_en": {
+    "title": "Become the most sought-after practice in town",
+    "description": "The demand for physiotherapy is huge, but patients looking for lucrative private services (like osteopathy or specialized prevention) seek out the best...",
+    "points": [
+      "Targeted approach to self-payers and private patients through premium design",
+      "Building trust by presenting team qualifications",
+      "Optimized display on smartphones for quick help with acute pain"
+    ]
+  },
+  "faq_en": [
+    {
+      "q": "Are your practice websites GDPR compliant?",
+      "a": "Yes, absolutely. Data protection is critical, especially in healthcare. We rely on secure hosting, encrypted connections, privacy-compliant forms (no sending of sensitive data via unencrypted emails), and clean cookie consent tools."
+    },
+    {
+      "q": "Can patients book appointments directly via the website?",
+      "a": "Yes. We seamlessly integrate your existing practice software (e.g., Theorg, Doctolib). This significantly relieves your reception and reduces missed appointments through automatic reminders."
+    },
+    {
+      "q": "Can we update the team or services ourselves?",
+      "a": "Yes, you receive a modern headless CMS. If a new therapist joins the team or qualifications change, you can adjust this yourself with just a few clicks."
+    },
+    {
+      "q": "Do you also write the medical texts?",
+      "a": "We structure and optimize texts for search engines (SEO). For subject-specific, medical accuracy, we work closely with you or arrange for experienced medical writers."
+    },
+    {
+      "q": "Why do many practice websites load so slowly?",
+      "a": "Often, huge, uncompressed images or outdated WordPress themes are used. Our Next.js technology ensures that your site loads in fractions of a second – a huge advantage for annoyed, pain-plagued patients."
+    },
+    {
+      "q": "Do you also help us find staff (therapists)?",
+      "a": "Yes, the shortage of skilled workers in physiotherapy is extreme. We integrate special career landing pages that present your practice as a modern, attractive employer and greatly simplify the application process (e.g., 1-click application)."
+    }
+  ]
 }

@@ -122,7 +122,123 @@
     }
   ],
   "meta_en": {
-    "title": "Bäckerei Web Design Agency | Moderne Webseiten for Bäcker",
+    "title": "Bakery Web Design Agency | Modern Websites for Bakeries",
     "description": "Professional web design for bakeries. Promote your artisan breads, boost local foot traffic, and automate custom cake orders with a high-end digital presence."
-  }
+  },
+  "hero_en": {
+    "headline": "Traditional baking craftsmanship brought to life digitally",
+    "subheadline": "Premium web design for bakeries",
+    "description": "More regional visibility, higher customer satisfaction. A strategic website relaunch is the first step towards absolute digital market leadership.",
+    "metrics": [
+      {
+        "value": "150",
+        "label": "More local visibility through website development",
+        "suffix": "%"
+      },
+      {
+        "value": "90",
+        "label": "Optimal Google reviews through website relaunch",
+        "suffix": "+"
+      }
+    ]
+  },
+  "gamifiedStats_en": {
+    "title": "Why many classic bakeries are losing extremely valuable customers online",
+    "description": "The old days when simple walk-in traffic early in the morning was completely sufficient are finally over. When young families, busy...",
+    "counters": [
+      {
+        "targetValue": 78,
+        "suffix": "%",
+        "label": "of your potential customers search locally via their smartphones for excellent bakeries every day"
+      },
+      {
+        "targetValue": 64,
+        "suffix": "%",
+        "label": "want to handle cakes, rolls, and special pre-orders completely and securely digitally"
+      }
+    ]
+  },
+  "bentoGrid_en": {
+    "title": "High-quality web design for traditional bakeries and fine pastry shops",
+    "subtitle": "How our web agency digitalizes your classic craft.",
+    "cards": [
+      {
+        "title": "Beautiful emotional imagery",
+        "text": "As an experienced web agency, we put your delicious baked goods in the perfect light. Extremely large-format and high-resolution images as well as crispy details let the user literally feel the masterful craftsmanship through our web design and immediately arouse great appetite in every single viewer.",
+        "size": "large",
+        "icon": "Design"
+      },
+      {
+        "title": "Intelligent digital pre-ordering",
+        "text": "Extremely reduce morning waiting times in the branch. A very intelligent pick-up system for the perfect Sunday rolls or extremely elaborate festive cakes is integrated directly into the new website development and makes your everyday work enormously easier.",
+        "size": "small",
+        "icon": "Speed"
+      },
+      {
+        "title": "Simple regional branch finder",
+        "text": "Perfectly integrated interactive maps and exact opening times in real time ensure at all times that absolutely all your customers always find the absolute fastest way to the freshly baked bread and the most delicious sweet pastries.",
+        "size": "small",
+        "icon": "MapPin"
+      },
+      {
+        "title": "Effective local SEO for bakers",
+        "text": "If someone in your direct region searches for a very good bakery nearby or for an absolutely special wedding cake, you will be at the very top thanks to our targeted website development and our perfectly optimized web design. This is guaranteed and brings massive new regular customers.",
+        "size": "tall",
+        "icon": "SEO"
+      }
+    ]
+  },
+  "processSteps_en": [
+    {
+      "title": "1 Brand analysis and branch structuring",
+      "description": "Before every website relaunch, our specialized web agency analyzes your exact identity, absolutely all your locations and your entire so..."
+    },
+    {
+      "title": "2 High-quality photography and great content",
+      "description": "Without absolutely first-class and very appetizing pictures, nobody gets very hungry. As part of the new web design, we take care of extremely..."
+    },
+    {
+      "title": "3 Modern web design and rapid development",
+      "description": "As a web agency, we program a lightning-fast a... Speed is the absolute be-all and end-all in website development for mobile users."
+    },
+    {
+      "title": "4 Local dominance and search engine optimization",
+      "description": "Our web agency optimizes through the well-thought-out web... This is how you completely effortlessly dominate the entire local market after the website relaunch."
+    }
+  ],
+  "localDominance_en": {
+    "title": "Secure the entire regional bakery market extremely effectively",
+    "description": "All traditional bakeri... Through the perfect website relaunch, we put you at the absolute qualitative top of your entire region.",
+    "points": [
+      "Your extremely important digital visibility for absolutely purchase-ready local search queries for high-quality baked goods is massively and very sustainably strengthened by our web agency",
+      "We integrate a complete and very secure digitalization of large pre-orders and extremely lucrative catering requests directly into the system",
+      "An enormous strengthening of your employer brand for the very easy acquisition of completely new artisan bakers and highly dedicated sales staff"
+    ]
+  },
+  "faq_en": [
+    {
+      "q": "Why does our traditional bakery even need a professional website by a web agency?",
+      "a": "Your craftsmanship is absolutely outstanding, but whoever cannot see that online yet will always mistakenly compare you directly with the cheap supermarket. A very professional website development visualizes your great craftsmanship, builds important trust, and thereby generates extremely lucrative additional business such as expensive catering, large corporate orders, or exclusive wedding cakes through our excellent web design."
+    },
+    {
+      "q": "Does your web agency also offer systems for direct pre-orders during website development?",
+      "a": "Yes, absolutely. After the website relaunch, we develop very tailor-made solutions for direct pick-up, with which your loyal customers can digitally pre-order morning rolls, sweet cakes, or large festive cakes and pay directly online. This extremely enormously relieves your sales staff and very significantly reduces annoying queues in the shop, which will make your customers extremely happy with the new web design."
+    },
+    {
+      "q": "Can we adjust our constantly changing weekly offers ourselves through the new website development?",
+      "a": "Of course. As a modern web agency, we integrate a highly modern and very easy-to-understand system with which you can adjust completely new offers, great seasonal items, or short-term changes to opening hours on public holidays within an extremely few seconds, even simply via smartphone. You are completely independent after the website relaunch and need absolutely no technical programming knowledge."
+    },
+    {
+      "q": "How exactly does excellent web design help us in the urgent search for new staff for the bakery?",
+      "a": "The general shortage of skilled workers is an extremely huge problem for the entire craft sector. During the website development, we integrate very emotional career pages that present your bakery and bakehouse as an extremely attractive and fair employer. A very simple and absolutely mobile-optimized application process directly on the new website enormously increases the final number of highly qualified applications."
+    },
+    {
+      "q": "Is the new web design really optimally adapted for absolutely all mobile phones after the website relaunch?",
+      "a": "An uncompromising mobile optimization is the absolute standard of our web agency. The vast majority of bakery customers search for opening hours extremely quickly on their mobile phone while on the go in the car or very early in the morning. Our extremely fast website development ensures that your new website is completely and perfectly loaded on absolutely every smartphone in just the smallest fractions of a second."
+    },
+    {
+      "q": "Does your specialized web agency also take care of the presentation of our branches in local Google searches?",
+      "a": "Yes, an absolutely well-thought-out and very local search engine optimization is always extremely holistic at our web agency. During the website development, we absolutely perfectly improve your entire company profiles on Google and link them extremely closely with your completely new web design in order to fully exhaust your entire regional ranking potential and thus attract extremely many new customers."
+    }
+  ]
 }

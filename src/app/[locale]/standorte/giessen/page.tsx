@@ -28,7 +28,7 @@ export async function generateMetadata({
     const fileContents = fs.readFileSync(filePath, 'utf8');
     const content = JSON.parse(fileContents);
 
-    const enTitle = 'Agency Location Giessen | Coday';
+    const enTitle = 'Web Design Agency Giessen | Your Local Partner | Coday';
 
     return generatePageMetadata({
       title: locale === 'en' ? enTitle : content.meta.title,
@@ -40,7 +40,9 @@ export async function generateMetadata({
   } catch (e) {
     return generatePageMetadata({
       title:
-        locale === 'en' ? 'Agency Location Giessen | Coday' : 'Agentur Standort Gießen | Coday',
+        locale === 'en'
+          ? 'Web Design Agency Giessen | Your Local Partner | Coday'
+          : 'Agentur Standort Gießen | Coday',
       description:
         locale === 'en'
           ? 'Your local agency location in Giessen.'

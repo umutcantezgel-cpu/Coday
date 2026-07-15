@@ -132,5 +132,129 @@
   "meta_en": {
     "title": "Web Design for KFZ Werkstätten | Coday",
     "description": "Web design for auto repair shops. Automate high-ticket repair inquiries and establish your garage as the premium choice for demanding car owners."
-  }
+  },
+  "hero_en": {
+    "headline": "Your Auto Repair Shop as Number One",
+    "subheadline": "Premium Web Design for Auto Repair Shops",
+    "description": "Get significantly more lucrative orders. A strategic website relaunch is the first big step to a completely new level of revenue.",
+    "metrics": [
+      {
+        "value": "240",
+        "label": "More Strong Premium Inquiries",
+        "suffix": "%"
+      },
+      {
+        "value": "95",
+        "label": "Increase in Conversion Rate",
+        "suffix": "%"
+      }
+    ]
+  },
+  "gamifiedStats_en": {
+    "title": "How many valuable customers are you currently leaving on the table at your auto repair shop?",
+    "description": "Every day, hundreds of demanding car owners search for an expert workshop. We can successfully prevent this loss through professional website development from our web agency.",
+    "counters": [
+      {
+        "targetValue": 89,
+        "suffix": "%",
+        "label": "of drivers intensely google before visiting a repair shop"
+      },
+      {
+        "targetValue": 75,
+        "suffix": "%",
+        "label": "judge your entire work quality based solely on the website"
+      }
+    ]
+  },
+  "bentoGrid_en": {
+    "title": "The absolutely unfair advantage for your established auto repair shop",
+    "subtitle": "Why you will become completely unrivaled with our website development.",
+    "cards": [
+      {
+        "title": "Extreme Loading Speed",
+        "text": "Stressed drivers in emergency situations absolutely will not wait for very slow websites. We guarantee loading times well under a second. The customer is with you before the local competition's site has even properly loaded.",
+        "size": "large",
+        "icon": "Speed"
+      },
+      {
+        "title": "Unique Web Design",
+        "text": "We transform your profound expertise into a visual masterpiece. Every single detail in the website development radiates absolute precision and maximum reliability.",
+        "size": "small",
+        "icon": "Design"
+      },
+      {
+        "title": "Local Dominance",
+        "text": "Be found exactly when it really matters. Our web agency places you on Google right where the current readiness to buy is highest after the website relaunch.",
+        "size": "small",
+        "icon": "SEO"
+      },
+      {
+        "title": "Automated Customers",
+        "text": "Your new website becomes a digital sales machine. Highly converting appointment features and smart forms filter out unsuitable inquiries completely automatically and bring you highly profitable repair orders for your auto repair shop.",
+        "size": "tall",
+        "icon": "Security"
+      }
+    ]
+  },
+  "processSteps_en": [
+    {
+      "title": "1. Potential Analysis and Clear Strategy",
+      "description": "We analyze your local competition completely ruthlessly. We find out exactly which high-priced repair services your target audience..."
+    },
+    {
+      "title": "2. Modern and Premium Web Design",
+      "description": "No cheap templates. This web design is modern, clear, and absolutely confidence-inspiring for every visitor."
+    },
+    {
+      "title": "3. State-of-the-Art Website Development",
+      "description": "We program your digital platform completely anew using the absolute latest technologies. A website relaunch that absolutely sets standards."
+    },
+    {
+      "title": "4. Successful Website Relaunch and Continuous Scaling",
+      "description": "With the launch of the website, the real domination of your market begins. Our dedicated web agency monitors the strong performance..."
+    }
+  ],
+  "localDominance_en": {
+    "title": "Become the absolute top dog through professional web design",
+    "description": "The lucrative market for complex auto repairs is extremely fiercely contested. Outdated marketing absolutely does not work in this day and age...",
+    "points": [
+      "Complete monopolization of the truly most lucrative search terms such as complex accident repair and precise engine diagnostics.",
+      "Rapid building of an absolutely massive expert positioning in direct regional comparison to all competitors.",
+      "Enormous pull effect instead of tedious cold calling. Thanks to the work of our web agency, the best customers now specifically search for you and absolutely no longer the other way around."
+    ]
+  },
+  "faq_en": [
+    {
+      "q": "Why is a completely simple website no longer sufficient for my auto repair shop today?",
+      "a": "Simple websites are extremely slow, technically absolutely weak, and look like countless other unprofessional businesses. Very demanding premium customers with extremely expensive vehicles or very lucrative orders always look for providers that radiate absolute professionalism. A cheap website unconsciously signals unfortunately very cheap work. In our web agency, we build real masterpieces that achieve exactly the absolute opposite and immediately establish you as the clear premium provider through excellent web design."
+    },
+    {
+      "q": "How quickly will we see concrete results after the website relaunch?",
+      "a": "Our professional website development often leads to absolutely noticeable improvements in important search engine visibility in the very first weeks. The number of strong visitors who actually call you or immediately book an appointment online after the new web design usually increases absolutely significantly from the very first day after the website relaunch thanks to our smart user guidance."
+    },
+    {
+      "q": "We already have enough orders for our auto repair shop. Why should we invest in website development anyway?",
+      "a": "If your auto repair shop is already very full, it is high time to filter the exact quality of the accepted orders very strongly. An extremely high-quality website helps you enormously in this important step to successfully fend off rather unprofitable inquiries and fully target highly profitable repair orders. Through competent web design, you increase your entire revenue with absolutely the same or even significantly less time investment."
+    },
+    {
+      "q": "What distinguishes your web agency from absolutely all other providers for auto repair shops?",
+      "a": "We absolutely use no ready-made templates in our website development, we do not outsource any of our work, and we absolutely never do things by halves. Our web agency stands for completely uncompromising performance. In web design, we always use exactly the same modern enterprise technologies as the absolute largest corporations in the world to secure you an extremely unfair technological advantage in your entire region."
+    },
+    {
+      "q": "Does your web agency also offer ongoing support after the website relaunch?",
+      "a": "Yes, absolutely. The web design is ultimately only the important strong engine, but optimization is the essential fuel. We offer very exclusive and long-term partnerships in which we continuously work on your enormous visibility, further expand the entire content strongly, and always make absolutely sure that you really permanently dominate your entire regional competition."
+    },
+    {
+      "q": "We also urgently want to find very good mechatronics engineers. Does website development help with that?",
+      "a": "Absolutely. The ongoing shortage of skilled workers is currently by far the biggest problem in the large automotive industry. Truly excellent mechatronics engineers today always want to work in absolutely modern and highly innovative companies. Your new strong website is therefore also designed by our web agency as an extremely powerful human resources instrument that perfectly presents your company permanently as an absolutely attractive and very future-proof employer."
+    },
+    {
+      "q": "How much time will this project require of me during my already stressful daily business?",
+      "a": "This means an absolutely minimal time investment for you. We know exactly that you have to be productive in your auto repair shop and make money. After a short initial conversation, our competent web agency takes over one hundred percent of the entire implementation. Starting from professional copywriting to the state-of-the-art programming of the new web design, we handle all important steps for your successful website relaunch."
+    },
+    {
+      "q": "Can modern digital systems be integrated into the new web design?",
+      "a": "Yes, we integrate every modern interface you use absolutely seamlessly during website development. Whether it is modern online systems for quick appointment bookings, clever digital chatbots for customer inquiries, or the connection to your special and important internal workshop software, we always digitize your entire external customer communication at the very highest and most modern level."
+    }
+  ]
 }

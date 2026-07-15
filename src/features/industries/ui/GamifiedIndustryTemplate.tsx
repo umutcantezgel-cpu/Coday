@@ -5,6 +5,7 @@ import { m } from 'motion/react';
 import { SeoHead } from '@/shared/ui/SeoHead';
 import { Button } from '@/shared/ui/Button';
 import { Link } from '@/i18n/navigation';
+import { useLocale } from 'next-intl';
 import { SeoLocalExpertiseBlock } from '@/features/industries/ui/SeoLocalExpertiseBlock';
 import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { CheckCircle, MapPin, CaretDown, CaretUp } from '@phosphor-icons/react/dist/ssr';
@@ -25,6 +26,8 @@ export const GamifiedIndustryTemplate: React.FC<{ content: any; cityData?: any }
   cityData,
 }) => {
   const [openFaq, setOpenFaq] = React.useState<number | null>(null);
+  const locale = useLocale();
+  const isEn = locale === 'en';
 
   // Fallback for content that hasn't been 10x-ed yet by the agent
   if (!content.bentoGrid) {
@@ -32,11 +35,12 @@ export const GamifiedIndustryTemplate: React.FC<{ content: any; cityData?: any }
       <div className="min-h-dvh flex items-center justify-center p-20 text-center flex-col bg-background-light">
         <div className="w-16 h-16 border-4 border-primary-500 border-t-transparent rounded-full animate-spin mb-6" />
         <h2 className="text-3xl font-display font-bold text-secondary-900 mb-4">
-          Content wird gamifiziert...
+          {isEn ? 'Content is being gamified...' : 'Content wird gamifiziert...'}
         </h2>
         <p className="text-secondary-600 max-w-md">
-          Die AI verarbeitet gerade die 10x Content-Expansion für diese Branche. Bitte laden Sie die
-          Seite in wenigen Augenblicken neu.
+          {isEn
+            ? 'The AI is currently processing the 10x content expansion for this industry. Please reload the page in a few moments.'
+            : 'Die AI verarbeitet gerade die 10x Content-Expansion für diese Branche. Bitte laden Sie die Seite in wenigen Augenblicken neu.'}
         </p>
       </div>
     );

@@ -124,5 +124,121 @@
   "meta_en": {
     "title": "Friseur Web Design Agency Wetzlar | Neukundengewinnung",
     "description": "Premium web design for hair salons and barbershops. Maximize your bookings, showcase your latest stylings, and establish your salon as a top-tier beauty brand."
-  }
+  },
+  "hero_en": {
+    "headline": "Digital style that fills analog appointments.",
+    "subheadline": "More new customers. Fully booked calendars. Premium positioning.",
+    "description": "More new customers. Fully booked calendars. Premium positioning. Customers often decide at first glance at your website whether they will trust you with their...",
+    "metrics": [
+      {
+        "value": "120",
+        "label": "More online bookings",
+        "suffix": "%"
+      },
+      {
+        "value": "0",
+        "label": "Calls during treatments",
+        "suffix": ""
+      }
+    ]
+  },
+  "gamifiedStats_en": {
+    "title": "Why classic appointment scheduling costs money",
+    "description": "Every time you or your employees have to answer the phone, you interrup... That disrupts the premium experience and costs valuable working time.",
+    "counters": [
+      {
+        "targetValue": 60,
+        "suffix": "%",
+        "label": "of customers prefer booking appointments outside of business hours"
+      },
+      {
+        "targetValue": 35,
+        "suffix": "%",
+        "label": "fewer no-shows through automatic SMS reminders"
+      }
+    ]
+  },
+  "bentoGrid_en": {
+    "title": "Web design that fits perfectly",
+    "subtitle": "How we make your salon digitally successful.",
+    "cards": [
+      {
+        "title": "Aesthetic Design",
+        "text": "We transport the flair of your salon into the digital world. With plenty of whitespace, elegant typography, and imagery that celebrates your stylings.",
+        "size": "large",
+        "icon": "Design"
+      },
+      {
+        "title": "Online Appointment Booking",
+        "text": "Seamless integration of Treatwell, Phorest, Shore, or your own system. Book with 2 clicks.",
+        "size": "small",
+        "icon": "Speed"
+      },
+      {
+        "title": "Instagram Sync",
+        "text": "Your best before/after pictures from Instagram are displayed automatically and performantly on the website.",
+        "size": "small",
+        "icon": "MapPin"
+      },
+      {
+        "title": "Local SEO Ranking",
+        "text": "We ensure that you rank number 1 on Google for searches like 'Balayage Specialist Wetzlar' or 'Best Men's Salon'.",
+        "size": "tall",
+        "icon": "SEO"
+      }
+    ]
+  },
+  "processSteps_en": [
+    {
+      "title": "1. Vibe Check",
+      "description": "We analyze the style of your salon. Are you an edgy barbershop or an exclusive premium ladies' salon? The design must match 100%."
+    },
+    {
+      "title": "2. Photography & Story",
+      "description": "A salon is brought to life by its team. We help you showcase your employees and premises emotionally and professionally."
+    },
+    {
+      "title": "3. Booking Integration",
+      "description": "We deeply integrate your POS or scheduling tool so that users never have to leave the website."
+    },
+    {
+      "title": "4. Launch & Local SEO",
+      "description": "We optimize your Google Business Profile and launch your website as the new number one for salon services in your city."
+    }
+  ],
+  "localDominance_en": {
+    "title": "Become the top salon in the region",
+    "description": "The salon in... We build your website so that you are not only found but perceived as the undisputed premium expert.",
+    "points": [
+      "Dominate rankings for special services (Extensions, Balayage, Keratin)",
+      "Build massive trust through team introductions and real customer reviews",
+      "Complete relief for the reception through 24/7 online booking"
+    ]
+  },
+  "faq_en": [
+    {
+      "q": "Can we keep our existing appointment system?",
+      "a": "Yes, absolutely. We seamlessly integrate all common booking systems (Treatwell, Shore, Phorest, Belbo, etc.) into the new, elegant design of your website."
+    },
+    {
+      "q": "How does a new website help against missed appointments (no-shows)?",
+      "a": "Through the intelligent integration of booking tools, we set up automated reminders (SMS/email) and, if needed, deposits. This drastically reduces no-shows."
+    },
+    {
+      "q": "Is the site also easy to use on a smartphone?",
+      "a": "Over 90% of your customers will access the site via mobile. We develop strictly 'Mobile First'. The navigation feels like a high-quality app—lightning fast and intuitive."
+    },
+    {
+      "q": "Can we update prices and team members ourselves?",
+      "a": "Of course. You receive a very easy-to-use Content Management System (CMS) with which you can update price lists or add new employees – entirely without technical knowledge."
+    },
+    {
+      "q": "Do we need new photos for the website?",
+      "a": "We highly recommend it. Stock photos look very inauthentic for hair salons. We can organize a professional photoshoot to show your salon and team in the best light."
+    },
+    {
+      "q": "Won't a premium website make us look too expensive?",
+      "a": "A high-quality design justifies your prices. If you deliver first-class work, the website must reflect this quality. We position you exactly to attract your ideal customers."
+    }
+  ]
 }

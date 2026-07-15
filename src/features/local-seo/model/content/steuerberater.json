@@ -122,7 +122,123 @@
     }
   ],
   "meta_en": {
-    "title": "Steuerberater Web Design Agency Wetzlar | Mandanten gewinnen",
-    "description": "Reputable web design for tax consultants and law firms. Digitalize your mandate acquisition and build immense trust with a secure, highly professional website."
-  }
+    "title": "Tax Consultant Web Design Agency Wetzlar | Acquire Clients",
+    "description": "Reputable premium web design for tax consultants and law firms. Digitalize your processes and acquire lucrative corporate mandates."
+  },
+  "hero_en": {
+    "headline": "The digital tax firm of the future.",
+    "subheadline": "Lucrative mandates. Digital processes. Absolute professionalism.",
+    "description": "Lucrative... We develop representative web presences for tax consultants that demonstrate digital competence and attract qualified clients.",
+    "metrics": [
+      {
+        "value": "100",
+        "label": "Full DATEV Integration",
+        "suffix": "%"
+      },
+      {
+        "value": "0",
+        "label": "Paperwork for new clients",
+        "suffix": ""
+      }
+    ]
+  },
+  "gamifiedStats_en": {
+    "title": "Why analog firms are falling behind",
+    "description": "Successful companies today seek consultants who master DATEV Unternehmen online... An outdated website signals the exact opposite.",
+    "counters": [
+      {
+        "targetValue": 78,
+        "suffix": "%",
+        "label": "of entrepreneurs switch firms due to a lack of digitalization"
+      },
+      {
+        "targetValue": 85,
+        "suffix": "%",
+        "label": "of clients desire a secure digital client portal"
+      }
+    ]
+  },
+  "bentoGrid_en": {
+    "title": "Architecture for tax consultants",
+    "subtitle": "How we prepare your firm for the digital age.",
+    "cards": [
+      {
+        "title": "Representative Design",
+        "text": "No dry deserts of paragraphs. We visualize your firm in a modern, trustworthy, and extremely high-quality way. Perfect typography instead of clip art.",
+        "size": "large",
+        "icon": "Design"
+      },
+      {
+        "title": "DATEV Integration",
+        "text": "Secure integration of DATEV Unternehmen online, Meine Steuern, and DATEV Upload directly on your homepage.",
+        "size": "small",
+        "icon": "Speed"
+      },
+      {
+        "title": "Client Onboarding",
+        "text": "Digital, GDPR-compliant forms to automatically create new clients and securely request initial data.",
+        "size": "small",
+        "icon": "MapPin"
+      },
+      {
+        "title": "Law Firm SEO",
+        "text": "We rank you at the top for valuable search terms like 'GmbH formation tax consultant' or 'Digital tax firm Wetzlar'.",
+        "size": "tall",
+        "icon": "SEO"
+      }
+    ]
+  },
+  "processSteps_en": [
+    {
+      "title": "1. Positioning Analysis",
+      "description": "Focus on doctors, craftsmen, or e-commerce? We sharpen your profile so you attract exactly the mandates you want."
+    },
+    {
+      "title": "2. High-End Photography",
+      "description": "We professionally showcase your partner team and office spaces – for a first impression that radiates sovereignty."
+    },
+    {
+      "title": "3. Interfaces & Security",
+      "description": "Implementation of secure portals, SSL encryption up to banking standards, and integration of all relevant DATEV interfaces."
+    },
+    {
+      "title": "4. Go-Live & SEO",
+      "description": "Your new digital firm goes live. Flanked by a Local SEO strategy that immediately increases your reach."
+    }
+  ],
+  "localDominance_en": {
+    "title": "The premier address for entrepreneurs in the region",
+    "description": "Especially with complex tax questions, managing directors seek personal contact... We establish you digitally as *the* expert in your region.",
+    "points": [
+      "Strong ranking for highly profitable niche topics (transformation tax law, corporate succession)",
+      "Reduction of support inquiries through smart FAQ and download areas (powers of attorney, checklists)",
+      "Building an extremely strong employer brand to attract tax assistants"
+    ]
+  },
+  "faq_en": [
+    {
+      "q": "Are the contact forms GDPR-compliant (tax secrecy)?",
+      "a": "Yes, absolutely. The protection of sensitive data is our highest priority. We rely on encrypted connections, secure hosting in Germany, and integrate highly secure portals (like DATEV or proprietary Nextcloud solutions) for document exchange."
+    },
+    {
+      "q": "Can clients upload their receipts via the website?",
+      "a": "For security and process reasons, we recommend the direct integration of DATEV Unternehmen online (or comparable tools). We integrate the login area extremely prominently and user-friendly directly on your website."
+    },
+    {
+      "q": "How can we actively find new employees (tax assistants)?",
+      "a": "The shortage of skilled workers in your industry is the biggest obstacle to growth. We build emotional career pages, present your firm as a modern employer (home office, digital files), and simplify the application process (e.g., short mobile applications)."
+    },
+    {
+      "q": "Can we publish firm news and tax changes ourselves?",
+      "a": "Yes, we integrate a very easy-to-use Headless CMS. You can publish client information, blog posts, or client circulars online at lightning speed and without agency help."
+    },
+    {
+      "q": "We no longer want small income tax cases. Does the website help?",
+      "a": "Definitely. We use the website as a filter. Through the tone of voice, premium design, and upstream (automated) query processes, you attract lucrative corporate mandates and elegantly filter out unsuitable inquiries."
+    },
+    {
+      "q": "How long does it take for our firm website to be finished?",
+      "a": "Because we know your time is extremely limited, we work very autonomously. After an initial strategy meeting, we completely take over the concept, copy, and design. A relaunch can usually be realized in 4 to 8 weeks."
+    }
+  ]
 }
