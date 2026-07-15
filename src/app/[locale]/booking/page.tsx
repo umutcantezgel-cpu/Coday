@@ -108,19 +108,19 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
             <div className="space-y-4 text-base leading-relaxed">
               <p>
                 Eine fundierte Webdesign-Beratung in Wetzlar ist der erste entscheidende Schritt auf
-                dem Weg zu einer erfolgreichen digitalen Präsenz für Ihr Unternehmen. Wenn Sie ein
-                Erstgespräch für Ihre neue Website oder einen Relaunch buchen, legen wir großen Wert
-                darauf, Ihre individuellen geschäftlichen Ziele, Ihre Zielgruppe und die speziellen
-                Anforderungen Ihrer Branche genau zu verstehen. In unserer Webdesign-Agentur aus
-                Hessen nehmen wir uns ausführlich Zeit für Sie – das Beratungsgespräch ist für Sie
-                komplett kostenlos und völlig unverbindlich. Wir analysieren in dieser Erstberatung
-                gemeinsam, welche konkreten Funktionen und Features Ihre künftige Webseite unbedingt
-                benötigt. Zudem erörtern wir, wie wir durch gezielte, lokale
-                Suchmaschinenoptimierung (SEO) und zielgruppenorientiertes Content-Marketing mehr
-                qualifizierte Kunden aus Wetzlar, Gießen, Marburg, Frankfurt und der gesamten Region
-                Mittelhessen für Sie gewinnen können. Wir überlegen gemeinsam, welches moderne
-                UI/UX-Design Ihre Markenidentität und Ihre Unternehmenswerte am authentischsten und
-                wirkungsvollsten widerspiegelt.
+                dem Weg zu einer erfolgreichen digitalen Präsenz für Ihr Unternehmen. Wenn Sie bei
+                Coday, Ihrem Webdesigner Wetzlar Hessen, für Ihre neue Website oder einen Relaunch
+                ein Erstgespräch buchen, legen wir großen Wert darauf, Ihre individuellen
+                geschäftlichen Ziele, Ihre Zielgruppe und die speziellen Anforderungen Ihrer Branche
+                genau zu verstehen. In unserer Webdesign-Agentur aus Hessen nehmen wir uns
+                ausführlich Zeit für Sie – das Beratungsgespräch ist für Sie komplett kostenlos und
+                völlig unverbindlich. Wir analysieren in dieser Erstberatung gemeinsam, welche
+                konkreten Funktionen und Features Ihre künftige Webseite unbedingt benötigt. Zudem
+                erörtern wir, wie wir durch gezielte, lokale Suchmaschinenoptimierung (SEO) und
+                zielgruppenorientiertes Content-Marketing mehr qualifizierte Kunden aus Wetzlar,
+                Gießen, Marburg, Frankfurt und der gesamten Region Mittelhessen für Sie gewinnen
+                können. Wir überlegen gemeinsam, welches moderne UI/UX-Design Ihre Markenidentität
+                und Ihre Unternehmenswerte am authentischsten und wirkungsvollsten widerspiegelt.
               </p>
               <p>
                 Ein professionell erstelltes Webdesign ist heutzutage weit mehr als nur eine

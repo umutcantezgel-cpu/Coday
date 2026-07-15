@@ -53,15 +53,11 @@ export const PortfolioTeaserSection: React.FC = () => {
             return (
               <div
                 key={project.slug}
-                className={`flex flex-col gap-12 lg:gap-24 lg:items-center ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
+                className={`group/card relative flex flex-col gap-12 lg:gap-24 lg:items-center ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
               >
                 {/* Image Section */}
                 <ScaleIn delay={0.1} duration={0.8} className="w-full lg:w-3/5 group relative">
-                  <Link
-                    href={`/work/${project.slug}`}
-                    aria-label={`${content.title} – Case Study`}
-                    className="block relative aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-[0_20px_50px_rgba(8,_112,_184,_0.07)]"
-                  >
+                  <div className="block relative aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-[0_20px_50px_rgba(8,_112,_184,_0.07)]">
                     <div className="absolute inset-0 bg-secondary-900/5 group-hover:bg-transparent transition-colors duration-500 z-10" />
                     <OptimizedImage
                       src={image}
@@ -73,10 +69,10 @@ export const PortfolioTeaserSection: React.FC = () => {
                     />
 
                     {/* Hover Overlay Badge */}
-                    <div className="absolute top-6 right-6 z-20 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-[opacity,transform] duration-500 bg-white/90 backdrop-blur-md text-secondary-900 rounded-full p-4 shadow-xl flex items-center justify-center">
+                    <div className="absolute top-6 right-6 z-20 opacity-0 group-hover:opacity-100 group-hover/card:opacity-100 transform translate-y-4 group-hover:translate-y-0 group-hover/card:translate-y-0 transition-[opacity,transform] duration-500 bg-white/90 backdrop-blur-md text-secondary-900 rounded-full p-4 shadow-xl flex items-center justify-center">
                       <ArrowUpRight weight="bold" className="w-6 h-6" />
                     </div>
-                  </Link>
+                  </div>
                 </ScaleIn>
 
                 {/* Text Content Section */}
@@ -99,29 +95,34 @@ export const PortfolioTeaserSection: React.FC = () => {
                     ))}
                   </div>
 
-                  <Link href={`/work/${project.slug}`} className="group inline-block">
-                    <h3 className="font-display font-black text-4xl sm:text-5xl text-secondary-900 mb-6 group-hover:text-action-primary transition-colors duration-300">
+                  <h3 className="font-display font-black text-4xl sm:text-5xl text-secondary-900 mb-6 group-hover/card:text-action-primary transition-colors duration-300">
+                    <Link
+                      href={`/work/${project.slug}`}
+                      className="outline-none before:absolute before:-inset-8 before:z-10 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset"
+                    >
                       {content.title}
-                    </h3>
-                  </Link>
+                    </Link>
+                  </h3>
 
                   <p className="text-xl text-secondary-700 leading-relaxed mb-10 max-w-lg font-medium">
                     {content.subtitle}
                   </p>
 
-                  <Link
-                    href={`/work/${project.slug}`}
-                    aria-label={`${content.title} Case Study`}
-                    className="inline-flex items-center gap-3 font-bold text-lg text-secondary-900 hover:text-action-primary transition-colors w-max group"
-                  >
-                    <span className="border-b-2 border-secondary-900 group-hover:border-action-primary pb-1 transition-colors">
-                      Case Study: {content.title}
-                    </span>
-                    <ArrowRight
-                      weight="bold"
-                      className="transform group-hover:translate-x-2 transition-transform duration-300 w-5 h-5"
-                    />
-                  </Link>
+                  <div className="relative z-20 w-max">
+                    <Link
+                      href={`/work/${project.slug}`}
+                      aria-label={`${content.title} Case Study`}
+                      className="inline-flex items-center gap-3 font-bold text-lg text-secondary-900 hover:text-action-primary transition-colors group outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-sm"
+                    >
+                      <span className="border-b-2 border-secondary-900 group-hover:border-action-primary pb-1 transition-colors">
+                        Case Study: {content.title}
+                      </span>
+                      <ArrowRight
+                        weight="bold"
+                        className="transform group-hover:translate-x-2 transition-transform duration-300 w-5 h-5"
+                      />
+                    </Link>
+                  </div>
                 </FadeInUp>
               </div>
             );

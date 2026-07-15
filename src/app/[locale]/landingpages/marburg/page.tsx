@@ -27,7 +27,7 @@ export async function generateMetadata({
   return generatePageMetadata({
     title: 'Webdesign Marburg | Webseiten die Kunden bringen',
     description:
-      'Ihre Webagentur für Marburg und Umgebung. Hochperformante Webseiten die messbar neue Kunden bringen. Persönlich und zum garantierten Festpreis. Anfragen.',
+      'Ihre Webagentur für Marburg und Umgebung. Hochperformante Webseiten, die messbar neue Kunden bringen. Persönlich & zum garantierten Festpreis.',
     path: '/de/landingpages/marburg',
     type: 'money',
   });
@@ -66,14 +66,10 @@ export default async function MarburgLandingPage(props: { params: Promise<{ loca
   const _seoDesc =
     _locale === 'en'
       ? 'Your web agency for Marburg and the surrounding area. High-performance websites that bring new clients. Personal and at a guaranteed fixed price.'
-      : 'Ihre Webagentur für Marburg und Umgebung. Hochperformante Webseiten die messbar neue Kunden bringen. Persönlich und zum garantierten Festpreis. Anfragen.';
+      : 'Ihre Webagentur für Marburg und Umgebung. Hochperformante Webseiten, die messbar neue Kunden bringen. Persönlich & zum garantierten Festpreis.';
   return (
     <>
-      <SeoHead
-        title={`Webdesign Agentur in Marburg | Coday`}
-        description={`Ihre Webagentur für Marburg. Hochperformante Webseiten, die messbar neue Kunden bringen. Regional, persönlich und zum Festpreis.`}
-        pageType="default"
-      />
+      <SeoHead title={_seoTitle} description={_seoDesc} pageType="default" />
       {content && cityData ? (
         <LocalSeoTemplate content={content} cityData={cityData} />
       ) : (

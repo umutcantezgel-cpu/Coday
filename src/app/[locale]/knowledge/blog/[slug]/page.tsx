@@ -74,7 +74,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         'Die Psychologie des Dark Mode: Warum Dunkel sich teuer anfühlt':
           'Die Psychologie des Dark Mode',
         'WordPress ist tot. Headless CMS beweist es (2026)': 'WordPress ist tot: Headless CMS',
-        'Headless CMS vs WordPress: Der CMS Vergleich': 'CMS Vergleich: Headless vs WordPress',
+        'Headless vs WordPress Vergleich: Der CMS Showdown': 'CMS Vergleich: Headless vs WordPress',
         'Enterprise Security: Warum ISO 27001 das Minimum Viable Product ist':
           'Enterprise Security & ISO 27001',
         'Digital Government: Warum das OZG 2.0 scheitert (und wie wir es retten)':
@@ -137,6 +137,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       return finalTitle;
     })(),
     description: post.excerpt,
+    keywords: post.keywords,
     openGraph: {
       title: post.title,
       description: post.excerpt,

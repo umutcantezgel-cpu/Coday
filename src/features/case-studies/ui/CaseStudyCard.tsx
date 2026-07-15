@@ -56,27 +56,30 @@ export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ project, index = 1
           </div>
           <span className="text-xs font-bold text-primary uppercase tracking-widest">{client}</span>
           <h3 className="font-display font-bold text-2xl text-neutral-900 dark:text-neutral-50 mt-2 mb-6 group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms]">
-            {title}
+            <Link
+              href={`/work/${project.slug}`}
+              className="outline-none before:absolute before:inset-0 before:z-10 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset"
+            >
+              {title}
+            </Link>
           </h3>
         </div>
-        <div className="inline-flex items-center gap-2 font-bold text-sm text-neutral-900 dark:text-neutral-50 group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms]">
-          {locale === 'en' ? `${title} Case Study` : `Case Study: ${title}`}{' '}
-          <ArrowUpRight
-            className="transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform motion-reduce:duration-[0.01ms]"
-            weight="bold"
-            aria-hidden="true"
-          />
+        <div className="inline-flex items-center gap-2 font-bold text-sm text-neutral-900 dark:text-neutral-50 group-hover:text-primary transition-colors motion-reduce:duration-[0.01ms] relative z-20">
+          <Link
+            href={`/work/${project.slug}`}
+            className="flex items-center gap-2 outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 focus-visible:ring-offset-bg-primary rounded-sm"
+          >
+            {locale === 'en' ? `${title} Case Study` : `Case Study: ${title}`}{' '}
+            <ArrowUpRight
+              className="transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform motion-reduce:duration-[0.01ms]"
+              weight="bold"
+              aria-hidden="true"
+            />
+          </Link>
         </div>
       </div>
     </article>
   );
 
-  return (
-    <Link
-      href={`/work/${project.slug}`}
-      className="group block h-full outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset relative z-10"
-    >
-      {innerContent}
-    </Link>
-  );
+  return innerContent;
 };

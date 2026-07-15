@@ -33,7 +33,9 @@ export async function generateMetadata({
     return generatePageMetadata({
       title: locale === 'en' ? enTitle : content.meta.title,
       description:
-        locale === 'en' ? 'Digital dominance for your practice.' : content.meta.description,
+        locale === 'en'
+          ? 'Web design and local SEO for doctors in Giessen. Enhance your practice with a modern website.'
+          : content.meta.description,
       path: `/${locale}/branchen/gesundheitswesen/arzt-giessen`,
       type: 'money',
     });
@@ -45,7 +47,7 @@ export async function generateMetadata({
           : 'Webdesign für Ärzte in Gießen | Praxis Homepage',
       description:
         locale === 'en'
-          ? 'Digital dominance for your practice.'
+          ? 'Web design and local SEO for doctors in Giessen. Enhance your practice with a modern website.'
           : 'Digitale Dominanz für Ihre Branche.',
       path: `/${locale}/branchen/gesundheitswesen/arzt-giessen`,
       type: 'money',

@@ -1730,10 +1730,16 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     id: 15,
-    title: 'Headless CMS vs WordPress: Der CMS Vergleich',
+    title: 'Headless vs WordPress Vergleich: Der CMS Showdown',
     slug: 'headless-cms-vs-wordpress',
     excerpt:
-      'Harte Zahlen von 1200 Live-Sites: WordPress LCP 4.8s vs Headless 0.9s. Sicherheitslücken um 97 Prozent reduziert. Sehen Sie die volle Analyse.',
+      'Harte Zahlen von 1200 Live-Sites: WordPress LCP 4.8s vs Headless 0.9s. Dieser CMS Vergleich zeigt die volle Analyse zu Performance und Sicherheit.',
+    keywords: [
+      'Headless vs WordPress Vergleich',
+      'CMS Vergleich',
+      'Headless Architektur',
+      'WordPress Alternativen',
+    ],
     category: 'Tech Stack',
     readTime: '18 min.',
     image: '/images/services/website-builder-drag-drop-baukasten-elemente-webdesign.webp',
@@ -1744,10 +1750,10 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         id: 'intro-cms',
         type: 'text',
-        heading: 'Headless CMS vs WordPress: Der CMS Vergleich',
+        heading: 'Headless vs WordPress Vergleich: Der ultimative Test',
         level: 'h2',
         content:
-          'WordPress ist tot. Headless CMS beweist es (2026). WordPress betreibt 40% des Webs. Es ist auch das Ziel #1 für Hacker. Es ist langsam. Es ist aufgebläht. Es ist ein Monolith in einer Microservices-Welt.\n\nHeadless CMS (Sanity, Contentful, Strapi) entkoppelt Inhalt von Code. Es erlaubt Ihnen, Inhalte omnichannel an Web, App und Watch aus einer Quelle zu senden. Dieser CMS Vergleich liefert Ihnen die harten Fakten, damit Sie eine fundierte Entscheidung für Ihre digitale Infrastruktur treffen können.',
+          'WordPress ist tot. Moderne Headless Systeme beweisen es (2026). WordPress betreibt 40% des Webs. Es ist auch das Ziel #1 für Hacker. Es ist langsam. Es ist aufgebläht. Es ist ein Monolith in einer Microservices-Welt.\n\nDer Headless Ansatz (mit Tools wie Sanity, Contentful, Strapi) entkoppelt Inhalt von Code. Er erlaubt Ihnen, Inhalte omnichannel an Web, App und Watch aus einer Quelle zu senden. Dieser CMS Vergleich liefert Ihnen die harten Fakten, damit Sie eine fundierte Entscheidung für Ihre digitale Infrastruktur treffen können.',
       },
       {
         id: 'interactive-tco',

@@ -102,9 +102,8 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
               const heroImage = content.solution.images[0];
 
               return (
-                <Link
+                <div
                   key={project.slug}
-                  href={`/work/${project.slug}`}
                   className="group relative rounded-3xl overflow-hidden bg-white border border-neutral-200 shadow-sm hover:shadow-xl hover:border-primary-200 transition motion-reduce:duration-[0.01ms] duration-500"
                 >
                   {/* Image */}
@@ -150,17 +149,27 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
                       {content.category}
                     </div>
                     <h2 className="font-display font-bold text-xl text-secondary-900 mb-2 group-hover:text-primary-700 transition-colors motion-reduce:duration-[0.01ms]">
-                      {content.title}
+                      <Link
+                        href={`/work/${project.slug}`}
+                        className="outline-none before:absolute before:inset-0 before:z-10 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset"
+                      >
+                        {content.title}
+                      </Link>
                     </h2>
                     <p className="text-secondary-600 text-sm line-clamp-2 mb-4">
                       {content.subtitle}
                     </p>
-                    <div className="flex items-center gap-2 text-primary-600 font-semibold text-sm">
-                      {isEn ? `${content.title} Case Study` : `Case Study: ${content.title}`}
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform motion-reduce:duration-[0.01ms]" />
+                    <div className="relative z-20 flex items-center gap-2 text-primary-600 font-semibold text-sm w-max">
+                      <Link
+                        href={`/work/${project.slug}`}
+                        className="flex items-center gap-2 outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-sm"
+                      >
+                        {isEn ? `${content.title} Case Study` : `Case Study: ${content.title}`}
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform motion-reduce:duration-[0.01ms]" />
+                      </Link>
                     </div>
                   </div>
-                </Link>
+                </div>
               );
             })}
           </div>

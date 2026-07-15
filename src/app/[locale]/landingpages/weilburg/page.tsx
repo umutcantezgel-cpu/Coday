@@ -28,7 +28,7 @@ export async function generateMetadata({
   return generatePageMetadata({
     title: 'Webdesign Weilburg | Webseiten vom lokalen Profi',
     description:
-      'Ihre Webagentur für Weilburg und Umgebung. Hochperformante Webseiten die messbar neue Kunden bringen. Persönlich und zum garantierten Festpreis. Anfragen.',
+      'Ihre Webagentur für Weilburg und Umgebung. Hochperformante Webseiten, die messbar neue Kunden bringen. Persönlich und zum garantierten Festpreis.',
     path: '/de/landingpages/weilburg',
     type: 'money',
   });
@@ -67,14 +67,10 @@ export default async function WeilburgLandingPage(props: { params: Promise<{ loc
   const _seoDesc =
     _locale === 'en'
       ? 'Your web agency for Weilburg and surrounding area. High-performance websites that bring new clients. Personal service at a guaranteed fixed price.'
-      : 'Ihre Webagentur für Weilburg und Umgebung. Hochperformante Webseiten die messbar neue Kunden bringen. Persönlich und zum garantierten Festpreis. Anfragen.';
+      : 'Ihre Webagentur für Weilburg und Umgebung. Hochperformante Webseiten, die messbar neue Kunden bringen. Persönlich und zum garantierten Festpreis.';
   return (
     <>
-      <SeoHead
-        title={`Webdesign Agentur in Weilburg | Coday`}
-        description={`Ihre Webagentur für Weilburg. Hochperformante Webseiten, die messbar neue Kunden bringen. Regional, persönlich und zum Festpreis.`}
-        pageType="default"
-      />
+      <SeoHead title={_seoTitle} description={_seoDesc} pageType="default" />
       {content && cityData ? (
         <LocalSeoTemplate content={content} cityData={cityData} />
       ) : (

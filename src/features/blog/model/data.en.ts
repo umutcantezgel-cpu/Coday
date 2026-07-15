@@ -6,7 +6,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'The 5 Deadly Web Design Mistakes (And How to Survive Them)',
     slug: 'the-5-deadly-web-design-mistakes',
     excerpt:
-      "90% of all websites burn money. They look nice, but they don't convert. In this deep dive, we analyze the psychological and technical reasons why digital products fail.",
+      "90% of websites burn money. They look nice but don't convert. Here, we analyze the psychological and technical reasons digital products fail.",
     category: 'Web Design',
     readTime: '12 min.',
     image: '/images/services/website-builder-drag-drop-baukasten-elemente-webdesign.webp',
@@ -176,7 +176,7 @@ It is within this critical context that we must confront the pervasive challenge
     title: "Data Doesn't Lie: Why Your Gut Feeling Costs You Millions",
     slug: 'data-doesnt-lie-business-intelligence',
     excerpt:
-      "99% of all marketing budgets are spent 'blindly'. In this article, we show how Business Intelligence (BI) finally sheds light on the darkness and makes every dollar profitable.",
+      '99% of marketing budgets are spent blindly. Discover how Business Intelligence (BI) sheds light on the darkness and makes every dollar profitable.',
     category: 'Analytics',
     readTime: '15 min.',
     image:
@@ -547,7 +547,7 @@ In essence, while the passive distribution of content has been severely curtaile
     title: 'Video Content Excellence: Why Text is Dead',
     slug: 'video-content-excellence',
     excerpt:
-      "People don't read anymore. They watch. If you don't have a video strategy in 2026, you are invisible. We show you how to reach maximum visibility with minimal effort.",
+      "People don't read anymore, they watch. Without a 2026 video strategy, you are invisible. Learn how to reach maximum visibility with minimal effort.",
     category: 'Content',
     readTime: '8 min.',
     image: '/images/marketing/video-content-streaming-plattform-play-button-multimedia.webp',
@@ -1465,7 +1465,7 @@ In essence, **The Psychology of Dark Mode** is a masterclass in leveraging techn
       {
         id: 'intro-cms',
         type: 'text',
-        heading: 'Headless CMS vs WordPress: The CMS Comparison',
+        heading: 'CMS Showdown: Headless vs WP',
         level: 'h2',
         content: `For nearly two decades, WordPress has reigned supreme, powering an astounding 40% of the internet's digital real estate. Its ubiquity, however, has inadvertently cultivated a pervasive technical debt that now threatens its very relevance in a rapidly evolving digital landscape. What was once its greatest strength – its monolithic, all-encompassing architecture – has become its most significant vulnerability and performance bottleneck. In an era where milliseconds dictate user engagement and conversion rates, and where data breaches carry catastrophic financial and reputational costs, the inherent design choices of WordPress are increasingly proving to be an anachronism.
 

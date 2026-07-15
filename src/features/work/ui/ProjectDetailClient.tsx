@@ -142,7 +142,7 @@ const ProjectDetail: React.FC = () => {
               {project.category}
             </div>
             <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-7xl text-gray-900 mb-4 leading-tight">
-              {project.title}
+              Case Study: {project.title} &ndash; {project.category}
             </h1>
             <p className="text-xl sm:text-2xl text-gray-500 max-w-3xl mx-auto leading-relaxed">
               {project.subtitle}

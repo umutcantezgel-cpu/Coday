@@ -33,7 +33,9 @@ export async function generateMetadata({
     return generatePageMetadata({
       title: locale === 'en' ? enTitle : content.meta.title,
       description:
-        locale === 'en' ? 'Digital dominance for your practice.' : content.meta.description,
+        locale === 'en'
+          ? 'Web design and local SEO for doctors in Wetzlar. Get more patients with a professional medical website.'
+          : content.meta.description,
       path: `/${locale}/branchen/gesundheitswesen/arzt-wetzlar`,
       type: 'money',
     });
@@ -45,7 +47,7 @@ export async function generateMetadata({
           : 'Webdesign für Ärzte in Wetzlar | Praxis Homepage',
       description:
         locale === 'en'
-          ? 'Digital dominance for your practice.'
+          ? 'Web design and local SEO for doctors in Wetzlar. Get more patients with a professional medical website.'
           : 'Digitale Dominanz für Ihre Branche.',
       path: `/${locale}/branchen/gesundheitswesen/arzt-wetzlar`,
       type: 'money',

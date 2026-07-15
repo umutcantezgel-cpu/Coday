@@ -33,7 +33,9 @@ export async function generateMetadata({
     return generatePageMetadata({
       title: locale === 'en' ? enTitle : content.meta.title,
       description:
-        locale === 'en' ? 'Digital dominance for your industry.' : content.meta.description,
+        locale === 'en'
+          ? 'Professional web design for auto repair shops in Wetzlar. Get more online bookings.'
+          : content.meta.description,
       path: `/${locale}/branchen/automobil/kfz-werkstatt`,
       type: 'money',
     });
@@ -45,7 +47,7 @@ export async function generateMetadata({
           : 'Webdesign für KFZ-Werkstätten | Raum Wetzlar',
       description:
         locale === 'en'
-          ? 'Digital dominance for your industry.'
+          ? 'Professional web design for auto repair shops in Wetzlar. Get more online bookings.'
           : 'Digitale Dominanz für Ihre Branche.',
       path: `/${locale}/branchen/automobil/kfz-werkstatt`,
       type: 'money',

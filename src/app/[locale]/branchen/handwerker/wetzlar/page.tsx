@@ -33,7 +33,9 @@ export async function generateMetadata({
     return generatePageMetadata({
       title: locale === 'en' ? enTitle : content.meta.title,
       description:
-        locale === 'en' ? 'Digital dominance for your industry.' : content.meta.description,
+        locale === 'en'
+          ? 'Professional web design for craftsmen in Wetzlar. Get more local jobs and visibility with our tailored digital solutions.'
+          : content.meta.description,
       path: `/${locale}/branchen/handwerker/wetzlar`,
       type: 'money',
     });
@@ -45,7 +47,7 @@ export async function generateMetadata({
           : 'Webdesign für Handwerker in Wetzlar | Agentur',
       description:
         locale === 'en'
-          ? 'Digital dominance for your industry.'
+          ? 'Professional web design for craftsmen in Wetzlar. Get more local jobs and visibility with our tailored digital solutions.'
           : 'Digitale Dominanz für Ihre Branche.',
       path: `/${locale}/branchen/handwerker/wetzlar`,
       type: 'money',

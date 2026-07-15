@@ -101,7 +101,7 @@ export default async function IndustryDetailPage({
       {locale === 'de' ? (
         <section className="container mx-auto px-4 py-16 max-w-5xl text-secondary-600">
           <h2 className="text-3xl font-display font-bold mb-6">
-            Branchenspezifisches Webdesign für maximalen Erfolg
+            Digitale Expertise für {formattedIndustry}
           </h2>
           <div className="space-y-4 text-base leading-relaxed">
             <p>
@@ -151,7 +151,7 @@ export default async function IndustryDetailPage({
       ) : (
         <section className="container mx-auto px-4 py-16 max-w-5xl text-secondary-600">
           <h2 className="text-3xl font-display font-bold mb-6">
-            Industry-Specific Web Design for Maximum Success
+            Digital Expertise for {formattedIndustry}
           </h2>
           <div className="space-y-4 text-base leading-relaxed">
             <p>

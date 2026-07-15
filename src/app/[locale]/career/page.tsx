@@ -5,27 +5,45 @@ import { CareerOverviewClient } from '@/features/career/ui/CareerOverviewClient'
 
 export const dynamic = 'force-static';
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  if (locale === 'en') {
+    return generatePageMetadata({
+      title: 'Careers at Coday | Web Design Agency Jobs Wetzlar',
+      description:
+        'Discover exciting career opportunities at the web design agency Coday in Wetzlar. Join our team for premium web development & digital solutions.',
+      path: '/en/career',
+      type: 'default',
+    });
+  }
   return generatePageMetadata({
     title: 'Karriere bei Coday | Webdesign Agentur Jobs Wetzlar',
     description:
-      'Entdecken Sie spannende Karrieremöglichkeiten bei Coday in Wetzlar. Werden Sie Teil unseres Teams für Premium Webentwicklung, Webdesign und digitale Lösungen.',
+      'Entdecken Sie tolle Karrieremöglichkeiten in der Webdesign Agentur Coday in Wetzlar. Werden Sie Teil unseres Teams für Premium Webentwicklung!',
     path: '/de/career',
     type: 'default',
   });
 }
 
-export default function CareerPage() {
+export default async function CareerPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const isEn = locale === 'en';
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       getOrganizationSchema(),
       {
         '@type': 'WebPage',
-        '@id': `${BASE_URL}/de/career`,
-        name: 'Karriere bei Coday',
-        description:
-          'Entdecken Sie spannende Karrieremöglichkeiten bei Coday in Wetzlar. Werden Sie Teil unseres Teams für Premium Webentwicklung, Webdesign und digitale Lösungen.',
+        '@id': `${BASE_URL}/${locale}/career`,
+        name: isEn ? 'Careers at Coday' : 'Karriere bei Coday',
+        description: isEn
+          ? 'Discover exciting career opportunities at the web design agency Coday in Wetzlar. Join our team for premium web development & digital solutions.'
+          : 'Entdecken Sie tolle Karrieremöglichkeiten in der Webdesign Agentur Coday in Wetzlar. Werden Sie Teil unseres Teams für Premium Webentwicklung!',
         isPartOf: { '@id': `${BASE_URL}/#website` },
       },
     ],

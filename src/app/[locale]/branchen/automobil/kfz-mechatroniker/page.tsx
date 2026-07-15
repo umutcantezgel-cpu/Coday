@@ -33,7 +33,9 @@ export async function generateMetadata({
     return generatePageMetadata({
       title: locale === 'en' ? enTitle : content.meta.title,
       description:
-        locale === 'en' ? 'Digital dominance for your industry.' : content.meta.description,
+        locale === 'en'
+          ? 'Premium web design and SEO for car mechanics. Drive more appointments and showcase your expertise.'
+          : content.meta.description,
       path: `/${locale}/branchen/automobil/kfz-mechatroniker`,
       type: 'money',
     });
@@ -45,7 +47,7 @@ export async function generateMetadata({
           : 'Webdesign für KFZ-Mechatroniker | Hessen',
       description:
         locale === 'en'
-          ? 'Digital dominance for your industry.'
+          ? 'Premium web design and SEO for car mechanics. Drive more appointments and showcase your expertise.'
           : 'Digitale Dominanz für Ihre Branche.',
       path: `/${locale}/branchen/automobil/kfz-mechatroniker`,
       type: 'money',

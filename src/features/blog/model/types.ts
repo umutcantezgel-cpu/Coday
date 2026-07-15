@@ -176,5 +176,6 @@ export interface BlogPost {
   alt: string;
   author: string;
   date: string;
+  keywords?: string[];
   content: ContentBlock[];
 }

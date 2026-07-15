@@ -33,7 +33,9 @@ export async function generateMetadata({
     return generatePageMetadata({
       title: locale === 'en' ? enTitle : content.meta.title,
       description:
-        locale === 'en' ? 'Digital dominance for your industry.' : content.meta.description,
+        locale === 'en'
+          ? 'Premium web design for car dealers. Accelerate sales and build buyer trust with a high-performance digital showroom.'
+          : content.meta.description,
       path: `/${locale}/branchen/automobil/autohaendler`,
       type: 'money',
     });
@@ -45,7 +47,7 @@ export async function generateMetadata({
           : 'Webdesign für Autohändler | Agentur in Wetzlar',
       description:
         locale === 'en'
-          ? 'Digital dominance for your industry.'
+          ? 'Premium web design for car dealers. Accelerate sales and build buyer trust with a high-performance digital showroom.'
           : 'Digitale Dominanz für Ihre Branche.',
       path: `/${locale}/branchen/automobil/autohaendler`,
       type: 'money',

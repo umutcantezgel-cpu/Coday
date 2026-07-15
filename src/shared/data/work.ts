@@ -377,7 +377,7 @@ export const workData: Record<string, Project> = {
         challenge: {
           title: 'Das Problem',
           description:
-            'Die Schlüsseldienstbranche wird von unseriösen Anbietern dominiert, die über Callcenter arbeiten und Wucherpreise verlangen. Ein ehrlicher, lokaler Fachbetrieb in Wetzlar brauchte eine digitale Präsenz, die Vertrauen aufbaut und sofort Kompetenz ausstrahlt.',
+            'Lokaler Fachbetrieb brauchte digitale Präsenz, die sofort Vertrauen aufbaut.',
           list: [
             'Branchenimage durch unseriöse Mitbewerber schwer beschädigt',
             'Keine digitale Sichtbarkeit trotz physischem Ladengeschäft',
@@ -448,7 +448,7 @@ export const workData: Record<string, Project> = {
         challenge: {
           title: 'The Problem',
           description:
-            'The locksmith industry is dominated by fraudulent providers who operate through call centers and charge exorbitant prices. An honest, local specialist in Wetzlar needed a digital presence that builds trust and immediately radiates competence.',
+            'A local specialist needed a digital presence that immediately builds trust.',
           list: [
             'Industry reputation severely damaged by dishonest competitors',
             'No digital visibility despite having a physical shop',
