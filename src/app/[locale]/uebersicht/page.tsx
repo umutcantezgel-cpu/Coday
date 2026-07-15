@@ -474,11 +474,11 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
         </div>
 
         <section className="container mx-auto px-4 py-16 max-w-5xl text-secondary-600">
-          <h2 className="text-3xl font-display font-bold mb-6">
+          <h3 className="text-3xl font-display font-bold mb-6">
             {locale === 'en'
               ? 'Coday Web Design – Complete Sitemap & Page Overview'
               : 'Coday Webdesign – Vollständige Sitemap & Seitenübersicht'}
-          </h2>
+          </h3>
           <div className="space-y-4 text-base leading-relaxed">
             {locale === 'en' ? (
               <>

@@ -70,9 +70,9 @@ export default async function UnternehmensberatungPage({
       {/* SEO */}
       {locale === 'de' ? (
         <section className="container mx-auto px-4 py-16 max-w-5xl text-secondary-600">
-          <h2 className="text-3xl font-display font-bold mb-6">
+          <h3 className="text-3xl font-display font-bold mb-6">
             Digitale Expertise für Unternehmensberatungen
-          </h2>
+          </h3>
           <div className="space-y-4 text-base leading-relaxed">
             <p>
               Jede Branche hat ihre eigenen, spezifischen Anforderungen an eine Website. Was für
@@ -106,9 +106,9 @@ export default async function UnternehmensberatungPage({
         </section>
       ) : (
         <section className="container mx-auto px-4 py-16 max-w-5xl text-secondary-600">
-          <h2 className="text-3xl font-display font-bold mb-6">
+          <h3 className="text-3xl font-display font-bold mb-6">
             Digital Expertise for Management Consultants
-          </h2>
+          </h3>
           <div className="space-y-4 text-base leading-relaxed">
             <p>
               Every industry has its own specific requirements for a website. What works for a

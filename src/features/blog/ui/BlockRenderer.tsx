@@ -124,9 +124,9 @@ const TextBlockRenderer: React.FC<{ block: TextBlock }> = ({ block }) => {
               );
             } else if (paragraph.startsWith('### ')) {
               return (
-                <h2 key={index} className="text-2xl font-bold text-secondary mt-8 mb-4">
+                <h3 key={index} className="text-2xl font-bold text-secondary mt-8 mb-4">
                   {renderContentWithGlossary(paragraph.replace(/^### /, ''))}
-                </h2>
+                </h3>
               );
             } else if (paragraph.startsWith('## ')) {
               return (

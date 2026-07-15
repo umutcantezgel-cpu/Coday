@@ -215,7 +215,7 @@ export const getNavItems = (): NavItem[] => [
         title: 'nav.work.featured.title',
         links: [
           { label: 'nav.work.batherm', href: 'https://www.batherm.de' },
-          { label: 'nav.work.schluesseldienst', href: 'https://wetzlar-schlüsseldienst.de' },
+          { label: 'nav.work.schluesseldienst', href: '/work/schluesseldienst-wetzlar' },
           { label: 'nav.work.ratsstuben', href: 'https://lindener-ratsstuben.de' },
         ],
       },

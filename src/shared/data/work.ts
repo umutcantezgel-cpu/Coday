@@ -362,7 +362,7 @@ export const workData: Record<string, Project> = {
     type: 'case_study',
     status: 'live',
     thumbnail: 'house',
-    liveUrl: 'https://wetzlar-schlüsseldienst.de',
+    liveUrl: undefined,
     heroImage: 'bg-surface-dark',
     content: {
       de: {

@@ -74,7 +74,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         'Die Psychologie des Dark Mode: Warum Dunkel sich teuer anfühlt':
           'Die Psychologie des Dark Mode',
         'WordPress ist tot. Headless CMS beweist es (2026)': 'WordPress ist tot: Headless CMS',
-        'Headless vs WordPress Vergleich: Der CMS Showdown': 'CMS Vergleich: Headless vs WordPress',
+        'Headless vs WordPress Vergleich: Der CMS Showdown': 'WordPress vs Headless im Vergleich',
         'Enterprise Security: Warum ISO 27001 das Minimum Viable Product ist':
           'Enterprise Security & ISO 27001',
         'Digital Government: Warum das OZG 2.0 scheitert (und wie wir es retten)':
@@ -116,7 +116,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
           'Digital Sovereignty & US Cloud Act',
         'The Psychology of Dark Mode: Why It Feels Expensive': 'The Psychology of Dark Mode',
         'WordPress is Dead. Headless CMS Proves It (2026)': 'WordPress is Dead: Headless CMS',
-        'Headless CMS vs WordPress: The CMS Comparison': 'CMS Showdown: Headless vs WP',
+        'Headless CMS vs WordPress: The CMS Comparison': 'WordPress vs Headless Compared',
         'Enterprise Security: Why ISO 27001 is the Minimum Viable Product':
           'Enterprise Security & ISO 27001',
         'Digital Government: Why OZG 2.0 is Failing (and How to Fix It)':
@@ -287,7 +287,9 @@ export default async function BlogPostPage({ params }: PageProps) {
       {/* SEO */}
       <section className="container mx-auto px-4 py-16 max-w-5xl text-secondary-600">
         <h2 className="text-3xl font-display font-bold mb-6">
-          Wissensdatenbank und Experten-Blog für modernes Webdesign
+          {post
+            ? `${post.title} – Expertenwissen von Coday`
+            : 'Wissensdatenbank und Experten-Blog für modernes Webdesign'}
         </h2>
         <div className="space-y-4 text-base leading-relaxed">
           <p>

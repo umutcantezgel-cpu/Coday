@@ -69,11 +69,11 @@ export default async function PublicSectorPage({
       <PublicSectorClient />
       {/* SEO */}
       <section className="container mx-auto px-4 py-16 max-w-5xl text-secondary-600">
-        <h2 className="text-3xl font-display font-bold mb-6">
+        <h3 className="text-3xl font-display font-bold mb-6">
           {_locale === 'en'
             ? 'Web Design for the Public Sector – Accessible & Secure Government Portals in Hesse'
             : 'Webdesign für den Öffentlichen Sektor – Barrierefreie & sichere Behördenportale in Hessen'}
-        </h2>
+        </h3>
         <div className="space-y-4 text-base leading-relaxed">
           <p>
             {_locale === 'en'
