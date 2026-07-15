@@ -2,67 +2,67 @@
   "target": "restaurant",
   "type": "industry-location",
   "meta": {
-    "title": "Gastronomie Webdesign Agentur Wetzlar | Tischreservierung & SEO",
-    "description": "Appetitanregendes Webdesign für Restaurants in Wetzlar. Gewinnen Sie Gäste durch emotionales Design, Local SEO und nahtlose Online Reservierungen."
+    "title": "Gastronomie Webdesign Agentur Wetzlar | Tischreservierung & Local SEO",
+    "description": "Premium Webdesign für Restaurants in Wetzlar und Umgebung. Gewinnen Sie spürbar mehr Gäste durch emotionales Design, gezieltes Local SEO und nahtlose Online-Tischreservierungen."
   },
   "hero": {
-    "headline": "Digitaler Appetit, der Tische füllt.",
-    "subheadline": "Mehr Reservierungen. Emotionales Design. Lokale Dominanz.",
-    "description": "Mehr Reservierungen. Wir designen Gastronomie Websites, die den Geschmack und die Atmosphäre Ihres Hauses digital erlebbar machen.",
+    "headline": "Digitaler Appetit, der Ihre Tische jeden Abend füllt.",
+    "subheadline": "Mehr Online-Reservierungen. Hoch-emotionales Webdesign. Dominante lokale Sichtbarkeit in Wetzlar.",
+    "description": "Der erste Eindruck entscheidet. Wir designen exzellente, conversion-optimierte Gastronomie-Websites, die den einzigartigen Geschmack, die Atmosphäre und das Erlebnis Ihres Hauses digital spürbar machen. Verwandeln Sie hungrige Website-Besucher in treue Stammgäste mit einer Webpräsenz, die genauso gut ist wie Ihre Küche.",
     "metrics": [
       {
         "value": "130",
-        "label": "Mehr Online Reservierungen",
+        "label": "Mehr Online Reservierungen durch optimierte Prozesse",
         "suffix": "%"
       },
       {
         "value": "0",
-        "label": "PDF Speisekarten",
+        "label": "Unleserliche PDF-Speisekarten für Ihre Gäste",
         "suffix": ""
       }
     ]
   },
   "gamifiedStats": {
-    "title": "Warum Sie Gäste online verlieren",
-    "description": "Nichts frustriert hungrige Nutzer mehr als unleserliche PDF Speisekarten auf dem Handy oder das ewige Suchen nach einer Telefonnummer.",
+    "title": "Warum Sie jeden Tag potenzielle Gäste online verlieren",
+    "description": "In der heutigen Zeit entscheidet der erste digitale Eindruck darüber, ob ein Gast bei Ihnen bucht oder beim Wettbewerber. Nichts frustriert hungrige Nutzer mehr als veraltete Websites, unleserliche PDF-Speisekarten auf dem Smartphone oder das mühsame Suchen nach einer Telefonnummer für die Reservierung.",
     "counters": [
       {
         "targetValue": 89,
         "suffix": "%",
-        "label": "der Gäste recherchieren Restaurants vor dem ersten Besuch online"
+        "label": "der Gäste recherchieren Restaurants vor dem ersten Besuch ausgiebig online"
       },
       {
         "targetValue": 65,
         "suffix": "%",
-        "label": "verlassen Websites, deren Speisekarte auf dem Smartphone nicht lesbar ist"
+        "label": "verlassen Websites sofort wieder, deren Speisekarte auf dem Smartphone nicht intuitiv lesbar ist"
       }
     ]
   },
   "bentoGrid": {
-    "title": "Das digitale Menü für Ihren Erfolg",
-    "subtitle": "So machen wir Ihr Restaurant online unwiderstehlich.",
+    "title": "Das digitale Menü für Ihren messbaren Erfolg",
+    "subtitle": "So machen wir Ihr Restaurant, Ihr Café oder Ihre Bar online absolut unwiderstehlich und sorgen für volle Auslastung.",
     "cards": [
       {
-        "title": "Emotionale Bildsprache",
-        "text": "Wir lassen das Auge mitessen. Großformatige, knusprige Detailaufnahmen und Ambiente Videos transportieren die Stimmung Ihres Lokals direkt zum Gast.",
+        "title": "Emotionale & Hochwertige Bildsprache",
+        "text": "Wir lassen das Auge digital mitessen. Großformatige, knusprige Detailaufnahmen Ihrer Gerichte und stimmungsvolle Ambiente-Videos transportieren die exklusive Stimmung Ihres Lokals direkt zum Gast. Professionelles Webdesign für die Gastronomie weckt sofort Emotionen und Appetit.",
         "size": "large",
         "icon": "Design"
       },
       {
-        "title": "Online Tischreservierung",
-        "text": "1 Klick Reservierungen über OpenTable, Quandoo oder Ihr eigenes System. Das Telefon klingelt weniger, die Tische sind voll.",
+        "title": "Nahtlose Online Tischreservierung",
+        "text": "1-Klick-Reservierungen über etablierte Systeme wie OpenTable, Quandoo oder vollständig in Ihre Website integrierte Eigenlösungen. Das Telefon klingelt seltener während des Stresses im Servicegeschäft, aber Ihre Tische sind stets ausgebucht. Automatisierung, die sich direkt in mehr Umsatz niederschlägt.",
         "size": "small",
         "icon": "Speed"
       },
       {
-        "title": "Digitale Speisekarten",
-        "text": "Keine PDFs mehr! Wir bauen interaktive, SEO optimierte Speisekarten, die sich jedem Smartphone Display perfekt anpassen.",
+        "title": "Interaktive & Digitale Speisekarten",
+        "text": "Keine kundenunfreundlichen PDFs mehr! Wir bauen interaktive, suchmaschinenoptimierte (SEO) Speisekarten, die sich jedem Smartphone-Display perfekt und blitzschnell anpassen. Allergene, Zusatzstoffe und tagesaktuelle Preise lassen sich mit wenigen Klicks jederzeit aktualisieren.",
         "size": "small",
         "icon": "MapPin"
       },
       {
-        "title": "Gastronomie SEO",
-        "text": "Wir sorgen dafür, dass Sie bei Suchanfragen wie 'Bester Italiener Wetzlar' oder 'Frühstück Gießen' ganz oben stehen.",
+        "title": "Lokales Gastronomie SEO",
+        "text": "Wer nicht gefunden wird, existiert digital nicht. Wir sorgen durch datengetriebenes Local SEO dafür, dass Sie bei relevanten Suchanfragen wie 'Bester Italiener Wetzlar', 'Frühstück Gießen' oder 'Steakhouse in der Nähe' auf den obersten Plätzen bei Google erscheinen und den lokalen Markt dominieren.",
         "size": "tall",
         "icon": "SEO"
       }
@@ -70,119 +70,119 @@
   },
   "processSteps": [
     {
-      "title": "1. Konzept & Atmosphäre",
-      "description": "Fine Dining, Systemgastronomie oder Szene Bar? Wir fangen die Essenz Ihres Konzepts ein und gießen sie in ein digitales Erlebnis."
+      "title": "1. Strategie, Konzept & Atmosphäre",
+      "description": "Egal ob Fine-Dining-Restaurant, florierende Systemgastronomie oder trendige Szene-Bar – in einem ausführlichen Workshop fangen wir die wahre Essenz Ihres Konzepts ein und gießen sie in ein strategisches, digitales Erlebnis, das exakt Ihre gewünschte Zielgruppe anspricht."
     },
     {
-      "title": "2. Food Fotografie",
-      "description": "Stock Fotos sind ein No Go. Wenn gewünscht, organisieren wir ein professionelles Food Shooting, das Ihren Gerichten gerecht wird."
+      "title": "2. Professionelle Food Fotografie",
+      "description": "Gekaufte Stock-Fotos sind ein absolutes No-Go in der Gastronomie. Wenn gewünscht, organisieren wir ein professionelles Food-Shooting in Ihren Räumlichkeiten, das Ihren kulinarischen Kreationen visuell gerecht wird und das Wasser im Mund zusammenlaufen lässt."
     },
     {
-      "title": "3. Booking Integration",
-      "description": "Nahtlose Anbindung Ihres Reservierungssystems, um die Hürde für eine Buchung für den Nutzer zu minimieren."
+      "title": "3. Booking- & System-Integration",
+      "description": "Wir sorgen für eine technisch nahtlose und sichere Anbindung Ihres bevorzugten Reservierungssystems, um die Hürde für eine Buchung für den Nutzer so minimal wie möglich zu gestalten. Reibungslose User Experience (UX) steht hier an erster Stelle."
     },
     {
-      "title": "4. Go Live & Local SEO",
-      "description": "Startschuss für Ihre neue Website und Optimierung Ihres Google Profils (Google Maps) für maximale lokale Sichtbarkeit."
+      "title": "4. Go-Live, Speed-Optimierung & Local SEO",
+      "description": "Der Startschuss für Ihre neue, extrem schnelle Website fällt. Parallel optimieren wir Ihr Google Unternehmensprofil (Google Maps) für maximale lokale Sichtbarkeit, damit Sie ab dem ersten Tag von einer erhöhten digitalen Reichweite profitieren."
     }
   ],
   "localDominance": {
-    "title": "Werden Sie das absolute Must Visit Lokal",
-    "description": "In der Gastronomie entscheidet das Smar... Wir bauen Ihre Online Präsenz systematisch zur stärksten Marke in Ihrer lokalen Gastronomie Szene auf.",
+    "title": "Werden Sie das absolute Must-Visit Lokal in Wetzlar",
+    "description": "In der hart umkämpften Gastronomiebranche entscheidet heutzutage das Smartphone über Ihren Erfolg. Wir bauen Ihre Online-Präsenz systematisch und nachhaltig zur stärksten digitalen Marke in Ihrer lokalen Gastronomie-Szene auf. Heben Sie sich deutlich von Mitbewerbern ab, die den digitalen Wandel verschlafen haben.",
     "points": [
-      "Dominate Rankings für zielgruppenspezifische Suchanfragen (z.B. 'Steakhouse Wetzlar')",
-      "Perfekte Synchronisation von Google Unternehmensprofil (Bewertungen) und Website",
-      "Fokus auf starke Mobile Performance für spontane 'In der Nähe suchen' Kunden"
+      "Dominate Rankings für hochprofitable und zielgruppenspezifische Suchanfragen (z.B. 'Exklusives Steakhouse Wetzlar' oder 'Veganes Restaurant Hessen')",
+      "Perfekte Synchronisation und Pflege Ihres Google Unternehmensprofils (inklusive Bewertungsmanagement) und Ihrer Premium-Website",
+      "Kompromissloser Fokus auf extreme Mobile-Performance für spontane 'Restaurant in der Nähe suchen'-Kunden, die sofort buchen wollen"
     ]
   },
   "faq": [
     {
-      "q": "Warum raten Sie von PDF Speisekarten ab?",
-      "a": "PDFs sind der Conversion Killer Nummer Eins auf Smartphones. Nutzer müssen zoomen, scrollen und verbrauchen extrem viel Datenvolumen. Außerdem kann Google den Text in PDFs schlechter lesen (schlecht für SEO). Wir integrieren interaktive Speisekarten direkt in die Website."
+      "q": "Warum raten Sie als Webdesign Agentur dringend von PDF-Speisekarten ab?",
+      "a": "PDFs sind der Conversion-Killer Nummer Eins auf mobilen Endgeräten. Nutzer müssen zoomen, wild hin- und herscrollen und verbrauchen extrem viel Datenvolumen beim Herunterladen großer Dateien. Zudem kann Google den Text in PDF-Dokumenten deutlich schlechter auslesen, was massiv negative Auswirkungen auf Ihr lokales SEO hat. Wir integrieren stattdessen interaktive, responsive HTML-Speisekarten direkt in die Architektur Ihrer Website."
     },
     {
-      "q": "Können wir unsere Speisekarte täglich selbst ändern?",
-      "a": "Ja, absolut. Sie erhalten ein modernes Headless CMS (Content Management System), mit dem Sie Tagesgerichte, Preise oder Saisonkarten in Sekunden direkt vom Smartphone aus aktualisieren können."
+      "q": "Können wir unsere Speisekarte und Tagesangebote täglich selbst ändern?",
+      "a": "Ja, absolut. Unabhängigkeit ist uns wichtig. Sie erhalten von uns ein modernes, extrem schnelles Headless CMS (Content Management System). Damit können Sie Tagesgerichte, saisonale Preisanpassungen oder wechselnde Weinkarten in wenigen Sekunden direkt von Ihrem Smartphone oder Tablet aus aktualisieren – ohne Programmierkenntnisse."
     },
     {
-      "q": "Binden Sie unser Reservierungssystem (z.B. OpenTable, Quandoo) ein?",
-      "a": "Wir binden alle gängigen Systeme nahtlos über Widgets oder APIs ein. Der Gast bleibt optisch auf Ihrer Premium Website, während die Buchung sicher in Ihrem System landet."
+      "q": "Binden Sie unser bestehendes Reservierungssystem (z.B. OpenTable, Quandoo, resmio) ein?",
+      "a": "Selbstverständlich. Wir binden alle gängigen Gastro-Systeme technisch nahtlos über moderne Widgets oder direkte APIs ein. Der große Vorteil: Der Gast bleibt optisch und emotional auf Ihrer Premium-Website, der Buchungsprozess fühlt sich flüssig an, während die Reservierung datenschutzkonform und sicher in Ihrem Backend landet."
     },
     {
-      "q": "Können wir auch Online Bestellungen (Take Away/Delivery) integrieren?",
-      "a": "Ja. Wenn Sie sich von Lieferando & Co. unabhängig machen wollen (und die hohen Provisionen sparen möchten), integrieren wir ein eigenes, provisionsfreies Bestell  und Bezahlsystem."
+      "q": "Können wir auch Online-Bestellungen (Take-Away / Delivery) direkt über die Website integrieren?",
+      "a": "Ja. Wenn Sie sich langfristig von den hohen Provisionszahlungen an Plattformen wie Lieferando & Co. unabhängig machen wollen, integrieren wir ein hochmodernes, eigenes und provisionsfreies Bestell- und Bezahlsystem für Sie. So behalten Sie 100% Ihrer Marge und bauen eine direkte Kundenbeziehung auf."
     },
     {
-      "q": "Ist die Seite auch schnell genug für mobile Nutzer von unterwegs?",
-      "a": "Gastronomie Suchen passieren meist unterwegs über das Handynetz. Dank unserer Next.js Architektur laden unsere Seiten in Millisekunden – ein entscheidender Vorteil gegenüber Mitbewerbern mit langsamen WordPress Themes."
+      "q": "Ist die Seite auch schnell genug für mobile Nutzer, die von unterwegs nach Restaurants suchen?",
+      "a": "Gastronomie-Suchen passieren zu über 80% mobil von unterwegs über das Handynetz. Dank unserer fortschrittlichen Next.js-Architektur und strenger Performance-Budgets laden unsere Seiten in Bruchteilen von Sekunden. Dies ist nicht nur ein entscheidender Wettbewerbsvorteil gegenüber langsamen WordPress-Themes der Konkurrenz, sondern auch ein massiver Ranking-Faktor bei Google (Core Web Vitals)."
     },
     {
-      "q": "Helfen Sie auch bei der Suche nach Personal (Service/Küche)?",
-      "a": "Ja. Der Personalmangel in der Gastro ist enorm. Wir können spezielle Recruiting Landingpages einbauen, die Sie als fairen, modernen Arbeitgeber präsentieren und schnelle 1 Klick Bewerbungen ermöglichen."
+      "q": "Helfen Sie durch Webdesign auch bei der Suche nach qualifiziertem Personal (Service / Küche)?",
+      "a": "Der Personalmangel in der Gastronomie ist eine der größten Herausforderungen unserer Zeit. Wir können spezielle, hochkonvertierende Recruiting-Landingpages einbauen, die Ihr Restaurant als fairen, modernen und attraktiven Arbeitgeber präsentieren. Durch schnelle 1-Klick-Bewerbungen senken wir die Hürde für potenzielle Bewerber drastisch und füllen Ihr Team mit den besten Talenten der Region."
     }
   ],
   "meta_en": {
-    "title": "Gastronomy Web Design Agency Wetzlar | Tischreservierung & SEO",
-    "description": "Premium web design for restaurants and gastronomy. Drive more table reservations and visually capture the unique culinary atmosphere of your business."
+    "title": "Gastronomy Web Design Agency Wetzlar | Table Reservations & Local SEO",
+    "description": "Premium web design for restaurants and gastronomy in Wetzlar. Drive more table reservations, enhance local SEO, and visually capture your unique culinary atmosphere."
   },
   "hero_en": {
-    "headline": "Digital appetite that fills tables.",
-    "subheadline": "More reservations. Emotional design. Local dominance.",
-    "description": "More reservations. We design gastronomy websites that make the taste and atmosphere of your establishment digitally tangible.",
+    "headline": "Digital appetite that consistently fills your tables.",
+    "subheadline": "More online reservations. Emotional web design. Dominant local visibility in Wetzlar.",
+    "description": "First impressions matter. We design excellent, conversion-optimized gastronomy websites that make the unique taste, atmosphere, and experience of your establishment digitally tangible. Turn hungry website visitors into loyal regular guests with a web presence that is just as outstanding as your cuisine.",
     "metrics": [
       {
         "value": "130",
-        "label": "More Online Reservations",
+        "label": "More Online Reservations via optimized processes",
         "suffix": "%"
       },
       {
         "value": "0",
-        "label": "PDF Menus",
+        "label": "Unreadable PDF menus for your valued guests",
         "suffix": ""
       }
     ]
   },
   "gamifiedStats_en": {
-    "title": "Why you are losing guests online",
-    "description": "Nothing frustrates hungry users more than illegible PDF menus on their mobile phone or endlessly searching for a phone number.",
+    "title": "Why you are losing potential guests online every day",
+    "description": "In today's fast-paced world, the first digital impression determines whether a guest books with you or your competitor. Nothing frustrates hungry users more than outdated websites, illegible PDF menus on their mobile phone, or endlessly searching for a phone number to make a simple reservation.",
     "counters": [
       {
         "targetValue": 89,
         "suffix": "%",
-        "label": "of guests research restaurants online before their first visit"
+        "label": "of guests extensively research restaurants online before their first visit"
       },
       {
         "targetValue": 65,
         "suffix": "%",
-        "label": "leave websites where the menu is unreadable on smartphones"
+        "label": "immediately leave websites where the menu is not intuitively readable on smartphones"
       }
     ]
   },
   "bentoGrid_en": {
-    "title": "The digital menu for your success",
-    "subtitle": "How we make your restaurant irresistible online.",
+    "title": "The digital menu for your measurable success",
+    "subtitle": "How we make your restaurant, café, or bar absolutely irresistible online and ensure full capacity.",
     "cards": [
       {
-        "title": "Emotional Imagery",
-        "text": "We let the eyes feast too. Large-format, crisp close-ups and ambiance videos convey the mood of your restaurant directly to the guest.",
+        "title": "Emotional & High-Quality Imagery",
+        "text": "We let the eyes feast digitally. Large-format, crisp close-ups of your dishes and atmospheric ambiance videos convey the exclusive mood of your restaurant directly to the guest. Professional web design for gastronomy instantly evokes emotions and appetite.",
         "size": "large",
         "icon": "Design"
       },
       {
-        "title": "Online Table Reservations",
-        "text": "1-click reservations via OpenTable, Quandoo, or your own system. The phone rings less, the tables are full.",
+        "title": "Seamless Online Table Reservations",
+        "text": "1-click reservations via established systems like OpenTable, Quandoo, or custom solutions fully integrated into your website. The phone rings less during the stress of service, but your tables are always fully booked. Automation that directly translates into more revenue.",
         "size": "small",
         "icon": "Speed"
       },
       {
-        "title": "Digital Menus",
-        "text": "No more PDFs! We build interactive, SEO-optimized menus that perfectly adapt to any smartphone display.",
+        "title": "Interactive & Digital Menus",
+        "text": "No more customer-unfriendly PDFs! We build interactive, search-engine-optimized (SEO) menus that perfectly and lightning-fast adapt to any smartphone display. Allergens, additives, and daily prices can be updated anytime with just a few clicks.",
         "size": "small",
         "icon": "MapPin"
       },
       {
-        "title": "Gastronomy SEO",
-        "text": "We ensure you rank at the very top for search queries like 'Best Italian Wetzlar' or 'Breakfast Giessen'.",
+        "title": "Local Gastronomy SEO",
+        "text": "If you are not found, you do not exist digitally. Through data-driven Local SEO, we ensure you rank at the very top of Google for relevant search queries like 'Best Italian Wetzlar', 'Breakfast Giessen', or 'Steakhouse nearby', dominating your local market.",
         "size": "tall",
         "icon": "SEO"
       }
@@ -190,55 +190,55 @@
   },
   "processSteps_en": [
     {
-      "title": "1. Concept & Atmosphere",
-      "description": "Fine dining, system gastronomy, or trendy bar? We capture the essence of your concept and turn it into a digital experience."
+      "title": "1. Strategy, Concept & Atmosphere",
+      "description": "Whether it's a fine-dining restaurant, a flourishing system gastronomy, or a trendy bar – in a detailed workshop, we capture the true essence of your concept and turn it into a strategic, digital experience that exactly targets your desired audience."
     },
     {
-      "title": "2. Food Photography",
-      "description": "Stock photos are a no-go. If desired, we organize a professional food shoot that does justice to your dishes."
+      "title": "2. Professional Food Photography",
+      "description": "Purchased stock photos are an absolute no-go in gastronomy. If desired, we organize a professional food shoot at your premises that visually does justice to your culinary creations and makes mouths water."
     },
     {
-      "title": "3. Booking Integration",
-      "description": "Seamless integration of your reservation system to minimize the hurdle of booking for the user."
+      "title": "3. Booking & System Integration",
+      "description": "We ensure a technically seamless and secure integration of your preferred reservation system to keep the booking hurdle for the user as minimal as possible. Smooth User Experience (UX) is our top priority here."
     },
     {
-      "title": "4. Go-Live & Local SEO",
-      "description": "Launch for your new website and optimization of your Google Profile (Google Maps) for maximum local visibility."
+      "title": "4. Go-Live, Speed Optimization & Local SEO",
+      "description": "The starting gun for your new, extremely fast website fires. In parallel, we optimize your Google Business Profile (Google Maps) for maximum local visibility, so you benefit from increased digital reach from day one."
     }
   ],
   "localDominance_en": {
-    "title": "Become the absolute must-visit location",
-    "description": "In gastronomy, smartphones decide... We systematically build your online presence into the strongest brand in your local gastronomy scene.",
+    "title": "Become the absolute must-visit location in Wetzlar",
+    "description": "In the fiercely competitive gastronomy industry, the smartphone decides your success today. We systematically and sustainably build your online presence into the strongest digital brand in your local gastronomy scene. Stand out clearly from competitors who have slept through the digital transformation.",
     "points": [
-      "Dominate rankings for target group-specific search queries (e.g., 'Steakhouse Wetzlar')",
-      "Perfect synchronization of Google Business Profile (reviews) and website",
-      "Focus on strong mobile performance for spontaneous 'search nearby' customers"
+      "Dominate rankings for highly profitable and target group-specific search queries (e.g., 'Exclusive Steakhouse Wetzlar' or 'Vegan Restaurant Hessen')",
+      "Perfect synchronization and maintenance of your Google Business Profile (including review management) and your premium website",
+      "Uncompromising focus on extreme mobile performance for spontaneous 'search restaurant nearby' customers who want to book immediately"
     ]
   },
   "faq_en": [
     {
-      "q": "Why do you advise against PDF menus?",
-      "a": "PDFs are the number one conversion killer on smartphones. Users have to zoom, scroll, and use up a lot of data. In addition, Google has a harder time reading text in PDFs (bad for SEO). We integrate interactive menus directly into the website."
+      "q": "Why do you strongly advise against PDF menus as a web design agency?",
+      "a": "PDFs are the number one conversion killer on mobile devices. Users have to zoom, frantically scroll back and forth, and use up a lot of data downloading large files. Additionally, Google has a much harder time reading text in PDF documents, which has massively negative effects on your local SEO. Instead, we integrate interactive, responsive HTML menus directly into your website's architecture."
     },
     {
-      "q": "Can we change our menu ourselves every day?",
-      "a": "Yes, absolutely. You receive a modern Headless CMS (Content Management System) that allows you to update daily specials, prices, or seasonal menus in seconds directly from your smartphone."
+      "q": "Can we change our menu and daily specials ourselves every day?",
+      "a": "Yes, absolutely. Independence is important to us. You receive a modern, extremely fast Headless CMS (Content Management System). With it, you can update daily specials, seasonal price adjustments, or changing wine lists in seconds directly from your smartphone or tablet – without any programming knowledge."
     },
     {
-      "q": "Do you integrate our reservation system (e.g., OpenTable, Quandoo)?",
-      "a": "We seamlessly integrate all standard systems via widgets or APIs. The guest remains visually on your premium website, while the booking securely lands in your system."
+      "q": "Do you integrate our existing reservation system (e.g., OpenTable, Quandoo, resmio)?",
+      "a": "Of course. We technically seamlessly integrate all common gastro systems via modern widgets or direct APIs. The big advantage: The guest remains visually and emotionally on your premium website, the booking process feels fluid, while the reservation lands securely and GDPR-compliantly in your backend."
     },
     {
-      "q": "Can we also integrate online orders (Take-Away/Delivery)?",
-      "a": "Yes. If you want to become independent of Lieferando & Co. (and save the high commission fees), we integrate a custom, commission-free ordering and payment system."
+      "q": "Can we also integrate online orders (Take-Away / Delivery) directly via the website?",
+      "a": "Yes. If you want to become independent of high commission payments to platforms like Lieferando & Co. in the long term, we integrate a state-of-the-art, proprietary, and commission-free ordering and payment system for you. This way, you keep 100% of your margin and build a direct customer relationship."
     },
     {
-      "q": "Is the site also fast enough for mobile users on the go?",
-      "a": "Gastronomy searches mostly happen on the go via the mobile network. Thanks to our Next.js architecture, our pages load in milliseconds – a decisive advantage over competitors with slow WordPress themes."
+      "q": "Is the site fast enough for mobile users searching for restaurants on the go?",
+      "a": "Gastronomy searches happen over 80% mobile on the go via the cellular network. Thanks to our advanced Next.js architecture and strict performance budgets, our pages load in fractions of a second. This is not only a decisive competitive advantage over the slow WordPress themes of the competition, but also a massive ranking factor for Google (Core Web Vitals)."
     },
     {
-      "q": "Do you also help with staff recruiting (service/kitchen)?",
-      "a": "Yes. The staff shortage in gastronomy is enormous. We can build in special recruiting landing pages that present you as a fair, modern employer and enable quick 1-click applications."
+      "q": "Do you also help with recruiting qualified staff (service / kitchen) through web design?",
+      "a": "The staff shortage in gastronomy is one of the biggest challenges of our time. We can build in special, high-converting recruiting landing pages that present your restaurant as a fair, modern, and attractive employer. Through quick 1-click applications, we drastically lower the hurdle for potential applicants and fill your team with the best talents in the region."
     }
   ]
 }

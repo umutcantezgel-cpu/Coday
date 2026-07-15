@@ -38,14 +38,14 @@ export async function generateMetadata({
   if (locale === 'en') {
     return generatePageMetadata({
       title: `${formattedIndustry} Web Design & IT Solutions`,
-      description: `Custom web design, software development, and IT solutions specifically tailored for the ${formattedIndustry} industry. Elevate your digital presence and optimize your workflows with Coday.`,
+      description: `Custom web design and IT solutions specifically tailored for the ${formattedIndustry} industry. Elevate your digital presence with Coday.`,
       path: `/en/branchen/${industry}`,
       type: 'money',
     });
   }
   return generatePageMetadata({
     title: `${formattedIndustry} Webdesign & IT-Lösungen`,
-    description: `Maßgeschneidertes Webdesign, Softwareentwicklung und IT-Lösungen speziell für die Branche ${formattedIndustry}. Optimieren Sie Ihre Prozesse und stärken Sie Ihre digitale Präsenz mit Coday.`,
+    description: `Maßgeschneidertes Webdesign und IT-Lösungen speziell für die Branche ${formattedIndustry}. Stärken Sie Ihre digitale Präsenz mit Coday.`,
     path: `/de/branchen/${industry}`,
     type: 'money',
   });

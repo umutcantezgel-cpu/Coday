@@ -1,27 +1,27 @@
 {
   "deliverables": {
-    "title": "What you receive"
+    "title": "What you receive – Measurable results and premium assets"
   },
   "faq": {
-    "title": "Frequently asked questions about UI/UX"
+    "title": "Frequently asked questions about UI/UX design & conversion optimization"
   },
   "hero": {
     "badge": "UI/UX design",
-    "cta": "Request a design audit",
-    "description": "We create digital experiences that not only impress, but also convert.",
+    "cta": "Request a free design audit",
+    "description": "We create digital experiences that not only impress at first glance but also convert measurably through psychologically sound user guidance. From the first wireframe sketch to the final high-fidelity prototype, your target audience and business goals are at the center of our work.",
     "title_prefix": "Intuitive",
     "title_suffix": "User experience"
   },
   "process": {
-    "description": "An iterative design process ensures that we precisely meet the needs of your users.",
-    "title": "Our design process"
+    "description": "An iterative, data-driven design process ensures that we precisely meet the needs of your users. We analyze user behavior, develop personas, and test prototypes to minimize friction and maximize usability.",
+    "title": "Our data-driven design process"
   },
   "psychology": {
-    "description": "Our design is based on psychological principles that positively control user behavior.",
-    "title": "Design meets psychology"
+    "description": "Our excellent design is based not only on aesthetics but on sound behavioral psychology principles. We use cognitive patterns, visual hierarchies, and targeted micro-interactions to positively control user behavior, strengthen trust in your brand, and sustainably increase conversion rates.",
+    "title": "Design meets behavioral psychology"
   },
   "seoText": {
-    "title": "Digital Excellence for Your Success",
-    "content": "As an experienced web design agency, we offer comprehensive expertise and technological excellence in all areas of digital product development. Our goal is to create solutions for you that are not only visually appealing but, above all, high-performing and conversion-optimized.\n\nThe digital landscape is evolving rapidly. Therefore, we rely on modern, future-proof technologies and agile development methods. Whether it's a complex web application, a high-performance headless CMS, or sophisticated UI/UX design - we guarantee the highest quality standards and measurable results.\n\nTrust in a partner who understands your business goals and translates them into digital success. Through continuous analysis, optimization, and strategic consulting, we ensure that your digital assets generate long-term value and keep you one step ahead of the competition."
+    "title": "Digital Excellence: How outstanding UI/UX design scales your business success",
+    "content": "As a highly specialized web agency for sophisticated UI/UX design, we know one thing for sure: the attention span on the internet is extremely short. If users do not understand the added value of your website or app within milliseconds, they will bounce. This is exactly where we come in. Our holistic approach combines aesthetic brilliance with profound behavioral psychology and state-of-the-art technology. Our primary goal is to create not only visually appealing but, above all, extremely high-performing and conversion-optimized digital products for you that sustainably engage your target audience and turn passive visitors into active customers.\n\nThe digital landscape is evolving at a breathtaking pace. Today, users expect lightning-fast loading times, seamless responsive layouts, and intuitive interactions across all devices. An average design is no longer enough to stand out in a saturated market. Therefore, we consistently rely on future-proof, modern tech stacks and agile design methodologies. Whether it is a highly complex SaaS application, a high-performance headless e-commerce platform, or a representative B2B corporate website – we guarantee the highest quality standards in every single pixel.\n\nThrough comprehensive UX research, the use of interactive high-fidelity prototypes, and continuous user testing, we identify and eliminate usability hurdles long before a single line of code is written. This Lean UX approach not only saves valuable development time and budgets but also ensures that the final end product is tailored exactly to the actual needs and pain points of your specific users. We analyze user journeys, create detailed empathy maps, and evaluate heatmaps to gain a profound understanding of your target audience's behavior.\n\nAn outstanding User Interface (UI) ensures that your digital presence looks modern, highly professional, trustworthy, and 100% on-brand. The underlying User Experience (UX) design, acting as the architectural foundation, ensures that the entire operation is logical, frictionless, accessible, and absolutely goal-oriented. We seamlessly combine both disciplines to create so-called 'Aha moments' – emotional instances where users immediately recognize the brilliance and simplicity of your product. In doing so, we utilize proven cognitive psychology principles such as Hick's Law to consciously reduce complexity and decision fatigue, or the Zeigarnik effect to subtly increase user engagement in onboarding processes. Every single visual element, from the precisely worded call-to-action button and micro-animations to the finely tuned typography, is strategically placed to fluidly guide the user's eye and communicate a perfectly clear call to action.\n\nFurthermore, accessibility plays a central role in our UI/UX process. Inclusive design not only ensures that all people can use your digital products without restrictions, but it has also become a crucial factor for your search engine ranking (SEO). We pay attention to perfect contrast ratios, clear semantic structures, and full operability via keyboard or screen reader. In this way, we maximize your potential reach and underline your brand's social responsibility.\n\nTrust in a partner who deeply understands your ambitious business goals and translates them into tangible digital success stories with strategic foresight. Coday acts as your extended, external innovation engine. Through data-driven analysis, iterative A/B testing, continuous Conversion Rate Optimization (CRO), and proactive strategic consulting, we ensure that your digital assets do not just impress on launch day. Rather, they generate measurable value over the long term, scale seamlessly with your business growth, and always keep you decisive steps ahead of the competition. Let us challenge the status quo of your industry together and create digital experiences that deliver measurable results and turn your customers into enthusiastic, loyal brand ambassadors."
   }
 }

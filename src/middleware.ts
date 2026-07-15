@@ -22,16 +22,6 @@ export default function middleware(request: NextRequest) {
     return NextResponse.redirect(newUrl);
   }
 
-  // Redirect /en/ local pages to /de/ to avoid duplicate content and "Wrong Language" errors (as they are German targeted)
-  const localPathsRegex =
-    /^\/en\/(landingpages|webdesign-agentur-wetzlar|angebot-handwerker|branchen\/[^/]+\/[^/]+)(\/.*)?$/;
-  const match = pathname.match(localPathsRegex);
-  if (match) {
-    const newUrl = request.nextUrl.clone();
-    newUrl.pathname = pathname.replace(/^\/en\//, '/de/');
-    return NextResponse.redirect(newUrl);
-  }
-
   const response = handleI18nRouting(request);
 
   // Remove the `Link` header (injected by next-intl with hreflang alternates) for local paths

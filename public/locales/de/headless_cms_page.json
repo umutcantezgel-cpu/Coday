@@ -4,29 +4,29 @@
     "title_suffix": "Headless CMS"
   },
   "why_headless": {
-    "description": "Trennen Sie Frontend und Backend für maximale Flexibilität und Kontrolle über Ihre Inhalte.",
+    "description": "Trennen Sie Frontend und Backend für maximale Flexibilität, überragende Performance und volle Kontrolle über Ihre Inhalte. Ein Headless CMS ermöglicht es Ihnen, Content einmal zu erstellen und nahtlos auf beliebigen Endgeräten und Plattformen auszuspielen – zukunftssicher und hochgradig skalierbar.",
     "items": {
       "dev_friendly": {
-        "desc": "Optimale Entwickler-Erfahrung mit strukturierten, modernen APIs.",
-        "title": "Developer Friendly"
+        "desc": "Optimale Entwickler-Erfahrung mit strukturierten, modernen REST- und GraphQL-APIs. Entwickler können ihre bevorzugten Frameworks (wie Next.js, React oder Vue) nutzen, was zu schnelleren Entwicklungszyklen, sauberem Code und deutlich reduzierten Wartungskosten führt.",
+        "title": "Developer Friendly & Flexibel"
       },
       "omnichannel": {
-        "desc": "Nutzen Sie einen zentralen Content-Hub für all Ihre digitalen Kanäle.",
-        "title": "Omnichannel Auslieferung"
+        "desc": "Nutzen Sie einen zentralen Content-Hub (Single Source of Truth) für all Ihre digitalen Kanäle. Ob Website, Mobile App, Smartwatch, Digital Signage oder IoT-Gerät – Sie pflegen Ihre Inhalte nur noch an einem einzigen Ort und pushen sie konsistent auf jeden erdenklichen Touchpoint.",
+        "title": "Wahre Omnichannel Auslieferung"
       },
       "performance": {
-        "desc": "Blitzschnelle Auslieferung durch den Einsatz globaler Edge-Netzwerke.",
-        "title": "High Performance"
+        "desc": "Blitzschnelle Auslieferung durch den Einsatz globaler Edge-Netzwerke (CDNs) und statischer Generierung (SSG). Da das Frontend vom CMS entkoppelt ist, laden Ihre Seiten in Millisekunden. Das sorgt für exzellente Core Web Vitals, bessere SEO-Rankings und glückliche Nutzer.",
+        "title": "High Performance & SEO"
       },
       "security": {
-        "desc": "Reduzierte Angriffsfläche dank strikt entkoppelter System-Architektur.",
-        "title": "Maximale Sicherheit"
+        "desc": "Erheblich reduzierte Angriffsfläche dank strikt entkoppelter System-Architektur. Da das CMS nicht direkt mit dem Frontend verbunden ist und Datenbankzugriffe im Hintergrund über sichere APIs laufen, werden klassische Schwachstellen und DDoS-Angriffe effektiv ins Leere geleitet.",
+        "title": "Maximale Enterprise-Sicherheit"
       }
     },
-    "title": "Warum Headless?"
+    "title": "Warum Sie auf ein Headless CMS setzen sollten"
   },
   "seoText": {
-    "title": "Digitale Exzellenz für Ihren Erfolg",
-    "content": "Als erfahrene Webdesign Agentur bieten wir Ihnen umfassende Expertise und technologische Exzellenz in allen Bereichen der digitalen Produktentwicklung. Unser Ziel ist es, für Sie nicht nur optisch ansprechende, sondern vor allem leistungsstarke und conversion-optimierte Lösungen zu schaffen.\n\nDie digitale Landschaft entwickelt sich rasant weiter. Daher setzen wir auf moderne, zukunftssichere Technologien und agile Entwicklungsmethoden. Ob komplexe Web-Applikation, hochperformantes Headless CMS oder anspruchsvolles UI/UX Design – wir garantieren höchste Qualitätsstandards und messbare Ergebnisse.\n\nVertrauen Sie auf einen Partner, der Ihre unternehmerischen Ziele versteht und in digitale Erfolge übersetzt. Durch kontinuierliche Analyse, Optimierung und strategische Beratung stellen wir sicher, dass Ihre digitalen Assets langfristig Wert generieren und Sie der Konkurrenz stets einen Schritt voraus sind."
+    "title": "Headless CMS: Die Zukunft des Content Managements für Ihr Unternehmen",
+    "content": "In einer zunehmend vernetzten digitalen Welt reicht ein traditionelles, monolithisches Content Management System (wie WordPress oder Typo3) oft nicht mehr aus, um den hohen Anforderungen an Geschwindigkeit, Flexibilität und Omnichannel-Präsenz gerecht zu werden. Genau hier setzt die revolutionäre Architektur eines Headless CMS an. Als spezialisierte Webdesign und Development Agentur bieten wir Ihnen umfassende Expertise bei der Planung, Entwicklung und Migration auf moderne Headless-Systeme. Unser Ziel ist es, hochperformante, skalierbare und zukunftssichere Plattformen zu schaffen, die sowohl Ihren Redakteuren als auch Ihren Entwicklern maximale Freiheit bieten.\n\nDas Kernprinzip eines Headless CMS ist die strikte Trennung (Decoupling) von Backend (wo die Inhalte erstellt und gespeichert werden) und Frontend (wo die Inhalte präsentiert werden). Der Content wird rein als strukturierte Daten über leistungsstarke APIs (wie GraphQL oder REST) bereitgestellt. Dies ermöglicht es uns, für das Frontend modernste Web-Technologien wie Next.js, React oder Svelte zu verwenden, ohne durch die technischen Restriktionen eines klassischen CMS eingeschränkt zu sein. Für Sie bedeutet das: rasante Ladezeiten, herausragende Core Web Vitals und somit deutlich bessere Rankings bei Google. Zudem können Sie denselben Content problemlos auf Ihrer Website, in einer nativen Mobile App, in Kundenportalen oder auf digitalen Werbetafeln (Digital Signage) ausspielen.\n\nDarüber hinaus bietet ein Headless-Ansatz unschlagbare Vorteile in puncto Sicherheit und Skalierbarkeit. Da das CMS und die Auslieferungsschicht physisch getrennt sind, wird die Angriffsfläche für Hacker dramatisch minimiert. Selbst bei extremen Traffic-Spitzen – beispielsweise durch eine virale Marketingkampagne – bleibt Ihr Frontend, das über globale Edge-Netzwerke (CDNs) ausgeliefert wird, performant und erreichbar.\n\nVertrauen Sie auf Coday als Ihren strategischen Partner für digitale Exzellenz. Wir begleiten Sie bei der Auswahl des passenden Headless CMS (wie z.B. Sanity, Contentful oder Storyblok), modellieren eine auf Ihre Bedürfnisse zugeschnittene Content-Architektur und implementieren ein blitzschnelles Frontend. Durch kontinuierliche Optimierung und unseren Fokus auf messbare Ergebnisse stellen wir sicher, dass Ihre neue Architektur nicht nur ein technisches Upgrade ist, sondern ein echter Geschäftsvorteil. Machen Sie Ihr Content Management heute schon bereit für die Technologien von morgen.\n\nEin weiterer entscheidender Vorteil der Headless-Architektur ist die Zukunftssicherheit (Future-Proofing). Da das Frontend völlig unabhängig arbeitet, können Sie das Design Ihrer Website oder App in der Zukunft komplett erneuern, ohne das Backend oder die Datenbank anfassen zu müssen. Dies senkt die Kosten für künftige Relaunches drastisch und ermöglicht schnelle Iterationen im Marketing. Ihre Redakteure profitieren gleichzeitig von aufgeräumten, hochgradig anpassbaren Dashboards, die genau auf ihre Workflows zugeschnitten sind. Keine überladenen Menüs mehr, sondern ein reiner Fokus auf das, was zählt: erstklassigen Content."
   }
 }

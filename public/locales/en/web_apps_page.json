@@ -1,57 +1,57 @@
 {
   "features": {
-    "description": "An overview of our technological core competencies.",
+    "description": "Discover how our core technological competencies in web app development can propel your business forward digitally. We combine state-of-the-art architectures with exceptional usability to create applications that delight both users and search engines.",
     "items": {
       "cloud": {
-        "desc": "State-of-the-art serverless architecture for maximum efficiency and reliability.",
-        "title": "Cloud native"
+        "desc": "State-of-the-art serverless architecture in the cloud for maximum efficiency, limitless scalability, and uncompromising reliability. We rely on distributed systems that perform reliably even during extreme load spikes while optimizing your infrastructure costs through on-demand resource usage.",
+        "title": "Cloud Native Architecture"
       },
       "internal_tools": {
-        "desc": "Tailor-made software solutions to digitize your business processes.",
-        "title": "Internal tools"
+        "desc": "Tailor-made, highly specialized software solutions designed to digitize and automate your complex business processes. From customized CRM systems to intricate management dashboards – we develop tools that your employees will love and that significantly boost overall productivity.",
+        "title": "Internal Tools & Dashboards"
       },
       "pwa": {
-        "desc": "A native app experience directly in the browser that also works great offline.",
-        "title": "Progressive web apps"
+        "desc": "A truly native app experience delivered directly through the browser that works seamlessly across all platforms. Progressive Web Apps (PWAs) provide offline functionality, instant push notifications, and lightning-fast loading times without requiring users to download anything from an app store.",
+        "title": "Progressive Web Apps (PWA)"
       },
       "realtime": {
-        "desc": "Live data transmission for an instant and smooth user experience.",
-        "title": "Real-time synchronization"
+        "desc": "Real-time data transmission (WebSockets, Server-Sent Events) for an instant, friction-free user experience. Whether it is live chat systems, collaborative working environments, or financial trading dashboards – we ensure information reaches your users without any delay.",
+        "title": "Real-time Synchronization"
       },
       "saas": {
-        "desc": "Scalable cloud solutions as a strong foundation for your business model.",
-        "title": "SaaS platforms"
+        "desc": "Highly scalable Software-as-a-Service solutions serving as a robust foundation for your digital business model. We design multi-tenant architectures, automated billing integrations, and flexible permission structures so you can launch your SaaS product successfully and rapidly.",
+        "title": "SaaS Platform Development"
       },
       "security": {
-        "desc": "The highest security standards that reliably protect your sensitive company data.",
-        "title": "Enterprise security"
+        "desc": "The highest enterprise security standards (OWASP Top 10, end-to-end encryption) that reliably protect your sensitive company and customer data. We integrate modern authentication methods and conduct regular security audits to prevent vulnerabilities proactively.",
+        "title": "Enterprise Security"
       }
     },
-    "title": "Powerful features"
+    "title": "Powerful Features for Modern Web Applications"
   },
   "hero": {
     "cta": "Make a project request",
-    "description": "We develop complex and scalable web applications that feel like native apps.",
+    "description": "We develop bespoke, complex, and highly scalable web applications that feel exactly like native apps but leverage the boundless reach and accessibility of the open web. Take your digital product to the next level.",
     "title_prefix": "Bespoke",
-    "title_suffix": "Web apps"
+    "title_suffix": "Web Apps"
   },
   "integration_network": {
-    "description": "Seamless connection to your existing systems for efficient data exchange.",
-    "label": "System integration",
-    "title": "API-first approach"
+    "description": "Seamless connection to your existing IT infrastructure. Through our rigorous API-first approach, we guarantee a smooth and secure data exchange between your new web application and your CRM, ERP, or third-party services.",
+    "label": "System Integration",
+    "title": "API-First Approach & Microservices"
   },
   "security": {
     "badges": {
-      "gdpr": "GDPR compliant",
-      "ssl": "SSL encryption",
-      "support": "Dedicated support",
-      "uptime": "99.9% availability"
+      "gdpr": "100% GDPR Compliant",
+      "ssl": "SSL/TLS Encryption",
+      "support": "Dedicated 24/7 Support",
+      "uptime": "99.9% Guaranteed Availability"
     },
-    "description": "When developing our web apps, the security of your data is always our top priority.",
-    "title": "Uncompromising security"
+    "description": "When developing our web applications, the security of your data is always our top priority. We implement multi-layered security concepts spanning from the database level right through to the frontend.",
+    "title": "Uncompromising Security"
   },
   "seoText": {
-    "title": "Digital Excellence for Your Success",
-    "content": "As an experienced web design agency, we offer comprehensive expertise and technological excellence in all areas of digital product development. Our goal is to create solutions for you that are not only visually appealing but, above all, high-performing and conversion-optimized.\n\nThe digital landscape is evolving rapidly. Therefore, we rely on modern, future-proof technologies and agile development methods. Whether it's a complex web application, a high-performance headless CMS, or sophisticated UI/UX design - we guarantee the highest quality standards and measurable results.\n\nTrust in a partner who understands your business goals and translates them into digital success. Through continuous analysis, optimization, and strategic consulting, we ensure that your digital assets generate long-term value and keep you one step ahead of the competition."
+    "title": "Your Premier Web Agency for High-Performance Web App Development",
+    "content": "As an experienced web design and development agency dedicated to digital excellence, we offer you comprehensive expertise and technological supremacy in the field of custom web app development. Our clear objective is to create tailor-made software solutions for you that not only impress with visually stunning UI/UX design but above all stand out due to their uncompromising performance, scalability, and relentless conversion optimization.\n\nToday’s digital landscape is evolving at a breakneck pace. Traditional, static websites are often no longer sufficient to map complex business processes or to provide users with truly interactive, engaging experiences. This is exactly where modern web applications (Web Apps) come into play. By leveraging advanced frontend and backend frameworks such as Next.js and React, we develop applications that respond instantly, feature full offline capabilities (Progressive Web Apps), and remain absolutely stable even when handling thousands of concurrent users. Whether you are planning an internal tool for process optimization, a customer-facing portal, a complex e-commerce platform, or an entirely new Software-as-a-Service (SaaS) product – we accompany you from the initial technical conceptualization all the way to a successful market rollout and beyond.\n\nIn doing so, we consistently rely on an API-first approach. This means your new web application is designed from day one to communicate seamlessly with your existing systems, including ERPs, CRMs, and various marketing tools. Simultaneously, modern serverless and cloud-native architectures guarantee that you only pay for the computational resources you actually need, while the application remains infinitely scalable at any given moment.\n\nTrust in a partner who profoundly understands your business goals and meticulously translates them into tangible digital success. We know that security and data protection, particularly strict compliance with the GDPR, are of critical importance for any web application. Therefore, comprehensive security audits and industry best practices are firmly integrated into our entire development cycle. Through continuous performance analysis (Core Web Vitals), highly targeted optimizations, and strategic technical consulting, we ensure that your digital assets not only function flawlessly but also generate long-term value, securing you a permanent competitive advantage in your industry. Let us work together to turn your vision of the perfect web application into reality."
   }
 }

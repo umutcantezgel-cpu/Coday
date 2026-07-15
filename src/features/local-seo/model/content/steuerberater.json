@@ -2,67 +2,67 @@
   "target": "steuerberater",
   "type": "industry-location",
   "meta": {
-    "title": "Steuerberater Webdesign Agentur Wetzlar | Mandanten gewinnen",
-    "description": "Seriöses Premium Webdesign für Steuerberater & Kanzleien. Digitalisieren Sie Ihre Prozesse und gewinnen Sie lukrative Unternehmensmandate."
+    "title": "Steuerberater Webdesign Agentur Wetzlar | Digitale Kanzlei & Mandantengewinnung",
+    "description": "Seriöses, hochperformantes Premium-Webdesign für Steuerberater & moderne Kanzleien. Digitalisieren Sie Ihre internen Prozesse und gewinnen Sie gezielt lukrative Unternehmensmandate."
   },
   "hero": {
-    "headline": "Die digitale Kanzlei der Zukunft.",
-    "subheadline": "Lukrative Mandate. Digitale Prozesse. Absolute Seriosität.",
-    "description": "Lukrative... Wir entwickeln repräsentative Web Auftritte für Steuerberater, die digitale Kompetenz beweisen und qualifizierte Mandanten anziehen.",
+    "headline": "Die digitale Steuerkanzlei der Zukunft beginnt heute.",
+    "subheadline": "Lukrative Mandate. Automatisierte, digitale Prozesse. Absolute Seriosität und Vertrauen.",
+    "description": "Ihre Expertise verdient eine Plattform, die sie widerspiegelt. Wir konzipieren und entwickeln repräsentative, hochmoderne Web-Auftritte für ambitionierte Steuerberater, die digitale Kompetenz auf den ersten Blick beweisen, Vertrauen schaffen und exakt die qualifizierten Mandanten anziehen, die Ihre Kanzlei wachsen lassen.",
     "metrics": [
       {
         "value": "100",
-        "label": "Vollständige DATEV Integration",
+        "label": "Vollständige DATEV & Portal Integration",
         "suffix": "%"
       },
       {
         "value": "0",
-        "label": "Zettelwirtschaft bei Neumandanten",
+        "label": "Zettelwirtschaft & Chaos beim Mandanten-Onboarding",
         "suffix": ""
       }
     ]
   },
   "gamifiedStats": {
-    "title": "Warum analoge Kanzleien den Anschluss verlieren",
-    "description": "Erfolgreiche Unternehmen suchen heute Berater, die DATEV Unternehmen online beherrsc... Eine veraltete Website signalisiert das genaue Gegenteil.",
+    "title": "Warum analog geprägte Kanzleien massiv den Anschluss verlieren",
+    "description": "Erfolgreiche Unternehmer und Geschäftsführer suchen heute gezielt nach Beratern, die digitale Prozesse wie DATEV Unternehmen online blind beherrschen und proaktiv vorantreiben. Eine veraltete, nicht mobil-optimierte Website signalisiert potenziellen Top-Mandanten exakt das Gegenteil und verbrennt Vertrauen.",
     "counters": [
       {
         "targetValue": 78,
         "suffix": "%",
-        "label": "der Unternehmer wechseln die Kanzlei wegen mangelnder Digitalisierung"
+        "label": "der modernen Unternehmer wechseln die Steuerkanzlei aufgrund von mangelnder Digitalisierung"
       },
       {
         "targetValue": 85,
         "suffix": "%",
-        "label": "der Mandanten wünschen sich ein sicheres digitales Mandanten Portal"
+        "label": "der bestehenden Mandanten wünschen sich ein zeitgemäßes, sicheres digitales Mandanten-Portal"
       }
     ]
   },
   "bentoGrid": {
-    "title": "Architektur für Steuerberater",
-    "subtitle": "So rüsten wir Ihre Kanzlei für das digitale Zeitalter.",
+    "title": "Maßgeschneiderte Web-Architektur für Steuerberater",
+    "subtitle": "So rüsten wir Ihre Steuerkanzlei professionell für das digitale Zeitalter auf.",
     "cards": [
       {
-        "title": "Repräsentatives Design",
-        "text": "Keine trockenen Paragraphen Wüsten. Wir visualisieren Ihre Kanzlei modern, vertrauenswürdig und extrem hochwertig. Perfekte Typografie statt Clipart.",
+        "title": "Repräsentatives & Seriöses Design",
+        "text": "Keine trockenen Paragraphen-Wüsten und standardisierten Stock-Fotos mehr. Wir visualisieren Ihre Kanzlei modern, authentisch, vertrauenswürdig und extrem hochwertig. Wir setzen auf perfekte Typografie, klare Linien und ein Design, das Kompetenz ausstrahlt, statt auf günstige Cliparts.",
         "size": "large",
         "icon": "Design"
       },
       {
-        "title": "DATEV Integration",
-        "text": "Sichere Einbindung von DATEV Unternehmen online, Meine Steuern und dem DATEV Upload direkt auf Ihrer Startseite.",
+        "title": "Nahtlose DATEV Integration",
+        "text": "Wir integrieren DATEV Unternehmen online, Meine Steuern, Arbeitnehmer online und den DATEV Upload mobil sicher und datenschutzkonform direkt als Einstiegspunkt auf Ihrer neuen Startseite. Maximaler Komfort für Sie und Ihre Mandanten.",
         "size": "small",
         "icon": "Speed"
       },
       {
-        "title": "Mandanten Onboarding",
-        "text": "Digitale, DSGVO konforme Formulare, um Neumandanten automatisiert anzulegen und erste Daten sicher abzufragen.",
+        "title": "Digitales Mandanten-Onboarding",
+        "text": "Intelligente, DSGVO-konforme und verschlüsselte Online-Formulare, um lukrative Neumandanten automatisiert anzulegen, erste steuerliche Daten sicher abzufragen und den Qualifizierungsprozess massiv zu beschleunigen.",
         "size": "small",
         "icon": "MapPin"
       },
       {
-        "title": "Kanzlei SEO",
-        "text": "Wir ranken Sie ganz oben für wertvolle Suchbegriffe wie 'GmbH Gründung Steuerberater' oder 'Digitale Steuerkanzlei Wetzlar'.",
+        "title": "Ergebnisorientiertes Kanzlei SEO",
+        "text": "Verlassen Sie sich nicht nur auf Empfehlungen. Wir ranken Ihre Website durch Local SEO strategisch ganz oben für extrem wertvolle Suchbegriffe wie 'GmbH Gründung Steuerberater', 'Digitale Steuerkanzlei Wetzlar' oder 'Unternehmensnachfolge Experte'.",
         "size": "tall",
         "icon": "SEO"
       }
@@ -70,119 +70,119 @@
   },
   "processSteps": [
     {
-      "title": "1. Positionierungs Analyse",
-      "description": "Fokus auf Ärzte, Handwerker oder E Commerce? Wir schärfen Ihr Profil, damit Sie genau die Mandate anziehen, die Sie wollen."
+      "title": "1. Strategische Positionierungs-Analyse",
+      "description": "Liegt Ihr Fokus auf Ärzten, innovativen E-Commerce Startups oder klassischem Handwerk? Wir analysieren und schärfen Ihr digitales Profil, damit Sie online exakt die profitablen Mandate anziehen, die Sie wirklich wollen, und unpassende Anfragen filtern."
     },
     {
-      "title": "2. High End Fotografie",
-      "description": "Wir setzen Ihr Partner Team und die Kanzleiräume professionell in Szene – für einen ersten Eindruck, der Souveränität ausstrahlt."
+      "title": "2. High-End Kanzlei-Fotografie",
+      "description": "Gesichter schaffen Vertrauen. Wir setzen Ihr Partner-Team, Ihre Mitarbeiter und die Kanzleiräume durch professionelle Fotoshootings perfekt in Szene – für einen herausragenden ersten Eindruck, der Souveränität und Sympathie zugleich ausstrahlt."
     },
     {
-      "title": "3. Schnittstellen & Security",
-      "description": "Implementierung sicherer Portale, SSL Verschlüsselung nach Banken Standard und Integration aller relevanten DATEV Schnittstellen."
+      "title": "3. Schnittstellen, UX & IT-Security",
+      "description": "Die Implementierung von intuitiven, sicheren Portalen, modernster SSL-Verschlüsselung nach Banken-Standard und die fehlerfreie Integration aller relevanten DATEV-Schnittstellen bilden das technische Rückgrat Ihrer neuen Website."
     },
     {
-      "title": "4. Go Live & SEO",
-      "description": "Ihre neue digitale Kanzlei geht an den Start. Flankiert von einer Local SEO Strategie, die Ihre Reichweite sofort erhöht."
+      "title": "4. Go-Live, Recruiting & Local SEO",
+      "description": "Ihre neue digitale Kanzlei geht sicher an den Start. Flankiert von einer durchdachten Local SEO Strategie, die Ihre lokale Sichtbarkeit bei Unternehmern sofort spürbar erhöht und parallel den Weg für effektives Mitarbeiter-Recruiting ebnet."
     }
   ],
   "localDominance": {
-    "title": "Die erste Adresse für Unternehmer in der Region",
-    "description": "Gerade bei komplexen steuerlichen Fragen suchen Geschäftsführer den persönliche... Wir etablieren Sie digital als *den* Experten in Ihrer Region.",
+    "title": "Die unangefochten erste Adresse für Unternehmer in Ihrer Region",
+    "description": "Gerade bei komplexen steuerlichen und betriebswirtschaftlichen Fragen suchen Geschäftsführer stets den persönlichen, vertrauensvollen Kontakt vor Ort. Wir etablieren Sie und Ihre Kanzlei durch durchdachtes Webdesign und SEO digital als *die* absoluten Experten in Ihrer Wirtschaftsregion.",
     "points": [
-      "Starkes Ranking für hochprofitable Spezial Themen (Umwandlungssteuerrecht, Unternehmensnachfolge)",
-      "Reduzierung von Support Anfragen durch smarte FAQ  und Download Bereiche (Vollmachten, Checklisten)",
-      "Aufbau einer extrem starken Arbeitgebermarke zur Gewinnung von Steuerfachangestellten"
+      "Starkes, organisches Ranking für hochprofitable Spezial-Themen und Nischen (z.B. Umwandlungssteuerrecht, internationale Steuerberatung, Unternehmensnachfolge)",
+      "Drastische Reduzierung zeitraubender Support-Anfragen durch smarte, interaktive FAQ- und Download-Bereiche (Vollmachten, Personal-Checklisten)",
+      "Aufbau einer extrem starken, authentischen Arbeitgebermarke (Employer Branding) zur proaktiven Gewinnung von dringend benötigten Steuerfachangestellten und Steuerberatern"
     ]
   },
   "faq": [
     {
-      "q": "Sind die Kontaktformulare DSGVO konform (Steuergeheimnis)?",
-      "a": "Ja, absolut. Der Schutz sensibler Daten hat für uns höchste Priorität. Wir setzen auf verschlüsselte Verbindungen, sicheres Hosting in Deutschland und binden hochsichere Portale (wie DATEV oder eigene Nextcloud Lösungen) für den Dokumentenaustausch ein."
+      "q": "Sind die Kontaktformulare und Datenabfragen auf der Website zu 100% DSGVO-konform (Steuergeheimnis)?",
+      "a": "Ja, absolut. Der Schutz hochsensibler steuerlicher und persönlicher Daten hat für uns in der Entwicklung oberste Priorität. Wir setzen auf modernste, mehrfach verschlüsselte Verbindungen, sicheres ISO-zertifiziertes Hosting ausschließlich in Deutschland und binden hochsichere Portale (wie DATEV oder verschlüsselte eigene Nextcloud-Lösungen) für den rechtskonformen Dokumentenaustausch ein. Das Steuergeheimnis bleibt unangetastet."
     },
     {
-      "q": "Können Mandanten ihre Belege über die Website hochladen?",
-      "a": "Wir empfehlen aus Sicherheits  und Prozessgründen die direkte Einbindung von DATEV Unternehmen online (oder vergleichbaren Tools). Wir integrieren den Login Bereich extrem prominent und benutzerfreundlich direkt auf Ihrer Website."
+      "q": "Können Mandanten ihre monatlichen Belege direkt über unsere Kanzlei-Website hochladen?",
+      "a": "Wir empfehlen aus tiefgreifenden Sicherheits- und effizienten Prozessgründen stets die direkte Einbindung von DATEV Unternehmen online (oder vergleichbaren, etablierten Tools) für den Belegtransfer. Wir integrieren den Login-Bereich zu diesen Portalen extrem prominent, ästhetisch ansprechend und benutzerfreundlich direkt auf der Startseite Ihrer Website, sodass Ihre Mandanten einen zentralen Anlaufpunkt haben."
     },
     {
-      "q": "Wie können wir aktiv neue Mitarbeiter (Steuerfachangestellte) finden?",
-      "a": "Der Fachkräftemangel in Ihrer Branche ist das größte Wachstumshindernis. Wir bauen emotionale Karriere Seiten auf, präsentieren Ihre Kanzlei als modernen Arbeitgeber (Homeoffice, digitale Akte) und erleichtern den Bewerbungsprozess (z.B. mobile Kurz Bewerbung)."
+      "q": "Wie können wir die Website nutzen, um aktiv neue Mitarbeiter (Steuerfachangestellte, Steuerfachwirte) zu finden?",
+      "a": "Der grassierende Fachkräftemangel in der Steuerberater-Branche ist das aktuell größte Wachstumshindernis für Kanzleien. Wir bauen hoch-emotionale, zielgruppengerechte Karriere-Seiten auf, präsentieren Ihre Kanzlei als modernen, zukunftsorientierten Arbeitgeber (Vorteile wie echtes Homeoffice, komplett digitale Akte, Weiterbildungen) und erleichtern den Bewerbungsprozess massiv (z.B. durch smarte, mobile Kurz-Bewerbungen in unter 60 Sekunden)."
     },
     {
-      "q": "Können wir unsere Kanzlei News und Steueränderungen selbst veröffentlichen?",
-      "a": "Ja, wir integrieren ein sehr einfach zu bedienendes Headless CMS. Sie können Mandanten Infos, Blogbeiträge oder Mandantenrundschreiben blitzschnell und ohne Agenturhilfe selbst online stellen."
+      "q": "Können wir unsere aktuellen Kanzlei-News, Blogbeiträge und steuerlichen Gesetzesänderungen selbst online veröffentlichen?",
+      "a": "Ja, selbstverständlich. Wir integrieren ein sehr leistungsstarkes, aber dennoch kinderleicht zu bedienendes Headless CMS (Content Management System). Damit können Sie oder Ihr Sekretariat Mandanten-Infos, Fachbeiträge oder das monatliche Mandantenrundschreiben blitzschnell, sicher und komplett ohne externe Agenturhilfe selbst online publizieren."
     },
     {
-      "q": "Wir möchten keine kleinen Einkommensteuerfälle mehr. Hilft die Website?",
-      "a": "Definitiv. Wir nutzen die Website als Filter. Durch die Art der Ansprache, das Premium Design und vorgeschaltete (automatisierte) Abfrage Prozesse ziehen Sie lukrative Unternehmensmandate an und filtern unpassende Anfragen elegant heraus."
+      "q": "Wir sind an unserer Kapazitätsgrenze und möchten keine kleinen Einkommensteuerfälle mehr annehmen. Hilft uns die Website dabei?",
+      "a": "Definitiv, das ist eine der Hauptaufgaben modernen Kanzlei-Webdesigns. Wir nutzen die Website als intelligenten Vorab-Filter. Durch die spezifische Art der textlichen Ansprache (Copywriting), das hochwertige Premium-Design und klug vorgeschaltete, automatisierte Abfrage-Prozesse (z.B. 'Welche Rechtsform hat Ihr Unternehmen?') ziehen Sie gezielt lukrative Unternehmensmandate an und filtern unpassende oder unrentable Anfragen elegant und automatisiert heraus."
     },
     {
-      "q": "Wie lange dauert es, bis unsere Kanzlei Website fertig ist?",
-      "a": "Da wir wissen, dass Ihre Zeit extrem knapp bemessen ist, arbeiten wir sehr autark. Nach einem initialen Strategiegespräch übernehmen wir Konzept, Text und Design komplett. Ein Relaunch ist meist in 4 bis 8 Wochen realisierbar."
+      "q": "Wie lange dauert es erfahrungsgemäß, bis der Relaunch unserer neuen Kanzlei-Website komplett fertig ist?",
+      "a": "Da wir genau wissen, dass Ihre Zeit als Kanzlei-Inhaber extrem knapp bemessen ist, arbeiten wir nach einem fundierten Briefing sehr autark und proaktiv. Nach einem initialen, intensiven Strategiegespräch übernehmen wir Konzept, SEO-Texterstellung und Programmierung komplett. Ein hochwertiger Relaunch, der sofort Resultate bringt, ist meist in 4 bis 8 Wochen realisierbar, ohne Ihren Kanzleialltag zu stören."
     }
   ],
   "meta_en": {
-    "title": "Tax Consultant Web Design Agency Wetzlar | Acquire Clients",
-    "description": "Reputable premium web design for tax consultants and law firms. Digitalize your processes and acquire lucrative corporate mandates."
+    "title": "Tax Consultant Web Design Agency Wetzlar | Digital Firm & Client Acquisition",
+    "description": "Reputable, high-performance premium web design for tax consultants and modern law firms. Digitalize your internal processes and acquire lucrative corporate mandates."
   },
   "hero_en": {
-    "headline": "The digital tax firm of the future.",
-    "subheadline": "Lucrative mandates. Digital processes. Absolute professionalism.",
-    "description": "Lucrative... We develop representative web presences for tax consultants that demonstrate digital competence and attract qualified clients.",
+    "headline": "The digital tax firm of the future starts today.",
+    "subheadline": "Lucrative mandates. Automated digital processes. Absolute professionalism and trust.",
+    "description": "Your expertise deserves a platform that reflects it perfectly. We design and develop representative, state-of-the-art web presences for ambitious tax consultants that demonstrate digital competence at first glance, build deep trust, and attract exactly the qualified clients that help your firm grow.",
     "metrics": [
       {
         "value": "100",
-        "label": "Full DATEV Integration",
+        "label": "Complete DATEV & Portal Integration",
         "suffix": "%"
       },
       {
         "value": "0",
-        "label": "Paperwork for new clients",
+        "label": "Paperwork & Chaos during client onboarding",
         "suffix": ""
       }
     ]
   },
   "gamifiedStats_en": {
-    "title": "Why analog firms are falling behind",
-    "description": "Successful companies today seek consultants who master DATEV Unternehmen online... An outdated website signals the exact opposite.",
+    "title": "Why analog-driven tax firms are massively falling behind",
+    "description": "Today, successful entrepreneurs and managing directors specifically look for advisors who blindly master and proactively drive digital processes like DATEV Unternehmen online. An outdated, non-mobile-optimized website signals the exact opposite to potential top clients and burns trust instantly.",
     "counters": [
       {
         "targetValue": 78,
         "suffix": "%",
-        "label": "of entrepreneurs switch firms due to a lack of digitalization"
+        "label": "of modern entrepreneurs switch their tax firm due to a severe lack of digitalization"
       },
       {
         "targetValue": 85,
         "suffix": "%",
-        "label": "of clients desire a secure digital client portal"
+        "label": "of existing clients strongly desire a contemporary, secure digital client portal"
       }
     ]
   },
   "bentoGrid_en": {
-    "title": "Architecture for tax consultants",
-    "subtitle": "How we prepare your firm for the digital age.",
+    "title": "Tailor-made web architecture for tax consultants",
+    "subtitle": "How we professionally upgrade your tax firm for the digital age.",
     "cards": [
       {
-        "title": "Representative Design",
-        "text": "No dry deserts of paragraphs. We visualize your firm in a modern, trustworthy, and extremely high-quality way. Perfect typography instead of clip art.",
+        "title": "Representative & Professional Design",
+        "text": "No more dry deserts of paragraphs and standardized stock photos. We visualize your firm in a modern, authentic, trustworthy, and extremely high-quality way. We rely on perfect typography, clear lines, and a design that radiates profound competence instead of cheap clip art.",
         "size": "large",
         "icon": "Design"
       },
       {
-        "title": "DATEV Integration",
-        "text": "Secure integration of DATEV Unternehmen online, Meine Steuern, and DATEV Upload directly on your homepage.",
+        "title": "Seamless DATEV Integration",
+        "text": "We securely and privacy-compliantly integrate DATEV Unternehmen online, Meine Steuern, Arbeitnehmer online, and DATEV Upload mobile directly as an entry point on your new homepage. Maximum convenience for you and your clients.",
         "size": "small",
         "icon": "Speed"
       },
       {
-        "title": "Client Onboarding",
-        "text": "Digital, GDPR-compliant forms to automatically create new clients and securely request initial data.",
+        "title": "Digital Client Onboarding",
+        "text": "Intelligent, GDPR-compliant, and encrypted online forms to automatically create lucrative new clients, securely request initial tax data, and massively accelerate the qualification process.",
         "size": "small",
         "icon": "MapPin"
       },
       {
-        "title": "Law Firm SEO",
-        "text": "We rank you at the top for valuable search terms like 'GmbH formation tax consultant' or 'Digital tax firm Wetzlar'.",
+        "title": "Result-Oriented Law Firm SEO",
+        "text": "Don't rely solely on word-of-mouth recommendations. Through strategic Local SEO, we rank your website at the very top for extremely valuable search terms like 'GmbH formation tax consultant', 'Digital tax firm Wetzlar', or 'Corporate succession expert'.",
         "size": "tall",
         "icon": "SEO"
       }
@@ -190,55 +190,55 @@
   },
   "processSteps_en": [
     {
-      "title": "1. Positioning Analysis",
-      "description": "Focus on doctors, craftsmen, or e-commerce? We sharpen your profile so you attract exactly the mandates you want."
+      "title": "1. Strategic Positioning Analysis",
+      "description": "Is your focus on doctors, innovative e-commerce startups, or classic trades? We analyze and sharpen your digital profile so that you attract exactly the profitable mandates online that you truly want, while elegantly filtering out unsuitable inquiries."
     },
     {
-      "title": "2. High-End Photography",
-      "description": "We professionally showcase your partner team and office spaces – for a first impression that radiates sovereignty."
+      "title": "2. High-End Law Firm Photography",
+      "description": "Faces build immediate trust. We perfectly showcase your partner team, your employees, and the office spaces through professional photo shoots – for an outstanding first impression that radiates sovereignty and likability at the same time."
     },
     {
-      "title": "3. Interfaces & Security",
-      "description": "Implementation of secure portals, SSL encryption up to banking standards, and integration of all relevant DATEV interfaces."
+      "title": "3. Interfaces, UX & IT Security",
+      "description": "The implementation of intuitive, secure portals, state-of-the-art SSL encryption up to banking standards, and the flawless integration of all relevant DATEV interfaces form the robust technical backbone of your new website."
     },
     {
-      "title": "4. Go-Live & SEO",
-      "description": "Your new digital firm goes live. Flanked by a Local SEO strategy that immediately increases your reach."
+      "title": "4. Go-Live, Recruiting & Local SEO",
+      "description": "Your new digital firm safely launches. Flanked by a well-thought-out Local SEO strategy that immediately and noticeably increases your local visibility among entrepreneurs and simultaneously paves the way for highly effective employee recruiting."
     }
   ],
   "localDominance_en": {
-    "title": "The premier address for entrepreneurs in the region",
-    "description": "Especially with complex tax questions, managing directors seek personal contact... We establish you digitally as *the* expert in your region.",
+    "title": "The undisputed premier address for entrepreneurs in your region",
+    "description": "Especially with highly complex tax and business management questions, managing directors always seek personal, trusting contact on-site. Through sophisticated web design and SEO, we digitally establish you and your firm as *the* absolute experts in your economic region.",
     "points": [
-      "Strong ranking for highly profitable niche topics (transformation tax law, corporate succession)",
-      "Reduction of support inquiries through smart FAQ and download areas (powers of attorney, checklists)",
-      "Building an extremely strong employer brand to attract tax assistants"
+      "Strong, organic ranking for highly profitable niche topics (e.g., transformation tax law, international tax consulting, corporate succession)",
+      "Drastic reduction of time-consuming support inquiries through smart, interactive FAQ and download areas (powers of attorney, personnel checklists)",
+      "Building an extremely strong, authentic employer brand (Employer Branding) to proactively attract urgently needed tax assistants and consultants"
     ]
   },
   "faq_en": [
     {
-      "q": "Are the contact forms GDPR-compliant (tax secrecy)?",
-      "a": "Yes, absolutely. The protection of sensitive data is our highest priority. We rely on encrypted connections, secure hosting in Germany, and integrate highly secure portals (like DATEV or proprietary Nextcloud solutions) for document exchange."
+      "q": "Are the contact forms and data requests on the website 100% GDPR-compliant (tax secrecy)?",
+      "a": "Yes, absolutely. The protection of highly sensitive tax and personal data is our top priority in development. We rely on state-of-the-art, multiply encrypted connections, secure ISO-certified hosting exclusively in Germany, and integrate highly secure portals (like DATEV or encrypted custom Nextcloud solutions) for legally compliant document exchange. Tax secrecy remains completely untouched."
     },
     {
-      "q": "Can clients upload their receipts via the website?",
-      "a": "For security and process reasons, we recommend the direct integration of DATEV Unternehmen online (or comparable tools). We integrate the login area extremely prominently and user-friendly directly on your website."
+      "q": "Can clients upload their monthly receipts directly via our firm's website?",
+      "a": "For profound security and efficient process reasons, we always recommend the direct integration of DATEV Unternehmen online (or comparable, established tools) for receipt transfer. We integrate the login area to these portals extremely prominently, aesthetically pleasing, and user-friendly directly on the homepage of your website, giving your clients a central point of contact."
     },
     {
-      "q": "How can we actively find new employees (tax assistants)?",
-      "a": "The shortage of skilled workers in your industry is the biggest obstacle to growth. We build emotional career pages, present your firm as a modern employer (home office, digital files), and simplify the application process (e.g., short mobile applications)."
+      "q": "How can we use the website to actively find new employees (tax assistants, tax specialists)?",
+      "a": "The rampant shortage of skilled workers in the tax consulting industry is currently the biggest obstacle to growth for firms. We build highly emotional, target-group-oriented career pages, present your firm as a modern, future-oriented employer (benefits like true home office, fully digital files, further training), and massively simplify the application process (e.g., through smart, mobile short applications in under 60 seconds)."
     },
     {
-      "q": "Can we publish firm news and tax changes ourselves?",
-      "a": "Yes, we integrate a very easy-to-use Headless CMS. You can publish client information, blog posts, or client circulars online at lightning speed and without agency help."
+      "q": "Can we publish our current firm news, blog posts, and tax law changes online ourselves?",
+      "a": "Yes, of course. We integrate a very powerful, yet incredibly easy-to-use Headless CMS (Content Management System). This allows you or your secretariat to publish client information, technical articles, or the monthly client circular online yourselves securely and at lightning speed – completely without the need for external agency help."
     },
     {
-      "q": "We no longer want small income tax cases. Does the website help?",
-      "a": "Definitely. We use the website as a filter. Through the tone of voice, premium design, and upstream (automated) query processes, you attract lucrative corporate mandates and elegantly filter out unsuitable inquiries."
+      "q": "We are at our capacity limit and no longer want to accept small income tax cases. Does the website help us with this?",
+      "a": "Definitely, that is one of the main tasks of modern law firm web design. We use the website as an intelligent pre-filter. Through the specific type of textual address (copywriting), the high-quality premium design, and smartly placed, automated query processes (e.g., 'What is the legal form of your company?'), you specifically attract lucrative corporate mandates and elegantly and automatically filter out unsuitable or unprofitable inquiries."
     },
     {
-      "q": "How long does it take for our firm website to be finished?",
-      "a": "Because we know your time is extremely limited, we work very autonomously. After an initial strategy meeting, we completely take over the concept, copy, and design. A relaunch can usually be realized in 4 to 8 weeks."
+      "q": "From experience, how long does it take for the relaunch of our new firm website to be completely finished?",
+      "a": "Because we know exactly that your time as a firm owner is extremely limited, we work very autonomously and proactively after a well-founded briefing. Following an initial, intensive strategy meeting, we completely take over the concept, SEO copywriting, and programming. A high-quality relaunch that brings immediate results can usually be realized in 4 to 8 weeks, without disrupting your daily firm routine."
     }
   ]
 }

@@ -64,15 +64,17 @@ export async function generateMetadata({
     if (fs.existsSync(filePath)) {
       const fileContents = fs.readFileSync(filePath, 'utf8');
       const content = JSON.parse(fileContents);
+      const rawDescEn = content.meta_en?.description || content.meta.description;
+      const rawDescDe = content.meta.description;
+      const descEn = rawDescEn.length > 145 ? rawDescEn.substring(0, 142) + '...' : rawDescEn;
+      const descDe = rawDescDe.length > 145 ? rawDescDe.substring(0, 142) + '...' : rawDescDe;
+
       return generatePageMetadata({
         title:
           locale === 'en'
             ? content.meta_en?.title || `${content.meta.title} in English`
             : content.meta.title,
-        description:
-          locale === 'en'
-            ? content.meta_en?.description || content.meta.description
-            : content.meta.description,
+        description: locale === 'en' ? descEn : descDe,
         path: `/${locale}/branchen/${industry}/${location}`,
         type: 'money',
       });
