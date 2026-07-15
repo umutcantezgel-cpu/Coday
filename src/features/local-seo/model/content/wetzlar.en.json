@@ -7,7 +7,7 @@
   },
   "hero": {
     "headline": "Web Design Agency Wetzlar: Websites That Truly Win More Customers",
-    "subheadline": "Websites that get more clients",
+    "subheadline": "Websites that measurably acquire more clients in Wetzlar",
     "description": "Your website is not just a digital business card – it's your best salesperson. We build lightning-fast websites for craftsmen, medical practic..."
   },
   "localDominance": {
@@ -38,6 +38,18 @@
     {
       "title": "Security and technology from a single source",
       "content": "You want to take care of your business, not website maintenance. We rely on secure and modern technologies that do not need to be constantly repaired with updates. No hacked WordPress sites, no annoying error messages. We take over the complete hosting, take care of GDPR compliance (cookie banner, imprint) and reliably secure your website. So you have your head clear for your customers."
+    },
+    {
+      "title": "Comprehensive SEO and Digital Strategy for Wetzlar Businesses",
+      "content": "A beautiful website is only the beginning. To truly succeed in a competitive local market like Wetzlar, your digital presence must be backed by a robust Search Engine Optimization (SEO) strategy. We conduct in-depth keyword research and competitor analysis tailored specifically to the Lahn-Dill region. By optimizing your site architecture, meta tags, and high-quality local content, we ensure that your business ranks at the top of Google search results when potential clients are looking for your services. Our holistic approach means that every technical decision—from responsive design to server-side rendering with Next.js—is designed to boost your organic visibility and drive highly qualified traffic directly to your digital doorstep."
+    },
+    {
+      "title": "Enterprise-Grade Performance and Reliability",
+      "content": "When users in Central Hesse visit your website, they expect an immediate, seamless experience. Slow loading times can drastically increase bounce rates and cost you valuable leads. That is why our web design agency prioritizes enterprise-grade performance. By utilizing a cutting-edge tech stack featuring Next.js, React, and headless CMS architectures, we deliver websites that load in milliseconds. This unparalleled speed not only enhances the user experience but also satisfies the strict Core Web Vitals criteria set by search engines. Furthermore, we implement robust security protocols, including SSL encryption and secure server architectures, ensuring that your business data and your customers' information remain protected against modern cyber threats."
+    },
+    {
+      "title": "Continuous Growth and Data-Driven Optimization",
+      "content": "Your digital journey does not end on launch day; it is a continuous process of refinement and growth. We believe in data-driven optimization to maximize your return on investment. After your Wetzlar-based website goes live, we integrate advanced analytics and conversion tracking tools to monitor user behavior, traffic sources, and engagement metrics. This invaluable data allows us to identify friction points and continuously refine the user interface and content strategy. Whether it is A/B testing call-to-action buttons, optimizing landing pages for local campaigns, or updating your digital portfolio, we serve as your long-term strategic partner. Together, we ensure your online presence evolves dynamically, maintaining your competitive edge and consistently converting visitors into loyal, paying customers across the Lahn-Dill district."
     }
   ],
   "faq": [

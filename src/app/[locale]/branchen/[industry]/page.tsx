@@ -51,8 +51,6 @@ export async function generateMetadata({
   });
 }
 
-import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
-
 export default async function IndustryDetailPage({
   params,
 }: {
@@ -71,10 +69,6 @@ export default async function IndustryDetailPage({
   } else if (locale === 'en' && industry === 'aerzte-gesundheit') {
     formattedIndustry = 'Doctors & Health';
   }
-  const cleanTitle =
-    locale === 'en'
-      ? `${formattedIndustry} Web Design & IT Solutions`
-      : `${formattedIndustry} Webdesign & IT-Lösungen`;
 
   const _locale = (await params)?.locale || 'de';
   return (
@@ -103,7 +97,6 @@ export default async function IndustryDetailPage({
         }}
       />
       <IndustryDetailClient />
-      <SeoContentBlock title={cleanTitle} />
     </>
   );
 }

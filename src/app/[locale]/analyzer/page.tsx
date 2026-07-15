@@ -91,6 +91,41 @@ export default async function AnalyzerPage(props: { params: Promise<{ locale: st
           <div className="mt-16">
             <ReportDashboard />
           </div>
+
+          <div className="mt-16 max-w-4xl mx-auto text-secondary-600 space-y-6 pb-16">
+            {_locale === 'en' ? (
+              <>
+                <p>
+                  Our advanced SEO Analyzer scans your website in real-time and provides detailed
+                  insights into technical SEO factors, Core Web Vitals, accessibility, and best
+                  practices. With this free audit tool, you can quickly identify optimization
+                  potential to improve your search engine rankings and enhance the user experience.
+                </p>
+                <p>
+                  Whether it's slow loading times, missing meta tags, broken links, or insufficient
+                  mobile optimization, the Coday SEO Analyzer gives you concrete, actionable
+                  recommendations. Use our comprehensive report to sustainably strengthen your
+                  online presence and generate more organic traffic.
+                </p>
+              </>
+            ) : (
+              <>
+                <p>
+                  Unser fortschrittlicher SEO Analyzer scannt Ihre Website in Echtzeit und liefert
+                  detaillierte Einblicke in technische SEO-Faktoren, Core Web Vitals,
+                  Barrierefreiheit (Accessibility) und Best Practices. Mit diesem kostenlosen
+                  Audit-Tool identifizieren Sie schnell Optimierungspotenziale, um Ihr
+                  Suchmaschinen-Ranking zu verbessern und die Nutzererfahrung zu optimieren.
+                </p>
+                <p>
+                  Egal ob langsame Ladezeiten, fehlende Meta-Tags, fehlerhafte Links oder eine
+                  unzureichende Mobile-Optimierung – der Coday SEO Analyzer gibt Ihnen konkrete,
+                  umsetzbare Handlungsempfehlungen. Nutzen Sie unseren umfassenden Report, um Ihre
+                  Online-Präsenz nachhaltig zu stärken und mehr organischen Traffic zu generieren.
+                </p>
+              </>
+            )}
+          </div>
         </div>
       </div>
       <SeoContentBlock />

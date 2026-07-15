@@ -47,10 +47,6 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
     <>
       <SeoHead title="Coday | work" description="Erfahren Sie mehr über work" pageType="default" />
       <ClientComponent />
-      {/* SEO Title für Keyword-Konsistenz */}
-      <div className="container mx-auto px-4 pb-12 text-center text-xs text-gray-400 font-mono">
-        Themen: {_seoTitle}
-      </div>
     </>
   );
 }

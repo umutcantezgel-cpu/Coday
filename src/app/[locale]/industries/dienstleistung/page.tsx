@@ -34,15 +34,6 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   const params = await props.params;
   setRequestLocale(params.locale);
 
-  const _locale = (await params)?.locale || 'de';
-  const _seoTitle =
-    _locale === 'en'
-      ? 'Web Design for Service Providers | Wetzlar Hesse | Coday'
-      : 'Webdesign für Dienstleister | Wetzlar & Hessen | Coday';
-  const _seoDesc =
-    _locale === 'en'
-      ? 'Professional websites for service providers in Wetzlar and Hesse. Tax advisors, brokers and consultants win more clients online. Get started today.'
-      : 'Professionelle Webseiten für Dienstleister in Wetzlar und Hessen. Steuerberater, Makler und Berater gewinnen online mehr Kunden. Jetzt starten.';
   return (
     <>
       <SeoHead
@@ -51,10 +42,6 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
         pageType="default"
       />
       <ClientComponent />
-      {/* SEO Title für Keyword-Konsistenz */}
-      <div className="container mx-auto px-4 pb-12 text-center text-xs text-gray-400 font-mono">
-        Themen: {_seoTitle}
-      </div>
     </>
   );
 }

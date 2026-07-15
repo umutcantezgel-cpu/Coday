@@ -13,6 +13,10 @@ export function IndustryToolEmbed({ industryKey }: IndustryToolEmbedProps) {
   const t = useTranslations('industries');
   let url = '';
 
+  const industryDisplayName = industryKey
+    ? industryKey.replace('-', ' ').replace(/\b\w/g, (l) => l.toUpperCase())
+    : 'Ihre Branche';
+
   if (industryKey?.toLowerCase().includes('handwerk')) {
     url = 'https://www.coday-agency.de/';
   } else if (
@@ -33,10 +37,10 @@ export function IndustryToolEmbed({ industryKey }: IndustryToolEmbedProps) {
         <div className="bg-gray-50 border border-gray-100 rounded-3xl p-8 text-center h-64 flex flex-col items-center justify-center">
           <div className="w-12 h-12 mb-4 bg-gray-200 rounded-full animate-pulse" />
           <h2 className="text-xl font-display font-semibold mb-2">
-            {t('tool_embed.coming_soon_title')}
+            {t('tool_embed.coming_soon_title', { industry: industryDisplayName })}
           </h2>
           <p className="text-sm text-gray-500 max-w-md mx-auto">
-            {t('tool_embed.coming_soon_desc')}
+            {t('tool_embed.coming_soon_desc', { industry: industryDisplayName })}
           </p>
         </div>
       </section>
@@ -49,7 +53,9 @@ export function IndustryToolEmbed({ industryKey }: IndustryToolEmbedProps) {
         <h2 className="text-4xl font-display font-black text-secondary-900 mb-4">
           {t('tool_embed.title')}
         </h2>
-        <p className="text-lg text-secondary-600 font-medium">{t('tool_embed.subtitle')}</p>
+        <p className="text-lg text-secondary-600 font-medium">
+          {t('tool_embed.subtitle', { industry: industryDisplayName })}
+        </p>
       </div>
       <div className="bg-white border border-gray-100 rounded-[2rem] overflow-hidden shadow-2xl p-12 text-center flex flex-col items-center justify-center relative group">
         <div className="absolute inset-0 bg-gradient-to-br from-primary-50 to-transparent opacity-50 pointer-events-none" />
@@ -72,7 +78,7 @@ export function IndustryToolEmbed({ industryKey }: IndustryToolEmbedProps) {
           {t('tool_embed.demo_heading')}
         </p>
         <p className="text-secondary-600 max-w-md mx-auto mb-8 relative z-10">
-          {t('tool_embed.demo_desc')}
+          {t('tool_embed.demo_desc', { industry: industryDisplayName })}
         </p>
         <a
           href={url}

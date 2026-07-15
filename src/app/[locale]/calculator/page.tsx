@@ -65,6 +65,9 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <div className="sr-only">
+        <p>Kalkulieren Sie Ihr Webprojekt.</p>
+      </div>
       <ClientComponent />
       <SeoContentBlock title={cleanTitle} />
     </>

@@ -87,6 +87,62 @@ const LocalWetzlar: React.FC = () => {
         </div>
       </section>
 
+      <section className="py-24 bg-white relative">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-slate-700 space-y-6 text-lg leading-relaxed">
+          <h2 className="text-3xl font-display font-bold text-secondary mb-8">
+            Professionelles Webdesign in Wetzlar: Ihr digitaler Vorsprung
+          </h2>
+          <p>
+            Wetzlar ist nicht nur die Stadt der Optik und Feinmechanik, sondern auch ein
+            pulsierendes wirtschaftliches Zentrum in Mittelhessen. In einem so dynamischen und
+            wettbewerbsintensiven Umfeld reicht es heute längst nicht mehr aus, nur eine digitale
+            Visitenkarte im Netz zu haben. Ihre Webseite ist oft der erste Berührungspunkt, den
+            potenzielle Kunden mit Ihrem Unternehmen haben. Ein professionelles, durchdachtes
+            Webdesign entscheidet in den ersten Sekunden darüber, ob Vertrauen aufgebaut wird oder
+            der Besucher zur Konkurrenz abwandert. Wir entwickeln für Unternehmen aus Wetzlar und
+            Umgebung maßgeschneiderte digitale Plattformen, die nicht nur durch ein herausragendes
+            Design bestechen, sondern als aktiver Vertriebskanal messbare Ergebnisse liefern. Unser
+            Fokus liegt stets darauf, den echten Mehrwert Ihres Unternehmens sichtbar zu machen.
+          </p>
+          <p>
+            Der Schlüssel zu einer erfolgreichen lokalen Online-Präsenz liegt in der perfekten
+            Symbiose aus erstklassiger Nutzererfahrung (UX), blitzschnellen Ladezeiten und einer
+            gezielten lokalen Suchmaschinenoptimierung (Local SEO). Wenn Menschen in Wetzlar, Gießen
+            oder dem Lahn-Dill-Kreis nach Ihren Dienstleistungen suchen, müssen Sie bei Google ganz
+            oben stehen. Wir strukturieren Ihre Webseite so, dass Suchmaschinen Ihre Relevanz für
+            die Region sofort erkennen. Gleichzeitig sorgen wir durch modernste Technologien dafür,
+            dass Ihre Seite auf Smartphones, Tablets und Desktop-Rechnern absolut flüssig läuft.
+            Eine langsame oder unübersichtliche Webseite ist ein echter Umsatzkiller – wir machen
+            Ihre Internetpräsenz zu einem performanten Aushängeschild, das Ihre Zielgruppe
+            begeistert und zum Handeln animiert.
+          </p>
+          <p>
+            Neben der Akquise neuer Kunden ist das Thema Mitarbeitergewinnung (Recruiting) eine der
+            größten Herausforderungen für lokale Unternehmen. Eine veraltete Webseite schreckt nicht
+            nur Käufer ab, sondern auch qualifizierte Fachkräfte, die sich im Vorfeld online über
+            potenzielle Arbeitgeber informieren. Wir konzipieren Ihre neue Webseite in Wetzlar so,
+            dass sie gleichzeitig als leistungsstarker Magnet für neue Mitarbeiter fungiert. Durch
+            den Aufbau einer authentischen Karriereseite und die Einbindung extrem
+            nutzerfreundlicher, mobiler Bewerbungsformulare senken wir die Hürde für eine
+            Kontaktaufnahme drastisch. So positionieren Sie sich als zukunftsorientierter, starker
+            Arbeitgeber in Mittelhessen und können offene Stellen deutlich schneller mit den
+            passenden Talenten besetzen.
+          </p>
+          <p>
+            Darüber hinaus stehen wir Ihnen als langfristiger Partner auf Augenhöhe zur Seite.
+            Webdesign endet für uns nicht mit dem Launch der Seite. Wir implementieren smarte
+            Funktionen, die Ihnen den Geschäftsalltag erleichtern – von automatisierten
+            Terminbuchungssystemen für Praxen bis hin zu digitalen Bewerbungsformularen, die dem
+            Fachkräftemangel in der Region entgegenwirken. Wir kümmern uns um die DSGVO-konforme
+            Umsetzung, höchste Sicherheitsstandards und die kontinuierliche Wartung Ihres Systems.
+            Mit unserer Expertise im Webdesign für Wetzlar heben wir Ihr Unternehmen auf das nächste
+            digitale Level, stärken Ihre regionale Dominanz und sichern Ihren Wettbewerbsvorteil
+            nachhaltig ab. Vertrauen Sie auf einen Experten vor Ort, der Ihre Region und Ihre
+            potenziellen Kunden versteht.
+          </p>
+        </div>
+      </section>
+
       <section className="py-24 bg-secondary text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-secondary to-slate-900 z-0"></div>
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">

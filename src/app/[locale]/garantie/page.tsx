@@ -35,15 +35,6 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   const params = await props.params;
   setRequestLocale(params.locale);
 
-  const _locale = (await params)?.locale || 'de';
-  const _seoTitle =
-    _locale === 'en'
-      ? 'Our Quality Guarantee | Web Design Wetzlar | Coday'
-      : 'Unsere Qualitätsgarantie | Webdesign Wetzlar | Coday';
-  const _seoDesc =
-    _locale === 'en'
-      ? 'Coday guarantees premium web design from Wetzlar. Satisfaction, fixed price and on-time delivery for your business. For companies across Central Hesse.'
-      : 'Coday garantiert Ihnen Premium Webdesign aus Wetzlar. Zufriedenheit, Festpreis und termingerechte Lieferung. Für Unternehmen in ganz Mittelhessen.';
   return (
     <>
       <SeoHead
@@ -52,10 +43,6 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
         pageType="default"
       />
       <ClientComponent />
-      {/* SEO Title für Keyword-Konsistenz */}
-      <div className="container mx-auto px-4 pb-12 text-center text-xs text-gray-400 font-mono">
-        Themen: {_seoTitle}
-      </div>
       <SeoContentBlock />
     </>
   );

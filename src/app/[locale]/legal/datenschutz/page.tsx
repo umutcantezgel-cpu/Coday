@@ -83,10 +83,6 @@ export default async function DatenschutzPage({ params }: { params: Promise<{ lo
           </p>
         </section>
       </div>
-      {/* SEO Title für Keyword-Konsistenz */}
-      <div className="container mx-auto px-4 pb-12 text-center text-xs text-gray-400 font-mono">
-        Themen: {_seoTitle}
-      </div>
     </>
   );
 }

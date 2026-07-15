@@ -63,10 +63,6 @@ export default async function ImmobilienPage({ params }: { params: Promise<{ loc
         }}
       />
       <ImmobilienClient />
-      {/* SEO Title für Keyword-Konsistenz */}
-      <div className="container mx-auto px-4 pb-12 text-center text-xs text-gray-400 font-mono">
-        Themen: {_seoTitle}
-      </div>
     </>
   );
 }

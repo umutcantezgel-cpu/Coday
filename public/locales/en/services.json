@@ -69,6 +69,7 @@
     }
   },
   "api_integration_page": {
+    "long_description": "In an increasingly fragmented software ecosystem, API integrations are essential for seamless digital transformation. By connecting disparate CRM, ERP, and marketing platforms, businesses can eliminate manual data entry, reduce human errors, and unlock real-time operational insights.\n\nOur approach leverages modern architectural patterns and secure middleware to ensure that data flows reliably between systems. Whether integrating Stripe for payments, Salesforce for customer relations, or OpenAI for advanced machine learning capabilities, we prioritize robust error handling and encrypted data transmission to maintain the highest security standards.\n\nUltimately, a well-architected API strategy turns isolated software tools into a unified, highly efficient ecosystem. We focus on scalability and performance, ensuring that as your transaction volume grows, your system integrations remain stable, blazingly fast, and completely dependable.",
     "connectivity": {
       "description": "Whether REST, GraphQL, SOAP, or Webhooks. We connect everything that has an interface.",
       "title": "We speak every language.",
@@ -151,6 +152,7 @@
     }
   },
   "brand_identity_page": {
+    "long_description": "A strong brand identity is the foundation of any successful digital presence. In an era where the first impression is almost exclusively digital, your brand must communicate trust, professionalism, and innovation within seconds. It is about much more than just a logo; it is the entire visual and emotional language of your company.\n\nWe design digital-first brand identities specifically tailored for B2B companies and ambitious startups. Our process begins with deep market research and strategic positioning, ensuring that every color palette, typography choice, and design token authentically reflects your core values and resonates with your target audience.\n\nBy delivering comprehensive brand style guides and scalable assets, we guarantee consistency across every digital touchpoint. Whether applied to a complex Next.js web application or a multi-channel marketing campaign, a cohesive brand identity dramatically improves brand recall and user trust.",
     "deliverables": {
       "items": [
         "Complete Logo Suite (Primary, Secondary, Icon)",
@@ -218,6 +220,7 @@
     }
   },
   "consulting_page": {
+    "long_description": "Navigating the complexities of digital transformation requires more than just technical expertise; it demands a strategic vision aligned with your overarching business goals. Our digital consulting services are designed to help you cut through the noise and make informed, data-driven decisions regarding your technology stack.\n\nWe conduct comprehensive evaluations of your current infrastructure, identifying performance bottlenecks and inefficient processes. From choosing between a headless CMS and a traditional monolith, to outlining a roadmap for API integrations, we provide vendor-neutral recommendations that prioritize scalability, security, and long-term business value.\n\nOur ultimate goal is to equip your team with a clear, actionable strategy. By bridging the gap between high-level business objectives and deep technical implementation, we empower companies to innovate faster, reduce technical debt, and establish a dominant position in their respective markets.",
     "areas": {
       "digital_trans": {
         "desc": "Digitize and automate processes. From lead generation to fulfillment.",
@@ -255,6 +258,7 @@
     "ready": "Ready for the next step?"
   },
   "design_systems_page": {
+    "long_description": "A robust design system is the single source of truth that bridges the gap between design and engineering. As digital products scale, maintaining visual consistency and rapid development cycles becomes impossible without a centralized library of reusable components and design tokens.\n\nWe build comprehensive design systems that integrate perfectly with modern frameworks like Next.js and Tailwind CSS. By establishing strict rules for typography, spacing, and interactive states, we eliminate design debt and ensure that every new feature looks and behaves consistently across all platforms and devices.\n\nImplementing a design system significantly accelerates time-to-market. It empowers development teams to build complex UI architectures up to three times faster, while allowing designers to focus on overarching UX strategy rather than pushing pixels. The result is a scalable, highly efficient workflow that guarantees brand fidelity.",
     "benefits": {
       "items": [
         {
@@ -682,6 +686,7 @@
     "rotatingTexts": ["Web Design", "Web Development", "SEO"]
   },
   "migration_page": {
+    "long_description": "Migrating away from monolithic legacy systems like WordPress or Magento to modern headless architectures is a critical step in a company's digital transformation journey. It is not just about adopting new technology; it is about future-proofing your business against security vulnerabilities and performance bottlenecks.\n\nWe specialize in risk-free platform migrations with zero downtime. By utilizing Next.js and robust APIs, we rebuild your frontend for maximum speed while ensuring that all your existing data, user accounts, and content are securely transitioned. Our meticulous SEO migration protocols ensure that your hard-earned Google rankings are preserved through carefully mapped 301 redirects.\n\nPost-migration, your team will benefit from an incredibly fast, highly scalable infrastructure. With load times dropping into the millisecond range and a flexible architecture that easily adapts to future requirements, your business is perfectly positioned to capture more market share and drive significant revenue growth.",
     "before_after": {
       "after": {
         "items": [
@@ -774,6 +779,7 @@
     }
   },
   "performance_page": {
+    "long_description": "Website performance is no longer just a technical metric; it is a direct driver of revenue and user engagement. In today's highly competitive digital landscape, a delay of even a few milliseconds can result in frustrated users and lost conversions. Optimizing for speed is a core pillar of digital transformation.\n\nWe focus heavily on improving Core Web Vitals—such as Largest Contentful Paint (LCP) and Cumulative Layout Shift (CLS)—by leveraging advanced frameworks like Next.js and Edge Computing. Through intelligent code-splitting, aggressive caching, and image optimization, we ensure your application loads instantly across all devices and network conditions.\n\nBy treating performance as a fundamental feature, we help businesses achieve perfect Google PageSpeed scores. This not only enhances the user experience but also provides a significant boost to organic search visibility, ultimately leading to lower bounce rates and substantially higher return on investment.",
     "google_values": {
       "badge": "Google Speed Metrics",
       "description": "Google doesn't just measure keywords, but how your site <i>feels</i>. We optimize all 3 Core Web Vitals for best ratings.",
@@ -903,6 +909,7 @@
     }
   },
   "ui_ux_page": {
+    "long_description": "Exceptional UI/UX design is the critical differentiator in today's digital economy. It is the practice of combining striking visual aesthetics with deep psychological insights to create digital experiences that are not only beautiful but intuitively guide users toward their goals.\n\nOur approach to user-centric design is deeply rooted in comprehensive UX research and behavioral science. We start with extensive wireframing and flow mapping to establish a solid structural foundation, followed by the creation of high-fidelity, interactive prototypes that bring the vision to life before a single line of code is written.\n\nBy prioritizing cognitive ease, accessibility, and emotional resonance, we design interfaces that captivate users and drive measurable business results. Whether building a complex B2B dashboard or a high-converting landing page, our pixel-perfect designs ensure a seamless, engaging experience on every device.",
     "meta": {
       "title": "UI/UX Design | User-Centric Digital Experiences",
       "description": "We design digital experiences users love. From Wireframes to High-Fidelity Prototypes – we create interfaces that convert."
@@ -1003,6 +1010,7 @@
     }
   },
   "ux_audit_page": {
+    "long_description": "A comprehensive UX audit is a vital diagnostic tool that replaces gut feelings with actionable, data-driven insights. Even minor usability friction points can significantly impact conversion rates and user retention, making continuous UX research a crucial component of digital transformation.\n\nOur audit process involves a deep dive into user behavior analytics, utilizing heatmaps, session recordings, and click analysis to pinpoint exactly where users drop off or experience confusion. We rigorously evaluate your interface against established heuristic principles, analyzing form completion rates, navigation flow, and mobile responsiveness.\n\nWe synthesize these findings into a detailed, prioritized action plan. By addressing cognitive load and optimizing the visual hierarchy, we help you implement targeted design improvements that measurably increase conversions, reduce support requests, and deliver an exceptionally smooth user journey.",
     "deliverables": {
       "items": [
         "Comprehensive UX Audit Report (40+ pages)",
@@ -1056,6 +1064,7 @@
     }
   },
   "web_apps_page": {
+    "long_description": "Custom web applications form the backbone of modern digital transformation. By migrating complex business logic into intuitive, browser-based interfaces, companies can drastically improve operational efficiency and team collaboration.\n\nAt the core of our development strategy is Next.js, a powerful React framework that ensures lightning-fast performance through Server-Side Rendering (SSR) and seamless API integrations. This allows us to build scalable SaaS products, internal dashboards, and progressive web apps that feel natively fast while maintaining high security standards.\n\nEvery web application we engineer is designed with both the end-user and long-term scalability in mind. From initial UX research to rigorous QA testing, our process ensures that your custom software solution not only meets today's technical demands but is robust enough to support your future business growth.",
     "cta_section": {
       "button": "Request Developer Team",
       "description": "I build the technical foundation for it.",

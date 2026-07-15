@@ -2,8 +2,6 @@
 
 import { useCookieStore } from '@/shared/lib/cookieStore';
 
-export const dynamic = 'force-static';
-
 export default function PrivacyPage() {
   const { preferences, openSettings, rejectAll } = useCookieStore();
 

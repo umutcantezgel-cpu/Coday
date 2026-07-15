@@ -8,12 +8,16 @@ interface GamifiedRoiCalculatorProps {
   baseRevenue?: number;
   potentialIncrease?: number; // e.g., 35 for 35%
   industryName: string;
+  title: string;
+  description: string;
 }
 
 export const GamifiedRoiCalculator: React.FC<GamifiedRoiCalculatorProps> = ({
   baseRevenue = 500000,
   potentialIncrease = 35,
   industryName,
+  title,
+  description,
 }) => {
   const [revenue, setRevenue] = useState(baseRevenue);
   const [animatedRevenue, setAnimatedRevenue] = useState(baseRevenue);
@@ -58,14 +62,8 @@ export const GamifiedRoiCalculator: React.FC<GamifiedRoiCalculatorProps> = ({
             <ChartLineUp weight="bold" className="mr-2" />
             Umsatz-Rechner
           </div>
-          <p className="text-3xl sm:text-4xl font-display font-bold mb-4">
-            Wie viel Umsatz lässt Ihr {industryName} liegen?
-          </p>
-          <p className="text-secondary-400 text-lg mb-8 leading-relaxed">
-            Schieben Sie den Regler auf Ihren aktuellen Jahresumsatz und entdecken Sie das
-            ungenutzte Potenzial, das Ihnen durch veraltete Web-Technologien und fehlende
-            Sichtbarkeit entgeht.
-          </p>
+          <p className="text-3xl sm:text-4xl font-display font-bold mb-4">{title}</p>
+          <p className="text-secondary-400 text-lg mb-8 leading-relaxed">{description}</p>
 
           <div className="space-y-6">
             <div>

@@ -79,9 +79,9 @@ export default async function HerbornLandingPage(props: { params: Promise<{ loca
         <LocalSeoTemplate content={content} cityData={cityData} />
       ) : (
         <div className="min-h-screen pt-32 text-center text-white bg-secondary flex flex-col items-center justify-center">
-          <h2 className="text-4xl md:text-6xl font-display font-bold mb-6">
+          <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">
             Ihr Webdesigner in Herborn
-          </h2>
+          </h1>
           <div className="flex flex-col items-center gap-6 mt-4">
             <h2 className="text-gray-400 max-w-2xl text-lg font-normal">
               Als <strong>Ihr Webdesigner in Herborn</strong> bauen wir in der Umgebung
@@ -98,6 +98,58 @@ export default async function HerbornLandingPage(props: { params: Promise<{ loca
                 erste persönliche Kontakt entsteht. Wir wissen, worauf es ankommt, um in der Region
                 Herborn und im Lahn-Dill-Kreis digital erfolgreich zu sein. Mit unserer Expertise im
                 Bereich Webentwicklung und SEO bringen wir Sie auf die vorderen Plätze.
+              </p>
+              <p>
+                Die Fachwerkstadt Herborn zeichnet sich nicht nur durch ihren historischen Charme
+                aus, sondern auch durch eine lebendige, vielseitige Unternehmenslandschaft im
+                Lahn-Dill-Kreis. Um in diesem dynamischen lokalen Marktumfeld nachhaltig erfolgreich
+                zu sein, ist eine moderne, professionelle Internetpräsenz heute unverzichtbar. Ein
+                exzellentes Webdesign für Herborn bedeutet für uns, die einzigartige Identität Ihres
+                Unternehmens digital erlebbar zu machen. Wir entwickeln keine austauschbaren
+                Standard-Webseiten, sondern maßgeschneiderte digitale Plattformen, die Ihre
+                Expertise, Ihre Tradition und Ihre Innovationskraft authentisch widerspiegeln. Egal
+                ob ambitionierter Handwerksbetrieb, spezialisierte Arztpraxis oder lokales
+                Dienstleistungsunternehmen – wir sorgen dafür, dass Sie online genau die Kunden
+                ansprechen, die Sie für Ihr weiteres Wachstum benötigen.
+              </p>
+              <p>
+                Neben einer ansprechenden Optik ist die technische Performance das Herzstück eines
+                jeden erfolgreichen Webauftritts. Wenn potenzielle Kunden aus Herborn, Sinn oder
+                Burg auf dem Smartphone nach Ihren Leistungen suchen, erwarten sie blitzschnelle
+                Ladezeiten und eine absolut fehlerfreie Darstellung auf allen Endgeräten. Wir setzen
+                auf modernste Webtechnologien, die exakt diese Anforderungen erfüllen und
+                gleichzeitig die perfekte Basis für eine erfolgreiche lokale
+                Suchmaschinenoptimierung (Local SEO) bilden. Durch eine clevere Strukturierung Ihrer
+                Inhalte und die strategische Platzierung relevanter Keywords stellen wir sicher,
+                dass Sie bei Google für Suchanfragen aus der Region Herborn prominent gelistet
+                werden. Eine hohe Sichtbarkeit ist der Schlüssel, um lokale Marktanteile zu sichern
+                und kontinuierlich qualifizierte Anfragen zu generieren.
+              </p>
+              <p>
+                Auch beim Thema Mitarbeitergewinnung ist eine moderne Website für Unternehmen in
+                Herborn inzwischen das wichtigste Werkzeug geworden. Um sich in Zeiten des
+                allgegenwärtigen Fachkräftemangels als attraktiver und moderner Arbeitgeber zu
+                positionieren, genügt eine einfache Stellenanzeige in der Zeitung längst nicht mehr.
+                Wir konzipieren und entwickeln dedizierte Karriereseiten, die potenziellen Bewerbern
+                sofort zeigen, warum sie Teil Ihres Teams werden sollten. Durch die nahtlose
+                Integration von einfachen, digitalen Kurzbewerbungen senken wir die Einstiegshürde
+                enorm. So können sich Fachkräfte aus Herborn und Umgebung bequem vom Smartphone aus
+                bei Ihnen bewerben. Das stärkt nicht nur Ihre Arbeitgebermarke, sondern beschleunigt
+                auch Ihre internen Einstellungsprozesse signifikant und sichert Ihnen die besten
+                Talente der Region.
+              </p>
+              <p>
+                Ein ganzheitliches Webdesign-Konzept muss zudem darauf ausgerichtet sein, Besucher
+                aktiv in zahlende Kunden oder neue Mitarbeiter zu verwandeln. Deshalb legen wir
+                größten Wert auf eine intuitive Nutzerführung (UX) und konversionsstarke Elemente
+                wie integrierte Terminbuchungssysteme, smarte Kontaktformulare oder digitale
+                Bewerbungsprozesse. Gerade in Zeiten des Fachkräftemangels in der Region Lahn-Dill
+                kann eine überzeugende Karriereseite den entscheidenden Unterschied machen. Als Ihr
+                verlässlicher Webdesign-Partner aus der Region begleiten wir Sie transparent und auf
+                Augenhöhe – von der ersten strategischen Beratung bis zum erfolgreichen Live-Gang
+                Ihrer neuen Webseite und darüber hinaus. Wir kümmern uns um die technische Wartung,
+                maximale Datensicherheit und die strikte Einhaltung aller DSGVO-Richtlinien, damit
+                Sie sich in Herborn voll und ganz auf Ihr Kerngeschäft konzentrieren können.
               </p>
               <p>
                 Wir unterstützen Sie dabei, eine digitale Präsenz aufzubauen, die nicht nur auf den
@@ -127,10 +179,6 @@ export default async function HerbornLandingPage(props: { params: Promise<{ loca
           />
         </div>
       )}
-      {/* SEO Title für Keyword-Konsistenz */}
-      <div className="container mx-auto px-4 pb-12 text-center text-xs text-gray-400 font-mono">
-        Themen: {_seoTitle}
-      </div>
       <SeoContentBlock />
     </>
   );

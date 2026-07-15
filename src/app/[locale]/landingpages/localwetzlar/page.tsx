@@ -52,11 +52,19 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
         pageType="default"
       />
       <ClientComponent />
-      {/* SEO Title für Keyword-Konsistenz */}
-      <div className="container mx-auto px-4 pb-12 text-center text-xs text-gray-400 font-mono">
-        Themen: {_seoTitle}
-      </div>
       <SeoContentBlock />
+      <div className="container mx-auto px-4 pb-12 text-sm text-gray-500 max-w-4xl opacity-80">
+        <p className="mb-4">
+          {_locale === 'en'
+            ? 'Looking for a professional web designer in Wetzlar? We create modern, fast, and SEO-optimized websites for businesses, freelancers, and craftsmen in Central Hesse. Our local web design services are tailored to help you reach more customers in Wetzlar and surrounding regions.'
+            : 'Suchen Sie einen professionellen Webdesigner in Wetzlar? Wir erstellen moderne, schnelle und SEO-optimierte Webseiten für Unternehmen, Freiberufler und Handwerker in Mittelhessen. Unsere lokalen Webdesign-Dienstleistungen sind darauf zugeschnitten, Ihnen zu helfen, mehr Kunden in Wetzlar und der umliegenden Region zu erreichen.'}
+        </p>
+        <p>
+          {_locale === 'en'
+            ? 'With personal consultation right here in Wetzlar and transparent fixed prices, we make your digital transition seamless. From responsive web development to ongoing maintenance, we are your reliable partner for digital success in the local market.'
+            : 'Mit persönlicher Beratung direkt hier in Wetzlar und transparenten Festpreisen machen wir Ihren digitalen Wandel nahtlos. Von responsiver Webentwicklung bis hin zur laufenden Wartung sind wir Ihr zuverlässiger Partner für den digitalen Erfolg im lokalen Markt.'}
+        </p>
+      </div>
     </>
   );
 }

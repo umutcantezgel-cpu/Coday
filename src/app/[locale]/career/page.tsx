@@ -29,10 +29,6 @@ export default function CareerPage() {
     ],
   };
 
-  const _locale: string = 'de';
-  const _seoTitle = _locale === 'en' ? 'Karriere bei Coday' : 'Karriere bei Coday';
-  const _seoDesc =
-    _locale === 'en' ? 'Karrieremöglichkeiten bei Coday.' : 'Karrieremöglichkeiten bei Coday.';
   return (
     <>
       <script
@@ -40,10 +36,6 @@ export default function CareerPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <CareerOverviewClient />
-      {/* SEO Title für Keyword-Konsistenz */}
-      <div className="container mx-auto px-4 pb-12 text-center text-xs text-gray-400 font-mono">
-        Themen: {_seoTitle}
-      </div>
     </>
   );
 }

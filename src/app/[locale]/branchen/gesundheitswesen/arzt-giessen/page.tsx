@@ -28,7 +28,7 @@ export async function generateMetadata({
     const fileContents = fs.readFileSync(filePath, 'utf8');
     const content = JSON.parse(fileContents);
 
-    const enTitle = 'Web Design for Doctors in Giessen | Practice Homepage';
+    const enTitle = 'Web Design for Doctors Giessen | Coday';
 
     return generatePageMetadata({
       title: locale === 'en' ? enTitle : content.meta.title,
@@ -41,7 +41,7 @@ export async function generateMetadata({
     return generatePageMetadata({
       title:
         locale === 'en'
-          ? 'Web Design for Doctors in Giessen | Practice Homepage'
+          ? 'Web Design for Doctors Giessen | Coday'
           : 'Webdesign für Ärzte in Gießen | Praxis Homepage',
       description:
         locale === 'en'
@@ -88,7 +88,7 @@ export default async function SubIndustryPage({ params }: { params: Promise<{ lo
   const _locale = (await params)?.locale || 'de';
   const _seoTitle =
     _locale === 'en'
-      ? 'Web Design for Doctors in Giessen | Practice Homepage | Coday'
+      ? 'Web Design for Doctors Giessen | Coday'
       : 'Webdesign für Ärzte in Gießen | Praxis Homepage | Coday';
   return (
     <>
@@ -116,10 +116,6 @@ export default async function SubIndustryPage({ params }: { params: Promise<{ lo
         }}
       />
       <GamifiedIndustryTemplate content={content} cityData={cityData} />
-      {/* SEO Title für Keyword-Konsistenz */}
-      <div className="container mx-auto px-4 pb-12 text-center text-xs text-gray-400 font-mono">
-        Themen: {_seoTitle}
-      </div>
     </>
   );
 }

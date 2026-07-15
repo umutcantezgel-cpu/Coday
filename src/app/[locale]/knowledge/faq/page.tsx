@@ -47,9 +47,17 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
     <>
       <SeoHead title="Coday | faq" description="Erfahren Sie mehr über faq" pageType="default" />
       <ClientComponent />
-      {/* SEO Title für Keyword-Konsistenz */}
       <div className="container mx-auto px-4 pb-12 text-center text-xs text-gray-400 font-mono">
-        Themen: {_seoTitle}
+        <p className="mb-2 max-w-2xl mx-auto">
+          {_locale === 'en'
+            ? 'In our FAQ section, we address common inquiries about our web design services, transparent pricing models, and the step-by-step project process at Coday. Whether you are a local business in Wetzlar or operating across Hesse, we ensure clarity before starting your project.'
+            : 'In unserem FAQ-Bereich beantworten wir häufige Fragen zu unseren Webdesign-Dienstleistungen, transparenten Preismodellen und dem genauen Projektablauf bei Coday. Egal ob Sie ein lokales Unternehmen in Wetzlar sind oder hessenweit agieren, wir sorgen für Klarheit vor Projektbeginn.'}
+        </p>
+        <p className="max-w-2xl mx-auto">
+          {_locale === 'en'
+            ? 'If you cannot find the answer to your specific question, our dedicated customer support team is always ready to assist you. Contact us directly for a personalized consultation or detailed technical guidance tailored to your digital needs.'
+            : 'Sollten Sie die Antwort auf Ihre spezifische Frage nicht finden, steht Ihnen unser engagierter Kundensupport jederzeit zur Verfügung. Kontaktieren Sie uns direkt für eine persönliche Beratung oder detaillierte technische Unterstützung passend zu Ihren digitalen Anforderungen.'}
+        </p>
       </div>
     </>
   );

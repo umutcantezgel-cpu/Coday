@@ -95,6 +95,46 @@ const NextJsMigration: React.FC = () => {
         </div>
       </section>
 
+      <section className="py-24 bg-slate-50 relative border-t border-gray-100">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-slate-700 space-y-6 text-lg leading-relaxed">
+          <h2 className="text-3xl font-display font-bold text-secondary mb-8 text-center">
+            Tiefgreifende Expertise in der Next.js Migration
+          </h2>
+          <p>
+            Eine Migration zu Next.js ist ein strategischer Schritt, der weit über ein einfaches
+            Redesign hinausgeht. Es handelt sich um ein vollständiges Re-Platforming auf eine der
+            leistungsfähigsten und zukunftssichersten React-Frameworks der modernen Webentwicklung.
+            Veraltete monolithische Systeme oder schwerfällige CMS-Lösungen verursachen oft hohe
+            Wartungskosten, sind anfällig für Sicherheitslücken und bieten eine unzureichende
+            Performance. Mit Next.js transformieren wir Ihre digitale Architektur in ein
+            blitzschnelles, sicheres und hochskalierbares System. Durch die Nutzung von
+            serverseitigem Rendering (SSR) und statischer Generierung (SSG) werden Seiteninhalte
+            bereits auf dem Server vorgerendert und über globale Edge-Netzwerke in Millisekunden an
+            den Nutzer ausgeliefert.
+          </p>
+          <p>
+            Diese signifikante Verbesserung der Ladezeiten wirkt sich direkt und positiv auf Ihre
+            Core Web Vitals aus, was von Google und anderen Suchmaschinen mit besseren Rankings
+            belohnt wird (SEO). Gleichzeitig führt die flüssigere und schnellere User Experience zu
+            geringeren Absprungraten und deutlich höheren Conversion-Raten. Besucher Ihrer Webseite
+            erleben keine störenden Verzögerungen mehr, was das Vertrauen in Ihre Marke stärkt und
+            die Interaktionsbereitschaft spürbar erhöht. Besonders im E-Commerce und bei
+            datenintensiven Unternehmenswebseiten ist diese Performance-Steigerung ein messbarer
+            Wettbewerbsvorteil.
+          </p>
+          <p>
+            Der Migrationsprozess selbst wird von uns präzise und datengetrieben geplant, um
+            jegliche Ausfallzeiten (Downtime) und Ranking-Verluste strikt zu vermeiden. Wir
+            analysieren Ihre bestehende Infrastruktur, sichern wertvolle SEO-Assets wie bestehende
+            URLs durch intelligente Redirect-Strategien und integrieren Ihre Datenquellen nahtlos
+            über moderne APIs in eine Headless-Architektur. Das Ergebnis ist eine saubere, wartbare
+            und erweiterbare Codebasis, die es Ihrem Unternehmen ermöglicht, agil auf zukünftige
+            Marktanforderungen zu reagieren. Vertrauen Sie auf Coday als Ihren erfahrenen Partner
+            für eine reibungslose und maximal erfolgreiche Next.js Migration.
+          </p>
+        </div>
+      </section>
+
       <section className="py-24 bg-aurora-white relative border-t border-gray-100">
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
           <h2 className="text-3xl sm:text-5xl font-display font-bold text-secondary mb-6">

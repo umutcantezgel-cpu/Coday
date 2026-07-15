@@ -1451,7 +1451,7 @@ In essence, **The Psychology of Dark Mode** is a masterclass in leveraging techn
   },
   {
     id: 15,
-    title: 'WordPress is Dead. Headless CMS Proves It (2026)',
+    title: 'Headless CMS vs WordPress: The CMS Comparison',
     slug: 'headless-cms-vs-wordpress',
     excerpt:
       'Hard numbers from 1200 live sites: WordPress LCP 4.8s vs Headless 0.9s. Security breaches down 97 percent. See the full breakdown.',

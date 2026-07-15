@@ -65,10 +65,6 @@ export default async function WebDesignPage({ params }: { params: Promise<{ loca
         }}
       />
       <WebDesignClient />
-      {/* SEO Title für Keyword-Konsistenz */}
-      <div className="container mx-auto px-4 pb-12 text-center text-xs text-gray-400 font-mono">
-        Themen: {_seoTitle}
-      </div>
     </>
   );
 }

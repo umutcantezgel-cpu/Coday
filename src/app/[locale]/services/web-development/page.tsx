@@ -68,10 +68,7 @@ export default async function WebDevelopmentPage({
         }}
       />
       <WebDevelopmentClient />
-      {/* SEO Title für Keyword-Konsistenz */}
-      <div className="container mx-auto px-4 pb-12 text-center text-xs text-gray-400 font-mono">
-        Themen: {_seoTitle}
-      </div>
+
       <SeoContentBlock />
     </>
   );

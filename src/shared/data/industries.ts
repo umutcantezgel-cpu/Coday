@@ -445,4 +445,58 @@ export const industriesData: Record<string, IndustryData> = {
       },
     ],
   },
+  retail: {
+    slug: 'retail',
+    title: 'ecommerce-retail.title',
+    icon: 'shopping_cart',
+    hero: {
+      headline: 'ecommerce-retail.hero.headline',
+      subheadline: 'ecommerce-retail.hero.subheadline',
+    },
+    challenges: [
+      {
+        title: 'ecommerce-retail.challenges.warenkorb_abbrueche.title',
+        description: 'ecommerce-retail.challenges.warenkorb_abbrueche.description',
+      },
+      {
+        title: 'ecommerce-retail.challenges.performance.title',
+        description: 'ecommerce-retail.challenges.performance.description',
+      },
+      {
+        title: 'ecommerce-retail.challenges.marken_erlebnis.title',
+        description: 'ecommerce-retail.challenges.marken_erlebnis.description',
+      },
+    ],
+    solutions: [
+      {
+        title: 'ecommerce-retail.solutions.headless_commerce.title',
+        description: 'ecommerce-retail.solutions.headless_commerce.description',
+        icon: 'shopping_cart',
+      },
+      {
+        title: 'ecommerce-retail.solutions.cro.title',
+        description: 'ecommerce-retail.solutions.cro.description',
+        icon: 'speed',
+      },
+      {
+        title: 'ecommerce-retail.solutions.shop_seo.title',
+        description: 'ecommerce-retail.solutions.shop_seo.description',
+        icon: 'analytics',
+      },
+    ],
+    customFeatures: [
+      {
+        title: 'ecommerce-retail.customFeatures.produkt_konfigurator.title',
+        description: 'ecommerce-retail.customFeatures.produkt_konfigurator.description',
+      },
+      {
+        title: 'ecommerce-retail.customFeatures.erp_crm_anbindung.title',
+        description: 'ecommerce-retail.customFeatures.erp_crm_anbindung.description',
+      },
+      {
+        title: 'ecommerce-retail.customFeatures.pim_systeme.title',
+        description: 'ecommerce-retail.customFeatures.pim_systeme.description',
+      },
+    ],
+  },
 };

@@ -450,6 +450,19 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
             </ul>
           </section>
         </div>
+
+        <div className="mt-16 text-sm text-text-light/80 space-y-4">
+          <p>
+            {locale === 'en'
+              ? 'This sitemap provides a comprehensive overview of the Coday Web Design agency website. Find quick links to our main pages, detailed web design and development services, industry-specific solutions, and local landing pages designed for optimal search engine visibility. We continuously update this directory to ensure you can easily navigate and discover how our premium digital solutions can help elevate your brand.'
+              : 'Diese Sitemap bietet eine umfassende Übersicht der Website der Coday Webdesign Agentur. Finden Sie hier direkte Links zu unseren Hauptseiten, detaillierten Dienstleistungen im Bereich Webdesign und Entwicklung, branchenspezifischen Lösungen sowie unseren lokalen Landingpages. Wir aktualisieren dieses Verzeichnis kontinuierlich, um Ihnen eine optimale Navigation zu ermöglichen und Ihnen zu zeigen, wie unsere Premium-Weblösungen Ihre Marke stärken können.'}
+          </p>
+          <p>
+            {locale === 'en'
+              ? 'Whether you are looking for local SEO strategies, custom React development, or a complete brand overhaul, our structured overview helps you find the right information efficiently. As a dedicated web engineering partner, Coday ensures that all digital touchpoints are built for maximum performance, accessibility, and exceptional user experience across all devices.'
+              : 'Egal, ob Sie nach lokalen SEO-Strategien, individueller React-Entwicklung oder einer kompletten Markenüberarbeitung suchen – unsere strukturierte Seitenübersicht hilft Ihnen, die gewünschten Informationen schnell zu finden. Als Ihr zuverlässiger Partner für Web-Engineering stellt Coday sicher, dass alle digitalen Berührungspunkte auf maximale Performance, Barrierefreiheit und eine herausragende User Experience auf allen Geräten optimiert sind.'}
+          </p>
+        </div>
       </div>
       <SeoContentBlock />
     </main>

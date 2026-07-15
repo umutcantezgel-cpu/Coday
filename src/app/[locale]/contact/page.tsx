@@ -35,15 +35,6 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
   const resolvedParams = await params;
   setRequestLocale(resolvedParams.locale);
 
-  const _locale = (await params)?.locale || 'de';
-  const _seoTitle =
-    _locale === 'en'
-      ? 'Contact Us | Web Design Agency Wetzlar Hesse | Coday'
-      : 'Kontakt | Webdesign Agentur Wetzlar Mittelhessen | Coday';
-  const _seoDesc =
-    _locale === 'en'
-      ? 'Get in touch with Coday, your web design agency in Wetzlar, Hesse. Free initial consultation on-site or via video call. We reply within 24 hours.'
-      : 'Nehmen Sie Kontakt zu Coday auf, Ihrer Webdesign Agentur in Wetzlar. Kostenloses Erstgespräch vor Ort oder per Video. Antwort innerhalb von 24 Stunden.';
   return (
     <>
       <SeoHead
@@ -52,10 +43,6 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
         pageType="contact"
       />
       <ContactClient />
-      {/* SEO Title für Keyword-Konsistenz */}
-      <div className="container mx-auto px-4 pb-12 text-center text-xs text-gray-400 font-mono">
-        Themen: {_seoTitle}
-      </div>
     </>
   );
 }

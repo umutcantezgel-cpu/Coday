@@ -127,7 +127,17 @@ export const GamifiedIndustryTemplate: React.FC<{ content: any; cityData?: any }
       {/* 2. GAMIFIED ROI CALCULATOR */}
       <section className="py-24 px-4 bg-white relative z-20 -mt-10">
         <div className="max-w-6xl mx-auto">
-          <GamifiedRoiCalculator industryName={content.target.replace('-', ' ').toUpperCase()} />
+          <GamifiedRoiCalculator
+            industryName={content.target.replace('-', ' ').toUpperCase()}
+            title={
+              content.roi_title ||
+              `Wie viel Umsatz lässt Ihr ${content.target.replace('-', ' ').toUpperCase()} liegen?`
+            }
+            description={
+              content.roi_desc ||
+              'Schieben Sie den Regler auf Ihren aktuellen Jahresumsatz und entdecken Sie das ungenutzte Potenzial, das Ihnen durch veraltete Web-Technologien und fehlende Sichtbarkeit entgeht.'
+            }
+          />
         </div>
       </section>
 

@@ -7,7 +7,6 @@ import { Popover } from '@/components/ui/popover';
 import { Tooltip } from '@/components/ui/tooltip';
 import { Toaster } from '@/components/ui/toast';
 import { useToast } from '@/hooks/use-toast';
-
 export const dynamic = 'force-static';
 
 export default function TestOverlays() {

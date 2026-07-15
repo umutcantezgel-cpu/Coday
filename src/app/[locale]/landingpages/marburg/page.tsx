@@ -78,9 +78,9 @@ export default async function MarburgLandingPage(props: { params: Promise<{ loca
         <LocalSeoTemplate content={content} cityData={cityData} />
       ) : (
         <div className="min-h-screen pt-32 text-center text-white bg-secondary flex flex-col items-center justify-center">
-          <h2 className="text-4xl md:text-6xl font-display font-bold mb-6">
+          <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">
             Ihr Webdesigner in Marburg
-          </h2>
+          </h1>
           <h2 className="text-gray-400 max-w-2xl text-lg font-normal">
             Als <strong>Ihr Webdesigner in Marburg</strong> bauen wir in der Umgebung
             hochperformante Webseiten für Handwerker, Ärzte und Dienstleister.
@@ -101,10 +101,6 @@ export default async function MarburgLandingPage(props: { params: Promise<{ loca
           />
         </div>
       )}
-      {/* SEO Title für Keyword-Konsistenz */}
-      <div className="container mx-auto px-4 pb-12 text-center text-xs text-gray-400 font-mono">
-        Themen: {_seoTitle}
-      </div>
     </>
   );
 }

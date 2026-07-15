@@ -42,7 +42,7 @@ export default async function GesundheitswesenPage({
   const _locale = (await params)?.locale || 'de';
   const _seoTitle =
     _locale === 'en'
-      ? 'Web Design for Doctors & Medical Practices | Healthcare Marketing | Coday'
+      ? 'Web Design for Doctors & Clinics | Agency Hesse | Coday'
       : 'Webdesign für Ärzte & Praxen | Healthcare Marketing | Coday';
   const _seoDesc =
     _locale === 'en'
@@ -69,10 +69,6 @@ export default async function GesundheitswesenPage({
       />
       <IndustryDetailClient industrySlug="aerzte-gesundheit" />
       <IndustryToolEmbed industryKey="gesundheit" />
-      {/* SEO Title für Keyword-Konsistenz */}
-      <div className="container mx-auto px-4 pb-12 text-center text-xs text-gray-400 font-mono">
-        Themen: {_seoTitle}
-      </div>
     </>
   );
 }

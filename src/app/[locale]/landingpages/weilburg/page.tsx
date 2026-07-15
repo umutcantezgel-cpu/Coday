@@ -79,9 +79,9 @@ export default async function WeilburgLandingPage(props: { params: Promise<{ loc
         <LocalSeoTemplate content={content} cityData={cityData} />
       ) : (
         <div className="min-h-screen pt-32 text-center text-white bg-secondary flex flex-col items-center justify-center">
-          <h2 className="text-4xl md:text-6xl font-display font-bold mb-6">
+          <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">
             Ihr Webdesigner in Weilburg
-          </h2>
+          </h1>
           <div className="flex flex-col items-center gap-6 mt-4">
             <h2 className="text-gray-400 max-w-2xl text-lg font-normal">
               Als <strong>Ihr Webdesigner in Weilburg</strong> bauen wir in der Umgebung
@@ -109,6 +109,36 @@ export default async function WeilburgLandingPage(props: { params: Promise<{ loc
                 Sie uns gemeinsam Ihr Projekt besprechen und herausfinden, wie wir Ihr Unternehmen
                 digital auf die nächste Stufe heben können.
               </p>
+              <p>
+                Die digitale Landschaft entwickelt sich rasant weiter, und für Unternehmen in
+                Weilburg ist es entscheidend, mit diesem Wandel Schritt zu halten. Eine
+                maßgeschneiderte Webseite ist mehr als nur eine digitale Visitenkarte; sie ist ein
+                interaktives Werkzeug zur Kundengewinnung und Kundenbindung. Durch gezieltes
+                Webdesign, das exakt auf Ihre Zielgruppe im Lahn-Dill-Kreis abgestimmt ist, heben
+                Sie sich deutlich von der Konkurrenz ab. Wir integrieren moderne Funktionen wie
+                Online-Terminbuchungen, interaktive Kontaktformulare und dynamische Inhalte, die den
+                Nutzern einen echten Mehrwert bieten und die Kontaktaufnahme so einfach wie möglich
+                gestalten.
+              </p>
+              <p>
+                Darüber hinaus spielt die lokale Suchmaschinenoptimierung (Local SEO) eine immer
+                wichtigere Rolle. Es nützt die schönste Webseite nichts, wenn sie von potenziellen
+                Kunden aus Weilburg und Umgebung bei Google nicht gefunden wird. Wir optimieren Ihre
+                gesamte Internetpräsenz strategisch auf relevante lokale Suchbegriffe, verbessern
+                Ihr Google Unternehmensprofil und sorgen dafür, dass Sie bei lokalen Suchanfragen
+                prominent platziert werden. Durch sauberen Code, schnelle Ladezeiten und mobile
+                Optimierung erfüllen wir alle technischen Anforderungen, die Suchmaschinen heute an
+                moderne Webseiten stellen.
+              </p>
+              <p>
+                Sicherheit und Zuverlässigkeit sind weitere Eckpfeiler unserer Webentwicklung. Wir
+                setzen auf aktuelle Technologien und höchste Sicherheitsstandards, um Ihre Webseite
+                und die Daten Ihrer Nutzer optimal zu schützen. Mit regelmäßigen Updates, Backups
+                und einem proaktiven Wartungsservice stellen wir sicher, dass Ihre Online-Präsenz
+                jederzeit reibungslos funktioniert. Vertrauen Sie auf unser Know-how als lokale
+                Webdesign-Agentur und lassen Sie uns gemeinsam eine digitale Strategie entwickeln,
+                die Ihr Unternehmen in Weilburg langfristig und messbar erfolgreich macht.
+              </p>
             </div>
           </div>
 
@@ -127,10 +157,6 @@ export default async function WeilburgLandingPage(props: { params: Promise<{ loc
           />
         </div>
       )}
-      {/* SEO Title für Keyword-Konsistenz */}
-      <div className="container mx-auto px-4 pb-12 text-center text-xs text-gray-400 font-mono">
-        Themen: {_seoTitle}
-      </div>
       <SeoContentBlock />
     </>
   );
