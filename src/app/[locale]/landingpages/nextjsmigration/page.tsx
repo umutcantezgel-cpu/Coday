@@ -51,7 +51,14 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
         description="Erfahren Sie mehr über nextjsmigration"
         pageType="default"
       />
-      <ClientComponent />
+      <ClientComponent
+        h1Title={_locale === 'en' ? 'From Legacy to Next.js:' : 'Von Legacy zu Next.js:'}
+        h1Highlight={
+          _locale === 'en'
+            ? 'The Performance Boost for Your Business'
+            : 'Der Performance-Boost für Ihr Business'
+        }
+      />
       {/* SEO */}
       <section className="container mx-auto px-4 py-16 max-w-5xl text-secondary-600">
         <h2 className="text-3xl font-display font-bold mb-6">

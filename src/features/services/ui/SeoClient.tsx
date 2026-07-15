@@ -249,7 +249,7 @@ export function SeoClient() {
 
       {/* SEO Process Timeline */}
       <section className="bg-secondary py-24 mb-24 text-white overflow-hidden relative">
-        <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-20"></div>
+        <div className="absolute inset-0 bg-[url(/noise.svg)] opacity-20"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">

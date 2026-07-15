@@ -176,22 +176,22 @@ export default async function SubIndustryPage({ params }: { params: Promise<{ lo
       ) : (
         <section className="container mx-auto px-4 py-16 max-w-5xl text-secondary-600">
           <h2 className="text-3xl font-display font-bold mb-6">
-            Web Design for Doctors in Giessen – Your Digital Practice Presence
+            Web Design for Doctors in Gießen – Your Digital Practice Presence
           </h2>
           <div className="space-y-4 text-base leading-relaxed">
             <p>
-              For doctors and medical practices in Giessen, a professional website is indispensable
+              For doctors and medical practices in Gießen, a professional website is indispensable
               today. Patients research online, compare reviews, and increasingly make their choice
               of doctor digitally. If your practice does not impress in Google results, patients
               choose a competitor instead. Coday develops specialised web design and IT solutions
-              for the healthcare sector in Giessen and across the Central Hesse region. We
-              understand the particular demands of medical websites: the balance between clinical
-              expertise and patient-friendly communication, strict GDPR compliance, and the need to
-              build trust from the very first page view. Our practice homepages are designed to
-              inform, reassure, and motivate patients to get in touch.
+              for the healthcare sector in Gießen and across the Central Hesse region. We understand
+              the particular demands of medical websites: the balance between clinical expertise and
+              patient-friendly communication, strict GDPR compliance, and the need to build trust
+              from the very first page view. Our practice homepages are designed to inform,
+              reassure, and motivate patients to get in touch.
             </p>
             <p>
-              Our web design solutions for medical practices in Giessen go far beyond a simple
+              Our web design solutions for medical practices in Gießen go far beyond a simple
               business-card website. We integrate online appointment booking systems that save your
               practice team valuable time and create detailed service pages that inform patients
               about your areas of treatment. Professional team introductions with photographs and
@@ -203,14 +203,14 @@ export default async function SubIndustryPage({ params }: { params: Promise<{ lo
             </p>
             <p>
               Local search engine optimisation is of central importance for medical practices in
-              Giessen. With over 90,000 residents and a large student population, Giessen offers
+              Gießen. With over 90,000 residents and a large student population, Gießen offers
               enormous patient potential — but also intense competition. We optimise your practice
-              homepage specifically for relevant search terms such as "doctor Giessen", "dentist
-              Giessen", or "orthopaedist near me". Optimising your Google Business Profile, building
+              homepage specifically for relevant search terms such as "doctor Gießen", "dentist
+              Gießen", or "orthopaedist near me". Optimising your Google Business Profile, building
               listings on medical directories such as Jameda, and technically perfecting your
               website form the foundation for top rankings in local search results. Mobile
-              optimisation is our highest priority, as the majority of all doctor searches in
-              Giessen are conducted on smartphones.
+              optimisation is our highest priority, as the majority of all doctor searches in Gießen
+              are conducted on smartphones.
             </p>
             <p>
               As a web design agency from the Wetzlar area, we are thoroughly familiar with the
@@ -218,7 +218,7 @@ export default async function SubIndustryPage({ params }: { params: Promise<{ lo
               forms, legally secure privacy policies, and cookie solutions that meet the stringent
               requirements of the medical sector. Our approach combines technical excellence with a
               patient-centred design that underscores your professional expertise. With a practice
-              homepage designed by Coday in Giessen, you not only attract new patients but position
+              homepage designed by Coday in Gießen, you not only attract new patients but position
               yourself over the long term as a trusted medical point of contact in one of the most
               important cities in Central Hesse.
             </p>

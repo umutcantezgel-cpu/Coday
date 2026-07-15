@@ -4,7 +4,12 @@ import React from 'react';
 import { SeoHead } from '@/shared/ui/SeoHead';
 import { Code, RocketLaunch, ShieldCheck, Lightning } from '@phosphor-icons/react/dist/ssr';
 
-const NextJsMigration: React.FC = () => {
+interface NextJsMigrationProps {
+  h1Title?: string;
+  h1Highlight?: string;
+}
+
+const NextJsMigration: React.FC<NextJsMigrationProps> = ({ h1Title, h1Highlight }) => {
   return (
     <div className="bg-background-light min-h-dvh">
       <SeoHead
@@ -20,10 +25,10 @@ const NextJsMigration: React.FC = () => {
             <Code size={20} weight="fill" aria-hidden="true" /> Next.js Enterprise Migration
           </span>
           <h1 className="font-display font-black text-4xl sm:text-6xl mb-6 tracking-tight">
-            Von Legacy zu Next.js:
+            {h1Title || 'Von Legacy zu Next.js:'}
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">
-              Der Performance-Boost für Ihr Business
+              {h1Highlight || 'Der Performance-Boost für Ihr Business'}
             </span>
           </h1>
           <p className="text-xl text-slate-300 leading-relaxed mb-8 max-w-2xl mx-auto">

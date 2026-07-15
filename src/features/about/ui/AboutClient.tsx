@@ -101,10 +101,7 @@ export const AboutClient: React.FC = () => {
       {/* ═══ HERO ═══ */}
       <section className="relative pt-36 pb-28 px-4 overflow-hidden bg-secondary">
         {/* Background Effects */}
-        <div
-          className="absolute inset-0 opacity-[0.03] bg-[url('/noise.svg')]"
-          aria-hidden="true"
-        />
+        <div className="absolute inset-0 opacity-[0.03] bg-[url(/noise.svg)]" aria-hidden="true" />
         <div
           className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] max-w-3xl max-h-3xl bg-primary/8 blur-[150px] rounded-full pointer-events-none"
           aria-hidden="true"
@@ -167,10 +164,7 @@ export const AboutClient: React.FC = () => {
         className="relative py-28 overflow-hidden"
         style={{ background: 'linear-gradient(180deg, #0f172a 0%, #111827 100%)' }}
       >
-        <div
-          className="absolute inset-0 opacity-[0.02] bg-[url('/noise.svg')]"
-          aria-hidden="true"
-        />
+        <div className="absolute inset-0 opacity-[0.02] bg-[url(/noise.svg)]" aria-hidden="true" />
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           {/* Decorative Quotation Mark */}
@@ -203,10 +197,7 @@ export const AboutClient: React.FC = () => {
 
       {/* ═══ VALUES ═══ */}
       <section className="py-24 lg:py-32 bg-secondary relative overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-[0.02] bg-[url('/noise.svg')]"
-          aria-hidden="true"
-        />
+        <div className="absolute inset-0 opacity-[0.02] bg-[url(/noise.svg)]" aria-hidden="true" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
@@ -254,10 +245,7 @@ export const AboutClient: React.FC = () => {
         className="py-24 lg:py-32 relative overflow-hidden"
         style={{ background: 'linear-gradient(180deg, #111827 0%, #0f172a 100%)' }}
       >
-        <div
-          className="absolute inset-0 opacity-[0.02] bg-[url('/noise.svg')]"
-          aria-hidden="true"
-        />
+        <div className="absolute inset-0 opacity-[0.02] bg-[url(/noise.svg)]" aria-hidden="true" />
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-20">

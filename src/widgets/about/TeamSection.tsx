@@ -34,7 +34,7 @@ export const TeamSection: React.FC = () => {
     <section className="py-24 lg:py-32 bg-secondary text-white relative overflow-hidden">
       {/* Background Effect */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] max-w-4xl max-h-4xl bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute inset-0 opacity-[0.02] bg-[url('/noise.svg')]" />
+      <div className="absolute inset-0 opacity-[0.02] bg-[url(/noise.svg)]" />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">

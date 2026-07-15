@@ -156,7 +156,7 @@ const PublicSectorPage: React.FC = () => {
 
       {/* --- PRICING & PROCUREMENT (CRITICAL) --- */}
       <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
+        <div className="absolute inset-0 bg-[url(/grid.svg)] opacity-10"></div>
         <div className="max-w-5xl mx-auto px-4 relative z-10 text-center">
           <OptimizedIcon icon={Gavel} className="w-16 h-16 text-blue-400 mx-auto mb-6" />
           <h2 className="text-3xl md:text-5xl font-display font-bold mb-6">{t('pricing.title')}</h2>

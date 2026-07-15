@@ -87,7 +87,10 @@ build
 # Next.js
 .next
 .next_bak
+.next_bak2
+.next_bak*
 .next-build
+.legacy_pages_backup
 
 # AI Agents
 .agents

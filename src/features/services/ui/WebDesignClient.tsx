@@ -217,7 +217,7 @@ export function WebDesignClient() {
       {/* UX Process Timeline - EXISTING BUT REFINED */}
       <section className="bg-secondary py-24 mb-24 text-white overflow-hidden relative">
         {/* Background Grid */}
-        <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-20"></div>
+        <div className="absolute inset-0 bg-[url(/noise.svg)] opacity-20"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
@@ -340,7 +340,7 @@ export function WebDesignClient() {
               href="/work/batherm"
               className="inline-flex items-center justify-center px-6 py-3 font-bold text-content-base rounded-xl bg-primary hover:bg-surface-elevated transition motion-reduce:duration-[0.01ms] shadow-glow"
             >
-              {t('actions.read_more')}
+              Batherm Case Study
               <OptimizedIcon icon={ArrowRight} className="ms-2" />
             </NavLink>
           </div>

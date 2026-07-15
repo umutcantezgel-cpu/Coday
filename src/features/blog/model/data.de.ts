@@ -1753,7 +1753,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: 'Headless vs WordPress Vergleich: Der ultimative Test',
         level: 'h2',
         content:
-          'WordPress ist tot. Moderne Headless Systeme beweisen es (2026). WordPress betreibt 40% des Webs. Es ist auch das Ziel #1 für Hacker. Es ist langsam. Es ist aufgebläht. Es ist ein Monolith in einer Microservices-Welt.\n\nDer Headless Ansatz (mit Tools wie Sanity, Contentful, Strapi) entkoppelt Inhalt von Code. Er erlaubt Ihnen, Inhalte omnichannel an Web, App und Watch aus einer Quelle zu senden. Dieser CMS Vergleich liefert Ihnen die harten Fakten, damit Sie eine fundierte Entscheidung für Ihre digitale Infrastruktur treffen können.',
+          'In diesem ultimativen Headless vs WordPress Vergleich: Der CMS Showdown zeigen wir, warum klassische Systeme ausgedient haben. WordPress ist tot. Moderne Headless Systeme beweisen es (2026). WordPress betreibt 40% des Webs. Es ist auch das Ziel #1 für Hacker. Es ist langsam. Es ist aufgebläht. Es ist ein Monolith in einer Microservices-Welt.\n\nDer Headless Ansatz (mit Tools wie Sanity, Contentful, Strapi) entkoppelt Inhalt von Code. Er erlaubt Ihnen, Inhalte omnichannel an Web, App und Watch aus einer Quelle zu senden. Dieser CMS Vergleich liefert Ihnen die harten Fakten, damit Sie eine fundierte Entscheidung für Ihre digitale Infrastruktur treffen können.',
       },
       {
         id: 'interactive-tco',

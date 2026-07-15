@@ -5,6 +5,7 @@ import { SeoHead } from '@/shared/ui/SeoHead';
 import { Button } from '@/shared/ui/Button';
 import { Link } from '@/i18n/navigation';
 import { SeoLocalExpertiseBlock } from '@/features/industries/ui/SeoLocalExpertiseBlock';
+import { SeoTextInjector } from '@/features/seo/ui/SeoTextInjector';
 import { CheckCircle, MapPin } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import BlurText from '@/shared/ui/BlurText';
@@ -175,7 +176,9 @@ export const LocalSeoTemplate: React.FC<LocalSeoTemplateProps> = ({ content, cit
         </div>
       </section>
 
-      <SeoLocalExpertiseBlock />
+      <SeoLocalExpertiseBlock>
+        <SeoTextInjector title={content.target} h1={content.hero.subheadline} />
+      </SeoLocalExpertiseBlock>
     </div>
   );
 };
