@@ -9,17 +9,32 @@ import { notFound } from 'next/navigation';
 export const dynamicParams = false;
 export const dynamic = 'force-static';
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
+export async function generateMetadata(props: {
+  params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
-  const { locale } = await params;
+  const params = await props.params;
+  const { locale, slug } = params;
+
+  const project = workData[slug];
+
+  if (!project) {
+    return generatePageMetadata({
+      title: 'Coday Web-Agentur',
+      description: 'Premium Webentwicklung & Design',
+      path: `/${locale}/work/${slug}`,
+      type: 'default',
+    });
+  }
+
+  const content = locale === 'en' ? project.content.en : project.content.de;
+  const description =
+    `${content.title}: ${content.subtitle}. ${content.challenge?.description || ''}`.trim();
+
   return generatePageMetadata({
-    title: 'Coday Web-Agentur',
-    description: 'Premium Webentwicklung & Design',
-    path: `/${locale}`,
-    type: 'money',
+    title: `${content.title} – Case Study | Coday`,
+    description: description.length > 160 ? description.substring(0, 157) + '...' : description,
+    path: `/${locale}/work/${slug}`,
+    type: 'default',
   });
 }
 

@@ -16,7 +16,7 @@ export async function generateMetadata({
     return generatePageMetadata({
       title: 'Web Design for Service Providers | Wetzlar Hesse',
       description:
-        'Professional websites for service providers in Wetzlar and Hesse. Tax advisors, brokers and consultants win more clients online. Get started today.',
+        'High-quality web design for service providers in Wetzlar and Hesse. Gain more clients online as a consultant or broker. Contact us today.',
       path: '/en/branchen/dienstleistung',
       type: 'money',
     });
@@ -24,7 +24,7 @@ export async function generateMetadata({
   return generatePageMetadata({
     title: 'Webdesign für Dienstleister | Wetzlar & Hessen',
     description:
-      'Professionelle Webseiten für Dienstleister in Wetzlar und Hessen. Steuerberater, Makler und Berater gewinnen online mehr Kunden. Jetzt starten.',
+      'Hochwertiges Webdesign für Dienstleister in Wetzlar und ganz Hessen. Gewinnen Sie als Berater oder Makler neue Kunden online. Sprechen Sie uns an.',
     path: '/de/branchen/dienstleistung',
     type: 'money',
   });

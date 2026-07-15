@@ -16,7 +16,7 @@ export async function generateMetadata({
     return generatePageMetadata({
       title: 'Web Design for Restaurants & Gastronomy | Hesse',
       description:
-        'Appetizing websites for restaurants and gastronomy in Wetzlar and Hesse. More guests through professional web design and strong local visibility.',
+        'Digital solutions for restaurants, cafes, and gastronomy in Hesse. Attract new guests with modern web design and improved online presence.',
       path: '/en/branchen/gastronomie',
       type: 'money',
     });
@@ -24,7 +24,7 @@ export async function generateMetadata({
   return generatePageMetadata({
     title: 'Webdesign für Restaurants & Gastronomie | Hessen',
     description:
-      'Appetitliche Webseiten für Restaurants und Gastronomie in Wetzlar und Hessen. Mehr Gäste durch professionelles Webdesign und lokale Auffindbarkeit.',
+      'Digitale Lösungen für Restaurants, Cafés und die Gastronomie in Hessen. Gewinnen Sie neue Gäste mit modernem Webdesign und besserer Online-Präsenz.',
     path: '/de/branchen/gastronomie',
     type: 'money',
   });

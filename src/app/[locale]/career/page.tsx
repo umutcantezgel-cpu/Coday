@@ -8,7 +8,8 @@ export const dynamic = 'force-static';
 export async function generateMetadata(): Promise<Metadata> {
   return generatePageMetadata({
     title: 'Karriere bei Coday | Webdesign Agentur Jobs Wetzlar',
-    description: 'Karrieremöglichkeiten bei Coday.',
+    description:
+      'Entdecken Sie spannende Karrieremöglichkeiten bei Coday in Wetzlar. Werden Sie Teil unseres Teams für Premium Webentwicklung, Webdesign und digitale Lösungen.',
     path: '/de/career',
     type: 'default',
   });
@@ -23,7 +24,8 @@ export default function CareerPage() {
         '@type': 'WebPage',
         '@id': `${BASE_URL}/de/career`,
         name: 'Karriere bei Coday',
-        description: 'Karrieremöglichkeiten bei Coday.',
+        description:
+          'Entdecken Sie spannende Karrieremöglichkeiten bei Coday in Wetzlar. Werden Sie Teil unseres Teams für Premium Webentwicklung, Webdesign und digitale Lösungen.',
         isPartOf: { '@id': `${BASE_URL}/#website` },
       },
     ],

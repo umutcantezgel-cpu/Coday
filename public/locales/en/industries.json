@@ -20,17 +20,17 @@
     },
     "hero": {
       "cta_primary": "Schedule Consultation",
-      "cta_secondary": "Calculate Prices"
+      "cta_secondary": "Calculate Prices for {industry}"
     },
     "challenges": {
-      "title": "Do you know these challenges?"
+      "title": "Do you know these challenges in {industry}?"
     },
     "solutions": {
       "title": "Our Solution for {industry}",
-      "description": "We don’t just develop websites, but digital sales representatives tailored exactly to your industry."
+      "description": "We don’t just develop websites, but digital sales representatives tailored exactly to {industry}."
     },
     "gallery": {
-      "title": "Industry Insights",
+      "title": "Insights into {industry}",
       "description": "Professional visualization for {industry}."
     },
     "features": {

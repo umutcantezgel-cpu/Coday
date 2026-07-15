@@ -8,7 +8,7 @@ export default function PrivacyPage() {
   let _locale = 'de' as string;
   return (
     <div className="max-w-4xl mx-auto px-6 py-20 prose dark:prose-invert">
-      \n <h1>Datenschutzerklärung</h1>
+      <h1>Datenschutzerklärung</h1>
       <p>
         Verantwortliche Stelle im Sinne der Datenschutzgesetze, insbesondere der
         EU-Datenschutzgrundverordnung (DSGVO), ist: Codayweb.de

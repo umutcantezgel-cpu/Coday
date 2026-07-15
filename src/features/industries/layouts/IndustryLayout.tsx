@@ -144,7 +144,7 @@ export const IndustryLayout: React.FC<IndustryLayoutProps> = ({
                   transition={{ delay: i * 0.1 }}
                   className="bg-gray-900/90 backdrop-blur-xl border border-white/10 p-8 rounded-3xl hover:bg-black transition-colors motion-reduce:duration-[0.01ms] shadow-xl"
                 >
-                  <h3 className="text-xl font-bold text-white mb-4">{point.title}</h3>
+                  <h2 className="text-xl font-bold text-white mb-4">{point.title}</h2>
                   <p className="text-white/70">{point.description}</p>
                 </m.div>
               ))}

@@ -107,7 +107,7 @@ export function IndustryDetailClient({ industrySlug }: { industrySlug?: string }
                 href="/calculator"
                 className="px-8 py-3 bg-white text-secondary border border-gray-200 font-bold rounded-lg hover:border-primary hover:text-primary transition motion-reduce:duration-[0.01ms] shadow-sm"
               >
-                {t('detail.hero.cta_secondary')}
+                {t('detail.hero.cta_secondary', { industry: t(industry.title) })}
               </Link>
             </div>
           </div>
@@ -129,7 +129,7 @@ export function IndustryDetailClient({ industrySlug }: { industrySlug?: string }
       <section className="bg-white py-20 border-y border-gray-100">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-secondary mb-12 text-center">
-            {t('detail.challenges.title')}
+            {t('detail.challenges.title', { industry: t(industry.title) })}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {industry.challenges.map((challenge, idx) => (
@@ -188,7 +188,7 @@ export function IndustryDetailClient({ industrySlug }: { industrySlug?: string }
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-secondary mb-4">
-                {t('detail.gallery.title')}
+                {t('detail.gallery.title', { industry: t(industry.title) })}
               </h2>
               <p className="text-text-light max-w-2xl mx-auto">
                 {t('detail.gallery.description', { industry: t(industry.title) })}

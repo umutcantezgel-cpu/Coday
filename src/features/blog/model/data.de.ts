@@ -430,72 +430,6 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
   {
-    id: 9,
-    title: "Anti-AI Manifest: Warum 'KI-perfektes' Webdesign 2026 scheitert",
-    slug: 'anti-ai-manifest',
-    excerpt:
-      'KI-Tools fluten den Markt mit seelenlosen Layouts. Erfahren Sie, warum digitale Authentizität und echtes Handwerk der Premium-Standard für Marken sind.',
-    category: 'Design Philosophy',
-    readTime: '8 Min.',
-    image: '/images/brand/coday-full.webp',
-    alt: 'Brutalistisches Webdesign mit Neon-Akzenten',
-    author: 'Coday Design Team',
-    date: '15. Mai 2026',
-    content: [
-      {
-        id: 'intro',
-        type: 'text',
-        heading: 'Die Rache des Analogen',
-        level: 'h2',
-        content:
-          "Wir leben in einer Ära der synthetischen Perfektion. Midjourney malt Bilder ohne Pinselstrich. ChatGPT schreibt Texte ohne Ecken und Kanten. Web-Baukästen spucken Layouts aus, die alle gleich aussehen.\\n\\nDoch etwas Interessantes passiert: Je mehr 'perfekten' AI-Content wir sehen, desto weniger vertrauen wir ihm. Unser Gehirn hat gelernt, den 'AI-Glanz' als billig und generisch zu filtern. Wahre Premium-Marken gehen jetzt den entgegengesetzten Weg.",
-      },
-      {
-        id: 'interactive-blind-test',
-        type: 'interactive',
-        component: 'blind-test',
-        data: {},
-      },
-      {
-        id: 'analysis-blind-test',
-        type: 'text',
-        heading: "Warum das 'hässlichere' Design gewinnt",
-        level: 'h2',
-        content:
-          "Haben Sie oben abgestimmt? Die meisten Nutzer wählen das Design, das Ecken und Kanten hat. Warum? Weil es *menschlich* wirkt.\\n\\n**Das Uncanny Valley des Webdesigns:**\\nWenn eine Website zu glatt, zu symmetrisch und zu 'stock-foto-lastig' ist, schrillt unser innerer Alarm. 'Hier versucht mir jemand etwas zu verkaufen, ohne Arbeit zu investieren.'\\n\\nLuxus definiert sich heute über das Handwerkliche. Über den bewussten Bruch mit der Norm. Wir nennen das **'Anti-AI Aesthetics'**.",
-      },
-      {
-        id: 'quote-luxury',
-        type: 'quote',
-        text: 'In einer Welt voll von KI-Perfektion ist der menschliche Fehler das ultimative Statussymbol.',
-        author: 'Design Trend Report 2026',
-        variant: 'large',
-      },
-      {
-        id: 'checklist-anti-ai',
-        type: 'checklist',
-        title: 'Die 5 Säulen der Anti-AI Ästhetik',
-        items: [
-          { text: 'Brutalismus: Rohe Strukturen statt versteckter Raster', checked: true },
-          { text: 'Typografie: Custom Fonts statt Google Fonts Standard', checked: true },
-          { text: 'Motion: Physikalisch korrekte Animationen statt linearer Fades', checked: true },
-          { text: 'Textur: Noise & Grain statt flacher Vektoren', checked: true },
-          { text: 'Copywriting: Meinung & Haltung statt ChatGPT-Bla-Bla', checked: true },
-        ],
-      },
-      {
-        id: 'outro',
-        type: 'cta',
-        title: 'Zeigen Sie Charakter',
-        description:
-          'Ihre Marke ist einzigartig. Warum sollte Ihre Website aussehen wie die von allen anderen? Wir designen Unikate.',
-        buttonText: 'Design-Sprint anfragen',
-        href: '/contact',
-        variant: 'primary',
-      },
-    ],
-  },
-  {
     id: 2,
     title: 'Business Intelligence: Warum Bauchgefühl Ihr Marketing-Budget verbrennt',
     slug: 'daten-luegen-nicht-business-intelligence',
@@ -1147,7 +1081,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
   {
-    id: 8,
+    id: 30,
     title: 'Neuro-Design: Wie Sie das Unterbewusstsein Ihrer Kunden hacken',
     slug: 'neuro-design-psychologie',
     excerpt:
@@ -1260,7 +1194,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
   {
-    id: 9,
+    id: 31,
     title: "Die KI-Revolution: Warum 2026 das Jahr der 'Voice-First' Strategie ist",
     slug: 'ki-voice-search-revolution',
     excerpt:
@@ -1360,7 +1294,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
   {
-    id: 10,
+    id: 32,
     title: 'Das Anti-AI Manifest: Warum menschliches Design 2026 gewinnt 🛑',
     slug: 'anti-ai-manifest-menschliches-design',
     excerpt:
@@ -1561,7 +1495,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     id: 12,
     title: 'Speed = Revenue: Der hohe Preis der Latenz',
-    slug: 'high-performance-web-vitals',
+    slug: 'speed-equals-revenue',
     excerpt:
       "Millisekunden kosten Millionen. Wir analysieren, warum Core Web Vitals die wichtigste KPI für 2026 sind und wie Sie Ihre 'Latenz-Steuer' berechnen.",
     category: 'Performance',

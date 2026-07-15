@@ -549,17 +549,17 @@
   "generic_detail": {
     "advantages": {
       "contact_btn": "Get in Touch",
-      "desc": "Our clients don't choose colorful slides, they choose a team that understands marketing as an investment. We think in results, plan with clear goals, and deliver transparently.",
-      "label": "Your Benefits",
+      "desc": "Our clients don't choose colorful slides, they choose a team that understands marketing as an investment. We think in results for {service}, plan with clear goals, and deliver transparently.",
+      "label": "Your Benefits with {service}",
       "title": "We think in ROAS, <br /> not in clicks."
     },
     "faq": {
-      "desc": "We work transparently. Here are answers to the most important questions.",
-      "title": "Frequently Asked Questions (FAQ)"
+      "desc": "We work transparently. Here are answers to the most important questions about {service}.",
+      "title": "Frequently Asked Questions about {service}"
     },
     "final_cta": {
       "button": "Inquire Now",
-      "desc": "No standard solutions. We develop exactly what you need for your success.",
+      "desc": "No standard solutions. We develop exactly what you need for your success in {service}.",
       "title": "Let's start your project."
     },
     "hero": {
@@ -571,12 +571,12 @@
       "title": "Service not found"
     },
     "process": {
-      "label": "Our Process",
+      "label": "Our Process for {service}",
       "title": "Measurable success <br /> in 5 steps."
     },
     "testimonials": {
-      "label": "What our clients say",
-      "title": "Results that convince."
+      "label": "Client Voices",
+      "title": "Results with {service} that convince."
     },
     "trust": {
       "title": "Trusted by leading companies"

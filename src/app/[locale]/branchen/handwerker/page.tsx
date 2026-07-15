@@ -17,7 +17,7 @@ export async function generateMetadata({
     return generatePageMetadata({
       title: 'Web Design for Craftsmen | Agency Wetzlar Hesse',
       description:
-        'Professional websites for craft businesses in Wetzlar and Hesse. More orders through local visibility on Google. Personal service at a fixed price.',
+        'Web design and digital visibility for craft businesses in Wetzlar and Hesse. Generate lucrative orders through a professional online presence.',
       path: `/en/branchen/handwerker`,
       type: 'money',
     });
@@ -25,7 +25,7 @@ export async function generateMetadata({
   return generatePageMetadata({
     title: 'Webdesign für Handwerker | Agentur Wetzlar Hessen',
     description:
-      'Professionelle Webseiten für Handwerksbetriebe in Wetzlar und Hessen. Mehr Aufträge durch lokale Sichtbarkeit bei Google. Persönlich und zum Festpreis.',
+      'Webdesign und digitale Sichtbarkeit für Handwerker in Wetzlar und Hessen. Generieren Sie lukrative Aufträge durch professionelle Online-Präsenz.',
     path: `/de/branchen/handwerker`,
     type: 'money',
   });

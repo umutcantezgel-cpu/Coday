@@ -16,7 +16,7 @@ export async function generateMetadata({
     return generatePageMetadata({
       title: 'Web Design for the Public Sector | Hesse Region',
       description:
-        'Accessible and GDPR-compliant websites for municipalities and authorities in Hesse. Secure web development by Coday from Wetzlar. Get in touch today.',
+        'Digitalization for the public sector in Hesse. We develop accessible, secure, and performant websites for authorities and municipalities.',
       path: '/en/branchen/public-sector',
       type: 'money',
     });
@@ -24,7 +24,7 @@ export async function generateMetadata({
   return generatePageMetadata({
     title: 'Webdesign für den Öffentlichen Sektor | Hessen',
     description:
-      'Barrierefreie und DSGVO-konforme Webseiten für Kommunen und Behörden in Hessen. Sichere Webentwicklung von Coday aus Wetzlar. Jetzt Kontakt aufnehmen.',
+      'Digitalisierung im öffentlichen Sektor in Hessen. Wir entwickeln barrierefreie, sichere und performante Webseiten für Behörden und Kommunen.',
     path: '/de/branchen/public-sector',
     type: 'money',
   });

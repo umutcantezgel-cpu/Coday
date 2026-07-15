@@ -310,10 +310,13 @@ export function ServiceDetailClient() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-20">
               <span className="text-action-primary font-bold tracking-wider uppercase text-sm mb-4 block">
-                {t('generic_detail.process.label')}
+                {t('generic_detail.process.label', { service: t(service.titleKey) })}
               </span>
               <h2 className="font-display font-bold text-3xl sm:text-5xl mb-6 text-balance">
-                {t.rich('generic_detail.process.title', { br: () => <br /> })}
+                {t.rich('generic_detail.process.title', {
+                  br: () => <br />,
+                  service: t(service.titleKey),
+                })}
               </h2>
             </div>
 
@@ -352,13 +355,16 @@ export function ServiceDetailClient() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <span className="text-sapphire font-bold tracking-wider uppercase text-sm mb-4 block">
-                {t('generic_detail.advantages.label')}
+                {t('generic_detail.advantages.label', { service: t(service.titleKey) })}
               </span>
               <h2 className="font-display font-bold text-3xl sm:text-4xl text-gray-900 mb-6 text-balance">
-                {t.rich('generic_detail.advantages.title', { br: () => <br /> })}
+                {t.rich('generic_detail.advantages.title', {
+                  br: () => <br />,
+                  service: t(service.titleKey),
+                })}
               </h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed max-w-prose text-pretty">
-                {t('generic_detail.advantages.desc')}
+                {t('generic_detail.advantages.desc', { service: t(service.titleKey) })}
               </p>
               <NavLink
                 href="/contact"
@@ -394,10 +400,10 @@ export function ServiceDetailClient() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <span className="text-sapphire font-bold tracking-wider uppercase text-sm mb-4 block">
-                {t('generic_detail.testimonials.label')}
+                {t('generic_detail.testimonials.label', { service: t(service.titleKey) })}
               </span>
               <h2 className="font-display font-bold text-3xl sm:text-4xl text-gray-900 mb-6 text-balance">
-                {t('generic_detail.testimonials.title')}
+                {t('generic_detail.testimonials.title', { service: t(service.titleKey) })}
               </h2>
             </div>
             <div className="grid md:grid-cols-3 gap-8">
@@ -421,9 +427,11 @@ export function ServiceDetailClient() {
         <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-32">
           <div className="text-center mb-12">
             <h2 className="font-display font-bold text-3xl text-gray-900 mb-4 text-balance">
-              {t('generic_detail.faq.title')}
+              {t('generic_detail.faq.title', { service: t(service.titleKey) })}
             </h2>
-            <p className="text-gray-600">{t('generic_detail.faq.desc')}</p>
+            <p className="text-gray-600">
+              {t('generic_detail.faq.desc', { service: t(service.titleKey) })}
+            </p>
           </div>
           <div className="space-y-4">
             {faqs.map((faq, index) => (
@@ -440,10 +448,10 @@ export function ServiceDetailClient() {
 
           <div className="relative z-10">
             <h2 className="font-display font-bold text-3xl text-white mb-6 text-balance">
-              {t('generic_detail.final_cta.title')}
+              {t('generic_detail.final_cta.title', { service: t(service.titleKey) })}
             </h2>
             <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
-              {t('generic_detail.final_cta.desc')}
+              {t('generic_detail.final_cta.desc', { service: t(service.titleKey) })}
             </p>
             <NavLink
               href="/contact"

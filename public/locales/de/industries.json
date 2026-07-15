@@ -20,17 +20,17 @@
     },
     "hero": {
       "cta_primary": "Gespräch vereinbaren",
-      "cta_secondary": "Preise kalkulieren"
+      "cta_secondary": "Preise für {industry} kalkulieren"
     },
     "challenges": {
-      "title": "Kennen Sie diese Herausforderungen?"
+      "title": "Kennen Sie diese Herausforderungen im Bereich {industry}?"
     },
     "solutions": {
       "title": "Unsere Lösung für {industry}",
-      "description": "Wir entwickeln nicht nur Webseiten, sondern digitale Vertriebsmitarbeiter, die genau auf Ihre Branche zugeschnitten sind."
+      "description": "Wir entwickeln nicht nur Webseiten, sondern digitale Vertriebsmitarbeiter, die genau auf {industry} zugeschnitten sind."
     },
     "gallery": {
-      "title": "Branchen-Einblicke",
+      "title": "Einblicke in {industry}",
       "description": "Professionelle Visualisierung für {industry}."
     },
     "features": {
@@ -813,7 +813,7 @@
     "desc": "Digitale Präsenz, die Handwerkskunst widerspiegelt und hochwertige Kundenanfragen generiert.",
     "seoText": {
       "title": "Branchenspezifische IT-Lösungen",
-      "content": "Digitale Lösungen für Handwerksbetriebe und Dienstleister."
+      "content": "Wir digitalisieren Handwerksbetriebe und Bauunternehmen. Mit modernen, Conversion-starken Webseiten und automatisierten Anfrageprozessen sichern wir Ihnen qualifizierte Aufträge und positionieren Sie als unangefochtenen lokalen Marktführer."
     }
   },
   "card_realestate": {
@@ -821,7 +821,7 @@
     "desc": "Exklusive Exposés und performante Portfolios zur Gewinnung erstklassiger Mandate.",
     "seoText": {
       "title": "Branchenspezifische IT-Lösungen",
-      "content": "Professionelle Webseiten für Immobilienmakler und Bauträger."
+      "content": "Gewinnen Sie exklusive Immobilienmandate mit einer erstklassigen digitalen Präsenz. Unsere Lösungen für Makler integrieren digitale Exposés, CRM-Schnittstellen und Lead-Funnels, die Vertrauen schaffen und Ihre Akquise automatisieren."
     }
   },
   "card_shop": {
@@ -829,7 +829,7 @@
     "desc": "Skalierbare Onlineshops mit blitzschnellen Ladezeiten für maximale Conversion-Raten.",
     "seoText": {
       "title": "Branchenspezifische IT-Lösungen",
-      "content": "Moderne Online-Shops für lokale Einzelhändler."
+      "content": "Skalieren Sie Ihren Einzelhandel mit performanten E-Commerce-Plattformen. Wir verbinden lokales Geschäft mit digitalen Verkaufskanälen durch blitzschnelle, conversion-optimierte Online-Shops, die Besucher in treue Stammkunden verwandeln."
     }
   },
   "card_consulting": {
@@ -837,7 +837,7 @@
     "desc": "Repräsentative Webauftritte, die Ihre Expertise und Seriosität auf den ersten Blick vermitteln.",
     "seoText": {
       "title": "Branchenspezifische IT-Lösungen",
-      "content": "Digitale Präsenzen für Berater und Dienstleistungsunternehmen."
+      "content": "Unterstreichen Sie Ihre Beratungs-Expertise mit einer High-End-Webpräsenz. Wir entwickeln digitale Plattformen für Unternehmensberater, die Seriosität ausstrahlen, Thought-Leadership demonstrieren und kontinuierlich hochkarätige B2B-Leads generieren."
     }
   },
   "card_health": {
@@ -845,7 +845,7 @@
     "desc": "Vertrauensbildende Praxis-Websites mit nahtloser, sicherer Terminbuchung für Ihre Patienten.",
     "seoText": {
       "title": "Branchenspezifische IT-Lösungen",
-      "content": "Sichere und vertrauensvolle Webseiten für Ärzte und Kliniken."
+      "content": "Wir schaffen vertrauensvolle digitale Empfangszimmer für das Gesundheitswesen. Mit DSGVO-konformen Webseiten, integrierten Terminbuchungen und SEO-Optimierung entlasten wir Ihr Praxisteam und gewinnen gezielt neue Patienten."
     }
   },
   "automobil": {
@@ -905,7 +905,7 @@
     "cta_analysis": "Website analysieren lassen",
     "seoText": {
       "title": "Branchenspezifische IT-Lösungen",
-      "content": "Branchenspezifische IT-Lösungen für Ihren Unternehmenserfolg."
+      "content": "Starten Sie jetzt durch mit branchenspezifischen IT-Lösungen, die Ihre Prozesse digitalisieren und Ihren Unternehmenserfolg messbar auf das nächste Level heben."
     }
   },
   "common": {
@@ -916,7 +916,7 @@
     },
     "seoText": {
       "title": "Branchenspezifische IT-Lösungen",
-      "content": "Individuelle Weblösungen für vielfältige Branchenanforderungen."
+      "content": "Nutzen Sie unsere branchenübergreifende Expertise. Wir konzipieren und entwickeln maßgeschneiderte Weblösungen, die exakt auf die individuellen Herausforderungen und Wachstumsziele Ihrer spezifischen Branche zugeschnitten sind."
     }
   },
   "tool_embed": {
@@ -929,7 +929,7 @@
     "cta": "Zur interaktiven Demo",
     "seoText": {
       "title": "Branchenspezifische IT-Lösungen",
-      "content": "Branchenübergreifende digitale Werkzeuge und Integrationen."
+      "content": "Erleben Sie unsere interaktiven, branchenspezifischen Tools in Aktion. Entdecken Sie maßgeschneiderte digitale Werkzeuge, die Ihre Effizienz steigern und Ihren Kunden einen spürbaren technologischen Mehrwert bieten."
     }
   },
   "retail": {

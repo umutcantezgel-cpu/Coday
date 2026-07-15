@@ -43,10 +43,11 @@ export default function AngebotHandwerker() {
               <span className="text-gold">zu Meister.</span>
             </h1>
             <p className="text-2xl text-slate-600 leading-relaxed max-w-2xl mb-12">
-              Wir haben zusammen die Meisterschule gerockt. Wer am Werkzeug spart, zahlt doppelt.
-              Eure Website ist euer bester{' '}
-              <strong className="text-teal-600">digitaler Geselle</strong> – macht 24/7 Akquise und
-              wird nie krank.
+              Sichern Sie sich jetzt unser exklusives{' '}
+              <strong>Webdesign Angebot für Handwerker | Mittelhessen</strong>. Wir haben zusammen
+              die Meisterschule gerockt. Wer am Werkzeug spart, zahlt doppelt. Eure Website ist euer
+              bester <strong className="text-teal-600">digitaler Geselle</strong> – macht 24/7
+              Akquise und wird nie krank.
             </p>
             <div className="flex gap-4">
               <a

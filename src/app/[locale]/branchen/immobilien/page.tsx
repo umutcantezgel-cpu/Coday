@@ -16,7 +16,7 @@ export async function generateMetadata({
     return generatePageMetadata({
       title: 'Web Design for Real Estate Agents | Wetzlar Hesse',
       description:
-        'Premium websites for real estate agents in Wetzlar and Hesse. Property listings, search features and lead generation through modern design. Inquire.',
+        'Web development for real estate agents in Wetzlar and Hesse. Impress clients with excellent property listings and targeted online lead generation.',
       path: '/en/branchen/immobilien',
       type: 'money',
     });
@@ -24,7 +24,7 @@ export async function generateMetadata({
   return generatePageMetadata({
     title: 'Webdesign für Immobilienmakler | Wetzlar Hessen',
     description:
-      'Hochwertige Webseiten für Immobilienmakler in Wetzlar und Hessen. Exposés, Objektsuche und Lead-Generierung durch modernes Webdesign. Jetzt anfragen.',
+      'Webentwicklung für Immobilienmakler in Wetzlar und ganz Hessen. Überzeugen Sie mit exzellenten Exposés und zielgerichteter Lead-Generierung online.',
     path: '/de/branchen/immobilien',
     type: 'money',
   });
