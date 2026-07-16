@@ -139,7 +139,7 @@ export function ConsultingClient() {
                   href="/work/batherm"
                   className="inline-flex items-center gap-2 text-blue-600 font-bold hover:text-blue-700 transition-colors motion-reduce:duration-[0.01ms] group"
                 >
-                  Batherm Case Study
+                  Batherm IT-Consulting Case Study
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform motion-reduce:duration-[0.01ms]" />
                 </Link>
               </div>

@@ -115,7 +115,9 @@ export const PortfolioTeaserSection: React.FC = () => {
                       className="inline-flex items-center gap-3 font-bold text-lg text-secondary-900 hover:text-action-primary transition-colors group outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-sm"
                     >
                       <span className="border-b-2 border-secondary-900 group-hover:border-action-primary pb-1 transition-colors">
-                        Case Study: {content.title}
+                        {currentLang === 'en'
+                          ? `${content.title} Web Design Case Study`
+                          : `Webdesign Case Study: ${content.title}`}
                       </span>
                       <ArrowRight
                         weight="bold"

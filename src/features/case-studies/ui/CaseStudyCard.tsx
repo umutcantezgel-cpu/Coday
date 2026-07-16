@@ -69,7 +69,7 @@ export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ project, index = 1
             href={`/work/${project.slug}`}
             className="flex items-center gap-2 outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 focus-visible:ring-offset-bg-primary rounded-sm"
           >
-            {locale === 'en' ? `${title} Case Study` : `Case Study: ${title}`}{' '}
+            {locale === 'en' ? `${title} Web Design Case Study` : `Webdesign Case Study: ${title}`}{' '}
             <ArrowUpRight
               className="transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform motion-reduce:duration-[0.01ms]"
               weight="bold"

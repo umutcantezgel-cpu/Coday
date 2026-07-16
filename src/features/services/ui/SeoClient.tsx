@@ -328,7 +328,7 @@ export function SeoClient() {
               href="/work/batherm"
               className="inline-flex items-center justify-center px-6 py-3 font-bold text-content-base rounded-xl bg-primary hover:bg-surface-elevated transition motion-reduce:duration-[0.01ms] shadow-glow"
             >
-              Batherm Case Study
+              Batherm SEO Case Study
               <OptimizedIcon icon={ArrowRight} className="ms-2" />
             </NavLink>
           </div>

@@ -164,7 +164,9 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
                         href={`/work/${project.slug}`}
                         className="flex items-center gap-2 outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-sm"
                       >
-                        {isEn ? `${content.title} Case Study` : `Case Study: ${content.title}`}
+                        {isEn
+                          ? `${content.title} Web Design Case Study`
+                          : `Webdesign Case Study: ${content.title}`}
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform motion-reduce:duration-[0.01ms]" />
                       </Link>
                     </div>
