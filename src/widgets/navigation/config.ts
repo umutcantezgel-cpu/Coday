@@ -143,10 +143,7 @@ export const getNavItems = (): NavItem[] => [
             href: '/branchen/gesundheitswesen',
             desc: 'nav.industries.healthcare.desc',
           },
-          {
-            label: 'nav.industries.healthcare.aerzte',
-            href: '/branchen/aerzte-gesundheit',
-          },
+
           {
             label: 'nav.industries.healthcare.wetzlar',
             href: '/branchen/gesundheitswesen/arzt-wetzlar',
@@ -165,7 +162,7 @@ export const getNavItems = (): NavItem[] => [
             href: '/branchen/handwerker',
             desc: 'nav.industries.crafts.desc',
           },
-          { label: 'nav.industries.crafts.bau', href: '/branchen/handwerk-bau' },
+
           {
             label: 'nav.industries.crafts.wetzlar',
             href: '/branchen/handwerker/wetzlar',
