@@ -71,7 +71,7 @@ export default async function UnternehmensberatungPage({
       {locale === 'de' ? (
         <section className="container mx-auto px-4 py-16 max-w-5xl text-secondary-600">
           <h3 className="text-3xl font-display font-bold mb-6">
-            Digitale Expertise für Unternehmensberatungen
+            Warum Unternehmensberatungen eine professionelle Website brauchen
           </h3>
           <div className="space-y-4 text-base leading-relaxed">
             <p>
@@ -105,7 +105,7 @@ export default async function UnternehmensberatungPage({
       ) : (
         <section className="container mx-auto px-4 py-16 max-w-5xl text-secondary-600">
           <h3 className="text-3xl font-display font-bold mb-6">
-            Digital Expertise for Management Consultants
+            Why Management Consultancies Need a Professional Website
           </h3>
           <div className="space-y-4 text-base leading-relaxed">
             <p>

@@ -80,9 +80,9 @@ export const TechSovereigntySection: React.FC = () => {
                 <OptimizedIcon icon={item.icon} className="w-6 h-6" />
               </div>
 
-              <h3 className="text-lg font-bold text-white mb-2">
+              <p className="text-lg font-bold text-white mb-2">
                 {t(`tech_stack.items.${item.key}.title`)}
-              </h3>
+              </p>
 
               {/* Tech Badge */}
               <div className="inline-block px-2 py-1 rounded-md bg-white/5 border border-white/10 text-xs font-mono text-slate-300 mb-4">

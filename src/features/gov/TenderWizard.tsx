@@ -112,9 +112,9 @@ export const TenderWizard: React.FC = () => {
                   exit={{ opacity: 0, x: -20 }}
                   className="w-full"
                 >
-                  <h3 className="text-xl font-bold text-white mb-8 text-center">
+                  <p className="text-xl font-bold text-white mb-8 text-center">
                     {t('wizard.steps.budget.question')}
-                  </h3>
+                  </p>
                   <div className="grid md:grid-cols-3 gap-4">
                     {(['low', 'mid', 'high'] as BudgetOption[]).map((opt) => (
                       <button
@@ -147,9 +147,9 @@ export const TenderWizard: React.FC = () => {
                   >
                     <ArrowLeft aria-hidden="true" /> Zurück
                   </button>
-                  <h3 className="text-xl font-bold text-white mb-8 text-center">
+                  <p className="text-xl font-bold text-white mb-8 text-center">
                     {t('wizard.steps.type.question')}
-                  </h3>
+                  </p>
                   <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
                     {(['service', 'license'] as TypeOption[]).map((opt) => (
                       <button
@@ -185,9 +185,9 @@ export const TenderWizard: React.FC = () => {
                   <div className="inline-block px-3 py-1 rounded-full bg-slate-700 text-xs font-mono text-slate-300 mb-4 border border-slate-600">
                     {t(`wizard.results.${resultKey}.badge`)}
                   </div>
-                  <h3 className="text-3xl font-bold text-white mb-4">
+                  <p className="text-3xl font-bold text-white mb-4">
                     {t(`wizard.results.${resultKey}.title`)}
-                  </h3>
+                  </p>
                   <p className="text-lg text-slate-300 max-w-xl mx-auto mb-10 leading-relaxed">
                     {t(`wizard.results.${resultKey}.desc`)}
                   </p>

@@ -77,7 +77,7 @@ export const PricingReality: React.FC = () => {
               <OptimizedIcon icon={Gavel} className="w-8 h-8 text-blue-300" />
             </div>
             <div className="text-center md:text-left">
-              <h3 className="text-xl font-bold mb-2">EVB-IT Konformität</h3>
+              <p className="text-xl font-bold mb-2">EVB-IT Konformität</p>
               <p className="text-blue-200 max-w-2xl">
                 Wir arbeiten standardmäßig nach EVB-IT Dienstvertrag. Keine versteckten
                 Lizenzkosten. Volle Kostentransparenz durch detaillierte Aufwandsschätzung vor

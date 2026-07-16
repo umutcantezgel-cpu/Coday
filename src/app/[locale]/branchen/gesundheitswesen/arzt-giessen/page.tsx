@@ -95,7 +95,7 @@ export default async function SubIndustryPage({ params }: { params: Promise<{ lo
   return (
     <>
       <script
-        id="schema-branchen-arzt-giessen"
+        id="schema-local-healthcare-gi"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({

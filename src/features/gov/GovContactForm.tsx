@@ -137,7 +137,7 @@ export const GovContactForm: React.FC = () => {
         <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
           <OptimizedIcon icon={CheckCircle} className="w-8 h-8 text-green-600" />
         </div>
-        <h3 className="text-2xl font-bold text-slate-900 mb-2">Anfrage erhalten</h3>
+        <p className="text-2xl font-bold text-slate-900 mb-2">Anfrage erhalten</p>
         <p className="text-slate-600 mb-6">
           Wir haben Ihre Anfrage erfasst und melden uns in Kürze telefonisch oder per E-Mail bei
           Ihnen.
@@ -160,9 +160,9 @@ export const GovContactForm: React.FC = () => {
       noValidate
     >
       <div className="mb-8 pb-6 border-b border-slate-100">
-        <h3 className="text-2xl font-display font-bold text-slate-900 mb-2">
+        <p className="text-2xl font-display font-bold text-slate-900 mb-2">
           {t('request_quote.title')}
-        </h3>
+        </p>
         <p className="text-slate-500 text-sm">
           Fordern Sie ein unverbindliches Angebot für Ihr Vergabeverfahren an.
         </p>

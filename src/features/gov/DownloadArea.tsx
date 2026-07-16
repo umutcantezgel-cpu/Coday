@@ -46,9 +46,9 @@ export const DownloadArea: React.FC = () => {
                   <OptimizedIcon icon={item.icon} className={`w-8 h-8 ${item.color}`} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">
+                  <p className="text-xl font-bold text-slate-900 mb-2">
                     {t(`downloads.${item.key}.title`)}
-                  </h3>
+                  </p>
                   <p className="text-slate-600 mb-6 leading-relaxed">
                     {t(`downloads.${item.key}.desc`)}
                   </p>

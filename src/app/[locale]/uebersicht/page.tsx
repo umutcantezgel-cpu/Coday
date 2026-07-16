@@ -476,8 +476,8 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
         <section className="container mx-auto px-4 py-16 max-w-5xl text-secondary-600">
           <h3 className="text-3xl font-display font-bold mb-6">
             {locale === 'en'
-              ? 'Coday Web Design – Complete Sitemap & Page Overview'
-              : 'Coday Webdesign – Vollständige Sitemap & Seitenübersicht'}
+              ? 'Discover All Digital Services, Industries & Solutions by Coday'
+              : 'Alle digitalen Leistungen, Branchen & Lösungen von Coday entdecken'}
           </h3>
           <div className="space-y-4 text-base leading-relaxed">
             {locale === 'en' ? (

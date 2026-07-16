@@ -61,9 +61,9 @@ export const OzgRoadmap: React.FC = () => {
                   >
                     <OptimizedIcon icon={step.icon} className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">
+                  <p className="text-xl font-bold text-slate-900 mb-2">
                     {t(`ozg.steps.${step.key}.title`)}
-                  </h3>
+                  </p>
                   <p className="text-slate-600 leading-relaxed">
                     {t(`ozg.steps.${step.key}.desc`)}
                   </p>
