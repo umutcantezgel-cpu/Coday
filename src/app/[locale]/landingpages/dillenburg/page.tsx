@@ -6,7 +6,6 @@ import { getCityBySlug } from '@/features/local-seo/model/cities';
 import { LocalSeoTemplate } from '@/features/local-seo/ui/LocalSeoTemplate';
 import fs from 'fs';
 import path from 'path';
-import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 
 export const dynamic = 'force-static';
 
@@ -181,7 +180,6 @@ export default async function DillenburgLandingPage(props: {
           />
         </div>
       )}
-      <SeoContentBlock />
       {/* SEO */}
       <section className="container mx-auto px-4 py-16 max-w-5xl text-secondary-600">
         {_locale === 'en' ? (

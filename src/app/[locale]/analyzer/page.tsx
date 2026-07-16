@@ -6,7 +6,6 @@ import type { Metadata } from 'next';
 import { getOrganizationSchema, BASE_URL } from '@/lib/schema';
 import UrlInputForm from '@/features/analyzer/ui/UrlInputForm';
 import ReportDashboard from '@/features/analyzer/ui/ReportDashboard';
-import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { pick } from '@/shared/lib/pick';
 
 export const dynamic = 'force-static';
@@ -207,7 +206,6 @@ export default async function AnalyzerPage(props: { params: Promise<{ locale: st
           </section>
         </div>
       </div>
-      <SeoContentBlock />
     </NextIntlClientProvider>
   );
 }

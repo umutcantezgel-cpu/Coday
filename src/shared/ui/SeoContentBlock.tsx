@@ -8,9 +8,13 @@ interface SeoContentBlockProps {
   h1?: string;
 }
 
-export const SeoContentBlock: React.FC<SeoContentBlockProps> = ({ title, text, h1 }) => {
-  // If there's specific text from translation, we show it, but we ALSO always show the generic SeoTextInjector
+export const SeoContentBlock: React.FC<SeoContentBlockProps> = ({ title, text }) => {
   const paragraphs = text ? text.split('\n').filter((p) => p.trim() !== '') : [];
+
+  // Return null when no content is provided to avoid duplicate empty sections
+  if (!title && paragraphs.length === 0) {
+    return null;
+  }
 
   return (
     <section className="bg-white py-8 px-4 border-t border-gray-100">
@@ -23,7 +27,7 @@ export const SeoContentBlock: React.FC<SeoContentBlockProps> = ({ title, text, h
             </p>
           ))}
       </div>
-      <SeoTextInjector title={title} h1={h1 || title} />
+      <SeoTextInjector title={title} />
     </section>
   );
 };

@@ -14,6 +14,7 @@ import { LocalSchemaBuilder } from './LocalSchemaBuilder';
 
 interface LocalSeoContent {
   target: string;
+  displayName?: string;
   type: 'location' | 'industry-location';
   meta: {
     title: string;
@@ -176,7 +177,7 @@ export const LocalSeoTemplate: React.FC<LocalSeoTemplateProps> = ({ content, cit
         </div>
       </section>
 
-      <SeoLocalExpertiseBlock>
+      <SeoLocalExpertiseBlock industryName={content.displayName || content.target}>
         <SeoTextInjector title={content.target} h1={content.hero.subheadline} />
       </SeoLocalExpertiseBlock>
     </div>

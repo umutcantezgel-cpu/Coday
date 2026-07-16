@@ -100,24 +100,12 @@ export const SeoTextInjector: React.FC<SeoTextInjectorProps> = ({ title = '', h1
 
     const hasTargetKeywords = targetKeywords.length > 0;
 
-    if (!hasTargetKeywords && !h1) {
+    if (!hasTargetKeywords) {
       return null;
     }
 
-    let injectedText = '';
-
-    if (hasTargetKeywords) {
-      injectedText = isEn
-        ? `A central aspect of our philosophy is reflected in our guiding principles: ${targetKeywords.join(' and ')}. This underlines our commitment to the highest industry standards.`
-        : `Ein zentraler Aspekt unserer Philosophie spiegelt sich in den Leitsätzen wider: ${targetKeywords.join(' sowie ')}. Dies unterstreicht unser Engagement für höchste Branchenstandards.`;
-    }
-
-    if (h1) {
-      injectedText = injectedText ? `${injectedText} ${h1}.` : `${h1}.`;
-    }
-
-    return injectedText;
-  }, [pathname, locale, h1]);
+    return targetKeywords.join('. ');
+  }, [pathname, locale]);
 
   if (!seoText) return null;
 

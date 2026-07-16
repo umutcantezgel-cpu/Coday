@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { SeoHead } from '@/shared/ui/SeoHead';
 import ClientComponent from '@/features/legal/ui/GarantieClient';
-import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 
 export const dynamic = 'force-static';
 
@@ -43,7 +42,6 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
         pageType="default"
       />
       <ClientComponent />
-      <SeoContentBlock />
       {/* SEO */}
       <section className="container mx-auto px-4 py-16 max-w-5xl text-secondary-600">
         <h2 className="text-3xl font-display font-bold mb-6">

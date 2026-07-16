@@ -128,10 +128,10 @@ export const GamifiedIndustryTemplate: React.FC<{ content: any; cityData?: any }
       <section className="py-24 px-4 bg-white relative z-20 -mt-10">
         <div className="max-w-6xl mx-auto">
           <GamifiedRoiCalculator
-            industryName={content.target.replace('-', ' ').toUpperCase()}
+            industryName={content.displayName || content.hero.headline}
             title={
               content.roi_title ||
-              `Wie viel Umsatz lässt Ihr ${content.target.replace('-', ' ').toUpperCase()} liegen?`
+              `Wie viel Umsatz lässt Ihr ${content.displayName || content.hero.headline} liegen?`
             }
             description={
               content.roi_desc ||
@@ -276,10 +276,10 @@ export const GamifiedIndustryTemplate: React.FC<{ content: any; cityData?: any }
           </div>
         </div>
       </section>
-      <SeoLocalExpertiseBlock />
+      <SeoLocalExpertiseBlock industryName={content.displayName || content.hero.headline} />
       {/* SEO Injection Block for Word Count and Keywords */}
       <SeoContentBlock
-        title={`${content.target.replace('-', ' ').toUpperCase()} Webdesign`}
+        title={`${content.displayName || content.hero.headline} Webdesign`}
         h1={content.hero.headline}
       />
     </div>

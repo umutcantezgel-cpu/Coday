@@ -1,5 +1,6 @@
 {
   "target": "autohaendler",
+  "displayName": "Autohändler",
   "type": "industry-location",
   "meta": {
     "title": "Webdesign für Autohäuser & KFZ-Händler",
