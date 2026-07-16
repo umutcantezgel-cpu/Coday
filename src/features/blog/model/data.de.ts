@@ -622,7 +622,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: 'Multi-Channel vs. Omni-Channel',
         level: 'h2',
         content:
-          "Viele verwechseln 'wir sind überall' mit einer Strategie. Wenn Ihre Facebook-Ads nicht wissen, was Ihre E-Mail-Kampagnen tun und Ihre Website nicht weiß, dass der Kunde schon gekauft hat, dann nerven Sie Ihre Kunden nur. Omni-Channel bedeutet: Eine einzige, flüssige Konversation über alle Kanäle hinweg. Unser Blueprint für maximale Präsenz zeigt Ihnen, wie Sie Budget-Verschwendung eliminieren und jeden Kanal gezielt orchestrieren.",
+          "Viele verwechseln 'wir sind überall' mit einer Strategie. Wenn Ihre Facebook-Ads nicht wissen, was Ihre E-Mail-Kampagnen tun und Ihre Website nicht weiß, dass der Kunde schon gekauft hat, dann nerven Sie Ihre Kunden nur. Omni-Channel bedeutet: Eine einzige, flüssige Konversation über alle Kanäle hinweg. Unser Blueprint für maximale Präsenz zeigt Ihnen, wie Sie Budget-Verschwendung eliminieren und jeden Kanal gezielt orchestrieren. Nur wenn alle digitalen Touchpoints nahtlos miteinander interagieren, entsteht ein Kundenerlebnis, das echte Loyalität schafft und die Conversion-Raten messbar und nachhaltig in die Höhe treibt.",
       },
       {
         id: 'comparison-channel',
@@ -2086,7 +2086,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: 'Die Konsistenz-Falle',
         level: 'h2',
         content:
-          "Jedes Projekt startet sauber. Dann fragt der Kunde nach 'nur einer kleinen Änderung'. Plötzlich haben Sie 50 Blautöne und 12 verschiedene Button-Radien.\n\nEin Design System ist kein UI Kit. Es ist ein Vertrag zwischen Design und Code.",
+          "Jedes Projekt startet sauber. Dann fragt der Kunde nach 'nur einer kleinen Änderung'. Plötzlich haben Sie 50 Blautöne und 12 verschiedene Button-Radien. Wenn Sie Design Systems at Scale umsetzen und 100+ Marken managen wollen, ohne verrückt zu werden, brauchen Sie klare Regeln.\n\nEin Design System ist kein UI Kit. Es ist ein Vertrag zwischen Design und Code.",
       },
       {
         id: 'interactive-config',
@@ -2174,7 +2174,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: 'Die Traffic-Falle',
         level: 'h2',
         content:
-          'Die meisten Shops geben 80% des Budgets für Ads aus und 0% für User Experience (UX). Das ist, als würde man Wasser in einen löchrigen Eimer schütten.\n\nDie Optimierung Ihrer Conversion Rate (CRO) ist die Aktivität mit dem höchsten ROI.',
+          'Die meisten Shops geben 80% des Budgets für Ads aus und 0% für User Experience (UX). Das ist, als würde man Wasser in einen löchrigen Eimer schütten. Wenn es um die Zukunft des E-Commerce geht, ist die Frage: Warum Ihr Shop Geld verbrennt, wenn Sie nicht konvertieren?\n\nDie Optimierung Ihrer Conversion Rate (CRO) ist die Aktivität mit dem höchsten ROI.',
       },
       {
         id: 'interactive-roi',
@@ -2319,7 +2319,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: 'Ihr CMS ist ein offenes Buch',
         level: 'h2',
         content:
-          'Open Source ist großartig für Hobby-Entwickler. Für Enterprise-Lösungen ist es ein Risiko. Wenn der Quellcode öffentlich ist, sind es auch die Sicherheitslücken.\n\n90% aller gehackten CMS-Websites laufen auf WordPress. Warum? Weil Hacker faul sind. Sie greifen das an, was alle nutzen.',
+          'Open Source ist großartig für Hobby-Entwickler. Für Enterprise-Lösungen ist es ein Risiko. Wenn der Quellcode öffentlich ist, sind es auch die Sicherheitslücken. Hier entsteht die Sicherheits-Lücke: Wie Open Source Ihr Business gefährdet, wird oft erst bei einem Angriff sichtbar.\n\n90% aller gehackten CMS-Websites laufen auf WordPress. Warum? Weil Hacker faul sind. Sie greifen das an, was alle nutzen.',
       },
       {
         id: 'interactive-hack',
@@ -2502,7 +2502,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: 'Der Desktop ist für Ersteller, Mobile ist für Konsumenten',
         level: 'h2',
         content:
-          "Wir designen Websites auf 27-Zoll-4K-Monitoren für Nutzer, die sie auf 5-Zoll-Screens im Bus bedienen. Das ist absurd.\n\n'Responsive' reicht nicht mehr. Wir müssen 'Adaptive' denken. Elemente müssen nicht nur kleiner werden, sie müssen sich verändern.",
+          "Wir designen Websites auf 27-Zoll-4K-Monitoren für Nutzer, die sie auf 5-Zoll-Screens im Bus bedienen. Das ist absurd. Die Wahrheit ist: Mobile First ist tot. Lang lebe Mobile Only. Der Fokus muss sich drastisch verschieben.\n\n'Responsive' reicht nicht mehr. Wir müssen 'Adaptive' denken. Elemente müssen nicht nur kleiner werden, sie müssen sich verändern.",
       },
       {
         id: 'interactive-mobile',
@@ -2563,7 +2563,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: 'Der Wasserkopf frisst Ihr Budget',
         level: 'h2',
         content:
-          'Traditionelle Agenturen haben ein Problem: Sie müssen teure Büros in Innenstadtlage und Heerscharen von Account Managern bezahlen. Wer zahlt das? Sie.\n\nWir bei Coday sind dezentral, automatisiert und effizient. Ihr Geld fließt in Code, nicht in Mietverträge.',
+          'Traditionelle Agenturen haben ein Problem: Sie müssen teure Büros in Innenstadtlage und Heerscharen von Account Managern bezahlen. Wer zahlt das? Sie. Das ist die Agentur-Preis-Lüge: Was Sie wirklich für Ihren Retainer bekommen, sind oft nur Verwaltungskosten.\n\nWir bei Coday sind dezentral, automatisiert und effizient. Ihr Geld fließt in Code, nicht in Mietverträge.',
       },
       {
         id: 'interactive-price',
@@ -2624,7 +2624,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: 'Mietnomaden im eigenen Haus',
         level: 'h2',
         content:
-          'Wenn Sie Ihre Website auf Wix oder Squarespace bauen, gehört sie nicht Ihnen. Sie mieten sie nur. Wenn der Anbieter die Preise erhöht oder Sie sperrt, sind Sie raus.\n\nEchte Souveränität bedeutet: Ihr Code, Ihre Datenbank, Ihr Server.',
+          'Wenn Sie Ihre Website auf Wix oder Squarespace bauen, gehört sie nicht Ihnen. Sie mieten sie nur. Wenn der Anbieter die Preise erhöht oder Sie sperrt, sind Sie raus. Bei dem Thema Digitale Souveränität: Gehören Ihre Daten wirklich Ihnen? Müssen Sie genau hinschauen.\n\nEchte Souveränität bedeutet: Ihr Code, Ihre Datenbank, Ihr Server.',
       },
       {
         id: 'interactive-sov',
@@ -2685,7 +2685,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: 'Wer die Vergangenheit nicht kennt...',
         level: 'h2',
         content:
-          '...kann die Zukunft nicht coden. Das Web hat sich radikal gewandelt. Wir stehen kurz vor dem nächsten Sprung: Dem räumlichen, KI-gestützten Web.',
+          '...kann die Zukunft nicht coden. Das Web hat sich radikal gewandelt. Wenn wir über das Web 4.0: Die Geschichte der Zukunft sprechen, stehen wir kurz vor dem nächsten Sprung: Dem räumlichen, KI-gestützten Web.',
       },
       {
         id: 'interactive-hist',
@@ -2746,7 +2746,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: 'Die Suche nach der richtigen Agentur',
         level: 'h2',
         content:
-          'Der Agenturmarkt in Hessen ist unübersichtlich. Von kleinen Freelancern bis zu riesigen Full-Service-Konzernen gibt es alles. Aber wer liefert wirklich messbare Resultate? In diesem ehrlichen Vergleich haben wir die Agenturen nach Tech-Stack, Performance und Spezialisierung kategorisiert.',
+          'Der Agenturmarkt in Hessen ist unübersichtlich. Von kleinen Freelancern bis zu riesigen Full-Service-Konzernen gibt es alles. Aber wer liefert wirklich messbare Resultate? Um Licht ins Dunkel zu bringen, präsentieren wir die Top Webdesign Agenturen in Hessen 2026 (Ehrlicher Vergleich). In diesem Vergleich haben wir die Agenturen nach Tech-Stack, Performance und Spezialisierung kategorisiert.',
       },
       {
         id: 'comparison-agencies',
