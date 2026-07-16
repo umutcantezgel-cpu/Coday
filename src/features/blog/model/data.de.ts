@@ -2081,13 +2081,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: '1. September 2026',
     content: [
       {
-        id: 'seo-h1-ds',
-        type: 'text',
-        heading: 'Design Systems at Scale: Wie wir 100+ Marken managen, ohne verrückt zu werden',
-        level: 'h2',
-        content: '',
-      },
-      {
         id: 'intro-ds',
         type: 'text',
         heading: 'Die Konsistenz-Falle',
@@ -2176,13 +2169,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: '10. September 2026',
     content: [
       {
-        id: 'seo-h1-ecom',
-        type: 'text',
-        heading: 'Die Zukunft des E-Commerce: Warum Ihr Shop Geld verbrennt',
-        level: 'h2',
-        content: '',
-      },
-      {
         id: 'intro-cro',
         type: 'text',
         heading: 'Die Traffic-Falle',
@@ -2267,13 +2253,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: '28. Mai 2026',
     content: [
       {
-        id: 'seo-h1-ux',
-        type: 'text',
-        heading: 'Der unsichtbare ROI: Warum UX Design mehr bringt als Marketing',
-        level: 'h2',
-        content: '',
-      },
-      {
         id: 'intro-roi',
         type: 'text',
         heading: 'Design ist kein Kostenfaktor, sondern ein Multiplikator',
@@ -2334,13 +2313,6 @@ export const BLOG_POSTS: BlogPost[] = [
     author: 'Coday Security',
     date: '02. Juni 2026',
     content: [
-      {
-        id: 'seo-h1-sec',
-        type: 'text',
-        heading: 'Die Sicherheits-Lücke: Wie Open Source Ihr Business gefährdet',
-        level: 'h2',
-        content: '',
-      },
       {
         id: 'intro-sec',
         type: 'text',
@@ -2464,13 +2436,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: '14. Juni 2026',
     content: [
       {
-        id: 'seo-h1-data',
-        type: 'text',
-        heading: 'Daten-Reife: Vom Bauchgefühl zur algorithmischen Dominanz',
-        level: 'h2',
-        content: '',
-      },
-      {
         id: 'intro-data',
         type: 'text',
         heading: 'Daten sind das neue Öl (aber nur raffiniert)',
@@ -2531,13 +2496,6 @@ export const BLOG_POSTS: BlogPost[] = [
     author: 'Coday UX',
     date: '20. Juni 2026',
     content: [
-      {
-        id: 'seo-h1-mobile',
-        type: 'text',
-        heading: 'Mobile First ist tot. Lang lebe Mobile Only.',
-        level: 'h2',
-        content: '',
-      },
       {
         id: 'intro-mobile',
         type: 'text',
@@ -2600,13 +2558,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: '25. Juni 2026',
     content: [
       {
-        id: 'seo-h1-price',
-        type: 'text',
-        heading: 'Die Agentur-Preis-Lüge: Was Sie wirklich für Ihren Retainer bekommen',
-        level: 'h2',
-        content: '',
-      },
-      {
         id: 'intro-price',
         type: 'text',
         heading: 'Der Wasserkopf frisst Ihr Budget',
@@ -2667,13 +2618,6 @@ export const BLOG_POSTS: BlogPost[] = [
     author: 'Coday Legal',
     date: '30. Juni 2026',
     content: [
-      {
-        id: 'seo-h1-sov',
-        type: 'text',
-        heading: 'Digitale Souveränität: Gehören Ihre Daten wirklich Ihnen?',
-        level: 'h2',
-        content: '',
-      },
       {
         id: 'intro-sov',
         type: 'text',
@@ -2736,13 +2680,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: '05. Juli 2026',
     content: [
       {
-        id: 'seo-h1-hist',
-        type: 'text',
-        heading: 'Web 4.0: Die Geschichte der Zukunft',
-        level: 'h2',
-        content: '',
-      },
-      {
         id: 'intro-hist',
         type: 'text',
         heading: 'Wer die Vergangenheit nicht kennt...',
@@ -2803,13 +2740,6 @@ export const BLOG_POSTS: BlogPost[] = [
     author: 'Coday Redaktion',
     date: '10. Mai 2026',
     content: [
-      {
-        id: 'seo-h1-listicle',
-        type: 'text',
-        heading: 'Top Webdesign Agenturen in Hessen 2026 (Ehrlicher Vergleich)',
-        level: 'h2',
-        content: '',
-      },
       {
         id: 'intro-listicle',
         type: 'text',

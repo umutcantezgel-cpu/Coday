@@ -287,52 +287,95 @@ export default async function BlogPostPage({ params }: PageProps) {
       {/* SEO */}
       <section className="container mx-auto px-4 py-16 max-w-5xl text-secondary-600">
         <h2 className="text-3xl font-display font-bold mb-6">
-          {post
-            ? `${post.title} – Expertenwissen von Coday`
-            : 'Wissensdatenbank und Experten-Blog für modernes Webdesign'}
+          {locale === 'en'
+            ? 'Expert Knowledge & Web Design Insights by Coday'
+            : 'Expertenwissen und Webdesign-Insights von Coday'}
         </h2>
         <div className="space-y-4 text-base leading-relaxed">
-          <p>
-            In unserem umfassenden Blog und der stetig wachsenden Wissensdatenbank beleuchten wir
-            alle Facetten des modernen Webdesigns, der Suchmaschinenoptimierung und der digitalen
-            Strategie. Die digitale Landschaft entwickelt sich rasant weiter, und es ist für
-            Unternehmen unerlässlich, stets auf dem neuesten Stand zu bleiben. Wir teilen unsere
-            tiefgreifenden Erfahrungen und Best Practices, um Ihnen wertvolle Einblicke in die Welt
-            der Webentwicklung und des Online-Marketings zu geben. Von tiefgreifenden Analysen zu
-            den neuesten Core Web Vitals über die Psychologie hinter effektiven Landingpages bis hin
-            zu den neuesten Trends im E-Commerce und Content-Management – unser Ziel ist es, Ihnen
-            fundiertes Wissen zu vermitteln, das Sie direkt in Ihrem eigenen Unternehmen anwenden
-            können. Wir entmystifizieren komplexe technische Konzepte und erklären sie in
-            verständlicher Sprache, damit Sie fundierte Entscheidungen für Ihre digitale Präsenz
-            treffen können.
-          </p>
-          <p>
-            Ein zentraler Schwerpunkt unserer Artikel liegt auf der Conversion-Optimierung und der
-            User Experience (UX). Eine Website kann noch so gut aussehen, wenn sie nicht
-            nutzerfreundlich ist und Besucher nicht zu Kunden konvertiert, verfehlt sie ihren Zweck.
-            Wir analysieren, welche Design-Elemente Vertrauen schaffen, wie eine optimale Navigation
-            strukturiert sein sollte und welche Rolle schnelle Ladezeiten für den Erfolg einer
-            Website spielen. Darüber hinaus widmen wir uns intensiv dem Thema
-            Suchmaschinenoptimierung (SEO). Wir zeigen Ihnen, wie Sie durch strategisches
-            Content-Marketing, technische Optimierungen und einen durchdachten Linkaufbau Ihre
-            Sichtbarkeit bei Google und anderen Suchmaschinen nachhaltig steigern können. Unser
-            Expertenwissen basiert auf jahrelanger Praxis und hunderten erfolgreichen Projekten in
-            unterschiedlichsten Branchen. Profitieren Sie von diesem Know-how und verschaffen Sie
-            sich einen entscheidenden Wettbewerbsvorteil.
-          </p>
-          <p>
-            Neben technischen und gestalterischen Themen beleuchten wir auch strategische Aspekte
-            der Digitalisierung. Wir diskutieren die Vor- und Nachteile verschiedener
-            Content-Management-Systeme (CMS) wie Headless CMS versus traditionelle Systeme wie
-            WordPress, die Bedeutung von Barrierefreiheit im Web und die Auswirkungen neuer
-            gesetzlicher Vorgaben wie der DSGVO auf Ihre Online-Strategie. Unser Blog richtet sich
-            an Geschäftsführer, Marketingverantwortliche und alle, die den digitalen Erfolg ihres
-            Unternehmens aktiv vorantreiben wollen. Abonnieren Sie unseren Newsletter, um regelmäßig
-            über neue Beiträge informiert zu werden und keine wichtigen Entwicklungen im Webdesign
-            zu verpassen. Tauchen Sie ein in unsere Wissensdatenbank und entdecken Sie, wie Sie mit
-            einer durchdachten digitalen Strategie mehr Reichweite, mehr Anfragen und letztendlich
-            mehr Umsatz generieren können.
-          </p>
+          {locale === 'en' ? (
+            <>
+              <p>
+                Our in-depth blog and ever-growing knowledge base cover every facet of modern web
+                design, search engine optimisation, and digital strategy. The digital landscape
+                evolves rapidly, and staying ahead is essential for any business that wants to
+                compete online. We share hard-won experience and proven best practices to give you
+                valuable insights into web development and online marketing. From detailed analyses
+                of the latest Core Web Vitals to the psychology behind high-converting landing pages
+                and emerging trends in e-commerce and content management — our goal is to deliver
+                actionable knowledge you can apply to your own business right away. We demystify
+                complex technical concepts and explain them in plain language so you can make
+                informed decisions about your digital presence.
+              </p>
+              <p>
+                A key focus of our articles is conversion optimisation and user experience (UX). A
+                website may look stunning, but if it is not user-friendly and fails to turn visitors
+                into customers, it misses its purpose. We analyse which design elements build trust,
+                how navigation should be structured for maximum impact, and why fast load times are
+                critical to a site&apos;s success. Beyond that, we dive deep into search engine
+                optimisation (SEO), showing you how strategic content marketing, technical
+                improvements, and a well-planned link-building approach can sustainably boost your
+                visibility on Google and other search engines. Our expertise is rooted in years of
+                hands-on practice and hundreds of successful projects across a wide range of
+                industries. Leverage this know-how and gain a decisive competitive advantage.
+              </p>
+              <p>
+                In addition to technical and design topics, we explore the strategic side of
+                digitalisation. We discuss the pros and cons of different content management systems
+                (CMS) — headless CMS versus traditional platforms like WordPress — the importance of
+                web accessibility, and the impact of regulations such as the GDPR on your online
+                strategy. Our blog is aimed at business owners, marketing professionals, and anyone
+                who wants to actively drive their company&apos;s digital success. Subscribe to our
+                newsletter to stay up to date with new articles and never miss an important
+                development in web design. Dive into our knowledge base and discover how a
+                well-crafted digital strategy can generate more reach, more enquiries, and
+                ultimately more revenue.
+              </p>
+            </>
+          ) : (
+            <>
+              <p>
+                In unserem umfassenden Blog und der stetig wachsenden Wissensdatenbank beleuchten
+                wir alle Facetten des modernen Webdesigns, der Suchmaschinenoptimierung und der
+                digitalen Strategie. Die digitale Landschaft entwickelt sich rasant weiter, und es
+                ist für Unternehmen unerlässlich, stets auf dem neuesten Stand zu bleiben. Wir
+                teilen unsere tiefgreifenden Erfahrungen und Best Practices, um Ihnen wertvolle
+                Einblicke in die Welt der Webentwicklung und des Online-Marketings zu geben. Von
+                tiefgreifenden Analysen zu den neuesten Core Web Vitals über die Psychologie hinter
+                effektiven Landingpages bis hin zu den neuesten Trends im E-Commerce und
+                Content-Management – unser Ziel ist es, Ihnen fundiertes Wissen zu vermitteln, das
+                Sie direkt in Ihrem eigenen Unternehmen anwenden können. Wir entmystifizieren
+                komplexe technische Konzepte und erklären sie in verständlicher Sprache, damit Sie
+                fundierte Entscheidungen für Ihre digitale Präsenz treffen können.
+              </p>
+              <p>
+                Ein zentraler Schwerpunkt unserer Artikel liegt auf der Conversion-Optimierung und
+                der User Experience (UX). Eine Website kann noch so gut aussehen, wenn sie nicht
+                nutzerfreundlich ist und Besucher nicht zu Kunden konvertiert, verfehlt sie ihren
+                Zweck. Wir analysieren, welche Design-Elemente Vertrauen schaffen, wie eine optimale
+                Navigation strukturiert sein sollte und welche Rolle schnelle Ladezeiten für den
+                Erfolg einer Website spielen. Darüber hinaus widmen wir uns intensiv dem Thema
+                Suchmaschinenoptimierung (SEO). Wir zeigen Ihnen, wie Sie durch strategisches
+                Content-Marketing, technische Optimierungen und einen durchdachten Linkaufbau Ihre
+                Sichtbarkeit bei Google und anderen Suchmaschinen nachhaltig steigern können. Unser
+                Expertenwissen basiert auf jahrelanger Praxis und hunderten erfolgreichen Projekten
+                in unterschiedlichsten Branchen. Profitieren Sie von diesem Know-how und verschaffen
+                Sie sich einen entscheidenden Wettbewerbsvorteil.
+              </p>
+              <p>
+                Neben technischen und gestalterischen Themen beleuchten wir auch strategische
+                Aspekte der Digitalisierung. Wir diskutieren die Vor- und Nachteile verschiedener
+                Content-Management-Systeme (CMS) wie Headless CMS versus traditionelle Systeme wie
+                WordPress, die Bedeutung von Barrierefreiheit im Web und die Auswirkungen neuer
+                gesetzlicher Vorgaben wie der DSGVO auf Ihre Online-Strategie. Unser Blog richtet
+                sich an Geschäftsführer, Marketingverantwortliche und alle, die den digitalen Erfolg
+                ihres Unternehmens aktiv vorantreiben wollen. Abonnieren Sie unseren Newsletter, um
+                regelmäßig über neue Beiträge informiert zu werden und keine wichtigen Entwicklungen
+                im Webdesign zu verpassen. Tauchen Sie ein in unsere Wissensdatenbank und entdecken
+                Sie, wie Sie mit einer durchdachten digitalen Strategie mehr Reichweite, mehr
+                Anfragen und letztendlich mehr Umsatz generieren können.
+              </p>
+            </>
+          )}
         </div>
       </section>
     </>
