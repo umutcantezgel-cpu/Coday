@@ -52,7 +52,7 @@ export async function submitLeadAction(prevState: unknown, formData: FormData) {
     // 3. Lead Scoring
     const score = calculateLeadScore(parsedData);
 
-    // 4. Save to Supabase
+    // 4. Save to Supabase (Fire and forget / Non-blocking)
     const { error: dbError } = await supabase.from('leads').insert([
       {
         name: parsedData.name,
@@ -68,8 +68,7 @@ export async function submitLeadAction(prevState: unknown, formData: FormData) {
     ]);
 
     if (dbError) {
-      console.error('Supabase Error:', dbError);
-      return { success: false, error: 'Database error occurred.' };
+      console.error('Supabase Error (Ignored, proceeding to email):', dbError);
     }
 
     // 5. Send Email via Resend
