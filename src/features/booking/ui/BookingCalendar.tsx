@@ -4,9 +4,7 @@ import { createPortal } from 'react-dom';
 import { useTranslations, useLocale } from 'next-intl';
 import { m, AnimatePresence } from 'motion/react';
 import { Skeleton } from '@/shared/ui/Skeleton';
-// Initialize Supabase Client (Frontend)
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+import { bookAppointment } from '@/app/actions/booking';
 
 interface BookingCalendarProps {
   className?: string;
@@ -59,37 +57,6 @@ const BookingCalendar = ({
     return d;
   });
 
-  // Fetch availability when date is selected
-  React.useEffect(() => {
-    if (!selectedDate) return;
-
-    const fetchAvailability = async () => {
-      setFetchingSlots(true);
-      const dateStr = selectedDate.toISOString().split('T')[0];
-      try {
-        const res = await fetch(
-          `${supabaseUrl}/functions/v1/book-appointment?start=${dateStr}&end=${dateStr}`,
-          {
-            headers: {
-              Authorization: `Bearer ${supabaseKey}`,
-            },
-          }
-        );
-        if (res.ok) {
-          const data = await res.json();
-          const slots = new Set(data.bookings.map((b: { time_slot: string }) => b.time_slot));
-          setBookedSlots(slots as Set<string>);
-        }
-      } catch (error) {
-        console.error('Failed to fetch availability', error);
-      } finally {
-        setFetchingSlots(false);
-      }
-    };
-
-    fetchAvailability();
-  }, [selectedDate]);
-
   const handleDateSelect = (date: Date) => {
     setSelectedDate(date);
     setSelectedTime(null);
@@ -104,27 +71,17 @@ const BookingCalendar = ({
     setError(null);
 
     try {
-      // Direct call to Edge Function
       const formattedDate = selectedDate.toISOString().split('T')[0];
 
-      const res = await fetch(`${supabaseUrl}/functions/v1/book-appointment`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${supabaseKey}`,
-        },
-        body: JSON.stringify({
-          ...formData,
-          date: formattedDate,
-          time_slot: selectedTime,
-          service_type: initialServiceType,
-        }),
+      const res = await bookAppointment({
+        ...formData,
+        date: formattedDate,
+        time_slot: selectedTime,
+        service_type: initialServiceType,
       });
 
-      const data = await res.json();
-
-      if (!res.ok) {
-        throw new Error(data.error || t('calendar.errors.failed'));
+      if (res.error) {
+        throw new Error(res.error || t('calendar.errors.failed'));
       }
 
       setSuccess(true);
