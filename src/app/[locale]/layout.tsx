@@ -97,7 +97,21 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className={`${inter.variable} ${outfit.variable}`} suppressHydrationWarning>
-      <head />
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if (window.trustedTypes && trustedTypes.createPolicy) {
+                trustedTypes.createPolicy('default', {
+                  createHTML: (string) => string,
+                  createScript: (string) => string,
+                  createScriptURL: (string) => string,
+                });
+              }
+            `,
+          }}
+        />
+      </head>
 
       <body className="bg-secondary text-white antialiased" suppressHydrationWarning>
         <NextIntlClientProvider messages={globalMessages} locale={locale}>

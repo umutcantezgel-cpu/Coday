@@ -28,12 +28,13 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     reactCompiler: true,
-    // optimizeCss: true, // Disabled to prevent FCP/hydration delay
+    optimizeCss: true,
     optimizePackageImports: [
       '@phosphor-icons/react',
       '@phosphor-icons/react/dist/ssr',
       'motion',
       'motion/react',
+      'motion-dom',
     ],
   },
   async redirects() {
@@ -358,6 +359,10 @@ const nextConfig: NextConfig = {
           {
             key: 'Permissions-Policy',
             value: 'camera=(), microphone=(), geolocation=(self)',
+          },
+          {
+            key: 'Content-Security-Policy',
+            value: "upgrade-insecure-requests; require-trusted-types-for 'script';",
           },
         ],
       },
