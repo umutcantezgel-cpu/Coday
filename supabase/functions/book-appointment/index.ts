@@ -5,7 +5,12 @@ const ALLOWED_ORIGINS = ['https://www.codayweb.de', 'https://codayweb.de', 'http
 
 function getCorsHeaders(req: Request) {
   const origin = req.headers.get('Origin') || '';
-  const allowedOrigin = ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0];
+
+  // Allow production domains, localhost, and any Vercel preview URL
+  const isVercelPreview = origin.endsWith('.vercel.app') || origin.endsWith('.codayweb.de');
+  const allowedOrigin =
+    ALLOWED_ORIGINS.includes(origin) || isVercelPreview ? origin : ALLOWED_ORIGINS[0];
+
   return {
     'Access-Control-Allow-Origin': allowedOrigin,
     'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
