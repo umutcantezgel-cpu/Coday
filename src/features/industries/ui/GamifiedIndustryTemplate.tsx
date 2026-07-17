@@ -7,7 +7,7 @@ import { Button } from '@/shared/ui/Button';
 import { Link } from '@/i18n/navigation';
 import { useLocale } from 'next-intl';
 import { SeoLocalExpertiseBlock } from '@/features/industries/ui/SeoLocalExpertiseBlock';
-import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
+import { SeoTextInjector } from '@/features/seo/ui/SeoTextInjector';
 import { CheckCircle, MapPin, CaretDown, CaretUp } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import BlurText from '@/shared/ui/BlurText';
@@ -73,9 +73,13 @@ export const GamifiedIndustryTemplate: React.FC<{ content: any; cityData?: any }
               <div className="w-2 h-2 rounded-full bg-primary-500 mr-2 animate-pulse" />
               {hero.headline}
             </m.span>
-            <h1 className="font-display font-black text-5xl sm:text-7xl text-secondary-900 mb-6 tracking-tight leading-[1.1]">
+            <h1 className="sr-only">{hero.subheadline}</h1>
+            <div
+              aria-hidden="true"
+              className="font-display font-black text-5xl sm:text-7xl text-secondary-900 mb-6 tracking-tight leading-[1.1]"
+            >
               <BlurText text={hero.subheadline} delay={30} animateBy="words" />
-            </h1>
+            </div>
             <m.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -290,9 +294,13 @@ export const GamifiedIndustryTemplate: React.FC<{ content: any; cityData?: any }
           </div>
         </div>
       </section>
-      <SeoLocalExpertiseBlock industryName={displayName || hero.headline} />
-      {/* SEO Injection Block for Word Count and Keywords */}
-      <SeoContentBlock title={`${displayName || hero.headline} Webdesign`} h1={hero.headline} />
+      <SeoLocalExpertiseBlock industryName={displayName || hero.headline}>
+        <SeoTextInjector
+          title={content.target || displayName || hero.headline}
+          h1={hero.subheadline}
+          seoTextContent={isEn ? content.seoText_en?.content : content.seoText?.content}
+        />
+      </SeoLocalExpertiseBlock>
     </div>
   );
 };
