@@ -7,9 +7,14 @@ import { useLocale } from 'next-intl';
 interface SeoTextInjectorProps {
   title?: string;
   h1?: string;
+  seoTextContent?: string;
 }
 
-export const SeoTextInjector: React.FC<SeoTextInjectorProps> = ({ title = '', h1 = '' }) => {
+export const SeoTextInjector: React.FC<SeoTextInjectorProps> = ({
+  title = '',
+  h1 = '',
+  seoTextContent,
+}) => {
   const pathname = usePathname() || '';
   const locale = useLocale();
 
@@ -95,17 +100,21 @@ export const SeoTextInjector: React.FC<SeoTextInjectorProps> = ({ title = '', h1
       '/pricing': ['Web Design Prices Wetzlar | Transparent Plans | Coday'],
     };
 
+    if (seoTextContent) {
+      return seoTextContent;
+    }
+
     const targetKeywords =
       (isEn ? exactKeywordsMapEn[pathname] : exactKeywordsMapDe[pathname]) || [];
 
     const hasTargetKeywords = targetKeywords.length > 0;
 
     if (!hasTargetKeywords) {
-      return null;
+      return h1 || null;
     }
 
     return targetKeywords.join('. ');
-  }, [pathname, locale]);
+  }, [pathname, locale, seoTextContent, h1]);
 
   if (!seoText) return null;
 

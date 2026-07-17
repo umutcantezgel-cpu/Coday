@@ -42,6 +42,8 @@ interface LocalSeoContent {
   cta_title?: string;
   cta_text?: string;
   cta_btn?: string;
+  seoText?: { content: string };
+  seoText_en?: { content: string };
 }
 
 interface LocalSeoTemplateProps {
@@ -192,7 +194,11 @@ export const LocalSeoTemplate: React.FC<LocalSeoTemplateProps> = ({ content, cit
       </section>
 
       <SeoLocalExpertiseBlock industryName={content.displayName || content.target}>
-        <SeoTextInjector title={content.target} h1={content.hero.subheadline} />
+        <SeoTextInjector
+          title={content.target}
+          h1={content.hero.subheadline}
+          seoTextContent={isEn ? content.seoText_en?.content : content.seoText?.content}
+        />
       </SeoLocalExpertiseBlock>
     </div>
   );

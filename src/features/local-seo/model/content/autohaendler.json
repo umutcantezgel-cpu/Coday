@@ -12,7 +12,7 @@
   },
   "hero": {
     "headline": "KFZ Webdesign & digitale Showrooms, die Fahrzeuge verkaufen.",
-    "subheadline": "Emotionales Autohaus Webdesign in [Stadt]. Maximale Geschwindigkeit. Unfaire Konversionsraten für Autohändler in der Region.",
+    "subheadline": "Emotionales Autohaus Webdesign in [Stadt]",
     "description": "Verwandeln Sie Ihren Online-Auftritt mit professionellem KFZ Webdesign in eine digitale Vertriebsmaschine. Unser emotionales Autohaus Webdesign kombiniert maximale Geschwindigkeit mit unfairen Konversionsraten. Als erfahrene Webdesign Agentur für Autohändler sorgen wir dafür, dass Ihre neue Webseite zum besten und zuverlässigsten Verkäufer in Ihrem gesamten Team wird. Durch strategische Webseitenentwicklung für Autohäuser maximieren wir Ihre Sichtbarkeit und Leadgenerierung. Profitieren Sie von unserer Expertise im Bereich Webdesign für Autohäuser & KFZ-Händler | Coday, um Ihren digitalen Erfolg zu sichern.",
     "metrics": [
       {
@@ -29,7 +29,7 @@
   },
   "hero_en": {
     "headline": "Automotive Web Design & digital showrooms that sell vehicles.",
-    "subheadline": "Emotional car dealer web design in [City]. Maximum speed. Unfair conversion rates for dealerships in the region.",
+    "subheadline": "Emotional car dealer web design in [City]",
     "description": "Transform your online presence into a digital sales machine with professional automotive web design. Our emotional car dealership web design combines maximum speed with unfair conversion rates. As an experienced web design agency for car dealers, we ensure that your new website becomes the best and most reliable salesperson on your entire team. Through strategic website development for car dealerships, we maximize your visibility and lead generation.",
     "metrics": [
       {
@@ -273,5 +273,13 @@
       "q": "Do you also offer ongoing support after the initial website development for car dealers?",
       "a": "Yes, as a full-service web design agency for car dealers, we do not leave you out in the rain after a successful launch. Upon request, we offer continuous technical maintenance, ongoing search engine optimization (SEO), content maintenance, and agilely adapt your car dealership web design to new market developments or new manufacturer guidelines if necessary. Your long-term digital success in the vehicle trade is our top goal, and we see ourselves as your external digital partner."
     }
-  ]
+  ],
+  "seoText": {
+    "title": "Autohaus Webdesign",
+    "content": "Emotionales Autohaus Webdesign in [Stadt]"
+  },
+  "seoText_en": {
+    "title": "Automotive Web Design",
+    "content": "Emotional car dealer web design in [City]"
+  }
 }

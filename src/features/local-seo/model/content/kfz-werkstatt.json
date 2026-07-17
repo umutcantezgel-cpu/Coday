@@ -2,7 +2,7 @@
   "target": "kfz-werkstatt",
   "displayName": "KFZ-Werkstatt",
   "type": "industry",
-  "roi_desc": "Stellen Sie den Regler auf Ihren Werkstatt-Jahresumsatz und entdecken Sie das Wachstumspotenzial, das Ihnen durch mangelnde Online-Präsenz und verpasste digitale Kundenanfragen entgeht.",
+  "roi_desc": "Passen Sie den Schieberegler an Ihren jährlichen Werkstattumsatz an und machen Sie direkt sichtbar, wie viel ungenutztes Umsatzpotenzial Sie aktuell durch eine unzureichende digitale Sichtbarkeit und fehlende Online-Anfragen an die Konkurrenz verschenken.",
   "meta": {
     "title": "Premium Webdesign für KFZ-Werkstätten | Coday Webagentur",
     "description": "Dominieren Sie den regionalen KFZ-Markt. Premium Webdesign für Werkstätten: Gewinnen Sie lukrative Aufträge & Top-Mechatroniker. Jetzt starten!"
@@ -258,5 +258,11 @@
       "q": "Can modern digital systems and interfaces be integrated into the new web design?",
       "a": "Yes, we integrate every modern interface you use absolutely seamlessly and with high performance during our advanced website development. Whether it is modern online systems for quick digital appointment bookings, clever digital chatbots for initial customer questions, damage report forms with direct photo uploads, or the direct connection to your special and important internal workshop software – an intelligent website relaunch digitizes your entire external customer communication always at the very highest and most modern technical level."
     }
-  ]
+  ],
+  "seoText": {
+    "content": "Spezialisiertes Premium Webdesign für KFZ-Werkstätten und Autohäuser in Wetzlar und Umgebung"
+  },
+  "seoText_en": {
+    "content": "Specialized Premium Web Design for Auto Repair Shops and Car Dealerships in Wetzlar and the surrounding area"
+  }
 }

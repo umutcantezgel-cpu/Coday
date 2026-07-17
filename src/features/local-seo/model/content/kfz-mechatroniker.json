@@ -2,7 +2,7 @@
   "target": "kfz-mechatroniker",
   "displayName": "KFZ-Mechatroniker",
   "type": "industry-location",
-  "roi_desc": "Bewegen Sie den Regler auf Ihren aktuellen Betriebsumsatz und sehen Sie, welches Umsatzpotenzial Ihrem KFZ-Mechatroniker-Betrieb durch fehlende digitale Sichtbarkeit bei Kunden und Bewerbern entgeht.",
+  "roi_desc": "Stellen Sie den Schieberegler auf Ihren momentanen Umsatz ein, um direkt zu erkennen, wie viel wertvolles Kapital Ihrer Werkstatt durch mangelnde Online-Präsenz bei der Gewinnung von Neukunden und Fachkräften verloren geht.",
   "meta": {
     "title": "Digitale Dominanz durch KFZ-Mechatroniker Webdesign",
     "description": "Verwandeln Sie Ihre Werkstatt in eine Premium-Marke. Gewinnen Sie lukrative Aufträge durch exklusives KFZ-Mechatroniker Webdesign. Jetzt anfragen!"
@@ -258,5 +258,8 @@
       "q": "Does your web agency also take care of updates, hosting, and ongoing maintenance after the completion of the Car Mechanic Web Design?",
       "a": "Yes, absolutely. With our modern technology selection, we radically minimize the maintenance effort right from the start. With our approach to Car Mechanic Web Design, there are no more broken plugins, no slow databases, and no annoying security vulnerabilities. Furthermore, we offer you a fully comprehensive, worry-free support service (Premium Hosting & Maintenance) upon request. This way, you can concentrate one hundred percent on your actual craft in the workshop, while we keep your digital presence running smoothly in the background without you having to lift a finger."
     }
-  ]
+  ],
+  "seoText_en": {
+    "content": "The Leading Car Mechanic Web Design for Ambitious Auto Shops in Wetzlar"
+  }
 }

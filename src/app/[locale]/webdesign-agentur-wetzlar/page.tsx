@@ -110,6 +110,8 @@ const content = {
     },
     socialProof: {
       title: 'Erfolgreiche Partner aus der Region',
+      description:
+        'Diese Wetzlarer Unternehmen haben sich bereits für Coday entschieden und dominieren ihre lokale Nische.',
       testimonials: [
         {
           quote:
@@ -271,6 +273,8 @@ const content = {
     },
     socialProof: {
       title: 'Successful Local Partners',
+      description:
+        'These Wetzlar companies have already chosen Coday and dominate their local niche.',
       testimonials: [
         {
           quote:
@@ -667,8 +671,7 @@ export default async function WebdesignWetzlarPage({
                 {t.socialProof.title}
               </h2>
               <p className="text-xl text-secondary-600 max-w-2xl mx-auto">
-                Diese Wetzlarer Unternehmen haben sich bereits für Coday entschieden und dominieren
-                ihre lokale Nische.
+                {t.socialProof.description}
               </p>
             </div>
           </ScrollReveal>

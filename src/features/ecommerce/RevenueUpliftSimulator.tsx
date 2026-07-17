@@ -1,8 +1,11 @@
 'use client';
 import React, { useState } from 'react';
+import { useLocale } from 'next-intl';
 import { Icon } from '@/shared/ui/Icon';
 
 const RevenueUpliftSimulator: React.FC = () => {
+  const locale = useLocale();
+  const isEn = locale === 'en';
   const [annualRevenue, setAnnualRevenue] = useState(500000);
   const [currentLoadTime, setCurrentLoadTime] = useState(3.5);
   // Derived state (no effect needed)
@@ -13,7 +16,10 @@ const RevenueUpliftSimulator: React.FC = () => {
   const projectedUplift = annualRevenue * cappedUplift;
 
   const formatCurrency = (val: number) => {
-    return new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(val);
+    return new Intl.NumberFormat(isEn ? 'en-US' : 'de-DE', {
+      style: 'currency',
+      currency: 'EUR',
+    }).format(val);
   };
 
   return (
@@ -25,14 +31,18 @@ const RevenueUpliftSimulator: React.FC = () => {
               Revenue Uplift Calculator
             </h3>
             <p className="text-slate-500 text-sm">
-              Headless Commerce ist kein IT-Projekt. Es ist ein Investment.
+              {isEn
+                ? 'Headless Commerce is not an IT project. It is an investment.'
+                : 'Headless Commerce ist kein IT-Projekt. Es ist ein Investment.'}
             </p>
           </div>
 
           <div className="space-y-6">
             <div>
               <div className="flex justify-between text-sm font-bold text-slate-700 mb-2">
-                <label htmlFor="annualRevenue">Jahresumsatz E-Commerce</label>
+                <label htmlFor="annualRevenue">
+                  {isEn ? 'Annual E-Commerce Revenue' : 'Jahresumsatz E-Commerce'}
+                </label>
                 <span>{formatCurrency(annualRevenue)}</span>
               </div>
               <input
@@ -49,7 +59,9 @@ const RevenueUpliftSimulator: React.FC = () => {
 
             <div>
               <div className="flex justify-between text-sm font-bold text-slate-700 mb-2">
-                <label htmlFor="currentLoadTime">Aktuelle Ladezeit (Mobile)</label>
+                <label htmlFor="currentLoadTime">
+                  {isEn ? 'Current Load Time (Mobile)' : 'Aktuelle Ladezeit (Mobile)'}
+                </label>
                 <span className={currentLoadTime > 2.5 ? 'text-red-500' : 'text-yellow-500'}>
                   {currentLoadTime}s
                 </span>
@@ -73,22 +85,24 @@ const RevenueUpliftSimulator: React.FC = () => {
 
           <div className="relative z-10">
             <span className="text-green-400 font-bold uppercase tracking-wider text-xs mb-4 block">
-              Potenzielles Wachstum / Jahr
+              {isEn ? 'Potential Growth / Year' : 'Potenzielles Wachstum / Jahr'}
             </span>
             <div className="text-5xl lg:text-6xl font-display font-black mb-4">
               +{formatCurrency(projectedUplift)}
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Durch den Wechsel auf eine Headless-Architektur (Next.js) erreichen wir Ladezeiten
-              unter 1 Sekunde. <br />
+              {isEn
+                ? 'By switching to a Headless Architecture (Next.js), we achieve sub-second load times.'
+                : 'Durch den Wechsel auf eine Headless-Architektur (Next.js) erreichen wir Ladezeiten unter 1 Sekunde.'}{' '}
               <br />
-              <strong className="text-white">Das Ergebnis:</strong> ~
-              {Math.round((projectedUplift / annualRevenue) * 100)}% Conversion Uplift alleine durch
-              Performance.
+              <br />
+              <strong className="text-white">{isEn ? 'The result:' : 'Das Ergebnis:'}</strong> ~
+              {Math.round((projectedUplift / annualRevenue) * 100)}% Conversion Uplift{' '}
+              {isEn ? 'purely through performance enhancements.' : 'alleine durch Performance.'}
             </p>
 
             <button className="active:scale-[0.97] mt-8 px-6 py-3 bg-primary text-white font-bold rounded-xl shadow-lg hover:bg-primary/90 transition motion-reduce:duration-[0.01ms] flex items-center justify-center gap-2 w-full sm:w-auto">
-              Strategiegespräch buchen
+              {isEn ? 'Book Strategy Call' : 'Strategiegespräch buchen'}
               <Icon name="arrow_forward" className="text-sm" />
             </button>
           </div>

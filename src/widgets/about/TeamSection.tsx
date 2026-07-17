@@ -83,7 +83,7 @@ export const TeamSection: React.FC = () => {
                   Umutcan Emre Tezgel
                 </h3>
                 <p className="text-sm text-primary font-semibold tracking-wide uppercase mb-3">
-                  Gründer &amp; Entwickler
+                  {isEn ? 'Founder & Developer' : 'Gründer & Entwickler'}
                 </p>
                 <div className="flex flex-wrap justify-center sm:justify-start gap-3">
                   {facts.map((fact) => (
@@ -101,10 +101,9 @@ export const TeamSection: React.FC = () => {
 
             {/* Bio */}
             <p className="text-gray-400 leading-relaxed mb-8">
-              Full-Stack-Entwickler mit Fokus auf performante Web-Applikationen und strategisches
-              Design. Ich kombiniere modernste Next.js Architektur mit kompromisslosem UX-Design, um
-              digitale Plattformen zu schaffen, die messbare Ergebnisse liefern. Bei Coday gibt es
-              keinen Overhead — Sie arbeiten direkt mit mir, vom ersten Gespräch bis zum Launch.
+              {isEn
+                ? 'Full-stack developer focusing on high-performance web applications and strategic design. I combine cutting-edge Next.js architecture with uncompromising UX design to create digital platforms that deliver measurable results. At Coday, there is no overhead — you work directly with me, from the initial consultation to launch.'
+                : 'Full-Stack-Entwickler mit Fokus auf performante Web-Applikationen und strategisches Design. Ich kombiniere modernste Next.js Architektur mit kompromisslosem UX-Design, um digitale Plattformen zu schaffen, die messbare Ergebnisse liefern. Bei Coday gibt es keinen Overhead — Sie arbeiten direkt mit mir, vom ersten Gespräch bis zum Launch.'}
             </p>
 
             {/* Contact Links */}
@@ -138,10 +137,11 @@ export const TeamSection: React.FC = () => {
             '@context': 'https://schema.org',
             '@type': 'Person',
             name: 'Umutcan Emre Tezgel',
-            jobTitle: 'Gründer & Entwickler',
-            description:
-              'Full-Stack-Entwickler und Gründer von Coday, einer Solo-Webagentur aus Wetzlar.',
-            url: 'https://www.codayweb.de/about',
+            jobTitle: isEn ? 'Founder & Developer' : 'Gründer & Entwickler',
+            description: isEn
+              ? 'Full-stack developer and founder of Coday, a solo web agency from Wetzlar.'
+              : 'Full-Stack-Entwickler und Gründer von Coday, einer Solo-Webagentur aus Wetzlar.',
+            url: isEn ? 'https://www.codayweb.de/en/about' : 'https://www.codayweb.de/about',
             worksFor: {
               '@type': 'Organization',
               name: 'Coday',

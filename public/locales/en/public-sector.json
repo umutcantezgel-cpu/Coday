@@ -95,33 +95,33 @@
     }
   },
   "pricing_reality": {
-    "title": "Procurement & Costs",
-    "headline": "Why Fixed Prices Fail in Public Service.",
-    "description": "Public contracts require EVB-IT compliance and price indication based on performance specifications. Fixed offers often lead to subsequent cost explosions or procurement law violations.",
+    "title": "Investment & Procurement Reality",
+    "headline": "The Problem with Rigid Quotes in Government IT",
+    "description": "Government IT procurement demands transparency and strict adherence to official public contracting frameworks. Relying on opaque flat-rate bids frequently results in budget overruns, compliance risks, and project friction.",
     "table": {
-      "col_criteria": "Criterion",
-      "col_agencies": "Classic Agency",
-      "col_coday": "Coday Public Sector",
+      "col_criteria": "Evaluation Metric",
+      "col_agencies": "Traditional IT Vendors",
+      "col_coday": "Coday Public Solutions",
       "rows": [
         {
-          "criteria": "Calculation Basis",
-          "agency": "Estimated Flat Rate (Blackbox)",
-          "coday": "Transparent Daily Rates (EVB-IT Service Contract)"
+          "criteria": "Cost Structure",
+          "agency": "Inflexible Lump Sum Estimates",
+          "coday": "Clear Time & Materials Billing (Compliant with Public Procurement Agreements)"
         },
         {
-          "criteria": "Scope",
-          "agency": "Rigid / Limited Correction Loops",
-          "coday": "Agile according to Specs / User Stories"
+          "criteria": "Adaptability",
+          "agency": "Strict Limits on Revisions",
+          "coday": "Iterative Development Based on Clear Requirements"
         },
         {
-          "criteria": "Rights of Use",
-          "agency": "Often Restricted (License Fees)",
-          "coday": "Unrestricted (Open Source / Public Code)"
+          "criteria": "Intellectual Property",
+          "agency": "Proprietary Licenses & Vendor Lock-in",
+          "coday": "Full Public Ownership (Open Source Paradigm)"
         },
         {
-          "criteria": "Security",
-          "agency": "Standard Hosting",
-          "coday": "ISO 27001 / BSI-Baseline Protection Compliant"
+          "criteria": "Data Security",
+          "agency": "Generic Cloud Environments",
+          "coday": "Strict Adherence to ISO 27001 and National Security Baselines"
         }
       ]
     }
@@ -212,7 +212,7 @@
     "upload_label": "Upload Specifications (PDF)"
   },
   "seoText": {
-    "title": "IT Services Public Sector",
-    "content": "The modernization of public administration requires the highest standards of data security, BITV 2.0 accessibility, and absolute digital sovereignty. We support government agencies and public institutions in digitizing administrative processes in a user-centric and OZG-compliant manner. Our custom-built software solutions are developed according to strict EVB-IT guidelines and operated within an ISO 27001-certified infrastructure to guarantee the protection of sensitive citizen data at all times."
+    "title": "Specialized Digital Solutions for Government Agencies",
+    "content": "Transforming civic infrastructure demands uncompromising data protection, barrier-free access adhering to BITV 2.0, and complete technological independence. We partner with state and municipal entities to craft seamless, citizen-focused digital workflows that align perfectly with the Online Access Act (OZG). Our bespoke engineering practices ensure full alignment with federal IT procurement frameworks, while our deployments on ISO 27001-audited systems safeguard sensitive public information without exception."
   }
 }

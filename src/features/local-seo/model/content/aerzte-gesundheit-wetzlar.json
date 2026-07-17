@@ -249,5 +249,11 @@
       "q": "Our practice is located right in the center of Wetzlar. How long does it take after a website relaunch until we rank at the top of search engines?",
       "a": "Thanks to our superior technological foundation (Next.js) and excellent, in-depth on-page and technical SEO optimization, we secure the decisive performance advantage for your practice. In local search engine optimization for the search combination 'Doctors & Health in Wetzlar' or specific medical fields, we very often see massive leaps in digital visibility after just a few weeks thanks to our precise website development. This is especially true for highly specific specialist treatments and lucrative healthcare services that patients in Wetzlar are actively searching for."
     }
-  ]
+  ],
+  "seoText": {
+    "content": "High-End Webdesign für Ärzte in Wetzlar, das mehr Patienten gewinnt und Ihre Praxis entlastet"
+  },
+  "seoText_en": {
+    "content": "High-end web design for doctors in Wetzlar that acquires more patients and relieves your practice staff"
+  }
 }
