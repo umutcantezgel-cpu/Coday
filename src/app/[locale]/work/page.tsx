@@ -273,8 +273,6 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
           </p>
         </div>
       </section>
-
-      <SeoContentBlock />
     </>
   );
 }

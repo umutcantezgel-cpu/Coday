@@ -186,8 +186,6 @@ export default async function WebDevelopmentPage({
           </>
         )}
       </section>
-
-      <SeoContentBlock />
     </>
   );
 }

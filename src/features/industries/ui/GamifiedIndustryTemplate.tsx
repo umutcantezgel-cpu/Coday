@@ -143,8 +143,8 @@ export const GamifiedIndustryTemplate: React.FC<{ content: any; cityData?: any }
             description={
               content.roi_desc ||
               (isEn
-                ? 'Slide to your current annual revenue and discover the untapped potential you are missing due to outdated web technologies and lack of visibility.'
-                : 'Schieben Sie den Regler auf Ihren aktuellen Jahresumsatz und entdecken Sie das ungenutzte Potenzial, das Ihnen durch veraltete Web-Technologien und fehlende Sichtbarkeit entgeht.')
+                ? `Slide to your current annual revenue as a ${displayName || hero.headline} and discover the untapped potential you are missing due to outdated web technologies and lack of visibility.`
+                : `Schieben Sie den Regler auf Ihren aktuellen Jahresumsatz als ${displayName || hero.headline} und entdecken Sie das ungenutzte Potenzial, das Ihnen durch veraltete Web-Technologien und fehlende Sichtbarkeit entgeht.`)
             }
           />
         </div>

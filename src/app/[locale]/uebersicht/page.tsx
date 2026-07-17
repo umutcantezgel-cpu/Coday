@@ -220,7 +220,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               ))}
               <li>
                 <Link
-                  href="/branchen/handwerker"
+                  href="/branchen/handwerk-bau"
                   locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
@@ -229,7 +229,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               </li>
               <li>
                 <Link
-                  href="/branchen/gesundheitswesen"
+                  href="/branchen/aerzte-gesundheit"
                   locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
@@ -575,7 +575,6 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
           </div>
         </section>
       </div>
-      <SeoContentBlock />
     </main>
   );
 }

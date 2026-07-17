@@ -37,7 +37,7 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Design Agency Wetzlar | Premium Websites & Local SEO',
+      title: 'Web Design Agency Wetzlar | Premium Websites',
       description:
         'Your web design agency in Wetzlar. Premium websites & local SEO for businesses along the Lahn. Fixed prices, fast speeds & top rankings. Inquire now!',
       path: '/en/webdesign-agentur-wetzlar',
@@ -45,7 +45,7 @@ export async function generateMetadata({
     });
   }
   return generatePageMetadata({
-    title: 'Webdesign Agentur Wetzlar | Premium Websites & Local SEO',
+    title: 'Webdesign Agentur Wetzlar | Premium Websites',
     description:
       'Ihre Webdesign Agentur in Wetzlar. Premium Websites & lokales SEO für Wetzlarer Unternehmen an der Lahn. Festpreise & messbare Resultate. Jetzt anfragen!',
     path: '/de/webdesign-agentur-wetzlar',

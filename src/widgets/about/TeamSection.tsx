@@ -1,5 +1,6 @@
 import React from 'react';
 import { m } from 'motion/react';
+import { useLocale } from 'next-intl';
 import {
   EnvelopeSimple,
   LinkedinLogo,
@@ -30,6 +31,9 @@ const facts = [
 ];
 
 export const TeamSection: React.FC = () => {
+  const locale = useLocale();
+  const isEn = locale === 'en';
+
   return (
     <section className="py-24 lg:py-32 bg-secondary text-white relative overflow-hidden">
       {/* Background Effect */}
@@ -42,20 +46,21 @@ export const TeamSection: React.FC = () => {
             className="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4 block"
             {...fadeUp}
           >
-            Der Gründer
+            {isEn ? 'The Founder' : 'Der Gründer'}
           </m.span>
           <m.h2
             className="text-4xl md:text-5xl font-display font-bold mb-6 tracking-tight text-white"
             {...stagger(0.1)}
           >
-            Der Kopf hinter{' '}
+            {isEn ? 'The mind behind ' : 'Der Kopf hinter '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">
               Coday
             </span>
           </m.h2>
           <m.p className="text-lg text-gray-400 max-w-2xl mx-auto" {...stagger(0.2)}>
-            Ein Entwickler. Ein Ansprechpartner. Keine Agentur-Bürokratie — nur direkter Draht zu
-            dem Menschen, der Ihr Projekt von A bis Z umsetzt.
+            {isEn
+              ? 'One developer. One contact person. No agency bureaucracy — just a direct line to the person building your project from A to Z.'
+              : 'Ein Entwickler. Ein Ansprechpartner. Keine Agentur-Bürokratie — nur direkter Draht zu dem Menschen, der Ihr Projekt von A bis Z umsetzt.'}
           </m.p>
         </div>
 

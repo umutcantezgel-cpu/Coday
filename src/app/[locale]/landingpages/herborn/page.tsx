@@ -71,14 +71,17 @@ export default async function HerbornLandingPage(props: { params: Promise<{ loca
         <LocalSeoTemplate content={content} cityData={cityData} />
       ) : (
         <div className="min-h-screen pt-32 text-center text-white bg-secondary flex flex-col items-center justify-center">
-          <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">
-            Ihr Webdesigner in Herborn
+          <h1 className="text-4xl md:text-6xl font-display font-bold mb-6 max-w-4xl px-4">
+            {_locale === 'en'
+              ? 'Your Web Designer in Herborn: High-Performance Websites'
+              : 'Ihr Webdesigner in Herborn: Hochperformante Webseiten'}
           </h1>
           <div className="flex flex-col items-center gap-6 mt-4">
-            <h2 className="text-gray-400 max-w-2xl text-lg font-normal">
-              Als <strong>Ihr Webdesigner in Herborn</strong> bauen wir in der Umgebung
-              hochperformante Webseiten für Handwerker, Ärzte und Dienstleister.
-            </h2>
+            <p className="text-gray-400 max-w-2xl text-lg font-normal px-4">
+              {_locale === 'en'
+                ? 'As your web designer in Herborn, we build high-performance websites for craftsmen, doctors, and service providers in the area.'
+                : 'Als Ihr Webdesigner in Herborn bauen wir in der Umgebung hochperformante Webseiten für Handwerker, Ärzte und Dienstleister.'}
+            </p>
             <div className="text-gray-300 max-w-2xl text-left space-y-4 px-4 bg-white/5 p-6 rounded-2xl border border-white/10 text-base leading-relaxed">
               <p>
                 Herborn besticht als Fachwerkstadt mit historischem Marktplatz und einer

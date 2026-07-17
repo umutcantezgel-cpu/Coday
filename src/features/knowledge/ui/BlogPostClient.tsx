@@ -162,7 +162,10 @@ const BlogPost: React.FC = () => {
           </h1>
 
           <p className="text-xl md:text-2xl text-content-base font-medium leading-relaxed drop-shadow-sm bg-white/50 backdrop-blur-md p-6 rounded-2xl inline-block border border-white/60 shadow-sm max-w-3xl">
-            {post.excerpt}
+            {post.excerpt}{' '}
+            {currentLocale === 'en'
+              ? 'Discover the full insights below.'
+              : 'Entdecken Sie unten die vollständigen Einblicke.'}
           </p>
         </div>
       </header>

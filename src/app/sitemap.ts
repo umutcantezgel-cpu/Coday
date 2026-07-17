@@ -183,7 +183,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     // === Landingpages ===
     sitemapEntry('/landingpages/dillenburg', { changeFrequency: 'monthly', priority: 0.7 }),
-    sitemapEntry('/landingpages/giessen', { changeFrequency: 'monthly', priority: 0.7 }),
+    sitemapEntry('/standorte/giessen', { changeFrequency: 'monthly', priority: 0.7 }),
     sitemapEntry('/landingpages/herborn', { changeFrequency: 'monthly', priority: 0.7 }),
     sitemapEntry('/landingpages/marburg', { changeFrequency: 'monthly', priority: 0.7 }),
     sitemapEntry('/landingpages/nextjsmigration', { changeFrequency: 'monthly', priority: 0.7 }),
@@ -202,9 +202,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     sitemapEntry('/branchen/startups-tech', { changeFrequency: 'monthly', priority: 0.8 }),
 
     // Legacy / Generic Industry Slugs
-    sitemapEntry('/branchen/handwerker', { changeFrequency: 'monthly', priority: 0.8 }),
+    sitemapEntry('/branchen/handwerk-bau', { changeFrequency: 'monthly', priority: 0.8 }),
     sitemapEntry('/branchen/handwerker/wetzlar', { changeFrequency: 'monthly', priority: 0.9 }),
-    sitemapEntry('/branchen/gesundheitswesen', { changeFrequency: 'monthly', priority: 0.7 }),
+    sitemapEntry('/branchen/aerzte-gesundheit', { changeFrequency: 'monthly', priority: 0.7 }),
     sitemapEntry('/branchen/gesundheitswesen/arzt-wetzlar', {
       changeFrequency: 'monthly',
       priority: 0.8,

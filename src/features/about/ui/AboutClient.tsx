@@ -157,7 +157,7 @@ export const AboutClient: React.FC = () => {
             {...stagger(0.25)}
           >
             {isEn
-              ? 'About your web design agency in Wetzlar, Hessen: As your web designer in Wetzlar, we are personally there for you. Coday is a high-end digital studio from Wetzlar that builds uncompromising web architectures. Every project is one of a kind, crafted for brands that want to stand out from the crowd.'
+              ? 'About your web design agency in Wetzlar, Hessen: We are Your Web Designer in Wetzlar. Personal & Close. Coday is a high-end digital studio from Wetzlar that builds uncompromising web architectures. Every project is one of a kind, crafted for brands that want to stand out from the crowd.'
               : 'Über Ihre Webdesign Agentur in Wetzlar, Hessen: Als Ihr Webdesigner in Wetzlar sind wir persönlich & nah für Sie da. Coday ist ein High-End Digital-Studio aus Wetzlar, das kompromisslose Web-Architekturen entwickelt. Jedes Projekt ist ein Unikat, entwickelt für Marken, die sich von der Masse abheben wollen.'}
           </m.p>
 

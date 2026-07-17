@@ -150,7 +150,7 @@ export default async function WeilburgLandingPage(props: { params: Promise<{ loc
           />
         </div>
       )}
-      <SeoContentBlock />
+
       {/* SEO */}
       <section className="container mx-auto px-4 py-16 max-w-5xl text-secondary-600">
         {_locale === 'en' ? (
@@ -165,14 +165,15 @@ export default async function WeilburgLandingPage(props: { params: Promise<{ loc
                 business. In a historically rich and economically significant region like Weilburg —
                 with its picturesque, highly attractive setting along the River Lahn and the iconic,
                 majestic Weilburg Castle — it is absolutely essential for local businesses to be
-                optimally positioned in the highly competitive digital space. At Coday, we deeply
-                understand the specific, nuanced requirements and unique commercial dynamics of the
-                regional market in the wider Lahn-Dill district, and we actively deliver local
-                professional websites that do not merely look visually impressive but actively
-                generate highly measurable, scalable business results. Our rigorous web design
-                approach for businesses in Weilburg focuses heavily on presenting your unique brand
-                highly authentically online while precisely and effectively targeting your ideal,
-                high-value audience.
+                optimally positioned in the highly competitive digital space. At Coday, our core
+                focus is Premium Web Design for Weilburg: Websites That Consistently Win More
+                Clients and Talent. We deeply understand the specific, nuanced requirements and
+                unique commercial dynamics of the regional market in the wider Lahn-Dill district,
+                and we actively deliver local professional websites that do not merely look visually
+                impressive but actively generate highly measurable, scalable business results. Our
+                rigorous web design approach for businesses in Weilburg focuses heavily on
+                presenting your unique brand highly authentically online while precisely and
+                effectively targeting your ideal, high-value audience.
               </p>
               <p>
                 However, a visually compelling UI design is only half the equation when it comes to

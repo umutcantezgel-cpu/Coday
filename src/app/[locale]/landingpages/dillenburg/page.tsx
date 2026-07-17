@@ -74,12 +74,23 @@ export default async function DillenburgLandingPage(props: {
       ) : (
         <div className="min-h-screen pt-32 text-center text-white bg-secondary flex flex-col items-center justify-center">
           <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">
-            Ihr Webdesigner in Dillenburg
+            {_locale === 'en'
+              ? 'As your web designer in Dillenburg'
+              : 'Ihr Webdesigner in Dillenburg'}
           </h1>
           <div className="flex flex-col items-center gap-6 mt-4">
             <h2 className="text-gray-400 max-w-2xl text-lg font-normal">
-              Als <strong>Ihr Webdesigner in Dillenburg</strong> bauen wir in der Umgebung
-              hochperformante Webseiten für Handwerker, Ärzte und Dienstleister.
+              {_locale === 'en' ? (
+                <>
+                  As your web designer in Dillenburg, we build high-performance websites for
+                  tradespeople, doctors, and service providers in the surrounding area.
+                </>
+              ) : (
+                <>
+                  Als <strong>Ihr Webdesigner in Dillenburg</strong> bauen wir in der Umgebung
+                  hochperformante Webseiten für Handwerker, Ärzte und Dienstleister.
+                </>
+              )}
             </h2>
             <div className="text-gray-300 max-w-2xl text-left space-y-4 px-4 bg-white/5 p-6 rounded-2xl border border-white/10 text-base leading-relaxed">
               <p>
@@ -255,15 +266,15 @@ export default async function DillenburgLandingPage(props: {
                 bietet eine florierende Wirtschaft, die stark von mittelständischen Unternehmen
                 geprägt ist. Ein erstklassiges, maßgeschneidertes Webdesign in Dillenburg ist
                 heutzutage absolut unerlässlich, um in dieser wettbewerbsintensiven Region
-                langfristig erfolgreich zu sein. Eine moderne, ästhetisch ansprechende und technisch
-                einwandfreie Website ist oft der erste und wichtigste Berührungspunkt zwischen Ihnen
-                und Ihren potenziellen Kunden. Sie vermittelt sofortiges Vertrauen, Professionalität
-                und tiefgreifende Kompetenz, lange bevor das erste persönliche Gespräch stattfindet.
-                Bei der Erstellung einer neuen, hochkonvertierenden Internetpräsenz für Ihr
-                Unternehmen achten wir akribisch darauf, dass das Design nicht nur optisch restlos
-                überzeugt, sondern auch technisch auf dem absolut neuesten Stand der Entwicklung
-                ist. Wir kreieren digitale Erlebnisse, die Ihre spezifische Zielgruppe emotional
-                abholen und Ihre unternehmerischen Werte klar kommunizieren.
+                langfristig erfolgreich zu sein. Moderne, ästhetisch ansprechende und technisch
+                einwandfreie Webseiten sind oft der erste und wichtigste Berührungspunkt zwischen
+                Ihnen und Ihren potenziellen Kunden. Sie vermitteln sofortiges Vertrauen,
+                Professionalität und tiefgreifende Kompetenz, lange bevor das erste persönliche
+                Gespräch stattfindet. Als Profi für die Erstellung einer neuen, hochkonvertierenden
+                Internetpräsenz für Ihr Unternehmen achten wir akribisch darauf, dass das Design
+                nicht nur optisch restlos überzeugt, sondern auch technisch auf dem absolut neuesten
+                Stand der Entwicklung ist. Wir kreieren digitale Erlebnisse, die Ihre spezifische
+                Zielgruppe emotional abholen und Ihre unternehmerischen Werte klar kommunizieren.
               </p>
               <p>
                 Blitzschnelle Ladezeiten, kompromisslose mobile Optimierung (Mobile-First-Ansatz)

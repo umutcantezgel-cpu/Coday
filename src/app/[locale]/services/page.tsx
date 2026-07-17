@@ -161,8 +161,6 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
           </>
         )}
       </section>
-
-      <SeoContentBlock />
     </>
   );
 }
