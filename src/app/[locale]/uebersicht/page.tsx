@@ -71,7 +71,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
             <ul className="space-y-2">
               <li>
                 <Link href="/" className="text-text-light hover:text-primary transition-colors">
-                  Startseite
+                  {locale === 'en' ? 'Home' : 'Startseite'}
                 </Link>
               </li>
               <li>
@@ -79,7 +79,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                   href="/contact"
                   className="text-text-light hover:text-primary transition-colors"
                 >
-                  Über uns
+                  {locale === 'en' ? 'About' : 'Über uns'}
                 </Link>
               </li>
               <li>
@@ -87,7 +87,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                   href="/contact"
                   className="text-text-light hover:text-primary transition-colors"
                 >
-                  Kontakt
+                  {locale === 'en' ? 'Contact' : 'Kontakt'}
                 </Link>
               </li>
               <li>
@@ -100,7 +100,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                   href="/pricing"
                   className="text-text-light hover:text-primary transition-colors"
                 >
-                  Preise
+                  {locale === 'en' ? 'Pricing' : 'Preise'}
                 </Link>
               </li>
               <li>
@@ -108,7 +108,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                   href="/process"
                   className="text-text-light hover:text-primary transition-colors"
                 >
-                  Prozess
+                  {locale === 'en' ? 'Process' : 'Prozess'}
                 </Link>
               </li>
               <li>
@@ -117,7 +117,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                   locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
-                  Branchenübersicht
+                  {locale === 'en' ? 'Industries Overview' : 'Branchenübersicht'}
                 </Link>
               </li>
               <li>
@@ -125,7 +125,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                   href="/services"
                   className="text-text-light hover:text-primary transition-colors"
                 >
-                  Alle Leistungen
+                  {locale === 'en' ? 'All Services' : 'Alle Leistungen'}
                 </Link>
               </li>
               {locale === 'de' && (
@@ -474,11 +474,11 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
         </div>
 
         <section className="container mx-auto px-4 py-16 max-w-5xl text-secondary-600">
-          <h3 className="text-3xl font-display font-bold mb-6">
+          <h2 className="text-3xl font-display font-bold mb-6">
             {locale === 'en'
-              ? 'Coday Digital Services & Solutions Overview'
-              : 'Übersicht: Coday Digitale Leistungen & Lösungen'}
-          </h3>
+              ? 'Digital Services & Solutions Overview'
+              : 'Übersicht: Digitale Leistungen & Lösungen'}
+          </h2>
           <div className="space-y-4 text-base leading-relaxed">
             {locale === 'en' ? (
               <>

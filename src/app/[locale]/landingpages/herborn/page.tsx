@@ -39,20 +39,17 @@ export default async function HerbornLandingPage(props: { params: Promise<{ loca
 
   let content = null;
   try {
-    const filePath = path.join(
-      process.cwd(),
-      'src',
-      'features',
-      'local-seo',
-      'model',
-      'content',
-      'herborn.json'
-    );
+    const contentDir = path.join(process.cwd(), 'src', 'features', 'local-seo', 'model', 'content');
+    const jsonFile = params.locale === 'en' ? 'herborn.en.json' : 'herborn.json';
+    let filePath = path.join(contentDir, jsonFile);
+    if (!fs.existsSync(filePath)) {
+      filePath = path.join(contentDir, 'herborn.json');
+    }
     if (fs.existsSync(filePath)) {
       const fileContents = fs.readFileSync(filePath, 'utf8');
       content = JSON.parse(fileContents);
     }
-  } catch (e) {
+  } catch {
     // Content is being generated
   }
 
@@ -69,11 +66,7 @@ export default async function HerbornLandingPage(props: { params: Promise<{ loca
       : 'Ihre Webagentur für Herborn und den Lahn-Dill-Kreis. Hochperformante Webseiten die messbar neue Kunden bringen. Persönlich und zum Festpreis. Anfragen.';
   return (
     <>
-      <SeoHead
-        title={`Webdesign Agentur in Herborn | Coday`}
-        description={`Ihre Webagentur für Herborn. Hochperformante Webseiten, die messbar neue Kunden bringen. Regional, persönlich und zum Festpreis.`}
-        pageType="default"
-      />
+      <SeoHead title={_seoTitle} description={_seoDesc} pageType="default" />
       {content && cityData ? (
         <LocalSeoTemplate content={content} cityData={cityData} />
       ) : (
@@ -88,15 +81,15 @@ export default async function HerbornLandingPage(props: { params: Promise<{ loca
             </h2>
             <div className="text-gray-300 max-w-2xl text-left space-y-4 px-4 bg-white/5 p-6 rounded-2xl border border-white/10 text-base leading-relaxed">
               <p>
-                Eine professionelle Webseite ist heute das wichtigste Aushängeschild für jedes
-                lokale Unternehmen. Egal ob Sie einen Handwerksbetrieb führen, eine Arztpraxis
-                leiten oder spezifische Dienstleistungen anbieten: Ihre potenziellen Kunden suchen
-                online nach Ihren Angeboten. Wenn Sie nicht sofort gefunden werden oder Ihre
-                Webseite veraltet wirkt, verlieren Sie bares Geld an die regionale Konkurrenz. Eine
-                moderne, Conversion-optimierte Internetpräsenz baut Vertrauen auf, noch bevor der
-                erste persönliche Kontakt entsteht. Wir wissen, worauf es ankommt, um in der Region
-                Herborn und im Lahn-Dill-Kreis digital erfolgreich zu sein. Mit unserer Expertise im
-                Bereich Webentwicklung und SEO bringen wir Sie auf die vorderen Plätze.
+                Herborn besticht als Fachwerkstadt mit historischem Marktplatz und einer
+                überraschend vielfältigen Wirtschaftsstruktur – vom traditionsreichen Handwerk über
+                etablierte Arztpraxen bis hin zu innovativen Dienstleistern. Genau diese Vielfalt
+                verdient eine digitale Präsenz, die den Charakter Ihres Unternehmens widerspiegelt
+                statt in austauschbaren Vorlagen unterzugehen. Wer in Herborn, Sinn oder dem
+                südlichen Lahn-Dill-Kreis online nicht sofort überzeugt, verliert Interessenten an
+                Mitbewerber, die bereits professionell aufgestellt sind. Eine individuell
+                entwickelte, schnelle und suchmaschinenoptimierte Webseite schafft vom ersten Besuch
+                an Vertrauen und ebnet den Weg zu neuen Kundenanfragen.
               </p>
               <p>
                 Die Fachwerkstadt Herborn zeichnet sich nicht nur durch ihren historischen Charme
@@ -151,14 +144,13 @@ export default async function HerbornLandingPage(props: { params: Promise<{ loca
                 Sie sich in Herborn voll und ganz auf Ihr Kerngeschäft konzentrieren können.
               </p>
               <p>
-                Wir unterstützen Sie dabei, eine digitale Präsenz aufzubauen, die nicht nur auf den
-                ersten Blick überzeugt, sondern auch technisch einwandfrei funktioniert, extrem
-                schnelle Ladezeiten bietet und perfekt für Suchmaschinen (SEO) optimiert ist. Dabei
-                legen wir großen Wert auf intuitive Benutzerführung und barrierefreie Designs.
-                Profitieren Sie von unserer langjährigen Erfahrung im Bereich Webdesign,
-                Suchmaschinenoptimierung und digitaler Markenbildung in der Region Lahn-Dill. Lassen
-                Sie uns gemeinsam Ihr Projekt besprechen und herausfinden, wie wir Ihr Unternehmen
-                digital auf die nächste Stufe heben können.
+                Für Unternehmen rund um den Kornmarkt und die Herborner Altstadt vereinen wir
+                zeitgemäßes Design mit kompromissloser Technik: barrierearme Strukturen,
+                blitzschnelle Ladezeiten und eine durchdachte SEO-Strategie, die speziell auf lokale
+                Suchanfragen aus Herborn, Burg und dem Lahn-Dill-Kreis zugeschnitten ist.
+                Profitieren Sie von unserer Erfahrung als regionale Webdesign-Agentur, die den
+                besonderen Charme und die wirtschaftliche Dynamik der Fachwerkstadt kennt – lassen
+                Sie uns gemeinsam Ihren digitalen Auftritt auf das nächste Level bringen.
               </p>
             </div>
           </div>

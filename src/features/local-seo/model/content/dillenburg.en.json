@@ -1,0 +1,70 @@
+{
+  "target": "dillenburg",
+  "displayName": "Dillenburg",
+  "type": "location",
+  "meta": {
+    "title": "Web Design Dillenburg | Professional Websites | Coday",
+    "description": "Your web agency for Dillenburg and the Lahn-Dill district. High-performance websites that bring new clients. Personal service at a fixed price."
+  },
+  "hero": {
+    "headline": "Your Web Designer in Dillenburg",
+    "subheadline": "As your web designer in Dillenburg, we build high-performance websites for tradespeople, doctors, and service providers in the surrounding area.",
+    "description": "In the Oranierstadt Dillenburg—characterized by the Wilhelmsturm and a long tradition of strong medium-sized businesses—digital visibility today decisively determines commercial success. Whether in the trades, healthcare, or specialized services: those who do not appear on the first Google page in Dillenburg leave valuable contracts to the competition."
+  },
+  "localDominance": {
+    "title": "Why Coday is the Right Partner for Web Design in Dillenburg",
+    "description": "We develop custom web presences that are exactly tailored to your target audience. Excellent web design for your business in Dillenburg must authentically convey your individual values, reliability, and professional expertise.",
+    "points": [
+      "Personal on-site consultation: We know the Lahn-Dill district and are happy to advise you locally in Dillenburg at eye level.",
+      "Clear fixed-price model: No hidden costs. You know exactly what your new web design costs right from the start.",
+      "Regional SEO optimization: We specifically optimize your site for search queries from Dillenburg, Haiger, and Herborn.",
+      "Digital talent acquisition: We integrate seamless application processes into your website, making it extremely easy for talent to apply.",
+      "Lightning-fast load times: We rely on high-performance technologies that guarantee optimal load times, even on mobile devices.",
+      "Security and GDPR compliance: Legally secure web design protects your company from legal warnings and strengthens trust."
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "Professional Web Design in Dillenburg",
+      "content": "Dillenburg, as a historically significant Oranierstadt and economic center in the northern Lahn-Dill district, offers companies enormous potential to position themselves successfully online. Especially in a region dominated by strong medium-sized enterprises and skilled trades, the first digital impression often decides whether a prospect becomes a client or chooses a local competitor. Excellent web design for your business in Dillenburg must therefore do much more than just look good: it must authentically convey your individual values, your reliability, and your professional expertise on the screen."
+    },
+    {
+      "title": "SEO and Performance for Local Visibility",
+      "content": "A crucial success factor for modern web design is the seamless combination of aesthetics and technical perfection. Especially in the local competition around Dillenburg, Haiger, and Herborn, search engine discoverability becomes a decisive criterion. Our websites are built from the ground up to be fully optimized for Google and other search engines (SEO), ensuring you rank at the top for relevant regional search queries. At the same time, we focus on high-performance technologies that guarantee lightning-fast load times—both on the desktop computer in the office and on mobile devices."
+    },
+    {
+      "title": "Employee Recruiting Through Modern Web Design",
+      "content": "In addition to acquiring new customers, web design today plays a central role in recruiting new employees. The shortage of skilled workers does not stop at businesses in Dillenburg. If you want to be perceived as an attractive employer, you need a modern career page that clearly communicates your values, team culture, and benefits. We integrate seamless, digital application processes into your website that make it extremely simple for talent to apply in just a few clicks."
+    },
+    {
+      "title": "Long-Term Partnership for Your Digital Success",
+      "content": "Furthermore, we see ourselves not just as simple implementers, but as your long-term strategic partners for digital success in Dillenburg. We guide you from the initial conceptual phase through design and programming, all the way to the regular maintenance of your new website. Accessibility, GDPR compliance, and data security are also our top priorities. Invest in a future-proof digital platform that grows alongside your business."
+    }
+  ],
+  "faq": [
+    {
+      "q": "How much does professional web design cost for my business in Dillenburg?",
+      "a": "For our web design services, we generally work with transparent fixed prices that typically start at €2,000. In our free, no-obligation initial consultation, we clarify your exact wishes and create a quote with absolutely no hidden costs."
+    },
+    {
+      "q": "Will you come directly to our company in Dillenburg for a web design consultation?",
+      "a": "Yes, very gladly. We have deep local roots and personally visit our clients throughout the entire Lahn-Dill district. Great web design thrives on us getting an on-site impression of your business right here in Dillenburg."
+    },
+    {
+      "q": "How long does it take until the new web design is programmed and the website is online?",
+      "a": "Once we have received all the necessary content from you, the complete web design usually takes about 3 to 4 weeks. We work transparently and without any unnecessary delays."
+    },
+    {
+      "q": "Can I make changes to the website myself after the web design launch?",
+      "a": "Yes, absolutely. We will set up a very intuitive Content Management System (CMS) for you. After a short introduction, you can easily update all texts or upload new images—entirely without any programming knowledge."
+    },
+    {
+      "q": "Does your web design also include SEO so we rank on Google in Dillenburg?",
+      "a": "Definitely. Local search engine optimization (Local SEO) for the Dillenburg area is deeply and standardly integrated into all our projects. We structure the content specifically for Google using the right keywords."
+    },
+    {
+      "q": "In addition to web design, do you also help us with creating texts and images?",
+      "a": "We know from experience that in everyday business there is often no time to write texts. Upon request, we optionally take over the complete text creation (copywriting) and work together with experienced photographers from the region."
+    }
+  ]
+}

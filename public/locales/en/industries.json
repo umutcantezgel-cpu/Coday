@@ -49,6 +49,7 @@
     "hero": {
       "headline": "Digital Dominance for Your Craft",
       "subheadline": "More qualified employees and lucrative orders through a website that reflects your quality. Achieve Digital Dominance for Your Craft.",
+      "excerpt": "Digital solutions for tradespeople: Increase visibility, attract talent, and win higher-quality projects.",
       "title_1": "Professional Web Design",
       "title_2": "for Craftsmen",
       "description": "We build websites that help craft businesses gain more visibility and orders.",
@@ -171,6 +172,7 @@
     "hero": {
       "headline": "Exclusive properties, exclusively presented",
       "subheadline": "Convince owners and buyers with a digital presence that radiates competence and class.",
+      "excerpt": "Premium websites for real estate agents with digital exposés to win exclusive marketing mandates.",
       "description": "We develop bespoke real estate websites featuring integrated digital exposés and lead funnels to secure high-value exclusive mandates.",
       "image_alt": "Real Estate Website",
       "title_suffix": "for Real Estate"
@@ -305,6 +307,7 @@
     "hero": {
       "headline": "Trust Begins Before the First Appointment",
       "subheadline": "Relieve your practice team and attract the right patients through modern digital processes, because Trust Begins Before the First Appointment.",
+      "excerpt": "Patient-friendly medical websites featuring online appointment booking to relieve and streamline practice workflows.",
       "description": "Highly professional medical practice websites featuring seamless appointment booking and digital anamnesis to significantly ease your daily workload.",
       "title_suffix": "for Doctors"
     },
@@ -416,7 +419,8 @@
     "title": "Lawyers & Law Firms",
     "hero": {
       "headline": "Legally Secure Client Acquisition",
-      "subheadline": "Position your law firm as the first point of contact for your areas of specialization."
+      "subheadline": "Position your law firm as the first point of contact for your areas of specialization.",
+      "excerpt": "Authoritative law firm web design for targeted client acquisition and strong positioning as legal experts."
     },
     "challenges": {
       "mandanten_qualitaet": {
@@ -470,7 +474,8 @@
     "hero": {
       "headline": "Taste Begins with the First Click",
       "title_suffix": "Premium Web Design",
-      "subheadline": "Turn website visitors into guests. Make them crave your service."
+      "subheadline": "Turn website visitors into guests. Make them crave your service.",
+      "excerpt": "Immersive websites for restaurants and hotels offering commission-free direct bookings and digital menus."
     },
     "challenges": {
       "hohe_provisionen": {
@@ -572,7 +577,8 @@
       "headline": "From Visitor",
       "title_suffix": "to Regular Customer",
       "description": "Scalable online shops and retail experiences that sell.",
-      "subheadline": "We build exceptional online shops and retail platforms that drive foot traffic and online sales. By integrating your physical point-of-sale systems with your digital storefront, we create a seamless omnichannel experience. Our customized e-commerce solutions empower your brand to reach a wider audience and significantly increase revenue in a competitive market."
+      "subheadline": "We build exceptional online shops and retail platforms that drive foot traffic and online sales. By integrating your physical point-of-sale systems with your digital storefront, we create a seamless omnichannel experience. Our customized e-commerce solutions empower your brand to reach a wider audience and significantly increase revenue in a competitive market.",
+      "excerpt": "High-performance e-commerce platforms and omnichannel solutions for sustainable retail revenue growth."
     },
     "challenges": {
       "warenkorb_abbrueche": {
@@ -674,7 +680,8 @@
       "headline": "Digital Expertise for Management Consultants",
       "title_suffix": "Visible",
       "description": "Win high-ticket clients by positioning your Management Consulting firm as a thought leader.",
-      "subheadline": "subheadline"
+      "subheadline": "subheadline",
+      "excerpt": "High-end web presences for consultants that make expertise visible and drive premium B2B mandates."
     },
     "challenges": {
       "erklaerungsbedarf": {
@@ -757,7 +764,8 @@
     "title": "Startups & Tech Companies",
     "hero": {
       "headline": "Scale fast, look global",
-      "subheadline": "Websites for tech companies that convince investors and early adopters."
+      "subheadline": "Websites for tech companies that convince investors and early adopters.",
+      "excerpt": "Scalable web applications and corporate sites ensuring startups achieve a globally competitive digital footprint."
     },
     "challenges": {
       "time_to_market": {
@@ -852,7 +860,8 @@
     "title": "Automotive & Vehicles",
     "hero": {
       "headline": "More Appointments, Full Workshop",
-      "subheadline": "More Appointments, Full Workshop. We digitalize car dealerships and workshops for predictable customer inquiries and service bookings."
+      "subheadline": "More Appointments, Full Workshop. We digitalize car dealerships and workshops for predictable customer inquiries and service bookings.",
+      "excerpt": "Digital sales and service channels for automotive dealerships and workshops to boost test drives and service appointments."
     },
     "challenges": {
       "c1": {

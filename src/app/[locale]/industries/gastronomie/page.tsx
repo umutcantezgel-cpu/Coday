@@ -34,11 +34,21 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   const params = await props.params;
   setRequestLocale(params.locale);
 
+  const _locale = params.locale || 'de';
+
   return (
     <>
       <SeoHead
-        title="Coday | gastronomie"
-        description="Erfahren Sie mehr über gastronomie"
+        title={
+          _locale === 'en'
+            ? 'Coday | Web Design for Restaurants & Gastronomy'
+            : 'Coday | Webdesign für Gastronomie & Restaurants'
+        }
+        description={
+          _locale === 'en'
+            ? 'Appetizing websites for restaurants and gastronomy in Wetzlar and Hesse. More guests through professional web design and strong local visibility.'
+            : 'Appetitliche Webseiten für Restaurants und Gastronomie in Wetzlar und Hessen. Mehr Gäste durch professionelles Webdesign und lokale Auffindbarkeit.'
+        }
         pageType="default"
       />
       <ClientComponent />

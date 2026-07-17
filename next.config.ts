@@ -39,6 +39,36 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: '/standorte/wetzlar',
+        destination: '/webdesign-agentur-wetzlar',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/standorte/wetzlar',
+        destination: '/:locale/webdesign-agentur-wetzlar',
+        permanent: true,
+      },
+      {
+        source: '/landingpages/wetzlar',
+        destination: '/webdesign-agentur-wetzlar',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/landingpages/wetzlar',
+        destination: '/:locale/webdesign-agentur-wetzlar',
+        permanent: true,
+      },
+      {
+        source: '/landingpages/localwetzlar',
+        destination: '/webdesign-agentur-wetzlar',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/landingpages/localwetzlar',
+        destination: '/:locale/webdesign-agentur-wetzlar',
+        permanent: true,
+      },
+      {
         source: '/portfolio/:slug*',
         destination: '/work/:slug*',
         permanent: true,

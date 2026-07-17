@@ -47,8 +47,16 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   return (
     <>
       <SeoHead
-        title="Ihr Webdesigner in Wetzlar — Lernen Sie uns kennen | Coday"
-        description="Lernen Sie Ihren lokalen Webdesigner in Wetzlar kennen. Persönliche Beratung, faire Preise und moderne Webseiten für Handwerk und Mittelstand."
+        title={
+          _locale === 'en'
+            ? 'About Coday | Your Web Designer in Wetzlar'
+            : 'Ihr Webdesigner in Wetzlar — Lernen Sie uns kennen | Coday'
+        }
+        description={
+          _locale === 'en'
+            ? 'Meet Coday, your personal web design agency in Wetzlar. We build websites for craftsmen, doctors and local businesses across Central Hesse. Learn more.'
+            : 'Lernen Sie Ihren lokalen Webdesigner in Wetzlar kennen. Persönliche Beratung, faire Preise und moderne Webseiten für Handwerk und Mittelstand.'
+        }
         pageType="about"
       />
       <AboutClient />

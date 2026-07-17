@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useLocale } from 'next-intl';
 import { m } from 'motion/react';
 import {
   Check,
@@ -13,6 +14,9 @@ import {
 } from '@phosphor-icons/react/dist/ssr';
 
 export default function AngebotHandwerker() {
+  const locale = useLocale();
+  const isEn = locale === 'en';
+
   const [ticketSize, setTicketSize] = useState(5000);
   const [lostInquiries, setLostInquiries] = useState(3);
 
@@ -36,31 +40,45 @@ export default function AngebotHandwerker() {
                 className="w-2 h-2 rounded-full bg-teal-500 animate-pulse motion-reduce:animate-none"
                 aria-hidden="true"
               />
-              EXKLUSIV FÜR DIE MEISTER-GRUPPE
+              {isEn ? 'EXCLUSIVE FOR THE MASTERS GROUP' : 'EXKLUSIV FÜR DIE MEISTER-GRUPPE'}
             </div>
             <h1 className="text-6xl md:text-8xl font-black text-navy uppercase leading-[1.05] tracking-tighter mb-8">
-              Von Meister <br />
-              <span className="text-gold">zu Meister.</span>
+              {isEn ? 'From Master' : 'Von Meister'} <br />
+              <span className="text-gold">{isEn ? 'to Master.' : 'zu Meister.'}</span>
             </h1>
             <p className="text-2xl text-slate-600 leading-relaxed max-w-2xl mb-12">
-              Sichern Sie sich jetzt unser exklusives{' '}
-              <strong>Webdesign Angebot für Handwerker | Mittelhessen</strong>. Wir haben zusammen
-              die Meisterschule gerockt. Wer am Werkzeug spart, zahlt doppelt. Eure Website ist euer
-              bester <strong className="text-teal-600">digitaler Geselle</strong> – macht 24/7
-              Akquise und wird nie krank.
+              {isEn ? (
+                <>
+                  Secure our exclusive{' '}
+                  <strong>Web Design Offer for Tradesmen | Central Hesse</strong>. We rocked trade
+                  school together. Whoever saves on tools pays double. Your website is your best{' '}
+                  <strong className="text-teal-600">digital journeyman</strong> – acquires clients
+                  24/7 and never calls in sick.
+                </>
+              ) : (
+                <>
+                  Sichern Sie sich jetzt unser exklusives{' '}
+                  <strong>Webdesign Angebot für Handwerker | Mittelhessen</strong>. Wir haben
+                  zusammen die Meisterschule gerockt. Wer am Werkzeug spart, zahlt doppelt. Eure
+                  Website ist euer bester{' '}
+                  <strong className="text-teal-600">digitaler Geselle</strong> – macht 24/7 Akquise
+                  und wird nie krank.
+                </>
+              )}
             </p>
             <div className="flex gap-4">
               <a
                 href="#roi-calculator"
                 className="bg-navy text-white px-8 py-4 rounded-xl font-bold uppercase tracking-widest hover:bg-indigo transition-colors motion-reduce:duration-[0.01ms] flex items-center gap-2 shadow-lg shadow-navy/20"
               >
-                Zum ROI-Rechner <ChartLineUp weight="bold" aria-hidden="true" />
+                {isEn ? 'To ROI Calculator' : 'Zum ROI-Rechner'}{' '}
+                <ChartLineUp weight="bold" aria-hidden="true" />
               </a>
               <a
                 href="#pakete"
                 className="bg-white text-navy border-2 border-slate-200 px-8 py-4 rounded-xl font-bold uppercase tracking-widest hover:border-navy transition-colors motion-reduce:duration-[0.01ms]"
               >
-                Direkt zu den Preisen
+                {isEn ? 'Jump to Pricing' : 'Direkt zu den Preisen'}
               </a>
             </div>
           </m.div>
@@ -86,7 +104,7 @@ export default function AngebotHandwerker() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tight mb-4">
-              Die harte Wahrheit
+              {isEn ? 'The Hard Truth' : 'Die harte Wahrheit'}
             </h2>
             <div className="w-24 h-1 bg-gold mx-auto" />
           </m.div>
@@ -99,17 +117,23 @@ export default function AngebotHandwerker() {
               className="bg-indigo/50 p-10 rounded-2xl border border-white/10 backdrop-blur-sm"
             >
               <div className="font-mono text-7xl font-bold text-white/20 mb-4">70%</div>
-              <h3 className="text-2xl font-bold mb-4 uppercase">suchen am Handy</h3>
+              <h3 className="text-2xl font-bold mb-4 uppercase">
+                {isEn ? 'Search on Mobile' : 'suchen am Handy'}
+              </h3>
               <p className="text-slate-300 text-lg mb-8">
-                Über 70% der Bauherren und Endkunden suchen heute am Smartphone nach dem passenden
-                Handwerker.
+                {isEn
+                  ? 'Over 70% of builders and end customers search for the right tradesman on their smartphone today.'
+                  : 'Über 70% der Bauherren und Endkunden suchen heute am Smartphone nach dem passenden Handwerker.'}
               </p>
 
               <div className="font-mono text-6xl font-bold text-white/20 mb-4">0,05s</div>
-              <h3 className="text-2xl font-bold mb-4 uppercase">Entscheiden alles</h3>
+              <h3 className="text-2xl font-bold mb-4 uppercase">
+                {isEn ? 'Decide Everything' : 'Entscheiden alles'}
+              </h3>
               <p className="text-slate-300 text-lg">
-                Ist die Seite langsam? Lädt das Bild vom Badumbau nicht sofort? Der Kunde ist beim
-                Konkurrenten. Das kostet direkt bares Geld.
+                {isEn
+                  ? 'Is the site slow? Does the bathroom remodel photo not load instantly? The customer is at your competitor. That costs you real money.'
+                  : 'Ist die Seite langsam? Lädt das Bild vom Badumbau nicht sofort? Der Kunde ist beim Konkurrenten. Das kostet direkt bares Geld.'}
               </p>
             </m.div>
 
@@ -125,20 +149,22 @@ export default function AngebotHandwerker() {
                 aria-hidden="true"
               />
               <h3 className="text-3xl font-bold mb-6 text-teal-400 uppercase">
-                Speed ins Fundament gegossen
+                {isEn ? 'Speed Poured into the Foundation' : 'Speed ins Fundament gegossen'}
               </h3>
               <p className="text-slate-300 text-xl leading-relaxed mb-8">
-                Wir bauen bei Coday den Speed fest ins Fundament ein und kleben ihn nicht später als
-                Pflaster drüber.
+                {isEn
+                  ? "At Coday we build speed right into the foundation — we don't slap it on later as a band-aid."
+                  : 'Wir bauen bei Coday den Speed fest ins Fundament ein und kleben ihn nicht später als Pflaster drüber.'}
               </p>
               <div className="bg-black/20 p-6 rounded-xl border border-white/5">
                 <p className="text-slate-300 text-lg">
                   <strong className="text-white flex items-center gap-2 mb-2">
-                    <Crosshair className="text-gold" aria-hidden="true" /> SEO wie ein
-                    Scharfschütze:
+                    <Crosshair className="text-gold" aria-hidden="true" />{' '}
+                    {isEn ? 'SEO like a Sniper:' : 'SEO wie ein Scharfschütze:'}
                   </strong>
-                  Wir wollen lieber 10 echte Käufer in eurer Stadt, als 1.000 wahllose Klicks von
-                  Leuten, die nur rumschnüffeln.
+                  {isEn
+                    ? "We'd rather have 10 real buyers in your city than 1,000 random clicks from people who are just browsing."
+                    : 'Wir wollen lieber 10 echte Käufer in eurer Stadt, als 1.000 wahllose Klicks von Leuten, die nur rumschnüffeln.'}
                 </p>
               </div>
             </m.div>
@@ -161,10 +187,12 @@ export default function AngebotHandwerker() {
                 10X Feature
               </div>
               <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-navy mb-4">
-                Der Schmerz-Rechner
+                {isEn ? 'The Pain Calculator' : 'Der Schmerz-Rechner'}
               </h2>
               <p className="text-xl text-slate-500">
-                Rechne live aus, wie viel Geld du verbrennst, weil Kunden beim Konkurrenten anrufen.
+                {isEn
+                  ? "Calculate live how much money you're burning because customers call your competitor instead."
+                  : 'Rechne live aus, wie viel Geld du verbrennst, weil Kunden beim Konkurrenten anrufen.'}
               </p>
             </m.div>
 
@@ -176,7 +204,7 @@ export default function AngebotHandwerker() {
                       htmlFor="ticket-size"
                       className="block text-sm font-bold text-slate-500 uppercase tracking-widest mb-4"
                     >
-                      Ø Gewinn pro Auftrag (Netto)
+                      {isEn ? 'Ø Profit per Job (Net)' : 'Ø Gewinn pro Auftrag (Netto)'}
                     </label>
                     <div className="flex items-center gap-4 mb-4">
                       <input
@@ -200,9 +228,11 @@ export default function AngebotHandwerker() {
                       htmlFor="lost-inquiries"
                       className="block text-sm font-bold text-slate-500 uppercase tracking-widest mb-4"
                     >
-                      Entgangene Aufträge pro Monat
+                      {isEn ? 'Lost Orders per Month' : 'Entgangene Aufträge pro Monat'}
                       <span className="block text-xs text-slate-400 normal-case mt-1">
-                        (Kunden, die wegen schlechter Sichtbarkeit zur Konkurrenz gehen)
+                        {isEn
+                          ? '(Customers who go to competitors due to poor visibility)'
+                          : '(Kunden, die wegen schlechter Sichtbarkeit zur Konkurrenz gehen)'}
                       </span>
                     </label>
                     <div className="flex items-center gap-4 mb-4">
@@ -226,22 +256,38 @@ export default function AngebotHandwerker() {
                 <div className="bg-slate-50 p-8 rounded-2xl border border-slate-200 flex flex-col justify-center relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/5 rounded-full blur-[40px] pointer-events-none" />
                   <p className="text-slate-500 font-bold uppercase tracking-widest text-sm mb-2">
-                    Entgangener Gewinn pro Monat
+                    {isEn ? 'Lost Profit per Month' : 'Entgangener Gewinn pro Monat'}
                   </p>
                   <p className="text-5xl font-black text-red-500 font-mono mb-8">
-                    {lostRevenue.toLocaleString('de-DE')} €
+                    {isEn
+                      ? `€${lostRevenue.toLocaleString('en-US')}`
+                      : `${lostRevenue.toLocaleString('de-DE')} €`}
                   </p>
 
                   <div className="border-t border-slate-200 pt-6">
                     <p className="text-slate-600 font-semibold mb-2">
-                      ROI-Check (Flaggschiff-Paket 3.699 €):
+                      {isEn
+                        ? 'ROI Check (Flagship Package €3,699):'
+                        : 'ROI-Check (Flaggschiff-Paket 3.699 €):'}
                     </p>
                     <p className="text-navy text-lg">
-                      Das Paket macht sich bereits durch{' '}
-                      <strong className="text-teal-600 font-black">
-                        {roiMonths} erfolgreiche(n) Auftrag
-                      </strong>{' '}
-                      komplett von selbst bezahlt. Alles danach ist reiner Profit.
+                      {isEn ? (
+                        <>
+                          The package pays for itself with just{' '}
+                          <strong className="text-teal-600 font-black">
+                            {roiMonths} successful order{roiMonths !== 1 ? 's' : ''}
+                          </strong>
+                          . Everything after that is pure profit.
+                        </>
+                      ) : (
+                        <>
+                          Das Paket macht sich bereits durch{' '}
+                          <strong className="text-teal-600 font-black">
+                            {roiMonths} erfolgreiche(n) Auftrag
+                          </strong>{' '}
+                          komplett von selbst bezahlt. Alles danach ist reiner Profit.
+                        </>
+                      )}
                     </p>
                   </div>
                 </div>
@@ -262,7 +308,7 @@ export default function AngebotHandwerker() {
             className="text-center mb-20"
           >
             <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tight text-navy mb-6">
-              Die Ausbau-Stufen
+              {isEn ? 'The Build-Out Tiers' : 'Die Ausbau-Stufen'}
             </h2>
             <div className="w-24 h-1 bg-navy mx-auto" />
           </m.div>
@@ -276,25 +322,36 @@ export default function AngebotHandwerker() {
               className="bg-white border border-slate-200 rounded-3xl p-10 hover:shadow-xl transition-shadow motion-reduce:duration-[0.01ms]"
             >
               <h3 className="text-sm font-bold text-slate-400 tracking-widest uppercase mb-2">
-                Stufe 1
+                {isEn ? 'Tier 1' : 'Stufe 1'}
               </h3>
-              <h4 className="text-3xl font-bold mb-4 text-navy">Digitales Fundament</h4>
+              <h4 className="text-3xl font-bold mb-4 text-navy">
+                {isEn ? 'Digital Foundation' : 'Digitales Fundament'}
+              </h4>
               <p className="text-slate-600 mb-8 min-h-[80px]">
-                Für den sauberen, professionellen Start. Eure digitale Visitenkarte, die technisch
-                einwandfrei steht.
+                {isEn
+                  ? 'For a clean, professional start. Your digital business card that stands technically flawless.'
+                  : 'Für den sauberen, professionellen Start. Eure digitale Visitenkarte, die technisch einwandfrei steht.'}
               </p>
               <div className="font-mono text-4xl font-black text-navy mb-1">1.499 €</div>
               <div className="text-sm text-slate-400 uppercase tracking-widest mb-8">
-                Einmalig / Netto
+                {isEn ? 'One-Time / Net' : 'Einmalig / Netto'}
               </div>
 
               <ul className="space-y-4">
-                {[
-                  '5 Basis-Seiten (Start, Leistungen, Über uns, Kontakt, Legal)',
-                  'Extrem schnelles Laden',
-                  'Mobile-First Design',
-                  'SEO-Basiskonfiguration',
-                ].map((item, i) => (
+                {(isEn
+                  ? [
+                      '5 Core Pages (Home, Services, About, Contact, Legal)',
+                      'Extremely Fast Loading',
+                      'Mobile-First Design',
+                      'Basic SEO Configuration',
+                    ]
+                  : [
+                      '5 Basis-Seiten (Start, Leistungen, Über uns, Kontakt, Legal)',
+                      'Extrem schnelles Laden',
+                      'Mobile-First Design',
+                      'SEO-Basiskonfiguration',
+                    ]
+                ).map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <Check
                       className="text-teal-500 mt-1 flex-shrink-0"
@@ -316,32 +373,43 @@ export default function AngebotHandwerker() {
               className="bg-white border-2 border-gold rounded-3xl p-10 shadow-2xl relative z-10 scale-105"
             >
               <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-gold text-white px-6 py-2 rounded-full font-bold uppercase tracking-widest text-sm shadow-lg">
-                Flaggschiff
+                {isEn ? 'Flagship' : 'Flaggschiff'}
               </div>
               <h3 className="text-sm font-bold text-gold tracking-widest uppercase mb-2 mt-4">
-                Das Meisterstück
+                {isEn ? 'The Masterpiece' : 'Das Meisterstück'}
               </h3>
               <h4 className="text-4xl font-black mb-4 text-navy uppercase tracking-tighter">
-                Lokale Dominanz
+                {isEn ? 'Local Dominance' : 'Lokale Dominanz'}
               </h4>
               <p className="text-slate-600 mb-8 min-h-[80px] font-medium">
-                Absolute Dominanz bei Google. Wenn jemand im Umkreis von 50km sucht – ihr seid
-                überall da.
+                {isEn
+                  ? "Absolute dominance on Google. When someone searches within 50 km — you're everywhere."
+                  : 'Absolute Dominanz bei Google. Wenn jemand im Umkreis von 50km sucht – ihr seid überall da.'}
               </p>
               <div className="font-mono text-6xl font-black text-navy mb-1">3.699 €</div>
               <div className="text-sm text-slate-400 uppercase tracking-widest mb-8">
-                Einmalig / Netto
+                {isEn ? 'One-Time / Net' : 'Einmalig / Netto'}
               </div>
 
               <ul className="space-y-4 mb-8">
-                {[
-                  'Über 200 Seiten Gesamtumfang',
-                  '>100 spezifische lokale SEO-Seiten',
-                  'Branchen-spezifisches Copywriting',
-                  'Maximale Konkurrenz-Verdrängung',
-                  'Vollautomatischer Recruiting-Funnel',
-                  'Premium UI/UX Design System',
-                ].map((item, i) => (
+                {(isEn
+                  ? [
+                      'Over 200 Total Pages',
+                      '>100 Specific Local SEO Pages',
+                      'Industry-Specific Copywriting',
+                      'Maximum Competitor Displacement',
+                      'Fully Automated Recruiting Funnel',
+                      'Premium UI/UX Design System',
+                    ]
+                  : [
+                      'Über 200 Seiten Gesamtumfang',
+                      '>100 spezifische lokale SEO-Seiten',
+                      'Branchen-spezifisches Copywriting',
+                      'Maximale Konkurrenz-Verdrängung',
+                      'Vollautomatischer Recruiting-Funnel',
+                      'Premium UI/UX Design System',
+                    ]
+                ).map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <Check
                       className="text-gold mt-1 flex-shrink-0"
@@ -356,7 +424,7 @@ export default function AngebotHandwerker() {
                 href="#kontakt"
                 className="block text-center w-full bg-gold text-white font-bold uppercase tracking-widest py-4 rounded-xl hover:bg-gold-bright transition-colors motion-reduce:duration-[0.01ms] shadow-lg shadow-gold/20"
               >
-                Meisterstück anfragen
+                {isEn ? 'Request Masterpiece' : 'Meisterstück anfragen'}
               </a>
             </m.div>
 
@@ -371,26 +439,38 @@ export default function AngebotHandwerker() {
               <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\'20\' height=\'20\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Ccircle cx=\'2\' cy=\'2\' r=\'1\' fill=\'%23ffffff\' fill-opacity=\'0.05\'/%3E%3C/svg%3E')] opacity-50" />
               <div className="relative z-10">
                 <h3 className="text-sm font-bold text-slate-400 tracking-widest uppercase mb-2">
-                  Stufe 2
+                  {isEn ? 'Tier 2' : 'Stufe 2'}
                 </h3>
-                <h4 className="text-3xl font-bold mb-4 text-white">Wachstums-Maschine</h4>
+                <h4 className="text-3xl font-bold mb-4 text-white">
+                  {isEn ? 'Growth Machine' : 'Wachstums-Maschine'}
+                </h4>
                 <p className="text-slate-300 mb-8 min-h-[80px]">
-                  Für Handwerker, die wachsen und gezielt Fachkräfte oder hochpreisige Aufträge
-                  anziehen wollen.
+                  {isEn
+                    ? 'For tradesmen who want to grow and attract skilled workers or high-value contracts.'
+                    : 'Für Handwerker, die wachsen und gezielt Fachkräfte oder hochpreisige Aufträge anziehen wollen.'}
                 </p>
                 <div className="font-mono text-4xl font-black text-white mb-1">2.499 €</div>
                 <div className="text-sm text-slate-400 uppercase tracking-widest mb-8">
-                  Einmalig / Netto
+                  {isEn ? 'One-Time / Net' : 'Einmalig / Netto'}
                 </div>
 
                 <ul className="space-y-4">
-                  {[
-                    'Bis zu 20 Leistungs-Seiten',
-                    'Sauberer Recruiting-Bereich für Azubis',
-                    'Erweiterte SEO-Basis (Regional)',
-                    'Premium Kontakt-Formulare',
-                    'Bewertungs-Integration',
-                  ].map((item, i) => (
+                  {(isEn
+                    ? [
+                        'Up to 20 Service Pages',
+                        'Clean Recruiting Section for Apprentices',
+                        'Extended SEO Foundation (Regional)',
+                        'Premium Contact Forms',
+                        'Review Integration',
+                      ]
+                    : [
+                        'Bis zu 20 Leistungs-Seiten',
+                        'Sauberer Recruiting-Bereich für Azubis',
+                        'Erweiterte SEO-Basis (Regional)',
+                        'Premium Kontakt-Formulare',
+                        'Bewertungs-Integration',
+                      ]
+                  ).map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <Check
                         className="text-teal-400 mt-1 flex-shrink-0"
@@ -430,7 +510,8 @@ export default function AngebotHandwerker() {
                   99.9% UPTIME
                 </div>
                 <div className="absolute -left-4 bottom-20 bg-white border border-slate-200 px-6 py-3 rounded-xl shadow-lg font-mono text-sm text-slate-600 font-bold flex items-center gap-2">
-                  <Wrench className="text-slate-400" aria-hidden="true" /> WARTUNG AKTIV
+                  <Wrench className="text-slate-400" aria-hidden="true" />{' '}
+                  {isEn ? 'MAINTENANCE ACTIVE' : 'WARTUNG AKTIV'}
                 </div>
               </div>
             </m.div>
@@ -442,23 +523,38 @@ export default function AngebotHandwerker() {
               className="md:w-1/2"
             >
               <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-navy mb-6">
-                Der "Digitale <span className="text-teal-500">Hausmeister</span>"
+                {isEn ? (
+                  <>
+                    The &quot;Digital <span className="text-teal-500">Caretaker</span>&quot;
+                  </>
+                ) : (
+                  <>
+                    Der &quot;Digitale <span className="text-teal-500">Hausmeister</span>&quot;
+                  </>
+                )}
               </h2>
               <p className="text-xl text-slate-600 mb-10 leading-relaxed">
-                Keine versteckten Kosten. Keine Knebelverträge. Wenn das Haus steht, muss es
-                gepflegt werden, damit es nicht verfällt. Ihr kümmert euch um die Baustelle, ich um
-                den Server.
+                {isEn
+                  ? "No hidden costs. No lock-in contracts. When the house is built, it needs maintenance so it doesn't decay. You take care of the job site, I take care of the server."
+                  : 'Keine versteckten Kosten. Keine Knebelverträge. Wenn das Haus steht, muss es gepflegt werden, damit es nicht verfällt. Ihr kümmert euch um die Baustelle, ich um den Server.'}
               </p>
               <div className="bg-slate-50 border border-slate-200 p-8 rounded-2xl border-l-4 border-l-teal-500 mb-8">
                 <div className="font-mono text-5xl font-black text-navy mb-2">
-                  89 € <span className="text-xl text-slate-400 font-sans uppercase">/ Monat</span>
+                  {isEn ? '€89' : '89 €'}{' '}
+                  <span className="text-xl text-slate-400 font-sans uppercase">
+                    {isEn ? '/ Month' : '/ Monat'}
+                  </span>
                 </div>
                 <div className="text-sm text-slate-500 font-bold uppercase tracking-widest">
-                  Feste Pauschale (Hosting, Wartung, Updates)
+                  {isEn
+                    ? 'Fixed Rate (Hosting, Maintenance, Updates)'
+                    : 'Feste Pauschale (Hosting, Wartung, Updates)'}
                 </div>
               </div>
               <p className="text-lg font-bold text-navy">
-                Einfach neue Baustellen-Fotos per WhatsApp schicken, ich baue sie ein. Fertig.
+                {isEn
+                  ? "Just send new job site photos via WhatsApp, I'll add them. Done."
+                  : 'Einfach neue Baustellen-Fotos per WhatsApp schicken, ich baue sie ein. Fertig.'}
               </p>
             </m.div>
           </div>
@@ -485,32 +581,35 @@ export default function AngebotHandwerker() {
           >
             <div className="inline-block bg-gold/10 border border-gold/30 rounded-2xl p-8 mb-16 backdrop-blur-sm">
               <h3 className="text-gold font-bold uppercase tracking-widest mb-2">
-                Der Meister-Bonus
+                {isEn ? 'The Master Bonus' : 'Der Meister-Bonus'}
               </h3>
               <p className="text-lg text-slate-300 mb-4">
-                Wer aus unserer WhatsApp-Gruppe eine Seite bucht, bekommt nach 6 Monaten ein
-                Performance- & Strategie-Audit kostenlos.
+                {isEn
+                  ? 'Anyone from our WhatsApp group who books a site gets a free performance & strategy audit after 6 months.'
+                  : 'Wer aus unserer WhatsApp-Gruppe eine Seite bucht, bekommt nach 6 Monaten ein Performance- & Strategie-Audit kostenlos.'}
               </p>
               <div className="font-mono text-gold text-xl font-bold">
-                WERT: 450 € (Für euch: 0 €)
+                {isEn ? 'VALUE: €450 (For you: €0)' : 'WERT: 450 € (Für euch: 0 €)'}
               </div>
             </div>
 
             <h2 className="text-6xl md:text-8xl font-black uppercase tracking-tighter mb-8">
-              Lass uns quatschen.
+              {isEn ? "Let's talk." : 'Lass uns quatschen.'}
             </h2>
             <p className="text-xl text-slate-400 mb-12">
-              Kein Druck, kein Verkaufsgelaber. Wir schauen uns an, was ihr vorhabt, und ich sage
-              euch ehrlich, ob es sich für euch rechnet.
+              {isEn
+                ? "No pressure, no sales talk. We'll look at what you're planning, and I'll honestly tell you whether it pays off for you."
+                : 'Kein Druck, kein Verkaufsgelaber. Wir schauen uns an, was ihr vorhabt, und ich sage euch ehrlich, ob es sich für euch rechnet.'}
             </p>
 
             <a
-              href="/de/contact"
+              href={isEn ? '/en/contact' : '/de/contact'}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-4 bg-teal-500 text-white px-10 py-6 rounded-2xl font-bold uppercase tracking-widest text-xl hover:bg-teal-400 transition-colors motion-reduce:duration-[0.01ms] shadow-[0_0_40px_rgba(44,165,160,0.4)] hover:shadow-[0_0_60px_rgba(44,165,160,0.6)]"
             >
-              Schreib mir in WhatsApp <ArrowRight weight="bold" aria-hidden="true" />
+              {isEn ? 'Message me on WhatsApp' : 'Schreib mir in WhatsApp'}{' '}
+              <ArrowRight weight="bold" aria-hidden="true" />
             </a>
           </m.div>
         </div>

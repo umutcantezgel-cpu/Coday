@@ -83,7 +83,7 @@ export function IndustryOverviewClient() {
                     </Link>
                   </h2>
                   <p className="text-text-light mb-8 flex-grow leading-relaxed">
-                    {t(industry.hero.subheadline)}
+                    {t(industry.hero.excerpt || industry.hero.subheadline)}
                   </p>
                   <span className="text-primary font-bold flex items-center gap-2 mt-auto text-sm uppercase tracking-wide">
                     {t('overview.cta')}

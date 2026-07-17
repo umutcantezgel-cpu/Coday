@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { Link as NavLink } from '@/i18n/navigation';
 import {
   ShieldCheck,
@@ -28,6 +28,7 @@ import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
 
 const PublicSectorPage: React.FC = () => {
   const t = useTranslations('public-sector');
+  const locale = useLocale();
 
   return (
     <div className="bg-background-light min-h-dvh font-sans">
@@ -47,7 +48,7 @@ const PublicSectorPage: React.FC = () => {
               animationSpeed={6}
               className="inline-block mt-2"
             >
-              {t('hero.subline')}
+              {locale === 'en' ? 'Our Solutions' : 'Unsere Lösungen'}
             </GradientText>
           </h1>
 
@@ -71,7 +72,7 @@ const PublicSectorPage: React.FC = () => {
               href="/services"
               className={cn(baseButtonStyles, buttonVariants.outline, buttonSizes.lg)}
             >
-              Unsere Lösungen
+              {t('hero.ctaSecondary')}
             </NavLink>
           </div>
         </div>
@@ -82,10 +83,22 @@ const PublicSectorPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { icon: ShieldCheck, label: t('trust.bitv'), desc: 'Barrierefrei' },
-              { icon: LockKey, label: t('trust.dsgvo'), desc: 'Serverstandort DE' },
-              { icon: CheckCircle, label: t('trust.iso'), desc: 'Sicherheitsstandards' },
-              { icon: Files, label: t('trust.opensource'), desc: 'Open Source' },
+              {
+                icon: ShieldCheck,
+                label: t('trust.bitv'),
+                desc: locale === 'en' ? 'Accessible' : 'Barrierefrei',
+              },
+              {
+                icon: LockKey,
+                label: t('trust.dsgvo'),
+                desc: locale === 'en' ? 'Server Location DE' : 'Serverstandort DE',
+              },
+              {
+                icon: CheckCircle,
+                label: t('trust.iso'),
+                desc: locale === 'en' ? 'Security Standards' : 'Sicherheitsstandards',
+              },
+              { icon: Files, label: t('trust.opensource'), desc: t('trust.opensourceDesc') },
             ].map((item, idx) => (
               <div key={idx} className="flex flex-col items-center group cursor-default">
                 <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-blue-50 transition-colors motion-reduce:duration-[0.01ms]">
@@ -215,8 +228,9 @@ const PublicSectorPage: React.FC = () => {
               <div>
                 <p className="text-2xl font-bold text-slate-900 mb-6">{t('contact.title')}</p>
                 <p className="text-slate-600 mb-8 leading-relaxed">
-                  Sie haben bereits fertige Vergabeunterlagen oder ein Lastenheft? Laden Sie es
-                  direkt hoch oder senden Sie es uns verschlüsselt zu.
+                  {locale === 'en'
+                    ? 'Do you already have tender documents or specifications? Upload them directly or send them to us encrypted.'
+                    : 'Sie haben bereits fertige Vergabeunterlagen oder ein Lastenheft? Laden Sie es direkt hoch oder senden Sie es uns verschlüsselt zu.'}
                 </p>
 
                 <div className="p-8 border-2 border-dashed border-slate-300 rounded-2xl bg-slate-50 hover:bg-white hover:border-blue-400 transition-colors motion-reduce:duration-[0.01ms] cursor-pointer group">
@@ -226,7 +240,7 @@ const PublicSectorPage: React.FC = () => {
                   />
                   <p className="text-lg font-medium text-slate-700">{t('contact.upload_label')}</p>
                   <p className="text-sm text-slate-500 mt-2">
-                    oder via E-Mail an{' '}
+                    {locale === 'en' ? 'or via email to' : 'oder via E-Mail an'}{' '}
                     <span className="text-blue-600 font-mono">umut@codayweb.de</span>
                   </p>
                 </div>
@@ -235,24 +249,27 @@ const PublicSectorPage: React.FC = () => {
               <div className="bg-blue-50/50 p-8 rounded-2xl border border-blue-100">
                 <p className="font-bold text-slate-900 mb-4 flex items-center gap-2">
                   <OptimizedIcon icon={ShieldCheck} className="text-blue-600" />
-                  Sicherer Datenaustausch
+                  {t('contact.secureExchange')}
                 </p>
                 <p className="text-sm text-slate-600 mb-4">
-                  Wir unterstützen S/MIME Verschlüsselung und gängige Behörden-Transfer-Tools
-                  (Cryptshare, FTAPI).
+                  {locale === 'en'
+                    ? 'We support S/MIME encryption and common government transfer tools (Cryptshare, FTAPI).'
+                    : 'Wir unterstützen S/MIME Verschlüsselung und gängige Behörden-Transfer-Tools (Cryptshare, FTAPI).'}
                 </p>
                 <a
                   href="mailto:umut@codayweb.de"
                   className="text-blue-700 font-bold text-sm hover:underline"
                 >
-                  PGP-Key anfordern &rarr;
+                  {locale === 'en' ? 'Request PGP key' : 'PGP-Key anfordern'} &rarr;
                 </a>
               </div>
 
               <p className="text-xs text-slate-400">
-                Wir behandeln Ihre Daten vertraulich gemäß DSGVO.{' '}
+                {locale === 'en'
+                  ? 'We treat your data confidentially in accordance with GDPR.'
+                  : 'Wir behandeln Ihre Daten vertraulich gemäß DSGVO.'}{' '}
                 <NavLink href="/legal/datenschutz" className="underline">
-                  Datenschutzerklärung
+                  {locale === 'en' ? 'Privacy Policy' : 'Datenschutzerklärung'}
                 </NavLink>
                 .
               </p>

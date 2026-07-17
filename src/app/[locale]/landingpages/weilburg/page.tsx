@@ -40,20 +40,17 @@ export default async function WeilburgLandingPage(props: { params: Promise<{ loc
 
   let content = null;
   try {
-    const filePath = path.join(
-      process.cwd(),
-      'src',
-      'features',
-      'local-seo',
-      'model',
-      'content',
-      'weilburg.json'
-    );
+    const contentDir = path.join(process.cwd(), 'src', 'features', 'local-seo', 'model', 'content');
+    const jsonFile = params.locale === 'en' ? 'weilburg.en.json' : 'weilburg.json';
+    let filePath = path.join(contentDir, jsonFile);
+    if (!fs.existsSync(filePath)) {
+      filePath = path.join(contentDir, 'weilburg.json');
+    }
     if (fs.existsSync(filePath)) {
       const fileContents = fs.readFileSync(filePath, 'utf8');
       content = JSON.parse(fileContents);
     }
-  } catch (e) {
+  } catch {
     // Content is being generated
   }
 
@@ -85,25 +82,25 @@ export default async function WeilburgLandingPage(props: { params: Promise<{ loc
             </h2>
             <div className="text-gray-300 max-w-2xl text-left space-y-4 px-4 bg-white/5 p-6 rounded-2xl border border-white/10 text-base leading-relaxed">
               <p>
-                Eine professionelle Webseite ist heute das wichtigste Aushängeschild für jedes
-                lokale Unternehmen. Egal ob Sie einen Handwerksbetrieb führen, eine Arztpraxis
-                leiten oder spezifische Dienstleistungen anbieten: Ihre potenziellen Kunden suchen
-                online nach Ihren Angeboten. Wenn Sie nicht sofort gefunden werden oder Ihre
-                Webseite veraltet wirkt, verlieren Sie bares Geld an die regionale Konkurrenz. Eine
-                moderne, Conversion-optimierte Internetpräsenz baut Vertrauen auf, noch bevor der
-                erste persönliche Kontakt entsteht. Wir wissen, worauf es ankommt, um in der Region
-                Weilburg und im Lahn-Dill-Kreis digital erfolgreich zu sein. Mit unserer Expertise
-                im Bereich Webentwicklung und SEO bringen wir Sie auf die vorderen Plätze.
+                Weilburg – die Residenzstadt an der Lahn mit ihrem imposanten Schloss und dem
+                einzigartigen Schiffstunnel – zieht nicht nur Touristen an, sondern bietet auch
+                einer wachsenden Zahl lokaler Unternehmen ein attraktives wirtschaftliches Umfeld.
+                Ob Handwerksbetrieb im Lahntal, Facharztpraxis in der Altstadt oder moderner
+                Dienstleister am Stadtrand: Ohne eine zeitgemäße, professionelle Webpräsenz bleiben
+                Sie für die allermeisten Neukunden unsichtbar. Eine durchdacht gestaltete und
+                technisch erstklassige Internetseite baut Glaubwürdigkeit auf, noch bevor ein
+                Interessent zum Telefonhörer greift, und verschafft Ihnen einen klaren Vorsprung
+                gegenüber der regionalen Konkurrenz rund um Weilburg und Löhnberg.
               </p>
               <p>
-                Wir unterstützen Sie dabei, eine digitale Präsenz aufzubauen, die nicht nur auf den
-                ersten Blick überzeugt, sondern auch technisch einwandfrei funktioniert, extrem
-                schnelle Ladezeiten bietet und perfekt für Suchmaschinen (SEO) optimiert ist. Dabei
-                legen wir großen Wert auf intuitive Benutzerführung und barrierefreie Designs.
-                Profitieren Sie von unserer langjährigen Erfahrung im Bereich Webdesign,
-                Suchmaschinenoptimierung und digitaler Markenbildung in der Region Lahn-Dill. Lassen
-                Sie uns gemeinsam Ihr Projekt besprechen und herausfinden, wie wir Ihr Unternehmen
-                digital auf die nächste Stufe heben können.
+                Als Ihr Webdesign-Partner für Weilburg kombinieren wir ästhetischen Anspruch mit
+                technischer Präzision: Ihre neue Seite lädt blitzschnell, ist vollständig
+                barrierefrei aufgebaut und wurde gezielt für lokale Suchanfragen aus dem Lahntal und
+                dem Limburg-Weilburg-Kreis optimiert. Wir kennen die Besonderheiten der
+                Residenzstadt – von saisonalen Tourismusströmen bis zur starken lokalen
+                Handwerkstradition – und setzen diese Kenntnis in maßgeschneiderte digitale
+                Strategien um. Kontaktieren Sie uns, damit wir gemeinsam Ihr Unternehmen in Weilburg
+                online sichtbar und erfolgreich machen.
               </p>
               <p>
                 Die digitale Landschaft entwickelt sich rasant weiter, und für Unternehmen in

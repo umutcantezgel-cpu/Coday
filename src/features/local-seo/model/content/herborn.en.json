@@ -1,0 +1,52 @@
+{
+  "target": "herborn",
+  "displayName": "Herborn",
+  "type": "location",
+  "meta": {
+    "title": "Web Design Herborn | Local Professional Websites | Coday",
+    "description": "Your web agency for Herborn and the Lahn-Dill district. High-performance websites that bring new clients. Personal service at a fixed price. Inquire now."
+  },
+  "hero": {
+    "headline": "Your Web Designer in Herborn",
+    "subheadline": "As your web designer in Herborn, we build high-performance websites for craftsmen, doctors, and service providers in the area.",
+    "description": "Herborn impresses as a Fachwerkstadt with a historic market square and a surprisingly diverse economic structure – from traditional crafts to established medical practices and innovative service providers. Exactly this diversity deserves a digital presence that reflects the character of your company instead of drowning in interchangeable templates. Whoever fails to immediately convince online in Herborn, Sinn, or the southern Lahn-Dill district loses prospects to competitors who are already professionally positioned. An individually developed, fast, and search-engine-optimized website builds trust from the very first visit and paves the way for new customer inquiries."
+  },
+  "localDominance": {
+    "title": "Web Design from a Local Professional in Herborn",
+    "description": "The Fachwerkstadt Herborn is characterized not only by its historic charm but also by a lively, versatile corporate landscape in the Lahn-Dill district. In order to be sustainably successful in this dynamic local market environment, a modern, professional internet presence is indispensable today. For us, excellent web design for Herborn means bringing the unique identity of your company to life digitally. We do not develop interchangeable standard websites, but tailor-made digital platforms that authentically reflect your expertise, your tradition, and your innovative strength. Whether an ambitious craft business, a specialized medical practice, or a local service company – we ensure that you address exactly the customers online that you need for your continued growth.",
+    "points": [
+      "Regional Understanding: Benefit from our experience as a regional web design agency that knows the special charm and economic dynamics of the Fachwerkstadt.",
+      "Uncompromising Technology: For companies around the Kornmarkt and the Herborn old town, we combine contemporary design with uncompromising technology: accessible structures and lightning-fast loading times.",
+      "Local SEO Strategy: A well-thought-out SEO strategy that is specifically tailored to local search queries from Herborn, Burg, and the Lahn-Dill district.",
+      "Holistic Support: We take care of technical maintenance, maximum data security, and strict compliance with all GDPR guidelines, so that you can fully concentrate on your core business in Herborn."
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "Technical Performance and Visibility",
+      "content": "In addition to an appealing look, technical performance is the heart of every successful web presence. When potential customers from Herborn, Sinn, or Burg search for your services on their smartphone, they expect lightning-fast loading times and an absolutely flawless display on all devices. We rely on state-of-the-art web technologies that exactly meet these requirements and simultaneously form the perfect basis for successful local search engine optimization (Local SEO). Through a clever structuring of your content and the strategic placement of relevant keywords, we ensure that you are prominently listed on Google for search queries from the Herborn region. High visibility is the key to securing local market shares and continuously generating qualified inquiries."
+    },
+    {
+      "title": "Modern Employer Branding and Recruiting",
+      "content": "A modern website has also become the most important tool for companies in Herborn when it comes to recruiting. In order to position yourself as an attractive and modern employer in times of the ubiquitous shortage of skilled workers, a simple job advertisement in the newspaper is no longer enough. We design and develop dedicated career pages that immediately show potential applicants why they should become part of your team. By seamlessly integrating simple, digital short applications, we enormously lower the barrier to entry. This allows skilled workers from Herborn and the surrounding area to comfortably apply to you from their smartphone. This not only strengthens your employer brand but also significantly accelerates your internal hiring processes and secures the best talents in the region for you."
+    },
+    {
+      "title": "High-Converting Web Design for Herborn",
+      "content": "A holistic web design concept must also be designed to actively turn visitors into paying customers or new employees. That is why we place the greatest value on intuitive user guidance (UX) and high-converting elements such as integrated appointment booking systems, smart contact forms, or digital application processes. Especially in times of the skilled labor shortage in the Lahn-Dill region, a convincing career page can make the decisive difference. As your reliable web design partner from the region, we accompany you transparently and at eye level – from the first strategic consultation to the successful launch of your new website and beyond."
+    }
+  ],
+  "faq": [
+    {
+      "q": "What distinguishes professional web design for Herborn?",
+      "a": "Excellent web design for Herborn combines modern design with uncompromising technology. It brings the unique identity of your company to life digitally, offers lightning-fast loading times, and is optimally positioned for search engines (Local SEO), so that customers from Herborn, Burg, and the Lahn-Dill district find you immediately."
+    },
+    {
+      "q": "How does a new website support me in recruiting in Herborn?",
+      "a": "We develop dedicated career pages with seamlessly integrated, digital short applications. This enormously lowers the barrier to entry for applicants and enables skilled workers from Herborn and the surrounding area to comfortably apply to you via smartphone. This strengthens your employer brand and accelerates your internal hiring processes."
+    },
+    {
+      "q": "Why is Local SEO so important for my company in Herborn?",
+      "a": "Whoever fails to immediately convince online in Herborn, Sinn, or the southern Lahn-Dill district loses prospects to competitors. Through a clever structuring of your content and the strategic placement of relevant keywords, we ensure that you are prominently listed on Google for local search queries in order to secure local market shares."
+    }
+  ]
+}

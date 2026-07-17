@@ -34,11 +34,17 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   const params = await props.params;
   setRequestLocale(params.locale);
 
+  const _locale = params.locale || 'de';
+
   return (
     <>
       <SeoHead
-        title="Coday | garantie"
-        description="Willkommen bei Coday. Entdecken Sie unsere Leistungen."
+        title={_locale === 'en' ? 'Coday | Guarantees' : 'Coday | Unsere Qualitätsgarantie'}
+        description={
+          _locale === 'en'
+            ? 'Coday guarantees premium web design from Wetzlar. Satisfaction, fixed price and on-time delivery for your business.'
+            : 'Coday garantiert Ihnen Premium Webdesign aus Wetzlar. Zufriedenheit, Festpreis und termingerechte Lieferung.'
+        }
         pageType="default"
       />
       <ClientComponent />

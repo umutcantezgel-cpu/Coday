@@ -49,6 +49,7 @@
     "hero": {
       "headline": "Professionelle Websites für Ihr Handwerk",
       "subheadline": "Mehr qualifizierte Mitarbeiter und lukrative Aufträge durch eine Webseite, die Ihre Qualität widerspiegelt.",
+      "excerpt": "Digitale Lösungen für Handwerksbetriebe: Steigern Sie Sichtbarkeit, Mitarbeitergewinnung und Auftragsqualität.",
       "title_1": "Professionelles Webdesign",
       "title_2": "für Handwerker",
       "description": "Wir bauen Websites, die Handwerksbetrieben zu mehr Sichtbarkeit und Aufträgen verhelfen.",
@@ -171,6 +172,7 @@
     "hero": {
       "headline": "Exklusive Objekte, exklusiv präsentiert",
       "subheadline": "Überzeugen Sie Eigentümer und Käufer mit einer digitalen Präsenz, die Kompetenz und Klasse ausstrahlt.",
+      "excerpt": "Premium-Websites für Immobilienmakler mit digitalen Exposés zur Gewinnung exklusiver Vermarktungsmandate.",
       "description": "Wir entwickeln maßgeschneiderte Immobilien-Websites mit integrierten Exposés und Lead-Funnels, um hochwertige Alleinaufträge zu generieren.",
       "image_alt": "Makler Webseite",
       "title_suffix": "für Immobilienmakler"
@@ -305,6 +307,7 @@
     "hero": {
       "headline": "Vertrauen beginnt vor dem ersten Termin",
       "subheadline": "Entlasten Sie Ihr Praxis-Team und gewinnen Sie die richtigen Patienten durch moderne digitale Prozesse. Denn Vertrauen beginnt vor dem ersten Termin.",
+      "excerpt": "Patientenfreundliche Praxis-Websites mit Online-Terminbuchung für einen entlasteten und effizienten Praxisalltag.",
       "description": "Hochprofessionelle Praxis-Websites mit nahtloser Terminbuchung und digitaler Anamnese, um den Praxisalltag spürbar zu entlasten.",
       "title_suffix": "für Ärzte"
     },
@@ -417,7 +420,8 @@
     "solutions_description": "Wir entwickeln professionelle Webpräsenzen, die Ihre juristische Expertise unterstreichen und das Vertrauen potenzieller Mandanten vom ersten Klick an gewinnen.",
     "hero": {
       "headline": "Rechtssichere Mandanten-Akquise",
-      "subheadline": "Positionieren Sie Ihre Kanzlei als erste Anlaufstelle für Ihre Spezialgebiete."
+      "subheadline": "Positionieren Sie Ihre Kanzlei als erste Anlaufstelle für Ihre Spezialgebiete.",
+      "excerpt": "Seriöses Kanzlei-Webdesign zur gezielten Akquise lukrativer Mandate und Positionierung als Rechtsexperte."
     },
     "challenges": {
       "mandanten_qualitaet": {
@@ -471,7 +475,8 @@
     "hero": {
       "headline": "Geschmack beginnt beim ersten Klick",
       "title_suffix": "Premium Webdesign",
-      "subheadline": "Verwandeln Sie Webseiten-Besucher in Gäste Ihrer Gastronomie & Hotellerie. Machen Sie Lust auf Ihren Service."
+      "subheadline": "Verwandeln Sie Webseiten-Besucher in Gäste Ihrer Gastronomie & Hotellerie. Machen Sie Lust auf Ihren Service.",
+      "excerpt": "Immersive Websites für Restaurants und Hotels mit Direktbuchungen und digitaler Speisekarte."
     },
     "challenges": {
       "hohe_provisionen": {
@@ -573,7 +578,8 @@
       "headline": "Vom Besucher",
       "title_suffix": "zum Stammkunden",
       "description": "Skalierbare Online-Shops und Retail-Erlebnisse, die verkaufen und Ihre Marke stärken.",
-      "subheadline": "Wir entwickeln herausragende Online-Shops und Retail-Plattformen, die sowohl die Laufkundschaft als auch die Online-Verkäufe steigern. Durch die Integration Ihrer physischen Point-of-Sale-Systeme mit Ihrer digitalen Verkaufsfläche schaffen wir ein nahtloses Omnichannel-Erlebnis. Unsere maßgeschneiderten E-Commerce-Lösungen befähigen Ihre Marke, ein größeres Publikum zu erreichen und den Umsatz in einem wettbewerbsintensiven Markt signifikant zu steigern."
+      "subheadline": "Wir entwickeln herausragende Online-Shops und Retail-Plattformen, die sowohl die Laufkundschaft als auch die Online-Verkäufe steigern. Durch die Integration Ihrer physischen Point-of-Sale-Systeme mit Ihrer digitalen Verkaufsfläche schaffen wir ein nahtloses Omnichannel-Erlebnis. Unsere maßgeschneiderten E-Commerce-Lösungen befähigen Ihre Marke, ein größeres Publikum zu erreichen und den Umsatz in einem wettbewerbsintensiven Markt signifikant zu steigern.",
+      "excerpt": "Performante E-Commerce-Plattformen und Omnichannel-Lösungen für nachhaltiges Umsatzwachstum im Handel."
     },
     "challenges": {
       "warenkorb_abbrueche": {
@@ -675,7 +681,8 @@
       "headline": "Digitale Expertise für Unternehmensberatungen",
       "title_suffix": "sichtbar machen",
       "description": "Gewinnen Sie High-Ticket Kunden durch eine Positionierung als Thought Leader.",
-      "subheadline": "subheadline"
+      "subheadline": "subheadline",
+      "excerpt": "High-End-Webpräsenzen für Berater, die Expertise sichtbar machen und Premium-Mandate generieren."
     },
     "challenges": {
       "erklaerungsbedarf": {
@@ -758,7 +765,8 @@
     "title": "Startups & Technologieunternehmen",
     "hero": {
       "headline": "Scale fast, look global",
-      "subheadline": "Webseiten für Tech-Companies, die Investoren und Early Adopters überzeugen."
+      "subheadline": "Webseiten für Tech-Companies, die Investoren und Early Adopters überzeugen.",
+      "excerpt": "Skalierbare Web-Applikationen und Corporate Sites, die Startups einen globalen und professionellen Auftritt sichern."
     },
     "challenges": {
       "time_to_market": {
@@ -853,7 +861,8 @@
     "title": "Automobil & KFZ",
     "hero": {
       "headline": "Mehr Termine, volle Werkstatt",
-      "subheadline": "Mehr Termine, volle Werkstatt. Wir digitalisieren Autohäuser und Werkstätten für planbare Kundenanfragen und Service-Buchungen."
+      "subheadline": "Mehr Termine, volle Werkstatt. Wir digitalisieren Autohäuser und Werkstätten für planbare Kundenanfragen und Service-Buchungen.",
+      "excerpt": "Digitale Vertriebs- und Servicekanäle für Autohäuser und Werkstätten zur Steigerung von Probefahrten und Werkstattterminen."
     },
     "challenges": {
       "c1": {

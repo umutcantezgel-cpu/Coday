@@ -47,8 +47,12 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   return (
     <>
       <SeoHead
-        title="Coday | presse"
-        description="Willkommen bei Coday. Entdecken Sie unsere Leistungen."
+        title={_locale === 'en' ? 'Coday | Press' : 'Coday | Presse'}
+        description={
+          _locale === 'en'
+            ? 'Press coverage and media about Coday web design.'
+            : 'Presseberichte und Medien über Coday Webdesign.'
+        }
         pageType="default"
       />
       <ClientComponent />

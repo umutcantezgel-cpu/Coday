@@ -181,6 +181,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     sitemapEntry('/standorte/giessen', { changeFrequency: 'monthly', priority: 0.8 }),
     sitemapEntry('/standorte/hessen', { changeFrequency: 'monthly', priority: 0.8 }),
 
+    // === Landingpages ===
+    sitemapEntry('/landingpages/dillenburg', { changeFrequency: 'monthly', priority: 0.7 }),
+    sitemapEntry('/landingpages/giessen', { changeFrequency: 'monthly', priority: 0.7 }),
+    sitemapEntry('/landingpages/herborn', { changeFrequency: 'monthly', priority: 0.7 }),
+    sitemapEntry('/landingpages/marburg', { changeFrequency: 'monthly', priority: 0.7 }),
+    sitemapEntry('/landingpages/nextjsmigration', { changeFrequency: 'monthly', priority: 0.7 }),
+    sitemapEntry('/landingpages/weilburg', { changeFrequency: 'monthly', priority: 0.7 }),
+
     // === Branchen (Industry pages) ===
     sitemapEntry('/branchen', { changeFrequency: 'monthly', priority: 0.7 }),
 

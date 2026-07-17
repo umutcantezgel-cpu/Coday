@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useLocale } from 'next-intl';
 import { SeoHead } from '@/shared/ui/SeoHead';
 import { m } from 'motion/react';
 import { Breadcrumbs } from '@/shared/ui/Breadcrumbs';
@@ -14,14 +15,24 @@ import {
 } from '@phosphor-icons/react/dist/ssr';
 
 const Garantie: React.FC = () => {
+  const locale = useLocale();
+  const isEn = locale === 'en';
+
   return (
     <div className="min-h-dvh bg-background-light">
       <SeoHead
-        title="Unsere Garantien | Coday"
-        description="Risikofrei durchstarten: Entdecken Sie unsere Lighthouse-90-Garantie, No-Vendor-Lock-Garantie und Festpreis-Garantie."
+        title={isEn ? 'Our Guarantees | Coday' : 'Unsere Garantien | Coday'}
+        description={
+          isEn
+            ? 'Start risk-free: Discover our Lighthouse 90 Guarantee, No Vendor Lock-In Guarantee, and Fixed Price Guarantee.'
+            : 'Risikofrei durchstarten: Entdecken Sie unsere Lighthouse-90-Garantie, No-Vendor-Lock-Garantie und Festpreis-Garantie.'
+        }
         breadcrumbs={[
           { name: 'Home', url: 'https://www.codayweb.de' },
-          { name: 'Garantie', url: 'https://www.codayweb.de/garantie' },
+          {
+            name: isEn ? 'Guarantees' : 'Garantie',
+            url: 'https://www.codayweb.de/garantie',
+          },
         ]}
       />
 
@@ -36,7 +47,9 @@ const Garantie: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-sapphire font-bold tracking-wider uppercase text-sm mb-4 block"
           >
-            Sicherheit für Ihr Business: Unsere Garantien
+            {isEn
+              ? 'Security for Your Business: Our Guarantees'
+              : 'Sicherheit für Ihr Business: Unsere Garantien'}
           </m.h1>
           <m.h2
             initial={{ opacity: 0, y: 20 }}
@@ -44,7 +57,7 @@ const Garantie: React.FC = () => {
             transition={{ delay: 0.1 }}
             className="font-display font-black text-4xl sm:text-5xl md:text-6xl text-gray-900 mb-6 break-words hyphens-auto"
           >
-            Agentur Garantien
+            {isEn ? 'Agency Guarantees' : 'Agentur Garantien'}
           </m.h2>
           <m.p
             initial={{ opacity: 0, y: 15 }}
@@ -52,9 +65,9 @@ const Garantie: React.FC = () => {
             transition={{ delay: 0.2 }}
             className="text-xl text-gray-600 max-w-2xl mx-auto"
           >
-            Wir bieten echte Sicherheit für Ihr Business durch unsere Garantien. Wir nehmen Ihnen
-            das Risiko. Mit unseren drei zentralen Coday-Garantien sichern Sie sich maximale
-            Leistung, Transparenz und Unabhängigkeit.
+            {isEn
+              ? 'We offer real security for your business through our guarantees. We take the risk off your shoulders. With our core Coday guarantees, you secure maximum performance, transparency, and independence.'
+              : 'Wir bieten echte Sicherheit für Ihr Business durch unsere Garantien. Wir nehmen Ihnen das Risiko. Mit unseren drei zentralen Coday-Garantien sichern Sie sich maximale Leistung, Transparenz und Unabhängigkeit.'}
           </m.p>
         </div>
 
@@ -79,13 +92,12 @@ const Garantie: React.FC = () => {
                 aria-hidden="true"
               />
               <h3 className="text-2xl font-bold text-gray-900 mb-4 break-words hyphens-auto">
-                Lighthouse-90-Garantie
+                {isEn ? 'Lighthouse 90 Guarantee' : 'Lighthouse-90-Garantie'}
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Wir garantieren, dass Ihre neue Website zum Go-Live in allen vier Google
-                Lighthouse-Kategorien (Performance, Accessibility, Best Practices, SEO) einen Score
-                von 90+ erreicht. Sollten wir dies verfehlen, arbeiten wir einen Monat lang
-                kostenlos an der Nachbesserung, bis das Ziel erreicht ist.
+                {isEn
+                  ? 'We guarantee that your new website will achieve a score of 90+ in all four Google Lighthouse categories (Performance, Accessibility, Best Practices, SEO) at launch. If we fall short, we will work on improvements free of charge for one month until the goal is reached.'
+                  : 'Wir garantieren, dass Ihre neue Website zum Go-Live in allen vier Google Lighthouse-Kategorien (Performance, Accessibility, Best Practices, SEO) einen Score von 90+ erreicht. Sollten wir dies verfehlen, arbeiten wir einen Monat lang kostenlos an der Nachbesserung, bis das Ziel erreicht ist.'}
               </p>
             </m.div>
 
@@ -109,13 +121,12 @@ const Garantie: React.FC = () => {
                 aria-hidden="true"
               />
               <h3 className="text-2xl font-bold text-gray-900 mb-4 break-words hyphens-auto">
-                No-Vendor-Lock-Garantie
+                {isEn ? 'No Vendor Lock-In Guarantee' : 'No-Vendor-Lock-Garantie'}
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Ihre Daten gehören Ihnen. Alle Assets, der Quellcode und sämtliche Zugangsdaten
-                werden nach Abschluss der Zahlung vollständig an Sie übergeben. Wir binden Sie nicht
-                durch unfaire Knebelverträge an uns – unsere Kunden bleiben, weil sie zufrieden
-                sind, nicht weil sie müssen.
+                {isEn
+                  ? 'Your data belongs to you. All assets, source code, and credentials are fully handed over to you upon completion of payment. We do not bind you with unfair contracts — our clients stay because they are satisfied, not because they have to.'
+                  : 'Ihre Daten gehören Ihnen. Alle Assets, der Quellcode und sämtliche Zugangsdaten werden nach Abschluss der Zahlung vollständig an Sie übergeben. Wir binden Sie nicht durch unfaire Knebelverträge an uns – unsere Kunden bleiben, weil sie zufrieden sind, nicht weil sie müssen.'}
               </p>
             </m.div>
 
@@ -139,13 +150,12 @@ const Garantie: React.FC = () => {
                 aria-hidden="true"
               />
               <h3 className="text-2xl font-bold text-gray-900 mb-4 break-words hyphens-auto">
-                Festpreis-Garantie
+                {isEn ? 'Fixed Price Guarantee' : 'Festpreis-Garantie'}
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Was wir im Statement of Work (SOW) vereinbaren, ist bindend. Es gibt keine
-                versteckten Kosten, keine überraschenden Stundenabrechnungen und keine
-                Nachforderungen für im SOW definierte Leistungen. Sie haben volle
-                Budget-Planungssicherheit.
+                {isEn
+                  ? 'What we agree upon in the Statement of Work (SOW) is binding. There are no hidden costs, no surprise hourly invoices, and no additional charges for services defined in the SOW. You have full budget planning certainty.'
+                  : 'Was wir im Statement of Work (SOW) vereinbaren, ist bindend. Es gibt keine versteckten Kosten, keine überraschenden Stundenabrechnungen und keine Nachforderungen für im SOW definierte Leistungen. Sie haben volle Budget-Planungssicherheit.'}
               </p>
             </m.div>
 
@@ -169,12 +179,12 @@ const Garantie: React.FC = () => {
                 aria-hidden="true"
               />
               <h3 className="text-2xl font-bold text-gray-900 mb-4 break-words hyphens-auto">
-                90-Tage-Sichtbarkeits-Garantie
+                {isEn ? '90-Day Visibility Guarantee' : '90-Tage-Sichtbarkeits-Garantie'}
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Für vereinbarte lokale Suchbegriffe garantieren wir innerhalb von 90 Tagen nach
-                Launch eine Platzierung auf Google Seite 1. Sollte dieses Ziel nicht erreicht
-                werden, optimieren wir Ihre Seite weitere 90 Tage lang ohne zusätzliche Kosten.
+                {isEn
+                  ? 'For agreed-upon local search terms, we guarantee a placement on Google page 1 within 90 days of launch. If this goal is not met, we will continue optimizing your site for an additional 90 days at no extra cost.'
+                  : 'Für vereinbarte lokale Suchbegriffe garantieren wir innerhalb von 90 Tagen nach Launch eine Platzierung auf Google Seite 1. Sollte dieses Ziel nicht erreicht werden, optimieren wir Ihre Seite weitere 90 Tage lang ohne zusätzliche Kosten.'}
               </p>
             </m.div>
           </div>
@@ -191,13 +201,12 @@ const Garantie: React.FC = () => {
               aria-hidden="true"
             />
             <h3 className="text-2xl font-bold text-gray-900 mb-4 break-words hyphens-auto">
-              Unser Umgang mit Fehlern
+              {isEn ? 'How We Handle Mistakes' : 'Unser Umgang mit Fehlern'}
             </h3>
             <p className="text-gray-700 leading-relaxed">
-              Sollte es trotz unserer hohen Qualitätsstandards jemals zu einem Garantiefall kommen,
-              gehen wir offen damit um. Wir dokumentieren den Fehler transparent in unserem Blog –
-              denn durch ehrliche Fehlerkultur und kontinuierliche Verbesserung wächst echtes
-              Vertrauen.
+              {isEn
+                ? 'Should a guarantee case ever occur despite our high quality standards, we handle it openly. We document the issue transparently on our blog — because genuine trust grows through an honest culture of learning and continuous improvement.'
+                : 'Sollte es trotz unserer hohen Qualitätsstandards jemals zu einem Garantiefall kommen, gehen wir offen damit um. Wir dokumentieren den Fehler transparent in unserem Blog – denn durch ehrliche Fehlerkultur und kontinuierliche Verbesserung wächst echtes Vertrauen.'}
             </p>
           </m.div>
         </div>

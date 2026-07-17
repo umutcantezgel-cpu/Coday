@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useLocale } from 'next-intl';
 import GradientText from '@/shared/ui/GradientText';
 import { TeamSection } from '@/widgets/about/TeamSection';
 import { TrustSection } from '@/widgets/about/TrustSection';
@@ -23,62 +24,7 @@ import { m } from 'motion/react';
 import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
 import { ScrollReveal } from '@/shared/ui/animations/ScrollReveal';
 
-/* ═══ DATA ═══ */
-const values = [
-  {
-    icon: HandFist,
-    title: 'Maßgeschneiderte Elite-Architektur',
-    description:
-      'Wir liefern High-Performance Next.js Architektur statt langsamer Page-Builder. Sub-1-Sekunde Ladezeiten, extreme Skalierbarkeit und digitale Dominanz durch fehlerfreien Enterprise-Code.',
-  },
-  {
-    icon: Lightning,
-    title: 'Performance-Obsession',
-    description:
-      'Wir optimieren bis zur letzten Millisekunde. Core Web Vitals im grünen Bereich sind kein Bonus — sie sind unser Mindeststandard.',
-  },
-  {
-    icon: Eye,
-    title: 'Radikale Transparenz',
-    description:
-      'Keine versteckten Kosten, keine leeren Versprechen. Sie sehen jeden Schritt, jede Entscheidung, jedes Ergebnis in Echtzeit.',
-  },
-  {
-    icon: Handshake,
-    title: 'Echte Partnerschaft',
-    description:
-      'Wir sind nicht Ihr Dienstleister — wir sind Ihr digitaler Mitgründer. Ihr Erfolg ist unser Erfolg.',
-  },
-];
-
-const processSteps = [
-  {
-    icon: MagnifyingGlass,
-    title: 'Analyse',
-    description: 'Tiefgreifende Markt-, Wettbewerbs- und Zielgruppenanalyse als Fundament.',
-  },
-  {
-    icon: PencilLine,
-    title: 'Konzept',
-    description: 'Strategische Informationsarchitektur und Wireframing mit Conversion-Fokus.',
-  },
-  {
-    icon: PaintBrush,
-    title: 'Design',
-    description:
-      'Kompromisslose Ästhetik und radikale Reduktion für ein Leica/Apple-Level Interface.',
-  },
-  {
-    icon: Code,
-    title: 'Entwicklung',
-    description: 'High-End Engineering in React & Next.js für blitzschnelle Ladezeiten.',
-  },
-  {
-    icon: Rocket,
-    title: 'Launch & Wachstum',
-    description: 'Go-Live, laufende Optimierung und messbares Wachstum.',
-  },
-];
+/* ═══ DATA (moved inside component for locale awareness) ═══ */
 
 /* ═══ ANIMATION PRESETS ═══ */
 const EASE_OUT: [number, number, number, number] = [0.21, 0.47, 0.32, 0.98];
@@ -96,6 +42,78 @@ const stagger = (delay: number) => ({
 });
 
 export const AboutClient: React.FC = () => {
+  const locale = useLocale();
+  const isEn = locale === 'en';
+
+  const values = [
+    {
+      icon: HandFist,
+      title: isEn ? 'Custom-Built Elite Architecture' : 'Maßgeschneiderte Elite-Architektur',
+      description: isEn
+        ? 'We deliver high-performance Next.js architecture instead of sluggish page builders. Sub-1-second load times, extreme scalability, and digital dominance through flawless enterprise-grade code.'
+        : 'Wir liefern High-Performance Next.js Architektur statt langsamer Page-Builder. Sub-1-Sekunde Ladezeiten, extreme Skalierbarkeit und digitale Dominanz durch fehlerfreien Enterprise-Code.',
+    },
+    {
+      icon: Lightning,
+      title: isEn ? 'Performance Obsession' : 'Performance-Obsession',
+      description: isEn
+        ? 'We optimise down to the last millisecond. Green Core Web Vitals are not a bonus — they are our baseline.'
+        : 'Wir optimieren bis zur letzten Millisekunde. Core Web Vitals im grünen Bereich sind kein Bonus — sie sind unser Mindeststandard.',
+    },
+    {
+      icon: Eye,
+      title: isEn ? 'Radical Transparency' : 'Radikale Transparenz',
+      description: isEn
+        ? 'No hidden costs, no empty promises. You see every step, every decision, every result in real time.'
+        : 'Keine versteckten Kosten, keine leeren Versprechen. Sie sehen jeden Schritt, jede Entscheidung, jedes Ergebnis in Echtzeit.',
+    },
+    {
+      icon: Handshake,
+      title: isEn ? 'True Partnership' : 'Echte Partnerschaft',
+      description: isEn
+        ? 'We are not just your service provider — we are your digital co-founder. Your success is our success.'
+        : 'Wir sind nicht Ihr Dienstleister — wir sind Ihr digitaler Mitgründer. Ihr Erfolg ist unser Erfolg.',
+    },
+  ];
+
+  const processSteps = [
+    {
+      icon: MagnifyingGlass,
+      title: isEn ? 'Analysis' : 'Analyse',
+      description: isEn
+        ? 'In-depth market, competitor, and audience analysis as the foundation.'
+        : 'Tiefgreifende Markt-, Wettbewerbs- und Zielgruppenanalyse als Fundament.',
+    },
+    {
+      icon: PencilLine,
+      title: isEn ? 'Concept' : 'Konzept',
+      description: isEn
+        ? 'Strategic information architecture and wireframing with a conversion focus.'
+        : 'Strategische Informationsarchitektur und Wireframing mit Conversion-Fokus.',
+    },
+    {
+      icon: PaintBrush,
+      title: isEn ? 'Design' : 'Design',
+      description: isEn
+        ? 'Uncompromising aesthetics and radical reduction for a Leica/Apple-level interface.'
+        : 'Kompromisslose Ästhetik und radikale Reduktion für ein Leica/Apple-Level Interface.',
+    },
+    {
+      icon: Code,
+      title: isEn ? 'Development' : 'Entwicklung',
+      description: isEn
+        ? 'High-end engineering in React & Next.js for lightning-fast load times.'
+        : 'High-End Engineering in React & Next.js für blitzschnelle Ladezeiten.',
+    },
+    {
+      icon: Rocket,
+      title: isEn ? 'Launch & Growth' : 'Launch & Wachstum',
+      description: isEn
+        ? 'Go-live, ongoing optimisation, and measurable growth.'
+        : 'Go-Live, laufende Optimierung und messbares Wachstum.',
+    },
+  ];
+
   return (
     <div className="bg-secondary min-h-dvh">
       {/* ═══ HERO ═══ */}
@@ -116,21 +134,21 @@ export const AboutClient: React.FC = () => {
             className="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-6 block"
             {...stagger(0.1)}
           >
-            Unsere Identität
+            {isEn ? 'Our Identity' : 'Unsere Identität'}
           </m.span>
 
           <m.h1
             className="font-display font-black text-4xl sm:text-6xl lg:text-7xl text-white mb-8 tracking-tighter leading-[1.1] max-w-5xl mx-auto"
             {...stagger(0.15)}
           >
-            Ihr Webdesigner in Wetzlar.{' '}
+            {isEn ? 'Your Web Designer in Wetzlar.' : 'Ihr Webdesigner in Wetzlar.'}{' '}
             <GradientText
               colors={['#14b8a6', '#22d3ee', '#14b8a6']}
               animationSpeed={5}
               showBorder={false}
               className="inline-block"
             >
-              Persönlich & Nah.
+              {isEn ? 'Personal & Close.' : 'Persönlich & Nah.'}
             </GradientText>
           </m.h1>
 
@@ -138,10 +156,9 @@ export const AboutClient: React.FC = () => {
             className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed mb-12"
             {...stagger(0.25)}
           >
-            Über Ihre Webdesign Agentur in Wetzlar, Hessen: Als Ihr Webdesigner in Wetzlar sind wir
-            persönlich & nah für Sie da. Coday ist ein High-End Digital-Studio aus Wetzlar, das
-            kompromisslose Web-Architekturen entwickelt. Jedes Projekt ist ein Unikat, entwickelt
-            für Marken, die sich von der Masse abheben wollen.
+            {isEn
+              ? 'About your web design agency in Wetzlar, Hessen: As your web designer in Wetzlar, we are personally there for you. Coday is a high-end digital studio from Wetzlar that builds uncompromising web architectures. Every project is one of a kind, crafted for brands that want to stand out from the crowd.'
+              : 'Über Ihre Webdesign Agentur in Wetzlar, Hessen: Als Ihr Webdesigner in Wetzlar sind wir persönlich & nah für Sie da. Coday ist ein High-End Digital-Studio aus Wetzlar, das kompromisslose Web-Architekturen entwickelt. Jedes Projekt ist ein Unikat, entwickelt für Marken, die sich von der Masse abheben wollen.'}
           </m.p>
 
           <m.div className="flex justify-center gap-4" {...stagger(0.35)}>
@@ -149,7 +166,7 @@ export const AboutClient: React.FC = () => {
               href="/contact"
               className="group inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-full font-medium hover:bg-primary/90 transition motion-reduce:duration-[0.01ms] hover:-translate-y-0.5 shadow-lg hover:shadow-glow focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
-              Projekt anfragen
+              {isEn ? 'Request a Project' : 'Projekt anfragen'}
               <ArrowRight
                 weight="bold"
                 className="transition-transform motion-reduce:duration-[0.01ms] group-hover:translate-x-1"
@@ -178,10 +195,21 @@ export const AboutClient: React.FC = () => {
 
           <m.blockquote {...stagger(0.1)}>
             <p className="text-2xl md:text-3xl lg:text-4xl font-display font-light text-white/90 leading-snug tracking-tight">
-              Wir glauben daran, dass das Internet ein Ort der{' '}
-              <span className="text-primary font-semibold">Schönheit</span> und{' '}
-              <span className="text-primary font-semibold">Funktionalität</span> sein sollte. Unsere
-              Mission ist es, den Status Quo herauszufordern.
+              {isEn ? (
+                <>
+                  We believe the internet should be a place of{' '}
+                  <span className="text-primary font-semibold">beauty</span> and{' '}
+                  <span className="text-primary font-semibold">functionality</span>. Our mission is
+                  to challenge the status quo.
+                </>
+              ) : (
+                <>
+                  Wir glauben daran, dass das Internet ein Ort der{' '}
+                  <span className="text-primary font-semibold">Schönheit</span> und{' '}
+                  <span className="text-primary font-semibold">Funktionalität</span> sein sollte.
+                  Unsere Mission ist es, den Status Quo herauszufordern.
+                </>
+              )}
             </p>
           </m.blockquote>
 
@@ -205,13 +233,15 @@ export const AboutClient: React.FC = () => {
               className="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4 block"
               {...stagger(0)}
             >
-              Unsere Werte
+              {isEn ? 'Our Values' : 'Unsere Werte'}
             </m.span>
             <m.h2
               className="text-3xl md:text-5xl font-display font-bold text-white tracking-tight"
               {...stagger(0.1)}
             >
-              Warum Coday die richtige Wahl für Ihr lokales Unternehmen ist
+              {isEn
+                ? 'Why Coday Is the Right Choice for Your Local Business'
+                : 'Warum Coday die richtige Wahl für Ihr lokales Unternehmen ist'}
             </m.h2>
           </div>
 
@@ -253,13 +283,15 @@ export const AboutClient: React.FC = () => {
               className="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4 block"
               {...stagger(0)}
             >
-              Unser Prozess
+              {isEn ? 'Our Process' : 'Unser Prozess'}
             </m.span>
             <m.h2
               className="text-3xl md:text-5xl font-display font-bold text-white tracking-tight"
               {...stagger(0.1)}
             >
-              So entsteht Ihre neue Firmenwebseite
+              {isEn
+                ? 'How Your New Business Website Is Built'
+                : 'So entsteht Ihre neue Firmenwebseite'}
             </m.h2>
           </div>
 
@@ -313,29 +345,33 @@ export const AboutClient: React.FC = () => {
       <ScrollReveal index={1}>
         <section className="py-24 bg-secondary border-t border-white/5">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-2xl font-display font-bold text-white mb-8">Unternehmensdaten</h2>
+            <h2 className="text-2xl font-display font-bold text-white mb-8">
+              {isEn ? 'Company Details' : 'Unternehmensdaten'}
+            </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-gray-400">
               <div>
                 <span className="block text-sm uppercase tracking-wider text-primary mb-2">
-                  Firmensitz
+                  {isEn ? 'Headquarters' : 'Firmensitz'}
                 </span>
                 <strong className="text-white text-lg font-medium">Wetzlar</strong>
               </div>
               <div>
                 <span className="block text-sm uppercase tracking-wider text-primary mb-2">
-                  Einsatzgebiet
+                  {isEn ? 'Service Area' : 'Einsatzgebiet'}
                 </span>
-                <strong className="text-white text-lg font-medium">Mittelhessen</strong>
+                <strong className="text-white text-lg font-medium">
+                  {isEn ? 'Central Hesse' : 'Mittelhessen'}
+                </strong>
               </div>
               <div>
                 <span className="block text-sm uppercase tracking-wider text-primary mb-2">
-                  Gründungsjahr
+                  {isEn ? 'Founded' : 'Gründungsjahr'}
                 </span>
                 <strong className="text-white text-lg font-medium">2026</strong>
               </div>
               <div>
                 <span className="block text-sm uppercase tracking-wider text-primary mb-2">
-                  Inhaber
+                  {isEn ? 'Owner' : 'Inhaber'}
                 </span>
                 <strong className="text-white text-lg font-medium">Umutcan Emre Tezgel</strong>
               </div>

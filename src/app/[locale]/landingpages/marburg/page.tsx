@@ -39,20 +39,17 @@ export default async function MarburgLandingPage(props: { params: Promise<{ loca
 
   let content = null;
   try {
-    const filePath = path.join(
-      process.cwd(),
-      'src',
-      'features',
-      'local-seo',
-      'model',
-      'content',
-      'marburg.json'
-    );
+    const contentDir = path.join(process.cwd(), 'src', 'features', 'local-seo', 'model', 'content');
+    const jsonFile = params.locale === 'en' ? 'marburg.en.json' : 'marburg.json';
+    let filePath = path.join(contentDir, jsonFile);
+    if (!fs.existsSync(filePath)) {
+      filePath = path.join(contentDir, 'marburg.json');
+    }
     if (fs.existsSync(filePath)) {
       const fileContents = fs.readFileSync(filePath, 'utf8');
       content = JSON.parse(fileContents);
     }
-  } catch (e) {
+  } catch {
     // Content is being generated
   }
 

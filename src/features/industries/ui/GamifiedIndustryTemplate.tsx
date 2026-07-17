@@ -29,6 +29,15 @@ export const GamifiedIndustryTemplate: React.FC<{ content: any; cityData?: any }
   const locale = useLocale();
   const isEn = locale === 'en';
 
+  // Locale-aware content resolution: prefer _en suffixed keys when locale is English
+  const hero = isEn && content.hero_en ? content.hero_en : content.hero;
+  const meta = isEn && content.meta_en ? content.meta_en : content.meta;
+  const bentoGrid = isEn && content.bentoGrid_en ? content.bentoGrid_en : content.bentoGrid;
+  const processSteps =
+    isEn && content.processSteps_en ? content.processSteps_en : content.processSteps;
+  const faq = isEn && content.faq_en ? content.faq_en : content.faq;
+  const displayName = isEn && content.displayName_en ? content.displayName_en : content.displayName;
+
   // Fallback for content that hasn't been 10x-ed yet by the agent
   if (!content.bentoGrid) {
     return (
@@ -48,11 +57,7 @@ export const GamifiedIndustryTemplate: React.FC<{ content: any; cityData?: any }
 
   return (
     <div className="bg-background-light min-h-dvh overflow-x-hidden">
-      <SeoHead
-        title={content.meta.title}
-        description={content.meta.description}
-        pageType="service"
-      />
+      <SeoHead title={meta.title} description={meta.description} pageType="service" />
       {cityData && <LocalSchemaBuilder city={cityData} />}
 
       {/* 1. GAMIFIED HERO */}
@@ -66,10 +71,10 @@ export const GamifiedIndustryTemplate: React.FC<{ content: any; cityData?: any }
               className="inline-flex items-center px-4 py-2 rounded-full bg-secondary-50 text-primary-600 font-bold uppercase tracking-wider text-xs mb-6 border border-secondary-100 shadow-sm"
             >
               <div className="w-2 h-2 rounded-full bg-primary-500 mr-2 animate-pulse" />
-              {content.hero.headline}
+              {hero.headline}
             </m.span>
             <h1 className="font-display font-black text-5xl sm:text-7xl text-secondary-900 mb-6 tracking-tight leading-[1.1]">
-              <BlurText text={content.hero.subheadline} delay={30} animateBy="words" />
+              <BlurText text={hero.subheadline} delay={30} animateBy="words" />
             </h1>
             <m.p
               initial={{ opacity: 0 }}
@@ -77,7 +82,7 @@ export const GamifiedIndustryTemplate: React.FC<{ content: any; cityData?: any }
               transition={{ delay: 0.5 }}
               className="text-xl text-secondary-600 font-medium leading-relaxed mb-10 max-w-xl"
             >
-              {content.hero.description}
+              {hero.description}
             </m.p>
             <m.div
               initial={{ opacity: 0, y: 20 }}
@@ -91,7 +96,7 @@ export const GamifiedIndustryTemplate: React.FC<{ content: any; cityData?: any }
                   size="lg"
                   className="w-full sm:w-auto shadow-xl shadow-primary-500/20 hover:scale-105 transition-transform duration-300"
                 >
-                  Unverbindliche Analyse
+                  {isEn ? 'Free Analysis' : 'Unverbindliche Analyse'}
                 </Button>
               </Link>
             </m.div>
@@ -100,7 +105,7 @@ export const GamifiedIndustryTemplate: React.FC<{ content: any; cityData?: any }
           <div className="relative">
             {/* Gamified Floating Stats */}
             <div className="grid grid-cols-2 gap-4">
-              {content.hero.metrics?.map((metric: any, idx: number) => (
+              {hero.metrics?.map((metric: any, idx: number) => (
                 <m.div
                   key={idx}
                   initial={{ opacity: 0, scale: 0.8 }}
@@ -128,14 +133,18 @@ export const GamifiedIndustryTemplate: React.FC<{ content: any; cityData?: any }
       <section className="py-24 px-4 bg-white relative z-20 -mt-10">
         <div className="max-w-6xl mx-auto">
           <GamifiedRoiCalculator
-            industryName={content.displayName || content.hero.headline}
+            industryName={displayName || hero.headline}
             title={
               content.roi_title ||
-              `Wie viel Umsatz lässt Ihr ${content.displayName || content.hero.headline} liegen?`
+              (isEn
+                ? `How much revenue is your ${displayName || hero.headline} leaving on the table?`
+                : `Wie viel Umsatz lässt Ihr ${displayName || hero.headline} liegen?`)
             }
             description={
               content.roi_desc ||
-              'Schieben Sie den Regler auf Ihren aktuellen Jahresumsatz und entdecken Sie das ungenutzte Potenzial, das Ihnen durch veraltete Web-Technologien und fehlende Sichtbarkeit entgeht.'
+              (isEn
+                ? 'Slide to your current annual revenue and discover the untapped potential you are missing due to outdated web technologies and lack of visibility.'
+                : 'Schieben Sie den Regler auf Ihren aktuellen Jahresumsatz und entdecken Sie das ungenutzte Potenzial, das Ihnen durch veraltete Web-Technologien und fehlende Sichtbarkeit entgeht.')
             }
           />
         </div>
@@ -149,13 +158,13 @@ export const GamifiedIndustryTemplate: React.FC<{ content: any; cityData?: any }
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 max-w-3xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-display font-black text-secondary-900 mb-6">
-              {content.bentoGrid.title}
+              {bentoGrid.title}
             </h2>
-            <p className="text-xl text-secondary-600 font-medium">{content.bentoGrid.subtitle}</p>
+            <p className="text-xl text-secondary-600 font-medium">{bentoGrid.subtitle}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[280px]">
-            {content.bentoGrid.cards?.map((card: any, idx: number) => {
+            {bentoGrid.cards?.map((card: any, idx: number) => {
               const isTall = card.size === 'tall';
               const isLarge = card.size === 'large';
               const Icon = getIconByName(card.icon);
@@ -193,14 +202,15 @@ export const GamifiedIndustryTemplate: React.FC<{ content: any; cityData?: any }
           <div className="grid lg:grid-cols-2 gap-20">
             <div className="lg:sticky lg:top-32 h-fit">
               <span className="text-primary-600 font-bold uppercase tracking-wider text-sm mb-4 block">
-                Der Ablauf
+                {isEn ? 'The Process' : 'Der Ablauf'}
               </span>
               <h2 className="text-4xl md:text-5xl font-display font-black text-secondary-900 mb-6">
-                Wie wir Ihre Agentur skalieren
+                {isEn ? 'How We Scale Your Business' : 'Wie wir Ihre Agentur skalieren'}
               </h2>
               <p className="text-xl text-secondary-600 font-medium mb-10">
-                Ein transparenter, gamifizierter Prozess von der ersten Analyse bis zur lokalen
-                Marktführerschaft.
+                {isEn
+                  ? 'A transparent, gamified process from first analysis to local market leadership.'
+                  : 'Ein transparenter, gamifizierter Prozess von der ersten Analyse bis zur lokalen Marktführerschaft.'}
               </p>
 
               <Link href="/contact">
@@ -209,12 +219,12 @@ export const GamifiedIndustryTemplate: React.FC<{ content: any; cityData?: any }
                   size="lg"
                   className="border-secondary-200 hover:border-primary-500 hover:text-primary-600 transition-colors"
                 >
-                  Projekt anfragen
+                  {isEn ? 'Request Project' : 'Projekt anfragen'}
                 </Button>
               </Link>
             </div>
             <div className="space-y-8">
-              {content.processSteps?.map((step: any, idx: number) => (
+              {processSteps?.map((step: any, idx: number) => (
                 <m.div
                   key={idx}
                   initial={{ opacity: 0, x: 20 }}
@@ -240,13 +250,17 @@ export const GamifiedIndustryTemplate: React.FC<{ content: any; cityData?: any }
         <div className="absolute top-0 right-0 w-96 h-96 bg-primary-600 rounded-full blur-[150px] opacity-20 pointer-events-none" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-display font-black mb-6">Häufige Fragen</h2>
+            <h2 className="text-4xl md:text-5xl font-display font-black mb-6">
+              {isEn ? 'FAQ' : 'Häufige Fragen'}
+            </h2>
             <p className="text-xl text-secondary-400 font-medium">
-              Alles, was Sie über unsere Zusammenarbeit wissen müssen.
+              {isEn
+                ? 'Everything you need to know about working with us.'
+                : 'Alles, was Sie über unsere Zusammenarbeit wissen müssen.'}
             </p>
           </div>
           <div className="space-y-4">
-            {content.faq?.map((item: any, idx: number) => (
+            {faq?.map((item: any, idx: number) => (
               <div
                 key={idx}
                 className="bg-secondary-800/50 border border-secondary-700/50 rounded-2xl overflow-hidden cursor-pointer hover:bg-secondary-800 transition-colors"
@@ -276,12 +290,9 @@ export const GamifiedIndustryTemplate: React.FC<{ content: any; cityData?: any }
           </div>
         </div>
       </section>
-      <SeoLocalExpertiseBlock industryName={content.displayName || content.hero.headline} />
+      <SeoLocalExpertiseBlock industryName={displayName || hero.headline} />
       {/* SEO Injection Block for Word Count and Keywords */}
-      <SeoContentBlock
-        title={`${content.displayName || content.hero.headline} Webdesign`}
-        h1={content.hero.headline}
-      />
+      <SeoContentBlock title={`${displayName || hero.headline} Webdesign`} h1={hero.headline} />
     </div>
   );
 };

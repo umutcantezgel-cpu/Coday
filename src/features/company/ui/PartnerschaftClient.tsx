@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { m } from 'motion/react';
+import { useLocale } from 'next-intl';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { ArrowRight, Users, Handshake, TrendUp, CheckCircle } from '@phosphor-icons/react/dist/ssr';
 import { SeoHead } from '@/shared/ui/SeoHead';
@@ -10,11 +11,18 @@ import { Breadcrumbs } from '@/shared/ui/Breadcrumbs';
 import GradientText from '@/shared/ui/GradientText';
 
 const Partnerschaft: React.FC = () => {
+  const locale = useLocale();
+  const isEn = locale === 'en';
+
   return (
     <div className="min-h-dvh bg-background-light">
       <SeoHead
-        title="Partner & Referral Programm | Coday"
-        description="Werden Sie Coday Partner. Empfehlen Sie uns weiter und sichern Sie sich 10% Provision oder erweitern Sie als Agentur Ihr Portfolio."
+        title={isEn ? 'Partner & Referral Program | Coday' : 'Partner & Referral Programm | Coday'}
+        description={
+          isEn
+            ? 'Become a Coday partner. Recommend us and secure 10% commission or expand your portfolio as an agency.'
+            : 'Werden Sie Coday Partner. Empfehlen Sie uns weiter und sichern Sie sich 10% Provision oder erweitern Sie als Agentur Ihr Portfolio.'
+        }
         breadcrumbs={[
           { name: 'Home', url: 'https://www.codayweb.de' },
           { name: 'Partnerschaft', url: 'https://www.codayweb.de/partnerschaft' },
@@ -47,13 +55,13 @@ const Partnerschaft: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="font-display font-black text-4xl sm:text-5xl md:text-6xl text-gray-900 mb-6"
             >
-              Gemeinsam wachsen. <br />
+              {isEn ? 'Growing Together.' : 'Gemeinsam wachsen.'} <br />
               <GradientText
                 colors={['#1A9A9A', '#D69E2E', '#1A9A9A']}
                 animationSpeed={8}
                 showBorder={false}
               >
-                Erfolge teilen.
+                {isEn ? 'Sharing Success.' : 'Erfolge teilen.'}
               </GradientText>
             </m.h2>
 
@@ -63,8 +71,9 @@ const Partnerschaft: React.FC = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-xl text-gray-600 mb-10"
             >
-              Empfehlen Sie erstklassige Web-Entwicklung an Ihr Netzwerk und profitieren Sie von
-              unserem transparenten Provisionsmodell.
+              {isEn
+                ? 'Recommend first-class web development to your network and benefit from our transparent commission model.'
+                : 'Empfehlen Sie erstklassige Web-Entwicklung an Ihr Netzwerk und profitieren Sie von unserem transparenten Provisionsmodell.'}
             </m.p>
 
             <m.div
@@ -77,7 +86,8 @@ const Partnerschaft: React.FC = () => {
                 href="/contact"
                 className="px-8 py-4 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition motion-reduce:duration-[0.01ms] duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary flex items-center justify-center gap-2"
               >
-                Partner werden <OptimizedIcon icon={ArrowRight} aria-hidden="true" />
+                {isEn ? 'Become a Partner' : 'Partner werden'}{' '}
+                <OptimizedIcon icon={ArrowRight} aria-hidden="true" />
               </NavLink>
             </m.div>
           </div>
@@ -88,7 +98,7 @@ const Partnerschaft: React.FC = () => {
       <section className="py-20 bg-white" aria-labelledby="partner-programs-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 id="partner-programs-heading" className="sr-only">
-            Partnerschafts-Programme
+            {isEn ? 'Partnership Programs' : 'Partnerschafts-Programme'}
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8">
             {/* Referral / Alumni */}
@@ -103,32 +113,46 @@ const Partnerschaft: React.FC = () => {
                 <OptimizedIcon icon={Users} className="text-3xl text-primary" />
               </div>
               <h2 className="font-display font-bold text-3xl text-gray-900 mb-4">
-                Kunden & Alumni
+                {isEn ? 'Clients & Alumni' : 'Kunden & Alumni'}
               </h2>
               <p className="text-gray-600 mb-8 text-lg">
-                Sie sind bereits Coday-Kunde und von unserer Arbeit überzeugt? Empfehlen Sie uns
-                weiter und wir revanchieren uns.
+                {isEn
+                  ? 'Already a Coday client and impressed by our work? Refer us and we will return the favor.'
+                  : 'Sie sind bereits Coday-Kunde und von unserer Arbeit überzeugt? Empfehlen Sie uns weiter und wir revanchieren uns.'}
               </p>
 
               <div className="bg-white rounded-2xl p-6 border border-gray-200 mb-8 shadow-sm">
                 <div className="text-sm text-gray-500 uppercase tracking-wider mb-1 font-semibold">
-                  Ihre Prämie
+                  {isEn ? 'Your Reward' : 'Ihre Prämie'}
                 </div>
                 <div className="font-display font-black text-4xl text-primary">
-                  10% <span className="text-xl text-gray-900 font-normal">Provision</span>
+                  10%{' '}
+                  <span className="text-xl text-gray-900 font-normal">
+                    {isEn ? 'Commission' : 'Provision'}
+                  </span>
                 </div>
                 <div className="text-sm text-gray-500 mt-2">
-                  Auf das erste Projektvolumen des vermittelten Kunden.
+                  {isEn
+                    ? 'On the first project volume of the referred client.'
+                    : 'Auf das erste Projektvolumen des vermittelten Kunden.'}
                 </div>
               </div>
 
               <ul className="space-y-4">
-                {[
-                  'Transparente Auszahlung nach Projektabschluss',
-                  'Einladung in den Coday Inner Circle',
-                  'Quarterly Networking-Events für Alumni',
-                  'Persönliches Onboarding Ihres Kontakts',
-                ].map((item, idx) => (
+                {(isEn
+                  ? [
+                      'Transparent payout after project completion',
+                      'Invitation to the Coday Inner Circle',
+                      'Quarterly networking events for alumni',
+                      'Personal onboarding for your referral',
+                    ]
+                  : [
+                      'Transparente Auszahlung nach Projektabschluss',
+                      'Einladung in den Coday Inner Circle',
+                      'Quarterly Networking-Events für Alumni',
+                      'Persönliches Onboarding Ihres Kontakts',
+                    ]
+                ).map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3">
                     <OptimizedIcon
                       icon={CheckCircle}
@@ -155,32 +179,44 @@ const Partnerschaft: React.FC = () => {
                   <OptimizedIcon icon={Handshake} className="text-3xl text-white" />
                 </div>
                 <h2 className="font-display font-bold text-3xl text-white mb-4">
-                  Agenturen & Freelancer
+                  {isEn ? 'Agencies & Freelancers' : 'Agenturen & Freelancer'}
                 </h2>
                 <p className="text-gray-400 mb-8 text-lg">
-                  Für SEO-, Design- oder Marketing-Agenturen ohne eigenes Dev-Team. Wir setzen Ihre
-                  Visionen technisch makellos um.
+                  {isEn
+                    ? 'For SEO, design, or marketing agencies without their own dev team. We implement your visions with technical precision.'
+                    : 'Für SEO-, Design- oder Marketing-Agenturen ohne eigenes Dev-Team. Wir setzen Ihre Visionen technisch makellos um.'}
                 </p>
 
                 <div className="bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10 mb-8">
                   <div className="text-sm text-gray-400 uppercase tracking-wider mb-1 font-semibold">
-                    Partnerschafts-Modelle
+                    {isEn ? 'Partnership Models' : 'Partnerschafts-Modelle'}
                   </div>
                   <div className="font-display font-black text-3xl text-white mb-2">
-                    Revenue Share <span className="text-accent text-xl">oder</span> White-Label
+                    Revenue Share{' '}
+                    <span className="text-accent text-xl">{isEn ? 'or' : 'oder'}</span> White-Label
                   </div>
                   <div className="text-sm text-gray-400">
-                    15% Provision bei offener Vermittlung oder diskrete Umsetzung unter Ihrer Brand.
+                    {isEn
+                      ? '15% commission for open referrals or discreet delivery under your brand.'
+                      : '15% Provision bei offener Vermittlung oder diskrete Umsetzung unter Ihrer Brand.'}
                   </div>
                 </div>
 
                 <ul className="space-y-4">
-                  {[
-                    'Priorisierte Umsetzung für Partner-Projekte',
-                    'Feste Ansprechpartner & Slack-Connect',
-                    'Zugriff auf High-End Tech-Stack (Next.js, Sanity)',
-                    'Gemeinsames Co-Marketing & Case Studies',
-                  ].map((item, idx) => (
+                  {(isEn
+                    ? [
+                        'Prioritized delivery for partner projects',
+                        'Dedicated contacts & Slack Connect',
+                        'Access to high-end tech stack (Next.js, Sanity)',
+                        'Joint co-marketing & case studies',
+                      ]
+                    : [
+                        'Priorisierte Umsetzung für Partner-Projekte',
+                        'Feste Ansprechpartner & Slack-Connect',
+                        'Zugriff auf High-End Tech-Stack (Next.js, Sanity)',
+                        'Gemeinsames Co-Marketing & Case Studies',
+                      ]
+                  ).map((item, idx) => (
                     <li key={idx} className="flex items-start gap-3">
                       <OptimizedIcon
                         icon={CheckCircle}
@@ -206,16 +242,19 @@ const Partnerschaft: React.FC = () => {
             transition={{ duration: 0.5 }}
           >
             <h2 className="font-display font-bold text-3xl md:text-4xl text-gray-900 mb-6">
-              Bereit für eine Partnerschaft?
+              {isEn ? 'Ready for a Partnership?' : 'Bereit für eine Partnerschaft?'}
             </h2>
             <p className="text-xl text-gray-600 mb-10">
-              Lassen Sie uns in einem kurzen Call herausfinden, wie wir gemeinsam wachsen können.
+              {isEn
+                ? 'Let us find out in a short call how we can grow together.'
+                : 'Lassen Sie uns in einem kurzen Call herausfinden, wie wir gemeinsam wachsen können.'}
             </p>
             <NavLink
               href="/contact"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition motion-reduce:duration-[0.01ms] duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
             >
-              Partner-Gespräch vereinbaren <OptimizedIcon icon={TrendUp} aria-hidden="true" />
+              {isEn ? 'Schedule a Partner Call' : 'Partner-Gespräch vereinbaren'}{' '}
+              <OptimizedIcon icon={TrendUp} aria-hidden="true" />
             </NavLink>
           </m.div>
         </div>

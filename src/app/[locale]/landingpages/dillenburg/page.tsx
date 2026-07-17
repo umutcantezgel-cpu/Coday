@@ -41,20 +41,17 @@ export default async function DillenburgLandingPage(props: {
 
   let content = null;
   try {
-    const filePath = path.join(
-      process.cwd(),
-      'src',
-      'features',
-      'local-seo',
-      'model',
-      'content',
-      'dillenburg.json'
-    );
+    const contentDir = path.join(process.cwd(), 'src', 'features', 'local-seo', 'model', 'content');
+    const jsonFile = params.locale === 'en' ? 'dillenburg.en.json' : 'dillenburg.json';
+    let filePath = path.join(contentDir, jsonFile);
+    if (!fs.existsSync(filePath)) {
+      filePath = path.join(contentDir, 'dillenburg.json');
+    }
     if (fs.existsSync(filePath)) {
       const fileContents = fs.readFileSync(filePath, 'utf8');
       content = JSON.parse(fileContents);
     }
-  } catch (e) {
+  } catch {
     // Content is being generated
   }
 
@@ -71,11 +68,7 @@ export default async function DillenburgLandingPage(props: {
       : 'Ihre Webagentur für Dillenburg und den Lahn-Dill-Kreis. Hochperformante Webseiten die messbar neue Kunden bringen. Persönlich und zum Festpreis. Anfragen.';
   return (
     <>
-      <SeoHead
-        title={`Webdesign Agentur in Dillenburg | Coday`}
-        description={`Ihre Webagentur für Dillenburg. Hochperformante Webseiten, die messbar neue Kunden bringen. Regional, persönlich und zum Festpreis.`}
-        pageType="default"
-      />
+      <SeoHead title={_seoTitle} description={_seoDesc} pageType="default" />
       {content && cityData ? (
         <LocalSeoTemplate content={content} cityData={cityData} />
       ) : (
@@ -90,15 +83,15 @@ export default async function DillenburgLandingPage(props: {
             </h2>
             <div className="text-gray-300 max-w-2xl text-left space-y-4 px-4 bg-white/5 p-6 rounded-2xl border border-white/10 text-base leading-relaxed">
               <p>
-                Eine professionelle Webseite ist heute das wichtigste Aushängeschild für jedes
-                lokale Unternehmen. Egal ob Sie einen Handwerksbetrieb führen, eine Arztpraxis
-                leiten oder spezifische Dienstleistungen anbieten: Ihre potenziellen Kunden suchen
-                online nach Ihren Angeboten. Wenn Sie nicht sofort gefunden werden oder Ihre
-                Webseite veraltet wirkt, verlieren Sie bares Geld an die regionale Konkurrenz. Eine
-                moderne, Conversion-optimierte Internetpräsenz baut Vertrauen auf, noch bevor der
-                erste persönliche Kontakt entsteht. Wir wissen, worauf es ankommt, um in der Region
-                Dillenburg und im Lahn-Dill-Kreis digital erfolgreich zu sein. Mit unserer Expertise
-                im Bereich Webentwicklung und SEO bringen wir Sie auf die vorderen Plätze.
+                In der Oranierstadt Dillenburg – geprägt vom Wilhelmsturm und einer langen Tradition
+                starker mittelständischer Betriebe – entscheidet die digitale Sichtbarkeit heute
+                maßgeblich über den geschäftlichen Erfolg. Ob Handwerk, Gesundheitswesen oder
+                spezialisierte Dienstleistungen: Wer in Dillenburg und den umliegenden Gemeinden
+                nicht auf der ersten Google-Seite erscheint, überlässt wertvolle Aufträge der
+                Konkurrenz. Eine hochwertige, individuell gestaltete Internetpräsenz vermittelt
+                Kompetenz und Verlässlichkeit bereits beim ersten Klick und schafft die Grundlage
+                für langfristige Kundenbeziehungen in der gesamten Region rund um den nördlichen
+                Lahn-Dill-Kreis.
               </p>
               <p>
                 Dillenburg, als historisch bedeutsame Oranierstadt und wirtschaftliches Zentrum im
@@ -153,14 +146,14 @@ export default async function DillenburgLandingPage(props: {
                 qualifizierte Anfragen aus Dillenburg und dem gesamten Lahn-Dill-Kreis bringt.
               </p>
               <p>
-                Wir unterstützen Sie dabei, eine digitale Präsenz aufzubauen, die nicht nur auf den
-                ersten Blick überzeugt, sondern auch technisch einwandfrei funktioniert, extrem
-                schnelle Ladezeiten bietet und perfekt für Suchmaschinen (SEO) optimiert ist. Dabei
-                legen wir großen Wert auf intuitive Benutzerführung und barrierefreie Designs.
-                Profitieren Sie von unserer langjährigen Erfahrung im Bereich Webdesign,
-                Suchmaschinenoptimierung und digitaler Markenbildung in der Region Lahn-Dill. Lassen
-                Sie uns gemeinsam Ihr Projekt besprechen und herausfinden, wie wir Ihr Unternehmen
-                digital auf die nächste Stufe heben können.
+                Gerade für Betriebe in Dillenburg – vom traditionsreichen Maschinenbauer am
+                Kaserne-Areal bis zur modernen Praxis in der Hauptstraße – verbinden wir
+                anspruchsvolles Design mit technischer Spitzenleistung: barrierefreier Aufbau,
+                minimale Ladezeiten und eine SEO-Architektur, die gezielt auf Suchanfragen aus
+                Dillenburg, Haiger und dem gesamten Lahn-Dill-Kreis ausgerichtet ist. Nutzen Sie
+                unsere regionale Erfahrung in Webentwicklung und Suchmaschinenoptimierung, um Ihr
+                Unternehmen in der Oranierstadt digital nachhaltig zu stärken – sprechen Sie uns an,
+                damit wir gemeinsam Ihre nächste Wachstumsstufe erreichen.
               </p>
             </div>
           </div>

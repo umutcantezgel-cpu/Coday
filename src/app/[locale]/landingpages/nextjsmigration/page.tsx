@@ -47,8 +47,12 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   return (
     <>
       <SeoHead
-        title="Coday | nextjsmigration"
-        description="Erfahren Sie mehr über nextjsmigration"
+        title={_locale === 'en' ? 'Coday | Next.js Migration' : 'Coday | Next.js Migration Wetzlar'}
+        description={
+          _locale === 'en'
+            ? 'Migrate your website to Next.js with Coday from Wetzlar. Better speed, improved SEO and future-proof technology for businesses in Central Hesse.'
+            : 'Migration Ihrer Website auf Next.js mit Coday aus Wetzlar. Mehr Speed, besseres SEO und zukunftssichere Technik für Unternehmen in Mittelhessen.'
+        }
         pageType="default"
       />
       <ClientComponent

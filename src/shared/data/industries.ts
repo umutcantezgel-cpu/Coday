@@ -5,6 +5,7 @@ export interface IndustryData {
   hero: {
     headline: string;
     subheadline: string;
+    excerpt?: string;
   };
   challenges: { title: string; description: string }[];
   solutions: { title: string; description: string; icon: string }[];
@@ -19,6 +20,7 @@ export const industriesData: Record<string, IndustryData> = {
     hero: {
       headline: 'automobil.hero.headline',
       subheadline: 'automobil.hero.subheadline',
+      excerpt: 'automobil.hero.excerpt',
     },
     challenges: [
       {
@@ -74,6 +76,7 @@ export const industriesData: Record<string, IndustryData> = {
     hero: {
       headline: 'handwerk-bau.hero.headline',
       subheadline: 'handwerk-bau.hero.subheadline',
+      excerpt: 'handwerk-bau.hero.excerpt',
     },
     challenges: [
       {
@@ -128,6 +131,7 @@ export const industriesData: Record<string, IndustryData> = {
     hero: {
       headline: 'immobilien-makler.hero.headline',
       subheadline: 'immobilien-makler.hero.subheadline',
+      excerpt: 'immobilien-makler.hero.excerpt',
     },
     challenges: [
       {
@@ -182,6 +186,7 @@ export const industriesData: Record<string, IndustryData> = {
     hero: {
       headline: 'aerzte-gesundheit.hero.headline',
       subheadline: 'aerzte-gesundheit.hero.subheadline',
+      excerpt: 'aerzte-gesundheit.hero.excerpt',
     },
     challenges: [
       {
@@ -236,6 +241,7 @@ export const industriesData: Record<string, IndustryData> = {
     hero: {
       headline: 'anwaelte-kanzleien.hero.headline',
       subheadline: 'anwaelte-kanzleien.hero.subheadline',
+      excerpt: 'anwaelte-kanzleien.hero.excerpt',
     },
     challenges: [
       {
@@ -290,6 +296,7 @@ export const industriesData: Record<string, IndustryData> = {
     hero: {
       headline: 'gastronomie-hotellerie.hero.headline',
       subheadline: 'gastronomie-hotellerie.hero.subheadline',
+      excerpt: 'gastronomie-hotellerie.hero.excerpt',
     },
     challenges: [
       {
@@ -344,6 +351,7 @@ export const industriesData: Record<string, IndustryData> = {
     hero: {
       headline: 'unternehmensberatung.hero.headline',
       subheadline: 'unternehmensberatung.hero.subheadline',
+      excerpt: 'unternehmensberatung.hero.excerpt',
     },
     challenges: [
       {
@@ -398,6 +406,7 @@ export const industriesData: Record<string, IndustryData> = {
     hero: {
       headline: 'startups-tech.hero.headline',
       subheadline: 'startups-tech.hero.subheadline',
+      excerpt: 'startups-tech.hero.excerpt',
     },
     challenges: [
       {
@@ -452,6 +461,7 @@ export const industriesData: Record<string, IndustryData> = {
     hero: {
       headline: 'ecommerce-retail.hero.headline',
       subheadline: 'ecommerce-retail.hero.subheadline',
+      excerpt: 'ecommerce-retail.hero.excerpt',
     },
     challenges: [
       {
