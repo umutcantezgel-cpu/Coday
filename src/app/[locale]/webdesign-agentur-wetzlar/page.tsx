@@ -478,7 +478,13 @@ export default async function WebdesignWetzlarPage({
             </div>
           </FadeInUp>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-black tracking-tight mb-8 leading-[1.1]">
+          <h1 className="sr-only">
+            {t.hero.title} {t.hero.titleHighlight} {t.hero.titleSuffix}
+          </h1>
+          <div
+            aria-hidden="true"
+            className="text-5xl md:text-7xl lg:text-8xl font-display font-black tracking-tight mb-8 leading-[1.1]"
+          >
             <BlurText text={t.hero.title} delay={0} animateBy="words" className="inline-block" />{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-600">
               <BlurText
@@ -495,7 +501,7 @@ export default async function WebdesignWetzlarPage({
               animateBy="words"
               className="inline-block text-gray-400"
             />
-          </h1>
+          </div>
 
           <FadeInUp delay={0.6}>
             <p className="text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">

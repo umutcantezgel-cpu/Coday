@@ -28,13 +28,13 @@ export async function generateMetadata({
     const fileContents = fs.readFileSync(filePath, 'utf8');
     const content = JSON.parse(fileContents);
 
-    const enTitle = 'Web Design for Doctors Giessen | Coday';
+    const enTitle = 'Web Design for Doctors Gießen | Coday';
 
     return generatePageMetadata({
       title: locale === 'en' ? enTitle : content.meta.title,
       description:
         locale === 'en'
-          ? 'Web design and local SEO for doctors in Giessen. Enhance your practice with a modern website.'
+          ? 'Web design and local SEO for doctors in Gießen. Enhance your practice with a modern website.'
           : content.meta.description,
       path: `/${locale}/branchen/gesundheitswesen/arzt-giessen`,
       type: 'money',
@@ -43,11 +43,11 @@ export async function generateMetadata({
     return generatePageMetadata({
       title:
         locale === 'en'
-          ? 'Web Design for Doctors Giessen | Coday'
+          ? 'Web Design for Doctors Gießen | Coday'
           : 'Webdesign für Ärzte in Gießen | Praxis Homepage',
       description:
         locale === 'en'
-          ? 'Web design and local SEO for doctors in Giessen. Enhance your practice with a modern website.'
+          ? 'Web design and local SEO for doctors in Gießen. Enhance your practice with a modern website.'
           : 'Digitale Dominanz für Ihre Branche.',
       path: `/${locale}/branchen/gesundheitswesen/arzt-giessen`,
       type: 'money',
@@ -90,7 +90,7 @@ export default async function SubIndustryPage({ params }: { params: Promise<{ lo
   const _locale = (await params)?.locale || 'de';
   const _seoTitle =
     _locale === 'en'
-      ? 'Web Design for Doctors Giessen | Coday'
+      ? 'Web Design for Doctors Gießen | Coday'
       : 'Webdesign für Ärzte in Gießen | Praxis Homepage | Coday';
   return (
     <>
@@ -105,11 +105,11 @@ export default async function SubIndustryPage({ params }: { params: Promise<{ lo
               getServiceSchema({
                 name:
                   _locale === 'en'
-                    ? 'Web Design for Doctors in Giessen'
+                    ? 'Web Design for Doctors in Gießen'
                     : 'Webdesign für Ärzte in Gießen',
                 description:
                   _locale === 'en'
-                    ? 'Web design for doctors in Giessen. Practice homepage with modern design and local SEO.'
+                    ? 'Web design for doctors in Gießen. Practice homepage with modern design and local SEO.'
                     : 'Webdesign für Ärzte in Gießen. Praxis Homepage mit modernem Design und lokaler SEO.',
                 url: `${BASE_URL}/${_locale}/branchen/gesundheitswesen/arzt-giessen`,
               }),

@@ -70,9 +70,13 @@ export const LocalSeoTemplate: React.FC<LocalSeoTemplateProps> = ({ content, cit
           <span className="text-primary-500 font-bold uppercase tracking-wider text-sm mb-4 block">
             {content.hero.headline}
           </span>
-          <h1 className="block font-display font-black text-4xl sm:text-6xl text-secondary-900 mb-6 tracking-tight">
+          <h1 className="sr-only">{content.hero.subheadline}</h1>
+          <div
+            aria-hidden="true"
+            className="block font-display font-black text-4xl sm:text-6xl text-secondary-900 mb-6 tracking-tight"
+          >
             <BlurText text={content.hero.subheadline} delay={50} animateBy="words" />
-          </h1>
+          </div>
           <p className="text-xl text-secondary-800 font-medium leading-relaxed mb-10 max-w-2xl mx-auto">
             <span className="sr-only">{content.hero.headline}</span>
             {content.hero.description}
@@ -169,13 +173,15 @@ export const LocalSeoTemplate: React.FC<LocalSeoTemplateProps> = ({ content, cit
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl font-bold text-secondary-900 mb-6">
             {content.cta_title ||
-              (isEn ? 'Ready for Measurable Growth?' : 'Bereit für messbares Wachstum?')}
+              (isEn
+                ? `Ready for Measurable Growth in ${content.displayName || content.target.split('-').join(' ')}?`
+                : `Bereit für messbares Wachstum in ${content.displayName || content.target.split('-').join(' ')}?`)}
           </h2>
           <p className="text-xl text-secondary-800 font-medium mb-10 leading-relaxed">
             {content.cta_text ||
               (isEn
-                ? 'Let us find out together how we can take your business to the top through high-end web design.'
-                : 'Lassen Sie uns gemeinsam herausfinden, wie wir Ihr Unternehmen durch High-End Webdesign an die Spitze bringen.')}
+                ? `Let us find out together how we can take your business to the top through high-end web design in ${content.displayName || content.target.split('-').join(' ')}.`
+                : `Lassen Sie uns gemeinsam herausfinden, wie wir Ihr Unternehmen durch High-End Webdesign in ${content.displayName || content.target.split('-').join(' ')} an die Spitze bringen.`)}
           </p>
           <Link href="/contact">
             <Button variant="primary" size="lg" className="shadow-xl shadow-primary-500/20">
