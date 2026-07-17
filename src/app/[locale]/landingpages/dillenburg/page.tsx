@@ -189,7 +189,7 @@ export default async function DillenburgLandingPage(props: {
         {_locale === 'en' ? (
           <>
             <h2 className="text-3xl font-display font-bold mb-6">
-              Professional Web Design in Dillenburg
+              Custom Web Development in Dillenburg
             </h2>
             <div className="space-y-4 text-base leading-relaxed">
               <p>
@@ -258,7 +258,7 @@ export default async function DillenburgLandingPage(props: {
         ) : (
           <>
             <h2 className="text-3xl font-display font-bold mb-6">
-              Professionelles Webdesign in Dillenburg
+              Maßgeschneiderte Webentwicklung in Dillenburg
             </h2>
             <div className="space-y-4 text-base leading-relaxed">
               <p>
