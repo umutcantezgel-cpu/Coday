@@ -7,13 +7,15 @@
     "headline": "Digital Sovereignty",
     "subline": "Legally compliant & accessible solutions for public administration.",
     "cta": "Discuss Tender",
+    "ctaSecondary": "To Tender Assistant",
     "badge": "BITV 2.0 & GDPR Compliant"
   },
   "trust": {
     "bitv": "Accessible (BITV 2.0)",
     "dsgvo": "Hosted in Germany",
     "iso": "ISO 27001 Security",
-    "opensource": "Public money, public code"
+    "opensource": "Public money, public code",
+    "opensourceDesc": "Maximum transparency through open standards and source code."
   },
   "pricing": {
     "title": "Transparent Cost Calculation",
@@ -98,6 +100,8 @@
     "title": "Investment & Procurement Reality",
     "headline": "The Problem with Rigid Quotes in Government IT",
     "description": "Government IT procurement demands transparency and strict adherence to official public contracting frameworks. Relying on opaque flat-rate bids frequently results in budget overruns, compliance risks, and project friction.",
+    "disclaimer_title": "Strict Public Sector Compliance",
+    "disclaimer_text": "We operate exclusively on compliant public service contracts without hidden licensing obligations. We ensure absolute cost transparency by providing rigorous effort estimations prior to any commitments.",
     "table": {
       "col_criteria": "Evaluation Metric",
       "col_agencies": "Traditional IT Vendors",
@@ -209,7 +213,8 @@
   },
   "contact": {
     "title": "Inquiry for Public Authorities",
-    "upload_label": "Upload Specifications (PDF)"
+    "upload_label": "Upload Specifications (PDF)",
+    "secureExchange": "Secure, encrypted upload for sensitive tender documents."
   },
   "seoText": {
     "title": "Specialized Digital Solutions for Government Agencies",

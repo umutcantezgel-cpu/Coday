@@ -139,13 +139,13 @@ export const GamifiedIndustryTemplate: React.FC<{ content: any; cityData?: any }
           <GamifiedRoiCalculator
             industryName={displayName || hero.headline}
             title={
-              content.roi_title ||
+              (isEn ? content.roi_title_en : content.roi_title) ||
               (isEn
                 ? `How much revenue is your ${displayName || hero.headline} leaving on the table?`
                 : `Wie viel Umsatz lässt Ihr ${displayName || hero.headline} liegen?`)
             }
             description={
-              content.roi_desc ||
+              (isEn ? content.roi_desc_en : content.roi_desc) ||
               (isEn
                 ? `Slide to your current annual revenue as a ${displayName || hero.headline} and discover the untapped potential you are missing due to outdated web technologies and lack of visibility.`
                 : `Schieben Sie den Regler auf Ihren aktuellen Jahresumsatz als ${displayName || hero.headline} und entdecken Sie das ungenutzte Potenzial, das Ihnen durch veraltete Web-Technologien und fehlende Sichtbarkeit entgeht.`)

@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next';
+import { getBlogPosts } from '@/features/blog/model/data';
 
 const BASE_URL = 'https://www.codayweb.de';
 
@@ -194,7 +195,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     // New Industry Slugs
     sitemapEntry('/branchen/handwerk-bau', { changeFrequency: 'monthly', priority: 0.8 }),
-    sitemapEntry('/branchen/immobilien-makler', { changeFrequency: 'monthly', priority: 0.8 }),
     sitemapEntry('/branchen/unternehmensberatung', { changeFrequency: 'monthly', priority: 0.8 }),
     sitemapEntry('/branchen/aerzte-gesundheit', { changeFrequency: 'monthly', priority: 0.8 }),
     sitemapEntry('/branchen/anwaelte-kanzleien', { changeFrequency: 'monthly', priority: 0.8 }),
@@ -248,7 +248,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // Dynamic content from Sanity (without drafts)
   const query = `
-    *[_type in ["post", "caseStudy", "service", "location"] && !(_id in path("drafts.**"))] | order(_updatedAt desc) {
+    *[_type in ["caseStudy", "service", "location"] && !(_id in path("drafts.**"))] | order(_updatedAt desc) {
       _id,
       _type,
       _updatedAt,
@@ -264,11 +264,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     let priority = 0.5;
 
     switch (doc._type) {
-      case 'post':
-        routePrefix = '/knowledge/blog';
-        changeFrequency = 'weekly';
-        priority = 0.7;
-        break;
       case 'caseStudy':
         routePrefix = '/work';
         changeFrequency = 'monthly';
@@ -296,7 +291,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     });
   });
 
-  const allRoutes = [...staticRoutes, ...dynamicRoutes];
+  const localPosts = getBlogPosts('de');
+  const localBlogRoutes: MetadataRoute.Sitemap = localPosts.map((post) => {
+    return sitemapEntry(`/knowledge/blog/${post.slug}`, {
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    });
+  });
+
+  const allRoutes = [...staticRoutes, ...dynamicRoutes, ...localBlogRoutes];
   const expandedRoutes: MetadataRoute.Sitemap = [];
 
   const noEnglishRoutes = DE_ONLY_ROUTES.map((r) => `${BASE_URL}/de${r}`);

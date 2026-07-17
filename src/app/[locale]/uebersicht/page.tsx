@@ -145,7 +145,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
           {/* Services */}
           <section>
             <h2 className="text-2xl font-bold text-primary mb-4 border-b border-gray-200 pb-2">
-              {locale === 'en' ? 'Services' : 'Leistungen'}
+              {locale === 'en' ? 'Our Services' : 'Unsere Leistungen'}
             </h2>
             <ul className="space-y-2">
               {Object.entries(servicesData).map(([category, categoryData]) => (
@@ -254,24 +254,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                   Dienstleistung
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/branchen/immobilien"
-                  locale="de"
-                  className="text-text-light hover:text-primary transition-colors"
-                >
-                  Immobilien
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/branchen/immobilien-makler"
-                  locale="de"
-                  className="text-text-light hover:text-primary transition-colors"
-                >
-                  Immobilienmakler
-                </Link>
-              </li>
+
               <li>
                 <Link
                   href="/branchen/public-sector"

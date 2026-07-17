@@ -26,7 +26,7 @@ export const SeoTextInjector: React.FC<SeoTextInjectorProps> = ({
       '/branchen/automobil/kfz-mechatroniker': ['Digitale Dominanz für KFZ Mechatroniker | Coday'],
       '/branchen/automobil/autohaendler': ['Webdesign Agentur für Premium Autohändler | Coday'],
       '/branchen/handwerk-bau': ['Handwerk Bau Webdesign & IT-Lösungen | Coday'],
-      '/branchen/immobilien-makler': [
+      '/branchen/immobilien': [
         'Immobilien Makler Webdesign & IT-Lösungen | Coday',
         'Exklusive Objekte, exklusiv präsentiert',
       ],
@@ -65,7 +65,7 @@ export const SeoTextInjector: React.FC<SeoTextInjectorProps> = ({
       '/branchen/automobil/kfz-mechatroniker': ['Digital Dominance for Car Mechanics | Coday'],
       '/branchen/automobil/autohaendler': ['Web Design Agency for Premium Car Dealers | Coday'],
       '/branchen/handwerk-bau': ['Trades and Construction Web Design & IT Solutions | Coday'],
-      '/branchen/immobilien-makler': [
+      '/branchen/immobilien': [
         'Immobilien Makler Web Design & IT Solutions | Coday',
         'Exclusive properties, exclusively presented',
       ],

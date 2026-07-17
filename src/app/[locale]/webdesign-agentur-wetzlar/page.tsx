@@ -777,7 +777,7 @@ export default async function WebdesignWetzlarPage({
             {t.faq.items.map((item, i) => (
               <ScrollReveal key={i} index={i}>
                 <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                  <h3 className="text-xl font-bold text-secondary-900 mb-4">{item.q}</h3>
+                  <p className="text-xl font-bold text-secondary-900 mb-4">{item.q}</p>
                   <p className="text-secondary-600 leading-relaxed text-lg">{item.a}</p>
                 </div>
               </ScrollReveal>

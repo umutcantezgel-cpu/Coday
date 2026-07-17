@@ -7,13 +7,15 @@
     "headline": "Digitale Souveränität",
     "subline": "Rechtssichere & barrierefreie Lösungen für die öffentliche Verwaltung.",
     "cta": "Ausschreibung besprechen",
+    "ctaSecondary": "Zum Vergabe-Assistent",
     "badge": "BITV 2.0 & DSGVO Konform"
   },
   "trust": {
     "bitv": "Barrierefrei nach BITV 2.0",
     "dsgvo": "Serverstandort Deutschland",
     "iso": "ISO 27001 Sicherheit",
-    "opensource": "Public Money, Public Code"
+    "opensource": "Public Money, Public Code",
+    "opensourceDesc": "Maximale Transparenz durch offene Standards und Quellcode."
   },
   "pricing": {
     "title": "Transparente Kostenkalkulation",
@@ -98,6 +100,8 @@
     "title": "Vergaberecht & Kosten",
     "headline": "Warum Pauschalpreise im öffentlichen Dienst scheitern.",
     "description": "Öffentliche Aufträge erfordern EVB-IT Konformität und Preisindikation auf Basis von Leistungsbeschreibungen. Pauschalangebote führen oft zu nachträglichen Kostenexplosionen oder Vergaberechtsverstößen.",
+    "disclaimer_title": "EVB-IT Konformität",
+    "disclaimer_text": "Wir arbeiten standardmäßig nach EVB-IT Dienstvertrag. Keine versteckten Lizenzkosten. Volle Kostentransparenz durch detaillierte Aufwandsschätzung vor Vertragsabschluss.",
     "table": {
       "col_criteria": "Kriterium",
       "col_agencies": "Klassische Agentur",
@@ -209,7 +213,8 @@
   },
   "contact": {
     "title": "Projektanfrage für Behörden",
-    "upload_label": "Lastenheft hochladen (PDF)"
+    "upload_label": "Lastenheft hochladen (PDF)",
+    "secureExchange": "Sicherer, verschlüsselter Upload für sensible Ausschreibungsunterlagen."
   },
   "seoText": {
     "title": "IT Services Public Sector",
