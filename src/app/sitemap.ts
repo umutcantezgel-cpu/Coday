@@ -291,15 +291,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     });
   });
 
-  const localPosts = getBlogPosts('de');
-  const localBlogRoutes: MetadataRoute.Sitemap = localPosts.map((post) => {
-    return sitemapEntry(`/knowledge/blog/${post.slug}`, {
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    });
-  });
+  const localPostsDe = getBlogPosts('de');
+  const localBlogRoutesDe: MetadataRoute.Sitemap = localPostsDe.map((post) => ({
+    url: `${BASE_URL}/de/knowledge/blog/${post.slug}`,
+    lastModified: BUILD_DATE,
+    changeFrequency: 'weekly',
+    priority: 0.7,
+  }));
 
-  const allRoutes = [...staticRoutes, ...dynamicRoutes, ...localBlogRoutes];
+  const localPostsEn = getBlogPosts('en');
+  const localBlogRoutesEn: MetadataRoute.Sitemap = localPostsEn.map((post) => ({
+    url: `${BASE_URL}/en/knowledge/blog/${post.slug}`,
+    lastModified: BUILD_DATE,
+    changeFrequency: 'weekly',
+    priority: 0.7,
+  }));
+
+  const allRoutes = [...staticRoutes, ...dynamicRoutes, ...localBlogRoutesDe, ...localBlogRoutesEn];
   const expandedRoutes: MetadataRoute.Sitemap = [];
 
   const noEnglishRoutes = DE_ONLY_ROUTES.map((r) => `${BASE_URL}/de${r}`);
