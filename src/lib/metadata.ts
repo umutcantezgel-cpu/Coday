@@ -113,6 +113,7 @@ export function generatePageMetadata(opts: {
     metadataBase: new URL(BASE_URL),
     title: fullTitle,
     description: finalDescription,
+    publisher: 'Coday',
     robots: generateRobotsMeta({ type: finalType }),
     alternates: generateAlternates(opts.path),
     openGraph: opts.openGraph ? { ...defaultOg, ...opts.openGraph } : defaultOg,
