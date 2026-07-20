@@ -106,7 +106,7 @@ export function WebDesignClient() {
             <div className="absolute inset-0 bg-primary/10 rounded-[2rem] transform rotate-3 scale-95"></div>
             <Image
               src={brandingImages.hero?.src || ''}
-              alt={brandingImages.hero?.alt || ''}
+              alt={brandingImages.hero?.alt ? t(brandingImages.hero.alt as any) : ''}
               width={800}
               height={600}
               className="relative rounded-[2rem] shadow-flat-lg w-full h-auto transform -rotate-2 hover:rotate-0 transition motion-reduce:duration-[0.01ms] duration-500 bg-surface-elevated p-2"

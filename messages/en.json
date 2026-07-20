@@ -830,7 +830,38 @@
     "text_standard": "reicht uns nicht. Wir entwickeln digitale Erlebnisse, die Ihre Konkurrenz in den Schatten stellen und Ihr Unternehmen als Marktführer positionieren."
   },
   "images": {
-    "trust_collaboration": "Vertrauen und partnerschaftliche Zusammenarbeit auf Augenhöhe"
+    "trust_collaboration": "Trust and collaborative partnership at eye level",
+    "overview": {
+      "hero": {
+        "alt": "Premium Web Design Agency in Wetzlar - Websites for craftsmen and doctors"
+      },
+      "development": { "alt": "Professional Web Development and Programming Wetzlar" },
+      "webdesign": { "alt": "High Quality Web Design Wetzlar and Central Hesse" },
+      "seo": { "alt": "Local SEO Wetzlar - Increase Google Visibility" },
+      "marketing": { "alt": "Omnichannel Marketing Strategy for businesses from Wetzlar" },
+      "gmb": { "alt": "Google Business Profile Optimization Wetzlar" },
+      "terminbuchung": { "alt": "Digital Appointment Booking for Websites Wetzlar" },
+      "bewertungen": { "alt": "Customer Reviews and Reputation Management Wetzlar" }
+    },
+    "web_dev": {
+      "hero": { "alt": "Web Development Wetzlar - Custom Web Solutions" },
+      "solutions": { "alt": "Reliable Web Development Partnership in Wetzlar" }
+    },
+    "app_dev": {
+      "hero": { "alt": "App Development Wetzlar - iOS and Android Apps" },
+      "consulting": { "alt": "App Development Consulting Wetzlar" },
+      "workflow": { "alt": "UI UX App Design Wireframe Wetzlar" },
+      "webdesign": { "alt": "App Web Design Agency Wetzlar" }
+    },
+    "branding": {
+      "hero": { "alt": "Branding and Corporate Design Agency Wetzlar" },
+      "visuals": { "alt": "Visual Web Design and Branding Wetzlar" },
+      "strategy": { "alt": "Brand Strategy and Employer Branding Wetzlar" }
+    },
+    "marketing": {
+      "hero": { "alt": "Online Marketing Strategy Planning Wetzlar" },
+      "omnichannel": { "alt": "Social Media and SEO Omnichannel Marketing Wetzlar" }
+    }
   },
   "industries": {
     "overview": {

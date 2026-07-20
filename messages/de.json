@@ -825,7 +825,38 @@
     "text_standard": "reicht uns nicht. Wir entwickeln digitale Erlebnisse, die Ihre Konkurrenz in den Schatten stellen und Ihr Unternehmen als Marktführer positionieren."
   },
   "images": {
-    "trust_collaboration": "Vertrauen und partnerschaftliche Zusammenarbeit auf Augenhöhe"
+    "trust_collaboration": "Vertrauen und partnerschaftliche Zusammenarbeit auf Augenhöhe",
+    "overview": {
+      "hero": {
+        "alt": "Premium Webdesign Agentur in Wetzlar - Webseiten für Handwerker und Ärzte"
+      },
+      "development": { "alt": "Professionelle Webentwicklung und Programmierung Wetzlar" },
+      "webdesign": { "alt": "Hochwertiges Webdesign Wetzlar und Mittelhessen" },
+      "seo": { "alt": "Lokales SEO Wetzlar - Sichtbarkeit bei Google steigern" },
+      "marketing": { "alt": "Omnichannel Marketing Strategie für Unternehmen aus Wetzlar" },
+      "gmb": { "alt": "Google Unternehmensprofil Optimierung Wetzlar" },
+      "terminbuchung": { "alt": "Digitale Terminbuchung für Webseiten Wetzlar" },
+      "bewertungen": { "alt": "Kundenbewertungen und Reputation Management Wetzlar" }
+    },
+    "web_dev": {
+      "hero": { "alt": "Webentwicklung Wetzlar - Maßgeschneiderte Web-Lösungen" },
+      "solutions": { "alt": "Zuverlässige Webentwicklung Partnerschaft in Wetzlar" }
+    },
+    "app_dev": {
+      "hero": { "alt": "App Entwicklung Wetzlar - iOS und Android Apps" },
+      "consulting": { "alt": "App Development Consulting Wetzlar" },
+      "workflow": { "alt": "UI UX App Design Wireframe Wetzlar" },
+      "webdesign": { "alt": "App Webdesign Agentur Wetzlar" }
+    },
+    "branding": {
+      "hero": { "alt": "Branding und Corporate Design Agentur Wetzlar" },
+      "visuals": { "alt": "Visuelles Webdesign und Branding Wetzlar" },
+      "strategy": { "alt": "Markenstrategie und Employer Branding Wetzlar" }
+    },
+    "marketing": {
+      "hero": { "alt": "Online Marketing Strategie Planung Wetzlar" },
+      "omnichannel": { "alt": "Social Media und SEO Omnichannel Marketing Wetzlar" }
+    }
   },
   "industries": {
     "overview": {
