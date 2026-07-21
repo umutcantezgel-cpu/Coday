@@ -34,7 +34,7 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Design Wetzlar | Web Development & Relaunch | Coday',
+      title: 'Web Design Wetzlar | Web Development Wetzlar | Coday Web',
       description:
         'New website or relaunch? Coday is your web design & development agency in Wetzlar. Fixed price, online in 3 weeks. Start your project now!',
       path: '/en',
@@ -42,7 +42,7 @@ export async function generateMetadata({
     });
   }
   return generatePageMetadata({
-    title: 'Webdesign Wetzlar | Webentwicklung & Relaunch | Coday',
+    title: 'Webdesign Wetzlar | Webentwicklung Wetzlar | Coday Web',
     description:
       'Neue Webseite oder Relaunch? Coday ist Ihre Agentur für Webdesign & Webentwicklung in Wetzlar. Zum Festpreis, in 3 Wochen online. Jetzt Projekt starten!',
     path: '/de',
