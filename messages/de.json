@@ -839,23 +839,25 @@
       "bewertungen": { "alt": "Kundenbewertungen und Reputation Management Wetzlar" }
     },
     "web_dev": {
-      "hero": { "alt": "Webentwicklung Wetzlar - Maßgeschneiderte Web-Lösungen" },
-      "solutions": { "alt": "Zuverlässige Webentwicklung Partnerschaft in Wetzlar" }
+      "hero": {
+        "alt": "Webseite erstellen lassen in Wetzlar und Umgebung - Maßgeschneiderte Web-Lösungen"
+      },
+      "solutions": { "alt": "Zuverlässiger Partner für neue Webseiten in Wetzlar und Mittelhessen" }
     },
     "app_dev": {
-      "hero": { "alt": "App Entwicklung Wetzlar - iOS und Android Apps" },
-      "consulting": { "alt": "App Development Consulting Wetzlar" },
-      "workflow": { "alt": "UI UX App Design Wireframe Wetzlar" },
-      "webdesign": { "alt": "App Webdesign Agentur Wetzlar" }
+      "hero": { "alt": "Hochwertige Web-Apps und Webseiten Entwicklung Wetzlar und Umgebung" },
+      "consulting": { "alt": "Beratung für Ihre neue Webseite in Wetzlar" },
+      "workflow": { "alt": "UI UX Design für conversion-starke Webseiten Raum Wetzlar" },
+      "webdesign": { "alt": "Premium Webdesign Agentur für Wetzlar und Umgebung" }
     },
     "branding": {
-      "hero": { "alt": "Branding und Corporate Design Agentur Wetzlar" },
-      "visuals": { "alt": "Visuelles Webdesign und Branding Wetzlar" },
-      "strategy": { "alt": "Markenstrategie und Employer Branding Wetzlar" }
+      "hero": { "alt": "Webdesign und Corporate Design Agentur Wetzlar und Umgebung" },
+      "visuals": { "alt": "Visuelles Webdesign für moderne Webseiten in Wetzlar" },
+      "strategy": { "alt": "Webseiten Strategie und Konzeption für Unternehmen in Wetzlar" }
     },
     "marketing": {
-      "hero": { "alt": "Online Marketing Strategie Planung Wetzlar" },
-      "omnichannel": { "alt": "Social Media und SEO Omnichannel Marketing Wetzlar" }
+      "hero": { "alt": "Sichtbarkeit für Ihre Webseite Wetzlar und Umgebung" },
+      "omnichannel": { "alt": "Lokales Webdesign und SEO für Wetzlar und Mittelhessen" }
     }
   },
   "industries": {
