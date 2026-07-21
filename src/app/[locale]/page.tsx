@@ -34,7 +34,7 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Design Agency in Wetzlar & Central Hesse',
+      title: 'Web Design Wetzlar | Custom Websites | Coday Agency',
       description:
         'Your new website from a web designer in Wetzlar. Personal service, fixed price, online in 3 weeks. For craftsmen, doctors and businesses. Inquire now.',
       path: '/en',
@@ -42,7 +42,7 @@ export async function generateMetadata({
     });
   }
   return generatePageMetadata({
-    title: 'Webdesign Agentur in Wetzlar & Mittelhessen',
+    title: 'Webdesign Wetzlar | Neue Webseiten | Coday Webagentur',
     description:
       'Ihre neue Webseite vom Webdesigner in Wetzlar. Persönlich, zum Festpreis, in 3 Wochen online. Für Handwerker, Ärzte und Gastronomen. Jetzt anfragen.',
     path: '/de',
@@ -73,14 +73,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const orgSchema = getOrganizationSchema(_locale);
   const websiteSchema = getWebSiteSchema(_locale);
 
-  const _seoTitle =
-    _locale === 'en'
-      ? 'Web Design Agency in Wetzlar & Central Hesse | Coday'
-      : 'Webdesign Agentur in Wetzlar & Mittelhessen | Coday';
-  const _seoDesc =
-    _locale === 'en'
-      ? 'Your new website from a web designer in Wetzlar. Personal service, fixed price, online in 3 weeks. For craftsmen, doctors and businesses. Inquire now.'
-      : 'Ihre neue Webseite vom Webdesigner in Wetzlar. Persönlich, zum Festpreis, in 3 Wochen online. Für Handwerker, Ärzte und Gastronomen. Jetzt anfragen.';
   return (
     <NextIntlClientProvider messages={pageMessages}>
       <script
