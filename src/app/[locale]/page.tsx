@@ -36,7 +36,7 @@ export async function generateMetadata({
     return generatePageMetadata({
       title: 'Web Design Wetzlar | Custom Websites | Coday Agency',
       description:
-        'Your new website from a web designer in Wetzlar. Personal service, fixed price, online in 3 weeks. For craftsmen, doctors and businesses. Inquire now.',
+        'Your new website from a web designer in Wetzlar. Personal service, fixed price, online in 3 weeks. For businesses in the region. Inquire now.',
       path: '/en',
       type: 'money',
     });
@@ -44,7 +44,7 @@ export async function generateMetadata({
   return generatePageMetadata({
     title: 'Webdesign Wetzlar | Neue Webseiten | Coday Webagentur',
     description:
-      'Ihre neue Webseite vom Webdesigner in Wetzlar. Persönlich, zum Festpreis, in 3 Wochen online. Für Handwerker, Ärzte und Gastronomen. Jetzt anfragen.',
+      'Ihre neue Webseite vom Webdesigner in Wetzlar. Persönlich, zum Festpreis, in 3 Wochen online. Für Unternehmen aus der Region. Jetzt anfragen.',
     path: '/de',
     type: 'money',
   });
