@@ -1,435 +1,316 @@
+'use client';
 import React from 'react';
 import { Link } from '@/i18n/navigation';
 import NextLink from 'next/link';
-
+import { m } from 'motion/react';
 import { useTranslations } from 'next-intl';
+
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
+import GradientText from '@/shared/ui/GradientText';
 import {
   FacebookLogo,
   InstagramLogo,
   TwitterLogo,
   LinkedinLogo,
-} from '@phosphor-icons/react/dist/ssr';
+  ArrowRight,
+  RocketLaunch,
+} from '@phosphor-icons/react';
+
 import LogoLoop from '@/shared/ui/LogoLoop';
 import { TrustBadges } from '@/shared/ui/TrustBadges';
 import { clientLogos } from '@/shared/data/clientLogos';
 
 export const Footer: React.FC = () => {
   const t = useTranslations('common');
+
   return (
-    <footer
-      className="bg-secondary text-white border-t border-gray-800 pt-16 pb-8 relative overflow-hidden"
-      role="contentinfo"
-    >
-      {/* Bright Blur Effect for Logo Visibility - Scaled up for full top-left coverage */}
-      <div className="absolute top-0 start-0 w-[900px] h-[900px] bg-white/10 blur-[160px] rounded-full -translate-x-1/3 -translate-y-1/3 pointer-events-none" />
+    <footer className="bg-secondary text-white relative overflow-hidden" role="contentinfo">
+      {/* Background Effects */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-[50%] -right-[10%] w-[70%] h-[70%] rounded-full bg-primary/10 blur-[150px] mix-blend-screen" />
+        <div className="absolute -bottom-[50%] -left-[10%] w-[60%] h-[60%] rounded-full bg-blue-600/10 blur-[150px] mix-blend-screen" />
+        <div
+          className="absolute inset-0 opacity-[0.03] mix-blend-overlay"
+          style={{ backgroundImage: 'url(/noise.svg)' }}
+        ></div>
+      </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Compact Logo Bar */}
-        <div className="mb-12 border-b border-gray-800/50 pb-8">
-          <p className="text-center text-[10px] font-bold uppercase tracking-widest text-gray-300 mb-6">
-            {t('logobar.title', { defaultValue: 'Vertrauen schenken uns' })}
-          </p>
-          <div className="opacity-50 hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms] duration-300">
-            <LogoLoop logos={clientLogos} speed={25} logoHeight={24} gap={48} />
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-12 w-full">
-          {/* Col 1: Logo & Agency Description */}
-          <div className="col-span-2 lg:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <OptimizedImage
-                src="/images/brand/webdesign-wetzlar-coday-logo-footer.webp"
-                alt="Coday"
-                title="Webdesign Wetzlar – Coday"
-                className="h-10 sm:h-16 w-auto mb-6 !bg-transparent"
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-24 lg:pt-32 pb-8">
+        {/* Massive Typography CTA Section */}
+        <div className="flex flex-col items-center justify-center text-center mb-32">
+          <m.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 mb-8 shadow-[0_0_40px_rgba(37,99,235,0.15)]">
+              <OptimizedIcon
+                icon={RocketLaunch}
+                className="w-8 h-8 text-blue-400"
+                weight="duotone"
               />
             </div>
-            <p className="text-sm text-gray-300 max-w-xs mb-6 font-medium">{t('footer.slogan')}</p>
 
-            {/* Trust Visual */}
-            <div className="flex items-center gap-3 bg-white/5 p-3 rounded-xl border border-white/10 max-w-xs">
-              <div className="w-12 h-12 rounded-lg overflow-hidden flex-shrink-0 bg-white flex items-center justify-center p-1">
+            <h2 className="font-display font-black text-5xl sm:text-7xl lg:text-[5.5rem] leading-[1.1] mb-8 tracking-tight break-words hyphens-auto">
+              {t('global_cta.title_prefix')} <br className="hidden sm:block" />
+              <GradientText colors={['#60A5FA', '#3B82F6', '#2563EB']} className="pb-2">
+                {t('global_cta.title_highlight')}
+              </GradientText>
+            </h2>
+
+            <p className="text-xl text-blue-100/70 max-w-2xl mx-auto mb-12 leading-relaxed font-light">
+              {t('global_cta.subtitle')}
+            </p>
+
+            <Link
+              href="/contact"
+              className="group relative inline-flex items-center justify-center px-10 py-5 font-bold text-white transition motion-reduce:duration-[0.01ms] duration-300 bg-primary border border-transparent rounded-full hover:bg-blue-600 hover:shadow-[0_0_50px_rgba(37,99,235,0.5)] focus:ring-2 focus:ring-offset-2 focus:ring-primary focus:ring-offset-secondary overflow-hidden"
+            >
+              <div className="absolute inset-0 overflow-hidden rounded-full pointer-events-none">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shimmer motion-reduce:animate-none" />
+              </div>
+
+              <span className="relative flex items-center gap-3 text-lg">
+                {t('global_cta.button')}
+                <OptimizedIcon
+                  icon={ArrowRight}
+                  weight="bold"
+                  className="transition-transform motion-reduce:duration-[0.01ms] duration-300 group-hover:translate-x-1"
+                />
+              </span>
+            </Link>
+          </m.div>
+        </div>
+
+        {/* Client Logos / Trust (discreet & elegant) */}
+        <div className="mb-24 opacity-60 hover:opacity-100 transition-opacity motion-reduce:duration-[0.01ms] duration-500 grayscale hover:grayscale-0">
+          <p className="text-center text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-8">
+            {t('logobar.title', { defaultValue: 'Vertrauen schenken uns' })}
+          </p>
+          <LogoLoop logos={clientLogos} speed={30} logoHeight={24} gap={64} />
+        </div>
+
+        {/* Minimalist Structured Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-20 w-full border-t border-white/10 pt-16">
+          {/* Col 1: Brand Info */}
+          <div className="flex flex-col">
+            <OptimizedImage
+              src="/images/brand/webdesign-wetzlar-coday-logo-footer.webp"
+              alt="Coday Webdesign Wetzlar"
+              className="h-8 w-auto mb-8 !bg-transparent opacity-90"
+            />
+            <p className="text-sm text-gray-400 max-w-xs mb-8 leading-relaxed font-light">
+              {t('footer.slogan')}
+            </p>
+
+            <div className="mt-auto flex items-center gap-4 bg-white/[0.02] p-4 rounded-2xl border border-white/5 backdrop-blur-sm max-w-xs transition-colors hover:bg-white/[0.04]">
+              <div className="w-10 h-10 rounded-xl overflow-hidden flex-shrink-0 bg-white flex items-center justify-center p-0.5">
                 <OptimizedImage
                   src="/images/hero/webdesign-wetzlar-business-handshake-partnerschaft-tuer-offen-zusammenarbeit-vertrauen-small.webp"
                   alt="Partnerschaft"
-                  title="Webdesign Wetzlar Partnerschaft"
-                  className="w-full h-full object-cover rounded-md"
+                  className="w-full h-full object-cover rounded-[10px]"
                   width={40}
                   height={40}
-                  priority={false}
                 />
               </div>
               <div>
-                <div className="text-xs font-bold text-white uppercase tracking-wider">
+                <div className="text-xs font-bold text-white uppercase tracking-wider mb-0.5">
                   {t('footer.trust.title', { defaultValue: 'Coday Web' })}
                 </div>
-                <div className="text-[10px] text-gray-300">
+                <div className="text-[10px] text-primary font-medium tracking-wide">
                   {t('footer.trust.desc', { defaultValue: 'Premium Agency' })}
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Col 2: Main Navigation */}
+          {/* Col 2: Navigation */}
           <nav aria-label={t('footer.sections.navigation', { defaultValue: 'Navigation' })}>
-            <h3 className="text-xs font-bold text-gray-300 uppercase tracking-wider mb-4">
+            <h3 className="text-xs font-bold text-white uppercase tracking-[0.15em] mb-8 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-primary/50"></span>
               {t('footer.sections.navigation', { defaultValue: 'Navigation' })}
             </h3>
-            <ul className="space-y-3">
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
-                >
-                  {t('nav.main.home', { defaultValue: 'Startseite' })}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/work"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
-                >
-                  {t('nav.main.work', { defaultValue: 'Portfolio' })}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/about"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
-                >
-                  {t('nav.company.about', { defaultValue: 'Über uns' })}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/process"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
-                >
-                  {t('nav.main.process', { defaultValue: 'Prozess' })}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/pricing"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
-                >
-                  {t('nav.main.pricing', { defaultValue: 'Preise' })}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/partnerschaft"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
-                >
-                  {t('nav.main.partnerschaft', { defaultValue: 'Partner-Programm' })}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/calculator"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
-                >
-                  {t('nav.resources.calculator', { defaultValue: 'Preis-Rechner' })}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/career"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
-                >
-                  {t('nav.career.label', { defaultValue: 'Karriere' })}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/garantie"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
-                >
-                  {t('nav.main.garantie', { defaultValue: 'Garantie' })}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/presse"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
-                >
-                  {t('nav.main.presse', { defaultValue: 'Presse' })}
-                </Link>
-              </li>
+            <ul className="space-y-4">
+              {[
+                { href: '/', label: t('nav.main.home', { defaultValue: 'Startseite' }) },
+                { href: '/work', label: t('nav.main.work', { defaultValue: 'Portfolio' }) },
+                { href: '/about', label: t('nav.company.about', { defaultValue: 'Über uns' }) },
+                { href: '/process', label: t('nav.main.process', { defaultValue: 'Prozess' }) },
+                { href: '/pricing', label: t('nav.main.pricing', { defaultValue: 'Preise' }) },
+                {
+                  href: '/calculator',
+                  label: t('nav.resources.calculator', { defaultValue: 'Preis-Rechner' }),
+                },
+              ].map((link, idx) => (
+                <li key={idx}>
+                  <Link
+                    prefetch={false}
+                    href={link.href}
+                    className="group inline-flex items-center text-sm text-gray-400 hover:text-white transition-colors duration-300"
+                  >
+                    <span className="relative">
+                      {link.label}
+                      <span className="absolute -bottom-1 left-0 w-0 h-px bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </span>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </nav>
 
           {/* Col 3: Services */}
           <nav aria-label={t('footer.sections.services', { defaultValue: 'Services' })}>
-            <h3 className="text-xs font-bold text-gray-300 uppercase tracking-wider mb-4">
+            <h3 className="text-xs font-bold text-white uppercase tracking-[0.15em] mb-8 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-blue-400/50"></span>
               {t('footer.sections.services', { defaultValue: 'Services' })}
             </h3>
-            <ul className="space-y-3">
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/services/web-development"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
-                >
-                  {t('nav.services.web_development.label', { defaultValue: 'Webentwicklung' })}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/services/design/ui-ux"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
-                >
-                  {t('nav.services.ui_ux.label', { defaultValue: 'UI/UX Design' })}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/services/seo"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
-                >
-                  {t('nav.services.seo.label', { defaultValue: 'SEO Optimierung' })}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/services/ecommerce-development"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
-                >
-                  {t('nav.services.ecommerce.label', { defaultValue: 'E-Commerce' })}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/services/development/api-integration"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
-                >
-                  {t('nav.services.api.label', { defaultValue: 'API-Integrationen' })}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/services/web-development"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
-                >
-                  {t('nav.services.fullstack.label', { defaultValue: 'Full-Stack Entwicklung' })}
-                </Link>
-              </li>
+            <ul className="space-y-4">
+              {[
+                {
+                  href: '/services/web-development',
+                  label: t('nav.services.web_development.label', {
+                    defaultValue: 'Webentwicklung',
+                  }),
+                },
+                {
+                  href: '/services/design/ui-ux',
+                  label: t('nav.services.ui_ux.label', { defaultValue: 'UI/UX Design' }),
+                },
+                {
+                  href: '/services/seo',
+                  label: t('nav.services.seo.label', { defaultValue: 'SEO Optimierung' }),
+                },
+                {
+                  href: '/services/ecommerce-development',
+                  label: t('nav.services.ecommerce.label', { defaultValue: 'E-Commerce' }),
+                },
+                {
+                  href: '/services/development/api-integration',
+                  label: t('nav.services.api.label', { defaultValue: 'API-Integrationen' }),
+                },
+              ].map((link, idx) => (
+                <li key={idx}>
+                  <Link
+                    prefetch={false}
+                    href={link.href}
+                    className="group inline-flex items-center text-sm text-gray-400 hover:text-white transition-colors duration-300"
+                  >
+                    <span className="relative">
+                      {link.label}
+                      <span className="absolute -bottom-1 left-0 w-0 h-px bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
+                    </span>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </nav>
 
-          {/* Col 4: Regionales (SEO) */}
-          <nav aria-label={t('footer.sections.regional', { defaultValue: 'Regionales' })}>
-            <h3 className="text-xs font-bold text-gray-300 uppercase tracking-wider mb-4">
-              {t('footer.sections.regional', { defaultValue: 'Standorte & Branchen' })}
-            </h3>
-            <ul className="space-y-3">
-              <li>
-                <NextLink
-                  prefetch={false}
-                  href="/de/webdesign-agentur-wetzlar"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
-                >
-                  {t('nav.local.wetzlar', { defaultValue: 'Webdesign Agentur Wetzlar' })}
-                </NextLink>
-              </li>
-              <li>
-                <NextLink
-                  prefetch={false}
-                  href="/de/standorte/hessen"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
-                >
-                  {t('nav.local.hessen', { defaultValue: 'Webdesign Hessen' })}
-                </NextLink>
-              </li>
-              <li>
-                <NextLink
-                  prefetch={false}
-                  href="/de/branchen/gesundheitswesen/arzt-wetzlar"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
-                >
-                  {t('nav.local.arzt_wetzlar', { defaultValue: 'Praxis-Website Wetzlar' })}
-                </NextLink>
-              </li>
-              <li>
-                <NextLink
-                  prefetch={false}
-                  href="/de/branchen/gesundheitswesen/arzt-giessen"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
-                >
-                  {t('nav.local.arzt_giessen', { defaultValue: 'Praxis-Website Gießen' })}
-                </NextLink>
-              </li>
-              <li>
-                <NextLink
-                  prefetch={false}
-                  href="/de/branchen/handwerker/wetzlar"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
-                >
-                  {t('nav.local.handwerker_wetzlar', { defaultValue: 'Handwerker Wetzlar' })}
-                </NextLink>
-              </li>
-              <li>
-                <Link
-                  prefetch={false}
-                  href="/uebersicht"
-                  className="text-sm text-gray-300 hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2 font-medium"
-                >
-                  {t('footer.sitemap', { defaultValue: 'Seitenübersicht (Sitemap)' })}
-                </Link>
-              </li>
-            </ul>
-          </nav>
-
-          {/* Col 5: Direct Contact details */}
+          {/* Col 4: Contact */}
           <div>
-            <h3 className="text-xs font-bold text-gray-300 uppercase tracking-wider mb-4">
+            <h3 className="text-xs font-bold text-white uppercase tracking-[0.15em] mb-8 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-purple-400/50"></span>
               {t('footer.sections.contact', { defaultValue: 'Kontakt' })}
             </h3>
-            <ul className="space-y-3 mb-6 text-sm text-gray-300">
+            <ul className="space-y-5 text-sm text-gray-400 font-light">
               <li>
                 <a
                   href="mailto:kontakt@codayweb.de"
-                  className="hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
+                  className="hover:text-white transition-colors duration-300 flex items-center gap-3"
                 >
+                  <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center">
+                    <span className="text-xs">@</span>
+                  </div>
                   kontakt@codayweb.de
                 </a>
               </li>
               <li>
                 <a
                   href="tel:+4917641195301"
-                  className="hover:text-primary transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
+                  className="hover:text-white transition-colors duration-300 flex items-center gap-3"
                 >
+                  <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center">
+                    <span className="text-xs">✆</span>
+                  </div>
                   +49 176 41195301
                 </a>
               </li>
-              <li className="pt-2 text-gray-300">
+              <li className="pt-4 text-gray-500 text-xs leading-relaxed border-t border-white/5">
                 Umutcan Emre Tezgel (Coday)
                 <br />
-                Lessingstraße 4
-                <br />
+                Lessingstraße 4<br />
                 35578 Wetzlar
               </li>
             </ul>
-            <Link
-              prefetch={false}
-              href="/contact"
-              className="inline-flex items-center justify-center min-h-[44px] px-6 bg-primary/20 text-blue-400 border border-primary/30 rounded-lg text-sm font-bold hover:bg-primary hover:text-white transition motion-reduce:duration-[0.01ms]"
-            >
-              {t('nav.main.contact', { defaultValue: 'Projekt starten' })}
-            </Link>
           </div>
         </div>
 
-        {/* Trust & Review Badges in Footer */}
-        <div className="border-t border-gray-800/50 pt-10 pb-6 flex flex-col items-center justify-center gap-8">
-          <TrustBadges
-            align="center"
-            className="opacity-80 grayscale hover:grayscale-0 transition motion-reduce:duration-[0.01ms] duration-300"
-          />
+        {/* Trust Badges - elegant & minimal */}
+        <div className="flex justify-center mb-16 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+          <TrustBadges align="center" />
         </div>
 
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <nav
-            aria-label={t('footer.socialMedia', { defaultValue: 'Soziale Medien' })}
-            className="flex gap-6 text-gray-300"
-          >
-            <a
-              href="https://www.facebook.com/profile.php?id=61588758264018"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary transition-colors motion-reduce:duration-[0.01ms] p-3 -m-3 inline-flex items-center justify-center min-h-[44px] min-w-[44px]"
-              aria-label={t('social.visit', { platform: 'Facebook' })}
-            >
-              <span className="sr-only">{t('social.visit', { platform: 'Facebook' })}</span>
-              <OptimizedIcon icon={FacebookLogo} />
-            </a>
-            <a
-              href="https://www.instagram.com/codayweb/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary transition-colors motion-reduce:duration-[0.01ms] p-3 -m-3 inline-flex items-center justify-center min-h-[44px] min-w-[44px]"
-              aria-label={t('social.visit', { platform: 'Instagram' })}
-            >
-              <span className="sr-only">{t('social.visit', { platform: 'Instagram' })}</span>
-              <OptimizedIcon icon={InstagramLogo} />
-            </a>
-            <a
-              href="https://twitter.com/codayweb"
-              className="hover:text-primary transition-colors motion-reduce:duration-[0.01ms] p-3 -m-3 inline-flex items-center justify-center min-h-[44px] min-w-[44px]"
-              aria-label={t('social.visit', { platform: 'Twitter' })}
-            >
-              <span className="sr-only">{t('social.visit', { platform: 'Twitter' })}</span>
-              <OptimizedIcon icon={TwitterLogo} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/umutcan-tezgel"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary transition-colors motion-reduce:duration-[0.01ms] p-3 -m-3 inline-flex items-center justify-center min-h-[44px] min-w-[44px]"
-              aria-label={t('social.visit', { platform: 'LinkedIn' })}
-            >
-              <span className="sr-only">{t('social.visit', { platform: 'LinkedIn' })}</span>
-              <OptimizedIcon icon={LinkedinLogo} />
-            </a>
-          </nav>
+        {/* Bottom Bar: Legal & Social */}
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex items-center gap-3">
+            {[
+              {
+                icon: FacebookLogo,
+                href: 'https://www.facebook.com/profile.php?id=61588758264018',
+                label: 'Facebook',
+              },
+              {
+                icon: InstagramLogo,
+                href: 'https://www.instagram.com/codayweb/',
+                label: 'Instagram',
+              },
+              { icon: TwitterLogo, href: 'https://twitter.com/codayweb', label: 'Twitter' },
+              {
+                icon: LinkedinLogo,
+                href: 'https://www.linkedin.com/in/umutcan-tezgel',
+                label: 'LinkedIn',
+              },
+            ].map((social, idx) => (
+              <a
+                key={idx}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.label}
+                className="group relative flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 hover:-translate-y-1 transition-all duration-300"
+              >
+                <OptimizedIcon
+                  icon={social.icon}
+                  className="text-gray-400 group-hover:text-white transition-colors"
+                />
+              </a>
+            ))}
+          </div>
+
           <nav
             aria-label={t('footer.legalInfo', { defaultValue: 'Rechtliche Informationen' })}
-            className="flex flex-wrap justify-center md:justify-end gap-x-4 gap-y-2 text-xs text-gray-300"
+            className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs font-light text-gray-500"
           >
-            <Link
-              prefetch={false}
-              href="/garantie"
-              className="hover:text-white transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
-            >
-              {t('nav.main.garantie', { defaultValue: 'Garantie' })}
-            </Link>
-            <Link
-              prefetch={false}
-              href="/presse"
-              className="hover:text-white transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
-            >
-              {t('nav.main.presse', { defaultValue: 'Presse' })}
-            </Link>
-            <Link
-              prefetch={false}
-              href="/legal/agb"
-              className="hover:text-white transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
-            >
-              {t('nav.legal.agb')}
-            </Link>
-            <Link
-              prefetch={false}
-              href="/legal/datenschutz"
-              className="hover:text-white transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
-            >
-              {t('nav.legal.privacy')}
-            </Link>
-            <Link
-              prefetch={false}
-              href="/legal/impressum"
-              className="hover:text-white transition-colors motion-reduce:duration-[0.01ms] inline-flex items-center min-h-[48px] py-2"
-            >
-              {t('nav.legal.imprint')}
-            </Link>
-            <span>{t('footer.rights', { year: new Date().getFullYear() })}</span>
+            {[
+              { href: '/garantie', label: t('nav.main.garantie', { defaultValue: 'Garantie' }) },
+              { href: '/presse', label: t('nav.main.presse', { defaultValue: 'Presse' }) },
+              { href: '/legal/agb', label: t('nav.legal.agb') },
+              { href: '/legal/datenschutz', label: t('nav.legal.privacy') },
+              { href: '/legal/impressum', label: t('nav.legal.imprint') },
+            ].map((link, idx) => (
+              <Link
+                key={idx}
+                prefetch={false}
+                href={link.href}
+                className="hover:text-gray-300 transition-colors duration-300"
+              >
+                {link.label}
+              </Link>
+            ))}
+            <span className="opacity-60 ml-2">
+              {t('footer.rights', { year: new Date().getFullYear() })}
+            </span>
           </nav>
         </div>
       </div>
