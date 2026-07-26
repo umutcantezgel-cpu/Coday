@@ -37,7 +37,7 @@ interface PhysicsState {
   isInsideFolder: boolean;
 }
 
-const WIDGET_IDS = ['security', 'chat', 'social', 'folder', 'game'] as const;
+const WIDGET_IDS = ['security', 'chat', 'social', 'folder', 'game', 'whatsapp'] as const;
 type WidgetId = (typeof WIDGET_IDS)[number];
 
 function getContextualMessage(pathname: string, defaultMsg: string): string {
@@ -122,6 +122,17 @@ export const FloatingWidgetsManager: React.FC = () => {
       isSnapping: false,
       isInsideFolder: false,
     },
+    whatsapp: {
+      id: 'whatsapp',
+      x: 0,
+      y: 0,
+      vx: 0,
+      vy: 0,
+      isDragging: false,
+      wasDragged: false,
+      isSnapping: false,
+      isInsideFolder: false,
+    },
   });
 
   const dragStart = useRef({ x: 0, y: 0 });
@@ -145,6 +156,9 @@ export const FloatingWidgetsManager: React.FC = () => {
     // Initial arrangement
     widgets.current.folder.x = window.innerWidth - WIDGET_SIZE - margin;
     widgets.current.folder.y = bottomBase;
+
+    widgets.current.whatsapp.x = window.innerWidth - WIDGET_SIZE - margin;
+    widgets.current.whatsapp.y = bottomBase - WIDGET_SIZE - margin - 20; // Spawn above the folder
 
     ['security', 'chat', 'social', 'game'].forEach((id) => {
       const w = widgets.current[id as WidgetId];
@@ -196,6 +210,29 @@ export const FloatingWidgetsManager: React.FC = () => {
           dy = (Math.random() - 0.5) * 0.1;
           distSq = dx * dx + dy * dy;
         }
+
+        // --- MAGNETIC REPULSION (WhatsApp) ---
+        if (w1.id === 'whatsapp' || w2.id === 'whatsapp') {
+          const magnetRadius = WIDGET_SIZE * 3.5;
+          if (distSq < magnetRadius * magnetRadius && distSq > 0) {
+            const dist = Math.sqrt(distSq);
+            // Non-linear force: stronger when closer
+            const force = Math.pow((magnetRadius - dist) / magnetRadius, 2);
+            const fx = (dx / dist) * force * 3.5;
+            const fy = (dy / dist) * force * 3.5;
+
+            if (!w1.isDragging) {
+              w1.vx -= fx;
+              w1.vy -= fy;
+            }
+            if (!w2.isDragging) {
+              w2.vx += fx;
+              w2.vy += fy;
+            }
+            hasCollisions = true; // Keep physics awake
+          }
+        }
+        // -------------------------------------
 
         const minDist = WIDGET_SIZE + 4; // Add slight padding
 
@@ -371,7 +408,13 @@ export const FloatingWidgetsManager: React.FC = () => {
       }
 
       // If floating free, check if it should be swallowed magnetically
-      if (!w.isInsideFolder && w.id !== 'folder' && isFolderOpen.current && !w.isDragging) {
+      if (
+        !w.isInsideFolder &&
+        w.id !== 'folder' &&
+        w.id !== 'whatsapp' &&
+        isFolderOpen.current &&
+        !w.isDragging
+      ) {
         const folder = widgets.current.folder;
         const dx = w.x - folder.x;
         const dy = w.y - folder.y;
@@ -570,6 +613,25 @@ export const FloatingWidgetsManager: React.FC = () => {
     setIsGameActive(true);
   };
 
+  const handleWhatsappClick = (e: React.MouseEvent) => {
+    if (widgets.current.whatsapp.wasDragged) {
+      e.preventDefault();
+      return;
+    }
+    const msg = getContextualMessage(
+      pathname,
+      'Hallo, ich interessiere mich für Ihre Webdesign-Dienstleistungen.'
+    );
+    const url = `https://api.whatsapp.com/send?phone=4917641195301&text=${encodeURIComponent(msg)}`;
+    window.open(url, '_blank');
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'whatsapp_click', {
+        event_category: 'engagement',
+        event_label: pathname,
+      });
+    }
+  };
+
   if (!mounted) return null;
 
   const wSec = widgets.current.security;
@@ -717,7 +779,42 @@ export const FloatingWidgetsManager: React.FC = () => {
         ''
       )}
 
+      {/* ── WhatsApp Widget ── */}
+      {renderWidget(
+        widgets.current.whatsapp,
+        <div
+          className="w-full h-full rounded-full flex items-center justify-center relative transition-transform shadow-[0_6px_28px_rgba(37,211,102,0.55)]"
+          style={{
+            backgroundColor: '#25D366',
+            color: '#ffffff',
+            animation: 'wa-pulse 2s ease-in-out infinite',
+          }}
+        >
+          <WhatsappLogo className="w-8 h-8" weight="fill" />
+          <span className="absolute top-1/2 -translate-y-1/2 right-full mr-4 bg-[#25D366] text-white text-xs font-bold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-xl hidden md:block">
+            Chat starten 💬
+            <div className="absolute top-1/2 -translate-y-1/2 -right-1 border-4 border-transparent border-l-[#25D366]" />
+          </span>
+        </div>,
+        handleWhatsappClick,
+        'z-[10001]'
+      )}
+
       <VelocityVoidOverlay isActive={isGameActive} onClose={() => setIsGameActive(false)} />
+
+      <style jsx global>{`
+        @keyframes wa-pulse {
+          0% {
+            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+          }
+          70% {
+            box-shadow: 0 0 0 18px rgba(37, 211, 102, 0);
+          }
+          100% {
+            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+          }
+        }
+      `}</style>
     </div>
   );
 };
