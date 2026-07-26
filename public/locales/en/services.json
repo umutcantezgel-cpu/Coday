@@ -113,7 +113,7 @@
     },
     "meta": {
       "title": "API Integrations | Seamless System Connections",
-      "description": "We connect your systems. CRM, ERP, Payment, or Marketing – custom API integrations for maximum automation."
+      "description": "We connect your systems. CRM, ERP, Payment, or Marketing, custom API integrations for maximum automation."
     },
     "deliverables": {
       "title": "API Development Services Deliverables"
@@ -121,7 +121,7 @@
     "hero": {
       "title_prefix": "API Integrations & Development Services for",
       "title_suffix": "Automation.",
-      "description": "We connect your system landscape with custom API Integrations. CRM, ERP, Payment, or Marketing tools – for seamless Automation.",
+      "description": "We connect your system landscape with custom API Integrations. CRM, ERP, Payment, or Marketing tools, for seamless Automation.",
       "cta": "Request Integration"
     },
     "why_automate": {
@@ -296,12 +296,12 @@
     "hero": {
       "badge": "Scalable UI",
       "cta": "Request Design System",
-      "description": "Consistency is King. We develop atomic design systems – Design that Scales, making your brand uniform and efficient across all touchpoints.",
+      "description": "Consistency is King. We develop atomic design systems, Design that Scales, making your brand uniform and efficient across all touchpoints.",
       "title_prefix": "Design Systems",
       "title_suffix": "that Scale."
     },
     "workflow": {
-      "description": "From audit to implementation – we build design systems that your team actually uses.",
+      "description": "From audit to implementation, we build design systems that your team actually uses.",
       "title": "Our Design System Workflow"
     },
     "meta": {
@@ -451,7 +451,7 @@
       "paragraphs": [
         "In today's digital world, a standard online store is often not enough. As a specialized agency for e-commerce development, we focus on headless architectures using Next.js, Shopify Plus, and Hydrogen.",
         "By separating the frontend from the backend, we achieve load times under one second. For you, this means lower bounce rates, higher conversion rates, and better Google rankings.",
-        "Whether it's a complex B2B platform or a high-performance B2C shop – we develop custom e-commerce solutions that scale with your business and give you a real competitive edge."
+        "Whether it's a complex B2B platform or a high-performance B2C shop, we develop custom e-commerce solutions that scale with your business and give you a real competitive edge."
       ]
     },
     "seoText": {
@@ -728,7 +728,7 @@
     },
     "hero": {
       "cta": "Start Migration",
-      "description": "We migrate your outdated monoliths to a modern, scalable stack based on React and Next.js. Make your system Future Proof – without data loss.",
+      "description": "We migrate your outdated monoliths to a modern, scalable stack based on React and Next.js. Make your system Future Proof, without data loss.",
       "label": "Legacy Modernization",
       "title_prefix": "Future Proof Migration",
       "title_suffix": "& replatforming."
@@ -779,7 +779,7 @@
     }
   },
   "performance_page": {
-    "long_description": "Website performance is no longer just a technical metric; it is a direct driver of revenue and user engagement. In today's highly competitive digital landscape, a delay of even a few milliseconds can result in frustrated users and lost conversions. Optimizing for speed is a core pillar of digital transformation.\n\nWe focus heavily on improving Core Web Vitals—such as Largest Contentful Paint (LCP) and Cumulative Layout Shift (CLS)—by leveraging advanced frameworks like Next.js and Edge Computing. Through intelligent code-splitting, aggressive caching, and image optimization, we ensure your application loads instantly across all devices and network conditions.\n\nBy treating performance as a fundamental feature, we help businesses achieve perfect Google PageSpeed scores. This not only enhances the user experience but also provides a significant boost to organic search visibility, ultimately leading to lower bounce rates and substantially higher return on investment.",
+    "long_description": "Website performance is no longer just a technical metric; it is a direct driver of revenue and user engagement. In today's highly competitive digital landscape, a delay of even a few milliseconds can result in frustrated users and lost conversions. Optimizing for speed is a core pillar of digital transformation.\n\nWe focus heavily on improving Core Web Vitals such as Largest Contentful Paint (LCP) and Cumulative Layout Shift (CLS) by leveraging advanced frameworks like Next.js and Edge Computing. Through intelligent code-splitting, aggressive caching, and image optimization, we ensure your application loads instantly across all devices and network conditions.\n\nBy treating performance as a fundamental feature, we help businesses achieve perfect Google PageSpeed scores. This not only enhances the user experience but also provides a significant boost to organic search visibility, ultimately leading to lower bounce rates and substantially higher return on investment.",
     "google_values": {
       "badge": "Google Speed Metrics",
       "description": "Google doesn't just measure keywords, but how your site <i>feels</i>. We optimize all 3 Core Web Vitals for best ratings.",
@@ -912,7 +912,7 @@
     "long_description": "Exceptional UI/UX design is the critical differentiator in today's digital economy. It is the practice of combining striking visual aesthetics with deep psychological insights to create digital experiences that are not only beautiful but intuitively guide users toward their goals.\n\nOur approach to user-centric design is deeply rooted in comprehensive UX research and behavioral science. We start with extensive wireframing and flow mapping to establish a solid structural foundation, followed by the creation of high-fidelity, interactive prototypes that bring the vision to life before a single line of code is written.\n\nBy prioritizing cognitive ease, accessibility, and emotional resonance, we design interfaces that captivate users and drive measurable business results. Whether building a complex B2B dashboard or a high-converting landing page, our pixel-perfect designs ensure a seamless, engaging experience on every device.",
     "meta": {
       "title": "UI/UX Design | User-Centric Digital Experiences",
-      "description": "We design digital experiences users love. From Wireframes to High-Fidelity Prototypes – we create interfaces that convert."
+      "description": "We design digital experiences users love. From Wireframes to High-Fidelity Prototypes, we create interfaces that convert."
     },
     "deliverables": {
       "title": "UX/UI Design Services Deliverables",
@@ -1311,7 +1311,7 @@
         {
           "icon": "stack.stack",
           "title": "Modern Tech Stack",
-          "description": "We rely on Next.js, React, TypeScript and Tailwind – the gold standard of modern web development."
+          "description": "We rely on Next.js, React, TypeScript and Tailwind, the gold standard of modern web development."
         },
         {
           "icon": "shield_check",
@@ -1496,7 +1496,7 @@
           {
             "icon": "chart_bar",
             "title": "Scalable Infrastructure",
-            "description": "Whether it's Black Friday or a TV appearance – your shop remains lightning fast even under extreme load."
+            "description": "Whether it's Black Friday or a TV appearance, your shop remains lightning fast even under extreme load."
           }
         ],
         "testimonials": [
@@ -1632,7 +1632,7 @@
           {
             "icon": "currency_dollar",
             "title": "Cost Efficiency",
-            "description": "With Serverless architectures, you only pay for what you actually use – no expensive idle servers."
+            "description": "With Serverless architectures, you only pay for what you actually use, no expensive idle servers."
           }
         ],
         "testimonials": [
@@ -1697,7 +1697,7 @@
           {
             "icon": "palette",
             "title": "Uncompromising Aesthetics",
-            "description": "We leverage modern design trends like glassmorphism or brutalist typography – tailored to your brand."
+            "description": "We leverage modern design trends like glassmorphism or brutalist typography, tailored to your brand."
           },
           {
             "icon": "monitor",
@@ -1976,7 +1976,7 @@
           {
             "icon": "lightning",
             "title": "Lighthouse Perfection",
-            "description": "We always aim for the perfect 100/100 score – a quality mark that Google also rewards."
+            "description": "We always aim for the perfect 100/100 score, a quality mark that Google also rewards."
           }
         ],
         "testimonials": [
@@ -2057,7 +2057,7 @@
         ],
         "faqs": [
           {
-            "question": "Consulting or implementation – do you do both?",
+            "question": "Consulting or implementation, do you do both?",
             "answer": "Yes. We advise you strategically and can subsequently build the architecture in-house. However, you are completely free to have the implementation done by another provider."
           },
           {
@@ -2069,7 +2069,7 @@
     },
     "seoText": {
       "title": "Digital Services & Web Design Agency | Coday",
-      "content": "As a full-service web design agency, we offer comprehensive digital services. From web development and UI/UX design to search engine optimization – we cover the entire spectrum for your digital success."
+      "content": "As a full-service web design agency, we offer comprehensive digital services. From web development and UI/UX design to search engine optimization, we cover the entire spectrum for your digital success."
     }
   },
   "web_development_page": {
@@ -2181,7 +2181,7 @@
   },
   "methodology": {
     "title": "Precision Craftsmanship over Mass Production.",
-    "description": "As a solo agency, I work directly with you — without project managers or miscommunication. You receive custom solutions based on the latest web technologies that deliver real results. From initial concept to final launch.",
+    "description": "As a solo agency, I work directly with you, without project managers or miscommunication. You receive custom solutions based on the latest web technologies that deliver real results. From initial concept to final launch.",
     "steps": {
       "01": {
         "title": "title",

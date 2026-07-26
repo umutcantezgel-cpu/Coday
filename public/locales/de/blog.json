@@ -213,19 +213,19 @@
         "description": "Einfache HTML-Seiten, keine Interaktivität. Die Ära der digitalen Visitenkarte.",
         "model": "Statische Websites",
         "overhead": "Minimal",
-        "title": "Web 1.0 (1995–2004)"
+        "title": "Web 1.0 (1995 2004)"
       },
       "1": {
         "description": "CMS-Plattformen wie WordPress demokratisierten das Web-Publishing, fügten aber Ballast hinzu.",
         "model": "Templates & Plugins",
         "overhead": "Mittel",
-        "title": "CMS-Ära (2004–2015)"
+        "title": "CMS-Ära (2004 2015)"
       },
       "2": {
         "description": "JavaScript-Frameworks ermöglichten reichhaltige Anwendungen, erhöhten aber die Komplexität.",
         "model": "SaaS & Abonnements",
         "overhead": "Hoch",
-        "title": "SPA-Ära (2015–2022)"
+        "title": "SPA-Ära (2015 2022)"
       },
       "3": {
         "description": "Edge Computing, KI-gestützte Entwicklung und Serverless-Architekturen. Maximale Performance.",

@@ -12,22 +12,22 @@
         "ent": "✓",
         "label": "CMS",
         "pro": "✓",
-        "starter": "—",
-        "onepager": "—"
+        "starter": " ",
+        "onepager": " "
       },
       "custom": {
         "ent": "✓",
         "label": "Custom Dev",
-        "pro": "—",
-        "starter": "—",
-        "onepager": "—"
+        "pro": " ",
+        "starter": " ",
+        "onepager": " "
       },
       "ecommerce": {
         "ent": "✓",
         "label": "E-commerce",
-        "pro": "—",
-        "starter": "—",
-        "onepager": "—"
+        "pro": " ",
+        "starter": " ",
+        "onepager": " "
       },
       "pages": {
         "ent": "Up to 30",
@@ -165,13 +165,13 @@
   },
   "page": {
     "headline": "Three Packages. <0>Zero Surprises.</0>",
-    "subheadline": "Three Packages. Zero Surprises. Choose the package that fits your goals. All prices are Fixed – no hidden costs.",
+    "subheadline": "Three Packages. Zero Surprises. Choose the package that fits your goals. All prices are Fixed, no hidden costs.",
     "title": "Web Design Pricing & SEO Costs | Packages - Coday",
     "description": "Transparent web design pricing and SEO Packages. I offer a 100% Fixed price guarantee for high-end web development with no hidden costs."
   },
   "custom": {
     "title": "Bigger Project?",
-    "description": "For more complex requirements – e.g. over 30 pages, custom features, or special integrations – we'll gladly create a tailored quote for you.",
+    "description": "For more complex requirements, e.g. over 30 pages, custom features, or special integrations, we'll gladly create a tailored quote for you.",
     "cta": "Request Custom Quote",
     "badge": "Custom"
   },
@@ -180,7 +180,7 @@
     "items": [
       {
         "question": "Why Fixed pricing?",
-        "answer": "I believe in transparency. My Fixed prices give you full planning security – no hidden costs, no subsequent demands. You know exactly what you get and what it costs."
+        "answer": "I believe in transparency. My Fixed prices give you full planning security, no hidden costs, no subsequent demands. You know exactly what you get and what it costs."
       },
       {
         "question": "What if I need more?",
@@ -228,7 +228,7 @@
   },
   "value_prop": {
     "title": "Why Next.js? Why from 499€?",
-    "description": "Your website is no longer just a simple business card – it is your strongest, fully automated sales representative. An investment in performance is an investment in measurable revenue.",
+    "description": "Your website is no longer just a simple business card, it is your strongest, fully automated sales representative. An investment in performance is an investment in measurable revenue.",
     "points": [
       {
         "title": "Millisecond Load Times",

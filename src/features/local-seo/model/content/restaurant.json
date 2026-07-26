@@ -72,7 +72,7 @@
   "processSteps": [
     {
       "title": "1. Strategie, Konzept & Atmosphäre",
-      "description": "Egal ob Fine-Dining-Restaurant, florierende Systemgastronomie oder trendige Szene-Bar – in einem ausführlichen Workshop fangen wir die wahre Essenz Ihres Konzepts ein und gießen sie in ein strategisches, digitales Erlebnis, das exakt Ihre gewünschte Zielgruppe anspricht."
+      "description": "Egal ob Fine-Dining-Restaurant, florierende Systemgastronomie oder trendige Szene-Bar, in einem ausführlichen Workshop fangen wir die wahre Essenz Ihres Konzepts ein und gießen sie in ein strategisches, digitales Erlebnis, das exakt Ihre gewünschte Zielgruppe anspricht."
     },
     {
       "title": "2. Professionelle Food Fotografie",
@@ -103,7 +103,7 @@
     },
     {
       "q": "Können wir unsere Speisekarte und Tagesangebote täglich selbst ändern?",
-      "a": "Ja, absolut. Unabhängigkeit ist uns wichtig. Sie erhalten von uns ein modernes, extrem schnelles Headless CMS (Content Management System). Damit können Sie Tagesgerichte, saisonale Preisanpassungen oder wechselnde Weinkarten in wenigen Sekunden direkt von Ihrem Smartphone oder Tablet aus aktualisieren – ohne Programmierkenntnisse."
+      "a": "Ja, absolut. Unabhängigkeit ist uns wichtig. Sie erhalten von uns ein modernes, extrem schnelles Headless CMS (Content Management System). Damit können Sie Tagesgerichte, saisonale Preisanpassungen oder wechselnde Weinkarten in wenigen Sekunden direkt von Ihrem Smartphone oder Tablet aus aktualisieren, ohne Programmierkenntnisse."
     },
     {
       "q": "Binden Sie unser bestehendes Reservierungssystem (z.B. OpenTable, Quandoo, resmio) ein?",
@@ -192,7 +192,7 @@
   "processSteps_en": [
     {
       "title": "1. Strategy, Concept & Atmosphere",
-      "description": "Whether it's a fine-dining restaurant, a flourishing system gastronomy, or a trendy bar – in a detailed workshop, we capture the true essence of your concept and turn it into a strategic, digital experience that exactly targets your desired audience."
+      "description": "Whether it's a fine-dining restaurant, a flourishing system gastronomy, or a trendy bar, in a detailed workshop, we capture the true essence of your concept and turn it into a strategic, digital experience that exactly targets your desired audience."
     },
     {
       "title": "2. Professional Food Photography",
@@ -223,7 +223,7 @@
     },
     {
       "q": "Can we change our menu and daily specials ourselves every day?",
-      "a": "Yes, absolutely. Independence is important to us. You receive a modern, extremely fast Headless CMS (Content Management System). With it, you can update daily specials, seasonal price adjustments, or changing wine lists in seconds directly from your smartphone or tablet – without any programming knowledge."
+      "a": "Yes, absolutely. Independence is important to us. You receive a modern, extremely fast Headless CMS (Content Management System). With it, you can update daily specials, seasonal price adjustments, or changing wine lists in seconds directly from your smartphone or tablet, without any programming knowledge."
     },
     {
       "q": "Do you integrate our existing reservation system (e.g., OpenTable, Quandoo, resmio)?",

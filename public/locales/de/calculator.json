@@ -25,7 +25,7 @@
     "label": "Der Projekt-Konfigurator",
     "next_step": "Im nächsten Schritt senden Sie uns Ihre Anfrage.",
     "satisfied": "Zufrieden mit Ihrer Konfiguration?",
-    "subtitle_default": "Ermitteln Sie den Investitionsrahmen für Ihre digitale Plattform. Konfigurieren Sie individuelle Features aus 9 Bereichen – passgenau für Startups bis hin zu Enterprise-Kunden.",
+    "subtitle_default": "Ermitteln Sie den Investitionsrahmen für Ihre digitale Plattform. Konfigurieren Sie individuelle Features aus 9 Bereichen, passgenau für Startups bis hin zu Enterprise-Kunden.",
     "subtitle_packages": "Erweitern Sie Ihr gewähltes Paket für Ihr Webprojekt mit zusätzlichen Modulen.",
     "title_1": "Kalkulieren Sie Ihr",
     "title_2": "Webprojekt."
@@ -107,7 +107,7 @@
     },
     "seo-speed": {
       "description": "Ladezeit-Optimierung auf <1s",
-      "learn_more": "Geschwindigkeit ist Geld. Wir tunen die Performance so weit, dass die Seite in unter einer Sekunde lädt – das freut Nutzer und wird von Google mit besserem Ranking belohnt.",
+      "learn_more": "Geschwindigkeit ist Geld. Wir tunen die Performance so weit, dass die Seite in unter einer Sekunde lädt, das freut Nutzer und wird von Google mit besserem Ranking belohnt.",
       "name": "Performance Max"
     },
     "seo-tech": {
@@ -132,7 +132,7 @@
     },
     "tech-pwa": {
       "description": "Offline-Support & Installability",
-      "learn_more": "Macht Ihre Webseite zur App. Nutzer können sie auf dem Homescreen installieren und (teilweise) offline nutzen – für ein App-ähnliches Erlebnis im Browser.",
+      "learn_more": "Macht Ihre Webseite zur App. Nutzer können sie auf dem Homescreen installieren und (teilweise) offline nutzen, für ein App-ähnliches Erlebnis im Browser.",
       "name": "PWA Features"
     }
   },
@@ -159,6 +159,6 @@
   },
   "seoText": {
     "title": "Kostenrechner für Webprojekte | Coday Agency Configurator",
-    "content": "Mit unserem interaktiven Projekt-Konfigurator erhalten Sie schnell und unkompliziert einen präzisen Richtwert für die Realisierung Ihrer digitalen Vision. Wir als erfahrene Coday Web-Agentur setzen auf absolute Klarheit bei der Budgetplanung – ganz ohne versteckte Posten.\n\nVon der performanten Landingpage über maßgeschneiderte E-Commerce-Plattformen bis hin zu hochkomplexen Web-Applikationen: Unser Tool berechnet den Aufwand basierend auf Ihren spezifischen Wünschen bezüglich Design, Funktionen und technischer Infrastruktur.\n\nKonfigurieren Sie jetzt Ihr individuelles Setup und verschaffen Sie sich einen sofortigen Überblick über die zu erwartenden Investitionen. Anschließend besprechen wir die Details gerne in einem unverbindlichen Strategiegespräch und erarbeiten gemeinsam den optimalen Projektplan."
+    "content": "Mit unserem interaktiven Projekt-Konfigurator erhalten Sie schnell und unkompliziert einen präzisen Richtwert für die Realisierung Ihrer digitalen Vision. Wir als erfahrene Coday Web-Agentur setzen auf absolute Klarheit bei der Budgetplanung, ganz ohne versteckte Posten.\n\nVon der performanten Landingpage über maßgeschneiderte E-Commerce-Plattformen bis hin zu hochkomplexen Web-Applikationen: Unser Tool berechnet den Aufwand basierend auf Ihren spezifischen Wünschen bezüglich Design, Funktionen und technischer Infrastruktur.\n\nKonfigurieren Sie jetzt Ihr individuelles Setup und verschaffen Sie sich einen sofortigen Überblick über die zu erwartenden Investitionen. Anschließend besprechen wir die Details gerne in einem unverbindlichen Strategiegespräch und erarbeiten gemeinsam den optimalen Projektplan."
   }
 }

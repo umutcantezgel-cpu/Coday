@@ -69,7 +69,7 @@
     }
   },
   "api_integration_page": {
-    "long_description": "In einer zunehmend fragmentierten Softwarelandschaft sind maßgeschneiderte API-Integrationen das Rückgrat der digitalen Transformation. Durch die nahtlose Vernetzung bestehender CRM-, ERP- und Marketing-Plattformen eliminieren wir manuelle Dateneingaben, reduzieren Fehlerquellen drastisch und schaffen die Grundlage für echte Automatisierung in Echtzeit.\\n\\nUnser technologischer Ansatz basiert auf modernen Architekturmustern, Next.js und hochsicheren Middleware-Lösungen, um einen performanten und verlässlichen Datenfluss zwischen allen Systemen zu garantieren. Ob Zahlungsanbieter wie Stripe, komplexe Salesforce-Instanzen oder zukunftsweisende KI-Schnittstellen wie OpenAI – wir legen größten Wert auf robuster Fehlerbehandlung, minimale Latenzen und strikte Datenverschlüsselung nach höchsten Enterprise-Standards.\\n\\nLetztlich verwandeln wir isolierte Software-Tools in ein einheitliches, hochgradig effizientes digitales Ökosystem. Der Fokus auf Skalierbarkeit stellt sicher, dass Ihre Systemintegrationen auch bei exponentiell wachsendem Transaktionsvolumen absolut stabil, blitzschnell und zukunftssicher bleiben.",
+    "long_description": "In einer zunehmend fragmentierten Softwarelandschaft sind maßgeschneiderte API-Integrationen das Rückgrat der digitalen Transformation. Durch die nahtlose Vernetzung bestehender CRM-, ERP- und Marketing-Plattformen eliminieren wir manuelle Dateneingaben, reduzieren Fehlerquellen drastisch und schaffen die Grundlage für echte Automatisierung in Echtzeit.\\n\\nUnser technologischer Ansatz basiert auf modernen Architekturmustern, Next.js und hochsicheren Middleware-Lösungen, um einen performanten und verlässlichen Datenfluss zwischen allen Systemen zu garantieren. Ob Zahlungsanbieter wie Stripe, komplexe Salesforce-Instanzen oder zukunftsweisende KI-Schnittstellen wie OpenAI, wir legen größten Wert auf robuster Fehlerbehandlung, minimale Latenzen und strikte Datenverschlüsselung nach höchsten Enterprise-Standards.\\n\\nLetztlich verwandeln wir isolierte Software-Tools in ein einheitliches, hochgradig effizientes digitales Ökosystem. Der Fokus auf Skalierbarkeit stellt sicher, dass Ihre Systemintegrationen auch bei exponentiell wachsendem Transaktionsvolumen absolut stabil, blitzschnell und zukunftssicher bleiben.",
     "connectivity": {
       "description": "Egal ob REST, GraphQL, SOAP oder Webhooks. Wir verbinden alles, was eine Schnittstelle hat.",
       "title": "Wir sprechen jede Sprache.",
@@ -113,7 +113,7 @@
     },
     "hero": {
       "cta": "Integration anfragen",
-      "description": "Ich vernetze Ihre Premium-Systemlandschaft durch maßgeschneiderte API Integrationen. CRM, ERP, Payment oder Marketing-Tools – für nahtlose Automation und Prozesse.",
+      "description": "Ich vernetze Ihre Premium-Systemlandschaft durch maßgeschneiderte API Integrationen. CRM, ERP, Payment oder Marketing-Tools, für nahtlose Automation und Prozesse.",
       "title_prefix": "API Integrationen &",
       "title_suffix": "Automation."
     },
@@ -129,7 +129,7 @@
           "title": "Null Fehler"
         },
         "scalability": {
-          "desc": "Egal ob 10 oder 10.000 Transaktionen am Tag – Ihre Prozesse halten stand.",
+          "desc": "Egal ob 10 oder 10.000 Transaktionen am Tag, Ihre Prozesse halten stand.",
           "title": "Skalierbarkeit"
         },
         "speed": {
@@ -217,7 +217,7 @@
     }
   },
   "consulting_page": {
-    "long_description": "Die digitale Transformation ist für moderne Unternehmen keine Option mehr, sondern die Grundvoraussetzung für langfristigen Erfolg. Doch in einer immer komplexer werdenden Technologielandschaft ist es schwer, den Überblick zu behalten und die richtigen Investitionsentscheidungen zu treffen. Unser strategisches IT-Consulting setzt genau hier an: Wir fungieren als Ihr neutraler und erfahrener Partner, der Ihre Geschäftsprozesse tiefgehend analysiert und eine zukunftssichere digitale Roadmap entwickelt. Wir schließen die Lücke zwischen visionären Unternehmenszielen und der harten technischen Realität.\\n\\nEin zentraler Bestandteil unserer Beratung ist die sorgfältige Evaluierung und Modernisierung Ihres bestehenden Tech-Stacks. Wir decken ineffiziente Legacy-Systeme und isolierte Datensilos auf und erarbeiten Konzepte für hochgradig integrierte, skalierbare Architekturen. Ob es um die Einführung von Headless-Systemen, die Migration in die Cloud oder die Automatisierung manueller Workflows geht – wir stellen sicher, dass Ihre Technologie nicht zum Flaschenhals, sondern zum stärksten Wachstumstreiber Ihres Unternehmens wird.\\n\\nWir wissen, dass erfolgreiche Technologieprojekte mehr erfordern als nur Code. Es geht um Change Management, die Befähigung Ihrer Teams und die Ausrichtung aller Maßnahmen an konkreten KPIs. Deshalb begleiten wir Sie nicht nur bei der strategischen Planung, sondern unterstützen Sie auch bei der praktischen Umsetzung und Skalierung. Mit klaren Meilensteinen, transparentem Risikomanagement und einem unermüdlichen Fokus auf Business Value machen wir Ihr Unternehmen fit für die digitalen Herausforderungen von morgen.\\n\\nZusätzlich legen wir großen Wert auf den Know-how-Transfer in Ihr Unternehmen. Durch gezielte Workshops und Schulungen befähigen wir Ihre Mitarbeiter, neue Technologien souverän zu nutzen und Innovationen eigenständig voranzutreiben. Unser Ziel ist es, Sie nicht von externen Beratern abhängig zu machen, sondern Ihnen die Werkzeuge und das Wissen an die Hand zu geben, um Ihre digitale Zukunft selbstbestimmt und erfolgreich zu gestalten.",
+    "long_description": "Die digitale Transformation ist für moderne Unternehmen keine Option mehr, sondern die Grundvoraussetzung für langfristigen Erfolg. Doch in einer immer komplexer werdenden Technologielandschaft ist es schwer, den Überblick zu behalten und die richtigen Investitionsentscheidungen zu treffen. Unser strategisches IT-Consulting setzt genau hier an: Wir fungieren als Ihr neutraler und erfahrener Partner, der Ihre Geschäftsprozesse tiefgehend analysiert und eine zukunftssichere digitale Roadmap entwickelt. Wir schließen die Lücke zwischen visionären Unternehmenszielen und der harten technischen Realität.\\n\\nEin zentraler Bestandteil unserer Beratung ist die sorgfältige Evaluierung und Modernisierung Ihres bestehenden Tech-Stacks. Wir decken ineffiziente Legacy-Systeme und isolierte Datensilos auf und erarbeiten Konzepte für hochgradig integrierte, skalierbare Architekturen. Ob es um die Einführung von Headless-Systemen, die Migration in die Cloud oder die Automatisierung manueller Workflows geht, wir stellen sicher, dass Ihre Technologie nicht zum Flaschenhals, sondern zum stärksten Wachstumstreiber Ihres Unternehmens wird.\\n\\nWir wissen, dass erfolgreiche Technologieprojekte mehr erfordern als nur Code. Es geht um Change Management, die Befähigung Ihrer Teams und die Ausrichtung aller Maßnahmen an konkreten KPIs. Deshalb begleiten wir Sie nicht nur bei der strategischen Planung, sondern unterstützen Sie auch bei der praktischen Umsetzung und Skalierung. Mit klaren Meilensteinen, transparentem Risikomanagement und einem unermüdlichen Fokus auf Business Value machen wir Ihr Unternehmen fit für die digitalen Herausforderungen von morgen.\\n\\nZusätzlich legen wir großen Wert auf den Know-how-Transfer in Ihr Unternehmen. Durch gezielte Workshops und Schulungen befähigen wir Ihre Mitarbeiter, neue Technologien souverän zu nutzen und Innovationen eigenständig voranzutreiben. Unser Ziel ist es, Sie nicht von externen Beratern abhängig zu machen, sondern Ihnen die Werkzeuge und das Wissen an die Hand zu geben, um Ihre digitale Zukunft selbstbestimmt und erfolgreich zu gestalten.",
     "areas": {
       "digital_trans": {
         "desc": "Prozesse digitalisieren und automatisieren. Von der Lead-Generierung bis zum Fulfillment.",
@@ -285,7 +285,7 @@
     "hero": {
       "badge": "Scalable UI",
       "cta": "System anfragen",
-      "description": "Konsistenz ist King. Ich entwickle atomare Design Systeme – ein Design that Scales, das Ihre Marke über alle Touchpoints hinweg einheitlich und effizient macht.",
+      "description": "Konsistenz ist King. Ich entwickle atomare Design Systeme, ein Design that Scales, das Ihre Marke über alle Touchpoints hinweg einheitlich und effizient macht.",
       "title_prefix": "Design Systems",
       "title_suffix": "that Scale."
     },
@@ -440,7 +440,7 @@
       "paragraphs": [
         "In der modernen digitalen Welt reicht ein Standard-Shop oft nicht mehr aus. Als spezialisierte Agentur für E-Commerce Entwicklung in Wetzlar fokussieren wir uns auf Headless-Architekturen mit Next.js, Shopify Plus und Hydrogen.",
         "Durch die Trennung von Frontend und Backend erreichen wir Ladezeiten unter einer Sekunde. Das bedeutet für Sie: Niedrigere Absprungraten, höhere Conversion-Rates und ein besseres Ranking bei Google.",
-        "Ob komplexe B2B-Plattform oder performanter B2C-Shop – wir entwickeln maßgeschneiderte E-Commerce Lösungen, die mit Ihrem Unternehmen skalieren und Ihnen einen echten Wettbewerbsvorteil verschaffen."
+        "Ob komplexe B2B-Plattform oder performanter B2C-Shop, wir entwickeln maßgeschneiderte E-Commerce Lösungen, die mit Ihrem Unternehmen skalieren und Ihnen einen echten Wettbewerbsvorteil verschaffen."
       ]
     },
     "seoText": {
@@ -572,7 +572,7 @@
     }
   },
   "headless_cms_page": {
-    "long_description": "Traditionelle Monolithen schränken die Flexibilität und Skalierbarkeit moderner digitaler Produkte zunehmend ein. Eine Headless-CMS-Architektur entkoppelt das Backend vom Frontend und ermöglicht Entwicklern die völlige Design-Freiheit, während Content-Manager Inhalte zentral verwalten und auf beliebige Kanäle – von der Website bis zur mobilen App – nahtlos ausspielen können.\\n\\nWir implementieren marktführende Headless-Systeme wie Sanity, Contentful oder Strapi und integrieren diese über leistungsstarke GraphQL- oder REST-APIs mit modernen Frontends auf Basis von Next.js und React. Diese Kombination aus hochperformantem Framework und flexiblem Content-Management sorgt für rasante Ladezeiten, herausragende Core Web Vitals und eine unübertroffene User Experience.\\n\\nDurch den konsequenten Einsatz von Server-Side Rendering (SSR) und Edge Caching stellen wir zudem sicher, dass Ihr Content weltweit im Millisekunden-Bereich verfügbar ist. Eine solche hochmoderne Tech-Stack-Architektur ist nicht nur manipulationssicher und DSGVO-konform, sondern bildet das ideale, zukunftssichere Fundament für grenzenloses Wachstum und Omnichannel-Exzellenz.",
+    "long_description": "Traditionelle Monolithen schränken die Flexibilität und Skalierbarkeit moderner digitaler Produkte zunehmend ein. Eine Headless-CMS-Architektur entkoppelt das Backend vom Frontend und ermöglicht Entwicklern die völlige Design-Freiheit, während Content-Manager Inhalte zentral verwalten und auf beliebige Kanäle, von der Website bis zur mobilen App, nahtlos ausspielen können.\\n\\nWir implementieren marktführende Headless-Systeme wie Sanity, Contentful oder Strapi und integrieren diese über leistungsstarke GraphQL- oder REST-APIs mit modernen Frontends auf Basis von Next.js und React. Diese Kombination aus hochperformantem Framework und flexiblem Content-Management sorgt für rasante Ladezeiten, herausragende Core Web Vitals und eine unübertroffene User Experience.\\n\\nDurch den konsequenten Einsatz von Server-Side Rendering (SSR) und Edge Caching stellen wir zudem sicher, dass Ihr Content weltweit im Millisekunden-Bereich verfügbar ist. Eine solche hochmoderne Tech-Stack-Architektur ist nicht nur manipulationssicher und DSGVO-konform, sondern bildet das ideale, zukunftssichere Fundament für grenzenloses Wachstum und Omnichannel-Exzellenz.",
     "cms_comparison": {
       "contentful": {
         "badge": "Premium Choice",
@@ -673,7 +673,7 @@
     "rotatingTexts": ["Web-Design", "Web-Entwicklung", "SEO"]
   },
   "migration_page": {
-    "long_description": "Der Wechsel von veralteten, monolithischen Altsystemen wie WordPress, Typo3 oder Magento hin zu modernen, dezentralen Architekturen ist ein entscheidender Hebel für die Wettbewerbsfähigkeit Ihres Unternehmens. Es geht dabei nicht nur um den Einsatz neuer Technologien, sondern um die nachhaltige Zukunftssicherung durch Eliminierung von Sicherheitsrisiken und Performance-Flaschenhälsen.\\n\\nWir sind auf risikofreie System- und Datenmigrationen spezialisiert – komplett ohne Ausfallzeiten für Ihren laufenden Betrieb. Mit modernen Frameworks wie Next.js bauen wir ein blitzschnelles Frontend auf, während wir alle bestehenden Nutzerdaten, Assets und Content-Strukturen über robuste Skripte und APIs sicher in das neue System übertragen. Strikte SEO-Protokolle und 301-Weiterleitungen garantieren, dass Ihre wertvollen Google-Rankings vollständig erhalten bleiben.\\n\\nNach der Migration profitieren Sie sofort von drastisch verkürzten Ladezeiten, skalierbarer Infrastruktur und reduzierten Serverkosten. Diese hochmoderne, API-gestützte Architektur passt sich flexibel an künftige Marktveränderungen an und positioniert Ihr Unternehmen optimal, um messbar höhere Conversion-Rates und maximales Wachstum zu realisieren.",
+    "long_description": "Der Wechsel von veralteten, monolithischen Altsystemen wie WordPress, Typo3 oder Magento hin zu modernen, dezentralen Architekturen ist ein entscheidender Hebel für die Wettbewerbsfähigkeit Ihres Unternehmens. Es geht dabei nicht nur um den Einsatz neuer Technologien, sondern um die nachhaltige Zukunftssicherung durch Eliminierung von Sicherheitsrisiken und Performance-Flaschenhälsen.\\n\\nWir sind auf risikofreie System- und Datenmigrationen spezialisiert, komplett ohne Ausfallzeiten für Ihren laufenden Betrieb. Mit modernen Frameworks wie Next.js bauen wir ein blitzschnelles Frontend auf, während wir alle bestehenden Nutzerdaten, Assets und Content-Strukturen über robuste Skripte und APIs sicher in das neue System übertragen. Strikte SEO-Protokolle und 301-Weiterleitungen garantieren, dass Ihre wertvollen Google-Rankings vollständig erhalten bleiben.\\n\\nNach der Migration profitieren Sie sofort von drastisch verkürzten Ladezeiten, skalierbarer Infrastruktur und reduzierten Serverkosten. Diese hochmoderne, API-gestützte Architektur passt sich flexibel an künftige Marktveränderungen an und positioniert Ihr Unternehmen optimal, um messbar höhere Conversion-Rates und maximales Wachstum zu realisieren.",
     "before_after": {
       "after": {
         "items": [
@@ -715,7 +715,7 @@
     },
     "hero": {
       "cta": "Migration planen",
-      "description": "Wir migrieren Ihre veralteten Monolithen zu modernen, skalierbaren Stacks auf Basis von React und Next.js. Machen Sie Ihr System Future Proof – ohne Datenverlust.",
+      "description": "Wir migrieren Ihre veralteten Monolithen zu modernen, skalierbaren Stacks auf Basis von React und Next.js. Machen Sie Ihr System Future Proof, ohne Datenverlust.",
       "label": "Legacy Modernization",
       "title_prefix": "Future Proof Migration",
       "title_suffix": "& Replatforming."
@@ -895,7 +895,7 @@
   "ui_ux_page": {
     "meta": {
       "title": "UI/UX Design | Nutzerzentrierte Digitale Erlebnisse",
-      "description": "Wir designen digitale Erlebnisse, die Nutzer lieben. Von Wireframes bis High-Fidelity Prototypen – wir schaffen Interfaces, die konvertieren."
+      "description": "Wir designen digitale Erlebnisse, die Nutzer lieben. Von Wireframes bis High-Fidelity Prototypen, wir schaffen Interfaces, die konvertieren."
     },
     "deliverables": {
       "items": [
@@ -1283,7 +1283,7 @@
         {
           "icon": "stack",
           "title": "Modern Tech Stack",
-          "description": "Wir setzen auf Next.js, React, TypeScript und Tailwind – den Goldstandard der modernen Webentwicklung."
+          "description": "Wir setzen auf Next.js, React, TypeScript und Tailwind, den Goldstandard der modernen Webentwicklung."
         },
         {
           "icon": "shield_check",
@@ -1468,7 +1468,7 @@
           {
             "icon": "shield_check",
             "title": "Zukunftssichere Skalierbarkeit",
-            "description": "Ob Black Friday oder viraler Hit – unsere Architektur bewältigt enorme Traffic-Spitzen problemlos."
+            "description": "Ob Black Friday oder viraler Hit, unsere Architektur bewältigt enorme Traffic-Spitzen problemlos."
           }
         ],
         "testimonials": [
@@ -1604,7 +1604,7 @@
           {
             "icon": "lightning",
             "title": "Auto-Skalierung",
-            "description": "Egal ob 10 oder 10.000 gleichzeitige Nutzer – unsere Cloud-Lösungen skalieren Ressourcen dynamisch und vollautomatisch."
+            "description": "Egal ob 10 oder 10.000 gleichzeitige Nutzer, unsere Cloud-Lösungen skalieren Ressourcen dynamisch und vollautomatisch."
           }
         ],
         "testimonials": [
@@ -1669,7 +1669,7 @@
           {
             "icon": "palette",
             "title": "Kompromisslose Ästhetik",
-            "description": "Wir setzen auf modernste Design-Trends wie Glassmorphism oder brutalistische Typografie – passend zu Ihrer Marke."
+            "description": "Wir setzen auf modernste Design-Trends wie Glassmorphism oder brutalistische Typografie, passend zu Ihrer Marke."
           },
           {
             "icon": "monitor",
@@ -1948,7 +1948,7 @@
           {
             "icon": "lightning",
             "title": "Lighthouse Perfection",
-            "description": "Wir zielen stets auf den perfekten 100/100 Score ab – ein Qualitätsmerkmal, das auch Google belohnt."
+            "description": "Wir zielen stets auf den perfekten 100/100 Score ab, ein Qualitätsmerkmal, das auch Google belohnt."
           }
         ],
         "testimonials": [
@@ -2029,7 +2029,7 @@
         ],
         "faqs": [
           {
-            "question": "Beratung oder Umsetzung – machen Sie beides?",
+            "question": "Beratung oder Umsetzung, machen Sie beides?",
             "answer": "Ja. Wir beraten Sie strategisch und können die Architektur anschließend auch in-house umsetzen. Sie sind jedoch völlig frei, die Umsetzung mit einem anderen Dienstleister durchzuführen."
           },
           {
@@ -2041,11 +2041,11 @@
     },
     "seoText": {
       "title": "Digitale Services & Webdesign Agentur | Coday",
-      "content": "Als Full-Service Webdesign Agentur bieten wir Ihnen umfassende digitale Services. Von Webentwicklung über UI/UX Design bis hin zur Suchmaschinenoptimierung – wir decken das gesamte Spektrum für Ihren digitalen Erfolg ab."
+      "content": "Als Full-Service Webdesign Agentur bieten wir Ihnen umfassende digitale Services. Von Webentwicklung über UI/UX Design bis hin zur Suchmaschinenoptimierung, wir decken das gesamte Spektrum für Ihren digitalen Erfolg ab."
     }
   },
   "web_development_page": {
-    "long_description": "Maßgeschneiderte Webentwicklung ist weit mehr als nur das Schreiben von Code – sie ist das technische Fundament für Ihren geschäftlichen Erfolg im digitalen Raum. Wir kreieren hochperformante, zukunftssichere digitale Produkte, die durch technische Exzellenz, extreme Ladegeschwindigkeit und eine herausragende Benutzerfreundlichkeit bestechen.\\n\\nUnser Tech-Stack stützt sich dabei auf bewährte Marktstandards und modernste Frameworks wie React, Next.js, TypeScript und Tailwind CSS. Diese Kombination ermöglicht es uns, komplexe Architekturen und Serverless-Infrastrukturen aufzubauen, die selbst bei höchsten Traffic-Spitzen absolut stabil laufen, herausragende Core Web Vitals erzielen und Ihre Serverkosten durch intelligente Edge-Technologien signifikant senken.\\n\\nEin konsequenter API-First-Ansatz sorgt dafür, dass sich Ihre Plattform nahtlos in bestehende Ökosysteme integriert und beliebig durch Drittsysteme erweiterbar bleibt. Das Ergebnis ist eine hochsichere, wartbare und skalierbare Web-Lösung, die nicht nur Ihre aktuelle Conversion-Rate maximiert, sondern Sie auch langfristig an der Spitze Ihres Wettbewerbsumfelds positioniert.",
+    "long_description": "Maßgeschneiderte Webentwicklung ist weit mehr als nur das Schreiben von Code, sie ist das technische Fundament für Ihren geschäftlichen Erfolg im digitalen Raum. Wir kreieren hochperformante, zukunftssichere digitale Produkte, die durch technische Exzellenz, extreme Ladegeschwindigkeit und eine herausragende Benutzerfreundlichkeit bestechen.\\n\\nUnser Tech-Stack stützt sich dabei auf bewährte Marktstandards und modernste Frameworks wie React, Next.js, TypeScript und Tailwind CSS. Diese Kombination ermöglicht es uns, komplexe Architekturen und Serverless-Infrastrukturen aufzubauen, die selbst bei höchsten Traffic-Spitzen absolut stabil laufen, herausragende Core Web Vitals erzielen und Ihre Serverkosten durch intelligente Edge-Technologien signifikant senken.\\n\\nEin konsequenter API-First-Ansatz sorgt dafür, dass sich Ihre Plattform nahtlos in bestehende Ökosysteme integriert und beliebig durch Drittsysteme erweiterbar bleibt. Das Ergebnis ist eine hochsichere, wartbare und skalierbare Web-Lösung, die nicht nur Ihre aktuelle Conversion-Rate maximiert, sondern Sie auch langfristig an der Spitze Ihres Wettbewerbsumfelds positioniert.",
     "hero": {
       "label": "Headless Webentwicklung",
       "title_anim": "Handgefertigte ",
@@ -2154,7 +2154,7 @@
   },
   "methodology": {
     "title": "Präzises Handwerk statt Massenabfertigung.",
-    "description": "Als Solo-Agentur arbeite ich direkt mit Ihnen zusammen – ohne Projektmanager oder stille Post. Sie erhalten maßgeschneiderte Lösungen, die auf modernsten Web-Technologien basieren und echte Ergebnisse liefern. Von der ersten Konzeption bis zum finalen Launch.",
+    "description": "Als Solo-Agentur arbeite ich direkt mit Ihnen zusammen, ohne Projektmanager oder stille Post. Sie erhalten maßgeschneiderte Lösungen, die auf modernsten Web-Technologien basieren und echte Ergebnisse liefern. Von der ersten Konzeption bis zum finalen Launch.",
     "steps": {
       "01": {
         "title": "title",

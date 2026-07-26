@@ -70,7 +70,7 @@
     },
     "seo": {
       "description": "Legal information, privacy policy, imprint, and terms of service for Coday Web Design & Development.",
-      "title": "Legal Center – Coday"
+      "title": "Legal Center, Coday"
     },
     "subtitle": "Transparency is the foundation of trust. Here you can find all legal documents.",
     "title": "Legal Center"
@@ -223,7 +223,7 @@
   "privacy": {
     "aenderungen": {
       "p1": "We reserve the right to adapt this privacy policy to changed legal situations or changes to our services. The current version can always be found on this page.",
-      "p2": "In the event of significant changes, we will inform you – as far as possible – by email or through a notice on our website."
+      "p2": "In the event of significant changes, we will inform you, as far as possible, by email or through a notice on our website."
     },
     "beschwerde": {
       "authority": {
@@ -306,7 +306,7 @@
         "title": "Rectification"
       },
       "art17": {
-        "desc": "You have the \"Right to be Forgotten\" – deletion of your data upon request.",
+        "desc": "You have the \"Right to be Forgotten\", deletion of your data upon request.",
         "title": "Erasure"
       },
       "art18": {
@@ -348,7 +348,7 @@
       },
       "3": {
         "analytics": {
-          "desc": "Google Analytics to improve our website – only with your explicit consent.",
+          "desc": "Google Analytics to improve our website, only with your explicit consent.",
           "title": "Analytics Cookies"
         },
         "content": "We use cookies to keep our website functional and improve your user experience. You can adjust your cookie settings at any time via our cookie banner.",

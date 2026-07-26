@@ -51,7 +51,7 @@
       },
       {
         "title": "1-Klick Terminbuchung",
-        "text": "Wir integrieren moderne Buchungssysteme wie Treatwell, Phorest, Shore oder Belbo nahtlos in Ihr Kosmetikstudio Webdesign. Ihre Kunden erleben einen reibungslosen, extrem schnellen Buchungsprozess, ohne jemals Ihre hochwertige Website verlassen zu müssen – für maximale Conversion-Raten und volle Terminkalender.",
+        "text": "Wir integrieren moderne Buchungssysteme wie Treatwell, Phorest, Shore oder Belbo nahtlos in Ihr Kosmetikstudio Webdesign. Ihre Kunden erleben einen reibungslosen, extrem schnellen Buchungsprozess, ohne jemals Ihre hochwertige Website verlassen zu müssen, für maximale Conversion-Raten und volle Terminkalender.",
         "size": "small",
         "icon": "Speed"
       },
@@ -72,7 +72,7 @@
   "processSteps": [
     {
       "title": "1. Marken-Ästhetik & Strategie definieren",
-      "description": "Zu Beginn unseres Kosmetikstudio Webdesign-Prozesses analysieren wir Ihr spezifisches Studio-Konzept im Detail – ob Medical Beauty, Organic SPA, Nagelstudio oder holistische Kosmetik. Basierend auf Ihrer genauen Zielgruppe und Ihren hochpreisigen Signature-Treatments entwickeln wir ein maßgeschneidertes, exklusives Farb-, Typografie- und Designkonzept, das Ihre Markenwerte perfekt digital übersetzt und Sie unverwechselbar macht."
+      "description": "Zu Beginn unseres Kosmetikstudio Webdesign-Prozesses analysieren wir Ihr spezifisches Studio-Konzept im Detail, ob Medical Beauty, Organic SPA, Nagelstudio oder holistische Kosmetik. Basierend auf Ihrer genauen Zielgruppe und Ihren hochpreisigen Signature-Treatments entwickeln wir ein maßgeschneidertes, exklusives Farb-, Typografie- und Designkonzept, das Ihre Markenwerte perfekt digital übersetzt und Sie unverwechselbar macht."
     },
     {
       "title": "2. High-End Fotografie & Content Creation",
@@ -89,7 +89,7 @@
   ],
   "localDominance": {
     "title": "Ziehen Sie gezielt kaufkräftige Premium-Kunden aus Ihrer gesamten Region an",
-    "description": "Beauty-Kunden sind heutzutage mehr denn je bereit, für exzellente Ergebnisse, hochwertige Produkte und eine luxuriöse Behandlung weiter zu fahren und deutlich mehr zu bezahlen – vorausgesetzt, das Vertrauen und die Online-Wahrnehmung stimmen. Durch ein strategisches, durchdachtes Kosmetikstudio Webdesign bauen wir diesen unverzichtbaren Expertenstatus für Sie auf. Wir positionieren Sie als die unangefochtene Nummer eins in Ihrer Stadt und Umgebung und sorgen dafür, dass Sie nicht über den Preis, sondern über Qualität konkurrieren.",
+    "description": "Beauty-Kunden sind heutzutage mehr denn je bereit, für exzellente Ergebnisse, hochwertige Produkte und eine luxuriöse Behandlung weiter zu fahren und deutlich mehr zu bezahlen, vorausgesetzt, das Vertrauen und die Online-Wahrnehmung stimmen. Durch ein strategisches, durchdachtes Kosmetikstudio Webdesign bauen wir diesen unverzichtbaren Expertenstatus für Sie auf. Wir positionieren Sie als die unangefochtene Nummer eins in Ihrer Stadt und Umgebung und sorgen dafür, dass Sie nicht über den Preis, sondern über Qualität konkurrieren.",
     "points": [
       "Fokussierung auf hochpreisige Signature-Treatments (z.B. apparative Kosmetik, Microneedling, dauerhafte Haarentfernung), um Ihren Umsatz pro Kunde deutlich zu steigern.",
       "Aufbau massiven Kundenvertrauens durch professionelle Vorher-Nachher-Galerien, Zertifikate und verifizierte, authentische Kundenstimmen.",
@@ -98,7 +98,7 @@
   },
   "faq": [
     {
-      "q": "Wir nutzen bereits Treatwell als Buchungsportal – reicht das für unser Kosmetikstudio nicht aus?",
+      "q": "Wir nutzen bereits Treatwell als Buchungsportal, reicht das für unser Kosmetikstudio nicht aus?",
       "a": "Plattformen wie Treatwell sind ein guter Einstieg, aber sie haben einen entscheidenden Nachteil: Sie stellen Sie direkt, vergleichbar und preistransparent neben Ihre härtesten lokalen Konkurrenten. Der Kunde bucht oft einfach das günstigste Angebot. Ein maßgeschriebenes Kosmetikstudio Webdesign hingegen baut eine eigenständige, starke Marke auf. Eine eigene Website rechtfertigt höhere Preise, kommuniziert Ihre Einzigartigkeit und bindet Premium-Kunden langfristig an *Ihr* Studio, anstatt an die Buchungsplattform. Zudem sparen Sie sich langfristig die hohen Provisionszahlungen bei jeder Buchung."
     },
     {
@@ -107,7 +107,7 @@
     },
     {
       "q": "Unsere aktuelle Seite sieht auf dem Smartphone überhaupt nicht gut aus. Ändert sich das bei Ihnen?",
-      "a": "Massiv. In der Beauty- und Kosmetikbranche kommen mittlerweile bis zu 95% der Website-Besucher über das Smartphone – oft direkt über Links aus Instagram oder TikTok. Unser Kosmetikstudio Webdesign wird kompromisslos nach dem 'Mobile-First'-Ansatz entwickelt. Die Navigation, die großflächige Bildsprache und vor allem der entscheidende Buchungsprozess fühlen sich auf dem Handy so flüssig, schnell und intuitiv an wie in einer nativen High-End-App."
+      "a": "Massiv. In der Beauty- und Kosmetikbranche kommen mittlerweile bis zu 95% der Website-Besucher über das Smartphone, oft direkt über Links aus Instagram oder TikTok. Unser Kosmetikstudio Webdesign wird kompromisslos nach dem 'Mobile-First'-Ansatz entwickelt. Die Navigation, die großflächige Bildsprache und vor allem der entscheidende Buchungsprozess fühlen sich auf dem Handy so flüssig, schnell und intuitiv an wie in einer nativen High-End-App."
     },
     {
       "q": "Wie können wir unsere ständig wechselnden Monatsangebote oder neue Behandlungen selbst einpflegen?",
@@ -192,7 +192,7 @@
   "processSteps_en": [
     {
       "title": "1. Define Brand Aesthetics & Strategy",
-      "description": "At the beginning of our beauty salon web design process, we deeply analyze your specific studio concept—whether it's Medical Beauty, an Organic SPA, a nail salon, or holistic skincare. Based on your exact target audience and your high-ticket signature treatments, we develop a bespoke, exclusive color, typography, and design concept that perfectly translates your brand values into the digital realm and makes you unique."
+      "description": "At the beginning of our beauty salon web design process, we deeply analyze your specific studio concept whether it's Medical Beauty, an Organic SPA, a nail salon, or holistic skincare. Based on your exact target audience and your high-ticket signature treatments, we develop a bespoke, exclusive color, typography, and design concept that perfectly translates your brand values into the digital realm and makes you unique."
     },
     {
       "title": "2. High-End Photography & Content Creation",
@@ -209,7 +209,7 @@
   ],
   "localDominance_en": {
     "title": "Strategically attract high-paying premium clients from your entire region",
-    "description": "Today more than ever, beauty clients are willing to travel further and pay significantly more for excellent results, premium products, and a luxurious treatment experience—provided the trust and digital perceived value are right. Through strategic, well-thought-out beauty salon web design, we build this indispensable expert status for you. We position you as the undisputed number one choice in your city and surrounding areas, ensuring you compete on quality, not price.",
+    "description": "Today more than ever, beauty clients are willing to travel further and pay significantly more for excellent results, premium products, and a luxurious treatment experience provided the trust and digital perceived value are right. Through strategic, well-thought-out beauty salon web design, we build this indispensable expert status for you. We position you as the undisputed number one choice in your city and surrounding areas, ensuring you compete on quality, not price.",
     "points": [
       "Strategic focus on high-ticket signature treatments (e.g., apparatus-based cosmetics, microneedling, laser hair removal) to significantly increase your revenue per client.",
       "Building massive client trust through professional before-and-after galleries, visible certifications, and verified, authentic customer testimonials.",
@@ -218,7 +218,7 @@
   },
   "faq_en": [
     {
-      "q": "We are already using Treatwell as a booking portal – isn't that enough for our cosmetic studio?",
+      "q": "We are already using Treatwell as a booking portal, isn't that enough for our cosmetic studio?",
       "a": "Platforms like Treatwell are a good starting point, but they come with a major drawback: they place you directly next to your toughest local competitors in a highly price-transparent environment. Clients often just book the cheapest option. A custom beauty salon web design, on the other hand, builds an independent, powerful brand. Having your own exclusive website justifies higher prices, communicates your unique value proposition, and binds premium clients to *your* studio long-term, rather than to a third-party platform. Additionally, you save on hefty commission fees over time."
     },
     {
@@ -227,11 +227,11 @@
     },
     {
       "q": "Our current site looks terrible on mobile phones. Will this be different with your design?",
-      "a": "Massively different. In the beauty and cosmetics industry, up to 95% of all website traffic now comes via smartphones—often directly through links from Instagram or TikTok. Our beauty salon web design is developed strictly following a 'mobile-first' approach. The navigation, the large-scale visual storytelling, and especially the crucial booking process will feel as fluid, fast, and intuitive on a mobile phone as a native high-end iOS application."
+      "a": "Massively different. In the beauty and cosmetics industry, up to 95% of all website traffic now comes via smartphones often directly through links from Instagram or TikTok. Our beauty salon web design is developed strictly following a 'mobile-first' approach. The navigation, the large-scale visual storytelling, and especially the crucial booking process will feel as fluid, fast, and intuitive on a mobile phone as a native high-end iOS application."
     },
     {
       "q": "How can we update our constantly changing monthly offers or add new treatments ourselves?",
-      "a": "Your independence is highly important to us. We integrate a modern, extremely user-friendly Headless CMS (Content Management System) into your beauty salon web design. You or your staff can easily update texts, adjust prices, add new team members, and publish special monthly promotions with just a few clicks—even directly from your smartphone. Everything works intuitively, looks visually appealing, and requires absolutely no technical background or coding skills. You retain full control over your content."
+      "a": "Your independence is highly important to us. We integrate a modern, extremely user-friendly Headless CMS (Content Management System) into your beauty salon web design. You or your staff can easily update texts, adjust prices, add new team members, and publish special monthly promotions with just a few clicks even directly from your smartphone. Everything works intuitively, looks visually appealing, and requires absolutely no technical background or coding skills. You retain full control over your content."
     },
     {
       "q": "Can we keep our existing booking system (like Shore, Phorest, or Belbo)?",

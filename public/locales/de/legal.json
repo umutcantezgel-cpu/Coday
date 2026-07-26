@@ -70,7 +70,7 @@
     },
     "seo": {
       "description": "Rechtliche Informationen, Datenschutz, Impressum und AGB von Coday Web Design & Entwicklung.",
-      "title": "Rechtliches – Coday"
+      "title": "Rechtliches, Coday"
     },
     "subtitle": "Transparenz ist die Grundlage von Vertrauen. Hier finden Sie alle rechtlichen Dokumente.",
     "title": "Rechtliches"
@@ -223,7 +223,7 @@
   "privacy": {
     "aenderungen": {
       "p1": "Wir behalten uns vor, diese Datenschutzerklärung anzupassen, um sie an geänderte Rechtslagen oder Änderungen unserer Dienste anzupassen. Die aktuelle Version finden Sie stets auf dieser Seite.",
-      "p2": "Bei wesentlichen Änderungen werden wir Sie – soweit möglich – per E-Mail oder durch einen Hinweis auf unserer Website informieren."
+      "p2": "Bei wesentlichen Änderungen werden wir Sie, soweit möglich, per E-Mail oder durch einen Hinweis auf unserer Website informieren."
     },
     "beschwerde": {
       "authority": {
@@ -306,7 +306,7 @@
         "title": "Berichtigung"
       },
       "art17": {
-        "desc": "Sie haben das \"Recht auf Vergessenwerden\" – Löschung Ihrer Daten auf Anfrage.",
+        "desc": "Sie haben das \"Recht auf Vergessenwerden\", Löschung Ihrer Daten auf Anfrage.",
         "title": "Löschung"
       },
       "art18": {
@@ -348,7 +348,7 @@
       },
       "3": {
         "analytics": {
-          "desc": "Google Analytics zur Verbesserung unserer Website – nur mit Ihrer ausdrücklichen Einwilligung.",
+          "desc": "Google Analytics zur Verbesserung unserer Website, nur mit Ihrer ausdrücklichen Einwilligung.",
           "title": "Analyse-Cookies"
         },
         "content": "Wir verwenden Cookies, um unsere Website funktionsfähig zu halten und Ihre Nutzererfahrung zu verbessern. Sie können Ihre Cookie-Einstellungen jederzeit über unser Cookie-Banner anpassen.",

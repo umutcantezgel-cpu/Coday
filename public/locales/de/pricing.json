@@ -12,22 +12,22 @@
         "ent": "✓",
         "label": "CMS",
         "pro": "✓",
-        "starter": "—",
-        "onepager": "—"
+        "starter": " ",
+        "onepager": " "
       },
       "custom": {
         "ent": "✓",
         "label": "Custom Development",
-        "pro": "—",
-        "starter": "—",
-        "onepager": "—"
+        "pro": " ",
+        "starter": " ",
+        "onepager": " "
       },
       "ecommerce": {
         "ent": "✓",
         "label": "E-Commerce",
-        "pro": "—",
-        "starter": "—",
-        "onepager": "—"
+        "pro": " ",
+        "starter": " ",
+        "onepager": " "
       },
       "pages": {
         "ent": "Bis zu 30",
@@ -165,13 +165,13 @@
   },
   "page": {
     "headline": "Transparente Preise für <0>messbaren Erfolg</0>.",
-    "subheadline": "Transparente Preise für messbaren Erfolg: Wählen Sie das Paket, das zu Ihren Zielen passt. Alle Preise sind Festpreise – keine versteckten Kosten.",
+    "subheadline": "Transparente Preise für messbaren Erfolg: Wählen Sie das Paket, das zu Ihren Zielen passt. Alle Preise sind Festpreise, keine versteckten Kosten.",
     "title": "Webdesign Preise & SEO Kosten | Pakete - Coday",
     "description": "Transparente Webdesign Preise und SEO Pakete. Wir bieten 100% Festpreisgarantie für High-End Webentwicklung ohne versteckte Kosten. Jetzt anfragen!"
   },
   "custom": {
     "title": "Größeres Projekt?",
-    "description": "Für komplexere Anforderungen – z. B. über 30 Seiten, individuelle Funktionen oder spezielle Integrationen – erstellen wir Ihnen gerne ein maßgeschneidertes Angebot.",
+    "description": "Für komplexere Anforderungen, z. B. über 30 Seiten, individuelle Funktionen oder spezielle Integrationen, erstellen wir Ihnen gerne ein maßgeschneidertes Angebot.",
     "cta": "Individuelles Angebot anfragen",
     "badge": "Individuell"
   },
@@ -180,7 +180,7 @@
     "items": [
       {
         "question": "Warum Festpreis?",
-        "answer": "Ich glaube an Transparenz. Mit meinen Festpreisen haben Sie volle Planungssicherheit – keine versteckten Kosten, keine Nachforderungen. Sie wissen genau, was Sie bekommen und was es kostet."
+        "answer": "Ich glaube an Transparenz. Mit meinen Festpreisen haben Sie volle Planungssicherheit, keine versteckten Kosten, keine Nachforderungen. Sie wissen genau, was Sie bekommen und was es kostet."
       },
       {
         "question": "Was, wenn ich mehr will?",
@@ -228,7 +228,7 @@
   },
   "value_prop": {
     "title": "Warum Next.js? Warum ab 499€?",
-    "description": "Ihre Website ist kein simples Aushängeschild mehr – sie ist Ihr stärkster, vollautomatisierter Vertriebsmitarbeiter. Eine Investition in Performance ist eine Investition in messbaren Umsatz.",
+    "description": "Ihre Website ist kein simples Aushängeschild mehr, sie ist Ihr stärkster, vollautomatisierter Vertriebsmitarbeiter. Eine Investition in Performance ist eine Investition in messbaren Umsatz.",
     "points": [
       {
         "title": "Millisekunden-Ladezeiten",

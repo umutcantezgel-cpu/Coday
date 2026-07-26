@@ -108,7 +108,7 @@
     },
     "seo-speed": {
       "description": "Load Time Optimization <1s",
-      "learn_more": "Speed is money. We tune performance so the site loads in under a second – users enjoy it, and Google rewards it with better rankings.",
+      "learn_more": "Speed is money. We tune performance so the site loads in under a second, users enjoy it, and Google rewards it with better rankings.",
       "name": "Performance Max"
     },
     "seo-tech": {
@@ -133,7 +133,7 @@
     },
     "tech-pwa": {
       "description": "Offline Support & Installability",
-      "learn_more": "Turns your website into an app. Users can install it on their homescreen and use it (partially) offline – for an app-like experience in the browser.",
+      "learn_more": "Turns your website into an app. Users can install it on their homescreen and use it (partially) offline, for an app-like experience in the browser.",
       "name": "PWA features"
     }
   },
@@ -160,6 +160,6 @@
   },
   "seoText": {
     "title": "Web Development Pricing Calculator | Coday Configurator",
-    "content": "Discover the exact investment required for your upcoming digital venture using our advanced web project estimator. At Coday, we believe in upfront pricing and complete financial clarity to help you make informed decisions before development even starts.\n\nWhether you need a high-converting landing page, a fully-fledged online store, or a bespoke headless application, this tool evaluates every detail—ranging from UI/UX design preferences to backend integrations and performance tuning.\n\nBuild your custom service package today to receive an instant, data-driven cost breakdown. Once you have your estimate, our team is ready to dive deep into your requirements during a personalized consultation and craft a concrete roadmap for your success. Calculate Your Web Project Calculator."
+    "content": "Discover the exact investment required for your upcoming digital venture using our advanced web project estimator. At Coday, we believe in upfront pricing and complete financial clarity to help you make informed decisions before development even starts.\n\nWhether you need a high-converting landing page, a fully-fledged online store, or a bespoke headless application, this tool evaluates every detail ranging from UI/UX design preferences to backend integrations and performance tuning.\n\nBuild your custom service package today to receive an instant, data-driven cost breakdown. Once you have your estimate, our team is ready to dive deep into your requirements during a personalized consultation and craft a concrete roadmap for your success. Calculate Your Web Project Calculator."
   }
 }

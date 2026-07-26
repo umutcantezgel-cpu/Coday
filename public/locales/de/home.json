@@ -2,17 +2,17 @@
   "hero": {
     "headline_gradient": "Websites, die Kunden gewinnen.",
     "headline_prefix": "Webdesign Agentur Wetzlar:",
-    "description": "Ihre Website ist kein Aushängeschild – sie ist Ihr bester Vertriebsmitarbeiter. Wir bauen blitzschnelle Websites für Handwerker, Praxen und lokale Unternehmen in Wetzlar und Mittelhessen. Festpreise. Voller Code gehört Ihnen. Kein Risiko.",
+    "description": "Ihre Website ist kein Aushängeschild, sie ist Ihr bester Vertriebsmitarbeiter. Wir bauen blitzschnelle Websites für Handwerker, Praxen und lokale Unternehmen in Wetzlar und Mittelhessen. Festpreise. Voller Code gehört Ihnen. Kein Risiko.",
     "rotating": [
       "5,0 Sterne auf ProvenExpert.",
       "Ladezeit unter 1 Sekunde.",
       "100% Code-Eigentum garantiert.",
-      "Festpreise ab 2.000 € – transparent."
+      "Festpreise ab 2.000 €, transparent."
     ],
     "title": "Webdesign & Entwicklung aus Wetzlar",
     "subtitle": "Professionelle Websites mit React & Next.js für Handwerk, Gesundheitswesen und lokale Dienstleister. Festpreise ab 2.000 €.",
     "cta": "Kostenloses Erstgespräch",
-    "eyebrow": "Webdesign-Agentur in Wetzlar – seit 2024",
+    "eyebrow": "Webdesign-Agentur in Wetzlar, seit 2024",
     "view_projects": "Ergebnisse ansehen"
   },
   "industries": {
@@ -138,7 +138,7 @@
     "items": {
       "web_dev": {
         "title": "Webentwicklung",
-        "description": "Schnelle, moderne Websites und Webanwendungen – gebaut mit React und Next.js."
+        "description": "Schnelle, moderne Websites und Webanwendungen, gebaut mit React und Next.js."
       },
       "web_design": {
         "title": "Web & UX/UI Design",
