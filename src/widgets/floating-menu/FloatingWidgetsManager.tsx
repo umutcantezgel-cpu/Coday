@@ -158,7 +158,7 @@ export const FloatingWidgetsManager: React.FC = () => {
     widgets.current.folder.y = bottomBase;
 
     widgets.current.whatsapp.x = window.innerWidth - WIDGET_SIZE - margin;
-    widgets.current.whatsapp.y = bottomBase - WIDGET_SIZE - margin - 20; // Spawn above the folder
+    widgets.current.whatsapp.y = bottomBase - WIDGET_SIZE * 2 - margin - 40; // Spawn significantly above the folder
 
     ['security', 'chat', 'social', 'game'].forEach((id) => {
       const w = widgets.current[id as WidgetId];
@@ -213,13 +213,13 @@ export const FloatingWidgetsManager: React.FC = () => {
 
         // --- MAGNETIC REPULSION (WhatsApp) ---
         if (w1.id === 'whatsapp' || w2.id === 'whatsapp') {
-          const magnetRadius = WIDGET_SIZE * 3.5;
+          const magnetRadius = WIDGET_SIZE * 4.5; // Increased magnetic radius
           if (distSq < magnetRadius * magnetRadius && distSq > 0) {
             const dist = Math.sqrt(distSq);
-            // Non-linear force: stronger when closer
+            // Stronger Non-linear force: stronger when closer
             const force = Math.pow((magnetRadius - dist) / magnetRadius, 2);
-            const fx = (dx / dist) * force * 3.5;
-            const fy = (dy / dist) * force * 3.5;
+            const fx = (dx / dist) * force * 15.0; // Greatly increased force
+            const fy = (dy / dist) * force * 15.0;
 
             if (!w1.isDragging) {
               w1.vx -= fx;
@@ -660,6 +660,7 @@ export const FloatingWidgetsManager: React.FC = () => {
           transform: `translate(${w.x}px, ${w.y}px)`,
           width: WIDGET_SIZE,
           height: WIDGET_SIZE,
+          zIndex: w.id === 'whatsapp' ? 10001 : w.id === 'folder' ? 10000 : 9999,
         }}
         onPointerDown={(e) => onPointerDown(e, w.id as WidgetId)}
         onPointerMove={(e) => onPointerMove(e, w.id as WidgetId)}
