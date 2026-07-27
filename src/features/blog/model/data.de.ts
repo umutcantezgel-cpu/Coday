@@ -1528,6 +1528,30 @@ export const BLOG_POSTS: BlogPost[] = [
           'Google rät nicht mehr. Mit Core Web Vitals (CWV) messen sie exakt, wie nervig Ihre Seite ist.\n\n* **LCP (Largest Contentful Paint):** Wie schnell ist der Hauptinhalt da?\n* **INP (Interaction to Next Paint):** Friert die Seite ein, wenn ich klicke?\n* **CLS (Cumulative Layout Shift):** Springt der Inhalt beim Lesen weg?\n\nWer hier patzt, verschwindet aus der Suche.',
       },
       {
+        id: 'latency-impact-detail',
+        type: 'text',
+        heading: 'Die messbaren Auswirkungen von Ladezeiten auf den Umsatz',
+        level: 'h3',
+        content:
+          'In der heutigen schnelllebigen digitalen Welt erwarten Nutzer sofortige Ergebnisse. Zahlreiche Studien von Branchenführern wie Google, Amazon und Akamai haben immer wieder gezeigt, dass selbst marginale Verzögerungen bei der Ladezeit einer Webseite verheerende Auswirkungen auf die Konversionsraten haben können. Eine Verzögerung von nur einer Sekunde bei der Seitenreaktion kann zu einem Rückgang der Konversionen um 7 % führen. Wenn ein E-Commerce-Shop beispielsweise 100.000 € pro Tag verdient, könnte eine Seitenverzögerung von einer Sekunde potenziell 2,5 Millionen € an entgangenen Einnahmen pro Jahr bedeuten. Diese "Latenz-Steuer" ist real und betrifft Unternehmen jeder Größe. Darüber hinaus wirkt sich eine schlechte Performance direkt auf die Markenwahrnehmung aus. Nutzer assoziieren schnelle Webseiten instinktiv mit Professionalität, Zuverlässigkeit und Sicherheit. Eine träge Webseite hingegen weckt Zweifel und frustriert den Besucher, was oft dazu führt, dass er zur Konkurrenz wechselt. Es reicht nicht mehr aus, nur ein ansprechendes Design zu haben; die technische Grundlage muss auf Geschwindigkeit optimiert sein, um den maximalen Return on Investment (ROI) zu gewährleisten. Moderne Webentwicklung muss Performance als zentrales Design-Prinzip begreifen und nicht als nachträglichen Gedanken.',
+      },
+      {
+        id: 'cwv-deepdive',
+        type: 'text',
+        heading: 'Deep Dive: Core Web Vitals und technisches SEO',
+        level: 'h3',
+        content:
+          'Die Einführung der Core Web Vitals (CWV) durch Google markiert einen Paradigmenwechsel in der Suchmaschinenoptimierung. Google bewertet Webseiten nun aktiv nach ihrer tatsächlichen Nutzererfahrung. \n\nDer **Largest Contentful Paint (LCP)** misst die Ladeleistung. Um ein gutes Nutzererlebnis zu bieten, sollte der LCP innerhalb von 2,5 Sekunden nach dem ersten Laden der Seite erfolgen. Faktoren, die den LCP negativ beeinflussen, sind langsame Serverantwortzeiten, renderblockierendes JavaScript und CSS, langsame Ressourcen-Ladezeiten sowie clientseitiges Rendering. \n\n**Interaction to Next Paint (INP)** ist die neueste Metrik, die den First Input Delay (FID) ersetzt hat. INP misst die Reaktionsfähigkeit einer Webseite auf Benutzereingaben während der gesamten Lebensdauer der Seite, nicht nur beim ersten Laden. Ein guter INP-Wert liegt unter 200 Millisekunden. Schlechte INP-Werte entstehen oft durch schwere JavaScript-Ausführungen, die den Haupt-Thread blockieren, und ineffiziente DOM-Aktualisierungen. \n\nDer **Cumulative Layout Shift (CLS)** quantifiziert die visuelle Stabilität. Ein CLS-Wert von 0,1 oder weniger gilt als optimal. Layout-Verschiebungen treten typischerweise auf, wenn Bilder oder Videos ohne definierte Dimensionen geladen werden, Web-Fonts zu spät rendern (FOUT/FOIT) oder dynamisch injizierte Inhalte den bestehenden Text verschieben. Die Optimierung dieser drei Metriken erfordert ein tiefes technisches Verständnis der Browser-Rendering-Pipeline und eine Architektur, die Performance priorisiert, wie beispielsweise serverseitiges Rendering (SSR) oder statische Seitengenerierung (SSG) mit Frameworks wie Next.js.',
+      },
+      {
+        id: 'business-strategy',
+        type: 'text',
+        heading: 'Performance als Wettbewerbsvorteil',
+        level: 'h2',
+        content:
+          'Unternehmen, die in Web-Performance investieren, verschaffen sich einen signifikanten und nachhaltigen Wettbewerbsvorteil. In überfüllten Märkten, in denen Produkte und Dienstleistungen oft vergleichbar sind, wird die digitale Experience zum entscheidenden Differenzierungsmerkmal. Eine blitzschnelle Webseite senkt nicht nur die Absprungraten und erhöht die Verweildauer, sondern verbessert auch signifikant den Quality Score bei bezahlten Werbekampagnen (Google Ads). Ein höherer Quality Score führt zu niedrigeren Cost-per-Click (CPC) Raten, wodurch das Marketingbudget wesentlich effizienter eingesetzt werden kann. \n\nUm diese Performance-Ziele zu erreichen, bedarf es moderner Architekturen. Der Einsatz von Edge Computing, Content Delivery Networks (CDNs) und optimierten Bildformaten (wie WebP oder AVIF) sind nur der Anfang. Coday nutzt fortschrittliche Technologien wie React Server Components und Edge-Caching, um Webseiten bereitzustellen, die in Millisekunden laden, unabhängig vom Standort des Nutzers. Die Investition in eine leistungsstarke digitale Infrastruktur ist letztendlich eine Investition in die Zukunftssicherheit und das Wachstum Ihres Unternehmens. Wer heute bei der Performance spart, zahlt morgen den Preis in Form von verlorenen Kunden und sinkenden Marktanteilen.',
+      },
+      {
         id: 'checklist-performance',
         type: 'checklist',
         title: 'Der Performance Audit',

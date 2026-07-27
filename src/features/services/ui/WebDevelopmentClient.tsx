@@ -9,26 +9,24 @@ import { webDevImages } from '@/shared/data/serviceImages';
 import BlurText from '@/shared/ui/BlurText';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { TechItem } from '@/widgets/services/TechStackShowcase';
-import {
-  Stack,
-  Code,
-  Database,
-  PaintBrush,
-  ArrowRight,
-  RocketLaunch,
-  CheckCircle,
-  ShoppingCart,
-  Cloud,
-  Palette,
-  SquaresFour,
-  MagnifyingGlass,
-  Gauge,
-  Lightbulb,
-  Lightning,
-  ChartBar,
-  ShieldCheck,
-  Users,
-} from '@phosphor-icons/react/dist/ssr';
+import { Stack } from '@phosphor-icons/react/dist/ssr/Stack';
+import { Code } from '@phosphor-icons/react/dist/ssr/Code';
+import { Database } from '@phosphor-icons/react/dist/ssr/Database';
+import { PaintBrush } from '@phosphor-icons/react/dist/ssr/PaintBrush';
+import { ArrowRight } from '@phosphor-icons/react/dist/ssr/ArrowRight';
+import { RocketLaunch } from '@phosphor-icons/react/dist/ssr/RocketLaunch';
+import { CheckCircle } from '@phosphor-icons/react/dist/ssr/CheckCircle';
+import { ShoppingCart } from '@phosphor-icons/react/dist/ssr/ShoppingCart';
+import { Cloud } from '@phosphor-icons/react/dist/ssr/Cloud';
+import { Palette } from '@phosphor-icons/react/dist/ssr/Palette';
+import { SquaresFour } from '@phosphor-icons/react/dist/ssr/SquaresFour';
+import { MagnifyingGlass } from '@phosphor-icons/react/dist/ssr/MagnifyingGlass';
+import { Gauge } from '@phosphor-icons/react/dist/ssr/Gauge';
+import { Lightbulb } from '@phosphor-icons/react/dist/ssr/Lightbulb';
+import { Lightning } from '@phosphor-icons/react/dist/ssr/Lightning';
+import { ChartBar } from '@phosphor-icons/react/dist/ssr/ChartBar';
+import { ShieldCheck } from '@phosphor-icons/react/dist/ssr/ShieldCheck';
+import { Users } from '@phosphor-icons/react/dist/ssr/Users';
 
 const iconMap: Record<string, React.ElementType> = {
   layers: Stack,

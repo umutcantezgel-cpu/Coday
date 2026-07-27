@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
-import { CaretDown } from '@phosphor-icons/react/dist/ssr';
+import { CaretDown } from '@phosphor-icons/react/dist/ssr/CaretDown';
 import { m } from 'motion/react';
 import { Link } from '@/i18n/navigation';
 import { getFAQs } from '@/features/faq/model';

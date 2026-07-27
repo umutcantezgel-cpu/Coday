@@ -10,24 +10,22 @@ import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
 import Image from 'next/image';
 import { appDevImages } from '@/shared/data/serviceImages';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import {
-  Stack,
-  CreditCard,
-  Robot,
-  Cloud,
-  HardDrives,
-  Envelope,
-  FileText,
-  Check,
-  ShieldCheck,
-  Lock,
-  CloudCheck,
-  Headset,
-  Wrench,
-  DeviceMobile,
-  Lightning,
-  SecurityCamera,
-} from '@phosphor-icons/react/dist/ssr';
+import { Stack } from '@phosphor-icons/react/dist/ssr/Stack';
+import { CreditCard } from '@phosphor-icons/react/dist/ssr/CreditCard';
+import { Robot } from '@phosphor-icons/react/dist/ssr/Robot';
+import { Cloud } from '@phosphor-icons/react/dist/ssr/Cloud';
+import { HardDrives } from '@phosphor-icons/react/dist/ssr/HardDrives';
+import { Envelope } from '@phosphor-icons/react/dist/ssr/Envelope';
+import { FileText } from '@phosphor-icons/react/dist/ssr/FileText';
+import { Check } from '@phosphor-icons/react/dist/ssr/Check';
+import { ShieldCheck } from '@phosphor-icons/react/dist/ssr/ShieldCheck';
+import { Lock } from '@phosphor-icons/react/dist/ssr/Lock';
+import { CloudCheck } from '@phosphor-icons/react/dist/ssr/CloudCheck';
+import { Headset } from '@phosphor-icons/react/dist/ssr/Headset';
+import { Wrench } from '@phosphor-icons/react/dist/ssr/Wrench';
+import { DeviceMobile } from '@phosphor-icons/react/dist/ssr/DeviceMobile';
+import { Lightning } from '@phosphor-icons/react/dist/ssr/Lightning';
+import { SecurityCamera } from '@phosphor-icons/react/dist/ssr/SecurityCamera';
 
 const iconMap: Record<string, React.ElementType> = {
   layers: Stack,

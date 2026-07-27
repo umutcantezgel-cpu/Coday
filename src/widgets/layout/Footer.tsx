@@ -294,6 +294,7 @@ export const Footer: React.FC = () => {
             className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs font-light text-gray-500"
           >
             {[
+              { href: '/uebersicht', label: 'Sitemap' },
               { href: '/garantie', label: t('nav.main.garantie', { defaultValue: 'Garantie' }) },
               { href: '/presse', label: t('nav.main.presse', { defaultValue: 'Presse' }) },
               { href: '/legal/agb', label: t('nav.legal.agb') },

@@ -12,15 +12,13 @@ import DesignSystemShowcase from '@/features/web-design/DesignSystemShowcase';
 import PsychologyGrid from '@/features/web-design/PsychologyGrid';
 import BeforeAfterReveal from '@/features/web-design/BeforeAfterReveal';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import {
-  Palette,
-  SquaresFour,
-  RocketLaunch,
-  CheckCircle,
-  ArrowRight,
-  PenNib,
-  MagicWand,
-} from '@phosphor-icons/react/dist/ssr';
+import { Palette } from '@phosphor-icons/react/dist/ssr/Palette';
+import { SquaresFour } from '@phosphor-icons/react/dist/ssr/SquaresFour';
+import { RocketLaunch } from '@phosphor-icons/react/dist/ssr/RocketLaunch';
+import { CheckCircle } from '@phosphor-icons/react/dist/ssr/CheckCircle';
+import { ArrowRight } from '@phosphor-icons/react/dist/ssr/ArrowRight';
+import { PenNib } from '@phosphor-icons/react/dist/ssr/PenNib';
+import { MagicWand } from '@phosphor-icons/react/dist/ssr/MagicWand';
 import { TechStackShowcase, TechItem } from '@/widgets/services/TechStackShowcase';
 const iconMap: Record<string, React.ElementType> = {
   palette: Palette,
