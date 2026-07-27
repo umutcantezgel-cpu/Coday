@@ -95,11 +95,12 @@ export const Footer: React.FC = () => {
         {/* Minimalist Structured Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-20 w-full border-t border-white/10 pt-16">
           {/* Col 1: Brand Info */}
-          <div className="flex flex-col">
-            <OptimizedImage
+          <div className="flex flex-col items-start">
+            <img
               src="/images/brand/webdesign-wetzlar-coday-logo-footer.webp"
               alt="Coday Webdesign Wetzlar"
-              className="h-8 w-auto mb-8 !bg-transparent opacity-90"
+              className="h-12 sm:h-16 w-auto mb-8 opacity-90 object-contain"
+              loading="lazy"
             />
             <p className="text-sm text-gray-400 max-w-xs mb-8 leading-relaxed font-light">
               {t('footer.slogan')}
