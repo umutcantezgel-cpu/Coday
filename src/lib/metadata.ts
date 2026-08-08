@@ -109,6 +109,11 @@ export function generatePageMetadata(opts: {
 
   let finalType = opts.type;
 
+  // Global override: Always noindex English pages to save crawl budget
+  if (isEn) {
+    finalType = 'noindex';
+  }
+
   return {
     metadataBase: new URL(BASE_URL),
     title: fullTitle,

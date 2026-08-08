@@ -35,9 +35,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
         <PageTransition>{children}</PageTransition>
       </main>
 
-      <div className="pb-24 lg:pb-0">
-        <Footer />
-      </div>
+      <Footer />
     </ConditionalWrapper>
   );
 };

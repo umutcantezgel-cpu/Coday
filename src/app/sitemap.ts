@@ -35,11 +35,10 @@ async function fetchSanity<T>(query: string): Promise<T> {
 }
 
 /**
- * Static build timestamp — set once at build time.
- * Google uses lastModified to schedule re-crawls; using new Date() on every
- * request misleads Googlebot into thinking every page changed every second.
+ * Static build timestamp — evaluated once at build time.
+ * This ensures Google sees a fresh date on each deployment, encouraging recrawls.
  */
-const BUILD_DATE = new Date('2026-07-07T00:00:00Z');
+const BUILD_DATE = new Date();
 
 /**
  * List of routes that are strictly German only (e.g. Local SEO)
@@ -78,11 +77,7 @@ function sitemapEntry(
     de: `${BASE_URL}/de${cleanPath}`,
   };
 
-  // Temporarily disable English pages from sitemap because they are set to noindex
-  // until they are fully translated. We also skip explicit DE-only routes.
-  if (!isLocalPath && !isDeOnlyRoute) {
-    languages.en = `${BASE_URL}/en${cleanPath}`;
-  }
+  // Note: English pages are set to noindex and excluded from the sitemap.
 
   // We use the default locale /de as the main URL, but provide explicit alternates
   return {
@@ -299,33 +294,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
-  const localPostsEn = getBlogPosts('en');
-  const localBlogRoutesEn: MetadataRoute.Sitemap = localPostsEn.map((post) => ({
-    url: `${BASE_URL}/en/knowledge/blog/${post.slug}`,
-    lastModified: BUILD_DATE,
-    changeFrequency: 'weekly',
-    priority: 0.7,
-  }));
+  const allRoutes = [...staticRoutes, ...dynamicRoutes, ...localBlogRoutesDe];
 
-  const allRoutes = [...staticRoutes, ...dynamicRoutes, ...localBlogRoutesDe, ...localBlogRoutesEn];
-  const expandedRoutes: MetadataRoute.Sitemap = [];
-
-  const noEnglishRoutes = DE_ONLY_ROUTES.map((r) => `${BASE_URL}/de${r}`);
-
-  for (const route of allRoutes) {
-    // Add the primary DE route
-    expandedRoutes.push(route);
-
-    // If an EN alternate exists, add it as a standalone route as well
-    if (route.alternates?.languages?.en) {
-      if (!noEnglishRoutes.includes(route.url)) {
-        expandedRoutes.push({
-          ...route,
-          url: route.alternates.languages.en,
-        });
-      }
-    }
-  }
-
-  return expandedRoutes;
+  // English pages are completely excluded from the sitemap because they are noindexed
+  return allRoutes;
 }

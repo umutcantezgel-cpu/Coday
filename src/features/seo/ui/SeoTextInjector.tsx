@@ -45,7 +45,7 @@ export const SeoTextInjector: React.FC<SeoTextInjectorProps> = ({
       '/knowledge/blog/ab-testing-myths': ['A/B Testing Mythen aufgedeckt | Coday Blog'],
       '/branchen/anwaelte-kanzleien': [
         'Anwaelte Kanzleien Webdesign & IT-Lösungen | Coday',
-        'Rechtssichere Mandanten-Akquise',
+        'Rechtssichere Mandanten-Akquise. Eine moderne Kanzlei benötigt mehr als nur eine digitale Visitenkarte. Mandanten suchen heutzutage online nach Expertise, Vertrauen und direkter Problemlösung. Mit einer Headless-Webarchitektur von Coday präsentieren Sie Ihre Rechtsgebiete, Urteile und Fachpublikationen blitzschnell und auf jedem Gerät optimal lesbar. Wir integrieren hochsichere Kontaktformulare, verschlüsselte Dokumenten-Uploads und digitale Terminbuchungen direkt in Ihre Website. Dabei achten wir strikt auf die Einhaltung der DSGVO und berufsrechtlicher Vorgaben. Nutzen Sie die Chance, durch ein klares, seriöses Design und messerscharfe Performance Ihre Reputation zu stärken und genau die Mandanten anzuziehen, die zu Ihrer Kanzlei passen. Egal ob Arbeitsrecht, Strafrecht oder Wirtschaftsrecht – Ihre digitale Präsenz sollte genauso professionell sein wie Ihre juristische Beratung vor Gericht. Vertrauen beginnt beim ersten Klick und wir sorgen dafür, dass Sie digital gefunden und kontaktiert werden.',
       ],
       '/branchen/gastronomie-hotellerie': [
         'Gastronomie Hotellerie Webdesign & IT-Lösungen | Coday',
@@ -84,7 +84,7 @@ export const SeoTextInjector: React.FC<SeoTextInjectorProps> = ({
       '/knowledge/blog/ab-testing-myths': ['A/B Testing Myths Uncovered | Coday Blog'],
       '/branchen/anwaelte-kanzleien': [
         'Anwaelte Kanzleien Web Design & IT Solutions | Coday',
-        'Legally secure client acquisition',
+        'Legally secure client acquisition. A modern law firm needs more than just a digital business card. Today, clients search online for expertise, trust, and direct problem solving. With a headless web architecture from Coday, you present your areas of law, judgments, and specialist publications at lightning speed and optimally readable on any device. We integrate highly secure contact forms, encrypted document uploads, and digital appointment bookings directly into your website. In doing so, we strictly ensure compliance with GDPR and professional regulations. Take the opportunity to strengthen your reputation through clear, serious design and razor-sharp performance, and attract exactly the clients who suit your firm. Whether labor law, criminal law or commercial law - your digital presence should be just as professional as your legal advice in court. Trust begins with the first click.',
       ],
       '/branchen/gastronomie-hotellerie': [
         'Gastronomie Hotellerie Web Design & IT Solutions | Coday',

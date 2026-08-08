@@ -228,25 +228,6 @@ export function WebDevelopmentClient() {
           <ArchitectureVisualizer />
         </div>
       </section>
-
-      {/* CTA */}
-      <section className="max-w-5xl mx-auto px-4 text-center">
-        <div className="bg-sapphire rounded-3xl p-12 shadow-flat-lg text-white">
-          <h2 className="font-display font-bold text-3xl mb-6 text-balance">
-            {t('web_development_page.cta.title')}
-          </h2>
-          <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-            {t('web_development_page.cta.description')}
-          </p>
-          <NavLink
-            href="/contact"
-            className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-action-primary rounded-xl bg-surface-elevated hover:bg-surface-muted shadow-lg hover:shadow-xl transition motion-reduce:duration-[0.01ms]"
-          >
-            {t('web_development_page.cta.button')}
-            <OptimizedIcon icon={RocketLaunch} className="ms-2" />
-          </NavLink>
-        </div>
-      </section>
     </div>
   );
 }

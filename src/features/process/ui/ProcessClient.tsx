@@ -5,7 +5,6 @@ import BlurText from '@/shared/ui/BlurText';
 import GradientText from '@/shared/ui/GradientText';
 import ProjectTimelineAnimation from '@/features/process/ProjectTimelineAnimation';
 import TransparencyGrid from '@/features/process/TransparencyGrid';
-import { GlobalCTA } from '@/shared/ui';
 
 import { useTranslations } from 'next-intl';
 
@@ -77,8 +76,6 @@ const Process: React.FC = () => {
           </div>
         </div>
       </section>
-
-      <GlobalCTA />
     </div>
   );
 };
