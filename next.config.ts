@@ -180,6 +180,36 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/services/web-design/ui-ux',
+        destination: '/services/design/ui-ux',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/services/web-design/ui-ux',
+        destination: '/:locale/services/design/ui-ux',
+        permanent: true,
+      },
+      {
+        source: '/services/web-design/design-systems',
+        destination: '/services/design/design-systems',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/services/web-design/design-systems',
+        destination: '/:locale/services/design/design-systems',
+        permanent: true,
+      },
+      {
+        source: '/services/web-design/brand-identity',
+        destination: '/services/design/brand-identity',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/services/web-design/brand-identity',
+        destination: '/:locale/services/design/brand-identity',
+        permanent: true,
+      },
+      {
         source: '/packages',
         destination: '/pricing',
         permanent: true,
