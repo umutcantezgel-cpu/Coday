@@ -23,19 +23,21 @@ export default [
     },
   },
   {
-    files: ['**/*.{ts,tsx}'],
-    languageOptions: {
-      parser: tsParser,
-      parserOptions: {
-        project: './tsconfig.json',
-      },
-    },
     plugins: {
       '@typescript-eslint': tsPlugin,
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
       'import': importPlugin,
       '@next/next': nextPlugin,
+    },
+  },
+  {
+    files: ['**/*.{ts,tsx}'],
+    languageOptions: {
+      parser: tsParser,
+      parserOptions: {
+        project: './tsconfig.json',
+      },
     },
     rules: {
       ...tsPlugin.configs.recommended.rules,
