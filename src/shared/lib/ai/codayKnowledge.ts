@@ -167,27 +167,27 @@ export const CODAY_KNOWLEDGE_BASE = {
     handwerk: {
       name: 'Handwerk & Bau',
       description: 'Digitale Mitarbeitergewinnung und Projekt-Showcases.',
-      url: '/services/industries/handwerk-bau',
+      url: '/branchen/handwerker',
     },
     immobilien: {
       name: 'Immobilien',
       description: 'Hochwertige Exposé-Präsentationen und Lead-Generierung.',
-      url: '/services/industries/immobilien-makler',
+      url: '/branchen/immobilien',
     },
     ecommerce: {
       name: 'E-Commerce',
       description: 'Conversion-starke Shopsysteme.',
-      url: '/services/industries/retail',
+      url: '/branchen/retail',
     },
     consulting: {
       name: 'Consulting & Dienstleistung',
       description: 'Erstklassiges Personal Branding.',
-      url: '/services/industries/unternehmensberatung',
+      url: '/branchen/unternehmensberatung',
     },
     gesundheit: {
       name: 'Gesundheit',
       description: 'Vertrauenswürdige Webauftritte für medizinische Einrichtungen.',
-      url: '/services/industries/aerzte-gesundheit',
+      url: '/branchen/gesundheitswesen',
     },
   },
 

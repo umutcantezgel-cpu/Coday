@@ -140,6 +140,26 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/services/web-development/api-integrations',
+        destination: '/services/development/api-integration',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/services/web-development/api-integrations',
+        destination: '/:locale/services/development/api-integration',
+        permanent: true,
+      },
+      {
+        source: '/services/web-development/e-commerce',
+        destination: '/services/ecommerce-development',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/services/web-development/e-commerce',
+        destination: '/:locale/services/ecommerce-development',
+        permanent: true,
+      },
+      {
         source: '/services/web-development/headless-cms',
         destination: '/services/development/headless-cms',
         permanent: true,
@@ -220,6 +240,26 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       // /industries/ → /branchen/ redirects
+      {
+        source: '/services/industries/:path*',
+        destination: '/branchen/:path*',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/services/industries/:path*',
+        destination: '/:locale/branchen/:path*',
+        permanent: true,
+      },
+      {
+        source: '/services/industries/handwerk-bau',
+        destination: '/branchen/handwerker',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/services/industries/handwerk-bau',
+        destination: '/:locale/branchen/handwerker',
+        permanent: true,
+      },
       {
         source: '/industries/dienstleistung',
         destination: '/branchen/dienstleistung',
