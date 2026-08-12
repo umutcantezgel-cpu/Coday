@@ -1,18 +1,20 @@
+'use client';
 
-
-"use client";
-/* eslint-disable react-refresh/only-export-components */
-
- 
 import React, { createContext, useContext, ReactNode } from 'react';
 
-const NextIntlContext = createContext<{ messages?: Record<string, unknown>, locale?: string }>({});
+const NextIntlContext = createContext<{ messages?: Record<string, unknown>; locale?: string }>({});
 
-export const NextIntlClientProvider = ({ children, messages, locale }: { children: ReactNode, messages?: Record<string, unknown>, locale?: string }) => {
+export const NextIntlClientProvider = ({
+  children,
+  messages,
+  locale,
+}: {
+  children: ReactNode;
+  messages?: Record<string, unknown>;
+  locale?: string;
+}) => {
   return (
-    <NextIntlContext.Provider value={{ messages, locale }}>
-      {children}
-    </NextIntlContext.Provider>
+    <NextIntlContext.Provider value={{ messages, locale }}>{children}</NextIntlContext.Provider>
   );
 };
 

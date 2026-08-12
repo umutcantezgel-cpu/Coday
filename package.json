@@ -3,7 +3,7 @@
   "private": true,
   "version": "2.1.0",
   "engines": {
-    "node": ">=20.0.0"
+    "node": "20.x"
   },
   "browserslist": [
     "last 2 Chrome versions",
@@ -64,6 +64,7 @@
   "devDependencies": {
     "@eslint/js": "^9.39.2",
     "@next/bundle-analyzer": "^16.2.6",
+    "@next/eslint-plugin-next": "^16.3.0",
     "@playwright/test": "^1.58.2",
     "@tailwindcss/postcss": "^4.1.18",
     "@testing-library/dom": "^10.4.1",

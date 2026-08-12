@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { createContext, useContext, useEffect } from 'react';
 
 type Theme = 'dark' | 'light' | 'system';
@@ -37,7 +37,6 @@ export function ThemeProvider({ children, storageKey = 'vite-ui-theme' }: ThemeP
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
 }
 
-// eslint-disable-next-line react-refresh/only-export-components
 export const useTheme = () => {
   const context = useContext(ThemeContext);
 
