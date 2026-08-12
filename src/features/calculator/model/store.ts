@@ -60,13 +60,13 @@ export const useCalculatorStore = create<CalculatorState>()(
 
       toggleModule: (moduleId) =>
         set((state) => {
-          const module = modules.find((m) => m.id === moduleId);
-          if (!module) return state;
+          const foundModule = modules.find((m) => m.id === moduleId);
+          if (!foundModule) return state;
 
           const newSet = new Set(state.selectedModuleIds);
 
           // Logic for Basis Package (Radio Button behavior)
-          if (module.category === 'basis') {
+          if (foundModule.category === 'basis') {
             // Remove other basis packages
             modules.filter((m) => m.category === 'basis').forEach((m) => newSet.delete(m.id));
             newSet.add(moduleId);
@@ -80,8 +80,8 @@ export const useCalculatorStore = create<CalculatorState>()(
             newSet.add(moduleId);
 
             // Auto-select dependencies
-            if (module.dependencies) {
-              module.dependencies.forEach((depId) => newSet.add(depId));
+            if (foundModule.dependencies) {
+              foundModule.dependencies.forEach((depId) => newSet.add(depId));
             }
           }
 

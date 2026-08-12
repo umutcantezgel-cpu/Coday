@@ -239,6 +239,39 @@ const nextConfig: NextConfig = {
         destination: '/:locale/pricing',
         permanent: true,
       },
+      // Legacy programmatic SEO routes
+      {
+        source: '/ai/:path*',
+        destination: '/services',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/ai/:path*',
+        destination: '/:locale/services',
+        permanent: true,
+      },
+      // Deleted blog posts
+      {
+        source: '/knowledge/blog/email-marketing-automation',
+        destination: '/knowledge/blog',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/knowledge/blog/email-marketing-automation',
+        destination: '/:locale/knowledge/blog',
+        permanent: true,
+      },
+      // Legacy specific industries redirects
+      {
+        source: '/services/industries/gesundheit',
+        destination: '/branchen/gesundheitswesen',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/services/industries/gesundheit',
+        destination: '/:locale/branchen/gesundheitswesen',
+        permanent: true,
+      },
       // /industries/ → /branchen/ redirects
       {
         source: '/services/industries/:path*',

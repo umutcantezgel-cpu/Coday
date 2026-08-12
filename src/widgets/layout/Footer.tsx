@@ -2,6 +2,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Link } from '@/i18n/navigation';
 import NextLink from 'next/link';
+import Image from 'next/image';
 import { m } from 'motion/react';
 import { useTranslations } from 'next-intl';
 
@@ -136,11 +137,12 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-20 w-full border-t border-white/10 pt-16">
           {/* Col 1: Brand Info */}
           <div className="flex flex-col items-start lg:col-span-1">
-            <img
+            <Image
               src="/images/brand/webdesign-wetzlar-coday-logo-footer.webp"
               alt="Coday Webdesign Wetzlar"
+              width={240}
+              height={60}
               className="w-48 sm:w-60 h-auto mb-8 opacity-90 object-contain hover:opacity-100 transition-opacity"
-              loading="lazy"
             />
             <p className="text-sm text-gray-400 max-w-xs mb-8 leading-relaxed font-light">
               {t('footer.slogan')}

@@ -9,7 +9,7 @@ import { useActionState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { submitLeadAction } from '../actions/submitLead';
 import { leadFormSchema, LeadFormValues } from '../schema/lead';
-import { Link } from '@/i18n/navigation';
+import { Link, useRouter } from '@/i18n/navigation';
 
 export function LeadForm() {
   const [state, formAction, isPending] = useActionState(submitLeadAction, {
@@ -30,11 +30,13 @@ export function LeadForm() {
     // We let the native form action take over to submit FormData to Server Action
   };
 
+  const router = useRouter();
+
   useEffect(() => {
     if (state.success) {
-      window.location.href = '/success';
+      router.push('/success');
     }
-  }, [state.success]);
+  }, [state.success, router]);
 
   return (
     <form
