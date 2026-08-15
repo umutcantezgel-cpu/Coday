@@ -3,6 +3,7 @@ import { generatePageMetadata } from '@/lib/metadata';
 import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
 import { setRequestLocale } from 'next-intl/server';
 import { IndustryDetailClient } from '@/features/industries/ui/IndustryDetailClient';
+import { IndustryToolEmbed } from '@/features/industries/ui/IndustryToolEmbed';
 import { industriesData } from '@/shared/data/industries';
 import { routing } from '@/i18n/routing';
 
@@ -97,6 +98,7 @@ export default async function IndustryDetailPage({
         }}
       />
       <IndustryDetailClient />
+      <IndustryToolEmbed industryKey={industry} theme="light" />
       {/* SEO – unique content per industry */}
       {(() => {
         const seoContent: Record<

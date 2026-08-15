@@ -20,6 +20,7 @@ import {
   FileText,
   Star,
 } from '@phosphor-icons/react/dist/ssr';
+import { IndustryToolEmbed } from '@/features/industries/ui/IndustryToolEmbed';
 
 export const dynamic = 'force-static';
 
@@ -268,6 +269,9 @@ export default async function HandwerkBauPage({ params }: { params: Promise<{ lo
         </div>
       </section>
 
+      {/* Live Akquise-Kanal Embed */}
+      <IndustryToolEmbed industryKey="handwerk-bau" />
+
       {/* Real References Showcase */}
       <section className="py-16 bg-slate-900/40 border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -280,7 +284,29 @@ export default async function HandwerkBauPage({ params }: { params: Promise<{ lo
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="p-8 rounded-2xl bg-slate-950 border border-slate-800 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-xs font-bold text-amber-400 uppercase tracking-wider">
+                    GALA- & LANDSCHAFTSBAU
+                  </span>
+                  <span className="text-xs text-slate-500">Wetzlar</span>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2">MemoBau Wetzlar</h3>
+                <p className="text-slate-400 text-sm leading-relaxed mb-6">
+                  +380% Neukunden-Anfragen durch interaktiven Garten- & Terrassen-Konfigurator.
+                  100/100 Core Web Vitals und Spitzenrankings.
+                </p>
+              </div>
+              <Link
+                href="/work/memobaut"
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-400 hover:text-amber-300 transition-colors"
+              >
+                <span>Zur Case Study</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
             <div className="p-8 rounded-2xl bg-slate-950 border border-slate-800">
               <div className="flex items-center justify-between mb-4">
                 <span className="text-xs font-bold text-amber-400 uppercase tracking-wider">

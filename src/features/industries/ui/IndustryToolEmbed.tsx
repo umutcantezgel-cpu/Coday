@@ -1,107 +1,299 @@
 'use client';
 
 import React from 'react';
-import { useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
+import {
+  ArrowSquareOut,
+  Sparkle,
+  Lightning,
+  CheckCircle,
+  Stethoscope,
+  Wrench,
+  Car,
+} from '@phosphor-icons/react/dist/ssr';
 
 interface IndustryToolEmbedProps {
   toolId?: string;
   industryKey?: string;
   locationKey?: string;
+  theme?: 'dark' | 'light';
 }
 
-export function IndustryToolEmbed({ industryKey }: IndustryToolEmbedProps) {
-  const t = useTranslations('industries');
-  let url = '';
+interface ToolConfig {
+  title: string;
+  titleEn: string;
+  badge: string;
+  badgeEn: string;
+  headline: string;
+  headlineEn: string;
+  description: string;
+  descriptionEn: string;
+  url: string;
+  ctaText: string;
+  ctaTextEn: string;
+  icon: React.ElementType;
+  accentColor: string;
+  features: { de: string; en: string }[];
+}
 
-  const industryDisplayName = industryKey
-    ? industryKey.replace('-', ' ').replace(/\b\w/g, (l) => l.toUpperCase())
-    : 'Ihre Branche';
+const TOOLS_CONFIG: Record<string, ToolConfig> = {
+  handwerk: {
+    title: 'Handwerker-Akquise & Meister-Funnel',
+    titleEn: 'Craftsman Acquisition & Master Funnel',
+    badge: 'LIVE AKQUISE-KANAL HANDWERK & BAU',
+    badgeEn: 'LIVE CRAFTSMAN ACQUISITION CHANNEL',
+    headline: 'Interaktiver Akquise- & Recruiting-Kanal für Handwerksbetriebe',
+    headlineEn: 'Interactive Acquisition & Recruiting Channel for Tradesmen',
+    description:
+      'Testen Sie unseren Live-Akquise-Kanal für SHK-, Elektro-, Bau- und Meisterbetriebe. Erleben Sie die 60-Sekunden Express-Bewerbung und die digitale Kunden-Vorqualifizierung in Aktion.',
+    descriptionEn:
+      'Test our live acquisition channel for HVAC, electrical, construction and master crafts companies. Experience 60-second express applications and digital customer pre-qualification in action.',
+    url: 'https://handwerker-akquise-rouge.vercel.app/',
+    ctaText: 'Handwerker-Akquise Kanal öffnen',
+    ctaTextEn: 'Open Craftsman Acquisition Channel',
+    icon: Wrench,
+    accentColor: 'from-amber-500 to-amber-600',
+    features: [
+      {
+        de: '60-Sekunden Express-Bewerbung ohne Anschreiben-PDF',
+        en: '60-second express application without cover letter',
+      },
+      {
+        de: 'Digitale Vorqualifizierung von Bauherren & Projektbudgets',
+        en: 'Digital pre-qualification of clients and project budgets',
+      },
+      {
+        de: '100% Mobile-optimiert für Smartphone-Nutzer auf der Baustelle',
+        en: '100% mobile-optimized for smartphones on-site',
+      },
+      {
+        de: 'Automatisierte Termin- & Einsatzabstimmung',
+        en: 'Automated scheduling and coordination',
+      },
+    ],
+  },
+  gesundheit: {
+    title: 'PraxisExzellenz Sales & Patienten-Dashboard',
+    titleEn: 'PraxisExzellenz Sales & Patient Dashboard',
+    badge: 'LIVE AKQUISE-KANAL GESUNDHEITSWESEN',
+    badgeEn: 'LIVE HEALTHCARE ACQUISITION CHANNEL',
+    headline: 'Digitales Akquise- & Patienten-Dashboard für Praxen & Kliniken',
+    headlineEn: 'Digital Acquisition & Patient Dashboard for Practices & Clinics',
+    description:
+      'Erleben Sie das spezialisierte Praxis-Dashboard für Ärzte, Zahnärzte und Facharztzentren: Strukturierte Neupatienten-Filterung, Entlastung des Empfangsteams und direkte Online-Buchung.',
+    descriptionEn:
+      'Experience the specialized practice dashboard for doctors, dentists and specialist medical centers: Structured new patient filtering, reception relief and instant online booking.',
+    url: 'https://praxis-exzellenz-sales-dashboard.vercel.app/',
+    ctaText: 'Praxis-Dashboard live testen',
+    ctaTextEn: 'Test Practice Dashboard Live',
+    icon: Stethoscope,
+    accentColor: 'from-emerald-500 to-teal-600',
+    features: [
+      {
+        de: 'DSGVO-konforme Neupatienten-Vorfilterung',
+        en: 'GDPR-compliant new patient pre-filtering',
+      },
+      { de: 'Bis zu 70% Entlastung des Praxis-Telefons', en: 'Up to 70% reduction in phone calls' },
+      {
+        de: 'Express-Privatpatienten & Zuzahler-Routing',
+        en: 'Express private patient and self-payer routing',
+      },
+      {
+        de: 'Nahtlose Integration in Praxisverwaltungssysteme',
+        en: 'Seamless practice management integration',
+      },
+    ],
+  },
+  automobil: {
+    title: 'Automobile Digital Sales & Lead Engine',
+    titleEn: 'Automobile Digital Sales & Lead Engine',
+    badge: 'LIVE AKQUISE-KANAL AUTOMOBIL & KFZ',
+    badgeEn: 'LIVE AUTOMOTIVE ACQUISITION CHANNEL',
+    headline: 'Interaktive Lead-Maschine & Probefahrt-Funnel für Autohäuser',
+    headlineEn: 'Interactive Lead Engine & Test Drive Funnel for Car Dealerships',
+    description:
+      'Entdecken Sie die interaktive Lead-Engine für Autohäuser, Werkstätten und KFZ-Händler: Fahrzeugberatung in Echtzeit, mobile Probefahrt-Terminierung und Inzahlungnahme-Kalkulator.',
+    descriptionEn:
+      'Discover the interactive lead engine for car dealerships, workshops and auto dealers: Real-time vehicle advising, mobile test drive booking and trade-in calculators.',
+    url: 'https://automobile-rose-five.vercel.app/',
+    ctaText: 'Automobil-Portal live öffnen',
+    ctaTextEn: 'Open Automotive Portal Live',
+    icon: Car,
+    accentColor: 'from-blue-500 to-indigo-600',
+    features: [
+      {
+        de: 'Interaktiver Fahrzeug- & Probefahrt-Konfigurator',
+        en: 'Interactive vehicle & test drive configurator',
+      },
+      { de: 'Automatisierte Inzahlungnahme-Bewertung', en: 'Automated trade-in valuation' },
+      {
+        de: '24/7 Werkstatt-Terminbuchung & Service-Funnel',
+        en: '24/7 service booking and workshop funnel',
+      },
+      {
+        de: 'Subsekundäre Ladezeiten für mobile Käufer',
+        en: 'Sub-second loading times for mobile car buyers',
+      },
+    ],
+  },
+};
 
-  if (industryKey?.toLowerCase().includes('handwerk')) {
-    url = 'https://www.coday-agency.de/';
-  } else if (
-    industryKey?.toLowerCase().includes('gesundheit') ||
-    industryKey?.toLowerCase().includes('arzt')
+function getToolConfig(industryKey?: string): ToolConfig | null {
+  if (!industryKey) return null;
+  const key = industryKey.toLowerCase();
+
+  if (
+    key.includes('handwerk') ||
+    key.includes('bau') ||
+    key.includes('elektro') ||
+    key.includes('shk') ||
+    key.includes('meister')
   ) {
-    url = 'https://praxis-seven-ashy.vercel.app/';
-  } else if (
-    industryKey?.toLowerCase().includes('automobil') ||
-    industryKey?.toLowerCase().includes('kfz') ||
-    industryKey?.toLowerCase().includes('auto')
+    return TOOLS_CONFIG.handwerk;
+  }
+  if (
+    key.includes('gesundheit') ||
+    key.includes('arzt') ||
+    key.includes('aerzte') ||
+    key.includes('praxis') ||
+    key.includes('klinik') ||
+    key.includes('healthcare')
   ) {
-    url = 'https://automobile-lac.vercel.app/';
-  } else {
-    // Other industries coming soon
-    return (
-      <section className="w-full max-w-7xl mx-auto px-4 py-16">
-        <div className="bg-gray-50 border border-gray-100 rounded-3xl p-8 text-center h-64 flex flex-col items-center justify-center">
-          <div className="w-12 h-12 mb-4 bg-gray-200 rounded-full animate-pulse" />
-          <h2 className="text-xl font-display font-semibold mb-2">
-            {t('tool_embed.coming_soon_title', { industry: industryDisplayName })}
-          </h2>
-          <p className="text-sm text-gray-500 max-w-md mx-auto">
-            {t('tool_embed.coming_soon_desc', { industry: industryDisplayName })}
-          </p>
-        </div>
-      </section>
-    );
+    return TOOLS_CONFIG.gesundheit;
+  }
+  if (
+    key.includes('automobil') ||
+    key.includes('kfz') ||
+    key.includes('auto') ||
+    key.includes('werkstatt') ||
+    key.includes('car')
+  ) {
+    return TOOLS_CONFIG.automobil;
   }
 
+  return null;
+}
+
+export function IndustryToolEmbed({ industryKey, theme = 'dark' }: IndustryToolEmbedProps) {
+  const locale = useLocale();
+  const isEn = locale === 'en';
+  const config = getToolConfig(industryKey);
+
+  if (!config) {
+    return null;
+  }
+
+  const Icon = config.icon;
+  const isDark = theme === 'dark';
+
   return (
-    <section className="w-full max-w-7xl mx-auto px-4 py-24 relative z-20 -mt-10">
-      <div className="text-center mb-10 max-w-3xl mx-auto">
-        <h2 className="text-4xl font-display font-black text-secondary-900 mb-4">
-          {t('tool_embed.title')}
-        </h2>
-        <p className="text-lg text-secondary-600 font-medium">
-          {t('tool_embed.subtitle', { industry: industryDisplayName })}
-        </p>
-      </div>
-      <div className="bg-white border border-gray-100 rounded-[2rem] overflow-hidden shadow-2xl p-12 text-center flex flex-col items-center justify-center relative group">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-50 to-transparent opacity-50 pointer-events-none" />
-        <div className="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform duration-500">
-          <svg
-            className="w-10 h-10 text-primary-600"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-            />
-          </svg>
+    <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-20">
+      <div
+        className={`relative rounded-3xl overflow-hidden border p-8 sm:p-12 lg:p-14 ${
+          isDark
+            ? 'bg-gradient-to-br from-slate-900/90 via-slate-950 to-slate-900/90 border-slate-800 text-white shadow-2xl'
+            : 'bg-gradient-to-br from-white via-slate-50 to-white border-slate-200 text-slate-900 shadow-xl'
+        }`}
+      >
+        {/* Glow ambient highlight */}
+        <div
+          className={`absolute top-0 right-0 w-96 h-96 rounded-full blur-[120px] pointer-events-none opacity-20 bg-gradient-to-br ${config.accentColor}`}
+        />
+
+        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          {/* Left Column: Information & Details */}
+          <div className="lg:col-span-7">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-950/40 text-amber-400 text-xs font-bold tracking-wider uppercase mb-6 backdrop-blur-md">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <Sparkle className="w-3.5 h-3.5" />
+              <span>{isEn ? config.badgeEn : config.badge}</span>
+            </div>
+
+            <h3 className="font-display font-black text-2xl sm:text-4xl text-white leading-tight mb-4">
+              {isEn ? config.headlineEn : config.headline}
+            </h3>
+
+            <p className="text-slate-300 text-base sm:text-lg leading-relaxed mb-8">
+              {isEn ? config.descriptionEn : config.description}
+            </p>
+
+            {/* Feature Checkpoints */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+              {config.features.map((feat, idx) => (
+                <div key={idx} className="flex items-start gap-2.5">
+                  <CheckCircle weight="fill" className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                  <span className="text-sm font-medium text-slate-300">
+                    {isEn ? feat.en : feat.de}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Column: Interactive Forwarding Card & Direct CTA */}
+          <div className="lg:col-span-5 flex flex-col justify-center items-stretch">
+            <div
+              className={`p-8 rounded-2xl border backdrop-blur-xl ${
+                isDark
+                  ? 'bg-slate-900/80 border-slate-750 shadow-inner'
+                  : 'bg-white border-slate-200 shadow-md'
+              }`}
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <div
+                  className={`w-14 h-14 rounded-2xl flex items-center justify-center text-white bg-gradient-to-br ${config.accentColor} shadow-lg`}
+                >
+                  <Icon weight="bold" className="w-7 h-7" />
+                </div>
+                <div>
+                  <div className="text-xs text-emerald-400 font-bold uppercase tracking-wider flex items-center gap-1.5">
+                    <Lightning weight="fill" className="w-3.5 h-3.5" />
+                    <span>{isEn ? 'Direct Access' : 'Direkter Zugang'}</span>
+                  </div>
+                  <h4 className="font-bold text-lg text-white">
+                    {isEn ? config.titleEn : config.title}
+                  </h4>
+                </div>
+              </div>
+
+              <div className="p-4 rounded-xl bg-slate-950/70 border border-slate-800/80 mb-6 text-xs text-slate-300 space-y-2">
+                <div className="flex justify-between items-center text-slate-400">
+                  <span>URL:</span>
+                  <span className="font-mono text-amber-400 truncate max-w-[200px]">
+                    {config.url.replace('https://', '')}
+                  </span>
+                </div>
+                <div className="flex justify-between items-center text-slate-400">
+                  <span>Status:</span>
+                  <span className="text-emerald-400 font-semibold flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+                    Aktiv & Betriebsbereit
+                  </span>
+                </div>
+              </div>
+
+              {/* Direct Forwarding Button */}
+              <a
+                href={config.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`group w-full inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl font-bold text-slate-950 transition duration-300 shadow-xl bg-amber-400 hover:bg-amber-300 hover:scale-[1.02] active:scale-[0.98] text-base`}
+              >
+                <span>{isEn ? config.ctaTextEn : config.ctaText}</span>
+                <ArrowSquareOut
+                  weight="bold"
+                  className="w-5 h-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
+              </a>
+
+              <p className="text-[11px] text-center text-slate-400 mt-3">
+                {isEn
+                  ? 'Opens in a new window • Live demonstration & channel access'
+                  : 'Öffnet in neuem Fenster • Live-Demonstration & Kanal-Zugang'}
+              </p>
+            </div>
+          </div>
         </div>
-        <p className="text-2xl font-display font-bold text-secondary-900 mb-4 relative z-10">
-          {t('tool_embed.demo_heading')}
-        </p>
-        <p className="text-secondary-600 max-w-md mx-auto mb-8 relative z-10">
-          {t('tool_embed.demo_desc', { industry: industryDisplayName })}
-        </p>
-        <a
-          href={url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-primary-600 rounded-full hover:bg-primary-700 hover:scale-105 transition-all shadow-lg hover:shadow-primary-600/30 relative z-10"
-        >
-          {t('tool_embed.cta')}
-          <svg
-            className="ml-2 w-5 h-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M14 5l7 7m0 0l-7 7m7-7H3"
-            ></path>
-          </svg>
-        </a>
       </div>
     </section>
   );

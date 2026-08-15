@@ -66,7 +66,20 @@ export default function AngebotHandwerker() {
                 </>
               )}
             </p>
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-4">
+              <a
+                href="https://handwerker-akquise-rouge.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-teal-600 text-white px-8 py-4 rounded-xl font-bold uppercase tracking-widest hover:bg-teal-500 transition-colors motion-reduce:duration-[0.01ms] flex items-center gap-2 shadow-lg shadow-teal-600/30 group"
+              >
+                <span>{isEn ? 'Test Live Acquisition Channel' : 'Live Akquise-Kanal testen'}</span>
+                <span className="w-2 h-2 rounded-full bg-emerald-300 animate-pulse" />
+                <ArrowRight
+                  weight="bold"
+                  className="transition-transform group-hover:translate-x-1"
+                />
+              </a>
               <a
                 href="#roi-calculator"
                 className="bg-navy text-white px-8 py-4 rounded-xl font-bold uppercase tracking-widest hover:bg-indigo transition-colors motion-reduce:duration-[0.01ms] flex items-center gap-2 shadow-lg shadow-navy/20"
@@ -78,7 +91,7 @@ export default function AngebotHandwerker() {
                 href="#pakete"
                 className="bg-white text-navy border-2 border-slate-200 px-8 py-4 rounded-xl font-bold uppercase tracking-widest hover:border-navy transition-colors motion-reduce:duration-[0.01ms]"
               >
-                {isEn ? 'Jump to Pricing' : 'Direkt zu den Preisen'}
+                {isEn ? 'Jump to Pricing' : 'Direkt zu den Paketen'}
               </a>
             </div>
           </m.div>

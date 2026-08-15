@@ -13,6 +13,8 @@ import PatientJourneyMap from '@/features/industries/healthcare/PatientJourneyMa
 import WaitingRoomRoiCalculator from '@/features/industries/healthcare/WaitingRoomRoiCalculator';
 import TrustBadgeGrid from '@/features/industries/healthcare/TrustBadgeGrid';
 import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
+import { IndustryToolEmbed } from '@/features/industries/ui/IndustryToolEmbed';
+import { ArrowSquareOut } from '@phosphor-icons/react/dist/ssr';
 
 const Gesundheit: React.FC = () => {
   const t = useTranslations('industries');
@@ -71,8 +73,18 @@ const Gesundheit: React.FC = () => {
               <p className="text-xl text-slate-600 leading-relaxed mb-8 max-w-xl">
                 {t('aerzte-gesundheit.hero.subheadline')}
               </p>
-              <div className="flex gap-4 mb-12">
-                <button className="active:scale-[0.97] bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:bg-secondary/90 transition-colors motion-reduce:duration-[0.01ms]">
+              <div className="flex flex-wrap gap-4 mb-12">
+                <a
+                  href="https://praxis-exzellenz-sales-dashboard.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="active:scale-[0.97] bg-emerald-600 text-white px-6 py-3.5 rounded-xl font-bold hover:bg-emerald-500 transition-all motion-reduce:duration-[0.01ms] shadow-lg shadow-emerald-600/20 inline-flex items-center gap-2"
+                >
+                  <span>Praxis-Dashboard live testen</span>
+                  <span className="w-2 h-2 rounded-full bg-emerald-200 animate-pulse" />
+                  <ArrowSquareOut weight="bold" className="w-4 h-4" />
+                </a>
+                <button className="active:scale-[0.97] bg-secondary text-white px-6 py-3.5 rounded-xl font-bold hover:bg-secondary/90 transition-colors motion-reduce:duration-[0.01ms]">
                   {t('aerzte-gesundheit.customFeatures.service_funnel.steps.leads', {
                     defaultValue: 'Anfrage starten',
                   })}
@@ -86,6 +98,9 @@ const Gesundheit: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Live Akquise-Kanal Praxis-Exzellenz */}
+      <IndustryToolEmbed industryKey="gesundheit" theme="light" />
 
       {/* Patient Journey - NEW HIGH COMPLEXITY */}
       <section className="py-24 bg-white relative">

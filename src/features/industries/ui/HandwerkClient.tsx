@@ -15,6 +15,8 @@ import CraftsmanLeadCalculator from '@/features/industries/handwerk/CraftsmanLea
 import RecruitingFunnelDemo from '@/features/industries/handwerk/RecruitingFunnelDemo';
 import LocalDominanceMap from '@/features/industries/handwerk/LocalDominanceMap';
 import { RelevantFAQs } from '@/features/faq/ui/RelevantFAQs';
+import { IndustryToolEmbed } from '@/features/industries/ui/IndustryToolEmbed';
+import { ArrowSquareOut } from '@phosphor-icons/react/dist/ssr';
 
 const Handwerk: React.FC = () => {
   const t = useTranslations('industries') as any;
@@ -73,7 +75,17 @@ const Handwerk: React.FC = () => {
               <p className="text-xl text-slate-600 leading-relaxed mb-8 max-w-xl">
                 {t('handwerk-bau.hero.subheadline')}
               </p>
-              <div className="flex gap-4">
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href="https://handwerker-akquise-rouge.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="active:scale-[0.97] bg-amber-500 text-slate-950 px-6 py-3 rounded-xl font-bold hover:bg-amber-400 transition-all motion-reduce:duration-[0.01ms] shadow-lg shadow-amber-500/20 inline-flex items-center gap-2"
+                >
+                  <span>Handwerker-Akquise Kanal öffnen</span>
+                  <span className="w-2 h-2 rounded-full bg-slate-950 animate-pulse" />
+                  <ArrowSquareOut weight="bold" className="w-4 h-4" />
+                </a>
                 <button className="active:scale-[0.97] bg-secondary text-white px-6 py-3 rounded-xl font-bold hover:bg-secondary/90 transition-colors motion-reduce:duration-[0.01ms]">
                   {t('buttons.cta_analysis', { ns: 'common' })}
                 </button>
@@ -87,7 +99,9 @@ const Handwerk: React.FC = () => {
         </div>
       </section>
 
-      {/* Recruiting Section - NEW HIGH COMPLEXITY */}
+      {/* Live Akquise-Kanal Handwerk & Bau */}
+      <IndustryToolEmbed industryKey="handwerk-bau" theme="light" />
+
       {/* Recruiting Section - NEW HIGH COMPLEXITY */}
       <section className="py-24 bg-aurora-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

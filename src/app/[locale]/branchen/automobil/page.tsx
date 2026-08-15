@@ -68,7 +68,7 @@ export default async function AutomobilHubPage({
         }}
       />
       <IndustryDetailClient industrySlug="automobil" />
-      <IndustryToolEmbed industryKey="automobil" />
+      <IndustryToolEmbed industryKey="automobil" theme="light" />
 
       <section className="container mx-auto px-4 py-16 max-w-5xl text-secondary-600">
         {locale === 'de' ? (
