@@ -32,17 +32,17 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Design Lahn-Dill District | High-End Next.js – Coday',
+      title: 'Web Design Lahn-Dill District | Next.js Agency – Coday',
       description:
-        'Custom web design & Next.js development in the Lahn-Dill district (Wetzlar, Dillenburg, Herborn, Haiger). 100/100 PageSpeed & B2B leads!',
+        'Custom web design & Next.js web development in the Lahn-Dill district (Wetzlar, Dillenburg, Herborn, Haiger). 100/100 PageSpeed & qualified industrial leads!',
       path: '/en/regionen/landkreis-lahn-dill',
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'Webdesign Lahn-Dill-Kreis | High-End Next.js – Coday',
+    title: 'Webdesign Lahn-Dill-Kreis | Next.js Agentur – Coday',
     description:
-      'Maßgeschneidertes Webdesign & Next.js Webentwicklung im Lahn-Dill-Kreis (Wetzlar, Dillenburg, Herborn, Haiger). 100/100 PageSpeed & B2B-Leads!',
+      'Maßgeschneidertes Webdesign & Next.js Webentwicklung im Lahn-Dill-Kreis (Wetzlar, Dillenburg, Herborn, Haiger). 100/100 PageSpeed & planbare Industrie-Leads!',
     path: '/de/regionen/landkreis-lahn-dill',
     type: 'money',
   });
