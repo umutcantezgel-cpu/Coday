@@ -2,8 +2,9 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { WebDevelopmentClient } from '@/features/services/ui/WebDevelopmentClient';
 import { setRequestLocale } from 'next-intl/server';
-import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
-import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
+import { getOrganizationSchema, BASE_URL } from '@/lib/schema';
+import { Link } from '@/i18n/navigation';
+import { ArrowRight, Code, ShieldCheck, Lightning, Cpu } from '@phosphor-icons/react/dist/ssr';
 
 export const dynamic = 'force-static';
 
@@ -15,17 +16,17 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Development Wetzlar | Next.js & React Agency',
+      title: 'Next.js Web Development & Full-Stack Agency | Coday',
       description:
-        'Custom React and Next.js web applications from Wetzlar. High-performance architecture for businesses in Hesse. Discuss your project with us today.',
+        'Custom Next.js web development for B2B & mid-market. Sub-second load times, deep API integrations & enterprise security without WordPress risks.',
       path: '/en/services/web-development',
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'Webentwicklung Wetzlar | Next.js & React Agentur',
+    title: 'Next.js Webentwicklung & Full-Stack Webagentur | Coday',
     description:
-      'Maßgeschneiderte React und Next.js Webanwendungen aus Wetzlar. High-Performance Architektur für Unternehmen in Hessen. Jetzt Ihr Projekt besprechen.',
+      'Maßgeschneiderte Next.js Webentwicklung für B2B & Mittelstand. Subsekundäre Ladezeiten, API-Integrationen & maximale Sicherheit ohne WordPress-Risiken.',
     path: '/de/services/web-development',
     type: 'money',
   });
@@ -37,154 +38,189 @@ export default async function WebDevelopmentPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  setRequestLocale(locale);
+  const _locale = locale || 'de';
+  setRequestLocale(_locale);
+  const isEn = _locale === 'en';
 
-  const _locale = (await params)?.locale || 'de';
-  const _seoTitle =
-    _locale === 'en'
-      ? 'Web Development Wetzlar | Next.js & React Agency | Coday'
-      : 'Webentwicklung Wetzlar | Next.js & React Agentur | Coday';
-  const _seoDesc =
-    _locale === 'en'
-      ? 'Custom React and Next.js web applications from Wetzlar. High-performance architecture for businesses in Hesse. Discuss your project with us today.'
-      : 'Maßgeschneiderte React und Next.js Webanwendungen aus Wetzlar. High-Performance Architektur für Unternehmen in Hessen. Jetzt Ihr Projekt besprechen.';
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      getOrganizationSchema(_locale),
+      {
+        '@type': 'ProfessionalService',
+        '@id': `${BASE_URL}/${_locale}/services/web-development#service`,
+        name: isEn
+          ? 'Next.js Web Development & Full-Stack Agency'
+          : 'Next.js Webentwicklung & Full-Stack Webagentur',
+        url: `${BASE_URL}/${_locale}/services/web-development`,
+        description: isEn
+          ? 'Enterprise Next.js 15 and React 19 web development for mid-market and B2B leaders.'
+          : 'Maßgeschneiderte Next.js 15 und React 19 Webentwicklung für den anspruchsvollen Mittelstand und B2B.',
+        provider: {
+          '@id': `${BASE_URL}/#organization`,
+        },
+        areaServed: {
+          '@type': 'AdministrativeArea',
+          name: 'Hessen, Deutschland',
+        },
+        hasOfferCatalog: {
+          '@type': 'OfferCatalog',
+          name: 'Web Development Services',
+          itemListElement: [
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Next.js 15 & React 19 Architecture',
+                description:
+                  'Server Components, SSG, Sub-0.3s Ladezeiten und 100/100 Core Web Vitals.',
+              },
+            },
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Sanity Headless CMS Integration',
+                description:
+                  'Strukturierte Redaktionsumgebung mit Live-Preview ohne Datenbank-Verwaltungsaufwand.',
+              },
+            },
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'B2B API & ERP Integrationen',
+                description:
+                  'Sichere Anbindung von REST/GraphQL APIs, CRM-Systemen und Zahlungsdienstleistern.',
+              },
+            },
+          ],
+        },
+      },
+      {
+        '@type': 'TechArticle',
+        '@id': `${BASE_URL}/${_locale}/services/web-development#techarticle`,
+        headline: isEn
+          ? 'Modern Web Development Architecture with Next.js 15 and React Server Components'
+          : 'Moderne Webentwicklungs-Architektur mit Next.js 15 und React Server Components',
+        description:
+          'Detaillierte Analyse, warum serverseitig vorkompilierte Next.js Architekturen monolithische PHP- und WordPress-Systeme in Performance, Sicherheit und Skalierbarkeit übertreffen.',
+        author: {
+          '@type': 'Person',
+          name: 'Umutcan Emre Tezgel',
+        },
+      },
+    ],
+  };
+
   return (
     <>
       <script
         id="schema-web-development"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@graph': [
-              getOrganizationSchema(_locale),
-              getServiceSchema({
-                name: _seoTitle,
-                description: _seoDesc,
-                url: `${BASE_URL}/${_locale}/services/web-development`,
-              }),
-            ],
-          }),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <WebDevelopmentClient />
 
-      {/* SEO */}
-      <section className="container mx-auto px-4 py-16 max-w-5xl text-secondary-600">
-        {_locale === 'en' ? (
-          <>
-            <h2 className="text-3xl font-display font-bold mb-6">
-              Web Development Wetzlar – Next.js &amp; React Agency
-            </h2>
-            <div className="space-y-4 text-base leading-relaxed">
-              <p>
-                Coday is a dedicated web development agency in Wetzlar, Hesse, specialising in
-                Next.js and React to build modern, high-performance web applications for businesses
-                of every size. Our development process is rooted in engineering excellence: we write
-                strictly typed TypeScript, follow component-driven architecture, and adhere to
-                performance budgets that keep every route under 100 KB of first-load JavaScript. The
-                result is a web application that loads instantly, responds to user input without
-                perceptible delay, and scores consistently high on Core Web Vitals – the metrics
-                Google uses to evaluate user experience in search rankings. From single-page
-                marketing sites to complex multi-tenant platforms, our Wetzlar-based agency delivers
-                scalable code that grows with your business.
-              </p>
-              <p>
-                What sets our web development apart is the depth of our technical stack. We leverage
-                the Next.js App Router with React Server Components for optimal server-side
-                rendering, minimising client-side JavaScript and maximising initial load speed. Data
-                flows through server actions and edge functions deployed on Vercel, ensuring
-                low-latency responses regardless of where your users are located. For content
-                management we integrate Sanity CMS, and for authentication and database needs we
-                rely on Supabase – a modern, open-source alternative to Firebase. Every technology
-                choice is deliberate: we select tools that offer long-term maintainability, strong
-                community support, and seamless integration with the wider Next.js ecosystem.
-              </p>
-              <p>
-                Our development workflow in Wetzlar is built around quality assurance at every step.
-                We begin each project with a technical discovery phase where we map out data models,
-                API contracts, and routing structures before writing any code. During
-                implementation, continuous integration pipelines run automated type checks, linting,
-                and build verification on every commit. We practice infrastructure-as-code
-                principles so that staging and production environments are identical, eliminating
-                the classic "works on my machine" problem. Before launch, we conduct thorough load
-                testing, security audits, and accessibility reviews to confirm that the application
-                is production-ready and robust against real-world traffic patterns.
-              </p>
-              <p>
-                Choosing Coday as your Next.js and React agency in Wetzlar means partnering with
-                developers who care about the craft. We do not chase trends or add unnecessary
-                complexity – every line of code serves a purpose, and every architectural decision
-                is documented for the next developer who will read it. Our post-launch support
-                includes performance monitoring, dependency updates, and incremental feature
-                development so your web application stays current and competitive. Whether you are
-                modernising a legacy system, building a customer portal, or launching a new digital
-                product, our web development expertise in Hesse ensures you receive a solution that
-                is fast, secure, and built to last. Reach out today to start your project.
+      {/* Structured Semantic Topic Silo & Architecture Deep Dive */}
+      <section className="container mx-auto px-4 py-20 max-w-6xl text-slate-300">
+        <div className="p-8 lg:p-14 rounded-3xl bg-slate-900/60 border border-slate-800">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-950/40 text-amber-400 text-xs font-semibold uppercase tracking-wider mb-6">
+            <Cpu className="w-4 h-4" />
+            <span>ENTERPRISE ARCHITEKTUR-STANDARDS</span>
+          </div>
+
+          <h2 className="text-3xl sm:text-4xl font-display font-bold text-white mb-8">
+            {isEn
+              ? 'Why Modern Next.js Architecture Replaces Legacy Monoliths'
+              : 'Warum moderne Next.js 15 Architektur traditionelle CMS-Monolithen ablöst'}
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div className="p-6 rounded-2xl bg-slate-950 border border-slate-800">
+              <Lightning className="w-6 h-6 text-amber-400 mb-3" />
+              <h3 className="text-lg font-bold text-white mb-2">Subsekundäre Ladezeiten</h3>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Durch statische Vorkompilierung (SSG) und Vercel Edge Caching werden Inhalte in
+                unter 300ms an den Browser ausgeliefert — mit 0ms Layout Shifts.
               </p>
             </div>
-          </>
-        ) : (
-          <>
-            <h2 className="text-3xl font-display font-bold mb-6">
-              Webentwicklung Wetzlar – Next.js &amp; React Agentur
-            </h2>
-            <div className="space-y-4 text-base leading-relaxed">
-              <p>
-                Coday ist eine auf Webentwicklung spezialisierte Agentur in Wetzlar, Hessen, die mit
-                Next.js und React moderne, hochperformante Webanwendungen für Unternehmen jeder
-                Größe entwickelt. Unser Entwicklungsprozess basiert auf technischer Exzellenz: Wir
-                schreiben strikt typisierten TypeScript-Code, folgen einer komponentengetriebenen
-                Architektur und halten uns an Performance-Budgets, die jede Route unter 100 KB
-                First-Load-JavaScript halten. Das Ergebnis ist eine Webanwendung, die sofort lädt,
-                auf Nutzereingaben ohne wahrnehmbare Verzögerung reagiert und konsistent hohe
-                Core-Web-Vitals-Werte erzielt – die Metriken, anhand derer Google die
-                Nutzererfahrung im Suchranking bewertet. Von einseitigen Marketing-Seiten bis hin zu
-                komplexen Multi-Tenant-Plattformen liefert unsere Agentur in Wetzlar skalierbaren
-                Code, der mit Ihrem Unternehmen wächst.
-              </p>
-              <p>
-                Was unsere Webentwicklung besonders macht, ist die Tiefe unseres technischen Stacks.
-                Wir nutzen den Next.js App Router mit React Server Components für optimales
-                serverseitiges Rendering, minimieren clientseitiges JavaScript und maximieren die
-                initiale Ladegeschwindigkeit. Datenflüsse laufen über Server Actions und Edge
-                Functions, die auf Vercel deployt werden, um niedrige Latenzzeiten unabhängig vom
-                Standort Ihrer Nutzer zu gewährleisten. Für Content-Management integrieren wir
-                Sanity CMS, und für Authentifizierung und Datenbankbedürfnisse setzen wir auf
-                Supabase – eine moderne, quelloffene Alternative zu Firebase. Jede
-                Technologieentscheidung ist bewusst getroffen: Wir wählen Werkzeuge, die
-                langfristige Wartbarkeit, starke Community-Unterstützung und nahtlose Integration in
-                das Next.js-Ökosystem bieten.
-              </p>
-              <p>
-                Unser Entwicklungs-Workflow in Wetzlar ist auf Qualitätssicherung in jedem Schritt
-                ausgelegt. Wir beginnen jedes Projekt mit einer technischen Discovery-Phase, in der
-                wir Datenmodelle, API-Verträge und Routing-Strukturen festlegen, bevor eine Zeile
-                Code geschrieben wird. Während der Implementierung führen
-                Continuous-Integration-Pipelines bei jedem Commit automatisierte Typprüfungen,
-                Linting und Build-Verifikation durch. Wir praktizieren
-                Infrastructure-as-Code-Prinzipien, sodass Staging- und Produktionsumgebungen
-                identisch sind und das klassische „funktioniert auf meinem Rechner"-Problem
-                eliminiert wird. Vor dem Launch führen wir gründliche Lasttests, Sicherheitsaudits
-                und Barrierefreiheitsprüfungen durch, um zu bestätigen, dass die Anwendung
-                produktionsreif und robust gegen reale Datenverkehrsmuster ist.
-              </p>
-              <p>
-                Sich für Coday als Next.js- und React-Agentur in Wetzlar zu entscheiden bedeutet,
-                mit Entwicklern zusammenzuarbeiten, denen ihr Handwerk am Herzen liegt. Wir jagen
-                keinen Trends hinterher und fügen keine unnötige Komplexität hinzu – jede Codezeile
-                erfüllt einen Zweck, und jede Architekturentscheidung ist für den nächsten
-                Entwickler dokumentiert. Unsere Betreuung nach dem Launch umfasst
-                Performance-Monitoring, Dependency-Updates und inkrementelle Feature-Entwicklung,
-                damit Ihre Webanwendung aktuell und wettbewerbsfähig bleibt. Ob Sie ein
-                Legacy-System modernisieren, ein Kundenportal aufbauen oder ein neues digitales
-                Produkt auf den Markt bringen – unsere Webentwicklungs-Expertise in Hessen stellt
-                sicher, dass Sie eine Lösung erhalten, die schnell, sicher und langlebig ist.
-                Kontaktieren Sie uns heute, um Ihr Projekt zu starten.
+            <div className="p-6 rounded-2xl bg-slate-950 border border-slate-800">
+              <ShieldCheck className="w-6 h-6 text-amber-400 mb-3" />
+              <h3 className="text-lg font-bold text-white mb-2">Maximale Sicherheit</h3>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Keine angreifbare MySQL-Datenbank auf dem Webserver, keine unsicheren
+                Drittanbieter-Plugins, vollständige Isolierung sensibler Backend-Logik.
               </p>
             </div>
-          </>
-        )}
+            <div className="p-6 rounded-2xl bg-slate-950 border border-slate-800">
+              <Code className="w-6 h-6 text-amber-400 mb-3" />
+              <h3 className="text-lg font-bold text-white mb-2">Strikte TypeScript-Typisierung</h3>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                100% wartbarer, sauber dokumentierter Code ohne Laufzeitfehler. Automatisierte CI/CD
+                Qualitäts-Gates bei jedem Git-Commit.
+              </p>
+            </div>
+          </div>
+
+          <div className="space-y-6 text-base leading-relaxed text-slate-300">
+            <p>
+              Als spezialisierte Webagentur in Wetzlar entwickeln wir digitale Produkte nach den
+              höchsten Standards moderner Softwaretechnik. Während traditionelle Baukästen oder
+              überladene WordPress-Themes hunderte überflüssige Skripte laden, setzen wir auf einen
+              maßgeschneiderten Tech-Stack rund um{' '}
+              <strong>Next.js 15, React 19, Tailwind CSS 4 und Sanity CMS</strong>.
+            </p>
+            <p>
+              Das Ergebnis: Perfekte Google Lighthouse 100/100 Scores, minimale Serverkosten und
+              eine intuitive Redaktionserfahrung für Ihr Marketing-Team.
+            </p>
+          </div>
+
+          {/* Internal Silo Navigation */}
+          <div className="mt-12 pt-8 border-t border-slate-800">
+            <div className="text-xs font-semibold text-amber-400 uppercase tracking-wider mb-4">
+              Verwandte Leistungen & Case Studies:
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                href="/services/web-design"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs font-medium text-slate-300 hover:text-amber-400 hover:border-amber-500/30 transition-colors"
+              >
+                <span>Webdesign & UI/UX</span>
+                <ArrowRight className="w-3 h-3" />
+              </Link>
+              <Link
+                href="/services/performance"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs font-medium text-slate-300 hover:text-amber-400 hover:border-amber-500/30 transition-colors"
+              >
+                <span>Performance & Speed Optimization</span>
+                <ArrowRight className="w-3 h-3" />
+              </Link>
+              <Link
+                href="/services/seo"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs font-medium text-slate-300 hover:text-amber-400 hover:border-amber-500/30 transition-colors"
+              >
+                <span>Technisches SEO & Topic Silos</span>
+                <ArrowRight className="w-3 h-3" />
+              </Link>
+              <Link
+                href="/work/batherm"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs font-medium text-slate-300 hover:text-amber-400 hover:border-amber-500/30 transition-colors"
+              >
+                <span>Case Study: Batherm Handwerk</span>
+                <ArrowRight className="w-3 h-3" />
+              </Link>
+              <Link
+                href="/pricing"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-amber-950/40 border border-amber-500/30 text-xs font-bold text-amber-400 hover:bg-amber-900/40 transition-colors"
+              >
+                <span>Festpreise ansehen</span>
+                <ArrowRight className="w-3 h-3" />
+              </Link>
+            </div>
+          </div>
+        </div>
       </section>
     </>
   );
