@@ -126,26 +126,30 @@ export const ProcessClient: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-dvh bg-slate-950 text-slate-100 selection:bg-amber-500/30 selection:text-amber-200">
+    <div className="min-h-dvh bg-[#fafafa] text-slate-900 selection:bg-amber-500/20 selection:text-amber-900">
       {/* Hero Section */}
-      <section className="pt-32 pb-20 lg:pt-40 lg:pb-28 px-4 w-full relative overflow-hidden text-center">
+      <section className="pt-32 pb-20 lg:pt-40 lg:pb-28 px-4 w-full relative overflow-hidden text-center bg-[#fafafa]">
         {/* Ambient Glow */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-500/10 blur-[140px] rounded-full pointer-events-none" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-400/10 blur-[140px] rounded-full pointer-events-none" />
 
         <div className="max-w-5xl mx-auto relative z-10">
           <div className="mb-8 flex justify-center">
             <Breadcrumbs />
           </div>
 
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-950/40 text-amber-400 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-6 backdrop-blur-md">
-            <Sparkle className="w-4 h-4 text-amber-400" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-50 text-amber-800 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-6 shadow-sm">
+            <Sparkle className="w-4 h-4 text-amber-600" />
             {isEn ? 'TRANSPARENT 4-STAGE PIPELINE' : 'TRANSPARENTER 4-STUFEN WEBDESIGN-PROZESS'}
           </div>
 
-          <h1 className="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl text-white leading-[1.1] tracking-tight mb-8">
+          <h1 className="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl text-slate-900 leading-[1.1] tracking-tight mb-8">
             In 4 Stufen zur{' '}
             <GradientText
-              colors={['#fbbf24', '#fef08a', '#f59e0b']}
+              colors={[
+                'var(--color-primary-600)',
+                'var(--color-secondary-800)',
+                'var(--color-primary-600)',
+              ]}
               animationSpeed={5}
               showBorder={false}
               className="inline-block"
@@ -154,7 +158,7 @@ export const ProcessClient: React.FC = () => {
             </GradientText>
           </h1>
 
-          <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-12">
+          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-12">
             Vom kostenlosen Audit bis zum 100/100 PageSpeed Launch in 14 bis 28 Werktagen: Erfahren
             Sie, wie unser agiler Entwicklungsprozess planbaren Projekterfolg garantiert.
           </p>
@@ -162,14 +166,14 @@ export const ProcessClient: React.FC = () => {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-amber-400 text-slate-950 font-bold rounded-full hover:bg-amber-300 transition duration-300 shadow-lg shadow-amber-500/20 hover:scale-[1.02]"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary-700 text-white font-bold rounded-full hover:bg-primary-800 transition duration-300 shadow-md hover:scale-[1.02]"
             >
               <span>Projekt jetzt starten</span>
               <ArrowRight weight="bold" className="w-5 h-5" />
             </Link>
             <Link
               href="/pricing"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-slate-900 text-slate-200 border border-slate-800 rounded-full font-medium hover:bg-slate-850 transition duration-300"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-full font-medium hover:bg-slate-50 transition duration-300 shadow-sm"
             >
               <span>Preise & Pakete ansehen</span>
             </Link>
@@ -178,16 +182,16 @@ export const ProcessClient: React.FC = () => {
       </section>
 
       {/* 4-Stage Roadmap Section */}
-      <section className="py-24 bg-slate-900/40 border-y border-slate-800/80 w-full relative">
+      <section className="py-24 bg-white border-y border-slate-200 w-full relative">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <span className="text-amber-400 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
               Agile Meilensteine
             </span>
-            <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-white mt-2 mb-4">
+            <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-slate-900 mt-2 mb-4">
               Die 4 Phasen Ihrer neuen Web-Präsenz
             </h2>
-            <p className="text-slate-400 text-base sm:text-lg">
+            <p className="text-slate-600 text-base sm:text-lg">
               Jede Phase hat klare Deliverables, feste Zeithorizonte und volle Transparenz.
             </p>
           </div>
@@ -196,18 +200,18 @@ export const ProcessClient: React.FC = () => {
             {stages.map((stage) => (
               <div
                 key={stage.number}
-                className="p-8 lg:p-12 rounded-3xl bg-slate-950 border border-slate-800 hover:border-amber-500/30 transition-all group"
+                className="p-8 lg:p-12 rounded-3xl bg-slate-50/80 border border-slate-200/80 hover:border-amber-500/40 hover:shadow-md transition-all group"
               >
-                <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-8 border-b border-slate-900">
+                <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-8 border-b border-slate-200">
                   <div className="flex items-center gap-6">
-                    <div className="w-16 h-16 rounded-2xl bg-amber-500/10 flex items-center justify-center text-amber-400 shrink-0 group-hover:scale-110 transition-transform">
+                    <div className="w-16 h-16 rounded-2xl bg-amber-50 flex items-center justify-center text-amber-600 shrink-0 group-hover:scale-110 transition-transform border border-amber-200/50">
                       <stage.icon className="w-8 h-8" />
                     </div>
                     <div>
-                      <div className="text-xs font-mono text-amber-400 font-bold uppercase tracking-wider mb-1">
+                      <div className="text-xs font-mono text-amber-800 font-bold uppercase tracking-wider mb-1">
                         {stage.number} • {stage.duration}
                       </div>
-                      <h3 className="font-display font-bold text-2xl sm:text-3xl text-white">
+                      <h3 className="font-display font-bold text-2xl sm:text-3xl text-slate-900">
                         {stage.title}
                       </h3>
                     </div>
@@ -216,15 +220,15 @@ export const ProcessClient: React.FC = () => {
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-8">
                   <div className="lg:col-span-6">
-                    <p className="text-slate-300 text-base leading-relaxed">{stage.tagline}</p>
+                    <p className="text-slate-700 text-base leading-relaxed">{stage.tagline}</p>
                   </div>
                   <div className="lg:col-span-6 space-y-3">
-                    <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">
+                    <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">
                       Konkrete Deliverables:
                     </div>
                     {stage.deliverables.map((item, idx) => (
-                      <div key={idx} className="flex items-center gap-3 text-sm text-slate-200">
-                        <CheckCircle weight="fill" className="w-4 h-4 text-amber-400 shrink-0" />
+                      <div key={idx} className="flex items-center gap-3 text-sm text-slate-700">
+                        <CheckCircle weight="fill" className="w-4 h-4 text-amber-600 shrink-0" />
                         <span>{item}</span>
                       </div>
                     ))}
@@ -237,16 +241,16 @@ export const ProcessClient: React.FC = () => {
       </section>
 
       {/* Onboarding & Transparency Section */}
-      <section className="py-24 px-4 w-full relative bg-slate-950">
+      <section className="py-24 px-4 w-full relative bg-[#fafafa]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-amber-400 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
               Stressfreies Kunden-Onboarding
             </span>
-            <h2 className="font-display font-bold text-3xl sm:text-4xl text-white mt-2 mb-4">
+            <h2 className="font-display font-bold text-3xl sm:text-4xl text-slate-900 mt-2 mb-4">
               Warum der Ablauf mit Coday so reibungslos funktioniert
             </h2>
-            <p className="text-slate-400 text-base">
+            <p className="text-slate-600 text-base">
               Sie müssen kein Technik-Experte sein. Wir führen Sie strukturiert durch das Projekt.
             </p>
           </div>
@@ -255,16 +259,16 @@ export const ProcessClient: React.FC = () => {
             {onboardingBenefits.map((benefit, idx) => (
               <div
                 key={idx}
-                className="p-8 rounded-2xl bg-slate-900/50 border border-slate-800 flex flex-col justify-between"
+                className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md flex flex-col justify-between transition-all"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-400 mb-6">
+                  <div className="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center text-amber-600 mb-6 border border-amber-200/50">
                     <benefit.icon className="w-6 h-6" />
                   </div>
-                  <h3 className="font-display font-bold text-xl text-white mb-3">
+                  <h3 className="font-display font-bold text-xl text-slate-900 mb-3">
                     {benefit.title}
                   </h3>
-                  <p className="text-slate-400 text-sm leading-relaxed">{benefit.desc}</p>
+                  <p className="text-slate-600 text-sm leading-relaxed">{benefit.desc}</p>
                 </div>
               </div>
             ))}
@@ -273,18 +277,18 @@ export const ProcessClient: React.FC = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 px-4 bg-slate-900/60 border-t border-slate-800/80 w-full text-center">
+      <section className="py-24 px-4 bg-slate-50/80 border-t border-slate-200 w-full text-center">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-display font-bold text-3xl sm:text-5xl text-white mb-6">
+          <h2 className="font-display font-bold text-3xl sm:text-5xl text-slate-900 mb-6">
             Starten wir Ihr Projekt in 4 Stufen
           </h2>
-          <p className="text-lg text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
             Fordern Sie jetzt Ihr unverbindliches Strategiegespräch oder ein kostenloses
             Website-Audit an und lassen Sie uns den genauen Zeitplan besprechen.
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-10 py-5 bg-amber-400 text-slate-950 font-bold rounded-full hover:bg-amber-300 transition duration-300 shadow-xl shadow-amber-500/20 hover:scale-[1.02] text-lg"
+            className="inline-flex items-center gap-2 px-10 py-5 bg-primary-700 text-white font-bold rounded-full hover:bg-primary-800 transition duration-300 shadow-xl shadow-primary-700/20 hover:scale-[1.02] text-lg"
           >
             <span>Jetzt Erstgespräch anfordern</span>
             <ArrowRight weight="bold" className="w-5 h-5" />

@@ -1,0 +1,107 @@
+{
+  "target": "bad-homburg",
+  "displayName": "Bad Homburg vor der Höhe",
+  "type": "location",
+  "meta": {
+    "title": "Webdesign Bad Homburg | High-End Webagentur · Coday",
+    "description": "Webdesign & Webentwicklung in Bad Homburg v. d. H. Elegantes UX-Design, maximale Performance & Diskretion für Family Offices, Praxen & B2B. Festpreis auf Anfrage."
+  },
+  "hero": {
+    "headline": "Webdesign Bad Homburg: Digitale Eleganz & Spitzenperformance",
+    "subheadline": "Webdesign & Next.js Entwicklung für Family Offices, Pharma, Healthcare und B2B im Hochtaunuskreis.",
+    "description": "Als spezialisierte Webagentur für Bad Homburg vor der Höhe entwickeln wir exklusive, sichere und blitzschnelle Next.js Webauftritte. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+  },
+  "localDominance": {
+    "title": "Exklusives Webdesign für Bad Homburg & den Hochtaunuskreis",
+    "description": "Bad Homburg vor der Höhe vereint höchste Kaufkraft, renommierte Family Offices, globale Pharma- und Medizintechnik-Konzerne sowie erstklassige Privatpraxen. Wir schaffen digitale Plattformen mit höchster Seriosität und Sicherheit.",
+    "points": [
+      "Family Offices & Vermögensverwalter: Höchste Diskretion, elegantes Minimalismus-Design und banken-grade Sicherheitsarchitekturen.",
+      "Pharma & Medizintechnik: Compliance-gerechte Webportale und barrierefreie Interfaces gemäß BITV 2.0 / WCAG.",
+      "Kaiser-Friedrich-Promenade & Kurpark: Repräsentative Websites für anspruchsvolle Privatärzte und Dienstleister.",
+      "Gewerbegebiete Mitte & Süd: B2B-Leadgenerierung und Neukundengewinnung für etablierte Firmenzentralen.",
+      "Next.js als SEO-Katalysator: 100/100 Google Core Web Vitals für Spitzenplatzierungen bei 'Webdesign Bad Homburg'.",
+      "Inhabergeführt & DSGVO-Hosting: Direkter Entwickler-Kontakt und Hosting auf deutschen Servern."
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "Webportale für Family Offices & Vermögensverwaltungen",
+      "content": "Minimalistische Eleganz und geschützte Portale ohne WordPress-Sicherheitsrisiken für anspruchsvolle Mandanten im Taunus."
+    },
+    {
+      "title": "Digitale Plattformen für Pharma & Medizintechnik",
+      "content": "Leistungsstarke, global skalierbare Websites für Gesundheitskonzerne und Biotech-Unternehmen im Hochtaunus."
+    },
+    {
+      "title": "Local SEO & Hochtaunus Dominanz",
+      "content": "Top-Rankings in Bad Homburg, Friedrichsdorf, Oberursel, Kronberg und Königstein im Taunus."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wie viel kostet eine neue Website in Bad Homburg?",
+      "a": "Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance."
+    },
+    {
+      "q": "Wie schnell ist eine neue Website in Bad Homburg online?",
+      "a": "In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online."
+    },
+    {
+      "q": "Kommen Sie für ein Beratungsgespräch direkt nach Bad Homburg?",
+      "a": "Ja, sehr gerne. Über die A5 und A661 sind wir von unserem Wetzlarer HQ in unter 30 Minuten direkt bei Ihnen vor Ort an der Kaiser-Friedrich-Promenade oder im Gewerbegebiet Mitte/Süd."
+    },
+    {
+      "q": "Wie gewährleisten Sie Datensicherheit und Diskretion?",
+      "a": "Durch moderne Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet."
+    },
+    {
+      "q": "Wer ist unser fester Ansprechpartner?",
+      "a": "Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support."
+    }
+  ],
+  "meta_en": {
+    "title": "Web Design Bad Homburg | High-End Web Agency · Coday",
+    "description": "Web design & development in Bad Homburg v. d. H. Elegant UX, maximum performance & discretion for family offices, clinics & B2B. Fixed price on request."
+  },
+  "hero_en": {
+    "headline": "Web Design Bad Homburg: Digital Elegance & Maximum Performance",
+    "subheadline": "Web design & Next.js development for family offices, pharma, healthcare, and B2B in the High Taunus region.",
+    "description": "Custom Next.js web applications for Bad Homburg vor der Höhe. Turnkey fixed price on request."
+  },
+  "localDominance_en": {
+    "title": "Exclusive Web Design for Bad Homburg & High Taunus",
+    "description": "Bad Homburg combines high purchasing power with family offices and healthcare headquarters. We engineer secure digital platforms.",
+    "points": [
+      "Family Offices & Asset Managers: High discretion and bank-grade security.",
+      "Pharma & MedTech: Compliant, accessible web portals following BITV 2.0 / WCAG.",
+      "Prestigious Locations: High-converting websites for Kurpark and Kaiser-Friedrich-Promenade.",
+      "Industrial Areas: Targeted B2B lead generation for regional headquarters.",
+      "SEO Leadership: 100/100 Core Web Vitals for top search visibility.",
+      "GDPR Hosting: Maximum data safety on certified German infrastructure."
+    ]
+  },
+  "contentSections_en": [
+    {
+      "title": "Web Portals for Family Offices & Asset Managers",
+      "content": "Minimalist elegance and secure client spaces tailored to Taunus wealth managers."
+    },
+    {
+      "title": "Digital Platforms for Pharma & Healthcare",
+      "content": "High-speed, scalable corporate websites for medical technology leaders."
+    }
+  ],
+  "faq_en": [
+    {
+      "q": "How much does a professional website in Bad Homburg cost?",
+      "a": "Binding fixed price on request following a free audit. 5-10x more cost-effective than traditional agencies."
+    },
+    {
+      "q": "How long does implementation take?",
+      "a": "Turnkey delivery within 10 to 14 business days."
+    },
+    {
+      "q": "Do you meet on-site in Bad Homburg?",
+      "a": "Yes, we gladly meet you in Bad Homburg via the A5/A661 highways."
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "target": "wiesbaden",
+  "displayName": "Wiesbaden",
+  "type": "location",
+  "meta": {
+    "title": "Webdesign Wiesbaden | Premium Webagentur & SEO · Coday",
+    "description": "Exzellentes Webdesign & Next.js Entwicklung in Wiesbaden. Schnelle Ladezeiten, seriöse Ästhetik & SEO für Kanzleien, Praxen & Berater. Festpreis auf Anfrage."
+  },
+  "hero": {
+    "headline": "Webdesign Wiesbaden: Digitale Exzellenz für Kanzleien, Praxen & Consulting",
+    "subheadline": "Webdesign & Next.js Entwicklung in der hessischen Landeshauptstadt Wiesbaden und dem Rheingau.",
+    "description": "Als spezialisierte Webagentur für Wiesbaden entwickeln wir blitzschnelle, repräsentative und hochsichere Next.js Webanwendungen. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+  },
+  "localDominance": {
+    "title": "Digitale Dominanz für Wiesbadens Kanzleien, Privatkliniken & Berater",
+    "description": "Wiesbaden steht als hessische Landeshauptstadt für politische Verwaltung, renommierte Wirtschaftskanzleien, exzellente Fachkliniken und etablierte Beratungsunternehmen. Wir bauen Websites mit höchster ästhetischer und technischer Autorität.",
+    "points": [
+      "Fokus auf Kanzleien, Notariate & Consulting: Seriöses, minimalistisches Webdesign mit barrierefreier Usability für anspruchsvolle Mandanten.",
+      "Privatkliniken & Fachärzte: Exklusive Ästhetik, schnelle Ladezeiten und DSGVO-konforme Patienten-Terminbuchung.",
+      "Gewerbegebiete Nordenstadt & Schierstein: Gezielte B2B-Sichtbarkeit für etablierte Mittelständler und Technologieberater.",
+      "Next.js als SEO-Katalysator: Top-Rankings für 'Webdesign Wiesbaden' und Branchen-Keywords durch 100/100 Core Web Vitals.",
+      "Wilhelmstraße, Kurhaus & Biebrich: Repräsentative digitale Auftritte für Premium-Dienstleister und Immobilienmakler.",
+      "DSGVO-konformes deutsches Hosting: Keine anfälligen WordPress-Plugins, maximale Datensicherheit."
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "Webportale für Kanzleien, Notariate & Steuerberater in Wiesbaden",
+      "content": "Rechtsanwälte und Wirtschaftsprüfer an der Wilhelmstraße und im Dichterviertel etablieren durch seriöses, barrierefreies Webdesign sofortige fachliche Autorität."
+    },
+    {
+      "title": "Digitale Exzellenz für Privatkliniken & Facharztzentren",
+      "content": "Patienten in Wiesbaden und dem Rheingau erwarten schnelle, diskrete und barrierefreie Online-Services mit intuitiver Terminauswahl."
+    },
+    {
+      "title": "Local SEO & Rheingau-Taunus Dominanz",
+      "content": "Dominante Platzierungen in den Google-Suchergebnissen für Unternehmen in Wiesbaden, Nordenstadt, Schierstein, Biebrich, Sonnenberg und Taunusstein."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wie viel kostet eine neue Website in Wiesbaden?",
+      "a": "Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance."
+    },
+    {
+      "q": "Wie schnell ist eine neue Website in Wiesbaden online?",
+      "a": "In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online."
+    },
+    {
+      "q": "Kommen Sie für ein Beratungsgespräch direkt nach Wiesbaden?",
+      "a": "Ja, sehr gerne. Über die A3 und A66 sind wir von unserem Wetzlarer HQ in unter 45 Minuten direkt bei Ihnen vor Ort an der Wilhelmstraße, in Nordenstadt oder Schierstein."
+    },
+    {
+      "q": "Erfüllen Ihre Websites die Barrierefreiheitsstandards nach BITV 2.0 / WCAG?",
+      "a": "Ja. Wir entwickeln barrierefreie Interfaces mit semantischem HTML, Tastaturnavigation und Screenreader-Unterstützung gemäß WCAG 2.2 und BITV 2.0."
+    },
+    {
+      "q": "Wer ist unser fester Ansprechpartner?",
+      "a": "Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support."
+    }
+  ],
+  "meta_en": {
+    "title": "Web Design Wiesbaden | Premium Web Agency & SEO · Coday",
+    "description": "Excellent web design & Next.js development in Wiesbaden. Fast load times, prestigious aesthetics & SEO for law firms, practices & consultants. Fixed price on request."
+  },
+  "hero_en": {
+    "headline": "Web Design Wiesbaden: Digital Excellence for Law, Healthcare & Consulting",
+    "subheadline": "Web design & Next.js development in Hesse's state capital Wiesbaden and the Rheingau region.",
+    "description": "Custom Next.js web applications for law firms, private clinics, and consultancies in Wiesbaden. Fixed price upon request."
+  },
+  "localDominance_en": {
+    "title": "Digital Dominance for Wiesbaden's Professional Services",
+    "description": "Wiesbaden represents public governance, elite law firms, and private clinics. We build prestigious, high-speed digital platforms.",
+    "points": [
+      "Law & Consulting Focus: Prestigious, minimalist web design with accessible UX.",
+      "Private Clinics & Specialists: High-trust aesthetics with GDPR-compliant online scheduling.",
+      "Industrial Parks Nordenstadt & Schierstein: Targeted B2B visibility for regional leaders.",
+      "SEO Leadership: 100/100 Core Web Vitals for dominant Google visibility.",
+      "Prestigious Locations: High-converting websites for Wilhelmstraße and Kurhaus businesses.",
+      "GDPR Compliant German Hosting: Maximum security without WordPress vulnerabilities."
+    ]
+  },
+  "contentSections_en": [
+    {
+      "title": "Web Portals for Law Firms & Consultancies in Wiesbaden",
+      "content": "Minimalist, accessible digital presence commanding trust and authority."
+    },
+    {
+      "title": "Digital Excellence for Private Clinics & Specialists",
+      "content": "Fast, accessible websites with seamless patient appointment booking."
+    }
+  ],
+  "faq_en": [
+    {
+      "q": "How much does a professional website in Wiesbaden cost?",
+      "a": "Binding fixed price on request following a free audit. 5-10x more cost-effective than traditional agencies."
+    },
+    {
+      "q": "How long does implementation take?",
+      "a": "Turnkey delivery within 10 to 14 business days."
+    },
+    {
+      "q": "Do you meet on-site in Wiesbaden?",
+      "a": "Yes, we gladly meet you in Wiesbaden via the A3/A66 highways."
+    }
+  ]
+}

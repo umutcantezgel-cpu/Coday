@@ -1,0 +1,107 @@
+{
+  "target": "hanau",
+  "displayName": "Hanau",
+  "type": "location",
+  "meta": {
+    "title": "Webdesign Hanau | B2B Webentwicklung & SEO · Coday",
+    "description": "Webdesign & SEO für Hanau und Main-Kinzig. Ultraschnelle Next.js Plattformen für Industrie, Handwerk & Technologieunternehmen. Festpreise auf Anfrage."
+  },
+  "hero": {
+    "headline": "Webdesign Hanau: Next.js Plattformen für Materialtechnik, Industrie & Handwerk",
+    "subheadline": "Ihre Webagentur für Hanau, Wolfgang, Großauheim und Steinheim.",
+    "description": "Als spezialisierte Webagentur für Hanau und den Main-Kinzig-Kreis entwickeln wir blitzschnelle, sichere und hochkonvertierende Next.js Webanwendungen. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+  },
+  "localDominance": {
+    "title": "Digitale Vorherrschaft für Hanau & den Main-Kinzig-Kreis",
+    "description": "Die Brüder-Grimm-Stadt Hanau ist ein international renommierter Hochtechnologiestandort für Materialtechnik, Chemie und Edelmetallverarbeitung sowie ein starkes Zentrum für Industrie und Handwerk. Wir bauen digitale Plattformen, die messbar neue B2B-Kunden und Fachkräfte generieren.",
+    "points": [
+      "Fokus auf Materialtechnik, Chemie & Industrie: Leistungsstarke Next.js Portale für Zulieferer und globale Marktführer im Industriepark Wolfgang.",
+      "Großauheim & Steinheim: Repräsentative Webauftritte für etablierte Handwerksmeister und Bauunternehmen.",
+      "Verkehrsknoten Hanauer Kreuz (A45 / A66): Perfekte regionale Vernetzung zwischen Rhein-Main und Mittelhessen.",
+      "Next.js als SEO-Katalysator: 100/100 Google Core Web Vitals für Spitzenrankings bei 'Webdesign Hanau'.",
+      "DSGVO & Deutsches Edge-Hosting: Absolute Datensicherheit ohne anfälligen WordPress-Plugin-Ballast.",
+      "Inhabergeführt & Festpreis: Direkter Kontakt mit Umutcan Emre Tezgel ohne teuren Großagentur-Overhead."
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "B2B-Webportale für Materialtechnik & Chemie im Industriepark Wolfgang",
+      "content": "Sicherheit, Skalierbarkeit und blitzschnelle Datenübertragung: Headless-Architekturen für Hanauer Industrieunternehmen."
+    },
+    {
+      "title": "Digitale Leadgenerierung für Handwerk & Bauwirtschaft in Großauheim & Steinheim",
+      "content": "Lokale Dominanz und automatisierte Kundenanfragen für Meisterbetriebe und Bauunternehmer im Main-Kinzig-Kreis."
+    },
+    {
+      "title": "Local SEO & Main-Kinzig Dominanz",
+      "content": "Dominante Platzierungen in den Google-Suchergebnissen für Hanau, Maintal, Bruchköbel, Gelnhausen und Rodenbach."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wie viel kostet eine neue Website in Hanau?",
+      "a": "Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance."
+    },
+    {
+      "q": "Wie schnell ist eine neue Website in Hanau online?",
+      "a": "In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online."
+    },
+    {
+      "q": "Kommen Sie für ein Beratungsgespräch direkt nach Hanau?",
+      "a": "Ja, sehr gerne. Über die A45 und A66 sind wir von unserem Wetzlarer HQ in unter 45 Minuten direkt bei Ihnen vor Ort im Industriepark Wolfgang oder in Großauheim/Steinheim."
+    },
+    {
+      "q": "Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?",
+      "a": "Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet."
+    },
+    {
+      "q": "Wer ist unser fester Ansprechpartner?",
+      "a": "Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support."
+    }
+  ],
+  "meta_en": {
+    "title": "Web Design Hanau | B2B Web Development & SEO · Coday",
+    "description": "Web design & SEO for Hanau & Main-Kinzig. Ultra-fast Next.js platforms for industry, craft & technology companies. Fixed price on request."
+  },
+  "hero_en": {
+    "headline": "Web Design Hanau: Next.js Platforms for Materials, Industry & Craft",
+    "subheadline": "Your web agency for Hanau, Wolfgang, Großauheim, and Steinheim.",
+    "description": "Custom Next.js web applications for Hanau. Fixed price upon request."
+  },
+  "localDominance_en": {
+    "title": "Digital Dominance for Hanau & Main-Kinzig",
+    "description": "Hanau is an international hub for material science, chemical technology, and robust craft trades. We engineer fast, secure digital platforms.",
+    "points": [
+      "Materials & Chemistry Focus: High-performance Next.js portals for industrial suppliers in Industriepark Wolfgang.",
+      "Craft & Construction: Targeted web presence for master craftsmen in Großauheim and Steinheim.",
+      "Hanau Highway Junction (A45 / A66): Seamless regional connectivity across Frankfurt Rhine-Main.",
+      "SEO Leadership: 100/100 Core Web Vitals for top search visibility.",
+      "GDPR Edge Hosting: Maximum security on German infrastructure.",
+      "Direct Founder Access: Transparent fixed pricing without agency overhead."
+    ]
+  },
+  "contentSections_en": [
+    {
+      "title": "B2B Web Portals for Materials & Chemistry in Industriepark Wolfgang",
+      "content": "Enterprise-grade web systems designed for industrial speed, reliability, and security."
+    },
+    {
+      "title": "Digital Lead Generation for Craft & Construction Trades",
+      "content": "Fast mobile experiences converting regional search traffic into lucrative projects."
+    }
+  ],
+  "faq_en": [
+    {
+      "q": "How much does a professional website in Hanau cost?",
+      "a": "Binding fixed price on request following a free audit. 5-10x more cost-effective than traditional agencies."
+    },
+    {
+      "q": "How long does implementation take?",
+      "a": "Turnkey delivery within 10 to 14 business days."
+    },
+    {
+      "q": "Do you meet on-site in Hanau?",
+      "a": "Yes, we gladly meet you in Hanau via the A45/A66 highways."
+    }
+  ]
+}

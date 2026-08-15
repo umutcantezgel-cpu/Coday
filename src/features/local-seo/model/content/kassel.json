@@ -1,0 +1,107 @@
+{
+  "target": "kassel",
+  "displayName": "Kassel",
+  "type": "location",
+  "meta": {
+    "title": "Webdesign Kassel | Next.js Agentur & SEO Nordhessen · Coday",
+    "description": "Webdesign & Webentwicklung in Kassel. Next.js 15 Plattformen für Industrie, Logistik & Mittelstand in Nordhessen. Verbindliche Festpreise auf Anfrage."
+  },
+  "hero": {
+    "headline": "Webdesign Kassel: Next.js Performance für Industrie, Logistik & Nordhessen",
+    "subheadline": "Ihre Webagentur für Kassel, Baunatal, Lohfelden und Vellmar.",
+    "description": "Als spezialisierte Webagentur für Nordhessen entwickeln wir blitzschnelle, sichere und hochkonvertierende Next.js Webanwendungen. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+  },
+  "localDominance": {
+    "title": "Digitale Vorherrschaft für Kassel & die Wirtschaftsregion Nordhessen",
+    "description": "Kassel ist das wirtschaftliche und kulturelle Zentrum Nordhessens mit weltbekannter documenta-Tradition, führendem Maschinen- und Fahrzeugbau (VW-Werk Baunatal, Alstom), zukunftsweisender Solartechnik (SMA) und einem der bedeutendsten europäischen Logistik-Knotenpunkte an der Schnittstelle von A7, A44 und A49. Wir bauen digitale Plattformen, die messbar neue B2B-Kunden und Fachkräfte gewinnen.",
+    "points": [
+      "Industrie & Maschinenbau: B2B-Webportale mit maximaler Ladezeit-Performance für exportstarke Unternehmen im Gewerbegebiet Waldau.",
+      "Logistik & Güterverkehrszentrum: Nahtlose ERP- und Tracking-Integrationen für Speditionen und Logistiker an der A7.",
+      "Erneuerbare Energien & Science Park: Skalierbare Next.js Systeme für CleanTech-Unternehmen und Spin-offs der Universität Kassel.",
+      "Schnelle Erreichbarkeit über A7, A44 und A49: Ideale regionale Betreuung in Nordhessen und Mittelhessen.",
+      "Next.js als SEO-Katalysator: 100/100 Google Core Web Vitals für Spitzenrankings bei 'Webdesign Kassel'.",
+      "Inhabergeführt & Festpreis: Direkter Entwickler-Kontakt mit Umutcan Emre Tezgel ohne teuren Großagentur-Overhead."
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "Industrie- & Maschinenbau-Webportale für Kassel & Waldau",
+      "content": "Next.js 15, moderne Produktkataloge und internationale Mehrsprachigkeit für Industrie und Automotive in Nordhessen."
+    },
+    {
+      "title": "Plattformen für Logistik & GVZ Kassel",
+      "content": "Performante Webarchitekturen für Logistikunternehmen am zentralen Autobahnkreuz A7 / A44 / A49."
+    },
+    {
+      "title": "Local SEO & Nordhessen Dominanz",
+      "content": "Dominante Platzierungen in den Google-Suchergebnissen für Kassel, Baunatal, Lohfelden, Vellmar und Fuldabrück."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wie viel kostet eine neue Website in Kassel?",
+      "a": "Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance."
+    },
+    {
+      "q": "Wie schnell ist eine neue Website in Kassel online?",
+      "a": "In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online."
+    },
+    {
+      "q": "Kommen Sie für ein Beratungsgespräch direkt nach Kassel?",
+      "a": "Ja, sehr gerne. Über die A7 oder A49 sind wir von unserem Wetzlarer HQ schnell direkt bei Ihnen vor Ort im Science Park, in Waldau oder im GVZ Kassel."
+    },
+    {
+      "q": "Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?",
+      "a": "Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet."
+    },
+    {
+      "q": "Wer ist unser fester Ansprechpartner?",
+      "a": "Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support."
+    }
+  ],
+  "meta_en": {
+    "title": "Web Design Kassel | Next.js Agency & SEO North Hesse · Coday",
+    "description": "Web design & web development in Kassel. Next.js 15 platforms for industry, logistics & SME in North Hesse. Fixed prices on request."
+  },
+  "hero_en": {
+    "headline": "Web Design Kassel: Next.js Performance for Industry, Logistics & North Hesse",
+    "subheadline": "Your web agency for Kassel, Baunatal, Lohfelden, and Vellmar.",
+    "description": "Custom Next.js web applications for Kassel and North Hesse. Fixed price upon request."
+  },
+  "localDominance_en": {
+    "title": "Digital Dominance for Kassel & the North Hesse Economic Region",
+    "description": "Kassel is the economic hub of North Hesse with automotive engineering, renewable energy, and major logistics at the A7/A44 intersection. We build fast, high-performance web systems.",
+    "points": [
+      "Industry & Engineering: Ultra-fast B2B web portals for manufacturing in Waldau.",
+      "Logistics Hub: Seamless tracking integrations for logistics leaders at GVZ Kassel.",
+      "Renewable Energy & Science Park: Scalable Next.js systems for university spin-offs.",
+      "Fast A7 / A44 / A49 Corridor: Reliable regional coverage across Hessen.",
+      "SEO Leadership: 100/100 Core Web Vitals for top search visibility.",
+      "Direct Founder Access: Transparent fixed pricing without agency overhead."
+    ]
+  },
+  "contentSections_en": [
+    {
+      "title": "Industrial & Engineering Web Portals for Kassel & Waldau",
+      "content": "Next.js 15, modular product catalogs, and international multilingual support."
+    },
+    {
+      "title": "Logistics & Distribution Web Systems for GVZ Kassel",
+      "content": "High-performing web platforms engineered for heavy traffic and mission-critical workflows."
+    }
+  ],
+  "faq_en": [
+    {
+      "q": "How much does a professional website in Kassel cost?",
+      "a": "Binding fixed price on request following a free audit. 5-10x more cost-effective than traditional agencies."
+    },
+    {
+      "q": "How long does implementation take?",
+      "a": "Turnkey delivery within 10 to 14 business days."
+    },
+    {
+      "q": "Do you meet on-site in Kassel?",
+      "a": "Yes, we gladly meet you in Kassel or surrounding business parks via the A7/A49 highways."
+    }
+  ]
+}

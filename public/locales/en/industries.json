@@ -417,6 +417,7 @@
   },
   "anwaelte-kanzleien": {
     "title": "Lawyers & Law Firms",
+    "solutions_description": "We develop professional web presences that emphasize your legal expertise and win the trust of potential clients from the very first click.",
     "hero": {
       "headline": "Legally Secure Client Acquisition",
       "subheadline": "Position your law firm as the first point of contact for your areas of specialization.",
@@ -680,7 +681,7 @@
       "headline": "Digital Expertise for Management Consultants",
       "title_suffix": "Visible",
       "description": "Win high-ticket clients by positioning your Management Consulting firm as a thought leader.",
-      "subheadline": "subheadline",
+      "subheadline": "Position your consulting firm as the undisputed market leader for discerning B2B clients.",
       "excerpt": "High-end web presences for consultants that make expertise visible and drive premium B2B mandates."
     },
     "challenges": {
@@ -773,7 +774,7 @@
         "description": "The website needs to be ready yesterday."
       },
       "talent_war": {
-        "title": "Talent Was",
+        "title": "Talent War",
         "description": "Attractiveness for top developers must be high."
       },
       "internationalisierung": {

@@ -1,0 +1,107 @@
+{
+  "target": "oberursel",
+  "displayName": "Oberursel (Taunus)",
+  "type": "location",
+  "meta": {
+    "title": "Webdesign Oberursel | Next.js Agentur & SEO · Coday",
+    "description": "Ihre Webagentur für Oberursel (Taunus). Moderne B2B-Websites, schnelle Ladezeiten & automatisierte Lead-Generierung für Mittelstand & IT. Festpreis auf Anfrage."
+  },
+  "hero": {
+    "headline": "Webdesign Oberursel: Next.js Performance für B2B, IT & Mittelstand",
+    "subheadline": "Ihre Webagentur für Oberursel (Taunus), Steinbach und Kronberg.",
+    "description": "Als spezialisierte Webagentur für Oberursel entwickeln wir blitzschnelle, sichere und hochkonvertierende Next.js Webanwendungen. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+  },
+  "localDominance": {
+    "title": "Digitale Vorherrschaft für Oberursel & den Taunus",
+    "description": "Oberursel (Taunus) verbindet attraktive Wohnlagen mit florierenden Gewerbegebieten für IT, Hightech-Mittelstand und Dienstleister mit direkter Frankfurt-Anbindung (U3 / S5). Wir bauen digitale Plattformen, die messbar neue Kunden und Fachkräfte anziehen.",
+    "points": [
+      "Fokus auf IT- & High-Tech-Mittelstand: Leistungsstarke Next.js Webauftritte für Softwarehäuser, Systemhäuser und Ingenieurbüros.",
+      "Gewerbegebiet An den Drei Hasen & Zimmersmühlenweg: Gezielte regionale und überregionale B2B-Leadgenerierung.",
+      "Taunus-Infrastruktur (U3 / S5 / A661): Schnelle Vor-Ort-Betreuung und perfekte Vernetzung mit der Frankfurter Metropole.",
+      "Next.js als SEO-Katalysator: 100/100 Google Core Web Vitals für Spitzenrankings bei 'Webdesign Oberursel'.",
+      "DSGVO & Deutsches Edge-Hosting: Absolute Sicherheit ohne anfälligen WordPress-Plugin-Ballast.",
+      "Inhabergeführt & Festpreis: Direkter Kontakt mit Umutcan Emre Tezgel ohne teuren Großagentur-Overhead."
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "Webportale für IT-, SaaS- & Technologieunternehmen in Oberursel",
+      "content": "Moderne Software- und IT-Dienstleister im Gewerbegebiet An den Drei Hasen benötigen performante, zukunftssichere Interfaces mit nahtloser API-Integration."
+    },
+    {
+      "title": "B2B-Leadgenerierung für den Taunus-Mittelstand",
+      "content": "Ingenieurbüros, Bauunternehmen und Kanzleien in Oberursel, Steinbach und Kronberg etablieren durch seriöses Design und schnelle Ladezeiten sofortige Kundenautorität."
+    },
+    {
+      "title": "Local SEO & Hochtaunus Dominanz",
+      "content": "Dominante Sichtbarkeit in den Google-Suchergebnissen für Oberursel, Steinbach, Bad Homburg, Kronberg und Frankfurt-Nord."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wie viel kostet eine neue Website in Oberursel?",
+      "a": "Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance."
+    },
+    {
+      "q": "Wie schnell ist eine neue Website in Oberursel online?",
+      "a": "In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online."
+    },
+    {
+      "q": "Kommen Sie für ein Beratungsgespräch direkt nach Oberursel?",
+      "a": "Ja, sehr gerne. Über die A5 und A661 sind wir von unserem Wetzlarer HQ in unter 30 Minuten direkt bei Ihnen vor Ort im Gewerbegebiet An den Drei Hasen oder am Zimmersmühlenweg."
+    },
+    {
+      "q": "Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?",
+      "a": "Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet."
+    },
+    {
+      "q": "Wer ist unser fester Ansprechpartner?",
+      "a": "Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support."
+    }
+  ],
+  "meta_en": {
+    "title": "Web Design Oberursel | Next.js Agency & SEO · Coday",
+    "description": "Web agency for Oberursel (Taunus). Modern B2B websites, fast load times & automated lead generation for mid-market & IT. Fixed price on request."
+  },
+  "hero_en": {
+    "headline": "Web Design Oberursel: Next.js Performance for B2B, IT & Tech",
+    "subheadline": "Your web agency for Oberursel (Taunus), Steinbach, and Kronberg.",
+    "description": "Custom Next.js web applications for Oberursel. Fixed price upon request."
+  },
+  "localDominance_en": {
+    "title": "Digital Dominance for Oberursel & High Taunus",
+    "description": "Oberursel connects attractive living with thriving IT and industrial commercial parks. We engineer high-converting web applications.",
+    "points": [
+      "IT & Tech Mid-Market Focus: Fast Next.js websites for software vendors and engineering consultancies.",
+      "Commercial Parks: Targeted lead generation for An den Drei Hasen and Zimmersmühlenweg.",
+      "Taunus Infrastructure: Fast on-site service via U3/S5 and A661.",
+      "SEO Leadership: 100/100 Core Web Vitals for top search visibility.",
+      "GDPR Edge Hosting: Maximum security without WordPress vulnerabilities.",
+      "Direct Founder Access: Transparent fixed pricing without agency overhead."
+    ]
+  },
+  "contentSections_en": [
+    {
+      "title": "Web Portals for IT & Technology Firms in Oberursel",
+      "content": "Modern software and IT services require fast, decoupled frontend architectures."
+    },
+    {
+      "title": "B2B Lead Generation for Taunus Mid-Market",
+      "content": "Engineered corporate websites driving measurable inquiries and talent applications."
+    }
+  ],
+  "faq_en": [
+    {
+      "q": "How much does a professional website in Oberursel cost?",
+      "a": "Binding fixed price on request following a free audit. 5-10x more cost-effective than traditional agencies."
+    },
+    {
+      "q": "How long does implementation take?",
+      "a": "Turnkey delivery within 10 to 14 business days."
+    },
+    {
+      "q": "Do you meet on-site in Oberursel?",
+      "a": "Yes, we gladly meet you in Oberursel via the A5/A661 highways."
+    }
+  ]
+}

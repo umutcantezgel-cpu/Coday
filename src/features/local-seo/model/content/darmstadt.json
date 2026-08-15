@@ -1,0 +1,107 @@
+{
+  "target": "darmstadt",
+  "displayName": "Darmstadt",
+  "type": "location",
+  "meta": {
+    "title": "Webdesign Darmstadt | Tech & Next.js Webagentur · Coday",
+    "description": "High-End Webentwicklung & Webdesign in Darmstadt. Ultraschnelle Next.js Architekturen & messbare B2B-Leads für Startups, Tech & Mittelstand. Festpreis auf Anfrage."
+  },
+  "hero": {
+    "headline": "Webdesign Darmstadt: Next.js Architekturen für Tech, Raumfahrt & Wissenschaft",
+    "subheadline": "Ihre High-End Webagentur für Darmstadt, Griesheim, Weiterstadt und Pfungstadt.",
+    "description": "Entwickelt für die Digitalstadt Darmstadt: Blitzschnelle Webapplikationen, modernste Headless CMS Lösungen und kompromisslose technische Exzellenz. Verbindlicher Festpreis auf Anfrage."
+  },
+  "localDominance": {
+    "title": "Digitale Vorherrschaft für die Wissenschaftsstadt Darmstadt & Südhessen",
+    "description": "Darmstadt ist als Digital- und Wissenschaftsstadt ein weltweiter Hotspot für IT-Sicherheit (ATHENE), Raumfahrt (ESA/ESOC, EUMETSAT), Spitzenforschung an der TU Darmstadt und traditionsreiche Chemie/Pharma-Konzerne (Merck). Wir bauen Webplattformen, die technologische Spitzenklasse widerspiegeln.",
+    "points": [
+      "Software & IT-Startups: Skalierbare, hochperformante Next.js Plattformen für TU Darmstadt Spin-offs und Technologie-Scale-ups im TZ Rhein Main.",
+      "Cybersecurity & Raumfahrt: Kompromisslos sichere Architekturen ohne WordPress-Schwachstellen für das ESA- und CRISP-Umfeld.",
+      "Pharma, Chemie & B2B-Mittelstand: Repräsentative Webauftritte für forschungsintensive Unternehmen und Industrie.",
+      "Europaviertel & Weiterstadt: Maximale B2B-Leadgenerierung und modernste Headless CMS Workflows.",
+      "Next.js als SEO-Katalysator: 100/100 Google Core Web Vitals für Spitzenrankings bei 'Webdesign Darmstadt'.",
+      "Inhabergeführt & Festpreis: Direkter Entwickler-Kontakt mit Umutcan Emre Tezgel ohne teuren Großagentur-Overhead."
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "B2B-Webportale für Software & Tech-Startups im TZ Rhein Main",
+      "content": "Next.js 15, TypeScript und modulare API-Integrationen für schnell wachsende Technologieunternehmen in Darmstadt."
+    },
+    {
+      "title": "Sichere Webarchitekturen für Raumfahrt-, Cyber- & Pharma-Cluster",
+      "content": "Höchste Datensicherheit nach ISO 27001 / DSGVO-Standards ohne anfällige PHP-Plugins für anspruchsvolle Darmstädter Branchen."
+    },
+    {
+      "title": "Local SEO & Südhessen Dominanz",
+      "content": "Dominante Platzierungen in den Google-Suchergebnissen für Darmstadt, Griesheim, Weiterstadt, Pfungstadt und Dieburg."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wie viel kostet eine neue Website in Darmstadt?",
+      "a": "Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance."
+    },
+    {
+      "q": "Wie schnell ist eine neue Website in Darmstadt online?",
+      "a": "In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online."
+    },
+    {
+      "q": "Kommen Sie für ein Beratungsgespräch direkt nach Darmstadt?",
+      "a": "Ja, sehr gerne. Über die A5 sind wir von unserem Wetzlarer HQ in unter 45 Minuten direkt bei Ihnen vor Ort im Europaviertel, am TZ Rhein Main oder in Weiterstadt."
+    },
+    {
+      "q": "Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?",
+      "a": "Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet."
+    },
+    {
+      "q": "Wer ist unser fester Ansprechpartner?",
+      "a": "Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support."
+    }
+  ],
+  "meta_en": {
+    "title": "Web Design Darmstadt | Tech & Next.js Agency · Coday",
+    "description": "High-end web development & web design in Darmstadt. Ultra-fast Next.js architectures & measurable B2B leads for startups, tech & mid-market. Fixed price on request."
+  },
+  "hero_en": {
+    "headline": "Web Design Darmstadt: Next.js Architectures for Tech, Space & Science",
+    "subheadline": "Your high-end web agency for Darmstadt, Griesheim, Weiterstadt, and Pfungstadt.",
+    "description": "Engineered for City of Science Darmstadt: Ultra-fast web applications, modern headless CMS, and uncompromising technical excellence. Fixed price on request."
+  },
+  "localDominance_en": {
+    "title": "Digital Dominance for the City of Science Darmstadt & South Hesse",
+    "description": "Darmstadt is a global center for cybersecurity (ATHENE), space operations (ESA/ESOC), university research (TU Darmstadt), and pharma (Merck). We engineer elite web platforms reflecting this excellence.",
+    "points": [
+      "Software & IT Startups: Scalable Next.js systems for TU spin-offs and scale-ups in TZ Rhein Main.",
+      "Cybersecurity & Space: Uncompromising security without WordPress vulnerabilities.",
+      "Pharma, Chemistry & Industry: Prestigious digital presence for research-heavy leaders.",
+      "Europaviertel & Weiterstadt: Maximum B2B lead generation and modern CMS workflows.",
+      "SEO Leadership: 100/100 Core Web Vitals for top search visibility.",
+      "Direct Founder Access: Transparent fixed pricing without agency overhead."
+    ]
+  },
+  "contentSections_en": [
+    {
+      "title": "B2B Web Portals for Software & Tech Startups in TZ Rhein Main",
+      "content": "Next.js 15, TypeScript, and modular API integrations tailored for high-growth tech companies."
+    },
+    {
+      "title": "Secure Web Architectures for Space, Cyber & Pharma Clusters",
+      "content": "GDPR-compliant hosting in German data centers with zero plugin attack vectors."
+    }
+  ],
+  "faq_en": [
+    {
+      "q": "How much does a professional website in Darmstadt cost?",
+      "a": "Binding fixed price on request following a free audit. 5-10x more cost-effective than traditional agencies."
+    },
+    {
+      "q": "How long does implementation take?",
+      "a": "Turnkey delivery within 10 to 14 business days."
+    },
+    {
+      "q": "Do you meet on-site in Darmstadt?",
+      "a": "Yes, we gladly meet you in Darmstadt via the A5 highway."
+    }
+  ]
+}

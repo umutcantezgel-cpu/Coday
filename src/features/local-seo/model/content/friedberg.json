@@ -1,0 +1,107 @@
+{
+  "target": "friedberg",
+  "displayName": "Friedberg (Hessen)",
+  "type": "location",
+  "meta": {
+    "title": "Webdesign Friedberg Hessen | Webagentur & SEO · Coday",
+    "description": "Webdesign & SEO in Friedberg & Bad Nauheim. Next.js Websites mit <0.5s Ladezeit für Praxen, Mittelstand & Hochschulumfeld. Festpreis auf Anfrage."
+  },
+  "hero": {
+    "headline": "Webdesign Friedberg: Next.js Performance für Praxen, Mittelstand & THM-Campus",
+    "subheadline": "Ihre Webagentur für Friedberg (Hessen), Bad Nauheim und den Wetteraukreis.",
+    "description": "Als spezialisierte Webagentur für Friedberg (Hessen) entwickeln wir blitzschnelle, sichere und hochkonvertierende Next.js Webanwendungen. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+  },
+  "localDominance": {
+    "title": "Digitale Vorherrschaft für Friedberg, Bad Nauheim & die Wetterau",
+    "description": "Friedberg (Hessen) verbindet akademische Innovationskraft durch den THM-Campus mit stabiler Verwaltungskraft als Kreisstadt des Wetteraukreises und direkter Nachbarschaft zur weltbekannten Gesundheitsstadt Bad Nauheim. Wir bauen digitale Plattformen, die messbar neue Patienten, Mandanten und B2B-Kunden anziehen.",
+    "points": [
+      "Facharztpraxen & Gesundheitszentren: Barrierefreie Interfaces (BITV 2.0 / WCAG) und geschützte Terminbuchung für Praxen in Friedberg und Bad Nauheim.",
+      "THM-Campus & Technologie-Startups: Skalierbare Headless-Next.js-Plattformen für Software- und Engineering-Unternehmen.",
+      "Kanzleien & Gutachter: Seriöses, minimalistisches Webdesign für anspruchsvolle Klienten in der Kreisstadt.",
+      "Direkte B3- / A5-Schlagader nach Wetzlar und Frankfurt: Perfekte regionale Anbindung in Mittelhessen.",
+      "Next.js als SEO-Katalysator: 100/100 Google Core Web Vitals für Spitzenrankings bei 'Webdesign Friedberg'.",
+      "Inhabergeführt & Festpreis: Direkter Entwickler-Kontakt mit Umutcan Emre Tezgel ohne teuren Großagentur-Overhead."
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "Webportale für Facharztpraxen & Kliniken in Bad Nauheim & Friedberg",
+      "content": "Maximale Barrierefreiheit, subsekundäre Ladezeiten und DSGVO-konforme Patientenportale für das führende Gesundheitszentrum der Wetterau."
+    },
+    {
+      "title": "Tech- & B2B-Plattformen für das THM-Hochschulumfeld",
+      "content": "Moderne Webapplikationen für Spin-offs, Ingenieurdienstleister und den produzierenden Mittelstand."
+    },
+    {
+      "title": "Local SEO & Wetteraukreis Dominanz",
+      "content": "Dominante Platzierungen in den Google-Suchergebnissen für Friedberg, Bad Nauheim, Butzbach, Rosbach und Karben."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wie viel kostet eine neue Website in Friedberg?",
+      "a": "Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance."
+    },
+    {
+      "q": "Wie schnell ist eine neue Website in Friedberg online?",
+      "a": "In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online."
+    },
+    {
+      "q": "Kommen Sie für ein Beratungsgespräch direkt nach Friedberg?",
+      "a": "Ja, sehr gerne. Über die B3 oder A5 sind wir von unserem Wetzlarer HQ in unter 25 Minuten direkt bei Ihnen vor Ort in Friedberg oder Bad Nauheim."
+    },
+    {
+      "q": "Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?",
+      "a": "Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet."
+    },
+    {
+      "q": "Wer ist unser fester Ansprechpartner?",
+      "a": "Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support."
+    }
+  ],
+  "meta_en": {
+    "title": "Web Design Friedberg Hesse | Web Agency & SEO · Coday",
+    "description": "Web design & SEO in Friedberg & Bad Nauheim. Next.js websites with <0.5s load time for clinics, mid-market & THM campus. Fixed price on request."
+  },
+  "hero_en": {
+    "headline": "Web Design Friedberg: Next.js Performance for Clinics, SME & THM Campus",
+    "subheadline": "Your web agency for Friedberg (Hesse), Bad Nauheim, and the Wetterau district.",
+    "description": "Custom Next.js web applications for Friedberg. Fixed price upon request."
+  },
+  "localDominance_en": {
+    "title": "Digital Dominance for Friedberg, Bad Nauheim & Wetterau",
+    "description": "Friedberg links university tech innovation with district governance and Bad Nauheim's premier medical hub. We build fast, high-performance web systems.",
+    "points": [
+      "Medical Practices & Clinics: Accessible, privacy-compliant websites for Friedberg and Bad Nauheim.",
+      "THM Campus & Tech Startups: Scalable Next.js systems for technology and software firms.",
+      "Law & Professional Services: Minimalist, prestigious digital identity commanding client trust.",
+      "Fast B3 / A5 Corridor: Seamless regional connection to Wetzlar and Frankfurt.",
+      "SEO Leadership: 100/100 Core Web Vitals for top search visibility.",
+      "Direct Founder Access: Transparent fixed pricing without agency overhead."
+    ]
+  },
+  "contentSections_en": [
+    {
+      "title": "Web Portals for Medical Practices & Clinics in Bad Nauheim & Friedberg",
+      "content": "Fully accessible (WCAG compliant) digital experiences with fast mobile appointment scheduling."
+    },
+    {
+      "title": "Tech & B2B Web Systems for the THM University Campus",
+      "content": "Cutting-edge web engineering built for high-growth tech innovators and industrial leaders."
+    }
+  ],
+  "faq_en": [
+    {
+      "q": "How much does a professional website in Friedberg cost?",
+      "a": "Binding fixed price on request following a free audit. 5-10x more cost-effective than traditional agencies."
+    },
+    {
+      "q": "How long does implementation take?",
+      "a": "Turnkey delivery within 10 to 14 business days."
+    },
+    {
+      "q": "Do you meet on-site in Friedberg?",
+      "a": "Yes, we gladly meet you in Friedberg or Bad Nauheim via the B3/A5 highways."
+    }
+  ]
+}

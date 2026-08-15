@@ -1,0 +1,107 @@
+{
+  "target": "main-kinzig-kreis",
+  "displayName": "Main-Kinzig-Kreis",
+  "type": "region",
+  "meta": {
+    "title": "Webdesign Main-Kinzig-Kreis | B2B Webagentur MKK · Coday",
+    "description": "Webentwicklung & SEO für den Main-Kinzig-Kreis. Next.js Websites für Industrie & Mittelstand in Hanau, Maintal & Gelnhausen. Festpreise auf Anfrage."
+  },
+  "hero": {
+    "headline": "Webdesign Main-Kinzig-Kreis: Next.js Performance für Industrie, Chemie & Mittelstand",
+    "subheadline": "Ihre B2B High-End Webagentur für Hanau, Maintal, Gelnhausen, Bruchköbel und den gesamten MKK.",
+    "description": "Maßgeschneiderte Webentwicklung, subsekundäre Ladezeiten unter 500ms und automatisierte B2B-Leads für Unternehmen im Main-Kinzig-Kreis. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+  },
+  "localDominance": {
+    "title": "Digitale Vorherrschaft für den Main-Kinzig-Kreis (MKK)",
+    "description": "Der Main-Kinzig-Kreis vereint globale Materialtechnik- und Chemiekonzerne in Hanau (Heraeus, Umicore, Evonik) mit traditionsreicher Feinmechanik und Verwaltung in Gelnhausen, Maschinenbau in Maintal sowie starkem Gewerbe und Logistik in Langenselbold, Bruchköbel und Schlüchtern. Wir bauen digitale Plattformen, die Industrie und Mittelstand messbare Wettbewerbsvorteile verschaffen.",
+    "points": [
+      "Materialtechnik & Chemie: Sichere, hochgradig skalierbare Plattformen für Hanau und Maintal.",
+      "Feinwerktechnik & Präzisionsbau: Produktkataloge und B2B-Lead-Funnels für Gelnhausen und Biebergemünd.",
+      "Handwerk & Logistik: Conversion-starke Websites mit 60-Sekunden-Express-Recruiting für Langenselbold und Bruchköbel.",
+      "45 Min Direkt vor Ort: Schnelle Erreichbarkeit über A45 und A66.",
+      "Next.js als SEO-Katalysator: 100/100 Google Core Web Vitals für Spitzenrankings im gesamten MKK.",
+      "Inhabergeführt & Festpreis: Direkter Entwickler-Kontakt mit Umutcan Emre Tezgel ohne teuren Großagentur-Overhead."
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "Materialtechnik- & Industrie-Websites für Hanau & Maintal",
+      "content": "Enterprise-Architekturen, subsekundäre Ladezeiten und DSGVO-Konformität für globale und regionale Marktführer."
+    },
+    {
+      "title": "B2B- & Präzisionsbau-Plattformen für Gelnhausen & Bruchköbel",
+      "content": "Maximale Performance, intuitive Filterfunktionen und automatisierte B2B-Kundenanfragen."
+    },
+    {
+      "title": "Local SEO Dominanz im Main-Kinzig-Kreis",
+      "content": "Spitzenrankings in Hanau, Maintal, Gelnhausen, Bruchköbel, Langenselbold, Schlüchtern und allen 13 Kommunen."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wie viel kostet eine neue Website im Main-Kinzig-Kreis?",
+      "a": "Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance."
+    },
+    {
+      "q": "Wie schnell ist eine neue Website im Main-Kinzig-Kreis online?",
+      "a": "In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online."
+    },
+    {
+      "q": "Kommen Sie für ein Beratungsgespräch direkt zu uns in den Betrieb?",
+      "a": "Ja, selbstverständlich. Über die A45 oder A66 sind wir von unserem Wetzlarer HQ in rund 45 Minuten direkt bei Ihnen vor Ort in Hanau, Maintal, Gelnhausen oder Langenselbold."
+    },
+    {
+      "q": "Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?",
+      "a": "Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet."
+    },
+    {
+      "q": "Wer ist unser fester Ansprechpartner?",
+      "a": "Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support."
+    }
+  ],
+  "meta_en": {
+    "title": "Web Design Main-Kinzig District | B2B Agency MKK · Coday",
+    "description": "Web development & SEO for the Main-Kinzig district. Next.js websites for industry & SME in Hanau, Maintal & Gelnhausen. Fixed prices on request."
+  },
+  "hero_en": {
+    "headline": "Web Design Main-Kinzig District: Next.js Performance for Industry & SME",
+    "subheadline": "Your B2B high-end web agency for Hanau, Maintal, Gelnhausen, and the entire MKK region.",
+    "description": "Custom Next.js web applications for the Main-Kinzig district. Fixed price upon request."
+  },
+  "localDominance_en": {
+    "title": "Digital Dominance for the Main-Kinzig District (MKK)",
+    "description": "The Main-Kinzig district connects material tech and chemical giants in Hanau with precision engineering in Gelnhausen and logistics along the A66. We build fast, high-performance web systems.",
+    "points": [
+      "Materials & Chemical Portals: High-security systems for Hanau and Maintal.",
+      "Precision Engineering & SME: Product showcases and lead generation for Gelnhausen.",
+      "Crafts & Logistics: Fast websites with 60-second recruiting funnels in Langenselbold & Bruchköbel.",
+      "45 Minutes On-Site: Direct access via A45 and A66.",
+      "SEO Leadership: 100/100 Core Web Vitals for top search visibility.",
+      "Direct Founder Access: Transparent fixed pricing without agency overhead."
+    ]
+  },
+  "contentSections_en": [
+    {
+      "title": "Industrial & Material Tech Platforms in Hanau & Maintal",
+      "content": "Enterprise-grade performance and uncompromising data security for global leaders."
+    },
+    {
+      "title": "B2B & Engineering Experiences in Gelnhausen & Bruchköbel",
+      "content": "Sub-500ms load times and seamless lead capture."
+    }
+  ],
+  "faq_en": [
+    {
+      "q": "How much does a professional website in the Main-Kinzig district cost?",
+      "a": "Binding fixed price on request following a free audit. 5-10x more cost-effective than traditional agencies."
+    },
+    {
+      "q": "How long does implementation take?",
+      "a": "Turnkey delivery within 10 to 14 business days."
+    },
+    {
+      "q": "Do you meet on-site in the MKK region?",
+      "a": "Yes, via the A45/A66 we can be on-site across the district in around 45 minutes."
+    }
+  ]
+}

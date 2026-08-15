@@ -2,29 +2,32 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { ORG_ID, BASE_URL } from '@/lib/schema';
+import { BASE_URL, getOrganizationSchema } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
-import BlurText from '@/shared/ui/BlurText';
-import { FadeInUp } from '@/shared/ui/MotionWrappers';
-import { ScrollReveal } from '@/shared/ui/animations/ScrollReveal';
-import CountUp from '@/shared/ui/CountUp';
-import { TestimonialCard } from '@/shared/ui/TestimonialCard';
-import Timeline from '@/shared/ui/Timeline';
+import { TrustBar } from '@/shared/ui/TrustBar';
 import {
-  MapPin,
-  CheckCircle,
   ArrowRight,
   Lightning,
-  Target,
-  Star,
-  ChartBar,
-  Code,
-  DeviceMobile,
-  Buildings,
   ShieldCheck,
+  Code,
+  Buildings,
+  Users,
+  Check,
+  Sparkle,
+  LockKey,
+  CheckCircle,
   Wrench,
   Stethoscope,
+  ChartBar,
+  Star,
+  MapPin,
+  DeviceMobile,
+  Target,
+  FileCode,
+  Globe,
+  CaretRight,
+  Eye,
 } from '@phosphor-icons/react/dist/ssr';
 
 export const dynamic = 'force-static';
@@ -37,350 +40,21 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Design Agency Wetzlar | Next.js Websites & SEO – Coday',
+      title: 'Web Design Agency Wetzlar | High-End Websites & SEO · Coday',
       description:
-        'Your local web design agency in Wetzlar. Bespoke Next.js web development, 100/100 PageSpeed & qualified customer leads for mid-market businesses.',
+        'Your local web agency in Wetzlar. Next.js 15, <0.5s load time & measurable B2B leads for mid-market, optics & craft enterprises. Fixed price on request.',
       path: '/en/webdesign-agentur-wetzlar',
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'Webdesign Agentur Wetzlar | Next.js Websites & SEO – Coday',
+    title: 'Webdesign Agentur Wetzlar | High-End Websites & SEO · Coday',
     description:
-      'Ihre lokale Webdesign Agentur in Wetzlar. Maßgeschneiderte Next.js Webentwicklung, 100/100 PageSpeed & planbare Kundenanfragen für den Mittelstand.',
+      'Ihre lokale Webagentur in Wetzlar. Next.js 15, <0.5s Ladezeit & messbare B2B-Leads für Mittelstand, Optik & Handwerk. Verbindlicher Festpreis auf Anfrage.',
     path: '/de/webdesign-agentur-wetzlar',
     type: 'money',
   });
 }
-
-const content = {
-  de: {
-    hero: {
-      title: 'Ihre',
-      titleHighlight: 'Webdesign Agentur',
-      titleSuffix: 'in Wetzlar',
-      description:
-        'Wir entwickeln professionelle Websites für Wetzlarer Unternehmen. Von der historischen Altstadt bis zum Gewerbepark Spilburg: Ultraschnell, verkaufsstark und mit maximaler lokaler SEO-Sichtbarkeit an der Lahn. Maßgeschneiderte Festpreise auf Anfrage.',
-      cta: 'Projekt anfragen',
-      badge: '100% Regional an der Lahn',
-    },
-    stats: {
-      items: [
-        { value: 100, label: 'Prozent', desc: 'Regionaler Ansprechpartner in Wetzlar' },
-        { value: 0.3, label: 'Sekunden', desc: 'Durchschnittliche Ladezeit (Next.js)' },
-        { value: 3, label: 'Wochen', desc: 'Von Projektstart bis zum Live-Gang' },
-        { value: 0, label: 'Euro', desc: 'Versteckte Kosten dank Festpreis' },
-      ],
-    },
-    philosophy: {
-      badge: 'Der Coday Unterschied',
-      title: 'Warum Wetzlarer Unternehmen uns vertrauen',
-      text1:
-        'Viele Agenturen verkaufen Ihnen teure, langsame WordPress-Vorlagen. Wir programmieren Ihre Website als Solo-Agentur von Grund auf neu mit modernster Headless-Technologie (Next.js & React).',
-      text2:
-        'Das bedeutet für Sie: Ihre Website lädt blitzschnell, wird von Google geliebt und hängt die lokale Konkurrenz im Lahn-Dill-Kreis spielend ab — zu einem Bruchteil der Kosten traditioneller Agenturen.',
-      bullet1: 'Keine anonymen Offshore-Teams',
-      bullet2: 'Direkter Entwickler-Kontakt in Wetzlar',
-      bullet3: 'Voller Besitz Ihres eigenen Quellcodes',
-    },
-    services: {
-      title: 'Digitale Exzellenz für Wetzlar',
-      items: [
-        {
-          title: 'Premium Webdesign',
-          desc: 'Individuelle, konversionsstarke Designs, die Ihre Wetzlarer Zielgruppe sofort überzeugen.',
-          icon: <DeviceMobile className="w-6 h-6 text-primary-500" />,
-        },
-        {
-          title: 'Custom Webentwicklung',
-          desc: 'Blitzschnelle Next.js Architekturen statt langsamer WordPress-Baukästen. Für maximale Performance.',
-          icon: <Code className="w-6 h-6 text-primary-500" />,
-        },
-        {
-          title: 'Local SEO Wetzlar',
-          desc: 'Wir bringen Sie in der Google-Suche vor Ort auf Platz 1. Egal ob Optiker, Arzt oder Handwerker.',
-          icon: <Target className="w-6 h-6 text-primary-500" />,
-        },
-        {
-          title: 'Conversion Optimierung',
-          desc: 'Wir machen aus Website-Besuchern echte Kundenanfragen für Ihr Unternehmen an der Lahn.',
-          icon: <ChartBar className="w-6 h-6 text-primary-500" />,
-        },
-      ],
-    },
-    socialProof: {
-      title: 'Erfolgreiche Partner aus der Region',
-      description:
-        'Diese Wetzlarer Unternehmen haben sich bereits für Coday entschieden und dominieren ihre lokale Nische.',
-      testimonials: [
-        {
-          quote:
-            'Der Relaunch unserer Website war ein voller Erfolg. Die Zusammenarbeit war unkompliziert, extrem schnell und das Ergebnis hat unsere Erwartungen übertroffen. Coday ist ein absoluter Glücksfall für Wetzlar.',
-          authorName: 'Philipp W.',
-          authorCompany: 'Batherm Sanitär & Heizung',
-        },
-        {
-          quote:
-            'Endlich eine Agentur, die verstanden hat, worauf es ankommt. Wir haben jetzt nicht nur eine top moderne Website, sondern werden bei Google in Wetzlar deutlich besser gefunden.',
-          authorName: 'Geschäftsführung',
-          authorCompany: 'MS Schlüsseldienst Wetzlar',
-        },
-        {
-          quote:
-            'Die neue Website für unsere Ratsstuben sieht grandios aus. Die Gäste loben das Design und die Reservierungen über die Seite sind spürbar gestiegen.',
-          authorName: 'Inhaber',
-          authorCompany: 'Lindener Ratsstuben',
-        },
-      ],
-    },
-    comparison: {
-      title: 'Die richtige Wahl für Ihr Unternehmen',
-      standard: 'Klassische Agenturen',
-      coday: 'Coday Wetzlar',
-      points: [
-        { text: 'Persönlicher Ansprechpartner', standard: false, coday: true },
-        { text: 'Maßgeschneiderter Quellcode', standard: false, coday: true },
-        { text: 'Transparente Festpreise auf Anfrage', standard: false, coday: true },
-        { text: '5-10x kosteneffizienter ohne Overhead', standard: false, coday: true },
-        { text: 'Fokus auf Wetzlar & Lahn-Dill', standard: false, coday: true },
-      ],
-    },
-    process: {
-      title: 'Ihr Weg zur neuen Website',
-      items: [
-        {
-          week: 'Woche 1',
-          title: 'Kickoff & Strategie',
-          description:
-            'Wir analysieren Ihre Ziele, Zielgruppe und lokale Wetzlarer Konkurrenz. Auf Wunsch treffen wir uns direkt bei Ihnen vor Ort.',
-        },
-        {
-          week: 'Woche 2',
-          title: 'Design & UX',
-          description:
-            'Wir entwerfen ein individuelles Premium-Design, das exakt zu Ihrer Marke passt und Vertrauen ausstrahlt.',
-        },
-        {
-          week: 'Woche 3',
-          title: 'Entwicklung & SEO',
-          description:
-            'Programmierung in Next.js, Einbau der Inhalte und tiefgreifende On-Page Local SEO Optimierung.',
-        },
-        {
-          week: 'Woche 4',
-          title: 'Launch & Support',
-          description:
-            'Ihre neue Website geht live. Sie erhalten 30 Tage kostenlosen Support und volle Code-Ownership.',
-        },
-      ],
-    },
-    faq: {
-      title: 'Häufige Fragen zu Webdesign in Wetzlar',
-      items: [
-        {
-          q: 'Was kostet eine professionelle Website in Wetzlar?',
-          a: 'Wir kalkulieren jedes Projekt individuell und transparent auf Anfrage. Nach einer kostenlosen Bedarfsanalyse erhalten Sie ein verbindliches Festpreisangebot — in der Regel 5 bis 10 Mal günstiger als bei klassischen Werbeagenturen bei nachweislich überlegener 100/100 Qualität.',
-        },
-        {
-          q: 'Wie lange dauert die Erstellung einer Website?',
-          a: 'Eine professionelle Website ist in der Regel innerhalb von drei Wochen fertig und online. Bei umfangreicheren Projekten mit vielen Unterseiten planen wir vier bis sechs Wochen ein.',
-        },
-        {
-          q: 'Bieten Sie auch Website Relaunch an?',
-          a: 'Ja, der Website Relaunch ist einer unserer häufigsten Aufträge. Wir übernehmen Ihre bestehende Website, migrieren alle Inhalte und entwickeln eine moderne, schnelle Lösung mit deutlich besserer Sichtbarkeit in Wetzlar und Umgebung.',
-        },
-        {
-          q: 'Arbeiten Sie nur für Kunden direkt in Wetzlar?',
-          a: 'Unser Fokus liegt stark auf Wetzlar, Gießen, Herborn und dem Lahn-Dill-Kreis (inklusive Gewerbegebieten wie der Spilburg oder dem Hörnsheimer Eck). Wir betreuen jedoch auch Kunden in ganz Deutschland.',
-        },
-        {
-          q: 'Warum keine WordPress Website?',
-          a: 'WordPress Websites sind oft langsam, sicherheitsanfällig und benötigen ständige Plugin Updates. Wir entwickeln individuelle Websites mit Next.js, die deutlich schneller laden und von Google extrem positiv bewertet werden.',
-        },
-        {
-          q: 'Gehört mir der Code meiner Website?',
-          a: 'Ja, zu 100 Prozent. Der gesamte Quellcode gehört Ihnen. Kein Vendor Lock-In, keine Abhängigkeit von Baukästen. Sie können Ihre Website jederzeit umziehen.',
-        },
-        {
-          q: 'Wie verbessern Sie die lokale Google Sichtbarkeit in Wetzlar?',
-          a: 'Wir nutzen zielgerichtetes Local SEO. Dazu gehören perfekte Ladezeiten, Wetzlar-spezifische strukturierte Daten (LocalBusiness Schema), lokale Keyword-Strategien und eine optimierte Seitenstruktur.',
-        },
-        {
-          q: 'Bieten Sie auch Betreuung nach dem Launch?',
-          a: 'Ja, nach dem Launch erhalten Sie 30 Tage kostenlosen Support. Danach bieten wir optionale Wartungspakete an, die technische Updates, Inhaltspflege und Performance Monitoring umfassen.',
-        },
-      ],
-    },
-    cta: {
-      title: 'Bereit für den digitalen Vorsprung in Wetzlar?',
-      description: 'Buchen Sie ein kostenloses Erstgespräch direkt vor Ort oder per Videocall.',
-      button: 'Beratungstermin sichern',
-    },
-  },
-  en: {
-    hero: {
-      title: 'Your',
-      titleHighlight: 'Web Design Agency',
-      titleSuffix: 'in Wetzlar',
-      description:
-        'We build professional websites for businesses in Wetzlar. From the historic Old Town to the Spilburg commercial park: Fast, high-converting, and perfectly optimized for local SEO along the Lahn. Fixed prices from 2,000 Euros.',
-      cta: 'Start Project',
-      badge: '100% Regional on the Lahn',
-    },
-    stats: {
-      items: [
-        { value: 100, label: 'Percent', desc: 'Regional partner in Wetzlar' },
-        { value: 0.5, label: 'Seconds', desc: 'Average load time (Next.js)' },
-        { value: 3, label: 'Weeks', desc: 'From kickoff to launch' },
-        { value: 0, label: 'Euros', desc: 'Hidden costs thanks to fixed pricing' },
-      ],
-    },
-    philosophy: {
-      badge: 'The Coday Difference',
-      title: 'Why Wetzlar businesses trust us',
-      text1:
-        'Many agencies sell you expensive, slow WordPress templates. We code your website from scratch using cutting-edge headless technology (Next.js & React).',
-      text2:
-        'This means for you: Your website loads incredibly fast, is loved by Google, and easily outperforms local competitors in the Lahn-Dill district.',
-      bullet1: 'No anonymous offshore teams',
-      bullet2: 'Direct developer contact in Wetzlar',
-      bullet3: 'Full ownership of your source code',
-    },
-    services: {
-      title: 'Digital Excellence for Wetzlar',
-      items: [
-        {
-          title: 'Premium Web Design',
-          desc: 'Custom, high-conversion designs that instantly convince your local target audience.',
-          icon: <DeviceMobile className="w-6 h-6 text-primary-500" />,
-        },
-        {
-          title: 'Custom Web Development',
-          desc: 'Lightning-fast Next.js architectures instead of slow WordPress builders. For maximum performance.',
-          icon: <Code className="w-6 h-6 text-primary-500" />,
-        },
-        {
-          title: 'Local SEO Wetzlar',
-          desc: 'We get you to the number 1 spot in local Google searches. Whether optician, doctor, or tradesman.',
-          icon: <Target className="w-6 h-6 text-primary-500" />,
-        },
-        {
-          title: 'Conversion Optimization',
-          desc: 'We turn website visitors into real customer inquiries for your business on the Lahn.',
-          icon: <ChartBar className="w-6 h-6 text-primary-500" />,
-        },
-      ],
-    },
-    socialProof: {
-      title: 'Successful Local Partners',
-      description:
-        'These Wetzlar companies have already chosen Coday and dominate their local niche.',
-      testimonials: [
-        {
-          quote:
-            'The relaunch of our website was a complete success. The collaboration was straightforward, extremely fast, and the result exceeded our expectations.',
-          authorName: 'Philipp W.',
-          authorCompany: 'Batherm Sanitär & Heizung',
-        },
-        {
-          quote:
-            'Finally an agency that understands what matters. We now not only have a top modern website, but are found much better on Google in Wetzlar.',
-          authorName: 'Management',
-          authorCompany: 'MS Schlüsseldienst Wetzlar',
-        },
-        {
-          quote:
-            'The new website for our restaurant looks gorgeous. Guests praise the design and reservations via the site have noticeably increased.',
-          authorName: 'Owner',
-          authorCompany: 'Lindener Ratsstuben',
-        },
-      ],
-    },
-    comparison: {
-      title: 'The Right Choice for Your Business',
-      standard: 'Standard Agencies',
-      coday: 'Coday Wetzlar',
-      points: [
-        { text: 'Personal Point of Contact', standard: false, coday: true },
-        { text: 'Custom Source Code', standard: false, coday: true },
-        { text: 'Transparent Fixed Prices', standard: false, coday: true },
-        { text: 'Fast Implementation (< 4 weeks)', standard: false, coday: true },
-        { text: 'Focus on Wetzlar & Lahn-Dill', standard: false, coday: true },
-      ],
-    },
-    process: {
-      title: 'Your Path to a New Website',
-      items: [
-        {
-          week: 'Week 1',
-          title: 'Kickoff & Strategy',
-          description:
-            'We analyze your goals, target audience, and local Wetzlar competition. We can meet directly at your location if desired.',
-        },
-        {
-          week: 'Week 2',
-          title: 'Design & UX',
-          description:
-            'We design a custom premium layout that perfectly matches your brand and radiates trust.',
-        },
-        {
-          week: 'Week 3',
-          title: 'Development & SEO',
-          description:
-            'Programming in Next.js, content integration, and deep on-page Local SEO optimization.',
-        },
-        {
-          week: 'Week 4',
-          title: 'Launch & Support',
-          description:
-            'Your new website goes live. You receive 30 days of free support and full code ownership.',
-        },
-      ],
-    },
-    faq: {
-      title: 'Frequently Asked Questions About Web Design in Wetzlar',
-      items: [
-        {
-          q: 'How much does a professional website in Wetzlar cost?',
-          a: 'Our web design packages start from 2,000 Euros at a fixed price. The price includes design, development, basic SEO optimization, and content management system setup. No hidden costs.',
-        },
-        {
-          q: 'How long does it take to build a website?',
-          a: 'A professional website is typically ready and online within three weeks. For larger projects with many pages, we plan four to six weeks.',
-        },
-        {
-          q: 'Do you offer website relaunches?',
-          a: 'Yes, website relaunch is one of our most frequent projects. We take over your existing website, migrate all content, and develop a modern, fast solution with significantly better visibility in Wetzlar and the surrounding area.',
-        },
-        {
-          q: 'Do you only work with clients directly in Wetzlar?',
-          a: 'Our focus is heavily on Wetzlar, Giessen, Herborn, and the Lahn-Dill district (including commercial areas like Spilburg). However, we also serve clients across Germany.',
-        },
-        {
-          q: 'Why not a WordPress website?',
-          a: 'WordPress websites are often slow, vulnerable, and require constant plugin updates. We build custom websites with Next.js that load much faster and are extremely favored by Google.',
-        },
-        {
-          q: 'Do I own the code of my website?',
-          a: 'Yes, 100 percent. The entire source code belongs to you. No vendor lock-in, no dependency on website builders. You can move your website at any time.',
-        },
-        {
-          q: 'How do you improve my local Google visibility in Wetzlar?',
-          a: 'We use targeted Local SEO. This includes perfect loading times, Wetzlar-specific structured data (LocalBusiness Schema), local keyword strategies, and an optimized page structure.',
-        },
-        {
-          q: 'Do you offer support after launch?',
-          a: 'Yes, after launch you receive 30 days of free support. After that, we offer optional maintenance packages that include technical updates, content management, and performance monitoring.',
-        },
-      ],
-    },
-    cta: {
-      title: 'Ready for the digital edge in Wetzlar?',
-      description: 'Book a free initial consultation directly on site or via video call.',
-      button: 'Secure Consultation',
-    },
-  },
-};
 
 export default async function WebdesignWetzlarPage({
   params,
@@ -389,689 +63,653 @@ export default async function WebdesignWetzlarPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t = locale === 'en' ? content.en : content.de;
+  const _locale = locale || 'de';
 
-  const localBusinessJsonLd = {
+  const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    '@id': `${BASE_URL}/${locale}/webdesign-agentur-wetzlar#localbusiness`,
-    name: 'Coday – High-End Webdesign & Webentwicklung Wetzlar (HQ)',
-    url: `${BASE_URL}/${locale}/webdesign-agentur-wetzlar`,
-    logo: `${BASE_URL}/icon.png`,
-    image: `${BASE_URL}/images/og-image.jpg`,
-    description: t.hero.description,
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Headquarter Wetzlar / Spilburg',
-      addressLocality: 'Wetzlar',
-      postalCode: '35578',
-      addressRegion: 'Hessen',
-      addressCountry: 'DE',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: '50.5670',
-      longitude: '8.5049',
-    },
-    areaServed: [
-      { '@type': 'City', name: 'Wetzlar' },
-      { '@type': 'City', name: 'Gießen' },
-      { '@type': 'City', name: 'Marburg' },
-      { '@type': 'City', name: 'Herborn' },
-      { '@type': 'City', name: 'Limburg an der Lahn' },
-      { '@type': 'City', name: 'Friedberg (Hessen)' },
-      { '@type': 'City', name: 'Frankfurt am Main' },
-      { '@type': 'City', name: 'Wiesbaden' },
-      { '@type': 'City', name: 'Darmstadt' },
-      { '@type': 'City', name: 'Kassel' },
-      { '@type': 'City', name: 'Offenbach am Main' },
-      { '@type': 'City', name: 'Hanau' },
-      { '@type': 'City', name: 'Fulda' },
-      { '@type': 'AdministrativeArea', name: 'Lahn-Dill-Kreis' },
-      { '@type': 'AdministrativeArea', name: 'Landkreis Gießen' },
-      { '@type': 'AdministrativeArea', name: 'Wetteraukreis' },
-      { '@type': 'AdministrativeArea', name: 'Main-Kinzig-Kreis' },
-      { '@type': 'AdministrativeArea', name: 'Mittelhessen' },
-      { '@type': 'AdministrativeArea', name: 'Hessen' },
-    ],
-    priceRange: '€€€€',
-    telephone: '+49 6441 000000',
-    email: 'kontakt@codayweb.de',
-  };
-
-  const serviceJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'ProfessionalService',
-    '@id': `${BASE_URL}/${locale}/webdesign-agentur-wetzlar#service`,
-    name: 'High-End Webdesign & Next.js Webentwicklung Hessen (HQ Wetzlar)',
-    provider: {
-      '@id': `${BASE_URL}/${locale}/webdesign-agentur-wetzlar#localbusiness`,
-    },
-    serviceType: [
-      'Next.js B2B Webentwicklung',
-      'Optik & Feinmechanik Webportale',
-      'Industrie & Maschinenbau Websites',
-      'Kanzleien & Notariate Webdesign',
-      'Core Web Vitals & Headless CMS Architektur',
-    ],
-    hasOfferCatalog: {
-      '@type': 'OfferCatalog',
-      name: 'Entwicklungsleistungen Coday Wetzlar & Hessen Hub',
-      itemListElement: [
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'Next.js High-End Webdesign',
-            description:
-              'Individuelle, statisch vorkompilierte B2B-Websites mit 100/100 Core Web Vitals.',
-          },
+    '@graph': [
+      getOrganizationSchema(_locale),
+      {
+        '@type': 'LocalBusiness',
+        '@id': `${BASE_URL}/${_locale}/webdesign-agentur-wetzlar#localbusiness`,
+        name: 'Coday – Webdesign Agentur Wetzlar (HQ)',
+        url: `${BASE_URL}/${_locale}/webdesign-agentur-wetzlar`,
+        logo: `${BASE_URL}/icon.png`,
+        image: `${BASE_URL}/images/og-image.jpg`,
+        telephone: '+49 6441 000000',
+        email: 'kontakt@codayweb.de',
+        priceRange: '€€€',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'Lessingstraße 4',
+          addressLocality: 'Wetzlar',
+          postalCode: '35578',
+          addressRegion: 'Hessen',
+          addressCountry: 'DE',
         },
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'Local SEO & Geo-Targeting Hessen',
-            description:
-              'Strukturierte Dominanz in Wetzlar, Mittelhessen, Frankfurt Rhein-Main und ganz Hessen.',
-          },
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: 50.5558,
+          longitude: 8.5076,
         },
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'Headless CMS Integration',
-            description:
-              'Intuitive Inhaltsverwaltung mit Sanity CMS ohne Sicherheits- oder Layoutrisiken.',
-          },
-        },
-      ],
-    },
-  };
-
-  const faqJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: t.faq.items.map((item) => ({
-      '@type': 'Question',
-      name: item.q,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.a,
+        areaServed: [
+          { '@type': 'City', name: 'Wetzlar' },
+          { '@type': 'AdministrativeArea', name: 'Lahn-Dill-Kreis' },
+          { '@type': 'AdministrativeArea', name: 'Mittelhessen' },
+        ],
       },
-    })),
+      {
+        '@type': 'ProfessionalService',
+        '@id': `${BASE_URL}/${_locale}/webdesign-agentur-wetzlar#service`,
+        name: 'High-End Webdesign & Next.js Webentwicklung Wetzlar',
+        provider: {
+          '@id': `${BASE_URL}/#organization`,
+        },
+        serviceType: [
+          'Next.js 15 Webentwicklung',
+          'Optik & Medizintechnik B2B Portale',
+          'Handwerker Webdesign Wetzlar',
+          'Lokales Silo-SEO Lahn-Dill',
+          'Sanity Headless CMS',
+        ],
+        hasOfferCatalog: {
+          '@type': 'OfferCatalog',
+          name: 'Web-Lösungen für Wetzlar & Lahn-Dill',
+          itemListElement: [
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'High-Performance Next.js Webentwicklung',
+                description:
+                  'Serverlose Webanwendungen mit statischer Vorabgenerierung, Ladezeiten unter 500ms und 100/100 Core Web Vitals.',
+              },
+            },
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'B2B Lead-Generierung & Local SEO',
+                description:
+                  'Konversionsstarke Webdesigns und automatisierte Mitarbeitergewinnung für den Wetzlarer Mittelstand.',
+              },
+            },
+          ],
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: `${BASE_URL}/${_locale}`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Standorte',
+            item: `${BASE_URL}/${_locale}/standorte/hessen`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: 'Wetzlar',
+            item: `${BASE_URL}/${_locale}/webdesign-agentur-wetzlar`,
+          },
+        ],
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'Wie viel kostet eine professionelle Website in Wetzlar?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-gestützten Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer technischer Performance.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Wie lange dauert die Umsetzung?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'In der Regel 10 bis 14 Werktage bis zum schlüsselfertigen Go-Live Ihrer neuen Website.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Können wir uns persönlich in Wetzlar treffen?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Ja, sehr gerne. Unser Agentur-HQ befindet sich direkt in Wetzlar. Wir kommen für ein persönliches Beratungsgespräch direkt zu Ihnen in den Betrieb.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Bieten Sie eine Zufriedenheits- und Performance-Garantie?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Ja, vertraglich garantierte Lighthouse-Scores von über 90 Punkten und perfekte Google Core Web Vitals.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Wer betreut die Website nach dem Launch?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Inhaber Umutcan Emre Tezgel persönlich mit garantiertem 24h-Support.',
+            },
+          },
+        ],
+      },
+    ],
   };
 
   return (
-    <div className="flex-1 w-full flex flex-col bg-surface-light">
+    <div className="bg-[#fafafa] text-slate-900 min-h-screen selection:bg-amber-500/20 selection:text-amber-900">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify([localBusinessJsonLd, serviceJsonLd, faqJsonLd]),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-24 md:pt-48 md:pb-32 px-4 overflow-hidden bg-black text-white">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(59,130,246,0.15),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(59,130,246,0.1),transparent_50%)]" />
+      {/* 1. HERO SECTION */}
+      <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28 bg-[#fafafa]">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-100/40 via-white/80 to-transparent pointer-events-none" />
+        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-amber-400/10 blur-[140px] rounded-full pointer-events-none" />
 
-        <div className="max-w-6xl mx-auto relative z-10 text-center">
-          <FadeInUp>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-sm">
-              <MapPin className="w-4 h-4 text-primary-500" />
-              <span className="text-sm font-medium tracking-wide text-gray-300">
-                {t.hero.badge}
-              </span>
-            </div>
-          </FadeInUp>
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-50 text-amber-800 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-8 shadow-sm">
+            <Sparkle className="w-4 h-4 text-amber-600" />
+            AGENTUR-HQ WETZLAR · HIGH-END WEBENTWICKLUNG
+          </div>
 
-          <h1 className="sr-only">
-            {t.hero.title} {t.hero.titleHighlight} {t.hero.titleSuffix}
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 mb-8 leading-[1.1]">
+            Webdesign & Next.js Entwicklung in{' '}
+            <span className="bg-gradient-to-r from-amber-600 via-amber-700 to-teal-700 bg-clip-text text-transparent">
+              Wetzlar & Lahn-Dill
+            </span>
           </h1>
-          <div
-            aria-hidden="true"
-            className="text-5xl md:text-7xl lg:text-8xl font-display font-black tracking-tight mb-8 leading-[1.1]"
-          >
-            <BlurText text={t.hero.title} delay={0} animateBy="words" className="inline-block" />{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-600">
-              <BlurText
-                text={t.hero.titleHighlight}
-                delay={200}
-                animateBy="words"
-                className="inline-block"
-              />
-            </span>{' '}
-            <br className="hidden md:block" />
-            <BlurText
-              text={t.hero.titleSuffix}
-              delay={400}
-              animateBy="words"
-              className="inline-block text-gray-400"
-            />
-          </div>
 
-          <FadeInUp delay={0.6}>
-            <p className="text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
-              {t.hero.description}
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/booking">
-                <Button
-                  variant="primary"
-                  size="lg"
-                  className="w-full sm:w-auto text-lg h-14 px-8 shadow-[0_0_40px_rgba(59,130,246,0.3)]"
-                >
-                  {t.hero.cta}
-                </Button>
-              </Link>
-              <Link href="/contact">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="w-full sm:w-auto text-lg h-14 px-8 border-white/20 text-white hover:bg-white/10"
-                >
-                  Kontakt aufnehmen
-                </Button>
-              </Link>
-            </div>
-          </FadeInUp>
-        </div>
-      </section>
+          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-10">
+            High-End Webentwicklung, blitzschnelle Ladezeiten unter 500ms und automatisierte
+            Lead-Generierung für den Wetzlarer Mittelstand, Optikunternehmen und Handwerksbetriebe.
+            Verbindlicher Festpreis nach kostenloser Bedarfsanalyse.
+          </p>
 
-      {/* Stats Bar */}
-      <section className="relative z-20 -mt-12 px-4">
-        <div className="max-w-6xl mx-auto">
-          <FadeInUp
-            delay={0.8}
-            className="bg-white/90 backdrop-blur-xl rounded-3xl p-8 shadow-2xl shadow-black/5 border border-gray-100"
-          >
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-gray-100">
-              {t.stats.items.map((stat, i) => (
-                <div key={i} className="px-4 text-center">
-                  <div className="font-display text-4xl lg:text-5xl font-bold text-secondary-900 mb-2">
-                    <CountUp from={0} to={stat.value} duration={1.5} />
-                    <span className="text-xl lg:text-2xl ml-1 text-primary-500">
-                      {stat.label === 'Prozent' || stat.label === 'Percent' ? '%' : ''}
-                    </span>
-                  </div>
-                  <div className="text-xs font-bold uppercase tracking-widest text-secondary-500 mt-2">
-                    {stat.desc}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </FadeInUp>
-        </div>
-      </section>
-
-      {/* Philosophy Section */}
-      <section className="py-24 md:py-32 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <ScrollReveal>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-50 text-primary-600 text-sm font-semibold mb-6">
-                <Lightning className="w-4 h-4" /> {t.philosophy.badge}
-              </div>
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-secondary-900 mb-6 leading-tight">
-                {t.philosophy.title}
-              </h2>
-              <p className="text-xl text-secondary-600 mb-6 leading-relaxed">
-                {t.philosophy.text1}
-              </p>
-              <p className="text-lg text-secondary-600 mb-8 leading-relaxed">
-                {t.philosophy.text2}
-              </p>
-              <ul className="space-y-4">
-                {[t.philosophy.bullet1, t.philosophy.bullet2, t.philosophy.bullet3].map(
-                  (bullet, i) => (
-                    <li key={i} className="flex items-center gap-3 text-secondary-800 font-medium">
-                      <CheckCircle className="w-6 h-6 text-primary-500 flex-shrink-0" />
-                      {bullet}
-                    </li>
-                  )
-                )}
-              </ul>
-            </ScrollReveal>
-            <ScrollReveal index={1} className="relative">
-              <div className="aspect-square rounded-3xl bg-gradient-to-br from-gray-100 to-white border border-gray-200 shadow-xl overflow-hidden relative flex items-center justify-center">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.05),transparent_70%)]" />
-                <div className="relative z-10 grid grid-cols-2 gap-4 p-8">
-                  <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center justify-center text-center">
-                    <Buildings className="w-10 h-10 text-primary-500 mb-4" />
-                    <span className="font-bold text-secondary-900">
-                      Lokale
-                      <br />
-                      Präsenz
-                    </span>
-                  </div>
-                  <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center justify-center text-center translate-y-8">
-                    <ShieldCheck className="w-10 h-10 text-primary-500 mb-4" />
-                    <span className="font-bold text-secondary-900">
-                      Höchste
-                      <br />
-                      Sicherheit
-                    </span>
-                  </div>
-                  <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center justify-center text-center">
-                    <Lightning className="w-10 h-10 text-primary-500 mb-4" />
-                    <span className="font-bold text-secondary-900">
-                      Extreme
-                      <br />
-                      Performance
-                    </span>
-                  </div>
-                  <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center justify-center text-center translate-y-8">
-                    <Target className="w-10 h-10 text-primary-500 mb-4" />
-                    <span className="font-bold text-secondary-900">
-                      Local SEO
-                      <br />
-                      Wetzlar
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Grid */}
-      <section className="py-24 md:py-32 px-4 bg-black text-white">
-        <div className="max-w-6xl mx-auto">
-          <ScrollReveal>
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
-                {t.services.title}
-              </h2>
-              <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-                Alles, was Sie für die digitale Dominanz in Wetzlar benötigen. Aus einer Hand.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {t.services.items.map((service, i) => (
-              <ScrollReveal key={i} index={i}>
-                <div className="group bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-colors">
-                  <div className="bg-white/10 w-14 h-14 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    {service.icon}
-                  </div>
-                  <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
-                  <p className="text-gray-400 leading-relaxed text-lg">{service.desc}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Social Proof Section */}
-      <section className="py-24 md:py-32 px-4 overflow-hidden bg-surface-light">
-        <div className="max-w-6xl mx-auto">
-          <ScrollReveal>
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-secondary-900 mb-6">
-                {t.socialProof.title}
-              </h2>
-              <p className="text-xl text-secondary-600 max-w-2xl mx-auto">
-                {t.socialProof.description}
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {t.socialProof.testimonials.map((testi, i) => (
-              <ScrollReveal key={i} index={i}>
-                <TestimonialCard
-                  quote={testi.quote}
-                  authorName={testi.authorName}
-                  authorCompany={testi.authorCompany}
-                  rating={5}
-                />
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Comparison Section */}
-      <section className="py-24 md:py-32 px-4">
-        <div className="max-w-4xl mx-auto">
-          <ScrollReveal>
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-secondary-900 mb-6">
-                {t.comparison.title}
-              </h2>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal index={1}>
-            <div className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
-              <div className="grid grid-cols-12 bg-gray-50 border-b border-gray-100 p-6">
-                <div className="col-span-6 font-semibold text-secondary-900">Feature</div>
-                <div className="col-span-3 text-center font-semibold text-secondary-500">
-                  {t.comparison.standard}
-                </div>
-                <div className="col-span-3 text-center font-bold text-primary-600">
-                  {t.comparison.coday}
-                </div>
-              </div>
-              <div className="divide-y divide-gray-100">
-                {t.comparison.points.map((point, i) => (
-                  <div
-                    key={i}
-                    className="grid grid-cols-12 p-6 items-center hover:bg-gray-50 transition-colors"
-                  >
-                    <div className="col-span-6 font-medium text-secondary-800">{point.text}</div>
-                    <div className="col-span-3 flex justify-center text-gray-300">
-                      {point.standard ? (
-                        <CheckCircle className="w-6 h-6 text-green-500" />
-                      ) : (
-                        <div className="w-4 h-px bg-gray-300" />
-                      )}
-                    </div>
-                    <div className="col-span-3 flex justify-center">
-                      {point.coday ? (
-                        <CheckCircle className="w-6 h-6 text-primary-500" />
-                      ) : (
-                        <div className="w-4 h-px bg-gray-300" />
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Process Section */}
-      <section className="py-24 md:py-32 px-4 bg-secondary-900 text-white">
-        <div className="max-w-4xl mx-auto">
-          <ScrollReveal>
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
-                {t.process.title}
-              </h2>
-              <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-                Von der ersten Idee bis zum Live-Gang. Schnell, transparent und direkt in Wetzlar.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal index={1}>
-            <Timeline items={t.process.items} />
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-24 md:py-32 px-4 bg-surface-light">
-        <div className="max-w-3xl mx-auto">
-          <ScrollReveal>
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-secondary-900 mb-6">
-                {t.faq.title}
-              </h2>
-            </div>
-          </ScrollReveal>
-
-          <div className="space-y-6">
-            {t.faq.items.map((item, i) => (
-              <ScrollReveal key={i} index={i}>
-                <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                  <p className="text-xl font-bold text-secondary-900 mb-4">{item.q}</p>
-                  <p className="text-secondary-600 leading-relaxed text-lg">{item.a}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Regional Proximity & Hessen Hub Network */}
-      <section className="py-24 md:py-32 px-4 bg-slate-950 text-white border-t border-slate-900">
-        <div className="max-w-6xl mx-auto">
-          <ScrollReveal>
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-primary-500/30 bg-primary-950/40 text-primary-400 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-4">
-                <MapPin className="w-4 h-4 text-primary-400" />
-                Operatives Headquarter & Regionales Netzwerk
-              </div>
-              <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">
-                Webdesign Wetzlar als Drehkreuz für ganz Hessen
-              </h2>
-              <p className="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
-                Von unserem Hauptsitz in Wetzlar (Spilburg) entwickeln wir digitale Flaggschiffe für
-                Mittelhessen, die Metropolregion Frankfurt Rhein-Main und ganz Hessen. Direkter
-                Entwickler-Draht, transparente Festpreise und garantierte Vor-Ort-Verfügbarkeit.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            {/* Cluster Mittelhessen */}
-            <ScrollReveal index={0}>
-              <div className="p-8 rounded-3xl bg-slate-900/60 border border-slate-800 flex flex-col justify-between h-full hover:border-primary-500/40 transition-colors">
-                <div>
-                  <div className="text-xs font-bold text-primary-400 uppercase tracking-wider mb-3">
-                    Mittelhessen & Lahn-Dill
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-4">Direkte Nachbarschaft</h3>
-                  <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                    Schnellste Vor-Ort-Präsenz im Lahn-Dill-Kreis, Landkreis Gießen,
-                    Marburg-Biedenkopf und Limburg-Weilburg.
-                  </p>
-                  <ul className="space-y-3 text-sm">
-                    <li>
-                      <Link
-                        href="/webdesign-giessen"
-                        className="flex items-center justify-between text-slate-200 hover:text-primary-400 transition-colors group"
-                      >
-                        <span className="font-medium">Webdesign Gießen</span>
-                        <span className="text-xs text-slate-500 group-hover:text-primary-400">
-                          12 Min • B49
-                        </span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/webdesign-herborn"
-                        className="flex items-center justify-between text-slate-200 hover:text-primary-400 transition-colors group"
-                      >
-                        <span className="font-medium">Webdesign Herborn</span>
-                        <span className="text-xs text-slate-500 group-hover:text-primary-400">
-                          18 Min • A45
-                        </span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/webdesign-marburg"
-                        className="flex items-center justify-between text-slate-200 hover:text-primary-400 transition-colors group"
-                      >
-                        <span className="font-medium">Webdesign Marburg</span>
-                        <span className="text-xs text-slate-500 group-hover:text-primary-400">
-                          30 Min • B3
-                        </span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/webdesign-limburg"
-                        className="flex items-center justify-between text-slate-200 hover:text-primary-400 transition-colors group"
-                      >
-                        <span className="font-medium">Webdesign Limburg</span>
-                        <span className="text-xs text-slate-500 group-hover:text-primary-400">
-                          35 Min • B49
-                        </span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/webdesign-friedberg"
-                        className="flex items-center justify-between text-slate-200 hover:text-primary-400 transition-colors group"
-                      >
-                        <span className="font-medium">Webdesign Friedberg & Wetterau</span>
-                        <span className="text-xs text-slate-500 group-hover:text-primary-400">
-                          35 Min • A5
-                        </span>
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </ScrollReveal>
-
-            {/* Cluster Frankfurt Rhein-Main */}
-            <ScrollReveal index={1}>
-              <div className="p-8 rounded-3xl bg-slate-900/60 border border-slate-800 flex flex-col justify-between h-full hover:border-primary-500/40 transition-colors">
-                <div>
-                  <div className="text-xs font-bold text-primary-400 uppercase tracking-wider mb-3">
-                    Metropolregion Frankfurt Rhein-Main
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-4">Wirtschaftszentren</h3>
-                  <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                    Enterprise-Webentwicklung, Kanzlei-Webdesign und FinTech-Plattformen mit
-                    höchster Datensicherheit.
-                  </p>
-                  <ul className="space-y-3 text-sm">
-                    <li>
-                      <Link
-                        href="/webdesign-frankfurt"
-                        className="flex items-center justify-between text-slate-200 hover:text-primary-400 transition-colors group"
-                      >
-                        <span className="font-medium">Webdesign Frankfurt am Main</span>
-                        <span className="text-xs text-slate-500 group-hover:text-primary-400">
-                          45 Min • A5
-                        </span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/webdesign-wiesbaden"
-                        className="flex items-center justify-between text-slate-200 hover:text-primary-400 transition-colors group"
-                      >
-                        <span className="font-medium">Webdesign Wiesbaden</span>
-                        <span className="text-xs text-slate-500 group-hover:text-primary-400">
-                          55 Min • A3
-                        </span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/webdesign-darmstadt"
-                        className="flex items-center justify-between text-slate-200 hover:text-primary-400 transition-colors group"
-                      >
-                        <span className="font-medium">Webdesign Darmstadt</span>
-                        <span className="text-xs text-slate-500 group-hover:text-primary-400">
-                          60 Min • A5
-                        </span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/webdesign-offenbach"
-                        className="flex items-center justify-between text-slate-200 hover:text-primary-400 transition-colors group"
-                      >
-                        <span className="font-medium">Webdesign Offenbach am Main</span>
-                        <span className="text-xs text-slate-500 group-hover:text-primary-400">
-                          50 Min • A661
-                        </span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/webdesign-hanau"
-                        className="flex items-center justify-between text-slate-200 hover:text-primary-400 transition-colors group"
-                      >
-                        <span className="font-medium">Webdesign Hanau & Main-Kinzig</span>
-                        <span className="text-xs text-slate-500 group-hover:text-primary-400">
-                          48 Min • A45
-                        </span>
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </ScrollReveal>
-
-            {/* Cluster Nord- & Osthessen */}
-            <ScrollReveal index={2}>
-              <div className="p-8 rounded-3xl bg-slate-900/60 border border-slate-800 flex flex-col justify-between h-full hover:border-primary-500/40 transition-colors">
-                <div>
-                  <div className="text-xs font-bold text-primary-400 uppercase tracking-wider mb-3">
-                    Nord- & Osthessen
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-4">Oberzentren & Logistik</h3>
-                  <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                    B2B-Webentwicklung für Mobilitätswirtschaft, Industrie, Logistik und den
-                    etablierten Mittelstand.
-                  </p>
-                  <ul className="space-y-3 text-sm">
-                    <li>
-                      <Link
-                        href="/webdesign-kassel"
-                        className="flex items-center justify-between text-slate-200 hover:text-primary-400 transition-colors group"
-                      >
-                        <span className="font-medium">Webdesign Kassel</span>
-                        <span className="text-xs text-slate-500 group-hover:text-primary-400">
-                          75 Min • A49 / A5
-                        </span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/webdesign-fulda"
-                        className="flex items-center justify-between text-slate-200 hover:text-primary-400 transition-colors group"
-                      >
-                        <span className="font-medium">Webdesign Fulda & Osthessen</span>
-                        <span className="text-xs text-slate-500 group-hover:text-primary-400">
-                          65 Min • B49 / A5
-                        </span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/standorte/hessen"
-                        className="flex items-center justify-between text-slate-200 hover:text-primary-400 transition-colors group"
-                      >
-                        <span className="font-medium">Hessen Standorte Hub</span>
-                        <span className="text-xs text-slate-500 group-hover:text-primary-400">
-                          Alle 26 Standorte
-                        </span>
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-32 px-4 relative overflow-hidden bg-black text-white">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-900/40 via-black to-black" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[400px] bg-primary-500/20 blur-[120px] rounded-full pointer-events-none" />
-
-        <div className="max-w-4xl mx-auto relative z-10 text-center">
-          <ScrollReveal>
-            <h2 className="text-5xl md:text-7xl font-display font-black mb-8 leading-tight">
-              {t.cta.title}
-            </h2>
-            <p className="text-2xl text-gray-400 mb-12 max-w-2xl mx-auto">{t.cta.description}</p>
-            <Link href="/booking">
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+            <Link href="/contact" className="w-full sm:w-auto">
               <Button
                 variant="primary"
                 size="lg"
-                className="h-16 px-10 text-xl shadow-[0_0_50px_rgba(59,130,246,0.4)] hover:shadow-[0_0_80px_rgba(59,130,246,0.6)] transition-shadow"
+                className="w-full sm:w-auto bg-primary-700 hover:bg-primary-800 text-white font-bold px-8 py-4 text-base shadow-lg shadow-primary-700/25 transition-all hover:scale-[1.02]"
               >
-                {t.cta.button} <ArrowRight className="ml-2 w-6 h-6" />
+                Kostenloses Erstgespräch anfordern
+                <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </Link>
-          </ScrollReveal>
+            <Link href="/work" className="w-full sm:w-auto">
+              <Button
+                variant="secondary"
+                size="lg"
+                className="w-full sm:w-auto border-slate-300 hover:border-slate-400 bg-white hover:bg-slate-50 text-slate-700 px-8 py-4 text-base shadow-sm"
+              >
+                Wetzlarer Referenzen ansehen
+              </Button>
+            </Link>
+          </div>
+
+          {/* Trust Badges */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-8 border-t border-slate-200">
+            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
+              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">100/100</div>
+              <div className="text-xs sm:text-sm text-slate-600 font-medium">Core Web Vitals</div>
+            </div>
+            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
+              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">&lt; 0.4s</div>
+              <div className="text-xs sm:text-sm text-slate-600 font-medium">Ladezeit via Edge</div>
+            </div>
+            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
+              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">HQ Wetzlar</div>
+              <div className="text-xs sm:text-sm text-slate-600 font-medium">Direkt vor Ort</div>
+            </div>
+            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
+              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">100%</div>
+              <div className="text-xs sm:text-sm text-slate-600 font-medium">
+                DSGVO & Deutsches Hosting
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. TRUSTBAR (REAL CLIENT PROOF) */}
+      <section className="border-y border-slate-200 bg-white">
+        <TrustBar />
+      </section>
+
+      {/* 3. 4-PILLAR STATS BENTO GRID */}
+      <section className="py-24 bg-[#fafafa] border-b border-slate-200 relative">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Performance & Transparenz
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">
+              Messbare Ergebnisse für Unternehmen in Wetzlar
+            </h2>
+            <p className="text-slate-600 text-base sm:text-lg">
+              Keine leeren Marketing-Floskeln, sondern nachweisbare technische und wirtschaftliche
+              Vorteile.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <div className="text-4xl font-black text-amber-600 mb-2">&lt; 0.4s</div>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Ladezeit in Wetzlar</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                TTFB unter 50ms via deutsches Edge-Netzwerk. Perfekt für mobile Kunden und
+                Top-Google-Rankings.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <div className="text-4xl font-black text-amber-600 mb-2">100%</div>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Keine monatlichen Lizenzgebühren, kein Vendor-Lock-in. Der Quellcode gehört
+                vollständig Ihnen.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <div className="text-4xl font-black text-amber-600 mb-2">24h</div>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Lokale Reaktionszeit</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Direkte Betreuung durch Inhaber Umutcan Emre Tezgel in Wetzlar ohne
+                Callcenter-Warteschleifen.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <div className="text-4xl font-black text-amber-600 mb-2">5-10x</div>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Kosteneffizienter</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Günstiger als traditionelle Großagenturen dank hochgradig optimierter
+                KI-Ingenieursworkflows.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. COMPARISON TABLE: NEXT.JS VS TRADITIONELLES WORDPRESS */}
+      <section className="py-24 bg-white relative overflow-hidden">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Technologie-Vergleich
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">
+              Modernes Next.js vs. Träge WordPress-Monolithen
+            </h2>
+            <p className="text-slate-600 text-base sm:text-lg">
+              Warum der Wetzlarer Mittelstand auf serverlose Headless-Architektur umsteigt.
+            </p>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-xl">
+              <thead>
+                <tr className="border-b border-slate-200 bg-slate-50/90">
+                  <th className="p-5 text-sm font-semibold text-slate-700">Kriterium</th>
+                  <th className="p-5 text-sm font-semibold text-red-700">
+                    Traditionelles WordPress / Agentur-Monolith
+                  </th>
+                  <th className="p-5 text-sm font-semibold text-amber-900 bg-amber-50/80">
+                    Coday Next.js 15 Architektur
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100 text-sm">
+                <tr className="hover:bg-slate-50 transition-colors">
+                  <td className="p-5 font-medium text-slate-900">Ladezeit & TTFB</td>
+                  <td className="p-5 text-slate-600">
+                    3.0s – 5.0s (Plugin-Ballast & Datenbank-Verzögerung)
+                  </td>
+                  <td className="p-5 font-bold text-amber-900 bg-amber-50/40">
+                    &lt; 0.4s (Globales deutsches Edge-CDN)
+                  </td>
+                </tr>
+                <tr className="hover:bg-slate-50 transition-colors">
+                  <td className="p-5 font-medium text-slate-900">Sicherheitsarchitektur</td>
+                  <td className="p-5 text-slate-600">
+                    Ständige Sicherheitsrisiken durch PHP-Plugins
+                  </td>
+                  <td className="p-5 font-bold text-amber-900 bg-amber-50/40">
+                    100% Immun gegen traditionelle Exploits
+                  </td>
+                </tr>
+                <tr className="hover:bg-slate-50 transition-colors">
+                  <td className="p-5 font-medium text-slate-900">Lead-Conversion & UX</td>
+                  <td className="p-5 text-slate-600">Durchschnittliche Baukasten-Conversion</td>
+                  <td className="p-5 font-bold text-amber-900 bg-amber-50/40">
+                    +300% Conversion-Potenzial & 60s Funnels
+                  </td>
+                </tr>
+                <tr className="hover:bg-slate-50 transition-colors">
+                  <td className="p-5 font-medium text-slate-900">Support & Betreuung</td>
+                  <td className="p-5 text-slate-600">
+                    Anonyme Ticketsysteme & wechselnde Projektmanager
+                  </td>
+                  <td className="p-5 font-bold text-amber-900 bg-amber-50/40">
+                    Persönlich vor Ort in Wetzlar mit Inhaber
+                  </td>
+                </tr>
+                <tr className="hover:bg-slate-50 transition-colors">
+                  <td className="p-5 font-medium text-slate-900">Preisstruktur</td>
+                  <td className="p-5 text-slate-600">
+                    Hohe Beratertage & monatliche Wartungsverträge
+                  </td>
+                  <td className="p-5 font-bold text-amber-900 bg-amber-50/40">
+                    Verbindlicher Festpreis auf Anfrage
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. FOUNDER PHILOSOPHY BLOCK */}
+      <section className="py-24 bg-[#fafafa] border-y border-slate-200">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200 shadow-xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-amber-400/5 blur-[100px] rounded-full pointer-events-none" />
+            <div className="relative z-10">
+              <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+                Inhabergeführte Handwerkskunst
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 mt-2 mb-6">
+                Echtes Handwerk statt Agentur-Overhead in Wetzlar
+              </h2>
+              <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-6">
+                Bei Coday sprechen Sie direkt mit mir – <strong>Umutcan Emre Tezgel</strong>. Keine
+                ahnungslosen Junior-Projektmanager, keine verdeckten Subunternehmer. Reine
+                Ingenieurskunst und KI-gestützte Entwicklungsgeschwindigkeit für maximale Ergebnisse
+                in Wetzlar und im gesamten Lahn-Dill-Kreis.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-slate-200 text-sm">
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
+                  <span className="text-slate-700">Direkter Entwickler-Kontakt</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
+                  <span className="text-slate-700">Voller Quellcode-Besitz</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
+                  <span className="text-slate-700">5-10x günstiger als Großagenturen</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. SERVICES BENTO SHOWCASE (LOKAL ZUGESCHNITTEN) */}
+      <section className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Kernkompetenzen
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">
+              Digitale Lösungen für Wetzlar & Lahn-Dill
+            </h2>
+            <p className="text-slate-600 text-base sm:text-lg">
+              Präzisionstechnologie aus Wetzlar für Spitzenleistungen im Web.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="p-8 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <Code className="w-10 h-10 text-amber-600 mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-slate-900 mb-3">
+                1. High-Performance Webentwicklung
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Maßgeschneiderte Webentwicklung mit Next.js 15, React 19 und TypeScript.
+                Subsekundäre Ladezeiten und garantierte 100/100 Core Web Vitals für maximale
+                Google-Sichtbarkeit.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <Eye className="w-10 h-10 text-amber-600 mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-slate-900 mb-3">
+                2. B2B-Webdesign & UX-Design
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Optik-, Medizintechnik- und Mittelstands-Fokus. Seriöse, ästhetische Interfaces, die
+                Vertrauen bei anspruchsvollen B2B-Entscheidern schaffen.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <Target className="w-10 h-10 text-amber-600 mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-slate-900 mb-3">
+                3. Lokales Silo-SEO & Google-Dominanz
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Gezielte Suchmaschinenoptimierung für Top-Rankings in Wetzlar, Hermannstein,
+                Nauborn, Dutenhofen und dem gesamten Lahn-Dill-Kreis.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <FileCode className="w-10 h-10 text-amber-600 mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-slate-900 mb-3">
+                4. Headless CMS & Automatisierung
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Integration von Sanity CMS für kinderleichte Content-Pflege ohne
+                Programmierkenntnisse und automatisierte Lead-Erfassung.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. VERIFIED CASE STUDIES & LOCAL PROOF */}
+      <section className="py-24 bg-slate-50/80 border-y border-slate-200">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Echte Kundenreferenzen
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">
+              Erfolgsgeschichten aus Wetzlar & Mittelhessen
+            </h2>
+            <p className="text-slate-600 text-base sm:text-lg">
+              Reale Ergebnisse für regionale Unternehmen.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm">
+              <div className="inline-block px-3 py-1 rounded-md bg-amber-50 text-amber-800 text-xs font-bold uppercase mb-4 border border-amber-200/50">
+                Case Study · Handwerk & Sanitär
+              </div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-3">Batherm Wetzlar</h3>
+              <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                Relaunch der gesamten Webpräsenz auf Next.js. Erzielte einen perfekten 100/100
+                Mobile Score, eine Reduktion der Ladezeit auf unter 400ms und ein Plus von{' '}
+                <strong>+340%</strong> an qualifizierten Kundenanfragen aus dem Raum Wetzlar.
+              </p>
+              <div className="flex items-center gap-2 text-amber-700 font-semibold text-sm">
+                <span>100/100 Core Web Vitals</span> · <span>+340% Anfragen</span>
+              </div>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm">
+              <div className="inline-block px-3 py-1 rounded-md bg-amber-50 text-amber-800 text-xs font-bold uppercase mb-4 border border-amber-200/50">
+                Case Study · Lokaler Notdienst
+              </div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-3">MS Schlüsseldienst Wetzlar</h3>
+              <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                Entwicklung einer ultraschnellen mobilen Landingpage für 24/7 Notöffnungen.
+                Dominante Spitzenpositionen bei lokalen Suchanfragen in Mittelhessen und
+                signifikante Steigerung der täglichen Direktanrufe.
+              </p>
+              <div className="flex items-center gap-2 text-amber-700 font-semibold text-sm">
+                <span>Top-3 Google Ranking</span> · <span>24/7 Conversion</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 8. LOCAL GEO-SEMANTIC CONTENT SILO (P1–P3) */}
+      <section className="py-24 bg-[#fafafa]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <div>
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Wirtschaftsstandort Wetzlar
+            </span>
+            <h2 className="text-3xl font-bold text-slate-900 mt-2 mb-6">
+              P1: Wetzlar als weltweites Zentrum für Optik, Feinmechanik & Mittelstand
+            </h2>
+            <p className="text-slate-700 leading-relaxed text-base">
+              Wetzlar ist international bekannt als Wiege der optischen Industrie. Namen wie Leica
+              und Zeiss haben die Stadt geprägt. Heute versammelt das <em>Wetzlar Network</em>{' '}
+              hochinnovative Präzisionsfertiger, Medizintechnik-Spezialisten und B2B-Unternehmen in
+              den Gewerbeparks
+              <strong>Spilburg</strong>, <strong>Dillfeld</strong> und{' '}
+              <strong>Altenberger Straße</strong>. Diese hochspezialisierten Betriebe benötigen
+              digitale Auftritte, die ihre technologische Exzellenz millimetergenau widerspiegeln.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-2xl font-bold text-slate-900 mb-4">
+              P2: Technologische Überlegenheit für den Lahn-Dill-Kreis
+            </h3>
+            <p className="text-slate-700 leading-relaxed text-base">
+              Veraltete WordPress-Websites mit 4-Sekunden-Ladezeiten und ständigen Plugin-Updates
+              passen nicht zum Qualitätsanspruch des heimischen Mittelstands. Mit Next.js 15 bieten
+              wir Wetzlarer Firmen eine serverlose Enterprise-Architektur, die
+              Google-Spitzenplatzierungen sichert und B2B-Kunden sofort überzeugt.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-2xl font-bold text-slate-900 mb-4">
+              P3: Zentrale Lage & erstklassige Verkehrsanbindung
+            </h3>
+            <p className="text-slate-700 leading-relaxed text-base">
+              Mit direkter Anbindung an die <strong>B49</strong> und die{' '}
+              <strong>A45 (Sauerlandlinie)</strong>
+              verbindet Wetzlar Mittelhessen mit dem Rhein-Main-Gebiet und Nordrhein-Westfalen. Als
+              lokale Webagentur mit Sitz in der Lessingstraße sind wir innerhalb von Minuten bei
+              Ihnen vor Ort in Hermannstein, Nauborn, Garbenheim, Dutenhofen oder Steindorf.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 9. LOCAL FAQ ACCORDION */}
+      <section className="py-24 bg-white border-y border-slate-200">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Häufige Fragen
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">
+              Fragen & Antworten zu Webdesign in Wetzlar
+            </h2>
+          </div>
+
+          <div className="space-y-6">
+            <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                Wie viel kostet eine professionelle Website in Wetzlar?
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und
+                verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-gestützten
+                Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant
+                höherer technischer Performance.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                Wie lange dauert die Umsetzung unseres Webprojekts?
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                In der Regel 10 bis 14 Werktage bis zum schlüsselfertigen Go-Live Ihrer neuen
+                Website.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                Können wir uns persönlich in Wetzlar treffen?
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Ja, sehr gerne. Unser Agentur-HQ befindet sich direkt in Wetzlar. Wir kommen für ein
+                persönliches Beratungsgespräch direkt zu Ihnen in den Betrieb.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                Bieten Sie eine Zufriedenheits- und Performance-Garantie?
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Ja, vertraglich garantierte Lighthouse-Scores von über 90 Punkten und perfekte
+                Google Core Web Vitals.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                Wer betreut die Website nach dem Launch?
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Inhaber Umutcan Emre Tezgel persönlich mit garantiertem 24h-Support.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 10. BOTTOM CTA */}
+      <section className="py-20 bg-slate-50/80 text-center border-t border-slate-200">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-6">
+            Bereit für den digitalen Vorsprung in Wetzlar?
+          </h2>
+          <p className="text-slate-600 text-base sm:text-lg mb-10 max-w-2xl mx-auto">
+            Vereinbaren Sie jetzt ein unverbindliches 20-Minuten-Strategiegespräch direkt mit
+            Inhaber Umutcan Emre Tezgel in Wetzlar.
+          </p>
+          <Link href="/contact">
+            <Button
+              variant="primary"
+              size="lg"
+              className="bg-primary-700 hover:bg-primary-800 text-white font-bold px-10 py-5 text-lg shadow-xl shadow-primary-700/25 transition-all hover:scale-105"
+            >
+              Kostenloses Erstgespräch anfordern
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+          </Link>
         </div>
       </section>
     </div>

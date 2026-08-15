@@ -12,7 +12,6 @@ import { Link } from '@/i18n/navigation';
 import { usePathname } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 import { getNavItems } from '@/widgets/navigation/config';
-import { NavDropdown } from '@/widgets/navigation/NavDropdown';
 import dynamic from 'next/dynamic';
 import '@/widgets/navigation/MobileReadyNav.css';
 
@@ -295,37 +294,6 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
         <div className="nav-pill-actions">
           {/* Desktop/Tablet Only Actions */}
           <div className="nav-desktop-actions hidden lg:flex items-center gap-3">
-            <NavDropdown
-              title={t('nav.local.title')}
-              items={[
-                { label: t('nav.local.hessen'), href: '/standorte/hessen' },
-                { label: t('nav.local.wetzlar'), href: '/webdesign-agentur-wetzlar' },
-                {
-                  label: t('nav.local.arzt_wetzlar'),
-                  href: '/branchen/gesundheitswesen/arzt-wetzlar',
-                },
-                {
-                  label: t('nav.local.arzt_giessen'),
-                  href: '/branchen/gesundheitswesen/arzt-giessen',
-                },
-                {
-                  label: t('nav.local.handwerker_wetzlar'),
-                  href: '/branchen/handwerker/wetzlar',
-                },
-                {
-                  label: t('nav.local.kfz_werkstatt'),
-                  href: '/branchen/automobil/kfz-werkstatt',
-                },
-                {
-                  label: t('nav.local.kfz_mechatroniker'),
-                  href: '/branchen/automobil/kfz-mechatroniker',
-                },
-                {
-                  label: t('nav.local.autohaendler'),
-                  href: '/branchen/automobil/autohaendler',
-                },
-              ]}
-            />
             <React.Suspense fallback={null}>
               <LanguageSwitcher />
             </React.Suspense>

@@ -5,6 +5,7 @@ import { setRequestLocale } from 'next-intl/server';
 import { BASE_URL, getOrganizationSchema } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
+import { TrustBar } from '@/shared/ui/TrustBar';
 import {
   ArrowRight,
   Lightning,
@@ -18,6 +19,14 @@ import {
   CheckCircle,
   Wrench,
   Gear,
+  ChartBar,
+  Star,
+  MapPin,
+  DeviceMobile,
+  Target,
+  FileCode,
+  Globe,
+  CaretRight,
 } from '@phosphor-icons/react/dist/ssr';
 
 export const dynamic = 'force-static';
@@ -30,17 +39,17 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Design Dillenburg | High-End Web Development – Coday Web',
+      title: 'Web Design Dillenburg | Next.js B2B Web Agency · Coday',
       description:
-        'Custom web design & Next.js development in Dillenburg and the northern Lahn-Dill district. 100/100 PageSpeed, B2B leads & 60s recruiting. Request your free audit now!',
+        'Web design & development in Dillenburg. Fast loading times, measurable B2B leads for tooling, metal technology & crafts. Fixed price on request.',
       path: '/en/webdesign-dillenburg',
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'Webdesign Dillenburg | High-End Webentwicklung – Coday Web',
+    title: 'Webdesign Dillenburg | Next.js B2B Webagentur · Coday',
     description:
-      'Maßgeschneidertes Webdesign & Next.js Webentwicklung in der Oranienstadt Dillenburg. 100/100 PageSpeed, B2B-Industrieleads & 60s Recruiting. Jetzt anfragen!',
+      'Webdesign & Webentwicklung in Dillenburg. Schnelle Ladezeiten, messbare B2B-Leads für Werkzeugbau, Metalltechnik & Handwerk. Festpreis auf Anfrage.',
     path: '/de/webdesign-dillenburg',
     type: 'money',
   });
@@ -62,7 +71,7 @@ export default async function WebdesignDillenburgPage({
       {
         '@type': 'LocalBusiness',
         '@id': `${BASE_URL}/${_locale}/webdesign-dillenburg#localbusiness`,
-        name: 'Coday – High-End Webdesign & Webentwicklung Dillenburg',
+        name: 'Coday – Webdesign Agentur Dillenburg',
         url: `${BASE_URL}/${_locale}/webdesign-dillenburg`,
         logo: `${BASE_URL}/icon.png`,
         image: `${BASE_URL}/images/og-image.jpg`,
@@ -79,17 +88,17 @@ export default async function WebdesignDillenburgPage({
         },
         geo: {
           '@type': 'GeoCoordinates',
-          latitude: 50.7333,
-          longitude: 8.2833,
+          latitude: 50.7397,
+          longitude: 8.2867,
         },
         areaServed: [
           { '@type': 'City', name: 'Dillenburg' },
-          { '@type': 'City', name: 'Herborn' },
+          { '@type': 'City', name: 'Frohnhausen' },
+          { '@type': 'City', name: 'Manderbach' },
+          { '@type': 'City', name: 'Niederscheld' },
+          { '@type': 'City', name: 'Eibach' },
           { '@type': 'City', name: 'Haiger' },
           { '@type': 'City', name: 'Eschenburg' },
-          { '@type': 'City', name: 'Dietzhölztal' },
-          { '@type': 'City', name: 'Breitscheid' },
-          { '@type': 'City', name: 'Siegbach' },
           { '@type': 'AdministrativeArea', name: 'Lahn-Dill-Kreis' },
           { '@type': 'AdministrativeArea', name: 'Regierungsbezirk Gießen' },
         ],
@@ -98,257 +107,564 @@ export default async function WebdesignDillenburgPage({
         '@type': 'ProfessionalService',
         '@id': `${BASE_URL}/${_locale}/webdesign-dillenburg#service`,
         name: 'High-End Webdesign & Next.js Webentwicklung Dillenburg',
-        description:
-          'Maßgeschneiderte Webentwicklung, 100/100 Core Web Vitals, B2B Lead-Engines und Fachkräftegewinnung für Unternehmen in der Oranienstadt Dillenburg und Umgebung.',
         provider: {
-          '@type': 'Organization',
-          name: 'Coday',
-          url: BASE_URL,
+          '@id': `${BASE_URL}/#organization`,
         },
+        serviceType: [
+          'Werkzeugbau & Metalltechnik B2B Webportale',
+          'Meisterbetrieb & Handwerker Webdesign',
+          'Next.js 15 Webentwicklung',
+          'Local SEO Gewerbepark Dillfeld & Frohnhausen',
+          '60s Express-Recruiting im Dilltal',
+        ],
+        hasOfferCatalog: {
+          '@type': 'OfferCatalog',
+          name: 'Dienstleistungen für Dillenburg, Frohnhausen, Manderbach & Lahn-Dill',
+          itemListElement: [
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'B2B Werkzeugbau & Metalltechnik Portale',
+                description:
+                  'Serverlose Webanwendungen mit statischer Vorabgenerierung, schnellen CAD-Downloads und hoher B2B-Konversion.',
+              },
+            },
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Handwerk & Recruiting Funnels',
+                description:
+                  'Moderne Webauftritte mit 60-Sekunden-Bewerbungsverfahren zur Gewinnung von Fachkräften in Dillenburg.',
+              },
+            },
+          ],
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: `${BASE_URL}/${_locale}`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Standorte',
+            item: `${BASE_URL}/${_locale}/standorte/hessen`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: 'Dillenburg',
+            item: `${BASE_URL}/${_locale}/webdesign-dillenburg`,
+          },
+        ],
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'Wie viel kostet eine neue B2B-Website in Dillenburg?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Wie schnell ist eine neue Website in Dillenburg online?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Kommen Sie für ein Beratungsgespräch direkt nach Dillenburg?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Ja, sehr gerne. Von unserem Wetzlarer HQ aus sind wir über die B277 oder A45 in unter 20 Minuten direkt bei Ihnen vor Ort in Dillenburg, Frohnhausen oder Manderbach.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Bieten Sie auch Lösungen zur Fachkräftegewinnung im Dillgebiet?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Ja. Wir entwickeln mobil optimierte 60-Sekunden-Bewerbungsverfahren ohne Anschreiben, die die Hürde für qualifizierte Fachkräfte drastisch senken.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Wer ist unser fester Ansprechpartner?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.',
+            },
+          },
+        ],
       },
     ],
   };
 
   return (
-    <>
+    <div className="bg-[#fafafa] text-slate-900 min-h-screen selection:bg-amber-500/20 selection:text-amber-900">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="relative min-h-screen bg-slate-950 text-slate-100 selection:bg-teal-500 selection:text-white pt-24 pb-16 overflow-hidden">
-        {/* Ambient Glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-teal-500/15 via-emerald-500/5 to-transparent blur-3xl pointer-events-none -z-10" />
+      {/* 1. HERO SECTION */}
+      <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28 bg-[#fafafa]">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-100/40 via-white/80 to-transparent pointer-events-none" />
+        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-amber-400/10 blur-[140px] rounded-full pointer-events-none" />
 
-        {/* ═══ HERO SECTION ═══ */}
-        <section className="container mx-auto px-4 max-w-7xl pt-12 pb-20">
-          <div className="flex flex-col items-center text-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-400 text-xs font-semibold uppercase tracking-wider mb-6">
-              <Sparkle weight="fill" className="w-3.5 h-3.5" />
-              <span>
-                Oranienstadt Dillenburg & nördlicher Lahn-Dill-Kreis — 20 Min ab HQ Wetzlar
-              </span>
-            </div>
-
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white max-w-4xl leading-[1.1] mb-6">
-              High-End Webdesign in{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-emerald-300 to-teal-200">
-                Dillenburg
-              </span>
-              . 100/100 PageSpeed für Industrie & Handwerk.
-            </h1>
-
-            <p className="text-lg sm:text-xl text-slate-300 max-w-3xl leading-relaxed mb-10">
-              Generieren Sie planbare B2B-Leads und qualifizierte Gesellen für Ihren Betrieb in
-              Dillenburg, Frohnhausen, Manderbach und dem Dietzhölztal. Entwickelt mit modernstem
-              Next.js, ohne Plugin-Abofallen.
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-              <Link href="/contact" className="w-full sm:w-auto">
-                <Button
-                  size="lg"
-                  className="w-full sm:w-auto bg-teal-600 hover:bg-teal-500 text-white font-medium px-8 py-3.5 rounded-xl shadow-lg shadow-teal-900/30"
-                >
-                  <span className="flex items-center justify-center gap-2">
-                    <span>Kostenlose Bedarfsanalyse anfordern</span>
-                    <ArrowRight weight="bold" className="w-4 h-4" />
-                  </span>
-                </Button>
-              </Link>
-              <Link href="/work" className="w-full sm:w-auto">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="w-full sm:w-auto border-slate-700 hover:bg-slate-800 text-slate-200 px-8 py-3.5 rounded-xl"
-                >
-                  <span>Projekt-Referenzen ansehen</span>
-                </Button>
-              </Link>
-            </div>
-
-            {/* Metrics */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 w-full max-w-4xl text-left">
-              {[
-                { label: 'Core Web Vitals', val: '100 / 100', sub: 'Mobil & Desktop' },
-                { label: 'Fahrzeit ab HQ Wetzlar', val: '20 Min', sub: 'Direkt via A45 / B277' },
-                { label: 'Ladezeit-Reduktion', val: '-85 %', sub: 'Gegenüber WordPress' },
-                {
-                  label: 'Agentur-Ersparnis',
-                  val: '5–10x günstiger',
-                  sub: 'Durch schlanke Solo-Struktur',
-                },
-              ].map((m, i) => (
-                <div key={i} className="p-4 rounded-xl bg-slate-900/70 border border-slate-800/80">
-                  <div className="text-2xl font-bold text-teal-400 mb-1">{m.val}</div>
-                  <div className="text-sm font-semibold text-slate-200">{m.label}</div>
-                  <div className="text-xs text-slate-400 mt-0.5">{m.sub}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ═══ WIRTSCHAFTS-DNA DILLENBURG ═══ */}
-        <section className="container mx-auto px-4 max-w-7xl py-16 border-t border-slate-800/60">
-          <div className="max-w-3xl mb-12">
-            <h2 className="text-xs font-bold uppercase tracking-widest text-teal-400 mb-2">
-              Industrie- & Handwerksstandort Dillenburg
-            </h2>
-            <h3 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
-              Digitale Leistungsfähigkeit für den Mittelstand im Dilltal.
-            </h3>
-            <p className="text-slate-400 mt-4 leading-relaxed">
-              Dillenburg ist geprägt von traditionsreichem Werkzeugbau, innovativer Metall- und
-              Kunststoffverarbeitung sowie einem starken Handwerksmittelstand. Internationale Kunden
-              und qualifizierte Fachkräfte erwarten heute eine Webpräsenz, die technische
-              Spitzenleistung auf den ersten Blick spürbar macht.
-            </p>
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-50 text-amber-800 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-8 shadow-sm">
+            <Sparkle className="w-4 h-4 text-amber-600" />
+            WERKZEUGBAU, METALLTECHNIK & B2B WEBAGENTUR DILLENBURG
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-teal-500/40 transition-colors">
-              <div className="w-12 h-12 rounded-xl bg-teal-500/10 flex items-center justify-center text-teal-400 mb-5">
-                <Gear className="w-6 h-6" />
-              </div>
-              <h4 className="text-lg font-bold text-white mb-2">Industrie & Metallbau</h4>
-              <p className="text-sm text-slate-400 leading-relaxed">
-                Strukturierte Leistungsdarstellung für B2B-Entscheider. Schneller Download von
-                Datenblättern, CAD-Modellen und Zertifikaten ohne Wartezeit.
-              </p>
-            </div>
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 mb-8 leading-[1.1]">
+            Webdesign & Next.js Entwicklung in der{' '}
+            <span className="bg-gradient-to-r from-amber-600 via-amber-700 to-teal-700 bg-clip-text text-transparent">
+              Oranienstadt Dillenburg
+            </span>
+          </h1>
 
-            <div className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-teal-500/40 transition-colors">
-              <div className="w-12 h-12 rounded-xl bg-teal-500/10 flex items-center justify-center text-teal-400 mb-5">
-                <Wrench className="w-6 h-6" />
-              </div>
-              <h4 className="text-lg font-bold text-white mb-2">Meisterbetriebe & Handwerk</h4>
-              <p className="text-sm text-slate-400 leading-relaxed">
-                Automatisierte Vorfilterung von Kundenanfragen und 60-Sekunden
-                Express-Bewerbungsstrecken für Gesellen und Auszubildende.
-              </p>
-            </div>
+          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-10">
+            Speziell für Werkzeugbau, Metallverarbeitung, Kunststofftechnik und Meisterbetriebe in
+            Dillenburg, Frohnhausen und Manderbach. Maximale Ladezeiten unter 500ms, perfekte
+            Google-Rankings und planbare Neukunden- und Mitarbeitergewinnung. Verbindlicher
+            Festpreis nach kostenloser Bedarfsanalyse.
+          </p>
 
-            <div className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-teal-500/40 transition-colors">
-              <div className="w-12 h-12 rounded-xl bg-teal-500/10 flex items-center justify-center text-teal-400 mb-5">
-                <Buildings className="w-6 h-6" />
-              </div>
-              <h4 className="text-lg font-bold text-white mb-2">Gesundheit & Kanzleien</h4>
-              <p className="text-sm text-slate-400 leading-relaxed">
-                DSGVO-konforme Patienten- und Mandantenportale mit nahtloser Online-Terminvergabe
-                und lokaler Top-Sichtbarkeit bei Google.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* ═══ REFERENZEN ═══ */}
-        <section className="container mx-auto px-4 max-w-7xl py-16 border-t border-slate-800/60">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="text-xs font-bold uppercase tracking-widest text-teal-400 mb-2">
-              Erfolgreiche Projekte
-            </h2>
-            <h3 className="text-3xl font-bold text-white">Reale Kundenstimmen aus der Region</h3>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
-              <div className="text-xs font-bold text-teal-400 uppercase tracking-wider mb-2">
-                Handwerk & SHK
-              </div>
-              <h4 className="text-xl font-bold text-white mb-2">Batherm GmbH</h4>
-              <p className="text-sm text-slate-400 mb-4 leading-relaxed">
-                Relaunch von schwerfälligem CMS auf Next.js. PageSpeed 100/100, signifikant mehr
-                Anfragen für moderne Heizsysteme.
-              </p>
-              <div className="flex items-center gap-2 text-teal-400 font-mono text-xs">
-                <CheckCircle weight="fill" className="w-4 h-4" />
-                <span>100/100 Core Web Vitals</span>
-              </div>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
-              <div className="text-xs font-bold text-teal-400 uppercase tracking-wider mb-2">
-                GaLaBau & Außenanlagen
-              </div>
-              <h4 className="text-xl font-bold text-white mb-2">MemoBau</h4>
-              <p className="text-sm text-slate-400 mb-4 leading-relaxed">
-                +380% qualifizierte Projektanfragen und dominante lokale Sichtbarkeit im gesamten
-                Lahn-Dill-Kreis.
-              </p>
-              <div className="flex items-center gap-2 text-teal-400 font-mono text-xs">
-                <CheckCircle weight="fill" className="w-4 h-4" />
-                <span>+380% Lead-Wachstum</span>
-              </div>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
-              <div className="text-xs font-bold text-teal-400 uppercase tracking-wider mb-2">
-                Notdienst & Sicherheit
-              </div>
-              <h4 className="text-xl font-bold text-white mb-2">MS Schlüsseldienst</h4>
-              <p className="text-sm text-slate-400 mb-4 leading-relaxed">
-                Google Maps Top-3 Platzierungen und zuverlässiger Kundenstrom bei akuten
-                Suchanfragen.
-              </p>
-              <div className="flex items-center gap-2 text-teal-400 font-mono text-xs">
-                <CheckCircle weight="fill" className="w-4 h-4" />
-                <span>Top Google Ranking</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ═══ FAQ DILLENBURG ═══ */}
-        <section className="container mx-auto px-4 max-w-4xl py-16 border-t border-slate-800/60">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-8">
-            Häufige Fragen zu Webdesign in Dillenburg
-          </h2>
-
-          <div className="space-y-4">
-            {[
-              {
-                q: 'Warum ist Next.js für Dillenburger B2B-Unternehmen die beste Wahl?',
-                a: 'Next.js bietet überlegene Geschwindigkeit, blitzschnelle Ladezeiten weltweit und höchste Sicherheit ohne wartungsintensive WordPress-Plugins. Ihre Einkäufer und Partner erleben eine flüssige Web-Applikation.',
-              },
-              {
-                q: 'Wie läuft die Betreuung vor Ort in Dillenburg ab?',
-                a: 'Wir sind in nur 20 Minuten ab Wetzlar bei Ihnen vor Ort in Dillenburg, Manderbach oder Frohnhausen. Sie arbeiten ohne Umwege direkt mit dem Lead-Architekten.',
-              },
-              {
-                q: 'Wie unterstützt Coday bei der Fachkräftegewinnung in Dillenburg?',
-                a: 'Wir integrieren intuitive 60-Sekunden Express-Bewerbungsfunnels direkt auf Ihrer Webseite. Bewerber können sich ohne Hürden per Smartphone bei Ihnen vorstellen.',
-              },
-            ].map((faq, idx) => (
-              <div key={idx} className="p-5 rounded-xl bg-slate-900/50 border border-slate-800">
-                <h3 className="text-base font-bold text-white mb-2">{faq.q}</h3>
-                <p className="text-sm text-slate-400 leading-relaxed">{faq.a}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* ═══ CTA FOOTER ═══ */}
-        <section className="container mx-auto px-4 max-w-5xl py-12">
-          <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-teal-900/40 via-slate-900 to-slate-950 border border-teal-500/30 text-center">
-            <h2 className="text-2xl sm:text-4xl font-bold text-white mb-4">
-              Jetzt digitale Marktführerschaft in Dillenburg sichern
-            </h2>
-            <p className="text-slate-300 max-w-2xl mx-auto mb-8 text-base sm:text-lg">
-              Vereinbaren Sie ein unverbindliches Erstgespräch. Wir analysieren Ihre Potenziale für
-              Neukunden und Mitarbeitergewinnung in Dillenburg und dem Lahn-Dill-Kreis.
-            </p>
-            <Link href="/contact">
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+            <Link href="/contact" className="w-full sm:w-auto">
               <Button
+                variant="primary"
                 size="lg"
-                className="bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold px-8 py-4 rounded-xl shadow-xl shadow-teal-500/20"
+                className="w-full sm:w-auto bg-primary-700 hover:bg-primary-800 text-white font-bold px-8 py-4 text-base shadow-lg shadow-primary-700/25 transition-all hover:scale-[1.02]"
               >
-                <span>Kostenlose Bedarfsanalyse anfordern</span>
+                Kostenloses Erstgespräch anfordern
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </Link>
+            <Link href="/work" className="w-full sm:w-auto">
+              <Button
+                variant="secondary"
+                size="lg"
+                className="w-full sm:w-auto border-slate-300 hover:border-slate-400 bg-white hover:bg-slate-50 text-slate-700 px-8 py-4 text-base shadow-sm"
+              >
+                Dillenburger Referenzen ansehen
               </Button>
             </Link>
           </div>
-        </section>
-      </div>
-    </>
+
+          {/* Trust Badges */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-8 border-t border-slate-200">
+            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
+              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">100/100</div>
+              <div className="text-xs sm:text-sm text-slate-600 font-medium">Core Web Vitals</div>
+            </div>
+            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
+              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">&lt; 0.4s</div>
+              <div className="text-xs sm:text-sm text-slate-600 font-medium">Ladezeit via Edge</div>
+            </div>
+            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
+              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">20 Min</div>
+              <div className="text-xs sm:text-sm text-slate-600 font-medium">
+                Vor Ort via B277 / A45
+              </div>
+            </div>
+            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
+              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">100%</div>
+              <div className="text-xs sm:text-sm text-slate-600 font-medium">
+                DSGVO & Deutsches Hosting
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. TRUSTBAR (REAL PROOF) */}
+      <section className="border-y border-slate-200 bg-white">
+        <TrustBar />
+      </section>
+
+      {/* 3. 4-PILLAR STATS BENTO GRID */}
+      <section className="py-24 bg-[#fafafa] border-b border-slate-200 relative">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Performance & ROI
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">
+              Messbare Ergebnisse für Dillenburger Unternehmen
+            </h2>
+            <p className="text-slate-600 text-base sm:text-lg">
+              Präzisionstechnologie für Werkzeugbau, Metalltechnik und Meisterbetriebe.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <div className="text-4xl font-black text-amber-600 mb-2">&lt; 0.4s</div>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Ladezeit in Dillenburg</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Subsekundäre Ladezeiten für ungeduldige B2B-Einkäufer und mobile Nutzer.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <div className="text-4xl font-black text-amber-600 mb-2">100%</div>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Volle Rechte an Ihrem Quellcode ohne monatliche CMS-Lizenzgebühren oder
+                Lock-in-Effekte.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <div className="text-4xl font-black text-amber-600 mb-2">24h</div>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Direkte Betreuung durch Gründer Umutcan Emre Tezgel ohne Agentur-Warteschleifen.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <div className="text-4xl font-black text-amber-600 mb-2">5-10x</div>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Kosteneffizienter</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Günstiger als traditionelle Großagenturen durch automatisierte
+                KI-Engineering-Workflows.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. COMPARISON TABLE: NEXT.JS VS. TRADITIONELLES WORDPRESS */}
+      <section className="py-24 bg-white relative overflow-hidden">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Technologie-Vergleich
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">
+              Warum Dillenburger Industrie- & Handwerksbetriebe auf Next.js setzen
+            </h2>
+            <p className="text-slate-600 text-base sm:text-lg">
+              Der direkte Vergleich zwischen klassischem WordPress und zukunftssicherer
+              Headless-Architektur.
+            </p>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-xl">
+              <thead>
+                <tr className="border-b border-slate-200 bg-slate-50/90">
+                  <th className="p-5 text-sm font-semibold text-slate-700">Kriterium</th>
+                  <th className="p-5 text-sm font-semibold text-red-700">
+                    WordPress / Agentur-Monolith
+                  </th>
+                  <th className="p-5 text-sm font-semibold text-amber-900 bg-amber-50/80">
+                    Coday Next.js 15 Headless Stack
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100 text-sm">
+                <tr className="hover:bg-slate-50 transition-colors">
+                  <td className="p-5 font-medium text-slate-900">Ladezeit & TTFB</td>
+                  <td className="p-5 text-slate-600">
+                    2.5s – 4.5s (Plugin-Ballast & Datenbank-Verzögerung)
+                  </td>
+                  <td className="p-5 font-bold text-amber-900 bg-amber-50/40">
+                    &lt; 0.4s (Globales deutsches Edge-CDN)
+                  </td>
+                </tr>
+                <tr className="hover:bg-slate-50 transition-colors">
+                  <td className="p-5 font-medium text-slate-900">Sicherheit & Hacker-Schutz</td>
+                  <td className="p-5 text-slate-600">
+                    Permanente Sicherheitslücken durch PHP-Plugins
+                  </td>
+                  <td className="p-5 font-bold text-amber-900 bg-amber-50/40">
+                    100% Sicher (Keine angreifbare Datenbank)
+                  </td>
+                </tr>
+                <tr className="hover:bg-slate-850/50 transition-colors">
+                  <td className="p-5 font-medium text-slate-900">Google Core Web Vitals</td>
+                  <td className="p-5 text-slate-600">Mäßig (Abstrafung im mobilen Suchranking)</td>
+                  <td className="p-5 font-bold text-amber-900 bg-amber-50/40">
+                    Garantiert 100/100 (Top-Rankings in Dillenburg)
+                  </td>
+                </tr>
+                <tr className="hover:bg-slate-850/50 transition-colors">
+                  <td className="p-5 font-medium text-slate-900">Support & Betreuung</td>
+                  <td className="p-5 text-slate-600">
+                    Anonyme Ticketsysteme & wechselnde Ansprechpartner
+                  </td>
+                  <td className="p-5 font-bold text-amber-900 bg-amber-50/40">
+                    Direkter Entwickler-Kontakt im Lahn-Dill-Kreis
+                  </td>
+                </tr>
+                <tr className="hover:bg-slate-850/50 transition-colors">
+                  <td className="p-5 font-medium text-slate-900">Preisstruktur</td>
+                  <td className="p-5 text-slate-600">
+                    Versteckte Zusatzkosten & monatliche Wartungsverträge
+                  </td>
+                  <td className="p-5 font-bold text-amber-900 bg-amber-50/40">
+                    Verbindlicher Festpreis auf Anfrage
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. FOUNDER PHILOSOPHY BLOCK */}
+      <section className="py-24 bg-[#fafafa] border-y border-slate-200">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200 shadow-xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-amber-400/5 blur-[100px] rounded-full pointer-events-none" />
+            <div className="relative z-10">
+              <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+                Inhabergeführte Betreuung
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 mt-2 mb-6">
+                Echtes Handwerk statt Agentur-Overhead für Dillenburg
+              </h2>
+              <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-6">
+                Bei Coday arbeiten Sie direkt mit mir – <strong>Umutcan Emre Tezgel</strong>. Als
+                spezialisierter Solo-Entwickler mit Sitz in Wetzlar baue ich Ihre Webpräsenz für
+                Dillenburg, Frohnhausen und Manderbach: Technisch perfekt, hochgradig
+                conversion-stark und wirtschaftlich unschlagbar fair.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-slate-200 text-sm">
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
+                  <span className="text-slate-700">Direkter Entwickler-Kontakt</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
+                  <span className="text-slate-700">Voller Quellcode-Besitz</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
+                  <span className="text-slate-700">5-10x günstiger als Großagenturen</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. SERVICES BENTO SHOWCASE (DILLENBURG-FOKUS) */}
+      <section className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Kernkompetenzen
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">
+              Digitale Exzellenz für Dillenburg & den nördlichen Lahn-Dill-Kreis
+            </h2>
+            <p className="text-slate-600 text-base sm:text-lg">
+              Vom B2B-Werkzeugbau-Portal bis zum mobilen Handwerker-Recruiting.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="p-8 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <Gear className="w-10 h-10 text-amber-600 mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-slate-900 mb-3">
+                1. Werkzeugbau & Metalltechnik Portale
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Entwickelt für Werkzeugbauer, CNC-Zerspaner und Metallverarbeiter im Gewerbepark
+                Dillfeld. Blitzschnelle CAD-Downloads und interaktive Produktkonfiguratoren.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <Wrench className="w-10 h-10 text-amber-600 mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-slate-900 mb-3">
+                2. Handwerker & Meisterbetrieb Websites
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Konversionsstarke Webdesigns für regionale Betriebe in Frohnhausen, Manderbach und
+                Eibach zur kontinuierlichen Generierung lukrativer Aufträge.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <Target className="w-10 h-10 text-amber-600 mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-slate-900 mb-3">
+                3. Local SEO & B277/A45 Dominanz
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Gezielte Suchmaschinenoptimierung für Top-Rankings in Dillenburg, Haiger, Eschenburg
+                und dem gesamten Dietzhölztal.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <Users className="w-10 h-10 text-amber-600 mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-slate-900 mb-3">4. 60s Express-Recruiting</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Bewerbungsprozesse ohne Anschreiben für maximale Bewerberzahlen unter Technikern,
+                Zerspanern und Meistern im Dillgebiet.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. LOCAL GEO-SEMANTIC CONTENT SILO */}
+      <section className="py-24 bg-[#fafafa]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <div>
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Wirtschaftsstandort Dillenburg
+            </span>
+            <h2 className="text-3xl font-bold text-slate-900 mt-2 mb-6">
+              Oranienstadt-Historie & moderne Industriekompetenz
+            </h2>
+            <p className="text-slate-700 leading-relaxed text-base">
+              Dillenburg blickt mit dem markanten <strong>Wilhelmsturm</strong> auf dem{' '}
+              <strong>Schlossberg</strong>
+              auf eine stolze Oranier-Geschichte zurück. Heute ist die Stadt ein florierendes
+              Zentrum für den modernen <strong>Werkzeugbau</strong>, die{' '}
+              <strong>Metallverarbeitung</strong> und die <strong>Kunststofftechnik</strong>. Im{' '}
+              <strong>Gewerbepark Dillfeld</strong> sowie in den Stadtteilen{' '}
+              <strong>Frohnhausen</strong>, <strong>Manderbach</strong> und{' '}
+              <strong>Niederscheld</strong>
+              produzieren hochspezialisierte Betriebe Spitzenqualität für weltweite Kunden.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-2xl font-bold text-slate-900 mb-4">
+              Direkte B277- & A45-Anbindung an Wetzlar und Siegen
+            </h3>
+            <p className="text-slate-700 leading-relaxed text-base">
+              Über die <strong>Bundesstraße B277</strong> und die <strong>A45</strong> ist unser
+              Wetzlarer Büro in unter 20 Fahrminuten direkt bei Ihnen vor Ort in Dillenburg. Wir
+              bieten Ihnen den unschätzbaren Vorteil einer direkten, persönlichen Betreuung vor Ort
+              im gesamten Dietzhölztal.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-2xl font-bold text-slate-900 mb-4">
+              Verbindlicher Festpreis auf Anfrage & Go-Live in unter 14 Tagen
+            </h3>
+            <p className="text-slate-700 leading-relaxed text-base">
+              Maximale Planungssicherheit für Ihr Projekt: Nach einer kostenlosen Bedarfsanalyse
+              erhalten Sie ein transparentes Festpreisangebot ohne versteckte Kosten.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 8. LOCAL FAQ ACCORDION */}
+      <section className="py-24 bg-white border-y border-slate-200">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Häufige Fragen
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">
+              Fragen & Antworten zu Webdesign in Dillenburg
+            </h2>
+          </div>
+
+          <div className="space-y-6">
+            <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                Wie viel kostet eine neue B2B-Website in Dillenburg?
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und
+                verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir
+                5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                Wie schnell ist eine neue Website in Dillenburg online?
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett
+                schlüsselfertig fertiggestellt und online.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                Kommen Sie für ein Beratungsgespräch direkt nach Dillenburg?
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Ja, sehr gerne. Von unserem Wetzlarer HQ aus sind wir über die B277 oder A45 in
+                unter 20 Minuten direkt bei Ihnen vor Ort in Dillenburg, Frohnhausen oder
+                Manderbach.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                Bieten Sie auch Lösungen zur Fachkräftegewinnung im Dillgebiet?
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Ja. Wir entwickeln mobil optimierte 60-Sekunden-Bewerbungsverfahren ohne
+                Anschreiben, die die Hürde für qualifizierte Fachkräfte drastisch senken.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                Wer ist unser fester Ansprechpartner?
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 9. BOTTOM CTA */}
+      <section className="py-20 bg-slate-50/80 border-t border-slate-200 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-6">
+            Bereit für mehr B2B-Kunden & Fachkräfte in Dillenburg?
+          </h2>
+          <p className="text-slate-600 text-base sm:text-lg mb-10 max-w-2xl mx-auto">
+            Vereinbaren Sie jetzt ein unverbindliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
+            Emre Tezgel.
+          </p>
+          <Link href="/contact">
+            <Button
+              variant="primary"
+              size="lg"
+              className="bg-primary-700 hover:bg-primary-800 text-white font-bold px-10 py-5 text-lg shadow-xl shadow-primary-700/25 transition-all hover:scale-105"
+            >
+              Kostenloses Erstgespräch anfordern
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+          </Link>
+        </div>
+      </section>
+    </div>
   );
 }

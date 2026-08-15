@@ -1,0 +1,107 @@
+{
+  "target": "landkreis-lahn-dill",
+  "displayName": "Lahn-Dill-Kreis",
+  "type": "region",
+  "meta": {
+    "title": "Webdesign Lahn-Dill-Kreis | Regionale Webagentur · Coday",
+    "description": "Ihre lokale Webagentur für den Lahn-Dill-Kreis. High-Performance Websites & SEO für Mittelstand & Handwerk in Wetzlar, Herborn & Dillenburg. Festpreise."
+  },
+  "hero": {
+    "headline": "Webdesign Lahn-Dill-Kreis: Next.js Performance für Industrie, Handwerk & Mittelstand",
+    "subheadline": "Ihre lokale High-End Webagentur mit Sitz in Wetzlar für alle 23 Städte & Gemeinden.",
+    "description": "Maßgeschneiderte Webentwicklung, subsekundäre Ladezeiten unter 500ms und automatisierte B2B-Leads für Unternehmen im Lahn-Dill-Kreis. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+  },
+  "localDominance": {
+    "title": "Digitale Vorherrschaft für den Lahn-Dill-Kreis",
+    "description": "Der Lahn-Dill-Kreis ist ein industrielles Kraftzentrum Hessens mit weltmarktführender Optik- und Feinmechanikindustrie in Wetzlar, innovativem Schaltanlagen-, Kaltwalz- und Werkzeugbau im Dilltal (Herborn, Dillenburg, Haiger) sowie starkem Handwerk entlang der Lahn und im Hinterland. Wir bauen digitale Plattformen, die regional und global Marktführerschaft sichern.",
+    "points": [
+      "Optik & Photonik Wetzlar: Repräsentative, international skalierbare Webportale für Spitzentechnologie und Sensorik.",
+      "Schaltschrankbau & Werkzeugbau Dilltal: Performante B2B-Plattformen für den industriellen Mittelstand an der A45.",
+      "Handwerk & Bauwirtschaft: Lokale Dominanz mit mobilen 60-Sekunden-Recruiting-Funnels für Fachkräfte.",
+      "Heimvorteil & 24h-Support: Gründer Umutcan Emre Tezgel sitzt direkt vor Ort in Wetzlar.",
+      "Next.js als SEO-Katalysator: 100/100 Google Core Web Vitals für Spitzenrankings im gesamten Landkreis.",
+      "Inhabergeführt & Festpreis: Verbindliche Angebote ohne teuren Großagentur-Wasserkopf."
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "B2B- & Industrie-Webportale für Optik, Feinmechanik & Maschinenbau",
+      "content": "Next.js 15, moderne Produktkonfiguratoren und internationale Mehrsprachigkeit für Wetzlar und das Dilltal."
+    },
+    {
+      "title": "Handwerks- & Meisterbetrieb-Websites für den gesamten Landkreis",
+      "content": "Echte Leadgenerierung, schnelle Ladezeiten und automatisierte Mitarbeiter-Bewerbungsstrecken."
+    },
+    {
+      "title": "Local SEO Dominanz im Lahn-Dill-Kreis",
+      "content": "Spitzenrankings in Wetzlar, Herborn, Dillenburg, Haiger, Braunfels, Solms, Aßlar und allen weiteren Kommunen."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wie viel kostet eine neue Website im Lahn-Dill-Kreis?",
+      "a": "Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance."
+    },
+    {
+      "q": "Wie schnell ist eine neue Website im Lahn-Dill-Kreis online?",
+      "a": "In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online."
+    },
+    {
+      "q": "Kommen Sie für ein Beratungsgespräch direkt zu uns in den Betrieb?",
+      "a": "Ja, selbstverständlich. Da Coday seinen Sitz direkt in Wetzlar hat, sind wir in wenigen Minuten bei Ihnen vor Ort – ob in Herborn, Dillenburg, Haiger, Braunfels oder Ehringshausen."
+    },
+    {
+      "q": "Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?",
+      "a": "Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet."
+    },
+    {
+      "q": "Wer ist unser fester Ansprechpartner?",
+      "a": "Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support."
+    }
+  ],
+  "meta_en": {
+    "title": "Web Design Lahn-Dill District | Regional Web Agency · Coday",
+    "description": "Your local web agency for the Lahn-Dill district. High-performance websites & SEO for SME & trade in Wetzlar, Herborn & Dillenburg. Fixed prices."
+  },
+  "hero_en": {
+    "headline": "Web Design Lahn-Dill District: Next.js Performance for Industry & Trade",
+    "subheadline": "Your local high-end web agency based in Wetzlar for all 23 municipalities.",
+    "description": "Custom Next.js web applications for the Lahn-Dill region. Fixed price upon request."
+  },
+  "localDominance_en": {
+    "title": "Digital Dominance for the Lahn-Dill District",
+    "description": "The Lahn-Dill district is an industrial powerhouse with world-leading optics in Wetzlar, enclosure manufacturing in the Dill valley, and skilled crafts. We build fast, high-performance web systems.",
+    "points": [
+      "Optics & Photonics Wetzlar: Scalable web portals for high-tech leaders.",
+      "Enclosure & Toolmaking Dill Valley: High-converting B2B platforms along the A45.",
+      "Crafts & Construction: Local SEO and mobile 60-second recruitment funnels.",
+      "Local HQ in Wetzlar: Direct personal founder support.",
+      "SEO Leadership: 100/100 Core Web Vitals for top search visibility.",
+      "Direct Founder Access: Transparent fixed pricing without agency overhead."
+    ]
+  },
+  "contentSections_en": [
+    {
+      "title": "B2B & Industrial Web Portals for Optics & Engineering",
+      "content": "Next.js 15, interactive catalogs, and international multilingual support."
+    },
+    {
+      "title": "Trade & Construction Platforms across Lahn-Dill",
+      "content": "Rapid load times, local search domination, and lead generation."
+    }
+  ],
+  "faq_en": [
+    {
+      "q": "How much does a professional website in the Lahn-Dill district cost?",
+      "a": "Binding fixed price on request following a free audit. 5-10x more cost-effective than traditional agencies."
+    },
+    {
+      "q": "How long does implementation take?",
+      "a": "Turnkey delivery within 10 to 14 business days."
+    },
+    {
+      "q": "Do you meet on-site in the Lahn-Dill region?",
+      "a": "Yes, our HQ is in Wetzlar, so we can be on-site across the entire district in minutes."
+    }
+  ]
+}

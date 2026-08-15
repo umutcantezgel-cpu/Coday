@@ -296,99 +296,21 @@ export const getNavItems = (): NavItem[] => [
           },
         ],
       },
-    ],
-  },
-  {
-    label: 'nav.industries.label',
-    bgColor: 'var(--color-primary-900)',
-    textColor: 'var(--color-text-inverse)',
-    groups: [
       {
-        title: 'nav.industries.automotive.title',
-        links: [
-          {
-            label: 'nav.industries.automotive.overview',
-            href: '/branchen/automobil',
-            desc: 'nav.industries.automotive.desc',
-          },
-          {
-            label: 'nav.industries.automotive.werkstatt',
-            href: '/branchen/automobil/kfz-werkstatt',
-          },
-          {
-            label: 'nav.industries.automotive.mechatroniker',
-            href: '/branchen/automobil/kfz-mechatroniker',
-          },
-          {
-            label: 'nav.industries.automotive.haendler',
-            href: '/branchen/automobil/autohaendler',
-          },
-        ],
-      },
-      {
-        title: 'nav.industries.healthcare.title',
-        links: [
-          {
-            label: 'nav.industries.healthcare.overview',
-            href: '/branchen/gesundheitswesen',
-            desc: 'nav.industries.healthcare.desc',
-          },
-
-          {
-            label: 'nav.industries.healthcare.wetzlar',
-            href: '/branchen/gesundheitswesen/arzt-wetzlar',
-          },
-          {
-            label: 'nav.industries.healthcare.giessen',
-            href: '/branchen/gesundheitswesen/arzt-giessen',
-          },
-        ],
-      },
-      {
-        title: 'nav.industries.crafts.title',
-        links: [
-          {
-            label: 'nav.industries.crafts.overview',
-            href: '/branchen/handwerker',
-            desc: 'nav.industries.crafts.desc',
-          },
-
-          {
-            label: 'nav.industries.crafts.wetzlar',
-            href: '/branchen/handwerker/wetzlar',
-          },
-        ],
-      },
-      {
-        title: 'nav.industries.other.title',
+        title: 'nav.industries.label',
         links: [
           { label: 'nav.industries.other.overview', href: '/branchen' },
-          {
-            label: 'nav.industries.other.real_estate_agent',
-            href: '/branchen/immobilien',
-          },
-          {
-            label: 'nav.industries.other.gastronomy_hotel',
-            href: '/branchen/gastronomie',
-          },
-          {
-            label: 'nav.industries.other.consulting',
-            href: '/branchen/unternehmensberatung',
-          },
-          {
-            label: 'nav.industries.other.lawyers',
-            href: '/branchen/anwaelte-kanzleien',
-          },
+          { label: 'nav.industries.automotive.overview', href: '/branchen/automobil' },
+          { label: 'nav.industries.healthcare.overview', href: '/branchen/gesundheitswesen' },
+          { label: 'nav.industries.crafts.overview', href: '/branchen/handwerker' },
+          { label: 'nav.industries.other.real_estate_agent', href: '/branchen/immobilien' },
+          { label: 'nav.industries.other.gastronomy_hotel', href: '/branchen/gastronomie' },
+          { label: 'nav.industries.other.consulting', href: '/branchen/unternehmensberatung' },
+          { label: 'nav.industries.other.lawyers', href: '/branchen/anwaelte-kanzleien' },
           { label: 'nav.industries.other.startups', href: '/branchen/startups-tech' },
           { label: 'nav.industries.other.retail', href: '/branchen/retail' },
-          {
-            label: 'nav.industries.other.public_sector',
-            href: '/branchen/public-sector',
-          },
-          {
-            label: 'nav.industries.other.dienstleistung',
-            href: '/branchen/dienstleistung',
-          },
+          { label: 'nav.industries.other.public_sector', href: '/branchen/public-sector' },
+          { label: 'nav.industries.other.dienstleistung', href: '/branchen/dienstleistung' },
         ],
       },
     ],

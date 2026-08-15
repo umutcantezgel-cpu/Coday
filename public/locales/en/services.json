@@ -583,6 +583,7 @@
     }
   },
   "headless_cms_page": {
+    "long_description": "Traditional monolithic systems increasingly restrict the flexibility and scalability of modern digital products. A headless CMS architecture decouples the backend from the frontend, granting developers complete design freedom while enabling content teams to manage assets centrally and distribute them seamlessly across any channel, from websites to native mobile apps.\\n\\nWe implement market-leading headless platforms such as Sanity, Contentful, and Strapi, connecting them via high-performance GraphQL or REST APIs to cutting-edge Next.js and React frontends. This combination of an ultra-fast framework and flexible content management delivers blazing load times, stellar Core Web Vitals, and an unmatched user experience.\\n\\nBy leveraging Server-Side Rendering (SSR) and edge caching, we ensure your content is globally accessible within milliseconds. This modern architecture is not only highly secure and GDPR-compliant, but also provides the ideal future-proof foundation for boundless business growth and omnichannel excellence.",
     "cms_comparison": {
       "contentful": {
         "badge": "premium Choice",
@@ -1133,10 +1134,6 @@
         "Regular Penetration Tests"
       ],
       "title": "Security is not a feature,\nbut the foundation."
-    },
-    "meta": {
-      "title": "Web App & SaaS Development | Coday Agency",
-      "description": "Custom web applications, internal tools, and SaaS solutions. Secure, scalable, and built with modern cloud technologies."
     },
     "seoText": {
       "title": "Digital Excellence for Your Success",
@@ -2073,6 +2070,7 @@
     }
   },
   "web_development_page": {
+    "long_description": "Custom web development is far more than just writing code; it is the technical foundation for your business success in the digital realm. We engineer high-performance, future-proof digital products characterized by technical excellence, ultra-fast loading speeds, and outstanding usability.\\n\\nOur tech stack is built upon proven industry standards and modern frameworks such as React, Next.js, TypeScript, and Tailwind CSS. This combination allows us to construct complex architectures and serverless infrastructures that remain completely stable even during peak traffic spikes, achieve exceptional Core Web Vitals, and significantly reduce server overhead through intelligent edge computing.\\n\\nA strict API-first approach ensures that your platform integrates seamlessly into existing ecosystems and remains flexibly extensible with third-party systems. The result is a highly secure, maintainable, and scalable web solution that not only maximizes your current conversion rate but also positions your company at the forefront of your industry.",
     "hero": {
       "label": "Headless Web Development",
       "title_anim": "Handcrafted ",
@@ -2164,6 +2162,34 @@
         "title": "Code Quality Simulator"
       }
     },
+    "security": {
+      "items": {
+        "owasp": {
+          "title": "OWASP Top 10",
+          "value": "Complete Protection"
+        },
+        "ssl": {
+          "title": "Encryption",
+          "value": "TLS 1.3 / SSL"
+        },
+        "ddos": {
+          "title": "DDoS Protection",
+          "value": "Edge Network"
+        },
+        "sql": {
+          "title": "Database",
+          "value": "Injection Protection"
+        },
+        "xss": {
+          "title": "Cross-Site",
+          "value": "XSS & CSRF Secure"
+        },
+        "csrf": {
+          "title": "Auth",
+          "value": "Secure Sessions"
+        }
+      }
+    },
     "seoText": {
       "title": "Web Development Agency Wetzlar | Coday",
       "content": "Professional web development with future-proof technologies for high-performance digital solutions.",
@@ -2184,16 +2210,16 @@
     "description": "As a solo agency, I work directly with you, without project managers or miscommunication. You receive custom solutions based on the latest web technologies that deliver real results. From initial concept to final launch.",
     "steps": {
       "01": {
-        "title": "title",
-        "desc": "desc"
+        "title": "Analysis & Strategy",
+        "desc": "In-depth understanding of your business goals. No rigid templates, but well-founded architectural decisions."
       },
       "02": {
-        "title": "title",
-        "desc": "desc"
+        "title": "Design & Development",
+        "desc": "High-performance implementation with Next.js and React. Pixel-perfect design that builds trust and converts."
       },
       "03": {
-        "title": "title",
-        "desc": "desc"
+        "title": "Launch & Scaling",
+        "desc": "Seamless deployment, technical SEO optimization, and continuous performance monitoring."
       }
     }
   },

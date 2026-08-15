@@ -106,7 +106,7 @@ export const ServicesSection: React.FC = () => {
                   </div>
 
                   <div className="flex items-center text-primary font-bold tracking-wide uppercase text-sm mt-auto transition motion-reduce:duration-[0.01ms] duration-300 group-hover:tracking-wider relative z-40">
-                    {t(`services.items.${service.id}.title`, { defaultValue: service.id })} ansehen
+                    {tCommon('actions.read_more')}
                     <OptimizedIcon
                       icon={ArrowRight}
                       weight="bold"

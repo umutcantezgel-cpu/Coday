@@ -1,0 +1,107 @@
+{
+  "target": "landkreis-limburg-weilburg",
+  "displayName": "Landkreis Limburg-Weilburg",
+  "type": "region",
+  "meta": {
+    "title": "Webdesign Landkreis Limburg-Weilburg | Agentur · Coday",
+    "description": "Webagentur für den Landkreis Limburg-Weilburg. Next.js Websites & SEO für Limburg, Weilburg, Bad Camberg & das Lahntal. Festpreise auf Anfrage."
+  },
+  "hero": {
+    "headline": "Webdesign Landkreis Limburg-Weilburg: Next.js Performance für Großhandel, Industrie & Gesundheit",
+    "subheadline": "Ihre lokale High-End Webagentur für Limburg, Weilburg, Bad Camberg, Hadamar und das gesamte Lahntal.",
+    "description": "Maßgeschneiderte Webentwicklung, subsekundäre Ladezeiten unter 500ms und automatisierte B2B-Leads für Unternehmen im Landkreis Limburg-Weilburg. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+  },
+  "localDominance": {
+    "title": "Digitale Vorherrschaft für den Landkreis Limburg-Weilburg",
+    "description": "Der Landkreis Limburg-Weilburg verbindet die ICE- und Handelsdrehscheibe Limburg an der Lahn (Großhandel, Logistik, A3) mit traditionsreichem Maschinenbau und Tourismus in Weilburg sowie renommierten Kliniken und Gesundheitszentren in Bad Camberg. Wir bauen digitale Plattformen, die regionalen Marktführern und Mittelständlern messbare Wettbewerbsvorteile verschaffen.",
+    "points": [
+      "Großhandel & Logistik: Hochperformante B2B-Webportale für Limburg und die ICE-City.",
+      "Maschinenbau & Medizintechnik: Skalierbare Produktkataloge und Lead-Funnels für Weilburg und Löhnberg.",
+      "Kliniken & Reha: Barrierefreie, DSGVO-konforme Patientenportale für Bad Camberg und den Goldenen Grund.",
+      "25 Min Direkt vor Ort: Schnelle Erreichbarkeit über die B49 direkt aus unserem Wetzlarer HQ.",
+      "Next.js als SEO-Katalysator: 100/100 Google Core Web Vitals für Spitzenrankings im gesamten Landkreis.",
+      "Inhabergeführt & Festpreis: Direkter Entwickler-Kontakt mit Umutcan Emre Tezgel ohne teuren Großagentur-Overhead."
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "B2B- & Großhandels-Websites für Limburg & ICE-City",
+      "content": "Enterprise-Architekturen, subsekundäre Ladezeiten und DSGVO-Konformität für Logistiker und Großhändler."
+    },
+    {
+      "title": "Industrie- & Medizintechnik-Portale für Weilburg & Bad Camberg",
+      "content": "Echte Leadgenerierung, interaktive Produkt-Filter und 60-Sekunden-Express-Recruiting für Fachkräfte."
+    },
+    {
+      "title": "Local SEO Dominanz im Landkreis Limburg-Weilburg",
+      "content": "Spitzenrankings in Limburg, Weilburg, Bad Camberg, Hadamar, Elz, Beselich und allen 15 Kommunen."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wie viel kostet eine neue Website im Landkreis Limburg-Weilburg?",
+      "a": "Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance."
+    },
+    {
+      "q": "Wie schnell ist eine neue Website im Landkreis Limburg-Weilburg online?",
+      "a": "In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online."
+    },
+    {
+      "q": "Kommen Sie für ein Beratungsgespräch direkt zu uns in den Betrieb?",
+      "a": "Ja, selbstverständlich. Über die B49 sind wir von unserem Wetzlarer HQ in rund 25 Minuten direkt bei Ihnen vor Ort in Limburg, Weilburg, Hadamar oder Bad Camberg."
+    },
+    {
+      "q": "Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?",
+      "a": "Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet."
+    },
+    {
+      "q": "Wer ist unser fester Ansprechpartner?",
+      "a": "Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support."
+    }
+  ],
+  "meta_en": {
+    "title": "Web Design Limburg-Weilburg District | Agency · Coday",
+    "description": "Web agency for the Limburg-Weilburg district. Next.js websites & SEO for Limburg, Weilburg, Bad Camberg & the Lahn valley. Fixed prices on request."
+  },
+  "hero_en": {
+    "headline": "Web Design Limburg-Weilburg: Next.js Performance for Wholesale, Industry & Healthcare",
+    "subheadline": "Your local high-end web agency for Limburg, Weilburg, Bad Camberg, Hadamar, and the Lahn valley.",
+    "description": "Custom Next.js web applications for the Limburg-Weilburg district. Fixed price upon request."
+  },
+  "localDominance_en": {
+    "title": "Digital Dominance for the Limburg-Weilburg District",
+    "description": "The district connects the ICE commercial hub of Limburg an der Lahn with mechanical engineering in Weilburg and renowned healthcare clinics in Bad Camberg. We build fast, high-performance web systems.",
+    "points": [
+      "Wholesale & Logistics Portals: High-security systems for Limburg and the ICE hub.",
+      "Engineering & MedTech: Product showcases and lead generation for Weilburg.",
+      "Clinics & Healthcare: Fast, WCAG-compliant portals for Bad Camberg.",
+      "25 Minutes On-Site: Fast direct connection via B49.",
+      "SEO Leadership: 100/100 Core Web Vitals for top search visibility.",
+      "Direct Founder Access: Transparent fixed pricing without agency overhead."
+    ]
+  },
+  "contentSections_en": [
+    {
+      "title": "Wholesale & Logistics Portals in Limburg",
+      "content": "Enterprise-grade performance and uncompromising data security for logistics hubs."
+    },
+    {
+      "title": "Industrial Platforms in Weilburg & Bad Camberg",
+      "content": "Sub-500ms load times and seamless lead capture."
+    }
+  ],
+  "faq_en": [
+    {
+      "q": "How much does a professional website in the Limburg-Weilburg district cost?",
+      "a": "Binding fixed price on request following a free audit. 5-10x more cost-effective than traditional agencies."
+    },
+    {
+      "q": "How long does implementation take?",
+      "a": "Turnkey delivery within 10 to 14 business days."
+    },
+    {
+      "q": "Do you meet on-site in the Limburg-Weilburg district?",
+      "a": "Yes, via the B49 we can be on-site across the district in around 25 minutes."
+    }
+  ]
+}

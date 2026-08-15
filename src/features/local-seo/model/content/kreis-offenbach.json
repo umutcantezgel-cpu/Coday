@@ -1,0 +1,107 @@
+{
+  "target": "kreis-offenbach",
+  "displayName": "Kreis Offenbach",
+  "type": "region",
+  "meta": {
+    "title": "Webdesign Kreis Offenbach | Webagentur & SEO · Coday",
+    "description": "Professionelles Webdesign im Kreis Offenbach. Ultraschnelle Websites für Rodgau, Dietzenbach, Dreieich & Neu-Isenburg. Verbindlicher Festpreis auf Anfrage."
+  },
+  "hero": {
+    "headline": "Webdesign Kreis Offenbach: Next.js Performance für Handwerk, B2B & Mittelstand",
+    "subheadline": "Ihre regionale High-End Webagentur für Rodgau, Dietzenbach, Dreieich, Neu-Isenburg und den gesamten Kreis.",
+    "description": "Maßgeschneiderte Webentwicklung, subsekundäre Ladezeiten unter 500ms und automatisierte B2B-Leads für Unternehmen im Kreis Offenbach. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+  },
+  "localDominance": {
+    "title": "Digitale Vorherrschaft für den Kreis Offenbach",
+    "description": "Der Kreis Offenbach ist einer der dynamischsten Wirtschaftsräume im Rhein-Main-Gebiet: Von den prosperierenden Gewerbegebieten in Rodgau und Dietzenbach über internationale Unternehmenszentralen in Neu-Isenburg und Dreieich bis zu High-Tech und Aviation in Langen (DFS). Wir bauen digitale Plattformen, die messbar regionale und überregionale Kunden gewinnen.",
+    "points": [
+      "Handwerk & Meisterbetriebe: Conversion-starke Websites mit 60-Sekunden-Express-Recruiting in Rodgau, Dietzenbach und Seligenstadt.",
+      "Corporate & Airport-City: Enterprise-Architekturen und höchste Datensicherheit für Neu-Isenburg und Dreieich.",
+      "Aviation, Pharma & MedTech: Skalierbare Next.js Systeme für Unternehmen und Institute in Langen.",
+      "40 Min Direkt vor Ort: Schnelle Erreichbarkeit über A3, A5 und A661.",
+      "Next.js als SEO-Katalysator: 100/100 Google Core Web Vitals für Spitzenrankings im Kreis Offenbach.",
+      "Inhabergeführt & Festpreis: Direkter Entwickler-Kontakt mit Umutcan Emre Tezgel ohne teuren Großagentur-Overhead."
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "B2B- & Handwerks-Websites für Rodgau & Dietzenbach",
+      "content": "Echte Leadgenerierung, schnelle Ladezeiten und automatisierte Fachkräfte-Recruitingstrecken für regionale Mittelständler."
+    },
+    {
+      "title": "Corporate- & IT-Plattformen für Neu-Isenburg & Dreieich",
+      "content": "Maximale Performance, subsekundäre Ladezeiten und DSGVO-Konformität im direkten Flughafen-Umfeld."
+    },
+    {
+      "title": "Local SEO Dominanz im Kreis Offenbach",
+      "content": "Spitzenrankings in Rodgau, Dietzenbach, Dreieich, Neu-Isenburg, Langen, Seligenstadt und allen 13 Kommunen."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wie viel kostet eine neue Website im Kreis Offenbach?",
+      "a": "Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance."
+    },
+    {
+      "q": "Wie schnell ist eine neue Website im Kreis Offenbach online?",
+      "a": "In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online."
+    },
+    {
+      "q": "Kommen Sie für ein Beratungsgespräch direkt zu uns in den Betrieb?",
+      "a": "Ja, selbstverständlich. Über die A5 oder A3/A661 sind wir von unserem Wetzlarer HQ in rund 40 Minuten direkt bei Ihnen vor Ort in Rodgau, Dietzenbach, Dreieich oder Neu-Isenburg."
+    },
+    {
+      "q": "Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?",
+      "a": "Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet."
+    },
+    {
+      "q": "Wer ist unser fester Ansprechpartner?",
+      "a": "Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support."
+    }
+  ],
+  "meta_en": {
+    "title": "Web Design Offenbach District | Web Agency & SEO · Coday",
+    "description": "Professional web design in the Offenbach district. Ultra-fast websites for Rodgau, Dietzenbach, Dreieich & Neu-Isenburg. Fixed prices on request."
+  },
+  "hero_en": {
+    "headline": "Web Design Offenbach District: Next.js Performance for Trade, B2B & SME",
+    "subheadline": "Your regional high-end web agency for Rodgau, Dietzenbach, Dreieich, Neu-Isenburg, and the entire district.",
+    "description": "Custom Next.js web applications for the Offenbach district. Fixed price upon request."
+  },
+  "localDominance_en": {
+    "title": "Digital Dominance for the Offenbach District",
+    "description": "The Offenbach district combines booming trade in Rodgau and Dietzenbach with international corporate hubs in Neu-Isenburg and Dreieich. We build fast, high-performance web systems.",
+    "points": [
+      "Crafts & Trade: High-converting websites with mobile 60-second recruiting funnels in Rodgau & Dietzenbach.",
+      "Corporate & Airport Hubs: Secure, enterprise-grade digital systems in Neu-Isenburg.",
+      "Aviation & MedTech: Scalable platforms for engineering leaders in Langen.",
+      "40 Minutes On-Site: Fast direct connection via A3/A5/A661.",
+      "SEO Leadership: 100/100 Core Web Vitals for top search visibility.",
+      "Direct Founder Access: Transparent fixed pricing without agency overhead."
+    ]
+  },
+  "contentSections_en": [
+    {
+      "title": "Trade & SME Platforms in Rodgau & Dietzenbach",
+      "content": "Rapid load times, local search domination, and lead generation."
+    },
+    {
+      "title": "Corporate & Tech Experiences in Neu-Isenburg & Dreieich",
+      "content": "Sub-500ms load times and seamless lead capture."
+    }
+  ],
+  "faq_en": [
+    {
+      "q": "How much does a professional website in the Offenbach district cost?",
+      "a": "Binding fixed price on request following a free audit. 5-10x more cost-effective than traditional agencies."
+    },
+    {
+      "q": "How long does implementation take?",
+      "a": "Turnkey delivery within 10 to 14 business days."
+    },
+    {
+      "q": "Do you meet on-site in the Offenbach district?",
+      "a": "Yes, via the A3/A5/A661 we can be on-site across the district in around 40 minutes."
+    }
+  ]
+}

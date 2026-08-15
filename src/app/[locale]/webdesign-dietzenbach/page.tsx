@@ -5,6 +5,7 @@ import { setRequestLocale } from 'next-intl/server';
 import { BASE_URL, getOrganizationSchema } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
+import { TrustBar } from '@/shared/ui/TrustBar';
 import {
   ArrowRight,
   Lightning,
@@ -19,6 +20,16 @@ import {
   Cpu,
   Package,
   Scales,
+  Truck,
+  Wrench,
+  ChartBar,
+  Star,
+  MapPin,
+  DeviceMobile,
+  Target,
+  FileCode,
+  Globe,
+  CaretRight,
 } from '@phosphor-icons/react/dist/ssr';
 
 export const dynamic = 'force-static';
@@ -31,17 +42,17 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Design Dietzenbach & Dreieich | Coday Webagency',
+      title: 'Web Design Dietzenbach | Web Agency & SEO · Coday',
       description:
-        'Custom web design & Next.js development in Dietzenbach, Dreieich & Neu-Isenburg. 100/100 PageSpeed, top design & B2B leads. Request your free consultation now!',
+        'Web design & development in Dietzenbach. Fast load times, top Google rankings for trade, logistics & craft. Binding fixed price on request.',
       path: '/en/webdesign-dietzenbach',
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'Webdesign Dietzenbach & Dreieich | Coday Webagentur',
+    title: 'Webdesign Dietzenbach | Webagentur & SEO · Coday',
     description:
-      'Maßgeschneidertes Webdesign & Next.js Webentwicklung in Dietzenbach & Dreieich. 100/100 PageSpeed, Top-Design & Leads. Jetzt anfragen!',
+      'Webdesign & Webentwicklung in Dietzenbach. Schnelle Ladezeiten, top Google-Rankings für Gewerbe, Logistik & Handwerk. Verbindlicher Festpreis auf Anfrage.',
     path: '/de/webdesign-dietzenbach',
     type: 'money',
   });
@@ -63,7 +74,7 @@ export default async function WebdesignDietzenbachPage({
       {
         '@type': 'LocalBusiness',
         '@id': `${BASE_URL}/${_locale}/webdesign-dietzenbach#localbusiness`,
-        name: 'Coday – High-End Webdesign & Webentwicklung Dietzenbach & Dreieich',
+        name: 'Coday – Webdesign Agentur Dietzenbach',
         url: `${BASE_URL}/${_locale}/webdesign-dietzenbach`,
         logo: `${BASE_URL}/icon.png`,
         image: `${BASE_URL}/images/og-image.jpg`,
@@ -72,7 +83,7 @@ export default async function WebdesignDietzenbachPage({
         priceRange: '€€€€',
         address: {
           '@type': 'PostalAddress',
-          streetAddress: 'Regionalbüro Dietzenbach / Dreieich / HQ Wetzlar',
+          streetAddress: 'Regionalbüro Dietzenbach / Kreis Offenbach / HQ Wetzlar',
           addressLocality: 'Wetzlar',
           postalCode: '35578',
           addressRegion: 'Hessen',
@@ -85,9 +96,9 @@ export default async function WebdesignDietzenbachPage({
         },
         areaServed: [
           { '@type': 'City', name: 'Dietzenbach' },
+          { '@type': 'AdministrativeArea', name: 'Steinberg' },
+          { '@type': 'AdministrativeArea', name: 'Hexenberg' },
           { '@type': 'City', name: 'Dreieich' },
-          { '@type': 'City', name: 'Neu-Isenburg' },
-          { '@type': 'City', name: 'Langen (Hessen)' },
           { '@type': 'City', name: 'Rödermark' },
           { '@type': 'AdministrativeArea', name: 'Kreis Offenbach' },
           { '@type': 'AdministrativeArea', name: 'Metropolregion Frankfurt Rhein-Main' },
@@ -96,84 +107,143 @@ export default async function WebdesignDietzenbachPage({
       {
         '@type': 'ProfessionalService',
         '@id': `${BASE_URL}/${_locale}/webdesign-dietzenbach#service`,
-        name: 'High-End Webdesign & B2B/Tech Webentwicklung Dietzenbach & Dreieich',
+        name: 'Gewerbe, Logistik & Handwerk Webentwicklung Dietzenbach',
         provider: {
           '@id': `${BASE_URL}/#organization`,
         },
         serviceType: [
-          'Next.js B2B Webentwicklung',
-          'IT-Systemhaus & Software-Showcase Websites',
-          'B2B-Großhandel & Medizintechnik Portale',
-          'Kanzlei- & Corporate-Websites',
-          'Core Web Vitals & Headless CMS Architektur',
+          'Gewerbe- & Großhandel Webportale',
+          'Logistik- & Distributions-Webdesign',
+          'Next.js 15 Webentwicklung',
+          'Local SEO Kreis Offenbach',
+          'Sanity Headless CMS',
         ],
         hasOfferCatalog: {
           '@type': 'OfferCatalog',
-          name: 'Entwicklungsleistungen für Dietzenbach, Dreieich & Neu-Isenburg',
+          name: 'Dienstleistungen für Dietzenbach & den Kreis Offenbach',
           itemListElement: [
             {
               '@type': 'Offer',
               itemOffered: {
                 '@type': 'Service',
-                name: 'IT-Systemhäuser & Software-Vertriebs-Portale',
+                name: 'Gewerbe & B2B Webportale',
                 description:
-                  'Entwicklung moderner Developer- und B2B-Plattformen mit kompromissloser Datensicherheit und subsekundärer Latenz.',
+                  'Performante B2B-Plattformen für Großhandel und Gewerbebetriebe im Gewerbegebiet Süd.',
               },
             },
             {
               '@type': 'Offer',
               itemOffered: {
                 '@type': 'Service',
-                name: 'B2B-Großhandel & Medizintechnik Showcases',
+                name: 'Logistik & Handwerk Websites',
                 description:
-                  'Strukturierte, intuitive Produktkataloge und geschützte Kundenbereiche für internationale Einkäufer.',
-              },
-            },
-            {
-              '@type': 'Offer',
-              itemOffered: {
-                '@type': 'Service',
-                name: 'Kanzleien & Corporate Services',
-                description:
-                  'Seriöse UI/UX-Gestaltung mit subtilen Interaktionen zur planbaren Gewinnung von Premium-Mandaten.',
+                  'Headless-Webauftritte mit 100/100 Core Web Vitals für maximale Conversion-Raten und planbare Kundenanfragen.',
               },
             },
           ],
         },
       },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: `${BASE_URL}/${_locale}`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Standorte',
+            item: `${BASE_URL}/${_locale}/standorte/hessen`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: 'Dietzenbach',
+            item: `${BASE_URL}/${_locale}/webdesign-dietzenbach`,
+          },
+        ],
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'Wie viel kostet eine neue Website in Dietzenbach?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Wie schnell ist eine neue Website in Dietzenbach online?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Kommen Sie für ein Beratungsgespräch direkt nach Dietzenbach?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Ja, sehr gerne. Über die A5 und A661 sind wir von unserem Wetzlarer HQ in unter 45 Minuten direkt bei Ihnen vor Ort im Gewerbegebiet Süd oder in Steinberg.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Wer ist unser fester Ansprechpartner?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.',
+            },
+          },
+        ],
+      },
     ],
   };
 
   return (
-    <div className="relative min-h-screen bg-slate-950 text-slate-100 selection:bg-amber-500/30 selection:text-amber-200">
+    <div className="bg-[#fafafa] text-slate-900 min-h-screen selection:bg-amber-500/20 selection:text-amber-900">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
       {/* 1. HERO SECTION */}
-      <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-950/25 via-slate-950/80 to-slate-950 pointer-events-none" />
-        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-amber-500/10 blur-[140px] rounded-full pointer-events-none" />
+      <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28 bg-[#fafafa]">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-100/40 via-white/80 to-transparent pointer-events-none" />
+        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-amber-400/10 blur-[140px] rounded-full pointer-events-none" />
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-950/40 text-amber-400 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-8 backdrop-blur-md">
-            <Sparkle className="w-4 h-4 text-amber-400" />
-            B2B-WEBENTWICKLUNG FÜR DIETZENBACH, DREIEICH & NEU-ISENBURG
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-50 text-amber-800 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-8 shadow-sm">
+            <Sparkle className="w-4 h-4 text-amber-600" />
+            GEWERBE-, LOGISTIK- & HANDWERK-WEBAGENTUR DIETZENBACH
           </div>
 
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-8 leading-[1.1]">
-            High-End Webdesign in Dietzenbach & Dreieich:{' '}
-            <span className="bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-400 bg-clip-text text-transparent">
-              100/100 PageSpeed
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 mb-8 leading-[1.1]">
+            Webdesign & Next.js Entwicklung in der Kreisstadt{' '}
+            <span className="bg-gradient-to-r from-amber-600 via-amber-700 to-teal-700 bg-clip-text text-transparent">
+              Dietzenbach
             </span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-10">
-            Wir befreien Technologieunternehmen, Großhändler und Dienstleister im Herzen des Kreises
-            Offenbach von trägen WordPress-Websites. Mit Next.js Edge-Architekturen schaffen wir
-            zukunftssichere Webauftritte mit kompromissloser Geschwindigkeit und messbarem
-            Lead-Wachstum.
+          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-10">
+            Speziell für Gewerbebetriebe, Großhändler, Logistikunternehmen und Handwerker in
+            Dietzenbach, Steinberg, Hexenberg und dem Kreis Offenbach. Subsekundäre Ladezeiten unter
+            500ms, ausdrucksstarkes B2B-Design und planbare Kundenanfragen. Verbindlicher Festpreis
+            nach kostenloser Bedarfsanalyse.
           </p>
 
           {/* CTA Buttons */}
@@ -182,9 +252,9 @@ export default async function WebdesignDietzenbachPage({
               <Button
                 variant="primary"
                 size="lg"
-                className="w-full sm:w-auto bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold px-8 py-4 text-base shadow-lg shadow-amber-500/25 transition-all hover:scale-[1.02]"
+                className="w-full sm:w-auto bg-primary-700 hover:bg-primary-800 text-white font-bold px-8 py-4 text-base shadow-lg shadow-primary-700/25 transition-all hover:scale-[1.02]"
               >
-                Kostenloses Audit anfordern
+                Kostenloses Erstgespräch anfordern
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </Link>
@@ -192,315 +262,168 @@ export default async function WebdesignDietzenbachPage({
               <Button
                 variant="secondary"
                 size="lg"
-                className="w-full sm:w-auto border-slate-700 hover:border-slate-500 bg-slate-900/60 hover:bg-slate-850 text-slate-200 px-8 py-4 text-base"
+                className="w-full sm:w-auto border-slate-300 hover:border-slate-400 bg-white hover:bg-slate-50 text-slate-700 px-8 py-4 text-base shadow-sm"
               >
-                Fallstudien ansehen
+                Dietzenbacher Referenzen ansehen
               </Button>
             </Link>
           </div>
 
           {/* Trust Badges */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-8 border-t border-slate-800/80">
-            <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800 backdrop-blur-sm">
-              <div className="text-2xl sm:text-3xl font-black text-amber-400 mb-1">100/100</div>
-              <div className="text-xs sm:text-sm text-slate-400 font-medium">Performance Score</div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-8 border-t border-slate-200">
+            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
+              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">100/100</div>
+              <div className="text-xs sm:text-sm text-slate-600 font-medium">Core Web Vitals</div>
             </div>
-            <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800 backdrop-blur-sm">
-              <div className="text-2xl sm:text-3xl font-black text-amber-400 mb-1">0%</div>
-              <div className="text-xs sm:text-sm text-slate-400 font-medium">CMS-Risiko</div>
+            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
+              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">&lt; 0.4s</div>
+              <div className="text-xs sm:text-sm text-slate-600 font-medium">Ladezeit via Edge</div>
             </div>
-            <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800 backdrop-blur-sm">
-              <div className="text-2xl sm:text-3xl font-black text-amber-400 mb-1">50 Min</div>
-              <div className="text-xs sm:text-sm text-slate-400 font-medium">Vor-Ort via A661</div>
+            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
+              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">45 Min</div>
+              <div className="text-xs sm:text-sm text-slate-600 font-medium">
+                Vor Ort via A5 / A661
+              </div>
             </div>
-            <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800 backdrop-blur-sm">
-              <div className="text-2xl sm:text-3xl font-black text-amber-400 mb-1">100%</div>
-              <div className="text-xs sm:text-sm text-slate-400 font-medium">Made in Hessen</div>
+            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
+              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">100%</div>
+              <div className="text-xs sm:text-sm text-slate-600 font-medium">
+                DSGVO & Deutsches Hosting
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 2. PAIN POINTS: IT- & VERTRIEBSSTRUKTUR DIETZENBACH & DREIEICH */}
-      <section className="py-24 bg-slate-900/50 border-y border-slate-800/80 relative">
+      {/* 2. TRUSTBAR (REAL PROOF) */}
+      <section className="border-y border-slate-200 bg-white">
+        <TrustBar />
+      </section>
+
+      {/* 3. 4-PILLAR STATS BENTO GRID */}
+      <section className="py-24 bg-[#fafafa] border-b border-slate-200 relative">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-amber-400 font-semibold tracking-wider uppercase text-xs sm:text-sm">
-              Herausforderungen im B2B- & Tech-Sektor
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Gewerbe & Performance
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2 mb-4">
-              Warum Standard-Websites die Innovationskraft von Dietzenbach & Dreieich bremsen
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">
+              Messbare Ergebnisse für Dietzenbacher Unternehmen
             </h2>
-            <p className="text-slate-400 text-base sm:text-lg">
-              Zwischen Technologieparks, internationalen Zentralen und B2B-Großhändlern entscheiden
-              Seriosität und digitale Performance über den Abschluss.
+            <p className="text-slate-600 text-base sm:text-lg">
+              Präzisionstechnologie für Gewerbe, Logistik, Großhandel und Handwerk.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-8 rounded-2xl bg-slate-950/80 border border-red-900/30 hover:border-red-500/40 transition-colors group">
-              <div className="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center text-red-400 mb-6 group-hover:scale-110 transition-transform">
-                <Cpu className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">
-                Unzureichende Tech- & Software-Präsentation
-              </h3>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                IT- und Software-Einkäufer erwarten ein modernes, reaktives Nutzererlebnis.
-                Altbackene Themes signalisieren veraltete Technologien.
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <div className="text-4xl font-black text-amber-600 mb-2">&lt; 0.4s</div>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Ladezeit in Dietzenbach</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Subsekundäre Ladezeiten für B2B-Einkäufer, Logistikpartner und mobile Kunden.
               </p>
             </div>
 
-            <div className="p-8 rounded-2xl bg-slate-950/80 border border-amber-900/30 hover:border-amber-500/40 transition-colors group">
-              <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-400 mb-6 group-hover:scale-110 transition-transform">
-                <Lightning className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">
-                Verlorene B2B-Leads durch langsame Ladezeiten
-              </h3>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                Große Produktkataloge und Datenblätter bringen herkömmliche PHP-Server ins Stocken.
-                Jede Sekunde Verzögerung senkt die Lead-Konversion spürbar.
+            <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <div className="text-4xl font-black text-amber-600 mb-2">100%</div>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Volle Rechte an Ihrem Quellcode ohne monatliche CMS-Lizenzgebühren oder
+                Lock-in-Effekte.
               </p>
             </div>
 
-            <div className="p-8 rounded-2xl bg-slate-950/80 border border-purple-900/30 hover:border-purple-500/40 transition-colors group">
-              <div className="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 mb-6 group-hover:scale-110 transition-transform">
-                <LockKey className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">
-                Sicherheitsrisiken & Wartungsaufwand
-              </h3>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                Sicherheitslücken in Drittanbieter-Plugins gefährden sensible Kundendaten. Next.js
-                eliminiert jede öffentlich erreichbare Datenbank vollständig.
+            <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <div className="text-4xl font-black text-amber-600 mb-2">24h</div>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Direkte Betreuung durch Gründer Umutcan Emre Tezgel ohne zeitraubende Hierarchien.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <div className="text-4xl font-black text-amber-600 mb-2">5-10x</div>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Kosteneffizienter</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Günstiger als traditionelle Großagenturen durch automatisierte
+                KI-Engineering-Workflows.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 3. ARCHITEKTUR: NEXT.JS EDGE VS. WORDPRESS */}
-      <section className="py-24 relative overflow-hidden">
+      {/* 4. COMPARISON TABLE: NEXT.JS VS. TRADITIONELLES WORDPRESS */}
+      <section className="py-24 bg-white relative overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-amber-400 font-semibold tracking-wider uppercase text-xs sm:text-sm">
-              Enterprise-Architektur
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Technologie-Vergleich
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2 mb-4">
-              Next.js Edge & Sanity CMS: High-End Standard für den Kreis Offenbach
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">
+              Warum Dietzenbacher Unternehmen auf Next.js setzen
             </h2>
-            <p className="text-slate-400 text-base sm:text-lg">
-              Blitzschnelle Edge-Auslieferung, absolute Stabilität und maximale Flexibilität für Ihr
-              Marketing-Team.
+            <p className="text-slate-600 text-base sm:text-lg">
+              Der direkte Vergleich zwischen klassischem WordPress und zukunftssicherer
+              Headless-Architektur.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-8 rounded-2xl bg-slate-900/60 border border-slate-800">
-              <div className="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400 mb-6">
-                <Lightning className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">Subsekundäre Ladezeiten</h3>
-              <p className="text-slate-400 text-sm leading-relaxed mb-4">
-                Unter 0,3 Sekunden Latenz. Datenblätter, Kundenbereiche und interaktive Demos laden
-                augenblicklich auf allen Endgeräten.
-              </p>
-              <div className="text-xs text-amber-400 font-semibold uppercase tracking-wider">
-                100/100 Core Web Vitals
-              </div>
-            </div>
-
-            <div className="p-8 rounded-2xl bg-slate-900/60 border border-slate-800">
-              <div className="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400 mb-6">
-                <ShieldCheck className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">Enterprise-Sicherheit</h3>
-              <p className="text-slate-400 text-sm leading-relaxed mb-4">
-                Keine angreifbare MySQL-Datenbank im Netz. Immun gegen Brute-Force, DDoS und
-                automatisierte Exploit-Skripte.
-              </p>
-              <div className="text-xs text-amber-400 font-semibold uppercase tracking-wider">
-                0% CMS Angriffsfläche
-              </div>
-            </div>
-
-            <div className="p-8 rounded-2xl bg-slate-900/60 border border-slate-800">
-              <div className="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400 mb-6">
-                <Code className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">Sanity Headless CMS</h3>
-              <p className="text-slate-400 text-sm leading-relaxed mb-4">
-                Redaktionelle Freiheit ohne Plugin-Chaos. Pflegen Sie Fallstudien, News und
-                Stellenangebote in Echtzeit über eine intuitive Oberfläche.
-              </p>
-              <div className="text-xs text-amber-400 font-semibold uppercase tracking-wider">
-                Sanity Headless CMS
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. BRANCHENLÖSUNGEN FÜR DIETZENBACH & DREIEICH */}
-      <section className="py-24 bg-slate-900/40 border-y border-slate-800/80">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-amber-400 font-semibold tracking-wider uppercase text-xs sm:text-sm">
-              Spezifische Standortcluster
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2 mb-4">
-              Digitale Maßlösungen für Dietzenbachs & Dreieichs Schlüsselbranchen
-            </h2>
-            <p className="text-slate-400 text-base sm:text-lg">
-              Präzise Architekturen für IT-Unternehmen, B2B-Großhändler und Kanzleien.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Cluster 1 */}
-            <div className="p-8 rounded-2xl bg-slate-950 border border-slate-800 flex flex-col justify-between">
-              <div>
-                <div className="text-xs font-bold text-amber-400 uppercase tracking-wider mb-2">
-                  Technologiepark Dreieich & Nord
-                </div>
-                <h3 className="text-xl font-bold text-white mb-4">
-                  IT-Systemhäuser & Software-Vertrieb
-                </h3>
-                <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                  Moderne Developer- und SaaS-Portale mit interaktiven Komponenten,
-                  API-Dokumentation und optimierten B2B-Lead-Strecken für IT-Entscheider.
-                </p>
-              </div>
-              <ul className="space-y-2.5 text-xs text-slate-300 pt-6 border-t border-slate-900">
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-amber-400 shrink-0" />
-                  Interaktive Software-Showcases
-                </li>
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-amber-400 shrink-0" />
-                  Strukturierte IT-Lösungsarchitekturen
-                </li>
-              </ul>
-            </div>
-
-            {/* Cluster 2 */}
-            <div className="p-8 rounded-2xl bg-slate-950 border border-slate-800 flex flex-col justify-between">
-              <div>
-                <div className="text-xs font-bold text-amber-400 uppercase tracking-wider mb-2">
-                  Gewerbegebiet Weibelfeld & Dreieich Plaza
-                </div>
-                <h3 className="text-xl font-bold text-white mb-4">
-                  B2B-Großhandel & Medizintechnik
-                </h3>
-                <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                  Strukturierte, blitzschnelle Produktkataloge mit flexiblen Filterfunktionen und
-                  automatisierten Anfrage-Workflows für internationale Kunden.
-                </p>
-              </div>
-              <ul className="space-y-2.5 text-xs text-slate-300 pt-6 border-t border-slate-900">
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-amber-400 shrink-0" />
-                  Subsekundäre Produktfilterung
-                </li>
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-amber-400 shrink-0" />
-                  Multi-Language & Export-Readiness
-                </li>
-              </ul>
-            </div>
-
-            {/* Cluster 3 */}
-            <div className="p-8 rounded-2xl bg-slate-950 border border-slate-800 flex flex-col justify-between">
-              <div>
-                <div className="text-xs font-bold text-amber-400 uppercase tracking-wider mb-2">
-                  Kreisstadt-Zentrum & Dreieich-Sprendlingen
-                </div>
-                <h3 className="text-xl font-bold text-white mb-4">
-                  Dienstleistungs- & Kanzleizentren
-                </h3>
-                <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                  Seriöse, vertrauensbildende Webauftritte für Wirtschaftsprüfer, Kanzleien und
-                  Finanzdienstleister mit 60-Sekunden Recruiting-Funnels.
-                </p>
-              </div>
-              <ul className="space-y-2.5 text-xs text-slate-300 pt-6 border-t border-slate-900">
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-amber-400 shrink-0" />
-                  Exklusives Kanzlei- & Corporate-Design
-                </li>
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-amber-400 shrink-0" />
-                  Mobile Fachkräfte-Gewinnung
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. PERFORMANCE VERGLEICHSTABELLE */}
-      <section className="py-24 relative">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-amber-400 font-semibold tracking-wider uppercase text-xs sm:text-sm">
-              Messbare Performance
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2 mb-4">
-              Agentur-Standard vs. Coday Next.js High-End
-            </h2>
-            <p className="text-slate-400 text-base sm:text-lg">
-              Der Technologie-Vergleich für Dietzenbach, Dreieich & den Kreis Offenbach.
-            </p>
-          </div>
-
-          <div className="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-950/80 shadow-2xl">
-            <table className="w-full text-left text-sm text-slate-300">
-              <thead className="bg-slate-900 text-xs uppercase tracking-wider text-slate-400 border-b border-slate-800">
-                <tr>
-                  <th className="p-4 sm:p-6 font-bold">Kriterium</th>
-                  <th className="p-4 sm:p-6 font-bold text-red-400">
-                    Klassische Agentur (WordPress / PHP)
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-xl">
+              <thead>
+                <tr className="border-b border-slate-200 bg-slate-50/90">
+                  <th className="p-5 text-sm font-semibold text-slate-700">Kriterium</th>
+                  <th className="p-5 text-sm font-semibold text-red-700">
+                    WordPress / Typo3 Agentur-Monolith
                   </th>
-                  <th className="p-4 sm:p-6 font-bold text-amber-400 bg-amber-950/30">
-                    Coday (Next.js / Headless)
+                  <th className="p-5 text-sm font-semibold text-amber-900 bg-amber-50/80">
+                    Coday Next.js 15 Headless Stack
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-800/60 font-medium">
-                <tr>
-                  <td className="p-4 sm:p-6 font-semibold text-white">Google PageSpeed (Mobil)</td>
-                  <td className="p-4 sm:p-6 text-red-400">30 – 55 / 100</td>
-                  <td className="p-4 sm:p-6 text-amber-400 bg-amber-950/20 font-bold">
-                    98 – 100 / 100
+              <tbody className="divide-y divide-slate-100 text-sm">
+                <tr className="hover:bg-slate-50 transition-colors">
+                  <td className="p-5 font-medium text-slate-900">Ladezeit & TTFB</td>
+                  <td className="p-5 text-slate-600">
+                    2.5s – 4.5s (Plugin-Ballast & Datenbank-Verzögerung)
+                  </td>
+                  <td className="p-5 font-bold text-amber-900 bg-amber-50/40">
+                    &lt; 0.4s (Globales deutsches Edge-CDN)
                   </td>
                 </tr>
-                <tr>
-                  <td className="p-4 sm:p-6 font-semibold text-white">Ladezeit (LCP / FCP)</td>
-                  <td className="p-4 sm:p-6 text-slate-400">3,2 – 4,8 Sekunden</td>
-                  <td className="p-4 sm:p-6 text-amber-400 bg-amber-950/20 font-bold">
-                    Unter 0,3 Sekunden
+                <tr className="hover:bg-slate-50 transition-colors">
+                  <td className="p-5 font-medium text-slate-900">Sicherheit & Compliance</td>
+                  <td className="p-5 text-slate-600">
+                    Permanente Angriffsfläche durch PHP-Plugins
+                  </td>
+                  <td className="p-5 font-bold text-amber-900 bg-amber-50/40">
+                    100% Sicher (Keine angreifbare Datenbank)
                   </td>
                 </tr>
-                <tr>
-                  <td className="p-4 sm:p-6 font-semibold text-white">Wartungsaufwand</td>
-                  <td className="p-4 sm:p-6 text-slate-400">Ständige Plugin-Updates & Brüche</td>
-                  <td className="p-4 sm:p-6 text-amber-400 bg-amber-950/20 font-bold">
-                    100% wartungsfrei & stabil
+                <tr className="hover:bg-slate-850/50 transition-colors">
+                  <td className="p-5 font-medium text-slate-900">Google Core Web Vitals</td>
+                  <td className="p-5 text-slate-600">Mäßig (Abstrafung im mobilen Suchranking)</td>
+                  <td className="p-5 font-bold text-amber-900 bg-amber-50/40">
+                    Garantiert 100/100 (Top-Rankings in Dietzenbach)
                   </td>
                 </tr>
-                <tr>
-                  <td className="p-4 sm:p-6 font-semibold text-white">Sicherheitsanfälligkeit</td>
-                  <td className="p-4 sm:p-6 text-red-400">Hohes Angriffsrisiko durch Plugins</td>
-                  <td className="p-4 sm:p-6 text-amber-400 bg-amber-950/20 font-bold">
-                    0% Angriffsfläche (Edge Static)
+                <tr className="hover:bg-slate-850/50 transition-colors">
+                  <td className="p-5 font-medium text-slate-900">Support & Betreuung</td>
+                  <td className="p-5 text-slate-600">
+                    Anonyme Ticketsysteme & wechselnde Account Manager
+                  </td>
+                  <td className="p-5 font-bold text-amber-900 bg-amber-50/40">
+                    Direkter Entwickler-Kontakt in Hessen
                   </td>
                 </tr>
-                <tr>
-                  <td className="p-4 sm:p-6 font-semibold text-white">Lead-Konversion</td>
-                  <td className="p-4 sm:p-6 text-slate-400">Generische Kontaktformulare</td>
-                  <td className="p-4 sm:p-6 text-amber-400 bg-amber-950/20 font-bold">
-                    Optimierte 3-Schritte Funnels
+                <tr className="hover:bg-slate-850/50 transition-colors">
+                  <td className="p-5 font-medium text-slate-900">Preisstruktur</td>
+                  <td className="p-5 text-slate-600">
+                    Fünfstellige Stundensätze & monatliche Retainer
+                  </td>
+                  <td className="p-5 font-bold text-amber-900 bg-amber-50/40">
+                    Verbindlicher Festpreis auf Anfrage
                   </td>
                 </tr>
               </tbody>
@@ -509,255 +432,242 @@ export default async function WebdesignDietzenbachPage({
         </div>
       </section>
 
-      {/* 6. PROXIMITY & TRUST: DIETZENBACH/DREIEICH-WETZLAR */}
-      <section className="py-24 bg-slate-900/60 border-y border-slate-800/80">
+      {/* 5. FOUNDER PHILOSOPHY BLOCK */}
+      <section className="py-24 bg-[#fafafa] border-y border-slate-200">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <span className="text-amber-400 font-semibold tracking-wider uppercase text-xs sm:text-sm">
-                Direktachse über A5 / A661
+          <div className="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200 shadow-xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-amber-400/5 blur-[100px] rounded-full pointer-events-none" />
+            <div className="relative z-10">
+              <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+                Inhabergeführte Betreuung
               </span>
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2 mb-6">
-                In 50 Minuten vor Ort in Dietzenbach & Dreieich
+              <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 mt-2 mb-6">
+                Echtes Handwerk statt Agentur-Overhead für Dietzenbach
               </h2>
-              <p className="text-slate-300 text-base leading-relaxed mb-6">
-                Über die A5 und A661 erreichen wir Dietzenbach und Dreieich in rund 50 Minuten ab HQ
-                Wetzlar. Wir stehen Ihnen persönlich bei Strategiegesprächen im Technologiepark
-                Dreieich oder im Gewerbegebiet Dietzenbach Nord zur Seite.
+              <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-6">
+                Bei Coday arbeiten Sie direkt mit mir – <strong>Umutcan Emre Tezgel</strong>. Als
+                spezialisierter Solo-Entwickler mit Sitz in Wetzlar baue ich Ihre Webpräsenz für
+                Dietzenbach, Steinberg, Hexenberg und den Kreis Offenbach: Technisch perfekt,
+                ausdrucksstark und wirtschaftlich 5–10x effizienter als traditionelle
+                Agentur-Wasserköpfe.
               </p>
-              <p className="text-slate-400 text-sm leading-relaxed mb-8">
-                Sie arbeiten direkt mit dem Inhaber und leitenden Software-Architekten Umutcan Emre
-                Tezgel zusammen – ohne Agentur-Wasserkopf, mit voller technischer Expertise und zum
-                garantierten Festpreis.
-              </p>
-
-              <div className="space-y-3">
-                <div className="flex items-center gap-3 text-sm text-slate-200">
-                  <CheckCircle className="w-5 h-5 text-amber-400 shrink-0" />
-                  <span>Persönliche Betreuung in Dietzenbach, Dreieich & Neu-Isenburg</span>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-slate-200 text-sm">
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
+                  <span className="text-slate-700">Direkter Entwickler-Kontakt</span>
                 </div>
-                <div className="flex items-center gap-3 text-sm text-slate-200">
-                  <CheckCircle className="w-5 h-5 text-amber-400 shrink-0" />
-                  <span>Direkter Draht zur technischen Leitung</span>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
+                  <span className="text-slate-700">Voller Quellcode-Besitz</span>
                 </div>
-                <div className="flex items-center gap-3 text-sm text-slate-200">
-                  <CheckCircle className="w-5 h-5 text-amber-400 shrink-0" />
-                  <span>100 % Sourcecode- und Design-Eigentum</span>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
+                  <span className="text-slate-700">5-10x günstiger als Großagenturen</span>
                 </div>
-              </div>
-            </div>
-
-            <div className="p-8 rounded-2xl bg-slate-950 border border-slate-800 relative">
-              <div className="absolute top-4 right-4 text-xs font-mono text-amber-400 px-2.5 py-1 rounded bg-amber-950/60 border border-amber-800/40">
-                A661 DIREKT • 50 MIN
-              </div>
-              <h3 className="text-xl font-bold text-white mb-4">
-                Das Coday-Versprechen für Dietzenbach & Dreieich
-              </h3>
-              <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                Wir entwickeln digitale Werkzeuge, die Ihre technologische Spitzenstellung
-                unterstreichen und planbar qualifizierte Kunden und Talente gewinnen.
-              </p>
-              <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-300">
-                <div className="font-semibold text-white mb-1">
-                  Einsatzgebiet Dietzenbach & Dreieich:
-                </div>
-                Dietzenbach (Hexenberg, Steinberg, Wingertsberg), Dreieich (Sprendlingen,
-                Dreieichenhain, Götzenhain, Offenthal, Buchschlag), Neu-Isenburg, Langen & Kreis
-                Offenbach.
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 7. FINAL CTA & AUDIT FUNNEL */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <span className="text-amber-400 font-semibold tracking-wider uppercase text-xs sm:text-sm mb-3 block">
-            Kostenloses Website-Audit
-          </span>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white mb-6">
-            Bereit für den digitalen Spitzenplatz in Dietzenbach & Dreieich?
-          </h2>
-          <p className="text-slate-300 text-base sm:text-lg mb-12 max-w-2xl mx-auto leading-relaxed">
-            Lassen Sie Ihre aktuelle Website auf Core Web Vitals, Architektur-Schwachstellen und
-            Conversion-Potenziale analysieren – transparent, fundiert und unverbindlich.
-          </p>
-
-          {/* 3-Steps Box */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12 text-left">
-            <div className="p-6 rounded-xl bg-slate-900/80 border border-slate-800">
-              <div className="w-8 h-8 rounded-full bg-amber-500/20 text-amber-400 font-bold flex items-center justify-center mb-4 text-sm">
-                1
-              </div>
-              <div className="font-bold text-white text-sm mb-1">URL einreichen</div>
-              <div className="text-xs text-slate-400">
-                Senden Sie uns die Web-Adresse Ihres Unternehmens via Formular.
-              </div>
-            </div>
-            <div className="p-6 rounded-xl bg-slate-900/80 border border-slate-800">
-              <div className="w-8 h-8 rounded-full bg-amber-500/20 text-amber-400 font-bold flex items-center justify-center mb-4 text-sm">
-                2
-              </div>
-              <div className="font-bold text-white text-sm mb-1">Video-Audit erhalten</div>
-              <div className="text-xs text-slate-400">
-                10-minütige Analyse mit konkreten Handlungsschritten für Ladezeit und B2B-Leads.
-              </div>
-            </div>
-            <div className="p-6 rounded-xl bg-slate-900/80 border border-slate-800">
-              <div className="w-8 h-8 rounded-full bg-amber-500/20 text-amber-400 font-bold flex items-center justify-center mb-4 text-sm">
-                3
-              </div>
-              <div className="font-bold text-white text-sm mb-1">Strategiegespräch</div>
-              <div className="text-xs text-slate-400">
-                Persönliches Treffen in Dietzenbach / Dreieich oder online via Video-Call.
-              </div>
-            </div>
+      {/* 6. SERVICES BENTO SHOWCASE (DIETZENBACH-FOKUS) */}
+      <section className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Kernkompetenzen
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">
+              Digitale Exzellenz für Dietzenbach & den Kreis Offenbach
+            </h2>
+            <p className="text-slate-600 text-base sm:text-lg">
+              Vom Gewerbe-Portal bis zur Logistik- & Handwerker-Homepage.
+            </p>
           </div>
 
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="p-8 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <Package className="w-10 h-10 text-amber-600 mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-slate-900 mb-3">
+                1. Gewerbe- & Großhandels-Webportale
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Entwickelt für Großhändler, Zulieferer und Gewerbebetriebe im Gewerbegebiet Süd zur
+                automatisierten B2B-Leadgenerierung.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <Truck className="w-10 h-10 text-amber-600 mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-slate-900 mb-3">
+                2. Logistik- & Distributions-Plattformen
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Repräsentative Webapplikationen für Logistikdienstleister an der B459 mit direkter
+                ERP- und Kundenportal-Anbindung.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <Target className="w-10 h-10 text-amber-600 mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-slate-900 mb-3">
+                3. Local SEO & Kreis Offenbach Dominanz
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Gezielte Suchmaschinenoptimierung für Top-Rankings in Dietzenbach, Dreieich,
+                Rödermark, Neu-Isenburg und Heusenstamm.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <Wrench className="w-10 h-10 text-amber-600 mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-slate-900 mb-3">
+                4. Handwerks- & Meisterbetrieb-Auftritte
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Moderne Webauftritte für Fachbetriebe in Steinberg und Hexenberg mit 60s
+                Express-Bewerbungsfunnels für qualifizierte Fachkräfte.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. LOCAL GEO-SEMANTIC CONTENT SILO */}
+      <section className="py-24 bg-[#fafafa]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <div>
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Wirtschafts- & Kreisstadt Dietzenbach
+            </span>
+            <h2 className="text-3xl font-bold text-slate-900 mt-2 mb-6">
+              Kreisstadt des Kreises Offenbach, Gewerbegebiet Süd & B459-Achse
+            </h2>
+            <p className="text-slate-700 leading-relaxed text-base">
+              Dietzenbach ist der administrative Verwaltungssitz des{' '}
+              <strong>Kreises Offenbach</strong> und verbindet urbane Lebensqualität in{' '}
+              <strong>Steinberg</strong> und am <strong>Hexenberg</strong> mit großflächigen
+              Gewerbe- und Logistikarealen im <strong>Gewerbegebiet Süd</strong>. Über die
+              <strong>Bundesstraße B459</strong>, die <strong>Autobahn A661</strong> und die S-Bahn
+              S2 ist Dietzenbach optimal an Frankfurt und die gesamte Metropolregion Rhein-Main
+              angebunden.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-2xl font-bold text-slate-900 mb-4">
+              Direkte A5- / A661-Achse nach Wetzlar
+            </h3>
+            <p className="text-slate-700 leading-relaxed text-base">
+              Über die <strong>Bundesautobahnen A5 und A661</strong> ist unser Wetzlarer Büro in
+              rund 45 Fahrminuten direkt bei Ihnen vor Ort in Dietzenbach, Steinberg oder im
+              Gewerbegebiet Süd. Wir bieten Ihnen persönliche Betreuung auf Augenhöhe ohne
+              zeitraubende Agentur-Umwege.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-2xl font-bold text-slate-900 mb-4">
+              Verbindlicher Festpreis auf Anfrage & Go-Live in unter 14 Tagen
+            </h3>
+            <p className="text-slate-700 leading-relaxed text-base">
+              Maximale Planungssicherheit für Ihr Projekt: Nach einer kostenlosen Bedarfsanalyse
+              erhalten Sie ein transparentes Festpreisangebot ohne versteckte Kosten oder teuren
+              Agentur-Overhead.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 8. LOCAL FAQ ACCORDION */}
+      <section className="py-24 bg-white border-y border-slate-200">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Häufige Fragen
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">
+              Fragen & Antworten zu Webdesign in Dietzenbach
+            </h2>
+          </div>
+
+          <div className="space-y-6">
+            <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                Wie viel kostet eine neue Website in Dietzenbach?
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und
+                verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir
+                5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                Wie schnell ist eine neue Website in Dietzenbach online?
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett
+                schlüsselfertig fertiggestellt und online.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                Kommen Sie für ein Beratungsgespräch direkt nach Dietzenbach?
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Ja, sehr gerne. Über die A5 und A661 sind wir von unserem Wetzlarer HQ in unter 45
+                Minuten direkt bei Ihnen vor Ort im Gewerbegebiet Süd oder in Steinberg.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es
+                keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform
+                in ISO-zertifizierten deutschen Rechenzentren gehostet.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                Wer ist unser fester Ansprechpartner?
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 9. BOTTOM CTA */}
+      <section className="py-20 bg-slate-50/80 border-t border-slate-200 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-6">
+            Bereit für den digitalen Vorsprung in Dietzenbach?
+          </h2>
+          <p className="text-slate-600 text-base sm:text-lg mb-10 max-w-2xl mx-auto">
+            Vereinbaren Sie jetzt ein unverbindliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
+            Emre Tezgel.
+          </p>
           <Link href="/contact">
             <Button
               variant="primary"
               size="lg"
-              className="bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold px-10 py-5 text-lg shadow-xl shadow-amber-500/25 transition-all hover:scale-[1.02]"
+              className="bg-primary-700 hover:bg-primary-800 text-white font-bold px-10 py-5 text-lg shadow-xl shadow-primary-700/25 transition-all hover:scale-105"
             >
-              Jetzt kostenloses Audit anfordern
+              Kostenloses Erstgespräch anfordern
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </Link>
         </div>
       </section>
-
-      {/* 8. SEMANTISCHE VERLINKUNG / PROXIMITY CROSS-LINKS */}
-      <footer className="py-16 bg-slate-950 border-t border-slate-900 text-xs text-slate-400">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-slate-300 font-semibold mb-6 uppercase tracking-wider">
-            Regionale Vernetzung & Standorte Dietzenbach, Dreieich & Rhein-Main
-          </div>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-12">
-            <div>
-              <div className="text-white font-medium mb-3">Nachbarn & Kreis Offenbach</div>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href="/webdesign-offenbach"
-                    className="hover:text-amber-400 transition-colors"
-                  >
-                    Webdesign Offenbach am Main
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/webdesign-rodgau" className="hover:text-amber-400 transition-colors">
-                    Webdesign Rodgau
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/webdesign-hanau" className="hover:text-amber-400 transition-colors">
-                    Webdesign Hanau
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <div className="text-white font-medium mb-3">Mittelhessen & HQ</div>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href="/webdesign-agentur-wetzlar"
-                    className="hover:text-amber-400 transition-colors"
-                  >
-                    Webdesign Agentur Wetzlar (HQ)
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/webdesign-giessen"
-                    className="hover:text-amber-400 transition-colors"
-                  >
-                    Webdesign Gießen
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/webdesign-marburg"
-                    className="hover:text-amber-400 transition-colors"
-                  >
-                    Webdesign Marburg
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <div className="text-white font-medium mb-3">Rhein-Main & Südhessen</div>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href="/webdesign-frankfurt"
-                    className="hover:text-amber-400 transition-colors"
-                  >
-                    Webdesign Frankfurt am Main
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/webdesign-darmstadt"
-                    className="hover:text-amber-400 transition-colors"
-                  >
-                    Webdesign Darmstadt (A661 / A5)
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/webdesign-ruesselsheim"
-                    className="hover:text-amber-400 transition-colors"
-                  >
-                    Webdesign Rüsselsheim
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <div className="text-white font-medium mb-3">Enterprise & Services</div>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href="/services/enterprise-web"
-                    className="hover:text-amber-400 transition-colors"
-                  >
-                    Enterprise B2B-Webentwicklung
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services/seo" className="hover:text-amber-400 transition-colors">
-                    B2B SEO Kreis Offenbach
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/standorte/hessen" className="hover:text-amber-400 transition-colors">
-                    Hessen Standorte Übersicht
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div>© {new Date().getFullYear()} Coday Webagentur. Alle Rechte vorbehalten.</div>
-            <div className="flex gap-6">
-              <Link href="/legal/impressum" className="hover:text-slate-200 transition-colors">
-                Impressum
-              </Link>
-              <Link href="/legal/datenschutz" className="hover:text-slate-200 transition-colors">
-                Datenschutz
-              </Link>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

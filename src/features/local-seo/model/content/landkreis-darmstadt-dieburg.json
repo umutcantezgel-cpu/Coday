@@ -1,0 +1,107 @@
+{
+  "target": "landkreis-darmstadt-dieburg",
+  "displayName": "Landkreis Darmstadt-Dieburg",
+  "type": "region",
+  "meta": {
+    "title": "Webdesign Landkreis Darmstadt-Dieburg | Agentur · Coday",
+    "description": "Ihre Webagentur für Darmstadt-Dieburg. Schnelle Next.js Websites für Weiterstadt, Griesheim, Dieburg & Groß-Umstadt. Festpreise auf Anfrage."
+  },
+  "hero": {
+    "headline": "Webdesign Landkreis Darmstadt-Dieburg: Next.js Performance für Logistik, Tech & Mittelstand",
+    "subheadline": "Ihre lokale High-End Webagentur für Weiterstadt, Griesheim, Dieburg, Pfungstadt und den gesamten Landkreis.",
+    "description": "Maßgeschneiderte Webentwicklung, subsekundäre Ladezeiten unter 500ms und automatisierte B2B-Leads für Unternehmen im Landkreis Darmstadt-Dieburg. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+  },
+  "localDominance": {
+    "title": "Digitale Vorherrschaft für den Landkreis Darmstadt-Dieburg",
+    "description": "Der Landkreis Darmstadt-Dieburg vereint das gewaltige Logistik- und Handelszentrum Weiterstadt (A5) mit dem Technologiestandort Griesheim, dem Medien- und Hochschulcampus Dieburg (h_da), traditionsreicher Industrie in Pfungstadt sowie der Odenwälder Weininsel Groß-Umstadt. Wir bauen digitale Plattformen, die regionalen Marktführern messbare Wettbewerbsvorteile verschaffen.",
+    "points": [
+      "Großhandel & Logistik: Hochskalierbare Portale und B2B-Shops für Weiterstadt und die A5-Achse.",
+      "Tech & Software: Ultraschnelle Next.js Webapplikationen für Griesheimer Technologieunternehmen.",
+      "Medien & Bildung: Barrierefreie, designstarke Webpräsenzen für Dieburg und Forschungsinstitute.",
+      "Industrie, Handwerk & Weinbau: Conversion-starke Websites für Pfungstadt, Groß-Umstadt und Seeheim-Jugenheim.",
+      "45 Min Direkt vor Ort: Schnelle Erreichbarkeit über A5 und A67.",
+      "Inhabergeführt & Festpreis: Direkter Entwickler-Kontakt mit Umutcan Emre Tezgel ohne teuren Großagentur-Overhead."
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "B2B-, Logistik- & Retail-Websites für Weiterstadt & Griesheim",
+      "content": "Enterprise-Architekturen, subsekundäre Ladezeiten und DSGVO-Konformität auf deutschen Hochsicherheitsservern."
+    },
+    {
+      "title": "Medien-, Industrie- & Weinbau-Plattformen für Dieburg & Groß-Umstadt",
+      "content": "Echte Leadgenerierung, interaktive Produkt-Filter und 60-Sekunden-Express-Recruiting für Fachkräfte."
+    },
+    {
+      "title": "Local SEO Dominanz im Landkreis Darmstadt-Dieburg",
+      "content": "Spitzenrankings in Weiterstadt, Griesheim, Dieburg, Pfungstadt, Groß-Umstadt, Reinheim und allen 12 Kommunen."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wie viel kostet eine neue Website im Landkreis Darmstadt-Dieburg?",
+      "a": "Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance."
+    },
+    {
+      "q": "Wie schnell ist eine neue Website im Landkreis Darmstadt-Dieburg online?",
+      "a": "In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online."
+    },
+    {
+      "q": "Kommen Sie für ein Beratungsgespräch direkt zu uns in den Betrieb?",
+      "a": "Ja, selbstverständlich. Über die A5 oder A67 sind wir von unserem Wetzlarer HQ in rund 45 Minuten direkt bei Ihnen vor Ort in Weiterstadt, Griesheim, Dieburg oder Pfungstadt."
+    },
+    {
+      "q": "Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?",
+      "a": "Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet."
+    },
+    {
+      "q": "Wer ist unser fester Ansprechpartner?",
+      "a": "Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support."
+    }
+  ],
+  "meta_en": {
+    "title": "Web Design Darmstadt-Dieburg District | Agency · Coday",
+    "description": "Your web agency for Darmstadt-Dieburg. Fast Next.js websites for Weiterstadt, Griesheim, Dieburg & Groß-Umstadt. Fixed prices on request."
+  },
+  "hero_en": {
+    "headline": "Web Design Darmstadt-Dieburg District: Next.js Performance for Logistics, Tech & SME",
+    "subheadline": "Your local high-end web agency for Weiterstadt, Griesheim, Dieburg, Pfungstadt, and the district.",
+    "description": "Custom Next.js web applications for the Darmstadt-Dieburg district. Fixed price upon request."
+  },
+  "localDominance_en": {
+    "title": "Digital Dominance for the Darmstadt-Dieburg District",
+    "description": "The district unites commercial logistics in Weiterstadt with tech firms in Griesheim and media campuses in Dieburg. We build fast, high-performance web systems.",
+    "points": [
+      "Wholesale & Logistics: High-performance portals for Weiterstadt.",
+      "Tech & Software: Sub-500ms applications for Griesheim.",
+      "Media & Education: WCAG-compliant systems for Dieburg.",
+      "Industry & Trade: High-converting websites for Pfungstadt & Groß-Umstadt.",
+      "45 Minutes On-Site: Fast direct connection via A5/A67.",
+      "Direct Founder Access: Transparent fixed pricing without agency overhead."
+    ]
+  },
+  "contentSections_en": [
+    {
+      "title": "Logistics & Corporate Platforms in Weiterstadt",
+      "content": "Enterprise-grade performance and uncompromising data security."
+    },
+    {
+      "title": "Tech & Media Experiences in Griesheim & Dieburg",
+      "content": "Sub-500ms load times and seamless lead capture."
+    }
+  ],
+  "faq_en": [
+    {
+      "q": "How much does a professional website in the Darmstadt-Dieburg district cost?",
+      "a": "Binding fixed price on request following a free audit. 5-10x more cost-effective than traditional agencies."
+    },
+    {
+      "q": "How long does implementation take?",
+      "a": "Turnkey delivery within 10 to 14 business days."
+    },
+    {
+      "q": "Do you meet on-site in the Darmstadt-Dieburg district?",
+      "a": "Yes, via the A5/A67 we can be on-site across the district in around 45 minutes."
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "target": "hessen-master",
+  "displayName": "Hessen Master-Hub",
+  "type": "state",
+  "meta": {
+    "title": "Webdesign Hessen | Führende Next.js Webagentur · Coday",
+    "description": "High-End Webdesign & Next.js Entwicklung in ganz Hessen. 100/100 Core Web Vitals, blitzschnelle Ladezeiten & messbare Leads für den hessischen Mittelstand."
+  },
+  "hero": {
+    "headline": "Webdesign & Next.js Entwicklung in ganz Hessen: Spitzenleistung für Mittelstand & Industrie",
+    "subheadline": "Ihre inhabergeführte High-End Webagentur mit Hauptsitz in Wetzlar und hessenweitem Vor-Ort-Service.",
+    "description": "Maßgeschneiderte Webentwicklung, subsekundäre Ladezeiten unter 500ms und automatisierte B2B-Leads für Unternehmen in Mittelhessen, Rhein-Main, Süd-, Nord- und Osthessen. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+  },
+  "localDominance": {
+    "title": "Digitale Vorherrschaft für Unternehmen in ganz Hessen",
+    "description": "Hessen ist das wirtschaftliche und infrastrukturelle Herzstück Deutschlands: Vom Finanz- und Technologiezentrum Frankfurt am Main und der Landeshauptstadt Wiesbaden über die Optik- und Medizintechnik-Cluster in Mittelhessen (Wetzlar, Gießen, Marburg) bis zur Automotive- und Logistikpower in Kassel und Fulda sowie der Wissenschaftsstadt Darmstadt. Wir bauen digitale Plattformen, die hessischen Unternehmen messbare Wettbewerbsvorteile sichern.",
+    "points": [
+      "Hessenweiter Vor-Ort-Service: Schnelle Anfahrt aus unserem Wetzlarer HQ über A3, A5, A7, A45 und A66.",
+      "Next.js 15 & Headless: Subsekundäre Ladezeiten, 100/100 Google Core Web Vitals und maximale Ausfallsicherheit.",
+      "B2B-Leadgenerierung & Recruiting: Funnels mit 60-Sekunden-Bewerbungen für qualifizierte Fachkräfte.",
+      "100% DSGVO & Deutsche Server: Höchste Datensicherheit ohne US-Tracking-Abhängigkeiten oder offene WordPress-Lücken.",
+      "Volles Code-Eigentum: Keine monatlichen CMS-Lizenzkosten oder Vendor-Lock-ins.",
+      "Inhabergeführt & Festpreis: Direkter Entwickler-Kontakt mit Umutcan Emre Tezgel ohne teuren Großagentur-Overhead."
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "High-Performance Webportale für Mittelhessen & Rhein-Main",
+      "content": "Enterprise-Architekturen, subsekundäre Ladezeiten und kompromisslose Sicherheit für Marktführer in Frankfurt, Wiesbaden, Wetzlar und Gießen."
+    },
+    {
+      "title": "Industrie-, Logistik- & Tech-Websites für Nord-, Ost- & Südhessen",
+      "content": "Echte Leadgenerierung, interaktive Produkt-Filter und 60-Sekunden-Express-Recruiting für Kassel, Fulda und Darmstadt."
+    },
+    {
+      "title": "Local SEO & Geo-Dominanz in allen 26 hessischen Landkreisen & Städten",
+      "content": "Spitzenrankings und maximale Sichtbarkeit bei Google und KI-Suchmaschinen (GEO)."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wie viel kostet eine professionelle Website bei Coday in Hessen?",
+      "a": "Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere hochgradig optimierten KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance."
+    },
+    {
+      "q": "Wie schnell ist eine neue Website in Hessen online?",
+      "a": "In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online."
+    },
+    {
+      "q": "Bieten Sie Vor-Ort-Termine in ganz Hessen an?",
+      "a": "Ja, absolut. Durch unsere zentrale Lage in Wetzlar an den Autobahnen A45 und A5 erreichen wir Frankfurt, Wiesbaden, Gießen, Marburg, Limburg, Darmstadt, Fulda und Kassel schnell für persönliche Termine."
+    },
+    {
+      "q": "Erfüllen Ihre Websites alle DSGVO- und Barrierefreiheits-Standards?",
+      "a": "Ja. Alle Webapplikationen werden DSGVO-konform auf deutschen Servern gehostet und erfüllen moderne Barrierefreiheits-Standards (BITV 2.0 / WCAG 2.1 AA)."
+    },
+    {
+      "q": "Wer betreut mein Projekt persönlich?",
+      "a": "Inhaber Umutcan Emre Tezgel persönlich ohne zwischengeschaltete Account Manager oder Callcenter."
+    }
+  ],
+  "meta_en": {
+    "title": "Web Design Hesse | Leading Next.js Web Agency · Coday",
+    "description": "High-end web design & Next.js development across Hesse. 100/100 Core Web Vitals, blazing fast load times & measurable leads for German SMEs."
+  },
+  "hero_en": {
+    "headline": "Web Design & Next.js Development across Hesse: Peak Performance for Industry & SME",
+    "subheadline": "Your owner-managed high-end web agency based in Wetzlar with statewide on-site service.",
+    "description": "Custom Next.js web applications with sub-500ms load times and automated B2B lead generation across Hesse. Fixed price upon request."
+  },
+  "localDominance_en": {
+    "title": "Digital Dominance for Businesses across Hesse",
+    "description": "Hesse is Germany's economic engine: From the financial hub of Frankfurt to optics and biotech in Central Hesse and logistics in North and East Hesse. We build fast, high-performance web systems.",
+    "points": [
+      "Statewide On-Site Service: Quick access from our Wetzlar HQ via A3, A5, A7, A45, and A66.",
+      "Next.js 15 & Headless: Sub-second load times and 100/100 Google Core Web Vitals.",
+      "B2B Leads & Recruiting: 60-second mobile recruiting funnels.",
+      "100% GDPR & German Hosting: High data security without WordPress vulnerabilities.",
+      "Full Code Ownership: No monthly CMS license fees.",
+      "Direct Founder Access: Transparent fixed pricing without agency overhead."
+    ]
+  },
+  "contentSections_en": [
+    {
+      "title": "High-Performance Web Platforms for Central Hesse & Rhine-Main",
+      "content": "Enterprise-grade performance and uncompromising data security for market leaders."
+    },
+    {
+      "title": "Industrial & Logistics Platforms for North, East & South Hesse",
+      "content": "Sub-500ms load times and seamless lead capture."
+    }
+  ],
+  "faq_en": [
+    {
+      "q": "How much does a professional website in Hesse cost?",
+      "a": "Binding fixed price on request following a free audit. 5-10x more cost-effective than traditional agencies."
+    },
+    {
+      "q": "How long does implementation take?",
+      "a": "Turnkey delivery within 10 to 14 business days."
+    },
+    {
+      "q": "Do you offer on-site meetings across Hesse?",
+      "a": "Yes, from our central Wetzlar HQ we quickly reach Frankfurt, Wiesbaden, Kassel, Fulda, and Darmstadt."
+    }
+  ]
+}

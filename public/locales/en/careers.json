@@ -17,7 +17,7 @@
         "text": "We care about your health."
       },
       {
-        "icon": "users.users",
+        "icon": "users",
         "title": "Great Team",
         "text": "We work together on exciting projects."
       }
@@ -76,7 +76,7 @@
       },
       "speed": {
         "desc": "Perfection is the enemy of done. We ship fast and iterate based on real data.",
-        "title": "Speed ​​wins"
+        "title": "Speed Wins"
       },
       "truth": {
         "desc": "We say how it is. Even if it hurts. Honest feedback is the only way to excellence.",
@@ -125,7 +125,7 @@
       "design": [
         {
           "desc": "You design precise, high-conversion interfaces.",
-          "title": "UI designers"
+          "title": "UI Designer"
         },
         {
           "desc": "You solve complex user problems on an enterprise level.",
@@ -168,7 +168,7 @@
     "selector_title": "Choose Your Path",
     "title": "Your Growth is Our Goal.",
     "tracks": {
-      "design": "design",
+      "design": "Design",
       "dev": "Engineering",
       "growth": "Growth"
     }

@@ -1,0 +1,107 @@
+{
+  "target": "frankfurt",
+  "displayName": "Frankfurt am Main",
+  "type": "location",
+  "meta": {
+    "title": "Webdesign Frankfurt | High-End Next.js Webagentur · Coday",
+    "description": "Enterprise Webdesign & Webentwicklung in Frankfurt am Main. Next.js 15, <0.4s Ladezeit & B2B-Leads für FinTech, Kanzleien & Mittelstand. Festpreis auf Anfrage."
+  },
+  "hero": {
+    "headline": "Webdesign & Enterprise Next.js Entwicklung in Frankfurt am Main",
+    "subheadline": "Ultraschnelle Webapplikationen, kompromisslose Datensicherheit und hochkonvertierende Websites für anspruchsvolle Frankfurter Unternehmen. Verbindlicher Festpreis auf Anfrage.",
+    "description": "Als spezialisierte Next.js Webagentur für Frankfurt am Main entwickeln wir hochperformante digitale Plattformen für FinTechs, Kanzleien, Family Offices und Technologieberater. 100/100 Core Web Vitals und subsekundäre Edge-Auslieferung am DE-CIX."
+  },
+  "localDominance": {
+    "title": "Enterprise Webdesign & Digitale Vorherrschaft in Frankfurt",
+    "description": "Frankfurt am Main ist das Finanz- und Datenzentrum Europas. Wir kombinieren kompromisslose Next.js 15 Webentwicklung mit sicherheitszertifizierten Headless-Architekturen.",
+    "points": [
+      "Banken-Grade Sicherheit & DSGVO: Entkoppelte Frontend-Architektur ohne direkte Datenbankangriffsflächen – ideal für FinTechs, Family Offices und Kanzleien.",
+      "DE-CIX Edge Performance (< 20ms TTFB): Subsekundäre globale Bereitstellung direkt am weltweit größten Internetknoten.",
+      "Wirtschaftszentren im Fokus: Maßgeschneiderte Webauftritte für das Bankenviertel, Westend, Westhafen, Industriepark Höchst und Gateway Gardens.",
+      "Next.js als SEO-Katalysator: Top-Rankings für 'Webdesign Frankfurt' und anspruchsvolle B2B-Keywords durch 100/100 Google Core Web Vitals.",
+      "B2B-Leadgenerierung auf Enterprise-Niveau: Automatisierte CRM-Schnittstellen und zielgerichtete UX für vielbeschäftigte Entscheider.",
+      "Inhabergeführt & 5-10x kosteneffizienter: Direkte Betreuung durch Lead-Entwickler Umutcan Emre Tezgel ohne teuren Großagentur-Overhead."
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "Webportale für FinTechs, Family Offices & M&A-Boutiquen in Frankfurt",
+      "content": "Sicherheit, absolute Diskretion und blitzschnelle Datenübertragung: Unsere Headless-Architekturen mit React Server Components erfüllen die strengsten Sicherheitsanforderungen der Finanzmetropole."
+    },
+    {
+      "title": "Digitaler Vorsprung für Wirtschaftskanzleien & Beratungshäuser im Westend",
+      "content": "Seriöse, minimalistische Webdesigns mit barrierefreier Nutzerführung, die bei anspruchsvollen Mandanten und Geschäftspartnern sofortige Autorität aufbauen."
+    },
+    {
+      "title": "Local SEO & Rhein-Main Dominanz",
+      "content": "Dominante Google-Rankings im gesamten Rhein-Main-Gebiet: Frankfurt am Main, Eschborn, Bad Homburg, Oberursel und Offenbach."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wie viel kostet eine Enterprise-Website in Frankfurt?",
+      "a": "Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance."
+    },
+    {
+      "q": "Wie schnell ist eine neue Website in Frankfurt online?",
+      "a": "In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online."
+    },
+    {
+      "q": "Kommen Sie für ein Beratungsgespräch direkt nach Frankfurt?",
+      "a": "Ja, sehr gerne. Über die A5 sind wir von unserem Wetzlarer HQ in unter 40 Minuten direkt bei Ihnen vor Ort im Bankenviertel, Westend oder am Westhafen."
+    },
+    {
+      "q": "Erfüllen Ihre Websites die Sicherheitsanforderungen für FinTechs und Kanzleien?",
+      "a": "Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in zertifizierten deutschen Rechenzentren verarbeitet."
+    },
+    {
+      "q": "Wer ist unser fester Ansprechpartner?",
+      "a": "Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support."
+    }
+  ],
+  "meta_en": {
+    "title": "Web Design Frankfurt | High-End Next.js Web Agency · Coday",
+    "description": "Enterprise web design & development in Frankfurt am Main. Next.js 15, <0.4s load time & B2B leads for FinTech, law firms & mid-market. Fixed price on request."
+  },
+  "hero_en": {
+    "headline": "Web Design & Enterprise Next.js Development in Frankfurt am Main",
+    "subheadline": "Ultra-fast web applications, uncompromising security, and high-converting websites for ambitious Frankfurt enterprises. Fixed price on request.",
+    "description": "High-end Next.js web applications for FinTechs, law firms, and corporate leaders in Frankfurt am Main."
+  },
+  "localDominance_en": {
+    "title": "Enterprise Web Design & Digital Dominance in Frankfurt",
+    "description": "Frankfurt is Europe's financial and data powerhouse. We engineer custom digital platforms with bank-grade security.",
+    "points": [
+      "Bank-Grade Security & GDPR: Decoupled frontend architectures without database vulnerabilities.",
+      "DE-CIX Edge Performance (< 20ms TTFB): Subsecond global content delivery via the world's largest Internet exchange.",
+      "Key Business Districts: Tailored for Banking District, Westend, Westhafen, Industriepark Höchst, and Gateway Gardens.",
+      "SEO Leadership: 100/100 Core Web Vitals for dominant Google rankings.",
+      "Enterprise Lead Generation: Automated CRM integrations and conversion-optimized UX.",
+      "Owner-Operated Efficiency: 5-10x more cost-effective than traditional big agencies."
+    ]
+  },
+  "contentSections_en": [
+    {
+      "title": "Web Portals for FinTech, Family Offices & M&A Boutiques",
+      "content": "Secure, enterprise-grade Next.js web applications tailored to the financial sector."
+    },
+    {
+      "title": "Digital Authority for Law Firms & Consultancies in Westend",
+      "content": "Minimalist, accessible web designs radiating credibility and prestige."
+    }
+  ],
+  "faq_en": [
+    {
+      "q": "How much does an enterprise website in Frankfurt cost?",
+      "a": "Binding fixed price on request following a free audit. 5-10x more cost-effective than traditional agencies."
+    },
+    {
+      "q": "How long does implementation take?",
+      "a": "Turnkey delivery within 10 to 14 business days."
+    },
+    {
+      "q": "Do you meet on-site in Frankfurt?",
+      "a": "Yes, we gladly meet you in Frankfurt's banking district or Westend via the A5 highway."
+    }
+  ]
+}

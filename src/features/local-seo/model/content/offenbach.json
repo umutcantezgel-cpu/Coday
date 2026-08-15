@@ -1,0 +1,107 @@
+{
+  "target": "offenbach",
+  "displayName": "Offenbach am Main",
+  "type": "location",
+  "meta": {
+    "title": "Webdesign Offenbach | High-End Next.js Agentur · Coday",
+    "description": "Modernes Webdesign & Webentwicklung in Offenbach am Main. Schnelle Ladezeiten, starkes UI/UX-Design & SEO für Kreative & Mittelstand. Festpreis auf Anfrage."
+  },
+  "hero": {
+    "headline": "Webdesign Offenbach: Starkes UI/UX Design & Next.js Performance",
+    "subheadline": "Ihre Webagentur für Offenbach am Main, Kaiserlei und Hafen Offenbach.",
+    "description": "Als spezialisierte Webagentur für Offenbach am Main entwickeln wir blitzschnelle, visuell herausragende und hochkonvertierende Next.js Webanwendungen. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+  },
+  "localDominance": {
+    "title": "Digitale Vorherrschaft für Offenbach & den Rhein-Main-Süden",
+    "description": "Offenbach am Main besticht durch eine lebendige Design- und Kreativszene (HfG-Tradition), modernen Städtebau am Hafen Offenbach und dynamische Unternehmensansiedlungen am Kaiserlei. Wir verbinden progressives UI/UX-Design mit kompromissloser Next.js Webentwicklung.",
+    "points": [
+      "Kreativ- & Designwirtschaft: Avantgardistisches, minimalistisches Webdesign für Studios, Agenturen und E-Commerce-Marken.",
+      "Hafen Offenbach & Kaiserlei: Repräsentative Corporate Webauftritte für dynamische Dienstleister, Automotive und Startups.",
+      "Urbane Handwerks- & Gewerbebetriebe: Schnelle, lokale Lead-Generierung in Bieber, Bürgel und Waldhof.",
+      "Next.js als SEO-Katalysator: 100/100 Google Core Web Vitals für Spitzenrankings bei 'Webdesign Offenbach'.",
+      "DSGVO & Deutsches Hosting: Höchste Datensicherheit ohne anfälligen WordPress-Plugin-Ballast.",
+      "Inhabergeführt & Festpreis: Direkter Kontakt mit Umutcan Emre Tezgel ohne teuren Großagentur-Overhead."
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "Webauftritte für Design- & Kreativunternehmen am Hafen Offenbach",
+      "content": "Minimalistische Ästhetik, flüssige Animationen und perfekte Typografie für die anspruchsvolle Offenbacher Kreativbranche."
+    },
+    {
+      "title": "B2B-Leadgenerierung & E-Commerce am Kaiserlei",
+      "content": "Moderne Next.js Webapplikationen für Automotive-Zulieferer, IT-Dienstleister und Handelsunternehmen mit direkter Frankfurt-Anbindung."
+    },
+    {
+      "title": "Local SEO & Kreis Offenbach Dominanz",
+      "content": "Dominante Platzierungen in den Suchergebnissen für Offenbach am Main, Neu-Isenburg, Dietzenbach, Mühlheim und Frankfurt-Ost."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wie viel kostet eine neue Website in Offenbach?",
+      "a": "Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance."
+    },
+    {
+      "q": "Wie schnell ist eine neue Website in Offenbach online?",
+      "a": "In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online."
+    },
+    {
+      "q": "Kommen Sie für ein Beratungsgespräch direkt nach Offenbach?",
+      "a": "Ja, sehr gerne. Über die A5 und A661 sind wir von unserem Wetzlarer HQ in unter 40 Minuten direkt bei Ihnen vor Ort am Hafen Offenbach oder am Kaiserlei."
+    },
+    {
+      "q": "Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?",
+      "a": "Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet."
+    },
+    {
+      "q": "Wer ist unser fester Ansprechpartner?",
+      "a": "Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support."
+    }
+  ],
+  "meta_en": {
+    "title": "Web Design Offenbach | High-End Next.js Agency · Coday",
+    "description": "Modern web design & development in Offenbach am Main. Fast load times, high-impact UI/UX & SEO for creative sector & mid-market. Fixed price on request."
+  },
+  "hero_en": {
+    "headline": "Web Design Offenbach: High-Impact UI/UX & Next.js Performance",
+    "subheadline": "Your web agency for Offenbach am Main, Kaiserlei, and Hafen Offenbach.",
+    "description": "Custom Next.js web applications for Offenbach. Fixed price upon request."
+  },
+  "localDominance_en": {
+    "title": "Digital Dominance for Offenbach & Rhein-Main South",
+    "description": "Offenbach connects a rich design heritage with modern waterfront developments and automotive hubs. We engineer fast, modern digital platforms.",
+    "points": [
+      "Creative & Design Sector: Avant-garde, minimalist interfaces for agencies and brands.",
+      "Hafen Offenbach & Kaiserlei: Corporate websites for fast-growing services and startups.",
+      "Urban Crafts & Mid-Market: Local lead generation for Bieber, Bürgel, and Waldhof.",
+      "SEO Leadership: 100/100 Core Web Vitals for top search visibility.",
+      "GDPR Hosting: Maximum data safety on certified German infrastructure.",
+      "Direct Founder Access: Transparent fixed pricing without agency overhead."
+    ]
+  },
+  "contentSections_en": [
+    {
+      "title": "Web Portals for Design & Creative Businesses in Hafen Offenbach",
+      "content": "Decoupled Next.js architecture offering unmatched visual polish and performance."
+    },
+    {
+      "title": "B2B Lead Generation & E-Commerce in Kaiserlei",
+      "content": "Enterprise-grade web systems tailored for automotive suppliers and tech leaders."
+    }
+  ],
+  "faq_en": [
+    {
+      "q": "How much does a professional website in Offenbach cost?",
+      "a": "Binding fixed price on request following a free audit. 5-10x more cost-effective than traditional agencies."
+    },
+    {
+      "q": "How long does implementation take?",
+      "a": "Turnkey delivery within 10 to 14 business days."
+    },
+    {
+      "q": "Do you meet on-site in Offenbach?",
+      "a": "Yes, we gladly meet you in Offenbach via the A5/A661 highways."
+    }
+  ]
+}

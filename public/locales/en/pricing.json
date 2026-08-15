@@ -2,9 +2,9 @@
   "comparison": {
     "headers": {
       "feature": "Feature",
-      "onepager": "One pager",
-      "starter": "starter",
-      "professional": "professional",
+      "onepager": "Onepager",
+      "starter": "Starter",
+      "professional": "Professional",
       "enterprise": "Enterprise"
     },
     "rows": {
@@ -63,7 +63,7 @@
   "trust": {
     "google_partner": "Google Partners",
     "satisfaction": "100% Satisfaction",
-    "performance": "PageSpeed ​​95+",
+    "performance": "PageSpeed 95+",
     "support": "24/7 support"
   },
   "cta_section": {
@@ -274,6 +274,7 @@
     ]
   },
   "seoText": {
-    "content": " We offer various web design Packages with Fixed pricing to ensure transparency and cost control for your digital projects. We offer custom Web Design Packages Wetzlar with Fixed Pricing."
+    "title": "Web Design Pricing & Fixed-Price Packages | Coday",
+    "content": "We offer transparent web design packages with fixed pricing to ensure full budget predictability and cost control for your digital projects. Request your custom web development package in Wetzlar today."
   }
 }

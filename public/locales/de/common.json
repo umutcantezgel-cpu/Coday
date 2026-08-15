@@ -243,6 +243,73 @@
       "kfz_mechatroniker": "KFZ-Mechatroniker",
       "autohaendler": "Autohändler"
     },
+    "locations": {
+      "label": "Standorte & Branchen",
+      "hessen_mittelhessen": {
+        "title": "Mittelhessen & HQ",
+        "hessen_hub": "Hessen Master-Hub",
+        "hessen_hub_desc": "Interaktiver Hessen-Navigator",
+        "wetzlar": "Wetzlar (Agentur-HQ)",
+        "wetzlar_desc": "Hauptstandort an der Lahn",
+        "giessen": "Gießen",
+        "giessen_desc": "Universitäts- & Medizinstadt",
+        "marburg": "Marburg",
+        "marburg_desc": "Biotech & historische Oberstadt",
+        "herborn": "Herborn",
+        "herborn_desc": "Industrie- & Mittelstandszentrum",
+        "dillenburg": "Dillenburg",
+        "dillenburg_desc": "Oranienstadt & Werkzeugbau",
+        "limburg": "Limburg a. d. Lahn",
+        "limburg_desc": "Wirtschaftsraum Lahntal",
+        "weilburg": "Weilburg a. d. Lahn",
+        "weilburg_desc": "Residenzstadt & Gewerbe Lahntal"
+      },
+      "rhein_main": {
+        "title": "Rhein-Main & Taunus",
+        "frankfurt": "Frankfurt am Main",
+        "frankfurt_desc": "Finanzmetropole & B2B-Flaggschiff",
+        "wiesbaden": "Wiesbaden",
+        "wiesbaden_desc": "Hessische Landeshauptstadt",
+        "bad_homburg": "Bad Homburg v. d. H.",
+        "bad_homburg_desc": "Enterprise & Family Offices",
+        "oberursel": "Oberursel (Taunus)",
+        "bad_vilbel": "Bad Vilbel",
+        "offenbach": "Offenbach am Main",
+        "hanau": "Hanau",
+        "hofheim": "Hofheim am Taunus",
+        "ruesselsheim": "Rüsselsheim am Main",
+        "rodgau": "Rodgau",
+        "dietzenbach": "Dietzenbach",
+        "friedberg": "Friedberg (Hessen)"
+      },
+      "sued_nord_ost": {
+        "title": "Süd-, Nord- & Osthessen",
+        "darmstadt": "Darmstadt",
+        "darmstadt_desc": "Wissenschaftsstadt & Digital-Hub",
+        "bensheim": "Bensheim",
+        "bensheim_desc": "Wirtschaftszentrum Bergstraße",
+        "kassel": "Kassel",
+        "kassel_desc": "Nordhessische Metropole & Industrie",
+        "fulda": "Fulda",
+        "fulda_desc": "Osthessischer B2B- & Logistikknoten"
+      },
+      "districts": {
+        "title": "13 Landkreis-Hubs",
+        "lahn_dill": "Lahn-Dill-Kreis",
+        "giessen_lk": "Landkreis Gießen",
+        "wetterau": "Wetteraukreis",
+        "hochtaunus": "Hochtaunuskreis",
+        "main_taunus": "Main-Taunus-Kreis",
+        "kreis_offenbach": "Kreis Offenbach",
+        "main_kinzig": "Main-Kinzig-Kreis",
+        "marburg_biedenkopf": "LK Marburg-Biedenkopf",
+        "limburg_weilburg": "LK Limburg-Weilburg",
+        "rheingau_taunus": "Rheingau-Taunus-Kreis",
+        "darmstadt_dieburg": "LK Darmstadt-Dieburg",
+        "fulda_lk": "Landkreis Fulda",
+        "kassel_lk": "Landkreis Kassel"
+      }
+    },
     "projects": {
       "desc": "Unsere Besten",
       "label": "Projekte"
@@ -435,5 +502,5 @@
   "cancel": "Abbrechen",
   "save": "Speichern",
   "partnerschaft": "Partnerprogramm",
-  "presse": "presse"
+  "presse": "Presse"
 }

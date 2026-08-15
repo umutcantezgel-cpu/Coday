@@ -367,7 +367,7 @@ export const InteractiveBlockRenderer: React.FC<{ block: InteractiveBlock }> = (
       <div className="my-8 p-6 bg-gray-50 rounded-xl border border-dashed border-gray-300 text-center">
         <Terminal className="mx-auto text-gray-400 mb-2" />
         <p className="text-sm font-mono text-gray-500">
-          {t('blog:interactiveComponent')}: {block.component}
+          {t('interactiveComponent')}: {block.component}
         </p>
       </div>
     );

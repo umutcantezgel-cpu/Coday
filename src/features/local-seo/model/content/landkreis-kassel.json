@@ -1,0 +1,107 @@
+{
+  "target": "landkreis-kassel",
+  "displayName": "Landkreis Kassel",
+  "type": "region",
+  "meta": {
+    "title": "Webdesign Landkreis Kassel | Webagentur Nordhessen · Coday",
+    "description": "Professionelles Webdesign im Landkreis Kassel. Next.js Websites für Baunatal, Vellmar & Hofgeismar. Schnelle Ladezeiten & Festpreise auf Anfrage."
+  },
+  "hero": {
+    "headline": "Webdesign Landkreis Kassel: Next.js Performance für Automotive, Logistik & Cleantech",
+    "subheadline": "Ihre High-End B2B Webagentur für Baunatal, Vellmar, Hofgeismar, Lohfelden und ganz Nordhessen.",
+    "description": "Maßgeschneiderte Webentwicklung, subsekundäre Ladezeiten unter 500ms und automatisierte B2B-Leads für Unternehmen im Landkreis Kassel. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+  },
+  "localDominance": {
+    "title": "Digitale Vorherrschaft für den Landkreis Kassel & Nordhessen",
+    "description": "Der Landkreis Kassel bildet das industrielle und logistische Kraftzentrum Nordhessens. Mit dem Volkswagen-Werk in Baunatal als zentralem Automotive- und E-Mobilitäts-Hub, dem Güterverkehrszentrum Lohfelden (A7/A49), der Vorreiterrolle für Erneuerbare Energien in Wolfhagen sowie starkem Mittelstand in Hofgeismar und Vellmar schaffen wir digitale Plattformen mit messbarem Marktvorsprung.",
+    "points": [
+      "Automotive & Zulieferer: Enterprise-B2B-Portale für Baunatal und das nordhessische Mobilitätscluster.",
+      "Logistik & Spedition: Hochlastfähige Plattformen für das Güterverkehrszentrum Lohfelden.",
+      "Cleantech & Energie: Performante Webauftritte für Wolfhagen und Erneuerbare-Energien-Projekte.",
+      "Mittelstand, Gesundheit & Handwerk: 60-Sekunden-Recruiting für Hofgeismar, Vellmar und Kaufungen.",
+      "75 Min Direkt vor Ort: Schnelle Erreichbarkeit über die A49 und A7 aus Mittelhessen.",
+      "Inhabergeführt & Festpreis: Direkter Entwickler-Kontakt mit Umutcan Emre Tezgel ohne teuren Großagentur-Overhead."
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "Automotive- & Industrie-Websites für Baunatal & Lohfelden",
+      "content": "Enterprise-Architekturen, subsekundäre Ladezeiten und DSGVO-Konformität auf deutschen Hochsicherheitsservern."
+    },
+    {
+      "title": "Cleantech-, Handwerks- & Klinik-Portale für Wolfhagen & Hofgeismar",
+      "content": "Echte Leadgenerierung, barrierefreie Standards (WCAG 2.1) und 60-Sekunden-Express-Recruiting für Fachkräfte."
+    },
+    {
+      "title": "Local SEO Dominanz im Landkreis Kassel",
+      "content": "Spitzenrankings in Baunatal, Vellmar, Hofgeismar, Wolfhagen, Kaufungen, Lohfelden und allen 12 Kommunen."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wie viel kostet eine neue Website im Landkreis Kassel?",
+      "a": "Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance."
+    },
+    {
+      "q": "Wie schnell ist eine neue Website im Landkreis Kassel online?",
+      "a": "In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online."
+    },
+    {
+      "q": "Kommen Sie für ein Beratungsgespräch direkt zu uns in den Betrieb?",
+      "a": "Ja, selbstverständlich. Über die A49 oder A7 sind wir von unserem Wetzlarer HQ in rund 75 Minuten direkt bei Ihnen vor Ort in Baunatal, Vellmar, Hofgeismar oder Lohfelden."
+    },
+    {
+      "q": "Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?",
+      "a": "Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet."
+    },
+    {
+      "q": "Wer ist unser fester Ansprechpartner?",
+      "a": "Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support."
+    }
+  ],
+  "meta_en": {
+    "title": "Web Design Kassel District | Web Agency North Hesse · Coday",
+    "description": "Professional web design in the Kassel district. Next.js websites for Baunatal, Vellmar & Hofgeismar. Fast load times & fixed prices on request."
+  },
+  "hero_en": {
+    "headline": "Web Design Kassel District: Next.js Performance for Automotive, Logistics & Cleantech",
+    "subheadline": "Your high-end B2B web agency for Baunatal, Vellmar, Hofgeismar, Lohfelden, and North Hesse.",
+    "description": "Custom Next.js web applications for the Kassel district. Fixed price upon request."
+  },
+  "localDominance_en": {
+    "title": "Digital Dominance for the Kassel District & North Hesse",
+    "description": "The district powers North Hesse's economy with the Volkswagen plant in Baunatal, major logistics in Lohfelden, and green tech in Wolfhagen. We build fast, high-performance web systems.",
+    "points": [
+      "Automotive & Supply: Enterprise platforms for Baunatal.",
+      "Logistics & Transport: High-speed systems for Lohfelden GVZ.",
+      "Cleantech & Energy: Fast websites for Wolfhagen renewable projects.",
+      "SME & Healthcare: Conversion funnels for Hofgeismar & Vellmar.",
+      "75 Minutes On-Site: Direct connection via A49/A7.",
+      "Direct Founder Access: Transparent fixed pricing without agency overhead."
+    ]
+  },
+  "contentSections_en": [
+    {
+      "title": "Automotive & Industrial Platforms in Baunatal",
+      "content": "Enterprise-grade performance and uncompromising data security."
+    },
+    {
+      "title": "Cleantech & Corporate Portals in Wolfhagen & Hofgeismar",
+      "content": "Sub-500ms load times and seamless lead capture."
+    }
+  ],
+  "faq_en": [
+    {
+      "q": "How much does a professional website in the Kassel district cost?",
+      "a": "Binding fixed price on request following a free audit. 5-10x more cost-effective than traditional agencies."
+    },
+    {
+      "q": "How long does implementation take?",
+      "a": "Turnkey delivery within 10 to 14 business days."
+    },
+    {
+      "q": "Do you meet on-site in the Kassel district?",
+      "a": "Yes, via the A49/A7 we can be on-site across the district in around 75 minutes."
+    }
+  ]
+}

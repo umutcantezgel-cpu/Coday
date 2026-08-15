@@ -1,0 +1,107 @@
+{
+  "target": "bad-vilbel",
+  "displayName": "Bad Vilbel",
+  "type": "location",
+  "meta": {
+    "title": "Webdesign Bad Vilbel | Webentwicklung & SEO · Coday",
+    "description": "Professionelles Webdesign in Bad Vilbel. Moderne Websites, Top-PageSpeed & lokale Google-Rankings für Mittelstand & Dienstleister. Festpreise auf Anfrage."
+  },
+  "hero": {
+    "headline": "Webdesign Bad Vilbel: Next.js Performance für Medien, Pharma & Mittelstand",
+    "subheadline": "Ihre Webagentur für Bad Vilbel, Dortelweil und Massenheim.",
+    "description": "Als spezialisierte Webagentur für Bad Vilbel entwickeln wir blitzschnelle, sichere und hochkonvertierende Next.js Webanwendungen. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+  },
+  "localDominance": {
+    "title": "Digitale Exzellenz für Bad Vilbel & die südliche Wetterau",
+    "description": "Bad Vilbel steht als renommierte Quellenstadt nicht nur für Mineralwasser und Festspiele, sondern auch für bedeutende Medienhäuser (Hit Radio FFH), globale Pharma-Konzerne (STADA) und dynamische Dienstleister. Wir bauen Webauftritte mit kompromissloser technischer und visueller Qualität.",
+    "points": [
+      "Medien-, Musik- & Entertainment-Fokus: Dynamische Content-Architekturen mit Next.js und Headless CMS für maximale redaktionelle Freiheit.",
+      "Pharma & Gesundheitswirtschaft: Strikte DSGVO-Sicherheit, Barrierefreiheit nach BITV 2.0 / WCAG und schnelle Ladezeiten.",
+      "Quellenpark & Gewerbegebiet Dortelweil: Gezielte B2B-Leadgenerierung und Neukundengewinnung für etablierte Firmen.",
+      "B3- & S6-Achse Frankfurt-Gießen: Schnelle Erreichbarkeit und regionale Dominanz im Rhein-Main-Gebiet.",
+      "Next.js als SEO-Katalysator: 100/100 Google Core Web Vitals für Spitzenrankings bei 'Webdesign Bad Vilbel'.",
+      "Inhabergeführt & Festpreis: Direkter Kontakt mit Umutcan Emre Tezgel ohne teuren Großagentur-Overhead."
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "Webportale für Medien-, Rundfunk- & Kreativunternehmen",
+      "content": "Performante Content-Delivery und moderne User Experience für Medienmacher und Kulturinstitutionen in Bad Vilbel."
+    },
+    {
+      "title": "Digitale Plattformen für Pharma & Mittelstand in Dortelweil",
+      "content": "Sichere, global skalierbare Headless-Websites für Technologie- und Pharmaunternehmen ohne anfälligen WordPress-Ballast."
+    },
+    {
+      "title": "Local SEO & Südliche Wetterau Dominanz",
+      "content": "Dominante Platzierungen in den Google-Suchergebnissen für Bad Vilbel, Dortelweil, Massenheim, Karben und Frankfurt-Nord."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wie viel kostet eine neue Website in Bad Vilbel?",
+      "a": "Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance."
+    },
+    {
+      "q": "Wie schnell ist eine neue Website in Bad Vilbel online?",
+      "a": "In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online."
+    },
+    {
+      "q": "Kommen Sie für ein Beratungsgespräch direkt nach Bad Vilbel?",
+      "a": "Ja, sehr gerne. Über die A5 und B3 sind wir von unserem Wetzlarer HQ in unter 35 Minuten direkt bei Ihnen vor Ort im Quellenpark oder im Gewerbegebiet Dortelweil."
+    },
+    {
+      "q": "Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?",
+      "a": "Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet."
+    },
+    {
+      "q": "Wer ist unser fester Ansprechpartner?",
+      "a": "Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support."
+    }
+  ],
+  "meta_en": {
+    "title": "Web Design Bad Vilbel | Web Development & SEO · Coday",
+    "description": "Professional web design in Bad Vilbel. Modern websites, top PageSpeed & local Google rankings for mid-market & services. Fixed price on request."
+  },
+  "hero_en": {
+    "headline": "Web Design Bad Vilbel: Next.js Performance for Media, Pharma & Mid-Market",
+    "subheadline": "Your web agency for Bad Vilbel, Dortelweil, and Massenheim.",
+    "description": "Custom Next.js web applications for Bad Vilbel. Fixed price upon request."
+  },
+  "localDominance_en": {
+    "title": "Digital Dominance for Bad Vilbel & Southern Wetterau",
+    "description": "Bad Vilbel connects media headquarters, pharma giants, and high-growth services with Frankfurt. We engineer fast, secure digital platforms.",
+    "points": [
+      "Media & Entertainment Focus: Dynamic content delivery and Headless CMS workflows.",
+      "Pharma & Healthcare: Secure, accessible web portals compliant with BITV 2.0 / WCAG.",
+      "Commercial Hubs: Targeted lead generation for Quellenpark and Dortelweil.",
+      "B3 / S6 Corridor: Fast connectivity between Frankfurt, Bad Vilbel, and Central Hesse.",
+      "SEO Leadership: 100/100 Core Web Vitals for top search visibility.",
+      "Direct Founder Access: Transparent fixed pricing without agency overhead."
+    ]
+  },
+  "contentSections_en": [
+    {
+      "title": "Web Portals for Media & Broadcast Enterprises",
+      "content": "Decoupled Next.js architecture offering unmatched publishing speed and UX."
+    },
+    {
+      "title": "Digital Platforms for Pharma & Mid-Market in Dortelweil",
+      "content": "Enterprise-grade web systems designed for measurable conversion and speed."
+    }
+  ],
+  "faq_en": [
+    {
+      "q": "How much does a professional website in Bad Vilbel cost?",
+      "a": "Binding fixed price on request following a free audit. 5-10x more cost-effective than traditional agencies."
+    },
+    {
+      "q": "How long does implementation take?",
+      "a": "Turnkey delivery within 10 to 14 business days."
+    },
+    {
+      "q": "Do you meet on-site in Bad Vilbel?",
+      "a": "Yes, we gladly meet you in Bad Vilbel via the A5/B3 highways."
+    }
+  ]
+}

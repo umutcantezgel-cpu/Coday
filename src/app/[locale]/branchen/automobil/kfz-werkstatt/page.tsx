@@ -1,11 +1,37 @@
-import { Metadata } from 'next';
+import React from 'react';
+import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { GamifiedIndustryTemplate } from '@/features/industries/ui/GamifiedIndustryTemplate';
-
-import fs from 'fs';
-import path from 'path';
-import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
+import { BASE_URL, getOrganizationSchema } from '@/lib/schema';
+import { Link } from '@/i18n/navigation';
+import { Button } from '@/shared/ui/Button';
+import { TrustBar } from '@/shared/ui/TrustBar';
+import { LazyQuickContactForm } from '@/widgets/home/LazyQuickContactForm';
+import {
+  ArrowRight,
+  Lightning,
+  ShieldCheck,
+  Code,
+  Buildings,
+  Users,
+  Check,
+  Sparkle,
+  LockKey,
+  CheckCircle,
+  Car,
+  Wrench,
+  CalendarCheck,
+  DeviceMobile,
+  Target,
+  FileCode,
+  Globe,
+  CaretRight,
+  UserCheck,
+  Gauge,
+  ArrowsClockwise,
+  Browsers,
+  Clock,
+} from '@phosphor-icons/react/dist/ssr';
 
 export const dynamic = 'force-static';
 
@@ -15,210 +41,636 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  try {
-    const filePath = path.join(
-      process.cwd(),
-      'src',
-      'features',
-      'local-seo',
-      'model',
-      'content',
-      'kfz-werkstatt.json'
-    );
-    const fileContents = fs.readFileSync(filePath, 'utf8');
-    const content = JSON.parse(fileContents);
-
-    const enTitle = 'Web Design for Auto Repair Shops | Wetzlar Area';
-
+  if (locale === 'en') {
     return generatePageMetadata({
-      title: locale === 'en' ? enTitle : content.meta.title,
+      title: 'Web Design for Auto Repair Shops Hesse | Coday Automotive',
       description:
-        locale === 'en'
-          ? 'Professional web design for auto repair shops in Wetzlar. Get more online bookings.'
-          : content.meta.description,
-      path: `/${locale}/branchen/automobil/kfz-werkstatt`,
-      type: 'money',
-    });
-  } catch (e) {
-    return generatePageMetadata({
-      title:
-        locale === 'en'
-          ? 'Web Design for Auto Repair Shops | Wetzlar Area'
-          : 'Webdesign für KFZ-Werkstätten | Raum Wetzlar',
-      description:
-        locale === 'en'
-          ? 'Professional web design for auto repair shops in Wetzlar. Get more online bookings.'
-          : 'Digitale Dominanz für Ihre Branche.',
-      path: `/${locale}/branchen/automobil/kfz-werkstatt`,
+        'High-performance websites for auto repair shops in Hesse. Online appointment booking for inspections & repairs. Fixed prices on request.',
+      path: '/en/branchen/automobil/kfz-werkstatt',
       type: 'money',
     });
   }
+  return generatePageMetadata({
+    title: 'Webdesign für KFZ-Werkstätten Hessen | Coday Automotive',
+    description:
+      'High-Performance Websites für KFZ-Werkstätten in Hessen. Online-Terminbuchung für Inspektion, HU/AU & Reparatur. Festpreise auf Anfrage.',
+    path: '/de/branchen/automobil/kfz-werkstatt',
+    type: 'money',
+  });
 }
 
-export default async function SubIndustryPage({ params }: { params: Promise<{ locale: string }> }) {
+export default async function KfzWerkstattPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const _locale = locale || 'de';
 
-  let content = null;
-  try {
-    const filePath = path.join(
-      process.cwd(),
-      'src',
-      'features',
-      'local-seo',
-      'model',
-      'content',
-      'kfz-werkstatt.json'
-    );
-    const fileContents = fs.readFileSync(filePath, 'utf8');
-    content = JSON.parse(fileContents);
-  } catch (e) {
-    // Content is being generated or doesn't exist
-  }
+  const services = [
+    {
+      title: 'Inspektion nach Herstellervorgabe & HU/AU',
+      desc: 'Smarte Termin-Funnels mit digitaler Fahrzeugschein-Upload-Funktion und Prüfungs-Erinnerung.',
+      icon: Gauge,
+    },
+    {
+      title: 'Reifen- & Räder-Service / Saisontimer',
+      desc: 'Automatisierte Buchungs-Wellen für Sommer-/Winter-Radwechsel und Reifeneinlagerung.',
+      icon: ArrowsClockwise,
+    },
+    {
+      title: 'Unfallinstandsetzung & Karosseriebau',
+      desc: 'Digitale Schadensmeldung mit Foto-Upload für schnelle Kostenvoranschläge und Versicherungskontakt.',
+      icon: Wrench,
+    },
+    {
+      title: 'E-Mobilität, Diagnose & Fehlerspeicher',
+      desc: 'Hochvoltschulung-Präsentation, Steuergeräte-Diagnose & Software-Updates.',
+      icon: Lightning,
+    },
+  ];
 
-  if (!content) {
-    return (
-      <div className="p-20 text-center pt-48">
-        <h2 className="text-2xl font-bold mb-4">Inhalt wird geladen...</h2>
-        <p>Der branchenspezifische Content für diese Seite wird aktuell konfiguriert.</p>
-      </div>
-    );
-  }
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      getOrganizationSchema(_locale),
+      {
+        '@type': 'LocalBusiness',
+        '@id': `${BASE_URL}/${_locale}/branchen/automobil/kfz-werkstatt#localbusiness`,
+        name: 'Coday – Webdesign & Software für KFZ-Werkstätten Hessen',
+        url: `${BASE_URL}/${_locale}/branchen/automobil/kfz-werkstatt`,
+        logo: `${BASE_URL}/icon.png`,
+        image: `${BASE_URL}/images/og-image.jpg`,
+        telephone: '+49 6441 000000',
+        email: 'kontakt@codayweb.de',
+        priceRange: '€€€€',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'HQ Wetzlar / Automotive Division',
+          addressLocality: 'Wetzlar',
+          postalCode: '35578',
+          addressRegion: 'Hessen',
+          addressCountry: 'DE',
+        },
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: 50.5558,
+          longitude: 8.5022,
+        },
+        areaServed: [
+          { '@type': 'AdministrativeArea', name: 'Hessen' },
+          { '@type': 'City', name: 'Wetzlar' },
+          { '@type': 'City', name: 'Frankfurt am Main' },
+          { '@type': 'City', name: 'Gießen' },
+          { '@type': 'City', name: 'Kassel' },
+          { '@type': 'City', name: 'Wiesbaden' },
+          { '@type': 'City', name: 'Darmstadt' },
+          { '@type': 'City', name: 'Offenbach' },
+          { '@type': 'City', name: 'Hanau' },
+          { '@type': 'City', name: 'Fulda' },
+          { '@type': 'City', name: 'Limburg' },
+        ],
+      },
+      {
+        '@type': 'ProfessionalService',
+        '@id': `${BASE_URL}/${_locale}/branchen/automobil/kfz-werkstatt#service`,
+        name: 'Webdesign & Digitale Werkstatt-Systeme Hessen',
+        provider: {
+          '@id': `${BASE_URL}/#organization`,
+        },
+        serviceType: [
+          'KFZ-Werkstatt Webdesign Hessen',
+          'Automotive Dashboard & Online-Terminbuchung',
+          '60-Sekunden-Recruiting für KFZ-Mechatroniker',
+          'Inspektions- & Radwechsel-Funnels',
+          'Local SEO für KFZ-Meisterbetriebe',
+        ],
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: `${BASE_URL}/${_locale}`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Branchen',
+            item: `${BASE_URL}/${_locale}/branchen`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: 'Automobil',
+            item: `${BASE_URL}/${_locale}/branchen/automobil`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 4,
+            name: 'KFZ-Werkstätten Hessen',
+            item: `${BASE_URL}/${_locale}/branchen/automobil/kfz-werkstatt`,
+          },
+        ],
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'Wie entlastet die Website das Telefon am Werkstatt-Empfang?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Kunden buchen Standardleistungen wie Inspektion nach Herstellervorgabe, HU/AU-Termine oder den saisonalen Radwechsel 24/7 online über unseren interaktiven Termin-Assistenten. Alle Fahrzeugdaten werden strukturiert erfasst.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Können wir das Automotive Dashboard live testen?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Ja! Unter https://automobile-rose-five.vercel.app steht unsere voll funktionsfähige Automotive-Webapplikation für Werkstatt- und Händlersysteme als interaktive Live-Demo bereit.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Wie hilft die Website bei der Suche nach KFZ-Mechatronikern?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Über unseren integrierten 60-Sekunden-Recruiting-Funnel können sich ausgebildete Gesellen, Diagnosetechniker und Meister ohne Anschreiben oder PDF-Upload direkt vom Smartphone aus bei Ihrer Werkstatt bewerben.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Wie schnell ist eine neue Werkstatt-Website online?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Ihr neuer Webauftritt ist in der Regel innerhalb von 10 bis 14 Werktagen komplett betriebsbereit und online.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Wie viel kostet eine neue Werkstatt-Website in Hessen?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Wir kalkulieren transparent und verbindlich als Festpreis auf Anfrage nach einer kostenlosen Bedarfsanalyse. Durch schlanke KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen.',
+            },
+          },
+        ],
+      },
+    ],
+  };
 
-  const _locale = (await params)?.locale || 'de';
-  const _seoTitle =
-    _locale === 'en'
-      ? 'Web Design for Auto Repair Shops | Wetzlar Area | Coday'
-      : 'Webdesign für KFZ-Werkstätten | Raum Wetzlar | Coday';
   return (
-    <>
+    <div className="bg-slate-950 text-slate-100 min-h-screen selection:bg-amber-500 selection:text-slate-950">
       <script
-        id="schema-branchen-kfz-werkstatt"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@graph': [
-              getOrganizationSchema(_locale),
-              getServiceSchema({
-                name:
-                  _locale === 'en'
-                    ? 'Web Design for Auto Repair Shops'
-                    : 'Webdesign für KFZ-Werkstätten',
-                description:
-                  _locale === 'en'
-                    ? 'Web design for auto repair shops in the Wetzlar area. Digital dominance for your industry.'
-                    : 'Webdesign für KFZ-Werkstätten im Raum Wetzlar. Digitale Dominanz für Ihre Branche.',
-                url: `${BASE_URL}/${_locale}/branchen/automobil/kfz-werkstatt`,
-              }),
-            ],
-          }),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <GamifiedIndustryTemplate content={content} cityData={undefined} />
-      {/* SEO */}
-      {_locale === 'de' ? (
-        <section className="container mx-auto px-4 py-16 max-w-5xl text-secondary-600">
-          <h2 className="text-3xl font-display font-bold mb-6">
-            Professionelles Webdesign für KFZ-Werkstätten im Raum Wetzlar
-          </h2>
-          <div className="space-y-4 text-base leading-relaxed">
-            <p>
-              Eine professionelle Website ist für KFZ-Werkstätten heute kein Luxus mehr, sondern
-              eine betriebliche Notwendigkeit. Fahrzeughalter im Raum Wetzlar suchen online nach
-              Werkstätten, vergleichen Bewertungen und erwarten eine einfache Möglichkeit, Termine
-              zu vereinbaren oder sich über Leistungen zu informieren. Wenn Ihre KFZ-Werkstatt in
-              den Suchergebnissen nicht sichtbar ist, gehen potenzielle Kunden direkt zur
-              Konkurrenz. Coday entwickelt maßgeschneiderte Webdesign- und IT-Lösungen, die genau
-              auf die Anforderungen von Autowerkstätten zugeschnitten sind. Wir verstehen, dass ein
-              Werkstattinhaber keine Zeit für komplizierte Technik hat – deshalb liefern wir
-              Websites, die von Anfang an funktionieren, professionell aussehen und Kunden gewinnen.
-            </p>
-            <p>
-              Unsere branchenspezifischen Webdesign-Lösungen für KFZ-Werkstätten umfassen
-              Online-Terminbuchungssysteme, die nahtlos in Ihren Werkstattalltag integriert werden.
-              Kunden können rund um die Uhr Inspektionstermine, Ölwechsel oder HU/AU-Termine buchen,
-              ohne Ihr Telefon zu blockieren. Darüber hinaus integrieren wir Leistungsübersichten,
-              Preistransparenz und digitale Auftragsformulare, die Ihr Team entlasten und
-              gleichzeitig das Vertrauen Ihrer Kunden stärken. Google-Bewertungen und
-              Erfahrungsberichte werden prominent platziert, denn im Werkstattgeschäft ist Vertrauen
-              der entscheidende Faktor für die Kundenentscheidung. Wir sorgen dafür, dass Ihre
-              bestehenden positiven Bewertungen maximale Wirkung entfalten.
-            </p>
-            <p>
-              Suchmaschinenoptimierung (SEO) für KFZ-Werkstätten erfordert einen lokalen Fokus. Wir
-              optimieren Ihre Website gezielt auf Suchbegriffe wie „KFZ-Werkstatt Wetzlar",
-              „Autowerkstatt in meiner Nähe" oder „HU AU Wetzlar". Durch die Optimierung Ihres
-              Google Business-Profils, den Aufbau lokaler Backlinks und die technische
-              Perfektionierung Ihrer Website stellen wir sicher, dass Sie bei lokalen Suchanfragen
-              ganz oben erscheinen. Jede Seite wird für mobile Endgeräte optimiert, denn die meisten
-              Kunden suchen unterwegs auf dem Smartphone nach einer Werkstatt. Schnelle Ladezeiten
-              und eine intuitive Navigation sind für uns selbstverständlich – denn jede Sekunde
-              Verzögerung kostet Sie potenzielle Kunden.
-            </p>
-            <p>
-              Als Ihre Webdesign-Agentur in Wetzlar bieten wir KFZ-Werkstätten ein
-              Rundum-sorglos-Paket: von der strategischen Beratung über das Design und die
-              Entwicklung bis hin zur laufenden Betreuung und Wartung. Wir implementieren
-              DSGVO-konforme Kontaktformulare, Cookie-Banner und Datenschutzlösungen, damit Sie
-              rechtlich auf der sicheren Seite stehen. Unser Ziel ist es, Ihre Werkstatt digital so
-              professionell zu präsentieren, wie Sie Ihre Arbeit am Fahrzeug erledigen. Mit einer
-              von Coday entwickelten Website gewinnen Sie nicht nur mehr Kunden, sondern bauen
-              langfristig eine starke digitale Marke auf, die Ihre KFZ-Werkstatt als erste
-              Anlaufstelle in der Region positioniert.
+
+      {/* 1. HERO SECTION MIT LEAD CAPTURE */}
+      <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-950/25 via-slate-950/80 to-slate-950 pointer-events-none" />
+        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-amber-500/10 blur-[140px] rounded-full pointer-events-none" />
+
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-950/40 text-amber-400 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-8 backdrop-blur-md">
+            <Car className="w-4 h-4 text-amber-400" />
+            AUTOMOTIVE & MEISTERWERKSTÄTTEN · HESSENWEIT
+          </div>
+
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-8 leading-[1.1]">
+            Webdesign für KFZ-Werkstätten in{' '}
+            <span className="bg-gradient-to-r from-amber-400 via-orange-300 to-yellow-400 bg-clip-text text-transparent">
+              Hessen
+            </span>
+          </h1>
+
+          <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-10">
+            High-Performance Next.js Websites für freie Werkstätten, Karosserie- und Lackierzentren
+            in ganz Hessen. Automatisierte Online-Terminbuchung für Inspektion & HU/AU, weniger
+            Telefon-Stress und 60-Sekunden-Recruiting für KFZ-Mechatroniker. Verbindlicher Festpreis
+            auf Anfrage.
+          </p>
+
+          {/* Lead Capture Form in Hero */}
+          <div className="max-w-xl mx-auto mb-16 p-6 rounded-3xl bg-slate-900/60 border border-slate-800 backdrop-blur-md shadow-2xl">
+            <h2 className="text-lg font-bold text-white mb-4 text-center">
+              Kostenlose Werkstatt-Bedarfsanalyse anfordern
+            </h2>
+            <LazyQuickContactForm />
+          </div>
+
+          {/* Trust Badges */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-8 border-t border-slate-800/80">
+            <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800 backdrop-blur-sm">
+              <div className="text-2xl sm:text-3xl font-black text-amber-400 mb-1">100/100</div>
+              <div className="text-xs sm:text-sm text-slate-400 font-medium">Core Web Vitals</div>
+            </div>
+            <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800 backdrop-blur-sm">
+              <div className="text-2xl sm:text-3xl font-black text-amber-400 mb-1">&lt; 0.4s</div>
+              <div className="text-xs sm:text-sm text-slate-400 font-medium">Ladezeit via Edge</div>
+            </div>
+            <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800 backdrop-blur-sm">
+              <div className="text-2xl sm:text-3xl font-black text-amber-400 mb-1">Live Demo</div>
+              <div className="text-xs sm:text-sm text-slate-400 font-medium">
+                Automotive App bereit
+              </div>
+            </div>
+            <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800 backdrop-blur-sm">
+              <div className="text-2xl sm:text-3xl font-black text-amber-400 mb-1">&lt; 60s</div>
+              <div className="text-xs sm:text-sm text-slate-400 font-medium">
+                Mechatroniker Recruiting
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. TRUSTBAR (REAL PROOF) */}
+      <section className="border-y border-slate-800 bg-slate-900/40">
+        <TrustBar />
+      </section>
+
+      {/* 3. LIVE DEMO SHOWCASE: AUTOMOTIVE DASHBOARD */}
+      <section className="py-20 bg-amber-950/20 border-b border-slate-800">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="p-8 sm:p-10 rounded-3xl bg-slate-900/80 border border-amber-500/40 flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="space-y-4 max-w-xl">
+              <span className="px-3 py-1 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-400 text-xs font-bold uppercase tracking-wider">
+                Interaktive Web-Applikation
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white">
+                Live-Demo: Automotive Dashboard & Buchungsportal
+              </h3>
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                Erleben Sie unsere spezialisierte Automotive-Applikation live im Einsatz. Mit
+                intelligentem Inspektions-Rechner, digitaler Schadensmeldung und nahtloser
+                Termin-Synchronisation für moderne KFZ-Betriebe in Hessen.
+              </p>
+            </div>
+            <a
+              href="https://automobile-rose-five.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                variant="primary"
+                size="lg"
+                className="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold whitespace-nowrap shadow-lg shadow-amber-500/20"
+              >
+                Dashboard Live testen
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. 4-SÄULEN WERKSTATT STATS BENTO GRID */}
+      <section className="py-24 relative">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-amber-400 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Messbarer Werkstatt-Erfolg
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2 mb-4">
+              Digitale Entlastung für Ihren Werkstattbetrieb in Hessen
+            </h2>
+            <p className="text-slate-400 text-base sm:text-lg">
+              Volle Hebebühnen mit planbaren Inspektions- und Wartungsaufträgen.
             </p>
           </div>
-        </section>
-      ) : (
-        <section className="container mx-auto px-4 py-16 max-w-5xl text-secondary-600">
-          <h2 className="text-3xl font-display font-bold mb-6">
-            Professional Web Design for Auto Repair Shops in the Wetzlar Area
-          </h2>
-          <div className="space-y-4 text-base leading-relaxed">
-            <p>
-              A professional website is no longer a luxury for auto repair shops — it is a business
-              necessity. Vehicle owners in the Wetzlar area search online for workshops, compare
-              reviews, and expect an easy way to book appointments or learn about services. If your
-              auto repair shop is not visible in search results, potential customers go straight to
-              the competition. Coday develops tailored web design and IT solutions built
-              specifically for the needs of automotive workshops. We understand that a shop owner
-              has no time for complicated technology — that is why we deliver websites that work
-              from day one, look professional, and win customers.
-            </p>
-            <p>
-              Our industry-specific web design solutions for auto repair shops include online
-              appointment booking systems that integrate seamlessly into your daily workshop
-              routine. Customers can book inspections, oil changes, or MOT appointments around the
-              clock without tying up your phone line. Beyond that, we integrate service overviews,
-              transparent pricing, and digital job request forms that reduce your team's workload
-              while building customer trust. Google reviews and testimonials are prominently
-              displayed, because in the automotive repair business, trust is the decisive factor in
-              a customer's decision. We ensure your existing positive reviews achieve maximum
-              impact.
-            </p>
-            <p>
-              Search engine optimisation (SEO) for auto repair shops requires a strong local focus.
-              We optimise your website specifically for search terms such as "auto repair shop
-              Wetzlar", "car workshop near me", or "MOT Wetzlar". By optimising your Google Business
-              Profile, building local backlinks, and technically perfecting your website, we make
-              sure you appear at the top for local searches. Every page is optimised for mobile
-              devices, because most customers search for a workshop on their smartphone while on the
-              go. Fast loading times and intuitive navigation are standard for us — because every
-              second of delay costs you potential customers.
-            </p>
-            <p>
-              As your web design agency in Wetzlar, we offer auto repair shops a complete package:
-              from strategic consultation through design and development to ongoing support and
-              maintenance. We implement GDPR-compliant contact forms, cookie banners, and data
-              privacy solutions so you remain on the safe side legally. Our goal is to present your
-              workshop digitally with the same professionalism you bring to every vehicle you
-              service. With a website developed by Coday, you not only win more customers but build
-              a strong digital brand over the long term that positions your auto repair shop as the
-              first port of call in the region.
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="p-8 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-amber-500/40 transition-colors group">
+              <div className="text-4xl font-black text-amber-400 mb-2">-65%</div>
+              <h3 className="text-lg font-bold text-white mb-2">Telefon-Aufkommen</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                Kunden buchen Inspektion, HU/AU & Radwechsel online statt am Werkstatt-Tresen
+                anzurufen.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-amber-500/40 transition-colors group">
+              <div className="text-4xl font-black text-amber-400 mb-2">+140%</div>
+              <h3 className="text-lg font-bold text-white mb-2">Wartungsaufträge</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                Gezielte Lead-Funnels für profitable Inspektionen nach Herstellervorgabe mit
+                Garantieerhalt.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-amber-500/40 transition-colors group">
+              <div className="text-4xl font-black text-amber-400 mb-2">&lt; 60s</div>
+              <h3 className="text-lg font-bold text-white mb-2">Recruiting-Dauer</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                KFZ-Mechatroniker bewerben sich mobil in unter einer Minute ohne Anschreiben.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-amber-500/40 transition-colors group">
+              <div className="text-4xl font-black text-amber-400 mb-2">&lt; 0.4s</div>
+              <h3 className="text-lg font-bold text-white mb-2">Mobile Ladezeit</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                Sofortige Anzeige bei Pannen-Notfällen und mobilen Suchen von Autofahrern.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. COMPARISON TABLE: NEXT.JS AUTOMOTIVE VS. TRADITIONELLES WORDPRESS */}
+      <section className="py-24 bg-slate-900/40 border-y border-slate-800 relative overflow-hidden">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-amber-400 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Technologie-Vergleich
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2 mb-4">
+              Warum moderne KFZ-Betriebe in Hessen auf Next.js setzen
+            </h2>
+            <p className="text-slate-400 text-base sm:text-lg">
+              Der direkte Vergleich zwischen Standard-Baukästen und maßgeschneiderter
+              Webtechnologie.
             </p>
           </div>
-        </section>
-      )}
-    </>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse rounded-2xl overflow-hidden border border-slate-800 bg-slate-900/40 backdrop-blur-sm">
+              <thead>
+                <tr className="border-b border-slate-800 bg-slate-900/80">
+                  <th className="p-5 text-sm font-semibold text-slate-300">Kriterium</th>
+                  <th className="p-5 text-sm font-semibold text-red-400">
+                    Veraltete WordPress / Baukasten Werkstatt-Website
+                  </th>
+                  <th className="p-5 text-sm font-semibold text-amber-400 bg-amber-950/30">
+                    Coday Next.js 15 Automotive Stack
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-800/60 text-sm">
+                <tr className="hover:bg-slate-850/50 transition-colors">
+                  <td className="p-5 font-medium text-white">Online-Terminbuchung</td>
+                  <td className="p-5 text-slate-400">
+                    Einfaches Kontaktformular führt zu ständigem Nachtelefonieren
+                  </td>
+                  <td className="p-5 font-bold text-amber-400 bg-amber-950/20">
+                    Smarter Funnel mit Fahrzeugschein-Upload & Wunschtermin
+                  </td>
+                </tr>
+                <tr className="hover:bg-slate-850/50 transition-colors">
+                  <td className="p-5 font-medium text-white">Mechatroniker-Recruiting</td>
+                  <td className="p-5 text-slate-400">
+                    Statische PDF-Dateien (0 Bewerbungen im Monat)
+                  </td>
+                  <td className="p-5 font-bold text-amber-400 bg-amber-950/20">
+                    60-Sekunden-Express-Recruiting direkt via Smartphone
+                  </td>
+                </tr>
+                <tr className="hover:bg-slate-850/50 transition-colors">
+                  <td className="p-5 font-medium text-white">Geschwindigkeit & Ladezeit</td>
+                  <td className="p-5 text-slate-400">
+                    3.5s – 5.0s (Pannen-Kunden springen sofort zur Konkurrenz ab)
+                  </td>
+                  <td className="p-5 font-bold text-amber-400 bg-amber-950/20">
+                    &lt; 0.4s (Sofortige Anzeige von Notdienst & Rufnummern)
+                  </td>
+                </tr>
+                <tr className="hover:bg-slate-850/50 transition-colors">
+                  <td className="p-5 font-medium text-white">Google Sichtbarkeit Hessen</td>
+                  <td className="p-5 text-slate-400">Nur bei Firmennamensuche sichtbar</td>
+                  <td className="p-5 font-bold text-amber-400 bg-amber-950/20">
+                    Top-Rankings für „Inspektion", „HU AU" & „KFZ Werkstatt"
+                  </td>
+                </tr>
+                <tr className="hover:bg-slate-850/50 transition-colors">
+                  <td className="p-5 font-medium text-white">Preisstruktur</td>
+                  <td className="p-5 text-slate-400">Teure Monats-Abos oder Portalgebühren</td>
+                  <td className="p-5 font-bold text-amber-400 bg-amber-950/20">
+                    Verbindlicher Festpreis auf Anfrage
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. KFZ-WERKSTATT LEISTUNGS-MATRIX */}
+      <section className="py-24 bg-slate-900/30 border-b border-slate-800">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-amber-400 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Spezialisierte Module
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2 mb-4">
+              Funktionen, die Ihren Werkstattalltag in Hessen automatisieren
+            </h2>
+            <p className="text-slate-400 text-base sm:text-lg">
+              Vom Inspektions-Fahrzeugschein-Upload bis zur digitalen Schadensmeldung.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {services.map((s) => {
+              const Icon = s.icon;
+              return (
+                <div
+                  key={s.title}
+                  className="p-8 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-amber-500/40 transition-all group"
+                >
+                  <Icon className="w-10 h-10 text-amber-400 mb-6 group-hover:scale-110 transition-transform" />
+                  <h3 className="text-xl font-bold text-white mb-3">{s.title}</h3>
+                  <p className="text-slate-400 text-sm leading-relaxed">{s.desc}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* 7. FOUNDER PHILOSOPHY BLOCK */}
+      <section className="py-24 bg-slate-950 relative">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/5 blur-[100px] rounded-full pointer-events-none" />
+            <div className="relative z-10">
+              <span className="text-amber-400 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+                Inhabergeführte Betreuung
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-bold text-white mt-2 mb-6">
+                Echtes digitales Handwerk für Werkstattmeister in Hessen
+              </h2>
+              <p className="text-slate-300 text-base sm:text-lg leading-relaxed mb-6">
+                Als spezialisierter Solo-Entwickler mit Sitz in Mittelhessen baue ich
+                Werkstatt-Websites, die Ihnen echte Entlastung bringen: Keine Standard-Templates,
+                sondern maßgeschneiderte Systeme mit 100% DSGVO-Sicherheit, reibungsloser
+                Terminbuchung und voller Unabhängigkeit von teuren Werkstattportalen. Sie arbeiten
+                bei Coday direkt mit mir – <strong>Umutcan Emre Tezgel</strong>.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-slate-800 text-sm">
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-amber-400 flex-shrink-0" />
+                  <span className="text-slate-300">Direkter Entwickler-Kontakt</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-amber-400 flex-shrink-0" />
+                  <span className="text-slate-300">Voller Quellcode-Besitz</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-amber-400 flex-shrink-0" />
+                  <span className="text-slate-300">Festpreis & Go-Live in 10-14 Tagen</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 8. LOCAL GEO-SEMANTIC CONTENT SILO */}
+      <section className="py-24 bg-slate-900/20 border-t border-slate-800">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <div>
+            <span className="text-amber-400 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Automobil- & Werkstattland Hessen
+            </span>
+            <h2 className="text-3xl font-bold text-white mt-2 mb-6">
+              Starke freie Werkstätten in Wetzlar, Frankfurt, Gießen, Kassel & ganz Hessen
+            </h2>
+            <p className="text-slate-300 leading-relaxed text-base">
+              Hessen ist eines der am stärksten befahrenen Bundesländer Deutschlands. Über die
+              Autobahnachsen <strong>A3, A5, A7, A45 und A66</strong> bewegen sich täglich Millionen
+              Pendler und Firmenfahrzeuge. Freie Werkstätten und Karosseriebetriebe in{' '}
+              <strong>
+                Wetzlar, Gießen, Frankfurt, Wiesbaden, Darmstadt, Kassel, Fulda und Limburg
+              </strong>
+              profitieren enorm von digitaler Sichtbarkeit: Wenn Autofahrer nach einer Inspektion
+              nach Herstellervorgabe, einer schnellen Unfallinstandsetzung oder einem zuverlässigen
+              Reifenwechsel suchen, entscheidet die Geschwindigkeit und Professionalität Ihrer
+              Website über die Terminbuchung.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-2xl font-bold text-white mb-4">
+              Persönliche Vor-Ort-Beratung in Ihrem KFZ-Betrieb
+            </h3>
+            <p className="text-slate-300 leading-relaxed text-base">
+              Von unserem Hauptsitz in Wetzlar erreichen wir Werkstattbetriebe in ganz Hessen
+              schnell für persönliche Besprechungen vor Ort. Wir integrieren Ihre bestehenden
+              Werkstatt-Abläufe nahtlos in das System.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-2xl font-bold text-white mb-4">
+              Verbindlicher Festpreis auf Anfrage & Go-Live in unter 14 Tagen
+            </h3>
+            <p className="text-slate-300 leading-relaxed text-base">
+              Maximale Planungssicherheit für Ihren Betrieb: Nach einer kostenlosen Bedarfsanalyse
+              erhalten Sie ein transparentes Festpreisangebot ohne versteckte Kosten oder monatliche
+              Lizenzfallen.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 9. LOCAL FAQ ACCORDION */}
+      <section className="py-24 bg-slate-900/40 border-t border-slate-800">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="text-amber-400 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Häufige Fragen
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2 mb-4">
+              Fragen & Antworten zu Webdesign für KFZ-Werkstätten in Hessen
+            </h2>
+          </div>
+
+          <div className="space-y-6">
+            <div className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800">
+              <h3 className="text-lg font-bold text-white mb-2">
+                Wie entlastet die Website das Telefon am Werkstatt-Empfang?
+              </h3>
+              <p className="text-slate-300 text-sm leading-relaxed">
+                Kunden buchen Standardleistungen wie Inspektion nach Herstellervorgabe,
+                HU/AU-Termine oder den saisonalen Radwechsel 24/7 online über unseren interaktiven
+                Termin-Assistenten. Alle Fahrzeugdaten werden strukturiert erfasst.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800">
+              <h3 className="text-lg font-bold text-white mb-2">
+                Können wir das Automotive Dashboard live testen?
+              </h3>
+              <p className="text-slate-300 text-sm leading-relaxed">
+                Ja! Unter https://automobile-rose-five.vercel.app steht unsere voll funktionsfähige
+                Automotive-Webapplikation für Werkstatt- und Händlersysteme als interaktive
+                Live-Demo bereit.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800">
+              <h3 className="text-lg font-bold text-white mb-2">
+                Wie hilft die Website bei der Suche nach KFZ-Mechatronikern?
+              </h3>
+              <p className="text-slate-300 text-sm leading-relaxed">
+                Über unseren integrierten 60-Sekunden-Recruiting-Funnel können sich ausgebildete
+                Gesellen, Diagnosetechniker und Meister ohne Anschreiben oder PDF-Upload direkt vom
+                Smartphone aus bei Ihrer Werkstatt bewerben.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800">
+              <h3 className="text-lg font-bold text-white mb-2">
+                Wie schnell ist eine neue Werkstatt-Website online?
+              </h3>
+              <p className="text-slate-300 text-sm leading-relaxed">
+                Ihr neuer Webauftritt ist in der Regel innerhalb von 10 bis 14 Werktagen komplett
+                betriebsbereit und online.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800">
+              <h3 className="text-lg font-bold text-white mb-2">
+                Wie viel kostet eine neue Werkstatt-Website in Hessen?
+              </h3>
+              <p className="text-slate-300 text-sm leading-relaxed">
+                Wir kalkulieren transparent und verbindlich als Festpreis auf Anfrage nach einer
+                kostenlosen Bedarfsanalyse. Durch schlanke KI-Workflows sind wir 5–10x günstiger als
+                traditionelle Großagenturen.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 10. BOTTOM CTA */}
+      <section className="py-20 bg-gradient-to-t from-amber-950/40 to-slate-950 border-t border-slate-800 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-white mb-6">
+            Bereit für eine moderne, vollautomatische Werkstatt-Website?
+          </h2>
+          <p className="text-slate-300 text-base sm:text-lg mb-10 max-w-2xl mx-auto">
+            Vereinbaren Sie jetzt ein unverbindliches Erstgespräch direkt mit Inhaber Umutcan Emre
+            Tezgel.
+          </p>
+          <Link href="/contact">
+            <Button
+              variant="primary"
+              size="lg"
+              className="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-10 py-5 text-lg shadow-xl shadow-amber-500/25 transition-all hover:scale-105"
+            >
+              Kostenlose Werkstatt-Analyse anfordern
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+          </Link>
+        </div>
+      </section>
+    </div>
   );
 }

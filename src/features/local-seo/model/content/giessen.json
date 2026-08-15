@@ -3,149 +3,105 @@
   "displayName": "Gießen",
   "type": "location",
   "meta": {
-    "title": "High End Webdesign Agentur Gießen | Coday, Next.js & Headless CMS für B2B",
-    "description": "Premium Webdesign Agentur für Gießen. Wir liefern blitzschnelle Next.js B2B-Webseiten. Kompromisslose Performance und exklusives Webdesign ohne WordPress für Gießener Unternehmen."
+    "title": "Webdesign Gießen | Next.js Webagentur & SEO · Coday",
+    "description": "Moderne Webentwicklung & Webdesign für Gießen. Ultra-schnelle Ladezeiten, messbare Neukunden & Festpreise auf Anfrage für Praxen, Startups & Mittelstand."
   },
   "hero": {
-    "headline": "High End Webdesign Gießen: Digitale Exzellenz für lokale Marktführer",
-    "subheadline": "Webdesign Agentur Gießen: Exklusives Webdesign, das skalierbar B2B-Kunden gewinnt",
-    "description": "Als Ihre spezialisierte Webdesign Agentur für Gießen sind wir Ihr strategischer Partner für digitales Engineering auf Enterprise Niveau. Wir entwickeln nicht einfach nur Webseiten, wir konstruieren durch kompromissloses Webdesign hochperformante, digitale Vertriebsmaschinen. Mit Next.js Technologie anstelle von veraltetem WordPress garantieren wir Gießener Unternehmen maximale Performance, Datensicherheit und eine dominante Sichtbarkeit im B2B-Sektor."
+    "headline": "Webdesign Gießen: Digitale Exzellenz für lokale Marktführer",
+    "subheadline": "Entwickelt für Gießener Ärzte, Kliniken, Tech-Startups und führende Mittelständler. Maximale Ladezeiten, perfekte Google-Rankings und automatisierte Lead-Erfassung.",
+    "description": "High-End Webentwicklung mit Next.js 15, blitzschnelle Ladezeiten unter 500ms und automatisierte Neukundengewinnung für Praxen, Startups und Unternehmen in Gießen und Umgebung. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
   },
   "localDominance": {
-    "title": "Digitale Dominanz durch überlegenes Webdesign in Gießens Hightech- & Wissenschafts-Ökosystem",
-    "description": "Gießen ist das pulsierende Zentrum für Wissenschaft, Forschung und Medizintechnik in Mittelhessen. Um in diesem anspruchsvollen, hochspezialisierten B2B-Umfeld herauszustechen, reicht Standard-Webdesign aus dem Baukasten nicht mehr aus. Als lokal verankerte Webdesign Agentur transformieren wir Ihre Unternehmenswebsite von einer passiven digitalen Visitenkarte zu einer aktiven, skalierbaren Vertriebsmaschine. Mit maßgeschneidertem Webdesign für Gießen stellen wir sicher, dass Sie Ihre Zielgruppe dominieren und Innovation visuell sowie technisch greifbar machen. Vertrauen Sie auf die Webdesign Agentur Gießen | Ihr lokaler Standort | Coday für messbare digitale Erfolge.",
+    "title": "Digitale Dominanz durch überlegenes Webdesign in Gießens Hightech- & Medizin-Ökosystem",
+    "description": "Gießen ist das pulsierende Zentrum für Wissenschaft, Universitätsmedizin und Technologie in Mittelhessen. Als lokal verankerte Webdesign Agentur transformieren wir Ihre Unternehmenswebsite zu einer aktiven, skalierbaren Vertriebsmaschine.",
     "points": [
-      "Fokus auf Medizintechnik & Life Sciences in Gießen: Komplexe, hochpreisige Dienstleistungen und Forschungsprodukte erfordern ein Webdesign, das bedingungsloses Vertrauen bildet. Blitzschnelle Ladezeiten durch unsere Next.js Architektur strapazieren die knappe Zeit von Chefärzten und Laborleitern in Gießen nicht.",
-      "Regionale Nähe Wetzlar-Gießen: Die ideale Symbiose aus Wetzlarer Optik-Tradition und Gießener Spitzenforschung. Als regionale Webdesign Agentur bieten wir extrem kurze Wege für persönliche Strategie-Meetings, tiefe operative Einblicke und agile Zusammenarbeit bei geschäftskritischen Webdesign-Projekten in Gießen.",
-      "Next.js Webdesign als SEO-Katalysator: Wir dominieren die Google Suchergebnisse für 'Webdesign Gießen' und B2B-Keywords durch überragende Core Web Vitals. Im hart umkämpften Markt maximiert diese technische Überlegenheit unseres Webdesigns Ihre Conversion Raten messbar.",
-      "Employer Branding Webdesign für den Campus Gießen (JLU & THM): Der Fachkräftemangel ist das absolute Nadelöhr des Wachstums. Wir entwickeln digitale Erlebniswelten und High-End Karriereseiten, die gezielt akademische Top-Talente und Absolventen der JLU und der THM Gießen magnetisch anziehen.",
-      "DSGVO-konformes Webdesign & Headless Architektur: Gerade für forschungsnahe Gießener Unternehmen ist Datensicherheit essenziell. Unser Webdesign mit strikter Trennung von Frontend (Next.js) und Backend minimiert Angriffsflächen drastisch, absolut keine fehleranfälligen Plugins.",
-      "Skalierbares Webdesign für Gießener Hidden Champions: Wenn Sie aus Gießen heraus internationale Märkte erschließen, wächst unsere Architektur nahtlos mit. Edge Caching sorgt dafür, dass Ihr Webdesign in Tokio exakt so schnell lädt wie im Europaviertel in Gießen.",
-      "Einkäufer-zentrierte User Experience (B2B Webdesign UX): B2B Entscheider haben keine Zeit für Ladehemmungen. Unser Webdesign strukturiert komplexe Datenblätter und CAD-Modelle so, dass industrielle Einkäufer sofort finden, was sie suchen, für hochqualifizierte Leads in Gießen.",
-      "Webdesign ohne generische Templates: In einer Innovationsstadt wie Gießen dürfen Sie digital nicht aussehen wie Ihre lokale Konkurrenz. Coday liefert maßgeschneidertes Webdesign, das die technologische Marktführerschaft Ihres Gießener Unternehmens visuell zementiert."
+      "Fokus auf Universitätsmedizin, Kliniken & Praxen in Gießen: Barrierefreie, vertrauensbildende Webseiten mit nahtloser Online-Terminbuchung für Patienten.",
+      "Technologie- und Innovationszentrum Gießen (TIG) & Startups: Skalierbare Next.js Architekturen für wachsende Tech-Unternehmen.",
+      "Regionale Nähe Wetzlar-Gießen: In unter 10 Minuten via B49 und A485 persönlich bei Ihnen vor Ort.",
+      "Next.js Webdesign als SEO-Katalysator: Top-Rankings für 'Webdesign Gießen' und B2B-Suchbegriffe durch 100/100 Core Web Vitals.",
+      "Employer Branding am Campus Gießen (JLU & THM): Schnelle 60-Sekunden-Bewerbungsverfahren für akademische Nachwuchskräfte.",
+      "100% DSGVO-Konformität & Deutsches Hosting: Höchste Datensicherheit ohne fehleranfällige WordPress-Plugins."
     ]
   },
   "contentSections": [
     {
-      "title": "Unser Webdesign Prozess für Gießener Unternehmen: In 4 Schritten zur digitalen Marktführerschaft",
-      "content": "Als exklusive Webdesign Agentur für Gießen überlassen wir beim digitalen Engineering nichts dem Zufall. Unser Webdesign-Prozess ist speziell auf die extrem hohen Anforderungen von B2B-Unternehmen, Forschungseinrichtungen und dem gehobenen Mittelstand in Gießen und Umgebung zugeschnitten. Schritt 1: Strategisches Webdesign Discovery in Gießen. Wir treffen uns persönlich bei Ihnen vor Ort in Gießen, um Ihre Zielgruppen, B2B-Prozesse und technologische Positionierung exakt zu analysieren. Wir definieren die Architektur und das Fundament für Ihr zukünftiges High-End Webdesign. Schritt 2: UX/UI Design Engineering. Im Gegensatz zu Standard-Agenturen nutzen wir niemals fertige WordPress Templates. Wir kreieren ein vollkommen individuelles Webdesign, das durch Minimalismus, klare Typografie und perfekte Usability besticht, exakt abgestimmt auf die Ästhetik von Marktführern in der Region Gießen. Schritt 3: Headless Next.js Entwicklung. Unser Entwickler-Team transformiert das Webdesign in blitzschnellen, fehlerfreien React-Code. Wir binden Ihre bestehenden ERP- oder CRM-Systeme nahtlos an und sorgen dafür, dass Ihr Webdesign technisch absolut State of the Art ist. Schritt 4: Launch & Gießen Local SEO Optimierung. Beim Go-Live garantieren wir reibungslose Übergänge ohne Ranking-Verluste. Durch gezieltes Local SEO für Gießen und perfekte Ladezeiten stellen wir sicher, dass Ihr neues Webdesign vom ersten Tag an Leads generiert und Ihre digitale Dominanz im B2B-Markt maximiert wird."
+      "title": "Webdesign für Ärzte, Facharztpraxen & Kliniken in Gießen",
+      "content": "Rund um das Universitätsklinikum Gießen und Marburg (UKGM) und die zahlreichen Facharztpraxen am Seltersweg und im Europaviertel erwarten Patienten moderne, barrierefreie Praxisportale mit schneller digitaler Terminvereinbarung."
     },
     {
-      "title": "Warum Standard-Websites und WordPress im Gießener B2B Sektor katastrophal scheitern",
-      "content": "Die Unternehmenslandschaft in Gießen, stark geprägt von Biotechnologie, hochspezialisierter Medizintechnik und universitären Spin-offs, operiert auf allerhöchstem wissenschaftlichen und technologischen Niveau. Wer in diesem Umfeld mit zusammengeklickten Baukasten-Websites oder langsamem Standard-Webdesign in WordPress antritt, signalisiert potenziellen Geschäftspartnern unbewusst technologischen Stillstand. WordPress wurde ursprünglich als simples Blogging-System konzipiert und wird heute für Unternehmenswebseiten durch unzählige fehleranfällige Plugins künstlich am Leben erhalten. Das Resultat ist beim Standard-Webdesign fast immer dasselbe: extrem aufgeblähter Code, katastrophale Ladezeiten, ständige und kritische Sicherheitslücken sowie eine User Experience (UX), die anspruchsvolle B2B Kunden aus Gießen und aller Welt sofort abschreckt. Coday zieht hier einen radikalen Schlussstrich. Als spezialisierte Webdesign Agentur für Gießen programmieren wir konsequent mit Next.js, React und TypeScript. Wir liefern Webdesign und Codebase-Qualität auf Enterprise Niveau, frei von unnötigem Ballast. In einem Markt, in dem ein einziger digitaler B2B-Lead Verträge in Millionenhöhe bedeuten kann, verschaffen wir Ihnen durch unsere kompromisslose Webdesign-Architektur den entscheidenden technologischen, ästhetischen und psychologischen Vorsprung."
+      "title": "Digitale Skalierung für Startups im TIG & Technologie-Unternehmen",
+      "content": "Startups und innovative Mittelständler im Technologie- und Innovationszentrum Gießen benötigen Webanwendungen auf Enterprise-Niveau, die Investoren überzeugen und Kunden planbar gewinnen."
     },
     {
-      "title": "Die technologische Überlegenheit: Next.js Webdesign vs. Monolithische Systeme (WordPress/Typo3)",
-      "content": "Während Ihre Konkurrenz noch auf monolithische Legacy-Systeme wie Typo3 oder WordPress vertraut, bei denen Datenbank, Backend-Logik und Webdesign-Frontend schwerfällig miteinander verstrickt sind, implementieren wir bei Coday für Gießener Kunden zukunftsweisende Headless-Architekturen. Durch die konsequente Entkopplung des Webdesign-Frontends (Next.js) vom Content Backend (wie Sanity CMS) erreichen wir eine beispiellose Flexibilität und Ausfallsicherheit. Next.js ermöglicht Server-Side Rendering (SSR) sowie Static Site Generation (SSG). Das bedeutet, dass Ihre Webseiten auf dem Server vorberechnet und als extrem schnelle, statische Dateien an den Browser des Nutzers ausgeliefert werden. Ladebildschirme gehören beim Premium Webdesign damit der Vergangenheit an. Wenn ein Einkäufer aus dem Gießener Umland oder aus Asien nach Ihren industriellen Lösungen sucht, ist Ihr Webdesign innerhalb von Millisekunden vollständig geladen und nutzbar. Diese technische Exzellenz im Webdesign ist nicht nur ein reines Komfortmerkmal, sondern ein hartes Ranking-Kriterium für Google (Core Web Vitals) und ein direkter Multiplikator für Ihre Conversion-Rate."
-    },
-    {
-      "title": "Messbarer ROI durch radikales Webdesign & Performance Optimierung (Core Web Vitals)",
-      "content": "Web-Performance ist im High-End B2B-Sektor keine optionale Metrik, sondern das Fundament Ihres gesamten digitalen Vertriebs und Marketing-Funnels. Studien belegen eindrucksvoll: 100 Millisekunden zusätzliche Ladezeit können bis zu 1% Umsatz oder Conversion kosten. Für komplexe, erklärungsbedürftige B2B-Produkte aus der Gießener Forschungs- und Fertigungsindustrie gilt dies umso mehr. Unser Webdesign unterwirft jede Zeile Code, jede Animation und jedes Bild strengsten Performance-Budgets: Unser Ziel ist ein Largest Contentful Paint (LCP) von unter 2.0 Sekunden und eine Interaction to Next Paint (INP) von weit unter 150 Millisekunden, selbst auf schwachen Mobilgeräten im ländlichen Gießener Raum. Als Webdesign Agentur komprimieren wir Assets nicht nur, wir optimieren die gesamte Rendering-Pipeline des Browsers. Das Resultat ist ein Webdesign, das sich so reibungslos anfühlt wie eine native App auf dem neuesten Smartphone. Diese Latenzfreiheit signalisiert dem Besucher unterbewusst sofort: 'Dieses Gießener Unternehmen arbeitet präzise, hocheffizient und auf dem höchsten Niveau.' Ein unschätzbarer Vertrauensvorschuss im B2B-Vertrieb, ermöglicht durch exzellentes Webdesign."
-    },
-    {
-      "title": "Der Standortvorteil Wetzlar-Gießen: Webdesign an der Achse der technologischen Innovation",
-      "content": "Die geografische, akademische und wirtschaftliche Achse zwischen Wetzlar und Gießen ist ein einzigartiges, hochproduktives Kraftzentrum in Deutschland. Hier trifft Weltklasse-Optik und Präzisionsmechanik auf universitäre Spitzenforschung und Life Sciences. Als High-End Webdesign Agentur mit tiefen Wurzeln in Mittelhessen sind wir Teil genau dieses Ökosystems. Wir kennen die Mentalität, die wirtschaftlichen Netzwerke und die ganz spezifischen Herausforderungen von Gießener Marktführern. Wir sind keine anonyme Großstadt-Agentur, die nach dem Webdesign-Projekt in der Versenkung verschwindet. Wir sind Ihr Webdesign-Partner direkt vor Ort. Innerhalb von wenigen Minuten sind wir für Architektur-Workshops oder strategische Neuausrichtungen bei Ihnen in der Gießener Firmenzentrale. Diese physische Nähe ermöglicht extrem agile Webdesign-Entwicklungszyklen ohne Reibungsverluste."
-    },
-    {
-      "title": "Employer Branding Webdesign: Fachkräftegewinnung rund um den JLU und THM Campus in Gießen",
-      "content": "Der Wettbewerb um die absolut besten Köpfe, exzellente Ingenieure, Forscher und Entwickler, wird nirgends härter geführt als in einer dynamischen Universitätsstadt wie Gießen. Die JLU und die THM produzieren jährlich tausende Top-Absolventen. Doch wie überzeugen Sie diese Talente, wenn Ihr Webdesign auf dem Stand von 2015 ist? Wir entwickeln als Webdesign Agentur digitale Erlebniswelten und spezialisiertes Employer Branding Webdesign, das auf die Erwartungshaltung moderner Professionals zugeschnitten ist. Wir integrieren nahtlose, barrierefreie Bewerbungsprozesse und rasante Ladezeiten in das Webdesign. Wenn ein Master-Absolvent der THM Gießen Ihre Website öffnet, muss das Webdesign ihm sofort vermitteln: Hier in Gießen wird Innovation gelebt."
-    },
-    {
-      "title": "Design Engineering: Brutalismus, Minimalismus und kompromissloses Webdesign für Gießen",
-      "content": "Exzellenter, performanter Code benötigt zwangsläufig ein exzellentes visuelles Webdesign. Wir verabscheuen generische Templates und überladene Layouts. Unsere Webdesign Agentur für Gießen steht für echtes Design Engineering: Wir nutzen fortschrittliche Webdesign-Prinzipien des Industrial Brutalist UI und des Minimalismus, um komplexe B2B-Datenblätter mit maximaler Klarheit zu strukturieren. Strikte Typografie, gezielter Weißraum und Hardware-beschleunigte Mikro-Interaktionen im Webdesign sorgen für ein exklusives Premium-Markenerlebnis. Ihre Produkte aus Gießen sind State of the Art, Ihr Webdesign muss diese Qualität ab der ersten Sekunde visuell kommunizieren."
+      "title": "Local SEO & Google-Dominanz für Handel & Gewerbe im Landkreis Gießen",
+      "content": "Gezielte lokale Sichtbarkeit für Unternehmen in Gießen, Linden, Pohlheim, Buseck und Heuchelheim entlang der A485 und des Schiffenberger Tals."
     }
   ],
   "faq": [
     {
-      "q": "Warum ist Coday die technologisch beste Webdesign Agentur für unser Unternehmen in Gießen?",
-      "a": "Coday kombiniert als High End Webdesign Agentur die persönliche, greifbare Betreuung einer regionalen Agentur für Gießen mit der absoluten technologischen Exzellenz, die Sie sonst nur bei internationalen Elite-Agenturen finden. Wir verzichten beim Webdesign komplett auf Baukastensysteme wie WordPress. Stattdessen nutzen wir ausschließlich High-End Technologien wie Next.js, um Gießener Unternehmen kompromisslose Ladezeiten, absolute Systemsicherheit und exklusives Webdesign für maximalen B2B-Erfolg zu garantieren."
+      "q": "Wie viel kostet professionelles Webdesign für Gießen?",
+      "a": "Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance."
     },
     {
-      "q": "Was unterscheidet Ihr Next.js Webdesign von klassischen WordPress Webseiten?",
-      "a": "Der Unterschied im Webdesign ist fundamental: WordPress ist ein Monolith, bei dem Frontend und Datenbank miteinander verklebt sind, langsam und extrem anfällig für Hackerangriffe. Unser Next.js Webdesign basiert auf einer Headless Architektur. Das Webdesign-Frontend ist entkoppelt, wodurch die Seite als rasante, statisch vorberechnete Anwendung ausgeliefert wird. Die Webdesign-Performance (Core Web Vitals) ist um ein Vielfaches höher, was in Gießen und global direkt zu besseren Google Rankings führt."
+      "q": "Wie schnell ist eine neue Website in Gießen online?",
+      "a": "In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online."
     },
     {
-      "q": "Warum lehnen Sie es als Webdesign Agentur ab, Projekte in WordPress oder Typo3 umzusetzen?",
-      "a": "Weil wir für den langfristigen wirtschaftlichen Erfolg unserer Gießener Kunden einstehen. Monolithische CMS und altbackenes Webdesign in WordPress verursachen mittelfristig exorbitante Kosten durch ständige Sicherheitsupdates und Plugin-Wartungen. Mit unserem Next.js Webdesign und Headless CMS lösen wir diese Probleme an der Wurzel. Wir liefern für Gießen eine saubere, hochmoderne Webdesign-Infrastruktur, die zukunftssicher und extrem wartungsarm ist."
+      "q": "Kommen Sie für ein Beratungsgespräch direkt nach Gießen?",
+      "a": "Ja, sehr gerne. Von unserem Wetzlarer HQ aus sind wir über die B49/A485 in weniger als 10 Minuten direkt bei Ihnen vor Ort in Gießen, Linden oder Pohlheim."
     },
     {
-      "q": "Auf welche Branchen im Raum Gießen sind Sie beim Webdesign spezialisiert?",
-      "a": "Unsere technologische Webdesign-Expertise richtet sich exakt an die Treiber der Gießener Wirtschaft: Hochspezialisierte B2B-Unternehmen, Medizintechnik-Hersteller, Life-Science-Pioniere, Forschungs-Spin-offs der Universitäten sowie den innovativen Maschinenbau. Unternehmen in Gießen, deren komplexe Produkte absolutes High-End Webdesign erfordern, um Vertrauen zu generieren."
+      "q": "Bieten Sie auch Lösungen für Gastronomie und Events in Gießen?",
+      "a": "Ja. Mit Referenzen wie den Lindener Ratsstuben bieten wir schnelle Buchungsstrecken und mobil optimierte Erlebnisseiten für Gastronomie und Hotellerie."
     },
     {
-      "q": "Wie wichtig ist das Webdesign für unser lokales SEO in Gießen?",
-      "a": "Überlebenswichtig. Google nutzt die Performance Ihres Webdesigns (Core Web Vitals) als primäre Ranking-Faktoren. Ein langsames Webdesign verliert massiv an Sichtbarkeit für Suchanfragen wie 'Webdesign Gießen' oder Ihre Fachbegriffe. Unsere Next.js Webdesign-Architektur pusht Ihre Seite in den absoluten High-Performance-Bereich, was Ihre lokalen Rankings in Gießen massiv stärkt."
-    },
-    {
-      "q": "Kommen Sie für Webdesign-Workshops zu uns in die Gießener Zentrale?",
-      "a": "Selbstverständlich. Als Ihre lokale Webdesign Agentur ist uns der direkte Kontakt wichtig. Wir sind innerhalb von wenigen Minuten direkt bei Ihnen vor Ort in Gießen. Wir schätzen den tiefen, persönlichen Austausch an Whiteboards, insbesondere bei kritischen Webdesign-Kick-off-Meetings und strategischen Architektur-Planungen in Gießen."
-    },
-    {
-      "q": "Wie unterstützt Ihr Webdesign das Employer Branding am Campus Gießen?",
-      "a": "Die JLU und die THM in Gießen bündeln ehrgeizige Talente. Wir helfen Ihnen durch spezialisiertes Employer Branding Webdesign, diese zu gewinnen. Unser Webdesign kombiniert schnelle, barrierefreie mobile Bewerbungs-Funnels mit einer UX, die High-Tech ausstrahlt. So werden Sie in Gießen zum Employer of Choice."
-    },
-    {
-      "q": "Was bedeutet 'Headless CMS' für das Webdesign unseres Gießener Unternehmens?",
-      "a": "Bei einem Headless CMS ist die Inhaltspflege komplett vom sichtbaren Webdesign getrennt. Das Backend liefert Inhalte über APIs an das Next.js Webdesign-Frontend. Der Vorteil: Redakteure in Gießen können das Webdesign nicht versehentlich zerstören, und die Architektur ist extrem sicher."
-    },
-    {
-      "q": "Wie lange dauert die Entwicklung von High-End Webdesign für unser Gießener B2B-Unternehmen?",
-      "a": "Premium Webdesign erfordert tiefe strategische Analyse in Gießen. Je nach Komplexität bewegen wir uns in der Regel in einem Rahmen von 8 bis 16 Wochen vom ersten Webdesign-Workshop in Gießen bis zum Live-Gang. Wir arbeiten agil, sodass Sie den Fortschritt Ihres Webdesigns wöchentlich sehen."
-    },
-    {
-      "q": "Wie viel kostet maßgeschneidertes Webdesign für den Raum Gießen?",
-      "a": "Unsere Webdesign-Plattformen sind strategische Investitionen in Ihr Gießener Unternehmen. Aufgrund der kompromisslosen Qualität und individuellen Webdesign-Entwicklung starten unsere Projekte im fünfstelligen Bereich. Der genaue Projektumfang für Ihr Webdesign wird in einem Workshop in Gießen definiert. Der ROI entsteht durch signifikant mehr Leads durch herausragendes Webdesign."
+      "q": "Wer ist unser fester Ansprechpartner?",
+      "a": "Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support."
     }
   ],
   "meta_en": {
-    "title": "High End Web Design Agency Giessen | Coday, Next.js & Headless CMS for B2B",
-    "description": "Your premium web design agency in Giessen. We deliver lightning-fast Next.js B2B websites. Uncompromising performance and exclusive web design without WordPress for market leaders in Giessen."
+    "title": "Web Design Giessen | Next.js Agency & SEO · Coday",
+    "description": "Modern web development & web design in Giessen. Sub-500ms load times, measurable new clients & fixed pricing on request for practices, startups & mid-market."
   },
   "hero_en": {
-    "headline": "High End Web Design Giessen: Digital Excellence for Local Market Leaders",
-    "subheadline": "Web Design Agency Giessen: Exclusive web design that measurably acquires more B2B clients",
-    "description": "As your specialized web design agency for Giessen, we are your strategic partner for enterprise-level digital engineering. We don't just build websites, we engineer high-performance digital sales machines through uncompromising web design. Utilizing cutting-edge Next.js technology instead of outdated WordPress, we guarantee companies in Giessen maximum visibility, outstanding Core Web Vitals, and a user experience that instantly convinces B2B decision-makers."
+    "headline": "Web Design Giessen: Digital Excellence for Local Market Leaders",
+    "subheadline": "Engineered for Giessen doctors, medical clinics, tech startups and market leaders. Maximum speed, top Google rankings and automated lead capture.",
+    "description": "High-end Next.js 15 web development, sub-500ms load times and automated client acquisition for businesses in Giessen and surroundings. Fixed price upon request."
   },
   "localDominance_en": {
-    "title": "Digital Dominance through Superior Web Design in Giessen's Tech & Science Ecosystem",
-    "description": "Giessen is the vibrant center for science, research, and medical technology in Central Hesse. To stand out in this demanding, highly specialized B2B environment, standard web design is no longer sufficient. As a locally rooted web design agency, we transform your corporate website into an active, scalable sales machine. With tailor-made web design for Giessen, we ensure that you dominate your target audience.",
+    "title": "Digital Dominance Through Next.js in Giessen's Tech & Medical Ecosystem",
+    "description": "Giessen is the beating heart of research, university medicine and technology in Central Hesse. We build high-performance digital growth engines.",
     "points": [
-      "Focus on Medical Tech & Life Sciences in Giessen: Complex research products require web design that builds unconditional trust. Lightning-fast load times through our Next.js architecture respect the time of scientists in Giessen.",
-      "Regional Web Design Agency Proximity: We offer extremely short distances for personal web design strategy meetings directly at your location in Giessen.",
-      "Next.js Web Design as an SEO Catalyst: We dominate Google search results for 'Web Design Giessen' and B2B keywords through outstanding Core Web Vitals.",
-      "Employer Branding Web Design for Giessen Campus: We develop digital career pages with web design that specifically attracts academic top talents from JLU and THM Giessen.",
-      "GDPR-compliant Web Design for Giessen: Data security is essential for Giessen's research companies. Our headless web design architecture drastically minimizes attack surfaces.",
-      "Scalable Web Design for Giessen's Hidden Champions: If you expand into international markets from Giessen, our web design architecture grows seamlessly with you.",
-      "Buyer-centric B2B Web Design UX: Our web design structures complex data sheets so that industrial B2B buyers immediately find what they are looking for.",
-      "Web Design without Templates: In the innovation city of Giessen, Coday delivers bespoke web design that visually cements your intellectual market leadership."
+      "Focus on Medical Clinics & Practices in Giessen: Accessible, trustworthy portals with seamless online booking.",
+      "TIG Innovation Center & Tech Startups: Scalable Next.js architectures for ambitious ventures.",
+      "Close Regional Proximity: Under 10 minutes from our Wetzlar HQ to your office in Giessen via B49/A485.",
+      "Next.js as SEO Catalyst: Top Google rankings through 100/100 Core Web Vitals.",
+      "Campus Recruiting (JLU & THM): 60-second mobile application flows for top academic talent.",
+      "100% GDPR Compliant & German Hosting: Enterprise security without vulnerable WordPress plugins."
     ]
   },
   "contentSections_en": [
     {
-      "title": "Our Web Design Process for Companies in Giessen: 4 Steps to Digital Market Leadership",
-      "content": "As an exclusive web design agency for Giessen, we leave nothing to chance. Our web design process is specifically tailored to the extremely high demands of B2B companies and research institutions in Giessen. Step 1: Strategic Web Design Discovery in Giessen. We meet you personally in Giessen to exactly analyze your target groups and B2B processes. Step 2: UX/UI Design Engineering. We never use ready-made WordPress templates. We create a completely individual web design that impresses with minimalism and perfect usability, precisely matched to the aesthetics of market leaders in the Giessen region. Step 3: Headless Next.js Development. Our team transforms the web design into lightning-fast React code. Step 4: Launch & Giessen Local SEO. At go-live, we guarantee smooth transitions. Through targeted local SEO for Giessen, we ensure your new web design generates leads from day one."
+      "title": "Medical Practice Web Design for Doctors & Clinics in Giessen",
+      "content": "Patient-centric medical portals around UKGM and Giessen specialist practices."
     },
     {
-      "title": "Why Standard Websites and WordPress Fail Disastrously in Giessen's B2B Sector",
-      "content": "The corporate landscape in Giessen operates at the highest scientific and technological level. Anyone who enters this environment with slow standard web design in WordPress unconsciously signals technological standstill to potential business partners. WordPress was originally designed as a simple blogging system. The result of standard web design is almost always the same: extremely bloated code, disastrous loading times, and a UX that immediately deters demanding B2B customers from Giessen. Coday draws a radical line here. As a specialized web design agency for Giessen, we consistently program with Next.js and React. We deliver web design and codebase quality at enterprise level."
+      "title": "Digital Scaling for Startups in the TIG & B2B Industry",
+      "content": "Enterprise-grade web applications for technology leaders in Central Hesse."
     }
   ],
   "faq_en": [
     {
-      "q": "Why is Coday the best technological web design agency for our company in Giessen?",
-      "a": "As a high-end web design agency, Coday combines the personal support of a regional agency for Giessen with the absolute technological excellence that you otherwise only find with international elite agencies. We completely dispense with WordPress for web design. Instead, we use exclusive Next.js technologies for maximum B2B success."
+      "q": "How much does professional web design in Giessen cost?",
+      "a": "Fixed pricing on request after a free consultation. 5-10x more cost-effective than traditional agencies."
     },
     {
-      "q": "What distinguishes your Next.js web design from classic WordPress websites?",
-      "a": "The difference in web design is fundamental: WordPress is a monolith where frontend and database are glued together, slow and extremely vulnerable to hackers. Our Next.js web design is based on a headless architecture. The web design frontend is decoupled, resulting in a lightning-fast application."
+      "q": "How fast can the project go live?",
+      "a": "Turnkey delivery within 10 to 14 business days."
     },
     {
-      "q": "Do you come to our headquarters in Giessen for web design workshops?",
-      "a": "Of course. As your local web design agency, direct contact is important to us. We are directly on site in Giessen within a few minutes for strategic web design architecture planning."
-    },
-    {
-      "q": "How much does tailor-made web design cost for the Giessen area?",
-      "a": "Our web design platforms are strategic investments in your Giessen company. Due to the uncompromising quality and individual web design development, our projects start in the five-figure range. The exact project scope for your web design is defined in a workshop in Giessen."
+      "q": "Do you meet on-site in Giessen?",
+      "a": "Yes. We are located in nearby Wetzlar and can be at your Giessen office in under 10 minutes."
     }
   ]
 }

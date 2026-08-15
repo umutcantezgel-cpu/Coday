@@ -1,6 +1,6 @@
 {
   "card": {
-    "bestseller": "bestseller",
+    "bestseller": "Bestseller",
     "included": "Included",
     "monthly": "Monthly",
     "one_time": "One-time",
@@ -28,7 +28,7 @@
     "subtitle_default": "Determine the required budget for your new website or app. Build your perfect package across 9 feature categories, tailored to your exact business needs.",
     "subtitle_packages": "Extend your selected package for your web project with additional modules.",
     "title_1": "Calculate Your",
-    "title_2": "Web Project Calculator.",
+    "title_2": "Web Project.",
     "title": "Project Cost Calculator"
   },
   "module_count": "{count} module selected",
@@ -160,6 +160,6 @@
   },
   "seoText": {
     "title": "Web Development Pricing Calculator | Coday Configurator",
-    "content": "Discover the exact investment required for your upcoming digital venture using our advanced web project estimator. At Coday, we believe in upfront pricing and complete financial clarity to help you make informed decisions before development even starts.\n\nWhether you need a high-converting landing page, a fully-fledged online store, or a bespoke headless application, this tool evaluates every detail ranging from UI/UX design preferences to backend integrations and performance tuning.\n\nBuild your custom service package today to receive an instant, data-driven cost breakdown. Once you have your estimate, our team is ready to dive deep into your requirements during a personalized consultation and craft a concrete roadmap for your success. Calculate Your Web Project Calculator."
+    "content": "Discover the exact investment required for your upcoming digital venture using our advanced web project estimator. At Coday, we believe in upfront pricing and complete financial clarity to help you make informed decisions before development even starts.\\n\\nWhether you need a high-converting landing page, a fully-fledged online store, or a bespoke headless application, this tool evaluates every detail ranging from UI/UX design preferences to backend integrations and performance tuning.\\n\\nBuild your custom service package today to receive an instant, data-driven cost breakdown. Once you have your estimate, our team is ready to dive deep into your requirements during a personalized consultation and craft a concrete roadmap for your success."
   }
 }

@@ -5,6 +5,7 @@ import { setRequestLocale } from 'next-intl/server';
 import { BASE_URL, getOrganizationSchema } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
+import { TrustBar } from '@/shared/ui/TrustBar';
 import {
   ArrowRight,
   Lightning,
@@ -17,6 +18,14 @@ import {
   LockKey,
   CheckCircle,
   Flask,
+  ChartBar,
+  Star,
+  MapPin,
+  DeviceMobile,
+  Target,
+  FileCode,
+  Globe,
+  CaretRight,
 } from '@phosphor-icons/react/dist/ssr';
 
 export const dynamic = 'force-static';
@@ -29,17 +38,17 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Design Marburg | High-End Web Development – Coday Web',
+      title: 'Web Design Marburg | High-Performance Web Agency · Coday',
       description:
-        'Custom web design & Next.js development in Marburg. 100/100 PageSpeed, maximum security & measurable B2B inquiries for pharma, biotech and industry. Request your free audit now!',
+        'Web design & Next.js development in Marburg. Fast load times, accessible UX design & top SEO for pharma, practices & mid-market. Fixed price on request.',
       path: '/en/webdesign-marburg',
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'Webdesign Marburg | High-End Webentwicklung – Coday Web',
+    title: 'Webdesign Marburg | High-Performance Webagentur · Coday',
     description:
-      'Maßgeschneidertes Webdesign & Next.js Webentwicklung in Marburg. 100/100 PageSpeed, höchste Sicherheit & messbare B2B-Anfragen. Jetzt Audit anfordern!',
+      'Webdesign & Next.js Entwicklung in Marburg. Schnelle Ladezeiten, barrierefreies UX-Design & Top-SEO für Pharma, Praxen & Mittelstand. Festpreis auf Anfrage.',
     path: '/de/webdesign-marburg',
     type: 'money',
   });
@@ -61,7 +70,7 @@ export default async function WebdesignMarburgPage({
       {
         '@type': 'LocalBusiness',
         '@id': `${BASE_URL}/${_locale}/webdesign-marburg#localbusiness`,
-        name: 'Coday – High-End Webdesign & Webentwicklung Marburg',
+        name: 'Coday – Webdesign Agentur Marburg',
         url: `${BASE_URL}/${_locale}/webdesign-marburg`,
         logo: `${BASE_URL}/icon.png`,
         image: `${BASE_URL}/images/og-image.jpg`,
@@ -83,13 +92,11 @@ export default async function WebdesignMarburgPage({
         },
         areaServed: [
           { '@type': 'City', name: 'Marburg' },
+          { '@type': 'AdministrativeArea', name: 'Landkreis Marburg-Biedenkopf' },
           { '@type': 'City', name: 'Cölbe' },
           { '@type': 'City', name: 'Weimar (Lahn)' },
-          { '@type': 'City', name: 'Lahntal' },
-          { '@type': 'City', name: 'Ebsdorfergrund' },
           { '@type': 'City', name: 'Kirchhain' },
           { '@type': 'City', name: 'Stadtallendorf' },
-          { '@type': 'AdministrativeArea', name: 'Landkreis Marburg-Biedenkopf' },
           { '@type': 'AdministrativeArea', name: 'Regierungsbezirk Gießen' },
         ],
       },
@@ -101,79 +108,138 @@ export default async function WebdesignMarburgPage({
           '@id': `${BASE_URL}/#organization`,
         },
         serviceType: [
-          'Next.js Webentwicklung',
-          'B2B Webdesign & UI/UX',
-          'WordPress Relaunch & Headless-Migration',
-          'Core Web Vitals Optimierung',
-          'Pharma & Biotech Web-Portale',
+          'Pharma & Biotech Webportale Behringwerke',
+          'Barrierefreie Praxis- & Klinik-Websites BITV 2.0',
+          'Next.js 15 Webentwicklung',
+          'Local SEO B3 Marburg-Gießen-Kassel',
+          'Sanity Headless CMS',
         ],
         hasOfferCatalog: {
           '@type': 'OfferCatalog',
-          name: 'Dienstleistungen für Marburg & Marburg-Biedenkopf',
+          name: 'Dienstleistungen für Marburg & den Landkreis Marburg-Biedenkopf',
           itemListElement: [
             {
               '@type': 'Offer',
               itemOffered: {
                 '@type': 'Service',
-                name: 'Next.js Webentwicklung & Pharma-Portale',
+                name: 'Pharma & Biotech Webportale',
                 description:
-                  'Sichere, vorkompilierte Edge-Websites für Behringwerke-Zulieferer, Biotech- und Industrieunternehmen.',
+                  'Hochsichere, entkoppelte Webarchitekturen mit Server-Side-Rendering und striktem Datenschutz für die Behringwerke.',
               },
             },
             {
               '@type': 'Offer',
               itemOffered: {
                 '@type': 'Service',
-                name: 'B2B Webdesign & UI/UX Design',
+                name: 'Barrierefreies Webdesign (BITV 2.0)',
                 description:
-                  'Maßgeschneiderte digitale Plattformen mit subsekundären Ladezeiten für globale Partner und Einkäufer.',
-              },
-            },
-            {
-              '@type': 'Offer',
-              itemOffered: {
-                '@type': 'Service',
-                name: 'WordPress Sicherheits-Migration & Relaunch',
-                description:
-                  'Ablösung wartungsintensiver PHP- und CMS-Systeme durch moderne Headless-Architektur mit Sanity CMS.',
+                  'Inklusive, schnelle Webdesigns für Kliniken, Praxen und mittelständische Unternehmen in Marburg.',
               },
             },
           ],
         },
       },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: `${BASE_URL}/${_locale}`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Standorte',
+            item: `${BASE_URL}/${_locale}/standorte/hessen`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: 'Marburg',
+            item: `${BASE_URL}/${_locale}/webdesign-marburg`,
+          },
+        ],
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'Wie viel kostet eine neue Website in Marburg?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Wie schnell ist eine neue Website in Marburg online?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Kommen Sie für ein Beratungsgespräch direkt nach Marburg?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Ja, sehr gerne. Über die B3 sind wir von unserem Wetzlarer HQ in unter 25 Minuten direkt bei Ihnen vor Ort in Marburg, Cappel oder Wehrda.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Erfüllen Ihre Websites die Barrierefreiheitsstandards nach BITV 2.0?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Ja. Wir entwickeln barrierefreie Interfaces mit semantischem HTML, Tastaturnavigation und Screenreader-Unterstützung gemäß WCAG 2.2 und BITV 2.0.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Wer ist unser fester Ansprechpartner?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.',
+            },
+          },
+        ],
+      },
     ],
   };
 
   return (
-    <div className="relative min-h-screen bg-slate-950 text-slate-100 selection:bg-emerald-500/30 selection:text-emerald-200">
+    <div className="bg-[#fafafa] text-slate-900 min-h-screen selection:bg-amber-500/20 selection:text-amber-900">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
       {/* 1. HERO SECTION */}
-      <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-950/25 via-slate-950/80 to-slate-950 pointer-events-none" />
-        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-emerald-500/10 blur-[140px] rounded-full pointer-events-none" />
+      <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28 bg-[#fafafa]">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-100/40 via-white/80 to-transparent pointer-events-none" />
+        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-amber-400/10 blur-[140px] rounded-full pointer-events-none" />
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-950/40 text-emerald-400 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-8 backdrop-blur-md">
-            <Sparkle className="w-4 h-4 text-emerald-400" />
-            NEXT-GEN WEBENTWICKLUNG FÜR MARBURG & MARBURG-BIEDENKOPF
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-50 text-amber-800 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-8 shadow-sm">
+            <Sparkle className="w-4 h-4 text-amber-600" />
+            PHARMA, BIOTECH & B2B WEBAGENTUR MARBURG
           </div>
 
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-8 leading-[1.1]">
-            High-End Webdesign in Marburg:{' '}
-            <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">
-              Digitale Exzellenz mit 100/100 PageSpeed
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 mb-8 leading-[1.1]">
+            Webdesign & Next.js Entwicklung in{' '}
+            <span className="bg-gradient-to-r from-amber-600 via-amber-700 to-teal-700 bg-clip-text text-transparent">
+              Marburg an der Lahn
             </span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-10">
-            Wir befreien technologiegetriebene Betriebe, Pharma- und Biotech-Zulieferer sowie
-            etablierte Mittelständler aus Marburg von langsamen WordPress-Installationen und
-            unsicheren CMS-Monolithen. Mit maßgeschneiderter Next.js-Architektur, subsekundären
-            Ladezeiten und lückenloser DSGVO-Sicherheit sichern wir Ihren globalen Marktvorsprung.
+          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-10">
+            Entwickelt für Pharma- & Biotech-Unternehmen in den Behringwerken, Philipps-Universität
+            Spin-offs, Kanzleien und Mittelständler. Maximale Ladezeiten unter 500ms, barrierefreie
+            UX (BITV 2.0) und planbare B2B-Leads. Verbindlicher Festpreis nach kostenloser
+            Bedarfsanalyse.
           </p>
 
           {/* CTA Buttons */}
@@ -182,9 +248,9 @@ export default async function WebdesignMarburgPage({
               <Button
                 variant="primary"
                 size="lg"
-                className="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-8 py-4 text-base shadow-lg shadow-emerald-500/25 transition-all hover:scale-[1.02]"
+                className="w-full sm:w-auto bg-primary-700 hover:bg-primary-800 text-white font-bold px-8 py-4 text-base shadow-lg shadow-primary-700/25 transition-all hover:scale-[1.02]"
               >
-                Kostenloses Audit anfordern
+                Kostenloses Erstgespräch anfordern
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </Link>
@@ -192,338 +258,172 @@ export default async function WebdesignMarburgPage({
               <Button
                 variant="secondary"
                 size="lg"
-                className="w-full sm:w-auto border-slate-700 hover:border-slate-500 bg-slate-900/60 hover:bg-slate-850 text-slate-200 px-8 py-4 text-base"
+                className="w-full sm:w-auto border-slate-300 hover:border-slate-400 bg-white hover:bg-slate-50 text-slate-700 px-8 py-4 text-base shadow-sm"
               >
-                Fallstudien ansehen
+                Marburger Referenzen ansehen
               </Button>
             </Link>
           </div>
 
           {/* Trust Badges */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-8 border-t border-slate-800/80">
-            <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800 backdrop-blur-sm">
-              <div className="text-2xl sm:text-3xl font-black text-emerald-400 mb-1">100/100</div>
-              <div className="text-xs sm:text-sm text-slate-400 font-medium">Core Web Vitals</div>
-            </div>
-            <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800 backdrop-blur-sm">
-              <div className="text-2xl sm:text-3xl font-black text-emerald-400 mb-1">0%</div>
-              <div className="text-xs sm:text-sm text-slate-400 font-medium">
-                CMS-Sicherheitsrisiko
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-8 border-t border-slate-200">
+            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
+              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">100%</div>
+              <div className="text-xs sm:text-sm text-slate-600 font-medium">
+                BITV 2.0 Barrierefrei
               </div>
             </div>
-            <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800 backdrop-blur-sm">
-              <div className="text-2xl sm:text-3xl font-black text-emerald-400 mb-1">30 Min</div>
-              <div className="text-xs sm:text-sm text-slate-400 font-medium">
-                Reaktionszeit via B3
+            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
+              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">&lt; 0.4s</div>
+              <div className="text-xs sm:text-sm text-slate-600 font-medium">Ladezeit weltweit</div>
+            </div>
+            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
+              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">25 Min</div>
+              <div className="text-xs sm:text-sm text-slate-600 font-medium">
+                Vor Ort via B3 Schnellstraße
               </div>
             </div>
-            <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800 backdrop-blur-sm">
-              <div className="text-2xl sm:text-3xl font-black text-emerald-400 mb-1">100%</div>
-              <div className="text-xs sm:text-sm text-slate-400 font-medium">
-                Made in Mittelhessen
+            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
+              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">100%</div>
+              <div className="text-xs sm:text-sm text-slate-600 font-medium">
+                DSGVO & Deutsches Hosting
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 2. PAIN POINTS SECTION: MARBURGER WIRTSCHAFTS-DNA */}
-      <section className="py-24 bg-slate-900/50 border-y border-slate-800/80 relative">
+      {/* 2. TRUSTBAR (REAL PROOF) */}
+      <section className="border-y border-slate-200 bg-white">
+        <TrustBar />
+      </section>
+
+      {/* 3. 4-PILLAR STATS BENTO GRID */}
+      <section className="py-24 bg-[#fafafa] border-b border-slate-200 relative">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-emerald-400 font-semibold tracking-wider uppercase text-xs sm:text-sm">
-              Lokale Analyse Marburg & Umland
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Performance & Sicherheit
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2 mb-4">
-              Warum Standard-Websites der Marburger Innovationskraft nicht gerecht werden
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">
+              Messbare Ergebnisse für Marburger Unternehmen
             </h2>
-            <p className="text-slate-400 text-base sm:text-lg">
-              Der Standort Marburg verbindet historische Tradition mit weltweiter Spitzenforschung.
-              Viele digitale Auftritte hemmen jedoch das Wachstum und die Mitarbeitergewinnung.
+            <p className="text-slate-600 text-base sm:text-lg">
+              Enterprise-Technologie für Pharma, Biotech, Forschung und Mittelstand.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-8 rounded-2xl bg-slate-950/80 border border-red-900/30 hover:border-red-500/40 transition-colors group">
-              <div className="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center text-red-400 mb-6 group-hover:scale-110 transition-transform">
-                <Flask className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">
-                Weltklasse-Forschung vs. veraltete Baukästen
-              </h3>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                Am Standort Behringwerke (Görzhausen & Marbach) und der Philipps-Universität
-                entstehen Innovationen von weltweiter Tragweite. Wenn Zulieferer und Mittelständler
-                in Cappel oder Wehrda mit veralteten Baukasten-Websites auftreten, signalisiert dies
-                internationalen Partnern technologischen Stillstand.
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <div className="text-4xl font-black text-amber-600 mb-2">&lt; 0.4s</div>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Ladezeit in Marburg</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Subsekundäre Ladezeiten für internationale Partner, Forscher und B2B-Entscheider.
               </p>
             </div>
 
-            <div className="p-8 rounded-2xl bg-slate-950/80 border border-amber-900/30 hover:border-amber-500/40 transition-colors group">
-              <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-400 mb-6 group-hover:scale-110 transition-transform">
-                <Users className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">
-                Verlust von Spitzenkräften & Forschern
-              </h3>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                Hochqualifizierte Absolventen und Fachkräfte wandern nach Frankfurt oder Kassel ab,
-                weil regionale Karriereseiten frustrierend langsam laden, nicht mobil optimiert sind
-                und bürokratische Hürden wie umständliche PDF-Formulare aufbauen.
+            <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <div className="text-4xl font-black text-amber-600 mb-2">100%</div>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Volle Rechte an Ihrem Quellcode ohne monatliche CMS-Lizenzgebühren oder
+                Abhängigkeiten.
               </p>
             </div>
 
-            <div className="p-8 rounded-2xl bg-slate-950/80 border border-purple-900/30 hover:border-purple-500/40 transition-colors group">
-              <div className="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 mb-6 group-hover:scale-110 transition-transform">
-                <Lightning className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">
-                Schlechte Core Web Vitals & Sicherheitsrisiken
-              </h3>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                Alte WordPress- oder Typo3-Installationen sind dauerhafte Angriffsziele für Botnetze
-                und weisen mobile Ladezeiten von über 4 Sekunden auf. Das führt zu schlechten
-                Google-Rankings und dem direkten Verlust lukrativer B2B-Anfragen.
+            <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <div className="text-4xl font-black text-amber-600 mb-2">24h</div>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Direkte Betreuung durch Gründer Umutcan Emre Tezgel ohne Agentur-Warteschleifen.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <div className="text-4xl font-black text-amber-600 mb-2">5-10x</div>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Kosteneffizienter</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Günstiger als traditionelle Großagenturen durch automatisierte
+                KI-Engineering-Workflows.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 3. ARCHITEKTUR & RELAUNCH: NEXT.JS VS. WORDPRESS */}
-      <section className="py-24 relative overflow-hidden">
+      {/* 4. COMPARISON TABLE: NEXT.JS VS. TRADITIONELLES WORDPRESS */}
+      <section className="py-24 bg-white relative overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-emerald-400 font-semibold tracking-wider uppercase text-xs sm:text-sm">
-              Architektur-Vergleich
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Technologie-Vergleich
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2 mb-4">
-              Headless Next.js & Sanity CMS statt fehleranfälliger Monolithen
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">
+              Warum Marburger Marktführer auf Next.js umsteigen
             </h2>
-            <p className="text-slate-400 text-base sm:text-lg">
-              Maximale Sicherheit für sensible B2B- und Life-Science-Daten bei voller redaktioneller
-              Flexibilität ohne Programmieraufwand.
+            <p className="text-slate-600 text-base sm:text-lg">
+              Der direkte Vergleich zwischen klassischem WordPress und zukunftssicherer
+              Headless-Architektur.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-8 rounded-2xl bg-slate-900/60 border border-slate-800">
-              <div className="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-6">
-                <LockKey className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">
-                Unknackbare Sicherheit (Zero-Trust)
-              </h3>
-              <p className="text-slate-400 text-sm leading-relaxed mb-4">
-                Statische Edge-Auslieferung via Vercel ohne öffentlich erreichbare SQL-Datenbank.
-                Perfekt für sensible B2B-, Life-Science- und Pharma-Zulieferer in Marburg, die keine
-                Sicherheitsrisiken eingehen dürfen.
-              </p>
-              <div className="text-xs text-emerald-400 font-semibold uppercase tracking-wider">
-                0% CMS-Angriffsvektoren
-              </div>
-            </div>
-
-            <div className="p-8 rounded-2xl bg-slate-900/60 border border-slate-800">
-              <div className="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-6">
-                <ShieldCheck className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">100% DSGVO-Souveränität</h3>
-              <p className="text-slate-400 text-sm leading-relaxed mb-4">
-                Lokales Hosting aller Schriftarten, Assets und Medien ohne unkontrollierte
-                US-Tracker oder riskante Drittanbieter-Plugins. Absolute Rechtssicherheit für Ihr
-                Unternehmen in Hessen.
-              </p>
-              <div className="text-xs text-emerald-400 font-semibold uppercase tracking-wider">
-                Self-Hosted Privacy
-              </div>
-            </div>
-
-            <div className="p-8 rounded-2xl bg-slate-900/60 border border-slate-800">
-              <div className="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-6">
-                <Code className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">Sanity CMS Echtzeit-Pflege</h3>
-              <p className="text-slate-400 text-sm leading-relaxed mb-4">
-                Maßgeschneiderte, visuelle Redaktionsoberfläche für Ihr Team. Aktualisieren Sie
-                Fachartikel, Case Studies und Job-Angebote in Echtzeit ohne Programmierkenntnisse
-                und ohne Risiko von Design-Fehlern.
-              </p>
-              <div className="text-xs text-emerald-400 font-semibold uppercase tracking-wider">
-                Fehlersichere Redaktion
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. BRANCHENLÖSUNGEN FÜR DEN STANDORT MARBURG */}
-      <section className="py-24 bg-slate-900/40 border-y border-slate-800/80">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-emerald-400 font-semibold tracking-wider uppercase text-xs sm:text-sm">
-              Spezialisierte Wirtschafts-Cluster
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2 mb-4">
-              Branchenspezifische High-End Lösungen für Marburg & Biedenkopf
-            </h2>
-            <p className="text-slate-400 text-base sm:text-lg">
-              Maßgeschneiderte Architekturen für die führenden Wirtschaftszweige der Region.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Cluster 1 */}
-            <div className="p-8 rounded-2xl bg-slate-950 border border-slate-800 flex flex-col justify-between">
-              <div>
-                <div className="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-2">
-                  Behringwerke, Görzhausen & Marbach
-                </div>
-                <h3 className="text-xl font-bold text-white mb-4">
-                  Pharma, Biotech & Medizintechnik-Zulieferer
-                </h3>
-                <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                  Extrem sichere, hochperformante Unternehmensportale mit schneller Bereitstellung
-                  technischer Spezifikationen, interaktiven Visualisierungen und internationaler
-                  Skalierbarkeit (i18n) für globale Märkte.
-                </p>
-              </div>
-              <ul className="space-y-2.5 text-xs text-slate-300 pt-6 border-t border-slate-900">
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-400 shrink-0" />
-                  Latenzfreie Bereitstellung von Spezifikationen
-                </li>
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-400 shrink-0" />
-                  Globale Mehrsprachigkeit & Compliance
-                </li>
-              </ul>
-            </div>
-
-            {/* Cluster 2 */}
-            <div className="p-8 rounded-2xl bg-slate-950 border border-slate-800 flex flex-col justify-between">
-              <div>
-                <div className="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-2">
-                  TTZ Marburg & Campus-Umfeld
-                </div>
-                <h3 className="text-xl font-bold text-white mb-4">
-                  Akademische Spin-offs, Software & Consulting
-                </h3>
-                <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                  Modernste Web-Architekturen mit flüssigen Framer-Motion-Interaktionen, die
-                  Investoren, internationale Partner und B2B-Kunden unmittelbar von technologischer
-                  Exzellenz und Innovationsvorsprung überzeugen.
-                </p>
-              </div>
-              <ul className="space-y-2.5 text-xs text-slate-300 pt-6 border-t border-slate-900">
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-400 shrink-0" />
-                  Moderne UI/UX & Micro-Animations
-                </li>
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-400 shrink-0" />
-                  Investoren- & B2B-Lead-Fokus
-                </li>
-              </ul>
-            </div>
-
-            {/* Cluster 3 */}
-            <div className="p-8 rounded-2xl bg-slate-950 border border-slate-800 flex flex-col justify-between">
-              <div>
-                <div className="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-2">
-                  Wehrda, Cappel & Kirchhain/Stadtallendorf
-                </div>
-                <h3 className="text-xl font-bold text-white mb-4">
-                  Industrie, Handwerk & Mittelstand
-                </h3>
-                <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                  Mobile-First-Recruiting-Funnels und digitale B2B-Anfrage-Systeme, die Bewerbungen
-                  und qualifizierte Anfragen in unter 60 Sekunden direkt über das Smartphone ohne
-                  Hürden erfassen.
-                </p>
-              </div>
-              <ul className="space-y-2.5 text-xs text-slate-300 pt-6 border-t border-slate-900">
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-400 shrink-0" />
-                  60-Sekunden Express-Bewerbungsstrecke
-                </li>
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-400 shrink-0" />
-                  Regionale Google-Search Dominanz
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. PERFORMANCE VERGLEICHSTABELLE */}
-      <section className="py-24 relative">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-emerald-400 font-semibold tracking-wider uppercase text-xs sm:text-sm">
-              Messbare Fakten
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2 mb-4">
-              Standard-Agentur vs. Coday High-End Webentwicklung
-            </h2>
-            <p className="text-slate-400 text-base sm:text-lg">
-              Der direkte technische Vergleich zwischen überladenen Theme-Baukästen und unserer
-              maßgeschneiderten Next.js-Architektur.
-            </p>
-          </div>
-
-          <div className="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-950/80 shadow-2xl">
-            <table className="w-full text-left text-sm text-slate-300">
-              <thead className="bg-slate-900 text-xs uppercase tracking-wider text-slate-400 border-b border-slate-800">
-                <tr>
-                  <th className="p-4 sm:p-6 font-bold">Kriterium</th>
-                  <th className="p-4 sm:p-6 font-bold text-red-400">
-                    Standard-Agentur (WordPress)
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-xl">
+              <thead>
+                <tr className="border-b border-slate-200 bg-slate-50/90">
+                  <th className="p-5 text-sm font-semibold text-slate-700">Kriterium</th>
+                  <th className="p-5 text-sm font-semibold text-red-700">
+                    WordPress / Typo3 Monolith
                   </th>
-                  <th className="p-4 sm:p-6 font-bold text-emerald-400 bg-emerald-950/30">
-                    Coday (Next.js / Headless)
+                  <th className="p-5 text-sm font-semibold text-amber-900 bg-amber-50/80">
+                    Coday Next.js 15 Headless Stack
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-800/60 font-medium">
-                <tr>
-                  <td className="p-4 sm:p-6 font-semibold text-white">Google PageSpeed (Mobil)</td>
-                  <td className="p-4 sm:p-6 text-red-400">25 – 55 / 100 (Mangelhaft)</td>
-                  <td className="p-4 sm:p-6 text-emerald-400 bg-emerald-950/20 font-bold">
-                    98 – 100 / 100 (Perfekt)
+              <tbody className="divide-y divide-slate-100 text-sm">
+                <tr className="hover:bg-slate-50 transition-colors">
+                  <td className="p-5 font-medium text-slate-900">Ladezeit & TTFB</td>
+                  <td className="p-5 text-slate-600">
+                    2.5s – 4.5s (Plugin-Ballast & Datenbank-Verzögerung)
+                  </td>
+                  <td className="p-5 font-bold text-amber-900 bg-amber-50/40">
+                    &lt; 0.4s (Globales deutsches Edge-CDN)
                   </td>
                 </tr>
-                <tr>
-                  <td className="p-4 sm:p-6 font-semibold text-white">First Contentful Paint</td>
-                  <td className="p-4 sm:p-6 text-slate-400">3,0 – 5,0 Sekunden</td>
-                  <td className="p-4 sm:p-6 text-emerald-400 bg-emerald-950/20 font-bold">
-                    Unter 0,5 Sekunden
+                <tr className="hover:bg-slate-50 transition-colors">
+                  <td className="p-5 font-medium text-slate-900">Sicherheit & Datenschutz</td>
+                  <td className="p-5 text-slate-600">
+                    Ständige Sicherheitslücken durch PHP-Plugins
+                  </td>
+                  <td className="p-5 font-bold text-amber-900 bg-amber-50/40">
+                    100% Sicher (Keine angreifbare PHP-Schnittstelle)
                   </td>
                 </tr>
-                <tr>
-                  <td className="p-4 sm:p-6 font-semibold text-white">Wartungsaufwand</td>
-                  <td className="p-4 sm:p-6 text-slate-400">
-                    Wöchentliche manuelle Plugin-Updates
+                <tr className="hover:bg-slate-850/50 transition-colors">
+                  <td className="p-5 font-medium text-slate-900">Barrierefreiheit (BITV 2.0)</td>
+                  <td className="p-5 text-slate-600">
+                    Oft mangelhaft und nachträglich schwer anpassbar
                   </td>
-                  <td className="p-4 sm:p-6 text-emerald-400 bg-emerald-950/20 font-bold">
-                    Wartungsfrei & stabil
-                  </td>
-                </tr>
-                <tr>
-                  <td className="p-4 sm:p-6 font-semibold text-white">Sicherheitsrisiko</td>
-                  <td className="p-4 sm:p-6 text-red-400">
-                    Hoch (Dauerhaftes Ziel von Brute-Force & Bot-Scans)
-                  </td>
-                  <td className="p-4 sm:p-6 text-emerald-400 bg-emerald-950/20 font-bold">
-                    0% Angriffsfläche (Statische Edge-Dateien)
+                  <td className="p-5 font-bold text-amber-900 bg-amber-50/40">
+                    Vollständig standardkonform nach WCAG 2.2 / BITV
                   </td>
                 </tr>
-                <tr>
-                  <td className="p-4 sm:p-6 font-semibold text-white">Hosting & Skalierbarkeit</td>
-                  <td className="p-4 sm:p-6 text-slate-400">Server-Überlastung bei Lastspitzen</td>
-                  <td className="p-4 sm:p-6 text-emerald-400 bg-emerald-950/20 font-bold">
-                    Globale Edge-Verteilung
+                <tr className="hover:bg-slate-850/50 transition-colors">
+                  <td className="p-5 font-medium text-slate-900">Support & Betreuung</td>
+                  <td className="p-5 text-slate-600">
+                    Anonyme Ticketsysteme & wechselnde Ansprechpartner
+                  </td>
+                  <td className="p-5 font-bold text-amber-900 bg-amber-50/40">
+                    Direkter Entwickler-Kontakt in Mittelhessen
+                  </td>
+                </tr>
+                <tr className="hover:bg-slate-850/50 transition-colors">
+                  <td className="p-5 font-medium text-slate-900">Preisstruktur</td>
+                  <td className="p-5 text-slate-600">
+                    Versteckte Zusatzkosten & monatliche Wartungsverträge
+                  </td>
+                  <td className="p-5 font-bold text-amber-900 bg-amber-50/40">
+                    Verbindlicher Festpreis auf Anfrage
                   </td>
                 </tr>
               </tbody>
@@ -532,235 +432,240 @@ export default async function WebdesignMarburgPage({
         </div>
       </section>
 
-      {/* 6. PROXIMITY & TRUST (WETZLAR-MARBURG ACHSE) */}
-      <section className="py-24 bg-slate-900/60 border-y border-slate-800/80">
+      {/* 5. FOUNDER PHILOSOPHY BLOCK */}
+      <section className="py-24 bg-[#fafafa] border-y border-slate-200">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <span className="text-emerald-400 font-semibold tracking-wider uppercase text-xs sm:text-sm">
-                Regionale Partnerschaft
+          <div className="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200 shadow-xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-amber-400/5 blur-[100px] rounded-full pointer-events-none" />
+            <div className="relative z-10">
+              <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+                Inhabergeführte Betreuung
               </span>
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2 mb-6">
-                30 Minuten via B3: Direkte Nähe und persönliche Betreuung
+              <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 mt-2 mb-6">
+                Echtes Handwerk statt Agentur-Overhead für Marburg
               </h2>
-              <p className="text-slate-300 text-base leading-relaxed mb-6">
-                Von unserem Headquarter in Wetzlar trennen uns rund 30 Minuten über die B3 und die
-                Marburger Stadtautobahn von Ihrem Standort. Wir betreuen Unternehmen in ganz
-                Marburg-Biedenkopf mit persönlicher Präsenz vor Ort.
+              <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-6">
+                Bei Coday arbeiten Sie direkt mit mir – <strong>Umutcan Emre Tezgel</strong>. Als
+                spezialisierter Solo-Entwickler mit Sitz in Wetzlar baue ich Ihre Marburger
+                Webpräsenz ohne Reibungsverluste: Technisch perfekt, hochsicher und wirtschaftlich
+                unschlagbar fair.
               </p>
-              <p className="text-slate-400 text-sm leading-relaxed mb-8">
-                Ob für strategische Konzeptions-Workshops am Richtsberg, in Cappel, Wehrda oder
-                direkt an den Behringwerken: Sie arbeiten direkt mit dem leitenden
-                Software-Architekten und Digitalstrategen Umutcan Emre Tezgel zusammen – ohne
-                Agentur-Wasserkopf.
-              </p>
-
-              <div className="space-y-3">
-                <div className="flex items-center gap-3 text-sm text-slate-200">
-                  <CheckCircle className="w-5 h-5 text-emerald-400 shrink-0" />
-                  <span>Persönliche Vor-Ort-Termine in Marburg und Umgebung</span>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-slate-200 text-sm">
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
+                  <span className="text-slate-700">Direkter Entwickler-Kontakt</span>
                 </div>
-                <div className="flex items-center gap-3 text-sm text-slate-200">
-                  <CheckCircle className="w-5 h-5 text-emerald-400 shrink-0" />
-                  <span>Direkter Draht zum Senior-Entwickler ohne Zwischeninstanzen</span>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
+                  <span className="text-slate-700">Voller Quellcode-Besitz</span>
                 </div>
-                <div className="flex items-center gap-3 text-sm text-slate-200">
-                  <CheckCircle className="w-5 h-5 text-emerald-400 shrink-0" />
-                  <span>100 % Eigentum an Quellcode und Design – kein Vendor-Lock-in</span>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
+                  <span className="text-slate-700">5-10x günstiger als Großagenturen</span>
                 </div>
-              </div>
-            </div>
-
-            <div className="p-8 rounded-2xl bg-slate-950 border border-slate-800 relative">
-              <div className="absolute top-4 right-4 text-xs font-mono text-emerald-400 px-2.5 py-1 rounded bg-emerald-950/60 border border-emerald-800/40">
-                B3 • 30 MIN
-              </div>
-              <h3 className="text-xl font-bold text-white mb-4">
-                Das Coday-Versprechen für Marburg
-              </h3>
-              <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                Wir behandeln Ihre digitale Infrastruktur nicht als einmaliges Projekt, sondern als
-                geschäftskritisches Vertriebs- und Recruiting-Asset. Sie erhalten erstklassige
-                Qualität und verlässliche Betreuung zum garantierten Festpreis.
-              </p>
-              <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-300">
-                <div className="font-semibold text-white mb-1">
-                  Einsatzgebiet Marburg-Biedenkopf:
-                </div>
-                Marburg (Kernstadt, Behringwerke, Cappel, Wehrda), Cölbe, Weimar (Lahn), Lahntal,
-                Ebsdorfergrund, Kirchhain, Stadtallendorf & Biedenkopf.
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 7. FINAL CTA & AUDIT FUNNEL */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <span className="text-emerald-400 font-semibold tracking-wider uppercase text-xs sm:text-sm mb-3 block">
-            Kostenloses Website-Audit
-          </span>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white mb-6">
-            Bereit für den digitalen Vorsprung in Marburg?
-          </h2>
-          <p className="text-slate-300 text-base sm:text-lg mb-12 max-w-2xl mx-auto leading-relaxed">
-            Erfahren Sie in einer konkreten Schwachstellenanalyse, wie viel Umsatzpotenzial und
-            qualifizierte Bewerber Ihre aktuelle Website durch Ladezeiten und veraltete Strukturen
-            verliert.
-          </p>
-
-          {/* 3-Steps Box */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12 text-left">
-            <div className="p-6 rounded-xl bg-slate-900/80 border border-slate-800">
-              <div className="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center mb-4 text-sm">
-                1
-              </div>
-              <div className="font-bold text-white text-sm mb-1">URL einreichen</div>
-              <div className="text-xs text-slate-400">
-                Senden Sie uns die Web-Adresse Ihres Unternehmens via Formular.
-              </div>
-            </div>
-            <div className="p-6 rounded-xl bg-slate-900/80 border border-slate-800">
-              <div className="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center mb-4 text-sm">
-                2
-              </div>
-              <div className="font-bold text-white text-sm mb-1">Video-Audit erhalten</div>
-              <div className="text-xs text-slate-400">
-                Wir erstellen eine 10-minütige Schwachstellen-Analyse mit konkreten
-                Handlungsschritten.
-              </div>
-            </div>
-            <div className="p-6 rounded-xl bg-slate-900/80 border border-slate-800">
-              <div className="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center mb-4 text-sm">
-                3
-              </div>
-              <div className="font-bold text-white text-sm mb-1">Strategiegespräch</div>
-              <div className="text-xs text-slate-400">
-                Persönliches Treffen in Marburg oder digital per Video-Call.
-              </div>
-            </div>
+      {/* 6. SERVICES BENTO SHOWCASE (MARBURG-FOKUS) */}
+      <section className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Kernkompetenzen
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">
+              Digitale Exzellenz für Marburg & den Landkreis
+            </h2>
+            <p className="text-slate-600 text-base sm:text-lg">
+              Vom hochsicheren Pharma-Portal bis zur barrierefreien Klinik-Homepage.
+            </p>
           </div>
 
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="p-8 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <Flask className="w-10 h-10 text-amber-600 mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-slate-900 mb-3">
+                1. Pharma & Biotech Webportale
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Entwickelt für die Behringwerke und Life-Science-Pioniere. Entkoppelte
+                Headless-Architekturen, strikter Datenschutz und kompromisslose Ausfallsicherheit
+                bei Publikationen.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <ShieldCheck className="w-10 h-10 text-amber-600 mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-slate-900 mb-3">
+                2. Barrierefreie Praxis- & Kanzleiportale
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                100% barrierefrei nach BITV 2.0 und WCAG 2.2 für Praxen, Kliniken, Kanzleien und
+                öffentliche Einrichtungen in Marburg, Cappel und Wehrda.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <Target className="w-10 h-10 text-amber-600 mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-slate-900 mb-3">
+                3. Local SEO & B3-Achse Dominanz
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Gezielte Suchmaschinenoptimierung für Top-Rankings in Marburg, Cölbe, Kirchhain,
+                Stadtallendorf und dem gesamten Landkreis Marburg-Biedenkopf.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <Users className="w-10 h-10 text-amber-600 mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-slate-900 mb-3">
+                4. Campus Recruiting Funnels
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                60-Sekunden-Bewerbungsverfahren ohne Anschreiben zur Gewinnung von Absolventen der
+                Philipps-Universität Marburg.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. LOCAL GEO-SEMANTIC CONTENT SILO */}
+      <section className="py-24 bg-[#fafafa]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <div>
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Wirtschafts- & Wissenschaftsstandort Marburg
+            </span>
+            <h2 className="text-3xl font-bold text-slate-900 mt-2 mb-6">
+              Pharma-Exzellenz, Philipps-Universität & Tradition an der Lahn
+            </h2>
+            <p className="text-slate-700 leading-relaxed text-base">
+              Marburg an der Lahn vereint die reiche Tradition der{' '}
+              <strong>Philipps-Universität</strong> und der historischen <strong>Oberstadt</strong>{' '}
+              mit weltweiter Spitzenforschung im Pharma- und Biotech-Sektor. An den{' '}
+              <strong>Behringwerken</strong> und im <strong>Görzhain</strong> forschen und
+              produzieren Weltmarktführer. In den Gewerbegebieten <strong>Wehrda</strong> und{' '}
+              <strong>Cappel</strong>
+              floriert zudem ein starker, innovativer Mittelstand.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-2xl font-bold text-slate-900 mb-4">
+              Direkte B3-Achse Marburg-Gießen-Kassel
+            </h3>
+            <p className="text-slate-700 leading-relaxed text-base">
+              Über die ausgebaute <strong>Bundesstraße B3</strong> ist unser Wetzlarer Büro in rund
+              25 Fahrminuten direkt bei Ihnen vor Ort in Marburg. Wir bieten Ihnen den
+              entscheidenden Vorteil einer persönlichen Betreuung und kurzen Wegen im gesamten
+              Landkreis Marburg-Biedenkopf.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-2xl font-bold text-slate-900 mb-4">
+              Verbindlicher Festpreis auf Anfrage & Go-Live in unter 14 Tagen
+            </h3>
+            <p className="text-slate-700 leading-relaxed text-base">
+              Absolute Planungssicherheit für Ihr Projekt: Nach unserer kostenlosen Bedarfsanalyse
+              erhalten Sie ein transparentes Festpreisangebot ohne versteckte Kosten.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 8. LOCAL FAQ ACCORDION */}
+      <section className="py-24 bg-white border-y border-slate-200">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Häufige Fragen
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">
+              Fragen & Antworten zu Webdesign in Marburg
+            </h2>
+          </div>
+
+          <div className="space-y-6">
+            <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                Wie viel kostet eine neue Website in Marburg?
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und
+                verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir
+                5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                Wie schnell ist eine neue Website in Marburg online?
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett
+                schlüsselfertig fertiggestellt und online.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                Kommen Sie für ein Beratungsgespräch direkt nach Marburg?
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Ja, sehr gerne. Über die B3 sind wir von unserem Wetzlarer HQ in unter 25 Minuten
+                direkt bei Ihnen vor Ort in Marburg, Cappel oder Wehrda.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                Erfüllen Ihre Websites die Barrierefreiheitsstandards nach BITV 2.0?
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Ja. Wir entwickeln barrierefreie Interfaces mit semantischem HTML,
+                Tastaturnavigation und Screenreader-Unterstützung gemäß WCAG 2.2 und BITV 2.0.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                Wer ist unser fester Ansprechpartner?
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 9. BOTTOM CTA */}
+      <section className="py-20 bg-slate-50/80 border-t border-slate-200 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-6">
+            Bereit für den digitalen Vorsprung in Marburg?
+          </h2>
+          <p className="text-slate-600 text-base sm:text-lg mb-10 max-w-2xl mx-auto">
+            Vereinbaren Sie jetzt ein unverbindliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
+            Emre Tezgel.
+          </p>
           <Link href="/contact">
             <Button
               variant="primary"
               size="lg"
-              className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-10 py-5 text-lg shadow-xl shadow-emerald-500/25 transition-all hover:scale-[1.02]"
+              className="bg-primary-700 hover:bg-primary-800 text-white font-bold px-10 py-5 text-lg shadow-xl shadow-primary-700/25 transition-all hover:scale-105"
             >
-              Jetzt kostenloses Audit anfordern
+              Kostenloses Erstgespräch anfordern
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </Link>
         </div>
       </section>
-
-      {/* 8. SEMANTISCHE VERLINKUNG / PROXIMITY CROSS-LINKS */}
-      <footer className="py-16 bg-slate-950 border-t border-slate-900 text-xs text-slate-400">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-slate-300 font-semibold mb-6 uppercase tracking-wider">
-            Regionale Vernetzung & Standorte Mittelhessen
-          </div>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-12">
-            <div>
-              <div className="text-white font-medium mb-3">Headquarter & Westen</div>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href="/webdesign-agentur-wetzlar"
-                    className="hover:text-emerald-400 transition-colors"
-                  >
-                    Webdesign Agentur Wetzlar
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/standorte/hessen"
-                    className="hover:text-emerald-400 transition-colors"
-                  >
-                    Webentwicklung Hessen Hub
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <div className="text-white font-medium mb-3">Universitätsachse Süd</div>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href="/webdesign-giessen"
-                    className="hover:text-emerald-400 transition-colors"
-                  >
-                    Webdesign Gießen (B3 / A485)
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/standorte/giessen"
-                    className="hover:text-emerald-400 transition-colors"
-                  >
-                    Standort Gießen Hub
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <div className="text-white font-medium mb-3">Industrieachse Ost</div>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href="/standorte/hessen"
-                    className="hover:text-emerald-400 transition-colors"
-                  >
-                    Webdesign Kirchhain & Stadtallendorf
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services/seo" className="hover:text-emerald-400 transition-colors">
-                    Local SEO Marburg-Biedenkopf
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <div className="text-white font-medium mb-3">Landkreis Marburg-Biedenkopf</div>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href="/standorte/hessen"
-                    className="hover:text-emerald-400 transition-colors"
-                  >
-                    Webdesign Cölbe & Lahntal
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/standorte/hessen"
-                    className="hover:text-emerald-400 transition-colors"
-                  >
-                    Webdesign Weimar & Ebsdorfergrund
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div>© {new Date().getFullYear()} Coday Webagentur. Alle Rechte vorbehalten.</div>
-            <div className="flex gap-6">
-              <Link href="/legal/impressum" className="hover:text-slate-200 transition-colors">
-                Impressum
-              </Link>
-              <Link href="/legal/datenschutz" className="hover:text-slate-200 transition-colors">
-                Datenschutz
-              </Link>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

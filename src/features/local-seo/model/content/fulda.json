@@ -1,0 +1,107 @@
+{
+  "target": "fulda",
+  "displayName": "Fulda",
+  "type": "location",
+  "meta": {
+    "title": "Webdesign Fulda | High-Performance Webagentur · Coday",
+    "description": "Webdesign & SEO für Fulda und Osthessen. Blitzschnelle Websites, B2B-Lead-Generierung für Industrie, Logistik & Handwerk. Festpreise auf Anfrage."
+  },
+  "hero": {
+    "headline": "Webdesign Fulda: Next.js Performance für Industrie, Logistik & Osthessen",
+    "subheadline": "Ihre Webagentur für Fulda, Künzell, Petersberg, Eichenzell und Hünfeld.",
+    "description": "Als spezialisierte Webagentur für Osthessen entwickeln wir blitzschnelle, sichere und hochkonvertierende Next.js Webanwendungen. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+  },
+  "localDominance": {
+    "title": "Digitale Vorherrschaft für Fulda & die Wirtschaftsregion Osthessen",
+    "description": "Fulda ist das pulsierende Wirtschafts- und Logistikzentrum Osthessens mit führender Sensorik- und Messgeräteindustrie (JUMO-Umfeld), starkem Maschinenbau, modernen Gewerbestandorten im Münsterfeld und Industriepark Fulda-West sowie dem bedeutenden Rhön-Logistikpark in Eichenzell am Autobahnkreuz A7 / A66. Wir bauen digitale Plattformen, die messbar neue B2B-Kunden und Fachkräfte gewinnen.",
+    "points": [
+      "Industrie & Sensorik: B2B-Webportale mit maximaler Ladezeit-Performance für exportstarke Unternehmen in Fulda-West und Münsterfeld.",
+      "Großhandel & Rhön-Logistikpark: Skalierbare Headless-Next.js-Plattformen für Logistiker und Großhändler an A7 und A66.",
+      "Handwerk & Meisterbetriebe: Conversion-starke Websites mit 60-Sekunden-Express-Recruiting für den florierenden Osthessischen Mittelstand.",
+      "Schnelle Erreichbarkeit über A7, A66 und ICE-Trasse: Ideale regionale Betreuung in ganz Hessen.",
+      "Next.js als SEO-Katalysator: 100/100 Google Core Web Vitals für Spitzenrankings bei 'Webdesign Fulda'.",
+      "Inhabergeführt & Festpreis: Direkter Entwickler-Kontakt mit Umutcan Emre Tezgel ohne teuren Großagentur-Overhead."
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "Industrie- & Sensorik-Webportale für Fulda-West & Münsterfeld",
+      "content": "Next.js 15, moderne B2B-Kataloge und internationale Mehrsprachigkeit für Industrie und Messtechnik in Osthessen."
+    },
+    {
+      "title": "Plattformen für Logistik & Rhön-Logistikpark Eichenzell",
+      "content": "Performante Webarchitekturen für Logistikunternehmen und Großhändler am Verkehrskreuz A7 / A66."
+    },
+    {
+      "title": "Local SEO & Osthessen Dominanz",
+      "content": "Dominante Platzierungen in den Google-Suchergebnissen für Fulda, Künzell, Petersberg, Eichenzell und Hünfeld."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wie viel kostet eine neue Website in Fulda?",
+      "a": "Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance."
+    },
+    {
+      "q": "Wie schnell ist eine neue Website in Fulda online?",
+      "a": "In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online."
+    },
+    {
+      "q": "Kommen Sie für ein Beratungsgespräch direkt nach Fulda?",
+      "a": "Ja, sehr gerne. Über die A5/A7 oder A66 sind wir von unserem Wetzlarer HQ schnell direkt bei Ihnen vor Ort in Fulda-West, Münsterfeld oder Eichenzell."
+    },
+    {
+      "q": "Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?",
+      "a": "Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet."
+    },
+    {
+      "q": "Wer ist unser fester Ansprechpartner?",
+      "a": "Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support."
+    }
+  ],
+  "meta_en": {
+    "title": "Web Design Fulda | High-Performance Web Agency · Coday",
+    "description": "Web design & SEO for Fulda and East Hesse. Ultra-fast websites, B2B lead generation for industry, logistics & trade. Fixed prices on request."
+  },
+  "hero_en": {
+    "headline": "Web Design Fulda: Next.js Performance for Industry, Logistics & East Hesse",
+    "subheadline": "Your web agency for Fulda, Künzell, Petersberg, Eichenzell, and Hünfeld.",
+    "description": "Custom Next.js web applications for Fulda and East Hesse. Fixed price upon request."
+  },
+  "localDominance_en": {
+    "title": "Digital Dominance for Fulda & the East Hesse Economic Region",
+    "description": "Fulda is the economic heart of East Hesse with measurement sensor technology, engineering, and the Rhön Logistics Park at the A7/A66 junction. We build fast, high-performance web systems.",
+    "points": [
+      "Industry & Sensors: Ultra-fast B2B web portals for manufacturing in Fulda-West.",
+      "Logistics & Wholesale: Scalable Next.js systems for logistics leaders at Rhön Logistics Park.",
+      "Trade & Construction: High-converting websites with mobile 60-second recruiting funnels.",
+      "Fast A7 / A66 Corridor: Reliable regional coverage across Hessen.",
+      "SEO Leadership: 100/100 Core Web Vitals for top search visibility.",
+      "Direct Founder Access: Transparent fixed pricing without agency overhead."
+    ]
+  },
+  "contentSections_en": [
+    {
+      "title": "Industrial & Sensor Web Portals for Fulda-West & Münsterfeld",
+      "content": "Next.js 15, modular product catalogs, and international multilingual support."
+    },
+    {
+      "title": "Logistics & Distribution Web Systems for Eichenzell",
+      "content": "High-performing web platforms engineered for heavy traffic and mission-critical workflows."
+    }
+  ],
+  "faq_en": [
+    {
+      "q": "How much does a professional website in Fulda cost?",
+      "a": "Binding fixed price on request following a free audit. 5-10x more cost-effective than traditional agencies."
+    },
+    {
+      "q": "How long does implementation take?",
+      "a": "Turnkey delivery within 10 to 14 business days."
+    },
+    {
+      "q": "Do you meet on-site in Fulda?",
+      "a": "Yes, we gladly meet you in Fulda or surrounding business parks via the A7/A66 highways."
+    }
+  ]
+}

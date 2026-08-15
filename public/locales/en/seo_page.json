@@ -46,7 +46,7 @@
       },
       "implementation": {
         "desc": "Careful technical and content-related implementation of the defined optimization measures.",
-        "title": "implementation"
+        "title": "Implementation"
       },
       "monitoring": {
         "desc": "Continuous monitoring of rankings and proactive fine-tuning of performance.",

@@ -92,12 +92,12 @@
       "message_placeholder": "Tell us briefly about your vision...",
       "name_placeholder": "Your Name",
       "sending": "Sending...",
-      "submit": "Submit Application",
-      "title": "Final Step."
+      "submit": "Submit Inquiry",
+      "title": "Your Contact Details"
     },
     "success": {
-      "message": "We have received your project inquiry. Our team will contact you within 24 hours.",
-      "title": "Application Received!"
+      "message": "Thank you for your project inquiry. I have received your request and will get back to you within 24 hours.",
+      "title": "Inquiry Received!"
     }
   },
   "mobile": {

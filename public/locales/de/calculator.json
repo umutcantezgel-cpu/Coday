@@ -28,7 +28,8 @@
     "subtitle_default": "Ermitteln Sie den Investitionsrahmen für Ihre digitale Plattform. Konfigurieren Sie individuelle Features aus 9 Bereichen, passgenau für Startups bis hin zu Enterprise-Kunden.",
     "subtitle_packages": "Erweitern Sie Ihr gewähltes Paket für Ihr Webprojekt mit zusätzlichen Modulen.",
     "title_1": "Kalkulieren Sie Ihr",
-    "title_2": "Webprojekt."
+    "title_2": "Webprojekt.",
+    "title": "Projektkosten-Rechner"
   },
   "module_count": "{count} Modul ausgewählt",
   "module_count_one": "{count} Modul ausgewählt",

@@ -1,0 +1,107 @@
+{
+  "target": "hochtaunuskreis",
+  "displayName": "Hochtaunuskreis",
+  "type": "region",
+  "meta": {
+    "title": "Webdesign Hochtaunuskreis | Premium Webagentur · Coday",
+    "description": "Exklusives Webdesign für den Hochtaunuskreis. High-Performance Websites & diskreter Service für Bad Homburg, Oberursel & Kronberg. Festpreis auf Anfrage."
+  },
+  "hero": {
+    "headline": "Webdesign Hochtaunuskreis: Next.js Ästhetik für Kanzleien, Privatpraxen & Family Offices",
+    "subheadline": "Ihre diskrete High-End Webagentur für Bad Homburg, Oberursel, Kronberg, Königstein und den gesamten Taunus.",
+    "description": "Maßgeschneiderte Webentwicklung, subsekundäre Ladezeiten unter 500ms und automatisierte B2B-Leads für anspruchsvolle Unternehmen im Hochtaunuskreis. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+  },
+  "localDominance": {
+    "title": "Digitale Vorherrschaft für den Hochtaunuskreis",
+    "description": "Der Hochtaunuskreis zeichnet sich durch die höchste Kaufkraft Deutschlands und eine unvergleichliche Dichte an Family Offices, Privatkliniken, Medizintechnik-Konzernen (Fresenius) und renommierten Beratungsunternehmen in Bad Homburg, Kronberg, Königstein und Oberursel aus. Ergänzt wird dies durch traditionsreiches Handwerk im Usinger Land. Wir bauen Webpräsenzen, die exklusiven Ansprüchen an Ästhetik, Sicherheit und Diskretion gerecht werden.",
+    "points": [
+      "Family Offices & Kanzleien: Minimalistische, hochgradig seriöse Ästhetik für Kronberg und Königstein.",
+      "Privatkliniken & MedTech: Barrierefreie Interfaces (BITV 2.0 / WCAG) und geschützte Terminbuchung in Bad Homburg.",
+      "IT- & Consulting-Unternehmen: Hochperformante Next.js Architekturen in Oberursel und Friedrichsdorf.",
+      "30 Min Direkt vor Ort: Schnelle Erreichbarkeit über A5 und A661 direkt aus Mittelhessen.",
+      "Next.js als SEO-Katalysator: 100/100 Google Core Web Vitals für Spitzenrankings im gesamten Hochtaunus.",
+      "Inhabergeführt & Festpreis: Direkter Entwickler-Kontakt mit Umutcan Emre Tezgel ohne teuren Großagentur-Overhead."
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "Family Offices, Vermögensverwalter & Kanzleien in Kronberg & Königstein",
+      "content": "Diskrete digitale Visitenkarten, höchste Datensicherheit und kompromissloses Design für vermögende Mandanten."
+    },
+    {
+      "title": "Medizintechnik & Privatkliniken in Bad Homburg",
+      "content": "Höchste Performance, intuitive Nutzerführung und absolute DSGVO-Konformität auf deutschen Servern."
+    },
+    {
+      "title": "Local SEO Dominanz im Hochtaunuskreis",
+      "content": "Spitzenrankings in Bad Homburg, Oberursel, Kronberg, Königstein, Friedrichsdorf, Usingen und allen 12 Kommunen."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wie viel kostet eine neue Website im Hochtaunuskreis?",
+      "a": "Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance."
+    },
+    {
+      "q": "Wie schnell ist eine neue Website im Hochtaunuskreis online?",
+      "a": "In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online."
+    },
+    {
+      "q": "Kommen Sie für ein Beratungsgespräch direkt zu uns in den Betrieb oder die Praxis?",
+      "a": "Ja, selbstverständlich. Über die A5 oder A661 sind wir von unserem Wetzlarer HQ in rund 30 Minuten direkt bei Ihnen vor Ort in Bad Homburg, Oberursel, Kronberg oder Königstein."
+    },
+    {
+      "q": "Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?",
+      "a": "Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet."
+    },
+    {
+      "q": "Wer ist unser fester Ansprechpartner?",
+      "a": "Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support."
+    }
+  ],
+  "meta_en": {
+    "title": "Web Design Hochtaunus District | Premium Web Agency · Coday",
+    "description": "Exclusive web design for the Hochtaunus district. High-performance websites & discreet service for Bad Homburg, Oberursel & Kronberg. Fixed prices."
+  },
+  "hero_en": {
+    "headline": "Web Design Hochtaunus District: Next.js Aesthetics for Private Clinics, Law Firms & Wealth Managers",
+    "subheadline": "Your discreet high-end web agency for Bad Homburg, Oberursel, Kronberg, and Königstein.",
+    "description": "Custom Next.js web applications for the Hochtaunus region. Fixed price upon request."
+  },
+  "localDominance_en": {
+    "title": "Digital Dominance for the Hochtaunus District",
+    "description": "The Hochtaunus district combines maximum purchasing power with leading private clinics, family offices, and tech innovators. We build discreet, ultra-fast web platforms.",
+    "points": [
+      "Family Offices & Wealth Management: Discreet, elegant digital experiences for Kronberg & Königstein.",
+      "Private Clinics & MedTech: Compliant, fast web portals for Bad Homburg.",
+      "IT & Consulting: High-performance Next.js systems in Oberursel.",
+      "30 Minutes On-Site: Fast direct connection via A5/A661.",
+      "SEO Leadership: 100/100 Core Web Vitals for top search visibility.",
+      "Direct Founder Access: Transparent fixed pricing without agency overhead."
+    ]
+  },
+  "contentSections_en": [
+    {
+      "title": "Wealth Management & Law Portals for Kronberg & Königstein",
+      "content": "High-security architecture and refined typography for discerning clients."
+    },
+    {
+      "title": "MedTech & Private Healthcare in Bad Homburg",
+      "content": "Sub-500ms load times and seamless mobile appointment workflows."
+    }
+  ],
+  "faq_en": [
+    {
+      "q": "How much does a professional website in the Hochtaunus district cost?",
+      "a": "Binding fixed price on request following a free audit. 5-10x more cost-effective than traditional agencies."
+    },
+    {
+      "q": "How long does implementation take?",
+      "a": "Turnkey delivery within 10 to 14 business days."
+    },
+    {
+      "q": "Do you meet on-site in the Hochtaunus region?",
+      "a": "Yes, via the A5/A661 we can be on-site across the district in around 30 minutes."
+    }
+  ]
+}

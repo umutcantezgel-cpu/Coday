@@ -1,0 +1,107 @@
+{
+  "target": "bensheim",
+  "displayName": "Bensheim",
+  "type": "location",
+  "meta": {
+    "title": "Webdesign Bensheim | Webagentur Bergstraße · Coday",
+    "description": "Professionelles Webdesign in Bensheim & an der Bergstraße. Schnelle Ladezeiten, top Google-Rankings & mehr Kunden für Mittelstand & Dienstleister. Festpreis."
+  },
+  "hero": {
+    "headline": "Webdesign Bensheim: Next.js Performance für Bergstraße, Dental & Mittelstand",
+    "subheadline": "Ihre Webagentur für Bensheim, Heppenheim, Zwingenberg und den Kreis Bergstraße.",
+    "description": "Als spezialisierte Webagentur an der Bergstraße entwickeln wir blitzschnelle, sichere und hochkonvertierende Next.js Webanwendungen. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+  },
+  "localDominance": {
+    "title": "Digitale Vorherrschaft für Bensheim, die Bergstraße & Rhein-Neckar",
+    "description": "Bensheim ist die größte Stadt des Kreises Bergstraße und ein starker Wirtschaftsstandort mit weltbekannter Medizintechnik-Kompetenz (Dental-Zentrum), florierendem Gewerbe im Stubenwald und Gewerbepark Süd sowie traditionsreichem Weinbau und Tourismus. Wir bauen digitale Plattformen, die messbar neue Kunden, Patienten und B2B-Partner anziehen.",
+    "points": [
+      "Dental- & Medizintechnik: Repräsentative, international skalierbare Webportale für Medtech-Unternehmen und Zulieferer im Stubenwald.",
+      "Tourismus, Weinbau & Gastronomie: Ästhetische, visuell beeindruckende Websites mit nahtloser Buchungs- und Reservierungsintegration.",
+      "Mittelstand & Gewerbepark Süd: Hochkonvertierende B2B-Websites mit messbarer Lead-Generierung.",
+      "Schnelle Anbindung über A5, A67 und B3: Direkte Erreichbarkeit zwischen Frankfurt Rhein-Main und Rhein-Neckar.",
+      "Next.js als SEO-Katalysator: 100/100 Google Core Web Vitals für Spitzenrankings bei 'Webdesign Bensheim'.",
+      "Inhabergeführt & Festpreis: Direkter Entwickler-Kontakt mit Umutcan Emre Tezgel ohne teuren Großagentur-Overhead."
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "B2B- & Medtech-Webportale für Bensheim & den Stubenwald",
+      "content": "Next.js 15, modulare API-Architekturen und blitzschnelle Ladezeiten für Medizintechnik, Dental-Branche und Industrie."
+    },
+    {
+      "title": "Designorientierte Auftritte für Tourismus, Weingüter & Gastronomie",
+      "content": "Elegantes UI/UX-Design und mobile Optimierung für erstklassige Gäste- und Kundenansprache an der Bergstraße."
+    },
+    {
+      "title": "Local SEO & Kreis Bergstraße Dominanz",
+      "content": "Dominante Platzierungen in den Google-Suchergebnissen für Bensheim, Heppenheim, Zwingenberg, Lorsch und Seeheim-Jugenheim."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wie viel kostet eine neue Website in Bensheim?",
+      "a": "Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance."
+    },
+    {
+      "q": "Wie schnell ist eine neue Website in Bensheim online?",
+      "a": "In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online."
+    },
+    {
+      "q": "Kommen Sie für ein Beratungsgespräch direkt nach Bensheim?",
+      "a": "Ja, sehr gerne. Über die A5 sind wir von unserem Wetzlarer HQ in rund 50 Minuten direkt bei Ihnen vor Ort im Stubenwald, im Gewerbepark Süd oder in der Bensheimer Innenstadt."
+    },
+    {
+      "q": "Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?",
+      "a": "Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet."
+    },
+    {
+      "q": "Wer ist unser fester Ansprechpartner?",
+      "a": "Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support."
+    }
+  ],
+  "meta_en": {
+    "title": "Web Design Bensheim | Web Agency Bergstraße · Coday",
+    "description": "Professional web design in Bensheim & Bergstraße. Fast load times, top Google rankings & more clients for SME & services. Fixed price."
+  },
+  "hero_en": {
+    "headline": "Web Design Bensheim: Next.js Performance for Bergstraße, Dental & SME",
+    "subheadline": "Your web agency for Bensheim, Heppenheim, Zwingenberg, and the Bergstraße district.",
+    "description": "Custom Next.js web applications for Bensheim. Fixed price upon request."
+  },
+  "localDominance_en": {
+    "title": "Digital Dominance for Bensheim, Bergstraße & Rhine-Neckar",
+    "description": "Bensheim is the economic center of the Bergstraße district with renowned dental technology, industry, and tourism. We build fast, high-performance web systems.",
+    "points": [
+      "Dental & Medtech: Scalable digital portals for medical technology leaders in Stubenwald.",
+      "Tourism & Viticulture: High-end visual storytelling and seamless reservation systems.",
+      "SME & Commercial Park South: High-converting B2B lead generation engines.",
+      "A5 / A67 / B3 Corridor: Fast connection between Rhine-Main and Rhine-Neckar.",
+      "SEO Leadership: 100/100 Core Web Vitals for top search visibility.",
+      "Direct Founder Access: Transparent fixed pricing without agency overhead."
+    ]
+  },
+  "contentSections_en": [
+    {
+      "title": "B2B & Medtech Web Portals for Bensheim & Stubenwald",
+      "content": "Next.js 15, modular API architectures, and ultra-fast load times for dental & medical innovators."
+    },
+    {
+      "title": "Brand Design for Tourism, Wineries & Hospitality",
+      "content": "Sophisticated UI/UX design converting visitors into loyal guests along the Bergstraße."
+    }
+  ],
+  "faq_en": [
+    {
+      "q": "How much does a professional website in Bensheim cost?",
+      "a": "Binding fixed price on request following a free audit. 5-10x more cost-effective than traditional agencies."
+    },
+    {
+      "q": "How long does implementation take?",
+      "a": "Turnkey delivery within 10 to 14 business days."
+    },
+    {
+      "q": "Do you meet on-site in Bensheim?",
+      "a": "Yes, we gladly meet you in Bensheim or anywhere along the Bergstraße via the A5 highway."
+    }
+  ]
+}

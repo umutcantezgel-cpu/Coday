@@ -31,6 +31,7 @@
     "placeholder_email": "ihre@email.de",
     "button_sending": "Wird gesendet...",
     "button_send": "Report senden",
+    "close": "Modal schließen",
     "privacy_note": "Wir speichern Ihre E-Mail-Adresse nicht.",
     "error_sending": "Fehler beim Senden"
   },

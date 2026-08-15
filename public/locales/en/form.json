@@ -62,7 +62,7 @@
         "placeholder": "john@example.com"
       },
       "name": {
-        "label": "name",
+        "label": "Name",
         "placeholder": "John Doe"
       },
       "phone": {
@@ -126,7 +126,7 @@
       "desc": "For anonymous statistics."
     },
     "marketing": {
-      "title": "marketing",
+      "title": "Marketing",
       "desc": "For personalized advertising."
     }
   },

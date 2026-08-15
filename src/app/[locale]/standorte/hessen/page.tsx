@@ -1,11 +1,34 @@
-import { Metadata } from 'next';
+import React from 'react';
+import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { LocalSeoTemplate } from '@/features/local-seo/ui/LocalSeoTemplate';
-import { getOrganizationSchema, getDynamicLocationSchema, BASE_URL } from '@/lib/schema';
+import { BASE_URL, getOrganizationSchema } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
-import fs from 'fs';
-import path from 'path';
+import { Button } from '@/shared/ui/Button';
+import { TrustBar } from '@/shared/ui/TrustBar';
+import { LazyQuickContactForm } from '@/widgets/home/LazyQuickContactForm';
+import {
+  ArrowRight,
+  Lightning,
+  ShieldCheck,
+  Code,
+  Buildings,
+  Users,
+  Check,
+  Sparkle,
+  LockKey,
+  CheckCircle,
+  MapPin,
+  ChartBar,
+  Star,
+  DeviceMobile,
+  Target,
+  FileCode,
+  Globe,
+  CaretRight,
+  Factory,
+  Compass,
+} from '@phosphor-icons/react/dist/ssr';
 
 export const dynamic = 'force-static';
 
@@ -17,71 +40,282 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Design Hesse | All Locations & Districts – Coday',
+      title: 'Web Design Hesse | Leading Next.js Web Agency · Coday',
       description:
-        'Directory of all web design locations and districts of Coday Web Agency in Hesse. High-end Next.js web development from Wetzlar and Frankfurt to Kassel and Fulda.',
+        'High-end web design & Next.js development across Hesse. 100/100 Core Web Vitals, blazing fast load times & measurable leads for German SMEs.',
       path: '/en/standorte/hessen',
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'Webdesign Hessen | Alle Standorte & Landkreise – Coday',
+    title: 'Webdesign Hessen | Führende Next.js Webagentur · Coday',
     description:
-      'Übersicht aller Webdesign Standorte & Landkreise der Coday Webagentur in Hessen. High-End Next.js Webentwicklung von Wetzlar & Frankfurt bis Kassel & Fulda.',
+      'High-End Webdesign & Next.js Entwicklung in ganz Hessen. 100/100 Core Web Vitals, blitzschnelle Ladezeiten & messbare Leads für den hessischen Mittelstand.',
     path: '/de/standorte/hessen',
     type: 'money',
   });
 }
 
-export default async function HessenLocationPage({
+export default async function HessenMasterPage({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const _locale = locale || 'de';
-  setRequestLocale(_locale);
 
-  let content = null;
-  try {
-    const filePath = path.join(
-      process.cwd(),
-      'src',
-      'features',
-      'local-seo',
-      'model',
-      'content',
-      `hessen.${_locale}.json`
-    );
-    const fileContents = fs.readFileSync(filePath, 'utf8');
-    content = JSON.parse(fileContents);
-  } catch (e) {
-    // Content is being generated
-  }
-
-  if (!content) {
-    return (
-      <div className="p-20 text-center">Hessen SEO Content is currently being generated...</div>
-    );
-  }
+  const regions = [
+    {
+      title: 'Mittelhessen (HQ Region)',
+      badge: 'Agentur-Hauptsitz Wetzlar',
+      desc: 'Optik, Feinmechanik, Medizintechnik & universitärer Mittelstand.',
+      locations: [
+        {
+          name: 'Wetzlar (Agentur-HQ)',
+          link: '/webdesign-agentur-wetzlar',
+          highlight: true,
+          note: 'Optik- & MedTech-Zentrum',
+        },
+        {
+          name: 'Gießen',
+          link: '/webdesign-giessen',
+          highlight: true,
+          note: 'Universitätsstadt & Kliniken',
+        },
+        {
+          name: 'Marburg',
+          link: '/webdesign-marburg',
+          highlight: true,
+          note: 'Behringwerke & Biotech',
+        },
+        {
+          name: 'Herborn',
+          link: '/webdesign-herborn',
+          highlight: false,
+          note: 'Schaltschrankbau & Industrie',
+        },
+        {
+          name: 'Dillenburg',
+          link: '/webdesign-dillenburg',
+          highlight: false,
+          note: 'Kupfer, Stahl & Maschinenbau',
+        },
+        {
+          name: 'Limburg an der Lahn',
+          link: '/webdesign-limburg',
+          highlight: true,
+          note: 'ICE-City & Großhandel',
+        },
+        {
+          name: 'Weilburg',
+          link: '/webdesign-weilburg',
+          highlight: false,
+          note: 'Residenzstadt & Maschinenbau',
+        },
+        {
+          name: 'Landkreis Lahn-Dill',
+          link: '/regionen/landkreis-lahn-dill',
+          highlight: false,
+          note: 'Master-Kreis-Hub (23 Kommunen)',
+        },
+        {
+          name: 'Landkreis Gießen',
+          link: '/regionen/landkreis-giessen',
+          highlight: false,
+          note: 'Master-Kreis-Hub (18 Kommunen)',
+        },
+        {
+          name: 'Landkreis Marburg-Biedenkopf',
+          link: '/regionen/landkreis-marburg-biedenkopf',
+          highlight: false,
+          note: 'Master-Kreis-Hub (13 Kommunen)',
+        },
+        {
+          name: 'Landkreis Limburg-Weilburg',
+          link: '/regionen/landkreis-limburg-weilburg',
+          highlight: false,
+          note: 'Master-Kreis-Hub (15 Kommunen)',
+        },
+      ],
+    },
+    {
+      title: 'Rhein-Main & Taunus',
+      badge: 'Wirtschaftsmetropole',
+      desc: 'Finanzplatz, Großkonzerne, Beratung, Kanzleien & High-Tech.',
+      locations: [
+        {
+          name: 'Frankfurt am Main',
+          link: '/webdesign-frankfurt',
+          highlight: true,
+          note: 'FinTech, Enterprise & B2B',
+        },
+        {
+          name: 'Wiesbaden',
+          link: '/webdesign-wiesbaden',
+          highlight: true,
+          note: 'Landeshauptstadt, Kanzleien & Praxen',
+        },
+        {
+          name: 'Bad Homburg',
+          link: '/webdesign-bad-homburg',
+          highlight: true,
+          note: 'MedTech & Family Offices',
+        },
+        {
+          name: 'Oberursel',
+          link: '/webdesign-oberursel',
+          highlight: false,
+          note: 'IT & Consulting Hub',
+        },
+        {
+          name: 'Bad Vilbel',
+          link: '/webdesign-bad-vilbel',
+          highlight: false,
+          note: 'Medien & Pharma-Drehscheibe',
+        },
+        {
+          name: 'Offenbach am Main',
+          link: '/webdesign-offenbach',
+          highlight: true,
+          note: 'Kreativwirtschaft & Automotive',
+        },
+        {
+          name: 'Hanau',
+          link: '/webdesign-hanau',
+          highlight: true,
+          note: 'Materialtechnik & Chemie',
+        },
+        {
+          name: 'Hofheim am Taunus',
+          link: '/webdesign-hofheim',
+          highlight: false,
+          note: 'Kreisstadt MTK & Mittelstand',
+        },
+        {
+          name: 'Rüsselsheim am Main',
+          link: '/webdesign-ruesselsheim',
+          highlight: false,
+          note: 'Mobilität & Ingenieurbau',
+        },
+        {
+          name: 'Rodgau',
+          link: '/webdesign-rodgau',
+          highlight: false,
+          note: 'B2B-Gewerbe & Logistik',
+        },
+        {
+          name: 'Dietzenbach',
+          link: '/webdesign-dietzenbach',
+          highlight: false,
+          note: 'Kreisstadt Offenbach & IT',
+        },
+        {
+          name: 'Wetteraukreis',
+          link: '/regionen/wetteraukreis',
+          highlight: false,
+          note: 'Master-Kreis-Hub (21 Kommunen)',
+        },
+        {
+          name: 'Hochtaunuskreis',
+          link: '/regionen/hochtaunuskreis',
+          highlight: false,
+          note: 'Master-Kreis-Hub (12 Kommunen)',
+        },
+        {
+          name: 'Main-Taunus-Kreis',
+          link: '/regionen/main-taunus-kreis',
+          highlight: false,
+          note: 'Master-Kreis-Hub (12 Kommunen)',
+        },
+        {
+          name: 'Kreis Offenbach',
+          link: '/regionen/kreis-offenbach',
+          highlight: false,
+          note: 'Master-Kreis-Hub (13 Kommunen)',
+        },
+        {
+          name: 'Main-Kinzig-Kreis',
+          link: '/regionen/main-kinzig-kreis',
+          highlight: false,
+          note: 'Master-Kreis-Hub (13 Kommunen)',
+        },
+        {
+          name: 'Rheingau-Taunus-Kreis',
+          link: '/regionen/rheingau-taunus-kreis',
+          highlight: false,
+          note: 'Master-Kreis-Hub (13 Kommunen)',
+        },
+      ],
+    },
+    {
+      title: 'Südhessen & Bergstraße',
+      badge: 'Wissenschaft & Innovation',
+      desc: 'Software-Cluster, Raumfahrt, TU-Spin-offs, Chemie & Weinbau.',
+      locations: [
+        {
+          name: 'Darmstadt',
+          link: '/webdesign-darmstadt',
+          highlight: true,
+          note: 'Wissenschaftsstadt & Tech-Hub',
+        },
+        {
+          name: 'Bensheim',
+          link: '/webdesign-bensheim',
+          highlight: true,
+          note: 'Medizintechnik & Bergstraße',
+        },
+        {
+          name: 'Friedberg',
+          link: '/webdesign-friedberg',
+          highlight: false,
+          note: 'Kreisstadt Wetterau & THM-Campus',
+        },
+        {
+          name: 'Landkreis Darmstadt-Dieburg',
+          link: '/regionen/landkreis-darmstadt-dieburg',
+          highlight: false,
+          note: 'Master-Kreis-Hub (12 Kommunen)',
+        },
+      ],
+    },
+    {
+      title: 'Nordhessen & Osthessen',
+      badge: 'Mobilität & Logistik',
+      desc: 'Automotive, Güterverkehrszentren, Erneuerbare Energien & IT.',
+      locations: [
+        {
+          name: 'Kassel',
+          link: '/webdesign-kassel',
+          highlight: true,
+          note: 'Mobilität, Maschinenbau & Science Park',
+        },
+        {
+          name: 'Landkreis Kassel',
+          link: '/regionen/landkreis-kassel',
+          highlight: false,
+          note: 'Baunatal VW-Werk & GVZ Lohfelden',
+        },
+        {
+          name: 'Fulda',
+          link: '/webdesign-fulda',
+          highlight: true,
+          note: 'Osthessen-Zentrum & ICE-Knoten',
+        },
+        {
+          name: 'Landkreis Fulda',
+          link: '/regionen/landkreis-fulda',
+          highlight: false,
+          note: 'Industriepark Rhön & Hünfeld IT',
+        },
+      ],
+    },
+  ];
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       getOrganizationSchema(_locale),
-      {
-        '@type': 'CollectionPage',
-        '@id': `${BASE_URL}/${_locale}/standorte/hessen#collection`,
-        name:
-          _locale === 'en'
-            ? 'Web Design Locations & Districts in Hesse'
-            : 'Webdesign Standorte & Landkreise in Hessen',
-        url: `${BASE_URL}/${_locale}/standorte/hessen`,
-        description:
-          _locale === 'en'
-            ? 'Complete directory of all Coday Web Agency locations and regional district hubs across Hesse.'
-            : 'Vollständige Übersicht aller Standorte und Landkreise der Coday Webagentur in ganz Hessen.',
-      },
       {
         '@type': 'LocalBusiness',
         '@id': `${BASE_URL}/${_locale}/standorte/hessen#localbusiness`,
@@ -91,10 +325,10 @@ export default async function HessenLocationPage({
         image: `${BASE_URL}/images/og-image.jpg`,
         telephone: '+49 6441 000000',
         email: 'kontakt@codayweb.de',
-        priceRange: '€€€',
+        priceRange: '€€€€',
         address: {
           '@type': 'PostalAddress',
-          streetAddress: 'Regionalbüro Hessen / HQ Wetzlar',
+          streetAddress: 'HQ Wetzlar / Regionalnetzwerk Hessen',
           addressLocality: 'Wetzlar',
           postalCode: '35578',
           addressRegion: 'Hessen',
@@ -102,642 +336,632 @@ export default async function HessenLocationPage({
         },
         geo: {
           '@type': 'GeoCoordinates',
-          latitude: 50.5667,
-          longitude: 8.5,
+          latitude: 50.5558,
+          longitude: 8.5022,
         },
-        areaServed: {
-          '@type': 'State',
-          name: 'Hessen',
+        areaServed: [
+          { '@type': 'AdministrativeArea', name: 'Hessen' },
+          { '@type': 'AdministrativeArea', name: 'Mittelhessen' },
+          { '@type': 'AdministrativeArea', name: 'Rhein-Main' },
+          { '@type': 'AdministrativeArea', name: 'Nordhessen' },
+          { '@type': 'AdministrativeArea', name: 'Osthessen' },
+          { '@type': 'AdministrativeArea', name: 'Südhessen' },
+          { '@type': 'City', name: 'Wetzlar' },
+          { '@type': 'City', name: 'Frankfurt am Main' },
+          { '@type': 'City', name: 'Wiesbaden' },
+          { '@type': 'City', name: 'Kassel' },
+          { '@type': 'City', name: 'Darmstadt' },
+          { '@type': 'City', name: 'Offenbach' },
+          { '@type': 'City', name: 'Hanau' },
+          { '@type': 'City', name: 'Gießen' },
+          { '@type': 'City', name: 'Fulda' },
+          { '@type': 'City', name: 'Marburg' },
+          { '@type': 'City', name: 'Rüsselsheim' },
+          { '@type': 'City', name: 'Bad Homburg' },
+          { '@type': 'City', name: 'Oberursel' },
+          { '@type': 'City', name: 'Rodgau' },
+          { '@type': 'City', name: 'Dietzenbach' },
+          { '@type': 'City', name: 'Bensheim' },
+          { '@type': 'City', name: 'Hofheim' },
+          { '@type': 'City', name: 'Friedberg' },
+          { '@type': 'City', name: 'Bad Vilbel' },
+          { '@type': 'City', name: 'Limburg' },
+          { '@type': 'City', name: 'Herborn' },
+          { '@type': 'City', name: 'Dillenburg' },
+          { '@type': 'City', name: 'Weilburg' },
+        ],
+      },
+      {
+        '@type': 'ProfessionalService',
+        '@id': `${BASE_URL}/${_locale}/standorte/hessen#service`,
+        name: 'Enterprise & B2B Webentwicklung Hessen',
+        provider: {
+          '@id': `${BASE_URL}/#organization`,
         },
+        serviceType: [
+          'High-End Webdesign Hessen',
+          'Next.js 15 Webentwicklung',
+          'Headless CMS Architekturen (Sanity)',
+          'Local SEO Hessen Dominanz',
+          'B2B Lead-Funnels & Express-Recruiting',
+        ],
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: `${BASE_URL}/${_locale}`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Standorte & Regionen Hessen',
+            item: `${BASE_URL}/${_locale}/standorte/hessen`,
+          },
+        ],
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'Wie viel kostet eine professionelle Website bei Coday in Hessen?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere hochgradig optimierten KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Wie schnell ist eine neue Website in Hessen online?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Bieten Sie Vor-Ort-Termine in ganz Hessen an?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Ja, absolut. Durch unsere zentrale Lage in Wetzlar an den Autobahnen A45 und A5 erreichen wir Frankfurt, Wiesbaden, Gießen, Marburg, Limburg, Darmstadt, Fulda und Kassel schnell für persönliche Termine.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Erfüllen Ihre Websites alle DSGVO- und Barrierefreiheits-Standards?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Ja. Alle Webapplikationen werden DSGVO-konform auf deutschen Servern gehostet und erfüllen moderne Barrierefreiheits-Standards (BITV 2.0 / WCAG 2.1 AA).',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Wer betreut mein Projekt persönlich?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Inhaber Umutcan Emre Tezgel persönlich ohne zwischengeschaltete Account Manager oder Callcenter.',
+            },
+          },
+        ],
       },
     ],
   };
 
-  const _seoTitle =
-    _locale === 'en'
-      ? 'Web Design Agency Hesse | Premium Websites | Coday'
-      : 'Webdesign Agentur Hessen | Premium Webseiten | Coday';
   return (
-    <>
+    <div className="bg-[#fafafa] text-slate-900 min-h-screen selection:bg-amber-500/20 selection:text-amber-900">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <LocalSeoTemplate content={content} />
 
-      {/* Structured Hessen Standorte Hub Directory */}
-      <section className="py-20 bg-slate-950 text-white border-t border-slate-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-primary-400 font-semibold tracking-wider uppercase text-xs sm:text-sm block mb-2">
-              Regionale Wirtschaftsräume
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-              Lokale Webdesign- & Entwicklungs-Standorte in Hessen
-            </h2>
-            <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
-              Vom Headquarter Wetzlar bis in alle hessischen Wirtschaftszentren: Finden Sie die
-              spezialisierte Landingpage für Ihre Region mit maßgeschneiderten Branchenlösungen.
-            </p>
+      {/* 1. HERO SECTION MIT LEAD CAPTURE */}
+      <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28 bg-[#fafafa]">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-100/40 via-white/80 to-transparent pointer-events-none" />
+        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-amber-400/10 blur-[140px] rounded-full pointer-events-none" />
+
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-50 text-amber-800 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-8 shadow-sm">
+            <Sparkle className="w-4 h-4 text-amber-600" />
+            HESSEN MASTER-HUB · ALLE 23 STÄDTE & REGIONEN
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-            {/* Wetzlar */}
-            <div className="p-6 rounded-2xl bg-slate-900/60 border border-primary-500/40 hover:border-primary-400 transition-colors flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-bold text-primary-400 uppercase tracking-wider">
-                    HQ • Mittelhessen
-                  </span>
-                  <span className="text-xs bg-primary-950 text-primary-300 border border-primary-800 px-2 py-0.5 rounded">
-                    Headquarter
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">
-                  <Link href="/webdesign-agentur-wetzlar" className="hover:text-primary-400">
-                    Webdesign Wetzlar
-                  </Link>
-                </h3>
-                <p className="text-slate-400 text-xs leading-relaxed mb-4">
-                  Optik, Feinmechanik, Kanzleien und lokaler Mittelstand an der Lahn.
-                </p>
-              </div>
-              <Link
-                href="/webdesign-agentur-wetzlar"
-                className="text-xs font-semibold text-primary-400 hover:text-primary-300 inline-flex items-center gap-1"
-              >
-                Standort Wetzlar ansehen →
-              </Link>
-            </div>
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 mb-8 leading-[1.1]">
+            Webdesign & Next.js Entwicklung in{' '}
+            <span className="bg-gradient-to-r from-amber-600 via-amber-700 to-teal-700 bg-clip-text text-transparent">
+              ganz Hessen
+            </span>
+          </h1>
 
-            {/* Frankfurt am Main */}
-            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-primary-500/40 transition-colors flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-bold text-primary-400 uppercase tracking-wider">
-                    Finanzmetropole
-                  </span>
-                  <span className="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded">
-                    45 Min ab HQ
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">
-                  <Link href="/webdesign-frankfurt" className="hover:text-primary-400">
-                    Webdesign Frankfurt
-                  </Link>
-                </h3>
-                <p className="text-slate-400 text-xs leading-relaxed mb-4">
-                  FinTech, Private Equity, Großkanzleien und B2B-Enterprise im Rhein-Main-Gebiet.
-                </p>
-              </div>
-              <Link
-                href="/webdesign-frankfurt"
-                className="text-xs font-semibold text-primary-400 hover:text-primary-300 inline-flex items-center gap-1"
-              >
-                Standort Frankfurt ansehen →
-              </Link>
-            </div>
+          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-10">
+            Ihre High-End Webagentur mit Hauptsitz in Wetzlar. Blitzschnelle Next.js Architekturen,
+            moderne Headless-Systeme und automatisierte Leads für Mittelstand, Industrie und
+            Tech-Unternehmen in allen Regionen Hessens. Verbindlicher Festpreis nach kostenloser
+            Bedarfsanalyse.
+          </p>
 
-            {/* Wiesbaden */}
-            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-primary-500/40 transition-colors flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-bold text-primary-400 uppercase tracking-wider">
-                    Landeshauptstadt
-                  </span>
-                  <span className="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded">
-                    55 Min ab HQ
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">
-                  <Link href="/webdesign-wiesbaden" className="hover:text-primary-400">
-                    Webdesign Wiesbaden
-                  </Link>
-                </h3>
-                <p className="text-slate-400 text-xs leading-relaxed mb-4">
-                  Kanzleien, Notariate, Versicherungen, Kliniken und Consulting-Unternehmen.
-                </p>
-              </div>
-              <Link
-                href="/webdesign-wiesbaden"
-                className="text-xs font-semibold text-primary-400 hover:text-primary-300 inline-flex items-center gap-1"
-              >
-                Standort Wiesbaden ansehen →
-              </Link>
-            </div>
+          {/* Lead Capture Form in Hero */}
+          <div className="max-w-xl mx-auto mb-16 p-6 rounded-3xl bg-white border border-slate-200 shadow-xl">
+            <h2 className="text-lg font-bold text-slate-900 mb-4 text-center">
+              Kostenlose Bedarfsanalyse für Hessen anfordern
+            </h2>
+            <LazyQuickContactForm />
+          </div>
 
-            {/* Darmstadt */}
-            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-primary-500/40 transition-colors flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-bold text-primary-400 uppercase tracking-wider">
-                    Wissenschaftsstadt
-                  </span>
-                  <span className="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded">
-                    60 Min ab HQ
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">
-                  <Link href="/webdesign-darmstadt" className="hover:text-primary-400">
-                    Webdesign Darmstadt
-                  </Link>
-                </h3>
-                <p className="text-slate-400 text-xs leading-relaxed mb-4">
-                  Software/SaaS, Life Sciences, Messtechnik, IT-Security und High-Tech B2B.
-                </p>
-              </div>
-              <Link
-                href="/webdesign-darmstadt"
-                className="text-xs font-semibold text-primary-400 hover:text-primary-300 inline-flex items-center gap-1"
-              >
-                Standort Darmstadt ansehen →
-              </Link>
+          {/* Trust Badges */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-8 border-t border-slate-200">
+            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
+              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">100/100</div>
+              <div className="text-xs sm:text-sm text-slate-600 font-medium">Core Web Vitals</div>
             </div>
-
-            {/* Kassel */}
-            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-primary-500/40 transition-colors flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-bold text-primary-400 uppercase tracking-wider">
-                    Nordhessen
-                  </span>
-                  <span className="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded">
-                    75 Min ab HQ
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">
-                  <Link href="/webdesign-kassel" className="hover:text-primary-400">
-                    Webdesign Kassel
-                  </Link>
-                </h3>
-                <p className="text-slate-400 text-xs leading-relaxed mb-4">
-                  Mobilitätswirtschaft, Schienen- & Fahrzeugbau, Erneuerbare Energien und Logistik.
-                </p>
-              </div>
-              <Link
-                href="/webdesign-kassel"
-                className="text-xs font-semibold text-primary-400 hover:text-primary-300 inline-flex items-center gap-1"
-              >
-                Standort Kassel ansehen →
-              </Link>
+            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
+              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">&lt; 0.4s</div>
+              <div className="text-xs sm:text-sm text-slate-600 font-medium">Ladezeit via Edge</div>
             </div>
-
-            {/* Offenbach am Main */}
-            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-primary-500/40 transition-colors flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-bold text-primary-400 uppercase tracking-wider">
-                    Rhein-Main
-                  </span>
-                  <span className="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded">
-                    50 Min ab HQ
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">
-                  <Link href="/webdesign-offenbach" className="hover:text-primary-400">
-                    Webdesign Offenbach
-                  </Link>
-                </h3>
-                <p className="text-slate-400 text-xs leading-relaxed mb-4">
-                  Design- & Kreativwirtschaft am Hafen, europäische Zentralen Kaiserlei und
-                  Großhandel.
-                </p>
+            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
+              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">Vor Ort</div>
+              <div className="text-xs sm:text-sm text-slate-600 font-medium">
+                In ganz Hessen mobil
               </div>
-              <Link
-                href="/webdesign-offenbach"
-                className="text-xs font-semibold text-primary-400 hover:text-primary-300 inline-flex items-center gap-1"
-              >
-                Standort Offenbach ansehen →
-              </Link>
             </div>
-
-            {/* Hanau */}
-            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-primary-500/40 transition-colors flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-bold text-primary-400 uppercase tracking-wider">
-                    Main-Kinzig
-                  </span>
-                  <span className="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded">
-                    48 Min ab HQ
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">
-                  <Link href="/webdesign-hanau" className="hover:text-primary-400">
-                    Webdesign Hanau
-                  </Link>
-                </h3>
-                <p className="text-slate-400 text-xs leading-relaxed mb-4">
-                  Materialtechnologie, Edelmetalle, Chemiepark Wolfgang und Data Center
-                  Infrastruktur.
-                </p>
+            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
+              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">100%</div>
+              <div className="text-xs sm:text-sm text-slate-600 font-medium">
+                DSGVO & Deutsches Hosting
               </div>
-              <Link
-                href="/webdesign-hanau"
-                className="text-xs font-semibold text-primary-400 hover:text-primary-300 inline-flex items-center gap-1"
-              >
-                Standort Hanau ansehen →
-              </Link>
-            </div>
-
-            {/* Fulda */}
-            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-primary-500/40 transition-colors flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-bold text-primary-400 uppercase tracking-wider">
-                    Osthessen
-                  </span>
-                  <span className="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded">
-                    65 Min ab HQ
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">
-                  <Link href="/webdesign-fulda" className="hover:text-primary-400">
-                    Webdesign Fulda
-                  </Link>
-                </h3>
-                <p className="text-slate-400 text-xs leading-relaxed mb-4">
-                  Großhandel, Logistikdrehkreuz, Sensor- & Regeltechnik und
-                  Bauhandwerks-Mittelstand.
-                </p>
-              </div>
-              <Link
-                href="/webdesign-fulda"
-                className="text-xs font-semibold text-primary-400 hover:text-primary-300 inline-flex items-center gap-1"
-              >
-                Standort Fulda ansehen →
-              </Link>
-            </div>
-
-            {/* Gießen */}
-            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-primary-500/40 transition-colors flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-bold text-primary-400 uppercase tracking-wider">
-                    Mittelhessen
-                  </span>
-                  <span className="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded">
-                    12 Min ab HQ
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">
-                  <Link href="/webdesign-giessen" className="hover:text-primary-400">
-                    Webdesign Gießen
-                  </Link>
-                </h3>
-                <p className="text-slate-400 text-xs leading-relaxed mb-4">
-                  Universitäts- & Medizintechnikstandort, Start-ups, E-Commerce und Dienstleister.
-                </p>
-              </div>
-              <Link
-                href="/webdesign-giessen"
-                className="text-xs font-semibold text-primary-400 hover:text-primary-300 inline-flex items-center gap-1"
-              >
-                Standort Gießen ansehen →
-              </Link>
-            </div>
-
-            {/* Marburg */}
-            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-primary-500/40 transition-colors flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-bold text-primary-400 uppercase tracking-wider">
-                    Mittelhessen
-                  </span>
-                  <span className="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded">
-                    30 Min ab HQ
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">
-                  <Link href="/webdesign-marburg" className="hover:text-primary-400">
-                    Webdesign Marburg
-                  </Link>
-                </h3>
-                <p className="text-slate-400 text-xs leading-relaxed mb-4">
-                  Pharmazeutische Industrie, Biotech-Standort Görzhain, Forschung und Kanzleien.
-                </p>
-              </div>
-              <Link
-                href="/webdesign-marburg"
-                className="text-xs font-semibold text-primary-400 hover:text-primary-300 inline-flex items-center gap-1"
-              >
-                Standort Marburg ansehen →
-              </Link>
-            </div>
-
-            {/* Herborn */}
-            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-primary-500/40 transition-colors flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-bold text-primary-400 uppercase tracking-wider">
-                    Dilltal
-                  </span>
-                  <span className="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded">
-                    18 Min ab HQ
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">
-                  <Link href="/webdesign-herborn" className="hover:text-primary-400">
-                    Webdesign Herborn
-                  </Link>
-                </h3>
-                <p className="text-slate-400 text-xs leading-relaxed mb-4">
-                  Schaltschrankbau, Maschinen- & Werkzeugbau, Pumpentechnik und Metallverarbeitung.
-                </p>
-              </div>
-              <Link
-                href="/webdesign-herborn"
-                className="text-xs font-semibold text-primary-400 hover:text-primary-300 inline-flex items-center gap-1"
-              >
-                Standort Herborn ansehen →
-              </Link>
-            </div>
-
-            {/* Limburg */}
-            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-primary-500/40 transition-colors flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-bold text-primary-400 uppercase tracking-wider">
-                    Limburg-Weilburg
-                  </span>
-                  <span className="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded">
-                    35 Min ab HQ
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">
-                  <Link href="/webdesign-limburg" className="hover:text-primary-400">
-                    Webdesign Limburg
-                  </Link>
-                </h3>
-                <p className="text-slate-400 text-xs leading-relaxed mb-4">
-                  B2B-Handel, Logistikdrehscheibe ICE-City, Handwerks-Champions und Dienstleister.
-                </p>
-              </div>
-              <Link
-                href="/webdesign-limburg"
-                className="text-xs font-semibold text-primary-400 hover:text-primary-300 inline-flex items-center gap-1"
-              >
-                Standort Limburg ansehen →
-              </Link>
-            </div>
-
-            {/* Friedberg & Bad Nauheim */}
-            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-primary-500/40 transition-colors flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-bold text-primary-400 uppercase tracking-wider">
-                    Wetteraukreis
-                  </span>
-                  <span className="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded">
-                    35 Min ab HQ
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">
-                  <Link href="/webdesign-friedberg" className="hover:text-primary-400">
-                    Webdesign Friedberg
-                  </Link>
-                </h3>
-                <p className="text-slate-400 text-xs leading-relaxed mb-4">
-                  Gesundheitswirtschaft, Kliniken Bad Nauheim, B2B-Dienstleister und Wetterau.
-                </p>
-              </div>
-              <Link
-                href="/webdesign-friedberg"
-                className="text-xs font-semibold text-primary-400 hover:text-primary-300 inline-flex items-center gap-1"
-              >
-                Standort Friedberg ansehen →
-              </Link>
-            </div>
-
-            {/* Bad Homburg vor der Höhe */}
-            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-primary-500/40 transition-colors flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-bold text-primary-400 uppercase tracking-wider">
-                    Hochtaunus
-                  </span>
-                  <span className="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded">
-                    35 Min ab HQ
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">
-                  <Link href="/webdesign-bad-homburg" className="hover:text-primary-400">
-                    Webdesign Bad Homburg
-                  </Link>
-                </h3>
-                <p className="text-slate-400 text-xs leading-relaxed mb-4">
-                  Healthcare, Medizintechnik, Family Offices, Vermögensberatung und Kanzleien.
-                </p>
-              </div>
-              <Link
-                href="/webdesign-bad-homburg"
-                className="text-xs font-semibold text-primary-400 hover:text-primary-300 inline-flex items-center gap-1"
-              >
-                Standort Bad Homburg ansehen →
-              </Link>
-            </div>
-
-            {/* Oberursel (Taunus) */}
-            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-primary-500/40 transition-colors flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-bold text-primary-400 uppercase tracking-wider">
-                    Vordertaunus
-                  </span>
-                  <span className="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded">
-                    35 Min ab HQ
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">
-                  <Link href="/webdesign-oberursel" className="hover:text-primary-400">
-                    Webdesign Oberursel
-                  </Link>
-                </h3>
-                <p className="text-slate-400 text-xs leading-relaxed mb-4">
-                  Management- & IT-Consulting, Cloud-Dienstleister und exklusives Taunus-Handwerk.
-                </p>
-              </div>
-              <Link
-                href="/webdesign-oberursel"
-                className="text-xs font-semibold text-primary-400 hover:text-primary-300 inline-flex items-center gap-1"
-              >
-                Standort Oberursel ansehen →
-              </Link>
-            </div>
-
-            {/* Bad Vilbel */}
-            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-primary-500/40 transition-colors flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-bold text-primary-400 uppercase tracking-wider">
-                    Südliche Wetterau
-                  </span>
-                  <span className="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded">
-                    35 Min ab HQ
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">
-                  <Link href="/webdesign-bad-vilbel" className="hover:text-primary-400">
-                    Webdesign Bad Vilbel
-                  </Link>
-                </h3>
-                <p className="text-slate-400 text-xs leading-relaxed mb-4">
-                  Medien & Rundfunk, Getränkeindustrie Hassia, IT-Systemhäuser und
-                  B2B-Dienstleister.
-                </p>
-              </div>
-              <Link
-                href="/webdesign-bad-vilbel"
-                className="text-xs font-semibold text-primary-400 hover:text-primary-300 inline-flex items-center gap-1"
-              >
-                Standort Bad Vilbel ansehen →
-              </Link>
-            </div>
-
-            {/* Hofheim am Taunus */}
-            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-primary-500/40 transition-colors flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-bold text-primary-400 uppercase tracking-wider">
-                    Main-Taunus
-                  </span>
-                  <span className="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded">
-                    45 Min ab HQ
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">
-                  <Link href="/webdesign-hofheim" className="hover:text-primary-400">
-                    Webdesign Hofheim am Taunus
-                  </Link>
-                </h3>
-                <p className="text-slate-400 text-xs leading-relaxed mb-4">
-                  Kanzleien, Notariate, Handels- & Logistikdrehkreuz Wallau und anspruchsvolles
-                  Bauhandwerk.
-                </p>
-              </div>
-              <Link
-                href="/webdesign-hofheim"
-                className="text-xs font-semibold text-primary-400 hover:text-primary-300 inline-flex items-center gap-1"
-              >
-                Standort Hofheim ansehen →
-              </Link>
-            </div>
-
-            {/* Rüsselsheim am Main */}
-            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-primary-500/40 transition-colors flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-bold text-primary-400 uppercase tracking-wider">
-                    Groß-Gerau
-                  </span>
-                  <span className="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded">
-                    50 Min ab HQ
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">
-                  <Link href="/webdesign-ruesselsheim" className="hover:text-primary-400">
-                    Webdesign Rüsselsheim
-                  </Link>
-                </h3>
-                <p className="text-slate-400 text-xs leading-relaxed mb-4">
-                  Automotive Engineering, Logistikdrehkreuz, technisches Handwerk und
-                  Zulieferindustrie.
-                </p>
-              </div>
-              <Link
-                href="/webdesign-ruesselsheim"
-                className="text-xs font-semibold text-primary-400 hover:text-primary-300 inline-flex items-center gap-1"
-              >
-                Standort Rüsselsheim ansehen →
-              </Link>
-            </div>
-
-            {/* Bensheim (Bergstraße) */}
-            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-primary-500/40 transition-colors flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-bold text-primary-400 uppercase tracking-wider">
-                    Bergstraße
-                  </span>
-                  <span className="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded">
-                    65 Min ab HQ
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">
-                  <Link href="/webdesign-bensheim" className="hover:text-primary-400">
-                    Webdesign Bensheim
-                  </Link>
-                </h3>
-                <p className="text-slate-400 text-xs leading-relaxed mb-4">
-                  Dental- & Medizintechnik, Elektronik Stubenwald, Weinwirtschaft und Tourismus.
-                </p>
-              </div>
-              <Link
-                href="/webdesign-bensheim"
-                className="text-xs font-semibold text-primary-400 hover:text-primary-300 inline-flex items-center gap-1"
-              >
-                Standort Bensheim ansehen →
-              </Link>
-            </div>
-
-            {/* Rodgau (Kreis Offenbach) */}
-            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-primary-500/40 transition-colors flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-bold text-primary-400 uppercase tracking-wider">
-                    Kreis Offenbach
-                  </span>
-                  <span className="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded">
-                    50 Min ab HQ
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">
-                  <Link href="/webdesign-rodgau" className="hover:text-primary-400">
-                    Webdesign Rodgau
-                  </Link>
-                </h3>
-                <p className="text-slate-400 text-xs leading-relaxed mb-4">
-                  SHK & Elektro-Handwerk, E-Commerce-Fulfillment, Logistik und Maschinenbau.
-                </p>
-              </div>
-              <Link
-                href="/webdesign-rodgau"
-                className="text-xs font-semibold text-primary-400 hover:text-primary-300 inline-flex items-center gap-1"
-              >
-                Standort Rodgau ansehen →
-              </Link>
-            </div>
-
-            {/* Dietzenbach & Dreieich */}
-            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-primary-500/40 transition-colors flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-bold text-primary-400 uppercase tracking-wider">
-                    Offenbach Land
-                  </span>
-                  <span className="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded">
-                    50 Min ab HQ
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">
-                  <Link href="/webdesign-dietzenbach" className="hover:text-primary-400">
-                    Webdesign Dietzenbach & Dreieich
-                  </Link>
-                </h3>
-                <p className="text-slate-400 text-xs leading-relaxed mb-4">
-                  IT-Systemhäuser, Technologieparks, Medizintechnik-Großhandel und Kanzleizentren.
-                </p>
-              </div>
-              <Link
-                href="/webdesign-dietzenbach"
-                className="text-xs font-semibold text-primary-400 hover:text-primary-300 inline-flex items-center gap-1"
-              >
-                Standort Dietzenbach ansehen →
-              </Link>
             </div>
           </div>
         </div>
       </section>
-    </>
+
+      {/* 2. TRUSTBAR (REAL PROOF) */}
+      <section className="border-y border-slate-200 bg-white">
+        <TrustBar />
+      </section>
+
+      {/* 3. INTERAKTIVER HESSEN-NAVIGATOR MIT REGIONAL-CLUSTERN */}
+      <section className="py-24 bg-white border-b border-slate-200 relative">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Hessenweiter Standort-Navigator
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">
+              Wählen Sie Ihre Stadt oder Ihren Landkreis in Hessen
+            </h2>
+            <p className="text-slate-600 text-base sm:text-lg">
+              Direktzugriff auf alle 23 Städte-Flaggschiffe und 10 Landkreis-Hubs im Coday Netzwerk.
+            </p>
+          </div>
+
+          <div className="space-y-16">
+            {regions.map((reg) => (
+              <div
+                key={reg.title}
+                className="p-8 rounded-3xl bg-slate-50/80 border border-slate-200/80 shadow-sm"
+              >
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-6 border-b border-slate-200">
+                  <div>
+                    <h3 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
+                      <Compass className="w-6 h-6 text-amber-600" />
+                      {reg.title}
+                    </h3>
+                    <p className="text-slate-600 text-sm mt-1">{reg.desc}</p>
+                  </div>
+                  <span className="self-start sm:self-auto px-3.5 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-xs font-semibold">
+                    {reg.badge}
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {reg.locations.map((loc) => (
+                    <Link
+                      key={loc.name}
+                      href={loc.link}
+                      className={`p-4 rounded-2xl border transition-all duration-300 flex items-center justify-between group ${
+                        loc.highlight
+                          ? 'bg-white border-amber-500/40 hover:border-amber-500 hover:shadow-md'
+                          : 'bg-white border-slate-200/80 hover:border-slate-300 hover:shadow-md'
+                      }`}
+                    >
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <MapPin
+                            className={`w-4 h-4 ${loc.highlight ? 'text-amber-600' : 'text-slate-400'}`}
+                          />
+                          <h4 className="font-bold text-slate-900 group-hover:text-amber-700 transition-colors text-sm sm:text-base">
+                            {loc.name}
+                          </h4>
+                        </div>
+                        <p className="text-xs text-slate-500 mt-1">{loc.note}</p>
+                      </div>
+                      <CaretRight className="w-5 h-5 text-slate-400 group-hover:text-amber-600 group-hover:translate-x-1 transition-all flex-shrink-0 ml-2" />
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. 4-PILLAR STATS BENTO GRID */}
+      <section className="py-24 relative bg-[#fafafa]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Performance-Metriken
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">
+              Messbare Ergebnisse für hessische Unternehmen
+            </h2>
+            <p className="text-slate-600 text-base sm:text-lg">
+              Next.js 15 Architekturen setzen den Maßstab für Ladezeiten, Sicherheit und
+              Lead-Generierung.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-amber-500/40 transition-all group">
+              <div className="text-4xl font-black text-amber-600 mb-2">&lt; 0.4s</div>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Ladezeit in Hessen</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Subsekundäre Ladezeiten via deutsches Edge-Hosting für maximale Conversion-Rates.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-amber-500/40 transition-all group">
+              <div className="text-4xl font-black text-amber-600 mb-2">100%</div>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Volle Rechte an Ihrem Quellcode ohne monatliche CMS-Lizenzgebühren oder
+                Lock-in-Effekte.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-amber-500/40 transition-all group">
+              <div className="text-4xl font-black text-amber-600 mb-2">24h</div>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Direkte Betreuung durch Gründer Umutcan Emre Tezgel ohne zeitraubende Hierarchien.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-amber-500/40 transition-all group">
+              <div className="text-4xl font-black text-amber-600 mb-2">5-10x</div>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Kosteneffizienter</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Günstiger als traditionelle Großagenturen durch automatisierte
+                KI-Engineering-Workflows.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. COMPARISON TABLE: NEXT.JS VS. TRADITIONELLES WORDPRESS */}
+      <section className="py-24 bg-white border-y border-slate-200 relative overflow-hidden">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Technologie-Vergleich
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">
+              Warum Unternehmen in Hessen auf Next.js setzen
+            </h2>
+            <p className="text-slate-600 text-base sm:text-lg">
+              Der direkte Vergleich zwischen klassischem WordPress und zukunftssicherer
+              Headless-Architektur.
+            </p>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-xl">
+              <thead>
+                <tr className="border-b border-slate-200 bg-slate-50/90">
+                  <th className="p-5 text-sm font-semibold text-slate-700">Kriterium</th>
+                  <th className="p-5 text-sm font-semibold text-red-700">
+                    WordPress / Typo3 Agentur-Monolith
+                  </th>
+                  <th className="p-5 text-sm font-semibold text-amber-900 bg-amber-50/80">
+                    Coday Next.js 15 Headless Stack
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100 text-sm">
+                <tr className="hover:bg-slate-50 transition-colors">
+                  <td className="p-5 font-medium text-slate-900">Ladezeit & TTFB</td>
+                  <td className="p-5 text-slate-600">
+                    2.5s – 4.5s (Plugin-Ballast & Datenbank-Verzögerung)
+                  </td>
+                  <td className="p-5 font-bold text-amber-900 bg-amber-50/40">
+                    &lt; 0.4s (Globales deutsches Edge-CDN)
+                  </td>
+                </tr>
+                <tr className="hover:bg-slate-50 transition-colors">
+                  <td className="p-5 font-medium text-slate-900">Sicherheit & Datenschutz</td>
+                  <td className="p-5 text-slate-600">
+                    Permanente Angriffsfläche durch PHP-Plugins
+                  </td>
+                  <td className="p-5 font-bold text-amber-900 bg-amber-50/40">
+                    100% Sicher (Keine angreifbare Datenbank)
+                  </td>
+                </tr>
+                <tr className="hover:bg-slate-50 transition-colors">
+                  <td className="p-5 font-medium text-slate-900">Google Core Web Vitals</td>
+                  <td className="p-5 text-slate-600">Mäßig (Abstrafung im mobilen Suchranking)</td>
+                  <td className="p-5 font-bold text-amber-900 bg-amber-50/40">
+                    Garantiert 100/100 (Top-Rankings in ganz Hessen)
+                  </td>
+                </tr>
+                <tr className="hover:bg-slate-50 transition-colors">
+                  <td className="p-5 font-medium text-slate-900">Support & Betreuung</td>
+                  <td className="p-5 text-slate-600">
+                    Anonyme Ticketsysteme & wechselnde Account Manager
+                  </td>
+                  <td className="p-5 font-bold text-amber-900 bg-amber-50/40">
+                    Direkter Entwickler-Kontakt in Hessen
+                  </td>
+                </tr>
+                <tr className="hover:bg-slate-50 transition-colors">
+                  <td className="p-5 font-medium text-slate-900">Preisstruktur</td>
+                  <td className="p-5 text-slate-600">
+                    Fünfstellige Stundensätze & monatliche Retainer
+                  </td>
+                  <td className="p-5 font-bold text-amber-900 bg-amber-50/40">
+                    Verbindlicher Festpreis auf Anfrage
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. FOUNDER PHILOSOPHY BLOCK */}
+      <section className="py-24 relative bg-[#fafafa]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200 shadow-xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-amber-400/5 blur-[100px] rounded-full pointer-events-none" />
+            <div className="relative z-10">
+              <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+                Inhabergeführte Betreuung
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 mt-2 mb-6">
+                Echtes Handwerk statt Agentur-Overhead für Hessen
+              </h2>
+              <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-6">
+                Bei Coday arbeiten Sie direkt mit mir – <strong>Umutcan Emre Tezgel</strong>. Als
+                spezialisierter Solo-Entwickler mit Hauptsitz in Wetzlar baue ich Ihre Webpräsenz
+                für ganz Hessen: Technisch perfekt, ausdrucksstark und wirtschaftlich 5–10x
+                effizienter als traditionelle Agentur-Wasserköpfe.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-slate-200 text-sm">
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
+                  <span className="text-slate-700">Direkter Entwickler-Kontakt</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
+                  <span className="text-slate-700">Voller Quellcode-Besitz</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
+                  <span className="text-slate-700">5-10x günstiger als Großagenturen</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. SERVICES BENTO SHOWCASE (HESSENWEIT) */}
+      <section className="py-24 bg-white border-y border-slate-200">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Kernkompetenzen
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">
+              Digitale Exzellenz für den hessischen Mittelstand
+            </h2>
+            <p className="text-slate-600 text-base sm:text-lg">
+              Maßgeschneiderte Webentwicklung für anspruchsvolle Unternehmen in ganz Hessen.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="p-8 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <Code className="w-10 h-10 text-amber-600 mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-slate-900 mb-3">
+                1. Enterprise- & Headless-Webentwicklung
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Modernste Next.js 15 Architekturen mit Sanity Headless CMS für maximale Ladezeiten,
+                höchste Sicherheit und intuitive Content-Pflege.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <Target className="w-10 h-10 text-amber-600 mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-slate-900 mb-3">
+                2. Local SEO & Hessen-Dominanz
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Strukturierte Schema.org-Daten, semantisches Content-Design und Generative Engine
+                Optimization (GEO) für Spitzenrankings bei Google & KI-Suchmaschinen.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <Users className="w-10 h-10 text-amber-600 mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-slate-900 mb-3">
+                3. B2B-Leadgenerierung & Express-Recruiting
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Conversion-optimierte Funnels mit 60-Sekunden-Bewerbungen für qualifizierte
+                Fachkräfte ohne zeitraubende Anschreiben.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <ShieldCheck className="w-10 h-10 text-amber-600 mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-slate-900 mb-3">
+                4. 100% DSGVO & Deutsche Hochsicherheit
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Datenschutzkonforme Infrastruktur ohne US-Tracking-Abhängigkeiten in
+                ISO-zertifizierten deutschen Rechenzentren (Frankfurt am Main).
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 8. LOCAL GEO-SEMANTIC CONTENT SILO */}
+      <section className="py-24 bg-[#fafafa]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <div>
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Wirtschaftsstandort Hessen
+            </span>
+            <h2 className="text-3xl font-bold text-slate-900 mt-2 mb-6">
+              Vom Rhein-Main-Gebiet über Mittelhessen bis nach Nord- und Osthessen
+            </h2>
+            <p className="text-slate-700 leading-relaxed text-base">
+              Das Bundesland <strong>Hessen</strong> zählt zu den stärksten Wirtschaftsräumen
+              Europas. Es gliedert sich in die drei Regierungsbezirke{' '}
+              <strong>Gießen (Mittelhessen)</strong>,
+              <strong>Darmstadt (Rhein-Main & Südhessen)</strong> und{' '}
+              <strong>Kassel (Nord- & Osthessen)</strong>. Vom globalen Finanzplatz{' '}
+              <strong>Frankfurt am Main</strong> und der Landeshauptstadt <strong>Wiesbaden</strong>
+              über die weltweiten Optik- und MedTech-Pioniere in{' '}
+              <strong>Wetzlar, Gießen und Marburg</strong>
+              bis zu den Automobil- und Logistikdrehkreuzen in{' '}
+              <strong>Kassel, Baunatal und Fulda</strong> – über die{' '}
+              <strong>Bundesautobahnen A3, A5, A7, A45 und A66</strong> bieten wir Ihnen persönliche
+              Betreuung direkt vor Ort.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-2xl font-bold text-slate-900 mb-4">
+              Zentrale Lage in Wetzlar & Schnelle Vor-Ort-Erreichbarkeit
+            </h3>
+            <p className="text-slate-700 leading-relaxed text-base">
+              Durch unseren <strong>Hauptsitz in Wetzlar</strong> im Herzen Hessens sind wir
+              innerhalb von 30 bis 75 Fahrminuten in praktisch jeder hessischen Stadt direkt bei
+              Ihnen im Unternehmen.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-2xl font-bold text-slate-900 mb-4">
+              Verbindlicher Festpreis auf Anfrage & Go-Live in unter 14 Tagen
+            </h3>
+            <p className="text-slate-700 leading-relaxed text-base">
+              Maximale Planungssicherheit für Ihr Projekt: Nach einer kostenlosen Bedarfsanalyse
+              erhalten Sie ein transparentes Festpreisangebot ohne versteckte Kosten oder teuren
+              Agentur-Overhead.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 9. LOCAL FAQ ACCORDION */}
+      <section className="py-24 bg-white border-t border-slate-200">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Häufige Fragen
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">
+              Fragen & Antworten zu Webdesign in Hessen
+            </h2>
+          </div>
+
+          <div className="space-y-6">
+            <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                Wie viel kostet eine professionelle Website bei Coday in Hessen?
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und
+                verbindlich als Festpreis auf Anfrage. Durch unsere hochgradig optimierten
+                KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei
+                signifikant höherer Performance.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                Wie schnell ist eine neue Website in Hessen online?
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett
+                schlüsselfertig fertiggestellt und online.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                Bieten Sie Vor-Ort-Termine in ganz Hessen an?
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Ja, absolut. Durch unsere zentrale Lage in Wetzlar an den Autobahnen A45 und A5
+                erreichen wir Frankfurt, Wiesbaden, Gießen, Marburg, Limburg, Darmstadt, Fulda und
+                Kassel schnell für persönliche Termine.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                Erfüllen Ihre Websites alle DSGVO- und Barrierefreiheits-Standards?
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Ja. Alle Webapplikationen werden DSGVO-konform auf deutschen Servern gehostet und
+                erfüllen moderne Barrierefreiheits-Standards (BITV 2.0 / WCAG 2.1 AA).
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                Wer betreut mein Projekt persönlich?
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Inhaber Umutcan Emre Tezgel persönlich ohne zwischengeschaltete Account Manager oder
+                Callcenter.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 10. BOTTOM CTA */}
+      <section className="py-20 bg-slate-50/80 border-t border-slate-200 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-6">
+            Bereit für den digitalen Vorsprung in Hessen?
+          </h2>
+          <p className="text-slate-600 text-base sm:text-lg mb-10 max-w-2xl mx-auto">
+            Vereinbaren Sie jetzt ein unverbindliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
+            Emre Tezgel.
+          </p>
+          <Link href="/contact">
+            <Button
+              variant="primary"
+              size="lg"
+              className="bg-primary-700 hover:bg-primary-800 text-white font-bold px-10 py-5 text-lg shadow-xl shadow-primary-700/25 transition-all hover:scale-105"
+            >
+              Kostenloses Erstgespräch anfordern
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+          </Link>
+        </div>
+      </section>
+    </div>
   );
 }

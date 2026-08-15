@@ -1,52 +1,107 @@
 {
   "target": "weilburg",
-  "displayName": "Weilburg",
+  "displayName": "Weilburg an der Lahn",
   "type": "location",
   "meta": {
-    "title": "Webdesign Weilburg | Webseiten vom lokalen Profi | Coday",
-    "description": "Ihre Webagentur für Weilburg und das Lahntal. Hochperformante Next.js Webseiten, die messbar neue Kunden und Fachkräfte bringen. Festpreis & 100/100 PageSpeed."
+    "title": "Webdesign Weilburg | High-End Webentwicklung · Coday",
+    "description": "Webdesign & SEO für Weilburg an der Lahn. Ultraschnelle Next.js Websites für Handwerk, Tourismus & Mittelstand. Verbindliche Festpreise auf Anfrage."
   },
   "hero": {
-    "headline": "Ihr Webdesigner in Weilburg",
-    "subheadline": "Webentwicklung direkt an der Lahn: 100/100 Core Web Vitals für Handwerker, Praxen, Gastronomie & Mittelstand in Weilburg.",
-    "description": "Weilburg besticht als geschichtsträchtige Residenzstadt an der Lahn mit seinem barocken Schloss und einer florierenden Gewerbe- und Dienstleistungslandschaft. Wer in Weilburg, Löhnberg, Weinbach oder dem Kreis Limburg-Weilburg online nach erstklassigen Dienstleistern, Fachärzten oder Handwerkern sucht, entscheidet in Sekunden. Eine maßgeschneiderte, blitzschnelle Next.js Webseite von Coday sorgt dafür, dass Ihr Unternehmen bei Google ganz oben steht und Interessenten direkt zu zahlenden Kunden und qualifizierten Mitarbeitern werden."
+    "headline": "Webdesign Weilburg: Digitale Exzellenz für Tourismus, Handwerk & Mittelstand",
+    "subheadline": "Webdesign & Next.js Entwicklung für Unternehmen in Weilburg, Löhnberg, Merenberg und Weinbach.",
+    "description": "Als spezialisierte Webagentur für Weilburg an der Lahn entwickeln wir blitzschnelle, conversion-starke und hochsichere Next.js Webanwendungen. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
   },
   "localDominance": {
-    "title": "Ihr digitaler Partner im Lahntal & Kreis Limburg-Weilburg",
-    "description": "In der Residenzstadt Weilburg verbindet sich historische Baukultur mit handwerklicher Tradition und zukunftsorientiertem Gewerbe. Eine zeitgemäße Webpräsenz ist der wichtigste Hebel, um sich von Mitbewerbern im Lahntal abzuheben. Wir entwickeln keine starren WordPress-Templates, sondern maßgeschneiderte High-End-Webseiten mit Server-Side-Rendering, barrierefreier Usability und maximaler Datensicherheit.",
+    "title": "Digitale Dominanz für Weilburger Unternehmen & Handwerksbetriebe",
+    "description": "Weilburg verbindet barocke Schlosskultur und Lahntal-Tourismus mit einem leistungsstarken Mittelstand in Handwerk und Bauwirtschaft. Wir bauen Websites mit messbarem ROI.",
     "points": [
-      "Regionale Nähe: Nur 15 Minuten ab HQ Wetzlar via B49 – persönliche Beratung vor Ort in Weilburg und im gesamten Lahntal.",
-      "100/100 PageSpeed: Unter 0,5 Sekunden Ladezeit auf Smartphones für maximale Konversion und Top-Platzierungen bei Google.",
-      "60-Sekunden Express-Recruiting: Mitarbeitergewinnung ohne bürokratische Hürden direkt am Smartphone.",
-      "Rechtssicherheit & Datenschutz: 100% DSGVO-konform, kein US-Cookie-Banner-Chaos, rechtssichere Struktur nach deutschen Standards."
+      "Fokus auf Handwerk, Tourismus & Hotellerie: Schnelle Ladezeiten und nahtlose Buchungs- & Anfragefunktionen für Gäste und Kunden.",
+      "Gewerbeparks Kubach, Guntersau & Löhnberg: Gezielte regionale und überregionale Sichtbarkeit für Dienstleister und Fertigungsbetriebe.",
+      "Regionale Nähe im Lahntal: In unter 15 Minuten ab Wetzlar via B49 vierspurig direkt vor Ort bei Ihnen in Weilburg oder Löhnberg.",
+      "Next.js als SEO-Katalysator: Top-Rankings für 'Webdesign Weilburg' und regionale Suchbegriffe durch 100/100 Core Web Vitals.",
+      "60-Sekunden Express-Recruiting: Mitarbeitergewinnung ohne Lebenslauf-Hürden direkt am Smartphone für Handwerk und Gastronomie.",
+      "DSGVO-konformes deutsches Hosting: Keine wartungsintensiven WordPress-Plugins, maximale Zuverlässigkeit."
     ]
   },
   "contentSections": [
     {
-      "title": "Lokale SEO-Dominanz für Weilburg und das Lahntal",
-      "content": "Ob Neukunden aus der Weilburger Innenstadt, den Gewerbegebieten oder aus Nachbargemeinden wie Löhnberg, Merenberg und Weinbach: Wir optimieren Ihre Webseite semantisch für exakte lokale Suchanfragen. Mit strukturierten Schema.org-Daten, schneller Crawlbarkeit und Google Maps Optimierung sichern wir Ihrem Unternehmen die digitale Marktführerschaft in der Region."
+      "title": "Webportale für Handwerk, Bauunternehmen & Mittelstand in Weilburg",
+      "content": "Handwerksbetriebe und Bauunternehmen in den Gewerbegebieten Kubach und Guntersau gewinnen durch maßgeschneiderte Next.js Websites planbar lukrative Aufträge und neue Fachkräfte."
     },
     {
-      "title": "Mitarbeitergewinnung für Handwerk, Pflege & Industrie",
-      "content": "Der Fachkräftemangel betrifft auch den Landkreis Limburg-Weilburg. Mit unseren mobilen 60-Sekunden Express-Bewerbungsfunnels bewerben sich Gesellen, Pflegekräfte und Fachkräfte unkompliziert ohne Lebenslauf-PDF direkt am Handy. Das senkt die Einstiegshürde und füllt Ihre offenen Stellen nachhaltig."
+      "title": "Modernes Webdesign für Hotellerie, Gastronomie & Lahntal-Tourismus",
+      "content": "Gäste rund um das Schloss Weilburg und den Lahntal-Radweg buchen direkt über moderne, blitzschnelle mobile Webinterfaces ohne Provisionsverluste."
     },
     {
-      "title": "Transparenter Festpreis & Solo-Architekten Betreuung",
-      "content": "Bei Coday arbeiten Sie direkt mit dem Inhaber und Lead-Architekten ohne Agentur-Wasserkopf oder teure Junior-Entwickler. Sie erhalten ein verbindliches Festpreisangebot mit lebenslanger Lizenzkostenfreiheit und persönlicher Betreuung."
+      "title": "Local SEO & B49-Achse Wetzlar-Weilburg-Limburg",
+      "content": "Dominante Platzierungen in den Google-Suchergebnissen für Unternehmen in Weilburg, Löhnberg, Weinbach, Merenberg, Braunfels und dem gesamten Landkreis Limburg-Weilburg."
     }
   ],
   "faq": [
     {
-      "q": "Wie schnell ist eine neue Webseite für mein Unternehmen in Weilburg live?",
-      "a": "Dank unserer modernen Komponenten-Architektur und agilen Prozessen ist Ihre neue High-Performance Webseite in der Regel innerhalb von 2 bis 4 Wochen komplett einsatzbereit und optimiert."
+      "q": "Wie viel kostet eine neue Website in Weilburg?",
+      "a": "Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance."
     },
     {
-      "q": "Wie hilft eine Coday-Webseite bei lokalen Google-Rankings in Weilburg?",
-      "a": "Wir integrieren strukturierte Daten (JSON-LD LocalBusiness), optimieren Ladezeiten auf 100/100 Core Web Vitals und verknüpfen Ihre Inhalte semantisch mit regionalen Keywords rund um Weilburg und das Lahntal."
+      "q": "Wie schnell ist eine neue Website in Weilburg online?",
+      "a": "In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online."
     },
     {
-      "q": "Gibt es laufende Lizenzkosten für Plugins oder Templates?",
-      "a": "Nein. Wir bauen auf modernste Open-Source-Technologien (Next.js, Tailwind CSS) ohne teure Plugin-Abonnements oder versteckte Folgekosten."
+      "q": "Kommen Sie für ein Beratungsgespräch direkt nach Weilburg?",
+      "a": "Ja, sehr gerne. Über die vierspurige B49 sind wir von unserem Wetzlarer HQ in unter 15 Minuten direkt bei Ihnen vor Ort in Weilburg, Löhnberg oder Kubach."
+    },
+    {
+      "q": "Bieten Sie auch Lösungen zur Mitarbeitergewinnung im Handwerk?",
+      "a": "Ja. Wir entwickeln mobil optimierte 60-Sekunden-Bewerbungsverfahren ohne Anschreiben, die die Hürde für qualifizierte Fachkräfte drastisch senken."
+    },
+    {
+      "q": "Wer ist unser fester Ansprechpartner?",
+      "a": "Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support."
+    }
+  ],
+  "meta_en": {
+    "title": "Web Design Weilburg | High-End Web Development · Coday",
+    "description": "Web design & SEO for Weilburg an der Lahn. Ultra-fast Next.js websites for crafts, tourism & mid-market. Fixed prices on request."
+  },
+  "hero_en": {
+    "headline": "Web Design Weilburg: Digital Excellence for Tourism, Crafts & Mid-Market",
+    "subheadline": "Web design & Next.js development for businesses in Weilburg, Löhnberg, Merenberg and Weinbach.",
+    "description": "Custom Next.js web development for Weilburg businesses. Fast, secure, and conversion-focused. Fixed price on request."
+  },
+  "localDominance_en": {
+    "title": "Digital Dominance for Weilburg's Businesses & Trades",
+    "description": "Weilburg combines historic palace culture and tourism with strong craft and mid-market enterprises. We build high-converting websites.",
+    "points": [
+      "Crafts & Tourism Focus: Fast loading times and frictionless booking/inquiry workflows for visitors.",
+      "Industrial Parks Kubach & Guntersau: Targeted regional visibility for service and manufacturing companies.",
+      "Close Regional Access: Under 15 minutes from Wetzlar via B49 to your Weilburg premises.",
+      "SEO Leadership: 100/100 Core Web Vitals for dominant Google visibility.",
+      "Recruiting Funnels: 60-second mobile application flows for craftsmen and hospitality staff.",
+      "GDPR Compliant German Hosting: Maximum security without WordPress vulnerabilities."
+    ]
+  },
+  "contentSections_en": [
+    {
+      "title": "Web Portals for Crafts & Manufacturing in Weilburg",
+      "content": "High-converting web applications for companies in Kubach, Guntersau and Löhnberg."
+    },
+    {
+      "title": "Custom Web Design for Tourism & Hospitality",
+      "content": "Direct booking engines and mobile-first portals for hotels and restaurants along the Lahn."
+    }
+  ],
+  "faq_en": [
+    {
+      "q": "How much does a professional website in Weilburg cost?",
+      "a": "Binding fixed price on request following a free audit. 5-10x more cost-effective than traditional agencies."
+    },
+    {
+      "q": "How long does implementation take?",
+      "a": "Turnkey delivery within 10 to 14 business days."
+    },
+    {
+      "q": "Do you meet on-site in Weilburg?",
+      "a": "Yes, we gladly meet you at your Weilburg premises via the B49 highway."
     }
   ]
 }

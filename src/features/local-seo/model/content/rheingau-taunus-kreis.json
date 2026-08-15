@@ -1,0 +1,107 @@
+{
+  "target": "rheingau-taunus-kreis",
+  "displayName": "Rheingau-Taunus-Kreis",
+  "type": "region",
+  "meta": {
+    "title": "Webdesign Rheingau-Taunus-Kreis | Webagentur · Coday",
+    "description": "Webdesign & SEO im Rheingau-Taunus-Kreis. Hochwertige Websites für Weinbau, Tourismus & Dienstleister in Taunusstein, Idstein & Eltville. Festpreis."
+  },
+  "hero": {
+    "headline": "Webdesign Rheingau-Taunus-Kreis: Next.js Performance für Weinbau, Bildung & Mittelstand",
+    "subheadline": "Ihre lokale High-End Webagentur für Taunusstein, Idstein, Eltville, Rüdesheim und den gesamten Rheingau-Taunus.",
+    "description": "Maßgeschneiderte Webentwicklung, subsekundäre Ladezeiten unter 500ms und automatisierte B2B-Leads für Unternehmen im Rheingau-Taunus-Kreis. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+  },
+  "localDominance": {
+    "title": "Digitale Vorherrschaft für den Rheingau-Taunus-Kreis",
+    "description": "Der Rheingau-Taunus-Kreis vereint die weltberühmte Kultur- und Weinregion Rheingau (Eltville, Rüdesheim, Geisenheim) mit dem dynamischen IT- und Bildungsstandort Idstein (Hochschule Fresenius) sowie dem Wirtschaftszentrum Taunusstein im Untertaunus. Wir bauen digitale Plattformen, die Weingütern, Unternehmen und Dienstleistern messbare Wettbewerbsvorteile sichern.",
+    "points": [
+      "Weinbau & Gastronomie: Exklusive E-Commerce- und Buchungssysteme für Spitzenweingüter im Rheingau.",
+      "Bildung & IT: Performante, barrierefreie Plattformen für Hochschul- und Tech-Standorte in Idstein.",
+      "Mittelstand & Dienstleister: Schnelle Webauftritte und Recruiting-Funnels für Taunusstein und Bad Schwalbach.",
+      "40 Min Direkt vor Ort: Schnelle Erreichbarkeit über A3 und B54.",
+      "Next.js als SEO-Katalysator: 100/100 Google Core Web Vitals für Spitzenrankings im gesamten Landkreis.",
+      "Inhabergeführt & Festpreis: Direkter Entwickler-Kontakt mit Umutcan Emre Tezgel ohne teuren Großagentur-Overhead."
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "Weinguts- & Tourismus-Websites für Rheingau, Eltville & Rüdesheim",
+      "content": "Elegantes Design, intuitive Wein-Onlineshops und subsekundäre Ladezeiten für anspruchsvolle Genießer und Gäste."
+    },
+    {
+      "title": "IT-, Bildungs- & Mittelstands-Portale für Idstein & Taunusstein",
+      "content": "Echte Leadgenerierung, hochsichere Enterprise-Architekturen und 60-Sekunden-Express-Recruiting für Fachkräfte."
+    },
+    {
+      "title": "Local SEO Dominanz im Rheingau-Taunus-Kreis",
+      "content": "Spitzenrankings in Taunusstein, Idstein, Eltville, Rüdesheim, Geisenheim, Bad Schwalbach und allen 13 Kommunen."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wie viel kostet eine neue Website im Rheingau-Taunus-Kreis?",
+      "a": "Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance."
+    },
+    {
+      "q": "Wie schnell ist eine neue Website im Rheingau-Taunus-Kreis online?",
+      "a": "In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online."
+    },
+    {
+      "q": "Kommen Sie für ein Beratungsgespräch direkt zu uns in den Betrieb?",
+      "a": "Ja, selbstverständlich. Über die A3 oder B54 sind wir von unserem Wetzlarer HQ in rund 40 Minuten direkt bei Ihnen vor Ort in Taunusstein, Idstein, Eltville oder Bad Schwalbach."
+    },
+    {
+      "q": "Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?",
+      "a": "Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet."
+    },
+    {
+      "q": "Wer ist unser fester Ansprechpartner?",
+      "a": "Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support."
+    }
+  ],
+  "meta_en": {
+    "title": "Web Design Rheingau-Taunus District | Agency · Coday",
+    "description": "Web design & SEO in the Rheingau-Taunus district. Premium websites for viticulture, tourism & services in Taunusstein, Idstein & Eltville. Fixed price."
+  },
+  "hero_en": {
+    "headline": "Web Design Rheingau-Taunus District: Next.js Performance for Viticulture, Education & SME",
+    "subheadline": "Your local high-end web agency for Taunusstein, Idstein, Eltville, Rüdesheim, and the entire Rheingau-Taunus region.",
+    "description": "Custom Next.js web applications for the Rheingau-Taunus district. Fixed price upon request."
+  },
+  "localDominance_en": {
+    "title": "Digital Dominance for the Rheingau-Taunus District",
+    "description": "The district unites famous viticulture in the Rheingau with tech hubs in Idstein and commercial strength in Taunusstein. We build fast, high-performance web systems.",
+    "points": [
+      "Viticulture & Hospitality: Bespoke e-commerce and booking platforms for top wineries.",
+      "Education & IT: High-speed, WCAG-compliant systems for Idstein.",
+      "SME & Services: Fast lead funnels for Taunusstein.",
+      "40 Minutes On-Site: Fast direct connection via A3 and B54.",
+      "SEO Leadership: 100/100 Core Web Vitals for top search visibility.",
+      "Direct Founder Access: Transparent fixed pricing without agency overhead."
+    ]
+  },
+  "contentSections_en": [
+    {
+      "title": "Winery & Tourism Portals in Rheingau",
+      "content": "Flawless aesthetics, seamless wine commerce, and sub-second load times."
+    },
+    {
+      "title": "Corporate & Education Platforms in Idstein & Taunusstein",
+      "content": "Sub-500ms load times and seamless lead capture."
+    }
+  ],
+  "faq_en": [
+    {
+      "q": "How much does a professional website in the Rheingau-Taunus district cost?",
+      "a": "Binding fixed price on request following a free audit. 5-10x more cost-effective than traditional agencies."
+    },
+    {
+      "q": "How long does implementation take?",
+      "a": "Turnkey delivery within 10 to 14 business days."
+    },
+    {
+      "q": "Do you meet on-site in the Rheingau-Taunus district?",
+      "a": "Yes, via the A3/B54 we can be on-site across the district in around 40 minutes."
+    }
+  ]
+}

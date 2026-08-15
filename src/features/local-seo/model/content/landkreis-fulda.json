@@ -1,0 +1,107 @@
+{
+  "target": "landkreis-fulda",
+  "displayName": "Landkreis Fulda",
+  "type": "region",
+  "meta": {
+    "title": "Webdesign Landkreis Fulda | B2B & SEO Agentur · Coday",
+    "description": "Webentwicklung & Webdesign für den Landkreis Fulda & Osthessen. Performante Plattformen für Logistik, Handwerk & Industrie. Festpreis auf Anfrage."
+  },
+  "hero": {
+    "headline": "Webdesign Landkreis Fulda: Next.js Performance für Logistik, IT & Industrie in Osthessen",
+    "subheadline": "Ihre High-End B2B Webagentur für Fulda, Hünfeld, Eichenzell, Petersberg, Künzell und die gesamte Region.",
+    "description": "Maßgeschneiderte Webentwicklung, subsekundäre Ladezeiten unter 500ms und automatisierte B2B-Leads für Unternehmen im Landkreis Fulda. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+  },
+  "localDominance": {
+    "title": "Digitale Vorherrschaft für den Landkreis Fulda & Osthessen",
+    "description": "Der Landkreis Fulda bildet als dynamisches Oberzentrum Osthessens die zentrale Schnittstelle zwischen Nord-, Süd- und Mitteldeutschland. Mit dem ICE-Knoten Fulda, dem riesigen Logistik-Hub Industriepark Rhön in Eichenzell, der IT- und Behördenstadt Hünfeld (Konrad-Zuse-Stadt) sowie florierendem B2B-Mittelstand in Petersberg und Künzell bauen wir digitale Plattformen, die messbare Marktführerschaft ermöglichen.",
+    "points": [
+      "Logistik & Spedition: Hochleistungsfähige Portale für Eichenzell (Industriepark Rhön) und das A7/A66-Autobahnnetz.",
+      "IT & Medizintechnik: Barrierefreie, extrem sichere Systeme für die Konrad-Zuse-Stadt Hünfeld.",
+      "Industrie & Maschinenbau: Skalierbare B2B-Produktkataloge und Lead-Funnels für Fulda und Neuhof.",
+      "Handwerk & Rhön-Tourismus: Schnelle Websites mit 60-Sekunden-Recruiting für Petersberg, Künzell und Gersfeld.",
+      "60 Min Direkt vor Ort: Schnelle Erreichbarkeit über A5 und A7 aus Mittelhessen.",
+      "Inhabergeführt & Festpreis: Direkter Entwickler-Kontakt mit Umutcan Emre Tezgel ohne teuren Großagentur-Overhead."
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "Logistik- & Speditions-Websites für Eichenzell & Fulda",
+      "content": "Enterprise-Architekturen, subsekundäre Ladezeiten und DSGVO-Konformität für Logistik- und Handelsunternehmen."
+    },
+    {
+      "title": "IT-, Industrie- & Medizintechnik-Portale für Hünfeld & Petersberg",
+      "content": "Echte Leadgenerierung, interaktive Filterfunktionen und 60-Sekunden-Express-Recruiting für Fachkräfte."
+    },
+    {
+      "title": "Local SEO Dominanz im Landkreis Fulda",
+      "content": "Spitzenrankings in Fulda, Hünfeld, Eichenzell, Petersberg, Künzell, Neuhof, Flieden und allen 14 Kommunen."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wie viel kostet eine neue Website im Landkreis Fulda?",
+      "a": "Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance."
+    },
+    {
+      "q": "Wie schnell ist eine neue Website im Landkreis Fulda online?",
+      "a": "In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online."
+    },
+    {
+      "q": "Kommen Sie für ein Beratungsgespräch direkt zu uns in den Betrieb?",
+      "a": "Ja, selbstverständlich. Über die A5 oder A7 sind wir von unserem Wetzlarer HQ in rund 60 Minuten direkt bei Ihnen vor Ort in Fulda, Hünfeld, Petersberg oder Eichenzell."
+    },
+    {
+      "q": "Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?",
+      "a": "Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet."
+    },
+    {
+      "q": "Wer ist unser fester Ansprechpartner?",
+      "a": "Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support."
+    }
+  ],
+  "meta_en": {
+    "title": "Web Design Fulda District | B2B & SEO Agency · Coday",
+    "description": "Web development & web design for the Fulda district & East Hesse. High-performance platforms for logistics, crafts & industry. Fixed price."
+  },
+  "hero_en": {
+    "headline": "Web Design Fulda District: Next.js Performance for Logistics, IT & Industry",
+    "subheadline": "Your high-end B2B web agency for Fulda, Hünfeld, Eichenzell, Petersberg, and the entire district.",
+    "description": "Custom Next.js web applications for the Fulda district. Fixed price upon request."
+  },
+  "localDominance_en": {
+    "title": "Digital Dominance for the Fulda District & East Hesse",
+    "description": "The district connects ICE logistics in Fulda and Eichenzell with IT innovation in Hünfeld (Konrad Zuse city). We build fast, high-performance web systems.",
+    "points": [
+      "Logistics & Freight: High-performance systems for Eichenzell and the A7/A66 junction.",
+      "IT & MedTech: WCAG-compliant systems for Hünfeld.",
+      "Manufacturing & Engineering: Lead funnels for Fulda & Neuhof.",
+      "Crafts & Rhön Tourism: Fast recruiting platforms for Petersberg & Künzell.",
+      "60 Minutes On-Site: Fast direct connection via A5 and A7.",
+      "Direct Founder Access: Transparent fixed pricing without agency overhead."
+    ]
+  },
+  "contentSections_en": [
+    {
+      "title": "Logistics & Freight Platforms in Eichenzell",
+      "content": "Enterprise-grade performance and uncompromising data security."
+    },
+    {
+      "title": "IT & Engineering Portals in Hünfeld & Fulda",
+      "content": "Sub-500ms load times and seamless lead capture."
+    }
+  ],
+  "faq_en": [
+    {
+      "q": "How much does a professional website in the Fulda district cost?",
+      "a": "Binding fixed price on request following a free audit. 5-10x more cost-effective than traditional agencies."
+    },
+    {
+      "q": "How long does implementation take?",
+      "a": "Turnkey delivery within 10 to 14 business days."
+    },
+    {
+      "q": "Do you meet on-site in the Fulda district?",
+      "a": "Yes, via the A5/A7 we can be on-site across the district in around 60 minutes."
+    }
+  ]
+}

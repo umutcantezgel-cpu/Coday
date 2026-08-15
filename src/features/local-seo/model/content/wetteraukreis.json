@@ -1,0 +1,107 @@
+{
+  "target": "wetteraukreis",
+  "displayName": "Wetteraukreis",
+  "type": "region",
+  "meta": {
+    "title": "Webdesign Wetteraukreis | Webagentur & SEO · Coday",
+    "description": "Webentwicklung & SEO für den Wetteraukreis. Performante Next.js Websites für Friedberg, Bad Nauheim, Butzbach & Karben. Verbindliche Festpreise auf Anfrage."
+  },
+  "hero": {
+    "headline": "Webdesign Wetteraukreis: Next.js Performance für Praxen, Mittelstand & Gewerbe",
+    "subheadline": "Ihre regionale High-End Webagentur für Friedberg, Bad Nauheim, Bad Vilbel, Butzbach und den gesamten Kreis.",
+    "description": "Maßgeschneiderte Webentwicklung, subsekundäre Ladezeiten unter 500ms und automatisierte B2B-Leads für Unternehmen im Wetteraukreis. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+  },
+  "localDominance": {
+    "title": "Digitale Vorherrschaft für den Wetteraukreis",
+    "description": "Der Wetteraukreis verbindet erstklassige Medizin- und Kurexpertise in Bad Nauheim mit universitärer Ingenieurskraft am THM-Campus Friedberg, starker Medien- und Pharmaindustrie in Bad Vilbel sowie dynamischem Maschinenbau und Handwerk in Butzbach, Karben, Büdingen und Rosbach. Wir bauen digitale Plattformen, die regional und überregional Marktführerschaft sichern.",
+    "points": [
+      "Praxen & Gesundheitszentren: Barrierefreie Interfaces (BITV 2.0 / WCAG) und geschützte Terminbuchung für Praxen in Bad Nauheim und Friedberg.",
+      "THM-Tech & B2B-Mittelstand: Performante Next.js Plattformen für Software-, Ingenieur- und Industrieunternehmen.",
+      "Medien, Pharma & Handel: Skalierbare Headless CMS Architekturen für Unternehmen in Bad Vilbel und Karben.",
+      "25 Min Direkt vor Ort: Schnelle regionale Erreichbarkeit vom Wetzlarer HQ über die B3 und A5.",
+      "Next.js als SEO-Katalysator: 100/100 Google Core Web Vitals für Spitzenrankings im gesamten Wetteraukreis.",
+      "Inhabergeführt & Festpreis: Direkter Entwickler-Kontakt mit Umutcan Emre Tezgel ohne teuren Großagentur-Overhead."
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "Facharzt- & Klinik-Webportale für Bad Nauheim & Friedberg",
+      "content": "Maximale Barrierefreiheit, subsekundäre Ladezeiten und DSGVO-konforme Patientenportale für den führenden hessischen Gesundheitsstandort."
+    },
+    {
+      "title": "B2B- & Industrie-Websites für Butzbach, Karben & Friedberg",
+      "content": "Echte Leadgenerierung, interaktive Produktkataloge und 60-Sekunden-Express-Recruiting für den produzierenden Mittelstand."
+    },
+    {
+      "title": "Local SEO Dominanz im Wetteraukreis",
+      "content": "Spitzenrankings in Friedberg, Bad Nauheim, Bad Vilbel, Butzbach, Karben, Büdingen, Rosbach und allen 21 Kommunen."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wie viel kostet eine neue Website im Wetteraukreis?",
+      "a": "Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance."
+    },
+    {
+      "q": "Wie schnell ist eine neue Website im Wetteraukreis online?",
+      "a": "In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online."
+    },
+    {
+      "q": "Kommen Sie für ein Beratungsgespräch direkt zu uns in den Betrieb?",
+      "a": "Ja, selbstverständlich. Über die B3 oder A5 sind wir von unserem Wetzlarer HQ in rund 25 Minuten direkt bei Ihnen vor Ort in Friedberg, Bad Nauheim, Butzbach oder Bad Vilbel."
+    },
+    {
+      "q": "Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?",
+      "a": "Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet."
+    },
+    {
+      "q": "Wer ist unser fester Ansprechpartner?",
+      "a": "Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support."
+    }
+  ],
+  "meta_en": {
+    "title": "Web Design Wetterau District | Web Agency & SEO · Coday",
+    "description": "Web development & SEO for the Wetterau district. High-performance Next.js websites for Friedberg, Bad Nauheim, Butzbach & Karben. Fixed prices on request."
+  },
+  "hero_en": {
+    "headline": "Web Design Wetterau District: Next.js Performance for Clinics, SME & Industry",
+    "subheadline": "Your regional high-end web agency for Friedberg, Bad Nauheim, Bad Vilbel, and the entire district.",
+    "description": "Custom Next.js web applications for the Wetterau region. Fixed price upon request."
+  },
+  "localDominance_en": {
+    "title": "Digital Dominance for the Wetterau District",
+    "description": "The Wetterau district connects medical excellence in Bad Nauheim with university tech innovation in Friedberg and media/pharma in Bad Vilbel. We build fast, high-performance web systems.",
+    "points": [
+      "Medical Practices & Clinics: Accessible, privacy-compliant websites for Bad Nauheim and Friedberg.",
+      "THM Tech & Industry: Scalable Next.js systems for engineering leaders along the B3/A5 corridor.",
+      "Media, Pharma & Trade: Modern headless CMS architectures for Bad Vilbel and Karben.",
+      "25 Minutes On-Site: Fast direct connection from our Wetzlar HQ.",
+      "SEO Leadership: 100/100 Core Web Vitals for top search visibility.",
+      "Direct Founder Access: Transparent fixed pricing without agency overhead."
+    ]
+  },
+  "contentSections_en": [
+    {
+      "title": "Medical Practice Portals for Bad Nauheim & Friedberg",
+      "content": "Fully accessible (WCAG compliant) digital experiences with fast mobile appointment scheduling."
+    },
+    {
+      "title": "B2B & Industrial Platforms across Butzbach, Karben & Friedberg",
+      "content": "Rapid load times, local search domination, and lead generation."
+    }
+  ],
+  "faq_en": [
+    {
+      "q": "How much does a professional website in the Wetterau district cost?",
+      "a": "Binding fixed price on request following a free audit. 5-10x more cost-effective than traditional agencies."
+    },
+    {
+      "q": "How long does implementation take?",
+      "a": "Turnkey delivery within 10 to 14 business days."
+    },
+    {
+      "q": "Do you meet on-site in the Wetterau region?",
+      "a": "Yes, via the B3/A5 we can be on-site across the district in around 25 minutes."
+    }
+  ]
+}

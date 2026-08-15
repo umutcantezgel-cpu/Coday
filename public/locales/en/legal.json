@@ -7,7 +7,7 @@
     "labels": {
       "email": "Email",
       "phone": "Phone",
-      "website": "website",
+      "website": "Website",
       "response_time": "Response Time",
       "response_time_value": "Within 30 days"
     }
@@ -167,7 +167,7 @@
       "ai_desc": "Chatbots, AI Assistants, Automation",
       "backend": "Backend & DB",
       "backend_desc": "Supabase, PostgreSQL, REST APIs, Serverless",
-      "design": "UI/UX design",
+      "design": "UI/UX Design",
       "design_desc": "Figma, Adobe XD, User Research, Design Systems",
       "security": "Security",
       "security_desc": "GDPR, SSL/TLS, Secure Authentication",
@@ -195,7 +195,7 @@
       "kontakt": "3. Contact",
       "mission": "6. Our Mission",
       "qualifikation": "5. Qualifications",
-      "regulatorisch": "4. Regulatories",
+      "regulatorisch": "4. Regulatory Information",
       "streitbeilegung": "8. Dispute Resolution",
       "unternehmen": "1. Company Information",
       "vertreter": "2. Authorized Representative"
@@ -638,7 +638,7 @@
       },
       "kuendigung": {
         "subtitle": "Ending the contract",
-        "title": "Termination & Resignation"
+        "title": "Termination & Withdrawal"
       },
       "mitwirkung": {
         "list": {

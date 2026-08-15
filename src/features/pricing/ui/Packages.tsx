@@ -207,7 +207,7 @@ export default async function Packages() {
   ];
 
   return (
-    <div className="min-h-[100dvh] bg-slate-950 text-slate-100 selection:bg-amber-500/30 selection:text-amber-200">
+    <div className="min-h-[100dvh] bg-[#fafafa] text-slate-900 selection:bg-amber-500/20 selection:text-amber-900">
       <SeoHead
         title="Webdesign Preise & Maßgeschneiderte Angebote | Coday Webagentur"
         description="Individuelle Festpreise für High-End Webdesign & Next.js Entwicklung. 5-10x kosteneffizienter als Großagenturen, 100/100 PageSpeed & 100% Quellcode-Eigentum."
@@ -222,24 +222,28 @@ export default async function Packages() {
       {/* Hero Section */}
       <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 px-4 w-full relative overflow-hidden">
         {/* Ambient Glow */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-500/10 blur-[140px] rounded-full pointer-events-none" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-400/10 blur-[140px] rounded-full pointer-events-none" />
 
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <div className="mb-8 flex justify-center">
             <Breadcrumbs />
           </div>
 
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-950/40 text-amber-400 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-6 backdrop-blur-md">
-            <Sparkle className="w-4 h-4 text-amber-400" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-50 text-amber-800 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-6 shadow-sm">
+            <Sparkle className="w-4 h-4 text-amber-600" />
             {isEn
               ? 'INDIVIDUAL SCOPE & BINDING FIXED PRICE'
               : 'INDIVIDUELLE BEDARFSANALYSE & FESTPREIS AUF ANFRAGE'}
           </div>
 
-          <h1 className="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl text-white leading-[1.1] tracking-tight mb-8 max-w-5xl mx-auto">
+          <h1 className="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl text-slate-900 leading-[1.1] tracking-tight mb-8 max-w-5xl mx-auto">
             Maßgeschneiderte Angebote für{' '}
             <GradientText
-              colors={['#fbbf24', '#fef08a', '#f59e0b']}
+              colors={[
+                'var(--color-primary-600)',
+                'var(--color-secondary-800)',
+                'var(--color-primary-600)',
+              ]}
               animationSpeed={5}
               showBorder={false}
               className="inline-block"
@@ -248,10 +252,10 @@ export default async function Packages() {
             </GradientText>
           </h1>
 
-          <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-12">
+          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-12">
             Wählen Sie exakt die Module und Funktionen, die Sie benötigen. Nach einer kostenlosen
             Bedarfsanalyse erhalten Sie ein maßgeschneidertes, verbindliches Festpreisangebot —{' '}
-            <strong className="text-amber-400 font-semibold">
+            <strong className="text-amber-800 font-semibold">
               5 bis 10x kosteneffizienter als Großagenturen
             </strong>{' '}
             bei nachweislich überlegener 100/100 Spitzenqualität.
@@ -260,16 +264,16 @@ export default async function Packages() {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <NavLink
               href="/calculator"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-amber-400 text-slate-950 font-bold rounded-full hover:bg-amber-300 transition duration-300 shadow-lg shadow-amber-500/20 hover:scale-[1.02]"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary-700 text-white font-bold rounded-full hover:bg-primary-800 transition duration-300 shadow-md hover:scale-[1.02]"
             >
               <span>{isEn ? 'Configure Project' : 'Projekt frei konfigurieren'}</span>
               <ArrowRight weight="bold" className="w-5 h-5" />
             </NavLink>
             <NavLink
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-slate-900 text-slate-200 border border-slate-800 rounded-full font-medium hover:bg-slate-850 transition duration-300"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-full font-medium hover:bg-slate-50 transition duration-300 shadow-sm"
             >
-              <Calendar className="w-5 h-5 text-amber-400" />
+              <Calendar className="w-5 h-5 text-amber-600" />
               <span>{isEn ? 'Request Free Audit' : 'Kostenlose Beratung anfordern'}</span>
             </NavLink>
           </div>
@@ -277,16 +281,16 @@ export default async function Packages() {
       </section>
 
       {/* 5-10x Cost Advantage & Value Proof Section */}
-      <section className="py-20 bg-slate-900/60 border-y border-slate-800/80 w-full relative">
+      <section className="py-20 bg-white border-y border-slate-200 w-full relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-amber-400 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
               Der Coday Effizienz-Vorteil
             </span>
-            <h2 className="font-display font-bold text-3xl sm:text-4xl text-white mt-2 mb-4">
+            <h2 className="font-display font-bold text-3xl sm:text-4xl text-slate-900 mt-2 mb-4">
               Warum wir 5 bis 10x günstiger sind & bessere Qualität liefern
             </h2>
-            <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
               Höhere Budgets bedeuten bei traditionellen Agenturen selten besseren Code. Sie zahlen
               für teure Vertriebsapparate und veraltete WordPress-Monolithen. Wir investieren 100%
               unserer Energie in messbare Spitzenleistung.
@@ -297,68 +301,70 @@ export default async function Packages() {
             {valuePillars.map((pillar, idx) => (
               <div
                 key={idx}
-                className="p-8 rounded-2xl bg-slate-950 border border-slate-800/80 hover:border-amber-500/30 transition-all flex flex-col justify-between"
+                className="p-8 rounded-2xl bg-slate-50/80 border border-slate-200/80 hover:border-amber-500/40 hover:shadow-md transition-all flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center mb-6 text-amber-400">
+                  <div className="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center mb-6 text-amber-600 border border-amber-200/50">
                     <pillar.icon className="w-6 h-6" />
                   </div>
-                  <span className="text-xs font-semibold text-amber-400/80 uppercase tracking-wider block mb-1">
+                  <span className="text-xs font-semibold text-amber-800 uppercase tracking-wider block mb-1">
                     {pillar.subtitle}
                   </span>
-                  <h3 className="font-display font-bold text-xl text-white mb-3">{pillar.title}</h3>
-                  <p className="text-slate-400 text-sm leading-relaxed">{pillar.desc}</p>
+                  <h3 className="font-display font-bold text-xl text-slate-900 mb-3">
+                    {pillar.title}
+                  </h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">{pillar.desc}</p>
                 </div>
               </div>
             ))}
           </div>
 
           {/* Audit Proof Benchmark Grid */}
-          <div className="p-8 sm:p-10 rounded-3xl bg-slate-950 border border-amber-500/30 shadow-2xl relative overflow-hidden">
+          <div className="p-8 sm:p-10 rounded-3xl bg-slate-50/80 border border-slate-200 shadow-lg relative overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-6 space-y-4">
-                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-xs font-bold uppercase tracking-wider">
-                  <ShieldCheck className="w-4 h-4" />
+                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold uppercase tracking-wider">
+                  <ShieldCheck className="w-4 h-4 text-emerald-600" />
                   100% Verifizierte Audit-Ergebnisse
                 </span>
-                <h3 className="text-2xl sm:text-3xl font-display font-bold text-white leading-tight">
+                <h3 className="text-2xl sm:text-3xl font-display font-bold text-slate-900 leading-tight">
                   Schwarz auf weiß bewiesen: 100/100 PageSpeed & Top Seobility Score
                 </h3>
-                <p className="text-slate-400 text-sm leading-relaxed">
+                <p className="text-slate-600 text-sm leading-relaxed">
                   Während durchschnittliche Agentur-Websites bei Google Lighthouse unter 60 Punkten
                   einbrechen und wertvolle Leads verschenken, erzielt unsere Next.js 15
                   Edge-Architektur in allen offiziellen Audit-Werkzeugen Bestnoten.
                 </p>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-2">
-                  <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 text-center">
-                    <div className="text-2xl sm:text-3xl font-black text-emerald-400 font-display">
+                  <div className="p-4 rounded-xl bg-white border border-slate-200/80 text-center shadow-sm">
+                    <div className="text-2xl sm:text-3xl font-black text-emerald-600 font-display">
                       100
                     </div>
-                    <div className="text-[11px] text-slate-400 uppercase tracking-wider mt-1">
+                    <div className="text-[11px] text-slate-500 uppercase tracking-wider mt-1">
                       Performance
                     </div>
                   </div>
-                  <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 text-center">
-                    <div className="text-2xl sm:text-3xl font-black text-emerald-400 font-display">
+                  <div className="p-4 rounded-xl bg-white border border-slate-200/80 text-center shadow-sm">
+                    <div className="text-2xl sm:text-3xl font-black text-emerald-600 font-display">
                       100
                     </div>
-                    <div className="text-[11px] text-slate-400 uppercase tracking-wider mt-1">
+                    <div className="text-[11px] text-slate-500 uppercase tracking-wider mt-1">
                       Accessibility
                     </div>
                   </div>
-                  <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 text-center">
-                    <div className="text-2xl sm:text-3xl font-black text-emerald-400 font-display">
+                  <div className="p-4 rounded-xl bg-white border border-slate-200/80 text-center shadow-sm">
+                    <div className="text-2xl sm:text-3xl font-black text-emerald-600 font-display">
                       100
                     </div>
-                    <div className="text-[11px] text-slate-400 uppercase tracking-wider mt-1">
+                    <div className="text-[11px] text-slate-500 uppercase tracking-wider mt-1">
                       Best Practices
                     </div>
                   </div>
-                  <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 text-center">
-                    <div className="text-2xl sm:text-3xl font-black text-emerald-400 font-display">
+                  <div className="p-4 rounded-xl bg-white border border-slate-200/80 text-center shadow-sm">
+                    <div className="text-2xl sm:text-3xl font-black text-emerald-600 font-display">
                       100
                     </div>
-                    <div className="text-[11px] text-slate-400 uppercase tracking-wider mt-1">
+                    <div className="text-[11px] text-slate-500 uppercase tracking-wider mt-1">
                       SEO Score
                     </div>
                   </div>
@@ -366,14 +372,14 @@ export default async function Packages() {
               </div>
 
               <div className="lg:col-span-6 flex flex-col gap-4">
-                <div className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800">
+                <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs font-bold text-slate-300">
+                    <span className="text-xs font-bold text-slate-700">
                       Google PageSpeed Insights — Mobile & Desktop
                     </span>
-                    <span className="text-xs font-bold text-emerald-400">100 / 100 Perfekt</span>
+                    <span className="text-xs font-bold text-emerald-600">100 / 100 Perfekt</span>
                   </div>
-                  <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden border border-slate-800">
+                  <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden border border-slate-200">
                     <Image
                       src="/images/audits/pagespeed-desktop-100.png"
                       alt="Google PageSpeed Insights 100/100 Zertifikat Coday Webagentur"
@@ -392,13 +398,13 @@ export default async function Packages() {
       <section className="py-24 px-4 w-full relative">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-amber-400 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
               Modulare Leistungspakete
             </span>
-            <h2 className="font-display font-bold text-3xl sm:text-4xl text-white mt-2 mb-4">
+            <h2 className="font-display font-bold text-3xl sm:text-4xl text-slate-900 mt-2 mb-4">
               Wählen Sie Ihren gewünschten Projektumfang
             </h2>
-            <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
               Sie wählen die Bausteine — wir schnüren Ihnen das wirtschaftlichste Angebot für Ihren
               Erfolg. Alle Pakete sind flexibel erweiterbar.
             </p>
@@ -410,13 +416,13 @@ export default async function Packages() {
                 key={pkg.id}
                 className={`relative rounded-2xl p-8 flex flex-col justify-between border transition-all ${
                   pkg.popular
-                    ? 'bg-slate-900/90 border-amber-500/50 shadow-2xl shadow-amber-500/10 lg:-translate-y-3'
-                    : 'bg-slate-950 border-slate-800 hover:border-slate-700'
+                    ? 'bg-white border-amber-500/40 shadow-xl shadow-amber-500/5 ring-1 ring-amber-500/20 lg:-translate-y-3'
+                    : 'bg-white border-slate-200/80 hover:border-slate-300 shadow-sm hover:shadow-md'
                 }`}
               >
                 {pkg.badge && (
                   <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                    <span className="bg-amber-400 text-slate-950 text-xs font-extrabold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-md">
+                    <span className="bg-amber-500 text-white text-xs font-extrabold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-sm">
                       {pkg.badge}
                     </span>
                   </div>
@@ -424,17 +430,19 @@ export default async function Packages() {
 
                 <div>
                   <div className="text-center mb-8 pt-2">
-                    <h2 className="font-display font-bold text-2xl text-white mb-2">{pkg.name}</h2>
-                    <p className="text-slate-400 text-xs sm:text-sm min-h-[36px]">{pkg.tagline}</p>
+                    <h2 className="font-display font-bold text-2xl text-slate-900 mb-2">
+                      {pkg.name}
+                    </h2>
+                    <p className="text-slate-600 text-xs sm:text-sm min-h-[36px]">{pkg.tagline}</p>
                   </div>
 
-                  <div className="text-center mb-8 pb-8 border-b border-slate-800">
-                    <div className="font-display font-black text-4xl text-amber-400 tracking-tight mb-2">
+                  <div className="text-center mb-8 pb-8 border-b border-slate-100">
+                    <div className="font-display font-black text-4xl text-primary-700 tracking-tight mb-2">
                       {pkg.priceTag}
                     </div>
-                    <div className="text-xs text-slate-400 mb-3">{pkg.subPrice}</div>
-                    <div className="inline-flex items-center gap-1.5 text-xs text-slate-400 bg-slate-900 px-3 py-1.5 rounded-full border border-slate-800">
-                      <Clock className="w-4 h-4 text-amber-400" />
+                    <div className="text-xs text-slate-500 mb-3">{pkg.subPrice}</div>
+                    <div className="inline-flex items-center gap-1.5 text-xs text-slate-600 bg-slate-100 px-3 py-1.5 rounded-full border border-slate-200">
+                      <Clock className="w-4 h-4 text-amber-600" />
                       <span>Lieferzeit: ~{pkg.deliveryDays} Werktage</span>
                     </div>
                   </div>
@@ -442,30 +450,30 @@ export default async function Packages() {
                   {/* Features List */}
                   <ul className="space-y-3.5 mb-10 text-sm">
                     {pkg.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-slate-200">
+                      <li key={idx} className="flex items-start gap-3 text-slate-700">
                         <CheckCircle
                           weight="fill"
-                          className="w-5 h-5 text-amber-400 shrink-0 mt-0.5"
+                          className="w-5 h-5 text-amber-600 shrink-0 mt-0.5"
                         />
                         <span>{feature}</span>
                       </li>
                     ))}
                     {pkg.notIncluded.map((feature, idx) => (
-                      <li key={`ni-${idx}`} className="flex items-start gap-3 text-slate-500">
-                        <MinusCircle className="w-5 h-5 text-slate-600 shrink-0 mt-0.5" />
+                      <li key={`ni-${idx}`} className="flex items-start gap-3 text-slate-400">
+                        <MinusCircle className="w-5 h-5 text-slate-400 shrink-0 mt-0.5" />
                         <span className="line-through">{feature}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <div className="pt-6 border-t border-slate-800/80">
+                <div className="pt-6 border-t border-slate-100">
                   <NavLink
                     href="/contact"
-                    className={`group active:scale-[0.97] w-full py-4 px-6 rounded-full font-bold text-sm uppercase tracking-wider transition duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] flex items-center justify-between gap-2 focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:outline-none ${
+                    className={`group active:scale-[0.97] w-full py-4 px-6 rounded-full font-bold text-sm uppercase tracking-wider transition duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] flex items-center justify-between gap-2 focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none ${
                       pkg.popular
-                        ? 'bg-amber-400 text-slate-950 hover:bg-amber-300 shadow-lg shadow-amber-500/25'
-                        : 'bg-slate-900 border border-slate-800 text-white hover:bg-slate-850 hover:border-slate-700'
+                        ? 'bg-primary-700 text-white hover:bg-primary-800 shadow-md'
+                        : 'bg-slate-900 text-white hover:bg-slate-800'
                     }`}
                   >
                     <span className="flex-1 text-center">{pkg.cta}</span>
@@ -479,101 +487,101 @@ export default async function Packages() {
       </section>
 
       {/* Feature Comparison Table */}
-      <section className="py-24 px-4 bg-slate-900/50 border-y border-slate-800/80 w-full">
+      <section className="py-24 px-4 bg-white border-y border-slate-200 w-full">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <span className="text-amber-400 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
               Detaillierter Funktionsabgleich
             </span>
-            <h2 className="font-display font-bold text-3xl sm:text-4xl text-white mt-2 mb-4">
+            <h2 className="font-display font-bold text-3xl sm:text-4xl text-slate-900 mt-2 mb-4">
               Alle Paket-Features im direkten Vergleich
             </h2>
-            <p className="text-slate-400 text-sm sm:text-base">
+            <p className="text-slate-600 text-sm sm:text-base">
               Finden Sie exakt die richtige Konfiguration für Ihre aktuellen Unternehmensziele.
             </p>
           </div>
 
-          <div className="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-950">
+          <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-md">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="border-b border-slate-800 bg-slate-900/60">
-                  <th scope="col" className="p-5 text-xs font-bold text-slate-400 uppercase">
+                <tr className="border-b border-slate-200 bg-slate-50/90">
+                  <th scope="col" className="p-5 text-xs font-bold text-slate-500 uppercase">
                     Feature
                   </th>
-                  <th scope="col" className="p-5 text-center text-sm font-bold text-slate-300">
+                  <th scope="col" className="p-5 text-center text-sm font-bold text-slate-700">
                     Starter
                   </th>
                   <th
                     scope="col"
-                    className="p-5 text-center text-sm font-bold text-amber-400 bg-amber-950/20 border-x border-amber-500/20"
+                    className="p-5 text-center text-sm font-bold text-amber-900 bg-amber-50/80 border-x border-amber-200/60"
                   >
                     Business Enterprise
                   </th>
-                  <th scope="col" className="p-5 text-center text-sm font-bold text-slate-300">
+                  <th scope="col" className="p-5 text-center text-sm font-bold text-slate-700">
                     Custom App & Shop
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-800/80 text-sm">
+              <tbody className="divide-y divide-slate-100 text-sm">
                 <tr>
-                  <th scope="row" className="p-5 font-semibold text-slate-200">
+                  <th scope="row" className="p-5 font-semibold text-slate-900">
                     Kosten & Angebot
                   </th>
-                  <td className="p-5 text-center text-amber-400 font-semibold">Auf Anfrage</td>
-                  <td className="p-5 text-center font-bold text-amber-400 bg-amber-950/10 border-x border-amber-500/20">
+                  <td className="p-5 text-center text-primary-700 font-semibold">Auf Anfrage</td>
+                  <td className="p-5 text-center font-bold text-amber-900 bg-amber-50/40 border-x border-amber-200/60">
                     Auf Anfrage
                   </td>
-                  <td className="p-5 text-center text-amber-400 font-semibold">Auf Anfrage</td>
+                  <td className="p-5 text-center text-primary-700 font-semibold">Auf Anfrage</td>
                 </tr>
                 <tr>
-                  <th scope="row" className="p-5 font-semibold text-slate-200">
+                  <th scope="row" className="p-5 font-semibold text-slate-900">
                     Seitenanzahl
                   </th>
-                  <td className="p-5 text-center text-slate-400">Bis 5 Seiten</td>
-                  <td className="p-5 text-center font-bold text-white bg-amber-950/10 border-x border-amber-500/20">
+                  <td className="p-5 text-center text-slate-600">Bis 5 Seiten</td>
+                  <td className="p-5 text-center font-bold text-slate-900 bg-amber-50/40 border-x border-amber-200/60">
                     Bis 12 Seiten
                   </td>
-                  <td className="p-5 text-center text-slate-400">Unbegrenzt</td>
+                  <td className="p-5 text-center text-slate-600">Unbegrenzt</td>
                 </tr>
                 <tr>
-                  <th scope="row" className="p-5 font-semibold text-slate-200">
+                  <th scope="row" className="p-5 font-semibold text-slate-900">
                     Core Web Vitals 100/100
                   </th>
-                  <td className="p-5 text-center text-amber-400">✓ Inklusive</td>
-                  <td className="p-5 text-center font-bold text-amber-400 bg-amber-950/10 border-x border-amber-500/20">
+                  <td className="p-5 text-center text-amber-700 font-medium">✓ Inklusive</td>
+                  <td className="p-5 text-center font-bold text-amber-900 bg-amber-50/40 border-x border-amber-200/60">
                     ✓ Inklusive
                   </td>
-                  <td className="p-5 text-center text-amber-400">✓ Inklusive</td>
+                  <td className="p-5 text-center text-amber-700 font-medium">✓ Inklusive</td>
                 </tr>
                 <tr>
-                  <th scope="row" className="p-5 font-semibold text-slate-200">
+                  <th scope="row" className="p-5 font-semibold text-slate-900">
                     Headless CMS (Sanity)
                   </th>
-                  <td className="p-5 text-center text-slate-600">—</td>
-                  <td className="p-5 text-center font-bold text-amber-400 bg-amber-950/10 border-x border-amber-500/20">
+                  <td className="p-5 text-center text-slate-400">—</td>
+                  <td className="p-5 text-center font-bold text-amber-900 bg-amber-50/40 border-x border-amber-200/60">
                     ✓ Inklusive
                   </td>
-                  <td className="p-5 text-center text-amber-400">✓ Inklusive</td>
+                  <td className="p-5 text-center text-amber-700 font-medium">✓ Inklusive</td>
                 </tr>
                 <tr>
-                  <th scope="row" className="p-5 font-semibold text-slate-200">
+                  <th scope="row" className="p-5 font-semibold text-slate-900">
                     60s Mobile-Recruiting Funnel
                   </th>
-                  <td className="p-5 text-center text-slate-600">—</td>
-                  <td className="p-5 text-center font-bold text-amber-400 bg-amber-950/10 border-x border-amber-500/20">
+                  <td className="p-5 text-center text-slate-400">—</td>
+                  <td className="p-5 text-center font-bold text-amber-900 bg-amber-50/40 border-x border-amber-200/60">
                     ✓ Inklusive
                   </td>
-                  <td className="p-5 text-center text-amber-400">✓ Inklusive</td>
+                  <td className="p-5 text-center text-amber-700 font-medium">✓ Inklusive</td>
                 </tr>
                 <tr>
-                  <th scope="row" className="p-5 font-semibold text-slate-200">
+                  <th scope="row" className="p-5 font-semibold text-slate-900">
                     Quellcode-Eigentum & Hosting-Freiheit
                   </th>
-                  <td className="p-5 text-center text-slate-200">100% Ihr Eigentum</td>
-                  <td className="p-5 text-center font-bold text-white bg-amber-950/10 border-x border-amber-500/20">
+                  <td className="p-5 text-center text-slate-700">100% Ihr Eigentum</td>
+                  <td className="p-5 text-center font-bold text-slate-900 bg-amber-50/40 border-x border-amber-200/60">
                     100% Ihr Eigentum
                   </td>
-                  <td className="p-5 text-center text-slate-200">100% Ihr Eigentum</td>
+                  <td className="p-5 text-center text-slate-700">100% Ihr Eigentum</td>
                 </tr>
               </tbody>
             </table>
@@ -582,13 +590,13 @@ export default async function Packages() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 px-4 bg-slate-950 w-full">
+      <section className="py-24 px-4 bg-[#fafafa] w-full">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16">
-            <span className="text-amber-400 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
               Häufige Fragen
             </span>
-            <h2 className="font-display font-bold text-3xl sm:text-4xl text-white mt-2 mb-4">
+            <h2 className="font-display font-bold text-3xl sm:text-4xl text-slate-900 mt-2 mb-4">
               Alles Wichtige zu Preisen & Ablauf
             </h2>
           </div>
@@ -597,26 +605,26 @@ export default async function Packages() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 px-4 bg-slate-900/60 border-t border-slate-800/80 w-full">
+      <section className="py-24 px-4 bg-slate-50/80 border-t border-slate-200 w-full">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-display font-bold text-3xl sm:text-5xl text-white mb-6">
+          <h2 className="font-display font-bold text-3xl sm:text-5xl text-slate-900 mb-6">
             Lassen Sie uns Ihr maßgeschneidertes Angebot berechnen
           </h2>
-          <p className="text-lg text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
             Fordern Sie jetzt Ihr kostenloses Website-Audit oder ein persönliches Strategiegespräch
             mit Umutcan Emre Tezgel an — unverbindlich, transparent und ohne Risiko.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <NavLink
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-amber-400 text-slate-950 font-bold rounded-full hover:bg-amber-300 transition duration-300 shadow-xl shadow-amber-500/20 hover:scale-[1.02] text-lg"
+              className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-primary-700 text-white font-bold rounded-full hover:bg-primary-800 transition duration-300 shadow-xl shadow-primary-700/20 hover:scale-[1.02] text-lg"
             >
               <span>Kostenloses Angebot anfordern</span>
               <ArrowRight weight="bold" className="w-5 h-5" />
             </NavLink>
             <NavLink
               href="/calculator"
-              className="inline-flex items-center justify-center gap-2 px-8 py-5 bg-slate-900 text-white font-semibold rounded-full border border-slate-700 hover:bg-slate-800 transition duration-300"
+              className="inline-flex items-center justify-center gap-2 px-8 py-5 bg-white text-slate-700 font-semibold rounded-full border border-slate-200 hover:bg-slate-50 transition duration-300 shadow-sm"
             >
               <span>Projekt selbst konfigurieren</span>
             </NavLink>

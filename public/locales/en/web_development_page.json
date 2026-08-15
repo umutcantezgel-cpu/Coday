@@ -77,7 +77,7 @@
         "value": "Complete protection"
       },
       "sql": {
-        "title": "database",
+        "title": "Database",
         "value": "Injection protection"
       },
       "ssl": {
@@ -85,7 +85,7 @@
         "value": "TLS 1.3 / SSL"
       },
       "xss": {
-        "title": "Cross site",
+        "title": "Cross-Site",
         "value": "XSS & CSRF secure"
       }
     }

@@ -3,161 +3,105 @@
   "displayName": "Marburg",
   "type": "location",
   "meta": {
-    "title": "Webdesign Agentur für Marburg | Exzellente Webseitenentwicklung",
-    "description": "Kompromissloses Webdesign & Webseitenentwicklung in Marburg. Exzellente, sichere Plattformen für Pharma, Medizin & den lokalen Mittelstand."
+    "title": "Webdesign Marburg | High-Performance Webagentur · Coday",
+    "description": "Webdesign & Next.js Entwicklung in Marburg. Schnelle Ladezeiten, barrierefreies UX-Design & Top-SEO für Pharma, Praxen & Mittelstand. Festpreis auf Anfrage."
   },
   "hero": {
-    "headline": "Enterprise Webdesign und herausragende Webseitenentwicklung für Marburg",
-    "subheadline": "Webagentur in Marburg: Spezialisiert auf Pharma, Medizin und digitale Innovation",
-    "description": "In Marburg, dem weltweiten Zentrum für Biotechnologie, Forschung und Medizin, bieten wir als Ihre erfahrene Webagentur absolute digitale Exzellenz. Wir verstehen, dass anspruchsvolles Webdesign und eine präzise Webseitenentwicklung entscheidend für Ihren Unternehmenserfolg sind. Unser Fokus liegt auf der Erstellung von hochperformanten, sicheren und skalierbaren digitalen Plattformen, die speziell auf die strengen Anforderungen der Marburger Wirtschaft und des Gesundheitssektors zugeschnitten sind. Durch einen strategischen Webseiten Relaunch transformieren wir Ihre Online-Präsenz und setzen völlig neue Maßstäbe im modernen Webdesign für Marburg."
+    "headline": "Webdesign Marburg: Digitale Exzellenz für Pharma, Biotech & Mittelstand",
+    "subheadline": "Webdesign & Next.js Entwicklung in Marburg für Behringwerke, Philipps-Universität Spin-offs, Kanzleien und Mittelständler.",
+    "description": "Als spezialisierte Webagentur für Marburg entwickeln wir blitzschnelle, barrierefreie und hochsichere Next.js Webanwendungen. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
   },
   "localDominance": {
-    "title": "Digitale Exzellenz für Marburgs absolute Spitzenbranchen durch unsere Webagentur",
-    "description": "Marburg ist ein globaler Leuchtturm für Pharmazie, Biotechnologie und medizinische Spitzenforschung. Unternehmen in diesen hochsensiblen Sektoren benötigen weit mehr als nur eine Standard-Website, sie benötigen eine technologisch überlegene digitale Infrastruktur. Ein strategischer Webseiten Relaunch durch unsere Webagentur ist der entscheidende erste Schritt zur absoluten digitalen Vorherrschaft. Wir vereinen innovatives Webdesign mit kompromissloser Webseitenentwicklung, um die einzigartigen Bedürfnisse der Marburger Wirtschaft perfekt zu bedienen.",
+    "title": "Digitale Exzellenz für Marburgs Pharma- & Wissenschafts-Ökosystem",
+    "description": "Marburg ist ein weltweites Zentrum für Pharmazie, Biotechnologie und Life Sciences. Wir vereinen modernes Webdesign mit kompromissloser Next.js Webentwicklung.",
     "points": [
-      "Modernste Software-Architektur für maximale Ladezeiten und perfekte Core Web Vitals Werte, essentiell für internationale Sichtbarkeit und exzellentes Webdesign in Marburg.",
-      "Vollständige System-Integration für hochsichere, entkoppelte Datenhaltung und absolut nahtloses Content Management in extrem komplexen Unternehmensorganisationen.",
-      "Kompromisslose Sicherheit durch modernstes Server-Side-Rendering und den Verzicht auf direkte Datenbankzugriffe, ideal für extrem sensible und regulierte Branchen in Marburg.",
-      "Skalierbare Performance für globale Pharmaunternehmen aus Marburg, die plötzliche, extrem starke Besucherströme bei wichtigen Publikationen oder Studien völlig problemlos bewältigen müssen.",
-      "Umfassende, datengetriebene Suchmaschinenoptimierung (SEO) zur langfristigen Sicherstellung der regionalen und internationalen Spitzenplatzierung durch unsere spezialisierte Webagentur.",
-      "Hervorragendes, Conversion-optimiertes Webdesign, das das extreme Vertrauen von wichtigen Patienten, anspruchsvollen Kunden und bedeutenden Investoren nachhaltig und messbar stärkt.",
-      "Spezialisierte Webseitenentwicklung, die extrem strengen Datenschutzrichtlinien (DSGVO, HIPAA) der starken Gesundheits- und Forschungsbranche in vollem Umfang und rechtssicher entspricht.",
-      "Nach einem professionellen Webseiten Relaunch garantieren wir durch unsere lokale Webagentur eine absolut reibungslose, hochverfügbare Systempflege und kontinuierliche technische Betreuung."
+      "Fokus auf Pharma, Biotech & Behringwerke: Hochsichere, entkoppelte Webarchitekturen für sensible Forschungs- und Unternehmensdaten.",
+      "100% BITV 2.0 & WCAG 2.2 Barrierefreiheit: Inklusives Webdesign für Kliniken, Praxen und öffentliche Institutionen.",
+      "Regionale Nähe entlang der B3: In unter 25 Minuten direkt vor Ort bei Ihnen in Marburg, Cappel oder Wehrda.",
+      "Next.js als SEO-Turbo: Maximale Google-Sichtbarkeit für 'Webdesign Marburg' und B2B-Keywords durch 100/100 Core Web Vitals.",
+      "Campus Recruiting Philipps-Universität: Mobile 60-Sekunden-Bewerbungs-Funnels zur Gewinnung akademischer Top-Talente.",
+      "DSGVO-konformes deutsches Hosting: Keine anfälligen WordPress-Plugins, garantierte Datensicherheit."
     ]
   },
   "contentSections": [
     {
-      "title": "Warum eine exzellente Webseitenentwicklung die richtige Wahl für den Marburger Gesundheitssektor ist",
-      "content": "Der große Pharma-, Biotech- und Gesundheitssektor in Marburg verlangt nach höchster digitaler Präzision, absoluter technologischer Verlässlichkeit und maximalem Datenschutz. Sehr veraltete, monolithische Content-Management-Systeme werden diesen extrem strengen, modernen Ansprüchen oft absolut nicht mehr gerecht, insbesondere wenn es um notwendige, proaktive Sicherheit und extrem schnelle Ladezeiten geht. Mit unserer spezialisierten Webagentur setzen wir auf eine sehr moderne Headless-Architektur, die Webseiten im Vorfeld rendert oder absolut hochperformant über globale Edge-Netzwerke ausliefert. Das Ergebnis ist eine digitale Präsenz, die durch exzellentes Webdesign nicht nur extrem schnell lädt und Nutzer begeistert, sondern durch die klare Entkopplung von Frontend und Backend (API-First-Ansatz) eine wesentlich geringere Angriffsfläche für gefährliche Hacker-Angriffe bietet. Sensible Forschungs-, Patienten- oder Unternehmensdaten bleiben dadurch nach jedem Webseiten Relaunch völlig sicher geschützt, während Ihre wichtige globale Zielgruppe, seien es Forscher, Investoren oder Patienten, eine absolut blitzschnelle, barrierefreie und angenehme User-Experience genießt. Eine kompromisslose, maßgeschneiderte Webseitenentwicklung ist somit der unverzichtbare Schlüssel zum nachhaltigen, digitalen Erfolg in Marburg."
+      "title": "Webportale für Pharma, Biotech & Life Sciences in den Behringwerken",
+      "content": "Unternehmen im Görzhain und an den Behringwerken benötigen absolute Datensicherheit, Ausfallsicherheit bei Publikationen und ein repräsentatives internationales Auftreten."
     },
     {
-      "title": "Maßgeschneiderte Webseitenentwicklung für große Marburger Innovationstreiber und den Mittelstand",
-      "content": "Egal ob Sie ein modernes, agiles Spin-off der renommierten Philipps-Universität Marburg, ein sehr etabliertes, global agierendes Biotech-Unternehmen in den bekannten Behringwerken oder ein hochinnovativer Dienstleister im wichtigen Marburger Gesundheitswesen und Mittelstand sind, Ihre neue Webseite ist das absolute digitale Spiegelbild Ihrer enormen wissenschaftlichen und starken wirtschaftlichen Kompetenz. Ein generisches Theme oder Baukasten-Webdesign reicht hierfür schlichtweg nicht aus. Unsere engagierte Webagentur konzipiert und entwickelt sehr individuelle digitale Applikationen und Corporate Websites, die sich völlig nahtlos in all Ihre bereits bestehenden, komplexen IT-Systeme absolut perfekt integrieren lassen. Durch den enormen Einsatz von modernsten Web-Technologien (wie React, Next.js und TypeScript) garantieren wir bei der Webseitenentwicklung eine völlig fehlerfreie, extrem stabile und typsichere Codebasis, die auch extrem langfristig von internen Teams oder einem einzelnen Entwickler wunderbar wartbar und erweiterbar bleibt. Wir verzichten absolut auf überflüssigen, bremsenden Code und setzen stattdessen auf ein sehr performantes, sauberes und ästhetisch anspruchsvolles Webdesign, das sofortiges Vertrauen aufbaut und nach einem anspruchsvollen Webseiten Relaunch eine absolut makellose, internationale Präsenz bietet."
+      "title": "Barrierefreies Webdesign für Praxen, Kanzleien & Hotellerie in Marburg",
+      "content": "Von der historischen Oberstadt bis zu Facharztzentren in Wehrda und Cappel: Barrierefreie, nutzerzentrierte Webdesigns mit reibungsloser Online-Buchung."
     },
     {
-      "title": "Lokale Nähe in Marburg kombiniert mit absolutem internationalen Enterprise-Niveau",
-      "content": "Als hocherfahrene Webagentur aus dem direkt benachbarten Wetzlar bietet Coday Ihnen für den Wirtschaftsraum Marburg die absolut perfekte, strategische Kombination für Ihr digitales Projekt. Sie erhalten bei uns die sehr persönliche Erreichbarkeit, das tiefe regionale Verständnis und die sehr direkte, transparente Kommunikation eines starken, lokalen Partners vor Ort. Dies wird völlig gepaart mit dem enormen technischen Know-how in der Enterprise-Webseitenentwicklung, das sonst absolut nur extrem große, schwerfällige und teure internationale Großagenturen bieten können. Ein enormer Vorteil: Sie kommunizieren während und nach einem Webseiten Relaunch immer absolut direkt mit dem umsetzenden Lead-Entwickler und Experten, völlig ohne störende, zeitfressende Umwege über externe Projektmanager oder Account-Betreuer. Durch diesen extrem schlanken, hochfokussierten und sehr agilen Prozess können absolut komplexe, datenintensive Projekte im Webdesign extrem zeiteffizient, budgettreu und immer in der absolut höchsten, messbaren Code-Qualität erfolgreich umgesetzt werden. Wir als lokale Webagentur verstehen die enorme regionale, aber auch globale Bedeutung des starken Pharmastandorts und der Universitätsstadt Marburg sehr genau. Wir übersetzen diese Wichtigkeit durch unsere High-End Webseitenentwicklung in eine absolut moderne, performante digitale Sprache, die auf dem hart umkämpften Weltmarkt absolut und nachhaltig überzeugt."
-    },
-    {
-      "title": "Die entscheidende Wichtigkeit eines schnellen, strategischen Webseiten Relaunch für Marburgs Wirtschaft",
-      "content": "In der rasant wachsenden, hochinnovativen Wirtschaft von Marburg ist die Zeit-zu-Markt (Time-to-Market) ein extrem kritischer Erfolgsfaktor. Ein stark veraltetes, langsames und nicht responsives Webdesign schreckt nicht nur neue potenzielle Kunden, wertvolle Fachkräfte oder renommierte Forscher ab, sondern vermindert auch sofort das Vertrauen wichtiger internationaler Investoren in Ihre eigentliche technologische Innovationskraft. Ein strategischer, datengetriebener und von Experten gut geplanter Webseiten Relaunch durch unsere kompetente Webagentur löst genau diese enormen, geschäftskritischen Probleme nachhaltig. Wir erneuern bei einem solchen Projekt nicht nur einfach das visuelle Webdesign (UI/UX), sondern überarbeiten durch unsere tiefgehende, professionelle Webseitenentwicklung die gesamte zugrundeliegende technologische Basis Ihrer digitalen Präsenz völlig neu (Re-Platforming). Dadurch erreichen wir absolut ungekannte, messbare Geschwindigkeiten bei den Ladezeiten, extrem verbesserte Suchmaschinen-Rankings (SEO) und eine enorme technische Flexibilität für Ihr zukünftiges Unternehmenswachstum am Standort Marburg. Eine moderne Webseite, die in absoluten Millisekunden lädt, auf jedem Endgerät perfekt funktioniert und dabei die höchsten globalen Sicherheitsstandards (ISO-konform) erfüllt, ist heute absolut keine optionale Spielerei oder reines Marketing mehr, sondern eine zwingende, absolute geschäftskritische Voraussetzung für jedes zukunftsorientierte, ambitionierte Unternehmen in der starken Wirtschaftsregion Marburg."
-    },
-    {
-      "title": "Ein strukturierter Webdesign Prozess für Marburger Unternehmen: Von der Vision zur Realität",
-      "content": "Ein erfolgreicher Webseiten Relaunch erfordert weit mehr als nur Programmierung, er erfordert eine glasklare Strategie und ein tiefes Verständnis für Ihre Zielgruppe in Marburg und weltweit. Als professionelle Webagentur arbeiten wir nach einem streng strukturierten, iterativen Prozess. Zunächst analysieren wir in einer tiefgehenden Discovery-Phase Ihre aktuellen digitalen Schwachstellen, Ihre Wettbewerber und Ihre genauen Geschäftsziele. Basierend darauf erstellen wir ein hochkonvertierendes UX/UI-Webdesign, das die Identität Ihres Marburger Unternehmens perfekt einfängt und Vertrauen schafft. Erst wenn dieses Konzept visuell und strategisch absolut überzeugt, beginnt die eigentliche Webseitenentwicklung. Hierbei setzen wir auf moderne Headless-Systeme (wie Sanity CMS und Next.js), um Frontend und Backend sauber zu trennen. Das Resultat ist ein rasend schnelles, enorm sicheres und zukunftssicheres System. Nach ausführlichen Qualitäts- und Security-Audits sowie Performance-Tests erfolgt der reibungslose Webseiten Relaunch, ohne jegliche Ausfallzeiten für Ihre Nutzer. Auch danach bleiben wir als Ihre verlässliche Webagentur aus der Nähe von Marburg an Ihrer Seite, um das System kontinuierlich zu optimieren, zu warten und durch modernste Webseitenentwicklung an neue Marktgegebenheiten anzupassen."
-    },
-    {
-      "title": "Digitale Transformation und Wettbewerbsvorteile durch Premium-Webdesign in Marburg",
-      "content": "In einer zunehmend digitalisierten Geschäftswelt reicht eine einfache Online-Visitenkarte längst nicht mehr aus, um sich in einem wettbewerbsintensiven Markt wie Marburg zu behaupten. Besonders in den innovationsgetriebenen Branchen der Region, von Pharma und Biotech bis hin zu hochspezialisierten Dienstleistern, ist eine performante und technologisch führende Webseite ein entscheidender Erfolgsfaktor. Durch maßgeschneiderte Webseitenentwicklung schaffen wir digitale Erlebniswelten, die nicht nur visuell beeindrucken, sondern auch funktional auf ganzer Linie überzeugen. Eine durchdachte User Experience (UX) und eine moderne Benutzeroberfläche (UI) sorgen dafür, dass Besucher intuitiv durch Ihre Angebote navigieren, was die Conversion-Rate signifikant steigert.\n\nDarüber hinaus spielt die technische Suchmaschinenoptimierung (SEO) eine zentrale Rolle für Ihre Sichtbarkeit bei Google und anderen Suchmaschinen. Mit einer sauberen Code-Architektur, blitzschnellen Ladezeiten dank Next.js und serverseitigem Rendering legen wir das perfekte Fundament, damit Ihr Unternehmen in Marburg und Umgebung von potenziellen Kunden leicht gefunden wird. Jeder Webseiten Relaunch wird von unserer Agentur so geplant, dass bestehende Rankings nicht nur erhalten bleiben, sondern durch gezielte OnPage-Optimierungen weiter ausgebaut werden. Wir analysieren das Suchverhalten Ihrer Zielgruppe und integrieren relevante Keywords nahtlos in den Content.\n\nEin weiterer essenzieller Aspekt ist die Datensicherheit und DSGVO-Konformität, die gerade für medizinische und forschende Einrichtungen in Marburg von höchster Priorität sind. Durch den Einsatz von Headless-CMS-Lösungen und modernsten Verschlüsselungsstandards garantieren wir ein Höchstmaß an Sicherheit gegen Cyberangriffe. Ihre Daten und die Ihrer Kunden sind jederzeit geschützt. Vertrauen Sie auf unsere lokale Expertise und unsere langjährige Erfahrung in der Umsetzung komplexer Web-Projekte, um Ihre digitale Präsenz zukunftssicher und nachhaltig erfolgreich zu gestalten."
+      "title": "Local SEO & B3-Achse Marburg-Gießen-Kassel",
+      "content": "Dominante Platzierungen in den Google-Suchergebnissen für Unternehmen im Landkreis Marburg-Biedenkopf, Cölbe, Kirchhain und Stadtallendorf."
     }
   ],
   "faq": [
     {
-      "q": "Warum sollten insbesondere große Marburger Pharma- und Biotech-Unternehmen einen zeitnahen Webseiten Relaunch in Betracht ziehen?",
-      "a": "Ein veraltetes System stellt heute ein erhebliches Sicherheits- und Performance-Risiko dar. Ein neues, modernes System bietet absolut überlegene Sicherheit durch die strikte architektonische Trennung von Frontend und Backend (Headless). Zudem sorgt eine durchdachte, moderne Webseitenentwicklung für extrem schnelle Ladezeiten, was für internationale Fachbesucher, Forscher, Investoren und die so wichtige Suchmaschinenoptimierung (SEO) absolut entscheidend ist. Im starken Gegensatz zu sehr herkömmlichen, wartungsintensiven alten Systemen (wie WordPress) gibt es bei unserem maßgeschneiderten Webdesign keine extrem gefährlichen, veralteten Plugins oder völlig offene direkte Datenbankzugriffe, die Hackern als Einfallstor dienen könnten."
+      "q": "Wie viel kostet eine neue Website in Marburg?",
+      "a": "Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance."
     },
     {
-      "q": "Wie genau gewährleistet Ihre erfahrene Webagentur die maximale, messbare Performance der neuen Webseite für unser Unternehmen in Marburg?",
-      "a": "Wir arbeiten bei der Webseitenentwicklung von Beginn an immer mit extrem strikten Performance-Budgets und zielen auf sehr schnelle Ladezeiten weit unter einer Sekunde (LCP < 2.0s, INP < 150ms). Durch den enormen Einsatz von absolut modernen, kompilierenden Architekturen (wie React Server Components) und extrem leistungsstarkem Edge-Hosting stellen wir sicher, dass nur das absolute Minimum an notwendigen Daten (JS/CSS) an den Browser des Nutzers gesendet wird. Ein solch professionell durchgeführter Webseiten Relaunch garantiert nachweislich und absolut blitzschnelle Interaktionen, was die Absprungrate drastisch reduziert."
+      "q": "Wie schnell ist eine neue Website in Marburg online?",
+      "a": "In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online."
     },
     {
-      "q": "Können unsere komplexen, bestehenden und wichtigen Daten in die neue Webseitenentwicklung sicher und verlustfrei migriert werden?",
-      "a": "Ja, definitiv. Der absolut große, strategische Vorteil unseres sehr modernen, API-gesteuerten Ansatzes ist, dass unsere Webagentur über hochsichere, verschlüsselte Schnittstellen (APIs) auf absolut alle bestehenden Datenbanken, PIM-Systeme, HR-Tools oder andere sehr moderne Systeme in Ihrer IT-Landschaft zugreifen kann. Wir binden all Ihre wertvollen Daten völlig sicher, nahtlos und DSGVO-konform ein und rendern sie extrem performant im brandneuen, nutzerzentrierten Webdesign für Ihren Standort in Marburg."
+      "q": "Kommen Sie für ein Beratungsgespräch direkt nach Marburg?",
+      "a": "Ja, sehr gerne. Über die B3 sind wir von unserem Wetzlarer HQ in unter 25 Minuten direkt bei Ihnen vor Ort in Marburg, Cappel oder Wehrda."
     },
     {
-      "q": "Wie läuft die genaue, tägliche Zusammenarbeit mit Ihrer spezialisierten Webagentur für Kunden aus Marburg konkret ab?",
-      "a": "Als erfahrene, regionale Webagentur bieten wir Ihnen absolute räumliche Nähe, absolut direkte und völlig transparente Kommunikation. Nach einer sehr detaillierten, gemeinsamen Analyse Ihrer hohen, spezifischen Anforderungen im Raum Marburg beginnen wir mit der agilen Webseitenentwicklung. Sie haben während des gesamten, strukturierten Prozesses, vom ersten Entwurf bis zum finalen Webseiten Relaunch, absolut direkten, jederzeitigen Einblick (via Staging-Server) in das neue Webdesign und kommunizieren immer mit einem festen, technisch hochversierten Ansprechpartner (dem Entwickler selbst)."
+      "q": "Erfüllen Ihre Websites die Barrierefreiheitsstandards nach BITV 2.0?",
+      "a": "Ja. Wir entwickeln barrierefreie Interfaces mit semantischem HTML, Tastaturnavigation und Screenreader-Unterstützung gemäß WCAG 2.2 und BITV 2.0."
     },
     {
-      "q": "Welche konkreten, messbaren wirtschaftlichen Vorteile bringt ein modernes Webdesign für unser Pharma- oder Mittelstands-Unternehmen in Marburg?",
-      "a": "Ein exzellentes, maßgeschneidertes Webdesign sendet sofort nach dem ersten Klick starke, unterbewusste Signale von enormer technologischer Kompetenz, Innovationskraft und absoluter Vertrauenswürdigkeit. Durch die kompromisslose Webseitenentwicklung unserer Webagentur heben Sie sich absolut massiv und visuell deutlich von Ihren regionalen und internationalen Mitbewerbern in Marburg ab. Dies führt unmittelbar nach einem erfolgreichen Webseiten Relaunch zu einer höheren Verweildauer, deutlich mehr qualifizierten Leads (Anfragen), besseren Bewerbungen von Fachkräften und einer weitaus stärkeren, unangreifbaren digitalen Marktposition."
-    },
-    {
-      "q": "Bietet Ihre Webagentur auch nach dem erfolgreichen Webseiten Relaunch in Marburg weiterhin technische Unterstützung und Wartung an?",
-      "a": "Absolut. Wir verstehen uns als langfristiger, technologischer Partner und lassen Sie nach der erfolgreichen Webseitenentwicklung absolut nicht alleine. Unsere Webagentur bietet sehr umfassende, proaktive Betreuung (Service Level Agreements) für Ihr neues Webdesign an. Wir überwachen die enorme Performance 24/7, führen regelmäßige Security-Audits durch, halten alle Systeme up-to-date und erweitern das System völlig flexibel um völlig neue, benötigte Funktionen, damit Ihr Unternehmen in Marburg absolut langfristig, sicher und extrem erfolgreich digital agieren kann."
-    },
-    {
-      "q": "Was kostet ein professioneller Webseiten Relaunch bei Ihrer Webagentur für ein Unternehmen aus Marburg?",
-      "a": "Die Kosten für einen Webseiten Relaunch hängen stark von der Komplexität, dem gewünschten Funktionsumfang und den spezifischen Anforderungen (z.B. Integrationen, Mehrsprachigkeit) ab. Da wir maßgeschneiderte High-End Webseitenentwicklung und Premium Webdesign anbieten, erstellen wir nach einem ausführlichen Erstgespräch in Marburg oder digital ein transparentes, absolut verbindliches Festpreisangebot. Wir legen größten Wert darauf, dass Ihr Investment in unsere Webagentur durch messbare Ergebnisse, höhere Effizienz und gestiegene Anfragen einen klaren, positiven ROI (Return on Investment) liefert."
+      "q": "Wer ist unser fester Ansprechpartner?",
+      "a": "Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support."
     }
   ],
   "meta_en": {
-    "title": "Premium Web Design Agency for Marburg | Excellence in Web Development",
-    "description": "Premium web design agency in Marburg. High-performance, secure Next.js platforms tailored for pharmaceutical, medical, and innovative B2B companies."
+    "title": "Web Design Marburg | High-Performance Web Agency · Coday",
+    "description": "Web design & Next.js development in Marburg. Fast load times, accessible UX design & top SEO for pharma, practices & mid-market. Fixed price on request."
   },
   "hero_en": {
-    "headline": "Enterprise Web Design and Outstanding Web Development for Marburg",
-    "subheadline": "Web Agency in Marburg: Specialized in Pharma, Healthcare, and Digital Innovation",
-    "description": "Located near Marburg, the global hub for biotechnology, research, and medicine, we provide absolute digital excellence as your experienced web agency. We understand that sophisticated web design and precise web development are critical to your business success. Our focus is on creating high-performance, highly secure, and scalable digital platforms specifically tailored to the strict requirements of Marburg's economy and healthcare sector. Through a strategic website relaunch, we transform your online presence and set entirely new standards in modern web design for Marburg."
+    "headline": "Web Design Marburg: Digital Excellence for Pharma, Biotech & Mid-Market",
+    "subheadline": "Web design & Next.js development in Marburg for Behringwerke, Philipps University spin-offs, law firms and mid-market leaders.",
+    "description": "High-speed, accessible and secure Next.js web applications for Marburg enterprises. Transparent fixed price upon request."
   },
   "localDominance_en": {
-    "title": "Digital Excellence for Marburg's Top Industries by Our Web Agency",
-    "description": "Marburg is a global beacon for pharmacy, biotechnology, and top-tier medical research. Companies in these highly sensitive sectors need much more than just a standard website, they require a technologically superior digital infrastructure. A strategic website relaunch by our web agency is the crucial first step toward absolute digital dominance. We combine innovative web design with uncompromising web development to perfectly serve the unique needs of Marburg's economy.",
+    "title": "Digital Excellence for Marburg's Pharma & Research Ecosystem",
+    "description": "Marburg is a global leader in pharmaceuticals and biotechnology. We build state-of-the-art web platforms.",
     "points": [
-      "State-of-the-art software architecture for maximum loading speeds and perfect Core Web Vitals, essential for international visibility and excellent web design in Marburg.",
-      "Complete system integration for highly secure, decoupled data storage and absolutely seamless content management in extremely complex enterprise organizations.",
-      "Uncompromising security through modern server-side rendering and the elimination of direct database access, ideal for highly sensitive and regulated industries in Marburg.",
-      "Scalable performance for global pharmaceutical companies from Marburg, effortlessly managing sudden, massive spikes in visitor traffic during important publications or trials.",
-      "Comprehensive, data-driven Search Engine Optimization (SEO) to ensure long-term regional and international top rankings by our specialized web agency.",
-      "Outstanding, conversion-optimized web design that sustainably and measurably strengthens the extreme trust of important patients, demanding clients, and significant investors.",
-      "Specialized web development that fully and legally complies with the extremely strict data protection guidelines (GDPR, HIPAA) of the robust healthcare and research sector.",
-      "Following a professional website relaunch, our local web agency guarantees absolutely smooth, highly available system maintenance and continuous technical support."
+      "Pharma & Biotech Focus: Secure decoupled architectures for Behringwerke and life sciences.",
+      "100% BITV 2.0 & WCAG Accessibility: Inclusive digital experiences for clinics and institutions.",
+      "Close Regional Access via B3: On-site in Marburg within 25 minutes.",
+      "SEO Leadership: 100/100 Core Web Vitals for dominant Google visibility.",
+      "University Recruiting: 60-second mobile application flows for Philipps University graduates.",
+      "GDPR Compliant German Hosting: Maximum data privacy without WordPress vulnerabilities."
     ]
   },
   "contentSections_en": [
     {
-      "title": "Why Excellent Web Development is the Right Choice for Marburg's Healthcare Sector",
-      "content": "The large pharmaceutical, biotech, and healthcare sector in Marburg demands the highest digital precision, absolute technological reliability, and maximum data protection. Severely outdated, monolithic content management systems often absolutely fail to meet these extremely strict, modern requirements, especially concerning necessary proactive security and extremely fast loading times. With our specialized web agency, we rely on a very modern headless architecture that pre-renders websites or delivers them with absolute high performance via global edge networks. The result is a digital presence that not only loads extremely fast and delights users through excellent web design but also offers a significantly smaller attack surface for dangerous hackers due to the clear decoupling of frontend and backend (API-First approach). Sensitive research, patient, or corporate data thus remains completely protected after every website relaunch, while your important global target audience, be it researchers, investors, or patients, enjoys an absolutely lightning-fast, accessible, and pleasant user experience. Uncompromising, bespoke web development is therefore the indispensable key to sustainable digital success in Marburg."
+      "title": "Web Portals for Pharma & Biotech at Behringwerke",
+      "content": "Secure, enterprise-grade Next.js web applications for international life science companies."
     },
     {
-      "title": "Custom Web Development for Major Marburg Innovators and Mid-Sized Businesses",
-      "content": "Whether you are a modern, agile spin-off of the renowned Philipps University of Marburg, a highly established, globally operating biotech company in the famous Behringwerke, or a highly innovative service provider in the important Marburg healthcare sector and mid-market, your new website is the absolute digital reflection of your enormous scientific and strong economic competence. A generic theme or modular web design is simply not enough for this. Our dedicated web agency designs and develops highly individual digital applications and corporate websites that can be absolutely perfectly and seamlessly integrated into all your existing, complex IT systems. Through the extensive use of state-of-the-art web technologies (such as React, Next.js, and TypeScript), our web development guarantees a completely error-free, extremely stable, and type-safe code base that remains wonderfully maintainable and expandable by internal teams or a single developer over the extremely long term. We absolutely avoid superfluous, slowing code and instead rely on a highly performant, clean, and aesthetically demanding web design that builds immediate trust and offers an absolutely flawless international presence following a sophisticated website relaunch."
-    },
-    {
-      "title": "Local Proximity in Marburg Combined with Absolute International Enterprise Level",
-      "content": "As a highly experienced web agency from immediately neighboring Wetzlar, Coday offers you the absolutely perfect strategic combination for your digital project in the Marburg economic area. You receive the very personal availability, deep regional understanding, and very direct, transparent communication of a strong, local partner on site. This is fully paired with the enormous technical know-how in enterprise web development that is otherwise absolutely only available from extremely large, cumbersome, and expensive international agencies. A massive advantage: during and after a website relaunch, you always communicate absolutely directly with the implementing lead developer and expert, completely without annoying, time-consuming detours via external project managers or account executives. Through this extremely lean, highly focused, and very agile process, absolutely complex, data-intensive web design projects can be successfully implemented extremely time-efficiently, on budget, and always in the absolutely highest measurable code quality. As a local web agency, we perfectly understand the enormous regional as well as global significance of the strong pharmaceutical hub and university city of Marburg. We translate this importance through our high-end web development into an absolutely modern, performant digital language that absolutely and sustainably convinces on the fiercely competitive global market."
-    },
-    {
-      "title": "The Crucial Importance of a Fast, Strategic Website Relaunch for Marburg's Economy",
-      "content": "In the rapidly growing, highly innovative economy of Marburg, time-to-market is an extremely critical success factor. A severely outdated, slow, and non-responsive web design not only deters new potential clients, valuable professionals, or renowned researchers but also immediately diminishes the trust of important international investors in your actual technological innovative strength. A strategic, data-driven, and expertly planned website relaunch by our competent web agency sustainably solves exactly these enormous, business-critical problems. In such a project, we don't just update the visual web design (UI/UX); instead, through our in-depth, professional web development, we completely overhaul the entire underlying technological foundation of your digital presence (re-platforming). As a result, we achieve absolutely unprecedented, measurable speeds in loading times, extremely improved search engine rankings (SEO), and enormous technical flexibility for your future corporate growth at the Marburg location. A modern website that loads in absolute milliseconds, functions perfectly on every device, and meets the highest global security standards (ISO-compliant) is absolutely no longer an optional gimmick or mere marketing today, but an absolute, mandatory business-critical requirement for every forward-looking, ambitious company in the strong economic region of Marburg."
-    },
-    {
-      "title": "A Structured Web Design Process for Marburg Companies: From Vision to Reality",
-      "content": "A successful website relaunch requires much more than just programming, it requires a crystal-clear strategy and a deep understanding of your target audience in Marburg and worldwide. As a professional web agency, we work according to a strictly structured, iterative process. First, in an in-depth discovery phase, we analyze your current digital weaknesses, your competitors, and your exact business goals. Based on this, we create a high-converting UX/UI web design that perfectly captures the identity of your Marburg company and builds massive trust. Only when this concept is visually and strategically absolutely convincing does the actual web development begin. Here, we rely on modern headless systems (like Sanity CMS and Next.js) to cleanly separate frontend and backend. The result is a blazingly fast, enormously secure, and future-proof system. After extensive quality and security audits as well as performance tests, the smooth website relaunch takes place, without any downtime for your users. Even after that, we remain by your side as your reliable web agency near Marburg, to continuously optimize and maintain the system, and adapt it to new market conditions through state-of-the-art web development."
-    },
-    {
-      "title": "Digital Transformation and Competitive Advantages through Premium Web Design in Marburg",
-      "content": "In an increasingly digitized business world, a simple online business card is no longer enough to compete in a highly competitive market like Marburg. Especially in the region's innovation-driven industries, from pharma and biotech to highly specialized service providers, a high-performance and technologically leading website is a crucial success factor. Through custom web development, we create digital experiences that not only impress visually but also convince functionally across the board. A well-thought-out User Experience (UX) and a modern User Interface (UI) ensure that visitors navigate intuitively through your offerings, significantly increasing the conversion rate.\n\nFurthermore, technical Search Engine Optimization (SEO) plays a central role in your visibility on Google and other search engines. With a clean code architecture, lightning-fast loading times thanks to Next.js, and server-side rendering, we lay the perfect foundation for your company in Marburg and the surrounding area to be easily found by potential clients. Every website relaunch is planned by our agency so that existing rankings are not only maintained but further expanded through targeted OnPage optimizations. We analyze the search behavior of your target audience and integrate relevant keywords seamlessly into the content.\n\nAnother essential aspect is data security and GDPR compliance, which are of the highest priority, especially for medical and research institutions in Marburg. By using headless CMS solutions and state-of-the-art encryption standards, we guarantee maximum security against cyberattacks. Your data and that of your clients are protected at all times. Trust in our local expertise and our many years of experience in implementing complex web projects to make your digital presence future-proof and sustainably successful."
+      "title": "Accessible Web Design for Practices & Local Services",
+      "content": "User-centric, fast digital portals in Marburg's historic center, Wehrda and Cappel."
     }
   ],
   "faq_en": [
     {
-      "q": "Why should large Marburg pharmaceutical and biotech companies in particular consider a timely website relaunch?",
-      "a": "Today, an outdated system represents a significant security and performance risk. A new, modern system offers absolutely superior security through the strict architectural separation of frontend and backend (headless). In addition, well-thought-out, modern web development ensures extremely fast loading times, which is absolutely crucial for international expert visitors, researchers, investors, and essential Search Engine Optimization (SEO). In strong contrast to very traditional, high-maintenance old systems (like WordPress), our custom web design features no extremely dangerous, outdated plugins or completely open direct database access that could serve as a gateway for hackers."
+      "q": "How much does professional web design in Marburg cost?",
+      "a": "Binding fixed price on request following a free audit. 5-10x more cost-effective than traditional agencies."
     },
     {
-      "q": "How exactly does your experienced web agency ensure the maximum, measurable performance of the new website for our Marburg company?",
-      "a": "Right from the start of web development, we always work with extremely strict performance budgets and aim for very fast loading times well under one second (LCP < 2.0s, INP < 150ms). Through the massive use of absolutely modern, compiling architectures (like React Server Components) and extremely powerful edge hosting, we ensure that only the absolute minimum of necessary data (JS/CSS) is sent to the user's browser. Such a professionally executed website relaunch demonstrably guarantees absolutely lightning-fast interactions, which drastically reduces the bounce rate."
+      "q": "How long does implementation take?",
+      "a": "Turnkey delivery within 10 to 14 business days."
     },
     {
-      "q": "Can our complex, existing, and important data be securely and losslessly migrated into the new web development?",
-      "a": "Yes, definitely. The absolutely great strategic advantage of our highly modern, API-driven approach is that our web agency can access absolutely all existing databases, PIM systems, HR tools, or other highly modern systems in your IT landscape via highly secure, encrypted interfaces (APIs). We integrate all your valuable data completely securely, seamlessly, and GDPR-compliantly, and render it extremely performantly in the brand-new, user-centric web design for your location in Marburg."
-    },
-    {
-      "q": "How does the exact, daily collaboration with your specialized web agency work in concrete terms for clients from Marburg?",
-      "a": "As an experienced, regional web agency, we offer you absolute geographical proximity, highly direct, and completely transparent communication. After a very detailed, joint analysis of your high, specific requirements in the Marburg area, we begin with agile web development. Throughout the entire structured process, from the first draft to the final website relaunch, you have absolute, continuous direct access (via a staging server) to the new web design and always communicate with a fixed, technically highly versed contact person (the developer themselves)."
-    },
-    {
-      "q": "What concrete, measurable economic advantages does modern web design bring to our pharma or mid-sized company in Marburg?",
-      "a": "An excellent, custom-tailored web design immediately sends strong, subconscious signals of enormous technological competence, innovative power, and absolute trustworthiness right after the first click. Through the uncompromising web development of our web agency, you absolutely massively and visually clearly stand out from your regional and international competitors in Marburg. Immediately following a successful website relaunch, this leads to longer dwell times, significantly more qualified leads (inquiries), better job applications from professionals, and a much stronger, unassailable digital market position."
-    },
-    {
-      "q": "Does your web agency continue to offer technical support and maintenance after the successful website relaunch in Marburg?",
-      "a": "Absolutely. We view ourselves as a long-term technological partner and absolutely do not leave you alone after the successful web development. Our web agency offers very comprehensive, proactive support (Service Level Agreements) for your new web design. We monitor the enormous performance 24/7, conduct regular security audits, keep all systems up-to-date, and expand the system completely flexibly with entirely new, required features so that your company in Marburg can operate digitally with extreme success and security over the absolute long term."
-    },
-    {
-      "q": "How much does a professional website relaunch by your web agency cost for a company from Marburg?",
-      "a": "The costs for a website relaunch heavily depend on the complexity, the desired range of functions, and the specific requirements (e.g., integrations, multilingualism). Because we offer custom high-end web development and premium web design, we provide a transparent, absolutely binding fixed-price offer after an extensive initial consultation in Marburg or digitally. We place the utmost importance on ensuring that your investment in our web agency delivers a clear, positive ROI (Return on Investment) through measurable results, higher efficiency, and increased inquiries."
+      "q": "Do you meet on-site in Marburg?",
+      "a": "Yes, we gladly meet you at your Marburg offices via the B3 highway."
     }
   ]
 }

@@ -5,6 +5,8 @@ import { setRequestLocale } from 'next-intl/server';
 import { BASE_URL, getOrganizationSchema } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
+import { TrustBar } from '@/shared/ui/TrustBar';
+import { LazyQuickContactForm } from '@/widgets/home/LazyQuickContactForm';
 import {
   ArrowRight,
   Lightning,
@@ -20,6 +22,13 @@ import {
   Wrench,
   Eye,
   MapPin,
+  ChartBar,
+  Star,
+  DeviceMobile,
+  Target,
+  FileCode,
+  Globe,
+  CaretRight,
 } from '@phosphor-icons/react/dist/ssr';
 
 export const dynamic = 'force-static';
@@ -32,17 +41,17 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Design Lahn-Dill District | Next.js Agency – Coday',
+      title: 'Web Design Lahn-Dill District | Regional Web Agency · Coday',
       description:
-        'Custom web design & Next.js web development in the Lahn-Dill district (Wetzlar, Dillenburg, Herborn, Haiger). 100/100 PageSpeed & qualified industrial leads!',
+        'Your local web agency for the Lahn-Dill district. High-performance websites & SEO for SME & trade in Wetzlar, Herborn & Dillenburg. Fixed prices.',
       path: '/en/regionen/landkreis-lahn-dill',
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'Webdesign Lahn-Dill-Kreis | Next.js Agentur – Coday',
+    title: 'Webdesign Lahn-Dill-Kreis | Regionale Webagentur · Coday',
     description:
-      'Maßgeschneidertes Webdesign & Next.js Webentwicklung im Lahn-Dill-Kreis (Wetzlar, Dillenburg, Herborn, Haiger). 100/100 PageSpeed & planbare Industrie-Leads!',
+      'Ihre lokale Webagentur für den Lahn-Dill-Kreis. High-Performance Websites & SEO für Mittelstand & Handwerk in Wetzlar, Herborn & Dillenburg. Festpreise.',
     path: '/de/regionen/landkreis-lahn-dill',
     type: 'money',
   });
@@ -59,26 +68,26 @@ export default async function LandkreisLahnDillPage({
 
   const kommunen = [
     {
-      name: 'Wetzlar (Kreisstadt)',
+      name: 'Wetzlar (Kreisstadt & HQ)',
       link: '/webdesign-agentur-wetzlar',
       highlight: true,
-      note: 'Optik- & Photonikzentrum',
+      note: 'Optik-, Photonik- & Sensorikzentrum',
     },
     {
       name: 'Herborn',
       link: '/webdesign-herborn',
       highlight: true,
-      note: 'Schaltanlagen & Hightech',
+      note: 'Schaltschrankbau, Hightech & B45',
     },
     {
       name: 'Dillenburg',
-      link: '/webdesign-agentur-wetzlar',
-      highlight: false,
-      note: 'Kaltwalzwerke & Stahl',
+      link: '/webdesign-dillenburg',
+      highlight: true,
+      note: 'Kaltwalzwerke, Stahl & Werkzeugbau',
     },
     {
       name: 'Haiger',
-      link: '/webdesign-herborn',
+      link: '/webdesign-dillenburg',
       highlight: false,
       note: 'Schweißtechnik & Maschinenbau',
     },
@@ -86,7 +95,7 @@ export default async function LandkreisLahnDillPage({
       name: 'Braunfels',
       link: '/webdesign-agentur-wetzlar',
       highlight: false,
-      note: 'Kurort & Gastgewerbe',
+      note: 'Kurstadt, Kliniken & Gastgewerbe',
     },
     {
       name: 'Solms',
@@ -98,7 +107,13 @@ export default async function LandkreisLahnDillPage({
       name: 'Aßlar',
       link: '/webdesign-agentur-wetzlar',
       highlight: false,
-      note: 'Vakuum- & Industrietechnik',
+      note: 'Vakuumtechnologie & Zerspanung',
+    },
+    {
+      name: 'Ehringshausen',
+      link: '/webdesign-agentur-wetzlar',
+      highlight: false,
+      note: 'Industrie, Medtech & Logistik',
     },
     {
       name: 'Sinn',
@@ -107,84 +122,76 @@ export default async function LandkreisLahnDillPage({
       note: 'Metallverarbeitung & Gewerbe',
     },
     {
-      name: 'Ehringshausen',
-      link: '/webdesign-agentur-wetzlar',
-      highlight: false,
-      note: 'Medizintechnik & Handwerk',
-    },
-    {
-      name: 'Hüttenberg',
-      link: '/webdesign-agentur-wetzlar',
-      highlight: false,
-      note: 'Mittelstand & Bauwirtschaft',
-    },
-    {
-      name: 'Schöffengrund',
-      link: '/webdesign-agentur-wetzlar',
-      highlight: false,
-      note: 'Handwerk & Dienstleistung',
-    },
-    {
-      name: 'Waldsolms',
-      link: '/webdesign-agentur-wetzlar',
-      highlight: false,
-      note: 'Gewerbe & Taunus-Rand',
-    },
-    {
-      name: 'Eschenburg',
-      link: '/webdesign-herborn',
-      highlight: false,
-      note: 'Heiztechnik & Formenbau',
-    },
-    {
-      name: 'Dietzhölztal',
-      link: '/webdesign-herborn',
-      highlight: false,
-      note: 'Industrie & Guss',
-    },
-    {
       name: 'Mittenaar',
       link: '/webdesign-herborn',
       highlight: false,
-      note: 'Gewerbeparks & Handwerk',
-    },
-    { name: 'Siegbach', link: '/webdesign-herborn', highlight: false, note: 'Präzisionsmechanik' },
-    { name: 'Driedorf', link: '/webdesign-herborn', highlight: false, note: 'Westerwald-Gewerbe' },
-    {
-      name: 'Breitscheid',
-      link: '/webdesign-herborn',
-      highlight: false,
-      note: 'Ton- & Mineralindustrie',
+      note: 'Gewerbe & Fertigungstechnik',
     },
     {
-      name: 'Greifenstein',
-      link: '/webdesign-herborn',
+      name: 'Dietzhölztal',
+      link: '/webdesign-dillenburg',
       highlight: false,
-      note: 'Handwerk & Holzbau',
+      note: 'Gusstechnik & Industrie',
     },
     {
-      name: 'Leun',
-      link: '/webdesign-agentur-wetzlar',
+      name: 'Eschenburg',
+      link: '/webdesign-dillenburg',
       highlight: false,
-      note: 'Industriepark Lahntal',
-    },
-    {
-      name: 'Bischoffen',
-      link: '/webdesign-agentur-wetzlar',
-      highlight: false,
-      note: 'Aartalsee & Tourismus',
-    },
-    {
-      name: 'Hohenahr',
-      link: '/webdesign-agentur-wetzlar',
-      highlight: false,
-      note: 'Gewerbe & Dienstleistung',
+      note: 'Kunststoff & Metallverarbeitung',
     },
     {
       name: 'Lahnau',
       link: '/webdesign-agentur-wetzlar',
       highlight: false,
-      note: 'Optik-Zulieferer & B2B',
+      note: 'Handwerk & B2B-Dienstleister',
+    },
+    {
+      name: 'Hüttenberg',
+      link: '/webdesign-agentur-wetzlar',
+      highlight: false,
+      note: 'Handwerksbetriebe & Baugewerbe',
+    },
+    {
+      name: 'Schöffengrund',
+      link: '/webdesign-agentur-wetzlar',
+      highlight: false,
+      note: 'Handwerk & Dienstleistungen',
+    },
+    {
+      name: 'Waldsolms',
+      link: '/webdesign-agentur-wetzlar',
+      highlight: false,
+      note: 'Handwerk, Natur & Tourismus',
+    },
+    {
+      name: 'Greifenstein',
+      link: '/webdesign-herborn',
+      highlight: false,
+      note: 'Tourismus, Handwerk & Gewerbe',
+    },
+    {
+      name: 'Driedorf',
+      link: '/webdesign-herborn',
+      highlight: false,
+      note: 'Handwerk & Westerwald-Gewerbe',
+    },
+    {
+      name: 'Breitscheid',
+      link: '/webdesign-herborn',
+      highlight: false,
+      note: 'Tonindustrie, Luftfahrt & Gewerbe',
+    },
+    {
+      name: 'Bischoffen',
+      link: '/webdesign-herborn',
+      highlight: false,
+      note: 'Aartalsee-Tourismus & Handwerk',
+    },
+    {
+      name: 'Siegbach',
+      link: '/webdesign-herborn',
+      highlight: false,
+      note: 'Handwerk & lokale Betriebe',
     },
   ];
 
@@ -195,7 +202,7 @@ export default async function LandkreisLahnDillPage({
       {
         '@type': 'LocalBusiness',
         '@id': `${BASE_URL}/${_locale}/regionen/landkreis-lahn-dill#localbusiness`,
-        name: 'Coday – High-End Webdesign & Webentwicklung Lahn-Dill-Kreis',
+        name: 'Coday – Regionale Webagentur Lahn-Dill-Kreis',
         url: `${BASE_URL}/${_locale}/regionen/landkreis-lahn-dill`,
         logo: `${BASE_URL}/icon.png`,
         image: `${BASE_URL}/images/og-image.jpg`,
@@ -204,7 +211,7 @@ export default async function LandkreisLahnDillPage({
         priceRange: '€€€€',
         address: {
           '@type': 'PostalAddress',
-          streetAddress: 'Headquarter Wetzlar / Lahn-Dill-Kreis',
+          streetAddress: 'HQ Wetzlar / Regionalbüro Lahn-Dill',
           addressLocality: 'Wetzlar',
           postalCode: '35578',
           addressRegion: 'Hessen',
@@ -212,11 +219,10 @@ export default async function LandkreisLahnDillPage({
         },
         geo: {
           '@type': 'GeoCoordinates',
-          latitude: 50.5658,
-          longitude: 8.5028,
+          latitude: 50.5583,
+          longitude: 8.5022,
         },
         areaServed: [
-          { '@type': 'AdministrativeArea', name: 'Lahn-Dill-Kreis' },
           { '@type': 'City', name: 'Wetzlar' },
           { '@type': 'City', name: 'Herborn' },
           { '@type': 'City', name: 'Dillenburg' },
@@ -224,462 +230,374 @@ export default async function LandkreisLahnDillPage({
           { '@type': 'City', name: 'Braunfels' },
           { '@type': 'City', name: 'Solms' },
           { '@type': 'City', name: 'Aßlar' },
+          { '@type': 'AdministrativeArea', name: 'Lahn-Dill-Kreis' },
+          { '@type': 'AdministrativeArea', name: 'Mittelhessen' },
         ],
       },
       {
         '@type': 'ProfessionalService',
         '@id': `${BASE_URL}/${_locale}/regionen/landkreis-lahn-dill#service`,
-        name: 'High-End Webdesign & Next.js Entwicklung Lahn-Dill-Kreis',
+        name: 'Industrie, Handwerk & B2B Webentwicklung Lahn-Dill-Kreis',
         provider: {
           '@id': `${BASE_URL}/#organization`,
         },
         serviceType: [
-          'Next.js B2B Webentwicklung',
-          'Optik & Photonik Webportale',
-          'Kaltwalzwerk & Maschinenbau Websites',
-          'Handwerk 60-Sekunden Recruiting',
-          'Core Web Vitals & Headless CMS Architektur',
+          'Optik- & Photonik Webportale',
+          'Industrie- & Werkzeugbau Webdesign',
+          'Next.js 15 Webentwicklung',
+          'Local SEO Lahn-Dill-Kreis',
+          'Sanity Headless CMS',
         ],
-        hasOfferCatalog: {
-          '@type': 'OfferCatalog',
-          name: 'Entwicklungsleistungen für den Lahn-Dill-Kreis',
-          itemListElement: [
-            {
-              '@type': 'Offer',
-              itemOffered: {
-                '@type': 'Service',
-                name: 'Optik- & Photonik Showcases',
-                description:
-                  'Präzise technische Leistungsdarstellung für den Weltmarktführer-Cluster Wetzlar/Lahnau.',
-              },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: `${BASE_URL}/${_locale}`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Regionen',
+            item: `${BASE_URL}/${_locale}/standorte/hessen`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: 'Lahn-Dill-Kreis',
+            item: `${BASE_URL}/${_locale}/regionen/landkreis-lahn-dill`,
+          },
+        ],
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'Wie viel kostet eine neue Website im Lahn-Dill-Kreis?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance.',
             },
-            {
-              '@type': 'Offer',
-              itemOffered: {
-                '@type': 'Service',
-                name: 'Maschinenbau & Dilltal-Industrieportale',
-                description:
-                  'Subsekundäre Produktfilter und interaktive CAD-Spezifikationen für Industrie-Einkäufer.',
-              },
+          },
+          {
+            '@type': 'Question',
+            name: 'Wie schnell ist eine neue Website im Lahn-Dill-Kreis online?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online.',
             },
-            {
-              '@type': 'Offer',
-              itemOffered: {
-                '@type': 'Service',
-                name: 'Handwerk & Haustechnik Recruiting-Funnels',
-                description:
-                  '60-Sekunden Bewerbungsstrecken zur planbaren Gewinnung von Gesellen und Meistern im Lahn-Dill-Kreis.',
-              },
+          },
+          {
+            '@type': 'Question',
+            name: 'Kommen Sie für ein Beratungsgespräch direkt zu uns in den Betrieb?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Ja, selbstverständlich. Da Coday seinen Sitz direkt in Wetzlar hat, sind wir in wenigen Minuten bei Ihnen vor Ort – ob in Herborn, Dillenburg, Haiger, Braunfels oder Ehringshausen.',
             },
-          ],
-        },
+          },
+          {
+            '@type': 'Question',
+            name: 'Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Wer ist unser fester Ansprechpartner?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.',
+            },
+          },
+        ],
       },
     ],
   };
 
   return (
-    <div className="relative min-h-screen bg-slate-950 text-slate-100 selection:bg-amber-500/30 selection:text-amber-200">
+    <div className="bg-[#fafafa] text-slate-900 min-h-screen selection:bg-amber-500/20 selection:text-amber-900">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* 1. HERO SECTION */}
-      <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-950/25 via-slate-950/80 to-slate-950 pointer-events-none" />
-        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-amber-500/10 blur-[140px] rounded-full pointer-events-none" />
+      {/* 1. HERO SECTION MIT LEAD CAPTURE */}
+      <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28 bg-[#fafafa]">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-100/40 via-white/80 to-transparent pointer-events-none" />
+        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-amber-400/10 blur-[140px] rounded-full pointer-events-none" />
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-950/40 text-amber-400 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-8 backdrop-blur-md">
-            <Sparkle className="w-4 h-4 text-amber-400" />
-            HEIMATKREIS & INDUSTRIEREGION LAHN-DILL
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-50 text-amber-800 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-8 shadow-sm">
+            <Sparkle className="w-4 h-4 text-amber-600" />
+            REGIONALER MASTER-HUB · LAHN-DILL-KREIS
           </div>
 
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-8 leading-[1.1]">
-            High-End Webdesign im Lahn-Dill-Kreis:{' '}
-            <span className="bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-400 bg-clip-text text-transparent">
-              100/100 PageSpeed ab HQ Wetzlar
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 mb-8 leading-[1.1]">
+            Webdesign & Next.js Entwicklung im{' '}
+            <span className="bg-gradient-to-r from-amber-600 via-amber-700 to-teal-700 bg-clip-text text-transparent">
+              Lahn-Dill-Kreis
             </span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-10">
-            Vom Weltzentrum der Optik in Wetzlar über die Kaltwalz- und Maschinenbau-Pioniere des
-            Dilltals bis zum starken Handwerk: Wir entwickeln kompromisslos schnelle
-            Next.js-Websites für den gesamten Lahn-Dill-Kreis – direkt vor Ort, ohne
-            Agentur-Wasserkopf.
+          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-10">
+            Ihre lokale High-End Webagentur mit Sitz in Wetzlar. Maßgeschneiderte Next.js Websites,
+            top PageSpeed unter 500ms und automatisierte B2B-Leads für Industrie, Handwerk und
+            Mittelstand im gesamten Landkreis. Verbindlicher Festpreis nach kostenloser
+            Bedarfsanalyse.
           </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-            <Link href="/contact" className="w-full sm:w-auto">
-              <Button
-                variant="primary"
-                size="lg"
-                className="w-full sm:w-auto bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold px-8 py-4 text-base shadow-lg shadow-amber-500/25 transition-all hover:scale-[1.02]"
-              >
-                Kostenloses Website-Audit anfordern
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-            </Link>
-            <Link href="/webdesign-agentur-wetzlar" className="w-full sm:w-auto">
-              <Button
-                variant="secondary"
-                size="lg"
-                className="w-full sm:w-auto border-slate-700 hover:border-slate-500 bg-slate-900/60 hover:bg-slate-850 text-slate-200 px-8 py-4 text-base"
-              >
-                HQ Wetzlar entdecken
-              </Button>
-            </Link>
+          {/* Lead Capture Form in Hero */}
+          <div className="max-w-xl mx-auto mb-16 p-6 rounded-3xl bg-white border border-slate-200 shadow-xl">
+            <h2 className="text-lg font-bold text-slate-900 mb-4 text-center">
+              Kostenlose Bedarfsanalyse im Lahn-Dill-Kreis anfordern
+            </h2>
+            <LazyQuickContactForm />
           </div>
 
           {/* Trust Badges */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-8 border-t border-slate-800/80">
-            <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800 backdrop-blur-sm">
-              <div className="text-2xl sm:text-3xl font-black text-amber-400 mb-1">100/100</div>
-              <div className="text-xs sm:text-sm text-slate-400 font-medium">Core Web Vitals</div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-8 border-t border-slate-200">
+            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
+              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">100/100</div>
+              <div className="text-xs sm:text-sm text-slate-600 font-medium">Core Web Vitals</div>
             </div>
-            <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800 backdrop-blur-sm">
-              <div className="text-2xl sm:text-3xl font-black text-amber-400 mb-1">0%</div>
-              <div className="text-xs sm:text-sm text-slate-400 font-medium">CMS-Risiko</div>
+            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
+              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">&lt; 0.4s</div>
+              <div className="text-xs sm:text-sm text-slate-600 font-medium">Ladezeit via Edge</div>
             </div>
-            <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800 backdrop-blur-sm">
-              <div className="text-2xl sm:text-3xl font-black text-amber-400 mb-1">HQ Wetzlar</div>
-              <div className="text-xs sm:text-sm text-slate-400 font-medium">Direkt vor Ort</div>
-            </div>
-            <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800 backdrop-blur-sm">
-              <div className="text-2xl sm:text-3xl font-black text-amber-400 mb-1">23 Kommunen</div>
-              <div className="text-xs sm:text-sm text-slate-400 font-medium">Volle Abdeckung</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 2. PAIN POINTS: INDUSTRIE- & HANDWERKS-DNA LAHN-DILL */}
-      <section className="py-24 bg-slate-900/50 border-y border-slate-800/80 relative">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-amber-400 font-semibold tracking-wider uppercase text-xs sm:text-sm">
-              Digitale Realität im Lahn-Dill-Kreis
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2 mb-4">
-              Warum Standard-Websites die regionale Marktführerschaft gefährden
-            </h2>
-            <p className="text-slate-400 text-base sm:text-lg">
-              Der Lahn-Dill-Kreis beherbergt globale Marktführer und hochspezialisierte
-              Handwerksbetriebe. Veraltete PHP-Websites werden diesem Anspruch nicht gerecht.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-8 rounded-2xl bg-slate-950/80 border border-red-900/30 hover:border-red-500/40 transition-colors group">
-              <div className="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center text-red-400 mb-6 group-hover:scale-110 transition-transform">
-                <Wrench className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">
-                Fachkräftemangel im regionalen Handwerk
-              </h3>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                Junge Gesellen und Meister im Dill- und Lahntal bewerben sich nicht mehr über
-                komplizierte PDFs. Wer wachsen will, braucht 60-Sekunden Mobile-Recruiting.
-              </p>
-            </div>
-
-            <div className="p-8 rounded-2xl bg-slate-950/80 border border-amber-900/30 hover:border-amber-500/40 transition-colors group">
-              <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-400 mb-6 group-hover:scale-110 transition-transform">
-                <Lightning className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">
-                Ladezeitverluste bei technischen Katalogen
-              </h3>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                Internationale OEM-Einkäufer erwarten sofortige Produktdaten. Schleppende Ladezeiten
-                führen zum Abbruch und stärken den Wettbewerb.
-              </p>
-            </div>
-
-            <div className="p-8 rounded-2xl bg-slate-950/80 border border-purple-900/30 hover:border-purple-500/40 transition-colors group">
-              <div className="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 mb-6 group-hover:scale-110 transition-transform">
-                <LockKey className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">
-                Wartungskosten & Sicherheitsrisiken
-              </h3>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                Ständige WordPress-Updates und Sicherheitslücken binden wertvolle Ressourcen.
-                Next.js liefert statisch gehärtete, 100% wartungsfreie Web-Systeme.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. ARCHITEKTUR: NEXT.JS EDGE VS. WORDPRESS */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-amber-400 font-semibold tracking-wider uppercase text-xs sm:text-sm">
-              Engineering-Architektur
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2 mb-4">
-              Next.js Edge & Sanity CMS: Technologie auf Weltklasse-Niveau
-            </h2>
-            <p className="text-slate-400 text-base sm:text-lg">
-              Statische Vorkompilierung, blitzschnelles Edge-Routing und intuitive
-              Inhaltsverwaltung.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-8 rounded-2xl bg-slate-900/60 border border-slate-800">
-              <div className="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400 mb-6">
-                <Lightning className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">Subsekundäre Ladezeiten</h3>
-              <p className="text-slate-400 text-sm leading-relaxed mb-4">
-                Unter 0,3 Sekunden Latenz weltweit. Technische Dokumentationen und interaktive
-                Renderings öffnen augenblicklich.
-              </p>
-              <div className="text-xs text-amber-400 font-semibold uppercase tracking-wider">
-                100/100 Core Web Vitals
+            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
+              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">HQ Wetzlar</div>
+              <div className="text-xs sm:text-sm text-slate-600 font-medium">
+                Direkt vor Ort im Kreis
               </div>
             </div>
-
-            <div className="p-8 rounded-2xl bg-slate-900/60 border border-slate-800">
-              <div className="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400 mb-6">
-                <ShieldCheck className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">Enterprise-Sicherheit</h3>
-              <p className="text-slate-400 text-sm leading-relaxed mb-4">
-                Keine angreifbare MySQL-Datenbank im Netz. Immun gegen Brute-Force, DDoS und
-                automatisierte Exploit-Skripte.
-              </p>
-              <div className="text-xs text-amber-400 font-semibold uppercase tracking-wider">
-                0% CMS Angriffsfläche
-              </div>
-            </div>
-
-            <div className="p-8 rounded-2xl bg-slate-900/60 border border-slate-800">
-              <div className="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400 mb-6">
-                <Code className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">Sanity Headless CMS</h3>
-              <p className="text-slate-400 text-sm leading-relaxed mb-4">
-                Pflege von Zertifikaten, Maschinenparks und Stellenanzeigen in Echtzeit über eine
-                hochmoderne, strukturierte Content-Plattform.
-              </p>
-              <div className="text-xs text-amber-400 font-semibold uppercase tracking-wider">
-                Sanity Headless CMS
+            <div className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm text-center">
+              <div className="text-2xl sm:text-3xl font-black text-amber-600 mb-1">100%</div>
+              <div className="text-xs sm:text-sm text-slate-600 font-medium">
+                DSGVO & Deutsches Hosting
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 4. BRANCHENLÖSUNGEN FÜR DEN LAHN-DILL-KREIS */}
-      <section className="py-24 bg-slate-900/40 border-y border-slate-800/80">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-amber-400 font-semibold tracking-wider uppercase text-xs sm:text-sm">
-              Industrie- & Wirtschaftsschwerpunkte
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2 mb-4">
-              Maßgeschneiderte Web-Lösungen für die Lahn-Dill-Wirtschaft
-            </h2>
-            <p className="text-slate-400 text-base sm:text-lg">
-              Präzise Architekturen für Optik-Pioniere, Schwerindustrie und meisterhaftes Handwerk.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Cluster 1 */}
-            <div className="p-8 rounded-2xl bg-slate-950 border border-slate-800 flex flex-col justify-between">
-              <div>
-                <div className="text-xs font-bold text-amber-400 uppercase tracking-wider mb-2">
-                  Wetzlar, Lahnau & Aßlar
-                </div>
-                <h3 className="text-xl font-bold text-white mb-4">
-                  Optik, Photonik & Feinmechanik
-                </h3>
-                <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                  Präzise technische Showcases für globale OEM-Kunden mit ISO-Zertifikaten,
-                  CAD-Download-Bereichen und mehrsprachiger Next.js-Architektur.
-                </p>
-              </div>
-              <ul className="space-y-2.5 text-xs text-slate-300 pt-6 border-t border-slate-900">
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-amber-400 shrink-0" />
-                  Strukturierte Spezifikations-Showcases
-                </li>
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-amber-400 shrink-0" />
-                  Mehrsprachige B2B-Architektur
-                </li>
-              </ul>
-            </div>
-
-            {/* Cluster 2 */}
-            <div className="p-8 rounded-2xl bg-slate-950 border border-slate-800 flex flex-col justify-between">
-              <div>
-                <div className="text-xs font-bold text-amber-400 uppercase tracking-wider mb-2">
-                  Dillenburg, Herborn & Haiger
-                </div>
-                <h3 className="text-xl font-bold text-white mb-4">
-                  Maschinenbau, Kaltwalzwerke & Stanztechnik
-                </h3>
-                <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                  Hochperformante Produktfilter und reaktive Anfrage-Funnels für die
-                  traditionsreiche Dilltaler Stahl- und Industriefertigung.
-                </p>
-              </div>
-              <ul className="space-y-2.5 text-xs text-slate-300 pt-6 border-t border-slate-900">
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-amber-400 shrink-0" />
-                  Subsekundäre Produktfilter
-                </li>
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-amber-400 shrink-0" />
-                  Automatisierte B2B-Anfragestrecken
-                </li>
-              </ul>
-            </div>
-
-            {/* Cluster 3 */}
-            <div className="p-8 rounded-2xl bg-slate-950 border border-slate-800 flex flex-col justify-between">
-              <div>
-                <div className="text-xs font-bold text-amber-400 uppercase tracking-wider mb-2">
-                  Kreisweit (23 Kommunen)
-                </div>
-                <h3 className="text-xl font-bold text-white mb-4">
-                  Handwerk, SHK & Elektrotechnik
-                </h3>
-                <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                  60-Sekunden Express-Bewerbungsstrecken zur planbaren Gewinnung von Facharbeitern
-                  und Meistern sowie regionale Google-Dominanz.
-                </p>
-              </div>
-              <ul className="space-y-2.5 text-xs text-slate-300 pt-6 border-t border-slate-900">
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-amber-400 shrink-0" />
-                  Mobile 60-Sekunden Mitarbeiter-Gewinnung
-                </li>
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-amber-400 shrink-0" />
-                  Lokale Suchmaschinen-Dominanz
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      {/* 2. TRUSTBAR (REAL PROOF) */}
+      <section className="border-y border-slate-200 bg-white">
+        <TrustBar />
       </section>
 
-      {/* 5. GEMEINDE-GRID: ALLE 23 KOMMUNEN DES LAHN-DILL-KREISES */}
-      <section className="py-24 relative">
+      {/* 3. INTERAKTIVER STÄDTE-NAVIGATOR LAHN-DILL-KREIS */}
+      <section className="py-24 bg-white border-b border-slate-200 relative">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-amber-400 font-semibold tracking-wider uppercase text-xs sm:text-sm">
-              Vollständige Kreisabdeckung
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Regionale Abdeckung
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2 mb-4">
-              Webdesign in allen 23 Städten & Gemeinden des Lahn-Dill-Kreises
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">
+              Städte & Gemeinden im Lahn-Dill-Kreis
             </h2>
-            <p className="text-slate-400 text-base sm:text-lg">
-              Egal ob Kreisstadt Wetzlar, Wirtschaftsmetropole Herborn oder die Gemeinden im
-              Westerwald und Taunus: Wir sind Ihr verlässlicher Technologiepartner vor Ort.
+            <p className="text-slate-600 text-base sm:text-lg">
+              Wählen Sie Ihren Standort für maßgeschneiderte lokale Weblösungen und
+              Branchenexpertise.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {kommunen.map((k) => (
-              <div
+              <Link
                 key={k.name}
-                className={`p-5 rounded-xl border transition-all ${
+                href={k.link}
+                className={`p-5 rounded-2xl border transition-all duration-300 flex items-center justify-between group ${
                   k.highlight
-                    ? 'bg-amber-950/20 border-amber-500/40 hover:border-amber-400'
-                    : 'bg-slate-900/60 border-slate-800 hover:border-slate-700'
+                    ? 'bg-white border-amber-500/40 hover:border-amber-500 hover:shadow-md'
+                    : 'bg-white border-slate-200/80 hover:border-slate-300 hover:shadow-md'
                 }`}
               >
-                <div className="flex items-center justify-between mb-2">
-                  <span className="font-bold text-white text-sm">{k.name}</span>
-                  <MapPin className="w-4 h-4 text-amber-400 shrink-0" />
+                <div>
+                  <div className="flex items-center gap-2">
+                    <MapPin
+                      className={`w-4 h-4 ${k.highlight ? 'text-amber-600' : 'text-slate-400'}`}
+                    />
+                    <h3 className="font-bold text-slate-900 group-hover:text-amber-700 transition-colors text-base">
+                      {k.name}
+                    </h3>
+                  </div>
+                  <p className="text-xs text-slate-500 mt-1">{k.note}</p>
                 </div>
-                <div className="text-xs text-slate-400 mb-3">{k.note}</div>
-                <Link
-                  href={k.link}
-                  className="text-xs font-semibold text-amber-400 hover:text-amber-300 inline-flex items-center gap-1"
-                >
-                  Regionales Hub ansehen →
-                </Link>
-              </div>
+                <CaretRight className="w-5 h-5 text-slate-400 group-hover:text-amber-600 group-hover:translate-x-1 transition-all" />
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 6. PROXIMITY & TRUST: HEIMATVORTEIL WETZLAR */}
-      <section className="py-24 bg-slate-900/60 border-y border-slate-800/80">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <span className="text-amber-400 font-semibold tracking-wider uppercase text-xs sm:text-sm">
-                Heimatstandort HQ Wetzlar
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2 mb-6">
-                Ihr digitaler Vor-Ort-Partner im Lahn-Dill-Kreis
-              </h2>
-              <p className="text-slate-300 text-base leading-relaxed mb-6">
-                Mit unserem Headquarter in Wetzlar sind wir in wenigen Minuten bei Ihnen vor Ort –
-                ob in Dillenburg, Herborn, Haiger, Braunfels oder Aßlar.
-              </p>
-              <p className="text-slate-400 text-sm leading-relaxed mb-8">
-                Sie arbeiten direkt mit Inhaber und Chefentwickler Umutcan Emre Tezgel zusammen:
-                Keine Agentur-Zwischenhändler, keine Verzögerungen, volle Kostentransparenz und 100
-                % handwerkliche Präzision.
-              </p>
+      {/* 4. 4-PILLAR STATS BENTO GRID */}
+      <section className="py-24 relative bg-[#fafafa]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Wirtschaftskraft Lahn-Dill
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">
+              Messbare Ergebnisse für Unternehmen an Lahn & Dill
+            </h2>
+            <p className="text-slate-600 text-base sm:text-lg">
+              High-End Webentwicklung für Optik, Maschinenbau, Werkzeugbau und Handwerk.
+            </p>
+          </div>
 
-              <div className="space-y-3">
-                <div className="flex items-center gap-3 text-sm text-slate-200">
-                  <CheckCircle className="w-5 h-5 text-amber-400 shrink-0" />
-                  <span>Persönliche Betreuung direkt im Lahn-Dill-Kreis</span>
-                </div>
-                <div className="flex items-center gap-3 text-sm text-slate-200">
-                  <CheckCircle className="w-5 h-5 text-amber-400 shrink-0" />
-                  <span>Direkter Draht zur technischen Leitung</span>
-                </div>
-                <div className="flex items-center gap-3 text-sm text-slate-200">
-                  <CheckCircle className="w-5 h-5 text-amber-400 shrink-0" />
-                  <span>100 % Sourcecode- und Design-Eigentum</span>
-                </div>
-              </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-amber-500/40 transition-all group">
+              <div className="text-4xl font-black text-amber-600 mb-2">&lt; 0.4s</div>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Ladezeit im Landkreis</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Subsekundäre Ladezeiten für B2B-Kunden, Einkäufer und mobile Nutzer.
+              </p>
             </div>
 
-            <div className="p-8 rounded-2xl bg-slate-950 border border-slate-800 relative">
-              <div className="absolute top-4 right-4 text-xs font-mono text-amber-400 px-2.5 py-1 rounded bg-amber-950/60 border border-amber-800/40">
-                HQ WETZLAR • LOKAL VOR ORT
-              </div>
-              <h3 className="text-xl font-bold text-white mb-4">
-                Das Coday-Versprechen für den Lahn-Dill-Kreis
-              </h3>
-              <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                Wir bauen digitale Werkzeuge, die Ihre handwerkliche und industrielle Kompetenz
-                sichtbar machen und planbar qualifizierte Anfragen sichern.
+            <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-amber-500/40 transition-all group">
+              <div className="text-4xl font-black text-amber-600 mb-2">100%</div>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Code-Eigentum</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Volle Rechte an Ihrem Quellcode ohne monatliche CMS-Lizenzgebühren oder
+                Lock-in-Effekte.
               </p>
-              <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-300">
-                <div className="font-semibold text-white mb-1">
-                  Direktzugang zu den regionalen Zentren:
+            </div>
+
+            <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-amber-500/40 transition-all group">
+              <div className="text-4xl font-black text-amber-600 mb-2">24h</div>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Reaktionszeit</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Direkte Betreuung durch Gründer Umutcan Emre Tezgel ohne zeitraubende Hierarchien.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-amber-500/40 transition-all group">
+              <div className="text-4xl font-black text-amber-600 mb-2">5-10x</div>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Kosteneffizienter</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Günstiger als traditionelle Großagenturen durch automatisierte
+                KI-Engineering-Workflows.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. COMPARISON TABLE: NEXT.JS VS. TRADITIONELLES WORDPRESS */}
+      <section className="py-24 bg-white border-y border-slate-200 relative overflow-hidden">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Technologie-Vergleich
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">
+              Warum Unternehmen im Lahn-Dill-Kreis auf Next.js setzen
+            </h2>
+            <p className="text-slate-600 text-base sm:text-lg">
+              Der direkte Vergleich zwischen klassischem WordPress und zukunftssicherer
+              Headless-Architektur.
+            </p>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-xl">
+              <thead>
+                <tr className="border-b border-slate-200 bg-slate-50/90">
+                  <th className="p-5 text-sm font-semibold text-slate-700">Kriterium</th>
+                  <th className="p-5 text-sm font-semibold text-red-700">
+                    WordPress / Typo3 Agentur-Monolith
+                  </th>
+                  <th className="p-5 text-sm font-semibold text-amber-900 bg-amber-50/80">
+                    Coday Next.js 15 Headless Stack
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100 text-sm">
+                <tr className="hover:bg-slate-50 transition-colors">
+                  <td className="p-5 font-medium text-slate-900">Ladezeit & TTFB</td>
+                  <td className="p-5 text-slate-600">
+                    2.5s – 4.5s (Plugin-Ballast & Datenbank-Verzögerung)
+                  </td>
+                  <td className="p-5 font-bold text-amber-900 bg-amber-50/40">
+                    &lt; 0.4s (Globales deutsches Edge-CDN)
+                  </td>
+                </tr>
+                <tr className="hover:bg-slate-50 transition-colors">
+                  <td className="p-5 font-medium text-slate-900">Sicherheit & Datenschutz</td>
+                  <td className="p-5 text-slate-600">
+                    Permanente Angriffsfläche durch PHP-Plugins
+                  </td>
+                  <td className="p-5 font-bold text-amber-900 bg-amber-50/40">
+                    100% Sicher (Keine angreifbare Datenbank)
+                  </td>
+                </tr>
+                <tr className="hover:bg-slate-850/50 transition-colors">
+                  <td className="p-5 font-medium text-slate-900">Google Core Web Vitals</td>
+                  <td className="p-5 text-slate-600">Mäßig (Abstrafung im mobilen Suchranking)</td>
+                  <td className="p-5 font-bold text-amber-900 bg-amber-50/40">
+                    Garantiert 100/100 (Top-Rankings im Lahn-Dill-Kreis)
+                  </td>
+                </tr>
+                <tr className="hover:bg-slate-850/50 transition-colors">
+                  <td className="p-5 font-medium text-slate-900">Support & Betreuung</td>
+                  <td className="p-5 text-slate-600">
+                    Anonyme Ticketsysteme & wechselnde Account Manager
+                  </td>
+                  <td className="p-5 font-bold text-amber-900 bg-amber-50/40">
+                    Direkter Entwickler-Kontakt vor Ort in Wetzlar
+                  </td>
+                </tr>
+                <tr className="hover:bg-slate-850/50 transition-colors">
+                  <td className="p-5 font-medium text-slate-900">Preisstruktur</td>
+                  <td className="p-5 text-slate-600">
+                    Fünfstellige Stundensätze & monatliche Retainer
+                  </td>
+                  <td className="p-5 font-bold text-amber-900 bg-amber-50/40">
+                    Verbindlicher Festpreis auf Anfrage
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. FOUNDER PHILOSOPHY BLOCK */}
+      <section className="py-24 relative bg-[#fafafa]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200 shadow-xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-amber-400/5 blur-[100px] rounded-full pointer-events-none" />
+            <div className="relative z-10">
+              <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+                Heimvorteil Lahn-Dill
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 mt-2 mb-6">
+                Echtes Handwerk statt Agentur-Overhead für den Lahn-Dill-Kreis
+              </h2>
+              <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-6">
+                Bei Coday arbeiten Sie direkt mit mir – <strong>Umutcan Emre Tezgel</strong>. Als
+                spezialisierter Solo-Entwickler mit Sitz in Wetzlar baue ich Ihre Webpräsenz für den
+                gesamten Lahn-Dill-Kreis: Technisch perfekt, ausdrucksstark und wirtschaftlich 5–10x
+                effizienter als traditionelle Agentur-Wasserköpfe.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-slate-200 text-sm">
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
+                  <span className="text-slate-700">Direkter Entwickler-Kontakt in Wetzlar</span>
                 </div>
-                <div className="flex gap-4 mt-2">
-                  <Link
-                    href="/webdesign-agentur-wetzlar"
-                    className="text-amber-400 hover:underline font-semibold"
-                  >
-                    → Hub Wetzlar
-                  </Link>
-                  <Link
-                    href="/webdesign-herborn"
-                    className="text-amber-400 hover:underline font-semibold"
-                  >
-                    → Hub Herborn
-                  </Link>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
+                  <span className="text-slate-700">Voller Quellcode-Besitz</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
+                  <span className="text-slate-700">5-10x günstiger als Großagenturen</span>
                 </div>
               </div>
             </div>
@@ -687,199 +605,206 @@ export default async function LandkreisLahnDillPage({
         </div>
       </section>
 
-      {/* 7. FINAL CTA & AUDIT FUNNEL */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <span className="text-amber-400 font-semibold tracking-wider uppercase text-xs sm:text-sm mb-3 block">
-            Kostenloses Website-Audit
-          </span>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white mb-6">
-            Bereit für den digitalen Spitzenplatz im Lahn-Dill-Kreis?
-          </h2>
-          <p className="text-slate-300 text-base sm:text-lg mb-12 max-w-2xl mx-auto leading-relaxed">
-            Lassen Sie Ihre aktuelle Website auf Core Web Vitals, Architektur-Schwachstellen und
-            Conversion-Potenziale analysieren – transparent, fundiert und unverbindlich.
-          </p>
-
-          {/* 3-Steps Box */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12 text-left">
-            <div className="p-6 rounded-xl bg-slate-900/80 border border-slate-800">
-              <div className="w-8 h-8 rounded-full bg-amber-500/20 text-amber-400 font-bold flex items-center justify-center mb-4 text-sm">
-                1
-              </div>
-              <div className="font-bold text-white text-sm mb-1">URL einreichen</div>
-              <div className="text-xs text-slate-400">
-                Senden Sie uns die Web-Adresse Ihres Unternehmens via Formular.
-              </div>
-            </div>
-            <div className="p-6 rounded-xl bg-slate-900/80 border border-slate-800">
-              <div className="w-8 h-8 rounded-full bg-amber-500/20 text-amber-400 font-bold flex items-center justify-center mb-4 text-sm">
-                2
-              </div>
-              <div className="font-bold text-white text-sm mb-1">Video-Audit erhalten</div>
-              <div className="text-xs text-slate-400">
-                10-minütige Analyse mit konkreten Handlungsschritten für Ladezeit und B2B-Leads.
-              </div>
-            </div>
-            <div className="p-6 rounded-xl bg-slate-900/80 border border-slate-800">
-              <div className="w-8 h-8 rounded-full bg-amber-500/20 text-amber-400 font-bold flex items-center justify-center mb-4 text-sm">
-                3
-              </div>
-              <div className="font-bold text-white text-sm mb-1">Strategiegespräch</div>
-              <div className="text-xs text-slate-400">
-                Persönliches Treffen bei Ihnen vor Ort im Lahn-Dill-Kreis oder via Video-Call.
-              </div>
-            </div>
+      {/* 7. SERVICES BENTO SHOWCASE (LAHN-DILL-FOKUS) */}
+      <section className="py-24 bg-white border-y border-slate-200">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Kernkompetenzen
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">
+              Digitale Exzellenz für den Lahn-Dill-Kreis
+            </h2>
+            <p className="text-slate-600 text-base sm:text-lg">
+              Vom Optik-Showcase bis zur Werkzeugbau- & Handwerks-Plattform.
+            </p>
           </div>
 
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="p-8 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <Eye className="w-10 h-10 text-amber-600 mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-slate-900 mb-3">
+                1. Optik- & Photonik-Portale (Wetzlar)
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Präzisionswebdesign für Weltmarktführer und Spezialisten der Optik-, Feinmechanik-
+                und Sensorikbranche in der Kreisstadt Wetzlar.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <GearSix className="w-10 h-10 text-amber-600 mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-slate-900 mb-3">
+                2. Schaltschrank- & Werkzeugbau (Dilltal)
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Performante B2B-Plattformen mit digitalen Produktkatalogen für Herborn, Dillenburg,
+                Haiger und Eschenburg entlang der A45.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <Target className="w-10 h-10 text-amber-600 mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-slate-900 mb-3">
+                3. Local SEO Lahn-Dill Dominanz
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Gezielte Suchmaschinenoptimierung für Top-Rankings in allen 23 Kommunen des
+                Lahn-Dill-Kreises.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm hover:border-amber-500/40 hover:shadow-md transition-all group">
+              <Wrench className="w-10 h-10 text-amber-600 mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-slate-900 mb-3">
+                4. Handwerks- & Bauwirtschafts-Websites
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Conversion-starke Webauftritte mit 60-Sekunden-Express-Bewerbungsfunnels für
+                Meisterbetriebe an Lahn und Dill.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 8. LOCAL GEO-SEMANTIC CONTENT SILO */}
+      <section className="py-24 bg-[#fafafa]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <div>
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Wirtschaftsregion Lahn-Dill
+            </span>
+            <h2 className="text-3xl font-bold text-slate-900 mt-2 mb-6">
+              Optikstadt Wetzlar, Dilltal-Industrie & Handwerk an der Lahn
+            </h2>
+            <p className="text-slate-700 leading-relaxed text-base">
+              Der <strong>Lahn-Dill-Kreis</strong> vereint weltweit anerkannte Spitzentechnologie in
+              der
+              <strong>Kreisstadt Wetzlar</strong> (Optik, Sensorik, Medizintechnik) mit geballter
+              Industriekompetenz im <strong>Dilltal</strong> (Herborn, Dillenburg, Haiger,
+              Dietzhölztal) und einer traditionsreichen Handwerkskultur entlang der Lahn (Braunfels,
+              Solms, Aßlar, Hüttenberg). Mit der{' '}
+              <strong>Bundesautobahn A45 (Sauerlandlinie)</strong> und der{' '}
+              <strong>Bundesstraße B49</strong>
+              verfügt der Kreis über eine erstklassige überregionale Verkehrsanbindung.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-2xl font-bold text-slate-900 mb-4">
+              Lokale Nähe & persönliche Betreuung
+            </h3>
+            <p className="text-slate-700 leading-relaxed text-base">
+              Unser Hauptsitz liegt direkt in <strong>Wetzlar</strong>. Das bedeutet für Sie:
+              Maximale Nähe, persönliche Vor-Ort-Termine innerhalb weniger Minuten und direkte
+              Kommunikation ohne zeitraubende Agentur-Wasserköpfe.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-2xl font-bold text-slate-900 mb-4">
+              Verbindlicher Festpreis auf Anfrage & Go-Live in unter 14 Tagen
+            </h3>
+            <p className="text-slate-700 leading-relaxed text-base">
+              Maximale Planungssicherheit für Ihr Projekt: Nach einer kostenlosen Bedarfsanalyse
+              erhalten Sie ein transparentes Festpreisangebot ohne versteckte Kosten oder teuren
+              Agentur-Overhead.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 9. LOCAL FAQ ACCORDION */}
+      <section className="py-24 bg-white border-t border-slate-200">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Häufige Fragen
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">
+              Fragen & Antworten zu Webdesign im Lahn-Dill-Kreis
+            </h2>
+          </div>
+
+          <div className="space-y-6">
+            <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                Wie viel kostet eine neue Website im Lahn-Dill-Kreis?
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und
+                verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir
+                5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                Wie schnell ist eine neue Website im Lahn-Dill-Kreis online?
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett
+                schlüsselfertig fertiggestellt und online.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                Kommen Sie für ein Beratungsgespräch direkt zu uns in den Betrieb?
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Ja, selbstverständlich. Da Coday seinen Sitz direkt in Wetzlar hat, sind wir in
+                wenigen Minuten bei Ihnen vor Ort – ob in Herborn, Dillenburg, Haiger, Braunfels
+                oder Ehringshausen.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es
+                keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform
+                in ISO-zertifizierten deutschen Rechenzentren gehostet.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                Wer ist unser fester Ansprechpartner?
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 10. BOTTOM CTA */}
+      <section className="py-20 bg-slate-50/80 border-t border-slate-200 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-6">
+            Bereit für den digitalen Vorsprung im Lahn-Dill-Kreis?
+          </h2>
+          <p className="text-slate-600 text-base sm:text-lg mb-10 max-w-2xl mx-auto">
+            Vereinbaren Sie jetzt ein unverbindliches 20-Minuten-Gespräch direkt mit Inhaber Umutcan
+            Emre Tezgel in Wetzlar.
+          </p>
           <Link href="/contact">
             <Button
               variant="primary"
               size="lg"
-              className="bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold px-10 py-5 text-lg shadow-xl shadow-amber-500/25 transition-all hover:scale-[1.02]"
+              className="bg-primary-700 hover:bg-primary-800 text-white font-bold px-10 py-5 text-lg shadow-xl shadow-primary-700/25 transition-all hover:scale-105"
             >
-              Jetzt kostenloses Audit anfordern
+              Kostenloses Erstgespräch anfordern
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </Link>
         </div>
       </section>
-
-      {/* 8. SEMANTISCHE VERLINKUNG / PROXIMITY CROSS-LINKS */}
-      <footer className="py-16 bg-slate-950 border-t border-slate-900 text-xs text-slate-400">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-slate-300 font-semibold mb-6 uppercase tracking-wider">
-            Regionale Vernetzung & Standorte im Lahn-Dill-Kreis & Hessen
-          </div>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-12">
-            <div>
-              <div className="text-white font-medium mb-3">Lahn-Dill Kernzentren</div>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href="/webdesign-agentur-wetzlar"
-                    className="hover:text-amber-400 transition-colors"
-                  >
-                    Webdesign Wetzlar (HQ)
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/webdesign-herborn"
-                    className="hover:text-amber-400 transition-colors"
-                  >
-                    Webdesign Herborn
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/webdesign-giessen"
-                    className="hover:text-amber-400 transition-colors"
-                  >
-                    Webdesign Gießen (B49)
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <div className="text-white font-medium mb-3">Nachbarkreise & Mittelhessen</div>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href="/webdesign-marburg"
-                    className="hover:text-amber-400 transition-colors"
-                  >
-                    Webdesign Marburg-Biedenkopf
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/webdesign-limburg"
-                    className="hover:text-amber-400 transition-colors"
-                  >
-                    Webdesign Limburg-Weilburg
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/webdesign-friedberg"
-                    className="hover:text-amber-400 transition-colors"
-                  >
-                    Webdesign Wetteraukreis
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <div className="text-white font-medium mb-3">Rhein-Main Achse</div>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href="/webdesign-frankfurt"
-                    className="hover:text-amber-400 transition-colors"
-                  >
-                    Webdesign Frankfurt am Main
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/webdesign-wiesbaden"
-                    className="hover:text-amber-400 transition-colors"
-                  >
-                    Webdesign Wiesbaden
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/webdesign-bad-homburg"
-                    className="hover:text-amber-400 transition-colors"
-                  >
-                    Webdesign Bad Homburg
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <div className="text-white font-medium mb-3">Enterprise & Services</div>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href="/services/enterprise-web"
-                    className="hover:text-amber-400 transition-colors"
-                  >
-                    Enterprise B2B-Webentwicklung
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services/seo" className="hover:text-amber-400 transition-colors">
-                    B2B SEO Lahn-Dill
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/standorte/hessen" className="hover:text-amber-400 transition-colors">
-                    Hessen Standorte Übersicht
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div>© {new Date().getFullYear()} Coday Webagentur. Alle Rechte vorbehalten.</div>
-            <div className="flex gap-6">
-              <Link href="/legal/impressum" className="hover:text-slate-200 transition-colors">
-                Impressum
-              </Link>
-              <Link href="/legal/datenschutz" className="hover:text-slate-200 transition-colors">
-                Datenschutz
-              </Link>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

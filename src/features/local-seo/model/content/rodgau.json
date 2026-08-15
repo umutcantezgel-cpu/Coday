@@ -1,0 +1,107 @@
+{
+  "target": "rodgau",
+  "displayName": "Rodgau",
+  "type": "location",
+  "meta": {
+    "title": "Webdesign Rodgau | Lokale Webagentur & SEO · Coday",
+    "description": "Professionelles Webdesign in Rodgau & Kreis Offenbach. Ultraschnelle Ladezeiten, messbare Leads für Handwerk & Mittelstand. Festpreise auf Anfrage."
+  },
+  "hero": {
+    "headline": "Webdesign Rodgau: Next.js Websites für Handwerk, Dienstleister & Mittelstand",
+    "subheadline": "Ihre Webagentur für Rodgau (Jügesheim, Dudenhofen, Nieder-Roden, Weiskirchen, Hainhausen).",
+    "description": "Als spezialisierte Webagentur für Rodgau entwickeln wir blitzschnelle, sichere und hochkonvertierende Next.js Webanwendungen. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+  },
+  "localDominance": {
+    "title": "Digitale Vorherrschaft für Rodgau & den Kreis Offenbach",
+    "description": "Rodgau ist mit seinen fünf pulsierenden Stadtteilen (Jügesheim, Dudenhofen, Nieder-Roden, Weiskirchen, Hainhausen) und der direkten B45-Achse ein starker Wirtschaftsstandort für Handwerksbetriebe, Bauunternehmen, Fachhändler und den B2B-Mittelstand. Wir bauen digitale Plattformen, die messbar neue Kunden und Fachkräfte anziehen.",
+    "points": [
+      "Handwerk & Meisterbetriebe: Schnelle, moderne Webseiten mit 60-Sekunden-Recruiting-Funnels für Jügesheim und Nieder-Roden.",
+      "Mittelstand & Dienstleister: Repräsentative Next.js Webauftritte für Dienstleistungs- und Handelsunternehmen in Dudenhofen.",
+      "B45 & Kreis Offenbach Achse: Optimale regionale Sichtbarkeit zwischen Hanau, Offenbach und Dieburg.",
+      "Next.js als SEO-Katalysator: 100/100 Google Core Web Vitals für Top-Platzierungen bei 'Webdesign Rodgau'.",
+      "DSGVO & Deutsches Hosting: Höchste Datensicherheit ohne anfälligen WordPress-Plugin-Ballast.",
+      "Inhabergeführt & Festpreis: Direkter Entwickler-Kontakt mit Umutcan Emre Tezgel ohne teuren Großagentur-Overhead."
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "Digitale Leadgewinnung für Handwerk & Bauwirtschaft in Rodgau",
+      "content": "Automatisierte Anfrageformulare und mobile Express-Bewerbungen für Dachdecker, SHK-Betriebe und Elektriker in Jügesheim und Nieder-Roden."
+    },
+    {
+      "title": "B2B-Webauftritte für Handel & Dienstleister in Dudenhofen & Weiskirchen",
+      "content": "Minimalistisches Design, blitzschnelle Ladezeiten und perfekte Darstellung auf allen Endgeräten."
+    },
+    {
+      "title": "Local SEO & Kreis Offenbach Dominanz",
+      "content": "Dominante Platzierungen in den Google-Suchergebnissen für Rodgau, Rödermark, Dietzenbach, Obertshausen und Seligenstadt."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wie viel kostet eine neue Website in Rodgau?",
+      "a": "Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance."
+    },
+    {
+      "q": "Wie schnell ist eine neue Website in Rodgau online?",
+      "a": "In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online."
+    },
+    {
+      "q": "Kommen Sie für ein Beratungsgespräch direkt nach Rodgau?",
+      "a": "Ja, sehr gerne. Über die A45 und B45 sind wir von unserem Wetzlarer HQ in unter 45 Minuten direkt bei Ihnen vor Ort in Jügesheim, Dudenhofen oder Nieder-Roden."
+    },
+    {
+      "q": "Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?",
+      "a": "Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet."
+    },
+    {
+      "q": "Wer ist unser fester Ansprechpartner?",
+      "a": "Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support."
+    }
+  ],
+  "meta_en": {
+    "title": "Web Design Rodgau | Web Agency & SEO · Coday",
+    "description": "Professional web design in Rodgau & Kreis Offenbach. Ultra-fast load times, measurable leads for craft & SME businesses. Fixed price on request."
+  },
+  "hero_en": {
+    "headline": "Web Design Rodgau: Next.js Websites for Craft, Services & Mid-Market",
+    "subheadline": "Your web agency for Rodgau (Jügesheim, Dudenhofen, Nieder-Roden).",
+    "description": "Custom Next.js web applications for Rodgau. Fixed price upon request."
+  },
+  "localDominance_en": {
+    "title": "Digital Dominance for Rodgau & Offenbach District",
+    "description": "Rodgau is a dynamic hub for skilled crafts, construction, trade, and medium-sized businesses. We build fast, high-converting digital platforms.",
+    "points": [
+      "Crafts & Trade: Modern websites with 60-second recruiting funnels for Jügesheim and Nieder-Roden.",
+      "SME & Service Sector: Professional Next.js corporate presence for businesses in Dudenhofen.",
+      "B45 Corridor: Targeted regional visibility between Hanau, Offenbach, and Dieburg.",
+      "SEO Leadership: 100/100 Core Web Vitals for top search visibility.",
+      "GDPR Edge Hosting: Maximum data safety on German infrastructure.",
+      "Direct Founder Access: Transparent fixed pricing without agency overhead."
+    ]
+  },
+  "contentSections_en": [
+    {
+      "title": "Digital Lead Generation for Crafts & Construction in Rodgau",
+      "content": "Optimized request forms and rapid mobile onboarding for regional trade companies."
+    },
+    {
+      "title": "B2B Websites for Trade & Services in Dudenhofen & Weiskirchen",
+      "content": "Minimalist design, instant page loads, and flawless responsiveness across all devices."
+    }
+  ],
+  "faq_en": [
+    {
+      "q": "How much does a professional website in Rodgau cost?",
+      "a": "Binding fixed price on request following a free audit. 5-10x more cost-effective than traditional agencies."
+    },
+    {
+      "q": "How long does implementation take?",
+      "a": "Turnkey delivery within 10 to 14 business days."
+    },
+    {
+      "q": "Do you meet on-site in Rodgau?",
+      "a": "Yes, we gladly meet you in Rodgau via the A45/B45 highways."
+    }
+  ]
+}

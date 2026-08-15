@@ -1,0 +1,107 @@
+{
+  "target": "hofheim",
+  "displayName": "Hofheim am Taunus",
+  "type": "location",
+  "meta": {
+    "title": "Webdesign Hofheim am Taunus | Webagentur · Coday",
+    "description": "Webdesign & SEO in Hofheim am Taunus. Moderne Websites mit <0.5s Ladezeit für Praxen, Kanzleien & lokale Dienstleister. Verbindlicher Festpreis auf Anfrage."
+  },
+  "hero": {
+    "headline": "Webdesign Hofheim am Taunus: Next.js Websites für Praxen, Kanzleien & B2B",
+    "subheadline": "Ihre Webagentur für Hofheim am Taunus, Kriftel, Kelkheim und Eppstein.",
+    "description": "Als spezialisierte Webagentur für Hofheim am Taunus entwickeln wir blitzschnelle, sichere und hochkonvertierende Next.js Webanwendungen. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+  },
+  "localDominance": {
+    "title": "Digitale Vorherrschaft für Hofheim & den Main-Taunus-Kreis",
+    "description": "Hofheim am Taunus vereint die administrative Kraft als Kreisstadt des Main-Taunus-Kreises (MTK) mit hoher Kaufkraft, exzellenten Facharztpraxen, Kanzleien und Handelsclustern in Wallau. Wir bauen digitale Plattformen, die messbar neue Mandanten, Patienten und Kunden gewinnen.",
+    "points": [
+      "Kanzleien, Notare & Steuerberater: Seriöses, minimalistisches Webdesign für anspruchsvolle Mandanten im Vordertaunus.",
+      "Facharztpraxen & Gesundheitszentren: Barrierefreie Interfaces (BITV 2.0 / WCAG) und DSGVO-konforme Terminvereinbarung.",
+      "Gewerbegebiet Wallau & Kriftel: B2B-Leadgenerierung für Handels-, Logistik- und Dienstleistungsunternehmen.",
+      "A66-Achse Frankfurt-Wiesbaden: Perfekte regionale Vernetzung im Herzen des Rhein-Main-Gebiets.",
+      "Next.js als SEO-Katalysator: 100/100 Google Core Web Vitals für Top-Platzierungen bei 'Webdesign Hofheim'.",
+      "Inhabergeführt & Festpreis: Direkter Entwickler-Kontakt mit Umutcan Emre Tezgel ohne teuren Großagentur-Overhead."
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "Webportale für Kanzleien & Steuerberater in Hofheim am Taunus",
+      "content": "Minimalistische Ästhetik, höchste Datensicherheit und geschützte Mandantenbereiche für Hofheims Rechts- und Wirtschaftsberatung."
+    },
+    {
+      "title": "Digitale Exzellenz für Facharztpraxen & Therapeuten",
+      "content": "Blitzschnelle, barrierefreie Praxis-Websites mit intuitiver mobiler Terminbuchung für Patienten im Main-Taunus-Kreis."
+    },
+    {
+      "title": "Local SEO & Main-Taunus-Kreis Dominanz",
+      "content": "Dominante Platzierungen in den Google-Suchergebnissen für Hofheim am Taunus, Kriftel, Kelkheim, Eppstein und Hattersheim."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wie viel kostet eine neue Website in Hofheim am Taunus?",
+      "a": "Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance."
+    },
+    {
+      "q": "Wie schnell ist eine neue Website in Hofheim online?",
+      "a": "In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online."
+    },
+    {
+      "q": "Kommen Sie für ein Beratungsgespräch direkt nach Hofheim?",
+      "a": "Ja, sehr gerne. Über die A3 und A66 sind wir von unserem Wetzlarer HQ in unter 40 Minuten direkt bei Ihnen vor Ort in Hofheim, Kriftel oder Wallau."
+    },
+    {
+      "q": "Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?",
+      "a": "Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet."
+    },
+    {
+      "q": "Wer ist unser fester Ansprechpartner?",
+      "a": "Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support."
+    }
+  ],
+  "meta_en": {
+    "title": "Web Design Hofheim am Taunus | Web Agency · Coday",
+    "description": "Web design & SEO in Hofheim am Taunus. Modern websites with <0.5s load time for clinics, law firms & services. Binding fixed price on request."
+  },
+  "hero_en": {
+    "headline": "Web Design Hofheim am Taunus: Next.js Websites for Practices, Law & B2B",
+    "subheadline": "Your web agency for Hofheim am Taunus, Kriftel, Kelkheim, and Eppstein.",
+    "description": "Custom Next.js web applications for Hofheim am Taunus. Fixed price upon request."
+  },
+  "localDominance_en": {
+    "title": "Digital Dominance for Hofheim & Main-Taunus",
+    "description": "Hofheim combines district governance with high purchasing power and medical hubs. We engineer fast, modern digital platforms.",
+    "points": [
+      "Law & Consulting Focus: Minimalist, accessible web designs commanding trust and authority.",
+      "Medical Practices: Fast, accessible websites with seamless patient appointment booking.",
+      "Commercial Hubs: Targeted lead generation for Wallau and Kriftel.",
+      "A66 Corridor: Fast connectivity between Frankfurt, Hofheim, and Wiesbaden.",
+      "SEO Leadership: 100/100 Core Web Vitals for top search visibility.",
+      "Direct Founder Access: Transparent fixed pricing without agency overhead."
+    ]
+  },
+  "contentSections_en": [
+    {
+      "title": "Web Portals for Law Firms & Consultancies in Hofheim",
+      "content": "Prestigious, accessible digital presence commanding trust and client conversions."
+    },
+    {
+      "title": "Digital Excellence for Medical Practices & Specialists",
+      "content": "Fast, accessible websites with seamless patient appointment scheduling."
+    }
+  ],
+  "faq_en": [
+    {
+      "q": "How much does a professional website in Hofheim cost?",
+      "a": "Binding fixed price on request following a free audit. 5-10x more cost-effective than traditional agencies."
+    },
+    {
+      "q": "How long does implementation take?",
+      "a": "Turnkey delivery within 10 to 14 business days."
+    },
+    {
+      "q": "Do you meet on-site in Hofheim?",
+      "a": "Yes, we gladly meet you in Hofheim via the A3/A66 highways."
+    }
+  ]
+}

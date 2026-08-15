@@ -64,9 +64,9 @@
     }
   },
   "trust": {
-    "facebook": "Facebook Geschäft",
+    "facebook": "Facebook Business",
     "google": "Google Partner",
-    "shopify": "Shopify Fachleute"
+    "shopify": "Shopify Experten"
   },
   "testimonial": {
     "text": "Professionelle Umsetzung und direkter Draht zum Entwickler. Genau so sollte Webentwicklung funktionieren.",

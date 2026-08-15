@@ -1,0 +1,107 @@
+{
+  "target": "limburg",
+  "displayName": "Limburg an der Lahn",
+  "type": "location",
+  "meta": {
+    "title": "Webdesign Limburg | Next.js Agentur & SEO · Coday",
+    "description": "Professionelles Webdesign in Limburg an der Lahn. Moderne Websites, Top-Ladezeiten & SEO für Dienstleister, Handel & Kanzleien. Festpreis auf Anfrage."
+  },
+  "hero": {
+    "headline": "Webdesign Limburg: Digitale Exzellenz für Handel, Logistik & Dienstleistung",
+    "subheadline": "Webdesign & Next.js Entwicklung am ICE-Knotenpunkt Limburg, Diez, Elz und Hadamar.",
+    "description": "Als spezialisierte Webagentur für Limburg an der Lahn entwickeln wir blitzschnelle, conversion-starke und hochsichere Next.js Webanwendungen. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+  },
+  "localDominance": {
+    "title": "Digitale Dominanz für Limburgs Handels- & Logistik-Unternehmen",
+    "description": "Limburg an der Lahn ist als ICE-Knotenpunkt und Schnittstelle zwischen Hessen und Rheinland-Pfalz ein dynamischer Handels- und Logistikstandort. Wir bauen Websites mit messbarem ROI.",
+    "points": [
+      "Fokus auf Handel, Logistik & Dienstleister: Hochperformante Webanwendungen für Unternehmen am Limburger Kreuz (A3 / B49 / B54).",
+      "Gewerbegebiet Dietkircher Höhe & Elz: Gezielte regionale und überregionale Sichtbarkeit für Geschäftskunden und Verbraucher.",
+      "Regionale Nähe im Lahntal: In unter 25 Minuten ab Wetzlar via B49 vierspurig direkt vor Ort bei Ihnen in Limburg oder Diez.",
+      "Next.js als SEO-Katalysator: Top-Rankings für 'Webdesign Limburg' und Branchen-Keywords durch 100/100 Core Web Vitals.",
+      "Kanzleien, Praxen & Beratung: Seriöses, barrierefreies Webdesign mit Online-Terminvereinbarung und höchster DSGVO-Sicherheit.",
+      "DSGVO-konformes deutsches Hosting: Keine anfälligen WordPress-Plugins, maximale Zuverlässigkeit."
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "Webportale für Handel, Logistik & E-Commerce in Limburg",
+      "content": "Unternehmen an der Dietkircher Höhe und am ICE-Bahnhof profitieren von subsekundären Ladezeiten und intuitiven Schnittstellen für Kunden- und Partnerportale."
+    },
+    {
+      "title": "Maßgeschneidertes Webdesign für Kanzleien, Ärzte & Dienstleister in Limburg & Diez",
+      "content": "Kanzleien, Steuerberater und Facharztpraxen rund um den Limburger Dom und die Altstadt gewinnen durch vertrauensbildendes Webdesign planbar neue Mandanten und Patienten."
+    },
+    {
+      "title": "Local SEO & Schnittstelle Hessen / Rheinland-Pfalz",
+      "content": "Dominante Platzierungen in den Google-Suchergebnissen für Unternehmen in Limburg, Diez, Elz, Hadamar, Bad Camberg und Runkel."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wie viel kostet eine neue Website in Limburg?",
+      "a": "Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance."
+    },
+    {
+      "q": "Wie schnell ist eine neue Website in Limburg online?",
+      "a": "In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online."
+    },
+    {
+      "q": "Kommen Sie für ein Beratungsgespräch direkt nach Limburg?",
+      "a": "Ja, sehr gerne. Über die vierspurige B49 sind wir von unserem Wetzlarer HQ in unter 25 Minuten direkt bei Ihnen vor Ort in Limburg, Diez oder Elz."
+    },
+    {
+      "q": "Bieten Sie auch Lösungen für Kanzleien und Ärzte?",
+      "a": "Ja. Wir entwickeln hochsichere, barrierefreie Websites mit DSGVO-konformer Online-Terminbuchung und schnellen Ladezeiten."
+    },
+    {
+      "q": "Wer ist unser fester Ansprechpartner?",
+      "a": "Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support."
+    }
+  ],
+  "meta_en": {
+    "title": "Web Design Limburg | Next.js Agency & SEO · Coday",
+    "description": "Professional web design in Limburg an der Lahn. Modern websites, top loading times & SEO for services, trade & law firms. Fixed price on request."
+  },
+  "hero_en": {
+    "headline": "Web Design Limburg: Digital Excellence for Trade, Logistics & Services",
+    "subheadline": "Web design & Next.js development at the ICE hub Limburg, Diez, Elz and Hadamar.",
+    "description": "Custom Next.js web development for Limburg businesses. Fast, secure, and conversion-focused. Fixed price on request."
+  },
+  "localDominance_en": {
+    "title": "Digital Dominance for Limburg's Trade & Logistics Hub",
+    "description": "Limburg is a key junction connecting Hesse and Rhineland-Palatinate. We build high-converting websites for market leaders.",
+    "points": [
+      "Trade & Logistics Focus: High-performance web applications for companies at the Limburger Kreuz (A3 / B49 / B54).",
+      "Industrial Parks Dietkircher Höhe & Elz: Targeted regional and supra-regional visibility.",
+      "Close Regional Access: Under 25 minutes from Wetzlar via B49 to your Limburg premises.",
+      "SEO Leadership: 100/100 Core Web Vitals for dominant Google visibility.",
+      "Law Firms & Medical Practices: Trustworthy, accessible web design with integrated booking.",
+      "GDPR Compliant German Hosting: Maximum security without WordPress vulnerabilities."
+    ]
+  },
+  "contentSections_en": [
+    {
+      "title": "Web Portals for Trade & Logistics in Limburg",
+      "content": "Next.js platforms offering lightning-fast user experiences for partners and clients."
+    },
+    {
+      "title": "Custom Web Design for Practices & Professional Services",
+      "content": "Accessible, high-trust digital presence for lawyers, tax consultants and doctors."
+    }
+  ],
+  "faq_en": [
+    {
+      "q": "How much does a professional website in Limburg cost?",
+      "a": "Binding fixed price on request following a free audit. 5-10x more cost-effective than traditional agencies."
+    },
+    {
+      "q": "How long does implementation take?",
+      "a": "Turnkey delivery within 10 to 14 business days."
+    },
+    {
+      "q": "Do you meet on-site in Limburg?",
+      "a": "Yes, we gladly meet you at your Limburg premises via the B49 highway."
+    }
+  ]
+}

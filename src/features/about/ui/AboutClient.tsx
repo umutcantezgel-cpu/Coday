@@ -170,12 +170,12 @@ export const AboutClient: React.FC = () => {
   ];
 
   return (
-    <div className="bg-slate-950 min-h-dvh text-slate-100 selection:bg-amber-500/30 selection:text-amber-200">
+    <div className="bg-[#fafafa] min-h-dvh text-slate-900 selection:bg-amber-500/20 selection:text-amber-900">
       {/* ═══ HERO ═══ */}
-      <section className="relative pt-36 pb-28 px-4 overflow-hidden bg-slate-950">
+      <section className="relative pt-36 pb-28 px-4 overflow-hidden bg-[#fafafa]">
         {/* Ambient Glow */}
         <div
-          className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] max-w-3xl max-h-3xl bg-amber-500/10 blur-[150px] rounded-full pointer-events-none"
+          className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] max-w-3xl max-h-3xl bg-amber-400/10 blur-[150px] rounded-full pointer-events-none"
           aria-hidden="true"
         />
 
@@ -185,20 +185,24 @@ export const AboutClient: React.FC = () => {
           </m.div>
 
           <m.div
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-950/40 text-amber-400 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-6 backdrop-blur-md"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-50 text-amber-800 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-6 shadow-sm"
             {...stagger(0.1)}
           >
-            <Sparkle className="w-4 h-4 text-amber-400" />
+            <Sparkle className="w-4 h-4 text-amber-600" />
             {isEn ? 'AI-Augmented Craftsmanship' : 'KI-Augmented Craftsmanship'}
           </m.div>
 
           <m.h1
-            className="font-display font-black text-4xl sm:text-6xl lg:text-7xl text-white mb-8 tracking-tight leading-[1.1] max-w-5xl mx-auto"
+            className="font-display font-black text-4xl sm:text-6xl lg:text-7xl text-slate-900 mb-8 tracking-tight leading-[1.1] max-w-5xl mx-auto"
             {...stagger(0.15)}
           >
             {isEn ? 'Bespoke Next.js Web Development.' : 'Maßgeschneiderte Next.js Webentwicklung.'}{' '}
             <GradientText
-              colors={['#fbbf24', '#fef08a', '#f59e0b']}
+              colors={[
+                'var(--color-primary-600)',
+                'var(--color-secondary-800)',
+                'var(--color-primary-600)',
+              ]}
               animationSpeed={5}
               showBorder={false}
               className="inline-block"
@@ -208,7 +212,7 @@ export const AboutClient: React.FC = () => {
           </m.h1>
 
           <m.p
-            className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-12"
+            className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-12"
             {...stagger(0.25)}
           >
             {isEn
@@ -219,7 +223,7 @@ export const AboutClient: React.FC = () => {
           <m.div className="flex flex-col sm:flex-row justify-center gap-4" {...stagger(0.35)}>
             <Link
               href="/contact"
-              className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-amber-400 text-slate-950 rounded-full font-bold hover:bg-amber-300 transition duration-300 hover:scale-[1.02] shadow-lg shadow-amber-500/20"
+              className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary-700 text-white rounded-full font-bold hover:bg-primary-800 transition duration-300 hover:scale-[1.02] shadow-md shadow-primary-700/20"
             >
               {isEn ? 'Request Free Audit' : 'Kostenloses Website-Audit anfordern'}
               <ArrowRight
@@ -229,7 +233,7 @@ export const AboutClient: React.FC = () => {
             </Link>
             <Link
               href="/work"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-slate-900 text-slate-200 border border-slate-800 rounded-full font-medium hover:bg-slate-850 transition duration-300"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-full font-medium hover:bg-slate-50 transition duration-300 shadow-sm"
             >
               {isEn ? 'View Real Case Studies' : 'Reale Kunden-Ergebnisse ansehen'}
             </Link>
@@ -238,23 +242,23 @@ export const AboutClient: React.FC = () => {
       </section>
 
       {/* ═══ MISSION PULLQUOTE ═══ */}
-      <section className="relative py-28 overflow-hidden bg-slate-900/60 border-y border-slate-800/80">
+      <section className="relative py-28 overflow-hidden bg-white border-y border-slate-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <m.blockquote {...stagger(0.1)}>
-            <p className="text-2xl md:text-3xl lg:text-4xl font-display font-light text-white leading-snug tracking-tight">
+            <p className="text-2xl md:text-3xl lg:text-4xl font-display font-light text-slate-900 leading-snug tracking-tight">
               {isEn ? (
                 <>
                   „We believe in{' '}
-                  <span className="text-amber-400 font-semibold">uncompromising speed</span> and{' '}
-                  <span className="text-amber-400 font-semibold">flawless engineering</span>. Human
+                  <span className="text-amber-700 font-semibold">uncompromising speed</span> and{' '}
+                  <span className="text-amber-700 font-semibold">flawless engineering</span>. Human
                   leads the vision, modern code executes with perfection.“
                 </>
               ) : (
                 <>
                   „Wir glauben an{' '}
-                  <span className="text-amber-400 font-semibold">kompromisslose Ladezeiten</span>{' '}
+                  <span className="text-amber-700 font-semibold">kompromisslose Ladezeiten</span>{' '}
                   und{' '}
-                  <span className="text-amber-400 font-semibold">handwerkliche Code-Präzision</span>
+                  <span className="text-amber-700 font-semibold">handwerkliche Code-Präzision</span>
                   . Human dirigiert die Strategie, modernste Architektur führt fehlerfrei aus.“
                 </>
               )}
@@ -263,7 +267,7 @@ export const AboutClient: React.FC = () => {
 
           <m.div className="mt-8 flex items-center justify-center gap-3" {...stagger(0.2)}>
             <div className="w-12 h-px bg-amber-500/50" />
-            <span className="text-xs sm:text-sm text-slate-400 tracking-widest uppercase font-semibold">
+            <span className="text-xs sm:text-sm text-slate-500 tracking-widest uppercase font-semibold">
               Umutcan Emre Tezgel • Gründer & Lead-Architekt Coday
             </span>
             <div className="w-12 h-px bg-amber-500/50" />
@@ -272,17 +276,17 @@ export const AboutClient: React.FC = () => {
       </section>
 
       {/* ═══ VALUES & PHILOSOPHY ═══ */}
-      <section className="py-24 lg:py-32 bg-slate-950 relative overflow-hidden">
+      <section className="py-24 lg:py-32 bg-[#fafafa] relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16 max-w-3xl mx-auto">
             <m.span
-              className="text-amber-400 font-bold tracking-[0.2em] uppercase text-xs mb-3 block"
+              className="text-amber-700 font-bold tracking-[0.2em] uppercase text-xs mb-3 block"
               {...stagger(0)}
             >
               {isEn ? 'Our Principles' : 'Unsere Werte & Arbeitsweise'}
             </m.span>
             <m.h2
-              className="text-3xl md:text-5xl font-display font-bold text-white tracking-tight"
+              className="text-3xl md:text-5xl font-display font-bold text-slate-900 tracking-tight"
               {...stagger(0.1)}
             >
               {isEn
@@ -295,15 +299,17 @@ export const AboutClient: React.FC = () => {
             {values.map((value, index) => (
               <m.div
                 key={value.title}
-                className="group relative p-8 rounded-2xl border border-slate-800 bg-slate-900/50 backdrop-blur-sm hover:border-amber-500/40 transition duration-300"
+                className="group relative p-8 rounded-2xl border border-slate-200/80 bg-white hover:border-amber-500/40 hover:shadow-md transition duration-300 shadow-sm"
                 {...stagger(index * 0.1)}
               >
                 <div className="relative z-10">
-                  <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center mb-5 group-hover:bg-amber-500/20 transition-colors">
-                    <value.icon size={24} weight="duotone" className="text-amber-400" />
+                  <div className="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center mb-5 border border-amber-200/50 group-hover:bg-amber-100 transition-colors">
+                    <value.icon size={24} weight="duotone" className="text-amber-600" />
                   </div>
-                  <h3 className="text-xl font-display font-bold text-white mb-3">{value.title}</h3>
-                  <p className="text-slate-400 leading-relaxed text-sm sm:text-base">
+                  <h3 className="text-xl font-display font-bold text-slate-900 mb-3">
+                    {value.title}
+                  </h3>
+                  <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
                     {value.description}
                   </p>
                 </div>
@@ -314,18 +320,18 @@ export const AboutClient: React.FC = () => {
       </section>
 
       {/* ═══ ENTERPRISE TECH STACK BENTO ═══ */}
-      <section className="py-24 lg:py-32 bg-slate-900/40 border-y border-slate-800/80 relative">
+      <section className="py-24 lg:py-32 bg-white border-y border-slate-200 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16 max-w-3xl mx-auto">
-            <span className="text-amber-400 font-bold tracking-[0.2em] uppercase text-xs mb-3 block">
+            <span className="text-amber-700 font-bold tracking-[0.2em] uppercase text-xs mb-3 block">
               {isEn ? 'Engineered for Performance' : 'Moderne Enterprise-Architektur'}
             </span>
-            <h2 className="text-3xl md:text-5xl font-display font-bold text-white tracking-tight mb-4">
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-slate-900 tracking-tight mb-4">
               {isEn
                 ? 'The Modern Tech Stack Behind Coday'
                 : 'Der High-Tech Stack hinter jeder Coday-Plattform'}
             </h2>
-            <p className="text-slate-400 text-base sm:text-lg">
+            <p className="text-slate-600 text-base sm:text-lg">
               Keine trägen Page-Builder, keine Sicherheitslücken. Wir setzen auf dieselbe
               Technologie, die auch von OpenAI, Netflix und Vercel für weltweite Höchstleistung
               genutzt wird.
@@ -333,23 +339,23 @@ export const AboutClient: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {techStack.map((tech, index) => (
+            {techStack.map((tech) => (
               <div
                 key={tech.name}
-                className="p-8 rounded-2xl bg-slate-950 border border-slate-800 hover:border-amber-500/30 transition-all flex flex-col justify-between"
+                className="p-8 rounded-2xl bg-slate-50/80 border border-slate-200/80 hover:border-amber-500/30 hover:shadow-md transition-all flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-xs font-mono text-amber-400 uppercase tracking-wider px-2.5 py-1 rounded bg-amber-950/40 border border-amber-800/30">
+                    <span className="text-xs font-mono text-amber-800 uppercase tracking-wider px-2.5 py-1 rounded bg-amber-50 border border-amber-200">
                       {tech.category}
                     </span>
-                    <tech.icon className="w-6 h-6 text-slate-400" />
+                    <tech.icon className="w-6 h-6 text-slate-500" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">{tech.name}</h3>
-                  <p className="text-slate-400 text-sm leading-relaxed mb-6">{tech.desc}</p>
+                  <h3 className="text-xl font-bold text-slate-900 mb-2">{tech.name}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed mb-6">{tech.desc}</p>
                 </div>
-                <div className="flex items-center gap-2 text-xs font-semibold text-amber-400/90 pt-4 border-t border-slate-900">
-                  <CheckCircle className="w-4 h-4 text-amber-400 shrink-0" />
+                <div className="flex items-center gap-2 text-xs font-semibold text-amber-800 pt-4 border-t border-slate-200">
+                  <CheckCircle className="w-4 h-4 text-amber-600 shrink-0" />
                   100% optimiert für Core Web Vitals
                 </div>
               </div>
@@ -359,13 +365,13 @@ export const AboutClient: React.FC = () => {
       </section>
 
       {/* ═══ PROCESS / ARBEITSWEISE ═══ */}
-      <section className="py-24 lg:py-32 bg-slate-950 relative overflow-hidden">
+      <section className="py-24 lg:py-32 bg-[#fafafa] relative overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-20">
-            <span className="text-amber-400 font-bold tracking-[0.2em] uppercase text-xs mb-3 block">
+            <span className="text-amber-700 font-bold tracking-[0.2em] uppercase text-xs mb-3 block">
               {isEn ? 'Step-by-Step Delivery' : 'In 4 Stufen zum Erfolg'}
             </span>
-            <h2 className="text-3xl md:text-5xl font-display font-bold text-white tracking-tight">
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-slate-900 tracking-tight">
               {isEn
                 ? 'How Your High-Performance Website Is Built'
                 : 'So entsteht Ihre maßgeschneiderte Plattform'}
@@ -375,14 +381,16 @@ export const AboutClient: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6">
             {processSteps.map((step, index) => (
               <div key={step.title} className="relative text-center group">
-                <div className="relative mx-auto w-16 h-16 rounded-full border-2 border-slate-800 bg-slate-900 flex items-center justify-center mb-6 group-hover:border-amber-400 transition-colors z-10">
-                  <step.icon size={26} weight="duotone" className="text-amber-400" />
+                <div className="relative mx-auto w-16 h-16 rounded-full border-2 border-slate-200 bg-white flex items-center justify-center mb-6 group-hover:border-amber-500 shadow-sm transition-colors z-10">
+                  <step.icon size={26} weight="duotone" className="text-amber-600" />
                 </div>
-                <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-amber-400 text-slate-950 text-xs font-black flex items-center justify-center z-20 shadow-md">
+                <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-primary-700 text-white text-xs font-black flex items-center justify-center z-20 shadow-md">
                   {index + 1}
                 </div>
-                <h3 className="font-display font-bold text-white text-base mb-2">{step.title}</h3>
-                <p className="text-slate-400 text-xs leading-relaxed max-w-[200px] mx-auto">
+                <h3 className="font-display font-bold text-slate-900 text-base mb-2">
+                  {step.title}
+                </h3>
+                <p className="text-slate-600 text-xs leading-relaxed max-w-[200px] mx-auto">
                   {step.description}
                 </p>
               </div>
@@ -400,17 +408,17 @@ export const AboutClient: React.FC = () => {
       <ScrollReveal index={1}>
         <RelevantFAQs
           serviceId={['web-development', 'web-design', 'seo']}
-          className="bg-slate-900/60 border-t border-slate-800/80"
+          className="bg-white border-t border-slate-200"
         />
       </ScrollReveal>
 
       {/* ═══ TRUST SIGNALS ═══ */}
       <ScrollReveal index={0}>
-        <section className="bg-slate-950 pt-24 pb-12">
+        <section className="bg-[#fafafa] pt-24 pb-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <TrustBadges
               align="center"
-              className="opacity-80 grayscale hover:grayscale-0 transition duration-300 [&_*]:text-white"
+              className="opacity-80 grayscale hover:grayscale-0 transition duration-300"
             />
           </div>
         </section>

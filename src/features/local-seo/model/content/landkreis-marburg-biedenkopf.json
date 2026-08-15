@@ -1,0 +1,107 @@
+{
+  "target": "landkreis-marburg-biedenkopf",
+  "displayName": "Landkreis Marburg-Biedenkopf",
+  "type": "region",
+  "meta": {
+    "title": "Webdesign Landkreis Marburg-Biedenkopf | Agentur · Coday",
+    "description": "Webdesign im Landkreis Marburg-Biedenkopf. Performante Websites für Pharma, Handwerk & Mittelstand in Marburg, Biedenkopf & Gladenbach. Festpreis."
+  },
+  "hero": {
+    "headline": "Webdesign Landkreis Marburg-Biedenkopf: Next.js Performance für Pharma, Industrie & Handwerk",
+    "subheadline": "Ihre lokale High-End Webagentur für Marburg, Biedenkopf, Stadtallendorf, Gladenbach und das gesamte Hinterland.",
+    "description": "Maßgeschneiderte Webentwicklung, subsekundäre Ladezeiten unter 500ms und automatisierte B2B-Leads für Unternehmen im Landkreis Marburg-Biedenkopf. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+  },
+  "localDominance": {
+    "title": "Digitale Vorherrschaft für den Landkreis Marburg-Biedenkopf",
+    "description": "Der Landkreis Marburg-Biedenkopf vereint globale Spitzenforschung an den Marburger Behringwerken (Biotech & Pharma) mit gewaltiger Industrie- und Lebensmittelpower in Stadtallendorf (Ferrero, Fritz Winter) sowie exzellentem Werkzeug- und Formenbau im Hessischen Hinterland (Biedenkopf, Dautphetal, Gladenbach). Wir bauen digitale Plattformen, die Industrie, Pharma und Handwerk messbare Vorsprünge sichern.",
+    "points": [
+      "Pharma, Biotech & Kliniken: Höchste Datensicherheit, Barrierefreiheit (BITV 2.0 / WCAG) und Next.js Performance für Marburg.",
+      "Industrie & Gießereien: Enterprise-Webauftritte und internationale Produktkataloge für Stadtallendorf.",
+      "Werkzeug- & Formenbau: B2B-Plattformen für das Hessische Hinterland (Biedenkopf, Gladenbach, Dautphetal).",
+      "30 Min Direkt vor Ort: Schnelle Erreichbarkeit über B3 und B255 direkt aus Wetzlar.",
+      "Next.js als SEO-Katalysator: 100/100 Google Core Web Vitals für Spitzenrankings im gesamten Landkreis.",
+      "Inhabergeführt & Festpreis: Direkter Entwickler-Kontakt mit Umutcan Emre Tezgel ohne teuren Großagentur-Overhead."
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "Pharma- & Biotech-Webportale für Marburg & Behringwerke",
+      "content": "Enterprise-Architekturen, subsekundäre Ladezeiten und DSGVO-Konformität auf deutschen Hochsicherheitsservern."
+    },
+    {
+      "title": "Industrie- & Formenbau-Websites für Stadtallendorf & Biedenkopf",
+      "content": "Echte Leadgenerierung, interaktive Filterfunktionen und 60-Sekunden-Express-Recruiting für Fachkräfte."
+    },
+    {
+      "title": "Local SEO Dominanz im Landkreis Marburg-Biedenkopf",
+      "content": "Spitzenrankings in Marburg, Biedenkopf, Gladenbach, Stadtallendorf, Kirchhain, Dautphetal und allen 13 Kommunen."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wie viel kostet eine neue Website im Landkreis Marburg-Biedenkopf?",
+      "a": "Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance."
+    },
+    {
+      "q": "Wie schnell ist eine neue Website im Landkreis Marburg-Biedenkopf online?",
+      "a": "In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online."
+    },
+    {
+      "q": "Kommen Sie für ein Beratungsgespräch direkt zu uns in den Betrieb?",
+      "a": "Ja, selbstverständlich. Über die B3 oder B255 sind wir von unserem Wetzlarer HQ in rund 30 Minuten direkt bei Ihnen vor Ort in Marburg, Biedenkopf, Gladenbach oder Stadtallendorf."
+    },
+    {
+      "q": "Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?",
+      "a": "Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet."
+    },
+    {
+      "q": "Wer ist unser fester Ansprechpartner?",
+      "a": "Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support."
+    }
+  ],
+  "meta_en": {
+    "title": "Web Design Marburg-Biedenkopf District | Agency · Coday",
+    "description": "Web design in the Marburg-Biedenkopf district. High-performance websites for pharma, crafts & SME in Marburg, Biedenkopf & Gladenbach. Fixed price."
+  },
+  "hero_en": {
+    "headline": "Web Design Marburg-Biedenkopf: Next.js Performance for Pharma, Industry & Trade",
+    "subheadline": "Your local high-end web agency for Marburg, Biedenkopf, Stadtallendorf, Gladenbach, and the Hinterland.",
+    "description": "Custom Next.js web applications for the Marburg-Biedenkopf district. Fixed price upon request."
+  },
+  "localDominance_en": {
+    "title": "Digital Dominance for the Marburg-Biedenkopf District",
+    "description": "The district unites global biotech at Behringwerke Marburg with heavyweight manufacturing in Stadtallendorf and precision mold making in the Hinterland. We build fast, high-performance web systems.",
+    "points": [
+      "Pharma & Biotech Portals: High-security, WCAG-compliant digital systems for Marburg.",
+      "Industry & Heavy Manufacturing: Scalable enterprise platforms for Stadtallendorf.",
+      "Tool & Mold Making: High-converting B2B portals for Biedenkopf & Gladenbach.",
+      "30 Minutes On-Site: Fast direct connection via B3 and B255.",
+      "SEO Leadership: 100/100 Core Web Vitals for top search visibility.",
+      "Direct Founder Access: Transparent fixed pricing without agency overhead."
+    ]
+  },
+  "contentSections_en": [
+    {
+      "title": "Pharma & Biotech Portals in Marburg",
+      "content": "Enterprise-grade performance and uncompromising data security for research leaders."
+    },
+    {
+      "title": "Industrial Platforms in Stadtallendorf & Biedenkopf",
+      "content": "Sub-500ms load times and seamless lead capture."
+    }
+  ],
+  "faq_en": [
+    {
+      "q": "How much does a professional website in the Marburg-Biedenkopf district cost?",
+      "a": "Binding fixed price on request following a free audit. 5-10x more cost-effective than traditional agencies."
+    },
+    {
+      "q": "How long does implementation take?",
+      "a": "Turnkey delivery within 10 to 14 business days."
+    },
+    {
+      "q": "Do you meet on-site in the Marburg-Biedenkopf district?",
+      "a": "Yes, via the B3/B255 we can be on-site across the district in around 30 minutes."
+    }
+  ]
+}

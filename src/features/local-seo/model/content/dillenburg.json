@@ -3,50 +3,105 @@
   "displayName": "Dillenburg",
   "type": "location",
   "meta": {
-    "title": "Webdesign Dillenburg | Webseiten vom lokalen Profi | Coday",
-    "description": "Ihre Webagentur für die Oranienstadt Dillenburg und den nördlichen Lahn-Dill-Kreis. 100/100 Core Web Vitals, B2B-Leads & 60s Recruiting. Festpreisangebot."
+    "title": "Webdesign Dillenburg | Next.js B2B Webagentur · Coday",
+    "description": "Webdesign & Webentwicklung in Dillenburg. Schnelle Ladezeiten, messbare B2B-Leads für Werkzeugbau, Metalltechnik & Handwerk. Festpreis auf Anfrage."
   },
   "hero": {
-    "headline": "Ihr Webdesigner in Dillenburg",
-    "subheadline": "Webentwicklung für die Oranienstadt: Maßgeschneiderte Webseiten für Metallbau, Industrie, Handwerk & Praxen in Dillenburg.",
-    "description": "Dillenburg ist als traditionsreiche Oranienstadt mit dem Wilhelmsturm ein industrielles und handwerkliches Kraftzentrum im nördlichen Lahn-Dill-Kreis. Ob metallverarbeitender Mittelstand, innovativer Maschinenbau, Arztpraxis oder Meisterbetrieb: Ihre Webseite muss Kompetenz, Verlässlichkeit und Schnelligkeit ausstrahlen. Mit maßgeschneidertem Next.js Webdesign von Coday sichern Sie sich messbar mehr Kundenanfragen und qualifizierte Gesellen und Fachkräfte."
+    "headline": "Webdesign Dillenburg: B2B-Webentwicklung für Werkzeugbau & Handwerk",
+    "subheadline": "Webdesign & Next.js Entwicklung für metallverarbeitende Betriebe, Werkzeugbauer, Meisterbetriebe und Arztpraxen in der Oranienstadt Dillenburg.",
+    "description": "Als spezialisierte Webagentur für Dillenburg entwickeln wir blitzschnelle, conversion-starke und hochsichere Next.js Webanwendungen. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
   },
   "localDominance": {
-    "title": "Ihr digitaler Partner in Dillenburg & dem Dietzhölztal",
-    "description": "Zwischen Dillenburg, Haiger, Herborn und Eschenburg schlägt das industrielle Herz der Region. Standard-Baukästen und langsame WordPress-Themes reichen im harten Wettbewerb nicht mehr aus. Coday entwickelt individuelle, blitzschnelle Webanwendungen, die Kunden und Bewerber sofort überzeugen.",
+    "title": "Digitale Dominanz für Dillenburger Industrie- & Handwerksbetriebe",
+    "description": "Dillenburg ist eine traditionsreiche Oranienstadt mit starker Kompetenz in Werkzeugbau, Metallverarbeitung und Kunststofftechnik. Wir bauen Websites mit messbarem ROI.",
     "points": [
-      "Direkte Nähe im Lahn-Dill-Kreis: Nur 20 Minuten ab Wetzlar via B277/A45 – persönliche Termine vor Ort in Dillenburg.",
-      "100/100 PageSpeed: Unter 0,5s Ladezeit für maximale Google-Sichtbarkeit und reibungslose Nutzererfahrung.",
-      "Mitarbeitergewinnung 4.0: 60-Sekunden Express-Bewerbung ohne Lebenslauf-Hürden für gewerbliche und technische Berufe.",
-      "Zukunftssicher & Lizenzkostenfrei: Keine monatlichen Template-Gebühren, maximale Stabilität und Sicherheit."
+      "Fokus auf Werkzeugbau & Metallverarbeitung: Schnelle CAD-Datenblatt-Downloads und hochprofessionelle B2B-Leadgenerierung für den Gewerbepark Dillfeld.",
+      "Meisterbetriebe & Handwerk Frohnhausen & Manderbach: Konversionsstarke Webdesigns zur kontinuierlichen Gewinnung regionaler Privat- und Gewerbekunden.",
+      "Regionale Nähe im Dilltal: In unter 20 Minuten ab Wetzlar via B277/A45 direkt vor Ort bei Ihnen in Dillenburg.",
+      "Next.js als SEO-Katalysator: Top-Rankings für 'Webdesign Dillenburg' und B2B-Keywords durch 100/100 Core Web Vitals.",
+      "Express-Mitarbeitergewinnung: 60-Sekunden Express-Bewerbung ohne Lebenslauf-Hürden für technische Fachkräfte und Gesellen.",
+      "DSGVO-konformes deutsches Hosting: Keine wartungsintensiven WordPress-Plugins, maximale Ausfallsicherheit."
     ]
   },
   "contentSections": [
     {
-      "title": "B2B-Leadgenerierung für Industrie & Werkzeugbau",
-      "content": "Dillenburger Unternehmen sind weltweit für Spitzenleistungen in Metallverarbeitung, Werkzeugbau und Kunststofftechnik bekannt. Wir sorgen dafür, dass Ihr digitaler Auftritt diese Exzellenz widerspiegelt und Einkäufer wie Entscheider im In- und Ausland sofort überzeugt."
+      "title": "B2B-Leadgenerierung für Werkzeugbau, Metalltechnik & Industrie in Dillenburg",
+      "content": "Unternehmen im Gewerbepark Dillfeld, in Frohnhausen und Manderbach überzeugen nationale und internationale Einkäufer durch subsekundäre Ladezeiten und responsive Produktkataloge."
     },
     {
-      "title": "Lokale Suchmaschinenoptimierung (Local SEO) für Dillenburg",
-      "content": "Mit sauber strukturierten Daten, optimierten Google Maps Profilen und schnellen Ladezeiten positionieren wir Handwerker, Dienstleister und Praxen an der Spitze der lokalen Suchergebnisse in Dillenburg, Manderbach, Frohnhausen und Eibach."
+      "title": "Maßgeschneidertes Webdesign für Handwerksmeister & Praxen in Dillenburg",
+      "content": "Lokale Handwerksbetriebe und Facharztpraxen rund um den Schlossberg und die historische Altstadt sichern sich planbare Terminanfragen und Neukunden."
     },
     {
-      "title": "Solo-Architect Qualität: Ein Ansprechpartner, volle Verantwortung",
-      "content": "Kein Agentur-Wasserkopf, keine wechselnden Ansprechpartner. Sie arbeiten direkt mit dem Inhaber und Web-Architekten Umutcan Emre Tezgel – von der ersten Idee bis zur kontinuierlichen Optimierung."
+      "title": "Local SEO & B277/A45-Achse Dillenburg-Haiger-Herborn",
+      "content": "Dominante Platzierungen in den Google-Suchergebnissen für Unternehmen in Dillenburg, Frohnhausen, Manderbach, Niederscheld, Eibach, Haiger und Eschenburg."
     }
   ],
   "faq": [
     {
-      "q": "Was unterscheidet Coday von klassischen Webagenturen in Dillenburg?",
-      "a": "Wir nutzen moderne Serverless- und Next.js-Technologien statt veralteter WordPress-Themes. Das Ergebnis: 5–10x schnellere Ladezeiten, null Lizenzkosten, 100/100 PageSpeed und integrierte Recruiting-Funnels."
+      "q": "Wie viel kostet eine neue B2B-Website in Dillenburg?",
+      "a": "Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance."
     },
     {
-      "q": "Können bestehende Domains und E-Mail-Adressen übernommen werden?",
-      "a": "Selbstverständlich. Wir übernehmen die nahtlose technische Migration Ihrer bestehenden Domain, DNS-Einträge und Postfächer ohne jegliche Ausfallzeit."
+      "q": "Wie schnell ist eine neue Website in Dillenburg online?",
+      "a": "In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online."
     },
     {
-      "q": "Wie funktioniert die Zusammenarbeit vor Ort in Dillenburg?",
-      "a": "Wir treffen uns gerne persönlich in Dillenburg, Manderbach oder in unserem Büro in Wetzlar, um Ihre Anforderungen im Detail zu analysieren."
+      "q": "Kommen Sie für ein Beratungsgespräch direkt nach Dillenburg?",
+      "a": "Ja, sehr gerne. Von unserem Wetzlarer HQ aus sind wir über die B277 oder A45 in unter 20 Minuten direkt bei Ihnen vor Ort in Dillenburg, Frohnhausen oder Manderbach."
+    },
+    {
+      "q": "Bieten Sie auch Lösungen zur Fachkräftegewinnung im Dillgebiet?",
+      "a": "Ja. Wir entwickeln mobil optimierte 60-Sekunden-Bewerbungsverfahren ohne Anschreiben, die die Hürde für qualifizierte Fachkräfte drastisch senken."
+    },
+    {
+      "q": "Wer ist unser fester Ansprechpartner?",
+      "a": "Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support."
+    }
+  ],
+  "meta_en": {
+    "title": "Web Design Dillenburg | Next.js B2B Web Agency · Coday",
+    "description": "Web design & development in Dillenburg. Fast loading times, measurable B2B leads for tooling, metal technology & crafts. Fixed price on request."
+  },
+  "hero_en": {
+    "headline": "Web Design Dillenburg: Next.js Development for Tooling & Manufacturing",
+    "subheadline": "Web design & Next.js development for metal processing, toolmaking, craft businesses and medical practices in the Orange City of Dillenburg.",
+    "description": "Custom Next.js web development for Dillenburg businesses. Fast, secure, and conversion-focused. Fixed price on request."
+  },
+  "localDominance_en": {
+    "title": "Digital Dominance for Dillenburg's Manufacturing & Crafts",
+    "description": "Dillenburg is a historic hub with strong engineering expertise. We build high-converting websites for industrial leaders.",
+    "points": [
+      "Tooling & Metal Technology Focus: Fast CAD catalog downloads for businesses in Gewerbepark Dillfeld.",
+      "Crafts & Local Services: High-converting landing pages for businesses in Frohnhausen & Manderbach.",
+      "Close Regional Access: Under 20 minutes from Wetzlar via B277/A45 to your Dillenburg offices.",
+      "SEO Leadership: 100/100 Core Web Vitals for dominant Google visibility.",
+      "Recruiting Funnels: 60-second mobile application flows for technical staff and craftsmen.",
+      "GDPR Compliant German Hosting: Maximum security without WordPress vulnerabilities."
+    ]
+  },
+  "contentSections_en": [
+    {
+      "title": "B2B Lead Generation for Toolmaking & Metal Technology",
+      "content": "Modern Next.js platforms converting industrial buyers into inquiries."
+    },
+    {
+      "title": "Custom Web Design for Local Crafts & Trade Services",
+      "content": "Fast, conversion-focused websites for tradespeople across the Dill valley."
+    }
+  ],
+  "faq_en": [
+    {
+      "q": "How much does a professional B2B website in Dillenburg cost?",
+      "a": "Binding fixed price on request following a free audit. 5-10x more cost-effective than traditional agencies."
+    },
+    {
+      "q": "How long does implementation take?",
+      "a": "Turnkey delivery within 10 to 14 business days."
+    },
+    {
+      "q": "Do you meet on-site in Dillenburg?",
+      "a": "Yes, we gladly meet you at your Dillenburg premises via the B277/A45."
     }
   ]
 }

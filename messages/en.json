@@ -119,6 +119,24 @@
         },
         "fullstack": {
           "label": "Full-Stack Entwicklung"
+        },
+        "react_nextjs": {
+          "label": "React & Next.js Agency"
+        },
+        "cloud_infrastructure": {
+          "label": "Cloud Infrastructure"
+        },
+        "website_relaunch": {
+          "label": "Website Relaunch"
+        },
+        "seo_opt": {
+          "label": "SEO Optimization"
+        },
+        "perf_opt": {
+          "label": "Performance Optimization"
+        },
+        "dig_consulting": {
+          "label": "Digital Consulting"
         }
       },
       "industries": {
@@ -151,7 +169,13 @@
           "gastronomy": "Gastronomy & Hotels",
           "services": "Services",
           "retail": "Retail & E-Commerce",
-          "public_sector": "Public Sector"
+          "public_sector": "Public Sector",
+          "real_estate_agent": "Real Estate",
+          "gastronomy_hotel": "Gastronomy & Hotels",
+          "consulting": "Business Consulting",
+          "lawyers": "Lawyers & Law Firms",
+          "startups": "Tech Startups",
+          "dienstleistung": "Professional Services"
         },
         "public": "Public Contracts",
         "tech": "Tech Startups"
@@ -173,7 +197,8 @@
         "all": {
           "title": "Portfolio"
         },
-        "view_all": "View All Projects"
+        "view_all": "View All Projects",
+        "hey_fede": "Hey Fede"
       },
       "academy": {
         "blog": {
@@ -215,7 +240,7 @@
         "label": "Packages"
       },
       "locations": {
-        "label": "Locations",
+        "label": "Locations & Industries",
         "hessen_mittelhessen": {
           "title": "Central Hesse & HQ",
           "hessen_hub": "Hesse Master Hub",
@@ -291,6 +316,10 @@
         "kfz_werkstatt": "Auto Workshops",
         "kfz_mechatroniker": "Automotive Technicians",
         "autohaendler": "Car Dealers"
+      },
+      "cta_booking": "Request Project",
+      "mobile": {
+        "label": "Menu"
       }
     },
     "footer": {
@@ -348,7 +377,93 @@
     "save": "Save",
     "calculator": "Pricing Calculator",
     "garantie": "Warranty",
-    "presse": "Press"
+    "presse": "Press",
+    "cta": {
+      "sticky": {
+        "label": "Ready for the next level?",
+        "text": "Let us plan your new high-performance website."
+      }
+    },
+    "buttons": {
+      "start_project": "Start Project"
+    },
+    "generic_detail": {
+      "trust": {
+        "title": "Trusted by leading companies"
+      },
+      "faq": {
+        "title": "Overview",
+        "desc": "We build customized high-performance solutions for maximum results."
+      },
+      "not_found": {
+        "title": "Overview",
+        "link": "Link"
+      },
+      "hero": {
+        "consulting_btn": "Consulting Btn",
+        "benefits_title": "Benefits Title"
+      },
+      "process": {
+        "label": "Details"
+      },
+      "advantages": {
+        "label": "Details",
+        "desc": "We build customized high-performance solutions for maximum results.",
+        "contact_btn": "Contact Btn"
+      },
+      "testimonials": {
+        "label": "Details",
+        "title": "Overview"
+      },
+      "final_cta": {
+        "title": "Overview",
+        "desc": "We build customized high-performance solutions for maximum results.",
+        "button": "Learn More"
+      }
+    },
+    "scroll_cta": {
+      "ready": "Ready for the next step?",
+      "dominate": "Dominate your market digitally",
+      "book_audit": "Claim Free Analysis"
+    },
+    "categories": {
+      "all": "All"
+    },
+    "web_development_page": {
+      "hero": {
+        "label": "Details",
+        "title_anim": "Title Anim",
+        "title_static": "Title Static",
+        "description": "We build customized high-performance solutions for maximum results."
+      },
+      "problem": {
+        "label": "Details",
+        "title": "Overview",
+        "description": "We build customized high-performance solutions for maximum results."
+      },
+      "solution": {
+        "label": "Details",
+        "title": "Overview",
+        "description": "We build customized high-performance solutions for maximum results."
+      },
+      "tech_stack": {
+        "title": "Overview",
+        "description": "We build customized high-performance solutions for maximum results."
+      },
+      "architecture": {
+        "label": "Details",
+        "title": "Overview",
+        "description": "We build customized high-performance solutions for maximum results."
+      }
+    },
+    "actions": {
+      "read_more": "Read More"
+    },
+    "services": {
+      "label": "Details",
+      "title_prefix": "Title Prefix",
+      "title_suffix": "Title Suffix"
+    }
   },
   "metadata": {
     "title": "Coday, AI-Augmented Web Agency from Wetzlar",
@@ -369,7 +484,16 @@
       "subtitle": "High-end websites with React, TypeScript, and Headless CMS. Fixed pricing from €2,000.",
       "cta": "Start Project",
       "eyebrow": "High-End Digital Agency",
-      "view_projects": "Projekte ansehen"
+      "view_projects": "View Projects",
+      "headline_prefix": "We build your website in",
+      "headline_gradient": "under 2 weeks",
+      "description": "High-end websites built with React, TypeScript, and Headless CMS. Guaranteed fixed prices on request.",
+      "rotating": [
+        "Perfect Core Web Vitals",
+        "Ultra-fast load times < 500ms",
+        "100% GDPR compliant",
+        "State-of-the-art Next.js Architecture"
+      ]
     },
     "techStack": {
       "eyebrow": "Core Tech Stack",
@@ -415,12 +539,174 @@
         "name": "Please enter your name (min. 2 characters)",
         "email": "Please enter a valid email address"
       }
+    },
+    "philosophy": {
+      "traditional": "Traditionelle Handwerkskunst",
+      "history": "trifft auf modernste Web-Technologie.",
+      "text_overhead": "Wir verzichten bewusst auf ineffiziente Strukturen und Overhead. Als spezialisierte Agentur bieten wir Ihnen direkte, strategische Beratung und Umsetzung auf höchstem technischen Niveau.",
+      "standard": "Der Status Quo",
+      "text_standard": "reicht uns nicht. Wir entwickeln digitale Erlebnisse, die Ihre Konkurrenz in den Schatten stellen und Ihr Unternehmen als Marktführer positionieren."
+    },
+    "industries": {
+      "overview": {
+        "label": "Industries",
+        "title": "Industry Solutions for Web Design",
+        "description": "Specialized web design for every industry. Custom Industry Solutions for Web Design to help you dominate your sector."
+      },
+      "title_prefix": "Maßgeschneiderte Lösungen",
+      "title_suffix": "für Ihre Branche.",
+      "card_craft": {
+        "title": "Handwerk & Bauwesen",
+        "desc": "Digitale Präsenz, die Handwerkskunst widerspiegelt und hochwertige Kundenanfragen generiert."
+      },
+      "card_realestate": {
+        "title": "Real Estate & Broker/Agent",
+        "desc": "Exclusive exposés and high-performance portfolios to win premium mandates."
+      },
+      "card_shop": {
+        "title": "E-Commerce & Retail",
+        "desc": "Skalierbare Onlineshops mit blitzschnellen Ladezeiten für maximale Conversion-Raten."
+      },
+      "card_consulting": {
+        "title": "Unternehmensberatung",
+        "desc": "Repräsentative Webauftritte, die Ihre Expertise und Seriosität auf den ersten Blick vermitteln."
+      },
+      "card_health": {
+        "title": "Gesundheitswesen",
+        "desc": "Vertrauensbildende Praxis-Websites mit nahtloser, sicherer Terminbuchung für Ihre Patienten."
+      },
+      "automobil": {
+        "title": "Automotive",
+        "hero": {
+          "headline": "Digital Solutions for Automotive",
+          "subheadline": "We help car repair shops and dealerships gain online visibility."
+        },
+        "challenges": {
+          "c1": {
+            "title": "Lack of Staff",
+            "description": "Hard to find qualified mechanics."
+          },
+          "c2": {
+            "title": "Few Appointments",
+            "description": "Customers book online with competitors."
+          },
+          "c3": {
+            "title": "Outdated Presence",
+            "description": "Website is not up to modern standards."
+          }
+        },
+        "solutions": {
+          "s1": {
+            "title": "Vehicle Showcase",
+            "description": "Modern presentation of your offerings."
+          },
+          "s2": {
+            "title": "Online Booking",
+            "description": "Customers can book tire changes etc online."
+          },
+          "s3": {
+            "title": "Recruiting Funnel",
+            "description": "More applications via targeted campaigns."
+          }
+        },
+        "customFeatures": {
+          "f1": {
+            "title": "Mobile-First Design",
+            "description": "Your website looks perfect on smartphones."
+          },
+          "f2": {
+            "title": "SEO Optimization",
+            "description": "Local visibility for walk-in customers."
+          },
+          "f3": {
+            "title": "Leads & Requests",
+            "description": "Generate lucrative customer inquiries."
+          }
+        }
+      },
+      "aerzte-gesundheit": {
+        "customFeatures": {
+          "service_funnel": {
+            "steps": {
+              "leads": "Terminanfragen & Patienten"
+            }
+          }
+        }
+      },
+      "handwerk-bau": {
+        "hero": {
+          "title_1": "Professionelles Webdesign",
+          "title_2": "für Handwerker",
+          "description": "Wir bauen Websites, die Handwerksbetrieben zu mehr Sichtbarkeit und Aufträgen verhelfen.",
+          "image_alt": "Handwerker Website"
+        }
+      },
+      "buttons": {
+        "cta_analysis": "Website analysieren lassen"
+      },
+      "common": {
+        "features": {
+          "google_maps": "Google Maps Integration",
+          "regional_pages": "Regionale Landingpages",
+          "review_management": "Bewertungsmanagement"
+        }
+      }
+    },
+    "logobar": {
+      "title": "Diesen innovativen Unternehmen dürfen wir als Partner zur Seite stehen"
+    },
+    "portfolio_teaser": {
+      "overline": "Bewiesene Ergebnisse",
+      "title": "Unsere Arbeit spricht für sich.",
+      "subtitle": "Keine Fließband-Templates. Nur handgefertigte High-Performance Plattformen, die digitale Dominanz ausstrahlen.",
+      "cta": "Alle Case Studies ansehen"
+    },
+    "stats": {
+      "seconds": "< 0.5s",
+      "load_time": "Global Load Time",
+      "percent": "100%",
+      "ownership": "Code Ownership",
+      "hours": "24h",
+      "availability": "Support Response Time",
+      "profit": "+300%",
+      "focused": "Higher Conversion Potential"
+    },
+    "testimonials": {
+      "title_prefix": "What our",
+      "title_suffix": "Clients say",
+      "text": "Testimonials from verified partners.",
+      "rating": "5.0 / 5.0",
+      "excellence": "Excellence Standard",
+      "items": [
+        {
+          "quote": "Die Zusammenarbeit mit Coday war ein voller Erfolg. Unsere neue Website ist nicht nur optisch ein Meisterwerk, sondern überzeugt auch durch herausragende Performance.",
+          "authorName": "Dr. Markus Schmidt",
+          "authorPosition": "Geschäftsführer",
+          "authorCompany": "Schmidt Consulting"
+        },
+        {
+          "quote": "Von der ersten Konzeption bis zum Livegang, absolute Professionalität und technisches Know-how auf höchstem Niveau.",
+          "authorName": "Laura Weber",
+          "authorPosition": "Marketingleiterin",
+          "authorCompany": "Weber Immobilien"
+        },
+        {
+          "quote": "Dank der neuen E-Commerce-Lösung konnten wir unsere Conversion-Rate signifikant steigern. Ein verlässlicher Partner für digitales Wachstum.",
+          "authorName": "Johannes Becker",
+          "authorPosition": "Gründer",
+          "authorCompany": "Becker Retail GmbH"
+        }
+      ]
+    },
+    "services": {
+      "label": "Services",
+      "title_prefix": "Our",
+      "title_suffix": "Core Capabilities"
     }
   },
   "landingpages": {
-    "dillenburg": "Looking for a professional web design agency in Dillenburg? We specialize in building high-performance, conversion-optimized websites that serve as a powerful digital storefront for local businesses. Whether you run a medical practice, a traditional craft business, or a modern service company in Dillenburg, our tailored digital solutions are designed to attract more local clients. Our team deeply understands the regional market dynamics and crafts customized digital strategies to elevate your brand above the competition in the Lahn-Dill district.\n\nOur web design process prioritizes lightning-fast loading speeds, seamless mobile responsiveness, and intuitive user experiences. We leverage enterprise-grade technologies like React and Next.js, ensuring your website not only looks stunning but also performs flawlessly under any conditions. A fast, accessible, and highly optimized website is crucial for capturing the attention of potential customers who are searching for your services online. By partnering with us, you invest in a digital asset that actively works to grow your business every single day.\n\nBeyond aesthetics and technical performance, we integrate powerful local SEO strategies to maximize your visibility in Dillenburg. Being easily found on search engines like Google is essential for sustainable growth. We optimize your content, meta tags, and overall site architecture to ensure you rank at the top for relevant local queries. Together, we can transform your online presence into a reliable growth engine, bringing a steady stream of highly qualified leads and driving long-term success for your enterprise.\n\nInvesting in a modern, scalable website is one of the most effective ways to secure the future of your Dillenburg business. As digital transformation continues to accelerate, customers increasingly expect seamless online interactions. From intuitive navigation structures to compelling calls-to-action, every element we design is focused on converting local visitors into loyal clients. Let us handle the technical complexities while you focus on what you do best running your business.\n\nAt our agency, we believe that web design is not just about making things look pretty; it is about creating functional, results-driven platforms that align directly with your business goals. For companies operating in Dillenburg, understanding the specific needs of your local audience is paramount. We take the time to deeply analyze your target demographic, ensuring that the messaging, imagery, and overall user journey resonate strongly with potential customers in your area. This targeted approach significantly improves conversion rates and helps you build lasting relationships with your clientele.\n\nFurthermore, we prioritize security and accessibility in every project we undertake. In today’s digital landscape, protecting your users' data is a legal and ethical obligation. Our websites are built with robust security protocols, including SSL encryption, secure data handling, and compliance with the latest GDPR regulations. Simultaneously, we design with accessibility in mind, ensuring that your website is fully usable by all individuals, regardless of any disabilities. This inclusive approach not only expands your potential customer base in Dillenburg but also positively impacts your search engine rankings, as major search engines increasingly favor accessible websites.\n\nWe also recognize that a successful website requires ongoing maintenance and adaptation. The digital world is constantly evolving, with new technologies, design trends, and algorithm updates emerging regularly. That is why we offer comprehensive support and maintenance packages to our Dillenburg clients. We continuously monitor your website’s performance, apply necessary security patches, and update content to keep your online presence fresh and engaging. Our proactive approach ensures that your website remains a valuable asset for years to come, consistently delivering a high return on investment and supporting your long-term business objectives in the region.",
-    "herborn": "If you are a business owner in Herborn seeking to expand your digital footprint, our expert web design services offer the perfect solution. We create aesthetically compelling and technically superior websites specifically tailored for the local market in Herborn and the surrounding Hesse region. Our focus is on delivering bespoke digital platforms that accurately reflect your brand identity and actively engage your target audience. From retail stores to professional service providers, we build digital experiences that inspire trust and drive measurable business growth.\n\nIn today's digital landscape, performance and user experience are non-negotiable. Our development team utilizes modern headless CMS architectures and advanced frontend frameworks to construct websites that boast near-instant load times and flawless mobile compatibility. This technical excellence not only significantly reduces bounce rates but also satisfies the strict ranking algorithms of major search engines. We ensure that every visitor from Herborn enjoys a smooth, intuitive navigation journey that seamlessly guides them toward becoming a loyal customer.\n\nTo solidify your competitive advantage, we embed comprehensive search engine optimization directly into the core of your new website. We understand the specific search behaviors of consumers in Herborn, allowing us to implement targeted local SEO strategies that consistently generate organic traffic. By combining premium web design with data-driven marketing techniques, we empower your business to dominate the local search results and achieve sustainable, long-term profitability.\n\nFurthermore, our commitment to your success extends far beyond the initial launch. We offer continuous support, data-driven optimization, and scalable solutions that grow alongside your Herborn enterprise. By continuously analyzing user behavior and refining our strategies, we ensure your online presence remains highly effective and highly competitive in an ever-evolving digital marketplace.\n\nCreating a digital identity in Herborn requires a nuanced understanding of the local economy and consumer preferences. Our approach goes beyond standard templates; we craft custom interfaces that tell your unique brand story. Whether you need a sophisticated corporate site or an engaging portfolio to showcase your craftsmanship, our design process is entirely collaborative. We work closely with you to ensure that every visual element, from the color palette to the typography, perfectly aligns with your vision and resonates with the local Herborn community.\n\nMoreover, the integration of advanced analytics tools is a cornerstone of our web design philosophy. We do not just build websites and walk away; we equip you with the insights needed to understand how visitors interact with your platform. By tracking key performance indicators such as session duration, conversion rates, and user flow, we can make informed, data-driven decisions to continuously improve your site. This iterative optimization process is particularly beneficial for businesses in Herborn looking to maximize their marketing budget and achieve a higher return on investment over time.\n\nIn addition to aesthetics and analytics, we place a strong emphasis on content strategy. Engaging, informative, and SEO-optimized content is what ultimately persuades visitors to take action. Our team of experienced copywriters and content strategists can assist you in developing compelling messaging that highlights your unique selling propositions. For businesses in Herborn, this means creating content that not only answers the questions your potential customers are asking but also establishes your brand as a trusted authority in your respective industry. Combined with our cutting-edge web design, this comprehensive approach ensures that your online presence is a powerful catalyst for sustained business success.",
-    "localwetzlar": "As a leading web design agency serving Wetzlar, we are dedicated to transforming your local business into a digital powerhouse. We understand that a website is much more than a digital brochure; it is your most effective sales representative operating around the clock. By partnering with us, businesses across Wetzlar benefit from custom-built, high-conversion websites that perfectly align with their strategic goals. We cater to a diverse range of industries, crafting unique digital solutions that resonate strongly with the local community and set you apart from regional competitors.\n\nOur technical approach guarantees exceptional performance, unparalleled security, and an optimized user journey. Utilizing the latest web technologies, we build platforms that deliver sub-second load times and adapt flawlessly to any device. This commitment to technical excellence ensures that your potential customers in Wetzlar receive a premium browsing experience that builds immediate trust and credibility. We handle all the technical complexities, allowing you to focus entirely on running your business while your website seamlessly generates new inquiries and sales.\n\nFurthermore, our comprehensive web design service includes a robust local SEO strategy designed to capture the Wetzlar market. We optimize every aspect of your site to ensure top rankings on Google for your most critical services. From strategically structured content to advanced metadata management, our holistic optimization techniques drive highly targeted, local organic traffic directly to your site. Experience a measurable increase in leads and a significant boost in your regional market share with our elite web design solutions.\n\nIn a rapidly digitizing world, your Wetzlar business deserves a website that reflects its true quality and professionalism. We take pride in delivering visually stunning, highly functional digital platforms that make a lasting impression. Let us elevate your brand, engage your local audience, and drive unprecedented growth through strategic, high-end web design tailored exactly to your needs.\n\nOur collaborative process begins with a deep dive into your business model and objectives. We conduct thorough market research specific to the Wetzlar area, analyzing competitor strategies and identifying opportunities for differentiation. This strategic foundation informs every subsequent design and development decision. By understanding the unique challenges and opportunities within the Wetzlar market, we are able to engineer a digital solution that not only meets but exceeds your expectations, providing a tangible competitive advantage.\n\nAdditionally, we understand the importance of seamless third-party integrations for modern businesses. Whether you require advanced booking systems, e-commerce functionality, customer relationship management (CRM) connections, or automated marketing workflows, our technical team has the expertise to seamlessly incorporate these tools into your new website. This level of integration streamlines your operations, improves customer satisfaction, and allows your Wetzlar-based team to work more efficiently. We ensure that your digital infrastructure is scalable and adaptable, ready to support your business as it grows and evolves over the coming years.\n\nUltimately, our goal is to establish a long-term partnership with you. We offer ongoing support, regular performance audits, and strategic consulting to ensure your website continues to deliver exceptional results. The digital landscape in Wetzlar is highly competitive, and maintaining a top-tier online presence requires continuous effort and expertise. By choosing our agency, you gain a dedicated team of digital experts committed to your ongoing success, ensuring that your website remains a powerful asset that consistently drives revenue and reinforces your brand authority in the region."
+    "nextjsmigration": "As businesses in Wetzlar and the broader Hesse region seek to enhance their digital footprints, migrating to a modern, robust architecture like Next.js has become a critical strategic step. Traditional monolithic websites and legacy CMS platforms often suffer from slow loading times, frequent security vulnerabilities, and cumbersome maintenance routines that drain valuable resources and frustrate users. By migrating your platform to a React-based Next.js architecture, you are fundamentally transforming your online presence into a high-performance, future-proof digital asset. Next.js excels at Server-Side Rendering (SSR) and Static Site Generation (SSG), which means that your web pages are pre-rendered and delivered to users in mere milliseconds via a global Edge Network. This immediate delivery completely eliminates the frustrating wait times that cause potential customers to abandon your site, keeping them highly engaged and drastically improving your overall conversion rates. When every second of loading time translates to lost revenue, adopting Next.js is not just a technological upgrade; it is a vital business decision that directly impacts your bottom line.\n\nPerformance is not just about providing a smooth user experience; it directly impacts your visibility on search engines. Google's algorithm heavily favors websites that excel in Core Web Vitals metrics that strictly measure loading performance, interactivity, and visual stability. Next.js is inherently optimized out-of-the-box to score perfectly on these vital metrics, providing your Wetzlar-based business with an unfair advantage in both local and national search engine rankings. Our comprehensive Next.js migration service ensures that your transition is incredibly smooth, entirely without any downtime or loss of your hard-earned SEO rankings. We meticulously map your existing URLs, implement strategic 301 redirects, and ensure that every piece of content, metadata, and structural SEO element is securely and accurately transferred. As your dedicated local web agency in Central Hesse, we handle all the technical complexities behind the scenes so you can focus entirely on your core business operations, confident that your digital infrastructure is built on solid, scalable ground.\n\nBeyond speed and SEO dominance, a Next.js architecture offers unparalleled security and long-term scalability. Traditional systems that couple the frontend tightly with the backend database are prime targets for cyberattacks, malware, and plugin vulnerabilities. Next.js adopts a decoupled, headless approach, effectively removing the database and sensitive business logic from the public-facing frontend. This drastically reduces your attack surface, providing enterprise-grade security for your proprietary data and your customers' sensitive information. Furthermore, as your business grows and evolves, your website needs to scale seamlessly to accommodate increased demand. Whether you are launching a massive multi-channel e-commerce campaign, running high-traffic seasonal promotions, or experiencing sudden spikes in traffic from a viral marketing effort, a Next.js platform handles the heavy load effortlessly without crashing or slowing down. By partnering with Coday for your Next.js migration, you are investing in a sustainable, high-end digital architecture that not only meets the rigorous demands of today’s highly competitive market but is fully equipped to adapt to the technological advancements of tomorrow. Experience the absolute pinnacle of web development and propel your enterprise forward with our expert migration services tailored specifically for ambitious, forward-thinking companies in Hesse.",
+    "weilburg": "For local businesses, craftsmen, and medical practices operating in Weilburg and the surrounding Lahn-Dill district, establishing a commanding online presence is no longer optional it is the absolute cornerstone of sustainable growth and long-term success. The digital landscape has evolved tremendously, and your potential clients are actively searching for your services on their smartphones, tablets, and desktops right at this very moment. If your website is outdated, frustratingly slow, or difficult to navigate on mobile devices, you are inadvertently sending those highly valuable customers straight into the arms of your local competitors. At Coday, we specialize in crafting high-end, meticulously conversion-optimized websites tailored specifically for the unique market dynamics and consumer behaviors of Weilburg. We firmly understand that your website is your most tireless, effective salesperson, working diligently around the clock to generate qualified leads, attract skilled professionals, and build unwavering trust in your brand long before a direct, personal interaction even takes place.\n\nOur holistic approach to premium web design in Weilburg goes far beyond mere aesthetics; it is deeply rooted in technical performance and strategic local search engine optimization (Local SEO). We build all our websites using the absolute latest Next.js and React technologies, ensuring lightning-fast load times that instantly captivate visitors, keep them engaged, and significantly reduce bounce rates. Search engines like Google heavily prioritize fast, secure, and mobile-friendly websites, and our precision-engineered platforms are explicitly designed to dominate the local search results. When someone in Weilburg or the neighboring towns searches for a reliable, experienced craftsman, a competent specialist doctor, or a top-tier B2B service provider, our primary goal is to ensure your business appears at the very top of those search queries. We thoroughly optimize your entire digital footprint, from structuring the underlying code to seamlessly integrating and enhancing your Google Business Profile, making it incredibly easy for local clients to find you, trust your expertise, and contact you instantly.\n\nFurthermore, we strongly believe that managing your digital presence should be completely effortless on your end, allowing you to focus your valuable time and energy on what you do best running and expanding your core business. We provide a comprehensive, fully managed service that seamlessly includes everything from the initial strategy and bespoke design to secure cloud hosting, continuous proactive maintenance, and strict GDPR compliance. Our highly transparent, fixed-price model guarantees that there are absolutely no hidden costs or unpleasant financial surprises along the way. We also expertly integrate smart, interactive features like intuitive online appointment booking systems, secure patient portals, and streamlined recruiting forms. These advanced integrations transform your website from a simple digital brochure into a powerful, automated operational tool that not only consistently wins lucrative new clients but also actively attracts top-tier talent from the entire region. Partner with Coday, your dedicated and experienced local web agency, and let us elevate your Weilburg-based business to unprecedented digital heights with a stunning, high-performance website that truly delivers measurable, scalable, and lasting commercial success."
   },
   "footer": {
     "company": "Coday · Sole Proprietorship",
@@ -452,10 +738,19 @@
       "fake": {
         "serving": "Serving content...",
         "clickMore": "Click for more",
-        "readMore": "Read more"
+        "readMore": "Read more",
+        "logo": "SampleCompany Ltd.",
+        "menu": "Menu",
+        "welcome": "Welcome to our mobile platform",
+        "subheadline": "We provide exceptional services.",
+        "startNow": "Get Started",
+        "thumbZone": "Optimal Thumb Reachability"
       },
       "switchToDesktop": "Switch to Desktop",
-      "view": "View"
+      "view": "View",
+      "badMode": "Poor Responsive Design",
+      "goodMode": "Optimized Mobile-First Design (Coday)",
+      "switchToMobile": "Mobile View"
     },
     "webHistory": {
       "title": "Web History",
@@ -531,7 +826,124 @@
           "user": "User says...",
           "ai": "AI responds..."
         }
-      ]
+      ],
+      "listening": "Listening..."
+    },
+    "blog:interactiveComponent": "Interactive Component",
+    "loadingModule": "Loading module...",
+    "relatedArticles": "Related Articles",
+    "readArticle": "Read Article",
+    "shareTitle": "Share Article",
+    "abTest": {
+      "title": "A/B Test Simulator",
+      "subtitle": "Experience the impact of UX changes on conversion rates",
+      "start": "Start Test",
+      "stop": "Stop Test",
+      "selectVariant": "Select Variant",
+      "variantA": {
+        "name": "Control Group (Status Quo)",
+        "description": "Traditional design without social proof",
+        "headline": "Web Development for Business",
+        "copy": "We build websites with modern technologies.",
+        "button": "Inquire Now"
+      },
+      "variantB": {
+        "name": "Optimized Variant (Coday)",
+        "description": "High-end design with verifiable social proof",
+        "headline": "High-Performance Websites that Win Clients",
+        "copy": "Guaranteed load times under 0.5s & 100% Core Web Vitals.",
+        "button": "Claim Free Discovery Call",
+        "trust": "100% GDPR-compliant · German Servers"
+      },
+      "metrics": {
+        "header": "Live Metrics",
+        "visitors": "Visitors",
+        "conversions": "Conversions",
+        "rate": "Conversion Rate"
+      }
+    },
+    "aiCostGraph": {
+      "title": "Cost Comparison: Traditional Agency vs. AI-Augmented (Coday)",
+      "staff": "Traditional Agency Overhead",
+      "ai": "Coday (AI-Augmented Craftsmanship)",
+      "scaleTitle": "Scalability & Output",
+      "trapTitle": "The Traditional Agency Trap",
+      "scaleDesc": "Scale Desc",
+      "trapDesc": "Trap Desc"
+    },
+    "hackSimulator": {
+      "title": "WordPress vs. Next.js Security Simulator",
+      "wpStack": "WordPress Stack (PHP + MySQL + Plugins)",
+      "staticStack": "Next.js / Jamstack (Headless + Serverless)",
+      "ready": "Ready for Simulation",
+      "start": "Start Attack Simulation",
+      "criticalFailure": "Critical Security Breach!",
+      "criticalDesc": "Attackers exploited outdated plugin endpoints and gained full access to database & server.",
+      "systemSecure": "System 100% Secure!",
+      "secureDesc": "No vulnerable database or PHP runtime on frontend. Static generation is immune to traditional exploits.",
+      "scanning": "Scanning for vulnerabilities...",
+      "idle": "Select a target system and start the test.",
+      "targetWP": "Traditional WordPress",
+      "targetStatic": "Next.js Headless (Coday)",
+      "reset": "Reset Simulation",
+      "wordpress": "Wordpress"
+    },
+    "seoTraffic": {
+      "title": "Traffic Trajectory: Technical SEO vs. Standard Website",
+      "standard": "Standard Website (CMS)",
+      "coday": "Coday (100/100 Core Web Vitals & Silo-SEO)",
+      "exponential": "Exponential Organic Growth",
+      "linear": "Stagnant Traffic",
+      "descCoday": "Top Google rankings through perfect load times & semantic silos.",
+      "descStandard": "Penalized by Core Web Vitals and slow TTFB."
+    },
+    "speedComparison": {
+      "title": "Real-Time Load Time Comparison",
+      "wpLane": "Traditional WordPress (2.8s - 4.2s)",
+      "customLane": "Coday Next.js High-Performance (< 0.5s)",
+      "slow": "Slow (High Bounce Rate)",
+      "instant": "Instant Load (Max Conversion)",
+      "loading": "Loading assets & DB queries...",
+      "rendering": "Fully rendered in 280ms!",
+      "startTest": "Start Speed Test"
+    },
+    "hero": {
+      "title": "Overview",
+      "subtitle": "Learn more about our customized solutions."
+    },
+    "searchPlaceholder": "Search Placeholder",
+    "categories": {
+      "label": "Details",
+      "all": "All"
+    },
+    "highlight": "Highlight",
+    "readTime": "Read Time",
+    "publishedOn": "Published On",
+    "readMore": "Read More",
+    "noResults": "No Results",
+    "noResultsDesc": "No Results Desc",
+    "resetFilters": "Reset Filters",
+    "community": {
+      "label": "Details",
+      "description": "We build customized high-performance solutions for maximum results.",
+      "emailPlaceholder": "Email Placeholder",
+      "subscribe": "Subscribe",
+      "socialProofAlt": "Social Proof Alt",
+      "socialProof": "Social Proof"
+    },
+    "backToOverview": "Back To Overview",
+    "authorRole": "Author Role",
+    "cta": {
+      "title": "Overview",
+      "desc": "We build customized high-performance solutions for maximum results.",
+      "button": "Learn More"
+    },
+    "authorDesc": "Author Desc",
+    "moreAboutAuthor": "More About Author",
+    "seoAuthorBlock": {
+      "role": "Founder & Lead Developer",
+      "title": "Overview",
+      "description": "We build customized high-performance solutions for maximum results."
     }
   },
   "faq": {
@@ -648,6 +1060,15 @@
           "desc": "Identifizieren Sie Reibungspunkte und verbessern Sie die Benutzerfreundlichkeit."
         }
       }
+    },
+    "generic_detail": {
+      "faq": {
+        "title": "Overview"
+      }
+    },
+    "seoText": {
+      "title": "Overview",
+      "content": "Discover how we create measurable value with cutting-edge technologies."
     }
   },
   "knowledge": {
@@ -678,6 +1099,11 @@
         "all": "Alle"
       },
       "aliases": "Aliasse:"
+    },
+    "whitepapers": {
+      "title": "Overview",
+      "subtitle": "Learn more about our customized solutions.",
+      "download": "Download"
     }
   },
   "work": {
@@ -739,6 +1165,16 @@
       "cta_title": "Convinced by these results?",
       "cta_desc": "Let's find out how we can achieve similar results for your business in a personal conversation.",
       "cta_button": "Request a project"
+    },
+    "filter": {
+      "all": "All",
+      "design": "Design",
+      "development": "Development",
+      "marketing": "Marketing"
+    },
+    "seoText": {
+      "title": "Digital Excellence in Every Pixel",
+      "content": "Discover how we deliver sustainable business results with modern web technologies and thoughtful UX design."
     }
   },
   "social": {
@@ -777,6 +1213,12 @@
         "title": "No suitable position?",
         "desc": "We are always looking for talents. Send us an unsolicited application!",
         "button": "Unsolicited Application"
+      },
+      "title": "Current Positions",
+      "details": {
+        "type": "Employment Type",
+        "fulltime": "Full-time",
+        "parttime": "Part-time / Freelance"
       }
     },
     "culture": {
@@ -794,6 +1236,24 @@
       "team": {
         "title": "The Team",
         "desc": "Meet the people behind Coday."
+      },
+      "values_deck": {
+        "ownership": {
+          "title": "Radical Ownership",
+          "desc": "Every line of code, design detail, and client interaction is treated with the highest level of care."
+        },
+        "truth": {
+          "title": "Radical Truth",
+          "desc": "Transparent communication, honest deadlines, and no empty marketing promises."
+        },
+        "deep_work": {
+          "title": "Deep Work & Focus",
+          "desc": "Uninterrupted flow states for maximum cognitive depth and flawless code."
+        },
+        "speed": {
+          "title": "Precision & Velocity",
+          "desc": "Fast iterations without compromising quality, powered by cutting-edge AI toolchains."
+        }
       }
     },
     "benefits": {
@@ -819,6 +1279,25 @@
           "text": "We work together on exciting projects."
         }
       ]
+    },
+    "hero": {
+      "badge": "Careers at Coday",
+      "title_start": "Shape the Future of the",
+      "title_gradient": "Modern Web",
+      "desc": "We build high-performance websites with cutting-edge technologies. Join our network of developers, designers, and SEO experts.",
+      "cta": "View Open Positions"
+    },
+    "path": {
+      "title": "Your Growth Path",
+      "desc": "Autonomy, state-of-the-art AI-augmented toolchains, and demanding enterprise projects."
+    },
+    "perks": {
+      "title": "Your Benefits",
+      "desc": "100% remote work, cutting-edge hardware budget, and flexible hours."
+    },
+    "seoText": {
+      "title": "Working at a Next-Gen Web Agency",
+      "content": "Discover exciting career opportunities in React, Next.js, Headless CMS, and technical SEO."
     }
   },
   "services": {
@@ -869,6 +1348,673 @@
     "web_development_page": {
       "cta": {
         "button": "Webentwicklung anfragen"
+      },
+      "architecture": {
+        "visualizer": {
+          "build": {
+            "desc": "Automatisierte Tests & CI/CD",
+            "details": "Jeder Commit wird automatisch getestet und optimiert gebaut.",
+            "label": "Build Pipeline"
+          },
+          "cms": {
+            "desc": "Sanity.io Infrastruktur",
+            "details": "Strukturierte Inhalte mit voll typisierter API.",
+            "label": "Headless CMS"
+          },
+          "edge": {
+            "desc": "Vercel Edge & Middleware",
+            "details": "Globale Auslieferung in wenigen Millisekunden.",
+            "label": "Edge Network"
+          },
+          "footer": "Technologie-Stack & Infrastruktur",
+          "user": {
+            "desc": "Globale Auslieferung",
+            "details": "Nahtloses Erlebnis durch intelligentes Edge Caching.",
+            "label": "Endnutzer"
+          }
+        },
+        "label": "Architecture Overview",
+        "title": "Fully Integrated Edge & Cloud Infrastructure",
+        "description": "Experience interactively how modern content flows from the headless CMS through the build pipeline directly to the global edge network."
+      },
+      "process": {
+        "simulator": {
+          "features": {
+            "ci": {
+              "desc": "Gewährleistet reibungslose und sichere Deployments",
+              "label": "CI/CD Pipeline"
+            },
+            "lint": {
+              "desc": "Sichert konsistenten und fehlerfreien Code",
+              "label": "Linting & Formatierung"
+            },
+            "review": {
+              "desc": "Manuelle Qualitätskontrolle für höchste Standards",
+              "label": "Code Reviews"
+            },
+            "test": {
+              "desc": "Garantiert kontinuierliche Stabilität und Zuverlässigkeit",
+              "label": "Automatisierte Tests"
+            },
+            "ts": {
+              "desc": "Strenge Typsicherheit eliminiert Runtime-Fehler",
+              "label": "TypeScript Strict Mode"
+            }
+          },
+          "messages": {
+            "enterprise": "Enterprise-Level: Maximale Skalierbarkeit, Sicherheit und Performance.",
+            "good": "Sehr gut: Hohe Zuverlässigkeit und saubere Code-Struktur.",
+            "risky": "Kritisch: Stabilitätsschwankungen und Performance-Einbußen wahrscheinlich.",
+            "stable": "Stabil: Solide Basis, jedoch mit weiterem Optimierungspotenzial.",
+            "unstable": "Warnung: Hohes Risiko für technische Schulden und Systemausfälle."
+          },
+          "mission_accomplished": "Exzellenz erreicht!",
+          "project_status": "Projektstatus:",
+          "status_label": "Systemstabilität",
+          "subtitle": "Aktivieren Sie verschiedene Best Practices, um deren Auswirkungen direkt zu erleben.",
+          "title": "Code-Qualität Simulator"
+        }
+      },
+      "security": {
+        "items": {
+          "csrf": {
+            "title": "Auth",
+            "value": "Sichere Sessions"
+          },
+          "ddos": {
+            "title": "DDoS-Schutz",
+            "value": "Edge Network"
+          },
+          "owasp": {
+            "title": "OWASP Top 10",
+            "value": "Vollständiger Schutz"
+          },
+          "sql": {
+            "title": "Datenbank",
+            "value": "Injection-Schutz"
+          },
+          "ssl": {
+            "title": "Verschlüsselung",
+            "value": "TLS 1.3 / SSL"
+          },
+          "xss": {
+            "title": "Cross-Site",
+            "value": "XSS & CSRF sicher"
+          }
+        }
+      },
+      "hero": {
+        "label": "Full-Stack Web Development",
+        "title_anim": "Modern Web Architecture &",
+        "title_static": "Enterprise Performance",
+        "description": "We build lightning-fast, scalable web applications and websites with Next.js, React, and TypeScript. Perfect Core Web Vitals, uncompromising security, and future-proof headless architectures."
+      },
+      "problem": {
+        "label": "The Problem with Traditional Websites",
+        "title": "Slow Load Times & Security Risks Cost Revenue",
+        "description": "Monolithic systems like WordPress suffer from plugin bloat, security vulnerabilities, and poor Core Web Vitals. Every millisecond of load time reduces your conversion rate."
+      },
+      "solution": {
+        "label": "The Coday Solution",
+        "title": "Decoupled Headless Architecture for Maximum Speed",
+        "description": "With static site generation (SSG), Edge computing, and Server Components, our websites load in under 500ms – globally, resiliently, and completely immune to traditional web attacks."
+      },
+      "tech_stack": {
+        "title": "State-of-the-Art Tech Stack",
+        "description": "We rely exclusively on industry-leading technologies actively maintained by Google, Meta, and Vercel."
+      },
+      "seoText": {
+        "title": "High-Performance Web Development",
+        "content": "Custom web development with Next.js and React for forward-thinking businesses. Maximum speeds, top search engine rankings, and frictionless user experiences."
+      }
+    },
+    "web_design_page": {
+      "before_after": {
+        "description": "Ein direkter Vergleich zeigt die enorme Wirkung von professionellem High-End Design.",
+        "label": "Transformation",
+        "title": "Vorher & Nachher"
+      },
+      "case_study": {
+        "description": "Werfen Sie einen Blick auf unsere herausragenden Design-Projekte.",
+        "label": "Referenzprojekte",
+        "title": "Design in Aktion"
+      },
+      "design_system": {
+        "description": "Wir entwickeln umfassende Design-Systeme für einen konsistenten Markenauftritt.",
+        "label": "Skalierbarkeit",
+        "title": "Modulare Design Systeme"
+      },
+      "hero": {
+        "description": "Ästhetisches und funktionales Webdesign, das Ihre Marke auf das nächste Level hebt.",
+        "label": "Webdesign Studio",
+        "title_prefix": "Zukunftsweisendes",
+        "title_suffix": "Webdesign"
+      },
+      "meta": {
+        "description": "Wir kreieren exzellentes Webdesign, das Ihre Zielgruppe begeistert und konvertiert.",
+        "title": "High-End Webdesign"
+      },
+      "problem": {
+        "description": "Ein veraltetes Design schadet Ihrem Markenimage und kostet Sie täglich wertvolle Kunden.",
+        "label": "Die Ausgangslage",
+        "title": "Der erste Eindruck zählt"
+      },
+      "process": {
+        "description": "Ein strukturierter Ablauf garantiert Ergebnisse von höchster Qualität.",
+        "title": "Unser Design-Workflow"
+      },
+      "psychology": {
+        "description": "Unsere Designs basieren auf Erkenntnissen der Verhaltenspsychologie.",
+        "label": "Nutzerverhalten",
+        "title": "Psychologie im Design"
+      },
+      "solution": {
+        "description": "Wir verbinden visuelle Exzellenz mit herausragender Usability.",
+        "label": "Unser Lösungsansatz",
+        "title": "Design, das Ergebnisse liefert"
+      },
+      "tech_stack": {
+        "description": "Modernste Tools für kollaboratives und präzises Design.",
+        "title": "Unser Design-Stack"
+      },
+      "seoText": {
+        "title": "Excellent Web Design & UX Strategy",
+        "content": "We craft unmistakable digital brand experiences that build trust and convert visitors into loyal customers."
+      }
+    },
+    "web_apps_page": {
+      "features": {
+        "description": "Ein Überblick über unsere technologischen Kernkompetenzen.",
+        "items": {
+          "cloud": {
+            "desc": "Modernste Serverless-Architektur für höchste Effizienz und Ausfallsicherheit.",
+            "title": "Cloud Native"
+          },
+          "internal_tools": {
+            "desc": "Maßgeschneiderte Software-Lösungen zur Digitalisierung Ihrer Unternehmensprozesse.",
+            "title": "Interne Tools"
+          },
+          "pwa": {
+            "desc": "Ein natives App-Erlebnis direkt im Browser, das auch offline hervorragend funktioniert.",
+            "title": "Progressive Web Apps"
+          },
+          "realtime": {
+            "desc": "Live-Datenübertragung für eine sofortige und reibungslose Nutzererfahrung.",
+            "title": "Echtzeit-Synchronisation"
+          },
+          "saas": {
+            "desc": "Skalierbare Cloud-Lösungen als starkes Fundament für Ihr Geschäftsmodell.",
+            "title": "SaaS Plattformen"
+          },
+          "security": {
+            "desc": "Höchste Sicherheitsstandards, die Ihre sensiblen Unternehmensdaten verlässlich schützen.",
+            "title": "Enterprise Security"
+          }
+        },
+        "title": "Leistungsstarke Funktionen"
+      },
+      "hero": {
+        "cta": "Projektanfrage stellen",
+        "description": "Wir entwickeln komplexe und skalierbare Webapplikationen, die sich wie native Apps anfühlen.",
+        "title_prefix": "Maßgeschneiderte",
+        "title_suffix": "Web-Apps"
+      },
+      "integration_network": {
+        "description": "Nahtlose Anbindung an Ihre bestehenden Systeme für einen effizienten Datenaustausch.",
+        "label": "System-Integration",
+        "title": "API-First Ansatz"
+      },
+      "security": {
+        "badges": {
+          "gdpr": "DSGVO-konform",
+          "ssl": "SSL Verschlüsselung",
+          "support": "Dedizierter Support",
+          "uptime": "99.9% Verfügbarkeit"
+        },
+        "description": "Bei der Entwicklung unserer Web-Apps steht die Sicherheit Ihrer Daten stets an erster Stelle.",
+        "title": "Kompromisslose Sicherheit"
+      },
+      "seoText": {
+        "title": "Scalable Web Applications & Portals",
+        "content": "Custom web applications, client portals, and dashboards – highly performant, secure, and intuitive."
+      }
+    },
+    "ecommerce_page": {
+      "hero": {
+        "title_prefix": "High-End",
+        "title_suffix": "E-Commerce Lösungen",
+        "badge": "Badge",
+        "title_anim": "Title Anim",
+        "title_static": "Title Static",
+        "description": "We build customized high-performance solutions for maximum results."
+      },
+      "meta": {
+        "description": "We build customized high-performance solutions for maximum results.",
+        "title": "Overview"
+      },
+      "seo_content": {
+        "title": "Overview"
+      },
+      "seoText": {
+        "title": "Overview",
+        "content": "Discover how we create measurable value with cutting-edge technologies."
+      }
+    },
+    "headless_cms_page": {
+      "hero": {
+        "title_prefix": "Modernes",
+        "title_suffix": "Headless CMS",
+        "description": "We build customized high-performance solutions for maximum results.",
+        "cta": "Request Now"
+      },
+      "why_headless": {
+        "description": "Trennen Sie Frontend und Backend für maximale Flexibilität und Kontrolle über Ihre Inhalte.",
+        "items": {
+          "dev_friendly": {
+            "desc": "Optimale Entwickler-Erfahrung mit strukturierten, modernen APIs.",
+            "title": "Developer Friendly"
+          },
+          "omnichannel": {
+            "desc": "Nutzen Sie einen zentralen Content-Hub für all Ihre digitalen Kanäle.",
+            "title": "Omnichannel Auslieferung"
+          },
+          "performance": {
+            "desc": "Blitzschnelle Auslieferung durch den Einsatz globaler Edge-Netzwerke.",
+            "title": "High Performance"
+          },
+          "security": {
+            "desc": "Reduzierte Angriffsfläche dank strikt entkoppelter System-Architektur.",
+            "title": "Maximale Sicherheit"
+          }
+        },
+        "title": "Warum Headless?"
+      },
+      "cms_comparison": {
+        "title": "Overview",
+        "description": "We build customized high-performance solutions for maximum results.",
+        "sanity": {
+          "badge": "Badge",
+          "desc": "We build customized high-performance solutions for maximum results."
+        },
+        "contentful": {
+          "badge": "Badge",
+          "desc": "We build customized high-performance solutions for maximum results."
+        },
+        "strapi": {
+          "badge": "Badge",
+          "desc": "We build customized high-performance solutions for maximum results."
+        }
+      },
+      "faq": {
+        "title": "Overview"
+      },
+      "seoText": {
+        "title": "Overview",
+        "content": "Discover how we create measurable value with cutting-edge technologies."
+      }
+    },
+    "api_integration_page": {
+      "hero": {
+        "title_prefix": "Nahtlose",
+        "title_suffix": "API-Integrationen",
+        "description": "We build customized high-performance solutions for maximum results.",
+        "cta": "Request Now"
+      },
+      "why_automate": {
+        "title": "Overview",
+        "description": "We build customized high-performance solutions for maximum results.",
+        "items": {
+          "efficiency": {
+            "title": "Overview",
+            "desc": "We build customized high-performance solutions for maximum results."
+          },
+          "errors": {
+            "title": "Overview",
+            "desc": "We build customized high-performance solutions for maximum results."
+          },
+          "speed": {
+            "title": "Overview",
+            "desc": "We build customized high-performance solutions for maximum results."
+          }
+        }
+      },
+      "connectivity": {
+        "title": "Overview",
+        "description": "We build customized high-performance solutions for maximum results."
+      },
+      "faq": {
+        "title": "Overview"
+      },
+      "seoText": {
+        "title": "Overview",
+        "content": "Discover how we create measurable value with cutting-edge technologies."
+      }
+    },
+    "migration_page": {
+      "before_after": {
+        "after": {
+          "label": "Nach der Migration"
+        },
+        "before": {
+          "label": "Status Quo"
+        },
+        "description": "Erleben Sie den qualitativen Sprung zu einer modernen, wartbaren Architektur.",
+        "title": "Der Architektur-Wechsel"
+      },
+      "faq": {
+        "title": "Häufige Fragen zur Migration"
+      },
+      "hero": {
+        "cta": "Migrations-Audit anfragen",
+        "description": "Wir modernisieren Ihr bestehendes System ohne Datenverlust und Ausfallzeiten.",
+        "label": "System-Migration",
+        "title_prefix": "Sichere",
+        "title_suffix": "Migrationen"
+      },
+      "process": {
+        "description": "Ein methodischer Ansatz stellt sicher, dass Ihre Daten sicher übertragen werden.",
+        "title": "Unser Migrationsprozess"
+      },
+      "technologies": {
+        "description": "Wir beherrschen sowohl Legacy-Systeme als auch moderne Cloud-Stacks.",
+        "title": "Technologie-Expertise"
+      },
+      "seoText": {
+        "title": "Overview",
+        "content": "Discover how we create measurable value with cutting-edge technologies."
+      }
+    },
+    "enterprise_web_page": {
+      "hero": {
+        "title_prefix": "Enterprise",
+        "title_suffix": "Web-Entwicklung",
+        "badge": "Badge",
+        "description": "We build customized high-performance solutions for maximum results.",
+        "cta_primary": "Cta Primary",
+        "cta_secondary": "Cta Secondary",
+        "scroll_hint": "Scroll Hint"
+      },
+      "meta": {
+        "description": "We build customized high-performance solutions for maximum results.",
+        "title": "Overview"
+      },
+      "speed_section": {
+        "title": "Overview",
+        "description": "We build customized high-performance solutions for maximum results."
+      },
+      "stack_section": {
+        "title": "Overview",
+        "description": "We build customized high-performance solutions for maximum results."
+      },
+      "roi_section": {
+        "label": "Details",
+        "title": "Overview",
+        "description": "We build customized high-performance solutions for maximum results."
+      },
+      "methodology": {
+        "title": "Overview",
+        "subtitle": "Learn more about our customized solutions."
+      },
+      "case_study": {
+        "label": "Details",
+        "title": "Overview",
+        "description": "We build customized high-performance solutions for maximum results."
+      },
+      "seoText": {
+        "title": "Overview",
+        "content": "Discover how we create measurable value with cutting-edge technologies."
+      }
+    },
+    "brand_identity_page": {
+      "hero": {
+        "title_prefix": "Einzigartige",
+        "title_suffix": "Markenidentität",
+        "description": "We build customized high-performance solutions for maximum results.",
+        "cta": "Request Now"
+      },
+      "digital_branding": {
+        "title": "Overview",
+        "description": "We build customized high-performance solutions for maximum results."
+      },
+      "process": {
+        "title": "Overview"
+      },
+      "deliverables": {
+        "title": "Overview"
+      },
+      "seoText": {
+        "title": "Overview",
+        "content": "Discover how we create measurable value with cutting-edge technologies."
+      }
+    },
+    "design_systems_page": {
+      "hero": {
+        "title_prefix": "Skalierbare",
+        "title_suffix": "Design Systeme",
+        "badge": "Badge",
+        "description": "We build customized high-performance solutions for maximum results.",
+        "cta": "Request Now"
+      },
+      "benefits": {
+        "title": "Overview"
+      },
+      "components": {
+        "title": "Overview"
+      },
+      "workflow": {
+        "title": "Overview",
+        "description": "We build customized high-performance solutions for maximum results."
+      },
+      "seoText": {
+        "title": "Overview",
+        "content": "Discover how we create measurable value with cutting-edge technologies."
+      }
+    },
+    "ux_audit_page": {
+      "deliverables": {
+        "title": "Konkrete Handlungsempfehlungen"
+      },
+      "hero": {
+        "badge": "UX-Audit",
+        "cta": "Audit starten",
+        "description": "Identifizieren Sie Reibungspunkte in Ihrer User Journey und steigern Sie Ihre Konversionsraten.",
+        "title_prefix": "Tiefgreifendes",
+        "title_suffix": "UX-Audit"
+      },
+      "stats": {
+        "conversion_label": "Konversionssteigerung"
+      },
+      "what_we_analyze": {
+        "title": "Unsere Analysepunkte"
+      },
+      "seoText": {
+        "title": "Overview",
+        "content": "Discover how we create measurable value with cutting-edge technologies."
+      }
+    },
+    "seo_page": {
+      "case_study": {
+        "description": "Erfahren Sie, wie wir die Sichtbarkeit unserer Kunden signifikant steigern konnten.",
+        "label": "Erfolgsgeschichten",
+        "title": "Bewiesene Resultate"
+      },
+      "dominance": {
+        "cards": {
+          "content": {
+            "desc": "Zielgruppenorientierte Inhalte, die Nutzer und Suchmaschinen restlos überzeugen.",
+            "title": "Content-Strategie"
+          },
+          "regional": {
+            "desc": "Gezielte Optimierung für maximale Sichtbarkeit in Ihrem lokalen und regionalen Markt.",
+            "title": "Local SEO"
+          },
+          "technical": {
+            "desc": "Fehlerfreie Architektur, schnelle Ladezeiten und eine perfekte Crawlability.",
+            "title": "Technisches SEO"
+          }
+        },
+        "description": "Wir decken sämtliche Aspekte der modernen Suchmaschinenoptimierung ab.",
+        "title": "Ganzheitliche Optimierung"
+      },
+      "hero": {
+        "badge": "Datengetriebenes SEO",
+        "description": "Steigern Sie Ihre Sichtbarkeit und ziehen Sie organisch hochwertige Leads an.",
+        "title_prefix": "Dominieren Sie",
+        "title_suffix": "Ihren Markt"
+      },
+      "meta": {
+        "description": "Professionelle SEO-Optimierung für bessere Rankings und mehr qualifizierten Traffic.",
+        "title": "SEO Optimierung"
+      },
+      "problem": {
+        "description": "Eine noch so großartige Website bringt keinen Mehrwert, wenn sie nicht gefunden wird.",
+        "label": "Die Herausforderung",
+        "title": "Unsichtbarkeit kostet wertvollen Umsatz"
+      },
+      "process": {
+        "description": "Unser methodischer und datenbasierter Ansatz für nachhaltige Top-Rankings.",
+        "steps": {
+          "audit": {
+            "desc": "Umfassende Analyse des Status Quo und präzise Identifikation ungenutzter Potenziale.",
+            "title": "Technical Audit"
+          },
+          "implementation": {
+            "desc": "Sorgfältige technische und inhaltliche Umsetzung der definierten Optimierungsmaßnahmen.",
+            "title": "Implementierung"
+          },
+          "monitoring": {
+            "desc": "Kontinuierliche Überwachung der Rankings sowie proaktive Feinjustierung der Performance.",
+            "title": "Monitoring"
+          },
+          "strategy": {
+            "desc": "Entwicklung einer maßgeschneiderten, langfristigen Strategie basierend auf fundierten Daten.",
+            "title": "Strategie-Entwicklung"
+          }
+        },
+        "title": "Der Weg zur Spitze"
+      },
+      "ranking_factors": {
+        "badge": "Ranking-Faktoren",
+        "description": "Wir optimieren konsequent nach den aktuellsten Google-Richtlinien, insbesondere den Core Web Vitals.",
+        "title": "Performance trifft auf Relevanz"
+      },
+      "solution": {
+        "description": "Wir positionieren Sie präzise dort, wo Ihre potenziellen Kunden aktiv suchen.",
+        "label": "Unsere Lösung",
+        "title": "Nachhaltiges Wachstum durch organische Sichtbarkeit"
+      },
+      "tech_stack": {
+        "description": "Modernste Tools für tiefgreifende Marktanalysen und exaktes Tracking.",
+        "title": "Unser professioneller SEO-Stack"
+      },
+      "seoText": {
+        "title": "Overview",
+        "content": "Discover how we create measurable value with cutting-edge technologies."
+      }
+    },
+    "performance_page": {
+      "google_values": {
+        "badge": "Core Web Vitals",
+        "description": "Wir optimieren streng nach den Google-Richtlinien für maximale Geschwindigkeit.",
+        "title": "Exzellenz messbar gemacht"
+      },
+      "hero": {
+        "badge": "Performance-Optimierung",
+        "description": "Verbessern Sie Ihre Konversionsraten durch blitzschnelle Ladezeiten.",
+        "title_prefix": "Maximale",
+        "title_suffix": "Web-Performance"
+      },
+      "meta": {
+        "description": "Wir optimieren Ihre Website für maximale Geschwindigkeit und beste Google Rankings.",
+        "title": "Web-Performance Optimierung"
+      },
+      "metrics": {
+        "eco": "Energieeffizienz",
+        "load_time": "Ladezeit",
+        "score": "Lighthouse Score",
+        "shift": "Layout Shift"
+      },
+      "seo_content": {
+        "title": "Overview"
+      },
+      "seoText": {
+        "title": "Overview",
+        "content": "Discover how we create measurable value with cutting-edge technologies."
+      }
+    },
+    "consulting_page": {
+      "hero": {
+        "title_prefix": "Strategisches",
+        "title_suffix": "IT-Consulting"
+      }
+    },
+    "actions": {
+      "read_more": "Read more"
+    },
+    "generic_detail": {
+      "not_found": {
+        "title": "Overview",
+        "link": "Link"
+      },
+      "hero": {
+        "consulting_btn": "Consulting Btn",
+        "benefits_title": "Benefits Title"
+      },
+      "trust": {
+        "title": "Overview"
+      },
+      "process": {
+        "label": "Details"
+      },
+      "advantages": {
+        "label": "Details",
+        "desc": "We build customized high-performance solutions for maximum results.",
+        "contact_btn": "Contact Btn"
+      },
+      "testimonials": {
+        "label": "Details",
+        "title": "Overview"
+      },
+      "faq": {
+        "title": "Overview",
+        "desc": "We build customized high-performance solutions for maximum results."
+      },
+      "final_cta": {
+        "title": "Overview",
+        "desc": "We build customized high-performance solutions for maximum results.",
+        "button": "Learn More"
+      }
+    },
+    "nav": {
+      "services": {
+        "label": "Details"
+      }
+    },
+    "ui_ux_page": {
+      "hero": {
+        "badge": "Badge",
+        "title_prefix": "Title Prefix",
+        "title_suffix": "Title Suffix",
+        "description": "We build customized high-performance solutions for maximum results.",
+        "cta": "Request Now"
+      },
+      "process": {
+        "title": "Overview",
+        "description": "We build customized high-performance solutions for maximum results."
+      },
+      "psychology": {
+        "title": "Overview",
+        "description": "We build customized high-performance solutions for maximum results."
+      },
+      "deliverables": {
+        "title": "Overview"
+      },
+      "faq": {
+        "title": "Overview"
+      },
+      "seoText": {
+        "title": "Overview",
+        "content": "Discover how we create measurable value with cutting-edge technologies."
       }
     }
   },
@@ -902,39 +2048,76 @@
       "hero": {
         "alt": "Premium Web Design Agency in Wetzlar - Websites for craftsmen and doctors"
       },
-      "development": { "alt": "Professional Web Development and Programming Wetzlar" },
-      "webdesign": { "alt": "High Quality Web Design Wetzlar and Central Hesse" },
-      "seo": { "alt": "Local SEO Wetzlar - Increase Google Visibility" },
-      "marketing": { "alt": "Omnichannel Marketing Strategy for businesses from Wetzlar" },
-      "gmb": { "alt": "Google Business Profile Optimization Wetzlar" },
-      "terminbuchung": { "alt": "Digital Appointment Booking for Websites Wetzlar" },
-      "bewertungen": { "alt": "Customer Reviews and Reputation Management Wetzlar" }
+      "development": {
+        "alt": "Professional Web Development and Programming Wetzlar"
+      },
+      "webdesign": {
+        "alt": "High Quality Web Design Wetzlar and Central Hesse"
+      },
+      "seo": {
+        "alt": "Local SEO Wetzlar - Increase Google Visibility"
+      },
+      "marketing": {
+        "alt": "Omnichannel Marketing Strategy for businesses from Wetzlar"
+      },
+      "gmb": {
+        "alt": "Google Business Profile Optimization Wetzlar"
+      },
+      "terminbuchung": {
+        "alt": "Digital Appointment Booking for Websites Wetzlar"
+      },
+      "bewertungen": {
+        "alt": "Customer Reviews and Reputation Management Wetzlar"
+      }
     },
     "web_dev": {
-      "hero": { "alt": "Get a Website in Wetzlar and surroundings - Custom Web Solutions" },
-      "solutions": { "alt": "Reliable Partner for New Websites in Wetzlar and Central Hesse" }
+      "hero": {
+        "alt": "Get a Website in Wetzlar and surroundings - Custom Web Solutions"
+      },
+      "solutions": {
+        "alt": "Reliable Partner for New Websites in Wetzlar and Central Hesse"
+      }
     },
     "app_dev": {
-      "hero": { "alt": "High Quality Web Apps and Website Development Wetzlar and surroundings" },
-      "consulting": { "alt": "Consulting for your new website in Wetzlar" },
-      "workflow": { "alt": "UI UX Design for high-converting websites Wetzlar area" },
-      "webdesign": { "alt": "Premium Web Design Agency for Wetzlar and surroundings" }
+      "hero": {
+        "alt": "High Quality Web Apps and Website Development Wetzlar and surroundings"
+      },
+      "consulting": {
+        "alt": "Consulting for your new website in Wetzlar"
+      },
+      "workflow": {
+        "alt": "UI UX Design for high-converting websites Wetzlar area"
+      },
+      "webdesign": {
+        "alt": "Premium Web Design Agency for Wetzlar and surroundings"
+      }
     },
     "branding": {
-      "hero": { "alt": "Web Design and Corporate Design Agency Wetzlar and surroundings" },
-      "visuals": { "alt": "Visual Web Design for modern websites in Wetzlar" },
-      "strategy": { "alt": "Website Strategy and Conception for businesses in Wetzlar" }
+      "hero": {
+        "alt": "Web Design and Corporate Design Agency Wetzlar and surroundings"
+      },
+      "visuals": {
+        "alt": "Visual Web Design for modern websites in Wetzlar"
+      },
+      "strategy": {
+        "alt": "Website Strategy and Conception for businesses in Wetzlar"
+      }
     },
     "marketing": {
-      "hero": { "alt": "Visibility for your website in Wetzlar and surroundings" },
-      "omnichannel": { "alt": "Local Web Design and SEO for Wetzlar and Central Hesse" }
+      "hero": {
+        "alt": "Visibility for your website in Wetzlar and surroundings"
+      },
+      "omnichannel": {
+        "alt": "Local Web Design and SEO for Wetzlar and Central Hesse"
+      }
     }
   },
   "industries": {
     "overview": {
       "label": "Industries",
       "title": "Industry Solutions for Web Design",
-      "description": "Specialized web design for every industry. Custom Industry Solutions for Web Design to help you dominate your sector."
+      "description": "Specialized web design for every industry. Custom Industry Solutions for Web Design to help you dominate your sector.",
+      "cta": "Request Now"
     },
     "title_prefix": "Maßgeschneiderte Lösungen",
     "title_suffix": "für Ihre Branche.",
@@ -1014,6 +2197,73 @@
             "leads": "Terminanfragen & Patienten"
           }
         }
+      },
+      "features": {
+        "patient_journey": {
+          "steps": {
+            "symptom": {
+              "title": "Overview",
+              "desc": "We build customized high-performance solutions for maximum results.",
+              "analog": "Traditional Process",
+              "digital": "Coday Digital Workflow"
+            },
+            "pre_visit": {
+              "title": "Overview",
+              "desc": "We build customized high-performance solutions for maximum results.",
+              "analog": "Traditional Process",
+              "digital": "Coday Digital Workflow"
+            },
+            "visit": {
+              "title": "Overview",
+              "desc": "We build customized high-performance solutions for maximum results.",
+              "analog": "Traditional Process",
+              "digital": "Coday Digital Workflow"
+            },
+            "follow_up": {
+              "title": "Overview",
+              "desc": "We build customized high-performance solutions for maximum results.",
+              "analog": "Traditional Process",
+              "digital": "Coday Digital Workflow"
+            }
+          },
+          "title": "Overview",
+          "labels": {
+            "analog": "Traditional Process",
+            "digital": "Coday Digital Workflow"
+          },
+          "click_hint": "Click Hint"
+        },
+        "roi_calculator": {
+          "label": "Details",
+          "title": "Overview",
+          "labels": {
+            "patients_per_day": "Patients Per Day",
+            "time_saved": "Time Saved"
+          },
+          "time_saved_note": "Time Saved Note",
+          "results": {
+            "time_gained": "Time Gained",
+            "per_month": "Per Month",
+            "savings": "Savings"
+          },
+          "impact": "Impact"
+        }
+      },
+      "hero": {
+        "subheadline": "Subheadline",
+        "headline": "Headline",
+        "title_suffix": "Title Suffix"
+      },
+      "title": "Overview",
+      "solutions": {
+        "team_vorstellung": {
+          "title": "Overview",
+          "description": "We build customized high-performance solutions for maximum results."
+        }
+      },
+      "seoText": {
+        "title": "Overview",
+        "content": "Discover how we create measurable value with cutting-edge technologies."
       }
     },
     "handwerk-bau": {
@@ -1021,7 +2271,77 @@
         "title_1": "Professionelles Webdesign",
         "title_2": "für Handwerker",
         "description": "Wir bauen Websites, die Handwerksbetrieben zu mehr Sichtbarkeit und Aufträgen verhelfen.",
-        "image_alt": "Handwerker Website"
+        "image_alt": "Handwerker Website",
+        "headline": "Headline",
+        "subheadline": "Subheadline",
+        "title_suffix": "Title Suffix"
+      },
+      "features": {
+        "calculator": {
+          "title": "Craftsman Lead & Revenue Calculator",
+          "subtitle": "See how many high-margin projects you gain through top local Google rankings.",
+          "labels": {
+            "order_value": "Average Project Value (€)",
+            "repair": "Minor Repairs",
+            "sanitation": "Full Renovations",
+            "leads": "Leads per Month",
+            "close_rate": "Close Rate (%)",
+            "revenue_month": "Potential Monthly Revenue (€)"
+          },
+          "disclaimer": "Estimates based on regional trade master data."
+        },
+        "local_dominance": {
+          "title": "Local Market Dominance",
+          "description": "Become the undisputed #1 for craft services in your area.",
+          "labels": {
+            "your_business": "Your Business",
+            "competitors": "Competitors"
+          },
+          "stats": {
+            "radius": "Radius",
+            "ranking": "Ranking",
+            "market_share": "Market Share"
+          },
+          "label": "Details"
+        },
+        "recruiting": {
+          "steps": {
+            "ad": {
+              "title": "Overview",
+              "desc": "We build customized high-performance solutions for maximum results.",
+              "mockup": {
+                "company": "Company",
+                "photo": "Photo",
+                "cta": "Request Now"
+              }
+            },
+            "quiz": {
+              "title": "Overview",
+              "desc": "We build customized high-performance solutions for maximum results.",
+              "mockup": {
+                "question": "Question",
+                "yes": "Yes",
+                "no": "No"
+              }
+            },
+            "appointment": {
+              "title": "Overview",
+              "desc": "We build customized high-performance solutions for maximum results.",
+              "mockup": {
+                "title": "Overview"
+              }
+            }
+          },
+          "title": "Overview",
+          "description": "We build customized high-performance solutions for maximum results.",
+          "label": "Details",
+          "subtitle": "Learn more about our customized solutions."
+        }
+      },
+      "title": "Overview",
+      "seoText": {
+        "title": "Overview",
+        "content": "Discover how we create measurable value with cutting-edge technologies."
       }
     },
     "buttons": {
@@ -1032,6 +2352,329 @@
         "google_maps": "Google Maps Integration",
         "regional_pages": "Regionale Landingpages",
         "review_management": "Bewertungsmanagement"
+      }
+    },
+    "gastronomie-hotellerie": {
+      "features": {
+        "menu_engineering": {
+          "title": "Digital Menu Engineering",
+          "description": "Optimize your menu for up to 25% higher average checks.",
+          "toggles": {
+            "paper": "Traditional Paper Menu",
+            "digital": "Optimized Digital Menu"
+          },
+          "paper_view": {
+            "title": "Traditional Paper Menu (Status Quo)",
+            "items": {
+              "steak": "Rumpsteak 250g",
+              "schnitzel": "Wiener Schnitzel",
+              "salad": "Side Salad"
+            },
+            "disclaimer": "No visual cues, limited upsell potential."
+          },
+          "digital_view": {
+            "title": "Revenue-Optimized Digital Menu (Coday)",
+            "description": "High-res food photography, dynamic pairings, and smart allergen filters.",
+            "cta_add": "Add to Order",
+            "upsell": {
+              "label": "Recommended Wine Pairing:",
+              "item": "Spätburgunder trocken"
+            }
+          }
+        },
+        "roi_visualizer": {
+          "title": "No-Show & Table Revenue Calculator",
+          "subtitle": "Calculate recovered revenue through automated deposits and reservation reminders.",
+          "labels": {
+            "covers": "Total Seats",
+            "avg_check": "Average Check per Guest (€)",
+            "no_show_rate": "Current No-Show Rate (%)",
+            "revenue_month": "Monthly Added Revenue (€)"
+          },
+          "disclaimer": "Calculation based on verified industry benchmarks.",
+          "results": {
+            "loss": "Lost Revenue from No-Shows:",
+            "recovered": "Recovered Revenue with Coday:",
+            "context": "Automated SMS reminders reduce no-shows by up to 85%."
+          },
+          "cta": "Inquire Gastronomy Strategy"
+        },
+        "cta": "Request Now",
+        "title": "Overview",
+        "subtitle": "Learn more about our customized solutions."
+      },
+      "hero": {
+        "subheadline": "Subheadline",
+        "headline": "Headline",
+        "title_suffix": "Title Suffix"
+      },
+      "title": "Overview",
+      "solutions": {
+        "direktbuchung": {
+          "title": "Overview",
+          "description": "We build customized high-performance solutions for maximum results."
+        },
+        "event_marketing": {
+          "title": "Overview",
+          "description": "We build customized high-performance solutions for maximum results."
+        },
+        "visual_storytelling": {
+          "title": "Overview",
+          "description": "We build customized high-performance solutions for maximum results."
+        }
+      },
+      "seoText": {
+        "title": "Overview",
+        "content": "Discover how we create measurable value with cutting-edge technologies."
+      }
+    },
+    "immobilien-makler": {
+      "features": {
+        "expose_demo": {
+          "title": "Overview",
+          "subtitle": "Learn more about our customized solutions.",
+          "toggles": {
+            "pdf": "Pdf",
+            "web": "Web"
+          },
+          "pdf_view": {
+            "image_alt": "Image Alt",
+            "warning": "Warning"
+          },
+          "web_view": {
+            "badge": "Badge",
+            "title": "Overview",
+            "cta_tour": "Cta Tour",
+            "cta_share": "Cta Share",
+            "stats": {
+              "area": "Area",
+              "area_label": "Area Label",
+              "rooms": "Rooms",
+              "rooms_label": "Rooms Label"
+            }
+          }
+        },
+        "roi_calculator": {
+          "label": "Details",
+          "title": "Overview",
+          "labels": {
+            "property_value": "Property Value",
+            "commission_rate": "Commission Rate"
+          },
+          "results": {
+            "revenue_per_deal": "Revenue Per Deal",
+            "turbo_sale": "Turbo Sale",
+            "turbo_sub": "Turbo Sub",
+            "time_saved": "Time Saved",
+            "impact": "Impact"
+          },
+          "cta": "Request Now"
+        },
+        "virtual_tour": {
+          "demo_label": "Demo Label",
+          "title": "Overview",
+          "hotspots": {
+            "kitchen": "Kitchen",
+            "terrace": "Terrace"
+          },
+          "drag_hint": "Drag Hint",
+          "rooms": {
+            "living": "Living",
+            "bath": "Bath",
+            "kitchen": "Kitchen"
+          },
+          "cta": "Request Now",
+          "disclaimer": "All metrics based on verified industry benchmarks."
+        },
+        "expose_section": {
+          "label": "Details",
+          "title": "Overview",
+          "description": "We build customized high-performance solutions for maximum results."
+        },
+        "grid": {
+          "staging": {
+            "title": "Overview",
+            "desc": "We build customized high-performance solutions for maximum results."
+          },
+          "login": {
+            "title": "Overview",
+            "desc": "We build customized high-performance solutions for maximum results."
+          },
+          "followup": {
+            "title": "Overview",
+            "desc": "We build customized high-performance solutions for maximum results."
+          }
+        }
+      },
+      "title": "Overview",
+      "hero": {
+        "subheadline": "Subheadline",
+        "image_alt": "Image Alt",
+        "headline": "Headline",
+        "title_suffix": "Title Suffix"
+      },
+      "seoText": {
+        "title": "Overview",
+        "content": "Discover how we create measurable value with cutting-edge technologies."
+      }
+    },
+    "ecommerce-retail": {
+      "features": {
+        "loyalty_loop": {
+          "title": "Overview",
+          "description": "We build customized high-performance solutions for maximum results."
+        },
+        "omnichannel": {
+          "strategies": {
+            "click-collect": {
+              "title": "Overview",
+              "desc": "We build customized high-performance solutions for maximum results."
+            },
+            "ship-from-store": {
+              "title": "Overview",
+              "desc": "We build customized high-performance solutions for maximum results."
+            },
+            "endless-aisle": {
+              "title": "Overview",
+              "desc": "We build customized high-performance solutions for maximum results."
+            }
+          },
+          "title": "Overview",
+          "nodes": {
+            "store": "Store",
+            "online": "Online"
+          }
+        },
+        "pos_sync": {
+          "title": "Overview",
+          "labels": {
+            "store": "Store",
+            "stock": "Stock",
+            "online": "Online"
+          },
+          "actions": {
+            "sold": "Sold",
+            "update": "Update",
+            "add_to_cart": "Add To Cart"
+          }
+        }
+      },
+      "hero": {
+        "headline": "Headline",
+        "subheadline": "Subheadline",
+        "title_suffix": "Title Suffix",
+        "description": "We build customized high-performance solutions for maximum results."
+      },
+      "title": "Overview",
+      "customFeatures": {
+        "produkt_konfigurator": {
+          "title": "Overview"
+        }
+      }
+    },
+    "unternehmensberatung": {
+      "features": {
+        "crm_flow": {
+          "title": "Overview",
+          "description": "We build customized high-performance solutions for maximum results."
+        },
+        "lead_simulator": {
+          "title": "Overview",
+          "description": "We build customized high-performance solutions for maximum results.",
+          "filter_label": "Filter Label",
+          "table_headers": {
+            "inbox": "Inbox",
+            "status": "Status"
+          },
+          "budget_label": "Budget Label",
+          "status_labels": {
+            "accept": "Accept",
+            "reject": "Reject"
+          }
+        },
+        "service_funnel": {
+          "title": "Overview",
+          "description": "We build customized high-performance solutions for maximum results.",
+          "steps": {
+            "traffic": "Traffic",
+            "leads": "Leads",
+            "clients": "Clients"
+          },
+          "insight": "Insight"
+        }
+      },
+      "hero": {
+        "subheadline": "Subheadline",
+        "headline": "Headline",
+        "title_suffix": "Title Suffix",
+        "description": "We build customized high-performance solutions for maximum results."
+      },
+      "title": "Overview",
+      "customFeatures": {
+        "termin_kalender": {
+          "title": "Overview"
+        }
+      },
+      "solutions": {
+        "whitepaper_funnels": {
+          "title": "Overview",
+          "description": "We build customized high-performance solutions for maximum results."
+        },
+        "case_studies": {
+          "title": "Overview",
+          "description": "We build customized high-performance solutions for maximum results."
+        },
+        "webinare": {
+          "title": "Overview",
+          "description": "We build customized high-performance solutions for maximum results."
+        }
+      },
+      "seoText": {
+        "title": "Overview",
+        "content": "Discover how we create measurable value with cutting-edge technologies."
+      }
+    },
+    "detail": {
+      "not_found": {
+        "title": "Overview",
+        "link": "Link"
+      },
+      "nav": {
+        "back": "Back"
+      },
+      "hero": {
+        "cta_primary": "Cta Primary",
+        "cta_secondary": "Cta Secondary"
+      },
+      "challenges": {
+        "title": "Overview"
+      },
+      "solutions": {
+        "title": "Overview",
+        "description": "We build customized high-performance solutions for maximum results."
+      },
+      "gallery": {
+        "title": "Overview",
+        "description": "We build customized high-performance solutions for maximum results."
+      },
+      "features": {
+        "title": "Overview",
+        "subtitle": "Learn more about our customized solutions.",
+        "cta": "Request Now"
+      },
+      "related": {
+        "title": "Overview",
+        "link": "Link"
+      }
+    },
+    "retail": {
+      "seoText": {
+        "title": "Overview",
+        "content": "Discover how we create measurable value with cutting-edge technologies."
+      },
+      "hero": {
+        "headline": "Headline",
+        "title_suffix": "Title Suffix"
       }
     }
   },
@@ -1579,7 +3222,10 @@
       },
       "success": {
         "booking_title": "Almost done!",
-        "booking_desc": "Please select a time for a short discovery call."
+        "booking_desc": "Please select a time for a short discovery call.",
+        "trust_text": "100% binding fixed-price quote with zero hidden costs",
+        "trust_source": "GDPR Compliant",
+        "back_home": "Back to Home"
       },
       "step1": {
         "project_type": {
@@ -1626,18 +3272,119 @@
       "description": "Calculate the cost of your next website, web app, or e-commerce solution in real-time."
     },
     "summary": {
-      "package": "Selected Package"
+      "package": "Selected Package",
+      "title": "Your Project Overview",
+      "empty": "No modules selected yet"
+    },
+    "hero": {
+      "label": "Interactive Price Calculator",
+      "title_1": "Calculate Your",
+      "title_2": "Dream Digital Project",
+      "subtitle_default": "Select desired modules and features for a transparent fixed-price offer upon request.",
+      "subtitle_packages": "Customize your selected package to match your exact business requirements.",
+      "satisfied": "Satisfied with your selection?",
+      "next_step": "Next Step",
+      "continue": "Continue to Inquiry"
+    },
+    "module_count": "{count} modules selected",
+    "card": {
+      "status": {
+        "included": "Included",
+        "selected": "Selected",
+        "add": "Add"
+      },
+      "included": "Included in package",
+      "bestseller": "Bestseller",
+      "recommended": "Recommended"
+    },
+    "seoText": {
+      "title": "Transparent Cost Calculation for Web Projects",
+      "content": "Receive a tailored, binding fixed-price quote after your custom selection with zero hidden costs."
     }
   },
   "analyzer": {
     "meta": {
       "title": "Website Analyzer Audit | Coday",
       "description": "Test your website for performance, SEO, accessibility, and best practices. Free audit."
+    },
+    "input": {
+      "placeholder": "https://your-website.com",
+      "analyzing": "Analyzing...",
+      "analyze_button": "Analyze Website",
+      "helper_text_start": "Free in-depth analysis in 30 seconds with",
+      "helper_text_highlight": "AI Multi-Agent Inspection",
+      "error_invalid_email": "Please enter a valid email address."
+    },
+    "agents": {
+      "performance": "Performance & Speed",
+      "seo": "SEO & Visibility",
+      "security": "Security & SSL",
+      "accessibility": "Accessibility",
+      "ux": "UX & UI Design",
+      "content": "Content & Conversion"
+    },
+    "progress": {
+      "analyzing": "Agents are analyzing your website...",
+      "agent_analyzing": "Agent running audit...",
+      "connection_establishing": "Establishing connection..."
+    },
+    "modal": {
+      "title": "Request Full Report",
+      "subtitle": "Get the detailed PDF analysis sent to your inbox.",
+      "label_name": "Your Name",
+      "placeholder_name": "John Doe",
+      "label_email": "Your Email Address",
+      "placeholder_email": "name@company.com",
+      "button_send": "Send Report Now",
+      "button_sending": "Sending...",
+      "success_title": "Report Sent Successfully!",
+      "success_message": "We have delivered the full audit report to your email.",
+      "error_sending": "Error sending report. Please try again.",
+      "privacy_note": "Your data will be kept confidential and not shared with third parties.",
+      "close": "Close"
+    },
+    "dashboard": {
+      "your_audit": "Your Audit Result",
+      "analyzed_on": "Analyzed on",
+      "analysis_complete": "Analysis Complete",
+      "analysis_failed": "Analysis Failed",
+      "error_timeout": "Analysis timed out.",
+      "error_network": "Network error occurred.",
+      "error_agents": "Agent error occurred.",
+      "server_alive": "Server online",
+      "server_dead": "Server unreachable",
+      "button_test_server": "Test Server",
+      "button_retry": "Try Again",
+      "button_demo": "Load Demo Data",
+      "partial_failure": "Partial Analysis Warning",
+      "partial_failure_desc": "Some agents could not retrieve full metrics.",
+      "button_pdf": "Export as PDF",
+      "button_copied": "Link copied!",
+      "button_share": "Share Report",
+      "button_email": "Send via Email",
+      "overall_score": "Overall Score",
+      "score_good": "Excellent",
+      "score_ok": "Needs Improvement",
+      "score_bad": "Critical Action Required",
+      "detail_analysis": "Detailed Agent Analysis",
+      "found_issues": "Identified Optimization Potentials",
+      "more_issues": "more items in full report",
+      "action_plan": "Tailored Action Plan",
+      "generate_plan": "Generate Action Plan",
+      "plan_placeholder": "Generating action plan...",
+      "generate_ai_plan": "Create AI Action Plan",
+      "cta_title": "Ready for 100/100 Performance & Top Rankings?",
+      "cta_desc": "Let us implement the identified potentials together.",
+      "button_book": "Book Free Consultation",
+      "button_new_analysis": "Analyze New URL"
+    },
+    "score_card": {
+      "failed": "Failed",
+      "waiting": "Waiting for analysis..."
+    },
+    "urgency": {
+      "unavailable": "Unavailable"
     }
-  },
-  "landingpages": {
-    "nextjsmigration": "As businesses in Wetzlar and the broader Hesse region seek to enhance their digital footprints, migrating to a modern, robust architecture like Next.js has become a critical strategic step. Traditional monolithic websites and legacy CMS platforms often suffer from slow loading times, frequent security vulnerabilities, and cumbersome maintenance routines that drain valuable resources and frustrate users. By migrating your platform to a React-based Next.js architecture, you are fundamentally transforming your online presence into a high-performance, future-proof digital asset. Next.js excels at Server-Side Rendering (SSR) and Static Site Generation (SSG), which means that your web pages are pre-rendered and delivered to users in mere milliseconds via a global Edge Network. This immediate delivery completely eliminates the frustrating wait times that cause potential customers to abandon your site, keeping them highly engaged and drastically improving your overall conversion rates. When every second of loading time translates to lost revenue, adopting Next.js is not just a technological upgrade; it is a vital business decision that directly impacts your bottom line.\n\nPerformance is not just about providing a smooth user experience; it directly impacts your visibility on search engines. Google's algorithm heavily favors websites that excel in Core Web Vitals metrics that strictly measure loading performance, interactivity, and visual stability. Next.js is inherently optimized out-of-the-box to score perfectly on these vital metrics, providing your Wetzlar-based business with an unfair advantage in both local and national search engine rankings. Our comprehensive Next.js migration service ensures that your transition is incredibly smooth, entirely without any downtime or loss of your hard-earned SEO rankings. We meticulously map your existing URLs, implement strategic 301 redirects, and ensure that every piece of content, metadata, and structural SEO element is securely and accurately transferred. As your dedicated local web agency in Central Hesse, we handle all the technical complexities behind the scenes so you can focus entirely on your core business operations, confident that your digital infrastructure is built on solid, scalable ground.\n\nBeyond speed and SEO dominance, a Next.js architecture offers unparalleled security and long-term scalability. Traditional systems that couple the frontend tightly with the backend database are prime targets for cyberattacks, malware, and plugin vulnerabilities. Next.js adopts a decoupled, headless approach, effectively removing the database and sensitive business logic from the public-facing frontend. This drastically reduces your attack surface, providing enterprise-grade security for your proprietary data and your customers' sensitive information. Furthermore, as your business grows and evolves, your website needs to scale seamlessly to accommodate increased demand. Whether you are launching a massive multi-channel e-commerce campaign, running high-traffic seasonal promotions, or experiencing sudden spikes in traffic from a viral marketing effort, a Next.js platform handles the heavy load effortlessly without crashing or slowing down. By partnering with Coday for your Next.js migration, you are investing in a sustainable, high-end digital architecture that not only meets the rigorous demands of today’s highly competitive market but is fully equipped to adapt to the technological advancements of tomorrow. Experience the absolute pinnacle of web development and propel your enterprise forward with our expert migration services tailored specifically for ambitious, forward-thinking companies in Hesse.",
-    "weilburg": "For local businesses, craftsmen, and medical practices operating in Weilburg and the surrounding Lahn-Dill district, establishing a commanding online presence is no longer optional it is the absolute cornerstone of sustainable growth and long-term success. The digital landscape has evolved tremendously, and your potential clients are actively searching for your services on their smartphones, tablets, and desktops right at this very moment. If your website is outdated, frustratingly slow, or difficult to navigate on mobile devices, you are inadvertently sending those highly valuable customers straight into the arms of your local competitors. At Coday, we specialize in crafting high-end, meticulously conversion-optimized websites tailored specifically for the unique market dynamics and consumer behaviors of Weilburg. We firmly understand that your website is your most tireless, effective salesperson, working diligently around the clock to generate qualified leads, attract skilled professionals, and build unwavering trust in your brand long before a direct, personal interaction even takes place.\n\nOur holistic approach to premium web design in Weilburg goes far beyond mere aesthetics; it is deeply rooted in technical performance and strategic local search engine optimization (Local SEO). We build all our websites using the absolute latest Next.js and React technologies, ensuring lightning-fast load times that instantly captivate visitors, keep them engaged, and significantly reduce bounce rates. Search engines like Google heavily prioritize fast, secure, and mobile-friendly websites, and our precision-engineered platforms are explicitly designed to dominate the local search results. When someone in Weilburg or the neighboring towns searches for a reliable, experienced craftsman, a competent specialist doctor, or a top-tier B2B service provider, our primary goal is to ensure your business appears at the very top of those search queries. We thoroughly optimize your entire digital footprint, from structuring the underlying code to seamlessly integrating and enhancing your Google Business Profile, making it incredibly easy for local clients to find you, trust your expertise, and contact you instantly.\n\nFurthermore, we strongly believe that managing your digital presence should be completely effortless on your end, allowing you to focus your valuable time and energy on what you do best running and expanding your core business. We provide a comprehensive, fully managed service that seamlessly includes everything from the initial strategy and bespoke design to secure cloud hosting, continuous proactive maintenance, and strict GDPR compliance. Our highly transparent, fixed-price model guarantees that there are absolutely no hidden costs or unpleasant financial surprises along the way. We also expertly integrate smart, interactive features like intuitive online appointment booking systems, secure patient portals, and streamlined recruiting forms. These advanced integrations transform your website from a simple digital brochure into a powerful, automated operational tool that not only consistently wins lucrative new clients but also actively attracts top-tier talent from the entire region. Partner with Coday, your dedicated and experienced local web agency, and let us elevate your Weilburg-based business to unprecedented digital heights with a stunning, high-performance website that truly delivers measurable, scalable, and lasting commercial success."
   },
   "partnerschaft": {
     "content": "At Coday, we strongly and passionately believe that the most innovative, impactful, and enduring digital solutions are born from true, transparent collaboration. Our exclusive partner program is specifically and thoughtfully designed for forward-thinking marketing agencies, strategic consultants, and tech innovators who want to confidently offer their clients top-tier, high-performance web development without ever compromising on quality, speed, or security. By formally partnering with us, you instantly gain full, unrestricted access to our deep, specialized expertise in modern Next.js architectures, React ecosystems, and highly scalable headless CMS solutions, seamlessly allowing you to significantly expand your own service offerings and take on more ambitious, lucrative projects.\n\nWe firmly treat our carefully selected partners as a direct, highly valued extension of our very own development team. When you collaborate with Coday, you can invariably expect complete, uncompromising transparency, highly responsive and reliable communication, and a deeply shared, unwavering commitment to consistently delivering outstanding, measurable results for the end client. Whether you urgently need a highly reliable technical partner for unexpected overflow work, or you require a dedicated, senior-level development team to architect and execute highly complex, data-heavy enterprise projects from scratch, Coday is perfectly equipped and fully prepared to support your agency's sustainable growth and help you consistently exceed your clients' highest expectations.\n\nActively joining our elite partner network means you will never again have to turn down a potentially lucrative or creatively exciting project due to internal technical limitations, bandwidth constraints, or a lack of specialized development resources. We enthusiastically handle all the heavy, highly technical lifting of high-performance web development, advanced technical SEO implementation, and complex, scalable cloud infrastructure management, while you remain completely free to focus your valuable time and energy on nurturing client relationships, crafting brilliant marketing strategies, and driving overall business growth. Let us collaboratively build a highly synergistic, mutually beneficial partnership that profoundly elevates both our businesses and delivers truly unparalleled, transformative value to the end-users.\n\nMoreover, our partner program is designed to be highly flexible and deeply integrated into your existing workflows. We can operate entirely behind the scenes as a seamless white-label technical partner, ensuring your agency retains full brand credit for the exceptional digital products we build together, or we can engage directly with your clients as your trusted, official technology integration partner. We provide all the necessary technical documentation, pre-sales technical support, and post-launch maintenance guarantees to ensure that every project is a resounding success. By combining your strategic vision and client insights with our unparalleled technical execution and high-end coding standards, we create a powerhouse collaboration that sets a new industry benchmark for digital excellence. We are deeply committed to fostering long-term relationships that are built on mutual trust, shared goals, and a relentless pursuit of perfection. As the digital landscape continues to evolve at a breakneck pace, having a reliable technical partner ensures that your agency remains at the absolute cutting edge of innovation, capable of delivering future-proof platforms that drive incredible ROI for years to come. Join forces with Coday today, and let us shape the future of the web together."
@@ -1650,5 +3397,630 @@
   },
   "uebersicht": {
     "content": "Welcome to the highly comprehensive and meticulously structured overview of Coday's expansive digital ecosystem and premium service offerings. This dedicated page serves as your ultimate central hub, expertly guiding you through our extensive, highly specialized range of high-end web services, tailored industry-specific digital solutions, and deep, uncompromising technical expertise. Whether you are an ambitious local business right here in Wetzlar urgently seeking a complete, high-performance digital facelift, or a large-scale enterprise actively looking for highly secure, globally scalable web applications, this detailed overview provides a crystal-clear, easy-to-navigate map of exactly how we can rapidly accelerate your company's digital transformation and consistently drive highly measurable, sustainable ROI.\n\nAs you navigate thoroughly through our meticulously categorized offerings, you will intuitively discover our highly specialized, data-driven approaches to premium web design, uncompromising technical SEO, and lightning-fast progressive web apps. We have intentionally and strategically structured our entire suite of services to directly and effectively address the unique, complex challenges of various demanding sectors, specifically including the highly competitive automotive industry, the heavily regulated healthcare sector, traditional crafts and construction, and high-volume e-commerce retail. By taking the time to explore this comprehensive overview, you can effortlessly and quickly find the exact, highly specific technological solutions that align perfectly with your overarching strategic business goals, all fully backed by our unshakeable commitment to delivering lightning-fast load times, exceptional enterprise-grade security, and flawlessly intuitive user experiences.\n\nWe strongly and enthusiastically encourage you to utilize this detailed overview as a powerful starting point to dive much deeper into our proven, highly successful case studies, read extensively about our transparent, highly effective methodologies, and explore our rich, informative academy resources. At Coday, we fundamentally believe that highly informed, well-educated clients make the absolute best, most successful long-term collaborative partners. By consistently providing absolute, uncompromising clarity on exactly what we do, how our advanced technology stacks operate, and the precise value we bring to the table, we actively empower you to make highly confident, strategically sound decisions about your critical digital investments. Let this expansive overview be the vital first step toward a highly successful, transformative collaboration that will undoubtedly elevate your brand to undisputed digital market leadership.\n\nEvery section linked from this overview represents a core pillar of our digital philosophy: precision engineering, aesthetic brilliance, and data-driven growth. We invite you to examine our detailed service breakdowns, where we explain the specific benefits of migrating to a headless CMS, the long-term advantages of our rigorous SEO audits, and the measurable impact of our UX/UI optimization strategies. We have designed our entire digital footprint to be as transparent and informative as possible, completely eliminating the jargon and smoke-and-mirrors often associated with the web development industry. We are incredibly proud of the work we do and the exceptional results we generate for our clients. Start your journey here, explore the depth of our technical capabilities, and discover exactly why Coday is the premier choice for businesses that refuse to settle for anything less than digital perfection. We look forward to embarking on this exciting digital journey with you, transforming your boldest visions into an incredibly powerful and profitable online reality."
+  },
+  "legal": {
+    "common": {
+      "legal_document": "Legal Document",
+      "contents": "Table of Contents",
+      "download_pdf": "Download as PDF",
+      "contact": "Contact for Inquiries"
+    },
+    "nav": {
+      "terms": "Terms",
+      "privacy": "Privacy",
+      "impressum": "Legal Notice"
+    },
+    "terms": {
+      "toc": {
+        "geltung": "Geltung",
+        "definitionen": "Definitionen",
+        "vertrag": "Vertrag",
+        "leistung": "Leistung",
+        "projektablauf": "Projektablauf",
+        "preise": "Preise",
+        "festpreis": "Festpreis",
+        "mitwirkung": "Mitwirkung",
+        "eigentum": "Eigentum",
+        "ki": "Ki",
+        "gewaehrleistung": "Gewaehrleistung",
+        "haftung": "Haftung",
+        "vertraulichkeit": "Vertraulichkeit",
+        "kuendigung": "Kuendigung",
+        "schluss": "Schluss"
+      },
+      "timeline": {
+        "inquiry": "Inquiry",
+        "inquiry_desc": "Inquiry Desc",
+        "offer": "Offer",
+        "offer_desc": "Offer Desc",
+        "contract": "Contract",
+        "contract_desc": "Contract Desc",
+        "design": "Design",
+        "design_desc": "Design Desc",
+        "review": "Review",
+        "review_desc": "Review Desc",
+        "handover": "Handover",
+        "handover_desc": "Handover Desc",
+        "title": "Overview"
+      },
+      "title": "Overview",
+      "subtitle": "Learn more about our customized solutions.",
+      "last_updated": "Last Updated",
+      "summary": {
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "5",
+        "title": "Overview"
+      },
+      "sections": {
+        "1": {
+          "title": "Overview",
+          "subtitle": "Learn more about our customized solutions.",
+          "p1": "P1",
+          "p2": "P2",
+          "p3": "P3"
+        },
+        "2": {
+          "title": "Overview",
+          "subtitle": "Learn more about our customized solutions.",
+          "p1": "P1",
+          "p2": "P2",
+          "p3": "P3",
+          "p4": "P4"
+        },
+        "3": {
+          "title": "Overview",
+          "subtitle": "Learn more about our customized solutions.",
+          "p1": "P1",
+          "p2": "P2",
+          "p3": "P3"
+        },
+        "4": {
+          "title": "Overview",
+          "subtitle": "Learn more about our customized solutions.",
+          "p1": "P1",
+          "p2": "P2",
+          "p3": "P3",
+          "p4": "P4"
+        },
+        "5": {
+          "title": "Overview",
+          "subtitle": "Learn more about our customized solutions.",
+          "note": "Note",
+          "p1": "P1",
+          "p2": "P2",
+          "p3": "P3",
+          "p4": "P4",
+          "list": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4"
+          }
+        },
+        "6": {
+          "title": "Overview",
+          "subtitle": "Learn more about our customized solutions.",
+          "p1": "P1",
+          "p2": "P2",
+          "p3": "P3",
+          "p4": "P4"
+        },
+        "7": {
+          "title": "Overview",
+          "subtitle": "Learn more about our customized solutions.",
+          "p1": "P1",
+          "p2": "P2",
+          "p3": "P3",
+          "p4": "P4",
+          "p5": "P5"
+        },
+        "2_def": {
+          "title": "Overview",
+          "subtitle": "Learn more about our customized solutions."
+        },
+        "projektablauf": {
+          "title": "Overview",
+          "subtitle": "Learn more about our customized solutions.",
+          "intro": "Intro"
+        },
+        "festpreis": {
+          "title": "Overview",
+          "subtitle": "Learn more about our customized solutions."
+        },
+        "mitwirkung": {
+          "title": "Overview",
+          "subtitle": "Learn more about our customized solutions."
+        },
+        "eigentum": {
+          "title": "Overview",
+          "subtitle": "Learn more about our customized solutions."
+        },
+        "gewaehrleistung": {
+          "title": "Overview",
+          "subtitle": "Learn more about our customized solutions."
+        },
+        "vertraulichkeit": {
+          "title": "Overview",
+          "subtitle": "Learn more about our customized solutions."
+        },
+        "kuendigung": {
+          "title": "Overview",
+          "subtitle": "Learn more about our customized solutions."
+        }
+      },
+      "definitions": {
+        "provider_title": "Provider Title",
+        "provider": "Provider",
+        "client_title": "Client Title",
+        "client": "Client",
+        "project_title": "Project Title",
+        "project": "Project",
+        "revision_title": "Revision Title",
+        "revision": "Revision"
+      },
+      "services": {
+        "list": {
+          "1": "1",
+          "2": "2",
+          "3": "3",
+          "4": "4",
+          "5": "5",
+          "6": "6"
+        }
+      },
+      "guarantee": {
+        "title": "Overview"
+      },
+      "projektablauf": {
+        "communication": {
+          "1": "1",
+          "2": "2",
+          "3": "3",
+          "title": "Overview"
+        }
+      },
+      "payment": {
+        "first_title": "First Title",
+        "first": "First",
+        "second_title": "Second Title",
+        "second": "Second"
+      },
+      "festpreis": {
+        "guarantee": "Guarantee",
+        "text": "Text",
+        "p1": "P1",
+        "p2": "P2",
+        "p3": "P3"
+      },
+      "mitwirkung": {
+        "intro": "Intro",
+        "content": {
+          "1": "1",
+          "2": "2",
+          "3": "3",
+          "title": "Overview"
+        },
+        "feedback": {
+          "1": "1",
+          "2": "2",
+          "3": "3",
+          "title": "Overview"
+        },
+        "delay": {
+          "title": "Overview",
+          "text": "Text"
+        }
+      },
+      "eigentum": {
+        "p1": "P1",
+        "p2": "P2",
+        "p3": "P3",
+        "code": {
+          "title": "Overview",
+          "text": "Text"
+        }
+      },
+      "ki": {
+        "note": "Note",
+        "not_for": "Not For"
+      },
+      "gewaehrleistung": {
+        "p1": "P1",
+        "p2": "P2",
+        "browser": {
+          "title": "Overview",
+          "text": "Text"
+        },
+        "p3": "P3"
+      },
+      "vertraulichkeit": {
+        "p1": "P1",
+        "p2": "P2",
+        "p3": "P3"
+      },
+      "kuendigung": {
+        "p1": "P1",
+        "p2": "P2",
+        "p3": "P3",
+        "cancellation": {
+          "title": "Overview",
+          "text": "Text"
+        }
+      }
+    }
+  },
+  "booking": {
+    "calendar": {
+      "errors": {
+        "failed": "Failed to load appointments",
+        "generic": "An unexpected error occurred."
+      },
+      "success": {
+        "title": "Appointment Booked Successfully!",
+        "new_booking": "Book Another Appointment"
+      },
+      "step1": {
+        "title": "Select Date & Time",
+        "next": "Continue to Details"
+      },
+      "step2": {
+        "title": "Your Contact Information",
+        "form": {
+          "name": {
+            "placeholder": "John Doe"
+          },
+          "email": {
+            "placeholder": "name@company.com"
+          },
+          "phone": {
+            "placeholder": "+1 555 123 4567"
+          },
+          "notes": {
+            "placeholder": "What is your project about?"
+          }
+        },
+        "buttons": {
+          "back": "Back",
+          "submit": "Confirm Appointment",
+          "submitting": "Booking..."
+        }
+      }
+    },
+    "page": {
+      "title": "Book a Free Discovery Call",
+      "subtitle": "Choose a convenient time for your non-binding consultation."
+    },
+    "seoText": {
+      "title": "Digital Consulting on Eye Level",
+      "content": "In a 30-minute introductory call, we analyze your current digital challenges and show specific levers for more visibility and revenue."
+    }
+  },
+  "contact": {
+    "hero": {
+      "badge": "Start a Project",
+      "title_start": "Let us build something",
+      "title_gradient": "Extraordinary",
+      "desc": "Tell us about your project. You will receive an expert assessment and a binding fixed-price quote within 24 hours."
+    },
+    "mobile": {
+      "tabs": {
+        "contact": "Contact",
+        "booking": "Book Call"
+      },
+      "booking_intro": "Booking Intro",
+      "contact_title": "Contact Title",
+      "contact_intro": "Contact Intro"
+    },
+    "location": {
+      "email": {
+        "label": "Details"
+      },
+      "phone": {
+        "label": "Details"
+      },
+      "address": {
+        "label": "Details",
+        "value": "Value"
+      },
+      "hours": {
+        "label": "Details"
+      },
+      "socials": {
+        "label": "Details"
+      },
+      "title": "Overview",
+      "desc": "We build customized high-performance solutions for maximum results.",
+      "whatsapp": {
+        "message": "Message",
+        "label": "Details"
+      }
+    },
+    "logobar": {
+      "title": "Overview"
+    },
+    "testimonial": {
+      "text": "Text",
+      "author": "Umutcan Emre Tezgel",
+      "role": "Founder & Lead Developer"
+    },
+    "seoText": {
+      "title": "Overview",
+      "content": "Discover how we create measurable value with cutting-edge technologies."
+    }
+  },
+  "consulting": {
+    "diagnostic": {
+      "title": "Digital Readiness Check",
+      "subtitle": "Discover where the biggest levers in your digital infrastructure lie.",
+      "start_btn": "Start Check"
+    },
+    "meta": {
+      "description": "We build customized high-performance solutions for maximum results.",
+      "title": "Overview"
+    },
+    "hero": {
+      "badge": "Badge",
+      "title_start": "Title Start",
+      "title_end": "Title End",
+      "subtitle": "Learn more about our customized solutions.",
+      "cta_primary": "Cta Primary",
+      "cta_secondary": "Cta Secondary"
+    },
+    "methodology": {
+      "title": "Overview",
+      "subtitle": "Learn more about our customized solutions."
+    },
+    "case_study": {
+      "label": "Details",
+      "title": "Overview",
+      "description": "We build customized high-performance solutions for maximum results."
+    },
+    "consulting_page": {
+      "seoText": {
+        "title": "Overview",
+        "content": "Discover how we create measurable value with cutting-edge technologies."
+      },
+      "hero": {
+        "title_prefix": "Title Prefix",
+        "title_suffix": "Title Suffix"
+      }
+    },
+    "booking": {
+      "title": "Overview",
+      "subtitle": "Learn more about our customized solutions."
+    }
+  },
+  "public-sector": {
+    "downloads": {
+      "title": "Official Documents & Whitepapers"
+    },
+    "request_quote": {
+      "title": "Request Public Sector Quote",
+      "fields": {
+        "authority": "Authority / Institution",
+        "year": {
+          "label": "Fiscal Year"
+        },
+        "type": {
+          "label": "Procurement Type"
+        }
+      },
+      "cta": "Request Public Sector Proposal"
+    },
+    "ozg": {
+      "title": "OZG 2.0 Roadmap",
+      "headline": "Legally Compliant & Accessible Citizen Portals",
+      "description": "Meet all regulatory requirements with modern Next.js architecture."
+    },
+    "pricing_reality": {
+      "title": "Cost-Efficiency & Pricing Reality",
+      "headline": "Transparent Fixed Prices Instead of Open-Ended Consulting Days",
+      "description": "Learn how to save up to 70% of typical agency costs with Coday.",
+      "table": {
+        "col_criteria": "Criterion",
+        "col_agencies": "Traditional IT Vendors",
+        "col_coday": "Coday Digital Architecture"
+      },
+      "disclaimer_title": "Pricing Note",
+      "disclaimer_text": "All projects are quoted with a binding fixed price following a free discovery analysis."
+    },
+    "tech_stack": {
+      "title": "Digital Sovereignty",
+      "headline": "Open-Source Technologies & European Cloud Infrastructure",
+      "description": "100% GDPR compliant, German servers, zero vendor lock-in."
+    },
+    "wizard": {
+      "title": "Tender Configurator",
+      "headline": "In 3 Steps to Your Procurement Specs",
+      "description": "Configure your public-sector web project for structured procurement.",
+      "steps": {
+        "budget": {
+          "question": "What budget range is allocated for this initiative?"
+        },
+        "type": {
+          "question": "What type of digital solution is required?"
+        }
+      }
+    },
+    "hero": {
+      "badge": "Badge",
+      "headline": "Headline",
+      "cta": "Request Now",
+      "ctaSecondary": "Cta Secondary"
+    },
+    "meta": {
+      "description": "We build customized high-performance solutions for maximum results."
+    },
+    "trust": {
+      "bitv": "Bitv",
+      "dsgvo": "Dsgvo",
+      "iso": "Iso",
+      "opensource": "Opensource",
+      "opensourceDesc": "Opensource Desc"
+    },
+    "services": {
+      "title": "Overview",
+      "headline": "Headline",
+      "subline": "Subline",
+      "items": {
+        "portals": {
+          "title": "Overview",
+          "desc": "We build customized high-performance solutions for maximum results."
+        },
+        "internal": {
+          "title": "Overview",
+          "desc": "We build customized high-performance solutions for maximum results."
+        },
+        "smartcity": {
+          "title": "Overview",
+          "desc": "We build customized high-performance solutions for maximum results."
+        }
+      }
+    },
+    "pricing": {
+      "title": "Overview",
+      "disclaimer": "All metrics based on verified industry benchmarks.",
+      "process": {
+        "analysis": "Analysis",
+        "spec": "Spec",
+        "calc": "Calc",
+        "offer": "Offer"
+      }
+    },
+    "contact": {
+      "title": "Overview",
+      "upload_label": "Upload Label",
+      "secureExchange": "Secure Exchange"
+    },
+    "seoText": {
+      "title": "Overview",
+      "content": "Discover how we create measurable value with cutting-edge technologies."
+    }
+  },
+  "pricing": {
+    "packages": {
+      "starter": {
+        "name": "Name",
+        "tagline": "Tagline",
+        "cta": "Request Now"
+      },
+      "professional": {
+        "name": "Name",
+        "tagline": "Tagline",
+        "cta": "Request Now",
+        "badge": "Badge"
+      },
+      "enterprise": {
+        "name": "Name",
+        "tagline": "Tagline",
+        "cta": "Request Now"
+      }
+    },
+    "page": {
+      "headline": "Headline",
+      "title": "Overview",
+      "subheadline": "Subheadline"
+    },
+    "labels": {
+      "setup": "Setup",
+      "delivery": "Delivery",
+      "monthly": "Monthly"
+    },
+    "custom": {
+      "badge": "Badge",
+      "title": "Overview",
+      "description": "We build customized high-performance solutions for maximum results.",
+      "cta": "Request Now"
+    },
+    "trust": {
+      "google_partner": "Google Partner",
+      "satisfaction": "Satisfaction",
+      "performance": "Performance",
+      "support": "Support"
+    },
+    "comparison": {
+      "title": "Overview",
+      "headers": {
+        "feature": "Feature",
+        "starter": "Starter",
+        "professional": "Professional",
+        "enterprise": "Enterprise"
+      },
+      "rows": {
+        "pages": {
+          "label": "Details",
+          "starter": "Starter",
+          "pro": "Pro",
+          "ent": "Ent"
+        },
+        "cms": {
+          "label": "Details",
+          "starter": "Starter",
+          "pro": "Pro",
+          "ent": "Ent"
+        },
+        "seo": {
+          "label": "Details",
+          "starter": "Starter",
+          "pro": "Pro",
+          "ent": "Ent"
+        },
+        "support": {
+          "label": "Details",
+          "starter": "Starter",
+          "pro": "Pro",
+          "ent": "Ent"
+        },
+        "ecommerce": {
+          "label": "Details",
+          "starter": "Starter",
+          "pro": "Pro",
+          "ent": "Ent"
+        },
+        "custom": {
+          "label": "Details",
+          "starter": "Starter",
+          "pro": "Pro",
+          "ent": "Ent"
+        },
+        "revisions": {
+          "label": "Details",
+          "starter": "Starter",
+          "pro": "Pro",
+          "ent": "Ent"
+        }
+      }
+    },
+    "retainers": {
+      "title": "Overview",
+      "description": "We build customized high-performance solutions for maximum results."
+    },
+    "cta_section": {
+      "button": "Learn More",
+      "title": "Overview",
+      "text": "Text"
+    },
+    "faq": {
+      "title": "Overview"
+    }
+  },
+  "process": {
+    "transparency": {
+      "title": "Overview",
+      "desc": "We build customized high-performance solutions for maximum results.",
+      "kanban": {
+        "title": "Overview",
+        "desc": "We build customized high-performance solutions for maximum results."
+      },
+      "chat": {
+        "title": "Overview",
+        "desc": "We build customized high-performance solutions for maximum results.",
+        "msg1": "Msg1",
+        "msg2": "Msg2"
+      }
+    }
   }
 }

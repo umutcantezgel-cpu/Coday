@@ -1,0 +1,107 @@
+{
+  "target": "ruesselsheim",
+  "displayName": "Rüsselsheim am Main",
+  "type": "location",
+  "meta": {
+    "title": "Webdesign Rüsselsheim | Automotive & B2B Agentur · Coday",
+    "description": "Webdesign & Webentwicklung in Rüsselsheim am Main. Performante Next.js Websites für Ingenieurbüros, Automotive & Mittelstand. Festpreis auf Anfrage."
+  },
+  "hero": {
+    "headline": "Webdesign Rüsselsheim am Main: Next.js Performance für Automotive, Engineering & B2B",
+    "subheadline": "Ihre Webagentur für Rüsselsheim am Main, Raunheim und Bischofsheim.",
+    "description": "Als spezialisierte Webagentur für Rüsselsheim am Main entwickeln wir blitzschnelle, sichere und hochkonvertierende Next.js Webanwendungen. Verbindlicher Festpreis nach kostenloser Bedarfsanalyse."
+  },
+  "localDominance": {
+    "title": "Digitale Vorherrschaft für Rüsselsheim & den Kreis Groß-Gerau",
+    "description": "Rüsselsheim am Main ist die automobile Wiege Hessens und ein erstklassiger Standort für Ingenieurdienstleister, Zulieferer, Software-Entwickler und Logistik im Herzen des Rhein-Main-Gebiets. Wir bauen hochperformante Webseiten, die technische Exzellenz überzeugend vermitteln.",
+    "points": [
+      "Automotive & Engineering: Hochsichere, modulare B2B-Plattformen für Zulieferer und Ingenieurbüros in Hasengrund und Blauer See.",
+      "Raunheim & Bischofsheim: Repräsentative Webauftritte für Rechenzentren, IT-Dienstleister und Logistikunternehmen.",
+      "Autobahndreieck Rüsselsheim (A60 / A67): Perfekte regionale Vernetzung zwischen Frankfurt, Mainz, Wiesbaden und Darmstadt.",
+      "Next.js als SEO-Katalysator: 100/100 Google Core Web Vitals für Top-Platzierungen bei 'Webdesign Rüsselsheim'.",
+      "DSGVO & Deutsches Edge-Hosting: Absolute Datensicherheit ohne anfälligen WordPress-Plugin-Ballast.",
+      "Inhabergeführt & Festpreis: Direkter Entwickler-Kontakt mit Umutcan Emre Tezgel ohne teuren Großagentur-Overhead."
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "B2B-Webportale für Automotive & Engineering im Gewerbegebiet Hasengrund",
+      "content": "Maximale Performance, klare Informationsarchitektur und modernste UI/UX für Rüsselsheims Ingenieur- und Technologiebranche."
+    },
+    {
+      "title": "Digitale Plattformen für IT & Logistik in Raunheim & Bischofsheim",
+      "content": "Skalierbare Next.js Webapplikationen für Logistik-Dienstleister und IT-Unternehmen mit direkter ERP- und CRM-Anbindung."
+    },
+    {
+      "title": "Local SEO & Kreis Groß-Gerau Dominanz",
+      "content": "Dominante Platzierungen in den Google-Suchergebnissen für Rüsselsheim am Main, Raunheim, Bischofsheim, Nauheim und Groß-Gerau."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wie viel kostet eine neue Website in Rüsselsheim?",
+      "a": "Wir kalkulieren jedes Projekt nach einem kostenlosen Erstgespräch transparent und verbindlich als Festpreis auf Anfrage. Durch unsere schlanken KI-Workflows sind wir 5–10x günstiger als traditionelle Großagenturen bei signifikant höherer Performance."
+    },
+    {
+      "q": "Wie schnell ist eine neue Website in Rüsselsheim online?",
+      "a": "In der Regel ist Ihr Webprojekt innerhalb von 10 bis 14 Werktagen komplett schlüsselfertig fertiggestellt und online."
+    },
+    {
+      "q": "Kommen Sie für ein Beratungsgespräch direkt nach Rüsselsheim?",
+      "a": "Ja, sehr gerne. Über die A5 und A67 sind wir von unserem Wetzlarer HQ in unter 40 Minuten direkt bei Ihnen vor Ort im Hasengrund oder in Raunheim/Bischofsheim."
+    },
+    {
+      "q": "Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?",
+      "a": "Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform in ISO-zertifizierten deutschen Rechenzentren gehostet."
+    },
+    {
+      "q": "Wer ist unser fester Ansprechpartner?",
+      "a": "Inhaber Umutcan Emre Tezgel persönlich mit direktem 24h-Support."
+    }
+  ],
+  "meta_en": {
+    "title": "Web Design Rüsselsheim | Automotive & B2B Agency · Coday",
+    "description": "Web design & development in Rüsselsheim am Main. High-performance Next.js platforms for engineering, automotive & mid-market. Fixed price on request."
+  },
+  "hero_en": {
+    "headline": "Web Design Rüsselsheim am Main: Next.js Performance for Automotive, Engineering & B2B",
+    "subheadline": "Your web agency for Rüsselsheim am Main, Raunheim, and Bischofsheim.",
+    "description": "Custom Next.js web applications for Rüsselsheim am Main. Fixed price upon request."
+  },
+  "localDominance_en": {
+    "title": "Digital Dominance for Rüsselsheim & Groß-Gerau District",
+    "description": "Rüsselsheim is the automotive heart of Hesse and a key hub for engineering and tech services. We build high-speed digital platforms.",
+    "points": [
+      "Automotive & Engineering: Secure B2B platforms for suppliers and engineering offices in Hasengrund and Blauer See.",
+      "Raunheim & Bischofsheim: Corporate web presence for IT hubs, data centers, and logistics.",
+      "Highway Intersection (A60 / A67): Seamless connectivity across Frankfurt, Mainz, Wiesbaden, and Darmstadt.",
+      "SEO Leadership: 100/100 Core Web Vitals for top search visibility.",
+      "GDPR Edge Hosting: Maximum security on German infrastructure.",
+      "Direct Founder Access: Transparent fixed pricing without agency overhead."
+    ]
+  },
+  "contentSections_en": [
+    {
+      "title": "B2B Web Portals for Automotive & Engineering in Hasengrund",
+      "content": "Engineered for speed and precision, delivering unmatched digital authority for engineering leaders."
+    },
+    {
+      "title": "Digital Platforms for IT & Logistics in Raunheim",
+      "content": "Scalable web solutions integrating directly with enterprise systems and backend APIs."
+    }
+  ],
+  "faq_en": [
+    {
+      "q": "How much does a professional website in Rüsselsheim cost?",
+      "a": "Binding fixed price on request following a free audit. 5-10x more cost-effective than traditional agencies."
+    },
+    {
+      "q": "How long does implementation take?",
+      "a": "Turnkey delivery within 10 to 14 business days."
+    },
+    {
+      "q": "Do you meet on-site in Rüsselsheim?",
+      "a": "Yes, we gladly meet you in Rüsselsheim via the A5/A67 highways."
+    }
+  ]
+}

@@ -32,7 +32,7 @@
         "text": "What is your internal technical know-how?",
         "options": {
           "a": "No technical team.",
-          "b": "CTO presents, but no developers.",
+          "b": "CTO present, but no developers.",
           "c": "Full dev team present."
         }
       },
@@ -92,17 +92,17 @@
   "matrix": {
     "rows": {
       "focus": {
-        "label": "focus",
+        "label": "Focus",
         "bad": "Cleaning Tickets",
         "good": "Business Outcome"
       },
       "architecture": {
-        "label": "architecture",
+        "label": "Architecture",
         "bad": "Grown Chaos",
         "good": "Scalable Modules"
       },
       "speed": {
-        "label": "speed",
+        "label": "Speed",
         "bad": "Fast Start (Tech Debt)",
         "good": "Fast Scaling (Asset)"
       },
