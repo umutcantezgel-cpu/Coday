@@ -3,95 +3,75 @@
   "displayName": "Gießen",
   "type": "location",
   "meta": {
-    "title": "Webdesign Agentur Gießen | Ihr lokaler Standort | Coday",
-    "description": "Ihr lokaler Agentur Standort in Gießen. Wir liefern maßgeschneiderte Webseitenentwicklung und performantes Webdesign direkt vor Ort."
+    "title": "Webdesign Gießen | High-End Webagentur | Coday",
+    "description": "Coday Webagentur für Gießen: Maßgeschneidertes Webdesign, 100/100 PageSpeed & messbare B2B-Leads für den Mittelstand. Jetzt kostenloses Audit anfordern!"
   },
   "hero": {
-    "headline": "Coday Webdesign Agentur Gießen: Ihr lokaler Standort für digitale Exzellenz",
-    "subheadline": "Ihre Webdesign Agentur in Gießen: Webseiten, die messbar mehr B2B-Kunden gewinnen",
-    "description": "Modernste Webseitenentwicklung und kompromisslose Performance für den B2B Sektor in Mittelhessen In der renommierten Wissenschaftsstadt und Me..."
+    "headline": "Webagentur für Gießen & Mittelhessen",
+    "subheadline": "Webdesign Gießen: Maßgeschneiderte Websites & Webentwicklung für den Mittelstand",
+    "description": "Coday ist Ihre Webagentur für Gießen und Mittelhessen. Wir entwickeln kompromisslose, maßgeschneiderte Webseiten für etablierte Industrie-, Medizintechnik- und Dienstleistungsunternehmen – mit herausragendem Design, subsekundären Ladezeiten und messbarer Lead-Generierung."
   },
   "localDominance": {
-    "title": "Digitale Dominanz in Gießens Hightech Ökosystem",
-    "description": "Gießen ist das pulsi... Wir transformieren Ihre Webseite durch strategische Webseitenentwicklung zu einer echten, skalierbaren Vertriebsmaschine.",
+    "title": "Digitale Marktführerschaft für das Wirtschafts- und Innovationszentrum Gießen",
+    "description": "Das Oberzentrum Gießen bildet mit über 90.000 Einwohnern, zwei Spitzenhochschulen (JLU & THM) und dynamischen Gewerbegebieten das technologische Herz Mittelhessens. Die Coday Webagentur transformiert Ihre digitale Präsenz von einer reinen Visitenkarte in eine hochperformante Vertriebs- und Recruitingmaschine.",
     "points": [
-      "Fokus auf Medizintechnik: Hochpreisige Dienstleistungen erfordern eine glasklare, vertrauensbildende Präsentation durch exzellentes Webdesign und blitzschnelle Ladezeiten",
-      "Regionale Nähe Wetzlar Gießen: Wir bieten extrem kurze Wege für persönliche Meetings und agile Zusammenarbeit bei Ihrem nächsten Webseiten Relaunch",
-      "Performance als Ranking Katalysator: Wir dominieren die Google Suchergebnisse durch perfekte Webseitenentwicklung und exzellente Core Web Vitals",
-      "Spezialisiertes Employer Branding für den Campus Gießen: Wir entwickeln digitale Erlebniswelten, die gezielt akademische Top Talente anziehen",
-      "Höchste Sicherheit und DSGVO Konformität: Durch strikte Trennung von Frontend und Backend minimieren wir Angriffsflächen bei unserer Webseitenentwicklung auf ein absolutes Minimum",
-      "Skalierbarkeit für Gießener Champions: Wenn Sie internationale Märkte erschließen, wächst unsere Architektur durch exzellentes Webdesign nahtlos mit",
-      "Einkäufer zentrierte User Experience: Wir strukturieren komplexe Datenblätter so, dass industrielle Einkäufer sofort finden, was sie suchen",
-      "Völlige Abkehr von generischen Templates: In einer Stadt voller Innovation dürfen Sie nicht aussehen wie Ihre lokale Konkurrenz"
+      "100/100 Core Web Vitals: Perfekte Google-Ladezeiten für maximale Sichtbarkeit bei B2B-Suchanfragen im gesamten Regierungsbezirk Gießen.",
+      "Maßgeschneidertes High-End Webdesign: Individuelle Gestaltung ohne starre Standard-Templates für einen unverwechselbaren Markenauftritt.",
+      "15 Minuten Anfahrtszeit: Direkte Nähe über die B49 und den Gießener Ring (A485) für persönliche Strategie-Meetings im Schiffenberger Tal oder Europaviertel.",
+      "100% Clean Code: Moderne Webtechnologien (React, Next.js, Tailwind) für maximale Performance, Sicherheit und Langlebigkeit.",
+      "Akademisches Employer Branding: Schnelle, mobile 60-Sekunden-Bewerbungsfunnels, um Top-Absolventen der THM und JLU gezielt in Gießen zu binden.",
+      "Volle DSGVO-Konformität: Lokales Asset-Hosting ohne externe US-Cloud-Abhängigkeiten oder undurchsichtige Drittanbieter-Tracker.",
+      "Einfache Redaktionelle Pflege: Flexible CMS-Lösungen für Marketing-Teams – intuitive Content-Pflege ohne Programmierkenntnisse.",
+      "Einkäufer-Zentrierte UX: Komplexe industrielle Spezifikationen und Produktdatenblätter laden latenzfrei im Millisekundenbereich."
     ]
   },
   "contentSections": [
     {
-      "title": "Warum Standard Webseiten im Gießener B2B Sektor katastrophal scheitern",
-      "content": "Die Unternehmenslandschaft in Gießen, extrem stark geprägt von Biotechnologie, hochspezialisierter Medizintechnik und universitären Innovationen, operiert stets auf allerhöchstem wissenschaftlichen und technologischen Niveau. Wer in diesem anspruchsvollen Umfeld mit zusammengeklickten Baukasten Webseiten antritt, signalisiert potenziellen Geschäftspartnern unbewusst sofortigen technologischen Stillstand. Veraltete Systeme verursachen extrem aufgeblähten Code, katastrophale Ladezeiten, ständige Sicherheitslücken sowie eine User Experience, die anspruchsvolle B2B Kunden sofort und nachhaltig abschreckt. Unsere Webagentur zieht hier bei jedem Webseiten Relaunch einen radikalen Schlussstrich. Als spezialisierte Experten programmieren wir konsequent mit modernsten Webtechnologien. Wir liefern durch unsere Webseitenentwicklung eine absolute Codequalität auf Enterprise Niveau, völlig frei von unnötigem Ballast. In einem hochkomplexen Markt, in dem ein einziger digitaler B2B Lead Verträge in Millionenhöhe bedeuten kann, verschaffen wir Ihnen durch unser kompromissloses Webdesign den alles entscheidenden technologischen, ästhetischen und psychologischen Vorsprung vor der Konkurrenz."
+      "title": "Die Pain Points im Raum Gießen: Warum Standard-Websites den Mittelstand ausbremsen",
+      "content": "Zwischen universitärer Spitzenforschung an THM und JLU und den realen Webauftritten vieler Unternehmen im Schiffenberger Tal, dem Gewerbepark West oder dem Europaviertel klafft eine dramatische Lücke. Während Produkte und Dienstleistungen auf Weltklasseniveau gefertigt werden, basieren viele Firmen-Websites noch auf überladenen, langsamen Systemen. Die Folgen sind fatal: Mobile Ladezeiten von über vier Sekunden führen zu Abbruchraten von über 50 Prozent bei industriellen Einkäufern. Gleichzeitig wandern begehrte Fachkräfte und MINT-Absolventen in das Rhein-Main-Gebiet ab, weil regionale Karriereseiten frustrierend unübersichtlich sind und keine zeitgemäße Smartphone-Bewerbung ermöglichen. Coday setzt genau hier an: Als Webagentur schließen wir diese Lücke durch professionelle, maßgeschneiderte Webentwicklung."
     },
     {
-      "title": "Die technologische Überlegenheit unserer Webseitenentwicklung",
-      "content": "Während Ihre direkte Konkurrenz noch auf monolithische Systeme vertraut, bei denen Datenbank und Darstellung extrem schwerfällig miteinander verstrickt sind, implementieren wir zukunftsweisende Architekturen. Durch die konsequente Webseitenentwicklung erreichen wir eine absolut beispiellose Flexibilität und enorme Ausfallsicherheit. Moderne Technologien ermöglichen es uns, dass Ihre neuen Webseiten auf dem Server vorberechnet und als extrem schnelle Dateien an den Browser des Nutzers ausgeliefert werden. Ladebildschirme gehören damit nach dem Webseiten Relaunch endgültig der Vergangenheit an. Wenn ein Einkäufer aus dem Gießener Umland nach Ihren industriellen Lösungen sucht, ist Ihre Seite innerhalb von Millisekunden vollständig nutzbar. Dieses exzellente Webdesign ist nicht nur ein reines Komfortmerkmal, sondern ein extrem hartes Ranking Kriterium für Google und ein absolut direkter Multiplikator für Ihre wertvolle Conversion Rate."
+      "title": "Modernes Webdesign vs. Veraltete Systeme: Höchste Performance und Sicherheit",
+      "content": "Herkömmliche Standard-Websites schleppen oft massiven Ballast mit sich herum: Unzählige Plugins, langsame Ladezeiten und ständige Sicherheitsupdates. Die Coday Webagentur setzt auf moderne, saubere Webtechnologien. Säule 1 – Maximale Sicherheit & Stabilität: Wir minimieren Angriffsflächen und sorgen für extrem stabile Webseiten, die auch bei Lastspitzen zuverlässig laufen. Säule 2 – DSGVO-Konformität: Wir verzichten auf unkontrollierte Third-Party-Skripte und hosten Schriften sowie Assets lokal, was Ihnen absolute Rechtssicherheit garantiert. Säule 3 – Einfache Pflege: Ihr Team kann Texte, Bilder, Case Studies und Stellenanzeigen jederzeit eigenständig und intuitiv bearbeiten – fehlersicher und ohne Programmieraufwand."
     },
     {
-      "title": "Messbarer Return on Investment durch radikale Performance Optimierung",
-      "content": "Web Performance ist im High End B2B Sektor in Gießen definitiv keine optionale Metrik, sondern der absolute Flaschenhals Ihres gesamten digitalen Vertriebs und Marketings. Zahlreiche Studien belegen eindeutig: Selbst geringfügig zusätzliche Ladezeit kann enorm viel Umsatz oder wichtige Conversions kosten. Für sehr komplexe, erklärungsbedürftige B2B Produkte aus der Gießener Forschungsindustrie gilt dies umso mehr. Unsere Webagentur unterwirft jede einzelne Zeile Code und jede feine Animation strengsten Performance Zielen. Wir optimieren bei der Webseitenentwicklung die gesamte Rendering Pipeline des Browsers extrem. Das atemberaubende Resultat ist eine digitale Plattform, die sich so absolut reibungslos anfühlt wie eine native App auf dem neuesten Smartphone. Diese komplette Latenzfreiheit signalisiert dem Besucher Ihres Webdesign unterbewusst sofort höchste Präzision und Effizienz. Ein absolut unschätzbarer Vertrauensvorschuss im B2B Vertrieb."
+      "title": "Branchenspezifische B2B-Lösungen für Gießens Schlüsselindustrien",
+      "content": "Wir entwickeln keine austauschbaren Vorlagen, sondern exakt auf die wirtschaftlichen Cluster Gießens abgestimmte Lösungen. Für Medizintechnik-, Life-Sciences- und Technologieunternehmen im TIG und Europaviertel schaffen wir mehrsprachige Plattformen, die hochkomplexe Produktdatenblätter und interaktive Visualisierungen latenzfrei bereitstellen. Für den Sondermaschinenbau und Industrieunternehmen im Schiffenberger Tal und Westend konzipieren wir digitale Vertriebsmaschinen mit interaktiven B2B-Konfiguratoren, die qualifizierte Anfragen vorfiltern. Für Handwerks- und technische Dienstleistungsbetriebe in Linden, Pohlheim und Wettenberg implementieren wir schlanke Mobile-First-Recruiting-Funnels, die es Fachkräften ermöglichen, sich in unter 60 Sekunden direkt über das Smartphone ohne Anschreiben oder PDF-Upload zu bewerben."
     },
     {
-      "title": "Der strategische Standortvorteil Wetzlar Gießen für Ihre digitale Sichtbarkeit",
-      "content": "Die geografische, akademische und wirtschaftliche Achse zwischen Wetzlar und Gießen ist ein absolut einzigartiges, hochproduktives Kraftzentrum in Deutschland. Hier trifft Weltklasse Optik und Präzisionsmechanik auf universitäre Spitzenforschung und moderne Logistik. Als erfahrene Webagentur mit Sitz in Wetzlar sind wir ein fester Teil genau dieses spannenden Ökosystems. Wir kennen die Mentalität, die tiefen wirtschaftlichen Netzwerke und die ganz spezifischen Herausforderungen mittelhessischer Marktführer enorm gut. Wir sind garantiert keine anonyme, schwer erreichbare Großstadt Agentur, die nach dem Webseiten Relaunch spurlos in der Versenkung verschwindet. Wir sind Ihr verlässlicher strategischer Partner direkt vor Ort. Innerhalb von sehr kurzen Wegen sind wir für entscheidende Board Meetings oder kurzfristige strategische Planungen bei Ihnen in der Gießener Firmenzentrale. Diese physische Nähe ermöglicht extrem agile Entwicklungszyklen bei der anspruchsvollen Webseitenentwicklung."
+      "title": "Messbare Performance: Der Wettbewerbsvorteil harter Core Web Vitals",
+      "content": "Google bewertet Webseiten nach strengen, messbaren Performance-Kriterien. Wer hier patzt, verliert wertvolle Top-Platzierungen an überregionale Wettbewerber. Mit der Coday Webagentur erzielen Sie konsistent Bestwerte: Ein First Contentful Paint (FCP) von unter 0,8 Sekunden, ein Cumulative Layout Shift (CLS) von 0,00 und ein Google PageSpeed Score von 98 bis 100 auf Mobilgeräten. Diese Geschwindigkeit ist kein theoretischer Wert, sondern ein direkter Umsatzhebel: Jede Millisekunde Latenzreduktion steigert nachweislich die Verweildauer, erhöht die Conversion-Rate und signalisiert potenziellen Geschäftspartnern unterbewusst kompromisslose Professionalität."
     },
     {
-      "title": "Professionelles Employer Branding zur perfekten Fachkräftegewinnung am Campus Gießen",
-      "content": "Der harte Wettbewerb um die absolut besten Köpfe wird nirgends härter geführt als in einer dynamischen Universitätsstadt wie Gießen. Die Justus Liebig Universität und die Technische Hochschule Mittelhessen produzieren jährlich viele tausend hochqualifizierte Absolventen. Doch wie überzeugen Sie genau diese begehrten Talente, ausgerechnet bei Ihnen in Gießen anzuheuern, wenn Ihre veraltete Karriereseite im Webdesign der Vergangenheit stehengeblieben ist? Unsere Webagentur entwickelt fantastische digitale Erlebniswelten, die extrem gezielt auf die hohe Erwartungshaltung moderner Professionals zugeschnitten sind. Wir integrieren bei der Webseitenentwicklung nahtlose Bewerbungsprozesse, immersive Einblicke in Ihre Unternehmenskultur und rasante Ladezeiten. Wenn ein Master Absolvent Ihre neue Webseite öffnet, muss die herausragende Architektur ihm nach dem Webseiten Relaunch sofort vermitteln, dass Innovation bei Ihnen auf höchstem Niveau gelebt wird."
-    },
-    {
-      "title": "Absolute Datensicherheit und Compliance für sensible Gießener Unternehmensdaten",
-      "content": "Die permanente Cyber Bedrohungslage für mittelständische Unternehmen, Kliniken und viele Forschungseinrichtungen in Gießen steigt rasant und ist absolut real. Klassische Monolithen sind durch veraltete Architektur Konzepte oft das Hauptziel großangelegter Hackerangriffe. Ein erfolgreicher Breach kann immense wirtschaftliche Schäden und fatale Reputationsverluste nach sich ziehen. Unsere sichere Webseitenentwicklung eliminiert diese klassischen Angriffsvektoren strukturell und vollständig. Da das moderne Webdesign völlig losgelöst vom redaktionellen Backend operiert und alle Daten lediglich über stark gesicherte Schnittstellen bezogen werden, gibt es keine herkömmliche Datenbank mehr, die direkt gehackt werden könnte. Kombiniert mit bestem Enterprise Grade Hosting garantieren wir als Ihre Webagentur Ihnen höchste Ausfallsicherheit, nativen Schutz und absolute rechtliche Konformität für Ihre geschäftskritischen Systeme in Gießen."
-    },
-    {
-      "title": "Exzellentes Design Engineering und kompromisslose High End Ästhetik",
-      "content": "Exzellenter, performanter Code in der Webseitenentwicklung benötigt zwangsläufig auch ein absolut exzellentes visuelles Design. Wir verabscheuen als Webagentur generische Templates, völlig austauschbare Stock Fotos und überladene Layouts, die den Nutzer extrem verwirren. Unser fantastisches Webdesign steht für kompromisslose Ästhetik: Wir nutzen fortschrittliche Gestaltungsprinzipien des anspruchsvollen Minimalismus, um komplexe B2B Datenblätter, aufwendige Maschinenspezifikationen oder Forschungsansätze mit maximaler Klarheit zu strukturieren. Eine strikte Typografie, der gezielte Einsatz von viel Weißraum, spannungsvolle Layouts und absolut flüssige Mikro Interaktionen sorgen für ein exklusives Premium Markenerlebnis. Ihre Dienstleistungen aus Gießen sind global State of the Art und Ihre digitale Präsenz muss diese überlegene Qualität nach einem professionellen Webseiten Relaunch ab der ersten Sekunde visuell stark kommunizieren."
-    },
-    {
-      "title": "Langfristige, strategische Partnerschaft für den Raum Gießen",
-      "content": "Unsere Webagentur versteht sich absolut nicht als klassischer Dienstleister, der ein isoliertes Projekt schnell abliefert und dann die technische Verantwortung einfach abgibt. Wir agieren als Ihr externes, dediziertes Experten Team für Webdesign und Webseitenentwicklung in Gießen und Wetzlar. Nach dem erfolgreichen Webseiten Relaunch überwachen wir kontinuierlich die wichtigsten Performance Metriken, analysieren das reale Nutzerverhalten und führen iterative, datengetriebene Optimierungen durch. Der Gießener Markt schläft nicht, und Ihre digitale Architektur muss sich kontinuierlich weiterentwickeln, um an der absoluten Spitze zu bleiben. Mit uns an Ihrer Seite haben Sie die strategische Gewissheit, dass Ihre neue Infrastruktur auch in den kommenden Jahren den technologischen Maßstab definiert."
+      "title": "Die Wetzlar-Gießen-Achse: Regionaler Schulterschluss und direkte Erreichbarkeit",
+      "content": "Mit unserem Headquarter in Wetzlar trennen uns lediglich 14,8 Kilometer und 12 bis 15 Minuten Fahrtzeit über die B49 und den Gießener Ring von Ihrem Firmensitz. Bei der Coday Webagentur sprechen Sie nicht mit wechselnden Junior-Projektmanagern oder anonymen Agentur-Ebenen, sondern arbeiten direkt mit dem leitenden Entwickler und Digitalstrategen zusammen. Wir kommen für strategische Workshops, Foto- und Content-Konzeptionen oder Meilenstein-Präsentationen direkt zu Ihnen vor Ort – ob in die Gießener Innenstadt, nach Heuchelheim, Wettenberg oder Pohlheim. Wir kombinieren lokale Handschlagqualität mit modernster Webentwicklung."
     }
   ],
   "faq": [
     {
-      "q": "Warum ist Ihre Webagentur die technologisch beste Wahl für unser Unternehmen in Gießen?",
-      "a": "Wir kombinieren die persönliche, greifbare Betreuung einer erfahrenen Agentur aus dem benachbarten Wetzlar mit der absoluten technologischen Exzellenz in der Webseitenentwicklung. Wir verzichten komplett auf veraltete Systeme und nutzen ausschließlich modernste Technologien für Ihr Webdesign, um Ihnen kompromisslose Ladezeiten, absolute Sicherheit und eine unübertroffene Conversion Rate zu garantieren."
+      "q": "Was unterscheidet die Coday Webagentur von anderen Agenturen in Gießen?",
+      "a": "Wir verbinden erstklassiges, maßgeschneidertes Webdesign mit modernster Webentwicklung und subsekundären Ladezeiten. Wir setzen auf sauberen Code, messbare B2B-Leads und direkte, persönliche Betreuung auf Augenhöhe – ohne überladene Standard-Templates oder unnötigen Ballast."
     },
     {
-      "q": "Was genau unterscheidet die von Ihnen erstellten Webseiten von klassischen Baukasten Seiten?",
-      "a": "Der fundamentale Unterschied liegt in der überlegenen Architektur. Baukasten Systeme sind oft langsam, schwerfällig und extrem anfällig für Hackerangriffe. Unsere Webseitenentwicklung hingegen basiert auf extrem schnellen, entkoppelten Systemen. Es gibt keine Plugin Konflikte, die Sicherheit ist massiv erhöht und die Performance ist um ein Vielfaches höher, was direkt zu besseren Rankings und mehr lukrativen Leads führt."
+      "q": "Wie schnell sind Sie für persönliche Abstimmungen in Gießen vor Ort?",
+      "a": "Von unserem Standort in Wetzlar erreichen wir jedes Gewerbegebiet in Gießen (Schiffenberger Tal, Europaviertel, TIG) sowie die umliegenden Gemeinden über die B49 innerhalb von 12 bis 15 Minuten."
     },
     {
-      "q": "Auf welche speziellen Branchen im Raum Gießen sind Sie mit Ihrem Webdesign fokussiert?",
-      "a": "Unsere extreme technologische und gestalterische Tiefe in der Webseitenentwicklung richtet sich exakt an die Treiber der Gießener Wirtschaft: Hochspezialisierte B2B Unternehmen, Medizintechnik, Life Science Pioniere sowie den starken, innovativen Maschinenbau. Unternehmen, deren sehr komplexe Produkte absolute Klarheit in der digitalen Kommunikation und ein exzellentes Webdesign zwingend erfordern."
+      "q": "Können unsere Mitarbeiter Inhalte wie News oder Jobs selbstständig pflegen?",
+      "a": "Ja, absolut. Sie erhalten eine intuitive, maßgeschneiderte Redaktionsoberfläche. Texte, Bilder und Stellenanzeigen können in Echtzeit ohne Programmierkenntnisse und ohne Risiko von Design-Fehlern aktualisiert werden."
     },
     {
-      "q": "Wie extrem wichtig ist die Performance für unser lokales SEO in Gießen?",
-      "a": "Sie ist absolut überlebenswichtig. Google nutzt harte Performance Metriken als primäre Ranking Faktoren. Eine langsame Seite verliert massiv und nachhaltig an Sichtbarkeit im Netz. Unsere Webagentur pusht Ihre Seite durch perfekten Code und optimiertes Webdesign in den absoluten High Performance Bereich, was Ihre Rankings in Gießen nach einem Webseiten Relaunch massiv stärkt."
+      "q": "Wie hilft Coday regionalen Unternehmen bei der Fachkräftegewinnung?",
+      "a": "Wir integrieren hochmoderne, smartphone-optimierte Recruiting-Funnels. Bewerber können sich in 60 Sekunden ohne Anschreiben oder komplizierten Lebenslauf-Upload direkt qualifizieren, was die Bewerberquote bei Absolventen der THM und JLU signifikant erhöht."
     },
     {
-      "q": "Kommen Sie für strategische Workshops zu uns in die Gießener Firmenzentrale?",
-      "a": "Selbstverständlich tun wir das. Der direkte, persönliche Kontakt ist durch absolut nichts zu ersetzen. Durch unseren Agentursitz in Wetzlar sind wir innerhalb von wenigen Minuten direkt bei Ihnen vor Ort in Gießen. Wir schätzen den tiefen Austausch bei strategischen Planungen oder bei der finalen Abnahme von hochkomplexen Projekten in der Webseitenentwicklung extrem."
-    },
-    {
-      "q": "Wie unterstützen Sie uns konkret bei der Mitarbeitergewinnung am Campus Gießen?",
-      "a": "Wir helfen Ihnen enorm, wertvolle junge Talente für sich zu gewinnen, indem wir als Webagentur spezialisierte Karriereseiten entwickeln. Schnelle, perfekt funktionierende mobile Bewerbungsprozesse, absolut authentische Einblicke und ein herausragendes Webdesign machen Sie sofort zum Employer of Choice für Absolventen in Gießen."
-    },
-    {
-      "q": "Wie lange dauert ein kompletter Webseiten Relaunch durch Ihre Webagentur?",
-      "a": "Premium Qualität in der Webseitenentwicklung erfordert tiefe strategische Analyse. Je nach enormer Komplexität bewegen wir uns in der Regel in einem professionellen Rahmen von mehreren Wochen von der ersten Skizze im Webdesign bis zum erfolgreichen Live Gang. Wir arbeiten extrem agil und absolut transparent für unsere Kunden in Gießen."
+      "q": "Wie läuft das kostenlose Performance- und Sicherheits-Audit ab?",
+      "a": "Sie reichen einfach Ihre aktuelle Website-URL ein. Innerhalb von 48 Stunden erhalten Sie ein detailliertes Video-Audit mit konkreten Schwachstellenanalysen bezüglich PageSpeed, Sicherheit, B2B-Conversion und SEO-Potenzialen für den Raum Gießen."
     }
   ],
-  "cta_text": "Vereinbaren Sie jetzt Ihr kostenloses Erstgespräch und erfahren Sie, wie wir als Ihre lokale Webagentur in Gießen messbar mehr B2B-Kunden und qualifizierte Fachkräfte für Ihr Unternehmen gewinnen.",
+  "cta_text": "Sichern Sie sich jetzt Ihr kostenloses Performance- und Sicherheits-Audit. Wir analysieren Ihre aktuelle Webpräsenz und zeigen Ihnen konkrete Hebel für messbar mehr B2B-Anfragen im Raum Gießen auf.",
   "meta_en": {
-    "title": "Web Design Agency Gießen | Coday",
-    "description": "Expert web design agency in Giessen. We empower tech and science B2B companies with ultra-fast Next.js websites that convert leads into loyal customers."
+    "title": "Web Design Agency Giessen | Web Agency | Coday",
+    "description": "Custom web design and development for businesses in Giessen & Central Hesse. 100/100 PageSpeed, top security & measurable B2B growth."
   }
 }
