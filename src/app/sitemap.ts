@@ -69,7 +69,7 @@ function sitemapEntry(
   const cleanPath = path.replace(/^\/(en|de)/, '').replace(/\/$/, '') || '';
 
   const localPathsRegex =
-    /^\/(landingpages|webdesign-agentur-wetzlar|webdesign-giessen|webdesign-marburg|angebot-handwerker|branchen|standorte)(\/.*)?$/;
+    /^\/(landingpages|webdesign-agentur-wetzlar|webdesign-giessen|webdesign-marburg|webdesign-herborn|angebot-handwerker|branchen|standorte)(\/.*)?$/;
   const isLocalPath = localPathsRegex.test(cleanPath);
   const isDeOnlyRoute = DE_ONLY_ROUTES.includes(cleanPath);
 
@@ -176,6 +176,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     sitemapEntry('/webdesign-agentur-wetzlar', { changeFrequency: 'monthly', priority: 0.9 }),
     sitemapEntry('/webdesign-giessen', { changeFrequency: 'monthly', priority: 0.9 }),
     sitemapEntry('/webdesign-marburg', { changeFrequency: 'monthly', priority: 0.9 }),
+    sitemapEntry('/webdesign-herborn', { changeFrequency: 'monthly', priority: 0.9 }),
     sitemapEntry('/standorte/giessen', { changeFrequency: 'monthly', priority: 0.8 }),
     sitemapEntry('/standorte/hessen', { changeFrequency: 'monthly', priority: 0.8 }),
 
