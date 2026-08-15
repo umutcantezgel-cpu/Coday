@@ -523,6 +523,34 @@ export default async function HessenLocationPage({
                 Standort Bad Homburg ansehen →
               </Link>
             </div>
+
+            {/* Oberursel (Taunus) */}
+            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-primary-500/40 transition-colors flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-bold text-primary-400 uppercase tracking-wider">
+                    Vordertaunus
+                  </span>
+                  <span className="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded">
+                    35 Min ab HQ
+                  </span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">
+                  <Link href="/webdesign-oberursel" className="hover:text-primary-400">
+                    Webdesign Oberursel
+                  </Link>
+                </h3>
+                <p className="text-slate-400 text-xs leading-relaxed mb-4">
+                  Management- & IT-Consulting, Cloud-Dienstleister und exklusives Taunus-Handwerk.
+                </p>
+              </div>
+              <Link
+                href="/webdesign-oberursel"
+                className="text-xs font-semibold text-primary-400 hover:text-primary-300 inline-flex items-center gap-1"
+              >
+                Standort Oberursel ansehen →
+              </Link>
+            </div>
           </div>
         </div>
       </section>
