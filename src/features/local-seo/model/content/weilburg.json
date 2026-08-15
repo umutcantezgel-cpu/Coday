@@ -1,0 +1,52 @@
+{
+  "target": "weilburg",
+  "displayName": "Weilburg",
+  "type": "location",
+  "meta": {
+    "title": "Webdesign Weilburg | Webseiten vom lokalen Profi | Coday",
+    "description": "Ihre Webagentur für Weilburg und das Lahntal. Hochperformante Next.js Webseiten, die messbar neue Kunden und Fachkräfte bringen. Festpreis & 100/100 PageSpeed."
+  },
+  "hero": {
+    "headline": "Ihr Webdesigner in Weilburg",
+    "subheadline": "Webentwicklung direkt an der Lahn: 100/100 Core Web Vitals für Handwerker, Praxen, Gastronomie & Mittelstand in Weilburg.",
+    "description": "Weilburg besticht als geschichtsträchtige Residenzstadt an der Lahn mit seinem barocken Schloss und einer florierenden Gewerbe- und Dienstleistungslandschaft. Wer in Weilburg, Löhnberg, Weinbach oder dem Kreis Limburg-Weilburg online nach erstklassigen Dienstleistern, Fachärzten oder Handwerkern sucht, entscheidet in Sekunden. Eine maßgeschneiderte, blitzschnelle Next.js Webseite von Coday sorgt dafür, dass Ihr Unternehmen bei Google ganz oben steht und Interessenten direkt zu zahlenden Kunden und qualifizierten Mitarbeitern werden."
+  },
+  "localDominance": {
+    "title": "Ihr digitaler Partner im Lahntal & Kreis Limburg-Weilburg",
+    "description": "In der Residenzstadt Weilburg verbindet sich historische Baukultur mit handwerklicher Tradition und zukunftsorientiertem Gewerbe. Eine zeitgemäße Webpräsenz ist der wichtigste Hebel, um sich von Mitbewerbern im Lahntal abzuheben. Wir entwickeln keine starren WordPress-Templates, sondern maßgeschneiderte High-End-Webseiten mit Server-Side-Rendering, barrierefreier Usability und maximaler Datensicherheit.",
+    "points": [
+      "Regionale Nähe: Nur 15 Minuten ab HQ Wetzlar via B49 – persönliche Beratung vor Ort in Weilburg und im gesamten Lahntal.",
+      "100/100 PageSpeed: Unter 0,5 Sekunden Ladezeit auf Smartphones für maximale Konversion und Top-Platzierungen bei Google.",
+      "60-Sekunden Express-Recruiting: Mitarbeitergewinnung ohne bürokratische Hürden direkt am Smartphone.",
+      "Rechtssicherheit & Datenschutz: 100% DSGVO-konform, kein US-Cookie-Banner-Chaos, rechtssichere Struktur nach deutschen Standards."
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "Lokale SEO-Dominanz für Weilburg und das Lahntal",
+      "content": "Ob Neukunden aus der Weilburger Innenstadt, den Gewerbegebieten oder aus Nachbargemeinden wie Löhnberg, Merenberg und Weinbach: Wir optimieren Ihre Webseite semantisch für exakte lokale Suchanfragen. Mit strukturierten Schema.org-Daten, schneller Crawlbarkeit und Google Maps Optimierung sichern wir Ihrem Unternehmen die digitale Marktführerschaft in der Region."
+    },
+    {
+      "title": "Mitarbeitergewinnung für Handwerk, Pflege & Industrie",
+      "content": "Der Fachkräftemangel betrifft auch den Landkreis Limburg-Weilburg. Mit unseren mobilen 60-Sekunden Express-Bewerbungsfunnels bewerben sich Gesellen, Pflegekräfte und Fachkräfte unkompliziert ohne Lebenslauf-PDF direkt am Handy. Das senkt die Einstiegshürde und füllt Ihre offenen Stellen nachhaltig."
+    },
+    {
+      "title": "Transparenter Festpreis & Solo-Architekten Betreuung",
+      "content": "Bei Coday arbeiten Sie direkt mit dem Inhaber und Lead-Architekten ohne Agentur-Wasserkopf oder teure Junior-Entwickler. Sie erhalten ein verbindliches Festpreisangebot mit lebenslanger Lizenzkostenfreiheit und persönlicher Betreuung."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wie schnell ist eine neue Webseite für mein Unternehmen in Weilburg live?",
+      "a": "Dank unserer modernen Komponenten-Architektur und agilen Prozessen ist Ihre neue High-Performance Webseite in der Regel innerhalb von 2 bis 4 Wochen komplett einsatzbereit und optimiert."
+    },
+    {
+      "q": "Wie hilft eine Coday-Webseite bei lokalen Google-Rankings in Weilburg?",
+      "a": "Wir integrieren strukturierte Daten (JSON-LD LocalBusiness), optimieren Ladezeiten auf 100/100 Core Web Vitals und verknüpfen Ihre Inhalte semantisch mit regionalen Keywords rund um Weilburg und das Lahntal."
+    },
+    {
+      "q": "Gibt es laufende Lizenzkosten für Plugins oder Templates?",
+      "a": "Nein. Wir bauen auf modernste Open-Source-Technologien (Next.js, Tailwind CSS) ohne teure Plugin-Abonnements oder versteckte Folgekosten."
+    }
+  ]
+}

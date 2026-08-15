@@ -142,9 +142,19 @@ export const getNavItems = (): NavItem[] => [
             desc: 'nav.locations.hessen_mittelhessen.herborn_desc',
           },
           {
+            label: 'nav.locations.hessen_mittelhessen.dillenburg',
+            href: '/webdesign-dillenburg',
+            desc: 'nav.locations.hessen_mittelhessen.dillenburg_desc',
+          },
+          {
             label: 'nav.locations.hessen_mittelhessen.limburg',
             href: '/webdesign-limburg',
             desc: 'nav.locations.hessen_mittelhessen.limburg_desc',
+          },
+          {
+            label: 'nav.locations.hessen_mittelhessen.weilburg',
+            href: '/webdesign-weilburg',
+            desc: 'nav.locations.hessen_mittelhessen.weilburg_desc',
           },
         ],
       },

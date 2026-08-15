@@ -228,8 +228,12 @@
           "marburg_desc": "Biotech & Historic Center",
           "herborn": "Herborn",
           "herborn_desc": "Dill Region & Industry",
+          "dillenburg": "Dillenburg",
+          "dillenburg_desc": "Orange City & Toolmaking",
           "limburg": "Limburg a. d. Lahn",
-          "limburg_desc": "Lahn Valley Economy"
+          "limburg_desc": "Lahn Valley Economy",
+          "weilburg": "Weilburg a. d. Lahn",
+          "weilburg_desc": "Residency City & Lahn Commerce"
         },
         "rhein_main": {
           "title": "Rhine-Main & Taunus",

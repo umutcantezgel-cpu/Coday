@@ -228,8 +228,12 @@
           "marburg_desc": "Biotech & historische Oberstadt",
           "herborn": "Herborn",
           "herborn_desc": "Industrie- & Mittelstandszentrum",
+          "dillenburg": "Dillenburg",
+          "dillenburg_desc": "Oranienstadt & Werkzeugbau",
           "limburg": "Limburg a. d. Lahn",
-          "limburg_desc": "Wirtschaftsraum Lahntal"
+          "limburg_desc": "Wirtschaftsraum Lahntal",
+          "weilburg": "Weilburg a. d. Lahn",
+          "weilburg_desc": "Residenzstadt & Gewerbe Lahntal"
         },
         "rhein_main": {
           "title": "Rhein-Main & Taunus",

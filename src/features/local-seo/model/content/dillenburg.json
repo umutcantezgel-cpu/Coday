@@ -1,0 +1,52 @@
+{
+  "target": "dillenburg",
+  "displayName": "Dillenburg",
+  "type": "location",
+  "meta": {
+    "title": "Webdesign Dillenburg | Webseiten vom lokalen Profi | Coday",
+    "description": "Ihre Webagentur für die Oranienstadt Dillenburg und den nördlichen Lahn-Dill-Kreis. 100/100 Core Web Vitals, B2B-Leads & 60s Recruiting. Festpreisangebot."
+  },
+  "hero": {
+    "headline": "Ihr Webdesigner in Dillenburg",
+    "subheadline": "Webentwicklung für die Oranienstadt: Maßgeschneiderte Webseiten für Metallbau, Industrie, Handwerk & Praxen in Dillenburg.",
+    "description": "Dillenburg ist als traditionsreiche Oranienstadt mit dem Wilhelmsturm ein industrielles und handwerkliches Kraftzentrum im nördlichen Lahn-Dill-Kreis. Ob metallverarbeitender Mittelstand, innovativer Maschinenbau, Arztpraxis oder Meisterbetrieb: Ihre Webseite muss Kompetenz, Verlässlichkeit und Schnelligkeit ausstrahlen. Mit maßgeschneidertem Next.js Webdesign von Coday sichern Sie sich messbar mehr Kundenanfragen und qualifizierte Gesellen und Fachkräfte."
+  },
+  "localDominance": {
+    "title": "Ihr digitaler Partner in Dillenburg & dem Dietzhölztal",
+    "description": "Zwischen Dillenburg, Haiger, Herborn und Eschenburg schlägt das industrielle Herz der Region. Standard-Baukästen und langsame WordPress-Themes reichen im harten Wettbewerb nicht mehr aus. Coday entwickelt individuelle, blitzschnelle Webanwendungen, die Kunden und Bewerber sofort überzeugen.",
+    "points": [
+      "Direkte Nähe im Lahn-Dill-Kreis: Nur 20 Minuten ab Wetzlar via B277/A45 – persönliche Termine vor Ort in Dillenburg.",
+      "100/100 PageSpeed: Unter 0,5s Ladezeit für maximale Google-Sichtbarkeit und reibungslose Nutzererfahrung.",
+      "Mitarbeitergewinnung 4.0: 60-Sekunden Express-Bewerbung ohne Lebenslauf-Hürden für gewerbliche und technische Berufe.",
+      "Zukunftssicher & Lizenzkostenfrei: Keine monatlichen Template-Gebühren, maximale Stabilität und Sicherheit."
+    ]
+  },
+  "contentSections": [
+    {
+      "title": "B2B-Leadgenerierung für Industrie & Werkzeugbau",
+      "content": "Dillenburger Unternehmen sind weltweit für Spitzenleistungen in Metallverarbeitung, Werkzeugbau und Kunststofftechnik bekannt. Wir sorgen dafür, dass Ihr digitaler Auftritt diese Exzellenz widerspiegelt und Einkäufer wie Entscheider im In- und Ausland sofort überzeugt."
+    },
+    {
+      "title": "Lokale Suchmaschinenoptimierung (Local SEO) für Dillenburg",
+      "content": "Mit sauber strukturierten Daten, optimierten Google Maps Profilen und schnellen Ladezeiten positionieren wir Handwerker, Dienstleister und Praxen an der Spitze der lokalen Suchergebnisse in Dillenburg, Manderbach, Frohnhausen und Eibach."
+    },
+    {
+      "title": "Solo-Architect Qualität: Ein Ansprechpartner, volle Verantwortung",
+      "content": "Kein Agentur-Wasserkopf, keine wechselnden Ansprechpartner. Sie arbeiten direkt mit dem Inhaber und Web-Architekten Umutcan Emre Tezgel – von der ersten Idee bis zur kontinuierlichen Optimierung."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Was unterscheidet Coday von klassischen Webagenturen in Dillenburg?",
+      "a": "Wir nutzen moderne Serverless- und Next.js-Technologien statt veralteter WordPress-Themes. Das Ergebnis: 5–10x schnellere Ladezeiten, null Lizenzkosten, 100/100 PageSpeed und integrierte Recruiting-Funnels."
+    },
+    {
+      "q": "Können bestehende Domains und E-Mail-Adressen übernommen werden?",
+      "a": "Selbstverständlich. Wir übernehmen die nahtlose technische Migration Ihrer bestehenden Domain, DNS-Einträge und Postfächer ohne jegliche Ausfallzeit."
+    },
+    {
+      "q": "Wie funktioniert die Zusammenarbeit vor Ort in Dillenburg?",
+      "a": "Wir treffen uns gerne persönlich in Dillenburg, Manderbach oder in unserem Büro in Wetzlar, um Ihre Anforderungen im Detail zu analysieren."
+    }
+  ]
+}
