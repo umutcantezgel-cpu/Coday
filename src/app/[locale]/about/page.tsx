@@ -2,7 +2,7 @@ import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { AboutClient } from '@/features/about/ui/AboutClient';
-import { SeoHead } from '@/shared/ui/SeoHead';
+import { BASE_URL, getOrganizationSchema } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -15,17 +15,17 @@ export async function generateMetadata({
   setRequestLocale(locale);
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'About Your Web Design Agency in Wetzlar, Hesse',
+      title: 'About Coday | High-End Web Design & Next.js Architecture Wetzlar',
       description:
-        'Meet Coday, your personal web design agency in Wetzlar. We build websites for craftsmen, doctors and local businesses across Central Hesse. Learn more.',
+        'Meet Coday and founder Umutcan Emre Tezgel. Bespoke web development, high-end UI/UX design & 100/100 Core Web Vitals without middlemen.',
       path: '/en/about',
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'Über Ihre Webdesign Agentur in Wetzlar, Hessen',
+    title: 'Über Coday | High-End Webdesign & Next.js Architektur Wetzlar',
     description:
-      'Lernen Sie Coday kennen, Ihre persönliche Webdesign Agentur in Wetzlar. Wir gestalten Webseiten für Handwerker, Ärzte und Unternehmen in Mittelhessen.',
+      'Lernen Sie Coday und Gründer Umutcan Emre Tezgel kennen. Maßgeschneiderte Webentwicklung, High-End UI/UX Design & 100/100 Core Web Vitals ohne Zwischenhändler.',
     path: '/de/about',
     type: 'money',
   });
@@ -33,31 +33,55 @@ export async function generateMetadata({
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
   const resolvedParams = await params;
-  setRequestLocale(resolvedParams.locale);
+  const locale = resolvedParams.locale || 'de';
+  setRequestLocale(locale);
 
-  const _locale = (await params)?.locale || 'de';
-  const _seoTitle =
-    _locale === 'en'
-      ? 'About Your Web Design Agency in Wetzlar, Hesse | Coday'
-      : 'Über Ihre Webdesign Agentur in Wetzlar, Hessen | Coday';
-  const _seoDesc =
-    _locale === 'en'
-      ? 'Meet Coday, your personal web design agency in Wetzlar. We build websites for craftsmen, doctors and local businesses across Central Hesse. Learn more.'
-      : 'Lernen Sie Coday kennen, Ihre persönliche Webdesign Agentur in Wetzlar. Wir gestalten Webseiten für Handwerker, Ärzte und Unternehmen in Mittelhessen.';
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      getOrganizationSchema(locale),
+      {
+        '@type': 'AboutPage',
+        '@id': `${BASE_URL}/${locale}/about#webpage`,
+        url: `${BASE_URL}/${locale}/about`,
+        name:
+          locale === 'en'
+            ? 'About Coday | High-End Web Design & Next.js Architecture Wetzlar'
+            : 'Über Coday | High-End Webdesign & Next.js Architektur Wetzlar',
+        description:
+          locale === 'en'
+            ? 'Meet Coday and founder Umutcan Emre Tezgel. Bespoke web development, high-end UI/UX design & 100/100 Core Web Vitals without middlemen.'
+            : 'Lernen Sie Coday und Gründer Umutcan Emre Tezgel kennen. Maßgeschneiderte Webentwicklung, High-End UI/UX Design & 100/100 Core Web Vitals ohne Zwischenhändler.',
+        inLanguage: locale,
+        mainEntity: {
+          '@type': 'Person',
+          '@id': `${BASE_URL}/#founder`,
+          name: 'Umutcan Emre Tezgel',
+          jobTitle: 'Inhaber, Lead Architect & Fullstack Engineer',
+          worksFor: {
+            '@id': `${BASE_URL}/#organization`,
+          },
+          url: `${BASE_URL}/${locale}/about`,
+          sameAs: ['https://codayweb.de'],
+          knowsAbout: [
+            'Next.js 15',
+            'React 19',
+            'TypeScript',
+            'Tailwind CSS 4',
+            'Headless CMS Architecture',
+            'Core Web Vitals & Web Performance',
+            'Technical SEO & GEO',
+          ],
+        },
+      },
+    ],
+  };
+
   return (
     <>
-      <SeoHead
-        title={
-          _locale === 'en'
-            ? 'About Coday | Your Web Designer in Wetzlar'
-            : 'Ihr Webdesigner in Wetzlar — Lernen Sie uns kennen | Coday'
-        }
-        description={
-          _locale === 'en'
-            ? 'Meet Coday, your personal web design agency in Wetzlar. We build websites for craftsmen, doctors and local businesses across Central Hesse. Learn more.'
-            : 'Lernen Sie Ihren lokalen Webdesigner in Wetzlar kennen. Persönliche Beratung, faire Preise und moderne Webseiten für Handwerk und Mittelstand.'
-        }
-        pageType="about"
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <AboutClient />
     </>
