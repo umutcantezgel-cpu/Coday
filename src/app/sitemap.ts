@@ -69,7 +69,7 @@ function sitemapEntry(
   const cleanPath = path.replace(/^\/(en|de)/, '').replace(/\/$/, '') || '';
 
   const localPathsRegex =
-    /^\/(landingpages|webdesign-agentur-wetzlar|webdesign-giessen|webdesign-marburg|webdesign-herborn|webdesign-limburg|webdesign-friedberg|webdesign-frankfurt|webdesign-wiesbaden|angebot-handwerker|branchen|standorte)(\/.*)?$/;
+    /^\/(landingpages|webdesign-agentur-wetzlar|webdesign-giessen|webdesign-marburg|webdesign-herborn|webdesign-limburg|webdesign-friedberg|webdesign-frankfurt|webdesign-wiesbaden|webdesign-darmstadt|angebot-handwerker|branchen|standorte)(\/.*)?$/;
   const isLocalPath = localPathsRegex.test(cleanPath);
   const isDeOnlyRoute = DE_ONLY_ROUTES.includes(cleanPath);
 
@@ -181,6 +181,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     sitemapEntry('/webdesign-friedberg', { changeFrequency: 'monthly', priority: 0.9 }),
     sitemapEntry('/webdesign-frankfurt', { changeFrequency: 'monthly', priority: 0.95 }),
     sitemapEntry('/webdesign-wiesbaden', { changeFrequency: 'monthly', priority: 0.9 }),
+    sitemapEntry('/webdesign-darmstadt', { changeFrequency: 'monthly', priority: 0.9 }),
     sitemapEntry('/standorte/giessen', { changeFrequency: 'monthly', priority: 0.8 }),
     sitemapEntry('/standorte/hessen', { changeFrequency: 'monthly', priority: 0.8 }),
 
