@@ -174,7 +174,7 @@ function getToolConfig(industryKey?: string): ToolConfig | null {
   return null;
 }
 
-export function IndustryToolEmbed({ industryKey, theme = 'dark' }: IndustryToolEmbedProps) {
+export function IndustryToolEmbed({ industryKey, theme = 'light' }: IndustryToolEmbedProps) {
   const locale = useLocale();
   const isEn = locale === 'en';
   const config = getToolConfig(industryKey);
@@ -192,28 +192,42 @@ export function IndustryToolEmbed({ industryKey, theme = 'dark' }: IndustryToolE
         className={`relative rounded-3xl overflow-hidden border p-8 sm:p-12 lg:p-14 ${
           isDark
             ? 'bg-gradient-to-br from-slate-900/90 via-slate-950 to-slate-900/90 border-slate-800 text-white shadow-2xl'
-            : 'bg-gradient-to-br from-white via-slate-50 to-white border-slate-200 text-slate-900 shadow-xl'
+            : 'bg-white border-slate-200 text-slate-900 shadow-xl'
         }`}
       >
         {/* Glow ambient highlight */}
         <div
-          className={`absolute top-0 right-0 w-96 h-96 rounded-full blur-[120px] pointer-events-none opacity-20 bg-gradient-to-br ${config.accentColor}`}
+          className={`absolute top-0 right-0 w-96 h-96 rounded-full blur-[120px] pointer-events-none opacity-10 bg-gradient-to-br ${config.accentColor}`}
         />
 
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           {/* Left Column: Information & Details */}
           <div className="lg:col-span-7">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-950/40 text-amber-400 text-xs font-bold tracking-wider uppercase mb-6 backdrop-blur-md">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <div
+              className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border text-xs font-bold tracking-wider uppercase mb-6 shadow-sm ${
+                isDark
+                  ? 'border-amber-500/30 bg-amber-950/40 text-amber-400 backdrop-blur-md'
+                  : 'border-amber-300 bg-amber-50 text-amber-900'
+              }`}
+            >
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
               <Sparkle className="w-3.5 h-3.5" />
               <span>{isEn ? config.badgeEn : config.badge}</span>
             </div>
 
-            <h3 className="font-display font-black text-2xl sm:text-4xl text-white leading-tight mb-4">
+            <h3
+              className={`font-display font-black text-2xl sm:text-4xl leading-tight mb-4 ${
+                isDark ? 'text-white' : 'text-slate-900'
+              }`}
+            >
               {isEn ? config.headlineEn : config.headline}
             </h3>
 
-            <p className="text-slate-300 text-base sm:text-lg leading-relaxed mb-8">
+            <p
+              className={`text-base sm:text-lg leading-relaxed mb-8 ${
+                isDark ? 'text-slate-300' : 'text-slate-600'
+              }`}
+            >
               {isEn ? config.descriptionEn : config.description}
             </p>
 
@@ -221,8 +235,12 @@ export function IndustryToolEmbed({ industryKey, theme = 'dark' }: IndustryToolE
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
               {config.features.map((feat, idx) => (
                 <div key={idx} className="flex items-start gap-2.5">
-                  <CheckCircle weight="fill" className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
-                  <span className="text-sm font-medium text-slate-300">
+                  <CheckCircle weight="fill" className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                  <span
+                    className={`text-sm font-semibold ${
+                      isDark ? 'text-slate-300' : 'text-slate-700'
+                    }`}
+                  >
                     {isEn ? feat.en : feat.de}
                   </span>
                 </div>
@@ -233,10 +251,10 @@ export function IndustryToolEmbed({ industryKey, theme = 'dark' }: IndustryToolE
           {/* Right Column: Interactive Forwarding Card & Direct CTA */}
           <div className="lg:col-span-5 flex flex-col justify-center items-stretch">
             <div
-              className={`p-8 rounded-2xl border backdrop-blur-xl ${
+              className={`p-8 rounded-2xl border ${
                 isDark
                   ? 'bg-slate-900/80 border-slate-750 shadow-inner'
-                  : 'bg-white border-slate-200 shadow-md'
+                  : 'bg-slate-50 border-slate-200 shadow-sm'
               }`}
             >
               <div className="flex items-center gap-4 mb-6">
@@ -246,27 +264,33 @@ export function IndustryToolEmbed({ industryKey, theme = 'dark' }: IndustryToolE
                   <Icon weight="bold" className="w-7 h-7" />
                 </div>
                 <div>
-                  <div className="text-xs text-emerald-400 font-bold uppercase tracking-wider flex items-center gap-1.5">
+                  <div className="text-xs text-emerald-700 font-bold uppercase tracking-wider flex items-center gap-1.5">
                     <Lightning weight="fill" className="w-3.5 h-3.5" />
                     <span>{isEn ? 'Direct Access' : 'Direkter Zugang'}</span>
                   </div>
-                  <h4 className="font-bold text-lg text-white">
+                  <h4 className={`font-bold text-lg ${isDark ? 'text-white' : 'text-slate-900'}`}>
                     {isEn ? config.titleEn : config.title}
                   </h4>
                 </div>
               </div>
 
-              <div className="p-4 rounded-xl bg-slate-950/70 border border-slate-800/80 mb-6 text-xs text-slate-300 space-y-2">
-                <div className="flex justify-between items-center text-slate-400">
+              <div
+                className={`p-4 rounded-xl border mb-6 text-xs space-y-2 ${
+                  isDark
+                    ? 'bg-slate-950/70 border-slate-800 text-slate-300'
+                    : 'bg-white border-slate-200 text-slate-700 shadow-xs'
+                }`}
+              >
+                <div className="flex justify-between items-center text-slate-500">
                   <span>URL:</span>
-                  <span className="font-mono text-amber-400 truncate max-w-[200px]">
+                  <span className="font-mono text-amber-700 font-semibold truncate max-w-[200px]">
                     {config.url.replace('https://', '')}
                   </span>
                 </div>
-                <div className="flex justify-between items-center text-slate-400">
+                <div className="flex justify-between items-center text-slate-500">
                   <span>Status:</span>
-                  <span className="text-emerald-400 font-semibold flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+                  <span className="text-emerald-700 font-semibold flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
                     Aktiv & Betriebsbereit
                   </span>
                 </div>
@@ -277,7 +301,7 @@ export function IndustryToolEmbed({ industryKey, theme = 'dark' }: IndustryToolE
                 href={config.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`group w-full inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl font-bold text-slate-950 transition duration-300 shadow-xl bg-amber-400 hover:bg-amber-300 hover:scale-[1.02] active:scale-[0.98] text-base`}
+                className={`group w-full inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl font-bold text-white transition duration-300 shadow-lg bg-primary-700 hover:bg-primary-800 hover:scale-[1.02] active:scale-[0.98] text-base`}
               >
                 <span>{isEn ? config.ctaTextEn : config.ctaText}</span>
                 <ArrowSquareOut
@@ -286,7 +310,7 @@ export function IndustryToolEmbed({ industryKey, theme = 'dark' }: IndustryToolE
                 />
               </a>
 
-              <p className="text-[11px] text-center text-slate-400 mt-3">
+              <p className="text-[11px] text-center text-slate-500 mt-3 font-medium">
                 {isEn
                   ? 'Opens in a new window • Live demonstration & channel access'
                   : 'Öffnet in neuem Fenster • Live-Demonstration & Kanal-Zugang'}

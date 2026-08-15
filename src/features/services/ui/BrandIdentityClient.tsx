@@ -86,9 +86,9 @@ export function BrandIdentityClient() {
       </section>
 
       {/* Process Section */}
-      <section className="py-24 bg-slate-900 text-white">
+      <section className="py-24 bg-slate-50 text-slate-900 border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl font-display font-bold mb-16 text-center text-balance">
+          <h2 className="text-4xl font-display font-bold mb-16 text-center text-balance text-slate-900">
             {t('brand_identity_page.process.title')}
           </h2>
 
@@ -100,13 +100,13 @@ export function BrandIdentityClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-slate-800 border border-slate-700 rounded-2xl p-6"
+                className="bg-white border border-slate-200 shadow-sm rounded-2xl p-6 hover:shadow-md transition-shadow"
               >
-                <div className="w-10 h-10 rounded-full bg-purple-500/20 text-purple-400 font-bold flex items-center justify-center mb-4">
+                <div className="w-10 h-10 rounded-full bg-purple-50 text-purple-700 border border-purple-100 shadow-xs font-bold flex items-center justify-center mb-4">
                   {i + 1}
                 </div>
-                <p className="text-lg font-bold text-white mb-2">{step.title}</p>
-                <p className="text-slate-400 text-sm">{step.desc}</p>
+                <p className="text-lg font-bold text-slate-900 mb-2">{step.title}</p>
+                <p className="text-slate-600 text-sm leading-relaxed">{step.desc}</p>
               </m.div>
             ))}
           </div>

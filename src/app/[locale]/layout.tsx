@@ -113,7 +113,10 @@ export default async function RootLayout({
         />
       </head>
 
-      <body className="bg-secondary text-white antialiased" suppressHydrationWarning>
+      <body
+        className="bg-[#fafafa] text-slate-900 antialiased font-sans selection:bg-amber-500/20 selection:text-amber-900"
+        suppressHydrationWarning
+      >
         <NextIntlClientProvider messages={globalMessages} locale={locale}>
           <MotionProvider>
             <div className="flex flex-col min-h-screen">

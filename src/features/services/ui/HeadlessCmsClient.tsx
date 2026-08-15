@@ -173,15 +173,15 @@ export function HeadlessCmsClient() {
                 </p>
               </div>
             </BentoCard>
-            <BentoCard className="md:col-span-2 md:row-span-1 bg-slate-900 text-white">
-              <div aria-hidden="true" className="absolute right-4 top-4 opacity-20">
-                <OptimizedIcon icon={Code} className="text-6xl text-blue-400 text-balance" />
+            <BentoCard className="md:col-span-2 md:row-span-1 bg-white border border-slate-200 shadow-sm text-slate-900">
+              <div aria-hidden="true" className="absolute right-4 top-4 opacity-15">
+                <OptimizedIcon icon={Code} className="text-6xl text-primary-700 text-balance" />
               </div>
               <div className="relative z-10 p-6 flex flex-col justify-end h-full">
-                <p className="text-2xl font-bold mb-2">
+                <p className="text-2xl font-bold mb-2 text-slate-900">
                   {t('headless_cms_page.why_headless.items.dev_friendly.title')}
                 </p>
-                <p className="text-slate-400">
+                <p className="text-slate-600">
                   {t('headless_cms_page.why_headless.items.dev_friendly.desc')}
                 </p>
               </div>
@@ -194,59 +194,64 @@ export function HeadlessCmsClient() {
       <section className="py-24 bg-surface-muted border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-display font-bold mb-4 text-balance">
+            <h2 className="text-4xl font-display font-bold mb-4 text-balance text-slate-900">
               {t('headless_cms_page.cms_comparison.title')}
             </h2>
-            <p className="text-xl text-content-muted">
+            <p className="text-xl text-slate-600">
               {t('headless_cms_page.cms_comparison.description')}
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* Sanity */}
-            <div className="bg-surface-elevated p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition motion-reduce:duration-[0.01ms] relative overflow-hidden group">
-              <div className="absolute top-0 right-0 bg-error/10 text-error text-xs font-bold px-3 py-1 rounded-bl-xl">
+            <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 hover:shadow-xl transition motion-reduce:duration-[0.01ms] relative overflow-hidden group">
+              <div className="absolute top-0 right-0 bg-red-50 text-red-700 border-b border-l border-red-100 text-xs font-bold px-3 py-1 rounded-bl-xl">
                 {t('headless_cms_page.cms_comparison.sanity.badge')}
               </div>
-              <p className="text-2xl font-bold mb-4 flex items-center gap-2">Sanity.io</p>
-              <p className="text-content-muted mb-6 leading-relaxed max-w-prose text-pretty">
+              <p className="text-2xl font-bold mb-4 flex items-center gap-2 text-slate-900">
+                Sanity.io
+              </p>
+              <p className="text-slate-600 mb-6 leading-relaxed max-w-prose text-pretty">
                 {t('headless_cms_page.cms_comparison.sanity.desc')}
               </p>
-              <ul className="space-y-3 mb-8 text-sm text-slate-500">
+              <ul className="space-y-3 mb-8 text-sm text-slate-600">
                 <li className="flex gap-2 items-center">
-                  <OptimizedIcon icon={Check} className="text-green-500 w-4 h-4" /> GROQ Query
+                  <OptimizedIcon icon={Check} className="text-emerald-600 w-4 h-4" /> GROQ Query
                   Language
                 </li>
                 <li className="flex gap-2 items-center">
-                  <OptimizedIcon icon={Check} className="text-green-500 w-4 h-4" /> Real-time Collab
+                  <OptimizedIcon icon={Check} className="text-emerald-600 w-4 h-4" /> Real-time
+                  Collab
                 </li>
                 <li className="flex gap-2 items-center">
-                  <OptimizedIcon icon={Check} className="text-green-500 w-4 h-4" /> Customizable
+                  <OptimizedIcon icon={Check} className="text-emerald-600 w-4 h-4" /> Customizable
                   Studio
                 </li>
               </ul>
             </div>
 
             {/* Contentful */}
-            <div className="bg-slate-900 text-white p-8 rounded-3xl shadow-xl border border-slate-800 transform md:-translate-y-4">
-              <div className="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-bl-xl">
+            <div className="bg-white text-slate-900 p-8 rounded-3xl shadow-xl border-2 border-primary-600 transform md:-translate-y-4 relative overflow-hidden">
+              <div className="absolute top-0 right-0 bg-primary-600 text-white text-xs font-bold px-3 py-1 rounded-bl-xl">
                 {t('headless_cms_page.cms_comparison.contentful.badge')}
               </div>
-              <p className="text-2xl font-bold mb-4 flex items-center gap-2">Contentful</p>
-              <p className="text-slate-300 mb-6 leading-relaxed max-w-prose text-pretty">
+              <p className="text-2xl font-bold mb-4 flex items-center gap-2 text-slate-900">
+                Contentful
+              </p>
+              <p className="text-slate-600 mb-6 leading-relaxed max-w-prose text-pretty">
                 {t('headless_cms_page.cms_comparison.contentful.desc')}
               </p>
-              <ul className="space-y-3 mb-8 text-sm text-slate-400">
+              <ul className="space-y-3 mb-8 text-sm text-slate-600">
                 <li className="flex gap-2 items-center">
-                  <OptimizedIcon icon={Check} className="text-blue-400 w-4 h-4" /> Enterprise Grade
-                  SLA
+                  <OptimizedIcon icon={Check} className="text-primary-600 w-4 h-4" /> Enterprise
+                  Grade SLA
                 </li>
                 <li className="flex gap-2 items-center">
-                  <OptimizedIcon icon={Check} className="text-blue-400 w-4 h-4" /> Strict Content
+                  <OptimizedIcon icon={Check} className="text-primary-600 w-4 h-4" /> Strict Content
                   Models
                 </li>
                 <li className="flex gap-2 items-center">
-                  <OptimizedIcon icon={Check} className="text-blue-400 w-4 h-4" /> Global CDN
+                  <OptimizedIcon icon={Check} className="text-primary-600 w-4 h-4" /> Global CDN
                 </li>
               </ul>
             </div>

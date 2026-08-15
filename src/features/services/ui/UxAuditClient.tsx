@@ -96,9 +96,9 @@ export function UxAuditClient() {
       </section>
 
       {/* Deliverables Section */}
-      <section className="py-24 bg-slate-900 text-white">
+      <section className="py-24 bg-slate-50 text-slate-900 border-y border-slate-200">
         <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-4xl font-display font-bold mb-12 text-center text-balance">
+          <h2 className="text-4xl font-display font-bold mb-12 text-center text-balance text-slate-900">
             {t('ux_audit_page.deliverables.title')}
           </h2>
 
@@ -110,12 +110,12 @@ export function UxAuditClient() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                className="flex items-center gap-4 p-5 bg-slate-800 border border-slate-700 rounded-xl"
+                className="flex items-center gap-4 p-5 bg-white border border-slate-200 shadow-sm rounded-xl"
               >
-                <div className="w-8 h-8 rounded-lg bg-orange-500/20 text-orange-400 flex items-center justify-center flex-shrink-0">
+                <div className="w-8 h-8 rounded-lg bg-orange-50 text-orange-700 flex items-center justify-center flex-shrink-0 border border-orange-100 shadow-xs">
                   <OptimizedIcon icon={FileText} />
                 </div>
-                <span className="font-medium">{item}</span>
+                <span className="font-bold text-slate-900">{item}</span>
               </m.div>
             ))}
           </div>

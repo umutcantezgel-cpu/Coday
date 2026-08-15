@@ -86,11 +86,11 @@ export function ApiIntegrationClient() {
 
               {/* Central Hub */}
               <div className="flex justify-center mb-12 relative">
-                <div className="w-24 h-24 bg-slate-900 rounded-full flex items-center justify-center shadow-xl relative z-10">
+                <div className="w-24 h-24 bg-primary-700 rounded-full flex items-center justify-center shadow-xl relative z-10 shadow-primary-700/30">
                   <OptimizedIcon icon={Cpu} className="text-4xl text-white text-balance" />
                 </div>
                 {/* Pulsing Rings */}
-                <div className="absolute inset-0 bg-blue-500/20 rounded-full animate-ping z-0 motion-reduce:animate-none" />
+                <div className="absolute inset-0 bg-primary-500/20 rounded-full animate-ping z-0 motion-reduce:animate-none" />
               </div>
 
               {/* Satellite Nodes */}

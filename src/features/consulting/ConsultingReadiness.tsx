@@ -65,7 +65,7 @@ export const ConsultingReadiness: React.FC = () => {
 
   return (
     <div
-      className="w-full max-w-4xl mx-auto bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border border-slate-700 text-white"
+      className="w-full max-w-4xl mx-auto bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-200 text-slate-900"
       role="region"
       aria-label="Consulting readiness diagnostic"
     >
@@ -79,18 +79,18 @@ export const ConsultingReadiness: React.FC = () => {
               exit={{ opacity: 0, x: -50 }}
               className="text-center"
             >
-              <div className="w-20 h-20 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-xl shadow-blue-900/50">
-                <OptimizedIcon icon={Brain} className="w-10 h-10 text-white" />
+              <div className="w-20 h-20 bg-blue-50 border border-blue-200 rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-sm">
+                <OptimizedIcon icon={Brain} className="w-10 h-10 text-blue-600" />
               </div>
-              <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+              <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 text-slate-900">
                 {t('diagnostic.title')}
               </h2>
-              <p className="text-slate-400 text-lg mb-10 max-w-xl mx-auto">
+              <p className="text-slate-600 text-lg mb-10 max-w-xl mx-auto">
                 {t('diagnostic.subtitle')}
               </p>
               <button
                 onClick={() => setStarted(true)}
-                className="active:scale-[0.97] px-8 py-4 bg-white text-slate-900 font-bold rounded-xl hover:bg-blue-50 transition-colors motion-reduce:duration-[0.01ms] flex items-center gap-2 mx-auto text-lg"
+                className="active:scale-[0.97] px-8 py-4 bg-primary-700 text-white font-bold rounded-xl hover:bg-primary-800 transition-colors motion-reduce:duration-[0.01ms] flex items-center gap-2 mx-auto text-lg shadow-lg shadow-primary-700/20"
               >
                 {t('diagnostic.start_btn')}
                 <OptimizedIcon icon={ArrowRight} className="w-5 h-5" />
@@ -107,11 +107,11 @@ export const ConsultingReadiness: React.FC = () => {
               className="w-full"
             >
               <div className="flex justify-between items-center mb-8">
-                <span className="text-sm font-mono text-blue-400" aria-hidden="true">
+                <span className="text-sm font-mono font-bold text-blue-600" aria-hidden="true">
                   0{currentStep + 1} / 0{QUESTIONS.length}
                 </span>
                 <div
-                  className="h-1 bg-slate-800 rounded-full flex-1 mx-4"
+                  className="h-1.5 bg-slate-100 rounded-full flex-1 mx-4 overflow-hidden"
                   role="progressbar"
                   aria-valuenow={currentStep + 1}
                   aria-valuemin={1}
@@ -119,13 +119,13 @@ export const ConsultingReadiness: React.FC = () => {
                   aria-label={`Question ${currentStep + 1} of ${QUESTIONS.length}`}
                 >
                   <div
-                    className="h-full bg-blue-500 rounded-full transition motion-reduce:duration-[0.01ms] duration-500"
+                    className="h-full bg-blue-600 rounded-full transition motion-reduce:duration-[0.01ms] duration-500"
                     style={{ width: `${((currentStep + 1) / QUESTIONS.length) * 100}%` }}
                   />
                 </div>
               </div>
 
-              <h2 className="text-2xl md:text-3xl font-bold mb-10 text-center">
+              <h2 className="text-2xl md:text-3xl font-bold mb-10 text-center text-slate-900">
                 {t(`diagnostic.questions.${QUESTIONS[currentStep]!.id}.text`)}
               </h2>
 
@@ -134,14 +134,14 @@ export const ConsultingReadiness: React.FC = () => {
                   <button
                     key={opt}
                     onClick={() => handleAnswer(opt)}
-                    className="active:scale-[0.97] p-6 rounded-xl bg-slate-800 border-2 border-slate-700 hover:border-blue-500 hover:bg-slate-750 transition motion-reduce:duration-[0.01ms] text-left group"
+                    className="active:scale-[0.97] p-6 rounded-2xl bg-slate-50 border-2 border-slate-200 hover:border-blue-500 hover:bg-blue-50/40 transition motion-reduce:duration-[0.01ms] text-left group shadow-xs"
                   >
-                    <div className="w-8 h-8 rounded-full border border-slate-600 bg-slate-900 flex items-center justify-center mb-4 group-hover:border-blue-500 group-hover:bg-blue-500/10">
-                      <span className="text-xs font-mono text-slate-400 group-hover:text-blue-400">
+                    <div className="w-8 h-8 rounded-full border border-slate-300 bg-white flex items-center justify-center mb-4 group-hover:border-blue-500 group-hover:bg-blue-50 shadow-xs">
+                      <span className="text-xs font-mono font-bold text-slate-700 group-hover:text-blue-600">
                         {opt.toUpperCase()}
                       </span>
                     </div>
-                    <p className="text-slate-300 font-medium leading-snug">
+                    <p className="text-slate-700 font-medium leading-snug">
                       {t(`diagnostic.questions.${QUESTIONS[currentStep]!.id}.options.${opt}`)}
                     </p>
                   </button>
@@ -159,18 +159,18 @@ export const ConsultingReadiness: React.FC = () => {
               aria-live="polite"
               aria-atomic="true"
             >
-              <div className="inline-block px-4 py-2 rounded-full bg-green-500/10 text-green-400 border border-green-500/30 mb-6 font-mono text-sm">
+              <div className="inline-block px-4 py-2 rounded-full bg-green-50 text-green-800 border border-green-200 mb-6 font-mono text-sm font-bold">
                 ANALYSIS COMPLETE
               </div>
-              <h2 className="text-3xl md:text-5xl font-display font-bold mb-6 text-white">
+              <h2 className="text-3xl md:text-5xl font-display font-bold mb-6 text-slate-900">
                 {t(`diagnostic.results.${resultKey}.title`)}
               </h2>
-              <p className="text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
                 {t(`diagnostic.results.${resultKey}.description`)}
               </p>
 
               <div className="flex flex-col md:flex-row gap-4 justify-center">
-                <button className="active:scale-[0.97] px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl shadow-lg shadow-blue-900/50 flex items-center justify-center gap-2">
+                <button className="active:scale-[0.97] px-8 py-4 bg-primary-700 hover:bg-primary-800 text-white font-bold rounded-xl shadow-lg shadow-primary-700/20 flex items-center justify-center gap-2">
                   <OptimizedIcon icon={CheckCircle} className="w-5 h-5" />
                   {t(`diagnostic.results.${resultKey}.action`)}
                 </button>
@@ -181,7 +181,7 @@ export const ConsultingReadiness: React.FC = () => {
                     setCurrentStep(0);
                     setAnswers({ q1: null, q2: null, q3: null, q4: null });
                   }}
-                  className="active:scale-[0.97] px-8 py-4 bg-transparent border border-slate-600 text-slate-300 hover:text-white hover:border-white font-bold rounded-xl transition motion-reduce:duration-[0.01ms]"
+                  className="active:scale-[0.97] px-8 py-4 bg-white border border-slate-300 text-slate-700 hover:text-slate-900 hover:bg-slate-50 font-bold rounded-xl transition motion-reduce:duration-[0.01ms] shadow-xs"
                 >
                   Neustarten
                 </button>

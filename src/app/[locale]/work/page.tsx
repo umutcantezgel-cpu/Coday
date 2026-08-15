@@ -92,27 +92,27 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="min-h-dvh bg-slate-950 text-slate-100 selection:bg-amber-500/30 selection:text-amber-200">
+      <div className="min-h-dvh bg-[#fafafa] text-slate-900 selection:bg-amber-500/20 selection:text-amber-900">
         {/* Hero Section */}
         <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative overflow-hidden text-center">
-          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-500/10 blur-[140px] rounded-full pointer-events-none" />
+          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-400/10 blur-[140px] rounded-full pointer-events-none" />
 
           <div className="relative z-10 max-w-5xl mx-auto">
             <div className="mb-8 flex justify-center">
               <Breadcrumbs />
             </div>
 
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-950/40 text-amber-400 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-6 backdrop-blur-md">
-              <Sparkle className="w-4 h-4 text-amber-400" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-300 bg-amber-50 text-amber-900 text-xs sm:text-sm font-bold tracking-wider uppercase mb-6 shadow-sm">
+              <Sparkle className="w-4 h-4 text-amber-700" />
               {isEn
                 ? 'REAL PROJECTS • VERIFIED RESULTS'
                 : 'ECHTE PROJEKTE • NACHWEISBARE KENNZAHLEN'}
             </div>
 
-            <h1 className="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl text-white leading-[1.1] tracking-tight mb-8">
+            <h1 className="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl text-slate-900 leading-[1.1] tracking-tight mb-8">
               Messbarer Impact für den{' '}
               <GradientText
-                colors={['#fbbf24', '#fef08a', '#f59e0b']}
+                colors={['#b45309', '#d97706', '#f59e0b']}
                 animationSpeed={5}
                 showBorder={false}
                 className="inline-block"
@@ -121,23 +121,23 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
               </GradientText>
             </h1>
 
-            <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-12">
+            <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-12">
               Keine fiktiven Mockups oder Platzhalter-Logos. Jedes Projekt demonstriert
               handgeschriebene Next.js-Architektur, 100/100 PageSpeed und messbare
               Conversion-Steigerungen.
             </p>
 
-            <div className="flex flex-wrap justify-center gap-4 text-sm font-medium text-slate-300">
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 border border-slate-800">
-                <Lightning className="w-4 h-4 text-amber-400" />
+            <div className="flex flex-wrap justify-center gap-4 text-sm font-semibold text-slate-700">
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm">
+                <Lightning className="w-4 h-4 text-amber-600" />
                 <span>Sub-0,3s Ladezeiten</span>
               </div>
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 border border-slate-800">
-                <TrendUp className="w-4 h-4 text-amber-400" />
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm">
+                <TrendUp className="w-4 h-4 text-amber-600" />
                 <span>Bis zu +320% Lead-Wachstum</span>
               </div>
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 border border-slate-800">
-                <ShieldCheck className="w-4 h-4 text-amber-400" />
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm">
+                <ShieldCheck className="w-4 h-4 text-amber-600" />
                 <span>100% DSGVO & Eigentum</span>
               </div>
             </div>
@@ -154,10 +154,10 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
               return (
                 <div
                   key={project.slug}
-                  className="group relative rounded-3xl overflow-hidden bg-slate-900/90 border border-slate-800 hover:border-amber-500/40 transition duration-300 flex flex-col justify-between"
+                  className="group relative rounded-3xl overflow-hidden bg-white border border-slate-200 hover:border-amber-400/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
                 >
                   {/* Top Image Preview */}
-                  <div className="relative aspect-video overflow-hidden bg-slate-950">
+                  <div className="relative aspect-video overflow-hidden bg-slate-100 border-b border-slate-100">
                     {heroImage ? (
                       <OptimizedImage
                         src={heroImage}
@@ -165,14 +165,14 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       />
                     ) : (
-                      <div className="w-full h-full bg-gradient-to-br from-slate-900 to-slate-950" />
+                      <div className="w-full h-full bg-gradient-to-br from-slate-100 to-slate-200" />
                     )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent pointer-events-none" />
 
                     {/* Live Badge */}
                     {project.status === 'live' && project.liveUrl && (
-                      <div className="absolute top-4 right-4 bg-slate-900/90 backdrop-blur-md text-amber-400 text-xs font-bold px-3 py-1.5 rounded-full border border-amber-500/30 flex items-center gap-1.5">
-                        <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                      <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-md text-emerald-800 text-xs font-bold px-3 py-1.5 rounded-full border border-emerald-200 shadow-sm flex items-center gap-1.5">
+                        <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
                         Live Projekt
                       </div>
                     )}
@@ -182,12 +182,12 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
                       {content.results.metrics.map((metric, i) => (
                         <div
                           key={i}
-                          className="bg-slate-900/80 backdrop-blur-md border border-slate-800/80 p-2.5 rounded-xl text-center"
+                          className="bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-sm p-2.5 rounded-xl text-center"
                         >
-                          <div className="text-amber-400 font-extrabold text-sm sm:text-base">
+                          <div className="text-amber-800 font-extrabold text-sm sm:text-base">
                             {metric.value}
                           </div>
-                          <div className="text-slate-400 text-[10px] sm:text-xs truncate">
+                          <div className="text-slate-600 text-[10px] sm:text-xs font-medium truncate">
                             {metric.label}
                           </div>
                         </div>
@@ -198,21 +198,21 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
                   {/* Body Content */}
                   <div className="p-8 flex flex-col flex-grow justify-between">
                     <div>
-                      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-950/40 border border-amber-500/30 text-amber-400 font-bold text-xs uppercase tracking-wider mb-4">
+                      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-800 font-bold text-xs uppercase tracking-wider mb-4">
                         {content.category}
                       </div>
-                      <h2 className="font-display font-bold text-2xl sm:text-3xl text-white mb-3 group-hover:text-amber-400 transition-colors">
+                      <h2 className="font-display font-bold text-2xl sm:text-3xl text-slate-900 mb-3 group-hover:text-amber-800 transition-colors">
                         {content.title}
                       </h2>
-                      <p className="text-slate-300 text-sm sm:text-base line-clamp-3 mb-6 leading-relaxed">
+                      <p className="text-slate-600 text-sm sm:text-base line-clamp-3 mb-6 leading-relaxed">
                         {content.challenge.description}
                       </p>
                     </div>
 
-                    <div className="pt-6 border-t border-slate-800 flex items-center justify-between">
+                    <div className="pt-6 border-t border-slate-100 flex items-center justify-between">
                       <Link
                         href={`/work/${project.slug}`}
-                        className="inline-flex items-center gap-2 text-amber-400 font-bold text-sm hover:text-amber-300 transition-colors group-hover:translate-x-1 duration-200"
+                        className="inline-flex items-center gap-2 text-amber-700 font-bold text-sm hover:text-amber-800 transition-colors group-hover:translate-x-1 duration-200"
                       >
                         <span>Case Study analysieren</span>
                         <ArrowRight weight="bold" className="w-4 h-4" />
@@ -222,7 +222,7 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
                           href={project.liveUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-xs text-slate-400 hover:text-slate-200 underline transition-colors"
+                          className="text-xs text-slate-500 hover:text-slate-900 underline transition-colors"
                         >
                           Website öffnen ↗
                         </a>
@@ -236,9 +236,9 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
         </section>
 
         {/* SEO Longform Content */}
-        <section className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto pb-24 text-slate-400">
-          <div className="p-8 lg:p-12 rounded-3xl bg-slate-900/40 border border-slate-800/80">
-            <h2 className="text-2xl sm:text-3xl font-display font-bold text-white mb-6">
+        <section className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto pb-24 text-slate-600">
+          <div className="p-8 lg:p-12 rounded-3xl bg-white border border-slate-200 shadow-sm">
+            <h2 className="text-2xl sm:text-3xl font-display font-bold text-slate-900 mb-6">
               Webdesign Referenzen & messbarer Projekterfolg in Hessen
             </h2>
             <div className="space-y-4 text-sm sm:text-base leading-relaxed">
@@ -259,18 +259,18 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
         </section>
 
         {/* Final CTA */}
-        <section className="py-24 px-4 bg-slate-900/60 border-t border-slate-800/80 w-full text-center">
+        <section className="py-24 px-4 bg-white border-t border-slate-200 w-full text-center">
           <div className="max-w-4xl mx-auto">
-            <h2 className="font-display font-bold text-3xl sm:text-5xl text-white mb-6">
+            <h2 className="font-display font-bold text-3xl sm:text-5xl text-slate-900 mb-6">
               Möchten Sie ähnliche Ergebnisse für Ihr Unternehmen?
             </h2>
-            <p className="text-lg text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
               Lassen Sie uns Ihre aktuelle Web-Präsenz analysieren. Wir zeigen Ihnen die konkreten
               Hebel für mehr Anfragen, Top-PageSpeed und regionale Sichtbarkeit.
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-10 py-5 bg-amber-400 text-slate-950 font-bold rounded-full hover:bg-amber-300 transition duration-300 shadow-xl shadow-amber-500/20 hover:scale-[1.02] text-lg"
+              className="inline-flex items-center gap-2 px-10 py-5 bg-primary-700 text-white font-bold rounded-full hover:bg-primary-800 transition duration-300 shadow-lg shadow-primary-700/25 hover:scale-[1.02] text-lg"
             >
               <span>Kostenloses Website-Audit anfordern</span>
               <ArrowRight weight="bold" className="w-5 h-5" />

@@ -146,13 +146,13 @@ export function MigrationClient() {
       </section>
 
       {/* Migration Process */}
-      <section className="py-24 bg-slate-900 text-white">
+      <section className="py-24 bg-slate-50 text-slate-900 border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-display font-bold mb-4 text-balance">
+            <h2 className="text-4xl font-display font-bold mb-4 text-balance text-slate-900">
               {t('migration_page.process.title')}
             </h2>
-            <p className="text-xl text-slate-400">{t('migration_page.process.description')}</p>
+            <p className="text-xl text-slate-600">{t('migration_page.process.description')}</p>
           </div>
 
           <ol className="grid md:grid-cols-4 gap-6">
@@ -165,21 +165,21 @@ export function MigrationClient() {
                 transition={{ delay: i * 0.1 }}
                 className="relative"
               >
-                <div className="bg-slate-800 border border-slate-700 rounded-2xl p-6 h-full">
+                <div className="bg-white border border-slate-200 shadow-sm rounded-2xl p-6 h-full hover:shadow-md transition-shadow">
                   <div
                     aria-hidden="true"
-                    className="w-10 h-10 rounded-full bg-purple-500/20 text-purple-300 font-bold flex items-center justify-center mb-4 text-lg"
+                    className="w-10 h-10 rounded-full bg-purple-50 text-purple-700 border border-purple-100 shadow-xs font-bold flex items-center justify-center mb-4 text-lg"
                   >
                     {i + 1}
                   </div>
-                  <p className="text-lg font-bold text-white mb-2">{step.title}</p>
-                  <p className="text-slate-400 text-sm">{step.desc}</p>
+                  <p className="text-lg font-bold text-slate-900 mb-2">{step.title}</p>
+                  <p className="text-slate-600 text-sm leading-relaxed">{step.desc}</p>
                 </div>
                 {/* Connector line (except for last) */}
                 {i < safeProcessSteps.length - 1 && (
                   <div
                     aria-hidden="true"
-                    className="hidden md:block absolute top-1/2 -right-3 w-6 h-0.5 bg-gradient-to-r from-slate-700 to-slate-500 transform -translate-y-1/2"
+                    className="hidden md:block absolute top-1/2 -right-3 w-6 h-0.5 bg-gradient-to-r from-purple-200 to-slate-300 transform -translate-y-1/2"
                   />
                 )}
               </m.li>

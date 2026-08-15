@@ -139,14 +139,14 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
               onClick={onClose}
               aria-label="Coday - Zur Startseite"
             >
-              <span className="text-2xl font-bold text-white tracking-tight">Coday</span>
+              <span className="text-2xl font-bold text-slate-900 tracking-tight">Coday</span>
             </Link>
             <button
               className="mobile-close-btn"
               onClick={onClose}
               aria-label={t('close', { defaultValue: 'Schließen' })}
             >
-              <OptimizedIcon icon={X} className="w-6 h-6 text-white" />
+              <OptimizedIcon icon={X} className="w-6 h-6 text-slate-800" />
             </button>
           </div>
 
@@ -167,15 +167,15 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
                     aria-expanded={expandedItem === item.label}
                     whileTap={{ scale: 0.98 }}
                   >
-                    <span className="text-3xl font-light tracking-tight text-white">
+                    <span className="text-2xl font-normal tracking-tight text-slate-900">
                       {t(item.label)}
                     </span>
                     <OptimizedIcon
                       icon={CaretDown}
-                      className={`w-6 h-6 transition-transform motion-reduce:duration-[0.01ms] duration-300 ${
+                      className={`w-5 h-5 transition-transform motion-reduce:duration-[0.01ms] duration-300 ${
                         expandedItem === item.label
-                          ? 'rotate-180 text-primary-400'
-                          : 'text-slate-400'
+                          ? 'rotate-180 text-primary-700'
+                          : 'text-slate-500'
                       }`}
                     />
                   </m.button>
@@ -194,7 +194,7 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
                             item.groups.map((group, groupIdx) => (
                               <div key={groupIdx} className="mb-6 last:mb-2">
                                 {item.groups!.length > 1 && (
-                                  <h4 className="text-xs uppercase tracking-wider text-slate-400 font-bold mb-3 pl-2 border-l-2 border-slate-700">
+                                  <h4 className="text-xs uppercase tracking-wider text-slate-500 font-bold mb-3 pl-2 border-l-2 border-primary-600">
                                     {t(group.title)}
                                   </h4>
                                 )}
@@ -210,6 +210,7 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
                                           href: link.href,
                                           target: '_blank',
                                           rel: 'noopener noreferrer',
+                                          locale: false,
                                         }
                                       : {
                                           href: link.href,
@@ -225,12 +226,12 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
                                         aria-label={t(link.label)}
                                         title={t(link.label)}
                                       >
-                                        <span className="font-medium text-slate-200">
+                                        <span className="font-semibold text-slate-900">
                                           {t(link.label)}
                                         </span>
                                         {link.desc && (
                                           <span
-                                            className="text-xs text-slate-400 line-clamp-1"
+                                            className="text-xs text-slate-600 line-clamp-1"
                                             aria-hidden="true"
                                           >
                                             {t(link.desc)}
@@ -254,6 +255,7 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
                                       href: link.href,
                                       target: '_blank',
                                       rel: 'noopener noreferrer',
+                                      locale: false,
                                     }
                                   : {
                                       href: link.href,
@@ -267,7 +269,7 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
                                     className="mobile-link-item"
                                     onClick={onClose}
                                   >
-                                    <span className="font-medium text-slate-200">
+                                    <span className="font-semibold text-slate-900">
                                       {t(link.label)}
                                     </span>
                                   </LinkComponent>
@@ -292,7 +294,7 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
               </div>
               <Link
                 href="/contact"
-                className="flex-1 flex items-center justify-center gap-2 bg-primary text-white py-3.5 rounded-xl font-semibold active:scale-[0.98] transition-transform motion-reduce:duration-[0.01ms] shadow-lg shadow-primary/25"
+                className="flex-1 flex items-center justify-center gap-2 bg-primary-700 hover:bg-primary-800 text-white py-3.5 rounded-xl font-bold active:scale-[0.98] transition-transform motion-reduce:duration-[0.01ms] shadow-lg shadow-primary-700/25"
                 onClick={onClose}
               >
                 <span>{t('nav.cta_booking', { defaultValue: 'Termin buchen' })}</span>

@@ -70,7 +70,7 @@ export const MethodologyGraph: React.FC<MethodologyGraphProps> = ({
         {/* Connecting Line (Desktop) */}
         <div
           aria-hidden="true"
-          className="hidden md:block absolute top-[2.5rem] left-0 right-0 h-1 bg-gradient-to-r from-blue-900 via-purple-900 to-yellow-900 -z-10 rounded-full"
+          className="hidden md:block absolute top-[2.5rem] left-0 right-0 h-1 bg-gradient-to-r from-teal-200 via-primary-200 to-amber-200 -z-10 rounded-full"
         />
 
         <ol className="grid grid-cols-1 md:grid-cols-5 gap-8">
@@ -87,21 +87,21 @@ export const MethodologyGraph: React.FC<MethodologyGraphProps> = ({
               <div
                 className={`w-20 h-20 mx-auto rounded-2xl flex items-center justify-center mb-6 
                                 ${step.bg} ${step.border} border-2 backdrop-blur-sm 
-                                transition motion-reduce:duration-[0.01ms] duration-300 group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] z-10 relative bg-slate-900`}
+                                transition motion-reduce:duration-[0.01ms] duration-300 group-hover:scale-110 group-hover:shadow-md z-10 relative bg-white shadow-sm`}
               >
                 <OptimizedIcon icon={step.icon} className={`w-8 h-8 ${step.color}`} />
 
                 {/* Pulse Effect */}
                 <div
                   aria-hidden="true"
-                  className={`absolute inset-0 rounded-2xl ${step.bg} animate-ping opacity-0 group-hover:opacity-50 transition-opacity motion-reduce:duration-[0.01ms] motion-reduce:animate-none`}
+                  className={`absolute inset-0 rounded-2xl ${step.bg} animate-ping opacity-0 group-hover:opacity-30 transition-opacity motion-reduce:duration-[0.01ms] motion-reduce:animate-none`}
                 />
               </div>
 
               {/* Mobile Connector */}
               {index < STEPS.length - 1 && (
                 <div aria-hidden="true" className="md:hidden flex justify-center mb-8">
-                  <OptimizedIcon icon={ArrowRight} className="w-6 h-6 text-slate-700" />
+                  <OptimizedIcon icon={ArrowRight} className="w-6 h-6 text-slate-400" />
                 </div>
               )}
 
@@ -109,14 +109,14 @@ export const MethodologyGraph: React.FC<MethodologyGraphProps> = ({
               <div className="text-center px-2">
                 <div
                   aria-hidden="true"
-                  className="inline-block px-2 py-1 rounded text-[10px] font-mono text-slate-500 bg-slate-800 mb-3 uppercase tracking-wider"
+                  className="inline-block px-2.5 py-1 rounded text-[10px] font-mono font-bold text-slate-700 bg-slate-100 border border-slate-200 mb-3 uppercase tracking-wider shadow-xs"
                 >
                   Step 0{step.id}
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-200 transition-colors motion-reduce:duration-[0.01ms]">
+                <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-primary-700 transition-colors motion-reduce:duration-[0.01ms]">
                   {t(`${prefix}.steps.${step.id}.title`)}
                 </h3>
-                <p className="text-sm text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors motion-reduce:duration-[0.01ms]">
+                <p className="text-sm text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors motion-reduce:duration-[0.01ms]">
                   {t(`${prefix}.steps.${step.id}.desc`)}
                 </p>
               </div>

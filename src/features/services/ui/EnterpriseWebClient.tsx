@@ -171,13 +171,13 @@ export function EnterpriseWebClient() {
       </section>
 
       {/* --- METHODOLOGY --- */}
-      <section className="py-32 bg-slate-900 border-t border-slate-800/50">
+      <section className="py-32 bg-slate-50 border-t border-slate-200">
         <div className="container mx-auto px-4">
           <div className="text-center mb-24">
-            <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-500 mb-6 text-balance">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 text-balance">
               {t('enterprise_web_page.methodology.title')}
             </h2>
-            <p className="text-xl text-slate-400 max-w-2xl mx-auto">
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
               {t('enterprise_web_page.methodology.subtitle')}
             </p>
           </div>
@@ -186,7 +186,7 @@ export function EnterpriseWebClient() {
       </section>
 
       {/* --- MATRIX --- */}
-      <section className="py-24 bg-slate-900 border-t border-slate-800/30">
+      <section className="py-24 bg-white border-t border-slate-200">
         <div className="container mx-auto px-4">
           <ProblemSolventMatrix namespace="services" prefix="enterprise_web_page.matrix.rows" />
         </div>

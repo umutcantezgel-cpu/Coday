@@ -80,9 +80,9 @@ export function DesignSystemsClient() {
       </section>
 
       {/* What We Build Section */}
-      <section className="py-24 bg-slate-900 text-white">
+      <section className="py-24 bg-slate-50 text-slate-900 border-y border-slate-200">
         <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-4xl font-display font-bold mb-12 text-center text-balance">
+          <h2 className="text-4xl font-display font-bold mb-12 text-center text-balance text-slate-900">
             {t('design_systems_page.components.title')}
           </h2>
 
@@ -94,12 +94,12 @@ export function DesignSystemsClient() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="flex items-center gap-4 p-5 bg-slate-800 border border-slate-700 rounded-xl"
+                className="flex items-center gap-4 p-5 bg-white border border-slate-200 shadow-sm rounded-xl hover:shadow-md transition-shadow"
               >
-                <div className="w-10 h-10 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-lg bg-indigo-50 text-indigo-700 border border-indigo-100 shadow-xs flex items-center justify-center">
                   <OptimizedIcon icon={Check} weight="bold" />
                 </div>
-                <span className="text-lg font-medium">{component}</span>
+                <span className="text-lg font-bold text-slate-900">{component}</span>
               </m.div>
             ))}
           </div>

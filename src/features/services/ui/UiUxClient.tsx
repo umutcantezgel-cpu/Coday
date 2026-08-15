@@ -118,23 +118,26 @@ export function UiUxClient() {
       </section>
 
       {/* Psychology Section */}
-      <section className="py-24 bg-slate-900 text-white">
+      <section className="py-24 bg-slate-50 text-slate-900 border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-display font-bold mb-4 text-balance">
+            <h2 className="text-4xl font-display font-bold mb-4 text-balance text-slate-900">
               {t('ui_ux_page.psychology.title')}
             </h2>
-            <p className="text-xl text-slate-400">{t('ui_ux_page.psychology.description')}</p>
+            <p className="text-xl text-slate-600">{t('ui_ux_page.psychology.description')}</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {psychologyItems.map((item, i) => (
-              <div key={i} className="bg-slate-800 border border-slate-700 rounded-2xl p-6">
-                <div className="w-12 h-12 rounded-xl bg-pink-500/20 text-pink-400 flex items-center justify-center mb-4">
+              <div
+                key={i}
+                className="bg-white border border-slate-200 shadow-sm rounded-2xl p-6 hover:shadow-md transition-shadow"
+              >
+                <div className="w-12 h-12 rounded-xl bg-pink-50 text-pink-700 flex items-center justify-center mb-4 border border-pink-100 shadow-xs">
                   <OptimizedIcon icon={Brain} className="text-2xl" />
                 </div>
-                <p className="text-lg font-bold text-white mb-2">{item.title}</p>
-                <p className="text-slate-400 text-sm">{item.desc}</p>
+                <p className="text-lg font-bold text-slate-900 mb-2">{item.title}</p>
+                <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
