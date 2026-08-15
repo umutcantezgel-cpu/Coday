@@ -15,42 +15,22 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  try {
-    const filePath = path.join(
-      process.cwd(),
-      'src',
-      'features',
-      'local-seo',
-      'model',
-      'content',
-      `hessen.${locale}.json`
-    );
-    const fileContents = fs.readFileSync(filePath, 'utf8');
-    const content = JSON.parse(fileContents);
-
-    const enTitle = 'Web Design Agency Hesse | Premium Websites';
-
+  if (locale === 'en') {
     return generatePageMetadata({
-      title: locale === 'en' ? enTitle : content.meta.title,
+      title: 'Web Design Hesse | All Locations & Districts – Coday',
       description:
-        locale === 'en' ? 'Web agency and Next.js developer in Hesse.' : content.meta.description,
-      path: `/${locale}/standorte/hessen`,
-      type: 'money',
-    });
-  } catch (e) {
-    return generatePageMetadata({
-      title:
-        locale === 'en'
-          ? 'Web Design Agency Hesse | Premium Websites'
-          : 'Webdesign Agentur Hessen | Premium Webseiten',
-      description:
-        locale === 'en'
-          ? 'Web agency and Next.js developer in Hesse.'
-          : 'Webagentur und Next.js Entwickler in Hessen.',
-      path: `/${locale}/standorte/hessen`,
+        'Directory of all web design locations and districts of Coday Web Agency in Hesse. High-end Next.js web development from Wetzlar and Frankfurt to Kassel and Fulda.',
+      path: '/en/standorte/hessen',
       type: 'money',
     });
   }
+  return generatePageMetadata({
+    title: 'Webdesign Hessen | Alle Standorte & Landkreise – Coday',
+    description:
+      'Übersicht aller Webdesign Standorte & Landkreise der Coday Webagentur in Hessen. High-End Next.js Webentwicklung von Wetzlar & Frankfurt bis Kassel & Fulda.',
+    path: '/de/standorte/hessen',
+    type: 'money',
+  });
 }
 
 export default async function HessenLocationPage({
@@ -59,7 +39,8 @@ export default async function HessenLocationPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  setRequestLocale(locale);
+  const _locale = locale || 'de';
+  setRequestLocale(_locale);
 
   let content = null;
   try {
@@ -70,7 +51,7 @@ export default async function HessenLocationPage({
       'local-seo',
       'model',
       'content',
-      `hessen.${locale}.json`
+      `hessen.${_locale}.json`
     );
     const fileContents = fs.readFileSync(filePath, 'utf8');
     content = JSON.parse(fileContents);
@@ -84,20 +65,52 @@ export default async function HessenLocationPage({
     );
   }
 
-  const _locale = (await params)?.locale || 'de';
-
-  const locationSchema = getDynamicLocationSchema({
-    city: 'Hessen',
-    description:
-      _locale === 'en'
-        ? 'Web design agency in Hesse — Premium websites with Next.js, SEO & Generative Engine Optimization.'
-        : 'Webdesign Agentur in Hessen — Premium Websites mit Next.js, SEO & Generative Engine Optimization für Unternehmen in ganz Hessen.',
-    url: `${BASE_URL}/${_locale}/standorte/hessen`,
-  });
-
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@graph': [getOrganizationSchema(_locale), locationSchema],
+    '@graph': [
+      getOrganizationSchema(_locale),
+      {
+        '@type': 'CollectionPage',
+        '@id': `${BASE_URL}/${_locale}/standorte/hessen#collection`,
+        name:
+          _locale === 'en'
+            ? 'Web Design Locations & Districts in Hesse'
+            : 'Webdesign Standorte & Landkreise in Hessen',
+        url: `${BASE_URL}/${_locale}/standorte/hessen`,
+        description:
+          _locale === 'en'
+            ? 'Complete directory of all Coday Web Agency locations and regional district hubs across Hesse.'
+            : 'Vollständige Übersicht aller Standorte und Landkreise der Coday Webagentur in ganz Hessen.',
+      },
+      {
+        '@type': 'LocalBusiness',
+        '@id': `${BASE_URL}/${_locale}/standorte/hessen#localbusiness`,
+        name: 'Coday – High-End Webdesign & Webentwicklung Hessen',
+        url: `${BASE_URL}/${_locale}/standorte/hessen`,
+        logo: `${BASE_URL}/icon.png`,
+        image: `${BASE_URL}/images/og-image.jpg`,
+        telephone: '+49 6441 000000',
+        email: 'kontakt@codayweb.de',
+        priceRange: '€€€',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'Regionalbüro Hessen / HQ Wetzlar',
+          addressLocality: 'Wetzlar',
+          postalCode: '35578',
+          addressRegion: 'Hessen',
+          addressCountry: 'DE',
+        },
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: 50.5667,
+          longitude: 8.5,
+        },
+        areaServed: {
+          '@type': 'State',
+          name: 'Hessen',
+        },
+      },
+    ],
   };
 
   const _seoTitle =
