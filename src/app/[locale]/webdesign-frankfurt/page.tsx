@@ -30,17 +30,17 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Design Frankfurt | High-End Next.js Development – Coday',
+      title: 'Web Design Frankfurt | Next.js Agency & Enterprise B2B – Coday',
       description:
-        'Custom web design & Next.js development in Frankfurt am Main. 100/100 PageSpeed, enterprise security & B2B leads. Request your free audit now!',
+        'High-end web design & Next.js web development in Frankfurt am Main. 100/100 PageSpeed, enterprise security & measurable B2B leads for finance and tech.',
       path: '/en/webdesign-frankfurt',
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'Webdesign Frankfurt | High-End Next.js Webentwicklung – Coday',
+    title: 'Webdesign Frankfurt | Next.js Agentur & Enterprise B2B – Coday',
     description:
-      'Maßgeschneidertes Webdesign & Next.js Webentwicklung in Frankfurt am Main. 100/100 PageSpeed, Enterprise-Sicherheit & B2B-Leads. Jetzt Audit anfordern!',
+      'High-End Webdesign & Next.js Webentwicklung in Frankfurt am Main. 100/100 PageSpeed, Enterprise-Sicherheit & messbare B2B-Leads für Finanz & Mittelstand.',
     path: '/de/webdesign-frankfurt',
     type: 'money',
   });
@@ -689,18 +689,27 @@ export default async function WebdesignFrankfurtPage({
               <div className="text-white font-medium mb-3">Taunus & Hochtaunus</div>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/standorte/hessen" className="hover:text-amber-400 transition-colors">
+                  <Link
+                    href="/webdesign-bad-homburg"
+                    className="hover:text-amber-400 transition-colors"
+                  >
                     Webdesign Bad Homburg vor der Höhe
                   </Link>
                 </li>
                 <li>
-                  <Link href="/standorte/hessen" className="hover:text-amber-400 transition-colors">
+                  <Link
+                    href="/webdesign-oberursel"
+                    className="hover:text-amber-400 transition-colors"
+                  >
                     Webdesign Oberursel & Taunus
                   </Link>
                 </li>
                 <li>
-                  <Link href="/standorte/hessen" className="hover:text-amber-400 transition-colors">
-                    Webdesign Eschborn & MTK
+                  <Link
+                    href="/regionen/main-taunus-kreis"
+                    className="hover:text-amber-400 transition-colors"
+                  >
+                    Webdesign Main-Taunus-Kreis & Eschborn
                   </Link>
                 </li>
               </ul>
@@ -710,17 +719,26 @@ export default async function WebdesignFrankfurtPage({
               <div className="text-white font-medium mb-3">Südhessen & Landeshauptstadt</div>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/standorte/hessen" className="hover:text-amber-400 transition-colors">
+                  <Link
+                    href="/webdesign-wiesbaden"
+                    className="hover:text-amber-400 transition-colors"
+                  >
                     Webdesign Wiesbaden (A66)
                   </Link>
                 </li>
                 <li>
-                  <Link href="/standorte/hessen" className="hover:text-amber-400 transition-colors">
+                  <Link
+                    href="/webdesign-darmstadt"
+                    className="hover:text-amber-400 transition-colors"
+                  >
                     Webdesign Darmstadt (A5 Süd)
                   </Link>
                 </li>
                 <li>
-                  <Link href="/standorte/hessen" className="hover:text-amber-400 transition-colors">
+                  <Link
+                    href="/webdesign-offenbach"
+                    className="hover:text-amber-400 transition-colors"
+                  >
                     Webdesign Offenbach am Main
                   </Link>
                 </li>
