@@ -394,16 +394,18 @@ export default async function WebdesignWetzlarPage({
   const localBusinessJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    '@id': 'https://www.codayweb.de/webdesign-agentur-wetzlar#localbusiness',
-    name: 'Coday Webdesign Wetzlar',
+    '@id': `${BASE_URL}/${locale}/webdesign-agentur-wetzlar#localbusiness`,
+    name: 'Coday – High-End Webdesign & Webentwicklung Wetzlar (HQ)',
     url: `${BASE_URL}/${locale}/webdesign-agentur-wetzlar`,
     logo: `${BASE_URL}/icon.png`,
-    image: `${BASE_URL}/og-image.jpg`,
+    image: `${BASE_URL}/images/og-image.jpg`,
     description: t.hero.description,
     address: {
       '@type': 'PostalAddress',
+      streetAddress: 'Headquarter Wetzlar / Spilburg',
       addressLocality: 'Wetzlar',
       postalCode: '35578',
+      addressRegion: 'Hessen',
       addressCountry: 'DE',
     },
     geo: {
@@ -414,34 +416,76 @@ export default async function WebdesignWetzlarPage({
     areaServed: [
       { '@type': 'City', name: 'Wetzlar' },
       { '@type': 'City', name: 'Gießen' },
+      { '@type': 'City', name: 'Marburg' },
+      { '@type': 'City', name: 'Herborn' },
+      { '@type': 'City', name: 'Limburg an der Lahn' },
+      { '@type': 'City', name: 'Friedberg (Hessen)' },
+      { '@type': 'City', name: 'Frankfurt am Main' },
+      { '@type': 'City', name: 'Wiesbaden' },
+      { '@type': 'City', name: 'Darmstadt' },
+      { '@type': 'City', name: 'Kassel' },
+      { '@type': 'City', name: 'Offenbach am Main' },
+      { '@type': 'City', name: 'Hanau' },
+      { '@type': 'City', name: 'Fulda' },
       { '@type': 'AdministrativeArea', name: 'Lahn-Dill-Kreis' },
+      { '@type': 'AdministrativeArea', name: 'Landkreis Gießen' },
+      { '@type': 'AdministrativeArea', name: 'Wetteraukreis' },
+      { '@type': 'AdministrativeArea', name: 'Main-Kinzig-Kreis' },
       { '@type': 'AdministrativeArea', name: 'Mittelhessen' },
+      { '@type': 'AdministrativeArea', name: 'Hessen' },
     ],
-    priceRange: '€€€',
-    telephone: '+4917631310115',
-    email: 'hello@codayweb.de',
+    priceRange: '€€€€',
+    telephone: '+49 6441 000000',
+    email: 'kontakt@codayweb.de',
   };
 
   const serviceJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Service',
-    '@id': 'https://www.codayweb.de/webdesign-agentur-wetzlar#service',
-    name: 'Premium Webdesign & Webentwicklung',
+    '@type': 'ProfessionalService',
+    '@id': `${BASE_URL}/${locale}/webdesign-agentur-wetzlar#service`,
+    name: 'High-End Webdesign & Next.js Webentwicklung Hessen (HQ Wetzlar)',
     provider: {
-      '@id': 'https://www.codayweb.de/webdesign-agentur-wetzlar#localbusiness',
+      '@id': `${BASE_URL}/${locale}/webdesign-agentur-wetzlar#localbusiness`,
     },
-    areaServed: [
-      { '@type': 'City', name: 'Wetzlar' },
-      { '@type': 'City', name: 'Gießen' },
-      { '@type': 'City', name: 'Marburg' },
-      { '@type': 'AdministrativeArea', name: 'Lahn-Dill-Kreis' },
+    serviceType: [
+      'Next.js B2B Webentwicklung',
+      'Optik & Feinmechanik Webportale',
+      'Industrie & Maschinenbau Websites',
+      'Kanzleien & Notariate Webdesign',
+      'Core Web Vitals & Headless CMS Architektur',
     ],
-    description: t.hero.description,
-    offers: {
-      '@type': 'Offer',
-      priceCurrency: 'EUR',
-      price: '2000.00',
-      availability: 'https://schema.org/InStock',
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Entwicklungsleistungen Coday Wetzlar & Hessen Hub',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Next.js High-End Webdesign',
+            description:
+              'Individuelle, statisch vorkompilierte B2B-Websites mit 100/100 Core Web Vitals.',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Local SEO & Geo-Targeting Hessen',
+            description:
+              'Strukturierte Dominanz in Wetzlar, Mittelhessen, Frankfurt Rhein-Main und ganz Hessen.',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Headless CMS Integration',
+            description:
+              'Intuitive Inhaltsverwaltung mit Sanity CMS ohne Sicherheits- oder Layoutrisiken.',
+          },
+        },
+      ],
     },
   };
 
@@ -782,6 +826,227 @@ export default async function WebdesignWetzlarPage({
                 </div>
               </ScrollReveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Regional Proximity & Hessen Hub Network */}
+      <section className="py-24 md:py-32 px-4 bg-slate-950 text-white border-t border-slate-900">
+        <div className="max-w-6xl mx-auto">
+          <ScrollReveal>
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-primary-500/30 bg-primary-950/40 text-primary-400 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-4">
+                <MapPin className="w-4 h-4 text-primary-400" />
+                Operatives Headquarter & Regionales Netzwerk
+              </div>
+              <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">
+                Webdesign Wetzlar als Drehkreuz für ganz Hessen
+              </h2>
+              <p className="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
+                Von unserem Hauptsitz in Wetzlar (Spilburg) entwickeln wir digitale Flaggschiffe für
+                Mittelhessen, die Metropolregion Frankfurt Rhein-Main und ganz Hessen. Direkter
+                Entwickler-Draht, transparente Festpreise und garantierte Vor-Ort-Verfügbarkeit.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            {/* Cluster Mittelhessen */}
+            <ScrollReveal index={0}>
+              <div className="p-8 rounded-3xl bg-slate-900/60 border border-slate-800 flex flex-col justify-between h-full hover:border-primary-500/40 transition-colors">
+                <div>
+                  <div className="text-xs font-bold text-primary-400 uppercase tracking-wider mb-3">
+                    Mittelhessen & Lahn-Dill
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-4">Direkte Nachbarschaft</h3>
+                  <p className="text-slate-400 text-sm leading-relaxed mb-6">
+                    Schnellste Vor-Ort-Präsenz im Lahn-Dill-Kreis, Landkreis Gießen,
+                    Marburg-Biedenkopf und Limburg-Weilburg.
+                  </p>
+                  <ul className="space-y-3 text-sm">
+                    <li>
+                      <Link
+                        href="/webdesign-giessen"
+                        className="flex items-center justify-between text-slate-200 hover:text-primary-400 transition-colors group"
+                      >
+                        <span className="font-medium">Webdesign Gießen</span>
+                        <span className="text-xs text-slate-500 group-hover:text-primary-400">
+                          12 Min • B49
+                        </span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/webdesign-herborn"
+                        className="flex items-center justify-between text-slate-200 hover:text-primary-400 transition-colors group"
+                      >
+                        <span className="font-medium">Webdesign Herborn</span>
+                        <span className="text-xs text-slate-500 group-hover:text-primary-400">
+                          18 Min • A45
+                        </span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/webdesign-marburg"
+                        className="flex items-center justify-between text-slate-200 hover:text-primary-400 transition-colors group"
+                      >
+                        <span className="font-medium">Webdesign Marburg</span>
+                        <span className="text-xs text-slate-500 group-hover:text-primary-400">
+                          30 Min • B3
+                        </span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/webdesign-limburg"
+                        className="flex items-center justify-between text-slate-200 hover:text-primary-400 transition-colors group"
+                      >
+                        <span className="font-medium">Webdesign Limburg</span>
+                        <span className="text-xs text-slate-500 group-hover:text-primary-400">
+                          35 Min • B49
+                        </span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/webdesign-friedberg"
+                        className="flex items-center justify-between text-slate-200 hover:text-primary-400 transition-colors group"
+                      >
+                        <span className="font-medium">Webdesign Friedberg & Wetterau</span>
+                        <span className="text-xs text-slate-500 group-hover:text-primary-400">
+                          35 Min • A5
+                        </span>
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Cluster Frankfurt Rhein-Main */}
+            <ScrollReveal index={1}>
+              <div className="p-8 rounded-3xl bg-slate-900/60 border border-slate-800 flex flex-col justify-between h-full hover:border-primary-500/40 transition-colors">
+                <div>
+                  <div className="text-xs font-bold text-primary-400 uppercase tracking-wider mb-3">
+                    Metropolregion Frankfurt Rhein-Main
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-4">Wirtschaftszentren</h3>
+                  <p className="text-slate-400 text-sm leading-relaxed mb-6">
+                    Enterprise-Webentwicklung, Kanzlei-Webdesign und FinTech-Plattformen mit
+                    höchster Datensicherheit.
+                  </p>
+                  <ul className="space-y-3 text-sm">
+                    <li>
+                      <Link
+                        href="/webdesign-frankfurt"
+                        className="flex items-center justify-between text-slate-200 hover:text-primary-400 transition-colors group"
+                      >
+                        <span className="font-medium">Webdesign Frankfurt am Main</span>
+                        <span className="text-xs text-slate-500 group-hover:text-primary-400">
+                          45 Min • A5
+                        </span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/webdesign-wiesbaden"
+                        className="flex items-center justify-between text-slate-200 hover:text-primary-400 transition-colors group"
+                      >
+                        <span className="font-medium">Webdesign Wiesbaden</span>
+                        <span className="text-xs text-slate-500 group-hover:text-primary-400">
+                          55 Min • A3
+                        </span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/webdesign-darmstadt"
+                        className="flex items-center justify-between text-slate-200 hover:text-primary-400 transition-colors group"
+                      >
+                        <span className="font-medium">Webdesign Darmstadt</span>
+                        <span className="text-xs text-slate-500 group-hover:text-primary-400">
+                          60 Min • A5
+                        </span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/webdesign-offenbach"
+                        className="flex items-center justify-between text-slate-200 hover:text-primary-400 transition-colors group"
+                      >
+                        <span className="font-medium">Webdesign Offenbach am Main</span>
+                        <span className="text-xs text-slate-500 group-hover:text-primary-400">
+                          50 Min • A661
+                        </span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/webdesign-hanau"
+                        className="flex items-center justify-between text-slate-200 hover:text-primary-400 transition-colors group"
+                      >
+                        <span className="font-medium">Webdesign Hanau & Main-Kinzig</span>
+                        <span className="text-xs text-slate-500 group-hover:text-primary-400">
+                          48 Min • A45
+                        </span>
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Cluster Nord- & Osthessen */}
+            <ScrollReveal index={2}>
+              <div className="p-8 rounded-3xl bg-slate-900/60 border border-slate-800 flex flex-col justify-between h-full hover:border-primary-500/40 transition-colors">
+                <div>
+                  <div className="text-xs font-bold text-primary-400 uppercase tracking-wider mb-3">
+                    Nord- & Osthessen
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-4">Oberzentren & Logistik</h3>
+                  <p className="text-slate-400 text-sm leading-relaxed mb-6">
+                    B2B-Webentwicklung für Mobilitätswirtschaft, Industrie, Logistik und den
+                    etablierten Mittelstand.
+                  </p>
+                  <ul className="space-y-3 text-sm">
+                    <li>
+                      <Link
+                        href="/webdesign-kassel"
+                        className="flex items-center justify-between text-slate-200 hover:text-primary-400 transition-colors group"
+                      >
+                        <span className="font-medium">Webdesign Kassel</span>
+                        <span className="text-xs text-slate-500 group-hover:text-primary-400">
+                          75 Min • A49 / A5
+                        </span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/webdesign-fulda"
+                        className="flex items-center justify-between text-slate-200 hover:text-primary-400 transition-colors group"
+                      >
+                        <span className="font-medium">Webdesign Fulda & Osthessen</span>
+                        <span className="text-xs text-slate-500 group-hover:text-primary-400">
+                          65 Min • B49 / A5
+                        </span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/standorte/hessen"
+                        className="flex items-center justify-between text-slate-200 hover:text-primary-400 transition-colors group"
+                      >
+                        <span className="font-medium">Hessen Standorte Hub</span>
+                        <span className="text-xs text-slate-500 group-hover:text-primary-400">
+                          Alle 26 Standorte
+                        </span>
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
