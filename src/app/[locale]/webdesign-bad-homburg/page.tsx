@@ -31,17 +31,17 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Design Bad Homburg | High-End Web Development – Coday Web',
+      title: 'Web Design Bad Homburg | Next.js Agency – Coday',
       description:
-        'Exclusive web design & Next.js development in Bad Homburg & Hochtaunus. 100/100 PageSpeed, luxury aesthetics & B2B leads. Request your consultation now!',
+        'Exclusive web design & Next.js web development in Bad Homburg vor der Höhe. 100/100 PageSpeed, enterprise security & B2B leads for premium enterprises.',
       path: '/en/webdesign-bad-homburg',
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'Webdesign Bad Homburg | High-End Webentwicklung – Coday Web',
+    title: 'Webdesign Bad Homburg | Next.js Agentur – Coday',
     description:
-      'Exklusives Webdesign & Next.js Webentwicklung in Bad Homburg & Hochtaunus. 100/100 PageSpeed, Luxus-Ästhetik & B2B-Leads. Jetzt anfragen!',
+      'Exklusives Webdesign & Next.js Webentwicklung in Bad Homburg vor der Höhe. 100/100 PageSpeed, Enterprise-Sicherheit & B2B-Leads für anspruchsvolle Unternehmen.',
     path: '/de/webdesign-bad-homburg',
     type: 'money',
   });
@@ -80,8 +80,8 @@ export default async function WebdesignBadHomburgPage({
         },
         geo: {
           '@type': 'GeoCoordinates',
-          latitude: 50.2268,
-          longitude: 8.6186,
+          latitude: 50.2267,
+          longitude: 8.6133,
         },
         areaServed: [
           { '@type': 'City', name: 'Bad Homburg vor der Höhe' },
