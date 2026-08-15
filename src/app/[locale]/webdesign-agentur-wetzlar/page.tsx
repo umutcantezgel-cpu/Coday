@@ -37,17 +37,17 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Design Agency Wetzlar | Premium Websites',
+      title: 'Web Design Agency Wetzlar | Next.js Websites & SEO – Coday',
       description:
-        'Your web design agency in Wetzlar. Premium websites & local SEO for businesses along the Lahn. Fixed prices, fast speeds & top rankings. Inquire now!',
+        'Your local web design agency in Wetzlar. Bespoke Next.js web development, 100/100 PageSpeed & qualified customer leads for mid-market businesses.',
       path: '/en/webdesign-agentur-wetzlar',
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'Webdesign Agentur Wetzlar | Premium Websites',
+    title: 'Webdesign Agentur Wetzlar | Next.js Websites & SEO – Coday',
     description:
-      'Ihre Webdesign Agentur in Wetzlar. Premium Websites & lokales SEO für Wetzlarer Unternehmen an der Lahn. Festpreise & messbare Resultate. Jetzt anfragen!',
+      'Ihre lokale Webdesign Agentur in Wetzlar. Maßgeschneiderte Next.js Webentwicklung, 100/100 PageSpeed & planbare Kundenanfragen für den Mittelstand.',
     path: '/de/webdesign-agentur-wetzlar',
     type: 'money',
   });
