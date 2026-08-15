@@ -214,6 +214,69 @@
       "packages": {
         "label": "Packages"
       },
+      "locations": {
+        "label": "Locations",
+        "hessen_mittelhessen": {
+          "title": "Central Hesse & HQ",
+          "hessen_hub": "Hesse Master Hub",
+          "hessen_hub_desc": "Interactive Hesse Navigator",
+          "wetzlar": "Wetzlar (Agency HQ)",
+          "wetzlar_desc": "Main Location on the Lahn",
+          "giessen": "Giessen",
+          "giessen_desc": "University & Medical City",
+          "marburg": "Marburg",
+          "marburg_desc": "Biotech & Historic Center",
+          "herborn": "Herborn",
+          "herborn_desc": "Dill Region & Industry",
+          "limburg": "Limburg a. d. Lahn",
+          "limburg_desc": "Lahn Valley Economy"
+        },
+        "rhein_main": {
+          "title": "Rhine-Main & Taunus",
+          "frankfurt": "Frankfurt am Main",
+          "frankfurt_desc": "Financial & B2B Flagship Hub",
+          "wiesbaden": "Wiesbaden",
+          "wiesbaden_desc": "Hesse State Capital",
+          "bad_homburg": "Bad Homburg v. d. H.",
+          "bad_homburg_desc": "Enterprise & Family Offices",
+          "oberursel": "Oberursel (Taunus)",
+          "bad_vilbel": "Bad Vilbel",
+          "offenbach": "Offenbach am Main",
+          "hanau": "Hanau",
+          "hofheim": "Hofheim am Taunus",
+          "ruesselsheim": "Ruesselsheim am Main",
+          "rodgau": "Rodgau",
+          "dietzenbach": "Dietzenbach",
+          "friedberg": "Friedberg (Hesse)"
+        },
+        "sued_nord_ost": {
+          "title": "South, North & East Hesse",
+          "darmstadt": "Darmstadt",
+          "darmstadt_desc": "City of Science & Tech Hub",
+          "bensheim": "Bensheim",
+          "bensheim_desc": "Bergstrasse Economic Center",
+          "kassel": "Kassel",
+          "kassel_desc": "North Hesse Metropolis",
+          "fulda": "Fulda",
+          "fulda_desc": "East Hesse Logistics & B2B Hub"
+        },
+        "districts": {
+          "title": "13 District Hubs",
+          "lahn_dill": "Lahn-Dill District",
+          "giessen_lk": "Giessen District",
+          "wetterau": "Wetterau District",
+          "hochtaunus": "Hochtaunus District",
+          "main_taunus": "Main-Taunus District",
+          "kreis_offenbach": "Offenbach District",
+          "main_kinzig": "Main-Kinzig District",
+          "marburg_biedenkopf": "Marburg-Biedenkopf District",
+          "limburg_weilburg": "Limburg-Weilburg District",
+          "rheingau_taunus": "Rheingau-Taunus District",
+          "darmstadt_dieburg": "Darmstadt-Dieburg District",
+          "fulda_lk": "Fulda District",
+          "kassel_lk": "Kassel District"
+        }
+      },
       "local": {
         "title": "Local",
         "hessen": "Hesse Overview",
