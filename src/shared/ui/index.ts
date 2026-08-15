@@ -25,6 +25,7 @@ export { default as TechStackGrid } from '@/shared/ui/TechStackGrid';
 export { default as Timeline } from '@/shared/ui/Timeline';
 export { Skeleton } from '@/shared/ui/Skeleton';
 export { CustomCursor } from '@/shared/ui/CustomCursor';
+export { WaterCursor, type WaterCursorProps } from '@/shared/ui/WaterCursor';
 export { TestimonialCard, type TestimonialProps } from '@/shared/ui/TestimonialCard';
 export { TestimonialBlock, type TestimonialBlockProps } from '@/shared/ui/TestimonialBlock';
 export { TrustBadges, type TrustBadge } from '@/shared/ui/TrustBadges';

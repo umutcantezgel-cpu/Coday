@@ -6,6 +6,7 @@ import dynamic from 'next/dynamic';
 const Footer = dynamic(() => import('@/widgets/layout/Footer').then((mod) => mod.Footer), {
   ssr: true,
 });
+import { WaterCursor } from '@/shared/ui/WaterCursor';
 import { RouteAnnouncer } from '@/shared/ui/RouteAnnouncer';
 import { ConditionalWrapper } from './ConditionalWrapper';
 import { PageTransition } from '@/widgets/layout/PageTransition';
@@ -19,6 +20,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   return (
     <ConditionalWrapper>
+      <WaterCursor tint="coday" />
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-primary-700 focus:text-white focus:rounded-lg focus:outline-2 focus:outline-offset-2 focus:outline-primary-500"
