@@ -199,6 +199,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     sitemapEntry('/regionen/wetteraukreis', { changeFrequency: 'monthly', priority: 0.85 }),
     sitemapEntry('/regionen/main-taunus-kreis', { changeFrequency: 'monthly', priority: 0.85 }),
     sitemapEntry('/regionen/hochtaunuskreis', { changeFrequency: 'monthly', priority: 0.85 }),
+    sitemapEntry('/regionen/landkreis-limburg-weilburg', {
+      changeFrequency: 'monthly',
+      priority: 0.85,
+    }),
     sitemapEntry('/standorte/giessen', { changeFrequency: 'monthly', priority: 0.8 }),
     sitemapEntry('/standorte/hessen', { changeFrequency: 'monthly', priority: 0.8 }),
 
