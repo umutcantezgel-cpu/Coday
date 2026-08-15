@@ -69,7 +69,7 @@ function sitemapEntry(
   const cleanPath = path.replace(/^\/(en|de)/, '').replace(/\/$/, '') || '';
 
   const localPathsRegex =
-    /^\/(landingpages|webdesign-agentur-wetzlar|webdesign-giessen|webdesign-marburg|webdesign-herborn|webdesign-limburg|webdesign-friedberg|webdesign-frankfurt|webdesign-wiesbaden|webdesign-darmstadt|webdesign-kassel|webdesign-offenbach|webdesign-hanau|webdesign-fulda|webdesign-bad-homburg|webdesign-oberursel|webdesign-bad-vilbel|webdesign-hofheim|webdesign-ruesselsheim|webdesign-bensheim|angebot-handwerker|branchen|standorte)(\/.*)?$/;
+    /^\/(landingpages|webdesign-agentur-wetzlar|webdesign-giessen|webdesign-marburg|webdesign-herborn|webdesign-limburg|webdesign-friedberg|webdesign-frankfurt|webdesign-wiesbaden|webdesign-darmstadt|webdesign-kassel|webdesign-offenbach|webdesign-hanau|webdesign-fulda|webdesign-bad-homburg|webdesign-oberursel|webdesign-bad-vilbel|webdesign-hofheim|webdesign-ruesselsheim|webdesign-bensheim|webdesign-rodgau|angebot-handwerker|branchen|standorte)(\/.*)?$/;
   const isLocalPath = localPathsRegex.test(cleanPath);
   const isDeOnlyRoute = DE_ONLY_ROUTES.includes(cleanPath);
 
@@ -192,6 +192,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     sitemapEntry('/webdesign-hofheim', { changeFrequency: 'monthly', priority: 0.85 }),
     sitemapEntry('/webdesign-ruesselsheim', { changeFrequency: 'monthly', priority: 0.85 }),
     sitemapEntry('/webdesign-bensheim', { changeFrequency: 'monthly', priority: 0.85 }),
+    sitemapEntry('/webdesign-rodgau', { changeFrequency: 'monthly', priority: 0.85 }),
     sitemapEntry('/standorte/giessen', { changeFrequency: 'monthly', priority: 0.8 }),
     sitemapEntry('/standorte/hessen', { changeFrequency: 'monthly', priority: 0.8 }),
 
