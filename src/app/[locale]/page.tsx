@@ -34,17 +34,17 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Design Wetzlar | Web Development Wetzlar | Coday Web',
+      title: 'Coday Web Agency | High-End Web Design & Next.js Development',
       description:
-        'New website or relaunch? Coday is your web design & development agency in Wetzlar. Fixed price, online in 3 weeks. Start your project now!',
+        'Tailored web design, ultra-fast Next.js web development & SEO for mid-market leaders. 100/100 PageSpeed, measurable B2B leads & fixed pricing.',
       path: '/en',
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'Webdesign Wetzlar | Webentwicklung Wetzlar | Coday Web',
+    title: 'Coday Webagentur | High-End Webdesign & Next.js Entwicklung',
     description:
-      'Neue Webseite oder Relaunch? Coday ist Ihre Agentur für Webdesign & Webentwicklung in Wetzlar. Zum Festpreis, in 3 Wochen online. Jetzt Projekt starten!',
+      'Maßgeschneidertes Webdesign, ultraschnelle Next.js Webentwicklung & SEO für den Mittelstand. 100/100 PageSpeed, messbare B2B-Leads & Festpreise.',
     path: '/de',
     type: 'money',
   });
