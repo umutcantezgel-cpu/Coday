@@ -609,6 +609,35 @@ export default async function HessenLocationPage({
                 Standort Hofheim ansehen →
               </Link>
             </div>
+
+            {/* Rüsselsheim am Main */}
+            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-primary-500/40 transition-colors flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-bold text-primary-400 uppercase tracking-wider">
+                    Groß-Gerau
+                  </span>
+                  <span className="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded">
+                    50 Min ab HQ
+                  </span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">
+                  <Link href="/webdesign-ruesselsheim" className="hover:text-primary-400">
+                    Webdesign Rüsselsheim
+                  </Link>
+                </h3>
+                <p className="text-slate-400 text-xs leading-relaxed mb-4">
+                  Automotive Engineering, Logistikdrehkreuz, technisches Handwerk und
+                  Zulieferindustrie.
+                </p>
+              </div>
+              <Link
+                href="/webdesign-ruesselsheim"
+                className="text-xs font-semibold text-primary-400 hover:text-primary-300 inline-flex items-center gap-1"
+              >
+                Standort Rüsselsheim ansehen →
+              </Link>
+            </div>
           </div>
         </div>
       </section>
