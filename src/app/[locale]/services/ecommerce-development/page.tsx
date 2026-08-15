@@ -143,47 +143,49 @@ export default async function EcommercePage({ params }: { params: Promise<{ loca
       <EcommerceDevelopmentClient />
 
       {/* Headless Architecture & Performance Showcase */}
-      <section className="container mx-auto px-4 py-20 max-w-6xl text-slate-300">
-        <div className="p-8 lg:p-14 rounded-3xl bg-slate-900/60 border border-slate-800">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-950/40 text-amber-400 text-xs font-semibold uppercase tracking-wider mb-6">
-            <ShoppingCart className="w-4 h-4" />
+      <section className="container mx-auto px-4 py-20 max-w-6xl text-slate-700">
+        <div className="p-8 lg:p-14 rounded-3xl bg-white border border-slate-200 shadow-xl">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-50 text-amber-800 text-xs font-semibold uppercase tracking-wider mb-6 shadow-sm">
+            <ShoppingCart className="w-4 h-4 text-amber-600" />
             <span>HEADLESS COMMERCE ENGINE</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl font-display font-bold text-white mb-8">
+          <h2 className="text-3xl sm:text-4xl font-display font-bold text-slate-900 mb-8">
             {isEn
               ? 'Why Headless Next.js Stores Double Mobile Conversion Rates'
               : 'Warum Headless Next.js Shops mobile Konversionsraten verdoppeln'}
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <div className="p-6 rounded-2xl bg-slate-950 border border-slate-800">
-              <Lightning className="w-6 h-6 text-amber-400 mb-3" />
-              <h3 className="text-lg font-bold text-white mb-2">Subsekundärer Produktfilter</h3>
-              <p className="text-xs text-slate-400 leading-relaxed">
+            <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
+              <Lightning className="w-6 h-6 text-amber-600 mb-3" />
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Subsekundärer Produktfilter</h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
                 Kein Neuladen der Seite: Kunden filtern tausende Varianten und Kategorien in unter
                 50ms Reaktionszeit.
               </p>
             </div>
-            <div className="p-6 rounded-2xl bg-slate-950 border border-slate-800">
-              <TrendUp className="w-6 h-6 text-amber-400 mb-3" />
-              <h3 className="text-lg font-bold text-white mb-2">Frictionless 1-Click Checkout</h3>
-              <p className="text-xs text-slate-400 leading-relaxed">
+            <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
+              <TrendUp className="w-6 h-6 text-amber-600 mb-3" />
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                Frictionless 1-Click Checkout
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
                 Optimierte Bezahlstrecken mit Apple Pay & Klarna minimieren Warenkorbabbrüche um bis
                 zu 38%.
               </p>
             </div>
-            <div className="p-6 rounded-2xl bg-slate-950 border border-slate-800">
-              <Cpu className="w-6 h-6 text-amber-400 mb-3" />
-              <h3 className="text-lg font-bold text-white mb-2">B2B & ERP-Synchronisation</h3>
-              <p className="text-xs text-slate-400 leading-relaxed">
+            <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
+              <Cpu className="w-6 h-6 text-amber-600 mb-3" />
+              <h3 className="text-lg font-bold text-slate-900 mb-2">B2B & ERP-Synchronisation</h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
                 Individuelle Preisstaffeln, Händler-Logins und automatischer Bestandsabgleich mit
                 Ihrer Warenwirtschaft.
               </p>
             </div>
           </div>
 
-          <div className="space-y-6 text-base leading-relaxed text-slate-300">
+          <div className="space-y-6 text-base leading-relaxed text-slate-600">
             <p>
               Klassische Shopsysteme wie WooCommerce oder veraltete Shopware-Setups brechen bei
               steigendem mobilen Traffic und komplexen Katalogen ein. Durch die Trennung von
@@ -193,35 +195,35 @@ export default async function EcommercePage({ params }: { params: Promise<{ loca
           </div>
 
           {/* Internal Silo Navigation */}
-          <div className="mt-12 pt-8 border-t border-slate-800">
-            <div className="text-xs font-semibold text-amber-400 uppercase tracking-wider mb-4">
+          <div className="mt-12 pt-8 border-t border-slate-200">
+            <div className="text-xs font-semibold text-amber-700 uppercase tracking-wider mb-4">
               Verwandte Leistungen & Case Studies:
             </div>
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/services/web-development"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs font-medium text-slate-300 hover:text-amber-400 hover:border-amber-500/30 transition-colors"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-slate-50 border border-slate-200 text-xs font-medium text-slate-700 hover:text-amber-800 hover:border-amber-400 transition-colors shadow-sm"
               >
                 <span>Full-Stack Webentwicklung</span>
                 <ArrowRight className="w-3 h-3" />
               </Link>
               <Link
                 href="/services/performance"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs font-medium text-slate-300 hover:text-amber-400 hover:border-amber-500/30 transition-colors"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-slate-50 border border-slate-200 text-xs font-medium text-slate-700 hover:text-amber-800 hover:border-amber-400 transition-colors shadow-sm"
               >
                 <span>Core Web Vitals & Speed</span>
                 <ArrowRight className="w-3 h-3" />
               </Link>
               <Link
                 href="/work/talia-boutique"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs font-medium text-slate-300 hover:text-amber-400 hover:border-amber-500/30 transition-colors"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-slate-50 border border-slate-200 text-xs font-medium text-slate-700 hover:text-amber-800 hover:border-amber-400 transition-colors shadow-sm"
               >
                 <span>Case Study: Talia Boutique E-Commerce</span>
                 <ArrowRight className="w-3 h-3" />
               </Link>
               <Link
                 href="/pricing"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-amber-950/40 border border-amber-500/30 text-xs font-bold text-amber-400 hover:bg-amber-900/40 transition-colors"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-amber-50 border border-amber-300 text-xs font-bold text-amber-800 hover:bg-amber-100 transition-colors shadow-sm"
               >
                 <span>Shop-Pakete & Festpreise</span>
                 <ArrowRight className="w-3 h-3" />

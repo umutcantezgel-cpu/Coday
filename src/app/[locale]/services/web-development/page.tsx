@@ -123,47 +123,49 @@ export default async function WebDevelopmentPage({
       <WebDevelopmentClient />
 
       {/* Structured Semantic Topic Silo & Architecture Deep Dive */}
-      <section className="container mx-auto px-4 py-20 max-w-6xl text-slate-300">
-        <div className="p-8 lg:p-14 rounded-3xl bg-slate-900/60 border border-slate-800">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-950/40 text-amber-400 text-xs font-semibold uppercase tracking-wider mb-6">
-            <Cpu className="w-4 h-4" />
+      <section className="container mx-auto px-4 py-20 max-w-6xl text-slate-700">
+        <div className="p-8 lg:p-14 rounded-3xl bg-white border border-slate-200 shadow-xl">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-50 text-amber-800 text-xs font-semibold uppercase tracking-wider mb-6 shadow-sm">
+            <Cpu className="w-4 h-4 text-amber-600" />
             <span>ENTERPRISE ARCHITEKTUR-STANDARDS</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl font-display font-bold text-white mb-8">
+          <h2 className="text-3xl sm:text-4xl font-display font-bold text-slate-900 mb-8">
             {isEn
               ? 'Why Modern Next.js Architecture Replaces Legacy Monoliths'
               : 'Warum moderne Next.js 15 Architektur traditionelle CMS-Monolithen ablöst'}
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <div className="p-6 rounded-2xl bg-slate-950 border border-slate-800">
-              <Lightning className="w-6 h-6 text-amber-400 mb-3" />
-              <h3 className="text-lg font-bold text-white mb-2">Subsekundäre Ladezeiten</h3>
-              <p className="text-xs text-slate-400 leading-relaxed">
+            <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
+              <Lightning className="w-6 h-6 text-amber-600 mb-3" />
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Subsekundäre Ladezeiten</h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
                 Durch statische Vorkompilierung (SSG) und Vercel Edge Caching werden Inhalte in
                 unter 300ms an den Browser ausgeliefert — mit 0ms Layout Shifts.
               </p>
             </div>
-            <div className="p-6 rounded-2xl bg-slate-950 border border-slate-800">
-              <ShieldCheck className="w-6 h-6 text-amber-400 mb-3" />
-              <h3 className="text-lg font-bold text-white mb-2">Maximale Sicherheit</h3>
-              <p className="text-xs text-slate-400 leading-relaxed">
+            <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
+              <ShieldCheck className="w-6 h-6 text-amber-600 mb-3" />
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Maximale Sicherheit</h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
                 Keine angreifbare MySQL-Datenbank auf dem Webserver, keine unsicheren
                 Drittanbieter-Plugins, vollständige Isolierung sensibler Backend-Logik.
               </p>
             </div>
-            <div className="p-6 rounded-2xl bg-slate-950 border border-slate-800">
-              <Code className="w-6 h-6 text-amber-400 mb-3" />
-              <h3 className="text-lg font-bold text-white mb-2">Strikte TypeScript-Typisierung</h3>
-              <p className="text-xs text-slate-400 leading-relaxed">
+            <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
+              <Code className="w-6 h-6 text-amber-600 mb-3" />
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                Strikte TypeScript-Typisierung
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
                 100% wartbarer, sauber dokumentierter Code ohne Laufzeitfehler. Automatisierte CI/CD
                 Qualitäts-Gates bei jedem Git-Commit.
               </p>
             </div>
           </div>
 
-          <div className="space-y-6 text-base leading-relaxed text-slate-300">
+          <div className="space-y-6 text-base leading-relaxed text-slate-600">
             <p>
               Als spezialisierte Webagentur in Wetzlar entwickeln wir digitale Produkte nach den
               höchsten Standards moderner Softwaretechnik. Während traditionelle Baukästen oder
@@ -178,42 +180,42 @@ export default async function WebDevelopmentPage({
           </div>
 
           {/* Internal Silo Navigation */}
-          <div className="mt-12 pt-8 border-t border-slate-800">
-            <div className="text-xs font-semibold text-amber-400 uppercase tracking-wider mb-4">
+          <div className="mt-12 pt-8 border-t border-slate-200">
+            <div className="text-xs font-semibold text-amber-700 uppercase tracking-wider mb-4">
               Verwandte Leistungen & Case Studies:
             </div>
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/services/web-design"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs font-medium text-slate-300 hover:text-amber-400 hover:border-amber-500/30 transition-colors"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-slate-50 border border-slate-200 text-xs font-medium text-slate-700 hover:text-amber-800 hover:border-amber-400 transition-colors shadow-sm"
               >
                 <span>Webdesign & UI/UX</span>
                 <ArrowRight className="w-3 h-3" />
               </Link>
               <Link
                 href="/services/performance"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs font-medium text-slate-300 hover:text-amber-400 hover:border-amber-500/30 transition-colors"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-slate-50 border border-slate-200 text-xs font-medium text-slate-700 hover:text-amber-800 hover:border-amber-400 transition-colors shadow-sm"
               >
                 <span>Performance & Speed Optimization</span>
                 <ArrowRight className="w-3 h-3" />
               </Link>
               <Link
                 href="/services/seo"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs font-medium text-slate-300 hover:text-amber-400 hover:border-amber-500/30 transition-colors"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-slate-50 border border-slate-200 text-xs font-medium text-slate-700 hover:text-amber-800 hover:border-amber-400 transition-colors shadow-sm"
               >
                 <span>Technisches SEO & Topic Silos</span>
                 <ArrowRight className="w-3 h-3" />
               </Link>
               <Link
                 href="/work/batherm"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-slate-950 border border-slate-800 text-xs font-medium text-slate-300 hover:text-amber-400 hover:border-amber-500/30 transition-colors"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-slate-50 border border-slate-200 text-xs font-medium text-slate-700 hover:text-amber-800 hover:border-amber-400 transition-colors shadow-sm"
               >
                 <span>Case Study: Batherm Handwerk</span>
                 <ArrowRight className="w-3 h-3" />
               </Link>
               <Link
                 href="/pricing"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-amber-950/40 border border-amber-500/30 text-xs font-bold text-amber-400 hover:bg-amber-900/40 transition-colors"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-amber-50 border border-amber-300 text-xs font-bold text-amber-800 hover:bg-amber-100 transition-colors shadow-sm"
               >
                 <span>Festpreise ansehen</span>
                 <ArrowRight className="w-3 h-3" />
