@@ -1,21 +1,21 @@
 import React from 'react';
 import { getTranslations, getLocale } from 'next-intl/server';
 import { Link as NavLink } from '@/i18n/navigation';
-import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import {
   Clock,
-  ArrowsClockwise,
   CheckCircle,
   MinusCircle,
   ArrowRight,
   ShieldCheck,
-  Gauge,
-  Headset,
+  Lightning,
   Calendar,
+  Sparkle,
+  TrendUp,
+  Cpu,
+  LockKey,
 } from '@phosphor-icons/react/dist/ssr';
 import { SeoHead } from '@/shared/ui/SeoHead';
 import GradientText from '@/shared/ui/GradientText';
-import StepIndicator from '@/shared/ui/StepIndicator';
 import { Breadcrumbs } from '@/shared/ui/Breadcrumbs';
 
 import { PackageSelectButton } from './PackageSelectButton';
@@ -25,163 +25,255 @@ import { StepInitializer } from './StepInitializer';
 export default async function Packages() {
   const t = await getTranslations('pricing');
   const locale = await getLocale();
-
-  const formatPrice = (price: number) => {
-    return new Intl.NumberFormat(locale, {
-      style: 'currency',
-      currency: 'EUR',
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    }).format(price);
-  };
+  const isEn = locale === 'en';
 
   const packages = [
     {
-      id: 'onepager',
-      name: t('packages.onepager.name'),
-      tagline: t('packages.onepager.tagline'),
-      setupPrice: 499,
-      monthlyPrice: 0,
-      features: t.raw('features.onepager') as string[],
-      notIncluded: t.raw('not_included.onepager') as string[],
-      cta: t('packages.onepager.cta'),
-      deliveryDays: 7,
-    },
-    {
       id: 'starter',
-      name: t('packages.starter.name'),
-      tagline: t('packages.starter.tagline'),
-      setupPrice: 1490,
-      monthlyPrice: 0,
-      features: t.raw('features.starter') as string[],
-      notIncluded: t.raw('not_included.starter') as string[],
-      cta: t('packages.starter.cta'),
+      name: isEn ? 'Starter / Local Authority' : 'Starter / Local Authority',
+      tagline: isEn
+        ? 'Perfect for craftsmen & local service providers seeking online dominance.'
+        : 'Perfekt für Handwerker & lokale Dienstleister für planbare Anfragen.',
+      setupPrice: 1900,
+      popular: false,
+      features: [
+        isEn
+          ? 'Custom Next.js 15 Website (up to 5 pages)'
+          : 'Maßgeschneiderte Next.js 15 Website (bis 5 Unterseiten)',
+        isEn
+          ? '100/100 Google Core Web Vitals Guaranteed'
+          : '100/100 Google Core Web Vitals Garantie',
+        isEn
+          ? 'Mobile-First UX & High-Converting Contact Forms'
+          : 'Mobile-First Design & DSGVO-Kontaktfunnel',
+        isEn
+          ? 'Local SEO & Google Business Profile Optimization'
+          : 'Lokale SEO-Optimierung & Google Maps Ausrichtung',
+        isEn
+          ? '100% Source Code & Design Ownership'
+          : '100% Quellcode- & Design-Eigentum (Kein Abo)',
+        isEn ? 'Zero-Downtime Global Edge Deployment' : 'Zero-Downtime Vercel Edge Hosting Setup',
+      ],
+      notIncluded: [
+        isEn ? 'Headless CMS for custom editing' : 'Headless CMS Redaktionssystem',
+        isEn ? '60-Second Express Recruiting Funnel' : '60-Sekunden Mobile-Recruiting Funnel',
+        isEn
+          ? 'Multi-Language Architecture (i18n)'
+          : 'Mehrsprachigkeit & globale Internationalisierung',
+      ],
+      cta: isEn ? 'Choose Starter' : 'Starter wählen',
       deliveryDays: 14,
     },
     {
-      id: 'professional',
-      name: t('packages.professional.name'),
-      tagline: t('packages.professional.tagline'),
-      setupPrice: 2990,
-      monthlyPrice: 0,
+      id: 'business',
+      name: isEn ? 'Business Enterprise / B2B' : 'Business Enterprise / B2B',
+      tagline: isEn
+        ? 'The gold standard for mid-market leaders, B2B companies & industry.'
+        : 'Der Maßstab für anspruchsvollen Mittelstand, Industrie & B2B.',
+      setupPrice: 3800,
       popular: true,
-      features: t.raw('features.professional') as string[],
-      notIncluded: t.raw('not_included.professional') as string[],
-      cta: t('packages.professional.cta'),
+      badge: isEn ? 'Most Popular' : 'Beliebteste Wahl',
+      features: [
+        isEn
+          ? 'Bespoke Next.js 15 Enterprise Architecture (up to 12 pages)'
+          : 'Maßgeschneiderte Next.js 15 B2B-Plattform (bis 12 Unterseiten)',
+        isEn
+          ? 'Sanity v3 Headless CMS (Self-managed content)'
+          : 'Sanity v3 Headless CMS (Inhalte selbst verwalten)',
+        isEn
+          ? '60-Second Mobile Express-Recruiting Funnel'
+          : '60-Sekunden Express-Mitarbeitergewinnung',
+        isEn
+          ? '100/100 Core Web Vitals & Sub-0.3s Load Time'
+          : '100/100 Core Web Vitals & Sub-0,3s Ladezeit',
+        isEn
+          ? 'Technical SEO, Topic Silos & Schema Markup'
+          : 'Technisches SEO, Topic-Silos & Rich Snippets',
+        isEn
+          ? 'Micro-Animations & Dynamic Bento Grid Layouts'
+          : 'Micro-Animations & maßgeschneidertes Bento-UI',
+        isEn
+          ? 'Direct Line to Lead Architect Umutcan Emre Tezgel'
+          : 'Direkter Draht zum Lead-Architekten Umutcan Emre Tezgel',
+      ],
+      notIncluded: [
+        isEn ? 'Full E-Commerce Shop Checkout' : 'Vollständiger Online-Shop Checkout',
+        isEn ? 'Custom CRM / ERP Deep-Sync' : 'Tiefgreifende ERP-/CRM-Schnittstellen',
+      ],
+      cta: isEn ? 'Choose Business Enterprise' : 'Business Enterprise wählen',
       deliveryDays: 21,
     },
     {
-      id: 'enterprise',
-      name: t('packages.enterprise.name'),
-      tagline: t('packages.enterprise.tagline'),
-      setupPrice: 5990,
-      monthlyPrice: 0,
-      features: t.raw('features.enterprise') as string[],
-      cta: t('packages.enterprise.cta'),
+      id: 'custom-app',
+      name: isEn ? 'Custom App & E-Commerce' : 'Custom App & E-Commerce',
+      tagline: isEn
+        ? 'High-performance web apps, client portals & headless shops.'
+        : 'Web-Applikationen, Kundenportale & Headless Online-Shops.',
+      setupPrice: 6500,
+      popular: false,
+      features: [
+        isEn
+          ? 'Full-Stack Next.js 15 & React 19 Web Application'
+          : 'Full-Stack Next.js 15 & React 19 Web-Applikation',
+        isEn
+          ? 'Headless E-Commerce (Shopify / Stripe) or Client Portal'
+          : 'Headless E-Commerce (Stripe/Shopify) oder B2B-Portal',
+        isEn
+          ? 'Deep API Integrations (ERP, CRM, Database & Auth)'
+          : 'API-Schnittstellen (ERP, Supabase Auth, CRM-Sync)',
+        isEn
+          ? 'Multi-Language Architecture (German + English)'
+          : 'Lückenlose Mehrsprachigkeit (next-intl)',
+        isEn
+          ? 'Advanced Search with Instant Filtering (Sub-50ms)'
+          : 'Instant-Suche & dynamische B2B-Katalogfilter',
+        isEn
+          ? 'Continuous Deployment & SLA Priority Support'
+          : 'CI/CD Pipelines & bevorzugter Priority-Support',
+      ],
+      notIncluded: [],
+      cta: isEn ? 'Request Custom Project' : 'Custom Projekt anfragen',
       deliveryDays: 30,
     },
   ];
 
-  const ultimatePackage = {
-    id: 'ultimate',
-    name: t('packages.ultimate.name', { defaultValue: 'Ultimate Domination' }),
-    tagline: t('packages.ultimate.tagline', { defaultValue: 'Der unfaire Wettbewerbsvorteil' }),
-    badge: t('packages.ultimate.badge', { defaultValue: 'Agentur Partner' }),
-    setupPrice: 12999,
-    monthlyPrice: 0,
-    features: t.raw('features.ultimate') as string[],
-    cta: t('packages.ultimate.cta', { defaultValue: 'Ultimate wählen' }),
-    deliveryDays: 60,
-  };
+  const roiPoints = [
+    {
+      icon: Lightning,
+      title: isEn ? 'Ladezeit von 4s auf 0.3s' : 'Ladezeit von 4s auf 0,3s',
+      desc: isEn
+        ? 'Every 1-second delay reduces conversions by 7%. Our 100/100 PageSpeed architecture doubles your lead rate.'
+        : 'Jede Sekunde Ladezeit kostet bis zu 7% Conversion. Unsere 100/100 Next.js Architektur schöpft Ihr volles Potenzial aus.',
+    },
+    {
+      icon: TrendUp,
+      title: isEn ? 'Planbare Mitarbeitergewinnung' : '60s Express-Recruiting',
+      desc: isEn
+        ? 'Qualified applicants apply in 60 seconds directly on mobile devices without tedious PDF attachments.'
+        : 'Fachkräfte bewerben sich in unter 60 Sekunden direkt am Smartphone — ohne lästige Lebenslauf-PDFs.',
+    },
+    {
+      icon: LockKey,
+      title: isEn ? 'Zero Maintenance Stress' : '0 € Wartungs-Zwang',
+      desc: isEn
+        ? 'No vulnerable WordPress plugins or recurring license costs. 100% code ownership with zero lock-in.'
+        : 'Keine angreifbaren WordPress-Plugins oder teure Lizenz-Abos. 100% Code-Eigentum gehört Ihnen.',
+    },
+  ];
 
-  const trustReferences = t.raw('trust_section.references') as {
-    metric: string;
-    name: string;
-    label: string;
-    href?: string;
-  }[];
-  const valuePropPoints = t.raw('value_prop.points') as { title: string; description: string }[];
-  const faqItems = t.raw('faq.items') as { question: string; answer: string }[];
+  const faqItems = [
+    {
+      question: isEn
+        ? 'Are there any hidden recurring fees or mandatory subscriptions?'
+        : 'Gibt es bei Coday versteckte Folgekosten oder Abo-Fallen?',
+      answer: isEn
+        ? 'No. We work strictly with transparent fixed prices. After launch, all design and source code belong 100% to you. There are no mandatory monthly retainer fees.'
+        : 'Nein. Wir arbeiten ausnahmslos mit transparenten Festpreisen. Nach Projektabschluss gehört das Design und der gesamte Quellcode zu 100% Ihnen. Es gibt keine verpflichtenden monatlichen Bindungen.',
+    },
+    {
+      question: isEn ? 'How is payment structured?' : 'Wie sind die Zahlungsmodalitäten geregelt?',
+      answer: isEn
+        ? 'We split the investment into two fair milestones: 50% upon project kickoff and 50% after your final approval and launch.'
+        : 'Wir teilen die Investition in zwei faire Meilensteine: 50% Anzahlung bei Projektstart und 50% erst nach erfolgreichem Launch und Ihrer vollständigen Abnahme.',
+    },
+    {
+      question: isEn
+        ? 'How quickly will my new website be live?'
+        : 'Wie schnell ist meine neue Website online?',
+      answer: isEn
+        ? 'Depending on the selected plan, delivery takes between 14 and 28 business days from the moment initial information is provided.'
+        : 'Je nach gewähltem Paket dauert die Umsetzung zwischen 14 und 28 Werktagen ab Bereitstellung der Kerninformationen.',
+    },
+    {
+      question: isEn
+        ? 'What hosting costs should I expect?'
+        : 'Welche Hosting-Kosten kommen auf mich zu?',
+      answer: isEn
+        ? 'Thanks to modern static compilation on Vercel, most client websites run on high-performance Edge CDNs for 0 € to approx. 20 €/month with enterprise security.'
+        : 'Dank moderner statischer Vorkompilierung auf Vercel laufen die meisten Websites auf weltweiten Edge-Netzwerken für 0 € bis ca. 20 €/Monat bei höchster Ausfallsicherheit.',
+    },
+  ];
 
   return (
-    <div className="min-h-[100dvh] bg-white">
+    <div className="min-h-[100dvh] bg-slate-950 text-slate-100 selection:bg-amber-500/30 selection:text-amber-200">
       <SeoHead
-        title={`${t('page.title')} | Coday`}
-        description={t('page.subheadline')}
+        title="Transparente Webdesign Preise & Pakete | Coday Webagentur"
+        description="Transparente Festpreise für High-End Webdesign & Next.js Entwicklung. Keine versteckten Kosten, 100% Quellcode-Eigentum & messbarer ROI. Jetzt kalkulieren!"
         breadcrumbs={[
-          { name: 'Home', url: 'https://www.codayweb.de' },
-          { name: t('page.title'), url: 'https://www.codayweb.de/pricing' },
+          { name: 'Home', url: 'https://codayweb.de' },
+          { name: 'Preise', url: 'https://codayweb.de/pricing' },
         ]}
       />
 
       <StepInitializer />
 
-      {/* Light Hero Section (Soft Structuralism) */}
-      <section className="pt-24 lg:pt-32 pb-16 lg:pb-24 px-4 w-full">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-12">
+      {/* Hero Section */}
+      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 px-4 w-full relative overflow-hidden">
+        {/* Ambient Glow */}
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-500/10 blur-[140px] rounded-full pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto text-center relative z-10">
+          <div className="mb-8 flex justify-center">
             <Breadcrumbs />
           </div>
-          <StepIndicator currentStep="packages" className="mb-16" />
 
-          <div className="text-center max-w-4xl mx-auto space-y-8">
-            <span className="inline-block rounded-full px-4 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium bg-black/5 text-gray-900">
-              {t('page.title')}
-            </span>
-            <h1 className="font-display font-black text-5xl md:text-6xl lg:text-7xl text-gray-900 leading-[1.1] tracking-tight text-balance">
-              {t.raw('page.headline').split('<0>')[0]}
-              <GradientText
-                colors={['#1A9A9A', '#D69E2E', '#1A9A9A']}
-                animationSpeed={8}
-                showBorder={false}
-                className="inline-block px-2"
-              >
-                {t.raw('page.headline').split('<0>')[1]?.split('</0>')[0]}
-              </GradientText>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-500 max-w-2xl mx-auto leading-relaxed text-pretty">
-              {t('page.subheadline')}
-            </p>
-            <div className="pt-4">
-              <NavLink
-                href="/booking"
-                className="group inline-flex items-center px-8 py-4 bg-primary text-slate-900 font-bold rounded-full hover:bg-primary/90 transition duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] hover:shadow-xl hover:shadow-primary/30 active:scale-[0.97] focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 motion-reduce:transition-colors motion-reduce:transform-none"
-              >
-                <span className="uppercase tracking-wider text-sm">{t('cta_section.button')}</span>
-                <div className="w-8 h-8 ml-4 rounded-full bg-black/10 flex items-center justify-center transition duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:translate-x-1 motion-reduce:transform-none">
-                  <OptimizedIcon icon={Calendar} className="text-sm text-slate-900" />
-                </div>
-              </NavLink>
-            </div>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-950/40 text-amber-400 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-6 backdrop-blur-md">
+            <Sparkle className="w-4 h-4 text-amber-400" />
+            {isEn ? '100% FIXED PRICE GUARANTEE' : '100% FESTPREIS-GARANTIE OHNE VERSTECKTE KOSTEN'}
+          </div>
+
+          <h1 className="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl text-white leading-[1.1] tracking-tight mb-8 max-w-5xl mx-auto">
+            Transparente Preise für{' '}
+            <GradientText
+              colors={['#fbbf24', '#fef08a', '#f59e0b']}
+              animationSpeed={5}
+              showBorder={false}
+              className="inline-block"
+            >
+              High-End Webentwicklung
+            </GradientText>
+          </h1>
+
+          <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-12">
+            Keine Überraschungen, keine unkalkulierbaren Stundensätze. Sie investieren in eine
+            zukunftssichere Next.js-Architektur mit 100/100 Core Web Vitals und vollständigem
+            Quellcode-Eigentum.
+          </p>
+
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <NavLink
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-amber-400 text-slate-950 font-bold rounded-full hover:bg-amber-300 transition duration-300 shadow-lg shadow-amber-500/20 hover:scale-[1.02]"
+            >
+              <span>{isEn ? 'Request Free Audit' : 'Kostenloses Audit anfordern'}</span>
+              <ArrowRight weight="bold" className="w-5 h-5" />
+            </NavLink>
+            <NavLink
+              href="/booking"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-slate-900 text-slate-200 border border-slate-800 rounded-full font-medium hover:bg-slate-850 transition duration-300"
+            >
+              <Calendar className="w-5 h-5 text-amber-400" />
+              <span>{isEn ? 'Book Strategy Call' : 'Strategiegespräch buchen'}</span>
+            </NavLink>
           </div>
         </div>
       </section>
 
-      {/* Value Proposition Section */}
-      <section className="py-16 lg:py-24 px-4 bg-gray-50/50 border-y border-black/5 w-full">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="sr-only">Value Proposition</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {valuePropPoints?.map((point, idx) => (
+      {/* ROI & Value Proposition Section */}
+      <section className="py-16 bg-slate-900/40 border-y border-slate-800/80 w-full relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {roiPoints.map((point, idx) => (
               <div
                 key={idx}
-                className="p-1.5 rounded-[2rem] bg-black/5 ring-1 ring-black/5 motion-safe:animate-fade-in-up"
-                style={{
-                  animationDelay: `${Math.min(idx * 50, 400)}ms`,
-                  animationDuration: '250ms',
-                  animationFillMode: 'both',
-                }}
+                className="p-8 rounded-2xl bg-slate-950 border border-slate-800 flex flex-col justify-between"
               >
-                <div className="bg-white rounded-[calc(2rem-0.375rem)] p-8 lg:p-10 h-full shadow-[inset_0_1px_1px_rgba(255,255,255,1)]">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6">
-                    <OptimizedIcon icon={CheckCircle} className="text-xl text-primary" />
+                <div>
+                  <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center mb-6 text-amber-400">
+                    <point.icon className="w-6 h-6" />
                   </div>
-                  <h3 className="font-display font-bold text-2xl text-gray-900 mb-4 text-balance">
-                    {point.title}
-                  </h3>
-                  <p className="text-gray-500 leading-relaxed text-lg text-pretty">
-                    {point.description}
-                  </p>
+                  <h3 className="font-display font-bold text-xl text-white mb-3">{point.title}</h3>
+                  <p className="text-slate-400 text-sm leading-relaxed">{point.desc}</p>
                 </div>
               </div>
             ))}
@@ -189,228 +281,65 @@ export default async function Packages() {
         </div>
       </section>
 
-      {/* Light Pricing Section (Golden Ratio & Symmetry) */}
-      <section className="relative bg-white py-24 lg:py-[155px] px-4 w-full overflow-hidden border-t border-black/5">
-        {/* Soft Ethereal Glows */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden flex items-center justify-center">
-          <div className="w-[61.8vw] h-[61.8vh] bg-primary/5 rounded-full blur-[120px] mix-blend-multiply" />
-        </div>
-
-        <div className="relative max-w-[90rem] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 items-stretch">
-            {packages.map((pkg, idx) => (
+      {/* 3 Main Pricing Packages */}
+      <section className="py-24 px-4 w-full relative">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+            {packages.map((pkg) => (
               <div
                 key={pkg.id}
-                className={`relative group ${pkg.popular ? 'lg:-my-6 z-10' : ''} motion-safe:animate-fade-in-up`}
-                style={{
-                  animationDelay: `${Math.min(idx * 50, 400)}ms`,
-                  animationDuration: '382ms', // Golden ratio approx
-                  animationFillMode: 'both',
-                }}
+                className={`relative rounded-2xl p-8 flex flex-col justify-between border transition-all ${
+                  pkg.popular
+                    ? 'bg-slate-900/90 border-amber-500/50 shadow-2xl shadow-amber-500/10 lg:-translate-y-3'
+                    : 'bg-slate-950 border-slate-800 hover:border-slate-700'
+                }`}
               >
-                {/* Outer Shell (Doppelrand) */}
-                <div
-                  className={`p-1.5 rounded-[2rem] h-full ${
-                    pkg.popular
-                      ? 'bg-primary/20 ring-1 ring-primary/30 shadow-[0_34px_55px_-15px_rgba(26,154,154,0.15)]'
-                      : 'bg-black/5 ring-1 ring-black/5'
-                  }`}
-                >
-                  {/* Inner Core */}
-                  <div
-                    className={`relative h-full flex flex-col rounded-[calc(2rem-0.375rem)] shadow-[inset_0_1px_1px_rgba(255,255,255,1)] ${
-                      pkg.popular ? 'bg-white' : 'bg-gray-50/80 backdrop-blur-sm'
-                    }`}
-                  >
-                    {pkg.popular && (
-                      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                        <span className="bg-primary text-slate-900 text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg shadow-primary/30 border border-primary/20">
-                          {t('packages.professional.badge')}
-                        </span>
-                      </div>
-                    )}
-
-                    <div className="p-8 lg:p-10 flex flex-col flex-grow">
-                      <div className="text-center mb-8">
-                        <h3 className="font-display font-bold text-3xl text-gray-900 mb-2 text-balance">
-                          {pkg.name}
-                        </h3>
-                        <p className="text-gray-500 text-sm text-pretty">{pkg.tagline}</p>
-                      </div>
-
-                      <div className="text-center mb-8">
-                        <div className="font-display font-black text-6xl text-gray-900 tracking-tight mb-4">
-                          {pkg.setupPrice.toLocaleString('de-DE')}
-                          <span className="text-4xl text-gray-400 font-medium">€</span>
-                        </div>
-                        <div className="inline-flex items-center gap-2 bg-black/5 text-gray-600 text-xs font-medium px-4 py-2 rounded-full border border-black/5">
-                          <OptimizedIcon icon={Clock} className="text-sm text-gray-500" />
-                          <span>
-                            {t('labels.delivery', {
-                              days: pkg.deliveryDays,
-                              defaultValue: `~${pkg.deliveryDays} Tage`,
-                            })}
-                          </span>
-                        </div>
-                      </div>
-
-                      <div className="h-px w-full bg-gradient-to-r from-transparent via-black/10 to-transparent mb-8" />
-
-                      <ul className="space-y-4 mb-10 flex-grow">
-                        {pkg.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-start gap-3">
-                            <OptimizedIcon
-                              icon={CheckCircle}
-                              aria-hidden="true"
-                              className={`text-lg mt-0.5 flex-shrink-0 ${pkg.popular ? 'text-primary' : 'text-gray-400'}`}
-                            />
-                            <span className="text-gray-600 text-base leading-relaxed">
-                              {feature}
-                            </span>
-                          </li>
-                        ))}
-                        {pkg.notIncluded?.map((feature, idx) => (
-                          <li key={`ni-${idx}`} className="flex items-start gap-3">
-                            <OptimizedIcon
-                              icon={MinusCircle}
-                              aria-hidden="true"
-                              className="text-lg text-gray-300 mt-0.5 flex-shrink-0"
-                            />
-                            <span className="text-gray-400 text-base line-through leading-relaxed">
-                              {feature}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-
-                      <PackageSelectButton pkgId={pkg.id} ctaText={pkg.cta} popular={pkg.popular} />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Ultimate Anchor Tier (Horizontal Layout) */}
-          <div
-            className="mt-8 lg:mt-12 relative group motion-safe:animate-fade-in-up"
-            style={{
-              animationDelay: '600ms',
-              animationDuration: '382ms',
-              animationFillMode: 'both',
-            }}
-          >
-            <div className="p-1.5 rounded-[2rem] bg-gray-900 ring-1 ring-black shadow-[0_34px_55px_-15px_rgba(0,0,0,0.3)] overflow-hidden">
-              <div className="relative flex flex-col lg:flex-row items-stretch rounded-[calc(2rem-0.375rem)] bg-black shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] overflow-hidden">
-                {/* Background effects for Ultimate tier */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-black to-black opacity-80 pointer-events-none" />
-                <div className="absolute top-0 right-0 w-[40rem] h-[40rem] bg-primary/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
-
-                {ultimatePackage.badge && (
-                  <div className="absolute top-0 left-8 -translate-y-0 translate-y-[-50%] lg:translate-y-0 lg:left-auto lg:right-12 lg:top-8 z-20">
-                    <span className="bg-primary text-slate-900 text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg shadow-primary/30 border border-primary/20">
-                      {ultimatePackage.badge}
+                {pkg.badge && (
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
+                    <span className="bg-amber-400 text-slate-950 text-xs font-extrabold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-md">
+                      {pkg.badge}
                     </span>
                   </div>
                 )}
 
-                {/* Left side: Content & Features */}
-                <div className="relative z-10 p-8 lg:p-12 flex-1 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-white/10">
-                  <div className="mb-8">
-                    <h3 className="font-display font-bold text-4xl lg:text-5xl text-white mb-3 text-balance tracking-tight">
-                      {ultimatePackage.name}
-                    </h3>
-                    <p className="text-gray-400 text-lg text-pretty max-w-xl">
-                      {ultimatePackage.tagline}
-                    </p>
+                <div>
+                  <div className="text-center mb-8 pt-2">
+                    <h2 className="font-display font-bold text-2xl text-white mb-2">{pkg.name}</h2>
+                    <p className="text-slate-400 text-xs sm:text-sm min-h-[36px]">{pkg.tagline}</p>
                   </div>
 
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl">
-                    {ultimatePackage.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-3">
-                        <OptimizedIcon
-                          icon={CheckCircle}
-                          aria-hidden="true"
-                          className="text-lg mt-0.5 flex-shrink-0 text-primary"
+                  <div className="text-center mb-8 pb-8 border-b border-slate-800">
+                    <div className="font-display font-black text-5xl text-white tracking-tight mb-3">
+                      ab {pkg.setupPrice.toLocaleString('de-DE')} €
+                    </div>
+                    <div className="inline-flex items-center gap-1.5 text-xs text-slate-400 bg-slate-900 px-3 py-1.5 rounded-full border border-slate-800">
+                      <Clock className="w-4 h-4 text-amber-400" />
+                      <span>Lieferzeit: ~{pkg.deliveryDays} Werktage</span>
+                    </div>
+                  </div>
+
+                  {/* Features List */}
+                  <ul className="space-y-3.5 mb-10 text-sm">
+                    {pkg.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start gap-3 text-slate-200">
+                        <CheckCircle
+                          weight="fill"
+                          className="w-5 h-5 text-amber-400 shrink-0 mt-0.5"
                         />
-                        <span className="text-gray-300 text-base leading-relaxed">{feature}</span>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                    {pkg.notIncluded.map((feature, idx) => (
+                      <li key={`ni-${idx}`} className="flex items-start gap-3 text-slate-500">
+                        <MinusCircle className="w-5 h-5 text-slate-600 shrink-0 mt-0.5" />
+                        <span className="line-through">{feature}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                {/* Right side: Pricing & CTA */}
-                <div className="relative z-10 p-8 lg:p-12 w-full lg:w-[400px] flex flex-col items-center justify-center bg-white/5 backdrop-blur-md">
-                  <div className="text-center mb-8">
-                    <div className="font-display font-black text-6xl text-white tracking-tight mb-4">
-                      {ultimatePackage.setupPrice.toLocaleString('de-DE')}
-                      <span className="text-4xl text-gray-500 font-medium ml-1">€</span>
-                    </div>
-                    <div className="inline-flex items-center gap-2 bg-white/5 text-gray-400 text-xs font-medium px-4 py-2 rounded-full border border-white/10">
-                      <OptimizedIcon icon={Clock} className="text-sm text-gray-400" />
-                      <span>
-                        {t('labels.delivery', {
-                          days: ultimatePackage.deliveryDays,
-                          defaultValue: `~${ultimatePackage.deliveryDays} Tage`,
-                        })}
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="w-full">
-                    {/* Reuse the existing PackageSelectButton, maybe give it a dark mode wrapper or custom styles if it accepts classes, else rely on its defaults. */}
-                    {/* The existing PackageSelectButton forces a standard white background or primary button. Since this is dark mode, primary works well. */}
-                    <div className="[&>button]:w-full [&>button]:py-5 [&>button]:text-lg">
-                      <PackageSelectButton
-                        pkgId={ultimatePackage.id}
-                        ctaText={ultimatePackage.cta}
-                        popular={true}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Trust & References (Light Mode) */}
-      <section className="py-24 px-4 bg-gray-50 w-full border-t border-black/5">
-        <div className="max-w-5xl mx-auto text-center mb-16">
-          <span className="inline-block rounded-full px-4 py-1.5 text-[10px] uppercase tracking-[0.2em] font-medium bg-black/5 text-gray-500 border border-black/5 mb-6">
-            {t('trust_section.title')}
-          </span>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-            {trustReferences?.map((ref, idx) => (
-              <div
-                key={idx}
-                className="p-1.5 rounded-[2rem] bg-black/5 ring-1 ring-black/5 motion-safe:animate-fade-in-up"
-                style={{
-                  animationDelay: `${Math.min(idx * 50, 400)}ms`,
-                  animationDuration: '382ms',
-                  animationFillMode: 'both',
-                }}
-              >
-                <div className="bg-white rounded-[calc(2rem-0.375rem)] p-8 lg:p-10 h-full shadow-[inset_0_1px_1px_rgba(255,255,255,1)] flex flex-col md:flex-row items-start md:items-center gap-6">
-                  <div className="font-display font-black text-5xl text-primary">{ref.metric}</div>
-                  <div>
-                    <p className="text-gray-900 font-bold text-xl mb-1 text-balance">{ref.name}</p>
-                    {ref.href ? (
-                      <a
-                        href={ref.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-primary hover:text-primary-600 hover:underline text-base leading-relaxed text-pretty transition-colors"
-                      >
-                        {ref.label}
-                      </a>
-                    ) : (
-                      <p className="text-gray-500 text-base leading-relaxed text-pretty">
-                        {ref.label}
-                      </p>
-                    )}
-                  </div>
+                <div className="pt-6 border-t border-slate-800/80">
+                  <PackageSelectButton pkgId={pkg.id} ctaText={pkg.cta} popular={pkg.popular} />
                 </div>
               </div>
             ))}
@@ -418,94 +347,108 @@ export default async function Packages() {
         </div>
       </section>
 
-      {/* Comparison Section */}
-      <section className="py-24 px-4 bg-white w-full">
+      {/* Feature Comparison Table */}
+      <section className="py-24 px-4 bg-slate-900/50 border-y border-slate-800/80 w-full">
         <div className="max-w-6xl mx-auto">
-          <div className="p-1.5 rounded-[2rem] bg-black/5 ring-1 ring-black/5">
-            <div className="bg-white rounded-[calc(2rem-0.375rem)] overflow-hidden shadow-[inset_0_1px_1px_rgba(255,255,255,1)]">
-              <div className="p-8 border-b border-gray-100 bg-gray-50/50">
-                <h2 className="font-display font-bold text-3xl text-gray-900 text-center tracking-tight text-balance">
-                  {t('comparison.title')}
-                </h2>
-              </div>
-              <div className="overflow-x-auto">
-                <table className="w-full text-left">
-                  <caption className="sr-only">{t('comparison.title')}</caption>
-                  <thead>
-                    <tr className="border-b border-gray-100">
-                      <th
-                        scope="col"
-                        className="p-6 text-sm font-semibold text-gray-500 uppercase tracking-wider"
-                      >
-                        {t('comparison.headers.feature')}
-                      </th>
-                      <th scope="col" className="p-6 text-center text-sm font-bold text-gray-900">
-                        {t('comparison.headers.onepager')}
-                      </th>
-                      <th scope="col" className="p-6 text-center text-sm font-bold text-gray-900">
-                        {t('comparison.headers.starter')}
-                      </th>
-                      <th
-                        scope="col"
-                        className="p-6 text-center text-sm font-bold text-gray-900 bg-primary/5"
-                      >
-                        {t('comparison.headers.professional')}
-                      </th>
-                      <th scope="col" className="p-6 text-center text-sm font-bold text-gray-900">
-                        {t('comparison.headers.enterprise')}
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-gray-50">
-                    {[
-                      ['pages', t('comparison.rows.pages.label')],
-                      ['cms', t('comparison.rows.cms.label')],
-                      ['seo', t('comparison.rows.seo.label')],
-                      ['support', t('comparison.rows.support.label')],
-                      ['ecommerce', t('comparison.rows.ecommerce.label')],
-                      ['custom', t('comparison.rows.custom.label')],
-                      ['revisions', t('comparison.rows.revisions.label')],
-                    ].map(([key, label], idx) => (
-                      <tr
-                        key={idx}
-                        className="hover:bg-gray-50/50 transition-colors motion-safe:animate-fade-in"
-                        style={{
-                          animationDelay: `${Math.min(idx * 50, 400)}ms`,
-                          animationDuration: '250ms',
-                          animationFillMode: 'both',
-                        }}
-                      >
-                        <th scope="row" className="p-6 text-base font-medium text-gray-700">
-                          {label}
-                        </th>
-                        <td className="p-6 text-center text-base text-gray-600">
-                          {t(`comparison.rows.${key}.onepager`)}
-                        </td>
-                        <td className="p-6 text-center text-base text-gray-600">
-                          {t(`comparison.rows.${key}.starter`)}
-                        </td>
-                        <td className="p-6 text-center text-base font-bold text-gray-900 bg-primary/5">
-                          {t(`comparison.rows.${key}.pro`)}
-                        </td>
-                        <td className="p-6 text-center text-base text-gray-600">
-                          {t(`comparison.rows.${key}.ent`)}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
+          <div className="text-center mb-16">
+            <span className="text-amber-400 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Detaillierter Funktionsabgleich
+            </span>
+            <h2 className="font-display font-bold text-3xl sm:text-4xl text-white mt-2 mb-4">
+              Alle Paket-Features im direkten Vergleich
+            </h2>
+            <p className="text-slate-400 text-sm sm:text-base">
+              Finden Sie exakt die richtige Konfiguration für Ihre aktuellen Unternehmensziele.
+            </p>
+          </div>
+
+          <div className="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-950">
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="border-b border-slate-800 bg-slate-900/60">
+                  <th scope="col" className="p-5 text-xs font-bold text-slate-400 uppercase">
+                    Feature
+                  </th>
+                  <th scope="col" className="p-5 text-center text-sm font-bold text-slate-300">
+                    Starter
+                  </th>
+                  <th
+                    scope="col"
+                    className="p-5 text-center text-sm font-bold text-amber-400 bg-amber-950/20 border-x border-amber-500/20"
+                  >
+                    Business Enterprise
+                  </th>
+                  <th scope="col" className="p-5 text-center text-sm font-bold text-slate-300">
+                    Custom App & Shop
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-800/80 text-sm">
+                <tr>
+                  <th scope="row" className="p-5 font-semibold text-slate-200">
+                    Seitenanzahl
+                  </th>
+                  <td className="p-5 text-center text-slate-400">Bis 5 Seiten</td>
+                  <td className="p-5 text-center font-bold text-white bg-amber-950/10 border-x border-amber-500/20">
+                    Bis 12 Seiten
+                  </td>
+                  <td className="p-5 text-center text-slate-400">Unbegrenzt</td>
+                </tr>
+                <tr>
+                  <th scope="row" className="p-5 font-semibold text-slate-200">
+                    Core Web Vitals 100/100
+                  </th>
+                  <td className="p-5 text-center text-amber-400">✓ Inklusive</td>
+                  <td className="p-5 text-center font-bold text-amber-400 bg-amber-950/10 border-x border-amber-500/20">
+                    ✓ Inklusive
+                  </td>
+                  <td className="p-5 text-center text-amber-400">✓ Inklusive</td>
+                </tr>
+                <tr>
+                  <th scope="row" className="p-5 font-semibold text-slate-200">
+                    Headless CMS (Sanity)
+                  </th>
+                  <td className="p-5 text-center text-slate-600">—</td>
+                  <td className="p-5 text-center font-bold text-amber-400 bg-amber-950/10 border-x border-amber-500/20">
+                    ✓ Inklusive
+                  </td>
+                  <td className="p-5 text-center text-amber-400">✓ Inklusive</td>
+                </tr>
+                <tr>
+                  <th scope="row" className="p-5 font-semibold text-slate-200">
+                    60s Mobile-Recruiting Funnel
+                  </th>
+                  <td className="p-5 text-center text-slate-600">—</td>
+                  <td className="p-5 text-center font-bold text-amber-400 bg-amber-950/10 border-x border-amber-500/20">
+                    ✓ Inklusive
+                  </td>
+                  <td className="p-5 text-center text-amber-400">✓ Inklusive</td>
+                </tr>
+                <tr>
+                  <th scope="row" className="p-5 font-semibold text-slate-200">
+                    Quellcode-Eigentum & Hosting-Freiheit
+                  </th>
+                  <td className="p-5 text-center text-slate-200">100% Ihr Eigentum</td>
+                  <td className="p-5 text-center font-bold text-white bg-amber-950/10 border-x border-amber-500/20">
+                    100% Ihr Eigentum
+                  </td>
+                  <td className="p-5 text-center text-slate-200">100% Ihr Eigentum</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 px-4 bg-gray-50/50 w-full">
+      <section className="py-24 px-4 bg-slate-950 w-full">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="font-display font-bold text-4xl text-gray-900 tracking-tight mb-6 text-balance">
-              {t('faq.title', { defaultValue: 'Häufig gestellte Fragen' })}
+            <span className="text-amber-400 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Häufige Fragen
+            </span>
+            <h2 className="font-display font-bold text-3xl sm:text-4xl text-white mt-2 mb-4">
+              Alles Wichtige zu Preisen & Ablauf
             </h2>
           </div>
           <FaqAccordion items={faqItems} />
@@ -513,27 +456,22 @@ export default async function Packages() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-32 px-4 bg-white w-full">
+      <section className="py-24 px-4 bg-slate-900/60 border-t border-slate-800/80 w-full">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="p-1.5 rounded-[2rem] bg-black/5 ring-1 ring-black/5 inline-block">
-            <div className="bg-white rounded-[calc(2rem-0.375rem)] p-12 shadow-[inset_0_1px_1px_rgba(255,255,255,1)]">
-              <h2 className="font-display font-bold text-4xl text-gray-900 mb-4 tracking-tight text-balance">
-                {t('cta_section.title')}
-              </h2>
-              <p className="text-xl text-gray-500 mb-10 max-w-2xl mx-auto leading-relaxed text-pretty">
-                {t('cta_section.text')}
-              </p>
-              <NavLink
-                href="/booking"
-                className="group inline-flex items-center px-8 py-4 bg-primary text-slate-900 font-bold rounded-full hover:bg-primary/90 transition duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] hover:shadow-xl hover:shadow-primary/30 active:scale-[0.97] focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 motion-reduce:transition-colors motion-reduce:transform-none"
-              >
-                <span className="uppercase tracking-wider text-sm">{t('cta_section.button')}</span>
-                <div className="w-8 h-8 ml-4 rounded-full bg-black/10 flex items-center justify-center transition duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:translate-x-1 motion-reduce:transform-none">
-                  <OptimizedIcon icon={Calendar} className="text-sm text-slate-900" />
-                </div>
-              </NavLink>
-            </div>
-          </div>
+          <h2 className="font-display font-bold text-3xl sm:text-5xl text-white mb-6">
+            Lassen Sie uns Ihr Projekt kalkulieren
+          </h2>
+          <p className="text-lg text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+            Fordern Sie jetzt ein kostenloses, detailliertes Website-Audit oder ein persönliches
+            Strategiegespräch mit Umutcan Emre Tezgel an.
+          </p>
+          <NavLink
+            href="/contact"
+            className="inline-flex items-center gap-2 px-10 py-5 bg-amber-400 text-slate-950 font-bold rounded-full hover:bg-amber-300 transition duration-300 shadow-xl shadow-amber-500/20 hover:scale-[1.02] text-lg"
+          >
+            <span>Kostenloses Angebot anfordern</span>
+            <ArrowRight weight="bold" className="w-5 h-5" />
+          </NavLink>
         </div>
       </section>
     </div>
