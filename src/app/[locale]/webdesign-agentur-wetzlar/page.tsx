@@ -60,14 +60,14 @@ const content = {
       titleHighlight: 'Webdesign Agentur',
       titleSuffix: 'in Wetzlar',
       description:
-        'Wir entwickeln professionelle Websites für Wetzlarer Unternehmen. Von der historischen Altstadt bis zum Gewerbepark Spilburg: Ultraschnell, verkaufsstark und mit maximaler lokaler SEO-Sichtbarkeit an der Lahn. Festpreise ab 2.000 Euro.',
-      cta: 'Projekt starten',
+        'Wir entwickeln professionelle Websites für Wetzlarer Unternehmen. Von der historischen Altstadt bis zum Gewerbepark Spilburg: Ultraschnell, verkaufsstark und mit maximaler lokaler SEO-Sichtbarkeit an der Lahn. Maßgeschneiderte Festpreise auf Anfrage.',
+      cta: 'Projekt anfragen',
       badge: '100% Regional an der Lahn',
     },
     stats: {
       items: [
         { value: 100, label: 'Prozent', desc: 'Regionaler Ansprechpartner in Wetzlar' },
-        { value: 0.5, label: 'Sekunden', desc: 'Durchschnittliche Ladezeit (Next.js)' },
+        { value: 0.3, label: 'Sekunden', desc: 'Durchschnittliche Ladezeit (Next.js)' },
         { value: 3, label: 'Wochen', desc: 'Von Projektstart bis zum Live-Gang' },
         { value: 0, label: 'Euro', desc: 'Versteckte Kosten dank Festpreis' },
       ],
@@ -78,7 +78,7 @@ const content = {
       text1:
         'Viele Agenturen verkaufen Ihnen teure, langsame WordPress-Vorlagen. Wir programmieren Ihre Website als Solo-Agentur von Grund auf neu mit modernster Headless-Technologie (Next.js & React).',
       text2:
-        'Das bedeutet für Sie: Ihre Website lädt blitzschnell, wird von Google geliebt und hängt die lokale Konkurrenz im Lahn-Dill-Kreis spielend ab.',
+        'Das bedeutet für Sie: Ihre Website lädt blitzschnell, wird von Google geliebt und hängt die lokale Konkurrenz im Lahn-Dill-Kreis spielend ab — zu einem Bruchteil der Kosten traditioneller Agenturen.',
       bullet1: 'Keine anonymen Offshore-Teams',
       bullet2: 'Direkter Entwickler-Kontakt in Wetzlar',
       bullet3: 'Voller Besitz Ihres eigenen Quellcodes',
@@ -140,8 +140,8 @@ const content = {
       points: [
         { text: 'Persönlicher Ansprechpartner', standard: false, coday: true },
         { text: 'Maßgeschneiderter Quellcode', standard: false, coday: true },
-        { text: 'Transparente Festpreise', standard: false, coday: true },
-        { text: 'Schnelle Umsetzung (< 4 Wochen)', standard: false, coday: true },
+        { text: 'Transparente Festpreise auf Anfrage', standard: false, coday: true },
+        { text: '5-10x kosteneffizienter ohne Overhead', standard: false, coday: true },
         { text: 'Fokus auf Wetzlar & Lahn-Dill', standard: false, coday: true },
       ],
     },
@@ -179,7 +179,7 @@ const content = {
       items: [
         {
           q: 'Was kostet eine professionelle Website in Wetzlar?',
-          a: 'Unsere Webdesign Pakete starten ab 2.000 Euro zum Festpreis. Im Preis enthalten sind Design, Entwicklung, SEO Grundoptimierung und die Einrichtung Ihres Content Management Systems. Keine versteckten Kosten.',
+          a: 'Wir kalkulieren jedes Projekt individuell und transparent auf Anfrage. Nach einer kostenlosen Bedarfsanalyse erhalten Sie ein verbindliches Festpreisangebot — in der Regel 5 bis 10 Mal günstiger als bei klassischen Werbeagenturen bei nachweislich überlegener 100/100 Qualität.',
         },
         {
           q: 'Wie lange dauert die Erstellung einer Website?',

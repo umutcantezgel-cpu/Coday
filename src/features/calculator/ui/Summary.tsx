@@ -1,11 +1,16 @@
 import React, { useMemo } from 'react';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
-import { CheckCircle, ArrowRight, Gauge } from '@phosphor-icons/react/dist/ssr';
+import {
+  CheckCircle,
+  ArrowRight,
+  Gauge,
+  ShieldCheck,
+  Sparkle,
+} from '@phosphor-icons/react/dist/ssr';
 import { useCalculatorStore } from '@/features/calculator/model/store';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link as NavLink } from '@/i18n/navigation';
 import { modules } from '@/shared/data/modules';
-import { formatCurrency } from '@/shared/utils/formatters';
 
 export const CalculatorSummary: React.FC = () => {
   const t = useTranslations('calculator');
@@ -16,22 +21,6 @@ export const CalculatorSummary: React.FC = () => {
   const selectedModules = useMemo(() => {
     return modules.filter((m) => selectedModuleIds.has(m.id));
   }, [selectedModuleIds]);
-
-  const totalOneTime = useMemo(() => {
-    return selectedModules
-      .filter((m) => m.priceType === 'one-time')
-      .reduce((sum, m) => sum + m.priceInCents, 0);
-  }, [selectedModules]);
-
-  const totalMonthly = useMemo(() => {
-    return selectedModules
-      .filter((m) => m.priceType === 'monthly')
-      .reduce((sum, m) => sum + m.priceInCents, 0);
-  }, [selectedModules]);
-
-  // Simple discount logic mockup
-  const discount = totalOneTime > 500000 ? 5 : 0;
-  const discountedOneTime = totalOneTime * (1 - discount / 100);
 
   const packageName = getPackageName();
 
@@ -45,75 +34,63 @@ export const CalculatorSummary: React.FC = () => {
 
       {/* Package Badge */}
       {packageName && (
-        <div className="mb-4 p-3 bg-primary/5 rounded-xl border border-primary/10 flex items-center gap-2">
-          <OptimizedIcon icon={CheckCircle} className="text-primary" />
+        <div className="mb-4 p-3 bg-amber-50 rounded-xl border border-amber-200/60 flex items-center gap-2">
+          <OptimizedIcon icon={CheckCircle} className="text-amber-600" />
           <span className="text-sm font-bold text-gray-900">{t('summary.package')}:</span>
-          <span className="text-sm font-bold text-primary">{packageName}</span>
+          <span className="text-sm font-bold text-amber-700">{packageName}</span>
         </div>
       )}
 
       {/* Selected List - Scrollable */}
-      <div className="max-h-[40vh] overflow-y-auto pr-2 mb-6 space-y-3 custom-scrollbar">
+      <div className="max-h-[35vh] overflow-y-auto pr-2 mb-6 space-y-3 custom-scrollbar">
         {selectedModules.length === 0 && (
           <p className="text-gray-400 text-sm">{t('summary.empty')}</p>
         )}
         {selectedModules.map((module) => (
-          <div key={module.id} className="flex justify-between items-start text-sm">
+          <div
+            key={module.id}
+            className="flex justify-between items-start text-sm py-1 border-b border-gray-50"
+          >
             <span className="text-gray-700 font-medium">{t(`modules.${module.id}.name`)}</span>
-            <span className="text-gray-900 font-bold whitespace-nowrap">
-              {formatCurrency(module.priceInCents / 100, 'EUR', locale)}
+            <span className="text-xs text-amber-700 font-bold bg-amber-50 px-2 py-0.5 rounded whitespace-nowrap">
+              Ausgewählt
             </span>
           </div>
         ))}
       </div>
 
-      <div className="border-t border-gray-100 pt-6 space-y-4 mb-8">
-        {/* One Time */}
-        <div className="flex justify-between items-end">
-          <span className="text-gray-600">{t('summary.one_time')}</span>
-          <div className="text-right">
-            {discount > 0 && (
-              <div className="text-xs text-green-500 font-bold mb-1">
-                {discount}% {t('summary.discount')}
-              </div>
-            )}
-            <div className="font-display font-black text-3xl text-gray-900 leading-none">
-              {formatCurrency(discountedOneTime / 100, 'EUR', locale)}
-            </div>
+      <div className="border-t border-gray-100 pt-6 space-y-4 mb-6">
+        <div className="p-4 rounded-2xl bg-slate-900 text-white">
+          <div className="flex items-center gap-2 text-xs font-bold text-amber-400 uppercase tracking-wider mb-1">
+            <Sparkle className="w-4 h-4" />
+            Maßgeschneidertes Festpreisangebot
           </div>
-        </div>
-
-        {/* Monthly */}
-        <div className="flex justify-between items-center text-sm">
-          <span className="text-gray-600">{t('summary.monthly')}</span>
-          <span className="font-bold text-gray-900">
-            {formatCurrency(totalMonthly / 100, 'EUR', locale)}
-          </span>
+          <div className="font-display font-bold text-2xl text-white">Preise auf Anfrage</div>
+          <p className="text-xs text-slate-300 mt-2 leading-relaxed">
+            5 bis 10x kosteneffizienter als Großagenturen. Verbindliches Festpreisangebot nach
+            kostenloser Bedarfsanalyse.
+          </p>
         </div>
       </div>
 
       <div className="space-y-3">
         <NavLink
           href="/contact"
-          className="w-full py-4 bg-primary text-white rounded-xl font-bold hover:bg-primary/90 transition motion-reduce:duration-[0.01ms] shadow-lg hover:shadow-primary/25 flex items-center justify-center transform hover:-translate-y-1 text-lg animate-pulse hover:animate-none motion-reduce:animate-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:outline-none"
+          className="w-full py-4 bg-amber-400 text-slate-950 rounded-xl font-bold hover:bg-amber-300 transition motion-reduce:duration-[0.01ms] shadow-lg hover:shadow-amber-500/25 flex items-center justify-center transform hover:-translate-y-0.5 text-lg focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:outline-none"
         >
-          {t('summary.continue')}
+          <span>Angebot unverbindlich anfragen</span>
           <OptimizedIcon icon={ArrowRight} className="ml-2 text-lg" />
         </NavLink>
-        <div className="text-center">
-          <button className="active:scale-[0.97] focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none text-xs text-gray-400 hover:text-gray-600 underline">
-            {t('summary.share')}
-          </button>
-        </div>
       </div>
 
-      <div className="mt-6 p-4 bg-primary/5 rounded-xl border border-primary/10">
-        <div className="flex items-center text-primary text-xs font-bold uppercase tracking-wider mb-1">
-          <OptimizedIcon icon={Gauge} className="mr-1 text-sm" />
-          {t('summary.guarantee.title')}
+      <div className="mt-6 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
+        <div className="flex items-center text-emerald-800 text-xs font-bold uppercase tracking-wider mb-1">
+          <ShieldCheck className="mr-1 text-base text-emerald-600" />
+          100/100 Qualitätsgarantie
         </div>
-        <p className="text-xs text-gray-600 leading-relaxed">
-          {t('summary.guarantee.text')} <span className="font-bold text-gray-900">95+</span>.
+        <p className="text-xs text-emerald-900/80 leading-relaxed">
+          Google Core Web Vitals 100/100, Sub-0,3s Ladezeit & 100% Quellcode-Eigentum ohne
+          monatliche Bindung.
         </p>
       </div>
     </div>

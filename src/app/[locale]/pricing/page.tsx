@@ -14,17 +14,17 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Transparent Web Design Pricing & Plans | Coday Web Agency',
+      title: 'Web Design Pricing & Custom Quotes | Coday Web Agency',
       description:
-        'Transparent fixed pricing for high-end web design & Next.js development. No hidden fees, 100% source code ownership & measurable ROI. Calculate now!',
+        'Custom fixed-price quotes for high-end web design & Next.js development. 5-10x more cost-effective than big agencies, 100/100 PageSpeed & full code ownership.',
       path: '/en/pricing',
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'Transparente Webdesign Preise & Pakete | Coday Webagentur',
+    title: 'Webdesign Preise & Angebote auf Anfrage | Coday Webagentur',
     description:
-      'Transparente Festpreise für High-End Webdesign & Next.js Entwicklung. Keine versteckten Kosten, 100% Quellcode-Eigentum & messbarer ROI. Jetzt kalkulieren!',
+      'Maßgeschneiderte Festpreise für High-End Webdesign & Next.js Entwicklung. 5-10x günstiger als Großagenturen, 100/100 PageSpeed & 100% Quellcode-Eigentum.',
     path: '/de/pricing',
     type: 'money',
   });
@@ -42,52 +42,34 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
       {
         '@type': 'OfferCatalog',
         '@id': `${BASE_URL}/${_locale}/pricing#catalog`,
-        name: 'Transparente Webdesign Festpreise Coday Webagentur',
+        name:
+          _locale === 'en'
+            ? 'Web Design & Next.js Development Packages Coday'
+            : 'Webdesign & Next.js Entwicklungs-Pakete Coday Webagentur',
         itemListElement: [
           {
             '@type': 'Offer',
             name: 'Starter Webdesign / Local Authority',
             description:
               'Maßgeschneiderte Next.js Website für Handwerker und lokale Dienstleister mit 100/100 Core Web Vitals.',
-            price: '1900',
             priceCurrency: 'EUR',
             availability: 'https://schema.org/InStock',
-            priceSpecification: {
-              '@type': 'PriceSpecification',
-              price: '1900',
-              priceCurrency: 'EUR',
-              valueAddedTaxIncluded: false,
-            },
           },
           {
             '@type': 'Offer',
             name: 'Business Enterprise / B2B Power',
             description:
               'Hochmoderne B2B-Plattform mit Sanity Headless CMS, 60s Recruiting-Funnel und subsekundären Ladezeiten.',
-            price: '3800',
             priceCurrency: 'EUR',
             availability: 'https://schema.org/InStock',
-            priceSpecification: {
-              '@type': 'PriceSpecification',
-              price: '3800',
-              priceCurrency: 'EUR',
-              valueAddedTaxIncluded: false,
-            },
           },
           {
             '@type': 'Offer',
             name: 'Custom Web Application & E-Commerce',
             description:
               'Individuelle Next.js Web-Apps, Kundenportale und Headless Online-Shops mit API- und ERP-Anbindung.',
-            price: '6500',
             priceCurrency: 'EUR',
             availability: 'https://schema.org/InStock',
-            priceSpecification: {
-              '@type': 'PriceSpecification',
-              price: '6500',
-              priceCurrency: 'EUR',
-              valueAddedTaxIncluded: false,
-            },
           },
         ],
       },
@@ -97,10 +79,18 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
         mainEntity: [
           {
             '@type': 'Question',
-            name: 'Gibt es bei Coday versteckte Folgekosten oder Abo-Fallen?',
+            name: 'Wie setzen sich die Preise zusammen, wenn keine festen Pauschalen angegeben sind?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Nein. Wir arbeiten mit transparenten Festpreisen. Nach Projektabschluss gehört der gesamte Quellcode und das Design zu 100% Ihnen. Es gibt keine verpflichtenden Wartungs-Abos oder Lizenzgebühren.',
+              text: 'Jedes Unternehmen hat individuelle Anforderungen und Ziele. In einer kostenlosen Erstberatung analysieren wir Ihren Bedarf, wählen gemeinsam die benötigten Module aus und erstellen ein verbindliches Festpreisangebot. Sie zahlen ausschließlich für Features, die messbaren Mehrwert stiften.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Warum ist Coday 5 bis 10 Mal günstiger als traditionelle Werbeagenturen?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Wir verzichten bewusst auf administrative Wasserköpfe, Sales-Zwischenhändler und teure Prestige-Büros. Durch unsere hochmoderne Next.js 15 Architektur und modernste KI-gestützte Entwicklungsworkflows setzt Inhaber Umutcan Emre Tezgel Projekte schneller und präziser um als traditionelle Fünf-Personen-Teams.',
             },
           },
           {
@@ -109,14 +99,6 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
             acceptedAnswer: {
               '@type': 'Answer',
               text: 'In der Regel teilen wir die Investition in zwei faire Meilensteine: 50% Anzahlung bei Projektstart und 50% erst nach erfolgreichem Launch und Ihrer vollständigen Freigabe.',
-            },
-          },
-          {
-            '@type': 'Question',
-            name: 'Wie schnell ist meine neue Next.js Website online?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: 'Je nach Projektumfang dauert die Umsetzung zwischen 14 und 28 Werktagen ab Bereitstellung der Kerninformationen.',
             },
           },
         ],

@@ -232,6 +232,158 @@ export const workData: Record<string, Project> = {
     },
   },
 
+  // --- MemoBau (Garten- & Landschaftsbau Wetzlar) ---
+  memobaut: {
+    slug: 'memobaut',
+    category: 'development',
+    type: 'case_study',
+    status: 'live',
+    thumbnail: 'tree',
+    liveUrl: 'https://memobaut.de',
+    heroImage: 'bg-surface-dark',
+    content: {
+      de: {
+        title: 'MemoBau — Exklusive Gartenarchitektur',
+        subtitle: 'Premium Garten- & Landschaftsbau Wetzlar',
+        category: 'Web Development & UI/UX Design',
+        stats: [
+          { label: 'Branche', value: 'Garten- & Landschaftsbau' },
+          { label: 'Tech Stack', value: 'Next.js 15, Tailwind v4' },
+          { label: 'Performance', value: '100/100 PageSpeed' },
+        ],
+        challenge: {
+          title: 'Das Problem',
+          description:
+            'MemoBau realisiert meisterhafte Garten- und Außenanlagen im gehobenen Segment, war digital jedoch für anspruchsvolle Eigenheimbesitzer und B2B-Bauträger unsichtbar.',
+          list: [
+            'Keine repräsentative Präsentation der exklusiven Naturstein- & Terrassenprojekte',
+            'Hoher telefonischer Beratungsaufwand ohne Vorqualifizierung des Projektbudgets',
+            'Fehlende lokale Sichtbarkeit bei margenstarken Suchanfragen in Mittelhessen',
+          ],
+          quote: {
+            text: 'Unsere Baustellen waren Premium-Handwerk, aber unsere alte Website wirkte wie von 2010. Coday hat unsere digitale Präsenz auf Meister-Niveau gehoben.',
+            author: 'Geschäftsführung, MemoBau Wetzlar',
+          },
+        },
+        approach: {
+          title: 'Unser Spielplan',
+          description:
+            'Entwicklung einer immersiven Plattform im Cinematic-Dark/Earth-Design, die handwerkliche Perfektion spürbar macht und Kunden vorqualifiziert.',
+          steps: [
+            {
+              title: 'Emotionales Visual Storytelling',
+              description:
+                'Integration von hochauflösenden Vorher/Nachher-Projektgalerien und Video-Hero-Sequenzen.',
+            },
+            {
+              title: 'Interaktiver Garten-Konfigurator',
+              description:
+                'Lead-Funnel zur präzisen Abfrage von Grundstücksgröße, gewünschten Gewerken und Budgetrahmen.',
+            },
+            {
+              title: '100/100 Core Web Vitals & Local SEO',
+              description:
+                'Next.js 15 Server Components für 0,3s Ladezeit und Top-Rankings für Gartenbau in Wetzlar & Gießen.',
+            },
+          ],
+        },
+        solution: {
+          title: 'Die Plattform',
+          description:
+            'Eine maßgeschneiderte Next.js 15 Web-Applikation mit interaktiver Materialauswahl, Projektgalerien mit flüssigen 60fps-Animationen und vollautomatisierter Lead-Zuweisung.',
+          images: ['/images/portfolio/memobaut/van.jpg', '/images/portfolio/memobaut/terrace.jpg'],
+          imageAlts: [
+            'MemoBau Einsatzfahrzeug und Markenbranding vor Ort in Wetzlar',
+            'Exklusive Terrassen- und Gartengestaltung durch MemoBau Wetzlar',
+          ],
+        },
+        results: {
+          title: 'Messbare Ergebnisse',
+          description: 'Maximale Conversion-Power durch Vertrauen und Geschwindigkeit.',
+          metrics: [
+            { label: 'Qualifizierte Leads', value: '+380%', change: 'Seit Launch' },
+            { label: 'Ladezeit Mobile', value: '0.3s', change: '100/100 Score' },
+            { label: 'Projektvolumen', value: 'Ø 28.500 €', change: 'Premium-Fokus' },
+          ],
+        },
+        relatedServices: [
+          { name: 'Webdesign & UI/UX', path: '/services/web-design' },
+          { name: 'Webentwicklung', path: '/services/web-development' },
+          { name: 'Performance & Speed', path: '/services/performance' },
+        ],
+      },
+      en: {
+        title: 'MemoBau — Landscape Architecture',
+        subtitle: 'Premium Landscape Architecture Wetzlar',
+        category: 'Web Development & UI/UX Design',
+        stats: [
+          { label: 'Industry', value: 'Landscaping & Architecture' },
+          { label: 'Tech Stack', value: 'Next.js 15, Tailwind v4' },
+          { label: 'Performance', value: '100/100 PageSpeed' },
+        ],
+        challenge: {
+          title: 'The Problem',
+          description:
+            'MemoBau creates master-grade outdoor living spaces and gardens, but was digitally invisible to high-net-worth homeowners and property developers.',
+          list: [
+            'No visual showcase for exclusive stone, patio and pool landscaping projects',
+            'High manual consulting time with unqualified budget inquiries',
+            'Lack of local search dominance for high-ticket landscaping in the region',
+          ],
+          quote: {
+            text: 'Our craftsmanship was top tier, but our old website felt stuck in 2010. Coday elevated our entire digital appearance to master craftsman level.',
+            author: 'Management, MemoBau Wetzlar',
+          },
+        },
+        approach: {
+          title: 'Our Playbook',
+          description:
+            'Development of an immersive digital experience reflecting true craftsmanship and qualifying high-ticket leads automatically.',
+          steps: [
+            {
+              title: 'Cinematic Visuals',
+              description: 'Staging projects with high-resolution galleries and fluid animations.',
+            },
+            {
+              title: 'Interactive Project Configurator',
+              description:
+                'Multi-step qualification for plot size, services and investment budget.',
+            },
+            {
+              title: '100/100 Core Web Vitals & Local SEO',
+              description:
+                'Next.js 15 Server Components delivering sub-0.3s load times and regional search rankings.',
+            },
+          ],
+        },
+        solution: {
+          title: 'The Platform',
+          description:
+            'A bespoke Next.js 15 web application with interactive material selections, smooth 60fps galleries, and automated lead capture.',
+          images: ['/images/portfolio/memobaut/van.jpg', '/images/portfolio/memobaut/terrace.jpg'],
+          imageAlts: [
+            'MemoBau fleet vehicle and brand identity in Wetzlar',
+            'Exclusive patio and garden architecture by MemoBau Wetzlar',
+          ],
+        },
+        results: {
+          title: 'Measurable Results',
+          description: 'Maximum conversion through speed, elegance and trust.',
+          metrics: [
+            { label: 'Qualified Leads', value: '+380%', change: 'Post launch' },
+            { label: 'Mobile Load Time', value: '0.3s', change: '100/100 Score' },
+            { label: 'Avg. Project Size', value: '28,500 €', change: 'High-Ticket' },
+          ],
+        },
+        relatedServices: [
+          { name: 'Web Design & UI/UX', path: '/services/web-design' },
+          { name: 'Web Development', path: '/services/web-development' },
+          { name: 'Performance & Speed', path: '/services/performance' },
+        ],
+      },
+    },
+  },
+
   // --- Talia Boutique ---
   'talia-boutique': {
     slug: 'talia-boutique',

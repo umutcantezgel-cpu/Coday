@@ -1,6 +1,7 @@
 import React from 'react';
 import { getTranslations, getLocale } from 'next-intl/server';
 import { Link as NavLink } from '@/i18n/navigation';
+import Image from 'next/image';
 import {
   Clock,
   CheckCircle,
@@ -13,6 +14,9 @@ import {
   TrendUp,
   Cpu,
   LockKey,
+  ChartLineUp,
+  SealCheck,
+  Percent,
 } from '@phosphor-icons/react/dist/ssr';
 import { SeoHead } from '@/shared/ui/SeoHead';
 import GradientText from '@/shared/ui/GradientText';
@@ -33,8 +37,9 @@ export default async function Packages() {
       name: isEn ? 'Starter / Local Authority' : 'Starter / Local Authority',
       tagline: isEn
         ? 'Perfect for craftsmen & local service providers seeking online dominance.'
-        : 'Perfekt für Handwerker & lokale Dienstleister für planbare Anfragen.',
-      setupPrice: 1900,
+        : 'Perfekt für Handwerker & lokale Dienstleister für planbare Neukunden.',
+      priceTag: isEn ? 'On Request' : 'Auf Anfrage',
+      subPrice: isEn ? 'Bespoke Fixed Price after Consultation' : 'Individuelles Festpreisangebot',
       popular: false,
       features: [
         isEn
@@ -61,7 +66,7 @@ export default async function Packages() {
           ? 'Multi-Language Architecture (i18n)'
           : 'Mehrsprachigkeit & globale Internationalisierung',
       ],
-      cta: isEn ? 'Choose Starter' : 'Starter wählen',
+      cta: isEn ? 'Inquire Starter Package' : 'Starter unverbindlich anfragen',
       deliveryDays: 14,
     },
     {
@@ -70,9 +75,10 @@ export default async function Packages() {
       tagline: isEn
         ? 'The gold standard for mid-market leaders, B2B companies & industry.'
         : 'Der Maßstab für anspruchsvollen Mittelstand, Industrie & B2B.',
-      setupPrice: 3800,
+      priceTag: isEn ? 'On Request' : 'Auf Anfrage',
+      subPrice: isEn ? 'Most Popular for High-Growth SME' : 'Maßgeschneidertes Festpreisangebot',
       popular: true,
-      badge: isEn ? 'Most Popular' : 'Beliebteste Wahl',
+      badge: isEn ? 'Most Popular' : 'Empfehlung für Mittelstand',
       features: [
         isEn
           ? 'Bespoke Next.js 15 Enterprise Architecture (up to 12 pages)'
@@ -100,7 +106,7 @@ export default async function Packages() {
         isEn ? 'Full E-Commerce Shop Checkout' : 'Vollständiger Online-Shop Checkout',
         isEn ? 'Custom CRM / ERP Deep-Sync' : 'Tiefgreifende ERP-/CRM-Schnittstellen',
       ],
-      cta: isEn ? 'Choose Business Enterprise' : 'Business Enterprise wählen',
+      cta: isEn ? 'Inquire Business Enterprise' : 'Business Enterprise anfragen',
       deliveryDays: 21,
     },
     {
@@ -109,7 +115,8 @@ export default async function Packages() {
       tagline: isEn
         ? 'High-performance web apps, client portals & headless shops.'
         : 'Web-Applikationen, Kundenportale & Headless Online-Shops.',
-      setupPrice: 6500,
+      priceTag: isEn ? 'On Request' : 'Auf Anfrage',
+      subPrice: isEn ? 'Custom Scope & Integration Architecture' : 'Individueller Projektumfang',
       popular: false,
       features: [
         isEn
@@ -137,59 +144,64 @@ export default async function Packages() {
     },
   ];
 
-  const roiPoints = [
+  const valuePillars = [
     {
-      icon: Lightning,
-      title: isEn ? 'Ladezeit von 4s auf 0.3s' : 'Ladezeit von 4s auf 0,3s',
+      icon: Percent,
+      title: isEn ? '5x to 10x More Cost-Effective' : '5 bis 10x Kostenvorteil',
+      subtitle: isEn ? 'Zero Agency Overhead' : 'Ohne Agentur-Overhead',
       desc: isEn
-        ? 'Every 1-second delay reduces conversions by 7%. Our 100/100 PageSpeed architecture doubles your lead rate.'
-        : 'Jede Sekunde Ladezeit kostet bis zu 7% Conversion. Unsere 100/100 Next.js Architektur schöpft Ihr volles Potenzial aus.',
+        ? 'Traditional agencies charge for account managers, project managers, and office overhead. At Coday, you work directly with the lead software architect. Automated KI-augmented development enables faster results at a fraction of the market cost.'
+        : 'Traditionelle Großagenturen verrechnen Vertriebler, Account-Manager und teure Büropaläste. Bei Coday arbeiten Sie direkt mit dem leitenden Software-Architekten. Durch KI-unterstützte Next.js Entwicklungsprozesse liefern wir Ergebnisse in Rekordzeit zu einem Bruchteil des Marktpreises.',
     },
     {
-      icon: TrendUp,
-      title: isEn ? 'Planbare Mitarbeitergewinnung' : '60s Express-Recruiting',
+      icon: SealCheck,
+      title: isEn ? '100/100 Certified Quality' : 'Garantierte 100/100 Qualität',
+      subtitle: isEn ? 'Google & Seobility Audits' : 'Messbare Spitzenleistung',
       desc: isEn
-        ? 'Qualified applicants apply in 60 seconds directly on mobile devices without tedious PDF attachments.'
-        : 'Fachkräfte bewerben sich in unter 60 Sekunden direkt am Smartphone — ohne lästige Lebenslauf-PDFs.',
+        ? 'Verified by independent SEO and performance tools. Every project achieves perfect scores in Google PageSpeed Insights (Mobile & Desktop), Seobility Site-Audits, and WCAG accessibility standards.'
+        : 'Durch unabhängige SEO- und Performance-Prüfungen schwarz auf weiß belegt: Jedes Coday-Projekt erzielt 100/100 Punkte bei Google PageSpeed Insights, fehlerfreie 100% Seobility On-Page Audits und subsekundäre Ladezeiten unter 0,3 Sekunden.',
     },
     {
       icon: LockKey,
-      title: isEn ? 'Zero Maintenance Stress' : '0 € Wartungs-Zwang',
+      title: isEn ? '100% Code & Asset Ownership' : '100% Eigentum ohne Abo-Fallen',
+      subtitle: isEn ? 'Zero Lock-in Guarantee' : 'Volle Unabhängigkeit',
       desc: isEn
-        ? 'No vulnerable WordPress plugins or recurring license costs. 100% code ownership with zero lock-in.'
-        : 'Keine angreifbaren WordPress-Plugins oder teure Lizenz-Abos. 100% Code-Eigentum gehört Ihnen.',
+        ? 'No mandatory monthly retainers or vendor lock-in. You receive full ownership of your custom source code, high-resolution design assets, and edge hosting infrastructure.'
+        : 'Keine monatlichen Wartungs-Knebelverträge, keine proprietären Baukasten-Fallen. Sie erhalten das uneingeschränkte Eigentum am gesamten Quellcode, allen Design-Assets und der Hosting-Infrastruktur.',
     },
   ];
 
   const faqItems = [
     {
       question: isEn
-        ? 'Are there any hidden recurring fees or mandatory subscriptions?'
-        : 'Gibt es bei Coday versteckte Folgekosten oder Abo-Fallen?',
+        ? 'How are project prices calculated without fixed package fees?'
+        : 'Wie setzen sich die Preise zusammen, wenn keine festen Pauschalen angegeben sind?',
       answer: isEn
-        ? 'No. We work strictly with transparent fixed prices. After launch, all design and source code belong 100% to you. There are no mandatory monthly retainer fees.'
-        : 'Nein. Wir arbeiten ausnahmslos mit transparenten Festpreisen. Nach Projektabschluss gehört das Design und der gesamte Quellcode zu 100% Ihnen. Es gibt keine verpflichtenden monatlichen Bindungen.',
+        ? 'Every company has unique requirements. In our free initial consultation, we analyze your current digital presence, define the exact feature scope, and provide a transparent, binding fixed-price quote. You only pay for what brings measurable value to your business.'
+        : 'Jedes Unternehmen hat individuelle Anforderungen und Ziele. In einer kostenlosen Erstberatung analysieren wir Ihren Bedarf, wählen gemeinsam die benötigten Module aus und erstellen ein verbindliches Festpreisangebot. Sie zahlen ausschließlich für Features, die messbaren Mehrwert stiften — ohne versteckte Kosten oder Überraschungen.',
     },
     {
-      question: isEn ? 'How is payment structured?' : 'Wie sind die Zahlungsmodalitäten geregelt?',
+      question: isEn
+        ? 'Why is Coday significantly more cost-effective than traditional agencies?'
+        : 'Warum ist Coday 5 bis 10 Mal günstiger als traditionelle Werbeagenturen?',
       answer: isEn
-        ? 'We split the investment into two fair milestones: 50% upon project kickoff and 50% after your final approval and launch.'
+        ? 'We eliminate the heavy overhead of large agencies: no non-technical sales staff, no junior developer delegation, and no bureaucratic delays. With our modern Next.js architecture and AI-augmented toolchain, a single expert engineer achieves what usually requires a team of five.'
+        : 'Wir verzichten bewusst auf administrative Wasserköpfe, Sales-Zwischenhändler und teure Prestige-Büros. Durch unsere hochmoderne Next.js 15 Architektur und modernste KI-gestützte Entwicklungsworkflows setzt Inhaber Umutcan Emre Tezgel Projekte schneller und präziser um als traditionelle Fünf-Personen-Teams.',
+    },
+    {
+      question: isEn
+        ? 'How is the payment structured?'
+        : 'Wie sind die Zahlungsmodalitäten geregelt?',
+      answer: isEn
+        ? 'We structure the investment into two fair milestones: 50% kickoff deposit and 50% only after successful final deployment and your complete satisfaction.'
         : 'Wir teilen die Investition in zwei faire Meilensteine: 50% Anzahlung bei Projektstart und 50% erst nach erfolgreichem Launch und Ihrer vollständigen Abnahme.',
     },
     {
       question: isEn
-        ? 'How quickly will my new website be live?'
-        : 'Wie schnell ist meine neue Website online?',
-      answer: isEn
-        ? 'Depending on the selected plan, delivery takes between 14 and 28 business days from the moment initial information is provided.'
-        : 'Je nach gewähltem Paket dauert die Umsetzung zwischen 14 und 28 Werktagen ab Bereitstellung der Kerninformationen.',
-    },
-    {
-      question: isEn
         ? 'What hosting costs should I expect?'
-        : 'Welche Hosting-Kosten kommen auf mich zu?',
+        : 'Welche Hosting-Kosten kommen monatlich auf mich zu?',
       answer: isEn
-        ? 'Thanks to modern static compilation on Vercel, most client websites run on high-performance Edge CDNs for 0 € to approx. 20 €/month with enterprise security.'
+        ? 'Thanks to modern static compilation on Vercel and Edge CDNs, most client websites run globally with enterprise security for 0 € to approx. 20 €/month.'
         : 'Dank moderner statischer Vorkompilierung auf Vercel laufen die meisten Websites auf weltweiten Edge-Netzwerken für 0 € bis ca. 20 €/Monat bei höchster Ausfallsicherheit.',
     },
   ];
@@ -197,8 +209,8 @@ export default async function Packages() {
   return (
     <div className="min-h-[100dvh] bg-slate-950 text-slate-100 selection:bg-amber-500/30 selection:text-amber-200">
       <SeoHead
-        title="Transparente Webdesign Preise & Pakete | Coday Webagentur"
-        description="Transparente Festpreise für High-End Webdesign & Next.js Entwicklung. Keine versteckten Kosten, 100% Quellcode-Eigentum & messbarer ROI. Jetzt kalkulieren!"
+        title="Webdesign Preise & Maßgeschneiderte Angebote | Coday Webagentur"
+        description="Individuelle Festpreise für High-End Webdesign & Next.js Entwicklung. 5-10x kosteneffizienter als Großagenturen, 100/100 PageSpeed & 100% Quellcode-Eigentum."
         breadcrumbs={[
           { name: 'Home', url: 'https://codayweb.de' },
           { name: 'Preise', url: 'https://codayweb.de/pricing' },
@@ -219,11 +231,13 @@ export default async function Packages() {
 
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-950/40 text-amber-400 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-6 backdrop-blur-md">
             <Sparkle className="w-4 h-4 text-amber-400" />
-            {isEn ? '100% FIXED PRICE GUARANTEE' : '100% FESTPREIS-GARANTIE OHNE VERSTECKTE KOSTEN'}
+            {isEn
+              ? 'INDIVIDUAL SCOPE & BINDING FIXED PRICE'
+              : 'INDIVIDUELLE BEDARFSANALYSE & FESTPREIS AUF ANFRAGE'}
           </div>
 
           <h1 className="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl text-white leading-[1.1] tracking-tight mb-8 max-w-5xl mx-auto">
-            Transparente Preise für{' '}
+            Maßgeschneiderte Angebote für{' '}
             <GradientText
               colors={['#fbbf24', '#fef08a', '#f59e0b']}
               animationSpeed={5}
@@ -235,55 +249,161 @@ export default async function Packages() {
           </h1>
 
           <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-12">
-            Keine Überraschungen, keine unkalkulierbaren Stundensätze. Sie investieren in eine
-            zukunftssichere Next.js-Architektur mit 100/100 Core Web Vitals und vollständigem
-            Quellcode-Eigentum.
+            Wählen Sie exakt die Module und Funktionen, die Sie benötigen. Nach einer kostenlosen
+            Bedarfsanalyse erhalten Sie ein maßgeschneidertes, verbindliches Festpreisangebot —{' '}
+            <strong className="text-amber-400 font-semibold">
+              5 bis 10x kosteneffizienter als Großagenturen
+            </strong>{' '}
+            bei nachweislich überlegener 100/100 Spitzenqualität.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <NavLink
-              href="/contact"
+              href="/calculator"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-amber-400 text-slate-950 font-bold rounded-full hover:bg-amber-300 transition duration-300 shadow-lg shadow-amber-500/20 hover:scale-[1.02]"
             >
-              <span>{isEn ? 'Request Free Audit' : 'Kostenloses Audit anfordern'}</span>
+              <span>{isEn ? 'Configure Project' : 'Projekt frei konfigurieren'}</span>
               <ArrowRight weight="bold" className="w-5 h-5" />
             </NavLink>
             <NavLink
-              href="/booking"
+              href="/contact"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-slate-900 text-slate-200 border border-slate-800 rounded-full font-medium hover:bg-slate-850 transition duration-300"
             >
               <Calendar className="w-5 h-5 text-amber-400" />
-              <span>{isEn ? 'Book Strategy Call' : 'Strategiegespräch buchen'}</span>
+              <span>{isEn ? 'Request Free Audit' : 'Kostenlose Beratung anfordern'}</span>
             </NavLink>
           </div>
         </div>
       </section>
 
-      {/* ROI & Value Proposition Section */}
-      <section className="py-16 bg-slate-900/40 border-y border-slate-800/80 w-full relative">
+      {/* 5-10x Cost Advantage & Value Proof Section */}
+      <section className="py-20 bg-slate-900/60 border-y border-slate-800/80 w-full relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {roiPoints.map((point, idx) => (
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-amber-400 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Der Coday Effizienz-Vorteil
+            </span>
+            <h2 className="font-display font-bold text-3xl sm:text-4xl text-white mt-2 mb-4">
+              Warum wir 5 bis 10x günstiger sind & bessere Qualität liefern
+            </h2>
+            <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+              Höhere Budgets bedeuten bei traditionellen Agenturen selten besseren Code. Sie zahlen
+              für teure Vertriebsapparate und veraltete WordPress-Monolithen. Wir investieren 100%
+              unserer Energie in messbare Spitzenleistung.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            {valuePillars.map((pillar, idx) => (
               <div
                 key={idx}
-                className="p-8 rounded-2xl bg-slate-950 border border-slate-800 flex flex-col justify-between"
+                className="p-8 rounded-2xl bg-slate-950 border border-slate-800/80 hover:border-amber-500/30 transition-all flex flex-col justify-between"
               >
                 <div>
                   <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center mb-6 text-amber-400">
-                    <point.icon className="w-6 h-6" />
+                    <pillar.icon className="w-6 h-6" />
                   </div>
-                  <h3 className="font-display font-bold text-xl text-white mb-3">{point.title}</h3>
-                  <p className="text-slate-400 text-sm leading-relaxed">{point.desc}</p>
+                  <span className="text-xs font-semibold text-amber-400/80 uppercase tracking-wider block mb-1">
+                    {pillar.subtitle}
+                  </span>
+                  <h3 className="font-display font-bold text-xl text-white mb-3">{pillar.title}</h3>
+                  <p className="text-slate-400 text-sm leading-relaxed">{pillar.desc}</p>
                 </div>
               </div>
             ))}
           </div>
+
+          {/* Audit Proof Benchmark Grid */}
+          <div className="p-8 sm:p-10 rounded-3xl bg-slate-950 border border-amber-500/30 shadow-2xl relative overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-6 space-y-4">
+                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-xs font-bold uppercase tracking-wider">
+                  <ShieldCheck className="w-4 h-4" />
+                  100% Verifizierte Audit-Ergebnisse
+                </span>
+                <h3 className="text-2xl sm:text-3xl font-display font-bold text-white leading-tight">
+                  Schwarz auf weiß bewiesen: 100/100 PageSpeed & Top Seobility Score
+                </h3>
+                <p className="text-slate-400 text-sm leading-relaxed">
+                  Während durchschnittliche Agentur-Websites bei Google Lighthouse unter 60 Punkten
+                  einbrechen und wertvolle Leads verschenken, erzielt unsere Next.js 15
+                  Edge-Architektur in allen offiziellen Audit-Werkzeugen Bestnoten.
+                </p>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-2">
+                  <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 text-center">
+                    <div className="text-2xl sm:text-3xl font-black text-emerald-400 font-display">
+                      100
+                    </div>
+                    <div className="text-[11px] text-slate-400 uppercase tracking-wider mt-1">
+                      Performance
+                    </div>
+                  </div>
+                  <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 text-center">
+                    <div className="text-2xl sm:text-3xl font-black text-emerald-400 font-display">
+                      100
+                    </div>
+                    <div className="text-[11px] text-slate-400 uppercase tracking-wider mt-1">
+                      Accessibility
+                    </div>
+                  </div>
+                  <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 text-center">
+                    <div className="text-2xl sm:text-3xl font-black text-emerald-400 font-display">
+                      100
+                    </div>
+                    <div className="text-[11px] text-slate-400 uppercase tracking-wider mt-1">
+                      Best Practices
+                    </div>
+                  </div>
+                  <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 text-center">
+                    <div className="text-2xl sm:text-3xl font-black text-emerald-400 font-display">
+                      100
+                    </div>
+                    <div className="text-[11px] text-slate-400 uppercase tracking-wider mt-1">
+                      SEO Score
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="lg:col-span-6 flex flex-col gap-4">
+                <div className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-xs font-bold text-slate-300">
+                      Google PageSpeed Insights — Mobile & Desktop
+                    </span>
+                    <span className="text-xs font-bold text-emerald-400">100 / 100 Perfekt</span>
+                  </div>
+                  <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden border border-slate-800">
+                    <Image
+                      src="/images/audits/pagespeed-desktop-100.png"
+                      alt="Google PageSpeed Insights 100/100 Zertifikat Coday Webagentur"
+                      fill
+                      className="object-cover object-top"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* 3 Main Pricing Packages */}
+      {/* 3 Main Flexible Service Packages */}
       <section className="py-24 px-4 w-full relative">
         <div className="max-w-7xl mx-auto">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-amber-400 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              Modulare Leistungspakete
+            </span>
+            <h2 className="font-display font-bold text-3xl sm:text-4xl text-white mt-2 mb-4">
+              Wählen Sie Ihren gewünschten Projektumfang
+            </h2>
+            <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+              Sie wählen die Bausteine — wir schnüren Ihnen das wirtschaftlichste Angebot für Ihren
+              Erfolg. Alle Pakete sind flexibel erweiterbar.
+            </p>
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
             {packages.map((pkg) => (
               <div
@@ -309,9 +429,10 @@ export default async function Packages() {
                   </div>
 
                   <div className="text-center mb-8 pb-8 border-b border-slate-800">
-                    <div className="font-display font-black text-5xl text-white tracking-tight mb-3">
-                      ab {pkg.setupPrice.toLocaleString('de-DE')} €
+                    <div className="font-display font-black text-4xl text-amber-400 tracking-tight mb-2">
+                      {pkg.priceTag}
                     </div>
+                    <div className="text-xs text-slate-400 mb-3">{pkg.subPrice}</div>
                     <div className="inline-flex items-center gap-1.5 text-xs text-slate-400 bg-slate-900 px-3 py-1.5 rounded-full border border-slate-800">
                       <Clock className="w-4 h-4 text-amber-400" />
                       <span>Lieferzeit: ~{pkg.deliveryDays} Werktage</span>
@@ -339,7 +460,17 @@ export default async function Packages() {
                 </div>
 
                 <div className="pt-6 border-t border-slate-800/80">
-                  <PackageSelectButton pkgId={pkg.id} ctaText={pkg.cta} popular={pkg.popular} />
+                  <NavLink
+                    href="/contact"
+                    className={`group active:scale-[0.97] w-full py-4 px-6 rounded-full font-bold text-sm uppercase tracking-wider transition duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] flex items-center justify-between gap-2 focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:outline-none ${
+                      pkg.popular
+                        ? 'bg-amber-400 text-slate-950 hover:bg-amber-300 shadow-lg shadow-amber-500/25'
+                        : 'bg-slate-900 border border-slate-800 text-white hover:bg-slate-850 hover:border-slate-700'
+                    }`}
+                  >
+                    <span className="flex-1 text-center">{pkg.cta}</span>
+                    <ArrowRight weight="bold" className="w-4 h-4" />
+                  </NavLink>
                 </div>
               </div>
             ))}
@@ -384,6 +515,16 @@ export default async function Packages() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-800/80 text-sm">
+                <tr>
+                  <th scope="row" className="p-5 font-semibold text-slate-200">
+                    Kosten & Angebot
+                  </th>
+                  <td className="p-5 text-center text-amber-400 font-semibold">Auf Anfrage</td>
+                  <td className="p-5 text-center font-bold text-amber-400 bg-amber-950/10 border-x border-amber-500/20">
+                    Auf Anfrage
+                  </td>
+                  <td className="p-5 text-center text-amber-400 font-semibold">Auf Anfrage</td>
+                </tr>
                 <tr>
                   <th scope="row" className="p-5 font-semibold text-slate-200">
                     Seitenanzahl
@@ -459,19 +600,27 @@ export default async function Packages() {
       <section className="py-24 px-4 bg-slate-900/60 border-t border-slate-800/80 w-full">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-display font-bold text-3xl sm:text-5xl text-white mb-6">
-            Lassen Sie uns Ihr Projekt kalkulieren
+            Lassen Sie uns Ihr maßgeschneidertes Angebot berechnen
           </h2>
           <p className="text-lg text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Fordern Sie jetzt ein kostenloses, detailliertes Website-Audit oder ein persönliches
-            Strategiegespräch mit Umutcan Emre Tezgel an.
+            Fordern Sie jetzt Ihr kostenloses Website-Audit oder ein persönliches Strategiegespräch
+            mit Umutcan Emre Tezgel an — unverbindlich, transparent und ohne Risiko.
           </p>
-          <NavLink
-            href="/contact"
-            className="inline-flex items-center gap-2 px-10 py-5 bg-amber-400 text-slate-950 font-bold rounded-full hover:bg-amber-300 transition duration-300 shadow-xl shadow-amber-500/20 hover:scale-[1.02] text-lg"
-          >
-            <span>Kostenloses Angebot anfordern</span>
-            <ArrowRight weight="bold" className="w-5 h-5" />
-          </NavLink>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <NavLink
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-amber-400 text-slate-950 font-bold rounded-full hover:bg-amber-300 transition duration-300 shadow-xl shadow-amber-500/20 hover:scale-[1.02] text-lg"
+            >
+              <span>Kostenloses Angebot anfordern</span>
+              <ArrowRight weight="bold" className="w-5 h-5" />
+            </NavLink>
+            <NavLink
+              href="/calculator"
+              className="inline-flex items-center justify-center gap-2 px-8 py-5 bg-slate-900 text-white font-semibold rounded-full border border-slate-700 hover:bg-slate-800 transition duration-300"
+            >
+              <span>Projekt selbst konfigurieren</span>
+            </NavLink>
+          </div>
         </div>
       </section>
     </div>

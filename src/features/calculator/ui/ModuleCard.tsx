@@ -36,7 +36,7 @@ export const ModuleCard: React.FC<ModuleCardProps> = ({
     <div
       role="switch"
       aria-checked={isSelected || isIncluded}
-      aria-label={`${t(`modules.${module.id}.name`)}: ${formatCurrency(module.priceInCents / 100, 'EUR', locale)} - ${isIncluded ? t('card.status.included') : isSelected ? t('card.status.selected') : t('card.status.add')}`}
+      aria-label={`${t(`modules.${module.id}.name`)} - ${isIncluded ? t('card.status.included') : isSelected ? t('card.status.selected') : t('card.status.add')}`}
       tabIndex={disabled || isIncluded ? -1 : 0}
       onClick={!disabled && !isIncluded ? onToggle : undefined}
       onKeyDown={(e: React.KeyboardEvent) => {
@@ -98,11 +98,11 @@ export const ModuleCard: React.FC<ModuleCardProps> = ({
           <Icon name={module.icon} className="text-xl" />
         </div>
         <div className="text-right">
-          <div className="font-display font-bold text-lg text-gray-900">
-            {formatCurrency(module.priceInCents / 100, 'EUR', locale)}
+          <div className="font-display font-bold text-sm text-gray-900">
+            {isIncluded ? 'Im Paket enthalten' : 'Auf Anfrage'}
           </div>
           <div className="text-[10px] text-gray-500 uppercase tracking-wide">
-            {module.priceType === 'one-time' ? t('card.one_time') : t('card.monthly')}
+            {isIncluded ? 'Inklusive' : 'Individuell wählbar'}
           </div>
         </div>
       </div>

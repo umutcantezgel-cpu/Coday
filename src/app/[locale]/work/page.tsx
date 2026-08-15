@@ -244,10 +244,10 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
             <div className="space-y-4 text-sm sm:text-base leading-relaxed">
               <p>
                 Als spezialisierte Webagentur mit Fokus auf High-Performance Next.js-Lösungen setzen
-                wir ausschließlich auf verifizierbare Kundenprojekte. Ob Handwerksmeister wie
-                Batherm, E-Commerce Flagships wie Talia Boutique oder Notdienst-Unternehmen wie MS
-                Schlüsseldienst Wetzlar: Wir transformieren langsame, ineffiziente Websites in
-                planbare Umsatzbringer.
+                wir ausschließlich auf verifizierbare Kundenprojekte. Ob Handwerksbetriebe wie
+                Batherm und MemoBau, E-Commerce Flagships wie Talia Boutique oder
+                Notdienst-Unternehmen wie MS Schlüsseldienst Wetzlar: Wir transformieren langsame,
+                ineffiziente Websites in planbare Umsatzbringer.
               </p>
               <p>
                 Jede Website wird mit 100/100 Core Web Vitals, server-seitigem Rendering (SSG/SSR)

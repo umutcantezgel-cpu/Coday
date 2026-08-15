@@ -332,22 +332,24 @@ export default function AngebotHandwerker() {
                   ? 'For a clean, professional start. Your digital business card that stands technically flawless.'
                   : 'Für den sauberen, professionellen Start. Eure digitale Visitenkarte, die technisch einwandfrei steht.'}
               </p>
-              <div className="font-mono text-4xl font-black text-navy mb-1">1.499 €</div>
-              <div className="text-sm text-slate-400 uppercase tracking-widest mb-8">
-                {isEn ? 'One-Time / Net' : 'Einmalig / Netto'}
+              <div className="font-mono text-3xl font-black text-navy mb-1">
+                {isEn ? 'On Request' : 'Auf Anfrage'}
+              </div>
+              <div className="text-xs text-slate-400 uppercase tracking-widest mb-8">
+                {isEn ? 'Individually Calculated' : 'Individuell kalkuliert'}
               </div>
 
               <ul className="space-y-4">
                 {(isEn
                   ? [
                       '5 Core Pages (Home, Services, About, Contact, Legal)',
-                      'Extremely Fast Loading',
+                      'Extremely Fast Loading (100/100 PageSpeed)',
                       'Mobile-First Design',
                       'Basic SEO Configuration',
                     ]
                   : [
                       '5 Basis-Seiten (Start, Leistungen, Über uns, Kontakt, Legal)',
-                      'Extrem schnelles Laden',
+                      'Extrem schnelles Laden (100/100 PageSpeed)',
                       'Mobile-First Design',
                       'SEO-Basiskonfiguration',
                     ]
@@ -386,9 +388,11 @@ export default function AngebotHandwerker() {
                   ? "Absolute dominance on Google. When someone searches within 50 km — you're everywhere."
                   : 'Absolute Dominanz bei Google. Wenn jemand im Umkreis von 50km sucht – ihr seid überall da.'}
               </p>
-              <div className="font-mono text-6xl font-black text-navy mb-1">3.699 €</div>
-              <div className="text-sm text-slate-400 uppercase tracking-widest mb-8">
-                {isEn ? 'One-Time / Net' : 'Einmalig / Netto'}
+              <div className="font-mono text-4xl font-black text-navy mb-1">
+                {isEn ? 'On Request' : 'Auf Anfrage'}
+              </div>
+              <div className="text-xs text-slate-400 uppercase tracking-widest mb-8">
+                {isEn ? 'Individually Calculated' : 'Individuell kalkuliert'}
               </div>
 
               <ul className="space-y-4 mb-8">
@@ -449,9 +453,11 @@ export default function AngebotHandwerker() {
                     ? 'For tradesmen who want to grow and attract skilled workers or high-value contracts.'
                     : 'Für Handwerker, die wachsen und gezielt Fachkräfte oder hochpreisige Aufträge anziehen wollen.'}
                 </p>
-                <div className="font-mono text-4xl font-black text-white mb-1">2.499 €</div>
-                <div className="text-sm text-slate-400 uppercase tracking-widest mb-8">
-                  {isEn ? 'One-Time / Net' : 'Einmalig / Netto'}
+                <div className="font-mono text-3xl font-black text-white mb-1">
+                  {isEn ? 'On Request' : 'Auf Anfrage'}
+                </div>
+                <div className="text-xs text-slate-400 uppercase tracking-widest mb-8">
+                  {isEn ? 'Individually Calculated' : 'Individuell kalkuliert'}
                 </div>
 
                 <ul className="space-y-4">
