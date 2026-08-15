@@ -40,17 +40,17 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Design Giessen | High-End Web Development – Coday Web',
+      title: 'Web Design Giessen | Next.js Agency for Mid-Market – Coday',
       description:
-        'Custom web design & Next.js development in Giessen. 100/100 PageSpeed, maximum security & measurable B2B inquiries. Request your free audit now!',
+        'Custom web design & Next.js web development in Giessen. 100/100 PageSpeed, accessible medical portals & B2B talent recruiting. Request your audit now!',
       path: '/en/webdesign-giessen',
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'Webdesign Gießen | High-End Webentwicklung – Coday Web',
+    title: 'Webdesign Gießen | Next.js Agentur für Mittelstand – Coday',
     description:
-      'Maßgeschneidertes Webdesign & Next.js Webentwicklung in Gießen. 100/100 PageSpeed, maximale Sicherheit & messbare B2B-Anfragen. Jetzt Audit anfordern!',
+      'Maßgeschneidertes Webdesign & Next.js Webentwicklung in Gießen. 100/100 PageSpeed, barrierefreie Praxisportale & B2B-Mitarbeitergewinnung. Jetzt anfragen!',
     path: '/de/webdesign-giessen',
     type: 'money',
   });
