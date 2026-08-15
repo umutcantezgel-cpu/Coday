@@ -211,6 +211,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly',
       priority: 0.85,
     }),
+    sitemapEntry('/regionen/main-kinzig-kreis', {
+      changeFrequency: 'monthly',
+      priority: 0.85,
+    }),
     sitemapEntry('/standorte/giessen', { changeFrequency: 'monthly', priority: 0.8 }),
     sitemapEntry('/standorte/hessen', { changeFrequency: 'monthly', priority: 0.8 }),
 
