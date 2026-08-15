@@ -69,7 +69,7 @@ function sitemapEntry(
   const cleanPath = path.replace(/^\/(en|de)/, '').replace(/\/$/, '') || '';
 
   const localPathsRegex =
-    /^\/(landingpages|webdesign-agentur-wetzlar|webdesign-giessen|webdesign-marburg|webdesign-herborn|webdesign-limburg|webdesign-friedberg|webdesign-frankfurt|webdesign-wiesbaden|webdesign-darmstadt|webdesign-kassel|webdesign-offenbach|webdesign-hanau|webdesign-fulda|webdesign-bad-homburg|webdesign-oberursel|angebot-handwerker|branchen|standorte)(\/.*)?$/;
+    /^\/(landingpages|webdesign-agentur-wetzlar|webdesign-giessen|webdesign-marburg|webdesign-herborn|webdesign-limburg|webdesign-friedberg|webdesign-frankfurt|webdesign-wiesbaden|webdesign-darmstadt|webdesign-kassel|webdesign-offenbach|webdesign-hanau|webdesign-fulda|webdesign-bad-homburg|webdesign-oberursel|webdesign-bad-vilbel|angebot-handwerker|branchen|standorte)(\/.*)?$/;
   const isLocalPath = localPathsRegex.test(cleanPath);
   const isDeOnlyRoute = DE_ONLY_ROUTES.includes(cleanPath);
 
@@ -188,6 +188,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     sitemapEntry('/webdesign-fulda', { changeFrequency: 'monthly', priority: 0.9 }),
     sitemapEntry('/webdesign-bad-homburg', { changeFrequency: 'monthly', priority: 0.9 }),
     sitemapEntry('/webdesign-oberursel', { changeFrequency: 'monthly', priority: 0.85 }),
+    sitemapEntry('/webdesign-bad-vilbel', { changeFrequency: 'monthly', priority: 0.85 }),
     sitemapEntry('/standorte/giessen', { changeFrequency: 'monthly', priority: 0.8 }),
     sitemapEntry('/standorte/hessen', { changeFrequency: 'monthly', priority: 0.8 }),
 
