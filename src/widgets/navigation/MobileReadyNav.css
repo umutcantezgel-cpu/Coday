@@ -10,6 +10,7 @@
   max-width: 1200px;
   display: flex;
   justify-content: center;
+  contain: layout style;
 }
 
 /* Animated Hamburger */
@@ -73,6 +74,7 @@
   /* Smooth transition for background/border */
   width: auto;
   max-width: 100%;
+  contain: layout;
 }
 
 /* State: Hidden (Scroll Down) */

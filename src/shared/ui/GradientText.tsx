@@ -21,56 +21,67 @@ interface GradientTextProps {
 export default function GradientText({
   children,
   className = '',
-  colors = ['var(--color-brand-500)', '#FF9FFC', '#B19EEF'],
+  colors = ['var(--color-primary-600)', 'var(--color-secondary-800)', 'var(--color-primary-600)'],
   animationSpeed = 8,
   showBorder = false,
   direction: _direction = 'horizontal',
 }: GradientTextProps) {
-  // Mobile: 100% = static gradient position. Desktop: 200% = animated sweep.
-  // The JS `backgroundSize` always sets 200% — but CSS `animation: none` on
-  // mobile means the position never changes, so it's effectively static.
   const gradientStyle = {
     backgroundImage: `linear-gradient(to right, ${colors.join(', ')}, ${colors[0]})`,
     backgroundSize: '200% auto',
   };
 
-  return (
-    <span
-      className={cn(
-        'relative mx-auto inline-block rounded-[1.25rem] font-medium overflow-hidden transition-shadow motion-reduce:duration-[0.01ms] duration-500',
-        showBorder ? 'py-1 px-2' : '',
-        className
-      )}
-    >
-      {showBorder && (
-        <div
-          className="absolute inset-0 z-0 pointer-events-none rounded-[1.25rem] md:animate-gradient-xy motion-reduce:animate-none"
-          style={{
-            ...gradientStyle,
-            animationDuration: `${animationSpeed}s`,
-          }}
-        >
-          <div
-            className="absolute bg-background-light rounded-[1.25rem] z-[-1]"
-            style={{
-              width: 'calc(100% - 2px)',
-              height: 'calc(100% - 2px)',
-              left: '50%',
-              top: '50%',
-              transform: 'translate(-50%, -50%)',
-            }}
-          />
-        </div>
-      )}
-      <div
-        className="inline-block relative z-2 text-transparent bg-clip-text md:animate-gradient-xy pb-1 motion-reduce:animate-none"
+  if (!showBorder) {
+    return (
+      <span
+        className={cn(
+          'inline-block relative text-transparent bg-clip-text md:animate-gradient-xy pb-0.5 motion-reduce:animate-none',
+          className
+        )}
         style={{
           ...gradientStyle,
           animationDuration: `${animationSpeed}s`,
         }}
       >
         {children}
-      </div>
+      </span>
+    );
+  }
+
+  return (
+    <span
+      className={cn(
+        'relative mx-auto inline-block rounded-[1.25rem] font-medium py-1 px-2 transition-shadow motion-reduce:duration-[0.01ms] duration-500',
+        className
+      )}
+    >
+      <span
+        className="absolute inset-0 z-0 pointer-events-none rounded-[1.25rem] md:animate-gradient-xy motion-reduce:animate-none"
+        style={{
+          ...gradientStyle,
+          animationDuration: `${animationSpeed}s`,
+        }}
+      >
+        <span
+          className="absolute bg-background-light rounded-[1.25rem] z-[-1]"
+          style={{
+            width: 'calc(100% - 2px)',
+            height: 'calc(100% - 2px)',
+            left: '50%',
+            top: '50%',
+            transform: 'translate(-50%, -50%)',
+          }}
+        />
+      </span>
+      <span
+        className="inline-block relative z-2 text-transparent bg-clip-text md:animate-gradient-xy pb-0.5 motion-reduce:animate-none"
+        style={{
+          ...gradientStyle,
+          animationDuration: `${animationSpeed}s`,
+        }}
+      >
+        {children}
+      </span>
     </span>
   );
 }
