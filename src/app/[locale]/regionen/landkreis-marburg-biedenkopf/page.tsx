@@ -611,7 +611,7 @@ export default async function LandkreisMarburgBiedenkopfPage({
               <h3 className="text-xl font-bold text-slate-900 mb-3">
                 4. Handwerk, Bau & Mittelstand
               </h3>
-              <p className="text-slate-400 text-sm leading-relaxed">
+              <p className="text-slate-600 text-sm leading-relaxed">
                 Conversion-starke Websites mit 60-Sekunden-Express-Recruiting für Betriebe in
                 Gladenbach, Kirchhain, Lahntal und Ebsdorfergrund.
               </p>

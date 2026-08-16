@@ -632,7 +632,7 @@ export default async function WebdesignRodgauPage({
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800">
+            <div className="p-6 rounded-2xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
                 Wer ist unser fester Ansprechpartner?
               </h3>

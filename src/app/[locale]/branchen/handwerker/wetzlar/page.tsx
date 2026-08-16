@@ -693,7 +693,7 @@ export default async function HandwerkerWetzlarPage({
             <Button
               variant="primary"
               size="lg"
-              className="bg-slate-900 hover:bg-slate-800 text-white font-bold px-10 py-5 text-lg shadow-xl shadow-slate-900/25 transition-all hover:scale-105"
+              className="bg-primary-700 hover:bg-primary-800 text-white font-bold px-10 py-5 text-lg shadow-xl shadow-primary-700/25 transition-all hover:scale-105"
             >
               Kostenlose Handwerker-Analyse anfordern
               <ArrowRight className="w-5 h-5 ml-2" />

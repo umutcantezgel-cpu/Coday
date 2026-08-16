@@ -626,7 +626,7 @@ export default async function WebdesignHanauPage({
               <h3 className="text-lg font-bold text-slate-900 mb-2">
                 Erfüllen Ihre Websites alle DSGVO- und Sicherheitsstandards?
               </h3>
-              <p className="text-slate-300 text-sm leading-relaxed">
+              <p className="text-slate-600 text-sm leading-relaxed">
                 Ja. Durch den Einsatz moderner Headless-Architekturen (Next.js & Supabase) gibt es
                 keine offenen PHP- oder WordPress-Sicherheitslücken. Alle Daten werden DSGVO-konform
                 in ISO-zertifizierten deutschen Rechenzentren gehostet.
