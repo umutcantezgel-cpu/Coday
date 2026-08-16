@@ -22,10 +22,14 @@ test('sidebar collapses without instant jumps or display:none', () => {
 
   expect(screen.getByText('Sub 1')).toBeTruthy();
 
+  const subItemsContainer = screen.getByText('Sub 1').closest('div');
+  // Checking that there's no display: none applied by tailwind or style while expanded
+  expect(subItemsContainer?.className).not.toContain('hidden');
+
   const collapseButton = screen.getByLabelText('Collapse sidebar');
   fireEvent.click(collapseButton);
 
-  const subItemsContainer = screen.getByText('Sub 1').closest('div');
-  // Just checking that there's no display: none applied by tailwind or style
-  expect(subItemsContainer?.className).not.toContain('hidden');
+  // When collapsed, the sidebar width class changes to w-16
+  const aside = container.querySelector('aside');
+  expect(aside?.className).toContain('w-16');
 });

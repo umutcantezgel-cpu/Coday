@@ -1,3 +1,4 @@
+import React from 'react';
 import { vi } from 'vitest';
 
 import '@testing-library/jest-dom';
@@ -50,3 +51,44 @@ class ResizeObserverMock {
 }
 vi.stubGlobal('ResizeObserver', ResizeObserverMock);
 window.ResizeObserver = ResizeObserverMock;
+
+// Mock next-intl
+vi.mock('next-intl', () => ({
+  useLocale: () => 'de',
+  useTranslations: () => (key: string, values?: any) => values?.fallback || key,
+  NextIntlClientProvider: ({ children }: { children: React.ReactNode }) => children,
+}));
+
+// Mock @/i18n/navigation
+vi.mock('@/i18n/navigation', () => ({
+  Link: ({ href, children, ...props }: any) => {
+    return React.createElement(
+      'a',
+      { href: typeof href === 'string' ? href : href?.pathname || '/', ...props },
+      children
+    );
+  },
+  useRouter: () => ({
+    push: vi.fn(),
+    replace: vi.fn(),
+    prefetch: vi.fn(),
+    back: vi.fn(),
+  }),
+  usePathname: () => '/',
+  redirect: vi.fn(),
+}));
+
+// Mock next/navigation
+vi.mock('next/navigation', () => ({
+  useRouter: () => ({
+    push: vi.fn(),
+    replace: vi.fn(),
+    prefetch: vi.fn(),
+    back: vi.fn(),
+  }),
+  usePathname: () => '/',
+  useSearchParams: () => new URLSearchParams(),
+  useParams: () => ({ locale: 'de' }),
+  notFound: vi.fn(),
+  redirect: vi.fn(),
+}));

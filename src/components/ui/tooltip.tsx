@@ -77,6 +77,7 @@ export function Tooltip({ content, children, className, position = 'top' }: Tool
       onMouseLeave={closeTooltip}
       onFocus={openTooltip}
       onBlur={closeTooltip}
+      aria-describedby={isOpen ? tooltipId : undefined}
     >
       {React.isValidElement(children)
         ? React.cloneElement(children, {
