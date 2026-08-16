@@ -42,7 +42,7 @@ export async function generateMetadata({
     return generatePageMetadata({
       title: 'Web Design Bensheim | Web Agency Bergstraße · Coday',
       description:
-        'Professional web design in Bensheim & Bergstraße. Fast load times, top Google rankings & more clients for SME & services. Fixed price.',
+        'Web design in Bensheim & Bergstraße: Fast load times, top Google rankings & more customer inquiries for businesses. Fixed price.',
       path: '/en/webdesign-bensheim',
       type: 'money',
     });
@@ -50,7 +50,7 @@ export async function generateMetadata({
   return generatePageMetadata({
     title: 'Webdesign Bensheim | Webagentur Bergstraße · Coday',
     description:
-      'Professionelles Webdesign in Bensheim & an der Bergstraße. Schnelle Ladezeiten, top Google-Rankings & mehr Kunden für Mittelstand & Dienstleister. Festpreis.',
+      'Webdesign in Bensheim & an der Bergstraße: Schnelle Ladezeiten, top Google-Rankings & mehr Kunden für den Mittelstand. Festpreis.',
     path: '/de/webdesign-bensheim',
     type: 'money',
   });

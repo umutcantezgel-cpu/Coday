@@ -25,7 +25,7 @@ export async function generateMetadata({
     return generatePageMetadata({
       title: 'B2B SEO & Generative Engine Optimization Agency | Coday',
       description:
-        'Sustainable Google top rankings & visibility in AI search engines (GEO). Technical SEO audits, Core Web Vitals optimization & semantic content silos.',
+        'Google top rankings & visibility in AI search engines (GEO). Technical SEO audits, Core Web Vitals and semantic content architecture.',
       path: '/en/services/seo',
       type: 'money',
     });
@@ -33,7 +33,7 @@ export async function generateMetadata({
   return generatePageMetadata({
     title: 'B2B SEO & Generative Engine Optimization Agentur | Coday',
     description:
-      'Nachhaltige Google Top-Rankings & Sichtbarkeit in KI-Suchmaschinen (GEO). Technische SEO-Audits, Core Web Vitals Optimierung & semantische Content-Silos.',
+      'Google Top-Rankings & Sichtbarkeit in KI-Suchmaschinen (GEO). Technische SEO-Audits, Core Web Vitals und semantische Content-Silos.',
     path: '/de/services/seo',
     type: 'money',
   });

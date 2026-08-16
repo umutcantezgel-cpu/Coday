@@ -376,7 +376,6 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               <li>
                 <Link
                   href="/branchen"
-                  locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
                   Branchenübersicht
@@ -384,17 +383,15 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               </li>
               <li>
                 <Link
-                  href="/branchen/handwerker"
-                  locale="de"
+                  href="/branchen/handwerk-bau"
                   className="text-text-light hover:text-primary transition-colors"
                 >
-                  Webdesign für Handwerker
+                  Webdesign für Handwerker & Bau
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/branchen/gesundheitswesen"
-                  locale="de"
+                  href="/branchen/aerzte-gesundheit"
                   className="text-text-light hover:text-primary transition-colors"
                 >
                   Webdesign für Ärzte & Praxen
@@ -403,7 +400,6 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               <li>
                 <Link
                   href="/branchen/gastronomie"
-                  locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
                   Webdesign für Gastronomie & Hotels
@@ -411,8 +407,15 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               </li>
               <li>
                 <Link
+                  href="/branchen/gastronomie-hotellerie"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Webdesign für Gastronomie & Hotellerie
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/branchen/dienstleistung"
-                  locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
                   Webdesign für Dienstleister
@@ -421,7 +424,6 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               <li>
                 <Link
                   href="/branchen/immobilien"
-                  locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
                   Webdesign für Immobilienmakler
@@ -430,7 +432,6 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               <li>
                 <Link
                   href="/branchen/anwaelte-kanzleien"
-                  locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
                   Webdesign für Anwälte & Kanzleien
@@ -439,7 +440,6 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               <li>
                 <Link
                   href="/branchen/unternehmensberatung"
-                  locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
                   Webdesign für Unternehmensberatung
@@ -448,7 +448,6 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               <li>
                 <Link
                   href="/branchen/startups-tech"
-                  locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
                   Webdesign für Startups & Tech
@@ -457,7 +456,6 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               <li>
                 <Link
                   href="/branchen/retail"
-                  locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
                   Webdesign für Einzelhandel & Retail
@@ -466,7 +464,6 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               <li>
                 <Link
                   href="/branchen/public-sector"
-                  locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
                   Webdesign für Öffentlichen Sektor
@@ -475,7 +472,6 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               <li>
                 <Link
                   href="/branchen/automobil"
-                  locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
                   Webdesign für Automobilbranche
@@ -484,7 +480,6 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               <li>
                 <Link
                   href="/branchen/gesundheitswesen/arzt-giessen"
-                  locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
                   Arzt Website Gießen
@@ -493,7 +488,6 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               <li>
                 <Link
                   href="/branchen/gesundheitswesen/arzt-wetzlar"
-                  locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
                   Arzt Website Wetzlar
@@ -502,7 +496,6 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               <li>
                 <Link
                   href="/branchen/handwerker/wetzlar"
-                  locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
                   Handwerker Website Wetzlar
@@ -511,7 +504,6 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               <li>
                 <Link
                   href="/branchen/automobil/kfz-werkstatt"
-                  locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
                   KFZ Werkstatt Website
@@ -520,7 +512,6 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               <li>
                 <Link
                   href="/branchen/automobil/autohaendler"
-                  locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
                   Autohändler Website
@@ -529,10 +520,17 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
               <li>
                 <Link
                   href="/branchen/automobil/kfz-mechatroniker"
-                  locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
                   KFZ Mechatroniker Recruiting
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/angebot-handwerker"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Exklusiv-Angebot Handwerker
                 </Link>
               </li>
             </ul>
@@ -548,7 +546,6 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                 <li key={town.href}>
                   <Link
                     href={town.href}
-                    locale="de"
                     className="text-text-light hover:text-primary transition-colors"
                   >
                     {town.label}
@@ -568,7 +565,6 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                 <li key={district.href}>
                   <Link
                     href={district.href}
-                    locale="de"
                     className="text-text-light hover:text-primary transition-colors"
                   >
                     {district.label}

@@ -157,7 +157,7 @@ export default async function ArztWetzlarPage({ params }: { params: Promise<{ lo
             '@type': 'ListItem',
             position: 3,
             name: 'Gesundheitswesen',
-            item: `${BASE_URL}/${_locale}/branchen/gesundheitswesen`,
+            item: `${BASE_URL}/${_locale}/branchen/aerzte-gesundheit`,
           },
           {
             '@type': 'ListItem',

@@ -361,7 +361,7 @@ export const PackagesClient: React.FC = () => {
             {[
               {
                 icon: ShieldCheck,
-                label: t('trust.google_partner', { fallback: 'Google Partner' }),
+                label: t('trust.code_ownership', { fallback: '100% Code-Eigentum' }),
               },
               {
                 icon: ShieldCheck,

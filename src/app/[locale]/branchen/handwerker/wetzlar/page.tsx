@@ -168,7 +168,7 @@ export default async function HandwerkerWetzlarPage({
             '@type': 'ListItem',
             position: 3,
             name: 'Handwerk & Bau',
-            item: `${BASE_URL}/${_locale}/branchen/handwerker`,
+            item: `${BASE_URL}/${_locale}/branchen/handwerk-bau`,
           },
           {
             '@type': 'ListItem',

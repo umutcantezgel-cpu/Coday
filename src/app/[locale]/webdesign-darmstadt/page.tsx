@@ -44,7 +44,7 @@ export async function generateMetadata({
     return generatePageMetadata({
       title: 'Web Design Darmstadt | Tech & Next.js Agency · Coday',
       description:
-        'High-end web development & web design in Darmstadt. Ultra-fast Next.js architectures & measurable B2B leads for startups, tech & mid-market. Fixed price on request.',
+        'High-end web design in Darmstadt. Ultra-fast Next.js architecture & measurable B2B leads for tech & mid-market. Fixed price on request.',
       path: '/en/webdesign-darmstadt',
       type: 'money',
     });
@@ -52,7 +52,7 @@ export async function generateMetadata({
   return generatePageMetadata({
     title: 'Webdesign Darmstadt | Tech & Next.js Webagentur · Coday',
     description:
-      'High-End Webentwicklung & Webdesign in Darmstadt. Ultraschnelle Next.js Architekturen & messbare B2B-Leads für Startups, Tech & Mittelstand. Festpreis auf Anfrage.',
+      'High-End Webdesign in Darmstadt: Ultraschnelle Next.js Architektur & messbare B2B-Leads für Tech & Mittelstand. Festpreis auf Anfrage.',
     path: '/de/webdesign-darmstadt',
     type: 'money',
   });

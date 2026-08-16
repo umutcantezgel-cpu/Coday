@@ -158,7 +158,7 @@ export const QuickContactForm: React.FC = () => {
             className="relative z-10"
           >
             <div className="mb-6">
-              <h2 className="font-display font-bold text-2xl text-slate-900 mb-2">{titleText}</h2>
+              <p className="font-display font-bold text-2xl text-slate-900 mb-2">{titleText}</p>
               <p className="text-slate-600 text-sm leading-relaxed">{subtitleText}</p>
             </div>
 
@@ -269,7 +269,7 @@ export const QuickContactForm: React.FC = () => {
             <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mb-4 shadow-sm">
               <OptimizedIcon icon={CheckCircle} className="w-8 h-8" />
             </div>
-            <h2 className="font-display font-bold text-2xl text-slate-900 mb-2">{successTitle}</h2>
+            <p className="font-display font-bold text-2xl text-slate-900 mb-2">{successTitle}</p>
             <p className="text-slate-600 mb-6 text-sm leading-relaxed">{successSubtitle}</p>
             <button
               onClick={() => setSuccess(false)}

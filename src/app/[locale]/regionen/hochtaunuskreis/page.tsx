@@ -42,7 +42,7 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Design Hochtaunus District | Premium Web Agency · Coday',
+      title: 'Web Design Hochtaunus District | Web Agency · Coday',
       description:
         'Exclusive web design for the Hochtaunus district. High-performance websites & discreet service for Bad Homburg, Oberursel & Kronberg. Fixed prices.',
       path: '/en/regionen/hochtaunuskreis',

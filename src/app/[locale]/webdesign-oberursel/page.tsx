@@ -42,7 +42,7 @@ export async function generateMetadata({
     return generatePageMetadata({
       title: 'Web Design Oberursel | Next.js Agency & SEO · Coday',
       description:
-        'Web agency for Oberursel (Taunus). Modern B2B websites, fast load times & automated lead generation for mid-market & IT. Fixed price on request.',
+        'Web agency for Oberursel: Modern B2B websites, ultra-fast load times & lead generation for mid-market & IT. Fixed price on request.',
       path: '/en/webdesign-oberursel',
       type: 'money',
     });
@@ -50,7 +50,7 @@ export async function generateMetadata({
   return generatePageMetadata({
     title: 'Webdesign Oberursel | Next.js Agentur & SEO · Coday',
     description:
-      'Ihre Webagentur für Oberursel (Taunus). Moderne B2B-Websites, schnelle Ladezeiten & automatisierte Lead-Generierung für Mittelstand & IT. Festpreis auf Anfrage.',
+      'Webagentur für Oberursel: Moderne B2B-Websites, schnelle Ladezeiten & Lead-Generierung für Mittelstand & IT. Festpreis auf Anfrage.',
     path: '/de/webdesign-oberursel',
     type: 'money',
   });

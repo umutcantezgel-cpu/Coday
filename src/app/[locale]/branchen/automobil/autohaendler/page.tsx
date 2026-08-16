@@ -509,14 +509,12 @@ export default async function AutohaendlerPage({
             </h2>
             <p className="text-slate-600 leading-relaxed text-base">
               Hessen zählt zu den kaufkraftstärksten Automobilmärkten Deutschlands. Autohäuser und
-              Fahrzeughändler in den Wirtschaftszentren{' '}
-              <strong>
-                Frankfurt am Main, Wiesbaden, Darmstadt, Kassel, Fulda, Offenbach, Hanau
-              </strong>{' '}
-              sowie in Mittelhessen rund um <strong>Wetzlar, Gießen und Marburg</strong> stehen im
-              ständigen Wettbewerb. Wer Interessenten mit einem hochmodernen digitalen Showroom,
-              sofortiger Fahrzeugverfügbarkeit und einer unkomplizierten Probefahrt-Terminierung
-              empfängt, schließt Kaufverträge ab, bevor der Kunde auf externe Börsen abwandert.
+              Fahrzeughändler in den Wirtschaftszentren Frankfurt am Main, Wiesbaden, Darmstadt,
+              Kassel, Fulda, Offenbach, Hanau sowie in Mittelhessen rund um Wetzlar, Gießen und
+              Marburg stehen im ständigen Wettbewerb. Wer Interessenten mit einem hochmodernen
+              digitalen Showroom, sofortiger Fahrzeugverfügbarkeit und einer unkomplizierten
+              Probefahrt-Terminierung empfängt, schließt Kaufverträge ab, bevor der Kunde auf
+              externe Börsen abwandert.
             </p>
           </div>
 

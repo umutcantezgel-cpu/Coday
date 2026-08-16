@@ -45,7 +45,7 @@ export async function generateMetadata({
     return generatePageMetadata({
       title: 'Web Design Wetterau District | Web Agency & SEO · Coday',
       description:
-        'Web development & SEO for the Wetterau district. High-performance Next.js websites for Friedberg, Bad Nauheim, Butzbach & Karben. Fixed prices on request.',
+        'Web design for Wetterau district: Next.js websites for Friedberg, Bad Nauheim, Butzbach & Karben. Fixed price quotes on request.',
       path: '/en/regionen/wetteraukreis',
       type: 'money',
     });
@@ -53,7 +53,7 @@ export async function generateMetadata({
   return generatePageMetadata({
     title: 'Webdesign Wetteraukreis | Webagentur & SEO · Coday',
     description:
-      'Webentwicklung & SEO für den Wetteraukreis. Performante Next.js Websites für Friedberg, Bad Nauheim, Butzbach & Karben. Verbindliche Festpreise auf Anfrage.',
+      'Webdesign für den Wetteraukreis: Next.js Websites für Friedberg, Bad Nauheim, Butzbach & Karben. Verbindliche Festpreise auf Anfrage.',
     path: '/de/regionen/wetteraukreis',
     type: 'money',
   });

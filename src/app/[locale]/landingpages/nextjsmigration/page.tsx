@@ -39,7 +39,7 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Next.js Migration Service | WordPress to Next.js · Coday',
+      title: 'WordPress to Next.js Migration Agency | Coday',
       description:
         'Migrate your website from WordPress to Next.js 15. 10x faster load times, 100% security & seamless SEO relaunch without ranking loss.',
       path: '/en/landingpages/nextjsmigration',
@@ -47,7 +47,7 @@ export async function generateMetadata({
     });
   }
   return generatePageMetadata({
-    title: 'Next.js Migration Service | WordPress zu Next.js · Coday',
+    title: 'WordPress zu Next.js Migration | Coday Webagentur',
     description:
       'Migrieren Sie Ihre Website von WordPress auf Next.js 15. 10x schnellere Ladezeiten, 100% Sicherheit & nahtloser SEO-Relaunch ohne Ranking-Verlust.',
     path: '/de/landingpages/nextjsmigration',

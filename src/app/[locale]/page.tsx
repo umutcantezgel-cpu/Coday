@@ -34,17 +34,17 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Coday Web Agency | High-End Web Design & Next.js Development',
+      title: 'Coday | High-End Web Design & Next.js Development',
       description:
-        'Tailored web design, ultra-fast Next.js web development & SEO for mid-market leaders. 100/100 PageSpeed, measurable B2B leads & fixed pricing.',
+        'Bespoke web design, ultra-fast Next.js development & SEO for businesses. 100/100 PageSpeed, measurable B2B leads & fixed pricing.',
       path: '/en',
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'Coday Webagentur | High-End Webdesign & Next.js Entwicklung',
+    title: 'Coday Webagentur | High-End Webdesign & Next.js',
     description:
-      'Maßgeschneidertes Webdesign, ultraschnelle Next.js Webentwicklung & SEO für den Mittelstand. 100/100 PageSpeed, messbare B2B-Leads & Festpreise.',
+      'Maßgeschneidertes Webdesign, Next.js Webentwicklung & SEO für den Mittelstand. 100/100 PageSpeed, messbare B2B-Leads & Festpreise.',
     path: '/de',
     type: 'money',
   });

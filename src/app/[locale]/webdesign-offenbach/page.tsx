@@ -42,7 +42,7 @@ export async function generateMetadata({
     return generatePageMetadata({
       title: 'Web Design Offenbach | High-End Next.js Agency · Coday',
       description:
-        'Modern web design & development in Offenbach am Main. Fast load times, high-impact UI/UX & SEO for creative sector & mid-market. Fixed price on request.',
+        'Web design in Offenbach am Main: Fast load times, high-impact UI/UX & SEO for businesses & mid-market. Fixed price on request.',
       path: '/en/webdesign-offenbach',
       type: 'money',
     });
@@ -50,7 +50,7 @@ export async function generateMetadata({
   return generatePageMetadata({
     title: 'Webdesign Offenbach | High-End Next.js Agentur · Coday',
     description:
-      'Modernes Webdesign & Webentwicklung in Offenbach am Main. Schnelle Ladezeiten, starkes UI/UX-Design & SEO für Kreative & Mittelstand. Festpreis auf Anfrage.',
+      'Webdesign in Offenbach am Main: Schnelle Ladezeiten, starkes UI/UX-Design & SEO für Dienstleister & Mittelstand. Festpreis auf Anfrage.',
     path: '/de/webdesign-offenbach',
     type: 'money',
   });

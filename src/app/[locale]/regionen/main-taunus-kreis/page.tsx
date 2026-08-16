@@ -44,7 +44,7 @@ export async function generateMetadata({
     return generatePageMetadata({
       title: 'Web Design Main-Taunus District | B2B Agency MTK · Coday',
       description:
-        'Web design & development in the Main-Taunus district. Next.js websites for Hofheim, Eschborn, Bad Soden & Kelkheim. Fast load times & fixed prices on request.',
+        'Web design in Main-Taunus district: Next.js websites for Hofheim, Eschborn, Bad Soden & Kelkheim. Fast load times & fixed pricing.',
       path: '/en/regionen/main-taunus-kreis',
       type: 'money',
     });
@@ -52,7 +52,7 @@ export async function generateMetadata({
   return generatePageMetadata({
     title: 'Webdesign Main-Taunus-Kreis | B2B Agentur MTK · Coday',
     description:
-      'Webdesign & Webentwicklung im Main-Taunus-Kreis. Next.js Websites für Hofheim, Eschborn, Bad Soden & Kelkheim. Schnelle Ladezeiten & Festpreise auf Anfrage.',
+      'Webdesign im Main-Taunus-Kreis: Next.js Websites für Hofheim, Eschborn, Bad Soden & Kelkheim. Schnelle Ladezeiten & feste Preise.',
     path: '/de/regionen/main-taunus-kreis',
     type: 'money',
   });

@@ -64,9 +64,9 @@
     }
   },
   "trust": {
-    "facebook": "Facebook Business",
-    "google": "Google Partners",
-    "shopify": "Shopify Experts"
+    "speed": "100/100 Core Web Vitals",
+    "security": "100% GDPR Compliant",
+    "ownership": "100% Code Ownership"
   },
   "testimonial": {
     "text": "Professional implementation with direct access to the developer. This is how web development should work.",

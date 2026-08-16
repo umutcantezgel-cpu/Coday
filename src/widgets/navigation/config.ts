@@ -301,8 +301,8 @@ export const getNavItems = (): NavItem[] => [
         links: [
           { label: 'nav.industries.other.overview', href: '/branchen' },
           { label: 'nav.industries.automotive.overview', href: '/branchen/automobil' },
-          { label: 'nav.industries.healthcare.overview', href: '/branchen/gesundheitswesen' },
-          { label: 'nav.industries.crafts.overview', href: '/branchen/handwerker' },
+          { label: 'nav.industries.healthcare.overview', href: '/branchen/aerzte-gesundheit' },
+          { label: 'nav.industries.crafts.overview', href: '/branchen/handwerk-bau' },
           { label: 'nav.industries.other.real_estate_agent', href: '/branchen/immobilien' },
           { label: 'nav.industries.other.gastronomy_hotel', href: '/branchen/gastronomie' },
           { label: 'nav.industries.other.consulting', href: '/branchen/unternehmensberatung' },

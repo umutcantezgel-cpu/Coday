@@ -246,7 +246,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-3.5">
               {[
                 {
-                  href: '/branchen/gesundheitswesen',
+                  href: '/branchen/aerzte-gesundheit',
                   label: t('nav.industries.healthcare.title', { defaultValue: 'Gesundheitswesen' }),
                 },
                 {
@@ -254,7 +254,7 @@ export const Footer: React.FC = () => {
                   label: t('nav.industries.other.lawyers', { defaultValue: 'Kanzleien & Anwälte' }),
                 },
                 {
-                  href: '/branchen/handwerker',
+                  href: '/branchen/handwerk-bau',
                   label: t('nav.industries.crafts.title', { defaultValue: 'Handwerk & Bau' }),
                 },
                 {

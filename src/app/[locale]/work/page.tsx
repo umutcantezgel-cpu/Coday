@@ -28,17 +28,17 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Portfolio & Case Studies | Real Web Design References – Coday',
+      title: 'Web Design Case Studies & Portfolio | Coday',
       description:
-        'Explore real client projects by Coday Web Agency. Next.js websites, 100/100 Core Web Vitals & measurable conversion growth for mid-market businesses.',
+        'Real client projects by Coday: Next.js websites, 100/100 Core Web Vitals and measurable B2B conversion growth for businesses.',
       path: '/en/work',
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'Portfolio & Case Studies | Reale Webdesign Referenzen – Coday',
+    title: 'Webdesign Referenzen & Case Studies | Coday',
     description:
-      'Entdecken Sie erfolgreiche Kundenprojekte von Coday. Next.js Webseiten, 100/100 Core Web Vitals & messbare Conversion-Steigerungen im Mittelstand.',
+      'Echte Kundenprojekte von Coday: Next.js Websites, 100/100 Core Web Vitals und messbare Conversion-Steigerungen für Unternehmen.',
     path: '/de/work',
     type: 'money',
   });
@@ -214,7 +214,11 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
                         href={`/work/${project.slug}`}
                         className="inline-flex items-center gap-2 text-amber-700 font-bold text-sm hover:text-amber-800 transition-colors group-hover:translate-x-1 duration-200"
                       >
-                        <span>Case Study analysieren</span>
+                        <span>
+                          {isEn
+                            ? `Analyze ${content.title} Case Study`
+                            : `Case Study ${content.title} analysieren`}
+                        </span>
                         <ArrowRight weight="bold" className="w-4 h-4" />
                       </Link>
                       {project.liveUrl && (

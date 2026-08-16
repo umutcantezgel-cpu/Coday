@@ -32,17 +32,17 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Design for Craftsmen & Construction | 60s Recruiting – Coday',
+      title: 'Web Design for Crafts & Construction | Coday',
       description:
-        'Custom web design for craft & construction businesses. 60-second mobile recruiting for journeymen & master craftsmen, qualified leads and 100/100 PageSpeed.',
+        'Custom web design for craft and construction businesses: 60-second recruiting for skilled workers, high-value leads and 100/100 PageSpeed.',
       path: '/en/branchen/handwerk-bau',
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'Webdesign für Handwerk & Bau | 60s Recruiting – Coday',
+    title: 'Webdesign für Handwerk & Bau | Coday',
     description:
-      'Maßgeschneidertes Webdesign für Handwerks- & Baubetriebe. 60-Sekunden Express-Recruiting für Gesellen & Meister, planbare B2B-Aufträge und 100/100 PageSpeed.',
+      'Webdesign für Handwerks- und Baubetriebe: 60-Sekunden Express-Recruiting für Gesellen und Meister, planbare Aufträge und 100/100 PageSpeed.',
     path: '/de/branchen/handwerk-bau',
     type: 'money',
   });
@@ -305,7 +305,9 @@ export default async function HandwerkBauPage({ params }: { params: Promise<{ lo
                 href="/work/memobaut"
                 className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-700 hover:text-amber-800 transition-colors"
               >
-                <span>Zur Case Study</span>
+                <span>
+                  {isEn ? 'MemoBau Case Study & Results' : 'Case Study MemoBau & Ergebnisse'}
+                </span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
@@ -325,7 +327,9 @@ export default async function HandwerkBauPage({ params }: { params: Promise<{ lo
                 href="/work/batherm"
                 className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-700 hover:text-amber-800 transition-colors"
               >
-                <span>Zur detaillierten Case Study</span>
+                <span>
+                  {isEn ? 'Detaillierte Batherm Case Study' : 'Detaillierte Batherm Case Study'}
+                </span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
@@ -346,7 +350,11 @@ export default async function HandwerkBauPage({ params }: { params: Promise<{ lo
                 href="/work/schluesseldienst-wetzlar"
                 className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-700 hover:text-amber-800 transition-colors"
               >
-                <span>Zur detaillierten Case Study</span>
+                <span>
+                  {isEn
+                    ? 'MS Schlüsseldienst Wetzlar Case Study'
+                    : 'Detaillierte Schlüsseldienst Case Study'}
+                </span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>

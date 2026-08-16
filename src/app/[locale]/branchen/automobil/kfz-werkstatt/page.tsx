@@ -543,15 +543,13 @@ export default async function KfzWerkstattPage({
             </h2>
             <p className="text-slate-600 leading-relaxed text-base">
               Hessen ist eines der am stärksten befahrenen Bundesländer Deutschlands. Über die
-              Autobahnachsen <strong>A3, A5, A7, A45 und A66</strong> bewegen sich täglich Millionen
-              Pendler und Firmenfahrzeuge. Freie Werkstätten und Karosseriebetriebe in{' '}
-              <strong>
-                Wetzlar, Gießen, Frankfurt, Wiesbaden, Darmstadt, Kassel, Fulda und Limburg
-              </strong>{' '}
-              profitieren enorm von digitaler Sichtbarkeit: Wenn Autofahrer nach einer Inspektion
-              nach Herstellervorgabe, einer schnellen Unfallinstandsetzung oder einem zuverlässigen
-              Reifenwechsel suchen, entscheidet die Geschwindigkeit und Professionalität Ihrer
-              Website über die Terminbuchung.
+              Autobahnachsen A3, A5, A7, A45 und A66 bewegen sich täglich Millionen Pendler und
+              Firmenfahrzeuge. Freie Werkstätten und Karosseriebetriebe in Wetzlar, Gießen,
+              Frankfurt, Wiesbaden, Darmstadt, Kassel, Fulda und Limburg profitieren enorm von
+              digitaler Sichtbarkeit: Wenn Autofahrer nach einer Inspektion nach Herstellervorgabe,
+              einer schnellen Unfallinstandsetzung oder einem zuverlässigen Reifenwechsel suchen,
+              entscheidet die Geschwindigkeit und Professionalität Ihrer Website über die
+              Terminbuchung.
             </p>
           </div>
 

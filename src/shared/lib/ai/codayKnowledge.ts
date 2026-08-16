@@ -164,7 +164,7 @@ export const CODAY_KNOWLEDGE_BASE = {
     handwerk: {
       name: 'Handwerk & Bau',
       description: 'Digitale Mitarbeitergewinnung und Projekt-Showcases.',
-      url: '/branchen/handwerker',
+      url: '/branchen/handwerk-bau',
     },
     immobilien: {
       name: 'Immobilien',
@@ -184,7 +184,7 @@ export const CODAY_KNOWLEDGE_BASE = {
     gesundheit: {
       name: 'Gesundheit',
       description: 'Vertrauenswürdige Webauftritte für medizinische Einrichtungen.',
-      url: '/branchen/gesundheitswesen',
+      url: '/branchen/aerzte-gesundheit',
     },
   },
 

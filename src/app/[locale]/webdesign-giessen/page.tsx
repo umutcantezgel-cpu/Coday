@@ -41,7 +41,7 @@ export async function generateMetadata({
     return generatePageMetadata({
       title: 'Web Design Giessen | Next.js Agency & SEO · Coday',
       description:
-        'Modern web development & web design in Giessen. Sub-500ms load times, measurable new clients & fixed pricing on request for practices, startups & mid-market.',
+        'High-end web design in Giessen. Sub-500ms load times, measurable new clients & fixed pricing for practices & mid-market companies.',
       path: '/en/webdesign-giessen',
       type: 'money',
     });
@@ -49,7 +49,7 @@ export async function generateMetadata({
   return generatePageMetadata({
     title: 'Webdesign Gießen | Next.js Webagentur & SEO · Coday',
     description:
-      'Moderne Webentwicklung & Webdesign für Gießen. Ultra-schnelle Ladezeiten, messbare Neukunden & Festpreise auf Anfrage für Praxen, Startups & Mittelstand.',
+      'Webdesign für Gießen: Ultraschnelle Ladezeiten, messbare Neukunden & transparente Festpreise für Praxen, Startups & Mittelstand.',
     path: '/de/webdesign-giessen',
     type: 'money',
   });

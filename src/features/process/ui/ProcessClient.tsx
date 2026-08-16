@@ -276,6 +276,71 @@ export const ProcessClient: React.FC = () => {
         </div>
       </section>
 
+      {/* Quality Assurance & Technical Launch Standards */}
+      <section className="py-24 bg-white border-t border-slate-200 w-full">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-amber-700 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+              {isEn ? 'Quality Assurance & Standards' : 'Qualitätssicherung & Standards'}
+            </span>
+            <h2 className="font-display font-bold text-3xl sm:text-4xl text-slate-900 mt-2 mb-4">
+              {isEn
+                ? 'Engineering Rigor: How We Ensure 100/100 Quality'
+                : 'Ingenieurmäßige Präzision: Wie wir 100/100 Qualität sichern'}
+            </h2>
+            <p className="text-slate-600 text-base sm:text-lg">
+              {isEn
+                ? 'Every line of code undergoes strict automated and manual quality checks before deployment.'
+                : 'Jede Codezeile durchläuft vor dem Go-Live strenge automatisierte und manuelle Prüfprozesse.'}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="p-8 rounded-2xl bg-slate-50/80 border border-slate-200 shadow-sm">
+              <div className="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center text-amber-600 mb-6 border border-amber-200/50">
+                <ShieldCheck className="w-6 h-6" />
+              </div>
+              <h3 className="font-display font-bold text-xl text-slate-900 mb-3">
+                {isEn ? 'Automated CI/CD Gates' : 'Automatisierte CI/CD Gates'}
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                {isEn
+                  ? 'TypeScript strict mode, automated accessibility audits (axe-core), and Lighthouse CI run on every commit to prevent performance regressions.'
+                  : 'TypeScript Strict Mode, automatisierte Barrierefreiheits-Tests (axe-core) und Lighthouse CI stellen sicher, dass keine Performance-Regressionen entstehen.'}
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-slate-50/80 border border-slate-200 shadow-sm">
+              <div className="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center text-amber-600 mb-6 border border-amber-200/50">
+                <Clock className="w-6 h-6" />
+              </div>
+              <h3 className="font-display font-bold text-xl text-slate-900 mb-3">
+                {isEn ? 'Zero-Downtime Migration' : 'Zero-Downtime Migration'}
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                {isEn
+                  ? 'Seamless DNS cutover with continuous availability. All legacy URLs are mapped 1:1 with 301 redirects to protect existing search engine rankings.'
+                  : 'Nahtloser DNS-Switch ohne Ausfallzeiten. Alle bisherigen URLs werden per 1:1 301-Redirect-Map übernommen, um gewonnene Google-Rankings vollständig zu sichern.'}
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-slate-50/80 border border-slate-200 shadow-sm">
+              <div className="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center text-amber-600 mb-6 border border-amber-200/50">
+                <CheckCircle className="w-6 h-6" />
+              </div>
+              <h3 className="font-display font-bold text-xl text-slate-900 mb-3">
+                {isEn ? 'Full Ownership Handoff' : 'Vollständige Code-Übergabe'}
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                {isEn
+                  ? 'You receive 100% source code ownership and access to your Git repository. No vendor lock-in, no hidden proprietary licenses.'
+                  : 'Sie erhalten 100% Eigentum am Quellcode und Zugriff auf Ihr GitHub-Repository. Keine Lizenzfallen, kein Vendor-Lock-in, volle unternehmerische Unabhängigkeit.'}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="py-24 px-4 bg-slate-50/80 border-t border-slate-200 w-full text-center">
         <div className="max-w-4xl mx-auto">

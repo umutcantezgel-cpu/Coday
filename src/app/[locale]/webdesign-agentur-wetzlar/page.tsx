@@ -40,7 +40,7 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Design Agency Wetzlar | High-End Websites & SEO · Coday',
+      title: 'Web Design Agency Wetzlar | High-End Websites · Coday',
       description:
         'Your local web agency in Wetzlar. Next.js 15, <0.5s load time & measurable B2B leads for mid-market, optics & craft enterprises. Fixed price on request.',
       path: '/en/webdesign-agentur-wetzlar',
@@ -48,7 +48,7 @@ export async function generateMetadata({
     });
   }
   return generatePageMetadata({
-    title: 'Webdesign Agentur Wetzlar | High-End Websites & SEO · Coday',
+    title: 'Webdesign Agentur Wetzlar | High-End Websites · Coday',
     description:
       'Ihre lokale Webagentur in Wetzlar. Next.js 15, <0.5s Ladezeit & messbare B2B-Leads für Mittelstand, Optik & Handwerk. Verbindlicher Festpreis auf Anfrage.',
     path: '/de/webdesign-agentur-wetzlar',

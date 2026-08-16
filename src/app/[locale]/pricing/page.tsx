@@ -16,7 +16,7 @@ export async function generateMetadata({
     return generatePageMetadata({
       title: 'Web Design Pricing & Custom Quotes | Coday Web Agency',
       description:
-        'Custom fixed-price quotes for high-end web design & Next.js development. 5-10x more cost-effective than big agencies, 100/100 PageSpeed & full code ownership.',
+        'Fixed-price quotes for high-end web design & Next.js development. Ultra-fast load times, 100/100 PageSpeed and full code ownership.',
       path: '/en/pricing',
       type: 'money',
     });
@@ -24,7 +24,7 @@ export async function generateMetadata({
   return generatePageMetadata({
     title: 'Webdesign Preise & Angebote auf Anfrage | Coday Webagentur',
     description:
-      'Maßgeschneiderte Festpreise für High-End Webdesign & Next.js Entwicklung. 5-10x günstiger als Großagenturen, 100/100 PageSpeed & 100% Quellcode-Eigentum.',
+      'Verbindliche Festpreise für High-End Webdesign & Next.js Entwicklung. Schnelle Ladezeiten, 100/100 PageSpeed und 100% Code-Eigentum.',
     path: '/de/pricing',
     type: 'money',
   });

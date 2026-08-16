@@ -42,7 +42,7 @@ export async function generateMetadata({
     return generatePageMetadata({
       title: 'Web Design Bad Homburg | High-End Web Agency · Coday',
       description:
-        'Web design & development in Bad Homburg v. d. H. Elegant UX, maximum performance & discretion for family offices, clinics & B2B. Fixed price on request.',
+        'Web design in Bad Homburg: Elegant UX design, maximum performance & discretion for family offices, practices & B2B. Fixed price on request.',
       path: '/en/webdesign-bad-homburg',
       type: 'money',
     });
@@ -50,7 +50,7 @@ export async function generateMetadata({
   return generatePageMetadata({
     title: 'Webdesign Bad Homburg | High-End Webagentur · Coday',
     description:
-      'Webdesign & Webentwicklung in Bad Homburg v. d. H. Elegantes UX-Design, maximale Performance & Diskretion für Family Offices, Praxen & B2B. Festpreis auf Anfrage.',
+      'Webdesign in Bad Homburg: Elegantes UX-Design, maximale Performance & Diskretion für Family Offices, Praxen & B2B. Festpreis auf Anfrage.',
     path: '/de/webdesign-bad-homburg',
     type: 'money',
   });

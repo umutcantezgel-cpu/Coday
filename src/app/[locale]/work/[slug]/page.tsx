@@ -32,7 +32,7 @@ export async function generateMetadata(props: {
 
   return generatePageMetadata({
     title: `${content.title} – Case Study | Coday`,
-    description: description.length > 160 ? description.substring(0, 157) + '...' : description,
+    description: description.length > 140 ? description.substring(0, 137) + '...' : description,
     path: `/${locale}/work/${slug}`,
     type: 'default',
   });

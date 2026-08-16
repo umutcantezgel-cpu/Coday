@@ -40,7 +40,7 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Design Kassel | Next.js Agency & SEO North Hesse · Coday',
+      title: 'Web Design Kassel | Next.js Agency · Coday',
       description:
         'Web design & web development in Kassel. Next.js 15 platforms for industry, logistics & SME in North Hesse. Fixed prices on request.',
       path: '/en/webdesign-kassel',
@@ -48,7 +48,7 @@ export async function generateMetadata({
     });
   }
   return generatePageMetadata({
-    title: 'Webdesign Kassel | Next.js Agentur & SEO Nordhessen · Coday',
+    title: 'Webdesign Kassel | Next.js Agentur · Coday',
     description:
       'Webdesign & Webentwicklung in Kassel. Next.js 15 Plattformen für Industrie, Logistik & Mittelstand in Nordhessen. Verbindliche Festpreise auf Anfrage.',
     path: '/de/webdesign-kassel',

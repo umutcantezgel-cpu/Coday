@@ -15,17 +15,17 @@ export async function generateMetadata({
   setRequestLocale(locale);
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'About Coday | High-End Web Design & Next.js Architecture Wetzlar',
+      title: 'About Coday | Web Design & Next.js Agency Wetzlar',
       description:
-        'Meet Coday and founder Umutcan Emre Tezgel. Bespoke web development, high-end UI/UX design & 100/100 Core Web Vitals without middlemen.',
+        'Coday & founder Umutcan Emre Tezgel: High-end web development, Next.js architecture and 100/100 Core Web Vitals directly from Wetzlar.',
       path: '/en/about',
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'Über Coday | High-End Webdesign & Next.js Architektur Wetzlar',
+    title: 'Über Coday | Webdesign & Next.js Agentur Wetzlar',
     description:
-      'Lernen Sie Coday und Gründer Umutcan Emre Tezgel kennen. Individuelle Webentwicklung, High-End UI/UX Design & 100/100 Core Web Vitals ohne Umwege.',
+      'Coday & Inhaber Umutcan Emre Tezgel: High-End Webentwicklung, Next.js Architektur und 100/100 Core Web Vitals direkt aus Wetzlar.',
     path: '/de/about',
     type: 'money',
   });

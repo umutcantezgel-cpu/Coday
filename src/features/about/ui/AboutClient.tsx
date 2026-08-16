@@ -216,8 +216,8 @@ export const AboutClient: React.FC = () => {
             {...stagger(0.25)}
           >
             {isEn
-              ? 'Coday is an independent web agency based in Wetzlar, Germany. We replace sluggish WordPress templates with ultra-fast, bespoke Next.js architectures — delivering 100/100 Core Web Vitals, enterprise security, and measurable B2B conversions.'
-              : 'Coday ist eine inhabergeführte Webagentur mit Sitz in Wetzlar. Wir ersetzen langsame WordPress-Themes durch ultraschnelle, maßgeschneiderte Next.js Architekturen — mit 100/100 Core Web Vitals, Enterprise-Sicherheit und planbaren B2B-Leads.'}
+              ? 'Coday is an independent agency for high-end web design and Next.js development based in Wetzlar, Germany. We replace sluggish WordPress templates with ultra-fast, bespoke Next.js architectures — delivering 100/100 Core Web Vitals, enterprise security, and measurable B2B conversions.'
+              : 'Coday ist Ihre inhabergeführte Agentur für High-End Webdesign und Next.js Webentwicklung mit Sitz in Wetzlar. Wir ersetzen langsame WordPress-Themes durch ultraschnelle, maßgeschneiderte Next.js Architekturen — mit 100/100 Core Web Vitals, Enterprise-Sicherheit und planbaren B2B-Leads.'}
           </m.p>
 
           <m.div className="flex flex-col sm:flex-row justify-center gap-4" {...stagger(0.35)}>

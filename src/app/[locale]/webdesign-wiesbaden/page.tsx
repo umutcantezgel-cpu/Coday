@@ -41,7 +41,7 @@ export async function generateMetadata({
     return generatePageMetadata({
       title: 'Web Design Wiesbaden | Premium Web Agency & SEO · Coday',
       description:
-        'Excellent web design & Next.js development in Wiesbaden. Fast load times, prestigious aesthetics & SEO for law firms, practices & consultants. Fixed price on request.',
+        'Premium web design in Wiesbaden: Fast load times, prestigious UI/UX design & SEO for law firms, practices & consultants. Fixed price.',
       path: '/en/webdesign-wiesbaden',
       type: 'money',
     });
@@ -49,7 +49,7 @@ export async function generateMetadata({
   return generatePageMetadata({
     title: 'Webdesign Wiesbaden | Premium Webagentur & SEO · Coday',
     description:
-      'Exzellentes Webdesign & Next.js Entwicklung in Wiesbaden. Schnelle Ladezeiten, seriöse Ästhetik & SEO für Kanzleien, Praxen & Berater. Festpreis auf Anfrage.',
+      'Webdesign in Wiesbaden: Schnelle Ladezeiten, seriöse Ästhetik & starkes SEO für Kanzleien, Praxen & Berater. Festpreis auf Anfrage.',
     path: '/de/webdesign-wiesbaden',
     type: 'money',
   });
