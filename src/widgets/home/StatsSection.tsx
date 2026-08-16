@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
-import dynamic from 'next/dynamic';
 import CountUp from '@/shared/ui/CountUp';
 import { FadeInUp } from '@/shared/ui/MotionWrappers';
 

@@ -3,7 +3,6 @@ import { useTranslations } from 'next-intl';
 
 import BlurText from '@/shared/ui/BlurText';
 import { TestimonialBlock } from '@/shared/ui/TestimonialBlock';
-import dynamic from 'next/dynamic';
 import { FadeInUp } from '@/shared/ui/MotionWrappers';
 
 export const TestimonialsSection: React.FC = () => {
@@ -43,7 +42,7 @@ export const TestimonialsSection: React.FC = () => {
             />{' '}
             <span className="text-primary">{t('testimonials.title_suffix')}</span>
           </h2>
-          <p className="text-xl text-slate-600 font-light">{t('testimonials.text')}</p>
+          <p className="text-xl text-slate-700 font-light">{t('testimonials.text')}</p>
         </div>
 
         {Array.isArray(testimonials) && testimonials.length > 0 && (

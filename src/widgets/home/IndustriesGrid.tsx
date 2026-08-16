@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
-import dynamic from 'next/dynamic';
 import { FadeInUp } from '@/shared/ui/MotionWrappers';
 import {
   Barricade as Construction,
@@ -93,7 +92,7 @@ export const IndustriesGrid: React.FC = () => {
                       {t(`industries.card_${ind.id}.title`)}
                     </Link>
                   </h3>
-                  <p className="text-sm text-slate-600 relative z-40">
+                  <p className="text-sm text-slate-700 relative z-40">
                     {t(`industries.card_${ind.id}.desc`)}
                   </p>
                 </BentoCard>

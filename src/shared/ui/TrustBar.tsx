@@ -11,7 +11,7 @@ export const TrustBar: React.FC = () => {
       {/* Background Blur Effect */}
       <div className="absolute inset-0 bg-white/40 backdrop-blur-sm z-0"></div>
       <div className="w-full text-center relative z-10">
-        <p className="text-sm font-semibold text-gray-600 uppercase tracking-wider mb-8">
+        <p className="text-sm font-bold text-slate-700 uppercase tracking-wider mb-8">
           {t('generic_detail.trust.title')}
         </p>
         <LogoLoop logos={clientLogos} speed={30} logoHeight={48} gap={64} pauseOnHover={true} />

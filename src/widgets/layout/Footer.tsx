@@ -114,7 +114,7 @@ export const Footer: React.FC = () => {
         <div className="mb-24 opacity-75 hover:opacity-100 transition-opacity duration-500 relative">
           <div className="absolute top-1/2 left-0 w-1/4 h-px bg-gradient-to-r from-transparent to-slate-300" />
           <div className="absolute top-1/2 right-0 w-1/4 h-px bg-gradient-to-l from-transparent to-slate-300" />
-          <p className="text-center text-xs font-bold uppercase tracking-[0.2em] text-slate-500 mb-8 bg-slate-50 inline-block px-4 relative z-10 left-1/2 -translate-x-1/2">
+          <p className="text-center text-xs font-bold uppercase tracking-[0.2em] text-slate-700 mb-8 bg-slate-50 inline-block px-4 relative z-10 left-1/2 -translate-x-1/2">
             {t('logobar.title', { defaultValue: 'Vertrauen schenken uns' })}
           </p>
           <LogoLoop logos={clientLogos} speed={30} logoHeight={24} gap={64} />
@@ -317,7 +317,7 @@ export const Footer: React.FC = () => {
                   +49 176 41195301
                 </a>
               </li>
-              <li className="pt-3 text-slate-500 text-xs leading-relaxed border-t border-slate-200 mt-4">
+              <li className="pt-3 text-slate-700 text-xs leading-relaxed border-t border-slate-200 mt-4">
                 Umutcan Emre Tezgel (Coday)
                 <br />
                 Lessingstraße 4<br />
@@ -328,7 +328,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Trust Badges - elegant & minimal */}
-        <div className="flex justify-center mb-12 opacity-80 hover:opacity-100 transition-all duration-300">
+        <div className="flex justify-center mb-12 opacity-90 hover:opacity-100 transition-all duration-300">
           <TrustBadges align="center" />
         </div>
 
@@ -371,7 +371,7 @@ export const Footer: React.FC = () => {
               >
                 <OptimizedIcon
                   icon={social.icon}
-                  className="text-slate-600 group-hover:text-current transition-colors w-5 h-5"
+                  className="text-slate-700 group-hover:text-current transition-colors w-5 h-5"
                 />
               </a>
             ))}
@@ -379,7 +379,7 @@ export const Footer: React.FC = () => {
 
           <nav
             aria-label={t('footer.legalInfo', { defaultValue: 'Rechtliche Informationen' })}
-            className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs font-medium text-slate-500"
+            className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs font-medium text-slate-700"
           >
             {[
               { href: '/uebersicht', label: 'Sitemap' },
@@ -399,7 +399,7 @@ export const Footer: React.FC = () => {
                 <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-slate-900 transition-all duration-200 group-hover:w-full"></span>
               </Link>
             ))}
-            <span className="text-slate-600 font-medium ml-2">
+            <span className="text-slate-700 font-medium ml-2">
               {t('footer.rights', { year: new Date().getFullYear() })}
             </span>
           </nav>

@@ -89,14 +89,12 @@ const CardNav: React.FC<CardNavProps> = ({
       opacity: 0,
       y: -10,
       scale: 0.95,
-      filter: 'blur(10px)',
       transition: { duration: 0.2 },
     },
     visible: {
       opacity: 1,
       y: 12, // Gap between pill and dropdown
       scale: 1,
-      filter: 'blur(0px)',
       transition: {
         type: 'spring' as const,
         stiffness: 400,
@@ -107,7 +105,6 @@ const CardNav: React.FC<CardNavProps> = ({
       opacity: 0,
       y: -10,
       scale: 0.95,
-      filter: 'blur(10px)',
       transition: { duration: 0.15 },
     },
   };

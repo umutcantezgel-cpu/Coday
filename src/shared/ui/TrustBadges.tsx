@@ -25,7 +25,7 @@ const DEFAULT_BADGES: TrustBadge[] = [
     icon: CheckCircle, // or Lightning/Rocket if preferred
     title: 'Vercel Edge Network',
     description: 'Global verteilt für maximale Geschwindigkeit',
-    color: 'text-black dark:text-white',
+    color: 'text-slate-900',
   },
 ];
 
@@ -75,11 +75,13 @@ export const TrustBadges: React.FC<TrustBadgesProps> = ({
               <div className="font-bold text-slate-900 text-sm md:text-base text-center">
                 {badge.title}
               </div>
-              <div className="text-xs text-slate-600 text-center mt-1">{badge.description}</div>
+              <div className="text-xs text-slate-800 font-medium text-center mt-1">
+                {badge.description}
+              </div>
             </>
           );
 
-          const wrapperClass = `group flex flex-col items-center p-4 rounded-xl hover:bg-surface-light/50 transition-colors motion-reduce:duration-[0.01ms] duration-300 w-full h-full`;
+          const wrapperClass = `group flex flex-col items-center p-4 rounded-xl hover:bg-slate-100/80 transition-colors motion-reduce:duration-[0.01ms] duration-300 w-full h-full`;
 
           return (
             <FadeInUp key={badge.id} delay={index * 0.1}>

@@ -194,7 +194,7 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
                             item.groups.map((group, groupIdx) => (
                               <div key={groupIdx} className="mb-6 last:mb-2">
                                 {item.groups!.length > 1 && (
-                                  <h4 className="text-xs uppercase tracking-wider text-slate-500 font-bold mb-3 pl-2 border-l-2 border-primary-600">
+                                  <h4 className="text-xs uppercase tracking-wider text-slate-700 font-bold mb-3 pl-2 border-l-2 border-primary-600">
                                     {t(group.title)}
                                   </h4>
                                 )}
@@ -231,7 +231,7 @@ export const MobileNavOverlay: React.FC<MobileNavOverlayProps> = ({ items, isOpe
                                         </span>
                                         {link.desc && (
                                           <span
-                                            className="text-xs text-slate-600 line-clamp-1"
+                                            className="text-xs text-slate-700 line-clamp-1 font-medium"
                                             aria-hidden="true"
                                           >
                                             {t(link.desc)}

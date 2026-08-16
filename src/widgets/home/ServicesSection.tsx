@@ -4,7 +4,6 @@ import { Link } from '@/i18n/navigation';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import BlurText from '@/shared/ui/BlurText';
 import { MagicBento, BentoCard } from '@/shared/ui/MagicBento';
-import dynamic from 'next/dynamic';
 import { FadeInUp } from '@/shared/ui/MotionWrappers';
 import { Code, Palette, RocketLaunch, ArrowRight } from '@phosphor-icons/react/dist/ssr';
 
@@ -98,7 +97,7 @@ export const ServicesSection: React.FC = () => {
                         {t(`services.items.${service.id}.title`, { defaultValue: service.id })}
                       </Link>
                     </p>
-                    <p className="text-base text-slate-600 mb-8 leading-[1.618] relative z-40">
+                    <p className="text-base text-slate-700 mb-8 leading-[1.618] relative z-40">
                       {t(`services.items.${service.id}.description`, {
                         defaultValue: 'Beschreibung',
                       })}

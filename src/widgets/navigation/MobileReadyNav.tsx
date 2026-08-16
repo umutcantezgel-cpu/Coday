@@ -193,10 +193,10 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
 
               {/* Focused Dropdown */}
               <div
-                className={`nav-dropdown absolute left-1/2 -translate-x-1/2 transition motion-reduce:duration-[0.01ms] duration-300 ease-out origin-top ${
+                className={`nav-dropdown absolute left-1/2 -translate-x-1/2 transition-[opacity,transform] motion-reduce:duration-[0.01ms] duration-300 ease-out will-change-[opacity,transform] transform-gpu origin-top ${
                   activeCategory === item.label
-                    ? 'opacity-100 translate-y-0 scale-100 blur-none pointer-events-auto'
-                    : 'opacity-0 -translate-y-2 scale-95 blur-sm pointer-events-none'
+                    ? 'opacity-100 translate-y-0 scale-100 pointer-events-auto'
+                    : 'opacity-0 -translate-y-2 scale-95 pointer-events-none'
                 }`}
                 style={
                   {

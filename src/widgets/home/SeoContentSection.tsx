@@ -19,7 +19,7 @@ export const SeoContentSection: React.FC = () => {
           >
             Maßgeschneidertes Webdesign & Next.js Entwicklung für den Mittelstand
           </h2>
-          <p className="text-slate-600 text-base sm:text-lg">
+          <p className="text-slate-700 text-base sm:text-lg">
             Coday ist Ihre inhabergeführte Webagentur mit Headquarter in Wetzlar und digitaler
             Reichweite in ganz Hessen & Deutschland.
           </p>
@@ -31,7 +31,7 @@ export const SeoContentSection: React.FC = () => {
               <Lightning className="w-6 h-6" />
             </div>
             <h3 className="text-xl font-bold text-slate-900 mb-3">100/100 Core Web Vitals</h3>
-            <p className="text-slate-600 text-sm leading-relaxed">
+            <p className="text-slate-700 text-sm leading-relaxed">
               Jede Zeile Code wird manuell für maximale Ladezeit optimiert. Vorkompilierte Next.js
               Seiten laden in unter 0,3 Sekunden auf mobilen Endgeräten.
             </p>
@@ -42,7 +42,7 @@ export const SeoContentSection: React.FC = () => {
               <ShieldCheck className="w-6 h-6" />
             </div>
             <h3 className="text-xl font-bold text-slate-900 mb-3">Zero Attack Surface</h3>
-            <p className="text-slate-600 text-sm leading-relaxed">
+            <p className="text-slate-700 text-sm leading-relaxed">
               Keine angreifbare MySQL-Datenbank oder veraltete PHP-Plugins. Unsere statische
               Edge-Architektur ist immun gegen gängige Angriffsvektoren.
             </p>
@@ -53,7 +53,7 @@ export const SeoContentSection: React.FC = () => {
               <CheckCircle className="w-6 h-6" />
             </div>
             <h3 className="text-xl font-bold text-slate-900 mb-3">Messbare B2B-Conversions</h3>
-            <p className="text-slate-600 text-sm leading-relaxed">
+            <p className="text-slate-700 text-sm leading-relaxed">
               Durchdachte User Experience, klare Handlungsaufforderungen und 60-Sekunden
               Express-Recruiting-Strecken für planbares Unternehmenswachstum.
             </p>

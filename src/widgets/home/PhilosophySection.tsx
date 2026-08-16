@@ -21,7 +21,7 @@ export const PhilosophySection: React.FC = () => {
               />{' '}
               <span className="text-primary">{t('philosophy.history')}</span>
             </h2>
-            <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
+            <div className="space-y-6 text-lg text-slate-700 leading-relaxed">
               <p>{t('philosophy.text_overhead')}</p>
               <p>
                 <strong className="text-secondary font-bold">{t('philosophy.standard')}</strong>{' '}

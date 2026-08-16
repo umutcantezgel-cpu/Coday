@@ -73,11 +73,11 @@ export const AgencyComparisonTable: React.FC = () => {
               <tr className="border-b border-slate-200 bg-slate-50/90">
                 <th
                   scope="col"
-                  className="py-5 px-6 text-xs font-bold text-slate-500 uppercase tracking-widest w-1/4"
+                  className="py-5 px-6 text-xs font-bold text-slate-700 uppercase tracking-widest w-1/4"
                 >
                   Leistungsmerkmal
                 </th>
-                <th scope="col" className="py-5 px-6 text-base font-bold text-slate-700 w-[37.5%]">
+                <th scope="col" className="py-5 px-6 text-base font-bold text-slate-800 w-[37.5%]">
                   Klassische WordPress-Agentur
                 </th>
                 <th
@@ -105,7 +105,7 @@ export const AgencyComparisonTable: React.FC = () => {
                   >
                     {row.metric}
                   </th>
-                  <td className="py-5 px-6 text-slate-600 text-sm align-middle">
+                  <td className="py-5 px-6 text-slate-700 text-sm align-middle">
                     <div className="flex items-start gap-3">
                       <X size={20} className="text-red-500 shrink-0 mt-0.5" />
                       <span>{row.traditional}</span>
@@ -131,21 +131,21 @@ export const AgencyComparisonTable: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
           <div className="p-6 rounded-xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
             <h3 className="text-amber-800 font-bold text-base mb-1">Kein Vendor-Lock-in</h3>
-            <p className="text-slate-600 text-xs sm:text-sm">
+            <p className="text-slate-700 text-xs sm:text-sm">
               Sie erhalten 100% Quellcode-Eigentum ohne monatliche Knebelverträge oder teure
               Lizenzabos.
             </p>
           </div>
           <div className="p-6 rounded-xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
             <h3 className="text-amber-800 font-bold text-base mb-1">Messbare B2B-Conversions</h3>
-            <p className="text-slate-600 text-xs sm:text-sm">
+            <p className="text-slate-700 text-xs sm:text-sm">
               60-Sekunden Express-Recruiting und optimierte Anfragestrecken verdoppeln die
               Lead-Quote.
             </p>
           </div>
           <div className="p-6 rounded-xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
             <h3 className="text-amber-800 font-bold text-base mb-1">100% Inhaber-Garantie</h3>
-            <p className="text-slate-600 text-xs sm:text-sm">
+            <p className="text-slate-700 text-xs sm:text-sm">
               Persönliche Projektleitung durch Umutcan Emre Tezgel — schnell, verbindlich und
               präzise.
             </p>

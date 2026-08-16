@@ -69,7 +69,7 @@ export const InteractivePhilosophyVisual: React.FC = () => {
             <div className="w-3 h-3 rounded-full bg-amber-400" />
             <div className="w-3 h-3 rounded-full bg-emerald-400" />
           </div>
-          <span className="text-xs font-mono text-slate-500 font-medium">
+          <span className="text-xs font-mono text-slate-700 font-semibold">
             performance.config.ts
           </span>
         </div>

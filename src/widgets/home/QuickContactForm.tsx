@@ -178,9 +178,11 @@ export const QuickContactForm: React.FC = () => {
                     <OptimizedIcon icon={User} className="w-5 h-5" />
                   </div>
                   <input
+                    id="quick-contact-name"
                     type="text"
                     {...register('name')}
                     placeholder={namePlaceholder}
+                    aria-label={namePlaceholder}
                     className="w-full pl-11 pr-4 py-3 bg-slate-50/80 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 focus:bg-white outline-none transition-colors placeholder:text-slate-400 text-slate-900 shadow-xs"
                     disabled={isSubmitting}
                   />
@@ -198,9 +200,11 @@ export const QuickContactForm: React.FC = () => {
                     <OptimizedIcon icon={Envelope} className="w-5 h-5" />
                   </div>
                   <input
+                    id="quick-contact-email"
                     type="email"
                     {...register('email')}
                     placeholder={emailPlaceholder}
+                    aria-label={emailPlaceholder}
                     className="w-full pl-11 pr-4 py-3 bg-slate-50/80 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 focus:bg-white outline-none transition-colors placeholder:text-slate-400 text-slate-900 shadow-xs"
                     disabled={isSubmitting}
                   />
@@ -218,9 +222,11 @@ export const QuickContactForm: React.FC = () => {
                     <OptimizedIcon icon={Phone} className="w-5 h-5" />
                   </div>
                   <input
+                    id="quick-contact-phone"
                     type="tel"
                     {...register('phone')}
                     placeholder={phonePlaceholder}
+                    aria-label={phonePlaceholder}
                     className="w-full pl-11 pr-4 py-3 bg-slate-50/80 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 focus:bg-white outline-none transition-colors placeholder:text-slate-400 text-slate-900 shadow-xs"
                     disabled={isSubmitting}
                   />
