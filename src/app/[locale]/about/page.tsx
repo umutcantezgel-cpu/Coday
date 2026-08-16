@@ -25,7 +25,7 @@ export async function generateMetadata({
   return generatePageMetadata({
     title: 'Über Coday | High-End Webdesign & Next.js Architektur Wetzlar',
     description:
-      'Lernen Sie Coday und Gründer Umutcan Emre Tezgel kennen. Maßgeschneiderte Webentwicklung, High-End UI/UX Design & 100/100 Core Web Vitals ohne Zwischenhändler.',
+      'Lernen Sie Coday und Gründer Umutcan Emre Tezgel kennen. Individuelle Webentwicklung, High-End UI/UX Design & 100/100 Core Web Vitals ohne Umwege.',
     path: '/de/about',
     type: 'money',
   });

@@ -1,11 +1,10 @@
-import WebdesignDillenburgPage, {
-  generateMetadata as dillenburgMetadata,
-} from '@/app/[locale]/webdesign-dillenburg/page';
+import { permanentRedirect } from 'next/navigation';
 
-export const dynamic = 'force-static';
-
-export async function generateMetadata(props: { params: Promise<{ locale: string }> }) {
-  return dillenburgMetadata(props);
+export default async function DillenburgLandingPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  permanentRedirect(`/${locale}/webdesign-dillenburg`);
 }
-
-export default WebdesignDillenburgPage;

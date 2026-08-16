@@ -38,7 +38,7 @@ export async function generateMetadata({
   return generatePageMetadata({
     title: 'Portfolio & Case Studies | Reale Webdesign Referenzen – Coday',
     description:
-      'Entdecken Sie erfolgreiche Kundenprojekte der Coday Webagentur. Next.js Webseiten, 100/100 Core Web Vitals & messbare Conversion-Steigerungen im Mittelstand.',
+      'Entdecken Sie erfolgreiche Kundenprojekte von Coday. Next.js Webseiten, 100/100 Core Web Vitals & messbare Conversion-Steigerungen im Mittelstand.',
     path: '/de/work',
     type: 'money',
   });

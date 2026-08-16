@@ -2,13 +2,7 @@ import React from 'react';
 import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
-import { industriesData } from '@/shared/data/industries';
-import { servicesData } from '@/shared/data/services';
-import fs from 'fs';
-import path from 'path';
-import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 
 export const dynamic = 'force-static';
 
@@ -20,87 +14,99 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Sitemap | Coday Web Design',
+      title: 'Sitemap & Overview of All Pages · Coday Web Design',
       description:
-        'Overview of all pages, services, industries, and locations of Coday Web Design.',
+        'Complete page directory and sitemap of Coday Web Design agency with all services, industry solutions, tools, and local landing pages.',
       path: '/en/uebersicht',
       type: 'default',
     });
   }
   return generatePageMetadata({
-    title: 'Sitemap | Coday Webdesign',
+    title: 'Übersicht aller Seiten & Standorte · Coday Webdesign',
     description:
-      'Übersicht aller Seiten, Leistungen, Branchen und Standorte der Coday Webdesign Agentur.',
+      'Vollständige Seitenübersicht der Coday Webdesign Agentur mit allen Leistungen, Branchenlösungen, Tools und Standorten in Hessen.',
     path: '/de/uebersicht',
     type: 'default',
   });
 }
 
+const localTowns = [
+  { href: '/webdesign-agentur-wetzlar', label: 'Webdesign Agentur Wetzlar' },
+  { href: '/webdesign-giessen', label: 'Webdesign Gießen' },
+  { href: '/webdesign-marburg', label: 'Webdesign Marburg' },
+  { href: '/webdesign-herborn', label: 'Webdesign Herborn' },
+  { href: '/webdesign-limburg', label: 'Webdesign Limburg' },
+  { href: '/webdesign-weilburg', label: 'Webdesign Weilburg' },
+  { href: '/webdesign-dillenburg', label: 'Webdesign Dillenburg' },
+  { href: '/webdesign-friedberg', label: 'Webdesign Friedberg' },
+  { href: '/webdesign-frankfurt', label: 'Webdesign Frankfurt am Main' },
+  { href: '/webdesign-wiesbaden', label: 'Webdesign Wiesbaden' },
+  { href: '/webdesign-darmstadt', label: 'Webdesign Darmstadt' },
+  { href: '/webdesign-kassel', label: 'Webdesign Kassel' },
+  { href: '/webdesign-offenbach', label: 'Webdesign Offenbach' },
+  { href: '/webdesign-hanau', label: 'Webdesign Hanau' },
+  { href: '/webdesign-fulda', label: 'Webdesign Fulda' },
+  { href: '/webdesign-bad-homburg', label: 'Webdesign Bad Homburg' },
+  { href: '/webdesign-oberursel', label: 'Webdesign Oberursel' },
+  { href: '/webdesign-bad-vilbel', label: 'Webdesign Bad Vilbel' },
+  { href: '/webdesign-hofheim', label: 'Webdesign Hofheim' },
+  { href: '/webdesign-ruesselsheim', label: 'Webdesign Rüsselsheim' },
+  { href: '/webdesign-bensheim', label: 'Webdesign Bensheim' },
+  { href: '/webdesign-rodgau', label: 'Webdesign Rodgau' },
+  { href: '/webdesign-dietzenbach', label: 'Webdesign Dietzenbach' },
+  { href: '/standorte/hessen', label: 'Webdesign Hessen Übersicht' },
+  { href: '/landingpages/nextjsmigration', label: 'Next.js Migration Service' },
+];
+
+const localDistricts = [
+  { href: '/regionen/landkreis-lahn-dill', label: 'Landkreis Lahn-Dill' },
+  { href: '/regionen/landkreis-giessen', label: 'Landkreis Gießen' },
+  { href: '/regionen/wetteraukreis', label: 'Wetteraukreis' },
+  { href: '/regionen/hochtaunuskreis', label: 'Hochtaunuskreis' },
+  { href: '/regionen/main-taunus-kreis', label: 'Main-Taunus-Kreis' },
+  { href: '/regionen/kreis-offenbach', label: 'Kreis Offenbach' },
+  { href: '/regionen/main-kinzig-kreis', label: 'Main-Kinzig-Kreis' },
+  { href: '/regionen/landkreis-marburg-biedenkopf', label: 'Landkreis Marburg-Biedenkopf' },
+  { href: '/regionen/landkreis-limburg-weilburg', label: 'Landkreis Limburg-Weilburg' },
+  { href: '/regionen/rheingau-taunus-kreis', label: 'Rheingau-Taunus-Kreis' },
+  { href: '/regionen/landkreis-darmstadt-dieburg', label: 'Landkreis Darmstadt-Dieburg' },
+  { href: '/regionen/landkreis-fulda', label: 'Landkreis Fulda' },
+  { href: '/regionen/landkreis-kassel', label: 'Landkreis Kassel' },
+];
+
 export default async function SitemapPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations({ locale, namespace: 'common' });
-
-  // Get local landing pages dynamically from the actual route folder
-  const landingPagesDir = path.join(process.cwd(), 'src', 'app', '[locale]', 'landingpages');
-  let landingPages: string[] = [];
-  try {
-    const files = fs.readdirSync(landingPagesDir, { withFileTypes: true });
-    landingPages = files
-      .filter((dirent) => dirent.isDirectory() && dirent.name !== 'giessen')
-      .map((dirent) => dirent.name);
-  } catch (e) {
-    console.error('Failed to read landingpages directory');
-  }
 
   return (
     <main className="bg-background-light min-h-dvh pt-32 pb-20">
-      <div className="container mx-auto px-4 max-w-4xl">
+      <div className="container mx-auto px-4 max-w-5xl">
         <h1 className="text-4xl md:text-5xl font-bold font-display text-secondary mb-12">
           {locale === 'en'
-            ? 'Coday Web Design Sitemap'
+            ? 'Coday Web Design Directory & Sitemap'
             : 'Sitemap & Seitenübersicht der Coday Agentur'}
         </h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {/* Main Pages */}
           <section>
-            <h2 className="text-2xl font-bold text-primary mb-4 border-b border-gray-200 pb-2">
+            <h2 className="text-xl font-bold text-primary mb-4 border-b border-gray-200 pb-2">
               {locale === 'en' ? 'Main Pages' : 'Hauptseiten'}
             </h2>
-            <ul className="space-y-2">
+            <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/" className="text-text-light hover:text-primary transition-colors">
-                  {locale === 'en' ? 'Home' : 'Startseite'}
+                  {locale === 'en' ? 'Startseite (Homepage)' : 'Startseite'}
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/contact"
+                  href="/about"
                   className="text-text-light hover:text-primary transition-colors"
                 >
-                  {locale === 'en' ? 'About' : 'Über uns'}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="text-text-light hover:text-primary transition-colors"
-                >
-                  {locale === 'en' ? 'Contact' : 'Kontakt'}
-                </Link>
-              </li>
-              <li>
-                <Link href="/work" className="text-text-light hover:text-primary transition-colors">
-                  Portfolio
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/pricing"
-                  className="text-text-light hover:text-primary transition-colors"
-                >
-                  {locale === 'en' ? 'Pricing' : 'Preise'}
+                  {locale === 'en'
+                    ? 'About Coday & Umutcan Tezgel'
+                    : 'Über Umutcan Emre Tezgel & Coday'}
                 </Link>
               </li>
               <li>
@@ -108,69 +114,248 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                   href="/process"
                   className="text-text-light hover:text-primary transition-colors"
                 >
-                  {locale === 'en' ? 'Process' : 'Prozess'}
+                  {locale === 'en' ? 'Development Process' : 'Entwicklungsprozess'}
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/branchen"
-                  locale="de"
+                  href="/pricing"
                   className="text-text-light hover:text-primary transition-colors"
                 >
-                  {locale === 'en' ? 'Industries Overview' : 'Branchenübersicht'}
+                  {locale === 'en' ? 'Pricing & Packages' : 'Preise & Pakete'}
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/services"
+                  href="/contact"
                   className="text-text-light hover:text-primary transition-colors"
                 >
-                  {locale === 'en' ? 'All Services' : 'Alle Leistungen'}
+                  {locale === 'en' ? 'Contact & Inquiry' : 'Kontakt & Projektanfrage'}
                 </Link>
               </li>
-              {locale === 'de' && (
-                <li>
-                  <Link
-                    href="/angebot-handwerker"
-                    locale="de"
-                    className="text-text-light hover:text-primary transition-colors"
-                  >
-                    Angebot für Handwerker
-                  </Link>
-                </li>
-              )}
+              <li>
+                <Link href="/work" className="text-text-light hover:text-primary transition-colors">
+                  {locale === 'en' ? 'References & Case Studies' : 'Referenzen & Case Studies'}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/work/hey-fede"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Case Study: Hey Fede
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/work/schluesseldienst-wetzlar"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Case Study: Schlüsseldienst Wetzlar
+                </Link>
+              </li>
             </ul>
           </section>
 
           {/* Services */}
           <section>
-            <h2 className="text-2xl font-bold text-primary mb-4 border-b border-gray-200 pb-2">
-              {locale === 'en' ? 'Our Services' : 'Unsere Leistungen'}
+            <h2 className="text-xl font-bold text-primary mb-4 border-b border-gray-200 pb-2">
+              {locale === 'en' ? 'Web Services' : 'Webdesign & Entwicklung'}
             </h2>
-            <ul className="space-y-2">
-              {Object.entries(servicesData).map(([category, categoryData]) => (
-                <React.Fragment key={category}>
-                  {Object.keys(categoryData as any).map((slug) => {
-                    let href = `/services/${category}/${slug}`;
-                    if (slug === 'design-systems') href = '/services/design/design-systems';
-                    if (slug === 'ux-ui-design') href = '/services/design/ui-ux';
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link
+                  href="/services"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  {locale === 'en' ? 'All Services Overview' : 'Alle Leistungen im Überblick'}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/web-design"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Webdesign Leistungen
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/web-development"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Webentwicklung Leistungen
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/ecommerce-development"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  E-Commerce Onlineshops
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/enterprise-web"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Enterprise Webentwicklung
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/design/ui-ux"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  UI & UX Design
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/design/brand-identity"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Brand Identity & Corporate Design
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/design/design-systems"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Design Systems
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/design/ux-audit"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  UX & Usability Audit
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/web-design/website-relaunch"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Website Relaunch Service
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/development/api-integration"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  API & Schnittstellen Integration
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/development/headless-cms"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Headless CMS Integration
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/development/migration"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  CMS & Website Migration
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/development/web-apps"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Web App Entwicklung
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/web-development/react-nextjs-agentur"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  React & Next.js Agentur
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/web-development/full-stack-entwicklung"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Full Stack Entwicklung
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/web-development/cloud-infrastructure"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Cloud & Vercel Edge Infrastruktur
+                </Link>
+              </li>
+            </ul>
+          </section>
 
-                    return (
-                      <li key={slug}>
-                        <Link
-                          href={href}
-                          className="text-text-light hover:text-primary transition-colors"
-                        >
-                          {slug
-                            .split('-')
-                            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-                            .join(' ')}
-                        </Link>
-                      </li>
-                    );
-                  })}
-                </React.Fragment>
-              ))}
+          {/* Growth & SEO */}
+          <section>
+            <h2 className="text-xl font-bold text-primary mb-4 border-b border-gray-200 pb-2">
+              {locale === 'en' ? 'Growth & SEO' : 'SEO & Performance'}
+            </h2>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link
+                  href="/services/seo"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Suchmaschinenoptimierung (SEO)
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/growth/seo-optimization"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Local SEO & Keyword-Strategie
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/performance"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  PageSpeed Optimierung
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/growth/performance-optimization"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Core Web Vitals Optimierung
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/consulting"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Digitale Strategieberatung
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/growth/digital-consulting"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Technologieberatung & Audits
+                </Link>
+              </li>
               <li>
                 <Link
                   href="/services/generative-engine-optimization"
@@ -179,61 +364,40 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                   Generative Engine Optimization (GEO)
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/services/design/brand-identity"
-                  className="text-text-light hover:text-primary transition-colors"
-                >
-                  Brand Identity
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/design/ux-audit"
-                  className="text-text-light hover:text-primary transition-colors"
-                >
-                  UX Audit
-                </Link>
-              </li>
             </ul>
           </section>
 
           {/* Industries */}
           <section>
-            <h2 className="text-2xl font-bold text-primary mb-4 border-b border-gray-200 pb-2">
-              {locale === 'en' ? 'Industries' : 'Branchen'}
+            <h2 className="text-xl font-bold text-primary mb-4 border-b border-gray-200 pb-2">
+              {locale === 'en' ? 'Industries' : 'Branchenlösungen'}
             </h2>
-            <ul className="space-y-2">
-              {Object.values(industriesData).map((industry) => (
-                <li key={industry.slug}>
-                  <Link
-                    href={`/branchen/${industry.slug}`}
-                    locale="de"
-                    className="text-text-light hover:text-primary transition-colors"
-                  >
-                    {industry.slug
-                      .split('-')
-                      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-                      .join(' ')}
-                  </Link>
-                </li>
-              ))}
+            <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="/branchen/handwerk-bau"
+                  href="/branchen"
                   locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
-                  Handwerker
+                  Branchenübersicht
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/branchen/aerzte-gesundheit"
+                  href="/branchen/handwerker"
                   locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
-                  Gesundheitswesen
+                  Webdesign für Handwerker
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/branchen/gesundheitswesen"
+                  locale="de"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Webdesign für Ärzte & Praxen
                 </Link>
               </li>
               <li>
@@ -242,7 +406,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                   locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
-                  Gastronomie
+                  Webdesign für Gastronomie & Hotels
                 </Link>
               </li>
               <li>
@@ -251,17 +415,70 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                   locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
-                  Dienstleistung
+                  Webdesign für Dienstleister
                 </Link>
               </li>
-
+              <li>
+                <Link
+                  href="/branchen/immobilien"
+                  locale="de"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Webdesign für Immobilienmakler
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/branchen/anwaelte-kanzleien"
+                  locale="de"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Webdesign für Anwälte & Kanzleien
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/branchen/unternehmensberatung"
+                  locale="de"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Webdesign für Unternehmensberatung
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/branchen/startups-tech"
+                  locale="de"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Webdesign für Startups & Tech
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/branchen/retail"
+                  locale="de"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Webdesign für Einzelhandel & Retail
+                </Link>
+              </li>
               <li>
                 <Link
                   href="/branchen/public-sector"
                   locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
-                  Public Sector
+                  Webdesign für Öffentlichen Sektor
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/branchen/automobil"
+                  locale="de"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Webdesign für Automobilbranche
                 </Link>
               </li>
               <li>
@@ -297,7 +514,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                   locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
-                  KFZ Werkstatt
+                  KFZ Werkstatt Website
                 </Link>
               </li>
               <li>
@@ -306,7 +523,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                   locale="de"
                   className="text-text-light hover:text-primary transition-colors"
                 >
-                  Autohändler
+                  Autohändler Website
                 </Link>
               </li>
               <li>
@@ -321,113 +538,133 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
             </ul>
           </section>
 
-          {/* Tools */}
+          {/* Local Cities */}
           <section>
-            <h2 className="text-2xl font-bold text-primary mb-4 border-b border-gray-200 pb-2">
-              {locale === 'en' ? 'Tools' : 'Tools'}
+            <h2 className="text-xl font-bold text-primary mb-4 border-b border-gray-200 pb-2">
+              {locale === 'en' ? 'Cities & Towns' : 'Städte & Standorte'}
             </h2>
-            <ul className="space-y-2">
+            <ul className="space-y-2 text-sm">
+              {localTowns.map((town) => (
+                <li key={town.href}>
+                  <Link
+                    href={town.href}
+                    locale="de"
+                    className="text-text-light hover:text-primary transition-colors"
+                  >
+                    {town.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          {/* Regional Districts */}
+          <section>
+            <h2 className="text-xl font-bold text-primary mb-4 border-b border-gray-200 pb-2">
+              {locale === 'en' ? 'Districts & Regions' : 'Landkreise & Regionen'}
+            </h2>
+            <ul className="space-y-2 text-sm">
+              {localDistricts.map((district) => (
+                <li key={district.href}>
+                  <Link
+                    href={district.href}
+                    locale="de"
+                    className="text-text-light hover:text-primary transition-colors"
+                  >
+                    {district.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          {/* Tools & Resources */}
+          <section>
+            <h2 className="text-xl font-bold text-primary mb-4 border-b border-gray-200 pb-2">
+              {locale === 'en' ? 'Tools & Resources' : 'Tools & Wissen'}
+            </h2>
+            <ul className="space-y-2 text-sm">
               <li>
                 <Link
                   href="/analyzer"
                   className="text-text-light hover:text-primary transition-colors"
                 >
-                  Website Analyzer
-                </Link>
-              </li>
-            </ul>
-          </section>
-
-          {/* Work / Portfolio */}
-          <section>
-            <h2 className="text-2xl font-bold text-primary mb-4 border-b border-gray-200 pb-2">
-              {locale === 'en' ? 'Work & Portfolio' : 'Work & Portfolio'}
-            </h2>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/work" className="text-text-light hover:text-primary transition-colors">
-                  {locale === 'en' ? 'All Projects' : 'Alle Projekte'}
+                  Kostenlose Website-Analyse & Audit
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/work/hey-fede"
+                  href="/calculator"
                   className="text-text-light hover:text-primary transition-colors"
                 >
-                  Hey Fede – Case Study
-                </Link>
-              </li>
-            </ul>
-          </section>
-
-          {/* Locations & Landingpages */}
-          <section>
-            <h2 className="text-2xl font-bold text-primary mb-4 border-b border-gray-200 pb-2">
-              {locale === 'en' ? 'Locations & Landing Pages' : 'Standorte & Landingpages'}
-            </h2>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/webdesign-agentur-wetzlar"
-                  locale="de"
-                  className="text-text-light hover:text-primary transition-colors"
-                >
-                  Webdesign Wetzlar (Agentur)
+                  Website Kostenrechner
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/webdesign-agentur-wetzlar"
-                  locale="de"
+                  href="/booking"
                   className="text-text-light hover:text-primary transition-colors"
                 >
-                  Standort Wetzlar
+                  Strategiegespräch buchen
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/standorte/giessen"
-                  locale="de"
+                  href="/knowledge/blog"
                   className="text-text-light hover:text-primary transition-colors"
                 >
-                  Standort Gießen
+                  Coday Tech & SEO Blog
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/standorte/hessen"
-                  locale="de"
+                  href="/knowledge/faq"
                   className="text-text-light hover:text-primary transition-colors"
                 >
-                  Standort Hessen
+                  Häufig gestellte Fragen (FAQ)
                 </Link>
               </li>
-              {landingPages.map((city) => {
-                const formattedCity =
-                  city.toLowerCase() === 'giessen'
-                    ? 'Gießen'
-                    : city.charAt(0).toUpperCase() + city.slice(1);
-                return (
-                  <li key={`lp-${city}`}>
-                    <Link
-                      href={`/landingpages/${city}`}
-                      locale="de"
-                      className="text-text-light hover:text-primary transition-colors"
-                    >
-                      Landingpage {formattedCity}
-                    </Link>
-                  </li>
-                );
-              })}
+              <li>
+                <Link
+                  href="/garantie"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  100% Performance-Garantie
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/presse"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Presse & Medien
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/partnerschaft"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Agentur Partnerschaften
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/career"
+                  className="text-text-light hover:text-primary transition-colors"
+                >
+                  Karriere bei Coday
+                </Link>
+              </li>
             </ul>
           </section>
 
           {/* Legal */}
           <section>
-            <h2 className="text-2xl font-bold text-primary mb-4 border-b border-gray-200 pb-2">
+            <h2 className="text-xl font-bold text-primary mb-4 border-b border-gray-200 pb-2">
               {locale === 'en' ? 'Legal' : 'Rechtliches'}
             </h2>
-            <ul className="space-y-2">
+            <ul className="space-y-2 text-sm">
               <li>
                 <Link
                   href="/legal/impressum"
@@ -441,7 +678,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                   href="/legal/datenschutz"
                   className="text-text-light hover:text-primary transition-colors"
                 >
-                  Datenschutz
+                  Datenschutzerklärung
                 </Link>
               </li>
               <li>
@@ -449,7 +686,7 @@ export default async function SitemapPage({ params }: { params: Promise<{ locale
                   href="/legal/agb"
                   className="text-text-light hover:text-primary transition-colors"
                 >
-                  AGB
+                  Allgemeine Geschäftsbedingungen
                 </Link>
               </li>
             </ul>

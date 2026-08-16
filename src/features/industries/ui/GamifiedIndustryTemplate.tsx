@@ -65,21 +65,13 @@ export const GamifiedIndustryTemplate: React.FC<{ content: any; cityData?: any }
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-bg-primary/20 to-transparent pointer-events-none" />
         <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-16 items-center relative z-10">
           <div>
-            <m.span
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center px-4 py-2 rounded-full bg-secondary-50 text-primary-600 font-bold uppercase tracking-wider text-xs mb-6 border border-secondary-100 shadow-sm"
-            >
-              <div className="w-2 h-2 rounded-full bg-primary-500 mr-2 animate-pulse" />
+            <span className="inline-flex items-center px-4 py-2 rounded-full bg-secondary-50 text-primary-700 font-bold uppercase tracking-wider text-xs mb-6 border border-secondary-100 shadow-sm">
+              <div className="w-2 h-2 rounded-full bg-primary-600 mr-2 animate-pulse" />
               {hero.headline}
-            </m.span>
-            <h1 className="sr-only">{hero.subheadline}</h1>
-            <div
-              aria-hidden="true"
-              className="font-display font-black text-5xl sm:text-7xl text-secondary-900 mb-6 tracking-tight leading-[1.1]"
-            >
-              <BlurText text={hero.subheadline} delay={30} animateBy="words" />
-            </div>
+            </span>
+            <h1 className="font-display font-black text-4xl sm:text-6xl text-secondary-900 mb-6 tracking-tight leading-[1.1]">
+              {hero.headline} · <span className="text-primary-700">{hero.subheadline}</span>
+            </h1>
             <m.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

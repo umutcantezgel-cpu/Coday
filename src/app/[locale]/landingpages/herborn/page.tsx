@@ -1,11 +1,10 @@
-import WebdesignHerbornPage, {
-  generateMetadata as herbornMetadata,
-} from '@/app/[locale]/webdesign-herborn/page';
+import { permanentRedirect } from 'next/navigation';
 
-export const dynamic = 'force-static';
-
-export async function generateMetadata(props: { params: Promise<{ locale: string }> }) {
-  return herbornMetadata(props);
+export default async function HerbornLandingPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  permanentRedirect(`/${locale}/webdesign-herborn`);
 }
-
-export default WebdesignHerbornPage;

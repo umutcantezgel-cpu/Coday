@@ -1,11 +1,10 @@
-import WebdesignWeilburgPage, {
-  generateMetadata as weilburgMetadata,
-} from '@/app/[locale]/webdesign-weilburg/page';
+import { permanentRedirect } from 'next/navigation';
 
-export const dynamic = 'force-static';
-
-export async function generateMetadata(props: { params: Promise<{ locale: string }> }) {
-  return weilburgMetadata(props);
+export default async function WeilburgLandingPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  permanentRedirect(`/${locale}/webdesign-weilburg`);
 }
-
-export default WebdesignWeilburgPage;

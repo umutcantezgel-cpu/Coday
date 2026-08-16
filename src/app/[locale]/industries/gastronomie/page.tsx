@@ -1,57 +1,10 @@
-import { generatePageMetadata } from '@/lib/metadata';
-import type { Metadata } from 'next';
-import { setRequestLocale } from 'next-intl/server';
-import { SeoHead } from '@/shared/ui/SeoHead';
-import ClientComponent from '@/features/industries/ui/GastronomieClient';
+import { permanentRedirect } from 'next/navigation';
 
-export const dynamic = 'force-static';
-
-export async function generateMetadata({
+export default async function GastronomieLegacyPage({
   params,
 }: {
   params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
+}) {
   const { locale } = await params;
-  if (locale === 'en') {
-    return generatePageMetadata({
-      title: 'Web Design for Restaurants & Gastronomy | Hesse',
-      description:
-        'Appetizing websites for restaurants and gastronomy in Wetzlar and Hesse. More guests through professional web design and strong local visibility.',
-      path: '/en/industries/gastronomie',
-      type: 'default',
-    });
-  }
-  return generatePageMetadata({
-    title: 'Webdesign für Gastronomie & Restaurants | Hessen',
-    description:
-      'Appetitliche Webseiten für Restaurants und Gastronomie in Wetzlar und Hessen. Mehr Gäste durch professionelles Webdesign und lokale Auffindbarkeit.',
-    path: '/de/industries/gastronomie',
-    type: 'default',
-  });
-}
-
-export default async function Page(props: { params: Promise<{ locale: string }> }) {
-  const params = await props.params;
-  setRequestLocale(params.locale);
-
-  const _locale = params.locale || 'de';
-
-  return (
-    <>
-      <SeoHead
-        title={
-          _locale === 'en'
-            ? 'Coday | Web Design for Restaurants & Gastronomy'
-            : 'Coday | Webdesign für Gastronomie & Restaurants'
-        }
-        description={
-          _locale === 'en'
-            ? 'Appetizing websites for restaurants and gastronomy in Wetzlar and Hesse. More guests through professional web design and strong local visibility.'
-            : 'Appetitliche Webseiten für Restaurants und Gastronomie in Wetzlar und Hessen. Mehr Gäste durch professionelles Webdesign und lokale Auffindbarkeit.'
-        }
-        pageType="default"
-      />
-      <ClientComponent />
-    </>
-  );
+  permanentRedirect(`/${locale}/branchen/gastronomie`);
 }
