@@ -181,15 +181,15 @@
     "title": "Projekt starten",
     "subtitle": "Tragen Sie sich ein und wir melden uns innerhalb von 24 Stunden bei Ihnen.",
     "name_placeholder": "Ihr Name",
-    "email_placeholder": "Ihre E-Mail",
-    "phone_placeholder": "Telefonnummer (optional)",
+    "email_placeholder": "Ihre E-Mail-Adresse",
+    "phone_placeholder": "Ihre Telefonnummer (optional)",
     "submit": "Jetzt anfragen",
     "success_title": "Anfrage erhalten!",
     "success_subtitle": "Wir haben Ihre Daten erhalten und melden uns in Kürze bei Ihnen.",
     "new_request": "Neue Anfrage senden",
     "errors": {
-      "name": "Bitte geben Sie Ihren Namen ein.",
-      "email": "Bitte geben Sie eine gültige E-Mail ein."
+      "name": "Bitte geben Sie Ihren Namen ein (min. 2 Zeichen)",
+      "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein"
     }
   }
 }

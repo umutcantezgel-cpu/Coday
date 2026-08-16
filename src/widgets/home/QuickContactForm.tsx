@@ -15,14 +15,45 @@ import {
   Envelope,
   Phone,
 } from '@phosphor-icons/react/dist/ssr';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 
 export const QuickContactForm: React.FC = () => {
   const t = useTranslations('home');
+  const locale = useLocale();
+  const isEn = locale === 'en';
+
+  const getText = (key: string, deFallback: string, enFallback: string): string => {
+    try {
+      const val = t(key);
+      if (
+        !val ||
+        val === key ||
+        val === `quick_contact.${key}` ||
+        val.startsWith('home.quick_contact') ||
+        val.startsWith('quick_contact.')
+      ) {
+        return isEn ? enFallback : deFallback;
+      }
+      return val;
+    } catch {
+      return isEn ? enFallback : deFallback;
+    }
+  };
+
+  const nameError = getText(
+    'quick_contact.errors.name',
+    'Bitte geben Sie Ihren Namen ein (min. 2 Zeichen)',
+    'Please enter your name (min. 2 characters)'
+  );
+  const emailError = getText(
+    'quick_contact.errors.email',
+    'Bitte geben Sie eine gültige E-Mail-Adresse ein',
+    'Please enter a valid email address'
+  );
 
   const QuickContactSchema = z.object({
-    name: z.string().min(2, { message: t('quick_contact.errors.name') }),
-    email: z.string().email({ message: t('quick_contact.errors.email') }),
+    name: z.string().min(2, { message: nameError }),
+    email: z.string().email({ message: emailError }),
     phone: z.string().optional(),
     _bot_trap_field: z.string().optional(), // Honeypot
   });
@@ -66,18 +97,56 @@ export const QuickContactForm: React.FC = () => {
       setSuccess(true);
     } catch (err: any) {
       console.error('Submission error:', err);
-      // Display the actual error for debugging
-      setError(err.message || 'Unknown error');
+      setError(
+        err.message ||
+          (isEn
+            ? 'An error occurred. Please try again.'
+            : 'Ein Fehler ist aufgetreten. Bitte erneut versuchen.')
+      );
     } finally {
       setIsSubmitting(false);
     }
   };
 
+  const titleText = getText('quick_contact.title', 'Projekt starten', 'Start your project');
+  const subtitleText = getText(
+    'quick_contact.subtitle',
+    'Tragen Sie sich ein und wir melden uns innerhalb von 24 Stunden bei Ihnen.',
+    "Leave your details and we'll get back to you within 24 hours."
+  );
+  const namePlaceholder = getText('quick_contact.name_placeholder', 'Ihr Name', 'Your Name');
+  const emailPlaceholder = getText(
+    'quick_contact.email_placeholder',
+    'Ihre E-Mail-Adresse',
+    'Your Email Address'
+  );
+  const phonePlaceholder = getText(
+    'quick_contact.phone_placeholder',
+    'Ihre Telefonnummer (optional)',
+    'Your Phone Number (optional)'
+  );
+  const submitText = getText('quick_contact.submit', 'Jetzt anfragen', 'Send Request');
+  const successTitle = getText(
+    'quick_contact.success_title',
+    'Anfrage erhalten!',
+    'Request received!'
+  );
+  const successSubtitle = getText(
+    'quick_contact.success_subtitle',
+    'Wir haben Ihre Daten erhalten und melden uns in Kürze bei Ihnen.',
+    'We have received your details and will be in touch shortly.'
+  );
+  const newRequestText = getText(
+    'quick_contact.new_request',
+    'Neue Anfrage senden',
+    'Send a new request'
+  );
+
   return (
-    <div className="w-full max-w-md p-6 lg:p-8 bg-white/60 dark:bg-black/40 backdrop-blur-xl border border-white/20 shadow-2xl rounded-[2rem] relative overflow-hidden">
-      {/* Decorative gradient blob */}
-      <div className="absolute top-0 right-0 w-32 h-32 bg-primary-500/20 rounded-full blur-[40px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-32 h-32 bg-secondary-500/10 rounded-full blur-[40px] pointer-events-none" />
+    <div className="w-full max-w-md p-6 lg:p-8 bg-white border border-slate-200 shadow-xl rounded-[2rem] relative overflow-hidden text-left">
+      {/* Decorative ambient gradient */}
+      <div className="absolute top-0 right-0 w-32 h-32 bg-primary-500/10 rounded-full blur-[40px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-32 h-32 bg-amber-500/10 rounded-full blur-[40px] pointer-events-none" />
 
       <AnimatePresence mode="wait">
         {!success ? (
@@ -89,10 +158,8 @@ export const QuickContactForm: React.FC = () => {
             className="relative z-10"
           >
             <div className="mb-6">
-              <h2 className="font-display font-bold text-2xl text-secondary-900 mb-2">
-                {t('quick_contact.title')}
-              </h2>
-              <p className="text-secondary-700 text-sm">{t('quick_contact.subtitle')}</p>
+              <h3 className="font-display font-bold text-2xl text-slate-900 mb-2">{titleText}</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">{subtitleText}</p>
             </div>
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -107,57 +174,61 @@ export const QuickContactForm: React.FC = () => {
 
               <div className="space-y-1">
                 <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-secondary-600">
+                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
                     <OptimizedIcon icon={User} className="w-5 h-5" />
                   </div>
                   <input
                     type="text"
                     {...register('name')}
-                    placeholder={t('quick_contact.name_placeholder')}
-                    className="w-full pl-11 pr-4 py-3 bg-white/80 border border-neutral-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-colors placeholder:text-secondary-600 text-secondary-900"
+                    placeholder={namePlaceholder}
+                    className="w-full pl-11 pr-4 py-3 bg-slate-50/80 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 focus:bg-white outline-none transition-colors placeholder:text-slate-400 text-slate-900 shadow-xs"
                     disabled={isSubmitting}
                   />
                 </div>
                 {errors.name && (
-                  <span className="text-xs text-red-500 ml-1">{errors.name.message}</span>
+                  <span className="text-xs text-red-500 ml-1 font-medium">
+                    {errors.name.message}
+                  </span>
                 )}
               </div>
 
               <div className="space-y-1">
                 <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-secondary-600">
+                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
                     <OptimizedIcon icon={Envelope} className="w-5 h-5" />
                   </div>
                   <input
                     type="email"
                     {...register('email')}
-                    placeholder={t('quick_contact.email_placeholder')}
-                    className="w-full pl-11 pr-4 py-3 bg-white/80 border border-neutral-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-colors placeholder:text-secondary-600 text-secondary-900"
+                    placeholder={emailPlaceholder}
+                    className="w-full pl-11 pr-4 py-3 bg-slate-50/80 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 focus:bg-white outline-none transition-colors placeholder:text-slate-400 text-slate-900 shadow-xs"
                     disabled={isSubmitting}
                   />
                 </div>
                 {errors.email && (
-                  <span className="text-xs text-red-500 ml-1">{errors.email.message}</span>
+                  <span className="text-xs text-red-500 ml-1 font-medium">
+                    {errors.email.message}
+                  </span>
                 )}
               </div>
 
               <div className="space-y-1">
                 <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-secondary-600">
+                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
                     <OptimizedIcon icon={Phone} className="w-5 h-5" />
                   </div>
                   <input
                     type="tel"
                     {...register('phone')}
-                    placeholder={t('quick_contact.phone_placeholder')}
-                    className="w-full pl-11 pr-4 py-3 bg-white/80 border border-neutral-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-colors placeholder:text-secondary-600 text-secondary-900"
+                    placeholder={phonePlaceholder}
+                    className="w-full pl-11 pr-4 py-3 bg-slate-50/80 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 focus:bg-white outline-none transition-colors placeholder:text-slate-400 text-slate-900 shadow-xs"
                     disabled={isSubmitting}
                   />
                 </div>
               </div>
 
               {error && (
-                <div className="flex items-center gap-2 p-3 bg-red-50 text-red-700 text-sm rounded-lg">
+                <div className="flex items-center gap-2 p-3 bg-red-50 text-red-700 text-sm rounded-lg border border-red-200">
                   <OptimizedIcon icon={WarningCircle} className="w-5 h-5 flex-shrink-0" />
                   <span>{error}</span>
                 </div>
@@ -166,13 +237,13 @@ export const QuickContactForm: React.FC = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-3.5 px-4 bg-primary-600 hover:bg-primary-700 text-secondary-900 font-bold rounded-xl shadow-lg shadow-primary-500/30 transition-colors flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed group mt-2"
+                className="w-full py-3.5 px-4 bg-primary-700 hover:bg-primary-800 text-white font-bold rounded-xl shadow-lg shadow-primary-700/25 transition-all hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed group mt-2"
               >
                 {isSubmitting ? (
-                  <span className="w-5 h-5 border-2 border-secondary-900/30 border-t-secondary-900 rounded-full animate-spin" />
+                  <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                 ) : (
                   <>
-                    {t('quick_contact.submit')}
+                    <span>{submitText}</span>
                     <OptimizedIcon
                       icon={PaperPlaneRight}
                       className="w-5 h-5 group-hover:translate-x-1 transition-transform"
@@ -189,18 +260,16 @@ export const QuickContactForm: React.FC = () => {
             animate={{ opacity: 1, scale: 1 }}
             className="flex flex-col items-center justify-center py-8 text-center relative z-10"
           >
-            <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-4">
+            <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mb-4 shadow-sm">
               <OptimizedIcon icon={CheckCircle} className="w-8 h-8" />
             </div>
-            <h2 className="font-display font-bold text-2xl text-secondary-900 mb-2">
-              {t('quick_contact.success_title')}
-            </h2>
-            <p className="text-secondary-700 mb-6">{t('quick_contact.success_subtitle')}</p>
+            <h3 className="font-display font-bold text-2xl text-slate-900 mb-2">{successTitle}</h3>
+            <p className="text-slate-600 mb-6 text-sm leading-relaxed">{successSubtitle}</p>
             <button
               onClick={() => setSuccess(false)}
-              className="text-primary-600 font-bold hover:underline"
+              className="text-primary-700 font-bold hover:text-primary-800 hover:underline text-sm"
             >
-              {t('quick_contact.new_request')}
+              {newRequestText}
             </button>
           </m.div>
         )}
