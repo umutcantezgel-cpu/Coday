@@ -1,7 +1,6 @@
 'use client';
-import React, { useRef, useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from '@/i18n/navigation';
-import NextLink from 'next/link';
 import Image from 'next/image';
 import { m } from 'motion/react';
 import { useTranslations } from 'next-intl';
@@ -24,33 +23,9 @@ import { clientLogos } from '@/shared/data/clientLogos';
 
 export const Footer: React.FC = () => {
   const t = useTranslations('common');
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const footerRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (footerRef.current) {
-        const rect = footerRef.current.getBoundingClientRect();
-        setMousePosition({
-          x: e.clientX - rect.left,
-          y: e.clientY - rect.top,
-        });
-      }
-    };
-    const footerElement = footerRef.current;
-    if (footerElement) {
-      footerElement.addEventListener('mousemove', handleMouseMove);
-    }
-    return () => {
-      if (footerElement) {
-        footerElement.removeEventListener('mousemove', handleMouseMove);
-      }
-    };
-  }, []);
 
   return (
     <footer
-      ref={footerRef}
       className="relative bg-slate-50 text-slate-900 overflow-hidden pb-24 lg:pb-0 font-sans border-t border-slate-200"
       role="contentinfo"
     >

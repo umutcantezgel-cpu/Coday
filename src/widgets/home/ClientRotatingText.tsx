@@ -9,7 +9,6 @@ const getServerSnapshot = () => false;
 
 const DynamicRotatingText = dynamic(() => import('@/shared/ui/RotatingText'), {
   ssr: false,
-  loading: () => null,
 });
 
 export function ClientRotatingText(props: RotatingTextProps) {
@@ -19,5 +18,9 @@ export function ClientRotatingText(props: RotatingTextProps) {
     return <span className={props.mainClassName}>{props.texts[0]}</span>;
   }
 
-  return <DynamicRotatingText {...props} />;
+  return (
+    <React.Suspense fallback={<span className={props.mainClassName}>{props.texts[0]}</span>}>
+      <DynamicRotatingText {...props} />
+    </React.Suspense>
+  );
 }
