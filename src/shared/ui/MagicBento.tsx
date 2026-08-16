@@ -58,44 +58,39 @@ const GlobalSpotlight: React.FC<{
 }> = ({ enabled, spotlightRadius, glowColor, disableAnimations }) => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [opacity, setOpacity] = useState(0);
+  const rafRef = useRef<number | null>(null);
 
   useEffect(() => {
     if (!enabled || disableAnimations) return;
 
     const handleMouseMove = (e: MouseEvent) => {
-      setPosition({ x: e.clientX, y: e.clientY });
-      setOpacity(1);
-
-      // Check if hovering over any bento card to update CSS variables for border glow
-      const cards = document.querySelectorAll('.card--border-glow');
-      cards.forEach((card) => {
-        const rect = card.getBoundingClientRect();
-        const distance = Math.sqrt(
-          Math.pow(e.clientX - (rect.left + rect.width / 2), 2) +
-            Math.pow(e.clientY - (rect.top + rect.height / 2), 2)
-        );
-        if (distance < spotlightRadius * 1.5) {
-          const x = ((e.clientX - rect.left) / rect.width) * 100;
-          const y = ((e.clientY - rect.top) / rect.height) * 100;
-          (card as HTMLElement).style.setProperty('--glow-x', `${x}%`);
-          (card as HTMLElement).style.setProperty('--glow-y', `${y}%`);
-          (card as HTMLElement).style.setProperty('--glow-intensity', '1');
-        } else {
-          (card as HTMLElement).style.setProperty('--glow-intensity', '0');
-        }
+      if (rafRef.current !== null) return;
+      rafRef.current = requestAnimationFrame(() => {
+        setPosition({ x: e.clientX, y: e.clientY });
+        setOpacity(1);
+        rafRef.current = null;
       });
     };
 
-    const handleMouseLeave = () => setOpacity(0);
+    const handleMouseLeave = () => {
+      if (rafRef.current !== null) {
+        cancelAnimationFrame(rafRef.current);
+        rafRef.current = null;
+      }
+      setOpacity(0);
+    };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('mouseout', handleMouseLeave);
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
+    window.addEventListener('mouseout', handleMouseLeave, { passive: true });
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('mouseout', handleMouseLeave);
+      if (rafRef.current !== null) {
+        cancelAnimationFrame(rafRef.current);
+      }
     };
-  }, [enabled, disableAnimations, spotlightRadius]);
+  }, [enabled, disableAnimations]);
 
   if (!enabled || disableAnimations) return null;
 
@@ -177,9 +172,6 @@ export const MagicBento: React.FC<BentoProps> = ({
 
   return (
     <div className={`relative w-full ${className}`}>
-      <style>{`
-                .card--border-glow::after { content: ''; position: absolute; inset: 0; padding: 2px; background: radial-gradient(var(--glow-radius, 200px) circle at var(--glow-x, 50%) var(--glow-y, 50%), rgba(${glowColor}, calc(var(--glow-intensity, 0) * 0.8)) 0%, rgba(${glowColor}, calc(var(--glow-intensity, 0) * 0.4)) 30%, transparent 60%); border-radius: inherit; -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask-composite: exclude; pointer-events: none; z-index: 1; }
-            `}</style>
       <GlobalSpotlight
         enabled={enableSpotlight}
         spotlightRadius={spotlightRadius}

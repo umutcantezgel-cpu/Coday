@@ -7,9 +7,14 @@ import { LanguageSwitcher } from '@/widgets/navigation/LanguageSwitcher';
 import { usePathname } from '@/i18n/navigation';
 import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
+import dynamic from 'next/dynamic';
 import { getNavItems } from '@/widgets/navigation/config';
-import { MobileNavOverlay } from '@/widgets/navigation/MobileNavOverlay';
 import '@/widgets/navigation/CardNav.css';
+
+const MobileNavOverlay = dynamic(
+  () => import('@/widgets/navigation/MobileNavOverlay').then((mod) => mod.MobileNavOverlay),
+  { ssr: false }
+);
 
 interface CardNavProps {
   className?: string;

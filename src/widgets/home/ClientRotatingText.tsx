@@ -1,7 +1,23 @@
 'use client';
-import React from 'react';
-import RotatingText, { type RotatingTextProps } from '@/shared/ui/RotatingText';
+import React, { useSyncExternalStore } from 'react';
+import dynamic from 'next/dynamic';
+import type { RotatingTextProps } from '@/shared/ui/RotatingText';
+
+const emptySubscribe = () => () => {};
+const getClientSnapshot = () => true;
+const getServerSnapshot = () => false;
+
+const DynamicRotatingText = dynamic(() => import('@/shared/ui/RotatingText'), {
+  ssr: false,
+  loading: () => null,
+});
 
 export function ClientRotatingText(props: RotatingTextProps) {
-  return <RotatingText {...props} />;
+  const isHydrated = useSyncExternalStore(emptySubscribe, getClientSnapshot, getServerSnapshot);
+
+  if (!isHydrated) {
+    return <span className={props.mainClassName}>{props.texts[0]}</span>;
+  }
+
+  return <DynamicRotatingText {...props} />;
 }

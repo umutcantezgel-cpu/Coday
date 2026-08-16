@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslations } from 'next-intl';
 import GradientText from '@/shared/ui/GradientText';
 import { cn } from '@/shared/lib/utils';
-import { QuickContactForm } from './QuickContactForm';
+import { LazyQuickContactForm } from './LazyQuickContactForm';
 import { Link } from '@/i18n/navigation';
 import { ArrowRight, Briefcase } from '@phosphor-icons/react/dist/ssr';
 import { baseButtonStyles, buttonVariants, buttonSizes } from '@/shared/ui/ButtonStyles';
@@ -86,7 +86,7 @@ export const HeroSection: React.FC = () => {
 
         {/* Right Column: Quick Contact Form (Hidden on Mobile) */}
         <div className="hidden lg:flex lg:col-span-5 justify-end mt-8 lg:mt-0 relative">
-          <QuickContactForm />
+          <LazyQuickContactForm />
         </div>
       </div>
     </section>

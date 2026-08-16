@@ -75,7 +75,7 @@ const LogoLoop = React.memo<LogoLoopProps>(
     const [seqHeight, setSeqHeight] = useState<number>(0);
     const [copyCount, setCopyCount] = useState<number>(ANIMATION_CONFIG.MIN_COPIES);
     const [isHovered, setIsHovered] = useState<boolean>(false);
-    const [isVisible, setIsVisible] = useState<boolean>(true);
+    const [isVisible, setIsVisible] = useState<boolean>(false);
 
     // Pause rAF when off-screen to save CPU
     useEffect(() => {

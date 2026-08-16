@@ -766,3 +766,27 @@ a.bg-secondary:active,
     transform: translateX(0);
   }
 }
+
+.card--border-glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  background: radial-gradient(
+    var(--glow-radius, 200px) circle at var(--glow-x, 50%) var(--glow-y, 50%),
+    rgba(255, 255, 255, calc(var(--glow-intensity, 0) * 0.8)) 0%,
+    rgba(255, 255, 255, calc(var(--glow-intensity, 0) * 0.4)) 30%,
+    transparent 60%
+  );
+  border-radius: inherit;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+}

@@ -27,8 +27,33 @@ export const TestimonialsSection: React.FC = () => {
     rating: 5,
   }));
 
+  const reviewsSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': 'https://www.codayweb.de/#organization',
+    name: 'Coday',
+    review: testimonials.map((t) => ({
+      '@type': 'Review',
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: t.rating.toString(),
+        bestRating: '5',
+      },
+      author: {
+        '@type': 'Person',
+        name: t.authorName,
+      },
+      reviewBody: t.quote,
+    })),
+  };
+
   return (
     <section className="py-[var(--space-section)] bg-surface-light relative overflow-hidden">
+      <script
+        id="testimonials-aggregated-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewsSchema) }}
+      />
       <div className="absolute top-0 start-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

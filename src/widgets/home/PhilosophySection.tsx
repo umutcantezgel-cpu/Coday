@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslations } from 'next-intl';
 import BlurText from '@/shared/ui/BlurText';
 import { FadeInUp } from '@/shared/ui/MotionWrappers';
-import { InteractivePhilosophyVisual } from './InteractivePhilosophyVisual';
+import { LazyInteractivePhilosophyVisual } from './LazyInteractivePhilosophyVisual';
 
 export const PhilosophySection: React.FC = () => {
   const t = useTranslations('home');
@@ -31,7 +31,7 @@ export const PhilosophySection: React.FC = () => {
           </FadeInUp>
           <FadeInUp className="relative flex justify-center lg:justify-end perspective-1000">
             {/* Organic shape backdrop replaced with a subtle tech glow inside the component */}
-            <InteractivePhilosophyVisual />
+            <LazyInteractivePhilosophyVisual />
           </FadeInUp>
         </div>
       </div>

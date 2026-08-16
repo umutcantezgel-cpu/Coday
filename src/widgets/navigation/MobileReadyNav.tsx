@@ -55,25 +55,32 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
       if (window.scrollY > 50) setIsScrolled(true);
     });
 
+    let ticking = false;
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      const previous = lastScrollY.current;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+          const previous = lastScrollY.current;
 
-      // Determine direction
-      if (currentScrollY > previous && currentScrollY > 150) {
-        setIsVisible(false); // Hide on scroll down
-      } else {
-        setIsVisible(true); // Show on scroll up
+          // Determine direction
+          if (currentScrollY > previous && currentScrollY > 150) {
+            setIsVisible(false); // Hide on scroll down
+          } else {
+            setIsVisible(true); // Show on scroll up
+          }
+
+          // Determine scrolled state (for transparency/blur)
+          if (currentScrollY > 50) {
+            setIsScrolled(true);
+          } else {
+            setIsScrolled(false);
+          }
+
+          lastScrollY.current = currentScrollY;
+          ticking = false;
+        });
+        ticking = true;
       }
-
-      // Determine scrolled state (for transparency/blur)
-      if (currentScrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-
-      lastScrollY.current = currentScrollY;
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
