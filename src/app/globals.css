@@ -122,8 +122,8 @@
   --color-border-subtle: var(--color-neutral-300);
 
   /* ═══ TYPOGRAPHY (Phi-based) ═══ */
-  --font-display: 'Outfit', 'Outfit Fallback', sans-serif;
-  --font-sans: 'Inter', 'Inter Fallback', sans-serif;
+  --font-display: var(--font-outfit), 'Outfit', 'Outfit Fallback', sans-serif;
+  --font-sans: var(--font-inter), 'Inter', 'Inter Fallback', sans-serif;
 
   --tracking-tighter: -0.05em;
   --tracking-tight: -0.025em;
