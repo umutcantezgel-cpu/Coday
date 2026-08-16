@@ -11,9 +11,9 @@ export const MobileRotatingText: React.FC<{ texts: string[] }> = ({ texts }) => 
   return (
     <span
       key={index}
-      className="inline-block text-[var(--text-lead)] font-light text-text-secondary motion-reduce:animate-none"
+      className="inline-block text-base sm:text-lg font-semibold text-primary-700 transition-opacity duration-300"
     >
-      {texts[index]}
+      {texts[index] || texts[0]}
     </span>
   );
 };

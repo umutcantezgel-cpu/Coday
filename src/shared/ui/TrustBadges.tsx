@@ -72,10 +72,10 @@ export const TrustBadges: React.FC<TrustBadgesProps> = ({
               >
                 <OptimizedIcon icon={badge.icon} className="w-6 h-6" weight="fill" />
               </div>
-              <div className="font-bold text-secondary text-sm md:text-base text-center">
+              <div className="font-bold text-slate-900 text-sm md:text-base text-center">
                 {badge.title}
               </div>
-              <div className="text-xs text-slate-300 text-center mt-1">{badge.description}</div>
+              <div className="text-xs text-slate-600 text-center mt-1">{badge.description}</div>
             </>
           );
 

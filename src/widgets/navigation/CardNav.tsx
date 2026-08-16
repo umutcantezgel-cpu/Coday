@@ -228,6 +228,11 @@ const CardNav: React.FC<CardNavProps> = ({
                                       <div className="link-text">
                                         <LinkComponent
                                           {...linkProps}
+                                          aria-label={
+                                            isExternal
+                                              ? `${t(link.label)} (Website)`
+                                              : t(link.label)
+                                          }
                                           className="link-label before:absolute before:inset-0 focus:outline-none focus-visible:ring-0"
                                           onClick={() => setActiveCategory(null)}
                                         >

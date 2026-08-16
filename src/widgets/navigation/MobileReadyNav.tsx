@@ -252,6 +252,11 @@ const MobileReadyNav: React.FC<CardNavProps> = ({
                                     prefetch={false}
                                     onClick={() => setActiveCategory(null)}
                                     title={t(link.label)}
+                                    aria-label={
+                                      link.href.startsWith('http')
+                                        ? `${t(link.label)} (Website)`
+                                        : t(link.label)
+                                    }
                                     className="link-label before:absolute before:inset-0 focus:outline-none focus-visible:ring-0"
                                   >
                                     {t(link.label)}

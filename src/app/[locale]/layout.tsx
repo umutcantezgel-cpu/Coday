@@ -21,14 +21,14 @@ import { ClarityAnalytics } from '@/shared/lib/analytics/ClarityAnalytics';
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
-  display: 'optional',
+  display: 'swap',
   preload: true,
 });
 
 const outfit = Outfit({
   subsets: ['latin'],
   variable: '--font-outfit',
-  display: 'optional',
+  display: 'swap',
   preload: true,
 });
 

@@ -130,21 +130,21 @@ export const AgencyComparisonTable: React.FC = () => {
         {/* Value Highlights under table */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
           <div className="p-6 rounded-xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
-            <div className="text-amber-800 font-bold text-base mb-1">Kein Vendor-Lock-in</div>
+            <h3 className="text-amber-800 font-bold text-base mb-1">Kein Vendor-Lock-in</h3>
             <p className="text-slate-600 text-xs sm:text-sm">
               Sie erhalten 100% Quellcode-Eigentum ohne monatliche Knebelverträge oder teure
               Lizenzabos.
             </p>
           </div>
           <div className="p-6 rounded-xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
-            <div className="text-amber-800 font-bold text-base mb-1">Messbare B2B-Conversions</div>
+            <h3 className="text-amber-800 font-bold text-base mb-1">Messbare B2B-Conversions</h3>
             <p className="text-slate-600 text-xs sm:text-sm">
               60-Sekunden Express-Recruiting und optimierte Anfragestrecken verdoppeln die
               Lead-Quote.
             </p>
           </div>
           <div className="p-6 rounded-xl bg-slate-50/80 border border-slate-200/80 shadow-sm">
-            <div className="text-amber-800 font-bold text-base mb-1">100% Inhaber-Garantie</div>
+            <h3 className="text-amber-800 font-bold text-base mb-1">100% Inhaber-Garantie</h3>
             <p className="text-slate-600 text-xs sm:text-sm">
               Persönliche Projektleitung durch Umutcan Emre Tezgel — schnell, verbindlich und
               präzise.

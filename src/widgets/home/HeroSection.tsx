@@ -44,12 +44,13 @@ export const HeroSection: React.FC = () => {
               <ClientRotatingText
                 texts={t.raw('hero.rotating') as string[]}
                 rotationInterval={3000}
+                splitBy="words"
                 staggerFrom="first"
-                staggerDuration={0.03}
-                mainClassName="text-lg md:text-xl font-medium text-primary-600 dark:text-primary-400 leading-relaxed justify-start text-left"
+                staggerDuration={0.05}
+                mainClassName="text-lg md:text-xl font-semibold text-primary-700 leading-relaxed justify-start text-left"
               />
             </span>
-            <span className="md:hidden block w-full text-primary-600 dark:text-primary-400 font-medium text-left text-base break-words hyphens-auto">
+            <span className="md:hidden block w-full text-primary-700 font-semibold text-left text-base break-words hyphens-auto">
               <MobileRotatingText texts={t.raw('hero.rotating') as string[]} />
             </span>
           </div>

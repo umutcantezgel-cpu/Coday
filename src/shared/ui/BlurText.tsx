@@ -1,5 +1,9 @@
 'use client';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useSyncExternalStore } from 'react';
+
+const subscribe = () => () => {};
+const getSnapshot = () => true;
+const getServerSnapshot = () => false;
 
 type BlurTextProps = {
   text?: string;
@@ -26,6 +30,7 @@ const BlurText: React.FC<BlurTextProps> = ({
 }) => {
   const elements = animateBy === 'words' ? text.split(' ') : text.split('');
   const [inView, setInView] = useState(false);
+  const isHydrated = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
   const ref = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
@@ -48,10 +53,12 @@ const BlurText: React.FC<BlurTextProps> = ({
       {elements.map((segment, index) => (
         <span
           key={index}
-          className={`inline-block transition duration-700 ease-out motion-reduce:transition-none motion-reduce:opacity-100 motion-reduce:blur-0 ${
-            inView ? 'opacity-100 blur-0 translate-y-0' : 'opacity-0 blur-[10px] translate-y-2'
+          className={`inline-block transition duration-500 ease-out motion-reduce:transition-none ${
+            !isHydrated || inView
+              ? 'opacity-100 blur-0 translate-y-0'
+              : 'opacity-0 blur-[6px] translate-y-1'
           }`}
-          style={{ transitionDelay: `${(index * delay) / 1000}s` }}
+          style={{ transitionDelay: isHydrated && inView ? `${(index * delay) / 1000}s` : '0s' }}
         >
           {segment === ' ' ? '\u00A0' : segment}
           {animateBy === 'words' && index < elements.length - 1 && '\u00A0'}

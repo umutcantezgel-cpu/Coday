@@ -322,21 +322,28 @@ export default function FloatingWhatsAppWidget({
 
   return (
     <>
-      {/* CSS Keyframes for pulse animation */}
+      {/* CSS Keyframes for composited pulse animation */}
       <style jsx global>{`
-        @keyframes wa-pulse {
+        .wa-composited-ring {
+          animation: wa-pulse-composited 2s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+          will-change: transform, opacity;
+        }
+        @keyframes wa-pulse-composited {
           0% {
-            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+            transform: scale(1);
+            opacity: 0.6;
           }
           70% {
-            box-shadow: 0 0 0 18px rgba(37, 211, 102, 0);
+            transform: scale(1.4);
+            opacity: 0;
           }
           100% {
-            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            transform: scale(1.4);
+            opacity: 0;
           }
         }
         @media (prefers-reduced-motion: reduce) {
-          .wa-pulse-ring {
+          .wa-composited-ring {
             animation: none !important;
           }
         }
@@ -414,9 +421,22 @@ export default function FloatingWhatsAppWidget({
               ? 'none'
               : 'box-shadow 0.3s, transform 0.2s',
           willChange: 'left, top, transform',
-          animation: isIdle ? 'wa-pulse 2s ease-in-out infinite' : 'none',
         }}
       >
+        {isIdle && (
+          <span
+            className="wa-composited-ring"
+            style={{
+              position: 'absolute',
+              inset: 0,
+              borderRadius: '50%',
+              backgroundColor: '#25D366',
+              pointerEvents: 'none',
+              zIndex: -1,
+            }}
+            aria-hidden="true"
+          />
+        )}
         {/* Notification Badge */}
         {showBadge && (
           <span

@@ -65,7 +65,8 @@ export const PortfolioTeaserSection: React.FC = () => {
                       className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[1.2s] ease-[cubic-bezier(0.25,1,0.5,1)]"
                       width={1200}
                       height={900}
-                      priority={index === 0}
+                      priority={false}
+                      loading="lazy"
                     />
 
                     {/* Hover Overlay Badge */}
@@ -98,6 +99,11 @@ export const PortfolioTeaserSection: React.FC = () => {
                   <h3 className="font-display font-black text-4xl sm:text-5xl text-secondary-900 mb-6 group-hover/card:text-action-primary transition-colors duration-300">
                     <Link
                       href={`/work/${project.slug}`}
+                      aria-label={
+                        currentLang === 'en'
+                          ? `Read ${content.title} Case Study`
+                          : `Case Study zu ${content.title} lesen`
+                      }
                       className="outline-none before:absolute before:-inset-8 before:z-10 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset"
                     >
                       {content.title}

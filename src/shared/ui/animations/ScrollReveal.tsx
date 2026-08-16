@@ -1,7 +1,4 @@
-'use client';
-
-import React, { useRef } from 'react';
-import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import React from 'react';
 
 interface ScrollRevealProps {
   children: React.ReactNode;

@@ -16,7 +16,7 @@ import {
   LinkedinLogo,
   ArrowRight,
   RocketLaunch,
-} from '@phosphor-icons/react';
+} from '@phosphor-icons/react/dist/ssr';
 
 import LogoLoop from '@/shared/ui/LogoLoop';
 import { TrustBadges } from '@/shared/ui/TrustBadges';
@@ -399,7 +399,7 @@ export const Footer: React.FC = () => {
                 <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-slate-900 transition-all duration-200 group-hover:w-full"></span>
               </Link>
             ))}
-            <span className="opacity-70 ml-2">
+            <span className="text-slate-600 font-medium ml-2">
               {t('footer.rights', { year: new Date().getFullYear() })}
             </span>
           </nav>

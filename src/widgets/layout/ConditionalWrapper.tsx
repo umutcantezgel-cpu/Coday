@@ -14,6 +14,9 @@ const ChatWidget = dynamic(() => import('@/widgets/chatbot').then((module) => mo
 const CookieConsentBanner = dynamic(() => import('@/widgets/cookie/CookieConsentBanner'), {
   ssr: false,
 });
+const WaterCursor = dynamic(() => import('@/shared/ui/WaterCursor'), {
+  ssr: false,
+});
 
 export const ConditionalWrapper = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname() || '';
@@ -23,6 +26,9 @@ export const ConditionalWrapper = ({ children }: { children: React.ReactNode }) 
 
   return (
     <div className="font-sans min-h-dvh flex flex-col">
+      <Suspense fallback={null}>
+        <WaterCursor tint="coday" />
+      </Suspense>
       {children}
       <Suspense fallback={null}>
         <ChatWidget hideTrigger={true} />

@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 interface CountUpProps {
@@ -111,7 +111,7 @@ export default function CountUp({
       }
 
       const progress = timestamp - startTime - delay * 1000;
-      
+
       if (progress < 0) {
         animationFrameId = requestAnimationFrame(step);
         return;
@@ -120,9 +120,9 @@ export default function CountUp({
       const durationMs = duration * 1000;
       const t = Math.min(progress / durationMs, 1);
       const easedT = Math.min(easeOutExpo(t), 1);
-      
+
       const currentVal = startVal + (endVal - startVal) * easedT;
-      
+
       if (ref.current) {
         ref.current.textContent = formatValue(currentVal);
       }
@@ -146,5 +146,9 @@ export default function CountUp({
     };
   }, [isInView, startWhen, direction, from, to, delay, duration, formatValue, onStart, onEnd]);
 
-  return <span className={className} ref={ref} />;
+  return (
+    <span className={className} ref={ref}>
+      {formatValue(direction === 'down' ? to : from)}
+    </span>
+  );
 }

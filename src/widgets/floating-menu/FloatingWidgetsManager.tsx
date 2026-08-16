@@ -788,9 +788,12 @@ export const FloatingWidgetsManager: React.FC = () => {
           style={{
             backgroundColor: '#25D366',
             color: '#ffffff',
-            animation: 'wa-pulse 2s ease-in-out infinite',
           }}
         >
+          <span
+            className="absolute inset-0 rounded-full bg-[#25D366] pointer-events-none -z-10 wa-composited-ring"
+            aria-hidden="true"
+          />
           <WhatsappLogo className="w-8 h-8" weight="fill" />
           <span className="absolute top-1/2 -translate-y-1/2 right-full mr-4 bg-[#25D366] text-white text-xs font-bold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-xl hidden md:block">
             Chat starten 💬
@@ -804,15 +807,27 @@ export const FloatingWidgetsManager: React.FC = () => {
       <VelocityVoidOverlay isActive={isGameActive} onClose={() => setIsGameActive(false)} />
 
       <style jsx global>{`
-        @keyframes wa-pulse {
+        .wa-composited-ring {
+          animation: wa-pulse-composited 2s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+          will-change: transform, opacity;
+        }
+        @keyframes wa-pulse-composited {
           0% {
-            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+            transform: scale(1);
+            opacity: 0.6;
           }
           70% {
-            box-shadow: 0 0 0 18px rgba(37, 211, 102, 0);
+            transform: scale(1.4);
+            opacity: 0;
           }
           100% {
-            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            transform: scale(1.4);
+            opacity: 0;
+          }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .wa-composited-ring {
+            animation: none !important;
           }
         }
       `}</style>
