@@ -25,62 +25,73 @@
   },
   "culture": {
     "hero": {
-      "badge": "Über uns",
-      "desc": "Wir arbeiten mit Leidenschaft, Transparenz und Innovation.",
-      "title_gradient": "Kultur",
-      "title_start": "Unsere"
+      "badge": "Arbeitsweise & Werte",
+      "desc": "100% Inhabergeführt. Keine Junior-Entwickler, kein Agentur-Overhead – dafür kompromisslose Code-Qualität, KI-gestütztes Handwerk und echte Partnerschaft auf Augenhöhe.",
+      "title_gradient": "Arbeitskultur",
+      "title_start": "Unsere Philosophie &"
     },
     "team": {
-      "desc": "Lerne die Menschen hinter Coday kennen.",
-      "members": [
+      "desc": "Direkte Inhaberbetreuung und moderne KI-Toolchains statt zeitraubender Agentur-Bürokratie.",
+      "title": "Das Anti-Agentur-Prinzip"
+    },
+    "craft": {
+      "badge": "Das Anti-Agentur-Prinzip",
+      "title": "Wie wir arbeiten: Direktheit statt Bürokratie",
+      "desc": "Klassische Großagenturen verkaufen Senior-Pitches und lassen Junioren programmieren. Bei Coday arbeitet der Gründer persönlich an jedem Detail Ihres Webprojekts.",
+      "founder_badge": "Inhabergeführt & Unabhängig",
+      "founder_title": "Umutcan Emre Tezgel",
+      "founder_role": "Gründer, Lead Developer & Performance Architect",
+      "founder_bio": "Als Solo-Founder vereine ich strategische Konzeption, UI/UX-Design und Full-Stack Next.js Entwicklung in einer Person. Keine Kommunikationsverluste, 100% Fokus auf Ihr Projekt.",
+      "pillars": [
         {
-          "funfact": "Strategie & Skalierung",
-          "funfact_title": "Fokus:",
-          "name": "Alex Admin",
-          "role": "Geschäftsführer"
+          "title": "100% Inhaberbetreuung",
+          "desc": "Sie sprechen direkt mit dem Entwickler und Strategen, der Ihren Code schreibt. Keine Kontakter, kein Stille-Post-Effekt.",
+          "highlight": "Direkter Draht"
         },
         {
-          "funfact": "Umsatzmaximierung",
-          "funfact_title": "Fokus:",
-          "name": "Sarah Sales",
-          "role": "Head of Growth"
+          "title": "KI-gestütztes Handwerk",
+          "desc": "Durch hochmoderne Entwicklungs-Toolchains realisieren wir komplexe Web-Systeme in Rekordzeit bei maximaler Präzision.",
+          "highlight": "Sub-Sekunden-Speed"
         },
         {
-          "funfact": "Systemarchitektur",
-          "funfact_title": "Fokus:",
-          "name": "Mike Maker",
-          "role": "Lead Engineer"
+          "title": "Messbare Ergebnisse & SEO",
+          "desc": "Kein Design zum Selbstzweck. Jede Website wird für Top-Google-Rankings in Wetzlar, Hessen und DACH optimiert.",
+          "highlight": "Google 100/100"
         },
         {
-          "funfact": "Konversionsoptimiertes Design",
-          "funfact_title": "Fokus:",
-          "name": "Lisa Lens",
-          "role": "Art Director"
+          "title": "Skalierbares Experten-Netzwerk",
+          "desc": "Für hochspezifische Anforderungen wie 3D-Visualisierungen oder juristische Prüfungen greifen wir auf ein erprobtes Partnernetzwerk zu.",
+          "highlight": "Flexibles Netzwerk"
         }
-      ],
-      "title": "Das Team"
+      ]
     },
     "values": {
-      "desc": "Das ist uns wichtig.",
-      "items": ["Transparenz in jedem Schritt", "Höchste Code-Qualität", "Echte Partnerschaften"],
-      "title": "Unsere Werte"
+      "desc": "Klarheit, Präzision und technologische Exzellenz für Ihren nachhaltigen digitalen Erfolg.",
+      "items": [
+        "Transparenz & Festpreis-Garantie ohne versteckte Kosten",
+        "100% Chefbetreuung direkt durch Umutcan Emre Tezgel",
+        "Sub-Sekunden-Performance (100/100 Core Web Vitals)",
+        "Modernste KI-gestützte Next.js Architektur",
+        "Echte Partnerschaften mit messbarem ROI für KMUs"
+      ],
+      "title": "Unsere Kernwerte"
     },
     "values_deck": {
       "deep_work": {
-        "desc": "Kein Multitasking. Keine unnötigen Meetings. Wir priorisieren ungestörte Zeit für komplexe, tiefe Arbeitsprozesse.",
-        "title": "Deep Work"
+        "desc": "Ungestörte Entwicklungsphasen garantieren fehlerfreie Architektur, saubere Barrierefreiheit und maximale Ladegeschwindigkeit.",
+        "title": "Fokus & Deep Work"
       },
       "ownership": {
-        "desc": "Keine Ausreden. Wir übernehmen die volle Verantwortung für das Endresultat. Wenn Herausforderungen auftreten, lösen wir sie proaktiv.",
-        "title": "Extreme Ownership"
+        "desc": "Jede Zeile TypeScript, jedes Layout-Detail und jeder API-Call wird mit dem Anspruch absoluter handwerklicher Perfektion gebaut.",
+        "title": "Radikales Eigentum"
       },
       "speed": {
-        "desc": "Perfektionismus darf den Fortschritt nicht aufhalten. Wir implementieren zügig und iterieren auf Basis validierter Daten.",
-        "title": "Speed wins"
+        "desc": "Schnelle, iterative Auslieferung durch modernste Toolchains – ohne zeitraubende Agentur-Meetings und bürokratische Schleifen.",
+        "title": "Präzision & Tempo"
       },
       "truth": {
-        "desc": "Wir kommunizieren direkt und sachlich. Konstruktives, radikal ehrliches Feedback ist unser Schlüssel zu absoluter Exzellenz.",
-        "title": "Radical Truth"
+        "desc": "Transparente Kommunikation, realistische Zeitpläne und keine leeren Marketing-Buzzwords. Wir sagen, was machbar ist.",
+        "title": "Ehrliche Klarheit"
       }
     }
   },

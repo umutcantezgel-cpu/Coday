@@ -1238,36 +1238,73 @@
     },
     "culture": {
       "hero": {
-        "title_start": "Our",
-        "title_gradient": "Culture",
-        "desc": "We work with passion, transparency, and innovation.",
-        "badge": "About us"
+        "title_start": "Our Philosophy &",
+        "title_gradient": "Work Culture",
+        "desc": "100% founder-led. No junior developers, no agency overhead — just uncompromising code quality, AI-augmented engineering, and genuine partnership.",
+        "badge": "Work Ethics & Values"
       },
       "values": {
-        "title": "Our Values",
-        "desc": "This is what matters to us.",
-        "items": ["Transparency in every step", "Highest code quality", "True partnerships"]
+        "title": "Our Core Values",
+        "desc": "Clarity, precision, and technological excellence for your sustainable digital success.",
+        "items": [
+          "Transparency & fixed-price guarantee with zero hidden costs",
+          "100% founder-led by Umutcan Emre Tezgel directly",
+          "Sub-second performance (100/100 Core Web Vitals)",
+          "Cutting-edge AI-augmented Next.js architecture",
+          "True partnerships with measurable ROI for businesses"
+        ]
       },
       "team": {
-        "title": "The Team",
-        "desc": "Meet the people behind Coday."
+        "title": "The Anti-Agency Principle",
+        "desc": "Direct founder engagement and modern AI toolchains instead of bloated agency bureaucracy."
+      },
+      "craft": {
+        "badge": "The Anti-Agency Principle",
+        "title": "How We Work: Directness Over Bureaucracy",
+        "desc": "Traditional agencies pitch with seniors and delegate to juniors. At Coday, the founder crafts every detail of your web project personally.",
+        "founder_badge": "Founder-Led & Independent",
+        "founder_title": "Umutcan Emre Tezgel",
+        "founder_role": "Founder, Lead Developer & Performance Architect",
+        "founder_bio": "As a solo founder, I combine strategic conceptualization, UI/UX design, and full-stack Next.js development in one person. Zero communication loss, 100% focus on your project.",
+        "pillars": [
+          {
+            "title": "100% Founder-Led",
+            "desc": "You communicate directly with the engineer building your code. No account managers, no communication bottlenecks.",
+            "highlight": "Direct Access"
+          },
+          {
+            "title": "AI-Augmented Velocity",
+            "desc": "Cutting-edge development toolchains enable us to deploy enterprise-grade Next.js systems in record time with flawless precision.",
+            "highlight": "Sub-Second Speed"
+          },
+          {
+            "title": "Measurable Results & SEO",
+            "desc": "Design with a purpose. Every web project is engineered for top Google rankings in Wetzlar, Hesse, and DACH.",
+            "highlight": "Google 100/100"
+          },
+          {
+            "title": "Scalable Expert Network",
+            "desc": "For specialized requirements like bespoke 3D assets or complex compliance audits, we tap into a curated network of vetted experts.",
+            "highlight": "Agile Network"
+          }
+        ]
       },
       "values_deck": {
         "ownership": {
           "title": "Radical Ownership",
-          "desc": "Every line of code, design detail, and client interaction is treated with the highest level of care."
+          "desc": "Every line of TypeScript, layout detail, and API integration is engineered with the ambition of absolute craftsmanship."
         },
         "truth": {
-          "title": "Radical Truth",
-          "desc": "Transparent communication, honest deadlines, and no empty marketing promises."
+          "title": "Honest Clarity",
+          "desc": "Transparent communication, realistic milestones, and no empty buzzwords. We deliver on what we promise."
         },
         "deep_work": {
-          "title": "Deep Work & Focus",
-          "desc": "Uninterrupted flow states for maximum cognitive depth and flawless code."
+          "title": "Focus & Deep Work",
+          "desc": "Dedicated deep work sessions ensure clean code architecture, strict accessibility standards, and instant load times."
         },
         "speed": {
           "title": "Precision & Velocity",
-          "desc": "Fast iterations without compromising quality, powered by cutting-edge AI toolchains."
+          "desc": "Fast iterative delivery powered by modern toolchains — eliminating bloated agency meetings and bureaucratic bottlenecks."
         }
       }
     },

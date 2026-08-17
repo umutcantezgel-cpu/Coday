@@ -1233,36 +1233,73 @@
     },
     "culture": {
       "hero": {
-        "title_start": "Unsere",
-        "title_gradient": "Kultur",
-        "desc": "Wir arbeiten mit Leidenschaft, Transparenz und Innovation.",
-        "badge": "Über uns"
+        "title_start": "Unsere Philosophie &",
+        "title_gradient": "Arbeitskultur",
+        "desc": "100% Inhabergeführt. Keine Junior-Entwickler, kein Agentur-Overhead – dafür kompromisslose Code-Qualität, KI-gestütztes Handwerk und echte Partnerschaft auf Augenhöhe.",
+        "badge": "Arbeitsweise & Werte"
       },
       "values": {
-        "title": "Unsere Werte",
-        "desc": "Das ist uns wichtig.",
-        "items": ["Transparenz in jedem Schritt", "Höchste Code-Qualität", "Echte Partnerschaften"]
+        "title": "Unsere Kernwerte",
+        "desc": "Klarheit, Präzision und technologische Exzellenz für Ihren nachhaltigen digitalen Erfolg.",
+        "items": [
+          "Transparenz & Festpreis-Garantie ohne versteckte Kosten",
+          "100% Chefbetreuung direkt durch Umutcan Emre Tezgel",
+          "Sub-Sekunden-Performance (100/100 Core Web Vitals)",
+          "Modernste KI-gestützte Next.js Architektur",
+          "Echte Partnerschaften mit messbarem ROI für KMUs"
+        ]
       },
       "team": {
-        "title": "Das Team",
-        "desc": "Lerne die Menschen hinter Coday kennen."
+        "title": "Das Anti-Agentur-Prinzip",
+        "desc": "Direkte Inhaberbetreuung und moderne KI-Toolchains statt zeitraubender Agentur-Bürokratie."
+      },
+      "craft": {
+        "badge": "Das Anti-Agentur-Prinzip",
+        "title": "Wie wir arbeiten: Direktheit statt Bürokratie",
+        "desc": "Klassische Großagenturen verkaufen Senior-Pitches und lassen Junioren programmieren. Bei Coday arbeitet der Gründer persönlich an jedem Detail Ihres Webprojekts.",
+        "founder_badge": "Inhabergeführt & Unabhängig",
+        "founder_title": "Umutcan Emre Tezgel",
+        "founder_role": "Gründer, Lead Developer & Performance Architect",
+        "founder_bio": "Als Solo-Founder vereine ich strategische Konzeption, UI/UX-Design und Full-Stack Next.js Entwicklung in einer Person. Keine Kommunikationsverluste, 100% Fokus auf Ihr Projekt.",
+        "pillars": [
+          {
+            "title": "100% Inhaberbetreuung",
+            "desc": "Sie sprechen direkt mit dem Entwickler und Strategen, der Ihren Code schreibt. Keine Kontakter, kein Stille-Post-Effekt.",
+            "highlight": "Direkter Draht"
+          },
+          {
+            "title": "KI-gestütztes Handwerk",
+            "desc": "Durch hochmoderne Entwicklungs-Toolchains realisieren wir komplexe Web-Systeme in Rekordzeit bei maximaler Präzision.",
+            "highlight": "Sub-Sekunden-Speed"
+          },
+          {
+            "title": "Messbare Ergebnisse & SEO",
+            "desc": "Kein Design zum Selbstzweck. Jede Website wird für Top-Google-Rankings in Wetzlar, Hessen und DACH optimiert.",
+            "highlight": "Google 100/100"
+          },
+          {
+            "title": "Skalierbares Experten-Netzwerk",
+            "desc": "Für hochspezifische Anforderungen wie 3D-Visualisierungen oder juristische Prüfungen greifen wir auf ein erprobtes Partnernetzwerk zu.",
+            "highlight": "Flexibles Netzwerk"
+          }
+        ]
       },
       "values_deck": {
         "ownership": {
           "title": "Radikales Eigentum",
-          "desc": "Jede Zeile Code, jedes Design-Detail und jede Kundeninteraktion wird mit höchster Sorgfalt behandelt."
+          "desc": "Jede Zeile TypeScript, jedes Layout-Detail und jeder API-Call wird mit dem Anspruch absoluter handwerklicher Perfektion gebaut."
         },
         "truth": {
-          "title": "Radikale Wahrheit",
-          "desc": "Transparente Kommunikation, ehrliche Deadlines und keine leeren Marketingversprechen."
+          "title": "Ehrliche Klarheit",
+          "desc": "Transparente Kommunikation, realistische Zeitpläne und keine leeren Marketing-Buzzwords. Wir sagen, was machbar ist."
         },
         "deep_work": {
           "title": "Fokus & Deep Work",
-          "desc": "Ungestörte Arbeitsphasen für maximale geistige Tiefe und fehlerfreien Code."
+          "desc": "Ungestörte Entwicklungsphasen garantieren fehlerfreie Architektur, saubere Barrierefreiheit und maximale Ladegeschwindigkeit."
         },
         "speed": {
           "title": "Präzision & Tempo",
-          "desc": "Schnelle Iterationen ohne Qualitätskompromisse durch modernste KI-Toolchains."
+          "desc": "Schnelle, iterative Auslieferung durch modernste Toolchains – ohne zeitraubende Agentur-Meetings und bürokratische Schleifen."
         }
       }
     },

@@ -139,26 +139,18 @@ export default async function CareerPage({ params }: { params: Promise<{ locale:
               </p>
               <p>
                 Wir wissen, dass die Technologiebranche einem ständigen Wandel unterworfen ist.
-                Deshalb investieren wir kontinuierlich in die Weiterbildung unseres Teams.
-                Regelmäßige Workshops, der Besuch von Konferenzen und der freie Austausch von Wissen
-                gehören bei uns zum Arbeitsalltag. Wir möchten, dass unsere Mitarbeiter stets am
-                Puls der Zeit bleiben und die neuesten Trends und Technologien nicht nur kennen,
-                sondern aktiv mitgestalten. Darüber hinaus bieten wir flexible Arbeitszeitmodelle,
-                die es Ihnen ermöglichen, Beruf und Privatleben optimal miteinander zu vereinbaren.
-                Ob im modernen Büro im Herzen von Wetzlar oder im Homeoffice – wir schaffen die
-                Rahmenbedingungen, damit Sie Ihre beste Leistung erbringen können.
+                Deshalb investieren wir kontinuierlich in modernste Toolchains und Wissensaustausch.
+                Regelmäßige Fortbildungen, der Einsatz neuester KI-Technologien und der freie
+                Austausch von Know-how gehören bei uns zum Alltag. Wir möchten, dass unsere
+                Netzwerkpartner stets am Puls der Zeit bleiben und die neuesten Web-Standards nicht
+                nur kennen, sondern aktiv mitgestalten.
               </p>
               <p>
-                Starten Sie Ihre Karriere bei einer aufstrebenden Webdesign-Agentur in Wetzlar.
-                Entdecken Sie unsere aktuellen Stellenangebote oder senden Sie uns eine
-                Initiativbewerbung, wenn Sie der Meinung sind, dass Sie perfekt in unser Team
-                passen, auch wenn gerade keine passende Position ausgeschrieben ist. Wir sind immer
-                auf der Suche nach motivierten und leidenschaftlichen Talenten, die gemeinsam mit
-                uns die digitale Zukunft gestalten möchten. Lassen Sie uns gemeinsam großartige
-                Webprojekte realisieren und die Online-Präsenz unserer Kunden auf das nächste Level
-                heben. Wir freuen uns darauf, Sie kennenzulernen und vielleicht schon bald als neues
-                Mitglied in der Coday-Familie begrüßen zu dürfen. Gestalten Sie Ihre Zukunft mit uns
-                in Wetzlar, Hessen!
+                Gestalten Sie die Zukunft moderner Webanwendungen als Kooperationspartner oder
+                Freelance-Spezialist bei Coday in Wetzlar. Entdecken Sie unsere aktuellen
+                Kooperationsmöglichkeiten oder senden Sie uns Ihr Portfolio für anstehende
+                Enterprise-Projekte. Lassen Sie uns gemeinsam herausragende Websites mit Next.js,
+                TypeScript und barrierefreiem Design realisieren.
               </p>
             </div>
           </>

@@ -63,32 +63,26 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
             regionale und überregionale Kunden.
           </p>
           <p>
-            Warum solltest du Teil unseres Teams werden? Bei uns steht der Mensch im Mittelpunkt.
-            Wir glauben daran, dass die besten Ergebnisse dann entstehen, wenn sich jeder
-            Mitarbeiter wertgeschätzt fühlt und seine individuellen Stärken voll entfalten kann.
-            Deshalb bieten wir flexible Arbeitszeiten, moderne Arbeitsmittel und die Möglichkeit,
-            kontinuierlich Neues zu lernen. Ob du ein erfahrener Frontend-Entwickler bist, der sich
-            bestens mit React und Next.js auskennt, ein kreativer Webdesigner mit einem Auge für
-            perfekte Typografie und UX/UI, oder ein Stratege für digitales Marketing – wir möchten
-            dich kennenlernen.
+            Warum solltest du Kooperationspartner oder Freelancer bei Coday werden? Bei uns steht
+            das handwerkliche Können und die transparente Zusammenarbeit im Mittelpunkt. Wir glauben
+            daran, dass die besten digitalen Produkte dann entstehen, wenn sich jeder Partner
+            wertgeschätzt fühlt und seine individuellen Stärken voll entfalten kann. Deshalb setzen
+            wir auf 100% Remote-Work, modernste Arbeitsmittel und anspruchsvolle
+            Enterprise-Projekte. Ob du ein erfahrener Frontend-Entwickler bist, der sich bestens mit
+            React und Next.js auskennt, ein kreativer UI/UX-Designer mit einem Auge für
+            Barrierefreiheit, oder ein Stratege für technisches SEO – wir freuen uns auf den
+            Austausch.
           </p>
           <p>
-            Unsere Projekte sind vielfältig und anspruchsvoll. Von der Konzeption innovativer
-            E-Commerce-Lösungen bis hin zur Umsetzung komplexer Unternehmensportale – Langeweile
-            kommt bei uns garantiert nicht auf. Wir legen großen Wert auf sauberen Code,
-            barrierefreies Design und herausragende Performance, ganz im Sinne unserer strengen
-            Qualitätsstandards. Wenn du also Leidenschaft für das Web mitbringst, gerne im Team
-            arbeitest und bereit bist, Verantwortung zu übernehmen, dann bist du bei uns genau
-            richtig.
+            Unsere Projekte sind vielfältig und anspruchsvoll. Von maßgeschneiderten
+            Unternehmens-Websites bis hin zu hochkomplexen Webapplikationen – wir legen größten Wert
+            auf sauberen Code, barrierefreies Design und herausragende Performance nach Google Core
+            Web Vitals Standards.
           </p>
           <p>
-            Wetzlar und Umgebung bieten zudem eine hohe Lebensqualität, die perfekte Balance
-            zwischen Natur und städtischem Leben. Werde Teil unserer Erfolgsgeschichte und gestalte
-            mit uns die digitale Zukunft unserer Kunden. Schau dir unsere aktuellen Stellenangebote
-            an und bewirb dich noch heute. Wir freuen uns darauf, mehr über dich, deine Fähigkeiten
-            und deine bisherigen Projekte zu erfahren. Gemeinsam können wir digitale Meisterwerke
-            erschaffen, die nicht nur gut aussehen, sondern auch messbaren Erfolg bringen. Deine
-            Karriere bei Coday startet hier!
+            Werde Teil unseres Partner-Netzwerks in Wetzlar und DACH. Schau dir unsere aktuellen
+            Projekt-Ausschreibungen an oder sende uns dein Portfolio. Wir freuen uns darauf, mehr
+            über deine Fähigkeiten und deine bisherigen Arbeiten zu erfahren.
           </p>
         </div>
       </section>
