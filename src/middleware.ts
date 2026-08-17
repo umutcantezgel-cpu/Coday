@@ -8,7 +8,7 @@ export default function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // 410 Gone für alle /ai/ Pfade (SEO Cleanup)
-  if (pathname.match(/^\/(de|en)\/ai\//) || pathname.match(/^\/ai\//)) {
+  if (pathname.match(/^\/(de|en)\/ai(\/.*)?$/) || pathname.match(/^\/ai(\/.*)?$/)) {
     return new NextResponse('Gone - This page has been permanently removed.', { status: 410 });
   }
 

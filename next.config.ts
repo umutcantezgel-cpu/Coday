@@ -50,6 +50,16 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/standorte/giessen',
+        destination: '/webdesign-giessen',
+        permanent: true,
+      },
+      {
+        source: '/:locale(de|en)/standorte/giessen',
+        destination: '/:locale/webdesign-giessen',
+        permanent: true,
+      },
+      {
         source: '/landingpages/wetzlar',
         destination: '/webdesign-agentur-wetzlar',
         permanent: true,
@@ -239,28 +249,6 @@ const nextConfig: NextConfig = {
         destination: '/:locale/pricing',
         permanent: true,
       },
-      // Legacy programmatic SEO routes
-      {
-        source: '/ai/:path*',
-        destination: '/services',
-        permanent: true,
-      },
-      {
-        source: '/:locale(de|en)/ai/:path*',
-        destination: '/:locale/services',
-        permanent: true,
-      },
-      // Deleted blog posts
-      {
-        source: '/knowledge/blog/email-marketing-automation',
-        destination: '/knowledge/blog',
-        permanent: true,
-      },
-      {
-        source: '/:locale(de|en)/knowledge/blog/email-marketing-automation',
-        destination: '/:locale/knowledge/blog',
-        permanent: true,
-      },
       // Legacy specific industries redirects
       {
         source: '/services/industries/gesundheit',
@@ -371,16 +359,6 @@ const nextConfig: NextConfig = {
       {
         source: '/:locale(de|en)/branchen/ecommerce-retail',
         destination: '/:locale/branchen/retail',
-        permanent: true,
-      },
-      {
-        source: '/standorte/wetzlar',
-        destination: '/webdesign-agentur-wetzlar',
-        permanent: true,
-      },
-      {
-        source: '/:locale(de|en)/standorte/wetzlar',
-        destination: '/:locale/webdesign-agentur-wetzlar',
         permanent: true,
       },
       // --- Double-locale prefix fix (crawlers may have cached /de/de or /en/en) ---

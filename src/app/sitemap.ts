@@ -110,6 +110,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...sitemapEntries('/process', { changeFrequency: 'monthly', priority: 0.7 }),
     ...sitemapEntries('/work', { changeFrequency: 'monthly', priority: 0.8 }),
     ...sitemapEntries('/angebot-handwerker', { changeFrequency: 'monthly', priority: 0.8 }),
+    ...sitemapEntries('/landingpages/nextjsmigration', {
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    }),
 
     // === Services ===
     ...sitemapEntries('/services', { changeFrequency: 'monthly', priority: 0.8 }),
@@ -320,10 +324,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...sitemapEntries('/knowledge/blog', { changeFrequency: 'weekly', priority: 0.7 }),
     ...sitemapEntries('/knowledge/faq', { changeFrequency: 'monthly', priority: 0.6 }),
 
-    // === Legal (DE only) ===
-    ...sitemapEntries('/legal/impressum', { changeFrequency: 'monthly', priority: 0.3 }),
-    ...sitemapEntries('/legal/datenschutz', { changeFrequency: 'monthly', priority: 0.3 }),
-    ...sitemapEntries('/legal/agb', { changeFrequency: 'monthly', priority: 0.3 }),
+    // === Career ===
+    ...sitemapEntries('/career', { changeFrequency: 'monthly', priority: 0.7 }),
+    ...sitemapEntries('/career/culture', { changeFrequency: 'monthly', priority: 0.8 }),
+    ...sitemapEntries('/career/benefits', { changeFrequency: 'monthly', priority: 0.6 }),
+    ...sitemapEntries('/career/jobs', { changeFrequency: 'monthly', priority: 0.7 }),
 
     // === Tools & Other ===
     ...sitemapEntries('/garantie', { changeFrequency: 'monthly', priority: 0.6 }),
@@ -331,6 +336,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...sitemapEntries('/presse', { changeFrequency: 'monthly', priority: 0.5 }),
     ...sitemapEntries('/analyzer', { changeFrequency: 'monthly', priority: 0.6 }),
     ...sitemapEntries('/calculator', { changeFrequency: 'monthly', priority: 0.6 }),
+    ...sitemapEntries('/uebersicht', { changeFrequency: 'monthly', priority: 0.4 }),
   ];
 
   // Dynamic content from Sanity
@@ -391,7 +397,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     alternates: {
       languages: {
         de: `${BASE_URL}/de/knowledge/blog/${post.slug}`,
-        en: `${BASE_URL}/en/knowledge/blog/${post.slug}`,
         'x-default': `${BASE_URL}/de/knowledge/blog/${post.slug}`,
       },
     },
@@ -405,9 +410,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
     alternates: {
       languages: {
-        de: `${BASE_URL}/de/knowledge/blog/${post.slug}`,
         en: `${BASE_URL}/en/knowledge/blog/${post.slug}`,
-        'x-default': `${BASE_URL}/de/knowledge/blog/${post.slug}`,
       },
     },
   }));

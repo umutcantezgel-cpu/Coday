@@ -6,5 +6,5 @@ export default async function GiessenLandingPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  permanentRedirect(`/${locale}/standorte/giessen`);
+  permanentRedirect(`/${locale}/webdesign-giessen`);
 }
