@@ -18,6 +18,7 @@ export function getOrganizationSchema(locale: string = 'de') {
     slogan: locale === 'en' ? 'The Anti-Agency from Wetzlar.' : 'Die Anti-Agentur aus Wetzlar.',
     email: 'kontakt@codayweb.de',
     telephone: '+49-176-41195301',
+    vatID: 'DE459754827',
     taxID: '039 874 00784',
     foundingDate: '2026',
     priceRange: '€€€',
@@ -156,6 +157,7 @@ export function getProfessionalServiceSchema(locale: string = 'de') {
     image: `${BASE_URL}/images/og-image.jpg`,
     url: BASE_URL,
     telephone: '+49-176-41195301',
+    vatID: 'DE459754827',
     taxID: '039 874 00784',
     foundingDate: '2026',
     address: {

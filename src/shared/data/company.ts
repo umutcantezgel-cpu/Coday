@@ -14,6 +14,8 @@ export const companyInfo: CompanyInfo = {
   country: 'Deutschland',
   phone: '+49 176 41195301',
   email: 'kontakt@codayweb.de',
+  vatId: 'DE459754827',
+  taxId: '039 874 00784',
   foundedYear: 2026,
   employeeCount: 1,
   certifications: ['DSGVO Compliant'],

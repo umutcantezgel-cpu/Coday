@@ -24,6 +24,8 @@ export function getOrganizationSchema(): Organization {
       areaServed: 'DE',
       availableLanguage: ['German', 'English'],
     },
+    vatID: 'DE459754827',
+    taxID: '039 874 00784',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Wetzlar',

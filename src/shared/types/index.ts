@@ -33,6 +33,8 @@ export interface CompanyInfo {
   country: string;
   phone: string;
   email: string;
+  vatId?: string;
+  taxId?: string;
   foundedYear: number;
   employeeCount: number;
   certifications: string[];

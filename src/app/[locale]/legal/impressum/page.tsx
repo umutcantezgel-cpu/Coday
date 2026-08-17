@@ -65,16 +65,71 @@ export default async function ImpressumPage({ params }: { params: Promise<{ loca
           <h2 className="text-xl font-semibold text-secondary-900 mt-8">
             {isEn ? 'Contact' : 'Kontakt'}
           </h2>
-          <p>E-Mail: umut@codayweb.de</p>
+          <p>
+            Telefon: +49 176 41195301
+            <br />
+            E-Mail: kontakt@codayweb.de
+          </p>
+
+          <h2 className="text-xl font-semibold text-secondary-900 mt-8">
+            {isEn ? 'VAT Identification Number' : 'Umsatzsteuer-ID'}
+          </h2>
+          <p>
+            {isEn
+              ? 'VAT identification number according to § 27 a of the German Value Added Tax Act (UStG):'
+              : 'Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:'}
+            <br />
+            <strong className="font-mono text-secondary-900 text-base">DE459754827</strong>
+          </p>
 
           <h2 className="text-xl font-semibold text-secondary-900 mt-8">
             {isEn ? 'Responsible for Content' : 'Inhaltlich Verantwortlicher'}
           </h2>
           <p>
+            {isEn
+              ? 'Responsible for content according to § 18 Abs. 2 MStV:'
+              : 'Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:'}
+            <br />
             Umutcan Emre Tezgel
             <br />
             Lessingstraße 4<br />
             35578 Wetzlar
+          </p>
+
+          <h2 className="text-xl font-semibold text-secondary-900 mt-8">
+            {isEn ? 'EU Dispute Resolution' : 'EU-Streitschlichtung'}
+          </h2>
+          <p>
+            {isEn ? (
+              <>
+                The European Commission provides a platform for online dispute resolution (ODR):{' '}
+                <a
+                  href="https://ec.europa.eu/consumers/odr/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary-600 hover:underline"
+                >
+                  https://ec.europa.eu/consumers/odr/
+                </a>
+                .<br />
+                Our e-mail address can be found above in the imprint.
+              </>
+            ) : (
+              <>
+                Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS)
+                bereit:{' '}
+                <a
+                  href="https://ec.europa.eu/consumers/odr/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary-600 hover:underline"
+                >
+                  https://ec.europa.eu/consumers/odr/
+                </a>
+                .<br />
+                Unsere E-Mail-Adresse finden Sie oben im Impressum.
+              </>
+            )}
           </p>
         </section>
       </div>

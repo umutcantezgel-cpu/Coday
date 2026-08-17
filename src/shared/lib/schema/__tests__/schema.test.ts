@@ -1,15 +1,14 @@
-
 import { describe, expect, it } from 'vitest';
 import {
-    generateBlogSchema,
-    generateBreadcrumbSchema,
-    generateCaseStudySchema,
-    generateFAQSchema,
-    generateServiceSchema,
-    getOrganizationSchema,
-    getUmutSchema,
-    ORGANIZATION_ID,
-    UMUT_ID
+  generateBlogSchema,
+  generateBreadcrumbSchema,
+  generateCaseStudySchema,
+  generateFAQSchema,
+  generateServiceSchema,
+  getOrganizationSchema,
+  getUmutSchema,
+  ORGANIZATION_ID,
+  UMUT_ID,
 } from '../index';
 
 describe('JSON-LD Schema Generators', () => {
@@ -17,6 +16,8 @@ describe('JSON-LD Schema Generators', () => {
     const org = getOrganizationSchema() as unknown as Record<string, unknown>;
     expect(org['@type']).toBe('Organization');
     expect(org['@id']).toBe(ORGANIZATION_ID);
+    expect(org['vatID']).toBe('DE459754827');
+    expect(org['taxID']).toBe('039 874 00784');
 
     const person = getUmutSchema() as unknown as Record<string, unknown>;
     expect(person['@type']).toBe('Person');
@@ -29,16 +30,14 @@ describe('JSON-LD Schema Generators', () => {
       description: 'We build headless CMS solutions using Sanity.',
       url: 'https://codayweb.de/services/headless-cms',
       category: 'Web Development',
-      packages: [
-        { name: 'Basic', description: 'Basic setup', price: 999, currency: 'EUR' }
-      ]
+      packages: [{ name: 'Basic', description: 'Basic setup', price: 999, currency: 'EUR' }],
     });
 
     expect(schema['@type']).toBe('Service');
     expect(schema.name).toBe('Headless CMS Development');
     expect(schema.serviceType).toBe('Web Development');
     const offerCatalog = schema.hasOfferCatalog as unknown as Record<string, unknown>;
-    expect((offerCatalog.itemListElement! as unknown[])).toHaveLength(1);
+    expect(offerCatalog.itemListElement! as unknown[]).toHaveLength(1);
     expect((offerCatalog.itemListElement! as Record<string, unknown>[])[0]!.price).toBe(999);
   });
 
@@ -51,7 +50,7 @@ describe('JSON-LD Schema Generators', () => {
       datePublished: '2026-05-23T10:00:00Z',
       category: 'SEO',
       tags: ['GEO', 'Next.js'],
-      wordCount: 1500
+      wordCount: 1500,
     });
 
     expect(schema['@type']).toBe('BlogPosting');
@@ -62,7 +61,7 @@ describe('JSON-LD Schema Generators', () => {
 
   it('should generate valid FAQPage schema', () => {
     const schema = generateFAQSchema([
-      { question: 'What is Next.js?', answer: 'A React framework.' }
+      { question: 'What is Next.js?', answer: 'A React framework.' },
     ]);
 
     expect(schema).not.toBeNull();
@@ -84,7 +83,7 @@ describe('JSON-LD Schema Generators', () => {
       imageUrl: 'https://codayweb.de/images/work.webp',
       dateCreated: '2025-01-01',
       clientName: 'Coday Internal',
-      technologies: ['Next.js', 'Tailwind']
+      technologies: ['Next.js', 'Tailwind'],
     });
 
     expect(schema['@type']).toBe('CreativeWork');
@@ -96,7 +95,7 @@ describe('JSON-LD Schema Generators', () => {
   it('should generate valid BreadcrumbList', () => {
     const schema = generateBreadcrumbSchema([
       { name: 'Home', url: 'https://codayweb.de' },
-      { name: 'Services', url: 'https://codayweb.de/services' }
+      { name: 'Services', url: 'https://codayweb.de/services' },
     ]);
 
     expect(schema).not.toBeNull();
