@@ -44,7 +44,10 @@ const Immobilien: React.FC = () => {
         <div className="absolute inset-0 z-0">
           <OptimizedImage
             src={IMAGES.industries.realEstate.hero}
-            alt={t('immobilien-makler.hero.image_alt', 'Immobilienpräsentation und Software')}
+            alt={t(
+              'immobilien-makler.hero.image_alt',
+              'Webdesign Wetzlar – Immobilienmakler Websites & Portale'
+            )}
             width={1920}
             height={1080}
             className="w-full h-full object-cover opacity-10"

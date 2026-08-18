@@ -114,7 +114,7 @@ export const Footer: React.FC = () => {
               <div className="w-10 h-10 rounded-xl overflow-hidden flex-shrink-0 bg-slate-50 flex items-center justify-center p-0.5 group-hover:scale-105 transition-transform duration-300 border border-slate-200">
                 <OptimizedImage
                   src="/images/hero/webdesign-wetzlar-business-handshake-partnerschaft-tuer-offen-zusammenarbeit-vertrauen-small.webp"
-                  alt="Partnerschaft"
+                  alt="Webdesign Wetzlar – Partnerschaftliche Zusammenarbeit & Vertrauen"
                   className="w-full h-full object-cover rounded-[10px]"
                   width={40}
                   height={40}

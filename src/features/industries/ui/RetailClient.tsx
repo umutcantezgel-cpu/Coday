@@ -37,7 +37,7 @@ const Retail: React.FC = () => {
         <div className="absolute inset-0 z-0">
           <OptimizedImage
             src={IMAGES.industries.retail.hero}
-            alt="Modern retail environment"
+            alt="Webdesign Wetzlar – E-Commerce & Retail Onlineshops"
             width={1920}
             height={1080}
             className="w-full h-full object-cover opacity-10"

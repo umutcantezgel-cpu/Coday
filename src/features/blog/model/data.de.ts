@@ -10,7 +10,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Webdesign',
     readTime: '5 Min.',
     image: '/images/marketing/omnichannel-marketing-hub-seo-social-content-strategie-vernetzt.webp',
-    alt: 'Social Media vs Eigene Webseite',
+    alt: 'Webdesign Wetzlar – Social Media vs eigene Firmen-Webseite',
     author: 'Umutcan Emre Tezgel',
     date: '10. Oktober 2024',
     content: [
@@ -65,7 +65,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Handwerk',
     readTime: '6 Min.',
     image: '/images/services/website-builder-drag-drop-baukasten-elemente-webdesign.webp',
-    alt: 'Handwerker Webseite Fehler',
+    alt: 'Webdesign Wetzlar – 5 fatale Fehler auf Handwerker-Websites',
     author: 'Umutcan Emre Tezgel',
     date: '15. Oktober 2024',
     content: [
@@ -121,7 +121,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: '7 Min.',
     image:
       '/images/marketing/datenanalyse-business-intelligence-reporting-statistiken-auswertung.webp',
-    alt: 'Kosten für Firmenwebseite',
+    alt: 'Webdesign Wetzlar Kosten – Was kostet eine Firmen-Website 2026',
     author: 'Umur Eyigün',
     date: '20. Oktober 2024',
     content: [
@@ -176,7 +176,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Web Performance',
     readTime: '10 Min.',
     image: '/images/brand/coday-full.webp',
-    alt: 'High Speed Performance Dashboard',
+    alt: 'Webentwicklung Wetzlar – Core Web Vitals und High-Speed Performance Dashboard',
     author: 'Coday Engineering',
     date: '22. Mai 2026',
     content: [
@@ -2760,7 +2760,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Agentur',
     readTime: '8 Min.',
     image: '/images/brand/coday-full.webp',
-    alt: 'Vergleichstabelle Webdesign Agenturen Hessen',
+    alt: 'Webdesign Wetzlar & Hessen – Vergleich der besten Webagenturen 2026',
     author: 'Coday Redaktion',
     date: '10. Mai 2026',
     content: [

@@ -65,7 +65,7 @@ export function getOrganizationSchema(locale: string = 'de') {
       contentUrl: `${BASE_URL}/images/coday-logo.png`,
       width: 512,
       height: 512,
-      caption: 'Coday Logo',
+      caption: 'Coday – Webdesign & Webentwicklung Wetzlar Logo',
     },
     founder: {
       '@type': 'Person',

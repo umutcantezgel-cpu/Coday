@@ -69,6 +69,8 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   // Skip SVGs — next/image can't optimize them, serve directly
   const isSvg = src.endsWith('.svg');
 
+  const finalAlt = alt && alt.trim() !== '' ? alt : 'Webdesign & Webentwicklung Wetzlar – Coday';
+
   if (isSvg) {
     return (
       <div
@@ -77,7 +79,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
       >
         <Image
           src={src}
-          alt={alt || ''}
+          alt={finalAlt}
           unoptimized
           {...(useFill
             ? { fill: true, className: 'object-cover' }
@@ -116,7 +118,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
     >
       <Image
         src={src}
-        alt={alt || ''}
+        alt={finalAlt}
         {...(useFill
           ? { fill: true, className: 'object-cover' }
           : { width, height, className: 'w-full h-full object-cover' })}

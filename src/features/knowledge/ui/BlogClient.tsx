@@ -134,7 +134,7 @@ const Blog: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10" />
               <OptimizedImage
                 src={featuredPost.image}
-                alt={featuredPost.title}
+                alt={featuredPost.alt || featuredPost.title}
                 width={1200}
                 height={675}
                 className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform motion-reduce:duration-[0.01ms] duration-700"

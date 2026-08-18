@@ -39,7 +39,7 @@ const Gesundheit: React.FC = () => {
         <div className="absolute inset-0 z-0">
           <OptimizedImage
             src={IMAGES.industries.healthcare.hero}
-            alt="Medical professional with digital tools"
+            alt="Webdesign Wetzlar – Arztpraxen & Gesundheit Webentwicklung"
             width={1920}
             height={1080}
             className="w-full h-full object-cover opacity-10"

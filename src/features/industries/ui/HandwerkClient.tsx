@@ -41,7 +41,10 @@ const Handwerk: React.FC = () => {
         <div className="absolute inset-0 z-0">
           <OptimizedImage
             src={IMAGES.industries.handwerk.hero}
-            alt={t('handwerk-bau.hero.image_alt', 'Professionelle Handwerker bei der Arbeit')}
+            alt={t(
+              'handwerk-bau.hero.image_alt',
+              'Webdesign Wetzlar – Handwerker & Bauunternehmen Website'
+            )}
             width={1920}
             height={1080}
             className="w-full h-full object-cover opacity-10"

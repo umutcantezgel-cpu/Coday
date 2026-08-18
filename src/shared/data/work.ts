@@ -127,10 +127,13 @@ export const workData: Record<string, Project> = {
           title: 'Die Plattform',
           description:
             'Eine Next.js Applikation, die sich so flüssig anfühlt wie eine native App. Mit integriertem Terminkalender, Bad-Rechner und automatisierten Email-Flows. Wir haben ein hochmodernes, ansprechendes Webdesign entwickelt, das nicht nur ästhetisch überzeugt, sondern auch auf Conversion-Optimierung ausgelegt ist. Die Performance-Optimierung durch Headless-Architektur garantiert dabei blitzschnelle Ladezeiten, was sich signifikant auf das SEO-Ranking auswirkt.',
-          images: ['/images/portfolio/batherm-illustration.webp'],
+          images: [
+            '/images/portfolio/mockup-batherm.png',
+            '/images/portfolio/batherm-illustration.webp',
+          ],
           imageAlts: [
-            'Webdesign für Sanitär & Heizung Batherm: Desktop und Mobile Responsive Mockup der neuen Handwerker-Website',
-            'Mobile-First Webdesign für Handwerker Batherm: Lead-Generierung und Terminbuchung auf dem Smartphone',
+            'Webdesign Wetzlar – Premium Handwerker Website für Sanitär & Heizung Batherm',
+            'Webentwicklung Wetzlar – Interaktiver Bad-Konfigurator und Mobile UI für Handwerker',
           ],
         },
         beforeAfter: {
@@ -201,10 +204,13 @@ export const workData: Record<string, Project> = {
           title: 'The Platform',
           description:
             'A Next.js application that feels as smooth as a native app. With integrated scheduling, bath calculator, and automated email flows.',
-          images: ['/images/portfolio/batherm-illustration.webp'],
+          images: [
+            '/images/portfolio/mockup-batherm.png',
+            '/images/portfolio/batherm-illustration.webp',
+          ],
           imageAlts: [
-            'Web Design for HVAC Batherm: Desktop and Mobile Responsive Mockup of the new craftsmen website',
-            'Mobile-First Web Design for Craftsmen Batherm: Lead generation and appointment scheduling on smartphone',
+            'Web Design Wetzlar – Premium Craftsmen Website for HVAC Batherm',
+            'Web Development Wetzlar – Interactive Bath Configurator and Mobile UI for Handwerker',
           ],
         },
         beforeAfter: {
@@ -292,7 +298,9 @@ export const workData: Record<string, Project> = {
           description:
             'Eine maßgeschneiderte Next.js 15 Web-Applikation mit interaktiver Materialauswahl, Projektgalerien mit flüssigen 60fps-Animationen und vollautomatisierter Lead-Zuweisung.',
           images: ['/images/portfolio/memobaut/terrace.jpg'],
-          imageAlts: ['Exklusive Terrassen- und Gartengestaltung durch MemoBau Wetzlar'],
+          imageAlts: [
+            'Webdesign Wetzlar – Exklusive Garten- und Terrassenarchitektur für MemoBau Wetzlar',
+          ],
         },
         results: {
           title: 'Messbare Ergebnisse',
@@ -358,7 +366,9 @@ export const workData: Record<string, Project> = {
           description:
             'A bespoke Next.js 15 web application with interactive material selections, smooth 60fps galleries, and automated lead capture.',
           images: ['/images/portfolio/memobaut/terrace.jpg'],
-          imageAlts: ['Exclusive patio and garden architecture by MemoBau Wetzlar'],
+          imageAlts: [
+            'Web Design Wetzlar – Exclusive patio and garden architecture for MemoBau Wetzlar',
+          ],
         },
         results: {
           title: 'Measurable Results',
@@ -430,7 +440,12 @@ export const workData: Record<string, Project> = {
           title: 'Die Lösung',
           description:
             'Ein blitzschneller Online-Shop, der das Premium-Gefühl der Boutique perfekt in die digitale Welt überträgt.',
-          images: [],
+          images: [
+            '/images/portfolio/mockup-website-immobilienagentur-real-estate-listings-preise-berlin.webp',
+          ],
+          imageAlts: [
+            'Webdesign Wetzlar – Modernes E-Commerce Storefront und Mobile UI für Talia Boutique',
+          ],
         },
         results: {
           title: 'Impact',
@@ -485,7 +500,12 @@ export const workData: Record<string, Project> = {
           title: 'The Solution',
           description:
             'A blazing-fast online shop that perfectly translates the premium feel of the boutique into the digital world.',
-          images: [],
+          images: [
+            '/images/portfolio/mockup-website-immobilienagentur-real-estate-listings-preise-berlin.webp',
+          ],
+          imageAlts: [
+            'Web Development Wetzlar – Modern E-Commerce Storefront and Mobile UI for Talia Boutique',
+          ],
         },
         results: {
           title: 'Impact',
@@ -560,11 +580,9 @@ export const workData: Record<string, Project> = {
           title: 'Die Lösung',
           description:
             'Eine blitzschnelle Next.js-Applikation mit Fokus auf mobile Notfallkunden. Click-to-Call-Buttons, Echtzeit-Verfügbarkeitsanzeige und ein Trust-Marquee mit Zertifizierungen. Jede Unterseite ist für einen spezifischen Stadtteil optimiert.',
-          images: [
-            '/images/hero/hexagon-collage-zimmermann-hammer-elektriker-kabel-bauarbeiter-helm-koch-brot-buero-laptop.webp',
-          ],
+          images: ['/images/portfolio/mockup-schluesseldienst.png'],
           imageAlts: [
-            'Responsive Website Design für Schlüsseldienst Wetzlar mit 24h Notdienst und Festpreisen',
+            'Webdesign Wetzlar – 24h Schlüsselnotdienst responsive Desktop & Mobile Website für Schlüssel Schmiede Wetzlar',
           ],
         },
         results: {
@@ -630,12 +648,10 @@ export const workData: Record<string, Project> = {
         solution: {
           title: 'The Solution',
           description:
-            'A blazing-fast Next.js application focused on mobile emergency customers. Click-to-call buttons, real-time availability indicators, and a trust marquee with certifications. Every subpage is optimized for a specific district.',
-          images: [
-            '/images/hero/hexagon-collage-zimmermann-hammer-elektriker-kabel-bauarbeiter-helm-koch-brot-buero-laptop.webp',
-          ],
+            'A blazing-fast Next.js application focused on mobile emergency customers. Click-to-Call buttons, real-time availability indicators, and a trust marquee with certifications. Every subpage is optimized for a specific district.',
+          images: ['/images/portfolio/mockup-schluesseldienst.png'],
           imageAlts: [
-            'Responsive website design for locksmith Wetzlar with 24h emergency service and fixed prices',
+            'Web Design Wetzlar – 24h Locksmith responsive Desktop and Mobile Website for Schlüssel Schmiede Wetzlar',
           ],
         },
         results: {
@@ -711,9 +727,13 @@ export const workData: Record<string, Project> = {
           title: 'Das Ergebnis',
           description:
             'Eine einladende, blitzschnelle Website, die die Persönlichkeit des Gasthauses perfekt widerspiegelt. Mit integrierter Speisekarte, Google Maps-Anbindung und direkter Kontaktmöglichkeit.',
-          images: ['/images/hero/kundenberatung-gespraech-meeting-service-professionell.webp'],
+          images: [
+            '/images/portfolio/mockup-ratsstuben.png',
+            '/images/portfolio/mockup-website-restaurant-speisekarte-vorspeisen-hauptgerichte-desserts-responsive.webp',
+          ],
           imageAlts: [
-            'Responsive Website Design für Restaurant Lindener Ratsstuben mit digitaler Speisekarte',
+            'Webdesign Wetzlar – Moderne Restaurant & Gasthaus Website für Lindener Ratsstuben',
+            'Webentwicklung Wetzlar – Responsive Speisekarte und Tischreservierung auf Smartphones',
           ],
         },
         results: {
@@ -775,9 +795,13 @@ export const workData: Record<string, Project> = {
           title: 'The Result',
           description:
             'An inviting, blazing-fast website that perfectly reflects the personality of the inn. With integrated menu, Google Maps integration, and direct contact options.',
-          images: ['/images/hero/kundenberatung-gespraech-meeting-service-professionell.webp'],
+          images: [
+            '/images/portfolio/mockup-ratsstuben.png',
+            '/images/portfolio/mockup-website-restaurant-speisekarte-vorspeisen-hauptgerichte-desserts-responsive.webp',
+          ],
           imageAlts: [
-            'Responsive website design for restaurant Lindener Ratsstuben with digital menu',
+            'Web Design Wetzlar – Modern Restaurant and Inn Website for Lindener Ratsstuben',
+            'Web Development Wetzlar – Responsive Digital Menu and Table Reservation on Mobile',
           ],
         },
         results: {
@@ -835,7 +859,10 @@ export const workData: Record<string, Project> = {
         solution: {
           title: 'Coming Soon',
           description: 'Dieses Projekt befindet sich im finalen Feinschliff.',
-          images: [],
+          images: [
+            '/images/portfolio/mockup-website-sanitaer-heizung-mueller-handwerker-24h-notdienst-responsive.webp',
+          ],
+          imageAlts: ['Webdesign Wetzlar – Handwerker- & Bauunternehmens-Website für Memo Baut'],
         },
         results: {
           title: 'Ergebnisse',
@@ -874,7 +901,12 @@ export const workData: Record<string, Project> = {
         solution: {
           title: 'Coming Soon',
           description: 'This project is in final polish.',
-          images: [],
+          images: [
+            '/images/portfolio/mockup-website-sanitaer-heizung-mueller-handwerker-24h-notdienst-responsive.webp',
+          ],
+          imageAlts: [
+            'Web Design Wetzlar – Craftsmen & Construction Company Website for Memo Baut',
+          ],
         },
         results: {
           title: 'Results',
@@ -938,7 +970,12 @@ export const workData: Record<string, Project> = {
           title: 'Coming Soon',
           description:
             'Dieses Projekt befindet sich aktuell in der aktiven Entwicklung. Sobald es live geht, werden hier die vollständigen Details veröffentlicht.',
-          images: [],
+          images: [
+            '/images/portfolio/mockup-website-fitnessstudio-kursplan-yoga-preise-einzelstunde-abo-responsive.webp',
+          ],
+          imageAlts: [
+            'Webentwicklung Wetzlar – Moderne High-Performance Webplattform für hey fede',
+          ],
         },
         results: {
           title: 'Ergebnisse',
@@ -988,7 +1025,12 @@ export const workData: Record<string, Project> = {
           title: 'Coming Soon',
           description:
             'This project is currently in active development. Full details will be published once it goes live.',
-          images: [],
+          images: [
+            '/images/portfolio/mockup-website-fitnessstudio-kursplan-yoga-preise-einzelstunde-abo-responsive.webp',
+          ],
+          imageAlts: [
+            'Web Development Wetzlar – Modern High-Performance Web Platform for hey fede',
+          ],
         },
         results: {
           title: 'Results',

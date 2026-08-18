@@ -10,7 +10,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Web Design',
     readTime: '12 min.',
     image: '/images/services/website-builder-drag-drop-baukasten-elemente-webdesign.webp',
-    alt: 'Website Builder Interface with Drag & Drop Elements',
+    alt: 'Web Design Wetzlar – Modern Website Builder vs Custom Web Development',
     author: 'Coday Expert Team',
     date: 'March 14, 2026',
     content: [
