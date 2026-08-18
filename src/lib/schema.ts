@@ -1,11 +1,41 @@
+import { GOOGLE_REVIEWS, REVIEWS_SUMMARY } from '@/shared/data/reviews';
+
 export const BASE_URL = 'https://www.codayweb.de';
 export const ORG_ID = `${BASE_URL}/#organization`;
 export const FOUNDER_ID = `${BASE_URL}/#founder`;
+
+export function getReviewsSchema(locale: string = 'de') {
+  return {
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: REVIEWS_SUMMARY.ratingValue.toString(),
+      reviewCount: REVIEWS_SUMMARY.reviewCount.toString(),
+      bestRating: REVIEWS_SUMMARY.bestRating.toString(),
+      worstRating: REVIEWS_SUMMARY.worstRating.toString(),
+    },
+    review: GOOGLE_REVIEWS.map((review) => ({
+      '@type': 'Review',
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: review.rating.toString(),
+        bestRating: '5',
+        worstRating: '1',
+      },
+      author: {
+        '@type': 'Person',
+        name: review.authorName,
+      },
+      datePublished: review.datePublished,
+      reviewBody: locale === 'en' ? review.quote.en : review.quote.de,
+    })),
+  };
+}
 
 export function getOrganizationSchema(locale: string = 'de') {
   return {
     '@type': ['Organization', 'LocalBusiness', 'ProfessionalService'],
     '@id': ORG_ID,
+    ...getReviewsSchema(locale),
     name: 'Coday',
     legalName: 'Umutcan Emre Tezgel',
     alternateName: ['Coday Webentwicklung', 'Coday Web Agency'],
@@ -148,6 +178,7 @@ export function getProfessionalServiceSchema(locale: string = 'de') {
     provider: {
       '@id': ORG_ID,
     },
+    ...getReviewsSchema(locale),
     name: 'Coday Web Agency',
     legalName: 'Umutcan Emre Tezgel',
     description:
@@ -243,6 +274,7 @@ export function getLocalBusinessSchema(locale: string = 'de') {
     parentOrganization: {
       '@id': ORG_ID,
     },
+    ...getReviewsSchema(locale),
     name: locale === 'en' ? 'Coday - Web Design Wetzlar' : 'Coday - Webdesign Wetzlar',
     description:
       locale === 'en'

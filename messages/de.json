@@ -689,27 +689,33 @@
     "testimonials": {
       "title_prefix": "Was unsere",
       "title_suffix": "Kunden sagen",
-      "text": "Erfahrungsberichte von echten Partnern aus der Praxis.",
-      "rating": "5.0 / 5.0",
-      "excellence": "Exzellenz-Standard",
+      "text": "100% echte Kundenstimmen — verifiziert auf Google mit 5,0 von 5 Sternen.",
+      "rating": "5,0 / 5,0 Sterne",
+      "excellence": "Basierend auf allen 4 verifizierten Google-Rezensionen",
       "items": [
         {
-          "quote": "Die Zusammenarbeit mit Coday war ein voller Erfolg. Unsere neue Website ist nicht nur optisch ein Meisterwerk, sondern überzeugt auch durch herausragende Performance.",
-          "authorName": "Dr. Markus Schmidt",
-          "authorPosition": "Geschäftsführer",
-          "authorCompany": "Schmidt Consulting"
+          "quote": "Coday Web ist die beste Webagentur, mit der ich bisher zusammengearbeitet habe. Die Mitarbeiter sind kompetent, schnell erreichbar und unterstützen Anliegen zügig und engagiert. Die Arbeitsweise dieser Agentur ist makellos, und ich bin mit dem Ergebnis für mein Unternehmen vollkommen zufrieden. Ich kann sie uneingeschränkt weiterempfehlen und freue mich auf zukünftige Geschäftsbeziehungen mit diesen kompetenten Partnern.",
+          "authorName": "Behzad Aydin",
+          "authorPosition": "Verifizierte Google-Rezension",
+          "authorCompany": "Unternehmer"
         },
         {
-          "quote": "Von der ersten Konzeption bis zum Livegang – absolute Professionalität und technisches Know-how auf höchstem Niveau.",
-          "authorName": "Laura Weber",
-          "authorPosition": "Marketingleiterin",
-          "authorCompany": "Weber Immobilien"
+          "quote": "Wir haben unsere neue Website von Coday erstellen lassen und sind absolut begeistert. Wer eine kompetente Webdesign Agentur in Wetzlar sucht, ist hier genau richtig. Die Beratung war von Beginn an professionell, die Umsetzung extrem schnell und das Ergebnis hat unsere Erwartungen weit übertroffen.",
+          "authorName": "Zeynep",
+          "authorPosition": "Verifizierte Google-Rezension",
+          "authorCompany": "Wetzlar"
         },
         {
-          "quote": "Dank der neuen E-Commerce-Lösung konnten wir unsere Conversion-Rate signifikant steigern. Ein verlässlicher Partner für digitales Wachstum.",
-          "authorName": "Johannes Becker",
-          "authorPosition": "Gründer",
-          "authorCompany": "Becker Retail GmbH"
+          "quote": "Sehr zufrieden mit der Erstellung unserer Homepage! Professionelle Arbeit, schnelle Umsetzung und eine tolle Kommunikation. Absolut empfehlenswert.",
+          "authorName": "Baris Aydin",
+          "authorPosition": "Local Guide · 4 Rezensionen",
+          "authorCompany": "Unternehmer"
+        },
+        {
+          "quote": "Absolute Empfehlung! Ich bin mit der Arbeit mehr als zufrieden. Meine Webseite wurde professionell, modern und genau nach meinen Vorstellungen umgesetzt. Besonders hervorheben möchte ich die zuverlässige Kommunikation, die schnelle Umsetzung und dass auch auf kleine Änderungswünsche immer direkt eingegangen wurde. Man merkt sofort, dass hier jemand arbeitet, der sein Handwerk versteht und nicht einfach nur irgendeine Webseite zusammenbaut, sondern sich wirklich Gedanken darüber macht, wie der Internetauftritt für das jeweilige Unternehmen funktionieren soll. Auch nach Fertigstellung der Webseite ist er weiterhin erreichbar und hilft bei Fragen oder Anpassungen schnell und unkompliziert weiter. Genau so stelle ich mir eine gute und langfristige Zusammenarbeit vor. Ich kann ihn wirklich uneingeschränkt weiterempfehlen und würde meine Webseite jederzeit wieder von ihm erstellen lassen. Vielen Dank für die hervorragende Arbeit absolut verdiente 5 Sterne!",
+          "authorName": "I I",
+          "authorPosition": "Local Guide · 9 Rezensionen · 3 Fotos",
+          "authorCompany": "Verifizierter Kunde"
         }
       ]
     },
@@ -2748,27 +2754,33 @@
   "testimonials": {
     "title_prefix": "Was unsere Kunden",
     "title_suffix": "über uns sagen.",
-    "text": "Erfahren Sie, wie wir Unternehmen dabei unterstützen, ihre digitale Präsenz auf das nächste Level zu heben.",
-    "rating": "4.9/5 Durchschnittliche Bewertung",
-    "excellence": "Basierend auf echten Kundenstimmen",
+    "text": "100% echte Kundenstimmen — verifiziert auf Google mit 5,0 von 5 Sternen.",
+    "rating": "5,0 / 5,0 Sterne",
+    "excellence": "Basierend auf allen 4 verifizierten Google-Rezensionen",
     "items": [
       {
-        "quote": "Die Zusammenarbeit mit Coday war ein voller Erfolg. Unsere neue Website ist nicht nur optisch ein Meisterwerk, sondern überzeugt auch durch herausragende Performance.",
-        "authorName": "Dr. Markus Schmidt",
-        "authorPosition": "Geschäftsführer",
-        "authorCompany": "Schmidt Consulting"
+        "quote": "Coday Web ist die beste Webagentur, mit der ich bisher zusammengearbeitet habe. Die Mitarbeiter sind kompetent, schnell erreichbar und unterstützen Anliegen zügig und engagiert. Die Arbeitsweise dieser Agentur ist makellos, und ich bin mit dem Ergebnis für mein Unternehmen vollkommen zufrieden. Ich kann sie uneingeschränkt weiterempfehlen und freue mich auf zukünftige Geschäftsbeziehungen mit diesen kompetenten Partnern.",
+        "authorName": "Behzad Aydin",
+        "authorPosition": "Verifizierte Google-Rezension",
+        "authorCompany": "Unternehmer"
       },
       {
-        "quote": "Von der ersten Konzeption bis zum Livegang – absolute Professionalität und technisches Know-how auf höchstem Niveau.",
-        "authorName": "Laura Weber",
-        "authorPosition": "Marketingleiterin",
-        "authorCompany": "Weber Immobilien"
+        "quote": "Wir haben unsere neue Website von Coday erstellen lassen und sind absolut begeistert. Wer eine kompetente Webdesign Agentur in Wetzlar sucht, ist hier genau richtig. Die Beratung war von Beginn an professionell, die Umsetzung extrem schnell und das Ergebnis hat unsere Erwartungen weit übertroffen.",
+        "authorName": "Zeynep",
+        "authorPosition": "Verifizierte Google-Rezension",
+        "authorCompany": "Wetzlar"
       },
       {
-        "quote": "Dank der neuen E-Commerce-Lösung konnten wir unsere Conversion-Rate signifikant steigern. Ein verlässlicher Partner für digitales Wachstum.",
-        "authorName": "Johannes Becker",
-        "authorPosition": "Gründer",
-        "authorCompany": "Becker Retail GmbH"
+        "quote": "Sehr zufrieden mit der Erstellung unserer Homepage! Professionelle Arbeit, schnelle Umsetzung und eine tolle Kommunikation. Absolut empfehlenswert.",
+        "authorName": "Baris Aydin",
+        "authorPosition": "Local Guide · 4 Rezensionen",
+        "authorCompany": "Unternehmer"
+      },
+      {
+        "quote": "Absolute Empfehlung! Ich bin mit der Arbeit mehr als zufrieden. Meine Webseite wurde professionell, modern und genau nach meinen Vorstellungen umgesetzt. Besonders hervorheben möchte ich die zuverlässige Kommunikation, die schnelle Umsetzung und dass auch auf kleine Änderungswünsche immer direkt eingegangen wurde. Man merkt sofort, dass hier jemand arbeitet, der sein Handwerk versteht und nicht einfach nur irgendeine Webseite zusammenbaut, sondern sich wirklich Gedanken darüber macht, wie der Internetauftritt für das jeweilige Unternehmen funktionieren soll. Auch nach Fertigstellung der Webseite ist er weiterhin erreichbar und hilft bei Fragen oder Anpassungen schnell und unkompliziert weiter. Genau so stelle ich mir eine gute und langfristige Zusammenarbeit vor. Ich kann ihn wirklich uneingeschränkt weiterempfehlen und würde meine Webseite jederzeit wieder von ihm erstellen lassen. Vielen Dank für die hervorragende Arbeit absolut verdiente 5 Sterne!",
+        "authorName": "I I",
+        "authorPosition": "Local Guide · 9 Rezensionen · 3 Fotos",
+        "authorCompany": "Verifizierter Kunde"
       }
     ]
   },
@@ -3816,9 +3828,9 @@
       "title": "Übersicht"
     },
     "testimonial": {
-      "text": "Text",
-      "author": "Umutcan Emre Tezgel",
-      "role": "Inhaber & Lead Developer"
+      "text": "Absolute Empfehlung! Meine Webseite wurde professionell, modern und genau nach meinen Vorstellungen umgesetzt. Zuverlässige Kommunikation, schnelle Umsetzung und direkte Betreuung.",
+      "author": "I I",
+      "role": "Verifizierte Google-Rezension · 5,0 ★★★★★"
     },
     "seoText": {
       "title": "Übersicht",

@@ -11,12 +11,16 @@ export const ClientReferencesGrid: React.FC = () => {
       {clientReferences.map((client) => (
         <div key={client.id} className="group text-center">
           {/* Small circular avatar */}
-          <div className="w-16 h-16 mx-auto mb-3 rounded-full overflow-hidden ring-2 ring-gray-100 group-hover:ring-primary/30 transition motion-reduce:duration-[0.01ms] duration-300">
-            <OptimizedImage
-              src={client.image}
-              alt={client.name}
-              className="w-full h-full object-cover"
-            />
+          <div className="w-16 h-16 mx-auto mb-3 rounded-full overflow-hidden ring-2 ring-gray-100 group-hover:ring-primary/30 transition motion-reduce:duration-[0.01ms] duration-300 flex items-center justify-center bg-primary/10 text-primary font-bold text-lg">
+            {client.image ? (
+              <OptimizedImage
+                src={client.image}
+                alt={client.name}
+                className="w-full h-full object-cover"
+              />
+            ) : (
+              <span>{client.name.charAt(0)}</span>
+            )}
           </div>
           {/* Name and company */}
           <h4 className="font-semibold text-sm text-secondary mb-0.5">{client.name}</h4>

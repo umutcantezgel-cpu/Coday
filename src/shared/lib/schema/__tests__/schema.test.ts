@@ -19,6 +19,15 @@ describe('JSON-LD Schema Generators', () => {
     expect(org['vatID']).toBe('DE459754827');
     expect(org['taxID']).toBe('039 874 00784');
 
+    const aggregateRating = org['aggregateRating'] as Record<string, unknown>;
+    expect(aggregateRating).toBeDefined();
+    expect(aggregateRating['@type']).toBe('AggregateRating');
+    expect(aggregateRating['ratingValue']).toBe(5);
+    expect(aggregateRating['reviewCount']).toBe(4);
+
+    const reviews = org['review'] as unknown[];
+    expect(reviews).toHaveLength(4);
+
     const person = getUmutSchema() as unknown as Record<string, unknown>;
     expect(person['@type']).toBe('Person');
     expect(person['@id']).toBe(UMUT_ID);

@@ -1,4 +1,5 @@
 import { Organization, Person } from 'schema-dts';
+import { GOOGLE_REVIEWS, REVIEWS_SUMMARY } from '@/shared/data/reviews';
 
 export const ORGANIZATION_ID = 'https://www.codayweb.de/#organization';
 export const UMUT_ID = 'https://www.codayweb.de/#umut';
@@ -10,6 +11,28 @@ export function getOrganizationSchema(): Organization {
     name: 'Coday',
     url: 'https://www.codayweb.de',
     logo: 'https://www.codayweb.de/images/brand/coday-logo-footer.webp',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: REVIEWS_SUMMARY.ratingValue,
+      reviewCount: REVIEWS_SUMMARY.reviewCount,
+      bestRating: REVIEWS_SUMMARY.bestRating,
+      worstRating: REVIEWS_SUMMARY.worstRating,
+    },
+    review: GOOGLE_REVIEWS.map((review) => ({
+      '@type': 'Review',
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: review.rating,
+        bestRating: 5,
+        worstRating: 1,
+      },
+      author: {
+        '@type': 'Person',
+        name: review.authorName,
+      },
+      datePublished: review.datePublished,
+      reviewBody: review.quote.de,
+    })),
     sameAs: [
       'https://www.linkedin.com/in/umutcan-tezgel',
       'https://twitter.com/codayweb',

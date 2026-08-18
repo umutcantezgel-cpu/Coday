@@ -689,27 +689,33 @@
     "testimonials": {
       "title_prefix": "What our",
       "title_suffix": "Clients say",
-      "text": "Testimonials from verified partners.",
-      "rating": "5.0 / 5.0",
-      "excellence": "Excellence Standard",
+      "text": "100% authentic customer feedback — verified on Google with 5.0 out of 5 stars.",
+      "rating": "5.0 / 5.0 Stars",
+      "excellence": "Based on all 4 verified Google reviews",
       "items": [
         {
-          "quote": "Die Zusammenarbeit mit Coday war ein voller Erfolg. Unsere neue Website ist nicht nur optisch ein Meisterwerk, sondern überzeugt auch durch herausragende Performance.",
-          "authorName": "Dr. Markus Schmidt",
-          "authorPosition": "Geschäftsführer",
-          "authorCompany": "Schmidt Consulting"
+          "quote": "Coday Web is the best web agency I have worked with so far. The team is competent, quickly reachable, and supports requests swiftly and dedicatedly. The agency’s way of working is flawless, and I am completely satisfied with the result for my company. I can unreservedly recommend them and look forward to future business relationships.",
+          "authorName": "Behzad Aydin",
+          "authorPosition": "Verified Google Review",
+          "authorCompany": "Entrepreneur"
         },
         {
-          "quote": "Von der ersten Konzeption bis zum Livegang, absolute Professionalität und technisches Know-how auf höchstem Niveau.",
-          "authorName": "Laura Weber",
-          "authorPosition": "Marketingleiterin",
-          "authorCompany": "Weber Immobilien"
+          "quote": "We had our new website built by Coday and are absolutely thrilled. If you are looking for a competent web design agency in Wetzlar, this is exactly the right place. The consultation was professional right from the start, the implementation extremely fast, and the result far exceeded our expectations.",
+          "authorName": "Zeynep",
+          "authorPosition": "Verified Google Review",
+          "authorCompany": "Wetzlar"
         },
         {
-          "quote": "Dank der neuen E-Commerce-Lösung konnten wir unsere Conversion-Rate signifikant steigern. Ein verlässlicher Partner für digitales Wachstum.",
-          "authorName": "Johannes Becker",
-          "authorPosition": "Gründer",
-          "authorCompany": "Becker Retail GmbH"
+          "quote": "Very satisfied with the creation of our homepage! Professional work, fast implementation and great communication. Highly recommended.",
+          "authorName": "Baris Aydin",
+          "authorPosition": "Local Guide · 4 Reviews",
+          "authorCompany": "Entrepreneur"
+        },
+        {
+          "quote": "Absolute recommendation! I am more than satisfied with the work. My website was implemented professionally, modernly, and exactly according to my vision. I would especially like to emphasize the reliable communication, the fast implementation, and that even small change requests were always addressed directly. You immediately notice that someone is working here who understands their craft and does not just assemble any website, but genuinely thinks about how the internet presence should work for the respective company. Even after the website was completed, he continues to be available and helps quickly and straightforwardly with questions or adjustments. That is exactly how I envision a great, long-term cooperation. I can truly recommend him without reservation and would have my website built by him again at any time. Thank you very much for the outstanding work – absolutely deserved 5 stars!",
+          "authorName": "I I",
+          "authorPosition": "Local Guide · 9 Reviews · 3 Photos",
+          "authorCompany": "Verified Client"
         }
       ]
     },
@@ -2750,29 +2756,35 @@
     "focused": "Fokus auf Ihren ROI"
   },
   "testimonials": {
-    "title_prefix": "Was unsere Kunden",
-    "title_suffix": "über uns sagen.",
-    "text": "Erfahren Sie, wie wir Unternehmen dabei unterstützen, ihre digitale Präsenz auf das nächste Level zu heben.",
-    "rating": "4.9/5 Durchschnittliche Bewertung",
-    "excellence": "Basierend auf echten Kundenstimmen",
+    "title_prefix": "What our clients",
+    "title_suffix": "say about us.",
+    "text": "100% authentic customer feedback — verified on Google with 5.0 out of 5 stars.",
+    "rating": "5.0 / 5.0 Stars",
+    "excellence": "Based on all 4 verified Google reviews",
     "items": [
       {
-        "quote": "Die Zusammenarbeit mit Coday war ein voller Erfolg. Unsere neue Website ist nicht nur optisch ein Meisterwerk, sondern überzeugt auch durch herausragende Performance.",
-        "authorName": "Dr. Markus Schmidt",
-        "authorPosition": "Geschäftsführer",
-        "authorCompany": "Schmidt Consulting"
+        "quote": "Coday Web is the best web agency I have worked with so far. The team is competent, quickly reachable, and supports requests swiftly and dedicatedly. The agency’s way of working is flawless, and I am completely satisfied with the result for my company. I can unreservedly recommend them and look forward to future business relationships.",
+        "authorName": "Behzad Aydin",
+        "authorPosition": "Verified Google Review",
+        "authorCompany": "Entrepreneur"
       },
       {
-        "quote": "Von der ersten Konzeption bis zum Livegang, absolute Professionalität und technisches Know-how auf höchstem Niveau.",
-        "authorName": "Laura Weber",
-        "authorPosition": "Marketingleiterin",
-        "authorCompany": "Weber Immobilien"
+        "quote": "We had our new website built by Coday and are absolutely thrilled. If you are looking for a competent web design agency in Wetzlar, this is exactly the right place. The consultation was professional right from the start, the implementation extremely fast, and the result far exceeded our expectations.",
+        "authorName": "Zeynep",
+        "authorPosition": "Verified Google Review",
+        "authorCompany": "Wetzlar"
       },
       {
-        "quote": "Dank der neuen E-Commerce-Lösung konnten wir unsere Conversion-Rate signifikant steigern. Ein verlässlicher Partner für digitales Wachstum.",
-        "authorName": "Johannes Becker",
-        "authorPosition": "Gründer",
-        "authorCompany": "Becker Retail GmbH"
+        "quote": "Very satisfied with the creation of our homepage! Professional work, fast implementation and great communication. Highly recommended.",
+        "authorName": "Baris Aydin",
+        "authorPosition": "Local Guide · 4 Reviews",
+        "authorCompany": "Entrepreneur"
+      },
+      {
+        "quote": "Absolute recommendation! I am more than satisfied with the work. My website was implemented professionally, modernly, and exactly according to my vision. I would especially like to emphasize the reliable communication, the fast implementation, and that even small change requests were always addressed directly. You immediately notice that someone is working here who understands their craft and does not just assemble any website, but genuinely thinks about how the internet presence should work for the respective company. Even after the website was completed, he continues to be available and helps quickly and straightforwardly with questions or adjustments. That is exactly how I envision a great, long-term cooperation. I can truly recommend him without reservation and would have my website built by him again at any time. Thank you very much for the outstanding work – absolutely deserved 5 stars!",
+        "authorName": "I I",
+        "authorPosition": "Local Guide · 9 Reviews · 3 Photos",
+        "authorCompany": "Verified Client"
       }
     ]
   },
@@ -3794,9 +3806,9 @@
       "title": "Overview"
     },
     "testimonial": {
-      "text": "Text",
-      "author": "Umutcan Emre Tezgel",
-      "role": "Founder & Lead Developer"
+      "text": "Absolute recommendation! My website was implemented professionally, modernly, and exactly according to my vision. Reliable communication, fast execution, and direct support.",
+      "author": "I I",
+      "role": "Verified Google Review · 5.0 ★★★★★"
     },
     "seoText": {
       "title": "Overview",
