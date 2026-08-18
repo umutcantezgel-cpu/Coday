@@ -291,11 +291,8 @@ export const workData: Record<string, Project> = {
           title: 'Die Plattform',
           description:
             'Eine maßgeschneiderte Next.js 15 Web-Applikation mit interaktiver Materialauswahl, Projektgalerien mit flüssigen 60fps-Animationen und vollautomatisierter Lead-Zuweisung.',
-          images: ['/images/portfolio/memobaut/van.jpg', '/images/portfolio/memobaut/terrace.jpg'],
-          imageAlts: [
-            'MemoBau Einsatzfahrzeug und Markenbranding vor Ort in Wetzlar',
-            'Exklusive Terrassen- und Gartengestaltung durch MemoBau Wetzlar',
-          ],
+          images: ['/images/portfolio/memobaut/terrace.jpg'],
+          imageAlts: ['Exklusive Terrassen- und Gartengestaltung durch MemoBau Wetzlar'],
         },
         results: {
           title: 'Messbare Ergebnisse',
@@ -360,11 +357,8 @@ export const workData: Record<string, Project> = {
           title: 'The Platform',
           description:
             'A bespoke Next.js 15 web application with interactive material selections, smooth 60fps galleries, and automated lead capture.',
-          images: ['/images/portfolio/memobaut/van.jpg', '/images/portfolio/memobaut/terrace.jpg'],
-          imageAlts: [
-            'MemoBau fleet vehicle and brand identity in Wetzlar',
-            'Exclusive patio and garden architecture by MemoBau Wetzlar',
-          ],
+          images: ['/images/portfolio/memobaut/terrace.jpg'],
+          imageAlts: ['Exclusive patio and garden architecture by MemoBau Wetzlar'],
         },
         results: {
           title: 'Measurable Results',
