@@ -62,7 +62,11 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             '@id': `${BASE_URL}/#organization`,
           },
           url: `${BASE_URL}/${locale}/about`,
-          sameAs: ['https://codayweb.de'],
+          sameAs: [
+            'https://www.provenexpert.com/de-de/coday-webagentur/',
+            'https://maps.app.goo.gl/9SagecgXw7Vf5csH7',
+            'https://www.linkedin.com/in/umutcan-emre-tezgel-156382218/',
+          ],
           knowsAbout: [
             'Next.js 15',
             'React 19',

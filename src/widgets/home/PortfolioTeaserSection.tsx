@@ -11,8 +11,12 @@ export const PortfolioTeaserSection: React.FC = () => {
   const locale = useLocale();
   const currentLang = locale as 'de' | 'en';
 
-  // Grab the top 3 projects for the teaser
-  const projects = Object.values(workData).slice(0, 3);
+  // Featured real client projects for the teaser (Batherm, Schlüsseldienst, MemoBau)
+  const projects = [
+    workData['batherm'],
+    workData['schluesseldienst-wetzlar'],
+    workData['memobaut'],
+  ].filter(Boolean);
 
   return (
     <section className="py-[var(--space-section)] bg-background-light overflow-hidden">
@@ -47,7 +51,7 @@ export const PortfolioTeaserSection: React.FC = () => {
           {projects.map((project, index) => {
             const content = project.content[currentLang] || project.content['de'];
             const isEven = index % 2 === 0;
-            const image = content.solution?.images?.[0] || '/images/brand/coday-full.webp';
+            const image = content.solution?.images?.[0];
             const tags = content.stats?.map((s) => s.value) || [];
 
             return (
@@ -57,17 +61,25 @@ export const PortfolioTeaserSection: React.FC = () => {
               >
                 {/* Image Section */}
                 <ScaleIn delay={0.1} duration={0.8} className="w-full lg:w-3/5 group relative">
-                  <div className="block relative aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-[0_20px_50px_rgba(8,_112,_184,_0.07)]">
+                  <div className="block relative aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-[0_20px_50px_rgba(8,_112,_184,_0.07)] bg-slate-900">
                     <div className="absolute inset-0 bg-secondary-900/5 group-hover:bg-transparent transition-colors duration-500 z-10" />
-                    <OptimizedImage
-                      src={image}
-                      alt={content.solution?.imageAlts?.[0] || content.title}
-                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[1.2s] ease-[cubic-bezier(0.25,1,0.5,1)]"
-                      width={1200}
-                      height={900}
-                      priority={false}
-                      loading="lazy"
-                    />
+                    {image ? (
+                      <OptimizedImage
+                        src={image}
+                        alt={content.solution?.imageAlts?.[0] || content.title}
+                        className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[1.2s] ease-[cubic-bezier(0.25,1,0.5,1)]"
+                        width={1200}
+                        height={900}
+                        priority={false}
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 flex items-center justify-center p-8 text-center">
+                        <span className="text-2xl font-bold font-display text-white">
+                          {content.title}
+                        </span>
+                      </div>
+                    )}
 
                     {/* Hover Overlay Badge */}
                     <div className="absolute top-6 right-6 z-20 opacity-0 group-hover:opacity-100 group-hover/card:opacity-100 transform translate-y-4 group-hover:translate-y-0 group-hover/card:translate-y-0 transition-[opacity,transform] duration-500 bg-white/90 backdrop-blur-md text-secondary-900 rounded-full p-4 shadow-xl flex items-center justify-center">

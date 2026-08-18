@@ -22,21 +22,27 @@ export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ project, index = 1
   const industry = content.category;
   const tags = content.stats?.map((s) => s.value) || [];
 
-  // Try to use solution images if available, otherwise fallback
-  const image = content.solution?.images?.[0] || '/images/brand/coday-full.webp';
+  // Try to use solution images if available
+  const image = content.solution?.images?.[0];
   const isLcp = index === 0;
 
   const innerContent = (
     <article className="group relative h-full flex flex-col bg-surface-elevated overflow-hidden transition-colors motion-safe:duration-500 hover:bg-neutral-50 dark:hover:bg-neutral-800/80 cursor-pointer w-full">
-      <div className="relative aspect-[4/3] w-full overflow-hidden border-b border-border-subtle">
-        <OptimizedImage
-          src={image}
-          alt={content.solution?.imageAlts?.[0] || `Case Study: ${title} - ${industry}`}
-          className="w-full h-full object-cover transform group-hover:scale-105 transition-transform motion-reduce:duration-[0.01ms] duration-[800ms] ease-spring"
-          width={800}
-          height={600}
-          priority={isLcp}
-        />
+      <div className="relative aspect-[4/3] w-full overflow-hidden border-b border-border-subtle bg-slate-900">
+        {image ? (
+          <OptimizedImage
+            src={image}
+            alt={content.solution?.imageAlts?.[0] || `Case Study: ${title} - ${industry}`}
+            className="w-full h-full object-cover transform group-hover:scale-105 transition-transform motion-reduce:duration-[0.01ms] duration-[800ms] ease-spring"
+            width={800}
+            height={600}
+            priority={isLcp}
+          />
+        ) : (
+          <div className="w-full h-full bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 flex items-center justify-center p-6 text-center">
+            <span className="text-xl font-bold font-display text-white">{title}</span>
+          </div>
+        )}
       </div>
 
       <div className="flex flex-col flex-grow p-6 md:p-8 justify-between">

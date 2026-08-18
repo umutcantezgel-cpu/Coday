@@ -1,5 +1,4 @@
-import React from 'react';
-import { LockKey, CheckCircle } from '@phosphor-icons/react/dist/ssr';
+import { LockKey, Star, CheckCircle, ShieldCheck } from '@phosphor-icons/react/dist/ssr';
 import { OptimizedIcon } from '@/shared/ui/OptimizedIcon';
 import { FadeInUp } from '@/shared/ui/MotionWrappers';
 
@@ -14,17 +13,33 @@ export interface TrustBadge {
 
 const DEFAULT_BADGES: TrustBadge[] = [
   {
+    id: 'google-maps',
+    icon: Star,
+    title: 'Google Maps (5.0 ★)',
+    description: '4 verifizierte Rezensionen',
+    url: 'https://maps.app.goo.gl/9SagecgXw7Vf5csH7',
+    color: 'text-amber-500',
+  },
+  {
+    id: 'proven-expert',
+    icon: ShieldCheck,
+    title: 'ProvenExpert (5.0 ★)',
+    description: '100% Kundenzufriedenheit',
+    url: 'https://www.provenexpert.com/de-de/coday-webagentur/',
+    color: 'text-emerald-600',
+  },
+  {
     id: 'dsgvo',
     icon: LockKey,
     title: 'DSGVO Konform',
-    description: '100% Datenschutz-konform',
-    color: 'text-blue-500',
+    description: '100% Datenschutz & Eigentum',
+    color: 'text-blue-600',
   },
   {
-    id: 'vercel',
-    icon: CheckCircle, // or Lightning/Rocket if preferred
-    title: 'Vercel Edge Network',
-    description: 'Global verteilt für maximale Geschwindigkeit',
+    id: 'edge',
+    icon: CheckCircle,
+    title: 'High-Speed Edge',
+    description: '< 0.8s Ladezeit & Core Web Vitals',
     color: 'text-slate-900',
   },
 ];

@@ -141,7 +141,10 @@ export function getOrganizationSchema(locale: string = 'de') {
         availableLanguage: ['German', 'English'],
       },
     ],
+    hasMap: 'https://maps.app.goo.gl/9SagecgXw7Vf5csH7',
     sameAs: [
+      'https://www.provenexpert.com/de-de/coday-webagentur/',
+      'https://maps.app.goo.gl/9SagecgXw7Vf5csH7',
       'https://www.linkedin.com/company/coday',
       'https://www.linkedin.com/in/umutcan-emre-tezgel-156382218/',
       'https://github.com/coday',
@@ -204,6 +207,14 @@ export function getProfessionalServiceSchema(locale: string = 'de') {
       latitude: 50.5558,
       longitude: 8.504,
     },
+    hasMap: 'https://maps.app.goo.gl/9SagecgXw7Vf5csH7',
+    sameAs: [
+      'https://www.provenexpert.com/de-de/coday-webagentur/',
+      'https://maps.app.goo.gl/9SagecgXw7Vf5csH7',
+      'https://www.linkedin.com/company/coday',
+      'https://www.linkedin.com/in/umutcan-emre-tezgel-156382218/',
+      'https://www.instagram.com/codayweb',
+    ],
     founder: {
       '@type': 'Person',
       '@id': FOUNDER_ID,
@@ -283,6 +294,13 @@ export function getLocalBusinessSchema(locale: string = 'de') {
     url: BASE_URL,
     telephone: '+49-176-41195301',
     image: `${BASE_URL}/logo.png`,
+    hasMap: 'https://maps.app.goo.gl/9SagecgXw7Vf5csH7',
+    sameAs: [
+      'https://www.provenexpert.com/de-de/coday-webagentur/',
+      'https://maps.app.goo.gl/9SagecgXw7Vf5csH7',
+      'https://www.linkedin.com/company/coday',
+      'https://www.linkedin.com/in/umutcan-emre-tezgel-156382218/',
+    ],
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Lessingstraße 4',

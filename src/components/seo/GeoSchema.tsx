@@ -29,9 +29,9 @@ export function GeoSchema({ type, data }: GeoSchemaProps) {
         addressCountry: 'DE',
       },
       sameAs: [
-        // Verknüpfung mit Entitäten für LLMs extrem wichtig!
+        'https://www.provenexpert.com/de-de/coday-webagentur/',
+        'https://maps.app.goo.gl/9SagecgXw7Vf5csH7',
         'https://www.linkedin.com/company/coday',
-        // 'https://twitter.com/codayweb'
       ],
       ...data,
     };

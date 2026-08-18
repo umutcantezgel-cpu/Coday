@@ -127,20 +127,10 @@ export const workData: Record<string, Project> = {
           title: 'Die Plattform',
           description:
             'Eine Next.js Applikation, die sich so flüssig anfühlt wie eine native App. Mit integriertem Terminkalender, Bad-Rechner und automatisierten Email-Flows. Wir haben ein hochmodernes, ansprechendes Webdesign entwickelt, das nicht nur ästhetisch überzeugt, sondern auch auf Conversion-Optimierung ausgelegt ist. Die Performance-Optimierung durch Headless-Architektur garantiert dabei blitzschnelle Ladezeiten, was sich signifikant auf das SEO-Ranking auswirkt.',
-          images: [
-            '/images/portfolio/mockup-batherm.png',
-            '/images/portfolio/batherm-illustration.webp',
-          ],
+          images: ['/images/portfolio/mockup-batherm.png'],
           imageAlts: [
             'Webdesign Wetzlar – Premium Handwerker Website für Sanitär & Heizung Batherm',
-            'Webentwicklung Wetzlar – Interaktiver Bad-Konfigurator und Mobile UI für Handwerker',
           ],
-        },
-        beforeAfter: {
-          beforeImage: '/images/brand/coday-full.webp',
-          afterImage: '/images/portfolio/batherm-illustration.webp',
-          beforeAlt: 'Alte, veraltete Website des Sanitärbetriebs Batherm ohne Conversion-Fokus',
-          afterAlt: 'Neues, performantes Webdesign für Batherm mit Fokus auf Lead-Generierung',
         },
         results: {
           title: 'Hard Facts',
@@ -158,67 +148,55 @@ export const workData: Record<string, Project> = {
         ],
       },
       en: {
-        title: 'Batherm',
-        subtitle: 'Craftsmanship Digitalization',
+        title: 'Batherm - Craftsmen Website Agency',
+        subtitle: 'Digitization in the Crafts Sector',
         category: 'Web Development & Lead Gen',
         stats: [
-          { label: 'Industry', value: 'HVAC & Sanitary' },
+          { label: 'Industry', value: 'Plumbing & Heating' },
           { label: 'Tech Stack', value: 'Next.js, Tailwind' },
           { label: 'Duration', value: '6 Weeks' },
         ],
         challenge: {
           title: 'The Problem',
           description:
-            'A traditional company with an excellent reputation, but invisible to the digital generation. The old website was a business card without function. No leads, no pre-qualification.',
+            'A traditional business with an excellent reputation, but invisible to the digital generation. The old website was a digital card without function. No leads, no pre-qualification.',
           list: [
-            'Outdated image repelling young talent',
-            'High manual effort for appointments',
-            'No automatic filtering of "cheap clients"',
+            'Outdated image deterring young skilled workers',
+            'High manual effort in appointment booking',
+            'No automated qualification of incoming requests',
           ],
           quote: {
-            text: 'We were top league in craftsmanship, but district league digitally. Coday changed that.',
-            author: 'CEO, Batherm GmbH',
+            text: 'We were top tier craftspeople, but digitally invisible. Coday changed that completely.',
+            author: 'Managing Director, Batherm GmbH',
           },
         },
         approach: {
-          title: 'Our Playbook',
+          title: 'Our Gameplan',
           description:
-            'Not just a "redesign", but a repositioning. We staged Batherm not as craftsmen, but as a premium service provider.',
+            'Not just a "redesign", but a strategic repositioning. We presented Batherm as a premium service provider.',
           steps: [
             {
               title: 'Brand Audit',
               description:
-                'Identifying the "Unfair Advantage": Decades of experience & premium materials.',
+                'Identification of unfair advantages: Decades of experience & premium materials.',
             },
             {
               title: 'Funnel Architecture',
-              description: 'Building an interactive bath configurator flow for lead qualification.',
+              description:
+                'Building an interactive bathroom configurator flow for lead qualification.',
             },
             {
               title: 'High-Speed Development',
-              description: 'Developing a headless solution loading in <1 second (Core Web Vitals).',
+              description: 'Development of a headless solution loading in <1 second.',
             },
           ],
         },
         solution: {
           title: 'The Platform',
           description:
-            'A Next.js application that feels as smooth as a native app. With integrated scheduling, bath calculator, and automated email flows.',
-          images: [
-            '/images/portfolio/mockup-batherm.png',
-            '/images/portfolio/batherm-illustration.webp',
-          ],
-          imageAlts: [
-            'Web Design Wetzlar – Premium Craftsmen Website for HVAC Batherm',
-            'Web Development Wetzlar – Interactive Bath Configurator and Mobile UI for Handwerker',
-          ],
-        },
-        beforeAfter: {
-          beforeImage: '/images/brand/coday-full.webp',
-          afterImage: '/images/portfolio/batherm-illustration.webp',
-          beforeAlt:
-            'Old, outdated website of the sanitary company Batherm without conversion focus',
-          afterAlt: 'New, performant web design for Batherm with focus on lead generation',
+            'A modern Next.js application that feels as smooth as a native app. With integrated calendar, bathroom calculator, and automated email flows.',
+          images: ['/images/portfolio/mockup-batherm.png'],
+          imageAlts: ['Web Design Wetzlar – Premium Craftsmen Website for HVAC Batherm'],
         },
         results: {
           title: 'The Results',
@@ -440,12 +418,8 @@ export const workData: Record<string, Project> = {
           title: 'Die Lösung',
           description:
             'Ein blitzschneller Online-Shop, der das Premium-Gefühl der Boutique perfekt in die digitale Welt überträgt.',
-          images: [
-            '/images/portfolio/mockup-website-immobilienagentur-real-estate-listings-preise-berlin.webp',
-          ],
-          imageAlts: [
-            'Webdesign Wetzlar – Modernes E-Commerce Storefront und Mobile UI für Talia Boutique',
-          ],
+          images: [],
+          imageAlts: [],
         },
         results: {
           title: 'Impact',
@@ -500,12 +474,8 @@ export const workData: Record<string, Project> = {
           title: 'The Solution',
           description:
             'A blazing-fast online shop that perfectly translates the premium feel of the boutique into the digital world.',
-          images: [
-            '/images/portfolio/mockup-website-immobilienagentur-real-estate-listings-preise-berlin.webp',
-          ],
-          imageAlts: [
-            'Web Development Wetzlar – Modern E-Commerce Storefront and Mobile UI for Talia Boutique',
-          ],
+          images: [],
+          imageAlts: [],
         },
         results: {
           title: 'Impact',
@@ -727,13 +697,9 @@ export const workData: Record<string, Project> = {
           title: 'Das Ergebnis',
           description:
             'Eine einladende, blitzschnelle Website, die die Persönlichkeit des Gasthauses perfekt widerspiegelt. Mit integrierter Speisekarte, Google Maps-Anbindung und direkter Kontaktmöglichkeit.',
-          images: [
-            '/images/portfolio/mockup-ratsstuben.png',
-            '/images/portfolio/mockup-website-restaurant-speisekarte-vorspeisen-hauptgerichte-desserts-responsive.webp',
-          ],
+          images: ['/images/portfolio/mockup-ratsstuben.png'],
           imageAlts: [
             'Webdesign Wetzlar – Moderne Restaurant & Gasthaus Website für Lindener Ratsstuben',
-            'Webentwicklung Wetzlar – Responsive Speisekarte und Tischreservierung auf Smartphones',
           ],
         },
         results: {
@@ -795,13 +761,9 @@ export const workData: Record<string, Project> = {
           title: 'The Result',
           description:
             'An inviting, blazing-fast website that perfectly reflects the personality of the inn. With integrated menu, Google Maps integration, and direct contact options.',
-          images: [
-            '/images/portfolio/mockup-ratsstuben.png',
-            '/images/portfolio/mockup-website-restaurant-speisekarte-vorspeisen-hauptgerichte-desserts-responsive.webp',
-          ],
+          images: ['/images/portfolio/mockup-ratsstuben.png'],
           imageAlts: [
             'Web Design Wetzlar – Modern Restaurant and Inn Website for Lindener Ratsstuben',
-            'Web Development Wetzlar – Responsive Digital Menu and Table Reservation on Mobile',
           ],
         },
         results: {
@@ -859,10 +821,8 @@ export const workData: Record<string, Project> = {
         solution: {
           title: 'Coming Soon',
           description: 'Dieses Projekt befindet sich im finalen Feinschliff.',
-          images: [
-            '/images/portfolio/mockup-website-sanitaer-heizung-mueller-handwerker-24h-notdienst-responsive.webp',
-          ],
-          imageAlts: ['Webdesign Wetzlar – Handwerker- & Bauunternehmens-Website für Memo Baut'],
+          images: [],
+          imageAlts: [],
         },
         results: {
           title: 'Ergebnisse',
@@ -901,12 +861,8 @@ export const workData: Record<string, Project> = {
         solution: {
           title: 'Coming Soon',
           description: 'This project is in final polish.',
-          images: [
-            '/images/portfolio/mockup-website-sanitaer-heizung-mueller-handwerker-24h-notdienst-responsive.webp',
-          ],
-          imageAlts: [
-            'Web Design Wetzlar – Craftsmen & Construction Company Website for Memo Baut',
-          ],
+          images: [],
+          imageAlts: [],
         },
         results: {
           title: 'Results',
@@ -970,12 +926,8 @@ export const workData: Record<string, Project> = {
           title: 'Coming Soon',
           description:
             'Dieses Projekt befindet sich aktuell in der aktiven Entwicklung. Sobald es live geht, werden hier die vollständigen Details veröffentlicht.',
-          images: [
-            '/images/portfolio/mockup-website-fitnessstudio-kursplan-yoga-preise-einzelstunde-abo-responsive.webp',
-          ],
-          imageAlts: [
-            'Webentwicklung Wetzlar – Moderne High-Performance Webplattform für hey fede',
-          ],
+          images: [],
+          imageAlts: [],
         },
         results: {
           title: 'Ergebnisse',
@@ -1025,12 +977,8 @@ export const workData: Record<string, Project> = {
           title: 'Coming Soon',
           description:
             'This project is currently in active development. Full details will be published once it goes live.',
-          images: [
-            '/images/portfolio/mockup-website-fitnessstudio-kursplan-yoga-preise-einzelstunde-abo-responsive.webp',
-          ],
-          imageAlts: [
-            'Web Development Wetzlar – Modern High-Performance Web Platform for hey fede',
-          ],
+          images: [],
+          imageAlts: [],
         },
         results: {
           title: 'Results',

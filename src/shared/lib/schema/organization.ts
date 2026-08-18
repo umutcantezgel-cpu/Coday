@@ -34,6 +34,8 @@ export function getOrganizationSchema(): Organization {
       reviewBody: review.quote.de,
     })),
     sameAs: [
+      'https://www.provenexpert.com/de-de/coday-webagentur/',
+      'https://maps.app.goo.gl/9SagecgXw7Vf5csH7',
       'https://www.linkedin.com/in/umutcan-tezgel',
       'https://twitter.com/codayweb',
       'https://www.instagram.com/codayweb/',

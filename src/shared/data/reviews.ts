@@ -116,5 +116,25 @@ export const REVIEWS_SUMMARY = {
   worstRating: 1,
   ratingText: '5,0 / 5,0',
   stars: 5,
-  provider: 'Google Rezensionen',
+  provider: 'Google Rezensionen & ProvenExpert',
+};
+
+export const REVIEW_PROFILES = {
+  googleMaps: {
+    url: 'https://maps.app.goo.gl/9SagecgXw7Vf5csH7',
+    name: 'Google Maps Rezensionen',
+    ratingValue: 5.0,
+    reviewCount: 4,
+    ratingText: '5,0 / 5,0 Sterne',
+    label: 'Google Maps (5.0 ★★★★★)',
+    badgeText: '4 verifizierte Google-Rezensionen',
+  },
+  provenExpert: {
+    url: 'https://www.provenexpert.com/de-de/coday-webagentur/',
+    name: 'ProvenExpert',
+    ratingValue: 5.0,
+    ratingText: '5,0 / 5,0 Sterne',
+    label: 'ProvenExpert (5.0 ★★★★★)',
+    badgeText: '100% Weiterempfehlung auf ProvenExpert',
+  },
 };

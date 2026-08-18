@@ -165,7 +165,17 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       />
                     ) : (
-                      <div className="w-full h-full bg-gradient-to-br from-slate-100 to-slate-200" />
+                      <div className="w-full h-full bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 flex items-center justify-center p-8 text-center relative overflow-hidden group-hover:scale-105 transition-transform duration-700">
+                        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]" />
+                        <div className="relative z-10">
+                          <span className="text-[11px] uppercase tracking-widest text-primary font-bold mb-1.5 block">
+                            {content.category}
+                          </span>
+                          <span className="text-xl sm:text-2xl font-black font-display text-white tracking-tight">
+                            {content.title}
+                          </span>
+                        </div>
+                      </div>
                     )}
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent pointer-events-none" />
 
