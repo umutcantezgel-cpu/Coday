@@ -45,6 +45,13 @@ export async function generateMetadata({
       title: 'Web Design Offenbach District | Web Agency & SEO · Coday',
       description:
         'Professional web design in the Offenbach district. Ultra-fast websites for Rodgau, Dietzenbach, Dreieich & Neu-Isenburg. Fixed prices on request.',
+      keywords: [
+        'Web Design Offenbach District',
+        'Web Agency Rodgau Dietzenbach',
+        'Website Creation Dreieich Neu-Isenburg',
+        'Web Development District Offenbach',
+        'Coday Web Offenbach',
+      ],
       path: '/en/regionen/kreis-offenbach',
       type: 'money',
     });
@@ -53,6 +60,13 @@ export async function generateMetadata({
     title: 'Webdesign Kreis Offenbach | Webagentur & SEO · Coday',
     description:
       'Professionelles Webdesign im Kreis Offenbach. Ultraschnelle Websites für Rodgau, Dietzenbach, Dreieich & Neu-Isenburg. Verbindlicher Festpreis auf Anfrage.',
+    keywords: [
+      'Webdesign Kreis Offenbach',
+      'Webagentur Rodgau Dietzenbach',
+      'Website erstellen Dreieich Neu-Isenburg',
+      'Webentwicklung Kreis Offenbach',
+      'Coday Web Offenbach',
+    ],
     path: '/de/regionen/kreis-offenbach',
     type: 'money',
   });
@@ -159,7 +173,7 @@ export default async function KreisOffenbachPage({
         url: `${BASE_URL}/${_locale}/regionen/kreis-offenbach`,
         logo: `${BASE_URL}/icon.png`,
         image: `${BASE_URL}/images/og-image.jpg`,
-        telephone: '+49 6441 000000',
+        telephone: '+49-176-41195301',
         email: 'kontakt@codayweb.de',
         priceRange: '€€€€',
         address: {

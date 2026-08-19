@@ -45,6 +45,13 @@ export async function generateMetadata({
       title: 'Web Design Main-Kinzig District | B2B Agency MKK · Coday',
       description:
         'Web development & SEO for the Main-Kinzig district. Next.js websites for industry & SME in Hanau, Maintal & Gelnhausen. Fixed prices on request.',
+      keywords: [
+        'Web Design Main-Kinzig District',
+        'Web Agency Hanau Maintal',
+        'Website Creation Gelnhausen Bruchköbel',
+        'Web Development MKK',
+        'Coday Web Main-Kinzig',
+      ],
       path: '/en/regionen/main-kinzig-kreis',
       type: 'money',
     });
@@ -53,6 +60,13 @@ export async function generateMetadata({
     title: 'Webdesign Main-Kinzig-Kreis | B2B Webagentur MKK · Coday',
     description:
       'Webentwicklung & SEO für den Main-Kinzig-Kreis. Next.js Websites für Industrie & Mittelstand in Hanau, Maintal & Gelnhausen. Festpreise auf Anfrage.',
+    keywords: [
+      'Webdesign Main-Kinzig-Kreis',
+      'Webagentur Hanau Maintal',
+      'Website erstellen Gelnhausen Bruchköbel',
+      'Webentwicklung MKK',
+      'Coday Web Main-Kinzig',
+    ],
     path: '/de/regionen/main-kinzig-kreis',
     type: 'money',
   });
@@ -159,7 +173,7 @@ export default async function MainKinzigKreisPage({
         url: `${BASE_URL}/${_locale}/regionen/main-kinzig-kreis`,
         logo: `${BASE_URL}/icon.png`,
         image: `${BASE_URL}/images/og-image.jpg`,
-        telephone: '+49 6441 000000',
+        telephone: '+49-176-41195301',
         email: 'kontakt@codayweb.de',
         priceRange: '€€€€',
         address: {

@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema } from '@/lib/schema';
+import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
@@ -44,6 +44,13 @@ export async function generateMetadata({
       title: 'Web Design Gießen District | Web Agency · Coday',
       description:
         'Web design in the Gießen district. Ultra-fast websites for clinics, trade & SME in Linden, Pohlheim, Lich & Grünberg. Fixed prices on request.',
+      keywords: [
+        'Web Design Giessen District',
+        'Web Agency District Giessen',
+        'Website Creation Linden Pohlheim Lich',
+        'Web Development Central Hesse',
+        'Coday Web Giessen',
+      ],
       path: '/en/regionen/landkreis-giessen',
       type: 'money',
     });
@@ -52,6 +59,13 @@ export async function generateMetadata({
     title: 'Webdesign Landkreis Gießen | Webagentur · Coday',
     description:
       'Webdesign im Landkreis Gießen. Ultraschnelle Websites für Praxen, Handwerk & Mittelstand in Linden, Pohlheim, Lich & Grünberg. Festpreise auf Anfrage.',
+    keywords: [
+      'Webdesign Landkreis Gießen',
+      'Webagentur Kreis Gießen',
+      'Website erstellen Linden Pohlheim Lich Grünberg',
+      'Webentwicklung Mittelhessen',
+      'Coday Web Gießen',
+    ],
     path: '/de/regionen/landkreis-giessen',
     type: 'money',
   });
@@ -171,10 +185,22 @@ export default async function LandkreisGiessenPage({
     },
   ];
 
+  const isEn = _locale === 'en';
+
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: isEn ? 'Regions' : 'Regionen', url: `/${_locale}/standorte/hessen` },
+    {
+      name: isEn ? 'District Giessen' : 'Landkreis Gießen',
+      url: `/${_locale}/regionen/landkreis-giessen`,
+    },
+  ]);
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       getOrganizationSchema(_locale),
+      breadcrumbs,
       {
         '@type': 'LocalBusiness',
         '@id': `${BASE_URL}/${_locale}/regionen/landkreis-giessen#localbusiness`,
@@ -182,7 +208,7 @@ export default async function LandkreisGiessenPage({
         url: `${BASE_URL}/${_locale}/regionen/landkreis-giessen`,
         logo: `${BASE_URL}/icon.png`,
         image: `${BASE_URL}/images/og-image.jpg`,
-        telephone: '+49 6441 000000',
+        telephone: '+49-176-41195301',
         email: 'kontakt@codayweb.de',
         priceRange: '€€€€',
         address: {

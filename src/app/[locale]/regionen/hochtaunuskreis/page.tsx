@@ -45,6 +45,13 @@ export async function generateMetadata({
       title: 'Web Design Hochtaunus District | Web Agency · Coday',
       description:
         'Exclusive web design for the Hochtaunus district. High-performance websites & discreet service for Bad Homburg, Oberursel & Kronberg. Fixed prices.',
+      keywords: [
+        'Web Design Hochtaunus District',
+        'Web Agency Bad Homburg Kronberg',
+        'Website Creation Oberursel Königstein',
+        'Web Development Taunus',
+        'Coday Web Hochtaunus',
+      ],
       path: '/en/regionen/hochtaunuskreis',
       type: 'money',
     });
@@ -53,6 +60,13 @@ export async function generateMetadata({
     title: 'Webdesign Hochtaunuskreis | Premium Webagentur · Coday',
     description:
       'Exklusives Webdesign für den Hochtaunuskreis. High-Performance Websites & diskreter Service für Bad Homburg, Oberursel & Kronberg. Festpreis auf Anfrage.',
+    keywords: [
+      'Webdesign Hochtaunuskreis',
+      'Webagentur Bad Homburg Kronberg',
+      'Website erstellen Oberursel Königstein',
+      'Webentwicklung Taunus',
+      'Coday Web Hochtaunus',
+    ],
     path: '/de/regionen/hochtaunuskreis',
     type: 'money',
   });
@@ -153,7 +167,7 @@ export default async function HochtaunuskreisPage({
         url: `${BASE_URL}/${_locale}/regionen/hochtaunuskreis`,
         logo: `${BASE_URL}/icon.png`,
         image: `${BASE_URL}/images/og-image.jpg`,
-        telephone: '+49 6441 000000',
+        telephone: '+49-176-41195301',
         email: 'kontakt@codayweb.de',
         priceRange: '€€€€',
         address: {

@@ -46,6 +46,13 @@ export async function generateMetadata({
       title: 'Web Design Kassel District | Web Agency North Hesse · Coday',
       description:
         'Professional web design in the Kassel district. Next.js websites for Baunatal, Vellmar & Hofgeismar. Fast load times & fixed prices on request.',
+      keywords: [
+        'Web Design Kassel District',
+        'Web Agency Baunatal Vellmar',
+        'Website Creation Hofgeismar Lohfelden',
+        'Web Development North Hesse',
+        'Coday Web Kassel',
+      ],
       path: '/en/regionen/landkreis-kassel',
       type: 'money',
     });
@@ -54,6 +61,13 @@ export async function generateMetadata({
     title: 'Webdesign Landkreis Kassel | Webagentur Nordhessen · Coday',
     description:
       'Professionelles Webdesign im Landkreis Kassel. Next.js Websites für Baunatal, Vellmar & Hofgeismar. Schnelle Ladezeiten & Festpreise auf Anfrage.',
+    keywords: [
+      'Webdesign Landkreis Kassel',
+      'Webagentur Baunatal Vellmar',
+      'Website erstellen Hofgeismar Lohfelden',
+      'Webentwicklung Nordhessen',
+      'Coday Web Kassel',
+    ],
     path: '/de/regionen/landkreis-kassel',
     type: 'money',
   });
@@ -154,7 +168,7 @@ export default async function LandkreisKasselPage({
         url: `${BASE_URL}/${_locale}/regionen/landkreis-kassel`,
         logo: `${BASE_URL}/icon.png`,
         image: `${BASE_URL}/images/og-image.jpg`,
-        telephone: '+49 6441 000000',
+        telephone: '+49-176-41195301',
         email: 'kontakt@codayweb.de',
         priceRange: '€€€€',
         address: {

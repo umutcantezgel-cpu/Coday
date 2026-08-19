@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema } from '@/lib/schema';
+import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
@@ -45,6 +45,13 @@ export async function generateMetadata({
       title: 'Web Design Marburg-Biedenkopf District | Agency · Coday',
       description:
         'Web design in the Marburg-Biedenkopf district. High-performance websites for pharma, crafts & SME in Marburg, Biedenkopf & Gladenbach. Fixed price.',
+      keywords: [
+        'Web Design Marburg-Biedenkopf District',
+        'Web Agency Marburg Biedenkopf',
+        'Website Creation Biedenkopf Gladenbach',
+        'Web Development Central Hesse',
+        'Coday Web Marburg',
+      ],
       path: '/en/regionen/landkreis-marburg-biedenkopf',
       type: 'money',
     });
@@ -53,6 +60,13 @@ export async function generateMetadata({
     title: 'Webdesign Landkreis Marburg-Biedenkopf | Agentur · Coday',
     description:
       'Webdesign im Landkreis Marburg-Biedenkopf. Performante Websites für Pharma, Handwerk & Mittelstand in Marburg, Biedenkopf & Gladenbach. Festpreis.',
+    keywords: [
+      'Webdesign Landkreis Marburg-Biedenkopf',
+      'Webagentur Marburg Biedenkopf',
+      'Website erstellen Biedenkopf Gladenbach',
+      'Webentwicklung Mittelhessen',
+      'Coday Web Marburg',
+    ],
     path: '/de/regionen/landkreis-marburg-biedenkopf',
     type: 'money',
   });
@@ -159,7 +173,7 @@ export default async function LandkreisMarburgBiedenkopfPage({
         url: `${BASE_URL}/${_locale}/regionen/landkreis-marburg-biedenkopf`,
         logo: `${BASE_URL}/icon.png`,
         image: `${BASE_URL}/images/og-image.jpg`,
-        telephone: '+49 6441 000000',
+        telephone: '+49-176-41195301',
         email: 'kontakt@codayweb.de',
         priceRange: '€€€€',
         address: {

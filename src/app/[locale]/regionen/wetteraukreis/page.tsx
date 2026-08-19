@@ -46,6 +46,13 @@ export async function generateMetadata({
       title: 'Web Design Wetterau District | Web Agency & SEO · Coday',
       description:
         'Web design for Wetterau district: Next.js websites for Friedberg, Bad Nauheim, Butzbach & Karben. Fixed price quotes on request.',
+      keywords: [
+        'Web Design Wetterau District',
+        'Web Agency Wetterau',
+        'Website Creation Bad Nauheim Butzbach Karben',
+        'Web Development Central Hesse',
+        'Coday Web Wetterau',
+      ],
       path: '/en/regionen/wetteraukreis',
       type: 'money',
     });
@@ -54,6 +61,13 @@ export async function generateMetadata({
     title: 'Webdesign Wetteraukreis | Webagentur & SEO · Coday',
     description:
       'Webdesign für den Wetteraukreis: Next.js Websites für Friedberg, Bad Nauheim, Butzbach & Karben. Verbindliche Festpreise auf Anfrage.',
+    keywords: [
+      'Webdesign Wetteraukreis',
+      'Webagentur Wetterau',
+      'Website erstellen Bad Nauheim Butzbach Karben',
+      'Webentwicklung Mittelhessen',
+      'Coday Web Wetterau',
+    ],
     path: '/de/regionen/wetteraukreis',
     type: 'money',
   });
@@ -208,7 +222,7 @@ export default async function WetteraukreisPage({
         url: `${BASE_URL}/${_locale}/regionen/wetteraukreis`,
         logo: `${BASE_URL}/icon.png`,
         image: `${BASE_URL}/images/og-image.jpg`,
-        telephone: '+49 6441 000000',
+        telephone: '+49-176-41195301',
         email: 'kontakt@codayweb.de',
         priceRange: '€€€€',
         address: {

@@ -1,7 +1,7 @@
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import { SeoHead } from '@/shared/ui/SeoHead';
+import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
 import ClientComponent from '@/features/career/ui/JobsClient';
 
 export const dynamic = 'force-static';
@@ -17,6 +17,12 @@ export async function generateMetadata({
       title: 'Job Openings | Web Design Agency Wetzlar Hesse',
       description:
         'Current job openings at Coday in Wetzlar. We are looking for web designers, developers and creatives for exciting projects in Central Hesse. Apply now.',
+      keywords: [
+        'Web Design Jobs Wetzlar',
+        'Frontend Developer Jobs Hesse',
+        'React Next.js Jobs Wetzlar',
+        'Coday Jobs',
+      ],
       path: '/en/career/jobs',
       type: 'default',
     });
@@ -25,6 +31,12 @@ export async function generateMetadata({
     title: 'Stellenangebote | Webdesign Agentur Wetzlar Hessen',
     description:
       'Aktuelle Stellenangebote bei Coday in Wetzlar. Wir suchen Webdesigner, Entwickler und Kreative für spannende Projekte in Mittelhessen. Jetzt bewerben.',
+    keywords: [
+      'Webdesign Jobs Wetzlar',
+      'Frontend Entwickler Jobs Hessen',
+      'React Next.js Stellen Wetzlar',
+      'Coday Stellenangebote',
+    ],
     path: '/de/career/jobs',
     type: 'default',
   });
@@ -32,20 +44,37 @@ export async function generateMetadata({
 
 export default async function Page(props: { params: Promise<{ locale: string }> }) {
   const params = await props.params;
-  setRequestLocale(params.locale);
+  const _locale = params.locale || 'de';
+  setRequestLocale(_locale);
+  const isEn = _locale === 'en';
 
-  const _locale = (await params)?.locale || 'de';
-  const _seoTitle =
-    _locale === 'en'
-      ? 'Job Openings | Web Design Agency Wetzlar Hesse | Coday'
-      : 'Stellenangebote | Webdesign Agentur Wetzlar Hessen | Coday';
-  const _seoDesc =
-    _locale === 'en'
-      ? 'Current job openings at Coday in Wetzlar. We are looking for web designers, developers and creatives for exciting projects in Central Hesse. Apply now.'
-      : 'Aktuelle Stellenangebote bei Coday in Wetzlar. Wir suchen Webdesigner, Entwickler und Kreative für spannende Projekte in Mittelhessen. Jetzt bewerben.';
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: isEn ? 'Careers' : 'Karriere', url: `/${_locale}/career` },
+    { name: isEn ? 'Jobs' : 'Stellenangebote', url: `/${_locale}/career/jobs` },
+  ]);
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      getOrganizationSchema(_locale),
+      breadcrumbs,
+      {
+        '@type': 'CollectionPage',
+        '@id': `${BASE_URL}/${_locale}/career/jobs#collection`,
+        name: isEn ? 'Coday Job Openings' : 'Coday Stellenangebote & Jobs',
+        url: `${BASE_URL}/${_locale}/career/jobs`,
+        isPartOf: { '@id': `${BASE_URL}/#website` },
+      },
+    ],
+  };
+
   return (
     <>
-      <SeoHead title="Coday | jobs" description="Erfahren Sie mehr über jobs" pageType="default" />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <ClientComponent />
       {/* SEO */}
       <section className="container mx-auto px-4 py-16 max-w-5xl text-secondary-600">

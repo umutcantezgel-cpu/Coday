@@ -46,6 +46,13 @@ export async function generateMetadata({
       title: 'Web Design Limburg-Weilburg District | Agency · Coday',
       description:
         'Web agency for the Limburg-Weilburg district. Next.js websites & SEO for Limburg, Weilburg, Bad Camberg & the Lahn valley. Fixed prices on request.',
+      keywords: [
+        'Web Design Limburg-Weilburg District',
+        'Web Agency Limburg Weilburg',
+        'Website Creation Bad Camberg Hadamar',
+        'Web Development Lahn Valley',
+        'Coday Web Limburg',
+      ],
       path: '/en/regionen/landkreis-limburg-weilburg',
       type: 'money',
     });
@@ -54,6 +61,13 @@ export async function generateMetadata({
     title: 'Webdesign Landkreis Limburg-Weilburg | Agentur · Coday',
     description:
       'Webagentur für den Landkreis Limburg-Weilburg. Next.js Websites & SEO für Limburg, Weilburg, Bad Camberg & das Lahntal. Festpreise auf Anfrage.',
+    keywords: [
+      'Webdesign Landkreis Limburg-Weilburg',
+      'Webagentur Limburg Weilburg',
+      'Website erstellen Bad Camberg Hadamar',
+      'Webentwicklung Lahntal',
+      'Coday Web Limburg',
+    ],
     path: '/de/regionen/landkreis-limburg-weilburg',
     type: 'money',
   });
@@ -172,7 +186,7 @@ export default async function LandkreisLimburgWeilburgPage({
         url: `${BASE_URL}/${_locale}/regionen/landkreis-limburg-weilburg`,
         logo: `${BASE_URL}/icon.png`,
         image: `${BASE_URL}/images/og-image.jpg`,
-        telephone: '+49 6441 000000',
+        telephone: '+49-176-41195301',
         email: 'kontakt@codayweb.de',
         priceRange: '€€€€',
         address: {

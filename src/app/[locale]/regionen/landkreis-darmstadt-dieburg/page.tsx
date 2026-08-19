@@ -46,6 +46,13 @@ export async function generateMetadata({
       title: 'Web Design Darmstadt-Dieburg District | Agency · Coday',
       description:
         'Your web agency for Darmstadt-Dieburg. Fast Next.js websites for Weiterstadt, Griesheim, Dieburg & Groß-Umstadt. Fixed prices on request.',
+      keywords: [
+        'Web Design Darmstadt-Dieburg District',
+        'Web Agency Weiterstadt Griesheim',
+        'Website Creation Dieburg Gross-Umstadt',
+        'Web Development South Hesse',
+        'Coday Web Darmstadt-Dieburg',
+      ],
       path: '/en/regionen/landkreis-darmstadt-dieburg',
       type: 'money',
     });
@@ -54,6 +61,13 @@ export async function generateMetadata({
     title: 'Webdesign Landkreis Darmstadt-Dieburg | Agentur · Coday',
     description:
       'Ihre Webagentur für Darmstadt-Dieburg. Schnelle Next.js Websites für Weiterstadt, Griesheim, Dieburg & Groß-Umstadt. Festpreise auf Anfrage.',
+    keywords: [
+      'Webdesign Landkreis Darmstadt-Dieburg',
+      'Webagentur Weiterstadt Griesheim',
+      'Website erstellen Dieburg Groß-Umstadt',
+      'Webentwicklung Südhessen',
+      'Coday Web Darmstadt-Dieburg',
+    ],
     path: '/de/regionen/landkreis-darmstadt-dieburg',
     type: 'money',
   });
@@ -154,7 +168,7 @@ export default async function LandkreisDarmstadtDieburgPage({
         url: `${BASE_URL}/${_locale}/regionen/landkreis-darmstadt-dieburg`,
         logo: `${BASE_URL}/icon.png`,
         image: `${BASE_URL}/images/og-image.jpg`,
-        telephone: '+49 6441 000000',
+        telephone: '+49-176-41195301',
         email: 'kontakt@codayweb.de',
         priceRange: '€€€€',
         address: {

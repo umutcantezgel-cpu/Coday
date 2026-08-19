@@ -46,6 +46,13 @@ export async function generateMetadata({
       title: 'Web Design Fulda District | B2B & SEO Agency · Coday',
       description:
         'Web development & web design for the Fulda district & East Hesse. High-performance platforms for logistics, crafts & industry. Fixed price.',
+      keywords: [
+        'Web Design Fulda District',
+        'Web Agency Hünfeld Petersberg',
+        'Website Creation Künzell Eichenzell',
+        'Web Development East Hesse',
+        'Coday Web Fulda',
+      ],
       path: '/en/regionen/landkreis-fulda',
       type: 'money',
     });
@@ -54,6 +61,13 @@ export async function generateMetadata({
     title: 'Webdesign Landkreis Fulda | B2B & SEO Agentur · Coday',
     description:
       'Webentwicklung & Webdesign für den Landkreis Fulda & Osthessen. Performante Plattformen für Logistik, Handwerk & Industrie. Festpreis auf Anfrage.',
+    keywords: [
+      'Webdesign Landkreis Fulda',
+      'Webagentur Hünfeld Petersberg',
+      'Website erstellen Künzell Eichenzell',
+      'Webentwicklung Osthessen',
+      'Coday Web Fulda',
+    ],
     path: '/de/regionen/landkreis-fulda',
     type: 'money',
   });
@@ -166,7 +180,7 @@ export default async function LandkreisFuldaPage({
         url: `${BASE_URL}/${_locale}/regionen/landkreis-fulda`,
         logo: `${BASE_URL}/icon.png`,
         image: `${BASE_URL}/images/og-image.jpg`,
-        telephone: '+49 6441 000000',
+        telephone: '+49-176-41195301',
         email: 'kontakt@codayweb.de',
         priceRange: '€€€€',
         address: {

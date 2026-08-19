@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema } from '@/lib/schema';
+import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
@@ -44,6 +44,13 @@ export async function generateMetadata({
       title: 'Web Design Lahn-Dill District | Regional Web Agency · Coday',
       description:
         'Your local web agency for the Lahn-Dill district. High-performance websites & SEO for SME & trade in Wetzlar, Herborn & Dillenburg. Fixed prices.',
+      keywords: [
+        'Web Design Lahn-Dill District',
+        'Web Agency Lahn-Dill',
+        'Website Creation Wetzlar Herborn Dillenburg',
+        'Web Development Hesse',
+        'Coday Web Lahn-Dill',
+      ],
       path: '/en/regionen/landkreis-lahn-dill',
       type: 'money',
     });
@@ -52,6 +59,13 @@ export async function generateMetadata({
     title: 'Webdesign Lahn-Dill-Kreis | Regionale Webagentur · Coday',
     description:
       'Ihre lokale Webagentur für den Lahn-Dill-Kreis. High-Performance Websites & SEO für Mittelstand & Handwerk in Wetzlar, Herborn & Dillenburg. Festpreise.',
+    keywords: [
+      'Webdesign Lahn-Dill-Kreis',
+      'Webagentur Lahn-Dill',
+      'Website erstellen Wetzlar Herborn Dillenburg',
+      'Webentwicklung Mittelhessen',
+      'Coday Web Lahn-Dill',
+    ],
     path: '/de/regionen/landkreis-lahn-dill',
     type: 'money',
   });
@@ -195,10 +209,19 @@ export default async function LandkreisLahnDillPage({
     },
   ];
 
+  const isEn = _locale === 'en';
+
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: isEn ? 'Regions' : 'Regionen', url: `/${_locale}/standorte/hessen` },
+    { name: 'Lahn-Dill-Kreis', url: `/${_locale}/regionen/landkreis-lahn-dill` },
+  ]);
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       getOrganizationSchema(_locale),
+      breadcrumbs,
       {
         '@type': 'LocalBusiness',
         '@id': `${BASE_URL}/${_locale}/regionen/landkreis-lahn-dill#localbusiness`,
@@ -206,7 +229,7 @@ export default async function LandkreisLahnDillPage({
         url: `${BASE_URL}/${_locale}/regionen/landkreis-lahn-dill`,
         logo: `${BASE_URL}/icon.png`,
         image: `${BASE_URL}/images/og-image.jpg`,
-        telephone: '+49 6441 000000',
+        telephone: '+49-176-41195301',
         email: 'kontakt@codayweb.de',
         priceRange: '€€€€',
         address: {

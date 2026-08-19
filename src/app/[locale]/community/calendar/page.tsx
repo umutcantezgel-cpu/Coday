@@ -1,7 +1,7 @@
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import { SeoHead } from '@/shared/ui/SeoHead';
+import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
 import ClientComponent from '@/features/community/ui/CalendarClient';
 
 export const dynamic = 'force-static';
@@ -17,6 +17,12 @@ export async function generateMetadata({
       title: 'Community Calendar | Web Design Agency Wetzlar',
       description:
         'Current events and dates from the Coday community in Wetzlar. Networking and knowledge sharing for entrepreneurs and web design enthusiasts in Hesse.',
+      keywords: [
+        'Coday Community Calendar',
+        'Tech Events Wetzlar',
+        'Web Development Meetups Hesse',
+        'Coday Events',
+      ],
       path: '/en/community/calendar',
       type: 'default',
     });
@@ -25,6 +31,12 @@ export async function generateMetadata({
     title: 'Community Kalender | Webdesign Agentur Wetzlar',
     description:
       'Aktuelle Events und Termine der Coday Community in Wetzlar. Networking und Wissensaustausch für Unternehmer und Webdesign Interessierte in Hessen.',
+    keywords: [
+      'Coday Community Kalender',
+      'Tech Events Wetzlar',
+      'Webentwicklung Meetup Mittelhessen',
+      'Coday Veranstaltungen',
+    ],
     path: '/de/community/calendar',
     type: 'default',
   });
@@ -32,14 +44,36 @@ export async function generateMetadata({
 
 export default async function Page(props: { params: Promise<{ locale: string }> }) {
   const params = await props.params;
-  setRequestLocale(params.locale);
+  const _locale = params.locale || 'de';
+  setRequestLocale(_locale);
+  const isEn = _locale === 'en';
+
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: isEn ? 'Community' : 'Community', url: `/${_locale}/community/events` },
+    { name: isEn ? 'Calendar' : 'Kalender', url: `/${_locale}/community/calendar` },
+  ]);
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      getOrganizationSchema(_locale),
+      breadcrumbs,
+      {
+        '@type': 'WebPage',
+        '@id': `${BASE_URL}/${_locale}/community/calendar#webpage`,
+        name: isEn ? 'Coday Community Calendar' : 'Coday Community Kalender',
+        url: `${BASE_URL}/${_locale}/community/calendar`,
+        isPartOf: { '@id': `${BASE_URL}/#website` },
+      },
+    ],
+  };
 
   return (
     <>
-      <SeoHead
-        title="Coday | calendar"
-        description="Erfahren Sie mehr über calendar"
-        pageType="default"
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <ClientComponent />
       {/* SEO */}

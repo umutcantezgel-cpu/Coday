@@ -46,6 +46,13 @@ export async function generateMetadata({
       title: 'Web Design Rheingau-Taunus District | Agency · Coday',
       description:
         'Web design & SEO in the Rheingau-Taunus district. Premium websites for viticulture, tourism & services in Taunusstein, Idstein & Eltville. Fixed price.',
+      keywords: [
+        'Web Design Rheingau-Taunus District',
+        'Web Agency Taunusstein Idstein',
+        'Website Creation Eltville Rüdesheim',
+        'Web Development Rheingau',
+        'Coday Web Rheingau-Taunus',
+      ],
       path: '/en/regionen/rheingau-taunus-kreis',
       type: 'money',
     });
@@ -54,6 +61,13 @@ export async function generateMetadata({
     title: 'Webdesign Rheingau-Taunus-Kreis | Webagentur · Coday',
     description:
       'Webdesign & SEO im Rheingau-Taunus-Kreis. Hochwertige Websites für Weinbau, Tourismus & Dienstleister in Taunusstein, Idstein & Eltville. Festpreis.',
+    keywords: [
+      'Webdesign Rheingau-Taunus-Kreis',
+      'Webagentur Taunusstein Idstein',
+      'Website erstellen Eltville Rüdesheim',
+      'Webentwicklung Rheingau',
+      'Coday Web Rheingau-Taunus',
+    ],
     path: '/de/regionen/rheingau-taunus-kreis',
     type: 'money',
   });
@@ -160,7 +174,7 @@ export default async function RheingauTaunusKreisPage({
         url: `${BASE_URL}/${_locale}/regionen/rheingau-taunus-kreis`,
         logo: `${BASE_URL}/icon.png`,
         image: `${BASE_URL}/images/og-image.jpg`,
-        telephone: '+49 6441 000000',
+        telephone: '+49-176-41195301',
         email: 'kontakt@codayweb.de',
         priceRange: '€€€€',
         address: {

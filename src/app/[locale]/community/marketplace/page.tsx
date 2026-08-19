@@ -1,7 +1,7 @@
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import { SeoHead } from '@/shared/ui/SeoHead';
+import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
 import ClientComponent from '@/features/community/ui/MarketplaceClient';
 
 export const dynamic = 'force-static';
@@ -17,6 +17,12 @@ export async function generateMetadata({
       title: 'Community Marketplace | Web Design Network Wetzlar',
       description:
         'The digital marketplace of the Coday community in Wetzlar. Find service providers, tools and resources for your next web project in Central Hesse.',
+      keywords: [
+        'Web Design Marketplace',
+        'Digital Tools Wetzlar',
+        'SME Business Network Hesse',
+        'Coday Marketplace',
+      ],
       path: '/en/community/marketplace',
       type: 'default',
     });
@@ -25,6 +31,12 @@ export async function generateMetadata({
     title: 'Community Marktplatz | Webdesign Netzwerk Wetzlar',
     description:
       'Der digitale Marktplatz der Coday Community in Wetzlar. Finden Sie Dienstleister, Tools und Ressourcen für Ihr nächstes Webprojekt in Mittelhessen.',
+    keywords: [
+      'Webdesign Marktplatz',
+      'Digitale Tools Wetzlar',
+      'Mittelstand Business Netzwerk',
+      'Coday Marktplatz',
+    ],
     path: '/de/community/marketplace',
     type: 'default',
   });
@@ -32,14 +44,39 @@ export async function generateMetadata({
 
 export default async function Page(props: { params: Promise<{ locale: string }> }) {
   const params = await props.params;
-  setRequestLocale(params.locale);
+  const _locale = params.locale || 'de';
+  setRequestLocale(_locale);
+  const isEn = _locale === 'en';
+
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: 'Community', url: `/${_locale}/community/events` },
+    { name: isEn ? 'Marketplace' : 'Marktplatz', url: `/${_locale}/community/marketplace` },
+  ]);
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      getOrganizationSchema(_locale),
+      breadcrumbs,
+      {
+        '@type': 'CollectionPage',
+        '@id': `${BASE_URL}/${_locale}/community/marketplace#collection`,
+        name: isEn ? 'Coday Community Marketplace' : 'Coday Community Marktplatz',
+        url: `${BASE_URL}/${_locale}/community/marketplace`,
+        description: isEn
+          ? 'The digital marketplace of the Coday community in Wetzlar.'
+          : 'Der digitale Marktplatz der Coday Community in Wetzlar.',
+        isPartOf: { '@id': `${BASE_URL}/#website` },
+      },
+    ],
+  };
 
   return (
     <>
-      <SeoHead
-        title="Coday | marketplace"
-        description="Erfahren Sie mehr über marketplace"
-        pageType="default"
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <ClientComponent />
       {/* SEO Content */}

@@ -1,7 +1,7 @@
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import { SeoHead } from '@/shared/ui/SeoHead';
+import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
 import ClientComponent from '@/features/work/ui/ProjectDetailClient';
 
 export const dynamic = 'force-static';
@@ -32,23 +32,26 @@ export async function generateMetadata({
 
 export default async function Page(props: { params: Promise<{ locale: string }> }) {
   const params = await props.params;
-  setRequestLocale(params.locale);
+  const _locale = params.locale || 'de';
+  setRequestLocale(_locale);
+  const isEn = _locale === 'en';
 
-  const _locale = (await params)?.locale || 'de';
-  const _seoTitle =
-    _locale === 'en'
-      ? 'Project Details | Web Design References Wetzlar | Coday'
-      : 'Projektdetails | Webdesign Referenzen Wetzlar | Coday';
-  const _seoDesc =
-    _locale === 'en'
-      ? 'Detailed insight into our web design projects by Coday in Wetzlar. Learn how we help businesses in Central Hesse succeed in the digital landscape.'
-      : 'Detaillierter Einblick in unsere Webdesign Projekte von Coday in Wetzlar. Erfahren Sie wie wir Unternehmen in Mittelhessen digital erfolgreich machen.';
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: 'Work', url: `/${_locale}/work` },
+    { name: isEn ? 'Project Details' : 'Projektdetails', url: `/${_locale}/work/projectdetail` },
+  ]);
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [getOrganizationSchema(_locale), breadcrumbs],
+  };
+
   return (
     <>
-      <SeoHead
-        title="Coday | projectdetail"
-        description="Erfahren Sie mehr über projectdetail"
-        pageType="default"
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <ClientComponent />
       {/* SEO */}

@@ -1,7 +1,7 @@
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import { SeoHead } from '@/shared/ui/SeoHead';
+import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
 import ClientComponent from '@/features/community/ui/EventsClient';
 
 export const dynamic = 'force-static';
@@ -17,6 +17,12 @@ export async function generateMetadata({
       title: 'Events | Web Design Community Wetzlar Hesse',
       description:
         'Web design events and digital meetups by Coday in Wetzlar. Workshops, meetups and talks for the business community across Central Hesse region.',
+      keywords: [
+        'Web Design Events Hesse',
+        'Digital Workshops Wetzlar',
+        'Next.js Meetup Central Hesse',
+        'Coday Community',
+      ],
       path: '/en/community/events',
       type: 'default',
     });
@@ -25,6 +31,12 @@ export async function generateMetadata({
     title: 'Events & Veranstaltungen | Webdesign Wetzlar',
     description:
       'Webdesign Events und digitale Veranstaltungen von Coday in Wetzlar. Workshops, Meetups und Vorträge für die Business Community in Mittelhessen.',
+    keywords: [
+      'Webdesign Events Hessen',
+      'Digitale Workshops Wetzlar',
+      'Next.js Meetup Mittelhessen',
+      'Coday Community Events',
+    ],
     path: '/de/community/events',
     type: 'default',
   });
@@ -32,14 +44,39 @@ export async function generateMetadata({
 
 export default async function Page(props: { params: Promise<{ locale: string }> }) {
   const params = await props.params;
-  setRequestLocale(params.locale);
+  const _locale = params.locale || 'de';
+  setRequestLocale(_locale);
+  const isEn = _locale === 'en';
+
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: 'Community', url: `/${_locale}/community/events` },
+    { name: isEn ? 'Events' : 'Veranstaltungen', url: `/${_locale}/community/events` },
+  ]);
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      getOrganizationSchema(_locale),
+      breadcrumbs,
+      {
+        '@type': 'CollectionPage',
+        '@id': `${BASE_URL}/${_locale}/community/events#collection`,
+        name: isEn ? 'Coday Webdesign & Tech Events' : 'Coday Webdesign & Tech Events',
+        url: `${BASE_URL}/${_locale}/community/events`,
+        description: isEn
+          ? 'Web design events and digital meetups by Coday in Wetzlar.'
+          : 'Webdesign Events und digitale Veranstaltungen von Coday in Wetzlar.',
+        isPartOf: { '@id': `${BASE_URL}/#website` },
+      },
+    ],
+  };
 
   return (
     <>
-      <SeoHead
-        title="Coday | events"
-        description="Erfahren Sie mehr über events"
-        pageType="default"
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <ClientComponent />
       {/* SEO */}
