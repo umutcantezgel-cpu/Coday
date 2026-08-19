@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { SeoClient } from '@/features/services/ui/SeoClient';
 import { setRequestLocale } from 'next-intl/server';
-import { getOrganizationSchema, BASE_URL } from '@/lib/schema';
+import { getOrganizationSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import {
   ArrowRight,
@@ -26,6 +26,13 @@ export async function generateMetadata({
       title: 'B2B SEO & Generative Engine Optimization Agency | Coday',
       description:
         'Google top rankings & visibility in AI search engines (GEO). Technical SEO audits, Core Web Vitals and semantic content architecture.',
+      keywords: [
+        'B2B SEO Agency',
+        'Local SEO Wetzlar',
+        'Search Engine Optimization Hesse',
+        'Generative Engine Optimization GEO',
+        'Coday SEO',
+      ],
       path: '/en/services/seo',
       type: 'money',
     });
@@ -34,6 +41,13 @@ export async function generateMetadata({
     title: 'B2B SEO & Generative Engine Optimization Agentur | Coday',
     description:
       'Google Top-Rankings & Sichtbarkeit in KI-Suchmaschinen (GEO). Technische SEO-Audits, Core Web Vitals und semantische Content-Silos.',
+    keywords: [
+      'B2B SEO Agentur',
+      'Lokales SEO Wetzlar',
+      'Suchmaschinenoptimierung Hessen',
+      'Generative Engine Optimization GEO',
+      'Coday Web SEO',
+    ],
     path: '/de/services/seo',
     type: 'money',
   });
@@ -45,10 +59,17 @@ export default async function SeoPage({ params }: { params: Promise<{ locale: st
   setRequestLocale(_locale);
   const isEn = _locale === 'en';
 
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: isEn ? 'Services' : 'Leistungen', url: `/${_locale}/services` },
+    { name: isEn ? 'SEO & GEO' : 'SEO & GEO', url: `/${_locale}/services/seo` },
+  ]);
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       getOrganizationSchema(_locale),
+      breadcrumbs,
       {
         '@type': 'ProfessionalService',
         '@id': `${BASE_URL}/${_locale}/services/seo#service`,

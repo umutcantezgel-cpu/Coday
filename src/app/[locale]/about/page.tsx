@@ -2,7 +2,7 @@ import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { AboutClient } from '@/features/about/ui/AboutClient';
-import { BASE_URL, getOrganizationSchema } from '@/lib/schema';
+import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -18,6 +18,13 @@ export async function generateMetadata({
       title: 'About Coday | Web Design & Next.js Agency Wetzlar',
       description:
         'Coday & founder Umutcan Emre Tezgel: High-end web development, Next.js architecture and 100/100 Core Web Vitals directly from Wetzlar.',
+      keywords: [
+        'About Coday',
+        'Umutcan Emre Tezgel',
+        'Web Design Agency Wetzlar',
+        'Solo Web Developer Wetzlar',
+        'Next.js Web Design',
+      ],
       path: '/en/about',
       type: 'money',
     });
@@ -26,6 +33,13 @@ export async function generateMetadata({
     title: 'Über Coday | Webdesign & Next.js Agentur Wetzlar',
     description:
       'Coday & Inhaber Umutcan Emre Tezgel: High-End Webentwicklung, Next.js Architektur und 100/100 Core Web Vitals direkt aus Wetzlar.',
+    keywords: [
+      'Über Coday',
+      'Umutcan Emre Tezgel',
+      'Webdesign Agentur Wetzlar',
+      'Solo Webentwickler Wetzlar',
+      'Next.js Agentur Mittelhessen',
+    ],
     path: '/de/about',
     type: 'money',
   });
@@ -36,10 +50,16 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   const locale = resolvedParams.locale || 'de';
   setRequestLocale(locale);
 
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: locale === 'en' ? 'Home' : 'Startseite', url: `/${locale}` },
+    { name: locale === 'en' ? 'About' : 'Über uns', url: `/${locale}/about` },
+  ]);
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       getOrganizationSchema(locale),
+      breadcrumbs,
       {
         '@type': 'AboutPage',
         '@id': `${BASE_URL}/${locale}/about#webpage`,

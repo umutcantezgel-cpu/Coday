@@ -2,10 +2,11 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema } from '@/lib/schema';
+import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
+import { LazyQuickContactForm } from '@/widgets/home/LazyQuickContactForm';
 import {
   ArrowRight,
   Lightning,
@@ -18,6 +19,7 @@ import {
   LockKey,
   CheckCircle,
   Wrench,
+  Cpu,
   Gear,
   ChartBar,
   Star,
@@ -42,6 +44,13 @@ export async function generateMetadata({
       title: 'Web Design Herborn | B2B Websites & SEO Agency · Coday',
       description:
         'Your web agency for Herborn & Lahn-Dill. Modern web design, ultra-fast load times & more B2B inquiries for industry & crafts. Fixed price on request.',
+      keywords: [
+        'Web Design Herborn',
+        'Web Agency Herborn',
+        'Website Creation Herborn',
+        'B2B Web Development Lahn-Dill',
+        'Coday Web Herborn',
+      ],
       path: '/en/webdesign-herborn',
       type: 'money',
     });
@@ -50,6 +59,13 @@ export async function generateMetadata({
     title: 'Webdesign Herborn | B2B-Websites & SEO Agentur · Coday',
     description:
       'Ihre Webagentur für Herborn & Lahn-Dill. Modernes Webdesign, ultraschnelle Ladezeiten & mehr B2B-Anfragen für Industrie & Handwerk. Festpreis auf Anfrage.',
+    keywords: [
+      'Webdesign Herborn',
+      'Webagentur Herborn',
+      'Website erstellen Herborn',
+      'B2B Webentwicklung Lahn-Dill',
+      'Coday Web Herborn',
+    ],
     path: '/de/webdesign-herborn',
     type: 'money',
   });
@@ -63,11 +79,19 @@ export default async function WebdesignHerbornPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const _locale = locale || 'de';
+  const isEn = _locale === 'en';
+
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: isEn ? 'Locations' : 'Standorte', url: `/${_locale}/uebersicht` },
+    { name: 'Herborn', url: `/${_locale}/webdesign-herborn` },
+  ]);
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       getOrganizationSchema(_locale),
+      breadcrumbs,
       {
         '@type': 'LocalBusiness',
         '@id': `${BASE_URL}/${_locale}/webdesign-herborn#localbusiness`,
@@ -75,7 +99,7 @@ export default async function WebdesignHerbornPage({
         url: `${BASE_URL}/${_locale}/webdesign-herborn`,
         logo: `${BASE_URL}/icon.png`,
         image: `${BASE_URL}/images/og-image.jpg`,
-        telephone: '+49 6441 000000',
+        telephone: '+49-176-41195301',
         email: 'kontakt@codayweb.de',
         priceRange: '€€€',
         address: {

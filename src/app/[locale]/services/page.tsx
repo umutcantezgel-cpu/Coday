@@ -4,10 +4,10 @@ export const dynamicParams = false;
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
-import { SeoHead } from '@/shared/ui/SeoHead';
 import { ServicesOverview } from '@/features/services/ui/ServicesOverview';
 import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 import { routing } from '@/i18n/routing';
+import { getOrganizationSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -20,12 +20,29 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'services' });
+
+  const defaultKeywords =
+    locale === 'en'
+      ? [
+          'Web Design Services',
+          'Web Development Services Wetzlar',
+          'SEO Optimization Agency',
+          'Next.js Web Services',
+        ]
+      : [
+          'Webdesign Leistungen',
+          'Webentwicklung Services Wetzlar',
+          'SEO Optimierung Agentur',
+          'Next.js Agentur Leistungen',
+        ];
+
   return generatePageMetadata({
     title: t('meta.title', { fallback: 'Webdesign & SEO Leistungen | Agentur in Wetzlar' }),
     description: t('meta.description', {
       fallback:
         'Alle Webdesign und SEO Leistungen Ihrer Agentur in Wetzlar auf einen Blick. Von der Firmenwebseite bis zum Onlineshop, alles aus einer Hand. Anfragen.',
     }),
+    keywords: defaultKeywords,
     path: `/${locale}/services`,
     type: 'money',
   });
@@ -33,20 +50,43 @@ export async function generateMetadata({
 
 export default async function Page(props: { params: Promise<{ locale: string }> }) {
   const params = await props.params;
-  setRequestLocale(params.locale);
-  const t = await getTranslations({ locale: params.locale, namespace: 'services' });
+  const _locale = params.locale || 'de';
+  setRequestLocale(_locale);
+  const isEn = _locale === 'en';
 
-  const _seoTitle = t('meta.title', {
-    fallback: 'Webdesign & SEO Leistungen | Agentur in Wetzlar | Coday',
-  });
-  const _seoDesc = t('meta.description', {
-    fallback:
-      'Alle Webdesign und SEO Leistungen Ihrer Agentur in Wetzlar auf einen Blick. Von der Firmenwebseite bis zum Onlineshop, alles aus einer Hand. Anfragen.',
-  });
-  const isEn = params.locale === 'en';
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: isEn ? 'Services' : 'Leistungen', url: `/${_locale}/services` },
+  ]);
+
+  const servicesCatalog = {
+    '@type': 'OfferCatalog',
+    '@id': `${BASE_URL}/${_locale}/services#catalog`,
+    name: isEn ? 'Coday Web Services' : 'Coday Webdesign & Webentwicklung Leistungen',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Webdesign & UI/UX' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Next.js Webentwicklung' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Lokale & Technische SEO' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'PageSpeed & Performance' } },
+      {
+        '@type': 'Offer',
+        itemOffered: { '@type': 'Service', name: 'Barrierefreiheit (BITV/WCAG)' },
+      },
+    ],
+  };
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [getOrganizationSchema(_locale), breadcrumbs, servicesCatalog],
+  };
+
   return (
     <>
-      <SeoHead title={_seoTitle} description={_seoDesc} pageType="default" />
+      <script
+        id="schema-services"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <ServicesOverview />
 
       {/* SEO */}

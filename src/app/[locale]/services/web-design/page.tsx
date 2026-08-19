@@ -2,7 +2,12 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { WebDesignClient } from '@/features/services/ui/WebDesignClient';
 import { setRequestLocale } from 'next-intl/server';
-import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
+import {
+  getOrganizationSchema,
+  getServiceSchema,
+  getBreadcrumbSchema,
+  BASE_URL,
+} from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -14,17 +19,31 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Professional Web Design in Wetzlar & Hesse',
+      title: 'Professional Web Design in Wetzlar & Hesse | Coday',
       description:
         'Premium web design by experts in Wetzlar. Modern layouts, high conversion rates and outstanding aesthetics for your business in Central Hesse. Get started.',
+      keywords: [
+        'Web Design Wetzlar',
+        'Professional Web Design Hesse',
+        'UI UX Design Agency',
+        'Modern Website Design',
+        'Coday Web Design',
+      ],
       path: '/en/services/web-design',
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'Professionelles Webdesign in Wetzlar & Hessen',
+    title: 'Professionelles Webdesign in Wetzlar & Hessen | Coday',
     description:
       'Premium Webdesign vom Profi in Wetzlar. Moderne Layouts, hohe Konversionsraten und zeitlose Ästhetik für Unternehmen in Mittelhessen. Jetzt starten.',
+    keywords: [
+      'Webdesign Wetzlar',
+      'Professionelles Webdesign Hessen',
+      'UI UX Design Agentur',
+      'Homepage erstellen Wetzlar',
+      'Modernes Webdesign',
+    ],
     path: '/de/services/web-design',
     type: 'money',
   });
@@ -32,36 +51,42 @@ export async function generateMetadata({
 
 export default async function WebDesignPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  setRequestLocale(locale);
+  const _locale = locale || 'de';
+  setRequestLocale(_locale);
+  const isEn = _locale === 'en';
 
-  const _locale = (await params)?.locale || 'de';
-  const _seoTitle =
-    _locale === 'en'
-      ? 'Professional Web Design in Wetzlar & Hesse | Coday'
-      : 'Professionelles Webdesign in Wetzlar & Hessen | Coday';
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: isEn ? 'Services' : 'Leistungen', url: `/${_locale}/services` },
+    { name: isEn ? 'Web Design' : 'Webdesign', url: `/${_locale}/services/web-design` },
+  ]);
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      getOrganizationSchema(_locale),
+      breadcrumbs,
+      getServiceSchema({
+        name:
+          _locale === 'en'
+            ? 'Professional Web Design in Wetzlar & Hesse'
+            : 'Professionelles Webdesign in Wetzlar & Hessen',
+        description:
+          _locale === 'en'
+            ? 'Premium web design by experts in Wetzlar. Modern layouts, high conversion rates and outstanding aesthetics.'
+            : 'Premium Webdesign vom Profi in Wetzlar. Moderne Layouts, hohe Konversionsraten und zeitlose Ästhetik für Unternehmen in Mittelhessen. Jetzt starten.',
+        url: `${BASE_URL}/${_locale}/services/web-design`,
+      }),
+    ],
+  };
+
   return (
     <>
       <script
         id="schema-web-design"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@graph': [
-              getOrganizationSchema(_locale),
-              getServiceSchema({
-                name:
-                  _locale === 'en'
-                    ? 'Professional Web Design in Wetzlar & Hesse'
-                    : 'Professionelles Webdesign in Wetzlar & Hessen',
-                description:
-                  _locale === 'en'
-                    ? 'Premium web design by experts in Wetzlar. Modern layouts, high conversion rates and outstanding aesthetics.'
-                    : 'Premium Webdesign vom Profi in Wetzlar. Moderne Layouts, hohe Konversionsraten und zeitlose Ästhetik für Unternehmen in Mittelhessen. Jetzt starten.',
-                url: `${BASE_URL}/${_locale}/services/web-design`,
-              }),
-            ],
-          }),
+          __html: JSON.stringify(jsonLd),
         }}
       />
       <WebDesignClient />

@@ -590,3 +590,146 @@ export function getProcessSchema(locale: string = 'de') {
     ],
   };
 }
+
+export function getBreadcrumbSchema(items: { name: string; url: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: item.url.startsWith('http')
+        ? item.url
+        : `${BASE_URL}${item.url.startsWith('/') ? '' : '/'}${item.url}`,
+    })),
+  };
+}
+
+export function getFaqSchema(faqs: { question: string; answer: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
+export function getAboutSchema(locale: string = 'de') {
+  return {
+    '@type': 'AboutPage',
+    '@id': `${BASE_URL}/${locale}/about#webpage`,
+    url: `${BASE_URL}/${locale}/about`,
+    name:
+      locale === 'en'
+        ? 'About Coday – Solo Web Agency Wetzlar'
+        : 'Über Coday – Solo Webagentur Wetzlar',
+    description:
+      locale === 'en'
+        ? 'Learn about Umutcan Emre Tezgel and the philosophy behind Coday Web: High-conversion websites, 100/100 PageSpeed, and direct developer communication.'
+        : 'Erfahren Sie mehr über Umutcan Emre Tezgel und die Philosophie von Coday Web: Verkaufsstarke Webseiten, 100/100 PageSpeed und direkte Betreuung ohne Zwischenhändler.',
+    isPartOf: { '@id': `${BASE_URL}/#website` },
+    about: { '@id': ORG_ID },
+    mainEntity: { '@id': FOUNDER_ID },
+  };
+}
+
+export function getContactSchema(locale: string = 'de') {
+  return {
+    '@type': 'ContactPage',
+    '@id': `${BASE_URL}/${locale}/contact#webpage`,
+    url: `${BASE_URL}/${locale}/contact`,
+    name: locale === 'en' ? 'Contact Coday Web Agency' : 'Kontakt zu Coday Webagentur Wetzlar',
+    description:
+      locale === 'en'
+        ? 'Contact Coday Web for custom web design, SEO, and web development in Wetzlar and Central Hesse. Free initial consultation.'
+        : 'Nehmen Sie Kontakt zu Coday Web auf für maßgeschneidertes Webdesign, SEO und Webentwicklung in Wetzlar und Mittelhessen. Kostenloses Erstgespräch.',
+    isPartOf: { '@id': `${BASE_URL}/#website` },
+    about: { '@id': ORG_ID },
+    mainEntity: { '@id': `${BASE_URL}/#local-business` },
+  };
+}
+
+export function getWebApplicationSchema(app: {
+  name: string;
+  description: string;
+  url: string;
+  applicationCategory?: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    '@id': app.url,
+    name: app.name,
+    description: app.description,
+    url: app.url,
+    applicationCategory: app.applicationCategory || 'BusinessApplication',
+    operatingSystem: 'All',
+    browserRequirements: 'Requires JavaScript. Requires HTML5.',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'EUR',
+    },
+    provider: { '@id': ORG_ID },
+  };
+}
+
+export function getCaseStudySchema(project: {
+  title: string;
+  client: string;
+  description: string;
+  url: string;
+  image?: string;
+  datePublished?: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CreativeWork',
+    '@id': project.url,
+    headline: project.title,
+    name: project.title,
+    description: project.description,
+    url: project.url,
+    image: project.image ? [project.image] : [`${BASE_URL}/images/og-image.jpg`],
+    creator: { '@id': ORG_ID },
+    publisher: { '@id': ORG_ID },
+    datePublished: project.datePublished || '2026-01-01',
+    about: {
+      '@type': 'Organization',
+      name: project.client,
+    },
+  };
+}
+
+export function getIndustrySchema(industry: {
+  name: string;
+  description: string;
+  url: string;
+  category: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': industry.url,
+    name: `Webdesign für ${industry.name} – Coday Web`,
+    description: industry.description,
+    url: industry.url,
+    serviceType: `Webdesign & Webentwicklung für ${industry.name}`,
+    category: industry.category,
+    provider: { '@id': ORG_ID },
+    areaServed: [
+      { '@type': 'City', name: 'Wetzlar' },
+      { '@type': 'City', name: 'Gießen' },
+      { '@type': 'City', name: 'Marburg' },
+      { '@type': 'AdministrativeArea', name: 'Mittelhessen' },
+      { '@type': 'AdministrativeArea', name: 'Hessen' },
+    ],
+  };
+}

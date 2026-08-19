@@ -3,7 +3,12 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
-import { getOrganizationSchema, BASE_URL } from '@/lib/schema';
+import {
+  getOrganizationSchema,
+  getBreadcrumbSchema,
+  getWebApplicationSchema,
+  BASE_URL,
+} from '@/lib/schema';
 import UrlInputForm from '@/features/analyzer/ui/UrlInputForm';
 import ReportDashboard from '@/features/analyzer/ui/ReportDashboard';
 
@@ -17,11 +22,29 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'analyzer' });
 
+  const defaultKeywords =
+    locale === 'en'
+      ? [
+          'Website Analyzer',
+          'Free SEO Audit',
+          'PageSpeed Checker',
+          'Core Web Vitals Test',
+          'Website Performance Audit',
+        ]
+      : [
+          'Website Analyzer',
+          'Kostenloser SEO Check',
+          'PageSpeed Test',
+          'Core Web Vitals Audit',
+          'Website Performance Analyse',
+        ];
+
   return generatePageMetadata({
-    title: t('meta.title', { defaultValue: 'Website Analyzer | Coday' }),
+    title: t('meta.title', { defaultValue: 'Website Analyzer & SEO Audit | Coday' }),
     description: t('meta.description', {
       defaultValue: 'Kostenloses Website Audit & Performance Analyse.',
     }),
+    keywords: defaultKeywords,
     path: `/${locale}/analyzer`,
     type: 'money',
   });
@@ -29,32 +52,37 @@ export async function generateMetadata({
 
 export default async function AnalyzerPage(props: { params: Promise<{ locale: string }> }) {
   const params = await props.params;
-  setRequestLocale(params.locale);
+  const _locale = params.locale || 'de';
+  setRequestLocale(_locale);
 
-  const t = await getTranslations({ locale: params.locale, namespace: 'analyzer' });
+  const t = await getTranslations({ locale: _locale, namespace: 'analyzer' });
 
-  const pageTitle = t('meta.title', { defaultValue: 'Website Analyzer | Coday' });
+  const pageTitle = t('meta.title', { defaultValue: 'Website Analyzer & SEO Audit | Coday' });
   const pageDescription = t('meta.description', {
     defaultValue: 'Kostenloses Website Audit & Performance Analyse.',
   });
 
   const messages = await getMessages();
 
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: _locale === 'en' ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: _locale === 'en' ? 'Analyzer' : 'Website Analyzer', url: `/${_locale}/analyzer` },
+  ]);
+
+  const webApp = getWebApplicationSchema({
+    name:
+      _locale === 'en'
+        ? 'Coday Free Website Analyzer & SEO Audit'
+        : 'Coday Kostenloser Website Analyzer',
+    description: pageDescription,
+    url: `${BASE_URL}/${_locale}/analyzer`,
+    applicationCategory: 'DeveloperApplication',
+  });
+
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@graph': [
-      getOrganizationSchema(params.locale),
-      {
-        '@type': 'WebPage',
-        '@id': `${BASE_URL}/${params.locale}/analyzer`,
-        name: pageTitle,
-        description: pageDescription,
-        isPartOf: { '@id': `${BASE_URL}/#website` },
-      },
-    ],
+    '@graph': [getOrganizationSchema(_locale), breadcrumbs, webApp],
   };
-
-  const _locale = typeof params !== 'undefined' && params ? params.locale : 'de';
   return (
     <NextIntlClientProvider messages={messages}>
       <script

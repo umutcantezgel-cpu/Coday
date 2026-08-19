@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
+import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -14,6 +15,7 @@ export async function generateMetadata({
       title: 'Legal Notice | Web Design Agency Wetzlar Hesse',
       description:
         'Legal notice and company information for Coday, web design agency in Wetzlar. Owner: Umutcan Emre Tezgel. Contact details and legal information.',
+      keywords: ['Coday Legal Notice', 'Imprint Coday Wetzlar', 'Web Agency Impressum'],
       path: '/en/legal/impressum',
       type: 'legal',
     });
@@ -22,6 +24,11 @@ export async function generateMetadata({
     title: 'Impressum | Webdesign Agentur Wetzlar Mittelhessen',
     description:
       'Impressum und Anbieterkennzeichnung von Coday, Webdesign Agentur in Wetzlar. Inhaber: Umutcan Emre Tezgel. Kontakt und rechtliche Informationen.',
+    keywords: [
+      'Coday Impressum',
+      'Anbieterkennzeichnung Coday Wetzlar',
+      'Webdesign Agentur Impressum',
+    ],
     path: '/de/legal/impressum',
     type: 'legal',
   });
@@ -29,19 +36,35 @@ export async function generateMetadata({
 
 export default async function ImpressumPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  const isEn = locale === 'en';
+  const _locale = locale || 'de';
+  const isEn = _locale === 'en';
 
-  const _locale = (await params)?.locale || 'de';
-  const _seoTitle =
-    _locale === 'en'
-      ? 'Legal Notice | Web Design Agency Wetzlar Hesse | Coday'
-      : 'Impressum | Webdesign Agentur Wetzlar Mittelhessen | Coday';
-  const _seoDesc =
-    _locale === 'en'
-      ? 'Legal notice and company information for Coday, web design agency in Wetzlar. Owner: Umutcan Emre Tezgel. Contact details and legal information.'
-      : 'Impressum und Anbieterkennzeichnung von Coday, Webdesign Agentur in Wetzlar. Inhaber: Umutcan Emre Tezgel. Kontakt und rechtliche Informationen.';
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: isEn ? 'Legal Notice' : 'Impressum', url: `/${_locale}/legal/impressum` },
+  ]);
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      getOrganizationSchema(_locale),
+      breadcrumbs,
+      {
+        '@type': 'WebPage',
+        '@id': `${BASE_URL}/${_locale}/legal/impressum#webpage`,
+        name: isEn ? 'Legal Notice' : 'Impressum',
+        url: `${BASE_URL}/${_locale}/legal/impressum`,
+        isPartOf: { '@id': `${BASE_URL}/#website` },
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="max-w-3xl mx-auto px-4 py-20">
         <h1 className="text-3xl font-bold mb-8 text-secondary-900">
           {isEn ? 'Legal Notice' : 'Impressum'}

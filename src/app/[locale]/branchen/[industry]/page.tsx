@@ -1,6 +1,11 @@
 import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
-import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
+import {
+  getOrganizationSchema,
+  getServiceSchema,
+  getBreadcrumbSchema,
+  BASE_URL,
+} from '@/lib/schema';
 import { setRequestLocale } from 'next-intl/server';
 import { IndustryDetailClient } from '@/features/industries/ui/IndustryDetailClient';
 import { IndustryToolEmbed } from '@/features/industries/ui/IndustryToolEmbed';
@@ -36,17 +41,35 @@ export async function generateMetadata({
     formattedIndustry = 'Doctors & Health';
   }
 
+  const keywords =
+    locale === 'en'
+      ? [
+          `${formattedIndustry} Web Design`,
+          `${formattedIndustry} Website Agency`,
+          'Industry Specific Websites',
+          'Coday Web Solutions',
+        ]
+      : [
+          `Webdesign ${formattedIndustry}`,
+          `Website für ${formattedIndustry}`,
+          `Homepage ${formattedIndustry} erstellen`,
+          'Branchen Webdesign Wetzlar',
+          'Coday Webdesign',
+        ];
+
   if (locale === 'en') {
     return generatePageMetadata({
-      title: `${formattedIndustry} Web Design & IT Solutions`,
+      title: `${formattedIndustry} Web Design & IT Solutions | Coday`,
       description: `Custom web design and IT solutions specifically tailored for the ${formattedIndustry} industry. Elevate your digital presence with Coday.`,
+      keywords,
       path: `/en/branchen/${industry}`,
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: `${formattedIndustry} Webdesign & IT-Lösungen`,
+    title: `${formattedIndustry} Webdesign & IT-Lösungen | Coday`,
     description: `Maßgeschneidertes Webdesign und IT-Lösungen speziell für die Branche ${formattedIndustry}. Stärken Sie Ihre digitale Präsenz mit Coday.`,
+    keywords,
     path: `/de/branchen/${industry}`,
     type: 'money',
   });
@@ -71,7 +94,15 @@ export default async function IndustryDetailPage({
     formattedIndustry = 'Doctors & Health';
   }
 
-  const _locale = (await params)?.locale || 'de';
+  const _locale = locale || 'de';
+  const isEn = _locale === 'en';
+
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: isEn ? 'Industries' : 'Branchen', url: `/${_locale}/branchen` },
+    { name: formattedIndustry, url: `/${_locale}/branchen/${industry}` },
+  ]);
+
   return (
     <>
       <script
@@ -82,6 +113,7 @@ export default async function IndustryDetailPage({
             '@context': 'https://schema.org',
             '@graph': [
               getOrganizationSchema(_locale),
+              breadcrumbs,
               getServiceSchema({
                 name:
                   locale === 'en'

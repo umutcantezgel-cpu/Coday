@@ -2,7 +2,12 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { EnterpriseWebClient } from '@/features/services/ui/EnterpriseWebClient';
 import { setRequestLocale } from 'next-intl/server';
-import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
+import {
+  getOrganizationSchema,
+  getServiceSchema,
+  getBreadcrumbSchema,
+  BASE_URL,
+} from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -14,17 +19,31 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Enterprise Web Development Wetzlar | Scalable',
+      title: 'Enterprise Web Development Wetzlar | Scalable Web Apps | Coday',
       description:
         'Scalable and secure enterprise web solutions by Coday in Wetzlar. Portals, intranets and complex web applications for businesses in Hesse. Inquire.',
+      keywords: [
+        'Enterprise Web Development',
+        'Web Portals Development Wetzlar',
+        'B2B Web Applications',
+        'Next.js Enterprise Agency',
+        'Coday Enterprise Web',
+      ],
       path: '/en/services/enterprise-web',
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'Enterprise Webentwicklung Wetzlar | Skalierbar',
+    title: 'Enterprise Webentwicklung Wetzlar | Skalierbare Web-Apps | Coday',
     description:
       'Skalierbare und sichere Enterprise Web-Lösungen von Coday in Wetzlar. Portale, Intranets und Webanwendungen für Unternehmen in Hessen. Jetzt anfragen.',
+    keywords: [
+      'Enterprise Webentwicklung',
+      'Webportale Entwicklung Wetzlar',
+      'B2B Webanwendungen',
+      'Next.js Enterprise Agentur',
+      'Coday Enterprise Web',
+    ],
     path: '/de/services/enterprise-web',
     type: 'money',
   });
@@ -36,34 +55,45 @@ export default async function EnterpriseWebPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  setRequestLocale(locale);
+  const _locale = locale || 'de';
+  setRequestLocale(_locale);
+  const isEn = _locale === 'en';
 
-  const _locale = (await params)?.locale || 'de';
-  const _seoTitle =
-    _locale === 'en'
-      ? 'Enterprise Web Development Wetzlar | Scalable | Coday'
-      : 'Enterprise Webentwicklung Wetzlar | Skalierbar | Coday';
-  const _seoDesc =
-    _locale === 'en'
-      ? 'Scalable and secure enterprise web solutions by Coday in Wetzlar. Portals, intranets and complex web applications for businesses in Hesse. Inquire.'
-      : 'Skalierbare und sichere Enterprise Web-Lösungen von Coday in Wetzlar. Portale, Intranets und Webanwendungen für Unternehmen in Hessen. Jetzt anfragen.';
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: isEn ? 'Services' : 'Leistungen', url: `/${_locale}/services` },
+    {
+      name: isEn ? 'Enterprise Web' : 'Enterprise Web',
+      url: `/${_locale}/services/enterprise-web`,
+    },
+  ]);
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      getOrganizationSchema(_locale),
+      breadcrumbs,
+      getServiceSchema({
+        name:
+          _locale === 'en'
+            ? 'Enterprise Web Development Wetzlar'
+            : 'Enterprise Webentwicklung Wetzlar',
+        description:
+          _locale === 'en'
+            ? 'Scalable and secure enterprise web solutions by Coday in Wetzlar. Portals, intranets and complex web applications.'
+            : 'Skalierbare und sichere Enterprise Web-Lösungen von Coday in Wetzlar. Portale, Intranets und Webanwendungen für Unternehmen in Hessen.',
+        url: `${BASE_URL}/${_locale}/services/enterprise-web`,
+      }),
+    ],
+  };
+
   return (
     <>
       <script
         id="schema-enterprise-web"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@graph': [
-              getOrganizationSchema(_locale),
-              getServiceSchema({
-                name: _seoTitle,
-                description: _seoDesc,
-                url: `${BASE_URL}/${_locale}/services/enterprise-web`,
-              }),
-            ],
-          }),
+          __html: JSON.stringify(jsonLd),
         }}
       />
       <EnterpriseWebClient />

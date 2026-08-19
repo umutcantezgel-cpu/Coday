@@ -1,8 +1,9 @@
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import { SeoHead } from '@/shared/ui/SeoHead';
 import ClientComponent from '@/features/knowledge/ui/FAQClient';
+import { getOrganizationSchema, getBreadcrumbSchema, getFaqSchema, BASE_URL } from '@/lib/schema';
+import { getFAQs } from '@/features/faq/model';
 
 export const dynamic = 'force-static';
 
@@ -14,17 +15,31 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'FAQ | Web Design Agency Wetzlar Central Hesse',
+      title: 'FAQ | Web Design Agency Wetzlar Central Hesse | Coday',
       description:
         'Answers to frequently asked questions about web design, pricing and process at Coday in Wetzlar. Everything business owners in Hesse need to know.',
+      keywords: [
+        'Web Design FAQ',
+        'Website Costs FAQ',
+        'Web Development Questions',
+        'Coday FAQ',
+        'Web Agency Wetzlar',
+      ],
       path: '/en/knowledge/faq',
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'Häufige Fragen (FAQ) | Webdesign Agentur Wetzlar',
+    title: 'Häufige Fragen (FAQ) | Webdesign Agentur Wetzlar | Coday',
     description:
       'Antworten auf häufige Fragen zu Webdesign, Preisen und Ablauf bei Coday in Wetzlar. Alles was Unternehmer in Mittelhessen wissen müssen. Jetzt lesen.',
+    keywords: [
+      'Webdesign FAQ',
+      'Website Kosten FAQ',
+      'Webentwicklung Fragen',
+      'Coday FAQ',
+      'Webdesign Agentur Wetzlar',
+    ],
     path: '/de/knowledge/faq',
     type: 'money',
   });
@@ -32,20 +47,29 @@ export async function generateMetadata({
 
 export default async function Page(props: { params: Promise<{ locale: string }> }) {
   const params = await props.params;
-  setRequestLocale(params.locale);
+  const _locale = params.locale || 'de';
+  setRequestLocale(_locale);
+  const isEn = _locale === 'en';
 
-  const _locale = (await params)?.locale || 'de';
-  const _seoTitle =
-    _locale === 'en'
-      ? 'FAQ | Web Design Agency Wetzlar Central Hesse | Coday'
-      : 'Häufige Fragen (FAQ) | Webdesign Agentur Wetzlar | Coday';
-  const _seoDesc =
-    _locale === 'en'
-      ? 'Answers to frequently asked questions about web design, pricing and process at Coday in Wetzlar. Everything business owners in Hesse need to know.'
-      : 'Antworten auf häufige Fragen zu Webdesign, Preisen und Ablauf bei Coday in Wetzlar. Alles was Unternehmer in Mittelhessen wissen müssen. Jetzt lesen.';
+  const faqs = getFAQs(_locale);
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: 'Knowledge', url: `/${_locale}/knowledge` },
+    { name: 'FAQ', url: `/${_locale}/knowledge/faq` },
+  ]);
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [getOrganizationSchema(_locale), breadcrumbs, getFaqSchema(faqs)],
+  };
+
   return (
     <>
-      <SeoHead title="Coday | faq" description="Erfahren Sie mehr über faq" pageType="default" />
+      <script
+        id="schema-faq-page"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <ClientComponent />
       {/* SEO */}
       <section className="container mx-auto px-4 py-16 max-w-5xl text-secondary-600">

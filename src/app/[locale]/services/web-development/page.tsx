@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { WebDevelopmentClient } from '@/features/services/ui/WebDevelopmentClient';
 import { setRequestLocale } from 'next-intl/server';
-import { getOrganizationSchema, BASE_URL } from '@/lib/schema';
+import { getOrganizationSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import { ArrowRight, Code, ShieldCheck, Lightning, Cpu } from '@phosphor-icons/react/dist/ssr';
 
@@ -19,6 +19,13 @@ export async function generateMetadata({
       title: 'Next.js Web Development & Full-Stack Agency | Coday',
       description:
         'Custom Next.js web development for B2B & mid-market. Sub-second load times, deep API integrations & enterprise security without WordPress risks.',
+      keywords: [
+        'Next.js Web Development',
+        'React Development Agency',
+        'Full Stack Web Development Wetzlar',
+        'Custom Web Development',
+        'Coday Web Development',
+      ],
       path: '/en/services/web-development',
       type: 'money',
     });
@@ -27,6 +34,13 @@ export async function generateMetadata({
     title: 'Next.js Webentwicklung & Full-Stack Webagentur | Coday',
     description:
       'Maßgeschneiderte Next.js Webentwicklung für B2B & Mittelstand. Subsekundäre Ladezeiten, API-Integrationen & maximale Sicherheit ohne WordPress-Risiken.',
+    keywords: [
+      'Next.js Webentwicklung',
+      'React Entwicklung Agentur',
+      'Fullstack Webentwicklung Wetzlar',
+      'Maßgeschneiderte Webentwicklung',
+      'Coday Webentwicklung',
+    ],
     path: '/de/services/web-development',
     type: 'money',
   });
@@ -42,10 +56,20 @@ export default async function WebDevelopmentPage({
   setRequestLocale(_locale);
   const isEn = _locale === 'en';
 
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: isEn ? 'Services' : 'Leistungen', url: `/${_locale}/services` },
+    {
+      name: isEn ? 'Web Development' : 'Webentwicklung',
+      url: `/${_locale}/services/web-development`,
+    },
+  ]);
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       getOrganizationSchema(_locale),
+      breadcrumbs,
       {
         '@type': 'ProfessionalService',
         '@id': `${BASE_URL}/${_locale}/services/web-development#service`,

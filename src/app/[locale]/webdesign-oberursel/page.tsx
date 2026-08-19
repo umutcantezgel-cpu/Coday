@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema } from '@/lib/schema';
+import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
@@ -43,6 +43,13 @@ export async function generateMetadata({
       title: 'Web Design Oberursel | Next.js Agency & SEO · Coday',
       description:
         'Web agency for Oberursel: Modern B2B websites, ultra-fast load times & lead generation for mid-market & IT. Fixed price on request.',
+      keywords: [
+        'Web Design Oberursel',
+        'Web Agency Oberursel',
+        'Website Creation Oberursel',
+        'Web Development Taunus',
+        'Coday Web Oberursel',
+      ],
       path: '/en/webdesign-oberursel',
       type: 'money',
     });
@@ -51,6 +58,13 @@ export async function generateMetadata({
     title: 'Webdesign Oberursel | Next.js Agentur & SEO · Coday',
     description:
       'Webagentur für Oberursel: Moderne B2B-Websites, schnelle Ladezeiten & Lead-Generierung für Mittelstand & IT. Festpreis auf Anfrage.',
+    keywords: [
+      'Webdesign Oberursel',
+      'Webagentur Oberursel',
+      'Website erstellen Oberursel',
+      'Webentwicklung Taunus',
+      'Coday Web Oberursel',
+    ],
     path: '/de/webdesign-oberursel',
     type: 'money',
   });
@@ -64,11 +78,19 @@ export default async function WebdesignOberurselPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const _locale = locale || 'de';
+  const isEn = _locale === 'en';
+
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: isEn ? 'Locations' : 'Standorte', url: `/${_locale}/uebersicht` },
+    { name: 'Oberursel', url: `/${_locale}/webdesign-oberursel` },
+  ]);
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       getOrganizationSchema(_locale),
+      breadcrumbs,
       {
         '@type': 'LocalBusiness',
         '@id': `${BASE_URL}/${_locale}/webdesign-oberursel#localbusiness`,
@@ -76,7 +98,7 @@ export default async function WebdesignOberurselPage({
         url: `${BASE_URL}/${_locale}/webdesign-oberursel`,
         logo: `${BASE_URL}/icon.png`,
         image: `${BASE_URL}/images/og-image.jpg`,
-        telephone: '+49 6441 000000',
+        telephone: '+49-176-41195301',
         email: 'kontakt@codayweb.de',
         priceRange: '€€€€',
         address: {

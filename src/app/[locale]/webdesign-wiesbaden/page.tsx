@@ -2,10 +2,11 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema } from '@/lib/schema';
+import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
+import { LazyQuickContactForm } from '@/widgets/home/LazyQuickContactForm';
 import {
   ArrowRight,
   Lightning,
@@ -19,6 +20,7 @@ import {
   CheckCircle,
   Scales,
   FirstAid,
+  Stethoscope,
   ChartBar,
   Star,
   MapPin,
@@ -42,6 +44,13 @@ export async function generateMetadata({
       title: 'Web Design Wiesbaden | Premium Web Agency & SEO · Coday',
       description:
         'Premium web design in Wiesbaden: Fast load times, prestigious UI/UX design & SEO for law firms, practices & consultants. Fixed price.',
+      keywords: [
+        'Web Design Wiesbaden',
+        'Web Agency Wiesbaden',
+        'Website Creation Wiesbaden',
+        'Web Development Wiesbaden',
+        'Coday Web Wiesbaden',
+      ],
       path: '/en/webdesign-wiesbaden',
       type: 'money',
     });
@@ -50,6 +59,13 @@ export async function generateMetadata({
     title: 'Webdesign Wiesbaden | Premium Webagentur & SEO · Coday',
     description:
       'Webdesign in Wiesbaden: Schnelle Ladezeiten, seriöse Ästhetik & starkes SEO für Kanzleien, Praxen & Berater. Festpreis auf Anfrage.',
+    keywords: [
+      'Webdesign Wiesbaden',
+      'Webagentur Wiesbaden',
+      'Website erstellen Wiesbaden',
+      'Webentwicklung Wiesbaden',
+      'Coday Web Wiesbaden',
+    ],
     path: '/de/webdesign-wiesbaden',
     type: 'money',
   });
@@ -63,11 +79,19 @@ export default async function WebdesignWiesbadenPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const _locale = locale || 'de';
+  const isEn = _locale === 'en';
+
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: isEn ? 'Locations' : 'Standorte', url: `/${_locale}/uebersicht` },
+    { name: 'Wiesbaden', url: `/${_locale}/webdesign-wiesbaden` },
+  ]);
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       getOrganizationSchema(_locale),
+      breadcrumbs,
       {
         '@type': 'LocalBusiness',
         '@id': `${BASE_URL}/${_locale}/webdesign-wiesbaden#localbusiness`,
@@ -75,7 +99,7 @@ export default async function WebdesignWiesbadenPage({
         url: `${BASE_URL}/${_locale}/webdesign-wiesbaden`,
         logo: `${BASE_URL}/icon.png`,
         image: `${BASE_URL}/images/og-image.jpg`,
-        telephone: '+49 6441 000000',
+        telephone: '+49-176-41195301',
         email: 'kontakt@codayweb.de',
         priceRange: '€€€€',
         address: {

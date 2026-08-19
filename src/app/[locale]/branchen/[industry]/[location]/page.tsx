@@ -1,6 +1,11 @@
 import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
-import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
+import {
+  getOrganizationSchema,
+  getServiceSchema,
+  getBreadcrumbSchema,
+  BASE_URL,
+} from '@/lib/schema';
 import { IndustryDetailClient } from '@/features/industries/ui/IndustryDetailClient';
 import { LocalSeoTemplate } from '@/features/local-seo/ui/LocalSeoTemplate';
 import { setRequestLocale } from 'next-intl/server';
@@ -15,7 +20,7 @@ import { cities } from '@/features/local-seo/model/cities';
 
 export const dynamicParams = false;
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   const params: { locale: string; industry: string; location: string }[] = [];
   const dirPath = path.join(process.cwd(), 'src', 'features', 'local-seo', 'model', 'content');
 
@@ -64,55 +69,73 @@ export async function generateMetadata({
     if (fs.existsSync(filePath)) {
       const fileContents = fs.readFileSync(filePath, 'utf8');
       const content = JSON.parse(fileContents);
-      const rawDescEn = content.meta_en?.description || content.meta.description;
-      const rawDescDe = content.meta.description;
-      const descEn = rawDescEn.length > 145 ? rawDescEn.substring(0, 142) + '...' : rawDescEn;
-      const descDe = rawDescDe.length > 145 ? rawDescDe.substring(0, 142) + '...' : rawDescDe;
-
-      return generatePageMetadata({
-        title:
-          locale === 'en'
-            ? content.meta_en?.title || `${content.meta.title} in English`
-            : content.meta.title,
-        description: locale === 'en' ? descEn : descDe,
-        path: `/${locale}/branchen/${industry}/${location}`,
-        type: 'money',
-      });
+      const isEn = locale === 'en';
+      const meta = isEn && content.meta_en ? content.meta_en : content.meta;
+      if (meta) {
+        const formattedLoc = location.charAt(0).toUpperCase() + location.slice(1);
+        const formattedInd = industry.charAt(0).toUpperCase() + industry.slice(1);
+        return generatePageMetadata({
+          title: meta.title,
+          description: meta.description,
+          keywords: [
+            `Webdesign ${formattedInd} ${formattedLoc}`,
+            `Website für ${formattedInd} in ${formattedLoc}`,
+            `Homepage ${formattedLoc}`,
+            'Coday Web Agentur',
+          ],
+          path: `/${locale}/branchen/${industry}/${location}`,
+          type: 'money',
+        });
+      }
     }
   } catch (e) {
-    // Ignore error, fallback
+    // ignore
   }
 
-  const formattedIndustry = industry
+  let formattedIndustry = industry
     .split('-')
     .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
     .join(' ');
+  const formattedLocation =
+    location !== 'allgemein' ? location.charAt(0).toUpperCase() + location.slice(1) : '';
 
-  const title =
-    locale === 'en'
-      ? `${formattedIndustry} Web Design ${location !== 'allgemein' ? `in ${location.charAt(0).toUpperCase() + location.slice(1)}` : ''}`
-      : `${formattedIndustry} Webdesign ${location !== 'allgemein' ? `in ${location.charAt(0).toUpperCase() + location.slice(1)}` : ''}`;
-
+  if (locale === 'en') {
+    return generatePageMetadata({
+      title: `Web Design for ${formattedIndustry}${formattedLocation ? ` in ${formattedLocation}` : ''} | Coday`,
+      description: `Tailored web design and digital strategy for ${formattedIndustry} in ${formattedLocation || 'the region'}. High performance and conversion-focused websites by Coday.`,
+      keywords: [
+        `Web Design ${formattedIndustry} ${formattedLocation}`,
+        `Website ${formattedIndustry}`,
+        'Coday Web',
+      ],
+      path: `/en/branchen/${industry}/${location}`,
+      type: 'money',
+    });
+  }
   return generatePageMetadata({
-    title,
-    description:
-      locale === 'en'
-        ? `Professional web design and custom digital solutions for ${formattedIndustry}${location !== 'allgemein' ? ` in ${location.charAt(0).toUpperCase() + location.slice(1)}` : ''}. Increase your visibility, attract more customers, and dominate your local market with Coday.`
-        : `Professionelles Webdesign und maßgeschneiderte digitale Lösungen für ${formattedIndustry}${location !== 'allgemein' ? ` in ${location.charAt(0).toUpperCase() + location.slice(1)}` : ''}. Steigern Sie Ihre Sichtbarkeit, gewinnen Sie mehr Kunden und dominieren Sie Ihren Markt mit Coday.`,
-    path: `/${locale}/branchen/${industry}/${location}`,
+    title: `Webdesign für ${formattedIndustry}${formattedLocation ? ` in ${formattedLocation}` : ''} | Coday`,
+    description: `Maßgeschneidertes Webdesign und digitale Strategien für ${formattedIndustry} in ${formattedLocation || 'der Region'}. Performant, modern und konversionsstark von Coday.`,
+    keywords: [
+      `Webdesign ${formattedIndustry} ${formattedLocation}`,
+      `Website für ${formattedIndustry} ${formattedLocation}`,
+      'Coday Webdesign',
+    ],
+    path: `/de/branchen/${industry}/${location}`,
     type: 'money',
   });
 }
 
-export default async function IndustryDetailPage({
+export default async function IndustryLocationPage({
   params,
 }: {
   params: Promise<{ locale: string; industry: string; location: string }>;
 }) {
   const { locale, industry, location } = await params;
   setRequestLocale(locale);
+  const _locale = locale || 'de';
+  const isEn = _locale === 'en';
 
-  const formattedIndustry = industry
+  let formattedIndustry = industry
     .split('-')
     .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
     .join(' ');
@@ -142,6 +165,13 @@ export default async function IndustryDetailPage({
     return notFound();
   }
 
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: isEn ? 'Industries' : 'Branchen', url: `/${_locale}/branchen` },
+    { name: formattedIndustry, url: `/${_locale}/branchen/${industry}` },
+    { name: formattedLocation, url: `/${_locale}/branchen/${industry}/${location}` },
+  ]);
+
   const schemaScript = (
     <script
       id={`schema-branchen-${industry}-${location}`}
@@ -150,17 +180,16 @@ export default async function IndustryDetailPage({
         __html: JSON.stringify({
           '@context': 'https://schema.org',
           '@graph': [
-            getOrganizationSchema(locale),
+            getOrganizationSchema(_locale),
+            breadcrumbs,
             getServiceSchema({
-              name:
-                locale === 'en'
-                  ? `Web Design for ${formattedIndustry}${formattedLocation ? ` in ${formattedLocation}` : ''}`
-                  : `Webdesign für ${formattedIndustry}${formattedLocation ? ` in ${formattedLocation}` : ''}`,
-              description:
-                locale === 'en'
-                  ? `Professional web design for ${formattedIndustry}${formattedLocation ? ` in ${formattedLocation}` : ''} by Coday.`
-                  : `Professionelles Webdesign für ${formattedIndustry}${formattedLocation ? ` in ${formattedLocation}` : ''} von Coday.`,
-              url: `${BASE_URL}/${locale}/branchen/${industry}/${location}`,
+              name: isEn
+                ? `Web Design for ${formattedIndustry}${formattedLocation ? ` in ${formattedLocation}` : ''}`
+                : `Webdesign für ${formattedIndustry}${formattedLocation ? ` in ${formattedLocation}` : ''}`,
+              description: isEn
+                ? `Professional web design for ${formattedIndustry}${formattedLocation ? ` in ${formattedLocation}` : ''} by Coday.`
+                : `Professionelles Webdesign für ${formattedIndustry}${formattedLocation ? ` in ${formattedLocation}` : ''} von Coday.`,
+              url: `${BASE_URL}/${_locale}/branchen/${industry}/${location}`,
             }),
           ],
         }),

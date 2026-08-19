@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema } from '@/lib/schema';
+import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
@@ -43,6 +43,13 @@ export async function generateMetadata({
       title: 'Web Design Rodgau | Web Agency & SEO · Coday',
       description:
         'Professional web design in Rodgau & Kreis Offenbach. Ultra-fast load times, measurable leads for craft & SME businesses. Fixed price on request.',
+      keywords: [
+        'Web Design Rodgau',
+        'Web Agency Rodgau',
+        'Website Creation Rodgau',
+        'Web Development District of Offenbach',
+        'Coday Web Rodgau',
+      ],
       path: '/en/webdesign-rodgau',
       type: 'money',
     });
@@ -51,6 +58,13 @@ export async function generateMetadata({
     title: 'Webdesign Rodgau | Lokale Webagentur & SEO · Coday',
     description:
       'Professionelles Webdesign in Rodgau & Kreis Offenbach. Ultraschnelle Ladezeiten, messbare Leads für Handwerk & Mittelstand. Festpreise auf Anfrage.',
+    keywords: [
+      'Webdesign Rodgau',
+      'Webagentur Rodgau',
+      'Website erstellen Rodgau',
+      'Webentwicklung Kreis Offenbach',
+      'Coday Web Rodgau',
+    ],
     path: '/de/webdesign-rodgau',
     type: 'money',
   });
@@ -64,11 +78,19 @@ export default async function WebdesignRodgauPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const _locale = locale || 'de';
+  const isEn = _locale === 'en';
+
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: isEn ? 'Locations' : 'Standorte', url: `/${_locale}/uebersicht` },
+    { name: 'Rodgau', url: `/${_locale}/webdesign-rodgau` },
+  ]);
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       getOrganizationSchema(_locale),
+      breadcrumbs,
       {
         '@type': 'LocalBusiness',
         '@id': `${BASE_URL}/${_locale}/webdesign-rodgau#localbusiness`,
@@ -76,7 +98,7 @@ export default async function WebdesignRodgauPage({
         url: `${BASE_URL}/${_locale}/webdesign-rodgau`,
         logo: `${BASE_URL}/icon.png`,
         image: `${BASE_URL}/images/og-image.jpg`,
-        telephone: '+49 6441 000000',
+        telephone: '+49-176-41195301',
         email: 'kontakt@codayweb.de',
         priceRange: '€€€€',
         address: {

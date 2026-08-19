@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
-import { getOrganizationSchema, BASE_URL } from '@/lib/schema';
+import { getOrganizationSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
 import { CareerOverviewClient } from '@/features/career/ui/CareerOverviewClient';
 
 export const dynamic = 'force-static';
@@ -16,6 +16,12 @@ export async function generateMetadata({
       title: 'Careers at Coday | Web Design Agency Jobs Wetzlar',
       description:
         'Discover exciting career opportunities at the web design agency Coday in Wetzlar. Join our team for premium web development & digital solutions.',
+      keywords: [
+        'Web Agency Jobs Wetzlar',
+        'Next.js Developer Jobs Hesse',
+        'Frontend Developer Wetzlar',
+        'Coday Careers',
+      ],
       path: '/en/career',
       type: 'default',
     });
@@ -24,6 +30,12 @@ export async function generateMetadata({
     title: 'Karriere bei Coday | Webdesign Agentur Jobs Wetzlar',
     description:
       'Entdecken Sie tolle Karrieremöglichkeiten in der Webdesign Agentur Coday in Wetzlar. Werden Sie Teil unseres Teams für Premium Webentwicklung!',
+    keywords: [
+      'Webagentur Jobs Wetzlar',
+      'Next.js Entwickler Hessen',
+      'Frontend Entwickler Wetzlar',
+      'Coday Karriere',
+    ],
     path: '/de/career',
     type: 'default',
   });
@@ -33,10 +45,16 @@ export default async function CareerPage({ params }: { params: Promise<{ locale:
   const { locale } = await params;
   const isEn = locale === 'en';
 
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${locale}` },
+    { name: isEn ? 'Careers' : 'Karriere', url: `/${locale}/career` },
+  ]);
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
-      getOrganizationSchema(),
+      getOrganizationSchema(locale),
+      breadcrumbs,
       {
         '@type': 'WebPage',
         '@id': `${BASE_URL}/${locale}/career`,

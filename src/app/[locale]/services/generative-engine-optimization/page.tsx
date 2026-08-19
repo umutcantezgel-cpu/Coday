@@ -3,7 +3,7 @@ import { Link } from '@/i18n/navigation';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { ORG_ID } from '@/lib/schema';
+import { ORG_ID, getOrganizationSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -15,17 +15,31 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'GEO Agency Wetzlar | AI Search Optimization Hesse',
+      title: 'GEO Agency Wetzlar | AI Search Optimization Hesse | Coday',
       description:
         'Generative Engine Optimization by Coday in Wetzlar. Make your brand visible in AI Overviews and ChatGPT searches. For businesses in Central Hesse.',
+      keywords: [
+        'Generative Engine Optimization',
+        'GEO Agency Wetzlar',
+        'AI Overviews Optimization',
+        'ChatGPT SEO Agency',
+        'Coday GEO',
+      ],
       path: '/en/services/generative-engine-optimization',
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'GEO Agentur Wetzlar | KI-Suchoptimierung Hessen',
+    title: 'GEO Agentur Wetzlar | KI-Suchoptimierung Hessen | Coday',
     description:
       'Generative Engine Optimization von Coday in Wetzlar. Ihre Marke in AI Overviews und ChatGPT-Suchen sichtbar machen. Für Unternehmen in Mittelhessen.',
+    keywords: [
+      'Generative Engine Optimization',
+      'GEO Agentur Wetzlar',
+      'AI Overviews Optimierung',
+      'ChatGPT SEO Agentur',
+      'Coday Web GEO',
+    ],
     path: '/de/services/generative-engine-optimization',
     type: 'money',
   });
@@ -157,8 +171,9 @@ const content = {
 
 export default async function GeoServicePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  setRequestLocale(locale);
-  const t = locale === 'en' ? content.en : content.de;
+  const _locale = locale || 'de';
+  setRequestLocale(_locale);
+  const t = _locale === 'en' ? content.en : content.de;
 
   const serviceJsonLd = {
     '@context': 'https://schema.org',
@@ -195,21 +210,24 @@ export default async function GeoServicePage({ params }: { params: Promise<{ loc
     })),
   };
 
-  const _locale = (await params)?.locale || 'de';
-  const _seoTitle =
-    _locale === 'en'
-      ? 'GEO Agency Wetzlar | AI Search Optimization Hesse | Coday'
-      : 'GEO Agentur Wetzlar | KI-Suchoptimierung Hessen | Coday';
-  const _seoDesc =
-    _locale === 'en'
-      ? 'Generative Engine Optimization by Coday in Wetzlar. Make your brand visible in AI Overviews and ChatGPT searches. For businesses in Central Hesse.'
-      : 'Generative Engine Optimization von Coday in Wetzlar. Ihre Marke in AI Overviews und ChatGPT-Suchen sichtbar machen. Für Unternehmen in Mittelhessen.';
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: locale === 'en' ? 'Home' : 'Startseite', url: `/${locale}` },
+    { name: locale === 'en' ? 'Services' : 'Leistungen', url: `/${locale}/services` },
+    { name: 'GEO', url: `/${locale}/services/generative-engine-optimization` },
+  ]);
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [getOrganizationSchema(locale), breadcrumbs, serviceJsonLd, faqJsonLd],
+  };
+
   return (
     <>
       <div className="flex-1 w-full flex flex-col">
         <script
+          id="schema-geo"
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify([serviceJsonLd, faqJsonLd]) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
 
         {/* Hero Section */}

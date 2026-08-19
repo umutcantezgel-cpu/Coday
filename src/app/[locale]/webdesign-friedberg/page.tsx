@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema } from '@/lib/schema';
+import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
@@ -45,6 +45,13 @@ export async function generateMetadata({
       title: 'Web Design Friedberg Hesse | Web Agency & SEO · Coday',
       description:
         'Web design & SEO in Friedberg & Bad Nauheim. Next.js websites with <0.5s load time for clinics, mid-market & THM campus. Fixed price on request.',
+      keywords: [
+        'Web Design Friedberg Hesse',
+        'Web Agency Friedberg',
+        'Website Creation Friedberg',
+        'Web Design Bad Nauheim',
+        'Coday Web Friedberg',
+      ],
       path: '/en/webdesign-friedberg',
       type: 'money',
     });
@@ -53,6 +60,13 @@ export async function generateMetadata({
     title: 'Webdesign Friedberg Hessen | Webagentur & SEO · Coday',
     description:
       'Webdesign & SEO in Friedberg & Bad Nauheim. Next.js Websites mit <0.5s Ladezeit für Praxen, Mittelstand & Hochschulumfeld. Festpreis auf Anfrage.',
+    keywords: [
+      'Webdesign Friedberg',
+      'Webagentur Friedberg Hessen',
+      'Website erstellen Friedberg',
+      'Webdesign Bad Nauheim',
+      'Coday Web Friedberg',
+    ],
     path: '/de/webdesign-friedberg',
     type: 'money',
   });
@@ -66,11 +80,19 @@ export default async function WebdesignFriedbergPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const _locale = locale || 'de';
+  const isEn = _locale === 'en';
+
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: isEn ? 'Locations' : 'Standorte', url: `/${_locale}/uebersicht` },
+    { name: 'Friedberg', url: `/${_locale}/webdesign-friedberg` },
+  ]);
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       getOrganizationSchema(_locale),
+      breadcrumbs,
       {
         '@type': 'LocalBusiness',
         '@id': `${BASE_URL}/${_locale}/webdesign-friedberg#localbusiness`,
@@ -78,7 +100,7 @@ export default async function WebdesignFriedbergPage({
         url: `${BASE_URL}/${_locale}/webdesign-friedberg`,
         logo: `${BASE_URL}/icon.png`,
         image: `${BASE_URL}/images/og-image.jpg`,
-        telephone: '+49 6441 000000',
+        telephone: '+49-176-41195301',
         email: 'kontakt@codayweb.de',
         priceRange: '€€€€',
         address: {

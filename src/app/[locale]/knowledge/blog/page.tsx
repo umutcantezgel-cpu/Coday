@@ -1,8 +1,8 @@
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import { SeoHead } from '@/shared/ui/SeoHead';
 import ClientComponent from '@/features/knowledge/ui/BlogClient';
+import { getOrganizationSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -15,17 +15,31 @@ export async function generateMetadata({
   setRequestLocale(locale);
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Web Design Blog | Tips & Trends from Wetzlar',
+      title: 'Web Design Blog | Tips & Trends from Wetzlar | Coday',
       description:
         'Latest web design tips, SEO trends and digital strategies from Coday in Wetzlar. Practical knowledge for craftsmen and businesses in Central Hesse.',
+      keywords: [
+        'Web Design Blog',
+        'SEO Insights Wetzlar',
+        'Next.js Tutorials',
+        'Web Development Guides',
+        'Coday Blog',
+      ],
       path: '/en/knowledge/blog',
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'Webdesign Blog | Tipps & Trends aus Wetzlar',
+    title: 'Webdesign Blog | Tipps & Trends aus Wetzlar | Coday',
     description:
       'Aktuelle Webdesign Tipps, SEO Trends und digitale Strategien von Coday in Wetzlar. Praxiswissen für Handwerker und Unternehmen in Mittelhessen.',
+    keywords: [
+      'Webdesign Blog',
+      'SEO Ratgeber Wetzlar',
+      'Webentwicklung Tipps',
+      'Next.js Tutorials',
+      'Coday Blog',
+    ],
     path: '/de/knowledge/blog',
     type: 'money',
   });
@@ -33,20 +47,40 @@ export async function generateMetadata({
 
 export default async function Page(props: { params: Promise<{ locale: string }> }) {
   const params = await props.params;
-  setRequestLocale(params.locale);
+  const _locale = params.locale || 'de';
+  setRequestLocale(_locale);
+  const isEn = _locale === 'en';
 
-  const _locale = (await params)?.locale || 'de';
-  const _seoTitle =
-    _locale === 'en'
-      ? 'Web Design Blog | Tips & Trends from Wetzlar | Coday'
-      : 'Webdesign Blog | Tipps & Trends aus Wetzlar | Coday';
-  const _seoDesc =
-    _locale === 'en'
-      ? 'Latest web design tips, SEO trends and digital strategies from Coday in Wetzlar. Practical knowledge for craftsmen and businesses in Central Hesse.'
-      : 'Aktuelle Webdesign Tipps, SEO Trends und digitale Strategien von Coday in Wetzlar. Praxiswissen für Handwerker und Unternehmen in Mittelhessen.';
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: 'Knowledge', url: `/${_locale}/knowledge` },
+    { name: 'Blog', url: `/${_locale}/knowledge/blog` },
+  ]);
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      getOrganizationSchema(_locale),
+      breadcrumbs,
+      {
+        '@type': 'Blog',
+        '@id': `${BASE_URL}/${_locale}/knowledge/blog#blog`,
+        name: isEn ? 'Coday Web Design Blog' : 'Coday Webdesign Blog',
+        description: isEn
+          ? 'Insights into web design, SEO and digital engineering.'
+          : 'Einblicke in modernes Webdesign, SEO und Webentwicklung.',
+        publisher: { '@id': `${BASE_URL}/#organization` },
+      },
+    ],
+  };
+
   return (
     <>
-      <SeoHead title="Coday | blog" description="Erfahren Sie mehr über blog" pageType="default" />
+      <script
+        id="schema-blog-index"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <ClientComponent />
       {/* SEO */}
       <section className="container mx-auto px-4 py-16 max-w-5xl text-secondary-600">

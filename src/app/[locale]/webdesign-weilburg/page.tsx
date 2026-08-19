@@ -2,10 +2,11 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema } from '@/lib/schema';
+import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
+import { LazyQuickContactForm } from '@/widgets/home/LazyQuickContactForm';
 import {
   ArrowRight,
   Lightning,
@@ -42,6 +43,13 @@ export async function generateMetadata({
       title: 'Web Design Weilburg | High-End Web Development · Coday',
       description:
         'Web design & SEO for Weilburg an der Lahn. Ultra-fast Next.js websites for crafts, tourism & mid-market. Fixed prices on request.',
+      keywords: [
+        'Web Design Weilburg',
+        'Web Agency Weilburg',
+        'Website Creation Weilburg',
+        'Web Development Weilburg',
+        'Coday Web Weilburg',
+      ],
       path: '/en/webdesign-weilburg',
       type: 'money',
     });
@@ -50,6 +58,13 @@ export async function generateMetadata({
     title: 'Webdesign Weilburg | High-End Webentwicklung · Coday',
     description:
       'Webdesign & SEO für Weilburg an der Lahn. Ultraschnelle Next.js Websites für Handwerk, Tourismus & Mittelstand. Verbindliche Festpreise auf Anfrage.',
+    keywords: [
+      'Webdesign Weilburg',
+      'Webagentur Weilburg',
+      'Website erstellen Weilburg',
+      'Webentwicklung Weilburg an der Lahn',
+      'Coday Web Weilburg',
+    ],
     path: '/de/webdesign-weilburg',
     type: 'money',
   });
@@ -63,11 +78,19 @@ export default async function WebdesignWeilburgPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const _locale = locale || 'de';
+  const isEn = _locale === 'en';
+
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: isEn ? 'Locations' : 'Standorte', url: `/${_locale}/uebersicht` },
+    { name: 'Weilburg', url: `/${_locale}/webdesign-weilburg` },
+  ]);
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       getOrganizationSchema(_locale),
+      breadcrumbs,
       {
         '@type': 'LocalBusiness',
         '@id': `${BASE_URL}/${_locale}/webdesign-weilburg#localbusiness`,
@@ -75,7 +98,7 @@ export default async function WebdesignWeilburgPage({
         url: `${BASE_URL}/${_locale}/webdesign-weilburg`,
         logo: `${BASE_URL}/icon.png`,
         image: `${BASE_URL}/images/og-image.jpg`,
-        telephone: '+49 6441 000000',
+        telephone: '+49-176-41195301',
         email: 'kontakt@codayweb.de',
         priceRange: '€€€',
         address: {

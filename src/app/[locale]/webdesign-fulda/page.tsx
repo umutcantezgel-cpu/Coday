@@ -2,10 +2,11 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema } from '@/lib/schema';
+import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
+import { LazyQuickContactForm } from '@/widgets/home/LazyQuickContactForm';
 import {
   ArrowRight,
   Lightning,
@@ -20,6 +21,7 @@ import {
   Package,
   Wrench,
   Gauge,
+  Truck,
   ChartBar,
   Star,
   MapPin,
@@ -43,6 +45,13 @@ export async function generateMetadata({
       title: 'Web Design Fulda | High-Performance Web Agency · Coday',
       description:
         'Web design & SEO for Fulda and East Hesse. Ultra-fast websites, B2B lead generation for industry, logistics & trade. Fixed prices on request.',
+      keywords: [
+        'Web Design Fulda',
+        'Web Agency Fulda',
+        'Website Creation Fulda',
+        'Web Development East Hesse',
+        'Coday Web Fulda',
+      ],
       path: '/en/webdesign-fulda',
       type: 'money',
     });
@@ -51,6 +60,13 @@ export async function generateMetadata({
     title: 'Webdesign Fulda | High-Performance Webagentur · Coday',
     description:
       'Webdesign & SEO für Fulda und Osthessen. Blitzschnelle Websites, B2B-Lead-Generierung für Industrie, Logistik & Handwerk. Festpreise auf Anfrage.',
+    keywords: [
+      'Webdesign Fulda',
+      'Webagentur Fulda',
+      'Website erstellen Fulda',
+      'Webentwicklung Osthessen',
+      'Coday Web Fulda',
+    ],
     path: '/de/webdesign-fulda',
     type: 'money',
   });
@@ -64,11 +80,19 @@ export default async function WebdesignFuldaPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const _locale = locale || 'de';
+  const isEn = _locale === 'en';
+
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: isEn ? 'Locations' : 'Standorte', url: `/${_locale}/uebersicht` },
+    { name: 'Fulda', url: `/${_locale}/webdesign-fulda` },
+  ]);
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       getOrganizationSchema(_locale),
+      breadcrumbs,
       {
         '@type': 'LocalBusiness',
         '@id': `${BASE_URL}/${_locale}/webdesign-fulda#localbusiness`,
@@ -76,7 +100,7 @@ export default async function WebdesignFuldaPage({
         url: `${BASE_URL}/${_locale}/webdesign-fulda`,
         logo: `${BASE_URL}/icon.png`,
         image: `${BASE_URL}/images/og-image.jpg`,
-        telephone: '+49 6441 000000',
+        telephone: '+49-176-41195301',
         email: 'kontakt@codayweb.de',
         priceRange: '€€€€',
         address: {

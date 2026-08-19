@@ -1,10 +1,9 @@
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import { SeoHead } from '@/shared/ui/SeoHead';
 import ClientComponent from '@/features/work/ui/ProjectDetailClient';
 import { workData } from '@/shared/data/work';
-import { BASE_URL, getOrganizationSchema } from '@/lib/schema';
+import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
 import { notFound } from 'next/navigation';
 
 export const dynamicParams = false;
@@ -31,9 +30,18 @@ export async function generateMetadata(props: {
   const description =
     `${content.title}: ${content.subtitle}. ${content.challenge?.description || ''}`.trim();
 
+  const keywords = [
+    content.title,
+    `${content.title} Case Study`,
+    `${content.category} Webdesign`,
+    'Webdesign Referenz Wetzlar',
+    'Coday Web Projekt',
+  ];
+
   return generatePageMetadata({
     title: `${content.title} – Case Study | Coday`,
     description: description.length > 140 ? description.substring(0, 137) + '...' : description,
+    keywords,
     path: `/${locale}/work/${slug}`,
     type: 'default',
   });
@@ -45,7 +53,9 @@ export function generateStaticParams() {
 
 export default async function Page(props: { params: Promise<{ locale: string; slug: string }> }) {
   const params = await props.params;
-  setRequestLocale(params.locale);
+  const _locale = params.locale || 'de';
+  setRequestLocale(_locale);
+  const isEn = _locale === 'en';
 
   // Validate that the slug exists in workData
   if (!workData[params.slug]) {
@@ -53,13 +63,19 @@ export default async function Page(props: { params: Promise<{ locale: string; sl
   }
 
   const project = workData[params.slug];
-  const content = params.locale === 'en' ? project.content.en : project.content.de;
-  const _locale = params.locale || 'de';
+  const content = isEn ? project.content.en : project.content.de;
+
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: isEn ? 'Portfolio' : 'Referenzen', url: `/${_locale}/work` },
+    { name: content.title, url: `/${_locale}/work/${params.slug}` },
+  ]);
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       getOrganizationSchema(_locale),
+      breadcrumbs,
       {
         '@type': 'CreativeWork',
         '@id': `${BASE_URL}/${_locale}/work/${params.slug}#case-study`,
@@ -84,11 +100,6 @@ export default async function Page(props: { params: Promise<{ locale: string; sl
         id="schema-case-study"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <SeoHead
-        title={`${content.title} – Case Study | Coday`}
-        description={`${content.title}: ${content.subtitle}. ${content.challenge.description}`}
-        pageType="default"
       />
       <ClientComponent />
       {/* SEO — dynamic, bilingual, project-specific content */}

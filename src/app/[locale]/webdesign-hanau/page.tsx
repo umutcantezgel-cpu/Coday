@@ -2,10 +2,11 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema } from '@/lib/schema';
+import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
+import { LazyQuickContactForm } from '@/widgets/home/LazyQuickContactForm';
 import {
   ArrowRight,
   Lightning,
@@ -18,8 +19,8 @@ import {
   LockKey,
   CheckCircle,
   Flask,
-  DiamondsFour,
   HardDrives,
+  DiamondsFour,
   ChartBar,
   Star,
   MapPin,
@@ -43,6 +44,13 @@ export async function generateMetadata({
       title: 'Web Design Hanau | B2B Web Development & SEO · Coday',
       description:
         'Web design & SEO for Hanau & Main-Kinzig. Ultra-fast Next.js platforms for industry, craft & technology companies. Fixed price on request.',
+      keywords: [
+        'Web Design Hanau',
+        'Web Agency Hanau',
+        'Website Creation Hanau',
+        'Web Development Main-Kinzig',
+        'Coday Web Hanau',
+      ],
       path: '/en/webdesign-hanau',
       type: 'money',
     });
@@ -51,6 +59,13 @@ export async function generateMetadata({
     title: 'Webdesign Hanau | B2B Webentwicklung & SEO · Coday',
     description:
       'Webdesign & SEO für Hanau und Main-Kinzig. Ultraschnelle Next.js Plattformen für Industrie, Handwerk & Technologieunternehmen. Festpreise auf Anfrage.',
+    keywords: [
+      'Webdesign Hanau',
+      'Webagentur Hanau',
+      'Website erstellen Hanau',
+      'Webentwicklung Main-Kinzig',
+      'Coday Web Hanau',
+    ],
     path: '/de/webdesign-hanau',
     type: 'money',
   });
@@ -64,11 +79,19 @@ export default async function WebdesignHanauPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const _locale = locale || 'de';
+  const isEn = _locale === 'en';
+
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: isEn ? 'Locations' : 'Standorte', url: `/${_locale}/uebersicht` },
+    { name: 'Hanau', url: `/${_locale}/webdesign-hanau` },
+  ]);
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       getOrganizationSchema(_locale),
+      breadcrumbs,
       {
         '@type': 'LocalBusiness',
         '@id': `${BASE_URL}/${_locale}/webdesign-hanau#localbusiness`,
@@ -76,7 +99,7 @@ export default async function WebdesignHanauPage({
         url: `${BASE_URL}/${_locale}/webdesign-hanau`,
         logo: `${BASE_URL}/icon.png`,
         image: `${BASE_URL}/images/og-image.jpg`,
-        telephone: '+49 6441 000000',
+        telephone: '+49-176-41195301',
         email: 'kontakt@codayweb.de',
         priceRange: '€€€€',
         address: {

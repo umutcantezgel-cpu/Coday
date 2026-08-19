@@ -1,8 +1,8 @@
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import { SeoHead } from '@/shared/ui/SeoHead';
 import ClientComponent from '@/features/legal/ui/GarantieClient';
+import { getOrganizationSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -14,17 +14,29 @@ export async function generateMetadata({
   const { locale } = await params;
   if (locale === 'en') {
     return generatePageMetadata({
-      title: 'Our Quality Guarantee | Web Design Wetzlar',
+      title: 'Our Quality Guarantee | Web Design Wetzlar | Coday',
       description:
         'Coday guarantees premium web design from Wetzlar. Satisfaction, fixed price and on-time delivery for your business. For companies across Central Hesse.',
+      keywords: [
+        'Web Design Guarantee',
+        'Fixed Price Guarantee',
+        '100% Code Ownership',
+        'Coday Guarantee',
+      ],
       path: '/en/garantie',
       type: 'money',
     });
   }
   return generatePageMetadata({
-    title: 'Unsere Qualitätsgarantie | Webdesign Wetzlar',
+    title: 'Unsere Qualitätsgarantie | Webdesign Wetzlar | Coday',
     description:
       'Coday garantiert Ihnen Premium Webdesign aus Wetzlar. Zufriedenheit, Festpreis und termingerechte Lieferung. Für Unternehmen in ganz Mittelhessen.',
+    keywords: [
+      'Webdesign Garantie',
+      'Festpreisgarantie Webagentur',
+      '100% Code Eigentum',
+      'Coday Qualitätsgarantie',
+    ],
     path: '/de/garantie',
     type: 'money',
   });
@@ -32,20 +44,26 @@ export async function generateMetadata({
 
 export default async function Page(props: { params: Promise<{ locale: string }> }) {
   const params = await props.params;
-  setRequestLocale(params.locale);
-
   const _locale = params.locale || 'de';
+  setRequestLocale(_locale);
+  const isEn = _locale === 'en';
+
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: isEn ? 'Guarantee' : 'Garantie', url: `/${_locale}/garantie` },
+  ]);
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [getOrganizationSchema(_locale), breadcrumbs],
+  };
 
   return (
     <>
-      <SeoHead
-        title={_locale === 'en' ? 'Coday | Guarantees' : 'Coday | Unsere Qualitätsgarantie'}
-        description={
-          _locale === 'en'
-            ? 'Coday guarantees premium web design from Wetzlar. Satisfaction, fixed price and on-time delivery for your business.'
-            : 'Coday garantiert Ihnen Premium Webdesign aus Wetzlar. Zufriedenheit, Festpreis und termingerechte Lieferung.'
-        }
-        pageType="default"
+      <script
+        id="schema-garantie"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <ClientComponent />
       {/* SEO */}

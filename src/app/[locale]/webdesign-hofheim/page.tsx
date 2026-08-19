@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema } from '@/lib/schema';
+import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
@@ -45,6 +45,13 @@ export async function generateMetadata({
       title: 'Web Design Hofheim am Taunus | Web Agency · Coday',
       description:
         'Web design & SEO in Hofheim am Taunus. Modern websites with <0.5s load time for clinics, law firms & services. Binding fixed price on request.',
+      keywords: [
+        'Web Design Hofheim am Taunus',
+        'Web Agency Hofheim',
+        'Website Creation Hofheim',
+        'Web Development Main-Taunus',
+        'Coday Web Hofheim',
+      ],
       path: '/en/webdesign-hofheim',
       type: 'money',
     });
@@ -53,6 +60,13 @@ export async function generateMetadata({
     title: 'Webdesign Hofheim am Taunus | Webagentur · Coday',
     description:
       'Webdesign & SEO in Hofheim am Taunus. Moderne Websites mit <0.5s Ladezeit für Praxen, Kanzleien & lokale Dienstleister. Verbindlicher Festpreis auf Anfrage.',
+    keywords: [
+      'Webdesign Hofheim',
+      'Webagentur Hofheim am Taunus',
+      'Website erstellen Hofheim',
+      'Webentwicklung Main-Taunus-Kreis',
+      'Coday Web Hofheim',
+    ],
     path: '/de/webdesign-hofheim',
     type: 'money',
   });
@@ -66,11 +80,19 @@ export default async function WebdesignHofheimPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const _locale = locale || 'de';
+  const isEn = _locale === 'en';
+
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: isEn ? 'Locations' : 'Standorte', url: `/${_locale}/uebersicht` },
+    { name: 'Hofheim', url: `/${_locale}/webdesign-hofheim` },
+  ]);
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       getOrganizationSchema(_locale),
+      breadcrumbs,
       {
         '@type': 'LocalBusiness',
         '@id': `${BASE_URL}/${_locale}/webdesign-hofheim#localbusiness`,
@@ -78,7 +100,7 @@ export default async function WebdesignHofheimPage({
         url: `${BASE_URL}/${_locale}/webdesign-hofheim`,
         logo: `${BASE_URL}/icon.png`,
         image: `${BASE_URL}/images/og-image.jpg`,
-        telephone: '+49 6441 000000',
+        telephone: '+49-176-41195301',
         email: 'kontakt@codayweb.de',
         priceRange: '€€€€',
         address: {

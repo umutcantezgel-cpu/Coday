@@ -1,7 +1,7 @@
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import { SeoHead } from '@/shared/ui/SeoHead';
+import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
 import ClientComponent from '@/features/knowledge/ui/AcademyClient';
 
 export const dynamic = 'force-static';
@@ -17,6 +17,13 @@ export async function generateMetadata({
       title: 'Web Design Academy | Knowledge for Central Hesse',
       description:
         'Learn web design basics at Coday Academy Wetzlar. Courses and tutorials for entrepreneurs and freelancers in Hesse. Start building your skills today.',
+      keywords: [
+        'Web Design Academy',
+        'Web Design Training Wetzlar',
+        'Web Development Course Hesse',
+        'SEO Workshop Central Hesse',
+        'Coday Academy',
+      ],
       path: '/en/knowledge/academy',
       type: 'default',
     });
@@ -25,6 +32,13 @@ export async function generateMetadata({
     title: 'Webdesign Academy | Wissen für Mittelhessen',
     description:
       'Lernen Sie Webdesign Grundlagen in der Coday Academy Wetzlar. Kurse und Tutorials für Unternehmer und Selbstständige in Hessen. Jetzt Wissen aufbauen.',
+    keywords: [
+      'Webdesign Academy',
+      'Webdesign lernen Wetzlar',
+      'Webentwicklung Kurs Hessen',
+      'SEO Schulung Mittelhessen',
+      'Coday Academy',
+    ],
     path: '/de/knowledge/academy',
     type: 'default',
   });
@@ -35,20 +49,37 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   setRequestLocale(params.locale);
 
   const _locale = (await params)?.locale || 'de';
-  const _seoTitle =
-    _locale === 'en'
-      ? 'Web Design Academy | Knowledge for Central Hesse | Coday'
-      : 'Webdesign Academy | Wissen für Mittelhessen | Coday';
-  const _seoDesc =
-    _locale === 'en'
-      ? 'Learn web design basics at Coday Academy Wetzlar. Courses and tutorials for entrepreneurs and freelancers in Hesse. Start building your skills today.'
-      : 'Lernen Sie Webdesign Grundlagen in der Coday Academy Wetzlar. Kurse und Tutorials für Unternehmer und Selbstständige in Hessen. Jetzt Wissen aufbauen.';
+  const isEn = _locale === 'en';
+
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: 'Knowledge', url: `/${_locale}/knowledge/blog` },
+    { name: 'Academy', url: `/${_locale}/knowledge/academy` },
+  ]);
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      getOrganizationSchema(_locale),
+      breadcrumbs,
+      {
+        '@type': 'CollectionPage',
+        '@id': `${BASE_URL}/${_locale}/knowledge/academy#collection`,
+        name: isEn ? 'Coday Web Design Academy' : 'Coday Webdesign Academy',
+        url: `${BASE_URL}/${_locale}/knowledge/academy`,
+        description: isEn
+          ? 'Learn web design basics at Coday Academy Wetzlar. Courses and tutorials for entrepreneurs and freelancers in Hesse.'
+          : 'Lernen Sie Webdesign Grundlagen in der Coday Academy Wetzlar. Kurse und Tutorials für Unternehmer und Selbstständige in Hessen.',
+        inLanguage: _locale,
+      },
+    ],
+  };
+
   return (
     <>
-      <SeoHead
-        title="Coday | academy"
-        description="Erfahren Sie mehr über academy"
-        pageType="default"
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <ClientComponent />
       {/* SEO */}

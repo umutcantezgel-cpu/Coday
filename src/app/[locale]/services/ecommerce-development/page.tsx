@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { EcommerceDevelopmentClient } from '@/features/services/ui/EcommerceDevelopmentClient';
 import { setRequestLocale } from 'next-intl/server';
-import { getOrganizationSchema, BASE_URL } from '@/lib/schema';
+import { getOrganizationSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import {
   ArrowRight,
@@ -26,6 +26,13 @@ export async function generateMetadata({
       title: 'Headless E-Commerce & Online Store Development | Coday',
       description:
         'Ultra-fast headless online stores with Next.js & Shopify. Sub-second checkout, maximum mobile conversions & ERP integration for mid-market leaders.',
+      keywords: [
+        'Headless E-Commerce Agency',
+        'Shopify Next.js Development',
+        'Online Store Development Wetzlar',
+        'E-Commerce Web Design',
+        'Coday E-Commerce',
+      ],
       path: '/en/services/ecommerce-development',
       type: 'money',
     });
@@ -34,6 +41,13 @@ export async function generateMetadata({
     title: 'Headless E-Commerce & Online Shop Entwicklung | Coday',
     description:
       'Ultraschnelle Headless Online-Shops mit Next.js & Shopify. Subsekundärer Checkout, maximale mobile Conversion-Rates & ERP-Anbindung für den Mittelstand.',
+    keywords: [
+      'Headless E-Commerce Agentur',
+      'Shopify Next.js Entwicklung',
+      'Online Shop erstellen Wetzlar',
+      'E-Commerce Webdesign',
+      'Coday E-Commerce',
+    ],
     path: '/de/services/ecommerce-development',
     type: 'money',
   });
@@ -45,10 +59,17 @@ export default async function EcommercePage({ params }: { params: Promise<{ loca
   setRequestLocale(_locale);
   const isEn = _locale === 'en';
 
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: isEn ? 'Services' : 'Leistungen', url: `/${_locale}/services` },
+    { name: isEn ? 'E-Commerce' : 'E-Commerce', url: `/${_locale}/services/ecommerce-development` },
+  ]);
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       getOrganizationSchema(_locale),
+      breadcrumbs,
       {
         '@type': 'Service',
         '@id': `${BASE_URL}/${_locale}/services/ecommerce-development#service`,

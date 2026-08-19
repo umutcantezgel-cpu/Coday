@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema } from '@/lib/schema';
+import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
@@ -43,6 +43,13 @@ export async function generateMetadata({
       title: 'Web Design Offenbach | High-End Next.js Agency · Coday',
       description:
         'Web design in Offenbach am Main: Fast load times, high-impact UI/UX & SEO for businesses & mid-market. Fixed price on request.',
+      keywords: [
+        'Web Design Offenbach',
+        'Web Agency Offenbach am Main',
+        'Website Creation Offenbach',
+        'Web Development Rhine-Main',
+        'Coday Web Offenbach',
+      ],
       path: '/en/webdesign-offenbach',
       type: 'money',
     });
@@ -51,6 +58,13 @@ export async function generateMetadata({
     title: 'Webdesign Offenbach | High-End Next.js Agentur · Coday',
     description:
       'Webdesign in Offenbach am Main: Schnelle Ladezeiten, starkes UI/UX-Design & SEO für Dienstleister & Mittelstand. Festpreis auf Anfrage.',
+    keywords: [
+      'Webdesign Offenbach',
+      'Webagentur Offenbach am Main',
+      'Website erstellen Offenbach',
+      'Webentwicklung Rhein-Main',
+      'Coday Web Offenbach',
+    ],
     path: '/de/webdesign-offenbach',
     type: 'money',
   });
@@ -64,11 +78,19 @@ export default async function WebdesignOffenbachPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const _locale = locale || 'de';
+  const isEn = _locale === 'en';
+
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: isEn ? 'Locations' : 'Standorte', url: `/${_locale}/uebersicht` },
+    { name: 'Offenbach am Main', url: `/${_locale}/webdesign-offenbach` },
+  ]);
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       getOrganizationSchema(_locale),
+      breadcrumbs,
       {
         '@type': 'LocalBusiness',
         '@id': `${BASE_URL}/${_locale}/webdesign-offenbach#localbusiness`,
@@ -76,7 +98,7 @@ export default async function WebdesignOffenbachPage({
         url: `${BASE_URL}/${_locale}/webdesign-offenbach`,
         logo: `${BASE_URL}/icon.png`,
         image: `${BASE_URL}/images/og-image.jpg`,
-        telephone: '+49 6441 000000',
+        telephone: '+49-176-41195301',
         email: 'kontakt@codayweb.de',
         priceRange: '€€€€',
         address: {

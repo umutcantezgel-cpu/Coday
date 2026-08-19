@@ -1,7 +1,7 @@
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import { SeoHead } from '@/shared/ui/SeoHead';
+import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
 import ClientComponent from '@/features/company/ui/PresseClient';
 import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 
@@ -18,6 +18,12 @@ export async function generateMetadata({
       title: 'Press & Media | Web Design Agency Wetzlar Hesse',
       description:
         'Press materials and media information from Coday, your web design agency in Wetzlar. Logos, press releases and company info at a glance for journalists.',
+      keywords: [
+        'Coday Press',
+        'Web Agency Media Kit',
+        'Press Releases Web Design Wetzlar',
+        'Coday News',
+      ],
       path: '/en/presse',
       type: 'money',
     });
@@ -26,6 +32,12 @@ export async function generateMetadata({
     title: 'Pressebereich & Medien | Webdesign Agentur Wetzlar',
     description:
       'Pressematerial und Medieninformationen von Coday, Ihrer Webdesign Agentur in Wetzlar. Logos, Pressemitteilungen und Unternehmensinfos auf einen Blick.',
+    keywords: [
+      'Coday Presse',
+      'Pressemitteilungen Webdesign Wetzlar',
+      'Medienkit Webagentur',
+      'Coday News',
+    ],
     path: '/de/presse',
     type: 'money',
   });
@@ -36,24 +48,36 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   setRequestLocale(params.locale);
 
   const _locale = (await params)?.locale || 'de';
-  const _seoTitle =
-    _locale === 'en'
-      ? 'Press & Media | Web Design Agency Wetzlar Hesse | Coday'
-      : 'Pressebereich & Medien | Webdesign Agentur Wetzlar | Coday';
-  const _seoDesc =
-    _locale === 'en'
-      ? 'Press materials and media information from Coday, your web design agency in Wetzlar. Logos, press releases and company info at a glance for journalists.'
-      : 'Pressematerial und Medieninformationen von Coday, Ihrer Webdesign Agentur in Wetzlar. Logos, Pressemitteilungen und Unternehmensinfos auf einen Blick.';
+  const isEn = _locale === 'en';
+
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: isEn ? 'Press' : 'Presse', url: `/${_locale}/presse` },
+  ]);
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      getOrganizationSchema(_locale),
+      breadcrumbs,
+      {
+        '@type': 'WebPage',
+        '@id': `${BASE_URL}/${_locale}/presse#webpage`,
+        name: isEn ? 'Coday Press & Media Center' : 'Coday Presse- & Medienbereich',
+        url: `${BASE_URL}/${_locale}/presse`,
+        description: isEn
+          ? 'Press materials and media information from Coday, your web design agency in Wetzlar.'
+          : 'Pressematerial und Medieninformationen von Coday, Ihrer Webdesign Agentur in Wetzlar.',
+        inLanguage: _locale,
+      },
+    ],
+  };
+
   return (
     <>
-      <SeoHead
-        title={_locale === 'en' ? 'Coday | Press' : 'Coday | Presse'}
-        description={
-          _locale === 'en'
-            ? 'Press coverage and media about Coday web design.'
-            : 'Presseberichte und Medien über Coday Webdesign.'
-        }
-        pageType="default"
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <ClientComponent />
 

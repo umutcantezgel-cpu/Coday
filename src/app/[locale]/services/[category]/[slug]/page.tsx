@@ -1,6 +1,11 @@
 import { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
-import { getOrganizationSchema, getServiceSchema, BASE_URL } from '@/lib/schema';
+import {
+  getOrganizationSchema,
+  getServiceSchema,
+  getBreadcrumbSchema,
+  BASE_URL,
+} from '@/lib/schema';
 import { ServiceDetailClient } from '@/features/services/ui/ServiceDetailClient';
 import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -43,9 +48,18 @@ export async function generateMetadata({
   const title = t(featureData.titleKey);
   const description = t(featureData.descriptionKey);
 
+  const keywords = [
+    title,
+    `Webdesign ${category}`,
+    `Webentwicklung ${slug}`,
+    'Coday Web Services',
+    'Webagentur Wetzlar',
+  ];
+
   return generatePageMetadata({
     title: title,
     description: description,
+    keywords,
     path: `/${locale}/services/${category}/${slug}`,
     type: 'money',
   });
@@ -68,6 +82,15 @@ export default async function ServiceDetailPage({
   const _locale = (await params)?.locale || 'de';
   const messages = await getMessages();
 
+  const t = await getTranslations({ locale: _locale, namespace: 'services' });
+  const serviceTitle = t(featureData.titleKey);
+
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: _locale === 'en' ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: _locale === 'en' ? 'Services' : 'Leistungen', url: `/${_locale}/services` },
+    { name: serviceTitle, url: `/${_locale}/services/${category}/${slug}` },
+  ]);
+
   return (
     <>
       <script
@@ -78,9 +101,10 @@ export default async function ServiceDetailPage({
             '@context': 'https://schema.org',
             '@graph': [
               getOrganizationSchema(_locale),
+              breadcrumbs,
               getServiceSchema({
-                name: featureData.titleKey || slug,
-                description: `Details about our ${slug} service at Coday.`,
+                name: serviceTitle || slug,
+                description: `Details about our ${serviceTitle} service at Coday.`,
                 url: `${BASE_URL}/${locale}/services/${category}/${slug}`,
               }),
             ],

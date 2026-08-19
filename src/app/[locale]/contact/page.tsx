@@ -2,7 +2,7 @@ import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { ContactClient } from '@/features/contact/ui/ContactClient';
-import { BASE_URL, getOrganizationSchema } from '@/lib/schema';
+import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -17,6 +17,12 @@ export async function generateMetadata({
       title: 'Contact Us & Free Website Audit | Coday Web Agency',
       description:
         'Get in touch with Coday Web Agency. Free 10-minute video audit for your website & strategy consultation. Request now!',
+      keywords: [
+        'Contact Web Agency Wetzlar',
+        'Website Consultation Wetzlar',
+        'Web Design Inquiry',
+        'Free SEO Audit',
+      ],
       path: '/en/contact',
       type: 'money',
     });
@@ -25,6 +31,12 @@ export async function generateMetadata({
     title: 'Kontakt & Kostenloses Website-Audit | Coday Webagentur',
     description:
       'Nehmen Sie Kontakt mit der Coday Webagentur auf. Kostenloses 10-Minuten Video-Audit für Ihre Website & unverbindliches Strategiegespräch. Jetzt anfragen!',
+    keywords: [
+      'Kontakt Webagentur Wetzlar',
+      'Webdesign Beratung Wetzlar',
+      'Website anfragen',
+      'Kostenloses Website Audit',
+    ],
     path: '/de/contact',
     type: 'money',
   });
@@ -36,10 +48,16 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
   setRequestLocale(_locale);
   const isEn = _locale === 'en';
 
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: isEn ? 'Contact' : 'Kontakt', url: `/${_locale}/contact` },
+  ]);
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       getOrganizationSchema(_locale),
+      breadcrumbs,
       {
         '@type': 'ContactPage',
         '@id': `${BASE_URL}/${_locale}/contact#contactpage`,
@@ -53,12 +71,12 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
           '@type': 'LocalBusiness',
           name: 'Coday Webagentur',
           url: BASE_URL,
-          telephone: '+49 176 84920256',
-          email: 'umut@codayweb.de',
+          telephone: '+49-176-41195301',
+          email: 'kontakt@codayweb.de',
           address: {
             '@type': 'PostalAddress',
-            streetAddress: 'Wetzlarer Straße 1',
-            addressLocality: 'Wetzlar / Lahntal',
+            streetAddress: 'Lessingstraße 4',
+            addressLocality: 'Wetzlar',
             postalCode: '35578',
             addressRegion: 'Hessen',
             addressCountry: 'DE',

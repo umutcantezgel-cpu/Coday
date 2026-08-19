@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema } from '@/lib/schema';
+import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
@@ -43,6 +43,13 @@ export async function generateMetadata({
       title: 'Web Design Hesse | Leading Next.js Web Agency · Coday',
       description:
         'High-end web design & Next.js development across Hesse. 100/100 Core Web Vitals, blazing fast load times & measurable leads for German SMEs.',
+      keywords: [
+        'Web Design Hesse',
+        'Web Agency Hesse',
+        'Website Creation Hesse',
+        'Next.js Agency Hesse',
+        'Coday Web Hesse',
+      ],
       path: '/en/standorte/hessen',
       type: 'money',
     });
@@ -51,6 +58,13 @@ export async function generateMetadata({
     title: 'Webdesign Hessen | Führende Next.js Webagentur · Coday',
     description:
       'High-End Webdesign & Next.js Entwicklung in ganz Hessen. 100/100 Core Web Vitals, blitzschnelle Ladezeiten & messbare Leads für den hessischen Mittelstand.',
+    keywords: [
+      'Webdesign Hessen',
+      'Webagentur Hessen',
+      'Website erstellen Hessen',
+      'Next.js Agentur Hessen',
+      'Coday Web Hessen',
+    ],
     path: '/de/standorte/hessen',
     type: 'money',
   });
@@ -312,10 +326,19 @@ export default async function HessenMasterPage({
     },
   ];
 
+  const isEn = _locale === 'en';
+
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: isEn ? 'Locations' : 'Standorte', url: `/${_locale}/uebersicht` },
+    { name: 'Hessen', url: `/${_locale}/standorte/hessen` },
+  ]);
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       getOrganizationSchema(_locale),
+      breadcrumbs,
       {
         '@type': 'LocalBusiness',
         '@id': `${BASE_URL}/${_locale}/standorte/hessen#localbusiness`,
@@ -323,7 +346,7 @@ export default async function HessenMasterPage({
         url: `${BASE_URL}/${_locale}/standorte/hessen`,
         logo: `${BASE_URL}/icon.png`,
         image: `${BASE_URL}/images/og-image.jpg`,
-        telephone: '+49 6441 000000',
+        telephone: '+49-176-41195301',
         email: 'kontakt@codayweb.de',
         priceRange: '€€€€',
         address: {

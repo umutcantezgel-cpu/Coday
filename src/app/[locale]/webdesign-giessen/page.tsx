@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema } from '@/lib/schema';
+import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
@@ -42,6 +42,13 @@ export async function generateMetadata({
       title: 'Web Design Giessen | Next.js Agency & SEO · Coday',
       description:
         'High-end web design in Giessen. Sub-500ms load times, measurable new clients & fixed pricing for practices & mid-market companies.',
+      keywords: [
+        'Web Design Giessen',
+        'Web Agency Giessen',
+        'Website Creation Giessen',
+        'Web Development Giessen',
+        'Coday Web Giessen',
+      ],
       path: '/en/webdesign-giessen',
       type: 'money',
     });
@@ -50,6 +57,13 @@ export async function generateMetadata({
     title: 'Webdesign Gießen | Next.js Webagentur & SEO · Coday',
     description:
       'Webdesign für Gießen: Ultraschnelle Ladezeiten, messbare Neukunden & transparente Festpreise für Praxen, Startups & Mittelstand.',
+    keywords: [
+      'Webdesign Gießen',
+      'Webagentur Gießen',
+      'Website erstellen Gießen',
+      'Webentwicklung Gießen',
+      'Coday Web Gießen',
+    ],
     path: '/de/webdesign-giessen',
     type: 'money',
   });
@@ -63,11 +77,19 @@ export default async function WebdesignGiessenPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const _locale = locale || 'de';
+  const isEn = _locale === 'en';
+
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: isEn ? 'Locations' : 'Standorte', url: `/${_locale}/uebersicht` },
+    { name: isEn ? 'Giessen' : 'Gießen', url: `/${_locale}/webdesign-giessen` },
+  ]);
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       getOrganizationSchema(_locale),
+      breadcrumbs,
       {
         '@type': 'LocalBusiness',
         '@id': `${BASE_URL}/${_locale}/webdesign-giessen#localbusiness`,
@@ -75,7 +97,7 @@ export default async function WebdesignGiessenPage({
         url: `${BASE_URL}/${_locale}/webdesign-giessen`,
         logo: `${BASE_URL}/icon.png`,
         image: `${BASE_URL}/images/og-image.jpg`,
-        telephone: '+49 6441 000000',
+        telephone: '+49-176-41195301',
         email: 'kontakt@codayweb.de',
         priceRange: '€€€',
         address: {

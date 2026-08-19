@@ -1,7 +1,7 @@
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import { SeoHead } from '@/shared/ui/SeoHead';
+import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
 import ClientComponent from '@/features/company/ui/PartnerschaftClient';
 import { SeoContentBlock } from '@/shared/ui/SeoContentBlock';
 
@@ -18,6 +18,12 @@ export async function generateMetadata({
       title: 'Partner Program for Agencies | Web Design Hesse',
       description:
         'Become a Coday partner in Hesse. Together we offer your clients premium web design from Wetzlar. Attractive commissions and fair conditions for agencies.',
+      keywords: [
+        'Agency Partner Program Hesse',
+        'Web Design White Label',
+        'Freelancer Partner Wetzlar',
+        'Coday Partnership',
+      ],
       path: '/en/partnerschaft',
       type: 'money',
     });
@@ -26,6 +32,12 @@ export async function generateMetadata({
     title: 'Partnerprogramm für Agenturen | Webdesign Hessen',
     description:
       'Werden Sie Coday Partner in Hessen. Gemeinsam bieten wir Ihren Kunden erstklassiges Webdesign aus Wetzlar. Attraktive Provisionen und faire Konditionen.',
+    keywords: [
+      'Agentur Partnerprogramm Hessen',
+      'Webdesign Partner Wetzlar',
+      'White Label Webentwicklung',
+      'Coday Partnerschaft',
+    ],
     path: '/de/partnerschaft',
     type: 'money',
   });
@@ -36,24 +48,36 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   setRequestLocale(params.locale);
 
   const _locale = (await params)?.locale || 'de';
-  const _seoTitle =
-    _locale === 'en'
-      ? 'Partner Program for Agencies | Web Design Hesse | Coday'
-      : 'Partnerprogramm für Agenturen | Webdesign Hessen | Coday';
-  const _seoDesc =
-    _locale === 'en'
-      ? 'Become a Coday partner in Hesse. Together we offer your clients premium web design from Wetzlar. Attractive commissions and fair conditions for agencies.'
-      : 'Werden Sie Coday Partner in Hessen. Gemeinsam bieten wir Ihren Kunden erstklassiges Webdesign aus Wetzlar. Attraktive Provisionen und faire Konditionen.';
+  const isEn = _locale === 'en';
+
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: isEn ? 'Partnership' : 'Partnerschaft', url: `/${_locale}/partnerschaft` },
+  ]);
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      getOrganizationSchema(_locale),
+      breadcrumbs,
+      {
+        '@type': 'WebPage',
+        '@id': `${BASE_URL}/${_locale}/partnerschaft#webpage`,
+        name: isEn ? 'Coday Agency Partner Program' : 'Coday Agentur-Partnerprogramm',
+        url: `${BASE_URL}/${_locale}/partnerschaft`,
+        description: isEn
+          ? 'Become a Coday partner in Hesse. Together we offer your clients premium web design from Wetzlar.'
+          : 'Werden Sie Coday Partner in Hessen. Gemeinsam bieten wir Ihren Kunden erstklassiges Webdesign aus Wetzlar.',
+        inLanguage: _locale,
+      },
+    ],
+  };
+
   return (
     <>
-      <SeoHead
-        title={_locale === 'en' ? 'Coday | Partnership' : 'Coday | Partnerschaft'}
-        description={
-          _locale === 'en'
-            ? 'Partner with Coday for premium web development.'
-            : 'Partnerschaft mit Coday für Premium-Webentwicklung.'
-        }
-        pageType="default"
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <ClientComponent />
 

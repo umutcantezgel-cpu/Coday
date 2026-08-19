@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
-import { getOrganizationSchema, BASE_URL } from '@/lib/schema';
+import { getOrganizationSchema, getBreadcrumbSchema, BASE_URL } from '@/lib/schema';
 import { workData } from '@/shared/data/work';
 import { Link } from '@/i18n/navigation';
 import { OptimizedImage } from '@/shared/ui/OptimizedImage';
@@ -32,6 +32,13 @@ export async function generateMetadata({
       title: 'Web Design Case Studies & Portfolio | Coday',
       description:
         'Real client projects by Coday: Next.js websites, 100/100 Core Web Vitals and measurable B2B conversion growth for businesses.',
+      keywords: [
+        'Web Design Portfolio',
+        'Website Case Studies',
+        'Next.js Client Projects',
+        'Conversion Optimized References',
+        'Coday Portfolio',
+      ],
       path: '/en/work',
       type: 'money',
     });
@@ -40,6 +47,13 @@ export async function generateMetadata({
     title: 'Webdesign Referenzen & Case Studies | Coday',
     description:
       'Echte Kundenprojekte von Coday: Next.js Websites, 100/100 Core Web Vitals und messbare Conversion-Steigerungen für Unternehmen.',
+    keywords: [
+      'Webdesign Referenzen',
+      'Website Portfolio Wetzlar',
+      'Case Studies Webentwicklung',
+      'Erfolgreiche Relaunches',
+      'Coday Work',
+    ],
     path: '/de/work',
     type: 'money',
   });
@@ -55,10 +69,16 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
   const projects = Object.values(workData);
   const caseStudies = projects.filter((p) => p.type === 'case_study');
 
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: isEn ? 'Portfolio' : 'Referenzen', url: `/${_locale}/work` },
+  ]);
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       getOrganizationSchema(_locale),
+      breadcrumbs,
       {
         '@type': 'CollectionPage',
         '@id': `${BASE_URL}/${_locale}/work#collection`,

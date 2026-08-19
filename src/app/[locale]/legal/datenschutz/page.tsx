@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
+import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
 
 export const dynamic = 'force-static';
 
@@ -14,6 +15,7 @@ export async function generateMetadata({
       title: 'Privacy Policy | Web Design Agency Wetzlar Hesse',
       description:
         'Privacy policy of Coday, your web design agency in Wetzlar. GDPR-compliant data processing and your rights. Full transparency and data security.',
+      keywords: ['Coday Privacy Policy', 'GDPR Compliance Coday', 'Data Protection Web Agency'],
       path: '/en/legal/datenschutz',
       type: 'legal',
     });
@@ -22,6 +24,11 @@ export async function generateMetadata({
     title: 'Datenschutzerklärung | Webdesign Agentur Wetzlar',
     description:
       'Datenschutzerklärung von Coday, Ihrer Webdesign Agentur in Wetzlar. DSGVO-konforme Datenverarbeitung und Ihre Rechte. Transparenz und Sicherheit.',
+    keywords: [
+      'Coday Datenschutzerklärung',
+      'Datenschutz Webagentur Wetzlar',
+      'DSGVO Konformität Coday',
+    ],
     path: '/de/legal/datenschutz',
     type: 'legal',
   });
@@ -29,19 +36,38 @@ export async function generateMetadata({
 
 export default async function DatenschutzPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  const isEn = locale === 'en';
+  const _locale = locale || 'de';
+  const isEn = _locale === 'en';
 
-  const _locale = (await params)?.locale || 'de';
-  const _seoTitle =
-    _locale === 'en'
-      ? 'Privacy Policy | Web Design Agency Wetzlar Hesse | Coday'
-      : 'Datenschutzerklärung | Webdesign Agentur Wetzlar | Coday';
-  const _seoDesc =
-    _locale === 'en'
-      ? 'Privacy policy of Coday, your web design agency in Wetzlar. GDPR-compliant data processing and your rights. Full transparency and data security.'
-      : 'Datenschutzerklärung von Coday, Ihrer Webdesign Agentur in Wetzlar. DSGVO-konforme Datenverarbeitung und Ihre Rechte. Transparenz und Sicherheit.';
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    {
+      name: isEn ? 'Privacy Policy' : 'Datenschutzerklärung',
+      url: `/${_locale}/legal/datenschutz`,
+    },
+  ]);
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      getOrganizationSchema(_locale),
+      breadcrumbs,
+      {
+        '@type': 'WebPage',
+        '@id': `${BASE_URL}/${_locale}/legal/datenschutz#webpage`,
+        name: isEn ? 'Privacy Policy' : 'Datenschutzerklärung',
+        url: `${BASE_URL}/${_locale}/legal/datenschutz`,
+        isPartOf: { '@id': `${BASE_URL}/#website` },
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="max-w-3xl mx-auto px-4 py-20">
         <h1 className="text-3xl font-bold mb-8 text-secondary-900">
           {isEn ? 'Privacy Policy' : 'Datenschutzerklärung'}

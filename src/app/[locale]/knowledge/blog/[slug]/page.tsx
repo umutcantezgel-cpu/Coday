@@ -4,7 +4,12 @@ import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 import { getBlogPost, getBlogPosts } from '@/features/blog/model/data';
 import { routing } from '@/i18n/routing';
-import { getArticleSchema, getOrganizationSchema, BASE_URL } from '@/lib/schema';
+import {
+  getArticleSchema,
+  getOrganizationSchema,
+  getBreadcrumbSchema,
+  BASE_URL,
+} from '@/lib/schema';
 import BlogPostClient from '@/features/knowledge/ui/BlogPostClient';
 
 interface PageProps {
@@ -162,11 +167,21 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   const post = getBlogPost(slug, locale);
 
+  const breadcrumbs = post
+    ? getBreadcrumbSchema([
+        { name: locale === 'en' ? 'Home' : 'Startseite', url: `/${locale}` },
+        { name: 'Knowledge', url: `/${locale}/knowledge` },
+        { name: 'Blog', url: `/${locale}/knowledge/blog` },
+        { name: post.title, url: `/${locale}/knowledge/blog/${slug}` },
+      ])
+    : null;
+
   const jsonLd = post
     ? {
         '@context': 'https://schema.org',
         '@graph': [
           getOrganizationSchema(locale),
+          breadcrumbs,
           getArticleSchema({
             title: post.title,
             excerpt: post.excerpt,

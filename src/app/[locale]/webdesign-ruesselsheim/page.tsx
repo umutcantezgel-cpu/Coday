@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { generatePageMetadata } from '@/lib/metadata';
 import { setRequestLocale } from 'next-intl/server';
-import { BASE_URL, getOrganizationSchema } from '@/lib/schema';
+import { BASE_URL, getOrganizationSchema, getBreadcrumbSchema } from '@/lib/schema';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shared/ui/Button';
 import { TrustBar } from '@/shared/ui/TrustBar';
@@ -44,6 +44,13 @@ export async function generateMetadata({
       title: 'Web Design Rüsselsheim | Automotive & B2B Agency · Coday',
       description:
         'Web design & development in Rüsselsheim am Main. High-performance Next.js platforms for engineering, automotive & mid-market. Fixed price on request.',
+      keywords: [
+        'Web Design Rüsselsheim',
+        'Web Agency Rüsselsheim am Main',
+        'Website Creation Rüsselsheim',
+        'Web Development District Groß-Gerau',
+        'Coday Web Rüsselsheim',
+      ],
       path: '/en/webdesign-ruesselsheim',
       type: 'money',
     });
@@ -52,6 +59,13 @@ export async function generateMetadata({
     title: 'Webdesign Rüsselsheim | Automotive & B2B Agentur · Coday',
     description:
       'Webdesign & Webentwicklung in Rüsselsheim am Main. Performante Next.js Websites für Ingenieurbüros, Automotive & Mittelstand. Festpreis auf Anfrage.',
+    keywords: [
+      'Webdesign Rüsselsheim',
+      'Webagentur Rüsselsheim am Main',
+      'Website erstellen Rüsselsheim',
+      'Webentwicklung Kreis Groß-Gerau',
+      'Coday Web Rüsselsheim',
+    ],
     path: '/de/webdesign-ruesselsheim',
     type: 'money',
   });
@@ -65,11 +79,19 @@ export default async function WebdesignRuesselsheimPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const _locale = locale || 'de';
+  const isEn = _locale === 'en';
+
+  const breadcrumbs = getBreadcrumbSchema([
+    { name: isEn ? 'Home' : 'Startseite', url: `/${_locale}` },
+    { name: isEn ? 'Locations' : 'Standorte', url: `/${_locale}/uebersicht` },
+    { name: 'Rüsselsheim am Main', url: `/${_locale}/webdesign-ruesselsheim` },
+  ]);
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       getOrganizationSchema(_locale),
+      breadcrumbs,
       {
         '@type': 'LocalBusiness',
         '@id': `${BASE_URL}/${_locale}/webdesign-ruesselsheim#localbusiness`,
@@ -77,7 +99,7 @@ export default async function WebdesignRuesselsheimPage({
         url: `${BASE_URL}/${_locale}/webdesign-ruesselsheim`,
         logo: `${BASE_URL}/icon.png`,
         image: `${BASE_URL}/images/og-image.jpg`,
-        telephone: '+49 6441 000000',
+        telephone: '+49-176-41195301',
         email: 'kontakt@codayweb.de',
         priceRange: '€€€€',
         address: {
