@@ -107,7 +107,7 @@ export default async function HandwerkerWetzlarPage({
         url: `${BASE_URL}/${_locale}/branchen/handwerker/wetzlar`,
         logo: `${BASE_URL}/icon.png`,
         image: `${BASE_URL}/images/og-image.jpg`,
-        telephone: '+49 6441 000000',
+        telephone: '+49-176-41195301',
         email: 'kontakt@codayweb.de',
         priceRange: '€€€€',
         address: {

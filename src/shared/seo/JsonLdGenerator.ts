@@ -21,36 +21,38 @@ export function generateAdvancedJsonLd({
     '@graph': [
       {
         '@type': 'WebPage',
-        '@id': `https://coday.de/branchen-hub/${industry.toLowerCase()}/${location.toLowerCase()}#webpage`,
-        url: `https://coday.de/branchen-hub/${industry.toLowerCase()}/${location.toLowerCase()}`,
+        '@id': `https://www.codayweb.de/branchen/${industry.toLowerCase()}/${location.toLowerCase()}#webpage`,
+        url: `https://www.codayweb.de/branchen/${industry.toLowerCase()}/${location.toLowerCase()}`,
         name: `Webentwicklung & App-Lösungen für ${industry} in ${location} | Coday`,
         description: `Enterprise Webentwicklung für ${industry} in ${location} und Umgebung. Meisterliche Software-Qualität und GEO-Optimierung für maximale lokale Dominanz.`,
         inLanguage: 'de-DE',
         about: {
           '@type': 'LocalBusiness',
-          '@id': 'https://coday.de/#localbusiness',
+          '@id': 'https://www.codayweb.de/#local-business',
           name: 'Coday',
-          image: 'https://coday.de/assets/coday-logo.png',
-          url: 'https://coday.de',
-          telephone: '+4964410000000',
-          priceRange: '$$$',
+          image: 'https://www.codayweb.de/icon.png',
+          url: 'https://www.codayweb.de',
+          telephone: '+49-176-41195301',
+          email: 'kontakt@codayweb.de',
+          priceRange: '€€€',
           address: {
             '@type': 'PostalAddress',
-            streetAddress: 'Hauser Gasse 2',
+            streetAddress: 'Lessingstraße 4',
             addressLocality: 'Wetzlar',
             postalCode: '35578',
+            addressRegion: 'Hessen',
             addressCountry: 'DE',
           },
           geo: {
             '@type': 'GeoCoordinates',
-            latitude: 50.5583,
-            longitude: 8.5014,
+            latitude: 50.5558,
+            longitude: 8.5022,
           },
           sameAs: [
             'https://www.provenexpert.com/de-de/coday-webagentur/',
             'https://maps.app.goo.gl/9SagecgXw7Vf5csH7',
             'https://www.wikidata.org/wiki/Q3874',
-            'https://www.linkedin.com/company/codayweb',
+            'https://www.linkedin.com/in/umutcan-tezgel',
           ],
         },
         mentions: [
@@ -67,31 +69,22 @@ export function generateAdvancedJsonLd({
         ],
         author: {
           '@type': 'Person',
-          '@id': 'https://coday.de/ueber-uns#founder',
-          name: 'Umut Cantezgel',
-          jobTitle: 'Handwerksmeister & CEO',
-          honorificPrefix: 'Meister',
-          sameAs: [
-            'https://www.linkedin.com/company/codayweb',
-            'https://www.linkedin.com/in/umut-cantezgel', // Zwingend für RAG-Bots zur Autoritäts-Verknüpfung
-          ],
+          '@id': 'https://www.codayweb.de/#founder',
+          name: 'Umutcan Emre Tezgel',
+          jobTitle: 'Founder & Lead Developer',
+          sameAs: ['https://www.linkedin.com/in/umutcan-tezgel'],
           worksFor: {
-            '@id': 'https://coday.de/#localbusiness',
-          },
-          alumniOf: {
-            '@type': 'Organization',
-            name: 'Handwerkskammer Wiesbaden',
-            sameAs: 'https://www.wikidata.org/wiki/Q1576204',
+            '@id': 'https://www.codayweb.de/#organization',
           },
         },
       },
       {
         '@type': 'Dataset',
-        '@id': `https://coday.de/branchen-hub/${industry.toLowerCase()}/${location.toLowerCase()}#dataset-${location.toLowerCase()}`, // Eindeutige ID verhindert Kollaps bei 1100 Datensätzen
+        '@id': `https://www.codayweb.de/branchen/${industry.toLowerCase()}/${location.toLowerCase()}#dataset-${location.toLowerCase()}`,
         name: `Web-Performance-Index für ${industry} in ${location}`,
         description: `Vergleichende Ladezeit-Benchmarks (LCP/INP) für digitale Plattformen von ${industry} im Wirtschaftsraum ${location}.`,
         creator: {
-          '@id': 'https://coday.de/#localbusiness',
+          '@id': 'https://www.codayweb.de/#organization',
         },
         variableMeasured: [
           {

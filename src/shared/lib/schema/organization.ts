@@ -2,7 +2,8 @@ import { Organization, Person } from 'schema-dts';
 import { GOOGLE_REVIEWS, REVIEWS_SUMMARY } from '@/shared/data/reviews';
 
 export const ORGANIZATION_ID = 'https://www.codayweb.de/#organization';
-export const UMUT_ID = 'https://www.codayweb.de/#umut';
+export const FOUNDER_ID = 'https://www.codayweb.de/#founder';
+export const UMUT_ID = FOUNDER_ID;
 
 export function getOrganizationSchema(): Organization {
   return {
@@ -45,7 +46,7 @@ export function getOrganizationSchema(): Organization {
       '@type': 'ContactPoint',
       telephone: '+49-176-41195301',
       contactType: 'customer service',
-      email: 'umut@codayweb.de',
+      email: 'kontakt@codayweb.de',
       areaServed: 'DE',
       availableLanguage: ['German', 'English'],
     },
@@ -53,7 +54,10 @@ export function getOrganizationSchema(): Organization {
     taxID: '039 874 00784',
     address: {
       '@type': 'PostalAddress',
+      streetAddress: 'Lessingstraße 4',
       addressLocality: 'Wetzlar',
+      postalCode: '35578',
+      addressRegion: 'Hessen',
       addressCountry: 'DE',
     },
   };
@@ -62,8 +66,8 @@ export function getOrganizationSchema(): Organization {
 export function getUmutSchema(): Person {
   return {
     '@type': 'Person',
-    '@id': UMUT_ID,
-    name: 'Umutcan Tezgel',
+    '@id': FOUNDER_ID,
+    name: 'Umutcan Emre Tezgel',
     url: 'https://www.codayweb.de/de/about',
     jobTitle: 'Founder & Web Developer',
     sameAs: [

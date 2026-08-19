@@ -3,6 +3,9 @@ import { GOOGLE_REVIEWS, REVIEWS_SUMMARY } from '@/shared/data/reviews';
 export const BASE_URL = 'https://www.codayweb.de';
 export const ORG_ID = `${BASE_URL}/#organization`;
 export const FOUNDER_ID = `${BASE_URL}/#founder`;
+export const WEBSITE_ID = `${BASE_URL}/#website`;
+export const LOCAL_BUSINESS_ID = `${BASE_URL}/#local-business`;
+export const PROFESSIONAL_SERVICE_ID = `${BASE_URL}/#professional-service`;
 
 export function getReviewsSchema(locale: string = 'de') {
   return {

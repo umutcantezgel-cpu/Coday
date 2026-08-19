@@ -96,7 +96,7 @@ export default async function ArztGiessenPage({ params }: { params: Promise<{ lo
         url: `${BASE_URL}/${_locale}/branchen/gesundheitswesen/arzt-giessen`,
         logo: `${BASE_URL}/icon.png`,
         image: `${BASE_URL}/images/og-image.jpg`,
-        telephone: '+49 6441 000000',
+        telephone: '+49-176-41195301',
         email: 'kontakt@codayweb.de',
         priceRange: '€€€€',
         address: {

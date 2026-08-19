@@ -83,7 +83,7 @@ export default async function DatenschutzPage({ params }: { params: Promise<{ lo
             <br />
             Lessingstraße 4, 35578 Wetzlar
             <br />
-            E-Mail: umut@codayweb.de
+            E-Mail: kontakt@codayweb.de
           </p>
 
           <h2 className="text-xl font-semibold text-secondary-900">

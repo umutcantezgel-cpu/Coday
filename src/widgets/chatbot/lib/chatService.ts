@@ -72,13 +72,13 @@ export function getHumanSupportResponse(): {
   actionUrl: string;
 } {
   return {
-    message: `Selbstverstaendlich. Sie moechten mit einem unserer Mitarbeiter sprechen.
+    message: `Selbstverstaendlich. Sie moechten mit Inhaber Umutcan Emre Tezgel sprechen.
 
 Sie haben folgende Kontaktmoeglichkeiten:
 
-E-Mail: kontakt@coday.de
-Telefon: +49 (0) 6441 123456 (Mo-Fr 9-18 Uhr)
-Termin buchen: Kostenlose 30-Minuten-Beratung
+E-Mail: kontakt@codayweb.de
+Telefon: +49 176 41195301 (Mo-Fr 9-18 Uhr)
+Termin buchen: Kostenlose 20-Minuten-Beratung
 
 Wie moechten Sie Kontakt aufnehmen?`,
     action: 'link',
@@ -156,7 +156,7 @@ Antworte jetzt als Berater auf die letzte Nachricht. Halte die Antwort kurz und 
   } catch (error) {
     console.error('[ChatService] Error:', error);
     return {
-      text: 'Entschuldigen Sie, es ist ein technischer Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt unter kontakt@coday.de',
+      text: 'Entschuldigen Sie, es ist ein technischer Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt unter kontakt@codayweb.de',
     };
   }
 }

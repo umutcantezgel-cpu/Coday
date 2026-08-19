@@ -31,7 +31,7 @@ export const CODAY_KNOWLEDGE_BASE = {
   contact: {
     legalEntity: 'Umutcan Emre Tezgel',
     address: 'Lessingstraße 4, 35578 Wetzlar, Deutschland',
-    email: 'umut@codayweb.de',
+    email: 'kontakt@codayweb.de',
     phone: '+49 176 41195301',
     website: 'https://www.codayweb.de',
     websiteAlternative: 'https://codayweb.de',
